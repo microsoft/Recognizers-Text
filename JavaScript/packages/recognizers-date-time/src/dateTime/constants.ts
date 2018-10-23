@@ -56,6 +56,18 @@ export class Constants {
     static readonly LESS_THAN_MOD: string = 'less';
 
     static readonly REF_UNDEF_MOD: string = 'ref_undef';
+
+    static readonly EN_MORNING: string = 'morning';
+    static readonly EN_AFTERNOON: string = 'afternoon';
+    static readonly EN_EVENING: string = 'evening';
+    static readonly EN_DAYTIME: string = 'daytime';
+    static readonly EN_NIGHT: string = 'night';
+
+    static readonly CN_MORNING: string = '上午';
+    static readonly CN_AFTERNOON: string = '下午';
+    static readonly CN_EVENING: string = '晚上';
+    static readonly CN_DAYTIME: string = '白天';
+    static readonly CN_NIGHT: string = '深夜';
 }
 
 export class TimeTypeConstants {

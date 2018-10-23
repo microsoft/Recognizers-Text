@@ -147,5 +147,20 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string TimeTimexConnector = ":";
         public const string GeneralPeriodPrefix = "P";
         public const string TimeTimexPrefix = "T";
+
+        // Time of day in English
+        public const string EN_MORNING = "morning";
+        public const string EN_AFTERNOON = "afternoon";
+        public const string EN_EVENING = "evening";
+        public const string EN_DAYTIME = "daytime";
+        public const string EN_NIGHT = "night";
+        public const string EN_BUSINESS_HOUR = "businessHour";
+
+        // Time of day in Chinese
+        public const string CN_MORNING = "上午";
+        public const string CN_AFTERNOON = "下午";
+        public const string CN_EVENING = "晚上";
+        public const string CN_DAYTIME = "白天";
+        public const string CN_NIGHT = "深夜";
     }
 }

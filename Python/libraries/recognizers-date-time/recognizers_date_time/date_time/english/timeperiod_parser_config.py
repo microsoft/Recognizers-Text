@@ -8,6 +8,7 @@ from ..extractors import DateTimeExtractor
 from ..parsers import DateTimeParser
 from ..base_configs import BaseDateParserConfiguration, DateTimeUtilityConfiguration
 from ..base_timeperiod import TimePeriodParserConfiguration, MatchedTimeRegex
+from ..constants import Constants
 
 class EnglishTimePeriodParserConfiguration(TimePeriodParserConfiguration):
     @property
@@ -68,27 +69,27 @@ class EnglishTimePeriodParserConfiguration(TimePeriodParserConfiguration):
         end_hour = 0
         end_min = 0
 
-        if source.endswith('morning'):
-            timex = 'TMO'
-            begin_hour = 8
-            end_hour = 12
-        elif source.endswith('afternoon'):
-            timex = 'TAF'
-            begin_hour = 12
-            end_hour = 16
-        elif source.endswith('evening'):
-            timex = 'TEV'
-            begin_hour = 16
-            end_hour = 20
-        elif source.endswith('daytime'):
-            timex = 'TDT'
-            begin_hour = 8
-            end_hour = 18
-        elif source.endswith('night'):
-            timex = 'TNI'
-            begin_hour = 20
-            end_hour = 23
-            end_min = 59
+        if source.endswith(Constants.EN_MORNING):
+            timex = EnglishDateTime.TimeOfDayTimex[Constants.EN_MORNING]
+            begin_hour = EnglishDateTime.TimeOfDayBeginHour[Constants.EN_MORNING]
+            end_hour = EnglishDateTime.TimeOfDayEndHour[Constants.EN_MORNING]
+        elif source.endswith(Constants.EN_AFTERNOON):
+            timex = EnglishDateTime.TimeOfDayTimex[Constants.EN_AFTERNOON]
+            begin_hour = EnglishDateTime.TimeOfDayBeginHour[Constants.EN_AFTERNOON]
+            end_hour = EnglishDateTime.TimeOfDayEndHour[Constants.EN_AFTERNOON]
+        elif source.endswith(Constants.EN_EVENING):
+            timex = EnglishDateTime.TimeOfDayTimex[Constants.EN_EVENING]
+            begin_hour = EnglishDateTime.TimeOfDayBeginHour[Constants.EN_EVENING]
+            end_hour = EnglishDateTime.TimeOfDayEndHour[Constants.EN_EVENING]
+        elif source.endswith(Constants.EN_DAYTIME):
+            timex = EnglishDateTime.TimeOfDayTimex[Constants.EN_DAYTIME]
+            begin_hour = EnglishDateTime.TimeOfDayBeginHour[Constants.EN_DAYTIME]
+            end_hour = EnglishDateTime.TimeOfDayEndHour[Constants.EN_DAYTIME]
+        elif source.endswith(Constants.EN_NIGHT):
+            timex = EnglishDateTime.TimeOfDayTimex[Constants.EN_NIGHT]
+            begin_hour = EnglishDateTime.TimeOfDayBeginHour[Constants.EN_NIGHT]
+            end_hour = EnglishDateTime.TimeOfDayEndHour[Constants.EN_NIGHT]
+            end_min = EnglishDateTime.TimeOfDayEndMin[Constants.EN_NIGHT]
         else:
             return MatchedTimeRegex(
                 matched=False,

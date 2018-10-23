@@ -124,27 +124,27 @@ export class ChineseTimePeriodParser extends BaseTimePeriodParser {
         endHour = 0,
         endMin = 0;
 
-        if (trimmedText.endsWith("上午")) {
-            timex = "TMO";
-            beginHour = 8;
-            endHour = 12;
-        } else if (trimmedText.endsWith("下午")) {
-            timex = "TAF";
-            beginHour = 12;
-            endHour = 16;
-        } else if (trimmedText.endsWith("晚上")) {
-            timex = "TEV";
-            beginHour = 16;
-            endHour = 20;
-        } else if (trimmedText.localeCompare("白天") == 0) {
-            timex = "TDT";
-            beginHour = 8;
-            endHour = 18;
-        } else if (trimmedText.endsWith("深夜")) {
-            timex = "TNI";
-            beginHour = 20;
-            endHour = 23;
-            endMin = 59;
+        if (trimmedText.endsWith(Constants.CN_MORNING)) {
+            timex = ChineseDateTime.TimeOfDayTimex[Constants.CN_MORNING];
+            beginHour = ChineseDateTime.TimeOfDayBeginHour[Constants.CN_MORNING];
+            endHour = ChineseDateTime.TimeOfDayEndHour[Constants.CN_MORNING];
+        } else if (trimmedText.endsWith(Constants.CN_AFTERNOON)) {
+            timex = ChineseDateTime.TimeOfDayTimex[Constants.CN_AFTERNOON];
+            beginHour = ChineseDateTime.TimeOfDayBeginHour[Constants.CN_AFTERNOON];
+            endHour = ChineseDateTime.TimeOfDayEndHour[Constants.CN_AFTERNOON];
+        } else if (trimmedText.endsWith(Constants.CN_EVENING)) {
+            timex = ChineseDateTime.TimeOfDayTimex[Constants.CN_EVENING];
+            beginHour = ChineseDateTime.TimeOfDayBeginHour[Constants.CN_EVENING];
+            endHour = ChineseDateTime.TimeOfDayEndHour[Constants.CN_EVENING];
+        } else if (trimmedText.localeCompare(Constants.CN_DAYTIME) == 0) {
+            timex = ChineseDateTime.TimeOfDayTimex[Constants.CN_DAYTIME];
+            beginHour = ChineseDateTime.TimeOfDayBeginHour[Constants.CN_DAYTIME];
+            endHour = ChineseDateTime.TimeOfDayEndHour[Constants.CN_DAYTIME];
+        } else if (trimmedText.endsWith(Constants.CN_NIGHT)) {
+            timex = ChineseDateTime.TimeOfDayTimex[Constants.CN_NIGHT];
+            beginHour = ChineseDateTime.TimeOfDayBeginHour[Constants.CN_NIGHT];
+            endHour = ChineseDateTime.TimeOfDayEndHour[Constants.CN_NIGHT];
+            endMin = ChineseDateTime.TimeOfDayEndMin[Constants.CN_NIGHT]
         } else {
             timex = null;
             matched = false;

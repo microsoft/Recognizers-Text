@@ -261,7 +261,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                         er.Data = number;
 
                         //Special treatment, handle cases like '2:00 pm', '00 pm' is not dimension
-                        var isDimensionFallsInPmTime = false;
+                        var isNotUnit = false;
                         if (er.Type.Equals(Constants.SYS_UNIT_DIMENSION))
                         {
                             var nonUnitMatch = this.config.PmNonUnitRegex.Matches(source);                           
@@ -270,13 +270,13 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                             {
                                 if (er.Start >= time.Index && er.Start + er.Length <= time.Index + time.Length)
                                 {
-                                    isDimensionFallsInPmTime = true;
+                                    isNotUnit = true;
                                     break;
                                 }
                             }
                         }
 
-                        if (isDimensionFallsInPmTime)
+                        if (isNotUnit)
                         {
                             continue;
                         }
@@ -350,7 +350,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                             }
 
                             //Special treatment, handle cases like '2:00 pm', both '00 pm' and 'pm' are not dimension
-                            var isDimensionFallsInPmTime = false;
+                            var isNotUnit = false;
                             if (match.Value.Equals(Constants.AMBIGUOUS_TIME_TERM))
                             {
                                 var nonUnitMatch = this.config.PmNonUnitRegex.Matches(source);
@@ -359,13 +359,13 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                                 {
                                     if (isDimensionFallsInTime(match, time))
                                     {
-                                        isDimensionFallsInPmTime = true;
+                                        isNotUnit = true;
                                         break;
                                     }
                                 }
                             }
 
-                            if (isDimensionFallsInPmTime)
+                            if (isNotUnit)
                             {
                                 continue;
                             }

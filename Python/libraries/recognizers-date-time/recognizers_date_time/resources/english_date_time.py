@@ -572,4 +572,23 @@ class EnglishDateTime:
     DurationDateRestrictions = ['today', 'now']
     AmbiguityFiltersDict = dict([('\\bmorning|afternoon|evening|night|day\\b', '\\bgood\\s+(morning|afternoon|evening|night|day)\\b'),
                                  ('\\bmay\\b', '\\b((^may i)|(i|you|he|she|we|they)\\s+may|(may\\s+((((also|not|(also not)|well)\\s+)?(be|contain|constitute|email|e-mail|take|have|result|involve|get|work|reply))|(or may not))))\\b')])
+    TimeOfDayTimex = dict([('morning', 'TMO'),
+                           ('afternoon', 'TAF'),
+                           ('evening', 'TEV'),
+                           ('daytime', 'TDT'),
+                           ('night', 'TNI'),
+                           ('businessHour', 'TBH')])
+    TimeOfDayBeginHour = dict([('morning', 8),
+                               ('afternoon', 12),
+                               ('evening', 16),
+                               ('daytime', 8),
+                               ('night', 20),
+                               ('businessHour', 8)])
+    TimeOfDayEndHour = dict([('morning', 12),
+                             ('afternoon', 16),
+                             ('evening', 20),
+                             ('daytime', 18),
+                             ('night', 23),
+                             ('businessHour', 18)])
+    TimeOfDayEndMin = dict([('night', 59)])
 # pylint: enable=line-too-long

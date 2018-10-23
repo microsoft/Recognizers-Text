@@ -75,27 +75,27 @@ class ChineseTimePeriodParser(BaseTimePeriodParser):
         end_hour = 0
         end_min = 0
 
-        if trimmed_text.endswith("上午"):
-            timex = "TMO"
-            begin_hour = 8
-            end_hour = 12
-        elif trimmed_text.endswith("下午"):
-            timex = "TAF"
-            begin_hour = 12
-            end_hour = 16
-        elif trimmed_text.endswith("晚上"):
-            timex = "TEV"
-            begin_hour = 16
-            end_hour = 20
-        elif trimmed_text == "白天":
-            timex = "TDT"
-            begin_hour = 8
-            end_hour = 18
-        elif trimmed_text.endswith("深夜"):
-            timex = "TNT"
-            begin_hour = 20
-            end_hour = 23
-            end_min = 59
+        if trimmed_text.endswith(Constants.CN_MORNING):
+            timex = ChineseDateTime.TimeOfDayTimex[Constants.CN_MORNING]
+            begin_hour = ChineseDateTime.TimeOfDayBeginHour[Constants.CN_MORNING]
+            end_hour = ChineseDateTime.TimeOfDayEndHour[Constants.CN_MORNING]
+        elif trimmed_text.endswith(Constants.CN_AFTERNOON):
+            timex = ChineseDateTime.TimeOfDayTimex[Constants.CN_AFTERNOON]
+            begin_hour = ChineseDateTime.TimeOfDayBeginHour[Constants.CN_AFTERNOON]
+            end_hour = ChineseDateTime.TimeOfDayEndHour[Constants.CN_AFTERNOON]
+        elif trimmed_text.endswith(Constants.CN_EVENING):
+            timex = ChineseDateTime.TimeOfDayTimex[Constants.CN_EVENING]
+            begin_hour = ChineseDateTime.TimeOfDayBeginHour[Constants.CN_EVENING]
+            end_hour = ChineseDateTime.TimeOfDayEndHour[Constants.CN_EVENING]
+        elif trimmed_text == Constants.CN_DAYTIME:
+            timex = ChineseDateTime.TimeOfDayTimex[Constants.CN_DAYTIME]
+            begin_hour = ChineseDateTime.TimeOfDayBeginHour[Constants.CN_DAYTIME]
+            end_hour = ChineseDateTime.TimeOfDayEndHour[Constants.CN_DAYTIME]
+        elif trimmed_text.endswith(Constants.CN_NIGHT):
+            timex = ChineseDateTime.TimeOfDayTimex[Constants.CN_NIGHT]
+            begin_hour = ChineseDateTime.TimeOfDayBeginHour[Constants.CN_NIGHT]
+            end_hour = ChineseDateTime.TimeOfDayEndHour[Constants.CN_NIGHT]
+            end_min = ChineseDateTime.TimeOfDayEndMin[Constants.CN_NIGHT]
         else:
             timex = None
             matched = False

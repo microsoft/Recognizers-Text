@@ -551,4 +551,20 @@ class ChineseDateTime:
                              ('晚', 18),
                              ('pm', 12)])
     DefaultLanguageFallback = 'DMY'
+    TimeOfDayTimex = dict([('上午', 'TMO'),
+                           ('下午', 'TAF'),
+                           ('晚上', 'TEV'),
+                           ('白天', 'TDT'),
+                           ('深夜', 'TNI')])
+    TimeOfDayBeginHour = dict([('上午', 8),
+                               ('下午', 12),
+                               ('晚上', 16),
+                               ('白天', 8),
+                               ('深夜', 20)])
+    TimeOfDayEndHour = dict([('上午', 12),
+                             ('下午', 16),
+                             ('晚上', 20),
+                             ('白天', 18),
+                             ('深夜', 23)])
+    TimeOfDayEndMin = dict([('深夜', 59)])
 # pylint: enable=line-too-long

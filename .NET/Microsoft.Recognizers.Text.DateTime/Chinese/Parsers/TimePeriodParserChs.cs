@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using DateObject = System.DateTime;
+using Microsoft.Recognizers.Definitions.Chinese;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
@@ -112,36 +113,36 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             endHour = 0;
             endMin = 0;
             
-            if (trimmedText.EndsWith("上午"))
+            if (trimmedText.EndsWith(Constants.CN_MORNING))
             {
-                timex = "TMO";
-                beginHour = 8;
-                endHour = Constants.HalfDayHourCount;
+                timex = DateTimeDefinitions.TimeOfDayTimex[Constants.CN_MORNING];
+                beginHour = DateTimeDefinitions.TimeOfDayBeginHour[Constants.CN_MORNING];
+                endHour = DateTimeDefinitions.TimeOfDayEndHour[Constants.CN_MORNING];
             }
-            else if (trimmedText.EndsWith("下午"))
+            else if (trimmedText.EndsWith(Constants.CN_AFTERNOON))
             {
-                timex = "TAF";
-                beginHour = Constants.HalfDayHourCount;
-                endHour = 16;
+                timex = DateTimeDefinitions.TimeOfDayTimex[Constants.CN_AFTERNOON];
+                beginHour = DateTimeDefinitions.TimeOfDayBeginHour[Constants.CN_AFTERNOON];
+                endHour = DateTimeDefinitions.TimeOfDayEndHour[Constants.CN_AFTERNOON];
             }
-            else if (trimmedText.EndsWith("晚上"))
+            else if (trimmedText.EndsWith(Constants.CN_EVENING))
             {
-                timex = "TEV";
-                beginHour = 16;
-                endHour = 20;
+                timex = DateTimeDefinitions.TimeOfDayTimex[Constants.CN_EVENING];
+                beginHour = DateTimeDefinitions.TimeOfDayBeginHour[Constants.CN_EVENING];
+                endHour = DateTimeDefinitions.TimeOfDayEndHour[Constants.CN_EVENING];
             }
-            else if (trimmedText.Equals("白天"))
+            else if (trimmedText.Equals(Constants.CN_DAYTIME))
             {
-                timex = "TDT";
-                beginHour = 8;
-                endHour = 18;
+                timex = DateTimeDefinitions.TimeOfDayTimex[Constants.CN_DAYTIME];
+                beginHour = DateTimeDefinitions.TimeOfDayBeginHour[Constants.CN_DAYTIME];
+                endHour = DateTimeDefinitions.TimeOfDayEndHour[Constants.CN_DAYTIME];
             }
-            else if (trimmedText.EndsWith("深夜"))
+            else if (trimmedText.EndsWith(Constants.CN_NIGHT))
             {
-                timex = "TNI";
-                beginHour = 20;
-                endHour = 23;
-                endMin = 59;
+                timex = DateTimeDefinitions.TimeOfDayTimex[Constants.CN_NIGHT];
+                beginHour = DateTimeDefinitions.TimeOfDayBeginHour[Constants.CN_NIGHT];
+                endHour = DateTimeDefinitions.TimeOfDayEndHour[Constants.CN_NIGHT];
+                endMin = DateTimeDefinitions.TimeOfDayEndMin[Constants.CN_NIGHT];
             }
             else
             {
