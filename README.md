@@ -37,21 +37,24 @@ The links below decribe the project structure and provide both an overview and t
 
 The table below summarizes the currently supported entities. Support for English is usually more complete than others. The primary platform is .NET (shown in table) and support should propagate to the others.
 
-| Entity Type       | EN      | ZH-CN   | NL    | FR     | DE     | IT      | JA       | KO     | PT       | ES      |
-|:-----------------:|:-------:|:-------:|:-----:|:------:|:------:|:-------:|:--------:|:------:|:--------:|:-------:| 
-| Number (cardinal)    | ✓    | ✓       | ✓     | ✓     | ✓     | specs-only | ✓     | ✓      | ✓       | ✓       |
-| Ordinal              | ✓    | ✓       | ✓     | ✓     | ✓     | specs-only | ✓     | specs-only | ✓    | ✓      |
-| Percentage           | ✓    | ✓       | ✓     | ✓     | ✓     | specs-only | ✓     | specs-only | ✓    | ✓      |
-| Unit - Age           | ✓    | ✓       | ✓     | ✓     | ✓     | specs-only | ✓     | specs-only | ✓    | ✓      |
-| Unit - Currency      | ✓    | ✓       | ✓     | ✓     | ✓     | specs-only | ✓     |        | ✓        | ✓      |
-| Unit - Dimensions    | ✓    | ✓       | ✓     | ✓     | ✓     | specs-only |       |        | ✓        | ✓       | 
-| Unit - Temperature   | ✓    | ✓       | ✓     | ✓     | ✓     | specs-only |       |        | ✓        | ✓       | 
-| Choice - Boolean     | ✓    | ✓       | ✓     | ✓     | ✓     | specs-only | ✓     |        | ✓        | ✓      | 
-| Seq. - E-mail        | G    | G*       | G     | G     | G      | G          | G     | G      | G        | G       |
-| Seq. - GUID          | G    | G        | G     | G     | G      | G          | G     | G      | G        | G       |
-| Seq. - Social        | G    | G        | G     | G     | G      | G          | G     | G      | G        | G       |
-| Seq. - IP Address    | G    | G        | G     | G     | G      | G          | G     | G      | G        | G       |
-| Seq. - Phone Number  | G    | G        | G     | G     | G      | G          | G     | G      | G        | G       |
-| Seq. - URL           | G    | G*       | G     | G     | G      | G          | G     | G      | G        | G       |
-| DateTime (+subtypes) | ✓    | ✓       |       | ✓     | partial (bugs)  | specs-only |   |  | ✓        | ✓      | 
-* G: Generic entity, not language-specific (* unicode TLDs not-supported). 
+| Entity Type       | EN      | ZH-CN   | NL    | FR     | DE    | IT      | JA     | KO     | PT     | ES      |
+|:-----------------:|:-------:|:-------:|:-----:|:------:|:-----:|:-------:|:------:|:------:|:------:|:-------:| 
+| Number (cardinal)    | ✓    | ✓       | ✓    | ✓     | ✓     | SO      | ✓      | ✓      | ✓     | ✓       |
+| Ordinal              | ✓    | ✓       | ✓    | ✓     | ✓     | SO      | ✓      | SO     | ✓      | ✓      |
+| Percentage           | ✓    | ✓       | ✓    | ✓     | ✓     | SO      | ✓      | SO     | ✓      | ✓      |
+| Unit - Age           | ✓    | ✓       | ✓    | ✓     | ✓     | SO      | ✓      | SO     | ✓      | ✓      |
+| Unit - Currency      | ✓    | ✓       | ✓    | ✓     | ✓     | SO      | ✓      |        | ✓      | ✓      |
+| Unit - Dimensions    | ✓    | ✓       | ✓    | ✓     | ✓     | SO      |        |         | ✓     | ✓       | 
+| Unit - Temperature   | ✓    | ✓       | ✓    | ✓     | ✓     | SO      |        |         | ✓     | ✓       | 
+| Choice - Boolean     | ✓    | ✓       | ✓    | ✓     | ✓     | SO      | ✓      |        | ✓      | ✓      | 
+| Seq. - E-mail        | G    | G*       | G    | G      | G     | G       | G      | G      | G      | G       |
+| Seq. - GUID          | G    | G        | G    | G      | G     | G       | G      | G      | G      | G       |
+| Seq. - Social        | G    | G        | G    | G      | G     | G       | G      | G      | G      | G       |
+| Seq. - IP Address    | G    | G        | G    | G      | G     | G       | G      | G      | G      | G       |
+| Seq. - Phone Number  | G    | G        | G    | G      | G     | G       | G      | G      | G      | G       |
+| Seq. - URL           | G    | G*       | G    | G      | G     | G       | G      | G      | G      | G       |
+| DateTime (+subtypes) | ✓    | ✓       | SP    | ✓     | partial (bugs) | SO | SI min | SI min | ✓  | ✓      | 
+* G: Generic entity, not language-specific (* unicode TLDs not-supported);
+* SO: Specs-only;
+* SP: Partial specs;
+* SI: Very initial specs.
