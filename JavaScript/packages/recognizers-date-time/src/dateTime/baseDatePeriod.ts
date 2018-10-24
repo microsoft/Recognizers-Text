@@ -739,6 +739,16 @@ export class BaseDatePeriodParser implements IDateTimeParser {
         let pastBegin = prBegin.value.pastValue;
         let pastEnd = prEnd.value.pastValue;
 
+        if (futureBegin > futureEnd) 
+        {
+            futureBegin = pastBegin;
+        }
+
+        if (pastEnd < pastBegin) 
+        {
+            pastEnd = futureEnd;
+        }
+
         result.subDateTimeEntities = prs;
         result.timex = `(${prBegin.timexStr},${prEnd.timexStr},P${DateUtils.diffDays(futureEnd, futureBegin)}D)`;
         result.futureValue = [futureBegin, futureEnd];

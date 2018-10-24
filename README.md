@@ -32,3 +32,29 @@ The links below decribe the project structure and provide both an overview and t
 * [Overview and language resources](https://blog.botframework.com/2018/01/24/contributing-luis-microsoft-recognizers-text-part-1/)
 * [Implementing language specific behaviour](https://blog.botframework.com/2018/02/01/contributing-luis-microsoft-recognizers-text-part-2/)
 * [Test specs and testing in general](https://blog.botframework.com/2018/02/12/contributing-luis-microsoft-recognizers-text-part-3/)
+
+# Supported Entities across Cultures
+
+The table below summarizes the currently supported entities. Support for English is usually more complete than others. The primary platform is .NET (shown in table) and support should propagate to the others.
+
+| Entity Type       | EN      | ZH-CN   | NL    | FR     | DE    | IT      | JA     | KO     | PT     | ES      |
+|:-----------------:|:-------:|:-------:|:-----:|:------:|:-----:|:-------:|:------:|:------:|:------:|:-------:| 
+| Number (cardinal)    | ✓    | ✓       | ✓    | ✓     | ✓     | **SO**  | ✓      | ✓      | ✓     | ✓       |
+| Ordinal              | ✓    | ✓       | ✓    | ✓     | ✓     | **SO**  | ✓      | **SO** | ✓      | ✓      |
+| Percentage           | ✓    | ✓       | ✓    | ✓     | ✓     | **SO**  | ✓      | **SO** | ✓      | ✓      |
+| Unit - Age           | ✓    | ✓       | ✓    | ✓     | ✓     | **SO**  | ✓      | **SO** | ✓      | ✓      |
+| Unit - Currency      | ✓    | ✓       | ✓    | ✓     | ✓     | **SO**  | ✓      | :x:    | ✓      | ✓      |
+| Unit - Dimensions    | ✓    | ✓       | ✓    | ✓     | ✓     | **SO**  | :x:    | :x:     | ✓     | ✓       | 
+| Unit - Temperature   | ✓    | ✓       | ✓    | ✓     | ✓     | **SO**  | :x:    | :x:     | ✓     | ✓       | 
+| Choice - Boolean     | ✓    | ✓       | ✓    | ✓     | ✓     | **SO**  | ✓      | :x:    | ✓      | ✓      | 
+| Seq. - E-mail        | G    | G*       | G    | G      | G     | G       | G      | G      | G      | G       |
+| Seq. - GUID          | G    | G        | G    | G      | G     | G       | G      | G      | G      | G       |
+| Seq. - Social        | G    | G        | G    | G      | G     | G       | G      | G      | G      | G       |
+| Seq. - IP Address    | G    | G        | G    | G      | G     | G       | G      | G      | G      | G       |
+| Seq. - Phone Number  | G    | G        | G    | G      | G     | G       | G      | G      | G      | G       |
+| Seq. - URL           | G    | G*       | G    | G      | G     | G       | G      | G      | G      | G       |
+| DateTime (+subtypes) | ✓    | ✓       | **SP**    | ✓     | **partial (bugs)** :warning: | **SO** | **SI min** | **SI min** | ✓  | ✓      | 
+* G: Generic entity, not language-specific (* unicode TLDs not-supported);
+* SO: Specs-only;
+* SP: Partial specs;
+* SI: Very initial specs.
