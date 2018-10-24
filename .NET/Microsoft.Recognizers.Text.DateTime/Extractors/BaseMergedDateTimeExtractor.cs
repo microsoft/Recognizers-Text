@@ -29,7 +29,8 @@ namespace Microsoft.Recognizers.Text.DateTime
             List<MatchResult<string>> superfluousWordMatches = null;
             if ((this.config.Options & DateTimeOptions.EnablePreview) != 0)
             {
-                text = MatchingUtil.PreProcessTextRemoveSuperfluousWords(text, this.config.SuperfluousWordMatcher, out superfluousWordMatches);
+                text = MatchingUtil.PreProcessTextRemoveSuperfluousWords(text, this.config.SuperfluousWordMatcher, 
+                                                                         out superfluousWordMatches);
             }
 
             // The order is important, since there can be conflicts in merging
@@ -60,6 +61,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             ret = FilterUnspecificDatePeriod(ret);
 
+            // Remove common ambiguous cases
             ret = FilterAmbiguity(ret, text);
 
             ret = AddMod(ret, text);
@@ -67,7 +69,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             // Filtering
             if ((this.config.Options & DateTimeOptions.CalendarMode) != 0)
             {
-                ret = CheckCalendarFilterList(ret, text);
+                ret = CheckCalendarModeFilters(ret, text);
             }
 
             ret = ret.OrderBy(p => p.Start).ToList();
@@ -80,11 +82,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        private List<ExtractResult> CheckCalendarFilterList(List<ExtractResult> ers, string text)
+        private List<ExtractResult> CheckCalendarModeFilters(List<ExtractResult> ers, string text)
         {
             foreach (var er in ers.Reverse<ExtractResult>())
             {
-                foreach (var negRegex in this.config.FilterWordRegexList)
+                foreach (var negRegex in this.config.TermFilterRegexes)
                 {
                     var match = negRegex.Match(er.Text);
                     if (match.Success)
@@ -167,6 +169,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             ers.RemoveAll(o => this.config.UnspecificDatePeriodRegex.IsMatch(o.Text));
             return ers;
         }
+
         private List<ExtractResult> FilterAmbiguity(List<ExtractResult> ers, string text)
         {
             if (this.config.AmbiguityFiltersDict != null)
@@ -182,6 +185,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
                 }
             }
+
             return ers;
         }
 

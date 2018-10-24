@@ -33,7 +33,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         IExtractor IntegerExtractor { get; }
 
-        IEnumerable<Regex> FilterWordRegexList { get; }
+        IEnumerable<Regex> TermFilterRegexes { get; }
 
         Regex AfterRegex { get; }
 

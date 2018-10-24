@@ -2,6 +2,7 @@
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.English;
+using Microsoft.Recognizers.Definitions.Utilities;
 using Microsoft.Recognizers.Text.Matcher;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
@@ -38,7 +39,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex UnspecificDatePeriodRegex =
             new Regex(DateTimeDefinitions.UnspecificDatePeriodRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex[] FilterWordRegexList =
+        public static readonly Regex[] TermFilterRegexes =
         {
             // one on one
             new Regex(DateTimeDefinitions.OneOnOneRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline),
@@ -89,20 +90,12 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             DateTimeAltExtractor = new BaseDateTimeAltExtractor(new EnglishDateTimeAltExtractorConfiguration(this));
             IntegerExtractor = Number.English.IntegerExtractor.GetInstance();
 
+            AmbiguityFiltersDict = DefinitionLoader.LoadAmbiguityFilters(DateTimeDefinitions.AmbiguityFiltersDict);
+
             if ((Options & DateTimeOptions.EnablePreview) != 0)
             {
                 SuperfluousWordMatcher.Init(DateTimeDefinitions.SuperfluousWordList);
             }
-
-            var ambiguityFiltersDict = new Dictionary<Regex, Regex>();
-
-            foreach (var item in DateTimeDefinitions.AmbiguityFiltersDict)
-            {
-                ambiguityFiltersDict.Add(new Regex(item.Key, RegexOptions.IgnoreCase | RegexOptions.Singleline),
-                    new Regex(item.Value, RegexOptions.IgnoreCase | RegexOptions.Singleline));
-            }
-
-            AmbiguityFiltersDict = ambiguityFiltersDict;
 
         }
 
@@ -116,7 +109,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         Regex IMergedExtractorConfiguration.NumberEndingPattern => NumberEndingPattern;
         Regex IMergedExtractorConfiguration.DateAfterRegex => DateAfterRegex;
         Regex IMergedExtractorConfiguration.UnspecificDatePeriodRegex => UnspecificDatePeriodRegex;
-        IEnumerable<Regex> IMergedExtractorConfiguration.FilterWordRegexList => FilterWordRegexList;
+        IEnumerable<Regex> IMergedExtractorConfiguration.TermFilterRegexes => TermFilterRegexes;
         StringMatcher IMergedExtractorConfiguration.SuperfluousWordMatcher => SuperfluousWordMatcher;
     }
 }
