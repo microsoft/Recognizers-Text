@@ -1,4 +1,5 @@
-﻿using System.Collections.Immutable;
+﻿using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Globalization;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions;
@@ -37,6 +38,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Chinese
         public Regex PmNonUnitRegex { get; set; }
 
         public IExtractor IntegerExtractor { get; }
+
+        public Dictionary<Regex, Regex> AmbiguityFiltersDict { get; } = null;
 
         public abstract ImmutableDictionary<string, string> SuffixList { get; }
 

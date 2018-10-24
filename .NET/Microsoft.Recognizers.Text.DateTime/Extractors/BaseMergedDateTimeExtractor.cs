@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 using DateObject = System.DateTime;
@@ -29,7 +30,8 @@ namespace Microsoft.Recognizers.Text.DateTime
             List<MatchResult<string>> superfluousWordMatches = null;
             if ((this.config.Options & DateTimeOptions.EnablePreview) != 0)
             {
-                text = MatchingUtil.PreProcessTextRemoveSuperfluousWords(text, this.config.SuperfluousWordMatcher, out superfluousWordMatches);
+                text = MatchingUtil.PreProcessTextRemoveSuperfluousWords(text, this.config.SuperfluousWordMatcher, 
+                                                                         out superfluousWordMatches);
             }
 
             // The order is important, since there can be conflicts in merging
@@ -49,7 +51,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 ret = this.config.TimeZoneExtractor.RemoveAmbiguousTimezone(ret);
             }
 
-            // This should be at the end since if need the extractor to determine the previous text contains time or not
+            // This should be the last extraction step, as it needs to determine if the previous text contains time or not
             AddTo(ret, NumberEndingRegexMatch(text, ret), text);
 
             // Modify time entity to an alternative DateTime expression if it follows a DateTime entity
@@ -60,6 +62,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             ret = FilterUnspecificDatePeriod(ret);
 
+            // Remove common ambiguous cases
             ret = FilterAmbiguity(ret, text);
 
             ret = AddMod(ret, text);
@@ -67,7 +70,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             // Filtering
             if ((this.config.Options & DateTimeOptions.CalendarMode) != 0)
             {
-                ret = CheckCalendarFilterList(ret, text);
+                ret = CheckCalendarModeFilters(ret, text);
             }
 
             ret = ret.OrderBy(p => p.Start).ToList();
@@ -80,13 +83,13 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        private List<ExtractResult> CheckCalendarFilterList(List<ExtractResult> ers, string text)
+        private List<ExtractResult> CheckCalendarModeFilters(List<ExtractResult> ers, string text)
         {
             foreach (var er in ers.Reverse<ExtractResult>())
             {
-                foreach (var negRegex in this.config.FilterWordRegexList)
+                foreach (var regex in this.config.TermFilterRegexes)
                 {
-                    var match = negRegex.Match(er.Text);
+                    var match = regex.Match(er.Text);
                     if (match.Success)
                     {
                         ers.Remove(er);
@@ -108,12 +111,6 @@ namespace Microsoft.Recognizers.Text.DateTime
                         continue;
                     }
                 }
-
-                // @TODO: Is this really no longer necessary?
-                //if (FilterAmbiguousSingleWord(result, text))
-                //{
-                //    continue;
-                //}
 
                 var isFound = false;
                 var overlapIndexes = new List<int>();
@@ -167,6 +164,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             ers.RemoveAll(o => this.config.UnspecificDatePeriodRegex.IsMatch(o.Text));
             return ers;
         }
+
         private List<ExtractResult> FilterAmbiguity(List<ExtractResult> ers, string text)
         {
             if (this.config.AmbiguityFiltersDict != null)
@@ -182,6 +180,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
                 }
             }
+
             return ers;
         }
 
@@ -200,7 +199,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         }
 
         // Handle cases like "move 3pm appointment to 4"
-        private List<ExtractResult> NumberEndingRegexMatch(string text, List<ExtractResult> extractResults)
+        private List<ExtractResult> NumberEndingRegexMatch(string text, IEnumerable<ExtractResult> extractResults)
         {
             var tokens = new List<Token>();
 
@@ -267,9 +266,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                         else
                         {
                             var nextStr = afterStr.Trim().Substring(match.Length).Trim();
-                            var nextEr = ers.Where(t => t.Start > er.Start).FirstOrDefault();
+                            var nextEr = ers.FirstOrDefault(t => t.Start > er.Start);
 
-                            if (nextEr == null || ((nextEr != null) && !nextStr.StartsWith(nextEr.Text)))
+                            if (nextEr == null || !nextStr.StartsWith(nextEr.Text))
                             {
                                 isFollowedByOtherEntity = false;
                             }
@@ -277,7 +276,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                         if (!isFollowedByOtherEntity)
                         {
-                            var modLength = match.Length + afterStr.IndexOf(match.Value);
+                            var modLength = match.Length + afterStr.IndexOf(match.Value, StringComparison.Ordinal);
                             er.Length += modLength;
                             er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
                         }
@@ -291,12 +290,15 @@ namespace Microsoft.Recognizers.Text.DateTime
         public bool TryMergeModifierToken(ExtractResult er, Regex tokenRegex, string text)
         {
             var beforeStr = text.Substring(0, er.Start ?? 0).ToLowerInvariant();
+
             if (HasTokenIndex(beforeStr.TrimEnd(), tokenRegex, out var tokenIndex))
             {
                 var modLength = beforeStr.Length - tokenIndex;
+
                 er.Length += modLength;
                 er.Start -= modLength;
                 er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
+
                 return true;
             }
 

@@ -39,7 +39,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         public static readonly Regex UnspecificDatePeriodRegex =
             new Regex(DateTimeDefinitions.UnspecificDatePeriodRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex[] FilterWordRegexList =
+        public static readonly Regex[] TermFilterRegexes =
         {
 
         };
@@ -99,7 +99,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         Regex IMergedExtractorConfiguration.NumberEndingPattern => NumberEndingPattern;
         Regex IMergedExtractorConfiguration.DateAfterRegex => DateAfterRegex;
         Regex IMergedExtractorConfiguration.UnspecificDatePeriodRegex => UnspecificDatePeriodRegex;
-        IEnumerable<Regex> IMergedExtractorConfiguration.FilterWordRegexList => FilterWordRegexList;
+        IEnumerable<Regex> IMergedExtractorConfiguration.TermFilterRegexes => TermFilterRegexes;
         StringMatcher IMergedExtractorConfiguration.SuperfluousWordMatcher => SuperfluousWordMatcher;
     }
 }
