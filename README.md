@@ -39,21 +39,21 @@ The table below summarizes the currently supported entities. Support for English
 
 | Entity Type       | EN      | ZH-CN   | NL    | FR     | DE    | IT      | JA     | KO     | PT     | ES      |
 |:-----------------:|:-------:|:-------:|:-----:|:------:|:-----:|:-------:|:------:|:------:|:------:|:-------:| 
-| Number (cardinal)    | ✓    | ✓       | ✓    | ✓     | ✓     | SO      | ✓      | ✓      | ✓     | ✓       |
-| Ordinal              | ✓    | ✓       | ✓    | ✓     | ✓     | SO      | ✓      | SO     | ✓      | ✓      |
-| Percentage           | ✓    | ✓       | ✓    | ✓     | ✓     | SO      | ✓      | SO     | ✓      | ✓      |
-| Unit - Age           | ✓    | ✓       | ✓    | ✓     | ✓     | SO      | ✓      | SO     | ✓      | ✓      |
-| Unit - Currency      | ✓    | ✓       | ✓    | ✓     | ✓     | SO      | ✓      |        | ✓      | ✓      |
-| Unit - Dimensions    | ✓    | ✓       | ✓    | ✓     | ✓     | SO      |        |         | ✓     | ✓       | 
-| Unit - Temperature   | ✓    | ✓       | ✓    | ✓     | ✓     | SO      |        |         | ✓     | ✓       | 
-| Choice - Boolean     | ✓    | ✓       | ✓    | ✓     | ✓     | SO      | ✓      |        | ✓      | ✓      | 
+| Number (cardinal)    | ✓    | ✓       | ✓    | ✓     | ✓     | **SO**  | ✓      | ✓      | ✓     | ✓       |
+| Ordinal              | ✓    | ✓       | ✓    | ✓     | ✓     | **SO**  | ✓      | **SO** | ✓      | ✓      |
+| Percentage           | ✓    | ✓       | ✓    | ✓     | ✓     | **SO**  | ✓      | **SO** | ✓      | ✓      |
+| Unit - Age           | ✓    | ✓       | ✓    | ✓     | ✓     | **SO**  | ✓      | **SO** | ✓      | ✓      |
+| Unit - Currency      | ✓    | ✓       | ✓    | ✓     | ✓     | **SO**  | ✓      | :x:    | ✓      | ✓      |
+| Unit - Dimensions    | ✓    | ✓       | ✓    | ✓     | ✓     | **SO**  | :x:    | :x:     | ✓     | ✓       | 
+| Unit - Temperature   | ✓    | ✓       | ✓    | ✓     | ✓     | **SO**  | :x:    | :x:     | ✓     | ✓       | 
+| Choice - Boolean     | ✓    | ✓       | ✓    | ✓     | ✓     | **SO**  | ✓      | :x:    | ✓      | ✓      | 
 | Seq. - E-mail        | G    | G*       | G    | G      | G     | G       | G      | G      | G      | G       |
 | Seq. - GUID          | G    | G        | G    | G      | G     | G       | G      | G      | G      | G       |
 | Seq. - Social        | G    | G        | G    | G      | G     | G       | G      | G      | G      | G       |
 | Seq. - IP Address    | G    | G        | G    | G      | G     | G       | G      | G      | G      | G       |
 | Seq. - Phone Number  | G    | G        | G    | G      | G     | G       | G      | G      | G      | G       |
 | Seq. - URL           | G    | G*       | G    | G      | G     | G       | G      | G      | G      | G       |
-| DateTime (+subtypes) | ✓    | ✓       | SP    | ✓     | partial (bugs) | SO | SI min | SI min | ✓  | ✓      | 
+| DateTime (+subtypes) | ✓    | ✓       | **SP**    | ✓     | **partial (bugs)** :warning: | **SO** | **SI min** | **SI min** | ✓  | ✓      | 
 * G: Generic entity, not language-specific (* unicode TLDs not-supported);
 * SO: Specs-only;
 * SP: Partial specs;
