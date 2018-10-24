@@ -13,7 +13,8 @@ namespace Microsoft.Recognizers.Text.Number.German
 
         protected sealed override string ExtractType { get; } = Constants.SYS_NUM_ORDINAL; // "Ordinal";
 
-        private static readonly ConcurrentDictionary<string, OrdinalExtractor> Instances = new ConcurrentDictionary<string, OrdinalExtractor>();
+        private static readonly ConcurrentDictionary<string, OrdinalExtractor> Instances = 
+            new ConcurrentDictionary<string, OrdinalExtractor>();
 
         public static OrdinalExtractor GetInstance(string placeholder = "")
         {

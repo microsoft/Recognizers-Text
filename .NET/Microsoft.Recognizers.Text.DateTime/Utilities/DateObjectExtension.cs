@@ -90,6 +90,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 return false;
             }
+
             int[] validDays =
             {
                 31,
@@ -105,6 +106,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 30,
                 31
             };
+
             return month >= 1 && month <= 12 && day >= 1 && day <= validDays[month - 1];
         }
 

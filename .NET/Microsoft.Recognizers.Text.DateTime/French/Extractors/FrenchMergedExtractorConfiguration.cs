@@ -86,7 +86,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             HolidayExtractor = new BaseHolidayExtractor(new FrenchHolidayExtractorConfiguration(this));
             TimeZoneExtractor = new BaseTimeZoneExtractor(new FrenchTimeZoneExtractorConfiguration(this));
             DateTimeAltExtractor = new BaseDateTimeAltExtractor(new FrenchDateTimeAltExtractorConfiguration(this));
-            IntegerExtractor = new Number.French.IntegerExtractor();
+            IntegerExtractor = Number.French.IntegerExtractor.GetInstance();
         }
 
         Regex IMergedExtractorConfiguration.AfterRegex => AfterRegex;

@@ -196,6 +196,10 @@ public class ChineseNumeric {
             .replace("{ZeroToNineFullHalfRegex}", ZeroToNineFullHalfRegex)
             .replace("{RoundNumberIntegerRegex}", RoundNumberIntegerRegex);
 
+    public static final String PlaceHolderPureNumber = "\\b";
+
+    public static final String PlaceHolderDefault = "\\D|\\b";
+
     public static final String NumbersSpecialsChars = "(({NegativeNumberTermsRegexNum}|{NegativeNumberTermsRegex})\\s*)?{ZeroToNineFullHalfRegex}+"
             .replace("{NegativeNumberTermsRegexNum}", NegativeNumberTermsRegexNum)
             .replace("{ZeroToNineFullHalfRegex}", ZeroToNineFullHalfRegex)

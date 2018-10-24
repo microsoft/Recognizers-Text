@@ -39,6 +39,8 @@ export namespace ChineseNumeric {
 	export const NotSingleRegex = `((${ZeroToNineIntegerRegex}|${ZeroToNineFullHalfRegex}|[十拾])\\s*(\\s*[多几幾余]?\\s*${RoundNumberIntegerRegex}){1,2}|[十拾]|${RoundNumberIntegerRegex}\\s*(${ZeroToNineIntegerRegex}|${ZeroToNineFullHalfRegex}|零))\\s*(((${ZeroToNineIntegerRegex}|${ZeroToNineFullHalfRegex})\\s*(\\s*[多几幾余]?\\s*${RoundNumberIntegerRegex}){1,2}|零)\\s*)*${ZeroToNineIntegerRegex}?`;
 	export const SingleRegex = `(?<!${ZeroToNineIntegerRegex})${ZeroToNineIntegerRegex}(?=${WhiteListRegex})`;
 	export const AllIntRegex = `(((${ZeroToNineIntegerRegex}|${ZeroToNineFullHalfRegex}|[十拾])\\s*(\\s*[多几幾余]?\\s*${RoundNumberIntegerRegex}){1,2}|[十拾]|${RoundNumberIntegerRegex}\\s*(${ZeroToNineIntegerRegex}|${ZeroToNineFullHalfRegex}|零))\\s*(((${ZeroToNineIntegerRegex}|${ZeroToNineFullHalfRegex})\\s*(\\s*[多几幾余]?\\s*${RoundNumberIntegerRegex}){1,2}|零)\\s*)*${ZeroToNineIntegerRegex}?|${ZeroToNineIntegerRegex})`;
+	export const PlaceHolderPureNumber = `\\b`;
+	export const PlaceHolderDefault = `\\D|\\b`;
 	export const NumbersSpecialsChars = `((${NegativeNumberTermsRegexNum}|${NegativeNumberTermsRegex})\\s*)?${ZeroToNineFullHalfRegex}+`;
 	export const NumbersSpecialsCharsWithSuffix = `${NegativeNumberTermsRegexNum}?${ZeroToNineFullHalfRegex}+\\s*(K|k|M|G|T|Ｍ|Ｋ|ｋ|Ｇ|Ｔ)`;
 	export const DottedNumbersSpecialsChar = `${NegativeNumberTermsRegexNum}?${ZeroToNineFullHalfRegex}{1,3}([,，]${ZeroToNineFullHalfRegex}{3})+`;

@@ -132,6 +132,8 @@ class ChineseNumeric:
     NotSingleRegex = f'(({ZeroToNineIntegerRegex}|{ZeroToNineFullHalfRegex}|[十拾])\\s*(\\s*[多几幾余]?\\s*{RoundNumberIntegerRegex}){{1,2}}|[十拾]|{RoundNumberIntegerRegex}\\s*({ZeroToNineIntegerRegex}|{ZeroToNineFullHalfRegex}|零))\\s*((({ZeroToNineIntegerRegex}|{ZeroToNineFullHalfRegex})\\s*(\\s*[多几幾余]?\\s*{RoundNumberIntegerRegex}){{1,2}}|零)\\s*)*{ZeroToNineIntegerRegex}?'
     SingleRegex = f'(?<!{ZeroToNineIntegerRegex}){ZeroToNineIntegerRegex}(?={WhiteListRegex})'
     AllIntRegex = f'((({ZeroToNineIntegerRegex}|{ZeroToNineFullHalfRegex}|[十拾])\\s*(\\s*[多几幾余]?\\s*{RoundNumberIntegerRegex}){{1,2}}|[十拾]|{RoundNumberIntegerRegex}\\s*({ZeroToNineIntegerRegex}|{ZeroToNineFullHalfRegex}|零))\\s*((({ZeroToNineIntegerRegex}|{ZeroToNineFullHalfRegex})\\s*(\\s*[多几幾余]?\\s*{RoundNumberIntegerRegex}){{1,2}}|零)\\s*)*{ZeroToNineIntegerRegex}?|{ZeroToNineIntegerRegex})'
+    PlaceHolderPureNumber = f'\\b'
+    PlaceHolderDefault = f'\\D|\\b'
     NumbersSpecialsChars = f'(({NegativeNumberTermsRegexNum}|{NegativeNumberTermsRegex})\\s*)?{ZeroToNineFullHalfRegex}+'
     NumbersSpecialsCharsWithSuffix = f'{NegativeNumberTermsRegexNum}?{ZeroToNineFullHalfRegex}+\\s*(K|k|M|G|T|Ｍ|Ｋ|ｋ|Ｇ|Ｔ)'
     DottedNumbersSpecialsChar = f'{NegativeNumberTermsRegexNum}?{ZeroToNineFullHalfRegex}{{1,3}}([,，]{ZeroToNineFullHalfRegex}{{3}})+'
