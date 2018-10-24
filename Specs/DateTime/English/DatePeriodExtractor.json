@@ -3726,5 +3726,17 @@
         "Length": 12
       }
     ]
+  },
+  {
+    "Input": "from 10/1 to 11/7",
+    "NotSupportedByDesign": "java",
+    "Results": [
+      {
+        "Text": "from 10/1 to 11/7",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 17
+      }
+    ]
   }
 ]

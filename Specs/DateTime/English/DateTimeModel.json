@@ -7412,5 +7412,61 @@
     "NotSupportedByDesign": "java",
     "Results": []
     
+  },
+  {
+    "Input": "from 10/1 to 11/7",
+    "Context": {
+      "ReferenceDateTime": "2018-10-24T12:00:00"
+    },
+    "NotSupportedByDesign": "java",
+    "Results": [
+      {
+        "Text": "from 10/1 to 11/7",
+        "Start": 0,
+        "End": 16,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution":{
+          "values": [
+            {
+              "timex": "(XXXX-10-01,XXXX-11-07,P37D)",
+              "type": "daterange",
+              "start": "2018-10-01",
+              "end": "2018-11-07"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "from 10/25 to 01/25",
+    "Context": {
+      "ReferenceDateTime": "2018-10-24T12:00:00"
+    },
+    "NotSupportedByDesign": "java",
+    "Results": [
+      {
+        "Text": "from 10/25 to 01/25",
+        "Start": 0,
+        "End": 18,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution":{
+          "values": [
+            {
+              "timex": "(XXXX-10-25,XXXX-01-25,P92D)",
+              "type": "daterange",
+              "start": "2017-10-25",
+              "end": "2018-01-25"
+            },
+            {
+              "timex": "(XXXX-10-25,XXXX-01-25,P92D)",
+              "type": "daterange",
+              "start": "2018-10-25",
+              "end": "2019-01-25"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

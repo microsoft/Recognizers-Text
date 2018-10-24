@@ -922,6 +922,12 @@ class BaseDatePeriodParser(DateTimeParser):
         past_begin = pr_begin.value.past_value
         past_end = pr_end.value.past_value
 
+        if future_begin > future_end:
+            future_begin = past_begin
+
+        if past_end < past_begin:
+            past_end = future_end
+
         result.sub_date_time_entities = prs
         result.timex = f'({pr_begin.timex_str},{pr_end.timex_str},P{(future_end - future_begin).days}D)'
         result.future_value = [future_begin, future_end]
