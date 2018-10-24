@@ -1,9 +1,10 @@
-﻿using System.Collections.Immutable;
+﻿using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Globalization;
 using System.Text.RegularExpressions;
+
 using Microsoft.Recognizers.Definitions;
 using Microsoft.Recognizers.Definitions.Spanish;
-using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.Number.Spanish;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit.Spanish
@@ -36,6 +37,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Spanish
         public Regex CompoundUnitConnectorRegex { get; set; }
 
         public Regex PmNonUnitRegex { get; set; }
+
+        public Dictionary<Regex, Regex> AmbiguityFiltersDict { get; } = null;
 
         public abstract ImmutableDictionary<string, string> SuffixList { get; }
 

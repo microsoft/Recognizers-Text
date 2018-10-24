@@ -1,4 +1,5 @@
-﻿using System.Collections.Immutable;
+﻿using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Globalization;
 using System.Text.RegularExpressions;
 
@@ -36,6 +37,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Italian
         public Regex CompoundUnitConnectorRegex { get; set; }
 
         public Regex PmNonUnitRegex { get; set; }
+
+        public Dictionary<Regex, Regex> AmbiguityFiltersDict { get; } = null;
 
         public abstract ImmutableDictionary<string, string> SuffixList { get; }
 

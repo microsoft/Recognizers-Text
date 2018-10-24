@@ -1602,8 +1602,7 @@
         "End": 473
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Dollar: 143,80 yens, en haut 0. 95; 1. 8500 marques, en haut 0. 0085.",
     "Results": [
@@ -1629,5 +1628,10 @@
         "End": 5
       }
     ]
+  },
+  {
+    "Input": "pour cent",
+    "Notsupported" : "javascript,python,java",
+    "Results": []
   }
 ]
