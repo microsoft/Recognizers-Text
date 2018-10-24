@@ -14,17 +14,20 @@ export class PhoneNumberParser extends BaseSequenceParser {
     continueDigitDeductionScore = 10;
     tailSameDeductionScore = 10;
     continueFormatIndicatorDeductionScore = 20;
+    wrongFormatIndicatorDeductionScore = 20;
     maxFormatIndicatorNum = 3;
     maxLengthAwardNum = 3;
     tailSameLimit = 2;
     phoneNumberLengthBase = 8;
     pureDigitLengthLimit = 11;
+    completeBracketRegex = new RegExp("\\(.*\\)");
+    singleBracketRegex = new RegExp("\\(|\\)");
     tailSameDigitRegex = new RegExp("([\\d])\\1{2,10}$");
     pureDigitRegex = new RegExp("^\\d*$");
     continueDigitRegex = new RegExp("\\d{5}\\d*", "ig");
     digitRegex = new RegExp("\\d", "ig");
 
-    ScorePhoneNumber(phoneNumberText: string): number{
+    ScorePhoneNumber(phoneNumberText: string): number {
         let score = this.baseScore;
 
         let countryCodeRegex = new RegExp(BasePhoneNumbers.CountryCodeRegex);
@@ -41,6 +44,9 @@ export class PhoneNumberParser extends BaseSequenceParser {
             var formatIndicatorCount = formatMathes.length;
             score += Math.min(formatIndicatorCount, this.maxFormatIndicatorNum) * this.formattedAward;
             score -= formatMathes.some(match => match.length > 1) ? this.continueFormatIndicatorDeductionScore : 0;
+            if (this.singleBracketRegex.test(phoneNumberText) && !this.completeBracketRegex.test(phoneNumberText)) {
+                score -= this.wrongFormatIndicatorDeductionScore;
+            }
         }
        
         // Same tailing digit deduction
@@ -69,7 +75,7 @@ export class PhoneNumberParser extends BaseSequenceParser {
             score -= Math.max(phoneNumberText.match(this.continueDigitRegex).length - 1, 0) * this.continueDigitDeductionScore;
         }
 
-        return Math.max(Math.min(score, this.scoreUpperLimit), this.scoreLowerLimit) / (this.scoreUpperLimit-this.scoreLowerLimit);
+        return Math.max(Math.min(score, this.scoreUpperLimit), this.scoreLowerLimit) / (this.scoreUpperLimit - this.scoreLowerLimit);
     }
 
     parse(extResult: ExtractResult): ParseResult {

@@ -18,11 +18,14 @@ class PhoneNumberParser(SequenceParser):
     continueDigitDeductionScore = 10
     tailSameDeductionScore = 10
     continueFormatIndicatorDeductionScore = 20
+    wrongFormatIndicatorDeductionScore = 20
     maxFormatIndicatorNum = 3
     maxLengthAwardNum = 3
     tailSameLimit = 2
     phoneNumberLengthBase = 8
     pureDigitLengthLimit = 11
+    completeBracketRegex = re.compile('\\(.*\\)')
+    singleBracketRegex = re.compile('\\(|\\)')
     tailSameDigitRegex = re.compile('([\\d])\\1{2,10}$')
     pureDigitRegex = re.compile('^\\d*$')
     continueDigitRegex = re.compile('\\d{5}\\d*')
@@ -47,6 +50,9 @@ class PhoneNumberParser(SequenceParser):
             score += min(format_indicator_count, self.maxFormatIndicatorNum) * self.formattedAward
             score -= self.continueFormatIndicatorDeductionScore if any(
                 len(match[0]) > 1 for match in format_matches) else 0
+            if self.singleBracketRegex.search(phone_number_text) and not \
+                    self.completeBracketRegex.search(phone_number_text):
+                score -= self.wrongFormatIndicatorDeductionScore
 
         # Length score
         if self.digitRegex.search(phone_number_text):

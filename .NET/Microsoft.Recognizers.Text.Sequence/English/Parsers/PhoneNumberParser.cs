@@ -18,11 +18,14 @@ namespace Microsoft.Recognizers.Text.Sequence.English
         private static double continueDigitDeductionScore = 10;
         private static double tailSameDeductionScore = 10;
         private static double continueFormatIndicatorDeductionScore = 20;
+        private static double wrongFormatDeductionScore = 20;
         private static int maxFormatIndicatorNum = 3;
         private static int maxLengthAwardNum = 3;
         private static int tailSameLimit = 2;
         private static int phoneNumberLengthBase = 8;
         private static int pureDigitLengthLimit = 11;
+        private static string completeBracketRegex = @"\(.*\)";
+        private static string singleBracketRegex = @"\(|\)";
         private static string tailSameDigitRegex = @"([\d])\1{2,10}$";
         private static string pureDigitRegex = @"^\d*$";
         private static string continueDigitRegex = @"\d{5}\d*";
@@ -53,6 +56,11 @@ namespace Microsoft.Recognizers.Text.Sequence.English
                 int formatIndicatorCount = formatMatches.Count;
                 score += Math.Min(formatIndicatorCount, maxFormatIndicatorNum) * formattedAward;
                 score -= formatMatches.Cast<Match>().Any(o => o.Value.Length > 1) ? continueFormatIndicatorDeductionScore : 0;
+                if (Regex.IsMatch(phoneNumberText, singleBracketRegex) && 
+                    !Regex.IsMatch(phoneNumberText, completeBracketRegex))
+                {
+                    score -= wrongFormatDeductionScore;
+                }
             }
 
             // Length score
