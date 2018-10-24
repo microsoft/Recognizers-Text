@@ -1,4 +1,5 @@
 ﻿using Microsoft.Recognizers.Definitions;
+using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Linq;
@@ -11,6 +12,8 @@ namespace Microsoft.Recognizers.Text.Sequence
         internal override ImmutableDictionary<Regex, string> Regexes { get; }
 
         protected sealed override string ExtractType { get; } = Constants.SYS_PHONE_NUMBER;
+
+        private static List<char> OperatorList => BasePhoneNumbers.OperatorList.ToList();
 
         private static List<char> SeparatorCharList => BasePhoneNumbers.SeparatorCharList.ToList();
 
@@ -53,6 +56,11 @@ namespace Microsoft.Recognizers.Text.Sequence
             Regexes = regexes.ToImmutableDictionary();
         }
 
+        private bool CheckFormattedPhoneNumber(string phoneNumberText)
+        {
+            return Regex.IsMatch(phoneNumberText, BasePhoneNumbers.FormatIndicatorRegex);
+        }
+
         public override List<ExtractResult> Extract(string text)
         {
             var ers = base.Extract(text);
@@ -62,8 +70,18 @@ namespace Microsoft.Recognizers.Text.Sequence
                 if (er.Start != 0)
                 {
                     var ch = text[(int)(er.Start - 1)];
-                    if (SeparatorCharList.Contains(ch))
+                    if (OperatorList.Contains(ch))
                     {
+                        if (SeparatorCharList.Contains(ch) &&
+                            CheckFormattedPhoneNumber(er.Text) && 
+                            er.Start >= 2)
+                        {
+                            var chGap = text[(int)(er.Start - 2)];
+                            if (!Char.IsNumber(chGap))
+                            {
+                                continue;
+                            }
+                        }
                         ers.Remove(er);
                     }
                 }
