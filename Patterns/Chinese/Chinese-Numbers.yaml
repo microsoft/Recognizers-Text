@@ -173,6 +173,10 @@ SingleRegex: !nestedRegex
 AllIntRegex: !nestedRegex
   def: ((({ZeroToNineIntegerRegex}|{ZeroToNineFullHalfRegex}|[十拾])\s*(\s*[多几幾余]?\s*{RoundNumberIntegerRegex}){1,2}|[十拾]|{RoundNumberIntegerRegex}\s*({ZeroToNineIntegerRegex}|{ZeroToNineFullHalfRegex}|零))\s*((({ZeroToNineIntegerRegex}|{ZeroToNineFullHalfRegex})\s*(\s*[多几幾余]?\s*{RoundNumberIntegerRegex}){1,2}|零)\s*)*{ZeroToNineIntegerRegex}?|{ZeroToNineIntegerRegex})
   references: [ZeroToNineIntegerRegex, ZeroToNineFullHalfRegex, RoundNumberIntegerRegex]
+PlaceHolderPureNumber: !simpleRegex
+  def: \b
+PlaceHolderDefault: !simpleRegex
+  def: \D|\b
 NumbersSpecialsChars: !nestedRegex
   def: (({NegativeNumberTermsRegexNum}|{NegativeNumberTermsRegex})\s*)?{ZeroToNineFullHalfRegex}+
   references: [NegativeNumberTermsRegexNum, ZeroToNineFullHalfRegex, NegativeNumberTermsRegex ]

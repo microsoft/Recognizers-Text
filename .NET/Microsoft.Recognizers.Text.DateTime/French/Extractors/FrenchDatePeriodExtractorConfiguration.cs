@@ -272,7 +272,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         {
             DatePointExtractor = new BaseDateExtractor(new FrenchDateExtractorConfiguration(this));
             CardinalExtractor = Number.French.CardinalExtractor.GetInstance();
-            OrdinalExtractor = new Number.French.OrdinalExtractor();
+            OrdinalExtractor = Number.French.OrdinalExtractor.GetInstance();
             DurationExtractor = new BaseDurationExtractor(new FrenchDurationExtractorConfiguration(this));
             NumberParser = new BaseNumberParser(new FrenchNumberParserConfiguration());
         }

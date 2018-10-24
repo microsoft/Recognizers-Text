@@ -198,7 +198,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         {
             DatePointExtractor = new BaseDateExtractor(new PortugueseDateExtractorConfiguration(this));
             CardinalExtractor = Number.Portuguese.CardinalExtractor.GetInstance();
-            OrdinalExtractor = new Number.Portuguese.OrdinalExtractor();
+            OrdinalExtractor = Number.Portuguese.OrdinalExtractor.GetInstance();
             DurationExtractor = new BaseDurationExtractor(new PortugueseDurationExtractorConfiguration(this));
             NumberParser = new BaseNumberParser(new PortugueseNumberParserConfiguration());
         }

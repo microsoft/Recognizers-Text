@@ -32,7 +32,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public SpanishDateTimeExtractorConfiguration(IOptionsConfiguration config) : base(config)
         {
-            IntegerExtractor = new IntegerExtractor();
+            IntegerExtractor = Number.Spanish.IntegerExtractor.GetInstance();
             DatePointExtractor = new BaseDateExtractor(new SpanishDateExtractorConfiguration(this));
             TimePointExtractor = new BaseTimeExtractor(new SpanishTimeExtractorConfiguration(this));
             DurationExtractor = new BaseDurationExtractor(new SpanishDurationExtractorConfiguration(this));

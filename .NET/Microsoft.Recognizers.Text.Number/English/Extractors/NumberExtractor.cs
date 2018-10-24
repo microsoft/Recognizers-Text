@@ -45,7 +45,7 @@ namespace Microsoft.Recognizers.Text.Number.English
 
             var builder = ImmutableDictionary.CreateBuilder<Regex, TypeTag>();
             
-            //Add Cardinal
+            // Add Cardinal
             CardinalExtractor cardExtract = null;
             switch (mode)
             {
@@ -66,7 +66,7 @@ namespace Microsoft.Recognizers.Text.Number.English
 
             builder.AddRange(cardExtract.Regexes);
             
-            //Add Fraction
+            // Add Fraction
             var fracExtract = FractionExtractor.GetInstance(Options);
             builder.AddRange(fracExtract.Regexes);
 

@@ -107,8 +107,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public PortugueseDateExtractorConfiguration(IOptionsConfiguration config) : base(config)
         {
-            IntegerExtractor = new IntegerExtractor();
-            OrdinalExtractor = new OrdinalExtractor();
+            IntegerExtractor = Number.Portuguese.IntegerExtractor.GetInstance();
+            OrdinalExtractor = Number.Portuguese.OrdinalExtractor.GetInstance();
             NumberParser = new BaseNumberParser(new PortugueseNumberParserConfiguration());
             DurationExtractor = new BaseDurationExtractor(new PortugueseDurationExtractorConfiguration(this));
             UtilityConfiguration = new PortugueseDatetimeUtilityConfiguration();

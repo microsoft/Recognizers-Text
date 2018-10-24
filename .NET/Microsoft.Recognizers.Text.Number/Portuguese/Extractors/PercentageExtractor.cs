@@ -11,7 +11,7 @@ namespace Microsoft.Recognizers.Text.Number.Portuguese
         protected override NumberOptions Options { get; }
 
         public PercentageExtractor(NumberOptions options = NumberOptions.None) : base(
-            new NumberExtractor(options: options))
+            NumberExtractor.GetInstance(options: options))
         {
             Options = options;
             Regexes = InitRegexes();

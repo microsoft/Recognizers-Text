@@ -31,7 +31,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public PortugueseDateTimeExtractorConfiguration(IOptionsConfiguration config) : base(config)
         {
-            IntegerExtractor = new IntegerExtractor();
+            IntegerExtractor = Number.Portuguese.IntegerExtractor.GetInstance();
             DatePointExtractor = new BaseDateExtractor(new PortugueseDateExtractorConfiguration(this));
             TimePointExtractor = new BaseTimeExtractor(new PortugueseTimeExtractorConfiguration(this));
             DurationExtractor = new BaseDurationExtractor(new PortugueseDurationExtractorConfiguration(this));

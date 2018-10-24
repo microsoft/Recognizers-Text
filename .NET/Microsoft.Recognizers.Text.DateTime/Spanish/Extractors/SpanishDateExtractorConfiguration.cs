@@ -104,8 +104,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public SpanishDateExtractorConfiguration(IOptionsConfiguration config) : base(config)
         {
-            IntegerExtractor = new IntegerExtractor();
-            OrdinalExtractor = new OrdinalExtractor();
+            IntegerExtractor = Number.Spanish.IntegerExtractor.GetInstance();
+            OrdinalExtractor = Number.Spanish.OrdinalExtractor.GetInstance();
             NumberParser = new BaseNumberParser(new SpanishNumberParserConfiguration());
             DurationExtractor = new BaseDurationExtractor(new SpanishDurationExtractorConfiguration(this));
             UtilityConfiguration = new SpanishDatetimeUtilityConfiguration();

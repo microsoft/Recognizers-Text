@@ -13,7 +13,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.French
         protected FrenchNumberWithUnitExtractorConfiguration(CultureInfo ci)
         {
             this.CultureInfo = ci;
-            this.UnitNumExtractor = new NumberExtractor();
+            this.UnitNumExtractor = NumberExtractor.GetInstance();
             this.BuildPrefix = NumbersWithUnitDefinitions.BuildPrefix;
             this.BuildSuffix = NumbersWithUnitDefinitions.BuildSuffix;
             this.ConnectorToken = NumbersWithUnitDefinitions.ConnectorToken;

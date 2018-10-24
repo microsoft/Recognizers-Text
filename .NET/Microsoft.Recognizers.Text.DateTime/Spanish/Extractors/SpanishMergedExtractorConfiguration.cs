@@ -80,7 +80,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             DateTimeAltExtractor = new BaseDateTimeAltExtractor(new SpanishDateTimeAltExtractorConfiguration(this));
             HolidayExtractor = new BaseHolidayExtractor(new SpanishHolidayExtractorConfiguration(this));
             TimeZoneExtractor = new BaseTimeZoneExtractor(new SpanishTimeZoneExtractorConfiguration(this));
-            IntegerExtractor = new Number.Spanish.IntegerExtractor();
+            IntegerExtractor = Number.Spanish.IntegerExtractor.GetInstance();
         }
 
         Regex IMergedExtractorConfiguration.AfterRegex => AfterRegex;

@@ -61,21 +61,38 @@ namespace Microsoft.Recognizers.Text.DateTime
         
         public static string ShortTime(int hour, int min, int second)
         {
+            string timeString;
+
             if (min < 0 && second < 0)
             {
-                return $"{Constants.TimeTimexPrefix}{hour.ToString("D2")}";
+                timeString = $"{Constants.TimeTimexPrefix}{hour:D2}";
             }
             else if (second < 0)
             {
-                return $"{Constants.TimeTimexPrefix}{string.Join(Constants.TimeTimexConnector, hour.ToString("D2"), min.ToString("D2"))}";
+                timeString = $"{Constants.TimeTimexPrefix}{LuisTime(hour, min)}";
+            }
+            else
+            {
+                timeString = $"{Constants.TimeTimexPrefix}{LuisTime(hour, min, second)}";
             }
 
-            return $"{Constants.TimeTimexPrefix}{string.Join(Constants.TimeTimexConnector, hour.ToString("D2"), min.ToString("D2"), second.ToString("D2"))}";
+            return timeString;
         }
 
-        public static string LuisTime(int hour, int min, int second)
+        public static string LuisTime(int hour, int min, int second = -1)
         {
-            return string.Join(Constants.TimeTimexConnector, hour.ToString("D2"), min.ToString("D2"), second.ToString("D2"));
+            string result;
+
+            if (second == -1)
+            {
+                result = string.Join(Constants.TimeTimexConnector, hour.ToString("D2"), min.ToString("D2"));
+            }
+            else
+            {
+                result = string.Join(Constants.TimeTimexConnector, hour.ToString("D2"), min.ToString("D2"), second.ToString("D2"));
+            }
+
+            return result;
         }
 
         public static string LuisTime(DateObject time)
@@ -129,39 +146,40 @@ namespace Microsoft.Recognizers.Text.DateTime
         public static string AllStringToPm(string timeStr)
         {
             var matches = HourTimexRegex.Matches(timeStr);
-            var splited = new List<string>();
+            var splits = new List<string>();
 
             int lastPos = 0;
             foreach (Match match in matches)
             {
                 if (lastPos != match.Index)
                 {
-                    splited.Add(timeStr.Substring(lastPos, match.Index - lastPos));
+                    splits.Add(timeStr.Substring(lastPos, match.Index - lastPos));
                 }
-                splited.Add(timeStr.Substring(match.Index, match.Length));
+
+                splits.Add(timeStr.Substring(match.Index, match.Length));
                 lastPos = match.Index + match.Length;
             }
 
             if (!string.IsNullOrEmpty(timeStr.Substring(lastPos)))
             {
-                splited.Add(timeStr.Substring(lastPos));
+                splits.Add(timeStr.Substring(lastPos));
             }
 
-            for (int i = 0; i < splited.Count; i += 1)
+            for (int i = 0; i < splits.Count; i += 1)
             {
-                if (HourTimexRegex.IsMatch(splited[i]))
+                if (HourTimexRegex.IsMatch(splits[i]))
                 {
-                    splited[i] = ToPm(splited[i]);
+                    splits[i] = ToPm(splits[i]);
                 }
             }
 
             // Modify weekDay timex for the cases which cross day boundary
-            if (splited.Count >= 4)
+            if (splits.Count >= 4)
             {
-                var weekDayStartMatch = WeekDayTimexRegex.Match(splited[0]).Groups[1];
-                var weekDayEndMatch = WeekDayTimexRegex.Match(splited[2]).Groups[1];
-                var hourStartMatch = HourTimexRegex.Match(splited[1]).Groups[1];
-                var hourEndMatch = HourTimexRegex.Match(splited[3]).Groups[1];
+                var weekDayStartMatch = WeekDayTimexRegex.Match(splits[0]).Groups[1];
+                var weekDayEndMatch = WeekDayTimexRegex.Match(splits[2]).Groups[1];
+                var hourStartMatch = HourTimexRegex.Match(splits[1]).Groups[1];
+                var hourEndMatch = HourTimexRegex.Match(splits[3]).Groups[1];
 
                 if (int.TryParse(weekDayStartMatch.Value, out var weekDayStart) &&
                     int.TryParse(weekDayEndMatch.Value, out var weekDayEnd) &&
@@ -171,12 +189,12 @@ namespace Microsoft.Recognizers.Text.DateTime
                     if (hourEnd < hourStart && weekDayStart == weekDayEnd)
                     {
                         weekDayEnd = weekDayEnd == Constants.WeekDayCount ? 1 : weekDayEnd + 1;
-                        splited[2] = splited[2].Substring(0, weekDayEndMatch.Index) + weekDayEnd;
+                        splits[2] = splits[2].Substring(0, weekDayEndMatch.Index) + weekDayEnd;
                     }
                 }
             }
 
-            return string.Concat(splited);
+            return string.Concat(splits);
         }
 
         public static string ToPm(string timeStr)
@@ -188,20 +206,19 @@ namespace Microsoft.Recognizers.Text.DateTime
                 timeStr = timeStr.Substring(1);
             }
 
-            var splited = timeStr.Split(new string[] { Constants.TimeTimexConnector }, StringSplitOptions.RemoveEmptyEntries);
-            var hour = int.Parse(splited[0]);
+            var splits = timeStr.Split(new[] { Constants.TimeTimexConnector }, StringSplitOptions.RemoveEmptyEntries);
+            var hour = int.Parse(splits[0]);
             hour = hour >= Constants.HalfDayHourCount ? hour - Constants.HalfDayHourCount: hour + Constants.HalfDayHourCount;
-            splited[0] = hour.ToString("D2");
+            splits[0] = hour.ToString("D2");
 
-            return hasT ? Constants.TimeTimexPrefix + string.Join(Constants.TimeTimexConnector, splited) : string.Join(Constants.TimeTimexConnector, splited);
+            return hasT ? Constants.TimeTimexPrefix + string.Join(Constants.TimeTimexConnector, splits) : string.Join(Constants.TimeTimexConnector, splits);
         }
 
         public static string ToIsoWeekTimex(DateObject monday)
         {
             var cal = DateTimeFormatInfo.InvariantInfo.Calendar;
-            return monday.Year.ToString("D4") + "-W" + 
-                cal.GetWeekOfYear(monday, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday)
-                .ToString("D2");
+
+            return $"{monday.Year:D4}-W{cal.GetWeekOfYear(monday, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday):D2}";
         }
     }
 }

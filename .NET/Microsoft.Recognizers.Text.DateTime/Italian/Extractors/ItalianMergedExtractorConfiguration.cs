@@ -86,7 +86,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             HolidayExtractor = new BaseHolidayExtractor(new ItalianHolidayExtractorConfiguration(this));
             TimeZoneExtractor = new BaseTimeZoneExtractor(new ItalianTimeZoneExtractorConfiguration(this));
             DateTimeAltExtractor = new BaseDateTimeAltExtractor(new ItalianDateTimeAltExtractorConfiguration(this));
-            IntegerExtractor = new Number.Italian.IntegerExtractor();
+            IntegerExtractor = Number.Italian.IntegerExtractor.GetInstance();
         }
 
         Regex IMergedExtractorConfiguration.AfterRegex => AfterRegex;

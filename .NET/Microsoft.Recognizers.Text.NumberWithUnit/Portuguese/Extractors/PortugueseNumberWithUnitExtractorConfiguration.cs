@@ -1,9 +1,9 @@
 ﻿using System.Collections.Immutable;
 using System.Globalization;
 using System.Text.RegularExpressions;
+
 using Microsoft.Recognizers.Definitions;
 using Microsoft.Recognizers.Definitions.Portuguese;
-using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.Number.Portuguese;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit.Portuguese
@@ -13,7 +13,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Portuguese
         protected PortugueseNumberWithUnitExtractorConfiguration(CultureInfo ci)
         {
             this.CultureInfo = ci;
-            this.UnitNumExtractor = new NumberExtractor();
+            this.UnitNumExtractor = NumberExtractor.GetInstance();
             this.BuildPrefix = NumbersWithUnitDefinitions.BuildPrefix;
             this.BuildSuffix = NumbersWithUnitDefinitions.BuildSuffix;
             this.ConnectorToken = NumbersWithUnitDefinitions.ConnectorToken;
