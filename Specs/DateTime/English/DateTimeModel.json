@@ -7412,5 +7412,30 @@
     "NotSupportedByDesign": "java",
     "Results": []
     
+  },
+  {
+    "Input": "from 10/1 to 11/7",
+    "Context": {
+      "ReferenceDateTime": "2018-10-24T12:00:00"
+    },
+    "NotSupportedByDesign": "java",
+    "Results": [
+      {
+        "Text": "from 10/1 to 11/7",
+        "Start": 0,
+        "End": 16,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution":{
+          "values": [
+            {
+              "timex": "(XXXX-10-01,XXXX-11-07,P37D)",
+              "type": "daterange",
+              "start": "2018-10-01",
+              "end": "2018-11-07"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
