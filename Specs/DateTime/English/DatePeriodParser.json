@@ -5564,5 +5564,31 @@
         "Length": 17
       }
     ]
+  },
+  {
+    "Input": "from 10/25 to 01/25",
+    "Context": {
+      "ReferenceDateTime": "2018-10-24T12:00:00"
+    },
+    "NotSupportedByDesign": "java",
+    "Results": [
+      {
+        "Text": "from 10/25 to 01/25",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-10-25,XXXX-01-25,P92D)",
+          "FutureResolution": {
+            "startDate": "2018-10-25",
+            "endDate": "2019-01-25"
+          },
+          "PastResolution": {
+            "startDate": "2017-10-25",
+            "endDate": "2018-01-25"
+          }
+        },
+        "Start": 0,
+        "Length": 19
+      }
+    ]
   }
 ]
