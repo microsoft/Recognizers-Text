@@ -24,6 +24,6 @@ class BasePhoneNumbers:
     CountryCodeRegex = f'^(\\(\\s?(\\+\\s?|00)\\d{{1,3}}\\s?\\)|(\\+\\s?|00)\\d{{1,3}})'
     AreaCodeIndicatorRegex = f'\\('
     FormatIndicatorRegex = f'(\\s|-|/|\\.)+'
-    SeparatorCharList = ['-', ' ']
-    OperatorList = ['-', '.', '/', '+', '*', '#']
+    SpecialBoundaryMarkers = ['-', ' ']
+    BoundaryMarkers = ['-', '.', '/', '+', '#', '*']
 # pylint: enable=line-too-long

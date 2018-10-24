@@ -13,9 +13,9 @@ namespace Microsoft.Recognizers.Text.Sequence
 
         protected sealed override string ExtractType { get; } = Constants.SYS_PHONE_NUMBER;
 
-        private static List<char> OperatorList => BasePhoneNumbers.OperatorList.ToList();
+        private static List<char> BoundaryMarkers => BasePhoneNumbers.BoundaryMarkers.ToList();
 
-        private static List<char> SeparatorCharList => BasePhoneNumbers.SeparatorCharList.ToList();
+        private static List<char> SpecialBoundaryMarkers => BasePhoneNumbers.SpecialBoundaryMarkers.ToList();
 
         public BasePhoneNumberExtractor()
         {
@@ -70,9 +70,9 @@ namespace Microsoft.Recognizers.Text.Sequence
                 if (er.Start != 0)
                 {
                     var ch = text[(int)(er.Start - 1)];
-                    if (OperatorList.Contains(ch))
+                    if (BoundaryMarkers.Contains(ch))
                     {
-                        if (SeparatorCharList.Contains(ch) &&
+                        if (SpecialBoundaryMarkers.Contains(ch) &&
                             CheckFormattedPhoneNumber(er.Text) && 
                             er.Start >= 2)
                         {

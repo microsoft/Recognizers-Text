@@ -37,19 +37,19 @@ namespace Microsoft.Recognizers.Definitions
 		public const string CountryCodeRegex = @"^(\(\s?(\+\s?|00)\d{1,3}\s?\)|(\+\s?|00)\d{1,3})";
 		public const string AreaCodeIndicatorRegex = @"\(";
 		public const string FormatIndicatorRegex = @"(\s|-|/|\.)+";
-		public static readonly IList<char> SeparatorCharList = new List<char>
+		public static readonly IList<char> SpecialBoundaryMarkers = new List<char>
 		{
 			'-',
 			' '
 		};
-		public static readonly IList<char> OperatorList = new List<char>
+		public static readonly IList<char> BoundaryMarkers = new List<char>
 		{
 			'-',
 			'.',
 			'/',
 			'+',
-			'*',
-			'#'
+			'#',
+			'*'
 		};
 	}
 }

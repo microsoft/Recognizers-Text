@@ -23,6 +23,6 @@ export namespace BasePhoneNumbers {
 	export const CountryCodeRegex = `^(\\(\\s?(\\+\\s?|00)\\d{1,3}\\s?\\)|(\\+\\s?|00)\\d{1,3})`;
 	export const AreaCodeIndicatorRegex = `\\(`;
 	export const FormatIndicatorRegex = `(\\s|-|/|\\.)+`;
-	export const SeparatorCharList = [ '-',' ' ];
-	export const OperatorList = [ '-','.','/','+','*','#' ];
+	export const SpecialBoundaryMarkers = [ '-',' ' ];
+	export const BoundaryMarkers = [ '-','.','/','+','#','*' ];
 }

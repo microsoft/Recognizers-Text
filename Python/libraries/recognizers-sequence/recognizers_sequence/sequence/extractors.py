@@ -87,16 +87,15 @@ class BasePhoneNumberExtractor(SequenceExtractor):
         extract_results = super().extract(source)
         ret = []
         format_indicator_regex = re.compile(BasePhoneNumbers.FormatIndicatorRegex, re.IGNORECASE | re.DOTALL)
-        #digit_regex = re.compile("[0-9]")
         for er in extract_results:
             ch = source[er.start - 1]
-            if er.start == 0 or ch not in BasePhoneNumbers.OperatorList:
+            if er.start == 0 or ch not in BasePhoneNumbers.BoundaryMarkers:
                 ret.append(er)
-            elif ch in BasePhoneNumbers.SeparatorCharList and \
+            elif ch in BasePhoneNumbers.SpecialBoundaryMarkers and \
                     format_indicator_regex.search(er.text) and \
                     er.start >= 2:
-                chGap=source[er.start - 2]
-                if not chGap.isdigit():
+                ch_gap = source[er.start - 2]
+                if not ch_gap.isdigit():
                     ret.append(er)
         return ret
 

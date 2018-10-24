@@ -91,14 +91,14 @@ export class BasePhoneNumberExtractor extends BaseSequenceExtractor {
         let digitRegex = new RegExp("[0-9]")
         for (let er of ers) {
             let ch = source[er.start - 1];
-            if (er.start === 0 || BasePhoneNumbers.OperatorList.indexOf(ch) === -1) {                
+            if (er.start === 0 || BasePhoneNumbers.BoundaryMarkers.indexOf(ch) === -1) {
                 ret.push(er); 
             }
-            else if(BasePhoneNumbers.SeparatorCharList.indexOf(ch) != -1 && 
+            else if (BasePhoneNumbers.SpecialBoundaryMarkers.indexOf(ch) != -1 &&
                     formatIndicatorRegex.test(er.text) && 
-                    er.start>=2){
+                    er.start >= 2) {
                         let chGap = source[er.start - 2];
-                        if (!chGap.match(digitRegex)){
+                        if (!chGap.match(digitRegex)) {
                             ret.push(er);
                         }
                     }

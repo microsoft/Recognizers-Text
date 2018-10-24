@@ -33,18 +33,18 @@ AreaCodeIndicatorRegex: !simpleRegex
   def: \(
 FormatIndicatorRegex: !simpleRegex
   def: (\s|-|/|\.)+
-SeparatorCharList: !list
+SpecialBoundaryMarkers: !list
   types: [char]
   entries:
     - '-'
     - ' '
-OperatorList: !list
+BoundaryMarkers: !list
   types: [char]
   entries:
     - '-'
     - '.'
     - '/'
     - '+'
-    - '*'
     - '#'
+    - '*'
 ...
