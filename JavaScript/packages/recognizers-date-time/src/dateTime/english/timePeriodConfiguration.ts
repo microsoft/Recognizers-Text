@@ -96,29 +96,29 @@ export class EnglishTimePeriodParserConfiguration implements ITimePeriodParserCo
 
         if (trimmedText.endsWith(Constants.EN_MORNING)) {
             result.timex = EnglishDateTime.TimeOfDayTimex.get(Constants.EN_MORNING);
-            result.beginHour = EnglishDateTime.TimeOfDayBeginHour.get(Constants.EN_MORNING);
-            result.endHour = EnglishDateTime.TimeOfDayEndHour.get(Constants.EN_MORNING);
+            result.beginHour = 8;
+            result.endHour = 12;
         }
         else if (trimmedText.endsWith(Constants.EN_AFTERNOON)) {
             result.timex = EnglishDateTime.TimeOfDayTimex.get(Constants.EN_AFTERNOON);
-            result.beginHour = EnglishDateTime.TimeOfDayBeginHour.get(Constants.EN_AFTERNOON);
-            result.endHour = EnglishDateTime.TimeOfDayEndHour.get(Constants.EN_AFTERNOON);
+            result.beginHour = 12;
+            result.endHour = 16;
         }
         else if (trimmedText.endsWith(Constants.EN_EVENING)) {
             result.timex = EnglishDateTime.TimeOfDayTimex.get(Constants.EN_EVENING);
-            result.beginHour = EnglishDateTime.TimeOfDayBeginHour.get(Constants.EN_EVENING);
-            result.endHour = EnglishDateTime.TimeOfDayEndHour.get(Constants.EN_EVENING);
+            result.beginHour = 16;
+            result.endHour = 20;
         }
         else if (trimmedText === Constants.EN_DAYTIME) {
             result.timex = EnglishDateTime.TimeOfDayTimex.get(Constants.EN_DAYTIME);
-            result.beginHour = EnglishDateTime.TimeOfDayBeginHour.get(Constants.EN_DAYTIME);
-            result.endHour = EnglishDateTime.TimeOfDayEndHour.get(Constants.EN_DAYTIME);
+            result.beginHour = 8;
+            result.endHour = 18;
         }
         else if (trimmedText.endsWith(Constants.EN_NIGHT)) {
             result.timex = EnglishDateTime.TimeOfDayTimex.get(Constants.EN_NIGHT);
-            result.beginHour = EnglishDateTime.TimeOfDayBeginHour.get(Constants.EN_NIGHT);
-            result.endHour = EnglishDateTime.TimeOfDayEndHour.get(Constants.EN_NIGHT);
-            result.endMin = EnglishDateTime.TimeOfDayEndMin.get(Constants.EN_NIGHT);
+            result.beginHour = 20;
+            result.endHour = 23;
+            result.endMin = 59;
         }
         else {
             result.timex = null;

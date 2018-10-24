@@ -64,39 +64,39 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             if (trimmedText.EndsWith(Constants.EN_MORNING))
             {
                 timex = DateTimeDefinitions.TimeOfDayTimex[Constants.EN_MORNING];
-                beginHour = DateTimeDefinitions.TimeOfDayBeginHour[Constants.EN_MORNING];
-                endHour = DateTimeDefinitions.TimeOfDayEndHour[Constants.EN_MORNING];
+                beginHour = 8;
+                endHour = 12;
             }
             else if (trimmedText.EndsWith(Constants.EN_AFTERNOON))
             {
                 timex = DateTimeDefinitions.TimeOfDayTimex[Constants.EN_AFTERNOON];
-                beginHour = DateTimeDefinitions.TimeOfDayBeginHour[Constants.EN_AFTERNOON];
-                endHour = DateTimeDefinitions.TimeOfDayEndHour[Constants.EN_AFTERNOON];
+                beginHour = 12;
+                endHour = 16;
             }
             else if (trimmedText.EndsWith(Constants.EN_EVENING))
             {
                 timex = DateTimeDefinitions.TimeOfDayTimex[Constants.EN_EVENING];
-                beginHour = DateTimeDefinitions.TimeOfDayBeginHour[Constants.EN_EVENING];
-                endHour = DateTimeDefinitions.TimeOfDayEndHour[Constants.EN_EVENING];
+                beginHour = 16;
+                endHour = 20;
             }
             else if (trimmedText.Equals(Constants.EN_DAYTIME))
             {
                 timex = DateTimeDefinitions.TimeOfDayTimex[Constants.EN_DAYTIME];
-                beginHour = DateTimeDefinitions.TimeOfDayBeginHour[Constants.EN_DAYTIME];
-                endHour = DateTimeDefinitions.TimeOfDayEndHour[Constants.EN_DAYTIME];
+                beginHour = 8;
+                endHour = 18;
             }
             else if (trimmedText.EndsWith(Constants.EN_NIGHT))
             {
                 timex = DateTimeDefinitions.TimeOfDayTimex[Constants.EN_NIGHT];
-                beginHour = DateTimeDefinitions.TimeOfDayBeginHour[Constants.EN_NIGHT];
-                endHour = DateTimeDefinitions.TimeOfDayEndHour[Constants.EN_NIGHT];
-                endMin = DateTimeDefinitions.TimeOfDayEndMin[Constants.EN_NIGHT];
+                beginHour = 20;
+                endHour = 23;
+                endMin = 59;
             }
             else if (DateTimeDefinitions.BusinessHourSplitStrings.All(o => trimmedText.Contains(o)))
             {
                 timex = DateTimeDefinitions.TimeOfDayTimex[Constants.EN_BUSINESS_HOUR];
-                beginHour = DateTimeDefinitions.TimeOfDayBeginHour[Constants.EN_BUSINESS_HOUR];
-                endHour = DateTimeDefinitions.TimeOfDayEndHour[Constants.EN_BUSINESS_HOUR];
+                beginHour = 8;
+                endHour = 18;
             }
             else
             {

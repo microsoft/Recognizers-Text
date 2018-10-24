@@ -126,25 +126,25 @@ export class ChineseTimePeriodParser extends BaseTimePeriodParser {
 
         if (trimmedText.endsWith(Constants.CN_MORNING)) {
             timex = ChineseDateTime.TimeOfDayTimex.get(Constants.CN_MORNING);
-            beginHour = ChineseDateTime.TimeOfDayBeginHour.get(Constants.CN_MORNING);
-            endHour = ChineseDateTime.TimeOfDayEndHour.get(Constants.CN_MORNING);
+            beginHour = 8;
+            endHour = 12;
         } else if (trimmedText.endsWith(Constants.CN_AFTERNOON)) {
             timex = ChineseDateTime.TimeOfDayTimex.get(Constants.CN_AFTERNOON);
-            beginHour = ChineseDateTime.TimeOfDayBeginHour.get(Constants.CN_AFTERNOON);
-            endHour = ChineseDateTime.TimeOfDayEndHour.get(Constants.CN_AFTERNOON);
+            beginHour = 12;
+            endHour = 16;
         } else if (trimmedText.endsWith(Constants.CN_EVENING)) {
             timex = ChineseDateTime.TimeOfDayTimex.get(Constants.CN_EVENING);
-            beginHour = ChineseDateTime.TimeOfDayBeginHour.get(Constants.CN_EVENING);
-            endHour = ChineseDateTime.TimeOfDayEndHour.get(Constants.CN_EVENING);
+            beginHour = 16;
+            endHour = 20;
         } else if (trimmedText.localeCompare(Constants.CN_DAYTIME) == 0) {
             timex = ChineseDateTime.TimeOfDayTimex.get(Constants.CN_DAYTIME);
-            beginHour = ChineseDateTime.TimeOfDayBeginHour.get(Constants.CN_DAYTIME);
-            endHour = ChineseDateTime.TimeOfDayEndHour.get(Constants.CN_DAYTIME);
+            beginHour = 8;
+            endHour = 18;
         } else if (trimmedText.endsWith(Constants.CN_NIGHT)) {
             timex = ChineseDateTime.TimeOfDayTimex.get(Constants.CN_NIGHT);
-            beginHour = ChineseDateTime.TimeOfDayBeginHour.get(Constants.CN_NIGHT);
-            endHour = ChineseDateTime.TimeOfDayEndHour.get(Constants.CN_NIGHT);
-            endMin = ChineseDateTime.TimeOfDayEndMin.get(Constants.CN_NIGHT);
+            beginHour = 20;
+            endHour = 23;
+            endMin = 59;
         } else {
             timex = null;
             matched = false;

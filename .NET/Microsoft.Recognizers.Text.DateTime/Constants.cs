@@ -1,6 +1,8 @@
 ﻿// ReSharper disable InconsistentNaming
 
 using Microsoft.Recognizers.Definitions;
+using EnglishDateTimeDefinitions = Microsoft.Recognizers.Definitions.English.DateTimeDefinitions;
+using ChineseDateTimeDefinitions = Microsoft.Recognizers.Definitions.Chinese.DateTimeDefinitions;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
@@ -149,18 +151,18 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string TimeTimexPrefix = "T";
 
         // Time of day in English
-        public const string EN_MORNING = "morning";
-        public const string EN_AFTERNOON = "afternoon";
-        public const string EN_EVENING = "evening";
-        public const string EN_DAYTIME = "daytime";
-        public const string EN_NIGHT = "night";
-        public const string EN_BUSINESS_HOUR = "businessHour";
+        public const string EN_MORNING = EnglishDateTimeDefinitions.EN_MORNING;
+        public const string EN_AFTERNOON = EnglishDateTimeDefinitions.EN_AFTERNOON;
+        public const string EN_EVENING = EnglishDateTimeDefinitions.EN_EVENING;
+        public const string EN_DAYTIME = EnglishDateTimeDefinitions.EN_DAYTIME;
+        public const string EN_NIGHT = EnglishDateTimeDefinitions.EN_NIGHT;
+        public const string EN_BUSINESS_HOUR = EnglishDateTimeDefinitions.EN_BUSINESS_HOUR;
 
         // Time of day in Chinese
-        public const string CN_MORNING = "上午";
-        public const string CN_AFTERNOON = "下午";
-        public const string CN_EVENING = "晚上";
-        public const string CN_DAYTIME = "白天";
-        public const string CN_NIGHT = "深夜";
+        public const string CN_MORNING = ChineseDateTimeDefinitions.CN_MORNING;
+        public const string CN_AFTERNOON = ChineseDateTimeDefinitions.CN_AFTERNOON;
+        public const string CN_EVENING = ChineseDateTimeDefinitions.CN_EVENING;
+        public const string CN_DAYTIME = ChineseDateTimeDefinitions.CN_DAYTIME;
+        public const string CN_NIGHT = ChineseDateTimeDefinitions.CN_NIGHT;
     }
 }

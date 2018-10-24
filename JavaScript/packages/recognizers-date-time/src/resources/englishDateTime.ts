@@ -253,8 +253,11 @@ export namespace EnglishDateTime {
 	export const SuperfluousWordList = [ 'preferably','how about','maybe','say','like' ];
 	export const DurationDateRestrictions = [ 'today','now' ];
 	export const AmbiguityFiltersDict: ReadonlyMap<string, string> = new Map<string, string>([["\\bmorning|afternoon|evening|night|day\\b", "\\bgood\\s+(morning|afternoon|evening|night|day)\\b"],["\\bmay\\b", "\\b((^may i)|(i|you|he|she|we|they)\\s+may|(may\\s+((((also|not|(also not)|well)\\s+)?(be|contain|constitute|email|e-mail|take|have|result|involve|get|work|reply))|(or may not))))\\b"]]);
+	export const EN_MORNING = 'morning';
+	export const EN_AFTERNOON = 'afternoon';
+	export const EN_EVENING = 'evening';
+	export const EN_DAYTIME = 'daytime';
+	export const EN_NIGHT = 'night';
+	export const EN_BUSINESS_HOUR = 'businessHour';
 	export const TimeOfDayTimex: ReadonlyMap<string, string> = new Map<string, string>([["morning", "TMO"],["afternoon", "TAF"],["evening", "TEV"],["daytime", "TDT"],["night", "TNI"],["businessHour", "TBH"]]);
-	export const TimeOfDayBeginHour: ReadonlyMap<string, number> = new Map<string, number>([["morning", 8],["afternoon", 12],["evening", 16],["daytime", 8],["night", 20],["businessHour", 8]]);
-	export const TimeOfDayEndHour: ReadonlyMap<string, number> = new Map<string, number>([["morning", 12],["afternoon", 16],["evening", 20],["daytime", 18],["night", 23],["businessHour", 18]]);
-	export const TimeOfDayEndMin: ReadonlyMap<string, number> = new Map<string, number>([["night", 59]]);
 }

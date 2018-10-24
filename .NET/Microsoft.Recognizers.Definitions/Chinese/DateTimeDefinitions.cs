@@ -611,6 +611,11 @@ namespace Microsoft.Recognizers.Definitions.Chinese
 			{ "pm", 12 }
 		};
 		public const string DefaultLanguageFallback = "DMY";
+		public const string CN_MORNING = "上午";
+		public const string CN_AFTERNOON = "下午";
+		public const string CN_EVENING = "晚上";
+		public const string CN_DAYTIME = "白天";
+		public const string CN_NIGHT = "深夜";
 		public static readonly Dictionary<string, string> TimeOfDayTimex = new Dictionary<string, string>
 		{
 			{ "上午", "TMO" },
@@ -618,26 +623,6 @@ namespace Microsoft.Recognizers.Definitions.Chinese
 			{ "晚上", "TEV" },
 			{ "白天", "TDT" },
 			{ "深夜", "TNI" }
-		};
-		public static readonly Dictionary<string, int> TimeOfDayBeginHour = new Dictionary<string, int>
-		{
-			{ "上午", 8 },
-			{ "下午", 12 },
-			{ "晚上", 16 },
-			{ "白天", 8 },
-			{ "深夜", 20 }
-		};
-		public static readonly Dictionary<string, int> TimeOfDayEndHour = new Dictionary<string, int>
-		{
-			{ "上午", 12 },
-			{ "下午", 16 },
-			{ "晚上", 20 },
-			{ "白天", 18 },
-			{ "深夜", 23 }
-		};
-		public static readonly Dictionary<string, int> TimeOfDayEndMin = new Dictionary<string, int>
-		{
-			{ "深夜", 59 }
 		};
 	}
 }

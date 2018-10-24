@@ -1,4 +1,6 @@
 import { BaseDateTime } from "../resources/baseDateTime";
+import { EnglishDateTime } from "../resources/englishDateTime";
+import { ChineseDateTime } from "../resources/chineseDateTime";
 
 export class Constants {
     static readonly SYS_DATETIME_DATE: string = "date";
@@ -57,17 +59,17 @@ export class Constants {
 
     static readonly REF_UNDEF_MOD: string = 'ref_undef';
 
-    static readonly EN_MORNING: string = 'morning';
-    static readonly EN_AFTERNOON: string = 'afternoon';
-    static readonly EN_EVENING: string = 'evening';
-    static readonly EN_DAYTIME: string = 'daytime';
-    static readonly EN_NIGHT: string = 'night';
+    static readonly EN_MORNING: string = EnglishDateTime.EN_MORNING;
+    static readonly EN_AFTERNOON: string = EnglishDateTime.EN_AFTERNOON;
+    static readonly EN_EVENING: string = EnglishDateTime.EN_EVENING;
+    static readonly EN_DAYTIME: string = EnglishDateTime.EN_DAYTIME;
+    static readonly EN_NIGHT: string = EnglishDateTime.EN_NIGHT;
 
-    static readonly CN_MORNING: string = '上午';
-    static readonly CN_AFTERNOON: string = '下午';
-    static readonly CN_EVENING: string = '晚上';
-    static readonly CN_DAYTIME: string = '白天';
-    static readonly CN_NIGHT: string = '深夜';
+    static readonly CN_MORNING: string = ChineseDateTime.CN_MORNING;
+    static readonly CN_AFTERNOON: string = ChineseDateTime.CN_AFTERNOON;
+    static readonly CN_EVENING: string = ChineseDateTime.CN_EVENING;
+    static readonly CN_DAYTIME: string = ChineseDateTime.CN_DAYTIME;
+    static readonly CN_NIGHT: string = ChineseDateTime.CN_NIGHT;
 }
 
 export class TimeTypeConstants {

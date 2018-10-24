@@ -629,6 +629,12 @@ namespace Microsoft.Recognizers.Definitions.English
 			{ "\\bmorning|afternoon|evening|night|day\\b", "\\bgood\\s+(morning|afternoon|evening|night|day)\\b" },
 			{ "\\bmay\\b", "\\b((^may i)|(i|you|he|she|we|they)\\s+may|(may\\s+((((also|not|(also not)|well)\\s+)?(be|contain|constitute|email|e-mail|take|have|result|involve|get|work|reply))|(or may not))))\\b" }
 		};
+		public const string EN_MORNING = "morning";
+		public const string EN_AFTERNOON = "afternoon";
+		public const string EN_EVENING = "evening";
+		public const string EN_DAYTIME = "daytime";
+		public const string EN_NIGHT = "night";
+		public const string EN_BUSINESS_HOUR = "businessHour";
 		public static readonly Dictionary<string, string> TimeOfDayTimex = new Dictionary<string, string>
 		{
 			{ "morning", "TMO" },
@@ -637,28 +643,6 @@ namespace Microsoft.Recognizers.Definitions.English
 			{ "daytime", "TDT" },
 			{ "night", "TNI" },
 			{ "businessHour", "TBH" }
-		};
-		public static readonly Dictionary<string, int> TimeOfDayBeginHour = new Dictionary<string, int>
-		{
-			{ "morning", 8 },
-			{ "afternoon", 12 },
-			{ "evening", 16 },
-			{ "daytime", 8 },
-			{ "night", 20 },
-			{ "businessHour", 8 }
-		};
-		public static readonly Dictionary<string, int> TimeOfDayEndHour = new Dictionary<string, int>
-		{
-			{ "morning", 12 },
-			{ "afternoon", 16 },
-			{ "evening", 20 },
-			{ "daytime", 18 },
-			{ "night", 23 },
-			{ "businessHour", 18 }
-		};
-		public static readonly Dictionary<string, int> TimeOfDayEndMin = new Dictionary<string, int>
-		{
-			{ "night", 59 }
 		};
 	}
 }
