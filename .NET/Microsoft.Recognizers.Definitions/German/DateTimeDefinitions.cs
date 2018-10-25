@@ -166,7 +166,7 @@ namespace Microsoft.Recognizers.Definitions.German
 		public const string HalfRegex = @"(((ein(en|er|es|e)?)\s*)|\b)(?<half>halb(en|er|es|e)?\s+(?<unit>jahr(er|es|e)?|monat(s|e)?|woch(en|e)?|tag(en|er|es|e)?|stund(en|e)?))\b";
 		public const string ConjunctionRegex = @"\b((und(\s+für)?)|mit|für)\b";
 		public static readonly string HolidayRegex1 = $@"\b((dieses Jahr)\s*)?(?<holiday>reformationstag|reformationsfest|gedenktag der reformation|martinstag|st. martin|sankt martin|martinsfest|martini|nikolaustag|dreikönigstag|dreikönigsfest|walpurgisnacht|nationalfeiertag|mariä empfängnis|weihnachten|weihnachtstag|erster weihnachtstag|1. weihnachtstag|erster weihnachtsfeiertag|1. weihnachtsfeiertag|zweiter weihnachtstag|zweiter weihnachtsfeiertag|2. weihnachtstag|zweiter weihnachtsfeiertag|stefanitag|stafanstag|berchtoldstag|bechtelistag|bächtelistag|berchtelistag|bärzelistag|josefstag|joseftag|josefitag|ostermontag|ostersonntag|bundesfeiertag|bundesfeier|mariä himmelfahrt|tag der deutschen einheit|ostern|vatertag|muttertag|erntedankfest|thanksgiving|martin luther king day|martin luther king jr day|washington's birthday|washington birthday|canberraday|tag der arbeit|columbus day|memorial day|yuandan|mao's birthday|teachersday|teacher day|single day|allerheiligen|tag der jugend|kindertag|frauentag|treeplanting day|tag des baumes|girlsday|white lover day|loverday|weihnachten|weihnachtstag|xmas|neujahr|neujahrstag|neujahr|neujahrstag|neujahr|inauguration day|murmeltiertag|valentinstag|st patrick day|erster april|april scherz|georgstag|mayday|maitag|tag der arbeit|maifeiertag|cincodemayo|geburt johannes des täufers|us unabhängigkeitstag|unabhängigkeitstag|sturm auf die bastille|halloween|allerheiligen|allerseelen|guy fawkes day|guy fawkes night|veterans day|heiligabend|silvester)(\s+((diesen)\s+)?({YearRegex}|{RelativeRegex}\s+jahres))?\b";
-		public static readonly string HolidayRegex2 = $@"\b((dieses Jahr)\s*)?(?<holiday>martin luther king|martin luther king jr|allerheiligen|tree planting day|white lover|st patrick|st george|cinco de mayo|independence|us independence|allerheiligen|allerseelen|guy fawkes|silvester|weiberfastnacht|karneval|aschermittwoch|palmensonntag|karfreitag|christi himmelfahrt|pfingstsonntag|pfingstmontag|fronleichnam|rosenmontag|fastnacht|gründonnerstag|himmelfahrt|volkstrauertag|buß und bettag|toten Sonntag|erster advent|zweiter advent|dritter advent|vierter advent|schweizer buß und bettag)(\s+((diesen)\s+)?({YearRegex}|{RelativeRegex}\s+jahres))?\b";
+		public static readonly string HolidayRegex2 = $@"\b((dieses Jahr)\s*)?(?<holiday>martin luther king|martin luther king jr|allerheiligen|tree planting day|white lover|st patrick|st george|cinco de mayo|independence|us independence|allerheiligen|allerseelen|guy fawkes|silvester|weiberfastnacht|karneval|aschermittwoch|palmensonntag|karfreitag|christi himmelfahrt|pfingstsonntag|pfingstmontag|fronleichnam|rosenmontag|fastnacht|gründonnerstag|himmelfahrt|volkstrauertag|buß und bettag|totensonntag|ersteradvent|1. advent|zweiteradvent|2. Advent|dritteradvent|3. advent|vierteradvent|4. advent schweizer buß und bettag)(\s+((diesen)\s+)?({YearRegex}|{RelativeRegex}\s+jahres))?\b";
 		public static readonly string HolidayRegex3 = $@"((dieses Jahr)\s*)?(?<holiday>(canberra|columbus|thanks\s*giving|female|single|teacher's|youth|children|arbor|girls|chsmilbuild|lover|labor|inauguration|groundhog|valentine's|baptiste|bastille|halloween|veterans|memorial|mid(-| )autumn|moon|spring|lantern|qingming|dragon boat|new years'|new year's|new year 's|new years|new year)\s+(day))(\s+((diesen)\s+)?({YearRegex}|{RelativeRegex}\s+jahres))?";
 		public const string DateTokenPrefix = "am ";
 		public const string TimeTokenPrefix = "um ";
@@ -246,7 +246,7 @@ namespace Microsoft.Recognizers.Definitions.German
 			{ "holythursday", "" },
 			{ "memorialDayGermany", "" },
 			{ "dayofrepentance", "" },
-			{ "totenSonntag", "" },
+			{ "totensonntag", "" },
 			{ "firstadvent", "" },
 			{ "secondadvent", "" },
 			{ "thirdadvent", "" },
@@ -757,7 +757,7 @@ namespace Microsoft.Recognizers.Definitions.German
 			{ "ashwednesday", new string[] { "aschermittwoch" } },
 			{ "palmsunday", new string[] { "palmensonntag" } },
 			{ "goodfriday", new string[] { "karfreitag" } },
-			{ "ascensionofchrist", new string[] { "christi himmelfahrt" } },
+			{ "ascensionofchrist", new string[] { "christihimmelfahrt" } },
 			{ "whitsunday", new string[] { "pfingstsonntag" } },
 			{ "whitemonday", new string[] { "pfingstmontag" } },
 			{ "corpuschristi", new string[] { "fronleichnam" } },
@@ -765,13 +765,13 @@ namespace Microsoft.Recognizers.Definitions.German
 			{ "fastnacht", new string[] { "fastnacht" } },
 			{ "holythursday", new string[] { "gründonnerstag", "himmelfahrt" } },
 			{ "memorialDayGermany", new string[] { "volkstrauertag" } },
-			{ "dayofrepentance", new string[] { "buß und bettag" } },
-			{ "totenSonntag", new string[] { "toten Sonntag" } },
-			{ "firstadvent", new string[] { "erster advent" } },
-			{ "secondadvent", new string[] { "zweiter advent" } },
-			{ "thirdadvent", new string[] { "dritter advent" } },
-			{ "fourthadvent", new string[] { "vierter advent" } },
-			{ "chedayofrepentance", new string[] { "schweizer buß und bettag" } }
+			{ "dayofrepentance", new string[] { "bußundbettag" } },
+			{ "totensonntag", new string[] { "totebsonntag" } },
+			{ "firstadvent", new string[] { "ersteradvent", "1.advent" } },
+			{ "secondadvent", new string[] { "zweiteradvent", "2.advent" } },
+			{ "thirdadvent", new string[] { "dritteradvent", "3.advent" } },
+			{ "fourthadvent", new string[] { "vierteradvent", "4.advent" } },
+			{ "chedayofrepentance", new string[] { "schweizerbußundbettag" } }
 		};
 		public static readonly Dictionary<string, int> WrittenDecades = new Dictionary<string, int>
 		{
