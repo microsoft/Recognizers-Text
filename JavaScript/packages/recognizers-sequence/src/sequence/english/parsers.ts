@@ -1,6 +1,7 @@
 import { BasePhoneNumbers } from "../../resources/basePhoneNumbers";
 import { BaseSequenceParser, BaseIpParser } from "../parsers";
 import { ExtractResult, ParseResult, Match } from "@microsoft/recognizers-text";
+import { BaseGUID } from "../../resources/baseGUID";
 
 export class PhoneNumberParser extends BaseSequenceParser {
     scoreUpperLimit = 100;
@@ -107,5 +108,36 @@ export class URLParser extends BaseSequenceParser {
 }
 
 export class GUIDParser extends BaseSequenceParser {
+    scoreUpperLimit = 100;
+    scoreLowerLimit = 0;
+    baseScore = 100;
+    noBoundaryPenalty = 10;
+    noFormatPenalty = 10;
+    pureDigitPenalty = 15;
+    pureDigitRegex = new RegExp("^\\d*$");
+    formatRegex = new RegExp("-");
 
+    ScoreGUID(GUIDText: string): number {
+        let score = this.baseScore;
+
+        let guidElementRegex = new RegExp(BaseGUID.GUIDRegexElement);
+
+        if (guidElementRegex.test(GUIDText)){
+            let elementMatch = GUIDText.match(guidElementRegex);
+            let startIndex = elementMatch.index;
+            let elementGUID = elementMatch[0];
+            score -= startIndex == 0 ? this.noBoundaryPenalty : 0;
+            score -= this.formatRegex.test(elementGUID) ? 0 : this.noFormatPenalty;
+            score -= this.pureDigitRegex.test(GUIDText) ? this.pureDigitPenalty : 0;
+        }
+
+        return Math.max(Math.min(score, this.scoreUpperLimit), this.scoreLowerLimit) / (this.scoreUpperLimit - this.scoreLowerLimit);
+    }
+
+    parse(extResult: ExtractResult): ParseResult {
+        let result = new ParseResult(extResult);
+        result.resolutionStr = extResult.text;
+        result.value = this.ScoreGUID(extResult.text);
+        return result;
+    }
 }
