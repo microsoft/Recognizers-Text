@@ -9,6 +9,7 @@ from ..parsers import DateTimeParser
 from ..base_configs import BaseDateParserConfiguration, DateTimeUtilityConfiguration
 from ..base_timeperiod import TimePeriodParserConfiguration, MatchedTimeRegex
 from ..utilities import TimexUtil
+from ..constants import Constants
 
 class EnglishTimePeriodParserConfiguration(TimePeriodParserConfiguration):
     @property
@@ -71,15 +72,15 @@ class EnglishTimePeriodParserConfiguration(TimePeriodParserConfiguration):
 
         time_of_day = ""
         if trimmed_text.endswith(EnglishDateTime.Morning):
-            time_of_day = EnglishDateTime.Morning
+            time_of_day = Constants.Morning
         elif trimmed_text.endswith(EnglishDateTime.Afternoon):
-            time_of_day = EnglishDateTime.Afternoon
+            time_of_day = Constants.Afternoon
         elif trimmed_text.endswith(EnglishDateTime.Evening):
-            time_of_day = EnglishDateTime.Evening
+            time_of_day = Constants.Evening
         elif trimmed_text == EnglishDateTime.Daytime:
-            time_of_day = EnglishDateTime.Daytime
+            time_of_day = Constants.Daytime
         elif trimmed_text.endswith(EnglishDateTime.Night):
-            time_of_day = EnglishDateTime.Night
+            time_of_day = Constants.Night
         else:
             return MatchedTimeRegex(
                 matched=False,
@@ -89,8 +90,8 @@ class EnglishTimePeriodParserConfiguration(TimePeriodParserConfiguration):
                 end_min=0
             )
 
-        timex = EnglishDateTime.TimeOfDayTimex[time_of_day]
-        parse_result = TimexUtil.parse_time_of_day(timex)
+        parse_result = TimexUtil.parse_time_of_day(time_of_day)
+        timex = parse_result.timex
         begin_hour = parse_result.begin_hour
         end_hour = parse_result.end_hour
         end_min = parse_result.end_min

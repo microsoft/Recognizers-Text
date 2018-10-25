@@ -126,23 +126,23 @@ export class ChineseTimePeriodParser extends BaseTimePeriodParser {
 
         let timeOfDay = "";
         if (trimmedText.endsWith(ChineseDateTime.Morning)) {
-            timeOfDay = ChineseDateTime.Morning;
+            timeOfDay = Constants.Morning;
         } else if (trimmedText.endsWith(ChineseDateTime.Afternoon)) {
-            timeOfDay = ChineseDateTime.Afternoon;
+            timeOfDay = Constants.Afternoon;
         } else if (trimmedText.endsWith(ChineseDateTime.Evening)) {
-            timeOfDay = ChineseDateTime.Evening;
+            timeOfDay = Constants.Evening;
         } else if (trimmedText.localeCompare(ChineseDateTime.Daytime) == 0) {
-            timeOfDay = ChineseDateTime.Daytime;
+            timeOfDay = Constants.Daytime;
         } else if (trimmedText.endsWith(ChineseDateTime.Night)) {
-            timeOfDay = ChineseDateTime.Night;
+            timeOfDay = Constants.Night;
         } else {
             timex = null;
             matched = false;
             return {matched, timex, beginHour, endHour, endMin};
         }
 
-        timex = ChineseDateTime.TimeOfDayTimex.get(timeOfDay);
-        let parseResult = TimexUtil.parseTimeOfDay(timex);
+        let parseResult = TimexUtil.parseTimeOfDay(timeOfDay);
+        timex = parseResult.timeX;
         beginHour = parseResult.beginHour;
         endHour = parseResult.endHour;
         endMin = parseResult.endMin;

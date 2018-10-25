@@ -822,12 +822,4 @@ Afternoon: 下午
 Evening: 晚上
 Daytime: 白天
 Night: 深夜
-TimeOfDayTimex: !dictionary
-  types: [string, string]
-  entries:
-    上午: TMO
-    下午: TAF
-    晚上: TEV
-    白天: TDT
-    深夜: TNI
 ...

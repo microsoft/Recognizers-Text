@@ -85,6 +85,7 @@ class DateTimeResolutionResult:
 
 class TimeOfDayResolution:
     def __init__(self):
+        self.timex: str = None 
         self.begin_hour: int = 0
         self.end_hour: int = 0
         self.end_min: int = 0
@@ -448,25 +449,31 @@ class AgoLaterUtil:
 
 class TimexUtil:
     @staticmethod
-    def parse_time_of_day(timex: str) -> TimeOfDayResolution:
+    def parse_time_of_day(tod: str) -> TimeOfDayResolution:
         result = TimeOfDayResolution()
 
-        if timex == Constants.Morning:
+        if tod == Constants.Morning:
+            result.timex = Constants.Morning
             result.begin_hour = 8
             result.end_hour = 12
-        elif timex == Constants.Afternoon:
+        elif tod == Constants.Afternoon:
+            result.timex = Constants.Afternoon
             result.begin_hour = 12
             result.end_hour = 16
-        elif timex == Constants.Evening:
+        elif tod == Constants.Evening:
+            result.timex = Constants.Evening
             result.begin_hour = 16
             result.end_hour = 20
-        elif timex == Constants.Daytime:
+        elif tod == Constants.Daytime:
+            result.timex = Constants.Daytime
             result.begin_hour = 8
             result.end_hour = 18
-        elif timex == Constants.BusinessHour:
+        elif tod == Constants.BusinessHour:
+            result.timex = Constants.BusinessHour
             result.begin_hour = 8
             result.end_hour = 18
-        elif timex == Constants.Night:
+        elif tod == Constants.Night:
+            result.timex = Constants.Night
             result.begin_hour = 20
             result.end_hour = 23
             result.end_min = 59

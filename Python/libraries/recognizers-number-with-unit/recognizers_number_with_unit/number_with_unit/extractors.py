@@ -213,7 +213,7 @@ class NumberWithUnitExtractor(Extractor):
                 if match.group() == Constants.AMBIGUOUS_TIME_TERM:
                     non_unit_match = self.config.pm_non_unit_regex.finditer(source)
                     for time in non_unit_match:
-                        if self._is_dimension_falls_in_time(match, time):
+                        if self._dimension_inside_time(match, time):
                             is_not_unit = True
 
                 if is_not_unit:
@@ -275,7 +275,7 @@ class NumberWithUnitExtractor(Extractor):
                         return 1
                     return 0
 
-    def _is_dimension_falls_in_time(self, dimension: Match, time: Match) -> bool:
+    def _dimension_inside_time(self, dimension: Match, time: Match) -> bool:
         is_sub_match = False
         if dimension.start() >= time.start() and dimension.end() <= time.end():
             is_sub_match = True

@@ -116,23 +116,23 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             var timeOfDay = "";
             if (trimmedText.EndsWith(DateTimeDefinitions.Morning))
             {
-                timeOfDay = DateTimeDefinitions.Morning;
+                timeOfDay = Constants.Morning;
             }
             else if (trimmedText.EndsWith(DateTimeDefinitions.Afternoon))
             {
-                timeOfDay = DateTimeDefinitions.Afternoon;
+                timeOfDay = Constants.Afternoon;
             }
             else if (trimmedText.EndsWith(DateTimeDefinitions.Evening))
             {
-                timeOfDay = DateTimeDefinitions.Evening;
+                timeOfDay = Constants.Evening;
             }
             else if (trimmedText.Equals(DateTimeDefinitions.Daytime))
             {
-                timeOfDay = DateTimeDefinitions.Daytime;
+                timeOfDay = Constants.Daytime;
             }
             else if (trimmedText.EndsWith(DateTimeDefinitions.Night))
             {
-                timeOfDay = DateTimeDefinitions.Night;
+                timeOfDay = Constants.Night;
             }
             else
             {
@@ -140,8 +140,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 return false;
             }
 
-            timex = DateTimeDefinitions.TimeOfDayTimex[timeOfDay];
-            var parseResult = TimexUtility.ParseTimeOfDay(timex);
+            var parseResult = TimexUtility.ParseTimeOfDay(timeOfDay);
+            timex = parseResult.Timex;
             beginHour = parseResult.BeginHour;
             endHour = parseResult.EndHour;
             endMin = parseResult.EndMin;

@@ -578,10 +578,4 @@ class EnglishDateTime:
     Daytime = 'daytime'
     Night = 'night'
     BusinessHour = 'businessHour'
-    TimeOfDayTimex = dict([('morning', 'TMO'),
-                           ('afternoon', 'TAF'),
-                           ('evening', 'TEV'),
-                           ('daytime', 'TDT'),
-                           ('night', 'TNI'),
-                           ('businessHour', 'TBH')])
 # pylint: enable=line-too-long

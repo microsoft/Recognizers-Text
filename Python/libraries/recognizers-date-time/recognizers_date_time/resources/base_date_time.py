@@ -67,10 +67,4 @@ class BaseDateTime:
                                             ('labour', '-09-WXX-1-1'),
                                             ('columbus', '-10-WXX-1-2'),
                                             ('memorial', '-05-WXX-1-4')])
-    Morning = 'TMO'
-    Afternoon = 'TAF'
-    Evening = 'TEV'
-    Daytime = 'TDT'
-    Night = 'TNI'
-    BusinessHour = 'TBH'
 # pylint: enable=line-too-long

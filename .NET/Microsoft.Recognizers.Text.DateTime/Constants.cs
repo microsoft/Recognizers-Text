@@ -153,11 +153,11 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string TimeTimexPrefix = "T";
 
         // Timex of TimeOfDay
-        public const string Morning = BaseDateTime.Morning;
-        public const string Afternoon = BaseDateTime.Afternoon;
-        public const string Evening = BaseDateTime.Evening;
-        public const string Daytime = BaseDateTime.Daytime;
-        public const string Night = BaseDateTime.Night;
-        public const string BusinessHour = BaseDateTime.BusinessHour;
+        public const string Morning = "TMO";
+        public const string Afternoon = "TAF";
+        public const string Evening = "TEV";
+        public const string Daytime = "TDT";
+        public const string Night = "TNI";
+        public const string BusinessHour = "TBH";
     }
 }

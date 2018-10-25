@@ -965,13 +965,4 @@ Evening: evening
 Daytime: daytime
 Night: night
 BusinessHour: businessHour
-TimeOfDayTimex: !dictionary
-  types: [string, string]
-  entries:
-    morning: TMO
-    afternoon: TAF
-    evening: TEV
-    daytime: TDT
-    night: TNI
-    businessHour: TBH
 ...

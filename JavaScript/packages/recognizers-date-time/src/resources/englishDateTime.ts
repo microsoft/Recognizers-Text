@@ -259,5 +259,4 @@ export namespace EnglishDateTime {
 	export const Daytime = 'daytime';
 	export const Night = 'night';
 	export const BusinessHour = 'businessHour';
-	export const TimeOfDayTimex: ReadonlyMap<string, string> = new Map<string, string>([["morning", "TMO"],["afternoon", "TAF"],["evening", "TEV"],["daytime", "TDT"],["night", "TNI"],["businessHour", "TBH"]]);
 }

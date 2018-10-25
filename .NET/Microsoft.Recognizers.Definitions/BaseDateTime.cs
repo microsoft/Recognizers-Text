@@ -82,11 +82,5 @@ namespace Microsoft.Recognizers.Definitions
 			{ "columbus", "-10-WXX-1-2" },
 			{ "memorial", "-05-WXX-1-4" }
 		};
-		public const string Morning = "TMO";
-		public const string Afternoon = "TAF";
-		public const string Evening = "TEV";
-		public const string Daytime = "TDT";
-		public const string Night = "TNI";
-		public const string BusinessHour = "TBH";
 	}
 }

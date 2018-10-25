@@ -173,5 +173,4 @@ export namespace ChineseDateTime {
 	export const Evening = '晚上';
 	export const Daytime = '白天';
 	export const Night = '深夜';
-	export const TimeOfDayTimex: ReadonlyMap<string, string> = new Map<string, string>([["上午", "TMO"],["下午", "TAF"],["晚上", "TEV"],["白天", "TDT"],["深夜", "TNI"]]);
 }

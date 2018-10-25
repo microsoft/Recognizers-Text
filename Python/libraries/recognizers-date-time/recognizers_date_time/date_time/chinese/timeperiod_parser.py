@@ -77,15 +77,15 @@ class ChineseTimePeriodParser(BaseTimePeriodParser):
 
         time_of_day = ""
         if trimmed_text.endswith(ChineseDateTime.Morning):
-            time_of_day = ChineseDateTime.Morning
+            time_of_day = Constants.Morning
         elif trimmed_text.endswith(ChineseDateTime.Afternoon):
-            time_of_day = ChineseDateTime.Afternoon
+            time_of_day = Constants.Afternoon
         elif trimmed_text.endswith(ChineseDateTime.Evening):
-            time_of_day = ChineseDateTime.Evening
+            time_of_day = Constants.Evening
         elif trimmed_text == ChineseDateTime.Daytime:
-            time_of_day = ChineseDateTime.Daytime
+            time_of_day = Constants.Daytime
         elif trimmed_text.endswith(ChineseDateTime.Night):
-            time_of_day = ChineseDateTime.Night
+            time_of_day = Constants.Night
         else:
             timex = None
             matched = False
@@ -93,8 +93,8 @@ class ChineseTimePeriodParser(BaseTimePeriodParser):
             return {'matched': matched, 'timex': timex, 'begin_hour': begin_hour,
                     'end_hour': end_hour, 'end_min': end_min}
 
-        timex = ChineseDateTime.TimeOfDayTimex[time_of_day]
-        parse_result = TimexUtil.parse_time_of_day(timex)
+        parse_result = TimexUtil.parse_time_of_day(time_of_day)
+        timex = parse_result.timex
         begin_hour = parse_result.begin_hour
         end_hour = parse_result.end_hour
         end_min = parse_result.end_min

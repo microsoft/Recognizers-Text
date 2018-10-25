@@ -241,7 +241,7 @@ export class NumberWithUnitExtractor implements IExtractor {
                         let nonUnitMatch = RegExpUtility.getMatches(this.config.pmNonUnitRegex, source);
 
                         nonUnitMatch.forEach(time => {
-                            if (this.isDimensionFallsInTime(match, time)) {
+                            if (this.DimensionInsideTime(match, time)) {
                                 isNotUnit = true;
                             }
                         });
@@ -366,7 +366,7 @@ export class NumberWithUnitExtractor implements IExtractor {
         }
     }
 
-    private isDimensionFallsInTime(dimension: Match, time: Match): boolean {
+    private DimensionInsideTime(dimension: Match, time: Match): boolean {
         let isSubMatch = false;
         if (dimension.index >= time.index && dimension.index + dimension.length <= time.index + time.length) {
             isSubMatch = true;

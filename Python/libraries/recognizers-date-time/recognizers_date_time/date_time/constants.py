@@ -36,12 +36,12 @@ class Constants:
     MaxTwoDigitYearFutureNum: int = int(BaseDateTime.MaxTwoDigitYearFutureNum)
     MinTwoDigitYearPastNum: int = int(BaseDateTime.MinTwoDigitYearPastNum)
 
-    Morning: str = BaseDateTime.Morning
-    Afternoon: str = BaseDateTime.Afternoon
-    Evening: str = BaseDateTime.Evening
-    Daytime: str = BaseDateTime.Daytime
-    Night: str = BaseDateTime.Night
-    BusinessHour = BaseDateTime.BusinessHour
+    Morning: str = "TMO"
+    Afternoon: str = "TAF"
+    Evening: str = "TEV"
+    Daytime: str = "TDT"
+    Night: str = "TNI"
+    BusinessHour = "TBH"
 
 
 class TimeTypeConstants:

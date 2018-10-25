@@ -59,12 +59,12 @@ export class Constants {
 
     static readonly REF_UNDEF_MOD: string = 'ref_undef';
 
-    static readonly Morning: string = BaseDateTime.Morning;
-    static readonly Afternoon: string = BaseDateTime.Afternoon;
-    static readonly Evening: string = BaseDateTime.Evening;
-    static readonly Daytime: string = BaseDateTime.Daytime;
-    static readonly Night: string = BaseDateTime.Night;
-    static readonly BusinessHour: string = BaseDateTime.BusinessHour;
+    static readonly Morning: string = "TMO";
+    static readonly Afternoon: string = "TAF";
+    static readonly Evening: string = "TEV";
+    static readonly Daytime: string = "TDT";
+    static readonly Night: string = "TNI";
+    static readonly BusinessHour: string = "TBH";
 }
 
 export class TimeTypeConstants {

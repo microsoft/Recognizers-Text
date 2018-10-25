@@ -635,14 +635,5 @@ namespace Microsoft.Recognizers.Definitions.English
 		public const string Daytime = "daytime";
 		public const string Night = "night";
 		public const string BusinessHour = "businessHour";
-		public static readonly Dictionary<string, string> TimeOfDayTimex = new Dictionary<string, string>
-		{
-			{ "morning", "TMO" },
-			{ "afternoon", "TAF" },
-			{ "evening", "TEV" },
-			{ "daytime", "TDT" },
-			{ "night", "TNI" },
-			{ "businessHour", "TBH" }
-		};
 	}
 }

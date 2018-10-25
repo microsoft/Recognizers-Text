@@ -556,9 +556,4 @@ class ChineseDateTime:
     Evening = '晚上'
     Daytime = '白天'
     Night = '深夜'
-    TimeOfDayTimex = dict([('上午', 'TMO'),
-                           ('下午', 'TAF'),
-                           ('晚上', 'TEV'),
-                           ('白天', 'TDT'),
-                           ('深夜', 'TNI')])
 # pylint: enable=line-too-long

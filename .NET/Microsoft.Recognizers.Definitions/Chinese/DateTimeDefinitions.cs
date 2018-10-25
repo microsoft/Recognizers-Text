@@ -616,13 +616,5 @@ namespace Microsoft.Recognizers.Definitions.Chinese
 		public const string Evening = "晚上";
 		public const string Daytime = "白天";
 		public const string Night = "深夜";
-		public static readonly Dictionary<string, string> TimeOfDayTimex = new Dictionary<string, string>
-		{
-			{ "上午", "TMO" },
-			{ "下午", "TAF" },
-			{ "晚上", "TEV" },
-			{ "白天", "TDT" },
-			{ "深夜", "TNI" }
-		};
 	}
 }
