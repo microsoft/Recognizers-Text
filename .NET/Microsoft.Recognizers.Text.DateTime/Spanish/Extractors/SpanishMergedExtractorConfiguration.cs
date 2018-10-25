@@ -3,7 +3,6 @@ using System.Collections.Generic;
 
 using Microsoft.Recognizers.Definitions.Spanish;
 using Microsoft.Recognizers.Text.Matcher;
-using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
@@ -35,7 +34,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public static readonly Regex UnspecificDatePeriodRegex =
             new Regex(DateTimeDefinitions.UnspecificDatePeriodRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex[] FilterWordRegexList =
+        public static readonly Regex[] TermFilterRegexes =
         {
         };
 
@@ -80,7 +79,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             DateTimeAltExtractor = new BaseDateTimeAltExtractor(new SpanishDateTimeAltExtractorConfiguration(this));
             HolidayExtractor = new BaseHolidayExtractor(new SpanishHolidayExtractorConfiguration(this));
             TimeZoneExtractor = new BaseTimeZoneExtractor(new SpanishTimeZoneExtractorConfiguration(this));
-            IntegerExtractor = new Number.Spanish.IntegerExtractor();
+            IntegerExtractor = Number.Spanish.IntegerExtractor.GetInstance();
         }
 
         Regex IMergedExtractorConfiguration.AfterRegex => AfterRegex;
@@ -93,7 +92,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         Regex IMergedExtractorConfiguration.NumberEndingPattern => NumberEndingPattern;
         Regex IMergedExtractorConfiguration.DateAfterRegex => DateAfterRegex;
         Regex IMergedExtractorConfiguration.UnspecificDatePeriodRegex => UnspecificDatePeriodRegex;
-        IEnumerable<Regex> IMergedExtractorConfiguration.FilterWordRegexList => FilterWordRegexList;
+        IEnumerable<Regex> IMergedExtractorConfiguration.TermFilterRegexes => TermFilterRegexes;
         StringMatcher IMergedExtractorConfiguration.SuperfluousWordMatcher => SuperfluousWordMatcher;
     }
 }

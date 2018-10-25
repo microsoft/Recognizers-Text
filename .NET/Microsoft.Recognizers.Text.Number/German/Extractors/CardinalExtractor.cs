@@ -12,7 +12,8 @@ namespace Microsoft.Recognizers.Text.Number.German
 
         protected sealed override string ExtractType { get; } = Constants.SYS_NUM_CARDINAL; //"Cardinal";
 
-        private static readonly ConcurrentDictionary<string, CardinalExtractor> Instances = new ConcurrentDictionary<string, CardinalExtractor>();
+        private static readonly ConcurrentDictionary<string, CardinalExtractor> Instances = 
+            new ConcurrentDictionary<string, CardinalExtractor>();
 
         public static CardinalExtractor GetInstance(string placeholder = NumbersDefinitions.PlaceHolderDefault)
         {

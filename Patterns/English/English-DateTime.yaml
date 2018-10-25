@@ -951,8 +951,8 @@ SuperfluousWordList: !list
     - maybe
     - say
     - like
-DurationDateRestrictions: [ today, now ]
 # For DurationDateRestrictions, only translate these terms if this particular circumstance applies in the target language. If not, keep it empty. 
+DurationDateRestrictions: [ today, now ]
 AmbiguityFiltersDict: !dictionary
   types: [ string, string ]
   entries:

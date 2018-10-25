@@ -25,8 +25,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             SpecialDecadeCases = DateTimeDefinitions.SpecialDecadeCases.ToImmutableDictionary();
 
             CardinalExtractor = Number.Spanish.CardinalExtractor.GetInstance();
-            IntegerExtractor = new IntegerExtractor();
-            OrdinalExtractor = new OrdinalExtractor();
+            IntegerExtractor = Number.Spanish.IntegerExtractor.GetInstance();
+            OrdinalExtractor = Number.Spanish.OrdinalExtractor.GetInstance();
 
             NumberParser = new BaseNumberParser(new SpanishNumberParserConfiguration());
             DateExtractor = new BaseDateExtractor(new SpanishDateExtractorConfiguration(this));

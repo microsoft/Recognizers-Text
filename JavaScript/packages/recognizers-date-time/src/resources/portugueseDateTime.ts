@@ -215,4 +215,5 @@ export namespace PortugueseDateTime {
 	export const SpecialDecadeCases: ReadonlyMap<string, number> = new Map<string, number>([["", 0]]);
 	export const DefaultLanguageFallback = 'DMY';
 	export const DurationDateRestrictions = [  ];
+	export const AmbiguityFiltersDict: ReadonlyMap<string, string> = new Map<string, string>([["null", "null"]]);
 }

@@ -38,6 +38,8 @@ export namespace JapaneseNumeric {
 	export const NotSingleRegex = `(?<!(第|だい))((${RoundNumberIntegerRegex}+(${ZeroToNineIntegerRegex}+|${ZeroToNineFullHalfRegex}+|十)\\s*))|((${ZeroToNineIntegerRegex}+|${ZeroToNineFullHalfRegex}+|十)\\s*(${RoundNumberIntegerRegex}\\s*){1,2})\\s*(([零]?(${ZeroToNineIntegerRegex}+|${ZeroToNineFullHalfRegex}+|十)\\s*${RoundNumberIntegerRegex}{0,1})\\s*)*\\s*(\\s*(以上)?)`;
 	export const SingleRegex = `((${ZeroToNineIntegerRegex}|${ZeroToNineFullHalfRegex}|十)(?=${WhiteListRegex}))`;
 	export const AllIntRegex = `((((${ZeroToNineIntegerRegex}|[十百千])\\s*${RoundNumberIntegerRegex}*)|(${ZeroToNineFullHalfRegex}\\s*${RoundNumberIntegerRegex})){1,2}(\\s*[以上])?)`;
+	export const PlaceHolderPureNumber = `\\b`;
+	export const PlaceHolderDefault = `\\D|\\b`;
 	export const NumbersSpecialsChars = `((${NegativeNumberTermsRegexNum}|${NegativeNumberTermsRegex})\\s*)?${ZeroToNineFullHalfRegex}+`;
 	export const NumbersSpecialsCharsWithSuffix = `${NegativeNumberTermsRegexNum}?${ZeroToNineFullHalfRegex}+\\s*(K|k|M|G|T|Ｍ|Ｋ|ｋ|Ｇ|Ｔ)`;
 	export const DottedNumbersSpecialsChar = `${NegativeNumberTermsRegexNum}?${ZeroToNineFullHalfRegex}{1,3}([,，、]${ZeroToNineFullHalfRegex}{3})+`;

@@ -307,7 +307,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
         public void TestGUID()
         {
             TestPreValidation();
-            ValidateResults();
+            ValidateResults(new string[] { ResolutionKey.Score });
         }
 
         public void TestChoice()

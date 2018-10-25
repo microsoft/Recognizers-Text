@@ -165,6 +165,8 @@ namespace Microsoft.Recognizers.Definitions.Chinese
 		public static readonly string NotSingleRegex = $@"(({ZeroToNineIntegerRegex}|{ZeroToNineFullHalfRegex}|[十拾])\s*(\s*[多几幾余]?\s*{RoundNumberIntegerRegex}){{1,2}}|[十拾]|{RoundNumberIntegerRegex}\s*({ZeroToNineIntegerRegex}|{ZeroToNineFullHalfRegex}|零))\s*((({ZeroToNineIntegerRegex}|{ZeroToNineFullHalfRegex})\s*(\s*[多几幾余]?\s*{RoundNumberIntegerRegex}){{1,2}}|零)\s*)*{ZeroToNineIntegerRegex}?";
 		public static readonly string SingleRegex = $@"(?<!{ZeroToNineIntegerRegex}){ZeroToNineIntegerRegex}(?={WhiteListRegex})";
 		public static readonly string AllIntRegex = $@"((({ZeroToNineIntegerRegex}|{ZeroToNineFullHalfRegex}|[十拾])\s*(\s*[多几幾余]?\s*{RoundNumberIntegerRegex}){{1,2}}|[十拾]|{RoundNumberIntegerRegex}\s*({ZeroToNineIntegerRegex}|{ZeroToNineFullHalfRegex}|零))\s*((({ZeroToNineIntegerRegex}|{ZeroToNineFullHalfRegex})\s*(\s*[多几幾余]?\s*{RoundNumberIntegerRegex}){{1,2}}|零)\s*)*{ZeroToNineIntegerRegex}?|{ZeroToNineIntegerRegex})";
+		public const string PlaceHolderPureNumber = @"\b";
+		public const string PlaceHolderDefault = @"\D|\b";
 		public static readonly string NumbersSpecialsChars = $@"(({NegativeNumberTermsRegexNum}|{NegativeNumberTermsRegex})\s*)?{ZeroToNineFullHalfRegex}+";
 		public static readonly string NumbersSpecialsCharsWithSuffix = $@"{NegativeNumberTermsRegexNum}?{ZeroToNineFullHalfRegex}+\s*(K|k|M|G|T|Ｍ|Ｋ|ｋ|Ｇ|Ｔ)";
 		public static readonly string DottedNumbersSpecialsChar = $@"{NegativeNumberTermsRegexNum}?{ZeroToNineFullHalfRegex}{{1,3}}([,，]{ZeroToNineFullHalfRegex}{{3}})+";

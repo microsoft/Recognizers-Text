@@ -17,7 +17,7 @@ namespace Microsoft.Recognizers.Definitions
 
 	public static class BaseGUID
 	{
-		public const string GUIDRegexElement = @"([A-Fa-f0-9]{8}(-[A-Fa-f0-9]{4}){3}-[A-Fa-f0-9]{12})";
-		public static readonly string GUIDRegex = $@"({GUIDRegexElement}|\{{{GUIDRegexElement}\}}|urn:uuid:{GUIDRegexElement})";
+		public const string GUIDRegexElement = @"(([A-Fa-f0-9]{8}(-[A-Fa-f0-9]{4}){3}-[A-Fa-f0-9]{12})|([A-Fa-f0-9]{32}))";
+		public static readonly string GUIDRegex = $@"(\b{GUIDRegexElement}\b|\{{{GUIDRegexElement}\}}|urn:uuid:{GUIDRegexElement}\b|%7[Bb]{GUIDRegexElement}%7[Dd]|[Xx]\'{GUIDRegexElement}\')";
 	}
 }

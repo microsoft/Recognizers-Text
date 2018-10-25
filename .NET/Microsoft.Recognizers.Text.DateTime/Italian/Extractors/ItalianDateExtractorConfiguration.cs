@@ -161,8 +161,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public ItalianDateExtractorConfiguration(IOptionsConfiguration config) : base(config)
         {
-            IntegerExtractor = new IntegerExtractor();
-            OrdinalExtractor = new OrdinalExtractor();
+            IntegerExtractor = Number.Italian.IntegerExtractor.GetInstance();
+            OrdinalExtractor = Number.Italian.OrdinalExtractor.GetInstance();
             NumberParser = new BaseNumberParser(new ItalianNumberParserConfiguration());
             DurationExtractor = new BaseDurationExtractor(new ItalianDurationExtractorConfiguration(this));
             UtilityConfiguration = new ItalianDatetimeUtilityConfiguration();

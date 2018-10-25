@@ -28,4 +28,5 @@ export namespace FrenchNumericWithUnit {
 	export const AmbiguousVolumeUnitList = [ 'ounce','oz','l','cup','peck','cord','gill' ];
 	export const WeightSuffixList: ReadonlyMap<string, string> = new Map<string, string>([["Kilogramme", "kg|kilogramme|kilogrammes|kilo|kilos"],["Gram", "g|gramme|grammes"],["Milligramme", "mg|milligramme|milligrammes"],["Tonne métrique", "tonne métrique|tonnes métrique|tonnes métriques|tonne metrique|tonnes metrique"],["Tonne", "tonne|tonnes|-tonnes|-tonne"],["Livre", "livre|livres"]]);
 	export const AmbiguousWeightUnitList = [ 'g','oz','stone','dram' ];
+	export const AmbiguityFiltersDict: ReadonlyMap<string, string> = new Map<string, string>([["\\bcent\\b", "\\bpour\\s+cent\\b"]]);
 }

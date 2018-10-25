@@ -480,5 +480,9 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
 		};
 		public const string DefaultLanguageFallback = "DMY";
 		public static readonly string[] DurationDateRestrictions = {  };
+		public static readonly Dictionary<string, string> AmbiguityFiltersDict = new Dictionary<string, string>
+		{
+			{ "null", "null" }
+		};
 	}
 }

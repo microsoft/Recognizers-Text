@@ -4530,5 +4530,109 @@
         }
       }
     ]
+  },
+  {
+    "Input": "#Organization#-#Name#-(123) 456-7890.",
+    "Results": [
+      {
+        "Text": "(123) 456-7890",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "(123) 456-7890",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Thanks for providing me with your availability. As discussed, I'll call you on Aug/3-Friday at 12:00 PM PT at (123) 456-7890 #.",
+    "Results": [
+      {
+        "Text": "(123) 456-7890",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "(123) 456-7890",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "#Organization# coffee chat-follow up-#Name#-123 456 7890.",
+    "Results": [
+      {
+        "Text": "123 456 7890",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "123 456 7890",
+          "score": "0.9"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Hi #Name#, Thanks for providing me with your availability. As discussed, I'll call you on Friday-Aug/3 at 1pm PT at 123 456 7890.",
+    "Results": [
+      {
+        "Text": "123 456 7890",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "123 456 7890",
+          "score": "0.9"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Introductory chat- #Name# @ 123)456-7890 - Sr. SE roles at Microsoft.",
+    "Results": [
+      {
+        "Text": "123)456-7890",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "123)456-7890",
+          "score": "0.5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Introductory Chat- #Name#@ (123) 456-7890- Principal DS roles at Microsoft",
+    "Results": [
+      {
+        "Text": "(123) 456-7890",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "(123) 456-7890",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Intro chat- #Name#@123.456.7890- DS roles at Microsoft",
+    "Results": [
+      {
+        "Text": "123.456.7890",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "123.456.7890",
+          "score": "0.9"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Introductory chat- #Name# @ 1234567890- Data Scientist/Applied Scientist roles at Microsoft, WA state",
+    "Results": [
+      {
+        "Text": "1234567890",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "1234567890",
+          "score": "0.5"
+        }
+      }
+    ]
   }
 ]
