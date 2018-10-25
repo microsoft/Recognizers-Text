@@ -272,13 +272,13 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                             {
                                 if (er.Start >= time.Index && er.Start + er.Length <= time.Index + time.Length)
                                 {
-                                    isNotUnit = true;
+                                    isDimensionFallsInPmTime = true;
                                     break;
                                 }
                             }
                         }
 
-                        if (isNotUnit)
+                        if (isDimensionFallsInPmTime)
                         {
                             continue;
                         }
@@ -364,13 +364,13 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                                 {
                                     if (DimensionInsideTime(match, time))
                                     {
-                                        isNotUnit = true;
+                                        isDimensionFallsInPmTime = true;
                                         break;
                                     }
                                 }
                             }
 
-                            if (isNotUnit)
+                            if (isDimensionFallsInPmTime)
                             {
                                 continue;
                             }
