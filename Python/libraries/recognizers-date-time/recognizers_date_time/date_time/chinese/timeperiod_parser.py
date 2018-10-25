@@ -7,7 +7,7 @@ from recognizers_text import RegExpUtility, ExtractResult
 from ...resources.chinese_date_time import ChineseDateTime
 from ..constants import Constants
 from ..parsers import DateTimeParseResult
-from ..utilities import TimeTypeConstants, FormatUtil, DateTimeResolutionResult, DateUtils
+from ..utilities import TimeTypeConstants, FormatUtil, DateTimeResolutionResult, DateUtils, TimexUtil
 from ..base_timeperiod import BaseTimePeriodParser
 from .base_date_time_extractor import DateTimeExtra, TimeResult, TimeResolutionUtils
 from .timeperiod_extractor import TimePeriodType
@@ -75,33 +75,29 @@ class ChineseTimePeriodParser(BaseTimePeriodParser):
         end_hour = 0
         end_min = 0
 
-        if trimmed_text.endswith("上午"):
-            timex = "TMO"
-            begin_hour = 8
-            end_hour = 12
-        elif trimmed_text.endswith("下午"):
-            timex = "TAF"
-            begin_hour = 12
-            end_hour = 16
-        elif trimmed_text.endswith("晚上"):
-            timex = "TEV"
-            begin_hour = 16
-            end_hour = 20
-        elif trimmed_text == "白天":
-            timex = "TDT"
-            begin_hour = 8
-            end_hour = 18
-        elif trimmed_text.endswith("深夜"):
-            timex = "TNT"
-            begin_hour = 20
-            end_hour = 23
-            end_min = 59
+        time_of_day = ""
+        if trimmed_text.endswith(ChineseDateTime.Morning):
+            time_of_day = Constants.Morning
+        elif trimmed_text.endswith(ChineseDateTime.Afternoon):
+            time_of_day = Constants.Afternoon
+        elif trimmed_text.endswith(ChineseDateTime.Evening):
+            time_of_day = Constants.Evening
+        elif trimmed_text == ChineseDateTime.Daytime:
+            time_of_day = Constants.Daytime
+        elif trimmed_text.endswith(ChineseDateTime.Night):
+            time_of_day = Constants.Night
         else:
             timex = None
             matched = False
 
             return {'matched': matched, 'timex': timex, 'begin_hour': begin_hour,
                     'end_hour': end_hour, 'end_min': end_min}
+
+        parse_result = TimexUtil.parse_time_of_day(time_of_day)
+        timex = parse_result.timex
+        begin_hour = parse_result.begin_hour
+        end_hour = parse_result.end_hour
+        end_min = parse_result.end_min
 
         matched = True
         return {'matched': matched, 'timex': timex, 'begin_hour': begin_hour,

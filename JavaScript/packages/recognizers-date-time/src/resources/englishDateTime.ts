@@ -253,4 +253,10 @@ export namespace EnglishDateTime {
 	export const SuperfluousWordList = [ 'preferably','how about','maybe','say','like' ];
 	export const DurationDateRestrictions = [ 'today','now' ];
 	export const AmbiguityFiltersDict: ReadonlyMap<string, string> = new Map<string, string>([["\\bmorning|afternoon|evening|night|day\\b", "\\bgood\\s+(morning|afternoon|evening|night|day)\\b"],["\\bmay\\b", "\\b((^may i)|(i|you|he|she|we|they)\\s+may|(may\\s+((((also|not|(also not)|well)\\s+)?(be|contain|constitute|email|e-mail|take|have|result|involve|get|work|reply))|(or may not))))\\b"]]);
+	export const Morning = 'morning';
+	export const Afternoon = 'afternoon';
+	export const Evening = 'evening';
+	export const Daytime = 'daytime';
+	export const Night = 'night';
+	export const BusinessHour = 'businessHour';
 }

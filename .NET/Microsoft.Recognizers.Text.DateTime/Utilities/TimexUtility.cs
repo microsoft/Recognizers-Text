@@ -206,5 +206,48 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             return result;
         }
+
+        public static TimeOfDayResolutionResult ParseTimeOfDay(string tod)
+        {
+            var result = new TimeOfDayResolutionResult();
+            switch (tod)
+            {
+                case Constants.Morning:
+                    result.Timex = Constants.Morning;
+                    result.BeginHour = 8;
+                    result.EndHour = 12;
+                    break;
+                case Constants.Afternoon:
+                    result.Timex = Constants.Afternoon;
+                    result.BeginHour = 12;
+                    result.EndHour = 16;
+                    break;
+                case Constants.Evening:
+                    result.Timex = Constants.Evening;
+                    result.BeginHour = 16;
+                    result.EndHour = 20;
+                    break;
+                case Constants.Daytime:
+                    result.Timex = Constants.Daytime;
+                    result.BeginHour = 8;
+                    result.EndHour = 18;
+                    break;
+                case Constants.BusinessHour:
+                    result.Timex = Constants.BusinessHour;
+                    result.BeginHour = 8;
+                    result.EndHour = 18;
+                    break;
+                case Constants.Night:
+                    result.Timex = Constants.Night;
+                    result.BeginHour = 20;
+                    result.EndHour = 23;
+                    result.EndMin = 59;
+                    break;
+               default:
+                    break;
+            }
+         
+            return result;
+        }
     }
 }

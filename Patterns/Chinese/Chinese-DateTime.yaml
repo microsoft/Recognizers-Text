@@ -816,4 +816,10 @@ TimeLowBoundDesc: !dictionary
     晚: 18
     pm: 12
 DefaultLanguageFallback: DMY
+# For TimeOfDay resolution
+Morning: 上午
+Afternoon: 下午
+Evening: 晚上
+Daytime: 白天
+Night: 深夜
 ...

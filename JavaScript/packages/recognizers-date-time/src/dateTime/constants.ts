@@ -1,4 +1,6 @@
 import { BaseDateTime } from "../resources/baseDateTime";
+import { EnglishDateTime } from "../resources/englishDateTime";
+import { ChineseDateTime } from "../resources/chineseDateTime";
 
 export class Constants {
     static readonly SYS_DATETIME_DATE: string = "date";
@@ -56,6 +58,13 @@ export class Constants {
     static readonly LESS_THAN_MOD: string = 'less';
 
     static readonly REF_UNDEF_MOD: string = 'ref_undef';
+
+    static readonly Morning: string = "TMO";
+    static readonly Afternoon: string = "TAF";
+    static readonly Evening: string = "TEV";
+    static readonly Daytime: string = "TDT";
+    static readonly Night: string = "TNI";
+    static readonly BusinessHour: string = "TBH";
 }
 
 export class TimeTypeConstants {

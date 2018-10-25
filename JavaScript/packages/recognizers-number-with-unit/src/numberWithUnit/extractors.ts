@@ -159,18 +159,18 @@ export class NumberWithUnitExtractor implements IExtractor {
                     num.start = start - er.start;
                     er.data = num;
 
-                    let isDimensionFallsInPmTime = false;
+                    let isNotUnit = false;
                     if (er.type === Constants.SYS_UNIT_DIMENSION) {
                         let nonUnitMatch = RegExpUtility.getMatches(this.config.pmNonUnitRegex, source);
 
                         nonUnitMatch.forEach(match => {
                             if (er.start >= match.index && er.start + er.length <= match.index + match.length) {
-                                isDimensionFallsInPmTime = true;
+                                isNotUnit = true;
                             }
                         });
                     }
 
-                    if (isDimensionFallsInPmTime) {
+                    if (isNotUnit) {
                         continue;
                     }
 
@@ -236,18 +236,18 @@ export class NumberWithUnitExtractor implements IExtractor {
                         matchResult[j] = true;
                     }
 
-                    let isDimensionFallsInPmTime = false;
+                    let isNotUnit = false;
                     if (match.value === Constants.AMBIGUOUS_TIME_TERM) {
                         let nonUnitMatch = RegExpUtility.getMatches(this.config.pmNonUnitRegex, source);
 
                         nonUnitMatch.forEach(time => {
-                            if (this.isDimensionFallsInTime(match, time)) {
-                                isDimensionFallsInPmTime = true;
+                            if (this.DimensionInsideTime(match, time)) {
+                                isNotUnit = true;
                             }
                         });
                     }
 
-                    if (isDimensionFallsInPmTime === false) {
+                    if (isNotUnit === false) {
                         numDependResults.push({
                             start: match.index,
                             length: match.length,
@@ -366,7 +366,7 @@ export class NumberWithUnitExtractor implements IExtractor {
         }
     }
 
-    private isDimensionFallsInTime(dimension: Match, time: Match): boolean {
+    private DimensionInsideTime(dimension: Match, time: Match): boolean {
         let isSubMatch = false;
         if (dimension.index >= time.index && dimension.index + dimension.length <= time.index + time.length) {
             isSubMatch = true;

@@ -1,4 +1,6 @@
 from ..resources import BaseDateTime
+from ..resources import EnglishDateTime
+from ..resources import ChineseDateTime
 
 class Constants:
     SYS_DATETIME_DATE: str = 'date'
@@ -33,6 +35,15 @@ class Constants:
     
     MaxTwoDigitYearFutureNum: int = int(BaseDateTime.MaxTwoDigitYearFutureNum)
     MinTwoDigitYearPastNum: int = int(BaseDateTime.MinTwoDigitYearPastNum)
+
+    Morning: str = "TMO"
+    Afternoon: str = "TAF"
+    Evening: str = "TEV"
+    Daytime: str = "TDT"
+    Night: str = "TNI"
+    BusinessHour = "TBH"
+
+
 class TimeTypeConstants:
     DATE: str = 'date'
     START_DATE: str = 'startDate'

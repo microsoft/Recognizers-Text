@@ -611,5 +611,10 @@ namespace Microsoft.Recognizers.Definitions.Chinese
 			{ "pm", 12 }
 		};
 		public const string DefaultLanguageFallback = "DMY";
+		public const string Morning = "上午";
+		public const string Afternoon = "下午";
+		public const string Evening = "晚上";
+		public const string Daytime = "白天";
+		public const string Night = "深夜";
 	}
 }

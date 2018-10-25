@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using DateObject = System.DateTime;
+using Microsoft.Recognizers.Definitions.Chinese;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
@@ -111,44 +112,40 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             beginHour = 0;
             endHour = 0;
             endMin = 0;
-            
-            if (trimmedText.EndsWith("上午"))
+
+            var timeOfDay = "";
+            if (trimmedText.EndsWith(DateTimeDefinitions.Morning))
             {
-                timex = "TMO";
-                beginHour = 8;
-                endHour = Constants.HalfDayHourCount;
+                timeOfDay = Constants.Morning;
             }
-            else if (trimmedText.EndsWith("下午"))
+            else if (trimmedText.EndsWith(DateTimeDefinitions.Afternoon))
             {
-                timex = "TAF";
-                beginHour = Constants.HalfDayHourCount;
-                endHour = 16;
+                timeOfDay = Constants.Afternoon;
             }
-            else if (trimmedText.EndsWith("晚上"))
+            else if (trimmedText.EndsWith(DateTimeDefinitions.Evening))
             {
-                timex = "TEV";
-                beginHour = 16;
-                endHour = 20;
+                timeOfDay = Constants.Evening;
             }
-            else if (trimmedText.Equals("白天"))
+            else if (trimmedText.Equals(DateTimeDefinitions.Daytime))
             {
-                timex = "TDT";
-                beginHour = 8;
-                endHour = 18;
+                timeOfDay = Constants.Daytime;
             }
-            else if (trimmedText.EndsWith("深夜"))
+            else if (trimmedText.EndsWith(DateTimeDefinitions.Night))
             {
-                timex = "TNI";
-                beginHour = 20;
-                endHour = 23;
-                endMin = 59;
+                timeOfDay = Constants.Night;
             }
             else
             {
                 timex = null;
                 return false;
             }
-            
+
+            var parseResult = TimexUtility.ParseTimeOfDay(timeOfDay);
+            timex = parseResult.Timex;
+            beginHour = parseResult.BeginHour;
+            endHour = parseResult.EndHour;
+            endMin = parseResult.EndMin;
+
             return true;
         }
 
