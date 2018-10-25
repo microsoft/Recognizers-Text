@@ -168,10 +168,10 @@ export namespace ChineseDateTime {
 	export const TimeNumberDictionary: ReadonlyMap<string, number> = new Map<string, number>([["零", 0],["一", 1],["二", 2],["三", 3],["四", 4],["五", 5],["六", 6],["七", 7],["八", 8],["九", 9],["〇", 0],["两", 2],["十", 10]]);
 	export const TimeLowBoundDesc: ReadonlyMap<string, number> = new Map<string, number>([["中午", 11],["下午", 12],["午后", 12],["晚上", 18],["夜里", 18],["夜晚", 18],["夜间", 18],["深夜", 18],["傍晚", 18],["晚", 18],["pm", 12]]);
 	export const DefaultLanguageFallback = 'DMY';
-	export const CN_MORNING = '上午';
-	export const CN_AFTERNOON = '下午';
-	export const CN_EVENING = '晚上';
-	export const CN_DAYTIME = '白天';
-	export const CN_NIGHT = '深夜';
+	export const Morning = '上午';
+	export const Afternoon = '下午';
+	export const Evening = '晚上';
+	export const Daytime = '白天';
+	export const Night = '深夜';
 	export const TimeOfDayTimex: ReadonlyMap<string, string> = new Map<string, string>([["上午", "TMO"],["下午", "TAF"],["晚上", "TEV"],["白天", "TDT"],["深夜", "TNI"]]);
 }

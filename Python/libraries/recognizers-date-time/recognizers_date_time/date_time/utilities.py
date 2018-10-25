@@ -8,7 +8,7 @@ import regex
 
 from recognizers_text.extractor import ExtractResult
 from recognizers_text.utilities import RegExpUtility
-from recognizers_date_time.date_time.constants import TimeTypeConstants
+from recognizers_date_time.date_time.constants import TimeTypeConstants, Constants
 from recognizers_date_time.date_time.extractors import DateTimeExtractor
 from recognizers_date_time.date_time.parsers import DateTimeParser, DateTimeParseResult
 
@@ -82,6 +82,12 @@ class DateTimeResolutionResult:
         self.future_value: object = None
         self.past_value: object = None
         self.sub_date_time_entities: List[object] = list()
+
+class TimeOfDayResolution:
+    def __init__(self):
+        self.begin_hour: int = 0
+        self.end_hour: int = 0
+        self.end_min: int = 0
 
 class FormatUtil:
     HourTimeRegex = RegExpUtility.get_safe_reg_exp(r'(?<!P)T\d{2}')
@@ -438,4 +444,31 @@ class AgoLaterUtil:
         result.future_value = value
         result.past_value = value
         result.success = True
+        return result
+
+class TimexUtil:
+    @staticmethod
+    def parse_time_of_day(timex: str) -> TimeOfDayResolution:
+        result = TimeOfDayResolution()
+
+        if timex == Constants.Morning:
+            result.begin_hour = 8
+            result.end_hour = 12
+        elif timex == Constants.Afternoon:
+            result.begin_hour = 12
+            result.end_hour = 16
+        elif timex == Constants.Evening:
+            result.begin_hour = 16
+            result.end_hour = 20
+        elif timex == Constants.Daytime:
+            result.begin_hour = 8
+            result.end_hour = 18
+        elif timex == Constants.BusinessHour:
+            result.begin_hour = 8
+            result.end_hour = 18
+        elif timex == Constants.Night:
+            result.begin_hour = 20
+            result.end_hour = 23
+            result.end_min = 59
+
         return result

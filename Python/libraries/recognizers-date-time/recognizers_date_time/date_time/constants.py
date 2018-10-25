@@ -36,18 +36,12 @@ class Constants:
     MaxTwoDigitYearFutureNum: int = int(BaseDateTime.MaxTwoDigitYearFutureNum)
     MinTwoDigitYearPastNum: int = int(BaseDateTime.MinTwoDigitYearPastNum)
 
-    EN_MORNING: str = EnglishDateTime.EN_MORNING
-    EN_AFTERNOON: str = EnglishDateTime.EN_AFTERNOON
-    EN_EVENING: str = EnglishDateTime.EN_EVENING
-    EN_DAYTIME: str = EnglishDateTime.EN_DAYTIME
-    EN_NIGHT: str = EnglishDateTime.EN_NIGHT
-    EN_BUSINESS_HOUR = EnglishDateTime.EN_BUSINESS_HOUR
-
-    CN_MORNING: str = ChineseDateTime.CN_MORNING
-    CN_AFTERNOON: str = ChineseDateTime.CN_AFTERNOON
-    CN_EVENING: str = ChineseDateTime.CN_EVENING
-    CN_DAYTIME: str = ChineseDateTime.CN_DAYTIME
-    CN_NIGHT: str = ChineseDateTime.CN_NIGHT
+    Morning: str = BaseDateTime.Morning
+    Afternoon: str = BaseDateTime.Afternoon
+    Evening: str = BaseDateTime.Evening
+    Daytime: str = BaseDateTime.Daytime
+    Night: str = BaseDateTime.Night
+    BusinessHour = BaseDateTime.BusinessHour
 
 
 class TimeTypeConstants:

@@ -70,3 +70,10 @@ VariableHolidaysTimexDictionary: !dictionary
     labour: -09-WXX-1-1
     columbus: -10-WXX-1-2
     memorial: -05-WXX-1-4
+# Time of day
+Morning: TMO
+Afternoon: TAF
+Evening: TEV
+Daytime: TDT
+Night: TNI
+BusinessHour: TBH

@@ -4,7 +4,7 @@ import { NumberWithUnitExtractor, ChineseNumberWithUnitExtractorConfiguration } 
 import { BaseDateTimeExtractor, DateTimeExtra, TimeResult, TimeResolutionUtils } from "./baseDateTime";
 import { Constants, TimeTypeConstants } from "../constants"
 import { ChineseDateTime } from "../../resources/chineseDateTime";
-import { DateTimeResolutionResult, FormatUtil, DateUtils, StringMap } from "../utilities";
+import { DateTimeResolutionResult, FormatUtil, DateUtils, StringMap, TimexUtil } from "../utilities";
 import { BaseTimePeriodParser, ITimePeriodParserConfiguration } from "../baseTimePeriod";
 import { IDateTimeParser, DateTimeParseResult } from "../parsers"
 import { ChineseTimeParser } from "./timeConfiguration"
@@ -124,32 +124,28 @@ export class ChineseTimePeriodParser extends BaseTimePeriodParser {
         endHour = 0,
         endMin = 0;
 
-        if (trimmedText.endsWith(Constants.CN_MORNING)) {
-            timex = ChineseDateTime.TimeOfDayTimex.get(Constants.CN_MORNING);
-            beginHour = 8;
-            endHour = 12;
-        } else if (trimmedText.endsWith(Constants.CN_AFTERNOON)) {
-            timex = ChineseDateTime.TimeOfDayTimex.get(Constants.CN_AFTERNOON);
-            beginHour = 12;
-            endHour = 16;
-        } else if (trimmedText.endsWith(Constants.CN_EVENING)) {
-            timex = ChineseDateTime.TimeOfDayTimex.get(Constants.CN_EVENING);
-            beginHour = 16;
-            endHour = 20;
-        } else if (trimmedText.localeCompare(Constants.CN_DAYTIME) == 0) {
-            timex = ChineseDateTime.TimeOfDayTimex.get(Constants.CN_DAYTIME);
-            beginHour = 8;
-            endHour = 18;
-        } else if (trimmedText.endsWith(Constants.CN_NIGHT)) {
-            timex = ChineseDateTime.TimeOfDayTimex.get(Constants.CN_NIGHT);
-            beginHour = 20;
-            endHour = 23;
-            endMin = 59;
+        let timeOfDay = "";
+        if (trimmedText.endsWith(ChineseDateTime.Morning)) {
+            timeOfDay = ChineseDateTime.Morning;
+        } else if (trimmedText.endsWith(ChineseDateTime.Afternoon)) {
+            timeOfDay = ChineseDateTime.Afternoon;
+        } else if (trimmedText.endsWith(ChineseDateTime.Evening)) {
+            timeOfDay = ChineseDateTime.Evening;
+        } else if (trimmedText.localeCompare(ChineseDateTime.Daytime) == 0) {
+            timeOfDay = ChineseDateTime.Daytime;
+        } else if (trimmedText.endsWith(ChineseDateTime.Night)) {
+            timeOfDay = ChineseDateTime.Night;
         } else {
             timex = null;
             matched = false;
             return {matched, timex, beginHour, endHour, endMin};
         }
+
+        timex = ChineseDateTime.TimeOfDayTimex.get(timeOfDay);
+        let parseResult = TimexUtil.parseTimeOfDay(timex);
+        beginHour = parseResult.beginHour;
+        endHour = parseResult.endHour;
+        endMin = parseResult.endMin;
 
         matched = true;
         return {matched, timex, beginHour, endHour, endMin};

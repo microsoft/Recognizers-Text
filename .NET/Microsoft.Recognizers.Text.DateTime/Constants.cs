@@ -150,19 +150,12 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string GeneralPeriodPrefix = "P";
         public const string TimeTimexPrefix = "T";
 
-        // Time of day in English
-        public const string EN_MORNING = EnglishDateTimeDefinitions.EN_MORNING;
-        public const string EN_AFTERNOON = EnglishDateTimeDefinitions.EN_AFTERNOON;
-        public const string EN_EVENING = EnglishDateTimeDefinitions.EN_EVENING;
-        public const string EN_DAYTIME = EnglishDateTimeDefinitions.EN_DAYTIME;
-        public const string EN_NIGHT = EnglishDateTimeDefinitions.EN_NIGHT;
-        public const string EN_BUSINESS_HOUR = EnglishDateTimeDefinitions.EN_BUSINESS_HOUR;
-
-        // Time of day in Chinese
-        public const string CN_MORNING = ChineseDateTimeDefinitions.CN_MORNING;
-        public const string CN_AFTERNOON = ChineseDateTimeDefinitions.CN_AFTERNOON;
-        public const string CN_EVENING = ChineseDateTimeDefinitions.CN_EVENING;
-        public const string CN_DAYTIME = ChineseDateTimeDefinitions.CN_DAYTIME;
-        public const string CN_NIGHT = ChineseDateTimeDefinitions.CN_NIGHT;
+        // Timex of TimeOfDay
+        public const string Morning = BaseDateTime.Morning;
+        public const string Afternoon = BaseDateTime.Afternoon;
+        public const string Evening = BaseDateTime.Evening;
+        public const string Daytime = BaseDateTime.Daytime;
+        public const string Night = BaseDateTime.Night;
+        public const string BusinessHour = BaseDateTime.BusinessHour;
     }
 }

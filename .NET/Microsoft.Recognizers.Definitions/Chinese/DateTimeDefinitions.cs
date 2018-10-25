@@ -611,11 +611,11 @@ namespace Microsoft.Recognizers.Definitions.Chinese
 			{ "pm", 12 }
 		};
 		public const string DefaultLanguageFallback = "DMY";
-		public const string CN_MORNING = "上午";
-		public const string CN_AFTERNOON = "下午";
-		public const string CN_EVENING = "晚上";
-		public const string CN_DAYTIME = "白天";
-		public const string CN_NIGHT = "深夜";
+		public const string Morning = "上午";
+		public const string Afternoon = "下午";
+		public const string Evening = "晚上";
+		public const string Daytime = "白天";
+		public const string Night = "深夜";
 		public static readonly Dictionary<string, string> TimeOfDayTimex = new Dictionary<string, string>
 		{
 			{ "上午", "TMO" },

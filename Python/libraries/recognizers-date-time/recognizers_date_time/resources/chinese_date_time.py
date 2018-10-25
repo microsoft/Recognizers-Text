@@ -551,11 +551,11 @@ class ChineseDateTime:
                              ('晚', 18),
                              ('pm', 12)])
     DefaultLanguageFallback = 'DMY'
-    CN_MORNING = '上午'
-    CN_AFTERNOON = '下午'
-    CN_EVENING = '晚上'
-    CN_DAYTIME = '白天'
-    CN_NIGHT = '深夜'
+    Morning = '上午'
+    Afternoon = '下午'
+    Evening = '晚上'
+    Daytime = '白天'
+    Night = '深夜'
     TimeOfDayTimex = dict([('上午', 'TMO'),
                            ('下午', 'TAF'),
                            ('晚上', 'TEV'),

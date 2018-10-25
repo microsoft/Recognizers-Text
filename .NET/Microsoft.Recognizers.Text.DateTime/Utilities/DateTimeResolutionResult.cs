@@ -42,4 +42,13 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public string TimeZoneText { get; set; }
     }
+
+    public class TimeOfDayResolutionResult
+    {
+        public int BeginHour { get; set; }
+
+        public int EndHour { get; set; }
+
+        public int EndMin { get; set; }
+    }
 }

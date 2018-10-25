@@ -59,17 +59,12 @@ export class Constants {
 
     static readonly REF_UNDEF_MOD: string = 'ref_undef';
 
-    static readonly EN_MORNING: string = EnglishDateTime.EN_MORNING;
-    static readonly EN_AFTERNOON: string = EnglishDateTime.EN_AFTERNOON;
-    static readonly EN_EVENING: string = EnglishDateTime.EN_EVENING;
-    static readonly EN_DAYTIME: string = EnglishDateTime.EN_DAYTIME;
-    static readonly EN_NIGHT: string = EnglishDateTime.EN_NIGHT;
-
-    static readonly CN_MORNING: string = ChineseDateTime.CN_MORNING;
-    static readonly CN_AFTERNOON: string = ChineseDateTime.CN_AFTERNOON;
-    static readonly CN_EVENING: string = ChineseDateTime.CN_EVENING;
-    static readonly CN_DAYTIME: string = ChineseDateTime.CN_DAYTIME;
-    static readonly CN_NIGHT: string = ChineseDateTime.CN_NIGHT;
+    static readonly Morning: string = BaseDateTime.Morning;
+    static readonly Afternoon: string = BaseDateTime.Afternoon;
+    static readonly Evening: string = BaseDateTime.Evening;
+    static readonly Daytime: string = BaseDateTime.Daytime;
+    static readonly Night: string = BaseDateTime.Night;
+    static readonly BusinessHour: string = BaseDateTime.BusinessHour;
 }
 
 export class TimeTypeConstants {

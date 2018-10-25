@@ -572,12 +572,12 @@ class EnglishDateTime:
     DurationDateRestrictions = ['today', 'now']
     AmbiguityFiltersDict = dict([('\\bmorning|afternoon|evening|night|day\\b', '\\bgood\\s+(morning|afternoon|evening|night|day)\\b'),
                                  ('\\bmay\\b', '\\b((^may i)|(i|you|he|she|we|they)\\s+may|(may\\s+((((also|not|(also not)|well)\\s+)?(be|contain|constitute|email|e-mail|take|have|result|involve|get|work|reply))|(or may not))))\\b')])
-    EN_MORNING = 'morning'
-    EN_AFTERNOON = 'afternoon'
-    EN_EVENING = 'evening'
-    EN_DAYTIME = 'daytime'
-    EN_NIGHT = 'night'
-    EN_BUSINESS_HOUR = 'businessHour'
+    Morning = 'morning'
+    Afternoon = 'afternoon'
+    Evening = 'evening'
+    Daytime = 'daytime'
+    Night = 'night'
+    BusinessHour = 'businessHour'
     TimeOfDayTimex = dict([('morning', 'TMO'),
                            ('afternoon', 'TAF'),
                            ('evening', 'TEV'),

@@ -629,12 +629,12 @@ namespace Microsoft.Recognizers.Definitions.English
 			{ "\\bmorning|afternoon|evening|night|day\\b", "\\bgood\\s+(morning|afternoon|evening|night|day)\\b" },
 			{ "\\bmay\\b", "\\b((^may i)|(i|you|he|she|we|they)\\s+may|(may\\s+((((also|not|(also not)|well)\\s+)?(be|contain|constitute|email|e-mail|take|have|result|involve|get|work|reply))|(or may not))))\\b" }
 		};
-		public const string EN_MORNING = "morning";
-		public const string EN_AFTERNOON = "afternoon";
-		public const string EN_EVENING = "evening";
-		public const string EN_DAYTIME = "daytime";
-		public const string EN_NIGHT = "night";
-		public const string EN_BUSINESS_HOUR = "businessHour";
+		public const string Morning = "morning";
+		public const string Afternoon = "afternoon";
+		public const string Evening = "evening";
+		public const string Daytime = "daytime";
+		public const string Night = "night";
+		public const string BusinessHour = "businessHour";
 		public static readonly Dictionary<string, string> TimeOfDayTimex = new Dictionary<string, string>
 		{
 			{ "morning", "TMO" },
