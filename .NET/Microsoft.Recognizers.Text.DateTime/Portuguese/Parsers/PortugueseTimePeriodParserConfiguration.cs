@@ -1,4 +1,5 @@
 ﻿using System.Collections.Immutable;
+using System.Linq;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Portuguese;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
@@ -57,23 +58,23 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             endMin = 0;
 
             var timeOfDay = "";
-            if (trimmedText.EndsWith(DateTimeDefinitions.EarlyMorningTerm))
+            if (DateTimeDefinitions.EarlyMorningTermList.Any(o => trimmedText.EndsWith(o)))
             {
                 timeOfDay = Constants.EarlyMorning;
             }
-            else if (trimmedText.EndsWith(DateTimeDefinitions.MorningTerm1) || trimmedText.EndsWith(DateTimeDefinitions.MorningTerm2))
+            else if (DateTimeDefinitions.MorningTermList.Any(o => trimmedText.EndsWith(o)))
             {
                 timeOfDay = Constants.Morning;
             }
-            else if (trimmedText.EndsWith(DateTimeDefinitions.AfternoonTerm1) || trimmedText.EndsWith(DateTimeDefinitions.AfternoonTerm2))
+            else if (DateTimeDefinitions.AfternoonTermList.Any(o => trimmedText.EndsWith(o)))
             {
                 timeOfDay = Constants.Afternoon;
             }
-            else if (trimmedText.EndsWith(DateTimeDefinitions.EveningTerm))
+            else if (DateTimeDefinitions.EveningTermList.Any(o => trimmedText.EndsWith(o)))
             {
                 timeOfDay = Constants.Evening;
             }
-            else if (trimmedText.EndsWith(DateTimeDefinitions.NightTerm))
+            else if (DateTimeDefinitions.NightTermList.Any(o => trimmedText.EndsWith(o)))
             {
                 timeOfDay = Constants.Night;
             }

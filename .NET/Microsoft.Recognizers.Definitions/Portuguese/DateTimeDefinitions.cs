@@ -484,12 +484,27 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
 		{
 			{ "null", "null" }
 		};
-		public const string EarlyMorningTerm = "madrugada";
-		public const string MorningTerm1 = "manha";
-		public const string MorningTerm2 = "manhã";
-		public const string AfternoonTerm1 = "passado o meio dia";
-		public const string AfternoonTerm2 = "depois do meio dia";
-		public const string EveningTerm = "tarde";
-		public const string NightTerm = "noite";
+		public static readonly IList<string> EarlyMorningTermList = new List<string>
+		{
+			"madrugada"
+		};
+		public static readonly IList<string> MorningTermList = new List<string>
+		{
+			"manha",
+			"manhã"
+		};
+		public static readonly IList<string> AfternoonTermList = new List<string>
+		{
+			"passado o meio dia",
+			"depois do meio dia"
+		};
+		public static readonly IList<string> EveningTermList = new List<string>
+		{
+			"tarde"
+		};
+		public static readonly IList<string> NightTermList = new List<string>
+		{
+			"noite"
+		};
 	}
 }

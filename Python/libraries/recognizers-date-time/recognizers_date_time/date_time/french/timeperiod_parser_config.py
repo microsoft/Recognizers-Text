@@ -60,9 +60,9 @@ class FrenchTimePeriodParserConfiguration(TimePeriodParserConfiguration):
         self._till_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.TillRegex)
 
     def get_matched_timex_range(self, source: str) -> MatchedTimeRegex:
-        source = source.strip().lower()
-        if source.endswith('s'):
-            source = source[:-1]
+        trimmed_text = source.strip().lower()
+        if trimmed_text.endswith('s'):
+            trimmed_text = trimmed_text[:-1]
 
         timex = ''
         begin_hour = 0
@@ -70,19 +70,16 @@ class FrenchTimePeriodParserConfiguration(TimePeriodParserConfiguration):
         end_min = 0
 
         time_of_day = ""
-        if source.endswith(FrenchDateTime.MorningTerm1) or source.endswith(FrenchDateTime.MorningTerm2) \
-                or source.endswith(FrenchDateTime.MorningTerm3):
+        if any(trimmed_text.endswith(o) for o in FrenchDateTime.MorningTermList):
             time_of_day = Constants.Morning
-        elif source.endswith(FrenchDateTime.AfternoonTerm1) or source.endswith(FrenchDateTime.AfternoonTerm2) \
-                or source.endswith(FrenchDateTime.AfternoonTerm3) or source.endswith(FrenchDateTime.AfternoonTerm4):
+        elif any(trimmed_text.endswith(o) for o in FrenchDateTime.AfternoonTermList):
             time_of_day = Constants.Afternoon
-        elif source.endswith(FrenchDateTime.EveningTerm1) or source.endswith(FrenchDateTime.EveningTerm2) \
-                or source.endswith(FrenchDateTime.EveningTerm3):
+        elif any(trimmed_text.endswith(o) for o in FrenchDateTime.EveningTermList):
             time_of_day = Constants.Evening
-        elif source == FrenchDateTime.DaytimeTerm1 or source.endswith(FrenchDateTime.DaytimeTerm2) \
-                or source.endswith(FrenchDateTime.DaytimeTerm3):
+        elif source == FrenchDateTime.DaytimeTermList[0] or source.endswith(FrenchDateTime.DaytimeTermList[1]) \
+                or source.endswith(FrenchDateTime.DaytimeTermList[2]):
             time_of_day = Constants.Daytime
-        elif source.endswith(FrenchDateTime.NightTerm):
+        elif any(trimmed_text.endswith(o) for o in FrenchDateTime.NightTermList):
             time_of_day = Constants.Night
         else:
             return MatchedTimeRegex(

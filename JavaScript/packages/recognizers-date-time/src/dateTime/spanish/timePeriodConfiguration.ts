@@ -84,7 +84,7 @@ export class SpanishTimePeriodParserConfiguration implements ITimePeriodParserCo
 
     getMatchedTimexRange(text: string): { matched: boolean; timex: string; beginHour: number; endHour: number; endMin: number; } {
 
-        let trimedText = text.trim().toLowerCase();
+        let trimmedText = text.trim().toLowerCase();
 
         let beginHour = 0;
         let endHour = 0;
@@ -92,19 +92,19 @@ export class SpanishTimePeriodParserConfiguration implements ITimePeriodParserCo
         let timex = "";
 
         let timeOfDay = "";
-        if (trimedText.endsWith(SpanishDateTime.EarlyMorningTerm)) {
+        if (SpanishDateTime.EarlyMorningTermList.some(o => trimmedText.endsWith(o))) {
             timeOfDay = Constants.EarlyMorning;
         }
-        else if (trimedText.endsWith(SpanishDateTime.MorningTerm)) {
+        else if (SpanishDateTime.MorningTermList.some(o => trimmedText.endsWith(o))) {
             timeOfDay = Constants.Morning;
         }
-        else if (trimedText.includes(SpanishDateTime.AfternoonTerm1) || trimedText.includes(SpanishDateTime.AfternoonTerm2)) {
+        else if (SpanishDateTime.AfternoonTermList.some(o => trimmedText.includes(o))) {
             timeOfDay = Constants.Afternoon;
         }
-        else if (trimedText.endsWith(SpanishDateTime.EveningTerm)) {
+        else if (SpanishDateTime.EveningTermList.some(o => trimmedText.endsWith(o))) {
             timeOfDay = Constants.Evening;
         }
-        else if (trimedText.endsWith(SpanishDateTime.NightTerm)) {
+        else if (SpanishDateTime.NightTermList.some(o => trimmedText.endsWith(o))) {
             timeOfDay = Constants.Night;
         }
         else {

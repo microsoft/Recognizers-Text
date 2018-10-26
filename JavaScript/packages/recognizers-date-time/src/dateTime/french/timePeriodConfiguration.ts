@@ -9,6 +9,7 @@ import { ICommonDateTimeParserConfiguration } from "../parsers";
 import { IDateTimeExtractor } from "../baseDateTime";
 import { EnglishIntegerExtractor, NumberMode } from "@microsoft/recognizers-text-number";
 import { Constants } from "../constants";
+import { EnglishDateTime } from "../../resources/englishDateTime";
 
 export class FrenchTimePeriodExtractorConfiguration implements ITimePeriodExtractorConfiguration {
     readonly simpleCasesRegex: RegExp[];
@@ -86,11 +87,11 @@ export class FrenchTimePeriodParserConfiguration implements ITimePeriodParserCon
 
     getMatchedTimexRange(text: string): { matched: boolean; timex: string; beginHour: number; endHour: number; endMin: number; } {
 
-        let trimedText = text.trim().toLowerCase();
+        let trimmedText = text.trim().toLowerCase();
 
-        if (trimedText.endsWith("s"))
+        if (trimmedText.endsWith("s"))
         {
-            trimedText = trimedText.substring(0, trimedText.length - 1);
+            trimmedText = trimmedText.substring(0, trimmedText.length - 1);
         }
 
         let beginHour = 0;
@@ -99,28 +100,20 @@ export class FrenchTimePeriodParserConfiguration implements ITimePeriodParserCon
         let timex = "";
 
         let timeOfDay = "";
-        if (trimedText.endsWith(FrenchDateTime.MorningTerm1) ||
-            trimedText.endsWith(FrenchDateTime.MorningTerm2) ||
-            trimedText.endsWith(FrenchDateTime.MorningTerm3)) {
+        if (FrenchDateTime.MorningTermList.some(o => trimmedText.endsWith(o))) {
             timeOfDay = Constants.Morning;
-        }
-        else if (trimedText.endsWith(FrenchDateTime.AfternoonTerm1)||
-            trimedText.endsWith(FrenchDateTime.AfternoonTerm2) ||
-            trimedText.endsWith(FrenchDateTime.AfternoonTerm3) ||
-            trimedText.endsWith(FrenchDateTime.AfternoonTerm4)) {
+        } else if (FrenchDateTime.AfternoonTermList.some(o => trimmedText.endsWith(o))) {
             timeOfDay = Constants.Afternoon;
-        }
-        else if (trimedText.endsWith(FrenchDateTime.EveningTerm1) ||
-            trimedText.endsWith(FrenchDateTime.EveningTerm2) ||
-            trimedText.endsWith(FrenchDateTime.EveningTerm3)) {
+        } else if (FrenchDateTime.EveningTermList.some(o => trimmedText.endsWith(o))) {
             timeOfDay = Constants.Evening;
         }
-        else if (trimedText === FrenchDateTime.DaytimeTerm1 ||
-            trimedText.endsWith(FrenchDateTime.DaytimeTerm2) ||
-            trimedText.endsWith(FrenchDateTime.DaytimeTerm3)) {
+        else if (trimmedText === FrenchDateTime.DaytimeTermList[0] ||
+            trimmedText.endsWith(FrenchDateTime.DaytimeTermList[1]) ||
+            trimmedText.endsWith(FrenchDateTime.DaytimeTermList[2])) {
             timeOfDay = Constants.Daytime;
         }
-        else if (trimedText.endsWith(FrenchDateTime.NightTerm)) {
+        else if (FrenchDateTime.NightTermList.some(o => trimmedText.endsWith(o)))
+        {
             timeOfDay = Constants.Night;
         }
         else {

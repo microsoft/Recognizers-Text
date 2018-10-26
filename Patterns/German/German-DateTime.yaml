@@ -1049,9 +1049,24 @@ SpecialDecadeCases: !dictionary
 DefaultLanguageFallback: DMY
 DurationDateRestrictions: []
 # For TimeOfDay resolution
-MorningTerm: morgen
-AfternoonTerm: nachmittag
-EveningTerm: abend
-DaytimeTerm: tag
-NightTerm: nacht
+MorningTermList: !list
+  types: [ string ] 
+  entries: 
+    - morgen
+AfternoonTermList: !list
+  types: [ string ] 
+  entries: 
+    - nachmittag
+EveningTermList: !list
+  types: [ string ] 
+  entries: 
+    - abend
+DaytimeTermList: !list
+  types: [ string ] 
+  entries: 
+    - tag
+NightTermList: !list
+  types: [ string ] 
+  entries: 
+    - nacht
 ...

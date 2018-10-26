@@ -611,10 +611,25 @@ namespace Microsoft.Recognizers.Definitions.Chinese
 			{ "pm", 12 }
 		};
 		public const string DefaultLanguageFallback = "DMY";
-		public const string MorningTerm = "上午";
-		public const string AfternoonTerm = "下午";
-		public const string EveningTerm = "晚上";
-		public const string DaytimeTerm = "白天";
-		public const string NightTerm = "深夜";
+		public static readonly IList<string> MorningTermList = new List<string>
+		{
+			"上午"
+		};
+		public static readonly IList<string> AfternoonTermList = new List<string>
+		{
+			"下午"
+		};
+		public static readonly IList<string> EveningTermList = new List<string>
+		{
+			"晚上"
+		};
+		public static readonly IList<string> DaytimeTermList = new List<string>
+		{
+			"白天"
+		};
+		public static readonly IList<string> NightTermList = new List<string>
+		{
+			"深夜"
+		};
 	}
 }

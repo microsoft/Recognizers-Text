@@ -434,11 +434,9 @@ class PortugueseDateTime:
     DefaultLanguageFallback = 'DMY'
     DurationDateRestrictions = []
     AmbiguityFiltersDict = dict([('null', 'null')])
-    EarlyMorningTerm = 'madrugada'
-    MorningTerm1 = 'manha'
-    MorningTerm2 = 'manhã'
-    AfternoonTerm1 = 'passado o meio dia'
-    AfternoonTerm2 = 'depois do meio dia'
-    EveningTerm = 'tarde'
-    NightTerm = 'noite'
+    EarlyMorningTermList = ['madrugada']
+    MorningTermList = ['manha', 'manhã']
+    AfternoonTermList = ['passado o meio dia', 'depois do meio dia']
+    EveningTermList = ['tarde']
+    NightTermList = ['noite']
 # pylint: enable=line-too-long

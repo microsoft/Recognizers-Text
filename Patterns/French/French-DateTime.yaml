@@ -983,18 +983,33 @@ SpecialDecadeCases: !dictionary
 DefaultLanguageFallback: DMY
 DurationDateRestrictions: []
 # For TimeOfDay resolution
-MorningTerm1: matinee
-MorningTerm2: matin
-MorningTerm3: matinée
-AfternoonTerm1: apres-midi
-AfternoonTerm2: apres midi
-AfternoonTerm3: après midi
-AfternoonTerm4: après-midi
-EveningTerm1: soir
-EveningTerm2: soiree
-EveningTerm3: soirée
-DaytimeTerm1: jour
-DaytimeTerm2: journee
-DaytimeTerm3: journée
-NightTerm: nuit
+MorningTermList: !list
+  types: [ string ]
+  entries: 
+    - matinee
+    - matin
+    - matinée
+AfternoonTermList: !list
+  types: [ string ]
+  entries: 
+    - apres-midi
+    - apres midi
+    - après midi
+    - après-midi
+EveningTermList: !list
+  types: [ string ]
+  entries: 
+    - soir
+    - soiree
+    - soirée
+DaytimeTermList: !list
+  types: [ string ]
+  entries: 
+    - jour
+    - journee
+    - journée
+NightTermList: !list
+  types: [ string ]
+  entries: 
+    - nuit
 ...

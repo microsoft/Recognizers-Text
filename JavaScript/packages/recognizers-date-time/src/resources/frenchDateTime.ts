@@ -234,18 +234,9 @@ export namespace FrenchDateTime {
 	export const SpecialDecadeCases: ReadonlyMap<string, number> = new Map<string, number>([["", 0]]);
 	export const DefaultLanguageFallback = 'DMY';
 	export const DurationDateRestrictions = [  ];
-	export const MorningTerm1 = 'matinee';
-	export const MorningTerm2 = 'matin';
-	export const MorningTerm3 = 'matinée';
-	export const AfternoonTerm1 = 'apres-midi';
-	export const AfternoonTerm2 = 'apres midi';
-	export const AfternoonTerm3 = 'après midi';
-	export const AfternoonTerm4 = 'après-midi';
-	export const EveningTerm1 = 'soir';
-	export const EveningTerm2 = 'soiree';
-	export const EveningTerm3 = 'soirée';
-	export const DaytimeTerm1 = 'jour';
-	export const DaytimeTerm2 = 'journee';
-	export const DaytimeTerm3 = 'journée';
-	export const NightTerm = 'nuit';
+	export const MorningTermList = [ 'matinee','matin','matinée' ];
+	export const AfternoonTermList = [ 'apres-midi','apres midi','après midi','après-midi' ];
+	export const EveningTermList = [ 'soir','soiree','soirée' ];
+	export const DaytimeTermList = [ 'jour','journee','journée' ];
+	export const NightTermList = [ 'nuit' ];
 }

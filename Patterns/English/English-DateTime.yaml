@@ -959,10 +959,24 @@ AmbiguityFiltersDict: !dictionary
     '\\bmorning|afternoon|evening|night|day\\b': '\\bgood\\s+(morning|afternoon|evening|night|day)\\b'
     '\\bmay\\b': '\\b((^may i)|(i|you|he|she|we|they)\\s+may|(may\\s+((((also|not|(also not)|well)\\s+)?(be|contain|constitute|email|e-mail|take|have|result|involve|get|work|reply))|(or may not))))\\b'
 # For TimeOfDay resolution
-MorningTerm: morning
-AfternoonTerm: afternoon
-EveningTerm: evening
-DaytimeTerm: daytime
-NightTerm: night
-BusinessHourTerm: businessHour
+MorningTermList: !list
+  types: [ string ]
+  entries: 
+    - morning
+AfternoonTermList: !list
+  types: [ string ]
+  entries: 
+    - afternoon
+EveningTermList: !list
+  types: [ string ]
+  entries: 
+    - evening
+DaytimeTermList: !list
+  types: [ string ]
+  entries: 
+    - daytime
+NightTermList: !list
+  types: [ string ]
+  entries: 
+    - night
 ...

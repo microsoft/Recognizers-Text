@@ -824,11 +824,26 @@ AmbiguityFiltersDict: !dictionary
   entries:
     'null': 'null'
 # For TimeOfDay resolution
-EarlyMorningTerm: madrugada
-MorningTerm1: manha
-MorningTerm2: manhã
-AfternoonTerm1: passado o meio dia
-AfternoonTerm2: depois do meio dia
-EveningTerm: tarde
-NightTerm: noite
+EarlyMorningTermList: !list
+  types: [ string ] 
+  entries: 
+    - madrugada
+MorningTermList: !list
+  types: [ string ]
+  entries:
+    - manha
+    - manhã
+AfternoonTermList: !list
+  types: [ string ]
+  entries:
+    - passado o meio dia
+    - depois do meio dia
+EveningTermList: !list
+  types: [ string ] 
+  entries: 
+    - tarde
+NightTermList: !list
+  types: [ string ] 
+  entries: 
+    - noite
 ...
