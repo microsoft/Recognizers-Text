@@ -16,19 +16,13 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public Regex MealTimeRegex { get; }
 
         private static readonly Regex TimeSuffixFull =
-            new Regex(
-                DateTimeDefinitions.TimeSuffixFull,
-                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.TimeSuffixFull, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         private static readonly Regex LunchRegex =
-            new Regex(
-                DateTimeDefinitions.LunchRegex,
-                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.LunchRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         private static readonly Regex NightRegex =
-            new Regex(
-                DateTimeDefinitions.NightRegex,
-                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.NightRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public IEnumerable<Regex> TimeRegexes { get; }
 
@@ -51,6 +45,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public void AdjustByPrefix(string prefix, ref int hour, ref int min, ref bool hasMin)
         {
             int deltaMin;
+
             var trimedPrefix = prefix.Trim().ToLowerInvariant();
 
             if (trimedPrefix.StartsWith("half"))
@@ -91,6 +86,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
                 min += 60;
                 hour -= 1;
             }
+
             hasMin = true;
         }
 

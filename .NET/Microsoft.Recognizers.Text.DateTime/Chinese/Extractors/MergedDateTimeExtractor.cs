@@ -64,7 +64,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         private static void CheckBlackList(ref List<ExtractResult> extractResults, string text)
         {
             var ret = new List<ExtractResult>();
-            var regex = new Regex(@"^\d{1,2}号", RegexOptions.IgnoreCase);
+            const string negativeCaseRegex = @"^\d{1,2}号";
 
             foreach (var extractResult in extractResults)
             {
@@ -81,7 +81,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 }
 
                 // for cases like "12号"
-                if (regex.Match(extractResult.Text).Success)
+                if (Regex.IsMatch(extractResult.Text, negativeCaseRegex))
                 {
                     continue;
                 }

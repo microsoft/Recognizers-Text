@@ -4,7 +4,6 @@ using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Text.DateTime.Utilities;
 using Microsoft.Recognizers.Definitions.English;
-using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
 {
@@ -60,20 +59,19 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public Regex RelativeWeekDayRegex { get; }
 
-        //The following three regexes only used in this configuration
-        //They are not used in the base parser, therefore they are not extracted
-        //If the spanish date parser need the same regexes, they should be extracted
-        public static readonly Regex RelativeDayRegex= new Regex(
-                DateTimeDefinitions.RelativeDayRegex,
-                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        /*
+         The following three regexes only used in this configuration
+         They are not used in the base parser, therefore they are not extracted
+         If the spanish date parser need the same regexes, they should be extracted 
+        */
+        public static readonly Regex RelativeDayRegex= 
+            new Regex(DateTimeDefinitions.RelativeDayRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex NextPrefixRegex = new Regex(
-                DateTimeDefinitions.NextPrefixRegex,
-                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex NextPrefixRegex = 
+            new Regex(DateTimeDefinitions.NextPrefixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex PastPrefixRegex = new Regex(
-                DateTimeDefinitions.PastPrefixRegex,
-                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex PastPrefixRegex = 
+            new Regex(DateTimeDefinitions.PastPrefixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public IImmutableDictionary<string, int> DayOfMonth { get; }
 
@@ -151,6 +149,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             {
                 swift = GetSwift(text);
             }
+
             return swift;
         }
 
@@ -162,6 +161,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public int GetSwift(string text)
         {
             var trimmedText = text.Trim().ToLowerInvariant();
+
             var swift = 0;
             if (NextPrefixRegex.IsMatch(trimmedText))
             {
@@ -171,6 +171,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             {
                 swift = -1;
             }
+
             return swift;
         }
 

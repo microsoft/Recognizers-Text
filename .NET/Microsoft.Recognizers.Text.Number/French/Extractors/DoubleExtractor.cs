@@ -68,6 +68,7 @@ namespace Microsoft.Recognizers.Text.Number.French
                     GenerateLongFormatNumberRegexes(LongFormatType.DoubleNumNoBreakSpaceComma, placeholder),
                     RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)
                 }
+
             }.ToImmutableDictionary();
         }
 

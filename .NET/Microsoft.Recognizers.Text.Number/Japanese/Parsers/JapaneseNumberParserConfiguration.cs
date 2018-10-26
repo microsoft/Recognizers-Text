@@ -40,6 +40,8 @@ namespace Microsoft.Recognizers.Text.Number.Japanese
             RoundDirectList = NumbersDefinitions.RoundDirectList.ToImmutableList();
 
             HalfADozenRegex = null;
+
+            // @TODO Change init to follow design in other languages
             DigitalNumberRegex = new Regex(NumbersDefinitions.DigitalNumberRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
             DozenRegex = new Regex(NumbersDefinitions.DozenRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
             PointRegex = new Regex(NumbersDefinitions.PointRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);

@@ -9,8 +9,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 {
     public class FormatUtil
     {
-        public static readonly Regex HourTimexRegex = new Regex(@"(?<!P)T(\d{2})");
-        public static readonly Regex WeekDayTimexRegex = new Regex(@"XXXX-WXX-(\d)");
+        private static readonly Regex HourTimexRegex = new Regex(@"(?<!P)T(\d{2})");
+        private static readonly Regex WeekDayTimexRegex = new Regex(@"XXXX-WXX-(\d)");
 
         public static string LuisDate(int year, int month, int day)
         {

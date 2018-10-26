@@ -16,10 +16,12 @@ namespace Microsoft.Recognizers.Text.Sequence
             var regexes = new Dictionary<Regex, string>
             {
                 {
-                    new Regex(BaseEmail.EmailRegex), Constants.EMAIL_REGEX
+                    new Regex(BaseEmail.EmailRegex, RegexOptions.Compiled),
+                    Constants.EMAIL_REGEX
                 },
                 {
-                    new Regex(BaseEmail.EmailRegex2), Constants.EMAIL_REGEX
+                    new Regex(BaseEmail.EmailRegex2, RegexOptions.Compiled),
+                    Constants.EMAIL_REGEX
                 }
             };
 
