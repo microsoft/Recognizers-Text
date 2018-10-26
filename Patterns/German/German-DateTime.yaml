@@ -177,9 +177,11 @@ DateExtractor10: !nestedRegex
 DateExtractorA: !nestedRegex
   def: ({DateYearRegex}\s*[/\\\-\.]\s*{MonthNumRegex}\s*[/\\\-\.]\s*{DayRegex})
   references: [ DateYearRegex, MonthNumRegex, DayRegex ]
+# Needs to be changed for German
 OfMonth: !nestedRegex
   def: ^(\s*des\s*|\s*)?{MonthRegex}
   references: [ MonthRegex ]
+# Needs to be changed for German
 MonthEnd: !nestedRegex
   def: '{MonthRegex}\s*(der|dem|den)?\s*$'
   references: [ MonthRegex ]
