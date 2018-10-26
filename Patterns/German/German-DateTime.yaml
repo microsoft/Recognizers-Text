@@ -1048,4 +1048,10 @@ SpecialDecadeCases: !dictionary
     'zweitausender': 2000
 DefaultLanguageFallback: DMY
 DurationDateRestrictions: []
+# For TimeOfDay resolution
+MorningTerm: morgen
+AfternoonTerm: nachmittag
+EveningTerm: abend
+DaytimeTerm: tag
+NightTerm: nacht
 ...

@@ -484,5 +484,12 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
 		{
 			{ "null", "null" }
 		};
+		public const string EarlyMorningTerm = "madrugada";
+		public const string MorningTerm1 = "manha";
+		public const string MorningTerm2 = "manhã";
+		public const string AfternoonTerm1 = "passado o meio dia";
+		public const string AfternoonTerm2 = "depois do meio dia";
+		public const string EveningTerm = "tarde";
+		public const string NightTerm = "noite";
 	}
 }

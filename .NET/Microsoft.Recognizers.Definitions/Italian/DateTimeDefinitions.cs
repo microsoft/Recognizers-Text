@@ -561,5 +561,19 @@ namespace Microsoft.Recognizers.Definitions.Italian
 		};
 		public const string DefaultLanguageFallback = "DMY";
 		public static readonly string[] DurationDateRestrictions = {  };
+		public const string MorningTerm1 = "matinee";
+		public const string MorningTerm2 = "matin";
+		public const string MorningTerm3 = "matinée";
+		public const string AfternoonTerm1 = "apres-midi";
+		public const string AfternoonTerm2 = "apres midi";
+		public const string AfternoonTerm3 = "après midi";
+		public const string AfternoonTerm4 = "après-midi";
+		public const string EveningTerm1 = "soir";
+		public const string EveningTerm2 = "soiree";
+		public const string EveningTerm3 = "soirée";
+		public const string DaytimeTerm1 = "jour";
+		public const string DaytimeTerm2 = "journee";
+		public const string DaytimeTerm3 = "journée";
+		public const string NightTerm = "nuit";
 	}
 }

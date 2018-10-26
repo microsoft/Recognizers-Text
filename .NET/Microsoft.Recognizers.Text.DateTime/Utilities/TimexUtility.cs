@@ -212,6 +212,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             var result = new TimeOfDayResolutionResult();
             switch (tod)
             {
+                case Constants.EarlyMorning:
+                    result.Timex = Constants.EarlyMorning;
+                    result.BeginHour = 4;
+                    result.EndHour = 8;
+                    break;
                 case Constants.Morning:
                     result.Timex = Constants.Morning;
                     result.BeginHour = 8;

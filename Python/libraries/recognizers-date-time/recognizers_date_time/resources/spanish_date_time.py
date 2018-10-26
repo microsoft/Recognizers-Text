@@ -412,4 +412,10 @@ class SpanishDateTime:
     SpecialDecadeCases = dict([('', 0)])
     DefaultLanguageFallback = 'DMY'
     DurationDateRestrictions = []
+    EarlyMorningTerm = 'madrugada'
+    MorningTerm = 'mañana'
+    AfternoonTerm1 = 'pasado mediodia'
+    AfternoonTerm2 = 'pasado el mediodia'
+    EveningTerm = 'tarde'
+    NightTerm = 'noche'
 # pylint: enable=line-too-long

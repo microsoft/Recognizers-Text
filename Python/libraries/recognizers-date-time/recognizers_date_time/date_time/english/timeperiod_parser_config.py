@@ -71,15 +71,15 @@ class EnglishTimePeriodParserConfiguration(TimePeriodParserConfiguration):
         end_min = 0
 
         time_of_day = ""
-        if trimmed_text.endswith(EnglishDateTime.Morning):
+        if trimmed_text.endswith(EnglishDateTime.MorningTerm):
             time_of_day = Constants.Morning
-        elif trimmed_text.endswith(EnglishDateTime.Afternoon):
+        elif trimmed_text.endswith(EnglishDateTime.AfternoonTerm):
             time_of_day = Constants.Afternoon
-        elif trimmed_text.endswith(EnglishDateTime.Evening):
+        elif trimmed_text.endswith(EnglishDateTime.EveningTerm):
             time_of_day = Constants.Evening
-        elif trimmed_text == EnglishDateTime.Daytime:
+        elif trimmed_text == EnglishDateTime.DaytimeTerm:
             time_of_day = Constants.Daytime
-        elif trimmed_text.endswith(EnglishDateTime.Night):
+        elif trimmed_text.endswith(EnglishDateTime.NightTerm):
             time_of_day = Constants.Night
         else:
             return MatchedTimeRegex(

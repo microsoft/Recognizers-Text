@@ -59,6 +59,7 @@ export class Constants {
 
     static readonly REF_UNDEF_MOD: string = 'ref_undef';
 
+    static readonly EarlyMorning: string = "TDA";
     static readonly Morning: string = "TMO";
     static readonly Afternoon: string = "TAF";
     static readonly Evening: string = "TEV";

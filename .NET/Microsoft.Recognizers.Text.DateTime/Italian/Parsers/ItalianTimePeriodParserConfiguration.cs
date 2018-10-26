@@ -1,6 +1,6 @@
 ﻿using System.Collections.Immutable;
 using System.Text.RegularExpressions;
-
+using Microsoft.Recognizers.Definitions.Italian;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.Italian
@@ -59,43 +59,42 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             endHour = 0;
             endMin = 0;
 
-            if (trimmedText.EndsWith("matinee") || trimmedText.EndsWith("matin") || trimmedText.EndsWith("matinée"))
+            var timeOfDay = "";
+            if (trimmedText.EndsWith(DateTimeDefinitions.MorningTerm1) || trimmedText.EndsWith(DateTimeDefinitions.MorningTerm2)
+                                                                       || trimmedText.EndsWith(DateTimeDefinitions.MorningTerm3))
             {
-                timex = "TMO";
-                beginHour = 8;
-                endHour = 12;
+                timeOfDay = Constants.Morning;
             }
-            else if (trimmedText.EndsWith("apres-midi")||trimmedText.EndsWith("apres midi") 
-                || trimmedText.EndsWith("après midi") || trimmedText.EndsWith("après-midi"))
+            else if (trimmedText.EndsWith(DateTimeDefinitions.AfternoonTerm1) || trimmedText.EndsWith(DateTimeDefinitions.AfternoonTerm2)
+                                                                              || trimmedText.EndsWith(DateTimeDefinitions.AfternoonTerm3) || trimmedText.EndsWith(DateTimeDefinitions.AfternoonTerm4))
             {
-                timex = "TAF";
-                beginHour = 12;
-                endHour = 16;
-            } 
-            else if (trimmedText.EndsWith("soir") || trimmedText.EndsWith("soiree") || trimmedText.EndsWith("soirée"))
-            {
-                timex = "TEV";
-                beginHour = 16;
-                endHour = 20;
+                timeOfDay = Constants.Afternoon;
             }
-            else if (trimmedText.Equals("jour") || trimmedText.EndsWith("journee") || trimmedText.EndsWith("journée"))
+            else if (trimmedText.EndsWith(DateTimeDefinitions.EveningTerm1) || trimmedText.EndsWith(DateTimeDefinitions.EveningTerm2)
+                                                                            || trimmedText.EndsWith(DateTimeDefinitions.EveningTerm3))
             {
-                timex = "TDT";
-                beginHour = 8;
-                endHour = 18;
+                timeOfDay = Constants.Evening;
             }
-            else if (trimmedText.EndsWith("nuit"))
+            else if (trimmedText.Equals(DateTimeDefinitions.DaytimeTerm1) || trimmedText.EndsWith(DateTimeDefinitions.DaytimeTerm2)
+                                                                          || trimmedText.EndsWith(DateTimeDefinitions.DaytimeTerm3))
             {
-                timex = "TNI";
-                beginHour = 20;
-                endHour = 23;
-                endMin = 59;
+                timeOfDay = Constants.Daytime;
+            }
+            else if (trimmedText.EndsWith(DateTimeDefinitions.NightTerm))
+            {
+                timeOfDay = Constants.Night;
             }
             else
             {
                 timex = null;
                 return false;
             }
+
+            var parseResult = TimexUtility.ParseTimeOfDay(timeOfDay);
+            timex = parseResult.Timex;
+            beginHour = parseResult.BeginHour;
+            endHour = parseResult.EndHour;
+            endMin = parseResult.EndMin;
 
             return true;
         }

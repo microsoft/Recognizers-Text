@@ -8,6 +8,8 @@ from ..extractors import DateTimeExtractor
 from ..parsers import DateTimeParser
 from ..base_configs import BaseDateParserConfiguration, DateTimeUtilityConfiguration
 from ..base_timeperiod import TimePeriodParserConfiguration, MatchedTimeRegex
+from ..constants import Constants
+from ..utilities import TimexUtil
 
 class FrenchTimePeriodParserConfiguration(TimePeriodParserConfiguration):
     @property
@@ -67,27 +69,21 @@ class FrenchTimePeriodParserConfiguration(TimePeriodParserConfiguration):
         end_hour = 0
         end_min = 0
 
-        if source.endswith('matinee') or source.endswith('matin') or source.endswith('matinée'):
-            timex = 'TMO'
-            begin_hour = 8
-            end_hour = 12
-        elif source.endswith('apres-midi') or source.endswith('apres midi') or source.endswith('après midi') or source.endswith('après-midi'):
-            timex = 'TAF'
-            begin_hour = 12
-            end_hour = 16
-        elif source.endswith('soir') or source.endswith('soiree') or source.endswith('soirée'):
-            timex = 'TEV'
-            begin_hour = 16
-            end_hour = 20
-        elif source == 'jour' or source.endswith('journee') or source.endswith('journée'):
-            timex = 'TDT'
-            begin_hour = 8
-            end_hour = 18
-        elif source.endswith('nuit'):
-            timex = 'TNI'
-            begin_hour = 20
-            end_hour = 23
-            end_min = 59
+        time_of_day = ""
+        if source.endswith(FrenchDateTime.MorningTerm1) or source.endswith(FrenchDateTime.MorningTerm2) \
+                or source.endswith(FrenchDateTime.MorningTerm3):
+            time_of_day = Constants.Morning
+        elif source.endswith(FrenchDateTime.AfternoonTerm1) or source.endswith(FrenchDateTime.AfternoonTerm2) \
+                or source.endswith(FrenchDateTime.AfternoonTerm3) or source.endswith(FrenchDateTime.AfternoonTerm4):
+            time_of_day = Constants.Afternoon
+        elif source.endswith(FrenchDateTime.EveningTerm1) or source.endswith(FrenchDateTime.EveningTerm2) \
+                or source.endswith(FrenchDateTime.EveningTerm3):
+            time_of_day = Constants.Evening
+        elif source == FrenchDateTime.DaytimeTerm1 or source.endswith(FrenchDateTime.DaytimeTerm2) \
+                or source.endswith(FrenchDateTime.DaytimeTerm3):
+            time_of_day = Constants.Daytime
+        elif source.endswith(FrenchDateTime.NightTerm):
+            time_of_day = Constants.Night
         else:
             return MatchedTimeRegex(
                 matched=False,
@@ -96,6 +92,12 @@ class FrenchTimePeriodParserConfiguration(TimePeriodParserConfiguration):
                 end_hour=0,
                 end_min=0
             )
+
+        parse_result = TimexUtil.parse_time_of_day(time_of_day)
+        timex = parse_result.timex
+        begin_hour = parse_result.begin_hour
+        end_hour = parse_result.end_hour
+        end_min = parse_result.end_min
 
         return MatchedTimeRegex(
             matched=True,

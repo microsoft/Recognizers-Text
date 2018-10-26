@@ -433,4 +433,12 @@ class PortugueseDateTime:
     SpecialDecadeCases = dict([('', 0)])
     DefaultLanguageFallback = 'DMY'
     DurationDateRestrictions = []
+    AmbiguityFiltersDict = dict([('null', 'null')])
+    EarlyMorningTerm = 'madrugada'
+    MorningTerm1 = 'manha'
+    MorningTerm2 = 'manhã'
+    AfternoonTerm1 = 'passado o meio dia'
+    AfternoonTerm2 = 'depois do meio dia'
+    EveningTerm = 'tarde'
+    NightTerm = 'noite'
 # pylint: enable=line-too-long

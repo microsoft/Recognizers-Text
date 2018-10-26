@@ -735,5 +735,10 @@ namespace Microsoft.Recognizers.Definitions.German
 		};
 		public const string DefaultLanguageFallback = "DMY";
 		public static readonly string[] DurationDateRestrictions = {  };
+		public const string MorningTerm = "morgen";
+		public const string AfternoonTerm = "nachmittag";
+		public const string EveningTerm = "abend";
+		public const string DaytimeTerm = "tag";
+		public const string NightTerm = "nacht";
 	}
 }

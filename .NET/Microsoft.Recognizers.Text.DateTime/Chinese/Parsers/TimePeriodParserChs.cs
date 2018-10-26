@@ -114,23 +114,23 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             endMin = 0;
 
             var timeOfDay = "";
-            if (trimmedText.EndsWith(DateTimeDefinitions.Morning))
+            if (trimmedText.EndsWith(DateTimeDefinitions.MorningTerm))
             {
                 timeOfDay = Constants.Morning;
             }
-            else if (trimmedText.EndsWith(DateTimeDefinitions.Afternoon))
+            else if (trimmedText.EndsWith(DateTimeDefinitions.AfternoonTerm))
             {
                 timeOfDay = Constants.Afternoon;
             }
-            else if (trimmedText.EndsWith(DateTimeDefinitions.Evening))
+            else if (trimmedText.EndsWith(DateTimeDefinitions.EveningTerm))
             {
                 timeOfDay = Constants.Evening;
             }
-            else if (trimmedText.Equals(DateTimeDefinitions.Daytime))
+            else if (trimmedText.Equals(DateTimeDefinitions.DaytimeTerm))
             {
                 timeOfDay = Constants.Daytime;
             }
-            else if (trimmedText.EndsWith(DateTimeDefinitions.Night))
+            else if (trimmedText.EndsWith(DateTimeDefinitions.NightTerm))
             {
                 timeOfDay = Constants.Night;
             }

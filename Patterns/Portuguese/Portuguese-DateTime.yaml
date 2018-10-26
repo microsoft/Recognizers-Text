@@ -823,4 +823,12 @@ AmbiguityFiltersDict: !dictionary
   types: [ string, string ]
   entries:
     'null': 'null'
+# For TimeOfDay resolution
+EarlyMorningTerm: madrugada
+MorningTerm1: manha
+MorningTerm2: manhã
+AfternoonTerm1: passado o meio dia
+AfternoonTerm2: depois do meio dia
+EveningTerm: tarde
+NightTerm: noite
 ...

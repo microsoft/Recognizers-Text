@@ -1,13 +1,14 @@
 import { RegExpUtility, IExtractor } from "@microsoft/recognizers-text";
 import { ITimePeriodExtractorConfiguration, ITimePeriodParserConfiguration } from "../baseTimePeriod";
 import { BaseTimeExtractor, BaseTimeParser } from "../baseTime";
-import { IDateTimeUtilityConfiguration } from "../utilities";
+import { IDateTimeUtilityConfiguration, TimexUtil } from "../utilities";
 import { SpanishTimeExtractorConfiguration } from "./timeConfiguration";
 import { SpanishDateTimeUtilityConfiguration } from "./baseConfiguration";
 import { SpanishDateTime } from "../../resources/spanishDateTime";
 import { ICommonDateTimeParserConfiguration } from "../parsers";
 import { IDateTimeExtractor } from "../baseDateTime";
 import { EnglishIntegerExtractor, NumberMode } from "@microsoft/recognizers-text-number";
+import { Constants } from "../constants";
 
 export class SpanishTimePeriodExtractorConfiguration implements ITimePeriodExtractorConfiguration {
     readonly simpleCasesRegex: RegExp[];
@@ -90,31 +91,21 @@ export class SpanishTimePeriodParserConfiguration implements ITimePeriodParserCo
         let endMin = 0;
         let timex = "";
 
-        if (trimedText.endsWith("madrugada")) {
-            timex = "TDA";
-            beginHour = 4;
-            endHour = 8;
+        let timeOfDay = "";
+        if (trimedText.endsWith(SpanishDateTime.EarlyMorningTerm)) {
+            timeOfDay = Constants.EarlyMorning;
         }
-        else if (trimedText.endsWith("mañana")) {
-            timex = "TMO";
-            beginHour = 8;
-            endHour = 12;
+        else if (trimedText.endsWith(SpanishDateTime.MorningTerm)) {
+            timeOfDay = Constants.Morning;
         }
-        else if (trimedText.includes("pasado mediodia") || trimedText.includes("pasado el mediodia")) {
-            timex = "TAF";
-            beginHour = 12;
-            endHour = 16;
+        else if (trimedText.includes(SpanishDateTime.AfternoonTerm1) || trimedText.includes(SpanishDateTime.AfternoonTerm2)) {
+            timeOfDay = Constants.Afternoon;
         }
-        else if (trimedText.endsWith("tarde")) {
-            timex = "TEV";
-            beginHour = 16;
-            endHour = 20;
+        else if (trimedText.endsWith(SpanishDateTime.EveningTerm)) {
+            timeOfDay = Constants.Evening;
         }
-        else if (trimedText.endsWith("noche")) {
-            timex = "TNI";
-            beginHour = 20;
-            endHour = 23;
-            endMin = 59;
+        else if (trimedText.endsWith(SpanishDateTime.NightTerm)) {
+            timeOfDay = Constants.Night;
         }
         else {
             timex = null;
@@ -126,6 +117,12 @@ export class SpanishTimePeriodParserConfiguration implements ITimePeriodParserCo
                 endMin
             };
         }
+
+        let parseResult = TimexUtil.parseTimeOfDay(timeOfDay);
+        timex = parseResult.timeX;
+        beginHour = parseResult.beginHour;
+        endHour = parseResult.endHour;
+        endMin = parseResult.endMin;
 
         return {
             matched: true,
