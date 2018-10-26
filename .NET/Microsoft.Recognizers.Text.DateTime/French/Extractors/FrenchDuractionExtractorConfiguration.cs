@@ -34,7 +34,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public static readonly Regex ConjunctionRegex = 
             new Regex(DateTimeDefinitions.ConjunctionRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        //quelques = "a few, some," etc 
+        // quelques = "a few, some," etc 
         public static readonly Regex InexactNumberRegex = 
             new Regex( DateTimeDefinitions.InexactNumberRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 

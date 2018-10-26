@@ -24,6 +24,8 @@ namespace Microsoft.Recognizers.Text.Sequence.English
         private static int tailSameLimit = 2;
         private static int phoneNumberLengthBase = 8;
         private static int pureDigitLengthLimit = 11;
+
+        // @TODO move regexes to base resource files
         private static string completeBracketRegex = @"\(.*\)";
         private static string singleBracketRegex = @"\(|\)";
         private static string tailSameDigitRegex = @"([\d])\1{2,10}$";
@@ -31,28 +33,22 @@ namespace Microsoft.Recognizers.Text.Sequence.English
         private static string continueDigitRegex = @"\d{5}\d*";
         private static string digitRegex = @"\d";
 
-
-        public PhoneNumberParser()
-        {
-
-        }
+        private static readonly Regex CountryCodeRegex = new Regex(BasePhoneNumbers.CountryCodeRegex);
+        private static readonly Regex AreaCodeRegex = new Regex(BasePhoneNumbers.AreaCodeIndicatorRegex);
+        private static readonly Regex FormatIndicatorRegex = new Regex(BasePhoneNumbers.FormatIndicatorRegex);
 
         double ScorePhoneNumber(string phoneNumberText)
         {
             double score = baseScore;
 
-            Regex countryCodeRegex = new Regex(BasePhoneNumbers.CountryCodeRegex);
-            Regex areaCodeRegex = new Regex(BasePhoneNumbers.AreaCodeIndicatorRegex);
-            Regex formatIndicatorRegex = new Regex(BasePhoneNumbers.FormatIndicatorRegex);
-
             // Country code score or area code score 
-            score += countryCodeRegex.IsMatch(phoneNumberText) ?
-                                    countryCodeAward : areaCodeRegex.IsMatch(phoneNumberText) ? areaCodeAward : 0;
+            score += CountryCodeRegex.IsMatch(phoneNumberText) ?
+                                    countryCodeAward : AreaCodeRegex.IsMatch(phoneNumberText) ? areaCodeAward : 0;
 
             // Formatted score
-            if (formatIndicatorRegex.IsMatch(phoneNumberText))
+            if (FormatIndicatorRegex.IsMatch(phoneNumberText))
             {
-                var formatMatches = formatIndicatorRegex.Matches(phoneNumberText);
+                var formatMatches = FormatIndicatorRegex.Matches(phoneNumberText);
                 int formatIndicatorCount = formatMatches.Count;
                 score += Math.Min(formatIndicatorCount, maxFormatIndicatorNum) * formattedAward;
                 score -= formatMatches.Cast<Match>().Any(o => o.Value.Length > 1) ? continueFormatIndicatorDeductionScore : 0;
@@ -99,6 +95,7 @@ namespace Microsoft.Recognizers.Text.Sequence.English
                 ResolutionStr = extResult.Text,
                 Value = ScorePhoneNumber(extResult.Text),
             };
+
             return result;
         }
     }
