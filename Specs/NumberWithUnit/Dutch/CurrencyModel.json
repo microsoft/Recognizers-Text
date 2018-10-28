@@ -84,6 +84,20 @@
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
+    "Input": "Ik vond laatst een cent op de grond",
+    "Results": [
+      {
+        "Text": "een cent",
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Euro",
+          "value": "0,01"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
     "Input": "Een broodje kost gemiddeld € 2,20",
     "Results": [
       {
@@ -157,6 +171,62 @@
         "Resolution": {
           "unit": "Euro",
           "value": "24"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Hijs is me nog een tientje schuldig.",
+    "Results": [
+      {
+        "Text": "tientje",
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Euro",
+          "value": "10"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Een kwartje is 25 cent.",
+    "Results": [
+      {
+        "Text": "kwartje",
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Euro",
+          "value": "0,25"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Een dubbeltje is 10 cent.",
+    "Results": [
+      {
+        "Text": "dubbeltje",
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Euro",
+          "value": "0,1"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Een stuiver is 5 cent.",
+    "Results": [
+      {
+        "Text": "stuiver",
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Euro",
+          "value": "0,05"
         }
       }
     ],

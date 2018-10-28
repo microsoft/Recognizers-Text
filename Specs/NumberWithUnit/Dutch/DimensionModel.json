@@ -224,6 +224,20 @@
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
+    "Input": " Het zwembad heeft een inhoud van 2500 kuub",
+    "Results": [
+      {
+        "Text": "2500 kuub",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "2500",
+          "unit": "Cubic foot"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
     "Input": " De belangrijkste elementen van de wetgeving, zoals die momenteel worden weergegeven, zijn: - een beperking van de hoeveelheid onroerend goed die een gezin kan bezitten, tot 660 vierkante meter in de zes grootste steden van de natie, maar meer in kleinere steden en plattelandsgebieden.",
     "Results": [
       {
