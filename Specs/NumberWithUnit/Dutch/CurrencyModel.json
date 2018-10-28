@@ -177,7 +177,7 @@
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
-    "Input": "Hijs is me nog een tientje schuldig.",
+    "Input": "Hij is is me nog een tientje schuldig.",
     "Results": [
       {
         "Text": "tientje",
