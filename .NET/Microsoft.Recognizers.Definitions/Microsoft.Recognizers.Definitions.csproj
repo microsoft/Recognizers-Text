@@ -193,6 +193,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>ChoiceDefinitions.tt</DependentUpon>
     </Compile>
+    <Compile Update="Japanese\DateTimeDefinitions.cs"> 
+      <DependentUpon>DateTimeDefinitions.tt</DependentUpon> 
+      <DesignTime>True</DesignTime> 
+      <AutoGen>True</AutoGen> 
+    </Compile>
     <Compile Update="Japanese\NumbersDefinitions.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -395,6 +400,10 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>ChoiceDefinitions.cs</LastGenOutput>
     </None>
+    <None Update="Japanese\DateTimeDefinitions.tt"> 
+      <LastGenOutput>DateTimeDefinitions.cs</LastGenOutput> 
+      <Generator>TextTemplatingFileGenerator</Generator> 
+    </None> 
     <None Update="Japanese\NumbersDefinitions.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>NumbersDefinitions.cs</LastGenOutput>

@@ -7,6 +7,7 @@ using Microsoft.Recognizers.Text.DateTime.German;
 using Microsoft.Recognizers.Text.DateTime.Portuguese;
 using Microsoft.Recognizers.Text.DateTime.Spanish;
 using Microsoft.Recognizers.Text.DateTime.Italian;
+using Microsoft.Recognizers.Text.DateTime.Japanese;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
@@ -95,6 +96,12 @@ namespace Microsoft.Recognizers.Text.DateTime
                     new BaseMergedDateTimeParser(
                         new GermanMergedParserConfiguration(new BaseOptionsConfiguration(options))),
                     new BaseMergedDateTimeExtractor(new GermanMergedExtractorConfiguration(options))));
-        }
+
+            RegisterModel<DateTimeModel>(
+                Culture.Japanese,
+                options => new DateTimeModel(
+                  new FullDateTimeParser(new JapaneseDateTimeParserConfiguration(options)),
+                  new MergedExtractorJap(options)));
+    }
     }
 }

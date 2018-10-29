@@ -49,6 +49,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Patterns", "Patterns", "{23
 		..\Patterns\Italian\Italian-Numbers.yaml = ..\Patterns\Italian\Italian-Numbers.yaml
 		..\Patterns\Italian\Italian-NumbersWithUnit.yaml = ..\Patterns\Italian\Italian-NumbersWithUnit.yaml
 		..\Patterns\Japanese\Japanese-Choice.yaml = ..\Patterns\Japanese\Japanese-Choice.yaml
+		..\Patterns\Japanese\Japanese-DateTime.yaml = ..\Patterns\Japanese\Japanese-DateTime.yaml
 		..\Patterns\Japanese\Japanese-Numbers.yaml = ..\Patterns\Japanese\Japanese-Numbers.yaml
 		..\Patterns\Japanese\Japanese-NumbersWithUnit.yaml = ..\Patterns\Japanese\Japanese-NumbersWithUnit.yaml
 		..\Patterns\Korean\Korean-Numbers.yaml = ..\Patterns\Korean\Korean-Numbers.yaml
