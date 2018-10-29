@@ -3,7 +3,7 @@
 
 from setuptools import setup, find_packages
 
-NAME = "recognizers_text"
+NAME = "recognizers-text"
 VERSION = "1.0.0.a0"
 REQUIRES = []
 
@@ -12,9 +12,9 @@ setup(
     version=VERSION,
     url='https://github.com/Microsoft/Recognizers-Text',
     author='Microsoft',
-    description='recognizers_text README',
+    description='recognizers-text README',
     keywords=[ 'nlp', 'nlp-entity-extraction', 'entity-extraction', 'parser-library' ],
-    long_description='recognizers_text long README.',
+    long_description='recognizers-text long README.',
     license='MIT',
     packages=find_packages(),
     install_requires=REQUIRES,

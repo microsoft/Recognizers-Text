@@ -49,7 +49,7 @@ Install Recognizer's by launching the following commands:
 
 Or install Recognizer's suite with the following command:
 
-`pip install recognizers-suite`
+`pip install recognizers-text-suite`
 
 ## API Documentation
 
@@ -60,6 +60,7 @@ from recognizers_text import Culture, ModelResult
 from recognizers_number import NumberRecognizer
 from recognizers_number_with_unit import NumberWithUnitRecognizer 
 from recognizers_date_time import DateTimeRecognizer 
+from recognizers_sequence import SequenceRecognizer 
 ````
 
 Or, using the suite package:
