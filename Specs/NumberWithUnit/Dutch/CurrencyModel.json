@@ -90,8 +90,8 @@
         "Text": "een cent",
         "TypeName": "currency",
         "Resolution": {
-          "unit": "Euro",
-          "value": "0,01"
+          "unit": "Cent",
+          "value": "1"
         }
       }
     ],
@@ -188,6 +188,7 @@
         }
       }
     ],
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -202,6 +203,7 @@
         }
       }
     ],
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -216,6 +218,7 @@
         }
       }
     ],
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -230,6 +233,7 @@
         }
       }
     ],
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
