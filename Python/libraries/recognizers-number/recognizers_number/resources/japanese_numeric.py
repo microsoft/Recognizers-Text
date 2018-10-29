@@ -89,6 +89,8 @@ class JapaneseNumeric:
     NotSingleRegex = f'(?<!(第|だい))(({RoundNumberIntegerRegex}+({ZeroToNineIntegerRegex}+|{ZeroToNineFullHalfRegex}+|十)\\s*))|(({ZeroToNineIntegerRegex}+|{ZeroToNineFullHalfRegex}+|十)\\s*({RoundNumberIntegerRegex}\\s*){{1,2}})\\s*(([零]?({ZeroToNineIntegerRegex}+|{ZeroToNineFullHalfRegex}+|十)\\s*{RoundNumberIntegerRegex}{{0,1}})\\s*)*\\s*(\\s*(以上)?)'
     SingleRegex = f'(({ZeroToNineIntegerRegex}|{ZeroToNineFullHalfRegex}|十)(?={WhiteListRegex}))'
     AllIntRegex = f'(((({ZeroToNineIntegerRegex}|[十百千])\\s*{RoundNumberIntegerRegex}*)|({ZeroToNineFullHalfRegex}\\s*{RoundNumberIntegerRegex})){{1,2}}(\\s*[以上])?)'
+    PlaceHolderPureNumber = f'\\b'
+    PlaceHolderDefault = f'\\D|\\b'
     NumbersSpecialsChars = f'(({NegativeNumberTermsRegexNum}|{NegativeNumberTermsRegex})\\s*)?{ZeroToNineFullHalfRegex}+'
     NumbersSpecialsCharsWithSuffix = f'{NegativeNumberTermsRegexNum}?{ZeroToNineFullHalfRegex}+\\s*(K|k|M|G|T|Ｍ|Ｋ|ｋ|Ｇ|Ｔ)'
     DottedNumbersSpecialsChar = f'{NegativeNumberTermsRegexNum}?{ZeroToNineFullHalfRegex}{{1,3}}([,，、]{ZeroToNineFullHalfRegex}{{3}})+'

@@ -1,0 +1,59 @@
+{
+    "outputPath": "./recognizers_sequence/resources/",
+    "configFiles": [
+        {
+            "input": [ "Base-PhoneNumbers" ],
+            "output": "base_phone_numbers",
+            "header": [
+                "# pylint: disable=line-too-long",
+                "class BasePhoneNumbers:"
+            ],
+            "footer": [ "# pylint: enable=line-too-long" ]
+        },
+        {
+            "input": [ "Base-Ip" ],
+            "output": "base_ip",
+            "header": [
+                "# pylint: disable=line-too-long",
+                "class BaseIp:"
+            ],
+            "footer": [ "# pylint: enable=line-too-long" ]
+        },
+        {
+            "input": [ "Base-Mention" ],
+            "output": "base_mention",
+            "header": [
+                "# pylint: disable=line-too-long",
+                "class BaseMention:"
+            ],
+            "footer": [ "# pylint: enable=line-too-long" ]
+        },
+        {
+            "input": [ "Base-Hashtag" ],
+            "output": "base_hashtag",
+            "header": [
+                "# pylint: disable=line-too-long",
+                "class BaseHashtag:"
+            ],
+            "footer": [ "# pylint: enable=line-too-long" ]
+        },
+        {
+            "input": [ "Base-Url" ],
+            "output": "base_url",
+            "header": [
+                "# pylint: disable=line-too-long",
+                "class BaseUrl:"
+            ],
+            "footer": [ "# pylint: enable=line-too-long" ]
+        },
+        {
+            "input": [ "Base-Email" ],
+            "output": "base_email",
+            "header": [
+                "# pylint: disable=line-too-long",
+                "class BaseEmail:"
+            ],
+            "footer": [ "# pylint: enable=line-too-long" ]
+        }
+    ]
+}

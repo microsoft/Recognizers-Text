@@ -25,6 +25,8 @@ export class EnglishTimeExtractorConfiguration implements ITimeExtractorConfigur
         RegExpUtility.getSafeRegExp(EnglishDateTime.TimeRegex9, "gis"),
         // (three min past)? 3h00 (pm)?
         RegExpUtility.getSafeRegExp(EnglishDateTime.TimeRegex10, "gis"),
+        // at 2.30, before 6.30pm. 'at' prefix or 'am/pm' suffix is required here
+        RegExpUtility.getSafeRegExp(EnglishDateTime.TimeRegex11, "gis"),
         // 340pm
         RegExpUtility.getSafeRegExp(EnglishDateTime.ConnectNumRegex, "gis")
     ];

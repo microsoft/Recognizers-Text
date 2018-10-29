@@ -16,6 +16,8 @@ namespace Microsoft.Recognizers.Text.Sequence
 
         public const string SYS_URL = "builtin.url";
 
+        public const string SYS_GUID = "builtin.guid";
+
         // Model type name
         public const string MODEL_PHONE_NUMBER = "phonenumber";
 
@@ -28,6 +30,8 @@ namespace Microsoft.Recognizers.Text.Sequence
         public const string MODEL_EMAIL = "email";
 
         public const string MODEL_URL = "url";
+
+        public const string MODEL_GUID = "guid";
 
         public const string IP_REGEX_IPV4 = "ipv4";
 
@@ -62,5 +66,7 @@ namespace Microsoft.Recognizers.Text.Sequence
         public const string EMAIL_REGEX = "Email";
 
         public const string URL_REGEX = "Url";
+
+        public const string GUID_REGEX = "Guid";
     }
 }

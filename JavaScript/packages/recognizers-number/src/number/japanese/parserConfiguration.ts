@@ -1,7 +1,7 @@
 import { ParseResult } from "@microsoft/recognizers-text";
 import { ICJKNumberParserConfiguration } from "../cjkParsers";
 import { CultureInfo, Culture } from "../../culture";
-import { JapaneseNumeric } from "../../resources/JapaneseNumeric";
+import { JapaneseNumeric } from "../../resources/japaneseNumeric";
 import { RegExpUtility } from "@microsoft/recognizers-text"
 
 export class JapaneseNumberParserConfiguration implements ICJKNumberParserConfiguration {

@@ -223,5 +223,83 @@
         "Length": 9
       }
     ]
+  },
+  {
+    "Input": "上午",
+    "Context": {
+      "ReferenceDateTime": "2018-10-11T00:00:00"
+    },
+    "NotSupportedByDesign": "Java",
+    "Results": [
+      {
+        "Text": "上午",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "TMO",
+          "FutureResolution": {
+            "startTime": "08:00:00",
+            "endTime": "12:00:00"
+          },
+          "PastResolution": {
+            "startTime": "08:00:00",
+            "endTime": "12:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "下午",
+    "Context": {
+      "ReferenceDateTime": "2018-10-11T00:00:00"
+    },
+    "NotSupportedByDesign": "Java",
+    "Results": [
+      {
+        "Text": "下午",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "TAF",
+          "FutureResolution": {
+            "startTime": "12:00:00",
+            "endTime": "16:00:00"
+          },
+          "PastResolution": {
+            "startTime": "12:00:00",
+            "endTime": "16:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "晚上",
+    "Context": {
+      "ReferenceDateTime": "2018-10-11T00:00:00"
+    },
+    "NotSupportedByDesign": "Java",
+    "Results": [
+      {
+        "Text": "晚上",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "TEV",
+          "FutureResolution": {
+            "startTime": "16:00:00",
+            "endTime": "20:00:00"
+          },
+          "PastResolution": {
+            "startTime": "16:00:00",
+            "endTime": "20:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 2
+      }
+    ]
   }
 ]

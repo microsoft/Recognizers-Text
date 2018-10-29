@@ -6,9 +6,9 @@ RoundNumberIntegerRegex: !simpleRegex
 ZeroToNineIntegerRegex: !simpleRegex
   def: (et un|un|une|deux|trois|quatre|cinq|six|sept|huit|neuf)
 TenToNineteenIntegerRegex: !simpleRegex
-  def: (dix[-\s]neuf|dix[-\s]huit|dix[-\s]sept|(-)?seize|(-)?quinze|(-)?quatorze|(-)?treize|(-)?douze|(-)?onze|dix)
+  def: ((seize|quinze|quatorze|treize|douze|onze)|dix(\Wneuf|\Whuit|\Wsept)?)
 TensNumberIntegerRegex: !simpleRegex
-  def: (quatre[-\s]vingt[-\s]dix|quatre[-\s]vingt(s)?|soixante[-\s]dix|vingt|trente|quarante|cinquante|soixante|septante|octante|huitante|nonante)
+  def: (quatre\Wvingt(s|\Wdix)?|soixante\Wdix|vingt|trente|quarante|cinquante|soixante|septante|octante|huitante|nonante)
 DigitsNumberRegex: !simpleRegex
   def: \d|\d{1,3}(\.\d{3})
 NegativeNumberTermsRegex: !simpleRegex
@@ -22,7 +22,7 @@ HundredsNumberIntegerRegex: !nestedRegex
   def: (({ZeroToNineIntegerRegex}(\s+cent))|cent|((\s+cent\s)+{TensNumberIntegerRegex}))
   references: [ ZeroToNineIntegerRegex, TensNumberIntegerRegex ]
 BelowHundredsRegex: !nestedRegex
-  def: ({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}[-\s]+{TenToNineteenIntegerRegex})|({TensNumberIntegerRegex}([-\s]+{ZeroToNineIntegerRegex})?)|{ZeroToNineIntegerRegex})
+  def: (({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}([-\s]+({TenToNineteenIntegerRegex}|{ZeroToNineIntegerRegex}))?))|{ZeroToNineIntegerRegex})
   references: [ TenToNineteenIntegerRegex, TensNumberIntegerRegex, ZeroToNineIntegerRegex ]
 BelowThousandsRegex: !nestedRegex
   def: (({HundredsNumberIntegerRegex}(\s+{BelowHundredsRegex})?|{BelowHundredsRegex}|{TenToNineteenIntegerRegex})|cent\s+{TenToNineteenIntegerRegex})
@@ -37,7 +37,7 @@ AllIntRegex: !nestedRegex
   def: ({SeparaIntRegex}|mille(\s+{BelowThousandsRegex})?)
   references: [ SeparaIntRegex, BelowThousandsRegex ]
 NumbersWithPlaceHolder: !paramsRegex
-  def: (((?<!\d+\s*)-\s*)|(?<=\b))\d+(?!(,\d+[a-zA-Z]))(?={placeholder})
+  def: (((?<!\d+\s*)-\s*)|(?<=\b))\d+(?!([,\.]\d+[a-zA-Z]))(?={placeholder})
   params: [ placeholder ]
 NumbersWithSuffix: !simpleRegex
   def: (((?<=\W|^)-\s*)|(?<=\b))\d+\s*(k|M|T|G)(?=\b)
@@ -117,23 +117,23 @@ AllFloatRegex: !nestedRegex
   def: ({AllIntRegex}(\s+(virgule|point)){AllPointRegex})
   references: [ AllIntRegex, AllPointRegex ]
 DoubleDecimalPointRegex: !paramsRegex
-  def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+,)))\d+,\d+(?!(,\d+))(?={placeholder})
+  def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+[,\.])))\d+[,\.]\d+(?!([,\.]\d+))(?={placeholder})
   params: [ placeholder ]
 DoubleWithoutIntegralRegex: !paramsRegex
-  def: (?<=\s|^)(?<!(\d+)),\d+(?!(,\d+))(?={placeholder})
+  def: (?<=\s|^)(?<!(\d+))[,\.]\d+(?!([,\.]\d+))(?={placeholder})
   params: [ placeholder ]
 DoubleWithMultiplierRegex: !simpleRegex
-  def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\,)))\d+,\d+\s*(K|k|M|G|T)(?=\b)
+  def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\[,\.])))\d+[,\.]\d+\s*(K|k|M|G|T)(?=\b)
 DoubleWithRoundNumber: !nestedRegex
-  def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\,)))\d+,\d+\s+{RoundNumberIntegerRegex}(?=\b)
+  def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\[,\.])))\d+[,\.]\d+\s+{RoundNumberIntegerRegex}(?=\b)
   references: [ RoundNumberIntegerRegex ]
 DoubleAllFloatRegex: !nestedRegex
   def: ((?<=\b){AllFloatRegex}(?=\b))
   references: [ AllFloatRegex ]
 DoubleExponentialNotationRegex: !simpleRegex
-  def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+,)))(\d+(,\d+)?)e([+-]*[1-9]\d*)(?=\b)
+  def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+[,\.])))(\d+([,\.]\d+)?)e([+-]*[1-9]\d*)(?=\b)
 DoubleCaretExponentialNotationRegex: !simpleRegex
-  def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+,)))(\d+(,\d+)?)\^([+-]*[1-9]\d*)(?=\b)
+  def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+[,\.])))(\d+([,\.]\d+)?)\^([+-]*[1-9]\d*)(?=\b)
 #Number Regex
 CurrencyRegex: !simpleRegex
   def: (((?<=\W|^)-\s*)|(?<=\b))\d+\s*(B|b|m|t|g)(?=\b)
@@ -311,7 +311,7 @@ OrdinalNumberMap: !dictionary
     billionième: 1000000000000
     trillionième: 1000000000000000000
     trillionieme: 1000000000000000000
-PrefixCardinalDictionary: !dictionary
+PrefixCardinalMap: !dictionary
   types: [ string, long ]
   entries:
     deux: 2 
@@ -377,7 +377,7 @@ PrefixCardinalDictionary: !dictionary
     sept cent: 700
     huit cent: 800
     neuf cent: 900
-SufixOrdinalDictionary: !dictionary
+SuffixOrdinalMap: !dictionary
   types: [ string, long ]
   entries:
     millième: 1000 

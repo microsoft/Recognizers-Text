@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using DateObject = System.DateTime;
+using Microsoft.Recognizers.Definitions.Chinese;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
@@ -31,7 +33,14 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
             if (extra != null)
             {
-                var parseResult = TimePeriodFunctions.Handle(this.config.TimeParser, extra, referenceTime);
+                // Handle special case like '上午', '下午'
+                var parseResult = ParseChineseTimeOfDay(er.Text, referenceTime);
+
+                if (!parseResult.Success)
+                {
+                    parseResult = TimePeriodFunctions.Handle(this.config.TimeParser, extra, referenceTime);
+                }
+
                 if (parseResult.Success)
                 {
                     parseResult.FutureResolution = new Dictionary<string, string>
@@ -74,6 +83,71 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             }
 
             return null;
+        }
+
+        private DateTimeResolutionResult ParseChineseTimeOfDay(string text, DateObject referenceTime)
+        {
+            int day = referenceTime.Day,
+                month = referenceTime.Month,
+                year = referenceTime.Year;
+            var ret = new DateTimeResolutionResult();
+            
+            if (!GetMatchedTimexRange(text, out string timex, out int beginHour, out int endHour, out int endMinSeg))
+            {
+                return new DateTimeResolutionResult();
+            }
+            
+            ret.Timex = timex;
+            ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(
+               DateObject.MinValue.SafeCreateFromValue(year, month, day, beginHour, 0, 0),
+               DateObject.MinValue.SafeCreateFromValue(year, month, day, endHour, endMinSeg, 0)
+               );
+            ret.Success = true;
+            
+            return ret;
+        }
+        
+        private bool GetMatchedTimexRange(string text, out string timex, out int beginHour, out int endHour, out int endMin)
+        {
+            var trimmedText = text.Trim();
+            beginHour = 0;
+            endHour = 0;
+            endMin = 0;
+
+            var timeOfDay = "";
+            if (DateTimeDefinitions.MorningTermList.Any(o => trimmedText.EndsWith(o)))
+            {
+                timeOfDay = Constants.Morning;
+            }
+            else if (DateTimeDefinitions.AfternoonTermList.Any(o => trimmedText.EndsWith(o)))
+            {
+                timeOfDay = Constants.Afternoon;
+            }
+            else if (DateTimeDefinitions.EveningTermList.Any(o => trimmedText.EndsWith(o)))
+            {
+                timeOfDay = Constants.Evening;
+            }
+            else if (DateTimeDefinitions.DaytimeTermList.Any(o => trimmedText.Equals(o)))
+            {
+                timeOfDay = Constants.Daytime;
+            }
+            else if (DateTimeDefinitions.NightTermList.Any(o => trimmedText.EndsWith(o)))
+            {
+                timeOfDay = Constants.Night;
+            }
+            else
+            {
+                timex = null;
+                return false;
+            }
+
+            var parseResult = TimexUtility.ParseTimeOfDay(timeOfDay);
+            timex = parseResult.Timex;
+            beginHour = parseResult.BeginHour;
+            endHour = parseResult.EndHour;
+            endMin = parseResult.EndMin;
+
+            return true;
         }
 
         public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)

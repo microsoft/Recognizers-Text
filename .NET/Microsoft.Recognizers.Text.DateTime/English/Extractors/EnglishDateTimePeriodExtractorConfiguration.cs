@@ -21,8 +21,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             new Regex(DateTimeDefinitions.PeriodTimeOfDayRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         private static readonly Regex PeriodSpecificTimeOfDayRegex =
-            new Regex(DateTimeDefinitions.PeriodSpecificTimeOfDayRegex,
-                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.PeriodSpecificTimeOfDayRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         private static readonly Regex TimeUnitRegex =
             new Regex(DateTimeDefinitions.TimeUnitRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -31,12 +30,10 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             new Regex(DateTimeDefinitions.TimeFollowedUnit, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex TimeNumberCombinedWithUnit =
-            new Regex(DateTimeDefinitions.TimeNumberCombinedWithUnit,
-                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.TimeNumberCombinedWithUnit, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex PeriodTimeOfDayWithDateRegex =
-            new Regex(DateTimeDefinitions.PeriodTimeOfDayWithDateRegex,
-                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.PeriodTimeOfDayWithDateRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex RelativeTimeUnitRegex =
             new Regex(DateTimeDefinitions.RelativeTimeUnitRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -63,8 +60,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             new Regex(DateTimeDefinitions.DateUnitRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex PrefixDayRegex =
-            new Regex(DateTimeDefinitions.PrefixDayRegex,
-                RegexOptions.IgnoreCase | RegexOptions.Singleline | RegexOptions.RightToLeft);
+            new Regex(DateTimeDefinitions.PrefixDayRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline | RegexOptions.RightToLeft);
 
         public static readonly Regex SuffixRegex =
             new Regex(DateTimeDefinitions.SuffixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -74,6 +70,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public static readonly Regex AfterRegex =
             new Regex(DateTimeDefinitions.AfterRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex WeekDaysRegex =
+            new Regex(DateTimeDefinitions.WeekDayRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public EnglishDateTimePeriodExtractorConfiguration(IOptionsConfiguration config) : base(config)
         {
@@ -103,8 +102,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public Regex FutureSuffixRegex => EnglishDatePeriodExtractorConfiguration.FutureSuffixRegex;
 
-        public Regex WeekDayRegex => new Regex(DateTimeDefinitions.WeekDayRegex,
-            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public Regex WeekDayRegex => WeekDaysRegex;
 
         public Regex FollowedUnit => TimeFollowedUnit;
 

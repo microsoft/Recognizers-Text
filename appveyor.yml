@@ -29,6 +29,14 @@ build:
 
 build_script:
 - cmd: >-
+    CALL wmic os get caption, version, osarchitecture
+
+    CALL node -v
+
+    CALL npm -v
+
+    CALL node -e "console.log(process.versions.v8);"
+
     cd .NET\
 
     build.ci.cmd

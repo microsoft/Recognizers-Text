@@ -42,6 +42,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
             base.TestNumber();
         }
 
+        /*
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "NumberRangeModel-Japanese.csv", "NumberRangeModel-Japanese#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void NumberRangeModel()
@@ -55,5 +56,6 @@ namespace Microsoft.Recognizers.Text.Number.Tests
         {
             base.TestNumber();
         }
+        */
     }
 }

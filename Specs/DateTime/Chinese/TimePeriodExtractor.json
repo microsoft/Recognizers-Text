@@ -130,5 +130,41 @@
         "Length": 10
       }
     ]
+  },
+  {
+    "Input": "上午",
+    "NotSupportedByDesign": "Java",
+    "Results": [
+      {
+        "Text": "上午",
+        "Type": "timerange",
+        "Start": 0,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "下午",
+    "NotSupportedByDesign": "Java",
+    "Results": [
+      {
+        "Text": "下午",
+        "Type": "timerange",
+        "Start": 0,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "晚上",
+    "NotSupportedByDesign": "Java",
+    "Results": [
+      {
+        "Text": "晚上",
+        "Type": "timerange",
+        "Start": 0,
+        "Length": 2
+      }
+    ]
   }
 ]

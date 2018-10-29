@@ -1,6 +1,6 @@
 {
 	"name": "recognizers",
-	"version": "1.1.0",
+	"version": "1.1.4",
 	"license": "MIT",
 	"repository": {
 		"type": "git",
@@ -75,7 +75,7 @@
 		"browserify-shim": "^3.8.14",
 		"bignumber.js": "^7.2.1",
 		"express": "^4.16.1",
-		"xregexp": "^4.1.1"
+		"xregexp": "^4.2.0"
 	},
 	"dependencies": {
 		"@microsoft/recognizers-text": "file:./packages/recognizers-text",

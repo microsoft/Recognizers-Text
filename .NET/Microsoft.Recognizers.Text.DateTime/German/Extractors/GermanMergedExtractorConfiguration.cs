@@ -40,7 +40,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public static readonly StringMatcher SuperfluousWordMatcher = new StringMatcher();
 
-        public static readonly Regex[] FilterWordRegexList =
+        public static readonly Regex[] TermFilterRegexes =
         {
             // one on one
             new Regex(DateTimeDefinitions.OneOnOneRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline),
@@ -98,7 +98,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         Regex IMergedExtractorConfiguration.NumberEndingPattern => NumberEndingPattern;
         Regex IMergedExtractorConfiguration.DateAfterRegex => DateAfterRegex;
         Regex IMergedExtractorConfiguration.UnspecificDatePeriodRegex => UnspecificDatePeriodRegex;
-        IEnumerable<Regex> IMergedExtractorConfiguration.FilterWordRegexList => FilterWordRegexList;
+        IEnumerable<Regex> IMergedExtractorConfiguration.TermFilterRegexes => TermFilterRegexes;
         StringMatcher IMergedExtractorConfiguration.SuperfluousWordMatcher => SuperfluousWordMatcher;
     }
 }

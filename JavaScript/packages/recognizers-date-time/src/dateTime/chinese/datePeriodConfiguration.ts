@@ -7,12 +7,14 @@ import { BaseDurationExtractor, BaseDurationParser } from "../baseDuration"
 import { BaseDateExtractor, BaseDateParser } from "../baseDate";
 import { ChineseDurationExtractor } from "./durationConfiguration";
 import { Token, IDateTimeUtilityConfiguration, DateTimeResolutionResult, DateUtils, FormatUtil, StringMap } from "../utilities";
+import { BaseDateTime } from "../../resources/baseDateTime";
 import { ChineseDateTime } from "../../resources/chineseDateTime";
 import { IDateTimeParser, DateTimeParseResult } from "../parsers";
 import { Constants, TimeTypeConstants } from "../constants";
 
 class ChineseDatePeriodExtractorConfiguration implements IDatePeriodExtractorConfiguration {
     readonly simpleCasesRegexes: RegExp[]
+    readonly illegalYearRegex: RegExp
     readonly YearRegex: RegExp
     readonly tillRegex: RegExp
     readonly followedUnit: RegExp
@@ -36,6 +38,7 @@ class ChineseDatePeriodExtractorConfiguration implements IDatePeriodExtractorCon
             RegExpUtility.getSafeRegExp(ChineseDateTime.OneWordPeriodRegex),
             RegExpUtility.getSafeRegExp(ChineseDateTime.StrictYearRegex),
             RegExpUtility.getSafeRegExp(ChineseDateTime.YearToYear),
+            RegExpUtility.getSafeRegExp(ChineseDateTime.YearToYearSuffixRequired),
             RegExpUtility.getSafeRegExp(ChineseDateTime.YearAndMonth),
             RegExpUtility.getSafeRegExp(ChineseDateTime.PureNumYearAndMonth),
             RegExpUtility.getSafeRegExp(ChineseDateTime.DatePeriodYearInChineseRegex),
@@ -46,7 +49,8 @@ class ChineseDatePeriodExtractorConfiguration implements IDatePeriodExtractorCon
         this.datePointExtractor = new ChineseDateExtractor();
         this.integerExtractor = new ChineseIntegerExtractor();
         this.numberParser = new BaseNumberParser(new ChineseNumberParserConfiguration());
-        this.tillRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.DatePeriodTillRegex)
+        this.illegalYearRegex = RegExpUtility.getSafeRegExp(BaseDateTime.IllegalYearRegex);
+        this.tillRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.DatePeriodTillRegex);
         this.followedUnit = RegExpUtility.getSafeRegExp(ChineseDateTime.FollowedUnit);
         this.numberCombinedWithUnit = RegExpUtility.getSafeRegExp(ChineseDateTime.NumberCombinedWithUnit);
         this.pastRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.PastRegex);
@@ -282,6 +286,7 @@ export class ChineseDatePeriodParser extends BaseDatePeriodParser {
     private readonly yearAndMonthRegex: RegExp;
     private readonly pureNumberYearAndMonthRegex: RegExp;
     private readonly yearToYearRegex: RegExp;
+    private readonly YearToYearSuffixRequired: RegExp;
     private readonly chineseYearRegex: RegExp;
     private readonly seasonWithYearRegex: RegExp;
 
@@ -296,6 +301,7 @@ export class ChineseDatePeriodParser extends BaseDatePeriodParser {
         this.yearAndMonthRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.YearAndMonth);
         this.pureNumberYearAndMonthRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.PureNumYearAndMonth);
         this.yearToYearRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.YearToYear);
+        this.YearToYearSuffixRequired = RegExpUtility.getSafeRegExp(ChineseDateTime.YearToYearSuffixRequired);
         this.chineseYearRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.DatePeriodYearInChineseRegex);
         this.seasonWithYearRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.SeasonWithYear);
     }
@@ -472,13 +478,14 @@ export class ChineseDatePeriodParser extends BaseDatePeriodParser {
             if (yearNum < 10) {
                 yearNum = 0;
                 for (let index = 0; index < yearStr.length; index++) {
-                    let char = yearStr.charAt[index];
+                    let char = yearStr.charAt(index);
                     yearNum *= 10;
                     er = this.integerExtractor.extract(char).pop();
                     if (er && er.type === NumberConstants.SYS_NUM_INTEGER) {
                         yearNum += Number.parseInt(this.numberParser.parse(er).value);
                     }
                 }
+                year = yearNum;
             } else {
                 year = yearNum;
             }
@@ -762,7 +769,10 @@ export class ChineseDatePeriodParser extends BaseDatePeriodParser {
 
         let match = RegExpUtility.getMatches(this.yearToYearRegex, source).pop();
         if (!match) {
-            return result;
+            let match = RegExpUtility.getMatches(this.YearToYearSuffixRequired, source).pop();
+            if (!match) {
+                return result;
+            }
         }
 
         let yearMatches = RegExpUtility.getMatches(this.config.yearRegex, source);
@@ -775,8 +785,8 @@ export class ChineseDatePeriodParser extends BaseDatePeriodParser {
             beginYear = this.convertChineseToNumber(yearMatches[0].groups('year').value);
             endYear = this.convertChineseToNumber(yearMatches[1].groups('year').value);
         } else if (chineseYearMatches.length === 2) {
-            beginYear = this.convertChineseToNumber(chineseYearMatches[0].groups('yearchs').value);
-            endYear = this.convertChineseToNumber(chineseYearMatches[1].groups('yearchs').value);
+            beginYear = this.convertYear(chineseYearMatches[0].groups('yearchs').value, true);
+            endYear = this.convertYear(chineseYearMatches[1].groups('yearchs').value, true);
         } else if (yearMatches.length === 1 && chineseYearMatches.length === 1) {
             if (yearMatches[0].index < chineseYearMatches[0].index) {
                 beginYear = this.convertChineseToNumber(yearMatches[0].groups('year').value);

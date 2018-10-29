@@ -16,6 +16,7 @@ export interface INumberWithUnitExtractorConfiguration {
     readonly buildSuffix: string;
     readonly connectorToken: string;
     readonly compoundUnitConnectorRegex: RegExp;
+    readonly pmNonUnitRegex: RegExp;
 }
 
 export class NumberWithUnitExtractor implements IExtractor {
@@ -158,6 +159,21 @@ export class NumberWithUnitExtractor implements IExtractor {
                     num.start = start - er.start;
                     er.data = num;
 
+                    let isNotUnit = false;
+                    if (er.type === Constants.SYS_UNIT_DIMENSION) {
+                        let nonUnitMatch = RegExpUtility.getMatches(this.config.pmNonUnitRegex, source);
+
+                        nonUnitMatch.forEach(match => {
+                            if (er.start >= match.index && er.start + er.length <= match.index + match.length) {
+                                isNotUnit = true;
+                            }
+                        });
+                    }
+
+                    if (isNotUnit) {
+                        continue;
+                    }
+
                     result.push(er);
                     continue;
                 }
@@ -219,13 +235,27 @@ export class NumberWithUnitExtractor implements IExtractor {
                     for (let j = 0; j < i; j++) {
                         matchResult[j] = true;
                     }
-                    numDependResults.push({
-                        start: match.index,
-                        length: match.length,
-                        text: match.value,
-                        type: this.config.extractType,
-                        data: null
-                    } as ExtractResult);
+
+                    let isNotUnit = false;
+                    if (match.value === Constants.AMBIGUOUS_TIME_TERM) {
+                        let nonUnitMatch = RegExpUtility.getMatches(this.config.pmNonUnitRegex, source);
+
+                        nonUnitMatch.forEach(time => {
+                            if (this.DimensionInsideTime(match, time)) {
+                                isNotUnit = true;
+                            }
+                        });
+                    }
+
+                    if (isNotUnit === false) {
+                        numDependResults.push({
+                            start: match.index,
+                            length: match.length,
+                            text: match.value,
+                            type: this.config.extractType,
+                            data: null
+                        } as ExtractResult);
+                    }
                 }
             });
         }
@@ -334,6 +364,15 @@ export class NumberWithUnitExtractor implements IExtractor {
                 }
             }
         }
+    }
+
+    private DimensionInsideTime(dimension: Match, time: Match): boolean {
+        let isSubMatch = false;
+        if (dimension.index >= time.index && dimension.index + dimension.length <= time.index + time.length) {
+            isSubMatch = true;
+        }
+
+        return isSubMatch;
     }
 }
 

@@ -144,7 +144,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             {
                 value = -1;
             }
-            else if (text.Equals("大后天"))
+            else if (text.Equals("大后天") || text.Equals("大後天"))
             {
                 value = 3;
             }
@@ -152,7 +152,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             {
                 value = -3;
             }
-            else if (text.Equals("后天"))
+            else if (text.Equals("后天") || text.Equals("後天"))
             {
                 value = 2;
             }

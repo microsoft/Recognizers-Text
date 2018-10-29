@@ -25,9 +25,9 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             WrittenDecades = DateTimeDefinitions.WrittenDecades.ToImmutableDictionary();
             SpecialDecadeCases = DateTimeDefinitions.SpecialDecadeCases.ToImmutableDictionary();
 
-            CardinalExtractor = new CardinalExtractor();
-            IntegerExtractor = new IntegerExtractor();
-            OrdinalExtractor = new OrdinalExtractor();
+            CardinalExtractor = Number.French.CardinalExtractor.GetInstance();
+            IntegerExtractor = Number.French.IntegerExtractor.GetInstance();
+            OrdinalExtractor = Number.French.OrdinalExtractor.GetInstance();
 
             NumberParser = new BaseNumberParser(new FrenchNumberParserConfiguration());
             DateExtractor = new BaseDateExtractor(new FrenchDateExtractorConfiguration(this));

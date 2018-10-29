@@ -7,7 +7,7 @@ from recognizers_text import RegExpUtility, ExtractResult
 from ...resources.chinese_date_time import ChineseDateTime
 from ..constants import Constants
 from ..parsers import DateTimeParseResult
-from ..utilities import TimeTypeConstants, FormatUtil, DateTimeResolutionResult, DateUtils
+from ..utilities import TimeTypeConstants, FormatUtil, DateTimeResolutionResult, DateUtils, TimexUtil
 from ..base_timeperiod import BaseTimePeriodParser
 from .base_date_time_extractor import DateTimeExtra, TimeResult, TimeResolutionUtils
 from .timeperiod_extractor import TimePeriodType
@@ -32,7 +32,10 @@ class ChineseTimePeriodParser(BaseTimePeriodParser):
             return result
 
         if source.type is self.parser_type_name:
-            inner_result = self.parse_time_period(extra, reference)
+            inner_result = self.parse_chinese_time_of_day(source.text, reference)
+
+            if inner_result.success is False:
+                inner_result = self.parse_time_period(extra, reference)
 
             if inner_result.success:
                 inner_result.future_resolution[TimeTypeConstants.START_TIME] = FormatUtil.format_time(inner_result.future_value[0])
@@ -45,6 +48,60 @@ class ChineseTimePeriodParser(BaseTimePeriodParser):
                 result.resolution_str = ''
 
         return result
+
+    def parse_chinese_time_of_day(self, text: str, reference: datetime) -> DateTimeResolutionResult:
+        result = DateTimeResolutionResult()
+
+        day = reference.day
+        month = reference.month
+        year = reference.year
+
+        parameters = self.get_matched_timex_range(text)
+        if parameters['matched'] is False:
+            return DateTimeResolutionResult()
+
+        result.timex = parameters['timex']
+        result.future_value = result.past_value = [
+            DateUtils.safe_create_from_min_value(year, month, day, parameters['begin_hour'], 0, 0),
+            DateUtils.safe_create_from_min_value(year, month, day, parameters['end_hour'], parameters['end_min'], 0)
+        ]
+
+        result.success = True
+        return result
+
+    def get_matched_timex_range(self, text: str) -> dict:
+        trimmed_text = text.strip()
+        begin_hour = 0
+        end_hour = 0
+        end_min = 0
+
+        time_of_day = ""
+        if any(trimmed_text.endswith(o) for o in ChineseDateTime.MorningTermList):
+            time_of_day = Constants.Morning
+        elif any(trimmed_text.endswith(o) for o in ChineseDateTime.AfternoonTermList):
+            time_of_day = Constants.Afternoon
+        elif any(trimmed_text.endswith(o) for o in ChineseDateTime.EveningTermList):
+            time_of_day = Constants.Evening
+        elif any(trimmed_text == o for o in ChineseDateTime.DaytimeTermList):
+            time_of_day = Constants.Daytime
+        elif any(trimmed_text.endswith(o) for o in ChineseDateTime.NightTermList):
+            time_of_day = Constants.Night
+        else:
+            timex = None
+            matched = False
+
+            return {'matched': matched, 'timex': timex, 'begin_hour': begin_hour,
+                    'end_hour': end_hour, 'end_min': end_min}
+
+        parse_result = TimexUtil.parse_time_of_day(time_of_day)
+        timex = parse_result.timex
+        begin_hour = parse_result.begin_hour
+        end_hour = parse_result.end_hour
+        end_min = parse_result.end_min
+
+        matched = True
+        return {'matched': matched, 'timex': timex, 'begin_hour': begin_hour,
+                'end_hour': end_hour, 'end_min': end_min}
 
     def parse_time_period(self, extra: DateTimeExtra, reference: datetime) -> DateTimeResolutionResult:
         result = DateTimeResolutionResult()

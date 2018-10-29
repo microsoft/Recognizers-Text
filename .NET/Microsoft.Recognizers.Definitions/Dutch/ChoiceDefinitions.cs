@@ -19,7 +19,7 @@ namespace Microsoft.Recognizers.Definitions.Dutch
 	{
 		public const string LangMarker = "Nl";
 		public const string TokenizerRegex = @"[^\w\d]";
-		public const string TrueRegex = @"\b(ja|jawel|jazeker|natuurlijk|prima|jep|yes|yep|y|ok|oke)\b|(\uD83D\uDC4D|\uD83D\uDC4C)";
-		public const string FalseRegex = @"\b(nee|neen|nope|nein|nop|no|niet)\b|(\uD83D\uDC4E|\u270B|\uD83D\uDD90)";
+		public const string TrueRegex = @"\b(ja|jawel|jazeker|natuurlijk|vanzelfsprekend|zeker|prima|jep|yes|yep|y|ok|oke|akkoord)\b|(\uD83D\uDC4D|\uD83D\uDC4C)";
+		public const string FalseRegex = @"\b(nee|neen|nope|nein|nop|no|niet|nooit)\b|(\uD83D\uDC4E|\u270B|\uD83D\uDD90)";
 	}
 }

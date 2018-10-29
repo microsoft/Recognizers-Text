@@ -23,12 +23,26 @@ class Constants:
 
     SemesterMonthCount: int = 6
     TrimesterMonthCount: int = 3
-    
+    FourDigitsYearLength: int = 4
+
+    MinYearNum: int = int(BaseDateTime.MinYearNum)
+    MaxYearNum: int = int(BaseDateTime.MaxYearNum)
+
     DEFAULT_LANGUAGE_FALLBACK_MDY: str = 'MDY'
     DEFAULT_LANGUAGE_FALLBACK_DMY: str = 'DMY'
     
     MaxTwoDigitYearFutureNum: int = int(BaseDateTime.MaxTwoDigitYearFutureNum)
     MinTwoDigitYearPastNum: int = int(BaseDateTime.MinTwoDigitYearPastNum)
+
+    EarlyMorning: str = "TDA"
+    Morning: str = "TMO"
+    Afternoon: str = "TAF"
+    Evening: str = "TEV"
+    Daytime: str = "TDT"
+    Night: str = "TNI"
+    BusinessHour = "TBH"
+
+
 class TimeTypeConstants:
     DATE: str = 'date'
     START_DATE: str = 'startDate'

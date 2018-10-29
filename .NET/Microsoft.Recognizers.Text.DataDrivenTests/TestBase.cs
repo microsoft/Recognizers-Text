@@ -86,8 +86,8 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 var expected = tuple.Item1;
                 var actual = tuple.Item2;
 
-                Assert.AreEqual(expected.TypeName, actual.TypeName, GetMessage(TestSpec));
                 Assert.AreEqual(expected.Text, actual.Text, GetMessage(TestSpec));
+                Assert.AreEqual(expected.TypeName, actual.TypeName, GetMessage(TestSpec));
                 Assert.AreEqual(expected.Start, actual.Start, GetMessage(TestSpec));
                 Assert.AreEqual(expected.End, actual.End, GetMessage(TestSpec));
 
@@ -302,6 +302,12 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
         {
             TestPreValidation();
             ValidateResults();
+        }
+
+        public void TestGUID()
+        {
+            TestPreValidation();
+            ValidateResults(new string[] { ResolutionKey.Score });
         }
 
         public void TestChoice()

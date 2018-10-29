@@ -1,4 +1,5 @@
-[{
+[
+  {
     "Input": "Toen ze vijf jaar oud was, heeft ze leren fietsen.",
     "Results": [
       {
@@ -13,8 +14,7 @@
       }
     ],
     "NotSupportedByDesign": "javascript,python,java"
-  }
-  ,
+  },
   {
     "Input": "Dit verhaal is 10 jaar oud.",
     "Results": [
@@ -30,8 +30,7 @@
       }
     ],
     "NotSupportedByDesign": "javascript,python,java"
-  }
-  ,
+  },
   {
     "Input": "Ik ben pas 29 jaar.",
     "Results": [
@@ -47,8 +46,7 @@
       }
     ],
     "NotSupportedByDesign": "javascript,python,java"
-  }
-  ,
+  },
   {
     "Input": "Nu, op 95 jarige leeftijd, inzichten veranderen.",
     "Results": [
@@ -64,8 +62,7 @@
       }
     ],
     "NotSupportedByDesign": "javascript,python,java"
-  }
-  ,
+  },
   {
     "Input": "De Chinese Muur is meer dan 500 jaar oud en is langer dan 5000 mijl.",
     "Results": [
@@ -81,8 +78,7 @@
       }
     ],
     "NotSupportedByDesign": "javascript,python,java"
-  }
-  ,
+  },
   {
     "Input": "Zij is 60 jaar oud; zij is geboren op 8 mei 1945.",
     "Results": [
@@ -98,8 +94,7 @@
       }
     ],
     "NotSupportedByDesign": "javascript,python,java"
-  }
-  ,
+  },
   {
     "Input": "25% van de gevallen zijn niet gediagnostiseerd tot een leeftijd van 3 jaar.",
     "Results": [
@@ -115,8 +110,7 @@
       }
     ],
     "NotSupportedByDesign": "javascript,python,java"
-  }
-  ,
+  },
   {
     "Input": "Wanneer komt er druk om een afspraak van één jaar na te komen?",
     "Results": [
@@ -132,8 +126,7 @@
       }
     ],
     "NotSupportedByDesign": "javascript,python,java"
-  }
-  ,
+  },
   {
     "Input": "Het gebeurde toen de baby pas tien maanden was.",
     "Results": [
@@ -149,8 +142,7 @@
       }
     ],
     "NotSupportedByDesign": "javascript,python,java"
-  }
-  ,
+  },
   {
     "Input": "Het bestuursvoorstel is 8 maanden.",
     "Results": [
@@ -166,8 +158,7 @@
       }
     ],
     "NotSupportedByDesign": "javascript,python,java"
-  }
-  ,
+  },
   {
     "Input": "Ongeveer 50% van de gevallen worden gediagnostiseerd wanneer ze achttien maanden oud zijn.",
     "Results": [
@@ -183,8 +174,7 @@
       }
     ],
     "NotSupportedByDesign": "javascript,python,java"
-  }
-  ,
+  },
   {
     "Input": "Het is mogelijk, maar in 2006 was 95% jonger dan drie maanden.",
     "Results": [
@@ -200,8 +190,7 @@
       }
     ],
     "NotSupportedByDesign": "javascript,python,java"
-  }
-  ,
+  },
   {
     "Input": "Als we doorgaan in december, is het project 3 weken oud.",
     "Results": [
@@ -217,8 +206,7 @@
       }
     ],
     "NotSupportedByDesign": "javascript,python,java"
-  }
-  ,
+  },
   {
     "Input": "Op 6-jarige leeftijd kun je al Kerst vieren.",
     "Results": [
@@ -234,8 +222,7 @@
       }
     ],
     "NotSupportedByDesign": "javascript,python,java"
-  }
-  ,
+  },
   {
     "Input": "Een energie factuur van 90 dagen is erg oud",
     "Results": [
@@ -251,8 +238,7 @@
       }
     ],
     "NotSupportedByDesign": "javascript,python,java"
-  }
-  ,
+  },
   {
     "Input": "Hij is tussen de 40 en 50 jaar.",
     "Results": [
@@ -265,6 +251,32 @@
         },
         "Start": 23,
         "End": 29
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "De vrouw die Kavanaugh beschuldigt, Christine Blasey Ford, hield bij de hoorzitting vol dat zij er '100 procent zeker' van is dat zij op 15-jarige leeftijd is overrompeld en aangerand door een destijds 17-jarige Kavanaugh.",
+    "Results": [
+      {
+        "Text": "15-jarige leeftijd",
+        "TypeName": "age",
+        "Resolution": {
+          "unit": "Year",
+          "value": "15"
+        },
+        "Start": 137,
+        "End": 154
+      },
+      {
+        "Text": "17-jarige",
+        "TypeName": "age",
+        "Resolution": {
+          "unit": "Year",
+          "value": "17"
+        },
+        "Start": 202,
+        "End": 210
       }
     ],
     "NotSupportedByDesign": "javascript,python,java"

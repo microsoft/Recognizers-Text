@@ -251,7 +251,7 @@ export class ChinesePercentageExtractor extends BaseNumberExtractor {
                 regExp: RegExpUtility.getSafeRegExp(ChineseNumeric.NumbersFractionPercentageRegex, "gis"),
                 value: "PerNum"
             },
-            {
+            { // 32.5%
                 regExp: RegExpUtility.getSafeRegExp(ChineseNumeric.SimpleIntegerPercentageRegex, "gis"),
                 value: "PerNum"
             },
@@ -279,7 +279,7 @@ export class ChinesePercentageExtractor extends BaseNumberExtractor {
                 regExp: RegExpUtility.getSafeRegExp(ChineseNumeric.SimpleSpecialsPercentageRegex, "gis"),
                 value: "PerSpe"
             },
-            {
+            { // 打对折 半成
                 regExp: RegExpUtility.getSafeRegExp(ChineseNumeric.SpecialsFoldsPercentageRegex, "gis"),
                 value: "PerSpe"
             }

@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 
-using Microsoft.Recognizers.Text.Number;
-
 namespace Microsoft.Recognizers.Text.NumberWithUnit
 {
     public class NumberWithUnitExtractor : IExtractor
@@ -112,7 +110,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                 }
             }
 
-            //Sort separateWords using descending length.
+            // Sort separateWords using descending length.
             var regexTokens = separateWords.Select(Regex.Escape).ToList();
             if (regexTokens.Count == 0)
             {
@@ -147,7 +145,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             var numbers = this.config.UnitNumExtractor.Extract(source);
             var sourceLen = source.Length;
 
-            /* Mix prefix and numbers, make up a prefix-number combination */
+            // Mix prefix and numbers, make up a prefix-number combination
             if (maxPrefixMatchLen != 0)
             {
                 foreach (var number in numbers)
@@ -163,7 +161,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                         continue;
                     }
 
-                    /* Scan from left to right , find the longest match */
+                    // Scan from left to right , find the longest match 
                     var leftStr = source.Substring(number.Start.Value - maxFindPref, maxFindPref);
                     var lastIndex = leftStr.Length;
 
@@ -206,6 +204,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
                 int start = (int)number.Start, length = (int)number.Length;
                 var maxFindLen = sourceLen - start - length;
+
                 mappingPrefix.TryGetValue(start, out PrefixUnitResult prefixUnit);
 
                 if (maxFindLen > 0)
@@ -224,7 +223,9 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                                 if (m.Index >= 0)
                                 {
                                     var midStr = rightSub.Substring(0, Math.Min(m.Index, rightSub.Length));
-                                    if (maxlen < endpos && (string.IsNullOrWhiteSpace(midStr) || midStr.Trim().Equals(this.config.ConnectorToken)))
+
+                                    if (maxlen < endpos && 
+                                        (string.IsNullOrWhiteSpace(midStr) || midStr.Trim().Equals(this.config.ConnectorToken)))
                                     {
                                         maxlen = endpos;
                                     }
@@ -241,6 +242,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                         }
 
                         var substr = source.Substring(start, length + maxlen);
+
                         var er = new ExtractResult
                         {
                             Start = start,
@@ -256,9 +258,31 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                             er.Text = prefixUnit.UnitStr + er.Text;
                         }
 
-                        /* Relative position will be used in Parser */
+                        // Relative position will be used in Parser
                         number.Start = start - er.Start;
                         er.Data = number;
+
+                        // Special treatment, handle cases like '2:00 pm', '00 pm' is not dimension
+                        var isNotUnit = false;
+                        if (er.Type.Equals(Constants.SYS_UNIT_DIMENSION))
+                        {
+                            var nonUnitMatch = this.config.PmNonUnitRegex.Matches(source);                           
+
+                            foreach (Match time in nonUnitMatch)
+                            {
+                                if (er.Start >= time.Index && er.Start + er.Length <= time.Index + time.Length)
+                                {
+                                    isNotUnit = true;
+                                    break;
+                                }
+                            }
+                        }
+
+                        if (isNotUnit)
+                        {
+                            continue;
+                        }
+
                         result.Add(er);
 
                         continue;
@@ -275,17 +299,20 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                         Type = this.config.ExtractType
                     };
                     
-                    /* Relative position will be used in Parser */
+                    // Relative position will be used in Parser
                     number.Start = start - er.Start;
                     er.Data = number;
                     result.Add(er);
                 }
             }
             
-            //extract Separate unit
+            // Extract Separate unit
             if (separateRegex != null)
             {
                 ExtractSeparateUnits(source, result);
+
+                // Remove common ambiguous cases
+                result = FilterAmbiguity(result, source);
             }
 
             return result;
@@ -293,7 +320,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
         
         public void ExtractSeparateUnits(string source, List<ExtractResult> numDependResults)
         {
-            //Default is false
+            // Default is false
             bool[] matchResult = new bool[source.Length];
             foreach (var numDependResult in numDependResults)
             {
@@ -305,7 +332,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                 } while (i < numDependResult.Length.Value);
             }
 
-            //Extract all SeparateUnits, then merge it with numDependResults
+            // Extract all SeparateUnits, then merge it with numDependResults
             var matchCollection = separateRegex.Matches(source);
             if (matchCollection.Count != 0)
             {
@@ -321,10 +348,31 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
                         if (i == match.Length)
                         {
-                            //Mark as extracted
+                            // Mark as extracted
                             for (int j = 0; j < i; j++)
                             {
                                 matchResult[j] = true;
+                            }
+
+                            // Special treatment, handle cases like '2:00 pm', both '00 pm' and 'pm' are not dimension
+                            var isNotUnit = false;
+                            if (match.Value.Equals(Constants.AMBIGUOUS_TIME_TERM))
+                            {
+                                var nonUnitMatch = this.config.PmNonUnitRegex.Matches(source);
+
+                                foreach (Match time in nonUnitMatch)
+                                {
+                                    if (DimensionInsideTime(match, time))
+                                    {
+                                        isNotUnit = true;
+                                        break;
+                                    }
+                                }
+                            }
+
+                            if (isNotUnit)
+                            {
+                                continue;
                             }
 
                             numDependResults.Add(new ExtractResult
@@ -346,6 +394,31 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             return !string.IsNullOrEmpty(str);
         }
 
+        private bool DimensionInsideTime(Match dimension, Match time)
+        {
+            bool isSubMatch = dimension.Index >= time.Index && dimension.Index + dimension.Length <= time.Index + time.Length;
+            return isSubMatch;        
+        }
+
+        private List<ExtractResult> FilterAmbiguity(List<ExtractResult> ers, string text)
+        {
+            if (this.config.AmbiguityFiltersDict != null)
+            {
+                foreach (var regex in config.AmbiguityFiltersDict)
+                {
+                    if (regex.Key.IsMatch(text))
+                    {
+                        var matches = regex.Value.Matches(text).Cast<Match>();
+                        ers = ers.Where(er =>
+                                            !matches.Any(m => m.Index < er.Start + er.Length && m.Index + m.Length > er.Start))
+                                 .ToList();
+                    }
+                }
+            }
+
+            return ers;
+        }
+
     }
 
     public class DinoComparer : IComparer<string>
@@ -356,45 +429,35 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             {
                 if (y == null)
                 {
-                    // If x is null and y is null, they're
-                    // equal. 
+                    // If x is null and y is null, they're equal. 
                     return 0;
                 }
                 else
                 {
-                    // If x is null and y is not null, y
-                    // is greater. 
+                    // If x is null and y is not null, y is greater. 
                     return 1;
                 }
             }
             else
             {
                 // If x is not null...
-                //
-                if (y == null)
-                // ...and y is null, x is greater.
+                if (y == null) // ...and y is null, x is greater.
                 {
                     return -1;
                 }
                 else
                 {
-                    // ...and y is not null, compare the 
-                    // lengths of the two strings.
-                    //
+                    // ...and y is not null, compare the lengths of the two strings.
                     int retval = y.Length.CompareTo(x.Length);
 
                     if (retval != 0)
                     {
-                        // If the strings are not of equal length,
-                        // the longer string is greater.
-                        //
+                        // If the strings are not of equal length, the longer string is greater.
                         return retval;
                     }
                     else
                     {
-                        // If the strings are of equal length,
-                        // sort them with ordinary string comparison.
-                        //
+                        // If the strings are of equal length, sort them with ordinary string comparison.
                         return string.Compare(x, y, StringComparison.Ordinal);
                     }
                 }
@@ -407,5 +470,5 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
         public int Offset;
         public string UnitStr;
     }
- 
+
 }

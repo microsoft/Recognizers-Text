@@ -2,11 +2,15 @@ import { Recognizer, IModel, Culture, ModelResult } from "@microsoft/recognizers
 import { BooleanModel } from "./models";
 import { BooleanExtractor } from "./extractors";
 import { BooleanParser } from "./parsers";
+import { ChineseBooleanExtractorConfiguration } from "./chinese/boolean";
+import { DutchBooleanExtractorConfiguration } from "./dutch/boolean";
 import { EnglishBooleanExtractorConfiguration } from "./english/boolean";
+import { FrenchBooleanExtractorConfiguration } from "./french/boolean";
+import { GermanBooleanExtractorConfiguration } from "./german/boolean";
 import { JapaneseBooleanExtractorConfiguration } from "./japanese/boolean";
 import { PortugueseBooleanExtractorConfiguration } from "./portuguese/boolean";
 import { SpanishBooleanExtractorConfiguration } from "./spanish/boolean";
-import { ChineseBooleanExtractorConfiguration } from "./chinese/boolean";
+
 
 export enum ChoiceOptions {
     None = 0,
@@ -25,10 +29,38 @@ export default class ChoiceRecognizer extends Recognizer<ChoiceOptions> {
     }
 
     protected InitializeConfiguration() {
+        //#region Chinese
+        this.registerModel("BooleanModel", Culture.Chinese, (options) => new BooleanModel(
+            new BooleanParser(),
+            new BooleanExtractor(new ChineseBooleanExtractorConfiguration())
+        ));
+        //#endregion
+
+        //#region Dutch
+        this.registerModel("BooleanModel", Culture.Dutch, (options) => new BooleanModel(
+            new BooleanParser(),
+            new BooleanExtractor(new DutchBooleanExtractorConfiguration())
+        ));
+        //#endregion
+
         //#region English
         this.registerModel("BooleanModel", Culture.English, (options) => new BooleanModel(
             new BooleanParser(),
             new BooleanExtractor(new EnglishBooleanExtractorConfiguration())
+        ));
+        //#endregion
+
+        //#region French
+        this.registerModel("BooleanModel", Culture.French, (options) => new BooleanModel(
+            new BooleanParser(),
+            new BooleanExtractor(new FrenchBooleanExtractorConfiguration())
+        ));
+        //#endregion
+
+        //#region German
+        this.registerModel("BooleanModel", Culture.German, (options) => new BooleanModel(
+            new BooleanParser(),
+            new BooleanExtractor(new GermanBooleanExtractorConfiguration())
         ));
         //#endregion
 
@@ -50,13 +82,6 @@ export default class ChoiceRecognizer extends Recognizer<ChoiceOptions> {
         this.registerModel("BooleanModel", Culture.Spanish, (options) => new BooleanModel(
             new BooleanParser(),
             new BooleanExtractor(new SpanishBooleanExtractorConfiguration())
-        ));
-        //#endregion
-
-        //#region Chinese
-        this.registerModel("BooleanModel", Culture.Chinese, (options) => new BooleanModel(
-            new BooleanParser(),
-            new BooleanExtractor(new ChineseBooleanExtractorConfiguration())
         ));
         //#endregion
     }

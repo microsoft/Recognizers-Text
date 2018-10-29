@@ -118,6 +118,7 @@ export class ChoiceExtractor implements IExtractor {
                 token = '';
             }
         });
+        
         if (!StringUtility.isNullOrWhitespace(token)) {
             tokens.push(token);
             token = '';

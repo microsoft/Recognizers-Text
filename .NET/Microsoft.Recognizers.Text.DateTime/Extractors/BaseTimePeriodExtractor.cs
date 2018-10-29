@@ -60,8 +60,10 @@ namespace Microsoft.Recognizers.Text.DateTime
                             var afterStr = text.Substring(match.Index + match.Length);
 
                             // "End with general ending tokens or "TokenBeforeDate" (like "on")
-                            var endingMatch = this.config.GeneralEndingRegex.Match(afterStr);
-                            if (endingMatch.Success || afterStr.TrimStart().StartsWith(this.config.TokenBeforeDate))
+                            var endWithGeneralEndings = this.config.GeneralEndingRegex.Match(afterStr).Success;
+                            var endWithAmPm = match.Groups[Constants.RightAmPmGroupName].Success;
+
+                            if (endWithGeneralEndings || endWithAmPm || afterStr.TrimStart().StartsWith(this.config.TokenBeforeDate))
                             {
                                 endWithValidToken = true;
                             }

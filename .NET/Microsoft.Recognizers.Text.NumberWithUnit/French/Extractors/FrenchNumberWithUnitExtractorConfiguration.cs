@@ -1,8 +1,11 @@
-﻿using System.Collections.Immutable;
+﻿using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Globalization;
 using System.Text.RegularExpressions;
 
+using Microsoft.Recognizers.Definitions;
 using Microsoft.Recognizers.Definitions.French;
+using Microsoft.Recognizers.Definitions.Utilities;
 using Microsoft.Recognizers.Text.Number.French;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit.French
@@ -12,11 +15,14 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.French
         protected FrenchNumberWithUnitExtractorConfiguration(CultureInfo ci)
         {
             this.CultureInfo = ci;
-            this.UnitNumExtractor = new NumberExtractor();
+            this.UnitNumExtractor = NumberExtractor.GetInstance();
             this.BuildPrefix = NumbersWithUnitDefinitions.BuildPrefix;
             this.BuildSuffix = NumbersWithUnitDefinitions.BuildSuffix;
             this.ConnectorToken = NumbersWithUnitDefinitions.ConnectorToken;
             this.CompoundUnitConnectorRegex = new Regex(NumbersWithUnitDefinitions.CompoundUnitConnectorRegex, RegexOptions.IgnoreCase);
+            this.PmNonUnitRegex = new Regex(BaseUnits.PmNonUnitRegex, RegexOptions.IgnoreCase);
+
+            AmbiguityFiltersDict = DefinitionLoader.LoadAmbiguityFilters(NumbersWithUnitDefinitions.AmbiguityFiltersDict);
         }
 
         public abstract string ExtractType { get; }
@@ -32,6 +38,10 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.French
         public string ConnectorToken { get; }
 
         public Regex CompoundUnitConnectorRegex { get; set; }
+
+        public Regex PmNonUnitRegex { get; set; }
+
+        public Dictionary<Regex, Regex> AmbiguityFiltersDict { get; }
 
         public abstract ImmutableDictionary<string, string> SuffixList { get; }
 

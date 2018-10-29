@@ -75,7 +75,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public ItalianDateTimeExtractorConfiguration(IOptionsConfiguration config) : base(config)
         {
-            IntegerExtractor = new IntegerExtractor();
+            IntegerExtractor = Number.Italian.IntegerExtractor.GetInstance();
             DatePointExtractor = new BaseDateExtractor(new ItalianDateExtractorConfiguration(this));
             TimePointExtractor = new BaseTimeExtractor(new ItalianTimeExtractorConfiguration(this));
             DurationExtractor = new BaseDurationExtractor(new ItalianDurationExtractorConfiguration(this));

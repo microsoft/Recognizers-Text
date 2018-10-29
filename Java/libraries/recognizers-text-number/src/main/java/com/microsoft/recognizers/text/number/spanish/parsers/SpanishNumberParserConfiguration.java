@@ -112,9 +112,9 @@ public class SpanishNumberParserConfiguration extends BaseNumberParserConfigurat
 
     private static Map<String, Long> buildOrdinalNumberMap() {
         ImmutableMap.Builder ordinalNumberMapBuilder = new ImmutableMap.Builder()
-                .putAll(SpanishNumeric.SimpleOrdinalNumberMap);
-        SpanishNumeric.SufixOrdinalDictionary.forEach((sufixKey, sufixValue) ->
-                SpanishNumeric.PrefixCardinalDictionary.forEach((prefixKey, prefixValue) ->
+                .putAll(SpanishNumeric.OrdinalNumberMap);
+        SpanishNumeric.SuffixOrdinalMap.forEach((sufixKey, sufixValue) ->
+                SpanishNumeric.PrefixCardinalMap.forEach((prefixKey, prefixValue) ->
                         ordinalNumberMapBuilder.put(prefixKey + sufixKey, prefixValue * sufixValue)));
 
         return ordinalNumberMapBuilder.build();

@@ -415,6 +415,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                         new NumberWithUnitParser(new English.CurrencyParserConfiguration())
                     }
                 }));
+
             RegisterModel<AgeModel>(
                 Culture.Japanese,
                 (options) => new AgeModel(new Dictionary<IExtractor, IParser>

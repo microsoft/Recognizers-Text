@@ -1,0 +1,7 @@
+﻿<#@ template debug="true" hostspecific="true" language="C#" #>
+<#
+	this.DataFilename = @"Patterns\Base-GUID.yaml";
+	this.Language = null;
+	this.ClassName = "BaseGUID";
+#>
+<#@ include file=".\CommonDefinitions.ttinclude"#>

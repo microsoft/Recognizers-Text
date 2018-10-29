@@ -4,7 +4,7 @@ import { NumberWithUnitExtractor, ChineseNumberWithUnitExtractorConfiguration } 
 import { BaseDateTimeExtractor, DateTimeExtra, TimeResult, TimeResolutionUtils } from "./baseDateTime";
 import { Constants, TimeTypeConstants } from "../constants"
 import { ChineseDateTime } from "../../resources/chineseDateTime";
-import { DateTimeResolutionResult, FormatUtil, DateUtils, StringMap } from "../utilities";
+import { DateTimeResolutionResult, FormatUtil, DateUtils, StringMap, TimexUtil } from "../utilities";
 import { BaseTimePeriodParser, ITimePeriodParserConfiguration } from "../baseTimePeriod";
 import { IDateTimeParser, DateTimeParseResult } from "../parsers"
 import { ChineseTimeParser } from "./timeConfiguration"
@@ -21,7 +21,8 @@ export class ChineseTimePeriodExtractor extends BaseDateTimeExtractor<TimePeriod
     constructor() {
         super(new Map<RegExp, TimePeriodType>([
             [ RegExpUtility.getSafeRegExp(ChineseDateTime.TimePeriodRegexes1), TimePeriodType.FullTime ],
-            [ RegExpUtility.getSafeRegExp(ChineseDateTime.TimePeriodRegexes2), TimePeriodType.ShortTime ]
+            [ RegExpUtility.getSafeRegExp(ChineseDateTime.TimePeriodRegexes2), TimePeriodType.ShortTime ],
+            [ RegExpUtility.getSafeRegExp(ChineseDateTime.TimeOfDayRegex), TimePeriodType.ShortTime ]
         ]));
     }
 }
@@ -72,7 +73,11 @@ export class ChineseTimePeriodParser extends BaseTimePeriodParser {
             return result;
         }
 
-        let parseResult = this.parseTimePeriod(extra, referenceTime);
+        let parseResult = this.parseChineseTimeOfDay(er.text, referenceTime);
+
+        if(!parseResult.success) {
+            parseResult = this.parseTimePeriod(extra, referenceTime);
+        }
 
         if (parseResult.success) {
             parseResult.futureResolution = {};
@@ -88,6 +93,62 @@ export class ChineseTimePeriodParser extends BaseTimePeriodParser {
         result.timexStr = parseResult.timex;
 
         return result;
+    }
+
+    private parseChineseTimeOfDay(text: string, referenceTime: Date): DateTimeResolutionResult {
+        let day = referenceTime.getDay(),
+        month = referenceTime.getMonth(),
+        year = referenceTime.getFullYear();
+        let ret = new DateTimeResolutionResult();
+
+        let parameters = this.GetMatchedTimexRange(text);
+        if (!parameters.matched) {
+            return new DateTimeResolutionResult();
+        }
+
+        ret.timex = parameters.timex;
+        ret.futureValue = ret.pastValue = {
+            item1: DateUtils.safeCreateFromMinValue(year, month, day, parameters.beginHour, 0, 0),
+            item2: DateUtils.safeCreateFromMinValue(year, month, day, parameters.endHour, parameters.endMin, 0)
+        }
+        ret.success = true;
+
+        return ret;
+    }
+
+    private GetMatchedTimexRange(text: string): {matched: boolean, timex: string, beginHour: number, endHour: number, endMin: number} {
+        let trimmedText = text.trim(),
+        matched = false,
+        timex = null,
+        beginHour = 0,
+        endHour = 0,
+        endMin = 0;
+
+        let timeOfDay = "";
+        if (ChineseDateTime.MorningTermList.some(o => trimmedText.endsWith(o))) {
+            timeOfDay = Constants.Morning;
+        } else if (ChineseDateTime.AfternoonTermList.some(o => trimmedText.endsWith(o))) {
+            timeOfDay = Constants.Afternoon;
+        } else if (ChineseDateTime.EveningTermList.some(o => trimmedText.endsWith(o))) {
+            timeOfDay = Constants.Evening;
+        } else if (ChineseDateTime.DaytimeTermList.some(o => trimmedText.localeCompare(o) == 0)) {
+            timeOfDay = Constants.Daytime;
+        } else if (ChineseDateTime.NightTermList.some(o => trimmedText.endsWith(o))) {
+            timeOfDay = Constants.Night;
+        } else {
+            timex = null;
+            matched = false;
+            return {matched, timex, beginHour, endHour, endMin};
+        }
+
+        let parseResult = TimexUtil.parseTimeOfDay(timeOfDay);
+        timex = parseResult.timeX;
+        beginHour = parseResult.beginHour;
+        endHour = parseResult.endHour;
+        endMin = parseResult.endMin;
+
+        matched = true;
+        return {matched, timex, beginHour, endHour, endMin};
     }
 
     private parseTimePeriod(extra: DateTimeExtra<TimePeriodType>, referenceTime: Date): DateTimeResolutionResult {

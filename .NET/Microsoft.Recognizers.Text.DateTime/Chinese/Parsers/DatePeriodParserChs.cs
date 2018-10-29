@@ -70,6 +70,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
                 if (!innerResult.Success)
                 {
+                    innerResult = ParseMonthToMonth(er.Text, referenceDate);
+                }
+
+                if (!innerResult.Success)
+                {
                     innerResult = ParseYear(er.Text, referenceDate);
                 }
 
@@ -186,7 +191,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
                 if (!string.IsNullOrEmpty(monthStr))
                 {
-                    month = this.config.MonthOfYear[monthStr.ToLower()];
+                    month = ToMonthNumber(monthStr.ToLower());
                 }
                 else
                 {
@@ -269,11 +274,17 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             return ret;
         }
 
-        // handle like "2016年到2017年"
+        // handle like "2016年到2017年", "2016年和2017年之间"
         private DateTimeResolutionResult ParseYearToYear(string text, DateObject referenceDate)
         {
             var ret = new DateTimeResolutionResult();
             var match = DatePeriodExtractorChs.YearToYear.Match(text);
+
+            if (!match.Success)
+            {
+                match = DatePeriodExtractorChs.YearToYearSuffixRequired.Match(text);
+            }
+
             if (match.Success)
             {
                 var yearMatch = DatePeriodExtractorChs.YearRegex.Matches(text);
@@ -343,6 +354,91 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             return ret;
         }
 
+        // handle like "3月到5月", "3月和5月之间"
+        private DateTimeResolutionResult ParseMonthToMonth(string text, DateObject referenceDate)
+        {
+            var ret = new DateTimeResolutionResult();
+            var match = DatePeriodExtractorChs.MonthToMonth.Match(text);
+
+            if (!match.Success)
+            {
+                match = DatePeriodExtractorChs.MonthToMonthSuffixRequired.Match(text);
+            }
+
+            if (match.Success)
+            {
+                var monthMatch = DatePeriodExtractorChs.MonthRegex.Matches(text);
+                var beginMonth = 0;
+                var endMonth = 0;
+
+                if (monthMatch.Count == 2)
+                {
+                    var monthFrom = monthMatch[0].Groups["month"].Value;
+                    var monthTo = monthMatch[1].Groups["month"].Value;
+                    beginMonth = ToMonthNumber(monthFrom);
+                    endMonth = ToMonthNumber(monthTo);
+                }
+
+                var currentYear = referenceDate.Year;
+                var currentMonth = referenceDate.Month;
+                var beginYearForPastResolution = currentYear;
+                var endYearForPastResolution = currentYear;
+                var beginYearForFutureResolution = currentYear;
+                var endYearForFutureResolution = currentYear;
+                var durationMonths = 0;
+
+                if (beginMonth < endMonth)
+                {
+                    // For this case, FutureValue and PastValue share the same resolution
+                    if (beginMonth < currentMonth && endMonth >= currentMonth)
+                    {
+                        // Keep the beginYear and endYear equal to currentYear
+                    }
+                    else if (beginMonth >= currentMonth)
+                    {
+                        beginYearForPastResolution = endYearForPastResolution = currentYear - 1;
+                    }
+                    else if (endMonth < currentMonth)
+                    {
+                        beginYearForFutureResolution = endYearForFutureResolution = currentYear + 1;
+                    }
+
+                    durationMonths = endMonth - beginMonth;
+                }
+                else if (beginMonth > endMonth)
+                {
+                    // For this case, FutureValue and PastValue share the same resolution
+                    if (beginMonth < currentMonth)
+                    {
+                        endYearForPastResolution = endYearForFutureResolution = currentYear + 1;
+                    }
+                    else
+                    {
+                        beginYearForPastResolution = currentYear - 1;
+                        endYearForFutureResolution = currentYear + 1;
+                    }
+
+                    durationMonths = beginMonth - endMonth;
+                }
+
+                if (durationMonths != 0)
+                {
+                    var beginDateForPastResolution = DateObject.MinValue.SafeCreateFromValue(beginYearForPastResolution, beginMonth, 1);
+                    var endDateForPastResolution = DateObject.MinValue.SafeCreateFromValue(endYearForPastResolution, endMonth, 1);
+                    var beginDateForFutureResolution = DateObject.MinValue.SafeCreateFromValue(beginYearForFutureResolution, beginMonth, 1);
+                    var endDateForFutureResolution = DateObject.MinValue.SafeCreateFromValue(endYearForFutureResolution, endMonth, 1);
+
+                    var beginTimex = FormatUtil.LuisDate(beginDateForPastResolution, beginDateForFutureResolution);
+                    var endTimex = FormatUtil.LuisDate(endDateForPastResolution, endDateForFutureResolution);
+                    ret.Timex = $"({beginTimex},{endTimex},P{durationMonths}M)";
+                    ret.PastValue = new Tuple<DateObject, DateObject>(beginDateForPastResolution, endDateForPastResolution);
+                    ret.FutureValue = new Tuple<DateObject, DateObject>(beginDateForFutureResolution, endDateForFutureResolution);
+                    ret.Success = true;
+                }
+            }
+            return ret;
+        }
+
         // for case "2016年5月"
         private DateTimeResolutionResult ParseYearAndMonth(string text, DateObject referenceDate)
         {
@@ -401,7 +497,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             }
 
             var monthStr = match.Groups["month"].Value;
-            var month = this.config.MonthOfYear[monthStr] > 12 ? this.config.MonthOfYear[monthStr]%12 : this.config.MonthOfYear[monthStr];
+            var month = ToMonthNumber(monthStr);
             var beginDay = DateObject.MinValue.SafeCreateFromValue(year, month, 1);
             DateObject endDay;
 
@@ -463,7 +559,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                         swift = 0;
                     }
 
-                    month = this.config.MonthOfYear[monthStr.ToLower()];
+                    month = ToMonthNumber(monthStr.ToLower());
 
                     if (swift >= -1)
                     {
@@ -984,7 +1080,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             }
             else
             {
-                month = this.config.MonthOfYear[monthStr];
+                month = ToMonthNumber(monthStr);
                 ret.Timex = "XXXX" + "-" + month.ToString("D2");
                 year = referenceDate.Year;
                 noYear = true;
@@ -1274,6 +1370,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             }
 
             return firstWeekday.AddDays(7*(cadinal - 1));
+        }
+
+        private int ToMonthNumber(string monthStr)
+        {
+            return this.config.MonthOfYear[monthStr] > 12 ? this.config.MonthOfYear[monthStr] % 12 : this.config.MonthOfYear[monthStr];
         }
 
         public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)

@@ -71,6 +71,7 @@ export class ModelFactory<TModelOptions> {
     }
 
     tryGetModel(modelTypeName: string, culture: string, options: TModelOptions): { containsModel: boolean; model?: IModel } {
+        culture = Culture.mapToNearestLanguage(culture);
         let cacheResult = this.getModelFromCache(modelTypeName, culture, options);
         if (cacheResult) return { containsModel: true, model: cacheResult };
 

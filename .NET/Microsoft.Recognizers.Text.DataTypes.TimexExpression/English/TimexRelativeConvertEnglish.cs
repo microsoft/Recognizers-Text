@@ -2,12 +2,13 @@
 // Licensed under the MIT License.
 
 using System;
+using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 {
     internal static class TimexRelativeConvertEnglish
     {
-        public static string ConvertTimexToStringRelative(TimexProperty timex, System.DateTime date)
+        public static string ConvertTimexToStringRelative(TimexProperty timex, DateObject date)
         {
             var types = timex.Types.Count != 0 ? timex.Types : TimexInference.Infer(timex);
 
@@ -40,11 +41,11 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             return TimexConstantsEnglish.Days[index];
         }
 
-        private static string ConvertDate(TimexProperty timex, System.DateTime date)
+        private static string ConvertDate(TimexProperty timex, DateObject date)
         {
             if (timex.Year != null && timex.Month != null && timex.DayOfMonth != null)
             {
-                var timexDate = new System.DateTime(timex.Year.Value, timex.Month.Value, timex.DayOfMonth.Value);
+                var timexDate = new DateObject(timex.Year.Value, timex.Month.Value, timex.DayOfMonth.Value);
 
                 if (TimexDateHelpers.DatePartEquals(timexDate, date))
                 {
@@ -82,12 +83,12 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             return TimexConvertEnglish.ConvertDate(timex);
         }
 
-        private static string ConvertDateTime(TimexProperty timex, System.DateTime date)
+        private static string ConvertDateTime(TimexProperty timex, DateObject date)
         {
             return $"{ConvertDate(timex, date)} {TimexConvertEnglish.ConvertTime(timex)}";
         }
 
-        private static string ConvertDateRange(TimexProperty timex, System.DateTime date)
+        private static string ConvertDateRange(TimexProperty timex, DateObject date)
         {
             if (timex.Year != null)
             {
@@ -145,11 +146,11 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             return string.Empty;
         }
 
-        private static string ConvertDateTimeRange(TimexProperty timex, System.DateTime date)
+        private static string ConvertDateTimeRange(TimexProperty timex, DateObject date)
         {
             if (timex.Year != null && timex.Month != null && timex.DayOfMonth != null)
             {
-                var timexDate = new System.DateTime(timex.Year.Value, timex.Month.Value, timex.DayOfMonth.Value);
+                var timexDate = new DateObject(timex.Year.Value, timex.Month.Value, timex.DayOfMonth.Value);
 
                 if (timex.PartOfDay != null)
                 {
