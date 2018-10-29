@@ -735,5 +735,25 @@ namespace Microsoft.Recognizers.Definitions.German
 		};
 		public const string DefaultLanguageFallback = "DMY";
 		public static readonly string[] DurationDateRestrictions = {  };
+		public static readonly IList<string> MorningTermList = new List<string>
+		{
+			"morgen"
+		};
+		public static readonly IList<string> AfternoonTermList = new List<string>
+		{
+			"nachmittag"
+		};
+		public static readonly IList<string> EveningTermList = new List<string>
+		{
+			"abend"
+		};
+		public static readonly IList<string> DaytimeTermList = new List<string>
+		{
+			"tag"
+		};
+		public static readonly IList<string> NightTermList = new List<string>
+		{
+			"nacht"
+		};
 	}
 }

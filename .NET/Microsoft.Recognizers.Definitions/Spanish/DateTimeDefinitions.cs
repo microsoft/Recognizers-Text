@@ -459,5 +459,26 @@ namespace Microsoft.Recognizers.Definitions.Spanish
 		};
 		public const string DefaultLanguageFallback = "DMY";
 		public static readonly string[] DurationDateRestrictions = {  };
+		public static readonly IList<string> EarlyMorningTermList = new List<string>
+		{
+			"madrugada"
+		};
+		public static readonly IList<string> MorningTermList = new List<string>
+		{
+			"mañana"
+		};
+		public static readonly IList<string> AfternoonTermList = new List<string>
+		{
+			"pasado mediodia",
+			"pasado el mediodia"
+		};
+		public static readonly IList<string> EveningTermList = new List<string>
+		{
+			"tarde"
+		};
+		public static readonly IList<string> NightTermList = new List<string>
+		{
+			"noche"
+		};
 	}
 }

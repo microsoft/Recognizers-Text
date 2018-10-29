@@ -94,15 +94,15 @@ export class EnglishTimePeriodParserConfiguration implements ITimePeriodParserCo
         endMin = 0;
 
         let timeOfDay = "";
-        if (trimmedText.endsWith(EnglishDateTime.Morning)) {
+        if (EnglishDateTime.MorningTermList.some(o => trimmedText.endsWith(o))) {
             timeOfDay = Constants.Morning;
-        } else if (trimmedText.endsWith(EnglishDateTime.Afternoon)) {
+        } else if (EnglishDateTime.AfternoonTermList.some(o => trimmedText.endsWith(o))) {
             timeOfDay = Constants.Afternoon;
-        } else if (trimmedText.endsWith(EnglishDateTime.Evening)) {
+        } else if (EnglishDateTime.EveningTermList.some(o => trimmedText.endsWith(o))) {
             timeOfDay = Constants.Evening;
-        } else if (trimmedText.localeCompare(EnglishDateTime.Daytime) == 0) {
+        } else if (EnglishDateTime.DaytimeTermList.some(o => trimmedText.localeCompare(o) == 0)) {
             timeOfDay = Constants.Daytime;
-        } else if (trimmedText.endsWith(EnglishDateTime.Night)) {
+        } else if (EnglishDateTime.NightTermList.some(o => trimmedText.endsWith(o))) {
             timeOfDay = Constants.Night;
         } else {
             timex = null;

@@ -62,24 +62,24 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             endHour = 0;
             endMin = 0;
 
-            var timeOfDay = "";           
-            if (trimmedText.EndsWith(DateTimeDefinitions.Morning))
+            var timeOfDay = "";
+            if (DateTimeDefinitions.MorningTermList.Any(o => trimmedText.EndsWith(o)))
             {
                 timeOfDay = Constants.Morning;
             }
-            else if (trimmedText.EndsWith(DateTimeDefinitions.Afternoon))
+            else if (DateTimeDefinitions.AfternoonTermList.Any(o => trimmedText.EndsWith(o)))
             {
                 timeOfDay = Constants.Afternoon;
             }
-            else if (trimmedText.EndsWith(DateTimeDefinitions.Evening))
+            else if (DateTimeDefinitions.EveningTermList.Any(o => trimmedText.EndsWith(o)))
             {
                 timeOfDay = Constants.Evening;
             }
-            else if (trimmedText.Equals(DateTimeDefinitions.Daytime))
+            else if (DateTimeDefinitions.DaytimeTermList.Any(o => trimmedText.Equals(o)))
             {
                 timeOfDay = Constants.Daytime;
             }
-            else if (trimmedText.EndsWith(DateTimeDefinitions.Night))
+            else if (DateTimeDefinitions.NightTermList.Any(o => trimmedText.EndsWith(o)))
             {
                 timeOfDay = Constants.Night;
             }

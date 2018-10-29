@@ -216,4 +216,9 @@ export namespace PortugueseDateTime {
 	export const DefaultLanguageFallback = 'DMY';
 	export const DurationDateRestrictions = [  ];
 	export const AmbiguityFiltersDict: ReadonlyMap<string, string> = new Map<string, string>([["null", "null"]]);
+	export const EarlyMorningTermList = [ 'madrugada' ];
+	export const MorningTermList = [ 'manha','manhã' ];
+	export const AfternoonTermList = [ 'passado o meio dia','depois do meio dia' ];
+	export const EveningTermList = [ 'tarde' ];
+	export const NightTermList = [ 'noite' ];
 }

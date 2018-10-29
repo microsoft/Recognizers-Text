@@ -564,6 +564,11 @@ export class TimexUtil {
     public static parseTimeOfDay(tod: string): TimeOfDayResolutionResult {
         let result = new TimeOfDayResolutionResult();
         switch (tod) {
+            case Constants.EarlyMorning:
+                result.timeX = Constants.EarlyMorning;
+                result.beginHour = 4;
+                result.endHour = 8;
+                break;
             case Constants.Morning:
                 result.timeX = Constants.Morning;
                 result.beginHour = 8;

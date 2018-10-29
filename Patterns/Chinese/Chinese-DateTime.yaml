@@ -817,9 +817,24 @@ TimeLowBoundDesc: !dictionary
     pm: 12
 DefaultLanguageFallback: DMY
 # For TimeOfDay resolution
-Morning: 上午
-Afternoon: 下午
-Evening: 晚上
-Daytime: 白天
-Night: 深夜
+MorningTermList: !list
+  types: [ string ]
+  entries: 
+    - 上午
+AfternoonTermList: !list
+  types: [ string ]
+  entries: 
+    - 下午
+EveningTermList: !list
+  types: [ string ]
+  entries: 
+    - 晚上
+DaytimeTermList: !list
+  types: [ string ]
+  entries: 
+    - 白天
+NightTermList: !list
+  types: [ string ]
+  entries: 
+    - 深夜
 ...

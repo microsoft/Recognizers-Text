@@ -629,11 +629,25 @@ namespace Microsoft.Recognizers.Definitions.English
 			{ "\\bmorning|afternoon|evening|night|day\\b", "\\bgood\\s+(morning|afternoon|evening|night|day)\\b" },
 			{ "\\bmay\\b", "\\b((^may i)|(i|you|he|she|we|they)\\s+may|(may\\s+((((also|not|(also not)|well)\\s+)?(be|contain|constitute|email|e-mail|take|have|result|involve|get|work|reply))|(or may not))))\\b" }
 		};
-		public const string Morning = "morning";
-		public const string Afternoon = "afternoon";
-		public const string Evening = "evening";
-		public const string Daytime = "daytime";
-		public const string Night = "night";
-		public const string BusinessHour = "businessHour";
+		public static readonly IList<string> MorningTermList = new List<string>
+		{
+			"morning"
+		};
+		public static readonly IList<string> AfternoonTermList = new List<string>
+		{
+			"afternoon"
+		};
+		public static readonly IList<string> EveningTermList = new List<string>
+		{
+			"evening"
+		};
+		public static readonly IList<string> DaytimeTermList = new List<string>
+		{
+			"daytime"
+		};
+		public static readonly IList<string> NightTermList = new List<string>
+		{
+			"night"
+		};
 	}
 }

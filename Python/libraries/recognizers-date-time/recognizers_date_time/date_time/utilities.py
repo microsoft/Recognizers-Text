@@ -452,7 +452,11 @@ class TimexUtil:
     def parse_time_of_day(tod: str) -> TimeOfDayResolution:
         result = TimeOfDayResolution()
 
-        if tod == Constants.Morning:
+        if tod == Constants.EarlyMorning:
+            result.timex = Constants.EarlyMorning
+            result.begin_hour = 4
+            result.end_hour = 8
+        elif tod == Constants.Morning:
             result.timex = Constants.Morning
             result.begin_hour = 8
             result.end_hour = 12

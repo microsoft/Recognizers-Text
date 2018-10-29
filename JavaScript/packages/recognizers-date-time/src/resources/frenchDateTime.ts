@@ -234,4 +234,9 @@ export namespace FrenchDateTime {
 	export const SpecialDecadeCases: ReadonlyMap<string, number> = new Map<string, number>([["", 0]]);
 	export const DefaultLanguageFallback = 'DMY';
 	export const DurationDateRestrictions = [  ];
+	export const MorningTermList = [ 'matinee','matin','matinée' ];
+	export const AfternoonTermList = [ 'apres-midi','apres midi','après midi','après-midi' ];
+	export const EveningTermList = [ 'soir','soiree','soirée' ];
+	export const DaytimeTermList = [ 'jour','journee','journée' ];
+	export const NightTermList = [ 'nuit' ];
 }

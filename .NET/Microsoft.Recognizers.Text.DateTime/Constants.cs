@@ -1,8 +1,6 @@
 ﻿// ReSharper disable InconsistentNaming
 
 using Microsoft.Recognizers.Definitions;
-using EnglishDateTimeDefinitions = Microsoft.Recognizers.Definitions.English.DateTimeDefinitions;
-using ChineseDateTimeDefinitions = Microsoft.Recognizers.Definitions.Chinese.DateTimeDefinitions;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
@@ -153,6 +151,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string TimeTimexPrefix = "T";
 
         // Timex of TimeOfDay
+        public const string EarlyMorning = "TDA";
         public const string Morning = "TMO";
         public const string Afternoon = "TAF";
         public const string Evening = "TEV";
