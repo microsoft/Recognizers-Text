@@ -105,6 +105,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex CenturySuffixRegex { get; }
 
+        Regex RelativeRegex { get; }
+
         IImmutableDictionary<string, string> UnitMap { get; }
 
         IImmutableDictionary<string, int> CardinalMap { get; }

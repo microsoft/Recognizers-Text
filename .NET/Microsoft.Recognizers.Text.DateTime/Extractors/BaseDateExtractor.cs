@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Recognizers.Text.DateTime.Utilities;
+using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
@@ -105,11 +106,86 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var matches = regex.Matches(text);
                 foreach (Match match in matches)
                 {
-                    ret.Add(new Token(match.Index, match.Index + match.Length));
+                    // For cases like "10-1 - 11-7", "10-1 - 11" can be matched by the Regex, but it's not a valid Date entity as "11" is not year of the entity, but belongs the second Date entity of the DateRange.
+                    // If the match doesn't contains "year" part, it's a valid match
+                    var isValidMatch = !match.Groups["year"].Success;
+
+                    if (!isValidMatch)
+                    {
+                        var yearGroup = match.Groups["year"];
+
+                        // If the "year" part is not at the end of the match, it's a valid match
+                        if (!(yearGroup.Index + yearGroup.Length == match.Index + match.Length))
+                        {
+                            isValidMatch = true;
+                        }
+                        else
+                        {
+                            var subText = text.Substring(yearGroup.Index);
+
+                            // If the following text (include the "year" part) doesn't start with a Date entity, it's a valid match
+                            if (!IsStartsWithBasicDate(subText))
+                            {
+                                isValidMatch = true;
+                            }
+                            else
+                            {
+                                // If the following text (include the "year" part) starts with a Date entity, but the following text (doesn't include the "year" part) also starts with a valid Date entity, the current match is still valid
+                                // For example, "10-1-2018-10-2-2018". Match "10-1-2018" is valid because though "2018-10-2" a valid match (indicates the first year "2018" might belongs to the second Date entity), but "10-2-2018" is also a valid match.
+                                subText = text.Substring(yearGroup.Index + yearGroup.Length).Trim();
+                                subText = TrimStartRangeConnectorSymbols(subText);
+                                isValidMatch = IsStartsWithBasicDate(subText);
+                            }
+                        }
+                    }
+
+                    if (isValidMatch)
+                    {
+                        ret.Add(new Token(match.Index, match.Index + match.Length));
+                    }
                 }
             }
 
             return ret;
+        }
+
+        private string TrimStartRangeConnectorSymbols(string text)
+        {
+            var rangeConnectorSymbolMatches = config.RangeConnectorSymbolRegex.Matches(text);
+
+            foreach (Match symbolMatch in rangeConnectorSymbolMatches)
+            {
+                var startSymbolLength = -1;
+
+                if (symbolMatch.Success && symbolMatch.Index == 0 && symbolMatch.Length > startSymbolLength)
+                {
+                    startSymbolLength = symbolMatch.Length;
+                }
+
+                if (startSymbolLength > 0)
+                {
+                    text = text.Substring(startSymbolLength);
+                }
+            }
+
+            return text.Trim();
+        }
+
+        private bool IsStartsWithBasicDate(string text)
+        {
+            foreach (var regex in this.config.DateRegexList)
+            {
+                var matches = regex.Matches(text);
+                foreach (Match match in matches)
+                {
+                    if (match.Success && match.Index == 0)
+                    {
+                        return true;
+                    }
+                }
+            }
+
+            return false;
         }
 
         // match several other cases

@@ -79,10 +79,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public static readonly Regex NextPrefixRegex = new Regex(DateTimeDefinitions.NextPrefixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
         public static readonly Regex PastPrefixRegex = new Regex(DateTimeDefinitions.PastPrefixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
         public static readonly Regex ThisPrefixRegex = new Regex(DateTimeDefinitions.ThisPrefixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex RelativeRegex = new Regex(DateTimeDefinitions.RelativeRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         Regex IDatePeriodParserConfiguration.NextPrefixRegex => NextPrefixRegex;
         Regex IDatePeriodParserConfiguration.PastPrefixRegex => PastPrefixRegex;
         Regex IDatePeriodParserConfiguration.ThisPrefixRegex => ThisPrefixRegex;
+        Regex IDatePeriodParserConfiguration.RelativeRegex => RelativeRegex;
 
         #endregion
 

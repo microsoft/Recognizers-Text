@@ -1,7 +1,9 @@
-﻿using System;
+﻿using Microsoft.Recognizers.Text.DateTime.Utilities;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Text.RegularExpressions;
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime
@@ -143,8 +145,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var isSpecificDate = false;
                 var isStartByWeek = false;
                 var isEndByWeek = false;
+                var dateContext = GetDateContext(match.Groups["start"].Value.Trim(), match.Groups["end"].Value.Trim(), text);
 
-                var startResolution = ParseSingleTimePoint(match.Groups["start"].Value.Trim(), referenceDate);
+                var startResolution = ParseSingleTimePoint(match.Groups["start"].Value.Trim(), referenceDate, dateContext);
 
                 if (startResolution.Success)
                 {
@@ -154,7 +157,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
                 else
                 {
-                    startResolution = ParseBaseDatePeriod(match.Groups["start"].Value.Trim(), referenceDate);
+                    startResolution = ParseBaseDatePeriod(match.Groups["start"].Value.Trim(), referenceDate, dateContext);
 
                     if (startResolution.Success)
                     {
@@ -170,7 +173,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 if (startResolution.Success)
                 {
-                    var endResolution = ParseSingleTimePoint(match.Groups["end"].Value.Trim(), referenceDate);
+                    var endResolution = ParseSingleTimePoint(match.Groups["end"].Value.Trim(), referenceDate, dateContext);
 
                     if (endResolution.Success)
                     {
@@ -180,7 +183,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
                     else
                     {
-                        endResolution = ParseBaseDatePeriod(match.Groups["end"].Value.Trim(), referenceDate);
+                        endResolution = ParseBaseDatePeriod(match.Groups["end"].Value.Trim(), referenceDate, dateContext);
 
                         if (endResolution.Success)
                         {
@@ -197,12 +200,26 @@ namespace Microsoft.Recognizers.Text.DateTime
                     {
                         if (futureBegin > futureEnd)
                         {
-                            futureBegin = pastBegin;
+                            if (dateContext == null || dateContext.IsEmpty())
+                            {
+                                futureBegin = pastBegin;
+                            }
+                            else
+                            {
+                                futureBegin = dateContext.SwiftDateObject(futureBegin, futureEnd);
+                            }
                         }
 
                         if (pastEnd < pastBegin)
                         {
-                            pastEnd = futureEnd;
+                            if (dateContext == null || dateContext.IsEmpty())
+                            {
+                                pastEnd = futureEnd;
+                            }
+                            else
+                            {
+                                pastBegin = dateContext.SwiftDateObject(pastBegin, pastEnd);
+                            }
                         }
 
                         // If both begin/end are date ranges in "Month", the Timex should be ByMonth
@@ -232,7 +249,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        private DateTimeResolutionResult ParseBaseDatePeriod(string text, DateObject referenceDate)
+        private DateTimeResolutionResult ParseBaseDatePeriod(string text, DateObject referenceDate, DateContext dateContext = null)
         {
             var innerResult = ParseMonthWithYear(text, referenceDate);
             if (!innerResult.Success)
@@ -316,6 +333,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (!innerResult.Success)
             {
                 innerResult = ParseOrdinalNumberWithCenturySuffix(text, referenceDate);
+            }
+
+            if (innerResult.Success && dateContext != null)
+            {
+                innerResult = dateContext.ProcessDatePeriodEntityResolution(innerResult);
             }
 
             return innerResult;
@@ -450,7 +472,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        private DateTimeResolutionResult ParseSingleTimePoint(string text, DateObject referenceDate)
+        private DateTimeResolutionResult ParseSingleTimePoint(string text, DateObject referenceDate, DateContext dateContext = null)
         {
             var ret = new DateTimeResolutionResult();
             var er = this.config.DateExtractor.Extract(text, referenceDate).FirstOrDefault();
@@ -477,6 +499,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                     ret.FutureValue = (DateObject)((DateTimeResolutionResult)pr.Value).FutureValue;
                     ret.PastValue = (DateObject)((DateTimeResolutionResult)pr.Value).PastValue;
                     ret.Success = true;
+                }
+
+                if (dateContext != null)
+                {
+                    ret = dateContext.ProcessDateEntityResolution(ret);
                 }
             }
 
@@ -1079,12 +1106,17 @@ namespace Microsoft.Recognizers.Text.DateTime
                 er[1].Text = weekPrefix + " " + er[1].Text;
             }
 
+            var dateContext = GetDateContext(er[0].Text, er[1].Text, text);
+
             var pr1 = this.config.DateParser.Parse(er[0], referenceDate);
             var pr2 = this.config.DateParser.Parse(er[1], referenceDate);
             if (pr1.Value == null || pr2.Value == null)
             {
                 return ret;
             }
+
+            pr1 = dateContext.ProcessDateEntityParsingResult(pr1);
+            pr2 = dateContext.ProcessDateEntityParsingResult(pr2);
 
             ret.SubDateTimeEntities = new List<object> { pr1, pr2 };
 
@@ -1918,6 +1950,115 @@ namespace Microsoft.Recognizers.Text.DateTime
         public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)
         {
             return candidateResults;
+        }
+
+        private DateContext GetDateContext(string startDateStr, string endDateStr, string text, bool constrainYearRange = false)
+        {
+            var isEndDatePureYear = false;
+            var isDateRelative = false;
+            int contextYear = Constants.InvalidYear;
+
+            var yearMatchForEndDate = this.config.YearRegex.Match(endDateStr);
+
+            if (yearMatchForEndDate.Success && yearMatchForEndDate.Length == endDateStr.Length)
+            {
+                isEndDatePureYear = true;
+            }
+
+            var relativeMatchForStartDate = this.config.RelativeRegex.Match(startDateStr);
+            var relativeMatchForEndDate = this.config.RelativeRegex.Match(endDateStr);
+            isDateRelative = relativeMatchForStartDate.Success || relativeMatchForEndDate.Success;
+
+            var dateContext = new DateContext();
+
+            if (!isEndDatePureYear && !isDateRelative)
+            {
+                foreach (Match match in config.YearRegex.Matches(text))
+                {
+                    var yearStr = match.Groups["year"].Value;
+                    var year = Constants.InvalidYear;
+
+                    if (!string.IsNullOrEmpty(yearStr))
+                    {
+                        year = int.Parse(yearStr);
+                        if (year < 100 && year >= Constants.MinTwoDigitYearPastNum)
+                        {
+                            year += 1900;
+                        }
+                        else if (year >= 0 && year < Constants.MaxTwoDigitYearFutureNum)
+                        {
+                            year += 2000;
+                        }
+                    }
+                    else
+                    {
+                        var firstTwoYearNumStr = match.Groups["firsttwoyearnum"].Value;
+                        if (!string.IsNullOrEmpty(firstTwoYearNumStr))
+                        {
+                            var er = new ExtractResult
+                            {
+                                Text = firstTwoYearNumStr,
+                                Start = match.Groups["firsttwoyearnum"].Index,
+                                Length = match.Groups["firsttwoyearnum"].Length
+                            };
+
+                            var firstTwoYearNum = Convert.ToInt32((double)(this.config.NumberParser.Parse(er).Value ?? 0));
+
+                            var lastTwoYearNum = 0;
+                            var lastTwoYearNumStr = match.Groups["lasttwoyearnum"].Value;
+                            if (!string.IsNullOrEmpty(lastTwoYearNumStr))
+                            {
+                                er.Text = lastTwoYearNumStr;
+                                er.Start = match.Groups["lasttwoyearnum"].Index;
+                                er.Length = match.Groups["lasttwoyearnum"].Length;
+
+                                lastTwoYearNum = Convert.ToInt32((double)(this.config.NumberParser.Parse(er).Value ?? 0));
+                            }
+
+                            // Exclude pure number like "nineteen", "twenty four"
+                            if (firstTwoYearNum < 100 && lastTwoYearNum == 0 || firstTwoYearNum < 100 && firstTwoYearNum % 10 == 0 && lastTwoYearNumStr.Trim().Split(' ').Length == 1)
+                            {
+                                year = Constants.InvalidYear;
+                            }
+                            else
+                            {
+                                if (firstTwoYearNum >= 100)
+                                {
+                                    year = firstTwoYearNum + lastTwoYearNum;
+                                }
+                                else
+                                {
+                                    year = firstTwoYearNum * 100 + lastTwoYearNum;
+                                }
+                            }
+                        }
+                    }
+
+                    if (year != Constants.InvalidYear)
+                    {
+                        if (contextYear == Constants.InvalidYear)
+                        {
+                            contextYear = year;
+                        }
+                        else
+                        {
+                            // This indicates that the text has two different year value, no common context year
+                            if (contextYear != year)
+                            {
+                                contextYear = Constants.InvalidYear;
+                                break;
+                            }
+                        }
+                    }
+                }
+
+                if (constrainYearRange && (contextYear < Constants.MinYearNum || contextYear > Constants.MaxYearNum))
+                {
+                    contextYear = Constants.InvalidYear;
+                }
+            }
+
+            return new DateContext() { Year = contextYear };
         }
     }
 }

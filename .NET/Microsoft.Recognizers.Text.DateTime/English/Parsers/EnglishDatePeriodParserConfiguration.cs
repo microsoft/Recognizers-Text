@@ -72,7 +72,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public Regex LaterRegex { get; }
         public Regex LessThanRegex { get; }
         public Regex MoreThanRegex { get; }
-
         public Regex CenturySuffixRegex { get; }
 
         public static readonly Regex NextPrefixRegex =
@@ -91,11 +90,17 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             new Regex(
                 DateTimeDefinitions.AfterNextSuffixRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex RelativeRegex =
+            new Regex(
+                DateTimeDefinitions.RelativeRegex,
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         Regex IDatePeriodParserConfiguration.NextPrefixRegex => NextPrefixRegex;
         Regex IDatePeriodParserConfiguration.PastPrefixRegex => PastPrefixRegex;
         Regex IDatePeriodParserConfiguration.ThisPrefixRegex => ThisPrefixRegex;
-        
+        Regex IDatePeriodParserConfiguration.RelativeRegex => RelativeRegex;
+
+
         #endregion
 
         #region Dictionaries
