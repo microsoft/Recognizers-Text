@@ -41,6 +41,7 @@ namespace Microsoft.Recognizers.Text.Number.Korean
             UnitMap = NumbersDefinitions.UnitMap.ToImmutableDictionary();
             RoundDirectList = NumbersDefinitions.RoundDirectList.ToImmutableList();
 
+            // @TODO Change init to follow design in other languages
             HalfADozenRegex = null;
             DigitalNumberRegex = new Regex(NumbersDefinitions.DigitalNumberRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
             DigitNumRegex = new Regex(NumbersDefinitions.DigitNumRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);

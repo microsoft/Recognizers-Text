@@ -798,4 +798,26 @@ SpecialDecadeCases: !dictionary
     '': 0
 DefaultLanguageFallback: DMY
 DurationDateRestrictions: []
+# For TimeOfDay resolution
+EarlyMorningTermList: !list
+  types: [ string ]
+  entries: 
+    - madrugada
+MorningTermList: !list
+  types: [ string ]
+  entries: 
+    - mañana
+AfternoonTermList: !list
+  types: [ string ]
+  entries:
+    - pasado mediodia
+    - pasado el mediodia
+EveningTermList: !list
+  types: [ string ]
+  entries: 
+    - tarde
+NightTermList: !list
+  types: [ string ]
+  entries: 
+    - noche
 ...

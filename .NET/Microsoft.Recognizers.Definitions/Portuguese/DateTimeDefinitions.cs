@@ -485,5 +485,27 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
 		{
 			{ "null", "null" }
 		};
+		public static readonly IList<string> EarlyMorningTermList = new List<string>
+		{
+			"madrugada"
+		};
+		public static readonly IList<string> MorningTermList = new List<string>
+		{
+			"manha",
+			"manhã"
+		};
+		public static readonly IList<string> AfternoonTermList = new List<string>
+		{
+			"passado o meio dia",
+			"depois do meio dia"
+		};
+		public static readonly IList<string> EveningTermList = new List<string>
+		{
+			"tarde"
+		};
+		public static readonly IList<string> NightTermList = new List<string>
+		{
+			"noite"
+		};
 	}
 }

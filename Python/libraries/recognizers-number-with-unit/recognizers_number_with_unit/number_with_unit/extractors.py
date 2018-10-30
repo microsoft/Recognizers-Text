@@ -160,14 +160,14 @@ class NumberWithUnitExtractor(Extractor):
                     num.start = start - ex_result.start
                     ex_result.data = num
 
-                    is_dimension_falls_in_pm_time = False
+                    is_not_unit = False
                     if ex_result.type == Constants.SYS_UNIT_DIMENSION:
                         non_unit_match = self.config.pm_non_unit_regex.finditer(source)
                         for match in non_unit_match:
                             if ex_result.start >= match.start() and ex_result.end <= match.end():
-                                is_dimension_falls_in_pm_time = True
+                                is_not_unit = True
 
-                    if is_dimension_falls_in_pm_time:
+                    if is_not_unit:
                         continue
 
                     result.append(ex_result)
@@ -209,14 +209,14 @@ class NumberWithUnitExtractor(Extractor):
                 for j in range(i):
                     match_result[j] = True
 
-                is_dimension_falls_in_pm_time = False
+                is_not_unit = False
                 if match.group() == Constants.AMBIGUOUS_TIME_TERM:
                     non_unit_match = self.config.pm_non_unit_regex.finditer(source)
                     for time in non_unit_match:
-                        if self._is_dimension_falls_in_time(match, time):
-                            is_dimension_falls_in_pm_time = True
+                        if self._dimension_inside_time(match, time):
+                            is_not_unit = True
 
-                if is_dimension_falls_in_pm_time:
+                if is_not_unit:
                     continue
 
                 to_add = ExtractResult()
@@ -275,7 +275,7 @@ class NumberWithUnitExtractor(Extractor):
                         return 1
                     return 0
 
-    def _is_dimension_falls_in_time(self, dimension: Match, time: Match) -> bool:
+    def _dimension_inside_time(self, dimension: Match, time: Match) -> bool:
         is_sub_match = False
         if dimension.start() >= time.start() and dimension.end() <= time.end():
             is_sub_match = True

@@ -149,5 +149,14 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string TimeTimexConnector = ":";
         public const string GeneralPeriodPrefix = "P";
         public const string TimeTimexPrefix = "T";
+
+        // Timex of TimeOfDay
+        public const string EarlyMorning = "TDA";
+        public const string Morning = "TMO";
+        public const string Afternoon = "TAF";
+        public const string Evening = "TEV";
+        public const string Daytime = "TDT";
+        public const string Night = "TNI";
+        public const string BusinessHour = "TBH";
     }
 }

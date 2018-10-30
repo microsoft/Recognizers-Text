@@ -1,7 +1,7 @@
 import { IExtractor, ExtractResult, FormatUtility } from "@microsoft/recognizers-text";
 import { RegExpUtility } from "@microsoft/recognizers-text";
 import { IDateTimeParser, DateTimeParseResult } from "../dateTime/parsers"
-import { TimeTypeConstants } from "../dateTime/constants"
+import { Constants, TimeTypeConstants } from "../dateTime/constants";
 import { IDateTimeExtractor } from "./baseDateTime";
 
 export class Token {
@@ -338,6 +338,18 @@ export class DateTimeResolutionResult {
     }
 }
 
+export class TimeOfDayResolutionResult {
+    timeX: string;
+    beginHour: number;
+    endHour: number;
+    endMin: number;
+
+    constructor() {
+        this.timeX = null;
+        this.beginHour = this.endHour = this.endMin = 0;
+    }
+}
+
 export enum DayOfWeek {
     Sunday = 0,
     Monday = 1,
@@ -545,5 +557,53 @@ export class DateUtils {
         return hour >= 0 && hour < 24
             && minute >= 0 && minute < 60
             && second >= 0 && minute < 60;
+    }
+}
+
+export class TimexUtil {
+    public static parseTimeOfDay(tod: string): TimeOfDayResolutionResult {
+        let result = new TimeOfDayResolutionResult();
+        switch (tod) {
+            case Constants.EarlyMorning:
+                result.timeX = Constants.EarlyMorning;
+                result.beginHour = 4;
+                result.endHour = 8;
+                break;
+            case Constants.Morning:
+                result.timeX = Constants.Morning;
+                result.beginHour = 8;
+                result.endHour = 12;
+                break;
+            case Constants.Afternoon:
+                result.timeX = Constants.Afternoon;
+                result.beginHour = 12;
+                result.endHour = 16;
+                break;
+            case Constants.Evening:
+                result.timeX = Constants.Evening;
+                result.beginHour = 16;
+                result.endHour = 20;
+                break;
+            case Constants.Daytime:
+                result.timeX = Constants.Daytime;
+                result.beginHour = 8;
+                result.endHour = 18;
+                break;
+            case Constants.BusinessHour:
+                result.timeX = Constants.BusinessHour;
+                result.beginHour = 8;
+                result.endHour = 18;
+                break;
+            case Constants.Night:
+                result.timeX = Constants.Night;
+                result.beginHour = 20;
+                result.endHour = 23;
+                result.endMin = 59;
+                break;
+            default:
+                break;
+        }
+
+        return result;
     }
 }

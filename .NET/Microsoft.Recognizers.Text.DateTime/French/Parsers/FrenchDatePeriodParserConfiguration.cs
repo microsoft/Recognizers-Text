@@ -73,22 +73,18 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public Regex MoreThanRegex { get; }
         public Regex CenturySuffixRegex { get; }
 
+        // @TODO move to resources - French - relative
         public static readonly Regex NextPrefixRegex =
-            new Regex(
-                @"(prochain|prochaine)\b",
-                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(@"(prochain|prochaine)\b", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public static readonly Regex PastPrefixRegex =
-            new Regex(
-                @"(dernier)\b",
-                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(@"(dernier)\b", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public static readonly Regex ThisPrefixRegex =
-            new Regex(
-                @"(ce|cette)\b",
-                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(@"(ce|cette)\b", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public static readonly Regex RelativeRegex =
-            new Regex(
-                DateTimeDefinitions.RelativeRegex,
-                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.RelativeRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         Regex IDatePeriodParserConfiguration.NextPrefixRegex => NextPrefixRegex;
         Regex IDatePeriodParserConfiguration.PastPrefixRegex => PastPrefixRegex;
@@ -121,14 +117,17 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public FrenchDatePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config)
         {
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
+
             CardinalExtractor = config.CardinalExtractor;
             OrdinalExtractor = config.OrdinalExtractor;
             IntegerExtractor = config.IntegerExtractor;
+
             NumberParser = config.NumberParser;
             DurationExtractor = config.DurationExtractor;
             DateExtractor = config.DateExtractor;
             DurationParser = config.DurationParser;
             DateParser = config.DateParser;
+
             MonthFrontBetweenRegex = FrenchDatePeriodExtractorConfiguration.MonthFrontBetweenRegex;
             BetweenRegex = FrenchDatePeriodExtractorConfiguration.BetweenRegex;
             MonthFrontSimpleCasesRegex = FrenchDatePeriodExtractorConfiguration.MonthFrontSimpleCasesRegex;
@@ -166,6 +165,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             LessThanRegex = FrenchDatePeriodExtractorConfiguration.LessThanRegex;
             MoreThanRegex = FrenchDatePeriodExtractorConfiguration.MoreThanRegex;
             CenturySuffixRegex = FrenchDatePeriodExtractorConfiguration.CenturySuffixRegex;
+
             UnitMap = config.UnitMap;
             CardinalMap = config.CardinalMap;
             DayOfMonth = config.DayOfMonth;
@@ -174,10 +174,12 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             WrittenDecades = config.WrittenDecades;
             SpecialDecadeCases = config.SpecialDecadeCases;
         }
+
         public int GetSwiftDayOrMonth(string text)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
             var swift = 0;
+
+            var trimmedText = text.Trim().ToLowerInvariant();
 
             //TODO: Replace with a regex
             //TODO: Add 'upcoming' key word
@@ -196,13 +198,16 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             {
                 swift = -1;
             }
+
             return swift;
         }
 
         public int GetSwiftYear(string text)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
             var swift = -10;
+
+            var trimmedText = text.Trim().ToLowerInvariant();
+            
             if (trimmedText.EndsWith("prochain") || trimmedText.EndsWith("prochaine"))
             {
                 swift = 1;
@@ -224,17 +229,17 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public bool IsFuture(string text)
         {
             var trimmedText = text.Trim().ToLowerInvariant();
-            return (
-                trimmedText.StartsWith("cette") ||
-                trimmedText.EndsWith("prochaine") || trimmedText.EndsWith("prochain"));
+
+            return (trimmedText.StartsWith("cette") ||
+                    trimmedText.EndsWith("prochaine") || trimmedText.EndsWith("prochain"));
         }
 
         public bool IsLastCardinal(string text)
         {
             var trimmedText = text.Trim().ToLowerInvariant();
-            return (
-                trimmedText.Equals("dernières") || trimmedText.Equals("dernière") ||
-                trimmedText.Equals("dernieres") || trimmedText.Equals("derniere")||trimmedText.Equals("dernier"));
+
+            return (trimmedText.Equals("dernières") || trimmedText.Equals("dernière") ||
+                    trimmedText.Equals("dernieres") || trimmedText.Equals("derniere")||trimmedText.Equals("dernier"));
         }
 
         public bool IsMonthOnly(string text)
@@ -264,9 +269,9 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public bool IsYearOnly(string text)
         {
             var trimmedText = text.Trim().ToLowerInvariant();
-            return (trimmedText.EndsWith("années") || trimmedText.EndsWith("ans")
-                || (trimmedText.EndsWith("l'annees") || trimmedText.EndsWith("l'annee"))
-                );
+
+            return (trimmedText.EndsWith("années") || trimmedText.EndsWith("ans") || 
+                    (trimmedText.EndsWith("l'annees") || trimmedText.EndsWith("l'annee")));
         }
 
         public bool IsYearToDate(string text)

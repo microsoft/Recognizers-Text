@@ -31,6 +31,7 @@ namespace Microsoft.Recognizers.Text.Number.Spanish
             this.CardinalNumberMap = NumbersDefinitions.CardinalNumberMap.ToImmutableDictionary();
             this.OrdinalNumberMap = NumberMapGenerator.InitOrdinalNumberMap(NumbersDefinitions.OrdinalNumberMap, NumbersDefinitions.PrefixCardinalMap, NumbersDefinitions.SuffixOrdinalMap);
             this.RoundNumberMap = NumbersDefinitions.RoundNumberMap.ToImmutableDictionary();
+
             this.HalfADozenRegex = new Regex(NumbersDefinitions.HalfADozenRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
             this.DigitalNumberRegex = new Regex(NumbersDefinitions.DigitalNumberRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
             this.NegativeNumberSignRegex = new Regex(NumbersDefinitions.NegativeNumberSignRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);

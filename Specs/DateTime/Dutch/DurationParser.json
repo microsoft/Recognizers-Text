@@ -621,6 +621,29 @@
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
+    "Input": "Ik ben anderhalve dag weg",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "anderhalve dag",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P1.5D",
+          "FutureResolution": {
+            "duration": "7776000"
+          },
+          "PastResolution": {
+            "duration": "7776000"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
     "Input": "Ik ben een kwartier uur weg",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"

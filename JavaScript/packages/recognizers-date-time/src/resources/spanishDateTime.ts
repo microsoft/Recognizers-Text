@@ -215,4 +215,9 @@ export namespace SpanishDateTime {
 	export const SpecialDecadeCases: ReadonlyMap<string, number> = new Map<string, number>([["", 0]]);
 	export const DefaultLanguageFallback = 'DMY';
 	export const DurationDateRestrictions = [  ];
+	export const EarlyMorningTermList = [ 'madrugada' ];
+	export const MorningTermList = [ 'mañana' ];
+	export const AfternoonTermList = [ 'pasado mediodia','pasado el mediodia' ];
+	export const EveningTermList = [ 'tarde' ];
+	export const NightTermList = [ 'noche' ];
 }

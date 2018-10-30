@@ -71,14 +71,10 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             new Regex(DateTimeDefinitions.WeekDayAndDayOfMonthRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex RelativeMonthRegex =
-            new Regex(
-                DateTimeDefinitions.RelativeMonthRegex,
-                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.RelativeMonthRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex PrefixArticleRegex =
-            new Regex(
-                DateTimeDefinitions.PrefixArticleRegex,
-                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.PrefixArticleRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex[] ImplicitDateList =
         {
@@ -168,9 +164,9 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             var enableDmy = DmyDateFormat ||
                             DateTimeDefinitions.DefaultLanguageFallback == Constants.DefaultLanguageFallback_DMY;
 
-            DateRegexList = DateRegexList.Concat(enableDmy
-                ? new[] { dateRegex5, dateRegex8, dateRegex9, dateRegex4, dateRegex6, dateRegex7, dateRegex10, dateRegexA}
-                : new[] { dateRegex4, dateRegex6, dateRegex7, dateRegex5, dateRegex8, dateRegex9, dateRegex10, dateRegexA });
+            DateRegexList = DateRegexList.Concat(enableDmy ? 
+                new[] { dateRegex5, dateRegex8, dateRegex9, dateRegex4, dateRegex6, dateRegex7, dateRegex10, dateRegexA} :
+                new[] { dateRegex4, dateRegex6, dateRegex7, dateRegex5, dateRegex8, dateRegex9, dateRegex10, dateRegexA });
 
         }
 

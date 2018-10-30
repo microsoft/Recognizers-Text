@@ -621,4 +621,9 @@ class FrenchDateTime:
     SpecialDecadeCases = dict([('', 0)])
     DefaultLanguageFallback = 'DMY'
     DurationDateRestrictions = []
+    MorningTermList = ['matinee', 'matin', 'matinée']
+    AfternoonTermList = ['apres-midi', 'apres midi', 'après midi', 'après-midi']
+    EveningTermList = ['soir', 'soiree', 'soirée']
+    DaytimeTermList = ['jour', 'journee', 'journée']
+    NightTermList = ['nuit']
 # pylint: enable=line-too-long

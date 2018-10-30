@@ -1,13 +1,15 @@
 import { RegExpUtility, IExtractor } from "@microsoft/recognizers-text";
 import { ITimePeriodExtractorConfiguration, ITimePeriodParserConfiguration } from "../baseTimePeriod";
 import { BaseTimeExtractor, BaseTimeParser } from "../baseTime";
-import { IDateTimeUtilityConfiguration } from "../utilities";
+import { IDateTimeUtilityConfiguration, TimexUtil } from "../utilities";
 import { FrenchTimeExtractorConfiguration } from "./timeConfiguration";
 import { FrenchDateTimeUtilityConfiguration } from "./baseConfiguration";
 import { FrenchDateTime } from "../../resources/frenchDateTime";
 import { ICommonDateTimeParserConfiguration } from "../parsers";
 import { IDateTimeExtractor } from "../baseDateTime";
 import { EnglishIntegerExtractor, NumberMode } from "@microsoft/recognizers-text-number";
+import { Constants } from "../constants";
+import { EnglishDateTime } from "../../resources/englishDateTime";
 
 export class FrenchTimePeriodExtractorConfiguration implements ITimePeriodExtractorConfiguration {
     readonly simpleCasesRegex: RegExp[];
@@ -85,11 +87,11 @@ export class FrenchTimePeriodParserConfiguration implements ITimePeriodParserCon
 
     getMatchedTimexRange(text: string): { matched: boolean; timex: string; beginHour: number; endHour: number; endMin: number; } {
 
-        let trimedText = text.trim().toLowerCase();
+        let trimmedText = text.trim().toLowerCase();
 
-        if (trimedText.endsWith("s"))
+        if (trimmedText.endsWith("s"))
         {
-            trimedText = trimedText.substring(0, trimedText.length - 1);
+            trimmedText = trimmedText.substring(0, trimmedText.length - 1);
         }
 
         let beginHour = 0;
@@ -97,40 +99,22 @@ export class FrenchTimePeriodParserConfiguration implements ITimePeriodParserCon
         let endMin = 0;
         let timex = "";
 
-        if (trimedText.endsWith("matinee") || 
-            trimedText.endsWith("matin") || 
-            trimedText.endsWith("matinée")) {
-            timex = "TMO";
-            beginHour = 8;
-            endHour = 12;
+        let timeOfDay = "";
+        if (FrenchDateTime.MorningTermList.some(o => trimmedText.endsWith(o))) {
+            timeOfDay = Constants.Morning;
+        } else if (FrenchDateTime.AfternoonTermList.some(o => trimmedText.endsWith(o))) {
+            timeOfDay = Constants.Afternoon;
+        } else if (FrenchDateTime.EveningTermList.some(o => trimmedText.endsWith(o))) {
+            timeOfDay = Constants.Evening;
         }
-        else if (trimedText.endsWith("apres-midi")||
-            trimedText.endsWith("apres midi") || 
-            trimedText.endsWith("après midi") || 
-            trimedText.endsWith("après-midi")) {
-            timex = "TAF";
-            beginHour = 12;
-            endHour = 16;
+        else if (trimmedText === FrenchDateTime.DaytimeTermList[0] ||
+            trimmedText.endsWith(FrenchDateTime.DaytimeTermList[1]) ||
+            trimmedText.endsWith(FrenchDateTime.DaytimeTermList[2])) {
+            timeOfDay = Constants.Daytime;
         }
-        else if (trimedText.endsWith("soir") || 
-            trimedText.endsWith("soiree") || 
-            trimedText.endsWith("soirée")) {
-            timex = "TEV";
-            beginHour = 16;
-            endHour = 20;
-        }
-        else if (trimedText === "jour" || 
-            trimedText.endsWith("journee") || 
-            trimedText.endsWith("journée")) {
-            timex = "TDT";
-            beginHour = 8;
-            endHour = 18;
-        }
-        else if (trimedText.endsWith("nuit")) {
-            timex = "TNI";
-            beginHour = 20;
-            endHour = 23;
-            endMin = 59;
+        else if (FrenchDateTime.NightTermList.some(o => trimmedText.endsWith(o)))
+        {
+            timeOfDay = Constants.Night;
         }
         else {
             timex = null;
@@ -142,6 +126,12 @@ export class FrenchTimePeriodParserConfiguration implements ITimePeriodParserCon
                 endMin
             };
         }
+
+        let parseResult = TimexUtil.parseTimeOfDay(timeOfDay);
+        timex = parseResult.timeX;
+        beginHour = parseResult.beginHour;
+        endHour = parseResult.endHour;
+        endMin = parseResult.endMin;
 
         return {
             matched: true,

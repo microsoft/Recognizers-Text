@@ -36,9 +36,11 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex PureNumBetweenAnd =
             new Regex(DateTimeDefinitions.PureNumBetweenAnd, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex SpecificTimeFromTo = new Regex(DateTimeDefinitions.SpecificTimeFromTo, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex SpecificTimeFromTo = 
+            new Regex(DateTimeDefinitions.SpecificTimeFromTo, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex SpecificTimeBetweenAnd = new Regex(DateTimeDefinitions.SpecificTimeBetweenAnd, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex SpecificTimeBetweenAnd = 
+            new Regex(DateTimeDefinitions.SpecificTimeBetweenAnd, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex PrepositionRegex = 
             new Regex(DateTimeDefinitions.PrepositionRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -75,7 +77,10 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public IExtractor IntegerExtractor { get; }
 
-        public IEnumerable<Regex> SimpleCasesRegex => new[] { PureNumFromTo, PureNumBetweenAnd, SpecificTimeFromTo, SpecificTimeBetweenAnd };
+        public IEnumerable<Regex> SimpleCasesRegex => new[] 
+        {
+            PureNumFromTo, PureNumBetweenAnd, SpecificTimeFromTo, SpecificTimeBetweenAnd
+        };
 
         Regex ITimePeriodExtractorConfiguration.TillRegex => TillRegex;
 

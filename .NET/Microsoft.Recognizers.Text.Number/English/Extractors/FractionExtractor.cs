@@ -57,17 +57,15 @@ namespace Microsoft.Recognizers.Text.Number.English
             if ((Options & NumberOptions.PercentageMode) != 0)
             {
                 regexes.Add(
-                    new Regex(
-                        NumbersDefinitions.FractionPrepositionWithinPercentModeRegex,
-                        RegexOptions.IgnoreCase | RegexOptions.Singleline), RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.ENGLISH)
+                    new Regex(NumbersDefinitions.FractionPrepositionWithinPercentModeRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline), 
+                    RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.ENGLISH)
                 );
             }
             else
             {
                 regexes.Add(
-                    new Regex(
-                        NumbersDefinitions.FractionPrepositionRegex,
-                        RegexOptions.IgnoreCase | RegexOptions.Singleline), RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.ENGLISH)
+                    new Regex(NumbersDefinitions.FractionPrepositionRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline), 
+                    RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.ENGLISH)
                 );
             }
 

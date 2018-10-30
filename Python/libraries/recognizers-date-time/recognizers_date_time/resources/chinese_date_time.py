@@ -551,4 +551,9 @@ class ChineseDateTime:
                              ('晚', 18),
                              ('pm', 12)])
     DefaultLanguageFallback = 'DMY'
+    MorningTermList = ['上午']
+    AfternoonTermList = ['下午']
+    EveningTermList = ['晚上']
+    DaytimeTermList = ['白天']
+    NightTermList = ['深夜']
 # pylint: enable=line-too-long

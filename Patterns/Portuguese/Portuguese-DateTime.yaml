@@ -826,4 +826,27 @@ AmbiguityFiltersDict: !dictionary
   types: [ string, string ]
   entries:
     'null': 'null'
+# For TimeOfDay resolution
+EarlyMorningTermList: !list
+  types: [ string ] 
+  entries: 
+    - madrugada
+MorningTermList: !list
+  types: [ string ]
+  entries:
+    - manha
+    - manhã
+AfternoonTermList: !list
+  types: [ string ]
+  entries:
+    - passado o meio dia
+    - depois do meio dia
+EveningTermList: !list
+  types: [ string ] 
+  entries: 
+    - tarde
+NightTermList: !list
+  types: [ string ] 
+  entries: 
+    - noite
 ...

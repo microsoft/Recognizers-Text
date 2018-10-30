@@ -4,7 +4,7 @@ import { NumberWithUnitExtractor, ChineseNumberWithUnitExtractorConfiguration } 
 import { BaseDateTimeExtractor, DateTimeExtra, TimeResult, TimeResolutionUtils } from "./baseDateTime";
 import { Constants, TimeTypeConstants } from "../constants"
 import { ChineseDateTime } from "../../resources/chineseDateTime";
-import { DateTimeResolutionResult, FormatUtil, DateUtils, StringMap } from "../utilities";
+import { DateTimeResolutionResult, FormatUtil, DateUtils, StringMap, TimexUtil } from "../utilities";
 import { BaseTimePeriodParser, ITimePeriodParserConfiguration } from "../baseTimePeriod";
 import { IDateTimeParser, DateTimeParseResult } from "../parsers"
 import { ChineseTimeParser } from "./timeConfiguration"
@@ -124,32 +124,28 @@ export class ChineseTimePeriodParser extends BaseTimePeriodParser {
         endHour = 0,
         endMin = 0;
 
-        if (trimmedText.endsWith("上午")) {
-            timex = "TMO";
-            beginHour = 8;
-            endHour = 12;
-        } else if (trimmedText.endsWith("下午")) {
-            timex = "TAF";
-            beginHour = 12;
-            endHour = 16;
-        } else if (trimmedText.endsWith("晚上")) {
-            timex = "TEV";
-            beginHour = 16;
-            endHour = 20;
-        } else if (trimmedText.localeCompare("白天") == 0) {
-            timex = "TDT";
-            beginHour = 8;
-            endHour = 18;
-        } else if (trimmedText.endsWith("深夜")) {
-            timex = "TNI";
-            beginHour = 20;
-            endHour = 23;
-            endMin = 59;
+        let timeOfDay = "";
+        if (ChineseDateTime.MorningTermList.some(o => trimmedText.endsWith(o))) {
+            timeOfDay = Constants.Morning;
+        } else if (ChineseDateTime.AfternoonTermList.some(o => trimmedText.endsWith(o))) {
+            timeOfDay = Constants.Afternoon;
+        } else if (ChineseDateTime.EveningTermList.some(o => trimmedText.endsWith(o))) {
+            timeOfDay = Constants.Evening;
+        } else if (ChineseDateTime.DaytimeTermList.some(o => trimmedText.localeCompare(o) == 0)) {
+            timeOfDay = Constants.Daytime;
+        } else if (ChineseDateTime.NightTermList.some(o => trimmedText.endsWith(o))) {
+            timeOfDay = Constants.Night;
         } else {
             timex = null;
             matched = false;
             return {matched, timex, beginHour, endHour, endMin};
         }
+
+        let parseResult = TimexUtil.parseTimeOfDay(timeOfDay);
+        timex = parseResult.timeX;
+        beginHour = parseResult.beginHour;
+        endHour = parseResult.endHour;
+        endMin = parseResult.endMin;
 
         matched = true;
         return {matched, timex, beginHour, endHour, endMin};

@@ -18,6 +18,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Dutch
             this.BuildPrefix = NumbersWithUnitDefinitions.BuildPrefix;
             this.BuildSuffix = NumbersWithUnitDefinitions.BuildSuffix;
             this.ConnectorToken = string.Empty;
+
             this.CompoundUnitConnectorRegex = new Regex(NumbersWithUnitDefinitions.CompoundUnitConnectorRegex, RegexOptions.IgnoreCase);
             this.PmNonUnitRegex = new Regex(BaseUnits.PmNonUnitRegex, RegexOptions.IgnoreCase);
         }
