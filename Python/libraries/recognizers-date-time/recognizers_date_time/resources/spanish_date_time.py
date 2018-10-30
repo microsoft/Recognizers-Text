@@ -42,6 +42,7 @@ class SpanishDateTime:
     AllHalfYearRegex = f'^[.]'
     PrefixDayRegex = f'^[.]'
     CenturySuffixRegex = f'^[.]'
+    RelativeRegex = f'^[.]'
     SeasonRegex = f'\\b(?<season>(([uú]ltim[oa]|est[ea]|el|la|(pr[oó]xim[oa]s?|siguiente))\\s+)?(?<seas>primavera|verano|otoño|invierno)((\\s+del?|\\s*,\\s*)?\\s+({YearRegex}|(?<order>pr[oó]ximo|[uú]ltimo|este)\\s+año))?)\\b'
     WhichWeekRegex = f'(semana)(\\s*)(?<number>\\d\\d|\\d|0\\d)'
     WeekOfRegex = f'(semana)(\\s*)((do|da|de))'

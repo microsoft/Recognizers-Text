@@ -49,6 +49,7 @@ class PortugueseDateTime:
     InConnectorRegex = f'\\b(em)\\b'
     WithinNextPrefixRegex = f'^[.]'
     CenturySuffixRegex = f'^[.]'
+    RelativeRegex = f'^[.]'
     FromRegex = f'((desde|de)(\\s*a(s)?)?)$'
     ConnectorAndRegex = f'(e\\s*([àa](s)?)?)$'
     BetweenRegex = f'(entre\\s*([oa](s)?)?)'
@@ -433,4 +434,5 @@ class PortugueseDateTime:
     SpecialDecadeCases = dict([('', 0)])
     DefaultLanguageFallback = 'DMY'
     DurationDateRestrictions = []
+    AmbiguityFiltersDict = dict([('null', 'null')])
 # pylint: enable=line-too-long
