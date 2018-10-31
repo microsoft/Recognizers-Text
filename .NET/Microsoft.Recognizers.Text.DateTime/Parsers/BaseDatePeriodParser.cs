@@ -145,7 +145,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var isSpecificDate = false;
                 var isStartByWeek = false;
                 var isEndByWeek = false;
-                var dateContext = GetDateContext(match.Groups["start"].Value.Trim(), match.Groups["end"].Value.Trim(), text);
+                var dateContext = GetYearContext(match.Groups["start"].Value.Trim(), match.Groups["end"].Value.Trim(), text);
 
                 var startResolution = ParseSingleTimePoint(match.Groups["start"].Value.Trim(), referenceDate, dateContext);
 
@@ -1106,7 +1106,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 er[1].Text = weekPrefix + " " + er[1].Text;
             }
 
-            var dateContext = GetDateContext(er[0].Text, er[1].Text, text);
+            var dateContext = GetYearContext(er[0].Text, er[1].Text, text);
 
             var pr1 = this.config.DateParser.Parse(er[0], referenceDate);
             var pr2 = this.config.DateParser.Parse(er[1], referenceDate);
@@ -1952,7 +1952,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             return candidateResults;
         }
 
-        private DateContext GetDateContext(string startDateStr, string endDateStr, string text, bool constrainYearRange = false)
+        private DateContext GetYearContext(string startDateStr, string endDateStr, string text)
         {
             var isEndDatePureYear = false;
             var isDateRelative = false;
@@ -1975,64 +1975,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 foreach (Match match in config.YearRegex.Matches(text))
                 {
-                    var yearStr = match.Groups["year"].Value;
-                    var year = Constants.InvalidYear;
-
-                    if (!string.IsNullOrEmpty(yearStr))
-                    {
-                        year = int.Parse(yearStr);
-                        if (year < 100 && year >= Constants.MinTwoDigitYearPastNum)
-                        {
-                            year += 1900;
-                        }
-                        else if (year >= 0 && year < Constants.MaxTwoDigitYearFutureNum)
-                        {
-                            year += 2000;
-                        }
-                    }
-                    else
-                    {
-                        var firstTwoYearNumStr = match.Groups["firsttwoyearnum"].Value;
-                        if (!string.IsNullOrEmpty(firstTwoYearNumStr))
-                        {
-                            var er = new ExtractResult
-                            {
-                                Text = firstTwoYearNumStr,
-                                Start = match.Groups["firsttwoyearnum"].Index,
-                                Length = match.Groups["firsttwoyearnum"].Length
-                            };
-
-                            var firstTwoYearNum = Convert.ToInt32((double)(this.config.NumberParser.Parse(er).Value ?? 0));
-
-                            var lastTwoYearNum = 0;
-                            var lastTwoYearNumStr = match.Groups["lasttwoyearnum"].Value;
-                            if (!string.IsNullOrEmpty(lastTwoYearNumStr))
-                            {
-                                er.Text = lastTwoYearNumStr;
-                                er.Start = match.Groups["lasttwoyearnum"].Index;
-                                er.Length = match.Groups["lasttwoyearnum"].Length;
-
-                                lastTwoYearNum = Convert.ToInt32((double)(this.config.NumberParser.Parse(er).Value ?? 0));
-                            }
-
-                            // Exclude pure number like "nineteen", "twenty four"
-                            if (firstTwoYearNum < 100 && lastTwoYearNum == 0 || firstTwoYearNum < 100 && firstTwoYearNum % 10 == 0 && lastTwoYearNumStr.Trim().Split(' ').Length == 1)
-                            {
-                                year = Constants.InvalidYear;
-                            }
-                            else
-                            {
-                                if (firstTwoYearNum >= 100)
-                                {
-                                    year = firstTwoYearNum + lastTwoYearNum;
-                                }
-                                else
-                                {
-                                    year = firstTwoYearNum * 100 + lastTwoYearNum;
-                                }
-                            }
-                        }
-                    }
+                    var year = ((BaseDateExtractor)this.config.DateExtractor).GetYearFromText(match);
 
                     if (year != Constants.InvalidYear)
                     {
@@ -2050,11 +1993,6 @@ namespace Microsoft.Recognizers.Text.DateTime
                             }
                         }
                     }
-                }
-
-                if (constrainYearRange && (contextYear < Constants.MinYearNum || contextYear > Constants.MaxYearNum))
-                {
-                    contextYear = Constants.InvalidYear;
                 }
             }
 

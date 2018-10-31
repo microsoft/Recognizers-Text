@@ -106,40 +106,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var matches = regex.Matches(text);
                 foreach (Match match in matches)
                 {
-                    // For cases like "10-1 - 11-7", "10-1 - 11" can be matched by the Regex, but it's not a valid Date entity as "11" is not year of the entity, but belongs the second Date entity of the DateRange.
-                    // If the match doesn't contains "year" part, it's a valid match
-                    var isValidMatch = !match.Groups["year"].Success;
-
-                    if (!isValidMatch)
-                    {
-                        var yearGroup = match.Groups["year"];
-
-                        // If the "year" part is not at the end of the match, it's a valid match
-                        if (!(yearGroup.Index + yearGroup.Length == match.Index + match.Length))
-                        {
-                            isValidMatch = true;
-                        }
-                        else
-                        {
-                            var subText = text.Substring(yearGroup.Index);
-
-                            // If the following text (include the "year" part) doesn't start with a Date entity, it's a valid match
-                            if (!IsStartsWithBasicDate(subText))
-                            {
-                                isValidMatch = true;
-                            }
-                            else
-                            {
-                                // If the following text (include the "year" part) starts with a Date entity, but the following text (doesn't include the "year" part) also starts with a valid Date entity, the current match is still valid
-                                // For example, "10-1-2018-10-2-2018". Match "10-1-2018" is valid because though "2018-10-2" a valid match (indicates the first year "2018" might belongs to the second Date entity), but "10-2-2018" is also a valid match.
-                                subText = text.Substring(yearGroup.Index + yearGroup.Length).Trim();
-                                subText = TrimStartRangeConnectorSymbols(subText);
-                                isValidMatch = IsStartsWithBasicDate(subText);
-                            }
-                        }
-                    }
-
-                    if (isValidMatch)
+                    // some match might be part of the date range entity, and might be splitted in a wrong way
+                    if (ValidateMatch(match, text))
                     {
                         ret.Add(new Token(match.Index, match.Index + match.Length));
                     }
@@ -147,6 +115,45 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             return ret;
+        }
+
+        // this method is to validate whether the match is part of date range and is a correct split
+        // For example: in case "10-1 - 11-7", "10-1 - 11" can be matched by some of the Regexes, but the full text is a date range, so "10-1 - 11" is not a correct split
+        private bool ValidateMatch(Match match, string text)
+        {
+            // If the match doesn't contains "year" part, it will not be ambiguous and it's a valid match
+            var isValidMatch = !match.Groups["year"].Success;
+
+            if (!isValidMatch)
+            {
+                var yearGroup = match.Groups["year"];
+
+                // If the "year" part is not at the end of the match, it's a valid match
+                if (!(yearGroup.Index + yearGroup.Length == match.Index + match.Length))
+                {
+                    isValidMatch = true;
+                }
+                else
+                {
+                    var subText = text.Substring(yearGroup.Index);
+
+                    // If the following text (include the "year" part) doesn't start with a Date entity, it's a valid match
+                    if (!StartsWithBasicDate(subText))
+                    {
+                        isValidMatch = true;
+                    }
+                    else
+                    {
+                        // If the following text (include the "year" part) starts with a Date entity, but the following text (doesn't include the "year" part) also starts with a valid Date entity, the current match is still valid
+                        // For example, "10-1-2018-10-2-2018". Match "10-1-2018" is valid because though "2018-10-2" a valid match (indicates the first year "2018" might belongs to the second Date entity), but "10-2-2018" is also a valid match.
+                        subText = text.Substring(yearGroup.Index + yearGroup.Length).Trim();
+                        subText = TrimStartRangeConnectorSymbols(subText);
+                        isValidMatch = StartsWithBasicDate(subText);
+                    }
+                }
+            }
+
+            return isValidMatch;
         }
 
         private string TrimStartRangeConnectorSymbols(string text)
@@ -171,7 +178,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             return text.Trim();
         }
 
-        private bool IsStartsWithBasicDate(string text)
+        private bool StartsWithBasicDate(string text)
         {
             foreach (var regex in this.config.DateRegexList)
             {
