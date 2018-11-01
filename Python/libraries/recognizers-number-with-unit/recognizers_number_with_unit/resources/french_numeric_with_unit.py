@@ -349,4 +349,5 @@ class FrenchNumericWithUnit:
                              ('Tonne', 'tonne|tonnes|-tonnes|-tonne'),
                              ('Livre', 'livre|livres')])
     AmbiguousWeightUnitList = ['g', 'oz', 'stone', 'dram']
+    AmbiguityFiltersDict = dict([('\\bcent\\b', '\\bpour\\s+cent\\b')])
 # pylint: enable=line-too-long

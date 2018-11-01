@@ -6434,7 +6434,7 @@
     "Context": {
       "ReferenceDateTime": "2018-11-01T12:00:00"
     },
-    "NotSupportedByDesign": "java",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "monday morning from 10am to 12pm",
