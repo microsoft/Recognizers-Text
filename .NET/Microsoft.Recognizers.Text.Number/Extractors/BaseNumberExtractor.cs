@@ -133,7 +133,7 @@ namespace Microsoft.Recognizers.Text.Number
                 BaseNumbers.IntegerRegexDefinition(placeholder, thousandsMark) :
                 BaseNumbers.DoubleRegexDefinition(placeholder, thousandsMark, decimalsMark);
 
-            return new Regex(regexDefinition, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            return new Regex(regexDefinition, RegexOptions.Singleline);
         }
     }
 

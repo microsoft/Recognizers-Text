@@ -37,9 +37,9 @@ namespace Microsoft.Recognizers.Text.Number.English
 
         private NumberExtractor(NumberMode mode, NumberOptions options)
         {
-            NegativeNumberTermsRegex = new Regex(NumbersDefinitions.NegativeNumberTermsRegex + '$', RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            NegativeNumberTermsRegex = new Regex(NumbersDefinitions.NegativeNumberTermsRegex + '$', RegexOptions.Singleline);
 
-            AmbiguousFractionConnectorsRegex = new Regex(NumbersDefinitions.AmbiguousFractionConnectorsRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            AmbiguousFractionConnectorsRegex = new Regex(NumbersDefinitions.AmbiguousFractionConnectorsRegex, RegexOptions.Singleline);
 
             Options = options;
 
@@ -76,7 +76,7 @@ namespace Microsoft.Recognizers.Text.Number.English
 
             foreach (var item in NumbersDefinitions.AmbiguityFiltersDict)
             {
-                ambiguityBuilder.Add(new Regex(item.Key, RegexOptions.IgnoreCase | RegexOptions.Singleline), new Regex(item.Value, RegexOptions.IgnoreCase | RegexOptions.Singleline));
+                ambiguityBuilder.Add(new Regex(item.Key, RegexOptions.Singleline), new Regex(item.Value, RegexOptions.Singleline));
             }
 
             AmbiguityFiltersDict = ambiguityBuilder.ToImmutable();

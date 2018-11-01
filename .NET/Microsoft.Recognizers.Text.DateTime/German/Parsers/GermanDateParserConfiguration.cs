@@ -62,15 +62,15 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public static readonly Regex RelativeDayRegex= new Regex(
                 DateTimeDefinitions.RelativeDayRegex,
-                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+                RegexOptions.Singleline);
 
         public static readonly Regex NextPrefixRegex = new Regex(
                 DateTimeDefinitions.NextPrefixRegex,
-                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+                RegexOptions.Singleline);
 
         public static readonly Regex PastPrefixRegex = new Regex(
                 DateTimeDefinitions.PastPrefixRegex,
-                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+                RegexOptions.Singleline);
 
         public IImmutableDictionary<string, int> DayOfMonth { get; }
 

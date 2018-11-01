@@ -65,13 +65,13 @@ namespace Microsoft.Recognizers.Text.DateTime.English
          If the spanish date parser need the same regexes, they should be extracted 
         */
         public static readonly Regex RelativeDayRegex= 
-            new Regex(DateTimeDefinitions.RelativeDayRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.RelativeDayRegex, RegexOptions.Singleline);
 
         public static readonly Regex NextPrefixRegex = 
-            new Regex(DateTimeDefinitions.NextPrefixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.NextPrefixRegex, RegexOptions.Singleline);
 
         public static readonly Regex PastPrefixRegex = 
-            new Regex(DateTimeDefinitions.PastPrefixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.PastPrefixRegex, RegexOptions.Singleline);
 
         public IImmutableDictionary<string, int> DayOfMonth { get; }
 

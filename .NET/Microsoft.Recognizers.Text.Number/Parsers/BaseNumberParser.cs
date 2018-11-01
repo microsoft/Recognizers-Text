@@ -15,10 +15,10 @@ namespace Microsoft.Recognizers.Text.Number
         protected Regex LongFormatRegex => LongFormRegex;
 
         private static readonly Regex LongFormRegex = 
-            new Regex(@"\d+", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(@"\d+", RegexOptions.Singleline);
 
         private static readonly Regex CultureRegex = 
-            new Regex(@"^(en|es|fr)(-)?\b", RegexOptions.IgnoreCase | RegexOptions.Singleline | RegexOptions.Compiled);
+            new Regex(@"^(en|es|fr)(-)?\b", RegexOptions.Singleline | RegexOptions.Compiled);
 
         protected HashSet<string> RoundNumberSet { get; }
 
@@ -35,11 +35,11 @@ namespace Microsoft.Recognizers.Text.Number
             // Necessary for the German & Dutch languages because bigger numbers are not separated by whitespaces or special characters like in other languages
             if (config.CultureInfo.Name == "de-DE" || config.CultureInfo.Name == "nl-NL")
             {
-                TextNumberRegex = new Regex(@"(" + singleIntFrac + @")", RegexOptions.IgnoreCase | RegexOptions.Singleline | RegexOptions.Compiled);
+                TextNumberRegex = new Regex(@"(" + singleIntFrac + @")", RegexOptions.Singleline | RegexOptions.Compiled);
             }
             else
             {
-                TextNumberRegex = new Regex(@"(?<=\b)(" + singleIntFrac + @")(?=\b)", RegexOptions.IgnoreCase | RegexOptions.Singleline | RegexOptions.Compiled);
+                TextNumberRegex = new Regex(@"(?<=\b)(" + singleIntFrac + @")(?=\b)", RegexOptions.Singleline | RegexOptions.Compiled);
             }
 
             RoundNumberSet = new HashSet<string>();

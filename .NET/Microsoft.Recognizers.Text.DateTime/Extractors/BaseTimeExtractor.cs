@@ -11,13 +11,13 @@ namespace Microsoft.Recognizers.Text.DateTime
         private static readonly string ExtractorName = Constants.SYS_DATETIME_TIME; // "Time";
 
         public static readonly Regex HourRegex = 
-            new Regex(BaseDateTime.HourRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(BaseDateTime.HourRegex, RegexOptions.Singleline);
 
         public static readonly Regex MinuteRegex = 
-            new Regex(BaseDateTime.MinuteRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(BaseDateTime.MinuteRegex, RegexOptions.Singleline);
 
         public static readonly Regex SecondRegex = 
-            new Regex(BaseDateTime.SecondRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(BaseDateTime.SecondRegex, RegexOptions.Singleline);
 
         private readonly ITimeExtractorConfiguration config;
 

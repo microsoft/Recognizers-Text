@@ -76,15 +76,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         public static readonly Regex NextPrefixRegex =
             new Regex(
                 @"(prochain|prochaine)\b",
-                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+                RegexOptions.Singleline);
         public static readonly Regex PastPrefixRegex =
             new Regex(
                 @"(dernier)\b",
-                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+                RegexOptions.Singleline);
         public static readonly Regex ThisPrefixRegex =
             new Regex(
                 @"(ce|cette)\b",
-                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+                RegexOptions.Singleline);
 
         Regex IDatePeriodParserConfiguration.NextPrefixRegex => NextPrefixRegex;
         Regex IDatePeriodParserConfiguration.PastPrefixRegex => PastPrefixRegex;

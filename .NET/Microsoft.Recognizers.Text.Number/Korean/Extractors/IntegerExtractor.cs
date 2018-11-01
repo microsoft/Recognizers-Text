@@ -18,7 +18,7 @@ namespace Microsoft.Recognizers.Text.Number.Korean
             {
                 {
                     // 123456,  －１２３４５６
-                    new Regex(NumbersDefinitions.NumbersSpecialsChars, RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.NumbersSpecialsChars, RegexOptions.Singleline),
                     RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
@@ -28,12 +28,12 @@ namespace Microsoft.Recognizers.Text.Number.Korean
                 },
                 {
                     //1,234,  ２，３３２，１１１
-                    new Regex(NumbersDefinitions.DottedNumbersSpecialsChar, RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.DottedNumbersSpecialsChar, RegexOptions.Singleline),
                     RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
                     //마이너스 일, 마이너스 오
-                    new Regex(NumbersDefinitions.ZeroToNineIntegerSpecialsChars, RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.ZeroToNineIntegerSpecialsChars, RegexOptions.Singleline),
                     RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.KOREAN)
                 }
             };

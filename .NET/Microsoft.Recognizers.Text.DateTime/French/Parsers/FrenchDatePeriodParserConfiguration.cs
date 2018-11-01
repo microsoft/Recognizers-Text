@@ -75,13 +75,13 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         // @TODO move to resources - French - relative
         public static readonly Regex NextPrefixRegex =
-            new Regex(@"(prochain|prochaine)\b", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(@"(prochain|prochaine)\b", RegexOptions.Singleline);
 
         public static readonly Regex PastPrefixRegex =
-            new Regex(@"(dernier)\b", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(@"(dernier)\b", RegexOptions.Singleline);
 
         public static readonly Regex ThisPrefixRegex =
-            new Regex(@"(ce|cette)\b", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(@"(ce|cette)\b", RegexOptions.Singleline);
 
         Regex IDatePeriodParserConfiguration.NextPrefixRegex => NextPrefixRegex;
         Regex IDatePeriodParserConfiguration.PastPrefixRegex => PastPrefixRegex;
