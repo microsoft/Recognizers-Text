@@ -201,9 +201,12 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 hour += Constants.HalfDayHourCount;
             }
-            else if (this.config.AMTimeRegex.IsMatch(text) && hour >= Constants.HalfDayHourCount)
+            else if (this.config.AMTimeRegex.IsMatch(text))
             {
-                hour -= Constants.HalfDayHourCount;
+                if (hour > Constants.HalfDayHourCount || (hour == Constants.HalfDayHourCount && (min > 0 || sec > 0)))
+                {
+                    hour -= Constants.HalfDayHourCount;
+                }
             }
 
             var timeStr = pr2.TimexStr;

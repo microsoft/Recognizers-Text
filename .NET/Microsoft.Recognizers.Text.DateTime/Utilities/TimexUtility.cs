@@ -254,5 +254,15 @@ namespace Microsoft.Recognizers.Text.DateTime
          
             return result;
         }
+
+        public static string CombineDateAndTimeTimex(string dateTimex, string timeTimex)
+        {
+            return $"{dateTimex}{timeTimex}";
+        }
+
+        public static string GenerateDateTimePeriodTimex(string beginTimex, string endTimex, string durationTimex)
+        {
+            return $"({beginTimex},{endTimex},{durationTimex})";
+        }
     }
 }
