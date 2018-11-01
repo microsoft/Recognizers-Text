@@ -9,7 +9,7 @@ namespace Microsoft.Recognizers.Text.DateTime
     public class BaseDateTimePeriodParser : IDateTimeParser
     {
         public static readonly string ParserName = Constants.SYS_DATETIME_DATETIMEPERIOD;
-        
+
         protected readonly IDateTimePeriodParserConfiguration Config;
 
         public BaseDateTimePeriodParser(IDateTimePeriodParserConfiguration configuration)
@@ -286,7 +286,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
                 }
             }
-            
+
             return ret;
         }
 
@@ -302,7 +302,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             var timePeriodParseResult = Config.TimePeriodParser.Parse(ers[0]);
-            var timePeriodResolutionResult = (DateTimeResolutionResult) timePeriodParseResult.Value;
+            var timePeriodResolutionResult = (DateTimeResolutionResult)timePeriodParseResult.Value;
 
             if (timePeriodResolutionResult == null)
             {
@@ -327,7 +327,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 if (dateResult.Count == 1 && dateText.Equals(dateResult[0].Text))
                 {
-                    
+
                     string dateStr;
                     DateObject futureTime;
                     DateObject pastTime;
@@ -373,7 +373,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                                 endTime.Hour, endTime.Minute, endTime.Second)
                                 );
 
-                        if (!string.IsNullOrEmpty(timePeriodResolutionResult.Comment) && 
+                        if (!string.IsNullOrEmpty(timePeriodResolutionResult.Comment) &&
                             timePeriodResolutionResult.Comment.Equals(Constants.Comment_AmPm))
                         {
                             // AmPm comment is used for later SetParserResult to judge whether this parse result should have two parsing results
@@ -386,7 +386,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         }
 
                         ret.Success = true;
-                        ret.SubDateTimeEntities = new List<object> {pr, timePeriodParseResult};
+                        ret.SubDateTimeEntities = new List<object> { pr, timePeriodParseResult };
 
                         return ret;
                     }
@@ -414,62 +414,177 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if (match.Success && (match.Index == 0 || match.Index + match.Length == trimmedText.Length))
             {
-                var timePeriodEr = ers.Where(t => t.Start == match.Index && t.Length == match.Length).FirstOrDefault();
+                int beginHour, endHour;
+                ret.Comment = ParseTimePeriod(ers, match, out beginHour, out endHour);
 
-                if (timePeriodEr != null)
+                var dateStr = string.Empty;
+
+                // Parse following date
+                var dateExtractResult = this.Config.DateExtractor.Extract(trimmedText.Replace(match.Value, ""), referenceTime);
+
+                DateObject futureDate, pastDate;
+                if (dateExtractResult.Count > 0)
                 {
-                    var timePeriodParseResult = Config.TimePeriodParser.Parse(ers[0]);
-                    var timePeriodResolutionResult = (DateTimeResolutionResult)timePeriodParseResult.Value;
-                    var dateStr = string.Empty;
-
-                    // Parse following date
-                    var dateExtractResult = this.Config.DateExtractor.Extract(trimmedText.Replace(match.Value, ""), referenceTime);
-
-                    DateObject futureTime, pastTime;
-                    if (dateExtractResult.Count > 0)
+                    var pr = this.Config.DateParser.Parse(dateExtractResult[0], referenceTime);
+                    if (pr.Value != null)
                     {
-                        var pr = this.Config.DateParser.Parse(dateExtractResult[0], referenceTime);
-                        if (pr.Value != null)
-                        {
-                            futureTime = (DateObject)((DateTimeResolutionResult)pr.Value).FutureValue;
-                            pastTime = (DateObject)((DateTimeResolutionResult)pr.Value).PastValue;
+                        futureDate = (DateObject)((DateTimeResolutionResult)pr.Value).FutureValue;
+                        pastDate = (DateObject)((DateTimeResolutionResult)pr.Value).PastValue;
 
-                            dateStr = pr.TimexStr;
+                        dateStr = pr.TimexStr;
 
-                            if (((DateTimeResolutionResult)pr.Value).TimeZoneResolution != null)
-                            {
-                                ret.TimeZoneResolution = ((DateTimeResolutionResult)pr.Value).TimeZoneResolution;
-                            }
-                        }
-                        else
+                        if (((DateTimeResolutionResult)pr.Value).TimeZoneResolution != null)
                         {
-                            return ret;
+                            ret.TimeZoneResolution = ((DateTimeResolutionResult)pr.Value).TimeZoneResolution;
                         }
                     }
                     else
                     {
                         return ret;
                     }
-
-                    var pastHours = endHour - beginHour;
-                    var beginStr = dateStr + "T" + beginHour.ToString("D2");
-                    var endStr = dateStr + "T" + endHour.ToString("D2");
-
-                    ret.Timex = $"({beginStr},{endStr},PT{pastHours}H)";
-
-                    ret.FutureValue = new Tuple<DateObject, DateObject>(
-                        DateObject.MinValue.SafeCreateFromValue(futureTime.Year, futureTime.Month, futureTime.Day, beginHour, 0, 0),
-                        DateObject.MinValue.SafeCreateFromValue(futureTime.Year, futureTime.Month, futureTime.Day, endHour, 0, 0));
-
-                    ret.PastValue = new Tuple<DateObject, DateObject>(
-                        DateObject.MinValue.SafeCreateFromValue(pastTime.Year, pastTime.Month, pastTime.Day, beginHour, 0, 0),
-                        DateObject.MinValue.SafeCreateFromValue(pastTime.Year, pastTime.Month, pastTime.Day, endHour, 0, 0));
-
-                    ret.Success = true;
                 }
+                else
+                {
+                    return ret;
+                }
+
+                var pastHours = endHour - beginHour;
+                var beginStr = dateStr + "T" + beginHour.ToString("D2");
+                var endStr = dateStr + "T" + endHour.ToString("D2");
+
+                ret.Timex = $"({beginStr},{endStr},PT{pastHours}H)";
+
+                ret.FutureValue = new Tuple<DateObject, DateObject>(
+                    DateObject.MinValue.SafeCreateFromValue(futureDate.Year, futureDate.Month, futureDate.Day, beginHour, 0, 0),
+                    DateObject.MinValue.SafeCreateFromValue(futureDate.Year, futureDate.Month, futureDate.Day, endHour, 0, 0));
+
+                ret.PastValue = new Tuple<DateObject, DateObject>(
+                    DateObject.MinValue.SafeCreateFromValue(pastDate.Year, pastDate.Month, pastDate.Day, beginHour, 0, 0),
+                    DateObject.MinValue.SafeCreateFromValue(pastDate.Year, pastDate.Month, pastDate.Day, endHour, 0, 0));
+
+                ret.Success = true;
             }
 
             return ret;
+        }
+
+        private string ParseTimePeriod(List<ExtractResult> ers, Match match, out int beginHour, out int endHour)
+        {
+            var comments = string.Empty;
+
+            if (!TryParseTimePeriodFromExtractionResults(ers, match, out beginHour, out endHour))
+            {
+                comments = ParseTimePeriodFromText(match, out beginHour, out endHour);
+            }
+
+            return comments;
+        }
+
+        private string ParseTimePeriodFromText(Match match, out int beginHour, out int endHour)
+        {
+            // This "from .. to .." pattern is valid if followed by a Date OR "pm"
+            var hasAm = false;
+            var hasPm = false;
+            var comments = string.Empty;
+
+            // Get hours
+            var hourGroup = match.Groups[Constants.HourGroupName];
+            var hourStr = hourGroup.Captures[0].Value;
+
+            if (this.Config.Numbers.ContainsKey(hourStr))
+            {
+                beginHour = this.Config.Numbers[hourStr];
+            }
+            else
+            {
+                beginHour = int.Parse(hourStr);
+            }
+
+            hourStr = hourGroup.Captures[1].Value;
+
+            if (this.Config.Numbers.ContainsKey(hourStr))
+            {
+                endHour = this.Config.Numbers[hourStr];
+            }
+            else
+            {
+                endHour = int.Parse(hourStr);
+            }
+
+            // Parse "pm"
+            var pmStr = match.Groups[Constants.PmGroupName].Value;
+            var amStr = match.Groups[Constants.AmGroupName].Value;
+            var descStr = match.Groups[Constants.DescGroupName].Value;
+            if (!string.IsNullOrEmpty(amStr) || !string.IsNullOrEmpty(descStr) && descStr.StartsWith("a"))
+            {
+                if (beginHour >= Constants.HalfDayHourCount)
+                {
+                    beginHour -= Constants.HalfDayHourCount;
+                }
+
+                if (endHour >= Constants.HalfDayHourCount)
+                {
+                    endHour -= Constants.HalfDayHourCount;
+                }
+
+                hasAm = true;
+            }
+            else if (!string.IsNullOrEmpty(pmStr) || !string.IsNullOrEmpty(descStr) && descStr.StartsWith("p"))
+            {
+                if (beginHour < Constants.HalfDayHourCount)
+                {
+                    beginHour += Constants.HalfDayHourCount;
+                }
+
+                if (endHour < Constants.HalfDayHourCount)
+                {
+                    endHour += Constants.HalfDayHourCount;
+                }
+
+                hasPm = true;
+            }
+
+            if (!hasAm && !hasPm && beginHour <= Constants.HalfDayHourCount && endHour <= Constants.HalfDayHourCount)
+            {
+                if (beginHour > endHour)
+                {
+                    if (beginHour == Constants.HalfDayHourCount)
+                    {
+                        beginHour = 0;
+                    }
+                    else
+                    {
+                        endHour += Constants.HalfDayHourCount;
+                    }
+                }
+
+                comments = Constants.Comment_AmPm;
+            }
+
+            return comments;
+        }
+
+        private bool TryParseTimePeriodFromExtractionResults(List<ExtractResult> ers, Match match, out int beginHour, out int endHour)
+        {
+            var success = false;
+            var timePeriodEr = ers.Where(t => t.Start == match.Index && t.Length == match.Length).FirstOrDefault();
+
+            if (timePeriodEr != null)
+            {
+                var timePeriodParseResult = Config.TimePeriodParser.Parse(timePeriodEr);
+                var timePeriodResolutionResult = (DateTimeResolutionResult)timePeriodParseResult.Value;
+                var timePeriod = (Tuple<DateObject, DateObject>)timePeriodResolutionResult.FutureValue;
+                beginHour = timePeriod.Item1.Hour;
+                endHour = timePeriod.Item2.Hour;
+                success = true;
+            }
+            else
+            {
+                beginHour = Constants.InvalidHour;
+                endHour = Constants.InvalidHour;
+            }
+
+            return success;
         }
 
         private DateTimeResolutionResult MergeTwoTimePoints(string text, DateObject referenceTime)
@@ -581,7 +696,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             var ampmStr1 = ((DateTimeResolutionResult)pr1.Value).Comment;
             var ampmStr2 = ((DateTimeResolutionResult)pr2.Value).Comment;
-            if (!string.IsNullOrEmpty(ampmStr1) && ampmStr1.EndsWith(Constants.Comment_AmPm) && 
+            if (!string.IsNullOrEmpty(ampmStr1) && ampmStr1.EndsWith(Constants.Comment_AmPm) &&
                 !string.IsNullOrEmpty(ampmStr2) && ampmStr2.EndsWith(Constants.Comment_AmPm))
             {
                 ret.Comment = Constants.Comment_AmPm;
@@ -706,7 +821,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 var beforeStr = trimmedText.Substring(0, match.Index).Trim();
                 var afterStr = trimmedText.Substring(match.Index + match.Length).Trim();
-                
+
                 // Eliminate time period, if any
                 var timePeriodErs = this.Config.TimePeriodExtractor.Extract(beforeStr);
                 if (timePeriodErs.Count > 0)
@@ -745,7 +860,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         {
                             if (ers.Count > 0 && ers[0].Start + ers[0].Length == afterStr.Length)
                             {
-                                var midStr = afterStr.Substring(0, ers[0].Start?? 0);
+                                var midStr = afterStr.Substring(0, ers[0].Start ?? 0);
                                 if (string.IsNullOrWhiteSpace(midStr.Replace(',', ' ')))
                                 {
                                     valid = true;
@@ -827,7 +942,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        //TODO: this can be abstracted with the similar method in BaseDatePeriodParser
+        // TODO: this can be abstracted with the similar method in BaseDatePeriodParser
         // Parse "in 20 minutes"
         private DateTimeResolutionResult ParseDuration(string text, DateObject referenceTime)
         {
@@ -878,7 +993,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
 
                     DateObject beginTime;
-                    var  endTime = beginTime = referenceTime;
+                    var endTime = beginTime = referenceTime;
 
                     var prefixMatch = Config.PastRegex.Match(beforeStr);
                     if (prefixMatch.Success && prefixMatch.Length == beforeStr.Length)
@@ -952,7 +1067,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var ret = new DateTimeResolutionResult();
 
             var match = Config.RelativeTimeUnitRegex.Match(text);
-            
+
             if (!match.Success)
             {
                 match = this.Config.RestOfDateTimeRegex.Match(text);

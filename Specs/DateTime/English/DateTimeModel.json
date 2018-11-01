@@ -7492,5 +7492,36 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Are you available on Monday morning from 10am to 12pm",
+    "Context": {
+      "ReferenceDateTime": "2018-11-01T12:00:00"
+    },
+    "NotSupportedByDesign": "java",
+    "Results": [
+      {
+        "Text": "monday morning from 10am to 12pm",
+        "Start": 21,
+        "End": 52,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-WXX-1T10,XXXX-WXX-1T12,PT2H)",
+              "type": "datetimerange",
+              "start": "2018-10-29 10:00:00",
+              "end": "2018-10-29 12:00:00"
+            },
+            {
+              "timex": "(XXXX-WXX-1T10,XXXX-WXX-1T12,PT2H)",
+              "type": "datetimerange",
+              "start": "2018-11-05 10:00:00",
+              "end": "2018-11-05 12:00:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

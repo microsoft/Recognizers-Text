@@ -77,6 +77,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         // Invalid year
         public const int InvalidYear = int.MinValue;
+        public const int InvalidHour = int.MinValue;
 
         public static readonly int MinYearNum = int.Parse(BaseDateTime.MinYearNum);
         public static readonly int MaxYearNum = int.Parse(BaseDateTime.MaxYearNum);
