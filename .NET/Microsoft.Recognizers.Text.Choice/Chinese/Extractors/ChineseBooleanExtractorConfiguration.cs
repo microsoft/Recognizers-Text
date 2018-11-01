@@ -1,6 +1,7 @@
-﻿using Microsoft.Recognizers.Definitions.Chinese;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
+
+using Microsoft.Recognizers.Definitions.Chinese;
 
 namespace Microsoft.Recognizers.Text.Choice.Chinese
 {

@@ -626,7 +626,7 @@ namespace Microsoft.Recognizers.Definitions.English
 		public static readonly string[] DurationDateRestrictions = { "today", "now" };
 		public static readonly Dictionary<string, string> AmbiguityFiltersDict = new Dictionary<string, string>
 		{
-			{ "\\bmorning|afternoon|evening|night|day\\b", "\\bgood\\s+(morning|afternoon|evening|night|day)\\b" },
+			{ "\\bmorning|afternoon|evening|night|day\\b", "\\b(good\\s+(morning|afternoon|evening|night|day))|(nighty\\s+night)\\b" },
 			{ "\\bmay\\b", "\\b((^may i)|(i|you|he|she|we|they)\\s+may|(may\\s+((((also|not|(also not)|well)\\s+)?(be|contain|constitute|email|e-mail|take|have|result|involve|get|work|reply))|(or may not))))\\b" }
 		};
 		public static readonly IList<string> MorningTermList = new List<string>
