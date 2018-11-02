@@ -409,11 +409,11 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     {
                         new BaseMergedUnitExtractor(new Japanese.CurrencyExtractorConfiguration()),
                         new BaseMergedUnitParser(new Japanese.CurrencyParserConfiguration())
-                    },
+                    }/*,
                     {
                         new NumberWithUnitExtractor(new English.CurrencyExtractorConfiguration()),
                         new NumberWithUnitParser(new English.CurrencyParserConfiguration())
-                    }
+                    }*/
                 }));
 
             RegisterModel<AgeModel>(

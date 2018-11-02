@@ -84,7 +84,7 @@ CurrencySuffixList: !dictionary
     Halalá saudí: halalá saudí|hallalah
     #Argelia
     Dinar argelino: dinar argelino|dinares argelinos|dzd
-    Céntimo argelino: centimo argelino|centimos argelinos|
+    Céntimo argelino: centimo argelino|centimos argelinos
     #Argentina
     Peso argentino: peso argentino|pesos argentinos|peso|pesos|ar$|ars
     Centavo argentino: centavo argentino|centavos argentinos|centavo|ctvo.|ctvos.
@@ -383,7 +383,7 @@ CurrencySuffixList: !dictionary
     #Mozambique
     Metical mozambiqueño: metical|metical mozambiqueño|meticales|meticales mozambiqueños|mtn|mzn
     #Nagorno Karabaj
-    Dram de Nagorno Karabaj: dram de Nagorno Karabaj|drams de Nagorno Karabaj|
+    Dram de Nagorno Karabaj: dram de Nagorno Karabaj|drams de Nagorno Karabaj
     Luma de Nagorno Karabaj: luma de Nagorno Karabaj
     #Namibia
     Dólar namibio: dólar namibio|dólares namibios|n$|nad

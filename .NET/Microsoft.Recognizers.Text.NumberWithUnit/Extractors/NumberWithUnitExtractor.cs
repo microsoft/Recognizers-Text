@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Linq;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Text.Matcher;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit
 {
@@ -9,8 +11,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
     {
         private readonly INumberWithUnitExtractorConfiguration config;
 
-        private readonly HashSet<Regex> suffixRegexes = new HashSet<Regex>();
-        private readonly HashSet<Regex> prefixRegexes = new HashSet<Regex>();
+        private readonly StringMatcher suffixMatcher = new StringMatcher(MatchStrategy.TrieTree, new NumberWithUnitTokenizer());
+        private readonly StringMatcher prefixMatcher = new StringMatcher(MatchStrategy.TrieTree, new NumberWithUnitTokenizer());
         private readonly Regex separateRegex;
 
         private readonly int maxPrefixMatchLen;
@@ -22,8 +24,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             this.config = config;
 
             if (this.config.SuffixList?.Count > 0)
-            {
-                suffixRegexes = BuildRegexFromSet(this.config.SuffixList.Values);
+            {         
+                suffixMatcher = BuildMatcherFromSet(this.config.SuffixList.Values.ToArray());
             }
 
             if (this.config.PrefixList?.Count > 0)
@@ -39,11 +41,29 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                 }
 
                 // 2 is the maximum length of spaces.
-                maxPrefixMatchLen += 2;
-                prefixRegexes = BuildRegexFromSet(this.config.PrefixList.Values);
+                maxPrefixMatchLen += 2;  
+                prefixMatcher = BuildMatcherFromSet(this.config.PrefixList.Values.ToArray());
             }
 
             separateRegex = BuildSeparateRegexFromSet();
+        }
+
+        protected StringMatcher BuildMatcherFromSet(IEnumerable<string> collection, bool ignoreCase = true)
+        {
+            StringMatcher matcher = new StringMatcher(MatchStrategy.TrieTree, new NumberWithUnitTokenizer());
+            List<string> matcherList = new List<string>();
+
+            foreach (var mapping in collection)
+            {
+                foreach (var token in mapping.Split('|'))
+                {
+                    matcherList.Add(token);
+                }
+            }
+
+            matcher.Init(matcherList);
+
+            return matcher;
         }
 
         protected HashSet<Regex> BuildRegexFromSet(IEnumerable<string> collection, bool ignoreCase = true)
@@ -132,7 +152,6 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
         public List<ExtractResult> Extract(string source)
         {
-
             var result = new List<ExtractResult>();
 
             if (!PreCheckStr(source))
@@ -165,31 +184,24 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     var leftStr = source.Substring(number.Start.Value - maxFindPref, maxFindPref);
                     var lastIndex = leftStr.Length;
 
-                    Match bestMatch = null;
-                    foreach (var regex in prefixRegexes)
-                    {
-                        var collection = regex.Matches(leftStr);
-                        if (collection.Count == 0)
-                        {
-                            continue;
-                        }
+                    MatchResult<String> bestMatch = null;
+                    var prefixMatch = prefixMatcher.Find(leftStr.ToLower());
 
-                        foreach (Match match in collection)
+                    foreach (var m in prefixMatch)
+                    {
+                        if (m.Length > 0 && leftStr.Substring(m.Start, lastIndex - m.Start).ToLower().Trim() == m.Text)
                         {
-                            if (match.Success && leftStr.Substring(match.Index, lastIndex - match.Index).Trim() == match.Value)
+                            if (bestMatch == null || bestMatch.Start >= m.Start)
                             {
-                                if (bestMatch == null || bestMatch.Index >= match.Index)
-                                {
-                                    bestMatch = match;
-                                }
+                                bestMatch = m;
                             }
                         }
                     }
 
                     if (bestMatch != null)
                     {
-                        var offSet = lastIndex - bestMatch.Index;
-                        var unitStr = leftStr.Substring(bestMatch.Index, offSet);
+                        var offSet = lastIndex - bestMatch.Start;
+                        var unitStr = leftStr.Substring(bestMatch.Start, offSet);
                         mappingPrefix.Add(number.Start.Value, new PrefixUnitResult { Offset = offSet, UnitStr = unitStr });
                     }
                 }
@@ -210,25 +222,22 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                 if (maxFindLen > 0)
                 {
                     var rightSub = source.Substring(start + length, maxFindLen);
-                    var unitMatch = suffixRegexes.Select(r => r.Matches(rightSub)).ToList();
+                    var suffixMatch = suffixMatcher.Find(rightSub.ToLower()).ToList();
 
                     var maxlen = 0;
-                    for (var i = 0; i < unitMatch.Count; i++)
+                    foreach (var m in suffixMatch)
                     {
-                        foreach (Match m in unitMatch[i])
+                        if (m.Length > 0)
                         {
-                            if (m.Length > 0)
+                            var endpos = m.Start + m.Length;
+                            if (m.Start >= 0)
                             {
-                                var endpos = m.Index + m.Length;
-                                if (m.Index >= 0)
-                                {
-                                    var midStr = rightSub.Substring(0, Math.Min(m.Index, rightSub.Length));
+                                var midStr = rightSub.Substring(0, Math.Min(m.Start, rightSub.Length));
 
-                                    if (maxlen < endpos && 
-                                        (string.IsNullOrWhiteSpace(midStr) || midStr.Trim().Equals(this.config.ConnectorToken)))
-                                    {
-                                        maxlen = endpos;
-                                    }
+                                if (maxlen < endpos && 
+                                    (string.IsNullOrWhiteSpace(midStr) || midStr.Trim().Equals(this.config.ConnectorToken)))
+                                {
+                                    maxlen = endpos;
                                 }
                             }
                         }
