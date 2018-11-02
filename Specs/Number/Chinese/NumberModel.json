@@ -280,7 +280,7 @@
     "Input": "４，５６５",
     "Results": [
       {
-        "Text": "４，５６５",
+        "Text": "4,565",
         "TypeName": "number",
         "Resolution": {
           "value": "4565"
@@ -1398,7 +1398,7 @@
     "Input": "１９９１年１月１６日晚巴黎时间２０点：法国总统密特朗发表电视讲话，宣布和平解决海湾危机已经让位于战争，法国已经作好一切战斗准备。",
     "Results": [
       {
-        "Text": "１９９１",
+        "Text": "1991",
         "TypeName": "number",
         "Resolution": {
           "value": "1991"
@@ -1407,7 +1407,7 @@
         "End": 3
       },
       {
-        "Text": "１",
+        "Text": "1",
         "TypeName": "number",
         "Resolution": {
           "value": "1"
@@ -1416,7 +1416,7 @@
         "End": 5
       },
       {
-        "Text": "１６",
+        "Text": "16",
         "TypeName": "number",
         "Resolution": {
           "value": "16"
@@ -1425,7 +1425,7 @@
         "End": 8
       },
       {
-        "Text": "２０",
+        "Text": "20",
         "TypeName": "number",
         "Resolution": {
           "value": "20"
@@ -2519,7 +2519,7 @@
     "Input": "１９９１年１月１６日晚巴黎時間２０點：法國總統密特朗發表電視講話，宣布和平解抉海灣危機已經讓位於戰爭，法國已經作好壹切戰鬥準備。",
     "Results": [
       {
-        "Text": "１９９１",
+        "Text": "1991",
         "TypeName": "number",
         "Resolution": {
           "value": "1991"
@@ -2528,7 +2528,7 @@
         "End": 3
       },
       {
-        "Text": "１",
+        "Text": "1",
         "TypeName": "number",
         "Resolution": {
           "value": "1"
@@ -2537,7 +2537,7 @@
         "End": 5
       },
       {
-        "Text": "１６",
+        "Text": "16",
         "TypeName": "number",
         "Resolution": {
           "value": "16"
@@ -2546,7 +2546,7 @@
         "End": 8
       },
       {
-        "Text": "２０",
+        "Text": "20",
         "TypeName": "number",
         "Resolution": {
           "value": "20"
@@ -2662,7 +2662,7 @@
     "Input": "１１.92亿",
     "Results": [
       {
-        "Text": "１１.92亿",
+        "Text": "11.92亿",
         "TypeName": "number",
         "Resolution": {
           "value": "1192000000"
@@ -2676,7 +2676,7 @@
     "Input": "２．２",
     "Results": [
       {
-        "Text": "２．２",
+        "Text": "2.2",
         "TypeName": "number",
         "Resolution": {
           "value": "2.2"
@@ -2690,7 +2690,7 @@
     "Input": "２．２亿",
     "Results": [
       {
-        "Text": "２．２亿",
+        "Text": "2.2亿",
         "TypeName": "number",
         "Resolution": {
           "value": "220000000"
@@ -2928,7 +2928,7 @@
     "Input": "２.７８９０",
     "Results": [
       {
-        "Text": "２.７８９０",
+        "Text": "2.7890",
         "TypeName": "number",
         "Resolution": {
           "value": "2.789"
@@ -2970,7 +2970,7 @@
     "Input": "２.７８９０e－１",
     "Results": [
       {
-        "Text": "２.７８９０e－１",
+        "Text": "2.7890e-1",
         "TypeName": "number",
         "Resolution": {
           "value": "0.2789"
@@ -3044,7 +3044,7 @@
     "Input": "１, 2４4, ６６7.123 五点八",
     "Results": [
       {
-        "Text": "１",
+        "Text": "1",
         "TypeName": "number",
         "Resolution": {
           "value": "1"
@@ -3053,7 +3053,7 @@
         "End": 0
       },
       {
-        "Text": "2４4",
+        "Text": "244",
         "TypeName": "number",
         "Resolution": {
           "value": "244"
@@ -3062,7 +3062,7 @@
         "End": 5
       },
       {
-        "Text": "６６7.123",
+        "Text": "667.123",
         "TypeName": "number",
         "Resolution": {
           "value": "667.123"
@@ -3329,7 +3329,7 @@
     "Input": "４ ６／３",
     "Results": [
       {
-        "Text": "４ ６／３",
+        "Text": "4 6/3",
         "TypeName": "number",
         "Resolution": {
           "value": "6"
@@ -3455,7 +3455,7 @@
     "Input": "３／５",
     "Results": [
       {
-        "Text": "３／５",
+        "Text": "3/5",
         "TypeName": "number",
         "Resolution": {
           "value": "0.6"
@@ -3469,7 +3469,7 @@
     "Input": "1 ３/5",
     "Results": [
       {
-        "Text": "1 ３/5",
+        "Text": "1 3/5",
         "TypeName": "number",
         "Resolution": {
           "value": "1.6"
@@ -3483,7 +3483,7 @@
     "Input": "１６/5",
     "Results": [
       {
-        "Text": "１６/5",
+        "Text": "16/5",
         "TypeName": "number",
         "Resolution": {
           "value": "3.2"
@@ -3497,7 +3497,7 @@
     "Input": "１６分之5",
     "Results": [
       {
-        "Text": "１６分之5",
+        "Text": "16分之5",
         "TypeName": "number",
         "Resolution": {
           "value": "0.3125"
@@ -3511,7 +3511,7 @@
     "Input": "１６分之2225",
     "Results": [
       {
-        "Text": "１６分之2225",
+        "Text": "16分之2225",
         "TypeName": "number",
         "Resolution": {
           "value": "139.0625"
@@ -3581,7 +3581,7 @@
     "Input": "３分之一百五十七",
     "Results": [
       {
-        "Text": "３分之一百五十七",
+        "Text": "3分之一百五十七",
         "TypeName": "number",
         "Resolution": {
           "value": "52.3333333333333"
@@ -3595,7 +3595,7 @@
     "Input": "负３分之负一百五十七",
     "Results": [
       {
-        "Text": "负３分之负一百五十七",
+        "Text": "负3分之负一百五十七",
         "TypeName": "number",
         "Resolution": {
           "value": "52.3333333333333"
@@ -3769,7 +3769,7 @@
     "Input": "３ 分  之 一百五十七",
     "Results": [
       {
-        "Text": "３ 分  之 一百五十七",
+        "Text": "3 分  之 一百五十七",
         "TypeName": "number",
         "Resolution": {
           "value": "52.3333333333333"
@@ -3783,7 +3783,7 @@
     "Input": "负３ 分  之 负一百五十七",
     "Results": [
       {
-        "Text": "负３ 分  之 负一百五十七",
+        "Text": "负3 分  之 负一百五十七",
         "TypeName": "number",
         "Resolution": {
           "value": "52.3333333333333"
@@ -3937,7 +3937,7 @@
     "Input": "３分之壹百五十七",
     "Results": [
       {
-        "Text": "３分之壹百五十七",
+        "Text": "3分之壹百五十七",
         "TypeName": "number",
         "Resolution": {
           "value": "52.3333333333333"
@@ -3951,7 +3951,7 @@
     "Input": "負３分之負壹百五十七",
     "Results": [
       {
-        "Text": "負３分之負壹百五十七",
+        "Text": "負3分之負壹百五十七",
         "TypeName": "number",
         "Resolution": {
           "value": "52.3333333333333"
@@ -4111,7 +4111,7 @@
     "Input": "３ 分  之 壹百五十七",
     "Results": [
       {
-        "Text": "３ 分  之 壹百五十七",
+        "Text": "3 分  之 壹百五十七",
         "TypeName": "number",
         "Resolution": {
           "value": "52.3333333333333"
@@ -4125,7 +4125,7 @@
     "Input": "負３ 分  之 負壹百五十七",
     "Results": [
       {
-        "Text": "負３ 分  之 負壹百五十七",
+        "Text": "負3 分  之 負壹百五十七",
         "TypeName": "number",
         "Resolution": {
           "value": "52.3333333333333"

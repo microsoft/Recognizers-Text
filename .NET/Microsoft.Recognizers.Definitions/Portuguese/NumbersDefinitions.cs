@@ -38,7 +38,7 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
 		public static readonly string AllIntRegexWithLocks = $@"((?<=\b){AllIntRegex}(?=\b))";
 		public static readonly string AllIntRegexWithDozenSuffixLocks = $@"(?<=\b)(((meia)?\s+(d[úu]zia))|({AllIntRegex}\s+(e|com)\s+)?({AllIntRegex}\s+(d[úu]zia(s)?|dezena(s)?)))(?=\b)";
 		public static readonly Func<string, string> NumbersWithPlaceHolder = (placeholder) => $@"(((?<!\d+\s*)-\s*)|(?<=\b))\d+(?!(,\d+[a-zA-Z]))(?={placeholder})";
-		public const string NumbersWithSuffix = @"(((?<=\W|^)-\s*)|(?<=\b))\d+\s*(k|M|T|G)(?=\b)";
+		public const string NumbersWithSuffix = @"(((?<=\W|^)-\s*)|(?<=\b))\d+\s*(k|m|t|g)(?=\b)";
 		public static readonly string RoundNumberIntegerRegexWithLocks = $@"(?<=\b)({DigitsNumberRegex})+\s+{RoundNumberIntegerRegex}(?=\b)";
 		public const string NumbersWithDozenSuffix = @"(((?<!\d+\s*)-\s*)|(?<=\b))\d+\s+dezena(s)?(?=\b)";
 		public const string NumbersWithDozen2Suffix = @"(((?<=\W|^)-\s*)|(?<=\b))\d+\s+d[úu]zia(s)(?=\b)";
@@ -62,14 +62,14 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
 		public static readonly string FractionNounWithArticleRegex = $@"(?<=\b)({AllIntRegex}\s+(e\s+)?)?(um|um[as])(\s+)(({AllOrdinalRegex})|({SuffixRoundOrdinalRegex})|(e\s+)?mei[oa]?)(?=\b)";
 		public static readonly string FractionPrepositionRegex = $@"(?<=\b)(?<numerator>({AllIntRegex})|((?<!\.)\d+))\s+sobre\s+(?<denominator>({AllIntRegex})|((\d+)(?!\.)))(?=\b)";
 		public static readonly string AllFloatRegex = $@"{AllIntRegex}(\s+(vírgula|virgula|e|ponto)){AllPointRegex}";
-		public const string DoubleWithMultiplierRegex = @"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\,)))\d+,\d+\s*(K|k|M|G|T)(?=\b)";
+		public const string DoubleWithMultiplierRegex = @"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\,)))\d+,\d+\s*(k|m|g|t|b)(?=\b)";
 		public const string DoubleExponentialNotationRegex = @"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+,)))(\d+(,\d+)?)e([+-]*[1-9]\d*)(?=\b)";
 		public const string DoubleCaretExponentialNotationRegex = @"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+,)))(\d+(,\d+)?)\^([+-]*[1-9]\d*)(?=\b)";
 		public static readonly Func<string, string> DoubleDecimalPointRegex = (placeholder) => $@"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+,)))\d+,\d+(?!(,\d+))(?={placeholder})";
 		public static readonly Func<string, string> DoubleWithoutIntegralRegex = (placeholder) => $@"(?<=\s|^)(?<!(\d+)),\d+(?!(,\d+))(?={placeholder})";
 		public static readonly string DoubleWithRoundNumber = $@"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\,)))\d+,\d+\s+{RoundNumberIntegerRegex}(?=\b)";
 		public static readonly string DoubleAllFloatRegex = $@"((?<=\b){AllFloatRegex}(?=\b))";
-		public const string CurrencyRegex = @"(((?<=\W|^)-\s*)|(?<=\b))\d+\s*(B|b|m|t|g)(?=\b)";
+		public const string CurrencyRegex = @"(((?<=\W|^)-\s*)|(?<=\b))\d+\s*(b|m|t|g)(?=\b)";
 		public static readonly string NumberWithSuffixPercentage = $@"(?<!%)({BaseNumbers.NumberReplaceToken})(\s*)(%(?!{BaseNumbers.NumberReplaceToken})|(por cento|pontos percentuais)\b)";
 		public const string AmbiguousFractionConnectorsRegex = @"^[.]";
 		public const char DecimalSeparatorChar = ',';
@@ -382,6 +382,7 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
 			{ "k", 1000 },
 			{ "m", 1000000 },
 			{ "g", 1000000000 },
+			{ "b", 1000000000 },
 			{ "t", 1000000000000 }
 		};
 	}

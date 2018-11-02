@@ -8,10 +8,6 @@ namespace Microsoft.Recognizers.Text.Utilities
     {
         public static string Preprocess(string query, bool recode = true, bool toLower = true)
         {
-            if (toLower)
-            {
-                query = query.ToLowerInvariant();
-            }
 
             if (recode)
             {
@@ -37,6 +33,13 @@ namespace Microsoft.Recognizers.Text.Utilities
                 query = query.Replace("．", ".");
                 query = query.Replace("（", "(");
                 query = query.Replace("）", ")");
+                query = query.Replace("％", "%");
+                query = query.Replace("、", ",");
+            }
+
+            if (toLower)
+            {
+                query = query.ToLowerInvariant();
             }
 
             return query;

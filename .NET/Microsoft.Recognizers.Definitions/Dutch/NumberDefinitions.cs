@@ -30,7 +30,7 @@ namespace Microsoft.Recognizers.Definitions.Dutch
 		public const string PlaceHolderPureNumber = @"\b";
 		public const string PlaceHolderDefault = @"\D|\b";
 		public static readonly Func<string, string> NumbersWithPlaceHolder = (placeholder) => $@"(((?<!\d+\s*)-\s*)|(?<=\b))\d+(?!(\,\d+[a-zA-Z]))(?={placeholder})";
-		public const string NumbersWithSuffix = @"(((?<!\d+\s*)-\s*)|(?<=\b))\d+\s*(K|k|M|T|G)(?=\b)";
+		public const string NumbersWithSuffix = @"(((?<!\d+\s*)-\s*)|(?<=\b))\d+\s*(k|m|t|g)(?=\b)";
 		public static readonly string RoundNumberIntegerRegexWithLocks = $@"(?<=\b)\d+\s*{RoundNumberIntegerRegex}(?=\b)";
 		public const string NumbersWithDozenSuffix = @"(((?<!\d+\s*)-\s*)|(?<=\b))\d+\s+dozijn(en)?(?=\b)";
 		public static readonly string AllIntRegexWithLocks = $@"((?<=\b){AllIntRegex}(?=\b))";
@@ -52,7 +52,7 @@ namespace Microsoft.Recognizers.Definitions.Dutch
 		public static readonly string FractionPrepositionWithinPercentModeRegex = $@"(?<=\b)(?<numerator>({AllIntRegex})|((?<!,)\d+))\s+over\s+(?<denominator>({AllIntRegex})|(\d+)(?!,))(?=\b)";
 		public static readonly string AllPointRegex = $@"((\s+{ZeroToNineIntegerRegex})+|(\s+{SeparaIntRegex}))";
 		public static readonly string AllFloatRegex = $@"{AllIntRegex}(\s+komma){AllPointRegex}";
-		public const string DoubleWithMultiplierRegex = @"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+,)))\d+,\d+\s*(K|k|M|G|T|B|b)(?=\b)";
+		public const string DoubleWithMultiplierRegex = @"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+,)))\d+,\d+\s*(k|m|t|g|b)(?=\b)";
 		public const string DoubleExponentialNotationRegex = @"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+,)))(\d+(,\d+)?)e([+-]*[1-9]\d*)(?=\b)";
 		public const string DoubleCaretExponentialNotationRegex = @"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+,)))(\d+(,\d+)?)\^([+-]*[1-9]\d*)(?=\b)";
 		public static readonly Func<string, string> DoubleDecimalPointRegex = (placeholder) => $@"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+,)))\d+,\d+(?!(,\d+))(?={placeholder})";

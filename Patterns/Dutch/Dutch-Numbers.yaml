@@ -30,7 +30,7 @@ NumbersWithPlaceHolder: !paramsRegex
   def: (((?<!\d+\s*)-\s*)|(?<=\b))\d+(?!(\,\d+[a-zA-Z]))(?={placeholder})
   params: [ placeholder ]
 NumbersWithSuffix: !simpleRegex
-  def: (((?<!\d+\s*)-\s*)|(?<=\b))\d+\s*(K|k|M|T|G)(?=\b)
+  def: (((?<!\d+\s*)-\s*)|(?<=\b))\d+\s*(k|m|t|g)(?=\b)
 RoundNumberIntegerRegexWithLocks: !nestedRegex
   def: (?<=\b)\d+\s*{RoundNumberIntegerRegex}(?=\b)
   references: [ RoundNumberIntegerRegex ]
@@ -91,7 +91,7 @@ AllFloatRegex: !nestedRegex
   def: '{AllIntRegex}(\s+komma){AllPointRegex}'
   references: [ AllIntRegex, AllPointRegex ]
 DoubleWithMultiplierRegex: !simpleRegex
-  def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+,)))\d+,\d+\s*(K|k|M|G|T|B|b)(?=\b)
+  def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+,)))\d+,\d+\s*(k|m|t|g|b)(?=\b)
 DoubleExponentialNotationRegex: !simpleRegex
   def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+,)))(\d+(,\d+)?)e([+-]*[1-9]\d*)(?=\b)
 DoubleCaretExponentialNotationRegex: !simpleRegex

@@ -54,7 +54,7 @@ NumbersWithPlaceHolder: !paramsRegex
   def: (((?<!\d+\s*)-\s*)|(?<=\b))\d+(?!(,\d+[a-zA-Z]))(?={placeholder})
   params: [ placeholder ]
 NumbersWithSuffix: !simpleRegex
-  def: (((?<=\W|^)-\s*)|(?<=\b))\d+\s*(k|M|T|G)(?=\b)
+  def: (((?<=\W|^)-\s*)|(?<=\b))\d+\s*(k|m|t|g)(?=\b)
 RoundNumberIntegerRegexWithLocks: !nestedRegex
   def: (?<=\b)({DigitsNumberRegex})+\s+{RoundNumberIntegerRegex}(?=\b)
   references: [ DigitsNumberRegex, RoundNumberIntegerRegex ]
@@ -118,7 +118,7 @@ AllFloatRegex: !nestedRegex
   def: '{AllIntRegex}(\s+(vírgula|virgula|e|ponto)){AllPointRegex}'
   references: [ AllIntRegex, AllPointRegex ]
 DoubleWithMultiplierRegex: !simpleRegex
-  def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\,)))\d+,\d+\s*(K|k|M|G|T)(?=\b)
+  def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\,)))\d+,\d+\s*(k|m|g|t|b)(?=\b)
 DoubleExponentialNotationRegex: !simpleRegex
   def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+,)))(\d+(,\d+)?)e([+-]*[1-9]\d*)(?=\b)
 DoubleCaretExponentialNotationRegex: !simpleRegex
@@ -137,7 +137,7 @@ DoubleAllFloatRegex: !nestedRegex
   references: [ AllFloatRegex ]
 #Number Regex
 CurrencyRegex: !simpleRegex
-  def: (((?<=\W|^)-\s*)|(?<=\b))\d+\s*(B|b|m|t|g)(?=\b)
+  def: (((?<=\W|^)-\s*)|(?<=\b))\d+\s*(b|m|t|g)(?=\b)
 #Percentage Regex
 NumberWithSuffixPercentage: !nestedRegex
   def: (?<!%)({BaseNumbers.NumberReplaceToken})(\s*)(%(?!{BaseNumbers.NumberReplaceToken})|(por cento|pontos percentuais)\b)
@@ -459,5 +459,6 @@ RoundNumberMap: !dictionary
     k: 1000
     m: 1000000
     g: 1000000000
+    b: 1000000000
     t: 1000000000000
 ...

@@ -40,7 +40,7 @@ NumbersWithPlaceHolder: !paramsRegex
   def: (((?<!\d+\s*)-\s*)|(?<=\b))\d+(?!([,\.]\d+[a-zA-Z]))(?={placeholder})
   params: [ placeholder ]
 NumbersWithSuffix: !simpleRegex
-  def: (((?<=\W|^)-\s*)|(?<=\b))\d+\s*(k|M|T|G)(?=\b)
+  def: (((?<=\W|^)-\s*)|(?<=\b))\d+\s*(k|m|t|g)(?=\b)
 RoundNumberIntegerRegexWithLocks: !nestedRegex
   def: (?<=\b)({DigitsNumberRegex})+\s+{RoundNumberIntegerRegex}(?=\b)
   references: [ DigitsNumberRegex, RoundNumberIntegerRegex ]
@@ -123,7 +123,7 @@ DoubleWithoutIntegralRegex: !paramsRegex
   def: (?<=\s|^)(?<!(\d+))[,\.]\d+(?!([,\.]\d+))(?={placeholder})
   params: [ placeholder ]
 DoubleWithMultiplierRegex: !simpleRegex
-  def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\[,\.])))\d+[,\.]\d+\s*(K|k|M|G|T)(?=\b)
+  def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\[,\.])))\d+[,\.]\d+\s*(k|m|t|g|b)(?=\b)
 DoubleWithRoundNumber: !nestedRegex
   def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\[,\.])))\d+[,\.]\d+\s+{RoundNumberIntegerRegex}(?=\b)
   references: [ RoundNumberIntegerRegex ]

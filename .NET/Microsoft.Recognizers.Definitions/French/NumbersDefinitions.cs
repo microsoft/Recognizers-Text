@@ -32,7 +32,7 @@ namespace Microsoft.Recognizers.Definitions.French
 		public static readonly string SeparaIntRegex = $@"({SupportThousandsRegex}(\s+{SupportThousandsRegex})*(\s+{BelowThousandsRegex})?|{BelowThousandsRegex})";
 		public static readonly string AllIntRegex = $@"({SeparaIntRegex}|mille(\s+{BelowThousandsRegex})?)";
 		public static readonly Func<string, string> NumbersWithPlaceHolder = (placeholder) => $@"(((?<!\d+\s*)-\s*)|(?<=\b))\d+(?!([,\.]\d+[a-zA-Z]))(?={placeholder})";
-		public const string NumbersWithSuffix = @"(((?<=\W|^)-\s*)|(?<=\b))\d+\s*(k|M|T|G)(?=\b)";
+		public const string NumbersWithSuffix = @"(((?<=\W|^)-\s*)|(?<=\b))\d+\s*(k|m|t|g)(?=\b)";
 		public static readonly string RoundNumberIntegerRegexWithLocks = $@"(?<=\b)({DigitsNumberRegex})+\s+{RoundNumberIntegerRegex}(?=\b)";
 		public const string NumbersWithDozenSuffix = @"(((?<!\d+\s*)-\s*)|(?<=\b))\d+\s+douzaine(s)?(?=\b)";
 		public static readonly string AllIntRegexWithLocks = $@"((?<=\b){AllIntRegex}(?=\b))";
@@ -62,7 +62,7 @@ namespace Microsoft.Recognizers.Definitions.French
 		public static readonly string AllFloatRegex = $@"({AllIntRegex}(\s+(virgule|point)){AllPointRegex})";
 		public static readonly Func<string, string> DoubleDecimalPointRegex = (placeholder) => $@"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+[,\.])))\d+[,\.]\d+(?!([,\.]\d+))(?={placeholder})";
 		public static readonly Func<string, string> DoubleWithoutIntegralRegex = (placeholder) => $@"(?<=\s|^)(?<!(\d+))[,\.]\d+(?!([,\.]\d+))(?={placeholder})";
-		public const string DoubleWithMultiplierRegex = @"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\[,\.])))\d+[,\.]\d+\s*(K|k|M|G|T)(?=\b)";
+		public const string DoubleWithMultiplierRegex = @"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\[,\.])))\d+[,\.]\d+\s*(k|m|t|g|b)(?=\b)";
 		public static readonly string DoubleWithRoundNumber = $@"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\[,\.])))\d+[,\.]\d+\s+{RoundNumberIntegerRegex}(?=\b)";
 		public static readonly string DoubleAllFloatRegex = $@"((?<=\b){AllFloatRegex}(?=\b))";
 		public const string DoubleExponentialNotationRegex = @"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+[,\.])))(\d+([,\.]\d+)?)e([+-]*[1-9]\d*)(?=\b)";

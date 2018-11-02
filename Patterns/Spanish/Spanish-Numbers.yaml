@@ -44,7 +44,7 @@ NumbersWithPlaceHolder: !paramsRegex
   def: (((?<!\d+\s*)-\s*)|(?<=\b))\d+(?!([\.,]\d+[a-zA-Z]))(?={placeholder})
   params: [ placeholder ]
 NumbersWithSuffix: !simpleRegex
-  def: (((?<=\W|^)-\s*)|(?<=\b))\d+\s*(k|M|T|G)(?=\b)
+  def: (((?<=\W|^)-\s*)|(?<=\b))\d+\s*(k|m|t|g)(?=\b)
 RoundNumberIntegerRegexWithLocks: !nestedRegex
   def: (?<=\b)({DigitsNumberRegex})+\s+{RoundNumberIntegerRegex}(?=\b)
   references: [ DigitsNumberRegex, RoundNumberIntegerRegex ]
@@ -124,7 +124,7 @@ DoubleWithoutIntegralRegex: !paramsRegex
   def: (?<=\s|^)(?<!(\d+))[\.,]\d+(?!([\.,]\d+))(?={placeholder})
   params: [ placeholder ]
 DoubleWithMultiplierRegex: !simpleRegex
-  def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\[\.,])))\d+[\.,]\d+\s*(K|k|M|G|T)(?=\b)
+  def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\[\.,])))\d+[\.,]\d+\s*(k|m|t|g|b)(?=\b)
 DoubleWithRoundNumber: !nestedRegex
   def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\[\.,])))\d+[\.,]\d+\s+{RoundNumberIntegerRegex}(?=\b)
   references: [ RoundNumberIntegerRegex ]
@@ -141,7 +141,7 @@ NumberWithPrefixPercentage: !nestedRegex
   references: [ BaseNumbers.NumberReplaceToken ]
 
 CurrencyRegex: !simpleRegex
-  def: (((?<=\W|^)-\s*)|(?<=\b))\d+\s*(B|b|m|t|g)(?=\b)
+  def: (((?<=\W|^)-\s*)|(?<=\b))\d+\s*(b|m|t|g)(?=\b)
 
 DecimalSeparatorChar: !char ','
 FractionMarkerToken: sobre
@@ -401,6 +401,7 @@ RoundNumberMap: !dictionary
     k: 1000
     m: 1000000
     g: 1000000000
+    b: 1000000000
     t: 1000000000000
 AmbiguousFractionConnectorsRegex: !simpleRegex
 # TODO: modify below regex according to the counterpart in English
