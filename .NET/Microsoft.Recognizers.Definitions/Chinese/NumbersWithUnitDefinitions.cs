@@ -553,7 +553,7 @@ namespace Microsoft.Recognizers.Definitions.Chinese
 			{ "Meter", "米|公尺|m" },
 			{ "Kilometer", "千米|公里|km" },
 			{ "Decimeter", "分米|公寸|dm" },
-			{ "Centimeter", "釐米|厘米|公分|cm|CM" },
+			{ "Centimeter", "釐米|厘米|公分|cm" },
 			{ "Micrometer", "毫米|公釐|mm" },
 			{ "Microns", "微米" },
 			{ "Picometer", "皮米" },
