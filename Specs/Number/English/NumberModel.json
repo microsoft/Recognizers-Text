@@ -711,7 +711,7 @@
     "Input": "Three hundred  and  thirty one",
     "Results": [
       {
-        "Text": "Three hundred  and  thirty one",
+        "Text": "three hundred  and  thirty one",
         "TypeName": "number",
         "Resolution": {
           "subtype": "integer",

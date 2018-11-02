@@ -20,7 +20,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
         public List<ModelResult> Parse(string query)
         {
             // Preprocess the query
-            query = FormatUtility.Preprocess(query, false);
+            query = FormatUtility.Preprocess(query);
 
             List<ModelResult> extractionResults = new List<ModelResult>();
 

@@ -3,7 +3,7 @@
       "Input": "de temperatuur buiten is 40 graden Celsius",
       "Results": [
         {
-          "Text": "40 graden Celsius",
+          "Text": "40 graden celsius",
           "TypeName": "temperature",
           "Resolution": {
             "value": "40",
@@ -17,7 +17,7 @@
       "Input": "het is 90 Fahrenheit in Texas",
       "Results": [
         {
-          "Text": "90 Fahrenheit",
+          "Text": "90 fahrenheit",
           "TypeName": "temperature",
           "Resolution": {
             "value": "90",
@@ -31,7 +31,7 @@
       "Input": "-5 graden Fahrenheit",
       "Results": [
         {
-          "Text": "-5 graden Fahrenheit",
+          "Text": "-5 graden fahrenheit",
           "TypeName": "temperature",
           "Resolution": {
             "value": "-5",
@@ -45,7 +45,7 @@
       "Input": "6 gr. C",
       "Results": [
         {
-          "Text": "6 gr. C",
+          "Text": "6 gr. c",
           "TypeName": "temperature",
           "Resolution": {
             "value": "6",
@@ -59,7 +59,7 @@
       "Input": "98,6 graden F is de normale temperatuur",
       "Results": [
         {
-          "Text": "98,6 graden F",
+          "Text": "98,6 graden f",
           "TypeName": "temperature",
           "Resolution": {
             "value": "98,6",
@@ -73,7 +73,7 @@
       "Input": "Zet de temperatuur op 30 graden Celsius",
       "Results": [
         {
-          "Text": "30 graden Celsius",
+          "Text": "30 graden celsius",
           "TypeName": "temperature",
           "Resolution": {
             "value": "30",
@@ -87,7 +87,7 @@
       "Input": "normale temperatuur is 98,6 graden Fahrenheit",
       "Results": [
         {
-          "Text": "98,6 graden Fahrenheit",
+          "Text": "98,6 graden fahrenheit",
           "TypeName": "temperature",
           "Resolution": {
             "value": "98,6",
@@ -101,7 +101,7 @@
       "Input": "100 graden F",
       "Results": [
         {
-          "Text": "100 graden F",
+          "Text": "100 graden f",
           "TypeName": "temperature",
           "Resolution": {
             "value": "100",
@@ -115,7 +115,7 @@
       "Input": "20 graden C",
       "Results": [
         {
-          "Text": "20 graden C",
+          "Text": "20 graden c",
           "TypeName": "temperature",
           "Resolution": {
             "value": "20",
@@ -129,7 +129,7 @@
       "Input": "100,2 graden Fahrenheit is laag",
       "Results": [
         {
-          "Text": "100,2 graden Fahrenheit",
+          "Text": "100,2 graden fahrenheit",
           "TypeName": "temperature",
           "Resolution": {
             "value": "100,2",
@@ -143,7 +143,7 @@
       "Input": "10,5 Celsius",
       "Results": [
         {
-          "Text": "10,5 Celsius",
+          "Text": "10,5 celsius",
           "TypeName": "temperature",
           "Resolution": {
             "value": "10,5",
@@ -157,7 +157,7 @@
       "Input": "20 graden Celsius",
       "Results": [
         {
-          "Text": "20 graden Celsius",
+          "Text": "20 graden celsius",
           "TypeName": "temperature",
           "Resolution": {
             "value": "20",
@@ -171,7 +171,7 @@
       "Input": "20,3 Celsius",
       "Results": [
         {
-          "Text": "20,3 Celsius",
+          "Text": "20,3 celsius",
           "TypeName": "temperature",
           "Resolution": {
             "value": "20,3",
@@ -185,7 +185,7 @@
       "Input": "34,5 Celsius",
       "Results": [
         {
-          "Text": "34,5 Celsius",
+          "Text": "34,5 celsius",
           "TypeName": "temperature",
           "Resolution": {
             "value": "34,5",
@@ -241,7 +241,7 @@
       "Input": "zet de temperatuur op 70 graden F",
       "Results": [
         {
-          "Text": "70 graden F",
+          "Text": "70 graden f",
           "TypeName": "temperature",
           "Resolution": {
             "value": "70",
@@ -283,7 +283,7 @@
       "Input": "hou de temperatuur op 75 graden F",
       "Results": [
         {
-          "Text": "75 graden F",
+          "Text": "75 graden f",
           "TypeName": "temperature",
           "Resolution": {
             "value": "75",
@@ -297,7 +297,7 @@
       "Input": "laat de temperatuur 40 Celsius zijn",
       "Results": [
         {
-          "Text": "40 Celsius",
+          "Text": "40 celsius",
           "TypeName": "temperature",
           "Resolution": {
             "value": "40",
@@ -325,7 +325,7 @@
       "Input": "converteer 10 graden Celsius to Fahrenheit",
       "Results": [
         {
-          "Text": "10 graden Celsius",
+          "Text": "10 graden celsius",
           "TypeName": "temperature",
           "Resolution": {
             "value": "10",
@@ -333,7 +333,7 @@
           }
         },
         {
-          "Text": "Fahrenheit",
+          "Text": "fahrenheit",
           "TypeName": "temperature",
           "Resolution": {
             "value": null,
@@ -347,7 +347,7 @@
       "Input": "34,9 graden Celsius naar Fahrenheit",
       "Results": [
         {
-          "Text": "34,9 graden Celsius",
+          "Text": "34,9 graden celsius",
           "TypeName": "temperature",
           "Resolution": {
             "value": "34,9",
@@ -355,7 +355,7 @@
           }
         },
         {
-          "Text": "Fahrenheit",
+          "Text": "fahrenheit",
           "TypeName": "temperature",
           "Resolution": {
             "value": null,
@@ -369,7 +369,7 @@
       "Input": "converteer 200 graden Celsius naar Fahrenheit",
       "Results": [
         {
-          "Text": "200 graden Celsius",
+          "Text": "200 graden celsius",
           "TypeName": "temperature",
           "Resolution": {
             "value": "200",
@@ -377,7 +377,7 @@
           }
         },
         {
-          "Text": "Celsius",
+          "Text": "celsius",
           "TypeName": "temperature",
           "Resolution": {
             "value": null,
@@ -385,7 +385,7 @@
           }
         },
         {
-          "Text": "Fahrenheit",
+          "Text": "fahrenheit",
           "TypeName": "temperature",
           "Resolution": {
             "value": null,
@@ -400,7 +400,7 @@
       "Input": "Fahrenheit naar Celsius: 101 Fahrenheit is hoeveel graden Celsius",
       "Results": [
         {
-          "Text": "101 Fahrenheit",
+          "Text": "101 fahrenheit",
           "TypeName": "temperature",
           "Resolution": {
             "value": "101",
@@ -408,7 +408,7 @@
           }
         },
         {
-          "Text": "Fahrenheit",
+          "Text": "fahrenheit",
           "TypeName": "temperature",
           "Resolution": {
             "value": null,
@@ -416,7 +416,7 @@
           }
         },
         {
-          "Text": "graden Celsius",
+          "Text": "graden celsius",
           "TypeName": "temperature",
           "Resolution": {
             "value": null,
@@ -424,7 +424,7 @@
           }
         },
         {
-          "Text": "graden Celsius",
+          "Text": "graden celsius",
           "TypeName": "temperature",
           "Resolution": {
             "value": null,
@@ -439,7 +439,7 @@
       "Input": "50 graden Celsius naar Fahrenheit",
       "Results": [
         {
-          "Text": "50 graden Celsius",
+          "Text": "50 graden celsius",
           "TypeName": "temperature",
           "Resolution": {
             "value": "50",
@@ -447,15 +447,7 @@
           }
         },
         {
-          "Text": "graden Celsius",
-          "TypeName": "temperature",
-          "Resolution": {
-            "value": null,
-            "unit": "C"
-          }
-        },
-        {
-          "Text": "Fahrenheit",
+          "Text": "fahrenheit",
           "TypeName": "temperature",
           "Resolution": {
             "value": null,
@@ -463,14 +455,13 @@
           }
         }
       ],
-      "NotSupported": "dotNet",
       "NotSupportedByDesign": "javascript,python,java"
     },
     {
       "Input": "zou je 51 Fahrenheit naar graden Celsius kunnen converteren?",
       "Results": [
         {
-          "Text": "51 Fahrenheit",
+          "Text": "51 fahrenheit",
           "TypeName": "temperature",
           "Resolution": {
             "value": "51",
@@ -478,7 +469,7 @@
           }
         },
         {
-          "Text": "graden Celsius",
+          "Text": "graden celsius",
           "TypeName": "temperature",
           "Resolution": {
             "value": null,
@@ -492,7 +483,7 @@
       "Input": "converteer 106 graden Fahrenheit naar graden Celsius",
       "Results": [
         {
-          "Text": "106 graden Fahrenheit",
+          "Text": "106 graden fahrenheit",
           "TypeName": "temperature",
           "Resolution": {
             "value": "106",
@@ -500,7 +491,7 @@
           }
         },
         {
-          "Text": "graden Celsius",
+          "Text": "graden celsius",
           "TypeName": "temperature",
           "Resolution": {
             "value": null,
@@ -514,7 +505,7 @@
       "Input": "converteer 45 graden Fahrenheit naar Celsius",
       "Results": [
         {
-          "Text": "45 graden Fahrenheit",
+          "Text": "45 graden fahrenheit",
           "TypeName": "temperature",
           "Resolution": {
             "value": "45",
@@ -522,7 +513,7 @@
           }
         },
         {
-          "Text": "Celsius",
+          "Text": "celsius",
           "TypeName": "temperature",
           "Resolution": {
             "value": null,
@@ -536,7 +527,7 @@
       "Input": "hoe converteer je - 20 graden Fahrenheit naar Celsius",
       "Results": [
         {
-          "Text": "- 20 graden Fahrenheit",
+          "Text": "- 20 graden fahrenheit",
           "TypeName": "temperature",
           "Resolution": {
             "value": "-20",
@@ -544,7 +535,7 @@
           }
         },
         {
-          "Text": "Celsius",
+          "Text": "celsius",
           "TypeName": "temperature",
           "Resolution": {
             "value": null,

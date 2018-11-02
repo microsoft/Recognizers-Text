@@ -2,7 +2,7 @@
     "Input": "A temperatura externa é de 40 graus Celsius",
     "Results": [
       {
-        "Text": "40 graus Celsius",
+        "Text": "40 graus celsius",
         "TypeName": "temperature",
         "Resolution": {
           "value": "40",
@@ -61,7 +61,7 @@
     "Input": "-5 graus Fahrenheit",
     "Results": [
       {
-        "Text": "-5 graus Fahrenheit",
+        "Text": "-5 graus fahrenheit",
         "TypeName": "temperature",
         "Resolution": {
           "value": "-5",
@@ -125,7 +125,7 @@
     "Input": "A temperatura normal é 98,6 graus Fahrenheit",
     "Results": [
       {
-        "Text": "98,6 graus Fahrenheit",
+        "Text": "98,6 graus fahrenheit",
         "TypeName": "temperature",
         "Resolution": {
           "value": "98,6",
@@ -157,7 +157,7 @@
     "Input": "20 Graus c",
     "Results": [
       {
-        "Text": "20 Graus c",
+        "Text": "20 graus c",
         "TypeName": "temperature",
         "Resolution": {
           "value": "20",
@@ -205,7 +205,7 @@
     "Input": "100,2 Graus Fahrenheit é baixo",
     "Results": [
       {
-        "Text": "100,2 Graus Fahrenheit",
+        "Text": "100,2 graus fahrenheit",
         "TypeName": "temperature",
         "Resolution": {
           "value": "100,2",
@@ -275,7 +275,7 @@
     "Input": "convertir 200 K em fahrenheit",
     "Results": [
       {
-        "Text": "200 K",
+        "Text": "200 k",
         "TypeName": "temperature",
         "Resolution": {
           "value": "200",
@@ -416,7 +416,7 @@
     "Input": "Converter 106 graus Fahrenheit em graus centígrados",
     "Results": [
       {
-        "Text": "106 graus Fahrenheit",
+        "Text": "106 graus fahrenheit",
         "TypeName": "temperature",
         "Resolution": {
           "value": "106",
@@ -443,7 +443,7 @@
     "Input": "Converter 106 K em graus centígrados",
     "Results": [
       {
-        "Text": "106 K",
+        "Text": "106 k",
         "TypeName": "temperature",
         "Resolution": {
           "value": "106",
@@ -470,7 +470,7 @@
     "Input": "Converter 45 graus Fahrenheit a Celsius",
     "Results": [
       {
-        "Text": "45 graus Fahrenheit",
+        "Text": "45 graus fahrenheit",
         "TypeName": "temperature",
         "Resolution": {
           "value": "45",
@@ -481,7 +481,7 @@
       }
       ,
       {
-        "Text": "Celsius",
+        "Text": "celsius",
         "TypeName": "temperature",
         "Resolution": {
           "value": null,
@@ -494,10 +494,10 @@
   }
   ,
   {
-    "Input": "Como convertir - 20 graus Fahrenheit para Celsius",
+    "Input": "Como converter - 20 graus Fahrenheit para Celsius",
     "Results": [
       {
-        "Text": "- 20 graus Fahrenheit",
+        "Text": "- 20 graus fahrenheit",
         "TypeName": "temperature",
         "Resolution": {
           "value": "-20",
@@ -508,7 +508,7 @@
       }
       ,
       {
-        "Text": "Celsius",
+        "Text": "celsius",
         "TypeName": "temperature",
         "Resolution": {
           "value": null,
@@ -700,7 +700,7 @@
     "Input": "Ajuste a temperatura a 100 Kelvin",
     "Results": [
       {
-        "Text": "100 Kelvin",
+        "Text": "100 kelvin",
         "TypeName": "temperature",
         "Resolution": {
           "value": "100",

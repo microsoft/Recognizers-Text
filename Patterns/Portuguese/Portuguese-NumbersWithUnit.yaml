@@ -184,7 +184,7 @@ CurrencySuffixList: !dictionary
 #Espanha -> Euro + old peseta
     Peseta: peseta|pesetas|pts.|ptas.|esp
 #Estados Unidos
-    Dólar estadunidense: dólar dos estados unidos|dolar dos estados unidos|dólar estadunidense|dólar americano|dólares dos estados unidos|dolares dos estados unidos|dólares estadunidenses|dólares americanos|dolar estadunidense|dolar americano|dolares estadunidenses|dolares americanos|usd|u$d|us$
+    Dólar estadunidense: dólar dos estados unidos|dolar dos estados unidos|dólar estadunidense|dólar americano|dólares dos estados unidos|dolares dos estados unidos|dólares estadunidenses|dólares americanos|dolar estadunidense|dolar americano|dolares estadunidenses|dolares americanos|usd|u$d|us$|usd$
 #Estônia -> Euro + old crown
     Coroa estoniana: coroa estoniana|coroas estonianas|eek
     Senti estoniano: senti estoniano|senti estonianos
@@ -510,7 +510,7 @@ CurrencyPrefixList: !dictionary
   types: [ string, string ]
   entries:
     Dólar: $
-    Dólar estadunidense: us$|u$d|usd
+    Dólar estadunidense: us$|u$d|usd$|usd
     Dólar do Caribe Oriental: ec$|xcd
     Dólar australiano: a$|aud
     Dólar bahamense: b$|bsd

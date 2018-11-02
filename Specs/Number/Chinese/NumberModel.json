@@ -2718,7 +2718,7 @@
     "Input": "21.2E0",
     "Results": [
       {
-        "Text": "21.2E0",
+        "Text": "21.2e0",
         "TypeName": "number",
         "Resolution": {
           "value": "21.2"
@@ -2802,7 +2802,7 @@
     "Input": "-2.5 M",
     "Results": [
       {
-        "Text": "-2.5 M",
+        "Text": "-2.5 m",
         "TypeName": "number",
         "Resolution": {
           "value": "-2500000"

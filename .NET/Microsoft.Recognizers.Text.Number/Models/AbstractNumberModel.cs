@@ -26,7 +26,7 @@ namespace Microsoft.Recognizers.Text.Number
             var parsedNumbers = new List<ParseResult>();
 
             // Preprocess the query
-            query = FormatUtility.Preprocess(query);
+            query = FormatUtility.Preprocess(query, recode: false);
 
             try
             {
