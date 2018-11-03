@@ -6,9 +6,9 @@ using System.Text;
 
 namespace Microsoft.Recognizers.Text.Utilities
 {
-    public static class FormatUtility
+    public static class QueryProcessor
     {
-        public static string Preprocess(string query, bool recode = true, bool toLower = true)
+        public static string Preprocess(string query, bool caseSensitive = false, bool recode = true)
         {
 
             if (recode)
@@ -39,15 +39,14 @@ namespace Microsoft.Recognizers.Text.Utilities
                 query = query.Replace("、", ",");
             }
 
-            if (toLower)
-            {
-                query = Convert(query, list);//.ToLowerInvariant());
-            }
+            query = caseSensitive ? 
+                ToLowerTermSensitive(query) : 
+                query.ToLowerInvariant();
 
             return query;
         }
 
-        static List<string> list = new List<string> { "M", "KB", "kB", "K", "G", "GB", "Gb", "B" };
+        static List<string> list = new List<string> { "M", "MB", "Mb", "KB", "kB", "K", "G", "GB", "Gb", "B" };
 
         private static void ApplyReverse(int idx, char[] str, string value)
         {
@@ -57,11 +56,11 @@ namespace Microsoft.Recognizers.Text.Utilities
             }
         }
 
-        public static string Convert(string toConvert, List<string> maintainList)
+        public static string ToLowerTermSensitive(string toConvert)
         {
             var res = toConvert.ToLowerInvariant().ToCharArray();
 
-            foreach (var value in maintainList)
+            foreach (var value in list)
             {
                 
                 for (int idx = 0; ; idx += value.Length)
@@ -77,6 +76,7 @@ namespace Microsoft.Recognizers.Text.Utilities
                     }
                 }
             }
+
             return new string(res);
         }
 

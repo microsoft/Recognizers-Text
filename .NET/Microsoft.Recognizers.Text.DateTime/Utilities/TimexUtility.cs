@@ -92,7 +92,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             var datePeriodTimex = $"P{unitCount}{DatePeriodTimexTypeToTimexSuffix[timexType]}";
 
-            return $"({FormatUtil.LuisDate(begin, alternativeBegin)},{FormatUtil.LuisDate(end, alternativeEnd)},{datePeriodTimex})";
+            return $"({DateTimeFormatUtil.LuisDate(begin, alternativeBegin)},{DateTimeFormatUtil.LuisDate(end, alternativeEnd)},{datePeriodTimex})";
         }
 
         public static string GenerateWeekTimex(DateObject monday = default(DateObject))
@@ -103,7 +103,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
             else
             {
-                return FormatUtil.ToIsoWeekTimex(monday);
+                return DateTimeFormatUtil.ToIsoWeekTimex(monday);
             }
         }
 
@@ -115,7 +115,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
             else
             {
-                return $"{FormatUtil.ToIsoWeekTimex(date)}{Constants.DateTimexConnector}{Constants.TimexWeekend}";
+                return $"{DateTimeFormatUtil.ToIsoWeekTimex(date)}{Constants.DateTimexConnector}{Constants.TimexWeekend}";
             }
         }
 

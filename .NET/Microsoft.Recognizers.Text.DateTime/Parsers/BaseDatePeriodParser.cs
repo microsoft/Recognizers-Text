@@ -47,7 +47,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         {
                             {
                                 TimeTypeConstants.END_DATE,
-                                FormatUtil.FormatDate((DateObject)innerResult.FutureValue)
+                                DateTimeFormatUtil.FormatDate((DateObject)innerResult.FutureValue)
                             }
                         };
 
@@ -55,7 +55,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         {
                             {
                                 TimeTypeConstants.END_DATE,
-                                FormatUtil.FormatDate((DateObject)innerResult.PastValue)
+                                DateTimeFormatUtil.FormatDate((DateObject)innerResult.PastValue)
                             }
                         };
                     }
@@ -65,7 +65,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         {
                             {
                                 TimeTypeConstants.START_DATE,
-                                FormatUtil.FormatDate((DateObject)innerResult.FutureValue)
+                                DateTimeFormatUtil.FormatDate((DateObject)innerResult.FutureValue)
                             }
                         };
 
@@ -73,7 +73,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         {
                             {
                                 TimeTypeConstants.START_DATE,
-                                FormatUtil.FormatDate((DateObject)innerResult.PastValue)
+                                DateTimeFormatUtil.FormatDate((DateObject)innerResult.PastValue)
                             }
                         };
                     }
@@ -83,11 +83,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                         {
                             {
                                 TimeTypeConstants.START_DATE,
-                                FormatUtil.FormatDate(((Tuple<DateObject, DateObject>) innerResult.FutureValue).Item1)
+                                DateTimeFormatUtil.FormatDate(((Tuple<DateObject, DateObject>) innerResult.FutureValue).Item1)
                             },
                             {
                                 TimeTypeConstants.END_DATE,
-                                FormatUtil.FormatDate(((Tuple<DateObject, DateObject>) innerResult.FutureValue).Item2)
+                                DateTimeFormatUtil.FormatDate(((Tuple<DateObject, DateObject>) innerResult.FutureValue).Item2)
                             }
                         };
 
@@ -95,11 +95,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                         {
                             {
                                 TimeTypeConstants.START_DATE,
-                                FormatUtil.FormatDate(((Tuple<DateObject, DateObject>) innerResult.PastValue).Item1)
+                                DateTimeFormatUtil.FormatDate(((Tuple<DateObject, DateObject>) innerResult.PastValue).Item1)
                             },
                             {
                                 TimeTypeConstants.END_DATE,
-                                FormatUtil.FormatDate(((Tuple<DateObject, DateObject>) innerResult.PastValue).Item2)
+                                DateTimeFormatUtil.FormatDate(((Tuple<DateObject, DateObject>) innerResult.PastValue).Item2)
                             }
                         };
                     }
@@ -343,8 +343,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                         var startDate = new DateObject(startYear, 1, 1);
                         var endDate = new DateObject(startYear + Constants.CenturyYearsCount, 1, 1);
 
-                        var startLuisStr = FormatUtil.LuisDate(startDate);
-                        var endLuisStr = FormatUtil.LuisDate(endDate);
+                        var startLuisStr = DateTimeFormatUtil.LuisDate(startDate);
+                        var endLuisStr = DateTimeFormatUtil.LuisDate(endDate);
                         var durationTimex = $"P{Constants.CenturyYearsCount}Y";
 
                         ret.Timex = $"({startLuisStr},{endLuisStr},{durationTimex})";
@@ -422,8 +422,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                             if (startDate != DateObject.MinValue)
                             {
-                                var startLuisStr = FormatUtil.LuisDate(startDate);
-                                var endLuisStr = FormatUtil.LuisDate(endDate);
+                                var startLuisStr = DateTimeFormatUtil.LuisDate(startDate);
+                                var endLuisStr = DateTimeFormatUtil.LuisDate(endDate);
                                 var durationTimex = ((DateTimeResolutionResult)duration.Value).Timex;
 
                                 ret.Timex = $"({startLuisStr},{endLuisStr},{durationTimex})";
@@ -576,13 +576,13 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if (noYear)
             {
-                beginLuisStr = FormatUtil.LuisDate(-1, month, beginDay);
-                endLuisStr = FormatUtil.LuisDate(-1, month, endDay);
+                beginLuisStr = DateTimeFormatUtil.LuisDate(-1, month, beginDay);
+                endLuisStr = DateTimeFormatUtil.LuisDate(-1, month, endDay);
             }
             else
             {
-                beginLuisStr = FormatUtil.LuisDate(year, month, beginDay);
-                endLuisStr = FormatUtil.LuisDate(year, month, endDay);
+                beginLuisStr = DateTimeFormatUtil.LuisDate(year, month, beginDay);
+                endLuisStr = DateTimeFormatUtil.LuisDate(year, month, endDay);
             }
 
             int futureYear = year, pastYear = year;
@@ -1003,7 +1003,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                             ? DateObject.MinValue.SafeCreateFromValue(endYear, 1, 1).AddDays(-1)
                             : DateObject.MinValue.SafeCreateFromValue(endYear, 1, 1);
 
-                    ret.Timex = $"({FormatUtil.LuisDate(beginDay)},{FormatUtil.LuisDate(endDay)},P{endYear - beginYear}Y)";
+                    ret.Timex = $"({DateTimeFormatUtil.LuisDate(beginDay)},{DateTimeFormatUtil.LuisDate(endDay)},P{endYear - beginYear}Y)";
                     ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginDay, endDay);
                     ret.Success = true;
 
@@ -1260,7 +1260,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 endDate = InclusiveEndPeriod ? endDate.AddDays(-1) : endDate;
 
                 ret.Timex =
-                    $"({FormatUtil.LuisDate(beginDate)},{FormatUtil.LuisDate(endDate)},{timex})";
+                    $"({DateTimeFormatUtil.LuisDate(beginDate)},{DateTimeFormatUtil.LuisDate(endDate)},{timex})";
                 ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginDate, endDate);
                 ret.Success = true;
             }
@@ -1472,7 +1472,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var beginDate = DateObject.MinValue.SafeCreateFromValue(year, (halfNum - 1) * Constants.SemesterMonthCount + 1, 1);
             var endDate = DateObject.MinValue.SafeCreateFromValue(year, halfNum * Constants.SemesterMonthCount, 1).AddMonths(1);
             ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginDate, endDate);
-            ret.Timex = $"({FormatUtil.LuisDate(beginDate)},{FormatUtil.LuisDate(endDate)},P6M)";
+            ret.Timex = $"({DateTimeFormatUtil.LuisDate(beginDate)},{DateTimeFormatUtil.LuisDate(endDate)},P6M)";
             ret.Success = true;
 
             return ret;
@@ -1552,7 +1552,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginDate, endDate);
             }
 
-            ret.Timex = $"({FormatUtil.LuisDate(beginDate)},{FormatUtil.LuisDate(endDate)},P3M)";
+            ret.Timex = $"({DateTimeFormatUtil.LuisDate(beginDate)},{DateTimeFormatUtil.LuisDate(endDate)},P3M)";
             ret.Success = true;
 
             return ret;
@@ -1623,7 +1623,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 if ((config.Options & DateTimeOptions.CalendarMode) != 0)
                 {
                     var monday = ((DateObject)pr.FutureValue).This(DayOfWeek.Monday);
-                    ret.Timex = FormatUtil.ToIsoWeekTimex(monday);
+                    ret.Timex = DateTimeFormatUtil.ToIsoWeekTimex(monday);
                 }
                 else
                 {
@@ -1875,17 +1875,17 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if (inputCentury)
             {
-                beginLuisStr = FormatUtil.LuisDate(beginYear, 1, 1);
-                endLuisStr = FormatUtil.LuisDate(beginYear + totalLastYear, 1, 1);
+                beginLuisStr = DateTimeFormatUtil.LuisDate(beginYear, 1, 1);
+                endLuisStr = DateTimeFormatUtil.LuisDate(beginYear + totalLastYear, 1, 1);
             }
             else
             {
                 var beginYearStr = "XX" + decade;
-                beginLuisStr = FormatUtil.LuisDate(-1, 1, 1);
+                beginLuisStr = DateTimeFormatUtil.LuisDate(-1, 1, 1);
                 beginLuisStr = beginLuisStr.Replace("XXXX", beginYearStr);
 
                 var endYearStr = "XX" + (decade + totalLastYear);
-                endLuisStr = FormatUtil.LuisDate(-1, 1, 1);
+                endLuisStr = DateTimeFormatUtil.LuisDate(-1, 1, 1);
                 endLuisStr = endLuisStr.Replace("XXXX", endYearStr);
             }
             ret.Timex = $"({beginLuisStr},{endLuisStr},P{totalLastYear}Y)";

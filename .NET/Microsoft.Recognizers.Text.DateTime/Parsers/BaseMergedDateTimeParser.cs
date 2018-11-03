@@ -12,8 +12,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         protected readonly IMergedParserConfiguration Config;
 
-        public static readonly string DateMinString = FormatUtil.FormatDate(DateObject.MinValue);
-        public static readonly string DateTimeMinString = FormatUtil.FormatDateTime(DateObject.MinValue);
+        public static readonly string DateMinString = DateTimeFormatUtil.FormatDate(DateObject.MinValue);
+        public static readonly string DateTimeMinString = DateTimeFormatUtil.FormatDateTime(DateObject.MinValue);
         private static readonly Calendar Cal = DateTimeFormatInfo.InvariantInfo.Calendar;
 
         public BaseMergedDateTimeParser(IMergedParserConfiguration configuration)
@@ -296,7 +296,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                                     var durationStr = timexComponents[2];
                                     var datePeriodTimexType = TimexUtility.GetDatePeriodTimexType(durationStr);
                                     endDate = TimexUtility.OffsetDateObject(endDate, offset: 1, timexType: datePeriodTimexType);
-                                    values[DateTimeResolutionKey.END] = FormatUtil.LuisDate(endDate);
+                                    values[DateTimeResolutionKey.END] = DateTimeFormatUtil.LuisDate(endDate);
                                     values[DateTimeResolutionKey.Timex] = GenerateEndInclusiveTimex(slot.TimexStr, datePeriodTimexType, startDate, endDate);
 
                                     if (string.IsNullOrEmpty(altTimex))
@@ -425,7 +425,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             // Resolve dates list for date periods
             if (slot.Type.Equals(Constants.SYS_DATETIME_DATEPERIOD) && val.List != null)
             {
-                list = string.Join(",", val.List.Select(o => FormatUtil.LuisDate((DateObject)o)).ToArray());
+                list = string.Join(",", val.List.Select(o => DateTimeFormatUtil.LuisDate((DateObject)o)).ToArray());
             }
 
             // With modifier, output Type might not be the same with type in resolution result 
@@ -628,28 +628,28 @@ namespace Microsoft.Recognizers.Text.DateTime
                 switch ((string)resolutionDic[ResolutionKey.Type])
                 {
                     case Constants.SYS_DATETIME_TIME:
-                        resolutionPm[ResolutionKey.Value] = FormatUtil.ToPm(resolution[ResolutionKey.Value]);
-                        resolutionPm[DateTimeResolutionKey.Timex] = FormatUtil.ToPm(timex);
+                        resolutionPm[ResolutionKey.Value] = DateTimeFormatUtil.ToPm(resolution[ResolutionKey.Value]);
+                        resolutionPm[DateTimeResolutionKey.Timex] = DateTimeFormatUtil.ToPm(timex);
                         break;
 
                     case Constants.SYS_DATETIME_DATETIME:
                         var splited = resolution[ResolutionKey.Value].Split(' ');
-                        resolutionPm[ResolutionKey.Value] = splited[0] + " " + FormatUtil.ToPm(splited[1]);
-                        resolutionPm[DateTimeResolutionKey.Timex] = FormatUtil.AllStringToPm(timex);
+                        resolutionPm[ResolutionKey.Value] = splited[0] + " " + DateTimeFormatUtil.ToPm(splited[1]);
+                        resolutionPm[DateTimeResolutionKey.Timex] = DateTimeFormatUtil.AllStringToPm(timex);
                         break;
 
                     case Constants.SYS_DATETIME_TIMEPERIOD:
                         if (resolution.ContainsKey(DateTimeResolutionKey.START))
                         {
-                            resolutionPm[DateTimeResolutionKey.START] = FormatUtil.ToPm(resolution[DateTimeResolutionKey.START]);
+                            resolutionPm[DateTimeResolutionKey.START] = DateTimeFormatUtil.ToPm(resolution[DateTimeResolutionKey.START]);
                         }
 
                         if (resolution.ContainsKey(DateTimeResolutionKey.END))
                         {
-                            resolutionPm[DateTimeResolutionKey.END] = FormatUtil.ToPm(resolution[DateTimeResolutionKey.END]);
+                            resolutionPm[DateTimeResolutionKey.END] = DateTimeFormatUtil.ToPm(resolution[DateTimeResolutionKey.END]);
                         }
 
-                        resolutionPm[DateTimeResolutionKey.Timex] = FormatUtil.AllStringToPm(timex);
+                        resolutionPm[DateTimeResolutionKey.Timex] = DateTimeFormatUtil.AllStringToPm(timex);
                         break;
 
                     case Constants.SYS_DATETIME_DATETIMEPERIOD:
@@ -658,7 +658,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                             var start = Convert.ToDateTime(resolution[DateTimeResolutionKey.START]);
                             start = start.Hour == Constants.HalfDayHourCount ? start.AddHours(-Constants.HalfDayHourCount) : start.AddHours(Constants.HalfDayHourCount);
 
-                            resolutionPm[DateTimeResolutionKey.START] = FormatUtil.FormatDateTime(start);
+                            resolutionPm[DateTimeResolutionKey.START] = DateTimeFormatUtil.FormatDateTime(start);
                         }
 
                         if (resolution.ContainsKey(DateTimeResolutionKey.END))
@@ -666,10 +666,10 @@ namespace Microsoft.Recognizers.Text.DateTime
                             var end = Convert.ToDateTime(resolution[DateTimeResolutionKey.END]);
                             end = end.Hour == Constants.HalfDayHourCount ? end.AddHours(-Constants.HalfDayHourCount) : end.AddHours(Constants.HalfDayHourCount);
 
-                            resolutionPm[DateTimeResolutionKey.END] = FormatUtil.FormatDateTime(end);
+                            resolutionPm[DateTimeResolutionKey.END] = DateTimeFormatUtil.FormatDateTime(end);
                         }
 
-                        resolutionPm[DateTimeResolutionKey.Timex] = FormatUtil.AllStringToPm(timex);
+                        resolutionPm[DateTimeResolutionKey.Timex] = DateTimeFormatUtil.AllStringToPm(timex);
                         break;
                 }
 
@@ -684,7 +684,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var resolution = (Dictionary<string, string>)resolutionDic[keyName];
 
                 var monday = DateObject.Parse(resolution[DateTimeResolutionKey.START]);
-                resolution[DateTimeResolutionKey.Timex] = FormatUtil.ToIsoWeekTimex(monday);
+                resolution[DateTimeResolutionKey.Timex] = DateTimeFormatUtil.ToIsoWeekTimex(monday);
 
                 resolutionDic.Remove(keyName);
                 resolutionDic.Add(keyName, resolution);
@@ -899,7 +899,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             // Here the dateString is in standard format, so Parse should work perfectly
             var date = DateObject.Parse(dateStr);
             date = date.AddDays(-1);
-            return FormatUtil.LuisDate(date);
+            return DateTimeFormatUtil.LuisDate(date);
         }
     }
 }

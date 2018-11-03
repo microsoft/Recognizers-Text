@@ -31,7 +31,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var parsedDateTimes = new List<DateTimeParseResult>();
 
             // Preprocess the query
-            query = FormatUtility.Preprocess(query);
+            query = QueryProcessor.Preprocess(query);
 
             try {
 

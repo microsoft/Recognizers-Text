@@ -69,11 +69,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                         {
                             {
                                 TimeTypeConstants.START_DATETIME,
-                                FormatUtil.FormatDateTime(((Tuple<DateObject, DateObject>) innerResult.FutureValue).Item1)
+                                DateTimeFormatUtil.FormatDateTime(((Tuple<DateObject, DateObject>) innerResult.FutureValue).Item1)
                             },
                             {
                                 TimeTypeConstants.END_DATETIME,
-                                FormatUtil.FormatDateTime(((Tuple<DateObject, DateObject>) innerResult.FutureValue).Item2)
+                                DateTimeFormatUtil.FormatDateTime(((Tuple<DateObject, DateObject>) innerResult.FutureValue).Item2)
                             }
                         };
 
@@ -81,11 +81,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                         {
                             {
                                 TimeTypeConstants.START_DATETIME,
-                                FormatUtil.FormatDateTime(((Tuple<DateObject, DateObject>) innerResult.PastValue).Item1)
+                                DateTimeFormatUtil.FormatDateTime(((Tuple<DateObject, DateObject>) innerResult.PastValue).Item1)
                             },
                             {
                                 TimeTypeConstants.END_DATETIME,
-                                FormatUtil.FormatDateTime(((Tuple<DateObject, DateObject>) innerResult.PastValue).Item2)
+                                DateTimeFormatUtil.FormatDateTime(((Tuple<DateObject, DateObject>) innerResult.PastValue).Item2)
                             }
                         };
                     }
@@ -98,7 +98,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                             {
                                 {
                                     TimeTypeConstants.START_DATETIME,
-                                    FormatUtil.FormatDateTime((DateObject)(innerResult.FutureValue))
+                                    DateTimeFormatUtil.FormatDateTime((DateObject)(innerResult.FutureValue))
                                 }
                             };
 
@@ -106,7 +106,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                             {
                                 {
                                     TimeTypeConstants.START_DATETIME,
-                                    FormatUtil.FormatDateTime((DateObject)(innerResult.PastValue))
+                                    DateTimeFormatUtil.FormatDateTime((DateObject)(innerResult.PastValue))
                                 }
                             };
                         }
@@ -117,7 +117,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                             {
                                 {
                                     TimeTypeConstants.END_DATETIME,
-                                    FormatUtil.FormatDateTime((DateObject)(innerResult.FutureValue))
+                                    DateTimeFormatUtil.FormatDateTime((DateObject)(innerResult.FutureValue))
                                 }
                             };
 
@@ -125,7 +125,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                             {
                                 {
                                     TimeTypeConstants.END_DATETIME,
-                                    FormatUtil.FormatDateTime((DateObject)(innerResult.PastValue))
+                                    DateTimeFormatUtil.FormatDateTime((DateObject)(innerResult.PastValue))
                                 }
                             };
                         }
@@ -751,7 +751,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var date = referenceTime.AddDays(swift).Date;
                 int day = date.Day, month = date.Month, year = date.Year;
 
-                ret.Timex = FormatUtil.FormatDate(date) + timeStr;
+                ret.Timex = DateTimeFormatUtil.FormatDate(date) + timeStr;
 
                 ret.FutureValue =
                     ret.PastValue =
@@ -997,8 +997,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
 
                     ret.Timex =
-                        $"({FormatUtil.LuisDate(beginTime)}T{FormatUtil.LuisTime(beginTime)}," +
-                        $"{FormatUtil.LuisDate(endTime)}T{FormatUtil.LuisTime(endTime)}," +
+                        $"({DateTimeFormatUtil.LuisDate(beginTime)}T{DateTimeFormatUtil.LuisTime(beginTime)}," +
+                        $"{DateTimeFormatUtil.LuisDate(endTime)}T{DateTimeFormatUtil.LuisTime(endTime)}," +
                         $"{durationResult.Timex})";
 
                     ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginTime, endTime);
@@ -1076,8 +1076,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
 
                     ret.Timex =
-                            $"({FormatUtil.LuisDate(beginTime)}T{FormatUtil.LuisTime(beginTime)}," +
-                            $"{FormatUtil.LuisDate(endTime)}T{FormatUtil.LuisTime(endTime)},{ptTimex})";
+                            $"({DateTimeFormatUtil.LuisDate(beginTime)}T{DateTimeFormatUtil.LuisTime(beginTime)}," +
+                            $"{DateTimeFormatUtil.LuisDate(endTime)}T{DateTimeFormatUtil.LuisTime(endTime)},{ptTimex})";
 
                     ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginTime, endTime);
                     ret.Success = true;

@@ -45,11 +45,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                     {
                         {
                             TimeTypeConstants.START_TIME,
-                            FormatUtil.FormatTime(((Tuple<DateObject, DateObject>) innerResult.FutureValue).Item1)
+                            DateTimeFormatUtil.FormatTime(((Tuple<DateObject, DateObject>) innerResult.FutureValue).Item1)
                         },
                         {
                             TimeTypeConstants.END_TIME,
-                            FormatUtil.FormatTime(((Tuple<DateObject, DateObject>) innerResult.FutureValue).Item2)
+                            DateTimeFormatUtil.FormatTime(((Tuple<DateObject, DateObject>) innerResult.FutureValue).Item2)
                         }
                     };
 
@@ -57,11 +57,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                     {
                         {
                             TimeTypeConstants.START_TIME,
-                            FormatUtil.FormatTime(((Tuple<DateObject, DateObject>) innerResult.PastValue).Item1)
+                            DateTimeFormatUtil.FormatTime(((Tuple<DateObject, DateObject>) innerResult.PastValue).Item1)
                         },
                         {
                             TimeTypeConstants.END_TIME,
-                            FormatUtil.FormatTime(((Tuple<DateObject, DateObject>) innerResult.PastValue).Item2)
+                            DateTimeFormatUtil.FormatTime(((Tuple<DateObject, DateObject>) innerResult.PastValue).Item2)
                         }
                     };
 
@@ -490,12 +490,12 @@ namespace Microsoft.Recognizers.Text.DateTime
                     endDateTime = endDateTime.AddHours(24);
                 }
 
-                var beginStr = FormatUtil.ShortTime(beginDateTime.Hour, beginMinute, beginSecond);
-                var endStr = FormatUtil.ShortTime(endDateTime.Hour, endMinute, endSecond);
+                var beginStr = DateTimeFormatUtil.ShortTime(beginDateTime.Hour, beginMinute, beginSecond);
+                var endStr = DateTimeFormatUtil.ShortTime(endDateTime.Hour, endMinute, endSecond);
 
                 ret.Success = true;
 
-                ret.Timex = $"({beginStr},{endStr},{FormatUtil.LuisTimeSpan(endDateTime - beginDateTime)})";
+                ret.Timex = $"({beginStr},{endStr},{DateTimeFormatUtil.LuisTimeSpan(endDateTime - beginDateTime)})";
 
                 ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(
                     beginDateTime,
