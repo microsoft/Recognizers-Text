@@ -8,4 +8,10 @@ DoubleRegexDefinition: !paramsRegex
   def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\.|\d+,)))\d{1,3}({thousandsmark}\d{3})+{decimalmark}\d+(?={placeholder})
   params: [ placeholder, thousandsmark, decimalmark ]
 PlaceHolderDefault: \\D|\\b
+NumberMultiplierRegex: !simpleRegex
+  def: (K|k|M|G|T|B|b)
+MultiplierLookupRegex: !simpleRegex
+  def: (k|m|t|g|b)
+CurrencyRegex: !simpleRegex
+  def: (((?<=\W|^)-\s*)|(?<=\b))\d+\s*(b|m|t|g)(?=\b)
 ...

@@ -29,8 +29,9 @@ PlaceHolderDefault: !simpleRegex
 NumbersWithPlaceHolder: !paramsRegex
   def: (((?<!\d+\s*)-\s*)|(?<=\b))\d+(?!([\.,]\d+[a-zA-Z]))(?={placeholder})
   params: [ placeholder ]
-NumbersWithSuffix: !simpleRegex
-  def: (((?<!\d+\s*)-\s*)|(?<=\b))\d+\s*(k|m|t|g)(?=\b)
+NumbersWithSuffix: !nestedRegex
+  def: (((?<!\d+\s*)-\s*)|(?<=\b))\d+\s*{BaseNumbers.NumberMultiplierRegex}(?=\b)
+  references: [ BaseNumbers.NumberMultiplierRegex ]
 RoundNumberIntegerRegexWithLocks: !nestedRegex
   def: (?<=\b)\d+\s+{RoundNumberIntegerRegex}(?=\b)
   references: [ RoundNumberIntegerRegex ]
@@ -90,8 +91,9 @@ AllPointRegex: !nestedRegex
 AllFloatRegex: !nestedRegex
   def: '{AllIntRegex}(\s+point){AllPointRegex}'
   references: [ AllIntRegex, AllPointRegex ]
-DoubleWithMultiplierRegex: !simpleRegex
-  def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+[\.,])))\d+[\.,]\d+\s*(k|m|t|g|b)(?=\b)
+DoubleWithMultiplierRegex: !nestedRegex
+  def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+[\.,])))\d+[\.,]\d+\s*{BaseNumbers.NumberMultiplierRegex}(?=\b)
+  references: [ BaseNumbers.NumberMultiplierRegex ]
 DoubleExponentialNotationRegex: !simpleRegex
   def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+[\.,])))(\d+([\.,]\d+)?)e([+-]*[1-9]\d*)(?=\b)
 DoubleCaretExponentialNotationRegex: !simpleRegex
@@ -108,9 +110,6 @@ DoubleWithRoundNumber: !nestedRegex
 DoubleAllFloatRegex: !nestedRegex
   def: ((?<=\b){AllFloatRegex}(?=\b))
   references: [ AllFloatRegex ]
-#Number Regex
-CurrencyRegex: !simpleRegex
-  def: (((?<=\W|^)-\s*)|(?<=\b))\d+\s*(B|b|m|t|g)(?=\b)
 ConnectorRegex: !simpleRegex
     def: (?<spacer>and)
 #Percentage Regex
@@ -207,8 +206,9 @@ WrittenIntegerSeparatorTexts: [and]
 WrittenFractionSeparatorTexts: [and]
 HalfADozenRegex: !simpleRegex
   def: half\s+a\s+dozen
-DigitalNumberRegex: !simpleRegex
-  def: ((?<=\b)(hundred|thousand|million|billion|trillion|dozen(s)?)(?=\b))|((?<=(\d|\b))(k|t|m|g|b)(?=\b))
+DigitalNumberRegex: !nestedRegex
+  def: ((?<=\b)(hundred|thousand|million|billion|trillion|dozen(s)?)(?=\b))|((?<=(\d|\b)){BaseNumbers.MultiplierLookupRegex}(?=\b))
+  references: [ BaseNumbers.MultiplierLookupRegex ]
 CardinalNumberMap: !dictionary
   types: [ string, long ]
   entries:

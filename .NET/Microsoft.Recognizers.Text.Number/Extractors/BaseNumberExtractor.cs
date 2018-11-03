@@ -21,6 +21,8 @@ namespace Microsoft.Recognizers.Text.Number
 
         protected virtual Regex AmbiguousFractionConnectorsRegex { get; } = null;
 
+        public static readonly Regex CurrencyRegex = 
+            new Regex(BaseNumbers.CurrencyRegex, RegexOptions.Singleline);
 
         public virtual List<ExtractResult> Extract(string source)
         {

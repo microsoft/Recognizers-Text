@@ -32,7 +32,7 @@ namespace Microsoft.Recognizers.Definitions.French
 		public static readonly string SeparaIntRegex = $@"({SupportThousandsRegex}(\s+{SupportThousandsRegex})*(\s+{BelowThousandsRegex})?|{BelowThousandsRegex})";
 		public static readonly string AllIntRegex = $@"({SeparaIntRegex}|mille(\s+{BelowThousandsRegex})?)";
 		public static readonly Func<string, string> NumbersWithPlaceHolder = (placeholder) => $@"(((?<!\d+\s*)-\s*)|(?<=\b))\d+(?!([,\.]\d+[a-zA-Z]))(?={placeholder})";
-		public const string NumbersWithSuffix = @"(((?<=\W|^)-\s*)|(?<=\b))\d+\s*(k|m|t|g)(?=\b)";
+		public static readonly string NumbersWithSuffix = $@"(((?<=\W|^)-\s*)|(?<=\b))\d+\s*{BaseNumbers.NumberMultiplierRegex}(?=\b)";
 		public static readonly string RoundNumberIntegerRegexWithLocks = $@"(?<=\b)({DigitsNumberRegex})+\s+{RoundNumberIntegerRegex}(?=\b)";
 		public const string NumbersWithDozenSuffix = @"(((?<!\d+\s*)-\s*)|(?<=\b))\d+\s+douzaine(s)?(?=\b)";
 		public static readonly string AllIntRegexWithLocks = $@"((?<=\b){AllIntRegex}(?=\b))";
@@ -62,12 +62,11 @@ namespace Microsoft.Recognizers.Definitions.French
 		public static readonly string AllFloatRegex = $@"({AllIntRegex}(\s+(virgule|point)){AllPointRegex})";
 		public static readonly Func<string, string> DoubleDecimalPointRegex = (placeholder) => $@"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+[,\.])))\d+[,\.]\d+(?!([,\.]\d+))(?={placeholder})";
 		public static readonly Func<string, string> DoubleWithoutIntegralRegex = (placeholder) => $@"(?<=\s|^)(?<!(\d+))[,\.]\d+(?!([,\.]\d+))(?={placeholder})";
-		public const string DoubleWithMultiplierRegex = @"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\[,\.])))\d+[,\.]\d+\s*(k|m|t|g|b)(?=\b)";
+		public static readonly string DoubleWithMultiplierRegex = $@"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\[,\.])))\d+[,\.]\d+\s*{BaseNumbers.NumberMultiplierRegex}(?=\b)";
 		public static readonly string DoubleWithRoundNumber = $@"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\[,\.])))\d+[,\.]\d+\s+{RoundNumberIntegerRegex}(?=\b)";
 		public static readonly string DoubleAllFloatRegex = $@"((?<=\b){AllFloatRegex}(?=\b))";
 		public const string DoubleExponentialNotationRegex = @"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+[,\.])))(\d+([,\.]\d+)?)e([+-]*[1-9]\d*)(?=\b)";
 		public const string DoubleCaretExponentialNotationRegex = @"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+[,\.])))(\d+([,\.]\d+)?)\^([+-]*[1-9]\d*)(?=\b)";
-		public const string CurrencyRegex = @"(((?<=\W|^)-\s*)|(?<=\b))\d+\s*(B|b|m|t|g)(?=\b)";
 		public static readonly string NumberWithSuffixPercentage = $@"(?<!%)({BaseNumbers.NumberReplaceToken})(\s*)(%(?!{BaseNumbers.NumberReplaceToken})|(pourcentages|pourcents|pourcentage|pourcent)\b)";
 		public static readonly string NumberWithPrefixPercentage = $@"((?<!{BaseNumbers.NumberReplaceToken})%|pourcent|pourcent des|pourcentage de)(\s*)({BaseNumbers.NumberReplaceToken})(?=\s|$)";
 		public const char DecimalSeparatorChar = ',';
@@ -80,7 +79,7 @@ namespace Microsoft.Recognizers.Definitions.French
 		public static readonly string[] WrittenIntegerSeparatorTexts = { "et", "-" };
 		public static readonly string[] WrittenFractionSeparatorTexts = { "et", "sur" };
 		public const string HalfADozenRegex = @"(?<=\b)+demi\s+douzaine";
-		public const string DigitalNumberRegex = @"((?<=\b)(cent|mille|million|millions|milliard|milliards|billions|billion|douzaine(s)?)(?=\b))|((?<=(\d|\b))(k|t|m|g|b)(?=\b))";
+		public static readonly string DigitalNumberRegex = $@"((?<=\b)(cent|mille|million|millions|milliard|milliards|billions|billion|douzaine(s)?)(?=\b))|((?<=(\d|\b)){BaseNumbers.MultiplierLookupRegex}(?=\b))";
 		public const string AmbiguousFractionConnectorsRegex = @"^[.]";
 		public static readonly Dictionary<string, long> CardinalNumberMap = new Dictionary<string, long>
 		{

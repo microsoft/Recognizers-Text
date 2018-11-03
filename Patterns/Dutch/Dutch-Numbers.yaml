@@ -29,8 +29,9 @@ PlaceHolderDefault: !simpleRegex
 NumbersWithPlaceHolder: !paramsRegex
   def: (((?<!\d+\s*)-\s*)|(?<=\b))\d+(?!(\,\d+[a-zA-Z]))(?={placeholder})
   params: [ placeholder ]
-NumbersWithSuffix: !simpleRegex
-  def: (((?<!\d+\s*)-\s*)|(?<=\b))\d+\s*(k|m|t|g)(?=\b)
+NumbersWithSuffix: !nestedRegex
+  def: (((?<!\d+\s*)-\s*)|(?<=\b))\d+\s*{BaseNumbers.NumberMultiplierRegex}(?=\b)
+  references: [ BaseNumbers.NumberMultiplierRegex ]
 RoundNumberIntegerRegexWithLocks: !nestedRegex
   def: (?<=\b)\d+\s*{RoundNumberIntegerRegex}(?=\b)
   references: [ RoundNumberIntegerRegex ]
@@ -90,8 +91,9 @@ AllPointRegex: !nestedRegex
 AllFloatRegex: !nestedRegex
   def: '{AllIntRegex}(\s+komma){AllPointRegex}'
   references: [ AllIntRegex, AllPointRegex ]
-DoubleWithMultiplierRegex: !simpleRegex
-  def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+,)))\d+,\d+\s*(k|m|t|g|b)(?=\b)
+DoubleWithMultiplierRegex: !nestedRegex
+  def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+,)))\d+,\d+\s*{BaseNumbers.NumberMultiplierRegex}(?=\b)
+  references: [ BaseNumbers.NumberMultiplierRegex ]
 DoubleExponentialNotationRegex: !simpleRegex
   def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+,)))(\d+(,\d+)?)e([+-]*[1-9]\d*)(?=\b)
 DoubleCaretExponentialNotationRegex: !simpleRegex
@@ -108,9 +110,6 @@ DoubleWithRoundNumber: !nestedRegex
 DoubleAllFloatRegex: !nestedRegex
   def: ((?<=\b){AllFloatRegex}(?=\b))
   references: [ AllFloatRegex ]
-#Number Regex
-CurrencyRegex: !simpleRegex
-  def: (((?<=\W|^)-\s*)|(?<=\b))\d+\s*(B|b|m|t|g)(?=\b)
 #Percentage Regex
 NumberWithSuffixPercentage: !nestedRegex
   def: (?<!%)({BaseNumbers.NumberReplaceToken})(\s*)(%(?!{BaseNumbers.NumberReplaceToken})|(procent|percentage|percent)\b)
@@ -200,8 +199,9 @@ HalfADozenRegex: !simpleRegex
   def: (een\s+)?half\s+dozijn
 GrossRegex: !simpleRegex
   def: (een\s+)?gros
-DigitalNumberRegex: !simpleRegex
-  def: ((?<=\b)(honderd|duizend|miljoen|miljard|biljoen|dozijn?)(?=\b))|((?<=(\d|\b))(k|t|m|g|b)(?=\b))
+DigitalNumberRegex: !nestedRegex
+  def: ((?<=\b)(honderd|duizend|miljoen|miljard|biljoen|dozijn?)(?=\b))|((?<=(\d|\b)){BaseNumbers.MultiplierLookupRegex}(?=\b))
+  references: [ BaseNumbers.MultiplierLookupRegex ]
 CardinalNumberMap: !dictionary
   types: [ string, long ]
   entries:

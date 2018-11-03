@@ -544,6 +544,7 @@
   },
   {
     "Input": "10G",
+	"Debug": true,
     "Results": [
       {
         "Text": "10g",

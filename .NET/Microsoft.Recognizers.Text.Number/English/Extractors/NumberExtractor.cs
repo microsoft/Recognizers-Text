@@ -53,7 +53,8 @@ namespace Microsoft.Recognizers.Text.Number.English
                     cardExtract = CardinalExtractor.GetInstance(NumbersDefinitions.PlaceHolderPureNumber);
                     break;
                 case NumberMode.Currency:
-                    builder.Add(new Regex(NumbersDefinitions.CurrencyRegex, RegexOptions.Singleline), RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX));
+                    builder.Add(BaseNumberExtractor.CurrencyRegex,
+                                RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX));
                     break;
                 case NumberMode.Default:
                     break;

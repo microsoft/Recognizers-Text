@@ -43,8 +43,9 @@ PlaceHolderDefault: !simpleRegex
 NumbersWithPlaceHolder: !paramsRegex
   def: (((?<!\d+\s*)-\s*)|(?<=\b))\d+(?!([\.,]\d+[a-zA-Z]))(?={placeholder})
   params: [ placeholder ]
-NumbersWithSuffix: !simpleRegex
-  def: (((?<=\W|^)-\s*)|(?<=\b))\d+\s*(k|m|t|g)(?=\b)
+NumbersWithSuffix: !nestedRegex
+  def: (((?<=\W|^)-\s*)|(?<=\b))\d+\s*{BaseNumbers.NumberMultiplierRegex}(?=\b)
+  references: [ BaseNumbers.NumberMultiplierRegex ]
 RoundNumberIntegerRegexWithLocks: !nestedRegex
   def: (?<=\b)({DigitsNumberRegex})+\s+{RoundNumberIntegerRegex}(?=\b)
   references: [ DigitsNumberRegex, RoundNumberIntegerRegex ]
@@ -123,8 +124,9 @@ DoubleDecimalPointRegex: !paramsRegex
 DoubleWithoutIntegralRegex: !paramsRegex
   def: (?<=\s|^)(?<!(\d+))[\.,]\d+(?!([\.,]\d+))(?={placeholder})
   params: [ placeholder ]
-DoubleWithMultiplierRegex: !simpleRegex
-  def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\[\.,])))\d+[\.,]\d+\s*(k|m|t|g|b)(?=\b)
+DoubleWithMultiplierRegex: !nestedRegex
+  def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\[\.,])))\d+[\.,]\d+\s*{BaseNumbers.NumberMultiplierRegex}(?=\b)
+  references: [ BaseNumbers.NumberMultiplierRegex ]
 DoubleWithRoundNumber: !nestedRegex
   def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\[\.,])))\d+[\.,]\d+\s+{RoundNumberIntegerRegex}(?=\b)
   references: [ RoundNumberIntegerRegex ]
@@ -140,9 +142,6 @@ NumberWithPrefixPercentage: !nestedRegex
   def: (?<!%)({BaseNumbers.NumberReplaceToken})(\s*)(%(?!{BaseNumbers.NumberReplaceToken})|(por ciento|por cien)\b)
   references: [ BaseNumbers.NumberReplaceToken ]
 
-CurrencyRegex: !simpleRegex
-  def: (((?<=\W|^)-\s*)|(?<=\b))\d+\s*(b|m|t|g)(?=\b)
-
 DecimalSeparatorChar: !char ','
 FractionMarkerToken: sobre
 NonDecimalSeparatorChar: !char '.'
@@ -154,8 +153,9 @@ WrittenIntegerSeparatorTexts: [y]
 WrittenFractionSeparatorTexts: [con]
 HalfADozenRegex: !simpleRegex
   def: media\s+docena
-DigitalNumberRegex: !simpleRegex
-  def: ((?<=\b)(mil|millones|mill[oó]n|billones|bill[oó]n|trillones|trill[oó]n|docenas?)(?=\b))|((?<=(\d|\b))(k|t|m|g)(?=\b))
+DigitalNumberRegex: !nestedRegex
+  def: ((?<=\b)(mil|millones|mill[oó]n|billones|bill[oó]n|trillones|trill[oó]n|docenas?)(?=\b))|((?<=(\d|\b)){BaseNumbers.MultiplierLookupRegex}(?=\b))
+  references: [ BaseNumbers.MultiplierLookupRegex ]
 CardinalNumberMap: !dictionary
   types: [ string, long ]
   entries:

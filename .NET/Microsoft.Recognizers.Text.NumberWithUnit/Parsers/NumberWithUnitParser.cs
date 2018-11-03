@@ -95,6 +95,9 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                 }
             }
 
+            // @TODO @HERE
+            ret.Text = ret.Text.ToLowerInvariant();
+
             return ret;
         }
 

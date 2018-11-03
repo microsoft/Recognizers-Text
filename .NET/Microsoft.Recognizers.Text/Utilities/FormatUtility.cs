@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Text;
@@ -39,10 +41,43 @@ namespace Microsoft.Recognizers.Text.Utilities
 
             if (toLower)
             {
-                query = query.ToLowerInvariant();
+                query = Convert(query, list);//.ToLowerInvariant());
             }
 
             return query;
+        }
+
+        static List<string> list = new List<string> { "M", "KB", "kB", "K", "G", "GB", "Gb", "B" };
+
+        private static void ApplyReverse(int idx, char[] str, string value)
+        {
+            for (int i = 0; i < value.Length; ++i)
+            {
+                str[idx + i] = value[i];
+            }
+        }
+
+        public static string Convert(string toConvert, List<string> maintainList)
+        {
+            var res = toConvert.ToLowerInvariant().ToCharArray();
+
+            foreach (var value in maintainList)
+            {
+                
+                for (int idx = 0; ; idx += value.Length)
+                {
+                    idx = toConvert.IndexOf(value, idx, StringComparison.Ordinal);
+                    if (idx == -1)
+                        break;
+                    char leftChar = idx <= 0 ? ' ' : toConvert[idx - 1];
+                    char rightChar = idx + value.Length >= toConvert.Length ? ' ' : toConvert[idx + value.Length];
+                    if (leftChar == ' ' && rightChar == ' ' || char.IsNumber(leftChar))
+                    {
+                        ApplyReverse(idx, res, value);
+                    }
+                }
+            }
+            return new string(res);
         }
 
         public static string RemoveDiacritics(string query)
