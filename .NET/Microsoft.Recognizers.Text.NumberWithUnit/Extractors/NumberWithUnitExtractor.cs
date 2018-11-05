@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.Immutable;
 using System.Linq;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Text.Matcher;
@@ -24,13 +23,12 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             this.config = config;
 
             if (this.config.SuffixList?.Count > 0)
-            {         
+            {
                 suffixMatcher = BuildMatcherFromSet(this.config.SuffixList.Values.ToArray());
             }
 
             if (this.config.PrefixList?.Count > 0)
             {
-
                 foreach (var preMatch in this.config.PrefixList.Values)
                 {
                     var matchList = preMatch.Split(separators, StringSplitOptions.RemoveEmptyEntries);
@@ -41,7 +39,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                 }
 
                 // 2 is the maximum length of spaces.
-                maxPrefixMatchLen += 2;  
+                maxPrefixMatchLen += 2;
                 prefixMatcher = BuildMatcherFromSet(this.config.PrefixList.Values.ToArray());
             }
 
@@ -161,12 +159,15 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
             var mappingPrefix = new Dictionary<int, PrefixUnitResult>();
             var matched = new bool[source.Length];
-            var numbers = this.config.UnitNumExtractor.Extract(source);
             var sourceLen = source.Length;
+            var prefixMatched = false;
 
-            // Mix prefix and numbers, make up a prefix-number combination
-            if (maxPrefixMatchLen != 0)
+            var prefixMatch = prefixMatcher.Find(source.ToLower()).OrderBy(o => o.Start).ToList();
+            var suffixMatch = suffixMatcher.Find(source.ToLower()).OrderBy(o => o.Start).ToList();
+
+            if (prefixMatch.Count > 0 || suffixMatch.Count > 0)
             {
+                var numbers = this.config.UnitNumExtractor.Extract(source).OrderBy(o => o.Start);
                 foreach (var number in numbers)
                 {
                     if (number.Start == null || number.Length == null)
@@ -174,147 +175,134 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                         continue;
                     }
 
+                    int start = (int)number.Start, length = (int)number.Length;
                     var maxFindPref = Math.Min(maxPrefixMatchLen, number.Start.Value);
-                    if (maxFindPref == 0)
+                    var maxFindSuff = sourceLen - start - length;
+
+                    if (maxFindPref != 0)
                     {
-                        continue;
-                    }
+                        // Scan from left to right, find the longest match              
+                        var lastIndex = start;
+                        MatchResult<String> bestMatch = null;
 
-                    // Scan from left to right , find the longest match 
-                    var leftStr = source.Substring(number.Start.Value - maxFindPref, maxFindPref);
-                    var lastIndex = leftStr.Length;
-
-                    MatchResult<String> bestMatch = null;
-                    var prefixMatch = prefixMatcher.Find(leftStr.ToLower());
-
-                    foreach (var m in prefixMatch)
-                    {
-                        if (m.Length > 0 && leftStr.Substring(m.Start, lastIndex - m.Start).ToLower().Trim() == m.Text)
+                        foreach (var m in prefixMatch)
                         {
-                            if (bestMatch == null || bestMatch.Start >= m.Start)
+                            if (m.Length > 0 && m.End > start)
+                            {
+                                break;
+                            }
+
+                            if (m.Length > 0 && source.Substring(m.Start, lastIndex - m.Start).ToLower().Trim() ==
+                                m.Text)
                             {
                                 bestMatch = m;
+                                break;
                             }
+                        }
+
+                        if (bestMatch != null)
+                        {
+                            var offSet = lastIndex - bestMatch.Start;
+                            var unitStr = source.Substring(bestMatch.Start, offSet);
+                            mappingPrefix.Add(number.Start.Value, new PrefixUnitResult { Offset = offSet, UnitStr = unitStr });
                         }
                     }
 
-                    if (bestMatch != null)
+                    mappingPrefix.TryGetValue(start, out PrefixUnitResult prefixUnit);
+                    if (maxFindSuff > 0)
                     {
-                        var offSet = lastIndex - bestMatch.Start;
-                        var unitStr = leftStr.Substring(bestMatch.Start, offSet);
-                        mappingPrefix.Add(number.Start.Value, new PrefixUnitResult { Offset = offSet, UnitStr = unitStr });
-                    }
-                }
-            }
+                        // find the best suffix unit
+                        var maxlen = 0;
+                        var firstIndex = start + length;
 
-            foreach (var number in numbers)
-            {
-                if (number.Start == null || number.Length == null)
-                {
-                    continue;
-                }
-
-                int start = (int)number.Start, length = (int)number.Length;
-                var maxFindLen = sourceLen - start - length;
-
-                mappingPrefix.TryGetValue(start, out PrefixUnitResult prefixUnit);
-
-                if (maxFindLen > 0)
-                {
-                    var rightSub = source.Substring(start + length, maxFindLen);
-                    var suffixMatch = suffixMatcher.Find(rightSub.ToLower()).ToList();
-
-                    var maxlen = 0;
-                    foreach (var m in suffixMatch)
-                    {
-                        if (m.Length > 0)
+                        foreach (var m in suffixMatch)
                         {
-                            var endpos = m.Start + m.Length;
-                            if (m.Start >= 0)
+                            if (m.Length > 0 && m.Start >= firstIndex)
                             {
-                                var midStr = rightSub.Substring(0, Math.Min(m.Start, rightSub.Length));
+                                var endpos = m.Start + m.Length - firstIndex;
+                                var midStr = source.Substring(firstIndex, m.Start - firstIndex);
 
-                                if (maxlen < endpos && 
+                                if (maxlen < endpos &&
                                     (string.IsNullOrWhiteSpace(midStr) || midStr.Trim().Equals(this.config.ConnectorToken)))
                                 {
                                     maxlen = endpos;
                                 }
+
                             }
+                        }
+
+                        if (maxlen != 0)
+                        {
+                            for (var i = 0; i < length + maxlen; i++)
+                            {
+                                matched[i + start] = true;
+                            }
+
+                            var substr = source.Substring(start, length + maxlen);
+
+                            var er = new ExtractResult
+                            {
+                                Start = start,
+                                Length = length + maxlen,
+                                Text = substr,
+                                Type = this.config.ExtractType
+                            };
+
+                            if (prefixUnit != null)
+                            {
+                                prefixMatched = true;
+                                er.Start -= prefixUnit.Offset;
+                                er.Length += prefixUnit.Offset;
+                                er.Text = prefixUnit.UnitStr + er.Text;
+                            }
+
+                            // Relative position will be used in Parser
+                            number.Start = start - er.Start;
+                            er.Data = number;
+
+                            // Special treatment, handle cases like '2:00 pm', '00 pm' is not dimension
+                            var isNotUnit = false;
+                            if (er.Type.Equals(Constants.SYS_UNIT_DIMENSION))
+                            {
+                                var nonUnitMatch = this.config.PmNonUnitRegex.Matches(source);
+
+                                foreach (Match time in nonUnitMatch)
+                                {
+                                    if (er.Start >= time.Index && er.Start + er.Length <= time.Index + time.Length)
+                                    {
+                                        isNotUnit = true;
+                                        break;
+                                    }
+                                }
+                            }
+
+                            if (isNotUnit)
+                            {
+                                continue;
+                            }
+
+                            result.Add(er);
                         }
                     }
 
-                    if (maxlen != 0)
+                    if (prefixUnit != null && !prefixMatched)
                     {
-                        for (var i = 0; i < length + maxlen; i++)
-                        {
-                            matched[i + start] = true;
-                        }
-
-                        var substr = source.Substring(start, length + maxlen);
-
                         var er = new ExtractResult
                         {
-                            Start = start,
-                            Length = length + maxlen,
-                            Text = substr,
+                            Start = number.Start - prefixUnit.Offset,
+                            Length = number.Length + prefixUnit.Offset,
+                            Text = prefixUnit.UnitStr + number.Text,
                             Type = this.config.ExtractType
                         };
-
-                        if (prefixUnit != null)
-                        {
-                            er.Start -= prefixUnit.Offset;
-                            er.Length += prefixUnit.Offset;
-                            er.Text = prefixUnit.UnitStr + er.Text;
-                        }
 
                         // Relative position will be used in Parser
                         number.Start = start - er.Start;
                         er.Data = number;
-
-                        // Special treatment, handle cases like '2:00 pm', '00 pm' is not dimension
-                        var isNotUnit = false;
-                        if (er.Type.Equals(Constants.SYS_UNIT_DIMENSION))
-                        {
-                            var nonUnitMatch = this.config.PmNonUnitRegex.Matches(source);                           
-
-                            foreach (Match time in nonUnitMatch)
-                            {
-                                if (er.Start >= time.Index && er.Start + er.Length <= time.Index + time.Length)
-                                {
-                                    isNotUnit = true;
-                                    break;
-                                }
-                            }
-                        }
-
-                        if (isNotUnit)
-                        {
-                            continue;
-                        }
-
                         result.Add(er);
-
-                        continue;
                     }
                 }
-
-                if (prefixUnit != null)
-                {
-                    var er = new ExtractResult
-                    {
-                        Start = number.Start - prefixUnit.Offset,
-                        Length = number.Length + prefixUnit.Offset,
-                        Text = prefixUnit.UnitStr + number.Text,
-                        Type = this.config.ExtractType
-                    };
-                    
-                    // Relative position will be used in Parser
-                    number.Start = start - er.Start;
-                    er.Data = number;
-                    result.Add(er);
-                }
             }
-            
+
             // Extract Separate unit
             if (separateRegex != null)
             {
@@ -326,7 +314,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
             return result;
         }
-        
+
         public void ExtractSeparateUnits(string source, List<ExtractResult> numDependResults)
         {
             // Default is false
@@ -397,7 +385,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                 }
             }
         }
-        
+
         protected virtual bool PreCheckStr(string str)
         {
             return !string.IsNullOrEmpty(str);
@@ -406,7 +394,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
         private bool DimensionInsideTime(Match dimension, Match time)
         {
             bool isSubMatch = dimension.Index >= time.Index && dimension.Index + dimension.Length <= time.Index + time.Length;
-            return isSubMatch;        
+            return isSubMatch;
         }
 
         private List<ExtractResult> FilterAmbiguity(List<ExtractResult> ers, string text)

@@ -19,9 +19,8 @@ namespace Microsoft.Recognizers.Text.Matcher
             var chars = input.ToCharArray();
             for (int i = 0; i < chars.Length; i++)
             {
-                var c = chars[i];
-
-                if (!char.IsLetterOrDigit(c) || IsCjk(c))
+                var c = chars[i];             
+                if (!char.IsLetter(c) || IsCjk(c))
                 {
                     if (inToken)
                     {
