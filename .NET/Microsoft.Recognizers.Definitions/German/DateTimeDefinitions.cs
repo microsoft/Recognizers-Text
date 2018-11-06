@@ -26,7 +26,13 @@ namespace Microsoft.Recognizers.Definitions.German
 		public const string ThisPrefixRegex = @"(dies(er|en|em|es|e)|jetzig(er|en|es|e))";
 		public const string DayRegex = @"((der|dem|des)\s*)?(?<day>(01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|1|20|21|22|23|24|25|26|27|28|29|2|30|31|3|4|5|6|7|8|9))(\.)?";
 		public const string MonthNumRegex = @"(?<month>01([\.])?|02([\.])?|03([\.])?|04([\.])?|05([\.])?|06([\.])?|07([\.])?|08([\.])?|09([\.])?|10([\.])?|11([\.])?|12([\.])?|1([\.])?|2([\.])?|3([\.])?|4([\.])?|5([\.])?|6([\.])?|7([\.])?|8([\.])?|9([\.])?)\b";
-		public const string YearRegex = @"(?<year>19\d{2}|20\d{2})";
+		public static readonly string DescRegex = $@"({OclockRegex})";
+		public const string AmDescRegex = @"(am\b|a\.m\.|a m\b|a\. m\.|a\.m\b|a\. m\b|a m\b)";
+		public const string PmDescRegex = @"(pm\b|p\.m\.|p\b|p m\b|p\. m\.|p\.m\b|p\. m\b|p m\b)";
+		public const string AmPmDescRegex = @"(ampm)";
+		public static readonly string TwoDigitYearRegex = $@"\b(?<![$])(?<year>([0-27-9]\d))(?!(\s*((\:)|{AmDescRegex}|{PmDescRegex}|\.\d)))\b";
+		public static readonly string FullTextYearRegex = $@"\b((?<firsttwoyearnum>{CenturyRegex})\s+(?<lasttwoyearnum>((zwanzig|dreißig|vierzig|fünfzig|sechzig|siebzig|achtzig|neunzig)\s+{WrittenNumRegex})|{WrittenNumRegex}))\b|\b(?<firsttwoyearnum>{CenturyRegex})\b";
+		public static readonly string YearRegex = $@"({BaseDateTime.FourDigitYearRegex}|{FullTextYearRegex})";
 		public const string WeekDayRegex = @"(?<weekday>sonntag|montag|dienstag|mittwoch|donnerstag|freitag|samstag|(mo|di|mi|do|fr|sa|so)(\.))";
 		public const string SingleWeekDayRegex = @"(?<weekday>sonntag|montag|dienstag|mittwoch|donnerstag|freitag|samstag|(mo|di|mi|do|fr|sa|so)(\.))";
 		public static readonly string RelativeMonthRegex = $@"(?<relmonth>{RelativeRegex}\s+monat(s)?)";
@@ -55,8 +61,6 @@ namespace Microsoft.Recognizers.Definitions.German
 		public const string WeekOfRegex = @"(die\s+)?(woche)(\s+des)";
 		public const string MonthOfRegex = @"(monat)(\s*)(des)";
 		public const string MonthRegex = @"(?<month>april|apr.|august|aug.|dezember|dez.|februar|feb.|januar|jan.|juli|jul.|juni|jun.|märz|mai|november|nov.|oktober|okt.|september|sep.)";
-		public const string AmDescRegex = @"(am\b|a\.m\.|a m\b|a\. m\.|a\.m\b|a\. m\b|a m\b)";
-		public const string PmDescRegex = @"(pm\b|p\.m\.|p\b|p m\b|p\. m\.|p\.m\b|p\. m\b|p m\b)";
 		public static readonly string DateYearRegex = $@"(?<year>19\d{{2}}|20\d{{2}}|(([0-27-9]\d)(?!(\s*((\:)|{AmDescRegex}|{PmDescRegex})))))";
 		public static readonly string OnRegex = $@"(?<=\bam\s+)({DayRegex}s?)\b";
 		public const string RelaxedOnRegex = @"(?<=\b(am|an dem)\s+)((?<day>10|11|12|13|14|15|16|17|18|19|1|20|21|22|23|24|25|26|27|28|29|2|30|31|3|4|5|6|7|8|9)([\.]))";
@@ -87,7 +91,6 @@ namespace Microsoft.Recognizers.Definitions.German
 		public static readonly string WeekDayEnd = $@"{WeekDayRegex}\s*,?\s*$";
 		public const string RangeUnitRegex = @"(?<unit>jahren|jahre|jahr|monaten|monate|monat|wochen|woche|tagen|tage|tag)";
 		public const string OclockRegex = @"(?<oclock>Uhr)";
-		public static readonly string DescRegex = $@"({OclockRegex})";
 		public const string HourNumRegex = @"\b(?<hournum>'null'|ein|eins|zwei|drei|vier|fünf|fuenf|sechs|sieben|acht|neun|zehn|elf|zwölf|zwoelf|dreizehn|vierzehn|fünfzehn|sechzehn|siebzehn|achtzehn|neunzehn|zwanzig|einundzwanzig|zweiundzwanzig|dreiundzwanzig|vierundzwanzig)\b";
 		public const string MinuteNumRegex = @"(?<minnum>zwanzig|dreißig|vierzig|fünfzig|ein|eins|zwei|drei|vier|fünf|fuenf|sechs|sieben|acht|neun|zehn|elf|zwölf|zwoelf|dreizehn|vierzehn|fünfzehn|fuenfzehn|sechzehn|siebzehn|achtzehn|neunzehn)";
 		public const string DeltaMinuteNumRegex = @"(?<deltaminnum>zwanzig|dreißig|vierzig|fünfzig|ein|eins|zwei|drei|vier|fünf|fuenf|sechs|sieben|acht|neun|zehn|elf|zwölf|zwoelf|dreizehn|vierzehn|fünfzehn|fuenfzehn|sechzehn|siebzehn|achtzehn|neunzehn)";
@@ -182,7 +185,6 @@ namespace Microsoft.Recognizers.Definitions.German
 		public const string LaterRegex = @"\b(später|von jetzt an)\b";
 		public const string InConnectorRegex = @"\b(in)\b";
 		public static readonly string WithinNextPrefixRegex = $@"\b(innerhalb|während(\s+der|de(s|m))?(\s+(?<next>{NextPrefixRegex}))?)\b";
-		public const string AmPmDescRegex = @"(ampm)";
 		public const string MorningStartEndRegex = @"(^(morgen(s)?))|((morgen(s)?)$)";
 		public const string AfternoonStartEndRegex = @"(^(nachmittag(s)?))|((nachmittag(s)?)$)";
 		public const string EveningStartEndRegex = @"(^(abend(s)?))|((abend(s)?)$)";
@@ -220,7 +222,6 @@ namespace Microsoft.Recognizers.Definitions.German
 		public const string DecadeRegex = @"(?<decade>zwanziger|dreißiger|vierziger|fünfziger|sechziger|siebziger|achtziger|neunziger|zweitausender)(n)?";
 		public static readonly string DecadeWithCenturyRegex = $@"(die\s+)?(((?<century>\d|1\d|2\d)?(')?(?<decade>\d0)(')?s)|(({CenturyRegex}(\s+|-)(und\s+)?)?{DecadeRegex})|({CenturyRegex}(\s+|-)(und\s+)?(?<decade>zehner|hunderter)))";
 		public static readonly string RelativeDecadeRegex = $@"\b((das|die\s+)?{RelativeRegex}\s+((?<number>[\w,]+)\s+)?jahrzehnte?)\b";
-		public static readonly string FullTextYearRegex = $@"\b((?<firsttwoyearnum>{CenturyRegex})\s+(?<lasttwoyearnum>((zwanzig|dreißig|vierzig|fünfzig|sechzig|siebzig|achtzig|neunzig)\s+{WrittenNumRegex})|{WrittenNumRegex}))\b|\b(?<firsttwoyearnum>{CenturyRegex})\b";
 		public static readonly string YearSuffix = $@"(,?\s*({DateYearRegex}|{FullTextYearRegex}))";
 		public const string YearAfterRegex = @"^[.]";
 		public static readonly string YearPeriodRegex = $@"((((von|während|zwischen)\s+)?{YearRegex}\s*({TillRegex})\s*{YearRegex})|(((zwischen)\s+){YearRegex}\s*({RangeConnectorRegex})\s*{YearRegex}))";
@@ -800,5 +801,25 @@ namespace Microsoft.Recognizers.Definitions.German
 		};
 		public const string DefaultLanguageFallback = "DMY";
 		public static readonly string[] DurationDateRestrictions = {  };
+		public static readonly IList<string> MorningTermList = new List<string>
+		{
+			"morgen"
+		};
+		public static readonly IList<string> AfternoonTermList = new List<string>
+		{
+			"nachmittag"
+		};
+		public static readonly IList<string> EveningTermList = new List<string>
+		{
+			"abend"
+		};
+		public static readonly IList<string> DaytimeTermList = new List<string>
+		{
+			"tag"
+		};
+		public static readonly IList<string> NightTermList = new List<string>
+		{
+			"nacht"
+		};
 	}
 }
