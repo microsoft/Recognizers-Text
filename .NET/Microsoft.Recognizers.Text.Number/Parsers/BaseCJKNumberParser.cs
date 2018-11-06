@@ -102,6 +102,7 @@ namespace Microsoft.Recognizers.Text.Number
             {
                 builder.Append(Config.TratoSimMap.ContainsKey(c) ? Config.TratoSimMap[c] : c);
             }
+
             return builder.ToString();
         }
 

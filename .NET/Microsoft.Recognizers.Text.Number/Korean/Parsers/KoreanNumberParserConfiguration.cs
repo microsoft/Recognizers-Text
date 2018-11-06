@@ -52,7 +52,7 @@ namespace Microsoft.Recognizers.Text.Number.Korean
             NegativeNumberTermsRegex = new Regex(NumbersDefinitions.NegativeNumberTermsRegex, RegexOptions.Singleline);
             NegativeNumberSignRegex = new Regex(NumbersDefinitions.NegativeNumberSignRegex, RegexOptions.Singleline);
             PointRegex = new Regex(NumbersDefinitions.PointRegex, RegexOptions.Singleline);
-            SpeGetNumberRegex = new Regex(NumbersDefinitions.SpeGetNumberRegex, RegexOptions.Singleline | RegexOptions.IgnoreCase);
+            SpeGetNumberRegex = new Regex(NumbersDefinitions.SpeGetNumberRegex, RegexOptions.Singleline);
             PairRegex = new Regex(NumbersDefinitions.PairRegex, RegexOptions.Singleline);
             RoundNumberIntegerRegex = new Regex(NumbersDefinitions.RoundNumberIntegerRegex, RegexOptions.Singleline);
             FractionPrepositionRegex = null;

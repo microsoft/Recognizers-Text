@@ -1,4 +1,4 @@
-import { IExtractor, ExtractResult, FormatUtility } from "@microsoft/recognizers-text";
+import { IExtractor, ExtractResult, QueryProcessor } from "@microsoft/recognizers-text";
 import { RegExpUtility } from "@microsoft/recognizers-text";
 import { IDateTimeParser, DateTimeParseResult } from "../dateTime/parsers"
 import { Constants, TimeTypeConstants } from "../dateTime/constants";
