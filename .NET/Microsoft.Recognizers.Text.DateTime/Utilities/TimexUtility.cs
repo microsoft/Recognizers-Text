@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Globalization;
 using System.Text;
@@ -264,5 +265,38 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             return $"({beginTimex},{endTimex},{durationTimex})";
         }
+
+        public static RangeTimexComponents GetRangeTimexComponents(string rangeTimex)
+        {
+            rangeTimex = rangeTimex.Replace("(", "").Replace(")", "");
+            var components = rangeTimex.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
+            var result = new RangeTimexComponents();
+            
+            if (components.Length == 3)
+            {
+                result.BeginTimex = components[0];
+                result.EndTimex = components[1];
+                result.DurationTimex = components[2];
+                result.IsValid = true;
+            }
+
+            return result;
+        }
+
+        public static bool IsRangeTimex(string timex)
+        {
+            return !string.IsNullOrEmpty(timex) && timex.StartsWith("(");
+        }
+    }
+
+    public class RangeTimexComponents
+    {
+        public string BeginTimex;
+
+        public string EndTimex;
+
+        public string DurationTimex;
+
+        public bool IsValid = false;
     }
 }

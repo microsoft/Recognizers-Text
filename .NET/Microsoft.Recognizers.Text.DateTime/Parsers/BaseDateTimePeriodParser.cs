@@ -29,7 +29,8 @@ namespace Microsoft.Recognizers.Text.DateTime
             object value = null;
             if (er.Type.Equals(ParserName))
             {
-                var innerResult = MergeDateAndTimePeriods(er.Text, referenceTime);
+                var innerResult = MergeDateWithSingleTimePeriod(er.Text, referenceTime);
+
                 if (!innerResult.Success)
                 {
                     innerResult = MergeTwoTimePoints(er.Text, referenceTime);
@@ -290,7 +291,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        private DateTimeResolutionResult MergeDateAndTimePeriods(string text, DateObject referenceTime)
+        private DateTimeResolutionResult MergeDateWithSingleTimePeriod(string text, DateObject referenceTime)
         {
             var ret = new DateTimeResolutionResult();
             var trimmedText = text.Trim().ToLower();
@@ -319,18 +320,18 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var timePeriodTimex = timePeriodResolutionResult.Timex;
 
                 // If it is a range type timex
-                if (!string.IsNullOrEmpty(timePeriodTimex) && timePeriodTimex.StartsWith("("))
+                if (TimexUtility.IsRangeTimex(timePeriodTimex))
                 {
 
                     var dateResult = this.Config.DateExtractor.Extract(trimmedText.Replace(ers[0].Text, ""), referenceTime);
 
-                    var dateText = trimmedText.Replace(ers[0].Text, "")
-                        .Replace(Config.TokenBeforeDate, "").Trim();
+                    var dateText = trimmedText.Replace(ers[0].Text, "").Replace(Config.TokenBeforeDate, "").Trim();
 
+                    // If only one Date is extracted and the Date text equals to the rest part of source text
                     if (dateResult.Count == 1 && dateText.Equals(dateResult[0].Text))
                     {
 
-                        string dateStr;
+                        string dateTimex;
                         DateObject futureTime;
                         DateObject pastTime;
 
@@ -341,25 +342,24 @@ namespace Microsoft.Recognizers.Text.DateTime
                             futureTime = (DateObject)((DateTimeResolutionResult)pr.Value).FutureValue;
                             pastTime = (DateObject)((DateTimeResolutionResult)pr.Value).PastValue;
 
-                            dateStr = pr.TimexStr;
+                            dateTimex = pr.TimexStr;
                         }
                         else
                         {
                             return ParsePureNumberCases(text, referenceTime);
                         }
 
-                        timePeriodTimex = timePeriodTimex.Replace("(", "").Replace(")", "");
-                        var timePeriodTimexArray = timePeriodTimex.Split(',');
-                        var timePeriodFutureValue = (Tuple<DateObject, DateObject>)timePeriodResolutionResult.FutureValue;
-                        var beginTime = timePeriodFutureValue.Item1;
-                        var endTime = timePeriodFutureValue.Item2;
+                        var rangeTimexComponents = TimexUtility.GetRangeTimexComponents(timePeriodTimex);
 
-                        if (timePeriodTimexArray.Length == 3)
+                        if (rangeTimexComponents.IsValid)
                         {
-                            var beginStr = dateStr + timePeriodTimexArray[0];
-                            var endStr = dateStr + timePeriodTimexArray[1];
+                            var beginTimex = TimexUtility.CombineDateAndTimeTimex(dateTimex, rangeTimexComponents.BeginTimex);
+                            var endTimex = TimexUtility.CombineDateAndTimeTimex(dateTimex, rangeTimexComponents.EndTimex);
+                            ret.Timex = TimexUtility.GenerateDateTimePeriodTimex(beginTimex, endTimex, rangeTimexComponents.DurationTimex);
 
-                            ret.Timex = $"({beginStr},{endStr},{timePeriodTimexArray[2]})";
+                            var timePeriodFutureValue = (Tuple<DateObject, DateObject>)timePeriodResolutionResult.FutureValue;
+                            var beginTime = timePeriodFutureValue.Item1;
+                            var endTime = timePeriodFutureValue.Item2;
 
                             ret.FutureValue = new Tuple<DateObject, DateObject>(
                                 DateObject.MinValue.SafeCreateFromValue(futureTime.Year, futureTime.Month, futureTime.Day,
@@ -401,6 +401,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
+        // Handle cases like "Monday 7-9", where "7-9" can't be extracted by the TimePeriodExtractor
         private DateTimeResolutionResult ParsePureNumberCases(string text, DateObject referenceTime)
         {
             var ret = new DateTimeResolutionResult();
@@ -706,6 +707,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (match.Success)
             {
                 timeText = match.Groups[Constants.TimeOfDayGroupName].Value;
+
                 if (!string.IsNullOrEmpty(match.Groups["early"].Value))
                 {
                     hasEarly = true;
