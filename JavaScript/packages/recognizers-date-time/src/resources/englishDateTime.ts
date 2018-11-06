@@ -8,8 +8,8 @@
 
 import { BaseDateTime } from "./baseDateTime";
 export namespace EnglishDateTime {
-	export const TillRegex = `(?<till>\\b(to|till|til|until|thru|through)\\b|(--|-|—|——|~|–))`;
-	export const RangeConnectorRegex = `(?<and>\\b(and|through|to)\\b|(--|-|—|——|~|–))`;
+	export const TillRegex = `(?<till>\\b(to|till|til|until|thru|through)\\b|${BaseDateTime.RangeConnectorSymbolRegex})`;
+	export const RangeConnectorRegex = `(?<and>\\b(and|through|to)\\b|${BaseDateTime.RangeConnectorSymbolRegex})`;
 	export const RelativeRegex = `\\b(?<order>following|next|coming|upcoming|this|last|past|previous|current|the)\\b`;
 	export const StrictRelativeRegex = `\\b(?<order>following|next|coming|upcoming|this|last|past|previous|current)\\b`;
 	export const NextPrefixRegex = `\\b(following|next|upcoming|coming)\\b`;
@@ -94,7 +94,7 @@ export namespace EnglishDateTime {
 	export const DateExtractor7 = `\\b(${WeekDayRegex}\\s+)?${MonthNumRegex}\\s*/\\s*${DayRegex}((\\s+|\\s*,\\s*|\\s+of\\s+)${DateYearRegex})?(?![%])\\b`;
 	export const DateExtractor8 = `(?<=${DatePreposition}\\s+)(${WeekDayRegex}\\s+)?${DayRegex}[\\\\\\-]${MonthNumRegex}(?![%])\\b`;
 	export const DateExtractor9 = `\\b(${WeekDayRegex}\\s+)?${DayRegex}\\s*/\\s*${MonthNumRegex}((\\s+|\\s*,\\s*|\\s+of\\s+)${DateYearRegex})?(?![%])\\b`;
-	export const DateExtractorA = `\\b(${WeekDayRegex}\\s+)?${DateYearRegex}\\s*[/\\\\\\-\\.]\\s*${MonthNumRegex}\\s*[/\\\\\\-\\.]\\s*${DayRegex}`;
+	export const DateExtractorA = `\\b(${WeekDayRegex}\\s+)?${BaseDateTime.FourDigitYearRegex}\\s*[/\\\\\\-\\.]\\s*${MonthNumRegex}\\s*[/\\\\\\-\\.]\\s*${DayRegex}`;
 	export const OfMonth = `^\\s*of\\s*${MonthRegex}`;
 	export const MonthEnd = `${MonthRegex}\\s*(the)?\\s*$`;
 	export const WeekDayEnd = `(this\\s+)?${WeekDayRegex}\\s*,?\\s*$`;

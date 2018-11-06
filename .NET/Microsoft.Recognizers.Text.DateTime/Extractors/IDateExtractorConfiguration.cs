@@ -41,6 +41,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex RangeUnitRegex { get; }
 
+        Regex RangeConnectorSymbolRegex { get; }
+
         IExtractor IntegerExtractor { get; }
 
         IExtractor OrdinalExtractor { get; }

@@ -7468,5 +7468,461 @@
         }
       }
     ]
+  },
+  {
+    "Input": "My vacation is from 10-1-2018-10-7-2018",
+    "Context": {
+      "ReferenceDateTime": "2018-10-24T12:00:00"
+    },
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "from 10-1-2018-10-7-2018",
+        "Start": 15,
+        "End": 38,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2018-10-01,2018-10-07,P6D)",
+              "type": "daterange",
+              "start": "2018-10-01",
+              "end": "2018-10-07"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My vacation is from 10/1/2018 - 10/7/2018",
+    "Context": {
+      "ReferenceDateTime": "2018-10-24T12:00:00"
+    },
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "from 10/1/2018 - 10/7/2018",
+        "Start": 15,
+        "End": 40,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2018-10-01,2018-10-07,P6D)",
+              "type": "daterange",
+              "start": "2018-10-01",
+              "end": "2018-10-07"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My vacation is from 10/1/2018-10/7/2018",
+    "Context": {
+      "ReferenceDateTime": "2018-10-24T12:00:00"
+    },
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "from 10/1/2018-10/7/2018",
+        "Start": 15,
+        "End": 38,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2018-10-01,2018-10-07,P6D)",
+              "type": "daterange",
+              "start": "2018-10-01",
+              "end": "2018-10-07"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I will have a long vacation between 10/1-11/7",
+    "Context": {
+      "ReferenceDateTime": "2018-10-24T12:00:00"
+    },
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "between 10/1-11/7",
+        "Start": 28,
+        "End": 44,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-10-01,XXXX-11-07,P37D)",
+              "type": "daterange",
+              "start": "2018-10-01",
+              "end": "2018-11-07"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I will have a long vacation between 10/1-11/7",
+    "Context": {
+      "ReferenceDateTime": "2018-10-24T12:00:00"
+    },
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "between 10/1-11/7",
+        "Start": 28,
+        "End": 44,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-10-01,XXXX-11-07,P37D)",
+              "type": "daterange",
+              "start": "2018-10-01",
+              "end": "2018-11-07"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "APEC will happen in Korea Jan-Feb 2017",
+    "Context": {
+      "ReferenceDateTime": "2018-10-24T12:00:00"
+    },
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "jan-feb 2017",
+        "Start": 26,
+        "End": 37,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2017-01-01,2017-02-01,P1M)",
+              "type": "daterange",
+              "start": "2017-01-01",
+              "end": "2017-02-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "APEC will happen in Korea Jan-Feb 2017",
+    "Context": {
+      "ReferenceDateTime": "2018-10-24T12:00:00"
+    },
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "jan-feb 2017",
+        "Start": 26,
+        "End": 37,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2017-01-01,2017-02-01,P1M)",
+              "type": "daterange",
+              "start": "2017-01-01",
+              "end": "2017-02-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "APEC will happen in Korea Nov-Feb 2017",
+    "Context": {
+      "ReferenceDateTime": "2018-10-24T12:00:00"
+    },
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "nov-feb 2017",
+        "Start": 26,
+        "End": 37,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2016-11-01,2017-02-01,P3M)",
+              "type": "daterange",
+              "start": "2016-11-01",
+              "end": "2017-02-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "APEC will happen in Korea Nov-Feb 5th, 2017",
+    "Context": {
+      "ReferenceDateTime": "2018-10-24T12:00:00"
+    },
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "nov-feb 5th, 2017",
+        "Start": 26,
+        "End": 42,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2016-11-01,2017-02-05,P96D)",
+              "type": "daterange",
+              "start": "2016-11-01",
+              "end": "2017-02-05"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "APEC will happen in Korea Nov 18-Dec 19, 2015",
+    "Context": {
+      "ReferenceDateTime": "2018-10-24T12:00:00"
+    },
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "nov 18-dec 19, 2015",
+        "Start": 26,
+        "End": 44,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2015-11-18,2015-12-19,P31D)",
+              "type": "daterange",
+              "start": "2015-11-18",
+              "end": "2015-12-19"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "APEC will happen in Korea Nov 18 2014-Dec 19 2015",
+    "Context": {
+      "ReferenceDateTime": "2018-10-24T12:00:00"
+    },
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "nov 18 2014-dec 19 2015",
+        "Start": 26,
+        "End": 48,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2014-11-18,2015-12-19,P396D)",
+              "type": "daterange",
+              "start": "2014-11-18",
+              "end": "2015-12-19"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "APEC will happen in Korea Nov 18 2014-Dec 19 2015",
+    "Context": {
+      "ReferenceDateTime": "2018-10-24T12:00:00"
+    },
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "nov 18 2014-dec 19 2015",
+        "Start": 26,
+        "End": 48,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2014-11-18,2015-12-19,P396D)",
+              "type": "daterange",
+              "start": "2014-11-18",
+              "end": "2015-12-19"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "APEC will happen in Korea on November 18-19",
+    "Context": {
+      "ReferenceDateTime": "2018-10-24T12:00:00"
+    },
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "on november 18-19",
+        "Start": 26,
+        "End": 42,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-11-18,XXXX-11-19,P1D)",
+              "type": "daterange",
+              "start": "2017-11-18",
+              "end": "2017-11-19"
+            },
+            {
+              "timex": "(XXXX-11-18,XXXX-11-19,P1D)",
+              "type": "daterange",
+              "start": "2018-11-18",
+              "end": "2018-11-19"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I will leave from this May to Oct 2020",
+    "Context": {
+      "ReferenceDateTime": "2018-10-24T12:00:00"
+    },
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "from this may to oct 2020",
+        "Start": 13,
+        "End": 37,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2018-05-01,2020-10-01,P29M)",
+              "type": "daterange",
+              "start": "2018-05-01",
+              "end": "2020-10-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I will leave from May to Oct 2020",
+    "Context": {
+      "ReferenceDateTime": "2018-10-24T12:00:00"
+    },
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "from may to oct 2020",
+        "Start": 13,
+        "End": 32,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2020-05-01,2020-10-01,P5M)",
+              "type": "daterange",
+              "start": "2020-05-01",
+              "end": "2020-10-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I will leave from 5/1-5/7, 2020",
+    "Context": {
+      "ReferenceDateTime": "2018-10-24T12:00:00"
+    },
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "from 5/1-5/7, 2020",
+        "Start": 13,
+        "End": 30,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2020-05-01,2020-05-07,P6D)",
+              "type": "daterange",
+              "start": "2020-05-01",
+              "end": "2020-05-07"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I will leave from 5/1-5/7/2020",
+    "Context": {
+      "ReferenceDateTime": "2018-10-24T12:00:00"
+    },
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "from 5/1-5/7/2020",
+        "Start": 13,
+        "End": 29,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2020-05-01,2020-05-07,P6D)",
+              "type": "daterange",
+              "start": "2020-05-01",
+              "end": "2020-05-07"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I will leave from 5/1/2019-5/7/2020",
+    "Context": {
+      "ReferenceDateTime": "2018-10-24T12:00:00"
+    },
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "from 5/1/2019-5/7/2020",
+        "Start": 13,
+        "End": 34,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2019-05-01,2020-05-07,P372D)",
+              "type": "daterange",
+              "start": "2019-05-01",
+              "end": "2020-05-07"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

@@ -203,7 +203,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             NumberParser = new BaseNumberParser(new PortugueseNumberParserConfiguration());
         }
 
-        public IDateTimeExtractor DatePointExtractor { get; }
+        public IDateExtractor DatePointExtractor { get; }
 
         public IExtractor CardinalExtractor { get; }
 

@@ -40,7 +40,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public static readonly StringMatcher SuperfluousWordMatcher = new StringMatcher();
 
-        public IDateTimeExtractor DateExtractor { get; }
+        public IDateExtractor DateExtractor { get; }
 
         public IDateTimeExtractor TimeExtractor { get; }
 

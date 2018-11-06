@@ -254,5 +254,10 @@ namespace Microsoft.Recognizers.Text.DateTime
          
             return result;
         }
+
+        public static string SetTimexWithContext(string timex, DateContext context)
+        {
+            return timex.Replace(Constants.TimexFuzzyYear, context.Year.ToString("D4"));
+        }
     }
 }
