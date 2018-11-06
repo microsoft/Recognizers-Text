@@ -65,7 +65,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public IExtractor IntegerExtractor { get; }
 
-        public IDateTimeExtractor DatePointExtractor { get; }
+        public IDateExtractor DatePointExtractor { get; }
 
         public IDateTimeExtractor TimePointExtractor { get; }
 

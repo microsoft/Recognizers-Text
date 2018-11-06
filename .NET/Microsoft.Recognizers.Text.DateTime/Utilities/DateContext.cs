@@ -1,7 +1,7 @@
 ﻿using System;
 using DateObject = System.DateTime;
 
-namespace Microsoft.Recognizers.Text.DateTime.Utilities
+namespace Microsoft.Recognizers.Text.DateTime
 {
     // Currently only Year is enabled as context, we may support Month or Week in the future
     public class DateContext
@@ -12,7 +12,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
         {
             if (!IsEmpty())
             {
-                originalResult.TimexStr = SetTimexWithContext(originalResult.TimexStr);
+                originalResult.TimexStr = TimexUtility.SetTimexWithContext(originalResult.TimexStr, this);
                 originalResult.Value = ProcessDateEntityResolution((DateTimeResolutionResult)originalResult.Value);
             }
 
@@ -23,7 +23,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
         {
             if (!IsEmpty())
             {
-                resolutionResult.Timex = SetTimexWithContext(resolutionResult.Timex);
+                resolutionResult.Timex = TimexUtility.SetTimexWithContext(resolutionResult.Timex, this);
                 resolutionResult.FutureValue = SetDateWithContext((DateObject)resolutionResult.FutureValue);
                 resolutionResult.PastValue = SetDateWithContext((DateObject)resolutionResult.PastValue);
             }
@@ -35,7 +35,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
         {
             if (!IsEmpty())
             {
-                resolutionResult.Timex = SetTimexWithContext(resolutionResult.Timex);
+                resolutionResult.Timex = TimexUtility.SetTimexWithContext(resolutionResult.Timex, this);
                 resolutionResult.FutureValue = SetDateRangeWithContext((Tuple<DateObject, DateObject>)resolutionResult.FutureValue);
                 resolutionResult.PastValue = SetDateRangeWithContext((Tuple<DateObject, DateObject>)resolutionResult.PastValue);
             }
@@ -71,11 +71,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
             var endDate = SetDateWithContext(originalDateRange.Item2);
 
             return new Tuple<DateObject, DateObject>(startDate, endDate);
-        }
-
-        private string SetTimexWithContext(string originalTimex)
-        {
-            return originalTimex.Replace(Constants.TimexFuzzyYear, Year.ToString("D4"));
         }
     }
 }

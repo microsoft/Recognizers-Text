@@ -55,7 +55,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex CenturySuffixRegex { get; }
 
-        IDateTimeExtractor DatePointExtractor { get; }
+        IDateExtractor DatePointExtractor { get; }
 
         IExtractor CardinalExtractor { get; }
 

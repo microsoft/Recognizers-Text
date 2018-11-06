@@ -16,7 +16,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         #region internalParsers
 
-        public IDateTimeExtractor DateExtractor { get; }
+        public IDateExtractor DateExtractor { get; }
 
         public IExtractor CardinalExtractor { get; }
 

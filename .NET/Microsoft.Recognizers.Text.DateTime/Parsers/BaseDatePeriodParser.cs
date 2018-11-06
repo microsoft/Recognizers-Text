@@ -543,7 +543,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 endDay = this.config.DayOfMonth[days.Captures[1].Value.ToLower()];
 
                 // parse year
-                year = ((BaseDateExtractor)this.config.DateExtractor).GetYearFromText(match);
+                year = config.DateExtractor.GetYearFromText(match);
                 if (year != Constants.InvalidYear)
                 {
                     noYear = false;
@@ -961,7 +961,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 var month = this.config.MonthOfYear[monthStr.ToLower()];
 
-                var year = ((BaseDateExtractor)this.config.DateExtractor).GetYearFromText(match);
+                var year = config.DateExtractor.GetYearFromText(match);
                 if (year == Constants.InvalidYear)
                 {
                     var swift = this.config.GetSwiftYear(orderStr);
@@ -1042,7 +1042,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 match = this.config.YearRegex.Match(text);
                 if (match.Success && match.Length == text.Trim().Length)
                 {
-                    year = ((BaseDateExtractor)this.config.DateExtractor).GetYearFromText(match);
+                    year = config.DateExtractor.GetYearFromText(match);
                     if (!(year >= Constants.MinYearNum && year <= Constants.MaxYearNum))
                     {
                         year = Constants.InvalidYear;
@@ -1053,7 +1053,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     match = this.config.YearPlusNumberRegex.Match(text);
                     if (match.Success && match.Length == text.Trim().Length)
                     {
-                        year = ((BaseDateExtractor)this.config.DateExtractor).GetYearFromText(match);
+                        year = config.DateExtractor.GetYearFromText(match);
                     }
                 }
 
@@ -1407,7 +1407,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var cardinalStr = match.Groups["cardinal"].Value;
             var orderStr = match.Groups["order"].Value.ToLower();
 
-            var year = ((BaseDateExtractor)this.config.DateExtractor).GetYearFromText(match);
+            var year = config.DateExtractor.GetYearFromText(match);
             if (year == Constants.InvalidYear)
             {
                 var swift = this.config.GetSwiftYear(orderStr);
@@ -1479,7 +1479,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var orderStr = match.Groups["order"].Value.ToLower();
             var numberStr = match.Groups["number"].Value;
 
-            int year = ((BaseDateExtractor)this.config.DateExtractor).GetYearFromText(match);
+            int year = config.DateExtractor.GetYearFromText(match);
 
             if (year == Constants.InvalidYear)
             {
@@ -1530,7 +1530,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var numberStr = match.Groups["number"].Value;
 
             bool noSpecificYear = false;
-            int year = ((BaseDateExtractor)this.config.DateExtractor).GetYearFromText(match);
+            int year = config.DateExtractor.GetYearFromText(match);
 
             if (year == Constants.InvalidYear)
             {
@@ -1611,7 +1611,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     ret.Mod = Constants.LATE_MOD;
                 }
 
-                var year = ((BaseDateExtractor)this.config.DateExtractor).GetYearFromText(match);
+                var year = config.DateExtractor.GetYearFromText(match);
                 if (year == Constants.InvalidYear)
                 {
                     var swift = this.config.GetSwiftYear(text);
@@ -1975,7 +1975,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 foreach (Match match in config.YearRegex.Matches(text))
                 {
-                    var year = ((BaseDateExtractor)this.config.DateExtractor).GetYearFromText(match);
+                    var year = config.DateExtractor.GetYearFromText(match);
 
                     if (year != Constants.InvalidYear)
                     {

@@ -13,7 +13,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             DatePeriodExtractor = new BaseDatePeriodExtractor(new SpanishDatePeriodExtractorConfiguration(this));
         }
 
-        public IDateTimeExtractor DateExtractor { get; }
+        public IDateExtractor DateExtractor { get; }
         public IDateTimeExtractor DatePeriodExtractor { get; }
 
         private static readonly Regex OrRegex =

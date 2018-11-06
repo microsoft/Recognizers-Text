@@ -61,7 +61,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public IExtractor IntegerExtractor { get; }
 
-        public IDateTimeExtractor DatePointExtractor { get; }
+        public IDateExtractor DatePointExtractor { get; }
 
         public IDateTimeExtractor TimePointExtractor { get; }
 
