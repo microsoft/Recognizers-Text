@@ -196,7 +196,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             NumberParser = new BaseNumberParser(new GermanNumberParserConfiguration());
         }
 
-        public IDateTimeExtractor DatePointExtractor { get; }
+        public IDateExtractor DatePointExtractor { get; }
 
         public IExtractor CardinalExtractor { get; }
 

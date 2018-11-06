@@ -4640,13 +4640,13 @@
         "Text": "from Feb 1st to March 2019",
         "Type": "daterange",
         "Value": {
-          "Timex": "(XXXX-02-01,2019-03-01,PXXD)",
+          "Timex": "(2019-02-01,2019-03-01,P28D)",
           "FutureResolution": {
             "startDate": "2019-02-01",
             "endDate": "2019-03-01"
           },
           "PastResolution": {
-            "startDate": "2018-02-01",
+            "startDate": "2019-02-01",
             "endDate": "2019-03-01"
           }
         },
@@ -4666,13 +4666,13 @@
         "Text": "between Feb 1st and March 2019",
         "Type": "daterange",
         "Value": {
-          "Timex": "(XXXX-02-01,2019-03-01,PXXD)",
+          "Timex": "(2019-02-01,2019-03-01,P28D)",
           "FutureResolution": {
             "startDate": "2019-02-01",
             "endDate": "2019-03-01"
           },
           "PastResolution": {
-            "startDate": "2018-02-01",
+            "startDate": "2019-02-01",
             "endDate": "2019-03-01"
           }
         },

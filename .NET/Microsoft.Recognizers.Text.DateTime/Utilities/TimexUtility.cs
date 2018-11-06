@@ -287,6 +287,11 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             return !string.IsNullOrEmpty(timex) && timex.StartsWith("(");
         }
+
+        public static string SetTimexWithContext(string timex, DateContext context)
+        {
+            return timex.Replace(Constants.TimexFuzzyYear, context.Year.ToString("D4"));
+        }
     }
 
     public class RangeTimexComponents

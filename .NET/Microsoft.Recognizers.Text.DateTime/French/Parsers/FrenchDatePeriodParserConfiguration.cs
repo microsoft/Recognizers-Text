@@ -15,7 +15,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         #region internalParsers
 
-        public IDateTimeExtractor DateExtractor { get; }
+        public IDateExtractor DateExtractor { get; }
 
         public IExtractor CardinalExtractor { get; }
 
@@ -83,9 +83,13 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public static readonly Regex ThisPrefixRegex =
             new Regex(@"(ce|cette)\b", RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex RelativeRegex =
+            new Regex(DateTimeDefinitions.RelativeRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         Regex IDatePeriodParserConfiguration.NextPrefixRegex => NextPrefixRegex;
         Regex IDatePeriodParserConfiguration.PastPrefixRegex => PastPrefixRegex;
         Regex IDatePeriodParserConfiguration.ThisPrefixRegex => ThisPrefixRegex;
+        Regex IDatePeriodParserConfiguration.RelativeRegex => RelativeRegex;
         #endregion
 
         #region Dictionaries

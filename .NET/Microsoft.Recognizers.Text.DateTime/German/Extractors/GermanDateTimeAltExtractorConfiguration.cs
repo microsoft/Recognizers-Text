@@ -13,7 +13,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             DatePeriodExtractor = new BaseDatePeriodExtractor(new GermanDatePeriodExtractorConfiguration(this));
         }
 
-        public IDateTimeExtractor DateExtractor { get; }
+        public IDateExtractor DateExtractor { get; }
 
         public IDateTimeExtractor DatePeriodExtractor { get; }
 
