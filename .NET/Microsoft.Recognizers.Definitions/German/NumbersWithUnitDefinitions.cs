@@ -177,7 +177,7 @@ namespace Microsoft.Recognizers.Definitions.German
 			{ "Sri Lankan rupee", "sri-lanka-rupie|sri-lanka-rupien|lkr|රු|ரூ" },
 			{ "Indonesian rupiah", "indonesischer rupiah|indonesische rupiah|indonesischen rupiah|rupiah|perak|rp|idr" },
 			{ "Rupee", "rupie|rs" },
-			{ "Danish krone", "dänische krone|Dänischen krone|dänischer kronen|dänische kronen|dänischen kronen|daenische krone|daenischen krone|daenischer kronen|daenische kronen|daenischen kronen|dkk" },
+			{ "Danish krone", "dänische krone|dänischen krone|dänischer kronen|dänische kronen|dänischen kronen|daenische krone|daenischen krone|daenischer kronen|daenische kronen|daenischen kronen|dkk" },
 			{ "Norwegian krone", "norwegische krone|norwegischen krone|norwegischer kronen|norwegische kronen|norwegischen kronen|nok" },
 			{ "Faroese króna", "färöische króna|färöische krone|färöischen krone|färöischer kronen|färöische kronen|färöischen kronen" },
 			{ "Icelandic króna", "isländische krone|isländischen krone|isländischer kronen|isländische kronen|isländischen kronen|isk" },
@@ -465,7 +465,7 @@ namespace Microsoft.Recognizers.Definitions.German
 		public static readonly Dictionary<string, string> TemperatureSuffixList = new Dictionary<string, string>
 		{
 			{ "F", "grad fahrenheit|°fahrenheit|°f|fahrenheit" },
-			{ "K", "k|kelvin" },
+			{ "K", "k|K|kelvin" },
 			{ "R", "rankine|°r" },
 			{ "D", "delisle|°de" },
 			{ "C", "grad celsius|°celsius|°c" },

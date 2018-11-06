@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text.Utilities
 {
@@ -46,7 +47,10 @@ namespace Microsoft.Recognizers.Text.Utilities
             return query;
         }
 
-        static List<string> list = new List<string> { "M", "MB", "Mb", "KB", "kB", "K", "G", "GB", "Gb", "B" };
+        static readonly string Tokens = @"(kB|K[Bb]|K|M[Bb]|M|G[Bb]|G|B)";
+        //static readonly string Expression = @"(?<=(\s|\b\d+))" + Tokens + @"\b";
+        static readonly string Expression = @"(?<=(\s|\d))" + Tokens + @"\b";
+        static readonly Regex SpecialTokensRegex = new Regex(Expression, RegexOptions.Compiled);
 
         private static void ApplyReverse(int idx, char[] str, string value)
         {
@@ -56,28 +60,17 @@ namespace Microsoft.Recognizers.Text.Utilities
             }
         }
 
-        public static string ToLowerTermSensitive(string toConvert)
+        public static string ToLowerTermSensitive(string input)
         {
-            var res = toConvert.ToLowerInvariant().ToCharArray();
+            var result = input.ToLowerInvariant().ToCharArray();
 
-            foreach (var value in list)
+            var matches = SpecialTokensRegex.Matches(input);
+            foreach (Match m in matches)
             {
-                
-                for (int idx = 0; ; idx += value.Length)
-                {
-                    idx = toConvert.IndexOf(value, idx, StringComparison.Ordinal);
-                    if (idx == -1)
-                        break;
-                    char leftChar = idx <= 0 ? ' ' : toConvert[idx - 1];
-                    char rightChar = idx + value.Length >= toConvert.Length ? ' ' : toConvert[idx + value.Length];
-                    if (leftChar == ' ' && rightChar == ' ' || char.IsNumber(leftChar))
-                    {
-                        ApplyReverse(idx, res, value);
-                    }
-                }
+                ApplyReverse(m.Index, result, m.Value);
             }
 
-            return new string(res);
+            return new string(result);
         }
 
         public static string RemoveDiacritics(string query)

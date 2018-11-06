@@ -272,7 +272,7 @@
   }
   ,
   {
-    "Input": "convertir 200 K em fahrenheit",
+    "Input": "converter 200 K em fahrenheit",
     "Results": [
       {
         "Text": "200 k",

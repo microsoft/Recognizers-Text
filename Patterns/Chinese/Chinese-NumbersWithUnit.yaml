@@ -735,7 +735,7 @@ TemperatureSuffixList: !dictionary
   types: [string, string]
   entries:
     F: 华氏温度|华氏度|°f
-    K: k|开尔文温度|开氏度|凯氏度
+    K: 开尔文温度|开氏度|凯氏度|K|k
     R: 兰氏温度|°r
     C: 摄氏温度|摄氏度|°c
     Degree: 度

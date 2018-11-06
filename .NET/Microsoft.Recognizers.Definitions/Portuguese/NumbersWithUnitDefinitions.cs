@@ -471,7 +471,7 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
 		};
 		public static readonly Dictionary<string, string> TemperatureSuffixList = new Dictionary<string, string>
 		{
-			{ "Kelvin", "k|kelvin" },
+			{ "Kelvin", "k|K|kelvin" },
 			{ "Grau Rankine", "r|°r|°ra|grau rankine|graus rankine| rankine" },
 			{ "Grau Celsius", "°c|grau c|grau celsius|graus c|graus celsius|celsius|grau centígrado|grau centrigrado|graus centígrados|graus centigrados|centígrado|centígrados|centigrado|centigrados" },
 			{ "Grau Fahrenheit", "°f|grau f|graus f|grau fahrenheit|graus fahrenheit|fahrenheit" },
