@@ -20,7 +20,7 @@ namespace Microsoft.Recognizers.Definitions
 		public const string EmailRegex = @"(([-a-zA-Z0-9_\+\.]+)@([-a-zA-Z\d\.]+)\.([a-zA-Z\.]{2,6}))";
 		public const string IPv4Regex = @"(?<ipv4>(\d{1,3}\.){3}\d{1,3})";
 		public const string NormalSuffixRegex = @"(([0-9A-Za-z][-]*[0-9A-Za-z]*\.)+(?<tld>[a-zA-Z][\-a-zA-Z]{0,22}[a-zA-Z]))";
-		public const string EmailPrefix = @"(?("")("".+?(?<!\\)"")|(([0-9a-z]((\.(?!\.))|[-!#\$%&'\*\+/=\?\^\{\}\|~\w])*)(?<=[0-9a-z])))";
+		public const string EmailPrefix = @"(?("")("".+?(?<!\\)"")|(([0-9A-Za-z]((\.(?!\.))|[-!#\$%&'\*\+/=\?\^\{\}\|~\w])*)(?<=[0-9A-Za-z])))";
 		public static readonly string EmailSuffix = $@"(?(\[)(\[{IPv4Regex}\])|{NormalSuffixRegex})";
 		public static readonly string EmailRegex2 = $@"(({EmailPrefix})@({EmailSuffix}))";
 	}

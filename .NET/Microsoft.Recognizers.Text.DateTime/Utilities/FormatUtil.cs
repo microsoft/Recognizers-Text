@@ -59,15 +59,15 @@ namespace Microsoft.Recognizers.Text.DateTime
             return LuisDate(year, month, day);
         }
         
-        public static string ShortTime(int hour, int min, int second)
+        public static string ShortTime(int hour, int min = Constants.InvalidSecond, int second = Constants.InvalidSecond)
         {
             string timeString;
 
-            if (min < 0 && second < 0)
+            if (min == Constants.InvalidSecond && second == Constants.InvalidSecond)
             {
                 timeString = $"{Constants.TimeTimexPrefix}{hour:D2}";
             }
-            else if (second < 0)
+            else if (second == Constants.InvalidSecond)
             {
                 timeString = $"{Constants.TimeTimexPrefix}{LuisTime(hour, min)}";
             }
@@ -79,11 +79,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             return timeString;
         }
 
-        public static string LuisTime(int hour, int min, int second = -1)
+        public static string LuisTime(int hour, int min, int second = Constants.InvalidSecond)
         {
             string result;
 
-            if (second == -1)
+            if (second == Constants.InvalidSecond)
             {
                 result = string.Join(Constants.TimeTimexConnector, hour.ToString("D2"), min.ToString("D2"));
             }

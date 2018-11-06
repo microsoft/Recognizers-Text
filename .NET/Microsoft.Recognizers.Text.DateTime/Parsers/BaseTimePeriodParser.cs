@@ -262,14 +262,12 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
 
                 // Cases like "4" is different with "4:00" as the Timex is different "T04H" vs "T04H00M"
-                // Uses this invalidFlag to differentiate
                 int beginHour;
-                int invalidFlag = -1;
-                int beginMinute = invalidFlag;
-                int beginSecond = invalidFlag;
+                int beginMinute = Constants.InvalidMinute;
+                int beginSecond = Constants.InvalidSecond;
                 int endHour;
-                int endMinute = invalidFlag;
-                int endSecond = invalidFlag;
+                int endMinute = Constants.InvalidMinute;
+                int endSecond = Constants.InvalidSecond;
 
                 // Get time1 and time2
                 var hourGroup = match.Groups[Constants.HourGroupName];
@@ -505,7 +503,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 // In SplitDateAndTime mode, time points will be get from these SubDateTimeEntities
                 // Cases like "from 4 to 5pm", "4" should not be treated as SubDateTimeEntity
-                if (hasLeft || beginMinute != invalidFlag || beginSecond != invalidFlag)
+                if (hasLeft || beginMinute != Constants.InvalidMinute || beginSecond != Constants.InvalidSecond)
                 {
                     var er = new ExtractResult()
                     {
@@ -520,7 +518,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
 
                 // Cases like "from 4am to 5", "5" should not be treated as SubDateTimeEntity
-                if (hasRight || endMinute != invalidFlag || endSecond != invalidFlag)
+                if (hasRight || endMinute != Constants.InvalidMinute || endSecond != Constants.InvalidSecond)
                 {
                     var er = new ExtractResult
                     {

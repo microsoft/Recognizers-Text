@@ -6173,5 +6173,29 @@
         }
       }
     ]
+  },
+  {
+    "Input": "The date should be 05-Aug-2016",
+    "Context": {
+      "ReferenceDateTime": "2018-10-24T12:00:00"
+    },
+    "NotSupportedByDesign": "java",
+    "Results": [
+      {
+        "Text": "05-aug-2016",
+        "Start": 19,
+        "End": 29,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-08-05",
+              "type": "date",
+              "value": "2016-08-05"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
