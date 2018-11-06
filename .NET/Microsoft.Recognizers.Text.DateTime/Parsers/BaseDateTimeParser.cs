@@ -197,11 +197,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             var sec = time.Second;
 
             // Handle morning, afternoon
-            if (this.config.PMTimeRegex.IsMatch(text) && PmWithHourLessThanHalfDay(hour))
+            if (this.config.PMTimeRegex.IsMatch(text) && WithinAfternoonHours(hour))
             {
                 hour += Constants.HalfDayHourCount;
             }
-            else if (this.config.AMTimeRegex.IsMatch(text) && AmWithHourMoreThanHalfDay(hour, min, sec))
+            else if (this.config.AMTimeRegex.IsMatch(text) && WithinMorningHoursAndNoon(hour, min, sec))
             {
                 hour -= Constants.HalfDayHourCount;
             }
@@ -354,12 +354,12 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        private bool PmWithHourLessThanHalfDay(int hour)
+        private bool WithinAfternoonHours(int hour)
         {
             return hour < Constants.HalfDayHourCount;
         }
 
-        private bool AmWithHourMoreThanHalfDay(int hour, int min, int sec)
+        private bool WithinMorningHoursAndNoon(int hour, int min, int sec)
         {
             return (hour > Constants.HalfDayHourCount || (hour == Constants.HalfDayHourCount && (min > 0 || sec > 0)));
         }
