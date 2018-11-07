@@ -111,7 +111,7 @@ public class BaseNumberParser implements IParser {
 
         if (ret != null)
         {
-            ret.withText(ret.text.toLowerCase(Locale.ROOT));
+            ret = ret.withText(ret.text.toLowerCase(Locale.ROOT));
         }
 
         return ret;
