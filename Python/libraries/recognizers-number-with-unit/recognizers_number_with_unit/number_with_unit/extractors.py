@@ -105,6 +105,18 @@ class NumberWithUnitExtractor(Extractor):
         result: List[ExtractResult] = list()
         source_len = len(source)
 
+        # Special case for cases where number multipliers clash with unit
+        ambiguous_multiplier_regex = self.config.ambiguous_unit_number_multiplier_regex
+        if ambiguous_multiplier_regex is not None:
+
+            for num in numbers:
+                match = list(filter(lambda x: x.group(), regex.finditer(ambiguous_multiplier_regex, num.text)))
+                if match and len(match) == 1:
+                    new_length = num.length - (match[0].span()[1] - match[0].span()[0])
+                    num.text = num.text[0:new_length]
+                    num.length = new_length
+
+        # Mix prefix and numbers, make up a prefix-number combination
         if self.max_prefix_match_len != 0:
             for num in numbers:
                 if num.start is None or num.length is None:
@@ -234,7 +246,7 @@ class NumberWithUnitExtractor(Extractor):
                 result.append(to_add)
         return result
 
-    def _build_regex_from_set(self, definitions: List[str], ignore_case: bool = True) -> Set[Pattern]:
+    def _build_regex_from_set(self, definitions: List[str], ignore_case: bool = False) -> Set[Pattern]:
         return set(map(lambda x: self.__build_regex_from_str(x, ignore_case), definitions))
 
     def __build_regex_from_str(self, source: str, ignore_case: bool) -> Pattern:
@@ -244,7 +256,7 @@ class NumberWithUnitExtractor(Extractor):
         flags = regex.S + regex.I if ignore_case else regex.S
         return RegExpUtility.get_safe_reg_exp(definition, flags)
 
-    def _build_separate_regex_from_config(self, ignore_case: bool = True) -> Pattern:
+    def _build_separate_regex_from_config(self, ignore_case: bool = False) -> Pattern:
         separate_words: Set[str] = set()
         for add_word in self.config.prefix_list.values():
             separate_words |= set(filter(self.validate_unit, add_word.split('|')))

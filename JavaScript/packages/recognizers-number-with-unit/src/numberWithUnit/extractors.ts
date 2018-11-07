@@ -78,7 +78,7 @@ export class NumberWithUnitExtractor implements IExtractor {
                     extNumber.length = newLength;
                 }
             });
-          }
+        }
 
         /* Mix prefix and numbers, make up a prefix-number combination */
         if (this.maxPrefixMatchLen !== 0) {

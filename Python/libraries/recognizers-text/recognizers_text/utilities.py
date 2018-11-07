@@ -1,6 +1,7 @@
 from typing import Pattern, Match, Union, List
 import regex
 
+
 class RegExpUtility:
     @staticmethod
     def get_safe_reg_exp(source: str, flags: int = regex.I | regex.S) -> Pattern:
@@ -13,6 +14,7 @@ class RegExpUtility:
     @staticmethod
     def get_group_list(match: Match, group: str) -> List[str]:
         return match.captures(group)
+
 
 class QueryProcessor:
     @staticmethod
@@ -48,8 +50,30 @@ class QueryProcessor:
 
         if not case_sensitive:
             result = result.lower()
+        else:
+            result = QueryProcessor.to_lower_term_sensitive(result)
 
         return result
+
+    tokens = '(kB|K[Bb]|K|M[Bb]|M|G[Bb]|G|B)'
+    expression = f'(?<=(\\s|\\d))' + tokens + '\\b'
+    special_tokens_regex = RegExpUtility.get_safe_reg_exp(expression, regex.S)
+
+    @staticmethod
+    def to_lower_term_sensitive(input_str: str) -> str:
+
+        str_chars = list(input_str.lower())
+
+        matches = QueryProcessor.special_tokens_regex.finditer(input_str)
+        for match in matches:
+            QueryProcessor.apply_reverse(match.start(), str_chars, match.group())
+
+        return ''.join(str_chars)
+
+    @staticmethod
+    def apply_reverse(idx: int, string_chars, value: str):
+        for i in range(len(value)):
+            string_chars[idx + i] = value[i]
 
     @staticmethod
     def float_or_int(source: Union[float, int]) -> Union[float, int]:

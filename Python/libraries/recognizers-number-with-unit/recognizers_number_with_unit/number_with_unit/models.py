@@ -8,10 +8,12 @@ from recognizers_text.parser import Parser
 from recognizers_text.utilities import QueryProcessor
 from recognizers_number_with_unit.number_with_unit.parsers import UnitValue, CurrencyUnitValue
 
+
 class ExtractorParserModel:
     def __init__(self, extractor: Extractor, parser: Parser):
         self.extractor = extractor
         self.parser = parser
+
 
 class AbstractNumberWithUnitModel(Model):
     @property
@@ -63,20 +65,24 @@ class AbstractNumberWithUnitModel(Model):
             }
         return None
 
+
 class AgeModel(AbstractNumberWithUnitModel):
     @property
     def model_type_name(self) -> str:
         return 'age'
+
 
 class CurrencyModel(AbstractNumberWithUnitModel):
     @property
     def model_type_name(self) -> str:
         return 'currency'
 
+
 class DimensionModel(AbstractNumberWithUnitModel):
     @property
     def model_type_name(self) -> str:
         return 'dimension'
+
 
 class TemperatureModel(AbstractNumberWithUnitModel):
     @property
