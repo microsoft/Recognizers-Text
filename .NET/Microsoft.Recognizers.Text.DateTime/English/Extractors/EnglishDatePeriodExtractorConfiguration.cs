@@ -164,27 +164,49 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         private static readonly Regex[] SimpleCasesRegexes =
         {
+            // "3-5 Jan, 2018",
             SimpleCasesRegex,
+            // "between 3 and 5 Jan, 2018"
             BetweenRegex,
+            // "next april", "year to date", "previous year"
             OneWordPeriodRegex,
+            // "January, 2018", "this year Feb"
             MonthWithYear,
+            // "2018-3", "2018.3", "5-2015", only FourDigitYear is allow in this Regex
             MonthNumWithYear,
+            // "2018", "two thousand and ten"
             YearRegex,
+            // "4th week of Feb"
             WeekOfMonthRegex,
+            // "3rd week of 2018", "4th week last year"
             WeekOfYearRegex,
+            // "Jan between 8-10"
             MonthFrontBetweenRegex,
+            // "from Jan 5th-10th", "Feb from 5-10"
             MonthFrontSimpleCasesRegex,
+            // "Q1 2018", "2nd quarter"
             QuarterRegex,
+            // "2016 Q1", "last year the 4th quarter"
             QuarterRegexYearFront,
+            // "2015 the H1", "H2 of 2016", "1st half 2018", "2nd half this year"
             AllHalfYearRegex,
+            // "last summer", "fall of 2018", "early this summer"
             SeasonRegex,
+            // "week 25", "week 06"
             WhichWeekRegex,
+            // "rest of this week", "rest of current year"
             RestOfDateRegex,
+            // "early this year", "late next April"
             LaterEarlyPeriodRegex,
+            // "this week between Mon and Wed", "next week from Tuesday to Wednesday"
             WeekWithWeekDayRangeRegex,
+            // "year 834", "two thousand and nine"
             YearPlusNumberRegex,
+            // "21st century 30's"
             DecadeWithCenturyRegex,
+            // "next five decades", "previous 2 decades"
             RelativeDecadeRegex,
+            // "this week", "same year"
             ReferenceDatePeriodRegex
         };
 
