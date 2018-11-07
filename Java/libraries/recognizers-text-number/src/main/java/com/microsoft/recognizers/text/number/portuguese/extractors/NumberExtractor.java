@@ -3,6 +3,7 @@ package com.microsoft.recognizers.text.number.portuguese.extractors;
 import com.microsoft.recognizers.text.number.Constants;
 import com.microsoft.recognizers.text.number.NumberMode;
 import com.microsoft.recognizers.text.number.extractors.BaseNumberExtractor;
+import com.microsoft.recognizers.text.number.resources.BaseNumbers;
 import com.microsoft.recognizers.text.number.resources.PortugueseNumeric;
 
 import java.util.Collections;
@@ -33,7 +34,7 @@ public class NumberExtractor extends BaseNumberExtractor {
     public NumberExtractor(NumberMode mode) {
         HashMap<Pattern, String> builder = new HashMap<>();
 
-        //Add Cardinal
+        // Add Cardinal
         CardinalExtractor cardExtract = null;
         switch (mode)
         {
@@ -41,7 +42,7 @@ public class NumberExtractor extends BaseNumberExtractor {
                 cardExtract = CardinalExtractor.getInstance(PortugueseNumeric.PlaceHolderPureNumber);
                 break;
             case Currency:
-                builder.put(Pattern.compile(PortugueseNumeric.CurrencyRegex), "IntegerNum");
+                builder.put(Pattern.compile(BaseNumbers.CurrencyRegex), "IntegerNum");
                 break;
             case Default:
                 break;
@@ -54,7 +55,7 @@ public class NumberExtractor extends BaseNumberExtractor {
 
         builder.putAll(cardExtract.getRegexes());
 
-        //Add Fraction
+        // Add Fraction
         FractionExtractor fracExtract = new FractionExtractor();
         builder.putAll(fracExtract.getRegexes());
 

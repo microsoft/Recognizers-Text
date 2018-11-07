@@ -8,6 +8,7 @@ import com.microsoft.recognizers.text.numberwithunit.models.UnitValue;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 
 public class NumberWithUnitParser implements IParser {
@@ -88,6 +89,11 @@ public class NumberWithUnitParser implements IParser {
                         .withValue(new UnitValue(resolutionStr, unitValue))
                         .withResolutionStr(String.format("%s %s", resolutionStr != null ? resolutionStr : "", unitValue).trim());
             }
+        }
+
+        if (ret != null)
+        {
+            ret.withText(ret.text.toLowerCase(Locale.ROOT));
         }
 
         return ret;

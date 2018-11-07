@@ -109,6 +109,11 @@ public class BaseNumberParser implements IParser {
             ret = ret.withResolutionStr(resolutionStr);
         }
 
+        if (ret != null)
+        {
+            ret.withText(ret.text.toLowerCase(Locale.ROOT));
+        }
+
         return ret;
     }
 
@@ -119,14 +124,9 @@ public class BaseNumberParser implements IParser {
      * @return
      */
     protected ParseResult digitNumberParse(ExtractResult extractResult) {
-        ParseResult result = new ParseResult(
-                extractResult.start,
-                extractResult.length,
-                extractResult.text,
-                extractResult.type,
-                null,
-                null,
-                null);
+
+        ParseResult result = new ParseResult(extractResult.start, extractResult.length, extractResult.text,
+                                             extractResult.type,null,null,null);
 
         //[1] 24
         //[2] 12 32/33
@@ -134,7 +134,7 @@ public class BaseNumberParser implements IParser {
         //[4] 234.567
         //[5] 44/55
         //[6] 2 hundred
-        //dot occured.
+        //dot occurred.
         double power = 1;
         String handle = extractResult.text.toLowerCase();
         Matcher match = config.getDigitalNumberRegex().matcher(handle);
@@ -154,7 +154,7 @@ public class BaseNumberParser implements IParser {
             }
         }
 
-        //scale used in the calculate of double
+        // Scale used in the calculate of double
         result = result.withValue(getDigitalValue(handle, power));
 
         return result;

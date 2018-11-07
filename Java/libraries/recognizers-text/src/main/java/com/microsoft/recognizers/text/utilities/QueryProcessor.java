@@ -13,7 +13,7 @@ public class QueryProcessor {
     }
 
     public static String preprocess(String query, boolean caseSensitive) {
-        return QueryProcessor.preprocess(query, true);
+        return QueryProcessor.preprocess(query, caseSensitive, true);
     }
 
     public static String preprocess(String query, boolean caseSensitive, boolean recode) {
