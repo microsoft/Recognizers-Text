@@ -10,6 +10,7 @@ from recognizers_number_with_unit.number_with_unit.extractors import NumberWithU
 from recognizers_number_with_unit.resources.portuguese_numeric_with_unit import PortugueseNumericWithUnit
 from recognizers_number_with_unit.resources.base_units import BaseUnits
 
+
 # pylint: disable=abstract-method
 class PortugueseNumberWithUnitExtractorConfiguration(NumberWithUnitExtractorConfiguration):
     @property
@@ -33,8 +34,12 @@ class PortugueseNumberWithUnitExtractorConfiguration(NumberWithUnitExtractorConf
         return self._compound_unit_connector_regex
 
     @property
-    def pm_non_unit_regex(self) -> Pattern:
+    def non_unit_regex(self) -> Pattern:
         return self._pm_non_unit_regex
+
+    @property
+    def ambiguous_unit_number_multiplier_regex(self) -> Pattern:
+        return None
 
     def __init__(self, culture_info: CultureInfo):
         if culture_info is None:
@@ -46,6 +51,8 @@ class PortugueseNumberWithUnitExtractorConfiguration(NumberWithUnitExtractorConf
         self._connector_token = PortugueseNumericWithUnit.ConnectorToken
         self._compound_unit_connector_regex = RegExpUtility.get_safe_reg_exp(PortugueseNumericWithUnit.CompoundUnitConnectorRegex)
         self._pm_non_unit_regex = RegExpUtility.get_safe_reg_exp(BaseUnits.PmNonUnitRegex)
+
+
 # pylint: enable=abstract-method
 
 class PortugueseAgeExtractorConfiguration(PortugueseNumberWithUnitExtractorConfiguration):
@@ -71,6 +78,7 @@ class PortugueseAgeExtractorConfiguration(PortugueseNumberWithUnitExtractorConfi
         self._prefix_list = dict()
         self._ambiguous_unit_list = list()
 
+
 class PortugueseCurrencyExtractorConfiguration(PortugueseNumberWithUnitExtractorConfiguration):
     @property
     def extract_type(self) -> str:
@@ -93,6 +101,7 @@ class PortugueseCurrencyExtractorConfiguration(PortugueseNumberWithUnitExtractor
         self._suffix_list = PortugueseNumericWithUnit.CurrencySuffixList
         self._prefix_list = PortugueseNumericWithUnit.CurrencyPrefixList
         self._ambiguous_unit_list = PortugueseNumericWithUnit.AmbiguousCurrencyUnitList
+
 
 class PortugueseDimensionExtractorConfiguration(PortugueseNumberWithUnitExtractorConfiguration):
     @property
@@ -124,6 +133,7 @@ class PortugueseDimensionExtractorConfiguration(PortugueseNumberWithUnitExtracto
         self._prefix_list = dict()
         self._ambiguous_unit_list = PortugueseNumericWithUnit.AmbiguousDimensionUnitList
 
+
 class PortugueseTemperatureExtractorConfiguration(PortugueseNumberWithUnitExtractorConfiguration):
     @property
     def extract_type(self) -> str:
@@ -141,8 +151,13 @@ class PortugueseTemperatureExtractorConfiguration(PortugueseNumberWithUnitExtrac
     def ambiguous_unit_list(self) -> List[str]:
         return self._ambiguous_unit_list
 
+    @property
+    def ambiguous_unit_number_multiplier_regex(self) -> Pattern:
+        return self._ambiguous_unit_number_multiplier_regex
+
     def __init__(self, culture_info: CultureInfo = None):
         super().__init__(culture_info)
         self._suffix_list = PortugueseNumericWithUnit.TemperatureSuffixList
         self._prefix_list = dict()
         self._ambiguous_unit_list = list()
+        self._ambiguous_unit_number_multiplier_regex = RegExpUtility.get_safe_reg_exp(BaseUnits.AmbiguousUnitNumberMultiplierRegex)

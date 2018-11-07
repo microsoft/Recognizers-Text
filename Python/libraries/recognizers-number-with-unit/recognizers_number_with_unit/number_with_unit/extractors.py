@@ -12,6 +12,7 @@ from recognizers_number.culture import CultureInfo
 
 PrefixUnitResult = namedtuple('PrefixUnitResult', ['offset', 'unit'])
 
+
 class NumberWithUnitExtractorConfiguration(ABC):
     @property
     @abstractmethod
@@ -60,7 +61,12 @@ class NumberWithUnitExtractorConfiguration(ABC):
 
     @property
     @abstractmethod
-    def pm_non_unit_regex(self) -> Pattern:
+    def non_unit_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def ambiguous_unit_number_multiplier_regex(self) -> Pattern:
         raise NotImplementedError
 
     @property
@@ -69,6 +75,7 @@ class NumberWithUnitExtractorConfiguration(ABC):
 
     def __init__(self, culture_info: CultureInfo):
         self._culture_info = culture_info
+
 
 class NumberWithUnitExtractor(Extractor):
     def __init__(self, config: NumberWithUnitExtractorConfiguration):
@@ -145,11 +152,11 @@ class NumberWithUnitExtractor(Extractor):
                                 max_len = end_pos
                 if max_len != 0:
                     for i in range(length + max_len):
-                        matched[i+start] = True
+                        matched[i + start] = True
                     ex_result = ExtractResult()
                     ex_result.start = start
                     ex_result.length = length + max_len
-                    ex_result.text = source[start:start+length+max_len]
+                    ex_result.text = source[start:start + length + max_len]
                     ex_result.type = self.config.extract_type
 
                     if prefix_unit:
@@ -162,7 +169,7 @@ class NumberWithUnitExtractor(Extractor):
 
                     is_not_unit = False
                     if ex_result.type == Constants.SYS_UNIT_DIMENSION:
-                        non_unit_match = self.config.pm_non_unit_regex.finditer(source)
+                        non_unit_match = self.config.non_unit_regex.finditer(source)
                         for match in non_unit_match:
                             if ex_result.start >= match.start() and ex_result.end <= match.end():
                                 is_not_unit = True
@@ -198,12 +205,12 @@ class NumberWithUnitExtractor(Extractor):
         result = deepcopy(num_depend_source)
         match_result: List[bool] = [False] * len(source)
         for ex_result in num_depend_source:
-            for i in range(ex_result.start, ex_result.end+1):
+            for i in range(ex_result.start, ex_result.end + 1):
                 match_result[i] = True
         match_collection = list(filter(lambda x: x.group(), regex.finditer(self.separate_regex, source)))
         for match in match_collection:
             i = 0
-            while i < len(match.group()) and not match_result[match.start()+i]:
+            while i < len(match.group()) and not match_result[match.start() + i]:
                 i += 1
             if i == len(match.group()):
                 for j in range(i):
@@ -211,7 +218,7 @@ class NumberWithUnitExtractor(Extractor):
 
                 is_not_unit = False
                 if match.group() == Constants.AMBIGUOUS_TIME_TERM:
-                    non_unit_match = self.config.pm_non_unit_regex.finditer(source)
+                    non_unit_match = self.config.non_unit_regex.finditer(source)
                     for time in non_unit_match:
                         if self._dimension_inside_time(match, time):
                             is_not_unit = True
@@ -295,7 +302,7 @@ class BaseMergedUnitExtractor(Extractor):
 
         return result
 
-    def __merged_compound_units(self, source:str):
+    def __merged_compound_units(self, source: str):
         ers = NumberWithUnitExtractor(self.config).extract(source)
         ers = self.__merge_pure_number(source, ers)
 
@@ -333,7 +340,7 @@ class BaseMergedUnitExtractor(Extractor):
 
         idx = 0
         while idx < len(ers):
-            if idx == 0 or groups[idx] != groups[idx -1]:
+            if idx == 0 or groups[idx] != groups[idx - 1]:
                 tmp_extract_result = ers[idx]
                 tmp = ExtractResult()
                 tmp.data = ers[idx].data
@@ -342,7 +349,7 @@ class BaseMergedUnitExtractor(Extractor):
                 tmp.text = ers[idx].text
                 tmp.type = ers[idx].type
                 tmp_extract_result.data = [tmp]
-                
+
                 result.append(tmp_extract_result)
 
             # reduce extract results in same group
@@ -377,11 +384,11 @@ class BaseMergedUnitExtractor(Extractor):
         i = j = 0
         while i < len(num_ers):
             has_behind_extraction = False
-            
+
             while j < len(ers) and ers[j].start + ers[j].length < num_ers[i].start:
                 has_behind_extraction = True
                 j = j + 1
-            
+
             if not has_behind_extraction:
                 i = i + 1
                 continue
@@ -396,7 +403,7 @@ class BaseMergedUnitExtractor(Extractor):
                 unit_numbers.append(num_ers[i])
                 i = i + 1
                 continue
-        
+
             i = i + 1
 
         for extract_result in unit_numbers:

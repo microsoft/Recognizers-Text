@@ -152,6 +152,7 @@ class BaseNumberParser(Parser):
                 ret.value = ret.value * -1
             # Use culture_info to format values
             ret.resolution_str = self.config.culture_info.format(ret.value) if self.config.culture_info is not None else repr(ret.value)
+            ret.text = ret.text.lower()
 
         return ret
 

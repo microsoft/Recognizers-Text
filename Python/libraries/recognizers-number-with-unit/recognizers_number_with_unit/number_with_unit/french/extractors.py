@@ -10,6 +10,7 @@ from recognizers_number_with_unit.number_with_unit.extractors import NumberWithU
 from recognizers_number_with_unit.resources.french_numeric_with_unit import FrenchNumericWithUnit
 from recognizers_number_with_unit.resources.base_units import BaseUnits
 
+
 # pylint: disable=abstract-method
 class FrenchNumberWithUnitExtractorConfiguration(NumberWithUnitExtractorConfiguration):
     @property
@@ -33,8 +34,12 @@ class FrenchNumberWithUnitExtractorConfiguration(NumberWithUnitExtractorConfigur
         return self._compound_unit_connector_regex
 
     @property
-    def pm_non_unit_regex(self) -> Pattern:
+    def non_unit_regex(self) -> Pattern:
         return self._pm_non_unit_regex
+
+    @property
+    def ambiguous_unit_number_multiplier_regex(self) -> Pattern:
+        return None
 
     def __init__(self, culture_info: CultureInfo):
         if culture_info is None:
@@ -46,6 +51,8 @@ class FrenchNumberWithUnitExtractorConfiguration(NumberWithUnitExtractorConfigur
         self._connector_token = FrenchNumericWithUnit.ConnectorToken
         self._compound_unit_connector_regex = RegExpUtility.get_safe_reg_exp(FrenchNumericWithUnit.CompoundUnitConnectorRegex)
         self._pm_non_unit_regex = RegExpUtility.get_safe_reg_exp(BaseUnits.PmNonUnitRegex)
+
+
 # pylint: enable=abstract-method
 
 class FrenchAgeExtractorConfiguration(FrenchNumberWithUnitExtractorConfiguration):
@@ -71,6 +78,7 @@ class FrenchAgeExtractorConfiguration(FrenchNumberWithUnitExtractorConfiguration
         self._prefix_list = dict()
         self._ambiguous_unit_list = list()
 
+
 class FrenchCurrencyExtractorConfiguration(FrenchNumberWithUnitExtractorConfiguration):
     @property
     def extract_type(self) -> str:
@@ -93,6 +101,7 @@ class FrenchCurrencyExtractorConfiguration(FrenchNumberWithUnitExtractorConfigur
         self._suffix_list = FrenchNumericWithUnit.CurrencySuffixList
         self._prefix_list = FrenchNumericWithUnit.CurrencyPrefixList
         self._ambiguous_unit_list = FrenchNumericWithUnit.AmbiguousCurrencyUnitList
+
 
 class FrenchDimensionExtractorConfiguration(FrenchNumberWithUnitExtractorConfiguration):
     @property
@@ -124,6 +133,7 @@ class FrenchDimensionExtractorConfiguration(FrenchNumberWithUnitExtractorConfigu
         self._prefix_list = dict()
         self._ambiguous_unit_list = FrenchNumericWithUnit.AmbiguousDimensionUnitList
 
+
 class FrenchTemperatureExtractorConfiguration(FrenchNumberWithUnitExtractorConfiguration):
     @property
     def extract_type(self) -> str:
@@ -141,8 +151,13 @@ class FrenchTemperatureExtractorConfiguration(FrenchNumberWithUnitExtractorConfi
     def ambiguous_unit_list(self) -> List[str]:
         return self._ambiguous_unit_list
 
+    @property
+    def ambiguous_unit_number_multiplier_regex(self) -> Pattern:
+        return self._ambiguous_unit_number_multiplier_regex
+
     def __init__(self, culture_info: CultureInfo = None):
         super().__init__(culture_info)
         self._suffix_list = FrenchNumericWithUnit.TemperatureSuffixList
         self._prefix_list = dict()
         self._ambiguous_unit_list = list()
+        self._ambiguous_unit_number_multiplier_regex = RegExpUtility.get_safe_reg_exp(BaseUnits.AmbiguousUnitNumberMultiplierRegex)

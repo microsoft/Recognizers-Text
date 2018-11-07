@@ -23,8 +23,8 @@ class AbstractNumberWithUnitModel(Model):
         self.extractor_parser: List[ExtractorParserModel] = extractor_parser
 
     def parse(self, query: str) -> List[ModelResult]:
-        query = QueryProcessor.preprocess(query, False)
-        #query = FormatUtility.preProcess(query, false) TODO: for chinese characters
+        query = QueryProcessor.preprocess(query, True)
+
         extraction_results = []
         for item in self.extractor_parser:
             extract_results = item.extractor.extract(query)
