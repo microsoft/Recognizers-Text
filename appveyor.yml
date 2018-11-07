@@ -51,8 +51,8 @@ build_script:
 
     cd ..\java\
 
-	CALL mvn -v
-	
+    CALL mvn -v
+
     mvn package
 
 # disable automatic tests
