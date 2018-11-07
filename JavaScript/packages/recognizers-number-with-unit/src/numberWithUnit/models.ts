@@ -18,7 +18,7 @@ export abstract class AbstractNumberWithUnitModel implements IModel {
     }
 
     parse(query: string): Array<ModelResult> {
-        query = QueryProcessor.preProcess(query, false);
+        query = QueryProcessor.preProcess(query, true);
 
         let extractionResults = new Array<ModelResult>();
         for (let kv of this.extractorParsersMap.entries()) {

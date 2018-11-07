@@ -543,6 +543,21 @@
     ]
   },
   {
+    "Input": "100k",
+    "Results": [
+      {
+        "Text": "100k",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "100000"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
     "Input": "10G",
     "Results": [
       {

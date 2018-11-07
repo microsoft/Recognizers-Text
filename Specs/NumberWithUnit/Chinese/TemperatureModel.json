@@ -123,6 +123,8 @@
   ,
   {
     "Input": "Annatalk请给我一些数目",
+	"NotSupported": "javascript",
+	"Comment": "Temporary regression",
     "Results": []
   }
   ,

@@ -98,12 +98,5 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             return extractionResults;
         }
 
-        public enum CompositeEntityType
-        {
-            Age,
-            Currency,
-            Dimension,
-            Temperature
-        }
     }
 }

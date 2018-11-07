@@ -1,43 +1,5 @@
 import * as XRegExp from "xregexp";
 
-export class QueryProcessor {
-    static preProcess(query: string, caseSensitive: boolean = false, recode: boolean = true): string {
-        
-        if (recode) {
-            query = query.replace(/０/g, "0")
-                         .replace(/１/g, "1")
-                         .replace(/２/g, "2")
-                         .replace(/３/g, "3")
-                         .replace(/４/g, "4")
-                         .replace(/５/g, "5")
-                         .replace(/６/g, "6")
-                         .replace(/７/g, "7")
-                         .replace(/８/g, "8")
-                         .replace(/９/g, "9")
-                         .replace(/：/g, ":")
-                         .replace(/－/g, "-")
-                         .replace(/，/g, ",")
-                         .replace(/／/g, "/")
-                         .replace(/Ｇ/g, "G")
-                         .replace(/Ｍ/g, "M")
-                         .replace(/Ｔ/g, "T")
-                         .replace(/Ｋ/g, "K")
-                         .replace(/ｋ/g, "k")
-                         .replace(/．/g, ".")
-                         .replace(/（/g, "(")
-                         .replace(/）/g, ")")
-                         .replace(/％/g, "%")
-                         .replace(/、/g, ",");
-        }
-        
-        if (!caseSensitive) {
-            query = query.toLowerCase()
-        }
-
-        return 
-    }
-}
-
 export class Match {
     constructor(index: number, length: number, value: string, groups) {
         this.index = index;
@@ -176,9 +138,9 @@ export class RegExpUtility {
             let length = value.length;
 
             if (positiveLookbehinds && positiveLookbehinds.length > 0 && value.indexOf(positiveLookbehinds[0].value) === 0) {
-                value = source.substr(index, length).substr(positiveLookbehinds[0].value.length)
-                index += positiveLookbehinds[0].value.length
-                length -= positiveLookbehinds[0].value.length
+                value = source.substr(index, length).substr(positiveLookbehinds[0].value.length);
+                index += positiveLookbehinds[0].value.length;
+                length -= positiveLookbehinds[0].value.length;
             } else {
                 value = source.substr(index, length);
             }
@@ -256,7 +218,73 @@ export class RegExpUtility {
     }
 }
 
+export class QueryProcessor {
 
+    static readonly Expression: string = `(kB|K[Bb]|K|M[Bb]|M|G[Bb]|G|B)\\b`;
+    static readonly SpecialTokensRegex: RegExp = RegExpUtility.getSafeRegExp(QueryProcessor.Expression, "gs");
+
+    static preProcess(query: string, caseSensitive: boolean = false, recode: boolean = true): string {
+
+    if (recode) {
+        query = query
+            .replace(/０/g, "0")
+            .replace(/１/g, "1")
+            .replace(/２/g, "2")
+            .replace(/３/g, "3")
+            .replace(/４/g, "4")
+            .replace(/５/g, "5")
+            .replace(/６/g, "6")
+            .replace(/７/g, "7")
+            .replace(/８/g, "8")
+            .replace(/９/g, "9")
+            .replace(/：/g, ":")
+            .replace(/－/g, "-")
+            .replace(/，/g, ",")
+            .replace(/／/g, "/")
+            .replace(/Ｇ/g, "G")
+            .replace(/Ｍ/g, "M")
+            .replace(/Ｔ/g, "T")
+            .replace(/Ｋ/g, "K")
+            .replace(/ｋ/g, "k")
+            .replace(/．/g, ".")
+            .replace(/（/g, "(")
+            .replace(/）/g, ")")
+            .replace(/％/g, "%")
+            .replace(/、/g, ",");
+        }
+
+        if (!caseSensitive) {
+            query = query.toLowerCase();
+        } else {
+            query = QueryProcessor.toLowerTermSensitive(query);
+        }
+
+        return query;
+    }
+
+    private static applyReverse(idx: number, str: string, value: string): string {
+
+        let array = str.split('');
+
+        for (let i = 0; i < value.length; ++i) {
+            array[idx + i] = value[i];
+        }
+
+        return array.join('');
+    }
+
+    private static toLowerTermSensitive(input: string): string {
+        let result = input.toLowerCase();
+
+        let matches = RegExpUtility.getMatches(QueryProcessor.SpecialTokensRegex, input);
+        matches.forEach(match => {
+            result = QueryProcessor.applyReverse(match.index, result, match.value);
+        });
+
+        return result;
+    }
+
+}
 
 export class StringUtility {
     static isNullOrWhitespace(input: string): boolean {
@@ -276,8 +304,7 @@ export class StringUtility {
     }
 
     static removeDiacriticsFromWordBoundaries(input: string) {
-        return input
-            .split(' ')
+        return input.split(' ')
             .map((s) => {
                 let length = s.length;
                 if (length === 0) return s;

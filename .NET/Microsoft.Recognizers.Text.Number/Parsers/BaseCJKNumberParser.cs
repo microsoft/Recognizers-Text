@@ -83,7 +83,7 @@ namespace Microsoft.Recognizers.Text.Number
 
             if (ret != null)
             {
-                ret.Text = extResult.Text.ToLowerInvariant(); // @TODO @HERE
+                ret.Text = extResult.Text.ToLowerInvariant();
             }
 
             return ret;

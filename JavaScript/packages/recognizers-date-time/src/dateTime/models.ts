@@ -22,6 +22,7 @@ export class DateTimeModel implements IDateTimeModel {
     }
 
     parse(query: string, referenceDate: Date = new Date()): ModelResult[] {
+
         query = QueryProcessor.preProcess(query);
 
         let extractResults = this.extractor.extract(query, referenceDate);

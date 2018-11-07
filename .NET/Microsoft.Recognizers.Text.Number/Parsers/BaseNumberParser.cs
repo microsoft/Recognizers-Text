@@ -151,7 +151,7 @@ namespace Microsoft.Recognizers.Text.Number
             if (ret != null)
             {
                 ret.Type = DetermineType(extResult);
-                ret.Text = ret.Text.ToLowerInvariant(); // @TODO @HERE
+                ret.Text = ret.Text.ToLowerInvariant();
             }
 
             return ret;
@@ -553,7 +553,7 @@ namespace Microsoft.Recognizers.Text.Number
             // Scan from end to start, find the end word
             for (var i = matchStrs.Count - 1; i >= 0; i--)
             {
-                var matchI = matchStrs[i].ToLowerInvariant(); // @TODO @HERE
+                var matchI = matchStrs[i].ToLowerInvariant(); 
 
                 if (RoundNumberSet.Contains(matchI))
                 {
