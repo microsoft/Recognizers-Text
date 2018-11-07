@@ -4,7 +4,9 @@ import com.microsoft.recognizers.text.ExtractResult;
 import com.microsoft.recognizers.text.IExtractor;
 import com.microsoft.recognizers.text.numberwithunit.models.PrefixUnitResult;
 import com.microsoft.recognizers.text.numberwithunit.utilities.DinoComparer;
+import com.microsoft.recognizers.text.utilities.Match;
 import com.microsoft.recognizers.text.utilities.QueryProcessor;
+import com.microsoft.recognizers.text.utilities.RegExpUtility;
 
 import java.util.*;
 import java.util.regex.MatchResult;
@@ -42,7 +44,7 @@ public class NumberWithUnitExtractor implements IExtractor {
                 }
             }
 
-            // 2 is the maxium length of spaces.
+            // 2 is the maximum length of spaces.
             tempMaxPrefixMatchLen += 2;
             maxPrefixMatchLen = tempMaxPrefixMatchLen;
             prefixRegexes = buildRegexFromSet(this.config.getPrefixList().values());
@@ -67,6 +69,22 @@ public class NumberWithUnitExtractor implements IExtractor {
         Arrays.fill(matched, false);
         List<ExtractResult> numbers = this.config.getUnitNumExtractor().extract(source);
         int sourceLen = source.length();
+
+        /* Special case for cases where number multipliers clash with unit */
+        Pattern ambiguousMultiplierRegex = this.config.getAmbiguousUnitNumberMultiplierRegex();
+        if (ambiguousMultiplierRegex != null)
+        {
+            for (ExtractResult number: numbers)
+            {
+                Match[] matches = RegExpUtility.getMatches(ambiguousMultiplierRegex, number.text);
+                if (matches.length == 1)
+                {
+                    int newLength = number.length - matches[0].length;
+                    number.withText(number.text.substring(0, newLength));
+                    number.withLength(newLength);
+                }
+            }
+        }
 
         /* Mix prefix and numbers, make up a prefix-number combination */
         if (maxPrefixMatchLen != 0) {

@@ -1,7 +1,8 @@
 @ECHO off
 
+ECHO.
 ECHO # Java environment info
-mvn -v
+CALL mvn -v
 
 ECHO.
 ECHO # Building Java platform
