@@ -82,7 +82,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex AfterNextSuffixRegex =
             new Regex(DateTimeDefinitions.AfterNextSuffixRegex, RegexOptions.Singleline);
         public static readonly Regex RelativeRegex =
-            new Regex(DateTimeDefinitions.RelativeRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.RelativeRegex, RegexOptions.Singleline);
 
         Regex IDatePeriodParserConfiguration.NextPrefixRegex => NextPrefixRegex;
         Regex IDatePeriodParserConfiguration.PastPrefixRegex => PastPrefixRegex;

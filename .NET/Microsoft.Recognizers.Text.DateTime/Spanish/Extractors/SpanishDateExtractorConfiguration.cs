@@ -61,16 +61,20 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public static readonly Regex RelativeWeekDayRegex =
             new Regex(DateTimeDefinitions.RelativeWeekDayRegex, RegexOptions.Singleline);
 
-        public static readonly Regex ForTheRegex = new Regex(DateTimeDefinitions.ForTheRegex, RegexOptions.Singleline);
+        public static readonly Regex ForTheRegex = 
+            new Regex(DateTimeDefinitions.ForTheRegex, RegexOptions.Singleline);
 
-        public static readonly Regex WeekDayAndDayOfMothRegex = new Regex(DateTimeDefinitions.WeekDayAndDayOfMonthRegex, RegexOptions.Singleline);
+        public static readonly Regex WeekDayAndDayOfMothRegex = 
+            new Regex(DateTimeDefinitions.WeekDayAndDayOfMonthRegex, RegexOptions.Singleline);
 
-        public static readonly Regex RelativeMonthRegex = new Regex(DateTimeDefinitions.RelativeMonthRegex, RegexOptions.Singleline);
+        public static readonly Regex RelativeMonthRegex = 
+            new Regex(DateTimeDefinitions.RelativeMonthRegex, RegexOptions.Singleline);
 
-        public static readonly Regex PrefixArticleRegex = new Regex(DateTimeDefinitions.PrefixArticleRegex,
-                RegexOptions.Singleline);
+        public static readonly Regex PrefixArticleRegex = 
+            new Regex(DateTimeDefinitions.PrefixArticleRegex, RegexOptions.Singleline);
 
-        public static readonly Regex RangeConnectorSymbolRegex = new Regex(Definitions.BaseDateTime.RangeConnectorSymbolRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex RangeConnectorSymbolRegex = 
+            new Regex(Definitions.BaseDateTime.RangeConnectorSymbolRegex, RegexOptions.Singleline);
 
         public static readonly Regex[] ImplicitDateList =
         {
@@ -78,13 +82,17 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             WeekDayRegex, WeekDayOfMonthRegex, SpecialDateRegex
         };
 
-        public static readonly Regex OfMonth = new Regex(DateTimeDefinitions.OfMonthRegex, RegexOptions.Singleline);
+        public static readonly Regex OfMonth = 
+            new Regex(DateTimeDefinitions.OfMonthRegex, RegexOptions.Singleline);
 
-        public static readonly Regex MonthEnd = new Regex(DateTimeDefinitions.MonthEndRegex, RegexOptions.Singleline);
+        public static readonly Regex MonthEnd = 
+            new Regex(DateTimeDefinitions.MonthEndRegex, RegexOptions.Singleline);
 
-        public static readonly Regex WeekDayEnd = new Regex(DateTimeDefinitions.WeekDayEnd, RegexOptions.Singleline);
+        public static readonly Regex WeekDayEnd = 
+            new Regex(DateTimeDefinitions.WeekDayEnd, RegexOptions.Singleline);
 
-        public static readonly Regex YearSuffix = new Regex(DateTimeDefinitions.YearSuffix, RegexOptions.Singleline);
+        public static readonly Regex YearSuffix = 
+            new Regex(DateTimeDefinitions.YearSuffix, RegexOptions.Singleline);
 
         public static readonly Regex LessThanRegex =
             new Regex(DateTimeDefinitions.LessThanRegex, RegexOptions.Singleline);

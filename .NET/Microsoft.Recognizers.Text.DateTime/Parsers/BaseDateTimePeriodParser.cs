@@ -451,8 +451,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
 
                 var pastHours = endHour - beginHour;
-                var beginTimex = TimexUtility.CombineDateAndTimeTimex(dateStr, FormatUtil.ShortTime(beginHour));
-                var endTimex = TimexUtility.CombineDateAndTimeTimex(dateStr, FormatUtil.ShortTime(endHour));
+                var beginTimex = TimexUtility.CombineDateAndTimeTimex(dateStr, DateTimeFormatUtil.ShortTime(beginHour));
+                var endTimex = TimexUtility.CombineDateAndTimeTimex(dateStr, DateTimeFormatUtil.ShortTime(endHour));
                 var durationTimex = TimexUtility.GenerateDurationTimex(endHour - beginHour, Constants.TimexHour, isLessThanDay: true);
 
                 ret.Timex = TimexUtility.GenerateDateTimePeriodTimex(beginTimex, endTimex, durationTimex);

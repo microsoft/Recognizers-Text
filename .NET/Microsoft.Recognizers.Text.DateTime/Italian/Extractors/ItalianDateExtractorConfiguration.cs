@@ -126,11 +126,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             StrictWeekDay, WeekDayOfMonthRegex, SpecialDate
         };
 
-        public static readonly Regex OfMonth = new Regex(DateTimeDefinitions.OfMonth,
-            RegexOptions.Singleline);
+        public static readonly Regex OfMonth = 
+            new Regex(DateTimeDefinitions.OfMonth, RegexOptions.Singleline);
 
-        public static readonly Regex MonthEnd = new Regex(DateTimeDefinitions.MonthEnd,
-            RegexOptions.Singleline);
+        public static readonly Regex MonthEnd = 
+            new Regex(DateTimeDefinitions.MonthEnd, RegexOptions.Singleline);
 
         public static readonly Regex WeekDayEnd =
             new Regex(DateTimeDefinitions.WeekDayEnd, RegexOptions.Singleline);
@@ -150,7 +150,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         public static readonly Regex RangeUnitRegex =
             new Regex(DateTimeDefinitions.RangeUnitRegex, RegexOptions.Singleline);
 
-        public static readonly Regex RangeConnectorSymbolRegex = new Regex(Definitions.BaseDateTime.RangeConnectorSymbolRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex RangeConnectorSymbolRegex = 
+            new Regex(Definitions.BaseDateTime.RangeConnectorSymbolRegex, RegexOptions.Singleline);
 
         public static readonly ImmutableDictionary<string, int> DayOfWeek =
             DateTimeDefinitions.DayOfWeek.ToImmutableDictionary();
@@ -158,8 +159,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         public static readonly ImmutableDictionary<string, int> MonthOfYear =
             DateTimeDefinitions.MonthOfYear.ToImmutableDictionary();
 
-        public static readonly Regex NonDateUnitRegex = new Regex(@"(?<unit>heure|heures|hrs|secondes|seconde|secs|sec|minutes|minute|mins)\b",
-            RegexOptions.Singleline);
+        public static readonly Regex NonDateUnitRegex = 
+            new Regex(@"(?<unit>heure|heures|hrs|secondes|seconde|secs|sec|minutes|minute|mins)\b", RegexOptions.Singleline);
 
         public ItalianDateExtractorConfiguration(IOptionsConfiguration config) : base(config)
         {
