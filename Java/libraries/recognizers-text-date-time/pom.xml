@@ -4,10 +4,14 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.microsoft.recognizers.text.resourcegenerator</groupId>
-    <artifactId>resource-generator</artifactId>
+    <groupId>com.microsoft.recognizers.text.datetime</groupId>
+    <artifactId>recognizers-text-date-time</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
+
+    <name>${project.groupId}:${project.artifactId}</name>
+    <description>Microsoft.Recognizers.Text - Date-Time Recognizers</description>
+    <url>https://github.com/Microsoft/Recognizers-Text/</url>
 
     <parent>
         <groupId>com.microsoft.recognizers.text</groupId>
@@ -16,26 +20,46 @@
         <relativePath>../../</relativePath>
     </parent>
 
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>http://www.opensource.org/licenses/mit-license.php</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>Microsoft Recognizers-Text</name>
+            <email></email>
+            <organization>Microsoft</organization>
+            <organizationUrl>https://www.microsoft.com/</organizationUrl>
+        </developer>
+    </developers>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
     <dependencies>
         <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
-            <version>2.9.5</version>
+            <groupId>com.microsoft.recognizers.text</groupId>
+            <artifactId>recognizers-text</artifactId>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>org.yaml</groupId>
-            <artifactId>snakeyaml</artifactId>
-            <version>1.20</version>
+            <groupId>com.microsoft.recognizers.text.number</groupId>
+            <artifactId>recognizers-text-number</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.microsoft.recognizers.text.numberwithunit</groupId>
+            <artifactId>recognizers-text-number-with-unit</artifactId>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
             <version>24.1-jre</version>
-            <scope>compile</scope>
         </dependency>
     </dependencies>
 
@@ -50,20 +74,7 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>exec-maven-plugin</artifactId>
-                <version>1.6.0</version>
-                <configuration>
-                    <mainClass>com.microsoft.recognizers.text.resources.ResourcesGenerator</mainClass>
-                    <arguments>
-                        <argument>libraries/recognizers-text-number/resource-definitions.json</argument>
-                        <argument>libraries/recognizers-text-number-with-unit/resource-definitions.json</argument>
-                        <argument>libraries/recognizers-text-date-time/resource-definitions.json</argument>
-                    </arguments>
-                </configuration>
-            </plugin>
         </plugins>
     </build>
-
+    
 </project>
