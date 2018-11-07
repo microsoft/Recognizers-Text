@@ -28,14 +28,14 @@ public class ChineseNumeric {
 
     public static final String WordSeparatorToken = "";
 
-    public static final Map<String, Long> RoundNumberMap = ImmutableMap.<String, Long>builder()
+    public static final ImmutableMap<String, Long> RoundNumberMap = ImmutableMap.<String, Long>builder()
         .put("k", 1000L)
         .put("m", 1000000L)
         .put("g", 1000000000L)
         .put("t", 1000000000000L)
         .build();
 
-    public static final Map<Character, Long> RoundNumberMapChar = ImmutableMap.<Character, Long>builder()
+    public static final ImmutableMap<Character, Long> RoundNumberMapChar = ImmutableMap.<Character, Long>builder()
         .put('十', 10L)
         .put('百', 100L)
         .put('千', 1000L)
@@ -49,7 +49,7 @@ public class ChineseNumeric {
         .put('億', 100000000L)
         .build();
 
-    public static final Map<Character, Double> ZeroToNineMap = ImmutableMap.<Character, Double>builder()
+    public static final ImmutableMap<Character, Double> ZeroToNineMap = ImmutableMap.<Character, Double>builder()
         .put('零', 0D)
         .put('一', 1D)
         .put('二', 2D)
@@ -100,7 +100,7 @@ public class ChineseNumeric {
         .put('仨', 3D)
         .build();
 
-    public static final Map<Character, Character> FullToHalfMap = ImmutableMap.<Character, Character>builder()
+    public static final ImmutableMap<Character, Character> FullToHalfMap = ImmutableMap.<Character, Character>builder()
         .put('０', '0')
         .put('１', '1')
         .put('２', '2')
@@ -122,7 +122,7 @@ public class ChineseNumeric {
         .put('．', '.')
         .build();
 
-    public static final Map<Character, Character> TratoSimMap = ImmutableMap.<Character, Character>builder()
+    public static final ImmutableMap<Character, Character> TratoSimMap = ImmutableMap.<Character, Character>builder()
         .put('佰', '百')
         .put('點', '点')
         .put('個', '个')
@@ -131,7 +131,7 @@ public class ChineseNumeric {
         .put('雙', '双')
         .build();
 
-    public static final Map<String, String> UnitMap = ImmutableMap.<String, String>builder()
+    public static final ImmutableMap<String, String> UnitMap = ImmutableMap.<String, String>builder()
         .put("萬萬", "億")
         .put("億萬", "兆")
         .put("萬億", "兆")

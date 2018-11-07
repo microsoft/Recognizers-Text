@@ -213,7 +213,7 @@ public class FrenchNumeric {
 
     public static final String AmbiguousFractionConnectorsRegex = "^[.]";
 
-    public static final Map<String, Long> CardinalNumberMap = ImmutableMap.<String, Long>builder()
+    public static final ImmutableMap<String, Long> CardinalNumberMap = ImmutableMap.<String, Long>builder()
         .put("zéro", 0L)
         .put("zero", 0L)
         .put("un", 1L)
@@ -278,7 +278,7 @@ public class FrenchNumeric {
         .put("un billion", 1000000000000L)
         .build();
 
-    public static final Map<String, Long> OrdinalNumberMap = ImmutableMap.<String, Long>builder()
+    public static final ImmutableMap<String, Long> OrdinalNumberMap = ImmutableMap.<String, Long>builder()
         .put("premier", 1L)
         .put("première", 1L)
         .put("premiere", 1L)
@@ -363,7 +363,7 @@ public class FrenchNumeric {
         .put("trillionieme", 1000000000000000000L)
         .build();
 
-    public static final Map<String, Long> PrefixCardinalMap = ImmutableMap.<String, Long>builder()
+    public static final ImmutableMap<String, Long> PrefixCardinalMap = ImmutableMap.<String, Long>builder()
         .put("deux", 2L)
         .put("trois", 3L)
         .put("quatre", 4L)
@@ -429,13 +429,13 @@ public class FrenchNumeric {
         .put("neuf cent", 900L)
         .build();
 
-    public static final Map<String, Long> SuffixOrdinalMap = ImmutableMap.<String, Long>builder()
+    public static final ImmutableMap<String, Long> SuffixOrdinalMap = ImmutableMap.<String, Long>builder()
         .put("millième", 1000L)
         .put("million", 1000000L)
         .put("milliardième", 1000000000000L)
         .build();
 
-    public static final Map<String, Long> RoundNumberMap = ImmutableMap.<String, Long>builder()
+    public static final ImmutableMap<String, Long> RoundNumberMap = ImmutableMap.<String, Long>builder()
         .put("cent", 100L)
         .put("mille", 1000L)
         .put("million", 1000000L)

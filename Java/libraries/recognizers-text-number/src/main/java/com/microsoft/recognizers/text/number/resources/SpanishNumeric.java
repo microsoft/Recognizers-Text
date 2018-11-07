@@ -207,7 +207,7 @@ public class SpanishNumeric {
     public static final String DigitalNumberRegex = "((?<=\\b)(mil|millones|mill[oó]n|billones|bill[oó]n|trillones|trill[oó]n|docenas?)(?=\\b))|((?<=(\\d|\\b)){BaseNumbers.MultiplierLookupRegex}(?=\\b))"
             .replace("{BaseNumbers.MultiplierLookupRegex}", BaseNumbers.MultiplierLookupRegex);
 
-    public static final Map<String, Long> CardinalNumberMap = ImmutableMap.<String, Long>builder()
+    public static final ImmutableMap<String, Long> CardinalNumberMap = ImmutableMap.<String, Long>builder()
         .put("cero", 0L)
         .put("un", 1L)
         .put("una", 1L)
@@ -288,7 +288,7 @@ public class SpanishNumeric {
         .put("trillones", 1000000000000000000L)
         .build();
 
-    public static final Map<String, Long> OrdinalNumberMap = ImmutableMap.<String, Long>builder()
+    public static final ImmutableMap<String, Long> OrdinalNumberMap = ImmutableMap.<String, Long>builder()
         .put("primero", 1L)
         .put("primera", 1L)
         .put("primer", 1L)
@@ -374,7 +374,7 @@ public class SpanishNumeric {
         .put("billonesima", 1000000000000L)
         .build();
 
-    public static final Map<String, Long> PrefixCardinalMap = ImmutableMap.<String, Long>builder()
+    public static final ImmutableMap<String, Long> PrefixCardinalMap = ImmutableMap.<String, Long>builder()
         .put("dos", 2L)
         .put("tres", 3L)
         .put("cuatro", 4L)
@@ -424,13 +424,13 @@ public class SpanishNumeric {
         .put("novecientos", 900L)
         .build();
 
-    public static final Map<String, Long> SuffixOrdinalMap = ImmutableMap.<String, Long>builder()
+    public static final ImmutableMap<String, Long> SuffixOrdinalMap = ImmutableMap.<String, Long>builder()
         .put("milesimo", 1000L)
         .put("millonesimo", 1000000L)
         .put("billonesimo", 1000000000000L)
         .build();
 
-    public static final Map<String, Long> RoundNumberMap = ImmutableMap.<String, Long>builder()
+    public static final ImmutableMap<String, Long> RoundNumberMap = ImmutableMap.<String, Long>builder()
         .put("mil", 1000L)
         .put("milesimo", 1000L)
         .put("millon", 1000000L)
