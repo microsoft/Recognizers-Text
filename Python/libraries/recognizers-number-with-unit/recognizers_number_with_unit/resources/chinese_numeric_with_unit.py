@@ -574,7 +574,7 @@ class ChineseNumericWithUnit:
                                 ('Petabyte', '千兆兆|千万亿字节|pb')])
     DimensionAmbiguousValues = ['丈', '位', '克', '分', '升', '寸', '尺', '斗', '斤', '桶', '毫', '石', '码', '磅', '米', '罐', '里', 'm', 'km', 'dm', 'cm', 'mm', 'l', 'ml', 'kg', 'mg', 'g', 't', 'b', 'byte', 'kb', 'mb', 'gb', 'tb', 'pb']
     TemperatureSuffixList = dict([('F', '华氏温度|华氏度|°f'),
-                                  ('K', 'k|开尔文温度|开氏度|凯氏度'),
+                                  ('K', '开尔文温度|开氏度|凯氏度|K|k'),
                                   ('R', '兰氏温度|°r'),
                                   ('C', '摄氏温度|摄氏度|°c'),
                                   ('Degree', '度')])
