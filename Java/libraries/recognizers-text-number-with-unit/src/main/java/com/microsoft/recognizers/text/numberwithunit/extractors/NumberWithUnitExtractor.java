@@ -4,7 +4,7 @@ import com.microsoft.recognizers.text.ExtractResult;
 import com.microsoft.recognizers.text.IExtractor;
 import com.microsoft.recognizers.text.numberwithunit.models.PrefixUnitResult;
 import com.microsoft.recognizers.text.numberwithunit.utilities.DinoComparer;
-import com.microsoft.recognizers.text.utilities.FormatUtility;
+import com.microsoft.recognizers.text.utilities.QueryProcessor;
 
 import java.util.*;
 import java.util.regex.MatchResult;
@@ -36,7 +36,7 @@ public class NumberWithUnitExtractor implements IExtractor {
         int tempMaxPrefixMatchLen = 0;
         if (this.config.getPrefixList() != null && this.config.getPrefixList().size() > 0) {
             for (String preMatch : this.config.getPrefixList().values()) {
-                List<String> matchList = FormatUtility.split(preMatch, separators);
+                List<String> matchList = QueryProcessor.split(preMatch, separators);
                 for (String match : matchList) {
                     tempMaxPrefixMatchLen = tempMaxPrefixMatchLen >= match.length() ? tempMaxPrefixMatchLen : match.length();
                 }
@@ -239,7 +239,7 @@ public class NumberWithUnitExtractor implements IExtractor {
         Set<Pattern> regexes = new HashSet<>();
         for (String regexString : collection) {
             List<String> regexTokens = new ArrayList<>();
-            for (String token : FormatUtility.split(regexString, Arrays.asList("|"))) {
+            for (String token : QueryProcessor.split(regexString, Arrays.asList("|"))) {
                 regexTokens.add(Pattern.quote(token));
             }
 
@@ -268,7 +268,7 @@ public class NumberWithUnitExtractor implements IExtractor {
         if (config.getPrefixList() != null && config.getPrefixList().size() > 0) {
             for (String addWord : config.getPrefixList().values()) {
 
-                for (String word : FormatUtility.split(addWord, separators)) {
+                for (String word : QueryProcessor.split(addWord, separators)) {
                     if (validateUnit(word)) {
                         separateWords.add(word);
                     }
@@ -278,7 +278,7 @@ public class NumberWithUnitExtractor implements IExtractor {
 
         if (config.getSuffixList() != null && config.getSuffixList().size() > 0) {
             for (String addWord : config.getSuffixList().values()) {
-                for (String word : FormatUtility.split(addWord, separators)) {
+                for (String word : QueryProcessor.split(addWord, separators)) {
                     if (validateUnit(word)) {
                         separateWords.add(word);
                     }

@@ -5,7 +5,7 @@ import com.microsoft.recognizers.text.ExtractResult;
 import com.microsoft.recognizers.text.IParser;
 import com.microsoft.recognizers.text.ParseResult;
 import com.microsoft.recognizers.text.number.Constants;
-import com.microsoft.recognizers.text.utilities.FormatUtility;
+import com.microsoft.recognizers.text.utilities.QueryProcessor;
 
 import java.util.*;
 import java.util.regex.Matcher;
@@ -148,7 +148,7 @@ public class BaseNumberParser implements IParser {
             power *= rep;
 
             while ((tmpIndex = handle.indexOf(matched.toLowerCase(), startIndex)) >= 0) {
-                String front = FormatUtility.trimEnd(handle.substring(0, tmpIndex));
+                String front = QueryProcessor.trimEnd(handle.substring(0, tmpIndex));
                 startIndex = front.length();
                 handle = front + handle.substring(tmpIndex + matched.length());
             }
@@ -292,7 +292,7 @@ public class BaseNumberParser implements IParser {
         handle = config.getHalfADozenRegex().matcher(handle).replaceAll(config.getHalfADozenText());
         //endregion
 
-        List<String> numGroup = FormatUtility.split(handle, config.getWrittenDecimalSeparatorTexts());
+        List<String> numGroup = QueryProcessor.split(handle, config.getWrittenDecimalSeparatorTexts());
 
         //region IntegerPart
         String intPart = numGroup.get(0);

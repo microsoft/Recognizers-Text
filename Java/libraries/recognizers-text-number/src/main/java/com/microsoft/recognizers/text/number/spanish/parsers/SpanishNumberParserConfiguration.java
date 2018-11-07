@@ -7,7 +7,7 @@ import com.microsoft.recognizers.text.ParseResult;
 import com.microsoft.recognizers.text.number.NumberOptions;
 import com.microsoft.recognizers.text.number.parsers.BaseNumberParserConfiguration;
 import com.microsoft.recognizers.text.number.resources.SpanishNumeric;
-import com.microsoft.recognizers.text.utilities.FormatUtility;
+import com.microsoft.recognizers.text.utilities.QueryProcessor;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -52,7 +52,7 @@ public class SpanishNumberParserConfiguration extends BaseNumberParserConfigurat
         List<String> result = new ArrayList<>();
 
         for (String token : tokens) {
-            String tempWord = FormatUtility.trimEnd(token, "s");
+            String tempWord = QueryProcessor.trimEnd(token, "s");
             if (this.getOrdinalNumberMap().containsKey(tempWord)) {
                 result.add(tempWord);
                 continue;
