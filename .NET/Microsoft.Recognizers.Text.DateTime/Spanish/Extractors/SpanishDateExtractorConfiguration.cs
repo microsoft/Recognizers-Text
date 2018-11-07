@@ -67,10 +67,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public static readonly Regex RelativeMonthRegex = new Regex(DateTimeDefinitions.RelativeMonthRegex, RegexOptions.Singleline);
 
-        public static readonly Regex PrefixArticleRegex =
-            new Regex(
-                DateTimeDefinitions.PrefixArticleRegex,
+        public static readonly Regex PrefixArticleRegex = new Regex(DateTimeDefinitions.PrefixArticleRegex,
                 RegexOptions.Singleline);
+
+        public static readonly Regex RangeConnectorSymbolRegex = new Regex(Definitions.BaseDateTime.RangeConnectorSymbolRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex[] ImplicitDateList =
         {
@@ -200,5 +200,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         Regex IDateExtractorConfiguration.InConnectorRegex => InConnectorRegex;
 
         Regex IDateExtractorConfiguration.RangeUnitRegex => RangeUnitRegex;
+
+        Regex IDateExtractorConfiguration.RangeConnectorSymbolRegex => RangeConnectorSymbolRegex;
     }
 }

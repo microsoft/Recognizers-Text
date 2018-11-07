@@ -13,7 +13,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             DatePeriodExtractor = new BaseDatePeriodExtractor(new FrenchDatePeriodExtractorConfiguration(this));
         }
 
-        public IDateTimeExtractor DateExtractor { get; }
+        public IDateExtractor DateExtractor { get; }
 
         public IDateTimeExtractor DatePeriodExtractor { get; }
 

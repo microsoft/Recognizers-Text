@@ -276,7 +276,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             NumberParser = new BaseNumberParser(new ItalianNumberParserConfiguration());
         }
 
-        public IDateTimeExtractor DatePointExtractor { get; }
+        public IDateExtractor DatePointExtractor { get; }
 
         public IExtractor CardinalExtractor { get; }
 

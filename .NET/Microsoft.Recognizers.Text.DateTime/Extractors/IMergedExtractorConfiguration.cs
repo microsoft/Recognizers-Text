@@ -8,7 +8,7 @@ namespace Microsoft.Recognizers.Text.DateTime
     public interface IMergedExtractorConfiguration : IOptionsConfiguration
     {
 
-        IDateTimeExtractor DateExtractor { get; }
+        IDateExtractor DateExtractor { get; }
 
         IDateTimeExtractor TimeExtractor { get; }
 

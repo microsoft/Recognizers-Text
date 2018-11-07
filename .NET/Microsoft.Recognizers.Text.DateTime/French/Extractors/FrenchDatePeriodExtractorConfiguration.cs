@@ -223,7 +223,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             NumberParser = new BaseNumberParser(new FrenchNumberParserConfiguration());
         }
 
-        public IDateTimeExtractor DatePointExtractor { get; }
+        public IDateExtractor DatePointExtractor { get; }
 
         public IExtractor CardinalExtractor { get; }
 

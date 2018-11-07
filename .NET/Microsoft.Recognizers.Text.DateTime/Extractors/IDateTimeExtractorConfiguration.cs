@@ -30,7 +30,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         IDateTimeExtractor DurationExtractor { get; }
 
-        IDateTimeExtractor DatePointExtractor { get; }
+        IDateExtractor DatePointExtractor { get; }
 
         IDateTimeExtractor TimePointExtractor { get; }
 

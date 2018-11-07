@@ -10,7 +10,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public string TokenBeforeDate { get; }
 
-        public IDateTimeExtractor DateExtractor { get; }
+        public IDateExtractor DateExtractor { get; }
 
         public IDateTimeExtractor TimeExtractor { get; }
 

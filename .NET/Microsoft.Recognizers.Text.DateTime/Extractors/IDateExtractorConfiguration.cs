@@ -3,8 +3,6 @@ using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
 using System.Collections.Immutable;
 
-using Microsoft.Recognizers.Text.Number;
-
 namespace Microsoft.Recognizers.Text.DateTime
 {
     public interface IDateExtractorConfiguration : IOptionsConfiguration
@@ -40,6 +38,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         Regex InConnectorRegex { get; }
 
         Regex RangeUnitRegex { get; }
+
+        Regex RangeConnectorSymbolRegex { get; }
 
         IExtractor IntegerExtractor { get; }
 

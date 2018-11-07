@@ -24,7 +24,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         IDateTimeExtractor TimeExtractor { get; }
 
-        IDateTimeExtractor DateExtractor { get; }
+        IDateExtractor DateExtractor { get; }
 
         IDateTimeExtractor DateTimeExtractor { get; }
 

@@ -1,7 +1,6 @@
 ﻿using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.Portuguese;
-using Microsoft.Recognizers.Text.Number;
 using System.Collections.Immutable;
 
 namespace Microsoft.Recognizers.Text.DateTime.Portuguese

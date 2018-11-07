@@ -13,7 +13,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         IDateTimeParser TimeParser { get; }
 
-        IDateTimeExtractor DateExtractor { get; }
+        IDateExtractor DateExtractor { get; }
 
         IDateTimeParser DateParser { get; }
 

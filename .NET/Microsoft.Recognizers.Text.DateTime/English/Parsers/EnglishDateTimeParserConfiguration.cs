@@ -12,7 +12,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public string TokenBeforeTime { get; }
 
-        public IDateTimeExtractor DateExtractor { get; }
+        public IDateExtractor DateExtractor { get; }
 
         public IDateTimeExtractor TimeExtractor { get; }
 

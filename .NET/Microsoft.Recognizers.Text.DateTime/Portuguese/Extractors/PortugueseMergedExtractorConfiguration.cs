@@ -45,7 +45,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         {
         };
 
-        public IDateTimeExtractor DateExtractor { get; }
+        public IDateExtractor DateExtractor { get; }
 
         public IDateTimeExtractor TimeExtractor { get; }
 

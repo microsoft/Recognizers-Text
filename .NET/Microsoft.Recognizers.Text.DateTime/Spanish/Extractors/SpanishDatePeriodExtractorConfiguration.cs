@@ -203,7 +203,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             NumberParser = new BaseNumberParser(new SpanishNumberParserConfiguration());
         }
 
-        public IDateTimeExtractor DatePointExtractor { get; }
+        public IDateExtractor DatePointExtractor { get; }
 
         public IExtractor CardinalExtractor { get; }
 

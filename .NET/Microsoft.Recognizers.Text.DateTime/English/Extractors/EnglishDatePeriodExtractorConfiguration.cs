@@ -197,7 +197,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             NumberParser = new BaseNumberParser(new EnglishNumberParserConfiguration());
         }
 
-        public IDateTimeExtractor DatePointExtractor { get; }
+        public IDateExtractor DatePointExtractor { get; }
 
         public IExtractor CardinalExtractor { get; }
 

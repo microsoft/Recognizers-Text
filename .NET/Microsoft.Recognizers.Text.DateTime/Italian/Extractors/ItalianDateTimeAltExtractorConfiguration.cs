@@ -13,7 +13,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             DatePeriodExtractor = new BaseDatePeriodExtractor(new ItalianDatePeriodExtractorConfiguration(this));
         }
 
-        public IDateTimeExtractor DateExtractor { get; }
+        public IDateExtractor DateExtractor { get; }
 
         public IDateTimeExtractor DatePeriodExtractor { get; }
 
