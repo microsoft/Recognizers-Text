@@ -153,7 +153,7 @@ export class AgoLaterUtil {
             case 'S': value.setSeconds(referenceDate.getSeconds() + (num * swift)); break;
             default: return result;
         }
-        result.timex = mode === AgoLaterMode.Date ? FormatUtil.luisDateFromDate(value) : FormatUtil.luisDateTime(value);
+        result.timex = mode === AgoLaterMode.Date ? DateTimeFormatUtil.luisDateFromDate(value) : DateTimeFormatUtil.luisDateTime(value);
         result.futureValue = value;
         result.pastValue = value;
         result.success = true;
@@ -196,7 +196,7 @@ export class MatchingUtil {
     }
 }
 
-export class FormatUtil {
+export class DateTimeFormatUtil {
     public static readonly HourTimexRegex = RegExpUtility.getSafeRegExp(String.raw`(?<!P)T\d{2}`, "gis");
 
     // Emulates .NET ToString("D{size}")
@@ -208,54 +208,54 @@ export class FormatUtil {
     public static luisDate(year: number, month: number, day: number): string {
         if (year === -1) {
             if (month === -1) {
-                return new Array("XXXX", "XX", FormatUtil.toString(day, 2)).join("-");
+                return new Array("XXXX", "XX", DateTimeFormatUtil.toString(day, 2)).join("-");
             }
 
-            return new Array("XXXX", FormatUtil.toString(month + 1, 2), FormatUtil.toString(day, 2)).join("-");
+            return new Array("XXXX", DateTimeFormatUtil.toString(month + 1, 2), DateTimeFormatUtil.toString(day, 2)).join("-");
         }
 
-        return new Array(FormatUtil.toString(year, 4), FormatUtil.toString(month + 1, 2), FormatUtil.toString(day, 2)).join("-");
+        return new Array(DateTimeFormatUtil.toString(year, 4), DateTimeFormatUtil.toString(month + 1, 2), DateTimeFormatUtil.toString(day, 2)).join("-");
     }
 
     public static luisDateFromDate(date: Date): string {
-        return FormatUtil.luisDate(date.getFullYear(), date.getMonth(), date.getDate());
+        return DateTimeFormatUtil.luisDate(date.getFullYear(), date.getMonth(), date.getDate());
     }
 
     public static luisTime(hour: number, min: number, second: number): string {
-        return new Array(FormatUtil.toString(hour, 2), FormatUtil.toString(min, 2), FormatUtil.toString(second, 2)).join(":");
+        return new Array(DateTimeFormatUtil.toString(hour, 2), DateTimeFormatUtil.toString(min, 2), DateTimeFormatUtil.toString(second, 2)).join(":");
     }
 
     public static luisTimeFromDate(time: Date): string {
-        return FormatUtil.luisTime(time.getHours(), time.getMinutes(), time.getSeconds());
+        return DateTimeFormatUtil.luisTime(time.getHours(), time.getMinutes(), time.getSeconds());
     }
 
     public static luisDateTime(time: Date): string {
-        return `${FormatUtil.luisDateFromDate(time)}T${FormatUtil.luisTimeFromDate(time)}`;
+        return `${DateTimeFormatUtil.luisDateFromDate(time)}T${DateTimeFormatUtil.luisTimeFromDate(time)}`;
     }
 
     public static formatDate(date: Date): string {
-        return new Array(FormatUtil.toString(date.getFullYear(), 4),
-            FormatUtil.toString(date.getMonth() + 1, 2),
-            FormatUtil.toString(date.getDate(), 2)).join("-");
+        return new Array(DateTimeFormatUtil.toString(date.getFullYear(), 4),
+            DateTimeFormatUtil.toString(date.getMonth() + 1, 2),
+            DateTimeFormatUtil.toString(date.getDate(), 2)).join("-");
     }
 
     public static formatTime(time: Date) {
-        return new Array(FormatUtil.toString(time.getHours(), 2),
-            FormatUtil.toString(time.getMinutes(), 2),
-            FormatUtil.toString(time.getSeconds(), 2)).join(":");
+        return new Array(DateTimeFormatUtil.toString(time.getHours(), 2),
+            DateTimeFormatUtil.toString(time.getMinutes(), 2),
+            DateTimeFormatUtil.toString(time.getSeconds(), 2)).join(":");
     }
 
     public static formatDateTime(datetime: Date): string {
-        return `${FormatUtil.formatDate(datetime)} ${FormatUtil.formatTime(datetime)}`;
+        return `${DateTimeFormatUtil.formatDate(datetime)} ${DateTimeFormatUtil.formatTime(datetime)}`;
     }
 
     public static shortTime(hour: number, minute: number, second: number): string {
         if (minute < 0 && second < 0) {
-            return `T${FormatUtil.toString(hour, 2)}`;
+            return `T${DateTimeFormatUtil.toString(hour, 2)}`;
         } else if (second < 0) {
-            return `T${FormatUtil.toString(hour, 2)}:${FormatUtil.toString(minute, 2)}`;
+            return `T${DateTimeFormatUtil.toString(hour, 2)}:${DateTimeFormatUtil.toString(minute, 2)}`;
         }
-        return `T${FormatUtil.toString(hour, 2)}:${FormatUtil.toString(minute, 2)}:${FormatUtil.toString(second, 2)}`;
+        return `T${DateTimeFormatUtil.toString(hour, 2)}:${DateTimeFormatUtil.toString(minute, 2)}:${DateTimeFormatUtil.toString(second, 2)}`;
     }
 
     public static luisTimeSpan(from: Date, to: Date): string {
@@ -279,7 +279,7 @@ export class FormatUtil {
     }
 
     public static allStringToPm(timeStr: string): string {
-        let matches = RegExpUtility.getMatches(FormatUtil.HourTimexRegex, timeStr);
+        let matches = RegExpUtility.getMatches(DateTimeFormatUtil.HourTimexRegex, timeStr);
         let split = Array<string>();
         let lastPos = 0;
         matches.forEach(match => {
@@ -293,8 +293,8 @@ export class FormatUtil {
         }
 
         for (let i = 0; i < split.length; i += 1) {
-            if (RegExpUtility.getMatches(FormatUtil.HourTimexRegex, split[i]).length > 0) {
-                split[i] = FormatUtil.toPm(split[i]);
+            if (RegExpUtility.getMatches(DateTimeFormatUtil.HourTimexRegex, split[i]).length > 0) {
+                split[i] = DateTimeFormatUtil.toPm(split[i]);
             }
         }
 
@@ -311,7 +311,7 @@ export class FormatUtil {
         let split = timeStr.split(':');
         let hour = parseInt(split[0], 10);
         hour = (hour === 12) ? 0 : hour + 12;
-        split[0] = FormatUtil.toString(hour, 2);
+        split[0] = DateTimeFormatUtil.toString(hour, 2);
 
         return (hasT ? "T" : "") + split.join(":");
     }

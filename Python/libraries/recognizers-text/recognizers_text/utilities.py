@@ -14,7 +14,7 @@ class RegExpUtility:
     def get_group_list(match: Match, group: str) -> List[str]:
         return match.captures(group)
 
-class FormatUtility:
+class QueryProcessor:
     @staticmethod
     def preprocess(source: str, lower: bool = True) -> str:
         result: str = source.lower() if lower else source
@@ -40,6 +40,8 @@ class FormatUtility:
         result = result.replace('．', '.')
         result = result.replace('（', '(')
         result = result.replace('）', ')')
+        result = result.replace('％', '%')
+        result = result.replace('、', ',')
         return result
 
     @staticmethod

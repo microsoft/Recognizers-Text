@@ -13,7 +13,7 @@ export { IMergedExtractorConfiguration, IMergedParserConfiguration, BaseMergedEx
 export { Constants, TimeTypeConstants } from "./dateTime/constants";
 export { IDateTimeModel, DateTimeModelResult, DateTimeModel } from "./dateTime/models";
 export { DateTimeParseResult, ICommonDateTimeParserConfiguration, IDateTimeParser, BaseDateParserConfiguration } from "./dateTime/parsers";
-export { Token, IDateTimeUtilityConfiguration, AgoLaterMode, AgoLaterUtil, MatchedIndex, MatchingUtil, FormatUtil, DateTimeResolutionResult, DateUtils, DayOfWeek } from "./dateTime/utilities";
+export { Token, IDateTimeUtilityConfiguration, AgoLaterMode, AgoLaterUtil, MatchedIndex, MatchingUtil, DateTimeFormatUtil, DateTimeResolutionResult, DateUtils, DayOfWeek } from "./dateTime/utilities";
 export { EnglishCommonDateTimeParserConfiguration, EnglishDateTimeUtilityConfiguration } from "./dateTime/english/baseConfiguration";
 export { EnglishDateExtractorConfiguration, EnglishDateParserConfiguration } from "./dateTime/english/dateConfiguration";
 export { EnglishTimeExtractorConfiguration, EnglishTimeParserConfiguration } from "./dateTime/english/timeConfiguration";

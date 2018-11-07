@@ -12,7 +12,7 @@ from recognizers_number.number import Constants as NumberConstants
 from .constants import Constants, TimeTypeConstants
 from .extractors import DateTimeExtractor
 from .parsers import DateTimeParser, DateTimeParseResult
-from .utilities import DateTimeUtilityConfiguration, Token, merge_all_tokens, get_tokens_from_regex, DateUtils, AgoLaterUtil, FormatUtil, DateTimeResolutionResult, DayOfWeek, AgoLaterMode
+from .utilities import DateTimeUtilityConfiguration, Token, merge_all_tokens, get_tokens_from_regex, DateUtils, AgoLaterUtil, DateTimeFormatUtil, DateTimeResolutionResult, DayOfWeek, AgoLaterMode
 
 class DateExtractorConfiguration(ABC):
     @property
@@ -411,9 +411,9 @@ class BaseDateParser(DateTimeParser):
 
             if inner_result.success:
                 inner_result.future_resolution: Dict[str, str] = dict()
-                inner_result.future_resolution[TimeTypeConstants.DATE] = FormatUtil.format_date(inner_result.future_value)
+                inner_result.future_resolution[TimeTypeConstants.DATE] = DateTimeFormatUtil.format_date(inner_result.future_value)
                 inner_result.past_resolution: Dict[str, str] = dict()
-                inner_result.past_resolution[TimeTypeConstants.DATE] = FormatUtil.format_date(inner_result.past_value)
+                inner_result.past_resolution[TimeTypeConstants.DATE] = DateTimeFormatUtil.format_date(inner_result.past_value)
                 result_value = inner_result
 
         result = DateTimeParseResult(source)
@@ -466,10 +466,10 @@ class BaseDateParser(DateTimeParser):
 
         if year == 0:
             year = reference.year
-            result.timex = FormatUtil.luis_date(-1, month, day)
+            result.timex = DateTimeFormatUtil.luis_date(-1, month, day)
             no_year = True
         else:
-            result.timex = FormatUtil.luis_date(year, month, day)
+            result.timex = DateTimeFormatUtil.luis_date(year, month, day)
 
         future_date = DateUtils.safe_create_from_min_value(year, month, day)
         past_date = DateUtils.safe_create_from_min_value(year, month, day)
@@ -498,9 +498,9 @@ class BaseDateParser(DateTimeParser):
             day_str = match.group('day')
             day = self.config.day_of_month.get(day_str)
 
-            result.timex = FormatUtil.luis_date(-1, -1, day)
+            result.timex = DateTimeFormatUtil.luis_date(-1, -1, day)
 
-            try_str = FormatUtil.luis_date(year, month, day)
+            try_str = DateTimeFormatUtil.luis_date(year, month, day)
             try_date = datetime.strptime(try_str, '%Y-%m-%d')
             future_date: datetime
             past_date: datetime
@@ -528,7 +528,7 @@ class BaseDateParser(DateTimeParser):
         if match and match.start() == 0 and len(match.group()) == len(trimmed_source):
             swift = self.config.get_swift_day(match.group())
             value = reference + timedelta(days=swift)
-            result.timex = FormatUtil.luis_date_from_datetime(value)
+            result.timex = DateTimeFormatUtil.luis_date_from_datetime(value)
             result.future_value = value
             result.past_value = value
             result.success = True
@@ -540,7 +540,7 @@ class BaseDateParser(DateTimeParser):
             weekday_str = match.group('weekday')
             value = DateUtils.next(reference, self.config.day_of_week.get(weekday_str))
 
-            result.timex = FormatUtil.luis_date_from_datetime(value)
+            result.timex = DateTimeFormatUtil.luis_date_from_datetime(value)
             result.future_value = value
             result.past_value = value
             result.success = True
@@ -552,7 +552,7 @@ class BaseDateParser(DateTimeParser):
             weekday_str = match.group('weekday')
             value = DateUtils.this(reference, self.config.day_of_week.get(weekday_str))
 
-            result.timex = FormatUtil.luis_date_from_datetime(value)
+            result.timex = DateTimeFormatUtil.luis_date_from_datetime(value)
             result.future_value = value
             result.past_value = value
             result.success = True
@@ -564,7 +564,7 @@ class BaseDateParser(DateTimeParser):
             weekday_str = match.group('weekday')
             value = DateUtils.last(reference, self.config.day_of_week.get(weekday_str))
 
-            result.timex = FormatUtil.luis_date_from_datetime(value)
+            result.timex = DateTimeFormatUtil.luis_date_from_datetime(value)
             result.future_value = value
             result.past_value = value
             result.success = True
@@ -608,7 +608,7 @@ class BaseDateParser(DateTimeParser):
             month = reference.month
             year = reference.year
 
-            result.timex = FormatUtil.luis_date(-1, -1, day)
+            result.timex = DateTimeFormatUtil.luis_date(-1, -1, day)
             date = datetime(year, month, day)
             result.future_value = date
             result.past_value = date
@@ -626,7 +626,7 @@ class BaseDateParser(DateTimeParser):
             year = reference.year
 
             # the validity of the phrase is guaranteed in the Date Extractor
-            result.timex = FormatUtil.luis_date(year, month, day)
+            result.timex = DateTimeFormatUtil.luis_date(year, month, day)
             date = datetime(year, month, day)
             result.future_value = date
             result.past_value = date
@@ -681,7 +681,7 @@ class BaseDateParser(DateTimeParser):
             if past_date.month != month:
                 past_date = past_date.replace(day=past_date.date - 7)
 
-        result.timex = '-'.join(['XXXX', FormatUtil.to_str(month, 2), 'WXX', str(weekday), '#' + str(cardinal)])
+        result.timex = '-'.join(['XXXX', DateTimeFormatUtil.to_str(month, 2), 'WXX', str(weekday), '#' + str(cardinal)])
         result.future_value = future_date
         result.past_value = past_date
         result.success = True
@@ -769,7 +769,7 @@ class BaseDateParser(DateTimeParser):
         past_date = date
 
         if ambiguous:
-            result.timex = FormatUtil.luis_date(-1, month, day)
+            result.timex = DateTimeFormatUtil.luis_date(-1, month, day)
 
             if future_date < reference:
                 future_date = future_date.replace(year=future_date.year+1)
@@ -777,7 +777,7 @@ class BaseDateParser(DateTimeParser):
             if past_date >= reference:
                 past_date = past_date.replace(year=past_date.year+1)
         else:
-            result.timex = FormatUtil.luis_date(year, month, day)
+            result.timex = DateTimeFormatUtil.luis_date(year, month, day)
 
         result.future_value = future_date
         result.past_value = past_date
@@ -800,7 +800,7 @@ class BaseDateParser(DateTimeParser):
         month = reference.month
         year = reference.year
 
-        result.timex = FormatUtil.luis_date(-1, -1, day)
+        result.timex = DateTimeFormatUtil.luis_date(-1, -1, day)
         past_date = DateUtils.safe_create_from_min_value(year, month, day)
         future_date = DateUtils.safe_create_from_min_value(year, month, day)
 

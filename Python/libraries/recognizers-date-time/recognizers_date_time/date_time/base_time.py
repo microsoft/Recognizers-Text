@@ -8,7 +8,7 @@ from recognizers_text.extractor import ExtractResult
 from .constants import Constants, TimeTypeConstants
 from .extractors import DateTimeExtractor
 from .parsers import DateTimeParser, DateTimeParseResult
-from .utilities import Token, merge_all_tokens, DateTimeResolutionResult, DateTimeUtilityConfiguration, FormatUtil, DateUtils
+from .utilities import Token, merge_all_tokens, DateTimeResolutionResult, DateTimeUtilityConfiguration, DateTimeFormatUtil, DateUtils
 
 class TimeExtractorConfiguration(ABC):
     @property
@@ -133,8 +133,8 @@ class BaseTimeParser(DateTimeParser):
 
             inner_result = self.internal_parser(source_text, reference)
             if inner_result.success:
-                inner_result.future_resolution[TimeTypeConstants.TIME] = FormatUtil.format_time(inner_result.future_value)
-                inner_result.past_resolution[TimeTypeConstants.TIME] = FormatUtil.format_time(inner_result.past_value)
+                inner_result.future_resolution[TimeTypeConstants.TIME] = DateTimeFormatUtil.format_time(inner_result.future_value)
+                inner_result.past_resolution[TimeTypeConstants.TIME] = DateTimeFormatUtil.format_time(inner_result.past_value)
                 result.value = inner_result
                 result.timex_str = inner_result.timex if inner_result is not None else ''
                 result.resolution_str = ''
