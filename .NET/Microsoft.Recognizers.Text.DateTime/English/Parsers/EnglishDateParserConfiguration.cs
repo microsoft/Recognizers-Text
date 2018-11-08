@@ -145,6 +145,14 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             {
                 swift = -2;
             }
+            else if (trimmedText.EndsWith("day after"))
+            {
+                swift = 1;
+            }
+            else if (trimmedText.EndsWith("day before"))
+            {
+                swift = -1;
+            }
             else if (match.Success)
             {
                 swift = GetSwift(text);

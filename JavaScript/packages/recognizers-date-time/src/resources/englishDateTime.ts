@@ -33,7 +33,7 @@ export namespace EnglishDateTime {
 	export const SingleWeekDayRegex = `\\b(?<weekday>Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Mon|Tue|Tues|Wedn|Weds|Wed|Thurs|Thur|Thu|Fri|((?<=on\\s+)(Sat|Sun)))\\b`;
 	export const RelativeMonthRegex = `(?<relmonth>(of\\s+)?${RelativeRegex}\\s+month)\\b`;
 	export const WrittenMonthRegex = `(((the\\s+)?month of\\s+)?(?<month>April|Apr|August|Aug|December|Dec|February|Feb|January|Jan|July|Jul|June|Jun|March|Mar|May|November|Nov|October|Oct|September|Sept|Sep))`;
-	export const MonthSuffixRegex = `(?<msuf>(in\\s+|of\\s+|on\\s+)?(${RelativeMonthRegex}|${WrittenMonthRegex}))`;
+	export const MonthSuffixRegex = `(?<msuf>((in|of|on)\\s+)?(${RelativeMonthRegex}|${WrittenMonthRegex}))`;
 	export const DateUnitRegex = `(?<unit>decades?|years?|months?|weeks?|(?<business>business\\s+)?days?)\\b`;
 	export const DateTokenPrefix = 'on ';
 	export const TimeTokenPrefix = 'at ';
@@ -43,7 +43,7 @@ export namespace EnglishDateTime {
 	export const MonthFrontSimpleCasesRegex = `\\b((from|between)\\s+)?${MonthSuffixRegex}\\s+((from)\\s+)?(${DayRegex})\\s*${TillRegex}\\s*(${DayRegex})((\\s+|\\s*,\\s*)${YearRegex})?\\b`;
 	export const MonthFrontBetweenRegex = `\\b${MonthSuffixRegex}\\s+(between\\s+)(${DayRegex})\\s*${RangeConnectorRegex}\\s*(${DayRegex})((\\s+|\\s*,\\s*)${YearRegex})?\\b`;
 	export const BetweenRegex = `\\b(between\\s+)(${DayRegex})\\s*${RangeConnectorRegex}\\s*(${DayRegex})\\s+${MonthSuffixRegex}((\\s+|\\s*,\\s*)${YearRegex})?\\b`;
-	export const MonthWithYear = `\\b((${WrittenMonthRegex}(\\.)?(\\s*),?(\\s+of)?(\\s*)(${YearRegex}|(?<order>following|next|last|this)\\s+year))|((${YearRegex}|(?<order>following|next|last|this)\\s+year)(\\s*),?(\\s*)${WrittenMonthRegex}))\\b`;
+	export const MonthWithYear = `\\b((${WrittenMonthRegex}(\\.)?(\\s*)[/\\\\\\-\\.,]?(\\s+of)?(\\s*)(${YearRegex}|(?<order>following|next|last|this)\\s+year))|((${YearRegex}|(?<order>following|next|last|this)\\s+year)(\\s*),?(\\s*)${WrittenMonthRegex}))\\b`;
 	export const OneWordPeriodRegex = `\\b((((the\\s+)?month of\\s+)?(${StrictRelativeRegex}\\s+)?(?<month>April|Apr|August|Aug|December|Dec|February|Feb|January|Jan|July|Jul|June|Jun|March|Mar|May|November|Nov|October|Oct|September|Sep|Sept))|(month|year) to date|(${RelativeRegex}\\s+)?(my\\s+)?(weekend|week|month|year)(?!((\\s+of)?\\s+\\d+|\\s+to\\s+date))(\\s+${AfterNextSuffixRegex})?)\\b`;
 	export const MonthNumWithYear = `\\b((${BaseDateTime.FourDigitYearRegex}(\\s*)[/\\-\\.](\\s*)${MonthNumRegex})|(${MonthNumRegex}(\\s*)[/\\-](\\s*)${BaseDateTime.FourDigitYearRegex}))\\b`;
 	export const WeekOfMonthRegex = `\\b(?<wom>(the\\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th|fifth|5th|last)\\s+week\\s+${MonthSuffixRegex})\\b`;
@@ -77,7 +77,7 @@ export namespace EnglishDateTime {
 	export const ThisRegex = `\\b((this(\\s*week)?(\\s*on)?\\s+)${WeekDayRegex})|(${WeekDayRegex}((\\s+of)?\\s+this\\s*week))\\b`;
 	export const LastDateRegex = `\\b(${PastPrefixRegex}(\\s*week)?\\s+${WeekDayRegex})|(${WeekDayRegex}(\\s+last\\s*week))\\b`;
 	export const NextDateRegex = `\\b(${NextPrefixRegex}(\\s*week(\\s*,?\\s*on)?)?\\s+${WeekDayRegex})|((on\\s+)?${WeekDayRegex}((\\s+of)?\\s+(the\\s+following|(the\\s+)?next)\\s*week))\\b`;
-	export const SpecialDayRegex = `\\b((the\\s+)?day before yesterday|(the\\s+)?day after (tomorrow|tmr)|((the\\s+)?(${RelativeRegex}|my)\\s+day)|yesterday|tomorrow|tmr|today)\\b`;
+	export const SpecialDayRegex = `\\b((the\\s+)?day before yesterday|(the\\s+)?day after (tomorrow|tmr)|the\\s+day\\s+(before|after)(?!=\\s+day)|((the\\s+)?(${RelativeRegex}|my)\\s+day)|yesterday|tomorrow|tmr|today)\\b`;
 	export const SpecialDayWithNumRegex = `\\b((?<number>${WrittenNumRegex})\\s+days?\\s+from\\s+(?<day>yesterday|tomorrow|tmr|today))\\b`;
 	export const RelativeDayRegex = `\\b(((the\\s+)?${RelativeRegex}\\s+day))\\b`;
 	export const SetWeekDayRegex = `\\b(?<prefix>on\\s+)?(?<weekday>morning|afternoon|evening|night|Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday)s\\b`;
