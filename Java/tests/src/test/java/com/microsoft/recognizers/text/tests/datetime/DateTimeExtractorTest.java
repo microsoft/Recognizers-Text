@@ -7,6 +7,8 @@ import java.util.stream.IntStream;
 import com.microsoft.recognizers.text.Culture;
 import com.microsoft.recognizers.text.ExtractResult;
 import com.microsoft.recognizers.text.ModelResult;
+import com.microsoft.recognizers.text.datetime.english.extractors.EnglishDateExtractorConfiguration;
+import com.microsoft.recognizers.text.datetime.extractors.BaseDateExtractor;
 import com.microsoft.recognizers.text.tests.AbstractTest;
 import com.microsoft.recognizers.text.tests.TestCase;
 import com.microsoft.recognizers.text.datetime.english.extractors.EnglishDurationExtractorConfiguration;
@@ -85,6 +87,8 @@ public class DateTimeExtractorTest extends AbstractTest {
 		switch (name) {
 			case "DurationExtractor":
 				return new BaseDurationExtractor(new EnglishDurationExtractorConfiguration());
+			case "DateExtractor":
+				return new BaseDateExtractor(new EnglishDateExtractorConfiguration());
 			default:
 				throw new AssumptionViolatedException("Extractor Type/Name not supported.");
 		}
