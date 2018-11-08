@@ -56,15 +56,6 @@ public class ChoiceRecognizer extends Recognizer<ChoiceOptions>{
 	}
 
 	@Override
-	protected void InitializeConfiguration(){
-		throw new UnsupportedOperationException();
-		/*RegisterModel<BooleanModel>(Culture.Chinese, (options) => new BooleanModel(new BooleanParser(), new BooleanExtractor(new ChineseBooleanExtractorConfiguration())));
-		RegisterModel<BooleanModel>(Culture.Dutch, (options) => new BooleanModel(new BooleanParser(), new BooleanExtractor(new DutchBooleanExtractorConfiguration())));
-		RegisterModel<BooleanModel>(Culture.English, (options) => new BooleanModel(new BooleanParser(), new BooleanExtractor(new EnglishBooleanExtractorConfiguration())));
-		RegisterModel<BooleanModel>(Culture.French, (options) => new BooleanModel(new BooleanParser(), new BooleanExtractor(new FrenchBooleanExtractorConfiguration())));
-		RegisterModel<BooleanModel>(Culture.German, (options) => new BooleanModel(new BooleanParser(), new BooleanExtractor(new GermanBooleanExtractorConfiguration())));
-		RegisterModel<BooleanModel>(Culture.Japanese, (options) => new BooleanModel(new BooleanParser(), new BooleanExtractor(new JapaneseBooleanExtractorConfiguration())));
-		RegisterModel<BooleanModel>(Culture.Portuguese, (options) => new BooleanModel(new BooleanParser(), new BooleanExtractor(new PortugueseBooleanExtractorConfiguration())));
-		RegisterModel<BooleanModel>(Culture.Spanish, (options) => new BooleanModel(new BooleanParser(), new BooleanExtractor(new SpanishBooleanExtractorConfiguration())));*/
-	}
+	protected void initializeConfiguration(){
+		throw new UnsupportedOperationException();}
 }
