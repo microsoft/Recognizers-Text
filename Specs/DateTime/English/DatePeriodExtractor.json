@@ -3475,7 +3475,7 @@
   },
   {
     "Input": "I'll be out from last Monday April to 2019",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "from last Monday April to 2019",
@@ -3645,7 +3645,7 @@
   },
   {
     "Input": "Cortana, can you please set something up for the week of the 18th.",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "the week of the 18th",
