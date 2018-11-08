@@ -523,7 +523,7 @@
         "Text": "vom 15. - 19.11.",
         "Type": "daterange",
         "Start": 8,
-        "Length": 14
+        "Length": 16
       }
     ]
   },
@@ -630,7 +630,7 @@
       {
         "Text": "05.2016",
         "Type": "daterange",
-        "Start": 10,
+        "Start": 11,
         "Length": 7
       }
     ]
@@ -679,7 +679,7 @@
         "Text": "05. 2016",
         "Type": "daterange",
         "Start": 10,
-        "Length": 9
+        "Length": 8
       }
     ]
   },

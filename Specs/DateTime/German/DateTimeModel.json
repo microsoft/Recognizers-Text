@@ -9,7 +9,7 @@
       {
         "Text": "2. oktober",
         "Start": 13,
-        "End": 23,
+        "End": 22,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -38,7 +38,7 @@
       {
         "Text": "22.04",
         "Start": 13,
-        "End": 18,
+        "End": 17,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -58,16 +58,16 @@
     ]
   },
   {
-    "Input": "Ich komme am neunundzwanzig Mai zurück",
+    "Input": "Ich komme am neunundzwanzigsten Mai zurück",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "neunundzwanzig mai",
+        "Text": "neunundzwanzigsten mai",
         "Start": 13,
-        "End": 31,
+        "End": 34,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -96,7 +96,7 @@
       {
         "Text": "zweiten mai",
         "Start": 13,
-        "End": 24,
+        "End": 23,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -125,7 +125,7 @@
       {
         "Text": "2. mai",
         "Start": 13,
-        "End": 19,
+        "End": 18,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -406,7 +406,7 @@
     "NotSupported": "python",
     "Results": [
       {
-        "Text": "22. april von 5 bis 6 nachmittags",
+        "Text": "22. april von 5 bis 6 uhr nachmittags",
         "Start": 13,
         "End": 49,
         "TypeName": "datetimeV2.datetimerange",
@@ -434,7 +434,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "dieser abend",
@@ -459,7 +459,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "nächsten Montagnachmittag",
@@ -710,8 +710,8 @@
     "NotSupported": "python",
     "Results": [
       {
-        "Text": "7:56:30 abends",
-        "Start": 14,
+        "Text": "gegen 7:56:30 abends",
+        "Start": 8,
         "End": 27,
         "TypeName": "datetimeV2.time",
         "Resolution": {
