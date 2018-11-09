@@ -11,6 +11,9 @@ import com.microsoft.recognizers.text.ParseResult;
 import com.microsoft.recognizers.text.choice.Constants;
 
 public class ChoiceModel implements IModel {
+	protected IExtractor Extractor;
+	protected IParser Parser;
+	
 	public ChoiceModel(IParser parser, IExtractor extractor) {
 		this.Parser = parser;
 		this.Extractor = extractor;
@@ -22,13 +25,6 @@ public class ChoiceModel implements IModel {
 	}
 
 	@Override
-	public List<ModelResult> parse(String query) {
-		throw new UnsupportedOperationException();
-	}
-
-	protected IExtractor Extractor;
-	protected IParser Parser;
-
 	public List<ModelResult> parse(String query) {
 		throw new UnsupportedOperationException();
 	}
