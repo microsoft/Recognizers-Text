@@ -364,7 +364,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "Comment": "Not extracted, possibly due to a conflict between heute and morgen.",
+    "NotSupported": "dotNet, javascript, python",
     "Results": [
       {
         "Text": "heute Morgen um 7",
@@ -384,7 +385,7 @@
     ]
   },
   {
-    "Input": "Ich ging heute Morgen um sieben los",
+    "Input": "Ich ging diesen Morgen um sieben los",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -403,7 +404,7 @@
           }
         },
         "Start": 9,
-        "Length": 22
+        "Length": 23
       }
     ]
   }

@@ -24,7 +24,7 @@ namespace Microsoft.Recognizers.Definitions.German
 		public const string NextPrefixRegex = @"(nächst(er|en|es|e)|kommend(er|en|es|e))";
 		public const string PastPrefixRegex = @"(letzt(er|en|es|e)|vergangen(er|en|es|e)|vorherig(er|en|es|e)|vorig(er|en|es|e)|vor|nach)";
 		public const string ThisPrefixRegex = @"(dies(er|en|em|es|e)|jetzig(er|en|es|e))";
-		public const string DayRegex = @"((der|dem|des|den)\s*)?(?<day>(01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|1|20|21|22|23|24|25|26|27|28|29|2|30|31|3|4|5|6|7|8|9))(\.)?\b";
+		public const string DayRegex = @"((der|dem|des|den)\s*)?(?<day>(01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|1|20|21|22|23|24|25|26|27|28|29|2|30|31|3|4|5|6|7|8|9))(\.)?";
 		public const string MonthNumRegex = @"(?<month>01([\.])?|02([\.])?|03([\.])?|04([\.])?|05([\.])?|06([\.])?|07([\.])?|08([\.])?|09([\.])?|10([\.])?|11([\.])?|12([\.])?|1([\.])?|2([\.])?|3([\.])?|4([\.])?|5([\.])?|6([\.])?|7([\.])?|8([\.])?|9([\.])?)";
 		public static readonly string DescRegex = $@"({OclockRegex})";
 		public const string AmDescRegex = @"(am\b|a\.m\.|a m\b|a\. m\.|a\.m\b|a\. m\b|a m\b)";
@@ -159,7 +159,7 @@ namespace Microsoft.Recognizers.Definitions.German
 		public static readonly string EachUnitRegex = $@"(?<each>(jede(s|r|n|m)?|alle)(?<other>\s+andere(n)?)?\s*{DurationUnitRegex})";
 		public const string EachPrefixRegex = @"\b(?<each>(jede(r|n|s)?|alle)\s*$)";
 		public const string SetEachRegex = @"\b(?<each>(jede(r|n|s)?|alle)\s*)";
-		public const string SetLastRegex = @"(?<last>nächste(r|n|s)?|kommende(r|n|s)?|diese(r|n|m|s)?|letzte(r|n|s)?|vorige(r|n|s)?|vorherige(r|n|s)?|jetzige(r|n|s)?|derzeitige(r|n|s)?)\b";
+		public const string SetLastRegex = @"(?<last>nächste(r|n|s)?|kommende(r|n|s)?|heute|diese(r|n|m|s)?|letzte(r|n|s)?|vorige(r|n|s)?|vorherige(r|n|s)?|jetzige(r|n|s)?|derzeitige(r|n|s)?)\b";
 		public const string EachDayRegex = @"(\s*(jeden)\s*(Tag|tag)\s*)";
 		public static readonly string DurationFollowedUnit = $@"\s*{SuffixAndRegex}?(\s+|-)?{DurationUnitRegex}";
 		public static readonly string NumberCombinedWithDurationUnit = $@"\b(?<num>\d+(\.\d*)?)(-)?{DurationUnitRegex}";
@@ -185,9 +185,9 @@ namespace Microsoft.Recognizers.Definitions.German
 		public const string LaterRegex = @"\b(später|von jetzt an)\b";
 		public const string InConnectorRegex = @"\b(in)\b";
 		public static readonly string WithinNextPrefixRegex = $@"\b(innerhalb|während(\s+der|de(s|m))?(\s+(?<next>{NextPrefixRegex}))?)\b";
-		public const string MorningStartEndRegex = @"(^(morgen(s)?))|((morgen(s)?)$)";
-		public const string AfternoonStartEndRegex = @"(^(nachmittag(s)?))|((nachmittag(s)?)$)";
-		public const string EveningStartEndRegex = @"(^(abend(s)?))|((abend(s)?)$)";
+		public const string MorningStartEndRegex = @"(^(heute morgen|morgen(s)?))|((heute morgen|morgen(s)?)$)";
+		public const string AfternoonStartEndRegex = @"(^(heute nachmittag|nachmittag(s)?))|((heute nachmittag|nachmittag(s)?)$)";
+		public const string EveningStartEndRegex = @"(^(heute abend|abend(s)?))|((heute abend|abend(s)?)$)";
 		public const string NightStartEndRegex = @"(^(über nacht|heute nacht|nacht(s)?|nächtens|in der nacht))|((über nacht|heute nacht|nacht(s)?|nächtens)$)";
 		public const string InexactNumberRegex = @"\b((ein )?paar|einige|wenige|einige wenige)\b";
 		public static readonly string InexactNumberUnitRegex = $@"({InexactNumberRegex})\s+({DurationUnitRegex})";

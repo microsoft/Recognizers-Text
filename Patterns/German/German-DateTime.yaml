@@ -442,11 +442,11 @@ WithinNextPrefixRegex: !nestedRegex
 AmPmDescRegex: !simpleRegex
   def: (ampm)
 MorningStartEndRegex: !simpleRegex
-  def: (^(morgen(s)?))|((morgen(s)?)$)
+  def: (^(heute morgen|morgen(s)?))|((heute morgen|morgen(s)?)$)
 AfternoonStartEndRegex: !simpleRegex
-  def: (^(nachmittag(s)?))|((nachmittag(s)?)$)
+  def: (^(heute nachmittag|nachmittag(s)?))|((heute nachmittag|nachmittag(s)?)$)
 EveningStartEndRegex: !simpleRegex
-  def: (^(abend(s)?))|((abend(s)?)$)
+  def: (^(heute abend|abend(s)?))|((heute abend|abend(s)?)$)
 NightStartEndRegex: !simpleRegex
   def: (^(über nacht|heute nacht|nacht(s)?|nächtens|in der nacht))|((über nacht|heute nacht|nacht(s)?|nächtens)$)
 InexactNumberRegex: !simpleRegex

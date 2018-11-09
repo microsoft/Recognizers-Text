@@ -33,12 +33,42 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "Comment": "Currently not supported. 04 will be parsed as the year",
+    "NotSupported": "dotnet, javascript, python",
     "Results": [
       {
         "Text": "22.04",
         "Start": 13,
         "End": 17,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-04-22",
+              "type": "date",
+              "value": "2016-04-22"
+            },
+            {
+              "timex": "XXXX-04-22",
+              "type": "date",
+              "value": "2017-04-22"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Ich komme am 22.04. zurück",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "22.04.",
+        "Start": 13,
+        "End": 18,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -149,7 +179,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Freitag",
@@ -403,7 +433,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "python",
+    "NotSupported": "dotnet, python",
     "Results": [
       {
         "Text": "22. april von 5 bis 6 uhr nachmittags",
@@ -459,12 +489,13 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "javascript, python",
+    "Comment": "Resolution is null in dotNet",
+    "NotSupported": "dotNet, javascript, python",
     "Results": [
       {
-        "Text": "nächsten Montagnachmittag",
+        "Text": "nächsten montagnachmittag",
         "Start": 13,
-        "End": 25,
+        "End": 37,
         "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
           "values": [
@@ -484,12 +515,13 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "Comment": "Not supported, check resolution, returns to null in dotnet",
     "NotSupported": "dotNet, javascript, python",
     "Results": [
       {
-        "Text": "Dienstagmorgen",
+        "Text": "dienstagmorgen",
         "Start": 14,
-        "End": 14,
+        "End": 27,
         "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
           "values": [
@@ -987,6 +1019,7 @@
     "Context": {
       "ReferenceDateTime": "2017-12-04T00:00:00"
     },
+    "Comment": "Not supported, check resolution, returns to null in dotnet",
     "NotSupported": "dotNet, javascript, python",
     "Results": [
       {
