@@ -585,7 +585,7 @@
     "NotSupported": "javascript, java, python",
     "Results": [
       {
-        "Text": "10G",
+        "Text": "10g",
         "TypeName": "number",
         "Resolution": {
           "subtype": "integer",
@@ -761,7 +761,7 @@
     "NotSupported": "javascript, java, python",
     "Results": [
       {
-        "Text": "Three hundred  and  thirty one",
+        "Text": "three hundred  and  thirty one",
         "TypeName": "number",
         "Resolution": {
           "subtype": "integer",
@@ -2322,7 +2322,7 @@
     "NotSupported": "javascript, java, python",
     "Results": [
       {
-        "Text": "1M",
+        "Text": "1m",
         "TypeName": "number",
         "Resolution": {
           "subtype": "integer",

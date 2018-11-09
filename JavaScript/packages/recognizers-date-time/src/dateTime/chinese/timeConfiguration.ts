@@ -5,7 +5,7 @@ import { BaseDateTimeExtractor, DateTimeExtra, TimeResult, TimeResolutionUtils }
 import { BaseTimeParser } from "../baseTime";
 import { Constants, TimeTypeConstants } from "../constants"
 import { IDateTimeParser, DateTimeParseResult } from "../parsers"
-import { DateTimeResolutionResult, FormatUtil, DateUtils, StringMap } from "../utilities";
+import { DateTimeResolutionResult, DateTimeFormatUtil, DateUtils, StringMap } from "../utilities";
 import { ChineseDateTime } from "../../resources/chineseDateTime";
 
 export enum TimeType {
@@ -60,9 +60,9 @@ export class ChineseTimeParser extends BaseTimeParser {
 
         if (parseResult.success) {
             parseResult.futureResolution = {};
-            parseResult.futureResolution[TimeTypeConstants.TIME] = FormatUtil.formatTime(parseResult.futureValue);
+            parseResult.futureResolution[TimeTypeConstants.TIME] = DateTimeFormatUtil.formatTime(parseResult.futureValue);
             parseResult.pastResolution = {};
-            parseResult.pastResolution[TimeTypeConstants.TIME] = FormatUtil.formatTime(parseResult.pastValue);
+            parseResult.pastResolution[TimeTypeConstants.TIME] = DateTimeFormatUtil.formatTime(parseResult.pastValue);
         }
 
         let result = new DateTimeParseResult(er);
@@ -130,11 +130,11 @@ export class ChineseTimeParser extends BaseTimeParser {
 
         let timex = 'T';
         if (timeResult.hour >= 0) {
-            timex = timex + FormatUtil.toString(timeResult.hour, 2);
+            timex = timex + DateTimeFormatUtil.toString(timeResult.hour, 2);
             if (timeResult.minute >= 0) {
-                timex = timex + ':' + FormatUtil.toString(timeResult.minute, 2);
+                timex = timex + ':' + DateTimeFormatUtil.toString(timeResult.minute, 2);
                 if (timeResult.second >= 0) {
-                    timex = timex + ':' + FormatUtil.toString(timeResult.second, 2);
+                    timex = timex + ':' + DateTimeFormatUtil.toString(timeResult.second, 2);
                 }
             }
         }

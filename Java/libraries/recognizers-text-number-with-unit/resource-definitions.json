@@ -2,12 +2,12 @@
   "outputPath": "libraries/recognizers-text-number-with-unit/src/main/java/com/microsoft/recognizers/text/numberwithunit/resources/",
   "configFiles": [
     {
-      "input": [ "Base-Numbers" ],
-      "output": "BaseNumbers",
+      "input": [ "Base-Units" ],
+      "output": "BaseUnits",
       "header": [
         "package com.microsoft.recognizers.text.numberwithunit.resources;",
         "",
-        "public class BaseNumbers {"
+        "public class BaseUnits {"
       ],
       "footer": [ "}" ]
     },

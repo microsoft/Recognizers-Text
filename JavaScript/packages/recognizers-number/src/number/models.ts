@@ -1,4 +1,4 @@
-import { IModel, ModelResult, IExtractor, IParser, ParseResult } from "@microsoft/recognizers-text";
+import { IModel, ModelResult, IExtractor, IParser, ParseResult, QueryProcessor } from "@microsoft/recognizers-text";
 import { Constants } from "./constants";
 
 export enum NumberMode {
@@ -73,6 +73,8 @@ export abstract class AbstractNumberModel implements IModel {
     }
 
     parse(query: string): ModelResult[] {
+        query = QueryProcessor.preProcess(query, true);
+
         let extractResults = this.extractor.extract(query);
         let parseNums = extractResults.map(r => this.parser.parse(r));
 

@@ -61,11 +61,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         public Regex RelativeWeekDayRegex { get; }
 
         //TODO: implement the relative day regex if needed. If yes, they should be abstracted
-        public static readonly Regex RelativeDayRegex = new Regex("", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex RelativeDayRegex = new Regex("", RegexOptions.Singleline);
 
-        public static readonly Regex NextPrefixRegex = new Regex(DateTimeDefinitions.NextPrefixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex NextPrefixRegex = new Regex(DateTimeDefinitions.NextPrefixRegex, RegexOptions.Singleline);
 
-        public static readonly Regex PastPrefixRegex = new Regex(DateTimeDefinitions.PastPrefixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex PastPrefixRegex = new Regex(DateTimeDefinitions.PastPrefixRegex, RegexOptions.Singleline);
 
         public IImmutableDictionary<string, int> DayOfMonth { get; }
 

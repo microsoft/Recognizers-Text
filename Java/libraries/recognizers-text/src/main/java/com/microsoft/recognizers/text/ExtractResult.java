@@ -60,4 +60,5 @@ public class ExtractResult {
                 this.type,
                 newData);
     }
+
 }

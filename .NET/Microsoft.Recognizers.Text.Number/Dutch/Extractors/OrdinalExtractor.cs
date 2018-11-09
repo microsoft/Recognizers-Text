@@ -32,19 +32,19 @@ namespace Microsoft.Recognizers.Text.Number.Dutch
             var regexes = new Dictionary<Regex, TypeTag>
             {
                 {
-                    new Regex(NumbersDefinitions.OrdinalSuffixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.OrdinalSuffixRegex, RegexOptions.Singleline),
                     RegexTagGenerator.GenerateRegexTag(Constants.ORDINAL_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
-                    new Regex(NumbersDefinitions.OrdinalNumericRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.OrdinalNumericRegex, RegexOptions.Singleline),
                     RegexTagGenerator.GenerateRegexTag(Constants.ORDINAL_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
-                    new Regex(NumbersDefinitions.OrdinalDutchRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.OrdinalDutchRegex, RegexOptions.Singleline),
                     RegexTagGenerator.GenerateRegexTag(Constants.ORDINAL_PREFIX, Constants.DUTCH)
                 },
                 {
-                    new Regex(NumbersDefinitions.OrdinalRoundNumberRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.OrdinalRoundNumberRegex, RegexOptions.Singleline),
                     RegexTagGenerator.GenerateRegexTag(Constants.ORDINAL_PREFIX, Constants.DUTCH)
                 }
             };

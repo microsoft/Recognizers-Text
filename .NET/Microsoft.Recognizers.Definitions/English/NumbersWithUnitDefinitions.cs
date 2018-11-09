@@ -53,7 +53,7 @@ namespace Microsoft.Recognizers.Definitions.English
 			{ "Aruban florin", "aruban florin|ƒ|awg|aruban florins" },
 			{ "Bangladeshi taka", "bangladeshi taka|৳|bdt|taka|takas|bangladeshi takas" },
 			{ "Paisa", "poisha|paisa" },
-			{ "Bhutanese ngultrum", "Bhutanese ngultrum|nu.|btn" },
+			{ "Bhutanese ngultrum", "bhutanese ngultrum|nu.|btn" },
 			{ "Chetrum", "chetrums|chetrum" },
 			{ "Bolivian boliviano", "bolivian boliviano|bob|bs.|bolivia boliviano|bolivia bolivianos|bolivian bolivianos" },
 			{ "Bosnia and Herzegovina convertible mark", "bosnia and herzegovina convertible mark|bam" },
@@ -76,9 +76,9 @@ namespace Microsoft.Recognizers.Definitions.English
 			{ "Ethiopian birr", "ethiopian birr|etb" },
 			{ "Gambian dalasi", "gmd" },
 			{ "Butut", "bututs|butut" },
-			{ "Georgian lari", "Georgian lari|lari|gel|₾" },
+			{ "Georgian lari", "georgian lari|lari|gel|₾" },
 			{ "Tetri", "tetri" },
-			{ "Ghanaian cedi", "Ghanaian cedi|ghs|₵|gh₵" },
+			{ "Ghanaian cedi", "ghanaian cedi|ghs|₵|gh₵" },
 			{ "Pesewa", "pesewas|pesewa" },
 			{ "Guatemalan quetzal", "guatemalan quetzal|gtq|guatemala quetzal" },
 			{ "Haitian gourde", "haitian gourde|htg" },
@@ -90,7 +90,7 @@ namespace Microsoft.Recognizers.Definitions.English
 			{ "Israeli new shekel", "₪|ils|agora" },
 			{ "Lithuanian litas", "ltl|lithuanian litas|lithuan litas|lithuanian lit|lithuan lit" },
 			{ "Japanese yen", "japanese yen|jpy|yen|-yen|¥|yens|japanese yens|japan yen|japan yens" },
-			{ "Kazakhstani tenge", "Kazakhstani tenge|kzt" },
+			{ "Kazakhstani tenge", "kazakhstani tenge|kazakh tenge|kazak tenge|kzt" },
 			{ "Kenyan shilling", "kenyan shilling|sh|kes" },
 			{ "North Korean won", "north korean won|kpw|north korean wons" },
 			{ "South Korean won", "south korean won|krw|south korean wons" },
@@ -115,7 +115,7 @@ namespace Microsoft.Recognizers.Definitions.English
 			{ "Khoums", "khoums" },
 			{ "Mongolian tögrög", "mongolian tögrög|mnt|₮|mongolia tögrög|mongolia tögrögs|mongolian tögrögs|mongolian togrog|mongolian togrogs|mongolia togrog|mongolia togrogs" },
 			{ "Mozambican metical", "mozambican metical|mt|mzn|mozambica metical|mozambica meticals|mozambican meticals" },
-			{ "Burmese kyat", "Burmese kyat|ks|mmk" },
+			{ "Burmese kyat", "burmese kyat|ks|mmk" },
 			{ "Pya", "pya" },
 			{ "Nicaraguan córdoba", "nicaraguan córdoba|nio" },
 			{ "Nigerian naira", "nigerian naira|naira|ngn|₦|nigeria naira|nigeria nairas|nigerian nairas" },
@@ -139,7 +139,7 @@ namespace Microsoft.Recognizers.Definitions.English
 			{ "Samoan tālā", "samoan tālā|tālā|tala|ws$|samoa|wst|samoan tala" },
 			{ "Sene", "sene" },
 			{ "São Tomé and Príncipe dobra", "são tomé and príncipe dobra|dobras|dobra|std" },
-			{ "Sierra Leonean leone", "sierra Leonean leone|sll|leone|le" },
+			{ "Sierra Leonean leone", "sierra leonean leone|sll|leone|le" },
 			{ "Peseta", "pesetas|peseta" },
 			{ "Netherlands guilder", "florin|netherlands antillean guilder|ang|ƒ|nederlandse gulden|guilders|guilder|gulden|-guilders|-guilder|dutch guilders|dutch guilder|fl" },
 			{ "Swazi lilangeni", "swazi lilangeni|lilangeni|szl|emalangeni" },
@@ -730,7 +730,7 @@ namespace Microsoft.Recognizers.Definitions.English
 		public static readonly Dictionary<string, string> TemperatureSuffixList = new Dictionary<string, string>
 		{
 			{ "F", "degrees fahrenheit|degree fahrenheit|deg fahrenheit|degs fahrenheit|fahrenheit|°f|degrees farenheit|degree farenheit|deg farenheit|degs farenheit|degrees f|degree f|deg f|degs f|farenheit|f" },
-			{ "K", "k|kelvin" },
+			{ "K", "k|K|kelvin" },
 			{ "R", "rankine|°r" },
 			{ "D", "delisle|°de" },
 			{ "C", "degrees celsius|degree celsius|deg celsius|degs celsius|celsius|degrees celcius|degree celcius|celcius|deg celcius|degs celcius|degrees centigrade|degree centigrade|centigrade|degrees centigrate|degree centigrate|degs centigrate|deg centigrate|centigrate|degrees c|degree c|deg c|degs c|°c|c" },
@@ -784,7 +784,7 @@ namespace Microsoft.Recognizers.Definitions.English
 			{ "Ton", "-ton|ton|tons|tonne|tonnes" },
 			{ "Pound", "pound|pounds|lb" },
 			{ "Ounce", "-ounce|ounce|oz|ounces" },
-			{ "Weight unit", "pennyweight|grain|british long ton|US short hundredweight|stone|dram" }
+			{ "Weight unit", "pennyweight|grain|british long ton|us short hundredweight|stone|dram" }
 		};
 		public static readonly IList<string> AmbiguousWeightUnitList = new List<string>
 		{

@@ -15,10 +15,10 @@ namespace Microsoft.Recognizers.Text.Number
         protected Regex LongFormatRegex => LongFormRegex;
 
         private static readonly Regex LongFormRegex = 
-            new Regex(@"\d+", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(@"\d+", RegexOptions.Singleline);
 
         private static readonly Regex CultureRegex = 
-            new Regex(@"^(en|es|fr)(-)?\b", RegexOptions.IgnoreCase | RegexOptions.Singleline | RegexOptions.Compiled);
+            new Regex(@"^(en|es|fr)(-)?\b", RegexOptions.Singleline | RegexOptions.Compiled);
 
         protected HashSet<string> RoundNumberSet { get; }
 
@@ -35,11 +35,11 @@ namespace Microsoft.Recognizers.Text.Number
             // Necessary for the German & Dutch languages because bigger numbers are not separated by whitespaces or special characters like in other languages
             if (config.CultureInfo.Name == "de-DE" || config.CultureInfo.Name == "nl-NL")
             {
-                TextNumberRegex = new Regex(@"(" + singleIntFrac + @")", RegexOptions.IgnoreCase | RegexOptions.Singleline | RegexOptions.Compiled);
+                TextNumberRegex = new Regex(@"(" + singleIntFrac + @")", RegexOptions.Singleline | RegexOptions.Compiled);
             }
             else
             {
-                TextNumberRegex = new Regex(@"(?<=\b)(" + singleIntFrac + @")(?=\b)", RegexOptions.IgnoreCase | RegexOptions.Singleline | RegexOptions.Compiled);
+                TextNumberRegex = new Regex(@"(?<=\b)(" + singleIntFrac + @")(?=\b)", RegexOptions.Singleline | RegexOptions.Compiled);
             }
 
             RoundNumberSet = new HashSet<string>();
@@ -151,6 +151,7 @@ namespace Microsoft.Recognizers.Text.Number
             if (ret != null)
             {
                 ret.Type = DetermineType(extResult);
+                ret.Text = ret.Text.ToLowerInvariant();
             }
 
             return ret;
@@ -552,23 +553,29 @@ namespace Microsoft.Recognizers.Text.Number
             // Scan from end to start, find the end word
             for (var i = matchStrs.Count - 1; i >= 0; i--)
             {
-                if (RoundNumberSet.Contains(matchStrs[i]))
+                var matchI = matchStrs[i].ToLowerInvariant(); 
+
+                if (RoundNumberSet.Contains(matchI))
                 {
+                    var mappedValue = Config.RoundNumberMap[matchI];
+
                     // If false, then continue. Will meet hundred first, then thousand.
-                    if (endFlag > Config.RoundNumberMap[matchStrs[i]])
+                    if (endFlag > mappedValue)
                     {
                         continue;
                     }
 
                     isEnd[i] = true;
-                    endFlag = Config.RoundNumberMap[matchStrs[i]];
+                    endFlag = mappedValue;
                 }
             }
 
+            // If no multiplier found
             if (endFlag == 1)
             {
                 var tempStack = new Stack<double>();
                 var oldSym = "";
+
                 foreach (var matchStr in matchStrs)
                 {
                     var isCardinal = Config.CardinalNumberMap.ContainsKey(matchStr);
@@ -584,6 +591,7 @@ namespace Microsoft.Recognizers.Text.Number
                         if (isOrdinal)
                         {
                             double fracPart = Config.OrdinalNumberMap[matchStr];
+
                             if (tempStack.Any())
                             {
                                 var intPart = tempStack.Pop();

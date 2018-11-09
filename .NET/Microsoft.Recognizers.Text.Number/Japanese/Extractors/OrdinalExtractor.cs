@@ -28,7 +28,7 @@ namespace Microsoft.Recognizers.Text.Number.Japanese
                 },
                 {
                     //2折 ２.５折
-                    new Regex(NumbersDefinitions.NumbersFoldsPercentageRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline)
+                    new Regex(NumbersDefinitions.NumbersFoldsPercentageRegex, RegexOptions.Singleline)
                     , RegexTagGenerator.GenerateRegexTag(Constants.PERCENT_PREFIX, Constants.SPECIAL_SUFFIX)
                 }
             };

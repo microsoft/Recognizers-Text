@@ -4,7 +4,7 @@ import { NumberWithUnitExtractor, ChineseNumberWithUnitExtractorConfiguration } 
 import { BaseDateTimeExtractor, DateTimeExtra, TimeResult, TimeResolutionUtils } from "./baseDateTime";
 import { Constants, TimeTypeConstants } from "../constants"
 import { ChineseDateTime } from "../../resources/chineseDateTime";
-import { DateTimeResolutionResult, FormatUtil, DateUtils, StringMap, TimexUtil } from "../utilities";
+import { DateTimeResolutionResult, DateTimeFormatUtil, DateUtils, StringMap, TimexUtil } from "../utilities";
 import { BaseTimePeriodParser, ITimePeriodParserConfiguration } from "../baseTimePeriod";
 import { IDateTimeParser, DateTimeParseResult } from "../parsers"
 import { ChineseTimeParser } from "./timeConfiguration"
@@ -81,11 +81,11 @@ export class ChineseTimePeriodParser extends BaseTimePeriodParser {
 
         if (parseResult.success) {
             parseResult.futureResolution = {};
-            parseResult.futureResolution[TimeTypeConstants.START_TIME] = FormatUtil.formatTime(parseResult.futureValue.item1);
-            parseResult.futureResolution[TimeTypeConstants.END_TIME] = FormatUtil.formatTime(parseResult.futureValue.item2);
+            parseResult.futureResolution[TimeTypeConstants.START_TIME] = DateTimeFormatUtil.formatTime(parseResult.futureValue.item1);
+            parseResult.futureResolution[TimeTypeConstants.END_TIME] = DateTimeFormatUtil.formatTime(parseResult.futureValue.item2);
             parseResult.pastResolution = {};
-            parseResult.pastResolution[TimeTypeConstants.START_TIME] = FormatUtil.formatTime(parseResult.pastValue.item1);
-            parseResult.pastResolution[TimeTypeConstants.END_TIME] = FormatUtil.formatTime(parseResult.pastValue.item2);
+            parseResult.pastResolution[TimeTypeConstants.START_TIME] = DateTimeFormatUtil.formatTime(parseResult.pastValue.item1);
+            parseResult.pastResolution[TimeTypeConstants.END_TIME] = DateTimeFormatUtil.formatTime(parseResult.pastValue.item2);
         }
 
         result.value = parseResult;
@@ -225,11 +225,11 @@ export class ChineseTimePeriodParser extends BaseTimePeriodParser {
     private buildTimex(timeResult: TimeResult): string {
         let timex = 'T';
         if (timeResult.hour >= 0) {
-            timex = timex + FormatUtil.toString(timeResult.hour, 2);
+            timex = timex + DateTimeFormatUtil.toString(timeResult.hour, 2);
             if (timeResult.minute >= 0) {
-                timex = timex + ':' + FormatUtil.toString(timeResult.minute, 2);
+                timex = timex + ':' + DateTimeFormatUtil.toString(timeResult.minute, 2);
                 if (timeResult.second >= 0) {
-                    timex = timex + ':' + FormatUtil.toString(timeResult.second, 2);
+                    timex = timex + ':' + DateTimeFormatUtil.toString(timeResult.second, 2);
                 }
             }
         }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+
 using Microsoft.Recognizers.Text.Utilities;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit
@@ -19,7 +20,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
         public List<ModelResult> Parse(string query)
         {
             // Preprocess the query
-            query = FormatUtility.Preprocess(query, false);
+            query = QueryProcessor.Preprocess(query, caseSensitive: true);
 
             List<ModelResult> extractionResults = new List<ModelResult>();
 
@@ -97,12 +98,5 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             return extractionResults;
         }
 
-        public enum CompositeEntityType
-        {
-            Age,
-            Currency,
-            Dimension,
-            Temperature
-        }
     }
 }

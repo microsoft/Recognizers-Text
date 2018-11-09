@@ -2,7 +2,7 @@ import { RegExpUtility, Match, StringUtility, IExtractor, IParser, ExtractResult
 import { IHolidayExtractorConfiguration, BaseHolidayParserConfiguration, BaseHolidayParser } from "../baseHoliday"
 import { ChineseIntegerExtractor, AgnosticNumberParserFactory, AgnosticNumberParserType, ChineseNumberParserConfiguration } from "@microsoft/recognizers-text-number";
 import { Constants as NumberConstants } from "@microsoft/recognizers-text-number"
-import { DateUtils, FormatUtil, DateTimeResolutionResult, StringMap } from "../utilities";
+import { DateUtils, DateTimeFormatUtil, DateTimeResolutionResult, StringMap } from "../utilities";
 import { ChineseDateTime } from "../../resources/chineseDateTime";
 import { IDateTimeParser, DateTimeParseResult } from "../parsers";
 import { Constants, TimeTypeConstants } from "../constants";
@@ -129,9 +129,9 @@ export class ChineseHolidayParser extends BaseHolidayParser {
 
             if (innerResult.success) {
                 innerResult.futureResolution = {};
-                innerResult.futureResolution[TimeTypeConstants.DATE] = FormatUtil.formatDate(innerResult.futureValue);
+                innerResult.futureResolution[TimeTypeConstants.DATE] = DateTimeFormatUtil.formatDate(innerResult.futureValue);
                 innerResult.pastResolution = {};
-                innerResult.pastResolution[TimeTypeConstants.DATE] = FormatUtil.formatDate(innerResult.pastValue);
+                innerResult.pastResolution[TimeTypeConstants.DATE] = DateTimeFormatUtil.formatDate(innerResult.pastValue);
                 innerResult.isLunar = this.isLunar(er.text);
                 value = innerResult;
             }
@@ -189,7 +189,7 @@ export class ChineseHolidayParser extends BaseHolidayParser {
         let date = new Date(referenceDate);
         if (this.fixedHolidayDictionary.has(holidayStr)) {
             date = this.fixedHolidayDictionary.get(holidayStr)(year);
-            timex = `-${FormatUtil.toString(date.getMonth() + 1, 2)}-${FormatUtil.toString(date.getDate(), 2)}`;
+            timex = `-${DateTimeFormatUtil.toString(date.getMonth() + 1, 2)}-${DateTimeFormatUtil.toString(date.getDate(), 2)}`;
         } else if (this.config.holidayFuncDictionary.has(holidayStr)) {
             date = this.config.holidayFuncDictionary.get(holidayStr)(year);
             timex = this.config.variableHolidaysTimexDictionary.get(holidayStr);
@@ -198,7 +198,7 @@ export class ChineseHolidayParser extends BaseHolidayParser {
         }
 
         if (hasYear) {
-            ret.timex = FormatUtil.toString(year, 4) + timex;
+            ret.timex = DateTimeFormatUtil.toString(year, 4) + timex;
             ret.futureValue = new Date(year, date.getMonth(), date.getDate());
             ret.pastValue = new Date(year, date.getMonth(), date.getDate());
         } else {

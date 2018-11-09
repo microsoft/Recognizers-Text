@@ -23,7 +23,7 @@ import { ChineseHolidayExtractorConfiguration, ChineseHolidayParser } from "./ho
 import { DateTimeOptions } from "../dateTimeRecognizer";
 import { IDateTimeParser, DateTimeParseResult } from "../parsers";
 import { Constants, TimeTypeConstants } from "../constants";
-import { FormatUtil, DateUtils, DateTimeResolutionResult, StringMap } from "../utilities";
+import { DateTimeFormatUtil, DateUtils, DateTimeResolutionResult, StringMap } from "../utilities";
 import isEqual = require('lodash.isequal');
 
 class ChineseMergedExtractorConfiguration implements IMergedExtractorConfiguration {

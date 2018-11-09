@@ -6,6 +6,7 @@ from collections import namedtuple
 from recognizers_text import Model, ModelResult
 from recognizers_text.extractor import Extractor, ExtractResult
 from recognizers_text.parser import Parser
+from recognizers_text.utilities import QueryProcessor
 from recognizers_number.number.constants import Constants
 
 class NumberMode(Enum):
@@ -36,6 +37,7 @@ class AbstractNumberModel(Model):
         self.extractor: Extractor = extractor
 
     def parse(self, query: str) -> List[ModelResult]:
+        query = QueryProcessor.preprocess(query, True)
         extract_results = self.extractor.extract(query)
         results = list(map(self.__single_parse, extract_results))
         return results
