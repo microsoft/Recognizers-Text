@@ -7,8 +7,11 @@ import java.util.stream.IntStream;
 import com.microsoft.recognizers.text.Culture;
 import com.microsoft.recognizers.text.ExtractResult;
 import com.microsoft.recognizers.text.ModelResult;
+import com.microsoft.recognizers.text.datetime.DateTimeOptions;
+import com.microsoft.recognizers.text.datetime.english.extractors.EnglishTimeZoneExtractorConfiguration;
 import com.microsoft.recognizers.text.datetime.english.extractors.EnglishDateExtractorConfiguration;
 import com.microsoft.recognizers.text.datetime.english.extractors.EnglishDatePeriodExtractorConfiguration;
+import com.microsoft.recognizers.text.datetime.extractors.BaseTimeZoneExtractor;
 import com.microsoft.recognizers.text.datetime.english.extractors.EnglishDurationExtractorConfiguration;
 import com.microsoft.recognizers.text.datetime.english.extractors.EnglishHolidayExtractorConfiguration;
 import com.microsoft.recognizers.text.datetime.extractors.*;
@@ -26,7 +29,7 @@ public class DateTimeExtractorTest extends AbstractTest {
 
     @Parameterized.Parameters(name = "{0}")
     public static Collection<TestCase> testCases() {
-            return AbstractTest.enumerateTestCases(recognizerType, "Extractor");
+        return AbstractTest.enumerateTestCases(recognizerType, "Extractor");
     }
 
     public DateTimeExtractorTest(TestCase currentCase) {
@@ -45,8 +48,8 @@ public class DateTimeExtractorTest extends AbstractTest {
 
     @Override
     protected void recognizeAndAssert(TestCase currentCase) {
-            List<ExtractResult> results = extract(currentCase);
-            assertExtractResults(currentCase, results);
+        List<ExtractResult> results = extract(currentCase);
+        assertExtractResults(currentCase, results);
     }
 
     public static void assertExtractResults(TestCase currentCase, List<ExtractResult> results) {
@@ -93,6 +96,8 @@ public class DateTimeExtractorTest extends AbstractTest {
                 return new BaseDateExtractor(new EnglishDateExtractorConfiguration());
             case "DurationExtractor":
                 return new BaseDurationExtractor(new EnglishDurationExtractorConfiguration());
+            case "TimeZoneExtractor":
+                return new BaseTimeZoneExtractor(new EnglishTimeZoneExtractorConfiguration(DateTimeOptions.EnablePreview));
             case "HolidayExtractor":
                 return new BaseHolidayExtractor(new EnglishHolidayExtractorConfiguration());
             default:
