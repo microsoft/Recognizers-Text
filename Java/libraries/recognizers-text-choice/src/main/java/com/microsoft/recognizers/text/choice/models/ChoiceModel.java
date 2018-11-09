@@ -1,4 +1,5 @@
 package com.microsoft.recognizers.text.choice.models;
+
 import java.util.List;
 import java.util.Map;
 
@@ -10,7 +11,7 @@ import com.microsoft.recognizers.text.ParseResult;
 import com.microsoft.recognizers.text.choice.Constants;
 
 public class ChoiceModel implements IModel {
-	public ChoiceModel(IParser parser, IExtractor extractor){
+	public ChoiceModel(IParser parser, IExtractor extractor) {
 		this.Parser = parser;
 		this.Extractor = extractor;
 	}
@@ -19,19 +20,20 @@ public class ChoiceModel implements IModel {
 	public String getModelTypeName() {
 		return Constants.MODEL_BOOLEAN;
 	}
+
 	@Override
-	public List<ModelResult> parse(String query){
+	public List<ModelResult> parse(String query) {
 		throw new UnsupportedOperationException();
 	}
-	
+
 	protected IExtractor Extractor;
 	protected IParser Parser;
 
-	public List<ModelResult> Parse(String query){
+	public List<ModelResult> parse(String query) {
 		throw new UnsupportedOperationException();
 	}
 
-	protected Map<String, Object> GetResolution(ParseResult parseResult){
+	protected Map<String, Object> GetResolution(ParseResult parseResult) {
 		throw new UnsupportedOperationException();
 	}
 }

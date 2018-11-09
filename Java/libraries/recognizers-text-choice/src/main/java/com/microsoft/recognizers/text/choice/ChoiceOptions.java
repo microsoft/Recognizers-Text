@@ -1,4 +1,5 @@
 package com.microsoft.recognizers.text.choice;
-public enum ChoiceOptions{
+
+public enum ChoiceOptions {
 	None
 }
