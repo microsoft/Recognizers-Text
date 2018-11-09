@@ -14,9 +14,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
     {
         public static readonly string ParserName = Constants.SYS_DATETIME_DATETIME;
 
-        public static readonly Regex SimpleAmRegex = new Regex(DateTimeDefinitions.DateTimeSimpleAmRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex SimpleAmRegex = new Regex(DateTimeDefinitions.DateTimeSimpleAmRegex, RegexOptions.Singleline);
 
-        public static readonly Regex SimplePmRegex = new Regex(DateTimeDefinitions.DateTimeSimplePmRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex SimplePmRegex = new Regex(DateTimeDefinitions.DateTimeSimplePmRegex, RegexOptions.Singleline);
 
         private static readonly IDateTimeExtractor SingleDateExtractor = new DateExtractorChs();
         private static readonly IDateTimeExtractor SingleTimeExtractor = new TimeExtractorChs();
@@ -63,12 +63,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 {
                     innerResult.FutureResolution = new Dictionary<string, string>
                     {
-                        {TimeTypeConstants.DATETIME, FormatUtil.FormatDateTime((DateObject) innerResult.FutureValue)}
+                        {TimeTypeConstants.DATETIME, DateTimeFormatUtil.FormatDateTime((DateObject) innerResult.FutureValue)}
                     };
 
                     innerResult.PastResolution = new Dictionary<string, string>
                     {
-                        {TimeTypeConstants.DATETIME, FormatUtil.FormatDateTime((DateObject) innerResult.PastValue)}
+                        {TimeTypeConstants.DATETIME, DateTimeFormatUtil.FormatDateTime((DateObject) innerResult.PastValue)}
                     };
 
                     innerResult.IsLunar = IsLunarCalendar(er.Text);
@@ -287,7 +287,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 }
                 timeStr = "T" + hour.ToString("D2") + timeStr.Substring(3);
 
-                ret.Timex = FormatUtil.FormatDate(date) + timeStr;
+                ret.Timex = DateTimeFormatUtil.FormatDate(date) + timeStr;
                 ret.FutureValue = ret.PastValue = DateObject.MinValue.SafeCreateFromValue(date.Year, date.Month, date.Day, hour, min, sec);
                 ret.Success = true;
                 return ret;
@@ -341,7 +341,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                                 default:
                                     return ret;
                             }
-                            ret.Timex = $"{FormatUtil.LuisDate(date)}";
+                            ret.Timex = $"{DateTimeFormatUtil.LuisDate(date)}";
                             ret.FutureValue = ret.PastValue = date;
                             ret.Success = true;
                             return ret;
@@ -366,7 +366,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                                     return ret;
                             }
 
-                            ret.Timex = $"{FormatUtil.LuisDate(date)}";
+                            ret.Timex = $"{DateTimeFormatUtil.LuisDate(date)}";
                             ret.FutureValue = ret.PastValue = date;
                             ret.Success = true;
                             return ret;

@@ -20,7 +20,8 @@ public abstract class FrenchNumberWithUnitExtractorConfiguration implements INum
         this.cultureInfo = cultureInfo;
 
         this.unitNumExtractor = NumberExtractor.getInstance();
-        this.compoundUnitConnectorRegex = Pattern.compile(FrenchNumericWithUnit.CompoundUnitConnectorRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS);
+        this.compoundUnitConnectorRegex =
+                Pattern.compile(FrenchNumericWithUnit.CompoundUnitConnectorRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS);
     }
 
     public CultureInfo getCultureInfo() { return this.cultureInfo; }
@@ -29,6 +30,7 @@ public abstract class FrenchNumberWithUnitExtractorConfiguration implements INum
     public String getBuildSuffix() { return FrenchNumericWithUnit.BuildSuffix; }
     public String getConnectorToken() { return FrenchNumericWithUnit.ConnectorToken; }
     public Pattern getCompoundUnitConnectorRegex() { return this.compoundUnitConnectorRegex; }
+    public Pattern getAmbiguousUnitNumberMultiplierRegex() { return null; }
 
     public abstract String getExtractType();
     public abstract Map<String, String> getSuffixList();

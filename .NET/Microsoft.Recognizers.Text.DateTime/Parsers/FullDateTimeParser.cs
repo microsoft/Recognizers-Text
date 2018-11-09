@@ -349,42 +349,42 @@ namespace Microsoft.Recognizers.Text.DateTime
                 switch ((string)resolutionDic[ResolutionKey.Type])
                 {
                     case Constants.SYS_DATETIME_TIME:
-                        resolutionPm[ResolutionKey.Value] = FormatUtil.ToPm(resolution[ResolutionKey.Value]);
-                        resolutionPm[DateTimeResolutionKey.Timex] = FormatUtil.ToPm(timex);
+                        resolutionPm[ResolutionKey.Value] = DateTimeFormatUtil.ToPm(resolution[ResolutionKey.Value]);
+                        resolutionPm[DateTimeResolutionKey.Timex] = DateTimeFormatUtil.ToPm(timex);
                         break;
                     case Constants.SYS_DATETIME_DATETIME:
                         var splited = resolution[ResolutionKey.Value].Split(' ');
-                        resolutionPm[ResolutionKey.Value] = splited[0] + " " + FormatUtil.ToPm(splited[1]);
-                        resolutionPm[DateTimeResolutionKey.Timex] = FormatUtil.AllStringToPm(timex);
+                        resolutionPm[ResolutionKey.Value] = splited[0] + " " + DateTimeFormatUtil.ToPm(splited[1]);
+                        resolutionPm[DateTimeResolutionKey.Timex] = DateTimeFormatUtil.AllStringToPm(timex);
                         break;
                     case Constants.SYS_DATETIME_TIMEPERIOD:
                         if (resolution.ContainsKey(DateTimeResolutionKey.START))
                         {
-                            resolutionPm[DateTimeResolutionKey.START] = FormatUtil.ToPm(resolution[DateTimeResolutionKey.START]);
+                            resolutionPm[DateTimeResolutionKey.START] = DateTimeFormatUtil.ToPm(resolution[DateTimeResolutionKey.START]);
                         }
 
                         if (resolution.ContainsKey(DateTimeResolutionKey.END))
                         {
-                            resolutionPm[DateTimeResolutionKey.END] = FormatUtil.ToPm(resolution[DateTimeResolutionKey.END]);
+                            resolutionPm[DateTimeResolutionKey.END] = DateTimeFormatUtil.ToPm(resolution[DateTimeResolutionKey.END]);
                         }
 
-                        resolutionPm[DateTimeResolutionKey.Timex] = FormatUtil.AllStringToPm(timex);
+                        resolutionPm[DateTimeResolutionKey.Timex] = DateTimeFormatUtil.AllStringToPm(timex);
                         break;
                     case Constants.SYS_DATETIME_DATETIMEPERIOD:
                         splited = resolution[DateTimeResolutionKey.START].Split(' ');
                         if (resolution.ContainsKey(DateTimeResolutionKey.START))
                         {
-                            resolutionPm[DateTimeResolutionKey.START] = splited[0] + " " + FormatUtil.ToPm(splited[1]);
+                            resolutionPm[DateTimeResolutionKey.START] = splited[0] + " " + DateTimeFormatUtil.ToPm(splited[1]);
                         }
 
                         splited = resolution[DateTimeResolutionKey.END].Split(' ');
 
                         if (resolution.ContainsKey(DateTimeResolutionKey.END))
                         {
-                            resolutionPm[DateTimeResolutionKey.END] = splited[0] + " " + FormatUtil.ToPm(splited[1]);
+                            resolutionPm[DateTimeResolutionKey.END] = splited[0] + " " + DateTimeFormatUtil.ToPm(splited[1]);
                         }
 
-                        resolutionPm[DateTimeResolutionKey.Timex] = FormatUtil.AllStringToPm(timex);
+                        resolutionPm[DateTimeResolutionKey.Timex] = DateTimeFormatUtil.AllStringToPm(timex);
                         break;
                 }
 

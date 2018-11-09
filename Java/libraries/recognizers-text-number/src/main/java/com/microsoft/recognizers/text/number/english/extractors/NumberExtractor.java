@@ -4,6 +4,7 @@ import com.microsoft.recognizers.text.number.Constants;
 import com.microsoft.recognizers.text.number.NumberMode;
 import com.microsoft.recognizers.text.number.NumberOptions;
 import com.microsoft.recognizers.text.number.extractors.BaseNumberExtractor;
+import com.microsoft.recognizers.text.number.resources.BaseNumbers;
 import com.microsoft.recognizers.text.number.resources.EnglishNumeric;
 import org.javatuples.Pair;
 
@@ -70,7 +71,7 @@ public class NumberExtractor extends BaseNumberExtractor {
                 cardinalExtractor = CardinalExtractor.getInstance(EnglishNumeric.PlaceHolderPureNumber);
                 break;
             case Currency:
-                builder.put(Pattern.compile(EnglishNumeric.CurrencyRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "IntegerNum");
+                builder.put(Pattern.compile(BaseNumbers.CurrencyRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "IntegerNum");
                 break;
             case Default:
                 break;

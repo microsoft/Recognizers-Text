@@ -33,7 +33,7 @@ namespace Microsoft.Recognizers.Text.Number.German
         {
             var builder = ImmutableDictionary.CreateBuilder<Regex, TypeTag>();
             
-            //Add Cardinal
+            // Add Cardinal
             CardinalExtractor cardExtract = null;
             switch (mode)
             {
@@ -41,7 +41,8 @@ namespace Microsoft.Recognizers.Text.Number.German
                     cardExtract = CardinalExtractor.GetInstance(NumbersDefinitions.PlaceHolderPureNumber);
                     break;
                 case NumberMode.Currency:
-                    builder.Add(new Regex(NumbersDefinitions.CurrencyRegex, RegexOptions.Singleline), RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX));
+                    builder.Add(BaseNumberExtractor.CurrencyRegex,
+                                RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX));
                     break;
                 case NumberMode.Default:
                     break;
@@ -54,7 +55,7 @@ namespace Microsoft.Recognizers.Text.Number.German
 
             builder.AddRange(cardExtract.Regexes);
             
-            //Add Fraction
+            // Add Fraction
             var fracExtract = FractionExtractor.GetInstance();
             builder.AddRange(fracExtract.Regexes);
 

@@ -2,8 +2,6 @@
 using System.Linq;
 using System.Text;
 
-using Microsoft.Recognizers.Text.Number;
-
 namespace Microsoft.Recognizers.Text.NumberWithUnit
 {
     public class NumberWithUnitParser : IParser
@@ -31,11 +29,11 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             }
             else
             { 
-                // if there is no unitResult, means there is just unit
+                // If there is no unitResult, means there is just unit
                 numberResult = new ExtractResult { Start = -1, Length = 0 };
             }
 
-            // key contains units
+            // Key contains units
             var key = extResult.Text;
             var unitKeyBuild = new StringBuilder();
             var unitKeys = new List<string>();
@@ -68,7 +66,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                 }
             }
 
-            /* Unit type depends on last unit in suffix.*/
+            // Unit type depends on last unit in suffix
             var lastUnit = unitKeys.Last();
             var normalizedLastUnit = lastUnit.ToLowerInvariant();
             if (!string.IsNullOrEmpty(config.ConnectorToken) && normalizedLastUnit.StartsWith(config.ConnectorToken))
@@ -94,6 +92,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     ret.ResolutionStr = $"{numValue?.ResolutionStr} {unitValue}".Trim();
                 }
             }
+
+            ret.Text = ret.Text.ToLowerInvariant();
 
             return ret;
         }

@@ -1,7 +1,7 @@
 import { IExtractor, ExtractResult } from "@microsoft/recognizers-text";
 import { Constants, TimeTypeConstants } from "./constants";
 import { RegExpUtility, Match, StringUtility } from "@microsoft/recognizers-text-number"
-import { Token, FormatUtil, DateTimeResolutionResult, IDateTimeUtilityConfiguration, DateUtils, StringMap } from "./utilities";
+import { Token, DateTimeFormatUtil, DateTimeResolutionResult, IDateTimeUtilityConfiguration, DateUtils, StringMap } from "./utilities";
 import { IDateTimeParser, DateTimeParseResult } from "./parsers"
 import { IDateTimeExtractor } from "./baseDateTime";
 
@@ -95,9 +95,9 @@ export class BaseTimeExtractor implements IDateTimeExtractor {
                 let innerResult = this.internalParse(er.text, referenceTime);
                 if (innerResult.success) {
                     innerResult.futureResolution = {};
-                    innerResult.futureResolution[TimeTypeConstants.TIME] = FormatUtil.formatTime(innerResult.futureValue);
+                    innerResult.futureResolution[TimeTypeConstants.TIME] = DateTimeFormatUtil.formatTime(innerResult.futureValue);
                     innerResult.pastResolution = {};
-                    innerResult.pastResolution[TimeTypeConstants.TIME] = FormatUtil.formatTime(innerResult.pastValue);
+                    innerResult.pastResolution[TimeTypeConstants.TIME] = DateTimeFormatUtil.formatTime(innerResult.pastValue);
                     value = innerResult;
                 }
             }
@@ -145,7 +145,7 @@ export class BaseTimeExtractor implements IDateTimeExtractor {
                                 ret.comment = "ampm";
                             }
 
-                            ret.timex = "T" + FormatUtil.toString(hour, 2);
+                            ret.timex = "T" + DateTimeFormatUtil.toString(hour, 2);
                             ret.futureValue = ret.pastValue =
                                 DateUtils.safeCreateFromMinValue(referenceTime.getFullYear(), referenceTime.getMonth(), referenceTime.getDate(), hour, 0, 0);
                             ret.success = true;
@@ -312,13 +312,13 @@ export class BaseTimeExtractor implements IDateTimeExtractor {
                         hour = 0;
                     }
 
-                    ret.timex = "T" + FormatUtil.toString(hour, 2);
+                    ret.timex = "T" + DateTimeFormatUtil.toString(hour, 2);
                     if (hasMin) {
-                        ret.timex += ":" + FormatUtil.toString(min, 2);
+                        ret.timex += ":" + DateTimeFormatUtil.toString(min, 2);
                     }
 
                     if (hasSec) {
-                        ret.timex += ":" + FormatUtil.toString(second, 2);
+                        ret.timex += ":" + DateTimeFormatUtil.toString(second, 2);
                     }
 
                     if (hour <= 12 && !hasPm && !hasAm && !hasMid) {

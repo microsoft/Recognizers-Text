@@ -7,7 +7,7 @@ from recognizers_text import RegExpUtility, ExtractResult
 from ...resources.chinese_date_time import ChineseDateTime
 from ..constants import Constants
 from ..parsers import DateTimeParseResult
-from ..utilities import TimeTypeConstants, FormatUtil, DateTimeResolutionResult, DateUtils, TimexUtil
+from ..utilities import TimeTypeConstants, DateTimeFormatUtil, DateTimeResolutionResult, DateUtils, TimexUtil
 from ..base_timeperiod import BaseTimePeriodParser
 from .base_date_time_extractor import DateTimeExtra, TimeResult, TimeResolutionUtils
 from .timeperiod_extractor import TimePeriodType
@@ -38,10 +38,10 @@ class ChineseTimePeriodParser(BaseTimePeriodParser):
                 inner_result = self.parse_time_period(extra, reference)
 
             if inner_result.success:
-                inner_result.future_resolution[TimeTypeConstants.START_TIME] = FormatUtil.format_time(inner_result.future_value[0])
-                inner_result.future_resolution[TimeTypeConstants.END_TIME] = FormatUtil.format_time(inner_result.future_value[1])
-                inner_result.past_resolution[TimeTypeConstants.START_TIME] = FormatUtil.format_time(inner_result.past_value[0])
-                inner_result.past_resolution[TimeTypeConstants.END_TIME] = FormatUtil.format_time(inner_result.past_value[1])
+                inner_result.future_resolution[TimeTypeConstants.START_TIME] = DateTimeFormatUtil.format_time(inner_result.future_value[0])
+                inner_result.future_resolution[TimeTypeConstants.END_TIME] = DateTimeFormatUtil.format_time(inner_result.future_value[1])
+                inner_result.past_resolution[TimeTypeConstants.START_TIME] = DateTimeFormatUtil.format_time(inner_result.past_value[0])
+                inner_result.past_resolution[TimeTypeConstants.END_TIME] = DateTimeFormatUtil.format_time(inner_result.past_value[1])
 
                 result.value = inner_result
                 result.timex_str = inner_result.timex if inner_result is not None else ''

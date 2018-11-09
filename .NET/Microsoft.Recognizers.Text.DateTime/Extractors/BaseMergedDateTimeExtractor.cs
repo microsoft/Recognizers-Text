@@ -313,7 +313,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             // For example, "show me sales after 2010 and before 2018 or before 2000"
             // When extract "before 2000", we need the second "before" which will be matched in the second Regex match
 
-            var match = Regex.Match(text, regex.ToString(), RegexOptions.RightToLeft | RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            var match = Regex.Match(text, regex.ToString(), RegexOptions.RightToLeft | RegexOptions.Singleline);
 
             if (match.Success && string.IsNullOrEmpty(text.Substring(match.Index + match.Length)))
             {

@@ -10,7 +10,7 @@ from recognizers_number.number.parsers import BaseNumberParser
 from .constants import Constants, TimeTypeConstants
 from .extractors import DateTimeExtractor
 from .parsers import DateTimeParser, DateTimeParseResult
-from .utilities import Token, merge_all_tokens, DateTimeResolutionResult, DateTimeUtilityConfiguration, AgoLaterUtil, FormatUtil, RegExpUtility, AgoLaterMode
+from .utilities import Token, merge_all_tokens, DateTimeResolutionResult, DateTimeUtilityConfiguration, AgoLaterUtil, DateTimeFormatUtil, RegExpUtility, AgoLaterMode
 
 class DateTimeExtractorConfiguration(ABC):
     @property
@@ -394,8 +394,8 @@ class BaseDateTimeParser(DateTimeParser):
                 inner_result = self.parser_duration_with_ago_and_later(source_text, reference)
 
             if inner_result.success:
-                inner_result.future_resolution[TimeTypeConstants.DATETIME] = FormatUtil.format_date_time(inner_result.future_value)
-                inner_result.past_resolution[TimeTypeConstants.DATETIME] = FormatUtil.format_date_time(inner_result.past_value)
+                inner_result.future_resolution[TimeTypeConstants.DATETIME] = DateTimeFormatUtil.format_date_time(inner_result.future_value)
+                inner_result.past_resolution[TimeTypeConstants.DATETIME] = DateTimeFormatUtil.format_date_time(inner_result.past_value)
                 result.value = inner_result
                 result.timex_str = inner_result.timex if inner_result is not None else ''
                 result.resolution_str = ''
@@ -569,7 +569,7 @@ class BaseDateTimeParser(DateTimeParser):
 
         time_str = f'T{hour:02d}{time_str[3:]}'
 
-        result.timex = FormatUtil.format_date(date) + time_str
+        result.timex = DateTimeFormatUtil.format_date(date) + time_str
         result.future_value = datetime(date.year, date.month, date.day, hour, minute, second)
         result.past_value = datetime(date.year, date.month, date.day, hour, minute, second)
         result.success = True

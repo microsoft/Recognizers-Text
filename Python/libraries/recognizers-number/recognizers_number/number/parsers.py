@@ -117,7 +117,7 @@ class BaseNumberParser(Parser):
         self.round_number_set: List[str] = list(self.config.round_number_map.keys())
 
     def parse(self, source: ExtractResult) -> Optional[ParseResult]:
-        # check if the parser is configured to support specific types
+        # Check if the parser is configured to support specific types
         if self.supported_types and source.type not in self.supported_types:
             return None
         ret: Optional[ParseResult] = None
@@ -128,7 +128,7 @@ class BaseNumberParser(Parser):
             else:
                 extra = self.config.lang_marker
 
-        #Resolve symbol prefix
+        # Resolve symbol prefix
         is_negative = False
         match_negative = regex.search(self.config.negative_number_sign_regex, source.text)
 
@@ -152,6 +152,7 @@ class BaseNumberParser(Parser):
                 ret.value = ret.value * -1
             # Use culture_info to format values
             ret.resolution_str = self.config.culture_info.format(ret.value) if self.config.culture_info is not None else repr(ret.value)
+            ret.text = ret.text.lower()
 
         return ret
 
@@ -171,7 +172,7 @@ class BaseNumberParser(Parser):
         # [4] 234.567
         # [5] 44/55
         # [6] 2 hundred
-        # dot occured.
+        # dot occurred.
 
         power = 1
         tmp_index = -1
@@ -192,12 +193,13 @@ class BaseNumberParser(Parser):
                     handle = front + handle[tmp_index + len(match):]
                     tmp_index = handle.find(match.group(), start_index)
 
-        # scale used in the calculate of double
+        # Scale used in the calculate of double
         result.value = self._get_digital_value(handle, power)
 
         return result
 
-    def _is_digit(self, c: str) -> bool:
+    @staticmethod
+    def _is_digit(c: str) -> bool:
         return c.isdigit()
 
     def _frac_like_number_parse(self, ext_result: ExtractResult) -> ParseResult:
@@ -423,7 +425,7 @@ class BaseNumberParser(Parser):
                     if match_value is None:
                         match_value = self.config.ordinal_number_map.get(match, None)
 
-                    #This is just for ordinal now. Not for fraction ever.
+                    # This is just for ordinal now. Not for fraction ever.
                     if ordinal:
                         frac_part = self.config.ordinal_number_map[match]
                         if tmp_stack:

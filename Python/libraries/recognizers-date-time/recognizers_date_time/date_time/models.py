@@ -2,7 +2,7 @@ from typing import List
 from datetime import datetime
 
 from recognizers_text.model import Model, ModelResult
-from recognizers_text.utilities import FormatUtility
+from recognizers_text.utilities import QueryProcessor
 from .extractors import DateTimeExtractor
 from .parsers import DateTimeParser
 
@@ -21,7 +21,7 @@ class DateTimeModel(Model):
         self.extractor = extractor
 
     def parse(self, query: str, reference: datetime = None) -> List[ModelResult]:#pylint: disable=W0221
-        query = FormatUtility.preprocess(query)
+        query = QueryProcessor.preprocess(query)
 
         extract_results = self.extractor.extract(query, reference)
         parser_dates = []

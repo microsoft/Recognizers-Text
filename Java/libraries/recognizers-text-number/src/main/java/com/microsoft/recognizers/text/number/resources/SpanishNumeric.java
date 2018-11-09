@@ -69,7 +69,8 @@ public class SpanishNumeric {
 			.replace("{placeholder}", placeholder);
     }
 
-    public static final String NumbersWithSuffix = "(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+\\s*(k|M|T|G)(?=\\b)";
+    public static final String NumbersWithSuffix = "(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+\\s*{BaseNumbers.NumberMultiplierRegex}(?=\\b)"
+            .replace("{BaseNumbers.NumberMultiplierRegex}", BaseNumbers.NumberMultiplierRegex);
 
     public static final String RoundNumberIntegerRegexWithLocks = "(?<=\\b)({DigitsNumberRegex})+\\s+{RoundNumberIntegerRegex}(?=\\b)"
             .replace("{DigitsNumberRegex}", DigitsNumberRegex)
@@ -167,7 +168,8 @@ public class SpanishNumeric {
 			.replace("{placeholder}", placeholder);
     }
 
-    public static final String DoubleWithMultiplierRegex = "(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+\\[\\.,])))\\d+[\\.,]\\d+\\s*(K|k|M|G|T)(?=\\b)";
+    public static final String DoubleWithMultiplierRegex = "(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+\\[\\.,])))\\d+[\\.,]\\d+\\s*{BaseNumbers.NumberMultiplierRegex}(?=\\b)"
+            .replace("{BaseNumbers.NumberMultiplierRegex}", BaseNumbers.NumberMultiplierRegex);
 
     public static final String DoubleWithRoundNumber = "(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+\\[\\.,])))\\d+[\\.,]\\d+\\s+{RoundNumberIntegerRegex}(?=\\b)"
             .replace("{RoundNumberIntegerRegex}", RoundNumberIntegerRegex);
@@ -181,8 +183,6 @@ public class SpanishNumeric {
 
     public static final String NumberWithPrefixPercentage = "(?<!%)({BaseNumbers.NumberReplaceToken})(\\s*)(%(?!{BaseNumbers.NumberReplaceToken})|(por ciento|por cien)\\b)"
             .replace("{BaseNumbers.NumberReplaceToken}", BaseNumbers.NumberReplaceToken);
-
-    public static final String CurrencyRegex = "(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+\\s*(B|b|m|t|g)(?=\\b)";
 
     public static final Character DecimalSeparatorChar = ',';
 
@@ -204,7 +204,8 @@ public class SpanishNumeric {
 
     public static final String HalfADozenRegex = "media\\s+docena";
 
-    public static final String DigitalNumberRegex = "((?<=\\b)(mil|millones|mill[oó]n|billones|bill[oó]n|trillones|trill[oó]n|docenas?)(?=\\b))|((?<=(\\d|\\b))(k|t|m|g)(?=\\b))";
+    public static final String DigitalNumberRegex = "((?<=\\b)(mil|millones|mill[oó]n|billones|bill[oó]n|trillones|trill[oó]n|docenas?)(?=\\b))|((?<=(\\d|\\b)){BaseNumbers.MultiplierLookupRegex}(?=\\b))"
+            .replace("{BaseNumbers.MultiplierLookupRegex}", BaseNumbers.MultiplierLookupRegex);
 
     public static final Map<String, Long> CardinalNumberMap = ImmutableMap.<String, Long>builder()
         .put("cero", 0L)
@@ -449,6 +450,7 @@ public class SpanishNumeric {
         .put("k", 1000L)
         .put("m", 1000000L)
         .put("g", 1000000000L)
+        .put("b", 1000000000L)
         .put("t", 1000000000000L)
         .build();
 

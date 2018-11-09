@@ -9,7 +9,7 @@ from ..base_holiday import BaseHolidayParser
 from ..parsers import DateTimeParseResult
 from .holiday_parser_config import ChineseHolidayParserConfiguration
 from ..constants import TimeTypeConstants
-from ..utilities import FormatUtil, DateTimeResolutionResult, RegExpUtility
+from ..utilities import DateTimeFormatUtil, DateTimeResolutionResult, RegExpUtility
 
 class ChineseHolidayParser(BaseHolidayParser):
     def __init__(self):
@@ -149,10 +149,10 @@ class ChineseHolidayParser(BaseHolidayParser):
 
             if inner_result.success:
                 inner_result.future_resolution = {
-                    TimeTypeConstants.DATE: FormatUtil.format_date(inner_result.future_value)
+                    TimeTypeConstants.DATE: DateTimeFormatUtil.format_date(inner_result.future_value)
                 }
                 inner_result.past_resolution = {
-                    TimeTypeConstants.DATE: FormatUtil.format_date(inner_result.past_value)
+                    TimeTypeConstants.DATE: DateTimeFormatUtil.format_date(inner_result.past_value)
                 }
                 inner_result.is_lunar = self.__is_lunar(source.text)
                 value = inner_result
@@ -203,7 +203,7 @@ class ChineseHolidayParser(BaseHolidayParser):
         date = reference
         if holiday_str in self.__fixed_holiday_dictionary:
             date = self.__fixed_holiday_dictionary[holiday_str](year)
-            timex = f'-{FormatUtil.to_str(date.month, 2)}-{FormatUtil.to_str(date.day, 2)}'
+            timex = f'-{DateTimeFormatUtil.to_str(date.month, 2)}-{DateTimeFormatUtil.to_str(date.day, 2)}'
         elif holiday_str in self.config.holiday_func_dictionary:
             date = self.config.holiday_func_dictionary[holiday_str](year)
             timex = self.config.variable_holidays_timex_dictionary[holiday_str]
@@ -211,7 +211,7 @@ class ChineseHolidayParser(BaseHolidayParser):
             return result
 
         if has_year:
-            result.timex = FormatUtil.to_str(year, 4) + timex
+            result.timex = DateTimeFormatUtil.to_str(year, 4) + timex
             result.future_value = datetime(year, date.month, date.day)
             result.past_value = datetime(year, date.month, date.day)
         else:

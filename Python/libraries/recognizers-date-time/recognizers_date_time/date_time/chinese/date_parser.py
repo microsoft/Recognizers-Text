@@ -8,7 +8,7 @@ from recognizers_number import Constants as NumberConstants
 
 from ...resources.chinese_date_time import ChineseDateTime
 from ..constants import TimeTypeConstants, Constants
-from ..utilities import DateTimeResolutionResult, FormatUtil, DateUtils, DayOfWeek
+from ..utilities import DateTimeResolutionResult, DateTimeFormatUtil, DateUtils, DayOfWeek
 from ..parsers import DateTimeParseResult
 from ..base_date import BaseDateParser
 from .date_parser_config import ChineseDateParserConfiguration
@@ -44,9 +44,9 @@ class ChineseDateParser(BaseDateParser):
 
             if inner_result.success:
                 inner_result.future_resolution: Dict[str, str] = dict()
-                inner_result.future_resolution[TimeTypeConstants.DATE] = FormatUtil.format_date(inner_result.future_value)
+                inner_result.future_resolution[TimeTypeConstants.DATE] = DateTimeFormatUtil.format_date(inner_result.future_value)
                 inner_result.past_resolution: Dict[str, str] = dict()
-                inner_result.past_resolution[TimeTypeConstants.DATE] = FormatUtil.format_date(inner_result.past_value)
+                inner_result.past_resolution[TimeTypeConstants.DATE] = DateTimeFormatUtil.format_date(inner_result.past_value)
                 inner_result.is_lunar = self.__parse_lunar_calendar(source_text)
                 result_value = inner_result
 
@@ -108,7 +108,7 @@ class ChineseDateParser(BaseDateParser):
                     elif regex.search(self.token_last_regex, year_str):
                         year -= 1
 
-            result.timex = FormatUtil.luis_date(year if has_year else -1, month if has_month else -1, day)
+            result.timex = DateTimeFormatUtil.luis_date(year if has_year else -1, month if has_month else -1, day)
 
             future_date: datetime
             past_date: datetime
@@ -142,7 +142,7 @@ class ChineseDateParser(BaseDateParser):
             swift = self.config.get_swift_day(match.group())
             value = reference + timedelta(days=swift)
 
-            result.timex = FormatUtil.luis_date_from_datetime(value)
+            result.timex = DateTimeFormatUtil.luis_date_from_datetime(value)
             result.future_value = value
             result.past_value = value
             result.success = True
@@ -154,7 +154,7 @@ class ChineseDateParser(BaseDateParser):
             weekday_str = RegExpUtility.get_group(match, 'weekday')
             value = DateUtils.this(reference, self.config.day_of_week.get(weekday_str))
 
-            result.timex = FormatUtil.luis_date_from_datetime(value)
+            result.timex = DateTimeFormatUtil.luis_date_from_datetime(value)
             result.future_value = value
             result.past_value = value
             result.success = True
@@ -166,7 +166,7 @@ class ChineseDateParser(BaseDateParser):
             weekday_str = RegExpUtility.get_group(match, 'weekday')
             value = DateUtils.next(reference, self.config.day_of_week.get(weekday_str))
 
-            result.timex = FormatUtil.luis_date_from_datetime(value)
+            result.timex = DateTimeFormatUtil.luis_date_from_datetime(value)
             result.future_value = value
             result.past_value = value
             result.success = True
@@ -178,7 +178,7 @@ class ChineseDateParser(BaseDateParser):
             weekday_str = RegExpUtility.get_group(match, 'weekday')
             value = DateUtils.last(reference, self.config.day_of_week.get(weekday_str))
 
-            result.timex = FormatUtil.luis_date_from_datetime(value)
+            result.timex = DateTimeFormatUtil.luis_date_from_datetime(value)
             result.future_value = value
             result.past_value = value
             result.success = True
@@ -241,10 +241,10 @@ class ChineseDateParser(BaseDateParser):
 
         if year == 0:
             year = reference.year
-            result.timex = FormatUtil.luis_date(-1, month, day)
+            result.timex = DateTimeFormatUtil.luis_date(-1, month, day)
             no_year = True
         else:
-            result.timex = FormatUtil.luis_date(year, month, day)
+            result.timex = DateTimeFormatUtil.luis_date(year, month, day)
 
         future_date = DateUtils.safe_create_from_min_value(year, month, day)
         past_date = DateUtils.safe_create_from_min_value(year, month, day)

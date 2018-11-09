@@ -37,7 +37,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         {
             if ((Options & DateTimeOptions.EnablePreview) != 0)
             {
-                LocationMatcher.Init(TimeZoneDefinitions.MajorLocations.Select(o => FormatUtility.RemoveDiacritics(o.ToLowerInvariant())));
+                LocationMatcher.Init(TimeZoneDefinitions.MajorLocations.Select(o => QueryProcessor.RemoveDiacritics(o.ToLowerInvariant())));
             }
         }
 

@@ -1,6 +1,7 @@
-import { CultureInfo, Culture } from "@microsoft/recognizers-text-number";
+import { CultureInfo, Culture, RegExpUtility } from "@microsoft/recognizers-text-number";
 import { Constants } from "../constants";
 import { EnglishNumberWithUnitExtractorConfiguration, EnglishNumberWithUnitParserConfiguration } from "./base";
+import { BaseUnits } from "../../resources/baseUnits";
 import { EnglishNumericWithUnit } from "../../resources/englishNumericWithUnit";
 
 export class EnglishTemperatureExtractorConfiguration extends EnglishNumberWithUnitExtractorConfiguration {
@@ -8,6 +9,7 @@ export class EnglishTemperatureExtractorConfiguration extends EnglishNumberWithU
     readonly prefixList: ReadonlyMap<string, string>;
     readonly ambiguousUnitList: ReadonlyArray<string>;
     readonly extractType: string;
+    readonly ambiguousUnitNumberMultiplierRegex: RegExp;
 
     constructor(ci?: CultureInfo) {
         if (!ci) {
@@ -21,6 +23,8 @@ export class EnglishTemperatureExtractorConfiguration extends EnglishNumberWithU
         this.suffixList = EnglishNumericWithUnit.TemperatureSuffixList;
         this.prefixList = new Map<string, string>();
         this.ambiguousUnitList = EnglishNumericWithUnit.AmbiguousTemperatureUnitList;
+
+      this.ambiguousUnitNumberMultiplierRegex = RegExpUtility.getSafeRegExp(BaseUnits.AmbiguousUnitNumberMultiplierRegex, "gs");
     }
 }
 

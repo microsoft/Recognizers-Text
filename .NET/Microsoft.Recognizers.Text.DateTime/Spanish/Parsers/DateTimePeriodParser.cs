@@ -30,7 +30,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
                 var date = referenceTime.AddDays(swift).Date;
                 int day = date.Day, month = date.Month, year = date.Year;
 
-                ret.Timex = FormatUtil.FormatDate(date) + timeStr;
+                ret.Timex = DateTimeFormatUtil.FormatDate(date) + timeStr;
                 ret.FutureValue =
                     ret.PastValue =
                         new Tuple<DateObject, DateObject>(DateObject.MinValue.SafeCreateFromValue(year, month, day, beginHour, 0, 0),

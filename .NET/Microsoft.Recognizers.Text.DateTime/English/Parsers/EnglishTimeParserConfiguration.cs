@@ -16,13 +16,13 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public Regex MealTimeRegex { get; }
 
         private static readonly Regex TimeSuffixFull =
-            new Regex(DateTimeDefinitions.TimeSuffixFull, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.TimeSuffixFull, RegexOptions.Singleline);
 
         private static readonly Regex LunchRegex =
-            new Regex(DateTimeDefinitions.LunchRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.LunchRegex, RegexOptions.Singleline);
 
         private static readonly Regex NightRegex =
-            new Regex(DateTimeDefinitions.NightRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.NightRegex, RegexOptions.Singleline);
 
         public IEnumerable<Regex> TimeRegexes { get; }
 

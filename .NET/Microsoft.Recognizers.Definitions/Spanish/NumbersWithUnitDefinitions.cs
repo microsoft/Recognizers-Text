@@ -543,7 +543,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
 		};
 		public static readonly Dictionary<string, string> TemperatureSuffixList = new Dictionary<string, string>
 		{
-			{ "Kelvin", "k|kelvin" },
+			{ "Kelvin", "k|K|kelvin" },
 			{ "Rankine", "r|rankine" },
 			{ "Grado Celsius", "°c|grados c|grado celsius|grados celsius|celsius|grado centígrado|grados centígrados|centígrado|centígrados" },
 			{ "Grado Fahrenheit", "°f|grados f|grado fahrenheit|grados fahrenheit|fahrenheit" },

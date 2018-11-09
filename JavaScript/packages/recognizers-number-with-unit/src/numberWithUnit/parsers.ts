@@ -128,6 +128,8 @@ export class NumberWithUnitParser implements IParser {
             }
         }
 
+        ret.text = ret.text.toLowerCase();
+
         return ret;
     }
 

@@ -1,16 +1,13 @@
 package com.microsoft.recognizers.text.number.parsers;
 
-import com.google.common.collect.Iterables;
 import com.microsoft.recognizers.text.ExtractResult;
 import com.microsoft.recognizers.text.ParseResult;
 import com.microsoft.recognizers.text.utilities.Match;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
 import com.microsoft.recognizers.text.utilities.StringUtility;
 
-import javax.annotation.RegEx;
-import java.util.Arrays;
+import java.util.Locale;
 import java.util.Map;
-import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class BaseCJKNumberParser extends BaseNumberParser {
@@ -24,6 +21,7 @@ public class BaseCJKNumberParser extends BaseNumberParser {
 
     @Override
     public ParseResult parse(ExtractResult extResult) {
+
         // check if the parser is configured to support specific types
         if (supportedTypes.isPresent() && !supportedTypes.get().stream().anyMatch(t -> extResult.type.equals(t))) {
             return null;
@@ -67,7 +65,7 @@ public class BaseCJKNumberParser extends BaseNumberParser {
         }
 
         if (ret != null) {
-            ret = ret.withText(extResult.text);
+            ret = ret.withText(extResult.text.toLowerCase(Locale.ROOT));
         }
 
         return ret;

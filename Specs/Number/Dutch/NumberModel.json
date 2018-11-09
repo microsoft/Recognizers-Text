@@ -538,7 +538,7 @@
     "Input": "10G",
     "Results": [
       {
-        "Text": "10G",
+        "Text": "10g",
         "TypeName": "number",
         "Resolution": {
           "value": "10000000000"
@@ -863,7 +863,7 @@
     "Input": "Drie kwart van de bevolking heeft hier last van.",
     "Results": [
       {
-        "Text": "Drie kwart",
+        "Text": "drie kwart",
         "TypeName": "number",
         "Resolution": {
           "value": "0,75"
@@ -877,7 +877,7 @@
     "Input": "Driekwart van de bevolking heeft hier last van.",
     "Results": [
       {
-        "Text": "Driekwart",
+        "Text": "driekwart",
         "TypeName": "number",
         "Resolution": {
           "value": "0,75"
@@ -958,7 +958,7 @@
     "Input": "Anderhalve week is niet zo lang. ",
     "Results": [
       {
-        "Text": "Anderhalve",
+        "Text": "anderhalve",
         "TypeName": "number",
         "Resolution": {
           "value": "1,5"
@@ -1409,7 +1409,7 @@
     "Input": "Een op de twintig is hier niet tevreden mee",
     "Results": [
       {
-        "Text": "Een op de twintig",
+        "Text": "een op de twintig",
         "TypeName": "number",
         "Resolution": {
           "value": "0,05"
@@ -1638,7 +1638,7 @@
     "Input": "Nul is hetzelfde als 0",
     "Results": [
       {
-        "Text": "Nul",
+        "Text": "nul",
         "TypeName": "number",
         "Resolution": {
           "value": "0"

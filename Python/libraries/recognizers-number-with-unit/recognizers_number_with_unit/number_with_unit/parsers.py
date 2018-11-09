@@ -98,6 +98,8 @@ class NumberWithUnitParser(Parser):
                     unit=unit_value)
                 ret.resolution_str = f'{resolution_str} {unit_value}'.strip()
 
+        ret.text = ret.text.lower()
+
         return ret
 
     def __add_if_not_contained(self, keys: List[str], new_key: str):

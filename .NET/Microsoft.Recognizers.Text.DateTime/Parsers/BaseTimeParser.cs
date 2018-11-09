@@ -52,12 +52,12 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     innerResult.FutureResolution = new Dictionary<string, string>
                     {
-                        {TimeTypeConstants.TIME, FormatUtil.FormatTime((DateObject)innerResult.FutureValue)}
+                        {TimeTypeConstants.TIME, DateTimeFormatUtil.FormatTime((DateObject)innerResult.FutureValue)}
                     };
 
                     innerResult.PastResolution = new Dictionary<string, string>
                     {
-                        {TimeTypeConstants.TIME, FormatUtil.FormatTime((DateObject)innerResult.PastValue)}
+                        {TimeTypeConstants.TIME, DateTimeFormatUtil.FormatTime((DateObject)innerResult.PastValue)}
                     };
 
                     value = innerResult;

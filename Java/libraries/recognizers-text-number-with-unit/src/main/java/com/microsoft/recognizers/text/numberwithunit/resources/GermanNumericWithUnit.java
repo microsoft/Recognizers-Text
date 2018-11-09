@@ -175,7 +175,7 @@ public class GermanNumericWithUnit {
         .put("Sri Lankan rupee", "sri-lanka-rupie|sri-lanka-rupien|lkr|රු|ரூ")
         .put("Indonesian rupiah", "indonesischer rupiah|indonesische rupiah|indonesischen rupiah|rupiah|perak|rp|idr")
         .put("Rupee", "rupie|rs")
-        .put("Danish krone", "dänische krone|Dänischen krone|dänischer kronen|dänische kronen|dänischen kronen|daenische krone|daenischen krone|daenischer kronen|daenische kronen|daenischen kronen|dkk")
+        .put("Danish krone", "dänische krone|dänischen krone|dänischer kronen|dänische kronen|dänischen kronen|daenische krone|daenischen krone|daenischer kronen|daenische kronen|daenischen kronen|dkk")
         .put("Norwegian krone", "norwegische krone|norwegischen krone|norwegischer kronen|norwegische kronen|norwegischen kronen|nok")
         .put("Faroese króna", "färöische króna|färöische krone|färöischen krone|färöischer kronen|färöische kronen|färöischen kronen")
         .put("Icelandic króna", "isländische krone|isländischen krone|isländischer kronen|isländische kronen|isländischen kronen|isk")
@@ -393,7 +393,7 @@ public class GermanNumericWithUnit {
 
     public static final Map<String, String> TemperatureSuffixList = ImmutableMap.<String, String>builder()
         .put("F", "grad fahrenheit|°fahrenheit|°f|fahrenheit")
-        .put("K", "k|kelvin")
+        .put("K", "k|K|kelvin")
         .put("R", "rankine|°r")
         .put("D", "delisle|°de")
         .put("C", "grad celsius|°celsius|°c")

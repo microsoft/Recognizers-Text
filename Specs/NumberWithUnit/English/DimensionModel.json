@@ -788,7 +788,7 @@
     "Input": "The size of this file is 100 MB",
     "Results": [
       {
-        "Text": "100 MB",
+        "Text": "100 mb",
         "TypeName": "dimension",
         "Resolution": {
           "unit": "Megabyte",

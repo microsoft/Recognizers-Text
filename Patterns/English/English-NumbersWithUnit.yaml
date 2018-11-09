@@ -51,7 +51,7 @@ CurrencySuffixList: !dictionary
     Bangladeshi taka: bangladeshi taka|৳|bdt|taka|takas|bangladeshi takas
     Paisa: poisha|paisa
 #Bhutanese ngultrum
-    Bhutanese ngultrum: Bhutanese ngultrum|nu.|btn
+    Bhutanese ngultrum: bhutanese ngultrum|nu.|btn
     Chetrum: chetrums|chetrum
 #Bolivian boliviano
     Bolivian boliviano: bolivian boliviano|bob|bs.|bolivia boliviano|bolivia bolivianos|bolivian bolivianos
@@ -90,10 +90,10 @@ CurrencySuffixList: !dictionary
     Gambian dalasi: gmd
     Butut: bututs|butut
 #Georgian lari
-    Georgian lari: Georgian lari|lari|gel|₾
+    Georgian lari: georgian lari|lari|gel|₾
     Tetri: tetri
 #Ghanaian cedi
-    Ghanaian cedi: Ghanaian cedi|ghs|₵|gh₵
+    Ghanaian cedi: ghanaian cedi|ghs|₵|gh₵
     Pesewa: pesewas|pesewa
 #Guatemalan quetzal
     Guatemalan quetzal: guatemalan quetzal|gtq|guatemala quetzal
@@ -115,7 +115,7 @@ CurrencySuffixList: !dictionary
 #Japanese yen
     Japanese yen: japanese yen|jpy|yen|-yen|¥|yens|japanese yens|japan yen|japan yens
 #Kazakhstani tenge
-    Kazakhstani tenge: Kazakhstani tenge|kzt
+    Kazakhstani tenge: kazakhstani tenge|kazakh tenge|kazak tenge|kzt
 #Kenyan shilling
     Kenyan shilling: kenyan shilling|sh|kes
 #North Korean won
@@ -156,7 +156,7 @@ CurrencySuffixList: !dictionary
 #Mozambican metical
     Mozambican metical: mozambican metical|mt|mzn|mozambica metical|mozambica meticals|mozambican meticals
 #Burmese kyat
-    Burmese kyat: Burmese kyat|ks|mmk
+    Burmese kyat: burmese kyat|ks|mmk
     Pya: pya
 #Nicaraguan córdoba
     Nicaraguan córdoba: nicaraguan córdoba|nio
@@ -193,7 +193,7 @@ CurrencySuffixList: !dictionary
 #São Tomé and Príncipe dobra
     São Tomé and Príncipe dobra: são tomé and príncipe dobra|dobras|dobra|std
 #Sierra Leonean leone
-    Sierra Leonean leone: sierra Leonean leone|sll|leone|le
+    Sierra Leonean leone: sierra leonean leone|sll|leone|le
 #Spain
     Peseta: pesetas|peseta
 #Netherlands guilder
@@ -823,7 +823,7 @@ TemperatureSuffixList: !dictionary
   types: [ string, string ]
   entries:
     F: degrees fahrenheit|degree fahrenheit|deg fahrenheit|degs fahrenheit|fahrenheit|°f|degrees farenheit|degree farenheit|deg farenheit|degs farenheit|degrees f|degree f|deg f|degs f|farenheit|f
-    K: k|kelvin
+    K: k|K|kelvin
     R: rankine|°r
     D: delisle|°de
     C: degrees celsius|degree celsius|deg celsius|degs celsius|celsius|degrees celcius|degree celcius|celcius|deg celcius|degs celcius|degrees centigrade|degree centigrade|centigrade|degrees centigrate|degree centigrate|degs centigrate|deg centigrate|centigrate|degrees c|degree c|deg c|degs c|°c|c
@@ -879,7 +879,7 @@ WeightSuffixList: !dictionary
     Ton: -ton|ton|tons|tonne|tonnes
     Pound: pound|pounds|lb
     Ounce: -ounce|ounce|oz|ounces
-    Weight unit: pennyweight|grain|british long ton|US short hundredweight|stone|dram
+    Weight unit: pennyweight|grain|british long ton|us short hundredweight|stone|dram
 AmbiguousWeightUnitList: !list
   types: [ string ]
   entries:

@@ -5,7 +5,7 @@ from recognizers_text import RegExpUtility
 
 from ...resources.chinese_date_time import ChineseDateTime
 from ..constants import TimeTypeConstants
-from ..utilities import FormatUtil, DateTimeResolutionResult, DateUtils
+from ..utilities import DateTimeFormatUtil, DateTimeResolutionResult, DateUtils
 from ..extractors import ExtractResult
 from ..parsers import DateTimeParseResult
 from ..base_time import BaseTimeParser
@@ -39,8 +39,8 @@ class ChineseTimeParser(BaseTimeParser):
         parse_result = self.pack_time_result(extra, time_result, reference)
 
         if parse_result.success:
-            parse_result.future_resolution[TimeTypeConstants.TIME] = FormatUtil.format_time(parse_result.future_value)
-            parse_result.past_resolution[TimeTypeConstants.TIME] = FormatUtil.format_time(parse_result.past_value)
+            parse_result.future_resolution[TimeTypeConstants.TIME] = DateTimeFormatUtil.format_time(parse_result.future_value)
+            parse_result.past_resolution[TimeTypeConstants.TIME] = DateTimeFormatUtil.format_time(parse_result.past_value)
 
         result = DateTimeParseResult(source)
         result.value = parse_result
