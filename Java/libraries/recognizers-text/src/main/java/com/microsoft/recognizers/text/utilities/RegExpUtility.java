@@ -40,9 +40,11 @@ public abstract class RegExpUtility {
             if (sanitize && groupName.contains(groupNameIndexSep)) {
                 groupName = groupName.substring(0, groupName.lastIndexOf(groupNameIndexSep));
             }
+
             if (!groupName.contains(groupNameIndexSep)) {
                 groupName = groupName.replace("ii", "_");
             }
+
             //If matchedGroups previously contained a mapping for groupName, the old value is replaced.
             if (groupValue != null) {
                 matchedGroups.put(groupName, groupValue);

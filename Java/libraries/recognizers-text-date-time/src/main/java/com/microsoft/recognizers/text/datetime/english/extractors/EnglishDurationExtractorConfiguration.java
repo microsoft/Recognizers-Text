@@ -13,35 +13,35 @@ import com.microsoft.recognizers.text.utilities.RegExpUtility;
 
 public class EnglishDurationExtractorConfiguration extends BaseOptionsConfiguration implements IDurationExtractorConfiguration {
 
-  public static final Pattern DurationUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.DurationUnitRegex, Pattern.CASE_INSENSITIVE);
+  public static final Pattern DurationUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.DurationUnitRegex);
 
-  public static final Pattern SuffixAndRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SuffixAndRegex, Pattern.CASE_INSENSITIVE);
+  public static final Pattern SuffixAndRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SuffixAndRegex);
 
-  public static final Pattern DurationFollowedUnit = RegExpUtility.getSafeRegExp(EnglishDateTime.DurationFollowedUnit, Pattern.CASE_INSENSITIVE);
+  public static final Pattern DurationFollowedUnit = RegExpUtility.getSafeRegExp(EnglishDateTime.DurationFollowedUnit);
 
-  public static final Pattern NumberCombinedWithDurationUnit = RegExpUtility.getSafeRegExp(EnglishDateTime.NumberCombinedWithDurationUnit, Pattern.CASE_INSENSITIVE);
+  public static final Pattern NumberCombinedWithDurationUnit = RegExpUtility.getSafeRegExp(EnglishDateTime.NumberCombinedWithDurationUnit);
 
-  public static final Pattern AnUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.AnUnitRegex, Pattern.CASE_INSENSITIVE);
+  public static final Pattern AnUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.AnUnitRegex);
 
-  public static final Pattern DuringRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.DuringRegex, Pattern.CASE_INSENSITIVE);
+  public static final Pattern DuringRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.DuringRegex);
 
-  public static final Pattern AllRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.AllRegex, Pattern.CASE_INSENSITIVE);
+  public static final Pattern AllRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.AllRegex);
 
-  public static final Pattern HalfRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.HalfRegex, Pattern.CASE_INSENSITIVE);
+  public static final Pattern HalfRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.HalfRegex);
 
-  public static final Pattern ConjunctionRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.ConjunctionRegex, Pattern.CASE_INSENSITIVE);
+  public static final Pattern ConjunctionRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.ConjunctionRegex);
 
-  public static final Pattern InexactNumberRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.InexactNumberRegex, Pattern.CASE_INSENSITIVE);
+  public static final Pattern InexactNumberRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.InexactNumberRegex);
 
-  public static final Pattern InexactNumberUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.InexactNumberUnitRegex, Pattern.CASE_INSENSITIVE);
+  public static final Pattern InexactNumberUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.InexactNumberUnitRegex);
 
-  public static final Pattern RelativeDurationUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RelativeDurationUnitRegex, Pattern.CASE_INSENSITIVE);
+  public static final Pattern RelativeDurationUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RelativeDurationUnitRegex);
 
-  public static final Pattern DurationConnectorRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.DurationConnectorRegex, Pattern.CASE_INSENSITIVE);
+  public static final Pattern DurationConnectorRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.DurationConnectorRegex);
 
-  public static final Pattern MoreThanRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.MoreThanRegex, Pattern.CASE_INSENSITIVE);
+  public static final Pattern MoreThanRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.MoreThanRegex);
 
-  public static final Pattern LessThanRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.LessThanRegex, Pattern.CASE_INSENSITIVE);
+  public static final Pattern LessThanRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.LessThanRegex);
   
   private final IExtractor cardinalExtractor;
   private final ImmutableMap<String, String> unitMap;

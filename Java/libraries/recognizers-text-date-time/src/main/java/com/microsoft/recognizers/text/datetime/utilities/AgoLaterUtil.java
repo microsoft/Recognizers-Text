@@ -28,6 +28,7 @@ public class AgoLaterUtil {
                                                                         Pattern unitRegex,
                                                                         IDateTimeUtilityConfiguration utilityConfiguration,
                                                                         IDateParserConfiguration config) {
+
         DateTimeResolutionResult ret = new DateTimeResolutionResult();
         List<ExtractResult> durationRes = durationExtractor.extract(text, referenceTime);
         if (durationRes.size() > 0) {
@@ -43,13 +44,11 @@ public class AgoLaterUtil {
                                 .trim().toLowerCase();
 
                 AgoLaterMode mode = AgoLaterMode.DATE;
-                if (pr.timexStr.contains("T"))
-                {
+                if (pr.timexStr.contains("T")) {
                     mode = AgoLaterMode.DATETIME;
                 }
 
-                if (pr.value != null)
-                {
+                if (pr.value != null) {
                     return getAgoLaterResult(pr, afterStr, beforeStr, referenceTime,
                             utilityConfiguration, mode, config);
                 }
@@ -65,61 +64,49 @@ public class AgoLaterUtil {
             LocalDateTime referenceTime,
             IDateTimeUtilityConfiguration utilityConfiguration,
             AgoLaterMode mode,
-            IDateParserConfiguration config)
-    {
+            IDateParserConfiguration config) {
+
         DateTimeResolutionResult ret = new DateTimeResolutionResult();
         LocalDateTime resultDateTime = referenceTime;
         String timex = durationParseResult.timexStr;
 
-        if (((DateTimeResolutionResult)durationParseResult.value).getMod() == Constants.MORE_THAN_MOD)
-        {
+        if (((DateTimeResolutionResult) durationParseResult.value).getMod() == Constants.MORE_THAN_MOD) {
             ret.setMod(Constants.MORE_THAN_MOD);
-        }
-        else if (((DateTimeResolutionResult)durationParseResult.value).getMod() == Constants.LESS_THAN_MOD)
-        {
+        } else if (((DateTimeResolutionResult) durationParseResult.value).getMod() == Constants.LESS_THAN_MOD) {
             ret.setMod(Constants.LESS_THAN_MOD);
         }
 
-        if (MatchingUtil.containsAgoLaterIndex(afterStr, utilityConfiguration.getAgoRegex()))
-        {
+        if (MatchingUtil.containsAgoLaterIndex(afterStr, utilityConfiguration.getAgoRegex())) {
             Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(utilityConfiguration.getAgoRegex(), afterStr)).findFirst();
             int swift = 0;
 
             // Handle cases like "3 days before yesterday"
-            if (match.isPresent() && !StringUtility.isNullOrEmpty(match.get().getGroup("day").value))
-            {
+            if (match.isPresent() && !StringUtility.isNullOrEmpty(match.get().getGroup("day").value)) {
                 swift = config.getSwiftDay(match.get().getGroup("day").value);
             }
 
             resultDateTime = DurationParsingUtil.shiftDateTime(timex, referenceTime.plusDays(swift), false);
 
-            ((DateTimeResolutionResult)durationParseResult.value).setMod(Constants.BEFORE_MOD);
-        }
-        else if (MatchingUtil.containsAgoLaterIndex(afterStr, utilityConfiguration.getLaterRegex()) ||
-                MatchingUtil.containsTermIndex(beforeStr, utilityConfiguration.getInConnectorRegex()))
-        {
+            ((DateTimeResolutionResult) durationParseResult.value).setMod(Constants.BEFORE_MOD);
+        } else if (MatchingUtil.containsAgoLaterIndex(afterStr, utilityConfiguration.getLaterRegex()) ||
+                MatchingUtil.containsTermIndex(beforeStr, utilityConfiguration.getInConnectorRegex())) {
             Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(utilityConfiguration.getLaterRegex(), afterStr)).findFirst();
             int swift = 0;
 
             // Handle cases like "3 days after tomorrow"
-            if (match.isPresent() && !StringUtility.isNullOrEmpty(match.get().getGroup("day").value))
-            {
+            if (match.isPresent() && !StringUtility.isNullOrEmpty(match.get().getGroup("day").value)) {
                 swift = config.getSwiftDay(match.get().getGroup("day").value);
             }
 
             resultDateTime = DurationParsingUtil.shiftDateTime(timex, referenceTime.plusDays(swift), true);
 
-            ((DateTimeResolutionResult)durationParseResult.value).setMod(Constants.AFTER_MOD);
+            ((DateTimeResolutionResult) durationParseResult.value).setMod(Constants.AFTER_MOD);
         }
 
-        if (resultDateTime != referenceTime)
-        {
-            if (mode.equals(AgoLaterMode.DATE))
-            {
+        if (resultDateTime != referenceTime) {
+            if (mode.equals(AgoLaterMode.DATE)) {
                 ret.setTimex(FormatUtil.luisDate(resultDateTime));
-            }
-            else if (mode.equals(AgoLaterMode.DATETIME))
-            {
+            } else if (mode.equals(AgoLaterMode.DATETIME)) {
                 ret.setTimex(FormatUtil.luisDateTime(resultDateTime));
             }
 
@@ -137,6 +124,7 @@ public class AgoLaterUtil {
     }
 
     public static List<Token> extractorDurationWithBeforeAndAfter(String text, ExtractResult er, List<Token> result, IDateTimeUtilityConfiguration utilityConfiguration) {
+
         int pos = er.start + er.length;
         if (pos <= text.length()) {
             String afterString = text.substring(pos);
@@ -192,6 +180,7 @@ public class AgoLaterUtil {
     }
 
     private static boolean isDayMatchInAfterString(String text, Pattern pattern, String group) {
+
         Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(pattern, text)).findFirst();
 
         if (match.isPresent()) {
@@ -202,8 +191,7 @@ public class AgoLaterUtil {
         return false;
     }
 
-    public enum AgoLaterMode
-    {
+    public enum AgoLaterMode {
         DATE,
         DATETIME
     }
