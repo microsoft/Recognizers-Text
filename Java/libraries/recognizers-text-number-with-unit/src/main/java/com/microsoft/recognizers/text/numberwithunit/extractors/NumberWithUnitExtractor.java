@@ -74,14 +74,16 @@ public class NumberWithUnitExtractor implements IExtractor {
         Pattern ambiguousMultiplierRegex = this.config.getAmbiguousUnitNumberMultiplierRegex();
         if (ambiguousMultiplierRegex != null)
         {
-            for (ExtractResult number: numbers)
+            for (int i = 0; i < numbers.size(); i++)
             {
+                ExtractResult number = numbers.get(i);
+
                 Match[] matches = RegExpUtility.getMatches(ambiguousMultiplierRegex, number.text);
                 if (matches.length == 1)
                 {
                     int newLength = number.length - matches[0].length;
-                    number.withText(number.text.substring(0, newLength));
-                    number.withLength(newLength);
+                    numbers.set(i, new ExtractResult(number.start, newLength, number.text.substring(0, newLength),
+                                                     number.type, number.data));
                 }
             }
         }
