@@ -1,7 +1,5 @@
 package com.microsoft.recognizers.text.numberwithunit.utilities;
 
-import com.microsoft.recognizers.text.utilities.FormatUtility;
-
 import java.util.Map;
 import java.util.regex.Pattern;
 

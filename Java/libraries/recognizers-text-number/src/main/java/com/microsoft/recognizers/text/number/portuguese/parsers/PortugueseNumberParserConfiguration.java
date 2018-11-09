@@ -7,7 +7,7 @@ import com.microsoft.recognizers.text.ParseResult;
 import com.microsoft.recognizers.text.number.NumberOptions;
 import com.microsoft.recognizers.text.number.parsers.BaseNumberParserConfiguration;
 import com.microsoft.recognizers.text.number.resources.PortugueseNumeric;
-import com.microsoft.recognizers.text.utilities.FormatUtility;
+import com.microsoft.recognizers.text.utilities.QueryProcessor;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -56,7 +56,7 @@ public class PortugueseNumberParserConfiguration extends BaseNumberParserConfigu
         List<String> result = new ArrayList<>();
 
         for (String token : tokens) {
-            String tempWord = FormatUtility.trimEnd(token, String.valueOf(PortugueseNumeric.PluralSuffix));
+            String tempWord = QueryProcessor.trimEnd(token, String.valueOf(PortugueseNumeric.PluralSuffix));
             if (ordinalNumberMap.containsKey(tempWord)) {
                 result.add(tempWord);
                 continue;

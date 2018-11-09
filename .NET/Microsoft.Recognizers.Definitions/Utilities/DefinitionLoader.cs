@@ -16,8 +16,8 @@ namespace Microsoft.Recognizers.Definitions.Utilities
                 {
                     if (!"null".Equals(item.Key))
                     {
-                        ambiguityFiltersDict.Add(new Regex(item.Key, RegexOptions.IgnoreCase | RegexOptions.Singleline),
-                                                 new Regex(item.Value, RegexOptions.IgnoreCase | RegexOptions.Singleline));
+                        ambiguityFiltersDict.Add(new Regex(item.Key, RegexOptions.Singleline),
+                                                 new Regex(item.Value, RegexOptions.Singleline));
                     }
                 }
             }

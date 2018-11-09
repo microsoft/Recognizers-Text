@@ -20,7 +20,8 @@ public abstract class SpanishNumberWithUnitExtractorConfiguration implements INu
         this.cultureInfo = cultureInfo;
 
         this.unitNumExtractor = new NumberExtractor();
-        this.compoundUnitConnectorRegex = Pattern.compile(SpanishNumericWithUnit.CompoundUnitConnectorRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS);
+        this.compoundUnitConnectorRegex =
+                Pattern.compile(SpanishNumericWithUnit.CompoundUnitConnectorRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS);
     }
 
     public CultureInfo getCultureInfo() { return this.cultureInfo; }
@@ -29,6 +30,7 @@ public abstract class SpanishNumberWithUnitExtractorConfiguration implements INu
     public String getBuildSuffix() { return SpanishNumericWithUnit.BuildSuffix; }
     public String getConnectorToken() { return SpanishNumericWithUnit.ConnectorToken; }
     public Pattern getCompoundUnitConnectorRegex() { return this.compoundUnitConnectorRegex; }
+    public Pattern getAmbiguousUnitNumberMultiplierRegex() { return null; }
 
     public abstract String getExtractType();
     public abstract Map<String, String> getSuffixList();

@@ -526,7 +526,7 @@ public class SpanishNumericWithUnit {
     public static final List<String> AmbiguousSpeedUnitList = Arrays.asList("nudo", "nudos");
 
     public static final Map<String, String> TemperatureSuffixList = ImmutableMap.<String, String>builder()
-        .put("Kelvin", "k|kelvin")
+        .put("Kelvin", "k|K|kelvin")
         .put("Rankine", "r|rankine")
         .put("Grado Celsius", "°c|grados c|grado celsius|grados celsius|celsius|grado centígrado|grados centígrados|centígrado|centígrados")
         .put("Grado Fahrenheit", "°f|grados f|grado fahrenheit|grados fahrenheit|fahrenheit")

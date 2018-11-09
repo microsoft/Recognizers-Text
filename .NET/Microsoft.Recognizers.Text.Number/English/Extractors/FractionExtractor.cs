@@ -37,19 +37,19 @@ namespace Microsoft.Recognizers.Text.Number.English
             var regexes = new Dictionary<Regex, TypeTag>
             {
                 {
-                    new Regex(NumbersDefinitions.FractionNotationWithSpacesRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.FractionNotationWithSpacesRegex, RegexOptions.Singleline),
                     RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
-                    new Regex(NumbersDefinitions.FractionNotationRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.FractionNotationRegex, RegexOptions.Singleline),
                     RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
-                    new Regex(NumbersDefinitions.FractionNounRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.FractionNounRegex, RegexOptions.Singleline),
                     RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.ENGLISH)
                 },
                 {
-                    new Regex(NumbersDefinitions.FractionNounWithArticleRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.FractionNounWithArticleRegex, RegexOptions.Singleline),
                     RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.ENGLISH)
                 }
             };
@@ -57,14 +57,14 @@ namespace Microsoft.Recognizers.Text.Number.English
             if ((Options & NumberOptions.PercentageMode) != 0)
             {
                 regexes.Add(
-                    new Regex(NumbersDefinitions.FractionPrepositionWithinPercentModeRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline), 
+                    new Regex(NumbersDefinitions.FractionPrepositionWithinPercentModeRegex, RegexOptions.Singleline), 
                     RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.ENGLISH)
                 );
             }
             else
             {
                 regexes.Add(
-                    new Regex(NumbersDefinitions.FractionPrepositionRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline), 
+                    new Regex(NumbersDefinitions.FractionPrepositionRegex, RegexOptions.Singleline), 
                     RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.ENGLISH)
                 );
             }

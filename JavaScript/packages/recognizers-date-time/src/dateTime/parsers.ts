@@ -1,6 +1,6 @@
 import { IParser, ParseResult, ExtractResult, RegExpUtility, Match, StringUtility } from "@microsoft/recognizers-text";
 import { BaseNumberParser, BaseNumberExtractor } from "@microsoft/recognizers-text-number";
-import { IDateTimeUtilityConfiguration, FormatUtil, DateTimeResolutionResult, DateUtils, DayOfWeek, MatchingUtil, AgoLaterUtil } from "./utilities";
+import { IDateTimeUtilityConfiguration, DateTimeFormatUtil, DateTimeResolutionResult, DateUtils, DayOfWeek, MatchingUtil, AgoLaterUtil } from "./utilities";
 import { BaseDateTime } from "../resources/baseDateTime";
 import { Constants, TimeTypeConstants } from "./constants";
 import { BaseDateExtractor, BaseDateParser} from "./baseDate"

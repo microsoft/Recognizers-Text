@@ -4,14 +4,14 @@ from datetime import datetime, timedelta
 from collections import namedtuple
 import regex
 
-from recognizers_text.utilities import RegExpUtility, FormatUtility
+from recognizers_text.utilities import RegExpUtility, QueryProcessor
 from recognizers_text.extractor import Extractor, ExtractResult
 from recognizers_date_time.date_time.extractors import DateTimeExtractor
 from recognizers_date_time.date_time.base_time import BaseTimeExtractor, BaseTimeParser
 from .constants import Constants, TimeTypeConstants
 from .extractors import DateTimeExtractor
 from .parsers import DateTimeParser, DateTimeParseResult
-from .utilities import Token, merge_all_tokens, get_tokens_from_regex, DateTimeResolutionResult, DateTimeUtilityConfiguration, FormatUtil, ResolutionStartEnd
+from .utilities import Token, merge_all_tokens, get_tokens_from_regex, DateTimeResolutionResult, DateTimeUtilityConfiguration, DateTimeFormatUtil, ResolutionStartEnd
 
 MatchedIndex = namedtuple('MatchedIndex', ['matched', 'index'])
 
@@ -266,10 +266,10 @@ class BaseTimePeriodParser(DateTimeParser):
                 inner_result = self.parse_time_of_day(source_text, reference)
 
             if inner_result.success:
-                inner_result.future_resolution[TimeTypeConstants.START_TIME] = FormatUtil.format_time(inner_result.future_value.start)
-                inner_result.future_resolution[TimeTypeConstants.END_TIME] = FormatUtil.format_time(inner_result.future_value.end)
-                inner_result.past_resolution[TimeTypeConstants.START_TIME] = FormatUtil.format_time(inner_result.past_value.start)
-                inner_result.past_resolution[TimeTypeConstants.END_TIME] = FormatUtil.format_time(inner_result.past_value.end)
+                inner_result.future_resolution[TimeTypeConstants.START_TIME] = DateTimeFormatUtil.format_time(inner_result.future_value.start)
+                inner_result.future_resolution[TimeTypeConstants.END_TIME] = DateTimeFormatUtil.format_time(inner_result.future_value.end)
+                inner_result.past_resolution[TimeTypeConstants.START_TIME] = DateTimeFormatUtil.format_time(inner_result.past_value.start)
+                inner_result.past_resolution[TimeTypeConstants.END_TIME] = DateTimeFormatUtil.format_time(inner_result.past_value.end)
                 value = inner_result
         
         result = DateTimeParseResult(source)
@@ -430,8 +430,8 @@ class BaseTimePeriodParser(DateTimeParser):
         if end_time < begin_time:
             end_time = end_time + timedelta(days=1)
 
-        hours = FormatUtility.float_or_int((end_time - begin_time).total_seconds() // 3600)
-        minutes = FormatUtility.float_or_int((end_time - begin_time).total_seconds() / 60 % 60)
+        hours = QueryProcessor.float_or_int((end_time - begin_time).total_seconds() // 3600)
+        minutes = QueryProcessor.float_or_int((end_time - begin_time).total_seconds() / 60 % 60)
 
         hours_str = f'{hours}H' if hours > 0 else ''
         minutes_str = f'{minutes}M' if minutes > 0 and minutes < 60 else ''

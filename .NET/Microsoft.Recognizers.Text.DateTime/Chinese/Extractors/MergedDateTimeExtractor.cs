@@ -9,11 +9,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
     public class MergedExtractorChs : IDateTimeExtractor
     {
-        public static readonly Regex BeforeRegex = new Regex(DateTimeDefinitions.ParserConfigurationBefore, RegexOptions.IgnoreCase | RegexOptions.Singleline);
-        public static readonly Regex AfterRegex = new Regex(DateTimeDefinitions.ParserConfigurationAfter, RegexOptions.IgnoreCase | RegexOptions.Singleline);
-        public static readonly Regex UntilRegex = new Regex(DateTimeDefinitions.ParserConfigurationUntil, RegexOptions.IgnoreCase | RegexOptions.Singleline);
-        public static readonly Regex SincePrefixRegex = new Regex(DateTimeDefinitions.ParserConfigurationSincePrefix, RegexOptions.IgnoreCase | RegexOptions.Singleline);
-        public static readonly Regex SinceSuffixRegex = new Regex(DateTimeDefinitions.ParserConfigurationSinceSuffix, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex BeforeRegex = new Regex(DateTimeDefinitions.ParserConfigurationBefore, RegexOptions.Singleline);
+        public static readonly Regex AfterRegex = new Regex(DateTimeDefinitions.ParserConfigurationAfter, RegexOptions.Singleline);
+        public static readonly Regex UntilRegex = new Regex(DateTimeDefinitions.ParserConfigurationUntil, RegexOptions.Singleline);
+        public static readonly Regex SincePrefixRegex = new Regex(DateTimeDefinitions.ParserConfigurationSincePrefix, RegexOptions.Singleline);
+        public static readonly Regex SinceSuffixRegex = new Regex(DateTimeDefinitions.ParserConfigurationSinceSuffix, RegexOptions.Singleline);
 
         private static readonly DateExtractorChs DateExtractor = new DateExtractorChs();
         private static readonly TimeExtractorChs TimeExtractor = new TimeExtractorChs();

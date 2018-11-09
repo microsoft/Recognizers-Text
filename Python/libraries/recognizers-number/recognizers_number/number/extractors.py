@@ -104,7 +104,7 @@ class BasePercentageExtractor(Extractor):
     def get_definitions(self) -> List[str]:
         raise NotImplementedError
 
-    def generate_regexes(self, ignore_case: bool = True) -> List[Pattern]:
+    def generate_regexes(self, ignore_case: bool = False) -> List[Pattern]:
         definitions = self.get_definitions()
         options = regex.DOTALL | (regex.IGNORECASE if ignore_case else 0)
         return list(map(lambda d: RegExpUtility.get_safe_reg_exp(d, options), definitions))
@@ -134,7 +134,7 @@ class BasePercentageExtractor(Extractor):
             if not matched[i]:
                 last = i
             else:
-                if (i+1 == len(source) or not matched[i+1]):
+                if (i + 1) == len(source) or not matched[i + 1]:
                     start = last+1
                     length = i-last
                     substr = source[start:start+length].strip()

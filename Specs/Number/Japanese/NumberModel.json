@@ -122,7 +122,7 @@
     "Input": "６、５４４",
     "Results": [
       {
-        "Text": "６、５４４",
+        "Text": "6,544",
         "TypeName": "number",
         "Resolution": {
           "value": "6544"
@@ -164,7 +164,7 @@
     "Input": "5、450",
     "Results": [
       {
-        "Text": "5、450",
+        "Text": "5,450",
         "TypeName": "number",
         "Resolution": {
           "value": "5450"
@@ -644,7 +644,7 @@
     "Input": "1、234、567",
     "Results": [
       {
-        "Text": "1、234、567",
+        "Text": "1,234,567",
         "TypeName": "number",
         "Resolution": {
           "value": "1234567"
@@ -774,7 +774,7 @@
     "Input": "１９９１年１月１６日夜パリ時間２０時：フランスのミトラン大統領がテレビの談話を発表し、海湾の危機の解決を宣言した。",
     "Results": [
       {
-        "Text": "１９９１",
+        "Text": "1991",
         "TypeName": "number",
         "Resolution": {
           "value": "1991"
@@ -783,7 +783,7 @@
         "End": 3
       },
       {
-        "Text": "１",
+        "Text": "1",
         "TypeName": "number",
         "Resolution": {
           "value": "1"
@@ -792,7 +792,7 @@
         "End": 5
       },
       {
-        "Text": "１６",
+        "Text": "16",
         "TypeName": "number",
         "Resolution": {
           "value": "16"
@@ -801,7 +801,7 @@
         "End": 8
       },
       {
-        "Text": "２０",
+        "Text": "20",
         "TypeName": "number",
         "Resolution": {
           "value": "20"
@@ -885,7 +885,7 @@
     "Input": "２.７８９０",
     "Results": [
       {
-        "Text": "２.７８９０",
+        "Text": "2.7890",
         "TypeName": "number",
         "Resolution": {
           "value": "2.789"
@@ -927,7 +927,7 @@
     "Input": "２.７８９０e－１",
     "Results": [
       {
-        "Text": "２.７８９０e－１",
+        "Text": "2.7890e-1",
         "TypeName": "number",
         "Resolution": {
           "value": "0.2789"
@@ -1086,7 +1086,7 @@
     "Input": "１２/３",
     "Results": [
       {
-        "Text": "１２/３",
+        "Text": "12/3",
         "TypeName": "number",
         "Resolution": {
           "value": "4"
@@ -1282,7 +1282,7 @@
     "Input": "-2.5 M",
     "Results": [
       {
-        "Text": "-2.5 M",
+        "Text": "-2.5 m",
         "TypeName": "number",
         "Resolution": {
           "value": "-2500000"
@@ -1324,7 +1324,7 @@
     "Input": "21.2E0",
     "Results": [
       {
-        "Text": "21.2E0",
+        "Text": "21.2e0",
         "TypeName": "number",
         "Resolution": {
           "value": "21.2"
@@ -1380,7 +1380,7 @@
     "Input": "３／５",
     "Results": [
       {
-        "Text": "３／５",
+        "Text": "3/5",
         "TypeName": "number",
         "Resolution": {
           "value": "0.6"
@@ -1394,7 +1394,7 @@
     "Input": "1 ３/5",
     "Results": [
       {
-        "Text": "1 ３/5",
+        "Text": "1 3/5",
         "TypeName": "number",
         "Resolution": {
           "value": "1.6"
@@ -1408,7 +1408,7 @@
     "Input": "１６/5",
     "Results": [
       {
-        "Text": "１６/5",
+        "Text": "16/5",
         "TypeName": "number",
         "Resolution": {
           "value": "3.2"
@@ -1422,7 +1422,7 @@
     "Input": "１６分の5",
     "Results": [
       {
-        "Text": "１６分の5",
+        "Text": "16分の5",
         "TypeName": "number",
         "Resolution": {
           "value": "0.3125"
@@ -1436,7 +1436,7 @@
     "Input": "１６分の2225",
     "Results": [
       {
-        "Text": "１６分の2225",
+        "Text": "16分の2225",
         "TypeName": "number",
         "Resolution": {
           "value": "139.0625"
@@ -1464,7 +1464,7 @@
     "Input": "３分の27",
     "Results": [
       {
-        "Text": "３分の27",
+        "Text": "3分の27",
         "TypeName": "number",
         "Resolution": {
           "value": "9"
@@ -1478,7 +1478,7 @@
     "Input": "マイナス３分の27",
     "Results": [
       {
-        "Text": "マイナス３分の27",
+        "Text": "マイナス3分の27",
         "TypeName": "number",
         "Resolution": {
           "value": "-9"

@@ -607,7 +607,7 @@ public class ChineseNumericWithUnit {
 
     public static final Map<String, String> TemperatureSuffixList = ImmutableMap.<String, String>builder()
         .put("F", "华氏温度|华氏度|°f")
-        .put("K", "k|开尔文温度|开氏度|凯氏度")
+        .put("K", "开尔文温度|开氏度|凯氏度|K|k")
         .put("R", "兰氏温度|°r")
         .put("C", "摄氏温度|摄氏度|°c")
         .put("Degree", "度")

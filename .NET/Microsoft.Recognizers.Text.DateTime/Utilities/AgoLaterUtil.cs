@@ -174,11 +174,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 if (mode.Equals(AgoLaterMode.Date))
                 {
-                    ret.Timex = $"{FormatUtil.LuisDate(resultDateTime)}";
+                    ret.Timex = $"{DateTimeFormatUtil.LuisDate(resultDateTime)}";
                 }
                 else if (mode.Equals(AgoLaterMode.DateTime))
                 {
-                    ret.Timex = $"{FormatUtil.LuisDateTime(resultDateTime)}";
+                    ret.Timex = $"{DateTimeFormatUtil.LuisDateTime(resultDateTime)}";
                 }
 
                 ret.FutureValue = ret.PastValue = resultDateTime;

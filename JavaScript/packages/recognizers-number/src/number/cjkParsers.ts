@@ -80,7 +80,7 @@ export class BaseCJKNumberParser extends BaseNumberParser {
         }
 
         if (result) {
-            result.text = extResult.text;
+            result.text = extResult.text.toLowerCase();
         }
 
         return result;

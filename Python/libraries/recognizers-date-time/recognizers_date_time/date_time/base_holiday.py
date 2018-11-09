@@ -8,7 +8,7 @@ from ..resources.base_date_time import BaseDateTime
 from .constants import Constants, TimeTypeConstants
 from .extractors import DateTimeExtractor
 from .parsers import DateTimeParser, DateTimeParseResult
-from .utilities import Token, merge_all_tokens, FormatUtil, DayOfWeek, DateTimeResolutionResult, DateUtils
+from .utilities import Token, merge_all_tokens, DateTimeFormatUtil, DayOfWeek, DateTimeResolutionResult, DateUtils
 
 class HolidayExtractorConfiguration(ABC):
     @property
@@ -90,10 +90,10 @@ class BaseHolidayParser(DateTimeParser):
             inner_result = self._parse_holiday_regex_match(source.text, reference)
             if inner_result.success:
                 inner_result.future_resolution = {
-                    TimeTypeConstants.DATE: FormatUtil.format_date(inner_result.future_value)
+                    TimeTypeConstants.DATE: DateTimeFormatUtil.format_date(inner_result.future_value)
                 }
                 inner_result.past_resolution = {
-                    TimeTypeConstants.DATE: FormatUtil.format_date(inner_result.past_value)
+                    TimeTypeConstants.DATE: DateTimeFormatUtil.format_date(inner_result.past_value)
                 }
                 value = inner_result
 
@@ -147,7 +147,7 @@ class BaseHolidayParser(DateTimeParser):
                 value = func(year)
                 timex_str = self.config.variable_holidays_timex_dictionary.get(holiday_key)
                 if not timex_str:
-                    timex_str = f'-{FormatUtil.to_str(value.month, 2)}-{FormatUtil.to_str(value.day, 2)}'
+                    timex_str = f'-{DateTimeFormatUtil.to_str(value.month, 2)}-{DateTimeFormatUtil.to_str(value.day, 2)}'
             else:
                 return result
 
@@ -159,7 +159,7 @@ class BaseHolidayParser(DateTimeParser):
                 return result
 
             if has_year:
-                result.timex = FormatUtil.to_str(year, 4) + timex_str
+                result.timex = DateTimeFormatUtil.to_str(year, 4) + timex_str
                 result.future_value = datetime(year, value.month, value.day)
                 result.past_value = result.future_value
                 result.success = True

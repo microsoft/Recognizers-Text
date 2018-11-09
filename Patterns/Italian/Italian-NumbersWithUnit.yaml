@@ -551,7 +551,7 @@ TemperatureSuffixList: !dictionary
   types: [ string, string ]
   entries:
     F: gradi fahrenheit|grado fahrenheit|°f|fahrenheit|f|gradi f|farenheit|gradi farenheit|grado farenheit
-    K: k|kelvin
+    K: k|K|kelvin
     R: rankine|°r
     D: delisle|°de
     C: gradi celsius|grado celsius|grado centigrado|gradi centigradi|°c|c|celsius|gradi c|centigrado|centigradi

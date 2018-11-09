@@ -1,4 +1,5 @@
-[{
+[
+  {
     "Input": "Condado de Montgomery, md. - - $ 75 milhões de obligaciones generales, Serie b , bonos consolidados de mejoramiento público de 1989 , A través de un Manufacturers Hanover Trust co. group.",
     "Results": [
       {
@@ -66,7 +67,7 @@
     "Input": "El precio del segundo simulador oscila entre C$ 16,4 milhoes",
     "Results": [
       {
-        "Text": "C$ 16,4 milhoes",
+        "Text": "c$ 16,4 milhoes",
         "TypeName": "currency",
         "Resolution": {
           "value": "16400000",
@@ -300,13 +301,12 @@
         "End": 81
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Al mismo tiempo, los inversionistas estiman que la reestructuración reduciría la factura anual de intereses en efectivo de la compañía en aproximadamente U$D 90 milhões.",
     "Results": [
       {
-        "Text": "U$D 90 milhões",
+        "Text": "u$d 90 milhões",
         "TypeName": "currency",
         "Resolution": {
           "value": "90000000",
@@ -316,8 +316,22 @@
         "End": 167
       }
     ]
-  }
-  ,
+  },
+  {
+    "Input": "Ao mesmo tempo, os investidores estimam que a reestructuração reduziria os débitos em aproximadamente USD$ 90 milhões.",
+    "Results": [
+      {
+        "Text": "usd$ 90 milhões",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "90000000",
+          "unit": "Dólar estadunidense"
+        },
+        "Start": 102,
+        "End": 116
+      }
+    ]
+  },
   {
     "Input": "Los gastos de capital en 1990 aumentarán ligeramente, dijo Mr.Marous, de un estimado de $ 470 milhões este año",
     "Results": [
@@ -498,7 +512,7 @@
     "Input": "En 1988, las exportaciones de juguetes y juegos de producción nacional cayeron un 19% desde 1987 hasta alcanzar los 10050 milhões de dólares de Hong Kong.",
     "Results": [
       {
-        "Text": "10050 milhões de dólares de Hong Kong",
+        "Text": "10050 milhões de dólares de hong kong",
         "TypeName": "currency",
         "Resolution": {
           "value": "10050000000",
@@ -754,7 +768,7 @@
     "Input": "Rusia aceptó un préstamo del Banco Mundial de US$ 150 milhões para combatir la propagación del sida y la tuberculosis, poniendo fin a un proceso de negociación que duró cuatro años, dijeron el viernes funcionarios del Banco Mundial.",
     "Results": [
       {
-        "Text": "US$ 150 milhões",
+        "Text": "us$ 150 milhões",
         "TypeName": "currency",
         "Resolution": {
           "value": "150000000",
@@ -946,7 +960,7 @@
     "Input": "Sr. Bowder dijo que los C$ 300 milhões de ingresos...",
     "Results": [
       {
-        "Text": "C$ 300 milhões",
+        "Text": "c$ 300 milhões",
         "TypeName": "currency",
         "Resolution": {
           "value": "300000000",
@@ -962,7 +976,7 @@
     "Input": "Ascendería a alrededor de C$ 1,34 por acción.",
     "Results": [
       {
-        "Text": "C$ 1,34",
+        "Text": "c$ 1,34",
         "TypeName": "currency",
         "Resolution": {
           "value": "1,34",
@@ -1266,7 +1280,7 @@
     "Input": "Lockheed Martin y el gobierno de los Estados Unidos intensamente presionaron para el contrato de US$ 10 bilhões de la India para 126 aviones de combate.",
     "Results": [
       {
-        "Text": "US$ 10 bilhões",
+        "Text": "us$ 10 bilhões",
         "TypeName": "currency",
         "Resolution": {
           "value": "10000000000",
@@ -1535,10 +1549,10 @@
   }
   ,
   {
-    "Input": "Lockheed martin y el gobierno de los estados unidos intensamente presionaron para el contrato de U$D 10 bilhões de la India para 126 aviones de combate.",
+    "Input": "Lockheed martin y el gobierno de los estados unidos intensamente presionaron para el contrato de US$ 10 bilhões de la India para 126 aviones de combate.",
     "Results": [
       {
-        "Text": "U$D 10 bilhões",
+        "Text": "us$ 10 bilhões",
         "TypeName": "currency",
         "Resolution": {
           "value": "10000000000",

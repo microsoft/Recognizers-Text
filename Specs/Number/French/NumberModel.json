@@ -891,7 +891,7 @@
     "Input": "10G",
     "Results": [
       {
-        "Text": "10G",
+        "Text": "10g",
         "TypeName": "number",
         "Resolution": {
           "value": "10000000000"

@@ -10,6 +10,7 @@ from recognizers_number_with_unit.number_with_unit.extractors import NumberWithU
 from recognizers_number_with_unit.resources.chinese_numeric_with_unit import ChineseNumericWithUnit
 from recognizers_number_with_unit.resources.base_units import BaseUnits
 
+
 # pylint: disable=abstract-method
 class ChineseNumberWithUnitExtractorConfiguration(NumberWithUnitExtractorConfiguration):
     @property
@@ -33,8 +34,12 @@ class ChineseNumberWithUnitExtractorConfiguration(NumberWithUnitExtractorConfigu
         return self._compound_unit_connector_regex
 
     @property
-    def pm_non_unit_regex(self) -> Pattern:
+    def non_unit_regex(self) -> Pattern:
         return self._pm_non_unit_regex
+
+    @property
+    def ambiguous_unit_number_multiplier_regex(self) -> Pattern:
+        return None
 
     def __init__(self, culture_info: CultureInfo):
         if culture_info is None:
@@ -45,6 +50,8 @@ class ChineseNumberWithUnitExtractorConfiguration(NumberWithUnitExtractorConfigu
         self._build_suffix = ChineseNumericWithUnit.BuildSuffix
         self._compound_unit_connector_regex = RegExpUtility.get_safe_reg_exp(ChineseNumericWithUnit.CompoundUnitConnectorRegex)
         self._pm_non_unit_regex = RegExpUtility.get_safe_reg_exp(BaseUnits.PmNonUnitRegex)
+
+
 # pylint: enable=abstract-method
 
 class ChineseAgeExtractorConfiguration(ChineseNumberWithUnitExtractorConfiguration):
@@ -70,6 +77,7 @@ class ChineseAgeExtractorConfiguration(ChineseNumberWithUnitExtractorConfigurati
         self._prefix_list = dict()
         self._ambiguous_unit_list = ChineseNumericWithUnit.AgeAmbiguousValues
 
+
 class ChineseCurrencyExtractorConfiguration(ChineseNumberWithUnitExtractorConfiguration):
     @property
     def extract_type(self) -> str:
@@ -92,6 +100,7 @@ class ChineseCurrencyExtractorConfiguration(ChineseNumberWithUnitExtractorConfig
         self._suffix_list = ChineseNumericWithUnit.CurrencySuffixList
         self._prefix_list = ChineseNumericWithUnit.CurrencyPrefixList
         self._ambiguous_unit_list = ChineseNumericWithUnit.CurrencyAmbiguousValues
+
 
 class ChineseDimensionExtractorConfiguration(ChineseNumberWithUnitExtractorConfiguration):
     @property
@@ -116,6 +125,7 @@ class ChineseDimensionExtractorConfiguration(ChineseNumberWithUnitExtractorConfi
         self._prefix_list = dict()
         self._ambiguous_unit_list = ChineseNumericWithUnit.DimensionAmbiguousValues
 
+
 class ChineseTemperatureExtractorConfiguration(ChineseNumberWithUnitExtractorConfiguration):
     @property
     def extract_type(self) -> str:
@@ -133,8 +143,13 @@ class ChineseTemperatureExtractorConfiguration(ChineseNumberWithUnitExtractorCon
     def ambiguous_unit_list(self) -> List[str]:
         return self._ambiguous_unit_list
 
+    @property
+    def ambiguous_unit_number_multiplier_regex(self) -> Pattern:
+        return self._ambiguous_unit_number_multiplier_regex
+
     def __init__(self, culture_info: CultureInfo = None):
         super().__init__(culture_info)
         self._suffix_list = ChineseNumericWithUnit.TemperatureSuffixList
         self._prefix_list = ChineseNumericWithUnit.TemperaturePrefixList
         self._ambiguous_unit_list = ChineseNumericWithUnit.TemperatureAmbiguousValues
+        self._ambiguous_unit_number_multiplier_regex = RegExpUtility.get_safe_reg_exp(BaseUnits.AmbiguousUnitNumberMultiplierRegex)

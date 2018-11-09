@@ -34,9 +34,9 @@ namespace Microsoft.Recognizers.Text.Number.English
         {
             NumberExtractor = English.NumberExtractor.GetInstance(mode, options);
             RoundNumberIntegerRegexWithLocks = 
-                new Regex(NumbersDefinitions.RoundNumberIntegerRegexWithLocks, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+                new Regex(NumbersDefinitions.RoundNumberIntegerRegexWithLocks, RegexOptions.Singleline);
             ConnectorRegex = 
-                new Regex(NumbersDefinitions.ConnectorRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+                new Regex(NumbersDefinitions.ConnectorRegex, RegexOptions.Singleline);
         }
     }
 }

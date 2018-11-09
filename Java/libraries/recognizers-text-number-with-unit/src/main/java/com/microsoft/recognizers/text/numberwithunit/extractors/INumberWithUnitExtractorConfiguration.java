@@ -18,4 +18,5 @@ public interface INumberWithUnitExtractorConfiguration {
     String getBuildSuffix();
     String getConnectorToken();
     Pattern getCompoundUnitConnectorRegex();
+    Pattern getAmbiguousUnitNumberMultiplierRegex();
 }

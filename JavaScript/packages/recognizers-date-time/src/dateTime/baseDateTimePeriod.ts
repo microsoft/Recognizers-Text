@@ -6,7 +6,7 @@ import { BaseTimeExtractor, BaseTimeParser } from "./baseTime"
 import { BaseDateTimeExtractor, BaseDateTimeParser, IDateTimeExtractor } from "./baseDateTime"
 import { BaseDurationExtractor, BaseDurationParser } from "./baseDuration"
 import { IDateTimeParser, DateTimeParseResult } from "./parsers"
-import { FormatUtil, DateUtils, Token, DateTimeResolutionResult, StringMap } from "./utilities";
+import { DateTimeFormatUtil, DateUtils, Token, DateTimeResolutionResult, StringMap } from "./utilities";
 
 export interface IDateTimePeriodExtractorConfiguration {
     cardinalExtractor: BaseNumberExtractor
@@ -339,11 +339,11 @@ export class BaseDateTimePeriodParser implements IDateTimeParser {
             }
             if (innerResult.success) {
                 innerResult.futureResolution = {};
-                innerResult.futureResolution[TimeTypeConstants.START_DATETIME] = FormatUtil.formatDateTime(innerResult.futureValue[0]);
-                innerResult.futureResolution[TimeTypeConstants.END_DATETIME] = FormatUtil.formatDateTime(innerResult.futureValue[1]);
+                innerResult.futureResolution[TimeTypeConstants.START_DATETIME] = DateTimeFormatUtil.formatDateTime(innerResult.futureValue[0]);
+                innerResult.futureResolution[TimeTypeConstants.END_DATETIME] = DateTimeFormatUtil.formatDateTime(innerResult.futureValue[1]);
                 innerResult.pastResolution = {};
-                innerResult.pastResolution[TimeTypeConstants.START_DATETIME] = FormatUtil.formatDateTime(innerResult.pastValue[0]);
-                innerResult.pastResolution[TimeTypeConstants.END_DATETIME] = FormatUtil.formatDateTime(innerResult.pastValue[1]);
+                innerResult.pastResolution[TimeTypeConstants.START_DATETIME] = DateTimeFormatUtil.formatDateTime(innerResult.pastValue[0]);
+                innerResult.pastResolution[TimeTypeConstants.END_DATETIME] = DateTimeFormatUtil.formatDateTime(innerResult.pastValue[1]);
                 resultValue = innerResult;
             }
         }
@@ -482,8 +482,8 @@ export class BaseDateTimePeriodParser implements IDateTimeParser {
             result.comment = "ampm";
         }
 
-        let beginStr = `${dateStr}T${FormatUtil.toString(beginHour, 2)}`;
-        let endStr = `${dateStr}T${FormatUtil.toString(endHour, 2)}`;
+        let beginStr = `${dateStr}T${DateTimeFormatUtil.toString(beginHour, 2)}`;
+        let endStr = `${dateStr}T${DateTimeFormatUtil.toString(endHour, 2)}`;
 
         result.timex = `(${beginStr},${endStr},PT${endHour - beginHour}H)`;
         result.futureValue = [
@@ -602,7 +602,7 @@ export class BaseDateTimePeriodParser implements IDateTimeParser {
         if (match && match.index === 0 && match.length === source.length) {
             let swift = this.config.getSwiftPrefix(source);
             let date = DateUtils.addDays(referenceDate, swift);
-            result.timex = FormatUtil.formatDate(date) + matched.timeStr;
+            result.timex = DateTimeFormatUtil.formatDate(date) + matched.timeStr;
             result.futureValue = [
                 DateUtils.safeCreateFromMinValue(date.getFullYear(), date.getMonth(), date.getDate(), matched.beginHour, 0, 0),
                 DateUtils.safeCreateFromMinValue(date.getFullYear(), date.getMonth(), date.getDate(), matched.endHour, matched.endMin, matched.endMin),
@@ -757,10 +757,10 @@ export class BaseDateTimePeriodParser implements IDateTimeParser {
             endTime.setSeconds(beginTime.getSeconds() + swiftSecond);
         }
 
-        let luisDateBegin = FormatUtil.luisDateFromDate(beginTime);
-        let luisTimeBegin = FormatUtil.luisTimeFromDate(beginTime);
-        let luisDateEnd = FormatUtil.luisDateFromDate(endTime);
-        let luisTimeEnd = FormatUtil.luisTimeFromDate(endTime);
+        let luisDateBegin = DateTimeFormatUtil.luisDateFromDate(beginTime);
+        let luisTimeBegin = DateTimeFormatUtil.luisTimeFromDate(beginTime);
+        let luisDateEnd = DateTimeFormatUtil.luisDateFromDate(endTime);
+        let luisTimeEnd = DateTimeFormatUtil.luisTimeFromDate(endTime);
 
         result.timex = `(${luisDateBegin}T${luisTimeBegin},${luisDateEnd}T${luisTimeEnd},${durationResult.timex})`;
         result.futureValue = [beginTime, endTime];
@@ -824,10 +824,10 @@ export class BaseDateTimePeriodParser implements IDateTimeParser {
             default: return result;
         }
 
-        let luisDateBegin = FormatUtil.luisDateFromDate(beginTime);
-        let luisTimeBegin = FormatUtil.luisTimeFromDate(beginTime);
-        let luisDateEnd = FormatUtil.luisDateFromDate(endTime);
-        let luisTimeEnd = FormatUtil.luisTimeFromDate(endTime);
+        let luisDateBegin = DateTimeFormatUtil.luisDateFromDate(beginTime);
+        let luisTimeBegin = DateTimeFormatUtil.luisTimeFromDate(beginTime);
+        let luisDateEnd = DateTimeFormatUtil.luisDateFromDate(endTime);
+        let luisTimeEnd = DateTimeFormatUtil.luisTimeFromDate(endTime);
 
         result.timex = `(${luisDateBegin}T${luisTimeBegin},${luisDateEnd}T${luisTimeEnd},${ptTimex})`;
         result.futureValue = [beginTime, endTime];

@@ -76,21 +76,16 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public Regex CenturySuffixRegex { get; }
 
         public static readonly Regex NextPrefixRegex =
-            new Regex(
-                DateTimeDefinitions.NextPrefixRegex,
-                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.NextPrefixRegex, RegexOptions.Singleline);
+
         public static readonly Regex PastPrefixRegex =
-            new Regex(
-                DateTimeDefinitions.PastPrefixRegex,
-                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.PastPrefixRegex, RegexOptions.Singleline);
+
         public static readonly Regex ThisPrefixRegex =
-            new Regex(
-                DateTimeDefinitions.ThisPrefixRegex,
-                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.ThisPrefixRegex, RegexOptions.Singleline);
+
         public static readonly Regex RelativeRegex =
-            new Regex(
-                DateTimeDefinitions.RelativeRegex,
-                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.RelativeRegex, RegexOptions.Singleline);
 
         Regex IDatePeriodParserConfiguration.NextPrefixRegex => NextPrefixRegex;
         Regex IDatePeriodParserConfiguration.PastPrefixRegex => PastPrefixRegex;

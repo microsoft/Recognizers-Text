@@ -1,6 +1,6 @@
 import { IExtractor, ExtractResult, RegExpUtility, Match } from "@microsoft/recognizers-text";
 import { Constants, TimeTypeConstants } from "./constants";
-import { Token, FormatUtil, DateTimeResolutionResult, DayOfWeek, DateUtils, StringMap } from "./utilities";
+import { Token, DateTimeFormatUtil, DateTimeResolutionResult, DayOfWeek, DateUtils, StringMap } from "./utilities";
 import { IDateTimeParser, DateTimeParseResult } from "./parsers"
 import { BaseDateTime } from "../resources/baseDateTime";
 import { IDateTimeExtractor } from "./baseDateTime";
@@ -64,9 +64,9 @@ export class BaseHolidayParser implements IDateTimeParser {
 
             if (innerResult.success) {
                 innerResult.futureResolution = {};
-                innerResult.futureResolution[TimeTypeConstants.DATE] = FormatUtil.formatDate(innerResult.futureValue);
+                innerResult.futureResolution[TimeTypeConstants.DATE] = DateTimeFormatUtil.formatDate(innerResult.futureValue);
                 innerResult.pastResolution = {};
-                innerResult.pastResolution[TimeTypeConstants.DATE] = FormatUtil.formatDate(innerResult.pastValue);
+                innerResult.pastResolution[TimeTypeConstants.DATE] = DateTimeFormatUtil.formatDate(innerResult.pastValue);
                 value = innerResult;
             }
         }
@@ -134,7 +134,7 @@ export class BaseHolidayParser implements IDateTimeParser {
                 value = func(year);
                 timexStr = this.config.variableHolidaysTimexDictionary.get(holidayKey);
                 if (!timexStr) {
-                    timexStr = `-${FormatUtil.toString(value.getMonth() + 1, 2)}-${FormatUtil.toString(value.getDate(), 2)}`;
+                    timexStr = `-${DateTimeFormatUtil.toString(value.getMonth() + 1, 2)}-${DateTimeFormatUtil.toString(value.getDate(), 2)}`;
                 }
             }
             else {
@@ -150,7 +150,7 @@ export class BaseHolidayParser implements IDateTimeParser {
             }
 
             if (hasYear) {
-                ret.timex = FormatUtil.toString(year, 4) + timexStr;
+                ret.timex = DateTimeFormatUtil.toString(year, 4) + timexStr;
                 ret.futureValue = ret.pastValue = new Date(year, value.getMonth(), value.getDate());
                 ret.success = true;
                 return ret;

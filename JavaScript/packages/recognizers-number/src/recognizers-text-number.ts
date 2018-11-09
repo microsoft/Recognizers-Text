@@ -1,6 +1,6 @@
 export { default as NumberRecognizer, NumberOptions, recognizeNumber, recognizeOrdinal, recognizePercentage } from "./number/numberRecognizer";
 export { Culture, CultureInfo } from "./culture";
-export { FormatUtility, StringUtility, Match, RegExpUtility } from "@microsoft/recognizers-text";
+export { QueryProcessor, StringUtility, Match, RegExpUtility } from "@microsoft/recognizers-text";
 export { BaseNumbers } from "./resources/baseNumbers";
 export { EnglishNumeric } from "./resources/englishNumeric";
 export { SpanishNumeric } from "./resources/spanishNumeric";

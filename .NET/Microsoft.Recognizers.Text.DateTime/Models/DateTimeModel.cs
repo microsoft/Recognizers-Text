@@ -28,10 +28,10 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public List<ModelResult> Parse(string query, DateObject refTime)
         {
-            // Preprocess the query
-            query = FormatUtility.Preprocess(query);
-
             var parsedDateTimes = new List<DateTimeParseResult>();
+
+            // Preprocess the query
+            query = QueryProcessor.Preprocess(query);
 
             try {
 

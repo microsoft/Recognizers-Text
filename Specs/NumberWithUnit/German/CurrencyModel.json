@@ -36,7 +36,7 @@
     "NotSupportedByDesign": "python",
     "Results": [
       {
-        "Text": "3 USD",
+        "Text": "3 usd",
         "TypeName": "currency",
         "Resolution": {
           "value": "3",
@@ -68,7 +68,7 @@
     "NotSupportedByDesign": "python",
     "Results": [
       {
-        "Text": "sieben Euro",
+        "Text": "sieben euro",
         "TypeName": "currency",
         "Resolution": {
           "value": "7",
@@ -84,7 +84,7 @@
     "NotSupportedByDesign": "python",
     "Results": [
       {
-        "Text": "30 kambodschanische Riel",
+        "Text": "30 kambodschanische riel",
         "TypeName": "currency",
         "Resolution": {
           "value": "30",
@@ -100,7 +100,7 @@
     "NotSupportedByDesign": "python",
     "Results": [
       {
-        "Text": "75 Millionen Dollar",
+        "Text": "75 millionen dollar",
         "TypeName": "currency",
         "Resolution": {
           "value": "75000000",
@@ -116,7 +116,7 @@
     "NotSupported": "javascript",
     "Results": [
       {
-        "Text": "420000000 finnische Mark",
+        "Text": "420000000 finnische mark",
         "TypeName": "currency",
         "Resolution": {
           "value": "420000000",
@@ -196,7 +196,7 @@
     "NotSupported": "javascript",
     "Results": [
       {
-        "Text": "48 Millionen Dollar",
+        "Text": "48 millionen dollar",
         "TypeName": "currency",
         "Resolution": {
           "value": "48000000",
@@ -212,7 +212,7 @@
     "NotSupported": "javascript",
     "Results": [
       {
-        "Text": "16,4 Millionen kanadischen Dollar",
+        "Text": "16,4 millionen kanadischen dollar",
         "TypeName": "currency",
         "Resolution": {
           "value": "16400000",
@@ -228,7 +228,7 @@
     "NotSupported": "javascript",
     "Results": [
       {
-        "Text": "14 Millionen Dollar",
+        "Text": "14 millionen dollar",
         "TypeName": "currency",
         "Resolution": {
           "value": "14000000",
@@ -260,7 +260,7 @@
     "NotSupported": "javascript",
     "Results": [
       {
-        "Text": "12 500 EUR",
+        "Text": "12 500 eur",
         "TypeName": "currency",
         "Resolution": {
           "value": "12500",
@@ -276,7 +276,7 @@
     "NotSupported": "javascript",
     "Results": [
       {
-        "Text": "2,5 Mio USD",
+        "Text": "2,5 mio usd",
         "TypeName": "currency",
         "Resolution": {
           "value": "2500000",
@@ -292,7 +292,7 @@
     "NotSupported": "javascript",
     "Results": [
       {
-        "Text": "300 000 GBP",
+        "Text": "300 000 gbp",
         "TypeName": "currency",
         "Resolution": {
           "value": "300000",
@@ -308,7 +308,7 @@
     "NotSupported": "javascript",
     "Results": [
       {
-        "Text": "einen Euro",
+        "Text": "einen euro",
         "TypeName": "currency",
         "Resolution": {
           "value": "1",
@@ -324,7 +324,7 @@
     "NotSupported": "javascript",
     "Results": [
       {
-        "Text": "zwei Euro",
+        "Text": "zwei euro",
         "TypeName": "currency",
         "Resolution": {
           "value": "2",
@@ -340,7 +340,7 @@
     "NotSupported": "javascript,dotnet,java",
     "Results": [
       {
-        "Text": "zwei Euro fünfzig",
+        "Text": "zwei euro fünfzig",
         "TypeName": "currency",
         "Resolution": {
           "value": "2,5",
@@ -356,7 +356,7 @@
     "NotSupported": "javascript",
     "Results": [
       {
-        "Text": "zwei Euro",
+        "Text": "zwei euro",
         "TypeName": "currency",
         "Resolution": {
           "value": "2",
@@ -380,7 +380,7 @@
     "NotSupported": "javascript",
     "Results": [
       {
-        "Text": "siebenhundert Euro",
+        "Text": "siebenhundert euro",
         "TypeName": "currency",
         "Resolution": {
           "value": "700",
@@ -396,7 +396,7 @@
     "NotSupported": "javascript",
     "Results": [
       {
-        "Text": "achtundsiebzig Millionen Dollar",
+        "Text": "achtundsiebzig millionen dollar",
         "TypeName": "currency",
         "Resolution": {
           "value": "78000000",
@@ -412,7 +412,7 @@
     "NotSupported": "javascript",
     "Results": [
       {
-        "Text": "Dollar",
+        "Text": "dollar",
         "TypeName": "currency",
         "Resolution": {
           "value": null,
@@ -428,7 +428,7 @@
     "NotSupported": "javascript",
     "Results": [
       {
-        "Text": "drei Dollar",
+        "Text": "drei dollar",
         "TypeName": "currency",
         "Resolution": {
           "value": "3",

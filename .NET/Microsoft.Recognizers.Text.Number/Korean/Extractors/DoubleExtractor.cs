@@ -17,17 +17,17 @@ namespace Microsoft.Recognizers.Text.Number.Korean
             var regexes = new Dictionary<Regex, TypeTag>
             {
                 {
-                    new Regex(NumbersDefinitions.DoubleSpecialsChars, RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.DoubleSpecialsChars, RegexOptions.Singleline),
                     RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
                     // (-)2.5, can avoid cases like ip address xx.xx.xx.xx
-                    new Regex(NumbersDefinitions.DoubleSpecialsCharsWithNegatives, RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.DoubleSpecialsCharsWithNegatives, RegexOptions.Singleline),
                     RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
                     //(-).2 
-                    new Regex(NumbersDefinitions.SimpleDoubleSpecialsChars, RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.SimpleDoubleSpecialsChars, RegexOptions.Singleline),
                     RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
@@ -42,12 +42,12 @@ namespace Microsoft.Recognizers.Text.Number.Korean
                 },
                 {
                     // 2e6, 21.2e0
-                    new Regex(NumbersDefinitions.DoubleExponentialNotationRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.DoubleExponentialNotationRegex, RegexOptions.Singleline),
                     RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.POWER_SUFFIX)
                 },
                 {
                     //2^5
-                    new Regex(NumbersDefinitions.DoubleScientificNotationRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.DoubleScientificNotationRegex, RegexOptions.Singleline),
                     RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.POWER_SUFFIX)
                 }
             };

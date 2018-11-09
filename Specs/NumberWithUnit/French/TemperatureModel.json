@@ -705,7 +705,7 @@
     "Input": "Convertir 106 Kelvin",
     "Results": [
       {
-        "Text": "106 Kelvin",
+        "Text": "106 kelvin",
         "TypeName": "temperature",
         "Resolution": {
           "value": "106",
@@ -748,7 +748,7 @@
     "Input": "convertir 200k K en degrés fahrenheit",
     "Results": [
       {
-        "Text": "200k K",
+        "Text": "200k k",
         "TypeName": "temperature",
         "Resolution": {
           "value": "200000",

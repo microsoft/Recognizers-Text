@@ -10,6 +10,7 @@ from recognizers_number_with_unit.number_with_unit.extractors import NumberWithU
 from recognizers_number_with_unit.resources.english_numeric_with_unit import EnglishNumericWithUnit
 from recognizers_number_with_unit.resources.base_units import BaseUnits
 
+
 # pylint: disable=abstract-method
 class EnglishNumberWithUnitExtractorConfiguration(NumberWithUnitExtractorConfiguration):
     @property
@@ -33,8 +34,12 @@ class EnglishNumberWithUnitExtractorConfiguration(NumberWithUnitExtractorConfigu
         return self._compound_unit_connector_regex
 
     @property
-    def pm_non_unit_regex(self) -> Pattern:
+    def non_unit_regex(self) -> Pattern:
         return self._pm_non_unit_regex
+
+    @property
+    def ambiguous_unit_number_multiplier_regex(self) -> Pattern:
+        return None
 
     def __init__(self, culture_info: CultureInfo):
         if culture_info is None:
@@ -45,6 +50,8 @@ class EnglishNumberWithUnitExtractorConfiguration(NumberWithUnitExtractorConfigu
         self._build_suffix = EnglishNumericWithUnit.BuildSuffix
         self._compound_unit_connector_regex = RegExpUtility.get_safe_reg_exp(EnglishNumericWithUnit.CompoundUnitConnectorRegex)
         self._pm_non_unit_regex = RegExpUtility.get_safe_reg_exp(BaseUnits.PmNonUnitRegex)
+
+
 # pylint: enable=abstract-method
 
 class EnglishAgeExtractorConfiguration(EnglishNumberWithUnitExtractorConfiguration):
@@ -70,6 +77,7 @@ class EnglishAgeExtractorConfiguration(EnglishNumberWithUnitExtractorConfigurati
         self._prefix_list = dict()
         self._ambiguous_unit_list = list()
 
+
 class EnglishCurrencyExtractorConfiguration(EnglishNumberWithUnitExtractorConfiguration):
     @property
     def extract_type(self) -> str:
@@ -92,6 +100,7 @@ class EnglishCurrencyExtractorConfiguration(EnglishNumberWithUnitExtractorConfig
         self._suffix_list = EnglishNumericWithUnit.CurrencySuffixList
         self._prefix_list = EnglishNumericWithUnit.CurrencyPrefixList
         self._ambiguous_unit_list = EnglishNumericWithUnit.AmbiguousCurrencyUnitList
+
 
 class EnglishDimensionExtractorConfiguration(EnglishNumberWithUnitExtractorConfiguration):
     @property
@@ -123,6 +132,7 @@ class EnglishDimensionExtractorConfiguration(EnglishNumberWithUnitExtractorConfi
         self._prefix_list = dict()
         self._ambiguous_unit_list = EnglishNumericWithUnit.AmbiguousDimensionUnitList
 
+
 class EnglishTemperatureExtractorConfiguration(EnglishNumberWithUnitExtractorConfiguration):
     @property
     def extract_type(self) -> str:
@@ -140,8 +150,13 @@ class EnglishTemperatureExtractorConfiguration(EnglishNumberWithUnitExtractorCon
     def ambiguous_unit_list(self) -> List[str]:
         return self._ambiguous_unit_list
 
+    @property
+    def ambiguous_unit_number_multiplier_regex(self) -> Pattern:
+        return self._ambiguous_unit_number_multiplier_regex
+
     def __init__(self, culture_info: CultureInfo = None):
         super().__init__(culture_info)
         self._suffix_list = EnglishNumericWithUnit.TemperatureSuffixList
         self._prefix_list = dict()
         self._ambiguous_unit_list = EnglishNumericWithUnit.AmbiguousTemperatureUnitList
+        self._ambiguous_unit_number_multiplier_regex = RegExpUtility.get_safe_reg_exp(BaseUnits.AmbiguousUnitNumberMultiplierRegex)
