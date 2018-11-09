@@ -251,7 +251,7 @@ public class NumberWithUnitExtractor implements IExtractor {
     }
 
     protected Set<Pattern> buildRegexFromSet(Collection<String> values) {
-        return buildRegexFromSet(values, true);
+        return buildRegexFromSet(values, false);
     }
 
     protected Set<Pattern> buildRegexFromSet(Collection<String> collection, boolean ignoreCase) {
@@ -279,7 +279,7 @@ public class NumberWithUnitExtractor implements IExtractor {
     }
 
     protected Pattern buildSeparateRegexFromSet() {
-        return buildSeparateRegexFromSet(true);
+        return buildSeparateRegexFromSet(false);
     }
 
     protected Pattern buildSeparateRegexFromSet(boolean ignoreCase) {
