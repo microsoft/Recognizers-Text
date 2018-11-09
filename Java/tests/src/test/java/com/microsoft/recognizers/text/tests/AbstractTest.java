@@ -113,6 +113,9 @@ public abstract class AbstractTest {
         try {
             recognizeAndAssert(currentCase);
             countPass(this.currentCase);
+        } catch (AssumptionViolatedException ex) {
+            countSkip(currentCase);
+            throw ex;
         } catch (Exception ex) {
             countFail(currentCase);
             throw ex;
