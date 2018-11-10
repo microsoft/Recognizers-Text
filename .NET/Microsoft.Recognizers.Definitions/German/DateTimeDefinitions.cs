@@ -114,7 +114,7 @@ namespace Microsoft.Recognizers.Definitions.German
 		public static readonly string MidTimeRegex = $@"(?<mid>({MidnightRegex}|{MidmorningRegex}|{MidafternoonRegex}|{MiddayRegex}))";
 		public static readonly string AtRegex = $@"\b(((?<=\b(um|gegen)\s+)({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}|{MidTimeRegex}))|{MidTimeRegex})\b";
 		public static readonly string IshRegex = $@"\b({BaseDateTime.HourRegex}(-|——)?ish|noonish|noon)\b";
-		public const string TimeUnitRegex = @"(?<unit>stunden|stunde|std|minuten|minute|min|sekunden|sekunde|sek|s)";
+		public const string TimeUnitRegex = @"(?<unit>stunden|stunde|std|st|h|minuten|minute|min|sekunden|sekunde|sek|s)";
 		public const string RestrictedTimeUnitRegex = @"(?<unit>stunde|minute)\b";
 		public const string FivesRegex = @"(?<tens>(fünfzehn|(fünfund)?zwanzig?|(fünfund)?dreißig|(fünfund)?vierzig|(fünfund)?fünfzig|zehn|fünf))\b";
 		public static readonly string HourRegex = $@"\b{BaseDateTime.HourRegex}";
@@ -153,13 +153,13 @@ namespace Microsoft.Recognizers.Definitions.German
 		public static readonly string PeriodTimeOfDayWithDateRegex = $@"\b((((am|von|in der)\s+)?{TimeOfDayRegex}(\s+am)?))\b";
 		public const string LessThanRegex = @"\b(weniger\s+als)\b";
 		public const string MoreThanRegex = @"\b(mehr\s+als)\b";
-		public const string DurationUnitRegex = @"(?<unit>jahr(en|es|e)?|monat(en|e|s)?|woche(n)?|tag(en|es|e)?|stund(en|e)?|std|minute(n)?|min|sekunde(n)?|sek)\b";
+		public const string DurationUnitRegex = @"(?<unit>jahr(en|es|e)?|monat(en|e|s)?|woche(n)?|tag(en|es|e)?|stund(en|e)?|std|st|h|minute(n)?|min|sekunde(n)?|sek)\b";
 		public const string SuffixAndRegex = @"(?<suffix>\s*(und)\s+((eine)\s+)?(?<suffix_num>halbe|viertel))";
 		public const string PeriodicRegex = @"(?<periodic>(all)?täglich(er|en|es|e)?|(all)?monatlich(er|en|es|e)?|(all)?wöchentlich(er|en|es|e)?|(all)?jährlich(er|en|es|e)?)\b";
 		public static readonly string EachUnitRegex = $@"(?<each>(jede(s|r|n|m)?|alle)(?<other>\s+andere(n)?)?\s*{DurationUnitRegex})";
 		public const string EachPrefixRegex = @"\b(?<each>(jede(r|n|s)?|alle)\s*$)";
 		public const string SetEachRegex = @"\b(?<each>(jede(r|n|s)?|alle)\s*)";
-		public const string SetLastRegex = @"(?<last>nächste(r|n|s)?|kommende(r|n|s)?|heute|diese(r|n|m|s)?|letzte(r|n|s)?|vorige(r|n|s)?|vorherige(r|n|s)?|jetzige(r|n|s)?|derzeitige(r|n|s)?)\b";
+		public const string SetLastRegex = @"(?<last>nächste(r|n|s)?|kommende(r|n|s)?|diese(r|n|m|s)?|letzte(r|n|s)?|vorige(r|n|s)?|vorherige(r|n|s)?|jetzige(r|n|s)?|derzeitige(r|n|s)?)\b";
 		public const string EachDayRegex = @"(\s*(jeden)\s*(Tag|tag)\s*)";
 		public static readonly string DurationFollowedUnit = $@"\s*{SuffixAndRegex}?(\s+|-)?{DurationUnitRegex}";
 		public static readonly string NumberCombinedWithDurationUnit = $@"\b(?<num>\d+(\.\d*)?)(-)?{DurationUnitRegex}";
@@ -329,9 +329,11 @@ namespace Microsoft.Recognizers.Definitions.German
 			{ "stunden", 3600 },
 			{ "stunde", 3600 },
 			{ "std", 3600 },
+			{ "h", 3600 },
 			{ "Stunden", 3600 },
 			{ "Stunde", 3600 },
 			{ "Std", 3600 },
+			{ "H", 3600 },
 			{ "minuten", 60 },
 			{ "minute", 60 },
 			{ "min", 60 },

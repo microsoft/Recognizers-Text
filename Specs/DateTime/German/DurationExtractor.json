@@ -12,14 +12,26 @@
     ]
   },
   {
-    "Input": "Ich gehe für 3 st.",
+    "Input": "Ich gehe für 3 st",
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "3 st.",
+        "Text": "3 st",
         "Type": "duration",
         "Start": 13,
-        "Length": 5
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "Ich gehe für 5h nach draußen.",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "5h",
+        "Type": "duration",
+        "Start": 13,
+        "Length": 2
       }
     ]
   },
