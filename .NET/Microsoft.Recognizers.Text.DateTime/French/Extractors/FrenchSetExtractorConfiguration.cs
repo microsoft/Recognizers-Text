@@ -9,29 +9,29 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public static readonly string ExtractorName = Constants.SYS_DATETIME_SET;
 
         public static readonly Regex SetUnitRegex =
-            new Regex(DateTimeDefinitions.DurationUnitRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.DurationUnitRegex, RegexOptions.Singleline);
 
         // TODO: Decide between adjective and adverb, i.e monthly - 'mensuel' vs 'mensuellement' 
         public static readonly Regex PeriodicRegex = 
-            new Regex(DateTimeDefinitions.PeriodicRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.PeriodicRegex, RegexOptions.Singleline);
 
         public static readonly Regex EachUnitRegex = 
-            new Regex(DateTimeDefinitions.EachUnitRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.EachUnitRegex, RegexOptions.Singleline);
 
         public static readonly Regex EachPrefixRegex = 
-            new Regex(DateTimeDefinitions.EachPrefixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.EachPrefixRegex, RegexOptions.Singleline);
 
         public static readonly Regex EachDayRegex = 
-            new Regex(DateTimeDefinitions.EachDayRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.EachDayRegex, RegexOptions.Singleline);
 
         public static readonly Regex SetLastRegex = 
-            new Regex(DateTimeDefinitions.SetLastRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.SetLastRegex, RegexOptions.Singleline);
 
         public static readonly Regex SetWeekDayRegex =
-            new Regex(DateTimeDefinitions.SetWeekDayRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.SetWeekDayRegex, RegexOptions.Singleline);
 
         public static readonly Regex SetEachRegex =
-            new Regex(DateTimeDefinitions.SetEachRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.SetEachRegex, RegexOptions.Singleline);
 
         public FrenchSetExtractorConfiguration(IOptionsConfiguration config) : base(config)
         {
@@ -48,7 +48,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public IDateTimeExtractor TimeExtractor { get; }
 
-        public IDateTimeExtractor DateExtractor { get; }
+        public IDateExtractor DateExtractor { get; }
 
         public IDateTimeExtractor DateTimeExtractor { get; }
 

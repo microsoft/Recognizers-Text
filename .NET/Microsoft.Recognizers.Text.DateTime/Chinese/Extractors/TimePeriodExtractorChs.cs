@@ -38,15 +38,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             var regexes = new Dictionary<Regex, PeriodType>
             {
                 {
-                    new Regex(DateTimeDefinitions.TimePeriodRegexes1, RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                    new Regex(DateTimeDefinitions.TimePeriodRegexes1, RegexOptions.Singleline),
                     PeriodType.FullTime
                 },
                 {
-                    new Regex(DateTimeDefinitions.TimePeriodRegexes2, RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                    new Regex(DateTimeDefinitions.TimePeriodRegexes2, RegexOptions.Singleline),
                     PeriodType.ShortTime
                 },
                 {
-                    new Regex(DateTimeDefinitions.TimeOfDayRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                    new Regex(DateTimeDefinitions.TimeOfDayRegex, RegexOptions.Singleline),
                     PeriodType.ShortTime
                 }
             };

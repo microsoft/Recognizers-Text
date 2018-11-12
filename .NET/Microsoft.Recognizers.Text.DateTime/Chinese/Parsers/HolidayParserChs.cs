@@ -99,12 +99,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 {
                     innerResult.FutureResolution = new Dictionary<string, string>
                     {
-                        {TimeTypeConstants.DATE, FormatUtil.FormatDate((DateObject) innerResult.FutureValue)}
+                        {TimeTypeConstants.DATE, DateTimeFormatUtil.FormatDate((DateObject) innerResult.FutureValue)}
                     };
 
                     innerResult.PastResolution = new Dictionary<string, string>
                     {
-                        {TimeTypeConstants.DATE, FormatUtil.FormatDate((DateObject) innerResult.PastValue)}
+                        {TimeTypeConstants.DATE, DateTimeFormatUtil.FormatDate((DateObject) innerResult.PastValue)}
                     };
 
                     innerResult.IsLunar = IsLunarCalendar(er.Text);

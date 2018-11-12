@@ -81,7 +81,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             return regexes;
         }
 
-        protected Regex BuildSeparateRegexFromSet(bool ignoreCase = true)
+        protected Regex BuildSeparateRegexFromSet(bool ignoreCase = false)
         {
             var separateWords = new HashSet<string>();
             if (config.PrefixList?.Count > 0)
@@ -333,9 +333,11 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                             var isNotUnit = false;
                             if (match.Value.Equals(Constants.AMBIGUOUS_TIME_TERM))
                             {
-                                foreach (Match time in nonUnitMatch)
+                                var nonUnitMatches = this.config.NonUnitRegex.Matches(source);
+
+                                foreach (Match nonUnitMatch in nonUnitMatches)
                                 {
-                                    if (DimensionInsideTime(match, time))
+                                    if (IsMatchOverlap(match, nonUnitMatch))
                                     {
                                         isNotUnit = true;
                                         break;
@@ -367,10 +369,10 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             return !string.IsNullOrEmpty(str);
         }
 
-        private bool DimensionInsideTime(Match dimension, Match time)
+        private static bool IsMatchOverlap(Match match, Match nonUnitMatch)
         {
-            bool isSubMatch = dimension.Index >= time.Index && dimension.Index + dimension.Length <= time.Index + time.Length;
-            return isSubMatch;
+            bool isSubMatch = match.Index >= nonUnitMatch.Index && match.Index + match.Length <= nonUnitMatch.Index + nonUnitMatch.Length;
+            return isSubMatch;        
         }
 
         private List<ExtractResult> FilterAmbiguity(List<ExtractResult> ers, string text)
@@ -382,8 +384,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     if (regex.Key.IsMatch(text))
                     {
                         var matches = regex.Value.Matches(text).Cast<Match>();
-                        ers = ers.Where(er =>
-                                            !matches.Any(m => m.Index < er.Start + er.Length && m.Index + m.Length > er.Start))
+                        ers = ers.Where(er => !matches.Any(m => m.Index < er.Start + er.Length && m.Index + m.Length > er.Start))
                                  .ToList();
                     }
                 }
@@ -421,12 +422,12 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                 else
                 {
                     // ...and y is not null, compare the lengths of the two strings.
-                    int retval = y.Length.CompareTo(x.Length);
+                    int result = y.Length.CompareTo(x.Length);
 
-                    if (retval != 0)
+                    if (result != 0)
                     {
                         // If the strings are not of equal length, the longer string is greater.
-                        return retval;
+                        return result;
                     }
                     else
                     {

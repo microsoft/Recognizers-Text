@@ -1,6 +1,8 @@
 ﻿using System.Collections.Immutable;
 using System.Globalization;
+using System.Text.RegularExpressions;
 
+using Microsoft.Recognizers.Definitions;
 using Microsoft.Recognizers.Definitions.Spanish;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit.Spanish
@@ -19,6 +21,12 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Spanish
 
         public override string ExtractType => Constants.SYS_UNIT_TEMPERATURE;
 
-        public static readonly ImmutableDictionary<string, string> TemperatureSuffixList = NumbersWithUnitDefinitions.TemperatureSuffixList.ToImmutableDictionary();
+        public static readonly ImmutableDictionary<string, string> TemperatureSuffixList = 
+            NumbersWithUnitDefinitions.TemperatureSuffixList.ToImmutableDictionary();
+
+        public override Regex AmbiguousUnitNumberMultiplierRegex => AmbiguousUnitMultiplierRegex;
+
+        private static readonly Regex AmbiguousUnitMultiplierRegex =
+            new Regex(BaseUnits.AmbiguousUnitNumberMultiplierRegex, RegexOptions.None);
     }
 }

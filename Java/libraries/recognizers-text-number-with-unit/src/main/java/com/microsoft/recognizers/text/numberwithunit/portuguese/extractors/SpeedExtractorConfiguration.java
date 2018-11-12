@@ -8,6 +8,7 @@ import com.microsoft.recognizers.text.numberwithunit.resources.PortugueseNumeric
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.regex.Pattern;
 
 public class SpeedExtractorConfiguration extends PortugueseNumberWithUnitExtractorConfiguration {
 

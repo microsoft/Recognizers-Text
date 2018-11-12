@@ -12,7 +12,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public string TokenBeforeTime { get; }
 
-        public IDateTimeExtractor DateExtractor { get; }
+        public IDateExtractor DateExtractor { get; }
 
         public IDateTimeExtractor TimeExtractor { get; }
 
@@ -65,8 +65,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             DateParser = config.DateParser;
             TimeParser = config.TimeParser;
             NowRegex = ItalianDateTimeExtractorConfiguration.NowRegex;
-            AMTimeRegex = new Regex(DateTimeDefinitions.AMTimeRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
-            PMTimeRegex = new Regex(DateTimeDefinitions.PMTimeRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            AMTimeRegex = new Regex(DateTimeDefinitions.AMTimeRegex, RegexOptions.Singleline);
+            PMTimeRegex = new Regex(DateTimeDefinitions.PMTimeRegex, RegexOptions.Singleline);
             SimpleTimeOfTodayAfterRegex = ItalianDateTimeExtractorConfiguration.SimpleTimeOfTodayAfterRegex;
             SimpleTimeOfTodayBeforeRegex = ItalianDateTimeExtractorConfiguration.SimpleTimeOfTodayBeforeRegex;
             SpecificTimeOfDayRegex = ItalianDateTimeExtractorConfiguration.SpecificTimeOfDayRegex;

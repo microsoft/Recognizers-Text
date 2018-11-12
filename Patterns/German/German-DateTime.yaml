@@ -49,7 +49,7 @@ MonthSuffixRegex: !nestedRegex
   def: (?<msuf>(im\s*|des\s*)?({RelativeMonthRegex}|{WrittenMonthRegex}))
   references: [ RelativeMonthRegex, WrittenMonthRegex ]
 DateUnitRegex: !simpleRegex
-  def: (?<unit>jahre|jahr|monate|monat|wochen|woche|tage|tag|Tag)(s)?
+  def: (?<unit>jahre|jahr|monate|monat|wochen|woche|tage|tag)(s)?
 SimpleCasesRegex: !nestedRegex
   def: ((vom|zwischen)\s+)?({DayRegex})(\s*{MonthSuffixRegex})?\s*{TillRegex}\s*({DayRegex})(\s*{MonthSuffixRegex})?((\s+|\s*,\s*){YearRegex})?
   references: [ DayRegex, TillRegex, MonthSuffixRegex, YearRegex ]
@@ -72,10 +72,10 @@ MonthNumWithYear: !nestedRegex
   def: ({YearRegex}(\s*)[/\-\.](\s*){MonthNumRegex})|({MonthNumRegex}(\s*)[/\-](\s*){YearRegex})
   references: [ YearRegex, MonthNumRegex ]
 WeekOfMonthRegex: !nestedRegex
-  def: (?<wom>((die|der)\s+)(?<cardinal>erst(er|en|es|e)|1\.|zweit(er|en|es|e)|2\.|dritt(er|en|es|e)|3\.|viert(er|en|es|e)|4\.|fünft(er|en|es|e)|5\.|letzt(er|en|es|e))\s+Woche\s+(des|diesen|im)\s+({MonthSuffixRegex}|monat(s)?))
+  def: (?<wom>((die|der)\s+)(?<cardinal>erst(er|en|es|e)|1\.|zweit(er|en|es|e)|2\.|dritt(er|en|es|e)|3\.|viert(er|en|es|e)|4\.|fünft(er|en|es|e)|5\.|letzt(er|en|es|e))\s+woche\s+(des|diesen|im)\s+({MonthSuffixRegex}|monat(s)?))
   references: [ MonthSuffixRegex ]
 WeekOfYearRegex: !nestedRegex
-  def: (?<woy>((die|der)\s+)?(?<cardinal>(erst(er|en|es|e)|1\.|zweit(er|en|es|e)|2\.|dritt(er|en|es|e)|3\.|viert(er|en|es|e)|4\.|fünft(er|en|es|e)|5\.|letzt(er|en|es|e))\s+Woche\s+(im|diesen|\s+des)?\s+({YearRegex}|{RelativeRegex}\s+jahr(en|es|e)?)))
+  def: (?<woy>((die|der)\s+)?(?<cardinal>(erst(er|en|es|e)|1\.|zweit(er|en|es|e)|2\.|dritt(er|en|es|e)|3\.|viert(er|en|es|e)|4\.|fünft(er|en|es|e)|5\.|letzt(er|en|es|e))\s+woche\s+(im|diesen|\s+des)?\s+({YearRegex}|{RelativeRegex}\s+jahr(en|es|e)?)))
   references: [ YearRegex, RelativeRegex ]
 FollowedDateUnit: !nestedRegex
   def: ^\s*{DateUnitRegex}
@@ -120,7 +120,7 @@ OnRegex: !nestedRegex
 RelaxedOnRegex: !simpleRegex
   def: (?<=\b(am|an dem)\s+)((?<day>10|11|12|13|14|15|16|17|18|19|1|20|21|22|23|24|25|26|27|28|29|2|30|31|3|4|5|6|7|8|9)([\.]))
 ThisRegex: !nestedRegex
-  def: (((diese((n|m)|(\s*Woche))(\s*am)?\s+){WeekDayRegex})|({WeekDayRegex})|diese(n|r)?\s*(sommer|winter|frühling|herbst))
+  def: (((diese((n|m)|(\s*woche))(\s*am)?\s+){WeekDayRegex})|({WeekDayRegex})|diese(n|r)?\s*(sommer|winter|frühling|herbst))
   references: [ WeekDayRegex ]
 LastDateRegex: !nestedRegex
   def: ({LastPrefixRegex}(\s*(woche|monat|jahr)?(\s*(am|im))?)?\s+({WeekDayRegex}|sommer|winter|frühling|herbst))|((am\s+)?{WeekDayRegex}(\s+{LastPrefixRegex}\s*woche))
@@ -161,8 +161,8 @@ DateExtractor4: !nestedRegex
   def: \b({DayRegex}\s*{MonthNumRegex}\s*{DateYearRegex})\b
   references: [ MonthNumRegex, DayRegex, DateYearRegex ]
 DateExtractor5: !nestedRegex
-  def: \b({DayRegex}\s*[/\\\-\.]\s*{MonthNumRegex}\s*[/\\\-\.]\s*{DateYearRegex})\b
-  references: [ DayRegex, MonthNumRegex, DateYearRegex ]
+  def: \b({DayRegex}\s*[/\\\-\.]\s*({MonthNumRegex}|{MonthRegex})\s*[/\\\-\.]\s*{DateYearRegex})\b
+  references: [ DayRegex, MonthNumRegex, MonthRegex, DateYearRegex ]
 DateExtractor6: !nestedRegex
   def: \b(({WeekDayRegex}\s*)?(in)\s*(\d(\d)?)\s*(woche(n)?))\b
   references: [ WeekDayRegex ]
@@ -193,7 +193,7 @@ WeekDayEnd: !nestedRegex
 RangeUnitRegex: !simpleRegex
   def: (?<unit>jahren|jahre|jahr|monaten|monate|monat|wochen|woche|tagen|tage|tag)
 OclockRegex: !simpleRegex
-  def: (?<oclock>Uhr)
+  def: (?<oclock>uhr)
 HourNumRegex: !simpleRegex
   def: \b(?<hournum>'null'|ein|eins|zwei|drei|vier|fünf|fuenf|sechs|sieben|acht|neun|zehn|elf|zwölf|zwoelf|dreizehn|vierzehn|fünfzehn|sechzehn|siebzehn|achtzehn|neunzehn|zwanzig|einundzwanzig|zweiundzwanzig|dreiundzwanzig|vierundzwanzig)\b
 MinuteNumRegex: !simpleRegex
@@ -267,7 +267,7 @@ TimeRegex1: !nestedRegex
   def: ({TimePrefix}\s+)?({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})\s*{DescRegex}
   references: [ TimePrefix, WrittenTimeRegex, HourNumRegex, BaseDateTime.HourRegex, DescRegex ]
 TimeRegex2: !nestedRegex
-  def: ({TimePrefix}\s+)?(T)?{BaseDateTime.HourRegex}(\s*)?:(\s*)?{BaseDateTime.MinuteRegex}((\s*)?:(\s*)?{BaseDateTime.SecondRegex})?((\s*{DescRegex})|\b)
+  def: ({TimePrefix}\s+)?(t)?{BaseDateTime.HourRegex}(\s*)?:(\s*)?{BaseDateTime.MinuteRegex}((\s*)?:(\s*)?{BaseDateTime.SecondRegex})?((\s*{DescRegex})|\b)
   references: [ TimePrefix, BaseDateTime.HourRegex, BaseDateTime.MinuteRegex, BaseDateTime.SecondRegex, DescRegex ]
 TimeRegex3: !nestedRegex
   def: ({TimePrefix}\s+)?{BaseDateTime.HourRegex}\.{BaseDateTime.MinuteRegex}(\s*{DescRegex})
@@ -391,13 +391,13 @@ HalfRegex: !simpleRegex
 ConjunctionRegex: !simpleRegex
   def: \b((und(\s+für)?)|mit|für)\b
 HolidayRegex1: !nestedRegex
-  def: \b((dieses Jahr)\s*)?(?<holiday>clean monday|good friday|ash wednesday|mardi gras|washington's birthday|mao's birthday|chinese new Year|neujahr|neujahrstag|vatertag|mayday|yuan dan|erster april|heiligabend|weihnachten|weihnachtstag|erntedankfest|halloween|yuandan|ostern|osterfest)(\s+((diesen)\s+)?({YearRegex}|{RelativeRegex}\s+jahres))?\b
+  def: \b((dieses jahr)\s*)?(?<holiday>clean monday|good friday|ash wednesday|mardi gras|washington's birthday|mao's birthday|chinese new Year|neujahr|neujahrstag|vatertag|mayday|yuan dan|erster april|heiligabend|weihnachten|weihnachtstag|erntedankfest|halloween|yuandan|ostern|osterfest)(\s+((diesen)\s+)?({YearRegex}|{RelativeRegex}\s+jahres))?\b
   references: [ YearRegex, RelativeRegex ]
 HolidayRegex2: !nestedRegex
-  def: \b((dieses Jahr)\s*)?(?<holiday>martin luther king|martin luther king jr|allerheiligen|tree planting day|white lover|st patrick|st george|cinco de mayo|independence|us independence|allerheiligen|allerseelen|guy fawkes|silvester)(\s+((diesen)\s+)?({YearRegex}|{RelativeRegex}\s+jahres))?\b
+  def: \b((dieses jahr)\s*)?(?<holiday>martin luther king|martin luther king jr|allerheiligen|tree planting day|white lover|st patrick|st george|cinco de mayo|independence|us independence|allerheiligen|allerseelen|guy fawkes|silvester)(\s+((diesen)\s+)?({YearRegex}|{RelativeRegex}\s+jahres))?\b
   references: [ YearRegex, RelativeRegex ]
 HolidayRegex3: !nestedRegex
-  def: ((dieses Jahr)\s*)?(?<holiday>(canberra|ostern|columbus|thanks\s*giving|weihnachten|weihnachtstag|tag der arbeit|muttertag|vatertag|female|single|teacher's|youth|children|arbor|girls|chsmilbuild|lover|labor|inauguration|groundhog|valentine's|baptiste|bastille|halloween|veterans|memorial|mid(-| )autumn|moon|spring|lantern|qingming|dragon boat|new years'|new year's|new year 's|new years|new year)\s+(day))(\s+((diesen)\s+)?({YearRegex}|{RelativeRegex}\s+jahres))?
+  def: ((dieses jahr)\s*)?(?<holiday>(canberra|ostern|columbus|thanks\s*giving|weihnachten|weihnachtstag|tag der arbeit|muttertag|vatertag|female|single|teacher's|youth|children|arbor|girls|chsmilbuild|lover|labor|inauguration|groundhog|valentine's|baptiste|bastille|halloween|veterans|memorial|mid(-| )autumn|moon|spring|lantern|qingming|dragon boat|new years'|new year's|new year 's|new years|new year)\s+(day))(\s+((diesen)\s+)?({YearRegex}|{RelativeRegex}\s+jahres))?
   references: [ YearRegex, RelativeRegex ]
 DateTokenPrefix: 'am '
 TimeTokenPrefix: 'um '
@@ -467,9 +467,9 @@ WeekDayAndDayOfMonthRegex: !nestedRegex
   def: \b{WeekDayRegex}\s+((der|den)\s+{FlexibleDayRegex})\b
   references: [WeekDayRegex, FlexibleDayRegex]
 RestOfDateRegex: !simpleRegex
-  def: \bRest\s+((der|des|dieser)\s+)((aktuellen|jetzigen)\s+)?(?<duration>Woche|Monats|Jahres)\b
+  def: \brest\s+((der|des|dieser)\s+)((aktuellen|jetzigen)\s+)?(?<duration>woche|monats|jahres)\b
 RestOfDateTimeRegex: !simpleRegex
-  def: \bRest\s+((des|diesen)\s+)((aktuellen|heutigen)\s+)?(?<unit>Tages)\b
+  def: \brest\s+((des|diesen)\s+)((aktuellen|heutigen)\s+)?(?<unit>tages)\b
 MealTimeRegex: !simpleRegex
   def: \b((zum|zur)\s+)?(?<mealTime>(essenszeit|mittagessen))\b
 NumberEndingPattern: !nestedRegex
@@ -557,72 +557,32 @@ UnitMap: !dictionary
     sekunden: S
     sekunde: S
     sek: S
-    Jahren: Y
-    Jahres: Y
-    Jahre: Y
-    Jahr: Y
-    Monaten: MON
-    Monate: MON
-    Monat: MON
-    Monats: MON
-    Wochen: W
-    Woche: W
-    Tagen: D
-    Tages: D
-    Tage: D
-    Tag: D
-    Stunden: H
-    Stunde: H
     H: H
-    Minuten: M
-    Minute: M
-    Min: M
-    Sekunden: S
-    sekunde: S
-    Sek: S
+
 UnitValueMap: !dictionary
   types: [ string, long ]
   entries:
     jahren: 31536000
     jahre: 31536000
     jahr: 31536000
-    Jahren: 31536000
-    Jahre: 31536000
-    Jahr: 31536000
     monaten: 2592000
     monate: 2592000
     monat: 2592000
-    Monaten: 2592000
-    Monate: 2592000
-    Monat: 2592000
     wochen: 604800
     woche: 604800
-    Wochen: 604800
-    Woche: 604800
     tagen: 86400
     tage: 86400
     tag: 86400
-    Tagen: 86400
-    Tage: 86400
-    Tag: 86400
     stunden: 3600
     stunde: 3600
     std: 3600
-    Stunden: 3600
-    Stunde: 3600
-    Std: 3600
     minuten: 60
     minute: 60
     min: 60
-    Minuten: 60
-    Minute: 60
-    Min: 60
     sekunden: 1
     sekunde: 1
     sek: 1
-    Sekunden: 1
-    Sekunde: 1
-    Sek: 1
+
 SeasonMap: !dictionary
   types: [ string, string ]
   entries:
@@ -683,20 +643,7 @@ DayOfWeek: !dictionary
     fr.: 5
     sa.: 6
     so.: 0
-    Montag: 1
-    Dienstag: 2
-    Mittwoch: 3
-    Donnerstag: 4
-    Freitag: 5
-    Samstag: 6
-    Sonntag: 0
-    Mo.: 1
-    Di.: 2
-    Mi.: 3
-    Do.: 4
-    Fr.: 5
-    Sa.: 6
-    So.: 0
+
 MonthOfYear: !dictionary
   types: [ string, int ]
   entries:
@@ -723,29 +670,6 @@ MonthOfYear: !dictionary
     'okt': 10
     'nov': 11
     'dez': 12
-    'Januar': 1
-    'Februar': 2
-    'März': 3
-    'April': 4
-    'Mai': 5
-    'Juni': 6
-    'Juli': 7
-    'August': 8
-    'September': 9
-    'Oktober': 10
-    'November': 11
-    'Dezember': 12
-    'Jan': 1
-    'Feb': 2
-    'Mar': 3
-    'Apr': 4
-    'Jun': 6
-    'Jul': 7
-    'Aug': 8
-    'Sep': 9
-    'Okt': 10
-    'Nov': 11
-    'Dez': 12
     '1.': 1
     '2.': 2
     '3.': 3
@@ -1069,4 +993,25 @@ NightTermList: !list
   types: [ string ] 
   entries: 
     - nacht
+SameDayTerms: !list
+  types: [ string ]
+  entries: 
+    - heute
+PlusOneDayTerms: !list
+  types: [ string ]
+  entries: 
+    - morgen
+    - tmr
+MinusOneDayTerms: !list
+  types: [ string ]
+  entries: 
+    - gestern
+PlusTwoDayTerms: !list
+  types: [ string ]
+  entries: 
+    - übermorgen
+MinusTwoDayTerms: !list
+  types: [ string ]
+  entries: 
+    - vorgestern
 ...

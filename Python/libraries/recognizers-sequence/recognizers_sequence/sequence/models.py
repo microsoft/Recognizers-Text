@@ -5,7 +5,7 @@ from collections import namedtuple
 from recognizers_text.model import Model, ModelResult
 from recognizers_text.extractor import Extractor
 from recognizers_text.parser import Parser, ParseResult
-from recognizers_text.utilities import FormatUtility
+from recognizers_text.utilities import QueryProcessor
 
 
 class AbstractSequenceModel(Model):

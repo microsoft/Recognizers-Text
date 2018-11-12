@@ -1,6 +1,6 @@
 import { BaseTimeParser, ITimeParserConfiguration } from "../baseTime"
 import { EnglishTimeExtractorConfiguration } from "./timeConfiguration"
-import { DateTimeResolutionResult, FormatUtil } from "../utilities"
+import { DateTimeResolutionResult, DateTimeFormatUtil } from "../utilities"
 import { RegExpUtility } from "@microsoft/recognizers-text";
 
 export class EnglishTimeParser extends BaseTimeParser {
@@ -29,7 +29,7 @@ export class EnglishTimeParser extends BaseTimeParser {
                 hour = Number.parseInt(hourStr, 10);
             }
 
-            ret.timex = "T" + FormatUtil.toString(hour, 2);
+            ret.timex = "T" + DateTimeFormatUtil.toString(hour, 2);
             ret.futureValue =
                 ret.pastValue =
                 new Date(referenceTime.getFullYear(), referenceTime.getMonth(), referenceTime.getDate(), hour, 0, 0);

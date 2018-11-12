@@ -49,7 +49,7 @@
     "NotSupported": "python",
     "Results": [
       {
-        "Text": "第２５０",
+        "Text": "第250",
         "TypeName": "ordinal",
         "Resolution": {
           "value": "250"
@@ -64,7 +64,7 @@
     "NotSupported": "python",
     "Results": [
       {
-        "Text": "だい２５０",
+        "Text": "だい250",
         "TypeName": "ordinal",
         "Resolution": {
           "value": "250"

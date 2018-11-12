@@ -488,7 +488,7 @@ class SpanishNumericWithUnit:
                             ('Yarda por minuto', 'yardas por minuto|yardas/minuto|yardas/min'),
                             ('Yarda por segundo', 'yardas por segundo|yardas/segundo|yardas/seg')])
     AmbiguousSpeedUnitList = ['nudo', 'nudos']
-    TemperatureSuffixList = dict([('Kelvin', 'k|kelvin'),
+    TemperatureSuffixList = dict([('Kelvin', 'k|K|kelvin'),
                                   ('Rankine', 'r|rankine'),
                                   ('Grado Celsius', '°c|grados c|grado celsius|grados celsius|celsius|grado centígrado|grados centígrados|centígrado|centígrados'),
                                   ('Grado Fahrenheit', '°f|grados f|grado fahrenheit|grados fahrenheit|fahrenheit'),

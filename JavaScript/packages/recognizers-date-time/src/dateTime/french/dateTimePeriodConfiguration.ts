@@ -11,7 +11,7 @@ import { FrenchDateTimeExtractorConfiguration } from "./dateTimeConfiguration";
 import { FrenchDurationExtractorConfiguration } from "./durationConfiguration";
 import { FrenchDateTime } from "../../resources/frenchDateTime";
 import { FrenchTimeExtractorConfiguration } from "./timeConfiguration";
-import { DateTimeResolutionResult, DateUtils, FormatUtil } from "../utilities";
+import { DateTimeResolutionResult, DateUtils, DateTimeFormatUtil } from "../utilities";
 import { BaseTimePeriodExtractor } from "../baseTimePeriod";
 import { FrenchTimePeriodExtractorConfiguration } from "./timePeriodConfiguration";
 

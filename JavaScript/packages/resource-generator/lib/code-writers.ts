@@ -133,7 +133,7 @@ class ArrayWriter extends CodeWriter {
         this.entries = [];
         this.valueType = typeof(entries[0]);
         entries.forEach(element => {
-            this.entries.push(`'${sanitize(element)}'`)
+            this.entries.push(`"${sanitize(element)}"`)
         });
     }
 

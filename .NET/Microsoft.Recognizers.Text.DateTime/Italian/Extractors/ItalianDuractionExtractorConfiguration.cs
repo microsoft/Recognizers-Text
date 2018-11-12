@@ -8,50 +8,50 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
     public class ItalianDurationExtractorConfiguration : BaseOptionsConfiguration, IDurationExtractorConfiguration
     {
         public static readonly Regex DurationUnitRegex =
-            new Regex(DateTimeDefinitions.DurationUnitRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.DurationUnitRegex, RegexOptions.Singleline);
 
         public static readonly Regex SuffixAndRegex = 
-            new Regex(DateTimeDefinitions.SuffixAndRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.SuffixAndRegex, RegexOptions.Singleline);
 
         public static readonly Regex DurationFollowedUnit = 
-            new Regex(DateTimeDefinitions.DurationFollowedUnit, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.DurationFollowedUnit, RegexOptions.Singleline);
 
         public static readonly Regex NumberCombinedWithDurationUnit = 
-            new Regex(DateTimeDefinitions.NumberCombinedWithDurationUnit, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.NumberCombinedWithDurationUnit, RegexOptions.Singleline);
 
         public static readonly Regex AnUnitRegex = 
-            new Regex(DateTimeDefinitions.AnUnitRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.AnUnitRegex, RegexOptions.Singleline);
 
         public static readonly Regex DuringRegex =
-            new Regex(DateTimeDefinitions.DuringRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.DuringRegex, RegexOptions.Singleline);
 
         public static readonly Regex AllRegex = 
-            new Regex(DateTimeDefinitions.AllRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.AllRegex, RegexOptions.Singleline);
 
         public static readonly Regex HalfRegex = 
-            new Regex(DateTimeDefinitions.HalfRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.HalfRegex, RegexOptions.Singleline);
 
         public static readonly Regex ConjunctionRegex = 
-            new Regex(DateTimeDefinitions.ConjunctionRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.ConjunctionRegex, RegexOptions.Singleline);
 
         //quelques = "a few, some," etc 
         public static readonly Regex InexactNumberRegex = 
-            new Regex(DateTimeDefinitions.InexactNumberRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.InexactNumberRegex, RegexOptions.Singleline);
 
         public static readonly Regex InexactNumberUnitRegex = 
-            new Regex(DateTimeDefinitions.InexactNumberUnitRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.InexactNumberUnitRegex, RegexOptions.Singleline);
 
         public static readonly Regex RelativeDurationUnitRegex =
-            new Regex(DateTimeDefinitions.RelativeDurationUnitRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.RelativeDurationUnitRegex, RegexOptions.Singleline);
 
         public static readonly Regex DurationConnectorRegex =
-            new Regex(DateTimeDefinitions.DurationConnectorRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.DurationConnectorRegex, RegexOptions.Singleline);
 
         public static readonly Regex MoreThanRegex =
-            new Regex(DateTimeDefinitions.MoreThanRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.MoreThanRegex, RegexOptions.Singleline);
 
         public static readonly Regex LessThanRegex =
-            new Regex(DateTimeDefinitions.LessThanRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.LessThanRegex, RegexOptions.Singleline);
 
         public ItalianDurationExtractorConfiguration(IOptionsConfiguration config) : base(config)
         {

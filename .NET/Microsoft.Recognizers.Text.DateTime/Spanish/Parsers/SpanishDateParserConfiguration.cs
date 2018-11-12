@@ -21,7 +21,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public IDateTimeExtractor DurationExtractor { get; }
 
-        public IDateTimeExtractor DateExtractor { get; }
+        public IDateExtractor DateExtractor { get; }
 
         public IDateTimeParser DurationParser { get; }
 
@@ -59,12 +59,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public Regex RelativeWeekDayRegex { get; }
 
-        //TODO: implement the relative day regex if needed. If yes, they should be abstracted
-        public static readonly Regex RelativeDayRegex = new Regex("", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public Regex RelativeDayRegex { get; }
 
-        public static readonly Regex NextPrefixRegex = new Regex(DateTimeDefinitions.NextPrefixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public Regex NextPrefixRegex { get; }
 
-        public static readonly Regex PastPrefixRegex = new Regex(DateTimeDefinitions.PastPrefixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public Regex PastPrefixRegex { get; }
 
         public IImmutableDictionary<string, int> DayOfMonth { get; }
 
@@ -73,6 +72,16 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public IImmutableDictionary<string, int> MonthOfYear { get; }
 
         public IImmutableDictionary<string, int> CardinalMap { get; }
+
+        public IImmutableList<string> SameDayTerms { get; }
+
+        public IImmutableList<string> PlusOneDayTerms { get; }
+
+        public IImmutableList<string> MinusOneDayTerms { get; }
+
+        public IImmutableList<string> PlusTwoDayTerms { get; }
+
+        public IImmutableList<string> MinusTwoDayTerms { get; }
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
@@ -95,6 +104,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             RelativeMonthRegex = SpanishDateExtractorConfiguration.RelativeMonthRegex;
             YearSuffix = SpanishDateExtractorConfiguration.YearSuffix;
             RelativeWeekDayRegex = SpanishDateExtractorConfiguration.RelativeWeekDayRegex;
+            RelativeDayRegex = new Regex(DateTimeDefinitions.RelativeDayRegex, RegexOptions.Singleline);
+            NextPrefixRegex = new Regex(DateTimeDefinitions.NextPrefixRegex, RegexOptions.Singleline);
+            PastPrefixRegex = new Regex(DateTimeDefinitions.PastPrefixRegex, RegexOptions.Singleline);
             DayOfMonth = config.DayOfMonth;
             DayOfWeek = config.DayOfWeek;
             MonthOfYear = config.MonthOfYear;
@@ -108,50 +120,16 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             DurationParser = config.DurationParser;
             UnitMap = config.UnitMap;
             UtilityConfiguration = config.UtilityConfiguration;
-        }
-
-        public int GetSwiftDay(string text)
-        {
-            var trimmedText = text.Trim().ToLowerInvariant().Normalized();
-            var swift = 0;
-
-            //TODO: add the relative day logic if needed. If yes, the whole method should be abstracted.
-            if (trimmedText.Equals("hoy") || trimmedText.Equals("el dia"))
-            {
-                swift = 0;
-            }
-            else if (trimmedText.Equals("mañana") ||
-                     trimmedText.EndsWith("dia siguiente") ||
-                     trimmedText.EndsWith("el dia de mañana") ||
-                     trimmedText.EndsWith("proximo dia"))
-            {
-                swift = 1;
-            }
-            else if (trimmedText.Equals("ayer"))
-            {
-                swift = -1;
-            }
-            else if (trimmedText.EndsWith("pasado mañana") ||
-                     trimmedText.EndsWith("dia despues de mañana"))
-            {
-                swift = 2;
-            }
-            else if (trimmedText.EndsWith("anteayer") ||
-                     trimmedText.EndsWith("dia antes de ayer"))
-            {
-                swift = -2;
-            }
-            else if (trimmedText.EndsWith("ultimo dia"))
-            {
-                swift = -1;
-            }
-
-            return swift;
+            SameDayTerms = DateTimeDefinitions.SameDayTerms.ToImmutableList();
+            PlusOneDayTerms = DateTimeDefinitions.PlusOneDayTerms.ToImmutableList();
+            PlusTwoDayTerms = DateTimeDefinitions.PlusTwoDayTerms.ToImmutableList();
+            MinusOneDayTerms = DateTimeDefinitions.MinusOneDayTerms.ToImmutableList();
+            MinusTwoDayTerms = DateTimeDefinitions.MinusTwoDayTerms.ToImmutableList();
         }
 
         public int GetSwiftMonth(string text)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim().ToLowerInvariant().Normalized();
             var swift = 0;
 
             if (NextPrefixRegex.IsMatch(trimmedText))
@@ -169,10 +147,14 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public bool IsCardinalLast(string text)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim().ToLowerInvariant().Normalized();
             return PastPrefixRegex.IsMatch(trimmedText);
         }
-
+        
+        public string Normalize(string text)
+        {
+            return text.Normalized();
+        }
     }
 
     public static class StringExtension

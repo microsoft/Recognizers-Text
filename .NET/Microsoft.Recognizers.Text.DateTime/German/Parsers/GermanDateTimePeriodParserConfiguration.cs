@@ -10,7 +10,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
     {
         public string TokenBeforeDate { get; }
 
-        public IDateTimeExtractor DateExtractor { get; }
+        public IDateExtractor DateExtractor { get; }
 
         public IDateTimeExtractor TimeExtractor { get; }
 
@@ -114,16 +114,16 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         }
 
         public static readonly Regex MorningStartEndRegex = 
-            new Regex(DateTimeDefinitions.MorningStartEndRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.MorningStartEndRegex, RegexOptions.Singleline);
 
         public static readonly Regex AfternoonStartEndRegex = 
-            new Regex(DateTimeDefinitions.AfternoonStartEndRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.AfternoonStartEndRegex, RegexOptions.Singleline);
 
         public static readonly Regex EveningStartEndRegex = 
-            new Regex(DateTimeDefinitions.EveningStartEndRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.EveningStartEndRegex, RegexOptions.Singleline);
 
         public static readonly Regex NightStartEndRegex = 
-            new Regex(DateTimeDefinitions.NightStartEndRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.NightStartEndRegex, RegexOptions.Singleline);
 
         public bool GetMatchedTimeRange(string text, out string timeStr, out int beginHour, out int endHour, out int endMin)
         {

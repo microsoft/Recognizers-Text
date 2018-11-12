@@ -143,7 +143,7 @@ public class PortugueseNumericWithUnit {
         .put("Nakfa", "nakfa|nfk|ern")
         .put("Centavo de Nakfa", "cêntimo de nakfa|cêntimos de nakfa|centavo de nafka|centavos de nafka")
         .put("Peseta", "peseta|pesetas|pts.|ptas.|esp")
-        .put("Dólar estadunidense", "dólar dos estados unidos|dolar dos estados unidos|dólar estadunidense|dólar americano|dólares dos estados unidos|dolares dos estados unidos|dólares estadunidenses|dólares americanos|dolar estadunidense|dolar americano|dolares estadunidenses|dolares americanos|usd|u$d|us$")
+        .put("Dólar estadunidense", "dólar dos estados unidos|dolar dos estados unidos|dólar estadunidense|dólar americano|dólares dos estados unidos|dolares dos estados unidos|dólares estadunidenses|dólares americanos|dolar estadunidense|dolar americano|dolares estadunidenses|dolares americanos|usd|u$d|us$|usd$")
         .put("Coroa estoniana", "coroa estoniana|coroas estonianas|eek")
         .put("Senti estoniano", "senti estoniano|senti estonianos")
         .put("Birr etíope", "birr etíope|birr etiope|birr etíopes|birr etiopes|br|etb")
@@ -350,7 +350,7 @@ public class PortugueseNumericWithUnit {
 
     public static final Map<String, String> CurrencyPrefixList = ImmutableMap.<String, String>builder()
         .put("Dólar", "$")
-        .put("Dólar estadunidense", "us$|u$d|usd")
+        .put("Dólar estadunidense", "us$|u$d|usd$|usd")
         .put("Dólar do Caribe Oriental", "ec$|xcd")
         .put("Dólar australiano", "a$|aud")
         .put("Dólar bahamense", "b$|bsd")
@@ -453,7 +453,7 @@ public class PortugueseNumericWithUnit {
     public static final List<String> AmbiguousSpeedUnitList = Arrays.asList("nó", "no", "nós", "nos");
 
     public static final Map<String, String> TemperatureSuffixList = ImmutableMap.<String, String>builder()
-        .put("Kelvin", "k|kelvin")
+        .put("Kelvin", "k|K|kelvin")
         .put("Grau Rankine", "r|°r|°ra|grau rankine|graus rankine| rankine")
         .put("Grau Celsius", "°c|grau c|grau celsius|graus c|graus celsius|celsius|grau centígrado|grau centrigrado|graus centígrados|graus centigrados|centígrado|centígrados|centigrado|centigrados")
         .put("Grau Fahrenheit", "°f|grau f|graus f|grau fahrenheit|graus fahrenheit|fahrenheit")

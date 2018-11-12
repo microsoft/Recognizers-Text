@@ -309,7 +309,7 @@
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "More than 1/2",
+        "Text": "more than 1/2",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(0.5,)"
@@ -414,7 +414,7 @@
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "Fewer than a thousand",
+        "Text": "fewer than a thousand",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(,1000)"
@@ -512,7 +512,7 @@
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "Equaling to 20",
+        "Text": "equaling to 20",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[20,20]"

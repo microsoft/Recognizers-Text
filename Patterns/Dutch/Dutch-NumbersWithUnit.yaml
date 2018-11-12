@@ -98,7 +98,7 @@ TemperatureSuffixList: !dictionary
   types: [ string, string ]
   entries:
     F: graden fahrenheit|graden f|gr. f|°f|fahrenheit|f
-    K: k|kelvin
+    K: k|K|kelvin
     R: rankine|°r
     D: delisle|°de
     C: graden celsius|graden c|gr. c|°c|c|celsius

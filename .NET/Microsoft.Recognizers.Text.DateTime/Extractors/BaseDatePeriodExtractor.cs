@@ -86,7 +86,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 // Single year cases like "1998"
                 if (matchYear.Success && matchYear.Length == match.Value.Length)
                 {
-                    var year = ((BaseDateExtractor)this.config.DatePointExtractor).GetYearFromText(matchYear);
+                    var year = config.DatePointExtractor.GetYearFromText(matchYear);
                     if (!(year >= Constants.MinYearNum && year <= Constants.MaxYearNum))
                     {
                         continue;
@@ -113,7 +113,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     var matchYear = this.config.YearRegex.Match(match.Value);
                     if (matchYear.Success && matchYear.Length == match.Value.Length)
                     {
-                        var year = ((BaseDateExtractor)this.config.DatePointExtractor).GetYearFromText(matchYear);
+                        var year = config.DatePointExtractor.GetYearFromText(matchYear);
                         if (!(year >= Constants.MinYearNum && year <= Constants.MaxYearNum))
                         {
                             continue;

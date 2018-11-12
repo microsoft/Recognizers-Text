@@ -21,7 +21,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public virtual IParser NumberParser { get; protected set; }
 
-        public virtual IDateTimeExtractor DateExtractor { get; protected set; }
+        public virtual IDateExtractor DateExtractor { get; protected set; }
 
         public virtual IDateTimeExtractor TimeExtractor { get; protected set; }
 

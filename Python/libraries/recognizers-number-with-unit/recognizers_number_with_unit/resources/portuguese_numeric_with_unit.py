@@ -129,7 +129,7 @@ class PortugueseNumericWithUnit:
                                ('Nakfa', 'nakfa|nfk|ern'),
                                ('Centavo de Nakfa', 'cêntimo de nakfa|cêntimos de nakfa|centavo de nafka|centavos de nafka'),
                                ('Peseta', 'peseta|pesetas|pts.|ptas.|esp'),
-                               ('Dólar estadunidense', 'dólar dos estados unidos|dolar dos estados unidos|dólar estadunidense|dólar americano|dólares dos estados unidos|dolares dos estados unidos|dólares estadunidenses|dólares americanos|dolar estadunidense|dolar americano|dolares estadunidenses|dolares americanos|usd|u$d|us$'),
+                               ('Dólar estadunidense', 'dólar dos estados unidos|dolar dos estados unidos|dólar estadunidense|dólar americano|dólares dos estados unidos|dolares dos estados unidos|dólares estadunidenses|dólares americanos|dolar estadunidense|dolar americano|dolares estadunidenses|dolares americanos|usd|u$d|us$|usd$'),
                                ('Coroa estoniana', 'coroa estoniana|coroas estonianas|eek'),
                                ('Senti estoniano', 'senti estoniano|senti estonianos'),
                                ('Birr etíope', 'birr etíope|birr etiope|birr etíopes|birr etiopes|br|etb'),
@@ -332,7 +332,7 @@ class PortugueseNumericWithUnit:
                                ('Ngwee zambiano', 'ngwee zambiano|ngwee zambianos|ngwees zambianos')])
     CompoundUnitConnectorRegex = f'(?<spacer>[^.])'
     CurrencyPrefixList = dict([('Dólar', '$'),
-                               ('Dólar estadunidense', 'us$|u$d|usd'),
+                               ('Dólar estadunidense', 'us$|u$d|usd$|usd'),
                                ('Dólar do Caribe Oriental', 'ec$|xcd'),
                                ('Dólar australiano', 'a$|aud'),
                                ('Dólar bahamense', 'b$|bsd'),
@@ -416,7 +416,7 @@ class PortugueseNumericWithUnit:
                             ('Jarda por minuto', 'jardas por minuto|jardas/minuto|jardas/min'),
                             ('Jarda por segundo', 'jardas por segundo|jardas/segundo|jardas/seg')])
     AmbiguousSpeedUnitList = ['nó', 'no', 'nós', 'nos']
-    TemperatureSuffixList = dict([('Kelvin', 'k|kelvin'),
+    TemperatureSuffixList = dict([('Kelvin', 'k|K|kelvin'),
                                   ('Grau Rankine', 'r|°r|°ra|grau rankine|graus rankine| rankine'),
                                   ('Grau Celsius', '°c|grau c|grau celsius|graus c|graus celsius|celsius|grau centígrado|grau centrigrado|graus centígrados|graus centigrados|centígrado|centígrados|centigrado|centigrados'),
                                   ('Grau Fahrenheit', '°f|grau f|graus f|grau fahrenheit|graus fahrenheit|fahrenheit'),

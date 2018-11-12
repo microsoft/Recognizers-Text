@@ -45,11 +45,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                     {
                         {
                             TimeTypeConstants.START_TIME,
-                            FormatUtil.FormatTime(((Tuple<DateObject, DateObject>) innerResult.FutureValue).Item1)
+                            DateTimeFormatUtil.FormatTime(((Tuple<DateObject, DateObject>) innerResult.FutureValue).Item1)
                         },
                         {
                             TimeTypeConstants.END_TIME,
-                            FormatUtil.FormatTime(((Tuple<DateObject, DateObject>) innerResult.FutureValue).Item2)
+                            DateTimeFormatUtil.FormatTime(((Tuple<DateObject, DateObject>) innerResult.FutureValue).Item2)
                         }
                     };
 
@@ -57,11 +57,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                     {
                         {
                             TimeTypeConstants.START_TIME,
-                            FormatUtil.FormatTime(((Tuple<DateObject, DateObject>) innerResult.PastValue).Item1)
+                            DateTimeFormatUtil.FormatTime(((Tuple<DateObject, DateObject>) innerResult.PastValue).Item1)
                         },
                         {
                             TimeTypeConstants.END_TIME,
-                            FormatUtil.FormatTime(((Tuple<DateObject, DateObject>) innerResult.PastValue).Item2)
+                            DateTimeFormatUtil.FormatTime(((Tuple<DateObject, DateObject>) innerResult.PastValue).Item2)
                         }
                     };
 
@@ -262,14 +262,12 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
 
                 // Cases like "4" is different with "4:00" as the Timex is different "T04H" vs "T04H00M"
-                // Uses this invalidFlag to differentiate
                 int beginHour;
-                int invalidFlag = -1;
-                int beginMinute = invalidFlag;
-                int beginSecond = invalidFlag;
+                int beginMinute = Constants.InvalidMinute;
+                int beginSecond = Constants.InvalidSecond;
                 int endHour;
-                int endMinute = invalidFlag;
-                int endSecond = invalidFlag;
+                int endMinute = Constants.InvalidMinute;
+                int endSecond = Constants.InvalidSecond;
 
                 // Get time1 and time2
                 var hourGroup = match.Groups[Constants.HourGroupName];
@@ -490,12 +488,12 @@ namespace Microsoft.Recognizers.Text.DateTime
                     endDateTime = endDateTime.AddHours(24);
                 }
 
-                var beginStr = FormatUtil.ShortTime(beginDateTime.Hour, beginMinute, beginSecond);
-                var endStr = FormatUtil.ShortTime(endDateTime.Hour, endMinute, endSecond);
+                var beginStr = DateTimeFormatUtil.ShortTime(beginDateTime.Hour, beginMinute, beginSecond);
+                var endStr = DateTimeFormatUtil.ShortTime(endDateTime.Hour, endMinute, endSecond);
 
                 ret.Success = true;
 
-                ret.Timex = $"({beginStr},{endStr},{FormatUtil.LuisTimeSpan(endDateTime - beginDateTime)})";
+                ret.Timex = $"({beginStr},{endStr},{DateTimeFormatUtil.LuisTimeSpan(endDateTime - beginDateTime)})";
 
                 ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(
                     beginDateTime,
@@ -505,7 +503,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 // In SplitDateAndTime mode, time points will be get from these SubDateTimeEntities
                 // Cases like "from 4 to 5pm", "4" should not be treated as SubDateTimeEntity
-                if (hasLeft || beginMinute != invalidFlag || beginSecond != invalidFlag)
+                if (hasLeft || beginMinute != Constants.InvalidMinute || beginSecond != Constants.InvalidSecond)
                 {
                     var er = new ExtractResult()
                     {
@@ -520,7 +518,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
 
                 // Cases like "from 4am to 5", "5" should not be treated as SubDateTimeEntity
-                if (hasRight || endMinute != invalidFlag || endSecond != invalidFlag)
+                if (hasRight || endMinute != Constants.InvalidMinute || endSecond != Constants.InvalidSecond)
                 {
                     var er = new ExtractResult
                     {

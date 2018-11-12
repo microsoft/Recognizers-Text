@@ -9,7 +9,7 @@ namespace Microsoft.Recognizers.Text.DateTime
     {
         string TokenBeforeDate { get; }
 
-        IDateTimeExtractor DateExtractor { get; }
+        IDateExtractor DateExtractor { get; }
 
         IExtractor CardinalExtractor { get; }
 
@@ -104,6 +104,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         Regex MoreThanRegex { get; }
 
         Regex CenturySuffixRegex { get; }
+
+        Regex RelativeRegex { get; }
 
         IImmutableDictionary<string, string> UnitMap { get; }
 

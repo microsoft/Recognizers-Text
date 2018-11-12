@@ -5,7 +5,7 @@ import { BaseDateExtractor, BaseDateParser } from "./baseDate"
 import { BaseTimeExtractor, BaseTimeParser } from "./baseTime"
 import { BaseDurationExtractor, BaseDurationParser } from "./baseDuration"
 import { IDateTimeParser, DateTimeParseResult } from "./parsers"
-import { FormatUtil, Token, IDateTimeUtilityConfiguration, AgoLaterUtil, AgoLaterMode, DateTimeResolutionResult, StringMap } from "./utilities";
+import { DateTimeFormatUtil, Token, IDateTimeUtilityConfiguration, AgoLaterUtil, AgoLaterMode, DateTimeResolutionResult, StringMap } from "./utilities";
 
 export interface IDateTimeExtractor {
     extract(input: string, refDate?: Date): Array<ExtractResult>
@@ -241,9 +241,9 @@ export class BaseDateTimeParser implements IDateTimeParser {
 
             if (innerResult.success) {
                 innerResult.futureResolution = {};
-                innerResult.futureResolution[TimeTypeConstants.DATETIME] = FormatUtil.formatDateTime(innerResult.futureValue);
+                innerResult.futureResolution[TimeTypeConstants.DATETIME] = DateTimeFormatUtil.formatDateTime(innerResult.futureValue);
                 innerResult.pastResolution = {};
-                innerResult.pastResolution[TimeTypeConstants.DATETIME] = FormatUtil.formatDateTime(innerResult.pastValue);
+                innerResult.pastResolution[TimeTypeConstants.DATETIME] = DateTimeFormatUtil.formatDateTime(innerResult.pastValue);
                 value = innerResult;
             }
         }
@@ -344,7 +344,7 @@ export class BaseDateTimeParser implements IDateTimeParser {
         if (timeStr.endsWith("ampm")) {
             timeStr = timeStr.substring(0, timeStr.length - 4);
         }
-        timeStr = "T" + FormatUtil.toString(hour, 2) + timeStr.substring(3);
+        timeStr = "T" + DateTimeFormatUtil.toString(hour, 2) + timeStr.substring(3);
         ret.timex = pr1.timexStr + timeStr;
 
         let val = pr2.value;
@@ -391,7 +391,7 @@ export class BaseDateTimeParser implements IDateTimeParser {
             else {
                 hour = parseInt(hourStr, 10);
             }
-            timeStr = "T" + FormatUtil.toString(hour, 2);
+            timeStr = "T" + DateTimeFormatUtil.toString(hour, 2);
         }
         else {
             let ers = this.config.timeExtractor.extract(trimmedText, referenceTime);
@@ -437,9 +437,9 @@ export class BaseDateTimeParser implements IDateTimeParser {
             if (timeStr.endsWith("ampm")) {
                 timeStr = timeStr.substring(0, timeStr.length - 4);
             }
-            timeStr = "T" + FormatUtil.toString(hour, 2) + timeStr.substring(3);
+            timeStr = "T" + DateTimeFormatUtil.toString(hour, 2) + timeStr.substring(3);
 
-            ret.timex = FormatUtil.formatDate(date) + timeStr;
+            ret.timex = DateTimeFormatUtil.formatDate(date) + timeStr;
             ret.futureValue = ret.pastValue = new Date(date.getFullYear(), date.getMonth(), date.getDate(), hour, min, sec);
             ret.success = true;
             return ret;

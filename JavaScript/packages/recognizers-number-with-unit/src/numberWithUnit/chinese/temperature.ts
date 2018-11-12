@@ -1,6 +1,7 @@
-import { CultureInfo, Culture } from "@microsoft/recognizers-text-number";
+import { CultureInfo, Culture, RegExpUtility } from "@microsoft/recognizers-text-number";
 import { Constants } from "../constants";
 import { ChineseNumberWithUnitExtractorConfiguration, ChineseNumberWithUnitParserConfiguration } from "./base";
+import { BaseUnits } from "../../resources/baseUnits";
 import { ChineseNumericWithUnit } from "../../resources/chineseNumericWithUnit";
 
 export class ChineseTemperatureExtractorConfiguration extends ChineseNumberWithUnitExtractorConfiguration {
@@ -8,6 +9,7 @@ export class ChineseTemperatureExtractorConfiguration extends ChineseNumberWithU
     readonly prefixList: ReadonlyMap<string, string>;
     readonly ambiguousUnitList: ReadonlyArray<string>;
     readonly extractType: string;
+    readonly ambiguousUnitNumberMultiplierRegex: RegExp;
 
     constructor(ci?: CultureInfo) {
         if (!ci) {
@@ -21,12 +23,14 @@ export class ChineseTemperatureExtractorConfiguration extends ChineseNumberWithU
         this.suffixList = ChineseNumericWithUnit.TemperatureSuffixList;
         this.prefixList = ChineseNumericWithUnit.TemperaturePrefixList;
         this.ambiguousUnitList = ChineseNumericWithUnit.TemperatureAmbiguousValues;
+
+        this.ambiguousUnitNumberMultiplierRegex = RegExpUtility.getSafeRegExp(BaseUnits.AmbiguousUnitNumberMultiplierRegex, "gs");
     }
 }
 
 export class ChineseTemperatureParserConfiguration extends ChineseNumberWithUnitParserConfiguration {
     constructor(ci?: CultureInfo) {
-        if(!ci) {
+        if (!ci) {
             ci = new CultureInfo(Culture.Chinese);
         }
 

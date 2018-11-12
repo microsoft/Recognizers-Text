@@ -18,7 +18,7 @@
     "Input": "75 L",
     "Results": [
       {
-        "Text": "75 L",
+        "Text": "75 l",
         "TypeName": "dimension",
         "Resolution": {
           "value": "75",
