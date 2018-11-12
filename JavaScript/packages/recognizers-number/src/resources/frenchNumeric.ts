@@ -65,10 +65,10 @@ export namespace FrenchNumeric {
 	export const NonDecimalSeparatorChar = '.';
 	export const HalfADozenText = 'six';
 	export const WordSeparatorToken = 'et';
-	export const WrittenDecimalSeparatorTexts = [ 'virgule' ];
-	export const WrittenGroupSeparatorTexts = [ 'point','points' ];
-	export const WrittenIntegerSeparatorTexts = [ 'et','-' ];
-	export const WrittenFractionSeparatorTexts = [ 'et','sur' ];
+	export const WrittenDecimalSeparatorTexts = [ "virgule" ];
+	export const WrittenGroupSeparatorTexts = [ "point","points" ];
+	export const WrittenIntegerSeparatorTexts = [ "et","-" ];
+	export const WrittenFractionSeparatorTexts = [ "et","sur" ];
 	export const HalfADozenRegex = `(?<=\\b)+demi\\s+douzaine`;
 	export const DigitalNumberRegex = `((?<=\\b)(cent|mille|million|millions|milliard|milliards|billions|billion|douzaine(s)?)(?=\\b))|((?<=(\\d|\\b))${BaseNumbers.MultiplierLookupRegex}(?=\\b))`;
 	export const AmbiguousFractionConnectorsRegex = `^[.]`;

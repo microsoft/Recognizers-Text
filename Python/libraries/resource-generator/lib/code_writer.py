@@ -67,6 +67,7 @@ class ArrayWriter(CodeWriter):
 
         value_quote = '\'' if value_type=='string' else ''
         for value in entries:
+            value = value.replace('\'', '\\\'')
             self.entries.append(f'{value_quote}{value}{value_quote}')
     
     def write(self):

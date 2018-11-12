@@ -66,10 +66,10 @@ export namespace SpanishNumeric {
 	export const NonDecimalSeparatorChar = '.';
 	export const HalfADozenText = 'seis';
 	export const WordSeparatorToken = 'y';
-	export const WrittenDecimalSeparatorTexts = [ 'coma','con' ];
-	export const WrittenGroupSeparatorTexts = [ 'punto' ];
-	export const WrittenIntegerSeparatorTexts = [ 'y' ];
-	export const WrittenFractionSeparatorTexts = [ 'con' ];
+	export const WrittenDecimalSeparatorTexts = [ "coma","con" ];
+	export const WrittenGroupSeparatorTexts = [ "punto" ];
+	export const WrittenIntegerSeparatorTexts = [ "y" ];
+	export const WrittenFractionSeparatorTexts = [ "con" ];
 	export const HalfADozenRegex = `media\\s+docena`;
 	export const DigitalNumberRegex = `((?<=\\b)(mil|millones|mill[oó]n|billones|bill[oó]n|trillones|trill[oó]n|docenas?)(?=\\b))|((?<=(\\d|\\b))${BaseNumbers.MultiplierLookupRegex}(?=\\b))`;
 	export const CardinalNumberMap: ReadonlyMap<string, number> = new Map<string, number>([["cero", 0],["un", 1],["una", 1],["uno", 1],["dos", 2],["tres", 3],["cuatro", 4],["cinco", 5],["seis", 6],["siete", 7],["ocho", 8],["nueve", 9],["diez", 10],["once", 11],["doce", 12],["docena", 12],["docenas", 12],["trece", 13],["catorce", 14],["quince", 15],["dieciseis", 16],["dieciséis", 16],["diecisiete", 17],["dieciocho", 18],["diecinueve", 19],["veinte", 20],["ventiuna", 21],["ventiuno", 21],["veintiun", 21],["veintiún", 21],["veintiuno", 21],["veintiuna", 21],["veintidos", 22],["veintidós", 22],["veintitres", 23],["veintitrés", 23],["veinticuatro", 24],["veinticinco", 25],["veintiseis", 26],["veintiséis", 26],["veintisiete", 27],["veintiocho", 28],["veintinueve", 29],["treinta", 30],["cuarenta", 40],["cincuenta", 50],["sesenta", 60],["setenta", 70],["ochenta", 80],["noventa", 90],["cien", 100],["ciento", 100],["doscientas", 200],["doscientos", 200],["trescientas", 300],["trescientos", 300],["cuatrocientas", 400],["cuatrocientos", 400],["quinientas", 500],["quinientos", 500],["seiscientas", 600],["seiscientos", 600],["setecientas", 700],["setecientos", 700],["ochocientas", 800],["ochocientos", 800],["novecientas", 900],["novecientos", 900],["mil", 1000],["millon", 1000000],["millón", 1000000],["millones", 1000000],["billon", 1000000000000],["billón", 1000000000000],["billones", 1000000000000],["trillon", 1000000000000000000],["trillón", 1000000000000000000],["trillones", 1000000000000000000]]);

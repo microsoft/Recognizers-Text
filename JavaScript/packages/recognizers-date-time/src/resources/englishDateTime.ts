@@ -151,7 +151,7 @@ export namespace EnglishDateTime {
 	export const SpecificTimeOfDayRegex = `\\b((${StrictRelativeRegex}\\s+${TimeOfDayRegex})\\b|\\btonight)s?\\b`;
 	export const TimeFollowedUnit = `^\\s*${TimeUnitRegex}`;
 	export const TimeNumberCombinedWithUnit = `\\b(?<num>\\d+(\\.\\d*)?)${TimeUnitRegex}`;
-	export const BusinessHourSplitStrings = [ 'business','hour' ];
+	export const BusinessHourSplitStrings = [ "business","hour" ];
 	export const NowRegex = `\\b(?<now>(right\\s+)?now|as soon as possible|asap|recently|previously)\\b`;
 	export const SuffixRegex = `^\\s*(in the\\s+)?(morning|afternoon|evening|night)\\b`;
 	export const DateTimeTimeOfDayRegex = `\\b(?<timeOfDay>morning|afternoon|night|evening)\\b`;
@@ -250,12 +250,17 @@ export namespace EnglishDateTime {
 	export const WrittenDecades: ReadonlyMap<string, number> = new Map<string, number>([["hundreds", 0],["tens", 10],["twenties", 20],["thirties", 30],["forties", 40],["fifties", 50],["sixties", 60],["seventies", 70],["eighties", 80],["nineties", 90]]);
 	export const SpecialDecadeCases: ReadonlyMap<string, number> = new Map<string, number>([["noughties", 2000],["two thousands", 2000]]);
 	export const DefaultLanguageFallback = 'MDY';
-	export const SuperfluousWordList = [ 'preferably','how about','maybe','say','like' ];
-	export const DurationDateRestrictions = [ 'today','now' ];
+	export const SuperfluousWordList = [ "preferably","how about","maybe","say","like" ];
+	export const DurationDateRestrictions = [ "today","now" ];
 	export const AmbiguityFiltersDict: ReadonlyMap<string, string> = new Map<string, string>([["\\bmorning|afternoon|evening|night|day\\b", "\\b(good\\s+(morning|afternoon|evening|night|day))|(nighty\\s+night)\\b"],["\\bmay\\b", "\\b((^may i)|(i|you|he|she|we|they)\\s+may|(may\\s+((((also|not|(also not)|well)\\s+)?(be|contain|constitute|email|e-mail|take|have|result|involve|get|work|reply))|(or may not))))\\b"]]);
-	export const MorningTermList = [ 'morning' ];
-	export const AfternoonTermList = [ 'afternoon' ];
-	export const EveningTermList = [ 'evening' ];
-	export const DaytimeTermList = [ 'daytime' ];
-	export const NightTermList = [ 'night' ];
+	export const MorningTermList = [ "morning" ];
+	export const AfternoonTermList = [ "afternoon" ];
+	export const EveningTermList = [ "evening" ];
+	export const DaytimeTermList = [ "daytime" ];
+	export const NightTermList = [ "night" ];
+	export const SameDayTerms = [ "today" ];
+	export const PlusOneDayTerms = [ "tomorrow","tmr","day after" ];
+	export const MinusOneDayTerms = [ "yesterday","day before" ];
+	export const PlusTwoDayTerms = [ "day after tomorrow","day after tmr" ];
+	export const MinusTwoDayTerms = [ "day before yesterday" ];
 }

@@ -185,6 +185,9 @@ export namespace FrenchDateTime {
 	export const RelativeTimeUnitRegex = `((((${ThisPrefixRegex})?)\\s+(${TimeUnitRegex}(\\s*${NextSuffixRegex}|${PastSuffixRegex})?))|((le))\\s+(${RestrictedTimeUnitRegex}))`;
 	export const RelativeDurationUnitRegex = `(((?<=(${ThisPrefixRegex})\\s+)?\\b(${DurationUnitRegex})(\\s+${NextSuffixRegex}|${PastSuffixRegex})?)|((le|my))\\s+(${RestrictedTimeUnitRegex}))`;
 	export const ReferenceDatePeriodRegex = `^[.]`;
+	export const NextPrefixRegex = `^[\\.]`;
+	export const PastPrefixRegex = `^[\\.]`;
+	export const RelativeDayRegex = `^[\\.]`;
 	export const ConnectorRegex = `^(,|pour|t|vers)$`;
 	export const ConnectorAndRegex = `\\b(et\\s*(le|la(s)?)?)\\b.+`;
 	export const FromRegex = `((de|du)?)$`;
@@ -234,9 +237,14 @@ export namespace FrenchDateTime {
 	export const SpecialDecadeCases: ReadonlyMap<string, number> = new Map<string, number>([["", 0]]);
 	export const DefaultLanguageFallback = 'DMY';
 	export const DurationDateRestrictions = [  ];
-	export const MorningTermList = [ 'matinee','matin','matinée' ];
-	export const AfternoonTermList = [ 'apres-midi','apres midi','après midi','après-midi' ];
-	export const EveningTermList = [ 'soir','soiree','soirée' ];
-	export const DaytimeTermList = [ 'jour','journee','journée' ];
-	export const NightTermList = [ 'nuit' ];
+	export const MorningTermList = [ "matinee","matin","matinée" ];
+	export const AfternoonTermList = [ "apres-midi","apres midi","après midi","après-midi" ];
+	export const EveningTermList = [ "soir","soiree","soirée" ];
+	export const DaytimeTermList = [ "jour","journee","journée" ];
+	export const NightTermList = [ "nuit" ];
+	export const SameDayTerms = [ "aujourd'hui","auj" ];
+	export const PlusOneDayTerms = [ "demain","a2m1","lendemain","jour suivant" ];
+	export const MinusOneDayTerms = [ "hier","dernier" ];
+	export const PlusTwoDayTerms = [ "après demain","après-demain","apres-demain" ];
+	export const MinusTwoDayTerms = [ "avant-hier","avant hier" ];
 }

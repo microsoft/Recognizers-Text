@@ -86,10 +86,10 @@ export namespace EnglishNumeric {
 	export const NonDecimalSeparatorChar = ',';
 	export const HalfADozenText = 'six';
 	export const WordSeparatorToken = 'and';
-	export const WrittenDecimalSeparatorTexts = [ 'point' ];
-	export const WrittenGroupSeparatorTexts = [ 'punto' ];
-	export const WrittenIntegerSeparatorTexts = [ 'and' ];
-	export const WrittenFractionSeparatorTexts = [ 'and' ];
+	export const WrittenDecimalSeparatorTexts = [ "point" ];
+	export const WrittenGroupSeparatorTexts = [ "punto" ];
+	export const WrittenIntegerSeparatorTexts = [ "and" ];
+	export const WrittenFractionSeparatorTexts = [ "and" ];
 	export const HalfADozenRegex = `half\\s+a\\s+dozen`;
 	export const DigitalNumberRegex = `((?<=\\b)(hundred|thousand|million|billion|trillion|dozen(s)?)(?=\\b))|((?<=(\\d|\\b))${BaseNumbers.MultiplierLookupRegex}(?=\\b))`;
 	export const CardinalNumberMap: ReadonlyMap<string, number> = new Map<string, number>([["a", 1],["zero", 0],["an", 1],["one", 1],["two", 2],["three", 3],["four", 4],["five", 5],["six", 6],["seven", 7],["eight", 8],["nine", 9],["ten", 10],["eleven", 11],["twelve", 12],["dozen", 12],["dozens", 12],["thirteen", 13],["fourteen", 14],["fifteen", 15],["sixteen", 16],["seventeen", 17],["eighteen", 18],["nineteen", 19],["twenty", 20],["thirty", 30],["forty", 40],["fifty", 50],["sixty", 60],["seventy", 70],["eighty", 80],["ninety", 90],["hundred", 100],["thousand", 1000],["million", 1000000],["billion", 1000000000],["trillion", 1000000000000]]);

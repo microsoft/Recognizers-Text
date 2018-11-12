@@ -577,4 +577,9 @@ class EnglishDateTime:
     EveningTermList = ['evening']
     DaytimeTermList = ['daytime']
     NightTermList = ['night']
+    SameDayTerms = ['today']
+    PlusOneDayTerms = ['tomorrow', 'tmr', 'day after']
+    MinusOneDayTerms = ['yesterday', 'day before']
+    PlusTwoDayTerms = ['day after tomorrow', 'day after tmr']
+    MinusTwoDayTerms = ['day before yesterday']
 # pylint: enable=line-too-long

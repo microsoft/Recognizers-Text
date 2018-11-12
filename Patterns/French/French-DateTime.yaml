@@ -1024,7 +1024,7 @@ NightTermList: !list
 SameDayTerms: !list
   types: [ string ]
   entries: 
-    - aujourd'hui
+    - 'aujourd''hui'
     - auj
 PlusOneDayTerms: !list
   types: [ string ]

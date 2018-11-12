@@ -154,7 +154,8 @@ export class FrenchDateParserConfiguration implements IDateParserConfiguration {
         } else if (trimedText === "hier") {
             swift = -1;
         } else if (trimedText.endsWith("après demain") ||
-            trimedText.endsWith("après-demain")) {
+            trimedText.endsWith("après-demain") ||
+            trimedText.endsWith("apres-demain")) {
             swift = 2;
         } else if (trimedText.endsWith("avant-hier") ||
             trimedText.endsWith("avant hier")) {
