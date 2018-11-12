@@ -45,30 +45,32 @@ namespace Microsoft.Recognizers.Text.Utilities
             return query;
         }
 
-        static readonly string Tokens = @"(kB|K[Bb]|K|M[Bb]|M|G[Bb]|G|B)";
-        //static readonly string Expression = @"(?<=(\s|\b\d+))" + Tokens + @"\b";
-        static readonly string Expression = @"(?<=(\s|\d))" + Tokens + @"\b";
-        static readonly Regex SpecialTokensRegex = new Regex(Expression, RegexOptions.Compiled);
+        private static readonly string Expression = @"(?<=(\s|\d))(kB|K[Bb]|K|M[Bb]|M|G[Bb]|G|B)\b";
+        private static readonly Regex SpecialTokensRegex = new Regex(Expression, RegexOptions.Compiled);
 
-        private static void ApplyReverse(int idx, char[] str, string value)
+        private static void ReApplyValue(int idx, ref StringBuilder outString, string value)
         {
             for (int i = 0; i < value.Length; ++i)
             {
-                str[idx + i] = value[i];
+                outString[idx + i] = value[i];
             }
         }
 
         public static string ToLowerTermSensitive(string input)
         {
-            var result = input.ToLowerInvariant().ToCharArray();
+            var lowercase = input.ToLowerInvariant();
+            var buffer = new StringBuilder(lowercase);
+
+            var replaced = false;
 
             var matches = SpecialTokensRegex.Matches(input);
             foreach (Match m in matches)
             {
-                ApplyReverse(m.Index, result, m.Value);
+                ReApplyValue(m.Index, ref buffer, m.Value);
+                replaced = true;
             }
 
-            return new string(result);
+            return replaced ? buffer.ToString() : lowercase;
         }
 
         public static string RemoveDiacritics(string query)
