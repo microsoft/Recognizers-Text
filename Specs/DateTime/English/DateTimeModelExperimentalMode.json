@@ -6206,23 +6206,23 @@
     "NotSupportedByDesign": "java",
     "Results": [
       {
-<<<<<<< HEAD
-        "Text": "the day before",
-        "Start": 14,
-        "End": 27,
-        "TypeName": "datetimeV2.date",
+        "Text": "dec-2018",
+        "Start": 21,
+        "End": 28,
+        "TypeName": "datetimeV2.daterange",
         "Resolution": {
+          "values": [
             {
               "timex": "2018-12",
               "type": "daterange",
               "start": "2018-12-01",
               "end": "2019-01-01"
->>>>>>> upstream/master
             }
           ]
         }
       }
     ]
+  },
   {
     "Input": "What's your plan for Dec/2018",
     "Context": {
