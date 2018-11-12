@@ -652,4 +652,20 @@
       }
     ]
   }
+  ,
+  {
+    "Input": "70 °de",
+    "Results": [
+      {
+        "Text": "70 °de",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "70",
+          "unit": "D"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  }
 ]

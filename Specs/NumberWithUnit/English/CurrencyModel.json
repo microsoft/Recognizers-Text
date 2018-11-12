@@ -1768,5 +1768,100 @@
         "End": 20
       }
     ]
+  },
+  {
+    "Input": "100 ₡",
+    "Results": [
+      {
+        "Text": "100 ₡",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "100",
+          "unit": "Costa Rican colón",
+          "isoCurrency": "CRC"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "100₾",
+    "Results": [
+      {
+        "Text": "100₾",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "100",
+          "unit": "Georgian lari",
+          "isoCurrency": "GEL"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "100,000 ₭",
+    "Results": [
+      {
+        "Text": "100,000 ₭",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "100000",
+          "unit": "Lao kip",
+          "isoCurrency": "LAK"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "100,000 ரூ",
+    "Results": [
+      {
+        "Text": "100,000 ரூ",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "100000",
+          "unit": "Sri Lankan rupee",
+          "isoCurrency": "LKR"
+        },
+        "Start": 0,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "sen 100,000",
+    "Results": [
+      {
+        "Text": "sen 100,000",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "100000",
+          "unit": "Cent"
+        },
+        "Start": 0,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "u.s $ 100,000,000",
+    "Results": [
+      {
+        "Text": "u.s $ 100,000,000",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "100000000",
+          "unit": "United States dollar",
+          "isoCurrency": "USD"
+        },
+        "Start": 0,
+        "End": 16
+      }
+    ]
   }
 ]
