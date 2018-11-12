@@ -898,5 +898,105 @@
         }
       }
     ]
+  },
+  {
+    "Input": "What's your plan for Dec-2018",
+    "Context": {
+      "ReferenceDateTime": "2018-11-01T12:00:00"
+    },
+    "NotSupportedByDesign": "java",
+    "Results": [
+      {
+        "Text": "dec-2018",
+        "Start": 21,
+        "End": 28,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-12",
+              "type": "daterange",
+              "start": "2018-12-01",
+              "end": "2019-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "What's your plan for Dec/2018",
+    "Context": {
+      "ReferenceDateTime": "2018-11-01T12:00:00"
+    },
+    "NotSupportedByDesign": "java",
+    "Results": [
+      {
+        "Text": "dec/2018",
+        "Start": 21,
+        "End": 28,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-12",
+              "type": "daterange",
+              "start": "2018-12-01",
+              "end": "2019-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "What's your plan for Dec, 2018",
+    "Context": {
+      "ReferenceDateTime": "2018-11-01T12:00:00"
+    },
+    "NotSupportedByDesign": "java",
+    "Results": [
+      {
+        "Text": "dec, 2018",
+        "Start": 21,
+        "End": 29,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-12",
+              "type": "daterange",
+              "start": "2018-12-01",
+              "end": "2019-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "What's your plan for Dec/2018-May/2019",
+    "Context": {
+      "ReferenceDateTime": "2018-11-01T12:00:00"
+    },
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "dec/2018-may/2019",
+        "Start": 21,
+        "End": 37,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2018-12-01,2019-05-01,P5M)",
+              "type": "daterange",
+              "start": "2018-12-01",
+              "end": "2019-05-01"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

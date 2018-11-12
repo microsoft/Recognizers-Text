@@ -100,7 +100,7 @@ public abstract class BaseNumberRangeExtractor implements IExtractor {
 
     private Pair<Integer, Integer> getMatchedStartAndLength(Matcher match, String type, String source, int start, int length) {
 
-        Map<String, String> groupValues = RegExpUtility.getNamedGroups(match);
+        Map<String, String> groupValues = RegExpUtility.getNamedGroups(match, true);
         String numberStr1 = groupValues.containsKey("number1") ? groupValues.get("number1") : "";
         String numberStr2 = groupValues.containsKey("number2") ? groupValues.get("number2") : "";
 

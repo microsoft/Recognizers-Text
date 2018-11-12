@@ -15,7 +15,7 @@ public abstract class RegExpUtility {
     private static final Pattern matchGroupNames = Pattern.compile("\\(\\?<([a-zA-Z][a-zA-Z0-9]*)>", Pattern.CASE_INSENSITIVE);
     private static final Pattern matchPositiveLookbehind = Pattern.compile("\\(\\?<=", Pattern.CASE_INSENSITIVE);
     private static final Pattern matchNegativeLookbehind = Pattern.compile("\\(\\?<!", Pattern.CASE_INSENSITIVE);
-    private static final String groupNameIndexSep = "ii";
+    private static final String groupNameIndexSep = "iii";
     private static final String groupNameIndexSepRegex = Pattern.quote(groupNameIndexSep);
 
     public static Pattern getSafeRegExp(String source) {
@@ -28,12 +28,24 @@ public abstract class RegExpUtility {
     }
 
     public static Map<String, String> getNamedGroups(Matcher groupedMatcher) {
-        Map<String, String> matchedGroups = new HashMap<>();
+        return getNamedGroups(groupedMatcher, false);
+    }
+
+    public static Map<String, String> getNamedGroups(Matcher groupedMatcher, boolean sanitize) {
+        Map<String, String> matchedGroups = new LinkedHashMap<>();
         Matcher m = matchGroupNames.matcher(groupedMatcher.pattern().pattern());
         while (m.find()) {
             String groupName = m.group(1);
             String groupValue = groupedMatcher.group(groupName);
-            groupName = groupName.split(groupNameIndexSepRegex)[0];
+            if (sanitize && groupName.contains(groupNameIndexSep)) {
+                groupName = groupName.substring(0, groupName.lastIndexOf(groupNameIndexSep));
+            }
+
+            if (!groupName.contains(groupNameIndexSep)) {
+                groupName = groupName.replace("ii", "_");
+            }
+
+            //If matchedGroups previously contained a mapping for groupName, the old value is replaced.
             if (groupValue != null) {
                 matchedGroups.put(groupName, groupValue);
             }
@@ -120,7 +132,7 @@ public abstract class RegExpUtility {
 
     private static String sanitizeGroups(String source) {
         AtomicInteger index = new AtomicInteger(0);
-        String result = replace(source, matchGroup, (Matcher m) -> m.group(0).replace(m.group(1), m.group(1) + groupNameIndexSep + index.getAndIncrement()));
+        String result = replace(source, matchGroup, (Matcher m) -> m.group(0).replace(m.group(1), m.group(1).replace("_", "ii") + groupNameIndexSep + index.getAndIncrement()));
 
         index.set(0);
         result = replace(result, matchPositiveLookbehind, (Matcher m) -> String.format("(?<plb%s%s>", groupNameIndexSep, index.getAndIncrement()));
@@ -150,7 +162,7 @@ public abstract class RegExpUtility {
                         int length = match.group(key).length();
                         String value = source.substring(index, index + length);
 
-                        MatchGroup lastMatchGroup = groups.get(lastGroup);
+                        MatchGroup lastMatchGroup = groups.get(lastGroup.get());
                         groups.replace(lastGroup.get(), new MatchGroup(
                                 lastMatchGroup.value + value,
                                 lastMatchGroup.index,
@@ -164,7 +176,7 @@ public abstract class RegExpUtility {
 
                 if (key.startsWith("nlb")) return;
 
-                String groupKey = key.substring(0, key.lastIndexOf(groupNameIndexSep));
+                String groupKey = key.substring(0, key.lastIndexOf(groupNameIndexSep)).replace("ii", "_");
                 lastGroup.set(groupKey);
 
                 if (!groups.containsKey(groupKey)) {
@@ -176,7 +188,7 @@ public abstract class RegExpUtility {
                     int index = match.start() + match.group(0).indexOf(match.group(key));
                     int length = match.group(key).length();
                     String value = source.substring(index, index + length);
-                    List<String> captures = Arrays.asList(groups.get(groupKey).captures);
+                    List<String> captures = new ArrayList<>(Arrays.asList(groups.get(groupKey).captures));
                     captures.add(value);
 
                     groups.replace(groupKey, new MatchGroup(value, index, length, captures.toArray(new String[0])));

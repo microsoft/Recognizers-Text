@@ -7,6 +7,7 @@ import org.yaml.snakeyaml.Yaml;
 import org.yaml.snakeyaml.constructor.Constructor;
 
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Map;
@@ -36,7 +37,7 @@ public class CodeGenerator {
 
         // Read and Parse YAML
         Yaml yaml = new Yaml(constructor);
-        Map<String, Object> raw = (Map<String, Object>)yaml.load(new FileReader(yamlFilePath.toString()));
+        Map<String, Object> raw = yaml.load(new InputStreamReader(new FileInputStream(yamlFilePath.toString()), StandardCharsets.UTF_8));
 
         // Transform
         String[] lines = GenerateCodeLines(raw);
@@ -44,8 +45,7 @@ public class CodeGenerator {
         // Write to file
         BufferedWriter writer = null;
         try {
-            writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(outputFilePath.toFile()), "UTF-8"));
-
+            writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(outputFilePath.toString()), StandardCharsets.UTF_8));
             writer.write(headerComment);
             writer.newLine();
             writer.newLine();
@@ -98,6 +98,10 @@ public class CodeGenerator {
 
         if (token instanceof String) {
             return new DefaultWriter(tokenName, (String) token);
+        }
+
+        if (token instanceof Integer) {
+            return new IntegerWriter(tokenName, (int) token);
         }
 
         if (token instanceof ArrayList) {

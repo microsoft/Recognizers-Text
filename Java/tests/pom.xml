@@ -70,6 +70,12 @@
             <version>1.0-SNAPSHOT</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>com.microsoft.recognizers.text.datetime</groupId>
+            <artifactId>recognizers-text-date-time</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>

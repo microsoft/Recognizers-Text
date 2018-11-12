@@ -16,7 +16,7 @@ import com.google.common.collect.ImmutableMap;
 
 public class BaseCurrency {
 
-    public static final Map<String, String> CurrencyFractionMapping = ImmutableMap.<String, String>builder()
+    public static final ImmutableMap<String, String> CurrencyFractionMapping = ImmutableMap.<String, String>builder()
         .put("CNY", "FEN|JIAO")
         .put("__D", "CENT")
         .put("RUB", "KOPEK")
@@ -187,7 +187,7 @@ public class BaseCurrency {
         .put("ZMW", "NGWEE")
         .build();
 
-    public static final Map<String, Long> CurrencyFractionalRatios = ImmutableMap.<String, Long>builder()
+    public static final ImmutableMap<String, Long> CurrencyFractionalRatios = ImmutableMap.<String, Long>builder()
         .put("Kopek", 100L)
         .put("Pul", 100L)
         .put("Cent", 100L)
