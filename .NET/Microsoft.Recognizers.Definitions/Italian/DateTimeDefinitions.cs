@@ -69,6 +69,8 @@ namespace Microsoft.Recognizers.Definitions.Italian
 		public static readonly string WeekDayOfMonthRegex = $@"(?<wom>(la\s+)?(?<cardinal>prima|seconda|terza|quarta|quinta|ultima)\s+{WeekDayRegex}\s+{MonthSuffixRegex})";
 		public const string RelativeWeekDayRegex = @"^[.]";
 		public const string NumberEndingPattern = @"^[.]";
+		public const string NextPrefixRegex = @"^[.]";
+		public const string PastPrefixRegex = @"^[.]";
 		public static readonly string SpecialDate = $@"(?=\b(di|al)\s+il\s+){DayRegex}\b";
 		public static readonly string DateExtractor1 = $@"\b({WeekDayRegex}(\s+|\s*,\s*))?{MonthRegex}\s*[/\\\.\-]?\s*{DayRegex}\b";
 		public static readonly string DateExtractor2 = $@"\b({WeekDayRegex}(\s+|\s*,\s*))?{DayRegex}(\s+|\s*,\s*|\s+){MonthRegex}\s*[\.\-]?\s*{DateYearRegex}\b";
@@ -590,5 +592,10 @@ namespace Microsoft.Recognizers.Definitions.Italian
 		{
 			"nuit"
 		};
+		public static readonly string[] SameDayTerms = {  };
+		public static readonly string[] PlusOneDayTerms = {  };
+		public static readonly string[] MinusOneDayTerms = {  };
+		public static readonly string[] PlusTwoDayTerms = {  };
+		public static readonly string[] MinusTwoDayTerms = {  };
 	}
 }

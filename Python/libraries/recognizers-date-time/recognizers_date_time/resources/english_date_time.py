@@ -34,7 +34,7 @@ class EnglishDateTime:
     SingleWeekDayRegex = f'\\b(?<weekday>sunday|monday|tuesday|wednesday|thursday|friday|saturday|mon|tue|tues|wedn|weds|wed|thurs|thur|thu|fri|((?<=on\\s+)(sat|sun)))\\b'
     RelativeMonthRegex = f'(?<relmonth>(of\\s+)?{RelativeRegex}\\s+month)\\b'
     WrittenMonthRegex = f'(((the\\s+)?month of\\s+)?(?<month>april|apr|august|aug|december|dec|february|feb|january|jan|july|jul|june|jun|march|mar|may|november|nov|october|oct|september|sept|sep))'
-    MonthSuffixRegex = f'(?<msuf>(in\\s+|of\\s+|on\\s+)?({RelativeMonthRegex}|{WrittenMonthRegex}))'
+    MonthSuffixRegex = f'(?<msuf>((in|of|on)\\s+)?({RelativeMonthRegex}|{WrittenMonthRegex}))'
     DateUnitRegex = f'(?<unit>decades?|years?|months?|weeks?|(?<business>business\\s+)?days?)\\b'
     DateTokenPrefix = 'on '
     TimeTokenPrefix = 'at '
@@ -78,7 +78,7 @@ class EnglishDateTime:
     ThisRegex = f'\\b((this(\\s*week)?(\\s*on)?\\s+){WeekDayRegex})|({WeekDayRegex}((\\s+of)?\\s+this\\s*week))\\b'
     LastDateRegex = f'\\b({PastPrefixRegex}(\\s*week)?\\s+{WeekDayRegex})|({WeekDayRegex}(\\s+last\\s*week))\\b'
     NextDateRegex = f'\\b({NextPrefixRegex}(\\s*week(\\s*,?\\s*on)?)?\\s+{WeekDayRegex})|((on\\s+)?{WeekDayRegex}((\\s+of)?\\s+(the\\s+following|(the\\s+)?next)\\s*week))\\b'
-    SpecialDayRegex = f'\\b((the\\s+)?day before yesterday|(the\\s+)?day after (tomorrow|tmr)|((the\\s+)?({RelativeRegex}|my)\\s+day)|yesterday|tomorrow|tmr|today)\\b'
+    SpecialDayRegex = f'\\b((the\\s+)?day before yesterday|(the\\s+)?day after (tomorrow|tmr)|the\\s+day\\s+(before|after)(?!=\\s+day)|((the\\s+)?({RelativeRegex}|my)\\s+day)|yesterday|tomorrow|tmr|today)\\b'
     SpecialDayWithNumRegex = f'\\b((?<number>{WrittenNumRegex})\\s+days?\\s+from\\s+(?<day>yesterday|tomorrow|tmr|today))\\b'
     RelativeDayRegex = f'\\b(((the\\s+)?{RelativeRegex}\\s+day))\\b'
     SetWeekDayRegex = f'\\b(?<prefix>on\\s+)?(?<weekday>morning|afternoon|evening|night|sunday|monday|tuesday|wednesday|thursday|friday|saturday)s\\b'
@@ -577,4 +577,9 @@ class EnglishDateTime:
     EveningTermList = ['evening']
     DaytimeTermList = ['daytime']
     NightTermList = ['night']
+    SameDayTerms = ['today']
+    PlusOneDayTerms = ['tomorrow', 'tmr', 'day after']
+    MinusOneDayTerms = ['yesterday', 'day before']
+    PlusTwoDayTerms = ['day after tomorrow', 'day after tmr']
+    MinusTwoDayTerms = ['day before yesterday']
 # pylint: enable=line-too-long

@@ -120,16 +120,27 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
             ImplicitDateList = new List<Regex>
             {
+                // extract "12" from "on 12"
                 OnRegex,
+                // extract "12th" from "on/at/in 12th"
                 RelaxedOnRegex,
+                // "the day before yesterday", "previous day", "today", "yesterday", "tomorrow"
                 SpecialDayRegex,
+                // "this Monday", "Tuesday of this week"
                 ThisRegex,
+                // "last/previous Monday", "Monday of last week"
                 LastDateRegex,
+                // "next/following Monday", "Monday of next week"
                 NextDateRegex,
+                // "Sunday", "Weds"
                 SingleWeekDayRegex,
+                // "2nd Monday of April"
                 WeekDayOfMonthRegex,
+                // "on the 12th"
                 SpecialDate,
+                // "two days from today", "five days from tomorrow"
                 SpecialDayWithNumRegex,
+                // "three Monday from now"
                 RelativeWeekDayRegex
             };
 

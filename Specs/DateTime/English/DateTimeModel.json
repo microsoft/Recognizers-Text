@@ -8396,5 +8396,61 @@
         }
       }
     ]
+  },
+  {
+    "Input": "What happened the day before",
+    "Context": {
+      "ReferenceDateTime": "2018-11-08T12:00:00"
+    },
+    "NotSupportedByDesign": "java",
+    "Results": [
+      {
+        "Text": "the day before",
+        "Start": 14,
+        "End": 27,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-11-07",
+              "type": "date",
+              "value": "2018-11-07"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "What's your plan for the day after?",
+    "Context": {
+      "ReferenceDateTime": "2018-11-08T12:00:00"
+    },
+    "NotSupportedByDesign": "java",
+    "Results": [
+      {
+        "Text": "the day after",
+        "Start": 21,
+        "End": 33,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-11-09",
+              "type": "date",
+              "value": "2018-11-09"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I waited for news, day after day, expecting to hear.",
+    "Context": {
+      "ReferenceDateTime": "2018-11-08T12:00:00"
+    },
+    "NotSupportedByDesign": "java",
+    "Results": []
   }
 ]

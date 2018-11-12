@@ -418,4 +418,9 @@ class SpanishDateTime:
     AfternoonTermList = ['pasado mediodia', 'pasado el mediodia']
     EveningTermList = ['tarde']
     NightTermList = ['noche']
+    SameDayTerms = ['hoy', 'el dia']
+    PlusOneDayTerms = ['mañana', 'dia siguiente', 'el dia de mañana', 'proximo dia']
+    MinusOneDayTerms = ['ayer', 'ultimo dia']
+    PlusTwoDayTerms = ['pasado mañana', 'dia despues de mañana']
+    MinusTwoDayTerms = ['anteayer', 'dia antes de ayer']
 # pylint: enable=line-too-long

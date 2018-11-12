@@ -46,6 +46,9 @@ namespace Microsoft.Recognizers.Text.DateTime
         Regex RelativeMonthRegex { get; }
         Regex YearSuffix { get; }
         Regex RelativeWeekDayRegex { get; }
+        Regex RelativeDayRegex { get; }
+        Regex NextPrefixRegex { get; }
+        Regex PastPrefixRegex { get; }
 
         #endregion
 
@@ -58,11 +61,21 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         #endregion
 
-        int GetSwiftDay(string text);
+        #region Lists
+
+        IImmutableList<string> SameDayTerms { get; }
+        IImmutableList<string> PlusOneDayTerms { get; }
+        IImmutableList<string> MinusOneDayTerms { get; }
+        IImmutableList<string> PlusTwoDayTerms { get; }
+        IImmutableList<string> MinusTwoDayTerms { get; }
+
+        #endregion
 
         int GetSwiftMonth(string text);
 
         bool IsCardinalLast(string text);
+
+        string Normalize(string text);
 
         IDateTimeUtilityConfiguration UtilityConfiguration { get; }
     }

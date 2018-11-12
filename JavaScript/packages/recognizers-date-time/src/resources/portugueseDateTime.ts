@@ -217,9 +217,14 @@ export namespace PortugueseDateTime {
 	export const DefaultLanguageFallback = 'DMY';
 	export const DurationDateRestrictions = [  ];
 	export const AmbiguityFiltersDict: ReadonlyMap<string, string> = new Map<string, string>([["null", "null"]]);
-	export const EarlyMorningTermList = [ 'madrugada' ];
-	export const MorningTermList = [ 'manha','manhã' ];
-	export const AfternoonTermList = [ 'passado o meio dia','depois do meio dia' ];
-	export const EveningTermList = [ 'tarde' ];
-	export const NightTermList = [ 'noite' ];
+	export const EarlyMorningTermList = [ "madrugada" ];
+	export const MorningTermList = [ "manha","manhã" ];
+	export const AfternoonTermList = [ "passado o meio dia","depois do meio dia" ];
+	export const EveningTermList = [ "tarde" ];
+	export const NightTermList = [ "noite" ];
+	export const SameDayTerms = [ "hoje","este dia","esse dia","o dia" ];
+	export const PlusOneDayTerms = [ "amanha","de amanha","dia seguinte","o dia de amanha","proximo dia" ];
+	export const MinusOneDayTerms = [ "ontem","ultimo dia" ];
+	export const PlusTwoDayTerms = [ "depois de amanha","dia depois de amanha" ];
+	export const MinusTwoDayTerms = [ "anteontem","dia antes de ontem" ];
 }

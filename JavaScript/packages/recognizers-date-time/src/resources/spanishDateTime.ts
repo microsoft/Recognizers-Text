@@ -215,9 +215,14 @@ export namespace SpanishDateTime {
 	export const SpecialDecadeCases: ReadonlyMap<string, number> = new Map<string, number>([["", 0]]);
 	export const DefaultLanguageFallback = 'DMY';
 	export const DurationDateRestrictions = [  ];
-	export const EarlyMorningTermList = [ 'madrugada' ];
-	export const MorningTermList = [ 'mañana' ];
-	export const AfternoonTermList = [ 'pasado mediodia','pasado el mediodia' ];
-	export const EveningTermList = [ 'tarde' ];
-	export const NightTermList = [ 'noche' ];
+	export const EarlyMorningTermList = [ "madrugada" ];
+	export const MorningTermList = [ "mañana" ];
+	export const AfternoonTermList = [ "pasado mediodia","pasado el mediodia" ];
+	export const EveningTermList = [ "tarde" ];
+	export const NightTermList = [ "noche" ];
+	export const SameDayTerms = [ "hoy","el dia" ];
+	export const PlusOneDayTerms = [ "mañana","dia siguiente","el dia de mañana","proximo dia" ];
+	export const MinusOneDayTerms = [ "ayer","ultimo dia" ];
+	export const PlusTwoDayTerms = [ "pasado mañana","dia despues de mañana" ];
+	export const MinusTwoDayTerms = [ "anteayer","dia antes de ayer" ];
 }

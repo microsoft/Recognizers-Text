@@ -820,4 +820,31 @@ NightTermList: !list
   types: [ string ]
   entries: 
     - noche
+SameDayTerms: !list
+  types: [ string ]
+  entries: 
+    - hoy
+    - el dia
+PlusOneDayTerms: !list
+  types: [ string ]
+  entries: 
+    - mañana
+    - dia siguiente
+    - el dia de mañana
+    - proximo dia
+MinusOneDayTerms: !list
+  types: [ string ]
+  entries: 
+    - ayer
+    - ultimo dia
+PlusTwoDayTerms: !list
+  types: [ string ]
+  entries: 
+    - pasado mañana
+    - dia despues de mañana
+MinusTwoDayTerms: !list
+  types: [ string ]
+  entries: 
+    - anteayer
+    - dia antes de ayer
 ...

@@ -677,5 +677,26 @@ namespace Microsoft.Recognizers.Definitions.German
 		{
 			"nacht"
 		};
+		public static readonly IList<string> SameDayTerms = new List<string>
+		{
+			"heute"
+		};
+		public static readonly IList<string> PlusOneDayTerms = new List<string>
+		{
+			"morgen",
+			"tmr"
+		};
+		public static readonly IList<string> MinusOneDayTerms = new List<string>
+		{
+			"gestern"
+		};
+		public static readonly IList<string> PlusTwoDayTerms = new List<string>
+		{
+			"übermorgen"
+		};
+		public static readonly IList<string> MinusTwoDayTerms = new List<string>
+		{
+			"vorgestern"
+		};
 	}
 }

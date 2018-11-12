@@ -186,6 +186,9 @@ class FrenchDateTime:
     RelativeTimeUnitRegex = f'(((({ThisPrefixRegex})?)\\s+({TimeUnitRegex}(\\s*{NextSuffixRegex}|{PastSuffixRegex})?))|((le))\\s+({RestrictedTimeUnitRegex}))'
     RelativeDurationUnitRegex = f'(((?<=({ThisPrefixRegex})\\s+)?\\b({DurationUnitRegex})(\\s+{NextSuffixRegex}|{PastSuffixRegex})?)|((le|my))\\s+({RestrictedTimeUnitRegex}))'
     ReferenceDatePeriodRegex = f'^[.]'
+    NextPrefixRegex = f'^[\\.]'
+    PastPrefixRegex = f'^[\\.]'
+    RelativeDayRegex = f'^[\\.]'
     ConnectorRegex = f'^(,|pour|t|vers)$'
     ConnectorAndRegex = f'\\b(et\\s*(le|la(s)?)?)\\b.+'
     FromRegex = f'((de|du)?)$'
@@ -626,4 +629,9 @@ class FrenchDateTime:
     EveningTermList = ['soir', 'soiree', 'soirée']
     DaytimeTermList = ['jour', 'journee', 'journée']
     NightTermList = ['nuit']
+    SameDayTerms = ['aujourd\'hui', 'auj']
+    PlusOneDayTerms = ['demain', 'a2m1', 'lendemain', 'jour suivant']
+    MinusOneDayTerms = ['hier', 'dernier']
+    PlusTwoDayTerms = ['après demain', 'après-demain', 'apres-demain']
+    MinusTwoDayTerms = ['avant-hier', 'avant hier']
 # pylint: enable=line-too-long

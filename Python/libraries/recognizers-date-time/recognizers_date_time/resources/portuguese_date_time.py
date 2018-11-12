@@ -440,4 +440,9 @@ class PortugueseDateTime:
     AfternoonTermList = ['passado o meio dia', 'depois do meio dia']
     EveningTermList = ['tarde']
     NightTermList = ['noite']
+    SameDayTerms = ['hoje', 'este dia', 'esse dia', 'o dia']
+    PlusOneDayTerms = ['amanha', 'de amanha', 'dia seguinte', 'o dia de amanha', 'proximo dia']
+    MinusOneDayTerms = ['ontem', 'ultimo dia']
+    PlusTwoDayTerms = ['depois de amanha', 'dia depois de amanha']
+    MinusTwoDayTerms = ['anteontem', 'dia antes de ontem']
 # pylint: enable=line-too-long

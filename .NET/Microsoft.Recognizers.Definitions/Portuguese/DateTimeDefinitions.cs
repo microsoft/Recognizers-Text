@@ -507,5 +507,35 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
 		{
 			"noite"
 		};
+		public static readonly IList<string> SameDayTerms = new List<string>
+		{
+			"hoje",
+			"este dia",
+			"esse dia",
+			"o dia"
+		};
+		public static readonly IList<string> PlusOneDayTerms = new List<string>
+		{
+			"amanha",
+			"de amanha",
+			"dia seguinte",
+			"o dia de amanha",
+			"proximo dia"
+		};
+		public static readonly IList<string> MinusOneDayTerms = new List<string>
+		{
+			"ontem",
+			"ultimo dia"
+		};
+		public static readonly IList<string> PlusTwoDayTerms = new List<string>
+		{
+			"depois de amanha",
+			"dia depois de amanha"
+		};
+		public static readonly IList<string> MinusTwoDayTerms = new List<string>
+		{
+			"anteontem",
+			"dia antes de ontem"
+		};
 	}
 }

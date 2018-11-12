@@ -67,11 +67,11 @@ export namespace PortugueseNumeric {
 	export const NonDecimalSeparatorChar = '.';
 	export const HalfADozenText = 'seis';
 	export const WordSeparatorToken = 'e';
-	export const WrittenDecimalSeparatorTexts = [ 'virgula','vírgula' ];
-	export const WrittenGroupSeparatorTexts = [ 'ponto' ];
-	export const WrittenIntegerSeparatorTexts = [ 'e' ];
-	export const WrittenFractionSeparatorTexts = [ 'com' ];
-	export const WrittenFractionSuffix = [ 'avo','ava' ];
+	export const WrittenDecimalSeparatorTexts = [ "virgula","vírgula" ];
+	export const WrittenGroupSeparatorTexts = [ "ponto" ];
+	export const WrittenIntegerSeparatorTexts = [ "e" ];
+	export const WrittenFractionSeparatorTexts = [ "com" ];
+	export const WrittenFractionSuffix = [ "avo","ava" ];
 	export const PluralSuffix = 's';
 	export const HalfADozenRegex = `meia\\s+d[uú]zia`;
 	export const DigitalNumberRegex = `((?<=\\b)(mil|cem|milh[oõ]es|milh[aã]o|bilh[oõ]es|bilh[aã]o|trilh[oõ]es|trilh[aã]o|milhares|centena|centenas|dezena|dezenas?)(?=\\b))|((?<=(\\d|\\b))${BaseNumbers.MultiplierLookupRegex}(?=\\b))`;
