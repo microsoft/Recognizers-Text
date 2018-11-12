@@ -158,13 +158,30 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             var sourceLen = source.Length;
             var prefixMatched = false;
 
-            var nonUnitMatch = this.config.PmNonUnitRegex.Matches(source);
+            var nonUnitMatches = this.config.NonUnitRegex.Matches(source);
             var prefixMatch = prefixMatcher.Find(lowerSource).OrderBy(o => o.Start).ToList();
             var suffixMatch = suffixMatcher.Find(lowerSource).OrderBy(o => o.Start).ToList();
 
             if (prefixMatch.Count > 0 || suffixMatch.Count > 0)
             {
                 var numbers = this.config.UnitNumExtractor.Extract(source).OrderBy(o => o.Start);
+                
+                // Special case for cases where number multipliers clash with unit
+                var ambiguousMultiplierRegex = this.config.AmbiguousUnitNumberMultiplierRegex;
+                if (ambiguousMultiplierRegex != null)
+                {
+                    foreach (var number in numbers)
+                    {
+                        var match = ambiguousMultiplierRegex.Matches(number.Text);
+                        if (match.Count == 1)
+                        {
+                            var newLength = number.Text.Length - match[0].Length;
+                            number.Text = number.Text.Substring(0, newLength);
+                            number.Length = newLength;
+                        }
+                    }
+                }
+
                 foreach (var number in numbers)
                 {
                     if (number.Start == null || number.Length == null)
@@ -249,7 +266,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                             var isNotUnit = false;
                             if (er.Type.Equals(Constants.SYS_UNIT_DIMENSION))
                             {
-                                foreach (Match time in nonUnitMatch)
+                                foreach (Match time in nonUnitMatches)
                                 {
                                     if (er.Start >= time.Index && er.Start + er.Length <= time.Index + time.Length)
                                     {
@@ -284,7 +301,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             // Extract Separate unit
             if (separateRegex != null)
             {
-                ExtractSeparateUnits(source, result, nonUnitMatch);
+                ExtractSeparateUnits(source, result, nonUnitMatches);
 
                 // Remove common ambiguous cases
                 result = FilterAmbiguity(result, source);
@@ -293,7 +310,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             return result;
         }
 
-        public void ExtractSeparateUnits(string source, List<ExtractResult> numDependResults, MatchCollection nonUnitMatch)
+        public void ExtractSeparateUnits(string source, List<ExtractResult> numDependResults, MatchCollection nonUnitMatches)
         {
             // Default is false
             bool[] matchResult = new bool[source.Length];
@@ -333,8 +350,6 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                             var isNotUnit = false;
                             if (match.Value.Equals(Constants.AMBIGUOUS_TIME_TERM))
                             {
-                                var nonUnitMatches = this.config.NonUnitRegex.Matches(source);
-
                                 foreach (Match nonUnitMatch in nonUnitMatches)
                                 {
                                     if (IsMatchOverlap(match, nonUnitMatch))
