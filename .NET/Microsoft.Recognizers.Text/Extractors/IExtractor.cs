@@ -9,6 +9,19 @@ namespace Microsoft.Recognizers.Text
 
     public class ExtractResult
     {
+        public ExtractResult()
+        {
+
+        }
+
+        public ExtractResult(int start, int length, string text, string type)
+        {
+            Start = start;
+            Length = length;
+            Text = text;
+            Type = type;
+        }
+
         public int? Start { get; set; } = null;
         public int? Length { get; set; } = null;
         public string Text { get; set; } = null;

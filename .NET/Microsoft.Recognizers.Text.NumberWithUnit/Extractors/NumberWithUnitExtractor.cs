@@ -51,13 +51,9 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             StringMatcher matcher = new StringMatcher(MatchStrategy.TrieTree, new NumberWithUnitTokenizer());
             List<string> matcherList = new List<string>();
 
-            foreach (var mapping in collection)
-            {
-                foreach (var token in mapping.Split('|'))
-                {
-                    matcherList.Add(token);
-                }
-            }
+            matcherList = collection.SelectMany(words =>
+                words.Trim().Split('|').Where(word => !string.IsNullOrWhiteSpace(word)).Select(word => word.ToLower())
+                    .Distinct()).ToList();
 
             matcher.Init(matcherList);
 
@@ -157,13 +153,14 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                 return result;
             }
 
+            var lowerSource = source.ToLower();
             var mappingPrefix = new Dictionary<int, PrefixUnitResult>();
-            var matched = new bool[source.Length];
             var sourceLen = source.Length;
             var prefixMatched = false;
 
-            var prefixMatch = prefixMatcher.Find(source.ToLower()).OrderBy(o => o.Start).ToList();
-            var suffixMatch = suffixMatcher.Find(source.ToLower()).OrderBy(o => o.Start).ToList();
+            var nonUnitMatch = this.config.PmNonUnitRegex.Matches(source);
+            var prefixMatch = prefixMatcher.Find(lowerSource).OrderBy(o => o.Start).ToList();
+            var suffixMatch = suffixMatcher.Find(lowerSource).OrderBy(o => o.Start).ToList();
 
             if (prefixMatch.Count > 0 || suffixMatch.Count > 0)
             {
@@ -192,7 +189,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                                 break;
                             }
 
-                            if (m.Length > 0 && source.Substring(m.Start, lastIndex - m.Start).ToLower().Trim() ==
+                            if (m.Length > 0 && source.Substring(m.Start, lastIndex - m.Start).ToLower().Trim() == 
                                 m.Text)
                             {
                                 bestMatch = m;
@@ -220,33 +217,21 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                             if (m.Length > 0 && m.Start >= firstIndex)
                             {
                                 var endpos = m.Start + m.Length - firstIndex;
-                                var midStr = source.Substring(firstIndex, m.Start - firstIndex);
-
-                                if (maxlen < endpos &&
-                                    (string.IsNullOrWhiteSpace(midStr) || midStr.Trim().Equals(this.config.ConnectorToken)))
+                                if (maxlen < endpos)
                                 {
-                                    maxlen = endpos;
+                                    var midStr = source.Substring(firstIndex, m.Start - firstIndex);
+                                    if (string.IsNullOrWhiteSpace(midStr) || midStr.Trim().Equals(this.config.ConnectorToken))
+                                    {
+                                        maxlen = endpos;
+                                    }
                                 }
-
                             }
                         }
 
                         if (maxlen != 0)
                         {
-                            for (var i = 0; i < length + maxlen; i++)
-                            {
-                                matched[i + start] = true;
-                            }
-
                             var substr = source.Substring(start, length + maxlen);
-
-                            var er = new ExtractResult
-                            {
-                                Start = start,
-                                Length = length + maxlen,
-                                Text = substr,
-                                Type = this.config.ExtractType
-                            };
+                            var er = new ExtractResult(start, length + maxlen, substr, this.config.ExtractType);
 
                             if (prefixUnit != null)
                             {
@@ -264,8 +249,6 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                             var isNotUnit = false;
                             if (er.Type.Equals(Constants.SYS_UNIT_DIMENSION))
                             {
-                                var nonUnitMatch = this.config.PmNonUnitRegex.Matches(source);
-
                                 foreach (Match time in nonUnitMatch)
                                 {
                                     if (er.Start >= time.Index && er.Start + er.Length <= time.Index + time.Length)
@@ -287,14 +270,9 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
                     if (prefixUnit != null && !prefixMatched)
                     {
-                        var er = new ExtractResult
-                        {
-                            Start = number.Start - prefixUnit.Offset,
-                            Length = number.Length + prefixUnit.Offset,
-                            Text = prefixUnit.UnitStr + number.Text,
-                            Type = this.config.ExtractType
-                        };
-
+                        var er = new ExtractResult(number.Start.Value - prefixUnit.Offset, number.Length.Value + prefixUnit.Offset,
+                            prefixUnit.UnitStr + number.Text, this.config.ExtractType);
+                        
                         // Relative position will be used in Parser
                         number.Start = start - er.Start;
                         er.Data = number;
@@ -306,7 +284,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             // Extract Separate unit
             if (separateRegex != null)
             {
-                ExtractSeparateUnits(source, result);
+                ExtractSeparateUnits(source, result, nonUnitMatch);
 
                 // Remove common ambiguous cases
                 result = FilterAmbiguity(result, source);
@@ -315,7 +293,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             return result;
         }
 
-        public void ExtractSeparateUnits(string source, List<ExtractResult> numDependResults)
+        public void ExtractSeparateUnits(string source, List<ExtractResult> numDependResults, MatchCollection nonUnitMatch)
         {
             // Default is false
             bool[] matchResult = new bool[source.Length];
@@ -355,8 +333,6 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                             var isNotUnit = false;
                             if (match.Value.Equals(Constants.AMBIGUOUS_TIME_TERM))
                             {
-                                var nonUnitMatch = this.config.PmNonUnitRegex.Matches(source);
-
                                 foreach (Match time in nonUnitMatch)
                                 {
                                     if (DimensionInsideTime(match, time))
