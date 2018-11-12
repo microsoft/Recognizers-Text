@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Immutable;
+using System.Linq;
 using System.Text.RegularExpressions;
 
 using DateObject = System.DateTime;
@@ -166,7 +168,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             match = this.config.SpecialDayRegex.Match(trimmedText);
             if (match.Success && match.Index == 0 && match.Length == trimmedText.Length)
             {
-                var swift = this.config.GetSwiftDay(match.Value);
+                var swift = GetSwiftDay(match.Value);
 
                 var value = referenceDate.AddDays(swift);
 
@@ -181,7 +183,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             match = this.config.SpecialDayWithNumRegex.Match(trimmedText);
             if (match.Success && match.Index == 0 && match.Length == trimmedText.Length)
             {
-                var swift = this.config.GetSwiftDay(match.Groups["day"].Value);
+                var swift = GetSwiftDay(match.Groups["day"].Value);
                 var numErs = this.config.IntegerExtractor.Extract(trimmedText);
                 var numOfDays = Convert.ToInt32((double)(this.config.NumberParser.Parse(numErs[0]).Value ?? 0));
 
@@ -523,7 +525,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             return AgoLaterUtil.ParseDurationWithAgoAndLater(text, referenceDate,
                 config.DurationExtractor, config.DurationParser, config.UnitMap, config.UnitRegex,
-                config.UtilityConfiguration, config.GetSwiftDay);
+                config.UtilityConfiguration, GetSwiftDay);
         }
 
         // parse a regex match which includes 'day', 'month' and 'year' (optional) group
@@ -684,6 +686,76 @@ namespace Microsoft.Recognizers.Text.DateTime
         public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)
         {
             return candidateResults;
+        }
+
+        private int GetSwiftDay(string text)
+        {
+            var trimmedText = this.config.Normalize(text.Trim().ToLowerInvariant());
+            var swift = 0;
+
+            var match = this.config.RelativeDayRegex.Match(text);
+
+            // The sequence here is important
+            // As suffix "day before yesterday" should be matched before suffix "day before" or "yesterday"
+            if (config.SameDayTerms.Contains(trimmedText))
+            {
+                swift = 0;
+            }
+            else if (EndsWithTerms(trimmedText, config.PlusTwoDayTerms))
+            {
+                swift = 2;
+            }
+            else if (EndsWithTerms(trimmedText, config.MinusTwoDayTerms))
+            {
+                swift = -2;
+            }
+            else if (EndsWithTerms(trimmedText, config.PlusOneDayTerms))
+            {
+                swift = 1;
+            }
+            else if (EndsWithTerms(trimmedText, config.MinusOneDayTerms))
+            {
+                swift = -1;
+            }
+            else if (match.Success)
+            {
+                swift = GetSwift(text);
+            }
+
+            return swift;
+        }
+
+        private int GetSwift(string text)
+        {
+            var trimmedText = text.Trim().ToLowerInvariant();
+
+            var swift = 0;
+            if (this.config.NextPrefixRegex.IsMatch(trimmedText))
+            {
+                swift = 1;
+            }
+            else if (this.config.PastPrefixRegex.IsMatch(trimmedText))
+            {
+                swift = -1;
+            }
+
+            return swift;
+        }
+
+        private bool EndsWithTerms(string text, IImmutableList<string> terms)
+        {
+            var result = false;
+
+            foreach (var term in terms)
+            {
+                if (text.EndsWith(term))
+                {
+                    result = true;
+                    break;
+                }
+            }
+
+            return result;
         }
     }
 }

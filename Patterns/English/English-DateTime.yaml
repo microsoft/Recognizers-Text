@@ -981,4 +981,28 @@ NightTermList: !list
   types: [ string ]
   entries: 
     - night
+SameDayTerms: !list
+  types: [ string ]
+  entries: 
+    - today
+PlusOneDayTerms: !list
+  types: [ string ]
+  entries: 
+    - tomorrow
+    - tmr
+    - day after
+MinusOneDayTerms: !list
+  types: [ string ]
+  entries: 
+    - yesterday
+    - day before
+PlusTwoDayTerms: !list
+  types: [ string ]
+  entries: 
+    - day after tomorrow
+    - day after tmr
+MinusTwoDayTerms: !list
+  types: [ string ]
+  entries: 
+    - day before yesterday
 ...

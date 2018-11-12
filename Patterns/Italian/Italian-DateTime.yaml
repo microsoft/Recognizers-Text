@@ -136,6 +136,12 @@ RelativeWeekDayRegex: !simpleRegex
 NumberEndingPattern: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
+NextPrefixRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
+PastPrefixRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 SpecialDate: !nestedRegex
   def: (?=\b(di|al)\s+il\s+){DayRegex}\b
   references: [ DayRegex ]
@@ -899,4 +905,10 @@ NightTermList: !list
   types: [ string ]
   entries: 
     - nuit
+# TODO: modify below lists according to the counterpart in English
+SameDayTerms: []
+PlusOneDayTerms: []
+MinusOneDayTerms: []
+PlusTwoDayTerms: []
+MinusTwoDayTerms: []
 ...

@@ -449,6 +449,15 @@ RelativeDurationUnitRegex: !nestedRegex
 ReferenceDatePeriodRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
+NextPrefixRegex: !simpleRegex
+  # TODO: implement the relative day regex if needed. If yes, they should be abstracted
+  def: ^[\.]
+PastPrefixRegex: !simpleRegex
+  # TODO: implement the relative day regex if needed. If yes, they should be abstracted
+  def: ^[\.]
+RelativeDayRegex: !simpleRegex
+  # TODO: implement the relative day regex if needed. If yes, they should be abstracted
+  def: ^[\.]
 ConnectorRegex: !simpleRegex
   def: ^(,|pour|t|vers)$
 ConnectorAndRegex: !simpleRegex
@@ -1012,4 +1021,32 @@ NightTermList: !list
   types: [ string ]
   entries: 
     - nuit
+SameDayTerms: !list
+  types: [ string ]
+  entries: 
+    - aujourd'hui
+    - auj
+PlusOneDayTerms: !list
+  types: [ string ]
+  entries: 
+    - demain
+    - a2m1
+    - lendemain
+    - jour suivant
+MinusOneDayTerms: !list
+  types: [ string ]
+  entries: 
+    - hier
+    - dernier
+PlusTwoDayTerms: !list
+  types: [ string ]
+  entries: 
+    - après demain
+    - après-demain
+    - apres-demain
+MinusTwoDayTerms: !list
+  types: [ string ]
+  entries: 
+    - avant-hier
+    - avant hier
 ...

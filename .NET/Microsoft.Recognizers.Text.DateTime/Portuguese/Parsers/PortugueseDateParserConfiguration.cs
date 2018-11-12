@@ -60,12 +60,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public Regex RelativeWeekDayRegex { get; }
 
-        //TODO: implement the relative day regex if needed. If yes, they should be abstracted
-        public static readonly Regex RelativeDayRegex = new Regex("", RegexOptions.Singleline);
+        public Regex RelativeDayRegex { get; }
 
-        public static readonly Regex NextPrefixRegex = new Regex(DateTimeDefinitions.NextPrefixRegex, RegexOptions.Singleline);
+        public Regex NextPrefixRegex { get; }
 
-        public static readonly Regex PastPrefixRegex = new Regex(DateTimeDefinitions.PastPrefixRegex, RegexOptions.Singleline);
+        public Regex PastPrefixRegex { get; }
 
         public IImmutableDictionary<string, int> DayOfMonth { get; }
 
@@ -74,6 +73,16 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         public IImmutableDictionary<string, int> MonthOfYear { get; }
 
         public IImmutableDictionary<string, int> CardinalMap { get; }
+
+        public IImmutableList<string> SameDayTerms { get; }
+
+        public IImmutableList<string> PlusOneDayTerms { get; }
+
+        public IImmutableList<string> MinusOneDayTerms { get; }
+
+        public IImmutableList<string> PlusTwoDayTerms { get; }
+
+        public IImmutableList<string> MinusTwoDayTerms { get; }
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
@@ -96,6 +105,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             RelativeMonthRegex = PortugueseDateExtractorConfiguration.RelativeMonthRegex;
             YearSuffix = PortugueseDateExtractorConfiguration.YearSuffix;
             RelativeWeekDayRegex = PortugueseDateExtractorConfiguration.RelativeWeekDayRegex;
+            RelativeDayRegex = new Regex(DateTimeDefinitions.RelativeDayRegex, RegexOptions.Singleline);
+            NextPrefixRegex = new Regex(DateTimeDefinitions.NextPrefixRegex, RegexOptions.Singleline);
+            PastPrefixRegex = new Regex(DateTimeDefinitions.PastPrefixRegex, RegexOptions.Singleline);
             DayOfMonth = config.DayOfMonth;
             DayOfWeek = config.DayOfWeek;
             MonthOfYear = config.MonthOfYear;
@@ -109,46 +121,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             DurationParser = config.DurationParser;
             UnitMap = config.UnitMap;
             UtilityConfiguration = config.UtilityConfiguration;
-        }
-
-        public int GetSwiftDay(string text)
-        {
-            var trimmedText = text.Trim().ToLowerInvariant().Normalized();
-            var swift = 0;
-
-            //TODO: add the relative day logic if needed. If yes, the whole method should be abstracted.
-            if (trimmedText.Equals("hoje") || trimmedText.Equals("este dia") || trimmedText.Equals("esse dia") || trimmedText.Equals("o dia"))
-            {
-                swift = 0;
-            }
-            else if (trimmedText.Equals("amanha") ||
-                     trimmedText.Equals("de amanha") ||
-                     trimmedText.EndsWith("dia seguinte") ||
-                     trimmedText.EndsWith("o dia de amanha") ||
-                     trimmedText.EndsWith("proximo dia"))
-            {
-                swift = 1;
-            }
-            else if (trimmedText.Equals("ontem"))
-            {
-                swift = -1;
-            }
-            else if (trimmedText.EndsWith("depois de amanha") ||
-                     trimmedText.EndsWith("dia depois de amanha"))
-            {
-                swift = 2;
-            }
-            else if (trimmedText.EndsWith("anteontem") || 
-                     trimmedText.EndsWith("dia antes de ontem"))
-            {
-                swift = -2;
-            }
-            else if (trimmedText.EndsWith("ultimo dia"))
-            {
-                swift = -1;
-            }
-
-            return swift;
+            SameDayTerms = DateTimeDefinitions.SameDayTerms.ToImmutableList();
+            PlusOneDayTerms = DateTimeDefinitions.PlusOneDayTerms.ToImmutableList();
+            PlusTwoDayTerms = DateTimeDefinitions.PlusTwoDayTerms.ToImmutableList();
+            MinusOneDayTerms = DateTimeDefinitions.MinusOneDayTerms.ToImmutableList();
+            MinusTwoDayTerms = DateTimeDefinitions.MinusTwoDayTerms.ToImmutableList();
         }
 
         public int GetSwiftMonth(string text)
@@ -175,6 +152,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             return PastPrefixRegex.IsMatch(trimmedText);
         }
 
+        public string Normalize(string text)
+        {
+            return text.Normalized();
+        }
     }
 
     public static class StringExtension
