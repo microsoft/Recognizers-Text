@@ -4,6 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class OptionsParseDataResult {
-	public final double Score = 0;
-	public final List<OptionsOtherMatchParseResult> OtherMatches = new ArrayList<>();
+	public double score = 0;
+	public List<OptionsOtherMatchParseResult> otherMatches = new ArrayList<>();
+	public OptionsParseDataResult(double Score, List<OptionsOtherMatchParseResult> OtherMatches) {
+		score = Score;
+		otherMatches = OtherMatches;
+	}
 }

@@ -1,7 +1,7 @@
 package com.microsoft.recognizers.text.choice.config;
 
-import java.util.Dictionary;
+import java.util.Map;
 
-public interface IChoiceParserConfiguration<T> {
-	public Dictionary<String, T> getResolutions();
+public interface IChoiceParserConfiguration<T>{
+	public Map<String, Boolean> getResolutions();
 }

@@ -1,12 +1,12 @@
 package com.microsoft.recognizers.text.choice.config;
 
-import java.util.Dictionary;
+import java.util.Map;
 
-public class BooleanParserConfiguration implements IChoiceParserConfiguration<Boolean> {
-	public Dictionary<String, Boolean> Resolutions;
+public class BooleanParserConfiguration implements IChoiceParserConfiguration<Boolean>{
+	public Map<String,Boolean> Resolutions;
 
 	@Override
-	public Dictionary<String, Boolean> getResolutions() {
+	public Map<String,Boolean> getResolutions(){
 		return this.Resolutions;
 	}
 }
