@@ -657,7 +657,7 @@
     "Input": "Mijn internetverbindig is 500 Mb per seconde ",
     "Results": [
       {
-        "Text": "500 Mb",
+        "Text": "500 mb",
         "TypeName": "dimension",
         "Resolution": {
           "value": "500",
@@ -671,7 +671,7 @@
     "Input": "Dit bestand is wel driehonderd MB groot!",
     "Results": [
       {
-        "Text": "driehonderd MB",
+        "Text": "driehonderd mb",
         "TypeName": "dimension",
         "Resolution": {
           "value": "300",
@@ -685,7 +685,7 @@
     "Input": "Dit bestand is maar tweehonderd kB groot!",
     "Results": [
       {
-        "Text": "tweehonderd kB",
+        "Text": "tweehonderd kb",
         "TypeName": "dimension",
         "Resolution": {
           "value": "200",
@@ -700,7 +700,7 @@
     "Comment": "KB is also supported as it is a very common mistake seen in data we mined.",
     "Results": [
       {
-        "Text": "tweehonderd KB",
+        "Text": "tweehonderd kb",
         "TypeName": "dimension",
         "Resolution": {
           "value": "200",
@@ -839,7 +839,7 @@
         }
       },
       {
-        "Text": "Meter per seconde",
+        "Text": "meter per seconde",
         "TypeName": "dimension",
         "Resolution": {
           "unit": "Meter per second",
@@ -905,7 +905,7 @@
     "Input": "Een ha is gelijk aan tienduizend m²",
     "Results": [
       {
-        "Text": "Een ha",
+        "Text": "een ha",
         "TypeName": "dimension",
         "Resolution": {
           "value": "1",
@@ -927,7 +927,7 @@
     "Input": "Een are is gelijk aan honderd m2",
     "Results": [
       {
-        "Text": "Een are",
+        "Text": "een are",
         "TypeName": "dimension",
         "Resolution": {
           "value": "1",

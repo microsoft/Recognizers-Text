@@ -1,6 +1,7 @@
 package com.microsoft.recognizers.text.number.models;
 
 import com.microsoft.recognizers.text.*;
+import com.microsoft.recognizers.text.utilities.QueryProcessor;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -17,6 +18,10 @@ public abstract class AbstractNumberModel implements IModel {
 
     @Override
     public List<ModelResult> parse(String query) {
+
+        // Pre-process the query
+        query = QueryProcessor.preprocess(query, true);
+
         List<ParseResult> parsedNumbers = new ArrayList<ParseResult>();
 
         try {

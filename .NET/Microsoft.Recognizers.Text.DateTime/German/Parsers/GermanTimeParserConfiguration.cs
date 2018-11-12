@@ -18,17 +18,17 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         private static readonly Regex TimeSuffixFull =
             new Regex(
                 DateTimeDefinitions.TimeSuffixFull,
-                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+                RegexOptions.Singleline);
 
         private static readonly Regex LunchRegex =
             new Regex(
                 DateTimeDefinitions.LunchRegex,
-                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+                RegexOptions.Singleline);
 
         private static readonly Regex NightRegex =
             new Regex(
                 DateTimeDefinitions.NightRegex,
-                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+                RegexOptions.Singleline);
 
         public IEnumerable<Regex> TimeRegexes { get; }
 

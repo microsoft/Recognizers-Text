@@ -5,7 +5,7 @@ from recognizers_text.extractor import ExtractResult
 from ..base_datetime import BaseDateTimeParser
 from ..parsers import DateTimeParseResult
 from ..constants import TimeTypeConstants
-from ..utilities import FormatUtil, DateTimeResolutionResult, DateUtils
+from ..utilities import DateTimeFormatUtil, DateTimeResolutionResult, DateUtils
 from .datetime_parser_config import ChineseDateTimeParserConfiguration
 
 class ChineseDateTimeParser(BaseDateTimeParser):
@@ -27,8 +27,8 @@ class ChineseDateTimeParser(BaseDateTimeParser):
                 inner_result = self._parse_time_of_today(source.text, reference)
 
             if inner_result.success:
-                inner_result.future_resolution = {TimeTypeConstants.DATETIME: FormatUtil.format_date_time(inner_result.future_value)}
-                inner_result.past_resolution = {TimeTypeConstants.DATETIME: FormatUtil.format_date_time(inner_result.past_value)}
+                inner_result.future_resolution = {TimeTypeConstants.DATETIME: DateTimeFormatUtil.format_date_time(inner_result.future_value)}
+                inner_result.past_resolution = {TimeTypeConstants.DATETIME: DateTimeFormatUtil.format_date_time(inner_result.past_value)}
                 value = inner_result
 
         ret = DateTimeParseResult(source)
@@ -72,7 +72,7 @@ class ChineseDateTimeParser(BaseDateTimeParser):
         if time_str.endswith('ampm'):
             time_str = time_str[0:len(time_str)-4]
 
-        time_str = 'T' + FormatUtil.to_str(hour, 2) + time_str[3:]
+        time_str = 'T' + DateTimeFormatUtil.to_str(hour, 2) + time_str[3:]
         ret.timex = pr1.timex_str + time_str
 
         val = pr2.value
@@ -117,9 +117,9 @@ class ChineseDateTimeParser(BaseDateTimeParser):
             if time_str.endswith('ampm'):
                 time_str = time_str[0, len(time_str) - 4]
 
-            time_str = 'T' + FormatUtil.to_str(hour, 2) + time_str[3:]
+            time_str = 'T' + DateTimeFormatUtil.to_str(hour, 2) + time_str[3:]
 
-            ret.timex = FormatUtil.format_date(date) + time_str
+            ret.timex = DateTimeFormatUtil.format_date(date) + time_str
             ret.future_value = datetime(date.year, date.month, date.day, hour, minute, second)
             ret.past_value = ret.future_value
             ret.success = True

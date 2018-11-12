@@ -19,7 +19,7 @@ public class NumberWithUnitTest extends AbstractTest {
 
     @Parameterized.Parameters(name = "{0}")
     public static Collection<TestCase> testCases() {
-        return AbstractTest.enumerateTestCases(recognizerType);
+        return AbstractTest.enumerateTestCases(recognizerType, "Model");
     }
 
     public NumberWithUnitTest(TestCase currentCase) {

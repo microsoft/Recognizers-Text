@@ -20,7 +20,8 @@ public abstract class PortugueseNumberWithUnitExtractorConfiguration implements 
         this.cultureInfo = cultureInfo;
 
         this.unitNumExtractor = new NumberExtractor();
-        this.compoundUnitConnectorRegex = Pattern.compile(PortugueseNumericWithUnit.CompoundUnitConnectorRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS);
+        this.compoundUnitConnectorRegex =
+                Pattern.compile(PortugueseNumericWithUnit.CompoundUnitConnectorRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS);
     }
 
     public CultureInfo getCultureInfo() { return this.cultureInfo; }
@@ -29,6 +30,7 @@ public abstract class PortugueseNumberWithUnitExtractorConfiguration implements 
     public String getBuildSuffix() { return PortugueseNumericWithUnit.BuildSuffix; }
     public String getConnectorToken() { return PortugueseNumericWithUnit.ConnectorToken; }
     public Pattern getCompoundUnitConnectorRegex() { return this.compoundUnitConnectorRegex; }
+    public Pattern getAmbiguousUnitNumberMultiplierRegex() { return null; }
 
     public abstract String getExtractType();
     public abstract Map<String, String> getSuffixList();

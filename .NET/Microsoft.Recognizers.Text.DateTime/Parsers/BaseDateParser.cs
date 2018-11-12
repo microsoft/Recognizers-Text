@@ -63,12 +63,12 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     innerResult.FutureResolution = new Dictionary<string, string>
                     {
-                        {TimeTypeConstants.DATE, FormatUtil.FormatDate((DateObject) innerResult.FutureValue)}
+                        {TimeTypeConstants.DATE, DateTimeFormatUtil.FormatDate((DateObject) innerResult.FutureValue)}
                     };
 
                     innerResult.PastResolution = new Dictionary<string, string>
                     {
-                        {TimeTypeConstants.DATE, FormatUtil.FormatDate((DateObject) innerResult.PastValue)}
+                        {TimeTypeConstants.DATE, DateTimeFormatUtil.FormatDate((DateObject) innerResult.PastValue)}
                     };
 
                     value = innerResult;
@@ -130,10 +130,10 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var dayStr = match.Groups["day"].Value.ToLower();
                 var day = this.config.DayOfMonth[dayStr];
 
-                ret.Timex = FormatUtil.LuisDate(-1, -1, day);
+                ret.Timex = DateTimeFormatUtil.LuisDate(-1, -1, day);
 
                 DateObject futureDate, pastDate;
-                var tryStr = FormatUtil.LuisDate(year, month, day);
+                var tryStr = DateTimeFormatUtil.LuisDate(year, month, day);
                 if (DateObject.TryParse(tryStr, out DateObject _))
                 {
                     futureDate = DateObject.MinValue.SafeCreateFromValue(year, month, day);
@@ -170,7 +170,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 var value = referenceDate.AddDays(swift);
 
-                ret.Timex = FormatUtil.LuisDate(value);
+                ret.Timex = DateTimeFormatUtil.LuisDate(value);
                 ret.FutureValue = ret.PastValue = value;
                 ret.Success = true;
 
@@ -187,7 +187,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 var value = referenceDate.AddDays(numOfDays + swift);
 
-                ret.Timex = FormatUtil.LuisDate(value);
+                ret.Timex = DateTimeFormatUtil.LuisDate(value);
                 ret.FutureValue = ret.PastValue = value;
                 ret.Success = true;
 
@@ -214,7 +214,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     value = value.Next((DayOfWeek)this.config.DayOfWeek[weekdayStr]);
                 }
 
-                ret.Timex = FormatUtil.LuisDate(value);
+                ret.Timex = DateTimeFormatUtil.LuisDate(value);
                 ret.FutureValue = ret.PastValue = value;
                 ret.Success = true;
 
@@ -228,7 +228,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var weekdayStr = match.Groups["weekday"].Value.ToLower();
                 var value = referenceDate.Next((DayOfWeek)this.config.DayOfWeek[weekdayStr]);
 
-                ret.Timex = FormatUtil.LuisDate(value);
+                ret.Timex = DateTimeFormatUtil.LuisDate(value);
                 ret.FutureValue = ret.PastValue = value;
                 ret.Success = true;
 
@@ -242,7 +242,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var weekdayStr = match.Groups["weekday"].Value.ToLower();
                 var value = referenceDate.This((DayOfWeek)this.config.DayOfWeek[weekdayStr]);
 
-                ret.Timex = FormatUtil.LuisDate(value);
+                ret.Timex = DateTimeFormatUtil.LuisDate(value);
                 ret.FutureValue = ret.PastValue = value;
                 ret.Success = true;
 
@@ -256,7 +256,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var weekdayStr = match.Groups["weekday"].Value.ToLower();
                 var value = referenceDate.Last((DayOfWeek)this.config.DayOfWeek[weekdayStr]);
 
-                ret.Timex = FormatUtil.LuisDate(value);
+                ret.Timex = DateTimeFormatUtil.LuisDate(value);
                 ret.FutureValue = ret.PastValue = value;
                 ret.Success = true;
 
@@ -318,10 +318,10 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 day = Convert.ToInt32((double)(this.config.NumberParser.Parse(er).Value ?? 0));
 
-                ret.Timex = FormatUtil.LuisDate(-1, -1, day);
+                ret.Timex = DateTimeFormatUtil.LuisDate(-1, -1, day);
 
                 DateObject futureDate;
-                var tryStr = FormatUtil.LuisDate(year, month, day);
+                var tryStr = DateTimeFormatUtil.LuisDate(year, month, day);
                 if (DateObject.TryParse(tryStr, out DateObject _))
                 {
                     futureDate = DateObject.MinValue.SafeCreateFromValue(year, month, day);
@@ -355,7 +355,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var day = Convert.ToInt32((double)(this.config.NumberParser.Parse(erTmp).Value ?? 0));
                 
                 // the validity of the phrase is guaranteed in the Date Extractor
-                ret.Timex = FormatUtil.LuisDate(year, month, day);
+                ret.Timex = DateTimeFormatUtil.LuisDate(year, month, day);
                 ret.FutureValue = new DateObject(year, month, day); ;
                 ret.PastValue = new DateObject(year, month, day); ;
                 ret.Success = true;
@@ -451,7 +451,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if (ambiguous)
             {
-                ret.Timex = FormatUtil.LuisDate(-1, month, day);
+                ret.Timex = DateTimeFormatUtil.LuisDate(-1, month, day);
                 if (futureDate < referenceDate)
                 {
                     futureDate = futureDate.AddYears(+1);
@@ -464,7 +464,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
             else
             {
-                ret.Timex = FormatUtil.LuisDate(year, month, day);
+                ret.Timex = DateTimeFormatUtil.LuisDate(year, month, day);
             }
 
             ret.FutureValue = futureDate;
@@ -496,7 +496,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             day = Convert.ToInt32((double)(this.config.NumberParser.Parse(er[0]).Value ?? 0));
 
             // for LUIS format value string
-            ret.Timex = FormatUtil.LuisDate(-1, -1, day);
+            ret.Timex = DateTimeFormatUtil.LuisDate(-1, -1, day);
             var pastDate = DateObject.MinValue.SafeCreateFromValue(year, month, day);
             var futureDate = DateObject.MinValue.SafeCreateFromValue(year, month, day);
 
@@ -558,12 +558,12 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (year == 0)
             {
                 year = referenceDate.Year;
-                ret.Timex = FormatUtil.LuisDate(-1, month, day);
+                ret.Timex = DateTimeFormatUtil.LuisDate(-1, month, day);
                 noYear = true;
             }
             else
             {
-                ret.Timex = FormatUtil.LuisDate(year, month, day);
+                ret.Timex = DateTimeFormatUtil.LuisDate(year, month, day);
             }
 
             var futureDate = DateObject.MinValue.SafeCreateFromValue(year, month, day);

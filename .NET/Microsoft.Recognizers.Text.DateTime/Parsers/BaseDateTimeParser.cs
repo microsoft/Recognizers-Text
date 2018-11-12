@@ -51,12 +51,12 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     innerResult.FutureResolution = new Dictionary<string, string>
                     {
-                        {TimeTypeConstants.DATETIME, FormatUtil.FormatDateTime((DateObject) innerResult.FutureValue)}
+                        {TimeTypeConstants.DATETIME, DateTimeFormatUtil.FormatDateTime((DateObject) innerResult.FutureValue)}
                     };
 
                     innerResult.PastResolution = new Dictionary<string, string>
                     {
-                        {TimeTypeConstants.DATETIME, FormatUtil.FormatDateTime((DateObject) innerResult.PastValue)}
+                        {TimeTypeConstants.DATETIME, DateTimeFormatUtil.FormatDateTime((DateObject) innerResult.PastValue)}
                     };
 
                     value = innerResult;
@@ -320,7 +320,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
                 timeStr = "T" + hour.ToString("D2") + timeStr.Substring(3);
 
-                ret.Timex = FormatUtil.FormatDate(date) + timeStr;
+                ret.Timex = DateTimeFormatUtil.FormatDate(date) + timeStr;
                 ret.FutureValue = ret.PastValue = DateObject.MinValue.SafeCreateFromValue(date.Year, date.Month, date.Day, hour, min, sec);
                 ret.Success = true;
                 return ret;

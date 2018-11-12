@@ -184,7 +184,7 @@ CurrencySuffixList: !dictionary
 #Espanha -> Euro + old peseta
     Peseta: peseta|pesetas|pts.|ptas.|esp
 #Estados Unidos
-    Dólar estadunidense: dólar dos estados unidos|dolar dos estados unidos|dólar estadunidense|dólar americano|dólares dos estados unidos|dolares dos estados unidos|dólares estadunidenses|dólares americanos|dolar estadunidense|dolar americano|dolares estadunidenses|dolares americanos|usd|u$d|us$
+    Dólar estadunidense: dólar dos estados unidos|dolar dos estados unidos|dólar estadunidense|dólar americano|dólares dos estados unidos|dolares dos estados unidos|dólares estadunidenses|dólares americanos|dolar estadunidense|dolar americano|dolares estadunidenses|dolares americanos|usd|u$d|us$|usd$
 #Estônia -> Euro + old crown
     Coroa estoniana: coroa estoniana|coroas estonianas|eek
     Senti estoniano: senti estoniano|senti estonianos
@@ -216,7 +216,7 @@ CurrencySuffixList: !dictionary
 #Guernsey
     Libra de Guernsey: libra de Guernsey|libras de Guernsey|ggp
     Peni de Guernsey: peni de Guernsey|penies de Guernsey
-#Guiné #@HERE
+#Guiné
     Franco da Guiné: franco da guiné|franco da guine| franco guineense|francos da guiné|francos da guine|francos guineense|gnf|fg
     Centavo da Guiné: cêntimo guineense|centimo guineense|centavo guineense|cêntimos guineenses|centimos guineenses|centavos guineenses
 #Guiana
@@ -510,7 +510,7 @@ CurrencyPrefixList: !dictionary
   types: [ string, string ]
   entries:
     Dólar: $
-    Dólar estadunidense: us$|u$d|usd
+    Dólar estadunidense: us$|u$d|usd$|usd
     Dólar do Caribe Oriental: ec$|xcd
     Dólar australiano: a$|aud
     Dólar bahamense: b$|bsd
@@ -638,7 +638,7 @@ AmbiguousSpeedUnitList: !list
 TemperatureSuffixList: !dictionary
   types: [ string, string ]
   entries:
-    Kelvin: k|kelvin
+    Kelvin: k|K|kelvin
     Grau Rankine: r|°r|°ra|grau rankine|graus rankine| rankine
     Grau Celsius: °c|grau c|grau celsius|graus c|graus celsius|celsius|grau centígrado|grau centrigrado|graus centígrados|graus centigrados|centígrado|centígrados|centigrado|centigrados
     Grau Fahrenheit: °f|grau f|graus f|grau fahrenheit|graus fahrenheit|fahrenheit

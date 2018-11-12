@@ -11,7 +11,7 @@ import { SpanishDateTimeExtractorConfiguration } from "./dateTimeConfiguration";
 import { SpanishDurationExtractorConfiguration } from "./durationConfiguration";
 import { SpanishDateTime } from "../../resources/spanishDateTime";
 import { SpanishTimeExtractorConfiguration } from "./timeConfiguration";
-import { DateTimeResolutionResult, DateUtils, FormatUtil } from "../utilities";
+import { DateTimeResolutionResult, DateUtils, DateTimeFormatUtil } from "../utilities";
 import { BaseTimePeriodExtractor } from "../baseTimePeriod";
 import { SpanishTimePeriodExtractorConfiguration } from "./timePeriodConfiguration";
 

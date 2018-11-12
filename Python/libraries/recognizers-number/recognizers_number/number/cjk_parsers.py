@@ -131,7 +131,7 @@ class CJKNumberParser(BaseNumberParser):
             result = self.ord_parse(simplified_source)
 
         if result is not None:
-            result.text = source.text
+            result.text = source.text.lower()
 
         return result
 

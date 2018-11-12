@@ -60,6 +60,7 @@
                         <argument>libraries/recognizers-text-number/resource-definitions.json</argument>
                         <argument>libraries/recognizers-text-number-with-unit/resource-definitions.json</argument>
                         <argument>libraries/recognizers-text-choice/resource-definitions.json</argument>
+                        <argument>libraries/recognizers-text-date-time/resource-definitions.json</argument>
                     </arguments>
                 </configuration>
             </plugin>

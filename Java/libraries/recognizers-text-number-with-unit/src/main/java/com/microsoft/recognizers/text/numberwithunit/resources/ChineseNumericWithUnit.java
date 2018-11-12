@@ -18,7 +18,7 @@ public class ChineseNumericWithUnit {
 
     public static final List<String> AgeAmbiguousValues = Arrays.asList("岁");
 
-    public static final Map<String, String> AgeSuffixList = ImmutableMap.<String, String>builder()
+    public static final ImmutableMap<String, String> AgeSuffixList = ImmutableMap.<String, String>builder()
         .put("Year", "岁|周岁")
         .put("Month", "个月大|月大")
         .put("Week", "周大")
@@ -31,7 +31,7 @@ public class ChineseNumericWithUnit {
 
     public static final String ConnectorToken = "";
 
-    public static final Map<String, String> CurrencySuffixList = ImmutableMap.<String, String>builder()
+    public static final ImmutableMap<String, String> CurrencySuffixList = ImmutableMap.<String, String>builder()
         .put("Afghan afghani", "阿富汗尼")
         .put("Pul", "普尔")
         .put("Euro", "欧元")
@@ -245,7 +245,7 @@ public class ChineseNumericWithUnit {
         .put("Penni", "盆尼")
         .build();
 
-    public static final Map<String, String> CurrencyNameToIsoCodeMap = ImmutableMap.<String, String>builder()
+    public static final ImmutableMap<String, String> CurrencyNameToIsoCodeMap = ImmutableMap.<String, String>builder()
         .put("Afghan afghani", "AFN")
         .put("Euro", "EUR")
         .put("Albanian lek", "ALL")
@@ -433,7 +433,7 @@ public class ChineseNumericWithUnit {
         .put("Abkhazian apsar", "_AA")
         .build();
 
-    public static final Map<String, String> FractionalUnitNameToCodeMap = ImmutableMap.<String, String>builder()
+    public static final ImmutableMap<String, String> FractionalUnitNameToCodeMap = ImmutableMap.<String, String>builder()
         .put("Jiao", "JIAO")
         .put("Kopek", "KOPEK")
         .put("Pul", "PUL")
@@ -511,7 +511,7 @@ public class ChineseNumericWithUnit {
 
     public static final String CompoundUnitConnectorRegex = "(?<spacer>又|再)";
 
-    public static final Map<String, String> CurrencyPrefixList = ImmutableMap.<String, String>builder()
+    public static final ImmutableMap<String, String> CurrencyPrefixList = ImmutableMap.<String, String>builder()
         .put("Dollar", "$")
         .put("United States dollar", "us$")
         .put("British Virgin Islands dollar", "bvi$")
@@ -538,7 +538,7 @@ public class ChineseNumericWithUnit {
 
     public static final List<String> CurrencyAmbiguousValues = Arrays.asList("元", "仙", "分", "圆", "块", "毛", "盾", "箍", "蚊", "角");
 
-    public static final Map<String, String> DimensionSuffixList = ImmutableMap.<String, String>builder()
+    public static final ImmutableMap<String, String> DimensionSuffixList = ImmutableMap.<String, String>builder()
         .put("Meter", "米|公尺|m")
         .put("Kilometer", "千米|公里|km")
         .put("Decimeter", "分米|公寸|dm")
@@ -605,15 +605,15 @@ public class ChineseNumericWithUnit {
 
     public static final List<String> DimensionAmbiguousValues = Arrays.asList("丈", "位", "克", "分", "升", "寸", "尺", "斗", "斤", "桶", "毫", "石", "码", "磅", "米", "罐", "里", "m", "km", "dm", "cm", "mm", "l", "ml", "kg", "mg", "g", "t", "b", "byte", "kb", "mb", "gb", "tb", "pb");
 
-    public static final Map<String, String> TemperatureSuffixList = ImmutableMap.<String, String>builder()
+    public static final ImmutableMap<String, String> TemperatureSuffixList = ImmutableMap.<String, String>builder()
         .put("F", "华氏温度|华氏度|°f")
-        .put("K", "k|开尔文温度|开氏度|凯氏度")
+        .put("K", "开尔文温度|开氏度|凯氏度|K|k")
         .put("R", "兰氏温度|°r")
         .put("C", "摄氏温度|摄氏度|°c")
         .put("Degree", "度")
         .build();
 
-    public static final Map<String, String> TemperaturePrefixList = ImmutableMap.<String, String>builder()
+    public static final ImmutableMap<String, String> TemperaturePrefixList = ImmutableMap.<String, String>builder()
         .put("F", "华氏温度|华氏")
         .put("K", "开氏温度|开氏")
         .put("R", "兰氏温度|兰氏")

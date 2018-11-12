@@ -3,7 +3,7 @@ from datetime import datetime
 from recognizers_text.utilities import RegExpUtility
 from ...resources.french_date_time import FrenchDateTime
 from ..base_time import BaseTimeParser
-from ..utilities import DateTimeResolutionResult, FormatUtil, DateUtils
+from ..utilities import DateTimeResolutionResult, DateTimeFormatUtil, DateUtils
 
 class FrenchTimeParser(BaseTimeParser):
     def internal_parser(self, source: str, reference: datetime) -> DateTimeResolutionResult:
@@ -24,7 +24,7 @@ class FrenchTimeParser(BaseTimeParser):
             if hour_str:
                 hour = int(hour_str)
 
-            result.timex = 'T' + FormatUtil.to_str(hour, 2)
+            result.timex = 'T' + DateTimeFormatUtil.to_str(hour, 2)
             result.future_value = result.past_value = DateUtils.safe_create_from_min_value(reference.year, reference.month, reference.day, hour, 0, 0)
             result.success = True
 

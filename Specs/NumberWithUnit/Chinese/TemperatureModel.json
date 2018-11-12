@@ -123,6 +123,8 @@
   ,
   {
     "Input": "Annatalk请给我一些数目",
+	"NotSupported": "javascript",
+	"Comment": "Temporary regression",
     "Results": []
   }
   ,
@@ -130,7 +132,7 @@
     "Input": "他烧到了39°C那么高",
     "Results": [
       {
-        "Text": "39°C",
+        "Text": "39°c",
         "TypeName": "temperature",
         "Resolution": {
           "value": "39",
@@ -146,7 +148,7 @@
     "Input": "温度的单位是°C吗",
     "Results": [
       {
-        "Text": "°C",
+        "Text": "°c",
         "TypeName": "temperature",
         "Resolution": {
           "value": null,

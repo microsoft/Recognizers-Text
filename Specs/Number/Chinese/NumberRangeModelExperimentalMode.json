@@ -124,7 +124,7 @@
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "1000以上， 1500以下",
+        "Text": "1000以上, 1500以下",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(1000,1500)"
@@ -139,7 +139,7 @@
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "比四分之一大， 比二分之一小",
+        "Text": "比四分之一大, 比二分之一小",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(0.25,0.5)"
@@ -169,7 +169,7 @@
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "大于或者等于４，５６５",
+        "Text": "大于或者等于4,565",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[4565,)"

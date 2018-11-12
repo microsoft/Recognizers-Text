@@ -102,6 +102,6 @@ public abstract class BaseNumberExtractor implements IExtractor {
                 ? BaseNumbers.IntegerRegexDefinition(placeholder, thousandsMark)
                 : BaseNumbers.DoubleRegexDefinition(placeholder, thousandsMark, decimalsMark);
 
-        return Pattern.compile(regexDefinition, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS);
+        return Pattern.compile(regexDefinition, Pattern.UNICODE_CHARACTER_CLASS);
     }
 }

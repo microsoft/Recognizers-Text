@@ -111,6 +111,8 @@ export class BaseNumberParser implements IParser {
             ret.resolutionStr = this.config.cultureInfo
                 ? this.config.cultureInfo.format(ret.value)
                 : ret.value.toString();
+
+            ret.text = ret.text.toLowerCase();
         }
 
         return ret;

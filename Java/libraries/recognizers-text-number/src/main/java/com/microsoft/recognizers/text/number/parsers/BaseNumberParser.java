@@ -5,7 +5,7 @@ import com.microsoft.recognizers.text.ExtractResult;
 import com.microsoft.recognizers.text.IParser;
 import com.microsoft.recognizers.text.ParseResult;
 import com.microsoft.recognizers.text.number.Constants;
-import com.microsoft.recognizers.text.utilities.FormatUtility;
+import com.microsoft.recognizers.text.utilities.QueryProcessor;
 
 import java.util.*;
 import java.util.regex.Matcher;
@@ -109,6 +109,11 @@ public class BaseNumberParser implements IParser {
             ret = ret.withResolutionStr(resolutionStr);
         }
 
+        if (ret != null)
+        {
+            ret = ret.withText(ret.text.toLowerCase(Locale.ROOT));
+        }
+
         return ret;
     }
 
@@ -119,14 +124,9 @@ public class BaseNumberParser implements IParser {
      * @return
      */
     protected ParseResult digitNumberParse(ExtractResult extractResult) {
-        ParseResult result = new ParseResult(
-                extractResult.start,
-                extractResult.length,
-                extractResult.text,
-                extractResult.type,
-                null,
-                null,
-                null);
+
+        ParseResult result = new ParseResult(extractResult.start, extractResult.length, extractResult.text,
+                                             extractResult.type,null,null,null);
 
         //[1] 24
         //[2] 12 32/33
@@ -134,7 +134,7 @@ public class BaseNumberParser implements IParser {
         //[4] 234.567
         //[5] 44/55
         //[6] 2 hundred
-        //dot occured.
+        //dot occurred.
         double power = 1;
         String handle = extractResult.text.toLowerCase();
         Matcher match = config.getDigitalNumberRegex().matcher(handle);
@@ -148,13 +148,13 @@ public class BaseNumberParser implements IParser {
             power *= rep;
 
             while ((tmpIndex = handle.indexOf(matched.toLowerCase(), startIndex)) >= 0) {
-                String front = FormatUtility.trimEnd(handle.substring(0, tmpIndex));
+                String front = QueryProcessor.trimEnd(handle.substring(0, tmpIndex));
                 startIndex = front.length();
                 handle = front + handle.substring(tmpIndex + matched.length());
             }
         }
 
-        //scale used in the calculate of double
+        // Scale used in the calculate of double
         result = result.withValue(getDigitalValue(handle, power));
 
         return result;
@@ -292,7 +292,7 @@ public class BaseNumberParser implements IParser {
         handle = config.getHalfADozenRegex().matcher(handle).replaceAll(config.getHalfADozenText());
         //endregion
 
-        List<String> numGroup = FormatUtility.split(handle, config.getWrittenDecimalSeparatorTexts());
+        List<String> numGroup = QueryProcessor.split(handle, config.getWrittenDecimalSeparatorTexts());
 
         //region IntegerPart
         String intPart = numGroup.get(0);

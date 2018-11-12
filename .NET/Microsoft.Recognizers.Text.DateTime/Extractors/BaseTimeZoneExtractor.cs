@@ -27,7 +27,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             var tokens = new List<Token>();
 
-            var normalizedText = FormatUtility.RemoveDiacritics(text);
+            var normalizedText = QueryProcessor.RemoveDiacritics(text);
 
             tokens.AddRange(MatchTimeZones(normalizedText));
             tokens.AddRange(MatchLocationTimes(normalizedText));

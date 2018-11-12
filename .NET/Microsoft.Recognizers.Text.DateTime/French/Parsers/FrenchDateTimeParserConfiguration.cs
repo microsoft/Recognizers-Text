@@ -39,10 +39,10 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public Regex PMTimeRegex => PmTimeRegex;
 
         public static readonly Regex AmTimeRegex =
-            new Regex(DateTimeDefinitions.AMTimeRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.AMTimeRegex, RegexOptions.Singleline);
 
         public static readonly Regex PmTimeRegex =
-            new Regex(DateTimeDefinitions.PMTimeRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.PMTimeRegex, RegexOptions.Singleline);
 
         public Regex SimpleTimeOfTodayAfterRegex { get; }
 
