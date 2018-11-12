@@ -2,6 +2,7 @@ package com.microsoft.recognizers.text.utilities;
 
 import org.javatuples.Pair;
 
+import java.math.BigDecimal;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -17,6 +18,15 @@ public abstract class RegExpUtility {
     private static final Pattern matchNegativeLookbehind = Pattern.compile("\\(\\?<!", Pattern.CASE_INSENSITIVE);
     private static final String groupNameIndexSep = "iii";
     private static final String groupNameIndexSepRegex = Pattern.quote(groupNameIndexSep);
+
+    private static final boolean unboundedLookBehindNotSupported = isRestrictedJavaVersion();
+
+    private static final Pattern lookBehindCheckRegex = Pattern.compile("(\\?<[!=][^)]+)([+*])");
+    private static final Map<String, String> bindings = new HashMap<String, String>(){{
+
+        put("+", "{1,10}");
+        put("*", "{0,10}");
+    }};
 
     public static Pattern getSafeRegExp(String source) {
         return getSafeRegExp(source, 0);
@@ -45,7 +55,7 @@ public abstract class RegExpUtility {
                 groupName = groupName.replace("ii", "_");
             }
 
-            //If matchedGroups previously contained a mapping for groupName, the old value is replaced.
+            // If matchedGroups previously contained a mapping for groupName, the old value is replaced.
             if (groupValue != null) {
                 matchedGroups.put(groupName, groupValue);
             }
@@ -131,14 +141,41 @@ public abstract class RegExpUtility {
     }
 
     private static String sanitizeGroups(String source) {
+
+        String result = source;
+
         AtomicInteger index = new AtomicInteger(0);
-        String result = replace(source, matchGroup, (Matcher m) -> m.group(0).replace(m.group(1), m.group(1).replace("_", "ii") + groupNameIndexSep + index.getAndIncrement()));
+        result = replace(result, matchGroup, (Matcher m) -> m.group(0).replace(m.group(1), m.group(1).replace("_", "ii") + groupNameIndexSep + index.getAndIncrement()));
 
         index.set(0);
         result = replace(result, matchPositiveLookbehind, (Matcher m) -> String.format("(?<plb%s%s>", groupNameIndexSep, index.getAndIncrement()));
 
         index.set(0);
         result = replace(result, matchNegativeLookbehind, (Matcher m) -> String.format("(?<nlb%s%s>", groupNameIndexSep, index.getAndIncrement()));
+
+        return result;
+    }
+
+    public static Pattern getSafeLookbehindRegExp(String source, int flags) {
+
+        String result = source;
+
+        // Java pre 1.9 doesn't support unbounded lookbehind lengths
+        if (unboundedLookBehindNotSupported) {
+             //result = bindLookbehinds(result);
+        }
+
+        return Pattern.compile(result, flags);
+    }
+
+    private static String bindLookbehinds(String regex) {
+
+        String result = regex;
+
+        Matcher matcher = lookBehindCheckRegex.matcher(regex);
+        if (matcher.find()) {
+            result = matcher.replaceAll(matcher.group(1) + bindings.get(matcher.group(2)));
+        }
 
         return result;
     }
@@ -262,5 +299,34 @@ public abstract class RegExpUtility {
         regexMatcher.appendTail(resultString);
 
         return resultString.toString();
+    }
+
+    // Checks if Java version is <= 8, as they don't support look-behind groups with no maximum length.
+    private static boolean isRestrictedJavaVersion() {
+
+        boolean result = false;
+        BigDecimal targetVersion = new BigDecimal( "1.8" );
+
+        try {
+            String specVersion = System.getProperty("java.specification.version");
+            result = new BigDecimal( specVersion ).compareTo( targetVersion ) >= 0;
+        } catch (Exception e) {
+            // Nothing to do, ignore.
+        }
+
+        try {
+            // Could also be "java.version", but runtime has more info.
+            String runtimeVersion = System.getProperty("java.runtime.version");
+            result = new BigDecimal( runtimeVersion ).compareTo( targetVersion ) >= 0;
+
+        } catch (Exception e) {
+            // Nothing to do, ignore.
+        }
+
+        if (result) {
+            System.out.println("WARN: Look-behind groups with no maximum length not supported. Java version <= 8.");
+        }
+
+        return result;
     }
 }
