@@ -180,7 +180,7 @@ public class GermanNumeric {
     public static final String DigitalNumberRegex = "((?<=\\b)(hundert|tausend|million(en)?|mio|milliarde(n)?|mrd|billion(en)?|dutzend(e)?)(?=\\b))|((?<=(\\d|\\b)){BaseNumbers.MultiplierLookupRegex}(?=\\b))"
             .replace("{BaseNumbers.MultiplierLookupRegex}", BaseNumbers.MultiplierLookupRegex);
 
-    public static final Map<String, Long> CardinalNumberMap = ImmutableMap.<String, Long>builder()
+    public static final ImmutableMap<String, Long> CardinalNumberMap = ImmutableMap.<String, Long>builder()
         .put("ein", 1L)
         .put("null", 0L)
         .put("eine", 1L)
@@ -231,7 +231,7 @@ public class GermanNumeric {
         .put("billionen", 1000000000000L)
         .build();
 
-    public static final Map<String, Long> OrdinalNumberMap = ImmutableMap.<String, Long>builder()
+    public static final ImmutableMap<String, Long> OrdinalNumberMap = ImmutableMap.<String, Long>builder()
         .put("zuerst", 1L)
         .put("erst", 1L)
         .put("erster", 1L)
@@ -452,7 +452,7 @@ public class GermanNumeric {
         .put("billionstel", 1000000000000L)
         .build();
 
-    public static final Map<String, Long> RoundNumberMap = ImmutableMap.<String, Long>builder()
+    public static final ImmutableMap<String, Long> RoundNumberMap = ImmutableMap.<String, Long>builder()
         .put("hundert", 100L)
         .put("tausend", 1000L)
         .put("million", 1000000L)

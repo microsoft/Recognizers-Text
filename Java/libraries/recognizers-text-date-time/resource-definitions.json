@@ -1,0 +1,99 @@
+{
+  "outputPath": "libraries/recognizers-text-date-time/src/main/java/com/microsoft/recognizers/text/datetime/resources/",
+  "configFiles": [
+    {
+      "input": [ "Base-DateTime" ],
+      "output": "BaseDateTime",
+      "header": [
+        "package com.microsoft.recognizers.text.datetime.resources;",
+        "",
+        "import java.util.Map;",
+        "",
+        "import com.google.common.collect.ImmutableMap;",
+        "",
+        "public class BaseDateTime {"
+      ],
+      "footer": [ "}" ]
+    },
+    {
+      "input": [ "English", "English-DateTime" ],
+      "output": "EnglishDateTime",
+      "header": [
+        "package com.microsoft.recognizers.text.datetime.resources;",
+        "",
+        "import java.util.Arrays;",
+        "import java.util.List;",
+        "import java.util.Map;",
+        "",
+        "import com.google.common.collect.ImmutableMap;",
+        "",
+        "public class EnglishDateTime {"
+      ],
+      "footer": [ "}" ]
+    },
+    {
+      "input": [ "Spanish", "Spanish-DateTime" ],
+      "output": "SpanishDateTime",
+      "header": [
+        "package com.microsoft.recognizers.text.datetime.resources;",
+        "",
+        "import java.util.Arrays;",
+        "import java.util.List;",
+        "import java.util.Map;",
+        "",
+        "import com.google.common.collect.ImmutableMap;",
+        "",
+        "public class SpanishDateTime {"
+      ],
+      "footer": [ "}" ]
+    },
+    {
+      "input": [ "Portuguese", "Portuguese-DateTime" ],
+      "output": "PortugueseDateTime",
+      "header": [
+        "package com.microsoft.recognizers.text.datetime.resources;",
+        "",
+        "import java.util.Arrays;",
+        "import java.util.List;",
+        "import java.util.Map;",
+        "",
+        "import com.google.common.collect.ImmutableMap;",
+        "",
+        "public class PortugueseDateTime {"
+      ],
+      "footer": [ "}" ]
+    },
+    {
+      "input": [ "Chinese", "Chinese-DateTime" ],
+      "output": "ChineseDateTime",
+      "header": [
+        "package com.microsoft.recognizers.text.datetime.resources;",
+        "",
+        "import java.util.Arrays;",
+        "import java.util.List;",
+        "import java.util.Map;",
+        "",
+        "import com.google.common.collect.ImmutableMap;",
+        "",
+        "public class ChineseDateTime {"
+      ],
+      "footer": [ "}" ]
+    },
+    {
+      "input": [ "French", "French-DateTime" ],
+      "output": "FrenchDateTime",
+      "header": [
+        "package com.microsoft.recognizers.text.datetime.resources;",
+        "",
+        "import java.util.Arrays;",
+        "import java.util.List;",
+        "import java.util.Map;",
+        "",
+        "import com.google.common.collect.ImmutableMap;",
+        "",
+        "public class FrenchDateTime {"
+      ],
+      "footer": [ "}" ]
+    }
+  ]
+}
