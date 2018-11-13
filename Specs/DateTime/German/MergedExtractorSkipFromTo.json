@@ -171,11 +171,15 @@
     "Results": [
       {
         "Text": "16. März 2017",
-        "Type": "date"
+        "Type": "date",
+        "Start": 28,
+        "Length": 13
       },
       {
         "Text": "heute um 2 Uhr Nachmittags",
-        "Type": "datetime"
+        "Type": "datetime",
+        "Start": 92,
+        "Length": 26
       }
     ]
   }
