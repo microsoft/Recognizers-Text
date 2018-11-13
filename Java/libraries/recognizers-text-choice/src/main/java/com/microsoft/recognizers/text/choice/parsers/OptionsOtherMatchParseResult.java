@@ -1,12 +1,14 @@
 package com.microsoft.recognizers.text.choice.parsers;
 
 public class OptionsOtherMatchParseResult {
-	public double score = 0;
-	public String text = "";
-	public Object value = null;
-	public OptionsOtherMatchParseResult(String Text, Object Value, double Score) {
-		score = Score;
-		text = Text;
-		value = Value;
-	}
+
+    public final double score;
+    public final String text;
+    public final Object value;
+
+    public OptionsOtherMatchParseResult(String parseResultText, Object parseResultValue, double parseResultScore) {
+        score = parseResultScore;
+        text = parseResultText;
+        value = parseResultValue;
+    }
 }
