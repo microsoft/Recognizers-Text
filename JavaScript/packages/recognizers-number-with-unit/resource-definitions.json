@@ -2,6 +2,14 @@
     "outputPath": "./src/resources/",
     "configFiles": [
         {
+            "input": [ "Base-Units" ],
+            "output": "baseUnits",
+            "header": [
+                "export namespace BaseUnits {"
+            ],
+            "footer": [ "}" ]
+        },
+        {
             "input": [ "Base-Numbers" ],
             "output": "baseNumbers",
             "header": [

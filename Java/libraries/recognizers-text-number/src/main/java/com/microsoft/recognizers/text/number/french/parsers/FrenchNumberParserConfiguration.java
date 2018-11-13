@@ -93,8 +93,8 @@ public class FrenchNumberParserConfiguration extends BaseNumberParserConfigurati
         ImmutableMap.Builder builder = new ImmutableMap.Builder()
                 .putAll(FrenchNumeric.OrdinalNumberMap);
 
-        FrenchNumeric.SufixOrdinalDictionary.forEach((sufixKey, sufixValue) ->
-                FrenchNumeric.PrefixCardinalDictionary.forEach((prefixKey, prefixValue) ->
+        FrenchNumeric.SuffixOrdinalMap.forEach((sufixKey, sufixValue) ->
+                FrenchNumeric.PrefixCardinalMap.forEach((prefixKey, prefixValue) ->
                         builder.put(prefixKey + sufixKey, prefixValue * sufixValue)));
 
         return builder.build();

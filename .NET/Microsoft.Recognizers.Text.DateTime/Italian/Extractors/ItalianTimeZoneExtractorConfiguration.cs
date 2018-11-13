@@ -17,7 +17,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public IEnumerable<Regex> TimeZoneRegexes => TimeZoneRegexList;
         public Regex LocationTimeSuffixRegex { get; } = null;
-        public StringMatcher CityMatcher { get; } = new StringMatcher();
+        public StringMatcher LocationMatcher { get; } = new StringMatcher();
         public List<string> AmbiguousTimezoneList => new List<string>();
     }
 }

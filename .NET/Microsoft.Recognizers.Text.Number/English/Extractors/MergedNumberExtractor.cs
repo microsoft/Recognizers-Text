@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Concurrent;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Concurrent;
 using System.Text.RegularExpressions;
+
 using Microsoft.Recognizers.Definitions.English;
 
 namespace Microsoft.Recognizers.Text.Number.English
@@ -35,10 +33,10 @@ namespace Microsoft.Recognizers.Text.Number.English
         public MergedNumberExtractor(NumberMode mode, NumberOptions options)
         {
             NumberExtractor = English.NumberExtractor.GetInstance(mode, options);
-            RoundNumberIntegerRegexWithLocks = new Regex(NumbersDefinitions.RoundNumberIntegerRegexWithLocks,
-                RegexOptions.IgnoreCase | RegexOptions.Singleline);
-            ConnectorRegex = new Regex(NumbersDefinitions.ConnectorRegex,
-                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            RoundNumberIntegerRegexWithLocks = 
+                new Regex(NumbersDefinitions.RoundNumberIntegerRegexWithLocks, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            ConnectorRegex = 
+                new Regex(NumbersDefinitions.ConnectorRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
         }
     }
 }

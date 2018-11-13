@@ -208,7 +208,7 @@
     ]
   },
   {
-    "Input": "Ich bin vom 1. Januar bis zum Mittwoch den 22. Januar weg",
+    "Input": "Ich bin vom 1. Januar bis Mittwoch den 22. Januar weg",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -925,7 +925,7 @@
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "zweitausender",
+        "Text": "Die zweitausender",
         "Type": "daterange",
         "Value": {
           "Timex": "(2000-01-01,2010-01-01,P10Y)",
@@ -938,8 +938,8 @@
             "endDate": "2010-01-01"
           }
         },
-        "Start": 4,
-        "Length": 13
+        "Start": 0,
+        "Length": 17
       }
     ]
   },
@@ -1159,7 +1159,7 @@
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "2016  /05",
+        "Text": "2016 /05",
         "Type": "daterange",
         "Value": {
           "Timex": "2016-05",
@@ -1173,7 +1173,7 @@
           }
         },
         "Start": 10,
-        "Length": 9
+        "Length": 8
       }
     ]
   },
@@ -1185,7 +1185,7 @@
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "05/  2016",
+        "Text": "05/ 2016",
         "Type": "daterange",
         "Value": {
           "Timex": "2016-05",
@@ -1199,7 +1199,7 @@
           }
         },
         "Start": 10,
-        "Length": 9
+        "Length": 8
       }
     ]
   },

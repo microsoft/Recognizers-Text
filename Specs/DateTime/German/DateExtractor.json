@@ -25,6 +25,9 @@
   },
   {
     "Input": "Ich komme am Dienstag den 12. Januar 2016 zurück",
+    "Context": {
+      "ReferenceDateTime": "2016-01-01T00:00:00"
+    },
     "NotSupported": "javascript, python",
     "Results": [
       {

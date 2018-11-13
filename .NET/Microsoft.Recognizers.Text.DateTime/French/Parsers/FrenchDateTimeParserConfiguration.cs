@@ -34,9 +34,15 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public Regex NowRegex { get; }
 
-        public Regex AMTimeRegex { get; }
+        public Regex AMTimeRegex => AmTimeRegex;
 
-        public Regex PMTimeRegex { get; }
+        public Regex PMTimeRegex => PmTimeRegex;
+
+        public static readonly Regex AmTimeRegex =
+            new Regex(DateTimeDefinitions.AMTimeRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex PmTimeRegex =
+            new Regex(DateTimeDefinitions.PMTimeRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public Regex SimpleTimeOfTodayAfterRegex { get; }
 
@@ -60,20 +66,24 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         {
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
             TokenBeforeTime = DateTimeDefinitions.TokenBeforeTime;
+
             DateExtractor = config.DateExtractor;
             TimeExtractor = config.TimeExtractor;
+
             DateParser = config.DateParser;
             TimeParser = config.TimeParser;
+
             NowRegex = FrenchDateTimeExtractorConfiguration.NowRegex;
-            AMTimeRegex = new Regex(DateTimeDefinitions.AMTimeRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
-            PMTimeRegex = new Regex(DateTimeDefinitions.PMTimeRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
             SimpleTimeOfTodayAfterRegex = FrenchDateTimeExtractorConfiguration.SimpleTimeOfTodayAfterRegex;
             SimpleTimeOfTodayBeforeRegex = FrenchDateTimeExtractorConfiguration.SimpleTimeOfTodayBeforeRegex;
             SpecificTimeOfDayRegex = FrenchDateTimeExtractorConfiguration.SpecificTimeOfDayRegex;
             TheEndOfRegex = FrenchDateTimeExtractorConfiguration.TheEndOfRegex;
             UnitRegex = FrenchTimeExtractorConfiguration.TimeUnitRegex;
             DateNumberConnectorRegex = FrenchDateTimeExtractorConfiguration.DateNumberConnectorRegex;
+
             Numbers = config.Numbers;
+
             CardinalExtractor = config.CardinalExtractor;
             IntegerExtractor = config.IntegerExtractor;
             NumberParser = config.NumberParser;
@@ -87,8 +97,10 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public int GetHour(string text, int hour)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
             int result = hour;
+
+            var trimmedText = text.Trim().ToLowerInvariant();
+            
             if (trimmedText.EndsWith("matin") && hour >= Constants.HalfDayHourCount)
             {
                 result -= Constants.HalfDayHourCount;
@@ -97,11 +109,13 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             {
                 result += Constants.HalfDayHourCount;
             }
+
             return result;
         }
         public bool GetMatchedNowTimex(string text, out string timex)
         {
             var trimmedText = text.Trim().ToLowerInvariant();
+
             if (trimmedText.EndsWith("maintenant"))
             {
                 timex = "PRESENT_REF";
@@ -119,13 +133,16 @@ namespace Microsoft.Recognizers.Text.DateTime.French
                 timex = null;
                 return false;
             }
+
             return true;
         }
 
         public int GetSwiftDay(string text)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
             var swift = 0;
+
+            var trimmedText = text.Trim().ToLowerInvariant();
+            
             if (trimmedText.StartsWith("prochain") || trimmedText.EndsWith("prochain") ||
                 trimmedText.StartsWith("prochaine") || trimmedText.EndsWith("prochaine"))
             {
@@ -136,6 +153,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             {
                 swift = -1;
             }
+
             return swift;
         }
 

@@ -15,7 +15,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var match = regex.Match(text.TrimStart().ToLower());
             if (match.Success && match.Index == 0)
             {
-                index = text.ToLower().LastIndexOf(match.Value, StringComparison.Ordinal) + match.Value.Length;
+                index = text.ToLower().IndexOf(match.Value, StringComparison.Ordinal) + match.Value.Length;
                 return true;
             }
 
@@ -48,9 +48,12 @@ namespace Microsoft.Recognizers.Text.DateTime
         }
 
         // Temporary solution for remove superfluous words only under the Preview mode
-        public static string PreProcessTextRemoveSuperfluousWords(string text, StringMatcher matcher, out List<MatchResult<string>> superfluousWordMatches)
+        public static string PreProcessTextRemoveSuperfluousWords(string text, StringMatcher matcher, 
+                                                                  out List<MatchResult<string>> superfluousWordMatches)
         {
-            superfluousWordMatches = matcher.Find(text).ToList();
+
+            superfluousWordMatches = RemoveSubMatches(matcher.Find(text));
+
             var bias = 0;
 
             foreach (var match in superfluousWordMatches)
@@ -64,8 +67,10 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         // Temporary solution for recover superfluous words only under the Preview mode
         public static List<ExtractResult> PosProcessExtractionRecoverSuperfluousWords(List<ExtractResult> extractResults,
-            List<MatchResult<string>> superfluousWordMatches, string originText)
+                                                                                      List<MatchResult<string>> superfluousWordMatches, 
+                                                                                      string originText)
         {
+
             foreach (var match in superfluousWordMatches)
             {
                 foreach (var extractResult in extractResults)
@@ -91,5 +96,16 @@ namespace Microsoft.Recognizers.Text.DateTime
             return extractResults;
         }
 
+        public static List<MatchResult<string>> RemoveSubMatches(IEnumerable<MatchResult<string>> matchResults)
+        {
+            var matchList = matchResults.ToList();
+
+            return matchList.Where(item =>
+                !matchList.Any(
+                    ritem => (ritem.Start < item.Start && ritem.End >= item.End) ||
+                             (ritem.Start <= item.Start && ritem.End > item.End)
+                    )
+                ).ToList();
+        }
     }
 }

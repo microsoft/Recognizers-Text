@@ -7,6 +7,8 @@ namespace Microsoft.Recognizers.Text.DateTime
     {
         IEnumerable<Regex> SimpleCasesRegexes { get; }
 
+        Regex IllegalYearRegex { get; }
+
         Regex YearRegex { get; }
 
         Regex TillRegex { get; }

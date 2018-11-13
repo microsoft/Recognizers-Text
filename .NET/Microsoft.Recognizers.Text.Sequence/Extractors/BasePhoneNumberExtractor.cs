@@ -1,4 +1,5 @@
 ﻿using Microsoft.Recognizers.Definitions;
+using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Linq;
@@ -12,45 +13,62 @@ namespace Microsoft.Recognizers.Text.Sequence
 
         protected sealed override string ExtractType { get; } = Constants.SYS_PHONE_NUMBER;
 
-        private static List<char> SeparatorCharList => BasePhoneNumbers.SeparatorCharList.ToList();
+        private static List<char> BoundaryMarkers => BasePhoneNumbers.BoundaryMarkers.ToList();
+
+        private static List<char> SpecialBoundaryMarkers => BasePhoneNumbers.SpecialBoundaryMarkers.ToList();
 
         public BasePhoneNumberExtractor()
         {
             var regexes = new Dictionary<Regex, string>
             {
                 {
-                    new Regex(BasePhoneNumbers.BRPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_BR
+                    new Regex(BasePhoneNumbers.BRPhoneNumberRegex),
+                    Constants.PHONE_NUMBER_REGEX_BR
                 },
                 {
-                    new Regex(BasePhoneNumbers.GeneralPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_GENERAL
+                    new Regex(BasePhoneNumbers.GeneralPhoneNumberRegex),
+                    Constants.PHONE_NUMBER_REGEX_GENERAL
                 },
                 {
-                    new Regex(BasePhoneNumbers.UKPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_UK
+                    new Regex(BasePhoneNumbers.UKPhoneNumberRegex),
+                    Constants.PHONE_NUMBER_REGEX_UK
                 },
                 {
-                    new Regex(BasePhoneNumbers.DEPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_DE
+                    new Regex(BasePhoneNumbers.DEPhoneNumberRegex),
+                    Constants.PHONE_NUMBER_REGEX_DE
                 },
                 {
-                    new Regex(BasePhoneNumbers.USPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_US
+                    new Regex(BasePhoneNumbers.USPhoneNumberRegex),
+                    Constants.PHONE_NUMBER_REGEX_US
                 },
                 {
-                    new Regex(BasePhoneNumbers.CNPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_CN
+                    new Regex(BasePhoneNumbers.CNPhoneNumberRegex),
+                    Constants.PHONE_NUMBER_REGEX_CN
                 },
                 {
-                    new Regex(BasePhoneNumbers.DKPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_DK
+                    new Regex(BasePhoneNumbers.DKPhoneNumberRegex),
+                    Constants.PHONE_NUMBER_REGEX_DK
                 },
                 {
-                    new Regex(BasePhoneNumbers.ITPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_IT
+                    new Regex(BasePhoneNumbers.ITPhoneNumberRegex),
+                    Constants.PHONE_NUMBER_REGEX_IT
                 },
                 {
-                    new Regex(BasePhoneNumbers.NLPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_NL
+                    new Regex(BasePhoneNumbers.NLPhoneNumberRegex),
+                    Constants.PHONE_NUMBER_REGEX_NL
                 },
                 {
-                    new Regex(BasePhoneNumbers.SpecialPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_SPECIAL
+                    new Regex(BasePhoneNumbers.SpecialPhoneNumberRegex),
+                    Constants.PHONE_NUMBER_REGEX_SPECIAL
                 }
             };
 
             Regexes = regexes.ToImmutableDictionary();
+        }
+
+        private bool CheckFormattedPhoneNumber(string phoneNumberText)
+        {
+            return Regex.IsMatch(phoneNumberText, BasePhoneNumbers.FormatIndicatorRegex);
         }
 
         public override List<ExtractResult> Extract(string text)
@@ -62,12 +80,23 @@ namespace Microsoft.Recognizers.Text.Sequence
                 if (er.Start != 0)
                 {
                     var ch = text[(int)(er.Start - 1)];
-                    if (SeparatorCharList.Contains(ch))
+                    if (BoundaryMarkers.Contains(ch))
                     {
+                        if (SpecialBoundaryMarkers.Contains(ch) &&
+                            CheckFormattedPhoneNumber(er.Text) && 
+                            er.Start >= 2)
+                        {
+                            var chGap = text[(int)(er.Start - 2)];
+                            if (!Char.IsNumber(chGap))
+                            {
+                                continue;
+                            }
+                        }
                         ers.Remove(er);
                     }
                 }
             }
+
             return ers;
         }
     }

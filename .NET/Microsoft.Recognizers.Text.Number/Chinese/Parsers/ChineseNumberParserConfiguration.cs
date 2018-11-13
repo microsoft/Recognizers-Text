@@ -8,7 +8,7 @@ using Microsoft.Recognizers.Definitions.Chinese;
 
 namespace Microsoft.Recognizers.Text.Number.Chinese
 {
-    public class ChineseNumberParserConfiguration : INumberParserConfiguration, ICJKNumberParserConfiguration
+    public class ChineseNumberParserConfiguration : ICJKNumberParserConfiguration
     {
         public ChineseNumberParserConfiguration() : this(new CultureInfo(Culture.Chinese))
         {
@@ -41,6 +41,8 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
             RoundDirectList = NumbersDefinitions.RoundDirectList.ToImmutableList();
 
             HalfADozenRegex = null;
+
+            // @TODO Change init to follow design in other languages
             DigitalNumberRegex = new Regex(NumbersDefinitions.DigitalNumberRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
             DigitNumRegex = new Regex(NumbersDefinitions.DigitNumRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
             DozenRegex = new Regex(NumbersDefinitions.DozenRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);

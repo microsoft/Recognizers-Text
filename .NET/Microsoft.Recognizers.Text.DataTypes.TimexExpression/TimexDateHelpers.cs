@@ -3,27 +3,28 @@
 
 using System;
 using System.Collections.Generic;
+using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 {
     public static class TimexDateHelpers
     {
-        public static System.DateTime Tomorrow(System.DateTime date)
+        public static DateObject Tomorrow(DateObject date)
         {
             return date.AddDays(1);
         }
 
-        public static System.DateTime Yesterday(System.DateTime date)
+        public static DateObject Yesterday(DateObject date)
         {
             return date.AddDays(-1);
         }
 
-        public static bool DatePartEquals(System.DateTime dateX, System.DateTime dateY)
+        public static bool DatePartEquals(DateObject dateX, DateObject dateY)
         {
             return (dateX.Year == dateY.Year) && (dateX.Month == dateY.Month) && (dateX.Day == dateY.Day);
         }
 
-        public static bool IsDateInWeek(System.DateTime date, System.DateTime startOfWeek)
+        public static bool IsDateInWeek(DateObject date, DateObject startOfWeek)
         {
             var d = startOfWeek;
             for (int i = 0; i < 7; i++)
@@ -39,7 +40,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             return false;
         }
 
-        public static bool IsThisWeek(System.DateTime date, System.DateTime referenceDate)
+        public static bool IsThisWeek(DateObject date, DateObject referenceDate)
         {
             // Note ISO 8601 week starts on a Monday
             var startOfWeek = referenceDate;
@@ -51,22 +52,22 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             return IsDateInWeek(date, startOfWeek);
         }
 
-        public static bool IsNextWeek(System.DateTime date, System.DateTime referenceDate)
+        public static bool IsNextWeek(DateObject date, DateObject referenceDate)
         {
             var nextWeekDate = referenceDate.AddDays(7);
             return IsThisWeek(date, nextWeekDate);
         }
 
-        public static bool IsLastWeek(System.DateTime date, System.DateTime referenceDate)
+        public static bool IsLastWeek(DateObject date, DateObject referenceDate)
         {
             var nextWeekDate = referenceDate.AddDays(-7);
             return IsThisWeek(date, nextWeekDate);
         }
 
-        public static int WeekOfYear(System.DateTime date)
+        public static int WeekOfYear(DateObject date)
         {
-            var ds = new System.DateTime(date.Year, 1, 1);
-            var de = new System.DateTime(date.Year, date.Month, date.Day);
+            var ds = new DateObject(date.Year, 1, 1);
+            var de = new DateObject(date.Year, date.Month, date.Day);
             int weeks = 1;
 
             while (ds < de)
@@ -90,7 +91,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             return n.Value.ToString().PadLeft(size, '0');
         }
 
-        public static System.DateTime DateOfLastDay(DayOfWeek day, System.DateTime referenceDate)
+        public static DateObject DateOfLastDay(DayOfWeek day, DateObject referenceDate)
         {
             var result = referenceDate;
             result = result.AddDays(-1);
@@ -103,7 +104,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             return result;
         }
 
-        public static System.DateTime DateOfNextDay(DayOfWeek day, System.DateTime referenceDate)
+        public static DateObject DateOfNextDay(DayOfWeek day, DateObject referenceDate)
         {
             var result = referenceDate;
             result = result.AddDays(1);
@@ -116,9 +117,9 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             return result;
         }
 
-        public static List<System.DateTime> DatesMatchingDay(DayOfWeek day, System.DateTime start, System.DateTime end)
+        public static List<DateObject> DatesMatchingDay(DayOfWeek day, DateObject start, DateObject end)
         {
-            var result = new List<System.DateTime>();
+            var result = new List<DateObject>();
             var d = start;
 
             while (!DatePartEquals(d, end))

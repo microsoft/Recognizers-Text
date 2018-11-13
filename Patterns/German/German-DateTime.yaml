@@ -14,11 +14,28 @@ PastPrefixRegex: !simpleRegex
 ThisPrefixRegex: !simpleRegex
   def: (dies(er|en|em|es|e)|jetzig(er|en|es|e))
 DayRegex: !simpleRegex
-  def: ((der|dem|des)\s*)?(?<day>(01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|1|20|21|22|23|24|25|26|27|28|29|2|30|31|3|4|5|6|7|8|9))(\.)?
+  def: ((der|dem|des|den)\s*)?(?<day>(01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|1|20|21|22|23|24|25|26|27|28|29|2|30|31|3|4|5|6|7|8|9))(\.)?
 MonthNumRegex: !simpleRegex
-  def: (?<month>01([\.])?|02([\.])?|03([\.])?|04([\.])?|05([\.])?|06([\.])?|07([\.])?|08([\.])?|09([\.])?|10([\.])?|11([\.])?|12([\.])?|1([\.])?|2([\.])?|3([\.])?|4([\.])?|5([\.])?|6([\.])?|7([\.])?|8([\.])?|9([\.])?)\b
-YearRegex: !simpleRegex
-  def: (?<year>19\d{2}|20\d{2})
+  def: (?<month>01([\.])?|02([\.])?|03([\.])?|04([\.])?|05([\.])?|06([\.])?|07([\.])?|08([\.])?|09([\.])?|10([\.])?|11([\.])?|12([\.])?|1([\.])?|2([\.])?|3([\.])?|4([\.])?|5([\.])?|6([\.])?|7([\.])?|8([\.])?|9([\.])?)
+DescRegex: !nestedRegex
+  def: ({OclockRegex})
+  references: [ OclockRegex ]
+AmDescRegex: !simpleRegex
+  def: (am\b|a\.m\.|a m\b|a\. m\.|a\.m\b|a\. m\b|a m\b)
+PmDescRegex: !simpleRegex
+  def: (pm\b|p\.m\.|p\b|p m\b|p\. m\.|p\.m\b|p\. m\b|p m\b)
+AmPmDescRegex: !simpleRegex
+  def: (ampm)
+# As month number can't be 0, so add (?!\.0\b) to filter out some wrong cases
+TwoDigitYearRegex: !nestedRegex
+  def: \b(?<![$])(?<year>([0-27-9]\d))(?!(\s*((\:)|{AmDescRegex}|{PmDescRegex}|\.\d)))\b
+  references: [ AmDescRegex, PmDescRegex]
+FullTextYearRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[\*]
+YearRegex: !nestedRegex
+  def: ({BaseDateTime.FourDigitYearRegex}|{FullTextYearRegex})
+  references: [ BaseDateTime.FourDigitYearRegex, FullTextYearRegex ]
 WeekDayRegex: !simpleRegex
   def: (?<weekday>sonntag|montag|dienstag|mittwoch|donnerstag|freitag|samstag|(mo|di|mi|do|fr|sa|so)(\.))
 SingleWeekDayRegex: !simpleRegex
@@ -29,8 +46,8 @@ RelativeMonthRegex: !nestedRegex
 WrittenMonthRegex: !simpleRegex
   def: ((monat\s*)?(?<month>april|apr\.|august|aug\.|dezember|dez\.|februar|feb\.|januar|jan\.|juli|jul\.|juni|jun\.|märz|mai|november|nov\.|oktober|okt\.|september|sep\.))
 MonthSuffixRegex: !nestedRegex
-  def: (?<msuf>(im\s*|des\s*)?({RelativeMonthRegex}|{WrittenMonthRegex}))
-  references: [ RelativeMonthRegex, WrittenMonthRegex ]
+  def: (?<msuf>(im\s*|des\s*)?({RelativeMonthRegex}|{WrittenMonthRegex}|{MonthNumRegex}))
+  references: [ RelativeMonthRegex, WrittenMonthRegex, MonthNumRegex ]
 DateUnitRegex: !simpleRegex
   def: (?<unit>jahre|jahr|monate|monat|wochen|woche|tage|tag|Tag)(s)?
 SimpleCasesRegex: !nestedRegex
@@ -52,7 +69,7 @@ OneWordPeriodRegex: !nestedRegex
   def: \b((((im\s+)?monat\s+)?({RelativeRegex}\s*(jahr\s*(im\s*)?)?)?(?<month>april|apr\.|august|aug\.|dezember|dez\.|februar|feb\.|januar|jan\.|juli|jul\.|juni|jun\.|märz|mai|november|nov\.|oktober|okt\.|september|sep\.))|({RelativeRegex}\s+)?(wochenende|woche|monat|jahr)|wochenende|(monat|jahr))\b
   references: [ RelativeRegex ]
 MonthNumWithYear: !nestedRegex
-  def: ({YearRegex}(\s*)[/\-\.](\s*){MonthNumRegex})|({MonthNumRegex}(\s*)[/\-](\s*){YearRegex})
+  def: ({YearRegex}(\s*)[/\-\.](\s*){MonthNumRegex})|({MonthNumRegex}(\s*)[/\-\.](\s*){YearRegex})
   references: [ YearRegex, MonthNumRegex ]
 WeekOfMonthRegex: !nestedRegex
   def: (?<wom>((die|der)\s+)(?<cardinal>erst(er|en|es|e)|1\.|zweit(er|en|es|e)|2\.|dritt(er|en|es|e)|3\.|viert(er|en|es|e)|4\.|fünft(er|en|es|e)|5\.|letzt(er|en|es|e))\s+Woche\s+(des|diesen|im)\s+({MonthSuffixRegex}|monat(s)?))
@@ -96,10 +113,6 @@ MonthOfRegex: !simpleRegex
   def: (monat)(\s*)(des)
 MonthRegex: !simpleRegex
   def: (?<month>april|apr.|august|aug.|dezember|dez.|februar|feb.|januar|jan.|juli|jul.|juni|jun.|märz|mai|november|nov.|oktober|okt.|september|sep.)
-AmDescRegex: !simpleRegex
-  def: (am\b|a\.m\.|a m\b|a\. m\.|a\.m\b|a\. m\b|a m\b)
-PmDescRegex: !simpleRegex
-  def: (pm\b|p\.m\.|p\b|p m\b|p\. m\.|p\.m\b|p\. m\b|p m\b)
 #This is a look-behind assertion. Some cases should extract two digits as year like 11/25/16, where 16 means 2016. 
 #The assertion determines if not connected with am/pm or hour separator (:), which should be a time.
 DateYearRegex: !nestedRegex
@@ -152,7 +165,7 @@ DateExtractor2: !nestedRegex
   references: [ WeekDayRegex, MonthRegex, DayRegex, DateYearRegex ]
 DateExtractor3: !nestedRegex
   def: \b({DayRegex}{MonthRegex})
-  references: [ WeekDayRegex, DayRegex, MonthRegex, DateYearRegex ]
+  references: [ WeekDayRegex, DayRegex, MonthRegex ]
 DateExtractor4: !nestedRegex
   def: \b({DayRegex}\s*{MonthNumRegex}\s*{DateYearRegex})\b
   references: [ MonthNumRegex, DayRegex, DateYearRegex ]
@@ -192,9 +205,6 @@ RangeUnitRegex: !simpleRegex
   def: (?<unit>jahren|jahre|jahr|monaten|monate|monat|wochen|woche|tagen|tage|tag)
 OclockRegex: !simpleRegex
   def: (?<oclock>Uhr)
-DescRegex: !nestedRegex
-  def: ({OclockRegex})
-  references: [ OclockRegex ]
 HourNumRegex: !simpleRegex
   def: \b(?<hournum>'null'|ein|eins|zwei|drei|vier|fünf|fuenf|sechs|sieben|acht|neun|zehn|elf|zwölf|zwoelf|dreizehn|vierzehn|fünfzehn|sechzehn|siebzehn|achtzehn|neunzehn|zwanzig|einundzwanzig|zweiundzwanzig|dreiundzwanzig|vierundzwanzig)\b
 MinuteNumRegex: !simpleRegex
@@ -251,7 +261,7 @@ IshRegex: !nestedRegex
   def: '\b({BaseDateTime.HourRegex}(-|——)?ish|noonish|noon)\b'
   references: [ BaseDateTime.HourRegex ]
 TimeUnitRegex: !simpleRegex
-  def: (?<unit>stunden|stunde|std|minuten|minute|min|sekunden|sekunde|sek|s)
+  def: (?<unit>stunden|stunde|std|st|h|minuten|minute|min|sekunden|sekunde|sek|s)
 RestrictedTimeUnitRegex: !simpleRegex
   def: (?<unit>stunde|minute)\b
 FivesRegex: !simpleRegex
@@ -359,7 +369,7 @@ MoreThanRegex: !simpleRegex
   # TODO: Check and test new regex
   def: \b(mehr\s+als)\b
 DurationUnitRegex: !simpleRegex
-  def: (?<unit>jahr(en|es|e)?|monat(en|e|s)?|woche(n)?|tag(en|es|e)?|stund(en|e)?|std|minute(n)?|min|sekunde(n)?|sek)\b
+  def: (?<unit>jahr(en|es|e)?|monat(en|e|s)?|woche(n)?|tag(en|es|e)?|stund(en|e)?|std|st|h|minute(n)?|min|sekunde(n)?|sek)\b
 SuffixAndRegex: !simpleRegex
   def: (?<suffix>\s*(und)\s+((eine)\s+)?(?<suffix_num>halbe|viertel))
 PeriodicRegex: !simpleRegex
@@ -432,11 +442,11 @@ WithinNextPrefixRegex: !nestedRegex
 AmPmDescRegex: !simpleRegex
   def: (ampm)
 MorningStartEndRegex: !simpleRegex
-  def: (^(morgen(s)?))|((morgen(s)?)$)
+  def: (^(heute morgen|morgen(s)?))|((heute morgen|morgen(s)?)$)
 AfternoonStartEndRegex: !simpleRegex
-  def: (^(nachmittag(s)?))|((nachmittag(s)?)$)
+  def: (^(heute nachmittag|nachmittag(s)?))|((heute nachmittag|nachmittag(s)?)$)
 EveningStartEndRegex: !simpleRegex
-  def: (^(abend(s)?))|((abend(s)?)$)
+  def: (^(heute abend|abend(s)?))|((heute abend|abend(s)?)$)
 NightStartEndRegex: !simpleRegex
   def: (^(über nacht|heute nacht|nacht(s)?|nächtens|in der nacht))|((über nacht|heute nacht|nacht(s)?|nächtens)$)
 InexactNumberRegex: !simpleRegex
@@ -650,9 +660,11 @@ UnitValueMap: !dictionary
     stunden: 3600
     stunde: 3600
     std: 3600
+    h: 3600
     Stunden: 3600
     Stunde: 3600
     Std: 3600
+    H: 3600
     minuten: 60
     minute: 60
     min: 60
@@ -1127,4 +1139,25 @@ SpecialDecadeCases: !dictionary
     'zweitausender': 2000
 DefaultLanguageFallback: DMY
 DurationDateRestrictions: []
+# For TimeOfDay resolution
+MorningTermList: !list
+  types: [ string ] 
+  entries: 
+    - morgen
+AfternoonTermList: !list
+  types: [ string ] 
+  entries: 
+    - nachmittag
+EveningTermList: !list
+  types: [ string ] 
+  entries: 
+    - abend
+DaytimeTermList: !list
+  types: [ string ] 
+  entries: 
+    - tag
+NightTermList: !list
+  types: [ string ] 
+  entries: 
+    - nacht
 ...

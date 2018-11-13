@@ -8,6 +8,8 @@ from ..extractors import DateTimeExtractor
 from ..parsers import DateTimeParser
 from ..base_configs import BaseDateParserConfiguration, DateTimeUtilityConfiguration
 from ..base_timeperiod import TimePeriodParserConfiguration, MatchedTimeRegex
+from ..utilities import TimexUtil
+from ..constants import Constants
 
 class EnglishTimePeriodParserConfiguration(TimePeriodParserConfiguration):
     @property
@@ -59,36 +61,26 @@ class EnglishTimePeriodParserConfiguration(TimePeriodParserConfiguration):
 
 
     def get_matched_timex_range(self, source: str) -> MatchedTimeRegex:
-        source = source.strip().lower()
-        if source.endswith('s'):
-            source = source[:-1]
+        trimmed_text = source.strip().lower()
+        if trimmed_text.endswith('s'):
+            trimmed_text = trimmed_text[:-1]
 
         timex = ''
         begin_hour = 0
         end_hour = 0
         end_min = 0
 
-        if source.endswith('morning'):
-            timex = 'TMO'
-            begin_hour = 8
-            end_hour = 12
-        elif source.endswith('afternoon'):
-            timex = 'TAF'
-            begin_hour = 12
-            end_hour = 16
-        elif source.endswith('evening'):
-            timex = 'TEV'
-            begin_hour = 16
-            end_hour = 20
-        elif source.endswith('daytime'):
-            timex = 'TDT'
-            begin_hour = 8
-            end_hour = 18
-        elif source.endswith('night'):
-            timex = 'TNI'
-            begin_hour = 20
-            end_hour = 23
-            end_min = 59
+        time_of_day = ""
+        if any(trimmed_text.endswith(o) for o in EnglishDateTime.MorningTermList):
+            time_of_day = Constants.Morning
+        elif any(trimmed_text.endswith(o) for o in EnglishDateTime.AfternoonTermList):
+            time_of_day = Constants.Afternoon
+        elif any(trimmed_text.endswith(o) for o in EnglishDateTime.EveningTermList):
+            time_of_day = Constants.Evening
+        elif any(trimmed_text == o for o in EnglishDateTime.DaytimeTermList):
+            time_of_day = Constants.Daytime
+        elif any(trimmed_text.endswith(o) for o in EnglishDateTime.NightTermList):
+            time_of_day = Constants.Night
         else:
             return MatchedTimeRegex(
                 matched=False,
@@ -97,6 +89,12 @@ class EnglishTimePeriodParserConfiguration(TimePeriodParserConfiguration):
                 end_hour=0,
                 end_min=0
             )
+
+        parse_result = TimexUtil.parse_time_of_day(time_of_day)
+        timex = parse_result.timex
+        begin_hour = parse_result.begin_hour
+        end_hour = parse_result.end_hour
+        end_min = parse_result.end_min
 
         return MatchedTimeRegex(
             matched=True,

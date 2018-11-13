@@ -5,6 +5,7 @@ import { BaseMention } from "../resources/baseMention";
 import { BaseHashtag } from "../resources/baseHashtag";
 import { BaseEmail } from "../resources/baseEmail";
 import { BaseURL } from "../resources/baseURL";
+import { BaseGUID } from "../resources/baseGUID";
 import { Constants } from "./constants";
 
 export abstract class BaseSequenceExtractor implements IExtractor {
@@ -86,11 +87,21 @@ export class BasePhoneNumberExtractor extends BaseSequenceExtractor {
     extract(source: string): Array<ExtractResult> {
         let ers = super.extract(source)
         let ret = new Array<ExtractResult>()
+        let formatIndicatorRegex = new RegExp(BasePhoneNumbers.FormatIndicatorRegex, "ig")
+        let digitRegex = new RegExp("[0-9]")
         for (let er of ers) {
             let ch = source[er.start - 1];
-            if (er.start === 0 || BasePhoneNumbers.SeparatorCharList.indexOf(ch) === -1) {
+            if (er.start === 0 || BasePhoneNumbers.BoundaryMarkers.indexOf(ch) === -1) {
                 ret.push(er); 
             }
+            else if (BasePhoneNumbers.SpecialBoundaryMarkers.indexOf(ch) != -1 &&
+                    formatIndicatorRegex.test(er.text) && 
+                    er.start >= 2) {
+                        let chGap = source[er.start - 2];
+                        if (!chGap.match(digitRegex)) {
+                            ret.push(er);
+                        }
+                    }
         }
         return ret;
     }
@@ -196,6 +207,8 @@ export class BaseEmailExtractor extends BaseSequenceExtractor {
         super();
         this.regexes = new Map<RegExp, string>()
             .set(RegExpUtility.getSafeRegExp(BaseEmail.EmailRegex), Constants.EMAIL_REGEX)
+            // EmailRegex2 will break the code as it's not supported in Javascript, comment out for now
+            //.set(RegExpUtility.getSafeRegExp(BaseEmail.EmailRegex2), Constants.EMAIL_REGEX)
     }
 }
 
@@ -206,6 +219,17 @@ export class BaseURLExtractor extends BaseSequenceExtractor {
         super();
         this.regexes = new Map<RegExp, string>()
             .set(RegExpUtility.getSafeRegExp(BaseURL.UrlRegex), Constants.URL_REGEX)
+            .set(RegExpUtility.getSafeRegExp(BaseURL.UrlRegex2), Constants.URL_REGEX)
             .set(RegExpUtility.getSafeRegExp(BaseURL.IpUrlRegex), Constants.URL_REGEX)
+    }
+}
+
+export class BaseGUIDExtractor extends BaseSequenceExtractor {
+    regexes: Map<RegExp, string>;
+
+    constructor() {
+        super();
+        this.regexes = new Map<RegExp, string>()
+            .set(RegExpUtility.getSafeRegExp(BaseGUID.GUIDRegex), Constants.GUID_REGEX)
     }
 }

@@ -4,6 +4,7 @@ from recognizers_text.utilities import RegExpUtility
 from recognizers_number.number import BaseNumberParser, BaseNumberExtractor
 from recognizers_number.number.french.extractors import FrenchIntegerExtractor
 from recognizers_number.number.french.parsers import FrenchNumberParserConfiguration
+from ...resources.base_date_time import BaseDateTime
 from ...resources.french_date_time import FrenchDateTime
 from ..extractors import DateTimeExtractor
 from ..base_duration import BaseDurationExtractor
@@ -16,6 +17,10 @@ class FrenchDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
     @property
     def simple_cases_regexes(self) -> List[Pattern]:
         return self._simple_cases_regexes
+
+    @property
+    def illegal_year_regex(self) -> Pattern:
+        return self._illegal_year_regex
 
     @property
     def year_regex(self) -> Pattern:
@@ -99,6 +104,7 @@ class FrenchDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
             RegExpUtility.get_safe_reg_exp(FrenchDateTime.LaterEarlyPeriodRegex),
             RegExpUtility.get_safe_reg_exp(FrenchDateTime.WeekWithWeekDayRangeRegex)
         ]
+        self._illegal_year_regex = RegExpUtility.get_safe_reg_exp(BaseDateTime.IllegalYearRegex)
         self._year_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.YearRegex)
         self._till_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.TillRegex)
         self._followed_unit = RegExpUtility.get_safe_reg_exp(FrenchDateTime.FollowedDateUnit)

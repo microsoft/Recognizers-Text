@@ -1,12 +1,13 @@
 ﻿// Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
+using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 {
     public class DateRange
     {
-        public System.DateTime Start { get; set; }
+        public DateObject Start { get; set; }
 
-        public System.DateTime End { get; set; }
+        public DateObject End { get; set; }
     }
 }

@@ -10,6 +10,8 @@ namespace Microsoft.Recognizers.Text.Number.French
     {
         internal sealed override ImmutableDictionary<Regex, TypeTag> Regexes { get; }
 
+        protected sealed override NumberOptions Options { get; }
+
         protected sealed override string ExtractType { get; } = Constants.SYS_NUM;
 
         private static readonly ConcurrentDictionary<(NumberMode, NumberOptions), NumberExtractor> Instances =
@@ -22,22 +24,25 @@ namespace Microsoft.Recognizers.Text.Number.French
             var cacheKey = (mode, options);
             if (!Instances.ContainsKey(cacheKey))
             {
-                var instance = new NumberExtractor(mode);
+                var instance = new NumberExtractor(mode, options);
                 Instances.TryAdd(cacheKey, instance);
             }
 
             return Instances[cacheKey];
         }
 
-        public NumberExtractor(NumberMode mode = NumberMode.Default)
+        private NumberExtractor(NumberMode mode, NumberOptions options)
         {
+
+            Options = options;
+
             var builder = ImmutableDictionary.CreateBuilder<Regex, TypeTag>();
 
             CardinalExtractor cardExtract = null;
             switch(mode)
             {
                 case NumberMode.PureNumber:
-                    cardExtract = new CardinalExtractor(NumbersDefinitions.PlaceHolderPureNumber);
+                    cardExtract = CardinalExtractor.GetInstance(NumbersDefinitions.PlaceHolderPureNumber);
                     break;
                 case NumberMode.Currency:
                     builder.Add(new Regex(NumbersDefinitions.CurrencyRegex, RegexOptions.Singleline), 
@@ -49,12 +54,12 @@ namespace Microsoft.Recognizers.Text.Number.French
 
             if (cardExtract == null)
             {
-                cardExtract = new CardinalExtractor();
+                cardExtract = CardinalExtractor.GetInstance();
             }
 
             builder.AddRange(cardExtract.Regexes);
 
-            var fracExtract = new FractionExtractor();
+            var fracExtract = FractionExtractor.GetInstance(Options);
             builder.AddRange(fracExtract.Regexes);
 
             Regexes = builder.ToImmutable();

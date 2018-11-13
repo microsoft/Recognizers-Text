@@ -3,10 +3,12 @@ import { BaseTimeExtractor, BaseTimeParser } from "../baseTime";
 import { RegExpUtility, IExtractor } from "@microsoft/recognizers-text";
 import { EnglishDateTime } from "../../resources/englishDateTime";
 import { ICommonDateTimeParserConfiguration } from "../parsers"
-import { IDateTimeUtilityConfiguration } from "../utilities"
+import { IDateTimeUtilityConfiguration, TimexUtil } from "../utilities";
 import { EnglishTimeExtractorConfiguration } from "./timeConfiguration"
 import { IDateTimeExtractor } from "../baseDateTime"
 import { EnglishIntegerExtractor } from "@microsoft/recognizers-text-number";
+import { Constants } from "../constants";
+import { ChineseDateTime } from "../../resources/chineseDateTime";
 
 export class EnglishTimePeriodExtractorConfiguration implements ITimePeriodExtractorConfiguration {
     readonly simpleCasesRegex: RegExp[];
@@ -85,46 +87,36 @@ export class EnglishTimePeriodParserConfiguration implements ITimePeriodParserCo
         if (trimmedText.endsWith("s")) {
             trimmedText = trimmedText.substring(0, trimmedText.length - 1);
         }
-        let result = {
-            matched: false,
-            timex: '',
-            beginHour: 0,
-            endHour: 0,
-            endMin: 0
-        };
-        if (trimmedText.endsWith("morning")) {
-            result.timex = "TMO";
-            result.beginHour = 8;
-            result.endHour = 12;
-        }
-        else if (trimmedText.endsWith("afternoon")) {
-            result.timex = "TAF";
-            result.beginHour = 12;
-            result.endHour = 16;
-        }
-        else if (trimmedText.endsWith("evening")) {
-            result.timex = "TEV";
-            result.beginHour = 16;
-            result.endHour = 20;
-        }
-        else if (trimmedText === "daytime") {
-            result.timex = "TDT";
-            result.beginHour = 8;
-            result.endHour = 18;
-        }
-        else if (trimmedText.endsWith("night")) {
-            result.timex = "TNI";
-            result.beginHour = 20;
-            result.endHour = 23;
-            result.endMin = 59;
-        }
-        else {
-            result.timex = null;
-            result.matched = false;
-            return result;
+        let matched = false,
+        timex = null,
+        beginHour = 0,
+        endHour = 0,
+        endMin = 0;
+
+        let timeOfDay = "";
+        if (EnglishDateTime.MorningTermList.some(o => trimmedText.endsWith(o))) {
+            timeOfDay = Constants.Morning;
+        } else if (EnglishDateTime.AfternoonTermList.some(o => trimmedText.endsWith(o))) {
+            timeOfDay = Constants.Afternoon;
+        } else if (EnglishDateTime.EveningTermList.some(o => trimmedText.endsWith(o))) {
+            timeOfDay = Constants.Evening;
+        } else if (EnglishDateTime.DaytimeTermList.some(o => trimmedText.localeCompare(o) == 0)) {
+            timeOfDay = Constants.Daytime;
+        } else if (EnglishDateTime.NightTermList.some(o => trimmedText.endsWith(o))) {
+            timeOfDay = Constants.Night;
+        } else {
+            timex = null;
+            matched = false;
+            return {matched, timex, beginHour, endHour, endMin};
         }
 
-        result.matched = true;
-        return result;
+        let parseResult = TimexUtil.parseTimeOfDay(timeOfDay);
+        timex = parseResult.timeX;
+        beginHour = parseResult.beginHour;
+        endHour = parseResult.endHour;
+        endMin = parseResult.endMin;
+
+        matched = true;
+        return {matched, timex, beginHour, endHour, endMin};
     }
 }

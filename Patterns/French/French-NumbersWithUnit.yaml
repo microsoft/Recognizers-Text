@@ -445,7 +445,7 @@ AmbiguousDimensionUnitList: !list
      - pierre
      - fps
      - pts
-#FrenchNumberWithUnitExtractorConfigurationf
+#FrenchNumberWithUnitExtractorConfiguration
 BuildPrefix: !simpleRegex
   def: (?<=(\s|^|\P{L}))
 BuildSuffix: !simpleRegex
@@ -550,4 +550,9 @@ AmbiguousWeightUnitList: !list
     - oz
     - stone
     - dram
+#Additional config
+AmbiguityFiltersDict: !dictionary
+  types: [ string, string ]
+  entries:
+    '\\bcent\\b': '\\bpour\\s+cent\\b'
 ...

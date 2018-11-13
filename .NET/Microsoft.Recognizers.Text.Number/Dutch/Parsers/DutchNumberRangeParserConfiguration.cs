@@ -36,6 +36,8 @@ namespace Microsoft.Recognizers.Text.Number.Dutch
 
             NumberExtractor = Dutch.NumberExtractor.GetInstance();
             OrdinalExtractor = Dutch.OrdinalExtractor.GetInstance();
+
+            // @TODO Change init to follow design in other languages
             NumberParser = new BaseNumberParser(new DutchNumberParserConfiguration());
             MoreOrEqual = new Regex(NumbersDefinitions.MoreOrEqual, RegexOptions.IgnoreCase | RegexOptions.Singleline);
             LessOrEqual = new Regex(NumbersDefinitions.LessOrEqual, RegexOptions.IgnoreCase | RegexOptions.Singleline);

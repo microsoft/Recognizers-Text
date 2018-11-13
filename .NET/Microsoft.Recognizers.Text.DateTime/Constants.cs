@@ -103,6 +103,9 @@ namespace Microsoft.Recognizers.Text.DateTime
         // hours of a half mid-day-duration
         public const int HalfMidDayDurationHourCount = 2;
 
+        // the length of four digits year, e.g., 2018
+        public const int FourDigitsYearLength = 4;
+
         public const string DefaultLanguageFallback_MDY = "MDY";
         public const string DefaultLanguageFallback_DMY = "DMY";
 
@@ -120,6 +123,10 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string HourGroupName = "hour";
         public const string TimeOfDayGroupName = "timeOfDay";
         public const string BusinessDayGroupName = "business";
+        public const string LeftAmPmGroupName = "leftDesc";
+        public const string RightAmPmGroupName = "rightDesc";
+
+        public const string DECADE_UNIT = "10Y";
 
         // Timex
         public static readonly string[] DatePeriodTimexSplitter = { ",", "(", ")" };
@@ -129,9 +136,27 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string TimexWeek = "W";
         public const string TimexDay = "D";
         public const string TimexBusinessDay = "BD";
+        public const string TimexWeekend = "WE";
         public const string TimexHour = "H";
         public const string TimexMinute = "M";
         public const string TimexSecond = "S";
         public const char TimexFuzzy = 'X';
+        public const string TimexFuzzyYear = "XXXX";
+        public const string TimexFuzzyMonth = "XX";
+        public const string TimexFuzzyWeek = "WXX";
+        public const string TimexFuzzyDay = "XX";
+        public const string DateTimexConnector = "-";
+        public const string TimeTimexConnector = ":";
+        public const string GeneralPeriodPrefix = "P";
+        public const string TimeTimexPrefix = "T";
+
+        // Timex of TimeOfDay
+        public const string EarlyMorning = "TDA";
+        public const string Morning = "TMO";
+        public const string Afternoon = "TAF";
+        public const string Evening = "TEV";
+        public const string Daytime = "TDT";
+        public const string Night = "TNI";
+        public const string BusinessHour = "TBH";
     }
 }

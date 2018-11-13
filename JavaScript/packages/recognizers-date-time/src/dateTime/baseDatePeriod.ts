@@ -9,6 +9,7 @@ import { IDateTimeExtractor } from "./baseDateTime"
 
 export interface IDatePeriodExtractorConfiguration {
     simpleCasesRegexes: RegExp[]
+    illegalYearRegex: RegExp
     YearRegex: RegExp
     tillRegex: RegExp
     followedUnit: RegExp
@@ -60,11 +61,19 @@ export class BaseDatePeriodExtractor implements IDateTimeExtractor {
                     let yearStr = matchYear.groups('year').value;
                     if (StringUtility.isNullOrEmpty(yearStr)) {
                         let year = this.getYearFromText(matchYear);
-                        if (!(year >= 1500 && year <= 2100)) {
+                        if (!(year >= Constants.MinYearNum && year <= Constants.MaxYearNum)) {
                             addToken = false;
                         }
                     }
                 }
+
+                if (match.length === Constants.FourDigitsYearLength && RegExpUtility.isMatch(this.config.YearRegex, match.value) && this.infixBoundaryCheck(match, source)) {
+                    let substr = source.substr(match.index - 1, 6);
+                    if (RegExpUtility.isMatch(this.config.illegalYearRegex, substr)) {
+                        addToken = false;
+                    }
+                }
+
                 if (addToken) {
                     tokens.push(new Token(match.index, match.index + match.length));
                 }
@@ -221,6 +230,17 @@ export class BaseDatePeriodExtractor implements IDateTimeExtractor {
 
     private matchRegexInPrefix(source: string, match: Match): boolean {
         return (match && StringUtility.isNullOrWhitespace(source.substring(match.index + match.length)))
+    }
+
+    private infixBoundaryCheck(match: Match, source: string): boolean {
+        let isMatchInfixOfSource = false;
+        if (match.index > 0 && match.index + match.length < source.length) {
+            if (source.substr(match.index, match.length) === match.value) {
+                isMatchInfixOfSource = true;
+            }
+        }
+
+        return isMatchInfixOfSource;
     }
 }
 
@@ -718,6 +738,16 @@ export class BaseDatePeriodParser implements IDateTimeParser {
         let futureEnd = prEnd.value.futureValue;
         let pastBegin = prBegin.value.pastValue;
         let pastEnd = prEnd.value.pastValue;
+
+        if (futureBegin > futureEnd) 
+        {
+            futureBegin = pastBegin;
+        }
+
+        if (pastEnd < pastBegin) 
+        {
+            pastEnd = futureEnd;
+        }
 
         result.subDateTimeEntities = prs;
         result.timex = `(${prBegin.timexStr},${prEnd.timexStr},P${DateUtils.diffDays(futureEnd, futureBegin)}D)`;

@@ -2,6 +2,15 @@
     "outputPath": "./recognizers_number_with_unit/resources/",
     "configFiles": [
         {
+            "input": [ "Base-Units" ],
+            "output": "base_units",
+            "header": [
+                "# pylint: disable=line-too-long",
+                "class BaseUnits:"
+            ],
+            "footer": [ "# pylint: enable=line-too-long" ]
+        },
+        {
             "input": [ "Base-Numbers" ],
             "output": "base_numbers",
             "header": [

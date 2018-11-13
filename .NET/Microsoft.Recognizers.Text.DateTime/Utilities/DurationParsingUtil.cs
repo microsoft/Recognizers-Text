@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
+using System.Linq;
+
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime
@@ -9,21 +11,25 @@ namespace Microsoft.Recognizers.Text.DateTime
     {
         public static bool IsTimeDurationUnit(string unitStr)
         {
-            var ret = false;
+            bool result;
+
             switch (unitStr)
             {
                 case "H":
-                    ret = true;
+                    result = true;
                     break;
                 case "M":
-                    ret = true;
+                    result = true;
                     break;
                 case "S":
-                    ret = true;
+                    result = true;
+                    break;
+                default:
+                    result = false;
                     break;
             }
 
-            return ret;
+            return result;
         }
 
         public static bool IsMultipleDuration(string timex)
@@ -37,27 +43,20 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var dict = ResolveDurationTimex(timex);
 
-            foreach (var unit in dict.Keys)
-            {
-                if (IsTimeDurationUnit(unit))
-                {
-                    return false;
-                }
-            }
+            return dict.Keys.All(unit => !IsTimeDurationUnit(unit));
 
-            return true;
         }
 
         public static DateObject ShiftDateTime(string timex, DateObject referenceDateTime, bool future)
         {
             var timexUnitMap = ResolveDurationTimex(timex);
-            var ret = GetShiftResult(timexUnitMap, referenceDateTime, future);
-            return ret;
+            var result = GetShiftResult(timexUnitMap, referenceDateTime, future);
+            return result;
         }
 
         private static DateObject GetShiftResult(IImmutableDictionary<string, double> timexUnitMap, DateObject referenceDate, bool future)
         {
-            var ret = referenceDate;
+            var result = referenceDate;
             var futureOrPast = future ? 1 : -1;
 
             foreach (var pair in timexUnitMap)
@@ -67,35 +66,35 @@ namespace Microsoft.Recognizers.Text.DateTime
                 switch (unitStr)
                 {
                     case "H":
-                        ret = ret.AddHours(number * futureOrPast);
+                        result = result.AddHours(number * futureOrPast);
                         break;
                     case "M":
-                        ret = ret.AddMinutes(number * futureOrPast);
+                        result = result.AddMinutes(number * futureOrPast);
                         break;
                     case "S":
-                        ret = ret.AddSeconds(number * futureOrPast);
+                        result = result.AddSeconds(number * futureOrPast);
                         break;
                     case Constants.TimexDay:
-                        ret = ret.AddDays(number * futureOrPast);
+                        result = result.AddDays(number * futureOrPast);
                         break;
                     case Constants.TimexWeek:
-                        ret = ret.AddDays(7 * number * futureOrPast);
+                        result = result.AddDays(7 * number * futureOrPast);
                         break;
                     case Constants.TimexMonthFull:
-                        ret = ret.AddMonths(Convert.ToInt32(number) * futureOrPast);
+                        result = result.AddMonths(Convert.ToInt32(number) * futureOrPast);
                         break;
                     case Constants.TimexYear:
-                        ret = ret.AddYears(Convert.ToInt32(number) * futureOrPast);
+                        result = result.AddYears(Convert.ToInt32(number) * futureOrPast);
                         break;
                     case Constants.TimexBusinessDay:
-                        ret = GetNthBusinessDay(ret, Convert.ToInt32(number), future, out _);
+                        result = GetNthBusinessDay(result, Convert.ToInt32(number), future, out _);
                         break;
                     default:
-                        return ret;
+                        return result;
                 }
             }
 
-            return ret;
+            return result;
         }
 
         public static DateObject GetNthBusinessDay(DateObject startDate, int n, bool isFuture, out List<DateObject> dateList)
@@ -117,10 +116,12 @@ namespace Microsoft.Recognizers.Text.DateTime
             return date;
         }
 
+        // By design it currently does not take holidays into account
         public static DateObject GetNextBusinessDay(DateObject startDate, bool isFuture = true)
         {
             var dateIncrement = isFuture ? 1 : -1;
             var date = startDate.AddDays(dateIncrement);
+
             while (date.DayOfWeek == DayOfWeek.Saturday || date.DayOfWeek == DayOfWeek.Sunday)
             {
                 date = date.AddDays(dateIncrement);
@@ -133,8 +134,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var ret = new Dictionary<string, double>();
 
-            // Resolve duration timex, such as P21DT2H(21 days 2 hours)
-            var durationStr = timexStr.Replace("P", "");
+            // Resolve duration timex, such as P21DT2H (21 days 2 hours)
+            var durationStr = timexStr.Replace(Constants.GeneralPeriodPrefix, "");
             var numberStart = 0;
             var isTime = false;
 

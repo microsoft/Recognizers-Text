@@ -44,6 +44,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 {
                     new Regex(DateTimeDefinitions.TimePeriodRegexes2, RegexOptions.IgnoreCase | RegexOptions.Singleline),
                     PeriodType.ShortTime
+                },
+                {
+                    new Regex(DateTimeDefinitions.TimeOfDayRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                    PeriodType.ShortTime
                 }
             };
 

@@ -393,13 +393,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             // sort the timex using the granularity of the duration, "P1M23D" for "1 month 23 days" and "23 days 1 month"
             if (prs.Count == ers.Count)
             {
-                var unitList = new List<string>(timexDict.Keys);
-                unitList.Sort((x, y) => (this.config.UnitValueMap[x] < this.config.UnitValueMap[y]? 1 : -1));
-                ret.Timex = "P";
-                foreach (var unit in unitList)
-                {
-                    ret.Timex = $"{ret.Timex}{timexDict[unit].Substring(1)}";
-                }
+                ret.Timex = TimexUtility.GenerateCompoundDurationTimex(timexDict, config.UnitValueMap);
 
                 double value = 0;
                 foreach (var pr in prs)

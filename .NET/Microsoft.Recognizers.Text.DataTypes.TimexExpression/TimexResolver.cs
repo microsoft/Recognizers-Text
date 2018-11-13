@@ -3,6 +3,7 @@
 
 using System;
 using System.Collections.Generic;
+using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 {
@@ -31,7 +32,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             }
         }
 
-        public static Resolution Resolve(string[] timexArray, System.DateTime date = default(System.DateTime)) {
+        public static Resolution Resolve(string[] timexArray, DateObject date = default(DateObject)) {
 
             var resolution = new Resolution();
             foreach (var timex in timexArray)
@@ -44,7 +45,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             return resolution;
         }
 
-        private static List<Resolution.Entry> ResolveTimex(TimexProperty timex, System.DateTime date)
+        private static List<Resolution.Entry> ResolveTimex(TimexProperty timex, DateObject date)
         {
             var types = timex.Types.Count != 0 ? timex.Types : TimexInference.Infer(timex);
 
@@ -121,7 +122,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
                 }
             };
         }
-        private static List<Resolution.Entry> ResolveDate(TimexProperty timex, System.DateTime date)
+        private static List<Resolution.Entry> ResolveDate(TimexProperty timex, DateObject date)
         {
             return new List<Resolution.Entry>
             {
@@ -140,7 +141,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             };
         }
 
-        private static string LastDateValue(TimexProperty timex, System.DateTime date)
+        private static string LastDateValue(TimexProperty timex, DateObject date)
         {
             if (timex.Month != null && timex.DayOfMonth != null)
             {
@@ -167,7 +168,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             return string.Empty;
         }
 
-        private static string NextDateValue(TimexProperty timex, System.DateTime date)
+        private static string NextDateValue(TimexProperty timex, DateObject date)
         {
             if (timex.Month != null && timex.DayOfMonth != null)
             {
@@ -227,7 +228,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             );
         }
 
-        private static List<Resolution.Entry> ResolveDateRange(TimexProperty timex, System.DateTime date)
+        private static List<Resolution.Entry> ResolveDateRange(TimexProperty timex, DateObject date)
         {
             if (timex.Season != null)
             {
@@ -332,7 +333,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             }
         }
 
-        private static List<Resolution.Entry> ResolveDateTime(TimexProperty timex, System.DateTime date)
+        private static List<Resolution.Entry> ResolveDateTime(TimexProperty timex, DateObject date)
         {
             var resolvedDates = ResolveDate(timex, date);
             foreach (var resolved in resolvedDates)

@@ -4,6 +4,7 @@ from recognizers_text.utilities import RegExpUtility
 from recognizers_number.number import BaseNumberParser, BaseNumberExtractor
 from recognizers_number.number.english.extractors import EnglishIntegerExtractor
 from recognizers_number.number.english.parsers import EnglishNumberParserConfiguration
+from ...resources.base_date_time import BaseDateTime
 from ...resources.english_date_time import EnglishDateTime
 from ..extractors import DateTimeExtractor
 from ..base_duration import BaseDurationExtractor
@@ -16,6 +17,10 @@ class EnglishDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
     @property
     def simple_cases_regexes(self) -> List[Pattern]:
         return self._simple_cases_regexes
+
+    @property
+    def illegal_year_regex(self) -> Pattern:
+        return self._illegal_year_regex
 
     @property
     def year_regex(self) -> Pattern:
@@ -102,6 +107,7 @@ class EnglishDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
             RegExpUtility.get_safe_reg_exp(EnglishDateTime.LaterEarlyPeriodRegex),
             RegExpUtility.get_safe_reg_exp(EnglishDateTime.WeekWithWeekDayRangeRegex)
         ]
+        self._illegal_year_regex = RegExpUtility.get_safe_reg_exp(BaseDateTime.IllegalYearRegex)
         self._year_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.YearRegex)
         self._till_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.TillRegex)
         self._followed_unit = RegExpUtility.get_safe_reg_exp(EnglishDateTime.FollowedDateUnit)

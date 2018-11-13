@@ -61,16 +61,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         public static readonly Regex RelativeWeekDayRegex =
             new Regex(DateTimeDefinitions.RelativeWeekDayRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        //TODO: modify below regex according to the counterpart in English
-        public static readonly Regex ForTheRegex = new Regex($@"^[.]",
+        public static readonly Regex ForTheRegex = new Regex(DateTimeDefinitions.ForTheRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        //TODO: modify below regex according to the counterpart in English
-        public static readonly Regex WeekDayAndDayOfMothRegex = new Regex($@"^[.]",
+        public static readonly Regex WeekDayAndDayOfMothRegex = new Regex(DateTimeDefinitions.WeekDayAndDayOfMonthRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        //TODO: modify below regex according to the counterpart in English
-        public static readonly Regex RelativeMonthRegex = new Regex($@"^[.]",
+        public static readonly Regex RelativeMonthRegex = new Regex(DateTimeDefinitions.RelativeMonthRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex PrefixArticleRegex =
@@ -110,8 +107,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public PortugueseDateExtractorConfiguration(IOptionsConfiguration config) : base(config)
         {
-            IntegerExtractor = new IntegerExtractor();
-            OrdinalExtractor = new OrdinalExtractor();
+            IntegerExtractor = Number.Portuguese.IntegerExtractor.GetInstance();
+            OrdinalExtractor = Number.Portuguese.OrdinalExtractor.GetInstance();
             NumberParser = new BaseNumberParser(new PortugueseNumberParserConfiguration());
             DurationExtractor = new BaseDurationExtractor(new PortugueseDurationExtractorConfiguration(this));
             UtilityConfiguration = new PortugueseDatetimeUtilityConfiguration();

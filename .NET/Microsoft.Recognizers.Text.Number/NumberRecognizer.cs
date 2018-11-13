@@ -151,13 +151,13 @@ namespace Microsoft.Recognizers.Text.Number
                 Culture.Spanish,
                 (options) => new NumberModel(
                     AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new SpanishNumberParserConfiguration()),
-                    new Spanish.NumberExtractor(NumberMode.PureNumber)));
+                    Spanish.NumberExtractor.GetInstance(NumberMode.PureNumber, options)));
 
             RegisterModel<OrdinalModel>(
                 Culture.Spanish,
                 (options) => new OrdinalModel(
                     AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Ordinal, new SpanishNumberParserConfiguration()),
-                    new Spanish.OrdinalExtractor()));
+                    Spanish.OrdinalExtractor.GetInstance()));
 
             RegisterModel<PercentModel>(
                 Culture.Spanish,
@@ -173,13 +173,13 @@ namespace Microsoft.Recognizers.Text.Number
                 Culture.Portuguese,
                 (options) => new NumberModel(
                     AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new PortugueseNumberParserConfiguration()),
-                    new Portuguese.NumberExtractor(NumberMode.PureNumber)));
+                    Portuguese.NumberExtractor.GetInstance(NumberMode.PureNumber, options)));
 
             RegisterModel<OrdinalModel>(
                 Culture.Portuguese,
                 (options) => new OrdinalModel(
                     AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Ordinal, new PortugueseNumberParserConfiguration()),
-                    new Portuguese.OrdinalExtractor()));
+                    Portuguese.OrdinalExtractor.GetInstance()));
 
             RegisterModel<PercentModel>(
                 Culture.Portuguese,
@@ -195,13 +195,13 @@ namespace Microsoft.Recognizers.Text.Number
                 Culture.French,
                 (options) => new NumberModel(
                     AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new FrenchNumberParserConfiguration()),
-                    new French.NumberExtractor(NumberMode.PureNumber)));
+                    French.NumberExtractor.GetInstance(NumberMode.PureNumber, options)));
 
             RegisterModel<OrdinalModel>(
                 Culture.French,
                 (options) => new OrdinalModel(
                     AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Ordinal, new FrenchNumberParserConfiguration()),
-                    new French.OrdinalExtractor()));
+                    French.OrdinalExtractor.GetInstance()));
 
             RegisterModel<PercentModel>(
                 Culture.French,
@@ -230,7 +230,7 @@ namespace Microsoft.Recognizers.Text.Number
                 (options) => new PercentModel(
                     AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new GermanNumberParserConfiguration()),
                     new German.PercentageExtractor()));
-                    
+
             #endregion
 
             #region Italian
@@ -240,13 +240,13 @@ namespace Microsoft.Recognizers.Text.Number
                Culture.Italian,
                (options) => new NumberModel(
                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new ItalianNumberParserConfiguration()),
-                   new Italian.NumberExtractor(NumberMode.PureNumber)));
+                   Italian.NumberExtractor.GetInstance(NumberMode.PureNumber, options)));
 
             RegisterModel<OrdinalModel>(
                 Culture.Italian,
                 (options) => new OrdinalModel(
                     AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Ordinal, new ItalianNumberParserConfiguration()),
-                    new Italian.OrdinalExtractor()));
+                    Italian.OrdinalExtractor.GetInstance()));
 
             RegisterModel<PercentModel>(
                 Culture.Italian,
@@ -254,11 +254,11 @@ namespace Microsoft.Recognizers.Text.Number
                     AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new ItalianNumberParserConfiguration()),
                     new Italian.PercentageExtractor()));
             */
-            
+
             #endregion
 
             #region Japanese
-            
+
             RegisterModel<NumberModel>(
                 Culture.Japanese,
                 (options) => new NumberModel(
@@ -277,11 +277,13 @@ namespace Microsoft.Recognizers.Text.Number
                     AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new JapaneseNumberParserConfiguration()),
                     new Japanese.PercentageExtractor()));
 
+            /*
             RegisterModel<NumberRangeModel>(
                 Culture.Japanese,
                 (options) => new NumberRangeModel(
                     new BaseNumberRangeParser(new JapaneseNumberRangeParserConfiguration()),
                     new Japanese.NumberRangeExtractor(options)));
+            */
                             
             #endregion
 
@@ -309,7 +311,6 @@ namespace Microsoft.Recognizers.Text.Number
                     AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Ordinal, new DutchNumberParserConfiguration()),
                     Dutch.OrdinalExtractor.GetInstance()));
 
-            /*
             RegisterModel<PercentModel>(
                 Culture.Dutch,
                 (options) => new PercentModel(

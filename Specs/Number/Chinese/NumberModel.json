@@ -2619,7 +2619,7 @@
   },
   {
     "Input": "百分之十万零六百五十一",
-    "NotSupported": "java",
+    "NotSupported": "javascript, java",
     "Results": []
   },
   {
@@ -4212,6 +4212,21 @@
         "TypeName": "number",
         "Resolution": {
           "value": "5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "五十千",
+    "NotSupported": "javascript, java",
+    "Results": [
+      {
+        "Text": "五十",
+        "Start": 0,
+        "End": 1,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "50"
         }
       }
     ]

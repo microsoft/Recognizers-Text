@@ -1,6 +1,7 @@
 ﻿using System.Collections.Immutable;
+using System.Linq;
 using System.Text.RegularExpressions;
-
+using Microsoft.Recognizers.Definitions.French;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.French
@@ -59,43 +60,38 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             endHour = 0;
             endMin = 0;
 
-            if (trimmedText.EndsWith("matinee") || trimmedText.EndsWith("matin") || trimmedText.EndsWith("matinée"))
+            var timeOfDay = "";      
+            if (DateTimeDefinitions.MorningTermList.Any(o => trimmedText.EndsWith(o)))
             {
-                timex = "TMO";
-                beginHour = 8;
-                endHour = Constants.HalfDayHourCount;
+                timeOfDay = Constants.Morning;
             }
-            else if (trimmedText.EndsWith("apres-midi")||trimmedText.EndsWith("apres midi") 
-                || trimmedText.EndsWith("après midi") || trimmedText.EndsWith("après-midi"))
+            else if (DateTimeDefinitions.AfternoonTermList.Any(o => trimmedText.EndsWith(o)))
             {
-                timex = "TAF";
-                beginHour = Constants.HalfDayHourCount;
-                endHour = 16;
-            } 
-            else if (trimmedText.EndsWith("soir") || trimmedText.EndsWith("soiree") || trimmedText.EndsWith("soirée"))
-            {
-                timex = "TEV";
-                beginHour = 16;
-                endHour = 20;
+                timeOfDay = Constants.Afternoon;
             }
-            else if (trimmedText.Equals("jour") || trimmedText.EndsWith("journee") || trimmedText.EndsWith("journée"))
+            else if (DateTimeDefinitions.EveningTermList.Any(o => trimmedText.EndsWith(o)))
             {
-                timex = "TDT";
-                beginHour = 8;
-                endHour = 18;
+                timeOfDay = Constants.Evening;
+            }    
+            else if (DateTimeDefinitions.DaytimeTermList.Any(o => trimmedText.Equals(o)))
+            {
+                timeOfDay = Constants.Daytime;
             }
-            else if (trimmedText.EndsWith("nuit"))
+            else if (DateTimeDefinitions.NightTermList.Any(o => trimmedText.EndsWith(o)))
             {
-                timex = "TNI";
-                beginHour = 20;
-                endHour = 23;
-                endMin = 59;
+                timeOfDay = Constants.Night;
             }
             else
             {
                 timex = null;
                 return false;
             }
+
+            var parseResult = TimexUtility.ParseTimeOfDay(timeOfDay);
+            timex = parseResult.Timex;
+            beginHour = parseResult.BeginHour;
+            endHour = parseResult.EndHour;
+            endMin = parseResult.EndMin;
 
             return true;
         }

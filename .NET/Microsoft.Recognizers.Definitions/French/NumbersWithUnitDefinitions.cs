@@ -455,5 +455,9 @@ namespace Microsoft.Recognizers.Definitions.French
 			"stone",
 			"dram"
 		};
+		public static readonly Dictionary<string, string> AmbiguityFiltersDict = new Dictionary<string, string>
+		{
+			{ "\\bcent\\b", "\\bpour\\s+cent\\b" }
+		};
 	}
 }

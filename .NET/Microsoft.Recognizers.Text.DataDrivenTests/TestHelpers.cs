@@ -7,13 +7,13 @@ using DateObject = System.DateTime;
 
 using Microsoft.Recognizers.Text.DateTime;
 using Microsoft.Recognizers.Text.DateTime.English;
+using Microsoft.Recognizers.Text.DateTime.French;
+using Microsoft.Recognizers.Text.DateTime.German;
 using Microsoft.Recognizers.Text.DateTime.Spanish;
 using Microsoft.Recognizers.Text.DateTime.Portuguese;
 using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.NumberWithUnit;
-using Microsoft.Recognizers.Text.DateTime.French;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Microsoft.Recognizers.Text.DateTime.German;
 using Microsoft.Recognizers.Text.Sequence;
 using Microsoft.Recognizers.Text.Choice;
 
@@ -80,6 +80,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
         Hashtag,
         Email,
         URL,
+        GUID,
         Boolean,
     }
 
@@ -141,6 +142,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             { Models.Hashtag, (test, culture) => SequenceRecognizer.RecognizeHashtag(test.Input, culture, fallbackToDefaultCulture: false) },
             { Models.Email, (test, culture) => SequenceRecognizer.RecognizeEmail(test.Input, culture, fallbackToDefaultCulture: false) },
             { Models.URL, (test, culture) => SequenceRecognizer.RecognizeURL(test.Input, culture, fallbackToDefaultCulture: false) },
+            { Models.GUID, (test, culture) => SequenceRecognizer.RecognizeGUID(test.Input, culture, fallbackToDefaultCulture: false) },
             { Models.Boolean, (test, culture) => ChoiceRecognizer.RecognizeBoolean(test.Input, culture, fallbackToDefaultCulture: false) }
         };
 

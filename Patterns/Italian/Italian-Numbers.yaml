@@ -338,7 +338,7 @@ OrdinalNumberMap: !dictionary
     miliardersime: 1000000000
     trilioneisimi: 1000000000000
     trilionesime: 1000000000000
-PrefixCardinalDictionary: !dictionary
+PrefixCardinalMap: !dictionary
   types: [ string, long ]
   entries:
     due: 2 
@@ -394,7 +394,7 @@ PrefixCardinalDictionary: !dictionary
     ottocento: 800
     nove cento: 900
     novecento: 900
-SufixOrdinalDictionary: !dictionary
+SuffixOrdinalMap: !dictionary
   types: [ string, long ]
   entries:
     mille: 1000 

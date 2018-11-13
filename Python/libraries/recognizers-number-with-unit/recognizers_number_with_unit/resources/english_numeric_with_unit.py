@@ -268,7 +268,7 @@ class EnglishNumericWithUnit:
                                ('Trinidad and Tobago dollar', 'trinidad and tobago dollars|trinidad and tobago dollar|trinidad and tobago $|trinidad $|trinidad dollar|trinidad dollars|trinidadian dollar|trinidadian dollars|trinidadian $|ttd'),
                                ('Tuvaluan dollar', 'tuvaluan dollars|tuvaluan dollar|tuvaluan $'),
                                ('Dollar', 'dollars|dollar|$'),
-                               ('Chinese yuan', 'yuan|kuai|chinese yuan|renminbi|cny|rmb|￥'),
+                               ('Chinese yuan', 'yuan|kuai|chinese yuan|renminbi|cny|rmb|￥|元'),
                                ('Fen', 'fen'),
                                ('Jiao', 'jiao|mao'),
                                ('Finnish markka', 'suomen markka|finnish markka|finsk mark|fim|markkaa|markka'),

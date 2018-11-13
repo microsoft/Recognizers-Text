@@ -1,14 +1,16 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Text;
 using System.Text.RegularExpressions;
+using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
     public class FormatUtil
     {
-        public static readonly Regex HourTimexRegex = new Regex(@"(?<!P)T(\d{2})");
-        public static readonly Regex WeekDayTimexRegex = new Regex(@"XXXX-WXX-(\d)");
+        private static readonly Regex HourTimexRegex = new Regex(@"(?<!P)T(\d{2})");
+        private static readonly Regex WeekDayTimexRegex = new Regex(@"XXXX-WXX-(\d)");
 
         public static string LuisDate(int year, int month, int day)
         {
@@ -18,126 +20,166 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     if (day == -1)
                     {
-                        return string.Join("-", "XXXX", "XX", "XX");
+                        return string.Join(Constants.DateTimexConnector, Constants.TimexFuzzyYear, Constants.TimexFuzzyMonth, Constants.TimexFuzzyDay);
                     }
                     
-                    return string.Join("-", "XXXX", "XX", day.ToString("D2"));
+                    return string.Join(Constants.DateTimexConnector, Constants.TimexFuzzyYear, Constants.TimexFuzzyMonth, day.ToString("D2"));
                 }
 
-                return string.Join("-", "XXXX", month.ToString("D2"), day.ToString("D2"));
+                return string.Join(Constants.DateTimexConnector, Constants.TimexFuzzyYear, month.ToString("D2"), day.ToString("D2"));
             }
 
-            return string.Join("-", year.ToString("D4"), month.ToString("D2"), day.ToString("D2"));
+            return string.Join(Constants.DateTimexConnector, year.ToString("D4"), month.ToString("D2"), day.ToString("D2"));
         }
 
-        public static string LuisDate(System.DateTime date)
+        public static string LuisDate(DateObject date, DateObject alternativeDate = default(DateObject))
         {
-            return LuisDate(date.Year, date.Month, date.Day);
-        }
+            var year = date.Year;
+            var month = date.Month;
+            var day = date.Day;
 
+            if (!alternativeDate.IsDefaultValue())
+            {
+                if (alternativeDate.Year != year)
+                {
+                    year = -1;
+                }
+
+                if (alternativeDate.Month != month)
+                {
+                    month = -1;
+                }
+
+                if (alternativeDate.Day != day)
+                {
+                    day = -1;
+                }
+            }
+
+            return LuisDate(year, month, day);
+        }
+        
         public static string ShortTime(int hour, int min, int second)
         {
+            string timeString;
+
             if (min < 0 && second < 0)
             {
-                return $"T{hour.ToString("D2")}";
+                timeString = $"{Constants.TimeTimexPrefix}{hour:D2}";
             }
             else if (second < 0)
             {
-                return $"T{string.Join(":", hour.ToString("D2"), min.ToString("D2"))}";
+                timeString = $"{Constants.TimeTimexPrefix}{LuisTime(hour, min)}";
+            }
+            else
+            {
+                timeString = $"{Constants.TimeTimexPrefix}{LuisTime(hour, min, second)}";
             }
 
-            return $"T{string.Join(":", hour.ToString("D2"), min.ToString("D2"), second.ToString("D2"))}";
+            return timeString;
         }
 
-        public static string LuisTime(int hour, int min, int second)
+        public static string LuisTime(int hour, int min, int second = -1)
         {
-            return string.Join(":", hour.ToString("D2"), min.ToString("D2"), second.ToString("D2"));
-        }
+            string result;
 
-        public static string LuisTime(System.DateTime time)
-        {
-            return LuisTime(time.Hour, time.Minute, time.Second);
-        }
-
-        public static string LuisDateTime(System.DateTime time)
-        {
-            return $"{LuisDate(time)}T{LuisTime(time.Hour, time.Minute, time.Second)}";
-        }
-
-        // Only handle TimeSpan which is less than one day
-        public static string LuisTimeSpan(System.TimeSpan timeSpan)
-        {
-            var result = "PT";
-
-            if (timeSpan.Hours > 0)
+            if (second == -1)
             {
-                result += $"{timeSpan.Hours}H";
+                result = string.Join(Constants.TimeTimexConnector, hour.ToString("D2"), min.ToString("D2"));
             }
-
-            if (timeSpan.Minutes > 0)
+            else
             {
-                result += $"{timeSpan.Minutes}M";
-            }
-
-            if (timeSpan.Seconds > 0)
-            {
-                result += $"{timeSpan.Seconds}S";
+                result = string.Join(Constants.TimeTimexConnector, hour.ToString("D2"), min.ToString("D2"), second.ToString("D2"));
             }
 
             return result;
         }
 
-        public static string FormatDate(System.DateTime date)
+        public static string LuisTime(DateObject time)
         {
-            return string.Join("-", date.Year.ToString("D4"), date.Month.ToString("D2"), date.Day.ToString("D2"));
+            return LuisTime(time.Hour, time.Minute, time.Second);
         }
 
-        public static string FormatTime(System.DateTime time)
+        public static string LuisDateTime(DateObject time)
         {
-            return string.Join(":", time.Hour.ToString("D2"), time.Minute.ToString("D2"), time.Second.ToString("D2"));
+            return $"{LuisDate(time)}{Constants.TimeTimexPrefix}{LuisTime(time.Hour, time.Minute, time.Second)}";
         }
 
-        public static string FormatDateTime(System.DateTime datetime)
+        // Only handle TimeSpan which is less than one day
+        public static string LuisTimeSpan(System.TimeSpan timeSpan)
         {
-            return FormatDate(datetime) + " " + FormatTime(datetime);
+            var timexBuilder = new StringBuilder($"{Constants.GeneralPeriodPrefix}{Constants.TimeTimexPrefix}");
+
+            if (timeSpan.Hours > 0)
+            {
+                timexBuilder.Append($"{timeSpan.Hours}H");
+            }
+
+            if (timeSpan.Minutes > 0)
+            {
+                timexBuilder.Append($"{timeSpan.Minutes}M");
+            }
+
+            if (timeSpan.Seconds > 0)
+            {
+                timexBuilder.Append($"{timeSpan.Seconds}S");
+            }
+
+            return timexBuilder.ToString();
+        }
+
+        public static string FormatDate(DateObject date)
+        {
+            return string.Join(Constants.DateTimexConnector, date.Year.ToString("D4"), date.Month.ToString("D2"), date.Day.ToString("D2"));
+        }
+
+        public static string FormatTime(DateObject time)
+        {
+            return string.Join(Constants.TimeTimexConnector, time.Hour.ToString("D2"), time.Minute.ToString("D2"), time.Second.ToString("D2"));
+        }
+
+        public static string FormatDateTime(DateObject datetime)
+        {
+            return $"{FormatDate(datetime)} {FormatTime(datetime)}";
         }
 
         public static string AllStringToPm(string timeStr)
         {
             var matches = HourTimexRegex.Matches(timeStr);
-            var splited = new List<string>();
+            var splits = new List<string>();
 
             int lastPos = 0;
             foreach (Match match in matches)
             {
                 if (lastPos != match.Index)
                 {
-                    splited.Add(timeStr.Substring(lastPos, match.Index - lastPos));
+                    splits.Add(timeStr.Substring(lastPos, match.Index - lastPos));
                 }
-                splited.Add(timeStr.Substring(match.Index, match.Length));
+
+                splits.Add(timeStr.Substring(match.Index, match.Length));
                 lastPos = match.Index + match.Length;
             }
 
             if (!string.IsNullOrEmpty(timeStr.Substring(lastPos)))
             {
-                splited.Add(timeStr.Substring(lastPos));
+                splits.Add(timeStr.Substring(lastPos));
             }
 
-            for (int i = 0; i < splited.Count; i += 1)
+            for (int i = 0; i < splits.Count; i += 1)
             {
-                if (HourTimexRegex.IsMatch(splited[i]))
+                if (HourTimexRegex.IsMatch(splits[i]))
                 {
-                    splited[i] = ToPm(splited[i]);
+                    splits[i] = ToPm(splits[i]);
                 }
             }
 
             // Modify weekDay timex for the cases which cross day boundary
-            if (splited.Count >= 4)
+            if (splits.Count >= 4)
             {
-                var weekDayStartMatch = WeekDayTimexRegex.Match(splited[0]).Groups[1];
-                var weekDayEndMatch = WeekDayTimexRegex.Match(splited[2]).Groups[1];
-                var hourStartMatch = HourTimexRegex.Match(splited[1]).Groups[1];
-                var hourEndMatch = HourTimexRegex.Match(splited[3]).Groups[1];
+                var weekDayStartMatch = WeekDayTimexRegex.Match(splits[0]).Groups[1];
+                var weekDayEndMatch = WeekDayTimexRegex.Match(splits[2]).Groups[1];
+                var hourStartMatch = HourTimexRegex.Match(splits[1]).Groups[1];
+                var hourEndMatch = HourTimexRegex.Match(splits[3]).Groups[1];
 
                 if (int.TryParse(weekDayStartMatch.Value, out var weekDayStart) &&
                     int.TryParse(weekDayEndMatch.Value, out var weekDayEnd) &&
@@ -147,37 +189,36 @@ namespace Microsoft.Recognizers.Text.DateTime
                     if (hourEnd < hourStart && weekDayStart == weekDayEnd)
                     {
                         weekDayEnd = weekDayEnd == Constants.WeekDayCount ? 1 : weekDayEnd + 1;
-                        splited[2] = splited[2].Substring(0, weekDayEndMatch.Index) + weekDayEnd;
+                        splits[2] = splits[2].Substring(0, weekDayEndMatch.Index) + weekDayEnd;
                     }
                 }
             }
 
-            return string.Concat(splited);
+            return string.Concat(splits);
         }
 
         public static string ToPm(string timeStr)
         {
             bool hasT = false;
-            if (timeStr.StartsWith("T"))
+            if (timeStr.StartsWith(Constants.TimeTimexPrefix))
             {
                 hasT = true;
                 timeStr = timeStr.Substring(1);
             }
 
-            var splited = timeStr.Split(':');
-            var hour = int.Parse(splited[0]);
+            var splits = timeStr.Split(new[] { Constants.TimeTimexConnector }, StringSplitOptions.RemoveEmptyEntries);
+            var hour = int.Parse(splits[0]);
             hour = hour >= Constants.HalfDayHourCount ? hour - Constants.HalfDayHourCount: hour + Constants.HalfDayHourCount;
-            splited[0] = hour.ToString("D2");
+            splits[0] = hour.ToString("D2");
 
-            return hasT ? "T" + string.Join(":", splited) : string.Join(":", splited);
+            return hasT ? Constants.TimeTimexPrefix + string.Join(Constants.TimeTimexConnector, splits) : string.Join(Constants.TimeTimexConnector, splits);
         }
 
-        public static string ToIsoWeekTimex(System.DateTime monday)
+        public static string ToIsoWeekTimex(DateObject monday)
         {
             var cal = DateTimeFormatInfo.InvariantInfo.Calendar;
-            return monday.Year.ToString("D4") + "-W" + 
-                cal.GetWeekOfYear(monday, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday)
-                .ToString("D2");
+
+            return $"{monday.Year:D4}-W{cal.GetWeekOfYear(monday, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday):D2}";
         }
     }
 }
