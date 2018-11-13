@@ -35,15 +35,15 @@ public class IntegerExtractor extends BaseNumberExtractor {
         HashMap<Pattern, String> builder = new HashMap<>();
 
         // 123456,  －１２３４５６
-        builder.put(Pattern.compile(ChineseNumeric.NumbersSpecialsChars, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "IntegerNum");
+        builder.put(RegExpUtility.getSafeLookbehindRegExp(ChineseNumeric.NumbersSpecialsChars, Pattern.UNICODE_CHARACTER_CLASS), "IntegerNum");
         //15k,  16 G
-        builder.put(Pattern.compile(ChineseNumeric.NumbersSpecialsCharsWithSuffix, Pattern.UNICODE_CHARACTER_CLASS), "IntegerNum");
+        builder.put(RegExpUtility.getSafeLookbehindRegExp(ChineseNumeric.NumbersSpecialsCharsWithSuffix, Pattern.UNICODE_CHARACTER_CLASS), "IntegerNum");
         //1,234,  ２，３３２，１１１
-        builder.put(Pattern.compile(ChineseNumeric.DottedNumbersSpecialsChar, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "IntegerNum");
+        builder.put(RegExpUtility.getSafeLookbehindRegExp(ChineseNumeric.DottedNumbersSpecialsChar, Pattern.UNICODE_CHARACTER_CLASS), "IntegerNum");
         //半百  半打
-        builder.put(Pattern.compile(ChineseNumeric.NumbersWithHalfDozen, Pattern.UNICODE_CHARACTER_CLASS), "IntegerChs");
+        builder.put(RegExpUtility.getSafeLookbehindRegExp(ChineseNumeric.NumbersWithHalfDozen, Pattern.UNICODE_CHARACTER_CLASS), "IntegerChs");
         //一打  五十打
-        builder.put(Pattern.compile(ChineseNumeric.NumbersWithDozen, Pattern.UNICODE_CHARACTER_CLASS), "IntegerChs");
+        builder.put(RegExpUtility.getSafeLookbehindRegExp(ChineseNumeric.NumbersWithDozen, Pattern.UNICODE_CHARACTER_CLASS), "IntegerChs");
 
         switch (mode) {
             case Default:

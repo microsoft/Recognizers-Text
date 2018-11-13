@@ -2,19 +2,18 @@ package com.microsoft.recognizers.text.datetime.utilities;
 
 import java.time.LocalDateTime;
 
-public class FormatUtil {
+public class DateTimeFormatUtil {
 
     private static final String dateDelimiter = "-";
     private static final String timeDelimiter = ":";
 
-    public static String luisDate(Integer year, Integer month, Integer day)
-    {
-        if (year == -1)
-        {
-            if (month == -1)
-            {
-                if (day == -1)
-                {
+    public static String luisDate(Integer year, Integer month, Integer day) {
+
+        if (year == -1) {
+
+            if (month == -1) {
+
+                if (day == -1) {
                     return String.join(dateDelimiter, "XXXX", "XX", "XX");
                 }
 
@@ -39,8 +38,7 @@ public class FormatUtil {
         return String.join(timeDelimiter, String.format("%02d", hour), String.format("%02d", min), String.format("%02d", second));
     }
 
-    public static String formatDate(LocalDateTime date)
-    {
-        return String.join(dateDelimiter, String.format("%04d", date.getYear()),  String.format("%02d", date.getMonthValue()),  String.format("%02d", date.getDayOfMonth()));
+    public static String formatDate(LocalDateTime date) {
+        return String.join(dateDelimiter, String.format("%04d", date.getYear()), String.format("%02d", date.getMonthValue()), String.format("%02d", date.getDayOfMonth()));
     }
 }

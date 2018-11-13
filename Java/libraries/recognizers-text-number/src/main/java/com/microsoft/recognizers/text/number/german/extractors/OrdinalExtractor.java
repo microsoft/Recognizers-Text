@@ -3,6 +3,7 @@ package com.microsoft.recognizers.text.number.german.extractors;
 import com.microsoft.recognizers.text.number.Constants;
 import com.microsoft.recognizers.text.number.extractors.BaseNumberExtractor;
 import com.microsoft.recognizers.text.number.resources.GermanNumeric;
+import com.microsoft.recognizers.text.utilities.RegExpUtility;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -26,10 +27,10 @@ public class OrdinalExtractor extends BaseNumberExtractor {
     public OrdinalExtractor() {
         HashMap<Pattern, String> builder = new HashMap<>();
 
-        builder.put(Pattern.compile(GermanNumeric.OrdinalSuffixRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "OrdinalNum");
-        builder.put(Pattern.compile(GermanNumeric.OrdinalNumericRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "OrdinalNum");
-        builder.put(Pattern.compile(GermanNumeric.OrdinalGermanRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "OrdGer");
-        builder.put(Pattern.compile(GermanNumeric.OrdinalRoundNumberRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "OrdGer");
+        builder.put(RegExpUtility.getSafeLookbehindRegExp(GermanNumeric.OrdinalSuffixRegex, Pattern.UNICODE_CHARACTER_CLASS), "OrdinalNum");
+        builder.put(RegExpUtility.getSafeLookbehindRegExp(GermanNumeric.OrdinalNumericRegex, Pattern.UNICODE_CHARACTER_CLASS), "OrdinalNum");
+        builder.put(RegExpUtility.getSafeLookbehindRegExp(GermanNumeric.OrdinalGermanRegex, Pattern.UNICODE_CHARACTER_CLASS), "OrdGer");
+        builder.put(RegExpUtility.getSafeLookbehindRegExp(GermanNumeric.OrdinalRoundNumberRegex, Pattern.UNICODE_CHARACTER_CLASS), "OrdGer");
 
         this.regexes = Collections.unmodifiableMap(builder);
     }

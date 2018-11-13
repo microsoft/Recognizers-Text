@@ -13,9 +13,15 @@ public class TimeZoneResolutionResult {
         this.timeZoneText = timeZoneText;
     }
 
-    public String getValue() { return this.value; }
+    public String getValue() {
+        return this.value;
+    }
 
-    public Integer getUtcOffsetMins() { return this.utcOffsetMins; }
+    public Integer getUtcOffsetMins() {
+        return this.utcOffsetMins;
+    }
 
-    public String getTimeZoneText() { return this.timeZoneText; }
+    public String getTimeZoneText() {
+        return this.timeZoneText;
+    }
 }

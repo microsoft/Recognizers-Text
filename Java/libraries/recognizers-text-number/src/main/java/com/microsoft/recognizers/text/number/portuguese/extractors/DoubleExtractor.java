@@ -4,6 +4,7 @@ import com.microsoft.recognizers.text.number.Constants;
 import com.microsoft.recognizers.text.number.LongFormatType;
 import com.microsoft.recognizers.text.number.extractors.BaseNumberExtractor;
 import com.microsoft.recognizers.text.number.resources.PortugueseNumeric;
+import com.microsoft.recognizers.text.utilities.RegExpUtility;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -31,13 +32,13 @@ public class DoubleExtractor extends BaseNumberExtractor {
     public DoubleExtractor(String placeholder) {
         HashMap<Pattern, String> builder = new HashMap<>();
 
-        builder.put(Pattern.compile(PortugueseNumeric.DoubleDecimalPointRegex(placeholder), Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "DoubleNum");
-        builder.put(Pattern.compile(PortugueseNumeric.DoubleWithoutIntegralRegex(placeholder), Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "DoubleNum");
-        builder.put(Pattern.compile(PortugueseNumeric.DoubleWithMultiplierRegex), "DoubleNum");
-        builder.put(Pattern.compile(PortugueseNumeric.DoubleWithRoundNumber, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "DoubleNum");
-        builder.put(Pattern.compile(PortugueseNumeric.DoubleAllFloatRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "DoublePor");
-        builder.put(Pattern.compile(PortugueseNumeric.DoubleExponentialNotationRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "DoublePow");
-        builder.put(Pattern.compile(PortugueseNumeric.DoubleCaretExponentialNotationRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "DoublePow");
+        builder.put(RegExpUtility.getSafeLookbehindRegExp(PortugueseNumeric.DoubleDecimalPointRegex(placeholder), Pattern.UNICODE_CHARACTER_CLASS), "DoubleNum");
+        builder.put(RegExpUtility.getSafeLookbehindRegExp(PortugueseNumeric.DoubleWithoutIntegralRegex(placeholder), Pattern.UNICODE_CHARACTER_CLASS), "DoubleNum");
+        builder.put(RegExpUtility.getSafeLookbehindRegExp(PortugueseNumeric.DoubleWithMultiplierRegex), "DoubleNum");
+        builder.put(RegExpUtility.getSafeLookbehindRegExp(PortugueseNumeric.DoubleWithRoundNumber, Pattern.UNICODE_CHARACTER_CLASS), "DoubleNum");
+        builder.put(RegExpUtility.getSafeLookbehindRegExp(PortugueseNumeric.DoubleAllFloatRegex, Pattern.UNICODE_CHARACTER_CLASS), "DoublePor");
+        builder.put(RegExpUtility.getSafeLookbehindRegExp(PortugueseNumeric.DoubleExponentialNotationRegex, Pattern.UNICODE_CHARACTER_CLASS), "DoublePow");
+        builder.put(RegExpUtility.getSafeLookbehindRegExp(PortugueseNumeric.DoubleCaretExponentialNotationRegex, Pattern.UNICODE_CHARACTER_CLASS), "DoublePow");
         builder.put(generateLongFormatNumberRegexes(LongFormatType.DoubleNumDotComma, placeholder), "DoubleNum");
         builder.put(generateLongFormatNumberRegexes(LongFormatType.DoubleNumNoBreakSpaceComma, placeholder), "DoubleNum");
 
