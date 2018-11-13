@@ -3,6 +3,7 @@ package com.microsoft.recognizers.text.number.german.extractors;
 import com.microsoft.recognizers.text.number.Constants;
 import com.microsoft.recognizers.text.number.extractors.BaseNumberExtractor;
 import com.microsoft.recognizers.text.number.resources.GermanNumeric;
+import com.microsoft.recognizers.text.utilities.RegExpUtility;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -24,13 +25,14 @@ public class FractionExtractor extends BaseNumberExtractor {
     }
 
     public FractionExtractor() {
+
         HashMap<Pattern, String> builder = new HashMap<>();
 
-        builder.put(Pattern.compile(GermanNumeric.FractionNotationWithSpacesRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "FracNum");
-        builder.put(Pattern.compile(GermanNumeric.FractionNotationRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "FracNum");
-        builder.put(Pattern.compile(GermanNumeric.FractionNounRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "FracGer");
-        builder.put(Pattern.compile(GermanNumeric.FractionNounWithArticleRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "FracGer");
-        builder.put(Pattern.compile(GermanNumeric.FractionPrepositionRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "FracGer");
+        builder.put(RegExpUtility.getSafeLookbehindRegExp(GermanNumeric.FractionNotationWithSpacesRegex, Pattern.UNICODE_CHARACTER_CLASS), "FracNum");
+        builder.put(RegExpUtility.getSafeLookbehindRegExp(GermanNumeric.FractionNotationRegex, Pattern.UNICODE_CHARACTER_CLASS), "FracNum");
+        builder.put(RegExpUtility.getSafeLookbehindRegExp(GermanNumeric.FractionNounRegex, Pattern.UNICODE_CHARACTER_CLASS), "FracGer");
+        builder.put(RegExpUtility.getSafeLookbehindRegExp(GermanNumeric.FractionNounWithArticleRegex, Pattern.UNICODE_CHARACTER_CLASS), "FracGer");
+        builder.put(RegExpUtility.getSafeLookbehindRegExp(GermanNumeric.FractionPrepositionRegex, Pattern.UNICODE_CHARACTER_CLASS), "FracGer");
 
         this.regexes = Collections.unmodifiableMap(builder);
     }

@@ -16,14 +16,14 @@ import com.google.common.collect.ImmutableMap;
 
 public class FrenchNumericWithUnit {
 
-    public static final Map<String, String> AgeSuffixList = ImmutableMap.<String, String>builder()
+    public static final ImmutableMap<String, String> AgeSuffixList = ImmutableMap.<String, String>builder()
         .put("Ans", "ans")
         .put("Mois", "mois d'âge|mois d'age|mois")
         .put("Semaines", "semaine|semaines|semaines d'âge|semaines d'age")
         .put("Jour", "jours|jour")
         .build();
 
-    public static final Map<String, String> AreaSuffixList = ImmutableMap.<String, String>builder()
+    public static final ImmutableMap<String, String> AreaSuffixList = ImmutableMap.<String, String>builder()
         .put("Kilomètre carré", "km2|km^2|km²|kilomètres carrés|kilomètre carré")
         .put("Hectomètre carré", "hm2|hm^2|hm²|hectomètre carré|hectomètres carrés")
         .put("Décamètre carré", "dam2|dam^2|dam²|décamètre carré|décamètres carrés")
@@ -37,7 +37,7 @@ public class FrenchNumericWithUnit {
         .put("Acre", "acre|acres")
         .build();
 
-    public static final Map<String, String> CurrencySuffixList = ImmutableMap.<String, String>builder()
+    public static final ImmutableMap<String, String> CurrencySuffixList = ImmutableMap.<String, String>builder()
         .put("Abkhazie apsar", "abkhazie apsar|apsars")
         .put("Afghan afghani", "afghan afghani|؋|afn|afghanis|afghani")
         .put("Pul", "pul")
@@ -268,7 +268,7 @@ public class FrenchNumericWithUnit {
 
     public static final String CompoundUnitConnectorRegex = "(?<spacer>[^.])";
 
-    public static final Map<String, String> CurrencyPrefixList = ImmutableMap.<String, String>builder()
+    public static final ImmutableMap<String, String> CurrencyPrefixList = ImmutableMap.<String, String>builder()
         .put("Dollar", "$")
         .put("Dollar États-Unis", "$us|usd|us$")
         .put("Dollar Caraïbes orientales", "xcd|$ec")
@@ -303,7 +303,7 @@ public class FrenchNumericWithUnit {
 
     public static final List<String> AmbiguousCurrencyUnitList = Arrays.asList("din.", "kina", "lari", "taka", "tala", "vatu", "yuan", "bob", "btn", "cop", "cup", "dop", "gip", "jod", "kgs", "lak", "mga", "mop", "nad", "omr", "sar", "sbd", "scr", "sdg", "sek", "sos", "std", "try", "yer");
 
-    public static final Map<String, String> InformationSuffixList = ImmutableMap.<String, String>builder()
+    public static final ImmutableMap<String, String> InformationSuffixList = ImmutableMap.<String, String>builder()
         .put("Bit", "-bit|bit|bits")
         .put("Kilobit", "kilobit|kilobits|kb|kbit|kbits")
         .put("Megabit", "megabit|megabits|Mb|Mbit|mégabit|mégabits")
@@ -326,7 +326,7 @@ public class FrenchNumericWithUnit {
 
     public static final String ConnectorToken = "de";
 
-    public static final Map<String, String> LengthSuffixList = ImmutableMap.<String, String>builder()
+    public static final ImmutableMap<String, String> LengthSuffixList = ImmutableMap.<String, String>builder()
         .put("Kilomètres", "km|kilomètres|kilomètre|kilometres|kilometre|-km")
         .put("Hectomètre", "hm|hectomètre|hectomètres|hectometre|hectometres|-hm")
         .put("Décamètre", "dam|décamètre|décamètres|decametre|decametres|-dm")
@@ -347,7 +347,7 @@ public class FrenchNumericWithUnit {
 
     public static final List<String> AmbuguousLengthUnitList = Arrays.asList("m", "pouce", "pm");
 
-    public static final Map<String, String> SpeedSuffixList = ImmutableMap.<String, String>builder()
+    public static final ImmutableMap<String, String> SpeedSuffixList = ImmutableMap.<String, String>builder()
         .put("Mètre par seconde", "m/s|metres/seconde|metres par seconde|metre par seconde|metres par secondes|mètre par seconde|mètres par seconde|mètres par secondes")
         .put("Kilomètre par heure", "km/h|kilomètre par heure|kilomètres par heure|kilomètres par heures|kilometres par heure|kilometre par heure")
         .put("Kilomètre par minute", "km/m|kilomètre par minute|kilomètres par minute|kilomètres par minutes|kilometre par minute|kilometre par minutes")
@@ -358,7 +358,7 @@ public class FrenchNumericWithUnit {
         .put("Pied par minute", "pieds/minute|pied/minute|ft/minute|ft/min|pied/min")
         .build();
 
-    public static final Map<String, String> TemperatureSuffixList = ImmutableMap.<String, String>builder()
+    public static final ImmutableMap<String, String> TemperatureSuffixList = ImmutableMap.<String, String>builder()
         .put("Kelvin", "k|K|kelvin")
         .put("F", "°f|degres f|degrés f|deg f|° f|degrés fahrenheit|degres fahrenheit|fahrenheit")
         .put("R", "rankine|°r|° r")
@@ -366,7 +366,7 @@ public class FrenchNumericWithUnit {
         .put("Degré", "degrés|degres|deg.|°| °|degré|degre|deg")
         .build();
 
-    public static final Map<String, String> VolumeSuffixList = ImmutableMap.<String, String>builder()
+    public static final ImmutableMap<String, String> VolumeSuffixList = ImmutableMap.<String, String>builder()
         .put("Mètre cube", "m3|m^3|m³|mètre cube|mètres cube|metre cube|metres cube")
         .put("Centimètre cube", "cm3|cm^3|cm³|centimètre cube|centimètres cube|centimetre cube|centimetres cube")
         .put("Millimètre cube", "mm3|mm^3|mm³|millimètre cube|millimètres cube|millimetre cube|millimetres cube")
@@ -385,7 +385,7 @@ public class FrenchNumericWithUnit {
 
     public static final List<String> AmbiguousVolumeUnitList = Arrays.asList("ounce", "oz", "l", "cup", "peck", "cord", "gill");
 
-    public static final Map<String, String> WeightSuffixList = ImmutableMap.<String, String>builder()
+    public static final ImmutableMap<String, String> WeightSuffixList = ImmutableMap.<String, String>builder()
         .put("Kilogramme", "kg|kilogramme|kilogrammes|kilo|kilos")
         .put("Gram", "g|gramme|grammes")
         .put("Milligramme", "mg|milligramme|milligrammes")
@@ -396,7 +396,7 @@ public class FrenchNumericWithUnit {
 
     public static final List<String> AmbiguousWeightUnitList = Arrays.asList("g", "oz", "stone", "dram");
 
-    public static final Map<String, String> AmbiguityFiltersDict = ImmutableMap.<String, String>builder()
+    public static final ImmutableMap<String, String> AmbiguityFiltersDict = ImmutableMap.<String, String>builder()
         .put("\\bcent\\b", "\\\\bpour\\\\s+cent\\\\b")
         .build();
 }

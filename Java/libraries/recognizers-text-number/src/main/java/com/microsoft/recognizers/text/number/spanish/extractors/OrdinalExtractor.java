@@ -3,6 +3,7 @@ package com.microsoft.recognizers.text.number.spanish.extractors;
 import com.microsoft.recognizers.text.number.Constants;
 import com.microsoft.recognizers.text.number.extractors.BaseNumberExtractor;
 import com.microsoft.recognizers.text.number.resources.SpanishNumeric;
+import com.microsoft.recognizers.text.utilities.RegExpUtility;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -24,10 +25,11 @@ public class OrdinalExtractor extends BaseNumberExtractor {
     }
 
     public OrdinalExtractor() {
+
         HashMap<Pattern, String> builder = new HashMap<>();
 
-        builder.put(Pattern.compile(SpanishNumeric.OrdinalSuffixRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "OrdinalNum");
-        builder.put(Pattern.compile(SpanishNumeric.OrdinalNounRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "OrdinalSpa");
+        builder.put(RegExpUtility.getSafeLookbehindRegExp(SpanishNumeric.OrdinalSuffixRegex, Pattern.UNICODE_CHARACTER_CLASS), "OrdinalNum");
+        builder.put(RegExpUtility.getSafeLookbehindRegExp(SpanishNumeric.OrdinalNounRegex, Pattern.UNICODE_CHARACTER_CLASS), "OrdinalSpa");
 
         this.regexes = Collections.unmodifiableMap(builder);
     }

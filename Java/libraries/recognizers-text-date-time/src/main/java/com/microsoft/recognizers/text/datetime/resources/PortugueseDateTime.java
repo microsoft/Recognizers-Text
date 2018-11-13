@@ -44,7 +44,7 @@ public class PortugueseDateTime {
 
     public static final String RelativeMonthRegex = "(?<relmonth>([nd]?es[st]e|pr[óo]ximo|passsado|[uú]ltimo)\\s+m[eê]s)\\b";
 
-    public static final String MonthRegex = "(?<month>Abril|Abr|Agosto|Ago|Dezembro|Dez|Fevereiro|Fev|Janeiro|Jan|Julho|Jul|Junho|Jun|Mar[çc]o|Mar|Maio|Mai|Novembro|Nov|Outubro|Out|Septembro|Setembro|Sept|Set)";
+    public static final String MonthRegex = "(?<month>abril|abr|agosto|ago|dezembro|dez|fevereiro|fev|janeiro|jan|julho|jul|junho|jun|mar[çc]o|mar|maio|mai|novembro|nov|outubro|out|septembro|setembro|sept|set)";
 
     public static final String MonthSuffixRegex = "(?<msuf>((em|no)\\s+|d[eo]\\s+)?({RelativeMonthRegex}|{MonthRegex}))"
             .replace("{RelativeMonthRegex}", RelativeMonthRegex)
@@ -80,9 +80,9 @@ public class PortugueseDateTime {
             .replace("{MonthSuffixRegex}", MonthSuffixRegex)
             .replace("{YearRegex}", YearRegex);
 
-    public static final String OneWordPeriodRegex = "\\b(((pr[oó]xim[oa]?|[nd]?es[st]e|aquel[ea]|[uú]ltim[oa]?|em)\\s+)?(?<month>Abril|Abr|Agosto|Ago|Dezembro|Dez|Fevereiro|Fev|Janeiro|Jan|Julho|Jul|Junho|Jun|Mar[çc]o|Mar|Maio|Mai|Novembro|Nov|Outubro|Out|Septembro|Setembro|Sept|Set)|(?<=\\b(de|do|da|o|a)\\s+)?(pr[oó]xim[oa](s)?|[uú]ltim[oa]s?|est(e|a))\\s+(fim de semana|fins de semana|semana|m[êe]s|ano)|fim de semana|fins de semana|(m[êe]s|anos)? [àa] data)\\b";
+    public static final String OneWordPeriodRegex = "\\b(((pr[oó]xim[oa]?|[nd]?es[st]e|aquel[ea]|[uú]ltim[oa]?|em)\\s+)?(?<month>abril|abr|agosto|ago|dezembro|dez|fevereiro|fev|janeiro|jan|julho|jul|junho|jun|mar[çc]o|mar|maio|mai|novembro|nov|outubro|out|septembro|setembro|sept|set)|(?<=\\b(de|do|da|o|a)\\s+)?(pr[oó]xim[oa](s)?|[uú]ltim[oa]s?|est(e|a))\\s+(fim de semana|fins de semana|semana|m[êe]s|ano)|fim de semana|fins de semana|(m[êe]s|anos)? [àa] data)\\b";
 
-    public static final String MonthWithYearRegex = "\\b(((pr[oó]xim[oa](s)?|[nd]?es[st]e|aquele|[uú]ltim[oa]?|em)\\s+)?(?<month><month>Abril|Abr|Agosto|Ago|Dezembro|Dez|Fevereiro|Fev|Janeiro|Jan|Julho|Jul|Junho|Jun|Mar[çc]o|Mar|Maio|Mai|Novembro|Nov|Outubro|Out|Septembro|Setembro|Sept|Set)\\s+((de|do|da|o|a)\\s+)?({YearRegex}|(?<order>pr[oó]ximo(s)?|[uú]ltimo?|[nd]?es[st]e)\\s+ano))\\b"
+    public static final String MonthWithYearRegex = "\\b(((pr[oó]xim[oa](s)?|[nd]?es[st]e|aquele|[uú]ltim[oa]?|em)\\s+)?(?<month><month>abril|abr|agosto|ago|dezembro|dez|fevereiro|fev|janeiro|jan|julho|jul|junho|jun|mar[çc]o|mar|maio|mai|novembro|nov|outubro|out|septembro|setembro|sept|set)\\s+((de|do|da|o|a)\\s+)?({YearRegex}|(?<order>pr[oó]ximo(s)?|[uú]ltimo?|[nd]?es[st]e)\\s+ano))\\b"
             .replace("{YearRegex}", YearRegex);
 
     public static final String MonthNumWithYearRegex = "({YearRegex}(\\s*?)[/\\-\\.](\\s*?){MonthNumRegex})|({MonthNumRegex}(\\s*?)[/\\-](\\s*?){YearRegex})"
@@ -136,7 +136,7 @@ public class PortugueseDateTime {
 
     public static final String BetweenRegex = "(entre\\s*([oa](s)?)?)";
 
-    public static final String WeekDayRegex = "\\b(?<weekday>Domingos?|Segundas?-feiras?|Segundas?\\s+feiras?|Segundas?|2a|Ter[çca]s?-feiras?|Ter[çc]as?\\s+feiras?|Ter[cça]s?|3a|Quartas?-feiras?|Quartas?\\s+feiras?|Quartas?|4a|Quintas?-feiras?|Quintas?\\s+feiras?|Quintas?|5a|Sextas?-feiras?|Sextas?\\s+feiras?|Sextas?|6a|S[aá]bados?|2ª|3ª|4ª|5ª|6ª|Dom|Seg|Ter|Qua|Qui|Sex|Sab|Seg\\.|Ter[cç]\\.|Qua\\.|Qui\\.|Sex\\.|S[aá]b\\.|Dom\\.)\\b";
+    public static final String WeekDayRegex = "\\b(?<weekday>domingos?|segundas?-feiras?|segundas?\\s+feiras?|segundas?|2a|ter[çca]s?-feiras?|ter[çc]as?\\s+feiras?|ter[cça]s?|3a|quartas?-feiras?|quartas?\\s+feiras?|quartas?|4a|quintas?-feiras?|quintas?\\s+feiras?|quintas?|5a|sextas?-feiras?|sextas?\\s+feiras?|sextas?|6a|s[aá]bados?|2ª|3ª|4ª|5ª|6ª|dom|seg|ter|qua|qui|sex|sab|seg\\.|ter[cç]\\.|qua\\.|qui\\.|sex\\.|s[aá]b\\.|dom\\.)\\b";
 
     public static final String OnRegex = "(?<=\\b(em|no)\\s+)({DayRegex}s?)\\b"
             .replace("{DayRegex}", DayRegex);
@@ -298,7 +298,7 @@ public class PortugueseDateTime {
             .replace("{BaseDateTime.HourRegex}", BaseDateTime.HourRegex)
             .replace("{DescRegex}", DescRegex);
 
-    public static final String TimeRegex2 = "(\\b{TimePrefix}\\s+)?(T)?{BaseDateTime.HourRegex}(\\s*)?:(\\s*)?{BaseDateTime.MinuteRegex}((\\s*)?:(\\s*)?{BaseDateTime.SecondRegex})?((\\s*{DescRegex})|\\b)"
+    public static final String TimeRegex2 = "(\\b{TimePrefix}\\s+)?(t)?{BaseDateTime.HourRegex}(\\s*)?:(\\s*)?{BaseDateTime.MinuteRegex}((\\s*)?:(\\s*)?{BaseDateTime.SecondRegex})?((\\s*{DescRegex})|\\b)"
             .replace("{TimePrefix}", TimePrefix)
             .replace("{BaseDateTime.HourRegex}", BaseDateTime.HourRegex)
             .replace("{BaseDateTime.MinuteRegex}", BaseDateTime.MinuteRegex)
@@ -870,4 +870,14 @@ public class PortugueseDateTime {
     public static final List<String> EveningTermList = Arrays.asList("tarde");
 
     public static final List<String> NightTermList = Arrays.asList("noite");
+
+    public static final List<String> SameDayTerms = Arrays.asList("hoje", "este dia", "esse dia", "o dia");
+
+    public static final List<String> PlusOneDayTerms = Arrays.asList("amanha", "de amanha", "dia seguinte", "o dia de amanha", "proximo dia");
+
+    public static final List<String> MinusOneDayTerms = Arrays.asList("ontem", "ultimo dia");
+
+    public static final List<String> PlusTwoDayTerms = Arrays.asList("depois de amanha", "dia depois de amanha");
+
+    public static final List<String> MinusTwoDayTerms = Arrays.asList("anteontem", "dia antes de ontem");
 }

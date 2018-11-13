@@ -24,6 +24,7 @@ public abstract class BaseNumberExtractor implements IExtractor {
     protected Optional<Pattern> getNegativeNumberTermsRegex() { return Optional.empty(); }
 
     public List<ExtractResult> extract(String source) {
+
         if (source == null || source.isEmpty()) {
             return Collections.emptyList();
         }
@@ -34,9 +35,12 @@ public abstract class BaseNumberExtractor implements IExtractor {
         Arrays.fill(matched, false);
 
         HashMap<Match, String> matchSource = new HashMap<>();
+
         getRegexes().forEach((k, value) -> {
+
             Match[] matches = RegExpUtility.getMatches(k, source);
-            for(Match m : matches) {
+
+            for (Match m : matches) {
                 int start = m.index;
                 int length = m.length;
                 for (int j = 0; j < length; j++) {
@@ -50,20 +54,26 @@ public abstract class BaseNumberExtractor implements IExtractor {
 
         int last = -1;
         for (int i = 0; i < source.length(); i++) {
+
             if (matched[i]) {
+
                 if (i + 1 == source.length() || !matched[i + 1]) {
+
                     int start = last + 1;
                     int length = i - last;
                     String subStr = source.substring(start, start + length);
 
                     int finalStart = start;
                     int finalLength = length;
+
                     Optional<Match> srcMatches = matchSource.keySet().stream().filter(o -> o.index == finalStart && o.length == finalLength).findFirst();
+
                     if (srcMatches.isPresent()) {
                         Match srcMatch = srcMatches.get();
 
                         // Extract negative numbers
                         if (getNegativeNumberTermsRegex().isPresent()) {
+
                             Matcher match = getNegativeNumberTermsRegex().get().matcher(source.substring(0, start));
                             if (match.find()) {
                                 start = match.start();
@@ -95,13 +105,14 @@ public abstract class BaseNumberExtractor implements IExtractor {
     }
 
     protected Pattern generateLongFormatNumberRegexes(LongFormatType type, String placeholder) {
+
         String thousandsMark = Pattern.quote(String.valueOf(type.thousandsMark));
         String decimalsMark = Pattern.quote(String.valueOf(type.decimalsMark));
 
-        String regexDefinition = type.decimalsMark == '\0'
-                ? BaseNumbers.IntegerRegexDefinition(placeholder, thousandsMark)
-                : BaseNumbers.DoubleRegexDefinition(placeholder, thousandsMark, decimalsMark);
+        String regexDefinition = type.decimalsMark == '\0' ?
+                BaseNumbers.IntegerRegexDefinition(placeholder, thousandsMark) :
+                BaseNumbers.DoubleRegexDefinition(placeholder, thousandsMark, decimalsMark);
 
-        return Pattern.compile(regexDefinition, Pattern.UNICODE_CHARACTER_CLASS);
+        return RegExpUtility.getSafeLookbehindRegExp(regexDefinition, Pattern.UNICODE_CHARACTER_CLASS);
     }
 }

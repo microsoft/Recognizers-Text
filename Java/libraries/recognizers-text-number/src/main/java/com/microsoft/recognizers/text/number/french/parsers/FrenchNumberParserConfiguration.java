@@ -28,6 +28,7 @@ public class FrenchNumberParserConfiguration extends BaseNumberParserConfigurati
                 FrenchNumeric.LangMarker,
                 cultureInfo,
                 options,
+
                 FrenchNumeric.NonDecimalSeparatorChar,
                 FrenchNumeric.DecimalSeparatorChar,
                 FrenchNumeric.FractionMarkerToken,
@@ -40,10 +41,11 @@ public class FrenchNumberParserConfiguration extends BaseNumberParserConfigurati
                 FrenchNumeric.CardinalNumberMap,
                 buildOrdinalNumberMap(),
                 FrenchNumeric.RoundNumberMap,
-                Pattern.compile(FrenchNumeric.HalfADozenRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS),
-                Pattern.compile(FrenchNumeric.DigitalNumberRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS),
-                Pattern.compile(FrenchNumeric.NegativeNumberSignRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS),
-                Pattern.compile(FrenchNumeric.FractionPrepositionRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS));
+
+                Pattern.compile(FrenchNumeric.HalfADozenRegex, Pattern.UNICODE_CHARACTER_CLASS),
+                Pattern.compile(FrenchNumeric.DigitalNumberRegex, Pattern.UNICODE_CHARACTER_CLASS),
+                Pattern.compile(FrenchNumeric.NegativeNumberSignRegex, Pattern.UNICODE_CHARACTER_CLASS),
+                Pattern.compile(FrenchNumeric.FractionPrepositionRegex, Pattern.UNICODE_CHARACTER_CLASS));
     }
 
     @Override

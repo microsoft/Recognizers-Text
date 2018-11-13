@@ -16,14 +16,14 @@ import com.google.common.collect.ImmutableMap;
 
 public class PortugueseNumericWithUnit {
 
-    public static final Map<String, String> AgeSuffixList = ImmutableMap.<String, String>builder()
+    public static final ImmutableMap<String, String> AgeSuffixList = ImmutableMap.<String, String>builder()
         .put("Ano", "anos|ano")
         .put("Mês", "meses|mes|mês")
         .put("Semana", "semanas|semana")
         .put("Dia", "dias|dia")
         .build();
 
-    public static final Map<String, String> AreaSuffixList = ImmutableMap.<String, String>builder()
+    public static final ImmutableMap<String, String> AreaSuffixList = ImmutableMap.<String, String>builder()
         .put("Quilômetro quadrado", "quilômetro quadrado|quilómetro quadrado|quilometro quadrado|quilômetros quadrados|quilómetros quadrados|quilomeros quadrados|km2|km^2|km²")
         .put("Hectare", "hectômetro quadrado|hectómetro quadrado|hectômetros quadrados|hectómetros cuadrados|hm2|hm^2|hm²|hectare|hectares")
         .put("Decâmetro quadrado", "decâmetro quadrado|decametro quadrado|decâmetros quadrados|decametro quadrado|dam2|dam^2|dam²|are|ares")
@@ -38,7 +38,7 @@ public class PortugueseNumericWithUnit {
         .put("Acre", "acre|acres")
         .build();
 
-    public static final Map<String, String> CurrencySuffixList = ImmutableMap.<String, String>builder()
+    public static final ImmutableMap<String, String> CurrencySuffixList = ImmutableMap.<String, String>builder()
         .put("Dólar", "dólar|dolar|dólares|dolares")
         .put("Peso", "peso|pesos")
         .put("Coroa", "coroa|coroas")
@@ -348,7 +348,7 @@ public class PortugueseNumericWithUnit {
 
     public static final String CompoundUnitConnectorRegex = "(?<spacer>[^.])";
 
-    public static final Map<String, String> CurrencyPrefixList = ImmutableMap.<String, String>builder()
+    public static final ImmutableMap<String, String> CurrencyPrefixList = ImmutableMap.<String, String>builder()
         .put("Dólar", "$")
         .put("Dólar estadunidense", "us$|u$d|usd$|usd")
         .put("Dólar do Caribe Oriental", "ec$|xcd")
@@ -384,7 +384,7 @@ public class PortugueseNumericWithUnit {
 
     public static final List<String> AmbiguousCurrencyUnitList = Arrays.asList("le");
 
-    public static final Map<String, String> InformationSuffixList = ImmutableMap.<String, String>builder()
+    public static final ImmutableMap<String, String> InformationSuffixList = ImmutableMap.<String, String>builder()
         .put("bit", "bit|bits")
         .put("kilobit", "kilobit|kilobits|kb|kbit")
         .put("megabit", "megabit|megabits|Mb|Mbit")
@@ -417,7 +417,7 @@ public class PortugueseNumericWithUnit {
 
     public static final String ConnectorToken = "de";
 
-    public static final Map<String, String> LengthSuffixList = ImmutableMap.<String, String>builder()
+    public static final ImmutableMap<String, String> LengthSuffixList = ImmutableMap.<String, String>builder()
         .put("Quilômetro", "km|quilometro|quilômetro|quilómetro|quilometros|quilômetros|quilómetros")
         .put("Hectômetro", "hm|hectometro|hectômetro|hectómetro|hectometros|hectômetros|hectómetros")
         .put("Decâmetro", "decametro|decâmetro|decámetro|decametros|decâmetro|decámetros|dam")
@@ -437,7 +437,7 @@ public class PortugueseNumericWithUnit {
 
     public static final List<String> AmbiguousLengthUnitList = Arrays.asList("mi", "milha", "milhas");
 
-    public static final Map<String, String> SpeedSuffixList = ImmutableMap.<String, String>builder()
+    public static final ImmutableMap<String, String> SpeedSuffixList = ImmutableMap.<String, String>builder()
         .put("Metro por segundo", "metro/segundo|m/s|metro por segundo|metros por segundo|metros por segundos")
         .put("Quilômetro por hora", "km/h|quilômetro por hora|quilómetro por hora|quilometro por hora|quilômetros por hora|quilómetros por hora|quilometros por hora|quilômetro/hora|quilómetro/hora|quilometro/hora|quilômetros/hora|quilómetros/hora|quilometros/hora")
         .put("Quilômetro por minuto", "km/min|quilômetro por minuto|quilómetro por minuto|quilometro por minuto|quilômetros por minuto|quilómetros por minuto|quilometros por minuto|quilômetro/minuto|quilómetro/minuto|quilometro/minuto|quilômetros/minuto|quilómetros/minuto|quilometros/minuto")
@@ -452,7 +452,7 @@ public class PortugueseNumericWithUnit {
 
     public static final List<String> AmbiguousSpeedUnitList = Arrays.asList("nó", "no", "nós", "nos");
 
-    public static final Map<String, String> TemperatureSuffixList = ImmutableMap.<String, String>builder()
+    public static final ImmutableMap<String, String> TemperatureSuffixList = ImmutableMap.<String, String>builder()
         .put("Kelvin", "k|K|kelvin")
         .put("Grau Rankine", "r|°r|°ra|grau rankine|graus rankine| rankine")
         .put("Grau Celsius", "°c|grau c|grau celsius|graus c|graus celsius|celsius|grau centígrado|grau centrigrado|graus centígrados|graus centigrados|centígrado|centígrados|centigrado|centigrados")
@@ -460,7 +460,7 @@ public class PortugueseNumericWithUnit {
         .put("Grau", "°|graus|grau")
         .build();
 
-    public static final Map<String, String> VolumeSuffixList = ImmutableMap.<String, String>builder()
+    public static final ImmutableMap<String, String> VolumeSuffixList = ImmutableMap.<String, String>builder()
         .put("Quilômetro cúbico", "quilômetro cúbico|quilómetro cúbico|quilometro cubico|quilômetros cúbicos|quilómetros cúbicos|quilometros cubicos|km3|km^3|km³")
         .put("Hectômetro cúbico", "hectômetro cúbico|hectómetro cúbico|hectometro cubico|hectômetros cúbicos|hectómetros cúbicos|hectometros cubicos|hm3|hm^3|hm³")
         .put("Decâmetro cúbico", "decâmetro cúbico|decámetro cúbico|decametro cubico|decâmetros cúbicos|decámetros cúbicos|decametros cubicosdam3|dam^3|dam³")
@@ -480,7 +480,7 @@ public class PortugueseNumericWithUnit {
         .put("Onça líquida", "onça líquida|onca liquida|onças líquidas|oncas liquidas")
         .build();
 
-    public static final Map<String, String> WeightSuffixList = ImmutableMap.<String, String>builder()
+    public static final ImmutableMap<String, String> WeightSuffixList = ImmutableMap.<String, String>builder()
         .put("Tonelada métrica", "tonelada métrica|tonelada metrica|toneladas métricas|toneladas metricas")
         .put("Tonelada", "ton|tonelada|toneladas")
         .put("Quilograma", "kg|quilograma|quilogramas|quilo|quilos|kilo|kilos")

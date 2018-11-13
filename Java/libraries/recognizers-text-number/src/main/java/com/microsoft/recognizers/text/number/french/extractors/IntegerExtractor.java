@@ -4,6 +4,7 @@ import com.microsoft.recognizers.text.number.Constants;
 import com.microsoft.recognizers.text.number.LongFormatType;
 import com.microsoft.recognizers.text.number.extractors.BaseNumberExtractor;
 import com.microsoft.recognizers.text.number.resources.FrenchNumeric;
+import com.microsoft.recognizers.text.utilities.RegExpUtility;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -31,13 +32,13 @@ public class IntegerExtractor extends BaseNumberExtractor {
     public IntegerExtractor(String placeholder) {
         HashMap<Pattern, String> builder = new HashMap<>();
 
-        builder.put(Pattern.compile(FrenchNumeric.NumbersWithPlaceHolder(placeholder), Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "IntegerNum");
-        builder.put(Pattern.compile(FrenchNumeric.NumbersWithSuffix), "IntegerNum");
+        builder.put(RegExpUtility.getSafeLookbehindRegExp(FrenchNumeric.NumbersWithPlaceHolder(placeholder), Pattern.UNICODE_CHARACTER_CLASS), "IntegerNum");
+        builder.put(RegExpUtility.getSafeLookbehindRegExp(FrenchNumeric.NumbersWithSuffix), "IntegerNum");
         builder.put(generateLongFormatNumberRegexes(LongFormatType.IntegerNumDot, placeholder), "IntegerNum");
-        builder.put(Pattern.compile(FrenchNumeric.RoundNumberIntegerRegexWithLocks, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "IntegerNum");
-        builder.put(Pattern.compile(FrenchNumeric.NumbersWithDozenSuffix, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "IntegerNum");
-        builder.put(Pattern.compile(FrenchNumeric.AllIntRegexWithLocks, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "IntegerFr");
-        builder.put(Pattern.compile(FrenchNumeric.AllIntRegexWithDozenSuffixLocks, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "IntegerFr");
+        builder.put(RegExpUtility.getSafeLookbehindRegExp(FrenchNumeric.RoundNumberIntegerRegexWithLocks, Pattern.UNICODE_CHARACTER_CLASS), "IntegerNum");
+        builder.put(RegExpUtility.getSafeLookbehindRegExp(FrenchNumeric.NumbersWithDozenSuffix, Pattern.UNICODE_CHARACTER_CLASS), "IntegerNum");
+        builder.put(RegExpUtility.getSafeLookbehindRegExp(FrenchNumeric.AllIntRegexWithLocks, Pattern.UNICODE_CHARACTER_CLASS), "IntegerFr");
+        builder.put(RegExpUtility.getSafeLookbehindRegExp(FrenchNumeric.AllIntRegexWithDozenSuffixLocks, Pattern.UNICODE_CHARACTER_CLASS), "IntegerFr");
         builder.put(generateLongFormatNumberRegexes(LongFormatType.IntegerNumBlank, placeholder), "IntegerNum");
         builder.put(generateLongFormatNumberRegexes(LongFormatType.IntegerNumNoBreakSpace, placeholder), "IntegerNum");
 

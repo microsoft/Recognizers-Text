@@ -8,6 +8,7 @@ import com.microsoft.recognizers.text.number.NumberOptions;
 import com.microsoft.recognizers.text.number.parsers.BaseNumberParserConfiguration;
 import com.microsoft.recognizers.text.number.resources.PortugueseNumeric;
 import com.microsoft.recognizers.text.utilities.QueryProcessor;
+import com.microsoft.recognizers.text.utilities.RegExpUtility;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,6 +30,7 @@ public class PortugueseNumberParserConfiguration extends BaseNumberParserConfigu
                 PortugueseNumeric.LangMarker,
                 cultureInfo,
                 options,
+
                 PortugueseNumeric.NonDecimalSeparatorChar,
                 PortugueseNumeric.DecimalSeparatorChar,
                 PortugueseNumeric.FractionMarkerToken,
@@ -41,10 +43,11 @@ public class PortugueseNumberParserConfiguration extends BaseNumberParserConfigu
                 PortugueseNumeric.CardinalNumberMap,
                 buildOrdinalNumberMap(),
                 PortugueseNumeric.RoundNumberMap,
-                Pattern.compile(PortugueseNumeric.HalfADozenRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS),
-                Pattern.compile(PortugueseNumeric.DigitalNumberRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS),
-                Pattern.compile(PortugueseNumeric.NegativeNumberSignRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS),
-                Pattern.compile(PortugueseNumeric.FractionPrepositionRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS));
+
+                RegExpUtility.getSafeLookbehindRegExp(PortugueseNumeric.HalfADozenRegex, Pattern.UNICODE_CHARACTER_CLASS),
+                RegExpUtility.getSafeLookbehindRegExp(PortugueseNumeric.DigitalNumberRegex, Pattern.UNICODE_CHARACTER_CLASS),
+                RegExpUtility.getSafeLookbehindRegExp(PortugueseNumeric.NegativeNumberSignRegex, Pattern.UNICODE_CHARACTER_CLASS),
+                RegExpUtility.getSafeLookbehindRegExp(PortugueseNumeric.FractionPrepositionRegex, Pattern.UNICODE_CHARACTER_CLASS));
     }
 
 

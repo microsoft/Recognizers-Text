@@ -3,6 +3,7 @@ package com.microsoft.recognizers.text.number.portuguese.extractors;
 import com.microsoft.recognizers.text.number.Constants;
 import com.microsoft.recognizers.text.number.extractors.BaseNumberExtractor;
 import com.microsoft.recognizers.text.number.resources.PortugueseNumeric;
+import com.microsoft.recognizers.text.utilities.RegExpUtility;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -24,13 +25,14 @@ public class FractionExtractor extends BaseNumberExtractor {
     }
 
     public FractionExtractor() {
+
         HashMap<Pattern, String> builder = new HashMap<>();
 
-        builder.put(Pattern.compile(PortugueseNumeric.FractionNotationRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "FracNum");
-        builder.put(Pattern.compile(PortugueseNumeric.FractionNotationWithSpacesRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS) , "FracNum");
-        builder.put(Pattern.compile(PortugueseNumeric.FractionNounRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "FracPor");
-        builder.put(Pattern.compile(PortugueseNumeric.FractionNounWithArticleRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS) , "FracPor");
-        builder.put(Pattern.compile(PortugueseNumeric.FractionPrepositionRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "FracPor");
+        builder.put(RegExpUtility.getSafeLookbehindRegExp(PortugueseNumeric.FractionNotationRegex, Pattern.UNICODE_CHARACTER_CLASS), "FracNum");
+        builder.put(RegExpUtility.getSafeLookbehindRegExp(PortugueseNumeric.FractionNotationWithSpacesRegex, Pattern.UNICODE_CHARACTER_CLASS) , "FracNum");
+        builder.put(RegExpUtility.getSafeLookbehindRegExp(PortugueseNumeric.FractionNounRegex, Pattern.UNICODE_CHARACTER_CLASS), "FracPor");
+        builder.put(RegExpUtility.getSafeLookbehindRegExp(PortugueseNumeric.FractionNounWithArticleRegex, Pattern.UNICODE_CHARACTER_CLASS) , "FracPor");
+        builder.put(RegExpUtility.getSafeLookbehindRegExp(PortugueseNumeric.FractionPrepositionRegex, Pattern.UNICODE_CHARACTER_CLASS), "FracPor");
 
         this.regexes = Collections.unmodifiableMap(builder);
     }
