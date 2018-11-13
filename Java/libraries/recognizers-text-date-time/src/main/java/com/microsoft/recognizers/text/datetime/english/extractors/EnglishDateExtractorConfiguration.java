@@ -21,37 +21,37 @@ import java.util.List;
 import java.util.regex.Pattern;
 
 public class EnglishDateExtractorConfiguration implements IDateExtractorConfiguration {
-    public static final Pattern MonthRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.MonthRegex, Pattern.CASE_INSENSITIVE);
-    public static final Pattern DayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.DayRegex, Pattern.CASE_INSENSITIVE);
-    public static final Pattern MonthNumRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.MonthNumRegex, Pattern.CASE_INSENSITIVE);
-    public static final Pattern YearRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.YearRegex, Pattern.CASE_INSENSITIVE);
+    public static final Pattern MonthRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.MonthRegex);
+    public static final Pattern DayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.DayRegex);
+    public static final Pattern MonthNumRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.MonthNumRegex);
+    public static final Pattern YearRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.YearRegex);
     public static final Pattern WeekDayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.WeekDayRegex, Pattern.CASE_INSENSITIVE);
     public static final Pattern SingleWeekDayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SingleWeekDayRegex, Pattern.CASE_INSENSITIVE);
-    public static final Pattern OnRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.OnRegex, Pattern.CASE_INSENSITIVE);
-    public static final Pattern RelaxedOnRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RelaxedOnRegex, Pattern.CASE_INSENSITIVE);
+    public static final Pattern OnRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.OnRegex);
+    public static final Pattern RelaxedOnRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RelaxedOnRegex);
     public static final Pattern ThisRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.ThisRegex, Pattern.CASE_INSENSITIVE);
     public static final Pattern LastDateRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.LastDateRegex, Pattern.CASE_INSENSITIVE);
     public static final Pattern NextDateRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.NextDateRegex, Pattern.CASE_INSENSITIVE);
-    public static final Pattern DateUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.DateUnitRegex, Pattern.CASE_INSENSITIVE);
-    public static final Pattern SpecialDayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SpecialDayRegex, Pattern.CASE_INSENSITIVE);
-    public static final Pattern WeekDayOfMonthRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.WeekDayOfMonthRegex, Pattern.CASE_INSENSITIVE);
-    public static final Pattern RelativeWeekDayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RelativeWeekDayRegex, Pattern.CASE_INSENSITIVE);
-    public static final Pattern SpecialDate = RegExpUtility.getSafeRegExp(EnglishDateTime.SpecialDate, Pattern.CASE_INSENSITIVE);
-    public static final Pattern SpecialDayWithNumRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SpecialDayWithNumRegex, Pattern.CASE_INSENSITIVE);
-    public static final Pattern ForTheRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.ForTheRegex, Pattern.CASE_INSENSITIVE);
+    public static final Pattern DateUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.DateUnitRegex);
+    public static final Pattern SpecialDayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SpecialDayRegex);
+    public static final Pattern WeekDayOfMonthRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.WeekDayOfMonthRegex);
+    public static final Pattern RelativeWeekDayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RelativeWeekDayRegex);
+    public static final Pattern SpecialDate = RegExpUtility.getSafeRegExp(EnglishDateTime.SpecialDate);
+    public static final Pattern SpecialDayWithNumRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SpecialDayWithNumRegex);
+    public static final Pattern ForTheRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.ForTheRegex);
     public static final Pattern WeekDayAndDayOfMonthRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.WeekDayAndDayOfMonthRegex, Pattern.CASE_INSENSITIVE);
-    public static final Pattern RelativeMonthRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RelativeMonthRegex, Pattern.CASE_INSENSITIVE);
-    public static final Pattern PrefixArticleRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PrefixArticleRegex, Pattern.CASE_INSENSITIVE);
+    public static final Pattern RelativeMonthRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RelativeMonthRegex);
+    public static final Pattern PrefixArticleRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PrefixArticleRegex);
     public static final List<Pattern> DateRegexList = new ArrayList<Pattern>() {
         {
             add(RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor1, Pattern.CASE_INSENSITIVE));
             add(RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor2, Pattern.CASE_INSENSITIVE));
             add(RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor3, Pattern.CASE_INSENSITIVE));
-            add(RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor4, Pattern.CASE_INSENSITIVE));
-            add(RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor5, Pattern.CASE_INSENSITIVE));
+            add(RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor4));
+            add(RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor5));
             add(RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor6, Pattern.CASE_INSENSITIVE));
-            add(RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor7, Pattern.CASE_INSENSITIVE));
-            add(RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor8, Pattern.CASE_INSENSITIVE));
+            add(RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor7));
+            add(RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor8));
             add(RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor9, Pattern.CASE_INSENSITIVE));
             add(RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractorA, Pattern.CASE_INSENSITIVE));
         }
@@ -74,9 +74,9 @@ public class EnglishDateExtractorConfiguration implements IDateExtractorConfigur
     public static final Pattern OfMonth = RegExpUtility.getSafeRegExp(EnglishDateTime.OfMonth, Pattern.CASE_INSENSITIVE);
     public static final Pattern MonthEnd = RegExpUtility.getSafeRegExp(EnglishDateTime.MonthEnd, Pattern.CASE_INSENSITIVE);
     public static final Pattern WeekDayEnd = RegExpUtility.getSafeRegExp(EnglishDateTime.WeekDayEnd, Pattern.CASE_INSENSITIVE);
-    public static final Pattern YearSuffix = RegExpUtility.getSafeRegExp(EnglishDateTime.YearSuffix, Pattern.CASE_INSENSITIVE);
-    public static final Pattern LessThanRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.LessThanRegex, Pattern.CASE_INSENSITIVE);
-    public static final Pattern MoreThanRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.MoreThanRegex, Pattern.CASE_INSENSITIVE);
+    public static final Pattern YearSuffix = RegExpUtility.getSafeRegExp(EnglishDateTime.YearSuffix);
+    public static final Pattern LessThanRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.LessThanRegex);
+    public static final Pattern MoreThanRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.MoreThanRegex);
     public static final ImmutableMap<String, Integer> DayOfWeek = EnglishDateTime.DayOfWeek;
     public static final ImmutableMap<String, Integer> MonthOfYear = EnglishDateTime.MonthOfYear;
 

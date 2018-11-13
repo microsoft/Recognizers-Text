@@ -7,17 +7,17 @@ import com.microsoft.recognizers.text.utilities.RegExpUtility;
 import java.util.regex.Pattern;
 
 public class EnglishDatetimeUtilityConfiguration implements IDateTimeUtilityConfiguration {
-    public static final Pattern AgoRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.AgoRegex, Pattern.CASE_INSENSITIVE);
-    public static final Pattern LaterRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.LaterRegex, Pattern.CASE_INSENSITIVE);
-    public static final Pattern InConnectorRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.InConnectorRegex, Pattern.CASE_INSENSITIVE);
-    public static final Pattern WithinNextPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.WithinNextPrefixRegex, Pattern.CASE_INSENSITIVE);
-    public static final Pattern AmDescRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.AmDescRegex, Pattern.CASE_INSENSITIVE);
-    public static final Pattern PmDescRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PmDescRegex, Pattern.CASE_INSENSITIVE);
-    public static final Pattern AmPmDescRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.AmPmDescRegex, Pattern.CASE_INSENSITIVE);
-    public static final Pattern RangeUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RangeUnitRegex, Pattern.CASE_INSENSITIVE);
-    public static final Pattern TimeUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TimeUnitRegex, Pattern.CASE_INSENSITIVE);
-    public static final Pattern DateUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.DateUnitRegex, Pattern.CASE_INSENSITIVE);
-    public static final Pattern CommonDatePrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.CommonDatePrefixRegex, Pattern.CASE_INSENSITIVE);
+    public static final Pattern AgoRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.AgoRegex);
+    public static final Pattern LaterRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.LaterRegex);
+    public static final Pattern InConnectorRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.InConnectorRegex);
+    public static final Pattern WithinNextPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.WithinNextPrefixRegex);
+    public static final Pattern AmDescRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.AmDescRegex);
+    public static final Pattern PmDescRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PmDescRegex);
+    public static final Pattern AmPmDescRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.AmPmDescRegex);
+    public static final Pattern RangeUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RangeUnitRegex);
+    public static final Pattern TimeUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TimeUnitRegex);
+    public static final Pattern DateUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.DateUnitRegex);
+    public static final Pattern CommonDatePrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.CommonDatePrefixRegex);
 
     @Override
     public Pattern getAgoRegex() {
