@@ -5,6 +5,7 @@ import com.microsoft.recognizers.text.IExtractor;
 import com.microsoft.recognizers.text.choice.utilities.UnicodeUtils;
 import com.microsoft.recognizers.text.utilities.Match;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
+import com.microsoft.recognizers.text.utilities.StringUtility;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -140,20 +141,20 @@ public class ChoiceExtractor implements IExtractor {
                 // Character is in a Supplementary Unicode Plane. This is where emoji live so
                 // we're going to just break each character in this range out as its own token.
                 tokens.add(letter);
-                if (!token.isEmpty()) {
+                if (!StringUtility.isNullOrWhiteSpace(token)) {
                     tokens.add(token);
                     token = "";
                 }
 
-            } else if (!(isMatch.isPresent() || letter.isBlank())) {
+            } else if (!(isMatch.isPresent() || StringUtility.isNullOrWhiteSpace(letter))) {
                 token = token + letter;
-            } else if (!token.isEmpty()) {
+            } else if (!StringUtility.isNullOrWhiteSpace(token)) {
                 tokens.add(token);
                 token = "";
             }
         }
 
-        if (!token.isEmpty()) {
+        if (!StringUtility.isNullOrWhiteSpace(token)) {
             tokens.add(token);
             token = "";
         }
