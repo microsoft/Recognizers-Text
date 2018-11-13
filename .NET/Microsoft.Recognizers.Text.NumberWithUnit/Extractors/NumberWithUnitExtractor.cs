@@ -248,7 +248,13 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                         if (maxlen != 0)
                         {
                             var substr = source.Substring(start, length + maxlen);
-                            var er = new ExtractResult(start, length + maxlen, substr, this.config.ExtractType);
+                            var er = new ExtractResult
+                            {
+                                Start = start,
+                                Length = length + maxlen,
+                                Text = substr,
+                                Type = this.config.ExtractType
+                            };
 
                             if (prefixUnit != null)
                             {
@@ -292,8 +298,14 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
                     if (prefixUnit != null && !prefixMatched)
                     {
-                        var er = new ExtractResult(number.Start.Value - prefixUnit.Offset, number.Length.Value + prefixUnit.Offset,
-                            prefixUnit.UnitStr + number.Text, this.config.ExtractType);
+                        var er = new ExtractResult
+                        {
+                            Start = number.Start - prefixUnit.Offset,
+                            Length = number.Length + prefixUnit.Offset,
+                            Text = prefixUnit.UnitStr + number.Text,
+                            Type = this.config.ExtractType
+
+                        };
                         
                         // Relative position will be used in Parser
                         number.Start = start - er.Start;

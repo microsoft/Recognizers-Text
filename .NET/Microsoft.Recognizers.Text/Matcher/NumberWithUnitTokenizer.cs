@@ -5,6 +5,12 @@ namespace Microsoft.Recognizers.Text.Matcher
 {
     public class NumberWithUnitTokenizer : SimpleTokenizer
     {
+        /* The main difference between this strategy and SimpleTokenizer is we can't
+         * ignore whitespace here, since for cases like 'Bob's $ 100 cash'. 's$' will be
+         * a token in SimpleTokenizer. Obviously, it's incorrect.
+         * Besides, letter and digits can't be mixed as a token. For cases like '200ml'.
+         * '200ml' will be a token in SimpleTokenizer. Here, 'ml' is an independent token.
+         */
         public override List<Token> Tokenize(string input)
         {
             List<Token> tokens = new List<Token>();
