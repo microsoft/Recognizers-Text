@@ -1106,7 +1106,7 @@ HolidayNames: !dictionary
     holythursday: [ gründonnerstag, himmelfahrt ]
     memorialDayGermany: [ volkstrauertag ]
     dayofrepentance: [ bußundbettag ]
-    totensonntag: [ totebsonntag ]
+    totensonntag: [ totensonntag ]
     firstadvent: [ ersteradvent, 1.advent ]
     secondadvent: [ zweiteradvent, 2.advent ]
     thirdadvent: [ dritteradvent, 3.advent ]
