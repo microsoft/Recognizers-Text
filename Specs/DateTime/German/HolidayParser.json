@@ -48,7 +48,7 @@
     ]
   },
   {
-    "Input": "Silvester wir eine tolle Feier.",
+    "Input": "Silvester wird eine tolle Feier.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
