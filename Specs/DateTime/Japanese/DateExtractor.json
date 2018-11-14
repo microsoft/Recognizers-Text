@@ -1,16 +1,16 @@
 [
-    {
-      "Input": "15 日に戻ります。",
-      "NotSupportedByDesign":"dotNet, javascript, python, java",
-      "Results": [
-        {
-          "Text": "15 日",
-          "Type": "date",
-          "Start": 0,
-          "Length": 4
-        }
-      ]
-    },
+    { 
+      "Input": "15 日に戻ります。", 
+      "NotSupportedByDesign":"dotNet, javascript, python, java", 
+      "Results": [ 
+        { 
+          "Text": "15 日", 
+          "Type": "date", 
+          "Start": 0, 
+          "Length": 4 
+        } 
+      ] 
+    }, 
     {
       "Input": "4月22日に戻ります。",
       "NotSupportedByDesign":"dotNet, javascript, python, java",
@@ -37,7 +37,7 @@
     },
     {
       "Input": "1/1 に帰ります。",
-      "NotSupportedByDesign":"dotNet, javascript, python, java",
+      "NotSupportedByDesign":"javascript, python, java",
       "Results": [
         {
           "Text": "1/1",
@@ -49,12 +49,12 @@
     },
     {
       "Input": "誕生日は10/03です。",
-      "NotSupportedByDesign":"dotNet, javascript, python, java",
+      "NotSupportedByDesign":"javascript, python, java",
       "Results": [
         {
           "Text": "10/03",
           "Type": "date",
-          "Start": 5,
+          "Start": 4,
           "Length": 5
         }
       ]
@@ -73,12 +73,12 @@
     },
     {
       "Input": "それは2016年1月12日に発売されました。",
-      "NotSupportedByDesign":"dotNet, javascript, python, java",
+      "NotSupportedByDesign":"javascript, python, java",
       "Results": [
         {
           "Text": "2016年1月12日",
           "Type": "date",
-          "Start": 4,
+          "Start": 3,
           "Length": 10
         }
       ]
@@ -97,7 +97,7 @@
     },
     {
       "Input": "02/22/2016",
-      "NotSupportedByDesign":"dotNet, javascript, python, java",
+      "NotSupportedByDesign":"javascript, python, java",
       "Results": [
         {
           "Text": "02/22/2016",
@@ -109,7 +109,7 @@
     },
     {
       "Input": "21/04/2016に戻ります。",
-      "NotSupportedByDesign":"dotNet, javascript, python, java",
+      "NotSupportedByDesign":"javascript, python, java",
       "Results": [
         {
           "Text": "21/04/2016",
@@ -121,19 +121,19 @@
     },
     {
       "Input": "21/04/16に戻ります。",
-      "NotSupportedByDesign":"dotNet, javascript, python, java",
+      "NotSupportedByDesign":"javascript, python, java",
       "Results": [
         {
           "Text": "21/04/16",
           "Type": "date",
-          "Start": 13,
+          "Start": 0,
           "Length": 8
         }
       ]
     },
     {
       "Input": "9-18-15に戻ります。",
-      "NotSupportedByDesign":"dotNet, javascript, python, java",
+      "NotSupportedByDesign":"javascript, python, java",
       "Results": [
         {
           "Text": "9-18-15",
@@ -181,7 +181,7 @@
     },
     {
       "Input": "22/04 に戻ります。",
-      "NotSupportedByDesign":"dotNet, javascript, python, java",
+      "NotSupportedByDesign":"javascript, python, java",
       "Results": [
         {
           "Text": "22/04",
@@ -193,7 +193,7 @@
     },
     {
       "Input": "2015/08/12 に戻ります。",
-      "NotSupportedByDesign":"dotNet, javascript, python, java",
+      "NotSupportedByDesign":"javascript, python, java",
       "Results": [
         {
           "Text": "2015/08/12",
@@ -229,7 +229,7 @@
     },
     {
       "Input": "1月1日に戻ります。",
-      "NotSupportedByDesign":"dotNet, javascript, python, java",
+      "NotSupportedByDesign":"javascript, python, java",
       "Results": [
         {
           "Text": "1月1日",
@@ -301,7 +301,7 @@
     },
     {
       "Input": "火曜日に戻ります。",
-      "NotSupportedByDesign":"dotNet, javascript, python, java",
+      "NotSupportedByDesign":"javascript, python, java",
       "Results": [
         {
           "Text": "火曜日",
@@ -313,7 +313,7 @@
     },
     {
       "Input": "火曜に戻ります。",
-      "NotSupportedByDesign":"dotNet, javascript, python, java",
+      "NotSupportedByDesign":"javascript, python, java",
       "Results": [
         {
           "Text": "火曜",
@@ -349,7 +349,7 @@
     },
     {
       "Input": "金曜日に帰ります。",
-      "NotSupportedByDesign":"dotNet, javascript, python, java",
+      "NotSupportedByDesign":"javascript, python, java",
       "Results": [
         {
           "Text": "金曜日",
@@ -361,7 +361,7 @@
     },
     {
       "Input": "今日帰ります。",
-      "NotSupportedByDesign":"dotNet, javascript, python, java",
+      "NotSupportedByDesign":"javascript, python, java",
       "Results": [
         {
           "Text": "今日",
@@ -373,7 +373,7 @@
     },
     {
       "Input": "明日帰ります。",
-      "NotSupportedByDesign":"dotNet, javascript, python, java",
+      "NotSupportedByDesign":"javascript, python, java",
       "Results": [
         {
           "Text": "明日",
@@ -385,7 +385,7 @@
     },
     {
       "Input": "昨日帰ってきました。",
-      "NotSupportedByDesign":"dotNet, javascript, python, java",
+      "NotSupportedByDesign":"javascript, python, java",
       "Results": [
         {
           "Text": "昨日",
@@ -397,7 +397,7 @@
     },
     {
       "Input": "きのう帰ってきました。",
-      "NotSupportedByDesign":"dotNet, javascript, python, java",
+      "NotSupportedByDesign":"javascript, python, java",
       "Results": [
         {
           "Text": "きのう",
@@ -409,7 +409,7 @@
     },
     {
       "Input": "明日帰る予定です。",
-      "NotSupportedByDesign":"dotNet, javascript, python, java",
+      "NotSupportedByDesign":"javascript, python, java",
       "Results": [
         {
           "Text": "明日",
@@ -421,7 +421,7 @@
     },
     {
       "Input": "あした帰る予定です。",
-      "NotSupportedByDesign":"dotNet, javascript, python, java",
+      "NotSupportedByDesign":"javascript, python, java",
       "Results": [
         {
           "Text": "あした",
@@ -433,7 +433,7 @@
     },
     {
       "Input": "あす帰る予定です。",
-      "NotSupportedByDesign":"dotNet, javascript, python, java",
+      "NotSupportedByDesign":"javascript, python, java",
       "Results": [
         {
           "Text": "あす",
@@ -445,7 +445,7 @@
     },
     {
       "Input": "明後日帰る予定です。",
-      "NotSupportedByDesign":"dotNet, javascript, python, java",
+      "NotSupportedByDesign":"javascript, python, java",
       "Results": [
         {
           "Text": "明後日",
@@ -457,7 +457,7 @@
     },
     {
       "Input": "あさって帰る予定です。",
-      "NotSupportedByDesign":"dotNet, javascript, python, java",
+      "NotSupportedByDesign":"javascript, python, java",
       "Results": [
         {
           "Text": "あさって",
@@ -469,7 +469,7 @@
     },
     {
       "Input": "一昨日帰ってきました。",
-      "NotSupportedByDesign":"dotNet, javascript, python, java",
+      "NotSupportedByDesign":"javascript, python, java",
       "Results": [
         {
           "Text": "一昨日",
@@ -578,7 +578,7 @@
     },
     {
       "Input": "13.5.2015 は空いていますか？",
-      "NotSupportedByDesign":"dotNet, javascript, python, java",
+      "NotSupportedByDesign":"javascript, python, java",
       "Results": [
         {
           "Text": "13.5.2015",
@@ -590,7 +590,7 @@
     },
     {
       "Input": "2015.5.13 は空いていますか？",
-      "NotSupportedByDesign":"dotNet, javascript, python, java",
+      "NotSupportedByDesign":"javascript, python, java",
       "Results": [
         {
           "Text": "2015.5.13",
@@ -704,7 +704,7 @@
     },
     {
       "Input": "月曜日",
-      "NotSupportedByDesign":"dotNet, javascript, python, java",
+      "NotSupportedByDesign":"javascript, python, java",
       "Results": [
         {
           "Text": "月曜日",
@@ -716,7 +716,7 @@
     },
     {
       "Input": "火曜日",
-      "NotSupportedByDesign":"dotNet, javascript, python, java",
+      "NotSupportedByDesign":"javascript, python, java",
       "Results": [
         {
           "Text": "火曜日",
@@ -728,7 +728,7 @@
     },
     {
       "Input": "水曜日",
-      "NotSupportedByDesign":"dotNet, javascript, python, java",
+      "NotSupportedByDesign":"javascript, python, java",
       "Results": [
         {
           "Text": "水曜日",
@@ -740,7 +740,7 @@
     },
     {
       "Input": "木曜日",
-      "NotSupportedByDesign":"dotNet, javascript, python, java",
+      "NotSupportedByDesign":"javascript, python, java",
       "Results": [
         {
           "Text": "木曜日",
@@ -752,7 +752,7 @@
     },
     {
       "Input": "金曜日",
-      "NotSupportedByDesign":"dotNet, javascript, python, java",
+      "NotSupportedByDesign":"javascript, python, java",
       "Results": [
         {
           "Text": "金曜日",
@@ -764,7 +764,7 @@
     },
     {
       "Input": "土曜日",
-      "NotSupportedByDesign":"dotNet, javascript, python, java",
+      "NotSupportedByDesign":"javascript, python, java",
       "Results": [
         {
           "Text": "土曜日",
@@ -776,7 +776,7 @@
     },
     {
       "Input": "日曜日",
-      "NotSupportedByDesign":"dotNet, javascript, python, java",
+      "NotSupportedByDesign":"javascript, python, java",
       "Results": [
         {
           "Text": "日曜日",
@@ -788,7 +788,7 @@
     },
     {
       "Input": "月曜",
-      "NotSupportedByDesign":"dotNet, javascript, python, java",
+      "NotSupportedByDesign":"javascript, python, java",
       "Results": [
         {
           "Text": "月曜",
@@ -800,7 +800,7 @@
     },
     {
       "Input": "火曜",
-      "NotSupportedByDesign":"dotNet, javascript, python, java",
+      "NotSupportedByDesign":"javascript, python, java",
       "Results": [
         {
           "Text": "火曜",
@@ -812,7 +812,7 @@
     },
     {
       "Input": "水曜",
-      "NotSupportedByDesign":"dotNet, javascript, python, java",
+      "NotSupportedByDesign":"javascript, python, java",
       "Results": [
         {
           "Text": "水曜",
@@ -824,7 +824,7 @@
     },
     {
       "Input": "木曜",
-      "NotSupportedByDesign":"dotNet, javascript, python, java",
+      "NotSupportedByDesign":"javascript, python, java",
       "Results": [
         {
           "Text": "木曜",
@@ -836,7 +836,7 @@
     },
     {
       "Input": "金曜",
-      "NotSupportedByDesign":"dotNet, javascript, python, java",
+      "NotSupportedByDesign":"javascript, python, java",
       "Results": [
         {
           "Text": "金曜",
@@ -848,7 +848,7 @@
     },
     {
       "Input": "土曜",
-      "NotSupportedByDesign":"dotNet, javascript, python, java",
+      "NotSupportedByDesign":"javascript, python, java",
       "Results": [
         {
           "Text": "土曜",
@@ -860,7 +860,7 @@
     },
     {
       "Input": "日曜",
-      "NotSupportedByDesign":"dotNet, javascript, python, java",
+      "NotSupportedByDesign":"javascript, python, java",
       "Results": [
         {
           "Text": "日曜",
@@ -1016,7 +1016,7 @@
     },
     {
       "Input": "今日",
-      "NotSupportedByDesign":"dotNet, javascript, python, java",
+      "NotSupportedByDesign":"javascript, python, java",
       "Results": [
         {
           "Text": "今日",
@@ -1040,7 +1040,7 @@
     },
     {
       "Input": "明日",
-      "NotSupportedByDesign":"dotNet, javascript, python, java",
+      "NotSupportedByDesign":"javascript, python, java",
       "Results": [
         {
           "Text": "明日",
@@ -1076,7 +1076,7 @@
     },
     {
       "Input": "明後日",
-      "NotSupportedByDesign":"dotNet, javascript, python, java",
+      "NotSupportedByDesign":"javascript, python, java",
       "Results": [
         {
           "Text": "明後日",
@@ -1124,7 +1124,7 @@
     },
     {
       "Input": "昨日",
-      "NotSupportedByDesign":"dotNet, javascript, python, java",
+      "NotSupportedByDesign":"javascript, python, java",
       "Results": [
         {
           "Text": "昨日",
@@ -1160,7 +1160,7 @@
     },
     {
       "Input": "一昨日",
-      "NotSupportedByDesign":"dotNet, javascript, python, java",
+      "NotSupportedByDesign":"javascript, python, java",
       "Results": [
         {
           "Text": "一昨日",
@@ -1206,17 +1206,17 @@
         }
       ]
     },
-    {
-      "Input": "今月",
-      "NotSupportedByDesign":"dotNet, javascript, python, java",
-      "Results": [
-        {
-          "Text": "今月",
-          "Type": "date",
-          "Start": 0,
-          "Length": 2
-        }
-      ]
+    { 
+      "Input": "今月", 
+      "NotSupportedByDesign":"javascript, python, java", 
+      "Results": [ 
+        { 
+          "Text": "今月", 
+          "Type": "date", 
+          "Start": 0, 
+          "Length": 2 
+        } 
+      ] 
     },
     {
       "Input": "こんげつ",
@@ -1230,18 +1230,18 @@
         }
       ]
     },
-    {
-      "Input": "来月",
-      "NotSupportedByDesign":"dotNet, javascript, python, java",
-      "Results": [
-        {
-          "Text": "来月",
-          "Type": "date",
-          "Start": 0,
-          "Length": 2
-        }
-      ]
-    },
+    { 
+      "Input": "来月", 
+      "NotSupportedByDesign":"javascript, python, java", 
+      "Results": [ 
+        { 
+          "Text": "来月", 
+          "Type": "date", 
+          "Start": 0, 
+          "Length": 2 
+        } 
+      ] 
+    }, 
     {
       "Input": "らいげつ",
       "NotSupportedByDesign":"dotNet, javascript, python, java",
@@ -1268,7 +1268,7 @@
     },
     {
       "Input": "昨月",
-      "NotSupportedByDesign":"dotNet, javascript, python, java",
+      "NotSupportedByDesign":"javascript, python, java",
       "Results": [
         {
           "Text": "昨月",
@@ -1292,7 +1292,7 @@
     },
     {
       "Input": "先月",
-      "NotSupportedByDesign":"dotNet, javascript, python, java",
+      "NotSupportedByDesign":"javascript, python, java",
       "Results": [
         {
           "Text": "先月",
@@ -1316,7 +1316,7 @@
     },
     {
       "Input": "先々月",
-      "NotSupportedByDesign":"dotNet, javascript, python, java",
+      "NotSupportedByDesign":"javascript, python, java",
       "Results": [
         {
           "Text": "先々月",
@@ -1362,21 +1362,21 @@
         }
       ]
     },
-    {
-      "Input": "今年",
-      "NotSupportedByDesign":"dotNet, javascript, python, java",
-      "Results": [
-        {
-          "Text": "今年",
-          "Type": "date",
-          "Start": 0,
-          "Length": 2
-        }
-      ]
-    },
+    { 
+      "Input": "今年", 
+      "NotSupportedByDesign":"dotNet, javascript, python, java", 
+      "Results": [ 
+        { 
+          "Text": "今年", 
+          "Type": "date", 
+          "Start": 0, 
+          "Length": 2 
+        } 
+      ] 
+    }, 
     {
       "Input": "ことし",
-      "NotSupportedByDesign":"dotNet, javascript, python, java",
+      "NotSupportedByDesign":"javascript, python, java",
       "Results": [
         {
           "Text": "ことし",
@@ -1386,21 +1386,21 @@
         }
       ]
     },
-    {
-      "Input": "来年",
-      "NotSupportedByDesign":"dotNet, javascript, python, java",
-      "Results": [
-        {
-          "Text": "来年",
-          "Type": "date",
-          "Start": 0,
-          "Length": 2
-        }
-      ]
-    },
+    { 
+      "Input": "来年", 
+      "NotSupportedByDesign":"dotNet, javascript, python, java", 
+      "Results": [ 
+        { 
+          "Text": "来年", 
+          "Type": "date", 
+          "Start": 0, 
+          "Length": 2 
+        } 
+      ] 
+    }, 
     {
       "Input": "らいねん",
-      "NotSupportedByDesign":"dotNet, javascript, python, java",
+      "NotSupportedByDesign":"javascript, python, java",
       "Results": [
         {
           "Text": "らいねん",
@@ -1436,7 +1436,7 @@
     },
     {
       "Input": "昨年",
-      "NotSupportedByDesign":"dotNet, javascript, python, java",
+      "NotSupportedByDesign":"javascript, python, java",
       "Results": [
         {
           "Text": "昨年",

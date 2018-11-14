@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -190,11 +190,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             else if (!string.IsNullOrEmpty(yearRel))
             {
                 hasYear = true;
-                if (yearRel.EndsWith("去年"))
+                if (yearRel.EndsWith("前年") || yearRel.EndsWith("先年"))
                 {
                     year--;
                 }
-                else if (yearRel.EndsWith("明年"))
+                else if (yearRel.EndsWith("来年"))
                 {
                     year++;
                 }

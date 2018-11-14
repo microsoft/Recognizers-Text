@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Japanese;
 using DateObject = System.DateTime;
@@ -38,6 +38,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
         public static readonly Regex SpecialDayRegex = new Regex(DateTimeDefinitions.SpecialDayRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex SpecialMonthRegex = new Regex(DateTimeDefinitions.SpecialMonthRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex SpecialYearRegex = new Regex(DateTimeDefinitions.SpecialYearRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public static readonly Regex WeekDayOfMonthRegex = new Regex(DateTimeDefinitions.WeekDayOfMonthRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex ThisRe = new Regex(DateTimeDefinitions.DateThisRe, RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -46,17 +50,24 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
         public static readonly Regex NextRe = new Regex(DateTimeDefinitions.DateNextRe, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex SpecialDate = new Regex(DateTimeDefinitions.SpecialDate, RegexOptions.IgnoreCase | RegexOptions.Singleline);
-
         public static readonly Regex UnitRegex = new Regex(DateTimeDefinitions.DateUnitRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex SpecialDate = new Regex(DateTimeDefinitions.SpecialDate, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex[] DateRegexList =
         {
-            // (农历)?(2016年)?一月三日(星期三)?
+
+            // ２０１６年１２月１日
             new Regex(DateTimeDefinitions.DateRegexList1, RegexOptions.IgnoreCase | RegexOptions.Singleline),
 
-            // (2015年)?(农历)?十月初一(星期三)?
+            // 2015/12/23
+            new Regex(DateTimeDefinitions.DateRegexList10, RegexOptions.IgnoreCase | RegexOptions.Singleline),
+            
+            //# ２０１６年１２月
             new Regex(DateTimeDefinitions.DateRegexList2, RegexOptions.IgnoreCase | RegexOptions.Singleline),
+
+            //１２月１日
+            new Regex(DateTimeDefinitions.DateRegexList9, RegexOptions.IgnoreCase | RegexOptions.Singleline),
 
             // (2015年)?(农历)?十月二十(星期三)?
             new Regex(DateTimeDefinitions.DateRegexList3, RegexOptions.IgnoreCase | RegexOptions.Singleline),
@@ -84,14 +95,17 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 new Regex(DateTimeDefinitions.DateRegexList7, RegexOptions.IgnoreCase | RegexOptions.Singleline),
 
             // 2015-12-23
-            new Regex(DateTimeDefinitions.DateRegexList8, RegexOptions.IgnoreCase | RegexOptions.Singleline)
+            new Regex(DateTimeDefinitions.DateRegexList8, RegexOptions.IgnoreCase | RegexOptions.Singleline),
+
+            //2016/12
+            new Regex(DateTimeDefinitions.DateRegexList11, RegexOptions.IgnoreCase | RegexOptions.Singleline)
         };
 
 
         public static readonly Regex[] ImplicitDateList =
         {
             LunarRegex, SpecialDayRegex, ThisRegex, LastRegex, NextRegex,
-            WeekDayRegex, WeekDayOfMonthRegex, SpecialDate
+            WeekDayRegex, WeekDayOfMonthRegex, SpecialMonthRegex, SpecialYearRegex, SpecialDate
         };
 
         public static readonly Regex BeforeRegex = new Regex(DateTimeDefinitions.BeforeRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);

@@ -1,0 +1,325 @@
+[
+  {
+    "Input": "2015年11月1日から2016年12月4日まで",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2015年11月1日から2016年12月4日まで",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2015-11-01,2016-12-04,P399D)",
+          "FutureResolution": {
+            "startDate": "2015-11-01",
+            "endDate": "2016-12-04"
+          },
+          "PastResolution": {
+            "startDate": "2015-11-01",
+            "endDate": "2016-12-04"
+          }
+        },
+        "Start": 0,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "2016年11月から2017年12月まで",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2016年11月から2017年12月まで",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-01,2017-12-01,P13M)",
+          "FutureResolution": {
+            "startDate": "2016-11-01",
+            "endDate": "2017-12-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-01",
+            "endDate": "2017-12-01"
+          }
+        },
+        "Start": 0,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "08月から12月まで",
+    "Context": {
+      "ReferenceDateTime": "2018-11-01T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "08月から12月まで",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-08-01,XXXX-12-01,P4M)",
+          "FutureResolution": {
+            "startDate": "2018-08-01",
+            "endDate": "2018-12-01"
+          },
+          "PastResolution": {
+            "startDate": "2018-08-01",
+            "endDate": "2018-12-01"
+          }
+        },
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "08日から12日まで",
+    "Context": {
+      "ReferenceDateTime": "2018-11-01T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "08日から12日まで",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-XX-08,XXXX-XX-12,P4D)",
+          "FutureResolution": {
+            "startDate": "2018-11-08",
+            "endDate": "2018-11-12"
+          },
+          "PastResolution": {
+            "startDate": "2018-10-08",
+            "endDate": "2018-10-12"
+          }
+        },
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "08日から12日まで",
+    "Context": {
+      "ReferenceDateTime": "2018-11-30T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "08日から12日まで",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-XX-08,XXXX-XX-12,P4D)",
+          "FutureResolution": {
+            "startDate": "2018-12-08",
+            "endDate": "2018-12-12"
+          },
+          "PastResolution": {
+            "startDate": "2018-11-08",
+            "endDate": "2018-11-12"
+          }
+        },
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "08日から12日まで",
+    "Context": {
+      "ReferenceDateTime": "2018-12-30T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "08日から12日まで",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-XX-08,XXXX-XX-12,P4D)",
+          "FutureResolution": {
+            "startDate": "2019-01-08",
+            "endDate": "2019-01-12"
+          },
+          "PastResolution": {
+            "startDate": "2018-12-08",
+            "endDate": "2018-12-12"
+          }
+        },
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "08日から12日まで",
+    "Context": {
+      "ReferenceDateTime": "2018-01-30T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "08日から12日まで",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-XX-08,XXXX-XX-12,P4D)",
+          "FutureResolution": {
+            "startDate": "2018-02-08",
+            "endDate": "2018-02-12"
+          },
+          "PastResolution": {
+            "startDate": "2018-01-08",
+            "endDate": "2018-01-12"
+          }
+        },
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "08日から12日まで",
+    "Context": {
+      "ReferenceDateTime": "2018-01-01T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "08日から12日まで",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-XX-08,XXXX-XX-12,P4D)",
+          "FutureResolution": {
+            "startDate": "2018-01-08",
+            "endDate": "2018-01-12"
+          },
+          "PastResolution": {
+            "startDate": "2017-12-08",
+            "endDate": "2017-12-12"
+          }
+        },
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "2008年から2012年まで",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2008年から2012年まで",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2008-01-01,2012-01-01,P4Y)",
+          "FutureResolution": {
+            "startDate": "2008-01-01",
+            "endDate": "2012-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2008-01-01",
+            "endDate": "2012-01-01"
+          }
+        },
+        "Start": 0,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "08月1日から09月4日まで",
+    "Context": {
+      "ReferenceDateTime": "2018-11-01T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "08月1日から09月4日まで",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-08-01,XXXX-09-04,P34D)",
+          "FutureResolution": {
+            "startDate": "2019-08-01",
+            "endDate": "2019-09-04"
+          },
+          "PastResolution": {
+            "startDate": "2018-08-01",
+            "endDate": "2018-09-04"
+          }
+        },
+        "Start": 0,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "2015/11/1から2016/12/4まで",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2015/11/1から2016/12/4まで",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2015-11-01,2016-12-04,P399D)",
+          "FutureResolution": {
+            "startDate": "2015-11-01",
+            "endDate": "2016-12-04"
+          },
+          "PastResolution": {
+            "startDate": "2015-11-01",
+            "endDate": "2016-12-04"
+          }
+        },
+        "Start": 0,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "2016/11から2017/12まで",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2016/11から2017/12まで",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-01,2017-12-01,P13M)",
+          "FutureResolution": {
+            "startDate": "2016-11-01",
+            "endDate": "2017-12-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-01",
+            "endDate": "2017-12-01"
+          }
+        },
+        "Start": 0,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "08/1から09/4まで",
+    "Context": {
+      "ReferenceDateTime": "2018-11-01T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "08/1から09/4まで",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-08-01,XXXX-09-04,P34D)",
+          "FutureResolution": {
+            "startDate": "2019-08-01",
+            "endDate": "2019-09-04"
+          },
+          "PastResolution": {
+            "startDate": "2018-08-01",
+            "endDate": "2018-09-04"
+          }
+        },
+        "Start": 0,
+        "Length": 12
+      }
+    ]
+  }
+]

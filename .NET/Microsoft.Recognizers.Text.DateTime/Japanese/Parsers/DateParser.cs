@@ -17,7 +17,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         private readonly JapaneseDateTimeParserConfiguration config;
 
         private readonly IExtractor integerExtractor;
-        private readonly IExtractor ordinalExtractor;
         private readonly IParser numberParser;
         private readonly IDateTimeExtractor durationExtractor;
 
@@ -25,7 +24,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         {
             config = configuration;
             integerExtractor = new IntegerExtractor();
-            ordinalExtractor = new OrdinalExtractor();
             durationExtractor = new DurationExtractorJap();
             numberParser = new BaseCJKNumberParser(new JapaneseNumberParserConfiguration());
         }
@@ -234,7 +232,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             match = DateExtractorJap.SpecialDayRegex.Match(trimmedText);
             if (match.Success && match.Index == 0 && match.Length == trimmedText.Length)
             {
-                var value = referenceDate.AddDays(config.GetSwiftDay(match.Value.ToLower()));
+                var value = referenceDate.AddDays(config.GetSwiftDay(match.Value));
                 ret.Timex = FormatUtil.LuisDate(value);
                 ret.FutureValue = ret.PastValue = value;
                 ret.Success = true;
@@ -242,7 +240,29 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 return ret;
             }
 
-            if(!ret.Success)
+            match = DateExtractorJap.SpecialMonthRegex.Match(trimmedText);
+            if (match.Success && match.Index == 0 && match.Length == trimmedText.Length)
+            {
+              var value = referenceDate.AddMonths(config.GetSwiftMonth(match.Value));
+              ret.Timex = FormatUtil.LuisDate(value);
+              ret.FutureValue = ret.PastValue = value;
+              ret.Success = true;
+
+              return ret;
+            }
+
+            match = DateExtractorJap.SpecialYearRegex.Match(trimmedText);
+            if (match.Success && match.Index == 0 && match.Length == trimmedText.Length)
+            {
+              var value = referenceDate.AddYears(config.GetSwiftYear(match.Value));
+              ret.Timex = FormatUtil.LuisDate(value);
+              ret.FutureValue = ret.PastValue = value;
+              ret.Success = true;
+
+              return ret;
+            }
+
+            if (!ret.Success)
             {
                 ret = MatchThisWeekday(text, referenceDate);
             }
@@ -561,15 +581,14 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             var dayStr = match.Groups["day"].Value.ToLower();
             var yearStr = match.Groups["year"].Value.ToLower();
             var yearJapStr = match.Groups["yearJap"].Value.ToLower();
-            int month = 0, day = 0, year = 0;
+            int month = 1, day = 1, year = 0;
 
             var tmp = ConvertJapaneseYearToInteger(yearJapStr);
             year = tmp == -1 ? 0 : tmp;
 
-            if (this.config.MonthOfYear.ContainsKey(monthStr) && this.config.DayOfMonth.ContainsKey(dayStr))
+            if (this.config.MonthOfYear.ContainsKey(monthStr))
             {
                 month = this.config.MonthOfYear[monthStr] > 12 ? this.config.MonthOfYear[monthStr] % 12 : this.config.MonthOfYear[monthStr];
-                day = this.config.DayOfMonth[dayStr] > 31 ? this.config.DayOfMonth[dayStr] % 31 : this.config.DayOfMonth[dayStr];
                 if (!string.IsNullOrEmpty(yearStr))
                 {
                     year = int.Parse(yearStr);
@@ -581,6 +600,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                     {
                         year += 2000;
                     }
+                }
+
+                if (this.config.DayOfMonth.ContainsKey(dayStr))
+                {
+                  day = this.config.DayOfMonth[dayStr] > 31 ? this.config.DayOfMonth[dayStr] % 31 : this.config.DayOfMonth[dayStr];
                 }
             }
 

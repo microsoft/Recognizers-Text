@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Japanese;
@@ -15,6 +15,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         public static readonly Regex TillRegex = new Regex(DateTimeDefinitions.DatePeriodTillRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex DayRegex = new Regex(DateTimeDefinitions.DayRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex DayRegexForPeriod = new Regex(DateTimeDefinitions.DayRegexForPeriod, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex DayRegexInJapanese = new Regex(DateTimeDefinitions.DatePeriodDayRegexInJapanese, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
@@ -47,6 +49,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
         public static readonly Regex YearAndMonth = new Regex(DateTimeDefinitions.YearAndMonth, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex SimpleYearAndMonth = new Regex(DateTimeDefinitions.SimpleYearAndMonth, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         // 2017.12, 2017-12, 2017/12, 12/2017
         public static readonly Regex PureNumYearAndMonth = new Regex(DateTimeDefinitions.PureNumYearAndMonth, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
@@ -62,11 +66,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
         public static readonly Regex YearToYear = new Regex(DateTimeDefinitions.YearToYear, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex YearToYearSuffixRequired = new Regex(DateTimeDefinitions.YearToYearSuffixRequired, RegexOptions.IgnoreCase | RegexOptions.Singleline);
-
         public static readonly Regex MonthToMonth = new Regex(DateTimeDefinitions.MonthToMonth, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex MonthToMonthSuffixRequired = new Regex(DateTimeDefinitions.MonthToMonthSuffixRequired, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex DayToDay = new Regex(DateTimeDefinitions.DayToDay, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex MonthDayRange = new Regex(DateTimeDefinitions.MonthDayRange, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex YearMonthRange = new Regex(DateTimeDefinitions.YearMonthRange, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex YearMonthDayRange = new Regex(DateTimeDefinitions.YearMonthDayRange, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex PastRegex = new Regex(DateTimeDefinitions.PastRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
@@ -89,10 +97,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             OneWordPeriodRegex,
             StrictYearRegex,
             YearToYear,
-            YearToYearSuffixRequired,
             MonthToMonth,
-            MonthToMonthSuffixRequired,
-            YearAndMonth,
+            DayToDay,
+            MonthDayRange,
+            YearMonthRange,
+            MonthDayRange,
+            YearMonthDayRange,
             PureNumYearAndMonth,
             YearInJapaneseRegex,
             WeekOfMonthRegex,

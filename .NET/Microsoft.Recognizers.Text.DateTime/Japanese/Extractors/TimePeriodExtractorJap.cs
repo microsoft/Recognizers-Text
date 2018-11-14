@@ -11,28 +11,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         internal sealed override ImmutableDictionary<Regex, PeriodType> Regexes { get; }
 
         protected sealed override string ExtractType { get; } = Constants.SYS_DATETIME_TIMEPERIOD;
-
-        public const string TimePeriodConnectWords = DateTimeDefinitions.TimePeriodTimePeriodConnectWords;
-
-        //五点十分四十八秒
-        public static readonly string JapaneseTimeRegex = TimeExtractorJap.JapaneseTimeRegex;
-
-        //六点 到 九点 | 六 到 九点
-        public static readonly string LeftJapTimeRegex = DateTimeDefinitions.TimePeriodLeftJapTimeRegex;
-
-        public static readonly string RightJapTimeRegex = DateTimeDefinitions.TimePeriodRightJapTimeRegex;
-
-        //2:45
-        public static readonly string DigitTimeRegex = TimeExtractorJap.DigitTimeRegex;
-
-        public static readonly string LeftDigitTimeRegex = DateTimeDefinitions.TimePeriodLeftDigitTimeRegex;
-
-        public static readonly string RightDigitTimeRegex = DateTimeDefinitions.TimePeriodRightDigitTimeRegex;
-
-        public static readonly string ShortLeftJapTimeRegex = DateTimeDefinitions.TimePeriodShortLeftJapTimeRegex;
-
-        public static readonly string ShortLeftDigitTimeRegex = DateTimeDefinitions.TimePeriodShortLeftDigitTimeRegex;
-
+    
         public TimePeriodExtractorJap()
         {
             var regexes = new Dictionary<Regex, PeriodType>

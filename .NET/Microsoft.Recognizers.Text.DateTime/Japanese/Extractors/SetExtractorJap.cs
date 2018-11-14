@@ -2,15 +2,12 @@
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Japanese;
 using DateObject = System.DateTime;
-using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.Japanese
 {
     public class SetExtractorJap : IDateTimeExtractor
     {
         public static readonly string ExtractorName = Constants.SYS_DATETIME_SET;
-
-        public static readonly Regex UnitRegex = new Regex(DateTimeDefinitions.SetUnitRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex EachUnitRegex = new Regex(DateTimeDefinitions.SetEachUnitRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
