@@ -53,12 +53,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 {
                     parseResult.FutureResolution = new Dictionary<string, string>
                     {
-                        {TimeTypeConstants.TIME, FormatUtil.FormatTime((DateObject) parseResult.FutureValue)}
+                        {TimeTypeConstants.TIME, DateTimeFormatUtil.FormatTime((DateObject) parseResult.FutureValue)}
                     };
 
                     parseResult.PastResolution = new Dictionary<string, string>
                     {
-                        {TimeTypeConstants.TIME, FormatUtil.FormatTime((DateObject) parseResult.PastValue)}
+                        {TimeTypeConstants.TIME, DateTimeFormatUtil.FormatTime((DateObject) parseResult.PastValue)}
                     };
                 }
 

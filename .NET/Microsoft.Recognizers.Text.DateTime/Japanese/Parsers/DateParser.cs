@@ -80,12 +80,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             {
                 innerResult.FutureResolution = new Dictionary<string, string>
                     {
-                        {TimeTypeConstants.DATE, FormatUtil.FormatDate((DateObject) innerResult.FutureValue)}
+                        {TimeTypeConstants.DATE, DateTimeFormatUtil.FormatDate((DateObject) innerResult.FutureValue)}
                     };
 
                 innerResult.PastResolution = new Dictionary<string, string>
                     {
-                        {TimeTypeConstants.DATE, FormatUtil.FormatDate((DateObject) innerResult.PastValue)}
+                        {TimeTypeConstants.DATE, DateTimeFormatUtil.FormatDate((DateObject) innerResult.PastValue)}
                     };
 
                 innerResult.IsLunar = IsLunarCalendar(text);
@@ -182,7 +182,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                     }
                 }
 
-                ret.Timex = FormatUtil.LuisDate(hasYear ? year : -1, hasMonth ? month : -1, day);
+                ret.Timex = DateTimeFormatUtil.LuisDate(hasYear ? year : -1, hasMonth ? month : -1, day);
 
                 DateObject futureDate, pastDate;
 
@@ -233,7 +233,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             if (match.Success && match.Index == 0 && match.Length == trimmedText.Length)
             {
                 var value = referenceDate.AddDays(config.GetSwiftDay(match.Value));
-                ret.Timex = FormatUtil.LuisDate(value);
+                ret.Timex = DateTimeFormatUtil.LuisDate(value);
                 ret.FutureValue = ret.PastValue = value;
                 ret.Success = true;
 
@@ -244,7 +244,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             if (match.Success && match.Index == 0 && match.Length == trimmedText.Length)
             {
               var value = referenceDate.AddMonths(config.GetSwiftMonth(match.Value));
-              ret.Timex = FormatUtil.LuisDate(value);
+              ret.Timex = DateTimeFormatUtil.LuisDate(value);
               ret.FutureValue = ret.PastValue = value;
               ret.Success = true;
 
@@ -255,7 +255,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             if (match.Success && match.Index == 0 && match.Length == trimmedText.Length)
             {
               var value = referenceDate.AddYears(config.GetSwiftYear(match.Value));
-              ret.Timex = FormatUtil.LuisDate(value);
+              ret.Timex = DateTimeFormatUtil.LuisDate(value);
               ret.FutureValue = ret.PastValue = value;
               ret.Success = true;
 
@@ -295,7 +295,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 var weekdayKey = match.Groups["weekday"].Value.ToLowerInvariant();
                 var value = reference.Next((DayOfWeek)this.config.DayOfWeek[weekdayKey]);
 
-                result.Timex = FormatUtil.LuisDate(value);
+                result.Timex = DateTimeFormatUtil.LuisDate(value);
                 result.FutureValue = result.PastValue = value;
                 result.Success = true;
             }
@@ -313,7 +313,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 var weekdayKey = match.Groups["weekday"].Value.ToLowerInvariant();
                 var value = reference.This((DayOfWeek)this.config.DayOfWeek[weekdayKey]);
 
-                result.Timex = FormatUtil.LuisDate(value);
+                result.Timex = DateTimeFormatUtil.LuisDate(value);
                 result.FutureValue = result.PastValue = value;
                 result.Success = true;
             }
@@ -331,7 +331,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 var weekdayKey = match.Groups["weekday"].Value.ToLowerInvariant();
                 var value = reference.Last((DayOfWeek)this.config.DayOfWeek[weekdayKey]);
 
-                result.Timex = FormatUtil.LuisDate(value);
+                result.Timex = DateTimeFormatUtil.LuisDate(value);
                 result.FutureValue = result.PastValue = value;
                 result.Success = true;
             }
@@ -532,7 +532,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                                 default:
                                     return ret;
                             }
-                            ret.Timex = $"{FormatUtil.LuisDate(date)}";
+                            ret.Timex = $"{DateTimeFormatUtil.LuisDate(date)}";
                             ret.FutureValue = ret.PastValue = date;
                             ret.Success = true;
                             return ret;
@@ -560,7 +560,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                                     return ret;
                             }
 
-                            ret.Timex = $"{FormatUtil.LuisDate(date)}";
+                            ret.Timex = $"{DateTimeFormatUtil.LuisDate(date)}";
                             ret.FutureValue = ret.PastValue = date;
                             ret.Success = true;
                             return ret;
@@ -612,12 +612,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             if (year == 0)
             {
                 year = referenceDate.Year;
-                ret.Timex = FormatUtil.LuisDate(-1, month, day);
+                ret.Timex = DateTimeFormatUtil.LuisDate(-1, month, day);
                 noYear = true;
             }
             else
             {
-                ret.Timex = FormatUtil.LuisDate(year, month, day);
+                ret.Timex = DateTimeFormatUtil.LuisDate(year, month, day);
             }
 
             var futureDate = DateObject.MinValue.SafeCreateFromValue(year, month, day);

@@ -45,11 +45,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                     {
                         {
                             TimeTypeConstants.START_TIME,
-                            FormatUtil.FormatTime(((Tuple<DateObject, DateObject>) parseResult.FutureValue).Item1)
+                            DateTimeFormatUtil.FormatTime(((Tuple<DateObject, DateObject>) parseResult.FutureValue).Item1)
                         },
                         {
                             TimeTypeConstants.END_TIME,
-                            FormatUtil.FormatTime(((Tuple<DateObject, DateObject>) parseResult.FutureValue).Item2)
+                            DateTimeFormatUtil.FormatTime(((Tuple<DateObject, DateObject>) parseResult.FutureValue).Item2)
                         }
                     };
 
@@ -57,11 +57,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                     {
                         {
                             TimeTypeConstants.START_TIME,
-                            FormatUtil.FormatTime(((Tuple<DateObject, DateObject>) parseResult.PastValue).Item1)
+                            DateTimeFormatUtil.FormatTime(((Tuple<DateObject, DateObject>) parseResult.PastValue).Item1)
                         },
                         {
                             TimeTypeConstants.END_TIME,
-                            FormatUtil.FormatTime(((Tuple<DateObject, DateObject>) parseResult.PastValue).Item2)
+                            DateTimeFormatUtil.FormatTime(((Tuple<DateObject, DateObject>) parseResult.PastValue).Item2)
                         }
                     };
                 }
