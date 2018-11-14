@@ -1,15 +1,19 @@
 package com.microsoft.recognizers.text.choice;
 
+import com.microsoft.recognizers.text.Culture;
 import com.microsoft.recognizers.text.IModel;
 import com.microsoft.recognizers.text.ModelResult;
 import com.microsoft.recognizers.text.Recognizer;
+import com.microsoft.recognizers.text.choice.english.extractors.EnglishBooleanExtractorConfiguration;
+import com.microsoft.recognizers.text.choice.extractors.BooleanExtractor;
+import com.microsoft.recognizers.text.choice.models.BooleanModel;
+import com.microsoft.recognizers.text.choice.parsers.BooleanParser;
 
 import java.util.List;
 
 public class ChoiceRecognizer extends Recognizer<ChoiceOptions> {
 
-    public ChoiceRecognizer(String targetCulture, ChoiceOptions options,
-            boolean lazyInitialization) {
+    public ChoiceRecognizer(String targetCulture, ChoiceOptions options, boolean lazyInitialization) {
         super(targetCulture, options, lazyInitialization);
     }
 
@@ -41,13 +45,16 @@ public class ChoiceRecognizer extends Recognizer<ChoiceOptions> {
         this(null, ChoiceOptions.None, true);
     }
 
-    public IModel getBooleanModel(String culture, boolean fallbackToDefaultCulture) {
-        throw new UnsupportedOperationException();
-        // return GetModel<BooleanModel>(culture, fallbackToDefaultCulture);
+    public BooleanModel getBooleanModel(String culture, boolean fallbackToDefaultCulture) {
+        return getModel(BooleanModel.class, culture, fallbackToDefaultCulture);
     }
 
     public static List<ModelResult> recognizeBoolean(String query, String culture, ChoiceOptions options, boolean fallbackToDefaultCulture) {
-        throw new UnsupportedOperationException();
+        
+        ChoiceRecognizer recognizer = new ChoiceRecognizer(options);
+        IModel model = recognizer.getBooleanModel(culture, fallbackToDefaultCulture);
+
+        return model.parse(query);
     }
 
     public static List<ModelResult> recognizeBoolean(String query, String culture, ChoiceOptions options) {
@@ -60,6 +67,8 @@ public class ChoiceRecognizer extends Recognizer<ChoiceOptions> {
 
     @Override
     protected void initializeConfiguration() {
-        throw new UnsupportedOperationException();
+
+        //English
+        registerModel(BooleanModel.class, Culture.English, (options) -> new BooleanModel(new BooleanParser(), new BooleanExtractor(new EnglishBooleanExtractorConfiguration())));
     }
 }
