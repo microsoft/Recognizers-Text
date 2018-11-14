@@ -179,13 +179,13 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript, python, dotNet",
     "Results": [
       {
-        "Text": "Freitag",
-        "Start": 13,
+        "Text": "am freitag ",
+        "Start": 10,
         "End": 20,
-        "TypeName": "datetimeV2.date",
+        "TypeName": "datetimeV2.set",
         "Resolution": {
           "values": [
             {
@@ -464,7 +464,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript, python, dotNet",
     "Results": [
       {
         "Text": "dieser abend",
@@ -615,7 +615,7 @@
     ]
   },
   {
-    "Input": "Das waren 123,45 Sek",
+    "Input": "Das waren 123,45 sek",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -631,7 +631,7 @@
             {
               "timex": "PT123.45S",
               "type": "duration",
-              "value": "123.45"
+              "value": "123,45"
             }
           ]
         }
@@ -750,7 +750,8 @@
           "values": [
             {
               "timex": "T19:56:30",
-              "type": "time",
+              "Mod": "approx",
+              "type": "timerange",
               "value": "19:56:30"
             }
           ]
