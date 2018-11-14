@@ -52,8 +52,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             List<string> matcherList = new List<string>();
 
             matcherList = collection.SelectMany(words =>
-                words.Trim().Split('|').Where(word => !string.IsNullOrWhiteSpace(word)).Select(word => word.ToLower())
-                    .Distinct()).ToList();
+                words.Trim().Split('|').Where(word => !string.IsNullOrWhiteSpace(word)).Distinct()).ToList();
 
             matcher.Init(matcherList);
 
@@ -153,14 +152,13 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                 return result;
             }
 
-            var lowerSource = source.ToLower();
             var mappingPrefix = new Dictionary<int, PrefixUnitResult>();
             var sourceLen = source.Length;
             var prefixMatched = false;
 
             MatchCollection nonUnitMatches = null;
-            var prefixMatch = prefixMatcher.Find(lowerSource).OrderBy(o => o.Start).ToList();
-            var suffixMatch = suffixMatcher.Find(lowerSource).OrderBy(o => o.Start).ToList();
+            var prefixMatch = prefixMatcher.Find(source).OrderBy(o => o.Start).ToList();
+            var suffixMatch = suffixMatcher.Find(source).OrderBy(o => o.Start).ToList();
 
             if (prefixMatch.Count > 0 || suffixMatch.Count > 0)
             {
