@@ -8,12 +8,15 @@ import com.microsoft.recognizers.text.Culture;
 import com.microsoft.recognizers.text.ExtractResult;
 import com.microsoft.recognizers.text.ModelResult;
 import com.microsoft.recognizers.text.datetime.english.extractors.EnglishDateExtractorConfiguration;
+import com.microsoft.recognizers.text.datetime.english.extractors.EnglishHolidayExtractorConfiguration;
+import com.microsoft.recognizers.text.datetime.english.extractors.EnglishDurationExtractorConfiguration;
 import com.microsoft.recognizers.text.datetime.extractors.BaseDateExtractor;
+import com.microsoft.recognizers.text.datetime.extractors.BaseDurationExtractor;
+import com.microsoft.recognizers.text.datetime.extractors.BaseHolidayExtractor;
+import com.microsoft.recognizers.text.datetime.extractors.IDateTimeExtractor;
 import com.microsoft.recognizers.text.tests.AbstractTest;
 import com.microsoft.recognizers.text.tests.TestCase;
-import com.microsoft.recognizers.text.datetime.english.extractors.EnglishDurationExtractorConfiguration;
-import com.microsoft.recognizers.text.datetime.extractors.BaseDurationExtractor;
-import com.microsoft.recognizers.text.datetime.extractors.IDateTimeExtractor;
+
 import org.javatuples.Pair;
 import org.junit.Assert;
 import org.junit.AssumptionViolatedException;
@@ -89,6 +92,8 @@ public class DateTimeExtractorTest extends AbstractTest {
 				return new BaseDurationExtractor(new EnglishDurationExtractorConfiguration());
 			case "DateExtractor":
 				return new BaseDateExtractor(new EnglishDateExtractorConfiguration());
+      case "HolidayExtractor":
+				return new BaseHolidayExtractor(new EnglishHolidayExtractorConfiguration());
 			default:
 				throw new AssumptionViolatedException("Extractor Type/Name not supported.");
 		}
