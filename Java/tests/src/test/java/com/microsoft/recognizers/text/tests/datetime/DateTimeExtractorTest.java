@@ -105,6 +105,10 @@ public class DateTimeExtractorTest extends AbstractTest {
                 return new BaseTimeZoneExtractor(new EnglishTimeZoneExtractorConfiguration(DateTimeOptions.EnablePreview));
             case "TimePeriodExtractor":
                 return new BaseTimePeriodExtractor(new EnglishTimePeriodExtractorConfiguration());
+			case "MergedExtractor":
+				return new BaseMergedExtractor(new EnglishMergedExtractorConfiguration(DateTimeOptions.None));
+			case "MergedExtractorSkipFromTo":
+				return new BaseMergedExtractor(new EnglishMergedExtractorConfiguration(DateTimeOptions.SkipFromToMerge));
             
             default:
                 throw new AssumptionViolatedException("Extractor Type/Name not supported.");
