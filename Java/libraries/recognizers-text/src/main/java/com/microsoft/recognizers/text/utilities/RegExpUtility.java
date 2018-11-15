@@ -23,7 +23,6 @@ public abstract class RegExpUtility {
 
     private static final Pattern lookBehindCheckRegex = Pattern.compile("(\\\\?<[!=])");
     private static final Map<Character, String> bindings = new HashMap<Character, String>(){{
-
         put('+', "{1,10}");
         put('*', "{0,10}");
     }};
