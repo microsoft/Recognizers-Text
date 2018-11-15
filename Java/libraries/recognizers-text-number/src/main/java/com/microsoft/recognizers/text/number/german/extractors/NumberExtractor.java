@@ -6,15 +6,12 @@ import com.microsoft.recognizers.text.number.NumberOptions;
 import com.microsoft.recognizers.text.number.extractors.BaseNumberExtractor;
 import com.microsoft.recognizers.text.number.resources.BaseNumbers;
 import com.microsoft.recognizers.text.number.resources.GermanNumeric;
-import org.javatuples.Pair;
-
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.regex.Pattern;
-
-import static com.microsoft.recognizers.text.number.NumberMode.Default;
+import org.javatuples.Pair;
 
 public class NumberExtractor extends BaseNumberExtractor {
 
@@ -68,8 +65,7 @@ public class NumberExtractor extends BaseNumberExtractor {
 
         // Add Cardinal
         CardinalExtractor cardExtract = null;
-        switch (mode)
-        {
+        switch (mode) {
             case PureNumber:
                 cardExtract = CardinalExtractor.getInstance(GermanNumeric.PlaceHolderPureNumber);
                 break;
@@ -77,11 +73,11 @@ public class NumberExtractor extends BaseNumberExtractor {
                 builder.put(Pattern.compile(BaseNumbers.CurrencyRegex), "IntegerNum");
                 break;
             case Default:
+            default:
                 break;
         }
 
-        if (cardExtract == null)
-        {
+        if (cardExtract == null) {
             cardExtract = CardinalExtractor.getInstance();
         }
 

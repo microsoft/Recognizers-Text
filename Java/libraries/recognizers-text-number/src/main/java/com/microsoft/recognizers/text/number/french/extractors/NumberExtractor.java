@@ -6,13 +6,12 @@ import com.microsoft.recognizers.text.number.NumberOptions;
 import com.microsoft.recognizers.text.number.extractors.BaseNumberExtractor;
 import com.microsoft.recognizers.text.number.resources.BaseNumbers;
 import com.microsoft.recognizers.text.number.resources.FrenchNumeric;
-import org.javatuples.Pair;
-
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.regex.Pattern;
+import org.javatuples.Pair;
 
 public class NumberExtractor extends BaseNumberExtractor {
     private final Map<Pattern, String> regexes;
@@ -62,8 +61,7 @@ public class NumberExtractor extends BaseNumberExtractor {
         HashMap<Pattern, String> builder = new HashMap<>();
 
         CardinalExtractor cardExtract = null;
-        switch(mode)
-        {
+        switch (mode) {
             case PureNumber:
                 cardExtract = CardinalExtractor.getInstance(FrenchNumeric.PlaceHolderPureNumber);
                 break;
@@ -72,10 +70,11 @@ public class NumberExtractor extends BaseNumberExtractor {
                 break;
             case Default:
                 break;
+            default:
+                break;
         }
 
-        if (cardExtract == null)
-        {
+        if (cardExtract == null) {
             cardExtract = CardinalExtractor.getInstance();
         }
 

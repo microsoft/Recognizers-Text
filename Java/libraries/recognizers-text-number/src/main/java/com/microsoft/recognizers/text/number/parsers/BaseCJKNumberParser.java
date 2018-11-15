@@ -77,7 +77,10 @@ public class BaseCJKNumberParser extends BaseNumberParser {
 
         String resultText = extResult.text;
         String[] splitResult = cjkConfig.getFracSplitRegex().split(resultText);
-        String intPart = "", demoPart = "", numPart = "";
+        String intPart = "";
+        String demoPart = "";
+        String numPart = "";
+        
         if (splitResult.length == 3) {
             intPart = splitResult[0];
             demoPart = splitResult[1];
@@ -183,8 +186,8 @@ public class BaseCJKNumberParser extends BaseNumberParser {
             Match[] doubleMatches = RegExpUtility.getMatches(cjkConfig.getPercentageRegex(), resultText);
             String doubleText = doubleMatches[doubleMatches.length - 1].value;
 
-            if (doubleText.contains("k") || doubleText.contains("K") || doubleText.contains("ｋ") ||
-                    doubleText.contains("Ｋ")) {
+            if (doubleText.contains("k") || doubleText.contains("K") || doubleText.contains("ｋ")
+                || doubleText.contains("Ｋ")) {
                 power = 1000;
             }
 
@@ -347,9 +350,13 @@ public class BaseCJKNumberParser extends BaseNumberParser {
         Map<Character, Long> roundNumberMapChar = cjkConfig.getRoundNumberMapChar();
 
         intStr = replaceUnit(intStr);
-        double intValue = 0, partValue = 0, beforeValue = 1;
+        double intValue = 0;
+        double partValue = 0;
+        double beforeValue = 1;
+
         boolean isRoundBefore = false;
-        long roundBefore = -1, roundDefault = 1;
+        long roundBefore = -1;
+        long roundDefault = 1;
         boolean isNegative = false;
 
         boolean isDozen = false;

@@ -54,8 +54,7 @@ public class DoubleExtractor extends BaseNumberExtractor {
         return instances.get(placeholder);
     }
 
-    private DoubleExtractor()
-    {
+    private DoubleExtractor() {
         this(EnglishNumeric.PlaceHolderDefault);
     }
 

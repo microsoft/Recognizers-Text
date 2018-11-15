@@ -7,7 +7,15 @@ import com.microsoft.recognizers.text.ParseResult;
 import com.microsoft.recognizers.text.number.Constants;
 import com.microsoft.recognizers.text.utilities.QueryProcessor;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Locale;
+import java.util.Optional;
+import java.util.Set;
+import java.util.Stack;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -109,8 +117,7 @@ public class BaseNumberParser implements IParser {
             ret = ret.withResolutionStr(resolutionStr);
         }
 
-        if (ret != null)
-        {
+        if (ret != null) {
             ret = ret.withText(ret.text.toLowerCase(Locale.ROOT));
         }
 
@@ -191,8 +198,8 @@ public class BaseNumberParser implements IParser {
             for (splitIndex = fracWords.size() - 2; splitIndex >= 0; splitIndex--) {
 
                 String fracWord = fracWords.get(splitIndex);
-                if (config.getWrittenFractionSeparatorTexts().contains(fracWord) ||
-                        config.getWrittenIntegerSeparatorTexts().contains(fracWord)) {
+                if (config.getWrittenFractionSeparatorTexts().contains(fracWord)
+                    || config.getWrittenIntegerSeparatorTexts().contains(fracWord)) {
                     continue;
                 }
 
@@ -299,9 +306,9 @@ public class BaseNumberParser implements IParser {
 
         //Store all match str.
         List<String> matchStrs = new ArrayList<>();
-        Matcher sMatch = textNumberRegex.matcher(intPart);
-        while (sMatch.find()) {
-            String matchStr = sMatch.group().toLowerCase();
+        Matcher smatch = textNumberRegex.matcher(intPart);
+        while (smatch.find()) {
+            String matchStr = smatch.group().toLowerCase();
             matchStrs.add(matchStr);
         }
 
@@ -313,10 +320,10 @@ public class BaseNumberParser implements IParser {
         double pointPartRet = 0;
         if (numGroup.size() == 2) {
             String pointPart = numGroup.get(1);
-            sMatch = textNumberRegex.matcher(pointPart);
+            smatch = textNumberRegex.matcher(pointPart);
             matchStrs.clear();
-            while (sMatch.find()) {
-                String matchStr = sMatch.group().toLowerCase();
+            while (smatch.find()) {
+                String matchStr = smatch.group().toLowerCase();
                 matchStrs.add(matchStr);
             }
             pointPartRet += getPointValue(matchStrs);
@@ -343,70 +350,47 @@ public class BaseNumberParser implements IParser {
         boolean dot = false;
         boolean isNegative = false;
         double tmp = 0;
-        for (int i = 0; i < handle.length(); i++)
-        {
+        for (int i = 0; i < handle.length(); i++) {
             char ch = handle.charAt(i);
-            if (ch == '^' || ch == 'E')
-            {
-                if (isNegative)
-                {
+            if (ch == '^' || ch == 'E') {
+                if (isNegative) {
                     calStack.add(-tmp);
-                }
-                else
-                {
+                } else {
                     calStack.add(tmp);
                 }
                 tmp = 0;
                 scale = 10;
                 dot = false;
                 isNegative = false;
-            }
-            else if (ch >= '0' && ch <= '9')
-            {
-                if (dot)
-                {
+            } else if (ch >= '0' && ch <= '9') {
+                if (dot) {
                     tmp = tmp + scale * (ch - '0');
                     scale *= 0.1;
-                }
-                else
-                {
+                } else {
                     tmp = tmp * scale + (ch - '0');
                 }
-            }
-            else if (ch == config.getDecimalSeparatorChar())
-            {
+            } else if (ch == config.getDecimalSeparatorChar()) {
                 dot = true;
                 scale = 0.1;
-            }
-            else if (ch == '-')
-            {
+            } else if (ch == '-') {
                 isNegative = !isNegative;
-            }
-            else if (ch == '+')
-            {
+            } else if (ch == '+') {
                 continue;
             }
 
-            if (i == handle.length() - 1)
-            {
-                if (isNegative)
-                {
+            if (i == handle.length() - 1) {
+                if (isNegative) {
                     calStack.add(-tmp);
-                }
-                else
-                {
+                } else {
                     calStack.add(tmp);
                 }
             }
         }
 
         double ret;
-        if (isE)
-        {
+        if (isE) {
             ret = calStack.remove(0) * Math.pow(10, calStack.remove(0));
-        }
-        else
-        {
+        } else {
             ret = Math.pow(calStack.remove(0), calStack.remove(0));
         }
 
@@ -424,8 +408,7 @@ public class BaseNumberParser implements IParser {
         return String.join("|", keys);
     }
 
-    private boolean skipNonDecimalSeparator(char ch, int distance, CultureInfo culture)
-    {
+    private boolean skipNonDecimalSeparator(char ch, int distance, CultureInfo culture) {
         int decimalLength = 3;
 
         // Special cases for multi-language countries where decimal separators can be used interchangeably. Mostly informally.
@@ -433,7 +416,7 @@ public class BaseNumberParser implements IParser {
         // "me pidio $5.00 prestados" and "me pidio $5,00 prestados" -> currency $5
         Pattern cultureRegex = Pattern.compile("^(en|es|fr)(-)?\b", Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS);
 
-        return (ch == config.getNonDecimalSeparatorChar() && !(distance <= decimalLength && cultureRegex.matcher(culture.cultureCode).matches()) );
+        return (ch == config.getNonDecimalSeparatorChar() && !(distance <= decimalLength && cultureRegex.matcher(culture.cultureCode).matches()));
     }
 
     protected double getDigitalValue(String digitsStr, double power) {
@@ -625,12 +608,12 @@ public class BaseNumberParser implements IParser {
     }
 
     private List<String> getMatches(String input) {
-        Matcher sMatch = textNumberRegex.matcher(input);
+        Matcher smatch = textNumberRegex.matcher(input);
         List<String> matchStrs = new ArrayList<String>();
 
         //Store all match str.
-        while (sMatch.find()) {
-            String matchStr = sMatch.group();
+        while (smatch.find()) {
+            String matchStr = smatch.group();
             matchStrs.add(matchStr);
         }
 
@@ -639,8 +622,7 @@ public class BaseNumberParser implements IParser {
 
     //Test if big and combine with small.
     //e.g. "hundred" can combine with "thirty" but "twenty" can't combine with "thirty".
-    private boolean isComposable(long big, long small)
-    {
+    private boolean isComposable(long big, long small) {
         int baseNumber = small > 10 ? 100 : 10;
         return big % baseNumber == 0 && big / baseNumber >= 1;
     }

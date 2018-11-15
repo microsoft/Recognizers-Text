@@ -16,7 +16,7 @@ public abstract class AgnosticNumberParserFactory {
 
 
         if (isChinese || isJapanese) {
-             parser = new BaseCJKNumberParser(languageConfiguration);
+            parser = new BaseCJKNumberParser(languageConfiguration);
         } else {
             parser = new BaseNumberParser(languageConfiguration);
         }
@@ -39,8 +39,10 @@ public abstract class AgnosticNumberParserFactory {
                 break;
             case Percentage:
                 if (!isChinese && !isJapanese) {
-                     parser = new BasePercentageParser(languageConfiguration);
+                    parser = new BasePercentageParser(languageConfiguration);
                 }
+                break;
+            default:
                 break;
         }
 
