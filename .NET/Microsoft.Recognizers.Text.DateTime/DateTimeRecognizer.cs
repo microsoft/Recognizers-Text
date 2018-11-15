@@ -97,11 +97,12 @@ namespace Microsoft.Recognizers.Text.DateTime
                         new GermanMergedParserConfiguration(new BaseOptionsConfiguration(options))),
                     new BaseMergedDateTimeExtractor(new GermanMergedExtractorConfiguration(options))));
 
-            RegisterModel<DateTimeModel>(
-                Culture.Japanese,
-                options => new DateTimeModel(
-                  new FullDateTimeParser(new JapaneseDateTimeParserConfiguration(options)),
-                  new JapaneseMergedExtractor(options)));
+            // TODO to be uncommented when all tests for Japanese are green.
+            //RegisterModel<DateTimeModel>(
+            //    Culture.Japanese,
+            //    options => new DateTimeModel(
+            //      new FullDateTimeParser(new JapaneseDateTimeParserConfiguration(options)),
+            //      new JapaneseMergedExtractor(options))); 
     }
     }
 }
