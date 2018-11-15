@@ -5,7 +5,7 @@ using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
-    public class BaseDateTimeAltExtractor: IDateTimeListExtractor
+    public class BaseDateTimeAltExtractor : IDateTimeListExtractor
     {
         private const string ExtractorName = Constants.SYS_DATETIME_DATETIMEALT; // "DateTimeALT";
 
@@ -36,7 +36,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             while (i < ers.Count - 1)
             {
                 var j = i + 1;
-                var types = new HashSet<string> {ers[i].Type};
+                var types = new HashSet<string> { ers[i].Type };
 
                 while (j < ers.Count)
                 {
@@ -69,55 +69,24 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 // Extract different data accordingly
                 var altErs = ers.GetRange(i, j - i + 1);
-                var data = ExtractAlt(altErs);
-
                 var parentTextStart = ers[i].Start;
                 var parentTextLen = ers[j].Start + ers[j].Length - ers[i].Start;
                 var parentText = text.Substring(parentTextStart ?? 0, parentTextLen ?? 0);
 
-                if (data.Count > 0)
+                var successApplyData = AddContextForAlts(altErs, parentText);
+
+                if (!successApplyData)
                 {
-                    data.Add(ExtendedModelResult.ParentTextKey, parentText);
+                    altErs.Reverse();
+                    successApplyData = AddContextForAlts(altErs, parentText);
+                }
 
-                    ers[i].Data = new Dictionary<string, object>
-                        {
-                            {Constants.SubType, ers[i].Type},
-                            {ExtendedModelResult.ParentTextKey, parentText}
-                        };
-                    ers[i].Type = ExtractorName;
-
-                    for (var k = i + 1; k <= j; k++)
-                    {
-                        ers[k].Type = ExtractorName;
-                        ers[k].Data = data;
-                    }
-
+                if (successApplyData)
+                {
                     i = j + 1;
                 }
                 else
                 {
-                    altErs.Reverse();
-                    data = ExtractAlt(altErs);
-                    if (data.Count > 0)
-                    {
-                        data.Add(ExtendedModelResult.ParentTextKey, parentText);
-
-                        ers[j].Data = new Dictionary<string, object>
-                        {
-                            {Constants.SubType, ers[j].Type},
-                            {ExtendedModelResult.ParentTextKey, parentText}
-                        };
-                        ers[j].Type = ExtractorName;
-
-                        for (var k = i; k < j; k++)
-                        {
-                            ers[k].Type = ExtractorName;
-                            ers[k].Data = data;
-                        }
-
-                        i = j + 1;
-                        continue;
-                    }
                     i = j;
                 }
             }
@@ -269,7 +238,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
                 }
             }
-            
+
             ers.AddRange(relativeDatePeriodErs);
             ers.Sort((a, b) => a.Start - b.Start ?? 0);
         }
@@ -294,16 +263,12 @@ namespace Microsoft.Recognizers.Text.DateTime
                    orTermMatches[0].Length == middleStr.Length;
         }
 
-        private Dictionary<string, object> ExtractAlt(List<ExtractResult> extractResults)
+        private bool AddContextForAlts(List<ExtractResult> extractResults, string parentText)
         {
             var former = extractResults.First();
             var latter = extractResults.Last();
             var data = ExtractDateTime_Time(former, latter);
-
-            if (data.Count == 0)
-            {
-                data = ExtractDates(extractResults);
-            }
+            var isValidContext = false;
 
             if (data.Count == 0)
             {
@@ -335,7 +300,27 @@ namespace Microsoft.Recognizers.Text.DateTime
                 data = ExtractDate_DateRange(former, latter);
             }
 
-            return data;
+            if (data.Count == 0)
+            {
+                isValidContext = AddContextForDateAlts(extractResults, parentText);
+            }
+            else
+            {
+                extractResults[0].Data = GenerateAltData(extractResults[0].Type, parentText, contextEr: null);
+                extractResults[0].Type = ExtractorName;
+
+                data.Add(ExtendedModelResult.ParentTextKey, parentText);
+
+                for (var k = 1; k < extractResults.Count; k++)
+                {
+                    extractResults[k].Type = ExtractorName;
+                    extractResults[k].Data = data;
+                }
+
+                isValidContext = true;
+            }
+
+            return isValidContext;
         }
 
         private Dictionary<string, object> ExtractDateTime_Time(ExtractResult former, ExtractResult latter)
@@ -351,14 +336,14 @@ namespace Microsoft.Recognizers.Text.DateTime
                     data.Add(Constants.SubType, Constants.SYS_DATETIME_TIME);
                 }
             }
-            
+
             return data;
         }
 
-        private Dictionary<string, object> ExtractDates(List<ExtractResult> extractResults)
+        private bool AddContextForDateAlts(List<ExtractResult> extractResults, string parentText)
         {
-            var data = new Dictionary<string, object>();
             var allAreDates = true;
+            var isValidContext = false;
             foreach (var er in extractResults)
             {
                 if (!er.Type.Equals(Constants.SYS_DATETIME_DATE))
@@ -367,40 +352,116 @@ namespace Microsoft.Recognizers.Text.DateTime
                     break;
                 }
             }
-            
+
             // Modify time entity to an alternative Date expression, such as "Thursday" in "next week on Tuesday or Thursday"
             if (allAreDates)
             {
-                var ers = config.DatePeriodExtractor.Extract(extractResults[0].Text);
-                if (ers.Count == 1)
+                var datePeriodErs = config.DatePeriodExtractor.Extract(extractResults[0].Text);
+
+                // DatePeriod as Context: such as "next week on Tuesday or Thursday"
+                if (datePeriodErs.Count == 1)
                 {
-                    data.Add(Constants.Context, ers[0]);
-                    data.Add(Constants.SubType, Constants.SYS_DATETIME_DATE);
+                    extractResults[0].Data = GenerateAltData(extractResults[0].Type, parentText, contextEr: null);
+                    extractResults[0].Type = ExtractorName;
+
+                    for (int i = 1; i < extractResults.Count; i++)
+                    {
+                        extractResults[i].Data = GenerateAltData(extractResults[i].Type, parentText, datePeriodErs[0]);
+                        extractResults[i].Type = ExtractorName;
+                    }
+
+                    isValidContext = true;
                 }
                 else
                 {
-                    // "Thursday" in "next/last/this Tuesday or Thursday"
-                    foreach (var regex in config.RelativePrefixList)
-                    {
-                        var match = regex.Match(extractResults[0].Text);
-                        if (match.Success)
-                        {
-                            var contextErs = new ExtractResult
-                            {
-                                Text = match.Value,
-                                Start = match.Index,
-                                Length = match.Length,
-                                Type = Constants.ContextType_RelativePrefix
-                            };
+                    // RelativePrefix as Context: such as "next Tuesday or Wednesday", "next Monday or Tuesday or previous Wednesday"
+                    int i = 0;
+                    ExtractResult contextEr = ExtractRelativePrefixContext(extractResults[0].Text);
 
-                            data.Add(Constants.Context, contextErs);
-                            data.Add(Constants.SubType, Constants.SYS_DATETIME_DATE);
+                    while (i < extractResults.Count)
+                    {
+                        if (contextEr == null)
+                        {
+                            break;
                         }
+                        else
+                        {
+                            extractResults[i].Data = GenerateAltData(extractResults[i].Type, parentText, contextEr: null);
+                            extractResults[i].Type = ExtractorName;
+
+                            isValidContext = true;
+                        }
+
+                        int j = i + 1;
+
+                        while (j < extractResults.Count)
+                        {
+                            var relativePrefixContext = ExtractRelativePrefixContext(extractResults[j].Text);
+
+                            // No relativePrefix extracted, the context would follow the previous relativePrefix
+                            // Such as "Wednesday" in "next Tuesday or Wednesday"
+                            if (relativePrefixContext == null)
+                            {
+                                extractResults[j].Data = GenerateAltData(extractResults[j].Type, parentText, contextEr);
+                                extractResults[j].Type = ExtractorName;
+                                j++;
+                            }
+                            else
+                            {
+                                // Current extraction has relativePrefix, the context would not follow the previous relativePrefix
+                                // Such as "Wednesday" in "next Monday or Tuesday or previous Wednesday"
+                                contextEr = relativePrefixContext;
+                                break;
+                            }
+                        }
+
+                        i = j;
                     }
                 }
             }
-            
+
+            return isValidContext;
+        }
+
+        private Dictionary<string, object> GenerateAltData(string subType, string parentText, ExtractResult contextEr = null)
+        {
+            var data = new Dictionary<string, object>();
+
+            data.Add(Constants.SubType, subType);
+            data.Add(ExtendedModelResult.ParentTextKey, parentText);
+
+            if (contextEr != null)
+            {
+                data.Add(Constants.Context, contextEr);
+            }
+
             return data;
+        }
+
+
+        private ExtractResult ExtractRelativePrefixContext(string text)
+        {
+            ExtractResult contextEr = null;
+
+            foreach (var regex in config.RelativePrefixList)
+            {
+                var match = regex.Match(text);
+
+                if (match.Success)
+                {
+                    contextEr = new ExtractResult
+                    {
+                        Text = match.Value,
+                        Start = match.Index,
+                        Length = match.Length,
+                        Type = Constants.ContextType_RelativePrefix
+                    };
+
+                    break;
+                }
+            }
+
+            return contextEr;
         }
 
         private Dictionary<string, object> ExtractTime_Time(ExtractResult former, ExtractResult latter)
@@ -427,14 +488,14 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
                 }
             }
-            
+
             return data;
         }
 
         private Dictionary<string, object> ExtractDateTimeRange_TimeRange(ExtractResult former, ExtractResult latter)
         {
             var data = new Dictionary<string, object>();
-            
+
             // Modify time entity to an alternative DateTimeRange expression, such as "9-10 am" in "Monday 7-8 am or 9-10 am"
             if (former.Type == Constants.SYS_DATETIME_DATETIMEPERIOD && latter.Type == Constants.SYS_DATETIME_TIMEPERIOD)
             {
@@ -445,26 +506,26 @@ namespace Microsoft.Recognizers.Text.DateTime
                     data.Add(Constants.SubType, Constants.SYS_DATETIME_TIMEPERIOD);
                 }
             }
-            
+
             return data;
         }
 
         private Dictionary<string, object> ExtractDateRange_DateRange(ExtractResult former, ExtractResult latter)
         {
             var data = new Dictionary<string, object>();
-            
+
             if (former.Type == Constants.SYS_DATETIME_DATEPERIOD && latter.Type == Constants.SYS_DATETIME_DATEPERIOD)
             {
                 data.Add(Constants.SubType, Constants.SYS_DATETIME_DATEPERIOD);
             }
-            
+
             return data;
         }
 
         private Dictionary<string, object> ExtractDateTime_DateTime(ExtractResult former, ExtractResult latter)
         {
             var data = new Dictionary<string, object>();
-            
+
             // Modify time entity to an alternative DateTime expression, such as "Tue 1 pm" in "next week Mon 9 am or Tue 1 pm"
             if (former.Type == Constants.SYS_DATETIME_DATETIME && latter.Type == Constants.SYS_DATETIME_DATETIME)
             {
@@ -475,7 +536,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     data.Add(Constants.SubType, Constants.SYS_DATETIME_DATETIME);
                 }
             }
-            
+
             return data;
         }
 
