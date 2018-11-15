@@ -54,7 +54,13 @@ public class ChoiceExtractor implements IExtractor {
                     int start = match.index;
                     int length = match.length;
                     partialResults.add(
-                        new ExtractResult(start, length, text.substring(start, length).trim(), constantValue, new ChoiceExtractDataResult(text, topScore, new ArrayList<>()))
+                        new ExtractResult(
+                            start,
+                            length,
+                            text.substring(start, length+start),
+                            constantValue,
+                            new ChoiceExtractDataResult(text, topScore, new ArrayList<>())
+                        )
                     );
                 }
 
