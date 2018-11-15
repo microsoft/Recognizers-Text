@@ -261,7 +261,7 @@ IshRegex: !nestedRegex
   def: '\b({BaseDateTime.HourRegex}(-|——)?ish|noonish|noon)\b'
   references: [ BaseDateTime.HourRegex ]
 TimeUnitRegex: !simpleRegex
-  def: (?<unit>stunden|stunde|std|st|h|minuten|minute|min|sekunden|sekunde|sek|s)
+  def: (?<unit>stunden|stunde|std|st|h\s|minuten|minute|min|sekunden|sekunde|sek|s)
 RestrictedTimeUnitRegex: !simpleRegex
   def: (?<unit>stunde|minute)\b
 FivesRegex: !simpleRegex
@@ -369,7 +369,7 @@ MoreThanRegex: !simpleRegex
   # TODO: Check and test new regex
   def: \b(mehr\s+als)\b
 DurationUnitRegex: !simpleRegex
-  def: (?<unit>jahr(en|es|e)?|monat(en|e|s)?|woche(n)?|tag(en|es|e)?|stund(en|e)?|std|st|h|minute(n)?|min|sekunde(n)?|sek)\b
+  def: (?<unit>jahr(en|es|e)?|monat(en|e|s)?|woche(n)?|tag(en|es|e)?|stund(en|e)?|std|st|h\s|minute(n)?|min|sekunde(n)?|sek)\b
 SuffixAndRegex: !simpleRegex
   def: (?<suffix>\s*(und)\s+((eine)\s+)?(?<suffix_num>halbe|viertel))
 PeriodicRegex: !simpleRegex
