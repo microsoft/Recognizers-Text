@@ -50,20 +50,12 @@ namespace Microsoft.Recognizers.Text.Matcher
                 {                   
                     if (inToken && i > 0)
                     {
-                        // Split tokens like '200ml' to two separate tokens, i.e., '200' and 'ml'
-                        char prevChar = chars[i - 1];
-                        if (char.IsLetter(c) && char.IsDigit(prevChar))
+                        char preChar = chars[i - 1];
+                        if (CaseByContext(c, preChar))
                         {
                             tokens.Add(new Token(tokenStart, i - tokenStart, input.Substring(tokenStart, i - tokenStart)));
                             tokenStart = i;
-                        }
-                        
-                        // For cases like '$100' or '$100' shouldn't be a token
-                        if ((char.IsDigit(c) && prevChar == '$') || (c == '$' && char.IsDigit(prevChar)))
-                        {
-                            tokens.Add(new Token(tokenStart, i - tokenStart, input.Substring(tokenStart, i - tokenStart)));
-                            tokenStart = i;
-                        }
+                        }                      
                     }
 
                     if (!inToken)
@@ -80,6 +72,23 @@ namespace Microsoft.Recognizers.Text.Matcher
             }
 
             return tokens;
+        }
+
+        private bool CaseByContext(char curChar, char preChar)
+        {
+            // Split tokens like '200ml' to two separate tokens, i.e., '200' and 'ml'
+            if ((char.IsLetter(curChar) && char.IsDigit(preChar)) || (char.IsDigit(curChar) && char.IsLetter(preChar)))
+            {
+                return true;
+            }
+
+            // For cases like '$100' or '$100' shouldn't be a token
+            if ((char.IsDigit(curChar) && preChar == '$') || (curChar == '$' && char.IsDigit(preChar)))
+            {
+                return true;
+            }
+
+            return false;
         }
     }
 }
