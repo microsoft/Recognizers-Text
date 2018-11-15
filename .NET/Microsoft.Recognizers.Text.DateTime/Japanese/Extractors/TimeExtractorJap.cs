@@ -20,15 +20,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             var regexes = new Dictionary<Regex, TimeType>
             {
                 {
-                    new Regex(DateTimeDefinitions.TimeRegexes1, RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                    new Regex(DateTimeDefinitions.TimeRegexes1, RegexOptions.Singleline),
                     TimeType.JapaneseTime
                 },
                 {
-                    new Regex(DateTimeDefinitions.TimeRegexes2, RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                    new Regex(DateTimeDefinitions.TimeRegexes2, RegexOptions.Singleline),
                     TimeType.DigitTime
                 },
                 {
-                    new Regex(DateTimeDefinitions.TimeRegexes3, RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                    new Regex(DateTimeDefinitions.TimeRegexes3, RegexOptions.Singleline),
                     TimeType.LessTime
                 }
             };

@@ -8,12 +8,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 {
     public class MergedDateTimeParserJap : BaseMergedDateTimeParser
     {
-        private static readonly Regex BeforeRegex = new Regex(DateTimeDefinitions.MergedBeforeRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        private static readonly Regex BeforeRegex = new Regex(DateTimeDefinitions.MergedBeforeRegex,  RegexOptions.Singleline);
 
-        private static readonly Regex AfterRegex = new Regex(DateTimeDefinitions.MergedAfterRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        private static readonly Regex AfterRegex = new Regex(DateTimeDefinitions.MergedAfterRegex, RegexOptions.Singleline);
 
         //TODO implement SinceRegex
-        private static readonly Regex SinceRegex = new Regex(DateTimeDefinitions.MergedAfterRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        private static readonly Regex SinceRegex = new Regex(DateTimeDefinitions.MergedAfterRegex, RegexOptions.Singleline);
 
         public MergedDateTimeParserJap(IMergedParserConfiguration configuration) : base(configuration) { }
 

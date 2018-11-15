@@ -20,9 +20,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
         private static readonly IExtractor InternalExtractor = new NumberWithUnitExtractor(new DurationExtractorConfiguration());
 
-        private static readonly Regex YearRegex = new Regex(DateTimeDefinitions.DurationYearRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        private static readonly Regex YearRegex = new Regex(DateTimeDefinitions.DurationYearRegex, RegexOptions.Singleline);
 
-        private static readonly Regex HalfSuffixRegex = new Regex(DateTimeDefinitions.DurationHalfSuffixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        private static readonly Regex HalfSuffixRegex = new Regex(DateTimeDefinitions.DurationHalfSuffixRegex, RegexOptions.Singleline);
 
         // extract by number with unit
         public override List<ExtractResult> Extract(string source, DateObject referenceTime)

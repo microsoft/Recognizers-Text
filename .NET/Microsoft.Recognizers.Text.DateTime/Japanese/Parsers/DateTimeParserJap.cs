@@ -14,9 +14,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
     {
         public static readonly string ParserName = Constants.SYS_DATETIME_DATETIME;
 
-        public static readonly Regex SimpleAmRegex = new Regex(DateTimeDefinitions.DateTimeSimpleAmRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex SimpleAmRegex = new Regex(DateTimeDefinitions.DateTimeSimpleAmRegex, RegexOptions.Singleline);
 
-        public static readonly Regex SimplePmRegex = new Regex(DateTimeDefinitions.DateTimeSimplePmRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex SimplePmRegex = new Regex(DateTimeDefinitions.DateTimeSimplePmRegex, RegexOptions.Singleline);
 
         private static readonly IDateTimeExtractor SingleDateExtractor = new DateExtractorJap();
         private static readonly IDateTimeExtractor SingleTimeExtractor = new TimeExtractorJap();
