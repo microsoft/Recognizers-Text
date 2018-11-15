@@ -10,7 +10,7 @@ using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.Japanese
 {
-    public class DateTimeParserJap : IDateTimeParser
+    public class DateTimeParser : IDateTimeParser
     {
         public static readonly string ParserName = Constants.SYS_DATETIME_DATETIME;
 
@@ -18,15 +18,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
         public static readonly Regex SimplePmRegex = new Regex(DateTimeDefinitions.DateTimeSimplePmRegex, RegexOptions.Singleline);
 
-        private static readonly IDateTimeExtractor SingleDateExtractor = new DateExtractorJap();
-        private static readonly IDateTimeExtractor SingleTimeExtractor = new TimeExtractorJap();
-        private readonly IDateTimeExtractor DurationExtractor = new DurationExtractorJap();
+        private static readonly IDateTimeExtractor SingleDateExtractor = new DateExtractor();
+        private static readonly IDateTimeExtractor SingleTimeExtractor = new TimeExtractor();
+        private readonly IDateTimeExtractor DurationExtractor = new DurationExtractor();
         private readonly IExtractor IntegerExtractor = new IntegerExtractor();
         private readonly IParser NumberParser = new BaseCJKNumberParser(new JapaneseNumberParserConfiguration());
 
         private readonly IFullDateTimeParserConfiguration config;
 
-        public DateTimeParserJap(IFullDateTimeParserConfiguration configuration)
+        public DateTimeParser(IFullDateTimeParserConfiguration configuration)
         {
             config = configuration;
         }
@@ -99,7 +99,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         private bool IsLunarCalendar(string text)
         {
             var trimmedText = text.Trim();
-            var match = DateExtractorJap.LunarRegex.Match(trimmedText);
+            var match = DateExtractor.LunarRegex.Match(trimmedText);
             if (match.Success)
             {
                 return true;
@@ -114,7 +114,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             var trimmedText = text.Trim().ToLower();
 
             // handle "现在"
-            var match = DateTimeExtractorJap.NowRegex.Match(trimmedText);
+            var match = DateTimeExtractor.NowRegex.Match(trimmedText);
             if (match.Success && match.Index == 0 && match.Length == trimmedText.Length)
             {
                 if (trimmedText.EndsWith("现在"))
@@ -228,7 +228,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             var min = time.Minute;
             var sec = time.Second;
 
-            var match = DateTimeExtractorJap.TimeOfTodayRegex.Match(text);
+            var match = DateTimeExtractor.TimeOfTodayRegex.Match(text);
 
             if (match.Success)
             {
@@ -305,7 +305,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             var unitStr = string.Empty;
             if (durationRes.Count > 0)
             {
-                var match = DateTimeExtractorJap.DateTimePeriodUnitRegex.Match(text);
+                var match = DateTimeExtractor.DateTimePeriodUnitRegex.Match(text);
                 if (match.Success)
                 {
                     var suffix =
@@ -323,7 +323,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                         unitStr = this.config.UnitMap[srcUnit];
                         numStr = number.ToString();
 
-                        var beforeMatch = DateTimeExtractorJap.BeforeRegex.Match(suffix);
+                        var beforeMatch = DateTimeExtractor.BeforeRegex.Match(suffix);
                         if (beforeMatch.Success && suffix.StartsWith(beforeMatch.Value))
                         {
                             DateObject date;
@@ -347,7 +347,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                             return ret;
                         }
 
-                        var afterMatch = DateTimeExtractorJap.AfterRegex.Match(suffix);
+                        var afterMatch = DateTimeExtractor.AfterRegex.Match(suffix);
                         if (afterMatch.Success && suffix.StartsWith(afterMatch.Value))
                         {
                             DateObject date;

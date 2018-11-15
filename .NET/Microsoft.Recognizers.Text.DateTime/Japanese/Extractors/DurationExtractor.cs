@@ -4,7 +4,6 @@ using System.Globalization;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.Japanese;
-using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.NumberWithUnit.Japanese;
 using Microsoft.Recognizers.Text.NumberWithUnit;
 
@@ -12,7 +11,7 @@ using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Japanese
 {
-    public class DurationExtractorJap : BaseDateTimeExtractor<DurationType>
+    public class DurationExtractor : BaseDateTimeExtractor<DurationType>
     {
         internal override ImmutableDictionary<Regex, DurationType> Regexes { get; }
 

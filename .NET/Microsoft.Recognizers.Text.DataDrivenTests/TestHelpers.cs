@@ -414,27 +414,27 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
           switch (extractorName)
           {
             case DateTimeExtractors.Date:
-              return new DateTime.Japanese.DateExtractorJap();
+              return new DateTime.Japanese.DateExtractor();
             case DateTimeExtractors.Time:
-              return new DateTime.Japanese.TimeExtractorJap();
+              return new DateTime.Japanese.TimeExtractor();
             case DateTimeExtractors.DatePeriod:
-              return new DateTime.Japanese.DatePeriodExtractorJap();
+              return new DateTime.Japanese.DatePeriodExtractor();
             case DateTimeExtractors.TimePeriod:
-              return new DateTime.Japanese.TimePeriodExtractorJap();
+              return new DateTime.Japanese.TimePeriodExtractor();
             case DateTimeExtractors.DateTime:
-              return new DateTime.Japanese.DateTimeExtractorJap();
+              return new DateTime.Japanese.DateTimeExtractor();
             case DateTimeExtractors.DateTimePeriod:
-              return new DateTime.Japanese.DateTimePeriodExtractorJap();
+              return new DateTime.Japanese.DateTimePeriodExtractor();
             case DateTimeExtractors.Duration:
-              return new DateTime.Japanese.DurationExtractorJap();
+              return new DateTime.Japanese.DurationExtractor();
             case DateTimeExtractors.Holiday:
               return new BaseHolidayExtractor(new DateTime.Japanese.JapaneseHolidayExtractorConfiguration());
             case DateTimeExtractors.Set:
-              return new DateTime.Japanese.SetExtractorJap();
+              return new DateTime.Japanese.SetExtractor();
             case DateTimeExtractors.Merged:
-              return new DateTime.Japanese.MergedExtractorJap(DateTimeOptions.None);
+              return new DateTime.Japanese.JapaneseMergedExtractor(DateTimeOptions.None);
             case DateTimeExtractors.MergedSkipFromTo:
-              return new DateTime.Japanese.MergedExtractorJap(DateTimeOptions.SkipFromToMerge);
+              return new DateTime.Japanese.JapaneseMergedExtractor(DateTimeOptions.SkipFromToMerge);
           }
 
           throw new Exception($"Extractor '{extractorName}' for Japanese not supported");
@@ -447,21 +447,21 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             case DateTimeParsers.Date:
               return new DateTime.Japanese.DateParser(new DateTime.Japanese.JapaneseDateTimeParserConfiguration());
             case DateTimeParsers.Time:
-              return new DateTime.Japanese.TimeParserJap(new DateTime.Japanese.JapaneseDateTimeParserConfiguration());
+              return new DateTime.Japanese.TimeParser(new DateTime.Japanese.JapaneseDateTimeParserConfiguration());
             case DateTimeParsers.DatePeriod:
-              return new DateTime.Japanese.DatePeriodParserJap(new DateTime.Japanese.JapaneseDateTimeParserConfiguration());
+              return new DateTime.Japanese.DatePeriodParser(new DateTime.Japanese.JapaneseDateTimeParserConfiguration());
             case DateTimeParsers.TimePeriod:
-              return new DateTime.Japanese.TimePeriodParserJap(new DateTime.Japanese.JapaneseDateTimeParserConfiguration());
+              return new DateTime.Japanese.TimePeriodParser(new DateTime.Japanese.JapaneseDateTimeParserConfiguration());
             case DateTimeParsers.DateTime:
-              return new DateTime.Japanese.DateTimeParserJap(new DateTime.Japanese.JapaneseDateTimeParserConfiguration());
+              return new DateTime.Japanese.DateTimeParser(new DateTime.Japanese.JapaneseDateTimeParserConfiguration());
             case DateTimeParsers.DateTimePeriod:
-              return new DateTime.Japanese.DateTimePeriodParserJap(new DateTime.Japanese.JapaneseDateTimeParserConfiguration());
+              return new DateTime.Japanese.DateTimePeriodParser(new DateTime.Japanese.JapaneseDateTimeParserConfiguration());
             case DateTimeParsers.Duration:
-              return new DateTime.Japanese.DurationParserJap(new DateTime.Japanese.JapaneseDateTimeParserConfiguration());
+              return new DateTime.Japanese.DurationParser(new DateTime.Japanese.JapaneseDateTimeParserConfiguration());
             case DateTimeParsers.Holiday:
-              return new DateTime.Japanese.HolidayParserJap(new DateTime.Japanese.JapaneseDateTimeParserConfiguration());
+              return new DateTime.Japanese.HolidayParser(new DateTime.Japanese.JapaneseDateTimeParserConfiguration());
             case DateTimeParsers.Set:
-              return new DateTime.Japanese.SetParserJap(new DateTime.Japanese.JapaneseDateTimeParserConfiguration());
+              return new DateTime.Japanese.SetParser(new DateTime.Japanese.JapaneseDateTimeParserConfiguration());
             case DateTimeParsers.Merged:
               return new FullDateTimeParser(new DateTime.Japanese.JapaneseDateTimeParserConfiguration());
           }

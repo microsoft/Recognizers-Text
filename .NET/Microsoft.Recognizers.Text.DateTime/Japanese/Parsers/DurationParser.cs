@@ -6,11 +6,11 @@ using Microsoft.Recognizers.Definitions.Japanese;
 using Microsoft.Recognizers.Text.NumberWithUnit.Japanese;
 using Microsoft.Recognizers.Text.NumberWithUnit;
 
-using static Microsoft.Recognizers.Text.DateTime.Japanese.DurationExtractorJap;
+using static Microsoft.Recognizers.Text.DateTime.Japanese.DurationExtractor;
 
 namespace Microsoft.Recognizers.Text.DateTime.Japanese
 {
-    public class DurationParserJap : IDateTimeParser
+    public class DurationParser : IDateTimeParser
     {
         public static readonly string ParserName = Constants.SYS_DATETIME_DURATION; //"Duration";
 
@@ -28,7 +28,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
         private readonly IFullDateTimeParserConfiguration config;
 
-        public DurationParserJap(IFullDateTimeParserConfiguration configuration)
+        public DurationParser(IFullDateTimeParserConfiguration configuration)
         {
             config = configuration;
         }

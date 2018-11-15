@@ -2,11 +2,10 @@
 using DateObject = System.DateTime;
 
 using Microsoft.Recognizers.Definitions.Japanese;
-using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.Japanese
 {
-    public class MergedDateTimeParserJap : BaseMergedDateTimeParser
+    public class MergedDateTimeParser : BaseMergedDateTimeParser
     {
         private static readonly Regex BeforeRegex = new Regex(DateTimeDefinitions.MergedBeforeRegex,  RegexOptions.Singleline);
 
@@ -15,7 +14,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         //TODO implement SinceRegex
         private static readonly Regex SinceRegex = new Regex(DateTimeDefinitions.MergedAfterRegex, RegexOptions.Singleline);
 
-        public MergedDateTimeParserJap(IMergedParserConfiguration configuration) : base(configuration) { }
+        public MergedDateTimeParser(IMergedParserConfiguration configuration) : base(configuration) { }
 
         public new ParseResult Parse(ExtractResult er)
         {

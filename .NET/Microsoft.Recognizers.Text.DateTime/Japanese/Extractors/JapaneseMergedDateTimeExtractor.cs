@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace Microsoft.Recognizers.Text.DateTime.Japanese
 {
-    public class MergedExtractorJap : IDateTimeExtractor
+    public class JapaneseMergedExtractor : IDateTimeExtractor
     {
         public static readonly Regex BeforeRegex = new Regex(DateTimeDefinitions.ParserConfigurationBefore, RegexOptions.Singleline);
         public static readonly Regex AfterRegex = new Regex(DateTimeDefinitions.ParserConfigurationAfter, RegexOptions.Singleline);
@@ -15,19 +15,19 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         public static readonly Regex SincePrefixRegex = new Regex(DateTimeDefinitions.ParserConfigurationSincePrefix, RegexOptions.Singleline);
         public static readonly Regex SinceSuffixRegex = new Regex(DateTimeDefinitions.ParserConfigurationSinceSuffix, RegexOptions.Singleline);
 
-        private static readonly DateExtractorJap DateExtractor = new DateExtractorJap();
-        private static readonly TimeExtractorJap TimeExtractor = new TimeExtractorJap();
-        private static readonly DateTimeExtractorJap DateTimeExtractor = new DateTimeExtractorJap();
-        private static readonly DatePeriodExtractorJap DatePeriodExtractor = new DatePeriodExtractorJap();
-        private static readonly TimePeriodExtractorJap TimePeriodExtractor = new TimePeriodExtractorJap();
-        private static readonly DateTimePeriodExtractorJap DateTimePeriodExtractor = new DateTimePeriodExtractorJap();
-        private static readonly DurationExtractorJap DurationExtractor = new DurationExtractorJap();
-        private static readonly SetExtractorJap SetExtractor = new SetExtractorJap();
+        private static readonly DateExtractor DateExtractor = new DateExtractor();
+        private static readonly TimeExtractor TimeExtractor = new TimeExtractor();
+        private static readonly DateTimeExtractor DateTimeExtractor = new DateTimeExtractor();
+        private static readonly DatePeriodExtractor DatePeriodExtractor = new DatePeriodExtractor();
+        private static readonly TimePeriodExtractor TimePeriodExtractor = new TimePeriodExtractor();
+        private static readonly DateTimePeriodExtractor DateTimePeriodExtractor = new DateTimePeriodExtractor();
+        private static readonly DurationExtractor DurationExtractor = new DurationExtractor();
+        private static readonly SetExtractor SetExtractor = new SetExtractor();
         private static readonly BaseHolidayExtractor HolidayExtractor = new BaseHolidayExtractor(new JapaneseHolidayExtractorConfiguration());
 
         private readonly DateTimeOptions options;
 
-        public MergedExtractorJap(DateTimeOptions options)
+        public JapaneseMergedExtractor(DateTimeOptions options)
         {
             this.options = options;
         }

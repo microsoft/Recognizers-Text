@@ -5,7 +5,7 @@ using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Japanese
 {
-    public class SetExtractorJap : IDateTimeExtractor
+    public class SetExtractor : IDateTimeExtractor
     {
         public static readonly string ExtractorName = Constants.SYS_DATETIME_SET;
 
@@ -17,10 +17,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
         public static readonly Regex EachDayRegex = new Regex(DateTimeDefinitions.SetEachDayRegex, RegexOptions.Singleline);
 
-        private static readonly DurationExtractorJap DurationExtractor = new DurationExtractorJap();
-        private static readonly TimeExtractorJap TimeExtractor = new TimeExtractorJap();
-        private static readonly DateExtractorJap DateExtractor = new DateExtractorJap();
-        private static readonly DateTimeExtractorJap DateTimeExtractor = new DateTimeExtractorJap();
+        private static readonly DurationExtractor DurationExtractor = new DurationExtractor();
+        private static readonly TimeExtractor TimeExtractor = new TimeExtractor();
+        private static readonly DateExtractor DateExtractor = new DateExtractor();
+        private static readonly DateTimeExtractor DateTimeExtractor = new DateTimeExtractor();
 
         public List<ExtractResult> Extract(string text)
         {

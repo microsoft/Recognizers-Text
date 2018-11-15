@@ -5,11 +5,11 @@ using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Japanese
 {
-    public class TimePeriodParserJap : IDateTimeParser
+    public class TimePeriodParser : IDateTimeParser
     {
         private readonly IFullDateTimeParserConfiguration config;
 
-        public TimePeriodParserJap(IFullDateTimeParserConfiguration configuration)
+        public TimePeriodParser(IFullDateTimeParserConfiguration configuration)
         {
             config = configuration;
         }
@@ -25,7 +25,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             var extra = er.Data as DateTimeExtra<PeriodType>;
             if (extra == null)
             {
-                var result = new TimeExtractorJap().Extract(er.Text, refDate);
+                var result = new TimeExtractor().Extract(er.Text, refDate);
                 extra = result[0]?.Data as DateTimeExtra<PeriodType>;
             }
 

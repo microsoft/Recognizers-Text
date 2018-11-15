@@ -11,7 +11,7 @@ using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Japanese
 {
-    public class HolidayParserJap : IDateTimeParser
+    public class HolidayParser : IDateTimeParser
     {
         public static readonly string ParserName = Constants.SYS_DATETIME_DATE; //"Date";
 
@@ -76,7 +76,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
         private readonly IFullDateTimeParserConfiguration config;
 
-        public HolidayParserJap(IFullDateTimeParserConfiguration configuration)
+        public HolidayParser(IFullDateTimeParserConfiguration configuration)
         {
             config = configuration;
         }

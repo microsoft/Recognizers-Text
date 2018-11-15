@@ -11,14 +11,14 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
     public JapaneseDateTimeParserConfiguration(DateTimeOptions options = DateTimeOptions.None) : base(options)
     {
       DateParser = new DateParser(this);
-      TimeParser = new TimeParserJap(this);
-      DateTimeParser = new DateTimeParserJap(this);
-      DatePeriodParser = new DatePeriodParserJap(this);
-      TimePeriodParser = new TimePeriodParserJap(this);
-      DateTimePeriodParser = new DateTimePeriodParserJap(this);
-      DurationParser = new DurationParserJap(this);
-      GetParser = new SetParserJap(this);
-      HolidayParser = new HolidayParserJap(this);
+      TimeParser = new TimeParser(this);
+      DateTimeParser = new DateTimeParser(this);
+      DatePeriodParser = new DatePeriodParser(this);
+      TimePeriodParser = new TimePeriodParser(this);
+      DateTimePeriodParser = new DateTimePeriodParser(this);
+      DurationParser = new DurationParser(this);
+      GetParser = new SetParser(this);
+      HolidayParser = new HolidayParser(this);
       UnitMap = DateTimeDefinitions.ParserConfigurationUnitMap.ToImmutableDictionary();
       UnitValueMap = DateTimeDefinitions.ParserConfigurationUnitValueMap.ToImmutableDictionary();
       SeasonMap = DateTimeDefinitions.ParserConfigurationSeasonMap.ToImmutableDictionary();
@@ -28,17 +28,17 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
       DayOfWeek = DateTimeDefinitions.ParserConfigurationDayOfWeek.ToImmutableDictionary();
       MonthOfYear = DateTimeDefinitions.ParserConfigurationMonthOfYear.ToImmutableDictionary();
       Numbers = InitNumbers();
-      DateRegexList = DateExtractorJap.DateRegexList;
-      NextRegex = DateExtractorJap.NextRegex;
-      ThisRegex = DateExtractorJap.ThisRegex;
-      LastRegex = DateExtractorJap.LastRegex;
-      StrictWeekDayRegex = DateExtractorJap.WeekDayRegex;
-      WeekDayOfMonthRegex = DateExtractorJap.WeekDayOfMonthRegex;
-      BeforeRegex = MergedExtractorJap.BeforeRegex;
-      AfterRegex = MergedExtractorJap.AfterRegex;
-      UntilRegex = MergedExtractorJap.UntilRegex;
-      SincePrefixRegex = MergedExtractorJap.SincePrefixRegex;
-      SinceSuffixRegex = MergedExtractorJap.SinceSuffixRegex;
+      DateRegexList = DateExtractor.DateRegexList;
+      NextRegex = DateExtractor.NextRegex;
+      ThisRegex = DateExtractor.ThisRegex;
+      LastRegex = DateExtractor.LastRegex;
+      StrictWeekDayRegex = DateExtractor.WeekDayRegex;
+      WeekDayOfMonthRegex = DateExtractor.WeekDayOfMonthRegex;
+      BeforeRegex = JapaneseMergedExtractor.BeforeRegex;
+      AfterRegex = JapaneseMergedExtractor.AfterRegex;
+      UntilRegex = JapaneseMergedExtractor.UntilRegex;
+      SincePrefixRegex = JapaneseMergedExtractor.SincePrefixRegex;
+      SinceSuffixRegex = JapaneseMergedExtractor.SinceSuffixRegex;
     }
 
     public int TwoNumYear => int.Parse(DateTimeDefinitions.TwoNumYear);

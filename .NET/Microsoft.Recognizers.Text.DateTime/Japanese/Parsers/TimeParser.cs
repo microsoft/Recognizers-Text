@@ -9,9 +9,9 @@ using Microsoft.Recognizers.Definitions.Japanese;
 
 namespace Microsoft.Recognizers.Text.DateTime.Japanese
 {
-    public class TimeParserJap : IDateTimeParser
+    public class TimeParser : IDateTimeParser
     {
-        public static readonly IDateTimeExtractor TimeExtractor = new TimeExtractorJap();
+        public static readonly IDateTimeExtractor TimeExtractor = new TimeExtractor();
 
         private delegate TimeResult TimeFunction(DateTimeExtra<TimeType> extra);
 
@@ -25,7 +25,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
         private readonly IFullDateTimeParserConfiguration config;
 
-        public TimeParserJap(IFullDateTimeParserConfiguration configuration)
+        public TimeParser(IFullDateTimeParserConfiguration configuration)
         {
             config = configuration;
         }
@@ -261,7 +261,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         public static TimeResult GetShortLeft(string text)
         {
             string des = null;
-            if (Regex.IsMatch(text, TimeExtractorJap.DayDescRegex))
+            if (Regex.IsMatch(text, TimeExtractor.DayDescRegex))
             {
                 des = text.Substring(0, text.Length - 1);
             }

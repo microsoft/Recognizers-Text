@@ -1,13 +1,12 @@
-﻿using System.Linq;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Linq;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Japanese;
 using DateObject = System.DateTime;
-using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.Japanese
 {
-    public class DateTimeExtractorJap : IDateTimeExtractor
+    public class DateTimeExtractor : IDateTimeExtractor
     {
         public static readonly string ExtractorName = Constants.SYS_DATETIME_DATETIME; // "DateTime";
 
@@ -25,9 +24,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
         public static readonly Regex DateTimePeriodUnitRegex = new Regex(DateTimeDefinitions.DateTimePeriodUnitRegex, RegexOptions.Singleline);
 
-        private static readonly DateExtractorJap DatePointExtractor = new DateExtractorJap();
-        private static readonly TimeExtractorJap TimePointExtractor = new TimeExtractorJap();
-        private static readonly DurationExtractorJap DurationExtractor = new DurationExtractorJap();
+        private static readonly DateExtractor DatePointExtractor = new DateExtractor();
+        private static readonly TimeExtractor TimePointExtractor = new TimeExtractor();
+        private static readonly DurationExtractor DurationExtractor = new DurationExtractor();
 
         public List<ExtractResult> Extract(string text)
         {

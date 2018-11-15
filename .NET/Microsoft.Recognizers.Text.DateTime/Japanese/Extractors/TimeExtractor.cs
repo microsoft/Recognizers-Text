@@ -6,7 +6,7 @@ using Microsoft.Recognizers.Definitions.Japanese;
 
 namespace Microsoft.Recognizers.Text.DateTime.Japanese
 {
-    public class TimeExtractorJap : BaseDateTimeExtractor<TimeType>
+    public class TimeExtractor : BaseDateTimeExtractor<TimeType>
     {
         internal sealed override ImmutableDictionary<Regex, TimeType> Regexes { get; }
 
@@ -15,7 +15,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         //e.g: 早上九点
         public static readonly string DayDescRegex = DateTimeDefinitions.TimeDayDescRegex;
 
-        public TimeExtractorJap()
+        public TimeExtractor()
         {
             var regexes = new Dictionary<Regex, TimeType>
             {

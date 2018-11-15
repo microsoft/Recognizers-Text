@@ -101,7 +101,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 Culture.Japanese,
                 options => new DateTimeModel(
                   new FullDateTimeParser(new JapaneseDateTimeParserConfiguration(options)),
-                  new MergedExtractorJap(options)));
+                  new JapaneseMergedExtractor(options)));
     }
     }
 }

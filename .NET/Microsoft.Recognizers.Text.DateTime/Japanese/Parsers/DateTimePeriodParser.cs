@@ -10,14 +10,14 @@ using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.Japanese
 {
-    public class DateTimePeriodParserJap : IDateTimeParser
+    public class DateTimePeriodParser : IDateTimeParser
     {
         public static readonly string ParserName = Constants.SYS_DATETIME_DATETIMEPERIOD;
 
-        private static readonly IDateTimeExtractor SingleDateExtractor = new DateExtractorJap();
-        private static readonly IDateTimeExtractor SingleTimeExtractor = new TimeExtractorJap();
-        private static readonly IDateTimeExtractor TimeWithDateExtractor = new DateTimeExtractorJap();
-        private static readonly IDateTimeExtractor TimePeriodExtractor = new TimePeriodExtractorJap();
+        private static readonly IDateTimeExtractor SingleDateExtractor = new DateExtractor();
+        private static readonly IDateTimeExtractor SingleTimeExtractor = new TimeExtractor();
+        private static readonly IDateTimeExtractor TimeWithDateExtractor = new DateTimeExtractor();
+        private static readonly IDateTimeExtractor TimePeriodExtractor = new TimePeriodExtractor();
         private static readonly IExtractor CardinalExtractor = new CardinalExtractor();
 
         private static readonly IParser CardinalParser = AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Cardinal,
@@ -33,7 +33,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
         private readonly IFullDateTimeParserConfiguration config;
 
-        public DateTimePeriodParserJap(IFullDateTimeParserConfiguration configuration)
+        public DateTimePeriodParser(IFullDateTimeParserConfiguration configuration)
         {
             config = configuration;
         }
@@ -339,7 +339,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             string timeStr;
 
             // handle 昨晚，今晨
-            var match = DateTimePeriodExtractorJap.SpecificTimeOfDayRegex.Match(trimmedText);
+            var match = DateTimePeriodExtractor.SpecificTimeOfDayRegex.Match(trimmedText);
             if (match.Success && match.Index == 0 && match.Length == trimmedText.Length)
             {
                 var swift = 0;
@@ -424,15 +424,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 return ret;
             }
 
-            match = DateTimePeriodExtractorJap.SpecificTimeOfDayRegex.Match(trimmedText);
+            match = DateTimePeriodExtractor.SpecificTimeOfDayRegex.Match(trimmedText);
             if (match.Success && match.Index == 0 && match.Length == trimmedText.Length)
             {
                 var swift = 0;
-                if (DateTimePeriodExtractorJap.NextRegex.IsMatch(trimmedText))
+                if (DateTimePeriodExtractor.NextRegex.IsMatch(trimmedText))
                 {
                     swift = 1;
                 }
-                else if (DateTimePeriodExtractorJap.LastRegex.IsMatch(trimmedText))
+                else if (DateTimePeriodExtractor.LastRegex.IsMatch(trimmedText))
                 {
                     swift = -1;
                 }
@@ -451,7 +451,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
 
             // handle Date followed by morning, afternoon
-            match = DateTimePeriodExtractorJap.TimeOfDayRegex.Match(trimmedText);
+            match = DateTimePeriodExtractor.TimeOfDayRegex.Match(trimmedText);
             if (match.Success)
             {
                 var beforeStr = trimmedText.Substring(0, match.Index).Trim();
@@ -507,7 +507,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 {
                     numStr = pr.ResolutionStr;
                     unitStr = this.config.UnitMap[srcUnit];
-                    var prefixMatch = DateTimePeriodExtractorJap.PastRegex.Match(beforeStr);
+                    var prefixMatch = DateTimePeriodExtractor.PastRegex.Match(beforeStr);
                     if (prefixMatch.Success && prefixMatch.Length == beforeStr.Length)
                     {
                         DateObject beginDate, endDate;
@@ -536,7 +536,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                         return ret;
                     }
 
-                    prefixMatch = DateTimePeriodExtractorJap.FutureRegex.Match(beforeStr);
+                    prefixMatch = DateTimePeriodExtractor.FutureRegex.Match(beforeStr);
                     if (prefixMatch.Success && prefixMatch.Length == beforeStr.Length)
                     {
                         DateObject beginDate, endDate;
@@ -568,7 +568,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             }
 
             // handle "last hour"
-            var match = DateTimePeriodExtractorJap.UnitRegex.Match(text);
+            var match = DateTimePeriodExtractor.UnitRegex.Match(text);
             if (match.Success)
             {
                 var srcUnit = match.Groups["unit"].Value.ToLower();
@@ -577,7 +577,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 {
                     unitStr = this.config.UnitMap[srcUnit];
 
-                    var prefixMatch = DateTimePeriodExtractorJap.PastRegex.Match(beforeStr);
+                    var prefixMatch = DateTimePeriodExtractor.PastRegex.Match(beforeStr);
                     if (prefixMatch.Success && prefixMatch.Length == beforeStr.Length)
                     {
                         DateObject beginDate, endDate;
@@ -606,7 +606,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                         return ret;
                     }
 
-                    prefixMatch = DateTimePeriodExtractorJap.FutureRegex.Match(beforeStr);
+                    prefixMatch = DateTimePeriodExtractor.FutureRegex.Match(beforeStr);
                     if (prefixMatch.Success && prefixMatch.Length == beforeStr.Length)
                     {
                         DateObject beginDate, endDate;

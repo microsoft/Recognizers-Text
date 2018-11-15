@@ -5,11 +5,10 @@ using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Japanese;
 using Microsoft.Recognizers.Text.Number.Japanese;
 using DateObject = System.DateTime;
-using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.Japanese
 {
-    public class DateTimePeriodExtractorJap : IDateTimeExtractor
+    public class DateTimePeriodExtractor : IDateTimeExtractor
     {
         public static readonly string ExtractorName = Constants.SYS_DATETIME_DATETIMEPERIOD;
 
@@ -43,11 +42,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
         public static readonly Regex FutureRegex = new Regex(DateTimeDefinitions.FutureRegex, RegexOptions.Singleline);
 
-        private static readonly TimeExtractorJap SingleTimeExtractor = new TimeExtractorJap();
-        private static readonly DateTimeExtractorJap TimeWithDateExtractor = new DateTimeExtractorJap();
-        private static readonly DateExtractorJap SingleDateExtractor = new DateExtractorJap();
+        private static readonly TimeExtractor SingleTimeExtractor = new TimeExtractor();
+        private static readonly DateTimeExtractor TimeWithDateExtractor = new DateTimeExtractor();
+        private static readonly DateExtractor SingleDateExtractor = new DateExtractor();
         private static readonly CardinalExtractor CardinalExtractor = new CardinalExtractor();
-        private static readonly TimePeriodExtractorJap TimePeriodExtractor = new TimePeriodExtractorJap();
+        private static readonly TimePeriodExtractor TimePeriodExtractor = new TimePeriodExtractor();
 
         public List<ExtractResult> Extract(string text)
         {

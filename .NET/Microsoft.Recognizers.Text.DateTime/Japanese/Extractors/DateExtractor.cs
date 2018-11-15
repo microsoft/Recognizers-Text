@@ -2,11 +2,10 @@ using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Japanese;
 using DateObject = System.DateTime;
-using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.Japanese
 {
-    public class DateExtractorJap : IDateTimeExtractor
+    public class DateExtractor : IDateTimeExtractor
     {
         public static readonly string ExtractorName = Constants.SYS_DATETIME_DATE; // "Date";
 
@@ -114,7 +113,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
         public static readonly Regex DateTimePeriodUnitRegex = new Regex(DateTimeDefinitions.DateTimePeriodUnitRegex, RegexOptions.Singleline);
 
-        private static readonly DurationExtractorJap DurationExtractor = new DurationExtractorJap();
+        private static readonly DurationExtractor DurationExtractor = new DurationExtractor();
 
         public List<ExtractResult> Extract(string text)
         {
