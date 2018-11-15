@@ -1768,5 +1768,115 @@
         "End": 20
       }
     ]
+  },
+  {
+    "Input": "The price of this book is 100 ₡",
+    "Results": [
+      {
+        "Text": "100 ₡",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "100",
+          "unit": "Costa Rican colón",
+          "isoCurrency": "CRC"
+        },
+        "Start": 26,
+        "End": 30
+      }
+    ]
+  },
+  {
+    "Input": "I spend 100₾ buying the new bicycle.",
+    "Results": [
+      {
+        "Text": "100₾",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "100",
+          "unit": "Georgian lari",
+          "isoCurrency": "GEL"
+        },
+        "Start": 8,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "Congratulations! You will win a car and 100,000 ₭ as you won the champion of the competition.",
+    "Results": [
+      {
+        "Text": "100,000 ₭",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "100000",
+          "unit": "Lao kip",
+          "isoCurrency": "LAK"
+        },
+        "Start": 40,
+        "End": 48
+      }
+    ]
+  },
+  {
+    "Input": "Bob, can you borrow me 100,000 ரூ for emergency and I will pay back with interest next Monday.",
+    "Results": [
+      {
+        "Text": "100,000 ரூ",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "100000",
+          "unit": "Sri Lankan rupee",
+          "isoCurrency": "LKR"
+        },
+        "Start": 23,
+        "End": 32
+      }
+    ]
+  },
+  {
+    "Input": "Do you think sen 100,000 is expensive this new laptop?",
+    "Results": [
+      {
+        "Text": "sen 100,000",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "100000",
+          "unit": "Cent"
+        },
+        "Start": 13,
+        "End": 23
+      }
+    ]
+  },
+  {
+    "Input": "The first price of the lottory is u.s $ 100,000,000, do you want it?",
+    "Results": [
+      {
+        "Text": "u.s $ 100,000,000",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "100000000",
+          "unit": "United States dollar",
+          "isoCurrency": "USD"
+        },
+        "Start": 34,
+        "End": 50
+      }
+    ]
+  },
+  {
+    "Input": "Give me 5 dollars",
+    "Results": [
+      {
+        "Text": "5 dollars",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "5",
+          "unit": "Dollar"
+        },
+        "Start": 8,
+        "End": 16
+      }
+    ]
   }
 ]

@@ -52,14 +52,14 @@ CurrencySuffixList: !dictionary
     Euro: euro|euros|€|eur
     Céntimo de Euro: céntimo de euro|céntimos de euros
     #Dólar del Caribe Oriental
-    Dólar del Caribe Oriental: dólar del Caribe Oriental|dólares del Caribe Oriental|ec$|xcd
-    Centavo del Caribe Oriental: centavo del Caribe Oriental|centavos del Caribe Oriental
+    Dólar del Caribe Oriental: dólar del caribe oriental|dólares del caribe oriental|ec$|xcd
+    Centavo del Caribe Oriental: centavo del caribe oriental|centavos del caribe oriental
     #Franco CFA de África Occidental
-    Franco CFA de África Occidental: franco CFA de África Occidental|francos CFA de África Occidental|fcfa|xof
-    Céntimo de CFA de África Occidental: céntimo de CFA de África Occidental|céntimos de CFA de África Occidental
+    Franco CFA de África Occidental: franco cfa de África occidental|francos cfa de África occidental|fcfa|xof
+    Céntimo de CFA de África Occidental: céntimo de cfa de África occidental|céntimos de cfa de África occidental
     #Franco CFA de África Central
-    Franco CFA de África Central: franco CFA de África Central|francos CFA de África Central|xaf
-    Céntimo de CFA de África Central: céntimo de CFA de África Central|céntimos de CFA de África Central
+    Franco CFA de África Central: franco cfa de África central|francos cfa de África central|xaf
+    Céntimo de CFA de África Central: céntimo de cfa de África central|céntimos de cfa de África central
     #Abjasia
     Apsar: apsar|apsares
     #Afganistán
@@ -84,7 +84,7 @@ CurrencySuffixList: !dictionary
     Halalá saudí: halalá saudí|hallalah
     #Argelia
     Dinar argelino: dinar argelino|dinares argelinos|dzd
-    Céntimo argelino: centimo argelino|centimos argelinos|
+    Céntimo argelino: centimo argelino|centimos argelinos
     #Argentina
     Peso argentino: peso argentino|pesos argentinos|peso|pesos|ar$|ars
     Centavo argentino: centavo argentino|centavos argentinos|centavo|ctvo.|ctvos.
@@ -200,7 +200,7 @@ CurrencySuffixList: !dictionary
     #El Salvador
     Colón salvadoreño: colón salvadoreño|colones salvadoreños|svc
     #Emiratos Árabes Unidos
-    Dirham de los Emiratos Árabes Unidos: dirham|dirhams|dirham de los Emiratos Árabes Unidos|aed|dhs
+    Dirham de los Emiratos Árabes Unidos: dirham|dirhams|dirham de los emiratos Árabes unidos|aed|dhs
     #Eritrea
     Nakfa: nakfa|nfk|ern
     Céntimo de Nakfa: céntimo de nakfa|céntimos de nakfa
@@ -243,8 +243,8 @@ CurrencySuffixList: !dictionary
     Quetzal guatemalteco: quetzal guatemalteco|quetzales guatemaltecos|quetzal|quetzales|gtq
     Centavo guatemalteco: centavo guatemalteco|centavos guatemaltecos
     #Guernsey
-    Libra de Guernsey: libra de Guernsey|libras de Guernsey|ggp
-    Penique de Guernsey: penique de Guernsey|peniques de Guernsey
+    Libra de Guernsey: libra de guernsey|libras de guernsey|ggp
+    Penique de Guernsey: penique de guernsey|peniques de guernsey
     #Guinea
     Franco guineano: franco guineano|francos guineanos|gnf|fg
     Céntimo guineano: céntimo guineano|céntimos guineanos
@@ -282,10 +282,10 @@ CurrencySuffixList: !dictionary
     Corona islandesa: corona islandesa|coronas islandesas|isk|íkr
     Aurar islandes: aurar islandes|aurar islandeses
     #Islas Caimán
-    Dólar de las Islas Caimán: dólar de las Islas Caimán|dólares de las Islas Caimán|ci$|kyd
+    Dólar de las Islas Caimán: dólar de las islas caimán|dólares de las islas caimán|ci$|kyd
     #Islas Cocos -> Dólar australiano
     #Islas Cook
-    Dólar de las Islas Cook: dólar de las Islas Cook|dólares de las Islas Cook
+    Dólar de las Islas Cook: dólar de las islas cook|dólares de las islas cook
     #Islas Feroe
     Corona feroesa: corona feroesa|coronas feroesas|fkr
     #Islas Georgias del Sur y Sandwich del Sur
@@ -295,7 +295,7 @@ CurrencySuffixList: !dictionary
     #Islas Marshall -> Dólar estadounidense
     #Islas Pitcairn -> Dólar neozelandés
     #Islas Salomón
-    Dólar de las Islas Salomón: dólar de las Islas Salomón|dólares de las Islas Salomón|sbd
+    Dólar de las Islas Salomón: dólar de las islas salomón|dólares de las islas salomón|sbd
     #Islas Turcas y Caicos -> Dólar estadounidense
     #Islas Vírgenes Británicas -> Dólar estadounidense
     #Israel
@@ -307,7 +307,7 @@ CurrencySuffixList: !dictionary
     #Japón
     Yen: yen|yenes|jpy
     #Jersey
-    Libra de Jersey: libra de Jersey|libras de Jersey|jep
+    Libra de Jersey: libra de jersey|libras de jersey|jep
     #Jordania
     Dinar jordano: dinar jordano|dinares jordanos|jd|jod
     Piastra jordano: piastra jordano|piastras jordanos
@@ -319,7 +319,7 @@ CurrencySuffixList: !dictionary
     Som kirguís: som kirguís|kgs
     Tyiyn: tyiyn
     #Kiribati
-    Dólar de Kiribati: dólar de Kiribati|dólares de Kiribati
+    Dólar de Kiribati: dólar de kiribati|dólares de kiribati
     #Kosovo -> Euro
     #Kuwait
     Dinar kuwaití: dinar kuwaití|dinares kuwaití
@@ -358,7 +358,7 @@ CurrencySuffixList: !dictionary
     Kwacha malauí: kwacha malauí|mk|mwk
     Támbala malauí: támbala malauí
     #Maldivas
-    Rupia de Maldivas: rupia de Maldivas|rupias de Maldivas|mvr
+    Rupia de Maldivas: rupia de maldivas|rupias de maldivas|mvr
     #Malí -> Franco CFA de África Occidental
     #Malta -> Euro
     #Marruecos
@@ -383,8 +383,8 @@ CurrencySuffixList: !dictionary
     #Mozambique
     Metical mozambiqueño: metical|metical mozambiqueño|meticales|meticales mozambiqueños|mtn|mzn
     #Nagorno Karabaj
-    Dram de Nagorno Karabaj: dram de Nagorno Karabaj|drams de Nagorno Karabaj|
-    Luma de Nagorno Karabaj: luma de Nagorno Karabaj
+    Dram de Nagorno Karabaj: dram de nagorno karabaj|drams de nagorno karabaj
+    Luma de Nagorno Karabaj: luma de nagorno karabaj
     #Namibia
     Dólar namibio: dólar namibio|dólares namibios|n$|nad
     Centavo namibio: centavo namibio|centavos namibios
@@ -405,8 +405,8 @@ CurrencySuffixList: !dictionary
     #Nueva Caledonia
     Franco CFP: franco cfp|francos cfp|xpf
     #Nueva Zelanda
-    Dólar neozelandés: dólar neozelandés|dólares neozelandeses|dólar de Nueva Zelanda|dólares de Nueva Zelanda|nz$|nzd
-    Centavo neozelandés: centavo neozelandés|centavo de Nueva Zelanda|centavos de Nueva Zelanda|centavos neozelandeses
+    Dólar neozelandés: dólar neozelandés|dólares neozelandeses|dólar de nueva zelanda|dólares de nueva zelanda|nz$|nzd
+    Centavo neozelandés: centavo neozelandés|centavo de nueva zelanda|centavos de nueva zelanda|centavos neozelandeses
     #Omán
     Rial omaní: rial omaní|riales omanies|omr
     Baisa omaní: baisa omaní|baisa omanies
@@ -462,8 +462,8 @@ CurrencySuffixList: !dictionary
     #San Cristóbal y Nieves -> Dólar del Caribe Oriental
     #San Marino -> Euro
     #Santa Elena, Ascensión y Tristán de Acuña
-    Libra de Santa Helena: libra de Santa Helena|libras de Santa Helena|shp
-    Penique de Santa Helena: penique de Santa Helena|peniques de Santa Helena
+    Libra de Santa Helena: libra de santa helena|libras de santa helena|shp
+    Penique de Santa Helena: penique de santa helena|peniques de santa helena
     #Santa Lucía -> Dólar del Caribe Oriental
     #Santo Tomé y Príncipe
     Dobra: dobra|db|std
@@ -473,8 +473,8 @@ CurrencySuffixList: !dictionary
     Dinar serbio: dinar serbio|dinares serbios|rsd
     Para serbio: para serbio|para serbios
     #Seychelles
-    Rupia de Seychelles: rupia de Seychelles|rupias de Seychelles|scr
-    Centavo de Seychelles: centavo de Seychelles|centavos de Seychelles
+    Rupia de Seychelles: rupia de seychelles|rupias de seychelles|scr
+    Centavo de Seychelles: centavo de seychelles|centavos de seychelles
     #Sierra Leona
     Leone: leone|le|sll
     #Singapur
@@ -529,8 +529,8 @@ CurrencySuffixList: !dictionary
     Paʻanga: dólar tongano|dólares tonganos|paʻanga|pa'anga|top
     Seniti: seniti
     #Transnistria
-    Rublo de Transnistria: rublo de Transnistria|rublos de Transnistria
-    Kopek de Transnistria: kopek de Transnistria|kopeks de Transnistria
+    Rublo de Transnistria: rublo de transnistria|rublos de transnistria
+    Kopek de Transnistria: kopek de transnistria|kopeks de transnistria
     #Trinidad y Tobago
     Dólar trinitense: dólar trinitense|dólares trinitenses|ttd
     Centavo trinitense: centavo trinitense|centavos trinitenses
