@@ -91,6 +91,8 @@ public class DateTimeExtractorTest extends AbstractTest {
                 return new BaseDateExtractor(new EnglishDateExtractorConfiguration());
             case "DurationExtractor":
                 return new BaseDurationExtractor(new EnglishDurationExtractorConfiguration());
+			case "SetExtractor":
+				return new BaseSetExtractor(new EnglishSetExtractorConfiguration());
             case "DateTimeExtractor":
                 return new BaseDateTimeExtractor(new EnglishDateTimeExtractorConfiguration());
             case "HolidayExtractor":
