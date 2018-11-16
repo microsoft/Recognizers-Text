@@ -18,12 +18,9 @@ public class BaseMergedUnitParser implements IParser {
     @Override
     public ParseResult parse(ExtractResult extResult) {
         // For now only currency model recognizes compound units.
-        if (extResult.type.equals(Constants.SYS_UNIT_CURRENCY))
-        {
+        if (extResult.type.equals(Constants.SYS_UNIT_CURRENCY)) {
             return new BaseCurrencyParser(config).parse(extResult);
-        }
-        else
-        {
+        } else {
             return numberWithUnitParser.parse(extResult);
         }
     }

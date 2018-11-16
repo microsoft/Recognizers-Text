@@ -9,14 +9,24 @@ import java.util.regex.Pattern;
 
 public interface INumberWithUnitExtractorConfiguration {
     Map<String, String> getSuffixList();
+    
     Map<String, String> getPrefixList();
+    
     List<String> getAmbiguousUnitList();
+    
     String getExtractType();
+    
     CultureInfo getCultureInfo();
+    
     IExtractor getUnitNumExtractor();
+    
     String getBuildPrefix();
+    
     String getBuildSuffix();
+    
     String getConnectorToken();
+    
     Pattern getCompoundUnitConnectorRegex();
+    
     Pattern getAmbiguousUnitNumberMultiplierRegex();
 }

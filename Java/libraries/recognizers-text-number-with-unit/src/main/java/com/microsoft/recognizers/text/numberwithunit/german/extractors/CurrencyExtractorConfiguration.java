@@ -5,7 +5,6 @@ import com.microsoft.recognizers.text.CultureInfo;
 import com.microsoft.recognizers.text.numberwithunit.Constants;
 import com.microsoft.recognizers.text.numberwithunit.resources.GermanNumericWithUnit;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
