@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.IO;
@@ -178,7 +178,9 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                     return GetGermanExtractor(extractorName);
                 case Culture.Italian:
                     return GetItalianExtractor(extractorName);
-            }
+                case Culture.Japanese:
+                    return GetJapaneseExtractor(extractorName);
+        }
 
             throw new Exception($"Extractor '{extractorName}' for '{culture}' not supported");
         }
@@ -205,7 +207,9 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                     return GetGermanParser(parserName);
                 case Culture.Italian:
                     return GetItalianParser(parserName);
-            }
+                case Culture.Japanese:
+                    return GetJapaneseParser(parserName);
+      }
 
             throw new Exception($"Parser '{parserName}' for '{culture}' not supported");
         }
@@ -403,6 +407,66 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             }
 
             throw new Exception($"Parser '{parserName}' for English not supported");
+        }
+
+        public static IDateTimeExtractor GetJapaneseExtractor(DateTimeExtractors extractorName)
+        {
+          switch (extractorName)
+          {
+            case DateTimeExtractors.Date:
+              return new DateTime.Japanese.DateExtractor();
+            case DateTimeExtractors.Time:
+              return new DateTime.Japanese.TimeExtractor();
+            case DateTimeExtractors.DatePeriod:
+              return new DateTime.Japanese.DatePeriodExtractor();
+            case DateTimeExtractors.TimePeriod:
+              return new DateTime.Japanese.TimePeriodExtractor();
+            case DateTimeExtractors.DateTime:
+              return new DateTime.Japanese.DateTimeExtractor();
+            case DateTimeExtractors.DateTimePeriod:
+              return new DateTime.Japanese.DateTimePeriodExtractor();
+            case DateTimeExtractors.Duration:
+              return new DateTime.Japanese.DurationExtractor();
+            case DateTimeExtractors.Holiday:
+              return new BaseHolidayExtractor(new DateTime.Japanese.JapaneseHolidayExtractorConfiguration());
+            case DateTimeExtractors.Set:
+              return new DateTime.Japanese.SetExtractor();
+            case DateTimeExtractors.Merged:
+              return new DateTime.Japanese.JapaneseMergedExtractor(DateTimeOptions.None);
+            case DateTimeExtractors.MergedSkipFromTo:
+              return new DateTime.Japanese.JapaneseMergedExtractor(DateTimeOptions.SkipFromToMerge);
+          }
+
+          throw new Exception($"Extractor '{extractorName}' for Japanese not supported");
+        }
+
+        public static IDateTimeParser GetJapaneseParser(DateTimeParsers parserName)
+        {
+          switch (parserName)
+          {
+            case DateTimeParsers.Date:
+              return new DateTime.Japanese.DateParser(new DateTime.Japanese.JapaneseDateTimeParserConfiguration());
+            case DateTimeParsers.Time:
+              return new DateTime.Japanese.TimeParser(new DateTime.Japanese.JapaneseDateTimeParserConfiguration());
+            case DateTimeParsers.DatePeriod:
+              return new DateTime.Japanese.DatePeriodParser(new DateTime.Japanese.JapaneseDateTimeParserConfiguration());
+            case DateTimeParsers.TimePeriod:
+              return new DateTime.Japanese.TimePeriodParser(new DateTime.Japanese.JapaneseDateTimeParserConfiguration());
+            case DateTimeParsers.DateTime:
+              return new DateTime.Japanese.DateTimeParser(new DateTime.Japanese.JapaneseDateTimeParserConfiguration());
+            case DateTimeParsers.DateTimePeriod:
+              return new DateTime.Japanese.DateTimePeriodParser(new DateTime.Japanese.JapaneseDateTimeParserConfiguration());
+            case DateTimeParsers.Duration:
+              return new DateTime.Japanese.DurationParser(new DateTime.Japanese.JapaneseDateTimeParserConfiguration());
+            case DateTimeParsers.Holiday:
+              return new DateTime.Japanese.HolidayParser(new DateTime.Japanese.JapaneseDateTimeParserConfiguration());
+            case DateTimeParsers.Set:
+              return new DateTime.Japanese.SetParser(new DateTime.Japanese.JapaneseDateTimeParserConfiguration());
+            case DateTimeParsers.Merged:
+              return new FullDateTimeParser(new DateTime.Japanese.JapaneseDateTimeParserConfiguration());
+          }
+
+          throw new Exception($"Parser '{parserName}' for Japanese not supported");
         }
 
         public static IDateTimeExtractor GetSpanishExtractor(DateTimeExtractors extractorName)
