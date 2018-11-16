@@ -1232,7 +1232,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "python, javascript",
+    "NotSupported": "python, javascript, java",
     "Results": [
       {
         "Text": "another business day",
