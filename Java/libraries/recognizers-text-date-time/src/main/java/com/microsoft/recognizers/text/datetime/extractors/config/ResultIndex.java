@@ -8,4 +8,12 @@ public class ResultIndex {
     this.result = result;
     this.index = index;
   }
+
+  public ResultIndex withResult(boolean newResult) {
+    return new ResultIndex(newResult, this.index);
+  }
+
+  public ResultIndex withIndex(int newIndex) {
+    return new ResultIndex(this.result, newIndex);
+  }
 }
