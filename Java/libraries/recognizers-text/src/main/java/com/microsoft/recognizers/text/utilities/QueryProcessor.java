@@ -1,5 +1,6 @@
 package com.microsoft.recognizers.text.utilities;
 
+import java.text.Normalizer;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
@@ -21,29 +22,29 @@ public class QueryProcessor {
 
         if (recode) {
             query = query.replace('０', '0')
-                         .replace('１', '1')
-                         .replace('２', '2')
-                         .replace('３', '3')
-                         .replace('４', '4')
-                         .replace('５', '5')
-                         .replace('６', '6')
-                         .replace('７', '7')
-                         .replace('８', '8')
-                         .replace('９', '9')
-                         .replace('：', ':')
-                         .replace('－', '-')
-                         .replace('，', ',')
-                         .replace('／', '/')
-                         .replace('Ｇ', 'G')
-                         .replace('Ｍ', 'M')
-                         .replace('Ｔ', 'T')
-                         .replace('Ｋ', 'K')
-                         .replace('ｋ', 'k')
-                         .replace('．', '.')
-                         .replace('（', '(')
-                         .replace('）', ')')
-                         .replace('％', '%')
-                         .replace('、', ',');
+                    .replace('１', '1')
+                    .replace('２', '2')
+                    .replace('３', '3')
+                    .replace('４', '4')
+                    .replace('５', '5')
+                    .replace('６', '6')
+                    .replace('７', '7')
+                    .replace('８', '8')
+                    .replace('９', '9')
+                    .replace('：', ':')
+                    .replace('－', '-')
+                    .replace('，', ',')
+                    .replace('／', '/')
+                    .replace('Ｇ', 'G')
+                    .replace('Ｍ', 'M')
+                    .replace('Ｔ', 'T')
+                    .replace('Ｋ', 'K')
+                    .replace('ｋ', 'k')
+                    .replace('．', '.')
+                    .replace('（', '(')
+                    .replace('）', ')')
+                    .replace('％', '%')
+                    .replace('、', ',');
         }
 
         if (!caseSensitive) {
@@ -72,8 +73,7 @@ public class QueryProcessor {
     }
 
     private static void applyReverse(int index, char[] inputChars, String value) {
-        for (int i = 0; i < value.length(); ++i)
-        {
+        for (int i = 0; i < value.length(); ++i) {
             inputChars[index + i] = value.charAt(i);
         }
     }
@@ -95,5 +95,26 @@ public class QueryProcessor {
 
         return Arrays.stream(input.split(delimitersRegex)).filter(s -> !s.isEmpty())
                 .collect(Collectors.toList());
+    }
+
+    public static String removeDiacritics(String query) {
+        if (query == null) {
+            return null;
+        }
+
+        String norm = Normalizer.normalize(query, Normalizer.Form.NFD);
+        int j = 0;
+        char[] out = new char[query.length()];
+        for (int i = 0, n = norm.length(); i < n; ++i) {
+            char c = norm.charAt(i);
+            int type = Character.getType(c);
+
+            if (type != Character.NON_SPACING_MARK) {
+                out[j] = c;
+                j++;
+            }
+        }
+
+        return new String(out);
     }
 }
