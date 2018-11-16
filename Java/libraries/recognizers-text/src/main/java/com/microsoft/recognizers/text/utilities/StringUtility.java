@@ -9,6 +9,14 @@ public abstract class StringUtility {
         return source == null || source.trim().equals("");
     }
 
+    public static String trimStart(String source) {
+        return source.replaceFirst("^\\s+", "");
+    }
+
+    public static String trimEnd(String source) {
+        return source.replaceFirst("\\s+$", "");
+    }
+
     public static String format(double d) {
         if (d == (long)d) {
             return String.format("%d", (long)d);
