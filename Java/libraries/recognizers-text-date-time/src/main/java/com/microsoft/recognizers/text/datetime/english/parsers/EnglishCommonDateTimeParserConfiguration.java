@@ -84,16 +84,16 @@ public class EnglishCommonDateTimeParserConfiguration extends BaseDateParserConf
         dateTimeExtractor = new BaseDateTimeExtractor(null);
         datePeriodExtractor = new BaseDatePeriodExtractor(null);
         timePeriodExtractor = new BaseTimePeriodExtractor(null);
-        dateTimePeriodExtractor = new BaseDateTimePeriodExtractor(null);
+        dateTimePeriodExtractor = null;
 
         durationParser = new BaseDurationParser(new EnglishDurationParserConfiguration(this));
-        dateParser = new BaseDateParser(new EnglishDateParserConfiguration(this));
-        timeParser = new BaseTimeParser(null);
-        dateTimeParser = new BaseDateTimeParser(null);
-        datePeriodParser = new BaseDatePeriodParser(null);
-        timePeriodParser = new BaseTimePeriodParser(null);
-        dateTimePeriodParser = new BaseDateTimePeriodParser(null);
-        dateTimeAltParser = new BaseDateTimeAltParser(null);
+        dateParser = null;
+        timeParser = null;
+        dateTimeParser = null;
+        datePeriodParser = null;
+        timePeriodParser = null;
+        dateTimePeriodParser = null;
+        dateTimeAltParser = null;
     }
 
     @Override
