@@ -47,7 +47,7 @@ public class EnglishDateTimePeriodExtractorConfiguration implements IDateTimePer
     public static final Pattern SuffixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SuffixRegex, flags);
     public static final Pattern BeforeRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.BeforeRegex, flags);
     public static final Pattern AfterRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.AfterRegex, flags);
-    
+
     private final DateTimeOptions options;
     private final String tokenBeforeDate;
     private final Pattern weekDayRegex;
@@ -257,21 +257,21 @@ public class EnglishDateTimePeriodExtractorConfiguration implements IDateTimePer
         return new ResultIndex(result, index);
     }
 
-	@Override
-	public ResultIndex getBetweenTokenIndex(String text) {
+    @Override
+    public ResultIndex getBetweenTokenIndex(String text) {
         int index = -1;
         boolean result = false;
         if (text.endsWith("between")) {
             result = true;
             index = text.lastIndexOf("between");
         }
-        
+
         return new ResultIndex(result, index);
-	}
+    }
 
     @Override
     public boolean hasConnectorToken(String text) {
         Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(rangeConnectorRegex, text)).findFirst();
         return match.isPresent() && match.get().length == text.trim().length();
-	}
+    }
 }

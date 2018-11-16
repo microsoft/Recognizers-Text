@@ -106,7 +106,7 @@ public class BaseDateTimePeriodExtractor implements IDateTimeExtractor {
                 timePoints.add(ers2.get(j));
                 j++;
             }
-            
+
             while (j < ers2.size() && ers2.get(j).isOverlap(ers1.get(i))) {
                 j++;
             }
@@ -333,7 +333,7 @@ public class BaseDateTimePeriodExtractor implements IDateTimeExtractor {
 
                     if (pauseMatch.isPresent() && pauseMatch.get().length == connectorStr.length()) {
                         String suffix = input.substring(er.start + er.length).replaceAll("^\\s+", "");
-                        
+
                         Optional<Match> endingMatch = Arrays.stream(RegExpUtility.getMatches(config.getGeneralEndingRegex(), suffix)).findFirst();
                         if (endingMatch.isPresent()) {
                             results.add(new Token(match.get().index, er.start + er.length));
@@ -366,10 +366,10 @@ public class BaseDateTimePeriodExtractor implements IDateTimeExtractor {
                 String afterStr = input.substring(result.getStart() + result.getLength());
                 if (!StringUtility.isNullOrEmpty(afterStr)) {
                     List<ExtractResult> timeErs = config.getTimePeriodExtractor().extract(afterStr);
-                    for (ExtractResult timeEr: timeErs) {
+                    for (ExtractResult timeEr : timeErs) {
                         String midStr = afterStr.substring(0, timeEr.start);
                         if (StringUtility.isNullOrWhiteSpace(midStr)) {
-                            results.add(new Token(result.getStart(), result.getStart() + result.getLength()+ midStr.length() + timeEr.length));
+                            results.add(new Token(result.getStart(), result.getStart() + result.getLength() + midStr.length() + timeEr.length));
                         }
                     }
 
@@ -413,7 +413,7 @@ public class BaseDateTimePeriodExtractor implements IDateTimeExtractor {
     }
 
     // Cases like "today after 2:00pm", "1/1/2015 before 2:00 in the afternoon"
-	private List<Token> mergeDateWithTimePeriodSuffix(String input, LocalDateTime reference) {
+    private List<Token> mergeDateWithTimePeriodSuffix(String input, LocalDateTime reference) {
         List<Token> results = new ArrayList<Token>();
 
         List<ExtractResult> dateErs = config.getSingleDateExtractor().extract(input, reference);
