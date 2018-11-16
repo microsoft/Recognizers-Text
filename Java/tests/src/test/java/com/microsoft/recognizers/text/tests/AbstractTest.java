@@ -55,7 +55,10 @@ public abstract class AbstractTest {
     public static void after(){
         Map<String, String> counter = new LinkedHashMap<>();
         for (Map.Entry<String, Integer> entry : testCounter.entrySet()) {
-            counter.put(entry.getKey(), entry.getValue().toString());
+            int skipped = skipCounter.getOrDefault(entry.getKey(), 0);
+            if (entry.getValue() > skipped) {
+                counter.put(entry.getKey(), entry.getValue().toString());
+            }
         }
         for (Map.Entry<String, String> entry : counter.entrySet()) {
             Integer passValue = passCounter.getOrDefault(entry.getKey(), 0);
@@ -116,9 +119,9 @@ public abstract class AbstractTest {
         } catch (AssumptionViolatedException ex) {
             countSkip(currentCase);
             throw ex;
-        } catch (Exception ex) {
+        } catch (Throwable err) {
             countFail(currentCase);
-            throw ex;
+            throw err;
         }
     }
 
