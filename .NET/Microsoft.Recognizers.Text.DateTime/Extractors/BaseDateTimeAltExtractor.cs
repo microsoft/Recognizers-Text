@@ -293,9 +293,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             return success;
         }
 
-        // In this method, we assume that all extract results with same parentText
-        // 1. Doesn't share context: cases like "next week or previous week", "next Monday 1pm or previous Monday 1pm"
+        // In this method, we assume that all extract results with same parentText 
+        // 1. Doesn't share context: cases like "next week or previous week", "next Monday 1pm or previous Monday 1pm". OR
         // 2. Share the same context: cases like "next week Monday or Tuesday", the context is "next week"
+        // No multi context across all extract results with same parentText
+        // Cases for multi context include: "next Monday or Tuesday and previous Wednesday"
         private bool ExtractAndApplyUniqueMetadata(List<ExtractResult> extractResults, string parentText)
         {
             var metadata = ExtractUniqueMetadata(extractResults, parentText);
@@ -304,16 +306,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             // Apply metadata to extract results
             if (metadata.Count > 0)
             {
-                // The first extract results don't need any context
-                extractResults[0].Data = CreateMetadata(extractResults[0].Type, parentText, contextEr: null);
-                extractResults[0].Type = ExtractorName;
-
-                for (var k = 1; k < extractResults.Count; k++)
-                {
-                    extractResults[k].Data = metadata;
-                    extractResults[k].Type = ExtractorName;
-                }
-
+                ApplyMetadata(extractResults, metadata, parentText);
                 success = true;
             }
 
@@ -379,7 +372,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         private bool ExtractAndApplyMultiMetadata(List<ExtractResult> extractResults, string parentText)
         {
             var allAreDates = true;
-            var isValidContext = false;
+            var success = false;
             foreach (var er in extractResults)
             {
                 if (!er.Type.Equals(Constants.SYS_DATETIME_DATE))
@@ -397,16 +390,10 @@ namespace Microsoft.Recognizers.Text.DateTime
                 // DatePeriod as Context: such as "next week on Tuesday or Thursday"
                 if (datePeriodErs.Count == 1)
                 {
-                    extractResults[0].Data = CreateMetadata(extractResults[0].Type, parentText, contextEr: null);
-                    extractResults[0].Type = ExtractorName;
+                    var metadata = CreateMetadata(Constants.SYS_DATETIME_DATE, parentText, datePeriodErs[0]);
+                    ApplyMetadata(extractResults, metadata, parentText);
 
-                    for (int i = 1; i < extractResults.Count; i++)
-                    {
-                        extractResults[i].Data = CreateMetadata(extractResults[i].Type, parentText, datePeriodErs[0]);
-                        extractResults[i].Type = ExtractorName;
-                    }
-
-                    isValidContext = true;
+                    success = true;
                 }
                 else
                 {
@@ -420,15 +407,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                         {
                             break;
                         }
-                        else
-                        {
-                            extractResults[i].Data = CreateMetadata(extractResults[i].Type, parentText, contextEr: null);
-                            extractResults[i].Type = ExtractorName;
-
-                            isValidContext = true;
-                        }
 
                         int j = i + 1;
+                        var metadata = CreateMetadata(Constants.SYS_DATETIME_DATE, parentText, contextEr);
 
                         while (j < extractResults.Count)
                         {
@@ -438,8 +419,6 @@ namespace Microsoft.Recognizers.Text.DateTime
                             // Such as "Wednesday" in "next Tuesday or Wednesday"
                             if (relativePrefixContext == null)
                             {
-                                extractResults[j].Data = CreateMetadata(extractResults[j].Type, parentText, contextEr);
-                                extractResults[j].Type = ExtractorName;
                                 j++;
                             }
                             else
@@ -451,12 +430,28 @@ namespace Microsoft.Recognizers.Text.DateTime
                             }
                         }
 
+                        var ersShareContext = extractResults.GetRange(i, j - i);
+                        ApplyMetadata(ersShareContext, metadata, parentText);
+
                         i = j;
                     }
                 }
             }
 
-            return isValidContext;
+            return success;
+        }
+
+        private void ApplyMetadata(List<ExtractResult> ers, Dictionary<string, object> metadata, string parentText)
+        {
+            // The first extract results don't need any context
+            ers[0].Data = CreateMetadata(ers[0].Type, parentText, contextEr: null);
+            ers[0].Type = ExtractorName;
+
+            for (var i = 1; i < ers.Count; i++)
+            {
+                ers[i].Data = metadata;
+                ers[i].Type = ExtractorName;
+            }
         }
 
         private Dictionary<string, object> CreateMetadata(string subType, string parentText, ExtractResult contextEr = null)
@@ -482,13 +477,13 @@ namespace Microsoft.Recognizers.Text.DateTime
         }
 
 
-        private ExtractResult ExtractRelativePrefixContext(string text)
+        private ExtractResult ExtractRelativePrefixContext(string entityText)
         {
             ExtractResult contextEr = null;
 
             foreach (var regex in config.RelativePrefixList)
             {
-                var match = regex.Match(text);
+                var match = regex.Match(entityText);
 
                 if (match.Success)
                 {
