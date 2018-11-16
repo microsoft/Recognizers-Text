@@ -91,16 +91,15 @@ public class DateTimeExtractorTest extends AbstractTest {
                 return new BaseDateExtractor(new EnglishDateExtractorConfiguration());
             case "DurationExtractor":
                 return new BaseDurationExtractor(new EnglishDurationExtractorConfiguration());
-            case "TimePeriodExtractor":
-                return new BaseTimePeriodExtractor(new EnglishTimePeriodExtractorConfiguration());
-            case "TimeExtractor":
-                return new BaseTimeExtractor(new EnglishTimeExtractorConfiguration());
             case "HolidayExtractor":
                 return new BaseHolidayExtractor(new EnglishHolidayExtractorConfiguration());
+            case "TimeExtractor":
+                return new BaseTimeExtractor(new EnglishTimeExtractorConfiguration());                
+            case "TimePeriodExtractor":
+                return new BaseTimePeriodExtractor(new EnglishTimePeriodExtractorConfiguration());
             case "TimeZoneExtractor":
                 return new BaseTimeZoneExtractor(new EnglishTimeZoneExtractorConfiguration(DateTimeOptions.EnablePreview));
-            case "TimeExtractor":
-                return new BaseTimeExtractor(new EnglishTimeExtractorConfiguration());
+            
             default:
                 throw new AssumptionViolatedException("Extractor Type/Name not supported.");
         }
