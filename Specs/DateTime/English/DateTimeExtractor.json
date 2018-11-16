@@ -672,6 +672,7 @@
   },
   {
     "Input": "I'll go back August 1st 11 AM",
+    "NotSupported": "java",
     "Results": [
       {
         "Text": "August 1st 11 AM",
@@ -738,7 +739,7 @@
   },
   {
     "Input": "I will leave 1 day 2 hours later",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "1 day 2 hours later",
@@ -761,19 +762,7 @@
   },
   {
     "Input": "I met him 2 months 1 day 2 hours ago",
-    "NotSupported": "javascript, python",
-    "Results": [
-      {
-        "Text": "2 months 1 day 2 hours ago",
-        "Type": "datetime",
-        "Start": 10,
-        "Length": 26
-      }
-    ]
-  },
-  {
-    "Input": "I met him 2 months 1 day 2 hours ago",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "2 months 1 day 2 hours ago",
@@ -785,7 +774,7 @@
   },
   {
     "Input": "I will leave 1 day 30 minutes later",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "1 day 30 minutes later",
