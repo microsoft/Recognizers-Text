@@ -631,7 +631,7 @@
             {
               "timex": "PT123.45S",
               "type": "duration",
-              "value": "123,45"
+              "value": "123.45"
             }
           ]
         }
