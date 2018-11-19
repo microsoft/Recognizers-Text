@@ -1,9 +1,18 @@
 package com.microsoft.recognizers.text.number.models;
 
-import com.microsoft.recognizers.text.*;
+import com.microsoft.recognizers.text.ExtractResult;
+import com.microsoft.recognizers.text.IExtractor;
+import com.microsoft.recognizers.text.IModel;
+import com.microsoft.recognizers.text.IParser;
+import com.microsoft.recognizers.text.ModelResult;
+import com.microsoft.recognizers.text.ParseResult;
+import com.microsoft.recognizers.text.ResolutionKey;
 import com.microsoft.recognizers.text.utilities.QueryProcessor;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.SortedMap;
+import java.util.TreeMap;
 import java.util.stream.Collectors;
 
 public abstract class AbstractNumberModel implements IModel {
@@ -38,16 +47,17 @@ public abstract class AbstractNumberModel implements IModel {
             ex.printStackTrace();
         }
 
-        return parsedNumbers.stream().map(o -> new ModelResult(
+        return parsedNumbers.stream().map(o -> {
+            SortedMap<String, Object> sortedMap = new TreeMap<String, Object>();
+            sortedMap.put(ResolutionKey.Value, o.resolutionStr);
+
+            return new ModelResult(
                 o.text,
                 o.start,
                 o.start + o.length,
                 getModelTypeName(),
-                new TreeMap<String, Object>() {
-                    {
-                        put(ResolutionKey.Value, o.resolutionStr);
-                    }
-                })
-        ).collect(Collectors.toCollection(ArrayList::new));
+                sortedMap
+            );                
+        }).collect(Collectors.toCollection(ArrayList::new));
     }
 }

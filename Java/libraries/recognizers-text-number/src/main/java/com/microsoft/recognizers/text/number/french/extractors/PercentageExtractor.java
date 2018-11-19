@@ -1,6 +1,5 @@
 package com.microsoft.recognizers.text.number.french.extractors;
 
-import com.microsoft.recognizers.text.number.NumberMode;
 import com.microsoft.recognizers.text.number.NumberOptions;
 import com.microsoft.recognizers.text.number.extractors.BasePercentageExtractor;
 import com.microsoft.recognizers.text.number.resources.FrenchNumeric;

@@ -1,17 +1,16 @@
 package com.microsoft.recognizers.text.number.chinese.extractors;
 
+import static com.microsoft.recognizers.text.number.chinese.ChineseNumberExtractorMode.Default;
+
 import com.microsoft.recognizers.text.number.Constants;
 import com.microsoft.recognizers.text.number.chinese.ChineseNumberExtractorMode;
 import com.microsoft.recognizers.text.number.extractors.BaseNumberExtractor;
 import com.microsoft.recognizers.text.number.resources.ChineseNumeric;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
-
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
-
-import static com.microsoft.recognizers.text.number.chinese.ChineseNumberExtractorMode.*;
 
 public class IntegerExtractor extends BaseNumberExtractor {
 
@@ -56,6 +55,9 @@ public class IntegerExtractor extends BaseNumberExtractor {
                 // 一百五十五, 负一亿三百二十二, "四" from "四川".
                 // Uses no allow lists and extracts all potential integers (useful in Units, for example).
                 builder.put(RegExpUtility.getSafeRegExp(ChineseNumeric.NumbersAggressiveRegex, Pattern.UNICODE_CHARACTER_CLASS), "IntegerChs");
+                break;
+            
+            default:
                 break;
         }
 
