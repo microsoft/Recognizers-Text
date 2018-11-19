@@ -601,10 +601,6 @@ UnitValueMap: !dictionary
     stunde: 3600
     std: 3600
     h: 3600
-    Stunden: 3600
-    Stunde: 3600
-    Std: 3600
-    H: 3600
     minuten: 60
     minute: 60
     min: 60
