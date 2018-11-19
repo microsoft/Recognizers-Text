@@ -936,11 +936,11 @@
     ]
   },
   {
-    "Input": "Ich besuche dich am 2. Advent, dotNet",
+    "Input": "Ich besuche dich am 2. Advent",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript, python, dotNet",
     "Results": [
       {
         "Text": "2. Advent",
@@ -960,11 +960,11 @@
     ]
   },
   {
-    "Input": "Ich besuche dich am 2. Advent 2018, dotNet",
+    "Input": "Ich besuche dich am 2. Advent 2018",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript, python, dotNet",
     "Results": [
       {
         "Text": "2. Advent 2018",
