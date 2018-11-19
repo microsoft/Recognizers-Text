@@ -2,9 +2,8 @@ package com.microsoft.recognizers.text.number.parsers;
 
 import com.microsoft.recognizers.text.ExtractResult;
 import com.microsoft.recognizers.text.ParseResult;
-import org.javatuples.Pair;
-
 import java.util.List;
+import org.javatuples.Pair;
 
 public class BasePercentageParser extends BaseNumberParser {
     public BasePercentageParser(INumberParserConfiguration config) {
@@ -12,6 +11,7 @@ public class BasePercentageParser extends BaseNumberParser {
     }
 
     @Override
+    @SuppressWarnings("unchecked")
     public ParseResult parse(ExtractResult extractResult) {
         String originText = extractResult.text;
         ParseResult ret = null;

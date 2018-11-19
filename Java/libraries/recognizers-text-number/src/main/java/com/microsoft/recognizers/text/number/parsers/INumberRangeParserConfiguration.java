@@ -8,13 +8,22 @@ import java.util.regex.Pattern;
 
 public interface INumberRangeParserConfiguration {
     CultureInfo getCultureInfo();
+    
     IExtractor getNumberExtractor();
+    
     IExtractor getOrdinalExtractor();
+    
     IParser getNumberParser();
+    
     Pattern getMoreOrEqual();
+    
     Pattern getLessOrEqual();
+    
     Pattern getMoreOrEqualSuffix();
+    
     Pattern getLessOrEqualSuffix();
+    
     Pattern getMoreOrEqualSeparate();
+    
     Pattern getLessOrEqualSeparate();
 }

@@ -129,7 +129,7 @@ public class PortugueseNumberParserConfiguration extends BaseNumberParserConfigu
     }
 
     private static Map<String, Long> buildOrdinalNumberMap() {
-        ImmutableMap.Builder builder = new ImmutableMap.Builder()
+        ImmutableMap.Builder<String, Long> builder = new ImmutableMap.Builder<String, Long>()
                 .putAll(PortugueseNumeric.OrdinalNumberMap);
 
         PortugueseNumeric.SuffixOrdinalMap.forEach((sufixKey, sufixValue) ->

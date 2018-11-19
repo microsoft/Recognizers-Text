@@ -53,8 +53,7 @@ public class IntegerExtractor extends BaseNumberExtractor {
         return instances.get(placeholder);
     }
 
-    private IntegerExtractor()
-    {
+    private IntegerExtractor() {
         this(EnglishNumeric.PlaceHolderDefault);
     }
 

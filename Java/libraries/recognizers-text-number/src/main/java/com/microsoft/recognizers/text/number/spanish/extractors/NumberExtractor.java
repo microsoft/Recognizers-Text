@@ -1,17 +1,16 @@
 package com.microsoft.recognizers.text.number.spanish.extractors;
 
+import static com.microsoft.recognizers.text.number.NumberMode.Default;
+
 import com.microsoft.recognizers.text.number.Constants;
 import com.microsoft.recognizers.text.number.NumberMode;
 import com.microsoft.recognizers.text.number.extractors.BaseNumberExtractor;
 import com.microsoft.recognizers.text.number.resources.BaseNumbers;
 import com.microsoft.recognizers.text.number.resources.SpanishNumeric;
-
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
-
-import static com.microsoft.recognizers.text.number.NumberMode.Default;
 
 public class NumberExtractor extends BaseNumberExtractor {
 
@@ -36,8 +35,7 @@ public class NumberExtractor extends BaseNumberExtractor {
 
         //Add Cardinal
         CardinalExtractor cardExtract = null;
-        switch (mode)
-        {
+        switch (mode) {
             case PureNumber:
                 cardExtract = CardinalExtractor.getInstance(SpanishNumeric.PlaceHolderPureNumber);
                 break;
@@ -46,10 +44,11 @@ public class NumberExtractor extends BaseNumberExtractor {
                 break;
             case Default:
                 break;
+            default:
+                break;
         }
 
-        if (cardExtract == null)
-        {
+        if (cardExtract == null) {
             cardExtract = CardinalExtractor.getInstance();
         }
 

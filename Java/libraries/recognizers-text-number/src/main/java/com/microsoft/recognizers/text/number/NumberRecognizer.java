@@ -14,7 +14,9 @@ import com.microsoft.recognizers.text.number.models.NumberModel;
 import com.microsoft.recognizers.text.number.models.NumberRangeModel;
 import com.microsoft.recognizers.text.number.models.OrdinalModel;
 import com.microsoft.recognizers.text.number.models.PercentModel;
-import com.microsoft.recognizers.text.number.parsers.*;
+import com.microsoft.recognizers.text.number.parsers.AgnosticNumberParserFactory;
+import com.microsoft.recognizers.text.number.parsers.AgnosticNumberParserType;
+import com.microsoft.recognizers.text.number.parsers.BaseNumberRangeParser;
 import com.microsoft.recognizers.text.number.portuguese.parsers.PortugueseNumberParserConfiguration;
 import com.microsoft.recognizers.text.number.spanish.parsers.SpanishNumberParserConfiguration;
 
