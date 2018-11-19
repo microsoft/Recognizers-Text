@@ -8,6 +8,10 @@ public class ExtractResult {
     public final String type;
     public final Object data;
 
+    public ExtractResult() {
+        this(null, null, null, null);
+    }
+
     public ExtractResult(Integer start, Integer length, String text, String type) {
         this(start, length, text, type, null);
     }
