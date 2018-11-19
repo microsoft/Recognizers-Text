@@ -7,12 +7,7 @@ import com.microsoft.recognizers.text.utilities.Match;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
 import com.microsoft.recognizers.text.utilities.StringUtility;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 import java.util.regex.Pattern;
 
 public class ChoiceExtractor implements IExtractor {
@@ -54,7 +49,13 @@ public class ChoiceExtractor implements IExtractor {
                     int start = match.index;
                     int length = match.length;
                     partialResults.add(
-                        new ExtractResult(start, length, text.substring(start, length).trim(), constantValue, new ChoiceExtractDataResult(text, topScore, new ArrayList<>()))
+                        new ExtractResult(
+                            start,
+                            length,
+                            text.substring(start, length+start),
+                            constantValue,
+                            new ChoiceExtractDataResult(text, topScore, new ArrayList<>())
+                        )
                     );
                 }
 
@@ -65,7 +66,7 @@ public class ChoiceExtractor implements IExtractor {
             return results;
         }
 
-        Collections.sort(partialResults, (ExtractResult extractResult1, ExtractResult extractResult2) -> (extractResult1.start < extractResult2.start) ? 1 : -1);
+        partialResults.sort(Comparator.comparingInt(er -> er.start));
 
         if (this.config.getOnlyTopMatch()) {
 

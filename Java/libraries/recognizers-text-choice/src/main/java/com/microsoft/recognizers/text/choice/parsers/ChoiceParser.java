@@ -26,7 +26,7 @@ public class ChoiceParser<T> implements IParser {
         List<OptionsOtherMatchParseResult> matches = data.otherMatches.stream().map(match -> getOptionsOtherMatchResult(match)).collect(Collectors.toList());
 
         parseResult = parseResult.withData(new OptionsParseDataResult(data.score, matches));
-        parseResult = parseResult.withValue((boolean) resolutions.get(parseResult.type));
+        parseResult = parseResult.withValue(resolutions.getOrDefault(parseResult.type, false));
 
         return parseResult;
     }
