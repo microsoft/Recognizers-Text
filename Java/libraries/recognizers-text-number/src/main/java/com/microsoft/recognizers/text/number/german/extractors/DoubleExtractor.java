@@ -4,6 +4,7 @@ import com.microsoft.recognizers.text.number.Constants;
 import com.microsoft.recognizers.text.number.LongFormatType;
 import com.microsoft.recognizers.text.number.extractors.BaseNumberExtractor;
 import com.microsoft.recognizers.text.number.resources.GermanNumeric;
+import com.microsoft.recognizers.text.utilities.RegExpUtility;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -29,15 +30,16 @@ public class DoubleExtractor extends BaseNumberExtractor {
     }
 
     public DoubleExtractor(String placeholder) {
+
         HashMap<Pattern, String> builder = new HashMap<>();
 
-        builder.put(Pattern.compile(GermanNumeric.DoubleDecimalPointRegex(placeholder), Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "DoubleNum");
-        builder.put(Pattern.compile(GermanNumeric.DoubleWithoutIntegralRegex(placeholder), Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS),"DoubleNum");
-        builder.put(Pattern.compile(GermanNumeric.DoubleWithMultiplierRegex), "DoubleNum");
-        builder.put(Pattern.compile(GermanNumeric.DoubleWithRoundNumber, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS),"DoubleNum");
-        builder.put(Pattern.compile(GermanNumeric.DoubleAllFloatRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "DoubleGer");
-        builder.put(Pattern.compile(GermanNumeric.DoubleExponentialNotationRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "DoublePow");
-        builder.put(Pattern.compile(GermanNumeric.DoubleCaretExponentialNotationRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "DoublePow");
+        builder.put(RegExpUtility.getSafeLookbehindRegExp(GermanNumeric.DoubleDecimalPointRegex(placeholder), Pattern.UNICODE_CHARACTER_CLASS), "DoubleNum");
+        builder.put(RegExpUtility.getSafeLookbehindRegExp(GermanNumeric.DoubleWithoutIntegralRegex(placeholder), Pattern.UNICODE_CHARACTER_CLASS),"DoubleNum");
+        builder.put(RegExpUtility.getSafeLookbehindRegExp(GermanNumeric.DoubleWithMultiplierRegex), "DoubleNum");
+        builder.put(RegExpUtility.getSafeLookbehindRegExp(GermanNumeric.DoubleWithRoundNumber, Pattern.UNICODE_CHARACTER_CLASS),"DoubleNum");
+        builder.put(RegExpUtility.getSafeLookbehindRegExp(GermanNumeric.DoubleAllFloatRegex, Pattern.UNICODE_CHARACTER_CLASS), "DoubleGer");
+        builder.put(RegExpUtility.getSafeLookbehindRegExp(GermanNumeric.DoubleExponentialNotationRegex, Pattern.UNICODE_CHARACTER_CLASS), "DoublePow");
+        builder.put(RegExpUtility.getSafeLookbehindRegExp(GermanNumeric.DoubleCaretExponentialNotationRegex, Pattern.UNICODE_CHARACTER_CLASS), "DoublePow");
         builder.put(generateLongFormatNumberRegexes(LongFormatType.DoubleNumDotComma, placeholder), "DoubleNum");
         builder.put(generateLongFormatNumberRegexes(LongFormatType.DoubleNumNoBreakSpaceComma, placeholder), "DoubleNum");
 

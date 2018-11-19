@@ -543,10 +543,25 @@
     ]
   },
   {
+    "Input": "100k",
+    "Results": [
+      {
+        "Text": "100k",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "100000"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
     "Input": "10G",
     "Results": [
       {
-        "Text": "10G",
+        "Text": "10g",
         "TypeName": "number",
         "Resolution": {
           "subtype": "integer",
@@ -711,7 +726,7 @@
     "Input": "Three hundred  and  thirty one",
     "Results": [
       {
-        "Text": "Three hundred  and  thirty one",
+        "Text": "three hundred  and  thirty one",
         "TypeName": "number",
         "Resolution": {
           "subtype": "integer",
@@ -2171,17 +2186,17 @@
     ]
   },
   {
-    "Input": "I can give you 1M.",
+    "Input": "I can give you 10M.",
     "Results": [
       {
-        "Text": "1M",
+        "Text": "10m",
         "TypeName": "number",
         "Resolution": {
           "subtype": "integer",
-          "value": "1000000"
+          "value": "10000000"
         },
         "Start": 15,
-        "End": 16
+        "End": 17
       }
     ]
   },

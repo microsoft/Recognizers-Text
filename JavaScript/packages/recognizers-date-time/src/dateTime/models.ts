@@ -1,4 +1,4 @@
-import { IModel, ModelResult, IExtractor, ParseResult, FormatUtility } from "@microsoft/recognizers-text";
+import { IModel, ModelResult, IExtractor, ParseResult, QueryProcessor } from "@microsoft/recognizers-text";
 import { IDateTimeParser, DateTimeParseResult } from "./parsers";
 import { IDateTimeExtractor } from "./baseDateTime";
 
@@ -22,7 +22,8 @@ export class DateTimeModel implements IDateTimeModel {
     }
 
     parse(query: string, referenceDate: Date = new Date()): ModelResult[] {
-        query = FormatUtility.preProcess(query);
+
+        query = QueryProcessor.preProcess(query);
 
         let extractResults = this.extractor.extract(query, referenceDate);
         let parseDates = new Array<DateTimeParseResult>();

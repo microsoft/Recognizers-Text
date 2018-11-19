@@ -16,14 +16,14 @@ import com.google.common.collect.ImmutableMap;
 
 public class EnglishNumericWithUnit {
 
-    public static final Map<String, String> AgeSuffixList = ImmutableMap.<String, String>builder()
+    public static final ImmutableMap<String, String> AgeSuffixList = ImmutableMap.<String, String>builder()
         .put("Year", "years old|year old|year-old|years-old|-year-old|-years-old|years of age|year of age")
         .put("Month", "months old|month old|month-old|months-old|-month-old|-months-old|month of age|months of age")
         .put("Week", "weeks old|week old|week-old|weeks-old|-week-old|-weeks-old|week of age|weeks of age")
         .put("Day", "days old|day old|day-old|days-old|-day-old|-days-old|day of age|days of age")
         .build();
 
-    public static final Map<String, String> AreaSuffixList = ImmutableMap.<String, String>builder()
+    public static final ImmutableMap<String, String> AreaSuffixList = ImmutableMap.<String, String>builder()
         .put("Square kilometer", "sq km|sq kilometer|sq kilometre|sq kilometers|sq kilometres|square kilometer|square kilometre|square kilometers|square kilometres|km2|km^2|km²")
         .put("Square hectometer", "sq hm|sq hectometer|sq hectometre|sq hectometers|sq hectometres|square hectometer|square hectometre|square hectometers|square hectometres|hm2|hm^2|hm²|hectare|hectares")
         .put("Square decameter", "sq dam|sq decameter|sq decametre|sq decameters|sq decametres|square decameter|square decametre|square decameters|square decametres|sq dekameter|sq dekametre|sq dekameters|sq dekametres|square dekameter|square dekametre|square dekameters|square dekametres|dam2|dam^2|dam²")
@@ -38,7 +38,7 @@ public class EnglishNumericWithUnit {
         .put("Acre", "-acre|acre|acres")
         .build();
 
-    public static final Map<String, String> CurrencySuffixList = ImmutableMap.<String, String>builder()
+    public static final ImmutableMap<String, String> CurrencySuffixList = ImmutableMap.<String, String>builder()
         .put("Abkhazian apsar", "abkhazian apsar|apsars")
         .put("Afghan afghani", "afghan afghani|؋|afn|afghanis|afghani")
         .put("Pul", "pul")
@@ -51,7 +51,7 @@ public class EnglishNumericWithUnit {
         .put("Aruban florin", "aruban florin|ƒ|awg|aruban florins")
         .put("Bangladeshi taka", "bangladeshi taka|৳|bdt|taka|takas|bangladeshi takas")
         .put("Paisa", "poisha|paisa")
-        .put("Bhutanese ngultrum", "Bhutanese ngultrum|nu.|btn")
+        .put("Bhutanese ngultrum", "bhutanese ngultrum|nu.|btn")
         .put("Chetrum", "chetrums|chetrum")
         .put("Bolivian boliviano", "bolivian boliviano|bob|bs.|bolivia boliviano|bolivia bolivianos|bolivian bolivianos")
         .put("Bosnia and Herzegovina convertible mark", "bosnia and herzegovina convertible mark|bam")
@@ -74,9 +74,9 @@ public class EnglishNumericWithUnit {
         .put("Ethiopian birr", "ethiopian birr|etb")
         .put("Gambian dalasi", "gmd")
         .put("Butut", "bututs|butut")
-        .put("Georgian lari", "Georgian lari|lari|gel|₾")
+        .put("Georgian lari", "georgian lari|lari|gel|₾")
         .put("Tetri", "tetri")
-        .put("Ghanaian cedi", "Ghanaian cedi|ghs|₵|gh₵")
+        .put("Ghanaian cedi", "ghanaian cedi|ghs|₵|gh₵")
         .put("Pesewa", "pesewas|pesewa")
         .put("Guatemalan quetzal", "guatemalan quetzal|gtq|guatemala quetzal")
         .put("Haitian gourde", "haitian gourde|htg")
@@ -88,7 +88,7 @@ public class EnglishNumericWithUnit {
         .put("Israeli new shekel", "₪|ils|agora")
         .put("Lithuanian litas", "ltl|lithuanian litas|lithuan litas|lithuanian lit|lithuan lit")
         .put("Japanese yen", "japanese yen|jpy|yen|-yen|¥|yens|japanese yens|japan yen|japan yens")
-        .put("Kazakhstani tenge", "Kazakhstani tenge|kzt")
+        .put("Kazakhstani tenge", "kazakhstani tenge|kazakh tenge|kazak tenge|kzt")
         .put("Kenyan shilling", "kenyan shilling|sh|kes")
         .put("North Korean won", "north korean won|kpw|north korean wons")
         .put("South Korean won", "south korean won|krw|south korean wons")
@@ -113,7 +113,7 @@ public class EnglishNumericWithUnit {
         .put("Khoums", "khoums")
         .put("Mongolian tögrög", "mongolian tögrög|mnt|₮|mongolia tögrög|mongolia tögrögs|mongolian tögrögs|mongolian togrog|mongolian togrogs|mongolia togrog|mongolia togrogs")
         .put("Mozambican metical", "mozambican metical|mt|mzn|mozambica metical|mozambica meticals|mozambican meticals")
-        .put("Burmese kyat", "Burmese kyat|ks|mmk")
+        .put("Burmese kyat", "burmese kyat|ks|mmk")
         .put("Pya", "pya")
         .put("Nicaraguan córdoba", "nicaraguan córdoba|nio")
         .put("Nigerian naira", "nigerian naira|naira|ngn|₦|nigeria naira|nigeria nairas|nigerian nairas")
@@ -137,7 +137,7 @@ public class EnglishNumericWithUnit {
         .put("Samoan tālā", "samoan tālā|tālā|tala|ws$|samoa|wst|samoan tala")
         .put("Sene", "sene")
         .put("São Tomé and Príncipe dobra", "são tomé and príncipe dobra|dobras|dobra|std")
-        .put("Sierra Leonean leone", "sierra Leonean leone|sll|leone|le")
+        .put("Sierra Leonean leone", "sierra leonean leone|sll|leone|le")
         .put("Peseta", "pesetas|peseta")
         .put("Netherlands guilder", "florin|netherlands antillean guilder|ang|ƒ|nederlandse gulden|guilders|guilder|gulden|-guilders|-guilder|dutch guilders|dutch guilder|fl")
         .put("Swazi lilangeni", "swazi lilangeni|lilangeni|szl|emalangeni")
@@ -289,7 +289,7 @@ public class EnglishNumericWithUnit {
         .put("Penni", "penniä|penni")
         .build();
 
-    public static final Map<String, String> CurrencyNameToIsoCodeMap = ImmutableMap.<String, String>builder()
+    public static final ImmutableMap<String, String> CurrencyNameToIsoCodeMap = ImmutableMap.<String, String>builder()
         .put("Afghan afghani", "AFN")
         .put("Euro", "EUR")
         .put("Albanian lek", "ALL")
@@ -477,7 +477,7 @@ public class EnglishNumericWithUnit {
         .put("Abkhazian apsar", "_AA")
         .build();
 
-    public static final Map<String, String> FractionalUnitNameToCodeMap = ImmutableMap.<String, String>builder()
+    public static final ImmutableMap<String, String> FractionalUnitNameToCodeMap = ImmutableMap.<String, String>builder()
         .put("Jiao", "JIAO")
         .put("Kopek", "KOPEK")
         .put("Pul", "PUL")
@@ -555,7 +555,7 @@ public class EnglishNumericWithUnit {
 
     public static final String CompoundUnitConnectorRegex = "(?<spacer>and)";
 
-    public static final Map<String, String> CurrencyPrefixList = ImmutableMap.<String, String>builder()
+    public static final ImmutableMap<String, String> CurrencyPrefixList = ImmutableMap.<String, String>builder()
         .put("Dollar", "$")
         .put("United States dollar", "united states $|us$|us $|u.s. $|u.s $")
         .put("East Caribbean dollar", "east caribbean $")
@@ -600,7 +600,7 @@ public class EnglishNumericWithUnit {
 
     public static final List<String> AmbiguousCurrencyUnitList = Arrays.asList("din.", "kiwi", "kina", "kobo", "lari", "lipa", "napa", "para", "sfr.", "taka", "tala", "toea", "vatu", "yuan", "ang", "ban", "bob", "btn", "byr", "cad", "cop", "cup", "dop", "gip", "jod", "kgs", "lak", "lei", "mga", "mop", "nad", "omr", "pul", "sar", "sbd", "scr", "sdg", "sek", "sen", "sol", "sos", "std", "try", "yer", "yen");
 
-    public static final Map<String, String> InformationSuffixList = ImmutableMap.<String, String>builder()
+    public static final ImmutableMap<String, String> InformationSuffixList = ImmutableMap.<String, String>builder()
         .put("Bit", "-bit|bit|bits")
         .put("Kilobit", "kilobit|kilobits|kb|Kb|kbit")
         .put("Megabit", "megabit|megabits|mb|Mb|mbit")
@@ -621,7 +621,7 @@ public class EnglishNumericWithUnit {
 
     public static final String BuildSuffix = "(?=(\\s|\\W|$))";
 
-    public static final Map<String, String> LengthSuffixList = ImmutableMap.<String, String>builder()
+    public static final ImmutableMap<String, String> LengthSuffixList = ImmutableMap.<String, String>builder()
         .put("Kilometer", "km|kilometer|kilometre|kilometers|kilometres|kilo meter|kilo meters|kilo metres|kilo metre")
         .put("Hectometer", "hm|hectometer|hectometre|hectometers|hectometres|hecto meter|hecto meters|hecto metres|hecto metre")
         .put("Decameter", "dam|decameter|decametre|decameters|decametres|deca meter|deca meters|deca metres|deca metre")
@@ -642,7 +642,7 @@ public class EnglishNumericWithUnit {
 
     public static final List<String> AmbiguousLengthUnitList = Arrays.asList("m", "yard", "yards", "pm", "pt", "pts");
 
-    public static final Map<String, String> SpeedSuffixList = ImmutableMap.<String, String>builder()
+    public static final ImmutableMap<String, String> SpeedSuffixList = ImmutableMap.<String, String>builder()
         .put("Meter per second", "meters / second|m/s|meters per second|metres per second|meter per second|metre per second")
         .put("Kilometer per hour", "km/h|kilometres per hour|kilometers per hour|kilometer per hour|kilometre per hour")
         .put("Kilometer per minute", "km/min|kilometers per minute|kilometres per minute|kilometer per minute|kilometre per minute")
@@ -655,9 +655,9 @@ public class EnglishNumericWithUnit {
         .put("Yard per second", "yards per second|yard per second|yards / second|yards/s|yard/s")
         .build();
 
-    public static final Map<String, String> TemperatureSuffixList = ImmutableMap.<String, String>builder()
+    public static final ImmutableMap<String, String> TemperatureSuffixList = ImmutableMap.<String, String>builder()
         .put("F", "degrees fahrenheit|degree fahrenheit|deg fahrenheit|degs fahrenheit|fahrenheit|°f|degrees farenheit|degree farenheit|deg farenheit|degs farenheit|degrees f|degree f|deg f|degs f|farenheit|f")
-        .put("K", "k|kelvin")
+        .put("K", "k|K|kelvin")
         .put("R", "rankine|°r")
         .put("D", "delisle|°de")
         .put("C", "degrees celsius|degree celsius|deg celsius|degs celsius|celsius|degrees celcius|degree celcius|celcius|deg celcius|degs celcius|degrees centigrade|degree centigrade|centigrade|degrees centigrate|degree centigrate|degs centigrate|deg centigrate|centigrate|degrees c|degree c|deg c|degs c|°c|c")
@@ -666,7 +666,7 @@ public class EnglishNumericWithUnit {
 
     public static final List<String> AmbiguousTemperatureUnitList = Arrays.asList("c", "f", "k");
 
-    public static final Map<String, String> VolumeSuffixList = ImmutableMap.<String, String>builder()
+    public static final ImmutableMap<String, String> VolumeSuffixList = ImmutableMap.<String, String>builder()
         .put("Cubic meter", "m3|cubic meter|cubic meters|cubic metre|cubic metres")
         .put("Cubic centimeter", "cubic centimeter|cubic centimetre|cubic centimeters|cubic centimetres")
         .put("Cubic millimiter", "cubic millimiter|cubic millimitre|cubic millimiters|cubic millimitres")
@@ -689,7 +689,7 @@ public class EnglishNumericWithUnit {
 
     public static final List<String> AmbiguousVolumeUnitList = Arrays.asList("l", "ounce", "oz", "cup", "peck", "cord", "gill");
 
-    public static final Map<String, String> WeightSuffixList = ImmutableMap.<String, String>builder()
+    public static final ImmutableMap<String, String> WeightSuffixList = ImmutableMap.<String, String>builder()
         .put("Kilogram", "kg|kilogram|kilograms|kilo|kilos")
         .put("Gram", "g|gram|grams")
         .put("Milligram", "mg|milligram|milligrams")
@@ -699,7 +699,7 @@ public class EnglishNumericWithUnit {
         .put("Ton", "-ton|ton|tons|tonne|tonnes")
         .put("Pound", "pound|pounds|lb")
         .put("Ounce", "-ounce|ounce|oz|ounces")
-        .put("Weight unit", "pennyweight|grain|british long ton|US short hundredweight|stone|dram")
+        .put("Weight unit", "pennyweight|grain|british long ton|us short hundredweight|stone|dram")
         .build();
 
     public static final List<String> AmbiguousWeightUnitList = Arrays.asList("g", "oz", "stone", "dram");

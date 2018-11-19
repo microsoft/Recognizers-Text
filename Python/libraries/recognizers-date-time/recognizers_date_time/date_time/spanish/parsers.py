@@ -1,7 +1,7 @@
 from datetime import datetime, timedelta
 
 from recognizers_text.utilities import RegExpUtility
-from ..utilities import DateTimeResolutionResult, FormatUtil, DateUtils
+from ..utilities import DateTimeResolutionResult, DateTimeFormatUtil, DateUtils
 from ..base_datetimeperiod import BaseDateTimePeriodParser
 from ...resources import SpanishDateTime
 from .datetimeperiod_parser_config import SpanishDateTimePeriodParserConfiguration
@@ -35,7 +35,7 @@ class SpanishDateTimePeriodParser(BaseDateTimePeriodParser):
             month = date.month
             year = date.year
 
-            result.timex = FormatUtil.format_date(date) + time_str
+            result.timex = DateTimeFormatUtil.format_date(date) + time_str
 
             result.past_value = [
                 DateUtils.safe_create_from_value(DateUtils.min_value, year, month, day, begin_hour, 0, 0),

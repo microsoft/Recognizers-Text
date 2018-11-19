@@ -10,36 +10,36 @@ namespace Microsoft.Recognizers.Text.DateTime.French
     {
         // avant - 'before'
         public static readonly Regex BeforeRegex =
-            new Regex(DateTimeDefinitions.BeforeRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.BeforeRegex, RegexOptions.Singleline);
 
         // ensuite/puis are for adverbs, i.e 'i ate and then i walked', so we'll use apres 
         public static readonly Regex AfterRegex =
-            new Regex(DateTimeDefinitions.AfterRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline); 
+            new Regex(DateTimeDefinitions.AfterRegex, RegexOptions.Singleline); 
 
         public static readonly Regex SinceRegex =
-            new Regex(DateTimeDefinitions.SinceRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.SinceRegex, RegexOptions.Singleline);
 
         public static readonly Regex AroundRegex =
-            new Regex(DateTimeDefinitions.AroundRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.AroundRegex, RegexOptions.Singleline);
 
         // 'Je vais du lundi au mecredi' - I will go from monday to weds
         public static readonly Regex FromToRegex =
-            new Regex(DateTimeDefinitions.FromToRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline); 
+            new Regex(DateTimeDefinitions.FromToRegex, RegexOptions.Singleline); 
 
         public static readonly Regex SingleAmbiguousMonthRegex =
-            new Regex(DateTimeDefinitions.SingleAmbiguousMonthRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.SingleAmbiguousMonthRegex, RegexOptions.Singleline);
 
         public static readonly Regex PrepositionSuffixRegex =
-            new Regex(DateTimeDefinitions.PrepositionSuffixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.PrepositionSuffixRegex, RegexOptions.Singleline);
 
         public static readonly Regex NumberEndingPattern =
-            new Regex(DateTimeDefinitions.NumberEndingPattern, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.NumberEndingPattern, RegexOptions.Singleline);
 
         public static readonly Regex DateAfterRegex =
-            new Regex(DateTimeDefinitions.YearAfterRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.YearAfterRegex, RegexOptions.Singleline);
 
         public static readonly Regex UnspecificDatePeriodRegex =
-            new Regex(DateTimeDefinitions.UnspecificDatePeriodRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.UnspecificDatePeriodRegex, RegexOptions.Singleline);
 
         public static readonly Regex[] TermFilterRegexes =
         {
@@ -47,7 +47,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public static readonly StringMatcher SuperfluousWordMatcher = new StringMatcher();
 
-        public IDateTimeExtractor DateExtractor { get; }
+        public IDateExtractor DateExtractor { get; }
 
         public IDateTimeExtractor TimeExtractor { get; }
 

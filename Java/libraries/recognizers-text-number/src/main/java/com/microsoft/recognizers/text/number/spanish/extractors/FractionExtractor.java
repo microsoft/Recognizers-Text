@@ -3,6 +3,7 @@ package com.microsoft.recognizers.text.number.spanish.extractors;
 import com.microsoft.recognizers.text.number.Constants;
 import com.microsoft.recognizers.text.number.extractors.BaseNumberExtractor;
 import com.microsoft.recognizers.text.number.resources.SpanishNumeric;
+import com.microsoft.recognizers.text.utilities.RegExpUtility;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -24,13 +25,14 @@ public class FractionExtractor extends BaseNumberExtractor {
     }
 
     public FractionExtractor() {
+
         HashMap<Pattern, String> builder = new HashMap<>();
 
-        builder.put(Pattern.compile(SpanishNumeric.FractionNotationRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "FracNum");
-        builder.put(Pattern.compile(SpanishNumeric.FractionNotationWithSpacesRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "FracNum");
-        builder.put(Pattern.compile(SpanishNumeric.FractionNounRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "FracSpa");
-        builder.put(Pattern.compile(SpanishNumeric.FractionNounWithArticleRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "FracSpa");
-        builder.put(Pattern.compile(SpanishNumeric.FractionPrepositionRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "FracSpa");
+        builder.put(RegExpUtility.getSafeLookbehindRegExp(SpanishNumeric.FractionNotationRegex, Pattern.UNICODE_CHARACTER_CLASS), "FracNum");
+        builder.put(RegExpUtility.getSafeLookbehindRegExp(SpanishNumeric.FractionNotationWithSpacesRegex, Pattern.UNICODE_CHARACTER_CLASS), "FracNum");
+        builder.put(RegExpUtility.getSafeLookbehindRegExp(SpanishNumeric.FractionNounRegex, Pattern.UNICODE_CHARACTER_CLASS), "FracSpa");
+        builder.put(RegExpUtility.getSafeLookbehindRegExp(SpanishNumeric.FractionNounWithArticleRegex, Pattern.UNICODE_CHARACTER_CLASS), "FracSpa");
+        builder.put(RegExpUtility.getSafeLookbehindRegExp(SpanishNumeric.FractionPrepositionRegex, Pattern.UNICODE_CHARACTER_CLASS), "FracSpa");
 
         this.regexes = Collections.unmodifiableMap(builder);
     }

@@ -5,6 +5,7 @@ import com.microsoft.recognizers.text.number.LongFormatType;
 import com.microsoft.recognizers.text.number.NumberOptions;
 import com.microsoft.recognizers.text.number.extractors.BaseNumberExtractor;
 import com.microsoft.recognizers.text.number.resources.EnglishNumeric;
+import com.microsoft.recognizers.text.utilities.RegExpUtility;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -44,6 +45,7 @@ public class DoubleExtractor extends BaseNumberExtractor {
     }
 
     public static DoubleExtractor getInstance(String placeholder) {
+
         if (!instances.containsKey(placeholder)) {
             DoubleExtractor instance = new DoubleExtractor(placeholder);
             instances.put(placeholder, instance);
@@ -52,21 +54,21 @@ public class DoubleExtractor extends BaseNumberExtractor {
         return instances.get(placeholder);
     }
 
-    private DoubleExtractor()
-    {
+    private DoubleExtractor() {
         this(EnglishNumeric.PlaceHolderDefault);
     }
 
     private DoubleExtractor(String placeholder) {
+
         HashMap<Pattern, String> builder = new HashMap<>();
 
-        builder.put(Pattern.compile(EnglishNumeric.DoubleDecimalPointRegex(placeholder), Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "DoubleNum");
-        builder.put(Pattern.compile(EnglishNumeric.DoubleWithoutIntegralRegex(placeholder), Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "DoubleNum");
-        builder.put(Pattern.compile(EnglishNumeric.DoubleWithMultiplierRegex), "DoubleNum");
-        builder.put(Pattern.compile(EnglishNumeric.DoubleWithRoundNumber, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "DoubleNum");
-        builder.put(Pattern.compile(EnglishNumeric.DoubleAllFloatRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "DoubleEng");
-        builder.put(Pattern.compile(EnglishNumeric.DoubleExponentialNotationRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "DoublePow");
-        builder.put(Pattern.compile(EnglishNumeric.DoubleCaretExponentialNotationRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "DoublePow");
+        builder.put(RegExpUtility.getSafeLookbehindRegExp(EnglishNumeric.DoubleDecimalPointRegex(placeholder), Pattern.UNICODE_CHARACTER_CLASS), "DoubleNum");
+        builder.put(Pattern.compile(EnglishNumeric.DoubleWithoutIntegralRegex(placeholder), Pattern.UNICODE_CHARACTER_CLASS), "DoubleNum");
+        builder.put(RegExpUtility.getSafeLookbehindRegExp(EnglishNumeric.DoubleWithMultiplierRegex), "DoubleNum");
+        builder.put(RegExpUtility.getSafeLookbehindRegExp(EnglishNumeric.DoubleWithRoundNumber, Pattern.UNICODE_CHARACTER_CLASS), "DoubleNum");
+        builder.put(Pattern.compile(EnglishNumeric.DoubleAllFloatRegex, Pattern.UNICODE_CHARACTER_CLASS), "DoubleEng");
+        builder.put(RegExpUtility.getSafeLookbehindRegExp(EnglishNumeric.DoubleExponentialNotationRegex, Pattern.UNICODE_CHARACTER_CLASS), "DoublePow");
+        builder.put(RegExpUtility.getSafeLookbehindRegExp(EnglishNumeric.DoubleCaretExponentialNotationRegex, Pattern.UNICODE_CHARACTER_CLASS), "DoublePow");
         builder.put(generateLongFormatNumberRegexes(LongFormatType.DoubleNumCommaDot, placeholder), "DoubleNum");
         builder.put(generateLongFormatNumberRegexes(LongFormatType.DoubleNumBlankDot, placeholder), "DoubleNum");
         builder.put(generateLongFormatNumberRegexes(LongFormatType.DoubleNumNoBreakSpaceDot, placeholder), "DoubleNum");

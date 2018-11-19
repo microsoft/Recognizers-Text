@@ -16,25 +16,54 @@ import java.util.regex.Pattern;
 public class EnglishNumberRangeParserConfiguration implements INumberRangeParserConfiguration {
 
     @Override
-    public CultureInfo getCultureInfo() { return this.cultureInfo; }
+    public CultureInfo getCultureInfo() {
+        return this.cultureInfo;
+    }
+
     @Override
-    public IExtractor getNumberExtractor() { return this.numberExtractor; }
+    public IExtractor getNumberExtractor() {
+        return this.numberExtractor;
+    }
+
     @Override
-    public IExtractor getOrdinalExtractor() { return this.ordinalExtractor; }
+    public IExtractor getOrdinalExtractor() {
+        return this.ordinalExtractor;
+    }
+    
     @Override
-    public IParser getNumberParser() { return this.numberParser; }
+    public IParser getNumberParser() {
+        return this.numberParser;
+    }
+    
     @Override
-    public Pattern getMoreOrEqual() { return this.moreOrEqual; }
+    public Pattern getMoreOrEqual() {
+        return this.moreOrEqual;
+    }
+    
     @Override
-    public Pattern getLessOrEqual() { return this.lessOrEqual; }
+    public Pattern getLessOrEqual() {
+        return this.lessOrEqual;
+    }
+    
     @Override
-    public Pattern getMoreOrEqualSuffix() { return this.moreOrEqualSuffix; }
+    public Pattern getMoreOrEqualSuffix() {
+        return this.moreOrEqualSuffix;
+    }
+    
     @Override
-    public Pattern getLessOrEqualSuffix() { return this.lessOrEqualSuffix; }
+    public Pattern getLessOrEqualSuffix() {
+        return this.lessOrEqualSuffix;
+    }
+    
     @Override
-    public Pattern getMoreOrEqualSeparate() { return this.moreOrEqualSeparate; }
+    public Pattern getMoreOrEqualSeparate() {
+        return this.moreOrEqualSeparate;
+    }
+    
     @Override
-    public Pattern getLessOrEqualSeparate() { return this.lessOrEqualSeparate; }
+    public Pattern getLessOrEqualSeparate() {
+        return this.lessOrEqualSeparate;
+    }
 
     private final CultureInfo cultureInfo;
     private final IExtractor numberExtractor;

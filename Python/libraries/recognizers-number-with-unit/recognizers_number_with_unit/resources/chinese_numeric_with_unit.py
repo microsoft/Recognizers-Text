@@ -93,7 +93,7 @@ class ChineseNumericWithUnit:
                                ('Grosz', '格罗希'),
                                ('Qatari riyal', '卡达里亚尔'),
                                ('Saudi riyal', '沙特里亚尔'),
-                               ('Riyal', '里亚尔|'),
+                               ('Riyal', '里亚尔'),
                                ('Dirham', '迪拉姆'),
                                ('Halala', '哈拉'),
                                ('Samoan tālā', '萨摩亚塔拉'),
@@ -162,7 +162,7 @@ class ChineseNumericWithUnit:
                                ('Ruble', '卢布'),
                                ('Algerian dinar', '阿尔及利亚第纳尔'),
                                ('Bahraini dinar', '巴林第纳尔'),
-                               ('Iraqi dinar', '伊拉克第纳尔|'),
+                               ('Iraqi dinar', '伊拉克第纳尔'),
                                ('Jordanian dinar', '约旦第纳尔'),
                                ('Kuwaiti dinar', '科威特第纳尔|科威特币'),
                                ('Libyan dinar', '利比亚第纳尔'),
@@ -208,7 +208,7 @@ class ChineseNumericWithUnit:
                                ('Brunei dollar', '文莱元'),
                                ('Singapore dollar', '新加坡元|新元'),
                                ('Canadian dollar', '加元|加拿大元'),
-                               ('Cayman Islands dollar', '开曼岛元|'),
+                               ('Cayman Islands dollar', '开曼岛元'),
                                ('New Zealand dollar', '新西兰元|纽元'),
                                ('Cook Islands dollar', '库克群岛元'),
                                ('Fijian dollar', '斐济元|斐币'),
@@ -574,7 +574,7 @@ class ChineseNumericWithUnit:
                                 ('Petabyte', '千兆兆|千万亿字节|pb')])
     DimensionAmbiguousValues = ['丈', '位', '克', '分', '升', '寸', '尺', '斗', '斤', '桶', '毫', '石', '码', '磅', '米', '罐', '里', 'm', 'km', 'dm', 'cm', 'mm', 'l', 'ml', 'kg', 'mg', 'g', 't', 'b', 'byte', 'kb', 'mb', 'gb', 'tb', 'pb']
     TemperatureSuffixList = dict([('F', '华氏温度|华氏度|°f'),
-                                  ('K', 'k|开尔文温度|开氏度|凯氏度'),
+                                  ('K', '开尔文温度|开氏度|凯氏度|K|k'),
                                   ('R', '兰氏温度|°r'),
                                   ('C', '摄氏温度|摄氏度|°c'),
                                   ('Degree', '度')])

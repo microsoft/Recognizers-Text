@@ -10,7 +10,6 @@ package com.microsoft.recognizers.text.number.resources;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
 
 import com.google.common.collect.ImmutableMap;
 
@@ -69,7 +68,8 @@ public class SpanishNumeric {
 			.replace("{placeholder}", placeholder);
     }
 
-    public static final String NumbersWithSuffix = "(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+\\s*(k|M|T|G)(?=\\b)";
+    public static final String NumbersWithSuffix = "(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+\\s*{BaseNumbers.NumberMultiplierRegex}(?=\\b)"
+            .replace("{BaseNumbers.NumberMultiplierRegex}", BaseNumbers.NumberMultiplierRegex);
 
     public static final String RoundNumberIntegerRegexWithLocks = "(?<=\\b)({DigitsNumberRegex})+\\s+{RoundNumberIntegerRegex}(?=\\b)"
             .replace("{DigitsNumberRegex}", DigitsNumberRegex)
@@ -167,7 +167,8 @@ public class SpanishNumeric {
 			.replace("{placeholder}", placeholder);
     }
 
-    public static final String DoubleWithMultiplierRegex = "(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+\\[\\.,])))\\d+[\\.,]\\d+\\s*(K|k|M|G|T)(?=\\b)";
+    public static final String DoubleWithMultiplierRegex = "(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+\\[\\.,])))\\d+[\\.,]\\d+\\s*{BaseNumbers.NumberMultiplierRegex}(?=\\b)"
+            .replace("{BaseNumbers.NumberMultiplierRegex}", BaseNumbers.NumberMultiplierRegex);
 
     public static final String DoubleWithRoundNumber = "(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+\\[\\.,])))\\d+[\\.,]\\d+\\s+{RoundNumberIntegerRegex}(?=\\b)"
             .replace("{RoundNumberIntegerRegex}", RoundNumberIntegerRegex);
@@ -181,8 +182,6 @@ public class SpanishNumeric {
 
     public static final String NumberWithPrefixPercentage = "(?<!%)({BaseNumbers.NumberReplaceToken})(\\s*)(%(?!{BaseNumbers.NumberReplaceToken})|(por ciento|por cien)\\b)"
             .replace("{BaseNumbers.NumberReplaceToken}", BaseNumbers.NumberReplaceToken);
-
-    public static final String CurrencyRegex = "(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+\\s*(B|b|m|t|g)(?=\\b)";
 
     public static final Character DecimalSeparatorChar = ',';
 
@@ -204,9 +203,10 @@ public class SpanishNumeric {
 
     public static final String HalfADozenRegex = "media\\s+docena";
 
-    public static final String DigitalNumberRegex = "((?<=\\b)(mil|millones|mill[oó]n|billones|bill[oó]n|trillones|trill[oó]n|docenas?)(?=\\b))|((?<=(\\d|\\b))(k|t|m|g)(?=\\b))";
+    public static final String DigitalNumberRegex = "((?<=\\b)(mil|millones|mill[oó]n|billones|bill[oó]n|trillones|trill[oó]n|docenas?)(?=\\b))|((?<=(\\d|\\b)){BaseNumbers.MultiplierLookupRegex}(?=\\b))"
+            .replace("{BaseNumbers.MultiplierLookupRegex}", BaseNumbers.MultiplierLookupRegex);
 
-    public static final Map<String, Long> CardinalNumberMap = ImmutableMap.<String, Long>builder()
+    public static final ImmutableMap<String, Long> CardinalNumberMap = ImmutableMap.<String, Long>builder()
         .put("cero", 0L)
         .put("un", 1L)
         .put("una", 1L)
@@ -287,7 +287,7 @@ public class SpanishNumeric {
         .put("trillones", 1000000000000000000L)
         .build();
 
-    public static final Map<String, Long> OrdinalNumberMap = ImmutableMap.<String, Long>builder()
+    public static final ImmutableMap<String, Long> OrdinalNumberMap = ImmutableMap.<String, Long>builder()
         .put("primero", 1L)
         .put("primera", 1L)
         .put("primer", 1L)
@@ -373,7 +373,7 @@ public class SpanishNumeric {
         .put("billonesima", 1000000000000L)
         .build();
 
-    public static final Map<String, Long> PrefixCardinalMap = ImmutableMap.<String, Long>builder()
+    public static final ImmutableMap<String, Long> PrefixCardinalMap = ImmutableMap.<String, Long>builder()
         .put("dos", 2L)
         .put("tres", 3L)
         .put("cuatro", 4L)
@@ -423,13 +423,13 @@ public class SpanishNumeric {
         .put("novecientos", 900L)
         .build();
 
-    public static final Map<String, Long> SuffixOrdinalMap = ImmutableMap.<String, Long>builder()
+    public static final ImmutableMap<String, Long> SuffixOrdinalMap = ImmutableMap.<String, Long>builder()
         .put("milesimo", 1000L)
         .put("millonesimo", 1000000L)
         .put("billonesimo", 1000000000000L)
         .build();
 
-    public static final Map<String, Long> RoundNumberMap = ImmutableMap.<String, Long>builder()
+    public static final ImmutableMap<String, Long> RoundNumberMap = ImmutableMap.<String, Long>builder()
         .put("mil", 1000L)
         .put("milesimo", 1000L)
         .put("millon", 1000000L)
@@ -449,6 +449,7 @@ public class SpanishNumeric {
         .put("k", 1000L)
         .put("m", 1000000L)
         .put("g", 1000000000L)
+        .put("b", 1000000000L)
         .put("t", 1000000000000L)
         .build();
 

@@ -3,6 +3,7 @@ package com.microsoft.recognizers.text.number.chinese.extractors;
 import com.microsoft.recognizers.text.number.Constants;
 import com.microsoft.recognizers.text.number.extractors.BaseNumberExtractor;
 import com.microsoft.recognizers.text.number.resources.ChineseNumeric;
+import com.microsoft.recognizers.text.utilities.RegExpUtility;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -27,11 +28,11 @@ public class FractionExtractor extends BaseNumberExtractor {
         HashMap<Pattern, String> builder = new HashMap<>();
 
         // -4 5/2,       ４ ６／３
-        builder.put(Pattern.compile(ChineseNumeric.FractionNotationSpecialsCharsRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "FracNum");
+        builder.put(RegExpUtility.getSafeLookbehindRegExp(ChineseNumeric.FractionNotationSpecialsCharsRegex, Pattern.UNICODE_CHARACTER_CLASS), "FracNum");
         // 8/3
-        builder.put(Pattern.compile(ChineseNumeric.FractionNotationRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "FracNum");
+        builder.put(RegExpUtility.getSafeLookbehindRegExp(ChineseNumeric.FractionNotationRegex, Pattern.UNICODE_CHARACTER_CLASS), "FracNum");
         //四分之六十五
-        builder.put(Pattern.compile(ChineseNumeric.AllFractionNumber, Pattern.UNICODE_CHARACTER_CLASS), "FracChs");
+        builder.put(RegExpUtility.getSafeLookbehindRegExp(ChineseNumeric.AllFractionNumber, Pattern.UNICODE_CHARACTER_CLASS), "FracChs");
 
         this.regexes = Collections.unmodifiableMap(builder);
     }

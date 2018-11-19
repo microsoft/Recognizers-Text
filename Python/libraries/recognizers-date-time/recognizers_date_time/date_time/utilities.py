@@ -90,7 +90,7 @@ class TimeOfDayResolution:
         self.end_hour: int = 0
         self.end_min: int = 0
 
-class FormatUtil:
+class DateTimeFormatUtil:
     HourTimeRegex = RegExpUtility.get_safe_reg_exp(r'(?<!P)T\d{2}')
 
     @staticmethod
@@ -108,7 +108,7 @@ class FormatUtil:
 
     @staticmethod
     def luis_date_from_datetime(date: datetime) -> str:
-        return FormatUtil.luis_date(date.year, date.month, date.day)
+        return DateTimeFormatUtil.luis_date(date.year, date.month, date.day)
 
     @staticmethod
     def luis_time(hour: int, minute: int, second: int) -> str:
@@ -116,11 +116,11 @@ class FormatUtil:
 
     @staticmethod
     def luis_time_from_datetime(time: datetime) -> str:
-        return FormatUtil.luis_time(time.hour, time.minute, time.second)
+        return DateTimeFormatUtil.luis_time(time.hour, time.minute, time.second)
 
     @staticmethod
     def luis_date_time(time: datetime) -> str:
-        return FormatUtil.luis_date_from_datetime(time) + 'T' + FormatUtil.luis_time_from_datetime(time)
+        return DateTimeFormatUtil.luis_date_from_datetime(time) + 'T' + DateTimeFormatUtil.luis_time_from_datetime(time)
 
     @staticmethod
     def format_date(date: datetime) -> str:
@@ -132,11 +132,11 @@ class FormatUtil:
 
     @staticmethod
     def format_date_time(date_time: datetime) -> str:
-        return FormatUtil.format_date(date_time) + ' ' + FormatUtil.format_time(date_time)
+        return DateTimeFormatUtil.format_date(date_time) + ' ' + DateTimeFormatUtil.format_time(date_time)
 
     @staticmethod
     def all_str_to_pm(source: str) -> str:
-        matches = list(regex.finditer(FormatUtil.HourTimeRegex, source))
+        matches = list(regex.finditer(DateTimeFormatUtil.HourTimeRegex, source))
         split: List[str] = list()
         last_position = 0
 
@@ -151,8 +151,8 @@ class FormatUtil:
             split.append(source[last_position:])
 
         for index, value in enumerate(split):
-            if regex.search(FormatUtil.HourTimeRegex, value):
-                split[index] = FormatUtil.to_pm(value)
+            if regex.search(DateTimeFormatUtil.HourTimeRegex, value):
+                split[index] = DateTimeFormatUtil.to_pm(value)
 
         return ''.join(split)
 
@@ -440,8 +440,8 @@ class AgoLaterUtil:
         else: 
             return result
 
-        result.timex = FormatUtil.luis_date_from_datetime(
-            value) if mode == AgoLaterMode.DATE else FormatUtil.luis_date_time(value)
+        result.timex = DateTimeFormatUtil.luis_date_from_datetime(
+            value) if mode == AgoLaterMode.DATE else DateTimeFormatUtil.luis_date_time(value)
         result.future_value = value
         result.past_value = value
         result.success = True

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
+﻿using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 
@@ -18,7 +15,7 @@ namespace Microsoft.Recognizers.Text.Number
 
         public override ParseResult Parse(ExtractResult extResult)
         {
-            // check if the parser is configured to support specific types
+            // Check if the parser is configured to support specific types
             if (SupportedTypes != null && !SupportedTypes.Any(t => extResult.Type.Equals(t)))
             {
                 return null;
@@ -86,13 +83,13 @@ namespace Microsoft.Recognizers.Text.Number
 
             if (ret != null)
             {
-                ret.Text = extResult.Text;
+                ret.Text = extResult.Text.ToLowerInvariant();
             }
 
             return ret;
         }
 
-        // Replace traditional Chinese characters with simpilified Chinese ones. 
+        // Replace traditional Chinese characters with simplified Chinese ones. 
         private string ReplaceTraWithSim(string text)
         {
             if (string.IsNullOrWhiteSpace(text))
@@ -105,6 +102,7 @@ namespace Microsoft.Recognizers.Text.Number
             {
                 builder.Append(Config.TratoSimMap.ContainsKey(c) ? Config.TratoSimMap[c] : c);
             }
+
             return builder.ToString();
         }
 

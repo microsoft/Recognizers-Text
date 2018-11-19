@@ -86,7 +86,7 @@ namespace SimpleConsole
                 // E.g "Set the temperature to 30 degrees celsius" will return "30 C"
                 NumberWithUnitRecognizer.RecognizeTemperature(query, culture),
 
-                // Datetime recognizer This model will find any Date even if its write in coloquial language 
+                // Datetime recognizer This model will find any Date even if its write in colloquial language 
                 // E.g "I'll go back 8pm today" will return "2017-10-04 20:00:00"
                 DateTimeRecognizer.RecognizeDateTime(query, culture),
 
@@ -134,7 +134,7 @@ namespace SimpleConsole
         /// </summary>
         private static void ShowIntro()
         {
-            Console.WriteLine("Welcome to the Recognizer's Sample console application!");
+            Console.WriteLine("Welcome to the Recognizers' Sample console application!");
             Console.WriteLine("To try the recognizers enter a phrase and let us show you the different outputs for each recognizer or just type 'exit' to leave the application.");
             Console.WriteLine();
             Console.WriteLine("Here are some examples you could try:");

@@ -160,7 +160,7 @@
         "End": 51
       },
       {
-        "Text": "Dritten",
+        "Text": "dritten",
         "TypeName": "ordinal",
         "Resolution": {
           "value": "3"
@@ -175,7 +175,7 @@
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "Zuerst",
+        "Text": "zuerst",
         "TypeName": "ordinal",
         "Resolution": {
           "value": "1"
@@ -329,7 +329,7 @@
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "Milliardsten",
+        "Text": "milliardsten",
         "TypeName": "ordinal",
         "Resolution": {
           "value": "1000000000"
@@ -502,7 +502,7 @@
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "einhundert Milliardste",
+        "Text": "einhundert milliardste",
         "TypeName": "ordinal",
         "Resolution": {
           "value": "100000000000"
@@ -511,7 +511,7 @@
         "End": 101
       },
       {
-        "Text": "dreihundert Milliardste",
+        "Text": "dreihundert milliardste",
         "TypeName": "ordinal",
         "Resolution": {
           "value": "300000000000"
@@ -526,7 +526,7 @@
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "einhundert Millionste",
+        "Text": "einhundert millionste",
         "TypeName": "ordinal",
         "Resolution": {
           "value": "100000000"
@@ -535,7 +535,7 @@
         "End": 100
       },
       {
-        "Text": "dreihundert Millionste",
+        "Text": "dreihundert millionste",
         "TypeName": "ordinal",
         "Resolution": {
           "value": "300000000"
@@ -550,7 +550,7 @@
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "einhundert Billionste",
+        "Text": "einhundert billionste",
         "TypeName": "ordinal",
         "Resolution": {
           "value": "100000000000000"
@@ -559,7 +559,7 @@
         "End": 100
       },
       {
-        "Text": "dreihundert Billionste",
+        "Text": "dreihundert billionste",
         "TypeName": "ordinal",
         "Resolution": {
           "value": "300000000000000"
@@ -574,7 +574,7 @@
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "Dritten",
+        "Text": "dritten",
         "TypeName": "ordinal",
         "Resolution": {
           "value": "3"

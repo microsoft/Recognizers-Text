@@ -21,7 +21,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public IDateTimeExtractor DurationExtractor { get; }
 
-        public IDateTimeExtractor DateExtractor { get; }
+        public IDateExtractor DateExtractor { get; }
 
         public IDateTimeParser DurationParser { get; }
 
@@ -59,19 +59,11 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public Regex RelativeWeekDayRegex { get; }
 
-        /*
-         The following three regexes only used in this configuration
-         They are not used in the base parser, therefore they are not extracted
-         If the spanish date parser need the same regexes, they should be extracted 
-        */
-        public static readonly Regex RelativeDayRegex= 
-            new Regex(DateTimeDefinitions.RelativeDayRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public Regex RelativeDayRegex { get; }
 
-        public static readonly Regex NextPrefixRegex = 
-            new Regex(DateTimeDefinitions.NextPrefixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public Regex NextPrefixRegex { get; }
 
-        public static readonly Regex PastPrefixRegex = 
-            new Regex(DateTimeDefinitions.PastPrefixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public Regex PastPrefixRegex { get; }
 
         public IImmutableDictionary<string, int> DayOfMonth { get; }
 
@@ -80,6 +72,16 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public IImmutableDictionary<string, int> MonthOfYear { get; }
 
         public IImmutableDictionary<string, int> CardinalMap { get; }
+
+        public IImmutableList<string> SameDayTerms { get; }
+
+        public IImmutableList<string> PlusOneDayTerms { get; }
+
+        public IImmutableList<string> MinusOneDayTerms { get; }
+
+        public IImmutableList<string> PlusTwoDayTerms { get; }
+
+        public IImmutableList<string> MinusTwoDayTerms { get; }
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
@@ -109,65 +111,33 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             RelativeMonthRegex = EnglishDateExtractorConfiguration.RelativeMonthRegex;
             YearSuffix = EnglishDateExtractorConfiguration.YearSuffix;
             RelativeWeekDayRegex = EnglishDateExtractorConfiguration.RelativeWeekDayRegex;
+            RelativeDayRegex = new Regex(DateTimeDefinitions.RelativeDayRegex, RegexOptions.Singleline);
+            NextPrefixRegex = new Regex(DateTimeDefinitions.NextPrefixRegex, RegexOptions.Singleline);
+            PastPrefixRegex = new Regex(DateTimeDefinitions.PastPrefixRegex, RegexOptions.Singleline);
             DayOfMonth = config.DayOfMonth;
             DayOfWeek = config.DayOfWeek;
             MonthOfYear = config.MonthOfYear;
             CardinalMap = config.CardinalMap;
             UnitMap = config.UnitMap;
             UtilityConfiguration = config.UtilityConfiguration;
-        }
-
-        public int GetSwiftDay(string text)
-        {
-            var trimmedText = text.Trim().ToLowerInvariant();
-            var swift = 0;
-
-            var match = RelativeDayRegex.Match(text);
-
-            if (trimmedText.Equals("today"))
-            {
-                swift = 0;
-            }
-            else if (trimmedText.Equals("tomorrow") || trimmedText.Equals("tmr"))
-            {
-                swift = 1;
-            }
-            else if (trimmedText.Equals("yesterday"))
-            {
-                swift = -1;
-            }
-            else if (trimmedText.EndsWith("day after tomorrow") ||
-                     trimmedText.EndsWith("day after tmr"))
-            {
-                swift = 2;
-            }
-            else if (trimmedText.EndsWith("day before yesterday"))
-            {
-                swift = -2;
-            }
-            else if (match.Success)
-            {
-                swift = GetSwift(text);
-            }
-
-            return swift;
+            SameDayTerms = DateTimeDefinitions.SameDayTerms.ToImmutableList();
+            PlusOneDayTerms = DateTimeDefinitions.PlusOneDayTerms.ToImmutableList();
+            PlusTwoDayTerms = DateTimeDefinitions.PlusTwoDayTerms.ToImmutableList();
+            MinusOneDayTerms = DateTimeDefinitions.MinusOneDayTerms.ToImmutableList();
+            MinusTwoDayTerms = DateTimeDefinitions.MinusTwoDayTerms.ToImmutableList();
         }
 
         public int GetSwiftMonth(string text)
         {
-            return GetSwift(text);
-        }
-
-        public int GetSwift(string text)
-        {
             var trimmedText = text.Trim().ToLowerInvariant();
-
             var swift = 0;
+
             if (NextPrefixRegex.IsMatch(trimmedText))
             {
                 swift = 1;
             }
-            else if (PastPrefixRegex.IsMatch(trimmedText))
+
+            if (PastPrefixRegex.IsMatch(trimmedText))
             {
                 swift = -1;
             }
@@ -179,6 +149,11 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         {
             var trimmedText = text.Trim().ToLowerInvariant();
             return trimmedText.Equals("last");
+        }
+
+        public string Normalize(string text)
+        {
+            return text;
         }
     }
 }

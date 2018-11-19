@@ -16,7 +16,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         #region internalParsers
 
-        public IDateTimeExtractor DateExtractor { get; }
+        public IDateExtractor DateExtractor { get; }
 
         public IExtractor CardinalExtractor { get; }
 
@@ -76,13 +76,22 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public Regex CenturySuffixRegex { get; }
 
         //TODO: config this according to English
-        public static readonly Regex NextPrefixRegex = new Regex(DateTimeDefinitions.NextPrefixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
-        public static readonly Regex PastPrefixRegex = new Regex(DateTimeDefinitions.PastPrefixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
-        public static readonly Regex ThisPrefixRegex = new Regex(DateTimeDefinitions.ThisPrefixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex NextPrefixRegex = 
+            new Regex(DateTimeDefinitions.NextPrefixRegex, RegexOptions.Singleline);
+
+        public static readonly Regex PastPrefixRegex = 
+            new Regex(DateTimeDefinitions.PastPrefixRegex, RegexOptions.Singleline);
+
+        public static readonly Regex ThisPrefixRegex = 
+            new Regex(DateTimeDefinitions.ThisPrefixRegex, RegexOptions.Singleline);
+
+        public static readonly Regex RelativeRegex = 
+            new Regex(DateTimeDefinitions.RelativeRegex, RegexOptions.Singleline);
 
         Regex IDatePeriodParserConfiguration.NextPrefixRegex => NextPrefixRegex;
         Regex IDatePeriodParserConfiguration.PastPrefixRegex => PastPrefixRegex;
         Regex IDatePeriodParserConfiguration.ThisPrefixRegex => ThisPrefixRegex;
+        Regex IDatePeriodParserConfiguration.RelativeRegex => RelativeRegex;
 
         #endregion
 
@@ -105,8 +114,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public IImmutableDictionary<string, int> SpecialDecadeCases { get; }
 
         #endregion
-
-
+        
         public SpanishDatePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config)
         {
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;

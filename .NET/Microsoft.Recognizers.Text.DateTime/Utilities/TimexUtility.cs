@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Globalization;
 using System.Text;
@@ -92,7 +93,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             var datePeriodTimex = $"P{unitCount}{DatePeriodTimexTypeToTimexSuffix[timexType]}";
 
-            return $"({FormatUtil.LuisDate(begin, alternativeBegin)},{FormatUtil.LuisDate(end, alternativeEnd)},{datePeriodTimex})";
+            return $"({DateTimeFormatUtil.LuisDate(begin, alternativeBegin)},{DateTimeFormatUtil.LuisDate(end, alternativeEnd)},{datePeriodTimex})";
         }
 
         public static string GenerateWeekTimex(DateObject monday = default(DateObject))
@@ -103,7 +104,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
             else
             {
-                return FormatUtil.ToIsoWeekTimex(monday);
+                return DateTimeFormatUtil.ToIsoWeekTimex(monday);
             }
         }
 
@@ -115,7 +116,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
             else
             {
-                return $"{FormatUtil.ToIsoWeekTimex(date)}{Constants.DateTimexConnector}{Constants.TimexWeekend}";
+                return $"{DateTimeFormatUtil.ToIsoWeekTimex(date)}{Constants.DateTimexConnector}{Constants.TimexWeekend}";
             }
         }
 
@@ -254,5 +255,53 @@ namespace Microsoft.Recognizers.Text.DateTime
          
             return result;
         }
+
+        public static string CombineDateAndTimeTimex(string dateTimex, string timeTimex)
+        {
+            return $"{dateTimex}{timeTimex}";
+        }
+
+        public static string GenerateDateTimePeriodTimex(string beginTimex, string endTimex, string durationTimex)
+        {
+            return $"({beginTimex},{endTimex},{durationTimex})";
+        }
+
+        public static RangeTimexComponents GetRangeTimexComponents(string rangeTimex)
+        {
+            rangeTimex = rangeTimex.Replace("(", "").Replace(")", "");
+            var components = rangeTimex.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
+            var result = new RangeTimexComponents();
+            
+            if (components.Length == 3)
+            {
+                result.BeginTimex = components[0];
+                result.EndTimex = components[1];
+                result.DurationTimex = components[2];
+                result.IsValid = true;
+            }
+
+            return result;
+        }
+
+        public static bool IsRangeTimex(string timex)
+        {
+            return !string.IsNullOrEmpty(timex) && timex.StartsWith("(");
+        }
+
+        public static string SetTimexWithContext(string timex, DateContext context)
+        {
+            return timex.Replace(Constants.TimexFuzzyYear, context.Year.ToString("D4"));
+        }
+    }
+
+    public class RangeTimexComponents
+    {
+        public string BeginTimex;
+
+        public string EndTimex;
+
+        public string DurationTimex;
+
+        public bool IsValid = false;
     }
 }

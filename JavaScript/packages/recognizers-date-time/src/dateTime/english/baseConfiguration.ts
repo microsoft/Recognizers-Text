@@ -2,7 +2,7 @@ import { RegExpUtility } from "@microsoft/recognizers-text";
 import { EnglishCardinalExtractor, EnglishIntegerExtractor, EnglishOrdinalExtractor, BaseNumberParser, EnglishNumberParserConfiguration } from "@microsoft/recognizers-text-number";
 import { EnglishDateTime } from "../../resources/englishDateTime"
 import { BaseDateTime } from "../../resources/baseDateTime"
-import { FormatUtil, DateTimeResolutionResult, IDateTimeUtilityConfiguration } from "../utilities"
+import { DateTimeFormatUtil, DateTimeResolutionResult, IDateTimeUtilityConfiguration } from "../utilities"
 import { BaseDateParserConfiguration } from "../parsers"
 import { BaseDateExtractor, BaseDateParser} from "../baseDate"
 import { BaseTimeExtractor} from "../baseTime"

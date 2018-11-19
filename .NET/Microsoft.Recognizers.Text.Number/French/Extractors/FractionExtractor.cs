@@ -37,23 +37,23 @@ namespace Microsoft.Recognizers.Text.Number.French
             this.Regexes = new Dictionary<Regex, TypeTag>
             {
                 {
-                    new Regex(NumbersDefinitions.FractionNotationWithSpacesRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.FractionNotationWithSpacesRegex, RegexOptions.Singleline),
                     RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
-                    new Regex(NumbersDefinitions.FractionNotationRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.FractionNotationRegex, RegexOptions.Singleline),
                     RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
-                    new Regex(NumbersDefinitions.FractionNounRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.FractionNounRegex, RegexOptions.Singleline),
                     RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.FRENCH)
                 },
                 {
-                    new Regex(NumbersDefinitions.FractionNounWithArticleRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.FractionNounWithArticleRegex, RegexOptions.Singleline),
                     RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.FRENCH)
                 },
                 {
-                    new Regex(NumbersDefinitions.FractionPrepositionRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.FractionPrepositionRegex, RegexOptions.Singleline),
                     RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.FRENCH)
                 }
             }.ToImmutableDictionary();

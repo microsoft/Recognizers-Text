@@ -6,7 +6,7 @@ import { ChineseDateExtractor, ChineseDateParser } from "./dateConfiguration";
 import { BaseDurationExtractor, BaseDurationParser } from "../baseDuration"
 import { BaseDateExtractor, BaseDateParser } from "../baseDate";
 import { ChineseDurationExtractor } from "./durationConfiguration";
-import { Token, IDateTimeUtilityConfiguration, DateTimeResolutionResult, DateUtils, FormatUtil, StringMap } from "../utilities";
+import { Token, IDateTimeUtilityConfiguration, DateTimeResolutionResult, DateUtils, DateTimeFormatUtil, StringMap } from "../utilities";
 import { BaseDateTime } from "../../resources/baseDateTime";
 import { ChineseDateTime } from "../../resources/chineseDateTime";
 import { IDateTimeParser, DateTimeParseResult } from "../parsers";
@@ -346,11 +346,11 @@ export class ChineseDatePeriodParser extends BaseDatePeriodParser {
             if (innerResult.success) {
                 if (innerResult.futureValue && innerResult.pastValue) {
                     innerResult.futureResolution = {};
-                    innerResult.futureResolution[TimeTypeConstants.START_DATE] = FormatUtil.formatDate(innerResult.futureValue[0]);
-                    innerResult.futureResolution[TimeTypeConstants.END_DATE] = FormatUtil.formatDate(innerResult.futureValue[1]);
+                    innerResult.futureResolution[TimeTypeConstants.START_DATE] = DateTimeFormatUtil.formatDate(innerResult.futureValue[0]);
+                    innerResult.futureResolution[TimeTypeConstants.END_DATE] = DateTimeFormatUtil.formatDate(innerResult.futureValue[1]);
                     innerResult.pastResolution = {};
-                    innerResult.pastResolution[TimeTypeConstants.START_DATE] = FormatUtil.formatDate(innerResult.pastValue[0]);
-                    innerResult.pastResolution[TimeTypeConstants.END_DATE] = FormatUtil.formatDate(innerResult.pastValue[1]);
+                    innerResult.pastResolution[TimeTypeConstants.START_DATE] = DateTimeFormatUtil.formatDate(innerResult.pastValue[0]);
+                    innerResult.pastResolution[TimeTypeConstants.END_DATE] = DateTimeFormatUtil.formatDate(innerResult.pastValue[1]);
                 } else {
                     innerResult.futureResolution = {};
                     innerResult.pastResolution = {};
@@ -406,8 +406,8 @@ export class ChineseDatePeriodParser extends BaseDatePeriodParser {
             noYear = true;
         }
 
-        let beginDateLuis = FormatUtil.luisDate(inputYear || this.config.isFuture(monthStr) ? year : -1, month, beginDay);
-        let endDateLuis = FormatUtil.luisDate(inputYear || this.config.isFuture(monthStr) ? year : -1, month, endDay);
+        let beginDateLuis = DateTimeFormatUtil.luisDate(inputYear || this.config.isFuture(monthStr) ? year : -1, month, beginDay);
+        let endDateLuis = DateTimeFormatUtil.luisDate(inputYear || this.config.isFuture(monthStr) ? year : -1, month, endDay);
 
         let futureYear = year;
         let pastYear = year;
@@ -458,7 +458,7 @@ export class ChineseDatePeriodParser extends BaseDatePeriodParser {
         let beginDay = DateUtils.safeCreateFromMinValue(year, 0, 1);
         let endDay = DateUtils.safeCreateFromMinValue(year + 1, 0, 1);
 
-        result.timex = FormatUtil.toString(year, 4);
+        result.timex = DateTimeFormatUtil.toString(year, 4);
         result.futureValue = [beginDay, endDay];
         result.pastValue = [beginDay, endDay];
         result.success = true;
@@ -515,8 +515,8 @@ export class ChineseDatePeriodParser extends BaseDatePeriodParser {
             }
         }
         result.timex = noYear ?
-        `XXXX-${FormatUtil.toString(month + 1, 2)}-W${FormatUtil.toString(cardinal, 2)}` :
-        `${FormatUtil.toString(year, 4)}-${FormatUtil.toString(month + 1, 2)}-W${FormatUtil.toString(cardinal, 2)}`;
+        `XXXX-${DateTimeFormatUtil.toString(month + 1, 2)}-W${DateTimeFormatUtil.toString(cardinal, 2)}` :
+        `${DateTimeFormatUtil.toString(year, 4)}-${DateTimeFormatUtil.toString(month + 1, 2)}-W${DateTimeFormatUtil.toString(cardinal, 2)}`;
         result.futureValue = [futureDate, DateUtils.addDays(futureDate, this.inclusiveEndPeriod ? 6 : 7)];
         result.pastValue = [pastDate, DateUtils.addDays(pastDate, this.inclusiveEndPeriod ? 6 : 7)];
         result.success = true;
@@ -570,7 +570,7 @@ export class ChineseDatePeriodParser extends BaseDatePeriodParser {
         let season = this.config.seasonMap.get(seasonStr);
 
         if (hasYear) {
-            result.timex = `${FormatUtil.toString(year, 4)}-${season}`;
+            result.timex = `${DateTimeFormatUtil.toString(year, 4)}-${season}`;
         }
 
         result.success = true;
@@ -613,7 +613,7 @@ export class ChineseDatePeriodParser extends BaseDatePeriodParser {
         let endDate = DateUtils.safeCreateFromValue(DateUtils.minValue(), year, quarterNum * 3, 1);
         result.futureValue = [beginDate, endDate];
         result.pastValue = [beginDate, endDate];
-        result.timex = `(${FormatUtil.luisDateFromDate(beginDate)},${FormatUtil.luisDateFromDate(endDate)},P3M)`;
+        result.timex = `(${DateTimeFormatUtil.luisDateFromDate(beginDate)},${DateTimeFormatUtil.luisDateFromDate(endDate)},P3M)`;
         result.success = true;
         return result;
     }
@@ -695,8 +695,8 @@ export class ChineseDatePeriodParser extends BaseDatePeriodParser {
             endDate = DateUtils.addDays(endDate, 1);
         }
 
-        let beginTimex = FormatUtil.luisDateFromDate(beginDate);
-        let endTimex = FormatUtil.luisDateFromDate(endDate);
+        let beginTimex = DateTimeFormatUtil.luisDateFromDate(beginDate);
+        let endTimex = DateTimeFormatUtil.luisDateFromDate(endDate);
         result.timex = `(${beginTimex},${endTimex},P${numStr}${unitStr.charAt(0)})`;
         result.futureValue = [beginDate, endDate];
         result.pastValue = [beginDate, endDate];
@@ -757,7 +757,7 @@ export class ChineseDatePeriodParser extends BaseDatePeriodParser {
             ? DateUtils.safeCreateFromMinValue(year + 1, 0, 1)
             : DateUtils.safeCreateFromMinValue(year, month + 1, 1);
 
-        result.timex = FormatUtil.toString(year, 4) + '-' + FormatUtil.toString(month, 2);
+        result.timex = DateTimeFormatUtil.toString(year, 4) + '-' + DateTimeFormatUtil.toString(month, 2);
         result.futureValue = [beginDate, endDate];
         result.pastValue = [beginDate, endDate];
         result.success = true;
@@ -802,8 +802,8 @@ export class ChineseDatePeriodParser extends BaseDatePeriodParser {
 
         let beginDate = DateUtils.safeCreateFromMinValue(beginYear, 0, 1);
         let endDate = DateUtils.safeCreateFromMinValue(endYear, 0, 1);
-        let beginTimex = FormatUtil.luisDateFromDate(beginDate);
-        let endTimex = FormatUtil.luisDateFromDate(endDate);
+        let beginTimex = DateTimeFormatUtil.luisDateFromDate(beginDate);
+        let endTimex = DateTimeFormatUtil.luisDateFromDate(endDate);
 
         result.timex = `(${beginTimex},${endTimex},P${endYear - beginYear}Y)`;
         result.futureValue = [beginDate, endDate];

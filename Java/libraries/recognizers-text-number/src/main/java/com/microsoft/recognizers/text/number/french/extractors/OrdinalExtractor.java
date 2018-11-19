@@ -3,6 +3,7 @@ package com.microsoft.recognizers.text.number.french.extractors;
 import com.microsoft.recognizers.text.number.Constants;
 import com.microsoft.recognizers.text.number.extractors.BaseNumberExtractor;
 import com.microsoft.recognizers.text.number.resources.FrenchNumeric;
+import com.microsoft.recognizers.text.utilities.RegExpUtility;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -26,8 +27,8 @@ public class OrdinalExtractor extends BaseNumberExtractor {
     public OrdinalExtractor() {
         HashMap<Pattern, String> builder = new HashMap<>();
 
-        builder.put(Pattern.compile(FrenchNumeric.OrdinalSuffixRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "OrdinalNum");
-        builder.put(Pattern.compile(FrenchNumeric.OrdinalFrenchRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "OrdFr");
+        builder.put(RegExpUtility.getSafeLookbehindRegExp(FrenchNumeric.OrdinalSuffixRegex, Pattern.UNICODE_CHARACTER_CLASS), "OrdinalNum");
+        builder.put(RegExpUtility.getSafeLookbehindRegExp(FrenchNumeric.OrdinalFrenchRegex, Pattern.UNICODE_CHARACTER_CLASS), "OrdFr");
 
         this.regexes = Collections.unmodifiableMap(builder);
     }

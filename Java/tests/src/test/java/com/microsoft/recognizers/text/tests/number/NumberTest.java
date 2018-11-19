@@ -16,7 +16,7 @@ public class NumberTest extends AbstractTest {
     private static final String recognizerType = "Number";
     @Parameterized.Parameters(name = "{0}")
     public static Collection<TestCase> testCases() {
-        return AbstractTest.enumerateTestCases(recognizerType);
+        return AbstractTest.enumerateTestCases(recognizerType, "Model");
     }
 
     public NumberTest(TestCase currentCase) {

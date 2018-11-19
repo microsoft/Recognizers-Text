@@ -69,12 +69,14 @@ namespace Microsoft.Recognizers.Definitions.Italian
 		public static readonly string WeekDayOfMonthRegex = $@"(?<wom>(la\s+)?(?<cardinal>prima|seconda|terza|quarta|quinta|ultima)\s+{WeekDayRegex}\s+{MonthSuffixRegex})";
 		public const string RelativeWeekDayRegex = @"^[.]";
 		public const string NumberEndingPattern = @"^[.]";
+		public const string NextPrefixRegex = @"^[.]";
+		public const string PastPrefixRegex = @"^[.]";
 		public static readonly string SpecialDate = $@"(?=\b(di|al)\s+il\s+){DayRegex}\b";
 		public static readonly string DateExtractor1 = $@"\b({WeekDayRegex}(\s+|\s*,\s*))?{MonthRegex}\s*[/\\\.\-]?\s*{DayRegex}\b";
 		public static readonly string DateExtractor2 = $@"\b({WeekDayRegex}(\s+|\s*,\s*))?{DayRegex}(\s+|\s*,\s*|\s+){MonthRegex}\s*[\.\-]?\s*{DateYearRegex}\b";
 		public static readonly string DateExtractor3 = $@"\b({WeekDayRegex}(\s+|\s*,\s*))?{DayRegex}(\s+|\s*,\s*|\s*-\s*){MonthRegex}((\s+|\s*,\s*){DateYearRegex})?\b";
 		public static readonly string DateExtractor4 = $@"\b{MonthNumRegex}\s*[/\\\-]\s*{DayRegex}\s*[/\\\-]\s*{DateYearRegex}";
-		public static readonly string DateExtractor5 = $@"\b{DayRegex}\s*[/\\\-]\s*{MonthNumRegex}\s*[/\\\-]\s*{DateYearRegex}";
+		public static readonly string DateExtractor5 = $@"\b{DayRegex}\s*[/\\\-]\s*({MonthNumRegex}|{MonthRegex})\s*[/\\\-]\s*{DateYearRegex}";
 		public static readonly string DateExtractor6 = $@"(?<=\b(le|sur|sur l[ae])\s+){MonthNumRegex}[\-\.\/]{DayRegex}\b";
 		public static readonly string DateExtractor7 = $@"\b{DayRegex}\s*/\s*{MonthNumRegex}((\s+|\s*,\s*){DateYearRegex})?\b";
 		public static readonly string DateExtractor8 = $@"(?<=\b(le)\s+){DayRegex}[\\\-]{MonthNumRegex}\b";
@@ -112,7 +114,7 @@ namespace Microsoft.Recognizers.Definitions.Italian
 		public const string FivesRegex = @"(?<tens>(quindici|venti(\s*cinque)?|trenta(\s*cinque)?|quaranta(\s*cinque)?|cinquanta(\s*cinque)?|dieci|cinque))\b";
 		public const string PeriodHourNumRegex = @"\b(?<hour>ventuno|ventidue|ventitre|ventiquattro|zero|uno|due|tre|quattro|cinque|sei|sette|otto|nove|dieci|undici|dodici|tredici|quattordici|quindici|sedici|diciassette|diciotto|diciannove|venti)\b";
 		public static readonly string TimeRegex1 = $@"\b({EngTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})\s*{DescRegex}(\s+{TimePrefix})?";
-		public static readonly string TimeRegex2 = $@"(\b{TimePrefix}\s+)?(T)?{BaseDateTime.HourRegex}(\s*)?:(\s*)?{BaseDateTime.MinuteRegex}((\s*)?:(\s*)?{BaseDateTime.SecondRegex})?((\s*{DescRegex})|\b)";
+		public static readonly string TimeRegex2 = $@"(\b{TimePrefix}\s+)?(t)?{BaseDateTime.HourRegex}(\s*)?:(\s*)?{BaseDateTime.MinuteRegex}((\s*)?:(\s*)?{BaseDateTime.SecondRegex})?((\s*{DescRegex})|\b)";
 		public static readonly string TimeRegex3 = $@"\b{BaseDateTime.HourRegex}\.{BaseDateTime.MinuteRegex}(\s*{DescRegex})(\s+{TimePrefix})?";
 		public static readonly string TimeRegex4 = $@"\b{BasicTime}(\s*{DescRegex})?(\s+{TimePrefix})?\s+{TimeSuffix}\b";
 		public static readonly string TimeRegex5 = $@"\b{BasicTime}((\s*{DescRegex})|\b)(\s+{TimePrefix})?";
@@ -590,5 +592,10 @@ namespace Microsoft.Recognizers.Definitions.Italian
 		{
 			"nuit"
 		};
+		public static readonly string[] SameDayTerms = {  };
+		public static readonly string[] PlusOneDayTerms = {  };
+		public static readonly string[] MinusOneDayTerms = {  };
+		public static readonly string[] PlusTwoDayTerms = {  };
+		public static readonly string[] MinusTwoDayTerms = {  };
 	}
 }

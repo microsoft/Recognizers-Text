@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Immutable;
+using System.Linq;
 using System.Text.RegularExpressions;
 
 using DateObject = System.DateTime;
@@ -63,12 +65,12 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     innerResult.FutureResolution = new Dictionary<string, string>
                     {
-                        {TimeTypeConstants.DATE, FormatUtil.FormatDate((DateObject) innerResult.FutureValue)}
+                        {TimeTypeConstants.DATE, DateTimeFormatUtil.FormatDate((DateObject) innerResult.FutureValue)}
                     };
 
                     innerResult.PastResolution = new Dictionary<string, string>
                     {
-                        {TimeTypeConstants.DATE, FormatUtil.FormatDate((DateObject) innerResult.PastValue)}
+                        {TimeTypeConstants.DATE, DateTimeFormatUtil.FormatDate((DateObject) innerResult.PastValue)}
                     };
 
                     value = innerResult;
@@ -130,10 +132,10 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var dayStr = match.Groups["day"].Value.ToLower();
                 var day = this.config.DayOfMonth[dayStr];
 
-                ret.Timex = FormatUtil.LuisDate(-1, -1, day);
+                ret.Timex = DateTimeFormatUtil.LuisDate(-1, -1, day);
 
                 DateObject futureDate, pastDate;
-                var tryStr = FormatUtil.LuisDate(year, month, day);
+                var tryStr = DateTimeFormatUtil.LuisDate(year, month, day);
                 if (DateObject.TryParse(tryStr, out DateObject _))
                 {
                     futureDate = DateObject.MinValue.SafeCreateFromValue(year, month, day);
@@ -166,11 +168,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             match = this.config.SpecialDayRegex.Match(trimmedText);
             if (match.Success && match.Index == 0 && match.Length == trimmedText.Length)
             {
-                var swift = this.config.GetSwiftDay(match.Value);
+                var swift = GetSwiftDay(match.Value);
 
                 var value = referenceDate.AddDays(swift);
 
-                ret.Timex = FormatUtil.LuisDate(value);
+                ret.Timex = DateTimeFormatUtil.LuisDate(value);
                 ret.FutureValue = ret.PastValue = value;
                 ret.Success = true;
 
@@ -181,13 +183,13 @@ namespace Microsoft.Recognizers.Text.DateTime
             match = this.config.SpecialDayWithNumRegex.Match(trimmedText);
             if (match.Success && match.Index == 0 && match.Length == trimmedText.Length)
             {
-                var swift = this.config.GetSwiftDay(match.Groups["day"].Value);
+                var swift = GetSwiftDay(match.Groups["day"].Value);
                 var numErs = this.config.IntegerExtractor.Extract(trimmedText);
                 var numOfDays = Convert.ToInt32((double)(this.config.NumberParser.Parse(numErs[0]).Value ?? 0));
 
                 var value = referenceDate.AddDays(numOfDays + swift);
 
-                ret.Timex = FormatUtil.LuisDate(value);
+                ret.Timex = DateTimeFormatUtil.LuisDate(value);
                 ret.FutureValue = ret.PastValue = value;
                 ret.Success = true;
 
@@ -214,7 +216,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     value = value.Next((DayOfWeek)this.config.DayOfWeek[weekdayStr]);
                 }
 
-                ret.Timex = FormatUtil.LuisDate(value);
+                ret.Timex = DateTimeFormatUtil.LuisDate(value);
                 ret.FutureValue = ret.PastValue = value;
                 ret.Success = true;
 
@@ -228,7 +230,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var weekdayStr = match.Groups["weekday"].Value.ToLower();
                 var value = referenceDate.Next((DayOfWeek)this.config.DayOfWeek[weekdayStr]);
 
-                ret.Timex = FormatUtil.LuisDate(value);
+                ret.Timex = DateTimeFormatUtil.LuisDate(value);
                 ret.FutureValue = ret.PastValue = value;
                 ret.Success = true;
 
@@ -242,7 +244,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var weekdayStr = match.Groups["weekday"].Value.ToLower();
                 var value = referenceDate.This((DayOfWeek)this.config.DayOfWeek[weekdayStr]);
 
-                ret.Timex = FormatUtil.LuisDate(value);
+                ret.Timex = DateTimeFormatUtil.LuisDate(value);
                 ret.FutureValue = ret.PastValue = value;
                 ret.Success = true;
 
@@ -256,7 +258,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var weekdayStr = match.Groups["weekday"].Value.ToLower();
                 var value = referenceDate.Last((DayOfWeek)this.config.DayOfWeek[weekdayStr]);
 
-                ret.Timex = FormatUtil.LuisDate(value);
+                ret.Timex = DateTimeFormatUtil.LuisDate(value);
                 ret.FutureValue = ret.PastValue = value;
                 ret.Success = true;
 
@@ -318,10 +320,10 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 day = Convert.ToInt32((double)(this.config.NumberParser.Parse(er).Value ?? 0));
 
-                ret.Timex = FormatUtil.LuisDate(-1, -1, day);
+                ret.Timex = DateTimeFormatUtil.LuisDate(-1, -1, day);
 
                 DateObject futureDate;
-                var tryStr = FormatUtil.LuisDate(year, month, day);
+                var tryStr = DateTimeFormatUtil.LuisDate(year, month, day);
                 if (DateObject.TryParse(tryStr, out DateObject _))
                 {
                     futureDate = DateObject.MinValue.SafeCreateFromValue(year, month, day);
@@ -355,7 +357,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var day = Convert.ToInt32((double)(this.config.NumberParser.Parse(erTmp).Value ?? 0));
                 
                 // the validity of the phrase is guaranteed in the Date Extractor
-                ret.Timex = FormatUtil.LuisDate(year, month, day);
+                ret.Timex = DateTimeFormatUtil.LuisDate(year, month, day);
                 ret.FutureValue = new DateObject(year, month, day); ;
                 ret.PastValue = new DateObject(year, month, day); ;
                 ret.Success = true;
@@ -451,7 +453,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if (ambiguous)
             {
-                ret.Timex = FormatUtil.LuisDate(-1, month, day);
+                ret.Timex = DateTimeFormatUtil.LuisDate(-1, month, day);
                 if (futureDate < referenceDate)
                 {
                     futureDate = futureDate.AddYears(+1);
@@ -464,7 +466,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
             else
             {
-                ret.Timex = FormatUtil.LuisDate(year, month, day);
+                ret.Timex = DateTimeFormatUtil.LuisDate(year, month, day);
             }
 
             ret.FutureValue = futureDate;
@@ -496,7 +498,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             day = Convert.ToInt32((double)(this.config.NumberParser.Parse(er[0]).Value ?? 0));
 
             // for LUIS format value string
-            ret.Timex = FormatUtil.LuisDate(-1, -1, day);
+            ret.Timex = DateTimeFormatUtil.LuisDate(-1, -1, day);
             var pastDate = DateObject.MinValue.SafeCreateFromValue(year, month, day);
             var futureDate = DateObject.MinValue.SafeCreateFromValue(year, month, day);
 
@@ -523,7 +525,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             return AgoLaterUtil.ParseDurationWithAgoAndLater(text, referenceDate,
                 config.DurationExtractor, config.DurationParser, config.UnitMap, config.UnitRegex,
-                config.UtilityConfiguration, config.GetSwiftDay);
+                config.UtilityConfiguration, GetSwiftDay);
         }
 
         // parse a regex match which includes 'day', 'month' and 'year' (optional) group
@@ -558,12 +560,12 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (year == 0)
             {
                 year = referenceDate.Year;
-                ret.Timex = FormatUtil.LuisDate(-1, month, day);
+                ret.Timex = DateTimeFormatUtil.LuisDate(-1, month, day);
                 noYear = true;
             }
             else
             {
-                ret.Timex = FormatUtil.LuisDate(year, month, day);
+                ret.Timex = DateTimeFormatUtil.LuisDate(year, month, day);
             }
 
             var futureDate = DateObject.MinValue.SafeCreateFromValue(year, month, day);
@@ -684,6 +686,76 @@ namespace Microsoft.Recognizers.Text.DateTime
         public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)
         {
             return candidateResults;
+        }
+
+        private int GetSwiftDay(string text)
+        {
+            var trimmedText = this.config.Normalize(text.Trim().ToLowerInvariant());
+            var swift = 0;
+
+            var match = this.config.RelativeDayRegex.Match(text);
+
+            // The sequence here is important
+            // As suffix "day before yesterday" should be matched before suffix "day before" or "yesterday"
+            if (config.SameDayTerms.Contains(trimmedText))
+            {
+                swift = 0;
+            }
+            else if (EndsWithTerms(trimmedText, config.PlusTwoDayTerms))
+            {
+                swift = 2;
+            }
+            else if (EndsWithTerms(trimmedText, config.MinusTwoDayTerms))
+            {
+                swift = -2;
+            }
+            else if (EndsWithTerms(trimmedText, config.PlusOneDayTerms))
+            {
+                swift = 1;
+            }
+            else if (EndsWithTerms(trimmedText, config.MinusOneDayTerms))
+            {
+                swift = -1;
+            }
+            else if (match.Success)
+            {
+                swift = GetSwift(text);
+            }
+
+            return swift;
+        }
+
+        private int GetSwift(string text)
+        {
+            var trimmedText = text.Trim().ToLowerInvariant();
+
+            var swift = 0;
+            if (this.config.NextPrefixRegex.IsMatch(trimmedText))
+            {
+                swift = 1;
+            }
+            else if (this.config.PastPrefixRegex.IsMatch(trimmedText))
+            {
+                swift = -1;
+            }
+
+            return swift;
+        }
+
+        private bool EndsWithTerms(string text, IImmutableList<string> terms)
+        {
+            var result = false;
+
+            foreach (var term in terms)
+            {
+                if (text.EndsWith(term))
+                {
+                    result = true;
+                    break;
+                }
+            }
+
+            return result;
         }
     }
 }

@@ -33,7 +33,7 @@ namespace Microsoft.Recognizers.Text.Number.Spanish
             var regexes = new Dictionary<Regex, TypeTag>
             {
                 {
-                    new Regex(NumbersDefinitions.NumbersWithPlaceHolder(placeholder), RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.NumbersWithPlaceHolder(placeholder), RegexOptions.Singleline),
                     RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
@@ -53,19 +53,19 @@ namespace Microsoft.Recognizers.Text.Number.Spanish
                     RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
-                    new Regex(NumbersDefinitions.RoundNumberIntegerRegexWithLocks, RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.RoundNumberIntegerRegexWithLocks, RegexOptions.Singleline),
                     RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
-                    new Regex(NumbersDefinitions.NumbersWithDozenSuffix, RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.NumbersWithDozenSuffix, RegexOptions.Singleline),
                     RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
-                    new Regex(NumbersDefinitions.AllIntRegexWithLocks, RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.AllIntRegexWithLocks, RegexOptions.Singleline),
                     RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.SPANISH)
                 },
                 {
-                new Regex(NumbersDefinitions.AllIntRegexWithDozenSuffixLocks, RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                new Regex(NumbersDefinitions.AllIntRegexWithDozenSuffixLocks, RegexOptions.Singleline),
                     RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.SPANISH)
                 }
             };

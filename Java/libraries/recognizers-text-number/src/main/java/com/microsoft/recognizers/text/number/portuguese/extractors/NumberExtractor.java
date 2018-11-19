@@ -1,16 +1,16 @@
 package com.microsoft.recognizers.text.number.portuguese.extractors;
 
+import static com.microsoft.recognizers.text.number.NumberMode.Default;
+
 import com.microsoft.recognizers.text.number.Constants;
 import com.microsoft.recognizers.text.number.NumberMode;
 import com.microsoft.recognizers.text.number.extractors.BaseNumberExtractor;
+import com.microsoft.recognizers.text.number.resources.BaseNumbers;
 import com.microsoft.recognizers.text.number.resources.PortugueseNumeric;
-
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
-
-import static com.microsoft.recognizers.text.number.NumberMode.Default;
 
 public class NumberExtractor extends BaseNumberExtractor {
 
@@ -33,28 +33,28 @@ public class NumberExtractor extends BaseNumberExtractor {
     public NumberExtractor(NumberMode mode) {
         HashMap<Pattern, String> builder = new HashMap<>();
 
-        //Add Cardinal
+        // Add Cardinal
         CardinalExtractor cardExtract = null;
-        switch (mode)
-        {
+        switch (mode) {
             case PureNumber:
                 cardExtract = CardinalExtractor.getInstance(PortugueseNumeric.PlaceHolderPureNumber);
                 break;
             case Currency:
-                builder.put(Pattern.compile(PortugueseNumeric.CurrencyRegex), "IntegerNum");
+                builder.put(Pattern.compile(BaseNumbers.CurrencyRegex), "IntegerNum");
                 break;
             case Default:
                 break;
+            default:
+                break;
         }
 
-        if (cardExtract == null)
-        {
+        if (cardExtract == null) {
             cardExtract = CardinalExtractor.getInstance();
         }
 
         builder.putAll(cardExtract.getRegexes());
 
-        //Add Fraction
+        // Add Fraction
         FractionExtractor fracExtract = new FractionExtractor();
         builder.putAll(fracExtract.getRegexes());
 

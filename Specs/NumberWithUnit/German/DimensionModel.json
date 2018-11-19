@@ -1,4 +1,5 @@
-[{
+[
+  {
     "Input": "75ml",
     "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
@@ -22,7 +23,7 @@
     "NotSupported": "javascript",
     "Results": [
       {
-        "Text": "3 Zoll",
+        "Text": "3 zoll",
         "TypeName": "dimension",
         "Resolution": {
           "value": "3",
@@ -40,7 +41,7 @@
     "NotSupported": "javascript",
     "Results": [
       {
-        "Text": "3 Teelöffel",
+        "Text": "3 teelöffel",
         "TypeName": "dimension",
         "Resolution": {
           "value": "3",
@@ -58,7 +59,7 @@
     "NotSupported": "javascript",
     "Results": [
       {
-        "Text": "achtzig Millionen liter",
+        "Text": "achtzig millionen liter",
         "TypeName": "dimension",
         "Resolution": {
           "value": "80000000",
@@ -76,7 +77,7 @@
     "NotSupported": "javascript",
     "Results": [
       {
-        "Text": "achtzig Millionen liter",
+        "Text": "achtzig millionen liter",
         "TypeName": "dimension",
         "Resolution": {
           "value": "80000000",
@@ -141,7 +142,7 @@
     "NotSupported": "javascript",
     "Results": [
       {
-        "Text": "12 Kubikmeter",
+        "Text": "12 kubikmeter",
         "TypeName": "dimension",
         "Resolution": {
           "value": "12",
@@ -159,7 +160,7 @@
     "NotSupported": "javascript",
     "Results": [
       {
-        "Text": "Ein Pfund",
+        "Text": "ein pfund",
         "TypeName": "dimension",
         "Resolution": {
           "value": "1",
@@ -177,7 +178,7 @@
     "NotSupported": "javascript",
     "Results": [
       {
-        "Text": "50 Gigabyte",
+        "Text": "50 gigabyte",
         "TypeName": "dimension",
         "Resolution": {
           "value": "50",
@@ -195,7 +196,7 @@
     "NotSupported": "javascript",
     "Results": [
       {
-        "Text": "Dreizehn Meilen",
+        "Text": "dreizehn meilen",
         "TypeName": "dimension",
         "Resolution": {
           "value": "13",
@@ -213,7 +214,7 @@
     "NotSupported": "javascript",
     "Results": [
       {
-        "Text": "195,63 Quadratmeter",
+        "Text": "195,63 quadratmeter",
         "TypeName": "dimension",
         "Resolution": {
           "value": "195,63",
@@ -224,7 +225,7 @@
       }
       ,
       {
-        "Text": "260,76 Quadratmeter",
+        "Text": "260,76 quadratmeter",
         "TypeName": "dimension",
         "Resolution": {
           "value": "260,76",
@@ -275,7 +276,7 @@
       }
       ,
       {
-        "Text": "19 Nanometern",
+        "Text": "19 nanometern",
         "TypeName": "dimension",
         "Resolution": {
           "value": "19",
@@ -293,7 +294,7 @@
     "NotSupported": "javascript",
     "Results": [
       {
-        "Text": "299.792.458 Metern pro Sekunde",
+        "Text": "299.792.458 metern pro sekunde",
         "TypeName": "dimension",
         "Resolution": {
           "value": "299792458",
@@ -311,7 +312,7 @@
     "NotSupported": "javascript",
     "Results": [
       {
-        "Text": "500Km",
+        "Text": "500km",
         "TypeName": "dimension",
         "Resolution": {
           "value": "500",
@@ -340,7 +341,7 @@
       }
       ,
       {
-        "Text": "244 Metern pro Sekunde",
+        "Text": "244 metern pro sekunde",
         "TypeName": "dimension",
         "Resolution": {
           "value": "244",
@@ -358,7 +359,7 @@
     "NotSupported": "javascript",
     "Results": [
       {
-        "Text": "einen Teelöffel",
+        "Text": "einen teelöffel",
         "TypeName": "dimension",
         "Resolution": {
           "value": "1",

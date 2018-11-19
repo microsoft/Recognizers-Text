@@ -6,13 +6,20 @@ import com.microsoft.recognizers.text.ParseResult;
 import com.microsoft.recognizers.text.number.NumberRangeConstants;
 import com.microsoft.recognizers.text.number.parsers.BaseNumberParser;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
-import org.javatuples.Pair;
-import org.javatuples.Triplet;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
 import java.util.regex.MatchResult;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import org.javatuples.Pair;
+import org.javatuples.Triplet;
 
 public abstract class BaseNumberRangeExtractor implements IExtractor {
 
@@ -48,13 +55,13 @@ public abstract class BaseNumberRangeExtractor implements IExtractor {
         List<Pair<Matcher, String>> matches = new ArrayList<>();
         getRegexes().forEach((k, value) -> {
             Matcher matcher = k.matcher(source);
-            if(matcher.find()) {
+            if (matcher.find()) {
                 matcher.reset();
                 matches.add(Pair.with(matcher, value));
             }
         });
 
-        for(Pair<Matcher, String> pair : matches) {
+        for (Pair<Matcher, String> pair : matches) {
             Matcher matcher = pair.getValue0();
             String value = pair.getValue1();
             while (matcher.find()) {
@@ -100,7 +107,7 @@ public abstract class BaseNumberRangeExtractor implements IExtractor {
 
     private Pair<Integer, Integer> getMatchedStartAndLength(Matcher match, String type, String source, int start, int length) {
 
-        Map<String, String> groupValues = RegExpUtility.getNamedGroups(match);
+        Map<String, String> groupValues = RegExpUtility.getNamedGroups(match, true);
         String numberStr1 = groupValues.containsKey("number1") ? groupValues.get("number1") : "";
         String numberStr2 = groupValues.containsKey("number2") ? groupValues.get("number2") : "";
 
@@ -166,30 +173,24 @@ public abstract class BaseNumberRangeExtractor implements IExtractor {
         return Pair.with(start, length);
     }
 
-    private Triplet<Boolean, Integer, Integer> validateMatchAndGetStartAndLength(List<ExtractResult> extractNumList, String numberStr, MatchResult match, String source, int start, int length) {
+    private Triplet<Boolean, Integer, Integer>
+        validateMatchAndGetStartAndLength(List<ExtractResult> extractNumList, String numberStr, MatchResult match, String source, int start, int length) {
 
         boolean validNum = false;
 
-        for(ExtractResult extractNum : extractNumList)
-        {
-            if (numberStr.trim().endsWith(extractNum.text) && match.group().startsWith(numberStr))
-            {
+        for (ExtractResult extractNum : extractNumList) {
+            if (numberStr.trim().endsWith(extractNum.text) && match.group().startsWith(numberStr)) {
                 start = source.indexOf(numberStr) + (extractNum.start != null ? extractNum.start : 0);
                 length = length - (extractNum.start != null ? extractNum.start : 0);
                 validNum = true;
-            }
-            else if (extractNum.start == 0 && match.group().endsWith(numberStr))
-            {
+            } else if (extractNum.start == 0 && match.group().endsWith(numberStr)) {
                 length = length - numberStr.length() + (extractNum.length != null ? extractNum.length : 0);
                 validNum = true;
-            }
-            else if (extractNum.start == 0 && extractNum.length == numberStr.trim().length())
-            {
+            } else if (extractNum.start == 0 && extractNum.length == numberStr.trim().length()) {
                 validNum = true;
             }
 
-            if (validNum)
-            {
+            if (validNum) {
                 break;
             }
         }
@@ -212,13 +213,13 @@ public abstract class BaseNumberRangeExtractor implements IExtractor {
         extractNumber.addAll(extractOrdinal);
 
         //        extractNumber = extractNumber.OrderByDescending(num => num.Length).ThenByDescending(num => num.Start).ToList();
-        Collections.sort(extractNumber, (Comparator) (o1, o2) -> {
+        Collections.sort(extractNumber, (Comparator<ExtractResult>) (o1, o2) -> {
             Integer x1 = ((ExtractResult) o1).length;
             Integer x2 = ((ExtractResult) o2).length;
-            int sComp = x2.compareTo(x1);
+            int scomp = x2.compareTo(x1);
 
-            if (sComp != 0) {
-                return sComp;
+            if (scomp != 0) {
+                return scomp;
             }
 
             x1 = ((ExtractResult) o1).start;

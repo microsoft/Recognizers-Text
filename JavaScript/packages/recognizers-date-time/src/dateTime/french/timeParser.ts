@@ -1,6 +1,6 @@
 import { RegExpUtility } from "@microsoft/recognizers-text";
 import { BaseTimeParser, ITimeParserConfiguration } from "../baseTime";
-import { DateTimeResolutionResult, DateUtils, FormatUtil } from "../utilities";
+import { DateTimeResolutionResult, DateUtils, DateTimeFormatUtil } from "../utilities";
 import { FrenchDateTime } from "../../resources/frenchDateTime";
 
 export class FrenchTimeParser extends BaseTimeParser {
@@ -30,7 +30,7 @@ export class FrenchTimeParser extends BaseTimeParser {
                 hour = parseInt(hourStr, 10);
             }
 
-            ret.timex = "T" + FormatUtil.toString(hour, 2);
+            ret.timex = "T" + DateTimeFormatUtil.toString(hour, 2);
             ret.futureValue =
                 ret.pastValue =
                 DateUtils.safeCreateFromMinValue(referenceTime.getFullYear(), referenceTime.getMonth(), referenceTime.getDate(), hour, 0, 0);

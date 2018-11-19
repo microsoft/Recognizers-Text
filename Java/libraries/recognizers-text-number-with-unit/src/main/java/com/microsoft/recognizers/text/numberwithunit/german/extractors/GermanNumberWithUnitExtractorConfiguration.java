@@ -19,7 +19,8 @@ public abstract class GermanNumberWithUnitExtractorConfiguration implements INum
         this.cultureInfo = cultureInfo;
 
         this.unitNumExtractor = NumberExtractor.getInstance();
-        this.compoundUnitConnectorRegex = Pattern.compile(GermanNumericWithUnit.CompoundUnitConnectorRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS);
+        this.compoundUnitConnectorRegex =
+                Pattern.compile(GermanNumericWithUnit.CompoundUnitConnectorRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS);
     }
 
     public CultureInfo getCultureInfo() { return this.cultureInfo; }
@@ -28,6 +29,7 @@ public abstract class GermanNumberWithUnitExtractorConfiguration implements INum
     public String getBuildSuffix() { return GermanNumericWithUnit.BuildSuffix; }
     public String getConnectorToken() { return ""; }
     public Pattern getCompoundUnitConnectorRegex() { return this.compoundUnitConnectorRegex; }
+    public Pattern getAmbiguousUnitNumberMultiplierRegex() { return null; }
 
     public abstract String getExtractType();
     public abstract Map<String, String> getSuffixList();

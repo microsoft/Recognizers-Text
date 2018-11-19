@@ -1,6 +1,6 @@
 import { IExtractor, ExtractResult, RegExpUtility, StringUtility } from "@microsoft/recognizers-text";
 import { Constants, TimeTypeConstants } from "./constants";
-import { Token, FormatUtil, DateTimeResolutionResult, IDateTimeUtilityConfiguration, DateUtils, StringMap } from "./utilities";
+import { Token, DateTimeFormatUtil, DateTimeResolutionResult, IDateTimeUtilityConfiguration, DateUtils, StringMap } from "./utilities";
 import { IDateTimeParser, DateTimeParseResult } from "./parsers"
 import { BaseTimeExtractor, BaseTimeParser } from "./baseTime"
 import { IDateTimeExtractor } from "./baseDateTime"
@@ -234,11 +234,11 @@ export class BaseTimePeriodParser implements IDateTimeParser {
             }
             if (innerResult.success) {
                 innerResult.futureResolution = {};
-                innerResult.futureResolution[TimeTypeConstants.START_TIME] = FormatUtil.formatTime(innerResult.futureValue.item1);
-                innerResult.futureResolution[TimeTypeConstants.END_TIME] = FormatUtil.formatTime(innerResult.futureValue.item2);
+                innerResult.futureResolution[TimeTypeConstants.START_TIME] = DateTimeFormatUtil.formatTime(innerResult.futureValue.item1);
+                innerResult.futureResolution[TimeTypeConstants.END_TIME] = DateTimeFormatUtil.formatTime(innerResult.futureValue.item2);
                 innerResult.pastResolution = {};
-                innerResult.pastResolution[TimeTypeConstants.START_TIME] = FormatUtil.formatTime(innerResult.pastValue.item1);
-                innerResult.pastResolution[TimeTypeConstants.END_TIME] = FormatUtil.formatTime(innerResult.pastValue.item2);
+                innerResult.pastResolution[TimeTypeConstants.START_TIME] = DateTimeFormatUtil.formatTime(innerResult.pastValue.item1);
+                innerResult.pastResolution[TimeTypeConstants.END_TIME] = DateTimeFormatUtil.formatTime(innerResult.pastValue.item2);
                 value = innerResult;
             }
         }
@@ -345,8 +345,8 @@ export class BaseTimePeriodParser implements IDateTimeParser {
                     }
         
                     if (isValid) {
-                        let beginStr = "T" + FormatUtil.toString(beginHour, 2);
-                        let endStr = "T" + FormatUtil.toString(endHour, 2);
+                        let beginStr = "T" + DateTimeFormatUtil.toString(beginHour, 2);
+                        let endStr = "T" + DateTimeFormatUtil.toString(endHour, 2);
         
                         if (beginHour >= endHour) {
                             endHour += 24
@@ -573,11 +573,11 @@ export class BaseTimePeriodParser implements IDateTimeParser {
                 endDateTime = DateUtils.addHours(endDateTime, 24);
             }
 
-            let beginStr = FormatUtil.shortTime(beginDateTime.getHours(), beginMinute, beginSecond);
-            let endStr = FormatUtil.shortTime(endDateTime.getHours(), endMinute, endSecond);
+            let beginStr = DateTimeFormatUtil.shortTime(beginDateTime.getHours(), beginMinute, beginSecond);
+            let endStr = DateTimeFormatUtil.shortTime(endDateTime.getHours(), endMinute, endSecond);
 
             result.success = true;
-            result.timex = `(${beginStr},${endStr},${FormatUtil.luisTimeSpan(endDateTime, beginDateTime)})`;
+            result.timex = `(${beginStr},${endStr},${DateTimeFormatUtil.luisTimeSpan(endDateTime, beginDateTime)})`;
 
             result.futureValue = result.pastValue = { item1: beginDateTime, item2: endDateTime };
 

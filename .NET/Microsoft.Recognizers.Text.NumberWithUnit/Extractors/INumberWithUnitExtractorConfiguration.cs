@@ -27,7 +27,9 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
         Regex CompoundUnitConnectorRegex { get; }
 
-        Regex PmNonUnitRegex { get; }
+        Regex NonUnitRegex { get; }
+
+        Regex AmbiguousUnitNumberMultiplierRegex { get; }
 
         Dictionary<Regex, Regex> AmbiguityFiltersDict { get; }
 

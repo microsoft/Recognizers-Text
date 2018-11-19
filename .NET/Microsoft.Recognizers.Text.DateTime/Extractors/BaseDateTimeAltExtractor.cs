@@ -2,10 +2,11 @@ using System.Linq;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using DateObject = System.DateTime;
+using System;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
-    public class BaseDateTimeAltExtractor: IDateTimeListExtractor
+    public class BaseDateTimeAltExtractor : IDateTimeListExtractor
     {
         private const string ExtractorName = Constants.SYS_DATETIME_DATETIMEALT; // "DateTimeALT";
 
@@ -35,90 +36,29 @@ namespace Microsoft.Recognizers.Text.DateTime
             var i = 0;
             while (i < ers.Count - 1)
             {
-                var j = i + 1;
-                var types = new HashSet<string> {ers[i].Type};
+                var altErs = GetAltErsWithSameParentText(ers, i, text);
 
-                while (j < ers.Count)
-                {
-                    // Currently only support merge two kinds of types
-                    if (!types.Contains(ers[j].Type) && types.Count > 1)
-                    {
-                        break;
-                    }
-
-                    // Check whether middle string is a connector
-                    var middleBegin = ers[j - 1].Start + ers[j - 1].Length ?? 0;
-                    var middleEnd = ers[j].Start ?? 0;
-
-                    if (!IsConnectorOrWhiteSpace(middleBegin, middleEnd, text))
-                    {
-                        break;
-                    }
-
-                    types.Add(ers[j].Type);
-                    j++;
-                }
-
-                j--;
-
-                if (i == j)
+                if (altErs.Count == 0)
                 {
                     i++;
                     continue;
                 }
 
-                // Extract different data accordingly
-                var altErs = ers.GetRange(i, j - i + 1);
-                var data = ExtractAlt(altErs);
+                var j = i + altErs.Count - 1;
 
                 var parentTextStart = ers[i].Start;
                 var parentTextLen = ers[j].Start + ers[j].Length - ers[i].Start;
                 var parentText = text.Substring(parentTextStart ?? 0, parentTextLen ?? 0);
 
-                if (data.Count > 0)
+                var success = ExtractAndApplyMetadata(altErs, parentText);
+
+                if (success)
                 {
-                    data.Add(ExtendedModelResult.ParentTextKey, parentText);
-
-                    ers[i].Data = new Dictionary<string, object>
-                        {
-                            {Constants.SubType, ers[i].Type},
-                            {ExtendedModelResult.ParentTextKey, parentText}
-                        };
-                    ers[i].Type = ExtractorName;
-
-                    for (var k = i + 1; k <= j; k++)
-                    {
-                        ers[k].Type = ExtractorName;
-                        ers[k].Data = data;
-                    }
-
                     i = j + 1;
                 }
                 else
                 {
-                    altErs.Reverse();
-                    data = ExtractAlt(altErs);
-                    if (data.Count > 0)
-                    {
-                        data.Add(ExtendedModelResult.ParentTextKey, parentText);
-
-                        ers[j].Data = new Dictionary<string, object>
-                        {
-                            {Constants.SubType, ers[j].Type},
-                            {ExtendedModelResult.ParentTextKey, parentText}
-                        };
-                        ers[j].Type = ExtractorName;
-
-                        for (var k = i; k < j; k++)
-                        {
-                            ers[k].Type = ExtractorName;
-                            ers[k].Data = data;
-                        }
-
-                        i = j + 1;
-                        continue;
-                    }
-                    i = j;
+                    i++;
                 }
             }
 
@@ -126,6 +66,42 @@ namespace Microsoft.Recognizers.Text.DateTime
             PruneInvalidImplicitDate(ers);
 
             return ers;
+        }
+
+        private List<ExtractResult> GetAltErsWithSameParentText(List<ExtractResult> ers, int startIndex, string text)
+        {
+            var pivot = startIndex + 1;
+            var types = new HashSet<string> { ers[startIndex].Type };
+
+            while (pivot < ers.Count)
+            {
+                // Currently only support merge two kinds of types
+                if (!types.Contains(ers[pivot].Type) && types.Count > 1)
+                {
+                    break;
+                }
+
+                // Check whether middle string is a connector
+                var middleBegin = ers[pivot - 1].Start + ers[pivot - 1].Length ?? 0;
+                var middleEnd = ers[pivot].Start ?? 0;
+
+                if (!IsConnectorOrWhiteSpace(middleBegin, middleEnd, text))
+                {
+                    break;
+                }
+
+                types.Add(ers[pivot].Type);
+                pivot++;
+            }
+
+            pivot--;
+
+            if (startIndex == pivot)
+            {
+                startIndex++;
+            }
+
+            return ers.GetRange(startIndex, pivot - startIndex + 1);
         }
 
         private List<ExtractResult> AddImplicitDates(List<ExtractResult> originalErs, string text)
@@ -269,7 +245,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
                 }
             }
-            
+
             ers.AddRange(relativeDatePeriodErs);
             ers.Sort((a, b) => a.Start - b.Start ?? 0);
         }
@@ -294,231 +270,283 @@ namespace Microsoft.Recognizers.Text.DateTime
                    orTermMatches[0].Length == middleStr.Length;
         }
 
-        private Dictionary<string, object> ExtractAlt(List<ExtractResult> extractResults)
+        private bool ExtractAndApplyMetadata(List<ExtractResult> extractResults, string parentText)
         {
-            var former = extractResults.First();
-            var latter = extractResults.Last();
-            var data = ExtractDateTime_Time(former, latter);
+            var success = ExtractAndApplyMetadata(extractResults, parentText, reverse: false);
 
-            if (data.Count == 0)
+            if (!success)
             {
-                data = ExtractDates(extractResults);
+                success = ExtractAndApplyMetadata(extractResults, parentText, reverse: true);
             }
 
-            if (data.Count == 0)
-            {
-                data = ExtractTime_Time(former, latter);
-            }
-
-            if (data.Count == 0)
-            {
-                data = ExtractDateTime_DateTime(former, latter);
-            }
-
-            if (data.Count == 0)
-            {
-                data = ExtractDateTimeRange_TimeRange(former, latter);
-            }
-
-            if (data.Count == 0)
-            {
-                data = ExtractDateRange_DateRange(former, latter);
-            }
-
-            if (data.Count == 0)
-            {
-                data = ExtractDateTimeRange_Date(former, latter);
-            }
-
-            if (data.Count == 0)
-            {
-                data = ExtractDate_DateRange(former, latter);
-            }
-
-            return data;
+            return success;
         }
 
-        private Dictionary<string, object> ExtractDateTime_Time(ExtractResult former, ExtractResult latter)
+        private bool ExtractAndApplyMetadata(List<ExtractResult> extractResults, string parentText, bool reverse)
         {
-            var data = new Dictionary<string, object>();
-            // Modify time entity to an alternative DateTime expression, such as "8pm" in "Monday 7pm or 8pm"
-            if (former.Type == Constants.SYS_DATETIME_DATETIME && latter.Type == Constants.SYS_DATETIME_TIME)
+            if (reverse)
             {
-                var ers = config.DateExtractor.Extract(former.Text);
-                if (ers.Count == 1)
+                extractResults.Reverse();
+            }
+
+            var success = false;
+
+            // Currently, we support alt entity sequence only when the second alt entity to the last alt entity share the same type
+            if (IsSupportedAltEntitySequence(extractResults))
+            {
+                var metadata = ExtractMetadata(extractResults.First(), parentText, extractResults);
+                Dictionary<string, object> metadataCandidate = null;
+
+                int i = 0;
+                while (i < extractResults.Count)
                 {
-                    data.Add(Constants.Context, ers[0]);
-                    data.Add(Constants.SubType, Constants.SYS_DATETIME_TIME);
+                    if (metadata == null)
+                    {
+                        break;
+                    }
+
+                    int j = i + 1;
+
+                    while (j < extractResults.Count)
+                    {
+                        metadataCandidate = ExtractMetadata(extractResults[j], parentText, extractResults);
+
+                        // No context extracted, the context would follow the previous one
+                        // Such as "Wednesday" in "next Tuesday or Wednesday"
+                        if (metadataCandidate == null)
+                        {
+                            j++;
+                        }
+                        else
+                        {
+                            // Current extraction has context, the context would not follow the previous ones
+                            // Such as "Wednesday" in "next Monday or Tuesday or previous Wednesday"
+                            break;
+                        }
+                    }
+
+                    var ersShareContext = extractResults.GetRange(i, j - i);
+                    ApplyMetadata(ersShareContext, metadata, parentText);
+                    metadata = metadataCandidate;
+
+                    i = j;
+                    success = true;
                 }
             }
-            
-            return data;
+
+            return success;
         }
 
-        private Dictionary<string, object> ExtractDates(List<ExtractResult> extractResults)
+        private bool IsSupportedAltEntitySequence(List<ExtractResult> altEntities)
         {
-            var data = new Dictionary<string, object>();
-            var allAreDates = true;
-            foreach (var er in extractResults)
+            var subSeq = altEntities.Skip(1);
+            var entityTypes = subSeq.Select(t => t.Type).Distinct();
+
+            return entityTypes.Count() == 1;
+        }
+
+        // This method is to extract metadata from the targeted ExtractResult
+        // For cases like "next week Monday or Tuesday or previous Wednesday", ExtractMethods can be more than one
+        private Dictionary<string, object> ExtractMetadata(ExtractResult targetEr, string parentText, List<ExtractResult> ers)
+        {
+            Dictionary<string, object> metadata = null;
+            var extractMethods = GetExtractMethods(targetEr.Type, ers.Last().Type);
+            var postProcessMethod = GetPostProcessMethod(targetEr.Type, ers.Last().Type);
+            var contextEr = ExtractContext(targetEr, extractMethods, postProcessMethod);
+
+            if (ShouldCreateMetadata(ers, contextEr))
             {
-                if (!er.Type.Equals(Constants.SYS_DATETIME_DATE))
+                metadata = CreateMetadata(targetEr.Type, parentText, contextEr);
+            }
+
+            return metadata;
+        }
+
+        private ExtractResult ExtractContext(ExtractResult er, List<Func<string, List<ExtractResult>>> extractMethods, Action<ExtractResult, ExtractResult> postProcessMethod)
+        {
+            ExtractResult contextEr = null;
+
+            foreach (var extractMethod in extractMethods)
+            {
+                var contextErCandidates = extractMethod(er.Text);
+
+                if (contextErCandidates.Count == 1)
                 {
-                    allAreDates = false;
+                    contextEr = contextErCandidates.Single();
                     break;
                 }
             }
-            
-            // Modify time entity to an alternative Date expression, such as "Thursday" in "next week on Tuesday or Thursday"
-            if (allAreDates)
+
+            if (contextEr != null)
             {
-                var ers = config.DatePeriodExtractor.Extract(extractResults[0].Text);
-                if (ers.Count == 1)
+                postProcessMethod?.Invoke(contextEr, er);
+            }
+
+            if (contextEr != null && string.IsNullOrEmpty(contextEr.Text))
+            {
+                contextEr = null;
+            }
+
+            return contextEr;
+        }
+
+        private bool ShouldCreateMetadata(List<ExtractResult> originalErs, ExtractResult contextEr)
+        {
+            // For alternative entities sequence which are all DatePeriod, we should create metadata even if context is null
+            return (contextEr != null
+                || (originalErs.First().Type == Constants.SYS_DATETIME_DATEPERIOD && originalErs.Last().Type == Constants.SYS_DATETIME_DATEPERIOD));
+        }
+
+        private void ApplyMetadata(List<ExtractResult> ers, Dictionary<string, object> metadata, string parentText)
+        {
+            // The first extract results don't need any context
+            ers[0].Data = CreateMetadata(ers[0].Type, parentText, contextEr: null);
+            ers[0].Type = ExtractorName;
+
+            for (var i = 1; i < ers.Count; i++)
+            {
+                ers[i].Data = metadata;
+                ers[i].Type = ExtractorName;
+            }
+        }
+
+        private Dictionary<string, object> CreateMetadata(string subType, string parentText, ExtractResult contextEr = null)
+        {
+            var data = new Dictionary<string, object>();
+
+            if (!string.IsNullOrEmpty(subType))
+            {
+                data.Add(Constants.SubType, subType);
+            }
+
+            if (!string.IsNullOrEmpty(parentText))
+            {
+                data.Add(ExtendedModelResult.ParentTextKey, parentText);
+            }
+
+            if (contextEr != null)
+            {
+                data.Add(Constants.Context, contextEr);
+            }
+
+            return data;
+        }
+
+
+        private List<ExtractResult> ExtractRelativePrefixContext(string entityText)
+        {
+            List<ExtractResult> results = new List<ExtractResult>();
+
+            foreach (var regex in config.RelativePrefixList)
+            {
+                var match = regex.Match(entityText);
+
+                if (match.Success)
                 {
-                    data.Add(Constants.Context, ers[0]);
-                    data.Add(Constants.SubType, Constants.SYS_DATETIME_DATE);
-                }
-                else
-                {
-                    // "Thursday" in "next/last/this Tuesday or Thursday"
-                    foreach (var regex in config.RelativePrefixList)
+                    results.Add(new ExtractResult
                     {
-                        var match = regex.Match(extractResults[0].Text);
-                        if (match.Success)
-                        {
-                            var contextErs = new ExtractResult
-                            {
-                                Text = match.Value,
-                                Start = match.Index,
-                                Length = match.Length,
-                                Type = Constants.ContextType_RelativePrefix
-                            };
-
-                            data.Add(Constants.Context, contextErs);
-                            data.Add(Constants.SubType, Constants.SYS_DATETIME_DATE);
-                        }
-                    }
+                        Text = match.Value,
+                        Start = match.Index,
+                        Length = match.Length,
+                        Type = Constants.ContextType_RelativePrefix
+                    });
                 }
             }
-            
-            return data;
+
+            return results;
         }
 
-        private Dictionary<string, object> ExtractTime_Time(ExtractResult former, ExtractResult latter)
+        private List<ExtractResult> ExtractAmPmContext(string entityText)
         {
-            var data = new Dictionary<string, object>();
-            if (former.Type == Constants.SYS_DATETIME_TIME && latter.Type == Constants.SYS_DATETIME_TIME)
+            List<ExtractResult> results = new List<ExtractResult>();
+
+            foreach (var regex in config.AmPmRegexList)
             {
-                // "8 oclock" in "in the morning at 7 oclock or 8 oclock"
-                foreach (var regex in config.AmPmRegexList)
+                var match = regex.Match(entityText);
+
+                if (match.Success)
                 {
-                    var match = regex.Match(former.Text);
-                    if (match.Success)
+                    results.Add(new ExtractResult
                     {
-                        var contextErs = new ExtractResult
-                        {
-                            Text = match.Value,
-                            Start = match.Index,
-                            Length = match.Length,
-                            Type = Constants.ContextType_AmPm
-                        };
-
-                        data.Add(Constants.Context, contextErs);
-                        data.Add(Constants.SubType, Constants.SYS_DATETIME_TIME);
-                    }
+                        Text = match.Value,
+                        Start = match.Index,
+                        Length = match.Length,
+                        Type = Constants.ContextType_AmPm
+                    });
                 }
             }
-            
-            return data;
+
+            return results;
         }
 
-        private Dictionary<string, object> ExtractDateTimeRange_TimeRange(ExtractResult former, ExtractResult latter)
+        private Action<ExtractResult, ExtractResult> GetPostProcessMethod(string firstEntityType, string lastEntityType)
         {
-            var data = new Dictionary<string, object>();
-            
-            // Modify time entity to an alternative DateTimeRange expression, such as "9-10 am" in "Monday 7-8 am or 9-10 am"
-            if (former.Type == Constants.SYS_DATETIME_DATETIMEPERIOD && latter.Type == Constants.SYS_DATETIME_TIMEPERIOD)
+            if (firstEntityType.Equals(Constants.SYS_DATETIME_DATETIMEPERIOD) && lastEntityType.Equals(Constants.SYS_DATETIME_DATE))
             {
-                var ers = config.DateExtractor.Extract(former.Text);
-                if (ers.Count == 1)
+                return (contextEr, originalEr) =>
                 {
-                    data.Add(Constants.Context, ers[0]);
-                    data.Add(Constants.SubType, Constants.SYS_DATETIME_TIMEPERIOD);
-                }
+                    contextEr.Text = originalEr.Text.Substring(0, (int)contextEr.Start) +
+                                  originalEr.Text.Substring((int)(contextEr.Start + contextEr.Length));
+                    contextEr.Type = Constants.ContextType_RelativeSuffix;
+                };
             }
-            
-            return data;
-        }
-
-        private Dictionary<string, object> ExtractDateRange_DateRange(ExtractResult former, ExtractResult latter)
-        {
-            var data = new Dictionary<string, object>();
-            
-            if (former.Type == Constants.SYS_DATETIME_DATEPERIOD && latter.Type == Constants.SYS_DATETIME_DATEPERIOD)
+            else if (firstEntityType.Equals(Constants.SYS_DATETIME_DATE) && lastEntityType.Equals(Constants.SYS_DATETIME_DATEPERIOD))
             {
-                data.Add(Constants.SubType, Constants.SYS_DATETIME_DATEPERIOD);
-            }
-            
-            return data;
-        }
-
-        private Dictionary<string, object> ExtractDateTime_DateTime(ExtractResult former, ExtractResult latter)
-        {
-            var data = new Dictionary<string, object>();
-            
-            // Modify time entity to an alternative DateTime expression, such as "Tue 1 pm" in "next week Mon 9 am or Tue 1 pm"
-            if (former.Type == Constants.SYS_DATETIME_DATETIME && latter.Type == Constants.SYS_DATETIME_DATETIME)
-            {
-                var ers = config.DatePeriodExtractor.Extract(former.Text);
-                if (ers.Count == 1)
+                return (contextEr, originalEr) =>
                 {
-                    data.Add(Constants.Context, ers[0]);
-                    data.Add(Constants.SubType, Constants.SYS_DATETIME_DATETIME);
-                }
+                    contextEr.Text = originalEr.Text.Substring(0, (int)contextEr.Start);
+                };
             }
-            
-            return data;
+
+            return null;
         }
 
-        private Dictionary<string, object> ExtractDateTimeRange_Date(ExtractResult former, ExtractResult latter)
+        private List<Func<string, List<ExtractResult>>> GetExtractMethods(string firstEntityType, string lastEntityType)
         {
-            var data = new Dictionary<string, object>();
+            var methods = new List<Func<string, List<ExtractResult>>>();
 
-            // Modify time entity to an alternative DateTimeRange expression, such as "9-10 am" in "Monday 7-8 am or 9-10 am"
-            if (former.Type == Constants.SYS_DATETIME_DATETIMEPERIOD &&
-                latter.Type == Constants.SYS_DATETIME_DATE)
+            if (firstEntityType.Equals(Constants.SYS_DATETIME_DATETIME) && lastEntityType.Equals(Constants.SYS_DATETIME_TIME))
             {
-                var ers = config.DateExtractor.Extract(former.Text);
-                if (ers.Count == 1)
-                {
-                    ers[0].Text = former.Text.Substring(0, (int)ers[0].Start) +
-                                  former.Text.Substring((int)(ers[0].Start + ers[0].Length));
-                    ers[0].Type = Constants.ContextType_RelativeSuffix;
-                    data.Add(Constants.Context, ers[0]);
-                    data.Add(Constants.SubType, Constants.SYS_DATETIME_DATETIMEPERIOD);
-                }
+                // "Monday 7pm or 8pm"
+                methods.Add(config.DateExtractor.Extract);
+            }
+            else if (firstEntityType.Equals(Constants.SYS_DATETIME_DATE) && lastEntityType.Equals(Constants.SYS_DATETIME_DATE))
+            {
+                // "next week Monday or Tuesday", "previous Monday or Wednesday"
+                methods.Add(config.DatePeriodExtractor.Extract);
+                methods.Add(ExtractRelativePrefixContext);
+            }
+            else if (firstEntityType.Equals(Constants.SYS_DATETIME_TIME) && lastEntityType.Equals(Constants.SYS_DATETIME_TIME))
+            {
+                // "in the morning at 7 oclock or 8 oclock"
+                methods.Add(ExtractAmPmContext);
+            }
+            else if (firstEntityType.Equals(Constants.SYS_DATETIME_DATETIME) && lastEntityType.Equals(Constants.SYS_DATETIME_DATETIME))
+            {
+                // "next week Mon 9am or Tue 1pm"
+                methods.Add(config.DatePeriodExtractor.Extract);
+            }
+            else if (firstEntityType.Equals(Constants.SYS_DATETIME_DATETIMEPERIOD) && lastEntityType.Equals(Constants.SYS_DATETIME_TIMEPERIOD))
+            {
+                // "Monday 7-8 am or 9-10am"
+                methods.Add(config.DateExtractor.Extract);
+            }
+            else if (firstEntityType.Equals(Constants.SYS_DATETIME_DATEPERIOD) && lastEntityType.Equals(Constants.SYS_DATETIME_DATEPERIOD))
+            {
+                // For alt entities that are all DatePeriod, no need to share context
+            }
+            else if (firstEntityType.Equals(Constants.SYS_DATETIME_DATETIMEPERIOD) && lastEntityType.Equals(Constants.SYS_DATETIME_DATE))
+            {
+                // "Tuesday or Wednesday morning"
+                methods.Add(config.DateExtractor.Extract);
+            }
+            else if (firstEntityType.Equals(Constants.SYS_DATETIME_DATE) && lastEntityType.Equals(Constants.SYS_DATETIME_DATEPERIOD))
+            {
+                // "Monday this week or next week"
+                methods.Add(config.DatePeriodExtractor.Extract);
             }
 
-            return data;
-        }
-
-        private Dictionary<string, object> ExtractDate_DateRange(ExtractResult former, ExtractResult latter)
-        {
-            var data = new Dictionary<string, object>();
-
-            // For cases like "monday this week or next week"
-            if (former.Type == Constants.SYS_DATETIME_DATE &&
-                latter.Type == Constants.SYS_DATETIME_DATEPERIOD)
-            {
-                var ers = config.DatePeriodExtractor.Extract(former.Text);
-                if (ers.Count == 1)
-                {
-                    ers[0].Text = former.Text.Substring(0, (int)ers[0].Start);
-                    data.Add(Constants.Context, ers[0]);
-                    data.Add(Constants.SubType, Constants.SYS_DATETIME_DATE);
-                }
-            }
-
-            return data;
+            return methods;
         }
     }
 }

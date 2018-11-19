@@ -9,9 +9,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
     {
         public static readonly Regex[] HolidayRegexList =
         {
-            new Regex(DateTimeDefinitions.HolidayRegex1, RegexOptions.IgnoreCase | RegexOptions.Singleline),
-            new Regex(DateTimeDefinitions.HolidayRegex2, RegexOptions.IgnoreCase | RegexOptions.Singleline),
-            new Regex(DateTimeDefinitions.HolidayRegex3, RegexOptions.IgnoreCase | RegexOptions.Singleline)
+            new Regex(DateTimeDefinitions.HolidayRegex1, RegexOptions.Singleline),
+            new Regex(DateTimeDefinitions.HolidayRegex2, RegexOptions.Singleline),
+            new Regex(DateTimeDefinitions.HolidayRegex3, RegexOptions.Singleline)
         };
 
         public PortugueseHolidayExtractorConfiguration(IOptionsConfiguration config) : base(config)

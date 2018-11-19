@@ -20,7 +20,8 @@ public abstract class ChineseNumberWithUnitExtractorConfiguration implements INu
         this.cultureInfo = cultureInfo;
 
         this.unitNumExtractor = new NumberExtractor(ChineseNumberExtractorMode.ExtractAll);
-        this.compoundUnitConnectorRegex = Pattern.compile(ChineseNumericWithUnit.CompoundUnitConnectorRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS);
+        this.compoundUnitConnectorRegex =
+                Pattern.compile(ChineseNumericWithUnit.CompoundUnitConnectorRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS);
     }
 
     public CultureInfo getCultureInfo() { return this.cultureInfo; }
@@ -29,6 +30,7 @@ public abstract class ChineseNumberWithUnitExtractorConfiguration implements INu
     public String getBuildSuffix() { return ChineseNumericWithUnit.BuildSuffix; }
     public String getConnectorToken() { return ChineseNumericWithUnit.ConnectorToken; }
     public Pattern getCompoundUnitConnectorRegex() { return this.compoundUnitConnectorRegex; }
+    public Pattern getAmbiguousUnitNumberMultiplierRegex() { return null; }
 
     public abstract String getExtractType();
     public abstract Map<String, String> getSuffixList();

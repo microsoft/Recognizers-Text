@@ -5,7 +5,7 @@ import { IDateExtractorConfiguration, IDateParserConfiguration, BaseDateExtracto
 import { BaseDurationExtractor, BaseDurationParser } from "../baseDuration"
 import { Constants, TimeTypeConstants } from "../constants"
 import { ChineseDurationExtractor } from "./durationConfiguration";
-import { Token, FormatUtil, DateUtils, DateTimeResolutionResult, IDateTimeUtilityConfiguration, StringMap } from "../utilities";
+import { Token, DateTimeFormatUtil, DateUtils, DateTimeResolutionResult, IDateTimeUtilityConfiguration, StringMap } from "../utilities";
 import { ChineseDateTime } from "../../resources/chineseDateTime";
 import { IDateTimeParser, DateTimeParseResult } from "../parsers"
 
@@ -215,9 +215,9 @@ export class ChineseDateParser extends BaseDateParser {
             }
             if (innerResult.success) {
                 innerResult.futureResolution = {};
-                innerResult.futureResolution[TimeTypeConstants.DATE] = FormatUtil.formatDate(innerResult.futureValue);
+                innerResult.futureResolution[TimeTypeConstants.DATE] = DateTimeFormatUtil.formatDate(innerResult.futureValue);
                 innerResult.pastResolution = {};
-                innerResult.pastResolution[TimeTypeConstants.DATE] = FormatUtil.formatDate(innerResult.pastValue);
+                innerResult.pastResolution[TimeTypeConstants.DATE] = DateTimeFormatUtil.formatDate(innerResult.pastValue);
                 innerResult.isLunar = this.parseLunarCalendar(source);
                 resultValue = innerResult;
             }
@@ -287,7 +287,7 @@ export class ChineseDateParser extends BaseDateParser {
                 }
             }
 
-            result.timex = FormatUtil.luisDate(hasYear ? year : -1, hasMonth ? month : -1, day);
+            result.timex = DateTimeFormatUtil.luisDate(hasYear ? year : -1, hasMonth ? month : -1, day);
             let futureDate: Date;
             let pastDate: Date;
 
@@ -318,7 +318,7 @@ export class ChineseDateParser extends BaseDateParser {
             let swift = this.config.getSwiftDay(match.value);
             let value = DateUtils.addDays(referenceDate, swift);
 
-            result.timex = FormatUtil.luisDateFromDate(value);
+            result.timex = DateTimeFormatUtil.luisDateFromDate(value);
             result.futureValue = value;
             result.pastValue = value;
             result.success = true;
@@ -331,7 +331,7 @@ export class ChineseDateParser extends BaseDateParser {
             let weekdayStr = match.groups('weekday').value;
             let value = DateUtils.this(referenceDate, this.config.dayOfWeek.get(weekdayStr));
 
-            result.timex = FormatUtil.luisDateFromDate(value);
+            result.timex = DateTimeFormatUtil.luisDateFromDate(value);
             result.futureValue = value;
             result.pastValue = value;
             result.success = true;
@@ -344,7 +344,7 @@ export class ChineseDateParser extends BaseDateParser {
             let weekdayStr = match.groups('weekday').value;
             let value = DateUtils.next(referenceDate, this.config.dayOfWeek.get(weekdayStr));
 
-            result.timex = FormatUtil.luisDateFromDate(value);
+            result.timex = DateTimeFormatUtil.luisDateFromDate(value);
             result.futureValue = value;
             result.pastValue = value;
             result.success = true;
@@ -357,7 +357,7 @@ export class ChineseDateParser extends BaseDateParser {
             let weekdayStr = match.groups('weekday').value;
             let value = DateUtils.last(referenceDate, this.config.dayOfWeek.get(weekdayStr));
 
-            result.timex = FormatUtil.luisDateFromDate(value);
+            result.timex = DateTimeFormatUtil.luisDateFromDate(value);
             result.futureValue = value;
             result.pastValue = value;
             result.success = true;
@@ -412,10 +412,10 @@ export class ChineseDateParser extends BaseDateParser {
         let noYear = false;
         if (year === 0) {
             year = referenceDate.getFullYear();
-            result.timex = FormatUtil.luisDate(-1, month, day);
+            result.timex = DateTimeFormatUtil.luisDate(-1, month, day);
             noYear = true;
         } else {
-            result.timex = FormatUtil.luisDate(year, month, day);
+            result.timex = DateTimeFormatUtil.luisDate(year, month, day);
         }
         let futureDate = DateUtils.safeCreateFromMinValue(year, month, day);
         let pastDate = DateUtils.safeCreateFromMinValue(year, month, day);

@@ -109,7 +109,7 @@
     "NotSupported": "python",
     "Results": [
       {
-        "Text": "１，１２３パーセント",
+        "Text": "1,123パーセント",
         "TypeName": "percentage",
         "Resolution": {
           "value": "1123%"
@@ -169,7 +169,7 @@
     "NotSupported": "python",
     "Results": [
       {
-        "Text": "１２０パ ーセ ント",
+        "Text": "120パ ーセ ント",
         "TypeName": "percentage",
         "Resolution": {
           "value": "120%"
@@ -184,7 +184,7 @@
     "NotSupported": "python",
     "Results": [
       {
-        "Text": "９，９９９パ ーセ ント",
+        "Text": "9,999パ ーセ ント",
         "TypeName": "percentage",
         "Resolution": {
           "value": "9999%"
@@ -199,7 +199,7 @@
     "NotSupported": "python",
     "Results": [
       {
-        "Text": "２．４パーセント",
+        "Text": "2.4パーセント",
         "TypeName": "percentage",
         "Resolution": {
           "value": "2.4%"
@@ -229,7 +229,7 @@
     "NotSupported": "python",
     "Results": [
       {
-        "Text": "２２％",
+        "Text": "22%",
         "TypeName": "percentage",
         "Resolution": {
           "value": "22%"
@@ -244,22 +244,7 @@
     "NotSupported": "python",
     "Results": [
       {
-        "Text": "－1２２％",
-        "TypeName": "percentage",
-        "Resolution": {
-          "value": "-122%"
-        },
-        "Start": 0,
-        "End": 4
-      }
-    ]
-  },
-  {
-    "Input": "－1２２％",
-    "NotSupported": "python",
-    "Results": [
-      {
-        "Text": "－1２２％",
+        "Text": "-122%",
         "TypeName": "percentage",
         "Resolution": {
           "value": "-122%"
@@ -289,7 +274,7 @@
     "NotSupported": "python",
     "Results": [
       {
-        "Text": "１２０パーセント",
+        "Text": "120パーセント",
         "TypeName": "percentage",
         "Resolution": {
           "value": "120%"
@@ -334,7 +319,7 @@
     "NotSupported": "python",
     "Results": [
       {
-        "Text": "９，９９９パーセント",
+        "Text": "9,999パーセント",
         "TypeName": "percentage",
         "Resolution": {
           "value": "9999%"
@@ -349,7 +334,7 @@
     "NotSupported": "python",
     "Results": [
       {
-        "Text": "５６.２パーセント",
+        "Text": "56.2パーセント",
         "TypeName": "percentage",
         "Resolution": {
           "value": "56.2%"
@@ -360,17 +345,17 @@
     ]
   },
   {
-    "Input": "3.2Mパーセント",
+    "Input": "3.2パーセント",
     "NotSupported": "python",
     "Results": [
       {
-        "Text": "3.2Mパーセント",
+        "Text": "3.2パーセント",
         "TypeName": "percentage",
         "Resolution": {
-          "value": "3200000%"
+          "value": "3.2%"
         },
         "Start": 0,
-        "End": 8
+        "End": 7
       }
     ]
   },
@@ -394,7 +379,7 @@
     "NotSupported": "python",
     "Results": [
       {
-        "Text": "０.４パーセント",
+        "Text": "0.4パーセント",
         "TypeName": "percentage",
         "Resolution": {
           "value": "0.4%"
@@ -424,7 +409,7 @@
     "NotSupported": "python",
     "Results": [
       {
-        "Text": "１１１，１１１パーセント",
+        "Text": "111,111パーセント",
         "TypeName": "percentage",
         "Resolution": {
           "value": "111111%"
@@ -439,7 +424,7 @@
     "NotSupported": "python",
     "Results": [
       {
-        "Text": "１５kパーセント",
+        "Text": "15kパーセント",
         "TypeName": "percentage",
         "Resolution": {
           "value": "15000%"
@@ -454,7 +439,7 @@
     "NotSupported": "python",
     "Results": [
       {
-        "Text": "５．５％",
+        "Text": "5.5%",
         "TypeName": "percentage",
         "Resolution": {
           "value": "5.5%"
@@ -469,7 +454,7 @@
     "NotSupported": "python",
     "Results": [
       {
-        "Text": "２．４パ ー   セ    ン ト",
+        "Text": "2.4パ ー   セ    ン ト",
         "TypeName": "percentage",
         "Resolution": {
           "value": "2.4%"
@@ -484,7 +469,7 @@
     "NotSupported": "python",
     "Results": [
       {
-        "Text": "５２.５ k   パ ー セ  ン     ト",
+        "Text": "52.5 k   パ ー セ  ン     ト",
         "TypeName": "percentage",
         "Resolution": {
           "value": "52500%"
@@ -529,7 +514,7 @@
     "NotSupported": "python",
     "Results": [
       {
-        "Text": "２.５割引",
+        "Text": "2.5割引",
         "TypeName": "percentage",
         "Resolution": {
           "value": "25%"
@@ -544,7 +529,7 @@
     "NotSupported": "python",
     "Results": [
       {
-        "Text": "９割",
+        "Text": "9割",
         "TypeName": "percentage",
         "Resolution": {
           "value": "90%"
@@ -559,7 +544,7 @@
     "NotSupported": "python",
     "Results": [
       {
-        "Text": "7.２割",
+        "Text": "7.2割",
         "TypeName": "percentage",
         "Resolution": {
           "value": "72%"
@@ -574,7 +559,7 @@
     "NotSupported": "python",
     "Results": [
       {
-        "Text": "１０ 割",
+        "Text": "10 割",
         "TypeName": "percentage",
         "Resolution": {
           "value": "100%"
@@ -589,7 +574,7 @@
     "NotSupported": "python",
     "Results": [
       {
-        "Text": "１0 割",
+        "Text": "10 割",
         "TypeName": "percentage",
         "Resolution": {
           "value": "100%"
@@ -664,7 +649,7 @@
     "NotSupported": "python",
     "Results": [
       {
-        "Text": "２.５割",
+        "Text": "2.5割",
         "TypeName": "percentage",
         "Resolution": {
           "value": "25%"
@@ -679,7 +664,7 @@
     "NotSupported": "python",
     "Results": [
       {
-        "Text": "２割",
+        "Text": "2割",
         "TypeName": "percentage",
         "Resolution": {
           "value": "20%"
@@ -712,7 +697,7 @@
         "End": 6
       },
       {
-        "Text": "２．１割",
+        "Text": "2.1割",
         "TypeName": "percentage",
         "Resolution": {
           "value": "21%"
@@ -721,7 +706,7 @@
         "End": 11
       },
       {
-        "Text": "２割",
+        "Text": "2割",
         "TypeName": "percentage",
         "Resolution": {
           "value": "20%"

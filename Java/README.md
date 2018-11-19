@@ -137,3 +137,17 @@ To achieve this, the recognizers contains the following folders:
 
 * [Specs](https://github.com/Microsoft/Recognizers-Text/tree/master/Specs) - Contains all the necessary tests that should be run on any improvements to the recognizers. It's divided by recognizer and supported language.
 * [Patterns](https://github.com/Microsoft/Recognizers-Text/tree/master/Patterns)  - Contains all the regular expressions that fulfill the recognizers logic. It's divided by supported language.
+
+## Linting rules
+
+This project uses linting rules to enforce code standardization. These rules are specified in the file [linting-rules.xml](linting-rules.xml) with [CheckStyle](https://checkstyle.org/) and are hooked to Maven's build cycle.
+
+**INFO**: Since the CheckStyle plugin is hook to the build cycle, this makes the build **fail** in case there are linting warnings in the project files so be sure to check that the code doesn't break any rule.
+
+CheckStyle is available in different flavours:
+- [Visual Studio Code plugin](https://marketplace.visualstudio.com/items?itemName=shengchen.vscode-checkstyle)
+- [IntelliJ IDEA plugin](https://plugins.jetbrains.com/plugin/1065-checkstyle-idea)
+- [Eclipse plugin](https://checkstyle.org/eclipse-cs)
+- [CLI Tool](https://checkstyle.org/cmdline.html)
+
+**INFO**: Be sure to configure your IDE to use the file [linting-rules.xml](linting-rules.xml) instead of the default rules.

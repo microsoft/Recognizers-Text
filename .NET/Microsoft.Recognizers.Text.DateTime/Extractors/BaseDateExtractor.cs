@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Recognizers.Text.DateTime.Utilities;
+using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
@@ -6,23 +7,20 @@ using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
-    public class BaseDateExtractor : IDateTimeExtractor
+    public class BaseDateExtractor : AbstractYearExtractor, IDateExtractor
     {
         public static readonly string ExtractorName = Constants.SYS_DATETIME_DATE; // "Date";
 
-        private readonly IDateExtractorConfiguration config;
-
-        public BaseDateExtractor(IDateExtractorConfiguration config)
+        public BaseDateExtractor(IDateExtractorConfiguration config) : base(config)
         {
-            this.config = config;
         }
 
-        public List<ExtractResult> Extract(string text)
+        public override List<ExtractResult> Extract(string text)
         {
             return Extract(text, DateObject.Now);
         }
 
-        public List<ExtractResult> Extract(string text, DateObject reference)
+        public override List<ExtractResult> Extract(string text, DateObject reference)
         {
             var tokens = new List<Token>();
             tokens.AddRange(BasicRegexMatch(text));
@@ -31,69 +29,6 @@ namespace Microsoft.Recognizers.Text.DateTime
             tokens.AddRange(ExtractRelativeDurationDate(text, reference));
 
             return Token.MergeAllTokens(tokens, text, ExtractorName);
-        }
-
-        public int GetYearFromText(Match match)
-        {
-            int year = Constants.InvalidYear;
-
-            var yearStr = match.Groups["year"].Value;
-            if (!string.IsNullOrEmpty(yearStr))
-            {
-                year = int.Parse(yearStr);
-                if (year < 100 && year >= Constants.MinTwoDigitYearPastNum)
-                {
-                    year += 1900;
-                }
-                else if (year >= 0 && year < Constants.MaxTwoDigitYearFutureNum)
-                {
-                    year += 2000;
-                }
-            }
-            else
-            {
-                var firstTwoYearNumStr = match.Groups["firsttwoyearnum"].Value;
-                if (!string.IsNullOrEmpty(firstTwoYearNumStr))
-                {
-                    var er = new ExtractResult
-                    {
-                        Text = firstTwoYearNumStr,
-                        Start = match.Groups["firsttwoyearnum"].Index,
-                        Length = match.Groups["firsttwoyearnum"].Length
-                    };
-
-                    var firstTwoYearNum = Convert.ToInt32((double)(this.config.NumberParser.Parse(er).Value ?? 0));
-
-                    var lastTwoYearNum = 0;
-                    var lastTwoYearNumStr = match.Groups["lasttwoyearnum"].Value;
-                    if (!string.IsNullOrEmpty(lastTwoYearNumStr))
-                    {
-                        er.Text = lastTwoYearNumStr;
-                        er.Start = match.Groups["lasttwoyearnum"].Index;
-                        er.Length = match.Groups["lasttwoyearnum"].Length;
-
-                        lastTwoYearNum = Convert.ToInt32((double)(this.config.NumberParser.Parse(er).Value ?? 0));
-                    }
-
-                    // Exclude pure number like "nineteen", "twenty four"
-                    if (firstTwoYearNum < 100 && lastTwoYearNum == 0 || firstTwoYearNum < 100 && firstTwoYearNum % 10 == 0 && lastTwoYearNumStr.Trim().Split(' ').Length == 1)
-                    {
-                        year = Constants.InvalidYear;
-                        return year;
-                    }
-
-                    if (firstTwoYearNum >= 100)
-                    {
-                        year = firstTwoYearNum + lastTwoYearNum;
-                    }
-                    else
-                    {
-                        year = firstTwoYearNum * 100 + lastTwoYearNum;
-                    }
-                }
-            }
-
-            return year;
         }
 
         // match basic patterns in DateRegexList
@@ -105,11 +40,95 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var matches = regex.Matches(text);
                 foreach (Match match in matches)
                 {
-                    ret.Add(new Token(match.Index, match.Index + match.Length));
+                    // some match might be part of the date range entity, and might be splitted in a wrong way
+                    if (ValidateMatch(match, text))
+                    {
+                        ret.Add(new Token(match.Index, match.Index + match.Length));
+                    }
                 }
             }
 
             return ret;
+        }
+
+        // this method is to validate whether the match is part of date range and is a correct split
+        // For example: in case "10-1 - 11-7", "10-1 - 11" can be matched by some of the Regexes, but the full text is a date range, so "10-1 - 11" is not a correct split
+        private bool ValidateMatch(Match match, string text)
+        {
+            // If the match doesn't contains "year" part, it will not be ambiguous and it's a valid match
+            var isValidMatch = !match.Groups["year"].Success;
+
+            if (!isValidMatch)
+            {
+                var yearGroup = match.Groups["year"];
+
+                // If the "year" part is not at the end of the match, it's a valid match
+                if (!(yearGroup.Index + yearGroup.Length == match.Index + match.Length))
+                {
+                    isValidMatch = true;
+                }
+                else
+                {
+                    var subText = text.Substring(yearGroup.Index);
+
+                    // If the following text (include the "year" part) doesn't start with a Date entity, it's a valid match
+                    if (!StartsWithBasicDate(subText))
+                    {
+                        isValidMatch = true;
+                    }
+                    else
+                    {
+                        // If the following text (include the "year" part) starts with a Date entity, but the following text (doesn't include the "year" part) also starts with a valid Date entity, the current match is still valid
+                        // For example, "10-1-2018-10-2-2018". Match "10-1-2018" is valid because though "2018-10-2" a valid match (indicates the first year "2018" might belongs to the second Date entity), but "10-2-2018" is also a valid match.
+                        subText = text.Substring(yearGroup.Index + yearGroup.Length).Trim();
+                        subText = TrimStartRangeConnectorSymbols(subText);
+                        isValidMatch = StartsWithBasicDate(subText);
+                    }
+                }
+            }
+
+            return isValidMatch;
+        }
+
+        // TODO: Simplify this method to improve the performance
+        private string TrimStartRangeConnectorSymbols(string text)
+        {
+            var rangeConnectorSymbolMatches = config.RangeConnectorSymbolRegex.Matches(text);
+
+            foreach (Match symbolMatch in rangeConnectorSymbolMatches)
+            {
+                var startSymbolLength = -1;
+
+                if (symbolMatch.Success && symbolMatch.Index == 0 && symbolMatch.Length > startSymbolLength)
+                {
+                    startSymbolLength = symbolMatch.Length;
+                }
+
+                if (startSymbolLength > 0)
+                {
+                    text = text.Substring(startSymbolLength);
+                }
+            }
+
+            return text.Trim();
+        }
+
+        // TODO: Simplify this method to improve the performance
+        private bool StartsWithBasicDate(string text)
+        {
+            foreach (var regex in this.config.DateRegexList)
+            {
+                var matches = regex.Matches(text);
+                foreach (Match match in matches)
+                {
+                    if (match.Success && match.Index == 0)
+                    {
+                        return true;
+                    }
+                }
+            }
+
+            return false;
         }
 
         // match several other cases

@@ -4,6 +4,7 @@ import com.microsoft.recognizers.text.number.Constants;
 import com.microsoft.recognizers.text.number.LongFormatType;
 import com.microsoft.recognizers.text.number.extractors.BaseNumberExtractor;
 import com.microsoft.recognizers.text.number.resources.GermanNumeric;
+import com.microsoft.recognizers.text.utilities.RegExpUtility;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -31,12 +32,14 @@ public class IntegerExtractor extends BaseNumberExtractor {
     public IntegerExtractor(String placeholder) {
         HashMap<Pattern, String> builder = new HashMap<>();
 
-        builder.put(Pattern.compile(GermanNumeric.NumbersWithPlaceHolder(placeholder), Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "IntegerNum");
-        builder.put(Pattern.compile(GermanNumeric.NumbersWithSuffix), "IntegerNum");
-        builder.put(Pattern.compile(GermanNumeric.RoundNumberIntegerRegexWithLocks, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "IntegerNum");
-        builder.put(Pattern.compile(GermanNumeric.NumbersWithDozenSuffix,Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "IntegerNum");
-        builder.put(Pattern.compile(GermanNumeric.AllIntRegexWithLocks, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "IntegerGer");
-        builder.put(Pattern.compile(GermanNumeric.AllIntRegexWithDozenSuffixLocks, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "IntegerGer");
+        builder.put(RegExpUtility.getSafeLookbehindRegExp(GermanNumeric.NumbersWithPlaceHolder(placeholder), Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS),
+            "IntegerNum");
+        builder.put(RegExpUtility.getSafeLookbehindRegExp(GermanNumeric.NumbersWithSuffix), "IntegerNum");
+        builder.put(RegExpUtility.getSafeLookbehindRegExp(GermanNumeric.RoundNumberIntegerRegexWithLocks, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS),
+            "IntegerNum");
+        builder.put(RegExpUtility.getSafeLookbehindRegExp(GermanNumeric.NumbersWithDozenSuffix,Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "IntegerNum");
+        builder.put(RegExpUtility.getSafeLookbehindRegExp(GermanNumeric.AllIntRegexWithLocks, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "IntegerGer");
+        builder.put(RegExpUtility.getSafeLookbehindRegExp(GermanNumeric.AllIntRegexWithDozenSuffixLocks, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "IntegerGer");
         builder.put(generateLongFormatNumberRegexes(LongFormatType.IntegerNumComma, placeholder), "IntegerNum");
         builder.put(generateLongFormatNumberRegexes(LongFormatType.IntegerNumBlank, placeholder), "IntegerNum");
         builder.put(generateLongFormatNumberRegexes(LongFormatType.IntegerNumNoBreakSpace, placeholder), "IntegerNum");

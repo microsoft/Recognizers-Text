@@ -3,6 +3,7 @@ package com.microsoft.recognizers.text.number.portuguese.extractors;
 import com.microsoft.recognizers.text.number.Constants;
 import com.microsoft.recognizers.text.number.extractors.BaseNumberExtractor;
 import com.microsoft.recognizers.text.number.resources.PortugueseNumeric;
+import com.microsoft.recognizers.text.utilities.RegExpUtility;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -26,8 +27,8 @@ public class OrdinalExtractor extends BaseNumberExtractor {
     public OrdinalExtractor() {
         HashMap<Pattern, String> builder = new HashMap<>();
 
-        builder.put(Pattern.compile(PortugueseNumeric.OrdinalSuffixRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "OrdinalNum");
-        builder.put(Pattern.compile(PortugueseNumeric. OrdinalEnglishRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "OrdinalPor");
+        builder.put(RegExpUtility.getSafeLookbehindRegExp(PortugueseNumeric.OrdinalSuffixRegex, Pattern.UNICODE_CHARACTER_CLASS), "OrdinalNum");
+        builder.put(RegExpUtility.getSafeLookbehindRegExp(PortugueseNumeric. OrdinalEnglishRegex, Pattern.UNICODE_CHARACTER_CLASS), "OrdinalPor");
 
         this.regexes = Collections.unmodifiableMap(builder);
     }

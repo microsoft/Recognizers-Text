@@ -97,7 +97,7 @@ export namespace ChineseDateTime {
 	export const DurationYearRegex = `((\\d{3,4})|0\\d|两千)\\s*年`;
 	export const DurationHalfSuffixRegex = `半`;
 	export const DurationSuffixList: ReadonlyMap<string, string> = new Map<string, string>([["M", "分钟"],["S", "秒钟|秒"],["H", "个小时|小时"],["D", "天"],["W", "星期|个星期|周"],["Mon", "个月"],["Y", "年"]]);
-	export const DurationAmbiguousUnits = [ '分钟','秒钟','秒','个小时','小时','天','星期','个星期','周','个月','年' ];
+	export const DurationAmbiguousUnits = [ "分钟","秒钟","秒","个小时","小时","天","星期","个星期","周","个月","年" ];
 	export const LunarHolidayRegex = `((${DatePeriodYearRegex}|${DatePeriodYearInChineseRegex}|(?<yearrel>明年|今年|去年))(的)?)?(?<holiday>除夕|春节|中秋节|中秋|元宵节|端午节|端午|重阳节)`;
 	export const HolidayRegexList1 = `((${DatePeriodYearRegex}|${DatePeriodYearInChineseRegex}|(?<yearrel>明年|今年|去年))(的)?)?(?<holiday>新年|五一|劳动节|元旦节|元旦|愚人节|圣诞节|植树节|国庆节|情人节|教师节|儿童节|妇女节|青年节|建军节|女生节|光棍节|双十一|清明节|清明)`;
 	export const HolidayRegexList2 = `((${DatePeriodYearRegex}|${DatePeriodYearInChineseRegex}|(?<yearrel>明年|今年|去年))(的)?)?(?<holiday>母亲节|父亲节|感恩节|万圣节)`;
@@ -168,9 +168,9 @@ export namespace ChineseDateTime {
 	export const TimeNumberDictionary: ReadonlyMap<string, number> = new Map<string, number>([["零", 0],["一", 1],["二", 2],["三", 3],["四", 4],["五", 5],["六", 6],["七", 7],["八", 8],["九", 9],["〇", 0],["两", 2],["十", 10]]);
 	export const TimeLowBoundDesc: ReadonlyMap<string, number> = new Map<string, number>([["中午", 11],["下午", 12],["午后", 12],["晚上", 18],["夜里", 18],["夜晚", 18],["夜间", 18],["深夜", 18],["傍晚", 18],["晚", 18],["pm", 12]]);
 	export const DefaultLanguageFallback = 'DMY';
-	export const MorningTermList = [ '上午' ];
-	export const AfternoonTermList = [ '下午' ];
-	export const EveningTermList = [ '晚上' ];
-	export const DaytimeTermList = [ '白天' ];
-	export const NightTermList = [ '深夜' ];
+	export const MorningTermList = [ "上午" ];
+	export const AfternoonTermList = [ "下午" ];
+	export const EveningTermList = [ "晚上" ];
+	export const DaytimeTermList = [ "白天" ];
+	export const NightTermList = [ "深夜" ];
 }

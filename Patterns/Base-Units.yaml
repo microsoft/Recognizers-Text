@@ -9,4 +9,6 @@ PmNonUnitRegex: !nestedRegex
   def: ({HourRegex}\s*:\s*{MinuteRegex}(\s*:\s*{SecondRegex})?\s*pm)
   references: [HourRegex, MinuteRegex, SecondRegex]
 AmbiguousTimeTerm: "pm"
+AmbiguousUnitNumberMultiplierRegex: !simpleRegex
+  def: (\s[Kk])
 ...

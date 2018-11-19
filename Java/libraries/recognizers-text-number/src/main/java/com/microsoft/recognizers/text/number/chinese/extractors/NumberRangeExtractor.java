@@ -39,7 +39,8 @@ public class NumberRangeExtractor extends BaseNumberRangeExtractor {
         HashMap<Pattern, String> builder = new HashMap<>();
 
         // 在...和...之间
-        builder.put(RegExpUtility.getSafeRegExp(ChineseNumeric.TwoNumberRangeRegex1, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), NumberRangeConstants.TWONUMBETWEEN);
+        builder.put(RegExpUtility.getSafeRegExp(ChineseNumeric.TwoNumberRangeRegex1, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS),
+            NumberRangeConstants.TWONUMBETWEEN);
 
         // 大于...小于...
         builder.put(RegExpUtility.getSafeRegExp(ChineseNumeric.TwoNumberRangeRegex2, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), NumberRangeConstants.TWONUM);
