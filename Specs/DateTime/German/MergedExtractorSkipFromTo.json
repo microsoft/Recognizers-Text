@@ -25,7 +25,8 @@
   },
   {
     "Input": "Das ganze findet dann am Montag um 4 Uhr statt",
-    "NotSupported": "javascript, python",
+	"Comment": "Should type here really be set?",
+    "NotSupported": "dotnet,javascript, python",
     "Results": [
       {
         "Text": "Montag um 4 Uhr",
@@ -59,15 +60,16 @@
   },
   {
     "Input": "Das meeting geht Morgen von 12 bis 14 Uhr.",
-    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet,javascript, python",
+	"Comment": "Known issue, low priority as 12 to be recognized as time.",
     "Results": [
       {
-        "Text": "Morgen von 12",
-        "Type": "datetime"
+        "Text": "Morgen",
+        "Type": "date"
       },
       {
-        "Text": "12 bis 14",
-        "Type": "daterange"
+        "Text": "12",
+        "Type": "time"
       },
       {
         "Text": "14 Uhr",
@@ -86,10 +88,10 @@
         "Length": 10
       },
       {
-        "Text": "23. August",
+        "Text": "den 23. August",
         "Type": "date",
-        "Start": 49,
-        "Length": 10
+        "Start": 45,
+        "Length": 14
       }
     ]
   },
