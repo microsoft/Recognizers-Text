@@ -31,8 +31,8 @@ public class NumberWithUnitParser implements IParser {
             numberResult = (ExtractResult) extResult.data;
         } else if (extResult.type.equals(Constants.SYS_NUM)) {
             return ret.withValue(config.getInternalNumberParser().parse(extResult).value);
-        } else // if there is no unitResult, means there is just unit
-        {
+        } else {
+            // if there is no unitResult, means there is just unit
             numberResult = new ExtractResult(-1, 0, null, null, null);
         }
 
@@ -74,8 +74,7 @@ public class NumberWithUnitParser implements IParser {
 
             if (unitMap.containsKey(lastUnit)) {
                 unitValue = unitMap.get(lastUnit);
-            }
-            else if (unitMap.containsKey(normalizedLastUnit)) {
+            } else if (unitMap.containsKey(normalizedLastUnit)) {
                 unitValue = unitMap.get(normalizedLastUnit);
             }
 
@@ -92,8 +91,7 @@ public class NumberWithUnitParser implements IParser {
             }
         }
 
-        if (ret != null)
-        {
+        if (ret != null) {
             ret = ret.withText(ret.text.toLowerCase(Locale.ROOT));
         }
 

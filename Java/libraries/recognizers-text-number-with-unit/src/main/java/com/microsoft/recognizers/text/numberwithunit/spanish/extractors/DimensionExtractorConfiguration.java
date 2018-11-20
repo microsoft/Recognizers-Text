@@ -1,6 +1,5 @@
 package com.microsoft.recognizers.text.numberwithunit.spanish.extractors;
 
-import com.google.common.collect.ImmutableMap;
 import com.microsoft.recognizers.text.Culture;
 import com.microsoft.recognizers.text.CultureInfo;
 import com.microsoft.recognizers.text.numberwithunit.Constants;

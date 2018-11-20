@@ -6,7 +6,6 @@ import com.microsoft.recognizers.text.numberwithunit.Constants;
 import com.microsoft.recognizers.text.numberwithunit.resources.SpanishNumericWithUnit;
 
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
