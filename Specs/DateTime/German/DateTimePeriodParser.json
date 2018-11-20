@@ -133,7 +133,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript, python, dotNet",
     "Results": [
       {
         "Text": "Dienstagabend",
@@ -185,7 +185,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript, python, dotNet",
     "Results": [
       {
         "Text": "Dienstagnacht",
@@ -240,7 +240,7 @@
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "heute zwischen 16 und 17 Uhr",
+        "Text": "heute zwischen 16-17 Uhr",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2016-11-07T16,2016-11-07T17,PT1H)",
@@ -263,7 +263,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript, python, dotNet",
     "Results": [
       {
         "Text": "heute Nacht",
@@ -289,7 +289,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript, python, dotNet",
     "Results": [
       {
         "Text": "heute Abend",
@@ -341,7 +341,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript, python, dotNet",
     "Results": [
       {
         "Text": "diesem Vormittag",
@@ -358,7 +358,7 @@
           }
         },
         "Start": 3,
-        "Length": 13
+        "Length": 16
       }
     ]
   },
@@ -367,7 +367,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript, python, dotNet",
     "Results": [
       {
         "Text": "diesem Nachmittag",
@@ -497,7 +497,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript, python, dotNet",
     "Results": [
       {
         "Text": "Dienstagmorgen",
@@ -523,7 +523,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript, python, dotNet",
     "Results": [
       {
         "Text": "Dienstagabend",
@@ -549,7 +549,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript, python, dotNet",
     "Results": [
       {
         "Text": "Dienstag am Vormittag",

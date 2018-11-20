@@ -4,7 +4,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet, javascript, python",
+	"Comment": "Wrongly recognized as set?",
     "Results": [
       {
         "Text": "morgen Abend gegen 8 Uhr",
@@ -74,7 +75,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet, javascript, python",
+	"Comment": "Wrongly recognized as set?",
     "Results": [
       {
         "Text": "Freitag Nachmittag",
