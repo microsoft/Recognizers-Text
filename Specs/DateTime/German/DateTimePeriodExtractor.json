@@ -12,6 +12,18 @@
     ]
   },
   {
+    "Input": "Ich werde heute von 5 Uhr bis 7 Uhr weg sein",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "heute von 5 Uhr bis 7 Uhr",
+        "Type": "datetimerange",
+        "Start": 10,
+        "Length": 25
+      }
+    ]
+  },
+  {
     "Input": "Ich werde heute von 5 - 7 Uhr weg sein",
     "NotSupported": "javascript, python",
     "Results": [
@@ -72,6 +84,18 @@
     ]
   },
   {
+    "Input": "Das Projekt ging vom 7/3/2017 15:00 bis zum 8/4/2017 16:30.",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "vom 7/3/2017 15:00 bis zum 8/4/2017 16:30",
+        "Type": "datetimerange",
+        "Start": 17,
+        "Length": 41
+      }
+    ]
+  },
+  {
     "Input": "Das Projekt ging vom 7.3.2017 15:00 bis zum 8.4.2017 16:30.",
     "NotSupported": "javascript, python",
     "Results": [
@@ -128,6 +152,18 @@
         "Type": "datetimerange",
         "Start": 8,
         "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "Ich werde wohl irgendwann diesen Nachmittag zurück gehen.",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "diesen Nachmittag",
+        "Type": "datetimerange",
+        "Start": 26,
+        "Length": 17
       }
     ]
   },

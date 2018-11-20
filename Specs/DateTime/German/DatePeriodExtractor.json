@@ -1,10 +1,22 @@
 [
   {
-    "Input": "Diesen Januar werde nicht hier sein.",
+    "Input": "Ich werde diesen Januar nicht hier sein.",
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "Diesen Januar",
+        "Text": "diesen Januar",
+        "Type": "daterange",
+        "Start": 10,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Diesen Januar werde ich nicht hier sein.",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "diesen Januar",
         "Type": "daterange",
         "Start": 0,
         "Length": 13
@@ -636,7 +648,19 @@
     ]
   },
   {
-    "Input": "Ich würde 2016/05 nicht hier",
+    "Input": "Ich war 2016-05 nicht hier",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "2016-05",
+        "Type": "daterange",
+        "Start": 8,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Ich werde 2016/05 nicht hier sein",
     "NotSupported": "javascript, python",
     "Results": [
       {
@@ -648,7 +672,7 @@
     ]
   },
   {
-    "Input": "Ich würde 05-2016 nicht hier",
+    "Input": "Ich werde 05-2016 nicht hier sein",
     "NotSupported": "javascript, python",
     "Results": [
       {
@@ -660,7 +684,7 @@
     ]
   },
   {
-    "Input": "Ich würde 05/2016 nicht hier",
+    "Input": "Ich werde 05/2016 nicht hier sein",
     "NotSupported": "javascript, python",
     "Results": [
       {
@@ -672,7 +696,7 @@
     ]
   },
   {
-    "Input": "Ich würde 05. 2016 nicht hier",
+    "Input": "Ich werde 05. 2016 nicht hier sein",
     "NotSupported": "javascript, python",
     "Results": [
       {
@@ -684,7 +708,7 @@
     ]
   },
   {
-    "Input": "Ich würde 2016  /05 nicht hier",
+    "Input": "Ich werde 2016  /05 nicht sein",
     "NotSupported": "javascript, python",
     "Results": [
       {
@@ -696,7 +720,7 @@
     ]
   },
   {
-    "Input": "Ich würde 05-  2016 nicht hier",
+    "Input": "Ich werde 05-  2016 nicht sein",
     "NotSupported": "javascript, python",
     "Results": [
       {
@@ -708,7 +732,7 @@
     ]
   },
   {
-    "Input": "Ich würde 05 /  2016 nicht hier",
+    "Input": "Ich werde 05 /  2016 nicht hier sein",
     "NotSupported": "javascript, python",
     "Results": [
       {

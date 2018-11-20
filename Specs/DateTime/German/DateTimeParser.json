@@ -120,6 +120,30 @@
     ]
   },
   {
+    "Input": "Am 21.04.2016, 16:00 werde ich zurück sein.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "21.04.2016, 16:00",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-04-21T16:00",
+          "FutureResolution": {
+            "dateTime": "2016-04-21 16:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-04-21 16:00:00"
+          }
+        },
+        "Start": 3,
+        "Length": 17
+      }
+    ]
+  },
+  {
     "Input": "Am 21.04.2016 um 16 Uhr werde ich zurück sein.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -212,6 +236,30 @@
         },
         "Start": 13,
         "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "Ich gehe am 5. Mai 2016 um 20 Minuten nach 8 Abends nach Hause",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "5. Mai 2016 um 20 Minuten nach 8 Abends",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-05-05T20:20",
+          "FutureResolution": {
+            "dateTime": "2016-05-05 20:20:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-05-05 20:20:00"
+          }
+        },
+        "Start": 12,
+        "Length": 39
       }
     ]
   },
@@ -356,6 +404,30 @@
         },
         "Start": 16,
         "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "Ich gehe diesen Morgen um 7 los",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "diesen Morgen um 7",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-11-07T07",
+          "FutureResolution": {
+            "dateTime": "2016-11-07 07:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-11-07 07:00:00"
+          }
+        },
+        "Start": 9,
+        "Length": 18
       }
     ]
   },
