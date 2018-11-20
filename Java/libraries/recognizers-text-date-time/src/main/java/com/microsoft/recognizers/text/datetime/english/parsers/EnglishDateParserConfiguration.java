@@ -55,8 +55,8 @@ public class EnglishDateParserConfiguration extends BaseOptionsConfiguration imp
         utilityConfiguration = config.getUtilityConfiguration();
 
         relativeDayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RelativeDayRegex, Pattern.CASE_INSENSITIVE);
-        nextPrefixRegex =  RegExpUtility.getSafeRegExp(EnglishDateTime.NextPrefixRegex, Pattern.CASE_INSENSITIVE);
-        pastPrefixRegex =  RegExpUtility.getSafeRegExp(EnglishDateTime.PastPrefixRegex, Pattern.CASE_INSENSITIVE);
+        nextPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.NextPrefixRegex, Pattern.CASE_INSENSITIVE);
+        pastPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PastPrefixRegex, Pattern.CASE_INSENSITIVE);
     }
 
     private final String dateTokenPrefix;
