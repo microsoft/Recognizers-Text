@@ -10,6 +10,7 @@ import com.microsoft.recognizers.text.datetime.DateTimeOptions;
 import com.microsoft.recognizers.text.datetime.english.parsers.EnglishCommonDateTimeParserConfiguration;
 import com.microsoft.recognizers.text.datetime.english.parsers.EnglishDurationParserConfiguration;
 import com.microsoft.recognizers.text.datetime.english.parsers.EnglishDateParserConfiguration;
+import com.microsoft.recognizers.text.datetime.english.parsers.EnglishHolidayParserConfiguration;
 import com.microsoft.recognizers.text.datetime.extractors.IDateTimeExtractor;
 import com.microsoft.recognizers.text.datetime.parsers.*;
 import com.microsoft.recognizers.text.datetime.utilities.DateTimeResolutionResult;
@@ -109,6 +110,8 @@ public class DateTimeParserTest extends AbstractTest {
                 return new BaseDurationParser(new EnglishDurationParserConfiguration(new EnglishCommonDateTimeParserConfiguration(DateTimeOptions.None)));
             case "DateParser":
                 return new BaseDateParser(new EnglishDateParserConfiguration(new EnglishCommonDateTimeParserConfiguration(DateTimeOptions.None)));
+			case "HolidayParser":
+				return new BaseHolidayParser(new EnglishHolidayParserConfiguration());
             default:
                 throw new AssumptionViolatedException("Parser Type/Name not supported.");
         }
