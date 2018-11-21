@@ -57,8 +57,8 @@ public class EnglishTimeExtractorConfiguration extends BaseOptionsConfiguration 
     public static final Pattern TimeBeforeAfterRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TimeBeforeAfterRegex);
 
     public static final Iterable<Pattern> TimeRegexList = new ArrayList<Pattern>() {
-        // (three min past)? seven|7|(senven thirty) pm
         {
+            // (three min past)? seven|7|(senven thirty) pm
             add(RegExpUtility.getSafeRegExp(EnglishDateTime.TimeRegex1, Pattern.CASE_INSENSITIVE));
 
             // (three min past)? 3:00(:00)? (pm)?
