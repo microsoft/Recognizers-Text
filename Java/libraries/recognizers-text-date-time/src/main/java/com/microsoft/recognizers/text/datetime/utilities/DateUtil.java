@@ -1,6 +1,5 @@
 package com.microsoft.recognizers.text.datetime.utilities;
 
-import java.time.DayOfWeek;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeFormatterBuilder;
@@ -8,6 +7,17 @@ import java.time.format.DateTimeParseException;
 import java.time.temporal.ChronoField;
 
 public class DateUtil {
+
+    public static LocalDateTime safeCreateFromValue(LocalDateTime datetime, int year, int month, int day, int hour, int minute, int second) {
+        if (isValidDate(year, month, day) && isValidTime(hour, minute, second)) {
+            datetime = safeCreateFromValue(datetime, year, month, day);
+            datetime = datetime.plusHours(hour - datetime.getHour());
+            datetime = datetime.plusMinutes((minute - datetime.getMinute()));
+            datetime = datetime.plusSeconds(second - datetime.getSecond());
+        }
+
+        return datetime;
+    }
 
     public static LocalDateTime safeCreateFromValue(LocalDateTime datetime, int year, int month, int day) {
         if (isValidDate(year, month, day)) {
@@ -20,7 +30,11 @@ public class DateUtil {
     }
 
     public static LocalDateTime safeCreateFromMinValue(int year, int month, int day) {
-        return safeCreateFromValue(minValue(), year, month, day);
+        return safeCreateFromValue(minValue(), year, month, day, 0, 0, 0);
+    }
+
+    public static LocalDateTime safeCreateFromMinValue(int year, int month, int day, int hour, int minute, int second) {
+        return safeCreateFromValue(minValue(), year, month, day, hour, minute, second);
     }
 
     public static LocalDateTime minValue() {
@@ -48,6 +62,12 @@ public class DateUtil {
         };
 
         return month >= 1 && month <= 12 && day >= 1 && day <= validDays[month - 1];
+    }
+
+    public static boolean isValidTime(int hour, int minute, int second) {
+        return 0 <= hour && hour <= 23
+        && 0 <= minute && minute <= 59
+        && 0 <= second && second <= 59;
     }
 
     private static final DateTimeFormatter DATE_TIME_FORMATTER = new DateTimeFormatterBuilder()
