@@ -4,22 +4,22 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript, python, dotNet",
+    "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "Ostern",
+        "Text": "Ostern 2020",
         "Type": "date",
         "Value": {
-          "Timex": "XXXX",
+          "Timex": "2020-04-12",
           "FutureResolution": {
-            "date": "2020-04-14"
+            "date": "2020-04-12"
           },
           "PastResolution": {
-            "date": "2019-04-21"
+            "date": "2020-04-12"
           }
         },
         "Start": 11,
-        "Length": 6
+        "Length": 11
       }
     ]
   },
@@ -28,7 +28,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript, python, dotNet",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Weiberfastnacht 2019",
@@ -52,7 +52,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript, python, dotNet",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Weiberfastnacht",
@@ -100,7 +100,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript, python, dotNet",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Karneval 2017",
@@ -108,10 +108,10 @@
         "Value": {
           "Timex": "XXXX",
           "FutureResolution": {
-            "date": "2018-02-25"
+            "date": "2017-02-27"
           },
           "PastResolution": {
-            "date": "2016-02-06"
+            "date": "2017-02-27"
           }
         },
         "Start": 20,
@@ -154,12 +154,12 @@
         "Text": "Aschermittwoch 2019",
         "Type": "date",
         "Value": {
-          "Timex": "XXXX",
+          "Timex": "2019-03-06",
           "FutureResolution": {
             "date": "2019-03-06"
           },
           "PastResolution": {
-            "date": "2018-02-14"
+            "date": "2019-03-06"
           }
         },
         "Start": 20,
@@ -202,12 +202,12 @@
         "Text": "Palmensonntag 2018",
         "Type": "date",
         "Value": {
-          "Timex": "XXXX",
+          "Timex": "2018-03-25",
           "FutureResolution": {
             "date": "2018-03-25"
           },
           "PastResolution": {
-            "date": "2017-04-09"
+            "date": "2018-03-25"
           }
         },
         "Start": 20,
@@ -298,12 +298,12 @@
         "Text": "Christi Himmelfahrt 2018",
         "Type": "date",
         "Value": {
-          "Timex": "XXXX",
+          "Timex": "2018-05-10",
           "FutureResolution": {
             "date": "2018-05-10"
           },
           "PastResolution": {
-            "date": "2017-05-25"
+            "date": "2018-05-10"
           }
         },
         "Start": 20,
@@ -700,7 +700,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript, python, dotNet",
+    "NotSupported": "dotNet, javascript, python",
     "Results": [
       {
         "Text": "Buß- und Bettag",
@@ -724,10 +724,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript, python, dotNet",
+    "NotSupported": "dotNet, javascript, python",
     "Results": [
       {
-        "Text": "Volkstrauertag 2018",
+        "Text": "Buß- und Bettag 2018",
         "Type": "date",
         "Value": {
           "Timex": "XXXX",
@@ -735,7 +735,7 @@
             "date": "2018-11-21"
           },
           "PastResolution": {
-            "date": "2017-11-22"
+            "date": "2018-11-21"
           }
         },
         "Start": 20,
