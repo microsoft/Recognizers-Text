@@ -95,7 +95,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             {"rosenmontag", GetRosenmontag},
             {"fastnacht", GetFastnacht},
             {"holythursday", GetHolyThursday},
-            {"memorialDayGermany", GetMemorialDayGermany},
+            {"memorialdaygermany", GetMemorialDayGermany},
             {"dayofrepentance", GetDayOfRepentance},
             {"totensonntag", GetTotenSonntag},
             {"firstadvent", GetFirstAdvent},
