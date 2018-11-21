@@ -84,4 +84,8 @@ public class DateTimeResolutionResult {
     }
 
     public TimeZoneResolutionResult getTimeZoneResolution() { return this.timeZoneResolution; }
+
+    public void setTimeZoneResolution(TimeZoneResolutionResult timeZoneResolution) {
+        this.timeZoneResolution = timeZoneResolution;
+    }
 }
