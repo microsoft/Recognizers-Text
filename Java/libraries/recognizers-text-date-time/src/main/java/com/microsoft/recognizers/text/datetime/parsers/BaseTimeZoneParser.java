@@ -55,7 +55,7 @@ public class BaseTimeZoneParser implements IDateTimeParser {
             result = new DateTimeParseResult(result.withResolutionStr(resolutionStr));
         } else if (checkAbbrToMin(text)) {
             int utcMinuteShift = EnglishTimeZone.AbbrToMinMapping.getOrDefault(text, 0);
-            
+
             DateTimeResolutionResult value = getDateTimeResolutionResult(utcMinuteShift, text);
             String resolutionStr = String.format("%s: %d", Constants.UtcOffsetMinsKey, utcMinuteShift);
 
@@ -63,17 +63,17 @@ public class BaseTimeZoneParser implements IDateTimeParser {
             result = new DateTimeParseResult(result.withResolutionStr(resolutionStr));
         } else if (checkFullToMin(text)) {
             int utcMinuteShift = EnglishTimeZone.FullToMinMapping.getOrDefault(text, 0);
-            
+
             DateTimeResolutionResult value = getDateTimeResolutionResult(utcMinuteShift, text);
             String resolutionStr = String.format("%s: %d", Constants.UtcOffsetMinsKey, utcMinuteShift);
-            
+
             result = new DateTimeParseResult(result.withValue(value));
             result = new DateTimeParseResult(result.withResolutionStr(resolutionStr));
         } else {
             // TODO: Temporary solution for city timezone and ambiguous data
             DateTimeResolutionResult value = new DateTimeResolutionResult();
             value.setSuccess(true);
-			value.setTimeZoneResolution(new TimeZoneResolutionResult("UTC+XX:XX", Constants.InvalidOffsetValue, text));
+            value.setTimeZoneResolution(new TimeZoneResolutionResult("UTC+XX:XX", Constants.InvalidOffsetValue, text));
             String resolutionStr = String.format("%s: %s", Constants.UtcOffsetMinsKey, "XX:XX");
 
             result = new DateTimeParseResult(result.withValue(value));
