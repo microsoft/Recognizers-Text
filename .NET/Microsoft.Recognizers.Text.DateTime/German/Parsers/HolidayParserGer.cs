@@ -108,9 +108,6 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         };
 
-
-        public static readonly Dictionary<string, string> NoFixedTimex = DateTimeDefinitions.HolidayNoFixedTimex;
-
         private readonly IHolidayParserConfiguration config;
 
         public HolidayParserGer(IHolidayParserConfiguration config)
@@ -244,7 +241,6 @@ namespace Microsoft.Recognizers.Text.DateTime.German
                         {
                             timexStr = $"-{value.Month:D2}-{value.Day:D2}";
                         }
-                        else timexStr = NoFixedTimex[holidayKey];
                     }
                     else
                     {
