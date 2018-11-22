@@ -126,9 +126,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             foreach (var regex in beforeAfterRegexes)
             {
-                var match = regex.Match(text);
-
-                if (match.Success && match.Length == text.Length)
+                if (regex.IsExactMatch(text))
                 {
                     return true;
                 }
@@ -253,10 +251,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var middleEnd = timePoints[idx + 1].Start ?? 0;
 
                 var middleStr = text.Substring(middleBegin, middleEnd - middleBegin).Trim();
-                var match = this.config.TillRegex.Match(middleStr);
 
                 // Handle "{TimePoint} to {TimePoint}"
-                if (match.Success && match.Index == 0 && match.Length == middleStr.Length)
+                if (config.TillRegex.IsExactMatch(middleStr))
                 {
                     var periodBegin = timePoints[idx].Start ?? 0;
                     var periodEnd = (timePoints[idx + 1].Start ?? 0) + (timePoints[idx + 1].Length ?? 0);
@@ -372,9 +369,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
 
                     var connectorStr = afterStr.Substring(0, match.Index);
-                    var pauseMatch = config.MiddlePauseRegex.Match(connectorStr);
 
-                    if (pauseMatch.Success && pauseMatch.Length == connectorStr.Length)
+                    if (config.MiddlePauseRegex.IsExactMatch(connectorStr))
                     {
                         var suffix = afterStr.Substring(match.Index + match.Length).TrimStart();
     
@@ -420,9 +416,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                     else
                     {
                         var connectorStr = prefixStr.Substring(match.Index + match.Length);
-                        var pauseMatch = config.MiddlePauseRegex.Match(connectorStr);
 
-                        if (pauseMatch.Success && pauseMatch.Length == connectorStr.Length)
+                        if (config.MiddlePauseRegex.IsExactMatch(connectorStr))
                         {
                             var suffix = text.Substring(er.Start + er.Length?? 0).TrimStart(' ');
 
@@ -431,7 +426,6 @@ namespace Microsoft.Recognizers.Text.DateTime
                             {
                                 ret.Add(new Token(match.Index, er.Start + er.Length ?? 0));
                             }
-
                         }
                     }
                 }

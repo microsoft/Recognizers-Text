@@ -541,7 +541,7 @@ WeekWithWeekDayRangeRegex: !nestedRegex
 GeneralEndingRegex: !simpleRegex
   def: ^\s*((\.,)|\.|,|!|\?)?\s*$
 MiddlePauseRegex: !simpleRegex
-  def: \s*(,)\s*
+  def: (,)
 DurationConnectorRegex: !simpleRegex
   def: ^\s*(?<connector>\s+|and|,)\s*$
 PrefixArticleRegex: !simpleRegex

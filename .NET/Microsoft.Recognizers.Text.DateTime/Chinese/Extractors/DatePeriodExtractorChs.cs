@@ -154,8 +154,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 }
 
                 var middleStr = text.Substring(middleBegin, middleEnd - middleBegin).Trim();
-                var match = TillRegex.Match(middleStr);
-                if (match.Success && match.Index == 0 && match.Length == middleStr.Length)
+
+                if (TillRegex.IsExactMatch(middleStr))
                 {
                     var periodBegin = er[idx].Start ?? 0;
                     var periodEnd = (er[idx + 1].Start ?? 0) + (er[idx + 1].Length ?? 0);

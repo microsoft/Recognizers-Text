@@ -171,9 +171,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 var middleEnd = timePoints[idx + 1].Start ?? 0;
 
                 var middleStr = text.Substring(middleBegin, middleEnd - middleBegin).Trim();
-                var match = TillRegex.Match(middleStr);
+                
                 // handle "{TimePoint} to {TimePoint}"
-                if (match.Success && match.Index == 0 && match.Length == middleStr.Length)
+                if (TillRegex.IsExactMatch(middleStr))
                 {
                     var periodBegin = timePoints[idx].Start ?? 0;
                     var periodEnd = (timePoints[idx + 1].Start ?? 0) + (timePoints[idx + 1].Length ?? 0);
@@ -198,7 +198,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
                     // handle "between"
                     var afterStr = text.Substring(periodEnd).ToLowerInvariant();
-                    match = ZhijianRegex.Match(afterStr);
+                    var match = ZhijianRegex.Match(afterStr);
                     if (match.Success)
                     {
                         ret.Add(new Token(periodBegin, periodEnd + match.Length));
