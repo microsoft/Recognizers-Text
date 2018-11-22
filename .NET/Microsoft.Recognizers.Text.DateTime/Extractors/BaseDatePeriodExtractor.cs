@@ -185,8 +185,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
 
                 var middleStr = text.Substring(middleBegin, middleEnd - middleBegin).Trim().ToLowerInvariant();
-                var match = this.config.TillRegex.Match(middleStr);
-                if (match.Success && match.Index == 0 && match.Length == middleStr.Length)
+                var match = this.config.TillRegex.MatchExact(middleStr);
+
+                if (match.Success)
                 {
                     var periodBegin = extractionResults[idx].Start ?? 0;
                     var periodEnd = (extractionResults[idx + 1].Start ?? 0) + (extractionResults[idx + 1].Length ?? 0);
@@ -336,9 +337,9 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 // within "Days/Weeks/Months/Years" should be handled as dateRange here
                 // if duration contains "Seconds/Minutes/Hours", it should be treated as datetimeRange
-                var match = Regex.Match(beforeStr, config.WithinNextPrefixRegex.ToString(),
-                    RegexOptions.RightToLeft | config.WithinNextPrefixRegex.Options);
-                if (MatchPrefixRegexInSegment(beforeStr, match))
+                var match = config.WithinNextPrefixRegex.MatchEnd(beforeStr);
+
+                if (match.Success)
                 {
                     var startToken = match.Index;
                     var matchDate = config.DateUnitRegex.Match(text.Substring(duration.Start, duration.Length));
@@ -352,10 +353,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
 
                 // Match prefix
-                match = this.config.PastRegex.Match(beforeStr);
+                match = this.config.PastRegex.MatchEnd(beforeStr);
+
                 var index = -1;
 
-                if (MatchPrefixRegexInSegment(beforeStr, match))
+                if (match.Success)
                 {
                     index = match.Index;
                 }
@@ -363,9 +365,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                 if (index < 0)
                 {
                     // For cases like "next five days"
-                    match = Regex.Match(beforeStr, config.FutureRegex.ToString(),
-                        RegexOptions.RightToLeft | config.FutureRegex.Options);
-                    if (MatchPrefixRegexInSegment(beforeStr, match))
+                    match = config.FutureRegex.MatchEnd(beforeStr);
+
+                    if (match.Success)
                     {
                         index = match.Index;
                     }
@@ -398,22 +400,25 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
 
                 // Match suffix
-                match = this.config.PastRegex.Match(afterStr);
-                if (MatchSuffixRegexInSegment(afterStr, match))
+                match = this.config.PastRegex.MatchBegin(afterStr);
+
+                if (match.Success)
                 {
                     ret.Add(new Token(duration.Start, duration.End + match.Index + match.Length));
                     continue;
                 }
 
-                match = this.config.FutureRegex.Match(afterStr);
-                if (MatchSuffixRegexInSegment(afterStr, match))
+                match = this.config.FutureRegex.MatchBegin(afterStr);
+
+                if (match.Success)
                 {
                     ret.Add(new Token(duration.Start, duration.End + match.Index + match.Length));
                     continue;
                 }
 
-                match = this.config.FutureSuffixRegex.Match(afterStr);
-                if (MatchSuffixRegexInSegment(afterStr, match))
+                match = this.config.FutureSuffixRegex.MatchBegin(afterStr);
+
+                if (match.Success)
                 {
                     ret.Add(new Token(duration.Start, duration.End + match.Index + match.Length));
                     continue;
@@ -421,18 +426,6 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             return ret;
-        }
-
-        private bool MatchSuffixRegexInSegment(string afterStr, Match match)
-        {
-            var result = match.Success && string.IsNullOrWhiteSpace(afterStr.Substring(0, match.Index));
-            return result;
-        }
-
-        private bool MatchPrefixRegexInSegment(string beforeStr, Match match)
-        {
-            var result = match.Success && string.IsNullOrWhiteSpace(beforeStr.Substring(match.Index + match.Length));
-            return result;
         }
 
         private bool IsDateRelativeToNowOrToday(ExtractResult er)

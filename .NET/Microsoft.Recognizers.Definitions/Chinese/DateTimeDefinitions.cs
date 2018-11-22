@@ -75,8 +75,8 @@ namespace Microsoft.Recognizers.Definitions.Chinese
 		public static readonly string YearToYearSuffixRequired = $@"({DateRangePrepositions})({DatePeriodYearInChineseRegex}|{DatePeriodYearRegex})\s*({DatePeriodTillSuffixRequiredRegex})\s*({DatePeriodYearInChineseRegex}|{DatePeriodYearRegex})\s*(之间|之内|期间|中间|间)";
 		public static readonly string MonthToMonth = $@"({DateRangePrepositions})({MonthRegex}){DatePeriodTillRegex}({MonthRegex})";
 		public static readonly string MonthToMonthSuffixRequired = $@"({DateRangePrepositions})({MonthRegex}){DatePeriodTillSuffixRequiredRegex}({MonthRegex})\s*(之间|之内|期间|中间|间)";
-		public const string PastRegex = @"(?<past>(前|上|之前|近|过去))";
-		public const string FutureRegex = @"(?<future>(后|後|(?<![一两几]\s*)下|之后|之後|未来(的)?))";
+		public const string PastRegex = @"(?<past>(之前|前|上|近|过去))";
+		public const string FutureRegex = @"(?<future>(之后|之後|后|後|(?<![一两几]\s*)下|未来(的)?))";
 		public const string SeasonRegex = @"(?<season>春|夏|秋|冬)(天|季)?";
 		public static readonly string SeasonWithYear = $@"(({DatePeriodYearRegex}|{DatePeriodYearInChineseRegex}|(?<yearrel>明年|今年|去年))(的)?)?{SeasonRegex}";
 		public static readonly string QuarterRegex = $@"(({DatePeriodYearRegex}|{DatePeriodYearInChineseRegex}|(?<yearrel>明年|今年|去年))(的)?)?(第(?<cardinal>1|2|3|4|一|二|三|四)季度)";

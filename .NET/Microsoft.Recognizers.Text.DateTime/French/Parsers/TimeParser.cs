@@ -23,8 +23,9 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             var ret = new DateTimeResolutionResult();
             var trimmedText = text.ToLowerInvariant().Trim();
 
-            var match = FrenchTimeExtractorConfiguration.IshRegex.Match(trimmedText);
-            if (match.Success && match.Length == trimmedText.Length)
+            var match = FrenchTimeExtractorConfiguration.IshRegex.MatchExact(trimmedText);
+
+            if (match.Success)
             {
                 var hourStr = match.Groups[Constants.HourGroupName].Value;
                 var hour = Constants.HalfDayHourCount;

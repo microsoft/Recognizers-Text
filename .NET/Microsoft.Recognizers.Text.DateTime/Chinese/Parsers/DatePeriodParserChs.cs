@@ -159,10 +159,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             var inputYear = false;
 
             var trimmedText = text.Trim();
-            var match = DatePeriodExtractorChs.SimpleCasesRegex.Match(trimmedText);
+            var match = DatePeriodExtractorChs.SimpleCasesRegex.MatchExact(trimmedText);
             string beginLuisStr, endLuisStr;
             
-            if (match.Success && match.Index == 0 && match.Length == trimmedText.Length)
+            if (match.Success)
             {
                 var days = match.Groups["day"];
                 beginDay = this.config.DayOfMonth[days.Captures[0].Value.ToLower()];
@@ -443,13 +443,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         private DateTimeResolutionResult ParseYearAndMonth(string text, DateObject referenceDate)
         {
             var ret = new DateTimeResolutionResult();
-            var match = DatePeriodExtractorChs.YearAndMonth.Match(text);
-            if (!(match.Success && match.Length == text.Length))
+            var match = DatePeriodExtractorChs.YearAndMonth.MatchExact(text);
+            if (!match.Success)
             {
-                match = DatePeriodExtractorChs.PureNumYearAndMonth.Match(text);
+                match = DatePeriodExtractorChs.PureNumYearAndMonth.MatchExact(text);
             }
 
-            if (!(match.Success && match.Length == text.Length))
+            if (!match.Success)
             {
                 return ret;
             }
@@ -524,8 +524,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             int futureYear = year, pastYear = year;
 
             var trimmedText = text.Trim().ToLower();
-            var match = DatePeriodExtractorChs.OneWordPeriodRegex.Match(trimmedText);
-            if (match.Success && match.Index == 0 && match.Length == trimmedText.Length)
+            var match = DatePeriodExtractorChs.OneWordPeriodRegex.MatchExact(trimmedText);
+            if (match.Success)
             {
                 var monthStr = match.Groups["month"].Value;
                 if (trimmedText.Equals("今年"))
@@ -737,8 +737,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         private DateTimeResolutionResult ParseYear(string text, DateObject referenceDate)
         {
             var ret = new DateTimeResolutionResult();
-            var match = DatePeriodExtractorChs.YearRegex.Match(text);
-            if (match.Success && match.Length == text.Length)
+            var match = DatePeriodExtractorChs.YearRegex.MatchExact(text);
+
+            if (match.Success)
             {
                 var tmp = match.Value;
 
@@ -778,8 +779,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 return ret;
             }
 
-            match = DatePeriodExtractorChs.YearInChineseRegex.Match(text);
-            if (match.Success && match.Length == text.Length)
+            match = DatePeriodExtractorChs.YearInChineseRegex.MatchExact(text);
+
+            if (match.Success)
             {
                 var tmp = match.Value;
                 if (tmp.EndsWith("年"))
@@ -872,6 +874,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
             // if there are NO spaces between number and unit
             var match = DatePeriodExtractorChs.NumberCombinedWithUnit.Match(text);
+
             if (match.Success)
             {
                 var srcUnit = match.Groups["unit"].Value.ToLowerInvariant();
@@ -881,8 +884,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     unitStr = this.config.UnitMap[srcUnit];
                     numStr = match.Groups["num"].Value;
 
-                    var prefixMatch = DatePeriodExtractorChs.PastRegex.Match(beforeStr);
-                    if (prefixMatch.Success && prefixMatch.Length == beforeStr.Length)
+                    var prefixMatch = DatePeriodExtractorChs.PastRegex.MatchExact(beforeStr);
+
+                    if (prefixMatch.Success)
                     {
                         DateObject beginDate, endDate;
                         switch (unitStr)
@@ -913,8 +917,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                         return ret;
                     }
 
-                    prefixMatch = DatePeriodExtractorChs.FutureRegex.Match(beforeStr);
-                    if (prefixMatch.Success && prefixMatch.Length == beforeStr.Length)
+                    prefixMatch = DatePeriodExtractorChs.FutureRegex.MatchExact(beforeStr);
+
+                    if (prefixMatch.Success)
                     {
                         DateObject beginDate, endDate;
                         switch (unitStr)
@@ -964,8 +969,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     {
                         unitStr = this.config.UnitMap[srcUnit];
                         numStr = number.ToString();
-                        var prefixMatch = DatePeriodExtractorChs.PastRegex.Match(beforeStr);
-                        if (prefixMatch.Success && prefixMatch.Length == beforeStr.Length)
+                        var prefixMatch = DatePeriodExtractorChs.PastRegex.MatchExact(beforeStr);
+
+                        if (prefixMatch.Success)
                         {
                             DateObject beginDate, endDate;
                             switch (unitStr)
@@ -996,8 +1002,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                             return ret;
                         }
 
-                        prefixMatch = DatePeriodExtractorChs.FutureRegex.Match(beforeStr);
-                        if (prefixMatch.Success && prefixMatch.Length == beforeStr.Length)
+                        prefixMatch = DatePeriodExtractorChs.FutureRegex.MatchExact(beforeStr);
+
+                        if (prefixMatch.Success)
                         {
                             DateObject beginDate, endDate;
                             switch (unitStr)
@@ -1120,8 +1127,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         private DateTimeResolutionResult ParseSeason(string text, DateObject referenceDate)
         {
             var ret = new DateTimeResolutionResult();
-            var match = DatePeriodExtractorChs.SeasonWithYear.Match(text);
-            if (match.Success && match.Length == text.Length)
+            var match = DatePeriodExtractorChs.SeasonWithYear.MatchExact(text);
+
+            if (match.Success)
             {
                 // parse year 
                 var year = referenceDate.Year;
@@ -1186,8 +1194,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         private DateTimeResolutionResult ParseQuarter(string text, DateObject referenceDate)
         {
             var ret = new DateTimeResolutionResult();
-            var match = DatePeriodExtractorChs.QuarterRegex.Match(text);
-            if (!(match.Success && match.Length == text.Length))
+            var match = DatePeriodExtractorChs.QuarterRegex.MatchExact(text);
+
+            if (!match.Success)
             {
                 return ret;
             }
@@ -1257,10 +1266,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             var inputCentury = false;
 
             var trimmedText = text.Trim();
-            var match = DatePeriodExtractorChs.DecadeRegex.Match(trimmedText);
+            var match = DatePeriodExtractorChs.DecadeRegex.MatchExact(trimmedText);
+
             string beginLuisStr, endLuisStr;
 
-            if (match.Success && match.Index == 0 && match.Length == trimmedText.Length)
+            if (match.Success)
             {
                 var decadeStr = match.Groups["decade"].Value;
                 if (!int.TryParse(decadeStr, out decade))

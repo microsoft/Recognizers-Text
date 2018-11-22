@@ -94,8 +94,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         {
             var trimedSuffix = suffix.Trim().ToLowerInvariant();
             var deltaHour = 0;
-            var match = TimeSuffixFull.Match(trimedSuffix);
-            if (match.Success && match.Index == 0 && match.Length == trimedSuffix.Length)
+            var match = TimeSuffixFull.MatchExact(trimedSuffix);
+
+            if (match.Success)
             {
                 var oclockStr = match.Groups["oclock"].Value;
                 if (string.IsNullOrEmpty(oclockStr))

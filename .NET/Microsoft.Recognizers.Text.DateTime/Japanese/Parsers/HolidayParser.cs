@@ -145,13 +145,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             var trimmedText = text.Trim();
             foreach (var regex in JapaneseHolidayExtractorConfiguration.HolidayRegexList)
             {
-                var offset = 0;
-                var match = regex.Match(trimmedText);
+                var match = regex.MatchExact(trimmedText);
 
-                if (match.Success && match.Index == offset && match.Length == trimmedText.Length)
+                if (match.Success)
                 {
                     // LUIS value string will be set in Match2Date method
-                    var ret = Match2Date(match, referenceDate);
+                    var ret = Match2Date(match.Match, referenceDate);
                     return ret;
                 }
             }

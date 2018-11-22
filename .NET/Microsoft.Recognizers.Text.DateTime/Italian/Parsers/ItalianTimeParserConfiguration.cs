@@ -81,8 +81,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         {
             var trimedSuffix = suffix.Trim().ToLowerInvariant();
             var deltaHour = 0;
-            var match = ItalianTimeExtractorConfiguration.TimeSuffix.Match(trimedSuffix);
-            if (match.Success && match.Index == 0 && match.Length == trimedSuffix.Length)
+            var match = ItalianTimeExtractorConfiguration.TimeSuffix.MatchExact(trimedSuffix);
+
+            if (match.Success)
             {
                 var oclockStr = match.Groups["heures"].Value;
                 if (string.IsNullOrEmpty(oclockStr))

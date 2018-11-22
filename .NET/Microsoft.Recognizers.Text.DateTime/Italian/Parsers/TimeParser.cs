@@ -23,8 +23,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             var ret = new DateTimeResolutionResult();
             var trimmedText = text.ToLowerInvariant().Trim();
 
-            var match = ItalianTimeExtractorConfiguration.IshRegex.Match(trimmedText);
-            if (match.Success && match.Length == trimmedText.Length)
+            var match = ItalianTimeExtractorConfiguration.IshRegex.MatchExact(trimmedText);
+
+            if (match.Success)
             {
                 var hourStr = match.Groups["hour"].Value;
                 var hour = 12;

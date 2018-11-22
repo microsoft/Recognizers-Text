@@ -22,8 +22,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             var ret = new DateTimeResolutionResult();
             var trimmedText = text.ToLowerInvariant().Trim();
 
-            var match = EnglishTimeExtractorConfiguration.IshRegex.Match(trimmedText);
-            if (match.Success && match.Length == trimmedText.Length)
+            var match = EnglishTimeExtractorConfiguration.IshRegex.MatchExact(trimmedText);
+
+            if (match.Success)
             {
                 var hourStr = match.Groups[Constants.HourGroupName].Value;
                 var hour = Constants.HalfDayHourCount;
