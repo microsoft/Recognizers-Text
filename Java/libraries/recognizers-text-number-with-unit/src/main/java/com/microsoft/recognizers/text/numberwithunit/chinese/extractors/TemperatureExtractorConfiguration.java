@@ -41,7 +41,9 @@ public class TemperatureExtractorConfiguration extends ChineseNumberWithUnitExtr
     }
 
     @Override
-    public Pattern getAmbiguousUnitNumberMultiplierRegex() { return this.ambiguousUnitNumberMultiplierRegex; }
+    public Pattern getAmbiguousUnitNumberMultiplierRegex() {
+        return this.ambiguousUnitNumberMultiplierRegex;
+    }
 
     @Override
     public List<String> getAmbiguousUnitList() {

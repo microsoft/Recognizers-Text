@@ -50,7 +50,7 @@ public class FrenchNumberParserConfiguration extends BaseNumberParserConfigurati
 
     @Override
     public List<String> normalizeTokenSet(List<String> tokens, ParseResult context) {
-        return new ArrayList(tokens);
+        return new ArrayList<String>(tokens);
     }
 
     @Override
@@ -92,7 +92,7 @@ public class FrenchNumberParserConfiguration extends BaseNumberParserConfigurati
     }
 
     private static Map<String, Long> buildOrdinalNumberMap() {
-        ImmutableMap.Builder builder = new ImmutableMap.Builder()
+        ImmutableMap.Builder<String, Long> builder = new ImmutableMap.Builder<String, Long>()
                 .putAll(FrenchNumeric.OrdinalNumberMap);
 
         FrenchNumeric.SuffixOrdinalMap.forEach((suffixKey, suffixValue) ->

@@ -6,14 +6,14 @@ import com.microsoft.recognizers.text.number.NumberOptions;
 import com.microsoft.recognizers.text.number.extractors.BaseNumberExtractor;
 import com.microsoft.recognizers.text.number.resources.BaseNumbers;
 import com.microsoft.recognizers.text.number.resources.EnglishNumeric;
-import org.javatuples.Pair;
-
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.regex.Pattern;
+import org.javatuples.Pair;
+
 
 public class NumberExtractor extends BaseNumberExtractor {
 
@@ -74,6 +74,8 @@ public class NumberExtractor extends BaseNumberExtractor {
                 builder.put(Pattern.compile(BaseNumbers.CurrencyRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "IntegerNum");
                 break;
             case Default:
+                break;
+            default:
                 break;
         }
 

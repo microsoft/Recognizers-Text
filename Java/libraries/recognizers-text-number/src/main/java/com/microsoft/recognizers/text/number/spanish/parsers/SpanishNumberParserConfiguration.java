@@ -116,7 +116,7 @@ public class SpanishNumberParserConfiguration extends BaseNumberParserConfigurat
     }
 
     private static Map<String, Long> buildOrdinalNumberMap() {
-        ImmutableMap.Builder ordinalNumberMapBuilder = new ImmutableMap.Builder()
+        ImmutableMap.Builder<String, Long> ordinalNumberMapBuilder = new ImmutableMap.Builder<String, Long>()
                 .putAll(SpanishNumeric.OrdinalNumberMap);
         SpanishNumeric.SuffixOrdinalMap.forEach((sufixKey, sufixValue) ->
                 SpanishNumeric.PrefixCardinalMap.forEach((prefixKey, prefixValue) ->

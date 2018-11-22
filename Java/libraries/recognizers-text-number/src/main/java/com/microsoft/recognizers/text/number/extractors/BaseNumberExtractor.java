@@ -8,8 +8,13 @@ import com.microsoft.recognizers.text.number.resources.BaseNumbers;
 import com.microsoft.recognizers.text.utilities.Match;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
 
-import java.util.*;
-import java.util.regex.MatchResult;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -19,9 +24,13 @@ public abstract class BaseNumberExtractor implements IExtractor {
 
     protected abstract String getExtractType();
 
-    protected NumberOptions getOptions() { return NumberOptions.None; }
+    protected NumberOptions getOptions() {
+        return NumberOptions.None;
+    }
 
-    protected Optional<Pattern> getNegativeNumberTermsRegex() { return Optional.empty(); }
+    protected Optional<Pattern> getNegativeNumberTermsRegex() {
+        return Optional.empty();
+    }
 
     public List<ExtractResult> extract(String source) {
 
@@ -109,8 +118,8 @@ public abstract class BaseNumberExtractor implements IExtractor {
         String thousandsMark = Pattern.quote(String.valueOf(type.thousandsMark));
         String decimalsMark = Pattern.quote(String.valueOf(type.decimalsMark));
 
-        String regexDefinition = type.decimalsMark == '\0' ?
-                BaseNumbers.IntegerRegexDefinition(placeholder, thousandsMark) :
+        String regexDefinition = type.decimalsMark == '\0'
+                ? BaseNumbers.IntegerRegexDefinition(placeholder, thousandsMark) :
                 BaseNumbers.DoubleRegexDefinition(placeholder, thousandsMark, decimalsMark);
 
         return RegExpUtility.getSafeLookbehindRegExp(regexDefinition, Pattern.UNICODE_CHARACTER_CLASS);

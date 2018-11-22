@@ -3,6 +3,8 @@ package com.microsoft.recognizers.text;
 import java.util.SortedMap;
 
 public class ExtendedModelResult extends ModelResult {
+    // Parameter Key
+    public static final String ParentTextKey = "parentText";
 
     public final String parentText;
 

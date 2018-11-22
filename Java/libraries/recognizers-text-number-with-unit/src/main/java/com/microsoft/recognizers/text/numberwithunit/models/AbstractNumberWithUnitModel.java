@@ -1,9 +1,18 @@
 package com.microsoft.recognizers.text.numberwithunit.models;
 
-import com.microsoft.recognizers.text.*;
+import com.microsoft.recognizers.text.ExtractResult;
+import com.microsoft.recognizers.text.IExtractor;
+import com.microsoft.recognizers.text.IModel;
+import com.microsoft.recognizers.text.IParser;
+import com.microsoft.recognizers.text.ModelResult;
+import com.microsoft.recognizers.text.ParseResult;
+import com.microsoft.recognizers.text.ResolutionKey;
 import com.microsoft.recognizers.text.utilities.QueryProcessor;
-
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.SortedMap;
+import java.util.TreeMap;
 import java.util.stream.Collectors;
 
 public abstract class AbstractNumberWithUnitModel implements IModel {
@@ -20,6 +29,7 @@ public abstract class AbstractNumberWithUnitModel implements IModel {
         this.extractorParserMap = extractorParserMap;
     }
 
+    @SuppressWarnings("unchecked")
     public List<ModelResult> parse(String query) {
 
         // Pre-process the query
@@ -46,28 +56,18 @@ public abstract class AbstractNumberWithUnitModel implements IModel {
                 }
 
                 List<ModelResult> modelResults = parsedResults.stream().map(o -> {
-
-                    SortedMap<String, Object> resolutionValues =
-                            (o.value instanceof UnitValue) ?
-                                    new TreeMap<String, Object>() {
-                                        {
-                                            put(ResolutionKey.Value, ((UnitValue)o.value).number);
-                                            put(ResolutionKey.Unit, ((UnitValue)o.value).unit);
-                                        }
-                                    } :
-                                    (o.value instanceof CurrencyUnitValue) ?
-                                            new TreeMap<String, Object>() {
-                                                {
-                                                    put(ResolutionKey.Value, ((CurrencyUnitValue)o.value).number);
-                                                    put(ResolutionKey.Unit, ((CurrencyUnitValue)o.value).unit);
-                                                    put(ResolutionKey.IsoCurrency, ((CurrencyUnitValue)o.value).isoCurrency);
-                                                }
-                                            } :
-                                            new TreeMap<String, Object>() {
-                                                {
-                                                    put(ResolutionKey.Value, (String)o.value);
-                                                }
-                                            };
+                    
+                    SortedMap<String, Object> resolutionValues = new TreeMap<String, Object>();
+                    if (o.value instanceof UnitValue) {
+                        resolutionValues.put(ResolutionKey.Value, ((UnitValue)o.value).number);
+                        resolutionValues.put(ResolutionKey.Unit, ((UnitValue)o.value).unit);
+                    } else if (o.value instanceof CurrencyUnitValue) {
+                        resolutionValues.put(ResolutionKey.Value, ((CurrencyUnitValue)o.value).number);
+                        resolutionValues.put(ResolutionKey.Unit, ((CurrencyUnitValue)o.value).unit);
+                        resolutionValues.put(ResolutionKey.IsoCurrency, ((CurrencyUnitValue)o.value).isoCurrency);
+                    } else {
+                        resolutionValues.put(ResolutionKey.Value, (String)o.value);
+                    }
 
                     return new ModelResult(
                             o.text,
@@ -79,15 +79,15 @@ public abstract class AbstractNumberWithUnitModel implements IModel {
 
 
                 for (ModelResult result : modelResults) {
-                    boolean bAdd = true;
+                    boolean badd = true;
 
                     for (ModelResult extractionResult : extractionResults) {
                         if (extractionResult.start == result.start && extractionResult.end == result.end) {
-                            bAdd = false;
+                            badd = false;
                         }
                     }
 
-                    if (bAdd) {
+                    if (badd) {
                         extractionResults.add(result);
                     }
                 }

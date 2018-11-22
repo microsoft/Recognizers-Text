@@ -8,7 +8,15 @@ import com.microsoft.recognizers.text.utilities.Match;
 import com.microsoft.recognizers.text.utilities.QueryProcessor;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import java.util.regex.MatchResult;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -72,15 +80,12 @@ public class NumberWithUnitExtractor implements IExtractor {
 
         /* Special case for cases where number multipliers clash with unit */
         Pattern ambiguousMultiplierRegex = this.config.getAmbiguousUnitNumberMultiplierRegex();
-        if (ambiguousMultiplierRegex != null)
-        {
-            for (int i = 0; i < numbers.size(); i++)
-            {
+        if (ambiguousMultiplierRegex != null) {
+            for (int i = 0; i < numbers.size(); i++) {
                 ExtractResult number = numbers.get(i);
 
                 Match[] matches = RegExpUtility.getMatches(ambiguousMultiplierRegex, number.text);
-                if (matches.length == 1)
-                {
+                if (matches.length == 1) {
                     int newLength = number.length - matches[0].length;
                     numbers.set(i, new ExtractResult(number.start, newLength, number.text.substring(0, newLength),
                                                      number.type, number.data));
@@ -129,7 +134,8 @@ public class NumberWithUnitExtractor implements IExtractor {
                 continue;
             }
 
-            int start = number.start, length = number.length;
+            int start = number.start;
+            int length = number.length;
             int maxFindLen = sourceLen - start - length;
 
             PrefixUnitResult prefixUnit = null;
@@ -245,8 +251,7 @@ public class NumberWithUnitExtractor implements IExtractor {
         }
     }
 
-    protected boolean preCheckStr(String str)
-    {
+    protected boolean preCheckStr(String str) {
         return str != null && !str.isEmpty();
     }
 

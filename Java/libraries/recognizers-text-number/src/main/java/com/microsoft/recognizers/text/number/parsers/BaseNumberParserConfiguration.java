@@ -32,7 +32,11 @@ public abstract class BaseNumberParserConfiguration implements INumberParserConf
     private final Pattern negativeNumberSignRegex;
     private final Pattern fractionPrepositionRegex;
 
-    protected BaseNumberParserConfiguration(String langMarker, CultureInfo cultureInfo, NumberOptions options, char nonDecimalSeparatorChar, char decimalSeparatorChar, String fractionMarkerToken, String halfADozenText, String wordSeparatorToken, List<String> writtenDecimalSeparatorTexts, List<String> writtenGroupSeparatorTexts, List<String> writtenIntegerSeparatorTexts, List<String> writtenFractionSeparatorTexts, Map<String, Long> cardinalNumberMap, Map<String, Long> ordinalNumberMap, Map<String, Long> roundNumberMap, Pattern halfADozenRegex, Pattern digitalNumberRegex, Pattern negativeNumberSignRegex, Pattern fractionPrepositionRegex) {
+    protected BaseNumberParserConfiguration(String langMarker, CultureInfo cultureInfo, NumberOptions options, char nonDecimalSeparatorChar, char decimalSeparatorChar,
+        String fractionMarkerToken, String halfADozenText, String wordSeparatorToken, List<String> writtenDecimalSeparatorTexts, List<String> writtenGroupSeparatorTexts,
+        List<String> writtenIntegerSeparatorTexts, List<String> writtenFractionSeparatorTexts, Map<String, Long> cardinalNumberMap, Map<String, Long> ordinalNumberMap,
+        Map<String, Long> roundNumberMap, Pattern halfADozenRegex, Pattern digitalNumberRegex, Pattern negativeNumberSignRegex, Pattern fractionPrepositionRegex) {
+
         this.langMarker = langMarker;
         this.cultureInfo = cultureInfo;
         this.options = options;
@@ -55,59 +59,97 @@ public abstract class BaseNumberParserConfiguration implements INumberParserConf
     }
 
     @Override
-    public Map<String, Long> getCardinalNumberMap() { return this.cardinalNumberMap; }
+    public Map<String, Long> getCardinalNumberMap() {
+        return this.cardinalNumberMap;
+    }
 
     @Override
-    public Map<String, Long> getOrdinalNumberMap() { return this.ordinalNumberMap; }
+    public Map<String, Long> getOrdinalNumberMap() {
+        return this.ordinalNumberMap;
+    }
 
     @Override
-    public Map<String, Long> getRoundNumberMap() { return this.roundNumberMap; }
+    public Map<String, Long> getRoundNumberMap() {
+        return this.roundNumberMap;
+    }
 
     @Override
-    public NumberOptions getOptions() { return this.options; }
+    public NumberOptions getOptions() {
+        return this.options;
+    }
 
     @Override
-    public CultureInfo getCultureInfo() { return this.cultureInfo; }
+    public CultureInfo getCultureInfo() {
+        return this.cultureInfo;
+    }
 
     @Override
-    public Pattern getDigitalNumberRegex() { return this.digitalNumberRegex; }
+    public Pattern getDigitalNumberRegex() {
+        return this.digitalNumberRegex;
+    }
 
     @Override
-    public Pattern getFractionPrepositionRegex() { return this.fractionPrepositionRegex; }
+    public Pattern getFractionPrepositionRegex() {
+        return this.fractionPrepositionRegex;
+    }
 
     @Override
-    public String getFractionMarkerToken() { return this.fractionMarkerToken; }
+    public String getFractionMarkerToken() {
+        return this.fractionMarkerToken;
+    }
 
     @Override
-    public Pattern getHalfADozenRegex() { return this.halfADozenRegex; }
+    public Pattern getHalfADozenRegex() {
+        return this.halfADozenRegex;
+    }
 
     @Override
-    public String getHalfADozenText() { return this.halfADozenText; }
+    public String getHalfADozenText() {
+        return this.halfADozenText;
+    }
 
     @Override
-    public String getLangMarker() { return this.langMarker; }
+    public String getLangMarker() {
+        return this.langMarker;
+    }
 
     @Override
-    public char getNonDecimalSeparatorChar() { return this.nonDecimalSeparatorChar; }
+    public char getNonDecimalSeparatorChar() {
+        return this.nonDecimalSeparatorChar;
+    }
 
     @Override
-    public char getDecimalSeparatorChar() { return this.decimalSeparatorChar; }
+    public char getDecimalSeparatorChar() {
+        return this.decimalSeparatorChar;
+    }
 
     @Override
-    public String getWordSeparatorToken() { return this.wordSeparatorToken; }
+    public String getWordSeparatorToken() {
+        return this.wordSeparatorToken;
+    }
 
     @Override
-    public List<String> getWrittenDecimalSeparatorTexts() { return this.writtenDecimalSeparatorTexts; }
+    public List<String> getWrittenDecimalSeparatorTexts() {
+        return this.writtenDecimalSeparatorTexts;
+    }
 
     @Override
-    public List<String> getWrittenGroupSeparatorTexts() { return this.writtenGroupSeparatorTexts; }
+    public List<String> getWrittenGroupSeparatorTexts() {
+        return this.writtenGroupSeparatorTexts;
+    }
 
     @Override
-    public List<String> getWrittenIntegerSeparatorTexts() { return this.writtenIntegerSeparatorTexts; }
+    public List<String> getWrittenIntegerSeparatorTexts() {
+        return this.writtenIntegerSeparatorTexts;
+    }
 
     @Override
-    public List<String> getWrittenFractionSeparatorTexts() { return this.writtenFractionSeparatorTexts; }
+    public List<String> getWrittenFractionSeparatorTexts() {
+        return this.writtenFractionSeparatorTexts;
+    }
 
     @Override
-    public Pattern getNegativeNumberSignRegex() { return this.negativeNumberSignRegex; }
+    public Pattern getNegativeNumberSignRegex() {
+        return this.negativeNumberSignRegex;
+    }
 }

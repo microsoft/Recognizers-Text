@@ -3,10 +3,9 @@ package com.microsoft.recognizers.text.numberwithunit.chinese.extractors;
 import com.microsoft.recognizers.text.CultureInfo;
 import com.microsoft.recognizers.text.IExtractor;
 import com.microsoft.recognizers.text.number.chinese.ChineseNumberExtractorMode;
-import com.microsoft.recognizers.text.numberwithunit.extractors.INumberWithUnitExtractorConfiguration;
 import com.microsoft.recognizers.text.number.chinese.extractors.NumberExtractor;
+import com.microsoft.recognizers.text.numberwithunit.extractors.INumberWithUnitExtractorConfiguration;
 import com.microsoft.recognizers.text.numberwithunit.resources.ChineseNumericWithUnit;
-
 import java.util.List;
 import java.util.Map;
 import java.util.regex.Pattern;
@@ -24,16 +23,39 @@ public abstract class ChineseNumberWithUnitExtractorConfiguration implements INu
                 Pattern.compile(ChineseNumericWithUnit.CompoundUnitConnectorRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS);
     }
 
-    public CultureInfo getCultureInfo() { return this.cultureInfo; }
-    public IExtractor getUnitNumExtractor() { return this.unitNumExtractor; }
-    public String getBuildPrefix() { return ChineseNumericWithUnit.BuildPrefix; }
-    public String getBuildSuffix() { return ChineseNumericWithUnit.BuildSuffix; }
-    public String getConnectorToken() { return ChineseNumericWithUnit.ConnectorToken; }
-    public Pattern getCompoundUnitConnectorRegex() { return this.compoundUnitConnectorRegex; }
-    public Pattern getAmbiguousUnitNumberMultiplierRegex() { return null; }
+    public CultureInfo getCultureInfo() {
+        return this.cultureInfo;
+    }
+
+    public IExtractor getUnitNumExtractor() {
+        return this.unitNumExtractor;
+    }
+
+    public String getBuildPrefix() {
+        return ChineseNumericWithUnit.BuildPrefix;
+    }
+
+    public String getBuildSuffix() {
+        return ChineseNumericWithUnit.BuildSuffix;
+    }
+
+    public String getConnectorToken() {
+        return ChineseNumericWithUnit.ConnectorToken;
+    }
+
+    public Pattern getCompoundUnitConnectorRegex() {
+        return this.compoundUnitConnectorRegex;
+    }
+    
+    public Pattern getAmbiguousUnitNumberMultiplierRegex() {
+        return null;
+    }
 
     public abstract String getExtractType();
+
     public abstract Map<String, String> getSuffixList();
+
     public abstract Map<String, String> getPrefixList();
+    
     public abstract List<String> getAmbiguousUnitList();
 }

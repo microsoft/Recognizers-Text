@@ -32,7 +32,7 @@ public class PercentageExtractor extends BasePercentageExtractor {
         builder.add(EnglishNumeric.NumberWithSuffixPercentage);
         builder.add(EnglishNumeric.NumberWithPrefixPercentage);
 
-        if((options.ordinal() & NumberOptions.PercentageMode.ordinal()) != 0) {
+        if ((options.ordinal() & NumberOptions.PercentageMode.ordinal()) != 0) {
             builder.add(EnglishNumeric.FractionNumberWithSuffixPercentage);
             builder.add(EnglishNumeric.NumberWithPrepositionPercentage);
         }
