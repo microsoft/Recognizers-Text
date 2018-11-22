@@ -161,6 +161,7 @@ export namespace EnglishDateTime {
 	export const SimpleTimeOfTodayAfterRegex = `(${HourNumRegex}|${BaseDateTime.HourRegex})\\s*(,\\s*)?(in\\s+)?${DateTimeSpecificTimeOfDayRegex}`;
 	export const SimpleTimeOfTodayBeforeRegex = `\\b${DateTimeSpecificTimeOfDayRegex}(\\s*,)?(\\s+(at|around))?\\s*(${HourNumRegex}|${BaseDateTime.HourRegex})\\b`;
 	export const TheEndOfRegex = `(the\\s+)?end of(\\s+the)?\\s*$`;
+	export const EndOfDayRegex = `\\b(the\\s+)?(eod|(end\\s+of\\s+day))\\b`;
 	export const PeriodTimeOfDayRegex = `\\b((in\\s+(the)?\\s+)?((?<early>early(\\s+|-))|(?<late>late(\\s+|-)))?(?<timeOfDay>morning|afternoon|night|evening))\\b`;
 	export const PeriodSpecificTimeOfDayRegex = `\\b((${StrictRelativeRegex}\\s+${PeriodTimeOfDayRegex})\\b|\\btonight)\\b`;
 	export const PeriodTimeOfDayWithDateRegex = `\\b((${TimeOfDayRegex}(\\s+(on|of))?))\\b`;

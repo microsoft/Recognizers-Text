@@ -335,6 +335,9 @@ SimpleTimeOfTodayBeforeRegex: !nestedRegex
   references: [ DateTimeSpecificTimeOfDayRegex, HourNumRegex, BaseDateTime.HourRegex ]
 TheEndOfRegex: !simpleRegex
   def: (la\s+)?fin(\s+de\s*|\s*de*l[ea])?\s*$
+EndOfDayRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 PeriodTimeOfDayRegex: !simpleRegex
   def: \b((dans\s+(le)?\s+)?((?<early>d[eé]but(\s+|-|d[ue]|de la)|t[oô]t)|(?<late>tard\s*|fin(\s+|-|d[eu])?))?(?<timeOfDay>matin|((d|l)?'?)apr[eè]s-midi|nuit|soir[eé]e|soir))\b
 PeriodSpecificTimeOfDayRegex: !nestedRegex

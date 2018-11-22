@@ -52,6 +52,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public Regex TheEndOfRegex { get; }
 
+        public Regex EndOfDayRegex { get; }
+
         public Regex UnitRegex { get; }
 
         public Regex DateNumberConnectorRegex { get; }
@@ -79,6 +81,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             SimpleTimeOfTodayBeforeRegex = FrenchDateTimeExtractorConfiguration.SimpleTimeOfTodayBeforeRegex;
             SpecificTimeOfDayRegex = FrenchDateTimeExtractorConfiguration.SpecificTimeOfDayRegex;
             TheEndOfRegex = FrenchDateTimeExtractorConfiguration.TheEndOfRegex;
+            EndOfDayRegex = FrenchDateTimeExtractorConfiguration.EndOfDayRegex;
             UnitRegex = FrenchTimeExtractorConfiguration.TimeUnitRegex;
             DateNumberConnectorRegex = FrenchDateTimeExtractorConfiguration.DateNumberConnectorRegex;
 

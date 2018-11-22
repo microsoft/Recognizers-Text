@@ -43,6 +43,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex TheEndOfRegex { get; }
 
+        Regex EndOfDayRegex { get; }
+
         Regex UnitRegex { get; }
 
         Regex DateNumberConnectorRegex { get; }

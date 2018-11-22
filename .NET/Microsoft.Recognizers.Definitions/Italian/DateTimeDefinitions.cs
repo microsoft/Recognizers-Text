@@ -145,6 +145,7 @@ namespace Microsoft.Recognizers.Definitions.Italian
 		public static readonly string SimpleTimeOfTodayAfterRegex = $@"({HourNumRegex}|{BaseDateTime.HourRegex})\s*(,\s*)?(en|[àa]\s+)?{DateTimeSpecificTimeOfDayRegex}";
 		public static readonly string SimpleTimeOfTodayBeforeRegex = $@"{DateTimeSpecificTimeOfDayRegex}(\s*,)?(\s+(di|verso))?\s*({HourNumRegex}|{BaseDateTime.HourRegex})";
 		public const string TheEndOfRegex = @"(alla\s+)?fine di(\s+del)?\s*$";
+		public const string EndOfDayRegex = @"^[.]";
 		public const string PeriodTimeOfDayRegex = @"\b((alla\s+(al)?\s+)?((?<early>prima(\s+|-))|(?<late>tarda(\s+|-)))?(?<timeOfDay>mattina|pomeriggio|notte|sera))\b";
 		public static readonly string PeriodSpecificTimeOfDayRegex = $@"\b(({RelativeRegex}\s+{PeriodTimeOfDayRegex})\b|\b(ce|cette\s+)(soir|nuit))\b";
 		public static readonly string PeriodTimeOfDayWithDateRegex = $@"\b(({TimeOfDayRegex}))\b";

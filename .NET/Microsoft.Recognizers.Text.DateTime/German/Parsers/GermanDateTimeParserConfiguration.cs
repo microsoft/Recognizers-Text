@@ -47,6 +47,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public Regex TheEndOfRegex { get; }
 
+        public Regex EndOfDayRegex { get; }
+
         public Regex UnitRegex { get; }
 
         public Regex DateNumberConnectorRegex { get; }
@@ -74,6 +76,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             SimpleTimeOfTodayBeforeRegex = GermanDateTimeExtractorConfiguration.SimpleTimeOfTodayBeforeRegex;
             SpecificTimeOfDayRegex = GermanDateTimeExtractorConfiguration.SpecificTimeOfDayRegex;
             TheEndOfRegex = GermanDateTimeExtractorConfiguration.TheEndOfRegex;
+            EndOfDayRegex = GermanDateTimeExtractorConfiguration.EndOfDayRegex;
             UnitRegex = GermanTimeExtractorConfiguration.TimeUnitRegex;
             DateNumberConnectorRegex = GermanDateTimeExtractorConfiguration.DateNumberConnectorRegex;
 

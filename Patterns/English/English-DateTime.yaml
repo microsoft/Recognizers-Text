@@ -392,6 +392,8 @@ SimpleTimeOfTodayBeforeRegex: !nestedRegex
   references: [ DateTimeSpecificTimeOfDayRegex, HourNumRegex, BaseDateTime.HourRegex ]
 TheEndOfRegex: !simpleRegex
   def: (the\s+)?end of(\s+the)?\s*$
+EndOfDayRegex: !simpleRegex
+  def: \b(the\s+)?(eod|(end\s+of\s+day))\b
 PeriodTimeOfDayRegex: !simpleRegex
   def: \b((in\s+(the)?\s+)?((?<early>early(\s+|-))|(?<late>late(\s+|-)))?(?<timeOfDay>morning|afternoon|night|evening))\b
 PeriodSpecificTimeOfDayRegex: !nestedRegex

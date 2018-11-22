@@ -42,6 +42,9 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public static readonly Regex TheEndOfRegex = new Regex(DateTimeDefinitions.TheEndOfRegex,
             RegexOptions.Singleline);
 
+        public static readonly Regex EndOfDayRegex = new Regex(DateTimeDefinitions.EndOfDayRegex,
+            RegexOptions.Singleline);
+
         public static readonly Regex UnitRegex = new Regex(DateTimeDefinitions.TimeUnitRegex,
             RegexOptions.Singleline);
 
@@ -86,6 +89,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         Regex IDateTimeExtractorConfiguration.TimeOfDayRegex => TimeOfDayRegex;
 
         Regex IDateTimeExtractorConfiguration.TheEndOfRegex => TheEndOfRegex;
+
+        Regex IDateTimeExtractorConfiguration.EndOfDayRegex => EndOfDayRegex;
 
         Regex IDateTimeExtractorConfiguration.UnitRegex => UnitRegex;
 

@@ -333,6 +333,18 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var ret = new DateTimeResolutionResult();
 
+            // Handle 'eod', 'end of day'
+            var eod = this.config.EndOfDayRegex.Match(text);
+            if (eod.Success)
+            {
+                ret.Timex = DateTimeFormatUtil.FormatDate(refDateTime) + "T23:59";
+                ret.FutureValue = refDateTime.Date.AddDays(1).AddTicks(-1);
+                ret.PastValue = refDateTime.Date.AddDays(1).AddTicks(-1);
+                ret.Success = true;
+
+                return ret;
+            }
+
             var ers = this.config.DateExtractor.Extract(text, refDateTime);
             if (ers.Count != 1)
             {
@@ -346,8 +358,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var futureDate = (DateObject)((DateTimeResolutionResult)pr.Value).FutureValue;
                 var pastDate = (DateObject)((DateTimeResolutionResult)pr.Value).PastValue;
                 ret.Timex = pr.TimexStr + "T23:59";
-                ret.FutureValue = futureDate.AddDays(1).AddMinutes(-1);
-                ret.PastValue = pastDate.AddDays(1).AddMinutes(-1);
+                ret.FutureValue = futureDate.Date.AddDays(1).AddTicks(-1);
+                ret.PastValue = pastDate.Date.AddDays(1).AddTicks(-1);
                 ret.Success = true;
             }
 

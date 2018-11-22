@@ -626,7 +626,7 @@
             {
               "timex": "2016-11-08T23:59",
               "type": "datetime",
-              "value": "2016-11-08 23:59:00"
+              "value": "2016-11-08 23:59:59"
             }
           ]
         }
@@ -649,12 +649,12 @@
             {
               "timex": "XXXX-WXX-7T23:59",
               "type": "datetime",
-              "value": "2016-11-06 23:59:00"
+              "value": "2016-11-06 23:59:59"
             },
             {
               "timex": "XXXX-WXX-7T23:59",
               "type": "datetime",
-              "value": "2016-11-13 23:59:00"
+              "value": "2016-11-13 23:59:59"
             }
           ]
         }
@@ -677,7 +677,7 @@
             {
               "timex": "2016-11-13T23:59",
               "type": "datetime",
-              "value": "2016-11-13 23:59:00"
+              "value": "2016-11-13 23:59:59"
             }
           ]
         }
@@ -8452,5 +8452,79 @@
     },
     "NotSupportedByDesign": "java",
     "Results": []
+  },
+  {
+    "Input": "You shouldn't always go to bed end of the day since it will do harm to your health.",
+    "Context": {
+      "ReferenceDateTime": "2018-11-21T12:00:00"
+    },
+    "NotSupportedByDesign": "java",
+    "Results": [
+      {
+        "Text": "end of the day",
+        "Start": 31,
+        "End": 44,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-11-21T23:59",
+              "type": "datetime",
+              "value": "2018-11-21 23:59:59"  
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "You shouldn't always go to bed end of day since it will do harm to your health.",
+    "Context": {
+      "ReferenceDateTime": "2018-11-21T12:00:00"
+    },
+    "NotSupportedByDesign": "java",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "end of day",
+        "Start": 31,
+        "End": 40,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-11-21T23:59",
+              "type": "datetime",
+              "value": "2018-11-21 23:59:59"  
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Bob and Alice usually exchange their encrypted messages at the eod",
+    "Context": {
+      "ReferenceDateTime": "2018-11-21T12:00:00"
+    },
+    "NotSupportedByDesign": "java",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "the eod",
+        "Start": 59,
+        "End": 65,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-11-21T23:59",
+              "type": "datetime",
+              "value": "2018-11-21 23:59:59"  
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

@@ -816,10 +816,10 @@
         "Value": {
           "Timex": "2016-11-07T23:59",
           "FutureResolution": {
-            "dateTime": "2016-11-07 23:59:00"
+            "dateTime": "2016-11-07 23:59:59"
           },
           "PastResolution": {
-            "dateTime": "2016-11-07 23:59:00"
+            "dateTime": "2016-11-07 23:59:59"
           }
         },
         "Start": 13,
@@ -839,10 +839,10 @@
         "Value": {
           "Timex": "2016-11-08T23:59",
           "FutureResolution": {
-            "dateTime": "2016-11-08 23:59:00"
+            "dateTime": "2016-11-08 23:59:59"
           },
           "PastResolution": {
-            "dateTime": "2016-11-08 23:59:00"
+            "dateTime": "2016-11-08 23:59:59"
           }
         },
         "Start": 13,
@@ -862,10 +862,10 @@
         "Value": {
           "Timex": "XXXX-WXX-7T23:59",
           "FutureResolution": {
-            "dateTime": "2016-11-13 23:59:00"
+            "dateTime": "2016-11-13 23:59:59"
           },
           "PastResolution": {
-            "dateTime": "2016-11-06 23:59:00"
+            "dateTime": "2016-11-06 23:59:59"
           }
         },
         "Start": 13,
@@ -1266,6 +1266,81 @@
         },
         "Start": 15,
         "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "You shouldn't always go to bed end of the day since it will do harm to your health.",
+    "Context": {
+      "ReferenceDateTime": "2018-11-21T12:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupportedByDesign": "java",
+    "Results": [
+      {
+        "Text": "end of the day",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2018-11-21T23:59",
+          "FutureResolution": {
+            "dateTime": "2018-11-21 23:59:59"
+          },
+          "PastResolution": {
+            "dateTime": "2018-11-21 23:59:59"
+          }
+        },
+        "Start": 31,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "You shouldn't always go to bed end of day since it will do harm to your health.",
+    "Context": {
+      "ReferenceDateTime": "2018-11-21T12:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupportedByDesign": "java",
+    "Results": [
+      {
+        "Text": "end of day",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2018-11-21T23:59",
+          "FutureResolution": {
+            "dateTime": "2018-11-21 23:59:59"
+          },
+          "PastResolution": {
+            "dateTime": "2018-11-21 23:59:59"
+          }
+        },
+        "Start": 31,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Bob and Alice usually exchange their encrypted messages at the eod.",
+    "Context": {
+      "ReferenceDateTime": "2018-11-21T12:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "NotSupportedByDesign": "java",
+    "Results": [
+      {
+        "Text": "the eod",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2018-11-21T23:59",
+          "FutureResolution": {
+            "dateTime": "2018-11-21 23:59:59"
+          },
+          "PastResolution": {
+            "dateTime": "2018-11-21 23:59:59"
+          }
+        },
+        "Start": 59,
+        "Length": 7
       }
     ]
   }

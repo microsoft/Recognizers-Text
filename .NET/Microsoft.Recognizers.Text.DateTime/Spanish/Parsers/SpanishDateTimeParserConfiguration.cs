@@ -46,6 +46,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public Regex TheEndOfRegex { get; }
 
+        public Regex EndOfDayRegex { get; }
+
         public Regex UnitRegex { get; }
 
         public Regex DateNumberConnectorRegex { get; }
@@ -73,6 +75,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             SimpleTimeOfTodayBeforeRegex = SpanishDateTimeExtractorConfiguration.SimpleTimeOfTodayBeforeRegex;
             SpecificTimeOfDayRegex = SpanishDateTimeExtractorConfiguration.SpecificTimeOfDayRegex;
             TheEndOfRegex = SpanishDateTimeExtractorConfiguration.TheEndOfRegex;
+            EndOfDayRegex = SpanishDateTimeExtractorConfiguration.EndOfDayRegex;
             UnitRegex = SpanishDateTimeExtractorConfiguration.UnitRegex;
             DateNumberConnectorRegex = SpanishDateTimeExtractorConfiguration.DateNumberConnectorRegex;
             Numbers = config.Numbers;

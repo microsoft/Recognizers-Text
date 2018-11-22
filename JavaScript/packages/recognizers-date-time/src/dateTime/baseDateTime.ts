@@ -460,11 +460,9 @@ export class BaseDateTimeParser implements IDateTimeParser {
             let futureDate = new Date(pr.value.futureValue);
             let pastDate = new Date(pr.value.pastValue);
             ret.timex = pr.timexStr + "T23:59";
-            futureDate.setDate(futureDate.getDate() + 1);
-            futureDate.setMinutes(futureDate.getMinutes() - 1);
+            futureDate.setHours(23, 59, 59, 999);
             ret.futureValue = futureDate;
-            pastDate.setDate(pastDate.getDate() + 1);
-            pastDate.setMinutes(pastDate.getMinutes() - 1);
+            pastDate.setHours(23, 59, 59, 999);
             ret.pastValue = pastDate;
             ret.success = true;
             return ret;

@@ -253,7 +253,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var ret = new List<Token>();
             var ers = this.config.DatePointExtractor.Extract(text, reference);
 
-            // handle "the end of the day"
+            // Handle "the end of the day"
             foreach (var er in ers)
             {
                 var beforeStr = text.Substring(0, er.Start ?? 0);
@@ -273,6 +273,13 @@ namespace Microsoft.Recognizers.Text.DateTime
                         ret.Add(new Token(er.Start ?? 0, er.Start + er.Length + match.Index + match.Length ?? 0));
                     }
                 }
+            }
+
+            // Handle "eod, end of day"
+            var eod = this.config.EndOfDayRegex.Match(text);
+            if (eod.Success)
+            {
+                ret.Add(new Token(eod.Index, eod.Index + eod.Length));
             }
 
             return ret;

@@ -591,9 +591,11 @@ class BaseDateTimeParser(DateTimeParser):
 
         pr = self.config.date_parser.parse(er, reference)
         result.timex = pr.timex_str + 'T23:59'
-        future_date = pr.value.future_value + timedelta(days=1) + timedelta(minutes=-1)
+        future_date = pr.value.future_value
+        future_date = datetime(future_date.year, future_date.month, future_date.day, 23, 59, 59, 999999)
         result.future_value = future_date
-        past_date = pr.value.past_value + timedelta(days=1) + timedelta(minutes=-1)
+        past_date = pr.value.past_value
+        past_date = datetime(past_date.year, past_date.month, past_date.day, 23, 59, 59, 999999)
         result.past_value = past_date
         result.success = True
 

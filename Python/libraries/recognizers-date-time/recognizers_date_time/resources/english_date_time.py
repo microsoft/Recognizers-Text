@@ -162,6 +162,7 @@ class EnglishDateTime:
     SimpleTimeOfTodayAfterRegex = f'({HourNumRegex}|{BaseDateTime.HourRegex})\\s*(,\\s*)?(in\\s+)?{DateTimeSpecificTimeOfDayRegex}'
     SimpleTimeOfTodayBeforeRegex = f'\\b{DateTimeSpecificTimeOfDayRegex}(\\s*,)?(\\s+(at|around))?\\s*({HourNumRegex}|{BaseDateTime.HourRegex})\\b'
     TheEndOfRegex = f'(the\\s+)?end of(\\s+the)?\\s*$'
+    EndOfDayRegex = f'\\b(the\\s+)?(eod|(end\\s+of\\s+day))\\b'
     PeriodTimeOfDayRegex = f'\\b((in\\s+(the)?\\s+)?((?<early>early(\\s+|-))|(?<late>late(\\s+|-)))?(?<timeOfDay>morning|afternoon|night|evening))\\b'
     PeriodSpecificTimeOfDayRegex = f'\\b(({StrictRelativeRegex}\\s+{PeriodTimeOfDayRegex})\\b|\\btonight)\\b'
     PeriodTimeOfDayWithDateRegex = f'\\b(({TimeOfDayRegex}(\\s+(on|of))?))\\b'

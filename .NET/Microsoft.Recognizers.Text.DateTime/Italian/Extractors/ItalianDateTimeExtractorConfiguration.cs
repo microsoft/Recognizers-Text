@@ -60,6 +60,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
                 DateTimeDefinitions.TheEndOfRegex,
                 RegexOptions.Singleline);
 
+        public static readonly Regex EndOfDayRegex =
+            new Regex(
+                DateTimeDefinitions.EndOfDayRegex,
+                RegexOptions.Singleline);
+
         public static readonly Regex UnitRegex = 
             new Regex(
                 DateTimeDefinitions.TimeUnitRegex,
@@ -105,6 +110,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         Regex IDateTimeExtractorConfiguration.TimeOfDayRegex => TimeOfDayRegex;
 
         Regex IDateTimeExtractorConfiguration.TheEndOfRegex => TheEndOfRegex;
+
+        Regex IDateTimeExtractorConfiguration.EndOfDayRegex => EndOfDayRegex;
 
         Regex IDateTimeExtractorConfiguration.UnitRegex => UnitRegex;
 
