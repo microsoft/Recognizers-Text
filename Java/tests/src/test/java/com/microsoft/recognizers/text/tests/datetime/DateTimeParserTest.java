@@ -7,9 +7,11 @@ import com.microsoft.recognizers.text.Culture;
 import com.microsoft.recognizers.text.ExtractResult;
 import com.microsoft.recognizers.text.ModelResult;
 import com.microsoft.recognizers.text.datetime.DateTimeOptions;
+import com.microsoft.recognizers.text.datetime.english.extractors.EnglishDurationExtractorConfiguration;
 import com.microsoft.recognizers.text.datetime.english.parsers.EnglishCommonDateTimeParserConfiguration;
-import com.microsoft.recognizers.text.datetime.english.parsers.EnglishDurationParserConfiguration;
 import com.microsoft.recognizers.text.datetime.english.parsers.EnglishDateParserConfiguration;
+import com.microsoft.recognizers.text.datetime.english.parsers.EnglishDurationParserConfiguration;
+import com.microsoft.recognizers.text.datetime.extractors.BaseDurationExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.IDateTimeExtractor;
 import com.microsoft.recognizers.text.datetime.parsers.*;
 import com.microsoft.recognizers.text.datetime.utilities.DateTimeResolutionResult;
@@ -25,6 +27,7 @@ import org.junit.runners.Parameterized;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -105,6 +108,8 @@ public class DateTimeParserTest extends AbstractTest {
 
     private static IDateTimeParser getEnglishParser(String name) {
         switch (name) {
+            case "TimeZoneParser":
+                return new BaseTimeZoneParser();
             case "DurationParser":
                 return new BaseDurationParser(new EnglishDurationParserConfiguration(new EnglishCommonDateTimeParserConfiguration(DateTimeOptions.None)));
             case "DateParser":

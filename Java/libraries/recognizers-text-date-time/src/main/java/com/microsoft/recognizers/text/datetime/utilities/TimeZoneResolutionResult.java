@@ -7,7 +7,6 @@ public class TimeZoneResolutionResult {
     private final String timeZoneText;
 
     public TimeZoneResolutionResult(String value, Integer utcOffsetMins, String timeZoneText) {
-
         this.value = value;
         this.utcOffsetMins = utcOffsetMins;
         this.timeZoneText = timeZoneText;
