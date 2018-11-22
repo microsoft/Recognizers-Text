@@ -121,10 +121,9 @@ public abstract class BasePercentageExtractor implements IExtractor {
                         for (int j = i; j < numExtResults.size(); j++) {
                             ExtractResult r = results.get(i);
                             ExtractResult n = numExtResults.get(j);
-                            if ((r.start.equals(n.start)
-                                || r.start + r.length
-                                == n.start + n.length) 
-                                && r.text.contains(n.text)) {
+                            if ((r.start.equals(n.start) ||
+                                r.start + r.length == n.start + n.length) &&
+                                r.text.contains(n.text)) {
                                 data.add(Pair.with(n.text, n));
                             }
                         }

@@ -51,7 +51,7 @@ public class BaseNumberRangeParser implements IParser {
 
         List<Double> nums = er.stream().map(r -> {
             Object value = config.getNumberParser().parse(r).value;
-            return value == null ? 0 : (Double) value;
+            return value == null ? 0 : (Double)value;
         }).collect(Collectors.toList());
 
         double startValue;
@@ -70,7 +70,7 @@ public class BaseNumberRangeParser implements IParser {
         char leftBracket;
         char rightBracket;
 
-        String type = (String) extractResult.data;
+        String type = (String)extractResult.data;
         if (type.contains(NumberRangeConstants.TWONUMBETWEEN)) {
             // between 20 and 30: (20,30)
             leftBracket = NumberRangeConstants.LEFT_OPEN;
@@ -140,7 +140,7 @@ public class BaseNumberRangeParser implements IParser {
 
         List<Double> nums = er.stream().map(r -> {
             Object value = config.getNumberParser().parse(r).value;
-            return value == null ? 0 : (Double) value;
+            return value == null ? 0 : (Double)value;
         }).collect(Collectors.toList());
 
         char leftBracket;
@@ -148,7 +148,7 @@ public class BaseNumberRangeParser implements IParser {
         String startValueStr = "";
         String endValueStr = "";
 
-        String type = (String) extractResult.data;
+        String type = (String)extractResult.data;
         if (type.contains(NumberRangeConstants.MORE)) {
             rightBracket = NumberRangeConstants.RIGHT_OPEN;
 

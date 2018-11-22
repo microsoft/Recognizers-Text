@@ -65,7 +65,7 @@ public class BaseNumberParser implements IParser {
         ParseResult ret = null;
 
         if (extractResult.data instanceof String) {
-            extra = (String) extractResult.data;
+            extra = (String)extractResult.data;
         } else {
             if (this.longFormatRegex.matcher(extractResult.text).find()) {
                 extra = "Num";
@@ -107,13 +107,11 @@ public class BaseNumberParser implements IParser {
                         matchNegative.group(1) + extractResult.text,
                         ret.type,
                         ret.data,
-                        -(double) ret.value,
+                        -(double)ret.value,
                         ret.resolutionStr);
             }
 
-            String resolutionStr = config.getCultureInfo() != null
-                    ? NumberFormatUtility.format(ret.value, config.getCultureInfo())
-                    : ret.value.toString();
+            String resolutionStr = config.getCultureInfo() != null ? NumberFormatUtility.format(ret.value, config.getCultureInfo()) : ret.value.toString();
             ret = ret.withResolutionStr(resolutionStr);
         }
 
@@ -178,13 +176,13 @@ public class BaseNumberParser implements IParser {
             String numerator = match.group("numerator");
             String denominator = match.group("denominator");
 
-            double smallValue = Character.isDigit(numerator.charAt(0))
-                    ? getDigitalValue(numerator, 1)
-                    : getIntValue(getMatches(numerator));
+            double smallValue = Character.isDigit(numerator.charAt(0)) ?
+                    getDigitalValue(numerator, 1) :
+                    getIntValue(getMatches(numerator));
 
-            double bigValue = Character.isDigit(denominator.charAt(0))
-                    ? getDigitalValue(denominator, 1)
-                    : getIntValue(getMatches(denominator));
+            double bigValue = Character.isDigit(denominator.charAt(0)) ?
+                    getDigitalValue(denominator, 1) :
+                    getIntValue(getMatches(denominator));
 
             result = result.withValue(smallValue / bigValue);
         } else {
@@ -198,8 +196,8 @@ public class BaseNumberParser implements IParser {
             for (splitIndex = fracWords.size() - 2; splitIndex >= 0; splitIndex--) {
 
                 String fracWord = fracWords.get(splitIndex);
-                if (config.getWrittenFractionSeparatorTexts().contains(fracWord)
-                    || config.getWrittenIntegerSeparatorTexts().contains(fracWord)) {
+                if (config.getWrittenFractionSeparatorTexts().contains(fracWord) ||
+                    config.getWrittenIntegerSeparatorTexts().contains(fracWord)) {
                     continue;
                 }
 
@@ -210,8 +208,8 @@ public class BaseNumberParser implements IParser {
 
                 // previous : hundred
                 // current : one
-                if ((previousValue >= smHundreds && previousValue > currentValue)
-                        || (previousValue < smHundreds && isComposable(currentValue, previousValue))) {
+                if ((previousValue >= smHundreds && previousValue > currentValue) ||
+                        (previousValue < smHundreds && isComposable(currentValue, previousValue))) {
                     if (previousValue < smHundreds && currentValue >= roundValue) {
                         roundValue = currentValue;
                     } else if (previousValue < smHundreds && currentValue < roundValue) {
@@ -226,9 +224,9 @@ public class BaseNumberParser implements IParser {
                         while (splitIndex <= fracWords.size() - 2) {
                             // e.g. one hundred thousand
                             // frac[i+1] % 100 && frac[i] % 100 = 0
-                            if (config.resolveCompositeNumber(fracWords.get(splitIndex)) >= smHundreds
-                                    && !config.getWrittenFractionSeparatorTexts().contains(fracWords.get(splitIndex + 1))
-                                    && config.resolveCompositeNumber(fracWords.get(splitIndex + 1)) < smHundreds) {
+                            if (config.resolveCompositeNumber(fracWords.get(splitIndex)) >= smHundreds &&
+                                    !config.getWrittenFractionSeparatorTexts().contains(fracWords.get(splitIndex + 1)) &&
+                                    config.resolveCompositeNumber(fracWords.get(splitIndex + 1)) < smHundreds) {
                                 splitIndex++;
                                 break;
                             }
@@ -507,9 +505,9 @@ public class BaseNumberParser implements IParser {
                 boolean isOrdinal = config.getOrdinalNumberMap().containsKey(matchStr);
 
                 if (isCardinal || isOrdinal) {
-                    double matchValue = isCardinal
-                            ? config.getCardinalNumberMap().get(matchStr)
-                            : config.getOrdinalNumberMap().get(matchStr);
+                    double matchValue = isCardinal ?
+                            config.getCardinalNumberMap().get(matchStr) :
+                            config.getOrdinalNumberMap().get(matchStr);
 
                     //This is just for ordinal now. Not for fraction ever.
                     if (isOrdinal) {
@@ -548,7 +546,7 @@ public class BaseNumberParser implements IParser {
                 } else {
                     long complexValue = config.resolveCompositeNumber(matchStr);
                     if (complexValue != 0) {
-                        tempStack.push((double) complexValue);
+                        tempStack.push((double)complexValue);
                     }
                 }
                 oldSym = matchStr;
