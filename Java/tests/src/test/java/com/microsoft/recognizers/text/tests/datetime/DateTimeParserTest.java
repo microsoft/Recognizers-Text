@@ -108,32 +108,35 @@ public class DateTimeParserTest extends AbstractTest {
     private static IDateTimeParser getEnglishParser(String name) {
 
         switch (name) {
-            case "DateParser":
-                return new BaseDateParser(new EnglishDateParserConfiguration(new EnglishCommonDateTimeParserConfiguration(DateTimeOptions.None)));
-            case "DurationParser":
-                return new BaseDurationParser(new EnglishDurationParserConfiguration(new EnglishCommonDateTimeParserConfiguration(DateTimeOptions.None)));
-            case "HolidayParser":
-                return new BaseHolidayParser(new EnglishHolidayParserConfiguration());
-            case "TimeParser":
-                return new TimeParser(new EnglishTimeParserConfiguration(new EnglishCommonDateTimeParserConfiguration(DateTimeOptions.None)));
             case "TimeZoneParser":
                 return new BaseTimeZoneParser();
+            case "DurationParser":
+                return new BaseDurationParser(new EnglishDurationParserConfiguration(new EnglishCommonDateTimeParserConfiguration(DateTimeOptions.None)));
+            case "DateParser":
+                return new BaseDateParser(new EnglishDateParserConfiguration(new EnglishCommonDateTimeParserConfiguration(DateTimeOptions.None)));
+            case "TimeParser":
+                return new TimeParser(new EnglishTimeParserConfiguration(new EnglishCommonDateTimeParserConfiguration(DateTimeOptions.None)));
+            case "HolidayParser":
+                return new BaseHolidayParser(new EnglishHolidayParserConfiguration());
             case "DatePeriodParser":
                 return new BaseDatePeriodParser(new EnglishDatePeriodParserConfiguration(new EnglishCommonDateTimeParserConfiguration(DateTimeOptions.None)));
             case "DateTimeParser":
                 return new BaseDateTimeParser(new EnglishDateTimeParserConfiguration(new EnglishCommonDateTimeParserConfiguration(DateTimeOptions.None)));
+            case "DateTimePeriodParser":
+                return new BaseDateTimePeriodParser(new EnglishDateTimePeriodParserConfiguration(new EnglishCommonDateTimeParserConfiguration(DateTimeOptions.None)));
             default:
                 throw new AssumptionViolatedException("Parser Type/Name not supported.");
         }
     }
 
     private IDateTimeExtractor getExtractor(TestCase currentCase) {
-
+        
         String extractorName = currentCase.modelName.replace("Parser", "Extractor");
         return DateTimeExtractorTest.getExtractor(currentCase.language, extractorName);
     }
 
     public static <T extends DateTimeResolutionResult> T parseDateTimeResolutionResult(Class<T> dateTimeResolutionResultClass, Object result) {
+
         // Deserializer
         ObjectMapper mapper = new ObjectMapper();
         mapper.configure(MapperFeature.ACCEPT_CASE_INSENSITIVE_PROPERTIES, true);
