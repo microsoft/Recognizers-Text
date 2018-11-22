@@ -106,14 +106,16 @@ public class DateTimeParserTest extends AbstractTest {
 
     private static IDateTimeParser getEnglishParser(String name) {
         switch (name) {
-            case "TimeZoneParser":
-                return new BaseTimeZoneParser();
-            case "DurationParser":
-                return new BaseDurationParser(new EnglishDurationParserConfiguration(new EnglishCommonDateTimeParserConfiguration(DateTimeOptions.None)));
             case "DateParser":
                 return new BaseDateParser(new EnglishDateParserConfiguration(new EnglishCommonDateTimeParserConfiguration(DateTimeOptions.None)));
+            case "DurationParser":
+                return new BaseDurationParser(new EnglishDurationParserConfiguration(new EnglishCommonDateTimeParserConfiguration(DateTimeOptions.None)));
+            case "HolidayParser":
+                return new BaseHolidayParser(new EnglishHolidayParserConfiguration());
             case "TimeParser":
                 return new TimeParser(new EnglishTimeParserConfiguration(new EnglishCommonDateTimeParserConfiguration(DateTimeOptions.None)));
+            case "TimeZoneParser":
+                return new BaseTimeZoneParser();
             default:
                 throw new AssumptionViolatedException("Parser Type/Name not supported.");
         }
