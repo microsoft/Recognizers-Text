@@ -13,8 +13,8 @@ public class DateTimeResolutionResult {
     private String mod;
     private String comment;
 
-    private Map<String, String> futureResolution;
-    private Map<String, String> pastResolution;
+    private Map<String,String> futureResolution;
+    private Map<String,String> pastResolution;
 
     private Object futureValue;
     private Object pastValue;
@@ -61,6 +61,10 @@ public class DateTimeResolutionResult {
 
     public String getComment() {
         return this.comment;
+    }  
+  
+    public void setComment(String comment) {
+        this.comment = comment;
     }
 
     public Map<String, String> getFutureResolution() {
