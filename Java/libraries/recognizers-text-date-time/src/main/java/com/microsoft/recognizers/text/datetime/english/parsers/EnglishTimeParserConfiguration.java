@@ -21,6 +21,7 @@ import java.util.Optional;
 import java.util.regex.Pattern;
 
 public class EnglishTimeParserConfiguration extends BaseOptionsConfiguration implements ITimeParserConfiguration {
+    
     private final Pattern atRegex;
     private final Iterable<Pattern> timeRegexes;
     private final ImmutableMap<String, Integer> numbers;
@@ -31,7 +32,9 @@ public class EnglishTimeParserConfiguration extends BaseOptionsConfiguration imp
     private final Pattern nightRegex;
 
     public EnglishTimeParserConfiguration(ICommonDateTimeParserConfiguration config) {
+        
         super(config.getOptions());
+        
         atRegex = EnglishTimeExtractorConfiguration.AtRegex;
         timeRegexes = EnglishTimeExtractorConfiguration.TimeRegexList;
         numbers = config.getNumbers();
@@ -75,6 +78,7 @@ public class EnglishTimeParserConfiguration extends BaseOptionsConfiguration imp
 
     @Override
     public PrefixAdjustResult adjustByPrefix(String prefix, int hour, int min, boolean hasMin) {
+        
         int deltaMin;
         String trimmedPrefix = prefix.trim().toLowerCase();
 
@@ -85,6 +89,7 @@ public class EnglishTimeParserConfiguration extends BaseOptionsConfiguration imp
         } else if (trimmedPrefix.startsWith("three quarter")) {
             deltaMin = 45;
         } else {
+            
             Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(EnglishTimeExtractorConfiguration.LessThanOneHour, trimmedPrefix)).findFirst();
             String minStr = match.get().getGroup("deltamin").value;
             if (!StringUtility.isNullOrWhiteSpace(minStr)) {
@@ -112,12 +117,16 @@ public class EnglishTimeParserConfiguration extends BaseOptionsConfiguration imp
 
     @Override
     public SuffixAdjustResult adjustBySuffix(String suffix, int hour, int min, boolean hasMin, boolean hasAm, boolean hasPm) {
+        
         String trimedSuffix = suffix.trim().toLowerCase();
         int deltaHour = 0;
         Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(timeSuffixFull, trimedSuffix)).findFirst();
+        
         if (match.isPresent() && match.get().index == 0 && match.get().length == trimedSuffix.length()) {
+            
             String oclockStr = match.get().getGroup("oclock").value;
             if (StringUtility.isNullOrEmpty(oclockStr)) {
+                
                 String amStr = match.get().getGroup(Constants.AmGroupName).value;
                 if (!StringUtility.isNullOrEmpty(amStr)) {
                     if (hour >= Constants.HalfDayHourCount) {
