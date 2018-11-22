@@ -7,7 +7,8 @@ import com.microsoft.recognizers.text.ParseResult;
 import com.microsoft.recognizers.text.number.NumberOptions;
 import com.microsoft.recognizers.text.number.parsers.BaseNumberParserConfiguration;
 import com.microsoft.recognizers.text.number.resources.SpanishNumeric;
-import com.microsoft.recognizers.text.utilities.FormatUtility;
+import com.microsoft.recognizers.text.utilities.QueryProcessor;
+import com.microsoft.recognizers.text.utilities.RegExpUtility;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,10 +26,12 @@ public class SpanishNumberParserConfiguration extends BaseNumberParserConfigurat
     }
 
     public SpanishNumberParserConfiguration(CultureInfo cultureInfo, NumberOptions options) {
+
         super(
                 SpanishNumeric.LangMarker,
                 cultureInfo,
                 options,
+
                 SpanishNumeric.NonDecimalSeparatorChar,
                 SpanishNumeric.DecimalSeparatorChar,
                 SpanishNumeric.FractionMarkerToken,
@@ -41,18 +44,20 @@ public class SpanishNumberParserConfiguration extends BaseNumberParserConfigurat
                 SpanishNumeric.CardinalNumberMap,
                 buildOrdinalNumberMap(),
                 SpanishNumeric.RoundNumberMap,
-                Pattern.compile(SpanishNumeric.HalfADozenRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS),
-                Pattern.compile(SpanishNumeric.DigitalNumberRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS),
-                Pattern.compile(SpanishNumeric.NegativeNumberSignRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS),
-                Pattern.compile(SpanishNumeric.FractionPrepositionRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS));
+
+                RegExpUtility.getSafeLookbehindRegExp(SpanishNumeric.HalfADozenRegex, Pattern.UNICODE_CHARACTER_CLASS),
+                RegExpUtility.getSafeLookbehindRegExp(SpanishNumeric.DigitalNumberRegex, Pattern.UNICODE_CHARACTER_CLASS),
+                RegExpUtility.getSafeLookbehindRegExp(SpanishNumeric.NegativeNumberSignRegex, Pattern.UNICODE_CHARACTER_CLASS),
+                RegExpUtility.getSafeLookbehindRegExp(SpanishNumeric.FractionPrepositionRegex, Pattern.UNICODE_CHARACTER_CLASS));
     }
 
     @Override
     public List<String> normalizeTokenSet(List<String> tokens, ParseResult context) {
+
         List<String> result = new ArrayList<>();
 
         for (String token : tokens) {
-            String tempWord = FormatUtility.trimEnd(token, "s");
+            String tempWord = QueryProcessor.trimEnd(token, "s");
             if (this.getOrdinalNumberMap().containsKey(tempWord)) {
                 result.add(tempWord);
                 continue;
@@ -111,7 +116,7 @@ public class SpanishNumberParserConfiguration extends BaseNumberParserConfigurat
     }
 
     private static Map<String, Long> buildOrdinalNumberMap() {
-        ImmutableMap.Builder ordinalNumberMapBuilder = new ImmutableMap.Builder()
+        ImmutableMap.Builder<String, Long> ordinalNumberMapBuilder = new ImmutableMap.Builder<String, Long>()
                 .putAll(SpanishNumeric.OrdinalNumberMap);
         SpanishNumeric.SuffixOrdinalMap.forEach((sufixKey, sufixValue) ->
                 SpanishNumeric.PrefixCardinalMap.forEach((prefixKey, prefixValue) ->

@@ -10,7 +10,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex LocationTimeSuffixRegex { get; }
 
-        StringMatcher CityMatcher { get; }
+        StringMatcher LocationMatcher { get; }
 
         List<string> AmbiguousTimezoneList { get; }
     }

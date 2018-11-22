@@ -7,7 +7,7 @@ from recognizers_number import ExtractResult, ChineseCardinalExtractor, CJKNumbe
 
 from ...resources.chinese_date_time import ChineseDateTime
 from ..constants import TimeTypeConstants
-from ..utilities import FormatUtil, DateTimeResolutionResult, DateUtils
+from ..utilities import DateTimeFormatUtil, DateTimeResolutionResult, DateUtils
 from ..parsers import DateTimeParseResult
 from ..base_datetimeperiod import BaseDateTimePeriodParser, BeginEnd
 from .datetimeperiod_parser_config import ChineseDateTimePeriodParserConfiguration
@@ -45,10 +45,10 @@ class ChineseDateTimePeriodParser(BaseDateTimePeriodParser):
                 inner_result = self._parse_number_with_unit(source_text, reference)
 
             if inner_result.success:
-                inner_result.future_resolution[TimeTypeConstants.START_DATETIME] = FormatUtil.format_date_time(inner_result.future_value[0])
-                inner_result.future_resolution[TimeTypeConstants.END_DATETIME] = FormatUtil.format_date_time(inner_result.future_value[1])
-                inner_result.past_resolution[TimeTypeConstants.START_DATETIME] = FormatUtil.format_date_time(inner_result.past_value[0])
-                inner_result.past_resolution[TimeTypeConstants.END_DATETIME] = FormatUtil.format_date_time(inner_result.past_value[1])
+                inner_result.future_resolution[TimeTypeConstants.START_DATETIME] = DateTimeFormatUtil.format_date_time(inner_result.future_value[0])
+                inner_result.future_resolution[TimeTypeConstants.END_DATETIME] = DateTimeFormatUtil.format_date_time(inner_result.future_value[1])
+                inner_result.past_resolution[TimeTypeConstants.START_DATETIME] = DateTimeFormatUtil.format_date_time(inner_result.past_value[0])
+                inner_result.past_resolution[TimeTypeConstants.END_DATETIME] = DateTimeFormatUtil.format_date_time(inner_result.past_value[1])
                 result.value = inner_result
                 result.timex_str = inner_result.timex if inner_result is not None else ''
                 result.resolution_str = ''
@@ -174,8 +174,8 @@ class ChineseDateTimePeriodParser(BaseDateTimePeriodParser):
         result.past_value = [left_time, right_time]
 
         fuzzy_timex = 'X' in prs.begin.timex_str or 'X' in prs.end.timex_str
-        left_timex = prs.begin.timex_str if fuzzy_timex else FormatUtil.luis_date_time(left_time)
-        right_timex = prs.end.timex_str if fuzzy_timex else FormatUtil.luis_date_time(right_time)
+        left_timex = prs.begin.timex_str if fuzzy_timex else DateTimeFormatUtil.luis_date_time(left_time)
+        right_timex = prs.end.timex_str if fuzzy_timex else DateTimeFormatUtil.luis_date_time(right_time)
         total_hours = DateUtils.total_hours(left_time, right_time)
         result.timex = f'({left_timex},{right_timex},PT{total_hours}H)'
 
@@ -195,7 +195,7 @@ class ChineseDateTimePeriodParser(BaseDateTimePeriodParser):
             date: datetime = reference + timedelta(days=swift)
             date.replace(hour=0, minute=0, second=0)
 
-            result.timex = FormatUtil.format_date(date) + values.time_str
+            result.timex = DateTimeFormatUtil.format_date(date) + values.time_str
             result.future_value = [
                 DateUtils.safe_create_from_min_value(date.year, date.month, date.day, values.begin_hour, 0, 0),
                 DateUtils.safe_create_from_min_value(date.year, date.month, date.day, values.end_hour, values.end_min, values.end_min)
@@ -329,8 +329,8 @@ class ChineseDateTimePeriodParser(BaseDateTimePeriodParser):
         else:
             return result
 
-        begin_timex = FormatUtil.luis_date_from_datetime(begin_date) + 'T' + FormatUtil.luis_time_from_datetime(begin_date)
-        end_timex = FormatUtil.luis_date_from_datetime(end_date) + 'T' + FormatUtil.luis_time_from_datetime(end_date)
+        begin_timex = DateTimeFormatUtil.luis_date_from_datetime(begin_date) + 'T' + DateTimeFormatUtil.luis_time_from_datetime(begin_date)
+        end_timex = DateTimeFormatUtil.luis_date_from_datetime(end_date) + 'T' + DateTimeFormatUtil.luis_time_from_datetime(end_date)
 
         result.timex = f'({begin_timex},{end_timex},PT{num}{unit_str[0]})'
 

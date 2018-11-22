@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
+
 using Microsoft.Recognizers.Text.DateTime.Utilities;
-using Microsoft.Recognizers.Text.Number;
 
 using DateObject = System.DateTime;
 
@@ -79,8 +79,9 @@ namespace Microsoft.Recognizers.Text.DateTime
             IImmutableDictionary<string, string> unitMap,
             Regex unitRegex,
             IDateTimeUtilityConfiguration utilityConfiguration,
-            SwiftDayDelegate SwiftDay)
+            SwiftDayDelegate swiftDay)
         {
+
             var ret = new DateTimeResolutionResult();
             var durationRes = durationExtractor.Extract(text, referenceTime);
             if (durationRes.Count > 0)
@@ -107,7 +108,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     if (pr.Value != null)
                     {
                         return GetAgoLaterResult(pr, afterStr, beforeStr, referenceTime,
-                                                 utilityConfiguration, mode, SwiftDay);
+                                                 utilityConfiguration, mode, swiftDay);
                     }
                 }
             }
@@ -121,8 +122,9 @@ namespace Microsoft.Recognizers.Text.DateTime
             DateObject referenceTime,
             IDateTimeUtilityConfiguration utilityConfiguration,
             AgoLaterMode mode,
-            SwiftDayDelegate SwiftDay)
+            SwiftDayDelegate swiftDay)
         {
+
             var ret = new DateTimeResolutionResult();
             var resultDateTime = referenceTime;
             var timex = durationParseResult.TimexStr;
@@ -144,7 +146,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 // Handle cases like "3 days before yesterday"
                 if (match.Success && !string.IsNullOrEmpty(match.Groups["day"].Value))
                 {
-                    swift = SwiftDay(match.Groups["day"].Value);
+                    swift = swiftDay(match.Groups["day"].Value);
                 }
                 
                 resultDateTime = DurationParsingUtil.ShiftDateTime(timex, referenceTime.AddDays(swift), false);
@@ -160,7 +162,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 // Handle cases like "3 days after tomorrow"
                 if (match.Success && !string.IsNullOrEmpty(match.Groups["day"].Value))
                 {
-                    swift = SwiftDay(match.Groups["day"].Value);
+                    swift = swiftDay(match.Groups["day"].Value);
                 }
 
                 resultDateTime = DurationParsingUtil.ShiftDateTime(timex, referenceTime.AddDays(swift), true);
@@ -172,11 +174,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 if (mode.Equals(AgoLaterMode.Date))
                 {
-                    ret.Timex = $"{FormatUtil.LuisDate(resultDateTime)}";
+                    ret.Timex = $"{DateTimeFormatUtil.LuisDate(resultDateTime)}";
                 }
                 else if (mode.Equals(AgoLaterMode.DateTime))
                 {
-                    ret.Timex = $"{FormatUtil.LuisDateTime(resultDateTime)}";
+                    ret.Timex = $"{DateTimeFormatUtil.LuisDateTime(resultDateTime)}";
                 }
 
                 ret.FutureValue = ret.PastValue = resultDateTime;

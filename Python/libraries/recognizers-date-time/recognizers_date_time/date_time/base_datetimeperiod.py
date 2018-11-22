@@ -14,7 +14,7 @@ from .base_timeperiod import BaseTimePeriodExtractor
 from .constants import Constants, TimeTypeConstants
 from .extractors import DateTimeExtractor
 from .parsers import DateTimeParser, DateTimeParseResult
-from .utilities import Token, merge_all_tokens, RegExpUtility, FormatUtil, DateTimeResolutionResult, DateUtils
+from .utilities import Token, merge_all_tokens, RegExpUtility, DateTimeFormatUtil, DateTimeResolutionResult, DateUtils
 
 
 class MatchedTimeRange:
@@ -520,13 +520,13 @@ class BaseDateTimePeriodParser(DateTimeParser):
                 inner_result = self.parse_relative_unit(source_text, reference)
 
             if inner_result.success:
-                inner_result.future_resolution[TimeTypeConstants.START_DATETIME] = FormatUtil.format_date_time(
+                inner_result.future_resolution[TimeTypeConstants.START_DATETIME] = DateTimeFormatUtil.format_date_time(
                     inner_result.future_value[0])
-                inner_result.future_resolution[TimeTypeConstants.END_DATETIME] = FormatUtil.format_date_time(
+                inner_result.future_resolution[TimeTypeConstants.END_DATETIME] = DateTimeFormatUtil.format_date_time(
                     inner_result.future_value[1])
-                inner_result.past_resolution[TimeTypeConstants.START_DATETIME] = FormatUtil.format_date_time(
+                inner_result.past_resolution[TimeTypeConstants.START_DATETIME] = DateTimeFormatUtil.format_date_time(
                     inner_result.past_value[0])
-                inner_result.past_resolution[TimeTypeConstants.END_DATETIME] = FormatUtil.format_date_time(
+                inner_result.past_resolution[TimeTypeConstants.END_DATETIME] = DateTimeFormatUtil.format_date_time(
                     inner_result.past_value[1])
                 result.value = inner_result
                 result.timex_str = inner_result.timex if inner_result is not None else ''
@@ -794,7 +794,7 @@ class BaseDateTimePeriodParser(DateTimeParser):
         if match and match[-1].start() == 0 and match[-1].group() == source:
             swift = self.config.get_swift_prefix(source)
             date = reference + timedelta(days=swift)
-            result.timex = FormatUtil.format_date(date) + matched.time_str
+            result.timex = DateTimeFormatUtil.format_date(date) + matched.time_str
             result.future_value = [
                 DateUtils.safe_create_from_min_value(date.year, date.month, date.day, matched.begin_hour, 0, 0),
                 DateUtils.safe_create_from_min_value(date.year, date.month, date.day, matched.end_hour, matched.end_min,
@@ -934,10 +934,10 @@ class BaseDateTimePeriodParser(DateTimeParser):
             mod = TimeTypeConstants.AFTER_MOD
             end_time = begin_time + timedelta(seconds=swift_second)
 
-        luis_date_begin = FormatUtil.luis_date_from_datetime(begin_time)
-        luis_time_begin = FormatUtil.luis_time_from_datetime(begin_time)
-        luis_date_end = FormatUtil.luis_date_from_datetime(end_time)
-        luis_time_end = FormatUtil.luis_time_from_datetime(end_time)
+        luis_date_begin = DateTimeFormatUtil.luis_date_from_datetime(begin_time)
+        luis_time_begin = DateTimeFormatUtil.luis_time_from_datetime(begin_time)
+        luis_date_end = DateTimeFormatUtil.luis_date_from_datetime(end_time)
+        luis_time_end = DateTimeFormatUtil.luis_time_from_datetime(end_time)
 
         result.timex = f'({luis_date_begin}T{luis_time_begin},{luis_date_end}T{luis_time_end},{duration_result.timex})'
         result.future_value = [begin_time, end_time]
@@ -997,10 +997,10 @@ class BaseDateTimePeriodParser(DateTimeParser):
         else:
             return result
 
-        luis_date_begin = FormatUtil.luis_date_from_datetime(begin_time)
-        luis_time_begin = FormatUtil.luis_time_from_datetime(begin_time)
-        luis_date_end = FormatUtil.luis_date_from_datetime(end_time)
-        luis_time_end = FormatUtil.luis_time_from_datetime(end_time)
+        luis_date_begin = DateTimeFormatUtil.luis_date_from_datetime(begin_time)
+        luis_time_begin = DateTimeFormatUtil.luis_time_from_datetime(begin_time)
+        luis_date_end = DateTimeFormatUtil.luis_date_from_datetime(end_time)
+        luis_time_end = DateTimeFormatUtil.luis_time_from_datetime(end_time)
 
         result.timex = f'({luis_date_begin}T{luis_time_begin},{luis_date_end}T{luis_time_end},{pt_timex})'
         result.future_value = [begin_time, end_time]

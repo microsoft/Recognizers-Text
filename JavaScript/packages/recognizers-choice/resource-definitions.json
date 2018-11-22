@@ -9,6 +9,14 @@
             ],
             "footer": [ "}" ]
         },
+        {
+            "input": [ "Dutch", "Dutch-Choice" ],
+            "output": "dutchChoice",
+            "header": [
+                "export namespace DutchChoice {"
+            ],
+            "footer": [ "}" ]
+        },
 		{
             "input": [ "English", "English-Choice" ],
             "output": "englishChoice",

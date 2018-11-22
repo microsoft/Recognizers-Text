@@ -77,6 +77,9 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         // Invalid year
         public const int InvalidYear = int.MinValue;
+        public const int InvalidHour = int.MinValue;
+        public const int InvalidMinute = int.MinValue;
+        public const int InvalidSecond = int.MinValue;
 
         public static readonly int MinYearNum = int.Parse(BaseDateTime.MinYearNum);
         public static readonly int MaxYearNum = int.Parse(BaseDateTime.MaxYearNum);
@@ -126,6 +129,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string LeftAmPmGroupName = "leftDesc";
         public const string RightAmPmGroupName = "rightDesc";
 
+        public const string DECADE_UNIT = "10Y";
+
         // Timex
         public static readonly string[] DatePeriodTimexSplitter = { ",", "(", ")" };
         public const string TimexYear = "Y";
@@ -147,5 +152,14 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string TimeTimexConnector = ":";
         public const string GeneralPeriodPrefix = "P";
         public const string TimeTimexPrefix = "T";
+
+        // Timex of TimeOfDay
+        public const string EarlyMorning = "TDA";
+        public const string Morning = "TMO";
+        public const string Afternoon = "TAF";
+        public const string Evening = "TEV";
+        public const string Daytime = "TDT";
+        public const string Night = "TNI";
+        public const string BusinessHour = "TBH";
     }
 }

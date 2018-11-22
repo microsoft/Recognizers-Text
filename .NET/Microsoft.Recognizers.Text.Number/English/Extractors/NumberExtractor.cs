@@ -37,15 +37,15 @@ namespace Microsoft.Recognizers.Text.Number.English
 
         private NumberExtractor(NumberMode mode, NumberOptions options)
         {
-            NegativeNumberTermsRegex = new Regex(NumbersDefinitions.NegativeNumberTermsRegex + '$', RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            NegativeNumberTermsRegex = new Regex(NumbersDefinitions.NegativeNumberTermsRegex + '$', RegexOptions.Singleline);
 
-            AmbiguousFractionConnectorsRegex = new Regex(NumbersDefinitions.AmbiguousFractionConnectorsRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            AmbiguousFractionConnectorsRegex = new Regex(NumbersDefinitions.AmbiguousFractionConnectorsRegex, RegexOptions.Singleline);
 
             Options = options;
 
             var builder = ImmutableDictionary.CreateBuilder<Regex, TypeTag>();
             
-            //Add Cardinal
+            // Add Cardinal
             CardinalExtractor cardExtract = null;
             switch (mode)
             {
@@ -53,7 +53,8 @@ namespace Microsoft.Recognizers.Text.Number.English
                     cardExtract = CardinalExtractor.GetInstance(NumbersDefinitions.PlaceHolderPureNumber);
                     break;
                 case NumberMode.Currency:
-                    builder.Add(new Regex(NumbersDefinitions.CurrencyRegex, RegexOptions.Singleline), RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX));
+                    builder.Add(BaseNumberExtractor.CurrencyRegex,
+                                RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX));
                     break;
                 case NumberMode.Default:
                     break;
@@ -66,7 +67,7 @@ namespace Microsoft.Recognizers.Text.Number.English
 
             builder.AddRange(cardExtract.Regexes);
             
-            //Add Fraction
+            // Add Fraction
             var fracExtract = FractionExtractor.GetInstance(Options);
             builder.AddRange(fracExtract.Regexes);
 
@@ -76,7 +77,7 @@ namespace Microsoft.Recognizers.Text.Number.English
 
             foreach (var item in NumbersDefinitions.AmbiguityFiltersDict)
             {
-                ambiguityBuilder.Add(new Regex(item.Key, RegexOptions.IgnoreCase | RegexOptions.Singleline), new Regex(item.Value, RegexOptions.IgnoreCase | RegexOptions.Singleline));
+                ambiguityBuilder.Add(new Regex(item.Key, RegexOptions.Singleline), new Regex(item.Value, RegexOptions.Singleline));
             }
 
             AmbiguityFiltersDict = ambiguityBuilder.ToImmutable();

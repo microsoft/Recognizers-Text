@@ -106,11 +106,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                         {
                             {
                                 TimeTypeConstants.START_DATE,
-                                FormatUtil.FormatDate(((Tuple<DateObject, DateObject>) innerResult.FutureValue).Item1)
+                                DateTimeFormatUtil.FormatDate(((Tuple<DateObject, DateObject>) innerResult.FutureValue).Item1)
                             },
                             {
                                 TimeTypeConstants.END_DATE,
-                                FormatUtil.FormatDate(((Tuple<DateObject, DateObject>) innerResult.FutureValue).Item2)
+                                DateTimeFormatUtil.FormatDate(((Tuple<DateObject, DateObject>) innerResult.FutureValue).Item2)
                             }
                         };
 
@@ -118,11 +118,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                         {
                             {
                                 TimeTypeConstants.START_DATE,
-                                FormatUtil.FormatDate(((Tuple<DateObject, DateObject>) innerResult.PastValue).Item1)
+                                DateTimeFormatUtil.FormatDate(((Tuple<DateObject, DateObject>) innerResult.PastValue).Item1)
                             },
                             {
                                 TimeTypeConstants.END_DATE,
-                                FormatUtil.FormatDate(((Tuple<DateObject, DateObject>) innerResult.PastValue).Item2)
+                                DateTimeFormatUtil.FormatDate(((Tuple<DateObject, DateObject>) innerResult.PastValue).Item2)
                             }
                         };
                     }
@@ -233,13 +233,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 if (inputYear || DatePeriodExtractorChs.ThisRegex.Match(monthStr).Success ||
                     DatePeriodExtractorChs.NextRegex.Match(monthStr).Success)
                 {
-                    beginLuisStr = FormatUtil.LuisDate(year, month, beginDay);
-                    endLuisStr = FormatUtil.LuisDate(year, month, endDay);
+                    beginLuisStr = DateTimeFormatUtil.LuisDate(year, month, beginDay);
+                    endLuisStr = DateTimeFormatUtil.LuisDate(year, month, endDay);
                 }
                 else
                 {
-                    beginLuisStr = FormatUtil.LuisDate(-1, month, beginDay);
-                    endLuisStr = FormatUtil.LuisDate(-1, month, endDay);
+                    beginLuisStr = DateTimeFormatUtil.LuisDate(-1, month, beginDay);
+                    endLuisStr = DateTimeFormatUtil.LuisDate(-1, month, endDay);
                 }
             }
             else
@@ -344,8 +344,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
                 var beginDay = DateObject.MinValue.SafeCreateFromValue(beginYear, 1, 1);
                 var endDay = DateObject.MinValue.SafeCreateFromValue(endYear, 1, 1);
-                var beginTimex = FormatUtil.LuisDate(beginYear, 1, 1);
-                var endTimex = FormatUtil.LuisDate(endYear, 1, 1);
+                var beginTimex = DateTimeFormatUtil.LuisDate(beginYear, 1, 1);
+                var endTimex = DateTimeFormatUtil.LuisDate(endYear, 1, 1);
                 ret.Timex = $"({beginTimex},{endTimex},P{endYear - beginYear}Y)";
                 ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginDay, endDay);
                 ret.Success = true;
@@ -428,8 +428,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     var beginDateForFutureResolution = DateObject.MinValue.SafeCreateFromValue(beginYearForFutureResolution, beginMonth, 1);
                     var endDateForFutureResolution = DateObject.MinValue.SafeCreateFromValue(endYearForFutureResolution, endMonth, 1);
 
-                    var beginTimex = FormatUtil.LuisDate(beginDateForPastResolution, beginDateForFutureResolution);
-                    var endTimex = FormatUtil.LuisDate(endDateForPastResolution, endDateForFutureResolution);
+                    var beginTimex = DateTimeFormatUtil.LuisDate(beginDateForPastResolution, beginDateForFutureResolution);
+                    var endTimex = DateTimeFormatUtil.LuisDate(endDateForPastResolution, endDateForFutureResolution);
                     ret.Timex = $"({beginTimex},{endTimex},P{durationMonths}M)";
                     ret.PastValue = new Tuple<DateObject, DateObject>(beginDateForPastResolution, endDateForPastResolution);
                     ret.FutureValue = new Tuple<DateObject, DateObject>(beginDateForFutureResolution, endDateForFutureResolution);
@@ -596,7 +596,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     if (trimmedText.EndsWith("周") | trimmedText.EndsWith("星期"))
                     {
                         var monday = referenceDate.This(DayOfWeek.Monday).AddDays(7*swift);
-                        ret.Timex = FormatUtil.ToIsoWeekTimex(monday);
+                        ret.Timex = DateTimeFormatUtil.ToIsoWeekTimex(monday);
                         ret.FutureValue =
                             ret.PastValue =
                                 new Tuple<DateObject, DateObject>(
@@ -907,7 +907,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                                 return ret;
                         }
 
-                        ret.Timex = $"({FormatUtil.LuisDate(beginDate)},{FormatUtil.LuisDate(endDate)},P{numStr}{unitStr[0]})";
+                        ret.Timex = $"({DateTimeFormatUtil.LuisDate(beginDate)},{DateTimeFormatUtil.LuisDate(endDate)},P{numStr}{unitStr[0]})";
                         ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginDate, endDate);
                         ret.Success = true;
                         return ret;
@@ -940,7 +940,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                         }
 
                         ret.Timex =
-                            $"({FormatUtil.LuisDate(beginDate.AddDays(1))},{FormatUtil.LuisDate(endDate.AddDays(1))},P{numStr}{unitStr[0]})";
+                            $"({DateTimeFormatUtil.LuisDate(beginDate.AddDays(1))},{DateTimeFormatUtil.LuisDate(endDate.AddDays(1))},P{numStr}{unitStr[0]})";
                         ret.FutureValue =
                             ret.PastValue = new Tuple<DateObject, DateObject>(beginDate.AddDays(1), endDate.AddDays(1));
                         ret.Success = true;
@@ -990,7 +990,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                                     return ret;
                             }
 
-                            ret.Timex = $"({FormatUtil.LuisDate(beginDate)},{FormatUtil.LuisDate(endDate)},P{numStr}{unitStr[0]})";
+                            ret.Timex = $"({DateTimeFormatUtil.LuisDate(beginDate)},{DateTimeFormatUtil.LuisDate(endDate)},P{numStr}{unitStr[0]})";
                             ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginDate, endDate);
                             ret.Success = true;
                             return ret;
@@ -1023,7 +1023,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                             }
 
                             ret.Timex =
-                                $"({FormatUtil.LuisDate(beginDate.AddDays(1))},{FormatUtil.LuisDate(endDate.AddDays(1))},P{numStr}{unitStr[0]})";
+                                $"({DateTimeFormatUtil.LuisDate(beginDate.AddDays(1))},{DateTimeFormatUtil.LuisDate(endDate.AddDays(1))},P{numStr}{unitStr[0]})";
                             ret.FutureValue =
                                 ret.PastValue =
                                     new Tuple<DateObject, DateObject>(beginDate.AddDays(1), endDate.AddDays(1));
@@ -1241,7 +1241,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             var beginDate = DateObject.MinValue.SafeCreateFromValue(year, quarterNum*3 - 2, 1);
             var endDate = DateObject.MinValue.SafeCreateFromValue(year, quarterNum*3 + 1, 1);
             ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginDate, endDate);
-            ret.Timex = $"({FormatUtil.LuisDate(beginDate)},{FormatUtil.LuisDate(endDate)},P3M)";
+            ret.Timex = $"({DateTimeFormatUtil.LuisDate(beginDate)},{DateTimeFormatUtil.LuisDate(endDate)},P3M)";
             ret.Success = true;
 
             return ret;
@@ -1315,17 +1315,17 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
             if (inputCentury)
             {
-                beginLuisStr = FormatUtil.LuisDate(beginYear, 1, 1);
-                endLuisStr = FormatUtil.LuisDate(endYear, 1, 1);
+                beginLuisStr = DateTimeFormatUtil.LuisDate(beginYear, 1, 1);
+                endLuisStr = DateTimeFormatUtil.LuisDate(endYear, 1, 1);
             }
             else
             {
                 var beginYearStr = "XX" + decade.ToString();
-                beginLuisStr = FormatUtil.LuisDate(-1, 1, 1);
+                beginLuisStr = DateTimeFormatUtil.LuisDate(-1, 1, 1);
                 beginLuisStr = beginLuisStr.Replace("XXXX", beginYearStr);
 
                 var endYearStr = "XX" + (endYear % 100).ToString("D2");
-                endLuisStr = FormatUtil.LuisDate(-1, 1, 1);
+                endLuisStr = DateTimeFormatUtil.LuisDate(-1, 1, 1);
                 endLuisStr = endLuisStr.Replace("XXXX", endYearStr);
             }
             ret.Timex = $"({beginLuisStr},{endLuisStr},P10Y)";

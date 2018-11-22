@@ -8,7 +8,7 @@ import regex
 
 from recognizers_text.extractor import ExtractResult
 from recognizers_text.utilities import RegExpUtility
-from recognizers_date_time.date_time.constants import TimeTypeConstants
+from recognizers_date_time.date_time.constants import TimeTypeConstants, Constants
 from recognizers_date_time.date_time.extractors import DateTimeExtractor
 from recognizers_date_time.date_time.parsers import DateTimeParser, DateTimeParseResult
 
@@ -83,7 +83,14 @@ class DateTimeResolutionResult:
         self.past_value: object = None
         self.sub_date_time_entities: List[object] = list()
 
-class FormatUtil:
+class TimeOfDayResolution:
+    def __init__(self):
+        self.timex: str = None 
+        self.begin_hour: int = 0
+        self.end_hour: int = 0
+        self.end_min: int = 0
+
+class DateTimeFormatUtil:
     HourTimeRegex = RegExpUtility.get_safe_reg_exp(r'(?<!P)T\d{2}')
 
     @staticmethod
@@ -101,7 +108,7 @@ class FormatUtil:
 
     @staticmethod
     def luis_date_from_datetime(date: datetime) -> str:
-        return FormatUtil.luis_date(date.year, date.month, date.day)
+        return DateTimeFormatUtil.luis_date(date.year, date.month, date.day)
 
     @staticmethod
     def luis_time(hour: int, minute: int, second: int) -> str:
@@ -109,11 +116,11 @@ class FormatUtil:
 
     @staticmethod
     def luis_time_from_datetime(time: datetime) -> str:
-        return FormatUtil.luis_time(time.hour, time.minute, time.second)
+        return DateTimeFormatUtil.luis_time(time.hour, time.minute, time.second)
 
     @staticmethod
     def luis_date_time(time: datetime) -> str:
-        return FormatUtil.luis_date_from_datetime(time) + 'T' + FormatUtil.luis_time_from_datetime(time)
+        return DateTimeFormatUtil.luis_date_from_datetime(time) + 'T' + DateTimeFormatUtil.luis_time_from_datetime(time)
 
     @staticmethod
     def format_date(date: datetime) -> str:
@@ -125,11 +132,11 @@ class FormatUtil:
 
     @staticmethod
     def format_date_time(date_time: datetime) -> str:
-        return FormatUtil.format_date(date_time) + ' ' + FormatUtil.format_time(date_time)
+        return DateTimeFormatUtil.format_date(date_time) + ' ' + DateTimeFormatUtil.format_time(date_time)
 
     @staticmethod
     def all_str_to_pm(source: str) -> str:
-        matches = list(regex.finditer(FormatUtil.HourTimeRegex, source))
+        matches = list(regex.finditer(DateTimeFormatUtil.HourTimeRegex, source))
         split: List[str] = list()
         last_position = 0
 
@@ -144,8 +151,8 @@ class FormatUtil:
             split.append(source[last_position:])
 
         for index, value in enumerate(split):
-            if regex.search(FormatUtil.HourTimeRegex, value):
-                split[index] = FormatUtil.to_pm(value)
+            if regex.search(DateTimeFormatUtil.HourTimeRegex, value):
+                split[index] = DateTimeFormatUtil.to_pm(value)
 
         return ''.join(split)
 
@@ -433,9 +440,46 @@ class AgoLaterUtil:
         else: 
             return result
 
-        result.timex = FormatUtil.luis_date_from_datetime(
-            value) if mode == AgoLaterMode.DATE else FormatUtil.luis_date_time(value)
+        result.timex = DateTimeFormatUtil.luis_date_from_datetime(
+            value) if mode == AgoLaterMode.DATE else DateTimeFormatUtil.luis_date_time(value)
         result.future_value = value
         result.past_value = value
         result.success = True
+        return result
+
+class TimexUtil:
+    @staticmethod
+    def parse_time_of_day(tod: str) -> TimeOfDayResolution:
+        result = TimeOfDayResolution()
+
+        if tod == Constants.EarlyMorning:
+            result.timex = Constants.EarlyMorning
+            result.begin_hour = 4
+            result.end_hour = 8
+        elif tod == Constants.Morning:
+            result.timex = Constants.Morning
+            result.begin_hour = 8
+            result.end_hour = 12
+        elif tod == Constants.Afternoon:
+            result.timex = Constants.Afternoon
+            result.begin_hour = 12
+            result.end_hour = 16
+        elif tod == Constants.Evening:
+            result.timex = Constants.Evening
+            result.begin_hour = 16
+            result.end_hour = 20
+        elif tod == Constants.Daytime:
+            result.timex = Constants.Daytime
+            result.begin_hour = 8
+            result.end_hour = 18
+        elif tod == Constants.BusinessHour:
+            result.timex = Constants.BusinessHour
+            result.begin_hour = 8
+            result.end_hour = 18
+        elif tod == Constants.Night:
+            result.timex = Constants.Night
+            result.begin_hour = 20
+            result.end_hour = 23
+            result.end_min = 59
+
         return result

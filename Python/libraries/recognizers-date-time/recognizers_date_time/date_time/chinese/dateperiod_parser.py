@@ -8,7 +8,7 @@ from recognizers_number import ChineseIntegerExtractor, CJKNumberParser, Chinese
 
 from ...resources.chinese_date_time import ChineseDateTime
 from ..constants import TimeTypeConstants
-from ..utilities import FormatUtil, DateTimeResolutionResult, DateUtils
+from ..utilities import DateTimeFormatUtil, DateTimeResolutionResult, DateUtils
 from ..parsers import DateTimeParseResult
 from ..base_dateperiod import BaseDatePeriodParser
 from .dateperiod_parser_config import ChineseDatePeriodParserConfiguration
@@ -69,12 +69,12 @@ class ChineseDatePeriodParser(BaseDatePeriodParser):
             if inner_result.success:
                 if inner_result.future_value and inner_result.past_value:
                     inner_result.future_resolution = {
-                        TimeTypeConstants.START_DATE: FormatUtil.format_date(inner_result.future_value[0]),
-                        TimeTypeConstants.END_DATE: FormatUtil.format_date(inner_result.future_value[1])
+                        TimeTypeConstants.START_DATE: DateTimeFormatUtil.format_date(inner_result.future_value[0]),
+                        TimeTypeConstants.END_DATE: DateTimeFormatUtil.format_date(inner_result.future_value[1])
                     }
                     inner_result.past_resolution = {
-                        TimeTypeConstants.START_DATE: FormatUtil.format_date(inner_result.past_value[0]),
-                        TimeTypeConstants.END_DATE: FormatUtil.format_date(inner_result.past_value[1])
+                        TimeTypeConstants.START_DATE: DateTimeFormatUtil.format_date(inner_result.past_value[0]),
+                        TimeTypeConstants.END_DATE: DateTimeFormatUtil.format_date(inner_result.past_value[1])
                     }
                 else:
                     inner_result.future_resolution = {}
@@ -126,8 +126,8 @@ class ChineseDatePeriodParser(BaseDatePeriodParser):
         else:
             no_year = True
 
-        begin_date_luis = FormatUtil.luis_date(year if input_year or self.config.is_future(month_str) else -1, month, begin_day)
-        end_date_luis = FormatUtil.luis_date(year if input_year or self.config.is_future(month_str) else -1, month, end_day)
+        begin_date_luis = DateTimeFormatUtil.luis_date(year if input_year or self.config.is_future(month_str) else -1, month, begin_day)
+        end_date_luis = DateTimeFormatUtil.luis_date(year if input_year or self.config.is_future(month_str) else -1, month, end_day)
 
         future_year = year
         past_year = year
@@ -239,8 +239,8 @@ class ChineseDatePeriodParser(BaseDatePeriodParser):
             begin_date += timedelta(days=1)
             end_date += timedelta(days=1)
 
-        begin_timex = FormatUtil.luis_date_from_datetime(begin_date)
-        end_timex = FormatUtil.luis_date_from_datetime(end_date)
+        begin_timex = DateTimeFormatUtil.luis_date_from_datetime(begin_date)
+        end_timex = DateTimeFormatUtil.luis_date_from_datetime(end_date)
 
         result.timex = f'({begin_timex},{end_timex},P{num}{unit_str[0]})'
 
@@ -342,8 +342,8 @@ class ChineseDatePeriodParser(BaseDatePeriodParser):
         result.future_value = [begin_date, end_date]
         result.past_value = [begin_date, end_date]
 
-        begin_timex = FormatUtil.luis_date_from_datetime(begin_date)
-        end_timex = FormatUtil.luis_date_from_datetime(end_date)
+        begin_timex = DateTimeFormatUtil.luis_date_from_datetime(begin_date)
+        end_timex = DateTimeFormatUtil.luis_date_from_datetime(end_date)
         result.timex = f'({begin_timex},{end_timex},P{end_year - begin_year}Y)'
 
         result.success = True
@@ -542,8 +542,8 @@ class ChineseDatePeriodParser(BaseDatePeriodParser):
         result.future_value = [begin_date, end_date]
         result.past_value = [begin_date, end_date]
 
-        begin_luis = FormatUtil.luis_date_from_datetime(begin_date)
-        end_luis = FormatUtil.luis_date_from_datetime(end_date)
+        begin_luis = DateTimeFormatUtil.luis_date_from_datetime(begin_date)
+        end_luis = DateTimeFormatUtil.luis_date_from_datetime(end_date)
         result.timex = f'({begin_luis},{end_luis},P3M)'
 
         result.success = True

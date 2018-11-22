@@ -34,7 +34,7 @@
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "100 Prozent",
+        "Text": "100 prozent",
         "TypeName": "percentage",
         "Resolution": {
           "value": "100%"
@@ -49,7 +49,7 @@
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "240 Prozent",
+        "Text": "240 prozent",
         "TypeName": "percentage",
         "Resolution": {
           "value": "240%"
@@ -64,7 +64,7 @@
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "zwanzig Prozent",
+        "Text": "zwanzig prozent",
         "TypeName": "percentage",
         "Resolution": {
           "value": "20%"
@@ -79,7 +79,7 @@
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "dreißig Prozent",
+        "Text": "dreißig prozent",
         "TypeName": "percentage",
         "Resolution": {
           "value": "30%"
@@ -94,7 +94,7 @@
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "einhundert Prozent",
+        "Text": "einhundert prozent",
         "TypeName": "percentage",
         "Resolution": {
           "value": "100%"
@@ -109,7 +109,7 @@
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "10 Prozent",
+        "Text": "10 prozent",
         "TypeName": "percentage",
         "Resolution": {
           "value": "10%"
@@ -124,7 +124,7 @@
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "siebenunddreißig Prozent",
+        "Text": "siebenunddreißig prozent",
         "TypeName": "percentage",
         "Resolution": {
           "value": "37%"
@@ -139,7 +139,7 @@
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "einhundertneunundneunzig Prozent",
+        "Text": "einhundertneunundneunzig prozent",
         "TypeName": "percentage",
         "Resolution": {
           "value": "199%"
@@ -154,7 +154,7 @@
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "einhundert Prozent",
+        "Text": "einhundert prozent",
         "TypeName": "percentage",
         "Resolution": {
           "value": "100%"

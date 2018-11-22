@@ -466,7 +466,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "Central Europe Std Time",
@@ -483,16 +483,16 @@
     ]
   },
   {
-    "Input": "We can do either York time or Sao Paulo time.",
+    "Input": "We can do either New York time or Sao Paulo time.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "York time",
+        "Text": "New York time",
         "Start": 17,
-        "Length": 9,
+        "Length": 13,
         "Type": "timezone",
         "Value": {
           "TimeZoneResolution": {
@@ -503,7 +503,7 @@
       },
       {
         "Text": "Sao Paulo time",
-        "Start": 30,
+        "Start": 34,
         "Length": 14,
         "Type": "timezone",
         "Value": {

@@ -103,13 +103,13 @@ namespace Microsoft.Recognizers.Text.Number
         /// </summary>
         /// <param name="regexStrs">rule list</param>
         /// <param name="ignoreCase"></param>
-        protected static ImmutableHashSet<Regex> BuildRegexes(HashSet<string> regexStrs, bool ignoreCase = true)
+        protected static ImmutableHashSet<Regex> BuildRegexes(HashSet<string> regexStrs, bool ignoreCase = false)
         {
             var regexes = new HashSet<Regex>();
 
             foreach (var regexStr in regexStrs)
             {
-                //var sl = "(?=\\b)(" + regexStr + ")(?=(s?\\b))";
+                // var sl = "(?=\\b)(" + regexStr + ")(?=(s?\\b))";
 
                 var options = RegexOptions.Singleline;
                 if (ignoreCase)
@@ -216,7 +216,7 @@ namespace Microsoft.Recognizers.Text.Number
             string replaceFracText = "@" + FracNumExtType;
             bool percentModeEnabled = (Options & NumberOptions.PercentageMode) != 0;
 
-            //@TODO pontential cause of GC
+            //@TODO potential cause of GC
             var match = new int[str.Length];
             var strParts = new List<Tuple<int, int>>();
             int start, end;

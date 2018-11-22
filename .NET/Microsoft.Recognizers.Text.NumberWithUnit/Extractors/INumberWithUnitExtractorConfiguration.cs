@@ -1,7 +1,7 @@
-﻿using System.Collections.Immutable;
+﻿using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Globalization;
 using System.Text.RegularExpressions;
-using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit
 {
@@ -27,6 +27,11 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
         Regex CompoundUnitConnectorRegex { get; }
 
-        Regex PmNonUnitRegex { get; }
+        Regex NonUnitRegex { get; }
+
+        Regex AmbiguousUnitNumberMultiplierRegex { get; }
+
+        Dictionary<Regex, Regex> AmbiguityFiltersDict { get; }
+
     }
 }

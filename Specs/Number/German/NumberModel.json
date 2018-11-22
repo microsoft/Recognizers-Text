@@ -110,7 +110,7 @@
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "zwei Komma drei",
+        "Text": "zwei komma drei",
         "TypeName": "number",
         "Resolution": {
           "value": "2,3"
@@ -395,7 +395,7 @@
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "zwei Millionen eintausendeinhundertfünfzig",
+        "Text": "zwei millionen eintausendeinhundertfünfzig",
         "TypeName": "number",
         "Resolution": {
           "value": "2001150"
@@ -410,7 +410,7 @@
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "Eine Million dreihundertneunundneunzigtausendfuenfhundertneun",
+        "Text": "eine million dreihundertneunundneunzigtausendfuenfhundertneun",
         "TypeName": "number",
         "Resolution": {
           "value": "1399509"
@@ -425,7 +425,7 @@
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "Eine Million dreihundertneunundneunzigtausendfuenfhundertneun",
+        "Text": "eine million dreihundertneunundneunzigtausendfuenfhundertneun",
         "TypeName": "number",
         "Resolution": {
           "value": "1399509"
@@ -440,7 +440,7 @@
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "Zwei Millionen dreihundertneunundneunzigtausendfuenfhundertneunundvierzig",
+        "Text": "zwei millionen dreihundertneunundneunzigtausendfuenfhundertneunundvierzig",
         "TypeName": "number",
         "Resolution": {
           "value": "2399549"
@@ -479,7 +479,7 @@
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "Eine",
+        "Text": "eine",
         "TypeName": "number",
         "Resolution": {
           "value": "1"
@@ -539,7 +539,7 @@
         "End": 60
       },
       {
-        "Text": "Ein",
+        "Text": "ein",
         "TypeName": "number",
         "Resolution": {
           "value": "1"
@@ -557,7 +557,7 @@
         "End": 242
       },
       {
-        "Text": "Zwei Millionen dreihundertsiebenundsiebzigtausendneunhundertachtundachtzig",
+        "Text": "zwei millionen dreihundertsiebenundsiebzigtausendneunhundertachtundachtzig",
         "TypeName": "number",
         "Resolution": {
           "value": "2377988"
@@ -663,7 +663,7 @@
         "End": 58
       },
       {
-        "Text": "300 Milliarden ",
+        "Text": "300 milliarden ",
         "TypeName": "number",
         "Resolution": {
           "value": "300000000000"
@@ -687,7 +687,7 @@
         "End": 2
       },
       {
-        "Text": "300 Milliarden",
+        "Text": "300 milliarden",
         "TypeName": "number",
         "Resolution": {
           "value": "300000000000"

@@ -10,20 +10,19 @@ package com.microsoft.recognizers.text.numberwithunit.resources;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
 
 import com.google.common.collect.ImmutableMap;
 
 public class SpanishNumericWithUnit {
 
-    public static final Map<String, String> AgeSuffixList = ImmutableMap.<String, String>builder()
+    public static final ImmutableMap<String, String> AgeSuffixList = ImmutableMap.<String, String>builder()
         .put("Año", "años|año")
         .put("Mes", "meses|mes")
         .put("Semana", "semanas|semana")
         .put("Día", "dias|días|día|dia")
         .build();
 
-    public static final Map<String, String> AreaSuffixList = ImmutableMap.<String, String>builder()
+    public static final ImmutableMap<String, String> AreaSuffixList = ImmutableMap.<String, String>builder()
         .put("Kilómetro cuadrado", "kilómetro cuadrado|kilómetros cuadrados|km2|km^2|km²")
         .put("Hectómetro cuadrado", "hectómetro cuadrado|hectómetros cuadrados|hm2|hm^2|hm²|hectárea|hectáreas")
         .put("Decámetro cuadrado", "decámetro cuadrado|decámetros cuadrados|dam2|dam^2|dam²|área|áreas")
@@ -39,7 +38,7 @@ public class SpanishNumericWithUnit {
 
     public static final List<String> AreaAmbiguousValues = Arrays.asList("área", "áreas");
 
-    public static final Map<String, String> CurrencySuffixList = ImmutableMap.<String, String>builder()
+    public static final ImmutableMap<String, String> CurrencySuffixList = ImmutableMap.<String, String>builder()
         .put("Dólar", "dólar|dólares")
         .put("Peso", "peso|pesos")
         .put("Rublo", "rublo|rublos")
@@ -352,7 +351,7 @@ public class SpanishNumericWithUnit {
 
     public static final String CompoundUnitConnectorRegex = "(?<spacer>[^.])";
 
-    public static final Map<String, String> CurrencyPrefixList = ImmutableMap.<String, String>builder()
+    public static final ImmutableMap<String, String> CurrencyPrefixList = ImmutableMap.<String, String>builder()
         .put("Dólar", "$")
         .put("Dólar estadounidense", "us$|u$d|usd")
         .put("Dólar del Caribe Oriental", "ec$|xcd")
@@ -388,7 +387,7 @@ public class SpanishNumericWithUnit {
 
     public static final List<String> AmbiguousCurrencyUnitList = Arrays.asList("le");
 
-    public static final Map<String, String> DimensionSuffixList = ImmutableMap.<String, String>builder()
+    public static final ImmutableMap<String, String> DimensionSuffixList = ImmutableMap.<String, String>builder()
         .put("Kilómetro", "km|kilometro|kilómetro|kilometros|kilómetros")
         .put("Hectómetro", "hm|hectometro|hectómetro|hectometros|hectómetros")
         .put("Decámetro", "decametro|decámetro|decametros|decámetros|dam")
@@ -484,7 +483,7 @@ public class SpanishNumericWithUnit {
 
     public static final List<String> AmbiguousDimensionUnitList = Arrays.asList("al", "mi", "área", "áreas", "pie", "pies");
 
-    public static final Map<String, String> LengthSuffixList = ImmutableMap.<String, String>builder()
+    public static final ImmutableMap<String, String> LengthSuffixList = ImmutableMap.<String, String>builder()
         .put("Kilómetro", "km|kilometro|kilómetro|kilometros|kilómetros")
         .put("Hectómetro", "hm|hectometro|hectómetro|hectometros|hectómetros")
         .put("Decámetro", "decametro|decámetro|decametros|decámetros|dam")
@@ -510,7 +509,7 @@ public class SpanishNumericWithUnit {
 
     public static final String ConnectorToken = "de";
 
-    public static final Map<String, String> SpeedSuffixList = ImmutableMap.<String, String>builder()
+    public static final ImmutableMap<String, String> SpeedSuffixList = ImmutableMap.<String, String>builder()
         .put("Metro por segundo", "metro/segundo|m/s|metro por segundo|metros por segundo|metros por segundos")
         .put("Kilómetro por hora", "km/h|kilómetro por hora|kilometro por hora|kilómetros por hora|kilometros por hora|kilómetro/hora|kilometro/hora|kilómetros/hora|kilometros/hora")
         .put("Kilómetro por minuto", "km/min|kilómetro por minuto|kilometro por minuto|kilómetros por minuto|kilometros por minuto|kilómetro/minuto|kilometro/minuto|kilómetros/minuto|kilometros/minuto")
@@ -525,8 +524,8 @@ public class SpanishNumericWithUnit {
 
     public static final List<String> AmbiguousSpeedUnitList = Arrays.asList("nudo", "nudos");
 
-    public static final Map<String, String> TemperatureSuffixList = ImmutableMap.<String, String>builder()
-        .put("Kelvin", "k|kelvin")
+    public static final ImmutableMap<String, String> TemperatureSuffixList = ImmutableMap.<String, String>builder()
+        .put("Kelvin", "k|K|kelvin")
         .put("Rankine", "r|rankine")
         .put("Grado Celsius", "°c|grados c|grado celsius|grados celsius|celsius|grado centígrado|grados centígrados|centígrado|centígrados")
         .put("Grado Fahrenheit", "°f|grados f|grado fahrenheit|grados fahrenheit|fahrenheit")
@@ -535,7 +534,7 @@ public class SpanishNumericWithUnit {
         .put("Grado", "°|grados|grado")
         .build();
 
-    public static final Map<String, String> VolumeSuffixList = ImmutableMap.<String, String>builder()
+    public static final ImmutableMap<String, String> VolumeSuffixList = ImmutableMap.<String, String>builder()
         .put("Kilómetro cúbico", "kilómetro cúbico|kilómetros cúbico|km3|km^3|km³")
         .put("Hectómetro cúbico", "hectómetro cúbico|hectómetros cúbico|hm3|hm^3|hm³")
         .put("Decámetro cúbico", "decámetro cúbico|decámetros cúbico|dam3|dam^3|dam³")
@@ -555,7 +554,7 @@ public class SpanishNumericWithUnit {
         .put("Onza líquida", "onza líquida|onzas líquidas")
         .build();
 
-    public static final Map<String, String> WeightSuffixList = ImmutableMap.<String, String>builder()
+    public static final ImmutableMap<String, String> WeightSuffixList = ImmutableMap.<String, String>builder()
         .put("Tonelada métrica", "tonelada métrica|toneladas métricas")
         .put("Tonelada", "ton|tonelada|toneladas")
         .put("Kilogramo", "kg|kilogramo|kilogramos")

@@ -1,6 +1,8 @@
-﻿using System.Collections.Immutable;
+﻿using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Globalization;
 using System.Text.RegularExpressions;
+
 using Microsoft.Recognizers.Definitions;
 using Microsoft.Recognizers.Definitions.Chinese;
 using Microsoft.Recognizers.Text.Number.Chinese;
@@ -16,8 +18,6 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Chinese
             this.BuildPrefix = NumbersWithUnitDefinitions.BuildPrefix;
             this.BuildSuffix = NumbersWithUnitDefinitions.BuildSuffix;
             this.ConnectorToken = NumbersWithUnitDefinitions.ConnectorToken;
-            this.CompoundUnitConnectorRegex = new Regex(NumbersWithUnitDefinitions.CompoundUnitConnectorRegex, RegexOptions.IgnoreCase);
-            this.PmNonUnitRegex = new Regex(BaseUnits.PmNonUnitRegex, RegexOptions.IgnoreCase);
         }
          
         public abstract string ExtractType { get; }
@@ -32,16 +32,26 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Chinese
 
         public string ConnectorToken { get; }
 
-        public Regex CompoundUnitConnectorRegex { get; }
+        public Regex CompoundUnitConnectorRegex => CompoundUnitConnRegex;
 
-        public Regex PmNonUnitRegex { get; set; }
+        public Regex NonUnitRegex => NonUnitsRegex;
+
+        public virtual Regex AmbiguousUnitNumberMultiplierRegex => null;
 
         public IExtractor IntegerExtractor { get; }
+
+        public Dictionary<Regex, Regex> AmbiguityFiltersDict { get; } = null;
 
         public abstract ImmutableDictionary<string, string> SuffixList { get; }
 
         public abstract ImmutableDictionary<string, string> PrefixList { get; }
 
         public abstract ImmutableList<string> AmbiguousUnitList { get; }
+
+        private static readonly Regex CompoundUnitConnRegex =
+            new Regex(NumbersWithUnitDefinitions.CompoundUnitConnectorRegex, RegexOptions.None);
+
+        private static readonly Regex NonUnitsRegex =
+            new Regex(BaseUnits.PmNonUnitRegex, RegexOptions.None);
     }
 }

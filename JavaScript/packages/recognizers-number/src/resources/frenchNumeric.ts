@@ -23,7 +23,7 @@ export namespace FrenchNumeric {
 	export const SeparaIntRegex = `(${SupportThousandsRegex}(\\s+${SupportThousandsRegex})*(\\s+${BelowThousandsRegex})?|${BelowThousandsRegex})`;
 	export const AllIntRegex = `(${SeparaIntRegex}|mille(\\s+${BelowThousandsRegex})?)`;
 	export const NumbersWithPlaceHolder = (placeholder: string) => { return `(((?<!\\d+\\s*)-\\s*)|(?<=\\b))\\d+(?!([,\\.]\\d+[a-zA-Z]))(?=${placeholder})`; }
-	export const NumbersWithSuffix = `(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+\\s*(k|M|T|G)(?=\\b)`;
+	export const NumbersWithSuffix = `(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+\\s*${BaseNumbers.NumberMultiplierRegex}(?=\\b)`;
 	export const RoundNumberIntegerRegexWithLocks = `(?<=\\b)(${DigitsNumberRegex})+\\s+${RoundNumberIntegerRegex}(?=\\b)`;
 	export const NumbersWithDozenSuffix = `(((?<!\\d+\\s*)-\\s*)|(?<=\\b))\\d+\\s+douzaine(s)?(?=\\b)`;
 	export const AllIntRegexWithLocks = `((?<=\\b)${AllIntRegex}(?=\\b))`;
@@ -53,12 +53,11 @@ export namespace FrenchNumeric {
 	export const AllFloatRegex = `(${AllIntRegex}(\\s+(virgule|point))${AllPointRegex})`;
 	export const DoubleDecimalPointRegex = (placeholder: string) => { return `(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+[,\\.])))\\d+[,\\.]\\d+(?!([,\\.]\\d+))(?=${placeholder})`; }
 	export const DoubleWithoutIntegralRegex = (placeholder: string) => { return `(?<=\\s|^)(?<!(\\d+))[,\\.]\\d+(?!([,\\.]\\d+))(?=${placeholder})`; }
-	export const DoubleWithMultiplierRegex = `(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+\\[,\\.])))\\d+[,\\.]\\d+\\s*(K|k|M|G|T)(?=\\b)`;
+	export const DoubleWithMultiplierRegex = `(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+\\[,\\.])))\\d+[,\\.]\\d+\\s*${BaseNumbers.NumberMultiplierRegex}(?=\\b)`;
 	export const DoubleWithRoundNumber = `(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+\\[,\\.])))\\d+[,\\.]\\d+\\s+${RoundNumberIntegerRegex}(?=\\b)`;
 	export const DoubleAllFloatRegex = `((?<=\\b)${AllFloatRegex}(?=\\b))`;
 	export const DoubleExponentialNotationRegex = `(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+[,\\.])))(\\d+([,\\.]\\d+)?)e([+-]*[1-9]\\d*)(?=\\b)`;
 	export const DoubleCaretExponentialNotationRegex = `(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+[,\\.])))(\\d+([,\\.]\\d+)?)\\^([+-]*[1-9]\\d*)(?=\\b)`;
-	export const CurrencyRegex = `(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+\\s*(B|b|m|t|g)(?=\\b)`;
 	export const NumberWithSuffixPercentage = `(?<!%)(${BaseNumbers.NumberReplaceToken})(\\s*)(%(?!${BaseNumbers.NumberReplaceToken})|(pourcentages|pourcents|pourcentage|pourcent)\\b)`;
 	export const NumberWithPrefixPercentage = `((?<!${BaseNumbers.NumberReplaceToken})%|pourcent|pourcent des|pourcentage de)(\\s*)(${BaseNumbers.NumberReplaceToken})(?=\\s|$)`;
 	export const DecimalSeparatorChar = ',';
@@ -66,12 +65,12 @@ export namespace FrenchNumeric {
 	export const NonDecimalSeparatorChar = '.';
 	export const HalfADozenText = 'six';
 	export const WordSeparatorToken = 'et';
-	export const WrittenDecimalSeparatorTexts = [ 'virgule' ];
-	export const WrittenGroupSeparatorTexts = [ 'point','points' ];
-	export const WrittenIntegerSeparatorTexts = [ 'et','-' ];
-	export const WrittenFractionSeparatorTexts = [ 'et','sur' ];
+	export const WrittenDecimalSeparatorTexts = [ "virgule" ];
+	export const WrittenGroupSeparatorTexts = [ "point","points" ];
+	export const WrittenIntegerSeparatorTexts = [ "et","-" ];
+	export const WrittenFractionSeparatorTexts = [ "et","sur" ];
 	export const HalfADozenRegex = `(?<=\\b)+demi\\s+douzaine`;
-	export const DigitalNumberRegex = `((?<=\\b)(cent|mille|million|millions|milliard|milliards|billions|billion|douzaine(s)?)(?=\\b))|((?<=(\\d|\\b))(k|t|m|g|b)(?=\\b))`;
+	export const DigitalNumberRegex = `((?<=\\b)(cent|mille|million|millions|milliard|milliards|billions|billion|douzaine(s)?)(?=\\b))|((?<=(\\d|\\b))${BaseNumbers.MultiplierLookupRegex}(?=\\b))`;
 	export const AmbiguousFractionConnectorsRegex = `^[.]`;
 	export const CardinalNumberMap: ReadonlyMap<string, number> = new Map<string, number>([["zéro", 0],["zero", 0],["un", 1],["une", 1],["deux", 2],["trois", 3],["quatre", 4],["cinq", 5],["six", 6],["sept", 7],["huit", 8],["neuf", 9],["dix", 10],["onze", 11],["douze", 12],["treize", 13],["quatorze", 14],["quinze", 15],["seize", 16],["dix-sept", 17],["dix-huit", 18],["dix-neuf", 19],["vingt", 20],["trente", 30],["quarante", 40],["cinquante", 50],["soixante", 60],["soixante-dix", 70],["septante", 70],["quatre-vingts", 80],["quatre-vingt", 80],["quatre vingts", 80],["quatre vingt", 80],["quatre-vingt-dix", 90],["quatre-vingt dix", 90],["quatre vingt dix", 90],["quatre-vingts-dix", 90],["quatre-vingts-onze", 91],["quatre-vingt-onze", 91],["quatre-vingts-douze", 92],["quatre-vingt-douze", 92],["quatre-vingts-treize", 93],["quatre-vingt-treize", 93],["quatre-vingts-quatorze", 94],["quatre-vingt-quatorze", 94],["quatre-vingts-quinze", 95],["quatre-vingt-quinze", 95],["quatre-vingts-seize", 96],["quatre-vingt-seize", 96],["huitante", 80],["octante", 80],["nonante", 90],["cent", 100],["mille", 1000],["un million", 1000000],["million", 1000000],["millions", 1000000],["un milliard", 1000000000],["milliard", 1000000000],["milliards", 1000000000],["un mille milliards", 1000000000000],["un billion", 1000000000000]]);
 	export const OrdinalNumberMap: ReadonlyMap<string, number> = new Map<string, number>([["premier", 1],["première", 1],["premiere", 1],["deuxième", 2],["deuxieme", 2],["second", 2],["seconde", 2],["troisième", 3],["demi", 2],["tiers", 3],["tierce", 3],["quart", 4],["quarts", 4],["troisieme", 3],["quatrième", 4],["quatrieme", 4],["cinquième", 5],["cinquieme", 5],["sixième", 6],["sixieme", 6],["septième", 7],["septieme", 7],["huitième", 8],["huitieme", 8],["neuvième", 9],["neuvieme", 9],["dixième", 10],["dixieme", 10],["onzième", 11],["onzieme", 11],["douzième", 12],["douzieme", 12],["treizième", 13],["treizieme", 13],["quatorzième", 14],["quatorizieme", 14],["quinzième", 15],["quinzieme", 15],["seizième", 16],["seizieme", 16],["dix-septième", 17],["dix-septieme", 17],["dix-huitième", 18],["dix-huitieme", 18],["dix-neuvième", 19],["dix-neuvieme", 19],["vingtième", 20],["vingtieme", 20],["trentième", 30],["trentieme", 30],["quarantième", 40],["quarantieme", 40],["cinquantième", 50],["cinquantieme", 50],["soixantième", 60],["soixantieme", 60],["soixante-dixième", 70],["soixante-dixieme", 70],["septantième", 70],["septantieme", 70],["quatre-vingtième", 80],["quatre-vingtieme", 80],["huitantième", 80],["huitantieme", 80],["octantième", 80],["octantieme", 80],["quatre-vingt-dixième", 90],["quatre-vingt-dixieme", 90],["nonantième", 90],["nonantieme", 90],["centième", 100],["centieme", 100],["millième", 1000],["millieme", 1000],["millionième", 1000000],["millionieme", 1000000],["milliardième", 1000000000],["milliardieme", 1000000000],["billionieme", 1000000000000],["billionième", 1000000000000],["trillionième", 1000000000000000000],["trillionieme", 1000000000000000000]]);

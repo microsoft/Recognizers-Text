@@ -24,7 +24,28 @@ namespace Microsoft.Recognizers.Text.Matcher
                 Insert(values[i], ids[i]);
             }
         }
+        
+        protected void ConvertDictToList(Node<T> node)
+        {
+            if (node.Values != null)
+            {
+                node.Values.TrimExcess();
+            }
 
+            if (node.Children == null)
+            {
+                return;
+            }
+
+            foreach (var kvp in node.Children)
+            {
+                ConvertDictToList(kvp.Value);
+            }
+
+            // re-malloc dictionary to reduce memory usage
+            node.Children = new Dictionary<T, Node<T>>(node.Children);
+        }
+        
         public bool IsMatch(IEnumerable<T> queryText)
         {
             return Find(queryText).FirstOrDefault() == null;

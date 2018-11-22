@@ -16,7 +16,8 @@ namespace Microsoft.Recognizers.Text.Sequence
             var regexes = new Dictionary<Regex, string>
             {
                 {
-                    new Regex(BaseMention.MentionRegex), Constants.MENTION_REGEX
+                    new Regex(BaseMention.MentionRegex),
+                    Constants.MENTION_REGEX
                 }
             };
 

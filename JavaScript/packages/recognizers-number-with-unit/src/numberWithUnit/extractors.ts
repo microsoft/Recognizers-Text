@@ -16,7 +16,8 @@ export interface INumberWithUnitExtractorConfiguration {
     readonly buildSuffix: string;
     readonly connectorToken: string;
     readonly compoundUnitConnectorRegex: RegExp;
-    readonly pmNonUnitRegex: RegExp;
+    readonly nonUnitRegex: RegExp;
+    readonly ambiguousUnitNumberMultiplierRegex: RegExp;
 }
 
 export class NumberWithUnitExtractor implements IExtractor {
@@ -42,7 +43,7 @@ export class NumberWithUnitExtractor implements IExtractor {
                 maxLength = maxLength >= len ? maxLength : len;
             });
 
-            // 2 is the maxium length of spaces.
+            // 2 is the maximum length of spaces.
             this.maxPrefixMatchLen = maxLength + 2;
 
             this.prefixRegexes = this.buildRegexFromSet(Array.from(this.config.prefixList.values()));
@@ -63,6 +64,21 @@ export class NumberWithUnitExtractor implements IExtractor {
         let numbers = this.config.unitNumExtractor.extract(source);
         let result = new Array<ExtractResult>();
         let sourceLen = source.length;
+
+        /* Special case for cases where number multipliers clash with unit */
+        let ambiguousMultiplierRegex = this.config.ambiguousUnitNumberMultiplierRegex;
+        if (ambiguousMultiplierRegex !== null) {
+
+            numbers.forEach(extNumber => {
+                let match = RegExpUtility.getMatches(ambiguousMultiplierRegex, extNumber.text);
+                if (match.length === 1)
+                {
+                    let newLength = extNumber.length - match[0].length;
+                    extNumber.text = extNumber.text.substring(0, newLength);
+                    extNumber.length = newLength;
+                }
+            });
+        }
 
         /* Mix prefix and numbers, make up a prefix-number combination */
         if (this.maxPrefixMatchLen !== 0) {
@@ -155,22 +171,23 @@ export class NumberWithUnitExtractor implements IExtractor {
                         er.length += prefixUnit.offset;
                         er.text = prefixUnit.unitString + er.text;
                     }
+
                     /* Relative position will be used in Parser */
                     num.start = start - er.start;
                     er.data = num;
 
-                    let isDimensionFallsInPmTime = false;
+                    let isNotUnit = false;
                     if (er.type === Constants.SYS_UNIT_DIMENSION) {
-                        let nonUnitMatch = RegExpUtility.getMatches(this.config.pmNonUnitRegex, source);
+                        let nonUnitMatch = RegExpUtility.getMatches(this.config.nonUnitRegex, source);
 
                         nonUnitMatch.forEach(match => {
                             if (er.start >= match.index && er.start + er.length <= match.index + match.length) {
-                                isDimensionFallsInPmTime = true;
+                                isNotUnit = true;
                             }
                         });
                     }
 
-                    if (isDimensionFallsInPmTime) {
+                    if (isNotUnit) {
                         continue;
                     }
 
@@ -236,18 +253,18 @@ export class NumberWithUnitExtractor implements IExtractor {
                         matchResult[j] = true;
                     }
 
-                    let isDimensionFallsInPmTime = false;
+                    let isNotUnit = false;
                     if (match.value === Constants.AMBIGUOUS_TIME_TERM) {
-                        let nonUnitMatch = RegExpUtility.getMatches(this.config.pmNonUnitRegex, source);
+                        let nonUnitMatch = RegExpUtility.getMatches(this.config.nonUnitRegex, source);
 
                         nonUnitMatch.forEach(time => {
-                            if (this.isDimensionFallsInTime(match, time)) {
-                                isDimensionFallsInPmTime = true;
+                            if (this.DimensionInsideTime(match, time)) {
+                                isNotUnit = true;
                             }
                         });
                     }
 
-                    if (isDimensionFallsInPmTime === false) {
+                    if (isNotUnit === false) {
                         numDependResults.push({
                             start: match.index,
                             length: match.length,
@@ -366,7 +383,7 @@ export class NumberWithUnitExtractor implements IExtractor {
         }
     }
 
-    private isDimensionFallsInTime(dimension: Match, time: Match): boolean {
+    private DimensionInsideTime(dimension: Match, time: Match): boolean {
         let isSubMatch = false;
         if (dimension.index >= time.index && dimension.index + dimension.length <= time.index + time.length) {
             isSubMatch = true;

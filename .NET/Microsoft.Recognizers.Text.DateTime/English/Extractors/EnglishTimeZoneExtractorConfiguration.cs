@@ -11,19 +11,13 @@ namespace Microsoft.Recognizers.Text.DateTime.English
     public class EnglishTimeZoneExtractorConfiguration : BaseOptionsConfiguration, ITimeZoneExtractorConfiguration
     {
         public static readonly Regex DirectUtcRegex =
-            new Regex(
-                TimeZoneDefinitions.DirectUtcRegex,
-                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(TimeZoneDefinitions.DirectUtcRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex AbbreviationRegex =
-            new Regex(
-                TimeZoneDefinitions.AbbreviationsRegex,
-                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(TimeZoneDefinitions.AbbreviationsRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex StandardTimeRegex =
-            new Regex(
-                TimeZoneDefinitions.FullNameRegex,
-                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(TimeZoneDefinitions.FullNameRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex[] TimeZoneRegexList =
         {
@@ -32,10 +26,10 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             StandardTimeRegex
         };
 
-        public static readonly Regex LocationTimeSuffixRegex = new Regex(TimeZoneDefinitions.LocationTimeSuffixRegex,
-            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex LocationTimeSuffixRegex = 
+            new Regex(TimeZoneDefinitions.LocationTimeSuffixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly StringMatcher CityMatcher = new StringMatcher();
+        public static readonly StringMatcher LocationMatcher = new StringMatcher();
 
         public static readonly List<string> AmbiguousTimezoneList = TimeZoneDefinitions.AmbiguousTimezoneList.ToList();
 
@@ -43,7 +37,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         {
             if ((Options & DateTimeOptions.EnablePreview) != 0)
             {
-                CityMatcher.Init(TimeZoneDefinitions.MajorLocations.Select(o => FormatUtility.RemoveDiacritics(o.ToLowerInvariant())));
+                LocationMatcher.Init(TimeZoneDefinitions.MajorLocations.Select(o => QueryProcessor.RemoveDiacritics(o.ToLowerInvariant())));
             }
         }
 
@@ -51,7 +45,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         Regex ITimeZoneExtractorConfiguration.LocationTimeSuffixRegex => LocationTimeSuffixRegex;
 
-        StringMatcher ITimeZoneExtractorConfiguration.CityMatcher => CityMatcher;
+        StringMatcher ITimeZoneExtractorConfiguration.LocationMatcher => LocationMatcher;
 
         List<string> ITimeZoneExtractorConfiguration.AmbiguousTimezoneList => AmbiguousTimezoneList;
     }

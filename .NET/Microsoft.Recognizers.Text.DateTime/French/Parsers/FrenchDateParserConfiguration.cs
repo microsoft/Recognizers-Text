@@ -21,7 +21,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public IDateTimeExtractor DurationExtractor { get; }
 
-        public IDateTimeExtractor DateExtractor { get; }
+        public IDateExtractor DateExtractor { get; }
 
         public IDateTimeParser DurationParser { get; }
 
@@ -61,6 +61,12 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public Regex RelativeWeekDayRegex { get; }
 
+        public Regex RelativeDayRegex { get; }
+
+        public Regex NextPrefixRegex { get; }
+
+        public Regex PastPrefixRegex { get; }
+
         public IImmutableDictionary<string, int> DayOfMonth { get; }
 
         public IImmutableDictionary<string, int> DayOfWeek { get; }
@@ -68,6 +74,16 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public IImmutableDictionary<string, int> MonthOfYear { get; }
 
         public IImmutableDictionary<string, int> CardinalMap { get; }
+
+        public IImmutableList<string> SameDayTerms { get; }
+
+        public IImmutableList<string> PlusOneDayTerms { get; }
+
+        public IImmutableList<string> MinusOneDayTerms { get; }
+
+        public IImmutableList<string> PlusTwoDayTerms { get; }
+
+        public IImmutableList<string> MinusTwoDayTerms { get; }
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
@@ -98,12 +114,20 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             RelativeMonthRegex = FrenchDateExtractorConfiguration.RelativeMonthRegex;
             YearSuffix = FrenchDateExtractorConfiguration.YearSuffix;
             RelativeWeekDayRegex = FrenchDateExtractorConfiguration.RelativeWeekDayRegex;
+            RelativeDayRegex = new Regex(DateTimeDefinitions.RelativeDayRegex, RegexOptions.Singleline);
+            NextPrefixRegex = new Regex(DateTimeDefinitions.NextPrefixRegex, RegexOptions.Singleline);
+            PastPrefixRegex = new Regex(DateTimeDefinitions.PastPrefixRegex, RegexOptions.Singleline);
             DayOfMonth = config.DayOfMonth;
             DayOfWeek = config.DayOfWeek;
             MonthOfYear = config.MonthOfYear;
             CardinalMap = config.CardinalMap;
             UnitMap = config.UnitMap;
             UtilityConfiguration = config.UtilityConfiguration;
+            SameDayTerms = DateTimeDefinitions.SameDayTerms.ToImmutableList();
+            PlusOneDayTerms = DateTimeDefinitions.PlusOneDayTerms.ToImmutableList();
+            PlusTwoDayTerms = DateTimeDefinitions.PlusTwoDayTerms.ToImmutableList();
+            MinusOneDayTerms = DateTimeDefinitions.MinusOneDayTerms.ToImmutableList();
+            MinusTwoDayTerms = DateTimeDefinitions.MinusTwoDayTerms.ToImmutableList();
         }
 
         public int GetSwiftDay(string text)
@@ -162,6 +186,11 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             var trimmedText = text.Trim().ToLowerInvariant();
             return (trimmedText.Equals("dernière") || trimmedText.Equals("dernières") ||
                     trimmedText.Equals("derniere") || trimmedText.Equals("dernieres"));
+        }
+
+        public string Normalize(string text)
+        {
+            return text;
         }
     }
 }

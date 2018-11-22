@@ -4,6 +4,7 @@ import com.microsoft.recognizers.text.number.Constants;
 import com.microsoft.recognizers.text.number.LongFormatType;
 import com.microsoft.recognizers.text.number.extractors.BaseNumberExtractor;
 import com.microsoft.recognizers.text.number.resources.FrenchNumeric;
+import com.microsoft.recognizers.text.utilities.RegExpUtility;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -29,15 +30,16 @@ public class DoubleExtractor extends BaseNumberExtractor {
     }
 
     public DoubleExtractor(String placeholder) {
+
         HashMap<Pattern, String> builder = new HashMap<>();
 
-        builder.put(Pattern.compile(FrenchNumeric.DoubleDecimalPointRegex(placeholder), Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "DoubleNum");
-        builder.put(Pattern.compile(FrenchNumeric.DoubleWithoutIntegralRegex(placeholder), Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "DoubleNum");
-        builder.put(Pattern.compile(FrenchNumeric.DoubleWithMultiplierRegex), "DoubleNum");
-        builder.put(Pattern.compile(FrenchNumeric.DoubleWithRoundNumber, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "DoubleNum");
-        builder.put(Pattern.compile(FrenchNumeric.DoubleAllFloatRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "DoubleFr");
-        builder.put(Pattern.compile(FrenchNumeric.DoubleExponentialNotationRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "DoublePow");
-        builder.put(Pattern.compile(FrenchNumeric.DoubleCaretExponentialNotationRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "DoublePow");
+        builder.put(RegExpUtility.getSafeLookbehindRegExp(FrenchNumeric.DoubleDecimalPointRegex(placeholder), Pattern.UNICODE_CHARACTER_CLASS), "DoubleNum");
+        builder.put(RegExpUtility.getSafeLookbehindRegExp(FrenchNumeric.DoubleWithoutIntegralRegex(placeholder), Pattern.UNICODE_CHARACTER_CLASS), "DoubleNum");
+        builder.put(RegExpUtility.getSafeLookbehindRegExp(FrenchNumeric.DoubleWithMultiplierRegex), "DoubleNum");
+        builder.put(RegExpUtility.getSafeLookbehindRegExp(FrenchNumeric.DoubleWithRoundNumber, Pattern.UNICODE_CHARACTER_CLASS), "DoubleNum");
+        builder.put(RegExpUtility.getSafeLookbehindRegExp(FrenchNumeric.DoubleAllFloatRegex, Pattern.UNICODE_CHARACTER_CLASS), "DoubleFr");
+        builder.put(RegExpUtility.getSafeLookbehindRegExp(FrenchNumeric.DoubleExponentialNotationRegex, Pattern.UNICODE_CHARACTER_CLASS), "DoublePow");
+        builder.put(RegExpUtility.getSafeLookbehindRegExp(FrenchNumeric.DoubleCaretExponentialNotationRegex, Pattern.UNICODE_CHARACTER_CLASS), "DoublePow");
         builder.put(generateLongFormatNumberRegexes(LongFormatType.DoubleNumDotComma, placeholder), "DoubleNum");
         builder.put(generateLongFormatNumberRegexes(LongFormatType.DoubleNumNoBreakSpaceComma, placeholder), "DoubleNum");
 

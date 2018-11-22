@@ -10,7 +10,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Spanish
     {
         public SpanishNumberWithUnitParserConfiguration(CultureInfo ci) : base(ci)
         {
-            this.InternalNumberExtractor = new NumberExtractor(NumberMode.Default);
+            this.InternalNumberExtractor = NumberExtractor.GetInstance();
             this.InternalNumberParser = AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new SpanishNumberParserConfiguration());
             this.ConnectorToken = NumbersWithUnitDefinitions.ConnectorToken;
         }

@@ -525,6 +525,31 @@
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
+    "Input": "ik ga morgennacht terug",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "morgennacht",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "2016-11-08TNI",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 00:00:00",
+            "endDateTime": "2016-11-08 06:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-08 00:00:00",
+            "endDateTime": "2016-11-08 06:00:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
     "Input": "ik ga aankomende maandagmiddag terug",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"

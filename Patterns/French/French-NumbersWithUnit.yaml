@@ -187,7 +187,7 @@ CurrencySuffixList: !dictionary
 #Sierra Leon leone
     Leone: leone|sll
 #Netherlands guilder
-    Florins Néerlandais: florins hollandais|florins néerlandais|florins|ang|ƒ|florin|fl |
+    Florins Néerlandais: florins hollandais|florins néerlandais|florins|ang|ƒ|florin|fl
 #Swazi lilangeni
     Lilangeni: lilangeni|szl
 #Tajikstani somoni
@@ -445,7 +445,7 @@ AmbiguousDimensionUnitList: !list
      - pierre
      - fps
      - pts
-#FrenchNumberWithUnitExtractorConfigurationf
+#FrenchNumberWithUnitExtractorConfiguration
 BuildPrefix: !simpleRegex
   def: (?<=(\s|^|\P{L}))
 BuildSuffix: !simpleRegex
@@ -550,4 +550,9 @@ AmbiguousWeightUnitList: !list
     - oz
     - stone
     - dram
+#Additional config
+AmbiguityFiltersDict: !dictionary
+  types: [ string, string ]
+  entries:
+    '\\bcent\\b': '\\bpour\\s+cent\\b'
 ...

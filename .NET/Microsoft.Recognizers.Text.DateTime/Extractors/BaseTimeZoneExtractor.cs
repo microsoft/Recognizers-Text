@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using System.Text.RegularExpressions;
 using DateObject = System.DateTime;
 
 using Microsoft.Recognizers.Text.Utilities;
+
 namespace Microsoft.Recognizers.Text.DateTime
 {
     public class BaseTimeZoneExtractor : IDateTimeZoneExtractor
@@ -24,10 +24,14 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public List<ExtractResult> Extract(string text, DateObject reference)
         {
-            var normalizedText = FormatUtility.RemoveDiacritics(text);
+
             var tokens = new List<Token>();
-            tokens.AddRange(TimeZoneMatch(normalizedText));
-            tokens.AddRange(CityTimeMatch(normalizedText));
+
+            var normalizedText = QueryProcessor.RemoveDiacritics(text);
+
+            tokens.AddRange(MatchTimeZones(normalizedText));
+            tokens.AddRange(MatchLocationTimes(normalizedText));
+
             return Token.MergeAllTokens(tokens, text, ExtractorName);
         }
 
@@ -37,7 +41,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ers;
         }
 
-        private IEnumerable<Token> CityTimeMatch(string text)
+        private IEnumerable<Token> MatchLocationTimes(string text)
         {
             var ret = new List<Token>();
 
@@ -51,30 +55,31 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (timeMatch.Count != 0)
             {
                 var lastMatchIndex = timeMatch[timeMatch.Count - 1].Index;
-                var cityMatchResult = config.CityMatcher.Find(text.Substring(0, lastMatchIndex).ToLowerInvariant()).ToList();
+                var matches = config.LocationMatcher.Find(text.Substring(0, lastMatchIndex).ToLowerInvariant());
+                var locationMatches = MatchingUtil.RemoveSubMatches(matches);
 
                 var i = 0;
                 foreach (Match match in timeMatch)
                 {
                     var hasCityBefore = false;
 
-                    while (i < cityMatchResult.Count && cityMatchResult[i].End <= match.Index)
+                    while (i < locationMatches.Count && locationMatches[i].End <= match.Index)
                     {
                         hasCityBefore = true;
                         i++;
 
-                        if (i == cityMatchResult.Count)
+                        if (i == locationMatches.Count)
                         {
                             break;
                         }
                     }
 
-                    if (hasCityBefore && cityMatchResult[i - 1].End == match.Index)
+                    if (hasCityBefore && locationMatches[i - 1].End == match.Index)
                     {
-                        ret.Add(new Token(cityMatchResult[i - 1].Start, match.Index + match.Length));
+                        ret.Add(new Token(locationMatches[i - 1].Start, match.Index + match.Length));
                     }
 
-                    if (i == cityMatchResult.Count)
+                    if (i == locationMatches.Count)
                     {
                         break;
                     }
@@ -84,9 +89,10 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        private List<Token> TimeZoneMatch(string text)
+        private List<Token> MatchTimeZones(string text)
         {
             var ret = new List<Token>();
+
             foreach (var regex in this.config.TimeZoneRegexes)
             {
                 var matches = regex.Matches(text);
@@ -95,6 +101,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     ret.Add(new Token(match.Index, match.Index + match.Length));
                 }
             }
+
             return ret;
         }
     }

@@ -134,7 +134,7 @@ namespace Microsoft.Recognizers.Definitions.French
 			{ "Sene", "sene" },
 			{ "Dobra", "dobra|db|std" },
 			{ "Leone", "leone|sll" },
-			{ "Florins Néerlandais", "florins hollandais|florins néerlandais|florins|ang|ƒ|florin|fl |" },
+			{ "Florins Néerlandais", "florins hollandais|florins néerlandais|florins|ang|ƒ|florin|fl" },
 			{ "Lilangeni", "lilangeni|szl" },
 			{ "Somoni tadjikistan", "somoni tadjikistan|tjs|somoni" },
 			{ "Diram", "dirams|diram" },
@@ -454,6 +454,10 @@ namespace Microsoft.Recognizers.Definitions.French
 			"oz",
 			"stone",
 			"dram"
+		};
+		public static readonly Dictionary<string, string> AmbiguityFiltersDict = new Dictionary<string, string>
+		{
+			{ "\\bcent\\b", "\\bpour\\s+cent\\b" }
 		};
 	}
 }

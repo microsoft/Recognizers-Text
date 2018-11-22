@@ -4640,13 +4640,13 @@
         "Text": "from Feb 1st to March 2019",
         "Type": "daterange",
         "Value": {
-          "Timex": "(XXXX-02-01,2019-03-01,PXXD)",
+          "Timex": "(2019-02-01,2019-03-01,P28D)",
           "FutureResolution": {
             "startDate": "2019-02-01",
             "endDate": "2019-03-01"
           },
           "PastResolution": {
-            "startDate": "2018-02-01",
+            "startDate": "2019-02-01",
             "endDate": "2019-03-01"
           }
         },
@@ -4666,13 +4666,13 @@
         "Text": "between Feb 1st and March 2019",
         "Type": "daterange",
         "Value": {
-          "Timex": "(XXXX-02-01,2019-03-01,PXXD)",
+          "Timex": "(2019-02-01,2019-03-01,P28D)",
           "FutureResolution": {
             "startDate": "2019-02-01",
             "endDate": "2019-03-01"
           },
           "PastResolution": {
-            "startDate": "2018-02-01",
+            "startDate": "2019-02-01",
             "endDate": "2019-03-01"
           }
         },
@@ -5536,6 +5536,58 @@
         },
         "Start": 20,
         "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "from 10/1 to 11/7",
+    "Context": {
+      "ReferenceDateTime": "2018-10-24T12:00:00"
+    },
+    "NotSupportedByDesign": "java",
+    "Results": [
+      {
+        "Text": "from 10/1 to 11/7",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-10-01,XXXX-11-07,P37D)",
+          "FutureResolution": {
+            "startDate": "2018-10-01",
+            "endDate": "2018-11-07"
+          },
+          "PastResolution": {
+            "startDate": "2018-10-01",
+            "endDate": "2018-11-07"
+          }
+        },
+        "Start": 0,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "from 10/25 to 01/25",
+    "Context": {
+      "ReferenceDateTime": "2018-10-24T12:00:00"
+    },
+    "NotSupportedByDesign": "java",
+    "Results": [
+      {
+        "Text": "from 10/25 to 01/25",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-10-25,XXXX-01-25,P92D)",
+          "FutureResolution": {
+            "startDate": "2018-10-25",
+            "endDate": "2019-01-25"
+          },
+          "PastResolution": {
+            "startDate": "2017-10-25",
+            "endDate": "2018-01-25"
+          }
+        },
+        "Start": 0,
+        "Length": 19
       }
     ]
   }

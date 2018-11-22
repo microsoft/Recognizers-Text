@@ -136,6 +136,12 @@ RelativeWeekDayRegex: !simpleRegex
 NumberEndingPattern: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
+NextPrefixRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
+PastPrefixRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 SpecialDate: !nestedRegex
   def: (?=\b(di|al)\s+il\s+){DayRegex}\b
   references: [ DayRegex ]
@@ -152,8 +158,8 @@ DateExtractor4: !nestedRegex
   def: \b{MonthNumRegex}\s*[/\\\-]\s*{DayRegex}\s*[/\\\-]\s*{DateYearRegex}
   references: [ MonthNumRegex, DayRegex, DateYearRegex ]
 DateExtractor5: !nestedRegex
-  def: \b{DayRegex}\s*[/\\\-]\s*{MonthNumRegex}\s*[/\\\-]\s*{DateYearRegex}
-  references: [ DayRegex, MonthNumRegex, DateYearRegex ]
+  def: \b{DayRegex}\s*[/\\\-]\s*({MonthNumRegex}|{MonthRegex})\s*[/\\\-]\s*{DateYearRegex}
+  references: [ DayRegex, MonthNumRegex, MonthRegex, DateYearRegex ]
 DateExtractor6: !nestedRegex
   def: (?<=\b(le|sur|sur l[ae])\s+){MonthNumRegex}[\-\.\/]{DayRegex}\b
   references: [MonthNumRegex, DayRegex ]
@@ -249,7 +255,7 @@ TimeRegex1: !nestedRegex
   def: \b({EngTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})\s*{DescRegex}(\s+{TimePrefix})?
   references: [ TimePrefix, EngTimeRegex, HourNumRegex, BaseDateTime.HourRegex, DescRegex ]
 TimeRegex2: !nestedRegex
-  def: (\b{TimePrefix}\s+)?(T)?{BaseDateTime.HourRegex}(\s*)?:(\s*)?{BaseDateTime.MinuteRegex}((\s*)?:(\s*)?{BaseDateTime.SecondRegex})?((\s*{DescRegex})|\b)
+  def: (\b{TimePrefix}\s+)?(t)?{BaseDateTime.HourRegex}(\s*)?:(\s*)?{BaseDateTime.MinuteRegex}((\s*)?:(\s*)?{BaseDateTime.SecondRegex})?((\s*{DescRegex})|\b)
   references: [ TimePrefix, BaseDateTime.HourRegex, BaseDateTime.MinuteRegex, BaseDateTime.SecondRegex, DescRegex ]
 TimeRegex3: !nestedRegex
   def: \b{BaseDateTime.HourRegex}\.{BaseDateTime.MinuteRegex}(\s*{DescRegex})(\s+{TimePrefix})?
@@ -869,4 +875,40 @@ SpecialDecadeCases: !dictionary
     'duemila': 2000
 DefaultLanguageFallback: DMY
 DurationDateRestrictions: []
+# For TimeOfDay resolution
+MorningTermList: !list
+  types: [ string ]
+  entries: 
+    - matinee
+    - matin
+    - matinée
+AfternoonTermList: !list
+  types: [ string ]
+  entries: 
+    - apres-midi
+    - apres midi
+    - après midi
+    - après-midi
+EveningTermList: !list
+  types: [ string ]
+  entries: 
+    - soir
+    - soiree
+    - soirée
+DaytimeTermList: !list
+  types: [ string ]
+  entries: 
+    - jour
+    - journee
+    - journée
+NightTermList: !list
+  types: [ string ]
+  entries: 
+    - nuit
+# TODO: modify below lists according to the counterpart in English
+SameDayTerms: []
+PlusOneDayTerms: []
+MinusOneDayTerms: []
+PlusTwoDayTerms: []
+MinusTwoDayTerms: []
 ...

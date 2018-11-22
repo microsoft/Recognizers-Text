@@ -9,7 +9,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
     {
         public string TokenBeforeDate { get; }
 
-        public IDateTimeExtractor DateExtractor { get; }
+        public IDateExtractor DateExtractor { get; }
 
         public IDateTimeExtractor TimeExtractor { get; }
 
@@ -107,28 +107,30 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             PrefixDayRegex = FrenchDateTimePeriodExtractorConfiguration.PrefixDayRegex;
             BeforeRegex = FrenchDateTimePeriodExtractorConfiguration.BeforeRegex;
             AfterRegex = FrenchDateTimePeriodExtractorConfiguration.AfterRegex;
+
             UnitMap = config.UnitMap;
             Numbers = config.Numbers;
         }
 
-        public static readonly Regex MorningStartEndRegex = new Regex(DateTimeDefinitions.MorningStartEndRegex,
-            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex MorningStartEndRegex = 
+            new Regex(DateTimeDefinitions.MorningStartEndRegex, RegexOptions.Singleline);
 
-        public static readonly Regex AfternoonStartEndRegex = new Regex(DateTimeDefinitions.AfternoonStartEndRegex,
-            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex AfternoonStartEndRegex = 
+            new Regex(DateTimeDefinitions.AfternoonStartEndRegex, RegexOptions.Singleline);
 
-        public static readonly Regex EveningStartEndRegex = new Regex(DateTimeDefinitions.EveningStartEndRegex,
-            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex EveningStartEndRegex = 
+            new Regex(DateTimeDefinitions.EveningStartEndRegex, RegexOptions.Singleline);
 
-        public static readonly Regex NightStartEndRegex = new Regex(DateTimeDefinitions.NightStartEndRegex,
-            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex NightStartEndRegex = 
+            new Regex(DateTimeDefinitions.NightStartEndRegex, RegexOptions.Singleline);
 
         public bool GetMatchedTimeRange(string text, out string timeStr, out int beginHour, out int endHour, out int endMin)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
             beginHour = 0;
             endHour = 0;
             endMin = 0;
+
+            var trimmedText = text.Trim().ToLowerInvariant();
 
             if (MorningStartEndRegex.IsMatch(trimmedText))
             {

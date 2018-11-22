@@ -3,7 +3,6 @@ using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Text.DateTime.Utilities;
 using Microsoft.Recognizers.Definitions.English;
-using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
 {
@@ -13,7 +12,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public string TokenBeforeTime { get; }
 
-        public IDateTimeExtractor DateExtractor { get; }
+        public IDateExtractor DateExtractor { get; }
 
         public IDateTimeExtractor TimeExtractor { get; }
 
@@ -35,9 +34,15 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public Regex NowRegex { get; }
 
-        public Regex AMTimeRegex { get; }
+        public Regex AMTimeRegex => AmTimeRegex;
 
-        public Regex PMTimeRegex { get; }
+        public Regex PMTimeRegex => PmTimeRegex;
+
+        public static readonly Regex AmTimeRegex = 
+            new Regex(DateTimeDefinitions.AMTimeRegex, RegexOptions.Singleline);
+
+        public static readonly Regex PmTimeRegex =
+            new Regex(DateTimeDefinitions.PMTimeRegex, RegexOptions.Singleline);
 
         public Regex SimpleTimeOfTodayAfterRegex { get; }
 
@@ -72,9 +77,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
             NowRegex = EnglishDateTimeExtractorConfiguration.NowRegex;
 
-            AMTimeRegex = new Regex(DateTimeDefinitions.AMTimeRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
-            PMTimeRegex = new Regex(DateTimeDefinitions.PMTimeRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
-
             SimpleTimeOfTodayAfterRegex = EnglishDateTimeExtractorConfiguration.SimpleTimeOfTodayAfterRegex;
             SimpleTimeOfTodayBeforeRegex = EnglishDateTimeExtractorConfiguration.SimpleTimeOfTodayBeforeRegex;
             SpecificTimeOfDayRegex = EnglishDateTimeExtractorConfiguration.SpecificTimeOfDayRegex;
@@ -94,8 +96,10 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public int GetHour(string text, int hour)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
             int result = hour;
+
+            var trimmedText = text.Trim().ToLowerInvariant();
+            
             if (trimmedText.EndsWith("morning") && hour >= Constants.HalfDayHourCount)
             {
                 result -= Constants.HalfDayHourCount;
@@ -104,12 +108,14 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             {
                 result += Constants.HalfDayHourCount;
             }
+
             return result;
         }
 
         public bool GetMatchedNowTimex(string text, out string timex)
         {
             var trimmedText = text.Trim().ToLowerInvariant();
+
             if (trimmedText.EndsWith("now"))
             {
                 timex = "PRESENT_REF";

@@ -12,7 +12,13 @@ namespace Microsoft.Recognizers.Text.Number
 
         protected Regex TextNumberRegex { get; }
 
-        protected Regex LongFormatRegex { get; }
+        protected Regex LongFormatRegex => LongFormRegex;
+
+        private static readonly Regex LongFormRegex = 
+            new Regex(@"\d+", RegexOptions.Singleline);
+
+        private static readonly Regex CultureRegex = 
+            new Regex(@"^(en|es|fr)(-)?\b", RegexOptions.Singleline | RegexOptions.Compiled);
 
         protected HashSet<string> RoundNumberSet { get; }
 
@@ -26,14 +32,15 @@ namespace Microsoft.Recognizers.Text.Number
                                 GetKeyRegex(this.Config.CardinalNumberMap.Keys) + "|" + 
                                 GetKeyRegex(this.Config.OrdinalNumberMap.Keys);
 
-            TextNumberRegex = new Regex(@"(?<=\b)(" + singleIntFrac + @")(?=\b)", RegexOptions.IgnoreCase | RegexOptions.Singleline);
-
-            // necessary for the German & Dutch languages because bigger numbers are not separated by whitespaces or special characters like in other languages
-            if (config.CultureInfo.Name == "de-DE" || config.CultureInfo.Name == "nl-NL") {
-                TextNumberRegex = new Regex(@"(" + singleIntFrac + @")", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            // Necessary for the German & Dutch languages because bigger numbers are not separated by whitespaces or special characters like in other languages
+            if (config.CultureInfo.Name == "de-DE" || config.CultureInfo.Name == "nl-NL")
+            {
+                TextNumberRegex = new Regex(@"(" + singleIntFrac + @")", RegexOptions.Singleline | RegexOptions.Compiled);
             }
-
-            LongFormatRegex = new Regex(@"\d+", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            else
+            {
+                TextNumberRegex = new Regex(@"(?<=\b)(" + singleIntFrac + @")(?=\b)", RegexOptions.Singleline | RegexOptions.Compiled);
+            }
 
             RoundNumberSet = new HashSet<string>();
             foreach (var roundNumber in this.Config.RoundNumberMap.Keys)
@@ -44,7 +51,7 @@ namespace Microsoft.Recognizers.Text.Number
 
         public virtual ParseResult Parse(ExtractResult extResult)
         {
-            // check if the parser is configured to support specific types
+            // Check if the parser is configured to support specific types
             if (SupportedTypes != null && !SupportedTypes.Any(t => extResult.Type.Equals(t)))
             {
                 return null;
@@ -54,7 +61,7 @@ namespace Microsoft.Recognizers.Text.Number
 
             if (!(extResult.Data is string extra))
             {
-                extra = LongFormatRegex.Match(extResult.Text).Success ? "Num" : Config.LangMarker;
+                extra = LongFormatRegex.Match(extResult.Text).Success ? Constants.NUMBER_SUFFIX : Config.LangMarker;
             }
 
             // Resolve symbol prefix
@@ -133,7 +140,7 @@ namespace Microsoft.Recognizers.Text.Number
             {
                 if (isNegative)
                 {
-                    // Recover to the original extracted Text
+                    // Recover the original extracted Text
                     ret.Text = matchNegative.Groups[1].Value + extResult.Text;
                     ret.Value = -(double)ret.Value;
                 }
@@ -144,6 +151,7 @@ namespace Microsoft.Recognizers.Text.Number
             if (ret != null)
             {
                 ret.Type = DetermineType(extResult);
+                ret.Text = ret.Text.ToLowerInvariant();
             }
 
             return ret;
@@ -181,14 +189,14 @@ namespace Microsoft.Recognizers.Text.Number
         {
             // The former number is an order of magnitude larger than the later number, and they must be integers
             return Math.Abs(former % 1) < double.Epsilon && Math.Abs(later % 1) < double.Epsilon &&
-                   former > later && former.ToString().Length > later.ToString().Length && later > 0;
+                   former > later && former.ToString(CultureInfo.InvariantCulture).Length > later.ToString(CultureInfo.InvariantCulture).Length && later > 0;
         }
 
         private string GetResolutionStr(object value)
         {
-            return Config.CultureInfo != null
-                ? ((double)value).ToString(Config.CultureInfo)
-                : value.ToString();
+            return Config.CultureInfo != null ? 
+                ((double)value).ToString(Config.CultureInfo) : 
+                value.ToString();
         }
 
         protected ParseResult PowerNumberParse(ExtractResult extResult)
@@ -462,6 +470,7 @@ namespace Microsoft.Recognizers.Text.Number
                         fracPart.Add(fracWords[i]);
                     }
                 }
+
                 fracWords.RemoveRange(splitIndex, fracWords.Count - splitIndex);
 
                 // Split mixed number with fraction
@@ -544,23 +553,29 @@ namespace Microsoft.Recognizers.Text.Number
             // Scan from end to start, find the end word
             for (var i = matchStrs.Count - 1; i >= 0; i--)
             {
-                if (RoundNumberSet.Contains(matchStrs[i]))
+                var matchI = matchStrs[i].ToLowerInvariant(); 
+
+                if (RoundNumberSet.Contains(matchI))
                 {
+                    var mappedValue = Config.RoundNumberMap[matchI];
+
                     // If false, then continue. Will meet hundred first, then thousand.
-                    if (endFlag > Config.RoundNumberMap[matchStrs[i]])
+                    if (endFlag > mappedValue)
                     {
                         continue;
                     }
 
                     isEnd[i] = true;
-                    endFlag = Config.RoundNumberMap[matchStrs[i]];
+                    endFlag = mappedValue;
                 }
             }
 
+            // If no multiplier found
             if (endFlag == 1)
             {
                 var tempStack = new Stack<double>();
                 var oldSym = "";
+
                 foreach (var matchStr in matchStrs)
                 {
                     var isCardinal = Config.CardinalNumberMap.ContainsKey(matchStr);
@@ -576,6 +591,7 @@ namespace Microsoft.Recognizers.Text.Number
                         if (isOrdinal)
                         {
                             double fracPart = Config.OrdinalNumberMap[matchStr];
+
                             if (tempStack.Any())
                             {
                                 var intPart = tempStack.Pop();
@@ -751,16 +767,14 @@ namespace Microsoft.Recognizers.Text.Number
             return result;
         }
 
+        // Special cases for multi-language countries where decimal separators can be used interchangeably. Mostly informally.
+        // Ex: South Africa, Namibia; Puerto Rico in ES; or in Canada for EN and FR.
+        // "me pidio $5.00 prestados" and "me pidio $5,00 prestados" -> currency $5
         private bool SkipNonDecimalSeparator(char ch, int distance, CultureInfo culture)
         {
             var decimalLength = 3;
 
-            // Special cases for multi-language countries where decimal separators can be used interchangeably. Mostly informally.
-            // Ex: South Africa, Namibia; Puerto Rico in ES; or in Canada for EN and FR.
-            // "me pidio $5.00 prestados" and "me pidio $5,00 prestados" -> currency $5
-            var cultureRegex = new Regex(@"^(en|es|fr)(-)?\b", RegexOptions.IgnoreCase | RegexOptions.Singleline);
-
-            return (ch == Config.NonDecimalSeparatorChar && !(distance <= decimalLength && cultureRegex.IsMatch(culture.Name)) );
+            return (ch == Config.NonDecimalSeparatorChar && !(distance <= decimalLength && CultureRegex.IsMatch(culture.Name)) );
         }
 
         protected double GetDigitalValue(string digitsStr, double power)

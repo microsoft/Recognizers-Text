@@ -5,7 +5,7 @@ namespace Microsoft.Recognizers.Text.Matcher
 {
     public class SimpleTokenizer : ITokenizer
     {
-        public List<Token> Tokenize(string input)
+        public virtual List<Token> Tokenize(string input)
         {
             List<Token> tokens = new List<Token>();
 
@@ -58,7 +58,7 @@ namespace Microsoft.Recognizers.Text.Matcher
         }
 
         // Check the character is Chinese by the unicode range (CJK Unified Ideographs, CJK Unified Ideographs Extension A)
-        private bool IsChinese(char c)
+        protected bool IsChinese(char c)
         {
             UInt16 uc = (UInt16) c;
 
@@ -66,7 +66,7 @@ namespace Microsoft.Recognizers.Text.Matcher
         }
 
         // Check the character is Japanese by the unicode range (Hiragana, Katakana, Katakana Pinyin)
-        private bool IsJapanese(char c)
+        protected bool IsJapanese(char c)
         {
             UInt16 uc = (UInt16) c;
 
@@ -76,7 +76,7 @@ namespace Microsoft.Recognizers.Text.Matcher
         }
 
         // Check the character is Korean by the unicode range (HangulSyllables, Hangul Jamo, Hangul Compatibility Jamo, Halfwidth Hangul Jamo)
-        private bool IsKorean(char c)
+        protected bool IsKorean(char c)
         {
             UInt16 uc = (UInt16) c;
 
@@ -88,7 +88,7 @@ namespace Microsoft.Recognizers.Text.Matcher
 
         // Check the character is Chinese/Japanese/Korean.
         // For those languages which are not using whitespace delimited symbol, we only simply tokenize the sentence by each single character.
-        private bool IsCjk(char c)
+        protected bool IsCjk(char c)
         {
             return IsChinese(c) || IsJapanese(c) || IsKorean(c);
         }

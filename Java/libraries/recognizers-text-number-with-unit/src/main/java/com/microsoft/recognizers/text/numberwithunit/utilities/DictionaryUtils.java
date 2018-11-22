@@ -1,7 +1,5 @@
 package com.microsoft.recognizers.text.numberwithunit.utilities;
 
-import com.microsoft.recognizers.text.utilities.FormatUtility;
-
 import java.util.Map;
 import java.util.regex.Pattern;
 
@@ -13,7 +11,9 @@ public abstract class DictionaryUtils {
      */
     public static void bindDictionary(Map<String, String> dictionary,
                                       Map<String, String> sourceDictionary) {
-        if (dictionary == null) return;
+        if (dictionary == null) {
+            return;
+        }
 
         for (Map.Entry<String, String> pair : dictionary.entrySet()) {
             if (pair.getKey() == null || pair.getKey().isEmpty()) {

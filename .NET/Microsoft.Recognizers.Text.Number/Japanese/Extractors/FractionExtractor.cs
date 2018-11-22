@@ -18,12 +18,12 @@ namespace Microsoft.Recognizers.Text.Number.Japanese
             {
                 {
                     // -4 5/2,       ４ ６／３
-                    new Regex(NumbersDefinitions.FractionNotationSpecialsCharsRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline)
+                    new Regex(NumbersDefinitions.FractionNotationSpecialsCharsRegex, RegexOptions.Singleline)
                     , RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
                     // 8/3 
-                    new Regex(NumbersDefinitions.FractionNotationRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline)
+                    new Regex(NumbersDefinitions.FractionNotationRegex, RegexOptions.Singleline)
                     , RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {

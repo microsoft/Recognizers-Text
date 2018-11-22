@@ -12,7 +12,7 @@ import { ChineseTimeExtractor, ChineseTimeParser } from "./timeConfiguration";
 import { ChineseTimePeriodExtractor, ChineseTimePeriodParser } from "./timePeriodConfiguration";
 import { ChineseDateExtractor, ChineseDateParser } from "./dateConfiguration";
 import { ChineseDateTimeExtractor, ChineseDateTimeParser } from "./dateTimeConfiguration";
-import { DateUtils, Token, IDateTimeUtilityConfiguration, DateTimeResolutionResult, FormatUtil, StringMap } from "../utilities";
+import { DateUtils, Token, IDateTimeUtilityConfiguration, DateTimeResolutionResult, DateTimeFormatUtil, StringMap } from "../utilities";
 import { IDateTimeParser, DateTimeParseResult } from "../parsers"
 import { ChineseDateTime } from "../../resources/chineseDateTime";
 import { IDateTimeExtractor } from "../baseDateTime";
@@ -405,11 +405,11 @@ export class ChineseDateTimePeriodParser extends BaseDateTimePeriodParser {
             }
             if (innerResult.success) {
                 innerResult.futureResolution = {};
-                innerResult.futureResolution[TimeTypeConstants.START_DATETIME] = FormatUtil.formatDateTime(innerResult.futureValue[0]);
-                innerResult.futureResolution[TimeTypeConstants.END_DATETIME] = FormatUtil.formatDateTime(innerResult.futureValue[1]);
+                innerResult.futureResolution[TimeTypeConstants.START_DATETIME] = DateTimeFormatUtil.formatDateTime(innerResult.futureValue[0]);
+                innerResult.futureResolution[TimeTypeConstants.END_DATETIME] = DateTimeFormatUtil.formatDateTime(innerResult.futureValue[1]);
                 innerResult.pastResolution = {};
-                innerResult.pastResolution[TimeTypeConstants.START_DATETIME] = FormatUtil.formatDateTime(innerResult.pastValue[0]);
-                innerResult.pastResolution[TimeTypeConstants.END_DATETIME] = FormatUtil.formatDateTime(innerResult.pastValue[1]);
+                innerResult.pastResolution[TimeTypeConstants.START_DATETIME] = DateTimeFormatUtil.formatDateTime(innerResult.pastValue[0]);
+                innerResult.pastResolution[TimeTypeConstants.END_DATETIME] = DateTimeFormatUtil.formatDateTime(innerResult.pastValue[1]);
                 resultValue = innerResult;
             }
         }
@@ -535,8 +535,8 @@ export class ChineseDateTimePeriodParser extends BaseDateTimePeriodParser {
         result.pastValue = [leftTime, rightTime]
 
         let hasFuzzyTimex = prs.begin.timexStr.includes('X') || prs.end.timexStr.includes('X');
-        let leftTimex = hasFuzzyTimex ? prs.begin.timexStr : FormatUtil.luisDateTime(leftTime);
-        let rightTimex = hasFuzzyTimex ? prs.end.timexStr : FormatUtil.luisDateTime(rightTime);
+        let leftTimex = hasFuzzyTimex ? prs.begin.timexStr : DateTimeFormatUtil.luisDateTime(leftTime);
+        let rightTimex = hasFuzzyTimex ? prs.end.timexStr : DateTimeFormatUtil.luisDateTime(rightTime);
         let hoursBetween = DateUtils.totalHours(rightTime, leftTime);
 
         result.timex = `(${leftTimex},${rightTimex},PT${hoursBetween}H)`;
@@ -562,7 +562,7 @@ export class ChineseDateTimePeriodParser extends BaseDateTimePeriodParser {
             date.setMinutes(0);
             date.setSeconds(0);
 
-            result.timex = FormatUtil.formatDate(date) + values.timeStr;
+            result.timex = DateTimeFormatUtil.formatDate(date) + values.timeStr;
             result.futureValue = [
                 DateUtils.safeCreateFromMinValue(date.getFullYear(), date.getMonth(), date.getDate(), values.beginHour, 0, 0),
                 DateUtils.safeCreateFromMinValue(date.getFullYear(), date.getMonth(), date.getDate(), values.endHour, values.endMin, values.endMin)
@@ -704,8 +704,8 @@ export class ChineseDateTimePeriodParser extends BaseDateTimePeriodParser {
             default: return result;
         }
 
-        let beginTimex = `${FormatUtil.luisDateFromDate(beginDate)}T${FormatUtil.luisTimeFromDate(beginDate)}`;
-        let endTimex = `${FormatUtil.luisDateFromDate(endDate)}T${FormatUtil.luisTimeFromDate(endDate)}`;
+        let beginTimex = `${DateTimeFormatUtil.luisDateFromDate(beginDate)}T${DateTimeFormatUtil.luisTimeFromDate(beginDate)}`;
+        let endTimex = `${DateTimeFormatUtil.luisDateFromDate(endDate)}T${DateTimeFormatUtil.luisTimeFromDate(endDate)}`;
         result.timex = `(${beginTimex},${endTimex},PT${numStr}${unitStr.charAt(0)})`;
         result.futureValue = [beginDate, endDate];
         result.pastValue = [beginDate, endDate];

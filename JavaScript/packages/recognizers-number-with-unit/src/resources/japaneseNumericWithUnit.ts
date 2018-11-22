@@ -8,7 +8,7 @@
 
 import { BaseNumbers } from "./baseNumbers";
 export namespace JapaneseNumericWithUnit {
-	export const AgeAmbiguousValues = [ '歳' ];
+	export const AgeAmbiguousValues = [ "歳" ];
 	export const AgeSuffixList: ReadonlyMap<string, string> = new Map<string, string>([["Year", "歳"],["Month", "ヶ月"],["Week", "週間|週"],["Day", "日間|日齢|日大"]]);
 	export const BuildPrefix = '';
 	export const BuildSuffix = '';
@@ -18,5 +18,5 @@ export namespace JapaneseNumericWithUnit {
 	export const FractionalUnitNameToCodeMap: ReadonlyMap<string, string> = new Map<string, string>([["Jiao", "JIAO"],["Kopek", "KOPEK"],["Pul", "PUL"],["Cent", "CENT"],["Qindarkë", "QINDARKE"],["Penny", "PENNY"],["Santeem", "SANTEEM"],["Cêntimo", "CENTIMO"],["Centavo", "CENTAVO"],["Luma", "LUMA"],["Qəpik", "QƏPIK"],["Fils", "FILS"],["Poisha", "POISHA"],["Kapyeyka", "KAPYEYKA"],["Centime", "CENTIME"],["Chetrum", "CHETRUM"],["Paisa", "PAISA"],["Fening", "FENING"],["Thebe", "THEBE"],["Sen", "SEN"],["Stotinka", "STOTINKA"],["Fen", "FEN"],["Céntimo", "CENTIMO"],["Lipa", "LIPA"],["Haléř", "HALER"],["Øre", "ØRE"],["Piastre", "PIASTRE"],["Santim", "SANTIM"],["Oyra", "OYRA"],["Butut", "BUTUT"],["Tetri", "TETRI"],["Pesewa", "PESEWA"],["Fillér", "FILLER"],["Eyrir", "EYRIR"],["Dinar", "DINAR"],["Agora", "AGORA"],["Tïın", "TIIN"],["Chon", "CHON"],["Jeon", "JEON"],["Tyiyn", "TYIYN"],["Att", "ATT"],["Sente", "SENTE"],["Dirham", "DIRHAM"],["Rappen", "RAPPEN"],["Avo", "AVO"],["Deni", "DENI"],["Iraimbilanja", "IRAIMBILANJA"],["Tambala", "TAMBALA"],["Laari", "LAARI"],["Khoums", "KHOUMS"],["Ban", "BAN"],["Möngö", "MONGO"],["Pya", "PYA"],["Kobo", "KOBO"],["Kuruş", "KURUS"],["Baisa", "BAISA"],["Centésimo", "CENTESIMO"],["Toea", "TOEA"],["Sentimo", "SENTIMO"],["Grosz", "GROSZ"],["Sene", "SENE"],["Halala", "HALALA"],["Para", "PARA"],["Öre", "ORE"],["Diram", "DIRAM"],["Satang", "SATANG"],["Seniti", "SENITI"],["Millime", "MILLIME"],["Tennesi", "TENNESI"],["Kopiyka", "KOPIYKA"],["Tiyin", "TIYIN"],["Hào", "HAO"],["Ngwee", "NGWEE"]]);
 	export const CompoundUnitConnectorRegex = `(?<spacer>と)`;
 	export const CurrencyPrefixList: ReadonlyMap<string, string> = new Map<string, string>([["Dollar", "$"],["United States dollar", "us$"],["British Virgin Islands dollar", "bvi$"],["Brunei dollar", "b$"],["Sen", "sen"],["Singapore dollar", "s$"],["Canadian dollar", "can$|c$|c $"],["Cayman Islands dollar", "ci$"],["New Zealand dollar", "nz$|nz $"],["Guyanese dollar", "gy$|gy $|g$|g $"],["Hong Kong dollar", "hk$|hkd|hk $"],["Jamaican dollar", "j$"],["Namibian dollar", "nad|n$|n $"],["Solomon Islands dollar", "si$|si $"],["New Taiwan dollar", "nt$|nt $"],["Samoan tālā", "ws$"],["Chinese yuan", "￥"],["Japanese yen", "¥|\\"],["Turkish lira", "₺"],["Euro", "€"],["Pound", "£"],["Costa Rican colón", "₡"]]);
-	export const CurrencyAmbiguousValues = [ '円','銭','\\' ];
+	export const CurrencyAmbiguousValues = [ "円","銭","\\" ];
 }

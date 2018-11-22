@@ -2,6 +2,7 @@ package com.microsoft.recognizers.text.utilities;
 
 import org.javatuples.Pair;
 
+import java.math.BigDecimal;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -15,8 +16,16 @@ public abstract class RegExpUtility {
     private static final Pattern matchGroupNames = Pattern.compile("\\(\\?<([a-zA-Z][a-zA-Z0-9]*)>", Pattern.CASE_INSENSITIVE);
     private static final Pattern matchPositiveLookbehind = Pattern.compile("\\(\\?<=", Pattern.CASE_INSENSITIVE);
     private static final Pattern matchNegativeLookbehind = Pattern.compile("\\(\\?<!", Pattern.CASE_INSENSITIVE);
-    private static final String groupNameIndexSep = "ii";
+    private static final String groupNameIndexSep = "iii";
     private static final String groupNameIndexSepRegex = Pattern.quote(groupNameIndexSep);
+
+    private static final boolean unboundedLookBehindNotSupported = isRestrictedJavaVersion();
+
+    private static final Pattern lookBehindCheckRegex = Pattern.compile("(\\\\?<[!=])");
+    private static final Map<Character, String> bindings = new HashMap<Character, String>(){{
+        put('+', "{1,10}");
+        put('*', "{0,10}");
+    }};
 
     public static Pattern getSafeRegExp(String source) {
         return getSafeRegExp(source, 0);
@@ -28,12 +37,26 @@ public abstract class RegExpUtility {
     }
 
     public static Map<String, String> getNamedGroups(Matcher groupedMatcher) {
-        Map<String, String> matchedGroups = new HashMap<>();
+        return getNamedGroups(groupedMatcher, false);
+    }
+
+    public static Map<String, String> getNamedGroups(Matcher groupedMatcher, boolean sanitize) {
+
+        Map<String, String> matchedGroups = new LinkedHashMap<>();
         Matcher m = matchGroupNames.matcher(groupedMatcher.pattern().pattern());
+
         while (m.find()) {
             String groupName = m.group(1);
             String groupValue = groupedMatcher.group(groupName);
-            groupName = groupName.split(groupNameIndexSepRegex)[0];
+            if (sanitize && groupName.contains(groupNameIndexSep)) {
+                groupName = groupName.substring(0, groupName.lastIndexOf(groupNameIndexSep));
+            }
+
+            if (!groupName.contains(groupNameIndexSep)) {
+                groupName = groupName.replace("ii", "_");
+            }
+
+            // If matchedGroups previously contained a mapping for groupName, the old value is replaced.
             if (groupValue != null) {
                 matchedGroups.put(groupName, groupValue);
             }
@@ -43,6 +66,7 @@ public abstract class RegExpUtility {
     }
 
     public static Match[] getMatches(Pattern regex, String source) {
+
         if (regex == null) {
             return new Match[0];
         }
@@ -58,6 +82,7 @@ public abstract class RegExpUtility {
 
         int closePos = 0;
         int startPos = rawRegex.indexOf("(?<nlbii", 0);
+
         while (startPos >= 0) {
             closePos = getClosePos(rawRegex, startPos);
             Pattern nlbRegex = Pattern.compile(rawRegex.substring(startPos, closePos + 1), flags);
@@ -71,16 +96,21 @@ public abstract class RegExpUtility {
 
         Pattern tempRegex = Pattern.compile(rawRegex, flags);
         Match[] tempMatches = getMatchesSimple(tempRegex, source);
+
         Arrays.stream(tempMatches).forEach(match -> {
+
             AtomicBoolean isClean = new AtomicBoolean(true);
             negativeLookbehindRegexes.forEach((pair) -> {
+
                 Pattern currRegex = pair.getValue0();
                 Match[] negativeLookbehindMatches = getMatchesSimple(currRegex, source);
                 Arrays.stream(negativeLookbehindMatches).forEach(negativeLookbehindMatch -> {
+
                     int negativeLookbehindEnd = negativeLookbehindMatch.index + negativeLookbehindMatch.length;
                     Pattern nextRegex = pair.getValue1();
 
                     if (match.index == negativeLookbehindEnd) {
+
                         if (nextRegex == null) {
                             isClean.set(false);
                             return;
@@ -95,6 +125,7 @@ public abstract class RegExpUtility {
                     }
 
                     if (negativeLookbehindMatch.value.contains(match.value)) {
+
                         Match[] preMatches = getMatchesSimple(regex, source.substring(0, match.index));
                         Arrays.stream(preMatches).forEach(preMatch -> {
                             if (source.contains(preMatch.value + match.value)) {
@@ -119,8 +150,11 @@ public abstract class RegExpUtility {
     }
 
     private static String sanitizeGroups(String source) {
+
+        String result = source;
+
         AtomicInteger index = new AtomicInteger(0);
-        String result = replace(source, matchGroup, (Matcher m) -> m.group(0).replace(m.group(1), m.group(1) + groupNameIndexSep + index.getAndIncrement()));
+        result = replace(result, matchGroup, (Matcher m) -> m.group(0).replace(m.group(1), m.group(1).replace("_", "ii") + groupNameIndexSep + index.getAndIncrement()));
 
         index.set(0);
         result = replace(result, matchPositiveLookbehind, (Matcher m) -> String.format("(?<plb%s%s>", groupNameIndexSep, index.getAndIncrement()));
@@ -131,7 +165,82 @@ public abstract class RegExpUtility {
         return result;
     }
 
+    public static Pattern getSafeLookbehindRegExp(String source) {
+        return getSafeLookbehindRegExp(source, 0);
+    }
+
+    public static Pattern getSafeLookbehindRegExp(String source, int flags) {
+
+        String result = source;
+
+        // Java pre 1.9 doesn't support unbounded lookbehind lengths
+        if (unboundedLookBehindNotSupported) {
+             result = bindLookbehinds(result);
+        }
+
+        return Pattern.compile(result, flags);
+    }
+
+    private static String bindLookbehinds(String regex) {
+
+        String result = regex;
+        Stack<Integer> replaceStack = new Stack<>();
+
+        Matcher matcher = lookBehindCheckRegex.matcher(regex);
+
+        while (matcher.find()) {
+            getReplaceIndexes(result, matcher.start(), replaceStack);
+        }
+
+        if (!replaceStack.empty()) {
+
+            StringBuilder buffer = new StringBuilder(result);
+            while (!replaceStack.isEmpty()) {
+                int idx = replaceStack.peek();
+                buffer.replace(idx, idx + 1, bindings.get(result.charAt(idx)));
+                replaceStack.pop();
+            }
+
+            result = buffer.toString();
+        }
+
+        return result;
+    }
+
+    private static void getReplaceIndexes(String input, int startIndex, Stack<Integer> replaceStack) {
+
+        int idx = startIndex + 3;
+        Stack<Character> stack = new Stack<>();
+
+        while (idx < input.length()) {
+            switch (input.charAt(idx)) {
+                case ')':
+                    if (stack.isEmpty()) {
+                        idx = input.length();
+                    } else {
+                        stack.pop();
+                    }
+                    break;
+                case '(':
+                    stack.push('(');
+                    break;
+                case '*':
+                case '+':
+                    replaceStack.push(idx);
+                    break;
+                case '|':
+                    if (stack.isEmpty()) {
+                        idx = input.length();
+                    }
+                    break;
+            }
+
+            idx += 1;
+        }
+    }
+
     private static Match[] getMatchesSimple(Pattern regex, String source) {
+
         List<Match> matches = new ArrayList<>();
 
         Matcher match = regex.matcher(source);
@@ -142,15 +251,20 @@ public abstract class RegExpUtility {
             AtomicReference<String> lastGroup = new AtomicReference<>("");
 
             getNamedGroups(match).forEach((key, groupValue) -> {
-                if (!key.contains(groupNameIndexSep)) return;
+
+                if (!key.contains(groupNameIndexSep)) {
+                    return;
+                }
 
                 if (key.startsWith("plb") && !StringUtility.isNullOrEmpty(match.group(key))) {
+
                     if (match.group(0).indexOf(match.group(key)) != 0 && !StringUtility.isNullOrEmpty(lastGroup.get())) {
+
                         int index = match.start() + match.group(0).indexOf(match.group(key));
                         int length = match.group(key).length();
                         String value = source.substring(index, index + length);
 
-                        MatchGroup lastMatchGroup = groups.get(lastGroup);
+                        MatchGroup lastMatchGroup = groups.get(lastGroup.get());
                         groups.replace(lastGroup.get(), new MatchGroup(
                                 lastMatchGroup.value + value,
                                 lastMatchGroup.index,
@@ -162,9 +276,11 @@ public abstract class RegExpUtility {
                     return;
                 }
 
-                if (key.startsWith("nlb")) return;
+                if (key.startsWith("nlb")) {
+                    return;
+                }
 
-                String groupKey = key.substring(0, key.lastIndexOf(groupNameIndexSep));
+                String groupKey = key.substring(0, key.lastIndexOf(groupNameIndexSep)).replace("ii", "_");
                 lastGroup.set(groupKey);
 
                 if (!groups.containsKey(groupKey)) {
@@ -176,7 +292,7 @@ public abstract class RegExpUtility {
                     int index = match.start() + match.group(0).indexOf(match.group(key));
                     int length = match.group(key).length();
                     String value = source.substring(index, index + length);
-                    List<String> captures = Arrays.asList(groups.get(groupKey).captures);
+                    List<String> captures = new ArrayList<>(Arrays.asList(groups.get(groupKey).captures));
                     captures.add(value);
 
                     groups.replace(groupKey, new MatchGroup(value, index, length, captures.toArray(new String[0])));
@@ -203,6 +319,7 @@ public abstract class RegExpUtility {
     }
 
     private static Match getFirstMatchIndex(Pattern regex, String source) {
+
         Match[] matches = getMatches(regex, source);
         if (matches.length > 0) {
             return matches[0];
@@ -212,28 +329,35 @@ public abstract class RegExpUtility {
     }
 
     private static String getNextRegex(String source, int startPos) {
+
         startPos = getClosePos(source, startPos) + 1;
         int closePos = getClosePos(source, startPos);
         if (source.charAt(startPos) != '(') {
             closePos--;
         }
 
-        String next = (startPos == closePos)
-                ? null
-                : source.substring(startPos, closePos + 1);
+        String next = (startPos == closePos) ?
+                null :
+                source.substring(startPos, closePos + 1);
 
         return next;
     }
 
     private static int getClosePos(String rawRegex, int startPos) {
+
         int counter = 1;
         int closePos = startPos;
+
         while (counter > 0 && closePos < rawRegex.length()) {
+
             ++closePos;
             if (closePos < rawRegex.length()) {
                 char c = rawRegex.charAt(closePos);
-                if (c == '(') counter++;
-                else if (c == ')') counter--;
+                if (c == '(') {
+                    counter++;
+                } else if (c == ')') {
+                    counter--;
+                }
             }
         }
 
@@ -241,14 +365,46 @@ public abstract class RegExpUtility {
     }
 
     public static String replace(String input, Pattern regex, StringReplacerCallback callback) {
+
         StringBuffer resultString = new StringBuffer();
         Matcher regexMatcher = regex.matcher(input);
+
         while (regexMatcher.find()) {
             String replacement = callback.replace(regexMatcher);
             regexMatcher.appendReplacement(resultString, replacement);
         }
+
         regexMatcher.appendTail(resultString);
 
         return resultString.toString();
+    }
+
+    // Checks if Java version is <= 8, as they don't support look-behind groups with no maximum length.
+    private static boolean isRestrictedJavaVersion() {
+
+        boolean result = false;
+        BigDecimal targetVersion = new BigDecimal( "1.8" );
+
+        try {
+            String specVersion = System.getProperty("java.specification.version");
+            result = new BigDecimal( specVersion ).compareTo( targetVersion ) >= 0;
+        } catch (Exception e1) {
+
+            try {
+                // Could also be "java.runtime.version".
+                String runtimeVersion = System.getProperty("java.version");
+                result = new BigDecimal( runtimeVersion ).compareTo( targetVersion ) >= 0;
+
+            } catch (Exception e2) {
+                // Nothing to do, ignore.
+            }
+
+        }
+
+        if (result) {
+            System.out.println("WARN: Look-behind groups with no maximum length not supported. Java version <= 8.");
+        }
+
+        return result;
     }
 }

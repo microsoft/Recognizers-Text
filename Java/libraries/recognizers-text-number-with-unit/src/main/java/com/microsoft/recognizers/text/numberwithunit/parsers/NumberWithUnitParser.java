@@ -8,6 +8,7 @@ import com.microsoft.recognizers.text.numberwithunit.models.UnitValue;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 
 public class NumberWithUnitParser implements IParser {
@@ -20,6 +21,7 @@ public class NumberWithUnitParser implements IParser {
 
     @Override
     public ParseResult parse(ExtractResult extResult) {
+
         Map<String, String> unitMap = this.config.getUnitMap();
         String connectorToken = this.config.getConnectorToken();
         ParseResult ret = new ParseResult(extResult);
@@ -29,8 +31,8 @@ public class NumberWithUnitParser implements IParser {
             numberResult = (ExtractResult) extResult.data;
         } else if (extResult.type.equals(Constants.SYS_NUM)) {
             return ret.withValue(config.getInternalNumberParser().parse(extResult).value);
-        } else // if there is no unitResult, means there is just unit
-        {
+        } else {
+            // if there is no unitResult, means there is just unit
             numberResult = new ExtractResult(-1, 0, null, null, null);
         }
 
@@ -40,6 +42,7 @@ public class NumberWithUnitParser implements IParser {
         List<String> unitKeys = new ArrayList<>();
 
         for (int i = 0; i <= key.length(); i++) {
+
             if (i == key.length()) {
                 if (unitKeyBuild.length() != 0) {
                     addIfNotContained(unitKeys, unitKeyBuild.toString().trim());
@@ -71,8 +74,7 @@ public class NumberWithUnitParser implements IParser {
 
             if (unitMap.containsKey(lastUnit)) {
                 unitValue = unitMap.get(lastUnit);
-            }
-            else if (unitMap.containsKey(normalizedLastUnit)) {
+            } else if (unitMap.containsKey(normalizedLastUnit)) {
                 unitValue = unitMap.get(normalizedLastUnit);
             }
 
@@ -84,16 +86,20 @@ public class NumberWithUnitParser implements IParser {
 
                 String resolutionStr = numValue != null ? numValue.resolutionStr : null;
 
-                ret = ret
-                        .withValue(new UnitValue(resolutionStr, unitValue))
-                        .withResolutionStr(String.format("%s %s", resolutionStr != null ? resolutionStr : "", unitValue).trim());
+                ret = ret.withValue(new UnitValue(resolutionStr, unitValue))
+                         .withResolutionStr(String.format("%s %s", resolutionStr != null ? resolutionStr : "", unitValue).trim());
             }
+        }
+
+        if (ret != null) {
+            ret = ret.withText(ret.text.toLowerCase(Locale.ROOT));
         }
 
         return ret;
     }
 
     private void addIfNotContained(List<String> unitKeys, String unit) {
+
         boolean add = true;
         for (String unitKey : unitKeys) {
             if (unitKey.contains(unit)) {

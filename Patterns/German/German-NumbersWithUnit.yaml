@@ -208,7 +208,7 @@ CurrencySuffixList: !dictionary
     Thai baht: thailändischer baht|thailändische baht|thailändischen baht|thailaendischer baht|thailaendische baht|thailaendischen baht|thai baht|thai-baht|฿|thb
     Satang: satang|satangs
 #Tongan paʻanga
-    Tongan paʻanga: tongaischer paʻanga|tongaische paʻanga|tongaischen paʻanga|paʻanga|tonga paʻanga|tongaischer pa'anga|tongaische pa'anga|tongaischen pa'anga|pa'anga|tonga pa'anga|
+    Tongan paʻanga: tongaischer paʻanga|tongaische paʻanga|tongaischen paʻanga|paʻanga|tonga paʻanga|tongaischer pa'anga|tongaische pa'anga|tongaischen pa'anga|pa'anga|tonga pa'anga
     Seniti: seniti
 #Ukrainian hryvnia
     Ukrainian hryvnia: ukrainischer hrywnja|ukrainische hrywnja|ukrainischen hrywnja|hrywnja|uah|₴
@@ -249,7 +249,7 @@ CurrencySuffixList: !dictionary
     Indonesian rupiah: indonesischer rupiah|indonesische rupiah|indonesischen rupiah|rupiah|perak|rp|idr
     Rupee: rupie|rs
 #Krone
-    Danish krone: dänische krone|Dänischen krone|dänischer kronen|dänische kronen|dänischen kronen|daenische krone|daenischen krone|daenischer kronen|daenische kronen|daenischen kronen|dkk
+    Danish krone: dänische krone|dänischen krone|dänischer kronen|dänische kronen|dänischen kronen|daenische krone|daenischen krone|daenischer kronen|daenische kronen|daenischen kronen|dkk
     Norwegian krone: norwegische krone|norwegischen krone|norwegischer kronen|norwegische kronen|norwegischen kronen|nok
     Faroese króna: färöische króna|färöische krone|färöischen krone|färöischer kronen|färöische kronen|färöischen kronen
     Icelandic króna: isländische krone|isländischen krone|isländischer kronen|isländische kronen|isländischen kronen|isk
@@ -282,7 +282,7 @@ CurrencySuffixList: !dictionary
     Ruble: rubel|br
 #Dinar
     Algerian dinar: algerischer dinar|algerische dinar|algerischen dinar|د.ج|dzd
-    Bahraini dinar: bahrain-dinar||bhd|.د.ب
+    Bahraini dinar: bahrain-dinar|bhd|.د.ب
     Santeem: santeem|santeeme
     Iraqi dinar: irakischer dinar|irakische dinar|irakischen dinar|iqd|ع.د
     Jordanian dinar: jordanischer dinar|jordanische dinar|jordanischen dinar|د.ا|jod
@@ -555,7 +555,7 @@ TemperatureSuffixList: !dictionary
   types: [ string, string ]
   entries:
     F: grad fahrenheit|°fahrenheit|°f|fahrenheit
-    K: k|kelvin
+    K: k|K|kelvin
     R: rankine|°r
     D: delisle|°de
     C: grad celsius|°celsius|°c

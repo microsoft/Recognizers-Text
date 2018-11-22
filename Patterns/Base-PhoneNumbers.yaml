@@ -9,7 +9,7 @@ UKPhoneNumberRegex: !simpleRegex
 DEPhoneNumberRegex: !simpleRegex
   def: ((\+\d{2}\s?((\(0\))?\d\s?)?|\b)(\d{2,4}\s?[-/]?[\s\d]{7,10}\d)(?!-)\b)
 USPhoneNumberRegex: !simpleRegex
-  def: ((((\B\+)|\b)1(\s|-)?)|\b)?(\(\d{3}\)[-\s]?|\b\d{3}\s?[-\.]?\s?)\d{3}\s?[-\.]?\s?\d{4}(\s?(x|X|ext)\s?\d{3,5})?(?!-)\b
+  def: ((((\B\+)|\b)1(\s|-)?)|\b)?(\d{3}\)[-\s]?|\(\d{3}\)[-\s]?|\b\d{3}\s?[-\.]?\s?)\d{3}\s?[-\.]?\s?\d{4}(\s?(x|X|ext)\s?\d{3,5})?(?!(-\s?\d))\b
 CNPhoneNumberRegex: !simpleRegex
   def: ((\b00\s?)?\+?86\s?-?\s?)?(((\b|(?<=86))\d{2,5}\s?-?\s?|\(\d{2,5}\)\s?)\d{4}\s?-?\s?\d{4}(\s?-?\s?\d{4})?|(\b|(?<=86))\d{3}\s?-?\s?\d{4}\s?-?\s?\d{4})(?!-)\b
 DKPhoneNumberRegex: !simpleRegex
@@ -33,7 +33,12 @@ AreaCodeIndicatorRegex: !simpleRegex
   def: \(
 FormatIndicatorRegex: !simpleRegex
   def: (\s|-|/|\.)+
-SeparatorCharList: !list
+SpecialBoundaryMarkers: !list
+  types: [char]
+  entries:
+    - '-'
+    - ' '
+BoundaryMarkers: !list
   types: [char]
   entries:
     - '-'

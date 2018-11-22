@@ -159,6 +159,10 @@ export class EnglishDateParserConfiguration implements IDateParserConfiguration 
             swift = 2;
         } else if (trimmedText.endsWith("day before yesterday")) {
             swift = -2;
+        } else if (trimmedText.endsWith("day after")) {
+            swift = 1;
+        } else if (trimmedText.endsWith("day before")) {
+            swift = -1;
         } else if (matches.length) {
             swift = this.getSwift(source);
         }

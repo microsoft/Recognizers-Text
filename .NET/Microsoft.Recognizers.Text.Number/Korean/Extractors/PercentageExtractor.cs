@@ -23,12 +23,12 @@ namespace Microsoft.Recognizers.Text.Number.Korean
                 },
                 {
                     //19퍼센트　１퍼센트
-                    new Regex(NumbersDefinitions.NumbersPercentagePointRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.NumbersPercentagePointRegex, RegexOptions.Singleline),
                     RegexTagGenerator.GenerateRegexTag(Constants.PERCENT_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
                     //3,000퍼센트  １，１２３퍼센트
-                    new Regex(NumbersDefinitions.NumbersPercentageWithSeparatorRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.NumbersPercentageWithSeparatorRegex, RegexOptions.Singleline),
                     RegexTagGenerator.GenerateRegexTag(Constants.PERCENT_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
@@ -44,7 +44,7 @@ namespace Microsoft.Recognizers.Text.Number.Korean
                 },
                 {
                 //마이너스십삼퍼센트
-                new Regex(NumbersDefinitions.SimpleIntegerPercentageRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                new Regex(NumbersDefinitions.SimpleIntegerPercentageRegex, RegexOptions.Singleline),
                 RegexTagGenerator.GenerateRegexTag(Constants.PERCENT_PREFIX, Constants.NUMBER_SUFFIX)
                 }
             };

@@ -21,13 +21,16 @@ namespace Microsoft.Recognizers.Text.Sequence
             var regexes = new Dictionary<Regex, string>
             {
                 {
-                    new Regex(BaseURL.IpUrlRegex), Constants.URL_REGEX
+                    new Regex(BaseURL.IpUrlRegex, RegexOptions.Compiled),
+                    Constants.URL_REGEX
                 },
                 {
-                    new Regex(BaseURL.UrlRegex), Constants.URL_REGEX
+                    new Regex(BaseURL.UrlRegex, RegexOptions.Compiled),
+                    Constants.URL_REGEX
                 },
                 {
-                    new Regex(BaseURL.UrlRegex2), Constants.URL_REGEX
+                    new Regex(BaseURL.UrlRegex2, RegexOptions.Compiled),
+                    Constants.URL_REGEX
                 }
             };
 

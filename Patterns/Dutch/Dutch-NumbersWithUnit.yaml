@@ -3,7 +3,7 @@
 AgeSuffixList: !dictionary
   types: [ string, string ]
   entries:
-    Year: jaren oud|jaar oud|jaar|jaren|levensjaren|jarige leeftijd|-jarige leeftijd
+    Year: jaren oud|jaar oud|jaar|jaren|levensjaren|jarige leeftijd|-jarige leeftijd|-jarige|jarige
     Month: maanden oud|maand oud|maand|maanden
     Week: week oud|weken oud|week|weken
     Day: dag oud|dagen oud|dag|dagen
@@ -11,13 +11,13 @@ AgeSuffixList: !dictionary
 AreaSuffixList: !dictionary
   types: [ string, string ]
   entries:
-    Square kilometer: vierkante kilometer|kilometer km2|kilometer km^2|km^2|km²|km2
-    Square hectometer: vierkante hectometer|hm^2|hm²|hektar|hm2
-    Square decameter: vierkante decameter|dam^2|dam²|dm2
-    Square meter: vierkante meter|m^2|m²|m2
-    Square decimeter: vierkante decimeter|dm^2|dm²|dm2
-    Square centimeter: vierkante centimeter|cm^2|cm²|cm2
-    Square millimeter: vierkante millimeter|mm^2|mm²|mm2
+    Square kilometer: vierkante km|vierkante kilometer|kilometer km2|kilometer km^2|km^2|km²|km2
+    Square hectometer: vierkante hm|vierkante hectometer|hm^2|hm²|hektar|hm2
+    Square decameter: vierkante dam|vierkante decameter|dam^2|dam²|dam2
+    Square meter: vierkante m|vierkante meter|m^2|m²|m2
+    Square decimeter: vierkante dm|vierkante decimeter|dm^2|dm²|dm2
+    Square centimeter: vierkante cm|vierkante centimeter|cm^2|cm²|cm2
+    Square millimeter: vierkante mm|vierkante millimeter|mm^2|mm²|mm2
     Square inch: in2|in^2|in²
     Square foot: ft2|ft^2|ft²
     Square mile: vierkante mijl|mi^2|mi²|mi2
@@ -30,11 +30,11 @@ InformationSuffixList: !dictionary
   entries:
 #Information
     Bit: -bit|bit|bits
-    Kilobit: kilobit|kilobits|kb|kbit
-    Megabit: megabit|megabits|Mb|Mbit
-    Gigabit: gigabit|gigabits|Gb|Gbit
-    Terabit: terabit|terabits|Tb|Tbit
-    Petabit: petabit|petabits|Pb|Pbit
+    Kilobit: kilobit|kilobits|kb|Kb|kbit
+    Megabit: megabit|megabits|Mb|mb|Mbit
+    Gigabit: gigabit|gigabits|Gb|gb|Gbit
+    Terabit: terabit|terabits|Tb|tb|Tbit
+    Petabit: petabit|petabits|Pb|pb|Pbit
     Byte: -byte|byte|bytes
     Kilobyte: -kilobyte|-kilobytes|kilobyte|kB|KB|kilobytes|kilo byte|kilo bytes|kByte
     Megabyte: -megabyte|-megabytes|megabyte|mB|MB|megabytes|mega byte|mega bytes|MByte
@@ -62,18 +62,18 @@ LengthSuffixList: !dictionary
     Kilometer: km|kilometer|kilometers|kilometers
     Hectometer: hm|hectometer|hectometers
     Decameter: dam|decameter|decameters
-    Meter: m|meter|metre|meters|metres
+    Meter: m|meter|meters
     Decimeter: dm|decimeter|decimeters
     Centimeter: cm|centimeter|centimeters
     Millimeter: mm|millimeter|millimeters
     Micrometer: μm|micrometer|micrometers
-    Nanometer: nm|nanometer|nanometers
+    Nanometer: nm|nanometer|nanometers|millimicron
     Picometer: pm|picometer|picometers
     Mile: -mijl|mijl|mijlen
     Inch: -inch|inch|inches
     Foot: -voet|voet
     Light year: lichtjaar|lichtjaren|lj
-    Pt: pt|pint
+    Pt: pt|imperial pint|pint
 AmbiguousLengthUnitList: !list
   types: [ string ]
   entries:
@@ -98,7 +98,7 @@ TemperatureSuffixList: !dictionary
   types: [ string, string ]
   entries:
     F: graden fahrenheit|graden f|gr. f|°f|fahrenheit|f
-    K: k|kelvin
+    K: k|K|kelvin
     R: rankine|°r
     D: delisle|°de
     C: graden celsius|graden c|gr. c|°c|c|celsius
@@ -496,7 +496,7 @@ CurrencySuffixList: !dictionary
     Tuvaluan dollar: tuvaluaanse dollars|tuvaluaanse dollar|tuvaluaanse $|tuvaluan dollars|tuvaluan dollar|tuvaluan $
     Dollar: dollars|dollar|$
 #Chinese yuan
-    Chinese yuan: chinese renminbi|chinese yuan|yuan|kuai|chinese yuan|renminbi|cny|rmb|￥
+    Chinese yuan: chinese renminbi|chinese yuan|yuan|kuai|chinese yuan|renminbi|cny|rmb|￥|元
     Fen: fen
     Jiao: jiao|mao
 #Additional

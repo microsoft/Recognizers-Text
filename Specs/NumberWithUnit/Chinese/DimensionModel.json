@@ -82,7 +82,7 @@
     "Input": "如今身高168CM",
     "Results": [
       {
-        "Text": "168CM",
+        "Text": "168cm",
         "TypeName": "dimension",
         "Resolution": {
           "value": "168",

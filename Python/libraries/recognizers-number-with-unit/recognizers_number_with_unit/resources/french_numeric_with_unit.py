@@ -118,7 +118,7 @@ class FrenchNumericWithUnit:
                                ('Sene', 'sene'),
                                ('Dobra', 'dobra|db|std'),
                                ('Leone', 'leone|sll'),
-                               ('Florins Néerlandais', 'florins hollandais|florins néerlandais|florins|ang|ƒ|florin|fl |'),
+                               ('Florins Néerlandais', 'florins hollandais|florins néerlandais|florins|ang|ƒ|florin|fl'),
                                ('Lilangeni', 'lilangeni|szl'),
                                ('Somoni tadjikistan', 'somoni tadjikistan|tjs|somoni'),
                                ('Diram', 'dirams|diram'),
@@ -349,4 +349,5 @@ class FrenchNumericWithUnit:
                              ('Tonne', 'tonne|tonnes|-tonnes|-tonne'),
                              ('Livre', 'livre|livres')])
     AmbiguousWeightUnitList = ['g', 'oz', 'stone', 'dram']
+    AmbiguityFiltersDict = dict([('\\bcent\\b', '\\bpour\\s+cent\\b')])
 # pylint: enable=line-too-long

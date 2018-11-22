@@ -15,7 +15,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         #region internalParsers
 
-        public IDateTimeExtractor DateExtractor { get; }
+        public IDateExtractor DateExtractor { get; }
 
         public IExtractor CardinalExtractor { get; }
 
@@ -74,21 +74,21 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         public Regex CenturySuffixRegex { get; }
 
         public static readonly Regex NextPrefixRegex =
-            new Regex(
-                @"(prochain|prochaine)\b",
-                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(@"(prochain|prochaine)\b", RegexOptions.Singleline);
+
         public static readonly Regex PastPrefixRegex =
-            new Regex(
-                @"(dernier)\b",
-                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(@"(dernier)\b", RegexOptions.Singleline);
+
         public static readonly Regex ThisPrefixRegex =
-            new Regex(
-                @"(ce|cette)\b",
-                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(@"(ce|cette)\b", RegexOptions.Singleline);
+
+        public static readonly Regex RelativeRegex =
+            new Regex(DateTimeDefinitions.RelativeRegex, RegexOptions.Singleline);
 
         Regex IDatePeriodParserConfiguration.NextPrefixRegex => NextPrefixRegex;
         Regex IDatePeriodParserConfiguration.PastPrefixRegex => PastPrefixRegex;
         Regex IDatePeriodParserConfiguration.ThisPrefixRegex => ThisPrefixRegex;
+        Regex IDatePeriodParserConfiguration.RelativeRegex => RelativeRegex;
         #endregion
 
         #region Dictionaries

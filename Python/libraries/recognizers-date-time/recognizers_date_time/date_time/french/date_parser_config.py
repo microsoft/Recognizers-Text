@@ -161,7 +161,7 @@ class FrenchDateParserConfiguration(DateParserConfiguration):
             swift = 1
         elif trimmed_text == 'hier':
             swift = -1
-        elif trimmed_text.endswith('après demain') or trimmed_text.endswith('après-demain'):
+        elif trimmed_text.endswith('après demain') or trimmed_text.endswith('après-demain') or trimmed_text.endswith('apres-demain'):
             swift = 2
         elif trimmed_text.endswith('avant-hier') or trimmed_text.endswith('avant hier'):
             swift = -2

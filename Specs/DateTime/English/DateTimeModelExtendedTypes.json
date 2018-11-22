@@ -1613,10 +1613,9 @@
         "Resolution": {
           "values": [
             {
-              "timex": "2018-09-03T13",
-              "Mod": "after",
-              "type": "datetimerange",
-              "start": "2018-09-03 13:00:00"
+              "timex": "2018-09-03",
+              "type": "date",
+              "value": "2018-09-03"
             }
           ]
         }

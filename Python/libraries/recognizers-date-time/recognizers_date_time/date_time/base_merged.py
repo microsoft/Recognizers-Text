@@ -17,7 +17,7 @@ from .base_timeperiod import BaseTimePeriodParser
 from .base_datetimeperiod import BaseDateTimePeriodParser
 from .base_duration import BaseDurationParser
 from .base_set import BaseSetParser
-from .utilities import Token, merge_all_tokens, RegExpUtility, DateTimeOptions, FormatUtil, DateUtils
+from .utilities import Token, merge_all_tokens, RegExpUtility, DateTimeOptions, DateTimeFormatUtil, DateUtils
 
 MatchedIndex = namedtuple('MatchedIndex', ['matched', 'index'])
 
@@ -314,8 +314,8 @@ class BaseMergedParser(DateTimeParser):
         return Constants.SYS_DATETIME_MERGED
 
     def __init__(self, config: MergedParserConfiguration, options: DateTimeOptions):
-        self.__date_min_value = FormatUtil.format_date(DateUtils.min_value)
-        self.__date_time_min_value = FormatUtil.format_date_time(DateUtils.min_value)
+        self.__date_min_value = DateTimeFormatUtil.format_date(DateUtils.min_value)
+        self.__date_time_min_value = DateTimeFormatUtil.format_date_time(DateUtils.min_value)
         self.config = config
         self.options = options
 
@@ -619,24 +619,24 @@ class BaseMergedParser(DateTimeParser):
 
         resolution_pm = {}
         if values_map['type'] == Constants.SYS_DATETIME_TIME:
-            resolution_pm[TimeTypeConstants.VALUE] = FormatUtil.to_pm(resolution[TimeTypeConstants.VALUE])
-            resolution_pm['timex'] = FormatUtil.to_pm(timex)
+            resolution_pm[TimeTypeConstants.VALUE] = DateTimeFormatUtil.to_pm(resolution[TimeTypeConstants.VALUE])
+            resolution_pm['timex'] = DateTimeFormatUtil.to_pm(timex)
         elif values_map['type'] == Constants.SYS_DATETIME_DATETIME:
             split_value = resolution[TimeTypeConstants.VALUE].split(' ')
-            resolution_pm[TimeTypeConstants.VALUE] = f'{split_value[0]} {FormatUtil.to_pm(split_value[1])}'
-            resolution_pm['timex'] = FormatUtil.all_str_to_pm(timex)
+            resolution_pm[TimeTypeConstants.VALUE] = f'{split_value[0]} {DateTimeFormatUtil.to_pm(split_value[1])}'
+            resolution_pm['timex'] = DateTimeFormatUtil.all_str_to_pm(timex)
         elif values_map['type'] == Constants.SYS_DATETIME_TIMEPERIOD:
             if TimeTypeConstants.START in resolution:
-                resolution_pm[TimeTypeConstants.START] = FormatUtil.to_pm(resolution[TimeTypeConstants.START])
+                resolution_pm[TimeTypeConstants.START] = DateTimeFormatUtil.to_pm(resolution[TimeTypeConstants.START])
             if TimeTypeConstants.END in resolution:
-                resolution_pm[TimeTypeConstants.END] = FormatUtil.to_pm(resolution[TimeTypeConstants.END])
-            resolution_pm['timex'] = FormatUtil.all_str_to_pm(timex)
+                resolution_pm[TimeTypeConstants.END] = DateTimeFormatUtil.to_pm(resolution[TimeTypeConstants.END])
+            resolution_pm['timex'] = DateTimeFormatUtil.all_str_to_pm(timex)
         elif values_map['type'] == Constants.SYS_DATETIME_DATETIMEPERIOD:
             if TimeTypeConstants.START in resolution:
                 split_value = resolution[TimeTypeConstants.START].split(' ')
-                resolution_pm[TimeTypeConstants.START] = f'{split_value[0]} {FormatUtil.to_pm(split_value[1])}'
+                resolution_pm[TimeTypeConstants.START] = f'{split_value[0]} {DateTimeFormatUtil.to_pm(split_value[1])}'
             if TimeTypeConstants.END in resolution:
                 split_value = resolution[TimeTypeConstants.END].split(' ')
-                resolution_pm[TimeTypeConstants.END] = f'{split_value[0]} {FormatUtil.to_pm(split_value[1])}'
-            resolution_pm['timex'] = FormatUtil.all_str_to_pm(timex)
+                resolution_pm[TimeTypeConstants.END] = f'{split_value[0]} {DateTimeFormatUtil.to_pm(split_value[1])}'
+            resolution_pm['timex'] = DateTimeFormatUtil.all_str_to_pm(timex)
         values_map[keyname + 'Pm'] = resolution_pm

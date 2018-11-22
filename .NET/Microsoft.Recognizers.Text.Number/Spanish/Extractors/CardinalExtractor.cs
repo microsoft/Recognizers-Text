@@ -12,7 +12,8 @@ namespace Microsoft.Recognizers.Text.Number.Spanish
 
         protected sealed override string ExtractType { get; } = Constants.SYS_NUM_CARDINAL; //"Cardinal";
 
-        private static readonly ConcurrentDictionary<string, CardinalExtractor> Instances = new ConcurrentDictionary<string, CardinalExtractor>();
+        private static readonly ConcurrentDictionary<string, CardinalExtractor> Instances = 
+            new ConcurrentDictionary<string, CardinalExtractor>();
 
         public static CardinalExtractor GetInstance(string placeholder = NumbersDefinitions.PlaceHolderDefault)
         {
@@ -30,12 +31,12 @@ namespace Microsoft.Recognizers.Text.Number.Spanish
         {
             var builder = ImmutableDictionary.CreateBuilder<Regex, TypeTag>();
 
-            //Add Integer Regexes
-            var intExtract = new IntegerExtractor(placeholder);
+            // Add Integer Regexes
+            var intExtract = IntegerExtractor.GetInstance(placeholder);
             builder.AddRange(intExtract.Regexes);
 
-            //Add Double Regexes
-            var douExtract = new DoubleExtractor(placeholder);
+            // Add Double Regexes
+            var douExtract = DoubleExtractor.GetInstance(placeholder);
             builder.AddRange(douExtract.Regexes);
 
             this.Regexes = builder.ToImmutable();

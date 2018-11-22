@@ -3,15 +3,14 @@ package com.microsoft.recognizers.text.number.parsers;
 import com.microsoft.recognizers.text.Culture;
 import com.microsoft.recognizers.text.CultureInfo;
 import com.microsoft.recognizers.text.number.LongFormatType;
-import com.microsoft.recognizers.text.utilities.FormatUtility;
-import org.apache.commons.lang3.StringUtils;
-
+import com.microsoft.recognizers.text.utilities.QueryProcessor;
 import java.math.BigDecimal;
 import java.math.MathContext;
 import java.math.RoundingMode;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
+import org.apache.commons.lang3.StringUtils;
 
 public final class NumberFormatUtility {
 
@@ -48,20 +47,20 @@ public final class NumberFormatUtility {
         result = result.replace('e', 'E');
         if (result.contains("E-")) {
             String[] parts = result.split(Pattern.quote("E-"));
-            parts[0] = FormatUtility.trimEnd(parts[0], ".0");
+            parts[0] = QueryProcessor.trimEnd(parts[0], ".0");
             parts[1] = StringUtils.leftPad(parts[1], 2, '0');
             result = String.join("E-", parts);
         }
 
         if (result.contains("E+")) {
             String[] parts = result.split(Pattern.quote("E+"));
-            parts[0] = FormatUtility.trimEnd(parts[0], "0");
+            parts[0] = QueryProcessor.trimEnd(parts[0], "0");
             result = String.join("E+", parts);
         }
 
         if (result.contains(".")) {
-            result = FormatUtility.trimEnd(result, "0");
-            result = FormatUtility.trimEnd(result, ".");
+            result = QueryProcessor.trimEnd(result, "0");
+            result = QueryProcessor.trimEnd(result, ".");
         }
 
         if (supportedCultures.containsKey(culture.cultureCode)) {

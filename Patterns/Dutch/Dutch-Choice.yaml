@@ -4,6 +4,6 @@ LangMarker: Nl
 TokenizerRegex: !simpleRegex
   def: '[^\w\d]'
 TrueRegex: !simpleRegex
-  def: \b(ja|jawel|jazeker|natuurlijk|prima|jep|yes|yep|y|ok|oke)\b|(\uD83D\uDC4D|\uD83D\uDC4C)
+  def: \b(ja|jawel|jazeker|natuurlijk|vanzelfsprekend|zeker|prima|jep|yes|yep|y|ok|oke|akkoord)\b|(\uD83D\uDC4D|\uD83D\uDC4C)
 FalseRegex: !simpleRegex
-  def: \b(nee|neen|nope|nein|nop|no|niet)\b|(\uD83D\uDC4E|\u270B|\uD83D\uDD90)
+  def: \b(nee|neen|nope|nein|nop|no|niet|nooit)\b|(\uD83D\uDC4E|\u270B|\uD83D\uDD90)

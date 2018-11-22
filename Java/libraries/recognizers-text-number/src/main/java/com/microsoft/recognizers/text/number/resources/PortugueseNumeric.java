@@ -10,7 +10,6 @@ package com.microsoft.recognizers.text.number.resources;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
 
 import com.google.common.collect.ImmutableMap;
 
@@ -80,7 +79,8 @@ public class PortugueseNumeric {
 			.replace("{placeholder}", placeholder);
     }
 
-    public static final String NumbersWithSuffix = "(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+\\s*(k|M|T|G)(?=\\b)";
+    public static final String NumbersWithSuffix = "(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+\\s*{BaseNumbers.NumberMultiplierRegex}(?=\\b)"
+            .replace("{BaseNumbers.NumberMultiplierRegex}", BaseNumbers.NumberMultiplierRegex);
 
     public static final String RoundNumberIntegerRegexWithLocks = "(?<=\\b)({DigitsNumberRegex})+\\s+{RoundNumberIntegerRegex}(?=\\b)"
             .replace("{DigitsNumberRegex}", DigitsNumberRegex)
@@ -156,7 +156,8 @@ public class PortugueseNumeric {
             .replace("{AllIntRegex}", AllIntRegex)
             .replace("{AllPointRegex}", AllPointRegex);
 
-    public static final String DoubleWithMultiplierRegex = "(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+\\,)))\\d+,\\d+\\s*(K|k|M|G|T)(?=\\b)";
+    public static final String DoubleWithMultiplierRegex = "(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+\\,)))\\d+,\\d+\\s*{BaseNumbers.NumberMultiplierRegex}(?=\\b)"
+            .replace("{BaseNumbers.NumberMultiplierRegex}", BaseNumbers.NumberMultiplierRegex);
 
     public static final String DoubleExponentialNotationRegex = "(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+,)))(\\d+(,\\d+)?)e([+-]*[1-9]\\d*)(?=\\b)";
 
@@ -177,8 +178,6 @@ public class PortugueseNumeric {
 
     public static final String DoubleAllFloatRegex = "((?<=\\b){AllFloatRegex}(?=\\b))"
             .replace("{AllFloatRegex}", AllFloatRegex);
-
-    public static final String CurrencyRegex = "(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+\\s*(B|b|m|t|g)(?=\\b)";
 
     public static final String NumberWithSuffixPercentage = "(?<!%)({BaseNumbers.NumberReplaceToken})(\\s*)(%(?!{BaseNumbers.NumberReplaceToken})|(por cento|pontos percentuais)\\b)"
             .replace("{BaseNumbers.NumberReplaceToken}", BaseNumbers.NumberReplaceToken);
@@ -209,9 +208,10 @@ public class PortugueseNumeric {
 
     public static final String HalfADozenRegex = "meia\\s+d[uú]zia";
 
-    public static final String DigitalNumberRegex = "((?<=\\b)(mil|cem|milh[oõ]es|milh[aã]o|bilh[oõ]es|bilh[aã]o|trilh[oõ]es|trilh[aã]o|milhares|centena|centenas|dezena|dezenas?)(?=\\b))|((?<=(\\d|\\b))(k|t|m|g)(?=\\b))";
+    public static final String DigitalNumberRegex = "((?<=\\b)(mil|cem|milh[oõ]es|milh[aã]o|bilh[oõ]es|bilh[aã]o|trilh[oõ]es|trilh[aã]o|milhares|centena|centenas|dezena|dezenas?)(?=\\b))|((?<=(\\d|\\b)){BaseNumbers.MultiplierLookupRegex}(?=\\b))"
+            .replace("{BaseNumbers.MultiplierLookupRegex}", BaseNumbers.MultiplierLookupRegex);
 
-    public static final Map<String, Long> CardinalNumberMap = ImmutableMap.<String, Long>builder()
+    public static final ImmutableMap<String, Long> CardinalNumberMap = ImmutableMap.<String, Long>builder()
         .put("zero", 0L)
         .put("hum", 1L)
         .put("um", 1L)
@@ -290,7 +290,7 @@ public class PortugueseNumeric {
         .put("trilhoes", 1000000000000L)
         .build();
 
-    public static final Map<String, Long> OrdinalNumberMap = ImmutableMap.<String, Long>builder()
+    public static final ImmutableMap<String, Long> OrdinalNumberMap = ImmutableMap.<String, Long>builder()
         .put("primeiro", 1L)
         .put("primeira", 1L)
         .put("segundo", 2L)
@@ -425,7 +425,7 @@ public class PortugueseNumeric {
         .put("bilionesima", 1000000000L)
         .build();
 
-    public static final Map<String, Long> PrefixCardinalMap = ImmutableMap.<String, Long>builder()
+    public static final ImmutableMap<String, Long> PrefixCardinalMap = ImmutableMap.<String, Long>builder()
         .put("hum", 1L)
         .put("dois", 2L)
         .put("tres", 3L)
@@ -470,14 +470,14 @@ public class PortugueseNumeric {
         .put("novecentos", 900L)
         .build();
 
-    public static final Map<String, Long> SuffixOrdinalMap = ImmutableMap.<String, Long>builder()
+    public static final ImmutableMap<String, Long> SuffixOrdinalMap = ImmutableMap.<String, Long>builder()
         .put("milesimo", 1000L)
         .put("milionesimo", 1000000L)
         .put("bilionesimo", 1000000000L)
         .put("trilionesimo", 1000000000000L)
         .build();
 
-    public static final Map<String, Long> RoundNumberMap = ImmutableMap.<String, Long>builder()
+    public static final ImmutableMap<String, Long> RoundNumberMap = ImmutableMap.<String, Long>builder()
         .put("mil", 1000L)
         .put("milesimo", 1000L)
         .put("milhão", 1000000L)
@@ -507,6 +507,7 @@ public class PortugueseNumeric {
         .put("k", 1000L)
         .put("m", 1000000L)
         .put("g", 1000000000L)
+        .put("b", 1000000000L)
         .put("t", 1000000000000L)
         .build();
 }

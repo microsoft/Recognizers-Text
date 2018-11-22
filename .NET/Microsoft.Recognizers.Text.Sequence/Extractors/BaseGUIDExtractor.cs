@@ -1,10 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Collections.Immutable;
-using System.Linq;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions;
-using Microsoft.Recognizers.Text.Matcher;
 
 namespace Microsoft.Recognizers.Text.Sequence
 {
@@ -19,7 +17,8 @@ namespace Microsoft.Recognizers.Text.Sequence
             var regexes = new Dictionary<Regex, string>
             {
                 {
-                    new Regex(BaseGUID.GUIDRegex), Constants.GUID_REGEX
+                    new Regex(BaseGUID.GUIDRegex),
+                    Constants.GUID_REGEX
                 }
             };
 

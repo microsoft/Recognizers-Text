@@ -24,9 +24,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             WrittenDecades = DateTimeDefinitions.WrittenDecades.ToImmutableDictionary();
             SpecialDecadeCases = DateTimeDefinitions.SpecialDecadeCases.ToImmutableDictionary();
 
-            CardinalExtractor = new CardinalExtractor();
-            IntegerExtractor = new IntegerExtractor();
-            OrdinalExtractor = new OrdinalExtractor();
+            CardinalExtractor = Number.Italian.CardinalExtractor.GetInstance();
+            IntegerExtractor = Number.Italian.IntegerExtractor.GetInstance();
+            OrdinalExtractor = Number.Italian.OrdinalExtractor.GetInstance();
 
             NumberParser = new BaseNumberParser(new ItalianNumberParserConfiguration());
             DateExtractor = new BaseDateExtractor(new ItalianDateExtractorConfiguration(this));

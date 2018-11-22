@@ -2,7 +2,7 @@ import { ExtractResult, RegExpUtility, Match, StringUtility } from "@microsoft/r
 import { Constants, TimeTypeConstants } from "./constants"
 import { Constants as NumberConstants } from "@microsoft/recognizers-text-number"
 import { BaseNumberExtractor, BaseNumberParser } from "@microsoft/recognizers-text-number"
-import { Token, FormatUtil, DateTimeResolutionResult, IDateTimeUtilityConfiguration, AgoLaterUtil, AgoLaterMode, DateUtils, DayOfWeek } from "./utilities";
+import { Token, DateTimeFormatUtil, DateTimeResolutionResult, IDateTimeUtilityConfiguration, AgoLaterUtil, AgoLaterMode, DateUtils, DayOfWeek } from "./utilities";
 import { IDateTimeExtractor } from "./baseDateTime"
 import { BaseDurationExtractor, BaseDurationParser } from "./baseDuration"
 import { IDateTimeParser, DateTimeParseResult } from "./parsers"
@@ -240,9 +240,9 @@ export class BaseDateParser implements IDateTimeParser {
             }
             if (innerResult.success) {
                 innerResult.futureResolution = {};
-                innerResult.futureResolution[TimeTypeConstants.DATE] = FormatUtil.formatDate(innerResult.futureValue);
+                innerResult.futureResolution[TimeTypeConstants.DATE] = DateTimeFormatUtil.formatDate(innerResult.futureValue);
                 innerResult.pastResolution = {};
-                innerResult.pastResolution[TimeTypeConstants.DATE] = FormatUtil.formatDate(innerResult.pastValue);
+                innerResult.pastResolution[TimeTypeConstants.DATE] = DateTimeFormatUtil.formatDate(innerResult.pastValue);
                 resultValue = innerResult;
             }
         }
@@ -284,9 +284,9 @@ export class BaseDateParser implements IDateTimeParser {
             let dayStr = match.groups('day').value;
             day = this.config.dayOfMonth.get(dayStr);
 
-            result.timex = FormatUtil.luisDate(-1, -1, day);
+            result.timex = DateTimeFormatUtil.luisDate(-1, -1, day);
 
-            let tryStr = FormatUtil.luisDate(year, month, day);
+            let tryStr = DateTimeFormatUtil.luisDate(year, month, day);
             let tryDate = Date.parse(tryStr);
             let futureDate: Date;
             let pastDate: Date;
@@ -317,7 +317,7 @@ export class BaseDateParser implements IDateTimeParser {
         if (match && match.index === 0 && match.length === trimmedSource.length) {
             let swift = this.config.getSwiftDay(match.value);
             let value = DateUtils.addDays(referenceDate, swift);
-            result.timex = FormatUtil.luisDateFromDate(value);
+            result.timex = DateTimeFormatUtil.luisDateFromDate(value);
             result.futureValue = value;
             result.pastValue = value;
             result.success = true;
@@ -332,7 +332,7 @@ export class BaseDateParser implements IDateTimeParser {
             let numOfDays = Number.parseInt(this.config.numberParser.parse(numErs[0]).value);
 
             let value = DateUtils.addDays(referenceDate, swift + numOfDays);
-            result.timex = FormatUtil.luisDateFromDate(value);
+            result.timex = DateTimeFormatUtil.luisDateFromDate(value);
             result.futureValue = value;
             result.pastValue = value;
             result.success = true;
@@ -356,7 +356,7 @@ export class BaseDateParser implements IDateTimeParser {
                 value = DateUtils.next(value, this.config.dayOfWeek.get(weekdayStr));
             }
 
-            result.timex = FormatUtil.luisDateFromDate(value);
+            result.timex = DateTimeFormatUtil.luisDateFromDate(value);
             result.futureValue = value;
             result.pastValue = value;
             result.success = true;
@@ -369,7 +369,7 @@ export class BaseDateParser implements IDateTimeParser {
             let weekdayStr = match.groups('weekday').value;
             let value = DateUtils.next(referenceDate, this.config.dayOfWeek.get(weekdayStr));
 
-            result.timex = FormatUtil.luisDateFromDate(value);
+            result.timex = DateTimeFormatUtil.luisDateFromDate(value);
             result.futureValue = value;
             result.pastValue = value;
             result.success = true;
@@ -382,7 +382,7 @@ export class BaseDateParser implements IDateTimeParser {
             let weekdayStr = match.groups('weekday').value;
             let value = DateUtils.this(referenceDate, this.config.dayOfWeek.get(weekdayStr));
 
-            result.timex = FormatUtil.luisDateFromDate(value);
+            result.timex = DateTimeFormatUtil.luisDateFromDate(value);
             result.futureValue = value;
             result.pastValue = value;
             result.success = true;
@@ -395,7 +395,7 @@ export class BaseDateParser implements IDateTimeParser {
             let weekdayStr = match.groups('weekday').value;
             let value = DateUtils.last(referenceDate, this.config.dayOfWeek.get(weekdayStr));
 
-            result.timex = FormatUtil.luisDateFromDate(value);
+            result.timex = DateTimeFormatUtil.luisDateFromDate(value);
             result.futureValue = value;
             result.pastValue = value;
             result.success = true;
@@ -433,7 +433,7 @@ export class BaseDateParser implements IDateTimeParser {
             let month = referenceDate.getMonth();
             let year = referenceDate.getFullYear();
 
-            result.timex = FormatUtil.luisDate(-1, -1, day)
+            result.timex = DateTimeFormatUtil.luisDate(-1, -1, day)
             let date = new Date(year, month, day);
             result.futureValue = date;
             result.pastValue = date;
@@ -452,7 +452,7 @@ export class BaseDateParser implements IDateTimeParser {
             let year = referenceDate.getFullYear();
 
             // the validity of the phrase is guaranteed in the Date Extractor
-            result.timex = FormatUtil.luisDate(year, month, day)
+            result.timex = DateTimeFormatUtil.luisDate(year, month, day)
             result.futureValue = new Date(year, month, day);
             result.pastValue = new Date(year, month, day);
             result.success = true;
@@ -521,11 +521,11 @@ export class BaseDateParser implements IDateTimeParser {
         let pastDate = DateUtils.safeCreateFromMinValue(year, month, day);
 
         if (ambiguous) {
-            result.timex = FormatUtil.luisDate(-1, month, day);
+            result.timex = DateTimeFormatUtil.luisDate(-1, month, day);
             if (futureDate < referenceDate) futureDate.setFullYear(year + 1);
             if (pastDate >= referenceDate) pastDate.setFullYear(year - 1);
         } else {
-            result.timex = FormatUtil.luisDate(year, month, day);
+            result.timex = DateTimeFormatUtil.luisDate(year, month, day);
         }
 
         result.futureValue = futureDate;
@@ -549,7 +549,7 @@ export class BaseDateParser implements IDateTimeParser {
         let month = referenceDate.getMonth();
         let year = referenceDate.getFullYear();
 
-        result.timex = FormatUtil.luisDate(-1, -1, day);
+        result.timex = DateTimeFormatUtil.luisDate(-1, -1, day);
         let pastDate = DateUtils.safeCreateFromMinValue(year, month, day);
         let futureDate = DateUtils.safeCreateFromMinValue(year, month, day);
 
@@ -613,7 +613,7 @@ export class BaseDateParser implements IDateTimeParser {
             pastDate = this.computeDate(cardinal, weekday, month, year - 1);
             if (pastDate.getMonth() !== month) pastDate.setDate(pastDate.getDate() - 7);
         }
-        result.timex = ['XXXX', FormatUtil.toString(month + 1, 2), 'WXX', weekday, '#' + cardinal].join('-');
+        result.timex = ['XXXX', DateTimeFormatUtil.toString(month + 1, 2), 'WXX', weekday, '#' + cardinal].join('-');
         result.futureValue = futureDate;
         result.pastValue = pastDate;
         result.success = true;
@@ -640,10 +640,10 @@ export class BaseDateParser implements IDateTimeParser {
         let noYear = false;
         if (year === 0) {
             year = referenceDate.getFullYear();
-            result.timex = FormatUtil.luisDate(-1, month, day);
+            result.timex = DateTimeFormatUtil.luisDate(-1, month, day);
             noYear = true;
         } else {
-            result.timex = FormatUtil.luisDate(year, month, day);
+            result.timex = DateTimeFormatUtil.luisDate(year, month, day);
         }
         let futureDate = DateUtils.safeCreateFromMinValue(year, month, day);
         let pastDate = DateUtils.safeCreateFromMinValue(year, month, day);

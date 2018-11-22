@@ -8,22 +8,22 @@ namespace Microsoft.Recognizers.Text.DateTime.German
     public class GermanHolidayExtractorConfiguration : BaseOptionsConfiguration, IHolidayExtractorConfiguration
     {
         public static readonly Regex YearRegex = new Regex(DateTimeDefinitions.YearRegex,
-            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            RegexOptions.Singleline);
 
         public static readonly Regex H1 =
             new Regex(
                 DateTimeDefinitions.HolidayRegex1,
-                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+                RegexOptions.Singleline);
 
         public static readonly Regex H2 =
             new Regex(
                 DateTimeDefinitions.HolidayRegex2,
-                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+                RegexOptions.Singleline);
 
         public static readonly Regex H3 =
             new Regex(
                 DateTimeDefinitions.HolidayRegex3,
-                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+                RegexOptions.Singleline);
 
         public static readonly Regex[] HolidayRegexList =
         {

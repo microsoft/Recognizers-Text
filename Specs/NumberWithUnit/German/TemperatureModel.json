@@ -4,7 +4,7 @@
     "NotSupported": "javascript",
     "Results": [
       {
-        "Text": "40 °Celsius",
+        "Text": "40 °celsius",
         "TypeName": "temperature",
         "Resolution": {
           "value": "40",
@@ -22,7 +22,7 @@
     "NotSupported": "javascript",
     "Results": [
       {
-        "Text": "90 Grad Fahrenheit",
+        "Text": "90 grad fahrenheit",
         "TypeName": "temperature",
         "Resolution": {
           "value": "90",
@@ -40,7 +40,7 @@
     "NotSupported": "javascript",
     "Results": [
       {
-        "Text": "-5 Grad Fahrenheit",
+        "Text": "-5 grad fahrenheit",
         "TypeName": "temperature",
         "Resolution": {
           "value": "-5",
@@ -58,7 +58,7 @@
     "NotSupported": "javascript",
     "Results": [
       {
-        "Text": "6 Grad Celsius",
+        "Text": "6 grad celsius",
         "TypeName": "temperature",
         "Resolution": {
           "value": "6",
@@ -76,7 +76,7 @@
     "NotSupported": "javascript",
     "Results": [
       {
-        "Text": "8 Grad Celsius",
+        "Text": "8 grad celsius",
         "TypeName": "temperature",
         "Resolution": {
           "value": "8",
@@ -87,7 +87,7 @@
       }
       ,
       {
-        "Text": "5 Kelvin",
+        "Text": "5 kelvin",
         "TypeName": "temperature",
         "Resolution": {
           "value": "5",
@@ -105,7 +105,7 @@
     "NotSupported": "javascript",
     "Results": [
       {
-        "Text": "35 °C",
+        "Text": "35 °c",
         "TypeName": "temperature",
         "Resolution": {
           "value": "35",
@@ -123,7 +123,7 @@
     "NotSupported": "javascript",
     "Results": [
       {
-        "Text": "fünfunddreißig °C",
+        "Text": "fünfunddreißig °c",
         "TypeName": "temperature",
         "Resolution": {
           "value": "35",
@@ -141,7 +141,7 @@
     "NotSupported": "javascript",
     "Results": [
       {
-        "Text": "2,6 Grad",
+        "Text": "2,6 grad",
         "TypeName": "temperature",
         "Resolution": {
           "value": "2,6",
@@ -152,7 +152,7 @@
       }
       ,
       {
-        "Text": "40,3 Grad",
+        "Text": "40,3 grad",
         "TypeName": "temperature",
         "Resolution": {
           "value": "40,3",

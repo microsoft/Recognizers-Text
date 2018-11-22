@@ -17,35 +17,43 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
             var regexes = new Dictionary<Regex, TypeTag>
             {
                 {
-                    new Regex(NumbersDefinitions.DoubleSpecialsChars, RegexOptions.IgnoreCase | RegexOptions.Singleline), RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)
+                    new Regex(NumbersDefinitions.DoubleSpecialsChars, RegexOptions.Singleline),
+                    RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
                     // (-)2.5, can avoid cases like ip address xx.xx.xx.xx
-                    new Regex(NumbersDefinitions.DoubleSpecialsCharsWithNegatives, RegexOptions.IgnoreCase | RegexOptions.Singleline), RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)
+                    new Regex(NumbersDefinitions.DoubleSpecialsCharsWithNegatives, RegexOptions.Singleline),
+                    RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
                     //(-).2 
-                    new Regex(NumbersDefinitions.SimpleDoubleSpecialsChars, RegexOptions.IgnoreCase | RegexOptions.Singleline), RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)
+                    new Regex(NumbersDefinitions.SimpleDoubleSpecialsChars, RegexOptions.Singleline),
+                    RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
                     // 1.0 K
-                    new Regex(NumbersDefinitions.DoubleWithMultiplierRegex, RegexOptions.Singleline), RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)
+                    new Regex(NumbersDefinitions.DoubleWithMultiplierRegex, RegexOptions.Singleline),
+                    RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
                     //１５.２万
-                    new Regex(NumbersDefinitions.DoubleWithThousandsRegex, RegexOptions.Singleline), RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.CHINESE)
+                    new Regex(NumbersDefinitions.DoubleWithThousandsRegex, RegexOptions.Singleline),
+                    RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.CHINESE)
                 },
                 {
                     //四十五点三三
-                    new Regex(NumbersDefinitions.DoubleAllFloatRegex, RegexOptions.Singleline), RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.CHINESE)
+                    new Regex(NumbersDefinitions.DoubleAllFloatRegex, RegexOptions.Singleline),
+                    RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.CHINESE)
                 },
                 {
                     // 2e6, 21.2e0
-                    new Regex(NumbersDefinitions.DoubleExponentialNotationRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline), RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.POWER_SUFFIX)
+                    new Regex(NumbersDefinitions.DoubleExponentialNotationRegex, RegexOptions.Singleline),
+                    RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.POWER_SUFFIX)
                 },
                 {
                     //2^5
-                    new Regex(NumbersDefinitions.DoubleScientificNotationRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline), RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.POWER_SUFFIX)
+                    new Regex(NumbersDefinitions.DoubleScientificNotationRegex, RegexOptions.Singleline),
+                    RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.POWER_SUFFIX)
                 }
             };
 

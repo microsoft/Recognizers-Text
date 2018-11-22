@@ -2,7 +2,6 @@
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.English;
-using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
 {
@@ -16,7 +15,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         #region internalParsers
 
-        public IDateTimeExtractor DateExtractor { get; }
+        public IDateExtractor DateExtractor { get; }
 
         public IExtractor CardinalExtractor { get; }
 
@@ -72,30 +71,24 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public Regex LaterRegex { get; }
         public Regex LessThanRegex { get; }
         public Regex MoreThanRegex { get; }
-
         public Regex CenturySuffixRegex { get; }
 
         public static readonly Regex NextPrefixRegex =
-            new Regex(
-                DateTimeDefinitions.NextPrefixRegex,
-                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.NextPrefixRegex, RegexOptions.Singleline);
         public static readonly Regex PastPrefixRegex =
-            new Regex(
-                DateTimeDefinitions.PastPrefixRegex,
-                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.PastPrefixRegex, RegexOptions.Singleline);
         public static readonly Regex ThisPrefixRegex =
-            new Regex(
-                DateTimeDefinitions.ThisPrefixRegex,
-                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.ThisPrefixRegex, RegexOptions.Singleline);
         public static readonly Regex AfterNextSuffixRegex =
-            new Regex(
-                DateTimeDefinitions.AfterNextSuffixRegex,
-                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.AfterNextSuffixRegex, RegexOptions.Singleline);
+        public static readonly Regex RelativeRegex =
+            new Regex(DateTimeDefinitions.RelativeRegex, RegexOptions.Singleline);
 
         Regex IDatePeriodParserConfiguration.NextPrefixRegex => NextPrefixRegex;
         Regex IDatePeriodParserConfiguration.PastPrefixRegex => PastPrefixRegex;
         Regex IDatePeriodParserConfiguration.ThisPrefixRegex => ThisPrefixRegex;
-        
+        Regex IDatePeriodParserConfiguration.RelativeRegex => RelativeRegex;
+
         #endregion
 
         #region Dictionaries
@@ -179,8 +172,10 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public int GetSwiftDayOrMonth(string text)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
             var swift = 0;
+
+            var trimmedText = text.Trim().ToLowerInvariant();
+            
             if (AfterNextSuffixRegex.IsMatch(trimmedText))
             {
                 swift = 2;
@@ -193,13 +188,16 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             {
                 swift = -1;
             }
+
             return swift;
         }
 
         public int GetSwiftYear(string text)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
             var swift = -10;
+
+            var trimmedText = text.Trim().ToLowerInvariant();
+            
             if (AfterNextSuffixRegex.IsMatch(trimmedText))
             {
                 swift = 2;
@@ -216,6 +214,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             {
                 swift = 0;
             }
+
             return swift;
         }
 

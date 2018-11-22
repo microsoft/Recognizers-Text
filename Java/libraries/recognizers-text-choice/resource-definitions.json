@@ -1,0 +1,80 @@
+{
+	"outputPath": "libraries/recognizers-text-choice/src/main/java/com/microsoft/recognizers/text/choice/resources/",
+	"configFiles": [
+		{
+			"input": [
+				"English",
+				"English-Choice"
+			],
+			"output": "EnglishChoice",
+			"header": [
+				"package com.microsoft.recognizers.text.choice.resources;",
+				"",
+				"public class EnglishChoice {"
+			],
+			"footer": [
+				"}"
+			]
+		},
+		{
+			"input": [
+				"Spanish",
+				"Spanish-Choice"
+			],
+			"output": "SpanishChoice",
+			"header": [
+				"package com.microsoft.recognizers.text.choice.resources;",
+				"",
+				"public class SpanishChoice {"
+			],
+			"footer": [
+				"}"
+			]
+		},
+		{
+			"input": [
+				"Portuguese",
+				"Portuguese-Choice"
+			],
+			"output": "PortugueseChoice",
+			"header": [
+				"package com.microsoft.recognizers.text.choice.resources;",
+				"",
+				"public class PortugueseChoice {"
+			],
+			"footer": [
+				"}"
+			]
+		},
+		{
+			"input": [
+				"Chinese",
+				"Chinese-Choice"
+			],
+			"output": "ChineseChoice",
+			"header": [
+				"package com.microsoft.recognizers.text.choice.resources;",
+				"",
+				"public class ChineseChoice {"
+			],
+			"footer": [
+				"}"
+			]
+		},
+		{
+			"input": [
+				"French",
+				"French-Choice"
+			],
+			"output": "FrenchChoice",
+			"header": [
+				"package com.microsoft.recognizers.text.choice.resources;",
+				"",
+				"public class FrenchChoice {"
+			],
+			"footer": [
+				"}"
+			]
+		}
+	]
+}

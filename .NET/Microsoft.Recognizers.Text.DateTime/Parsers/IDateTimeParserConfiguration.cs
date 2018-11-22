@@ -11,7 +11,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         string TokenBeforeTime { get; }
 
-        IDateTimeExtractor DateExtractor { get; }
+        IDateExtractor DateExtractor { get; }
 
         IDateTimeExtractor TimeExtractor { get; }
 

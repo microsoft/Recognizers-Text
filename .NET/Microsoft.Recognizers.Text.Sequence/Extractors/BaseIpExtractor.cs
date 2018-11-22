@@ -17,10 +17,12 @@ namespace Microsoft.Recognizers.Text.Sequence
             var regexes = new Dictionary<Regex, string>
             {
                 {
-                    new Regex(BaseIp.Ipv4Regex), Constants.IP_REGEX_IPV4
+                    new Regex(BaseIp.Ipv4Regex),
+                    Constants.IP_REGEX_IPV4
                 },
                 {
-                    new Regex(BaseIp.Ipv6Regex), Constants.IP_REGEX_IPV6
+                    new Regex(BaseIp.Ipv6Regex),
+                    Constants.IP_REGEX_IPV6
                 }
             };
             

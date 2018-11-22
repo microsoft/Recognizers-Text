@@ -3,7 +3,7 @@ from typing import List, Dict, Set, Pattern, Match
 from copy import deepcopy
 from collections import namedtuple
 from itertools import chain
-import regex
+import regex as re
 
 from .constants import *
 from recognizers_text.utilities import RegExpUtility
@@ -36,7 +36,7 @@ class SequenceExtractor(Extractor):
         match_source: Dict[Match, str] = dict()
 
         matches_list = list(
-            map(lambda x: MatchesVal(matches=list(regex.finditer(x.re, source)), val=x.val), self.regexes))
+            map(lambda x: MatchesVal(matches=list(re.finditer(x.re, source)), val=x.val), self.regexes))
         matches_list = list(filter(lambda x: len(x.matches) > 0, matches_list))
 
         for ml in matches_list:
@@ -86,10 +86,17 @@ class BasePhoneNumberExtractor(SequenceExtractor):
     def extract(self, source: str):
         extract_results = super().extract(source)
         ret = []
+        format_indicator_regex = re.compile(BasePhoneNumbers.FormatIndicatorRegex, re.IGNORECASE | re.DOTALL)
         for er in extract_results:
             ch = source[er.start - 1]
-            if er.start == 0 or ch not in BasePhoneNumbers.SeparatorCharList:
+            if er.start == 0 or ch not in BasePhoneNumbers.BoundaryMarkers:
                 ret.append(er)
+            elif ch in BasePhoneNumbers.SpecialBoundaryMarkers and \
+                    format_indicator_regex.search(er.text) and \
+                    er.start >= 2:
+                ch_gap = source[er.start - 2]
+                if not ch_gap.isdigit():
+                    ret.append(er)
         return ret
 
     def __init__(self):

@@ -2,6 +2,7 @@
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.English;
+using Microsoft.Recognizers.Definitions.Utilities;
 using Microsoft.Recognizers.Text.Matcher;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
@@ -9,46 +10,46 @@ namespace Microsoft.Recognizers.Text.DateTime.English
     public class EnglishMergedExtractorConfiguration : BaseOptionsConfiguration, IMergedExtractorConfiguration
     {
         public static readonly Regex BeforeRegex = 
-            new Regex(DateTimeDefinitions.BeforeRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.BeforeRegex, RegexOptions.Singleline);
 
         public static readonly Regex AfterRegex = 
-            new Regex(DateTimeDefinitions.AfterRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.AfterRegex, RegexOptions.Singleline);
 
         public static readonly Regex SinceRegex =
-            new Regex(DateTimeDefinitions.SinceRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.SinceRegex, RegexOptions.Singleline);
 
         public static readonly Regex AroundRegex =
-            new Regex(DateTimeDefinitions.AroundRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.AroundRegex, RegexOptions.Singleline);
 
         public static readonly Regex FromToRegex = 
-            new Regex(DateTimeDefinitions.FromToRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.FromToRegex, RegexOptions.Singleline);
 
         public static readonly Regex SingleAmbiguousMonthRegex =
-            new Regex(DateTimeDefinitions.SingleAmbiguousMonthRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.SingleAmbiguousMonthRegex, RegexOptions.Singleline);
 
         public static readonly Regex PrepositionSuffixRegex =
-            new Regex(DateTimeDefinitions.PrepositionSuffixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.PrepositionSuffixRegex, RegexOptions.Singleline);
 
         public static readonly Regex NumberEndingPattern =
-            new Regex(DateTimeDefinitions.NumberEndingPattern, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.NumberEndingPattern, RegexOptions.Singleline);
 
         public static readonly Regex DateAfterRegex =
-            new Regex(DateTimeDefinitions.DateAfterRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.DateAfterRegex, RegexOptions.Singleline);
 
         public static readonly Regex UnspecificDatePeriodRegex =
-            new Regex(DateTimeDefinitions.UnspecificDatePeriodRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.UnspecificDatePeriodRegex, RegexOptions.Singleline);
 
-        public static readonly Regex[] FilterWordRegexList =
+        public static readonly Regex[] TermFilterRegexes =
         {
             // one on one
-            new Regex(DateTimeDefinitions.OneOnOneRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline),
+            new Regex(DateTimeDefinitions.OneOnOneRegex, RegexOptions.Singleline),
             // (the)? (day|week|month|year)
-            new Regex(DateTimeDefinitions.SingleAmbiguousTermsRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline)
+            new Regex(DateTimeDefinitions.SingleAmbiguousTermsRegex, RegexOptions.Singleline)
         };
 
         public static readonly StringMatcher SuperfluousWordMatcher = new StringMatcher();
 
-        public IDateTimeExtractor DateExtractor { get; }
+        public IDateExtractor DateExtractor { get; }
 
         public IDateTimeExtractor TimeExtractor { get; }
 
@@ -89,20 +90,12 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             DateTimeAltExtractor = new BaseDateTimeAltExtractor(new EnglishDateTimeAltExtractorConfiguration(this));
             IntegerExtractor = Number.English.IntegerExtractor.GetInstance();
 
+            AmbiguityFiltersDict = DefinitionLoader.LoadAmbiguityFilters(DateTimeDefinitions.AmbiguityFiltersDict);
+
             if ((Options & DateTimeOptions.EnablePreview) != 0)
             {
                 SuperfluousWordMatcher.Init(DateTimeDefinitions.SuperfluousWordList);
             }
-
-            var ambiguityFiltersDict = new Dictionary<Regex, Regex>();
-
-            foreach (var item in DateTimeDefinitions.AmbiguityFiltersDict)
-            {
-                ambiguityFiltersDict.Add(new Regex(item.Key, RegexOptions.IgnoreCase | RegexOptions.Singleline),
-                    new Regex(item.Value, RegexOptions.IgnoreCase | RegexOptions.Singleline));
-            }
-
-            AmbiguityFiltersDict = ambiguityFiltersDict;
 
         }
 
@@ -116,7 +109,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         Regex IMergedExtractorConfiguration.NumberEndingPattern => NumberEndingPattern;
         Regex IMergedExtractorConfiguration.DateAfterRegex => DateAfterRegex;
         Regex IMergedExtractorConfiguration.UnspecificDatePeriodRegex => UnspecificDatePeriodRegex;
-        IEnumerable<Regex> IMergedExtractorConfiguration.FilterWordRegexList => FilterWordRegexList;
+        IEnumerable<Regex> IMergedExtractorConfiguration.TermFilterRegexes => TermFilterRegexes;
         StringMatcher IMergedExtractorConfiguration.SuperfluousWordMatcher => SuperfluousWordMatcher;
     }
 }

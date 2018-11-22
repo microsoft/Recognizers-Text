@@ -19,64 +19,65 @@ namespace Microsoft.Recognizers.Text.Number.Japanese
             {
                 {
                     // ...と...の間
-                    new Regex(NumbersDefinitions.TwoNumberRangeRegex1, RegexOptions.IgnoreCase | RegexOptions.Singleline)
-                    , NumberRangeConstants.TWONUMBETWEEN
+                    new Regex(NumbersDefinitions.TwoNumberRangeRegex1, RegexOptions.Singleline),
+                    NumberRangeConstants.TWONUMBETWEEN
                 },
                 {
                     // より大きい...より小さい...
-                    new Regex(NumbersDefinitions.TwoNumberRangeRegex2, RegexOptions.IgnoreCase | RegexOptions.Singleline)
-                    , NumberRangeConstants.TWONUM
+                    new Regex(NumbersDefinitions.TwoNumberRangeRegex2, RegexOptions.Singleline),
+                    NumberRangeConstants.TWONUM
                 },
                 {
                     // より小さい...より大きい...
-                    new Regex(NumbersDefinitions.TwoNumberRangeRegex3, RegexOptions.IgnoreCase | RegexOptions.Singleline)
-                    , NumberRangeConstants.TWONUM
+                    new Regex(NumbersDefinitions.TwoNumberRangeRegex3, RegexOptions.Singleline),
+                    NumberRangeConstants.TWONUM
                 },
                 {
                     // ...と/から..., 20~30
-                    new Regex(NumbersDefinitions.TwoNumberRangeRegex4, RegexOptions.IgnoreCase | RegexOptions.Singleline)
-                    , NumberRangeConstants.TWONUMTILL
+                    new Regex(NumbersDefinitions.TwoNumberRangeRegex4, RegexOptions.Singleline),
+                    NumberRangeConstants.TWONUMTILL
                 },
                 {
                     // 大なり|大きい|高い|大きく...
-                    new Regex(NumbersDefinitions.OneNumberRangeMoreRegex1, RegexOptions.IgnoreCase | RegexOptions.Singleline)
-                    , NumberRangeConstants.MORE
+                    new Regex(NumbersDefinitions.OneNumberRangeMoreRegex1, RegexOptions.Singleline),
+                    NumberRangeConstants.MORE
                 },
                 {
                     // ...より大なり|大きい|高い|大きく
-                    new Regex(NumbersDefinitions.OneNumberRangeMoreRegex2, RegexOptions.IgnoreCase | RegexOptions.Singleline)
-                    , NumberRangeConstants.MORE
+                    new Regex(NumbersDefinitions.OneNumberRangeMoreRegex2, RegexOptions.Singleline),
+                    NumberRangeConstants.MORE
                 },
                 {
                     // ...以上
-                    new Regex(NumbersDefinitions.OneNumberRangeMoreRegex3, RegexOptions.IgnoreCase | RegexOptions.Singleline)
-                    , NumberRangeConstants.MORE
+                    new Regex(NumbersDefinitions.OneNumberRangeMoreRegex3, RegexOptions.Singleline),
+                    NumberRangeConstants.MORE
                 },
                 {
                     // 小なり|小さい|低い...
-                    new Regex(NumbersDefinitions.OneNumberRangeLessRegex1, RegexOptions.IgnoreCase | RegexOptions.Singleline)
-                    , NumberRangeConstants.LESS
+                    new Regex(NumbersDefinitions.OneNumberRangeLessRegex1, RegexOptions.Singleline),
+                    NumberRangeConstants.LESS
                 },
                 {
                     // ...より小なり|小さい|低い
-                    new Regex(NumbersDefinitions.OneNumberRangeLessRegex2, RegexOptions.IgnoreCase | RegexOptions.Singleline)
-                    , NumberRangeConstants.LESS
+                    new Regex(NumbersDefinitions.OneNumberRangeLessRegex2, RegexOptions.Singleline),
+                    NumberRangeConstants.LESS
                 },
                 {
                     // ...以下
-                    new Regex(NumbersDefinitions.OneNumberRangeLessRegex3, RegexOptions.IgnoreCase | RegexOptions.Singleline)
-                    , NumberRangeConstants.LESS
+                    new Regex(NumbersDefinitions.OneNumberRangeLessRegex3, RegexOptions.Singleline),
+                    NumberRangeConstants.LESS
                 },
                 {
                     // イコール...　｜　...等しい|
-                    new Regex(NumbersDefinitions.OneNumberRangeEqualRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline)
-                    , NumberRangeConstants.EQUAL
+                    new Regex(NumbersDefinitions.OneNumberRangeEqualRegex, RegexOptions.Singleline),
+                    NumberRangeConstants.EQUAL
                 }
             };
 
             Regexes = regexes.ToImmutableDictionary();
 
-            AmbiguousFractionConnectorsRegex = new Regex(NumbersDefinitions.AmbiguousFractionConnectorsRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            AmbiguousFractionConnectorsRegex = 
+                new Regex(NumbersDefinitions.AmbiguousFractionConnectorsRegex, RegexOptions.Singleline);
         }
     }
 }

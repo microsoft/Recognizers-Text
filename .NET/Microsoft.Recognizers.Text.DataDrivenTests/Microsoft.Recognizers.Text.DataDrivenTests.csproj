@@ -68,6 +68,7 @@
     <Compile Include="Choice\TestChoice_Spanish.cs" />
     <Compile Include="Choice\TestChoice_Portuguese.cs" />
     <Compile Include="DateTime\TestDateTimeRecognizerCache.cs" />
+    <Compile Include="DateTime\TestDateTime_Japanese.cs" />
     <Compile Include="DateTime\TestDateTime_Chinese.cs" />
     <Compile Include="DateTime\TestDateTime_Italian.cs" />
     <Compile Include="DateTime\TestDateTime_EnglishOthers.cs" />

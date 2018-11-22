@@ -1,16 +1,13 @@
 package com.microsoft.recognizers.text.number.parsers;
 
-import com.google.common.collect.Iterables;
 import com.microsoft.recognizers.text.ExtractResult;
 import com.microsoft.recognizers.text.ParseResult;
 import com.microsoft.recognizers.text.utilities.Match;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
 import com.microsoft.recognizers.text.utilities.StringUtility;
 
-import javax.annotation.RegEx;
-import java.util.Arrays;
+import java.util.Locale;
 import java.util.Map;
-import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class BaseCJKNumberParser extends BaseNumberParser {
@@ -24,6 +21,7 @@ public class BaseCJKNumberParser extends BaseNumberParser {
 
     @Override
     public ParseResult parse(ExtractResult extResult) {
+
         // check if the parser is configured to support specific types
         if (supportedTypes.isPresent() && !supportedTypes.get().stream().anyMatch(t -> extResult.type.equals(t))) {
             return null;
@@ -67,7 +65,7 @@ public class BaseCJKNumberParser extends BaseNumberParser {
         }
 
         if (ret != null) {
-            ret = ret.withText(extResult.text);
+            ret = ret.withText(extResult.text.toLowerCase(Locale.ROOT));
         }
 
         return ret;
@@ -79,7 +77,10 @@ public class BaseCJKNumberParser extends BaseNumberParser {
 
         String resultText = extResult.text;
         String[] splitResult = cjkConfig.getFracSplitRegex().split(resultText);
-        String intPart = "", demoPart = "", numPart = "";
+        String intPart = "";
+        String demoPart = "";
+        String numPart = "";
+        
         if (splitResult.length == 3) {
             intPart = splitResult[0];
             demoPart = splitResult[1];
@@ -185,8 +186,8 @@ public class BaseCJKNumberParser extends BaseNumberParser {
             Match[] doubleMatches = RegExpUtility.getMatches(cjkConfig.getPercentageRegex(), resultText);
             String doubleText = doubleMatches[doubleMatches.length - 1].value;
 
-            if (doubleText.contains("k") || doubleText.contains("K") || doubleText.contains("ｋ") ||
-                    doubleText.contains("Ｋ")) {
+            if (doubleText.contains("k") || doubleText.contains("K") || doubleText.contains("ｋ")
+                || doubleText.contains("Ｋ")) {
                 power = 1000;
             }
 
@@ -349,9 +350,13 @@ public class BaseCJKNumberParser extends BaseNumberParser {
         Map<Character, Long> roundNumberMapChar = cjkConfig.getRoundNumberMapChar();
 
         intStr = replaceUnit(intStr);
-        double intValue = 0, partValue = 0, beforeValue = 1;
+        double intValue = 0;
+        double partValue = 0;
+        double beforeValue = 1;
+
         boolean isRoundBefore = false;
-        long roundBefore = -1, roundDefault = 1;
+        long roundBefore = -1;
+        long roundDefault = 1;
         boolean isNegative = false;
 
         boolean isDozen = false;

@@ -3,14 +3,18 @@ package com.microsoft.recognizers.text.numberwithunit.english.extractors;
 import com.microsoft.recognizers.text.Culture;
 import com.microsoft.recognizers.text.CultureInfo;
 import com.microsoft.recognizers.text.numberwithunit.Constants;
+import com.microsoft.recognizers.text.numberwithunit.resources.BaseUnits;
 import com.microsoft.recognizers.text.numberwithunit.resources.EnglishNumericWithUnit;
 
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.regex.Pattern;
 
 public class TemperatureExtractorConfiguration extends EnglishNumberWithUnitExtractorConfiguration {
+
+    private final Pattern ambiguousUnitNumberMultiplierRegex;
 
     public TemperatureExtractorConfiguration() {
         this(new CultureInfo(Culture.English));
@@ -18,6 +22,9 @@ public class TemperatureExtractorConfiguration extends EnglishNumberWithUnitExtr
 
     public TemperatureExtractorConfiguration(CultureInfo ci) {
         super(ci);
+
+        this.ambiguousUnitNumberMultiplierRegex =
+                Pattern.compile(BaseUnits.AmbiguousUnitNumberMultiplierRegex, Pattern.UNICODE_CHARACTER_CLASS);
     }
 
     @Override
@@ -36,9 +43,14 @@ public class TemperatureExtractorConfiguration extends EnglishNumberWithUnitExtr
     }
 
     @Override
+    public Pattern getAmbiguousUnitNumberMultiplierRegex() {
+        return this.ambiguousUnitNumberMultiplierRegex;
+    }
+
+    @Override
     public List<String> getAmbiguousUnitList() {
         return EnglishNumericWithUnit.AmbiguousTemperatureUnitList;
     }
 
-    public static Map<String, String> TemperatureSuffixList = new HashMap(EnglishNumericWithUnit.TemperatureSuffixList);
+    public static Map<String, String> TemperatureSuffixList = new HashMap<String, String>(EnglishNumericWithUnit.TemperatureSuffixList);
 }
