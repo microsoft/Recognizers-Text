@@ -28,7 +28,7 @@ public class NumberWithUnitParser implements IParser {
         ExtractResult numberResult;
 
         if (extResult.data instanceof ExtractResult) {
-            numberResult = (ExtractResult) extResult.data;
+            numberResult = (ExtractResult)extResult.data;
         } else if (extResult.type.equals(Constants.SYS_NUM)) {
             return ret.withValue(config.getInternalNumberParser().parse(extResult).value);
         } else {
@@ -80,9 +80,9 @@ public class NumberWithUnitParser implements IParser {
 
             if (unitValue != null) {
 
-                ParseResult numValue = numberResult.text == null || numberResult.text.isEmpty()
-                        ? null
-                        : this.config.getInternalNumberParser().parse(numberResult);
+                ParseResult numValue = numberResult.text == null || numberResult.text.isEmpty() ?
+                        null :
+                        this.config.getInternalNumberParser().parse(numberResult);
 
                 String resolutionStr = numValue != null ? numValue.resolutionStr : null;
 
