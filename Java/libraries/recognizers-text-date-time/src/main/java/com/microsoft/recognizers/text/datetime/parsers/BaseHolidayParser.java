@@ -36,11 +36,12 @@ public class BaseHolidayParser implements IDateTimeParser {
 
     @Override
     public DateTimeParseResult parse(ExtractResult er, LocalDateTime reference) {
+        
         LocalDateTime referenceDate = reference;
         Object value = null;
 
-        if (er.type.equals(getParserName()))
-        {
+        if (er.type.equals(getParserName())) {
+            
             DateTimeResolutionResult innerResult = ParseHolidayRegexMatch(er.text, referenceDate);
 
             if (innerResult.getSuccess()) {
@@ -79,15 +80,14 @@ public class BaseHolidayParser implements IDateTimeParser {
         return this.parse(extractResult, LocalDateTime.now());
     }
 
-    private DateTimeResolutionResult ParseHolidayRegexMatch(String text, LocalDateTime referenceDate)
-    {
+    private DateTimeResolutionResult ParseHolidayRegexMatch(String text, LocalDateTime referenceDate) {
+        
         String trimmedText = StringUtility.trimEnd(StringUtility.trimEnd(text));
-        for (Pattern pattern : this.config.getHolidayRegexList())
-        {
+        for (Pattern pattern : this.config.getHolidayRegexList()) {
+            
             int offset = 0;
             Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(pattern, text)).findFirst();
-            if (match.isPresent() && match.get().index == offset && match.get().length == trimmedText.length())
-            {
+            if (match.isPresent() && match.get().index == offset && match.get().length == trimmedText.length()) {
                 // LUIS value string will be set in Match2Date method
                 DateTimeResolutionResult ret = Match2Date(match.get(), referenceDate);
 
@@ -98,8 +98,8 @@ public class BaseHolidayParser implements IDateTimeParser {
         return new DateTimeResolutionResult();
     }
 
-    private DateTimeResolutionResult Match2Date(Match match, LocalDateTime referenceDate)
-    {
+    private DateTimeResolutionResult Match2Date(Match match, LocalDateTime referenceDate) {
+        
         DateTimeResolutionResult ret = new DateTimeResolutionResult();
         String holidayStr = this.config.sanitizeHolidayToken(match.getGroup("holiday").value.toLowerCase(Locale.ROOT));
 
@@ -112,40 +112,37 @@ public class BaseHolidayParser implements IDateTimeParser {
         if (!StringUtility.isNullOrEmpty(yearStr)) {
             year = parseInt(yearStr);
             hasYear = true;
-        }
-        else if (!StringUtility.isNullOrEmpty(orderStr)) {
+        } else if (!StringUtility.isNullOrEmpty(orderStr)) {
             int swift = this.config.getSwiftYear((orderStr));
-            if (swift < -1) return  ret;
+            if (swift < -1) {
+                return  ret;
+            }
 
             year = referenceDate.getYear() + swift;
             hasYear = true;
-        }
-        else {
+        } else {
             year = referenceDate.getYear();
         }
 
         String holidayKey = "";
-        for (ImmutableMap.Entry<String, Iterable<String>> holidayPair : this.config.getHolidayNames().entrySet())
-        {
-            if (StreamSupport.stream(holidayPair.getValue().spliterator(), false).anyMatch(name -> holidayStr.equals(name)))
-            {
+        for (ImmutableMap.Entry<String, Iterable<String>> holidayPair : this.config.getHolidayNames().entrySet()) {
+            if (StreamSupport.stream(holidayPair.getValue().spliterator(), false).anyMatch(name -> holidayStr.equals(name))) {
                 holidayKey = holidayPair.getKey();
                 break;
             }
         }
 
         String timexStr = "";
-        if (!StringUtility.isNullOrEmpty(holidayKey))
-        {
+        if (!StringUtility.isNullOrEmpty(holidayKey)) {
+            
             LocalDateTime value = referenceDate;
             IntFunction<LocalDateTime> function = this.config.getHolidayFuncDictionary().get(holidayKey);
-            if (function != null)
-            {
+            if (function != null) {
+                
                 value = function.apply(year);
 
                 timexStr = this.config.getVariableHolidaysTimexDictionary().get(holidayKey);
-                if (StringUtility.isNullOrEmpty(timexStr))
-                {
+                if (StringUtility.isNullOrEmpty(timexStr)) {
                     timexStr = String.format("-%02d-%02d", value.getMonthValue(), value.getDayOfMonth());
                 }
             }
@@ -154,7 +151,7 @@ public class BaseHolidayParser implements IDateTimeParser {
                 return ret;
             }
 
-            if (value.equals(DateUtil.minValue())){
+            if (value.equals(DateUtil.minValue())) {
                 ret.setTimex("");
                 ret.setPastValue(DateUtil.minValue());
                 ret.setFutureValue(DateUtil.minValue());
@@ -180,7 +177,9 @@ public class BaseHolidayParser implements IDateTimeParser {
 
         return ret;
     }
+    
     private LocalDateTime GetFutureValue(LocalDateTime value, LocalDateTime referenceDate, String holiday) {
+
         if (value.isBefore(referenceDate)) {
             IntFunction<LocalDateTime> function = this.config.getHolidayFuncDictionary().get(holiday);
             if (function != null) {
@@ -192,6 +191,7 @@ public class BaseHolidayParser implements IDateTimeParser {
     }
 
     private LocalDateTime GetPastValue(LocalDateTime value, LocalDateTime referenceDate, String holiday) {
+
         if (value.isAfter(referenceDate) || value == referenceDate) {
             IntFunction<LocalDateTime> function = this.config.getHolidayFuncDictionary().get(holiday);
             if (function != null) {
