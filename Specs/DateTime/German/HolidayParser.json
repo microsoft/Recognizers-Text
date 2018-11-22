@@ -796,7 +796,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript, python, dotNet",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "erster Advent",
@@ -820,7 +820,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "erster Advent 2018",
@@ -844,7 +844,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "1. Advent",
@@ -868,13 +868,13 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "1. Advent 2018",
         "Type": "date",
         "Value": {
-          "Timex": "XXXX",
+          "Timex": "2018-12-02",
           "FutureResolution": {
             "date": "2018-12-02"
           },
@@ -892,7 +892,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "zweiten Advent",
@@ -916,7 +916,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "zweiten Advent 2018",
@@ -931,7 +931,7 @@
           }
         },
         "Start": 20,
-        "Length": 18
+        "Length": 19
       }
     ]
   },
@@ -940,7 +940,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "2. Advent",
@@ -964,7 +964,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "2. Advent 2018",
@@ -988,7 +988,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "3. Advent",
@@ -1012,18 +1012,18 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "3. Advent 2018",
         "Type": "date",
         "Value": {
-          "Timex": "2018-12-06",
+          "Timex": "2018-12-16",
           "FutureResolution": {
-            "date": "2018-12-06"
+            "date": "2018-12-16"
           },
           "PastResolution": {
-            "date": "2018-12-06"
+            "date": "2018-12-16"
           }
         },
         "Start": 20,
@@ -1036,7 +1036,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "dritter Advent",
@@ -1060,18 +1060,18 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "dritter Advent 2018",
         "Type": "date",
         "Value": {
-          "Timex": "2018-12-06",
+          "Timex": "2018-12-16",
           "FutureResolution": {
-            "date": "2018-12-06"
+            "date": "2018-12-16"
           },
           "PastResolution": {
-            "date": "2018-12-06"
+            "date": "2018-12-16"
           }
         },
         "Start": 20,
@@ -1084,7 +1084,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "4. Advent",
@@ -1108,7 +1108,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "4. Advent 2018",
@@ -1132,7 +1132,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "vierter Advent",
@@ -1140,10 +1140,10 @@
         "Value": {
           "Timex": "XXXX",
           "FutureResolution": {
-            "date": "2018-12-23"
+            "date": "2016-12-18"
           },
           "PastResolution": {
-            "date": "2017-12-24"
+            "date": "2015-12-20"
           }
         },
         "Start": 20,
@@ -1156,18 +1156,18 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "vierter Advent 2018",
         "Type": "date",
         "Value": {
-          "Timex": "2018-12-06",
+          "Timex": "2018-12-23",
           "FutureResolution": {
-            "date": "2018-12-06"
+            "date": "2018-12-23"
           },
           "PastResolution": {
-            "date": "2018-12-06"
+            "date": "2018-12-23"
           }
         },
         "Start": 20,
@@ -1195,7 +1195,7 @@
           }
         },
         "Start": 20,
-        "Length": 14
+        "Length": 25
       }
     ]
   },
