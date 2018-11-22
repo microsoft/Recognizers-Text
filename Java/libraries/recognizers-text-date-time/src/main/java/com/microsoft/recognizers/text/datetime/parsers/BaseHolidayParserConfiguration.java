@@ -15,6 +15,7 @@ import java.util.function.IntFunction;
 import java.util.regex.Pattern;
 
 public abstract class BaseHolidayParserConfiguration extends BaseOptionsConfiguration implements IHolidayParserConfiguration {
+
     private ImmutableMap<String, String> VariableHolidaysTimexDictionary;
     public final ImmutableMap<String, String> getVariableHolidaysTimexDictionary() { return VariableHolidaysTimexDictionary; }
     protected final void setVariableHolidaysTimexDictionary(ImmutableMap<String, String> value) { VariableHolidaysTimexDictionary = value; }
@@ -22,7 +23,6 @@ public abstract class BaseHolidayParserConfiguration extends BaseOptionsConfigur
     private ImmutableMap<String, IntFunction<LocalDateTime>> HolidayFuncDictionary;
     public final ImmutableMap<String, IntFunction<LocalDateTime>> getHolidayFuncDictionary() { return HolidayFuncDictionary; }
     protected final void setHolidayFuncDictionary(ImmutableMap<String, IntFunction<LocalDateTime>> value) { HolidayFuncDictionary = value; }
-
 
     private ImmutableMap<String, Iterable<String>> HolidayNames;
     public final ImmutableMap<String, Iterable<String>> getHolidayNames() { return HolidayNames; }
@@ -32,15 +32,13 @@ public abstract class BaseHolidayParserConfiguration extends BaseOptionsConfigur
     public final Iterable<Pattern> getHolidayRegexList() { return HolidayRegexList; }
     protected final void setHolidayRegexList(Iterable<Pattern> value) { HolidayRegexList = value; }
 
-    protected BaseHolidayParserConfiguration()
-    {
+    protected BaseHolidayParserConfiguration() {
         super(DateTimeOptions.None);
         this.VariableHolidaysTimexDictionary = BaseDateTime.VariableHolidaysTimexDictionary;
         this.setHolidayFuncDictionary(ImmutableMap.copyOf(InitHolidayFuncs()));
     }
 
-    protected HashMap<String, IntFunction<LocalDateTime>> InitHolidayFuncs()
-    {
+    protected HashMap<String, IntFunction<LocalDateTime>> InitHolidayFuncs() {
         HashMap<String, IntFunction<LocalDateTime>> holidays = new HashMap<>();
         holidays.put("labour", BaseHolidayParserConfiguration::LabourDay);
         holidays.put("fathers", BaseHolidayParserConfiguration::FathersDay);
@@ -56,7 +54,6 @@ public abstract class BaseHolidayParserConfiguration extends BaseOptionsConfigur
         return holidays;
     }
 
-
     public abstract int getSwiftYear(String text);
     public abstract String sanitizeHolidayToken(String holiday);
 
@@ -70,14 +67,14 @@ public abstract class BaseHolidayParserConfiguration extends BaseOptionsConfigur
     protected static LocalDateTime ColumbusDay(int year) { return DateUtil.safeCreateFromMinValue(year, 10, GetDay(year,10, 1, DayOfWeek.MONDAY)); }
     protected static LocalDateTime ThanksgivingDay(int year) { return DateUtil.safeCreateFromMinValue(year, 11, GetDay(year,11, 3, DayOfWeek.THURSDAY)); }
 
-    protected static int GetDay(int year, int month, int week, DayOfWeek dayOfWeek)
-    {
+    protected static int GetDay(int year, int month, int week, DayOfWeek dayOfWeek) {
+        
         YearMonth yearMonthObject = YearMonth.of(year, month);
         int daysInMonth = yearMonthObject.lengthOfMonth();
 
         int weekCount = 0;
         for (int day = 1; day < daysInMonth + 1; day++) {
-            if (DateUtil.safeCreateFromMinValue(year,month,day).getDayOfWeek() == dayOfWeek){
+            if (DateUtil.safeCreateFromMinValue(year,month,day).getDayOfWeek() == dayOfWeek) {
                 weekCount++;
                 if (weekCount == week + 1) {
                     return day;
@@ -88,14 +85,14 @@ public abstract class BaseHolidayParserConfiguration extends BaseOptionsConfigur
         throw new Error("day out of bound.");
     }
 
-    protected static int GetLastDay(int year, int month, DayOfWeek dayOfWeek)
-    {
+    protected static int GetLastDay(int year, int month, DayOfWeek dayOfWeek) {
+        
         YearMonth yearMonthObject = YearMonth.of(year, month);
         int daysInMonth = yearMonthObject.lengthOfMonth();
 
         int lastDay = 0;
         for (int day = 1; day < daysInMonth + 1; day++) {
-            if (DateUtil.safeCreateFromMinValue(year,month,day).getDayOfWeek() == dayOfWeek){
+            if (DateUtil.safeCreateFromMinValue(year,month,day).getDayOfWeek() == dayOfWeek) {
                 lastDay = day;
             }
         }
