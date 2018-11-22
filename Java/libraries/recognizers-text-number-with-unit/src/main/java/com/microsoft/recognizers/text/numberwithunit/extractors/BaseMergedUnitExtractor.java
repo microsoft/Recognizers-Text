@@ -30,19 +30,22 @@ public class BaseMergedUnitExtractor implements IExtractor {
         }
     }
 
+    @SuppressWarnings("unchecked")
     private List<ExtractResult> mergeCompoundUnits(String source) {
         List<ExtractResult> ers = new NumberWithUnitExtractor(config).extract(source);
         mergePureNumber(source, ers);
 
-        if(ers.size() == 0) return ers;
+        if (ers.size() == 0) {
+            return ers;
+        }            
 
         List<ExtractResult> result = new ArrayList<>();
         int[] groups = new int[ers.size()];
         groups[0] = 0;
         for (int idx = 0; idx < ers.size() - 1; idx++) {
-            if (!ers.get(idx).type.equals(ers.get(idx + 1).type) &&
-                    !ers.get(idx).type.equals(Constants.SYS_NUM) &&
-                    !ers.get(idx + 1).type.equals(Constants.SYS_NUM)) {
+            if (!ers.get(idx).type.equals(ers.get(idx + 1).type)
+                &&  !ers.get(idx).type.equals(Constants.SYS_NUM)
+                &&  !ers.get(idx + 1).type.equals(Constants.SYS_NUM)) {
                 continue;
             }
 
@@ -173,9 +176,9 @@ public class BaseMergedUnitExtractor implements IExtractor {
             }
         }
 
-        Collections.sort(ers, (Comparator) (xO, yO) -> {
-            ExtractResult x = (ExtractResult) xO;
-            ExtractResult y = (ExtractResult) yO;
+        Collections.sort(ers, (Comparator<ExtractResult>) (xo, yo) -> {
+            ExtractResult x = (ExtractResult) xo;
+            ExtractResult y = (ExtractResult) yo;
             return x.start - y.start;
         });
     }

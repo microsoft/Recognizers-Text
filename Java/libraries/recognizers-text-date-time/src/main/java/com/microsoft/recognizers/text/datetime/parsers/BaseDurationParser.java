@@ -55,11 +55,11 @@ public class BaseDurationParser implements IDateTimeParser {
 
             if (innerResult.getSuccess()) {
                 innerResult.setFutureResolution(ImmutableMap.<String, String>builder()
-                        .put(TimeTypeConstants.DURATION, StringUtility.format((Double)innerResult.getFutureValue()))
+                        .put(TimeTypeConstants.DURATION, StringUtility.format((Double) innerResult.getFutureValue()))
                         .build());
 
                 innerResult.setPastResolution(ImmutableMap.<String, String>builder()
-                        .put(TimeTypeConstants.DURATION, StringUtility.format((Double)innerResult.getPastValue()))
+                        .put(TimeTypeConstants.DURATION, StringUtility.format((Double) innerResult.getPastValue()))
                         .build());
 
                 if (er.data != null) {
@@ -82,7 +82,7 @@ public class BaseDurationParser implements IDateTimeParser {
                 er.data,
                 value,
                 "",
-                value == null ? "" : ((DateTimeResolutionResult)value).getTimex()
+                value == null ? "" : ((DateTimeResolutionResult) value).getTimex()
         );
 
         return result;
@@ -148,7 +148,7 @@ public class BaseDurationParser implements IDateTimeParser {
 
             double value = 0;
             for (DateTimeParseResult pr : prs) {
-                value += Double.parseDouble(((DateTimeResolutionResult)pr.value).getFutureValue().toString());
+                value += Double.parseDouble(((DateTimeResolutionResult) pr.value).getFutureValue().toString());
             }
 
             result.setFutureValue(value);
@@ -250,7 +250,7 @@ public class BaseDurationParser implements IDateTimeParser {
                 String unitStr = config.getUnitMap().get(srcUnit);
 
                 if ((numVal > 1000) && (unitStr.equals("Y") || unitStr.equals("MON") || unitStr.equals("W"))) {
-                    return  result;
+                    return result;
                 }
 
                 String timex = String.format("P%s%s%c", isLessThanDay(unitStr) ? "T" : "", numStr, unitStr.charAt(0));

@@ -18,9 +18,8 @@ public class DinoComparer implements Comparator<String> {
         } else {
             // If x is not null...
             //
-            if (y == null)
-            // ...and y is null, x is greater.
-            {
+            if (y == null) {
+                // ...and y is null, x is greater.
                 return -1;
             } else {
                 // ...and y is not null, compare the

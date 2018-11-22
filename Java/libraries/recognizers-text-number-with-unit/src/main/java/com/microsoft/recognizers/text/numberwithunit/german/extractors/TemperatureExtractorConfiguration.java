@@ -43,12 +43,14 @@ public class TemperatureExtractorConfiguration extends GermanNumberWithUnitExtra
     }
 
     @Override
-    public Pattern getAmbiguousUnitNumberMultiplierRegex() { return this.ambiguousUnitNumberMultiplierRegex; }
+    public Pattern getAmbiguousUnitNumberMultiplierRegex() {
+        return this.ambiguousUnitNumberMultiplierRegex;
+    }
 
     @Override
     public List<String> getAmbiguousUnitList() {
         return GermanNumericWithUnit.AmbiguousTemperatureUnitList;
     }
 
-    public static Map<String, String> TemperatureSuffixList = new HashMap(GermanNumericWithUnit.TemperatureSuffixList);
+    public static Map<String, String> TemperatureSuffixList = new HashMap<String, String>(GermanNumericWithUnit.TemperatureSuffixList);
 }

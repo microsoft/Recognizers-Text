@@ -43,12 +43,14 @@ public class TemperatureExtractorConfiguration extends PortugueseNumberWithUnitE
     }
 
     @Override
-    public Pattern getAmbiguousUnitNumberMultiplierRegex() { return this.ambiguousUnitNumberMultiplierRegex; }
+    public Pattern getAmbiguousUnitNumberMultiplierRegex() {
+        return this.ambiguousUnitNumberMultiplierRegex;
+    }
 
     @Override
     public List<String> getAmbiguousUnitList() {
         return Collections.emptyList();
     }
 
-    public static Map<String, String> TemperatureSuffixList = new HashMap(PortugueseNumericWithUnit.TemperatureSuffixList);
+    public static Map<String, String> TemperatureSuffixList = new HashMap<String, String>(PortugueseNumericWithUnit.TemperatureSuffixList);
 }

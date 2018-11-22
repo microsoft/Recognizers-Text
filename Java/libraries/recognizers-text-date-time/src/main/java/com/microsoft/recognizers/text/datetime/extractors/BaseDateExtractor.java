@@ -58,7 +58,7 @@ public class BaseDateExtractor implements IDateTimeExtractor {
             }
         }
 
-        return  result;
+        return result;
     }
 
     // match several other cases
@@ -74,7 +74,7 @@ public class BaseDateExtractor implements IDateTimeExtractor {
             }
         }
 
-        return  result;
+        return result;
     }
 
     // Check every integers and ordinal number for date
@@ -290,7 +290,7 @@ public class BaseDateExtractor implements IDateTimeExtractor {
         ExtractResult result = er;
         result = stripInequalityPrefix(result, config.getMoreThanRegex());
         result = stripInequalityPrefix(result, config.getLessThanRegex());
-        return  result;
+        return result;
     }
 
     private ExtractResult stripInequalityPrefix(ExtractResult er, Pattern regex) {
