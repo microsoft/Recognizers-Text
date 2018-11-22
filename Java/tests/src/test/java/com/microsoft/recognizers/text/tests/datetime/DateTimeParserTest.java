@@ -47,6 +47,7 @@ public class DateTimeParserTest extends AbstractTest {
     }
 
     protected List<DateTimeParseResult> parse(TestCase currentCase) {
+
         IDateTimeExtractor extractor = getExtractor(currentCase);
         IDateTimeParser parser = getParser(currentCase);
         LocalDateTime referenceDateTime = currentCase.getReferenceDateTime();
@@ -56,37 +57,40 @@ public class DateTimeParserTest extends AbstractTest {
 
     @Override
     protected void recognizeAndAssert(TestCase currentCase) {
+
         List<DateTimeParseResult> results = parse(currentCase);
         assertParseResults(currentCase, results);
     }
 
     public static void assertParseResults(TestCase currentCase, List<DateTimeParseResult> results) {
+
         List<DateTimeParseResult> expectedResults = readExpectedDateTimeParseResults(DateTimeParseResult.class, currentCase.results);
         Assert.assertEquals(getMessage(currentCase, "\"Result Count\""), expectedResults.size(), results.size());
 
         IntStream.range(0, expectedResults.size())
-                 .mapToObj(i -> Pair.with(expectedResults.get(i), results.get(i)))
-                 .forEach(t -> {
-                     DateTimeParseResult expected = t.getValue0();
-                     DateTimeParseResult actual = t.getValue1();
+                .mapToObj(i -> Pair.with(expectedResults.get(i), results.get(i)))
+                .forEach(t -> {
+                    DateTimeParseResult expected = t.getValue0();
+                    DateTimeParseResult actual = t.getValue1();
 
-                     Assert.assertEquals(getMessage(currentCase, "type"), expected.type, actual.type);
-                     Assert.assertEquals(getMessage(currentCase, "text"), expected.text, actual.text);
-                     Assert.assertEquals(getMessage(currentCase, "start"), expected.start, actual.start);
-                     Assert.assertEquals(getMessage(currentCase, "length"), expected.length, actual.length);
+                    Assert.assertEquals(getMessage(currentCase, "type"), expected.type, actual.type);
+                    Assert.assertEquals(getMessage(currentCase, "text"), expected.text, actual.text);
+                    Assert.assertEquals(getMessage(currentCase, "start"), expected.start, actual.start);
+                    Assert.assertEquals(getMessage(currentCase, "length"), expected.length, actual.length);
 
-                     if (expected.value != null) {
-                         DateTimeResolutionResult expectedValue = parseDateTimeResolutionResult(DateTimeResolutionResult.class, expected.value);
-                         DateTimeResolutionResult actualValue = (DateTimeResolutionResult) actual.value;
+                    if (expected.value != null) {
+                        DateTimeResolutionResult expectedValue = parseDateTimeResolutionResult(DateTimeResolutionResult.class, expected.value);
+                        DateTimeResolutionResult actualValue = (DateTimeResolutionResult) actual.value;
 
-                         Assert.assertEquals(getMessage(currentCase, "timex"), expectedValue.getTimex(), actualValue.getTimex());
-                         Assert.assertEquals(getMessage(currentCase, "futureResolution"), expectedValue.getFutureResolution(), actualValue.getFutureResolution());
-                         Assert.assertEquals(getMessage(currentCase, "pastResolution"), expectedValue.getPastResolution(), actualValue.getPastResolution());
-                     }
+                        Assert.assertEquals(getMessage(currentCase, "timex"), expectedValue.getTimex(), actualValue.getTimex());
+                        Assert.assertEquals(getMessage(currentCase, "futureResolution"), expectedValue.getFutureResolution(), actualValue.getFutureResolution());
+                        Assert.assertEquals(getMessage(currentCase, "pastResolution"), expectedValue.getPastResolution(), actualValue.getPastResolution());
+                    }
                 });
     }
 
     private static IDateTimeParser getParser(TestCase currentCase) {
+
         try {
             String culture = getCultureCode(currentCase.language);
             String name = currentCase.modelName;
@@ -102,6 +106,7 @@ public class DateTimeParserTest extends AbstractTest {
     }
 
     private static IDateTimeParser getEnglishParser(String name) {
+
         switch (name) {
             case "DateParser":
                 return new BaseDateParser(new EnglishDateParserConfiguration(new EnglishCommonDateTimeParserConfiguration(DateTimeOptions.None)));
@@ -121,6 +126,7 @@ public class DateTimeParserTest extends AbstractTest {
     }
 
     private IDateTimeExtractor getExtractor(TestCase currentCase) {
+
         String extractorName = currentCase.modelName.replace("Parser", "Extractor");
         return DateTimeExtractorTest.getExtractor(currentCase.language, extractorName);
     }
