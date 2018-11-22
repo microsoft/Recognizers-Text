@@ -328,5 +328,830 @@
         "Length": 9
       }
     ]
+  },
+  {
+    "Input": "Estaré afuera de 5 a 6 pm",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "de 5 a 6 pm",
+        "Type": "timerange",
+        "Start": 14,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Estaré afuera de 5 a 6 p. m.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "de 5 a 5 p. m.",
+        "Type": "timerange",
+        "Start": 14,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Estaré afuera de 5 a 6 de la tarde",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "de 5 a 6 de la tarde",
+        "Type": "timerange",
+        "Start": 14,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Estaré afuera de las 5 a las siete de la mañana",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "de las 5 a las siete de la mañana",
+        "Type": "timerange",
+        "Start": 14,
+        "Length": 33
+      }
+    ]
+  },
+  {
+    "Input": "Estaré afuera de las 5 a las 6 pm",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "de las 5 a las 6 pm",
+        "Type": "timerange",
+        "Start": 14,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Estaré afuera entre 5 y 6 p. m.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "entre 5 y 6 p. m.",
+        "Type": "timerange",
+        "Start": 14,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Estaré afuera entre 5 pm y 6 pm",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "entre 5 pm y 6 pm",
+        "Type": "timerange",
+        "Start": 14,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Estaré afuera entre las 5 y las 6 de la tarde",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "entre las 5 y las 6 de la tarde",
+        "Type": "timerange",
+        "Start": 14,
+        "Length": 31
+      }
+    ]
+  },
+  {
+    "Input": "Estaré afuera desde 4 pm hasta 5 pm",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "desde 4 pm hasta 5 pm",
+        "Type": "timerange",
+        "Start": 14,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Estaré afuera desde las 4 hasta las 5 de la tarde",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "desde las 4 hasta las 5 de la tarde",
+        "Type": "timerange",
+        "Start": 14,
+        "Length": 35
+      }
+    ]
+  },
+  {
+    "Input": "Estaré afuera desde las 4 hasta las 5 p. m.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "desde las 4 hasta las 5 p. m.",
+        "Type": "timerange",
+        "Start": 14,
+        "Length": 29
+      }
+    ]
+  },
+  {
+    "Input": "Estaré afuera de 4:00 a 5 pm",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "de 4:00 a 5 pm",
+        "Type": "timerange",
+        "Start": 14,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Estaré afuera desde 4:00 hasta 5 p. m.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "desde 4:00 hasta 5 p. m.",
+        "Type": "timerange",
+        "Start": 14,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "Estaré afuera de 4:00 a las 7",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "de 4:00 a las 7",
+        "Type": "timerange",
+        "Start": 14,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Estaré afuera desde las 3 pm hasta las siete y media",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "desde las 3 pm hasta las siete y media",
+        "Type": "timerange",
+        "Start": 14,
+        "Length": 38
+      }
+    ]
+  },
+  {
+    "Input": "Estaré afuera 4 pm-5 pm",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "4 pm-5 pm",
+        "Type": "timerange",
+        "Start": 14,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Estaré afuera 4 pm - 5 pm",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "4 pm - 5 pm",
+        "Type": "timerange",
+        "Start": 14,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Estaré afuera de las tres menos 20 a las ocho de la noche",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "de las tres menos 20 a las ocho de la noche",
+        "Type": "timerange",
+        "Start": 14,
+        "Length": 43
+      }
+    ]
+  },
+  {
+    "Input": "Estaré afuera entre las 4 pm y las 5 pm",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "entre las 4 pm y las 5 pm",
+        "Type": "timerange",
+        "Start": 14,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "Estaré afuera de 4 p. m. a siete y media",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "de 4 p. m. a siete y media",
+        "Type": "timerange",
+        "Start": 14,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "Estaré afuera de las 3 de la mañana a las 5 pm",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "from 3 in the morning until 5pm",
+        "Type": "timerange",
+        "Start": 14,
+        "Length": 32
+      }
+    ]
+  },
+  {
+    "Input": "Estaré afuera desde las 3 de la mañana hasta las cinco de la tarde",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "desde las 3 de la mañana hasta las cinco de la tarde",
+        "Type": "timerange",
+        "Start": 14,
+        "Length": 52
+      }
+    ]
+  },
+  {
+    "Input": "Estaré afuera entre las 4 pm y las cinco y media",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "entre las 4 pm y las cinco y media",
+        "Type": "timerange",
+        "Start": 14,
+        "Length": 34
+      }
+    ]
+  },
+  {
+    "Input": "Estaré afuera entre las 3 de la mañana y las 5 pm",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "entre las 3 de la mañana y las 5 pm",
+        "Type": "timerange",
+        "Start": 14,
+        "Length": 35
+      }
+    ]
+  },
+  {
+    "Input": "Nos vemos por la mañana.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "por la mañana",
+        "Type": "timerange",
+        "Start": 10,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Nos vemos en la mañana.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "por la mañana",
+        "Type": "timerange",
+        "Start": 10,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Nos vemos por la tarde",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "por la tarde",
+        "Type": "timerange",
+        "Start": 10,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Nos vemos por la noche",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "por la noche",
+        "Type": "timerange",
+        "Start": 10,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Nos vemos a primeras horas de la mañana",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "primeras horas de la mañana",
+        "Type": "timerange",
+        "Start": 12,
+        "Length": 29
+      }
+    ]
+  },
+  {
+    "Input": "Nos vemos a últimas horas de la mañana",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "últimas horas de la mañana",
+        "Type": "timerange",
+        "Start": 12,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "Nos vemos a primeras horas de la tarde",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "primeras horas de la tarde",
+        "Type": "timerange",
+        "Start": 12,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "Nos vemos a últimas horas de la tarde",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "últimas horas de la tarde",
+        "Type": "timerange",
+        "Start": 12,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "Nos vemos a primeras horas de la noche",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "primeras horas de la noche",
+        "Type": "timerange",
+        "Start": 12,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "Nos vemos a últimas horas de la noche",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "últimas horas de la noche",
+        "Type": "timerange",
+        "Start": 12,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "Nos vemos a altas horas de la noche",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "altas horas de la noche",
+        "Type": "timerange",
+        "Start": 12,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "programa una reunión desde dos hasta cinco pm",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "desde dos hasta cinco pm",
+        "Type": "timerange",
+        "Start": 21,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "fiesta en la casa de Jean de las 6 a las 11 pm",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "de las 6 a las 11 pm",
+        "Type": "timerange",
+        "Start": 26,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "programa una reunión de 14:00 a 16:30",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "de 14:00 a 16:30",
+        "Type": "timerange",
+        "Start": 21,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "programa una reunión desde 2:00 hasta 5:00 p. m.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "desde 2:00 hasta 5:00 p. m.",
+        "Type": "timerange",
+        "Start": 21,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "programa una reunión de 1 pm a 4",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "de 1 pm a 4",
+        "Type": "timerange",
+        "Start": 21,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "programa una reunión de 1 a 4 p. m.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "de 1 a 4 p. m.",
+        "Type": "timerange",
+        "Start": 21,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "programa una reunión desde las 13 h hasta las 16 h",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "desde las 13 h hasta las 16 h",
+        "Type": "timerange",
+        "Start": 21,
+        "Length": 29
+      }
+    ]
+  },
+  {
+    "Input": "programa una reunión de las 1 p. m. a las 4",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "de las 1 p. m. a las 4",
+        "Type": "timerange",
+        "Start": 21,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "programa una reunión desde 1:30 pm hasta 4:00!",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "desde 1:30 pm hasta 4:00",
+        "Type": "timerange",
+        "Start": 21,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "programa una reunión desde las 1:30 hasta las 4 personas",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Hola Cortana- Programa una llamada de skype con Jennifer.  Necesito tener una reunión en la tarde, este viernes ya me marcharé.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "en la tarde",
+        "Type": "timerange",
+        "Start": 86,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Hola Cortana- Programa una llamada de skype con Jennifer.  Necesito tener una reunión este viernes, en la tarde ya me marcharé.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "en la tarde",
+        "Type": "timerange",
+        "Start": 100,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "programa una reunión de las 1:30 a las 3:30",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "de las 1:30 a las 3:30",
+        "Type": "timerange",
+        "Start": 21,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "programa una reunión de 1:30-3:30",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "1:30-3:30",
+        "Type": "timerange",
+        "Start": 24,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "programa una reunión de 1.30-3.30",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "1.30-3.30",
+        "Type": "timerange",
+        "Start": 24,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "programa una reunión desde las 1:30 pm hasta las 3:30",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "desde las 1:30 pm hasta las 3:30",
+        "Type": "timerange",
+        "Start": 21,
+        "Length": 32
+      }
+    ]
+  },
+  {
+    "Input": "programa una reunión de 1:30 pm a 3:30 pm",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "de 1:30 pm a 3:30 pm",
+        "Type": "timerange",
+        "Start": 21,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "programa una reunión de 1:30-3:30 p. m.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "1:30-3:30 p. m.",
+        "Type": "timerange",
+        "Start": 24,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "programa una reunión de 1.30-3.30 pm",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "1.30-3.30 pm",
+        "Type": "timerange",
+        "Start": 24,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "programa una reunión de las 1 a las 3:30",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "de las 1 a las 3:30",
+        "Type": "timerange",
+        "Start": 21,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "programa una reunión de 1:30 a 3",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "de 1:30 a 3",
+        "Type": "timerange",
+        "Start": 21,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "programa una reunión entre las 10 y las 11:30",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "entre las 10 y las 11:30",
+        "Type": "timerange",
+        "Start": 21,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "programa una reunión entre 10:10 a. m. y 12:50",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "entre 10:10 a. m. y 12:50",
+        "Type": "timerange",
+        "Start": 21,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "programa una reunión entre las 10:10 pm y las 3",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "entre las 10:10 pm y las 3",
+        "Type": "timerange",
+        "Start": 21,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "programa una reunión de las 10:10 pm a las 10",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "de las 10:10 pm a las 10",
+        "Type": "timerange",
+        "Start": 21,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "programa una reunión desde las 10:30 a. m. hasta las 23",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "desde las 10:30 a. m. hasta las 23",
+        "Type": "timerange",
+        "Start": 21,
+        "Length": 34
+      }
+    ]
+  },
+  {
+    "Input": "programa una reunión de las 10:30 h a las 23 h",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "de las 10:30 h a las 23 h",
+        "Type": "timerange",
+        "Start": 21,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "programa una reunión de las 10.30 h a las 23.00 h",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "de las 10.30 h a las 23.00 h",
+        "Type": "timerange",
+        "Start": 21,
+        "Length": 28
+      }
+    ]
+  },
+  {
+    "Input": "No me llames en horas laborales",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "horas laborales",
+        "Type": "timerange",
+        "Start": 16,
+        "Length": 15
+      }
+    ]
   }
 ]

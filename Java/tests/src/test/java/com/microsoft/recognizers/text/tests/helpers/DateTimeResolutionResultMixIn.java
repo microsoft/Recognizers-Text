@@ -15,6 +15,7 @@ public abstract class DateTimeResolutionResultMixIn {
                                   @JsonProperty("resolutionStr") Object pastValue,
                                   @JsonProperty("futureResolution") HashMap<String, String> futureResolution,
                                   @JsonProperty("pastResolution") HashMap<String, String> pastResolution,
-                                  @JsonProperty("subDateTimeEntities") List<Object> subDateTimeEntities) {
+                                  @JsonProperty("subDateTimeEntities") List<Object> subDateTimeEntities,
+                                  @JsonProperty("timeZoneResolution") Object timeZoneResolution){
     }
 }
