@@ -39,7 +39,7 @@ public class DateTimeParserTest extends AbstractTest {
 
     @Parameterized.Parameters(name = "{0}")
     public static Collection<TestCase> testCases() {
-            return AbstractTest.enumerateTestCases(recognizerType, "Parser");
+        return AbstractTest.enumerateTestCases(recognizerType, "Parser");
     }
 
     public DateTimeParserTest(TestCase currentCase) {
