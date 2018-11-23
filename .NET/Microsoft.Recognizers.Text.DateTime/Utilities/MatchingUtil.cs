@@ -12,7 +12,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         public static bool GetAgoLaterIndex(string text, Regex regex, out int index)
         {
             index = -1;
-            var match = regex.MatchBegin(text);
+            var match = regex.MatchBegin(text, trim: true);
 
             if (match.Success)
             {

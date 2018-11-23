@@ -177,7 +177,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         {
             var rangeConnetorRegex = new Regex(DateTimeDefinitions.RangeConnectorRegex);
 
-            return rangeConnetorRegex.IsExactMatch(text);
+            return rangeConnetorRegex.IsExactMatch(text, trim: true);
         }
     }
 }

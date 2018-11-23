@@ -108,10 +108,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         // parse basic patterns in DateRegexList
         protected DateTimeResolutionResult ParseBasicRegexMatch(string text, DateObject referenceDate)
         {
-            var trimmedText = text.Trim();
             foreach (var regex in DateExtractor.DateRegexList)
             {
-                var match = regex.MatchExact(trimmedText);
+                var match = regex.MatchExact(text, trim: true);
 
                 if (match.Success)
                 {
@@ -128,12 +127,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         // including '今天', '后天', '十三日'
         protected DateTimeResolutionResult ParseImplicitDate(string text, DateObject referenceDate)
         {
-            var trimmedText = text.Trim();
-
             var ret = new DateTimeResolutionResult();
 
             // handle "十二日" "明年这个月三日" "本月十一日"
-            var match = DateExtractor.SpecialDate.MatchExact(trimmedText);
+            var match = DateExtractor.SpecialDate.MatchExact(text, trim: true);
 
             if (match.Success)
             {
@@ -229,7 +226,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             }
 
             // handle cases like "昨日", "明日", "大后天"
-            match = DateExtractor.SpecialDayRegex.MatchExact(trimmedText);
+            match = DateExtractor.SpecialDayRegex.MatchExact(text, trim: true);
 
             if (match.Success)
             {
@@ -241,7 +238,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 return ret;
             }
 
-            match = DateExtractor.SpecialMonthRegex.MatchExact(trimmedText);
+            match = DateExtractor.SpecialMonthRegex.MatchExact(text, trim: true);
 
             if (match.Success)
             {
@@ -253,7 +250,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
               return ret;
             }
 
-            match = DateExtractor.SpecialYearRegex.MatchExact(trimmedText);
+            match = DateExtractor.SpecialYearRegex.MatchExact(text, trim: true);
 
             if (match.Success)
             {
@@ -291,7 +288,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         protected DateTimeResolutionResult MatchNextWeekday(string text, DateObject reference)
         {
             var result = new DateTimeResolutionResult();
-            var match = this.config.NextRegex.MatchExact(text);
+            var match = this.config.NextRegex.MatchExact(text, trim: true);
 
             if (match.Success)
             {
@@ -309,7 +306,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         protected DateTimeResolutionResult MatchThisWeekday(string text, DateObject reference)
         {
             var result = new DateTimeResolutionResult();
-            var match = this.config.ThisRegex.MatchExact(text);
+            var match = this.config.ThisRegex.MatchExact(text, trim: true);
 
             if (match.Success)
             {
@@ -327,7 +324,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         protected DateTimeResolutionResult MatchLastWeekday(string text, DateObject reference)
         {
             var result = new DateTimeResolutionResult();
-            var match = this.config.LastRegex.MatchExact(text);
+            var match = this.config.LastRegex.MatchExact(text, trim: true);
 
             if (match.Success)
             {
@@ -345,7 +342,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         protected DateTimeResolutionResult MatchWeekdayAlone(string text, DateObject reference)
         {
             var result = new DateTimeResolutionResult();
-            var match = this.config.StrictWeekDayRegex.MatchExact(text);
+            var match = this.config.StrictWeekDayRegex.MatchExact(text, trim: true);
 
             if (match.Success)
             {

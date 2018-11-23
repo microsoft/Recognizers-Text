@@ -20,9 +20,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         private DateTimeResolutionResult ParseIsh(string text, DateObject referenceTime)
         {
             var ret = new DateTimeResolutionResult();
-            var trimmedText = text.ToLowerInvariant().Trim();
+            var lowerText = text.ToLowerInvariant();
 
-            var match = EnglishTimeExtractorConfiguration.IshRegex.MatchExact(trimmedText);
+            var match = EnglishTimeExtractorConfiguration.IshRegex.MatchExact(lowerText, trim: true);
 
             if (match.Success)
             {

@@ -118,7 +118,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             foreach (var regex in this.config.DateRegexList)
             {
-                var match = regex.MatchBegin(text);
+                var match = regex.MatchBegin(text, trim: true);
 
                 if (match.Success)
                 {
@@ -242,7 +242,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     // Handling cases like '20th of next month'
                     var suffixStr = text.Substring(result.Start + result.Length ?? 0);
-                    var beginMatch = this.config.RelativeMonthRegex.MatchBegin(suffixStr.Trim());
+                    var beginMatch = this.config.RelativeMonthRegex.MatchBegin(suffixStr.Trim(), trim: true);
                     if (beginMatch.Success && beginMatch.Index == 0)
                     {
                         var spaceLen = suffixStr.Length - suffixStr.Trim().Length;
@@ -263,7 +263,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     // Handling cases like 'second Sunday'
                     suffixStr = text.Substring(result.Start + result.Length ?? 0);
 
-                    beginMatch = this.config.WeekDayRegex.MatchBegin(suffixStr.Trim());
+                    beginMatch = this.config.WeekDayRegex.MatchBegin(suffixStr.Trim(), trim: true);
 
                     if (beginMatch.Success && num >= 1 && num <= 5 
                         && result.Type.Equals(Number.Constants.SYS_NUM_ORDINAL))
@@ -433,7 +433,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     continue;
                 }
 
-                var match = config.InConnectorRegex.MatchEnd(beforeStr);
+                var match = config.InConnectorRegex.MatchEnd(beforeStr, trim: true);
 
                 if (match.Success)
                 {

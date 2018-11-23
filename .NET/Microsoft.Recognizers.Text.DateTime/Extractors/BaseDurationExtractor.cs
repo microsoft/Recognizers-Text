@@ -53,7 +53,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var beforeString = text.Substring(0, (int)er.Start);
                 bool isInequalityPrefixMatched = false;
 
-                var match = config.MoreThanRegex.MatchEnd(beforeString);
+                var match = config.MoreThanRegex.MatchEnd(beforeString, trim: true);
 
                 // The second condition is necessary so for "1 week" in "more than 4 days and less than 1 week", it will not be tagged incorrectly as "more than"
                 if (match.Success)
@@ -64,7 +64,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 if (!isInequalityPrefixMatched)
                 {
-                    match = config.LessThanRegex.MatchEnd(beforeString);
+                    match = config.LessThanRegex.MatchEnd(beforeString, trim: true);
 
                     if (match.Success)
                     {
@@ -92,7 +92,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             foreach (var er in ers)
             {
                 var afterStr = text.Substring(er.Start + er.Length);
-                var match = this.config.SuffixAndRegex.MatchBegin(afterStr);
+                var match = this.config.SuffixAndRegex.MatchBegin(afterStr, trim: true);
 
                 if (match.Success)
                 {
@@ -110,7 +110,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             foreach (var er in ers)
             {
                 var afterStr = text.Substring(er.Start + er.Length ?? 0);
-                var match = this.config.FollowedUnit.MatchBegin(afterStr);
+                var match = this.config.FollowedUnit.MatchBegin(afterStr, trim: true);
 
                 if (match.Success)
                 {

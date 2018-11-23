@@ -114,7 +114,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         {
             var ret = new DateTimeResolutionResult();
             // handle "each month"
-            var match = SetExtractor.EachUnitRegex.MatchExact(text);
+            var match = SetExtractor.EachUnitRegex.MatchExact(text, trim: true);
 
             if (match.Success)
             {

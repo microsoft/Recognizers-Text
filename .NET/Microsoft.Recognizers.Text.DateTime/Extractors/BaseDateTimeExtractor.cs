@@ -219,7 +219,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var beforeStr = text.Substring(0, er.Start ?? 0);
 
                 // handle "this morning at 7am"
-                var innerMatch = this.config.TimeOfDayRegex.MatchBegin(er.Text);
+                var innerMatch = this.config.TimeOfDayRegex.MatchBegin(er.Text, trim: true);
 
                 if (innerMatch.Success)
                 {

@@ -114,7 +114,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             var trimmedText = text.Trim().ToLower();
 
             // handle "现在"
-            var match = DateTimeExtractorChs.NowRegex.MatchExact(trimmedText);
+            var match = DateTimeExtractorChs.NowRegex.MatchExact(trimmedText, trim: true);
 
             if (match.Success)
             {

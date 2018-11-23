@@ -142,10 +142,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
         private static DateTimeResolutionResult ParseHolidayRegexMatch(string text, DateObject referenceDate)
         {
-            var trimmedText = text.Trim();
             foreach (var regex in JapaneseHolidayExtractorConfiguration.HolidayRegexList)
             {
-                var match = regex.MatchExact(trimmedText);
+                var match = regex.MatchExact(text, trim: true);
 
                 if (match.Success)
                 {

@@ -135,7 +135,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             foreach (var regex in regexes)
             {
-                var exactMatch = regex.MatchExact(trimmedText);
+                var exactMatch = regex.MatchExact(trimmedText, trim: true);
 
                 if (exactMatch.Success)
                 {

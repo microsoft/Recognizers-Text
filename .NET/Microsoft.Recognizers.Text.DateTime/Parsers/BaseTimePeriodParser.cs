@@ -106,11 +106,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             int year = referenceTime.Year, month = referenceTime.Month, day = referenceTime.Day;
             var trimmedText = text.Trim().ToLower();
 
-            var match = this.config.PureNumberFromToRegex.MatchBegin(trimmedText);
+            var match = this.config.PureNumberFromToRegex.MatchBegin(trimmedText, trim: true);
 
             if (!match.Success)
             {
-                match = this.config.PureNumberBetweenAndRegex.MatchBegin(trimmedText);
+                match = this.config.PureNumberBetweenAndRegex.MatchBegin(trimmedText, trim: true);
             }
 
             if (match.Success)
@@ -242,15 +242,14 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var ret = new DateTimeResolutionResult();
             int year = referenceTime.Year, month = referenceTime.Month, day = referenceTime.Day;
-            var trimmedText = text.Trim().ToLower();
 
             // Handle cases like "from 4:30 to 5"
-            var match = config.SpecificTimeFromToRegex.MatchExact(text);
+            var match = config.SpecificTimeFromToRegex.MatchExact(text, trim: true);
 
             if (!match.Success)
             {
                 // Handle cases like "between 5:10 and 7"
-                match = config.SpecificTimeBetweenAndRegex.MatchExact(text);
+                match = config.SpecificTimeBetweenAndRegex.MatchExact(text, trim: true);
             }
 
             if (match.Success)

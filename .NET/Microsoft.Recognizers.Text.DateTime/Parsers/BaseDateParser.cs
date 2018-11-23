@@ -165,7 +165,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             // handle "today", "the day before yesterday"
-            var exactMatch = this.config.SpecialDayRegex.MatchExact(trimmedText);
+            var exactMatch = this.config.SpecialDayRegex.MatchExact(trimmedText, trim: true);
 
             if (exactMatch.Success)
             {
@@ -181,7 +181,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             // handle "two days from tomorrow"
-            exactMatch = this.config.SpecialDayWithNumRegex.MatchExact(trimmedText);
+            exactMatch = this.config.SpecialDayWithNumRegex.MatchExact(trimmedText, trim: true);
 
             if (exactMatch.Success)
             {
@@ -199,7 +199,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
             
             // handle "two sundays from now"
-            exactMatch = this.config.RelativeWeekDayRegex.MatchExact(trimmedText);
+            exactMatch = this.config.RelativeWeekDayRegex.MatchExact(trimmedText, trim: true);
 
             if (exactMatch.Success)
             {
@@ -227,7 +227,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             // handle "next Sunday"
-            exactMatch = this.config.NextRegex.MatchExact(trimmedText);
+            exactMatch = this.config.NextRegex.MatchExact(trimmedText, trim: true);
             if (exactMatch.Success)
             {
                 var weekdayStr = exactMatch.Groups["weekday"].Value.ToLower();
@@ -241,7 +241,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             // handle "this Friday"
-            exactMatch = this.config.ThisRegex.MatchExact(trimmedText);
+            exactMatch = this.config.ThisRegex.MatchExact(trimmedText, trim: true);
 
             if (exactMatch.Success)
             {
@@ -256,7 +256,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             // handle "last Friday", "last mon"
-            exactMatch = this.config.LastRegex.MatchExact(trimmedText);
+            exactMatch = this.config.LastRegex.MatchExact(trimmedText, trim: true);
 
             if (exactMatch.Success)
             {
@@ -271,7 +271,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             // handle "Friday"
-            exactMatch = this.config.WeekDayRegex.MatchExact(trimmedText);
+            exactMatch = this.config.WeekDayRegex.MatchExact(trimmedText, trim: true);
 
             if (exactMatch.Success)
             {

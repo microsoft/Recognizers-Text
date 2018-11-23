@@ -114,7 +114,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             var trimmedText = text.Trim().ToLower();
 
             // handle "现在"
-            var match = DateTimeExtractor.NowRegex.MatchExact(trimmedText);
+            var match = DateTimeExtractor.NowRegex.MatchExact(trimmedText, trim: true);
 
             if (match.Success)
             {

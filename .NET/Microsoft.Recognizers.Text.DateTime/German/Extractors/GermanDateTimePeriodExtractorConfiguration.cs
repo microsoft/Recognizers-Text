@@ -179,7 +179,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         {
             var rangeConnectorRegex = new Regex(DateTimeDefinitions.RangeConnectorRegex);
 
-            return rangeConnectorRegex.IsExactMatch(text);
+            return rangeConnectorRegex.IsExactMatch(text, trim: true);
         }
     }
 }

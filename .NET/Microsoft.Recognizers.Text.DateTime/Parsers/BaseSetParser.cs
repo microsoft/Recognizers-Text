@@ -142,7 +142,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             // handle "each month"
-            var exactMatch = this.config.EachUnitRegex.MatchExact(text);
+            var exactMatch = this.config.EachUnitRegex.MatchExact(text, trim: true);
 
             if (exactMatch.Success)
             {

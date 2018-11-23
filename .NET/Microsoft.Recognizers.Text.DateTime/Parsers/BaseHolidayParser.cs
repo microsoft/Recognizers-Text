@@ -63,7 +63,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             foreach (var regex in this.config.HolidayRegexList)
             {
-                var match = regex.MatchExact(text);
+                var match = regex.MatchExact(text, trim: true);
 
                 if (match.Success)
                 {

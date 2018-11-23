@@ -95,7 +95,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             AdjustByPrefix(trimedSuffix, ref hour, ref min, ref hasMin);
 
             var deltaHour = 0;
-            var match = PortugueseTimeExtractorConfiguration.TimeSuffix.MatchExact(trimedSuffix);
+            var match = PortugueseTimeExtractorConfiguration.TimeSuffix.MatchExact(trimedSuffix, trim: true);
 
             if (match.Success)
             {

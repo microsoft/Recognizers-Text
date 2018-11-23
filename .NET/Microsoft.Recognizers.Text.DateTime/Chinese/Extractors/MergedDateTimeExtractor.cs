@@ -100,7 +100,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 var beforeStr = text.Substring(lastEnd, er.Start ?? 0).ToLowerInvariant();
                 var afterStr = text.Substring((er.Start ?? 0) + (er.Length ?? 0)).ToLowerInvariant();
 
-                var match = BeforeRegex.MatchBegin(afterStr);
+                var match = BeforeRegex.MatchBegin(afterStr, trim: true);
 
                 if (match.Success)
                 {
@@ -109,7 +109,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
                 }
 
-                match = AfterRegex.MatchBegin(afterStr);
+                match = AfterRegex.MatchBegin(afterStr, trim: true);
 
                 if (match.Success)
                 {
@@ -118,7 +118,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
                 }
 
-                match = UntilRegex.MatchEnd(beforeStr);
+                match = UntilRegex.MatchEnd(beforeStr, trim: true);
 
                 if (match.Success)
                 {
@@ -128,7 +128,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
                 }
 
-                match = SincePrefixRegex.MatchEnd(beforeStr);
+                match = SincePrefixRegex.MatchEnd(beforeStr, trim: true);
 
                 if (match.Success)
                 {
@@ -138,7 +138,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
                 }
 
-                match = SinceSuffixRegex.MatchBegin(afterStr);
+                match = SinceSuffixRegex.MatchBegin(afterStr, trim: true);
                 if (match.Success)
                 {
                     var modLengh = match.Index + match.Length;

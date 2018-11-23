@@ -93,7 +93,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             AdjustByPrefix(trimedSuffix, ref hour, ref min, ref hasMin);
 
             var deltaHour = 0;
-            var match = SpanishTimeExtractorConfiguration.TimeSuffix.MatchExact(trimedSuffix);
+            var match = SpanishTimeExtractorConfiguration.TimeSuffix.MatchExact(trimedSuffix, trim: true);
 
             if (match.Success)
             {

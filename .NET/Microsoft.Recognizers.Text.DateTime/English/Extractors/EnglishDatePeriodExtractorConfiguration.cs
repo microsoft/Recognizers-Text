@@ -307,7 +307,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public bool HasConnectorToken(string text)
         {
-            return AndRegex.IsExactMatch(text);
+            return AndRegex.IsExactMatch(text, trim: true);
         }
 
     }

@@ -28,11 +28,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             // push, save teh MOD string
             bool hasBefore = false, hasAfter = false, hasUntil = false, hasSince = false;
             string modStr = string.Empty, modStrPrefix = string.Empty, modStrSuffix = string.Empty;
-            var beforeMatch = config.BeforeRegex.MatchEnd(er.Text);
-            var afterMatch = config.AfterRegex.MatchEnd(er.Text);
-            var untilMatch = config.UntilRegex.MatchBegin(er.Text);
-            var sinceMatchPrefix = config.SincePrefixRegex.MatchBegin(er.Text);
-            var sinceMatchSuffix = config.SinceSuffixRegex.MatchEnd(er.Text);
+            var beforeMatch = config.BeforeRegex.MatchEnd(er.Text, trim: true);
+            var afterMatch = config.AfterRegex.MatchEnd(er.Text, trim: true);
+            var untilMatch = config.UntilRegex.MatchBegin(er.Text, trim: true);
+            var sinceMatchPrefix = config.SincePrefixRegex.MatchBegin(er.Text, trim: true);
+            var sinceMatchSuffix = config.SinceSuffixRegex.MatchEnd(er.Text, trim: true);
 
             if (beforeMatch.Success && !IsDurationWithBeforeAndAfter(er))
             {

@@ -84,9 +84,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var trimmedText = text.Trim().ToLower();
 
             // Handle "now"
-            var match = this.config.NowRegex.MatchExact(trimmedText);
-
-            if (match.Success)
+            if (config.NowRegex.IsExactMatch(trimmedText, trim: true))
             {
                 this.config.GetMatchedNowTimex(trimmedText, out string timex);
                 ret.Timex = timex;
@@ -250,11 +248,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             int hour = 0, min = 0, sec = 0;
             string timeStr;
 
-            var wholeMatch = this.config.SimpleTimeOfTodayAfterRegex.MatchExact(trimmedText);
+            var wholeMatch = this.config.SimpleTimeOfTodayAfterRegex.MatchExact(trimmedText, trim: true);
 
             if (!wholeMatch.Success)
             {
-                wholeMatch = this.config.SimpleTimeOfTodayBeforeRegex.MatchExact(trimmedText);
+                wholeMatch = this.config.SimpleTimeOfTodayBeforeRegex.MatchExact(trimmedText, trim: true);
             }
 
             if (wholeMatch.Success)

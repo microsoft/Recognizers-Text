@@ -21,9 +21,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         private DateTimeResolutionResult ParseIsh(string text, DateObject referenceTime)
         {
             var ret = new DateTimeResolutionResult();
-            var trimmedText = text.ToLowerInvariant().Trim();
+            var lowerText = text.ToLowerInvariant();
 
-            var match = ItalianTimeExtractorConfiguration.IshRegex.MatchExact(trimmedText);
+            var match = ItalianTimeExtractorConfiguration.IshRegex.MatchExact(lowerText, trim: true);
 
             if (match.Success)
             {

@@ -129,7 +129,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 var beforeStr = text.Substring(0, er.Start ?? 0);
 
                 // handle "今晚7点"
-                var innerMatch = NightRegex.MatchBegin(er.Text);
+                var innerMatch = NightRegex.MatchBegin(er.Text, trim: true);
 
                 if (innerMatch.Success)
                 {
@@ -141,7 +141,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     continue;
                 }
 
-                var match = TimeOfTodayRegex.MatchEnd(beforeStr);
+                var match = TimeOfTodayRegex.MatchEnd(beforeStr, trim: true);
 
                 if (match.Success)
                 {

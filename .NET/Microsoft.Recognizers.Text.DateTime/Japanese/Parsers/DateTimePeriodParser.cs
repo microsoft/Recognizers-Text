@@ -339,7 +339,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             string timeStr;
 
             // handle 昨晚，今晨
-            var exactMatch = DateTimePeriodExtractor.SpecificTimeOfDayRegex.MatchExact(trimmedText);
+            var exactMatch = DateTimePeriodExtractor.SpecificTimeOfDayRegex.MatchExact(trimmedText, trim: true);
 
             if (exactMatch.Success)
             {
@@ -425,7 +425,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 return ret;
             }
 
-            exactMatch = DateTimePeriodExtractor.SpecificTimeOfDayRegex.MatchExact(trimmedText);
+            exactMatch = DateTimePeriodExtractor.SpecificTimeOfDayRegex.MatchExact(trimmedText, trim: true);
 
             if (exactMatch.Success)
             {
@@ -505,14 +505,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                     srcUnit = srcUnit.Substring(1);
                 }
 
-                var beforeStr = text.Substring(0, ers[0].Start ?? 0).Trim().ToLowerInvariant();
+                var beforeStr = text.Substring(0, ers[0].Start ?? 0).ToLowerInvariant();
                 if (this.config.UnitMap.ContainsKey(srcUnit))
                 {
                     numStr = pr.ResolutionStr;
                     unitStr = this.config.UnitMap[srcUnit];
-                    var prefixMatch = DateTimePeriodExtractor.PastRegex.MatchExact(beforeStr);
 
-                    if (prefixMatch.Success)
+                    if (DateTimePeriodExtractor.PastRegex.IsExactMatch(beforeStr, trim: true))
                     {
                         DateObject beginDate, endDate;
                         switch (unitStr)
@@ -540,9 +539,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                         return ret;
                     }
 
-                    prefixMatch = DateTimePeriodExtractor.FutureRegex.MatchExact(beforeStr);
-
-                    if (prefixMatch.Success)
+                    if (DateTimePeriodExtractor.FutureRegex.IsExactMatch(beforeStr, trim: true))
                     {
                         DateObject beginDate, endDate;
                         switch (unitStr)
@@ -577,14 +574,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             if (match.Success)
             {
                 var srcUnit = match.Groups["unit"].Value.ToLower();
-                var beforeStr = text.Substring(0, match.Index).Trim().ToLowerInvariant();
+                var beforeStr = text.Substring(0, match.Index).ToLowerInvariant();
                 if (this.config.UnitMap.ContainsKey(srcUnit))
                 {
                     unitStr = this.config.UnitMap[srcUnit];
 
-                    var prefixMatch = DateTimePeriodExtractor.PastRegex.MatchExact(beforeStr);
-
-                    if (prefixMatch.Success)
+                    if (DateTimePeriodExtractor.PastRegex.IsExactMatch(beforeStr, trim: true))
                     {
                         DateObject beginDate, endDate;
                         switch (unitStr)
@@ -612,9 +607,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                         return ret;
                     }
 
-                    prefixMatch = DateTimePeriodExtractor.FutureRegex.MatchExact(beforeStr);
-
-                    if (prefixMatch.Success)
+                    if (DateTimePeriodExtractor.FutureRegex.IsExactMatch(beforeStr, trim: true))
                     {
                         DateObject beginDate, endDate;
                         switch (unitStr)

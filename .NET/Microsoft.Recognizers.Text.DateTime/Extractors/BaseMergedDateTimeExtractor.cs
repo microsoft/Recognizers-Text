@@ -254,7 +254,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     // 2012 or after/above
                     var afterStr = text.Substring((er.Start ?? 0) + (er.Length ?? 0)).ToLowerInvariant();
 
-                    var match = config.DateAfterRegex.MatchBegin(afterStr.TrimStart());
+                    var match = config.DateAfterRegex.MatchBegin(afterStr.TrimStart(), trim: true);
 
                     if (match.Success)
                     {

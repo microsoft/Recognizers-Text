@@ -339,9 +339,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             string timeStr;
 
             // handle 昨晚，今晨
-            var exactMatch = DateTimePeriodExtractorChs.SpecificTimeOfDayRegex.MatchExact(trimmedText);
-
-            if (exactMatch.Success)
+            if (DateTimePeriodExtractorChs.SpecificTimeOfDayRegex.IsExactMatch(trimmedText, trim: true))
             {
                 var swift = 0;
                 switch (trimmedText)
@@ -425,9 +423,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 return ret;
             }
 
-            exactMatch = DateTimePeriodExtractorChs.SpecificTimeOfDayRegex.MatchExact(trimmedText);
-
-            if (exactMatch.Success)
+            if (DateTimePeriodExtractorChs.SpecificTimeOfDayRegex.IsExactMatch(trimmedText, trim: true))
             {
                 var swift = 0;
                 if (DateTimePeriodExtractorChs.NextRegex.IsMatch(trimmedText))
@@ -506,12 +502,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     srcUnit = srcUnit.Substring(1);
                 }
 
-                var beforeStr = text.Substring(0, ers[0].Start ?? 0).Trim().ToLowerInvariant();
+                var beforeStr = text.Substring(0, ers[0].Start ?? 0).ToLowerInvariant();
                 if (this.config.UnitMap.ContainsKey(srcUnit))
                 {
                     numStr = pr.ResolutionStr;
                     unitStr = this.config.UnitMap[srcUnit];
-                    var prefixMatch = DateTimePeriodExtractorChs.PastRegex.MatchExact(beforeStr);
+                    var prefixMatch = DateTimePeriodExtractorChs.PastRegex.MatchExact(beforeStr, trim: true);
 
                     if (prefixMatch.Success)
                     {
@@ -541,7 +537,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                         return ret;
                     }
 
-                    prefixMatch = DateTimePeriodExtractorChs.FutureRegex.MatchExact(beforeStr);
+                    prefixMatch = DateTimePeriodExtractorChs.FutureRegex.MatchExact(beforeStr, trim: true);
 
                     if (prefixMatch.Success)
                     {
@@ -583,9 +579,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 {
                     unitStr = this.config.UnitMap[srcUnit];
 
-                    var prefixMatch = DateTimePeriodExtractorChs.PastRegex.MatchExact(beforeStr);
-
-                    if (prefixMatch.Success)
+                    if (DateTimePeriodExtractorChs.PastRegex.IsExactMatch(beforeStr, trim: true))
                     {
                         DateObject beginDate, endDate;
                         switch (unitStr)
@@ -613,9 +607,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                         return ret;
                     }
 
-                    prefixMatch = DateTimePeriodExtractorChs.FutureRegex.MatchExact(beforeStr);
-
-                    if (prefixMatch.Success)
+                    if (DateTimePeriodExtractorChs.FutureRegex.IsExactMatch(beforeStr, trim: true))
                     {
                         DateObject beginDate, endDate;
                         switch (unitStr)

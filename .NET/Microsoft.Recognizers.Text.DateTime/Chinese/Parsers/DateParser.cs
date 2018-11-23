@@ -112,7 +112,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         {
             foreach (var regex in DateExtractorChs.DateRegexList)
             {
-                var match = regex.MatchExact(text);
+                var match = regex.MatchExact(text, trim: true);
 
                 if (match.Success)
                 {
@@ -129,12 +129,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         // including '今天', '后天', '十三日'
         protected DateTimeResolutionResult ParseImplicitDate(string text, DateObject referenceDate)
         {
-            var trimmedText = text.Trim();
-
             var ret = new DateTimeResolutionResult();
 
             // handle "十二日" "明年这个月三日" "本月十一日"
-            var match = DateExtractorChs.SpecialDate.MatchExact(trimmedText);
+            var match = DateExtractorChs.SpecialDate.MatchExact(text, trim: true);
             if (match.Success)
             {
                 var yearStr = match.Groups["thisyear"].Value.ToLower();
@@ -229,7 +227,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             }
 
             // handle cases like "昨日", "明日", "大后天"
-            match = DateExtractorChs.SpecialDayRegex.MatchExact(trimmedText);
+            match = DateExtractorChs.SpecialDayRegex.MatchExact(text, trim: true);
 
             if (match.Success)
             {
@@ -267,7 +265,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         protected DateTimeResolutionResult MatchNextWeekday(string text, DateObject reference)
         {
             var result = new DateTimeResolutionResult();
-            var match = this.config.NextRegex.MatchExact(text);
+            var match = this.config.NextRegex.MatchExact(text, trim: true);
 
             if (match.Success)
             {
@@ -285,7 +283,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         protected DateTimeResolutionResult MatchThisWeekday(string text, DateObject reference)
         {
             var result = new DateTimeResolutionResult();
-            var match = this.config.ThisRegex.MatchExact(text);
+            var match = this.config.ThisRegex.MatchExact(text, trim: true);
 
             if (match.Success)
             {
@@ -303,7 +301,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         protected DateTimeResolutionResult MatchLastWeekday(string text, DateObject reference)
         {
             var result = new DateTimeResolutionResult();
-            var match = this.config.LastRegex.MatchExact(text);
+            var match = this.config.LastRegex.MatchExact(text, trim: true);
 
             if (match.Success)
             {
@@ -321,7 +319,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         protected DateTimeResolutionResult MatchWeekdayAlone(string text, DateObject reference)
         {
             var result = new DateTimeResolutionResult();
-            var match = this.config.StrictWeekDayRegex.MatchExact(text);
+            var match = this.config.StrictWeekDayRegex.MatchExact(text, trim: true);
 
             if (match.Success)
             {

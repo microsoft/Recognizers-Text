@@ -22,7 +22,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
                 return ret;
             }
 
-            var exactMatch = this.Config.SpecificTimeOfDayRegex.MatchExact(trimmedText);
+            var exactMatch = this.Config.SpecificTimeOfDayRegex.MatchExact(trimmedText, trim: true);
 
             if (exactMatch.Success)
             {

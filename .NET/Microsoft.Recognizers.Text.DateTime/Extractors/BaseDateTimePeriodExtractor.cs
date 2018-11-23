@@ -126,7 +126,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             foreach (var regex in beforeAfterRegexes)
             {
-                if (regex.IsExactMatch(text))
+                if (regex.IsExactMatch(text, trim: true))
                 {
                     return true;
                 }
@@ -174,7 +174,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                             var begin = er.Start ?? 0;
 
                             var middleStr = beforeStr.Substring(begin + (er.Length ?? 0)).Trim().ToLower();
-                            if (string.IsNullOrEmpty(middleStr) || this.config.PrepositionRegex.IsExactMatch(middleStr))
+                            if (string.IsNullOrEmpty(middleStr) || this.config.PrepositionRegex.IsExactMatch(middleStr, trim: true))
                             {
                                 ret.Add(new Token(begin, match.Index + match.Length));
                                 hasBeforeDate = true;
@@ -192,7 +192,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                             var begin = er[0].Start ?? 0;
                             var end = (er[0].Start ?? 0) + (er[0].Length ?? 0);
                             var middleStr = followedStr.Substring(0, begin).Trim().ToLower();
-                            if (string.IsNullOrEmpty(middleStr) || this.config.PrepositionRegex.IsExactMatch(middleStr))
+                            if (string.IsNullOrEmpty(middleStr) || this.config.PrepositionRegex.IsExactMatch(middleStr, trim: true))
                             {
                                 ret.Add(new Token(match.Index, match.Index + match.Length + end));
                             }
@@ -253,7 +253,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var middleStr = text.Substring(middleBegin, middleEnd - middleBegin).Trim();
 
                 // Handle "{TimePoint} to {TimePoint}"
-                if (config.TillRegex.IsExactMatch(middleStr))
+                if (config.TillRegex.IsExactMatch(middleStr, trim: true))
                 {
                     var periodBegin = timePoints[idx].Start ?? 0;
                     var periodEnd = (timePoints[idx + 1].Start ?? 0) + (timePoints[idx + 1].Length ?? 0);
@@ -370,7 +370,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     var connectorStr = afterStr.Substring(0, match.Index);
 
-                    if (config.MiddlePauseRegex.IsExactMatch(connectorStr))
+                    // Trim here is set to false as the Regex might catch white spaces before or after the text
+                    if (config.MiddlePauseRegex.IsExactMatch(connectorStr, trim: false))
                     {
                         var suffix = afterStr.Substring(match.Index + match.Length).TrimStart();
     
@@ -417,7 +418,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                     {
                         var connectorStr = prefixStr.Substring(match.Index + match.Length);
 
-                        if (config.MiddlePauseRegex.IsExactMatch(connectorStr))
+                        // Trim here is set to false as the Regex might catch white spaces before or after the text
+                        if (config.MiddlePauseRegex.IsExactMatch(connectorStr, trim: false))
                         {
                             var suffix = text.Substring(er.Start + er.Length?? 0).TrimStart(' ');
 

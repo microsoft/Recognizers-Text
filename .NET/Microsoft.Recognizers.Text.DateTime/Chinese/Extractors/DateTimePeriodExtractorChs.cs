@@ -173,7 +173,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 var middleStr = text.Substring(middleBegin, middleEnd - middleBegin).Trim();
                 
                 // handle "{TimePoint} to {TimePoint}"
-                if (TillRegex.IsExactMatch(middleStr))
+                if (TillRegex.IsExactMatch(middleStr, trim: true))
                 {
                     var periodBegin = timePoints[idx].Start ?? 0;
                     var periodEnd = (timePoints[idx + 1].Start ?? 0) + (timePoints[idx + 1].Length ?? 0);
@@ -256,7 +256,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             foreach (var er in ers)
             {
                 var afterStr = text.Substring(er.Start + er.Length ?? 0);
-                var match = FollowedUnit.MatchBegin(afterStr);
+                var match = FollowedUnit.MatchBegin(afterStr, trim: true);
 
                 if (match.Success)
                 {
@@ -278,7 +278,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     continue;
                 }
 
-                var match = PastRegex.MatchEnd(beforeStr);
+                var match = PastRegex.MatchEnd(beforeStr, trim: true);
 
                 if (match.Success)
                 {
@@ -286,7 +286,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     continue;
                 }
 
-                match = FutureRegex.MatchEnd(beforeStr);
+                match = FutureRegex.MatchEnd(beforeStr, trim: true);
 
                 if (match.Success)
                 {

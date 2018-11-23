@@ -517,23 +517,22 @@ namespace Microsoft.Recognizers.Text.DateTime
             int beginDay, endDay;
             var noYear = true;
 
-            var trimmedText = text.Trim();
-            var match = this.config.MonthFrontBetweenRegex.MatchExact(trimmedText);
+            var match = this.config.MonthFrontBetweenRegex.MatchExact(text, trim: true);
             string beginLuisStr, endLuisStr;
 
             if (!match.Success)
             {
-                match = this.config.BetweenRegex.MatchExact(trimmedText);
+                match = this.config.BetweenRegex.MatchExact(text, trim: true);
             }
 
             if (!match.Success)
             {
-                match = this.config.MonthFrontSimpleCasesRegex.MatchExact(trimmedText);
+                match = this.config.MonthFrontSimpleCasesRegex.MatchExact(text, trim: true);
             }
 
             if (!match.Success)
             {
-                match = this.config.SimpleCasesRegex.MatchExact(trimmedText);
+                match = this.config.SimpleCasesRegex.MatchExact(text, trim: true);
             }
 
             if (match.Success)
@@ -653,17 +652,17 @@ namespace Microsoft.Recognizers.Text.DateTime
             var laterPrefix = false;
 
             var trimmedText = text.Trim().ToLower();
-            var match = this.config.OneWordPeriodRegex.MatchExact(trimmedText);
+            var match = this.config.OneWordPeriodRegex.MatchExact(trimmedText, trim: true);
 
             if (!match.Success)
             {
-                match = this.config.LaterEarlyPeriodRegex.MatchExact(trimmedText);
+                match = this.config.LaterEarlyPeriodRegex.MatchExact(trimmedText, trim: true);
             }
 
             // For cases "that week|month|year"
             if (!match.Success)
             {
-                match = this.config.ReferenceDatePeriodRegex.MatchExact(trimmedText);
+                match = this.config.ReferenceDatePeriodRegex.MatchExact(trimmedText, trim: true);
                 isRef = true;
                 ret.Mod = Constants.REF_UNDEF_MOD;
             }
@@ -950,11 +949,11 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var ret = new DateTimeResolutionResult();
 
-            var match = this.config.MonthWithYear.MatchExact(text);
+            var match = this.config.MonthWithYear.MatchExact(text, trim: true);
 
             if (!match.Success)
             {
-                match = this.config.MonthNumWithYear.MatchExact(text);
+                match = this.config.MonthNumWithYear.MatchExact(text, trim: true);
             }
 
             if (match.Success)
@@ -1043,7 +1042,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
             else
             {
-                var exactMatch = this.config.YearRegex.MatchExact(text);
+                var exactMatch = this.config.YearRegex.MatchExact(text, trim: true);
 
                 if (exactMatch.Success)
                 {
@@ -1056,7 +1055,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
                 else
                 {
-                    exactMatch = this.config.YearPlusNumberRegex.MatchExact(text);
+                    exactMatch = this.config.YearPlusNumberRegex.MatchExact(text, trim: true);
 
                     if (exactMatch.Success)
                     {
@@ -1205,7 +1204,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     // Handle the "within two weeks" case which means from today to the end of next two weeks
                     // Cases like "within 3 days before/after today" is not handled here (4th condition)
-                    if (config.WithinNextPrefixRegex.IsExactMatch(beforeStr) &&
+                    if (config.WithinNextPrefixRegex.IsExactMatch(beforeStr, trim: true) &&
                         DurationParsingUtil.IsDateDuration(durationResult.Timex) && string.IsNullOrEmpty(afterStr))
                     {
                         GetModAndDate(out beginDate, ref endDate, referenceDate, durationResult.Timex, true, out mod, out dateList);
@@ -1216,7 +1215,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         endDate = endDate.AddDays(-1);
                     }
 
-                    if (config.FutureRegex.IsExactMatch(beforeStr))
+                    if (config.FutureRegex.IsExactMatch(beforeStr, trim: true))
                     {
                         GetModAndDate(out beginDate, ref endDate, referenceDate, durationResult.Timex, true, out mod, out dateList);
                     }
@@ -1231,7 +1230,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
 
                     // Handle the "in two weeks" case which means the second week
-                    if (config.InConnectorRegex.IsExactMatch(beforeStr) &&
+                    if (config.InConnectorRegex.IsExactMatch(beforeStr, trim: true) &&
                         !DurationParsingUtil.IsMultipleDuration(durationResult.Timex))
                     {
                         GetModAndDate(out beginDate, ref endDate, referenceDate, durationResult.Timex, true, out mod, out dateList);
@@ -1357,7 +1356,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var ret = new DateTimeResolutionResult();
 
             var trimmedText = text.Trim().ToLowerInvariant();
-            var match = this.config.WeekOfMonthRegex.MatchExact(trimmedText);
+            var match = this.config.WeekOfMonthRegex.MatchExact(trimmedText, trim: true);
 
             if (!match.Success)
             {
@@ -1402,8 +1401,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         private DateTimeResolutionResult ParseWeekOfYear(string text, DateObject referenceDate)
         {
             var ret = new DateTimeResolutionResult();
-            var trimmedText = text.Trim().ToLowerInvariant();
-            var match = this.config.WeekOfYearRegex.MatchExact(trimmedText);
+            var trimmedText = text.ToLowerInvariant();
+            var match = this.config.WeekOfYearRegex.MatchExact(trimmedText, trim: true);
 
             if (!match.Success)
             {
@@ -1474,7 +1473,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         private DateTimeResolutionResult ParseHalfYear(string text, DateObject referenceDate)
         {
             var ret = new DateTimeResolutionResult();
-            var match = this.config.AllHalfYearRegex.MatchExact(text);
+            var match = this.config.AllHalfYearRegex.MatchExact(text, trim: true);
 
             if (!match.Success)
             {
@@ -1519,11 +1518,11 @@ namespace Microsoft.Recognizers.Text.DateTime
         private DateTimeResolutionResult ParseQuarter(string text, DateObject referenceDate)
         {
             var ret = new DateTimeResolutionResult();
-            var match = this.config.QuarterRegex.MatchExact(text);
+            var match = this.config.QuarterRegex.MatchExact(text, trim: true);
 
             if (!match.Success)
             {
-                match = this.config.QuarterRegexYearFront.MatchExact(text);
+                match = this.config.QuarterRegexYearFront.MatchExact(text, trim: true);
             }
 
             if (!match.Success)
@@ -1599,7 +1598,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         private DateTimeResolutionResult ParseSeason(string text, DateObject referenceDate)
         {
             var ret = new DateTimeResolutionResult();
-            var match = this.config.SeasonRegex.MatchExact(text);
+            var match = this.config.SeasonRegex.MatchExact(text, trim: true);
 
             if (match.Success)
             {
@@ -1719,7 +1718,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         private DateTimeResolutionResult ParseWhichWeek(string text, DateObject referenceDate)
         {
             var ret = new DateTimeResolutionResult();
-            var match = this.config.WhichWeekRegex.MatchExact(text);
+            var match = this.config.WhichWeekRegex.MatchExact(text, trim: true);
 
             if (match.Success)
             {
@@ -1823,7 +1822,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var inputCentury = false;
 
             var trimmedText = text.Trim();
-            var match = this.config.DecadeWithCenturyRegex.MatchExact(trimmedText);
+            var match = this.config.DecadeWithCenturyRegex.MatchExact(trimmedText, trim: true);
             string beginLuisStr, endLuisStr;
 
             if (match.Success)
@@ -1876,7 +1875,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             else
             {
                 // handle cases like "the last 2 decades" "the next decade"
-                match = this.config.RelativeDecadeRegex.MatchExact(trimmedText);
+                match = this.config.RelativeDecadeRegex.MatchExact(trimmedText, trim: true);
 
                 if (match.Success)
                 {

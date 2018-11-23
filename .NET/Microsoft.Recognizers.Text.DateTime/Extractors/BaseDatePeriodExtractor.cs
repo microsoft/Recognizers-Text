@@ -185,9 +185,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
 
                 var middleStr = text.Substring(middleBegin, middleEnd - middleBegin).Trim().ToLowerInvariant();
-                var match = this.config.TillRegex.MatchExact(middleStr);
 
-                if (match.Success)
+                if (config.TillRegex.IsExactMatch(middleStr, trim: true))
                 {
                     var periodBegin = extractionResults[idx].Start ?? 0;
                     var periodEnd = (extractionResults[idx + 1].Start ?? 0) + (extractionResults[idx + 1].Length ?? 0);
@@ -337,7 +336,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 // within "Days/Weeks/Months/Years" should be handled as dateRange here
                 // if duration contains "Seconds/Minutes/Hours", it should be treated as datetimeRange
-                var match = config.WithinNextPrefixRegex.MatchEnd(beforeStr);
+                var match = config.WithinNextPrefixRegex.MatchEnd(beforeStr, trim: true);
 
                 if (match.Success)
                 {
@@ -353,7 +352,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
 
                 // Match prefix
-                match = this.config.PastRegex.MatchEnd(beforeStr);
+                match = this.config.PastRegex.MatchEnd(beforeStr, trim: true);
 
                 var index = -1;
 
@@ -365,7 +364,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 if (index < 0)
                 {
                     // For cases like "next five days"
-                    match = config.FutureRegex.MatchEnd(beforeStr);
+                    match = config.FutureRegex.MatchEnd(beforeStr, trim: true);
 
                     if (match.Success)
                     {
@@ -400,7 +399,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
 
                 // Match suffix
-                match = this.config.PastRegex.MatchBegin(afterStr);
+                match = this.config.PastRegex.MatchBegin(afterStr, trim: true);
 
                 if (match.Success)
                 {
@@ -408,7 +407,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     continue;
                 }
 
-                match = this.config.FutureRegex.MatchBegin(afterStr);
+                match = this.config.FutureRegex.MatchBegin(afterStr, trim: true);
 
                 if (match.Success)
                 {
@@ -416,7 +415,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     continue;
                 }
 
-                match = this.config.FutureSuffixRegex.MatchBegin(afterStr);
+                match = this.config.FutureSuffixRegex.MatchBegin(afterStr, trim: true);
 
                 if (match.Success)
                 {
