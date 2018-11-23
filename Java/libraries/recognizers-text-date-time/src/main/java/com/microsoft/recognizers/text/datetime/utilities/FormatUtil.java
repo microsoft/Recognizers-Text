@@ -44,14 +44,11 @@ public class FormatUtil {
     }
 
     public static String formatDate(LocalDateTime date) {
-        return String.join(dateDelimiter, String.format("%04d", date.getYear()),
-                String.format("%02d", date.getMonthValue()), String.format("%02d", date.getDayOfMonth()));
-
+        return String.join(dateDelimiter, String.format("%04d", date.getYear()), String.format("%02d", date.getMonthValue()), String.format("%02d", date.getDayOfMonth()));
     }
-
+    
     public static String formatTime(LocalDateTime time) {
-        return String.join(timeDelimiter, String.format("%02d", time.getHour()),
-                String.format("%02d", time.getMinute()), String.format("%02d", time.getSecond()));
+        return String.join(timeDelimiter, String.format("%02d", time.getHour()), String.format("%02d", time.getMinute()), String.format("%02d", time.getSecond()));
     }
 
     public static String formatDateTime(LocalDateTime datetime) {
@@ -74,6 +71,14 @@ public class FormatUtil {
 
         if (timeSpan.toHours() % 24 > 0) {
             result = String.format("%s%sH", result, timeSpan.toHours() % 24);
+        }
+
+        if (timeSpan.toMinutes() % 60 > 0) {
+            result = String.format("%s%sM", result, timeSpan.toMinutes() % 60);
+        }
+
+        if (timeSpan.get(ChronoUnit.SECONDS) % 60 > 0) {
+            result = String.format("%s%sS", result, timeSpan.get(ChronoUnit.SECONDS) % 60);
         }
 
         if (timeSpan.toMinutes() % 60 > 0) {

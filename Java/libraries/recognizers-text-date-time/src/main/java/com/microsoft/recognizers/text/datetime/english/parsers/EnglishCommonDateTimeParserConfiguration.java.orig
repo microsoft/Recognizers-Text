@@ -94,10 +94,17 @@ public class EnglishCommonDateTimeParserConfiguration extends BaseDateParserConf
         durationParser = new BaseDurationParser(new EnglishDurationParserConfiguration(this));
         dateParser = new BaseDateParser(new EnglishDateParserConfiguration(this));
         timeParser = new TimeParser(new EnglishTimeParserConfiguration(this));
+<<<<<<< HEAD
         dateTimeParser = new BaseDateTimeParser(new EnglishDateTimeParserConfiguration(this));
         datePeriodParser = new BaseDatePeriodParser(new EnglishDatePeriodParserConfiguration(this));
-        timePeriodParser = new BaseTimePeriodParser(new EnglishTimePeriodParserConfiguration(this));
+        timePeriodParser = null;
         dateTimePeriodParser = new BaseDateTimePeriodParser(new EnglishDateTimePeriodParserConfiguration(this));
+=======
+        dateTimeParser = null;
+        datePeriodParser = new BaseDatePeriodParser(null);
+        timePeriodParser = new BaseTimePeriodParser(null);
+        dateTimePeriodParser = null;
+>>>>>>> southworks/java-datetime/english-timeperiod-parser
         dateTimeAltParser = null;
     }
 
