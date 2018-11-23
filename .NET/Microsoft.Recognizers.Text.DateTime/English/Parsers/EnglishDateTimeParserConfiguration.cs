@@ -50,9 +50,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public Regex SpecificTimeOfDayRegex { get; }
 
-        public Regex TheEndOfRegex { get; }
+        public Regex SpecificEndOfRegex { get; }
 
-        public Regex EndOfDayRegex { get; }
+        public Regex UnspecificEndOfRegex { get; }
 
         public Regex UnitRegex { get; }
 
@@ -82,8 +82,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             SimpleTimeOfTodayAfterRegex = EnglishDateTimeExtractorConfiguration.SimpleTimeOfTodayAfterRegex;
             SimpleTimeOfTodayBeforeRegex = EnglishDateTimeExtractorConfiguration.SimpleTimeOfTodayBeforeRegex;
             SpecificTimeOfDayRegex = EnglishDateTimeExtractorConfiguration.SpecificTimeOfDayRegex;
-            TheEndOfRegex = EnglishDateTimeExtractorConfiguration.TheEndOfRegex;
-            EndOfDayRegex = EnglishDateTimeExtractorConfiguration.EndOfDayRegex;
+            SpecificEndOfRegex = EnglishDateTimeExtractorConfiguration.SpecificEndOfRegex;
+            UnspecificEndOfRegex = EnglishDateTimeExtractorConfiguration.UnspecificEndOfRegex;
             UnitRegex = EnglishTimeExtractorConfiguration.TimeUnitRegex;
             DateNumberConnectorRegex = EnglishDateTimeExtractorConfiguration.DateNumberConnectorRegex;
 

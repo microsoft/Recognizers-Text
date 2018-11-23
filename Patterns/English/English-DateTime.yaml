@@ -390,9 +390,9 @@ SimpleTimeOfTodayAfterRegex: !nestedRegex
 SimpleTimeOfTodayBeforeRegex: !nestedRegex
   def: '\b{DateTimeSpecificTimeOfDayRegex}(\s*,)?(\s+(at|around))?\s*({HourNumRegex}|{BaseDateTime.HourRegex})\b'
   references: [ DateTimeSpecificTimeOfDayRegex, HourNumRegex, BaseDateTime.HourRegex ]
-TheEndOfRegex: !simpleRegex
+SpecificEndOfRegex: !simpleRegex
   def: (the\s+)?end of(\s+the)?\s*$
-EndOfDayRegex: !simpleRegex
+UnspecificEndOfRegex: !simpleRegex
   def: \b(the\s+)?(eod|(end\s+of\s+day))\b
 PeriodTimeOfDayRegex: !simpleRegex
   def: \b((in\s+(the)?\s+)?((?<early>early(\s+|-))|(?<late>late(\s+|-)))?(?<timeOfDay>morning|afternoon|night|evening))\b
@@ -535,7 +535,7 @@ NumberEndingPattern: !nestedRegex
 OneOnOneRegex: !simpleRegex
   def: \b(1\s*:\s*1)|(one (on )?one|one\s*-\s*one|one\s*:\s*one)\b
 LaterEarlyPeriodRegex: !nestedRegex
-  def: \b({PrefixPeriodRegex})\s*\b\s*(?<suffix>{OneWordPeriodRegex})\b
+  def: \b((({PrefixPeriodRegex})\s*\b\s*(?<suffix>{OneWordPeriodRegex}))|(eoy))\b
   references: [PrefixPeriodRegex, OneWordPeriodRegex]
 WeekWithWeekDayRangeRegex: !nestedRegex
   def: \b((?<week>({NextPrefixRegex}|{PastPrefixRegex}|this)\s+week)((\s+between\s+{WeekDayRegex}\s+and\s+{WeekDayRegex})|(\s+from\s+{WeekDayRegex}\s+to\s+{WeekDayRegex})))\b

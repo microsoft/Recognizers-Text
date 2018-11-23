@@ -625,7 +625,7 @@
         "Resolution": {
           "values": [
             {
-              "timex": "2016-11-08T23:59",
+              "timex": "2016-11-08T23:59:59",
               "type": "datetime",
               "value": "2016-11-08 23:59:59"
             }
@@ -648,12 +648,12 @@
         "Resolution": {
           "values": [
             {
-              "timex": "XXXX-WXX-7T23:59",
+              "timex": "XXXX-WXX-7T23:59:59",
               "type": "datetime",
               "value": "2016-11-06 23:59:59"
             },
             {
-              "timex": "XXXX-WXX-7T23:59",
+              "timex": "XXXX-WXX-7T23:59:59",
               "type": "datetime",
               "value": "2016-11-13 23:59:59"
             }
@@ -676,7 +676,7 @@
         "Resolution": {
           "values": [
             {
-              "timex": "2016-11-13T23:59",
+              "timex": "2016-11-13T23:59:59",
               "type": "datetime",
               "value": "2016-11-13 23:59:59"
             }
@@ -6506,7 +6506,7 @@
         "Resolution": {
           "values": [
             {
-              "timex": "2018-11-21T23:59",
+              "timex": "2018-11-21T23:59:59",
               "type": "datetime",
               "value": "2018-11-21 23:59:59" 
             }
@@ -6521,7 +6521,6 @@
       "ReferenceDateTime": "2018-11-21T12:00:00"
     },
     "NotSupportedByDesign": "java",
-    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "end of day",
@@ -6531,7 +6530,7 @@
         "Resolution": {
           "values": [
             {
-              "timex": "2018-11-21T23:59",
+              "timex": "2018-11-21T23:59:59",
               "type": "datetime",
               "value": "2018-11-21 23:59:59" 
             }
@@ -6546,7 +6545,6 @@
       "ReferenceDateTime": "2018-11-21T12:00:00"
     },
     "NotSupportedByDesign": "java",
-    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "the eod",
@@ -6556,9 +6554,35 @@
         "Resolution": {
           "values": [
             {
-              "timex": "2018-11-21T23:59",
+              "timex": "2018-11-21T23:59:59",
               "type": "datetime",
               "value": "2018-11-21 23:59:59"  
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "A big party will be held at the EOY.",
+    "Context": {
+      "ReferenceDateTime": "2018-11-23T12:00:00"
+    },
+    "NotSupportedByDesign": "java",
+    "Results": [
+      {
+        "Text": "eoy",
+        "Start": 32,
+        "End": 34,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018",
+              "Mod": "end",
+              "type": "daterange",
+              "start": "2018-07-01",
+              "end": "2019-01-01"  
             }
           ]
         }

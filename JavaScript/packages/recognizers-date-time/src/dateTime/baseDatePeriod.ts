@@ -536,6 +536,13 @@ export class BaseDatePeriodParser implements IDateTimeParser {
             result.mod = Constants.MID_MOD;
         }
 
+        if (match.value === "eoy")
+        {
+            latePrefix = true;
+            trimedText = "year";
+            result.mod = Constants.LATE_MOD;
+        }
+
         if (match.groups("RelEarly").value)
         {
             earlierPrefix = true;

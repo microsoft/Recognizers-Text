@@ -23,7 +23,8 @@ export class EnglishDateTimeExtractorConfiguration implements IDateTimeExtractor
     readonly nightRegex: RegExp
     readonly timeOfTodayBeforeRegex: RegExp
     readonly simpleTimeOfTodayBeforeRegex: RegExp
-    readonly theEndOfRegex: RegExp
+    readonly specificEndOfRegex: RegExp
+    readonly unspecificEndOfRegex: RegExp
     readonly unitRegex: RegExp
     readonly prepositionRegex: RegExp
     readonly connectorRegex: RegExp
@@ -40,7 +41,8 @@ export class EnglishDateTimeExtractorConfiguration implements IDateTimeExtractor
         this.nightRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TimeOfDayRegex);
         this.timeOfTodayBeforeRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TimeOfTodayBeforeRegex);
         this.simpleTimeOfTodayBeforeRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SimpleTimeOfTodayBeforeRegex);
-        this.theEndOfRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TheEndOfRegex);
+        this.specificEndOfRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SpecificEndOfRegex);
+        this.unspecificEndOfRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.UnspecificEndOfRegex);
         this.unitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TimeUnitRegex);
         this.prepositionRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PrepositionRegex);
         this.connectorRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.ConnectorRegex);
@@ -72,7 +74,8 @@ export class EnglishDateTimeParserConfiguration implements IDateTimeParserConfig
     simpleTimeOfTodayAfterRegex: RegExp;
     simpleTimeOfTodayBeforeRegex: RegExp;
     specificTimeOfDayRegex: RegExp;
-    theEndOfRegex: RegExp;
+    specificEndOfRegex: RegExp;
+    unspecificEndOfRegex: RegExp;
     unitRegex: RegExp;
     unitMap: ReadonlyMap<string, string>;
     numbers: ReadonlyMap<string, number>;
@@ -91,7 +94,8 @@ export class EnglishDateTimeParserConfiguration implements IDateTimeParserConfig
         this.simpleTimeOfTodayAfterRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SimpleTimeOfTodayAfterRegex);
         this.simpleTimeOfTodayBeforeRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SimpleTimeOfTodayBeforeRegex);
         this.specificTimeOfDayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SpecificTimeOfDayRegex);
-        this.theEndOfRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TheEndOfRegex);
+        this.specificEndOfRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SpecificEndOfRegex);
+        this.unspecificEndOfRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.UnspecificEndOfRegex);
         this.unitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TimeUnitRegex);
         this.numbers = config.numbers;
         this.cardinalExtractor = config.cardinalExtractor;

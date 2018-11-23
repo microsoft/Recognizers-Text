@@ -753,6 +753,11 @@ class BaseDatePeriodParser(DateTimeParser):
             trimmed_source = match.group('suffix')
             result.mod = TimeTypeConstants.MID_MOD
 
+        if match.string == 'eoy':
+            late_prefix = True
+            trimmed_source = 'year'
+            result.mod = TimeTypeConstants.LATE_MOD
+
         if RegExpUtility.get_group(match, 'RelEarly'):
             early_prefix = True
             result.mod = None

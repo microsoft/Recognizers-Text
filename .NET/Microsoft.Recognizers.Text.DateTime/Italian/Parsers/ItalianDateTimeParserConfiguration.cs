@@ -44,9 +44,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public Regex SpecificTimeOfDayRegex { get; }
 
-        public Regex TheEndOfRegex { get; }
+        public Regex SpecificEndOfRegex { get; }
 
-        public Regex EndOfDayRegex { get; }
+        public Regex UnspecificEndOfRegex { get; }
         
         public Regex UnitRegex { get; }
 
@@ -72,8 +72,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             SimpleTimeOfTodayAfterRegex = ItalianDateTimeExtractorConfiguration.SimpleTimeOfTodayAfterRegex;
             SimpleTimeOfTodayBeforeRegex = ItalianDateTimeExtractorConfiguration.SimpleTimeOfTodayBeforeRegex;
             SpecificTimeOfDayRegex = ItalianDateTimeExtractorConfiguration.SpecificTimeOfDayRegex;
-            TheEndOfRegex = ItalianDateTimeExtractorConfiguration.TheEndOfRegex;
-            EndOfDayRegex = ItalianDateTimeExtractorConfiguration.EndOfDayRegex;
+            SpecificEndOfRegex = ItalianDateTimeExtractorConfiguration.SpecificEndOfRegex;
+            UnspecificEndOfRegex = ItalianDateTimeExtractorConfiguration.UnspecificEndOfRegex;
             UnitRegex = ItalianTimeExtractorConfiguration.TimeUnitRegex;
             DateNumberConnectorRegex = ItalianDateTimeExtractorConfiguration.DateNumberConnectorRegex;
             Numbers = config.Numbers;

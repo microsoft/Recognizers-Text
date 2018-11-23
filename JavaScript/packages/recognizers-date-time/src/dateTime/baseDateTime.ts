@@ -22,7 +22,8 @@ export interface IDateTimeExtractorConfiguration {
     nightRegex: RegExp
     timeOfTodayBeforeRegex: RegExp
     simpleTimeOfTodayBeforeRegex: RegExp
-    theEndOfRegex: RegExp
+    specificEndOfRegex: RegExp
+    unspecificEndOfRegex: RegExp
     unitRegex: RegExp
     utilityConfiguration: IDateTimeUtilityConfiguration
     isConnectorToken(source: string): boolean
@@ -154,17 +155,24 @@ export class BaseDateTimeExtractor implements IDateTimeExtractor {
         let ers = this.config.datePointExtractor.extract(source, refDate);
         ers.forEach(er => {
             let beforeStr = source.substr(0, er.start);
-            let beforeMatches = RegExpUtility.getMatches(this.config.theEndOfRegex, beforeStr);
+            let beforeMatches = RegExpUtility.getMatches(this.config.specificEndOfRegex, beforeStr);
             if (beforeMatches && beforeMatches.length > 0) {
                 tokens.push(new Token(beforeMatches[0].index, er.start + er.length))
             } else {
                 let afterStr = source.substr(er.start + er.length);
-                let afterMatches = RegExpUtility.getMatches(this.config.theEndOfRegex, afterStr);
+                let afterMatches = RegExpUtility.getMatches(this.config.specificEndOfRegex, afterStr);
                 if (afterMatches && afterMatches.length > 0) {
                     tokens.push(new Token(er.start, er.start + er.length + afterMatches[0].index + afterMatches[0].length))
                 }
             }
         });
+
+        RegExpUtility.getMatches(this.config.unspecificEndOfRegex, source).forEach(
+            match => {
+                tokens.push(new Token(match.index, match.index + match.length));
+            }
+        );
+
         return tokens;
     }
 
@@ -197,7 +205,8 @@ export interface IDateTimeParserConfiguration {
     simpleTimeOfTodayAfterRegex: RegExp;
     simpleTimeOfTodayBeforeRegex: RegExp;
     specificTimeOfDayRegex: RegExp;
-    theEndOfRegex: RegExp;
+    specificEndOfRegex: RegExp;
+    unspecificEndOfRegex: RegExp;
     unitRegex: RegExp;
     unitMap: ReadonlyMap<string, string>;
     numbers: ReadonlyMap<string, number>;
@@ -450,22 +459,44 @@ export class BaseDateTimeParser implements IDateTimeParser {
 
     private parseSpecialTimeOfDate(text: string, refDateTime: Date): DateTimeResolutionResult {
         let ret = new DateTimeResolutionResult();
+        ret = this.parseUnspecificTimeOfDate(text, refDateTime);
+        if (ret.success) {
+            return ret;
+        }
+
         let ers = this.config.dateExtractor.extract(text, refDateTime);
         if (ers.length !== 1) {
             return ret;
         }
         let beforeStr = text.substring(0, ers[0].start || 0);
-        if (RegExpUtility.getMatches(this.config.theEndOfRegex, beforeStr).length) {
+        if (RegExpUtility.getMatches(this.config.specificEndOfRegex, beforeStr).length) {
             let pr = this.config.dateParser.parse(ers[0], refDateTime);
             let futureDate = new Date(pr.value.futureValue);
             let pastDate = new Date(pr.value.pastValue);
-            ret.timex = pr.timexStr + "T23:59";
-            futureDate.setHours(23, 59, 59, 999);
+            ret.timex = pr.timexStr + "T23:59:59";
+            futureDate.setHours(23, 59, 59, 0);
             ret.futureValue = futureDate;
-            pastDate.setHours(23, 59, 59, 999);
+            pastDate.setHours(23, 59, 59, 0);
             ret.pastValue = pastDate;
             ret.success = true;
             return ret;
+        }
+
+        return ret;
+    }
+
+    private parseUnspecificTimeOfDate(text: string, refDateTime: Date): DateTimeResolutionResult {
+        let ret = new DateTimeResolutionResult();
+        let eod = RegExpUtility.getMatches(this.config.unspecificEndOfRegex, text);
+        if (eod.length) {
+            ret.timex = DateTimeFormatUtil.formatDate(refDateTime) + "T23:59:59";
+            let futureDate = new Date(refDateTime);
+            futureDate.setHours(23, 59, 59, 0);
+            ret.futureValue = futureDate;
+            let pastDate = new Date(refDateTime);
+            pastDate.setHours(23, 59, 59, 0);
+            ret.pastValue = pastDate;
+            ret.success = true;
         }
 
         return ret;

@@ -687,6 +687,14 @@ namespace Microsoft.Recognizers.Text.DateTime
                     ret.Mod = Constants.MID_MOD;
                 }
 
+                // Handle 'eoy(end of year)', the behavior of 'eoy' should be the same as 'end of year'
+                if (match.Value.Equals("eoy"))
+                {
+                    latePrefix = true;
+                    trimmedText = "year";
+                    ret.Mod = Constants.LATE_MOD;
+                }
+
                 if (match.Groups["RelEarly"].Success)
                 {
                     earlierPrefix = true;

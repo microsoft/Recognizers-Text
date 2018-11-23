@@ -814,7 +814,7 @@
         "Text": "the end of the day",
         "Type": "datetime",
         "Value": {
-          "Timex": "2016-11-07T23:59",
+          "Timex": "2016-11-07T23:59:59",
           "FutureResolution": {
             "dateTime": "2016-11-07 23:59:59"
           },
@@ -837,7 +837,7 @@
         "Text": "end of tomorrow",
         "Type": "datetime",
         "Value": {
-          "Timex": "2016-11-08T23:59",
+          "Timex": "2016-11-08T23:59:59",
           "FutureResolution": {
             "dateTime": "2016-11-08 23:59:59"
           },
@@ -860,7 +860,7 @@
         "Text": "end of the sunday",
         "Type": "datetime",
         "Value": {
-          "Timex": "XXXX-WXX-7T23:59",
+          "Timex": "XXXX-WXX-7T23:59:59",
           "FutureResolution": {
             "dateTime": "2016-11-13 23:59:59"
           },
@@ -1274,14 +1274,13 @@
     "Context": {
       "ReferenceDateTime": "2018-11-21T12:00:00"
     },
-    "NotSupported": "javascript, python",
     "NotSupportedByDesign": "java",
     "Results": [
       {
         "Text": "end of the day",
         "Type": "datetime",
         "Value": {
-          "Timex": "2018-11-21T23:59",
+          "Timex": "2018-11-21T23:59:59",
           "FutureResolution": {
             "dateTime": "2018-11-21 23:59:59"
           },
@@ -1299,14 +1298,13 @@
     "Context": {
       "ReferenceDateTime": "2018-11-21T12:00:00"
     },
-    "NotSupported": "javascript, python",
     "NotSupportedByDesign": "java",
     "Results": [
       {
         "Text": "end of day",
         "Type": "datetime",
         "Value": {
-          "Timex": "2018-11-21T23:59",
+          "Timex": "2018-11-21T23:59:59",
           "FutureResolution": {
             "dateTime": "2018-11-21 23:59:59"
           },
@@ -1324,14 +1322,13 @@
     "Context": {
       "ReferenceDateTime": "2018-11-21T12:00:00"
     },
-    "NotSupported": "javascript, python",
     "NotSupportedByDesign": "java",
     "Results": [
       {
         "Text": "the eod",
         "Type": "datetime",
         "Value": {
-          "Timex": "2018-11-21T23:59",
+          "Timex": "2018-11-21T23:59:59",
           "FutureResolution": {
             "dateTime": "2018-11-21 23:59:59"
           },

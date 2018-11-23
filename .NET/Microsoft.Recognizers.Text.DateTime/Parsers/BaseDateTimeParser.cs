@@ -333,18 +333,12 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var ret = new DateTimeResolutionResult();
 
-            // Handle 'eod', 'end of day'
-            var eod = this.config.EndOfDayRegex.Match(text);
-            if (eod.Success)
+            ret = ParseUnspecificTimeOfDate(text, refDateTime);
+            if (ret.Success)
             {
-                ret.Timex = DateTimeFormatUtil.FormatDate(refDateTime) + "T23:59";
-                ret.FutureValue = refDateTime.Date.AddDays(1).AddTicks(-1);
-                ret.PastValue = refDateTime.Date.AddDays(1).AddTicks(-1);
-                ret.Success = true;
-
                 return ret;
             }
-
+           
             var ers = this.config.DateExtractor.Extract(text, refDateTime);
             if (ers.Count != 1)
             {
@@ -352,15 +346,31 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             var beforeStr = text.Substring(0, ers[0].Start ?? 0);
-            if (this.config.TheEndOfRegex.IsMatch(beforeStr))
+            if (this.config.SpecificEndOfRegex.IsMatch(beforeStr))
             {
                 var pr = this.config.DateParser.Parse(ers[0], refDateTime);
                 var futureDate = (DateObject)((DateTimeResolutionResult)pr.Value).FutureValue;
                 var pastDate = (DateObject)((DateTimeResolutionResult)pr.Value).PastValue;
-                ret.Timex = pr.TimexStr + "T23:59";
-                ret.FutureValue = futureDate.Date.AddDays(1).AddTicks(-1);
-                ret.PastValue = pastDate.Date.AddDays(1).AddTicks(-1);
+                ret.Timex = pr.TimexStr + "T23:59:59";
+                ret.FutureValue = futureDate.Date.AddDays(1).AddSeconds(-1);
+                ret.PastValue = pastDate.Date.AddDays(1).AddSeconds(-1);
                 ret.Success = true;
+            }
+
+            return ret;
+        }
+
+        private DateTimeResolutionResult ParseUnspecificTimeOfDate(string text, DateObject refDateTime)
+        {
+            // Handle 'eod', 'end of day'
+            var ret = new DateTimeResolutionResult();
+            var eod = this.config.UnspecificEndOfRegex.Match(text);
+            if (eod.Success)
+            {
+                ret.Timex = DateTimeFormatUtil.FormatDate(refDateTime) + "T23:59:59";
+                ret.FutureValue = refDateTime.Date.AddDays(1).AddSeconds(-1);
+                ret.PastValue = refDateTime.Date.AddDays(1).AddSeconds(-1);
+                ret.Success = true;              
             }
 
             return ret;
