@@ -228,7 +228,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     var unitStr = this.config.UnitMap[srcUnit];
 
                     ret.Timex = TimexUtility.GenerateDurationTimex(numVal, unitStr, IsLessThanDay(unitStr));
-                    ret.FutureValue = ret.PastValue = double.Parse(numStr) * this.config.UnitValueMap[srcUnit];
+                    ret.FutureValue = ret.PastValue = double.Parse(numStr, CultureInfo.InvariantCulture) * this.config.UnitValueMap[srcUnit];
                     ret.Success = true;
                 }
                 else if (match.Groups[Constants.BusinessDayGroupName].Success)
@@ -266,7 +266,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
 
                     ret.Timex = TimexUtility.GenerateDurationTimex(numVal, unitStr, IsLessThanDay(unitStr));
-                    ret.FutureValue = ret.PastValue = double.Parse(numStr) * this.config.UnitValueMap[srcUnit];
+                    ret.FutureValue = ret.PastValue = double.Parse(numStr, CultureInfo.InvariantCulture) * this.config.UnitValueMap[srcUnit];
                     ret.Success = true;
                 }
                 else if (match.Groups[Constants.BusinessDayGroupName].Success)

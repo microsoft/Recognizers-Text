@@ -24,7 +24,7 @@
     ]
   },
   {
-    "Input": "Ich komme so früh wie möglich zurück.",
+    "Input": "Ich komme so früh wie möglich.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -48,7 +48,7 @@
     ]
   },
   {
-    "Input": "Ich gehe denke ich am 15. um 8 Uhr",
+    "Input": "Ich komme am 15. um 8 Uhr",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -66,13 +66,13 @@
             "dateTime": "2016-10-15 08:00:00"
           }
         },
-        "Start": 22,
+        "Start": 13,
         "Length": 12
       }
     ]
   },
   {
-    "Input": "Ich gehe denke ich  am 15. November um 8 Uhr",
+    "Input": "Ich komme am 15. November um 8 Uhr",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -90,8 +90,32 @@
             "dateTime": "2015-11-15 08:00:00"
           }
         },
-        "Start": 23,
+        "Start": 13,
         "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Am 21.04.2016 um 16:00 Uhr werde ich zurück sein.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "21.04.2016 um 16:00 Uhr",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-04-21T16:00",
+          "FutureResolution": {
+            "dateTime": "2016-04-21 16:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-04-21 16:00:00"
+          }
+        },
+        "Start": 3,
+        "Length": 23
       }
     ]
   },
@@ -168,7 +192,7 @@
     ]
   },
   {
-    "Input": "Ich gehe am 14. Oktober um 8:00 Uhr zurück",
+    "Input": "Ich komme am 14. Oktober um 8:00 Uhr zurück",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -186,13 +210,13 @@
             "dateTime": "2016-10-14 08:00:00"
           }
         },
-        "Start": 12,
+        "Start": 13,
         "Length": 23
       }
     ]
   },
   {
-    "Input": "Ich gehe am 14. Oktober um 8:00:25 zurück",
+    "Input": "Ich komme am 14. Oktober um 8:00:25 zurück",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -210,7 +234,7 @@
             "dateTime": "2016-10-14 08:00:25"
           }
         },
-        "Start": 12,
+        "Start": 13,
         "Length": 22
       }
     ]
@@ -240,14 +264,38 @@
     ]
   },
   {
-    "Input": "Der Verkauf findet um 19:00 am 22.12.2016 statt",
+    "Input": "Ich gehe am 5. Mai 2016 um 20 Minuten nach 8 Uhr Abends nach Hause",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "19:00 am 22.12.2016",
+        "Text": "5. Mai 2016 um 20 Minuten nach 8 Uhr Abends",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-05-05T20:20",
+          "FutureResolution": {
+            "dateTime": "2016-05-05 20:20:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-05-05 20:20:00"
+          }
+        },
+        "Start": 12,
+        "Length": 43
+      }
+    ]
+  },
+  {
+    "Input": "Der Verkauf findet um 19:00 Uhr am 22.12.2016 statt",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "19:00 Uhr am 22.12.2016",
         "Type": "datetime",
         "Value": {
           "Timex": "2016-12-22T19:00",
@@ -259,7 +307,7 @@
           }
         },
         "Start": 22,
-        "Length": 19
+        "Length": 23
       }
     ]
   },
@@ -288,14 +336,14 @@
     ]
   },
   {
-    "Input": "am 15 um 8:00:24",
+    "Input": "am 15. um 8:00:24",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "15 um 8:00:24",
+        "Text": "15. um 8:00:24",
         "Type": "datetime",
         "Value": {
           "Timex": "XXXX-XX-15T08:00:24",
@@ -307,19 +355,19 @@
           }
         },
         "Start": 3,
-        "Length": 13
+        "Length": 14
       }
     ]
   },
   {
-    "Input": "Ich gehe dann am 21/04/2016 um 20:00:24 zurück",
+    "Input": "Ich gehe dann am 21/04/2016 um 20:00:24 Uhr zurück",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "21/04/2016 um 20:00:24",
+        "Text": "21/04/2016 um 20:00:24 Uhr",
         "Type": "datetime",
         "Value": {
           "Timex": "2016-04-21T20:00:24",
@@ -331,19 +379,19 @@
           }
         },
         "Start": 17,
-        "Length": 22
+        "Length": 26
       }
     ]
   },
   {
-    "Input": "Ich bin dann am 14. Oktober 8:00:13 wieder zurück",
+    "Input": "Ich bin dann am 14. Oktober 8:00:13 Uhr wieder zurück",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "14. Oktober 8:00:13",
+        "Text": "14. Oktober 8:00:13 Uhr",
         "Type": "datetime",
         "Value": {
           "Timex": "XXXX-10-14T08:00:13",
@@ -355,7 +403,7 @@
           }
         },
         "Start": 16,
-        "Length": 19
+        "Length": 23
       }
     ]
   },
@@ -384,7 +432,32 @@
     ]
   },
   {
-    "Input": "Ich gehe diesen Morgen um sieben los",
+    "Input": "Ich ging heute Morgen um 7 los",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Comment": "Not extracted, possibly due to a conflict between heute and morgen.",
+    "NotSupported": "dotNet, javascript, python",
+    "Results": [
+      {
+        "Text": "heute Morgen um 7",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-11-07T07",
+          "FutureResolution": {
+            "dateTime": "2016-11-07 07:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-11-07 07:00:00"
+          }
+        },
+        "Start": 9,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Ich ging diesen Morgen um sieben los",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },

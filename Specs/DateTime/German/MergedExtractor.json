@@ -25,7 +25,7 @@
   },
   {
     "Input": "Das ganze findet dann am Montag um 4 Uhr statt",
-    "NotSupported": "javascript, dotnet, python",
+    "NotSupported": "dotnet,javascript, python",
     "Results": [
       {
         "Text": "Montag um 4 Uhr",
@@ -78,34 +78,34 @@
         "Length": 10
       },
       {
-        "Text": "23. August",
+        "Text": "den 23. August",
         "Type": "date",
-        "Start": 49,
+        "Start": 45,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "6.6. 12:15",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "6.6. 12:15",
+        "Type": "datetime",
+        "Start": 0,
         "Length": 10
       }
     ]
   },
   {
-    "Input": "06/06 12:15",
+    "Input": "6.6.12 15:15",
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "06/06 12:15",
+        "Text": "6.6.12 15:15",
         "Type": "datetime",
         "Start": 0,
-        "Length": 11
-      }
-    ]
-  },
-  {
-    "Input": "06/06/12 15:15",
-    "NotSupported": "javascript, python",
-    "Results": [
-      {
-        "Text": "06/06/12 15:15",
-        "Type": "datetime",
-        "Start": 0,
-        "Length": 14
+        "Length": 12
       }
     ]
   },
@@ -134,7 +134,7 @@
     ]
   },
   {
-    "Input": "Das nächste meeting wird am 16. März 2017 sein. Wie wäre es denn mit einer Diskussionsrunde heute um 2 Uhr Nachmittags?",
+    "Input": "Das nächste Meeting wird am 16. März 2017 sein. Wie wäre es denn mit einer Diskussionsrunde heute um 2 Uhr Nachmittags?",
     "NotSupported": "javascript, dotnet, python",
     "Results": [
       {
@@ -148,20 +148,35 @@
     ]
   },
   {
-    "Input": "Wir treffen uns am Freitag Nachmittag für 3 Stunden.",
-    "NotSupported": "javascript, python",
+    "Input": "Das nächste Meeting wird am 16. März 2017 sein. Wie wäre es denn mit einer Diskussionsrunde heute um 14 Uhr?",
+    "NotSupported": "javascript, dotnet, python",
     "Results": [
       {
-        "Text": "am Freitag Nachmittag ",
-        "Type": "set",
-        "Start": 16,
-        "Length": 22
+        "Text": "16. märz 2017",
+        "Type": "date"
       },
       {
-        "Text": "3 Stunden.",
-        "Type": "datetimerange",
+        "Text": "heute um 14 uhr",
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "Wir treffen uns am Freitag Nachmittag für 3 Stunden.",
+    "NotSupported": "dotnet,javascript, python",
+	"Comment": "wrongly returning an extra space at the end of the first entity",
+    "Results": [
+      {
+        "Text": "am freitag nachmittag",
+        "Type": "set",
+        "Start": 16,
+        "Length": 21
+      },
+      {
+        "Text": "3 stunden",
+        "Type": "duration",
         "Start": 42,
-        "Length": 10
+        "Length": 9
       }
     ]
   },
@@ -170,7 +185,7 @@
     "NotSupported": "javascript, dotnet, python",
     "Results": [
       {
-        "Text": "morgen um 4 Uhr",
+        "Text": "morgen um 4 uhr",
         "Type": "datetime"
       }
     ]
@@ -188,97 +203,97 @@
     ]
   },
   {
-    "Input": "Ich würde 2016-05 nicht hier",
+    "Input": "Ich bin 2016-05 nicht hier",
     "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "2016-05",
         "Type": "daterange",
-        "Start": 10,
+        "Start": 8,
         "Length": 7
       }
     ]
   },
   {
-    "Input": "Ich würde 2016/05 nicht hier",
+    "Input": "Ich bin 2016/05 nicht hier",
     "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "2016/05",
         "Type": "daterange",
-        "Start": 10,
+        "Start": 8,
         "Length": 7
       }
     ]
   },
   {
-    "Input": "Ich würde 05-2016 nicht hier",
+    "Input": "Ich bin 05-2016 nicht hier",
     "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "05-2016",
         "Type": "daterange",
-        "Start": 10,
+        "Start": 8,
         "Length": 7
       }
     ]
   },
   {
-    "Input": "Ich würde 05/2016 nicht hier",
+    "Input": "Ich bin 05/2016 nicht hier",
     "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "05/2016",
         "Type": "daterange",
-        "Start": 10,
+        "Start": 8,
         "Length": 7
       }
     ]
   },
   {
-    "Input": "Ich würde 2016 - 05 nicht hier",
+    "Input": "Ich bin 2016 - 05 nicht hier",
     "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "2016 - 05",
         "Type": "daterange",
-        "Start": 10,
+        "Start": 8,
         "Length": 9
       }
     ]
   },
   {
-    "Input": "Ich würde 2016  /05 nicht hier",
+    "Input": "Ich bin 2016  /05 nicht hier",
     "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "2016  /05",
         "Type": "daterange",
-        "Start": 10,
+        "Start": 8,
         "Length": 9
       }
     ]
   },
   {
-    "Input": "Ich würde 05-  2016 nicht hier",
+    "Input": "Ich bin 05-  2016 nicht hier",
     "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "05-  2016",
         "Type": "daterange",
-        "Start": 10,
+        "Start": 8,
         "Length": 9
       }
     ]
   },
   {
-    "Input": "Ich würde 05 /  2016 nicht hier",
+    "Input": "Ich bin 05 /  2016 nicht hier",
     "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "05 /  2016",
         "Type": "daterange",
-        "Start": 10,
+        "Start": 8,
         "Length": 10
       }
     ]
