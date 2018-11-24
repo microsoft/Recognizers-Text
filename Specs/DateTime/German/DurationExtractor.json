@@ -12,19 +12,31 @@
     ]
   },
   {
-    "Input": "Ich gehe für 3 std",
+    "Input": "Ich gehe für 3 st",
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "3 std",
+        "Text": "3 st",
         "Type": "duration",
         "Start": 13,
-        "Length": 5
+        "Length": 4
       }
     ]
   },
   {
-    "Input": "Ich gehe für 7 Jahre",
+    "Input": "Ich gehe für 5h nach draußen.",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "5h",
+        "Type": "duration",
+        "Start": 13,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "Ich gehe für 7 Jahre ins Ausland",
     "NotSupported": "javascript, python",
     "Results": [
       {
@@ -36,7 +48,7 @@
     ]
   },
   {
-    "Input": "Ich gehe für sieben Jahre",
+    "Input": "Ich gehe für sieben Jahre ins Ausland",
     "NotSupported": "javascript, python",
     "Results": [
       {
@@ -84,13 +96,13 @@
     ]
   },
   {
-    "Input": "Bin in 3 Minuten wieder da",
+    "Input": "Ich bin in 3 Minuten wieder da",
     "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "3 Minuten",
         "Type": "duration",
-        "Start": 7,
+        "Start": 11,
         "Length": 9
       }
     ]
@@ -200,6 +212,18 @@
         "Type": "duration",
         "Start": 12,
         "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Ich bin ein ganzes Jahr lang weg",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "ganzes Jahr",
+        "Type": "duration",
+        "Start": 12,
+        "Length": 11
       }
     ]
   }

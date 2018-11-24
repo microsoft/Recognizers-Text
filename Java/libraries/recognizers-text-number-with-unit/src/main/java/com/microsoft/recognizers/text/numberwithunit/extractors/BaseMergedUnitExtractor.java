@@ -43,13 +43,13 @@ public class BaseMergedUnitExtractor implements IExtractor {
         int[] groups = new int[ers.size()];
         groups[0] = 0;
         for (int idx = 0; idx < ers.size() - 1; idx++) {
-            if (!ers.get(idx).type.equals(ers.get(idx + 1).type)
-                &&  !ers.get(idx).type.equals(Constants.SYS_NUM)
-                &&  !ers.get(idx + 1).type.equals(Constants.SYS_NUM)) {
+            if (!ers.get(idx).type.equals(ers.get(idx + 1).type) &&
+                !ers.get(idx).type.equals(Constants.SYS_NUM) &&
+                !ers.get(idx + 1).type.equals(Constants.SYS_NUM)) {
                 continue;
             }
 
-            if (ers.get(idx).data instanceof ExtractResult && !((ExtractResult) ers.get(idx).data).data.toString().startsWith("Integer")) {
+            if (ers.get(idx).data instanceof ExtractResult && !((ExtractResult)ers.get(idx).data).data.toString().startsWith("Integer")) {
                 groups[idx + 1] = groups[idx] + 1;
                 continue;
             }
@@ -98,7 +98,7 @@ public class BaseMergedUnitExtractor implements IExtractor {
 
                 ExtractResult r = result.get(group);
 
-                List<ExtractResult> data = (List<ExtractResult>) r.data;
+                List<ExtractResult> data = (List<ExtractResult>)r.data;
                 data.add(ers.get(idx + 1));
                 r = r.withLength(periodEnd - periodBegin)
                         .withText(source.substring(periodBegin, periodEnd))
@@ -111,7 +111,7 @@ public class BaseMergedUnitExtractor implements IExtractor {
 
         for (int idx = 0; idx < result.size(); idx++) {
             if (result.get(idx).data instanceof List) {
-                List<ExtractResult> innerData = (List<ExtractResult>) result.get(idx).data;
+                List<ExtractResult> innerData = (List<ExtractResult>)result.get(idx).data;
                 if (innerData.size() == 1) {
                     result.set(idx, innerData.get(0));
                 }
@@ -176,9 +176,9 @@ public class BaseMergedUnitExtractor implements IExtractor {
             }
         }
 
-        Collections.sort(ers, (Comparator<ExtractResult>) (xo, yo) -> {
-            ExtractResult x = (ExtractResult) xo;
-            ExtractResult y = (ExtractResult) yo;
+        Collections.sort(ers, (Comparator<ExtractResult>)(xo, yo) -> {
+            ExtractResult x = (ExtractResult)xo;
+            ExtractResult y = (ExtractResult)yo;
             return x.start - y.start;
         });
     }

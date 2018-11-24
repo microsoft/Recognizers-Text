@@ -360,7 +360,7 @@ public class BaseDateParser implements IDateTimeParser {
             // the validity of the phrase is guaranteed in the Date Extractor
             ret.setTimex(FormatUtil.luisDate(year, month, day));
             ret.setFutureValue(LocalDateTime.of(year, month, day, 0, 0));
-            ret.setPastValue(LocalDateTime.of(year, month, day, 0, 0)); ;
+            ret.setPastValue(LocalDateTime.of(year, month, day, 0, 0));
             ret.setSuccess(true);
 
             return ret;
@@ -541,7 +541,6 @@ public class BaseDateParser implements IDateTimeParser {
 
         String trimmedText = text.trim().toLowerCase();
         int day = 0;
-        
 
         List<ExtractResult> er = this.config.getOrdinalExtractor().extract(trimmedText);
         if (er.size() == 0) {

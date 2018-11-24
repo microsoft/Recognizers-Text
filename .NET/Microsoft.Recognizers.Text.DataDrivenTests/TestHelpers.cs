@@ -705,7 +705,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 case DateTimeParsers.Duration:
                     return new BaseDurationParser(new GermanDurationParserConfiguration(commonConfiguration));
                 case DateTimeParsers.Holiday:
-                    return new BaseHolidayParser(new GermanHolidayParserConfiguration(commonConfiguration));
+                    return new HolidayParserGer(new GermanHolidayParserConfiguration(commonConfiguration));
                 case DateTimeParsers.Set:
                     return new BaseSetParser(new GermanSetParserConfiguration(commonConfiguration));
                 case DateTimeParsers.Merged:

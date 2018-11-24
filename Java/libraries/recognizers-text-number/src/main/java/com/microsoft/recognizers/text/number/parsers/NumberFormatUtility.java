@@ -32,7 +32,7 @@ public final class NumberFormatUtility {
 
     public static String format(Object value, CultureInfo culture) {
 
-        Double doubleValue = (Double) value;
+        Double doubleValue = (Double)value;
         String result;
 
         // EXPONENTIAL_AT: [-5, 15] });
@@ -66,7 +66,7 @@ public final class NumberFormatUtility {
         if (supportedCultures.containsKey(culture.cultureCode)) {
             LongFormatType longFormat = supportedCultures.get(culture.cultureCode);
             if (longFormat != null) {
-                Character[] chars = result.chars().mapToObj(i -> (char) i)
+                Character[] chars = result.chars().mapToObj(i -> (char)i)
                         .map(c -> changeMark(c, longFormat))
                         .toArray(Character[]::new);
 
