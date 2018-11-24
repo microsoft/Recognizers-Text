@@ -70,6 +70,7 @@ public class DateTimeExtractorTest extends AbstractTest {
     }
 
     public static IDateTimeExtractor getExtractor(String language, String modelName) {
+
         try {
             String culture = getCultureCode(language);
             switch (culture) {
@@ -84,32 +85,35 @@ public class DateTimeExtractorTest extends AbstractTest {
     }
 
     private static IDateTimeExtractor getEnglishExtractor(String name) {
+
         switch (name) {
-            case "DatePeriodExtractor":
-                return new BaseDatePeriodExtractor(new EnglishDatePeriodExtractorConfiguration());
             case "DateExtractor":
                 return new BaseDateExtractor(new EnglishDateExtractorConfiguration());
+            case "DatePeriodExtractor":
+                return new BaseDatePeriodExtractor(new EnglishDatePeriodExtractorConfiguration());
+            //case "DateTimeAltExtractor":
+            //    return new BaseDateTimeAltExtractor(new EnglishDateTimeAltExtractorConfiguration());
+            case "DateTimeExtractor":
+                return new BaseDateTimeExtractor(new EnglishDateTimeExtractorConfiguration());
             case "DateTimePeriodExtractor":
                 return new BaseDateTimePeriodExtractor(new EnglishDateTimePeriodExtractorConfiguration());
             case "DurationExtractor":
                 return new BaseDurationExtractor(new EnglishDurationExtractorConfiguration());
-            case "DateTimeExtractor":
-                return new BaseDateTimeExtractor(new EnglishDateTimeExtractorConfiguration());
             case "HolidayExtractor":
                 return new BaseHolidayExtractor(new EnglishHolidayExtractorConfiguration());
-            case "TimeExtractor":
-                return new BaseTimeExtractor(new EnglishTimeExtractorConfiguration());
-            case "SetExtractor":
-                return new BaseSetExtractor(new EnglishSetExtractorConfiguration());
-            case "TimeZoneExtractor":
-                return new BaseTimeZoneExtractor(new EnglishTimeZoneExtractorConfiguration(DateTimeOptions.EnablePreview));
-            case "TimePeriodExtractor":
-                return new BaseTimePeriodExtractor(new EnglishTimePeriodExtractorConfiguration());
             case "MergedExtractor":
                 return new BaseMergedExtractor(new EnglishMergedExtractorConfiguration(DateTimeOptions.None));
             case "MergedExtractorSkipFromTo":
                 return new BaseMergedExtractor(new EnglishMergedExtractorConfiguration(DateTimeOptions.SkipFromToMerge));
-            
+            case "SetExtractor":
+                return new BaseSetExtractor(new EnglishSetExtractorConfiguration());
+            case "TimeExtractor":
+                return new BaseTimeExtractor(new EnglishTimeExtractorConfiguration());
+            case "TimePeriodExtractor":
+                return new BaseTimePeriodExtractor(new EnglishTimePeriodExtractorConfiguration());
+            case "TimeZoneExtractor":
+                return new BaseTimeZoneExtractor(new EnglishTimeZoneExtractorConfiguration(DateTimeOptions.EnablePreview));
+
             default:
                 throw new AssumptionViolatedException("Extractor Type/Name not supported.");
         }

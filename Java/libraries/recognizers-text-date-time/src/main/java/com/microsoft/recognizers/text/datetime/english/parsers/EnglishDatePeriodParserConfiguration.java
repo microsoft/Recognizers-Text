@@ -21,9 +21,11 @@ import java.util.regex.Pattern;
 public class EnglishDatePeriodParserConfiguration extends BaseOptionsConfiguration implements IDatePeriodParserConfiguration {
 
     public EnglishDatePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) {
+
         super(config.getOptions());
 
         tokenBeforeDate = EnglishDateTime.TokenBeforeDate;
+
         cardinalExtractor = config.getCardinalExtractor();
         ordinalExtractor = config.getOrdinalExtractor();
         integerExtractor = config.getIntegerExtractor();
@@ -32,6 +34,7 @@ public class EnglishDatePeriodParserConfiguration extends BaseOptionsConfigurati
         durationExtractor = config.getDurationExtractor();
         durationParser = config.getDurationParser();
         dateParser = config.getDateParser();
+
         monthFrontBetweenRegex = EnglishDatePeriodExtractorConfiguration.MonthFrontBetweenRegex;
         betweenRegex = EnglishDatePeriodExtractorConfiguration.BetweenRegex;
         monthFrontSimpleCasesRegex = EnglishDatePeriodExtractorConfiguration.MonthFrontSimpleCasesRegex;
@@ -69,6 +72,7 @@ public class EnglishDatePeriodParserConfiguration extends BaseOptionsConfigurati
         lessThanRegex = EnglishDatePeriodExtractorConfiguration.LessThanRegex;
         moreThanRegex = EnglishDatePeriodExtractorConfiguration.MoreThanRegex;
         centurySuffixRegex = EnglishDatePeriodExtractorConfiguration.CenturySuffixRegex;
+
         unitMap = config.getUnitMap();
         cardinalMap = config.getCardinalMap();
         dayOfMonth = config.getDayOfMonth();
@@ -77,6 +81,7 @@ public class EnglishDatePeriodParserConfiguration extends BaseOptionsConfigurati
         writtenDecades = config.getWrittenDecades();
         numbers = config.getNumbers();
         specialDecadeCases = config.getSpecialDecadeCases();
+
         nextPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.NextPrefixRegex, Pattern.CASE_INSENSITIVE);
         pastPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PastPrefixRegex, Pattern.CASE_INSENSITIVE);
         thisPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.ThisPrefixRegex, Pattern.CASE_INSENSITIVE);
@@ -322,112 +327,98 @@ public class EnglishDatePeriodParserConfiguration extends BaseOptionsConfigurati
     public ImmutableMap<String, Integer> getSpecialDecadeCases() { return specialDecadeCases; }
     
     @Override
-    public int getSwiftDayOrMonth(String text)
-    {
+    public int getSwiftDayOrMonth(String text) {
+
         String trimmedText = text.trim().toLowerCase();
         int swift = 0;
+
         Optional<Match> matchAfterNext = Arrays.stream(RegExpUtility.getMatches(afterNextSuffixRegex, trimmedText)).findFirst();
         Optional<Match> matchNext = Arrays.stream(RegExpUtility.getMatches(nextPrefixRegex, trimmedText)).findFirst();
         Optional<Match> matchPast = Arrays.stream(RegExpUtility.getMatches(pastPrefixRegex, trimmedText)).findFirst();
-        if (matchAfterNext.isPresent())
-        {
+
+        if (matchAfterNext.isPresent()) {
             swift = 2;
-        }
-        else if (matchNext.isPresent())
-        {
+        } else if (matchNext.isPresent()) {
             swift = 1;
-        }
-        else if (matchPast.isPresent())
-        {
+        } else if (matchPast.isPresent()) {
             swift = -1;
         }
+
         return swift;
     }
 
     @Override
-    public int getSwiftYear(String text)
-    {
+    public int getSwiftYear(String text) {
+
         String trimmedText = text.trim().toLowerCase();
         int swift = -10;
+
         Optional<Match> matchAfterNext = Arrays.stream(RegExpUtility.getMatches(afterNextSuffixRegex, trimmedText)).findFirst();
         Optional<Match> matchNext = Arrays.stream(RegExpUtility.getMatches(nextPrefixRegex, trimmedText)).findFirst();
         Optional<Match> matchPast = Arrays.stream(RegExpUtility.getMatches(pastPrefixRegex, trimmedText)).findFirst();
         Optional<Match> matchThisPresent = Arrays.stream(RegExpUtility.getMatches(thisPrefixRegex, trimmedText)).findFirst();
-        if (matchAfterNext.isPresent())
-        {
+
+        if (matchAfterNext.isPresent()) {
             swift = 2;
-        }
-        else if (matchNext.isPresent())
-        {
+        } else if (matchNext.isPresent()) {
             swift = 1;
-        }
-        else if (matchPast.isPresent())
-        {
+        } else if (matchPast.isPresent()) {
             swift = -1;
-        }
-        else if (matchThisPresent.isPresent())
-        {
+        } else if (matchThisPresent.isPresent()) {
             swift = 0;
         }
+
         return swift;
     }
 
     @Override
-    public boolean isFuture(String text)
-    {
+    public boolean isFuture(String text) {
         String trimmedText = text.trim().toLowerCase();
         return (trimmedText.startsWith("this") || trimmedText.startsWith("next"));
     }
 
     @Override
-    public boolean isLastCardinal(String text)
-    {
+    public boolean isLastCardinal(String text) {
         String trimmedText = text.trim().toLowerCase();
         return trimmedText.equals("last");
     }
 
     @Override
-    public boolean isMonthOnly(String text)
-    {
+    public boolean isMonthOnly(String text) {
         String trimmedText = text.trim().toLowerCase();
         Optional<Match> matchAfterNext = Arrays.stream(RegExpUtility.getMatches(afterNextSuffixRegex, trimmedText)).findFirst();
         return trimmedText.endsWith("month") || trimmedText.contains(" month ") && matchAfterNext.isPresent();
     }
 
     @Override
-    public boolean isMonthToDate(String text)
-    {
+    public boolean isMonthToDate(String text) {
         String trimmedText = text.trim().toLowerCase();
         return trimmedText.equals("month to date");
     }
 
     @Override
-    public boolean isWeekend(String text)
-    {
+    public boolean isWeekend(String text) {
         String trimmedText = text.trim().toLowerCase();
         Optional<Match> matchAfterNext = Arrays.stream(RegExpUtility.getMatches(afterNextSuffixRegex, trimmedText)).findFirst();
         return trimmedText.endsWith("weekend") || trimmedText.contains(" weekend ") && matchAfterNext.isPresent();
     }
 
     @Override
-    public boolean isWeekOnly(String text)
-    {
+    public boolean isWeekOnly(String text) {
         String trimmedText = text.trim().toLowerCase();
         Optional<Match> matchAfterNext = Arrays.stream(RegExpUtility.getMatches(afterNextSuffixRegex, trimmedText)).findFirst();
         return trimmedText.endsWith("week") || trimmedText.contains(" week ") && matchAfterNext.isPresent();
     }
 
     @Override
-    public boolean isYearOnly(String text)
-    {
+    public boolean isYearOnly(String text) {
         String trimmedText = text.trim().toLowerCase();
         Optional<Match> matchAfterNext = Arrays.stream(RegExpUtility.getMatches(afterNextSuffixRegex, trimmedText)).findFirst();
         return trimmedText.endsWith("year") || trimmedText.contains(" year ") && matchAfterNext.isPresent();
     }
 
     @Override
-    public boolean isYearToDate(String text)
-    {
+    public boolean isYearToDate(String text) {
         String trimmedText = text.trim().toLowerCase();
         return trimmedText.equals("year to date");
     }

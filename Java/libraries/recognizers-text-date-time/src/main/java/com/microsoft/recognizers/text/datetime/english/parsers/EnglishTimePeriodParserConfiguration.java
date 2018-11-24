@@ -18,6 +18,7 @@ public class EnglishTimePeriodParserConfiguration extends BaseOptionsConfigurati
     private final IDateTimeExtractor timeExtractor;
     private final IDateTimeParser timeParser;
     private final IExtractor integerExtractor;
+
     private final Pattern specificTimeFromToRegex;
     private final Pattern specificTimeBetweenAndRegex;
     private final Pattern pureNumberFromToRegex;
@@ -25,10 +26,12 @@ public class EnglishTimePeriodParserConfiguration extends BaseOptionsConfigurati
     private final Pattern timeOfDayRegex;
     private final Pattern generalEndingRegex;
     private final Pattern tillRegex;
+
     private final IDateTimeUtilityConfiguration utilityConfiguration;
     private final ImmutableMap<String, Integer> numbers;
 
     public EnglishTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) {
+
         super(config.getOptions());
 
         timeExtractor = config.getTimeExtractor();
@@ -36,11 +39,13 @@ public class EnglishTimePeriodParserConfiguration extends BaseOptionsConfigurati
         timeParser = config.getTimeParser();
         numbers = config.getNumbers();
         utilityConfiguration = config.getUtilityConfiguration();
+
         pureNumberFromToRegex = EnglishTimePeriodExtractorConfiguration.PureNumFromTo;
         pureNumberBetweenAndRegex = EnglishTimePeriodExtractorConfiguration.PureNumBetweenAnd;
         specificTimeFromToRegex = EnglishTimePeriodExtractorConfiguration.SpecificTimeFromTo;
         specificTimeBetweenAndRegex = EnglishTimePeriodExtractorConfiguration.SpecificTimeBetweenAnd;
         timeOfDayRegex = EnglishTimePeriodExtractorConfiguration.TimeOfDayRegex;
+
         generalEndingRegex = EnglishTimePeriodExtractorConfiguration.GeneralEndingRegex;
         tillRegex = EnglishTimePeriodExtractorConfiguration.TillRegex;
     }
@@ -107,6 +112,7 @@ public class EnglishTimePeriodParserConfiguration extends BaseOptionsConfigurati
 
     @Override
     public MatchedTimeRangeResult getMatchedTimexRange(String text, String timex, int beginHour, int endHour, int endMin) {
+
         String trimmedText = text.trim().toLowerCase();
         if (trimmedText.endsWith("s")) {
             trimmedText = trimmedText.substring(0, trimmedText.length() - 1);
