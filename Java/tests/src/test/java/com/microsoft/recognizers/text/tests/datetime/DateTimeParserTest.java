@@ -108,24 +108,24 @@ public class DateTimeParserTest extends AbstractTest {
     private static IDateTimeParser getEnglishParser(String name) {
 
         switch (name) {
-            case "TimeZoneParser":
-                return new BaseTimeZoneParser();
-            case "DurationParser":
-                return new BaseDurationParser(new EnglishDurationParserConfiguration(new EnglishCommonDateTimeParserConfiguration(DateTimeOptions.None)));
             case "DateParser":
                 return new BaseDateParser(new EnglishDateParserConfiguration(new EnglishCommonDateTimeParserConfiguration(DateTimeOptions.None)));
-            case "TimeParser":
-                return new TimeParser(new EnglishTimeParserConfiguration(new EnglishCommonDateTimeParserConfiguration(DateTimeOptions.None)));
-            case "HolidayParser":
-                return new BaseHolidayParser(new EnglishHolidayParserConfiguration());
             case "DatePeriodParser":
                 return new BaseDatePeriodParser(new EnglishDatePeriodParserConfiguration(new EnglishCommonDateTimeParserConfiguration(DateTimeOptions.None)));
             case "DateTimeParser":
                 return new BaseDateTimeParser(new EnglishDateTimeParserConfiguration(new EnglishCommonDateTimeParserConfiguration(DateTimeOptions.None)));
-            case "TimePeriodParser":
-                return new BaseTimePeriodParser(new EnglishTimePeriodParserConfiguration(new EnglishCommonDateTimeParserConfiguration(DateTimeOptions.None)));
             case "DateTimePeriodParser":
                 return new BaseDateTimePeriodParser(new EnglishDateTimePeriodParserConfiguration(new EnglishCommonDateTimeParserConfiguration(DateTimeOptions.None)));
+            case "DurationParser":
+                return new BaseDurationParser(new EnglishDurationParserConfiguration(new EnglishCommonDateTimeParserConfiguration(DateTimeOptions.None)));
+            case "HolidayParser":
+                return new BaseHolidayParser(new EnglishHolidayParserConfiguration());
+            case "TimeParser":
+                return new TimeParser(new EnglishTimeParserConfiguration(new EnglishCommonDateTimeParserConfiguration(DateTimeOptions.None)));
+            case "TimePeriodParser":
+                return new BaseTimePeriodParser(new EnglishTimePeriodParserConfiguration(new EnglishCommonDateTimeParserConfiguration(DateTimeOptions.None)));
+            case "TimeZoneParser":
+                return new BaseTimeZoneParser();
             default:
                 throw new AssumptionViolatedException("Parser Type/Name not supported.");
         }

@@ -1,6 +1,6 @@
 [
   {
-    "Input": "Ich gehe am 15. zurück.",
+    "Input": "Ich komme am 15. zurück.",
     "Context": {
       "ReferenceDateTime": "2016-01-07T00:00:00"
     },
@@ -18,13 +18,13 @@
             "date": "2015-12-15"
           }
         },
-        "Start": 12,
+        "Start": 13,
         "Length": 3
       }
     ]
   },
   {
-    "Input": "Ich gehe am 15. Januar zurück.",
+    "Input": "Ich komme am 15. Januar zurück.",
     "Context": {
       "ReferenceDateTime": "2016-01-07T00:00:00"
     },
@@ -42,13 +42,61 @@
             "date": "2015-01-15"
           }
         },
-        "Start": 12,
+        "Start": 13,
         "Length": 10
       }
     ]
   },
   {
-    "Input": "Ich gehe am 15. Januar 2011 zurück.",
+    "Input": "Ich komme am 15.1. zurück.",
+    "Context": {
+      "ReferenceDateTime": "2016-01-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "15.1.",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-01-15",
+          "FutureResolution": {
+            "date": "2016-01-15"
+          },
+          "PastResolution": {
+            "date": "2015-01-15"
+          }
+        },
+        "Start": 13,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "Ich komme am 15.01. zurück.",
+    "Context": {
+      "ReferenceDateTime": "2016-01-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "15.01.",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-01-15",
+          "FutureResolution": {
+            "date": "2016-01-15"
+          },
+          "PastResolution": {
+            "date": "2015-01-15"
+          }
+        },
+        "Start": 13,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "Ich komme am 15. Januar 2011 zurück.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -66,13 +114,13 @@
             "date": "2011-01-15"
           }
         },
-        "Start": 12,
+        "Start": 13,
         "Length": 15
       }
     ]
   },
   {
-    "Input": "Ich gehe am 15.1.2011 zurück.",
+    "Input": "Ich komme am 15.1.2011 zurück.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -90,20 +138,20 @@
             "date": "2011-01-15"
           }
         },
-        "Start": 12,
+        "Start": 13,
         "Length": 9
       }
     ]
   },
   {
-    "Input": "Aller Wahrscheinlichkeit nach bin ich am Montag dem 15. Januar 2017 wieder hier.",
+    "Input": "Aller Wahrscheinlichkeit nach bin ich am Montag den 15. Januar 2017 wieder hier.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "Montag dem 15. Januar 2017",
+        "Text": "Montag den 15. Januar 2017",
         "Type": "date",
         "Value": {
           "Timex": "2017-01-15",
@@ -120,14 +168,14 @@
     ]
   },
   {
-    "Input": "Aller Wahrscheinlichkeit nach bin ich am Montag dem 15. Januar wieder hier.",
+    "Input": "Aller Wahrscheinlichkeit nach bin ich am Montag den 15. Januar wieder hier.",
     "Context": {
       "ReferenceDateTime": "2017-01-07T00:00:00"
     },
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "Montag dem 15. Januar",
+        "Text": "Montag den 15. Januar",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-01-15",
@@ -192,7 +240,7 @@
     ]
   },
   {
-    "Input": "Ich gehe am Freitag zurück",
+    "Input": "Ich fahre am Freitag zurück",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -210,7 +258,7 @@
             "date": "2016-11-11"
           }
         },
-        "Start": 12,
+        "Start": 13,
         "Length": 7
       }
     ]
@@ -312,7 +360,7 @@
     ]
   },
   {
-    "Input": "Ich gehe am 3-7-2017 zurück.",
+    "Input": "Ich fahre am 3-7-2017 zurück.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -330,7 +378,7 @@
             "date": "2017-07-03"
           }
         },
-        "Start": 12,
+        "Start": 13,
         "Length": 8
       }
     ]

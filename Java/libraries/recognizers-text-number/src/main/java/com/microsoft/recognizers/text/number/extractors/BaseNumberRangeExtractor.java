@@ -125,8 +125,8 @@ public abstract class BaseNumberRangeExtractor implements IExtractor {
                     // num1 must less than num2
                     ParseResult numExt1 = numberParser.parse(extractNumList1.get(0));
                     ParseResult numExt2 = numberParser.parse(extractNumList2.get(0));
-                    double num1 = numExt1.value != null ? (double) numExt1.value : 0;
-                    double num2 = numExt1.value != null ? (double) numExt2.value : 0;
+                    double num1 = numExt1.value != null ? (double)numExt1.value : 0;
+                    double num2 = numExt1.value != null ? (double)numExt2.value : 0;
 
                     if (num1 > num2) {
                         return Pair.with(start, length);
@@ -213,17 +213,17 @@ public abstract class BaseNumberRangeExtractor implements IExtractor {
         extractNumber.addAll(extractOrdinal);
 
         //        extractNumber = extractNumber.OrderByDescending(num => num.Length).ThenByDescending(num => num.Start).ToList();
-        Collections.sort(extractNumber, (Comparator<ExtractResult>) (o1, o2) -> {
-            Integer x1 = ((ExtractResult) o1).length;
-            Integer x2 = ((ExtractResult) o2).length;
+        Collections.sort(extractNumber, (Comparator<ExtractResult>)(o1, o2) -> {
+            Integer x1 = ((ExtractResult)o1).length;
+            Integer x2 = ((ExtractResult)o2).length;
             int scomp = x2.compareTo(x1);
 
             if (scomp != 0) {
                 return scomp;
             }
 
-            x1 = ((ExtractResult) o1).start;
-            x2 = ((ExtractResult) o2).start;
+            x1 = ((ExtractResult)o1).start;
+            x2 = ((ExtractResult)o2).start;
             return x2.compareTo(x1);
         });
 
