@@ -36,7 +36,7 @@
     ]
   },
   {
-    "Input": "Ich gehe am 15. November um 8 Uhr weg.",
+    "Input": "Ich gehe am 15. November um 8 Uhr los.",
     "NotSupported": "javascript, python",
     "Results": [
       {
@@ -48,7 +48,7 @@
     ]
   },
   {
-    "Input": "Ich gehe am 15.08. um 8 Uhr weg.",
+    "Input": "Ich gehe am 15.08. um 8 Uhr los.",
     "NotSupported": "javascript, python",
     "Results": [
       {
@@ -60,7 +60,7 @@
     ]
   },
   {
-    "Input": "Ich gehe am 15. um 8 Uhr weg.",
+    "Input": "Ich gehe am 15. um 8 Uhr los.",
     "NotSupported": "javascript, python",
     "Results": [
       {
@@ -96,7 +96,7 @@
     ]
   },
   {
-    "Input": "Das ganze ist am 14. Oktober um 8:00:00 Uhr",
+    "Input": "Das ganze ist am 14. Oktober um 8:00:00 Uhr vorbei",
     "NotSupported": "javascript, python",
     "Results": [
       {
@@ -120,6 +120,18 @@
     ]
   },
   {
+    "Input": "Um 8 Uhr heute Morgen",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "8 Uhr heute Morgen",
+        "Type": "datetime",
+        "Start": 3,
+        "Length": 18
+      }
+    ]
+  },
+  {
     "Input": "Um 8 Uhr diesen Morgen",
     "NotSupported": "javascript, python",
     "Results": [
@@ -132,14 +144,14 @@
     ]
   },
   {
-    "Input": "Ich gehe dann gegen 8 Uhr diesen Abend nach Hause",
+    "Input": "Ich gehe dann gegen 8 Uhr heute Abend nach Hause",
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "8 Uhr diesen Abend",
+        "Text": "8 Uhr heute Abend",
         "Type": "datetime",
         "Start": 20,
-        "Length": 18
+        "Length": 17
       }
     ]
   },

@@ -1,72 +1,87 @@
 [
   {
-    "Input": "Ich gehe am 22. April zurück",
+    "Input": "Ich komme am 22. April zurück",
     "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "22. April",
         "Type": "date",
-        "Start": 12,
+        "Start": 13,
         "Length": 9
       }
     ]
   },
   {
-    "Input": "Ich gehe am 12. Januar 2016 zurück",
+    "Input": "Ich komme am 12. Januar 2016 zurück",
     "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "12. Januar 2016",
         "Type": "date",
-        "Start": 12,
+        "Start": 13,
         "Length": 15
       }
     ]
   },
   {
-    "Input": "Ich gehe am Dienstag dem 12. Januar 2016 zurück",
+    "Input": "Ich komme am Dienstag den 12. Januar 2016 zurück",
+    "Context": {
+      "ReferenceDateTime": "2016-01-01T00:00:00"
+    },
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "Dienstag dem 12. Januar 2016",
+        "Text": "Dienstag den 12. Januar 2016",
         "Type": "date",
-        "Start": 12,
+        "Start": 13,
         "Length": 28
       }
     ]
   },
   {
-    "Input": "Ich gehe am 21/04/2016 zurück",
+    "Input": "Ich komme am 21/04/2016 zurück",
     "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "21/04/2016",
         "Type": "date",
-        "Start": 12,
+        "Start": 13,
         "Length": 10
       }
     ]
   },
   {
-    "Input": "Ich gehe am 22/04 zurück",
+    "Input": "Ich komme am 22.04 zurück",
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "22/04",
+        "Text": "22.04",
         "Type": "date",
-        "Start": 12,
+        "Start": 13,
         "Length": 5
       }
     ]
   },
   {
-    "Input": "Das Datum meiner Rückkehr wird 2015/08/12 sein.",
+    "Input": "Ich komme am 22/04 zurück",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "22/04",
+        "Type": "date",
+        "Start": 13,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "Das Datum meiner Rückkehr wird der 2015/08/12 sein.",
     "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "2015/08/12",
         "Type": "date",
-        "Start": 31,
+        "Start": 35,
         "Length": 10
       }
     ]
@@ -96,13 +111,13 @@
     ]
   },
   {
-    "Input": "Ich bin Sonntag in 2 Wochen wieder da.",
+    "Input": "Ich bin am Sonntag in 2 Wochen wieder da.",
     "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Sonntag in 2 Wochen",
         "Type": "date",
-        "Start": 8,
+        "Start": 11,
         "Length": 19
       }
     ]

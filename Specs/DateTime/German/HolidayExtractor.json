@@ -1,23 +1,565 @@
 [
   {
-    "Input": "Ich bin an Ostern wieder zurück",
+    "Input": "Ich bin an Ostern 2020 wieder zurück",
+    "Results": [
+      {
+        "Text": "Ostern 2020",
+        "Type": "date",
+        "Start": 11,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich an Weiberfastnacht 2019",
+    "Results": [
+      {
+        "Text": "Weiberfastnacht 2019",
+        "Type": "date",
+        "Start": 20,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich an Weiberfastnacht",
+    "Results": [
+      {
+        "Text": "Weiberfastnacht",
+        "Type": "date",
+        "Start": 20,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich an Karneval",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "Karneval",
+        "Type": "date",
+        "Start": 20,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich an Karneval 2017",
+    "Results": [
+      {
+        "Text": "Karneval 2017",
+        "Type": "date",
+        "Start": 20,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich an Aschermittwoch",
+    "Results": [
+      {
+        "Text": "Aschermittwoch",
+        "Type": "date",
+        "Start": 20,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich an Aschermittwoch 2019",
+    "Results": [
+      {
+        "Text": "Aschermittwoch 2019",
+        "Type": "date",
+        "Start": 20,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich an Palmensonntag",
+    "Results": [
+      {
+        "Text": "Palmensonntag",
+        "Type": "date",
+        "Start": 20,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich an Palmensonntag 2018",
+    "Results": [
+      {
+        "Text": "Palmensonntag 2018",
+        "Type": "date",
+        "Start": 20,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich an Karfreitag",
+    "Results": [
+      {
+        "Text": "Karfreitag",
+        "Type": "date",
+        "Start": 20,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich an Karfreitag 2018",
+    "Results": [
+      {
+        "Text": "Karfreitag 2018",
+        "Type": "date",
+        "Start": 20,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich an Christi Himmelfahrt",
+    "Results": [
+      {
+        "Text": "Christi Himmelfahrt",
+        "Type": "date",
+        "Start": 20,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich an Christi Himmelfahrt 2018",
+    "Results": [
+      {
+        "Text": "Christi Himmelfahrt 2018",
+        "Type": "date",
+        "Start": 20,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich am Pfingstsonntag",
+    "Results": [
+      {
+        "Text": "Pfingstsonntag",
+        "Type": "date",
+        "Start": 20,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich am Pfingstsonntag 2018",
+    "Results": [
+      {
+        "Text": "Pfingstsonntag 2018",
+        "Type": "date",
+        "Start": 20,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich an Pfingstmontag",
+    "Results": [
+      {
+        "Text": "Pfingstmontag",
+        "Type": "date",
+        "Start": 20,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich an Pfingstmontag 2018",
+    "Results": [
+      {
+        "Text": "Pfingstmontag 2018",
+        "Type": "date",
+        "Start": 20,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich an Fronleichnam",
+    "Results": [
+      {
+        "Text": "Fronleichnam",
+        "Type": "date",
+        "Start": 20,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich an Fronleichnam 2018",
+    "Results": [
+      {
+        "Text": "Fronleichnam 2018",
+        "Type": "date",
+        "Start": 20,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich an Rosenmontag",
+    "Results": [
+      {
+        "Text": "Rosenmontag",
+        "Type": "date",
+        "Start": 20,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich an Rosenmontag 2018",
+    "Results": [
+      {
+        "Text": "Rosenmontag 2018",
+        "Type": "date",
+        "Start": 20,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich an Fastnacht",
+    "Results": [
+      {
+        "Text": "Fastnacht",
+        "Type": "date",
+        "Start": 20,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich an Fastnacht 2018",
+    "Results": [
+      {
+        "Text": "Fastnacht 2018",
+        "Type": "date",
+        "Start": 20,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich an Gründonnerstag",
+    "Results": [
+      {
+        "Text": "Gründonnerstag",
+        "Type": "date",
+        "Start": 20,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich an Gründonnerstag 2018",
+    "Results": [
+      {
+        "Text": "Gründonnerstag 2018",
+        "Type": "date",
+        "Start": 20,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich an Himmelfahrt",
+    "Results": [
+      {
+        "Text": "Himmelfahrt",
+        "Type": "date",
+        "Start": 20,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich an Himmelfahrt 2018",
+    "Results": [
+      {
+        "Text": "Himmelfahrt 2018",
+        "Type": "date",
+        "Start": 20,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich an Volkstrauertag",
+    "Results": [
+      {
+        "Text": "Volkstrauertag",
+        "Type": "date",
+        "Start": 20,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich an Volkstrauertag 2018",
+    "Results": [
+      {
+        "Text": "Volkstrauertag 2018",
+        "Type": "date",
+        "Start": 20,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich am Buß- und Bettag",
+    "Results": [
+      {
+        "Text": "Buß- und Bettag",
+        "Type": "date",
+        "Start": 20,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich an Buß- und Bettag 2018",
+    "Results": [
+      {
+        "Text": "Buß- und Bettag 2018",
+        "Type": "date",
+        "Start": 20,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich an Totensonntag",
+    "Results": [
+      {
+        "Text": "Totensonntag",
+        "Type": "date",
+        "Start": 20,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich an Totensonntag 2018",
+    "Results": [
+      {
+        "Text": "Totensonntag 2018",
+        "Type": "date",
+        "Start": 20,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich am erster Advent",
+    "Results": [
+      {
+        "Text": "erster Advent",
+        "Type": "date",
+        "Start": 20,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich am erster Advent 2018",
+    "Results": [
+      {
+        "Text": "erster Advent 2018",
+        "Type": "date",
+        "Start": 20,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich am 1. Advent",
+    "Results": [
+      {
+        "Text": "1. Advent",
+        "Type": "date",
+        "Start": 20,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich am 1. Advent 2018",
+    "Results": [
+      {
+        "Text": "1. Advent 2018",
+        "Type": "date",
+        "Start": 20,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich am zweiten Advent",
+    "Results": [
+      {
+        "Text": "zweiten Advent",
+        "Type": "date",
+        "Start": 20,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich am zweiten Advent 2018",
+    "Results": [
+      {
+        "Text": "zweiten Advent 2018",
+        "Type": "date",
+        "Start": 20,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich am 2. Advent",
+    "Results": [
+      {
+        "Text": "2. Advent",
+        "Type": "date",
+        "Start": 20,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich am 2. Advent 2018",
+    "Results": [
+      {
+        "Text": "2. Advent 2018",
+        "Type": "date",
+        "Start": 20,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich am 3. Advent",
+    "Results": [
+      {
+        "Text": "3. Advent",
+        "Type": "date",
+        "Start": 20,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich am 3. Advent 2018",
+    "Results": [
+      {
+        "Text": "3. Advent 2018",
+        "Type": "date",
+        "Start": 20,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich am dritter Advent",
+    "Results": [
+      {
+        "Text": "dritter Advent",
+        "Type": "date",
+        "Start": 20,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich am dritter Advent 2018",
+    "Results": [
+      {
+        "Text": "dritter Advent 2018",
+        "Type": "date",
+        "Start": 20,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich am 4. Advent",
+    "Results": [
+      {
+        "Text": "4. Advent",
+        "Type": "date",
+        "Start": 20,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich am 4. Advent 2018",
+    "Results": [
+      {
+        "Text": "4. Advent 2018",
+        "Type": "date",
+        "Start": 20,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich am vierter Advent",
+    "Results": [
+      {
+        "Text": "vierter Advent",
+        "Type": "date",
+        "Start": 20,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich am vierter Advent 2018",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript, python, dotNet",
+    "Results": [
+      {
+        "Text": "vierter Advent 2018",
+        "Type": "date",
+        "Start": 20,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Ich besuche dich am schweizer Buß- und Bettag",
+    "Results": [
+      {
+        "Text": "schweizer Buß- und Bettag",
+        "Type": "date",
+        "Start": 20,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "Ich bin an Ostern wieder zurück",
     "Results": [
       {
         "Text": "Ostern",
         "Type": "date",
-        "Value": {
-          "Timex": "",
-          "FutureResolution": {
-            "date": "0001-01-01"
-          },
-          "PastResolution": {
-            "date": "0001-01-01"
-          }
-        },
         "Start": 11,
         "Length": 6
       }
@@ -25,23 +567,10 @@
   },
   {
     "Input": "An Weihnachten bin ich bestimmt wieder da",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Weihnachten",
         "Type": "date",
-        "Value": {
-          "Timex": "",
-          "FutureResolution": {
-            "date": "0001-01-01"
-          },
-          "PastResolution": {
-            "date": "0001-01-01"
-          }
-        },
         "Start": 3,
         "Length": 11
       }
@@ -49,23 +578,10 @@
   },
   {
     "Input": "Weihnachten 2010 war wirklich schön",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Weihnachten 2010",
         "Type": "date",
-        "Value": {
-          "Timex": "2010-12-WXX-4-4",
-          "FutureResolution": {
-            "date": "2010-12-25"
-          },
-          "PastResolution": {
-            "date": "2010-12-25"
-          }
-        },
         "Start": 0,
         "Length": 16
       }
@@ -73,25 +589,47 @@
   },
   {
     "Input": "Mal schauen was wir dieses Jahr am Vatertag so unternehmen",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Vatertag",
         "Type": "date",
-        "Value": {
-          "Timex": "XXXX-06-WXX-7-3",
-          "FutureResolution": {
-            "date": "2017-06-18"
-          },
-          "PastResolution": {
-            "date": "2016-06-19"
-          }
-        },
         "Start": 35,
         "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "An Mariä Himmelfahrt haben wir Bayern frei.",
+    "Results": [
+      {
+        "Text": "Mariä Himmelfahrt",
+        "Type": "date",
+        "Start": 3,
+        "Length": 17
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "Was machst du am Tag der deutschen Einheit?",
+    "Results": [
+      {
+        "Text": "Tag der deutschen Einheit",
+        "Type": "date",
+        "Start": 17,
+        "Length": 25
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "Was machst du an Ostermontag 2017?",
+    "Results": [
+      {
+        "Text": "Ostermontag 2017",
+        "Type": "date",
+        "Start": 17,
+        "Length": 16
       }
     ]
   }

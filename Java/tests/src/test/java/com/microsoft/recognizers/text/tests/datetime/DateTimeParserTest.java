@@ -110,12 +110,16 @@ public class DateTimeParserTest extends AbstractTest {
         switch (name) {
             case "DateParser":
                 return new BaseDateParser(new EnglishDateParserConfiguration(new EnglishCommonDateTimeParserConfiguration(DateTimeOptions.None)));
+            case "DatePeriodParser":
+                return new BaseDatePeriodParser(new EnglishDatePeriodParserConfiguration(new EnglishCommonDateTimeParserConfiguration(DateTimeOptions.None)));
             case "DurationParser":
                 return new BaseDurationParser(new EnglishDurationParserConfiguration(new EnglishCommonDateTimeParserConfiguration(DateTimeOptions.None)));
             case "HolidayParser":
                 return new BaseHolidayParser(new EnglishHolidayParserConfiguration());
             case "TimeParser":
                 return new TimeParser(new EnglishTimeParserConfiguration(new EnglishCommonDateTimeParserConfiguration(DateTimeOptions.None)));
+            case "TimePeriodParser":
+                return new BaseTimePeriodParser(new EnglishTimePeriodParserConfiguration(new EnglishCommonDateTimeParserConfiguration(DateTimeOptions.None)));
             case "TimeZoneParser":
                 return new BaseTimeZoneParser();
             case "DatePeriodParser":

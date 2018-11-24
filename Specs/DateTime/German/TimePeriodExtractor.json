@@ -24,7 +24,7 @@
     ]
   },
   {
-    "Input": "Ich werde von 5 bis 6 Uhr Nachmittags",
+    "Input": "Ich werde von 5 bis 6 Uhr Nachmittags weg sein",
     "NotSupported": "javascript, python",
     "Results": [
       {
@@ -32,6 +32,30 @@
         "Type": "timerange",
         "Start": 14,
         "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "Ich werde von 17 bis 18 Uhr weg sein",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "17 bis 18 Uhr",
+        "Type": "timerange",
+        "Start": 14,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Ich werde von 17 Uhr bis 18 Uhr weg sein",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "17 Uhr bis 18 Uhr",
+        "Type": "timerange",
+        "Start": 14,
+        "Length": 17
       }
     ]
   },
