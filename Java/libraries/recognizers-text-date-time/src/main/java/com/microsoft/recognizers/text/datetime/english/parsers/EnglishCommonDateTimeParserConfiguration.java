@@ -4,8 +4,7 @@ import com.google.common.collect.ImmutableMap;
 import com.microsoft.recognizers.text.IExtractor;
 import com.microsoft.recognizers.text.IParser;
 import com.microsoft.recognizers.text.datetime.DateTimeOptions;
-import com.microsoft.recognizers.text.datetime.english.extractors.EnglishDateExtractorConfiguration;
-import com.microsoft.recognizers.text.datetime.english.extractors.EnglishDurationExtractorConfiguration;
+import com.microsoft.recognizers.text.datetime.english.extractors.*;
 import com.microsoft.recognizers.text.datetime.extractors.*;
 import com.microsoft.recognizers.text.datetime.parsers.*;
 import com.microsoft.recognizers.text.datetime.parsers.config.ICommonDateTimeParserConfiguration;
@@ -58,7 +57,9 @@ public class EnglishCommonDateTimeParserConfiguration extends BaseDateParserConf
     private final IDateTimeParser dateTimeAltParser;
 
     public EnglishCommonDateTimeParserConfiguration(DateTimeOptions options) {
+
         super(options);
+
         utilityConfiguration = new EnglishDatetimeUtilityConfiguration();
 
         unitMap = EnglishDateTime.UnitMap;
@@ -80,18 +81,18 @@ public class EnglishCommonDateTimeParserConfiguration extends BaseDateParserConf
 
         durationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration());
         dateExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration());
-        timeExtractor = new BaseTimeExtractor(null);
-        dateTimeExtractor = new BaseDateTimeExtractor(null);
-        datePeriodExtractor = new BaseDatePeriodExtractor(null);
-        timePeriodExtractor = new BaseTimePeriodExtractor(null);
-        dateTimePeriodExtractor = null;
+        timeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration());
+        dateTimeExtractor = new BaseDateTimeExtractor(new EnglishDateTimeExtractorConfiguration());
+        datePeriodExtractor = new BaseDatePeriodExtractor(new EnglishDatePeriodExtractorConfiguration());
+        timePeriodExtractor = new BaseTimePeriodExtractor(new EnglishTimePeriodExtractorConfiguration());
+        dateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new EnglishDateTimePeriodExtractorConfiguration());
 
         durationParser = new BaseDurationParser(new EnglishDurationParserConfiguration(this));
         dateParser = new BaseDateParser(new EnglishDateParserConfiguration(this));
-        timeParser = null;
+        timeParser = new TimeParser(new EnglishTimeParserConfiguration(this));
         dateTimeParser = null;
-        datePeriodParser = null;
-        timePeriodParser = null;
+        datePeriodParser = new BaseDatePeriodParser(null);
+        timePeriodParser = new BaseTimePeriodParser(null);
         dateTimePeriodParser = null;
         dateTimeAltParser = null;
     }
