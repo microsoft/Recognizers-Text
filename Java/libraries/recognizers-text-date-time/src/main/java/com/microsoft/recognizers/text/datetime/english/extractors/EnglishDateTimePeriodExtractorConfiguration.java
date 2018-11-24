@@ -53,7 +53,6 @@ public class EnglishDateTimePeriodExtractorConfiguration implements IDateTimePer
     private final DateTimeOptions options;
     private final String tokenBeforeDate;
 
-
     private final IExtractor cardinalExtractor;
     private final IDateTimeExtractor singleDateExtractor;
     private final IDateTimeExtractor singleTimeExtractor;
