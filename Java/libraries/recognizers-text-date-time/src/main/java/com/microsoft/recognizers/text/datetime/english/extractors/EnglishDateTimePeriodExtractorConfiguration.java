@@ -21,6 +21,7 @@ import com.microsoft.recognizers.text.utilities.Match;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
 
 public class EnglishDateTimePeriodExtractorConfiguration implements IDateTimePeriodExtractorConfiguration {
+
     private static final int flags = Pattern.CASE_INSENSITIVE;
 
     public static final Iterable<Pattern> SimpleCases = new ArrayList<Pattern>() {
@@ -29,6 +30,7 @@ public class EnglishDateTimePeriodExtractorConfiguration implements IDateTimePer
             add(EnglishTimePeriodExtractorConfiguration.PureNumBetweenAnd);
         }
     };
+
     public static final Pattern PeriodTimeOfDayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PeriodTimeOfDayRegex, flags);
     public static final Pattern PeriodSpecificTimeOfDayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PeriodSpecificTimeOfDayRegex, flags);
     public static final Pattern TimeUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TimeUnitRegex, flags);
@@ -50,13 +52,15 @@ public class EnglishDateTimePeriodExtractorConfiguration implements IDateTimePer
 
     private final DateTimeOptions options;
     private final String tokenBeforeDate;
-    private final Pattern weekDayRegex;
+
     private final IExtractor cardinalExtractor;
     private final IDateTimeExtractor singleDateExtractor;
     private final IDateTimeExtractor singleTimeExtractor;
     private final IDateTimeExtractor singleDateTimeExtractor;
     private final IDateTimeExtractor durationExtractor;
     private final IDateTimeExtractor timePeriodExtractor;
+
+    private final Pattern weekDayRegex;
     private final Pattern rangeConnectorRegex;
 
     public EnglishDateTimePeriodExtractorConfiguration() {
@@ -64,11 +68,13 @@ public class EnglishDateTimePeriodExtractorConfiguration implements IDateTimePer
     }
 
     public EnglishDateTimePeriodExtractorConfiguration(DateTimeOptions options) {
+
         super();
+
         //TODO add english implementations
         this.options = options;
         tokenBeforeDate = EnglishDateTime.TokenBeforeDate;
-        weekDayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.WeekDayRegex, flags);
+
         cardinalExtractor = CardinalExtractor.getInstance();
         singleDateExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration());
         singleTimeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration());
@@ -76,6 +82,7 @@ public class EnglishDateTimePeriodExtractorConfiguration implements IDateTimePer
         durationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration(options));
         timePeriodExtractor = new BaseTimePeriodExtractor(new EnglishTimePeriodExtractorConfiguration());
 
+        weekDayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.WeekDayRegex, flags);
         rangeConnectorRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RangeConnectorRegex, flags);
     }
 

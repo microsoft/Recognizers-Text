@@ -11,6 +11,7 @@ import com.microsoft.recognizers.text.datetime.resources.EnglishDateTime;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
 
 public class EnglishDateTimeAltExtractorConfiguration implements IDateTimeAltExtractorConfiguration {
+
     private static final int flags = Pattern.CASE_INSENSITIVE;
 
     private static final Pattern OrRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.OrRegex, flags);

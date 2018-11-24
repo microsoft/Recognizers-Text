@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.regex.Pattern;
 
 public class EnglishTimeExtractorConfiguration extends BaseOptionsConfiguration implements ITimeExtractorConfiguration {
+
     // part 1: smallest component
     // --------------------------------------
     public static final Pattern DescRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.DescRegex);

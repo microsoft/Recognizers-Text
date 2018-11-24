@@ -7,10 +7,10 @@ import com.microsoft.recognizers.text.datetime.extractors.config.ISetExtractorCo
 import com.microsoft.recognizers.text.datetime.resources.EnglishDateTime;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
 
-import java.time.LocalDateTime;
 import java.util.regex.Pattern;
 
 public class EnglishSetExtractorConfiguration extends BaseOptionsConfiguration implements ISetExtractorConfiguration {
+
     public static final Pattern SetLastRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SetLastRegex);
     public static final Pattern EachDayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.EachDayRegex);
     public static final Pattern SetEachRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SetEachRegex);
@@ -32,7 +32,6 @@ public class EnglishSetExtractorConfiguration extends BaseOptionsConfiguration i
         TimePeriodExtractor = new BaseTimePeriodExtractor(new EnglishTimePeriodExtractorConfiguration());
         DateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new EnglishDateTimePeriodExtractorConfiguration());
     }
-
 
     private IDateTimeExtractor TimeExtractor;
     public final IDateTimeExtractor getTimeExtractor() { return TimeExtractor; }

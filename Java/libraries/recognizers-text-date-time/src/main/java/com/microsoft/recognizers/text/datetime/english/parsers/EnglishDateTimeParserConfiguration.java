@@ -19,8 +19,10 @@ import com.microsoft.recognizers.text.utilities.RegExpUtility;
 import java.util.regex.Pattern;
 
 public class EnglishDateTimeParserConfiguration extends BaseOptionsConfiguration implements IDateTimeParserConfiguration {
+
     private final String tokenBeforeDate;
     private final String tokenBeforeTime;
+
     private final IDateTimeExtractor dateExtractor;
     private final IDateTimeExtractor timeExtractor;
     private final IDateTimeParser dateParser;
@@ -30,6 +32,7 @@ public class EnglishDateTimeParserConfiguration extends BaseOptionsConfiguration
     private final IParser numberParser;
     private final IDateTimeExtractor durationExtractor;
     private final IDateTimeParser durationParser;
+
     private final Pattern nowRegex;
     private final Pattern amTimeRegex;
     private final Pattern pmTimeRegex;
@@ -39,12 +42,15 @@ public class EnglishDateTimeParserConfiguration extends BaseOptionsConfiguration
     private final Pattern theEndOfRegex;
     private final Pattern unitRegex;
     private final Pattern dateNumberConnectorRegex;
+
     private final ImmutableMap<String, String> unitMap;
     private final ImmutableMap<String, Integer> numbers;
     private final IDateTimeUtilityConfiguration utilityConfiguration;
 
     public EnglishDateTimeParserConfiguration(ICommonDateTimeParserConfiguration config) {
+
         super(config.getOptions());
+
         tokenBeforeDate = EnglishDateTime.TokenBeforeDate;
         tokenBeforeTime = EnglishDateTime.TokenBeforeTime;
         
@@ -197,6 +203,7 @@ public class EnglishDateTimeParserConfiguration extends BaseOptionsConfiguration
 
     @Override
     public ResultTimex getMatchedNowTimex(String text) {
+
         String trimmedText = text.trim().toLowerCase();
         
         if (trimmedText.endsWith("now")) {
@@ -212,6 +219,7 @@ public class EnglishDateTimeParserConfiguration extends BaseOptionsConfiguration
 
     @Override
     public int getSwiftDay(String text) {
+
         String trimmedText = text.trim().toLowerCase();
 
         int swift = 0;
@@ -226,6 +234,7 @@ public class EnglishDateTimeParserConfiguration extends BaseOptionsConfiguration
 
     @Override
     public int getHour(String text, int hour) {
+
         String trimmedText = text.trim().toLowerCase();
         int result = hour;
         

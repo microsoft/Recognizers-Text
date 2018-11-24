@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.regex.Pattern;
 
 public class EnglishMergedExtractorConfiguration implements IMergedExtractorConfiguration {
+
     public static final Pattern AfterRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.AfterRegex, Pattern.CASE_INSENSITIVE);
     public static final Pattern SinceRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SinceRegex, Pattern.CASE_INSENSITIVE);
     public static final Pattern BeforeRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.BeforeRegex, Pattern.CASE_INSENSITIVE);
@@ -21,6 +22,7 @@ public class EnglishMergedExtractorConfiguration implements IMergedExtractorConf
     public static final Pattern PrepositionSuffixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PrepositionSuffixRegex, Pattern.CASE_INSENSITIVE);
     public static final Pattern SingleAmbiguousMonthRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SingleAmbiguousMonthRegex, Pattern.CASE_INSENSITIVE);
     public static final Pattern UnspecificDatePeriodRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.UnspecificDatePeriodRegex, Pattern.CASE_INSENSITIVE);
+
     private static final Iterable<Pattern> filterWordRegexList = new ArrayList<Pattern>() {
         {
             // one on one

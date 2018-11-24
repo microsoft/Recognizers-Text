@@ -14,33 +14,19 @@ import com.microsoft.recognizers.text.utilities.RegExpUtility;
 public class EnglishDurationExtractorConfiguration extends BaseOptionsConfiguration implements IDurationExtractorConfiguration {
 
   public static final Pattern DurationUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.DurationUnitRegex);
-
   public static final Pattern SuffixAndRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SuffixAndRegex);
-
   public static final Pattern DurationFollowedUnit = RegExpUtility.getSafeRegExp(EnglishDateTime.DurationFollowedUnit);
-
   public static final Pattern NumberCombinedWithDurationUnit = RegExpUtility.getSafeRegExp(EnglishDateTime.NumberCombinedWithDurationUnit);
-
   public static final Pattern AnUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.AnUnitRegex);
-
   public static final Pattern DuringRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.DuringRegex);
-
   public static final Pattern AllRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.AllRegex);
-
   public static final Pattern HalfRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.HalfRegex);
-
   public static final Pattern ConjunctionRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.ConjunctionRegex);
-
   public static final Pattern InexactNumberRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.InexactNumberRegex);
-
   public static final Pattern InexactNumberUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.InexactNumberUnitRegex);
-
   public static final Pattern RelativeDurationUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RelativeDurationUnitRegex);
-
   public static final Pattern DurationConnectorRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.DurationConnectorRegex);
-
   public static final Pattern MoreThanRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.MoreThanRegex);
-
   public static final Pattern LessThanRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.LessThanRegex);
   
   private final IExtractor cardinalExtractor;
@@ -52,10 +38,12 @@ public class EnglishDurationExtractorConfiguration extends BaseOptionsConfigurat
   }
   
   public EnglishDurationExtractorConfiguration(DateTimeOptions options) {
+
     super(options);
+
     cardinalExtractor = CardinalExtractor.getInstance();
-    unitMap = (ImmutableMap) EnglishDateTime.UnitMap;
-    unitValueMap = (ImmutableMap) EnglishDateTime.UnitValueMap;
+    unitMap = (ImmutableMap)EnglishDateTime.UnitMap;
+    unitValueMap = (ImmutableMap)EnglishDateTime.UnitValueMap;
   }
 
 	@Override

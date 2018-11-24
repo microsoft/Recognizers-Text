@@ -17,9 +17,10 @@ import java.util.stream.Collectors;
 
 public class EnglishHolidayParserConfiguration extends BaseHolidayParserConfiguration {
 
-    public EnglishHolidayParserConfiguration()
-    {
+    public EnglishHolidayParserConfiguration() {
+
         super();
+
         this.setHolidayRegexList(EnglishHolidayExtractorConfiguration.HolidayRegexList);
 
         HashMap<String, Iterable<String>> newMap =new HashMap<>();
@@ -32,8 +33,8 @@ public class EnglishHolidayParserConfiguration extends BaseHolidayParserConfigur
     }
 
     @Override
-    protected HashMap<String, IntFunction<LocalDateTime>> InitHolidayFuncs()
-    {
+    protected HashMap<String, IntFunction<LocalDateTime>> InitHolidayFuncs() {
+
         HashMap<String, IntFunction<LocalDateTime>> holidays = new HashMap<>(super.InitHolidayFuncs());
         holidays.put("mayday", EnglishHolidayParserConfiguration::Mayday);
         holidays.put("yuandan", EnglishHolidayParserConfiguration::NewYear);
@@ -109,20 +110,23 @@ public class EnglishHolidayParserConfiguration extends BaseHolidayParserConfigur
     private static LocalDateTime UsaIndependenceDay(int year) { return DateUtil.safeCreateFromMinValue(year, 7, 4); }
 
     @Override
-    public int getSwiftYear(String text)
-    {
+    public int getSwiftYear(String text) {
+
         String trimmedText = StringUtility.trimStart(StringUtility.trimEnd(text)).toLowerCase(Locale.ROOT);
         int swift = -10;
 
-        if (trimmedText.startsWith("next")) swift = 1;
-        else if (trimmedText.startsWith("last")) swift = -1;
-        else if (trimmedText.startsWith("this")) swift = 0;
+        if (trimmedText.startsWith("next")) {
+            swift = 1;
+        } else if (trimmedText.startsWith("last")) {
+            swift = -1;
+        } else if (trimmedText.startsWith("this")) {
+            swift = 0;
+        }
 
         return swift;
     }
 
-    public String sanitizeHolidayToken(String holiday)
-    {
+    public String sanitizeHolidayToken(String holiday) {
         return holiday.replace(" ", "").replace("'", "");
     }
 }

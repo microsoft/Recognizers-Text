@@ -20,19 +20,23 @@ import com.microsoft.recognizers.text.utilities.RegExpUtility;
 import java.util.regex.Pattern;
 
 public class EnglishDateTimePeriodParserConfiguration extends BaseOptionsConfiguration implements IDateTimePeriodParserConfiguration {
+
     private final String tokenBeforeDate;
+
     private final IDateTimeExtractor dateExtractor;
     private final IDateTimeExtractor timeExtractor;
     private final IDateTimeExtractor dateTimeExtractor;
     private final IDateTimeExtractor timePeriodExtractor;
     private final IDateTimeExtractor durationExtractor;
     private final IExtractor cardinalExtractor;
+
     private final IParser numberParser;
     private final IDateTimeParser dateParser;
     private final IDateTimeParser timeParser;
     private final IDateTimeParser dateTimeParser;
     private final IDateTimeParser timePeriodParser;
     private final IDateTimeParser durationParser;
+
     private final Pattern pureNumberFromToRegex;
     private final Pattern pureNumberBetweenAndRegex;
     private final Pattern specificTimeOfDayRegex;
@@ -51,6 +55,7 @@ public class EnglishDateTimePeriodParserConfiguration extends BaseOptionsConfigu
     private final Pattern prefixDayRegex;
     private final Pattern beforeRegex;
     private final Pattern afterRegex;
+
     private final ImmutableMap<String, String> unitMap;
     private final ImmutableMap<String, Integer> numbers;
 
@@ -60,7 +65,9 @@ public class EnglishDateTimePeriodParserConfiguration extends BaseOptionsConfigu
     public static final Pattern NightStartEndRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.NightStartEndRegex, Pattern.CASE_INSENSITIVE);
     
     public EnglishDateTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) {
+
         super(config.getOptions());
+
         tokenBeforeDate = EnglishDateTime.TokenBeforeDate;
 
         dateExtractor = config.getDateExtractor();
@@ -270,6 +277,7 @@ public class EnglishDateTimePeriodParserConfiguration extends BaseOptionsConfigu
 
     @Override
     public MatchedTimeRangeResult getMatchedTimeRange(String text, String timeStr, int beginHour, int endHour, int endMin) {
+
         String trimmedText = text.trim().toLowerCase();
         beginHour = 0;
         endHour = 0;
@@ -307,6 +315,7 @@ public class EnglishDateTimePeriodParserConfiguration extends BaseOptionsConfigu
 
     @Override
     public int getSwiftPrefix(String text) {
+
         String trimmedText = text.trim().toLowerCase();
 
         int swift = 0;

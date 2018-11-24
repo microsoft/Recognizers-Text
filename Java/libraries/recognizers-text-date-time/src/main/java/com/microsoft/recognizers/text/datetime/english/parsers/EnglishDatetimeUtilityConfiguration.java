@@ -7,6 +7,7 @@ import com.microsoft.recognizers.text.utilities.RegExpUtility;
 import java.util.regex.Pattern;
 
 public class EnglishDatetimeUtilityConfiguration implements IDateTimeUtilityConfiguration {
+
     public static final Pattern AgoRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.AgoRegex);
     public static final Pattern LaterRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.LaterRegex);
     public static final Pattern InConnectorRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.InConnectorRegex);

@@ -13,6 +13,7 @@ import java.util.Locale;
 import java.util.regex.Pattern;
 
 public class EnglishSetParserConfiguration extends BaseOptionsConfiguration implements ISetParserConfiguration {
+
     private IDateTimeParser timeParser;
 
     public final IDateTimeParser getTimeParser() {
@@ -140,6 +141,7 @@ public class EnglishSetParserConfiguration extends BaseOptionsConfiguration impl
     }
 
     public EnglishSetParserConfiguration(ICommonDateTimeParserConfiguration config) {
+
         super(config.getOptions());
 
         timeExtractor = config.getTimeExtractor();
@@ -168,6 +170,7 @@ public class EnglishSetParserConfiguration extends BaseOptionsConfiguration impl
     }
 
     public MatchedTimexResult getMatchedDailyTimex(String text) {
+
         MatchedTimexResult result = new MatchedTimexResult();
         String trimmedText = text.trim().toLowerCase(Locale.ROOT);
 
@@ -191,6 +194,7 @@ public class EnglishSetParserConfiguration extends BaseOptionsConfiguration impl
     }
 
     public MatchedTimexResult getMatchedUnitTimex(String text) {
+
         MatchedTimexResult result = new MatchedTimexResult();
         String trimmedText = text.trim().toLowerCase(Locale.ROOT);
 

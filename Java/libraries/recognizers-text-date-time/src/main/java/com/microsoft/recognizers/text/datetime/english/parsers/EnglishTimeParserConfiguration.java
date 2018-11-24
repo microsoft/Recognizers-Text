@@ -22,11 +22,12 @@ import java.util.regex.Pattern;
 
 public class EnglishTimeParserConfiguration extends BaseOptionsConfiguration implements ITimeParserConfiguration {
     
-    private final Pattern atRegex;
-    private final Iterable<Pattern> timeRegexes;
     private final ImmutableMap<String, Integer> numbers;
     private final IDateTimeUtilityConfiguration utilityConfiguration;
     private final IDateTimeParser timeZoneParser;
+
+    private final Pattern atRegex;
+    private final Iterable<Pattern> timeRegexes;
     private final Pattern timeSuffixFull;
     private final Pattern lunchRegex;
     private final Pattern nightRegex;
@@ -35,12 +36,12 @@ public class EnglishTimeParserConfiguration extends BaseOptionsConfiguration imp
         
         super(config.getOptions());
         
-        atRegex = EnglishTimeExtractorConfiguration.AtRegex;
-        timeRegexes = EnglishTimeExtractorConfiguration.TimeRegexList;
         numbers = config.getNumbers();
         utilityConfiguration = config.getUtilityConfiguration();
         timeZoneParser = new BaseTimeZoneParser();
 
+        atRegex = EnglishTimeExtractorConfiguration.AtRegex;
+        timeRegexes = EnglishTimeExtractorConfiguration.TimeRegexList;
         timeSuffixFull = RegExpUtility.getSafeRegExp(EnglishDateTime.TimeSuffixFull);
         lunchRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.LunchRegex);
         nightRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.NightRegex);
@@ -118,11 +119,11 @@ public class EnglishTimeParserConfiguration extends BaseOptionsConfiguration imp
     @Override
     public SuffixAdjustResult adjustBySuffix(String suffix, int hour, int min, boolean hasMin, boolean hasAm, boolean hasPm) {
         
-        String trimedSuffix = suffix.trim().toLowerCase();
+        String trimmedSuffix = suffix.trim().toLowerCase();
         int deltaHour = 0;
-        Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(timeSuffixFull, trimedSuffix)).findFirst();
+        Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(timeSuffixFull, trimmedSuffix)).findFirst();
         
-        if (match.isPresent() && match.get().index == 0 && match.get().length == trimedSuffix.length()) {
+        if (match.isPresent() && match.get().index == 0 && match.get().length == trimmedSuffix.length()) {
             
             String oclockStr = match.get().getGroup("oclock").value;
             if (StringUtility.isNullOrEmpty(oclockStr)) {

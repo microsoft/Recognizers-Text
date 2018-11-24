@@ -16,10 +16,9 @@ import java.util.stream.Collectors;
 public class EnglishTimeZoneExtractorConfiguration extends BaseOptionsConfiguration implements ITimeZoneExtractorConfiguration {
 
     public static final Pattern DirectUtcRegex = RegExpUtility.getSafeRegExp(EnglishTimeZone.DirectUtcRegex, Pattern.CASE_INSENSITIVE);
-
     public static final Pattern AbbreviationRegex = RegExpUtility.getSafeRegExp(EnglishTimeZone.AbbreviationsRegex, Pattern.CASE_INSENSITIVE);
-
     public static final Pattern StandardTimeRegex = RegExpUtility.getSafeRegExp(EnglishTimeZone.FullNameRegex, Pattern.CASE_INSENSITIVE);
+    public static final Pattern LocationTimeSuffixRegex = RegExpUtility.getSafeRegExp(EnglishTimeZone.LocationTimeSuffixRegex, Pattern.CASE_INSENSITIVE);
 
     public static final Iterable<Pattern> TimeZoneRegexList = new ArrayList<Pattern>() {
         {
@@ -28,8 +27,6 @@ public class EnglishTimeZoneExtractorConfiguration extends BaseOptionsConfigurat
             add(StandardTimeRegex);
         }
     };
-
-    public static final Pattern LocationTimeSuffixRegex = RegExpUtility.getSafeRegExp(EnglishTimeZone.LocationTimeSuffixRegex, Pattern.CASE_INSENSITIVE);
 
     public static final StringMatcher CityMatcher = new StringMatcher();
 
@@ -40,7 +37,9 @@ public class EnglishTimeZoneExtractorConfiguration extends BaseOptionsConfigurat
     }
 
     public EnglishTimeZoneExtractorConfiguration(DateTimeOptions options) {
+
         super(options);
+
         if (options.match(DateTimeOptions.EnablePreview)) {
             CityMatcher.init(
                     EnglishTimeZone.MajorLocations.stream()
