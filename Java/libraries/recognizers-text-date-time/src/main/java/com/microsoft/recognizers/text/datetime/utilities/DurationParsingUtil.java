@@ -1,17 +1,16 @@
 package com.microsoft.recognizers.text.datetime.utilities;
 
 import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
+import java.util.HashMap;
 import java.util.Map;
 
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableMap.Builder;
 
 public class DurationParsingUtil {
-
     public static boolean isTimeDurationUnit(String unitStr) {
-
         boolean result = false;
-
         switch (unitStr) {
             case "H":
                 result = true;
@@ -23,7 +22,6 @@ public class DurationParsingUtil {
                 result = true;
                 break;
         }
-
         return result;
     }
 
@@ -45,55 +43,55 @@ public class DurationParsingUtil {
     }
 
     public static LocalDateTime shiftDateTime(String timex, LocalDateTime reference, boolean future) {
-
         ImmutableMap<String, Double> timexUnitMap = resolveDurationTimex(timex);
 
         return getShiftResult(timexUnitMap, reference, future);
     }
 
     public static LocalDateTime getShiftResult(ImmutableMap<String, Double> timexUnitMap, LocalDateTime reference, boolean future) {
-
         LocalDateTime result = reference;
         int futureOrPast = future ? 1 : -1;
-
         for (Map.Entry<String, Double> pair : timexUnitMap.entrySet()) {
-
             String unit = pair.getKey();
+            ChronoUnit chronoUnit;
             Double number = pair.getValue();
 
             switch (unit) {
                 case "H":
-                    result = result.plusHours(Math.round(number * futureOrPast));
+                    chronoUnit = ChronoUnit.HOURS;
                     break;
                 case "M":
-                    result = result.plusMinutes(Math.round(number * futureOrPast));
+                    chronoUnit = ChronoUnit.MINUTES;
                     break;
                 case "S":
-                    result = result.plusSeconds(Math.round(number * futureOrPast));
+                    chronoUnit = ChronoUnit.SECONDS;
                     break;
                 case "D":
-                    result = result.plusDays(Math.round(number * futureOrPast));
+                    chronoUnit = ChronoUnit.DAYS;
                     break;
                 case "W":
-                    result = result.plusWeeks(Math.round(number * futureOrPast));
+                    chronoUnit = ChronoUnit.WEEKS;
                     break;
                 case "MON":
+                    chronoUnit = ChronoUnit.MONTHS;
                     result = result.plusMonths(Math.round(number * futureOrPast));
                     break;
                 case "Y":
+                    chronoUnit = ChronoUnit.YEARS;
                     result = result.plusYears(Math.round(number * futureOrPast));
                     break;
 
                 default:
                     return result;
             }
+            if (chronoUnit != ChronoUnit.MONTHS && chronoUnit != ChronoUnit.YEARS) {
+                result = DateUtil.plusPeriodInNanos(result, number * futureOrPast, chronoUnit);
+            }
         }
-
         return result;
     }
 
     private static ImmutableMap<String, Double> resolveDurationTimex(String timex) {
-
         Builder<String, Double> resultBuilder = ImmutableMap.builder();
 
         // resolve duration timex, such as P21DT2H(21 days 2 hours)
@@ -102,9 +100,7 @@ public class DurationParsingUtil {
         boolean isTime = false;
 
         for (int i = 0; i < durationStr.length(); i++) {
-
             if (Character.isLetter(durationStr.charAt(i))) {
-
                 if (durationStr.charAt(i) == 'T') {
                     isTime = true;
                 } else {

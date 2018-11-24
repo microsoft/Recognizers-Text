@@ -20,6 +20,6 @@ public class Match {
             return innerGroups.get(key);
         }
 
-        return new MatchGroup("", 0, 0, new String[0]);
+        return new MatchGroup("", 0, 0, new Capture[0]);
     }
 }

@@ -4634,7 +4634,7 @@
     "Context": {
       "ReferenceDateTime": "2018-11-07T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "from Feb 1st to March 2019",
@@ -4660,7 +4660,7 @@
     "Context": {
       "ReferenceDateTime": "2018-11-07T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "between Feb 1st and March 2019",
@@ -5466,7 +5466,7 @@
     "Context": {
       "ReferenceDateTime": "2018-08-08T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "the week of the 18th",
@@ -5492,7 +5492,7 @@
     "Context": {
       "ReferenceDateTime": "2018-08-28T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "the week of the 18th",
@@ -5518,7 +5518,7 @@
     "Context": {
       "ReferenceDateTime": "2018-08-31T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "this decade",

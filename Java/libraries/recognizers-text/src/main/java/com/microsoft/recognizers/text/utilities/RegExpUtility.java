@@ -284,7 +284,7 @@ public abstract class RegExpUtility {
                 lastGroup.set(groupKey);
 
                 if (!groups.containsKey(groupKey)) {
-                    groups.put(groupKey, new MatchGroup("", 0, 0, new String[0]));
+                    groups.put(groupKey, new MatchGroup("", 0, 0, new Capture[0]));
                 }
 
                 if (!StringUtility.isNullOrEmpty(match.group(key))) {
@@ -292,10 +292,10 @@ public abstract class RegExpUtility {
                     int index = match.start() + match.group(0).indexOf(match.group(key));
                     int length = match.group(key).length();
                     String value = source.substring(index, index + length);
-                    List<String> captures = new ArrayList<>(Arrays.asList(groups.get(groupKey).captures));
-                    captures.add(value);
+                    List<Capture> captures = new ArrayList<>(Arrays.asList(groups.get(groupKey).captures));
+                    captures.add(new Capture(value, index, length));
 
-                    groups.replace(groupKey, new MatchGroup(value, index, length, captures.toArray(new String[0])));
+                    groups.replace(groupKey, new MatchGroup(value, index, length, captures.toArray(new Capture[0])));
                 }
             });
 
