@@ -144,6 +144,18 @@
     ]
   },
   {
+    "Input": "Es ist 20 Uhr",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "20 Uhr",
+        "Type": "time",
+        "Start": 7,
+        "Length": 6
+      }
+    ]
+  },
+  {
     "Input": "es ist halb 8",
     "NotSupported": "javascript, python",
     "Results": [

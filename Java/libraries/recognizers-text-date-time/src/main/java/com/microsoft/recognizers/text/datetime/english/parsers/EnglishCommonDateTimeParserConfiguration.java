@@ -57,7 +57,9 @@ public class EnglishCommonDateTimeParserConfiguration extends BaseDateParserConf
     private final IDateTimeParser dateTimeAltParser;
 
     public EnglishCommonDateTimeParserConfiguration(DateTimeOptions options) {
+
         super(options);
+
         utilityConfiguration = new EnglishDatetimeUtilityConfiguration();
 
         unitMap = EnglishDateTime.UnitMap;
