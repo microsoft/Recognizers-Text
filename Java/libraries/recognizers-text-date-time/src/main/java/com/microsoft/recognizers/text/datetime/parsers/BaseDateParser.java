@@ -113,7 +113,7 @@ public class BaseDateParser implements IDateTimeParser {
             Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(regex, trimmedText)).findFirst();
 
             if (!match.isPresent()) {
-                match = Arrays.stream(RegExpUtility.getMatches(regex, this.config.getDateTokenPrefix() + trimmedText)).findFirst();
+                match =  Arrays.stream(RegExpUtility.getMatches(regex, this.config.getDateTokenPrefix() + trimmedText)).findFirst();
                 offset = this.config.getDateTokenPrefix().length();
             }
 
@@ -513,7 +513,7 @@ public class BaseDateParser implements IDateTimeParser {
 
         // for LUIS format value string
         LocalDateTime futureDate = DateUtil.safeCreateFromMinValue(year, month, day);
-        LocalDateTime pastDate = DateUtil.safeCreateFromMinValue(year, month, day);
+        LocalDateTime pastDate =  DateUtil.safeCreateFromMinValue(year, month, day);
 
         if (ambiguous) {
             ret.setTimex(FormatUtil.luisDate(-1, month, day));

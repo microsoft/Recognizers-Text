@@ -151,6 +151,7 @@
   },
   {
     "Input": "I'll be out 3:00 to 4:00 tomorrow",
+    "NotSupported": "java", 
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -2066,7 +2067,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "within 2 days 1 hour 5 minutes 30 seconds",
@@ -2092,7 +2093,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "within next 2 days 1 hour 5 minutes 30 seconds",
@@ -2118,7 +2119,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "within the upcoming 2 days 1 hour 5 minutes 30 seconds",
