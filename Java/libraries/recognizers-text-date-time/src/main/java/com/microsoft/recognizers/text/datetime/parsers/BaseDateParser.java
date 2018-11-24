@@ -369,7 +369,6 @@ public class BaseDateParser implements IDateTimeParser {
         return ret;
     }
 
-
     private DateTimeResolutionResult parseWeekdayOfMonth(String text, LocalDateTime referenceDate) {
         DateTimeResolutionResult ret = new DateTimeResolutionResult();
 
