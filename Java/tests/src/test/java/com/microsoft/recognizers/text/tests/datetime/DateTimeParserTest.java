@@ -122,6 +122,10 @@ public class DateTimeParserTest extends AbstractTest {
                 return new BaseTimePeriodParser(new EnglishTimePeriodParserConfiguration(new EnglishCommonDateTimeParserConfiguration(DateTimeOptions.None)));
             case "TimeZoneParser":
                 return new BaseTimeZoneParser();
+            case "DatePeriodParser":
+                return new BaseDatePeriodParser(new EnglishDatePeriodParserConfiguration(new EnglishCommonDateTimeParserConfiguration(DateTimeOptions.None)));
+            case "DateTimeParser":
+                return new BaseDateTimeParser(new EnglishDateTimeParserConfiguration(new EnglishCommonDateTimeParserConfiguration(DateTimeOptions.None)));
             default:
                 throw new AssumptionViolatedException("Parser Type/Name not supported.");
         }

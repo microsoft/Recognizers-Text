@@ -22,7 +22,8 @@ public class FormatUtil {
             return String.join(dateDelimiter, "XXXX", String.format("%02d", month), String.format("%02d", day));
         }
 
-        return String.join(dateDelimiter, String.format("%04d", year), String.format("%02d", month), String.format("%02d", day));
+        return String.join(dateDelimiter, String.format("%04d", year), String.format("%02d", month),
+                String.format("%02d", day));
     }
 
     public static String luisDate(LocalDateTime date) {
@@ -34,15 +35,26 @@ public class FormatUtil {
     }
 
     public static String luisTime(int hour, int min, int second) {
-        return String.join(timeDelimiter, String.format("%02d", hour), String.format("%02d", min), String.format("%02d", second));
+        return String.join(timeDelimiter, String.format("%02d", hour), String.format("%02d", min),
+                String.format("%02d", second));
+    }
+
+    public static String luisTime(LocalDateTime time) {
+        return luisTime(time.getHour(), time.getMinute(), time.getSecond());
     }
 
     public static String formatDate(LocalDateTime date) {
-        return String.join(dateDelimiter, String.format("%04d", date.getYear()), String.format("%02d", date.getMonthValue()), String.format("%02d", date.getDayOfMonth()));
+        return String.join(dateDelimiter, String.format("%04d", date.getYear()),
+                String.format("%02d", date.getMonthValue()), String.format("%02d", date.getDayOfMonth()));
     }
 
     public static String formatTime(LocalDateTime time) {
-        return String.join(timeDelimiter, String.format("%02d", time.getHour()), String.format("%02d", time.getMinute()), String.format("%02d", time.getSecond()));
+        return String.join(timeDelimiter, String.format("%02d", time.getHour()),
+                String.format("%02d", time.getMinute()), String.format("%02d", time.getSecond()));
+    }
+
+    public static String formatDateTime(LocalDateTime datetime) {
+        return String.join(" ", formatDate(datetime), formatTime(datetime));
     }
 
     public static String shortTime(int hour, int min, int second) {

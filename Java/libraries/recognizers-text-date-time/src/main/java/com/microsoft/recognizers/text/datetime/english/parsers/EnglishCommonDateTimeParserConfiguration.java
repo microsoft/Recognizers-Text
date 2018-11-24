@@ -7,8 +7,8 @@ import com.microsoft.recognizers.text.datetime.DateTimeOptions;
 import com.microsoft.recognizers.text.datetime.english.extractors.*;
 import com.microsoft.recognizers.text.datetime.extractors.*;
 import com.microsoft.recognizers.text.datetime.parsers.*;
-import com.microsoft.recognizers.text.datetime.parsers.config.ICommonDateTimeParserConfiguration;
 import com.microsoft.recognizers.text.datetime.parsers.config.BaseDateParserConfiguration;
+import com.microsoft.recognizers.text.datetime.parsers.config.ICommonDateTimeParserConfiguration;
 import com.microsoft.recognizers.text.datetime.resources.EnglishDateTime;
 import com.microsoft.recognizers.text.datetime.utilities.IDateTimeUtilityConfiguration;
 import com.microsoft.recognizers.text.number.english.extractors.CardinalExtractor;
@@ -25,6 +25,7 @@ public class EnglishCommonDateTimeParserConfiguration extends BaseDateParserConf
     public static final Pattern AmbiguousMonthP0Regex = RegExpUtility.getSafeRegExp(EnglishDateTime.AmbiguousMonthP0Regex, Pattern.CASE_INSENSITIVE);
 
     private final IDateTimeUtilityConfiguration utilityConfiguration;
+
     private final ImmutableMap<String, String> unitMap;
     private final ImmutableMap<String, Long> unitValueMap;
     private final ImmutableMap<String, String> seasonMap;
@@ -36,10 +37,12 @@ public class EnglishCommonDateTimeParserConfiguration extends BaseDateParserConf
     private final ImmutableMap<String, Double> doubleNumbers;
     private final ImmutableMap<String, Integer> writtenDecades;
     private final ImmutableMap<String, Integer> specialDecadeCases;
+
     private final IExtractor cardinalExtractor;
     private final IExtractor integerExtractor;
     private final IExtractor ordinalExtractor;
     private final IParser numberParser;
+
     private final IDateTimeExtractor durationExtractor;
     private final IDateTimeExtractor dateExtractor;
     private final IDateTimeExtractor timeExtractor;
@@ -47,6 +50,7 @@ public class EnglishCommonDateTimeParserConfiguration extends BaseDateParserConf
     private final IDateTimeExtractor datePeriodExtractor;
     private final IDateTimeExtractor timePeriodExtractor;
     private final IDateTimeExtractor dateTimePeriodExtractor;
+
     private final IDateTimeParser dateParser;
     private final IDateTimeParser timeParser;
     private final IDateTimeParser dateTimeParser;
@@ -90,9 +94,9 @@ public class EnglishCommonDateTimeParserConfiguration extends BaseDateParserConf
         durationParser = new BaseDurationParser(new EnglishDurationParserConfiguration(this));
         dateParser = new BaseDateParser(new EnglishDateParserConfiguration(this));
         timeParser = new TimeParser(new EnglishTimeParserConfiguration(this));
-        dateTimeParser = null;
-        datePeriodParser = new BaseDatePeriodParser(null);
-        timePeriodParser = new BaseTimePeriodParser(null);
+        dateTimeParser = new BaseDateTimeParser(new EnglishDateTimeParserConfiguration(this));
+        datePeriodParser = new BaseDatePeriodParser(new EnglishDatePeriodParserConfiguration(this));
+        timePeriodParser = null;
         dateTimePeriodParser = null;
         dateTimeAltParser = null;
     }
