@@ -12,7 +12,7 @@
   },
   {
     "Input": "Hoy estaré fuera de cinco a siete",
-    "NotSupported": "javascript,pyhton,java",
+    "NotSupported": "javascript, python, java",
     "Results": []
   },
   {
