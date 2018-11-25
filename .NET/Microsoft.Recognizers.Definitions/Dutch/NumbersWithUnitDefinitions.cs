@@ -105,7 +105,7 @@ namespace Microsoft.Recognizers.Definitions.Dutch
 		public static readonly Dictionary<string, string> TemperatureSuffixList = new Dictionary<string, string>
 		{
 			{ "F", "graden fahrenheit|graden f|gr. f|°f|fahrenheit|f" },
-			{ "K", "k|kelvin" },
+			{ "K", "k|K|kelvin" },
 			{ "R", "rankine|°r" },
 			{ "D", "delisle|°de" },
 			{ "C", "graden celsius|graden c|gr. c|°c|c|celsius" },
@@ -119,7 +119,7 @@ namespace Microsoft.Recognizers.Definitions.Dutch
 		};
 		public static readonly Dictionary<string, string> VolumeSuffixList = new Dictionary<string, string>
 		{
-			{ "Cubic meter", "m3|m^3|m³|kubieke meter|kubieke meters" },
+			{ "Cubic meter", "m3|m^3|m³|kubieke meter|kubieke meters|kuub" },
 			{ "Cubic centimeter", "cm3|cm^3|cm³|kubieke centimeter|kubieke centimetre|kubieke centimeters" },
 			{ "Cubic millimiter", "mm3|mm^3|mm³|kubieke millimiter" },
 			{ "Hectoliter", "hl|hectoliter|hectoliters" },

@@ -177,7 +177,7 @@
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
-    "Input": "Hij is is me nog een tientje schuldig.",
+    "Input": "Hij is me nog een tientje schuldig.",
     "Results": [
       {
         "Text": "tientje",
@@ -198,7 +198,15 @@
         "Text": "kwartje",
         "TypeName": "currency",
         "Resolution": {
-          "unit": "Euro",
+          "unit": "Netherlands guilder",
+          "value": "0,25"
+        }
+      },
+      {
+        "Text": "25 cent",
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Cent",
           "value": "0,25"
         }
       }
@@ -213,7 +221,15 @@
         "Text": "dubbeltje",
         "TypeName": "currency",
         "Resolution": {
-          "unit": "Euro",
+          "unit": "Netherlands guilder",
+          "value": "0,1"
+        }
+      },
+      {
+        "Text": "10 cent",
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Cent",
           "value": "0,1"
         }
       }
@@ -228,7 +244,15 @@
         "Text": "stuiver",
         "TypeName": "currency",
         "Resolution": {
-          "unit": "Euro",
+          "unit": "Netherlands guilder",
+          "value": "0,05"
+        }
+      },
+      {
+        "Text": "5 cent",
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Cent",
           "value": "0,05"
         }
       }
