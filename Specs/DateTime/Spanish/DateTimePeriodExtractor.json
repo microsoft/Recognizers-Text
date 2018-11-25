@@ -12,14 +12,8 @@
   },
   {
     "Input": "Hoy estaré fuera de cinco a siete",
-    "Results": [
-      {
-        "Text": "Hoy estaré fuera de cinco a siete",
-        "Type": "datetimerange",
-        "Start": 0,
-        "Length": 33
-      }
-    ]
+    "NotSupported": "javascript, python, java",
+    "Results": []
   },
   {
     "Input": "Estaré fuera hoy de cinco a siete",

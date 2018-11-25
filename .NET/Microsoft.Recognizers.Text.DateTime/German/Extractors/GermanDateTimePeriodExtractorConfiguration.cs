@@ -177,8 +177,9 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public bool HasConnectorToken(string text)
         {
-            var match = Regex.Match(text, DateTimeDefinitions.RangeConnectorRegex);
-            return match.Success && match.Length == text.Trim().Length;
+            var rangeConnectorRegex = new Regex(DateTimeDefinitions.RangeConnectorRegex);
+
+            return rangeConnectorRegex.IsExactMatch(text, trim: true);
         }
     }
 }

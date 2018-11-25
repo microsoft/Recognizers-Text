@@ -165,10 +165,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             // handle "today", "the day before yesterday"
-            match = this.config.SpecialDayRegex.Match(trimmedText);
-            if (match.Success && match.Index == 0 && match.Length == trimmedText.Length)
+            var exactMatch = this.config.SpecialDayRegex.MatchExact(trimmedText, trim: true);
+
+            if (exactMatch.Success)
             {
-                var swift = GetSwiftDay(match.Value);
+                var swift = GetSwiftDay(exactMatch.Value);
 
                 var value = referenceDate.AddDays(swift);
 
@@ -180,10 +181,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             // handle "two days from tomorrow"
-            match = this.config.SpecialDayWithNumRegex.Match(trimmedText);
-            if (match.Success && match.Index == 0 && match.Length == trimmedText.Length)
+            exactMatch = this.config.SpecialDayWithNumRegex.MatchExact(trimmedText, trim: true);
+
+            if (exactMatch.Success)
             {
-                var swift = GetSwiftDay(match.Groups["day"].Value);
+                var swift = GetSwiftDay(exactMatch.Groups["day"].Value);
                 var numErs = this.config.IntegerExtractor.Extract(trimmedText);
                 var numOfDays = Convert.ToInt32((double)(this.config.NumberParser.Parse(numErs[0]).Value ?? 0));
 
@@ -197,12 +199,13 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
             
             // handle "two sundays from now"
-            match = this.config.RelativeWeekDayRegex.Match(trimmedText);
-            if (match.Success && match.Index == 0 && match.Length == trimmedText.Length)
+            exactMatch = this.config.RelativeWeekDayRegex.MatchExact(trimmedText, trim: true);
+
+            if (exactMatch.Success)
             {
                 var numErs = this.config.IntegerExtractor.Extract(trimmedText);
                 var num = Convert.ToInt32((double)(this.config.NumberParser.Parse(numErs[0]).Value ?? 0));
-                var weekdayStr = match.Groups["weekday"].Value.ToLower();
+                var weekdayStr = exactMatch.Groups["weekday"].Value.ToLower();
                 var value = referenceDate;
 
                 // Check whether the determined day of this week has passed.
@@ -224,10 +227,10 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             // handle "next Sunday"
-            match = this.config.NextRegex.Match(trimmedText);
-            if (match.Success && match.Index == 0 && match.Length == trimmedText.Length)
+            exactMatch = this.config.NextRegex.MatchExact(trimmedText, trim: true);
+            if (exactMatch.Success)
             {
-                var weekdayStr = match.Groups["weekday"].Value.ToLower();
+                var weekdayStr = exactMatch.Groups["weekday"].Value.ToLower();
                 var value = referenceDate.Next((DayOfWeek)this.config.DayOfWeek[weekdayStr]);
 
                 ret.Timex = DateTimeFormatUtil.LuisDate(value);
@@ -238,10 +241,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             // handle "this Friday"
-            match = this.config.ThisRegex.Match(trimmedText);
-            if (match.Success && match.Index == 0 && match.Length == trimmedText.Length)
+            exactMatch = this.config.ThisRegex.MatchExact(trimmedText, trim: true);
+
+            if (exactMatch.Success)
             {
-                var weekdayStr = match.Groups["weekday"].Value.ToLower();
+                var weekdayStr = exactMatch.Groups["weekday"].Value.ToLower();
                 var value = referenceDate.This((DayOfWeek)this.config.DayOfWeek[weekdayStr]);
 
                 ret.Timex = DateTimeFormatUtil.LuisDate(value);
@@ -252,10 +256,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             // handle "last Friday", "last mon"
-            match = this.config.LastRegex.Match(trimmedText);
-            if (match.Success && match.Index == 0 && match.Length == trimmedText.Length)
+            exactMatch = this.config.LastRegex.MatchExact(trimmedText, trim: true);
+
+            if (exactMatch.Success)
             {
-                var weekdayStr = match.Groups["weekday"].Value.ToLower();
+                var weekdayStr = exactMatch.Groups["weekday"].Value.ToLower();
                 var value = referenceDate.Last((DayOfWeek)this.config.DayOfWeek[weekdayStr]);
 
                 ret.Timex = DateTimeFormatUtil.LuisDate(value);
@@ -266,10 +271,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             // handle "Friday"
-            match = this.config.WeekDayRegex.Match(trimmedText);
-            if (match.Success && match.Index == 0 && match.Length == trimmedText.Length)
+            exactMatch = this.config.WeekDayRegex.MatchExact(trimmedText, trim: true);
+
+            if (exactMatch.Success)
             {
-                var weekdayStr = match.Groups["weekday"].Value.ToLower();
+                var weekdayStr = exactMatch.Groups["weekday"].Value.ToLower();
                 var weekDay = this.config.DayOfWeek[weekdayStr];
                 var value = referenceDate.This((DayOfWeek)this.config.DayOfWeek[weekdayStr]);
 
@@ -305,6 +311,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             // handle "for the 27th."
             match = this.config.ForTheRegex.Match(text);
+
             if (match.Success)
             {
                 int day = 0, month = referenceDate.Month, year = referenceDate.Year;

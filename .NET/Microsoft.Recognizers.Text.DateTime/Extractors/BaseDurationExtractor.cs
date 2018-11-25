@@ -53,10 +53,10 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var beforeString = text.Substring(0, (int)er.Start);
                 bool isInequalityPrefixMatched = false;
 
-                var match = config.MoreThanRegex.Match(beforeString);
+                var match = config.MoreThanRegex.MatchEnd(beforeString, trim: true);
 
                 // The second condition is necessary so for "1 week" in "more than 4 days and less than 1 week", it will not be tagged incorrectly as "more than"
-                if (match.Success && match.Index + match.Length == beforeString.Trim().Length)
+                if (match.Success)
                 {
                     er.Data = Constants.MORE_THAN_MOD;
                     isInequalityPrefixMatched = true;
@@ -64,8 +64,9 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 if (!isInequalityPrefixMatched)
                 {
-                    match = config.LessThanRegex.Match(beforeString);
-                    if (match.Success && match.Index + match.Length == beforeString.Trim().Length)
+                    match = config.LessThanRegex.MatchEnd(beforeString, trim: true);
+
+                    if (match.Success)
                     {
                         er.Data = Constants.LESS_THAN_MOD;
                         isInequalityPrefixMatched = true;
@@ -91,8 +92,9 @@ namespace Microsoft.Recognizers.Text.DateTime
             foreach (var er in ers)
             {
                 var afterStr = text.Substring(er.Start + er.Length);
-                var match = this.config.SuffixAndRegex.Match(afterStr);
-                if (match.Success && match.Index == 0)
+                var match = this.config.SuffixAndRegex.MatchBegin(afterStr, trim: true);
+
+                if (match.Success)
                 {
                     ret.Add(new Token(er.Start, (er.Start + er.Length) + match.Length));
                 }
@@ -108,8 +110,9 @@ namespace Microsoft.Recognizers.Text.DateTime
             foreach (var er in ers)
             {
                 var afterStr = text.Substring(er.Start + er.Length ?? 0);
-                var match = this.config.FollowedUnit.Match(afterStr);
-                if (match.Success && match.Index == 0)
+                var match = this.config.FollowedUnit.MatchBegin(afterStr, trim: true);
+
+                if (match.Success)
                 {
                     ret.Add(new Token(er.Start ?? 0, (er.Start + er.Length ?? 0) + match.Length));
                 }

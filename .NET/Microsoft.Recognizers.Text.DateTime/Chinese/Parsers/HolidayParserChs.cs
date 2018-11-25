@@ -142,13 +142,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         private static DateTimeResolutionResult ParseHolidayRegexMatch(string text, DateObject referenceDate)
         {
-            var trimmedText = text.Trim();
             foreach (var regex in ChineseHolidayExtractorConfiguration.HolidayRegexList)
             {
-                var offset = 0;
-                var match = regex.Match(trimmedText);
+                var match = regex.Match(text);
 
-                if (match.Success && match.Index == offset && match.Length == trimmedText.Length)
+                if (match.Success)
                 {
                     // LUIS value string will be set in Match2Date method
                     var ret = Match2Date(match, referenceDate);

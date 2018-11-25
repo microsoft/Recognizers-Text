@@ -128,8 +128,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 var beforeStr = text.Substring(0, er.Start ?? 0);
 
                 // handle "今晚7点"
-                var innerMatch = NightRegex.Match(er.Text);
-                if (innerMatch.Success && innerMatch.Index == 0)
+                var innerMatch = NightRegex.MatchBegin(er.Text, trim: true);
+
+                if (innerMatch.Success)
                 {
                     beforeStr = text.Substring(0, (er.Start ?? 0) + innerMatch.Length);
                 }

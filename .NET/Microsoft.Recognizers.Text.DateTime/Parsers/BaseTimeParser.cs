@@ -92,6 +92,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var offset = 0;
 
             var match = this.config.AtRegex.Match(trimmedText);
+
             if (!match.Success)
             {
                 match = this.config.AtRegex.Match(this.config.TimeTokenPrefix + trimmedText);
@@ -134,13 +135,11 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             foreach (var regex in regexes)
             {
-                offset = 0;
-                match = regex.Match(trimmedText);
+                var exactMatch = regex.MatchExact(trimmedText, trim: true);
 
-                var mealStr = string.Empty;
-                if (match.Success && match.Index == offset && match.Length == trimmedText.Length)
+                if (exactMatch.Success)
                 {
-                    return Match2Time(match, referenceTime);
+                    return Match2Time(exactMatch.Match, referenceTime);
                 }
             }
 

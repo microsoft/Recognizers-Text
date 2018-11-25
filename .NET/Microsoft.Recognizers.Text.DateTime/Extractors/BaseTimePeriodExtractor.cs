@@ -148,8 +148,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     // check connector string
                     var midStr = text.Substring(numEndPoint?? 0, ers[j].Start-numEndPoint?? 0);
-                    var match = this.config.TillRegex.Match(midStr);
-                    if (match.Success && match.Length == midStr.Trim().Length || config.IsConnectorToken(midStr.Trim()))
+
+                    if (config.TillRegex.IsExactMatch(midStr, trim: true) || config.IsConnectorToken(midStr.Trim()))
                     {
                         timeNumbers.Add(numErs[i]);
                     }
@@ -191,10 +191,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
 
                 var middleStr = text.Substring(middleBegin, middleEnd - middleBegin).Trim().ToLowerInvariant();
-                var match = this.config.TillRegex.Match(middleStr);
                 
                 // Handle "{TimePoint} to {TimePoint}"
-                if (match.Success && match.Index == 0 && match.Length == middleStr.Length)
+                if (config.TillRegex.IsExactMatch(middleStr, trim: true))
                 {
                     var periodBegin = ers[idx].Start ?? 0;
                     var periodEnd = (ers[idx + 1].Start ?? 0) + (ers[idx + 1].Length ?? 0);

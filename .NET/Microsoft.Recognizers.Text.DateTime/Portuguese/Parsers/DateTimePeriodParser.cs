@@ -22,8 +22,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
                 return ret;
             }
 
-            var match = this.Config.SpecificTimeOfDayRegex.Match(trimmedText);
-            if (match.Success && match.Index == 0 && match.Length == trimmedText.Length)
+            var exactMatch = this.Config.SpecificTimeOfDayRegex.MatchExact(trimmedText, trim: true);
+
+            if (exactMatch.Success)
             {
                 var swift = this.Config.GetSwiftPrefix(trimmedText);
 
@@ -44,11 +45,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             // Handle Date followed by morning, afternoon, ...
             // Add handling code to handle morning, afternoon followed by Date
             // Add handling code to handle early/late morning, afternoon
-            match = this.Config.TimeOfDayRegex.Match(trimmedText.Substring(startIndex));
+            var match = this.Config.TimeOfDayRegex.Match(trimmedText.Substring(startIndex));
             if (match.Success)
             {
                 var beforeStr = trimmedText.Substring(0, match.Index + startIndex).Trim();
                 var ers = this.Config.DateExtractor.Extract(beforeStr, referenceTime);
+
                 if (ers.Count == 0)
                 {
                     return ret;

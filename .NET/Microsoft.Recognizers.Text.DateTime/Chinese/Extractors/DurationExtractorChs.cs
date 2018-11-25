@@ -41,12 +41,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
                 // match suffix "半"
                 var suffix = source.Substring((int)(ret.Start + ret.Length));
-                match = HalfSuffixRegex.Match(suffix);
-                if (match.Success && match.Index == 0)
+                var beginMatch = HalfSuffixRegex.MatchBegin(suffix, trim: true);
+
+                if (beginMatch.Success)
                 {
-                    var matchString = suffix.Substring(match.Index, match.Length);
+                    var matchString = suffix.Substring(beginMatch.Index, beginMatch.Length);
                     ret.Text = ret.Text + matchString;
-                    ret.Length = ret.Length + match.Length;
+                    ret.Length = ret.Length + beginMatch.Length;
                 }
 
                 res.Add(ret);

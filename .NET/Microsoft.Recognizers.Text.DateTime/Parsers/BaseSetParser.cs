@@ -142,10 +142,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             // handle "each month"
-            match = this.config.EachUnitRegex.Match(text);
-            if (match.Success && match.Length == text.Length)
+            var exactMatch = this.config.EachUnitRegex.MatchExact(text, trim: true);
+
+            if (exactMatch.Success)
             {
-                var sourceUnit = match.Groups["unit"].Value;
+                var sourceUnit = exactMatch.Groups["unit"].Value;
                 if (!string.IsNullOrEmpty(sourceUnit) && this.config.UnitMap.ContainsKey(sourceUnit))
                 {
                     if (!this.config.GetMatchedUnitTimex(sourceUnit, out string timex))
@@ -154,7 +155,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
 
                     //"handle every other month"
-                    if (match.Groups["other"].Success)
+                    if (exactMatch.Groups["other"].Success)
                     {
                         timex = timex.Replace("1", "2");
                     }
