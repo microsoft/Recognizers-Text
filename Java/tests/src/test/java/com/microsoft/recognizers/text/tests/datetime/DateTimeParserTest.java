@@ -1,6 +1,7 @@
 package com.microsoft.recognizers.text.tests.datetime;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.MapperFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.microsoft.recognizers.text.Culture;
@@ -8,6 +9,7 @@ import com.microsoft.recognizers.text.ExtractResult;
 import com.microsoft.recognizers.text.ModelResult;
 import com.microsoft.recognizers.text.datetime.DateTimeOptions;
 import com.microsoft.recognizers.text.datetime.english.parsers.*;
+import com.microsoft.recognizers.text.datetime.english.parsers.EnglishHolidayParserConfiguration;
 import com.microsoft.recognizers.text.datetime.extractors.IDateTimeExtractor;
 import com.microsoft.recognizers.text.datetime.parsers.*;
 import com.microsoft.recognizers.text.datetime.utilities.DateTimeResolutionResult;
@@ -24,7 +26,9 @@ import org.junit.runners.Parameterized;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.Collection;
+import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -78,15 +82,51 @@ public class DateTimeParserTest extends AbstractTest {
                     Assert.assertEquals(getMessage(currentCase, "start"), expected.start, actual.start);
                     Assert.assertEquals(getMessage(currentCase, "length"), expected.length, actual.length);
 
-                    if (expected.value != null) {
-                        DateTimeResolutionResult expectedValue = parseDateTimeResolutionResult(DateTimeResolutionResult.class, expected.value);
-                        DateTimeResolutionResult actualValue = (DateTimeResolutionResult) actual.value;
-
-                        Assert.assertEquals(getMessage(currentCase, "timex"), expectedValue.getTimex(), actualValue.getTimex());
-                        Assert.assertEquals(getMessage(currentCase, "futureResolution"), expectedValue.getFutureResolution(), actualValue.getFutureResolution());
-                        Assert.assertEquals(getMessage(currentCase, "pastResolution"), expectedValue.getPastResolution(), actualValue.getPastResolution());
+                    if (currentCase.modelName.equals("MergedParser")) {
+                        assertMergedParserResults(currentCase, expected, actual);
+                    } else {
+                        assertParserResults(currentCase, expected, actual);
                     }
                 });
+    }
+
+    private static void assertParserResults(TestCase currentCase, DateTimeParseResult expected, DateTimeParseResult actual) {
+
+        if (expected.value != null) {
+            DateTimeResolutionResult expectedValue = parseDateTimeResolutionResult(DateTimeResolutionResult.class, expected.value);
+            DateTimeResolutionResult actualValue = (DateTimeResolutionResult) actual.value;
+
+            Assert.assertEquals(getMessage(currentCase, "timex"), expectedValue.getTimex(), actualValue.getTimex());
+            Assert.assertEquals(getMessage(currentCase, "futureResolution"), expectedValue.getFutureResolution(), actualValue.getFutureResolution());
+            Assert.assertEquals(getMessage(currentCase, "pastResolution"), expectedValue.getPastResolution(), actualValue.getPastResolution());
+        }
+    }
+
+    private static void assertMergedParserResults(TestCase currentCase, DateTimeParseResult expected, DateTimeParseResult actual) {
+
+        if (expected.value != null) {
+            Map<String, List<Map<String, Object>>> expectedValue = parseDateTimeResolutionResult(expected.value);
+            Map<String, List<Map<String, Object>>> actualValue = (Map<String, List<Map<String, Object>>>) actual.value;
+
+            List<Map<String, Object>> expectedResults = expectedValue.get("values");
+            List<Map<String, Object>> actualResults = actualValue.get("values");
+
+            expectedResults.sort(Comparator.comparingInt(Map::hashCode));
+            actualResults.sort(Comparator.comparingInt(Map::hashCode));
+
+            Assert.assertEquals("Actual results size differs", expectedResults.size(), actualResults.size());
+
+            IntStream.range(0, expectedResults.size()).mapToObj(i -> new Pair<>(expectedResults.get(i), actualResults.get(i))).forEach(o -> {
+                Map<String, Object> expectedItem = o.getValue0();
+                Map<String, Object> actualItem = o.getValue1();
+                Assert.assertTrue(String.format("Keys error \n\tExpected:\t%s\n\tActual:\t%s", String.join(",", expectedItem.keySet()), String.join(",", actualItem.keySet())), actualItem.keySet().containsAll(expectedItem.keySet()));
+                for (String key : expectedItem.keySet()) {
+                    if (actualItem.containsKey(key)) {
+                        Assert.assertEquals(getMessage(currentCase, "values." + key), expectedItem.get(key), actualItem.get(key));
+                    }
+                }
+            });
+        }
     }
 
     private static IDateTimeParser getParser(TestCase currentCase) {
@@ -128,13 +168,17 @@ public class DateTimeParserTest extends AbstractTest {
                 return new BaseTimePeriodParser(new EnglishTimePeriodParserConfiguration(new EnglishCommonDateTimeParserConfiguration(DateTimeOptions.None)));
             case "TimeZoneParser":
                 return new BaseTimeZoneParser();
+            case "DateTimeAltParser":
+                return new BaseDateTimeAltParser(new EnglishDateTimeAltParserConfiguration(new EnglishCommonDateTimeParserConfiguration(DateTimeOptions.None)));
+            case "MergedParser":
+                return new BaseMergedParser(new EnglishMergedParserConfiguration(DateTimeOptions.None));
             default:
                 throw new AssumptionViolatedException("Parser Type/Name not supported.");
         }
     }
 
     private IDateTimeExtractor getExtractor(TestCase currentCase) {
-        
+
         String extractorName = currentCase.modelName.replace("Parser", "Extractor");
         return DateTimeExtractorTest.getExtractor(currentCase.language, extractorName);
     }
@@ -150,6 +194,26 @@ public class DateTimeParserTest extends AbstractTest {
         try {
             String json = mapper.writeValueAsString(result);
             return mapper.readValue(json, dateTimeResolutionResultClass);
+
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+            return null;
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public static <T extends Map> T parseDateTimeResolutionResult(Object result) {
+
+        // Deserializer
+        ObjectMapper mapper = new ObjectMapper();
+
+        try {
+            String json = mapper.writeValueAsString(result);
+            return mapper.readValue(json, new TypeReference<Map<String, Object>>() {
+            });
 
         } catch (JsonProcessingException e) {
             e.printStackTrace();

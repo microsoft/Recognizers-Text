@@ -23,6 +23,7 @@ public class EnglishMergedExtractorConfiguration implements IMergedExtractorConf
     public static final Pattern SingleAmbiguousMonthRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SingleAmbiguousMonthRegex, Pattern.CASE_INSENSITIVE);
     public static final Pattern UnspecificDatePeriodRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.UnspecificDatePeriodRegex, Pattern.CASE_INSENSITIVE);
 
+    public static final StringMatcher SuperfluousWordMatcher = new StringMatcher();
     private static final Iterable<Pattern> filterWordRegexList = new ArrayList<Pattern>() {
         {
             // one on one
@@ -35,7 +36,7 @@ public class EnglishMergedExtractorConfiguration implements IMergedExtractorConf
 
     public final Iterable<Pattern> getFilterWordRegexList() { return filterWordRegexList; }
 
-    public final StringMatcher getSuperfluousWordMatcher() { return new StringMatcher(); }
+    public final StringMatcher getSuperfluousWordMatcher() { return SuperfluousWordMatcher; }
 
     private DateTimeOptions options;
     public final DateTimeOptions getOptions() { return options; }
