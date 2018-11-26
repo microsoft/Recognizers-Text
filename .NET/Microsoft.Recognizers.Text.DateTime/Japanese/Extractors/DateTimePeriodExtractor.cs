@@ -170,9 +170,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 var middleEnd = timePoints[idx + 1].Start ?? 0;
 
                 var middleStr = text.Substring(middleBegin, middleEnd - middleBegin).Trim();
-                var match = TillRegex.Match(middleStr);
+                
                 // handle "{TimePoint} to {TimePoint}"
-                if (match.Success && match.Index == 0 && match.Length == middleStr.Length)
+                if (TillRegex.IsExactMatch(middleStr, trim: true))
                 {
                     var periodBegin = timePoints[idx].Start ?? 0;
                     var periodEnd = (timePoints[idx + 1].Start ?? 0) + (timePoints[idx + 1].Length ?? 0);
@@ -197,7 +197,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
                     // handle "between"
                     var afterStr = text.Substring(periodEnd).ToLowerInvariant();
-                    match = ZhijianRegex.Match(afterStr);
+                    var match = ZhijianRegex.Match(afterStr);
+
                     if (match.Success)
                     {
                         ret.Add(new Token(periodBegin, periodEnd + match.Length));
@@ -255,8 +256,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             foreach (var er in ers)
             {
                 var afterStr = text.Substring(er.Start + er.Length ?? 0);
-                var match = FollowedUnit.Match(afterStr);
-                if (match.Success && match.Index == 0)
+                var match = FollowedUnit.MatchBegin(afterStr, trim: true);
+
+                if (match.Success)
                 {
                     durations.Add(new Token(er.Start ?? 0, (er.Start + er.Length ?? 0) + match.Length));
                 }

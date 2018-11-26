@@ -45,12 +45,12 @@ namespace Microsoft.Recognizers.Text.DateTime
             // For example, cases like "on or later than", "earlier than or in" have inclusive modifier
             bool hasInclusiveModifier = false;
             var modStr = string.Empty;
-            var beforeMatch = Config.BeforeRegex.Match(er.Text);
-            var afterMatch = Config.AfterRegex.Match(er.Text);
-            var sinceMatch = Config.SinceRegex.Match(er.Text);
-            var aroundMatch = Config.AroundRegex.Match(er.Text);
+            var beforeMatch = Config.BeforeRegex.MatchBegin(er.Text, trim: true);
+            var afterMatch = Config.AfterRegex.MatchBegin(er.Text, trim: true);
+            var sinceMatch = Config.SinceRegex.MatchBegin(er.Text, trim: true);
+            var aroundMatch = Config.AroundRegex.MatchBegin(er.Text, trim: true);
 
-            if (beforeMatch.Success && beforeMatch.Index == 0)
+            if (beforeMatch.Success)
             {
                 hasBefore = true;
                 er.Start += beforeMatch.Length;
@@ -63,7 +63,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     hasInclusiveModifier = true;
                 }
             }
-            else if (afterMatch.Success && afterMatch.Index == 0)
+            else if (afterMatch.Success)
             {
                 hasAfter = true;
                 er.Start += afterMatch.Length;
@@ -76,7 +76,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     hasInclusiveModifier = true;
                 }
             }
-            else if (sinceMatch.Success && sinceMatch.Index == 0)
+            else if (sinceMatch.Success)
             {
                 hasSince = true;
                 er.Start += sinceMatch.Length;
@@ -84,7 +84,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 er.Text = er.Text.Substring(sinceMatch.Length);
                 modStr = sinceMatch.Value;
             }
-            else if (aroundMatch.Success && aroundMatch.Index == 0)
+            else if (aroundMatch.Success)
             {
                 hasAround = true;
                 er.Start += aroundMatch.Length;
@@ -96,8 +96,8 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 // This has to be put at the end of the if, or cases like "before 2012" and "after 2012" would fall into this
                 // 2012 or after/above
-                var match = Config.DateAfter.Match(er.Text);
-                if (match.Success && er.Text.EndsWith(match.Value))
+                var match = Config.DateAfter.MatchEnd(er.Text, trim: true);
+                if (match.Success)
                 {
                     hasDateAfter = true;
                     er.Length -= match.Length;

@@ -9,7 +9,6 @@ import com.microsoft.recognizers.text.utilities.RegExpUtility;
 import com.microsoft.recognizers.text.datetime.config.BaseOptionsConfiguration;
 import com.microsoft.recognizers.text.datetime.resources.EnglishDateTime;
 
-
 public class EnglishHolidayExtractorConfiguration extends BaseOptionsConfiguration implements IHolidayExtractorConfiguration {
 
     public static final Pattern YearPattern = RegExpUtility.getSafeRegExp(EnglishDateTime.YearRegex);

@@ -100,72 +100,53 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 var beforeStr = text.Substring(lastEnd, er.Start ?? 0).ToLowerInvariant();
                 var afterStr = text.Substring((er.Start ?? 0) + (er.Length ?? 0)).ToLowerInvariant();
 
-                if (HasTokenValueAfterStr(afterStr.TrimStart(), BeforeRegex, out string tokenValue))
+                var match = BeforeRegex.MatchBegin(afterStr, trim: true);
+
+                if (match.Success)
                 {
-                    var modLengh = tokenValue.Length + afterStr.IndexOf(tokenValue);
+                    var modLengh = match.Index + match.Length;
                     er.Length += modLengh;
                     er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
                 }
 
-                if (HasTokenValueAfterStr(afterStr.TrimStart(), AfterRegex, out tokenValue))
+                match = AfterRegex.MatchBegin(afterStr, trim: true);
+
+                if (match.Success)
                 {
-                    var modLengh = tokenValue.Length + afterStr.IndexOf(tokenValue);
+                    var modLengh = match.Index + match.Length;
                     er.Length += modLengh;
                     er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
                 }
 
-                if (HasTokenIndexBeforeStr(beforeStr.TrimEnd(), UntilRegex, out int tokenIndex))
-                {
-                    var modLengh = beforeStr.Length - tokenIndex;
-                    er.Length += modLengh;
-                    er.Start -= modLengh;
-                    er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
-                }
+                match = UntilRegex.MatchEnd(beforeStr, trim: true);
 
-                if (HasTokenIndexBeforeStr(beforeStr.TrimEnd(), SincePrefixRegex, out tokenIndex))
+                if (match.Success)
                 {
-                    var modLengh = beforeStr.Length - tokenIndex;
+                    var modLengh = beforeStr.Length - match.Index;
                     er.Length += modLengh;
                     er.Start -= modLengh;
                     er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
                 }
 
-                if (HasTokenValueAfterStr(afterStr.TrimStart(), SinceSuffixRegex, out tokenValue))
+                match = SincePrefixRegex.MatchEnd(beforeStr, trim: true);
+
+                if (match.Success)
                 {
-                    var modLengh = tokenValue.Length + afterStr.IndexOf(tokenValue);
+                    var modLengh = beforeStr.Length - match.Index;
+                    er.Length += modLengh;
+                    er.Start -= modLengh;
+                    er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
+                }
+
+                match = SinceSuffixRegex.MatchBegin(afterStr, trim: true);
+                if (match.Success)
+                {
+                    var modLengh = match.Index + match.Length;
                     er.Length += modLengh;
                     er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
                 }
 
             }
-        }
-
-        private bool HasTokenIndexBeforeStr(string text, Regex regex, out int index)
-        {
-            index = -1;
-            var match = regex.Match(text);
-
-            if (match.Success && string.IsNullOrWhiteSpace(text.Substring(match.Index + match.Length)))
-            {
-                index = match.Index;
-                return true;
-            }
-
-            return false;
-        }
-
-        private bool HasTokenValueAfterStr(string text, Regex regex, out string value)
-        {
-            value = string.Empty;
-            var match = regex.Match(text);
-
-            if (match.Success && match.Index == 0)
-            {
-                value = match.Value;
-                return true;
-            }
-
-            return false;
         }
 
         private static List<ExtractResult> MoveOverlap(List<ExtractResult> dst, ExtractResult result)

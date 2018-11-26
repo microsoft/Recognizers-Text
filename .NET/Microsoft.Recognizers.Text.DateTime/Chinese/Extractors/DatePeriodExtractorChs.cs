@@ -154,8 +154,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 }
 
                 var middleStr = text.Substring(middleBegin, middleEnd - middleBegin).Trim();
-                var match = TillRegex.Match(middleStr);
-                if (match.Success && match.Index == 0 && match.Length == middleStr.Length)
+
+                if (TillRegex.IsExactMatch(middleStr, trim: true))
                 {
                     var periodBegin = er[idx].Start ?? 0;
                     var periodEnd = (er[idx + 1].Start ?? 0) + (er[idx + 1].Length ?? 0);
@@ -184,11 +184,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
             var durations = new List<Token>();
             var ers = IntegerExtractor.Extract(text);
+
             foreach (var er in ers)
             {
                 var afterStr = text.Substring(er.Start + er.Length ?? 0);
-                var match = FollowedUnit.Match(afterStr);
-                if (match.Success && match.Index == 0)
+                var match = FollowedUnit.MatchBegin(afterStr, trim: true);
+
+                if (match.Success)
                 {
                     durations.Add(new Token(er.Start ?? 0, (er.Start + er.Length ?? 0) + match.Length));
                 }
@@ -211,15 +213,17 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     continue;
                 }
 
-                var match = PastRegex.Match(beforeStr);
-                if (match.Success && string.IsNullOrWhiteSpace(beforeStr.Substring(match.Index + match.Length)))
+                var match = PastRegex.MatchEnd(beforeStr, trim: true);
+
+                if (match.Success)
                 {
                     ret.Add(new Token(match.Index, duration.End));
                     continue;
                 }
 
-                match = FutureRegex.Match(beforeStr);
-                if (match.Success && string.IsNullOrWhiteSpace(beforeStr.Substring(match.Index + match.Length)))
+                match = FutureRegex.MatchEnd(beforeStr, trim: true);
+
+                if (match.Success)
                 {
                     ret.Add(new Token(match.Index, duration.End));
                 }

@@ -231,11 +231,10 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "2500",
-          "unit": "Cubic foot"
+          "unit": "Cubic meter"
         }
       }
     ],
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {

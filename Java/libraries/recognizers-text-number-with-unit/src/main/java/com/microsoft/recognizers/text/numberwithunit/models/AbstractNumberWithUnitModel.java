@@ -49,7 +49,7 @@ public abstract class AbstractNumberWithUnitModel implements IModel {
                 for (ExtractResult result : extractedResults) {
                     ParseResult parseResult = parser.parse(result);
                     if (parseResult.value instanceof List) {
-                        parsedResults.addAll((List<ParseResult>) parseResult.value);
+                        parsedResults.addAll((List<ParseResult>)parseResult.value);
                     } else {
                         parsedResults.add(parseResult);
                     }

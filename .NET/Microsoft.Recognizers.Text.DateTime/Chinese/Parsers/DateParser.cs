@@ -110,16 +110,14 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         // parse basic patterns in DateRegexList
         protected DateTimeResolutionResult ParseBasicRegexMatch(string text, DateObject referenceDate)
         {
-            var trimmedText = text.Trim();
             foreach (var regex in DateExtractorChs.DateRegexList)
             {
-                const int offset = 0;
-                var match = regex.Match(trimmedText);
+                var match = regex.MatchExact(text, trim: true);
 
-                if (match.Success && match.Index == offset && match.Length == trimmedText.Length)
+                if (match.Success)
                 {
                     // LUIS value string will be set in Match2Date method
-                    var ret = Match2Date(match, referenceDate);
+                    var ret = Match2Date(match.Match, referenceDate);
                     return ret;
                 }
             }
@@ -131,13 +129,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         // including '今天', '后天', '十三日'
         protected DateTimeResolutionResult ParseImplicitDate(string text, DateObject referenceDate)
         {
-            var trimmedText = text.Trim();
-
             var ret = new DateTimeResolutionResult();
 
             // handle "十二日" "明年这个月三日" "本月十一日"
-            var match = DateExtractorChs.SpecialDate.Match(trimmedText);
-            if (match.Success && match.Length == trimmedText.Length)
+            var match = DateExtractorChs.SpecialDate.MatchExact(text, trim: true);
+            if (match.Success)
             {
                 var yearStr = match.Groups["thisyear"].Value.ToLower();
                 var monthStr = match.Groups["thismonth"].Value.ToLower();
@@ -231,8 +227,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             }
 
             // handle cases like "昨日", "明日", "大后天"
-            match = DateExtractorChs.SpecialDayRegex.Match(trimmedText);
-            if (match.Success && match.Index == 0 && match.Length == trimmedText.Length)
+            match = DateExtractorChs.SpecialDayRegex.MatchExact(text, trim: true);
+
+            if (match.Success)
             {
                 var value = referenceDate.AddDays(config.GetSwiftDay(match.Value.ToLower()));
                 ret.Timex = DateTimeFormatUtil.LuisDate(value);
@@ -268,9 +265,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         protected DateTimeResolutionResult MatchNextWeekday(string text, DateObject reference)
         {
             var result = new DateTimeResolutionResult();
-            var match = this.config.NextRegex.Match(text);
+            var match = this.config.NextRegex.MatchExact(text, trim: true);
 
-            if (match.Success && match.Index == 0 && match.Length == text.Length)
+            if (match.Success)
             {
                 var weekdayKey = match.Groups["weekday"].Value.ToLowerInvariant();
                 var value = reference.Next((DayOfWeek)this.config.DayOfWeek[weekdayKey]);
@@ -286,9 +283,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         protected DateTimeResolutionResult MatchThisWeekday(string text, DateObject reference)
         {
             var result = new DateTimeResolutionResult();
-            var match = this.config.ThisRegex.Match(text);
+            var match = this.config.ThisRegex.MatchExact(text, trim: true);
 
-            if (match.Success && match.Index == 0 && match.Length == text.Length)
+            if (match.Success)
             {
                 var weekdayKey = match.Groups["weekday"].Value.ToLowerInvariant();
                 var value = reference.This((DayOfWeek)this.config.DayOfWeek[weekdayKey]);
@@ -304,9 +301,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         protected DateTimeResolutionResult MatchLastWeekday(string text, DateObject reference)
         {
             var result = new DateTimeResolutionResult();
-            var match = this.config.LastRegex.Match(text);
+            var match = this.config.LastRegex.MatchExact(text, trim: true);
 
-            if (match.Success && match.Index == 0 && match.Length == text.Length)
+            if (match.Success)
             {
                 var weekdayKey = match.Groups["weekday"].Value.ToLowerInvariant();
                 var value = reference.Last((DayOfWeek)this.config.DayOfWeek[weekdayKey]);
@@ -322,9 +319,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         protected DateTimeResolutionResult MatchWeekdayAlone(string text, DateObject reference)
         {
             var result = new DateTimeResolutionResult();
-            var match = this.config.StrictWeekDayRegex.Match(text);
+            var match = this.config.StrictWeekDayRegex.MatchExact(text, trim: true);
 
-            if (match.Success && match.Index == 0 && match.Length == text.Length)
+            if (match.Success)
             {
                 var weekdayKey = match.Groups["weekday"].Value.ToLower();
                 var weekday = this.config.DayOfWeek[weekdayKey];

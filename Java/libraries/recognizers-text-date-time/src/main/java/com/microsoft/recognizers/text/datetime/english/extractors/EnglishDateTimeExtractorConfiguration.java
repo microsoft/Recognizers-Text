@@ -34,6 +34,7 @@ public class EnglishDateTimeExtractorConfiguration extends BaseOptionsConfigurat
     public static final Pattern ConnectorRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.ConnectorRegex, Pattern.CASE_INSENSITIVE);
     public static final Pattern NumberAsTimeRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.NumberAsTimeRegex, Pattern.CASE_INSENSITIVE);
     public static final Pattern DateNumberConnectorRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.DateNumberConnectorRegex, Pattern.CASE_INSENSITIVE);
+
     public IExtractor integerExtractor;
     public IDateTimeExtractor datePointExtractor;
     public IDateTimeExtractor timePointExtractor;
@@ -43,10 +44,12 @@ public class EnglishDateTimeExtractorConfiguration extends BaseOptionsConfigurat
     public EnglishDateTimeExtractorConfiguration(DateTimeOptions options) {
 
         super(options);
+
         integerExtractor = IntegerExtractor.getInstance();
         datePointExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration());
         timePointExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration());
         durationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration(options));
+
         utilityConfiguration = new EnglishDatetimeUtilityConfiguration();
     }
 
@@ -137,6 +140,7 @@ public class EnglishDateTimeExtractorConfiguration extends BaseOptionsConfigurat
     public boolean IsConnector(String text) {
 
         text = text.trim();
+
         boolean isPreposition = Arrays.stream(RegExpUtility.getMatches(PrepositionRegex, text)).findFirst().isPresent();
         boolean isConnector = Arrays.stream(RegExpUtility.getMatches(ConnectorRegex, text)).findFirst().isPresent();
         return (StringUtility.isNullOrEmpty(text) || isPreposition || isConnector);

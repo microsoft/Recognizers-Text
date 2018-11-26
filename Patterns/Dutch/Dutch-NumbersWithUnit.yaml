@@ -113,7 +113,7 @@ AmbiguousTemperatureUnitList: !list
 VolumeSuffixList: !dictionary
   types: [ string, string ]
   entries:
-    Cubic meter: m3|m^3|m³|kubieke meter|kubieke meters
+    Cubic meter: m3|m^3|m³|kubieke meter|kubieke meters|kuub
     Cubic centimeter: cm3|cm^3|cm³|kubieke centimeter|kubieke centimetre|kubieke centimeters
     Cubic millimiter: mm3|mm^3|mm³|kubieke millimiter
     Hectoliter: hl|hectoliter|hectoliters

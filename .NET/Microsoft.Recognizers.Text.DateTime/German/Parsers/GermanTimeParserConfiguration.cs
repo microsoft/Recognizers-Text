@@ -96,10 +96,11 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public void AdjustBySuffix(string suffix, ref int hour, ref int min, ref bool hasMin, ref bool hasAm, ref bool hasPm)
         {
-            var trimedSuffix = suffix.Trim().ToLowerInvariant();
+            var lowerSuffix = suffix.ToLowerInvariant();
             var deltaHour = 0;
-            var match = TimeSuffixFull.Match(trimedSuffix);
-            if (match.Success && match.Index == 0 && match.Length == trimedSuffix.Length)
+            var match = TimeSuffixFull.MatchExact(lowerSuffix, trim: true);
+
+            if (match.Success)
             {
                 var oclockStr = match.Groups["oclock"].Value;
                 if (string.IsNullOrEmpty(oclockStr))

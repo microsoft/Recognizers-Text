@@ -254,8 +254,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                     // 2012 or after/above
                     var afterStr = text.Substring((er.Start ?? 0) + (er.Length ?? 0)).ToLowerInvariant();
 
-                    var match = config.DateAfterRegex.Match(afterStr.TrimStart());
-                    if (match.Success && match.Index == 0)
+                    var match = config.DateAfterRegex.MatchBegin(afterStr.TrimStart(), trim: true);
+
+                    if (match.Success)
                     {
                         var isFollowedByOtherEntity = true;
 

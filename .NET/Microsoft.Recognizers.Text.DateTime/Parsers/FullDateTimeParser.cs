@@ -28,27 +28,27 @@ namespace Microsoft.Recognizers.Text.DateTime
             // push, save teh MOD string
             bool hasBefore = false, hasAfter = false, hasUntil = false, hasSince = false;
             string modStr = string.Empty, modStrPrefix = string.Empty, modStrSuffix = string.Empty;
-            var beforeMatch = config.BeforeRegex.Match(er.Text);
-            var afterMatch = config.AfterRegex.Match(er.Text);
-            var untilMatch = config.UntilRegex.Match(er.Text);
-            var sinceMatchPrefix = config.SincePrefixRegex.Match(er.Text);
-            var sinceMatchSuffix = config.SinceSuffixRegex.Match(er.Text);
+            var beforeMatch = config.BeforeRegex.MatchEnd(er.Text, trim: true);
+            var afterMatch = config.AfterRegex.MatchEnd(er.Text, trim: true);
+            var untilMatch = config.UntilRegex.MatchBegin(er.Text, trim: true);
+            var sinceMatchPrefix = config.SincePrefixRegex.MatchBegin(er.Text, trim: true);
+            var sinceMatchSuffix = config.SinceSuffixRegex.MatchEnd(er.Text, trim: true);
 
-            if (beforeMatch.Success && er.Text.EndsWith(beforeMatch.Value) && !IsDurationWithBeforeAndAfter(er))
+            if (beforeMatch.Success && !IsDurationWithBeforeAndAfter(er))
             {
                 hasBefore = true;
                 er.Length -= beforeMatch.Length;
                 er.Text = er.Text.Substring(0, er.Length ?? 0);
                 modStr = beforeMatch.Value;
             }
-            else if (afterMatch.Success && er.Text.EndsWith(afterMatch.Value) && !IsDurationWithBeforeAndAfter(er))
+            else if (afterMatch.Success && !IsDurationWithBeforeAndAfter(er))
             {
                 hasAfter = true;
                 er.Length -= afterMatch.Length;
                 er.Text = er.Text.Substring(0, er.Length ?? 0);
                 modStr = afterMatch.Value;
             }
-            else if (untilMatch.Success && untilMatch.Index == 0)
+            else if (untilMatch.Success)
             {
                 hasUntil = true;
                 er.Start += untilMatch.Length;
@@ -58,7 +58,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
             else
             {
-                if (sinceMatchPrefix.Success && sinceMatchPrefix.Index == 0)
+                if (sinceMatchPrefix.Success)
                 {
                     hasSince = true;
                     er.Start += sinceMatchPrefix.Length;
@@ -67,7 +67,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     modStrPrefix = sinceMatchPrefix.Value;
                 }
 
-                if (sinceMatchSuffix.Success && er.Text.EndsWith(sinceMatchSuffix.Value))
+                if (sinceMatchSuffix.Success)
                 {
                     hasSince = true;
                     er.Length -= sinceMatchSuffix.Length;

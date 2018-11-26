@@ -118,8 +118,8 @@ public abstract class BaseNumberExtractor implements IExtractor {
         String thousandsMark = Pattern.quote(String.valueOf(type.thousandsMark));
         String decimalsMark = Pattern.quote(String.valueOf(type.decimalsMark));
 
-        String regexDefinition = type.decimalsMark == '\0'
-                ? BaseNumbers.IntegerRegexDefinition(placeholder, thousandsMark) :
+        String regexDefinition = type.decimalsMark == '\0' ?
+                BaseNumbers.IntegerRegexDefinition(placeholder, thousandsMark) :
                 BaseNumbers.DoubleRegexDefinition(placeholder, thousandsMark, decimalsMark);
 
         return RegExpUtility.getSafeLookbehindRegExp(regexDefinition, Pattern.UNICODE_CHARACTER_CLASS);

@@ -1,8 +1,8 @@
 package com.microsoft.recognizers.text.datetime.parsers;
 
 import com.google.common.collect.ImmutableMap;
-import com.microsoft.recognizers.text.ParseResult;
 import com.microsoft.recognizers.text.ExtractResult;
+import com.microsoft.recognizers.text.ParseResult;
 import com.microsoft.recognizers.text.datetime.Constants;
 import com.microsoft.recognizers.text.datetime.TimeTypeConstants;
 import com.microsoft.recognizers.text.datetime.extractors.BaseDateExtractor;
@@ -30,13 +30,13 @@ public class BaseDateParser implements IDateTimeParser {
     }
 
     @Override
-    public ParseResult parse(ExtractResult extResult) {
-        return parse(extResult, LocalDateTime.now());
+    public String getParserName() {
+        return Constants.SYS_DATETIME_DATE;
     }
 
     @Override
-    public String getParserName() {
-        return Constants.SYS_DATETIME_DATE;
+    public ParseResult parse(ExtractResult extResult) {
+        return parse(extResult, LocalDateTime.now());
     }
 
     @Override
@@ -94,7 +94,7 @@ public class BaseDateParser implements IDateTimeParser {
                 er.data,
                 value,
                 "",
-                value == null ? "" : ((DateTimeResolutionResult) value).getTimex());
+                value == null ? "" : ((DateTimeResolutionResult)value).getTimex());
 
         return ret;
     }
@@ -113,7 +113,7 @@ public class BaseDateParser implements IDateTimeParser {
             Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(regex, trimmedText)).findFirst();
 
             if (!match.isPresent()) {
-                match = Arrays.stream(RegExpUtility.getMatches(regex, this.config.getDateTokenPrefix() + trimmedText)).findFirst();
+                match =  Arrays.stream(RegExpUtility.getMatches(regex, this.config.getDateTokenPrefix() + trimmedText)).findFirst();
                 offset = this.config.getDateTokenPrefix().length();
             }
 
@@ -137,13 +137,15 @@ public class BaseDateParser implements IDateTimeParser {
         // handle "on 12"
         Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(this.config.getOnRegex(), this.config.getDateTokenPrefix() + trimmedText)).findFirst();
         if (match.isPresent() && match.get().index == 3 && match.get().length == trimmedText.length()) {
-            int month = referenceDate.getMonthValue(), year = referenceDate.getYear();
+            int month = referenceDate.getMonthValue();
+            int year = referenceDate.getYear();
             String dayStr = match.get().getGroup("day").value.toLowerCase();
             int day = this.config.getDayOfMonth().get(dayStr);
 
             ret.setTimex(FormatUtil.luisDate(-1, -1, day));
 
-            LocalDateTime futureDate, pastDate;
+            LocalDateTime futureDate;
+            LocalDateTime pastDate;
             String tryStr = FormatUtil.luisDate(year, month, day);
             if (DateUtil.tryParse(tryStr) != null) {
                 futureDate = DateUtil.safeCreateFromMinValue(year, month, day);
@@ -190,7 +192,7 @@ public class BaseDateParser implements IDateTimeParser {
             int swift = this.config.getSwiftDay(match.get().getGroup("day").value);
             List<ExtractResult> numErs = this.config.getIntegerExtractor().extract(trimmedText);
             Object numberParsed = this.config.getNumberParser().parse(numErs.get(0)).value;
-            int numOfDays = Math.round(((Double) numberParsed).floatValue());
+            int numOfDays = Math.round(((Double)numberParsed).floatValue());
 
             LocalDateTime value = referenceDate.plusDays(numOfDays + swift);
 
@@ -207,7 +209,7 @@ public class BaseDateParser implements IDateTimeParser {
         if (match.isPresent() && match.get().index == 0 && match.get().length == trimmedText.length()) {
             List<ExtractResult> numErs = this.config.getIntegerExtractor().extract(trimmedText);
             Object numberParsed = this.config.getNumberParser().parse(numErs.get(0)).value;
-            int num = Math.round(((Double) numberParsed).floatValue());
+            int num = Math.round(((Double)numberParsed).floatValue());
 
             String weekdayStr = match.get().getGroup("weekday").value.toLowerCase();
             LocalDateTime value = referenceDate;
@@ -307,7 +309,9 @@ public class BaseDateParser implements IDateTimeParser {
         // handle "for the 27th."
         match = Arrays.stream(RegExpUtility.getMatches(this.config.getForTheRegex(), text)).findFirst();
         if (match.isPresent()) {
-            int day, month = referenceDate.getMonthValue(), year = referenceDate.getYear();
+            int day;
+            int month = referenceDate.getMonthValue();
+            int year = referenceDate.getYear();
             String dayStr = match.get().getGroup("DayOfMonth").value.toLowerCase();
 
             int start = match.get().getGroup("DayOfMonth").index;
@@ -317,7 +321,7 @@ public class BaseDateParser implements IDateTimeParser {
             ExtractResult er = new ExtractResult(start, length, dayStr, null, null);
 
             Object numberParsed = this.config.getNumberParser().parse(er).value;
-            day = Math.round(((Double) numberParsed).floatValue());
+            day = Math.round(((Double)numberParsed).floatValue());
 
             ret.setTimex(FormatUtil.luisDate(-1, -1, day));
 
@@ -340,7 +344,8 @@ public class BaseDateParser implements IDateTimeParser {
         // handling cases like 'Thursday the 21st', which both 'Thursday' and '21st' refer to a same date
         match = Arrays.stream(RegExpUtility.getMatches(this.config.getWeekDayAndDayOfMonthRegex(), text)).findFirst();
         if (match.isPresent()) {
-            int month = referenceDate.getMonthValue(), year = referenceDate.getYear();
+            int month = referenceDate.getMonthValue();
+            int year = referenceDate.getYear();
             String dayStr = match.get().getGroup("DayOfMonth").value.toLowerCase();
 
             int start = match.get().getGroup("DayOfMonth").index;
@@ -350,13 +355,12 @@ public class BaseDateParser implements IDateTimeParser {
             ExtractResult erTmp = new ExtractResult(start, length, dayStr, null, null);
 
             Object numberParsed = this.config.getNumberParser().parse(erTmp).value;
-            int day = Math.round(((Double) numberParsed).floatValue());
+            int day = Math.round(((Double)numberParsed).floatValue());
 
             // the validity of the phrase is guaranteed in the Date Extractor
             ret.setTimex(FormatUtil.luisDate(year, month, day));
             ret.setFutureValue(LocalDateTime.of(year, month, day, 0, 0));
             ret.setPastValue(LocalDateTime.of(year, month, day, 0, 0));
-            ;
             ret.setSuccess(true);
 
             return ret;
@@ -364,7 +368,6 @@ public class BaseDateParser implements IDateTimeParser {
 
         return ret;
     }
-
 
     private DateTimeResolutionResult parseWeekdayOfMonth(String text, LocalDateTime referenceDate) {
         DateTimeResolutionResult ret = new DateTimeResolutionResult();
@@ -432,7 +435,7 @@ public class BaseDateParser implements IDateTimeParser {
 
         return AgoLaterUtil.parseDurationWithAgoAndLater(text, referenceDate,
                 config.getDurationExtractor(), config.getDurationParser(), config.getUnitMap(), config.getUnitRegex(),
-                config.getUtilityConfiguration(), config);
+                config.getUtilityConfiguration(), config::getSwiftDay);
     }
 
     // handle cases like "January first", "twenty-two of August"
@@ -441,7 +444,9 @@ public class BaseDateParser implements IDateTimeParser {
         DateTimeResolutionResult ret = new DateTimeResolutionResult();
 
         String trimmedText = text.trim().toLowerCase();
-        int month = 0, day = 0, year = referenceDate.getYear();
+        int month = 0;
+        int day = 0;
+        int year = referenceDate.getYear();
         Boolean ambiguous = true;
 
         List<ExtractResult> er = this.config.getOrdinalExtractor().extract(trimmedText);
@@ -454,7 +459,7 @@ public class BaseDateParser implements IDateTimeParser {
         }
 
         Object numberParsed = this.config.getNumberParser().parse(er.get(0)).value;
-        int num = Math.round(((Double) numberParsed).floatValue());
+        int num = Math.round(((Double)numberParsed).floatValue());
 
         Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(this.config.getMonthRegex(), trimmedText)).findFirst();
         if (match.isPresent()) {
@@ -465,7 +470,7 @@ public class BaseDateParser implements IDateTimeParser {
 
             Optional<Match> matchYear = Arrays.stream(RegExpUtility.getMatches(this.config.getYearSuffix(), suffix)).findFirst();
             if (matchYear.isPresent()) {
-                year = ((BaseDateExtractor) this.config.getDateExtractor()).getYearFromText(matchYear.get());
+                year = ((BaseDateExtractor)this.config.getDateExtractor()).getYearFromText(matchYear.get());
                 if (year != Constants.InvalidYear) {
                     ambiguous = false;
                 }
@@ -507,7 +512,7 @@ public class BaseDateParser implements IDateTimeParser {
 
         // for LUIS format value string
         LocalDateTime futureDate = DateUtil.safeCreateFromMinValue(year, month, day);
-        LocalDateTime pastDate = DateUtil.safeCreateFromMinValue(year, month, day);
+        LocalDateTime pastDate =  DateUtil.safeCreateFromMinValue(year, month, day);
 
         if (ambiguous) {
             ret.setTimex(FormatUtil.luisDate(-1, month, day));
@@ -534,7 +539,7 @@ public class BaseDateParser implements IDateTimeParser {
         DateTimeResolutionResult ret = new DateTimeResolutionResult();
 
         String trimmedText = text.trim().toLowerCase();
-        int month = referenceDate.getMonthValue(), day = 0, year = referenceDate.getYear();
+        int day = 0;
 
         List<ExtractResult> er = this.config.getOrdinalExtractor().extract(trimmedText);
         if (er.size() == 0) {
@@ -544,9 +549,12 @@ public class BaseDateParser implements IDateTimeParser {
         if (er.size() == 0) {
             return ret;
         }
-
+        
         Object numberParsed = this.config.getNumberParser().parse(er.get(0)).value;
         day = Integer.parseInt(numberParsed != null ? numberParsed.toString() : "0");
+
+        int month = referenceDate.getMonthValue();
+        int year = referenceDate.getYear();
 
         // for LUIS format value string
         ret.setTimex(FormatUtil.luisDate(-1, -1, day));
@@ -595,7 +603,9 @@ public class BaseDateParser implements IDateTimeParser {
         String monthStr = match.get().getGroup("month").value.toLowerCase();
         String dayStr = match.get().getGroup("day").value.toLowerCase();
         String yearStr = match.get().getGroup("year").value.toLowerCase();
-        int month = 0, day = 0, year = 0;
+        int month = 0;
+        int day = 0;
+        int year = 0;
 
         if (this.config.getMonthOfYear().containsKey(monthStr) && this.config.getDayOfMonth().containsKey(dayStr)) {
             month = this.config.getMonthOfYear().get(monthStr);

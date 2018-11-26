@@ -18,7 +18,7 @@ public class BasePercentageParser extends BaseNumberParser {
 
         // replace text & data from extended info
         if (extractResult.data instanceof List) {
-            List<Pair<String, ExtractResult>> extendedData = (List<Pair<String, ExtractResult>>) extractResult.data;
+            List<Pair<String, ExtractResult>> extendedData = (List<Pair<String, ExtractResult>>)extractResult.data;
             if (extendedData.size() == 2) {
                 // for case like "2 out of 5".
                 String newText = extendedData.get(0).getValue0() + " " + config.getFractionMarkerToken() + " " + extendedData.get(1).getValue0();
@@ -27,7 +27,7 @@ public class BasePercentageParser extends BaseNumberParser {
                         .withData("Frac" + config.getLangMarker());
 
                 ret = super.parse(extractResult);
-                ret = ret.withValue((double) ret.value * 100);
+                ret = ret.withValue((double)ret.value * 100);
             } else if (extendedData.size() == 1) {
                 // for case like "one third of".
                 extractResult = extractResult
@@ -37,17 +37,17 @@ public class BasePercentageParser extends BaseNumberParser {
                 ret = super.parse(extractResult);
 
                 if (extractResult.data.toString().startsWith("Frac")) {
-                    ret = ret.withValue((double) ret.value * 100);
+                    ret = ret.withValue((double)ret.value * 100);
                 }
             }
 
-            String resolutionStr = config.getCultureInfo() != null
-                    ? NumberFormatUtility.format(ret.value, config.getCultureInfo()) + "%"
-                    : ret.value + "%";
+            String resolutionStr = config.getCultureInfo() != null ?
+                    NumberFormatUtility.format(ret.value, config.getCultureInfo()) + "%" :
+                    ret.value + "%";
             ret = ret.withResolutionStr(resolutionStr);
         } else {
             // for case like "one percent" or "1%".
-            Pair<String, ExtractResult> extendedData = (Pair<String, ExtractResult>) extractResult.data;
+            Pair<String, ExtractResult> extendedData = (Pair<String, ExtractResult>)extractResult.data;
             extractResult = extractResult
                     .withText(extendedData.getValue0())
                     .withData(extendedData.getValue1().data);

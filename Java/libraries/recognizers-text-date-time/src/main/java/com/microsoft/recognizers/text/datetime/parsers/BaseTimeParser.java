@@ -66,7 +66,7 @@ public class BaseTimeParser implements IDateTimeParser {
                 innerResult = internalParse(er.text.substring(0, timezoneEr.length), referenceTime);
 
                 if (timezonePr.value != null) {
-                    TimeZoneResolutionResult timeZoneResolution = ((DateTimeResolutionResult)timezonePr.value).getTimeZoneResolution();
+                    TimeZoneResolutionResult timeZoneResolution = ((DateTimeResolutionResult) timezonePr.value).getTimeZoneResolution();
                     innerResult.setTimeZoneResolution(timeZoneResolution);
                 }
 
@@ -74,8 +74,7 @@ public class BaseTimeParser implements IDateTimeParser {
                 innerResult = internalParse(er.text, referenceTime);
             }
 
-            if (innerResult.getSuccess())
-            {
+            if (innerResult.getSuccess()) {
                 ImmutableMap.Builder<String, String> futureResolution = ImmutableMap.builder();
                 futureResolution.put(TimeTypeConstants.TIME, FormatUtil.formatTime((LocalDateTime) innerResult.getFutureValue()));
 
@@ -98,18 +97,20 @@ public class BaseTimeParser implements IDateTimeParser {
                 er.data,
                 value,
                 "",
-                value == null ? "" : ((DateTimeResolutionResult)value).getTimex());
+                value == null ? "" : ((DateTimeResolutionResult) value).getTimex());
 
         return ret;
     }
 
     protected DateTimeResolutionResult internalParse(String text, LocalDateTime referenceTime) {
+
         DateTimeResolutionResult innerResult = parseBasicRegexMatch(text, referenceTime);
         return innerResult;
     }
 
     // parse basic patterns in TimeRegexList
     private DateTimeResolutionResult parseBasicRegexMatch(String text, LocalDateTime referenceTime) {
+
         String trimmedText = text.trim().toLowerCase();
         int offset = 0;
         Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(config.getAtRegex(), trimmedText)).findFirst();
@@ -118,7 +119,7 @@ public class BaseTimeParser implements IDateTimeParser {
             offset = config.getTimeTokenPrefix().length();
         }
 
-        if (match.isPresent() && match.get().index == offset && match.get().length == trimmedText.length()){
+        if (match.isPresent() && match.get().index == offset && match.get().length == trimmedText.length()) {
             return match2Time(match.get(), referenceTime);
         }
 
@@ -130,7 +131,8 @@ public class BaseTimeParser implements IDateTimeParser {
         } else {
             try {
                 hour = Integer.parseInt(text);
-            } catch (Exception e) { }
+            } catch (Exception e) {
+            }
         }
 
         if (hour != null && hour >= 0 && hour <= 24) {
@@ -165,6 +167,7 @@ public class BaseTimeParser implements IDateTimeParser {
     }
 
     private DateTimeResolutionResult match2Time(Match match, LocalDateTime referenceTime) {
+
         DateTimeResolutionResult result = new DateTimeResolutionResult();
         boolean hasMin = false;
         boolean hasSec = false;
@@ -310,11 +313,11 @@ public class BaseTimeParser implements IDateTimeParser {
         }
 
         StringBuilder timex = new StringBuilder(String.format("T%02d", hour));
-        
+
         if (hasMin) {
             timex.append(String.format(":%02d", minute));
         }
-        
+
         if (hasSec) {
             timex.append(String.format(":%02d", second));
         }
@@ -335,14 +338,14 @@ public class BaseTimeParser implements IDateTimeParser {
     }
 
     private boolean isAmDesc(String descStr, Match match) {
-        return checkRegex(config.getUtilityConfiguration().getAmDescRegex(), descStr)
-        || checkRegex(config.getUtilityConfiguration().getAmPmDescRegex(), descStr)
-        || !StringUtility.isNullOrEmpty(match.getGroup(Constants.ImplicitAmGroupName).value);
+        return checkRegex(config.getUtilityConfiguration().getAmDescRegex(), descStr) ||
+                checkRegex(config.getUtilityConfiguration().getAmPmDescRegex(), descStr) ||
+                !StringUtility.isNullOrEmpty(match.getGroup(Constants.ImplicitAmGroupName).value);
     }
 
     private boolean isPmDesc(String descStr, Match match) {
-        return checkRegex(config.getUtilityConfiguration().getPmDescRegex(), descStr)
-        || !StringUtility.isNullOrEmpty(match.getGroup(Constants.ImplicitPmGroupName).value);
+        return checkRegex(config.getUtilityConfiguration().getPmDescRegex(), descStr) ||
+                !StringUtility.isNullOrEmpty(match.getGroup(Constants.ImplicitPmGroupName).value);
     }
 
     private boolean checkRegex(Pattern regex, String input) {

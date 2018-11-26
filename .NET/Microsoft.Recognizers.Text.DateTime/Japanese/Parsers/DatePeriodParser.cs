@@ -160,11 +160,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             var noYear = false;
             var inputYear = false;
 
-            var trimmedText = text.Trim();
-            var match = DatePeriodExtractor.SimpleCasesRegex.Match(trimmedText);
+            var match = DatePeriodExtractor.SimpleCasesRegex.MatchExact(text, trim: true);
             string beginLuisStr, endLuisStr;
             
-            if (match.Success && match.Index == 0 && match.Length == trimmedText.Length)
+            if (match.Success)
             {
                 var days = match.Groups["day"];
                 beginDay = this.config.DayOfMonth[days.Captures[0].Value.ToLower()];
@@ -568,8 +567,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             int futureYear = year, pastYear = year;
 
             var trimmedText = text.Trim().ToLower();
-            var match = DatePeriodExtractor.OneWordPeriodRegex.Match(trimmedText);
-            if (match.Success && match.Index == 0 && match.Length == trimmedText.Length)
+            var match = DatePeriodExtractor.OneWordPeriodRegex.MatchExact(trimmedText, trim: true);
+
+            if (match.Success)
             {
                 var monthStr = match.Groups["month"].Value;
                 if (trimmedText.Equals("今年"))
@@ -781,8 +781,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         private DateTimeResolutionResult ParseYear(string text, DateObject referenceDate)
         {
             var ret = new DateTimeResolutionResult();
-            var match = DatePeriodExtractor.YearRegex.Match(text);
-            if (match.Success && match.Length == text.Length)
+            var match = DatePeriodExtractor.YearRegex.MatchExact(text, trim: true);
+
+            if (match.Success)
             {
                 var tmp = match.Value;
 
@@ -822,8 +823,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 return ret;
             }
 
-            match = DatePeriodExtractor.YearInJapaneseRegex.Match(text);
-            if (match.Success && match.Length == text.Length)
+            match = DatePeriodExtractor.YearInJapaneseRegex.MatchExact(text, trim: true);
+
+            if (match.Success)
             {
                 var tmp = match.Value;
                 if (tmp.EndsWith("年"))
@@ -929,14 +931,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             if (match.Success)
             {
                 var srcUnit = match.Groups["unit"].Value.ToLowerInvariant();
-                var beforeStr = text.Substring(0, match.Index).Trim().ToLowerInvariant();
+                var beforeStr = text.Substring(0, match.Index).ToLowerInvariant();
                 if (this.config.UnitMap.ContainsKey(srcUnit))
                 {
                     unitStr = this.config.UnitMap[srcUnit];
                     numStr = match.Groups["num"].Value;
 
-                    var prefixMatch = DatePeriodExtractor.PastRegex.Match(beforeStr);
-                    if (prefixMatch.Success && prefixMatch.Length == beforeStr.Length)
+                    var prefixMatch = DatePeriodExtractor.PastRegex.MatchExact(beforeStr, trim: true);
+
+                    if (prefixMatch.Success)
                     {
                         DateObject beginDate, endDate;
                         switch (unitStr)
@@ -967,8 +970,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                         return ret;
                     }
 
-                    prefixMatch = DatePeriodExtractor.FutureRegex.Match(beforeStr);
-                    if (prefixMatch.Success && prefixMatch.Length == beforeStr.Length)
+                    prefixMatch = DatePeriodExtractor.FutureRegex.MatchExact(beforeStr, trim: true);
+
+                    if (prefixMatch.Success)
                     {
                         DateObject beginDate, endDate;
                         switch (unitStr)
@@ -1007,7 +1011,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             var durationRes = Durationextractor.Extract(text, referenceDate);
             if (durationRes.Count > 0)
             {
-                var beforeStr = text.Substring(0, (int)durationRes[0].Start).Trim().ToLowerInvariant();
+                var beforeStr = text.Substring(0, (int)durationRes[0].Start).ToLowerInvariant();
                 match = DatePeriodExtractor.UnitRegex.Match(durationRes[0].Text);
                 if (match.Success)
                 {
@@ -1018,8 +1022,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                     {
                         unitStr = this.config.UnitMap[srcUnit];
                         numStr = number.ToString();
-                        var prefixMatch = DatePeriodExtractor.PastRegex.Match(beforeStr);
-                        if (prefixMatch.Success && prefixMatch.Length == beforeStr.Length)
+                        var prefixMatch = DatePeriodExtractor.PastRegex.MatchExact(beforeStr, trim: true);
+
+                        if (prefixMatch.Success)
                         {
                             DateObject beginDate, endDate;
                             switch (unitStr)
@@ -1050,8 +1055,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                             return ret;
                         }
 
-                        prefixMatch = DatePeriodExtractor.FutureRegex.Match(beforeStr);
-                        if (prefixMatch.Success && prefixMatch.Length == beforeStr.Length)
+                        prefixMatch = DatePeriodExtractor.FutureRegex.MatchExact(beforeStr, trim: true);
+
+                        if (prefixMatch.Success)
                         {
                             DateObject beginDate, endDate;
                             switch (unitStr)
@@ -1174,8 +1180,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         private DateTimeResolutionResult ParseSeason(string text, DateObject referenceDate)
         {
             var ret = new DateTimeResolutionResult();
-            var match = DatePeriodExtractor.SeasonWithYear.Match(text);
-            if (match.Success && match.Length == text.Length)
+            var match = DatePeriodExtractor.SeasonWithYear.MatchExact(text, trim: true);
+
+            if (match.Success)
             {
                 // parse year 
                 var year = referenceDate.Year;
@@ -1240,8 +1247,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         private DateTimeResolutionResult ParseQuarter(string text, DateObject referenceDate)
         {
             var ret = new DateTimeResolutionResult();
-            var match = DatePeriodExtractor.QuarterRegex.Match(text);
-            if (!(match.Success && match.Length == text.Length))
+            var match = DatePeriodExtractor.QuarterRegex.MatchExact(text, trim: true);
+
+            if (!match.Success)
             {
                 return ret;
             }
@@ -1310,11 +1318,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             int decadeLastYear = 10;
             var inputCentury = false;
 
-            var trimmedText = text.Trim();
-            var match = DatePeriodExtractor.DecadeRegex.Match(trimmedText);
+            var match = DatePeriodExtractor.DecadeRegex.MatchExact(text, trim: true);
             string beginLuisStr, endLuisStr;
 
-            if (match.Success && match.Index == 0 && match.Length == trimmedText.Length)
+            if (match.Success)
             {
                 var decadeStr = match.Groups["decade"].Value;
                 if (!int.TryParse(decadeStr, out decade))

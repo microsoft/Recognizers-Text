@@ -61,16 +61,14 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         private DateTimeResolutionResult ParseHolidayRegexMatch(string text, DateObject referenceDate)
         {
-            var trimmedText = text.Trim();
             foreach (var regex in this.config.HolidayRegexList)
             {
-                var offset = 0;
-                var match = regex.Match(trimmedText);
+                var match = regex.MatchExact(text, trim: true);
 
-                if (match.Success && match.Index == offset && match.Length == trimmedText.Length)
+                if (match.Success)
                 {
                     // LUIS value string will be set in Match2Date method
-                    var ret = Match2Date(match, referenceDate);
+                    var ret = Match2Date(match.Match, referenceDate);
                     return ret;
                 }
             }

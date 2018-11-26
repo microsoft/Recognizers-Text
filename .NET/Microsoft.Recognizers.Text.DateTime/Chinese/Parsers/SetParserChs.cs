@@ -114,8 +114,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         {
             var ret = new DateTimeResolutionResult();
             // handle "each month"
-            var match = SetExtractorChs.EachUnitRegex.Match(text);
-            if (match.Success && match.Length == text.Length)
+            var match = SetExtractorChs.EachUnitRegex.MatchExact(text, trim: true);
+
+            if (match.Success)
             {
                 var sourceUnit = match.Groups["unit"].Value;
                 if (!string.IsNullOrEmpty(sourceUnit) && this.config.UnitMap.ContainsKey(sourceUnit))

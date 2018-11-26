@@ -39,7 +39,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             TimePeriodParser = new BaseTimePeriodParser(new GermanTimePeriodParserConfiguration(this));
             DateTimePeriodParser = new BaseDateTimePeriodParser(new GermanDateTimePeriodParserConfiguration(this));
             SetParser = new BaseSetParser(new GermanSetParserConfiguration(this));
-            HolidayParser = new BaseHolidayParser(new GermanHolidayParserConfiguration(this));
+            HolidayParser = new HolidayParserGer(new GermanHolidayParserConfiguration(this));
             TimeZoneParser = new BaseTimeZoneParser();
         }
     }

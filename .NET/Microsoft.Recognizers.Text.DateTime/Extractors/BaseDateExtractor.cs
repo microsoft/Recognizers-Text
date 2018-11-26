@@ -118,13 +118,11 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             foreach (var regex in this.config.DateRegexList)
             {
-                var matches = regex.Matches(text);
-                foreach (Match match in matches)
+                var match = regex.MatchBegin(text, trim: true);
+
+                if (match.Success)
                 {
-                    if (match.Success && match.Index == 0)
-                    {
-                        return true;
-                    }
+                    return true;
                 }
             }
 
@@ -222,13 +220,13 @@ namespace Microsoft.Recognizers.Text.DateTime
                             {
                                 // Get week of day for the ordinal number which is regarded as a date of reference month
                                 var date = DateObject.MinValue.SafeCreateFromValue(reference.Year, reference.Month, num);
-                                var numWeekDayStr = date.DayOfWeek.ToString().ToLower();
+                                var numWeekDayInt = (int)date.DayOfWeek;
 
                                 // Get week day from text directly, compare it with the weekday generated above
                                 // to see whether they refer to the same week day
                                 var extractedWeekDayStr = matchCase.Groups["weekday"].Value.ToLower();
                                 if (!date.Equals(DateObject.MinValue) &&
-                                    config.DayOfWeek[numWeekDayStr] == config.DayOfWeek[extractedWeekDayStr])
+                                    numWeekDayInt == config.DayOfWeek[extractedWeekDayStr])
                                 {
                                     ret.Add(new Token(matchCase.Index, result.Start + result.Length ?? 0));
                                     isFound = true;
@@ -244,12 +242,12 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     // Handling cases like '20th of next month'
                     var suffixStr = text.Substring(result.Start + result.Length ?? 0);
-                    match = this.config.RelativeMonthRegex.Match(suffixStr.Trim());
-                    if (match.Success && match.Index == 0)
+                    var beginMatch = this.config.RelativeMonthRegex.MatchBegin(suffixStr.Trim(), trim: true);
+                    if (beginMatch.Success && beginMatch.Index == 0)
                     {
                         var spaceLen = suffixStr.Length - suffixStr.Trim().Length;
                         var resStart = result.Start;
-                        var resEnd = resStart + result.Length + spaceLen + match.Length;
+                        var resEnd = resStart + result.Length + spaceLen + beginMatch.Length;
 
                         // Check if prefix contains 'the', include it if any
                         var prefix = text.Substring(0, resStart ?? 0);
@@ -265,17 +263,17 @@ namespace Microsoft.Recognizers.Text.DateTime
                     // Handling cases like 'second Sunday'
                     suffixStr = text.Substring(result.Start + result.Length ?? 0);
 
-                    match = this.config.WeekDayRegex.Match(suffixStr.Trim());
+                    beginMatch = this.config.WeekDayRegex.MatchBegin(suffixStr.Trim(), trim: true);
 
-                    if (match.Success && match.Index == 0 && num >= 1 && num <= 5 
+                    if (beginMatch.Success && num >= 1 && num <= 5 
                         && result.Type.Equals(Number.Constants.SYS_NUM_ORDINAL))
                     {
 
-                        var weekDayStr = match.Groups["weekday"].Value.ToLower();
+                        var weekDayStr = beginMatch.Groups["weekday"].Value.ToLower();
                         if (this.config.DayOfWeek.ContainsKey(weekDayStr))
                         {
                             var spaceLen = suffixStr.Length - suffixStr.Trim().Length;
-                            ret.Add(new Token(result.Start ?? 0, result.Start + result.Length + spaceLen + match.Length ?? 0));
+                            ret.Add(new Token(result.Start ?? 0, result.Start + result.Length + spaceLen + beginMatch.Length ?? 0));
                         }
                     }
                 }
@@ -435,15 +433,14 @@ namespace Microsoft.Recognizers.Text.DateTime
                     continue;
                 }
 
-                var match = Regex.Match(beforeStr, config.InConnectorRegex.ToString(),
-                    RegexOptions.RightToLeft | config.InConnectorRegex.Options);
+                var match = config.InConnectorRegex.MatchEnd(beforeStr, trim: true);
 
-                if (match.Success && string.IsNullOrWhiteSpace(beforeStr.Substring(match.Index + match.Length)))
+                if (match.Success)
                 {
                     var startToken = match.Index;
-                    match = config.RangeUnitRegex.Match(text.Substring(duration.Start, duration.Length));
+                    var rangeUnitMatch = config.RangeUnitRegex.Match(text.Substring(duration.Start, duration.Length));
 
-                    if (match.Success)
+                    if (rangeUnitMatch.Success)
                     {
                         ret.Add(new Token(startToken, duration.End));
                     }

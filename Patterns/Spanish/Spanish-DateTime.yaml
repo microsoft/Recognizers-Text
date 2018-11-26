@@ -28,7 +28,7 @@ YearRegex: !nestedRegex
 RelativeMonthRegex: !simpleRegex
   def: (?<relmonth>(este|pr[oó]ximo|[uú]ltimo)\s+mes)\b
 MonthRegex: !simpleRegex
-  def: (?<month>abril|abr|agosto|ago|diciembre|dic|febrero|feb|enero|ene|julio|jul|junio|jun|marzo|mar|mayo|may|noviembre|nov|octubre|oct|septiembre|setiembre|sept|set)
+  def: \b(?<month>abril|abr|agosto|ago|diciembre|dic|febrero|feb|enero|ene|julio|jul|junio|jun|marzo|mar|mayo|may|noviembre|nov|octubre|oct|septiembre|setiembre|sept|set)\b
 MonthSuffixRegex: !nestedRegex
   def: (?<msuf>(en\s+|del\s+|de\s+)?({RelativeMonthRegex}|{MonthRegex}))
   references: [ RelativeMonthRegex, MonthRegex ]
@@ -295,7 +295,7 @@ TimeRegex12: !nestedRegex
   references: [ TimePrefix, BaseDateTime.HourRegex, BaseDateTime.MinuteRegex, DescRegex ]
 # SpanishDateTimeExtractorConfiguration
 PrepositionRegex: !simpleRegex
-  def: (?<prep>(a(l)?|en|de(l)?)?(\s*(la(s)?|el|los))?$)
+  def: \b(?<prep>(a(l)?|en|de(l)?)?(\s*(la(s)?|el|los))?$)\b
 NowRegex: !simpleRegex
   def: \b(?<now>(justo\s+)?ahora(\s+mismo)?|en\s+este\s+momento|tan\s+pronto\s+como\s+sea\s+posible|tan\s+pronto\s+como\s+(pueda|puedas|podamos|puedan)|lo\s+m[aá]s\s+pronto\s+posible|recientemente|previamente)\b
 SuffixRegex: !simpleRegex

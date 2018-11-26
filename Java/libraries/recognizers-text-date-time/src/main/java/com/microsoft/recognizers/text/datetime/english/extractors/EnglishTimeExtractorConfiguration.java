@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.regex.Pattern;
 
 public class EnglishTimeExtractorConfiguration extends BaseOptionsConfiguration implements ITimeExtractorConfiguration {
+
     // part 1: smallest component
     // --------------------------------------
     public static final Pattern DescRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.DescRegex);
@@ -57,8 +58,8 @@ public class EnglishTimeExtractorConfiguration extends BaseOptionsConfiguration 
     public static final Pattern TimeBeforeAfterRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TimeBeforeAfterRegex);
 
     public static final Iterable<Pattern> TimeRegexList = new ArrayList<Pattern>() {
-        // (three min past)? seven|7|(senven thirty) pm
         {
+            // (three min past)? seven|7|(senven thirty) pm
             add(RegExpUtility.getSafeRegExp(EnglishDateTime.TimeRegex1, Pattern.CASE_INSENSITIVE));
 
             // (three min past)? 3:00(:00)? (pm)?

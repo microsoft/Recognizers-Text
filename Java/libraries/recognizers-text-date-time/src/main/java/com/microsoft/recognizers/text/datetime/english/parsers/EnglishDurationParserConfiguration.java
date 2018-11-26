@@ -16,6 +16,7 @@ public class EnglishDurationParserConfiguration extends BaseOptionsConfiguration
     private final IExtractor cardinalExtractor;
     private final IExtractor durationExtractor;
     private final IParser numberParser;
+
     private final Pattern numberCombinedWithUnit;
     private final Pattern anUnitRegex;
     private final Pattern duringRegex;
@@ -27,16 +28,20 @@ public class EnglishDurationParserConfiguration extends BaseOptionsConfiguration
     private final Pattern inexactNumberRegex;
     private final Pattern inexactNumberUnitRegex;
     private final Pattern durationUnitRegex;
+
     private final ImmutableMap<String, String> unitMap;
     private final ImmutableMap<String, Long> unitValueMap;
     private final ImmutableMap<String, Double> doubleNumbers;
 
     public EnglishDurationParserConfiguration(ICommonDateTimeParserConfiguration config) {
+
         super(config.getOptions());
+
         cardinalExtractor = config.getCardinalExtractor();
         numberParser = config.getNumberParser();
         durationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration(), false);
         numberCombinedWithUnit = EnglishDurationExtractorConfiguration.NumberCombinedWithDurationUnit;
+
         anUnitRegex = EnglishDurationExtractorConfiguration.AnUnitRegex;
         duringRegex = EnglishDurationExtractorConfiguration.DuringRegex;
         allDateUnitRegex = EnglishDurationExtractorConfiguration.AllRegex;
@@ -47,6 +52,7 @@ public class EnglishDurationParserConfiguration extends BaseOptionsConfiguration
         inexactNumberRegex = EnglishDurationExtractorConfiguration.InexactNumberRegex;
         inexactNumberUnitRegex = EnglishDurationExtractorConfiguration.InexactNumberUnitRegex;
         durationUnitRegex = EnglishDurationExtractorConfiguration.DurationUnitRegex;
+
         unitMap = config.getUnitMap();
         unitValueMap = config.getUnitValueMap();
         doubleNumbers = config.getDoubleNumbers();

@@ -37,6 +37,7 @@ public class BaseDateTimePeriodExtractor implements IDateTimeExtractor {
 
     @Override
     public List<ExtractResult> extract(String input, LocalDateTime reference) {
+
         List<Token> tokens = new ArrayList<>();
         tokens.addAll(matchSimpleCases(input, reference));
         tokens.addAll(mergeTwoTimePoints(input, reference));
@@ -92,6 +93,7 @@ public class BaseDateTimePeriodExtractor implements IDateTimeExtractor {
     }
 
     private List<Token> mergeTwoTimePoints(String input, LocalDateTime reference) {
+
         List<Token> results = new ArrayList<>();
         List<ExtractResult> ers1 = config.getSingleDateTimeExtractor().extract(input, reference);
         List<ExtractResult> ers2 = config.getSingleTimeExtractor().extract(input, reference);
@@ -106,7 +108,7 @@ public class BaseDateTimePeriodExtractor implements IDateTimeExtractor {
                 timePoints.add(ers2.get(j));
                 j++;
             }
-
+            
             while (j < ers2.size() && ers2.get(j).isOverlap(ers1.get(i))) {
                 j++;
             }
@@ -234,7 +236,8 @@ public class BaseDateTimePeriodExtractor implements IDateTimeExtractor {
             match = Arrays.stream(RegExpUtility.getMatches(config.getWithinNextPrefixRegex(), beforeStr)).findFirst();
             if (matchPrefixRegexInSegment(beforeStr, match)) {
                 int startToken = match.get().index;
-                match = Arrays.stream(RegExpUtility.getMatches(config.getTimeUnitRegex(), input.substring(duration.getStart(), duration.getLength()))).findFirst();
+                int durationLength = duration.getStart() + duration.getLength();
+                match = Arrays.stream(RegExpUtility.getMatches(config.getTimeUnitRegex(), input.substring(duration.getStart(), durationLength))).findFirst();
                 if (match.isPresent()) {
                     results.add(new Token(startToken, duration.getEnd()));
                 }
@@ -276,6 +279,7 @@ public class BaseDateTimePeriodExtractor implements IDateTimeExtractor {
     }
 
     private List<Token> matchTimeOfDay(String input, LocalDateTime reference) {
+
         List<Token> results = new ArrayList<>();
         Match[] matches = RegExpUtility.getMatches(config.getSpecificTimeOfDayRegex(), input);
         for (Match match : matches) {
@@ -366,7 +370,7 @@ public class BaseDateTimePeriodExtractor implements IDateTimeExtractor {
                 String afterStr = input.substring(result.getStart() + result.getLength());
                 if (!StringUtility.isNullOrEmpty(afterStr)) {
                     List<ExtractResult> timeErs = config.getTimePeriodExtractor().extract(afterStr);
-                    for (ExtractResult timeEr : timeErs) {
+                    for (ExtractResult timeEr: timeErs) {
                         String midStr = afterStr.substring(0, timeEr.start);
                         if (StringUtility.isNullOrWhiteSpace(midStr)) {
                             results.add(new Token(result.getStart(), result.getStart() + result.getLength() + midStr.length() + timeEr.length));
@@ -481,6 +485,7 @@ public class BaseDateTimePeriodExtractor implements IDateTimeExtractor {
     // Valid connector in English for Before include: "before", "no later than", "in advance of", "prior to", "earlier than", "sooner than", "by", "till", "until"...
     // Valid connector in English for After include: "after", "later than"
     private boolean isValidConnectorForDateAndTimePeriod(String text) {
+
         List<Pattern> beforeAfterRegexes = new ArrayList<>();
         beforeAfterRegexes.add(config.getBeforeRegex());
         beforeAfterRegexes.add(config.getAfterRegex());

@@ -22,15 +22,20 @@ import java.util.regex.Pattern;
 public class EnglishDateParserConfiguration extends BaseOptionsConfiguration implements IDateParserConfiguration {
 
     public EnglishDateParserConfiguration(ICommonDateTimeParserConfiguration config) {
+
         super(config.getOptions());
+
         dateTokenPrefix = EnglishDateTime.DateTokenPrefix;
+
         integerExtractor = config.getIntegerExtractor();
         ordinalExtractor = config.getOrdinalExtractor();
         cardinalExtractor = config.getCardinalExtractor();
         numberParser = config.getNumberParser();
+
         durationExtractor = config.getDurationExtractor();
         dateExtractor = config.getDateExtractor();
         durationParser = config.getDurationParser();
+
         dateRegexes = Collections.unmodifiableList(EnglishDateExtractorConfiguration.DateRegexList);
         onRegex = EnglishDateExtractorConfiguration.OnRegex;
         specialDayRegex = EnglishDateExtractorConfiguration.SpecialDayRegex;
@@ -45,8 +50,9 @@ public class EnglishDateParserConfiguration extends BaseOptionsConfiguration imp
         forTheRegex = EnglishDateExtractorConfiguration.ForTheRegex;
         weekDayAndDayOfMonthRegex = EnglishDateExtractorConfiguration.WeekDayAndDayOfMonthRegex;
         relativeMonthRegex = EnglishDateExtractorConfiguration.RelativeMonthRegex;
-        yearSuffix = EnglishDateExtractorConfiguration.YearSuffix;
         relativeWeekDayRegex = EnglishDateExtractorConfiguration.RelativeWeekDayRegex;
+
+        yearSuffix = EnglishDateExtractorConfiguration.YearSuffix;
         unitMap = config.getUnitMap();
         dayOfMonth = config.getDayOfMonth();
         dayOfWeek = config.getDayOfWeek();
@@ -68,6 +74,7 @@ public class EnglishDateParserConfiguration extends BaseOptionsConfiguration imp
     private final IDateTimeExtractor dateExtractor;
     private final IDateTimeParser durationParser;
     private final Iterable<Pattern> dateRegexes;
+
     private final Pattern onRegex;
     private final Pattern specialDayRegex;
     private final Pattern specialDayWithNumRegex;
@@ -83,6 +90,7 @@ public class EnglishDateParserConfiguration extends BaseOptionsConfiguration imp
     private final Pattern relativeMonthRegex;
     private final Pattern yearSuffix;
     private final Pattern relativeWeekDayRegex;
+
     private final ImmutableMap<String, String> unitMap;
     private final ImmutableMap<String, Integer> dayOfMonth;
     private final ImmutableMap<String, Integer> dayOfWeek;
@@ -249,6 +257,7 @@ public class EnglishDateParserConfiguration extends BaseOptionsConfiguration imp
 
     @Override
     public Integer getSwiftDay(String text) {
+
         String trimmedText = text.trim().toLowerCase();
         Integer swift = 0;
 
@@ -277,6 +286,7 @@ public class EnglishDateParserConfiguration extends BaseOptionsConfiguration imp
     }
 
     private Integer getSwift(String text) {
+
         String trimmedText = text.trim().toLowerCase();
         Integer swift = 0;
 

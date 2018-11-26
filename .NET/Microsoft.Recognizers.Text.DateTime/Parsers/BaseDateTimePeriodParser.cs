@@ -227,9 +227,9 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             foreach (var regex in BeforeAfterRegexes)
             {
-                var match = regex.Match(text);
+                var match = regex.MatchExact(text, trim: true);
 
-                if (match.Success && match.Length == text.Length)
+                if (match.Success)
                 {
                     return true;
                 }
@@ -760,8 +760,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 beginHour = beginHour + 2;
             }
 
-            match = this.Config.SpecificTimeOfDayRegex.Match(trimmedText);
-            if (match.Success && match.Index == 0 && match.Length == trimmedText.Length)
+            if (Config.SpecificTimeOfDayRegex.IsExactMatch(trimmedText, trim: true))
             {
                 var swift = this.Config.GetSwiftPrefix(trimmedText);
 
@@ -969,8 +968,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     DateObject beginTime;
                     var endTime = beginTime = referenceTime;
 
-                    var prefixMatch = Config.PastRegex.Match(beforeStr);
-                    if (prefixMatch.Success && prefixMatch.Length == beforeStr.Length)
+                    if (Config.PastRegex.IsExactMatch(beforeStr, trim: true))
                     {
                         mod = Constants.BEFORE_MOD;
                         beginTime = referenceTime.AddSeconds(-swiftSeconds);
@@ -979,35 +977,30 @@ namespace Microsoft.Recognizers.Text.DateTime
                     // Handle the "within (the) (next) xx seconds/minutes/hours" case
                     // Should also handle the multiple duration case like P1DT8H
                     // Set the beginTime equal to reference time for now
-                    prefixMatch = Config.WithinNextPrefixRegex.Match(beforeStr);
-                    if (prefixMatch.Success && prefixMatch.Length == beforeStr.Length)
+                    if (Config.WithinNextPrefixRegex.IsExactMatch(beforeStr, trim: true))
                     {
                         endTime = beginTime.AddSeconds(swiftSeconds);
                     }
 
-                    prefixMatch = Config.FutureRegex.Match(beforeStr);
-                    if (prefixMatch.Success && prefixMatch.Length == beforeStr.Length)
+                    if (Config.FutureRegex.IsExactMatch(beforeStr, trim: true))
                     {
                         mod = Constants.AFTER_MOD;
                         endTime = beginTime.AddSeconds(swiftSeconds);
                     }
 
-                    var suffixMatch = Config.PastRegex.Match(afterStr);
-                    if (suffixMatch.Success && suffixMatch.Length == afterStr.Length)
+                    if (Config.PastRegex.IsExactMatch(afterStr, trim: true))
                     {
                         mod = Constants.BEFORE_MOD;
                         beginTime = referenceTime.AddSeconds(-swiftSeconds);
                     }
 
-                    suffixMatch = Config.FutureRegex.Match(afterStr);
-                    if (suffixMatch.Success && suffixMatch.Length == afterStr.Length)
+                    if (Config.FutureRegex.IsExactMatch(afterStr, trim: true))
                     {
                         mod = Constants.AFTER_MOD;
                         endTime = beginTime.AddSeconds(swiftSeconds);
                     }
 
-                    suffixMatch = Config.FutureSuffixRegex.Match(afterStr);
-                    if (suffixMatch.Success && suffixMatch.Length == afterStr.Length)
+                    if (Config.FutureSuffixRegex.IsExactMatch(afterStr, trim: true))
                     {
                         mod = Constants.AFTER_MOD;
                         endTime = beginTime.AddSeconds(swiftSeconds);

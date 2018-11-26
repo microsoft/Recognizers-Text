@@ -24,6 +24,18 @@
     ]
   },
   {
+    "Input": "Ich werde heute von 5 - 7 Uhr weg sein",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "heute von 5 - 7 Uhr",
+        "Type": "datetimerange",
+        "Start": 10,
+        "Length": 19
+      }
+    ]
+  },
+  {
     "Input": "Das geht nächsten Sonntag von 8 bis 16 Uhr.",
     "NotSupported": "javascript, python",
     "Results": [
@@ -44,6 +56,18 @@
         "Type": "datetimerange",
         "Start": 17,
         "Length": 45
+      }
+    ]
+  },
+  {
+    "Input": "Das Projekt ging vom 7. April 2017 um 4 bis heute um 4.",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "vom 7. April 2017 um 4 bis heute um 4",
+        "Type": "datetimerange",
+        "Start": 17,
+        "Length": 37
       }
     ]
   },
@@ -72,11 +96,35 @@
     ]
   },
   {
-    "Input": "Das findet diese Nacht statt.",
+    "Input": "Das Projekt ging vom 7.3.2017 15:00 bis zum 8.4.2017 16:30.",
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "diese Nacht",
+        "Text": "vom 7.3.2017 15:00 bis zum 8.4.2017 16:30",
+        "Type": "datetimerange",
+        "Start": 17,
+        "Length": 41
+      }
+    ]
+  },
+  {
+    "Input": "Das Projekt ging vom 7.3.2017 15 Uhr bis zum 8.4.2017 16 Uhr.",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "vom 7.3.2017 15 Uhr bis zum 8.4.2017 16 Uhr",
+        "Type": "datetimerange",
+        "Start": 17,
+        "Length": 43
+      }
+    ]
+  },
+  {
+    "Input": "Das findet heute Nacht statt.",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "heute Nacht",
         "Type": "datetimerange",
         "Start": 11,
         "Length": 11
@@ -120,13 +168,25 @@
     ]
   },
   {
-    "Input": "Ich komme dann heute zurück",
+    "Input": "Ich werde wohl irgendwann heute Nachmittag zurück kommen.",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "heute Nachmittag",
+        "Type": "datetimerange",
+        "Start": 26,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Ich komme heute zurück",
     "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "heute",
         "Type": "datetimerange",
-        "Start": 15,
+        "Start": 10,
         "Length": 5
       }
     ]
@@ -180,6 +240,18 @@
     ]
   },
   {
+    "Input": "Dieser Nachmittag",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "Dieser Nachmittag",
+        "Type": "datetimerange",
+        "Start": 0,
+        "Length": 17
+      }
+    ]
+  },
+  {
     "Input": "Die nächste Nacht",
     "NotSupported": "javascript, python",
     "Results": [
@@ -224,6 +296,18 @@
         "Type": "datetimerange",
         "Start": 0,
         "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "nächste Montag Nachmittag",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "nächste Montag Nachmittag",
+        "Type": "datetimerange",
+        "Start": 0,
+        "Length": 25
       }
     ]
   },

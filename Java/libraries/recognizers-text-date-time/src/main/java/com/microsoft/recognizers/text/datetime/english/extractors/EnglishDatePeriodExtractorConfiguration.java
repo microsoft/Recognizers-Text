@@ -22,7 +22,9 @@ import java.util.Optional;
 import java.util.regex.Pattern;
 
 public class EnglishDatePeriodExtractorConfiguration implements IDatePeriodExtractorConfiguration {
+
     private static final int flags = Pattern.CASE_INSENSITIVE;
+
     public static final Pattern YearRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.YearRegex, flags);
     public static final Pattern TillRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TillRegex, flags);
     public static final Pattern DateUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.DateUnitRegex, flags);
@@ -106,12 +108,15 @@ public class EnglishDatePeriodExtractorConfiguration implements IDatePeriodExtra
     private final DateTimeOptions options;
 
     public EnglishDatePeriodExtractorConfiguration() {
+
         options = DateTimeOptions.None;
+
         datePointExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration());
         cardinalExtractor = CardinalExtractor.getInstance();
         ordinalExtractor = OrdinalExtractor.getInstance();
         durationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration());
         numberParser = new BaseNumberParser(new EnglishNumberParserConfiguration());
+
         durationDateRestrictions = EnglishDateTime.DurationDateRestrictions.toArray(new String[0]);
         rangeConnectorRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RangeConnectorRegex, flags);
     }

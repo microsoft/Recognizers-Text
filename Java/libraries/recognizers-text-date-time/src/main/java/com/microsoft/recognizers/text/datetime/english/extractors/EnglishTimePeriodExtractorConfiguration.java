@@ -19,7 +19,9 @@ import java.util.regex.Pattern;
 import static com.microsoft.recognizers.text.datetime.resources.EnglishDateTime.TokenBeforeDate;
 
 public class EnglishTimePeriodExtractorConfiguration extends BaseOptionsConfiguration implements ITimePeriodExtractorConfiguration {
+
     private String TokenBeforeDate;
+
     public final String getTokenBeforeDate() { return TokenBeforeDate; }
 
     public static final Pattern AmRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.AmRegex);
@@ -50,7 +52,9 @@ public class EnglishTimePeriodExtractorConfiguration extends BaseOptionsConfigur
     //C# TO JAVA CONVERTER NOTE: Java does not support optional parameters. Overloaded method(s) are created above:
     public EnglishTimePeriodExtractorConfiguration(DateTimeOptions options)
     {
+
         super(options);
+
         TokenBeforeDate = EnglishDateTime.TokenBeforeDate;
         SingleTimeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration(options));
         UtilityConfiguration = new EnglishDatetimeUtilityConfiguration();
