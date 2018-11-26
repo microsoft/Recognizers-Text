@@ -458,7 +458,7 @@ public class BaseDateTimePeriodExtractor implements IDateTimeExtractor {
                 String middleStr = input.substring(middleBegin, middleEnd).trim().toLowerCase();
                 if (isValidConnectorForDateAndTimePeriod(middleStr)) {
                     int begin = ers.get(i).start;
-                    int end = ers.get(i).start + ers.get(i).length;
+                    int end = ers.get(j).start + ers.get(j).length;
                     results.add(new Token(begin, end));
                 }
 
