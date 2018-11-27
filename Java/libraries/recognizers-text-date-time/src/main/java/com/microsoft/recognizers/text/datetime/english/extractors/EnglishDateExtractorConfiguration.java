@@ -43,6 +43,8 @@ public class EnglishDateExtractorConfiguration implements IDateExtractorConfigur
     public static final Pattern WeekDayAndDayOfMonthRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.WeekDayAndDayOfMonthRegex, Pattern.CASE_INSENSITIVE);
     public static final Pattern RelativeMonthRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RelativeMonthRegex, Pattern.CASE_INSENSITIVE);
     public static final Pattern PrefixArticleRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PrefixArticleRegex, Pattern.CASE_INSENSITIVE);
+    public static final Pattern InConnectorRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.InConnectorRegex, Pattern.CASE_INSENSITIVE);
+    public static final Pattern RangeUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RangeUnitRegex, Pattern.CASE_INSENSITIVE);
 
     public static final List<Pattern> DateRegexList = new ArrayList<Pattern>() {
         {
@@ -168,6 +170,12 @@ public class EnglishDateExtractorConfiguration implements IDateExtractorConfigur
     public Pattern getLessThanRegex() {
         return LessThanRegex;
     }
+
+    @Override
+    public Pattern getInConnectorRegex() { return InConnectorRegex; }
+
+    @Override
+    public Pattern getRangeUnitRegex() { return RangeUnitRegex; }
 
     @Override
     public IExtractor getIntegerExtractor() {

@@ -24,6 +24,8 @@ public interface IDateExtractorConfiguration extends IOptionsConfiguration {
     Pattern getYearSuffix();
     Pattern getMoreThanRegex();
     Pattern getLessThanRegex();
+    Pattern getInConnectorRegex();
+    Pattern getRangeUnitRegex();
     IExtractor getIntegerExtractor();
     IExtractor getOrdinalExtractor();
     IParser getNumberParser();
