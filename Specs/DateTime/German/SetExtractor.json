@@ -100,10 +100,10 @@
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": " jeden Tag um 3 Uhr",
+        "Text": "jeden Tag um 3 Uhr",
         "Type": "set",
-        "Start": 8,
-        "Length": 19
+        "Start": 9,
+        "Length": 18
       }
     ]
   },

@@ -24,6 +24,9 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public static readonly Regex EachDayRegex = 
             new Regex(DateTimeDefinitions.EachDayRegex, RegexOptions.Singleline);
 
+        public static readonly Regex BeforeEachDayRegex =
+            new Regex(DateTimeDefinitions.BeforeEachDayRegex, RegexOptions.Singleline);
+
         public static readonly Regex SetWeekDayRegex = 
             new Regex(DateTimeDefinitions.SetWeekDayRegex, RegexOptions.Singleline);
 
@@ -65,7 +68,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         Regex ISetExtractorConfiguration.EachDayRegex => EachDayRegex;
 
-        Regex ISetExtractorConfiguration.BeforeEachDayRegex => EachDayRegex;
+        Regex ISetExtractorConfiguration.BeforeEachDayRegex => BeforeEachDayRegex;
 
         Regex ISetExtractorConfiguration.SetWeekDayRegex => SetWeekDayRegex;
 

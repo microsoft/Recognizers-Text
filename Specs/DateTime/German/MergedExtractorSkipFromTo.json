@@ -25,12 +25,13 @@
   },
   {
     "Input": "Das ganze findet dann am Montag um 4 Uhr statt",
-	"Comment": "Should type here really be set?",
-    "NotSupported": "dotnet,javascript, python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Montag um 4 Uhr",
-        "Type": "datetime"
+        "Type": "datetime",
+        "Start": 25,
+        "Length": 15
       }
     ]
   },
