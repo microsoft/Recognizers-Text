@@ -12,11 +12,16 @@ import com.microsoft.recognizers.text.datetime.utilities.Token;
 import com.microsoft.recognizers.text.utilities.Match;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
 import com.microsoft.recognizers.text.utilities.StringUtility;
-import org.javatuples.Pair;
 
 import java.time.LocalDateTime;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
+import java.util.Optional;
 import java.util.regex.Pattern;
+
+import org.javatuples.Pair;
 
 public class BaseDateExtractor implements IDateTimeExtractor {
 
@@ -271,8 +276,10 @@ public class BaseDateExtractor implements IDateTimeExtractor {
             // Some types of duration can be compounded with "before", "after" or "from" suffix to create a "date"
             // While some other types of durations, when compounded with such suffix, it will not create a "date", but create a "dateperiod"
             // For example, durations like "3 days", "2 weeks", "1 week and 2 days", can be compounded with such suffix to create a "date"
-            // But "more than 3 days", "less than 2 weeks", when compounded with such suffix, it will become cases like "more than 3 days from today" which is a "dateperiod", not a "date"
-            // As this parent method is aimed to extract RelativeDurationDate, so for cases with "more than" or "less than", we remove the prefix so as to extract the expected RelativeDurationDate
+            // But "more than 3 days", "less than 2 weeks", when compounded with such suffix, it will become cases
+            // like "more than 3 days from today" which is a "dateperiod", not a "date"
+            // As this parent method is aimed to extract RelativeDurationDate, so for cases with "more than" or "less than",
+            // we remove the prefix so as to extract the expected RelativeDurationDate
             if (isInequalityDuration(duration)) {
                 duration = stripInequalityDuration(duration);
             }
@@ -286,7 +293,7 @@ public class BaseDateExtractor implements IDateTimeExtractor {
         }
 
         // Extract cases like "in 3 weeks", which equals to "3 weeks from today"
-        List<Token> relativeDurationDateWithInPrefix = ExtractRelativeDurationDateWithInPrefix(text, durations, reference);
+        List<Token> relativeDurationDateWithInPrefix = extractRelativeDurationDateWithInPrefix(text, durations, reference);
 
         // For cases like "in 3 weeks from today", we should choose "3 weeks from today" as the extract result rather than "in 3 weeks" or "in 3 weeks from today"
         for (Token erWithInPrefix : relativeDurationDateWithInPrefix) {
@@ -298,8 +305,7 @@ public class BaseDateExtractor implements IDateTimeExtractor {
         return tokens;
     }
 
-    public boolean isOverlapWithExistExtractions(Token er, List<Token> existErs)
-    {
+    public boolean isOverlapWithExistExtractions(Token er, List<Token> existErs) {
         for (Token existEr : existErs) {
             if (er.getStart() < existEr.getEnd() && er.getEnd() > existEr.getStart()) {
                 return true;
@@ -310,8 +316,7 @@ public class BaseDateExtractor implements IDateTimeExtractor {
     }
 
     // "In 3 days/weeks/months/years" = "3 days/weeks/months/years from now"
-    public List<Token> ExtractRelativeDurationDateWithInPrefix(String text, List<ExtractResult> durationEr, LocalDateTime reference)
-    {
+    public List<Token> extractRelativeDurationDateWithInPrefix(String text, List<ExtractResult> durationEr, LocalDateTime reference) {
         List<Token> tokens = new ArrayList<>();
 
         List<Token> durations = new ArrayList<>();
@@ -337,7 +342,10 @@ public class BaseDateExtractor implements IDateTimeExtractor {
 
             if (match.getSuccess() && match.getMatch().isPresent()) {
                 int startToken = match.getMatch().get().index;
-                Optional<Match> rangeUnitMatch = Arrays.stream(RegExpUtility.getMatches(config.getRangeUnitRegex(),text.substring(duration.getStart(), duration.getStart() + duration.getLength()))).findFirst();
+                Optional<Match> rangeUnitMatch = Arrays.stream(
+                        RegExpUtility.getMatches(config.getRangeUnitRegex(),
+                        text.substring(duration.getStart(),
+                        duration.getStart() + duration.getLength()))).findFirst();
 
                 if (rangeUnitMatch.isPresent()) {
                     tokens.add(new Token(startToken, duration.getEnd()));

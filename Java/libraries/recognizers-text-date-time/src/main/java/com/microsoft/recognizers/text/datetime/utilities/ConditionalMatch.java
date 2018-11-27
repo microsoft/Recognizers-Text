@@ -14,7 +14,14 @@ public class ConditionalMatch {
         this.success = success;
     }
 
-    public Optional<Match> getMatch() { return  match; }
-    public boolean getSuccess() { return  success; }
+    public Optional<Match> getMatch() {
+
+        return match;
+    }
+
+    public boolean getSuccess() {
+
+        return success;
+    }
 
 }

@@ -172,10 +172,14 @@ public class EnglishDateExtractorConfiguration implements IDateExtractorConfigur
     }
 
     @Override
-    public Pattern getInConnectorRegex() { return InConnectorRegex; }
+    public Pattern getInConnectorRegex() {
+        return InConnectorRegex;
+    }
 
     @Override
-    public Pattern getRangeUnitRegex() { return RangeUnitRegex; }
+    public Pattern getRangeUnitRegex() {
+        return RangeUnitRegex;
+    }
 
     @Override
     public IExtractor getIntegerExtractor() {

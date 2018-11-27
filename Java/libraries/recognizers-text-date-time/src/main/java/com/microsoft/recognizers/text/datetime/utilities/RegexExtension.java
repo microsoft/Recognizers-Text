@@ -18,8 +18,7 @@ public abstract class RegexExtension {
     }
 
     // We can't trim before match as we may use the match index later
-    public static ConditionalMatch matchExact(Pattern regex, String text, boolean trim)
-    {
+    public static ConditionalMatch matchExact(Pattern regex, String text, boolean trim) {
         Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(regex, text)).findFirst();
         int length = trim ? text.trim().length() : text.length();
 
@@ -27,11 +26,10 @@ public abstract class RegexExtension {
     }
 
     // We can't trim before match as we may use the match index later
-    public static ConditionalMatch matchEnd(Pattern regex, String text, boolean trim)
-    {
+    public static ConditionalMatch matchEnd(Pattern regex, String text, boolean trim) {
         Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(regex, text)).reduce((f, s) -> s);
         String strAfter = "";
-        if(match.isPresent()) {
+        if (match.isPresent()) {
             strAfter = text.substring(match.get().index + match.get().length);
 
             if (trim) {
@@ -43,8 +41,7 @@ public abstract class RegexExtension {
     }
 
     // We can't trim before match as we may use the match index later
-    public static ConditionalMatch matchBegin(Pattern regex, String text, boolean trim)
-    {
+    public static ConditionalMatch matchBegin(Pattern regex, String text, boolean trim) {
         Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(regex, text)).findFirst();
         String strBefore = "";
 
