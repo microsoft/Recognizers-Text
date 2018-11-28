@@ -223,17 +223,6 @@ public class BaseDatePeriodExtractor implements IDateTimeExtractor {
                 results.add(new Token(duration.getStart(), duration.getEnd() + match.get().index + match.get().length));
                 continue;
             }
-
-            // in Range Weeks should be handled as dateRange here
-            match = Arrays.stream(RegExpUtility.getMatches(config.getInConnectorRegex(), beforeStr)).reduce((f, s) -> s);
-            if(matchPrefixRegexInSegment(beforeStr, match)) {
-                int startToken = match.get().index;
-                match = Arrays.stream(RegExpUtility.getMatches(config.getRangeUnitRegex(), input.substring(duration.getStart(), duration.getEnd()))).findFirst();
-                if (match.isPresent()) {
-                    results.add(new Token(startToken, duration.getEnd()));
-                    continue;
-                }
-            }
         }
 
         return results;
