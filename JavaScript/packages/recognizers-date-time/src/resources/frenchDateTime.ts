@@ -137,6 +137,7 @@ export namespace FrenchDateTime {
 	export const SimpleTimeOfTodayBeforeRegex = `${DateTimeSpecificTimeOfDayRegex}(\\s*,)?(\\s+([àa]|vers))?\\s*(${HourNumRegex}|${BaseDateTime.HourRegex})`;
 	export const SpecificEndOfRegex = `(la\\s+)?fin(\\s+de\\s*|\\s*de*l[ea])?\\s*$`;
 	export const UnspecificEndOfRegex = `^[.]`;
+	export const UnspecificEndOfRangeRegex = `^[.]`;
 	export const PeriodTimeOfDayRegex = `\\b((dans\\s+(le)?\\s+)?((?<early>d[eé]but(\\s+|-|d[ue]|de la)|t[oô]t)|(?<late>tard\\s*|fin(\\s+|-|d[eu])?))?(?<timeOfDay>matin|((d|l)?'?)apr[eè]s-midi|nuit|soir[eé]e|soir))\\b`;
 	export const PeriodSpecificTimeOfDayRegex = `\\b((${RelativeRegex}\\s+${PeriodTimeOfDayRegex})\\b|\\b(ce|cette\\s+)(soir|nuit))\\b`;
 	export const PeriodTimeOfDayWithDateRegex = `\\b((${TimeOfDayRegex}))\\b`;

@@ -326,6 +326,9 @@ SpecificEndOfRegex: !simpleRegex
 UnspecificEndOfRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
+UnspecificEndOfRangeRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 UnitRegex: !simpleRegex
   def: (?<unit>anos|ano|meses|m[êe]s|semanas|semana|dias|dia|horas|hora|h|hr|hrs|hs|minutos|minuto|mins|min|segundos|segundo|segs|seg)\b
 ConnectorRegex: !simpleRegex

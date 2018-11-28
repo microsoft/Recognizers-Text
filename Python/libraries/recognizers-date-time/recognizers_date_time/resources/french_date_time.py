@@ -138,6 +138,7 @@ class FrenchDateTime:
     SimpleTimeOfTodayBeforeRegex = f'{DateTimeSpecificTimeOfDayRegex}(\\s*,)?(\\s+([àa]|vers))?\\s*({HourNumRegex}|{BaseDateTime.HourRegex})'
     SpecificEndOfRegex = f'(la\\s+)?fin(\\s+de\\s*|\\s*de*l[ea])?\\s*$'
     UnspecificEndOfRegex = f'^[.]'
+    UnspecificEndOfRangeRegex = f'^[.]'
     PeriodTimeOfDayRegex = f'\\b((dans\\s+(le)?\\s+)?((?<early>d[eé]but(\\s+|-|d[ue]|de la)|t[oô]t)|(?<late>tard\\s*|fin(\\s+|-|d[eu])?))?(?<timeOfDay>matin|((d|l)?\'?)apr[eè]s-midi|nuit|soir[eé]e|soir))\\b'
     PeriodSpecificTimeOfDayRegex = f'\\b(({RelativeRegex}\\s+{PeriodTimeOfDayRegex})\\b|\\b(ce|cette\\s+)(soir|nuit))\\b'
     PeriodTimeOfDayWithDateRegex = f'\\b(({TimeOfDayRegex}))\\b'

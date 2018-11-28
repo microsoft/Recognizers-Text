@@ -610,12 +610,8 @@ class BaseDateTimeParser(DateTimeParser):
         pr = self.config.date_parser.parse(er, reference)
         result.timex = pr.timex_str + 'T23:59:59'
         future_date = pr.value.future_value
-        future_date = datetime(future_date.year, future_date.month, future_date.day, 23, 59, 59, 0)
-        result.future_value = future_date
         past_date = pr.value.past_value
-        past_date = datetime(past_date.year, past_date.month, past_date.day, 23, 59, 59, 0)
-        result.past_value = past_date
-        result.success = True
+        result = self.get_parsed_result(pr.timex_str, future_date, past_date)
 
         return result
 
@@ -623,10 +619,17 @@ class BaseDateTimeParser(DateTimeParser):
         result = DateTimeResolutionResult()
         eod = regex.search(self.config.unspecific_end_of_regex, source)
         if eod is not None:
-            result.timex = DateTimeFormatUtil.format_date(reference) + 'T23:59:59'
-            result.future_value = datetime(reference.year, reference.month, reference.day, 23, 59, 59, 0)
-            result.past_value = datetime(reference.year, reference.month, reference.day, 23, 59, 59, 0)
-            result.success = True
+            result = self.get_parsed_result(DateTimeFormatUtil.format_date(reference), reference, reference)
+
+        return result
+
+    def get_parsed_result(self, timex_prefix: str, future_date: datetime, past_date: datetime) -> DateTimeResolutionResult:
+        result = DateTimeResolutionResult()
+
+        result.timex = timex_prefix + 'T23:59:59'
+        result.future_value = datetime(future_date.year, future_date.month, future_date.day, 23, 59, 59, 0)
+        result.past_value = datetime(past_date.year, past_date.month, past_date.day, 23, 59, 59, 0)
+        result.success = True
 
         return result
 

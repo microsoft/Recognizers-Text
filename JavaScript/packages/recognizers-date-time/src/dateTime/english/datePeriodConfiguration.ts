@@ -125,6 +125,7 @@ export class EnglishDatePeriodParserConfiguration implements IDatePeriodParserCo
     readonly restOfDateRegex : RegExp
     readonly laterEarlyPeriodRegex: RegExp
     readonly weekWithWeekDayRangeRegex: RegExp
+    readonly unspecificEndOfRangeRegex: RegExp
     readonly tokenBeforeDate: string
     readonly dayOfMonth: ReadonlyMap<string, number>
     readonly monthOfYear: ReadonlyMap<string, number>
@@ -163,6 +164,7 @@ export class EnglishDatePeriodParserConfiguration implements IDatePeriodParserCo
         this.restOfDateRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RestOfDateRegex);
         this.laterEarlyPeriodRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.LaterEarlyPeriodRegex);
         this.weekWithWeekDayRangeRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.WeekWithWeekDayRangeRegex);
+        this.unspecificEndOfRangeRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.UnspecificEndOfRangeRegex);
         this.tokenBeforeDate = EnglishDateTime.TokenBeforeDate;
         this.dayOfMonth = config.dayOfMonth;
         this.monthOfYear = config.monthOfYear;
@@ -227,7 +229,7 @@ export class EnglishDatePeriodParserConfiguration implements IDatePeriodParserCo
 
     isYearOnly(source: string): boolean {
         let trimmedSource = source.trim().toLowerCase();
-        return trimmedSource.endsWith('year');
+        return trimmedSource.endsWith('year') || (trimmedSource.endsWith('y') && RegExpUtility.isMatch(this.unspecificEndOfRangeRegex, trimmedSource));
     }
 
     isLastCardinal(source: string): boolean {

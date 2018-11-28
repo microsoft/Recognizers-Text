@@ -272,6 +272,7 @@ export interface IDatePeriodParserConfiguration {
     restOfDateRegex: RegExp
     laterEarlyPeriodRegex: RegExp
     weekWithWeekDayRangeRegex: RegExp
+    unspecificEndOfRangeRegex: RegExp
     tokenBeforeDate: string
     dayOfMonth: ReadonlyMap<string, number>
     monthOfYear: ReadonlyMap<string, number>
@@ -536,10 +537,10 @@ export class BaseDatePeriodParser implements IDateTimeParser {
             result.mod = Constants.MID_MOD;
         }
 
-        if (match.value === "eoy")
+        if (RegExpUtility.isMatch(this.config.unspecificEndOfRangeRegex, match.value))
         {
             latePrefix = true;
-            trimedText = "year";
+            trimedText = match.value;
             result.mod = Constants.LATE_MOD;
         }
 

@@ -85,7 +85,7 @@ class ChineseDateTimeParserConfiguration():
 
     @property
     def unspecific_end_of_regex(self) -> Pattern:
-        raise NotImplementedError
+        raise NotImplementedError()
 
     @property
     def unit_regex(self) -> Pattern:

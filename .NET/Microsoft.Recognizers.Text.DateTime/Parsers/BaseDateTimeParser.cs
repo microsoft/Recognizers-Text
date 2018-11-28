@@ -351,10 +351,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var pr = this.config.DateParser.Parse(ers[0], refDateTime);
                 var futureDate = (DateObject)((DateTimeResolutionResult)pr.Value).FutureValue;
                 var pastDate = (DateObject)((DateTimeResolutionResult)pr.Value).PastValue;
-                ret.Timex = pr.TimexStr + "T23:59:59";
-                ret.FutureValue = futureDate.Date.AddDays(1).AddSeconds(-1);
-                ret.PastValue = pastDate.Date.AddDays(1).AddSeconds(-1);
-                ret.Success = true;
+
+                ret = GetParsedResult(pr.TimexStr, futureDate, pastDate);
             }
 
             return ret;
@@ -367,11 +365,20 @@ namespace Microsoft.Recognizers.Text.DateTime
             var eod = this.config.UnspecificEndOfRegex.Match(text);
             if (eod.Success)
             {
-                ret.Timex = DateTimeFormatUtil.FormatDate(refDateTime) + "T23:59:59";
-                ret.FutureValue = refDateTime.Date.AddDays(1).AddSeconds(-1);
-                ret.PastValue = refDateTime.Date.AddDays(1).AddSeconds(-1);
-                ret.Success = true;              
+                ret = GetParsedResult(DateTimeFormatUtil.FormatDate(refDateTime), refDateTime, refDateTime);          
             }
+
+            return ret;
+        }
+
+        private DateTimeResolutionResult GetParsedResult(string timexPrefix, DateObject futureDate, DateObject pastDate)
+        {
+            var ret = new DateTimeResolutionResult();
+
+            ret.Timex = timexPrefix + "T23:59:59";
+            ret.FutureValue = futureDate.Date.AddDays(1).AddSeconds(-1);
+            ret.PastValue = pastDate.Date.AddDays(1).AddSeconds(-1);
+            ret.Success = true;
 
             return ret;
         }

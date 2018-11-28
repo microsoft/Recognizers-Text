@@ -121,6 +121,7 @@ class PortugueseDateTime:
     SimpleTimeOfTodayBeforeRegex = f'({SpecificTimeOfDayRegex}(\\s*,)?(\\s+(a\\s+la|para))?\\s*({HourNumRegex}|{BaseDateTime.HourRegex}))'
     SpecificEndOfRegex = f'((no|ao)\\s+)?(fi(m|nal)|t[ée]rmin(o|ar))(\\s+d?o(\\s+dia)?(\\s+de)?)?\\s*$'
     UnspecificEndOfRegex = f'^[.]'
+    UnspecificEndOfRangeRegex = f'^[.]'
     UnitRegex = f'(?<unit>anos|ano|meses|m[êe]s|semanas|semana|dias|dia|horas|hora|h|hr|hrs|hs|minutos|minuto|mins|min|segundos|segundo|segs|seg)\\b'
     ConnectorRegex = f'^(,|t|para [ao]|para as|pras|cerca de|cerca das|perto de|perto das|quase)$'
     TimeHourNumRegex = f'(?<hour>vinte e um|vinte e dois|vinte e tr[êe]s|vinte e quatro|zero|um|uma|dois|duas|tr[êe]s|quatro|cinco|seis|sete|oito|nove|dez|onze|doze|treze|quatorze|catorze|quinze|dez[ea]sseis|dez[ea]ssete|dezoito|dez[ea]nove|vinte)'

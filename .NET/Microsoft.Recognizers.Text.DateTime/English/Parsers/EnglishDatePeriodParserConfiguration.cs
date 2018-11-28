@@ -83,11 +83,14 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             new Regex(DateTimeDefinitions.AfterNextSuffixRegex, RegexOptions.Singleline);
         public static readonly Regex RelativeRegex =
             new Regex(DateTimeDefinitions.RelativeRegex, RegexOptions.Singleline);
+        public static readonly Regex UnspecificEndOfRangeRegex =
+            new Regex(DateTimeDefinitions.UnspecificEndOfRangeRegex, RegexOptions.Singleline);
 
         Regex IDatePeriodParserConfiguration.NextPrefixRegex => NextPrefixRegex;
         Regex IDatePeriodParserConfiguration.PastPrefixRegex => PastPrefixRegex;
         Regex IDatePeriodParserConfiguration.ThisPrefixRegex => ThisPrefixRegex;
         Regex IDatePeriodParserConfiguration.RelativeRegex => RelativeRegex;
+        Regex IDatePeriodParserConfiguration.UnspecificEndOfRangeRegex => UnspecificEndOfRangeRegex;
 
         #endregion
 
@@ -257,7 +260,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public bool IsYearOnly(string text)
         {
             var trimmedText = text.Trim().ToLowerInvariant();
-            return trimmedText.EndsWith("year") || trimmedText.Contains(" year ") && AfterNextSuffixRegex.IsMatch(trimmedText);
+            return trimmedText.EndsWith("year") || (trimmedText.Contains(" year ") && AfterNextSuffixRegex.IsMatch(trimmedText))
+                                                || (trimmedText.EndsWith("y") && UnspecificEndOfRangeRegex.IsMatch(trimmedText));
         }
 
         public bool IsYearToDate(string text)

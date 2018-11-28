@@ -473,12 +473,7 @@ export class BaseDateTimeParser implements IDateTimeParser {
             let pr = this.config.dateParser.parse(ers[0], refDateTime);
             let futureDate = new Date(pr.value.futureValue);
             let pastDate = new Date(pr.value.pastValue);
-            ret.timex = pr.timexStr + "T23:59:59";
-            futureDate.setHours(23, 59, 59, 0);
-            ret.futureValue = futureDate;
-            pastDate.setHours(23, 59, 59, 0);
-            ret.pastValue = pastDate;
-            ret.success = true;
+            ret = this.getParsedResult(pr.timexStr, futureDate, pastDate);
             return ret;
         }
 
@@ -489,15 +484,23 @@ export class BaseDateTimeParser implements IDateTimeParser {
         let ret = new DateTimeResolutionResult();
         let eod = RegExpUtility.getMatches(this.config.unspecificEndOfRegex, text);
         if (eod.length) {
-            ret.timex = DateTimeFormatUtil.formatDate(refDateTime) + "T23:59:59";
             let futureDate = new Date(refDateTime);
-            futureDate.setHours(23, 59, 59, 0);
-            ret.futureValue = futureDate;
             let pastDate = new Date(refDateTime);
-            pastDate.setHours(23, 59, 59, 0);
-            ret.pastValue = pastDate;
-            ret.success = true;
+            ret = this.getParsedResult(DateTimeFormatUtil.formatDate(refDateTime), futureDate, pastDate);
         }
+
+        return ret;
+    }
+
+    private getParsedResult(timexPrefix: string, futureDate: Date, pastDate: Date): DateTimeResolutionResult {
+        let ret = new DateTimeResolutionResult()
+
+        ret.timex = timexPrefix + "T23:59:59";
+        futureDate.setHours(23, 59, 59, 0);
+        ret.futureValue = futureDate;
+        pastDate.setHours(23, 59, 59, 0);
+        ret.pastValue = pastDate;
+        ret.success = true;
 
         return ret;
     }
