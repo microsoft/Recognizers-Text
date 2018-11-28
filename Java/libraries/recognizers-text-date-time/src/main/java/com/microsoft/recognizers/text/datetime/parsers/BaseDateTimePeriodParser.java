@@ -963,6 +963,7 @@ public class BaseDateTimePeriodParser implements IDateTimeParser {
         List<Pattern> beforeAfterRegexes = new ArrayList<>();
         beforeAfterRegexes.add(config.getBeforeRegex());
         beforeAfterRegexes.add(config.getAfterRegex());
+        text = text.trim();
 
         for (Pattern regex : beforeAfterRegexes) {
             Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(regex, text)).findFirst();
