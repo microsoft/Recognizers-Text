@@ -5,7 +5,9 @@ import com.microsoft.recognizers.text.ExtractResult;
 import com.microsoft.recognizers.text.datetime.Constants;
 import com.microsoft.recognizers.text.datetime.DateTimeOptions;
 import com.microsoft.recognizers.text.datetime.extractors.config.IDurationExtractorConfiguration;
+import com.microsoft.recognizers.text.datetime.utilities.ConditionalMatch;
 import com.microsoft.recognizers.text.datetime.utilities.DurationParsingUtil;
+import com.microsoft.recognizers.text.datetime.utilities.RegexExtension;
 import com.microsoft.recognizers.text.datetime.utilities.Token;
 import com.microsoft.recognizers.text.utilities.Match;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
@@ -72,26 +74,26 @@ public class BaseDurationExtractor implements IDateTimeExtractor {
             String beforeString = input.substring(0, er.start);
             boolean isInequalityPrefixMatched = false;
 
-            Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(this.config.getMoreThanRegex(), beforeString)).findFirst();
+            ConditionalMatch match = RegexExtension.matchEnd(this.config.getMoreThanRegex(), beforeString, true);
 
             // The second condition is necessary so for "1 week" in "more than 4 days and less than 1 week", it will not be tagged incorrectly as "more than"
-            if (match.isPresent() && match.get().index + match.get().length == beforeString.trim().length()) {
+            if (match.getSuccess()) {
                 er = er.withData(Constants.MORE_THAN_MOD);
                 isInequalityPrefixMatched = true;
             }
 
             if (!isInequalityPrefixMatched) {
-                match = Arrays.stream(RegExpUtility.getMatches(this.config.getLessThanRegex(), beforeString)).findFirst();
+                match = RegexExtension.matchEnd(this.config.getLessThanRegex(), beforeString, true);
             
-                if (match.isPresent() && match.get().index + match.get().length == beforeString.trim().length()) {
+                if (match.getSuccess()) {
                     er = er.withData(Constants.LESS_THAN_MOD);
                     isInequalityPrefixMatched = true;
                 }
             }
 
             if (isInequalityPrefixMatched) {
-                int length = er.length + er.start - match.get().index;
-                int start = match.get().index;
+                int length = er.length + er.start - match.getMatch().get().index;
+                int start = match.getMatch().get().index;
                 String text = input.substring(start, start + length);
                 er = er.withLength(length).withStart(start).withText(text);
             }

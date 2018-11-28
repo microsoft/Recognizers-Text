@@ -9,6 +9,7 @@ import com.microsoft.recognizers.text.datetime.DateTimeOptions;
 import com.microsoft.recognizers.text.datetime.TimeTypeConstants;
 import com.microsoft.recognizers.text.datetime.parsers.config.IDurationParserConfiguration;
 import com.microsoft.recognizers.text.datetime.utilities.DateTimeResolutionResult;
+import com.microsoft.recognizers.text.datetime.utilities.TimexUtility;
 import com.microsoft.recognizers.text.utilities.Match;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
 import com.microsoft.recognizers.text.utilities.StringUtility;
@@ -136,15 +137,8 @@ public class BaseDurationParser implements IDateTimeParser {
 
         // sort the timex using the granularity of the duration, "P1M23D" for "1 month 23 days" and "23 days 1 month"
         if (prs.size() == ers.size()) {
-            List<String> unitList = new ArrayList<>(timexMap.keySet());
-            unitList.sort((x, y) -> config.getUnitValueMap().get(x) < config.getUnitValueMap().get(y) ? 1 : -1);
-            StringBuilder timex = new StringBuilder("P");
 
-            for (String unit : unitList) {
-                timex.append(timexMap.get(unit).substring(1));
-            }
-
-            result.setTimex(timex.toString());
+            result.setTimex(TimexUtility.generateCompoundDurationTimex(timexMap, config.getUnitValueMap()));
 
             double value = 0;
             for (DateTimeParseResult pr : prs) {

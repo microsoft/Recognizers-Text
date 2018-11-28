@@ -150,14 +150,20 @@ public class FormatUtil {
             Matcher hourStartMatch = HourTimexRegex.matcher(splited.get(1));
             Matcher hourEndMatch = HourTimexRegex.matcher(splited.get(3));
 
-            if (IntegerUtility.canParse(weekDayStartMatch.group(1))
-                    && IntegerUtility.canParse(weekDayEndMatch.group(1))
-                    && IntegerUtility.canParse(hourStartMatch.group(1))
-                    && IntegerUtility.canParse(hourEndMatch.group(1))) {
-                int weekDayStart = Integer.parseInt(weekDayStartMatch.group(1));
-                int weekDayEnd = Integer.parseInt(weekDayEndMatch.group(1));
-                int hourStart = Integer.parseInt(hourStartMatch.group(1));
-                int hourEnd = Integer.parseInt(hourEndMatch.group(1));
+            String weekDayStartStr = weekDayStartMatch.find() ? weekDayStartMatch.group(1) : "";
+            String weekDayEndStr = weekDayEndMatch.find() ? weekDayEndMatch.group(1) : "";
+            String hourStartStr = hourStartMatch.find() ? hourStartMatch.group(1) : "";
+            String hourEndStr = hourEndMatch.find() ? hourEndMatch.group(1) : "";
+
+            if (IntegerUtility.canParse(weekDayStartStr)
+                    && IntegerUtility.canParse(weekDayEndStr)
+                    && IntegerUtility.canParse(hourStartStr)
+                    && IntegerUtility.canParse(hourEndStr)) {
+                int weekDayStart = Integer.parseInt(weekDayStartStr);
+                int weekDayEnd = Integer.parseInt(weekDayEndStr);
+                int hourStart = Integer.parseInt(hourStartStr);
+                int hourEnd = Integer.parseInt(hourEndStr);
+
                 if (hourEnd < hourStart && weekDayStart == weekDayEnd) {
                     weekDayEnd = weekDayEnd == Constants.WeekDayCount ? 1 : weekDayEnd + 1;
                     splited.set(2, splited.get(2).substring(0, weekDayEndMatch.start(1)) + weekDayEnd);

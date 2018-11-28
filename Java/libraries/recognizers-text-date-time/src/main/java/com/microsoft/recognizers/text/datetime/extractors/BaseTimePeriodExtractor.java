@@ -97,7 +97,7 @@ public class BaseTimePeriodExtractor implements IDateTimeExtractor {
     private List<Token> MergeTwoTimePoints(String input, LocalDateTime reference) {
 
         List<Token> ret = new ArrayList<>();
-        List<ExtractResult> ers = this.config.getSingleTimeExtractor().extract(input);
+        List<ExtractResult> ers = this.config.getSingleTimeExtractor().extract(input, reference);
 
         // Handling ending number as a time point.
         List<ExtractResult> numErs = this.config.getIntegerExtractor().extract(input);
