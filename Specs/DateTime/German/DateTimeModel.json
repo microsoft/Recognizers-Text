@@ -774,14 +774,86 @@
     "NotSupported": "python",
     "Results": [
       {
-        "Text": " jeden tag um 3 uhr nachmittags",
-        "Start": 8,
+        "Text": "jeden tag um 3 uhr nachmittags",
+        "Start": 9,
         "End": 38,
         "TypeName": "datetimeV2.set",
         "Resolution": {
           "values": [
             {
               "timex": "T15",
+              "type": "set",
+              "value": "not resolved"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Wir treffen uns Montags",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "montags",
+        "Start": 16,
+        "End": 22,
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-11-07",
+              "type": "set",
+              "value": "not resolved"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Der Termin ist jeden Mittwoch um 16 Uhr",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "jeden mittwoch um 16 uhr",
+        "Start": 15,
+        "End": 38,
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-11-09T16",
+              "type": "set",
+              "value": "not resolved"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Das Meeting ist immer Mittwochs",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "mittwochs",
+        "Start": 22,
+        "End": 30,
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-11-09",
               "type": "set",
               "value": "not resolved"
             }
