@@ -809,6 +809,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "java",
     "Results": [
       {
         "Text": "the end of the day",
@@ -832,6 +833,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "java",
     "Results": [
       {
         "Text": "end of tomorrow",
@@ -855,6 +857,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "java",
     "Results": [
       {
         "Text": "end of the sunday",
