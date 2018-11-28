@@ -160,8 +160,8 @@ public class DateTimeParserTest extends AbstractTest {
                 return new BaseDurationParser(new EnglishDurationParserConfiguration(new EnglishCommonDateTimeParserConfiguration(DateTimeOptions.None)));
             case "HolidayParser":
                 return new BaseHolidayParser(new EnglishHolidayParserConfiguration());
-            //case "SetParser":
-            //    return new BaseSetParser(new EnglishSetParserConfiguration(new EnglishCommonDateTimeParserConfiguration(DateTimeOptions.None)));
+            case "SetParser":
+                return new BaseSetParser(new EnglishSetParserConfiguration(new EnglishCommonDateTimeParserConfiguration(DateTimeOptions.None)));
             case "TimeParser":
                 return new TimeParser(new EnglishTimeParserConfiguration(new EnglishCommonDateTimeParserConfiguration(DateTimeOptions.None)));
             case "TimePeriodParser":
