@@ -12,4 +12,8 @@ public class ExtendedModelResult extends ModelResult {
         super(text, start, end, typeName, resolution);
         this.parentText = parentText;
     }
+
+    public ExtendedModelResult(ModelResult result, String parentText) {
+        this(result.text, result.start, result.end, result.typeName, result.resolution, parentText);
+    }
 }

@@ -57,22 +57,22 @@ public abstract class AbstractTest {
         for (Map.Entry<String, Integer> entry : testCounter.entrySet()) {
             int skipped = skipCounter.getOrDefault(entry.getKey(), 0);
             if (entry.getValue() > skipped) {
-                counter.put(entry.getKey(), entry.getValue().toString());
+                counter.put(entry.getKey(), String.format("%7d", entry.getValue()));
             }
         }
         for (Map.Entry<String, String> entry : counter.entrySet()) {
             Integer passValue = passCounter.getOrDefault(entry.getKey(), 0);
             Integer failValue = failCounter.getOrDefault(entry.getKey(), 0);
             Integer skipValue = skipCounter.getOrDefault(entry.getKey(), 0);
-            counter.put(entry.getKey(), "|\t" + entry.getValue() + "\t|\t" + passValue.toString() + "\t|\t" + skipValue.toString() + "\t|\t" + failValue.toString());
+            counter.put(entry.getKey(), String.format("|%s  |%7d  |%7d  |%7d  ", entry.getValue(), passValue, skipValue, failValue));
         }
         print(counter);
     }
 
     private static void print(Map<String, String> map) {
-        System.out.println("|\tTOTAL\t|\tPassed\t|\tSkipped\t|\tFailed\t||| Key");
+        System.out.println("|  TOTAL  |  Passed | Skipped |  Failed || Key");
         for (Map.Entry<String, String> entry : map.entrySet()) {
-            System.out.println(entry.getValue() + "\t||| " + entry.getKey());
+            System.out.println(entry.getValue() + "|| " + entry.getKey());
         }
     }
 
