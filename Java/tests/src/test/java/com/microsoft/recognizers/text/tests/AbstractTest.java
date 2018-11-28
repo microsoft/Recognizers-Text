@@ -3,12 +3,10 @@ package com.microsoft.recognizers.text.tests;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.MapperFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.microsoft.recognizers.text.Culture;
-import com.microsoft.recognizers.text.ExtractResult;
-import com.microsoft.recognizers.text.ModelResult;
-import com.microsoft.recognizers.text.ResolutionKey;
+import com.microsoft.recognizers.text.*;
 import com.microsoft.recognizers.text.datetime.parsers.DateTimeParseResult;
 import com.microsoft.recognizers.text.tests.helpers.DateTimeParseResultMixIn;
+import com.microsoft.recognizers.text.tests.helpers.ExtendedModelResultMixIn;
 import com.microsoft.recognizers.text.tests.helpers.ExtractResultMixIn;
 import com.microsoft.recognizers.text.tests.helpers.ModelResultMixIn;
 import org.apache.commons.io.FileUtils;
@@ -150,7 +148,9 @@ public abstract class AbstractTest {
                     Assert.assertEquals(getMessage(currentCase, "typeName"), expected.typeName, actual.typeName);
                     Assert.assertEquals(getMessage(currentCase, "text"), expected.text, actual.text);
 
-                    Assert.assertEquals(getMessage(currentCase, "resolution.value"), expected.resolution.get(ResolutionKey.Value), actual.resolution.get(ResolutionKey.Value));
+                    if (expected.resolution.containsKey(ResolutionKey.Value)) {
+                        Assert.assertEquals(getMessage(currentCase, "resolution.value"), expected.resolution.get(ResolutionKey.Value), actual.resolution.get(ResolutionKey.Value));
+                    }
 
                     for (String key : testResolutionKeys) {
                         Assert.assertEquals(getMessage(currentCase, key), expected.resolution.get(key), actual.resolution.get(key));
@@ -243,6 +243,7 @@ public abstract class AbstractTest {
         ObjectMapper mapper = new ObjectMapper();
         mapper.configure(MapperFeature.ACCEPT_CASE_INSENSITIVE_PROPERTIES, true);
         mapper.addMixIn(ModelResult.class, ModelResultMixIn.class);
+        mapper.addMixIn(ExtendedModelResult.class, ExtendedModelResultMixIn.class);
 
         try {
             String json = mapper.writeValueAsString(result);
