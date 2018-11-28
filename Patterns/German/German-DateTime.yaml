@@ -138,7 +138,7 @@ RelativeDayRegex: !nestedRegex
   def: ((((der|dem|den|des)\s+)?{RelativeRegex}\s+tag(e(s)?)?))
   references: [ RelativeRegex]
 SetWeekDayRegex: !simpleRegex
-  def: \b(?<prefix>(am|an dem|in der)\s+)?(?<weekday>morgen|nachmittag|abend|nacht|sonntag|montag|dienstag|mittwoch|donnerstag|freitag|samstag)(s)?\b
+  def: \b(?<prefix>(an)\s+)?(?<weekday>morgen|nachmittag|abend|nacht|sonntag|montag|dienstag|mittwoch|donnerstag|freitag|samstag)(s|en)\b
 WeekDayOfMonthRegex: !nestedRegex
   def: \b(?<wom>((dem|der|des|am|an dem)\s+)?(?<cardinal>erst(er|en|e)|1.|zweit(er|en|e)|2.|dritt(er|en|e)|3.|viert(er|en|e)|4.|fünft(er|en|e)|5.|letzt(er|en|e))\s+{WeekDayRegex}\s+{MonthSuffixRegex})\b
   references: [ WeekDayRegex, MonthSuffixRegex ]
@@ -377,7 +377,9 @@ SetEachRegex: !simpleRegex
 SetLastRegex: !simpleRegex
   def: (?<last>nächste(r|n|s)?|kommende(r|n|s)?|diese(r|n|m|s)?|letzte(r|n|s)?|vorige(r|n|s)?|vorherige(r|n|s)?|jetzige(r|n|s)?|derzeitige(r|n|s)?)\b
 EachDayRegex: !simpleRegex
-  def: (\s*(jeden)\s*(Tag|tag)\s*)
+  def: \s*(jeden)\s*tag\s*\b
+BeforeEachDayRegex: !simpleRegex
+  def: (jeden)\s*tag\s*
 DurationFollowedUnit: !nestedRegex
   def: \s*{SuffixAndRegex}?(\s+|-)?{DurationUnitRegex}
   references: [ SuffixAndRegex, DurationUnitRegex ]

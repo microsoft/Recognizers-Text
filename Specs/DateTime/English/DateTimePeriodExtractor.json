@@ -782,7 +782,6 @@
   },
   {
     "Input": "Cortana, please schedule a skype for business meeting with Wayne, on Friday between 1PM and 4 PM. ",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "Friday between 1PM and 4 PM",
@@ -838,7 +837,6 @@
   },
   {
     "Input": "Cortana, please schedule a skype for business meeting with Wayne, on Friday afternoon between 1PM and 4 PM.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "Friday afternoon between 1PM and 4 PM",
@@ -850,7 +848,6 @@
   },
   {
     "Input": "Cortana, please schedule a skype for business meeting with Wayne, in the afternoon on Friday between 1PM and 4 PM.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "in the afternoon on Friday between 1PM and 4 PM",
@@ -982,7 +979,7 @@
   },
   {
     "Input": "It will happen 1/1/2015 after 2:00",
-    "NotSupported": "javascript, java, python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "1/1/2015 after 2:00",
@@ -994,7 +991,7 @@
   },
   {
     "Input": "It will happen today before 4pm",
-    "NotSupported": "javascript, java, python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "today before 4pm",
@@ -1006,7 +1003,7 @@
   },
   {
     "Input": "It will happen next Wednesday later than 10 in the morning",
-    "NotSupported": "javascript, java, python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "next Wednesday later than 10 in the morning",
@@ -1018,7 +1015,7 @@
   },
   {
     "Input": "It happened on previous Tuesday by 2 in the afternoon",
-    "NotSupported": "javascript, java, python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "previous Tuesday by 2 in the afternoon",
@@ -1030,7 +1027,7 @@
   },
   {
     "Input": "Let's go on Feb 1st no later than 6:00",
-    "NotSupported": "javascript, java, python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Feb 1st no later than 6:00",

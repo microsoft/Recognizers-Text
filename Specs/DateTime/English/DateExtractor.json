@@ -1565,7 +1565,7 @@
     "Context": {
       "ReferenceDateTime": "2018-06-20T00:00:00"
     },
-    "NotSupported": "python,java,javascript",
+    "NotSupported": "python,javascript",
     "Results": [
       {
         "Text": "in 3 weeks",

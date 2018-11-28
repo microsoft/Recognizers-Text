@@ -83,9 +83,10 @@ namespace Microsoft.Recognizers.Definitions.English
 		public static readonly string YearSuffix = $@"(,?\s*({DateYearRegex}|{FullTextYearRegex}))";
 		public static readonly string OnRegex = $@"(?<=\bon\s+)({DayRegex}s?)\b";
 		public const string RelaxedOnRegex = @"(?<=\b(on|at|in)\s+)((?<day>10th|11th|11st|12nd|12th|13rd|13th|14th|15th|16th|17th|18th|19th|1st|20th|21st|21th|22nd|22th|23rd|23th|24th|25th|26th|27th|28th|29th|2nd|30th|31st|3rd|4th|5th|6th|7th|8th|9th)s?)\b";
-		public static readonly string ThisRegex = $@"\b((this(\s*week)?(\s*on)?\s+){WeekDayRegex})|({WeekDayRegex}((\s+of)?\s+this\s*week))\b";
-		public static readonly string LastDateRegex = $@"\b({PastPrefixRegex}(\s*week)?\s+{WeekDayRegex})|({WeekDayRegex}(\s+last\s*week))\b";
-		public static readonly string NextDateRegex = $@"\b({NextPrefixRegex}(\s*week(\s*,?\s*on)?)?\s+{WeekDayRegex})|((on\s+)?{WeekDayRegex}((\s+of)?\s+(the\s+following|(the\s+)?next)\s*week))\b";
+		public const string PrefixWeekDayRegex = @"(\s*((,?\s*on)|[-—–]))";
+		public static readonly string ThisRegex = $@"\b(this(\s*week{PrefixWeekDayRegex}?)?\s*{WeekDayRegex})|({WeekDayRegex}((\s+of)?\s+this\s*week))\b";
+		public static readonly string LastDateRegex = $@"\b({PastPrefixRegex}(\s*week{PrefixWeekDayRegex}?)?\s*{WeekDayRegex})|({WeekDayRegex}(\s+last\s*week))\b";
+		public static readonly string NextDateRegex = $@"\b({NextPrefixRegex}(\s*week{PrefixWeekDayRegex}?)?\s*{WeekDayRegex})|((on\s+)?{WeekDayRegex}((\s+of)?\s+(the\s+following|(the\s+)?next)\s*week))\b";
 		public static readonly string SpecialDayRegex = $@"\b((the\s+)?day before yesterday|(the\s+)?day after (tomorrow|tmr)|the\s+day\s+(before|after)(?!=\s+day)|((the\s+)?({RelativeRegex}|my)\s+day)|yesterday|tomorrow|tmr|today)\b";
 		public static readonly string SpecialDayWithNumRegex = $@"\b((?<number>{WrittenNumRegex})\s+days?\s+from\s+(?<day>yesterday|tomorrow|tmr|today))\b";
 		public static readonly string RelativeDayRegex = $@"\b(((the\s+)?{RelativeRegex}\s+day))\b";
