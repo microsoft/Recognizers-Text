@@ -43,7 +43,7 @@ public class BaseMergedExtractor implements IDateTimeExtractor {
         String originInput = input;
         Iterable<MatchResult<String>> superfluousWordMatches = null;
         if (this.config.getOptions().match(DateTimeOptions.EnablePreview)) {
-            ProcessedSuperfluousWords processedSuperfluousWords = MatchingUtil.PreProcessTextRemoveSuperfluousWords(input, this.config.getSuperfluousWordMatcher());
+            ProcessedSuperfluousWords processedSuperfluousWords = MatchingUtil.preProcessTextRemoveSuperfluousWords(input, this.config.getSuperfluousWordMatcher());
             input = processedSuperfluousWords.text;
             superfluousWordMatches = processedSuperfluousWords.superfluousWordMatches;
         }
@@ -82,7 +82,7 @@ public class BaseMergedExtractor implements IDateTimeExtractor {
         ret.sort(Comparator.comparingInt(r -> r.start));
 
         if (this.config.getOptions().match(DateTimeOptions.EnablePreview)) {
-            ret = MatchingUtil.PosProcessExtractionRecoverSuperfluousWords(ret, superfluousWordMatches, originInput);
+            ret = MatchingUtil.posProcessExtractionRecoverSuperfluousWords(ret, superfluousWordMatches, originInput);
         }
 
         return ret;
