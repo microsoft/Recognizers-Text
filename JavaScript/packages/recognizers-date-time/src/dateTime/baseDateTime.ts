@@ -473,7 +473,7 @@ export class BaseDateTimeParser implements IDateTimeParser {
             let pr = this.config.dateParser.parse(ers[0], refDateTime);
             let futureDate = new Date(pr.value.futureValue);
             let pastDate = new Date(pr.value.pastValue);
-            ret = this.getParsedResult(pr.timexStr, futureDate, pastDate);
+            ret = this.resolveEndOfDay(pr.timexStr, futureDate, pastDate);
             return ret;
         }
 
@@ -486,13 +486,13 @@ export class BaseDateTimeParser implements IDateTimeParser {
         if (eod.length) {
             let futureDate = new Date(refDateTime);
             let pastDate = new Date(refDateTime);
-            ret = this.getParsedResult(DateTimeFormatUtil.formatDate(refDateTime), futureDate, pastDate);
+            ret = this.resolveEndOfDay(DateTimeFormatUtil.formatDate(refDateTime), futureDate, pastDate);
         }
 
         return ret;
     }
 
-    private getParsedResult(timexPrefix: string, futureDate: Date, pastDate: Date): DateTimeResolutionResult {
+    private resolveEndOfDay(timexPrefix: string, futureDate: Date, pastDate: Date): DateTimeResolutionResult {
         let ret = new DateTimeResolutionResult()
 
         ret.timex = timexPrefix + "T23:59:59";

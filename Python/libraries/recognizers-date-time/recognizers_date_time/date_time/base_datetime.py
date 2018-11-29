@@ -611,7 +611,7 @@ class BaseDateTimeParser(DateTimeParser):
         result.timex = pr.timex_str + 'T23:59:59'
         future_date = pr.value.future_value
         past_date = pr.value.past_value
-        result = self.get_parsed_result(pr.timex_str, future_date, past_date)
+        result = self.resolve_end_of_day(pr.timex_str, future_date, past_date)
 
         return result
 
@@ -619,11 +619,11 @@ class BaseDateTimeParser(DateTimeParser):
         result = DateTimeResolutionResult()
         eod = regex.search(self.config.unspecific_end_of_regex, source)
         if eod is not None:
-            result = self.get_parsed_result(DateTimeFormatUtil.format_date(reference), reference, reference)
+            result = self.resolve_end_of_day(DateTimeFormatUtil.format_date(reference), reference, reference)
 
         return result
 
-    def get_parsed_result(self, timex_prefix: str, future_date: datetime, past_date: datetime) -> DateTimeResolutionResult:
+    def resolve_end_of_day(self, timex_prefix: str, future_date: datetime, past_date: datetime) -> DateTimeResolutionResult:
         result = DateTimeResolutionResult()
 
         result.timex = timex_prefix + 'T23:59:59'

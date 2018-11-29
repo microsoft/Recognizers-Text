@@ -352,7 +352,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var futureDate = (DateObject)((DateTimeResolutionResult)pr.Value).FutureValue;
                 var pastDate = (DateObject)((DateTimeResolutionResult)pr.Value).PastValue;
 
-                ret = GetParsedResult(pr.TimexStr, futureDate, pastDate);
+                ret = ResolveEndOfDay(pr.TimexStr, futureDate, pastDate);
             }
 
             return ret;
@@ -365,13 +365,13 @@ namespace Microsoft.Recognizers.Text.DateTime
             var eod = this.config.UnspecificEndOfRegex.Match(text);
             if (eod.Success)
             {
-                ret = GetParsedResult(DateTimeFormatUtil.FormatDate(refDateTime), refDateTime, refDateTime);          
+                ret = ResolveEndOfDay(DateTimeFormatUtil.FormatDate(refDateTime), refDateTime, refDateTime);          
             }
 
             return ret;
         }
 
-        private DateTimeResolutionResult GetParsedResult(string timexPrefix, DateObject futureDate, DateObject pastDate)
+        private DateTimeResolutionResult ResolveEndOfDay(string timexPrefix, DateObject futureDate, DateObject pastDate)
         {
             var ret = new DateTimeResolutionResult();
 
