@@ -28,15 +28,25 @@ namespace Microsoft.Recognizers.Text.DateTime
             object value = null;
             if (er.Type.Equals(ParserName))
             {
-                var innerResult = ParseSimpleCases(er.Text, referenceTime);
-                if (!innerResult.Success)
-                {
-                    innerResult = MergeTwoTimePoints(er.Text, referenceTime);
-                }
+                DateTimeResolutionResult innerResult;
 
-                if (!innerResult.Success)
+                if ((config.Options & DateTimeOptions.EnablePreview) != 0 &&
+                    er.Data is KeyValuePair<string, ExtractResult>)
                 {
-                    innerResult = ParseTimeOfDay(er.Text, referenceTime);
+                    var timezoneEr = ((KeyValuePair<string, ExtractResult>)er.Data).Value;
+                    var timezonePr = config.TimeZoneParser.Parse(timezoneEr);
+
+                    innerResult = InternalParse(er.Text.Substring(0, (int)(er.Length - timezoneEr.Length)),
+                        referenceTime);
+
+                    if (timezonePr.Value != null)
+                    {
+                        innerResult.TimeZoneResolution = ((DateTimeResolutionResult)timezonePr.Value).TimeZoneResolution;
+                    }
+                }
+                else
+                {
+                    innerResult = InternalParse(er.Text, referenceTime);
                 }
 
                 if (innerResult.Success)
@@ -82,6 +92,23 @@ namespace Microsoft.Recognizers.Text.DateTime
             };
 
             return ret;
+        }
+
+        private DateTimeResolutionResult InternalParse(string entityText, DateObject referenceTime)
+        {
+            var innerResult = ParseSimpleCases(entityText, referenceTime);
+
+            if (!innerResult.Success)
+            {
+                innerResult = MergeTwoTimePoints(entityText, referenceTime);
+            }
+
+            if (!innerResult.Success)
+            {
+                innerResult = ParseTimeOfDay(entityText, referenceTime);
+            }
+
+            return innerResult;
         }
 
         // Cases like "from 3 to 5am" or "between 3:30 and 5" are parsed here

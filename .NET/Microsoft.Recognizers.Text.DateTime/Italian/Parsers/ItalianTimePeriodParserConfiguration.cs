@@ -14,6 +14,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public IExtractor IntegerExtractor { get; }
 
+        public IDateTimeParser TimeZoneParser { get; }
+
         public Regex PureNumberFromToRegex { get; }
 
         public Regex PureNumberBetweenAndRegex { get; }
@@ -37,6 +39,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             TimeExtractor = config.TimeExtractor;
             IntegerExtractor = config.IntegerExtractor;
             TimeParser = config.TimeParser;
+            TimeZoneParser = config.TimeZoneParser;
             PureNumberFromToRegex = ItalianTimePeriodExtractorConfiguration.PureNumFromTo; 
             PureNumberBetweenAndRegex = ItalianTimePeriodExtractorConfiguration.PureNumBetweenAnd;
             SpecificTimeFromToRegex = ItalianTimePeriodExtractorConfiguration.SpecificTimeFromTo;

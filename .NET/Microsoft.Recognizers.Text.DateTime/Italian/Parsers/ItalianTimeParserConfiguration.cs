@@ -28,7 +28,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             TimeRegexes = ItalianTimeExtractorConfiguration.TimeRegexList;
             UtilityConfiguration = config.UtilityConfiguration;
             Numbers = config.Numbers;
-            TimeZoneParser = new BaseTimeZoneParser();
+            TimeZoneParser = config.TimeZoneParser;
         }
 
         public void AdjustByPrefix(string prefix, ref int hour, ref int min, ref bool hasMin)
