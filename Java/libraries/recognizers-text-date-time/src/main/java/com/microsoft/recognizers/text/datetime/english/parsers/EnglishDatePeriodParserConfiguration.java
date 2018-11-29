@@ -54,7 +54,7 @@ public class EnglishDatePeriodParserConfiguration extends BaseOptionsConfigurati
         allHalfYearRegex = EnglishDatePeriodExtractorConfiguration.AllHalfYearRegex;
         seasonRegex = EnglishDatePeriodExtractorConfiguration.SeasonRegex;
         whichWeekRegex = EnglishDatePeriodExtractorConfiguration.WhichWeekRegex;
-        weekOfRegex= EnglishDatePeriodExtractorConfiguration.WeekOfRegex;
+        weekOfRegex = EnglishDatePeriodExtractorConfiguration.WeekOfRegex;
         monthOfRegex = EnglishDatePeriodExtractorConfiguration.MonthOfRegex;
         restOfDateRegex = EnglishDatePeriodExtractorConfiguration.RestOfDateRegex;
         laterEarlyPeriodRegex = EnglishDatePeriodExtractorConfiguration.LaterEarlyPeriodRegex;

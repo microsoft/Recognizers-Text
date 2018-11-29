@@ -16,8 +16,6 @@ import com.microsoft.recognizers.text.datetime.english.parsers.EnglishDatetimeUt
 import java.util.ArrayList;
 import java.util.regex.Pattern;
 
-import static com.microsoft.recognizers.text.datetime.resources.EnglishDateTime.TokenBeforeDate;
-
 public class EnglishTimePeriodExtractorConfiguration extends BaseOptionsConfiguration implements ITimePeriodExtractorConfiguration {
 
     private String TokenBeforeDate;
@@ -58,7 +56,7 @@ public class EnglishTimePeriodExtractorConfiguration extends BaseOptionsConfigur
         TokenBeforeDate = EnglishDateTime.TokenBeforeDate;
         SingleTimeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration(options));
         UtilityConfiguration = new EnglishDatetimeUtilityConfiguration();
-        IntegerExtractor = com.microsoft.recognizers.text.number.english.extractors.IntegerExtractor.getInstance();
+        integerExtractor = IntegerExtractor.getInstance();
     }
 
     private IDateTimeUtilityConfiguration UtilityConfiguration;
@@ -67,8 +65,8 @@ public class EnglishTimePeriodExtractorConfiguration extends BaseOptionsConfigur
     private IDateTimeExtractor SingleTimeExtractor;
     public final IDateTimeExtractor getSingleTimeExtractor() { return SingleTimeExtractor; }
 
-    private IExtractor IntegerExtractor;
-    public final IExtractor getIntegerExtractor() { return IntegerExtractor; }
+    private IExtractor integerExtractor;
+    public final IExtractor getIntegerExtractor() { return integerExtractor; }
 
     public Iterable<Pattern> getSimpleCasesRegex() {
         return getSimpleCasesRegex;
