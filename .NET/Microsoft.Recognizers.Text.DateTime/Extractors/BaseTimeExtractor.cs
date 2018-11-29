@@ -68,7 +68,10 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                             er.Text = text.Substring((int)er.Start, newLength);
                             er.Length = newLength;
-                            er.Data = new KeyValuePair<string, ExtractResult>(Constants.SYS_DATETIME_TIMEZONE, timeZoneEr);
+                            er.Data = new Dictionary<string, object>()
+                            {
+                                { Constants.SYS_DATETIME_TIMEZONE, timeZoneEr }
+                            };
                         }
                     }
                 }

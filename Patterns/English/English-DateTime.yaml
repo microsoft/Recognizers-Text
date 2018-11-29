@@ -17,6 +17,8 @@ PastPrefixRegex: !simpleRegex
   def: (last|past|previous)\b
 ThisPrefixRegex: !simpleRegex
   def: (this|current)\b
+RangePrefixRegex: !simpleRegex
+  def: (from|between)
 CenturySuffixRegex: !simpleRegex
   def: (^century)\b
 ReferencePrefixRegex: !simpleRegex
@@ -66,11 +68,11 @@ TimeTokenPrefix: 'at '
 TokenBeforeDate: 'on '
 TokenBeforeTime: 'at '
 SimpleCasesRegex: !nestedRegex
-  def: \b((from|between)\s+)?({DayRegex})\s*{TillRegex}\s*({DayRegex}\s+{MonthSuffixRegex}|{MonthSuffixRegex}\s+{DayRegex})((\s+|\s*,\s*){YearRegex})?\b
-  references: [ DayRegex, TillRegex, MonthSuffixRegex, YearRegex ]
+  def: \b({RangePrefixRegex}\s+)?({DayRegex})\s*{TillRegex}\s*({DayRegex}\s+{MonthSuffixRegex}|{MonthSuffixRegex}\s+{DayRegex})((\s+|\s*,\s*){YearRegex})?\b
+  references: [ DayRegex, TillRegex, MonthSuffixRegex, YearRegex, RangePrefixRegex ]
 MonthFrontSimpleCasesRegex: !nestedRegex
-  def: \b((from|between)\s+)?{MonthSuffixRegex}\s+((from)\s+)?({DayRegex})\s*{TillRegex}\s*({DayRegex})((\s+|\s*,\s*){YearRegex})?\b
-  references: [ MonthSuffixRegex, DayRegex, TillRegex, YearRegex ]
+  def: \b({RangePrefixRegex}\s+)?{MonthSuffixRegex}\s+((from)\s+)?({DayRegex})\s*{TillRegex}\s*({DayRegex})((\s+|\s*,\s*){YearRegex})?\b
+  references: [ MonthSuffixRegex, DayRegex, TillRegex, YearRegex, RangePrefixRegex ]
 MonthFrontBetweenRegex: !nestedRegex
   def: \b{MonthSuffixRegex}\s+(between\s+)({DayRegex})\s*{RangeConnectorRegex}\s*({DayRegex})((\s+|\s*,\s*){YearRegex})?\b
   references: [ MonthSuffixRegex, DayRegex, RangeConnectorRegex , YearRegex ]
@@ -356,14 +358,14 @@ FirstTimeRegexInTimeRange: !nestedRegex
   def: \b{TimeRegexWithDotConnector}(\s*{DescRegex})?
   references: [ TimeRegexWithDotConnector, DescRegex ]
 PureNumFromTo: !nestedRegex
-  def: ((from|between)\s+)?({HourRegex}|{PeriodHourNumRegex})(\s*(?<leftDesc>{DescRegex}))?\s*{TillRegex}\s*({HourRegex}|{PeriodHourNumRegex})(?<rightDesc>\s*({PmRegex}|{AmRegex}|{DescRegex}))?
-  references: [ HourRegex, PeriodHourNumRegex, DescRegex, TillRegex, PmRegex, AmRegex ]
+  def: ({RangePrefixRegex}\s+)?({HourRegex}|{PeriodHourNumRegex})(\s*(?<leftDesc>{DescRegex}))?\s*{TillRegex}\s*({HourRegex}|{PeriodHourNumRegex})(?<rightDesc>\s*({PmRegex}|{AmRegex}|{DescRegex}))?
+  references: [ HourRegex, PeriodHourNumRegex, DescRegex, TillRegex, PmRegex, AmRegex, RangePrefixRegex ]
 PureNumBetweenAnd: !nestedRegex
   def: (between\s+)({HourRegex}|{PeriodHourNumRegex})(\s*(?<leftDesc>{DescRegex}))?\s*{RangeConnectorRegex}\s*({HourRegex}|{PeriodHourNumRegex})(?<rightDesc>\s*({PmRegex}|{AmRegex}|{DescRegex}))?
   references: [ HourRegex, PeriodHourNumRegex, DescRegex, PmRegex, AmRegex, RangeConnectorRegex ]
 SpecificTimeFromTo: !nestedRegex
-  def: ((from|between)\s+)?(?<time1>(({TimeRegex2}|{FirstTimeRegexInTimeRange})|({HourRegex}|{PeriodHourNumRegex})(\s*(?<leftDesc>{DescRegex}))?))\s*{TillRegex}\s*(?<time2>(({TimeRegex2}|{TimeRegexWithDotConnector}(?<rightDesc>\s*{DescRegex}))|({HourRegex}|{PeriodHourNumRegex})(\s*(?<rightDesc>{DescRegex}))?))
-  references: [ TimeRegex2, FirstTimeRegexInTimeRange, TimeRegexWithDotConnector, TillRegex, HourRegex, PeriodHourNumRegex, DescRegex, PmRegex, AmRegex ]
+  def: ({RangePrefixRegex}\s+)?(?<time1>(({TimeRegex2}|{FirstTimeRegexInTimeRange})|({HourRegex}|{PeriodHourNumRegex})(\s*(?<leftDesc>{DescRegex}))?))\s*{TillRegex}\s*(?<time2>(({TimeRegex2}|{TimeRegexWithDotConnector}(?<rightDesc>\s*{DescRegex}))|({HourRegex}|{PeriodHourNumRegex})(\s*(?<rightDesc>{DescRegex}))?))
+  references: [ TimeRegex2, FirstTimeRegexInTimeRange, TimeRegexWithDotConnector, TillRegex, HourRegex, PeriodHourNumRegex, DescRegex, PmRegex, AmRegex, RangePrefixRegex ]
 SpecificTimeBetweenAnd: !nestedRegex
   def: (between\s+)(?<time1>(({TimeRegex2}|{FirstTimeRegexInTimeRange})|({HourRegex}|{PeriodHourNumRegex})(\s*(?<leftDesc>{DescRegex}))?))\s*{RangeConnectorRegex}\s*(?<time2>(({TimeRegex2}|{TimeRegexWithDotConnector}(?<rightDesc>\s*{DescRegex}))|({HourRegex}|{PeriodHourNumRegex})(\s*(?<rightDesc>{DescRegex}))?))
   references: [ TimeRegex2, FirstTimeRegexInTimeRange, TimeRegexWithDotConnector, RangeConnectorRegex, HourRegex, PeriodHourNumRegex, DescRegex, PmRegex, AmRegex ]

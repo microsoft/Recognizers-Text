@@ -23,6 +23,7 @@ namespace Microsoft.Recognizers.Definitions.Italian
 		public const string NextSuffixRegex = @"(?<order>prossim[oa]|seguente)\b";
 		public const string PastSuffixRegex = @"(?<order>precedente)\b";
 		public const string ThisPrefixRegex = @"(quest[oa]|corrente)\b";
+		public const string RangePrefixRegex = @"(du|de|des|depuis|entre)";
 		public const string DayRegex = @"(il\s*)?(?<day>01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|1|20|21|22|23|24|25|26|27|28|29|2|30|31|3|4|5|6|7|8|9)(?=\b|t)";
 		public const string MonthNumRegex = @"(?<month>01|02|03|04|05|06|07|08|09|10|11|12|1|2|3|4|5|6|7|8|9)\b";
 		public static readonly string YearRegex = $@"({BaseDateTime.FourDigitYearRegex})";
