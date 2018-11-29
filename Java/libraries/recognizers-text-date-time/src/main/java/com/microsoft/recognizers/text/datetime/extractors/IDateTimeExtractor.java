@@ -8,5 +8,6 @@ import java.util.List;
 
 public interface IDateTimeExtractor extends IExtractor {
     String getExtractorName();
+
     List<ExtractResult> extract(String input, LocalDateTime reference);
 }

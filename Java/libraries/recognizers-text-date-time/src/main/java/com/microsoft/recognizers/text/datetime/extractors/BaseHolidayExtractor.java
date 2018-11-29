@@ -1,6 +1,5 @@
 package com.microsoft.recognizers.text.datetime.extractors;
 
-import java.util.ArrayList;
 import com.microsoft.recognizers.text.ExtractResult;
 import com.microsoft.recognizers.text.datetime.Constants;
 import com.microsoft.recognizers.text.datetime.extractors.config.IHolidayExtractorConfiguration;
@@ -9,8 +8,9 @@ import com.microsoft.recognizers.text.utilities.Match;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
 
 import java.time.LocalDateTime;
-import java.util.regex.Pattern;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Pattern;
 
 public class BaseHolidayExtractor implements IDateTimeExtractor {
 
@@ -26,29 +26,25 @@ public class BaseHolidayExtractor implements IDateTimeExtractor {
     }
 
     @Override
-    public final List<ExtractResult> extract(String input, LocalDateTime reference)
-    {
+    public final List<ExtractResult> extract(String input, LocalDateTime reference) {
         List<Token> tokens = new ArrayList<>();
-        tokens.addAll(HolidayMatch(input));
+        tokens.addAll(holidayMatch(input));
         return Token.mergeAllTokens(tokens, input, getExtractorName());
     }
 
     @Override
-    public final List<ExtractResult> extract(String input)
-    {
+    public final List<ExtractResult> extract(String input) {
         return this.extract(input, LocalDateTime.now());
     }
 
-    private List<Token> HolidayMatch(String text)
-    {
+    private List<Token> holidayMatch(String text) {
         List<Token> ret = new ArrayList<>();
-        for (Pattern regex : this.config.getHolidayRegexes())
-        {
+        for (Pattern regex : this.config.getHolidayRegexes()) {
             Match[] matches = RegExpUtility.getMatches(regex, text);
             for (Match match : matches) {
                 ret.add(new Token(match.index, match.index + match.length));
             }
         }
-        return  ret;
+        return ret;
     }
 }

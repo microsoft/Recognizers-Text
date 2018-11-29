@@ -8,7 +8,10 @@ import java.util.regex.Pattern;
 
 public interface ITimeZoneExtractorConfiguration extends IOptionsConfiguration {
     Iterable<Pattern> getTimeZoneRegexes();
+
     Pattern getLocationTimeSuffixRegex();
+
     StringMatcher getCityMatcher();
+
     List<String> getAmbiguousTimezoneList();
 }

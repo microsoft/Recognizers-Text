@@ -13,7 +13,6 @@ import java.time.LocalDateTime;
 import java.util.AbstractMap;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import java.util.regex.Pattern;
 
 public class BaseTimeExtractor implements IDateTimeExtractor {
@@ -32,14 +31,14 @@ public class BaseTimeExtractor implements IDateTimeExtractor {
     @Override
     public List<ExtractResult> extract(String input, LocalDateTime reference) {
         List<Token> tokens = new ArrayList<>();
-        tokens.addAll(BasicRegexMatch(input));
-        tokens.addAll(AtRegexMatch(input));
-        tokens.addAll(BeforeAfterRegexMatch(input));
-        tokens.addAll(SpecialCasesRegexMatch(input));
+        tokens.addAll(basicRegexMatch(input));
+        tokens.addAll(atRegexMatch(input));
+        tokens.addAll(beforeAfterRegexMatch(input));
+        tokens.addAll(specialCasesRegexMatch(input));
 
         List<ExtractResult> timeErs = Token.mergeAllTokens(tokens, input, getExtractorName());
         if (this.config.getOptions().match(DateTimeOptions.EnablePreview)) {
-            timeErs = MergeTimeZones(timeErs, config.getTimeZoneExtractor().extract(input, reference), input);
+            timeErs = mergeTimeZones(timeErs, config.getTimeZoneExtractor().extract(input, reference), input);
         }
         return timeErs;
     }
@@ -49,7 +48,7 @@ public class BaseTimeExtractor implements IDateTimeExtractor {
         return this.extract(input, LocalDateTime.now());
     }
 
-    private List<ExtractResult> MergeTimeZones(List<ExtractResult> timeErs, List<ExtractResult> timeZoneErs, String text) {
+    private List<ExtractResult> mergeTimeZones(List<ExtractResult> timeErs, List<ExtractResult> timeZoneErs, String text) {
         int erIndex = 0;
         for (ExtractResult er : timeErs.toArray(new ExtractResult[0])) {
             for (ExtractResult timeZoneEr : timeZoneErs) {
@@ -74,7 +73,7 @@ public class BaseTimeExtractor implements IDateTimeExtractor {
         return timeErs;
     }
 
-    public final List<Token> BasicRegexMatch(String text) {
+    public final List<Token> basicRegexMatch(String text) {
         List<Token> ret = new ArrayList<>();
         for (Pattern regex : this.config.getTimeRegexList()) {
             Match[] matches = RegExpUtility.getMatches(regex, text);
@@ -85,7 +84,7 @@ public class BaseTimeExtractor implements IDateTimeExtractor {
         return ret;
     }
 
-    private List<Token> AtRegexMatch(String text) {
+    private List<Token> atRegexMatch(String text) {
         List<Token> ret = new ArrayList<>();
         // handle "at 5", "at seven"
         Pattern pattern = this.config.getAtRegex();
@@ -101,7 +100,7 @@ public class BaseTimeExtractor implements IDateTimeExtractor {
         return ret;
     }
 
-    private List<Token> BeforeAfterRegexMatch(String text) {
+    private List<Token> beforeAfterRegexMatch(String text) {
         List<Token> ret = new ArrayList<>();
         // only enabled in CalendarMode
         if (this.config.getOptions().match(DateTimeOptions.CalendarMode)) {
@@ -117,7 +116,7 @@ public class BaseTimeExtractor implements IDateTimeExtractor {
         return ret;
     }
 
-    private List<Token> SpecialCasesRegexMatch(String text) {
+    private List<Token> specialCasesRegexMatch(String text) {
         List<Token> ret = new ArrayList<>();
         // handle "ish"
         if (this.config.getIshRegex() != null && RegExpUtility.getMatches(this.config.getIshRegex(), text).length > 0) {

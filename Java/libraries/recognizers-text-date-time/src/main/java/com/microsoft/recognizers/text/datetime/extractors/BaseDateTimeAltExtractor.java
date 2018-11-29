@@ -86,7 +86,7 @@ public class BaseDateTimeAltExtractor implements IDateTimeListExtractor {
             Map<String, Object> data = extractSingleAlt(altErs);
 
             int parentTextStart = result.get(i).start;
-            int parentTextEnd =  result.get(j).start + result.get(j).length;
+            int parentTextEnd = result.get(j).start + result.get(j).length;
             String parentText = text.substring(parentTextStart, parentTextEnd);
 
             if (data.size() > 0) {
@@ -97,15 +97,15 @@ public class BaseDateTimeAltExtractor implements IDateTimeListExtractor {
                 modifiedData.put(ExtendedModelResult.ParentTextKey, parentText);
 
                 ExtractResult modified = result.get(i)
-                    .withData(modifiedData)
-                    .withType(Constants.SYS_DATETIME_DATETIMEALT);
+                        .withData(modifiedData)
+                        .withType(Constants.SYS_DATETIME_DATETIMEALT);
 
                 result.set(i, modified);
 
                 for (int k = i + 1; k <= j; k++) {
                     result.set(k, result.get(k)
-                        .withType(Constants.SYS_DATETIME_DATETIMEALT)
-                        .withData(data)
+                            .withType(Constants.SYS_DATETIME_DATETIMEALT)
+                            .withData(data)
                     );
                 }
 
@@ -121,15 +121,15 @@ public class BaseDateTimeAltExtractor implements IDateTimeListExtractor {
                     modifiedData.put(ExtendedModelResult.ParentTextKey, parentText);
 
                     ExtractResult modified = result.get(j)
-                        .withData(modifiedData)
-                        .withType(Constants.SYS_DATETIME_DATETIMEALT);
+                            .withData(modifiedData)
+                            .withType(Constants.SYS_DATETIME_DATETIMEALT);
 
                     result.set(j, modified);
 
                     for (int k = i; k < j; k++) {
                         result.set(k, result.get(k)
-                            .withType(Constants.SYS_DATETIME_DATETIMEALT)
-                            .withData(data)
+                                .withType(Constants.SYS_DATETIME_DATETIMEALT)
+                                .withData(data)
                         );
                     }
 
@@ -170,10 +170,10 @@ public class BaseDateTimeAltExtractor implements IDateTimeListExtractor {
 
             if (notBeContained) {
                 result.add(new ExtractResult(
-                    dateMatch.index,
-                    dateMatch.length,
-                    dateMatch.value,
-                    Constants.SYS_DATETIME_DATE));
+                        dateMatch.index,
+                        dateMatch.length,
+                        dateMatch.value,
+                        Constants.SYS_DATETIME_DATE));
             }
         }
 
@@ -226,10 +226,10 @@ public class BaseDateTimeAltExtractor implements IDateTimeListExtractor {
                                 if (match.isPresent()) {
                                     int matchEnd = match.get().index + match.get().length;
                                     contextErs = new ExtractResult(
-                                        matchEnd,
-                                        result.length - matchEnd,
-                                        result.text.substring(matchEnd, result.length),
-                                        Constants.ContextType_RelativeSuffix);
+                                            matchEnd,
+                                            result.length - matchEnd,
+                                            result.text.substring(matchEnd, result.length),
+                                            Constants.ContextType_RelativeSuffix);
                                     break;
                                 }
                             }
@@ -239,20 +239,20 @@ public class BaseDateTimeAltExtractor implements IDateTimeListExtractor {
                             customData.put(ExtendedModelResult.ParentTextKey, parentText);
                             customData.put(Constants.Context, contextErs);
 
-							relativeDatePeriodErs.add(new ExtractResult(
-                                relativeTermsMatch.index, 
-                                relativeTermsMatch.length,
-                                relativeTermsMatch.value,
-                                Constants.SYS_DATETIME_DATETIMEALT,
-                                customData));
+                            relativeDatePeriodErs.add(new ExtractResult(
+                                    relativeTermsMatch.index,
+                                    relativeTermsMatch.length,
+                                    relativeTermsMatch.value,
+                                    Constants.SYS_DATETIME_DATETIMEALT,
+                                    customData));
 
                             Map<String, Object> resultData = new LinkedHashMap<>();
                             resultData.put(Constants.SubType, result.type);
                             resultData.put(ExtendedModelResult.ParentTextKey, parentText);
 
                             ers.set(i, result
-                                .withData(resultData)
-                                .withType(Constants.SYS_DATETIME_DATETIMEALT));
+                                    .withData(resultData)
+                                    .withType(Constants.SYS_DATETIME_DATETIMEALT));
                         }
                     }
                 }
@@ -338,10 +338,10 @@ public class BaseDateTimeAltExtractor implements IDateTimeListExtractor {
                     Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(regex, extractResults.get(0).text)).findFirst();
                     if (match.isPresent()) {
                         data.put(Constants.Context, new ExtractResult(
-                            match.get().index,
-                            match.get().length,
-                            match.get().value,
-                            Constants.ContextType_RelativePrefix));
+                                match.get().index,
+                                match.get().length,
+                                match.get().value,
+                                Constants.ContextType_RelativePrefix));
                         data.put(Constants.SubType, Constants.SYS_DATETIME_DATE);
                     }
                 }
@@ -360,10 +360,10 @@ public class BaseDateTimeAltExtractor implements IDateTimeListExtractor {
                 Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(regex, former.text)).findFirst();
                 if (match.isPresent()) {
                     data.put(Constants.Context, new ExtractResult(
-                        match.get().index,
-                        match.get().length,
-                        match.get().value,
-                        Constants.ContextType_AmPm));
+                            match.get().index,
+                            match.get().length,
+                            match.get().value,
+                            Constants.ContextType_AmPm));
                     data.put(Constants.SubType, Constants.SYS_DATETIME_TIME);
                 }
             }
