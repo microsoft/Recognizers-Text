@@ -2298,13 +2298,14 @@
     "Context": {
       "ReferenceDateTime": "2018-05-31T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "java, javascript, python",
     "Results": [
       {
+        "ParentText": "11:30am cst or 5pm ct",
         "Text": "11:30am cst",
         "Start": 32,
         "End": 42,
-        "TypeName": "datetimeV2.time",
+        "TypeName": "datetimeV2.datetimealt",
         "Resolution": {
           "values": [
             {
@@ -2319,10 +2320,11 @@
         }
       },
       {
+        "ParentText": "11:30am cst or 5pm ct",
         "Text": "5pm ct",
         "Start": 47,
         "End": 52,
-        "TypeName": "datetimeV2.time",
+        "TypeName": "datetimeV2.datetimealt",
         "Resolution": {
           "values": [
             {
