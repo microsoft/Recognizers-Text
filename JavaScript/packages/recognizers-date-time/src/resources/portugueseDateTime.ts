@@ -16,6 +16,7 @@ export namespace PortugueseDateTime {
 	export const AmDescRegex = `(am\\b|a\\.m\\.|a m\\b|a\\. m\\.\\b|a\\.m\\b|a\\. m\\b)`;
 	export const PmDescRegex = `(pm\\b|p\\.m\\.|p\\b|p m\\b|p\\. m\\.\\b|p\\.m\\b|p\\. m\\b)`;
 	export const AmPmDescRegex = `(ampm)`;
+	export const RangePrefixRegex = `((desde|de|da|das|entre)\\s+(a(s)?\\s+)?)`;
 	export const TwoDigitYearRegex = `\\b(?<![$])(?<year>([0-27-9]\\d))(?!(\\s*((\\:)|${AmDescRegex}|${PmDescRegex}|\\.\\d)))\\b`;
 	export const FullTextYearRegex = `^[\\*]`;
 	export const YearRegex = `(${BaseDateTime.FourDigitYearRegex}|${FullTextYearRegex})`;

@@ -6569,6 +6569,7 @@
       "ReferenceDateTime": "2018-11-28T12:00:00"
     },
     "NotSupportedByDesign": "java",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "30 minutes",
@@ -6653,6 +6654,7 @@
       "ReferenceDateTime": "2018-11-28T12:00:00"
     },
     "NotSupportedByDesign": "java",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "11/20",

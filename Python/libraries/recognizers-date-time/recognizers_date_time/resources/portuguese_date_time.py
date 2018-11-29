@@ -17,6 +17,7 @@ class PortugueseDateTime:
     AmDescRegex = f'(am\\b|a\\.m\\.|a m\\b|a\\. m\\.\\b|a\\.m\\b|a\\. m\\b)'
     PmDescRegex = f'(pm\\b|p\\.m\\.|p\\b|p m\\b|p\\. m\\.\\b|p\\.m\\b|p\\. m\\b)'
     AmPmDescRegex = f'(ampm)'
+    RangePrefixRegex = f'((desde|de|da|das|entre)\\s+(a(s)?\\s+)?)'
     TwoDigitYearRegex = f'\\b(?<![$])(?<year>([0-27-9]\\d))(?!(\\s*((\\:)|{AmDescRegex}|{PmDescRegex}|\\.\\d)))\\b'
     FullTextYearRegex = f'^[\\*]'
     YearRegex = f'({BaseDateTime.FourDigitYearRegex}|{FullTextYearRegex})'
