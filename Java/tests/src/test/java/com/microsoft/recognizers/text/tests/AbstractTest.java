@@ -3,12 +3,10 @@ package com.microsoft.recognizers.text.tests;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.MapperFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.microsoft.recognizers.text.Culture;
-import com.microsoft.recognizers.text.ExtractResult;
-import com.microsoft.recognizers.text.ModelResult;
-import com.microsoft.recognizers.text.ResolutionKey;
+import com.microsoft.recognizers.text.*;
 import com.microsoft.recognizers.text.datetime.parsers.DateTimeParseResult;
 import com.microsoft.recognizers.text.tests.helpers.DateTimeParseResultMixIn;
+import com.microsoft.recognizers.text.tests.helpers.ExtendedModelResultMixIn;
 import com.microsoft.recognizers.text.tests.helpers.ExtractResultMixIn;
 import com.microsoft.recognizers.text.tests.helpers.ModelResultMixIn;
 import org.apache.commons.io.FileUtils;
@@ -57,22 +55,22 @@ public abstract class AbstractTest {
         for (Map.Entry<String, Integer> entry : testCounter.entrySet()) {
             int skipped = skipCounter.getOrDefault(entry.getKey(), 0);
             if (entry.getValue() > skipped) {
-                counter.put(entry.getKey(), entry.getValue().toString());
+                counter.put(entry.getKey(), String.format("%7d", entry.getValue()));
             }
         }
         for (Map.Entry<String, String> entry : counter.entrySet()) {
             Integer passValue = passCounter.getOrDefault(entry.getKey(), 0);
             Integer failValue = failCounter.getOrDefault(entry.getKey(), 0);
             Integer skipValue = skipCounter.getOrDefault(entry.getKey(), 0);
-            counter.put(entry.getKey(), "|\t" + entry.getValue() + "\t|\t" + passValue.toString() + "\t|\t" + skipValue.toString() + "\t|\t" + failValue.toString());
+            counter.put(entry.getKey(), String.format("|%s  |%7d  |%7d  |%7d  ", entry.getValue(), passValue, skipValue, failValue));
         }
         print(counter);
     }
 
     private static void print(Map<String, String> map) {
-        System.out.println("|\tTOTAL\t|\tPassed\t|\tSkipped\t|\tFailed\t||| Key");
+        System.out.println("|  TOTAL  |  Passed | Skipped |  Failed || Key");
         for (Map.Entry<String, String> entry : map.entrySet()) {
-            System.out.println(entry.getValue() + "\t||| " + entry.getKey());
+            System.out.println(entry.getValue() + "|| " + entry.getKey());
         }
     }
 
@@ -150,7 +148,9 @@ public abstract class AbstractTest {
                     Assert.assertEquals(getMessage(currentCase, "typeName"), expected.typeName, actual.typeName);
                     Assert.assertEquals(getMessage(currentCase, "text"), expected.text, actual.text);
 
-                    Assert.assertEquals(getMessage(currentCase, "resolution.value"), expected.resolution.get(ResolutionKey.Value), actual.resolution.get(ResolutionKey.Value));
+                    if (expected.resolution.containsKey(ResolutionKey.Value)) {
+                        Assert.assertEquals(getMessage(currentCase, "resolution.value"), expected.resolution.get(ResolutionKey.Value), actual.resolution.get(ResolutionKey.Value));
+                    }
 
                     for (String key : testResolutionKeys) {
                         Assert.assertEquals(getMessage(currentCase, key), expected.resolution.get(key), actual.resolution.get(key));
@@ -243,6 +243,7 @@ public abstract class AbstractTest {
         ObjectMapper mapper = new ObjectMapper();
         mapper.configure(MapperFeature.ACCEPT_CASE_INSENSITIVE_PROPERTIES, true);
         mapper.addMixIn(ModelResult.class, ModelResultMixIn.class);
+        mapper.addMixIn(ExtendedModelResult.class, ExtendedModelResultMixIn.class);
 
         try {
             String json = mapper.writeValueAsString(result);

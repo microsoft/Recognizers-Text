@@ -3775,7 +3775,6 @@
   },
   {
     "Input": "Let's go on Feb 1st no later than 6:00",
-    "Debug": "true",
     "Context": {
       "ReferenceDateTime": "2018-06-26T00:00:00"
     },

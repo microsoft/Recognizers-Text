@@ -77,10 +77,10 @@ public class EnglishDateTimePeriodExtractorConfiguration implements IDateTimePer
 
         cardinalExtractor = CardinalExtractor.getInstance();
         singleDateExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration());
-        singleTimeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration());
-        singleDateTimeExtractor = new BaseDateTimeExtractor(new EnglishDateTimeExtractorConfiguration());
+        singleTimeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration(options));
+        singleDateTimeExtractor = new BaseDateTimeExtractor(new EnglishDateTimeExtractorConfiguration(options));
         durationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration(options));
-        timePeriodExtractor = new BaseTimePeriodExtractor(new EnglishTimePeriodExtractorConfiguration());
+        timePeriodExtractor = new BaseTimePeriodExtractor(new EnglishTimePeriodExtractorConfiguration(options));
 
         weekDayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.WeekDayRegex, flags);
         rangeConnectorRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RangeConnectorRegex, flags);

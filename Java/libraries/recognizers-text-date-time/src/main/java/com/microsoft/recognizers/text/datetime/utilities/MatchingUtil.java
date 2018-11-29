@@ -56,8 +56,8 @@ public class MatchingUtil {
 
         for (MatchResult<String> match : superfluousWordMatches)
         {
-            StringBuilder sb = new StringBuilder(text);
-            text = sb.delete(match.getStart() - bias, match.getLength()).toString();
+            text = text.substring(0, match.getStart() - bias) + text.substring(match.getEnd() - bias);
+            bias += match.getLength();
         }
 
         return new ProcessedSuperfluousWords(text, superfluousWordMatches);
@@ -68,24 +68,27 @@ public class MatchingUtil {
     {
         for (MatchResult<String> match : superfluousWordMatches)
         {
-            for (ExtractResult extractResult : extractResults)
+            for (ExtractResult extractResult : extractResults.toArray(new ExtractResult[0]))
             {
+                int index = 0;
                 int extractResultEnd = extractResult.start + extractResult.length;
                 if (match.getStart() > extractResult.start && extractResultEnd >= match.getStart())
                 {
-                    extractResult = extractResult.withLength(extractResult.length + match.getLength());
+                    extractResults.set(index, extractResult.withLength(extractResult.length + match.getLength()));
                 }
 
                 if (match.getStart() <= extractResult.start)
                 {
-                    extractResult = extractResult.withStart(extractResult.start + match.getLength() );
+                    extractResults.set(index, extractResult.withStart(extractResult.start + match.getLength()));
                 }
+                index++;
             }
         }
 
-        for (ExtractResult extractResult : extractResults)
-        {
-            extractResult = extractResult.withText(originText.substring(extractResult.start, extractResult.start + extractResult.length));
+        int index = 0;
+        for (ExtractResult er : extractResults.toArray(new ExtractResult[0])) {
+            extractResults.set(index, er.withText(originText.substring(er.start, er.start + er.length)));
+            index++;
         }
 
         return  extractResults;
