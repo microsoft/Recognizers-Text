@@ -1,14 +1,14 @@
 package com.microsoft.recognizers.text.datetime.english.extractors;
 
-import java.util.ArrayList;
-import java.util.regex.Pattern;
-
 import com.microsoft.recognizers.text.datetime.extractors.BaseDateExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.BaseDatePeriodExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.IDateTimeExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.config.IDateTimeAltExtractorConfiguration;
 import com.microsoft.recognizers.text.datetime.resources.EnglishDateTime;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
+
+import java.util.ArrayList;
+import java.util.regex.Pattern;
 
 public class EnglishDateTimeAltExtractorConfiguration implements IDateTimeAltExtractorConfiguration {
 
@@ -72,7 +72,7 @@ public class EnglishDateTimeAltExtractorConfiguration implements IDateTimeAltExt
     }
 
     @Override
-	public Pattern getDayRegex() {
-		return DayRegex;
-	}
+    public Pattern getDayRegex() {
+        return DayRegex;
+    }
 }

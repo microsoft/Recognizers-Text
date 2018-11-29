@@ -266,9 +266,9 @@ public class EnglishDatePeriodExtractorConfiguration implements IDatePeriodExtra
         return numberParser;
     }
 
-	@Override
-	public String[] getDurationDateRestrictions() {
-		return durationDateRestrictions;
+    @Override
+    public String[] getDurationDateRestrictions() {
+        return durationDateRestrictions;
     }
     
     public DateTimeOptions getOptions() {
