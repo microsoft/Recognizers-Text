@@ -42,7 +42,7 @@ public class AcAutomation<T> extends AbstractMatcher<T> {
 
             if (node.children != null) {
                 for (Object item : node.getIterable()) {
-                    queue.offer((AaNode<T>) item);
+                    queue.offer((AaNode<T>)item);
                 }
             }
 

@@ -25,7 +25,7 @@ public class AaNode<T> extends Node<T> {
     }
 
     AaNode<T> get(T c) {
-        return children != null && children.containsKey(c) ? (AaNode<T>) children.get(c) : null;
+        return children != null && children.containsKey(c) ? (AaNode<T>)children.get(c) : null;
     }
 
     void put(T c, AaNode<T> value) {
@@ -38,12 +38,12 @@ public class AaNode<T> extends Node<T> {
 
     @Override
     Iterator getEnumerator() {
-        return children != null ? children.values().stream().map(x -> (AaNode<T>) x).iterator() : null;
+        return children != null ? children.values().stream().map(x -> (AaNode<T>)x).iterator() : null;
     }
 
     @Override
     Iterable getIterable() {
-        return  children != null ? (Iterable) children.values().stream().map(x -> (AaNode<T>) x) : null;
+        return  children != null ? (Iterable)children.values().stream().map(x -> (AaNode<T>)x) : null;
     }
 
     @Override
