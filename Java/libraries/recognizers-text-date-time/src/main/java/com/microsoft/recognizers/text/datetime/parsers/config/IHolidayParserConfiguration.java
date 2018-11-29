@@ -11,9 +11,14 @@ import java.util.regex.Pattern;
 
 public interface IHolidayParserConfiguration extends IOptionsConfiguration {
     ImmutableMap<String, String> getVariableHolidaysTimexDictionary();
+
     ImmutableMap<String, IntFunction<LocalDateTime>> getHolidayFuncDictionary();
+
     ImmutableMap<String, Iterable<String>> getHolidayNames();
+
     Iterable<Pattern> getHolidayRegexList();
+
     int getSwiftYear(String text);
+
     String sanitizeHolidayToken(String holiday);
 }

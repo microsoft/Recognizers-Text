@@ -86,14 +86,14 @@ public class BaseDateTimePeriodParser implements IDateTimeParser {
             if (innerResult.getSuccess()) {
                 if (!isBeforeOrAfterMod(innerResult.getMod())) {
                     Map<String, String> futureResolution = ImmutableMap.<String, String>builder()
-                        .put(TimeTypeConstants.START_DATETIME, FormatUtil.formatDateTime(((Pair<LocalDateTime, LocalDateTime>) innerResult.getFutureValue()).getValue0()))
-                        .put(TimeTypeConstants.END_DATETIME, FormatUtil.formatDateTime(((Pair<LocalDateTime, LocalDateTime>) innerResult.getFutureValue()).getValue1()))
+                        .put(TimeTypeConstants.START_DATETIME, FormatUtil.formatDateTime(((Pair<LocalDateTime, LocalDateTime>)innerResult.getFutureValue()).getValue0()))
+                        .put(TimeTypeConstants.END_DATETIME, FormatUtil.formatDateTime(((Pair<LocalDateTime, LocalDateTime>)innerResult.getFutureValue()).getValue1()))
                         .build();
                     innerResult.setFutureResolution(futureResolution);
 
                     Map<String, String> pastResolution = ImmutableMap.<String, String>builder()
-                        .put(TimeTypeConstants.START_DATETIME, FormatUtil.formatDateTime(((Pair<LocalDateTime, LocalDateTime>) innerResult.getPastValue()).getValue0()))
-                        .put(TimeTypeConstants.END_DATETIME, FormatUtil.formatDateTime(((Pair<LocalDateTime, LocalDateTime>) innerResult.getPastValue()).getValue1()))
+                        .put(TimeTypeConstants.START_DATETIME, FormatUtil.formatDateTime(((Pair<LocalDateTime, LocalDateTime>)innerResult.getPastValue()).getValue0()))
+                        .put(TimeTypeConstants.END_DATETIME, FormatUtil.formatDateTime(((Pair<LocalDateTime, LocalDateTime>)innerResult.getPastValue()).getValue1()))
                         .build();
                     innerResult.setPastResolution(pastResolution);
 
@@ -101,23 +101,23 @@ public class BaseDateTimePeriodParser implements IDateTimeParser {
                     if (innerResult.getMod().equals(Constants.AFTER_MOD)) {
                         // Cases like "1/1/2015 after 2:00" there is no EndTime
                         Map<String, String> futureResolution = ImmutableMap.<String, String>builder()
-                            .put(TimeTypeConstants.START_DATETIME, FormatUtil.formatDateTime((LocalDateTime) innerResult.getFutureValue()))
+                            .put(TimeTypeConstants.START_DATETIME, FormatUtil.formatDateTime((LocalDateTime)innerResult.getFutureValue()))
                             .build();
                         innerResult.setFutureResolution(futureResolution);
 
                         Map<String, String> pastResolution = ImmutableMap.<String, String>builder()
-                            .put(TimeTypeConstants.START_DATETIME, FormatUtil.formatDateTime((LocalDateTime) innerResult.getPastValue()))
+                            .put(TimeTypeConstants.START_DATETIME, FormatUtil.formatDateTime((LocalDateTime)innerResult.getPastValue()))
                             .build();
                         innerResult.setPastResolution(pastResolution);
                     } else {
                         // Cases like "1/1/2015 before 5:00 in the afternoon" there is no StartTime
                         Map<String, String> futureResolution = ImmutableMap.<String, String>builder()
-                            .put(TimeTypeConstants.END_DATETIME, FormatUtil.formatDateTime((LocalDateTime) innerResult.getFutureValue()))
+                            .put(TimeTypeConstants.END_DATETIME, FormatUtil.formatDateTime((LocalDateTime)innerResult.getFutureValue()))
                             .build();
                         innerResult.setFutureResolution(futureResolution);
 
                         Map<String, String> pastResolution = ImmutableMap.<String, String>builder()
-                            .put(TimeTypeConstants.END_DATETIME, FormatUtil.formatDateTime((LocalDateTime) innerResult.getPastValue()))
+                            .put(TimeTypeConstants.END_DATETIME, FormatUtil.formatDateTime((LocalDateTime)innerResult.getPastValue()))
                             .build();
                         innerResult.setPastResolution(pastResolution);
                     }
@@ -156,7 +156,7 @@ public class BaseDateTimePeriodParser implements IDateTimeParser {
         }
 
         ParseResult timePeriodParseResult = config.getTimePeriodParser().parse(ers.get(0));
-        DateTimeResolutionResult timePeriodResolutionResult = (DateTimeResolutionResult) timePeriodParseResult.value;
+        DateTimeResolutionResult timePeriodResolutionResult = (DateTimeResolutionResult)timePeriodParseResult.value;
 
         if (timePeriodResolutionResult == null) {
             return parseSimpleCases(text, referenceDate);
@@ -191,7 +191,7 @@ public class BaseDateTimePeriodParser implements IDateTimeParser {
 
                 timePeriodTimex = timePeriodTimex.replace("(", "").replace(")", "");
                 String[] timePeriodTimexArray = timePeriodTimex.split(",");
-                Pair<LocalDateTime, LocalDateTime> timePeriodFutureValue = (Pair<LocalDateTime, LocalDateTime>) timePeriodResolutionResult.getFutureValue();
+                Pair<LocalDateTime, LocalDateTime> timePeriodFutureValue = (Pair<LocalDateTime, LocalDateTime>)timePeriodResolutionResult.getFutureValue();
                 LocalDateTime beginTime = timePeriodFutureValue.getValue0();
                 LocalDateTime endTime = timePeriodFutureValue.getValue1();
 
@@ -448,8 +448,8 @@ public class BaseDateTimePeriodParser implements IDateTimeParser {
             result.setTimex(String.format("(%s,%s,PT%dH)", dateStr + pr1.timexStr, pr2.timexStr, ChronoUnit.HOURS.between(futureBegin, futureEnd)));
         }
         
-        DateTimeResolutionResult pr1Value = (DateTimeResolutionResult) pr1.value;
-        DateTimeResolutionResult pr2Value = (DateTimeResolutionResult) pr2.value;
+        DateTimeResolutionResult pr1Value = (DateTimeResolutionResult)pr1.value;
+        DateTimeResolutionResult pr2Value = (DateTimeResolutionResult)pr2.value;
 
         String ampmStr1 = pr1Value.getComment();
         String ampmStr2 = pr2Value.getComment();
@@ -871,7 +871,7 @@ public class BaseDateTimePeriodParser implements IDateTimeParser {
             if (match.isPresent()) {
                 DateTimeParseResult pr = config.getDateParser().parse(dateResult.get(dateResult.size() - 1), referenceDate);
                 if (pr.value != null) {
-                    LocalDateTime startTime = (LocalDateTime) ((DateTimeResolutionResult) pr.value).getFutureValue();
+                    LocalDateTime startTime = (LocalDateTime)((DateTimeResolutionResult)pr.value).getFutureValue();
                     startTime = LocalDateTime.of(startTime.getYear(), startTime.getMonthValue(), startTime.getDayOfMonth(), 0, 0, 0);
                     LocalDateTime endTime = startTime;
 
@@ -924,10 +924,10 @@ public class BaseDateTimePeriodParser implements IDateTimeParser {
                     if (datePr != null && timePr != null) {
                         DateTimeResolutionResult timeResolutionResult = (DateTimeResolutionResult)timePr.value;
                         DateTimeResolutionResult dateResolutionResult = (DateTimeResolutionResult)datePr.value;
-                        LocalDateTime futureDateValue = (LocalDateTime) dateResolutionResult.getFutureValue();
-                        LocalDateTime pastDateValue = (LocalDateTime) dateResolutionResult.getPastValue();
-                        LocalDateTime futureTimeValue = (LocalDateTime) timeResolutionResult.getFutureValue();
-                        LocalDateTime pastTimeValue = (LocalDateTime) timeResolutionResult.getPastValue();
+                        LocalDateTime futureDateValue = (LocalDateTime)dateResolutionResult.getFutureValue();
+                        LocalDateTime pastDateValue = (LocalDateTime)dateResolutionResult.getPastValue();
+                        LocalDateTime futureTimeValue = (LocalDateTime)timeResolutionResult.getFutureValue();
+                        LocalDateTime pastTimeValue = (LocalDateTime)timeResolutionResult.getPastValue();
 
                         result.setComment(timeResolutionResult.getComment());
                         result.setTimex(datePr.timexStr + timePr.timexStr);

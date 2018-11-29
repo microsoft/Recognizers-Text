@@ -32,9 +32,9 @@ public class EnglishHolidayParserConfiguration extends BaseHolidayParserConfigur
     }
 
     @Override
-    protected HashMap<String, IntFunction<LocalDateTime>> InitHolidayFuncs() {
+    protected HashMap<String, IntFunction<LocalDateTime>> initHolidayFuncs() {
 
-        HashMap<String, IntFunction<LocalDateTime>> holidays = new HashMap<>(super.InitHolidayFuncs());
+        HashMap<String, IntFunction<LocalDateTime>> holidays = new HashMap<>(super.initHolidayFuncs());
         holidays.put("mayday", EnglishHolidayParserConfiguration::mayday);
         holidays.put("yuandan", EnglishHolidayParserConfiguration::newYear);
         holidays.put("newyear", EnglishHolidayParserConfiguration::newYear);

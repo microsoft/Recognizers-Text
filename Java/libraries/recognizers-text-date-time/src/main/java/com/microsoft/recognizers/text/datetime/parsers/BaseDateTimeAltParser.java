@@ -184,6 +184,8 @@ public class BaseDateTimeAltParser implements IDateTimeParser {
                     futureStartPointResolution = FormatUtil.formatTime(((Pair<LocalDateTime, LocalDateTime>)ret.getFutureValue()).getValue0());
                     futureEndPointResolution = FormatUtil.formatTime(((Pair<LocalDateTime, LocalDateTime>)ret.getFutureValue()).getValue1());
                     break;
+                default:
+                    break;
             }
         } else {
             isSinglePoint = true;
@@ -201,6 +203,8 @@ public class BaseDateTimeAltParser implements IDateTimeParser {
                 case Constants.SYS_DATETIME_TIME:
                     singlePointType = TimeTypeConstants.TIME;
                     singlePointResolution = FormatUtil.formatTime((LocalDateTime)ret.getFutureValue());
+                    break;
+                default:
                     break;
             }
         }
