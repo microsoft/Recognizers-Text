@@ -30,10 +30,10 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 DateTimeResolutionResult innerResult;
 
-                if ((config.Options & DateTimeOptions.EnablePreview) != 0 &&
-                    er.Data is KeyValuePair<string, ExtractResult>)
+                if (TimeZoneUtility.ShouldResolveTimeZone(er, config.Options))
                 {
-                    var timezoneEr = ((KeyValuePair<string, ExtractResult>)er.Data).Value;
+                    var metadata = er.Data as Dictionary<string, object>;
+                    var timezoneEr = metadata[Constants.SYS_DATETIME_TIMEZONE] as ExtractResult;
                     var timezonePr = config.TimeZoneParser.Parse(timezoneEr);
 
                     innerResult = InternalParse(er.Text.Substring(0, (int)(er.Length - timezoneEr.Length)),

@@ -615,6 +615,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "java",
     "Results": [
       {
         "Text": "end of tomorrow",
@@ -624,9 +625,9 @@
         "Resolution": {
           "values": [
             {
-              "timex": "2016-11-08T23:59",
+              "timex": "2016-11-08T23:59:59",
               "type": "datetime",
-              "value": "2016-11-08 23:59:00"
+              "value": "2016-11-08 23:59:59"
             }
           ]
         }
@@ -638,6 +639,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "java",
     "Results": [
       {
         "Text": "end of the sunday",
@@ -647,14 +649,14 @@
         "Resolution": {
           "values": [
             {
-              "timex": "XXXX-WXX-7T23:59",
+              "timex": "XXXX-WXX-7T23:59:59",
               "type": "datetime",
-              "value": "2016-11-06 23:59:00"
+              "value": "2016-11-06 23:59:59"
             },
             {
-              "timex": "XXXX-WXX-7T23:59",
+              "timex": "XXXX-WXX-7T23:59:59",
               "type": "datetime",
-              "value": "2016-11-13 23:59:00"
+              "value": "2016-11-13 23:59:59"
             }
           ]
         }
@@ -666,6 +668,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "java",
     "Results": [
       {
         "Text": "end of this sunday",
@@ -675,9 +678,9 @@
         "Resolution": {
           "values": [
             {
-              "timex": "2016-11-13T23:59",
+              "timex": "2016-11-13T23:59:59",
               "type": "datetime",
-              "value": "2016-11-13 23:59:00"
+              "value": "2016-11-13 23:59:59"
             }
           ]
         }
@@ -8663,12 +8666,324 @@
     ]
   },
   {
-    "Input": "Can you please find time for a conference call on Wednesday, Thursday or Friday, between 9-6 PT?",
+    "Input": "Cortana, please find us 30 minutes on 11/20, 11/22 or 11/25",
     "Context": {
-      "ReferenceDateTime": "2018-11-30T12:00:00"
+      "ReferenceDateTime": "2018-11-28T12:00:00"
     },
     "NotSupportedByDesign": "java",
     "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "30 minutes",
+        "Start": 24,
+        "End": 33,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT30M",
+              "type": "duration",
+              "value": "1800"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "11/20",
+        "Start": 38,
+        "End": 42,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-11-20",
+              "type": "date",
+              "value": "2018-11-20"
+            },
+            {
+              "timex": "XXXX-11-20",
+              "type": "date",
+              "value": "2019-11-20"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "11/22",
+        "Start": 45,
+        "End": 49,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-11-22",
+              "type": "date",
+              "value": "2018-11-22"
+            },
+            {
+              "timex": "XXXX-11-22",
+              "type": "date",
+              "value": "2019-11-22"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "11/25",
+        "Start": 54,
+        "End": 58,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-11-25",
+              "type": "date",
+              "value": "2018-11-25"
+            },
+            {
+              "timex": "XXXX-11-25",
+              "type": "date",
+              "value": "2019-11-25"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "You shouldn't always go to bed end of the day since it will do harm to your health.",
+    "Context": {
+      "ReferenceDateTime": "2018-11-21T12:00:00"
+    },
+    "NotSupportedByDesign": "java",
+    "Results": [
+      {
+        "Text": "end of the day",
+        "Start": 31,
+        "End": 44,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-11-21T23:59:59",
+              "type": "datetime",
+              "value": "2018-11-21 23:59:59"  
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "You shouldn't always go to bed end of day since it will do harm to your health.",
+    "Context": {
+      "ReferenceDateTime": "2018-11-21T12:00:00"
+    },
+    "NotSupportedByDesign": "java",
+    "Results": [
+      {
+        "Text": "end of day",
+        "Start": 31,
+        "End": 40,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-11-21T23:59:59",
+              "type": "datetime",
+              "value": "2018-11-21 23:59:59"  
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Bob and Alice usually exchange their encrypted messages at the eod",
+    "Context": {
+      "ReferenceDateTime": "2018-11-21T12:00:00"
+    },
+    "NotSupportedByDesign": "java",
+    "Results": [
+      {
+        "Text": "the eod",
+        "Start": 59,
+        "End": 65,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-11-21T23:59:59",
+              "type": "datetime",
+              "value": "2018-11-21 23:59:59"  
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "A big party will be held at the EOY.",
+    "Context": {
+      "ReferenceDateTime": "2018-11-23T12:00:00"
+    },
+    "NotSupportedByDesign": "java",
+    "Results": [
+      {
+        "Text": "eoy",
+        "Start": 32,
+        "End": 34,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018",
+              "Mod": "end",
+              "type": "daterange",
+              "start": "2018-07-01",
+              "end": "2019-01-01"  
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Do you know the date? 11/20, 12 of Nov?",
+    "Context": {
+      "ReferenceDateTime": "2018-11-28T12:00:00"
+    },
+    "NotSupportedByDesign": "java",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "11/20",
+        "Start": 22,
+        "End": 26,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-11-20",
+              "type": "date",
+              "value": "2018-11-20"
+            },
+            {
+              "timex": "XXXX-11-20",
+              "type": "date",
+              "value": "2019-11-20"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "12 of nov",
+        "Start": 29,
+        "End": 37,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-11-12",
+              "type": "date",
+              "value": "2018-11-12"
+            },
+            {
+              "timex": "XXXX-11-12",
+              "type": "date",
+              "value": "2019-11-12"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "A big party will be held at the end of year.",
+    "Context": {
+      "ReferenceDateTime": "2018-11-23T12:00:00"
+    },
+    "NotSupportedByDesign": "java",
+    "Results": [
+      {
+        "Text": "end of year",
+        "Start": 32,
+        "End": 42,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018",
+              "Mod": "end",
+              "type": "daterange",
+              "start": "2018-07-01",
+              "end": "2019-01-01"  
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I heard you will hold a birthday party end of month",
+    "Context": {
+      "ReferenceDateTime": "2018-11-27T12:00:00"
+    },
+    "NotSupportedByDesign": "java",
+    "Results": [
+      {
+        "Text": "end of month",
+        "Start": 39,
+        "End": 50,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-11",
+              "Mod": "end",
+              "type": "daterange",
+              "start": "2018-11-16",
+              "end": "2018-12-01"  
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Don't forget to push your code as all the disks will be renewed the end of the week.",
+    "Context": {
+      "ReferenceDateTime": "2018-11-29T12:00:00"
+    },
+    "NotSupportedByDesign": "java",
+    "Results": [
+      {
+        "Text": "end of the week",
+        "Start": 68,
+        "End": 82,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-W48",
+              "Mod": "end",
+              "type": "daterange",
+              "start": "2018-11-29",
+              "end": "2018-12-03"  
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Can you please find time for a conference call on Wednesday, Thursday or Friday, between 9-6 PT?",
+    "Context": {
+      "ReferenceDateTime": "2018-11-29T12:00:00"
+    },
+    "Comment": "Not supported as the TimeZone is not enabled for now",
+    "NotSupportedByDesign": "java",
+    "NotSupported": "javascript, python, dotnet",
     "Results": [
       {
         "Text": "wednesday",
@@ -8700,12 +9015,12 @@
             {
               "timex": "XXXX-WXX-4",
               "type": "date",
-              "value": "2018-11-29"
+              "value": "2018-11-22"
             },
             {
               "timex": "XXXX-WXX-4",
               "type": "date",
-              "value": "2018-12-06"
+              "value": "2018-11-29"
             }
           ]
         }
@@ -8731,21 +9046,27 @@
         }
       },
       {
-        "Text": "between 9-6",
+        "Text": "between 9-6 pt",
         "Start": 81,
-        "End": 91,
+        "End": 94,
         "TypeName": "datetimeV2.timerange",
         "Resolution": {
           "values": [
             {
               "timex": "(T09,T18,PT9H)",
               "type": "timerange",
+              "timezone": "UTC-07:00",
+              "timezoneText": "pt",
+              "utcOffsetMins": "-420",
               "start": "09:00:00",
               "end": "18:00:00"
             },
             {
               "timex": "(T21,T06,PT9H)",
               "type": "timerange",
+              "timezone": "UTC-07:00",
+              "timezoneText": "pt",
+              "utcOffsetMins": "-420",
               "start": "21:00:00",
               "end": "06:00:00"
             }
@@ -8759,25 +9080,32 @@
     "Context": {
       "ReferenceDateTime": "2018-11-28T12:00:00"
     },
+    "Comment": "Not supported as the TimeZone is not enabled for now",
     "NotSupportedByDesign": "java",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript, python, dotnet",
     "Results": [
       {
-        "Text": "between 6:30 to 9",
+        "Text": "between 6:30 to 9 pst",
         "Start": 10,
-        "End": 26,
+        "End": 30,
         "TypeName": "datetimeV2.timerange",
         "Resolution": {
           "values": [
             {
               "timex": "(T06:30,T09,PT2H30M)",
               "type": "timerange",
+              "timezone": "UTC-08:00",
+              "timezoneText": "pst",
+              "utcOffsetMins": "-480",
               "start": "06:30:00",
               "end": "09:00:00"
             },
             {
               "timex": "(T18:30,T21,PT2H30M)",
               "type": "timerange",
+              "timezone": "UTC-08:00",
+              "timezoneText": "pst",
+              "utcOffsetMins": "-480",
               "start": "18:30:00",
               "end": "21:00:00"
             }
@@ -8791,25 +9119,32 @@
     "Context": {
       "ReferenceDateTime": "2018-11-28T12:00:00"
     },
+    "Comment": "Not supported as the TimeZone is not enabled for now",
     "NotSupportedByDesign": "java",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript, python, dotnet",
     "Results": [
       {
-        "Text": "between 9 to 10:30",
-        "Start": 10,
-        "End": 27,
+        "Text": " between 9 to 10:30 cst",
+        "Start": 9,
+        "End": 31,
         "TypeName": "datetimeV2.timerange",
         "Resolution": {
           "values": [
             {
               "timex": "(T09,T10:30,PT1H30M)",
               "type": "timerange",
+              "timezone": "UTC+XX:XX",
+              "timezoneText": "cst",
+              "utcOffsetMins": "-10000",
               "start": "09:00:00",
               "end": "10:30:00"
             },
             {
               "timex": "(T21,T22:30,PT1H30M)",
               "type": "timerange",
+              "timezone": "UTC+XX:XX",
+              "timezoneText": "cst",
+              "utcOffsetMins": "-10000",
               "start": "21:00:00",
               "end": "22:30:00"
             }

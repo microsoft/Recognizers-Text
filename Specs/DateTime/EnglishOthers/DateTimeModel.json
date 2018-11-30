@@ -862,5 +862,90 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Cortana, please find us 30 minutes on 11/5, 11/6 or 11/7",
+    "Context": {
+      "ReferenceDateTime": "2018-11-28T12:00:00"
+    },
+    "NotSupportedByDesign": "java, python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "30 minutes",
+        "Start": 24,
+        "End": 33,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT30M",
+              "type": "duration",
+              "value": "1800"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "11/5",
+        "Start": 38,
+        "End": 41,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-05-11",
+              "type": "date",
+              "value": "2018-05-11"
+            },
+            {
+              "timex": "XXXX-05-11",
+              "type": "date",
+              "value": "2019-05-11"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "11/6",
+        "Start": 44,
+        "End": 47,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-06-11",
+              "type": "date",
+              "value": "2018-06-11"
+            },
+            {
+              "timex": "XXXX-06-11",
+              "type": "date",
+              "value": "2019-06-11"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "11/7",
+        "Start": 52,
+        "End": 55,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-07-11",
+              "type": "date",
+              "value": "2018-07-11"
+            },
+            {
+              "timex": "XXXX-07-11",
+              "type": "date",
+              "value": "2019-07-11"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

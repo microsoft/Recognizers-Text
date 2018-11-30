@@ -42,9 +42,25 @@ export class EnglishDateExtractorConfiguration implements IDateExtractorConfigur
                 RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor4),
 
             RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor6),
-            RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor7),
+
+            EnglishDateTime.DefaultLanguageFallback === Constants.DefaultLanguageFallback_MDY?
+                RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor7L):
+                RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor9L),
+
+            EnglishDateTime.DefaultLanguageFallback === Constants.DefaultLanguageFallback_MDY?
+                RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor7S):
+                RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor9S),
+
             RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor8),
-            RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor9),
+
+            EnglishDateTime.DefaultLanguageFallback === Constants.DefaultLanguageFallback_MDY?
+                RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor9L):
+                RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor7L),
+
+            EnglishDateTime.DefaultLanguageFallback === Constants.DefaultLanguageFallback_MDY?
+                RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor9S):
+                RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor7S),
+
             RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractorA),
         ];
         this.implicitDateList = [

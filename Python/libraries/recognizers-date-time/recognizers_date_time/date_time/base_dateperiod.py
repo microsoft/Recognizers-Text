@@ -449,6 +449,11 @@ class DatePeriodParserConfiguration(ABC):
 
     @property
     @abstractmethod
+    def unspecific_end_of_range_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
     def token_before_date(self) -> str:
         raise NotImplementedError
 
@@ -752,6 +757,11 @@ class BaseDatePeriodParser(DateTimeParser):
             mid_prefix = True
             trimmed_source = match.group('suffix')
             result.mod = TimeTypeConstants.MID_MOD
+
+        if self.config.unspecific_end_of_range_regex is not None and self.config.unspecific_end_of_range_regex.match(match.string):
+            late_prefix = True
+            trimmed_source = match.string
+            result.mod = TimeTypeConstants.LATE_MOD
 
         if RegExpUtility.get_group(match, 'RelEarly'):
             early_prefix = True

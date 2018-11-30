@@ -79,9 +79,11 @@ class EnglishDateExtractorConfiguration(DateExtractorConfiguration):
             RegExpUtility.get_safe_reg_exp(EnglishDateTime.DateExtractor4),
             RegExpUtility.get_safe_reg_exp(EnglishDateTime.DateExtractor5),
             RegExpUtility.get_safe_reg_exp(EnglishDateTime.DateExtractor6),
-            RegExpUtility.get_safe_reg_exp(EnglishDateTime.DateExtractor7),
+            RegExpUtility.get_safe_reg_exp(EnglishDateTime.DateExtractor7L),
+            RegExpUtility.get_safe_reg_exp(EnglishDateTime.DateExtractor7S),
             RegExpUtility.get_safe_reg_exp(EnglishDateTime.DateExtractor8),
-            RegExpUtility.get_safe_reg_exp(EnglishDateTime.DateExtractor9),
+            RegExpUtility.get_safe_reg_exp(EnglishDateTime.DateExtractor9L),
+            RegExpUtility.get_safe_reg_exp(EnglishDateTime.DateExtractor9S),
             RegExpUtility.get_safe_reg_exp(EnglishDateTime.DateExtractorA),
         ]
         self._implicit_date_list = [

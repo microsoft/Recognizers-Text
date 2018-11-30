@@ -25,13 +25,34 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                             er.Text = text.Substring((int)er.Start, newLength);
                             er.Length = newLength;
-                            er.Data = new KeyValuePair<string, ExtractResult>(Constants.SYS_DATETIME_TIMEZONE, timeZoneEr);
+                            er.Data = new Dictionary<string, object>()
+                            {
+                                { Constants.SYS_DATETIME_TIMEZONE, timeZoneEr }
+                            };
                         }
                     }
                 }
             }
 
             return originalErs;
+        }
+
+        public static bool ShouldResolveTimeZone(ExtractResult er, DateTimeOptions options)
+        {
+            var enablePreview = (options & DateTimeOptions.EnablePreview) != 0;
+            var hasTimeZoneData = false;
+
+            if (er.Data is Dictionary<string, object>)
+            {
+                var metadata = er.Data as Dictionary<string, object>;
+
+                if (metadata != null && metadata.ContainsKey(Constants.SYS_DATETIME_TIMEZONE))
+                {
+                    hasTimeZoneData = true;
+                }
+            }
+
+            return enablePreview && hasTimeZoneData;
         }
     }
 }

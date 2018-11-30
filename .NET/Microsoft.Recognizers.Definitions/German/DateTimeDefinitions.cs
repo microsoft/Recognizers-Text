@@ -24,6 +24,7 @@ namespace Microsoft.Recognizers.Definitions.German
 		public const string NextPrefixRegex = @"(nächst(er|en|es|e)|kommend(er|en|es|e))";
 		public const string PastPrefixRegex = @"(letzt(er|en|es|e)|vergangen(er|en|es|e)|vorherig(er|en|es|e)|vorig(er|en|es|e)|vor|nach)";
 		public const string ThisPrefixRegex = @"(dies(er|en|em|es|e)|jetzig(er|en|es|e))";
+		public const string RangePrefixRegex = @"(von|vom|zwischen)";
 		public const string DayRegex = @"((der|dem|des|den)\s*)?(?<day>(01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|1|20|21|22|23|24|25|26|27|28|29|2|30|31|3|4|5|6|7|8|9))(\.)?";
 		public const string MonthNumRegex = @"(?<month>01([\.])?|02([\.])?|03([\.])?|04([\.])?|05([\.])?|06([\.])?|07([\.])?|08([\.])?|09([\.])?|10([\.])?|11([\.])?|12([\.])?|1([\.])?|2([\.])?|3([\.])?|4([\.])?|5([\.])?|6([\.])?|7([\.])?|8([\.])?|9([\.])?)";
 		public static readonly string DescRegex = $@"({OclockRegex})";
@@ -147,7 +148,9 @@ namespace Microsoft.Recognizers.Definitions.German
 		public static readonly string TimeOfTodayBeforeRegex = $@"{DateTimeSpecificTimeOfDayRegex}(\s*,)?(\s+(um|gegen|in|on))?\s*$";
 		public static readonly string SimpleTimeOfTodayAfterRegex = $@"({HourNumRegex}|{BaseDateTime.HourRegex})\s*(,\s*)?(am\s+)?{DateTimeSpecificTimeOfDayRegex}";
 		public static readonly string SimpleTimeOfTodayBeforeRegex = $@"{DateTimeSpecificTimeOfDayRegex}(\s*,)?(\s+um)?\s*({HourNumRegex}|{BaseDateTime.HourRegex})";
-		public const string TheEndOfRegex = @"((das|am|dem|an dem)\s+)?ende(\s+(dem|den|des|der)?)\s*";
+		public const string SpecificEndOfRegex = @"((das|am|dem|an dem)\s+)?ende(\s+(dem|den|des|der)?)\s*";
+		public const string UnspecificEndOfRegex = @"^[.]";
+		public const string UnspecificEndOfRangeRegex = @"^[.]";
 		public const string PeriodTimeOfDayRegex = @"\b(((?<early>(früh am|früher|am frühen)(\s+|-))|(?<late>(spät am|später|am späten)(\s+|-)))?(?<timeOfDay>morgen(s)?|vormittag(s)?|mittag(s)?|nachmittag(s)?|nacht(s)?|abend(s)?))\b";
 		public static readonly string PeriodSpecificTimeOfDayRegex = $@"(({StrictRelativeRegex}\s+{PeriodTimeOfDayRegex})|heute)";
 		public static readonly string PeriodTimeOfDayWithDateRegex = $@"\b((((am|von|in der)\s+)?{TimeOfDayRegex}(\s+am)?))\b";

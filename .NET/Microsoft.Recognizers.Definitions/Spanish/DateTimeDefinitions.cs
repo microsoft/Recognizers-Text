@@ -25,6 +25,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
 		public const string AmDescRegex = @"(am\b|a\.m\.|a m\b|a\. m\.\b|a\.m\b|a\. m\b)";
 		public const string PmDescRegex = @"(pm\b|p\.m\.|p\b|p m\b|p\. m\.\b|p\.m\b|p\. m\b)";
 		public const string AmPmDescRegex = @"(ampm)";
+		public const string RangePrefixRegex = @"((desde|de|entre)\s+(la(s)?\s+)?)";
 		public static readonly string TwoDigitYearRegex = $@"\b(?<![$])(?<year>([0-27-9]\d))(?!(\s*((\:)|{AmDescRegex}|{PmDescRegex}|\.\d)))\b";
 		public const string FullTextYearRegex = @"^[\*]";
 		public static readonly string YearRegex = $@"({BaseDateTime.FourDigitYearRegex}|{FullTextYearRegex})";
@@ -126,7 +127,9 @@ namespace Microsoft.Recognizers.Definitions.Spanish
 		public static readonly string TimeOfTodayBeforeRegex = $@"({SpecificTimeOfDayRegex}(\s*,)?(\s+(a\s+la(s)?|para))?\s*)";
 		public static readonly string SimpleTimeOfTodayAfterRegex = $@"({HourNumRegex}|{BaseDateTime.HourRegex})\s*(,\s*)?((en|de(l)?)?\s+)?{SpecificTimeOfDayRegex}";
 		public static readonly string SimpleTimeOfTodayBeforeRegex = $@"({SpecificTimeOfDayRegex}(\s*,)?(\s+(a\s+la|para))?\s*({HourNumRegex}|{BaseDateTime.HourRegex}))";
-		public const string TheEndOfRegex = @"((a|e)l\s+)?fin(alizar|al)?(\s+(el|de(l)?)(\s+d[ií]a)?(\s+de)?)?\s*$";
+		public const string SpecificEndOfRegex = @"((a|e)l\s+)?fin(alizar|al)?(\s+(el|de(l)?)(\s+d[ií]a)?(\s+de)?)?\s*$";
+		public const string UnspecificEndOfRegex = @"^[.]";
+		public const string UnspecificEndOfRangeRegex = @"^[.]";
 		public const string UnitRegex = @"(?<unit>años|año|meses|mes|semanas|semana|d[ií]as|d[ií]a|horas|hora|h|hr|hrs|hs|minutos|minuto|mins|min|segundos|segundo|segs|seg)\b";
 		public const string ConnectorRegex = @"^(,|t|para la|para las|cerca de la|cerca de las)$";
 		public const string TimeHourNumRegex = @"(?<hour>veintiuno|veintidos|veintitres|veinticuatro|cero|uno|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|once|doce|trece|catorce|quince|diecis([eé])is|diecisiete|dieciocho|diecinueve|veinte)";
