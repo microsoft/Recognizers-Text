@@ -38,7 +38,7 @@ public class Constants {
     public static final String SubType = "subType";
 
     // Comment - internal tag used during entity processing, never exposed to users. 
-    // Tags are filtered out in BaseMergedDateTimeParser DateTimeResolution()
+    // Tags are filtered out in BaseMergedParser DateTimeResolution()
     public static final String Comment = "Comment";
     // AmPm time representation for time parser
     public static final String Comment_AmPm = "ampm";
@@ -114,4 +114,6 @@ public class Constants {
     public static final String SecondGroupName = "sec";
     public static final String MinuteGroupName = "min";
     public static final String HourGroupName = "hour";
+    public static final String GeneralPeriodPrefix = "P";
+    public static final String TimeTimexPrefix = "T";
 }

@@ -16,5 +16,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         Regex OrRegex { get; }
 
         Regex DayRegex { get; }
+
+        Regex RangePrefixRegex { get; }
     }
 }

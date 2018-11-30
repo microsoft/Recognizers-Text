@@ -133,6 +133,10 @@ class ChineseDatePeriodParserConfiguration(DatePeriodParserConfiguration):
         return self._week_with_week_day_range_regex
 
     @property
+    def unspecific_end_of_range_regex(self) -> any:
+        return None
+
+    @property
     def token_before_date(self) -> str:
         return self._token_before_date
 

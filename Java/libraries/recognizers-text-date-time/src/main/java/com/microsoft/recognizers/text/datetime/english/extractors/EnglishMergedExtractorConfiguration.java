@@ -6,6 +6,7 @@ import com.microsoft.recognizers.text.datetime.extractors.*;
 import com.microsoft.recognizers.text.datetime.extractors.config.IMergedExtractorConfiguration;
 import com.microsoft.recognizers.text.datetime.resources.EnglishDateTime;
 import com.microsoft.recognizers.text.matcher.StringMatcher;
+import com.microsoft.recognizers.text.number.english.extractors.IntegerExtractor;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
 
 import java.util.ArrayList;
@@ -23,19 +24,20 @@ public class EnglishMergedExtractorConfiguration implements IMergedExtractorConf
     public static final Pattern SingleAmbiguousMonthRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SingleAmbiguousMonthRegex, Pattern.CASE_INSENSITIVE);
     public static final Pattern UnspecificDatePeriodRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.UnspecificDatePeriodRegex, Pattern.CASE_INSENSITIVE);
 
+    public static final StringMatcher SuperfluousWordMatcher = new StringMatcher();
     private static final Iterable<Pattern> filterWordRegexList = new ArrayList<Pattern>() {
         {
             // one on one
             add(RegExpUtility.getSafeRegExp(EnglishDateTime.OneOnOneRegex, Pattern.CASE_INSENSITIVE));
 
             // (the)? (day|week|month|year)
-            add(RegExpUtility.getSafeRegExp(EnglishDateTime.OneOnOneRegex, Pattern.CASE_INSENSITIVE));
+            add(RegExpUtility.getSafeRegExp(EnglishDateTime.SingleAmbiguousTermsRegex, Pattern.CASE_INSENSITIVE));
         }
     };
 
     public final Iterable<Pattern> getFilterWordRegexList() { return filterWordRegexList; }
 
-    public final StringMatcher getSuperfluousWordMatcher() { return new StringMatcher(); }
+    public final StringMatcher getSuperfluousWordMatcher() { return SuperfluousWordMatcher; }
 
     private DateTimeOptions options;
     public final DateTimeOptions getOptions() { return options; }
@@ -80,7 +82,7 @@ public class EnglishMergedExtractorConfiguration implements IMergedExtractorConf
     {
         this.options = options;
 
-        setExtractor = new BaseSetExtractor(new EnglishSetExtractorConfiguration());
+        setExtractor = new BaseSetExtractor(new EnglishSetExtractorConfiguration(options));
         dateExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration());
         timeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration(options));
         holidayExtractor = new BaseHolidayExtractor(new EnglishHolidayExtractorConfiguration());
@@ -90,11 +92,10 @@ public class EnglishMergedExtractorConfiguration implements IMergedExtractorConf
         timeZoneExtractor = new BaseTimeZoneExtractor(new EnglishTimeZoneExtractorConfiguration(options));
         dateTimeAltExtractor = new BaseDateTimeAltExtractor(new EnglishDateTimeAltExtractorConfiguration());
         timePeriodExtractor = new BaseTimePeriodExtractor(new EnglishTimePeriodExtractorConfiguration(options));
-        integerExtractor = com.microsoft.recognizers.text.number.english.extractors.IntegerExtractor.getInstance();
+        integerExtractor = IntegerExtractor.getInstance();
         dateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new EnglishDateTimePeriodExtractorConfiguration(options));
 
-        if (this.options != null & this.options != DateTimeOptions.EnablePreview)
-        {
+        if (!this.options.match(DateTimeOptions.EnablePreview)) {
             getSuperfluousWordMatcher().init(EnglishDateTime.SuperfluousWordList);
         }
     }

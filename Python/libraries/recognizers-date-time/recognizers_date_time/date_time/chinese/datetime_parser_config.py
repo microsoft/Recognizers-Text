@@ -80,7 +80,11 @@ class ChineseDateTimeParserConfiguration():
         return self._specific_time_of_day_regex
 
     @property
-    def the_end_of_regex(self) -> Pattern:
+    def specific_end_of_regex(self) -> Pattern:
+        raise NotImplementedError()
+
+    @property
+    def unspecific_end_of_regex(self) -> Pattern:
         raise NotImplementedError()
 
     @property

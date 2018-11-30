@@ -45,7 +45,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public Regex SpecificTimeOfDayRegex { get; }
 
-        public Regex TheEndOfRegex { get; }
+        public Regex SpecificEndOfRegex { get; }
+
+        public Regex UnspecificEndOfRegex { get; }
 
         public Regex UnitRegex { get; }
 
@@ -69,7 +71,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             SimpleTimeOfTodayAfterRegex = PortugueseDateTimeExtractorConfiguration.SimpleTimeOfTodayAfterRegex;
             SimpleTimeOfTodayBeforeRegex = PortugueseDateTimeExtractorConfiguration.SimpleTimeOfTodayBeforeRegex;
             SpecificTimeOfDayRegex = PortugueseDateTimeExtractorConfiguration.SpecificTimeOfDayRegex;
-            TheEndOfRegex = PortugueseDateTimeExtractorConfiguration.TheEndOfRegex;
+            SpecificEndOfRegex = PortugueseDateTimeExtractorConfiguration.SpecificEndOfRegex;
+            UnspecificEndOfRegex = PortugueseDateTimeExtractorConfiguration.UnspecificEndOfRegex;
             UnitRegex = PortugueseDateTimeExtractorConfiguration.UnitRegex;
             DateNumberConnectorRegex = PortugueseDateTimeExtractorConfiguration.DateNumberConnectorRegex;
             Numbers = config.Numbers;

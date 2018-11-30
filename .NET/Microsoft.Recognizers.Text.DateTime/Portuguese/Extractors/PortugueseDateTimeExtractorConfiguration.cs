@@ -21,7 +21,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         public static readonly Regex TimeOfTodayBeforeRegex = new Regex(DateTimeDefinitions.TimeOfTodayBeforeRegex, RegexOptions.Singleline);
         public static readonly Regex SimpleTimeOfTodayAfterRegex = new Regex(DateTimeDefinitions.SimpleTimeOfTodayAfterRegex, RegexOptions.Singleline);
         public static readonly Regex SimpleTimeOfTodayBeforeRegex = new Regex(DateTimeDefinitions.SimpleTimeOfTodayBeforeRegex, RegexOptions.Singleline);
-        public static readonly Regex TheEndOfRegex = new Regex(DateTimeDefinitions.TheEndOfRegex, RegexOptions.Singleline);
+        public static readonly Regex SpecificEndOfRegex = new Regex(DateTimeDefinitions.SpecificEndOfRegex, RegexOptions.Singleline);
+        public static readonly Regex UnspecificEndOfRegex = new Regex(DateTimeDefinitions.UnspecificEndOfRegex, RegexOptions.Singleline);
 
         //TODO: add this for Portuguese
         public static readonly Regex UnitRegex = new Regex(DateTimeDefinitions.UnitRegex, RegexOptions.Singleline);
@@ -62,7 +63,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         Regex IDateTimeExtractorConfiguration.TimeOfDayRegex => TimeOfDayRegex;
 
-        Regex IDateTimeExtractorConfiguration.TheEndOfRegex => TheEndOfRegex;
+        Regex IDateTimeExtractorConfiguration.SpecificEndOfRegex => SpecificEndOfRegex;
+
+        Regex IDateTimeExtractorConfiguration.UnspecificEndOfRegex => UnspecificEndOfRegex;
 
         Regex IDateTimeExtractorConfiguration.UnitRegex => UnitRegex;
 

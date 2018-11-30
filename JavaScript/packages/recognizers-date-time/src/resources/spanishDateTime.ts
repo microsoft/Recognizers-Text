@@ -16,11 +16,12 @@ export namespace SpanishDateTime {
 	export const AmDescRegex = `(am\\b|a\\.m\\.|a m\\b|a\\. m\\.\\b|a\\.m\\b|a\\. m\\b)`;
 	export const PmDescRegex = `(pm\\b|p\\.m\\.|p\\b|p m\\b|p\\. m\\.\\b|p\\.m\\b|p\\. m\\b)`;
 	export const AmPmDescRegex = `(ampm)`;
+	export const RangePrefixRegex = `((desde|de|entre)\\s+(la(s)?\\s+)?)`;
 	export const TwoDigitYearRegex = `\\b(?<![$])(?<year>([0-27-9]\\d))(?!(\\s*((\\:)|${AmDescRegex}|${PmDescRegex}|\\.\\d)))\\b`;
 	export const FullTextYearRegex = `^[\\*]`;
 	export const YearRegex = `(${BaseDateTime.FourDigitYearRegex}|${FullTextYearRegex})`;
 	export const RelativeMonthRegex = `(?<relmonth>(este|pr[oó]ximo|[uú]ltimo)\\s+mes)\\b`;
-	export const MonthRegex = `(?<month>abril|abr|agosto|ago|diciembre|dic|febrero|feb|enero|ene|julio|jul|junio|jun|marzo|mar|mayo|may|noviembre|nov|octubre|oct|septiembre|setiembre|sept|set)`;
+	export const MonthRegex = `\\b(?<month>abril|abr|agosto|ago|diciembre|dic|febrero|feb|enero|ene|julio|jul|junio|jun|marzo|mar|mayo|may|noviembre|nov|octubre|oct|septiembre|setiembre|sept|set)\\b`;
 	export const MonthSuffixRegex = `(?<msuf>(en\\s+|del\\s+|de\\s+)?(${RelativeMonthRegex}|${MonthRegex}))`;
 	export const DateUnitRegex = `(?<unit>años|año|meses|mes|semanas|semana|d[ií]a(s)?)\\b`;
 	export const PastRegex = `(?<past>\\b(pasad(a|o)(s)?|[uú]ltim[oa](s)?|anterior(es)?|previo(s)?)\\b)`;
@@ -108,7 +109,7 @@ export namespace SpanishDateTime {
 	export const TimeRegex10 = `(a\\s+la|al)\\s+(madrugada|mañana|medio\\s*d[ií]a|tarde|noche)`;
 	export const TimeRegex11 = `\\b(${WrittenTimeRegex})(${DescRegex}?)\\b`;
 	export const TimeRegex12 = `(\\b${TimePrefix}\\s+)?${BaseDateTime.HourRegex}(\\s*h\\s*)${BaseDateTime.MinuteRegex}(\\s*${DescRegex})?`;
-	export const PrepositionRegex = `(?<prep>(a(l)?|en|de(l)?)?(\\s*(la(s)?|el|los))?$)`;
+	export const PrepositionRegex = `\\b(?<prep>(a(l)?|en|de(l)?)?(\\s*(la(s)?|el|los))?$)\\b`;
 	export const NowRegex = `\\b(?<now>(justo\\s+)?ahora(\\s+mismo)?|en\\s+este\\s+momento|tan\\s+pronto\\s+como\\s+sea\\s+posible|tan\\s+pronto\\s+como\\s+(pueda|puedas|podamos|puedan)|lo\\s+m[aá]s\\s+pronto\\s+posible|recientemente|previamente)\\b`;
 	export const SuffixRegex = `^\\s*(((y|a|en|por)\\s+la|al)\\s+)?(mañana|madrugada|medio\\s*d[ií]a|tarde|noche)\\b`;
 	export const TimeOfDayRegex = `\\b(?<timeOfDay>mañana|madrugada|(pasado\\s+(el\\s+)?)?medio\\s?d[ií]a|tarde|noche|anoche)\\b`;
@@ -117,7 +118,9 @@ export namespace SpanishDateTime {
 	export const TimeOfTodayBeforeRegex = `(${SpecificTimeOfDayRegex}(\\s*,)?(\\s+(a\\s+la(s)?|para))?\\s*)`;
 	export const SimpleTimeOfTodayAfterRegex = `(${HourNumRegex}|${BaseDateTime.HourRegex})\\s*(,\\s*)?((en|de(l)?)?\\s+)?${SpecificTimeOfDayRegex}`;
 	export const SimpleTimeOfTodayBeforeRegex = `(${SpecificTimeOfDayRegex}(\\s*,)?(\\s+(a\\s+la|para))?\\s*(${HourNumRegex}|${BaseDateTime.HourRegex}))`;
-	export const TheEndOfRegex = `((a|e)l\\s+)?fin(alizar|al)?(\\s+(el|de(l)?)(\\s+d[ií]a)?(\\s+de)?)?\\s*$`;
+	export const SpecificEndOfRegex = `((a|e)l\\s+)?fin(alizar|al)?(\\s+(el|de(l)?)(\\s+d[ií]a)?(\\s+de)?)?\\s*$`;
+	export const UnspecificEndOfRegex = `^[.]`;
+	export const UnspecificEndOfRangeRegex = `^[.]`;
 	export const UnitRegex = `(?<unit>años|año|meses|mes|semanas|semana|d[ií]as|d[ií]a|horas|hora|h|hr|hrs|hs|minutos|minuto|mins|min|segundos|segundo|segs|seg)\\b`;
 	export const ConnectorRegex = `^(,|t|para la|para las|cerca de la|cerca de las)$`;
 	export const TimeHourNumRegex = `(?<hour>veintiuno|veintidos|veintitres|veinticuatro|cero|uno|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|once|doce|trece|catorce|quince|diecis([eé])is|diecisiete|dieciocho|diecinueve|veinte)`;

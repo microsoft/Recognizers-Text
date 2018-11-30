@@ -616,6 +616,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "java",
     "Results": [
       {
         "Text": "end of tomorrow",
@@ -625,9 +626,9 @@
         "Resolution": {
           "values": [
             {
-              "timex": "2016-11-08T23:59",
+              "timex": "2016-11-08T23:59:59",
               "type": "datetime",
-              "value": "2016-11-08 23:59:00"
+              "value": "2016-11-08 23:59:59"
             }
           ]
         }
@@ -639,6 +640,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "java",
     "Results": [
       {
         "Text": "end of the sunday",
@@ -648,14 +650,14 @@
         "Resolution": {
           "values": [
             {
-              "timex": "XXXX-WXX-7T23:59",
+              "timex": "XXXX-WXX-7T23:59:59",
               "type": "datetime",
-              "value": "2016-11-06 23:59:00"
+              "value": "2016-11-06 23:59:59"
             },
             {
-              "timex": "XXXX-WXX-7T23:59",
+              "timex": "XXXX-WXX-7T23:59:59",
               "type": "datetime",
-              "value": "2016-11-13 23:59:00"
+              "value": "2016-11-13 23:59:59"
             }
           ]
         }
@@ -667,6 +669,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "java",
     "Results": [
       {
         "Text": "end of this sunday",
@@ -676,9 +679,9 @@
         "Resolution": {
           "values": [
             {
-              "timex": "2016-11-13T23:59",
+              "timex": "2016-11-13T23:59:59",
               "type": "datetime",
-              "value": "2016-11-13 23:59:00"
+              "value": "2016-11-13 23:59:59"
             }
           ]
         }
@@ -6485,6 +6488,389 @@
               "timex": "2018-11-07",
               "type": "date",
               "value": "2018-11-07"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "What's your plan for next week Wednesday?",
+    "Context": {
+      "ReferenceDateTime": "2018-11-28T12:00:00"
+    },
+    "NotSupportedByDesign": "java",
+    "Results": [
+      {
+        "Text": "next week wednesday",
+        "Start": 21,
+        "End": 39,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-12-05",
+              "type": "date",
+              "value": "2018-12-05"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "What happened on previous week - Monday",
+    "Context": {
+      "ReferenceDateTime": "2018-11-28T12:00:00"
+    },
+    "NotSupportedByDesign": "java",
+    "Results": [
+      {
+        "Text": "previous week - monday",
+        "Start": 17,
+        "End": 38,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-11-19",
+              "type": "date",
+              "value": "2018-11-19"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "What happened on this week Monday",
+    "Context": {
+      "ReferenceDateTime": "2018-11-28T12:00:00"
+    },
+    "NotSupportedByDesign": "java",
+    "Results": [
+      {
+        "Text": "this week monday",
+        "Start": 17,
+        "End": 32,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-11-26",
+              "type": "date",
+              "value": "2018-11-26"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, please find us 30 minutes on 11/20, 11/22 or 11/25",
+    "Context": {
+      "ReferenceDateTime": "2018-11-28T12:00:00"
+    },
+    "NotSupportedByDesign": "java",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "30 minutes",
+        "Start": 24,
+        "End": 33,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT30M",
+              "type": "duration",
+              "value": "1800"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "11/20",
+        "Start": 38,
+        "End": 42,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-11-20",
+              "type": "date",
+              "value": "2018-11-20"
+            },
+            {
+              "timex": "XXXX-11-20",
+              "type": "date",
+              "value": "2019-11-20"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "11/22",
+        "Start": 45,
+        "End": 49,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-11-22",
+              "type": "date",
+              "value": "2018-11-22"
+            },
+            {
+              "timex": "XXXX-11-22",
+              "type": "date",
+              "value": "2019-11-22"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "11/25",
+        "Start": 54,
+        "End": 58,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-11-25",
+              "type": "date",
+              "value": "2018-11-25"
+            },
+            {
+              "timex": "XXXX-11-25",
+              "type": "date",
+              "value": "2019-11-25"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "You shouldn't always go to bed end of the day since it will do harm to your health.",
+    "Context": {
+      "ReferenceDateTime": "2018-11-21T12:00:00"
+    },
+    "NotSupportedByDesign": "java",
+    "Results": [
+      {
+        "Text": "end of the day",
+        "Start": 31,
+        "End": 44,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-11-21T23:59:59",
+              "type": "datetime",
+              "value": "2018-11-21 23:59:59" 
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "You shouldn't always go to bed end of day since it will do harm to your health.",
+    "Context": {
+      "ReferenceDateTime": "2018-11-21T12:00:00"
+    },
+    "NotSupportedByDesign": "java",
+    "Results": [
+      {
+        "Text": "end of day",
+        "Start": 31,
+        "End": 40,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-11-21T23:59:59",
+              "type": "datetime",
+              "value": "2018-11-21 23:59:59" 
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Bob and Alice usually exchange their encrypted messages at the eod.",
+    "Context": {
+      "ReferenceDateTime": "2018-11-21T12:00:00"
+    },
+    "NotSupportedByDesign": "java",
+    "Results": [
+      {
+        "Text": "the eod",
+        "Start": 59,
+        "End": 65,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-11-21T23:59:59",
+              "type": "datetime",
+              "value": "2018-11-21 23:59:59"  
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "A big party will be held at the EOY.",
+    "Context": {
+      "ReferenceDateTime": "2018-11-23T12:00:00"
+    },
+    "NotSupportedByDesign": "java",
+    "Results": [
+      {
+        "Text": "eoy",
+        "Start": 32,
+        "End": 34,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018",
+              "Mod": "end",
+              "type": "daterange",
+              "start": "2018-07-01",
+              "end": "2019-01-01"  
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Do you know the date? 11/20, 12 of Nov?",
+    "Context": {
+      "ReferenceDateTime": "2018-11-28T12:00:00"
+    },
+    "NotSupportedByDesign": "java",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "11/20",
+        "Start": 22,
+        "End": 26,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-11-20",
+              "type": "date",
+              "value": "2018-11-20"
+            },
+            {
+              "timex": "XXXX-11-20",
+              "type": "date",
+              "value": "2019-11-20"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "12 of nov",
+        "Start": 29,
+        "End": 37,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-11-12",
+              "type": "date",
+              "value": "2018-11-12"
+            },
+            {
+              "timex": "XXXX-11-12",
+              "type": "date",
+              "value": "2019-11-12"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "A big party will be held at the end of year.",
+    "Context": {
+      "ReferenceDateTime": "2018-11-27T12:00:00"
+    },
+    "NotSupportedByDesign": "java",
+    "Results": [
+      {
+        "Text": "end of year",
+        "Start": 32,
+        "End": 42,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018",
+              "Mod": "end",
+              "type": "daterange",
+              "start": "2018-07-01",
+              "end": "2019-01-01"  
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I heard you will hold a birthday party end of month",
+    "Context": {
+      "ReferenceDateTime": "2018-11-27T12:00:00"
+    },
+    "NotSupportedByDesign": "java",
+    "Results": [
+      {
+        "Text": "end of month",
+        "Start": 39,
+        "End": 50,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-11",
+              "Mod": "end",
+              "type": "daterange",
+              "start": "2018-11-16",
+              "end": "2018-12-01"  
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Don't forget to push your code as all the disks will be renewed the end of the week.",
+    "Context": {
+      "ReferenceDateTime": "2018-11-29T12:00:00"
+    },
+    "NotSupportedByDesign": "java",
+    "Results": [
+      {
+        "Text": "end of the week",
+        "Start": 68,
+        "End": 82,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-W48",
+              "Mod": "end",
+              "type": "daterange",
+              "start": "2018-11-29",
+              "end": "2018-12-03"  
             }
           ]
         }

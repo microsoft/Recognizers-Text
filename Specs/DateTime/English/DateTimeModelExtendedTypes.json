@@ -1207,7 +1207,7 @@
     "Context": {
       "ReferenceDateTime": "2018-07-19T20:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "30 minutes",
@@ -1277,7 +1277,7 @@
     "Context": {
       "ReferenceDateTime": "2018-07-30T20:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "ParentText": "tuesday or wednesday from 10-4",
@@ -1332,7 +1332,7 @@
     "Context": {
       "ReferenceDateTime": "2018-07-31T14:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "30 minute",
@@ -1388,7 +1388,7 @@
     "Context": {
       "ReferenceDateTime": "2018-07-31T14:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "ParentText": "the first monday of september or december",
@@ -1513,6 +1513,7 @@
     "Context": {
       "ReferenceDateTime": "2018-08-07T12:00:00"
     },
+    "NotSupported": "java",
     "Results": [
       {
         "Text": "the 18th",
@@ -1541,6 +1542,7 @@
     "Context": {
       "ReferenceDateTime": "2018-08-07T12:00:00"
     },
+    "NotSupported": "java",
     "Results": [
       {
         "Text": "the 4th",
@@ -1587,7 +1589,7 @@
     "Context": {
       "ReferenceDateTime": "2018-08-29T12:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "15 minute",
@@ -1650,7 +1652,7 @@
     "Context": {
       "ReferenceDateTime": "2018-08-29T12:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "ParentText": "18 and 19 june",

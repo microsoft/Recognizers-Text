@@ -249,12 +249,12 @@ public class BaseMergedExtractor implements IDateTimeExtractor {
     {
         List<ExtractResult> shallowCopy = ers.subList(0, ers.size());
         Collections.reverse(shallowCopy);
-        for (ExtractResult er : shallowCopy)
-        {
-            for (Pattern negRegex : this.config.getFilterWordRegexList())
-            {
-                Matcher regexMatcher = negRegex.matcher(er.text);
-                if (regexMatcher.find()) ers.remove(er);
+        for (ExtractResult er : shallowCopy) {
+            for (Pattern negRegex : this.config.getFilterWordRegexList()) {
+                Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(negRegex, er.text)).findFirst();
+                if (match.isPresent()) {
+                    ers.remove(er);
+                }
             }
         }
     }

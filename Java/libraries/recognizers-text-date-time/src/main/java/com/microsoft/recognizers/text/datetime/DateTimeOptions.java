@@ -6,7 +6,8 @@ public enum DateTimeOptions {
     SplitDateAndTime(2),
     CalendarMode(4),
     ExtendedTypes(8),
-    EnablePreview(8388608);
+    EnablePreview(8388608),
+    ComplexCalendar(8 + 4 + 8388608);
 
     private final int value;
 

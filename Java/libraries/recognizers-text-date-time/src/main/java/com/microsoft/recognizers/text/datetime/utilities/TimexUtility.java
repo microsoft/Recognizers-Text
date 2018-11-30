@@ -1,5 +1,7 @@
 package com.microsoft.recognizers.text.datetime.utilities;
 
+import com.google.common.collect.ImmutableMap;
+import com.microsoft.recognizers.text.datetime.Constants;
 import com.microsoft.recognizers.text.datetime.DatePeriodTimexType;
 
 import java.time.DayOfWeek;
@@ -7,6 +9,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 import java.time.temporal.IsoFields;
+import java.util.*;
 
 public class TimexUtility {
 
@@ -64,5 +67,35 @@ public class TimexUtility {
 
     public static String generateYearTimex(LocalDateTime date) {
         return String.format("%04d", date.getYear());
+    }
+
+    public static String generateCompoundDurationTimex(Map<String, String> unitToTimexComponents, ImmutableMap<String, Long> unitValueMap) {
+        List<String> unitList = new ArrayList<>(unitToTimexComponents.keySet());
+        unitList.sort((x, y) -> unitValueMap.get(x) < unitValueMap.get(y) ? 1 : -1);
+        boolean isTimeDurationAlreadyExist = false;
+        StringBuilder timexBuilder = new StringBuilder(Constants.GeneralPeriodPrefix);
+
+        for (String unitKey : unitList) {
+            String timexComponent = unitToTimexComponents.get(unitKey);
+
+            // The Time Duration component occurs first time
+            if (!isTimeDurationAlreadyExist && isTimeDurationTimex(timexComponent)) {
+                timexBuilder.append(Constants.TimeTimexPrefix);
+                timexBuilder.append(getDurationTimexWithoutPrefix(timexComponent));
+                isTimeDurationAlreadyExist = true;
+            } else {
+                timexBuilder.append(getDurationTimexWithoutPrefix(timexComponent));
+            }
+        }
+        return timexBuilder.toString();
+    }
+
+    private static boolean isTimeDurationTimex(String timex) {
+        return timex.startsWith(Constants.GeneralPeriodPrefix + Constants.TimeTimexPrefix);
+    }
+
+    private static String getDurationTimexWithoutPrefix(String timex) {
+        // Remove "PT" prefix for TimeDuration, Remove "P" prefix for DateDuration
+        return timex.substring(isTimeDurationTimex(timex) ? 2 : 1);
     }
 }

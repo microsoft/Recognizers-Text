@@ -872,17 +872,17 @@ public class BaseDateTimePeriodParser implements IDateTimeParser {
                 DateTimeParseResult pr = config.getDateParser().parse(dateResult.get(dateResult.size() - 1), referenceDate);
                 if (pr.value != null) {
                     LocalDateTime startTime = (LocalDateTime) ((DateTimeResolutionResult) pr.value).getFutureValue();
-                    startTime = LocalDateTime.from(startTime.toLocalDate());
+                    startTime = LocalDateTime.of(startTime.getYear(), startTime.getMonthValue(), startTime.getDayOfMonth(), 0, 0, 0);
                     LocalDateTime endTime = startTime;
 
-                    if (StringUtility.isNullOrEmpty(match.get().getGroup("EarlyPrefix").value)) {
+                    if (!StringUtility.isNullOrEmpty(match.get().getGroup("EarlyPrefix").value)) {
                         endTime = endTime.plusHours(Constants.HalfDayHourCount);
                         result.setMod(Constants.EARLY_MOD);
-                    } else if (StringUtility.isNullOrEmpty(match.get().getGroup("MidPrefix").value)) {
+                    } else if (!StringUtility.isNullOrEmpty(match.get().getGroup("MidPrefix").value)) {
                         startTime = startTime.plusHours(Constants.HalfDayHourCount - Constants.HalfMidDayDurationHourCount);
                         endTime = endTime.plusHours(Constants.HalfDayHourCount + Constants.HalfMidDayDurationHourCount);
                         result.setMod(Constants.MID_MOD);
-                    } else if (StringUtility.isNullOrEmpty(match.get().getGroup("LatePrefix").value)) {
+                    } else if (!StringUtility.isNullOrEmpty(match.get().getGroup("LatePrefix").value)) {
                         startTime = startTime.plusHours(Constants.HalfDayHourCount);
                         endTime = startTime.plusHours(Constants.HalfDayHourCount);
                         result.setMod(Constants.LATE_MOD);
@@ -963,6 +963,7 @@ public class BaseDateTimePeriodParser implements IDateTimeParser {
         List<Pattern> beforeAfterRegexes = new ArrayList<>();
         beforeAfterRegexes.add(config.getBeforeRegex());
         beforeAfterRegexes.add(config.getAfterRegex());
+        text = text.trim();
 
         for (Pattern regex : beforeAfterRegexes) {
             Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(regex, text)).findFirst();

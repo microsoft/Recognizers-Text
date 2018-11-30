@@ -129,6 +129,10 @@ class EnglishDatePeriodParserConfiguration(DatePeriodParserConfiguration):
         return self._week_with_week_day_range_regex
 
     @property
+    def unspecific_end_of_range_regex(self) -> Pattern:
+        return self._unspecific_end_of_range_regex
+
+    @property
     def token_before_date(self) -> str:
         return self._token_before_date
 
@@ -183,6 +187,7 @@ class EnglishDatePeriodParserConfiguration(DatePeriodParserConfiguration):
         self._rest_of_date_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.RestOfDateRegex)
         self._later_early_period_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.LaterEarlyPeriodRegex)
         self._week_with_week_day_range_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.WeekWithWeekDayRangeRegex)
+        self._unspecific_end_of_range_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.UnspecificEndOfRangeRegex)
         self._token_before_date = EnglishDateTime.TokenBeforeDate
         self._day_of_month = config.day_of_month
         self._month_of_year = config.month_of_year
@@ -244,4 +249,4 @@ class EnglishDatePeriodParserConfiguration(DatePeriodParserConfiguration):
 
     def is_year_only(self, source: str) -> bool:
         trimmed_source = source.strip().lower()
-        return trimmed_source.endswith('year')
+        return trimmed_source.endswith('year') or (trimmed_source.endswith('y') and self.unspecific_end_of_range_regex.match(trimmed_source))

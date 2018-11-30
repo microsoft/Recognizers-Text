@@ -63,7 +63,7 @@ public class BaseTimeParser implements IDateTimeParser {
                 ExtractResult timezoneEr = ((Map.Entry<String, ExtractResult>) er.data).getValue();
                 ParseResult timezonePr = config.getTimeZoneParser().parse(timezoneEr);
 
-                innerResult = internalParse(er.text.substring(0, timezoneEr.length), referenceTime);
+                innerResult = internalParse(er.text.substring(0, er.length - timezoneEr.length), referenceTime);
 
                 if (timezonePr.value != null) {
                     TimeZoneResolutionResult timeZoneResolution = ((DateTimeResolutionResult) timezonePr.value).getTimeZoneResolution();

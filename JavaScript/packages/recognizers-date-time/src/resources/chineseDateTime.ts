@@ -66,8 +66,8 @@ export namespace ChineseDateTime {
 	export const YearToYearSuffixRequired = `(${DateRangePrepositions})(${DatePeriodYearInChineseRegex}|${DatePeriodYearRegex})\\s*(${DatePeriodTillSuffixRequiredRegex})\\s*(${DatePeriodYearInChineseRegex}|${DatePeriodYearRegex})\\s*(之间|之内|期间|中间|间)`;
 	export const MonthToMonth = `(${DateRangePrepositions})(${MonthRegex})${DatePeriodTillRegex}(${MonthRegex})`;
 	export const MonthToMonthSuffixRequired = `(${DateRangePrepositions})(${MonthRegex})${DatePeriodTillSuffixRequiredRegex}(${MonthRegex})\\s*(之间|之内|期间|中间|间)`;
-	export const PastRegex = `(?<past>(前|上|之前|近|过去))`;
-	export const FutureRegex = `(?<future>(后|後|(?<![一两几]\\s*)下|之后|之後|未来(的)?))`;
+	export const PastRegex = `(?<past>(之前|前|上|近|过去))`;
+	export const FutureRegex = `(?<future>(之后|之後|后|後|(?<![一两几]\\s*)下|未来(的)?))`;
 	export const SeasonRegex = `(?<season>春|夏|秋|冬)(天|季)?`;
 	export const SeasonWithYear = `((${DatePeriodYearRegex}|${DatePeriodYearInChineseRegex}|(?<yearrel>明年|今年|去年))(的)?)?${SeasonRegex}`;
 	export const QuarterRegex = `((${DatePeriodYearRegex}|${DatePeriodYearInChineseRegex}|(?<yearrel>明年|今年|去年))(的)?)?(第(?<cardinal>1|2|3|4|一|二|三|四)季度)`;

@@ -5,16 +5,23 @@ import com.microsoft.recognizers.text.ParseResult;
 import com.microsoft.recognizers.text.datetime.Constants;
 import com.microsoft.recognizers.text.datetime.extractors.config.IDateExtractorConfiguration;
 import com.microsoft.recognizers.text.datetime.utilities.AgoLaterUtil;
+import com.microsoft.recognizers.text.datetime.utilities.ConditionalMatch;
 import com.microsoft.recognizers.text.datetime.utilities.DateUtil;
+import com.microsoft.recognizers.text.datetime.utilities.RegexExtension;
 import com.microsoft.recognizers.text.datetime.utilities.Token;
 import com.microsoft.recognizers.text.utilities.Match;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
 import com.microsoft.recognizers.text.utilities.StringUtility;
-import org.javatuples.Pair;
 
 import java.time.LocalDateTime;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
+import java.util.Optional;
 import java.util.regex.Pattern;
+
+import org.javatuples.Pair;
 
 public class BaseDateExtractor implements IDateTimeExtractor {
 
@@ -227,7 +234,10 @@ public class BaseDateExtractor implements IDateTimeExtractor {
 
         if (matchYear.isPresent() && matchYear.get().index == 0) {
             year = getYearFromText(matchYear.get());
-            endIndexResult += matchYear.get().length;
+
+            if (year >= Constants.MinYearNum && year <= Constants.MaxYearNum) {
+                endIndexResult += matchYear.get().length;
+            }
         }
 
         LocalDateTime date = DateUtil.safeCreateFromMinValue(year, month, day);
@@ -269,8 +279,10 @@ public class BaseDateExtractor implements IDateTimeExtractor {
             // Some types of duration can be compounded with "before", "after" or "from" suffix to create a "date"
             // While some other types of durations, when compounded with such suffix, it will not create a "date", but create a "dateperiod"
             // For example, durations like "3 days", "2 weeks", "1 week and 2 days", can be compounded with such suffix to create a "date"
-            // But "more than 3 days", "less than 2 weeks", when compounded with such suffix, it will become cases like "more than 3 days from today" which is a "dateperiod", not a "date"
-            // As this parent method is aimed to extract RelativeDurationDate, so for cases with "more than" or "less than", we remove the prefix so as to extract the expected RelativeDurationDate
+            // But "more than 3 days", "less than 2 weeks", when compounded with such suffix, it will become cases
+            // like "more than 3 days from today" which is a "dateperiod", not a "date"
+            // As this parent method is aimed to extract RelativeDurationDate, so for cases with "more than" or "less than",
+            // we remove the prefix so as to extract the expected RelativeDurationDate
             if (isInequalityDuration(duration)) {
                 duration = stripInequalityDuration(duration);
             }
@@ -281,6 +293,67 @@ public class BaseDateExtractor implements IDateTimeExtractor {
                 tokens = AgoLaterUtil.extractorDurationWithBeforeAndAfter(text, duration, tokens, config.getUtilityConfiguration());
             }
 
+        }
+
+        // Extract cases like "in 3 weeks", which equals to "3 weeks from today"
+        List<Token> relativeDurationDateWithInPrefix = extractRelativeDurationDateWithInPrefix(text, durations, reference);
+
+        // For cases like "in 3 weeks from today", we should choose "3 weeks from today" as the extract result rather than "in 3 weeks" or "in 3 weeks from today"
+        for (Token erWithInPrefix : relativeDurationDateWithInPrefix) {
+            if (!isOverlapWithExistExtractions(erWithInPrefix, tokens)) {
+                tokens.add(erWithInPrefix);
+            }
+        }
+
+        return tokens;
+    }
+
+    public boolean isOverlapWithExistExtractions(Token er, List<Token> existErs) {
+        for (Token existEr : existErs) {
+            if (er.getStart() < existEr.getEnd() && er.getEnd() > existEr.getStart()) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    // "In 3 days/weeks/months/years" = "3 days/weeks/months/years from now"
+    public List<Token> extractRelativeDurationDateWithInPrefix(String text, List<ExtractResult> durationEr, LocalDateTime reference) {
+        List<Token> tokens = new ArrayList<>();
+
+        List<Token> durations = new ArrayList<>();
+
+        for (ExtractResult durationExtraction : durationEr) {
+            Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(config.getDateUnitRegex(), durationExtraction.text)).findFirst();
+            if (match.isPresent()) {
+                int start = durationExtraction.start != null ? durationExtraction.start : 0;
+                int end = start + (durationExtraction.length != null ? durationExtraction.length : 0);
+                durations.add(new Token(start, end));
+            }
+        }
+
+        for (Token duration : durations) {
+            String beforeStr = text.substring(0, duration.getStart()).toLowerCase();
+            String afterStr = text.substring(duration.getStart() + duration.getLength()).toLowerCase();
+
+            if (StringUtility.isNullOrWhiteSpace(beforeStr) && StringUtility.isNullOrWhiteSpace(afterStr)) {
+                continue;
+            }
+
+            ConditionalMatch match = RegexExtension.matchEnd(config.getInConnectorRegex(), beforeStr, true);
+
+            if (match.getSuccess() && match.getMatch().isPresent()) {
+                int startToken = match.getMatch().get().index;
+                Optional<Match> rangeUnitMatch = Arrays.stream(
+                        RegExpUtility.getMatches(config.getRangeUnitRegex(),
+                        text.substring(duration.getStart(),
+                        duration.getStart() + duration.getLength()))).findFirst();
+
+                if (rangeUnitMatch.isPresent()) {
+                    tokens.add(new Token(startToken, duration.getEnd()));
+                }
+            }
         }
 
         return tokens;
