@@ -36,7 +36,8 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             var directorySpecs = Path.Combine("..", "..", "..", "..", "Specs", recognizerLanguage[0], recognizerLanguage[1]);
 
             var specsFiles = Directory.GetFiles(directorySpecs, "*.json");
-            foreach (var specsFile in specsFiles) {
+            foreach (var specsFile in specsFiles)
+            {
                 var fileName = Path.GetFileNameWithoutExtension(specsFile) + "-" + recognizerLanguage[1];
                 var rawData = File.ReadAllText(specsFile);
                 var specs = JsonConvert.DeserializeObject<IList<TestModel>>(rawData);

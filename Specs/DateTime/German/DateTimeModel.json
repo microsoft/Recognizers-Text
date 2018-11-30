@@ -179,7 +179,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-	"Comment": "Returning only the future resolution and wrong timex",
+    "Comment": "Returning only the future resolution and wrong timex",
     "NotSupported": "dotnet, javascript, python",
     "Results": [
       {
@@ -465,7 +465,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-	"Comment": "Resolution is null",
+    "Comment": "Resolution is null",
     "NotSupported": "dotnet, python",
     "Results": [
       {
@@ -972,7 +972,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-	"Comment" : "Output contains a trailing whitespace",
+    "Comment" : "Output contains a trailing whitespace",
     "NotSupported": "dotnet, javascript, python",
     "Results": [
       {
@@ -1054,7 +1054,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-	"Comment": "Output is -gegen abend- should that be considered correct?",
+    "Comment": "Output is -gegen abend- should that be considered correct?",
     "NotSupported": "dotnet, javascript, python",
     "Results": [
       {
