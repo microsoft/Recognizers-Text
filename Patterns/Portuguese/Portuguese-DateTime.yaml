@@ -321,8 +321,14 @@ SimpleTimeOfTodayAfterRegex: !nestedRegex
 SimpleTimeOfTodayBeforeRegex: !nestedRegex
   def: ({SpecificTimeOfDayRegex}(\s*,)?(\s+(a\s+la|para))?\s*({HourNumRegex}|{BaseDateTime.HourRegex}))
   references: [ SpecificTimeOfDayRegex, HourNumRegex, BaseDateTime.HourRegex ]
-TheEndOfRegex: !simpleRegex
+SpecificEndOfRegex: !simpleRegex
   def: ((no|ao)\s+)?(fi(m|nal)|t[ée]rmin(o|ar))(\s+d?o(\s+dia)?(\s+de)?)?\s*$
+UnspecificEndOfRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
+UnspecificEndOfRangeRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 UnitRegex: !simpleRegex
   def: (?<unit>anos|ano|meses|m[êe]s|semanas|semana|dias|dia|horas|hora|h|hr|hrs|hs|minutos|minuto|mins|min|segundos|segundo|segs|seg)\b
 ConnectorRegex: !simpleRegex

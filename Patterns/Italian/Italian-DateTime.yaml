@@ -335,8 +335,14 @@ SimpleTimeOfTodayAfterRegex: !nestedRegex
 SimpleTimeOfTodayBeforeRegex: !nestedRegex
   def: '{DateTimeSpecificTimeOfDayRegex}(\s*,)?(\s+(di|verso))?\s*({HourNumRegex}|{BaseDateTime.HourRegex})'
   references: [ DateTimeSpecificTimeOfDayRegex, HourNumRegex, BaseDateTime.HourRegex ]
-TheEndOfRegex: !simpleRegex
+SpecificEndOfRegex: !simpleRegex
   def: (alla\s+)?fine di(\s+del)?\s*$
+UnspecificEndOfRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
+UnspecificEndOfRangeRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 PeriodTimeOfDayRegex: !simpleRegex
   def: \b((alla\s+(al)?\s+)?((?<early>prima(\s+|-))|(?<late>tarda(\s+|-)))?(?<timeOfDay>mattina|pomeriggio|notte|sera))\b
 PeriodSpecificTimeOfDayRegex: !nestedRegex

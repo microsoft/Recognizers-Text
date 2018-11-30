@@ -51,7 +51,11 @@ class ChineseDateTimeExtractorConfiguration(DateTimeExtractorConfiguration):
         return None
 
     @property
-    def the_end_of_regex(self) -> Pattern:
+    def specific_end_of_regex(self) -> Pattern:
+        return None
+
+    @property
+    def unspecific_end_of_regex(self) -> Pattern:
         return None
 
     @property

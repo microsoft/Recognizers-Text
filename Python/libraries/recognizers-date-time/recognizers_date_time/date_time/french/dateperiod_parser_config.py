@@ -129,6 +129,10 @@ class FrenchDatePeriodParserConfiguration(DatePeriodParserConfiguration):
         return self._week_with_week_day_range_regex
 
     @property
+    def unspecific_end_of_range_regex(self) -> Pattern:
+        return self._unspecific_end_of_range_regex
+
+    @property
     def token_before_date(self) -> str:
         return self._token_before_date
 
@@ -184,6 +188,7 @@ class FrenchDatePeriodParserConfiguration(DatePeriodParserConfiguration):
         self._rest_of_date_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.RestOfDateRegex)
         self._later_early_period_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.LaterEarlyPeriodRegex)
         self._week_with_week_day_range_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.WeekWithWeekDayRangeRegex)
+        self._unspecific_end_of_range_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.UnspecificEndOfRangeRegex)
 
         self._next_prefix_regex = RegExpUtility.get_safe_reg_exp('(prochain|prochaine)\b')
         self._past_prefix_regex = RegExpUtility.get_safe_reg_exp('(dernier)\b')

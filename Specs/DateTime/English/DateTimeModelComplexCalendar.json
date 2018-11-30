@@ -7496,5 +7496,181 @@
         }
       }
     ]
+  },
+  {
+    "Input": "You shouldn't always go to bed end of the day since it will do harm to your health.",
+    "Context": {
+      "ReferenceDateTime": "2018-11-21T12:00:00"
+    },
+    "NotSupportedByDesign": "java",
+    "Results": [
+      {
+        "Text": "end of the day",
+        "Start": 31,
+        "End": 44,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-11-21T23:59:59",
+              "type": "datetime",
+              "value": "2018-11-21 23:59:59"  
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "You shouldn't always go to bed end of day since it will do harm to your health.",
+    "Context": {
+      "ReferenceDateTime": "2018-11-21T12:00:00"
+    },
+    "NotSupportedByDesign": "java",
+    "Results": [
+      {
+        "Text": "end of day",
+        "Start": 31,
+        "End": 40,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-11-21T23:59:59",
+              "type": "datetime",
+              "value": "2018-11-21 23:59:59"  
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Bob and Alice usually exchange their encrypted messages at the eod.",
+    "Context": {
+      "ReferenceDateTime": "2018-11-21T12:00:00"
+    },
+    "NotSupportedByDesign": "java",
+    "Results": [
+      {
+        "Text": "the eod",
+        "Start": 59,
+        "End": 65,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-11-21T23:59:59",
+              "type": "datetime",
+              "value": "2018-11-21 23:59:59"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "A big party will be held at the EOY.",
+    "Context": {
+      "ReferenceDateTime": "2018-11-23T12:00:00"
+    },
+    "NotSupportedByDesign": "java",
+    "Results": [
+      {
+        "Text": "eoy",
+        "Start": 32,
+        "End": 34,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018",
+              "Mod": "end",
+              "type": "daterange",
+              "start": "2018-07-01",
+              "end": "2019-01-01"  
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "A big party will be held at the end of year.",
+    "Context": {
+      "ReferenceDateTime": "2018-11-27T12:00:00"
+    },
+    "NotSupportedByDesign": "java",
+    "Results": [
+      {
+        "Text": "end of year",
+        "Start": 32,
+        "End": 42,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018",
+              "Mod": "end",
+              "type": "daterange",
+              "start": "2018-07-01",
+              "end": "2019-01-01"  
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I heard you will hold a birthday party end of month",
+    "Context": {
+      "ReferenceDateTime": "2018-11-27T12:00:00"
+    },
+    "NotSupportedByDesign": "java",
+    "Results": [
+      {
+        "Text": "end of month",
+        "Start": 39,
+        "End": 50,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-11",
+              "Mod": "end",
+              "type": "daterange",
+              "start": "2018-11-16",
+              "end": "2018-12-01"  
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Don't forget to push your code as all the disks will be renewed the end of the week.",
+    "Context": {
+      "ReferenceDateTime": "2018-11-29T12:00:00"
+    },
+    "NotSupportedByDesign": "java",
+    "Results": [
+      {
+        "Text": "end of the week",
+        "Start": 68,
+        "End": 82,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-W48",
+              "Mod": "end",
+              "type": "daterange",
+              "start": "2018-11-29",
+              "end": "2018-12-03"  
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

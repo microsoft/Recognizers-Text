@@ -25,7 +25,8 @@ export class FrenchDateTimeExtractorConfiguration implements IDateTimeExtractorC
     readonly nightRegex: RegExp;
     readonly timeOfTodayBeforeRegex: RegExp;
     readonly simpleTimeOfTodayBeforeRegex: RegExp;
-    readonly theEndOfRegex: RegExp;
+    readonly specificEndOfRegex: RegExp;
+    readonly unspecificEndOfRegex: RegExp;
     readonly unitRegex: RegExp;
     readonly utilityConfiguration: IDateTimeUtilityConfiguration;
     readonly prepositionRegex: RegExp;
@@ -43,7 +44,8 @@ export class FrenchDateTimeExtractorConfiguration implements IDateTimeExtractorC
         this.timeOfTodayBeforeRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.TimeOfTodayBeforeRegex, "gis");
         this.simpleTimeOfTodayAfterRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.SimpleTimeOfTodayAfterRegex, "gis");
         this.simpleTimeOfTodayBeforeRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.SimpleTimeOfTodayBeforeRegex, "gis");
-        this.theEndOfRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.TheEndOfRegex, "gis");
+        this.specificEndOfRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.SpecificEndOfRegex, "gis");
+        this.unspecificEndOfRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.UnspecificEndOfRegex, "gis");
         this.unitRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.TimeUnitRegex, "gis");
         this.connectorRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.ConnectorRegex, "gis");
         this.nightRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.NightRegex, "gis");
@@ -81,7 +83,8 @@ export class FrenchDateTimeParserConfiguration implements IDateTimeParserConfigu
     readonly simpleTimeOfTodayAfterRegex: RegExp;
     readonly simpleTimeOfTodayBeforeRegex: RegExp;
     readonly specificTimeOfDayRegex: RegExp;
-    readonly theEndOfRegex: RegExp;
+    readonly specificEndOfRegex: RegExp;
+    readonly unspecificEndOfRegex: RegExp;
     readonly unitRegex: RegExp;
     readonly unitMap: ReadonlyMap<string, string>;
     readonly numbers: ReadonlyMap<string, number>;
@@ -96,10 +99,11 @@ export class FrenchDateTimeParserConfiguration implements IDateTimeParserConfigu
         this.nowRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.NowRegex, "gis");
         this.amTimeRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.AMTimeRegex, "gis");
         this.pmTimeRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.PMTimeRegex, "gis");
-        this.simpleTimeOfTodayAfterRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.SimpleTimeOfTodayAfterRegex, "gis")
-        this.simpleTimeOfTodayBeforeRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.SimpleTimeOfTodayBeforeRegex, "gis")
+        this.simpleTimeOfTodayAfterRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.SimpleTimeOfTodayAfterRegex, "gis");
+        this.simpleTimeOfTodayBeforeRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.SimpleTimeOfTodayBeforeRegex, "gis");
         this.specificTimeOfDayRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.SpecificTimeOfDayRegex, "gis");
-        this.theEndOfRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.TheEndOfRegex, "gis")
+        this.specificEndOfRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.SpecificEndOfRegex, "gis");
+        this.unspecificEndOfRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.UnspecificEndOfRegex, "gis");
         this.unitRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.TimeUnitRegex, "gis");
 
         this.dateExtractor = config.dateExtractor;

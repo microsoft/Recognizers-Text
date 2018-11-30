@@ -688,6 +688,14 @@ namespace Microsoft.Recognizers.Text.DateTime
                     ret.Mod = Constants.MID_MOD;
                 }
 
+                // Handle the abbreviation of DatePeriod, e.g., 'eoy(end of year)', the behavior of 'eoy' should be the same as 'end of year'
+                if (this.config.UnspecificEndOfRangeRegex.IsMatch(match.Value))
+                {
+                    latePrefix = true;
+                    trimmedText = match.Value;
+                    ret.Mod = Constants.LATE_MOD;
+                }
+
                 if (match.Groups["RelEarly"].Success)
                 {
                     earlierPrefix = true;
