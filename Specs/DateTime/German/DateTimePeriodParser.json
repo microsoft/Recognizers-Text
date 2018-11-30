@@ -56,11 +56,11 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "Comment": "Parser returns NULL as value. The Parser Returns Null as value. Should not be different to the one above",
-    "NotSupported": "javascript, dotnet, python",
+    "Comment": "Space at the end",
+    "NotSupported": "dotnet, javascript, python",
     "Results": [
       {
-        "Text": "22.4.2016 von 5 bis 6 ",
+        "Text": "22.4.2016 von 5 bis 6",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2016-04-22T05,2016-04-22T06,PT1H)",
@@ -72,7 +72,9 @@
             "startDateTime": "2016-04-22 05:00:00",
             "endDateTime": "2016-04-22 06:00:00"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 31
       }
     ]
   },
@@ -133,10 +135,11 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "javascript, python, dotNet",
+    "Comment": "Resolution is null",
+    "NotSupported": "dotnet, javascript, python",
     "Results": [
       {
-        "Text": "Dienstagabend",
+        "Text": "dienstagabend",
         "Type": "datetimerange",
         "Value": {
           "Timex": "2016-11-08TEV",
@@ -185,20 +188,21 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "javascript, python, dotNet",
+    "Comment": "Resolution is null",
+    "NotSupported": "dotnet, javascript, python",
     "Results": [
       {
-        "Text": "Dienstagnacht",
+        "Text": "dienstagnacht",
         "Type": "datetimerange",
         "Value": {
           "Timex": "2016-11-08TNI",
           "FutureResolution": {
-            "startDateTime": "2016-11-08 22:00:00",
-            "endDateTime": "2016-11-09 06:00:00"
+            "startDateTime": "2016-11-08 20:00:00",
+            "endDateTime": "2016-11-08 23:59:59"
           },
           "PastResolution": {
-            "startDateTime": "2016-11-08 22:00:00",
-            "endDateTime": "2016-11-09 06:00:00"
+            "startDateTime": "2016-11-08 20:00:00",
+            "endDateTime": "2016-11-08 23:59:59"
           }
         },
         "Start": 21,
@@ -263,20 +267,20 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "javascript, python, dotNet",
+    "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "heute Nacht",
+        "Text": "heute nacht",
         "Type": "datetimerange",
         "Value": {
           "Timex": "2016-11-07TNI",
           "FutureResolution": {
-            "startDateTime": "2016-11-07 22:00:00",
-            "endDateTime": "2016-11-08 06:00:00"
+            "startDateTime": "2016-11-07 20:00:00",
+            "endDateTime": "2016-11-07 23:59:59"
           },
           "PastResolution": {
-            "startDateTime": "2016-11-07 22:00:00",
-            "endDateTime": "2016-11-08 06:00:00"
+            "startDateTime": "2016-11-07 20:00:00",
+            "endDateTime": "2016-11-07 23:59:59"
           }
         },
         "Start": 10,
@@ -289,7 +293,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "javascript, python, dotNet",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "heute Abend",
@@ -297,12 +301,12 @@
         "Value": {
           "Timex": "2016-11-07TEV",
           "FutureResolution": {
-            "startDateTime": "2016-11-07 18:00:00",
-            "endDateTime": "2016-11-07 22:00:00"
+            "startDateTime": "2016-11-07 16:00:00",
+            "endDateTime": "2016-11-07 20:00:00"
           },
           "PastResolution": {
-            "startDateTime": "2016-11-07 18:00:00",
-            "endDateTime": "2016-11-07 22:00:00"
+            "startDateTime": "2016-11-07 16:00:00",
+            "endDateTime": "2016-11-07 20:00:00"
           }
         },
         "Start": 10,
@@ -341,10 +345,11 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "javascript, python, dotNet",
+    "Comment": "Resolution is null",
+    "NotSupported": "dotnet, javascript, python",
     "Results": [
       {
-        "Text": "diesem Vormittag",
+        "Text": "diesem vormittag",
         "Type": "datetimerange",
         "Value": {
           "Timex": "2016-11-07TMO",
@@ -367,7 +372,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "javascript, python, dotNet",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "diesem Nachmittag",
@@ -376,11 +381,11 @@
           "Timex": "2016-11-07TAF",
           "FutureResolution": {
             "startDateTime": "2016-11-07 12:00:00",
-            "endDateTime": "2016-11-07 18:00:00"
+            "endDateTime": "2016-11-07 16:00:00"
           },
           "PastResolution": {
             "startDateTime": "2016-11-07 12:00:00",
-            "endDateTime": "2016-11-07 18:00:00"
+            "endDateTime": "2016-11-07 16:00:00"
           }
         },
         "Start": 3,
@@ -497,10 +502,11 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "javascript, python, dotNet",
+    "Comment": "Resolution is null",
+    "NotSupported": "dotnet, javascript, python",
     "Results": [
       {
-        "Text": "Dienstagmorgen",
+        "Text": "dienstagmorgen",
         "Type": "datetimerange",
         "Value": {
           "Timex": "2016-11-08TMO",
@@ -523,7 +529,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "javascript, python, dotNet",
+    "NotSupported": "dotnet, javascript, python",
+    "Comment": "Resolution is null",
     "Results": [
       {
         "Text": "Dienstagabend",
@@ -549,10 +556,11 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "javascript, python, dotNet",
+    "Comment": "Resolution is null",
+    "NotSupported": "dotnet, javascript, python",
     "Results": [
       {
-        "Text": "Dienstag am Vormittag",
+        "Text": "dienstag am vormittag",
         "Type": "datetimerange",
         "Value": {
           "Timex": "2016-11-08TMO",
