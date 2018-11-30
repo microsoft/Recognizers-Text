@@ -1600,7 +1600,7 @@
         "Text": "the third week of 2027",
         "Type": "daterange",
         "Value": {
-          "Timex": "2027-01-W03",
+          "Timex": "2027-W03",
           "FutureResolution": {
             "startDate": "2027-01-18",
             "endDate": "2027-01-25"
@@ -1625,7 +1625,7 @@
         "Text": "the third week next year",
         "Type": "daterange",
         "Value": {
-          "Timex": "2017-01-W03",
+          "Timex": "2017-W03",
           "FutureResolution": {
             "startDate": "2017-01-16",
             "endDate": "2017-01-23"
@@ -2480,7 +2480,7 @@
         "Text": "first week of this year",
         "Type": "daterange",
         "Value": {
-          "Timex": "2017-01-W01",
+          "Timex": "2017-W01",
           "FutureResolution": {
             "startDate": "2017-01-02",
             "endDate": "2017-01-09"
@@ -2505,7 +2505,7 @@
         "Text": "first week of 2015",
         "Type": "daterange",
         "Value": {
-          "Timex": "2015-01-W01",
+          "Timex": "2015-W01",
           "FutureResolution": {
             "startDate": "2014-12-29",
             "endDate": "2015-01-05"
@@ -2530,7 +2530,7 @@
         "Text": "second week of 2015",
         "Type": "daterange",
         "Value": {
-          "Timex": "2015-01-W02",
+          "Timex": "2015-W02",
           "FutureResolution": {
             "startDate": "2015-01-05",
             "endDate": "2015-01-12"
@@ -2580,7 +2580,7 @@
         "Text": "last week of 2015",
         "Type": "daterange",
         "Value": {
-          "Timex": "2015-12-W53",
+          "Timex": "2015-W53",
           "FutureResolution": {
             "startDate": "2015-12-28",
             "endDate": "2016-01-04"
@@ -3126,7 +3126,7 @@
         "Text": "the third week of two thousand and twenty seven",
         "Type": "daterange",
         "Value": {
-          "Timex": "2027-01-W03",
+          "Timex": "2027-W03",
           "FutureResolution": {
             "startDate": "2027-01-18",
             "endDate": "2027-01-25"

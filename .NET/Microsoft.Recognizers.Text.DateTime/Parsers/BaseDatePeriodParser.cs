@@ -1430,14 +1430,15 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var lastDay = DateObject.MinValue.SafeCreateFromValue(year, 12, 31);
                 var lastDayWeekMonday = lastDay.This(DayOfWeek.Monday);
                 weekNum = Cal.GetWeekOfYear(lastDay, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday);
+
                 if (weekNum == 1)
                 {
                     lastDayWeekMonday = lastDay.AddDays(-7).This(DayOfWeek.Monday);
                 }
-                targetWeekMonday = lastDayWeekMonday;
-                weekNum = Cal.GetWeekOfYear(targetWeekMonday, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday);
 
-                ret.Timex = $"{year:D4}-{targetWeekMonday.Month:D2}-W{weekNum}";
+                targetWeekMonday = lastDayWeekMonday;
+
+                ret.Timex = TimexUtility.GenerateWeekTimex(targetWeekMonday);
             }
             else
             {
@@ -1452,9 +1453,9 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 var cardinal = this.config.CardinalMap[cardinalStr];
                 targetWeekMonday = firstDayWeekMonday.AddDays(7 * (cardinal - 1));
-                var targetWeekSunday = targetWeekMonday.This(DayOfWeek.Sunday);
 
-                ret.Timex = $"{year:D4}-{targetWeekSunday.Month:D2}-W{cardinal:D2}";
+                // Passing Sunday (last day of the week) as parameter because Monday (first day of the week) may also belong to the last week of previous year
+                ret.Timex = TimexUtility.GenerateWeekTimex(targetWeekMonday.This(DayOfWeek.Sunday));
             }
 
             ret.FutureValue = InclusiveEndPeriod
