@@ -81,6 +81,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 dateTimeEr.Text = er.Text;
             }
 
+            dateTimeEr.Data = er.Data;
             var dateTimePr = new DateTimeParseResult();
 
             if (subType == Constants.SYS_DATETIME_DATE)

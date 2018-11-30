@@ -21,6 +21,24 @@ namespace Microsoft.Recognizers.Text.DateTime
             return this.Parse(result, DateObject.Now);
         }
 
+        private bool ShouldResolveTimeZone(ExtractResult er)
+        {
+            var enablePreview = (config.Options & DateTimeOptions.EnablePreview) != 0;
+            var hasTimeZoneData = false;
+
+            if (er.Data is Dictionary<string, object>)
+            {
+                var metadata = er.Data as Dictionary<string, object>;
+
+                if (metadata != null && metadata.ContainsKey(Constants.SYS_DATETIME_TIMEZONE))
+                {
+                    hasTimeZoneData = true;
+                }
+            }
+
+            return enablePreview && hasTimeZoneData;
+        }
+
         public DateTimeParseResult Parse(ExtractResult er, DateObject referenceTime)
         {
             object value = null;
@@ -29,13 +47,13 @@ namespace Microsoft.Recognizers.Text.DateTime
                 DateTimeResolutionResult innerResult;
 
                 // Resolve timezome
-                if ((config.Options & DateTimeOptions.EnablePreview) != 0 &&
-                    er.Data is KeyValuePair<string, ExtractResult>)
+                if (ShouldResolveTimeZone(er))
                 {
-                    var timezoneEr = ((KeyValuePair<string, ExtractResult>) er.Data).Value;
+                    var metadata = er.Data as Dictionary<string, object>;
+                    var timezoneEr = metadata[Constants.SYS_DATETIME_TIMEZONE] as ExtractResult;
                     var timezonePr = config.TimeZoneParser.Parse(timezoneEr);
 
-                    innerResult = InternalParse(er.Text.Substring(0, (int)(er.Length - timezoneEr.Length)),
+                    innerResult = InternalParse(er.Text.Substring(0, (int)(er.Text.Length - timezoneEr.Length)),
                         referenceTime);
 
                     if (timezonePr.Value != null)
@@ -124,7 +142,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
 
                     ret.Timex = "T" + hour.ToString("D2");
-                    ret.FutureValue = ret.PastValue = 
+                    ret.FutureValue = ret.PastValue =
                         DateObject.MinValue.SafeCreateFromValue(referenceTime.Year, referenceTime.Month, referenceTime.Day, hour, 0, 0);
                     ret.Success = true;
                     return ret;

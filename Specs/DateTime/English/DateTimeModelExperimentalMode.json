@@ -6567,6 +6567,91 @@
     ]
   },
   {
+    "Input": "Cortana, please find us 30 minutes on 11/20, 11/22 or 11/25",
+    "Context": {
+      "ReferenceDateTime": "2018-11-28T12:00:00"
+    },
+    "NotSupportedByDesign": "java",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "30 minutes",
+        "Start": 24,
+        "End": 33,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT30M",
+              "type": "duration",
+              "value": "1800"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "11/20",
+        "Start": 38,
+        "End": 42,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-11-20",
+              "type": "date",
+              "value": "2018-11-20"
+            },
+            {
+              "timex": "XXXX-11-20",
+              "type": "date",
+              "value": "2019-11-20"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "11/22",
+        "Start": 45,
+        "End": 49,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-11-22",
+              "type": "date",
+              "value": "2018-11-22"
+            },
+            {
+              "timex": "XXXX-11-22",
+              "type": "date",
+              "value": "2019-11-22"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "11/25",
+        "Start": 54,
+        "End": 58,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-11-25",
+              "type": "date",
+              "value": "2018-11-25"
+            },
+            {
+              "timex": "XXXX-11-25",
+              "type": "date",
+              "value": "2019-11-25"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
     "Input": "You shouldn't always go to bed end of the day since it will do harm to your health.",
     "Context": {
       "ReferenceDateTime": "2018-11-21T12:00:00"
@@ -6658,6 +6743,56 @@
               "type": "daterange",
               "start": "2018-07-01",
               "end": "2019-01-01"  
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Do you know the date? 11/20, 12 of Nov?",
+    "Context": {
+      "ReferenceDateTime": "2018-11-28T12:00:00"
+    },
+    "NotSupportedByDesign": "java",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "11/20",
+        "Start": 22,
+        "End": 26,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-11-20",
+              "type": "date",
+              "value": "2018-11-20"
+            },
+            {
+              "timex": "XXXX-11-20",
+              "type": "date",
+              "value": "2019-11-20"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "12 of nov",
+        "Start": 29,
+        "End": 37,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-11-12",
+              "type": "date",
+              "value": "2018-11-12"
+            },
+            {
+              "timex": "XXXX-11-12",
+              "type": "date",
+              "value": "2019-11-12"
             }
           ]
         }

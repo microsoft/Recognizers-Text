@@ -163,11 +163,17 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             // on (Sunday,)? 24-12
             var dateRegex8 = new Regex(DateTimeDefinitions.DateExtractor8, dateRegexOption);
 
-            // (Sunday,)? 7/23
-            var dateRegex7 = new Regex(DateTimeDefinitions.DateExtractor7, dateRegexOption);
+            // "(Sunday,)? 7/23, 2018", year part is required
+            var dateRegex7L = new Regex(DateTimeDefinitions.DateExtractor7L, dateRegexOption);
 
-            // (Sunday,)? 23/7
-            var dateRegex9 = new Regex(DateTimeDefinitions.DateExtractor9, dateRegexOption);
+            // "(Sunday,)? 7/23", year part is not required
+            var dateRegex7S = new Regex(DateTimeDefinitions.DateExtractor7S, dateRegexOption);
+
+            // "(Sunday,)? 23/7, 2018", year part is required
+            var dateRegex9L = new Regex(DateTimeDefinitions.DateExtractor9L, dateRegexOption);
+
+            // "(Sunday,)? 23/7", year part is not required
+            var dateRegex9S = new Regex(DateTimeDefinitions.DateExtractor9S, dateRegexOption);
 
             // (Sunday,)? 2015-12-23
             var dateRegexA = new Regex(DateTimeDefinitions.DateExtractorA, dateRegexOption);
@@ -189,8 +195,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
                             DateTimeDefinitions.DefaultLanguageFallback == Constants.DefaultLanguageFallback_DMY;
 
             DateRegexList = DateRegexList.Concat(enableDmy ? 
-                new[] {dateRegex5, dateRegex8, dateRegex9, dateRegex4, dateRegex6, dateRegex7, dateRegexA} :
-                new[] {dateRegex4, dateRegex6, dateRegex7, dateRegex5, dateRegex8, dateRegex9, dateRegexA});
+                new[] {dateRegex5, dateRegex8, dateRegex9L, dateRegex9S, dateRegex4, dateRegex6, dateRegex7L, dateRegex7S, dateRegexA} :
+                new[] {dateRegex4, dateRegex6, dateRegex7L, dateRegex7S, dateRegex5, dateRegex8, dateRegex9L, dateRegex9S, dateRegexA});
         }
 
         public IEnumerable<Regex> DateRegexList { get; }
