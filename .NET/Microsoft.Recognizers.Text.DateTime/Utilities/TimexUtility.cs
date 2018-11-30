@@ -261,6 +261,21 @@ namespace Microsoft.Recognizers.Text.DateTime
             return $"{dateTimex}{timeTimex}";
         }
 
+        public static string CombineMonthAndWeekTimex(string monthTimex, string weekTimex)
+        {
+            return $"{monthTimex}-{weekTimex}";
+        }
+
+        public static string CombineYearAndWeekTimex(string yearTimex, string weekTimex)
+        {
+            return $"{yearTimex}-{weekTimex}";
+        }
+
+        public static string GenerateWeekTimex(int cardinal)
+        {
+            return $"W{cardinal.ToString("D2")}";
+        }
+
         public static string GenerateDateTimePeriodTimex(string beginTimex, string endTimex, string durationTimex)
         {
             return $"({beginTimex},{endTimex},{durationTimex})";

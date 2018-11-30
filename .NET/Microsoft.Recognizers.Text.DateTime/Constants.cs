@@ -77,6 +77,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         // Invalid year
         public const int InvalidYear = int.MinValue;
+        public const int InvalidMonth = int.MinValue;
+        public const int InvalidDay = int.MinValue;
         public const int InvalidHour = int.MinValue;
         public const int InvalidMinute = int.MinValue;
         public const int InvalidSecond = int.MinValue;
