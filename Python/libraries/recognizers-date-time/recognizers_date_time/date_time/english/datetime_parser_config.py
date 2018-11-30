@@ -76,8 +76,12 @@ class EnglishDateTimeParserConfiguration(DateTimeParserConfiguration):
         return self._specific_time_of_day_regex
 
     @property
-    def the_end_of_regex(self) -> Pattern:
-        return self._the_end_of_regex
+    def specific_end_of_regex(self) -> Pattern:
+        return self._specific_end_of_regex
+
+    @property
+    def unspecific_end_of_regex(self) -> Pattern:
+        return self._unspecific_end_of_regex
 
     @property
     def unit_regex(self) -> Pattern:
@@ -108,7 +112,8 @@ class EnglishDateTimeParserConfiguration(DateTimeParserConfiguration):
         self._simple_time_of_today_after_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.SimpleTimeOfTodayAfterRegex)
         self._simple_time_of_today_before_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.SimpleTimeOfTodayBeforeRegex)
         self._specific_time_of_day_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.SpecificTimeOfDayRegex)
-        self._the_end_of_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.TheEndOfRegex)
+        self._specific_end_of_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.SpecificEndOfRegex)
+        self._unspecific_end_of_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.UnspecificEndOfRegex)
         self._unit_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.TimeUnitRegex)
         self._numbers = config.numbers
         self._cardinal_extractor = config.cardinal_extractor

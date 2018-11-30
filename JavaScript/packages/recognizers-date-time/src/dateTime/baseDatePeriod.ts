@@ -272,6 +272,7 @@ export interface IDatePeriodParserConfiguration {
     restOfDateRegex: RegExp
     laterEarlyPeriodRegex: RegExp
     weekWithWeekDayRangeRegex: RegExp
+    unspecificEndOfRangeRegex: RegExp
     tokenBeforeDate: string
     dayOfMonth: ReadonlyMap<string, number>
     monthOfYear: ReadonlyMap<string, number>
@@ -534,6 +535,13 @@ export class BaseDatePeriodParser implements IDateTimeParser {
             latePrefix = true;
             trimedText = match.groups("suffix").value;
             result.mod = Constants.MID_MOD;
+        }
+
+        if (RegExpUtility.isMatch(this.config.unspecificEndOfRangeRegex, match.value))
+        {
+            latePrefix = true;
+            trimedText = match.value;
+            result.mod = Constants.LATE_MOD;
         }
 
         if (match.groups("RelEarly").value)

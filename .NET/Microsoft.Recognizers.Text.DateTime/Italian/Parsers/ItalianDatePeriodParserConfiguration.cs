@@ -85,10 +85,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         public static readonly Regex RelativeRegex =
             new Regex(DateTimeDefinitions.RelativeRegex, RegexOptions.Singleline);
 
+        public static readonly Regex UnspecificEndOfRangeRegex =
+            new Regex(DateTimeDefinitions.UnspecificEndOfRangeRegex, RegexOptions.Singleline);
+
         Regex IDatePeriodParserConfiguration.NextPrefixRegex => NextPrefixRegex;
         Regex IDatePeriodParserConfiguration.PastPrefixRegex => PastPrefixRegex;
         Regex IDatePeriodParserConfiguration.ThisPrefixRegex => ThisPrefixRegex;
         Regex IDatePeriodParserConfiguration.RelativeRegex => RelativeRegex;
+        Regex IDatePeriodParserConfiguration.UnspecificEndOfRangeRegex => UnspecificEndOfRangeRegex;
+
         #endregion
 
         #region Dictionaries
