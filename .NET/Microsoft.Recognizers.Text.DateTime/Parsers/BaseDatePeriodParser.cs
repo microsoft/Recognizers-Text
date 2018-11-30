@@ -1398,6 +1398,9 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
+        // We follow the ISO week definition:
+        // "first week of the year" - it has the year's first Thursday in it
+        // "last week of the year" - it has the year's last Thursday in it
         private DateTimeResolutionResult ParseWeekOfYear(string text, DateObject referenceDate)
         {
             var ret = new DateTimeResolutionResult();
@@ -1428,34 +1431,36 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (this.config.IsLastCardinal(cardinalStr))
             {
                 var lastDay = DateObject.MinValue.SafeCreateFromValue(year, 12, 31);
-                var lastDayWeekMonday = lastDay.This(DayOfWeek.Monday);
-                weekNum = Cal.GetWeekOfYear(lastDay, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday);
+                var lastDayWeekThursday = lastDay.This(DayOfWeek.Thursday);
+                weekNum = Cal.GetWeekOfYear(lastDayWeekThursday, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday);
 
+                // Thursday fall into next year's first week
                 if (weekNum == 1)
                 {
-                    lastDayWeekMonday = lastDay.AddDays(-Constants.WeekDayCount).This(DayOfWeek.Monday);
+                    lastDayWeekThursday = lastDayWeekThursday.AddDays(-Constants.WeekDayCount);
                 }
 
-                targetWeekMonday = lastDayWeekMonday;
+                targetWeekMonday = lastDayWeekThursday.This(DayOfWeek.Monday);
 
                 ret.Timex = TimexUtility.GenerateWeekTimex(targetWeekMonday);
             }
             else
             {
                 var firstDay = DateObject.MinValue.SafeCreateFromValue(year, 1, 1);
-                DateObject firstDayWeekMonday = firstDay.This(DayOfWeek.Monday);
-
+                DateObject firstDayWeekThursday = firstDay.This(DayOfWeek.Thursday);
                 weekNum = Cal.GetWeekOfYear(firstDay, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday);
+
+                // Thursday fall into previous year's last week
                 if (weekNum != 1)
                 {
-                    firstDayWeekMonday = firstDay.AddDays(Constants.WeekDayCount).This(DayOfWeek.Monday);
+                    firstDayWeekThursday = firstDay.AddDays(Constants.WeekDayCount);
                 }
 
                 var cardinal = this.config.CardinalMap[cardinalStr];
-                targetWeekMonday = firstDayWeekMonday.AddDays(Constants.WeekDayCount * (cardinal - 1));
+                targetWeekMonday = firstDayWeekThursday.This(DayOfWeek.Monday)
+                    .AddDays(Constants.WeekDayCount * (cardinal - 1));
 
-                // Passing Sunday (last day of the week) as parameter because Monday (first day of the week) may also belong to the last week of previous year
-                ret.Timex = TimexUtility.GenerateWeekTimex(targetWeekMonday.This(DayOfWeek.Sunday));
+                ret.Timex = TimexUtility.GenerateWeekTimex(targetWeekMonday);
             }
 
             ret.FutureValue = InclusiveEndPeriod
