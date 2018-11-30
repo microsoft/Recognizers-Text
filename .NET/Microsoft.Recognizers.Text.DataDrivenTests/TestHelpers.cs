@@ -5,20 +5,21 @@ using System.IO;
 using System.Linq;
 using DateObject = System.DateTime;
 
+using Microsoft.Recognizers.Text.Choice;
 using Microsoft.Recognizers.Text.DateTime;
 using Microsoft.Recognizers.Text.DateTime.English;
 using Microsoft.Recognizers.Text.DateTime.French;
 using Microsoft.Recognizers.Text.DateTime.German;
+using Microsoft.Recognizers.Text.DateTime.Italian;
 using Microsoft.Recognizers.Text.DateTime.Spanish;
 using Microsoft.Recognizers.Text.DateTime.Portuguese;
 using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.NumberWithUnit;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Microsoft.Recognizers.Text.Sequence;
-using Microsoft.Recognizers.Text.Choice;
+
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using Newtonsoft.Json;
-using Microsoft.Recognizers.Text.DateTime.Italian;
 
 namespace Microsoft.Recognizers.Text.DataDrivenTests
 {
@@ -34,9 +35,8 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
             var directorySpecs = Path.Combine("..", "..", "..", "..", "Specs", recognizerLanguage[0], recognizerLanguage[1]);
 
-            var specsFiles = Directory.GetFiles(directorySpecs);
-            foreach (var specsFile in specsFiles)
-            {
+            var specsFiles = Directory.GetFiles(directorySpecs, "*.json");
+            foreach (var specsFile in specsFiles) {
                 var fileName = Path.GetFileNameWithoutExtension(specsFile) + "-" + recognizerLanguage[1];
                 var rawData = File.ReadAllText(specsFile);
                 var specs = JsonConvert.DeserializeObject<IList<TestModel>>(rawData);
@@ -44,6 +44,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                                   string.Join(Environment.NewLine, Enumerable.Range(0, specs.Count).Select(o => o.ToString())));
                 resources.Add(Path.GetFileNameWithoutExtension(specsFile), specs);
             }
+
         }
 
         public static TestModel GetSpecForContext(this TestResources resources, TestContext context)

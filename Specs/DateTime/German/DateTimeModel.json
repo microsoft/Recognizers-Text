@@ -179,10 +179,11 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotNet, javascript, python",
+	"Comment": "Returning only the future resolution and wrong timex",
+    "NotSupported": "dotnet, javascript, python",
     "Results": [
       {
-        "Text": "freitag ",
+        "Text": "freitag",
         "Start": 13,
         "End": 19,
         "TypeName": "datetimeV2.date",
@@ -464,7 +465,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotNet, python",
+	"Comment": "Resolution is null",
+    "NotSupported": "dotnet, python",
     "Results": [
       {
         "Text": "22. april von 5 bis 6 uhr nachmittags",
@@ -495,10 +497,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "dieser Abend",
+        "Text": "dieser abend",
         "Start": 0,
         "End": 11,
         "TypeName": "datetimeV2.datetimerange",
@@ -507,8 +509,8 @@
             {
               "timex": "2016-11-07TEV",
               "type": "datetimerange",
-              "start": "2016-11-07 18:00:00",
-              "end": "2016-11-07 22:00:00"
+              "start": "2016-11-07 16:00:00",
+              "end": "2016-11-07 20:00:00"
             }
           ]
         }
@@ -520,12 +522,12 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "nächsten Montag Nachmittag",
+        "Text": "nächsten montag nachmittag",
         "Start": 13,
-        "End": 27,
+        "End": 38,
         "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
           "values": [
@@ -545,11 +547,11 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "Comment": "Resolution is null in dotNet",
-    "NotSupported": "dotNet, javascript, python",
+    "Comment": "Resolution is null",
+    "NotSupported": "dotnet, javascript, python",
     "Results": [
       {
-        "Text": "nächsten Montagnachmittag",
+        "Text": "nächsten montagnachmittag",
         "Start": 13,
         "End": 37,
         "TypeName": "datetimeV2.datetimerange",
@@ -571,8 +573,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "Comment": "Not supported, check resolution, returns to null in dotnet",
-    "NotSupported": "dotNet, javascript, python",
+    "Comment": "Not supported, check resolution, returns null",
+    "NotSupported": "dotnet, javascript, python",
     "Results": [
       {
         "Text": "dienstagmorgen",
@@ -970,7 +972,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotNet, javascript, python",
+	"Comment" : "Output contains a trailing whitespace",
+    "NotSupported": "dotnet, javascript, python",
     "Results": [
       {
         "Text": "morgens von 5 bis sieben",
@@ -1051,7 +1054,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotNet, javascript, python",
+	"Comment": "Output is -gegen abend- should that be considered correct?",
+    "NotSupported": "dotnet, javascript, python",
     "Results": [
       {
         "Text": "abend",
@@ -1148,13 +1152,12 @@
     "Context": {
       "ReferenceDateTime": "2017-12-04T00:00:00"
     },
-    "Comment": "Not supported, check resolution, returns to null in dotnet",
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "nächste woche montag um 9 uhr morgens",
         "Start": 31,
-        "End": 68,
+        "End": 67,
         "TypeName": "datetimeV2.datetime",
         "Resolution": {
           "values": [
@@ -1169,7 +1172,7 @@
       {
         "Text": "ein uhr nachmittags",
         "Start": 74,
-        "End": 93,
+        "End": 92,
         "TypeName": "datetimeV2.time",
         "Resolution": {
           "values": [
