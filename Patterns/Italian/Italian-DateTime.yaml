@@ -954,7 +954,6 @@ WeekTerms: !list
   types: [ string ]
   entries:
     - semaine
-    - fin de semaine
 YearTerms: !list
   types: [ string ]
   entries:
