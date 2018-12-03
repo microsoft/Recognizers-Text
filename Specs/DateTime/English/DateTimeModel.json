@@ -8981,9 +8981,9 @@
     "Context": {
       "ReferenceDateTime": "2018-11-29T12:00:00"
     },
-    "Comment": "Not supported as the TimeZone is not enabled for now",
+    "Comment": "between 9-6 PT can't be extracted as TimeZone is not enabled for now",
     "NotSupportedByDesign": "java",
-    "NotSupported": "javascript, python, dotnet",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "wednesday",
@@ -9044,34 +9044,6 @@
             }
           ]
         }
-      },
-      {
-        "Text": "between 9-6 pt",
-        "Start": 81,
-        "End": 94,
-        "TypeName": "datetimeV2.timerange",
-        "Resolution": {
-          "values": [
-            {
-              "timex": "(T09,T18,PT9H)",
-              "type": "timerange",
-              "timezone": "UTC-07:00",
-              "timezoneText": "pt",
-              "utcOffsetMins": "-420",
-              "start": "09:00:00",
-              "end": "18:00:00"
-            },
-            {
-              "timex": "(T21,T06,PT9H)",
-              "type": "timerange",
-              "timezone": "UTC-07:00",
-              "timezoneText": "pt",
-              "utcOffsetMins": "-420",
-              "start": "21:00:00",
-              "end": "06:00:00"
-            }
-          ]
-        }
       }
     ]
   },
@@ -9119,32 +9091,26 @@
     "Context": {
       "ReferenceDateTime": "2018-11-28T12:00:00"
     },
-    "Comment": "Not supported as the TimeZone is not enabled for now",
+    "Comment": "Cst can't be recognized as TimeZone is not enabled for now",
     "NotSupportedByDesign": "java",
-    "NotSupported": "javascript, python, dotnet",
+    "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": " between 9 to 10:30 cst",
-        "Start": 9,
-        "End": 31,
+        "Text": "between 9 to 10:30",
+        "Start": 10,
+        "End": 27,
         "TypeName": "datetimeV2.timerange",
         "Resolution": {
           "values": [
             {
               "timex": "(T09,T10:30,PT1H30M)",
               "type": "timerange",
-              "timezone": "UTC+XX:XX",
-              "timezoneText": "cst",
-              "utcOffsetMins": "-10000",
               "start": "09:00:00",
               "end": "10:30:00"
             },
             {
               "timex": "(T21,T22:30,PT1H30M)",
               "type": "timerange",
-              "timezone": "UTC+XX:XX",
-              "timezoneText": "cst",
-              "utcOffsetMins": "-10000",
               "start": "21:00:00",
               "end": "22:30:00"
             }
