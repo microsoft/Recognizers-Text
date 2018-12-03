@@ -193,8 +193,11 @@ WeekDayEnd: !nestedRegex
   references: [ WeekDayRegex ]
 RangeUnitRegex: !simpleRegex
   def: \b(?<unit>l'anno|ann[oi]?|mesi|settimane|settimana)\b
-DescRegex: !simpleRegex
-  def: (?<desc>h|ampm|am\b|a\.m\.|a m\b|a\. m\.|a\.m\b|a\. m\b|pm\b|p\.m\.|p m\b|p\. m\.|p\.m\b|p\. m\b|p\b\b)
+SpecialDescRegex: !simpleRegex
+  def: (p\b)
+DescRegex: !nestedRegex
+  def: (?<desc>h|{BaseDateTime.AmPmDescRegex}|{BaseDateTime.AmDescRegex}|{BaseDateTime.PmDescRegex}|{SpecialDescRegex})
+  references: [BaseDateTime.AmDescRegex, BaseDateTime.PmDescRegex, BaseDateTime.AmPmDescRegex, SpecialDescRegex]
 HourNumRegex: !simpleRegex
   def: \b(?<hournum>zero|uno|due|tre|quattro|cinque|sei|sette|otto|nove|dieci|undici|dodici)\b
 MinuteNumRegex: !simpleRegex

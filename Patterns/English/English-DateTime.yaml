@@ -244,9 +244,11 @@ RangeUnitRegex: !simpleRegex
   def: \b(?<unit>years|year|months|month|weeks|week)\b
 OclockRegex: !simpleRegex
   def: (?<oclock>o\s*’\s*clock|o\s*‘\s*clock|o\s*'\s*clock|o\s*clock)
+SpecialDescRegex: !simpleRegex
+  def: (p\b)
 DescRegex: !nestedRegex
-  def: ((({OclockRegex}\s+)?(?<desc>ampm|am\b|a\.m\.|a m\b|a\. m\.|a\.m\b|a\. m\b|a m\b|pm\b|p\.m\.|p m\b|p\. m\.|p\.m\b|p\. m\b|p\b|p m\b))|{OclockRegex})
-  references: [ OclockRegex ]
+  def: ((({OclockRegex}\s+)?(?<desc>({BaseDateTime.AmPmDescRegex}|{BaseDateTime.AmDescRegex}|{BaseDateTime.PmDescRegex}|{SpecialDescRegex})))|{OclockRegex})
+  references: [ OclockRegex, BaseDateTime.AmDescRegex, BaseDateTime.PmDescRegex, BaseDateTime.AmPmDescRegex, SpecialDescRegex ]
 HourNumRegex: !simpleRegex
   def: \b(?<hournum>zero|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve)\b
 MinuteNumRegex: !simpleRegex

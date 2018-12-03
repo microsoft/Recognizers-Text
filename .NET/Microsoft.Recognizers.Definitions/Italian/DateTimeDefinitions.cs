@@ -88,7 +88,8 @@ namespace Microsoft.Recognizers.Definitions.Italian
 		public static readonly string MonthEnd = $@"{MonthRegex}\s*(il)?\s*$";
 		public static readonly string WeekDayEnd = $@"{WeekDayRegex}\s*,?\s*$";
 		public const string RangeUnitRegex = @"\b(?<unit>l'anno|ann[oi]?|mesi|settimane|settimana)\b";
-		public const string DescRegex = @"(?<desc>h|ampm|am\b|a\.m\.|a m\b|a\. m\.|a\.m\b|a\. m\b|pm\b|p\.m\.|p m\b|p\. m\.|p\.m\b|p\. m\b|p\b\b)";
+		public const string SpecialDescRegex = @"(p\b)";
+		public static readonly string DescRegex = $@"(?<desc>h|{BaseDateTime.AmPmDescRegex}|{BaseDateTime.AmDescRegex}|{BaseDateTime.PmDescRegex}|{SpecialDescRegex})";
 		public const string HourNumRegex = @"\b(?<hournum>zero|uno|due|tre|quattro|cinque|sei|sette|otto|nove|dieci|undici|dodici)\b";
 		public const string MinuteNumRegex = @"(?<minnum>uno|due|tre|quattro|cinque|sei|sette|otto|nove|dieci|undici|dodici|tredici|quattordici|quindici|sedici|diciassette|diciotto|diciannove|venti|trenta|quaranta|cinquanta)";
 		public const string DeltaMinuteNumRegex = @"(?<deltaminnum>uno|due|tre|quattro|cinque|sei|sette|otto|nove|dieci|undici|dodici|treidic|quattordici|quindici|sedici|diciassette|diciotto|diciannove|venti|trenta|quaranta|cinquanta)";
