@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
-
+using Microsoft.Recognizers.Definitions;
 using Microsoft.Recognizers.Definitions.Spanish;
 
 namespace Microsoft.Recognizers.Text.DateTime.Spanish
@@ -43,10 +43,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             new Regex(DateTimeDefinitions.MiddlePauseRegex, RegexOptions.Singleline);
 
         public static readonly Regex AmDescRegex =
-            new Regex(DateTimeDefinitions.AmDescRegex, RegexOptions.Singleline);
+            new Regex(BaseDateTime.AmDescRegex, RegexOptions.Singleline);
 
         public static readonly Regex PmDescRegex =
-            new Regex(DateTimeDefinitions.PmDescRegex, RegexOptions.Singleline);
+            new Regex(BaseDateTime.PmDescRegex, RegexOptions.Singleline);
 
         public static readonly Regex WithinNextPrefixRegex =
             new Regex(DateTimeDefinitions.WithinNextPrefixRegex, RegexOptions.Singleline);

@@ -22,16 +22,10 @@ MonthNumRegex: !simpleRegex
 DescRegex: !nestedRegex
   def: ({OclockRegex})
   references: [ OclockRegex ]
-AmDescRegex: !simpleRegex
-  def: (am\b|a\.m\.|a m\b|a\. m\.|a\.m\b|a\. m\b|a m\b)
-PmDescRegex: !simpleRegex
-  def: (pm\b|p\.m\.|p\b|p m\b|p\. m\.|p\.m\b|p\. m\b|p m\b)
-AmPmDescRegex: !simpleRegex
-  def: (ampm)
 # As month number can't be 0, so add (?!\.0\b) to filter out some wrong cases
 TwoDigitYearRegex: !nestedRegex
-  def: \b(?<![$])(?<year>([0-27-9]\d))(?!(\s*((\:)|{AmDescRegex}|{PmDescRegex}|\.\d)))\b
-  references: [ AmDescRegex, PmDescRegex]
+  def: \b(?<![$])(?<year>([0-27-9]\d))(?!(\s*((\:)|{BaseDateTime.AmDescRegex}|{BaseDateTime.PmDescRegex}|\.\d)))\b
+  references: [ BaseDateTime.AmDescRegex, BaseDateTime.PmDescRegex]
 FullTextYearRegex: !nestedRegex
   def: \b((?<firsttwoyearnum>{CenturyRegex})\s+(?<lasttwoyearnum>((null|zwanzig|dreißig|vierzig|fünfzig|sechzig|siebzig|achtzig|neunzig)\s+{WrittenNumRegex})|{WrittenNumRegex}))\b|\b(?<firsttwoyearnum>{CenturyRegex})\b
   references: [ CenturyRegex, WrittenNumRegex ]
@@ -114,8 +108,8 @@ MonthRegex: !simpleRegex
 #This is a look-behind assertion. Some cases should extract two digits as year like 11/25/16, where 16 means 2016. 
 #The assertion determines if not connected with am/pm or hour separator (:), which should be a time.
 DateYearRegex: !nestedRegex
-  def: (?<year>19\d{2}|20\d{2}|(([0-27-9]\d)(?!(\s*((\:)|{AmDescRegex}|{PmDescRegex})))))
-  references: [ DescRegex, AmDescRegex, PmDescRegex ]
+  def: (?<year>19\d{2}|20\d{2}|(([0-27-9]\d)(?!(\s*((\:)|{BaseDateTime.AmDescRegex}|{BaseDateTime.PmDescRegex})))))
+  references: [ DescRegex, BaseDateTime.AmDescRegex, BaseDateTime.PmDescRegex ]
 OnRegex: !nestedRegex
   def: (?<=\bam\s+)({DayRegex}s?)\b
   references: [ DayRegex ]
@@ -433,8 +427,6 @@ InConnectorRegex: !simpleRegex
 WithinNextPrefixRegex: !nestedRegex
   def: \b(innerhalb|während(\s+der|de(s|m))?(\s+(?<next>{NextPrefixRegex}))?)\b
   references: [ NextPrefixRegex ]
-AmPmDescRegex: !simpleRegex
-  def: (ampm)
 MorningStartEndRegex: !simpleRegex
   def: (^(heute morgen|morgen(s)?))|((heute morgen|morgen(s)?)$)
 AfternoonStartEndRegex: !simpleRegex

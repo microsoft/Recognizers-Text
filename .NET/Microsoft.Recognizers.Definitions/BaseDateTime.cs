@@ -24,6 +24,9 @@ namespace Microsoft.Recognizers.Definitions
 		public const string FourDigitYearRegex = @"\b(?<![$])(?<year>((1\d|20)\d{2})|2100)(?!\.0\b)\b";
 		public static readonly string IllegalYearRegex = $@"([-])({FourDigitYearRegex})([-])";
 		public const string RangeConnectorSymbolRegex = @"(--|-|—|——|~|–)";
+		public const string AmDescRegex = @"(am\b|a\.\s*m\.|a(\.)?\s*m\b)";
+		public const string PmDescRegex = @"(pm\b|p\.\s*m\.|p(\.)?\s*m\b)";
+		public const string AmPmDescRegex = @"(ampm)";
 		public const string MinYearNum = "1500";
 		public const string MaxYearNum = "2100";
 		public const string MaxTwoDigitYearFutureNum = "30";

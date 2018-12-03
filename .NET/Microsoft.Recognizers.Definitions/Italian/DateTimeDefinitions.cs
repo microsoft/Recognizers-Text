@@ -54,8 +54,9 @@ namespace Microsoft.Recognizers.Definitions.Italian
 		public const string WeekOfRegex = @"(settimana)(\s*)(del)";
 		public const string MonthOfRegex = @"(mese)(\s*)(di)";
 		public const string MonthRegex = @"(?<month>Aprile|Apr|Agosto|Ago|Dicembre|Dic|Febbraio|Feb|Gennaio|Gen|Luglio|Lug|Giugno|Giu|Marzo|Mar|Maggio|Mar|Novembre|Nov|Ottobre|Ott|Settembre|Set)";
-		public const string AmDescRegex = @"(h|am\b|a\.m\.|a m\b|a\. m\.|a\.m\b|a\. m\b)";
-		public const string PmDescRegex = @"(h|pm\b|p\.m\.|p\b|p m\b|p\. m\.|p\.m\b|p\. m\b)";
+		public static readonly string AmDescRegex = $@"(h|{BaseDateTime.AmDescRegex})";
+		public static readonly string PmDescRegex = $@"(h|{BaseDateTime.PmDescRegex})";
+		public static readonly string AmPmDescRegex = $@"(h|{BaseDateTime.AmPmDescRegex})";
 		public static readonly string DateYearRegex = $@"(?<year>19\d{{2}}|20\d{{2}}|(([0-27-9]\d)(?!(\s*((\:)|{AmDescRegex}|{PmDescRegex})))))";
 		public static readonly string OnRegex = $@"(?<=\b(di|su)\s+)({DayRegex}s?)\b";
 		public const string RelaxedOnRegex = @"(?<=\b(il|del|di|al|a)\s+)((?<day>10th|11th|11st|12nd|12th|13rd|13th|14th|15th|16th|17th|18th|19th|1st|20th|21st|22nd|23rd|24th|25th|26th|27th|28th|29th|2nd|30th|31st|3rd|4th|5th|6th|7th|8th|9th)s?)\b";
@@ -187,7 +188,6 @@ namespace Microsoft.Recognizers.Definitions.Italian
 		public const string AgoRegex = @"^[.]";
 		public const string InConnectorRegex = @"\b(di)\b";
 		public const string WithinNextPrefixRegex = @"^[.]";
-		public const string AmPmDescRegex = @"(h|ampm)";
 		public const string MorningStartEndRegex = @"(^(mattin[oa]))|((mattin[oa])$)";
 		public const string AfternoonStartEndRegex = @"(^((di|al)?pomeriggio))|(((di|il)?pomeriggio)$)";
 		public const string EveningStartEndRegex = @"(^(sera))|((sera)$)";

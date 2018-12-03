@@ -38,14 +38,10 @@ WrittenNumRegex: !simpleRegex
 FullTextYearRegex: !nestedRegex
   def: \b((?<firsttwoyearnum>{CenturyRegex})\s+(?<lasttwoyearnum>((zero|twenty|thirty|forty|fourty|fifty|sixty|seventy|eighty|ninety)\s+{WrittenNumRegex})|{WrittenNumRegex}))\b|\b(?<firsttwoyearnum>{CenturyRegex})\b
   references: [ CenturyRegex, WrittenNumRegex ]
-AmDescRegex: !simpleRegex
-  def: (am\b|a\.m\.|a m\b|a\. m\.|a\.m\b|a\. m\b|a m\b)
-PmDescRegex: !simpleRegex
-  def: (pm\b|p\.m\.|p\b|p m\b|p\. m\.|p\.m\b|p\. m\b|p m\b)
 # As month number can't be 0, so add (?!\.0\b) to filter out some wrong cases
 TwoDigitYearRegex: !nestedRegex
-  def: \b(?<![$])(?<year>([0-27-9]\d))(?!(\s*((\:)|{AmDescRegex}|{PmDescRegex}|\.\d)))\b
-  references: [ AmDescRegex, PmDescRegex]
+  def: \b(?<![$])(?<year>([0-27-9]\d))(?!(\s*((\:)|{BaseDateTime.AmDescRegex}|{BaseDateTime.PmDescRegex}|\.\d)))\b
+  references: [ BaseDateTime.AmDescRegex, BaseDateTime.PmDescRegex]
 YearRegex: !nestedRegex
   def: ({BaseDateTime.FourDigitYearRegex}|{FullTextYearRegex})
   references: [ BaseDateTime.FourDigitYearRegex, FullTextYearRegex ]
@@ -492,14 +488,12 @@ WithinNextPrefixRegex: !nestedRegex
   def: \b(within(\s+the)?(\s+(?<next>{NextPrefixRegex}))?)\b
   references: [ NextPrefixRegex ]
 # "next" group here is used to judge uncommon unsupported cases like "within the next 5 days before today"
-AmPmDescRegex: !simpleRegex
-  def: (ampm)
 MorningStartEndRegex: !nestedRegex
-  def: (^(morning|{AmDescRegex}))|((morning|{AmDescRegex})$)
-  references: [ AmDescRegex ]
+  def: (^(morning|{BaseDateTime.AmDescRegex}))|((morning|{BaseDateTime.AmDescRegex})$)
+  references: [ BaseDateTime.AmDescRegex ]
 AfternoonStartEndRegex: !nestedRegex
-  def: (^(afternoon|{PmDescRegex}))|((afternoon|{PmDescRegex})$)
-  references: [ PmDescRegex ]
+  def: (^(afternoon|{BaseDateTime.PmDescRegex}))|((afternoon|{BaseDateTime.PmDescRegex})$)
+  references: [ BaseDateTime.PmDescRegex ]
 EveningStartEndRegex: !simpleRegex
   def: (^(evening))|((evening)$)
 NightStartEndRegex: !simpleRegex

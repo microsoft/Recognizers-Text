@@ -93,10 +93,15 @@ MonthOfRegex: !simpleRegex
   def: (mese)(\s*)(di)
 MonthRegex: !simpleRegex
   def: (?<month>Aprile|Apr|Agosto|Ago|Dicembre|Dic|Febbraio|Feb|Gennaio|Gen|Luglio|Lug|Giugno|Giu|Marzo|Mar|Maggio|Mar|Novembre|Nov|Ottobre|Ott|Settembre|Set)
-AmDescRegex: !simpleRegex
-  def: (am\b|a\.m\.|a m\b|a\. m\.|a\.m\b|a\. m\b|a m\b)
-PmDescRegex: !simpleRegex
-  def: (pm\b|p\.m\.|p\b|p m\b|p\. m\.|p\.m\b|p\. m\b|p m\b)
+AmDescRegex: !nestedRegex
+  def: (h|{BaseDateTime.AmDescRegex})
+  references: [BaseDateTime.AmDescRegex]
+PmDescRegex: !nestedRegex
+  def: (h|{BaseDateTime.PmDescRegex})
+  references: [BaseDateTime.PmDescRegex]
+AmPmDescRegex: !nestedRegex
+  def: (h|{BaseDateTime.AmPmDescRegex})
+  references: [BaseDateTime.AmPmDescRegex]
 #This is a look-behind assertion. Some cases should extract two digits as year like 11/25/16, where 16 means 2016. 
 #The assertion determines if not connected with am/pm or hour separator (:), which should be a time.
 DateYearRegex: !nestedRegex
@@ -434,12 +439,6 @@ InConnectorRegex: !simpleRegex
 WithinNextPrefixRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
-AmDescRegex: !simpleRegex
-  def: (h|am\b|a\.m\.|a m\b|a\. m\.|a\.m\b|a\. m\b)
-PmDescRegex: !simpleRegex
-  def: (h|pm\b|p\.m\.|p\b|p m\b|p\. m\.|p\.m\b|p\. m\b)
-AmPmDescRegex: !simpleRegex
-  def: (h|ampm)
 MorningStartEndRegex: !simpleRegex
   def: (^(mattin[oa]))|((mattin[oa])$)
 AfternoonStartEndRegex: !simpleRegex

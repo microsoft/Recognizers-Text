@@ -1,5 +1,5 @@
 ﻿using System.Text.RegularExpressions;
-
+using Microsoft.Recognizers.Definitions;
 using Microsoft.Recognizers.Definitions.German;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
 
@@ -18,13 +18,13 @@ namespace Microsoft.Recognizers.Text.DateTime.German.Utilities
 
         public static readonly Regex WithinNextPrefixRegex = new Regex(DateTimeDefinitions.WithinNextPrefixRegex, RegexOptions.Singleline);
 
-        public static readonly Regex AmDescRegex = new Regex(DateTimeDefinitions.AmDescRegex,
+        public static readonly Regex AmDescRegex = new Regex(BaseDateTime.AmDescRegex,
             RegexOptions.Singleline);
 
-        public static readonly Regex PmDescRegex = new Regex(DateTimeDefinitions.PmDescRegex,
+        public static readonly Regex PmDescRegex = new Regex(BaseDateTime.PmDescRegex,
             RegexOptions.Singleline);
 
-        public static readonly Regex AmPmDescRegex = new Regex(DateTimeDefinitions.AmPmDescRegex,
+        public static readonly Regex AmPmDescRegex = new Regex(BaseDateTime.AmPmDescRegex,
             RegexOptions.Singleline);
 
         public static readonly Regex RangeUnitRegex = new Regex(DateTimeDefinitions.RangeUnitRegex,

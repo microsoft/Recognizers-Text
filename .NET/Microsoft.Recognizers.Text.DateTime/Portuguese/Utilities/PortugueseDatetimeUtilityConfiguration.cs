@@ -1,5 +1,5 @@
 ﻿using System.Text.RegularExpressions;
-
+using Microsoft.Recognizers.Definitions;
 using Microsoft.Recognizers.Definitions.Portuguese;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
 
@@ -15,11 +15,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese.Utilities
 
         public static readonly Regex WithinNextPrefixRegex = new Regex(DateTimeDefinitions.WithinNextPrefixRegex, RegexOptions.Singleline);
 
-        public static readonly Regex AmDescRegex = new Regex(DateTimeDefinitions.AmDescRegex, RegexOptions.Singleline);
+        public static readonly Regex AmDescRegex = new Regex(BaseDateTime.AmDescRegex, RegexOptions.Singleline);
 
-        public static readonly Regex PmDescRegex = new Regex(DateTimeDefinitions.PmDescRegex, RegexOptions.Singleline);
+        public static readonly Regex PmDescRegex = new Regex(BaseDateTime.PmDescRegex, RegexOptions.Singleline);
 
-        public static readonly Regex AmPmDescRegex = new Regex(DateTimeDefinitions.AmPmDescRegex, RegexOptions.Singleline);
+        public static readonly Regex AmPmDescRegex = new Regex(BaseDateTime.AmPmDescRegex, RegexOptions.Singleline);
 
         public static readonly Regex RangeUnitRegex = new Regex(DateTimeDefinitions.RangeUnitRegex, RegexOptions.Singleline);
 
