@@ -47,7 +47,7 @@ export namespace EnglishDateTime {
 	export const MonthWithYear = `\\b((${WrittenMonthRegex}(\\.)?(\\s*)[/\\\\\\-\\.,]?(\\s+of)?(\\s*)(${YearRegex}|(?<order>following|next|last|this)\\s+year))|((${YearRegex}|(?<order>following|next|last|this)\\s+year)(\\s*),?(\\s*)${WrittenMonthRegex}))\\b`;
 	export const OneWordPeriodRegex = `\\b((((the\\s+)?month of\\s+)?(${StrictRelativeRegex}\\s+)?(?<month>april|apr|august|aug|december|dec|february|feb|january|jan|july|jul|june|jun|march|mar|may|november|nov|october|oct|september|sept|sep))|(month|year) to date|(${RelativeRegex}\\s+)?(my\\s+)?(weekend|week|month|year)(?!((\\s+of)?\\s+\\d+|\\s+to\\s+date))(\\s+${AfterNextSuffixRegex})?)\\b`;
 	export const MonthNumWithYear = `\\b((${BaseDateTime.FourDigitYearRegex}(\\s*)[/\\-\\.](\\s*)${MonthNumRegex})|(${MonthNumRegex}(\\s*)[/\\-](\\s*)${BaseDateTime.FourDigitYearRegex}))\\b`;
-	export const WeekOfMonthRegex = `\\b(?<wom>(the\\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th|fifth|5th|last)\\s+week\\s+${MonthSuffixRegex})\\b`;
+	export const WeekOfMonthRegex = `\\b(?<wom>(the\\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th|fifth|5th|last)\\s+week\\s+${MonthSuffixRegex}(\\s+${BaseDateTime.FourDigitYearRegex}|${RelativeRegex}\\s+year)?)\\b`;
 	export const WeekOfYearRegex = `\\b(?<woy>(the\\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th|fifth|5th|last)\\s+week(\\s+of)?\\s+(${YearRegex}|${RelativeRegex}\\s+year))\\b`;
 	export const FollowedDateUnit = `^\\s*${DateUnitRegex}`;
 	export const NumberCombinedWithDateUnit = `\\b(?<num>\\d+(\\.\\d*)?)${DateUnitRegex}`;

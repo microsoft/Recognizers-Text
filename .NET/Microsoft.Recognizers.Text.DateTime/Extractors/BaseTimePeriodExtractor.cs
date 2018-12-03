@@ -240,7 +240,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     var periodEnd = (ers[idx + 1].Start ?? 0) + (ers[idx + 1].Length ?? 0);
 
                     // Handle "from"
-                    var beforeStr = text.Substring(0, periodBegin).Trim().ToLowerInvariant();
+                    var beforeStr = text.Substring(0, periodBegin).TrimEnd().ToLowerInvariant();
                     if (this.config.GetFromTokenIndex(beforeStr, out var fromIndex))
                     {
                         // Handle "from"
