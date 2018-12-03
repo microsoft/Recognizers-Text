@@ -1390,8 +1390,14 @@ namespace Microsoft.Recognizers.Text.DateTime
             else
             {
                 month = this.config.MonthOfYear[monthStr];
-                year = referenceDate.Year;
-                noYear = true;
+
+                year = config.DateExtractor.GetYearFromText(match.Match);
+
+                if (year == Constants.InvalidYear)
+                {
+                    year = referenceDate.Year;
+                    noYear = true;
+                }
             }
 
             ret = GetWeekOfMonth(cardinalStr, month, year, referenceDate, noYear);

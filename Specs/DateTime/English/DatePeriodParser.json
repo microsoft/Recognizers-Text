@@ -454,6 +454,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "java",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "the third week of this month",
@@ -479,6 +481,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "java",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "the last week of july",
@@ -1595,6 +1599,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "java",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "the third week of 2027",
@@ -1620,6 +1626,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "java",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "the third week next year",
@@ -2475,6 +2483,8 @@
     "Context": {
       "ReferenceDateTime": "2017-11-17T00:00:00"
     },
+    "NotSupportedByDesign": "java",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "first week of this year",
@@ -2500,6 +2510,8 @@
     "Context": {
       "ReferenceDateTime": "2017-11-20T00:00:00"
     },
+    "NotSupportedByDesign": "java",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "first week of 2015",
@@ -2525,6 +2537,8 @@
     "Context": {
       "ReferenceDateTime": "2017-11-20T00:00:00"
     },
+    "NotSupportedByDesign": "java",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "second week of 2015",
@@ -2575,6 +2589,8 @@
     "Context": {
       "ReferenceDateTime": "2017-11-20T00:00:00"
     },
+    "NotSupportedByDesign": "java",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "last week of 2015",
@@ -3120,6 +3136,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "java",
     "NotSupported": "javascript, python",
     "Results": [
       {

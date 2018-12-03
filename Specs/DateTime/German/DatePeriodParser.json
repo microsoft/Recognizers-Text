@@ -160,6 +160,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "java",
     "NotSupported": "javascript, python",
     "Results": [
       {
@@ -498,7 +499,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "python",
+    "NotSupportedByDesign": "java",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "der dritten Woche des Monats",
@@ -524,7 +526,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "python",
+    "NotSupportedByDesign": "java",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "der letzten Woche im Juli",
