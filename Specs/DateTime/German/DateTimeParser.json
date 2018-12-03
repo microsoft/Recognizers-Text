@@ -437,7 +437,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "Comment": "Two separate entities extracted. Should be merged into one.",
-    "NotSupported": "dotnet, javascript, python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "heute Morgen um 7",
@@ -453,6 +453,31 @@
         },
         "Start": 9,
         "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Ich ging diesen Morgen um 7 los",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Comment": "Two separate entities extracted. Should be merged into one.",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "diesen Morgen um 7",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-11-07T07",
+          "FutureResolution": {
+            "dateTime": "2016-11-07 07:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-11-07 07:00:00"
+          }
+        },
+        "Start": 9,
+        "Length": 18
       }
     ]
   },

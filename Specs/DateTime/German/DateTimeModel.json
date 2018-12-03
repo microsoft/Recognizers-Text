@@ -548,7 +548,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "Comment": "Resolution is null",
-    "NotSupported": "dotnet, javascript, python",
+    "NotSupported": "dotNet, javascript, python",
     "Results": [
       {
         "Text": "nächsten montagnachmittag",
@@ -560,8 +560,39 @@
             {
               "timex": "2016-11-14TAF",
               "type": "datetimerange",
-              "start": "2016-11-14 14:00:00",
-              "end": "2016-11-14 18:00:00"
+              "start": "2016-11-14 12:00:00",
+              "end": "2016-11-14 16:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Ich gehe dann Dienstag Morgen zurück.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "Dotnet, javascript, python",
+    "Results": [
+      {
+        "Text": "dienstag morgen",
+        "Start": 14,
+        "End": 28,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-2TMO",
+              "type": "datetimerange",
+              "start": "2016-11-01 08:00:00",
+              "end": "2016-11-01 12:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-2TMO",
+              "type": "datetimerange",
+              "start": "2016-11-08 08:00:00",
+              "end": "2016-11-08 12:00:00"
             }
           ]
         }
@@ -1054,18 +1085,18 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "Comment": "Output is -gegen abend- should that be considered correct?",
-    "NotSupported": "dotnet, javascript, python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "abend",
-        "Start": 19,
-        "End": 24,
+        "Text": "gegen abend",
+        "Start": 13,
+        "End": 23,
         "TypeName": "datetimeV2.timerange",
         "Resolution": {
           "values": [
             {
               "timex": "TEV",
+              "Mod": "approx",
               "type": "timerange",
               "start": "16:00:00",
               "end": "20:00:00"
