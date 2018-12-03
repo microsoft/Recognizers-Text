@@ -436,8 +436,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "Comment": "Not extracted, possibly due to a conflict between heute and morgen.",
-    "NotSupported": "dotNet, javascript, python",
+    "Comment": "Two separate entities extracted. Should be merged into one.",
+    "NotSupported": "dotnet, javascript, python",
     "Results": [
       {
         "Text": "heute Morgen um 7",
