@@ -41,7 +41,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             // Push, save the MOD string
             bool hasBefore = false, hasAfter = false, hasSince = false, hasAround = false, hasDateAfter = false;
 
-            // "InclusieModifier" means MOD should include the start/end time
+            // "InclusiveModifier" means MOD should include the start/end time
             // For example, cases like "on or later than", "earlier than or in" have inclusive modifier
             bool hasInclusiveModifier = false;
             var modStr = string.Empty;

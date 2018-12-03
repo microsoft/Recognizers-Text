@@ -922,12 +922,12 @@
         "Text": "ao final do dia",
         "Type": "datetime",
         "Value": {
-          "Timex": "2016-11-07T23:59",
+          "Timex": "2016-11-07T23:59:59",
           "FutureResolution": {
-            "dateTime": "2016-11-07 23:59:00"
+            "dateTime": "2016-11-07 23:59:59"
           },
           "PastResolution": {
-            "dateTime": "2016-11-07 23:59:00"
+            "dateTime": "2016-11-07 23:59:59"
           }
         },
         "Start": 9,
@@ -946,12 +946,12 @@
         "Text": "ao fim do dia",
         "Type": "datetime",
         "Value": {
-          "Timex": "2016-11-07T23:59",
+          "Timex": "2016-11-07T23:59:59",
           "FutureResolution": {
-            "dateTime": "2016-11-07 23:59:00"
+            "dateTime": "2016-11-07 23:59:59"
           },
           "PastResolution": {
-            "dateTime": "2016-11-07 23:59:00"
+            "dateTime": "2016-11-07 23:59:59"
           }
         },
         "Start": 9,
@@ -970,12 +970,12 @@
         "Text": "ao final do dia de amanhã",
         "Type": "datetime",
         "Value": {
-          "Timex": "2016-11-08T23:59",
+          "Timex": "2016-11-08T23:59:59",
           "FutureResolution": {
-            "dateTime": "2016-11-08 23:59:00"
+            "dateTime": "2016-11-08 23:59:59"
           },
           "PastResolution": {
-            "dateTime": "2016-11-08 23:59:00"
+            "dateTime": "2016-11-08 23:59:59"
           }
         },
         "Start": 9,
@@ -994,12 +994,12 @@
         "Text": "ao fim do domingo",
         "Type": "datetime",
         "Value": {
-          "Timex": "XXXX-WXX-7T23:59",
+          "Timex": "XXXX-WXX-7T23:59:59",
           "FutureResolution": {
-            "dateTime": "2016-11-13 23:59:00"
+            "dateTime": "2016-11-13 23:59:59"
           },
           "PastResolution": {
-            "dateTime": "2016-11-06 23:59:00"
+            "dateTime": "2016-11-06 23:59:59"
           }
         },
         "Start": 9,

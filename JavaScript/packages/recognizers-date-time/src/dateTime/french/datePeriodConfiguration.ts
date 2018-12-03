@@ -120,6 +120,7 @@ export class FrenchDatePeriodParserConfiguration implements IDatePeriodParserCon
     readonly monthOfRegex: RegExp;
     readonly whichWeekRegex: RegExp;
     readonly restOfDateRegex: RegExp;
+    readonly unspecificEndOfRangeRegex: RegExp;
     readonly tokenBeforeDate: string;
     readonly dayOfMonth: ReadonlyMap<string, number>;
     readonly monthOfYear: ReadonlyMap<string, number>;
@@ -167,6 +168,7 @@ export class FrenchDatePeriodParserConfiguration implements IDatePeriodParserCon
         this.weekOfRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.WeekOfRegex);
         this.monthOfRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.MonthOfRegex);
         this.restOfDateRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.RestOfDateRegex);
+        this.unspecificEndOfRangeRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.UnspecificEndOfRangeRegex);
 
         this.nextPrefixRegex = RegExpUtility.getSafeRegExp("(prochain|prochaine)\b");
         this.pastPrefixRegex = RegExpUtility.getSafeRegExp("(dernier)\b");

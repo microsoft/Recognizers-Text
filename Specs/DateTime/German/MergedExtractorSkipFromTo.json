@@ -62,7 +62,7 @@
   {
     "Input": "Das meeting geht Morgen von 12 bis 14 Uhr.",
     "NotSupported": "dotnet,javascript, python",
-	"Comment": "Known issue, low priority as 12 to be recognized as time.",
+    "Comment": "Known issue, low priority as 12 to be recognized as time.",
     "Results": [
       {
         "Text": "Morgen",

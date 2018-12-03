@@ -41,7 +41,9 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex SpecificTimeOfDayRegex { get; }
 
-        Regex TheEndOfRegex { get; }
+        Regex SpecificEndOfRegex { get; }
+
+        Regex UnspecificEndOfRegex { get; }
 
         Regex UnitRegex { get; }
 

@@ -64,8 +64,12 @@ class SpanishDateTimeExtractorConfiguration(DateTimeExtractorConfiguration):
         return self._simple_time_of_today_before_regex
 
     @property
-    def the_end_of_regex(self) -> Pattern:
-        return self._the_end_of_regex
+    def specific_end_of_regex(self) -> Pattern:
+        return self._specific_end_of_regex
+
+    @property
+    def unspecific_end_of_regex(self) -> Pattern:
+        return self._unspecific_end_of_regex
 
     @property
     def unit_regex(self) -> Pattern:
@@ -86,7 +90,8 @@ class SpanishDateTimeExtractorConfiguration(DateTimeExtractorConfiguration):
         self._time_of_today_before_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.TimeOfTodayBeforeRegex)
         self._simple_time_of_today_after_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.SimpleTimeOfTodayAfterRegex)
         self._simple_time_of_today_before_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.SimpleTimeOfTodayBeforeRegex)
-        self._the_end_of_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.TheEndOfRegex)
+        self._specific_end_of_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.SpecificEndOfRegex)
+        self._unspecific_end_of_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.UnspecificEndOfRegex)
         self._unit_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.TimeUnitRegex)
         self.connector_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.ConnectorRegex)
         self._night_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.TimeOfDayRegex)

@@ -23,6 +23,7 @@ namespace Microsoft.Recognizers.Definitions.Italian
 		public const string NextSuffixRegex = @"(?<order>prossim[oa]|seguente)\b";
 		public const string PastSuffixRegex = @"(?<order>precedente)\b";
 		public const string ThisPrefixRegex = @"(quest[oa]|corrente)\b";
+		public const string RangePrefixRegex = @"(du|de|des|depuis|entre)";
 		public const string DayRegex = @"(il\s*)?(?<day>01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|1|20|21|22|23|24|25|26|27|28|29|2|30|31|3|4|5|6|7|8|9)(?=\b|t)";
 		public const string MonthNumRegex = @"(?<month>01|02|03|04|05|06|07|08|09|10|11|12|1|2|3|4|5|6|7|8|9)\b";
 		public static readonly string YearRegex = $@"({BaseDateTime.FourDigitYearRegex})";
@@ -144,7 +145,9 @@ namespace Microsoft.Recognizers.Definitions.Italian
 		public static readonly string TimeOfTodayBeforeRegex = $@"{DateTimeSpecificTimeOfDayRegex}(\s*,)?(\s+(alle|intorno|a))?\s*$";
 		public static readonly string SimpleTimeOfTodayAfterRegex = $@"({HourNumRegex}|{BaseDateTime.HourRegex})\s*(,\s*)?(en|[àa]\s+)?{DateTimeSpecificTimeOfDayRegex}";
 		public static readonly string SimpleTimeOfTodayBeforeRegex = $@"{DateTimeSpecificTimeOfDayRegex}(\s*,)?(\s+(di|verso))?\s*({HourNumRegex}|{BaseDateTime.HourRegex})";
-		public const string TheEndOfRegex = @"(alla\s+)?fine di(\s+del)?\s*$";
+		public const string SpecificEndOfRegex = @"(alla\s+)?fine di(\s+del)?\s*$";
+		public const string UnspecificEndOfRegex = @"^[.]";
+		public const string UnspecificEndOfRangeRegex = @"^[.]";
 		public const string PeriodTimeOfDayRegex = @"\b((alla\s+(al)?\s+)?((?<early>prima(\s+|-))|(?<late>tarda(\s+|-)))?(?<timeOfDay>mattina|pomeriggio|notte|sera))\b";
 		public static readonly string PeriodSpecificTimeOfDayRegex = $@"\b(({RelativeRegex}\s+{PeriodTimeOfDayRegex})\b|\b(ce|cette\s+)(soir|nuit))\b";
 		public static readonly string PeriodTimeOfDayWithDateRegex = $@"\b(({TimeOfDayRegex}))\b";
