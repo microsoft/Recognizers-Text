@@ -79,11 +79,14 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             SingleTimeExtractor = new BaseTimeExtractor(new FrenchTimeExtractorConfiguration(this));
             UtilityConfiguration = new FrenchDatetimeUtilityConfiguration();
             IntegerExtractor = Number.English.IntegerExtractor.GetInstance();
+            TimeZoneExtractor = new BaseTimeZoneExtractor(new FrenchTimeZoneExtractorConfiguration(this));
         }
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
         public IDateTimeExtractor SingleTimeExtractor { get; }
+
+        public IDateTimeExtractor TimeZoneExtractor { get; }
 
         public IExtractor IntegerExtractor { get; }
 

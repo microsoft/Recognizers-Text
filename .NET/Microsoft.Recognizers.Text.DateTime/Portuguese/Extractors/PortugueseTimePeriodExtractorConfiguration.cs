@@ -41,6 +41,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             SingleTimeExtractor = new BaseTimeExtractor(new PortugueseTimeExtractorConfiguration(this));
             UtilityConfiguration = new PortugueseDatetimeUtilityConfiguration();
             IntegerExtractor = Number.English.IntegerExtractor.GetInstance();
+            TimeZoneExtractor = new BaseTimeZoneExtractor(new PortugueseTimeZoneExtractorConfiguration(this));
         }
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
@@ -48,6 +49,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         public IDateTimeExtractor SingleTimeExtractor { get; }
 
         public IExtractor IntegerExtractor { get; }
+
+        public IDateTimeExtractor TimeZoneExtractor { get; }
 
         public IEnumerable<Regex> SimpleCasesRegex => new Regex[] { PureNumFromTo, PureNumBetweenAnd };
 

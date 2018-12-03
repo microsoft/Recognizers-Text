@@ -1,12 +1,11 @@
 package com.microsoft.recognizers.text.datetime.utilities;
 
-import java.time.LocalDateTime;
-import java.time.temporal.ChronoUnit;
-import java.util.HashMap;
-import java.util.Map;
-
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableMap.Builder;
+import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
+import java.util.Map;
+
 
 public class DurationParsingUtil {
     public static boolean isTimeDurationUnit(String unitStr) {
@@ -20,6 +19,8 @@ public class DurationParsingUtil {
                 break;
             case "S":
                 result = true;
+                break;
+            default:
                 break;
         }
         return result;

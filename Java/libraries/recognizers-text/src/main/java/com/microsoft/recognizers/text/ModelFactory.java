@@ -1,13 +1,13 @@
 package com.microsoft.recognizers.text;
 
-import org.apache.commons.lang3.StringUtils;
-import org.javatuples.Pair;
-import org.javatuples.Triplet;
+import com.microsoft.recognizers.text.utilities.StringUtility;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.function.Function;
+import org.javatuples.Pair;
+import org.javatuples.Triplet;
 
 public class ModelFactory<TModelOptions> extends HashMap<Pair<String, Type>, Function<TModelOptions, IModel>> {
 
@@ -19,13 +19,13 @@ public class ModelFactory<TModelOptions> extends HashMap<Pair<String, Type>, Fun
     public <T extends IModel> T getModel(Class<T> modelType, String culture, boolean fallbackToDefaultCulture, TModelOptions options) throws IllegalArgumentException {
         IModel model = this.getModel(modelType, culture, options);
         if (model != null) {
-            return (T) model;
+            return (T)model;
         }
 
         if (fallbackToDefaultCulture) {
             model = this.getModel(modelType, fallbackCulture, options);
             if (model != null) {
-                return (T) model;
+                return (T)model;
             }
         }
 
@@ -33,18 +33,8 @@ public class ModelFactory<TModelOptions> extends HashMap<Pair<String, Type>, Fun
                 String.format("Could not find Model with the specified configuration: %s, %s", culture, modelType.getTypeName()));
     }
 
-    public void initializeModels(String targetCulture, TModelOptions options) {
-        this.keySet().stream()
-                .filter(key -> StringUtils.isEmpty(targetCulture) || key.getValue0().equalsIgnoreCase(targetCulture))
-                .forEach(key -> this.initializeModel(key.getValue1(), key.getValue0(), options));
-    }
-
-    private void initializeModel(Type modelType, String culture, TModelOptions options){
-        this.getModel(modelType, culture, options);
-    }
-
     private IModel getModel(Type modelType, String culture, TModelOptions options) {
-        if (StringUtils.isEmpty(culture)) {
+        if (StringUtility.isNullOrEmpty(culture)) {
             return null;
         }
 
@@ -66,6 +56,16 @@ public class ModelFactory<TModelOptions> extends HashMap<Pair<String, Type>, Fun
         }
 
         return null;
+    }
+
+    public void initializeModels(String targetCulture, TModelOptions options) {
+        this.keySet().stream()
+                .filter(key -> StringUtility.isNullOrEmpty(targetCulture) || key.getValue0().equalsIgnoreCase(targetCulture))
+                .forEach(key -> this.initializeModel(key.getValue1(), key.getValue0(), options));
+    }
+
+    private void initializeModel(Type modelType, String culture, TModelOptions options) {
+        this.getModel(modelType, culture, options);
     }
 
     @Override

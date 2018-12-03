@@ -109,16 +109,16 @@ public class EnglishTimeExtractorConfiguration extends BaseOptionsConfiguration 
         return TimeBeforeAfterRegex;
     }
 
-    private IDateTimeExtractor DurationExtractor;
+    private IDateTimeExtractor durationExtractor;
 
     public final IDateTimeExtractor getDurationExtractor() {
-        return DurationExtractor;
+        return durationExtractor;
     }
 
-    private IDateTimeExtractor TimeZoneExtractor;
+    private IDateTimeExtractor timeZoneExtractor;
 
     public final IDateTimeExtractor getTimeZoneExtractor() {
-        return TimeZoneExtractor;
+        return timeZoneExtractor;
     }
 
 
@@ -130,7 +130,7 @@ public class EnglishTimeExtractorConfiguration extends BaseOptionsConfiguration 
     //ORIGINAL LINE: public EnglishTimeExtractorConfiguration(DateTimeOptions options = DateTimeOptions.None)
     public EnglishTimeExtractorConfiguration(DateTimeOptions options) {
         super(options);
-        DurationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration());
-        TimeZoneExtractor = new BaseTimeZoneExtractor(new EnglishTimeZoneExtractorConfiguration(options));
+        durationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration());
+        timeZoneExtractor = new BaseTimeZoneExtractor(new EnglishTimeZoneExtractorConfiguration(options));
     }
 }

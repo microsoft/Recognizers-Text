@@ -14,6 +14,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public IExtractor IntegerExtractor { get; }
 
+        public IDateTimeParser TimeZoneParser { get; }
+
         public Regex PureNumberFromToRegex { get; }
 
         public Regex PureNumberBetweenAndRegex { get; }
@@ -37,6 +39,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             TimeExtractor = config.TimeExtractor;
             IntegerExtractor = config.IntegerExtractor;
             TimeParser = config.TimeParser;
+            TimeZoneParser = config.TimeZoneParser;
             PureNumberFromToRegex = FrenchTimePeriodExtractorConfiguration.PureNumFromTo; 
             PureNumberBetweenAndRegex = FrenchTimePeriodExtractorConfiguration.PureNumBetweenAnd;
             SpecificTimeFromToRegex = FrenchTimePeriodExtractorConfiguration.SpecificTimeFromTo;

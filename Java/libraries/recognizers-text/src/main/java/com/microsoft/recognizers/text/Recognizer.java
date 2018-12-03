@@ -1,9 +1,7 @@
 package com.microsoft.recognizers.text;
 
-import org.apache.commons.lang3.ObjectUtils;
-import org.javatuples.Pair;
-
 import java.util.function.Function;
+import org.javatuples.Pair;
 
 public abstract class Recognizer<TRecognizerOptions extends Enum<TRecognizerOptions>> {
 
@@ -24,10 +22,10 @@ public abstract class Recognizer<TRecognizerOptions extends Enum<TRecognizerOpti
         }
     }
 
-    public <T extends IModel> T getModel(Class<T> modelType, String culture, boolean fallbackToDefaultCulture){
+    public <T extends IModel> T getModel(Class<T> modelType, String culture, boolean fallbackToDefaultCulture) {
         return this.factory.getModel(
                 modelType,
-                ObjectUtils.firstNonNull(culture, targetCulture),
+                culture != null ? culture : targetCulture,
                 fallbackToDefaultCulture,
                 options);
     }

@@ -10,12 +10,20 @@ import com.microsoft.recognizers.text.datetime.parsers.config.MatchedTimeRangeRe
 import com.microsoft.recognizers.text.datetime.utilities.DateTimeResolutionResult;
 import com.microsoft.recognizers.text.datetime.utilities.DateUtil;
 import com.microsoft.recognizers.text.datetime.utilities.FormatUtil;
-import com.microsoft.recognizers.text.utilities.*;
-import org.javatuples.Pair;
+import com.microsoft.recognizers.text.utilities.Capture;
+import com.microsoft.recognizers.text.utilities.Match;
+import com.microsoft.recognizers.text.utilities.MatchGroup;
+import com.microsoft.recognizers.text.utilities.RegExpUtility;
+import com.microsoft.recognizers.text.utilities.StringUtility;
 
 import java.time.Duration;
 import java.time.LocalDateTime;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Optional;
+import org.javatuples.Pair;
 
 public class BaseTimePeriodParser implements IDateTimeParser {
 
@@ -55,20 +63,20 @@ public class BaseTimePeriodParser implements IDateTimeParser {
                 ImmutableMap.Builder<String, String> futureResolution = ImmutableMap.builder();
                 futureResolution.put(
                         TimeTypeConstants.START_TIME,
-                        FormatUtil.formatTime(((Pair<LocalDateTime, LocalDateTime>) innerResult.getFutureValue()).getValue0()));
+                        FormatUtil.formatTime(((Pair<LocalDateTime, LocalDateTime>)innerResult.getFutureValue()).getValue0()));
                 futureResolution.put(
                         TimeTypeConstants.END_TIME,
-                        FormatUtil.formatTime(((Pair<LocalDateTime, LocalDateTime>) innerResult.getFutureValue()).getValue1()));
+                        FormatUtil.formatTime(((Pair<LocalDateTime, LocalDateTime>)innerResult.getFutureValue()).getValue1()));
 
                 innerResult.setFutureResolution(futureResolution.build());
 
                 ImmutableMap.Builder<String, String> pastResolution = ImmutableMap.builder();
                 pastResolution.put(
                         TimeTypeConstants.START_TIME,
-                        FormatUtil.formatTime(((Pair<LocalDateTime, LocalDateTime>) innerResult.getPastValue()).getValue0()));
+                        FormatUtil.formatTime(((Pair<LocalDateTime, LocalDateTime>)innerResult.getPastValue()).getValue0()));
                 pastResolution.put(
                         TimeTypeConstants.END_TIME,
-                        FormatUtil.formatTime(((Pair<LocalDateTime, LocalDateTime>) innerResult.getPastValue()).getValue1()));
+                        FormatUtil.formatTime(((Pair<LocalDateTime, LocalDateTime>)innerResult.getPastValue()).getValue1()));
 
                 innerResult.setPastResolution(pastResolution.build());
 
@@ -84,7 +92,7 @@ public class BaseTimePeriodParser implements IDateTimeParser {
                 er.data,
                 value,
                 "",
-                value == null ? "" : ((DateTimeResolutionResult) value).getTimex());
+                value == null ? "" : ((DateTimeResolutionResult)value).getTimex());
 
         return ret;
     }
@@ -106,7 +114,9 @@ public class BaseTimePeriodParser implements IDateTimeParser {
     private DateTimeResolutionResult parsePureNumCases(String text, LocalDateTime referenceTime) {
         DateTimeResolutionResult ret = new DateTimeResolutionResult();
 
-        int year = referenceTime.getYear(), month = referenceTime.getMonthValue(), day = referenceTime.getDayOfMonth();
+        int year = referenceTime.getYear();
+        int month = referenceTime.getMonthValue();
+        int day = referenceTime.getDayOfMonth();
         String trimmedText = text.trim().toLowerCase();
 
         Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(this.config.getPureNumberFromToRegex(), trimmedText)).findFirst();
@@ -222,7 +232,9 @@ public class BaseTimePeriodParser implements IDateTimeParser {
     private DateTimeResolutionResult parseSpecificTimeCases(String text, LocalDateTime referenceTime) {
         DateTimeResolutionResult ret = new DateTimeResolutionResult();
 
-        int year = referenceTime.getYear(), month = referenceTime.getMonthValue(), day = referenceTime.getDayOfMonth();
+        int year = referenceTime.getYear();
+        int month = referenceTime.getMonthValue();
+        int day = referenceTime.getDayOfMonth();
         String trimmedText = text.trim().toLowerCase();
 
         // Handle cases like "from 4:30 to 5"
@@ -352,8 +364,7 @@ public class BaseTimePeriodParser implements IDateTimeParser {
                         endDateTime = endDateTime.plusHours(Constants.HalfDayHourCount);
                     }
                 }
-            } // one of the timepoint has description like 'am' or 'pm'
-            else if (hasLeft || hasRight) {
+            } else if (hasLeft || hasRight) { // one of the timepoint has description like 'am' or 'pm'
                 if (hasLeftAm) {
                     if (beginHour >= Constants.HalfDayHourCount) {
                         beginDateTime = beginDateTime.minusHours(Constants.HalfDayHourCount);
@@ -407,8 +418,8 @@ public class BaseTimePeriodParser implements IDateTimeParser {
                         }
                     }
                 }
-            }// No 'am' or 'pm' indicator
-            else if (!hasLeft && !hasRight && beginHour <= Constants.HalfDayHourCount && endHour <= Constants.HalfDayHourCount) {
+            } else if (!hasLeft && !hasRight && beginHour <= Constants.HalfDayHourCount && endHour <= Constants.HalfDayHourCount) {
+                // No 'am' or 'pm' indicator
                 if (beginHour > endHour) {
                     if (beginHour == Constants.HalfDayHourCount) {
                         beginDateTime = beginDateTime.minusHours(Constants.HalfDayHourCount);
@@ -470,7 +481,8 @@ public class BaseTimePeriodParser implements IDateTimeParser {
 
     private DateTimeResolutionResult mergeTwoTimePoints(String text, LocalDateTime referenceTime) {
         DateTimeResolutionResult ret = new DateTimeResolutionResult();
-        DateTimeParseResult pr1 = null, pr2 = null;
+        DateTimeParseResult pr1 = null;
+        DateTimeParseResult pr2 = null;
         boolean validTimeNumber = false;
 
         List<ExtractResult> ers = this.config.getTimeExtractor().extract(text, referenceTime);
@@ -483,7 +495,8 @@ public class BaseTimePeriodParser implements IDateTimeParser {
                 for (ExtractResult num : numErs) {
                     int numStart = num.start != null ? num.start : 0;
                     int numLength = num.length != null ? num.length : 0;
-                    int midStrBegin = 0, midStrEnd = 0;
+                    int midStrBegin = 0;
+                    int midStrEnd = 0;
                     // ending number
                     if (numStart > erStart + erLength) {
                         midStrBegin = erStart + erLength;
@@ -518,15 +531,16 @@ public class BaseTimePeriodParser implements IDateTimeParser {
             return ret;
         }
 
-        String ampmStr1 = ((DateTimeResolutionResult) pr1.value).getComment();
-        String ampmStr2 = ((DateTimeResolutionResult) pr2.value).getComment();
+        String ampmStr1 = ((DateTimeResolutionResult)pr1.value).getComment();
+        String ampmStr2 = ((DateTimeResolutionResult)pr2.value).getComment();
 
-        LocalDateTime beginTime = (LocalDateTime) ((DateTimeResolutionResult) pr1.value).getFutureValue();
-        LocalDateTime endTime = (LocalDateTime) ((DateTimeResolutionResult) pr2.value).getFutureValue();
+        LocalDateTime beginTime = (LocalDateTime)((DateTimeResolutionResult)pr1.value).getFutureValue();
+        LocalDateTime endTime = (LocalDateTime)((DateTimeResolutionResult)pr2.value).getFutureValue();
 
-        if (!StringUtility.isNullOrEmpty(ampmStr2) && ampmStr2.endsWith(Constants.Comment_AmPm) && (endTime.compareTo(beginTime) < 1) && endTime.plusHours(Constants.HalfDayHourCount).isAfter(beginTime)) {
+        if (!StringUtility.isNullOrEmpty(ampmStr2) && ampmStr2.endsWith(Constants.Comment_AmPm) &&
+                (endTime.compareTo(beginTime) < 1) && endTime.plusHours(Constants.HalfDayHourCount).isAfter(beginTime)) {
             endTime = endTime.plusHours(Constants.HalfDayHourCount);
-            ((DateTimeResolutionResult) pr2.value).setFutureValue(endTime);
+            ((DateTimeResolutionResult)pr2.value).setFutureValue(endTime);
             pr2 = pr2.withTimexStr(String.format("T%s", endTime.getHour()));
             if (endTime.getMinute() > 0) {
                 pr2 = pr2.withTimexStr(String.format("%s:%s", pr2.timexStr, endTime.getMinute()));
@@ -535,7 +549,7 @@ public class BaseTimePeriodParser implements IDateTimeParser {
 
         if (!StringUtility.isNullOrEmpty(ampmStr1) && ampmStr1.endsWith(Constants.Comment_AmPm) && endTime.isAfter(beginTime.plusHours(Constants.HalfDayHourCount))) {
             beginTime = beginTime.plusHours(Constants.HalfDayHourCount);
-            ((DateTimeResolutionResult) pr1.value).setFutureValue(beginTime);
+            ((DateTimeResolutionResult)pr1.value).setFutureValue(beginTime);
             pr1 = pr1.withTimexStr(String.format("T%s", beginTime.getHour()));
             if (beginTime.getMinute() > 0) {
                 pr1 = pr1.withTimexStr(String.format("%s:%s", pr1.timexStr, beginTime.getMinute()));
@@ -567,10 +581,10 @@ public class BaseTimePeriodParser implements IDateTimeParser {
             ret.setComment(Constants.Comment_AmPm);
         }
 
-        if (((DateTimeResolutionResult) pr1.value).getTimeZoneResolution() != null) {
-            ret.setTimeZoneResolution(((DateTimeResolutionResult) pr1.value).getTimeZoneResolution());
-        } else if (((DateTimeResolutionResult) pr2.value).getTimeZoneResolution() != null) {
-            ret.setTimeZoneResolution(((DateTimeResolutionResult) pr2.value).getTimeZoneResolution());
+        if (((DateTimeResolutionResult)pr1.value).getTimeZoneResolution() != null) {
+            ret.setTimeZoneResolution(((DateTimeResolutionResult)pr1.value).getTimeZoneResolution());
+        } else if (((DateTimeResolutionResult)pr2.value).getTimeZoneResolution() != null) {
+            ret.setTimeZoneResolution(((DateTimeResolutionResult)pr2.value).getTimeZoneResolution());
         }
 
         List<Object> subDateTimeEntities = new ArrayList<>();
@@ -582,14 +596,15 @@ public class BaseTimePeriodParser implements IDateTimeParser {
     }
 
     private DateTimeResolutionResult parseNight(String text, LocalDateTime referenceTime) {
-        int day = referenceTime.getDayOfMonth(),
-                month = referenceTime.getMonthValue(),
-                year = referenceTime.getYear();
+        int day = referenceTime.getDayOfMonth();
+        int month = referenceTime.getMonthValue();
+        int year = referenceTime.getYear();
         DateTimeResolutionResult ret = new DateTimeResolutionResult();
 
         // extract early/late prefix from text
         Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(this.config.getTimeOfDayRegex(), text)).findFirst();
-        boolean hasEarly = false, hasLate = false;
+        boolean hasEarly = false;
+        boolean hasLate = false;
         if (match.isPresent()) {
             if (!StringUtility.isNullOrEmpty(match.get().getGroup("early").value)) {
                 String early = match.get().getGroup("early").value;
@@ -605,30 +620,30 @@ public class BaseTimePeriodParser implements IDateTimeParser {
                 ret.setComment(Constants.Comment_Late);
             }
         }
-        MatchedTimeRangeResult matchedTimeRangeResult = this.config.getMatchedTimexRange(text, "", 0, 0, 0);
-        if (!matchedTimeRangeResult.getMatched()) {
+        MatchedTimeRangeResult timexResult = this.config.getMatchedTimexRange(text, "", 0, 0, 0);
+        if (!timexResult.getMatched()) {
             return new DateTimeResolutionResult();
         }
 
         // modify time period if "early" or "late" is existed
         if (hasEarly) {
-            matchedTimeRangeResult.setEndHour(matchedTimeRangeResult.getBeginHour() + 2);
+            timexResult.setEndHour(timexResult.getBeginHour() + 2);
             // handling case: night end with 23:59
-            if (matchedTimeRangeResult.getEndMin() == 59) {
-                matchedTimeRangeResult.setEndMin(0);
+            if (timexResult.getEndMin() == 59) {
+                timexResult.setEndMin(0);
             }
         } else if (hasLate) {
-            matchedTimeRangeResult.setBeginHour(matchedTimeRangeResult.getBeginHour() + 2);
+            timexResult.setBeginHour(timexResult.getBeginHour() + 2);
         }
 
-        ret.setTimex(matchedTimeRangeResult.getTimeStr());
+        ret.setTimex(timexResult.getTimeStr());
 
         ret.setFutureValue(new Pair<>(
-                DateUtil.safeCreateFromValue(LocalDateTime.MIN, year, month, day, matchedTimeRangeResult.getBeginHour(), 0, 0),
-                DateUtil.safeCreateFromValue(LocalDateTime.MIN, year, month, day, matchedTimeRangeResult.getEndHour(), matchedTimeRangeResult.getEndMin(), matchedTimeRangeResult.getEndMin())));
+                DateUtil.safeCreateFromValue(LocalDateTime.MIN, year, month, day, timexResult.getBeginHour(), 0, 0),
+                DateUtil.safeCreateFromValue(LocalDateTime.MIN, year, month, day, timexResult.getEndHour(), timexResult.getEndMin(), timexResult.getEndMin())));
         ret.setPastValue(new Pair<>(
-                DateUtil.safeCreateFromValue(LocalDateTime.MIN, year, month, day, matchedTimeRangeResult.getBeginHour(), 0, 0),
-                DateUtil.safeCreateFromValue(LocalDateTime.MIN, year, month, day, matchedTimeRangeResult.getEndHour(), matchedTimeRangeResult.getEndMin(), matchedTimeRangeResult.getEndMin())));
+                DateUtil.safeCreateFromValue(LocalDateTime.MIN, year, month, day, timexResult.getBeginHour(), 0, 0),
+                DateUtil.safeCreateFromValue(LocalDateTime.MIN, year, month, day, timexResult.getEndHour(), timexResult.getEndMin(), timexResult.getEndMin())));
 
         ret.setSuccess(true);
 
