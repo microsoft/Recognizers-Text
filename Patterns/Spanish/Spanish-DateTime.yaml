@@ -855,4 +855,33 @@ MinusTwoDayTerms: !list
   entries: 
     - anteayer
     - dia antes de ayer
+# For DatePeriodParserConfiguration Logic
+MonthTerms: !list
+  types: [ string ]
+  entries:
+    - mes
+    - meses
+MonthToDateTerms: !list
+  types: [ string ]
+  entries:
+    - mes a la fecha
+    - meses a la fecha
+WeekendTerms: !list
+  types: [ string ]
+  entries:
+    - fin de semana
+WeekTerms: !list
+  types: [ string ]
+  entries:
+    - semana
+YearTerms: !list
+  types: [ string ]
+  entries:
+    - año
+    - años
+YearToDateTerms: !list
+  types: [ string ]
+  entries:
+    - año a la fecha
+    - años a la fecha
 ...

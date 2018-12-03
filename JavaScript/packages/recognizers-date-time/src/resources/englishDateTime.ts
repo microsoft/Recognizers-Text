@@ -269,4 +269,13 @@ export namespace EnglishDateTime {
 	export const MinusOneDayTerms = [ "yesterday","day before" ];
 	export const PlusTwoDayTerms = [ "day after tomorrow","day after tmr" ];
 	export const MinusTwoDayTerms = [ "day before yesterday" ];
+	export const FutureTerms = [ "this","next" ];
+	export const LastCardinalTerms = [ "last" ];
+	export const MonthTerms = [ "month" ];
+	export const MonthToDateTerms = [ "month to date" ];
+	export const WeekendTerms = [ "weekend" ];
+	export const WeekTerms = [ "week" ];
+	export const YearTerms = [ "year" ];
+	export const GenericYearTerms = [ "y" ];
+	export const YearToDateTerms = [ "year to date" ];
 }

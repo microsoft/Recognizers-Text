@@ -199,41 +199,42 @@ export class EnglishDatePeriodParserConfiguration implements IDatePeriodParserCo
 
     isFuture(source: string): boolean {
         let trimmedSource = source.trim().toLowerCase();
-        return (trimmedSource.startsWith('this') || trimmedSource.startsWith('next'));
+        return EnglishDateTime.FutureTerms.some(o => trimmedSource.startsWith(o));
     }
 
     isYearToDate(source: string): boolean {
         let trimmedSource = source.trim().toLowerCase();
-        return trimmedSource === 'year to date';
+        return EnglishDateTime.YearToDateTerms.some(o => trimmedSource === o);
     }
 
     isMonthToDate(source: string): boolean {
         let trimmedSource = source.trim().toLowerCase();
-        return trimmedSource === 'month to date';
+        return EnglishDateTime.MonthToDateTerms.some(o => trimmedSource === o);
     }
 
     isWeekOnly(source: string): boolean {
         let trimmedSource = source.trim().toLowerCase();
-        return trimmedSource.endsWith('week');
+        return EnglishDateTime.WeekTerms.some(o => trimmedSource.endsWith(o));
     }
 
     isWeekend(source: string): boolean {
         let trimmedSource = source.trim().toLowerCase();
-        return trimmedSource.endsWith('weekend');
+        return EnglishDateTime.WeekendTerms.some(o => trimmedSource.endsWith(o));
     }
 
     isMonthOnly(source: string): boolean {
         let trimmedSource = source.trim().toLowerCase();
-        return trimmedSource.endsWith('month');
+        return EnglishDateTime.MonthTerms.some(o => trimmedSource.endsWith(o));
     }
 
     isYearOnly(source: string): boolean {
         let trimmedSource = source.trim().toLowerCase();
-        return trimmedSource.endsWith('year') || (trimmedSource.endsWith('y') && RegExpUtility.isMatch(this.unspecificEndOfRangeRegex, trimmedSource));
+        return EnglishDateTime.YearTerms.some(o => trimmedSource.endsWith(o)) ||
+            (EnglishDateTime.GenericYearTerms.some(o => trimmedSource.endsWith(o) && RegExpUtility.isMatch(this.unspecificEndOfRangeRegex, trimmedSource)));
     }
 
     isLastCardinal(source: string): boolean {
         let trimmedSource = source.trim().toLowerCase();
-        return trimmedSource === 'last';
+        return EnglishDateTime.LastCardinalTerms.some(o => trimmedSource === o);
     }
 }

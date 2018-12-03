@@ -887,4 +887,38 @@ MinusTwoDayTerms: !list
   entries: 
     - anteontem
     - dia antes de ontem
+# For DatePeriodParserConfiguration Logic
+MonthTerms: !list
+  types: [ string ]
+  entries:
+    - mes
+    - meses
+MonthToDateTerms: !list
+  types: [ string ]
+  entries:
+    - mes ate agora
+    - mes ate hoje
+    - mes ate a data
+WeekendTerms: !list
+  types: [ string ]
+  entries:
+    - fim de semana
+WeekTerms: !list
+  types: [ string ]
+  entries:
+    - semana
+YearTerms: !list
+  types: [ string ]
+  entries:
+    - ano
+    - anos
+YearToDateTerms: !list
+  types: [ string ]
+  entries:
+    - ano ate agora
+    - ano ate hoje
+    - ano ate a data
+    - anos ate agora
+    - anos ate hoje
+    - anos ate a data
 ...

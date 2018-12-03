@@ -637,4 +637,13 @@ class FrenchDateTime:
     MinusOneDayTerms = ['hier', 'dernier']
     PlusTwoDayTerms = ['après demain', 'après-demain', 'apres-demain']
     MinusTwoDayTerms = ['avant-hier', 'avant hier']
+    FutureStartTerms = ['cette']
+    FutureEndTerms = ['prochaine', 'prochain']
+    LastCardinalTerms = ['dernières', 'dernière', 'dernieres', 'derniere', 'dernier']
+    MonthTerms = ['mois']
+    MonthToDateTerms = ['mois à ce jour']
+    WeekendTerms = ['fin de semaine', 'le weekend']
+    WeekTerms = ['semaine', 'fin de semaine']
+    YearTerms = ['années', 'ans', 'l\'annees', 'l\'annee']
+    YearToDateTerms = ['année à ce jour', 'an à ce jour']
 # pylint: enable=line-too-long

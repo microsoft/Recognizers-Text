@@ -230,4 +230,10 @@ export namespace PortugueseDateTime {
 	export const MinusOneDayTerms = [ "ontem","ultimo dia" ];
 	export const PlusTwoDayTerms = [ "depois de amanha","dia depois de amanha" ];
 	export const MinusTwoDayTerms = [ "anteontem","dia antes de ontem" ];
+	export const MonthTerms = [ "mes","meses" ];
+	export const MonthToDateTerms = [ "mes ate agora","mes ate hoje","mes ate a data" ];
+	export const WeekendTerms = [ "fim de semana" ];
+	export const WeekTerms = [ "semana" ];
+	export const YearTerms = [ "ano","anos" ];
+	export const YearToDateTerms = [ "ano ate agora","ano ate hoje","ano ate a data","anos ate agora","anos ate hoje","anos ate a data" ];
 }

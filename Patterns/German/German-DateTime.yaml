@@ -1060,4 +1060,53 @@ MinusTwoDayTerms: !list
   types: [ string ]
   entries: 
     - vorgestern
+# For DatePeriodParserConfiguration Logic
+FutureTerms: !list
+  types: [ string ]
+  entries:
+    - dieser
+    - diesen
+    - dieses
+    - diese
+    - nächster
+    - nächstes
+    - nächsten
+    - nächste
+LastCardinalTerms: !list
+  types: [ string ]
+  entries:
+    - letzter
+    - letztes
+    - letzten
+MonthTerms: !list
+  types: [ string ]
+  entries:
+    - monat
+    - monate
+    - monaten
+    - monats
+MonthToDateTerms: !list
+  types: [ string ]
+  entries:
+    - month to date
+WeekendTerms: !list
+  types: [ string ]
+  entries:
+    - wochenende
+    - wochenendes
+WeekTerms: !list
+  types: [ string ]
+  entries:
+    - woche
+YearTerms: !list
+  types: [ string ]
+  entries:
+    - jahr
+    - jahre
+    - jahren
+    - jahres
+YearToDateTerms: !list
+  types: [ string ]
+  entries:
+    - year to date
 ...

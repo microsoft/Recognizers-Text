@@ -731,5 +731,52 @@ namespace Microsoft.Recognizers.Definitions.French
 			"avant-hier",
 			"avant hier"
 		};
+		public static readonly IList<string> FutureStartTerms = new List<string>
+		{
+			"cette"
+		};
+		public static readonly IList<string> FutureEndTerms = new List<string>
+		{
+			"prochaine",
+			"prochain"
+		};
+		public static readonly IList<string> LastCardinalTerms = new List<string>
+		{
+			"dernières",
+			"dernière",
+			"dernieres",
+			"derniere",
+			"dernier"
+		};
+		public static readonly IList<string> MonthTerms = new List<string>
+		{
+			"mois"
+		};
+		public static readonly IList<string> MonthToDateTerms = new List<string>
+		{
+			"mois à ce jour"
+		};
+		public static readonly IList<string> WeekendTerms = new List<string>
+		{
+			"fin de semaine",
+			"le weekend"
+		};
+		public static readonly IList<string> WeekTerms = new List<string>
+		{
+			"semaine",
+			"fin de semaine"
+		};
+		public static readonly IList<string> YearTerms = new List<string>
+		{
+			"années",
+			"ans",
+			"l'annees",
+			"l'annee"
+		};
+		public static readonly IList<string> YearToDateTerms = new List<string>
+		{
+			"année à ce jour",
+			"an à ce jour"
+		};
 	}
 }

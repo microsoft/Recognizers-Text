@@ -239,47 +239,33 @@ class FrenchDatePeriodParserConfiguration(DatePeriodParserConfiguration):
 
     def is_future(self, source: str) -> bool:
         trimmed_source = source.strip().lower()
-        return (
-            trimmed_source.startswith('cette') or
-            trimmed_source.endswith('prochaine') or
-            trimmed_source.endswith('prochain')
-            )
+        return any(trimmed_source.startswith(o) for o in FrenchDateTime.FutureStartTerms) \
+               or any(trimmed_source.endswith(o) for o in FrenchDateTime.FutureEndTerms)
 
     def is_year_to_date(self, source: str) -> bool:
         trimmed_source = source.strip().lower()
-        return trimmed_source == 'année à ce jour' or trimmed_source == 'an à ce jour'
+        return any(trimmed_source == o for o in FrenchDateTime.YearToDateTerms)
 
     def is_month_to_date(self, source: str) -> bool:
         trimmed_source = source.strip().lower()
-        return trimmed_source == 'mois à ce jour'
+        return any(trimmed_source == o for o in FrenchDateTime.MonthToDateTerms)
 
     def is_week_only(self, source: str) -> bool:
         trimmed_source = source.strip().lower()
-        return trimmed_source.endswith('semaine') and not trimmed_source.endswith('fin de semaine')
+        return any(trimmed_source.endswith(o) for o in FrenchDateTime.WeekTerms) and not \
+            any(trimmed_source.endswith(o) for o in FrenchDateTime.WeekendTerms)
 
     def is_weekend(self, source: str) -> bool:
         trimmed_source = source.strip().lower()
-        return trimmed_source.endswith('fin de semaine') or trimmed_source.endswith('le weekend')
+        return any(trimmed_source.endswith(o) for o in FrenchDateTime.WeekendTerms)
 
     def is_month_only(self, source: str) -> bool:
         trimmed_source = source.strip().lower()
-        return trimmed_source.endswith('mois')
+        return any(trimmed_source.endswith(o) for o in FrenchDateTime.MonthTerms)
 
     def is_year_only(self, source: str) -> bool:
         trimmed_source = source.strip().lower()
-        return (
-            trimmed_source.endswith('années') or
-            trimmed_source.endswith('ans') or
-            trimmed_source.endswith('l\'annees') or
-            trimmed_source.endswith('l\'annee')
-        )
+        return any(trimmed_source.endswith(o) for o in FrenchDateTime.YearTerms)
 
     def is_last_cardinal(self, source: str) -> bool:
         trimmed_source = source.strip().lower()
-        return (
-            trimmed_source == 'dernières' or
-            trimmed_source == 'dernière' or
-            trimmed_source == 'dernieres' or
-            trimmed_source == 'derniere' or
-            trimmed_source == 'dernier'
-        )

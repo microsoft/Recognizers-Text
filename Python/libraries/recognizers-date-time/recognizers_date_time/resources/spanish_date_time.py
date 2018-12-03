@@ -426,4 +426,10 @@ class SpanishDateTime:
     MinusOneDayTerms = ['ayer', 'ultimo dia']
     PlusTwoDayTerms = ['pasado mañana', 'dia despues de mañana']
     MinusTwoDayTerms = ['anteayer', 'dia antes de ayer']
+    MonthTerms = ['mes', 'meses']
+    MonthToDateTerms = ['mes a la fecha', 'meses a la fecha']
+    WeekendTerms = ['fin de semana']
+    WeekTerms = ['semana']
+    YearTerms = ['año', 'años']
+    YearToDateTerms = ['año a la fecha', 'años a la fecha']
 # pylint: enable=line-too-long

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Immutable;
+using System.Linq;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.Spanish;
@@ -229,37 +230,38 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public bool IsMonthOnly(string text)
         {
             var trimmedText = text.Trim().ToLowerInvariant();
-            return (trimmedText.EndsWith("mes") || trimmedText.EndsWith("meses"));
+            return DateTimeDefinitions.MonthTerms.Any(o => trimmedText.EndsWith(o));
         }
 
         public bool IsMonthToDate(string text)
         {
             var trimmedText = text.Trim().ToLowerInvariant();
-            return (trimmedText.Equals("mes a la fecha") || trimmedText.Equals("meses a la fecha"));
+            return DateTimeDefinitions.MonthToDateTerms.Any(o => trimmedText.Equals(o));
         }
 
         public bool IsWeekend(string text)
         {
             var trimmedText = text.Trim().ToLowerInvariant();
-            return trimmedText.EndsWith("fin de semana");
+            return DateTimeDefinitions.WeekendTerms.Any(o => trimmedText.EndsWith(o));
         }
 
         public bool IsWeekOnly(string text)
         {
             var trimmedText = text.Trim().ToLowerInvariant();
-            return (trimmedText.EndsWith("semana") && !trimmedText.EndsWith("fin de semana"));
+            return DateTimeDefinitions.WeekTerms.Any(o => trimmedText.EndsWith(o))
+                   && !DateTimeDefinitions.WeekendTerms.Any(o => trimmedText.EndsWith(o));
         }
 
         public bool IsYearOnly(string text)
         {
             var trimmedText = text.Trim().ToLowerInvariant();
-            return (trimmedText.EndsWith("año") || trimmedText.EndsWith("años"));
+            return DateTimeDefinitions.YearTerms.Any(o => trimmedText.EndsWith(o));
         }
 
         public bool IsYearToDate(string text)
         {
             var trimmedText = text.Trim().ToLowerInvariant();
-            return (trimmedText.Equals("año a la fecha") || trimmedText.Equals("años a la fecha"));
+            return DateTimeDefinitions.YearToDateTerms.Any(o => trimmedText.Equals(o));
         }
     }
 }

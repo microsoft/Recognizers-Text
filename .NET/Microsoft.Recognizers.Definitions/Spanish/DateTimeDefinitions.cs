@@ -511,5 +511,33 @@ namespace Microsoft.Recognizers.Definitions.Spanish
 			"anteayer",
 			"dia antes de ayer"
 		};
+		public static readonly IList<string> MonthTerms = new List<string>
+		{
+			"mes",
+			"meses"
+		};
+		public static readonly IList<string> MonthToDateTerms = new List<string>
+		{
+			"mes a la fecha",
+			"meses a la fecha"
+		};
+		public static readonly IList<string> WeekendTerms = new List<string>
+		{
+			"fin de semana"
+		};
+		public static readonly IList<string> WeekTerms = new List<string>
+		{
+			"semana"
+		};
+		public static readonly IList<string> YearTerms = new List<string>
+		{
+			"año",
+			"años"
+		};
+		public static readonly IList<string> YearToDateTerms = new List<string>
+		{
+			"año a la fecha",
+			"años a la fecha"
+		};
 	}
 }

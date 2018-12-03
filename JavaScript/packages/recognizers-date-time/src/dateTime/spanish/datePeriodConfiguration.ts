@@ -221,37 +221,33 @@ export class SpanishDatePeriodParserConfiguration implements IDatePeriodParserCo
 
     isYearToDate(source: string): boolean {
         let trimedText = source.trim().toLowerCase();
-        return trimedText === "año a la fecha"
-            || trimedText === "años a la fecha";
+        return SpanishDateTime.YearToDateTerms.some(o => trimedText === o);
     }
 
     isMonthToDate(source: string): boolean {
         let trimedText = source.trim().toLowerCase();
-        return trimedText === "mes a la fecha"
-            || trimedText === "meses a la fecha";
+        return SpanishDateTime.MonthToDateTerms.some(o => trimedText === o);
     }
 
     isWeekOnly(source: string): boolean {
         let trimedText = source.trim().toLowerCase();
-        return trimedText.endsWith("semana")
-            && !trimedText.endsWith("fin de semana");
+        return SpanishDateTime.WeekTerms.some(o => trimedText.endsWith(o))
+            && !SpanishDateTime.WeekendTerms.some(o => trimedText.endsWith(o));
     }
 
     isWeekend(source: string): boolean {
         let trimedText = source.trim().toLowerCase();
-        return trimedText.endsWith("fin de semana");
+        return SpanishDateTime.WeekendTerms.some(o => trimedText.endsWith(o));
     }
 
     isMonthOnly(source: string): boolean {
         let trimedText = source.trim().toLowerCase();
-        return trimedText.endsWith("mes")
-            || trimedText.endsWith("meses");
+        return SpanishDateTime.MonthTerms.some(o => trimedText.endsWith(o));
     }
 
     isYearOnly(source: string): boolean {
         let trimedText = source.trim().toLowerCase();
-        return trimedText.endsWith("año")
-            || trimedText.endsWith("años");
+        return SpanishDateTime.YearTerms.some(o => trimedText.endsWith(o));
     }
 
     isLastCardinal(source: string): boolean {
