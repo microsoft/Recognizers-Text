@@ -8,13 +8,22 @@ import java.util.regex.Pattern;
 
 public interface ITimePeriodExtractorConfiguration extends IOptionsConfiguration {
     String getTokenBeforeDate();
+
     IExtractor getIntegerExtractor();
+
     Iterable<Pattern> getSimpleCasesRegex();
+
     Pattern getTillRegex();
+
     Pattern getTimeOfDayRegex();
+
     Pattern getGeneralEndingRegex();
+
     IDateTimeExtractor getSingleTimeExtractor();
-    ResultIndex GetFromTokenIndex(String text);
-    boolean HasConnectorToken(String text);
-    ResultIndex GetBetweenTokenIndex(String text);
+
+    ResultIndex getFromTokenIndex(String text);
+
+    boolean hasConnectorToken(String text);
+
+    ResultIndex getBetweenTokenIndex(String text);
 }

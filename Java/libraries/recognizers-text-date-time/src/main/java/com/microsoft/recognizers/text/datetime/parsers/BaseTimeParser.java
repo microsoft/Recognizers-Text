@@ -60,13 +60,13 @@ public class BaseTimeParser implements IDateTimeParser {
 
             // Resolve timezome
             if (config.getOptions().match(DateTimeOptions.EnablePreview) && er.data instanceof Map.Entry) {
-                ExtractResult timezoneEr = ((Map.Entry<String, ExtractResult>) er.data).getValue();
+                ExtractResult timezoneEr = ((Map.Entry<String, ExtractResult>)er.data).getValue();
                 ParseResult timezonePr = config.getTimeZoneParser().parse(timezoneEr);
 
-                innerResult = internalParse(er.text.substring(0, timezoneEr.length), referenceTime);
+                innerResult = internalParse(er.text.substring(0, er.length - timezoneEr.length), referenceTime);
 
                 if (timezonePr.value != null) {
-                    TimeZoneResolutionResult timeZoneResolution = ((DateTimeResolutionResult) timezonePr.value).getTimeZoneResolution();
+                    TimeZoneResolutionResult timeZoneResolution = ((DateTimeResolutionResult)timezonePr.value).getTimeZoneResolution();
                     innerResult.setTimeZoneResolution(timeZoneResolution);
                 }
 
@@ -76,12 +76,12 @@ public class BaseTimeParser implements IDateTimeParser {
 
             if (innerResult.getSuccess()) {
                 ImmutableMap.Builder<String, String> futureResolution = ImmutableMap.builder();
-                futureResolution.put(TimeTypeConstants.TIME, FormatUtil.formatTime((LocalDateTime) innerResult.getFutureValue()));
+                futureResolution.put(TimeTypeConstants.TIME, FormatUtil.formatTime((LocalDateTime)innerResult.getFutureValue()));
 
                 innerResult.setFutureResolution(futureResolution.build());
 
                 ImmutableMap.Builder<String, String> pastResolution = ImmutableMap.builder();
-                pastResolution.put(TimeTypeConstants.TIME, FormatUtil.formatTime((LocalDateTime) innerResult.getPastValue()));
+                pastResolution.put(TimeTypeConstants.TIME, FormatUtil.formatTime((LocalDateTime)innerResult.getPastValue()));
 
                 innerResult.setPastResolution(pastResolution.build());
 
@@ -97,7 +97,7 @@ public class BaseTimeParser implements IDateTimeParser {
                 er.data,
                 value,
                 "",
-                value == null ? "" : ((DateTimeResolutionResult) value).getTimex());
+                value == null ? "" : ((DateTimeResolutionResult)value).getTimex());
 
         return ret;
     }
@@ -131,7 +131,8 @@ public class BaseTimeParser implements IDateTimeParser {
         } else {
             try {
                 hour = Integer.parseInt(text);
-            } catch (Exception e) {
+            } catch (Exception ignored) {
+                hour = null;
             }
         }
 

@@ -47,7 +47,7 @@ public class EnglishDateTimeExtractorConfiguration extends BaseOptionsConfigurat
 
         integerExtractor = IntegerExtractor.getInstance();
         datePointExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration());
-        timePointExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration());
+        timePointExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration(options));
         durationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration(options));
 
         utilityConfiguration = new EnglishDatetimeUtilityConfiguration();
@@ -137,7 +137,7 @@ public class EnglishDateTimeExtractorConfiguration extends BaseOptionsConfigurat
         return utilityConfiguration;
     }
 
-    public boolean IsConnector(String text) {
+    public boolean isConnector(String text) {
 
         text = text.trim();
 

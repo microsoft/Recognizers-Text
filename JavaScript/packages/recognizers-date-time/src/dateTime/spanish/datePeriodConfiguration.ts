@@ -119,6 +119,7 @@ export class SpanishDatePeriodParserConfiguration implements IDatePeriodParserCo
     readonly restOfDateRegex: RegExp;
     readonly laterEarlyPeriodRegex: RegExp;
     readonly weekWithWeekDayRangeRegex: RegExp;
+    readonly unspecificEndOfRangeRegex: RegExp;
     readonly tokenBeforeDate: string;
     readonly dayOfMonth: ReadonlyMap<string, number>;
     readonly monthOfYear: ReadonlyMap<string, number>;
@@ -166,6 +167,7 @@ export class SpanishDatePeriodParserConfiguration implements IDatePeriodParserCo
         this.restOfDateRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.RestOfDateRegex);
         this.laterEarlyPeriodRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.LaterEarlyPeriodRegex);
         this.weekWithWeekDayRangeRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.WeekWithWeekDayRangeRegex);
+        this.unspecificEndOfRangeRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.UnspecificEndOfRangeRegex);
 
         this.nextPrefixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.NextPrefixRegex);
         this.pastPrefixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PastPrefixRegex);

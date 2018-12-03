@@ -31,7 +31,7 @@ class ChineseDatePeriodExtractorConfiguration implements IDatePeriodExtractorCon
     readonly numberParser: BaseNumberParser
     readonly durationExtractor: BaseDurationExtractor
     readonly rangeConnectorRegex: RegExp
-
+    
     constructor() {
         this.simpleCasesRegexes = [
             RegExpUtility.getSafeRegExp(ChineseDateTime.SimpleCasesRegex),
@@ -161,6 +161,7 @@ class ChineseDatePeriodParserConfiguration implements IDatePeriodParserConfigura
     readonly restOfDateRegex: RegExp
     readonly laterEarlyPeriodRegex: RegExp
     readonly weekWithWeekDayRangeRegex: RegExp
+    readonly unspecificEndOfRangeRegex: RegExp
     readonly tokenBeforeDate: string
     readonly dayOfMonth: ReadonlyMap<string, number>
     readonly monthOfYear: ReadonlyMap<string, number>

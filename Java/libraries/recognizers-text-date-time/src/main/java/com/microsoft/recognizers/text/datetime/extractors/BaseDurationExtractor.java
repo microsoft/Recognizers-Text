@@ -5,7 +5,9 @@ import com.microsoft.recognizers.text.ExtractResult;
 import com.microsoft.recognizers.text.datetime.Constants;
 import com.microsoft.recognizers.text.datetime.DateTimeOptions;
 import com.microsoft.recognizers.text.datetime.extractors.config.IDurationExtractorConfiguration;
+import com.microsoft.recognizers.text.datetime.utilities.ConditionalMatch;
 import com.microsoft.recognizers.text.datetime.utilities.DurationParsingUtil;
+import com.microsoft.recognizers.text.datetime.utilities.RegexExtension;
 import com.microsoft.recognizers.text.datetime.utilities.Token;
 import com.microsoft.recognizers.text.utilities.Match;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
@@ -68,30 +70,30 @@ public class BaseDurationExtractor implements IDateTimeExtractor {
     }
 
     private List<ExtractResult> tagInequalityPrefix(String input, List<ExtractResult> result) {
-		Stream<ExtractResult> resultStream = result.stream().map(er -> {
+        Stream<ExtractResult> resultStream = result.stream().map(er -> {
             String beforeString = input.substring(0, er.start);
             boolean isInequalityPrefixMatched = false;
 
-            Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(this.config.getMoreThanRegex(), beforeString)).findFirst();
+            ConditionalMatch match = RegexExtension.matchEnd(this.config.getMoreThanRegex(), beforeString, true);
 
             // The second condition is necessary so for "1 week" in "more than 4 days and less than 1 week", it will not be tagged incorrectly as "more than"
-            if (match.isPresent() && match.get().index + match.get().length == beforeString.trim().length()) {
+            if (match.getSuccess()) {
                 er = er.withData(Constants.MORE_THAN_MOD);
                 isInequalityPrefixMatched = true;
             }
 
             if (!isInequalityPrefixMatched) {
-                match = Arrays.stream(RegExpUtility.getMatches(this.config.getLessThanRegex(), beforeString)).findFirst();
-            
-                if (match.isPresent() && match.get().index + match.get().length == beforeString.trim().length()) {
+                match = RegexExtension.matchEnd(this.config.getLessThanRegex(), beforeString, true);
+
+                if (match.getSuccess()) {
                     er = er.withData(Constants.LESS_THAN_MOD);
                     isInequalityPrefixMatched = true;
                 }
             }
 
             if (isInequalityPrefixMatched) {
-                int length = er.length + er.start - match.get().index;
-                int start = match.get().index;
+                int length = er.length + er.start - match.getMatch().get().index;
+                int start = match.getMatch().get().index;
                 String text = input.substring(start, start + length);
                 er = er.withLength(length).withStart(start).withText(text);
             }
@@ -99,10 +101,10 @@ public class BaseDurationExtractor implements IDateTimeExtractor {
             return er;
         });
         return resultStream.collect(Collectors.toList());
-	}
+    }
 
-	private List<ExtractResult> mergeMultipleDuration(String input, List<ExtractResult> extractResults) {
-		if (extractResults.size() <= 1) {
+    private List<ExtractResult> mergeMultipleDuration(String input, List<ExtractResult> extractResults) {
+        if (extractResults.size() <= 1) {
             return extractResults;
         }
 
@@ -143,13 +145,13 @@ public class BaseDurationExtractor implements IDateTimeExtractor {
 
                 if (match.isPresent()) {
                     unitMatch = Arrays.stream(RegExpUtility.getMatches(unitRegex, extractResults.get(secondExtractionIndex).text)).findFirst();
-                    
+
                     if (unitMatch.isPresent() && unitMap.containsKey(unitMatch.get().getGroup("unit").value)) {
                         String nextUnitStr = unitMatch.get().getGroup("unit").value;
-                        
+
                         if (unitValueMap.get(nextUnitStr) != unitValueMap.get(currentUnit)) {
                             valid = true;
-                        
+
                             if (unitValueMap.get(nextUnitStr) < unitValueMap.get(currentUnit)) {
                                 currentUnit = nextUnitStr;
                             }
@@ -170,7 +172,7 @@ public class BaseDurationExtractor implements IDateTimeExtractor {
                 secondExtractionIndex++;
             }
 
-            if (secondExtractionIndex -1 > firstExtractionIndex) {
+            if (secondExtractionIndex - 1 > firstExtractionIndex) {
                 int start = extractResults.get(firstExtractionIndex).start;
                 int length = extractResults.get(secondExtractionIndex - 1).start + extractResults.get(secondExtractionIndex - 1).length - start;
                 String text = input.substring(start, start + length);
@@ -202,12 +204,12 @@ public class BaseDurationExtractor implements IDateTimeExtractor {
         }
 
         return result;
-	}
+    }
 
     // handle cases that don't contain nubmer
-	private Collection<Token> implicitDuration(String text) {
+    private Collection<Token> implicitDuration(String text) {
         Collection<Token> result = new ArrayList<>();
-        
+
         // handle "all day", "all year"
         result.addAll(getTokenFromRegex(config.getAllRegex(), text));
 
@@ -223,10 +225,10 @@ public class BaseDurationExtractor implements IDateTimeExtractor {
         }
 
         return result;
-	}
+    }
 
     // simple cases made by a number followed an unit
-	private List<Token> numberWithUnit(String text) {
+    private List<Token> numberWithUnit(String text) {
         List<Token> result = new ArrayList<>();
         List<ExtractResult> ers = this.config.getCardinalExtractor().extract(text);
         for (ExtractResult er : ers) {
@@ -249,7 +251,7 @@ public class BaseDurationExtractor implements IDateTimeExtractor {
         return result;
     }
 
-	private Collection<Token> getTokenFromRegex(Pattern pattern, String text) {
+    private Collection<Token> getTokenFromRegex(Pattern pattern, String text) {
         Collection<Token> result = new ArrayList<>();
 
         for (Match match : RegExpUtility.getMatches(pattern, text)) {
@@ -258,7 +260,7 @@ public class BaseDurationExtractor implements IDateTimeExtractor {
 
         return result;
     }
-    
+
     // handle cases look like: {number} {unit}? and {an|a} {half|quarter} {unit}?
     // define the part "and {an|a} {half|quarter}" as Suffix
     private Collection<Token> numberWithUnitAndSuffix(String text, Collection<Token> tokens) {

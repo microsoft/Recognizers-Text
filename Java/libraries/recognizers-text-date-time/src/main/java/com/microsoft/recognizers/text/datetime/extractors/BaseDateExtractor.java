@@ -234,7 +234,10 @@ public class BaseDateExtractor implements IDateTimeExtractor {
 
         if (matchYear.isPresent() && matchYear.get().index == 0) {
             year = getYearFromText(matchYear.get());
-            endIndexResult += matchYear.get().length;
+
+            if (year >= Constants.MinYearNum && year <= Constants.MaxYearNum) {
+                endIndexResult += matchYear.get().length;
+            }
         }
 
         LocalDateTime date = DateUtil.safeCreateFromMinValue(year, month, day);

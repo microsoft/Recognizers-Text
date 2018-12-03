@@ -114,4 +114,6 @@ public class Constants {
     public static final String SecondGroupName = "sec";
     public static final String MinuteGroupName = "min";
     public static final String HourGroupName = "hour";
+    public static final String GeneralPeriodPrefix = "P";
+    public static final String TimeTimexPrefix = "T";
 }

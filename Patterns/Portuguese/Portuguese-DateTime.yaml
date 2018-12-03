@@ -15,6 +15,8 @@ PmDescRegex: !simpleRegex
   def: (pm\b|p\.m\.|p\b|p m\b|p\. m\.\b|p\.m\b|p\. m\b)
 AmPmDescRegex: !simpleRegex
   def: (ampm)
+RangePrefixRegex: !simpleRegex
+  def: ((desde|de|da|das|entre)\s+(a(s)?\s+)?)
 # As month number can't be 0, so add (?!\.0\b) to filter out some wrong cases
 TwoDigitYearRegex: !nestedRegex
   def: \b(?<![$])(?<year>([0-27-9]\d))(?!(\s*((\:)|{AmDescRegex}|{PmDescRegex}|\.\d)))\b
@@ -321,8 +323,14 @@ SimpleTimeOfTodayAfterRegex: !nestedRegex
 SimpleTimeOfTodayBeforeRegex: !nestedRegex
   def: ({SpecificTimeOfDayRegex}(\s*,)?(\s+(a\s+la|para))?\s*({HourNumRegex}|{BaseDateTime.HourRegex}))
   references: [ SpecificTimeOfDayRegex, HourNumRegex, BaseDateTime.HourRegex ]
-TheEndOfRegex: !simpleRegex
+SpecificEndOfRegex: !simpleRegex
   def: ((no|ao)\s+)?(fi(m|nal)|t[ée]rmin(o|ar))(\s+d?o(\s+dia)?(\s+de)?)?\s*$
+UnspecificEndOfRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
+UnspecificEndOfRangeRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 UnitRegex: !simpleRegex
   def: (?<unit>anos|ano|meses|m[êe]s|semanas|semana|dias|dia|horas|hora|h|hr|hrs|hs|minutos|minuto|mins|min|segundos|segundo|segs|seg)\b
 ConnectorRegex: !simpleRegex

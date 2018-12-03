@@ -43,40 +43,12 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if ((this.config.Options & DateTimeOptions.EnablePreview) != 0)
             {
-                timeErs = MergeTimeZones(timeErs, config.TimeZoneExtractor.Extract(text, reference), text);
+                timeErs = TimeZoneUtility.MergeTimeZones(timeErs, config.TimeZoneExtractor.Extract(text, reference), text);
             }
 
             return timeErs;
         }
-
-        private List<ExtractResult> MergeTimeZones(List<ExtractResult> timeErs, List<ExtractResult> timeZoneErs, string text)
-        {
-            foreach (var er in timeErs)
-            {
-                foreach (var timeZoneEr in timeZoneErs)
-                {
-                    var begin = er.Start + er.Length;
-                    var end = timeZoneEr.Start;
-
-                    if (begin < end)
-                    {
-                        var gapText = text.Substring((int)begin, (int)(end - begin));
-
-                        if (string.IsNullOrWhiteSpace(gapText))
-                        {
-                            var newLength = (int)(timeZoneEr.Start + timeZoneEr.Length - er.Start);
-
-                            er.Text = text.Substring((int)er.Start, newLength);
-                            er.Length = newLength;
-                            er.Data = new KeyValuePair<string, ExtractResult>(Constants.SYS_DATETIME_TIMEZONE, timeZoneEr);
-                        }
-                    }
-                }
-            }
-
-            return timeErs;
-        }
-
+        
         private List<Token> BasicRegexMatch(string text)
         {
             var result = new List<Token>();

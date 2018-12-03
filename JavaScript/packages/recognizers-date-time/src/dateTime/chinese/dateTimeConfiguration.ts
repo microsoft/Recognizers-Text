@@ -26,7 +26,8 @@ class ChineseDateTimeExtractorConfiguration implements IDateTimeExtractorConfigu
     readonly nightRegex: RegExp
     readonly timeOfTodayBeforeRegex: RegExp
     readonly simpleTimeOfTodayBeforeRegex: RegExp
-    readonly theEndOfRegex: RegExp
+    readonly specificEndOfRegex: RegExp
+    readonly unspecificEndOfRegex: RegExp
     readonly unitRegex: RegExp
     readonly prepositionRegex: RegExp
     readonly utilityConfiguration: IDateTimeUtilityConfiguration
@@ -138,7 +139,8 @@ class ChineseDateTimeParserConfiguration implements IDateTimeParserConfiguration
     readonly simpleTimeOfTodayAfterRegex: RegExp;
     readonly simpleTimeOfTodayBeforeRegex: RegExp;
     readonly specificTimeOfDayRegex: RegExp;
-    readonly theEndOfRegex: RegExp;
+    readonly specificEndOfRegex: RegExp;
+    readonly unspecificEndOfRegex: RegExp;
     readonly unitRegex: RegExp;
     readonly unitMap: ReadonlyMap<string, string>;
     readonly numbers: ReadonlyMap<string, number>;

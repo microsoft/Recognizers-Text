@@ -1,10 +1,5 @@
 package com.microsoft.recognizers.text.datetime.english.extractors;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Optional;
-import java.util.regex.Pattern;
-
 import com.microsoft.recognizers.text.IExtractor;
 import com.microsoft.recognizers.text.datetime.DateTimeOptions;
 import com.microsoft.recognizers.text.datetime.extractors.BaseDateExtractor;
@@ -19,6 +14,11 @@ import com.microsoft.recognizers.text.datetime.resources.EnglishDateTime;
 import com.microsoft.recognizers.text.number.english.extractors.CardinalExtractor;
 import com.microsoft.recognizers.text.utilities.Match;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Optional;
+import java.util.regex.Pattern;
 
 public class EnglishDateTimePeriodExtractorConfiguration implements IDateTimePeriodExtractorConfiguration {
 
@@ -77,10 +77,10 @@ public class EnglishDateTimePeriodExtractorConfiguration implements IDateTimePer
 
         cardinalExtractor = CardinalExtractor.getInstance();
         singleDateExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration());
-        singleTimeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration());
-        singleDateTimeExtractor = new BaseDateTimeExtractor(new EnglishDateTimeExtractorConfiguration());
+        singleTimeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration(options));
+        singleDateTimeExtractor = new BaseDateTimeExtractor(new EnglishDateTimeExtractorConfiguration(options));
         durationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration(options));
-        timePeriodExtractor = new BaseTimePeriodExtractor(new EnglishTimePeriodExtractorConfiguration());
+        timePeriodExtractor = new BaseTimePeriodExtractor(new EnglishTimePeriodExtractorConfiguration(options));
 
         weekDayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.WeekDayRegex, flags);
         rangeConnectorRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RangeConnectorRegex, flags);

@@ -12,6 +12,31 @@ namespace Microsoft.Recognizers.Text.DateTime
         private static readonly Regex HourTimexRegex = new Regex(@"(?<!P)T(\d{2})");
         private static readonly Regex WeekDayTimexRegex = new Regex(@"XXXX-WXX-(\d)");
 
+        public static string LuisDate(int year)
+        {
+            if (year == Constants.InvalidYear)
+            {
+                return Constants.TimexFuzzyYear;
+            }
+
+            return year.ToString("D4");
+        }
+
+        public static string LuisDate(int year, int month)
+        {
+            if (year == Constants.InvalidYear)
+            {
+                if (month == Constants.InvalidMonth)
+                {
+                    return string.Join(Constants.DateTimexConnector, Constants.TimexFuzzyYear, Constants.TimexFuzzyMonth);
+                }
+
+                return string.Join(Constants.DateTimexConnector, Constants.TimexFuzzyYear, month.ToString("D2"));
+            }
+
+            return string.Join(Constants.DateTimexConnector, year.ToString("D4"), month.ToString("D2"));
+        }
+
         public static string LuisDate(int year, int month, int day)
         {
             if (year == -1)
@@ -22,7 +47,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     {
                         return string.Join(Constants.DateTimexConnector, Constants.TimexFuzzyYear, Constants.TimexFuzzyMonth, Constants.TimexFuzzyDay);
                     }
-                    
+
                     return string.Join(Constants.DateTimexConnector, Constants.TimexFuzzyYear, Constants.TimexFuzzyMonth, day.ToString("D2"));
                 }
 
@@ -58,7 +83,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             return LuisDate(year, month, day);
         }
-        
+
         public static string ShortTime(int hour, int min = Constants.InvalidSecond, int second = Constants.InvalidSecond)
         {
             string timeString;
@@ -208,17 +233,17 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             var splits = timeStr.Split(new[] { Constants.TimeTimexConnector }, StringSplitOptions.RemoveEmptyEntries);
             var hour = int.Parse(splits[0]);
-            hour = hour >= Constants.HalfDayHourCount ? hour - Constants.HalfDayHourCount: hour + Constants.HalfDayHourCount;
+            hour = hour >= Constants.HalfDayHourCount ? hour - Constants.HalfDayHourCount : hour + Constants.HalfDayHourCount;
             splits[0] = hour.ToString("D2");
 
             return hasT ? Constants.TimeTimexPrefix + string.Join(Constants.TimeTimexConnector, splits) : string.Join(Constants.TimeTimexConnector, splits);
         }
 
-        public static string ToIsoWeekTimex(DateObject monday)
+        public static string ToIsoWeekTimex(DateObject date)
         {
             var cal = DateTimeFormatInfo.InvariantInfo.Calendar;
 
-            return $"{monday.Year:D4}-W{cal.GetWeekOfYear(monday, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday):D2}";
+            return $"{date.Year:D4}-W{cal.GetWeekOfYear(date, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday):D2}";
         }
     }
 }

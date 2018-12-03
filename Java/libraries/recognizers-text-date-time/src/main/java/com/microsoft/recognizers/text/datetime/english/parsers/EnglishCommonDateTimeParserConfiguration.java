@@ -4,9 +4,29 @@ import com.google.common.collect.ImmutableMap;
 import com.microsoft.recognizers.text.IExtractor;
 import com.microsoft.recognizers.text.IParser;
 import com.microsoft.recognizers.text.datetime.DateTimeOptions;
-import com.microsoft.recognizers.text.datetime.english.extractors.*;
-import com.microsoft.recognizers.text.datetime.extractors.*;
-import com.microsoft.recognizers.text.datetime.parsers.*;
+import com.microsoft.recognizers.text.datetime.english.extractors.EnglishDateExtractorConfiguration;
+import com.microsoft.recognizers.text.datetime.english.extractors.EnglishDatePeriodExtractorConfiguration;
+import com.microsoft.recognizers.text.datetime.english.extractors.EnglishDateTimeExtractorConfiguration;
+import com.microsoft.recognizers.text.datetime.english.extractors.EnglishDateTimePeriodExtractorConfiguration;
+import com.microsoft.recognizers.text.datetime.english.extractors.EnglishDurationExtractorConfiguration;
+import com.microsoft.recognizers.text.datetime.english.extractors.EnglishTimeExtractorConfiguration;
+import com.microsoft.recognizers.text.datetime.english.extractors.EnglishTimePeriodExtractorConfiguration;
+import com.microsoft.recognizers.text.datetime.extractors.BaseDateExtractor;
+import com.microsoft.recognizers.text.datetime.extractors.BaseDatePeriodExtractor;
+import com.microsoft.recognizers.text.datetime.extractors.BaseDateTimeExtractor;
+import com.microsoft.recognizers.text.datetime.extractors.BaseDateTimePeriodExtractor;
+import com.microsoft.recognizers.text.datetime.extractors.BaseDurationExtractor;
+import com.microsoft.recognizers.text.datetime.extractors.BaseTimeExtractor;
+import com.microsoft.recognizers.text.datetime.extractors.BaseTimePeriodExtractor;
+import com.microsoft.recognizers.text.datetime.extractors.IDateTimeExtractor;
+import com.microsoft.recognizers.text.datetime.parsers.BaseDateParser;
+import com.microsoft.recognizers.text.datetime.parsers.BaseDatePeriodParser;
+import com.microsoft.recognizers.text.datetime.parsers.BaseDateTimeAltParser;
+import com.microsoft.recognizers.text.datetime.parsers.BaseDateTimeParser;
+import com.microsoft.recognizers.text.datetime.parsers.BaseDateTimePeriodParser;
+import com.microsoft.recognizers.text.datetime.parsers.BaseDurationParser;
+import com.microsoft.recognizers.text.datetime.parsers.BaseTimePeriodParser;
+import com.microsoft.recognizers.text.datetime.parsers.IDateTimeParser;
 import com.microsoft.recognizers.text.datetime.parsers.config.BaseDateParserConfiguration;
 import com.microsoft.recognizers.text.datetime.parsers.config.ICommonDateTimeParserConfiguration;
 import com.microsoft.recognizers.text.datetime.resources.EnglishDateTime;
@@ -85,11 +105,11 @@ public class EnglishCommonDateTimeParserConfiguration extends BaseDateParserConf
 
         durationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration());
         dateExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration());
-        timeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration());
-        dateTimeExtractor = new BaseDateTimeExtractor(new EnglishDateTimeExtractorConfiguration());
+        timeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration(options));
+        dateTimeExtractor = new BaseDateTimeExtractor(new EnglishDateTimeExtractorConfiguration(options));
         datePeriodExtractor = new BaseDatePeriodExtractor(new EnglishDatePeriodExtractorConfiguration());
-        timePeriodExtractor = new BaseTimePeriodExtractor(new EnglishTimePeriodExtractorConfiguration());
-        dateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new EnglishDateTimePeriodExtractorConfiguration());
+        timePeriodExtractor = new BaseTimePeriodExtractor(new EnglishTimePeriodExtractorConfiguration(options));
+        dateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new EnglishDateTimePeriodExtractorConfiguration(options));
 
         durationParser = new BaseDurationParser(new EnglishDurationParserConfiguration(this));
         dateParser = new BaseDateParser(new EnglishDateParserConfiguration(this));
@@ -98,7 +118,7 @@ public class EnglishCommonDateTimeParserConfiguration extends BaseDateParserConf
         datePeriodParser = new BaseDatePeriodParser(new EnglishDatePeriodParserConfiguration(this));
         timePeriodParser = new BaseTimePeriodParser(new EnglishTimePeriodParserConfiguration(this));
         dateTimePeriodParser = new BaseDateTimePeriodParser(new EnglishDateTimePeriodParserConfiguration(this));
-        dateTimeAltParser = null;
+        dateTimeAltParser = new BaseDateTimeAltParser(new EnglishDateTimeAltParserConfiguration(this));
     }
 
     @Override

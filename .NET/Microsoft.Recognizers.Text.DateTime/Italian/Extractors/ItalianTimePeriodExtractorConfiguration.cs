@@ -79,6 +79,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             SingleTimeExtractor = new BaseTimeExtractor(new ItalianTimeExtractorConfiguration(this));
             UtilityConfiguration = new ItalianDatetimeUtilityConfiguration();
             IntegerExtractor = Number.English.IntegerExtractor.GetInstance();
+            TimeZoneExtractor = new BaseTimeZoneExtractor(new ItalianTimeZoneExtractorConfiguration(this));
         }
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
@@ -86,6 +87,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         public IDateTimeExtractor SingleTimeExtractor { get; }
 
         public IExtractor IntegerExtractor { get; }
+
+        public IDateTimeExtractor TimeZoneExtractor { get; }
 
         public IEnumerable<Regex> SimpleCasesRegex => new[] { PureNumFromTo, PureNumBetweenAnd, PmRegex, AmRegex };
 

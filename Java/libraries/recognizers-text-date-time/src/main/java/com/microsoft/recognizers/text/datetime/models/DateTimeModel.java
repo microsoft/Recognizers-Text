@@ -1,13 +1,21 @@
 package com.microsoft.recognizers.text.datetime.models;
 
+import com.microsoft.recognizers.text.ExtendedModelResult;
+import com.microsoft.recognizers.text.ExtractResult;
 import com.microsoft.recognizers.text.IModel;
 import com.microsoft.recognizers.text.ModelResult;
 import com.microsoft.recognizers.text.datetime.Constants;
 import com.microsoft.recognizers.text.datetime.extractors.IDateTimeExtractor;
+import com.microsoft.recognizers.text.datetime.parsers.DateTimeParseResult;
 import com.microsoft.recognizers.text.datetime.parsers.IDateTimeParser;
+import com.microsoft.recognizers.text.utilities.FormatUtility;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.SortedMap;
+import java.util.stream.Collectors;
 
 public class DateTimeModel implements IModel {
 
@@ -30,6 +38,56 @@ public class DateTimeModel implements IModel {
     }
 
     public List<ModelResult> parse(String query, LocalDateTime reference) {
-        throw new UnsupportedOperationException();
+        query = FormatUtility.preprocess(query);
+
+        List<DateTimeParseResult> parsedDateTimes = new ArrayList<>();
+
+        try {
+            List<ExtractResult> extractResults = extractor.extract(query, reference);
+
+            for (ExtractResult result : extractResults) {
+                DateTimeParseResult parseResult = parser.parse(result, reference);
+
+                if (parseResult.value instanceof List) {
+                    parsedDateTimes.addAll((List<DateTimeParseResult>)parseResult.value);
+                } else {
+                    parsedDateTimes.add(parseResult);
+                }
+            }
+
+            // Filter out ambiguous cases. Naïve approach.
+            parsedDateTimes = parser.filterResults(query, parsedDateTimes);
+
+        } catch (Exception e) {
+            // Nothing to do. Exceptions in parse should not break users of recognizers.
+            // No result.
+        }
+
+        return parsedDateTimes.stream().map(this::getModelResult).collect(Collectors.toList());
+    }
+
+    private ModelResult getModelResult(DateTimeParseResult parsedDateTime) {
+
+        int start = parsedDateTime.start;
+        int end = parsedDateTime.start + parsedDateTime.length - 1;
+        String typeName = parsedDateTime.type;
+        SortedMap<String, Object> resolution = (SortedMap<String, Object>)parsedDateTime.value;
+        String text = parsedDateTime.text;
+
+        ModelResult result = new ModelResult(text, start, end, typeName, resolution);
+
+        String[] types = parsedDateTime.type.split("\\.");
+        String type = types[types.length - 1];
+        if (type.equals(Constants.SYS_DATETIME_DATETIMEALT)) {
+            result = new ExtendedModelResult(result, getParentText(parsedDateTime));
+        }
+        
+        return result;
+    }
+
+    private String getParentText(DateTimeParseResult parsedDateTime) {
+        Map<String, Object> map = (Map<String, Object>)parsedDateTime.data;
+        Object result = map.get(ExtendedModelResult.ParentTextKey);
+        return String.valueOf(result);
     }
 }

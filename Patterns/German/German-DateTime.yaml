@@ -13,6 +13,8 @@ PastPrefixRegex: !simpleRegex
   def: (letzt(er|en|es|e)|vergangen(er|en|es|e)|vorherig(er|en|es|e)|vorig(er|en|es|e)|vor|nach)
 ThisPrefixRegex: !simpleRegex
   def: (dies(er|en|em|es|e)|jetzig(er|en|es|e))
+RangePrefixRegex: !simpleRegex
+  def: (von|vom|zwischen)
 DayRegex: !simpleRegex
   def: ((der|dem|des|den)\s*)?(?<day>(01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|1|20|21|22|23|24|25|26|27|28|29|2|30|31|3|4|5|6|7|8|9))(\.)?
 MonthNumRegex: !simpleRegex
@@ -341,8 +343,14 @@ SimpleTimeOfTodayAfterRegex: !nestedRegex
 SimpleTimeOfTodayBeforeRegex: !nestedRegex
   def: '{DateTimeSpecificTimeOfDayRegex}(\s*,)?(\s+um)?\s*({HourNumRegex}|{BaseDateTime.HourRegex})'
   references: [ DateTimeSpecificTimeOfDayRegex, HourNumRegex, BaseDateTime.HourRegex ]
-TheEndOfRegex: !simpleRegex
+SpecificEndOfRegex: !simpleRegex
   def: ((das|am|dem|an dem)\s+)?ende(\s+(dem|den|des|der)?)\s*
+UnspecificEndOfRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
+UnspecificEndOfRangeRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 PeriodTimeOfDayRegex: !simpleRegex
   def: \b(((?<early>(früh am|früher|am frühen)(\s+|-))|(?<late>(spät am|später|am späten)(\s+|-)))?(?<timeOfDay>morgen(s)?|vormittag(s)?|mittag(s)?|nachmittag(s)?|nacht(s)?|abend(s)?))\b
 PeriodSpecificTimeOfDayRegex: !nestedRegex

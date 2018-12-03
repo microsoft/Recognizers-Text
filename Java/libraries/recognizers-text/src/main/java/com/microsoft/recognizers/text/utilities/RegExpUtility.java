@@ -1,14 +1,19 @@
 package com.microsoft.recognizers.text.utilities;
 
-import org.javatuples.Pair;
-
 import java.math.BigDecimal;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Stack;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import org.javatuples.Pair;
 
 public abstract class RegExpUtility {
 
@@ -22,10 +27,12 @@ public abstract class RegExpUtility {
     private static final boolean unboundedLookBehindNotSupported = isRestrictedJavaVersion();
 
     private static final Pattern lookBehindCheckRegex = Pattern.compile("(\\\\?<[!=])");
-    private static final Map<Character, String> bindings = new HashMap<Character, String>(){{
-        put('+', "{1,10}");
-        put('*', "{0,10}");
-    }};
+    private static final Map<Character, String> bindings = new HashMap<Character, String>() {
+        {
+            put('+', "{1,10}");
+            put('*', "{0,10}");
+        }
+    };
 
     public static Pattern getSafeRegExp(String source) {
         return getSafeRegExp(source, 0);
@@ -175,7 +182,7 @@ public abstract class RegExpUtility {
 
         // Java pre 1.9 doesn't support unbounded lookbehind lengths
         if (unboundedLookBehindNotSupported) {
-             result = bindLookbehinds(result);
+            result = bindLookbehinds(result);
         }
 
         return Pattern.compile(result, flags);
@@ -233,6 +240,8 @@ public abstract class RegExpUtility {
                         idx = input.length();
                     }
                     break;
+                default:
+                    break;
             }
 
             idx += 1;
@@ -288,11 +297,10 @@ public abstract class RegExpUtility {
                 }
 
                 if (!StringUtility.isNullOrEmpty(match.group(key))) {
-                    int lastCaptureIndex = groups.get(groupKey).captures.length > 0 ? groups.get(groupKey).captures[groups.get(groupKey).captures.length - 1].index + 1 - match.start() : 0;
 
-                    int index = match.start() + match.group(0).indexOf(match.group(key));
+                    int index = match.start(key);
                     int length = match.group(key).length();
-                    String value = source.substring(index, index + length);
+                    String value = source.substring(index, match.end(key));
                     List<Capture> captures = new ArrayList<>(Arrays.asList(groups.get(groupKey).captures));
                     captures.add(new Capture(value, index, length));
 
@@ -384,17 +392,17 @@ public abstract class RegExpUtility {
     private static boolean isRestrictedJavaVersion() {
 
         boolean result = false;
-        BigDecimal targetVersion = new BigDecimal( "1.8" );
+        BigDecimal targetVersion = new BigDecimal("1.8");
 
         try {
             String specVersion = System.getProperty("java.specification.version");
-            result = new BigDecimal( specVersion ).compareTo( targetVersion ) >= 0;
+            result = new BigDecimal(specVersion).compareTo(targetVersion) >= 0;
         } catch (Exception e1) {
 
             try {
                 // Could also be "java.runtime.version".
                 String runtimeVersion = System.getProperty("java.version");
-                result = new BigDecimal( runtimeVersion ).compareTo( targetVersion ) >= 0;
+                result = new BigDecimal(runtimeVersion).compareTo(targetVersion) >= 0;
 
             } catch (Exception e2) {
                 // Nothing to do, ignore.

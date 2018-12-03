@@ -7,8 +7,12 @@ import java.util.regex.Pattern;
 
 public interface ITimeExtractorConfiguration extends IOptionsConfiguration {
     IDateTimeExtractor getTimeZoneExtractor();
+
     Iterable<Pattern> getTimeRegexList();
+
     Pattern getAtRegex();
+
     Pattern getIshRegex();
+
     Pattern getTimeBeforeAfterRegex();
 }

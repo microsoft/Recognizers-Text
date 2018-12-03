@@ -10,7 +10,10 @@ import com.microsoft.recognizers.text.utilities.RegExpUtility;
 import com.microsoft.recognizers.text.utilities.StringUtility;
 
 import java.time.LocalDateTime;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Optional;
 import java.util.regex.Pattern;
 
 public class BaseTimePeriodExtractor implements IDateTimeExtractor {
@@ -30,9 +33,9 @@ public class BaseTimePeriodExtractor implements IDateTimeExtractor {
     public List<ExtractResult> extract(String input, LocalDateTime reference) {
 
         List<Token> tokens = new ArrayList<>();
-        tokens.addAll(MatchSimpleCases(input));
-        tokens.addAll(MergeTwoTimePoints(input, reference));
-        tokens.addAll(MatchTimeOfDay(input));
+        tokens.addAll(matchSimpleCases(input));
+        tokens.addAll(mergeTwoTimePoints(input, reference));
+        tokens.addAll(matchTimeOfDay(input));
 
         return Token.mergeAllTokens(tokens, input, getExtractorName());
     }
@@ -45,7 +48,7 @@ public class BaseTimePeriodExtractor implements IDateTimeExtractor {
     // Cases like "from 3 to 5am" or "between 3:30 and 5" are extracted here
     // Note that cases like "from 3 to 5" will not be extracted here because no "am/pm" or "hh:mm" to infer it's a time period
     // Also cases like "from 3:30 to 4 people" should not be extracted as a time period
-    private List<Token> MatchSimpleCases(String input) {
+    private List<Token> matchSimpleCases(String input) {
 
         List<Token> ret = new ArrayList<>();
 
@@ -94,10 +97,10 @@ public class BaseTimePeriodExtractor implements IDateTimeExtractor {
         return ret;
     }
 
-    private List<Token> MergeTwoTimePoints(String input, LocalDateTime reference) {
+    private List<Token> mergeTwoTimePoints(String input, LocalDateTime reference) {
 
         List<Token> ret = new ArrayList<>();
-        List<ExtractResult> ers = this.config.getSingleTimeExtractor().extract(input);
+        List<ExtractResult> ers = this.config.getSingleTimeExtractor().extract(input, reference);
 
         // Handling ending number as a time point.
         List<ExtractResult> numErs = this.config.getIntegerExtractor().extract(input);
@@ -133,7 +136,9 @@ public class BaseTimePeriodExtractor implements IDateTimeExtractor {
                     j++;
                 }
 
-                if (j >= ers.size()) break;
+                if (j >= ers.size()) {
+                    break;
+                }
 
                 // check connector string
                 String midStr = input.substring(numEndPoint, ers.get(j).start);
@@ -184,8 +189,8 @@ public class BaseTimePeriodExtractor implements IDateTimeExtractor {
 
                 // Handle "from"
                 String beforeStr = input.substring(0, periodBegin).trim().toLowerCase(java.util.Locale.ROOT);
-                ResultIndex fromIndex = this.config.GetFromTokenIndex(beforeStr);
-                ResultIndex betweenIndex = this.config.GetBetweenTokenIndex(beforeStr);
+                ResultIndex fromIndex = this.config.getFromTokenIndex(beforeStr);
+                ResultIndex betweenIndex = this.config.getBetweenTokenIndex(beforeStr);
                 if (fromIndex.result) {
                     // Handle "from"
                     periodBegin = fromIndex.index;
@@ -200,13 +205,13 @@ public class BaseTimePeriodExtractor implements IDateTimeExtractor {
             }
 
             // Handle "between {TimePoint} and {TimePoint}"
-            if (this.config.HasConnectorToken(middleStr)) {
+            if (this.config.hasConnectorToken(middleStr)) {
                 int periodBegin = ers.get(idx).start;
                 int periodEnd = ers.get(idx + 1).start + ers.get(idx + 1).length;
 
                 // Handle "between"
                 String beforeStr = input.substring(0, periodBegin).trim().toLowerCase(java.util.Locale.ROOT);
-                ResultIndex betweenIndex = this.config.GetBetweenTokenIndex(beforeStr);
+                ResultIndex betweenIndex = this.config.getBetweenTokenIndex(beforeStr);
                 if (betweenIndex.result) {
                     periodBegin = betweenIndex.index;
                     ret.add(new Token(periodBegin, periodEnd));
@@ -221,7 +226,7 @@ public class BaseTimePeriodExtractor implements IDateTimeExtractor {
         return ret;
     }
 
-    private List<Token> MatchTimeOfDay(String input) {
+    private List<Token> matchTimeOfDay(String input) {
 
         List<Token> ret = new ArrayList<>();
         Pattern timeOfDayRegex = this.config.getTimeOfDayRegex();

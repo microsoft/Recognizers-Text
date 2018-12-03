@@ -32,6 +32,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         public static readonly Regex PmRegex =
             new Regex(DateTimeDefinitions.PmRegex, RegexOptions.Singleline);
 
+        public static readonly Regex RangePrefixRegex =
+            new Regex(DateTimeDefinitions.RangePrefixRegex, RegexOptions.Singleline);
+
         public static readonly Regex[] RelativePrefixList =
         {
             ThisPrefixRegex
@@ -49,5 +52,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         Regex IDateTimeAltExtractorConfiguration.OrRegex => OrRegex;
 
         Regex IDateTimeAltExtractorConfiguration.DayRegex => DayRegex;
+
+        Regex IDateTimeAltExtractorConfiguration.RangePrefixRegex => RangePrefixRegex;
     }
 }

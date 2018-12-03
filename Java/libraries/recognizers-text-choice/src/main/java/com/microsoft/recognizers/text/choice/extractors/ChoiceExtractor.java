@@ -7,7 +7,12 @@ import com.microsoft.recognizers.text.utilities.Match;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
 import com.microsoft.recognizers.text.utilities.StringUtility;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
 import java.util.regex.Pattern;
 
 public class ChoiceExtractor implements IExtractor {
@@ -52,7 +57,7 @@ public class ChoiceExtractor implements IExtractor {
                         new ExtractResult(
                             start,
                             length,
-                            text.substring(start, length+start),
+                            text.substring(start, length + start),
                             constantValue,
                             new ChoiceExtractDataResult(text, topScore, new ArrayList<>())
                         )
@@ -75,7 +80,7 @@ public class ChoiceExtractor implements IExtractor {
 
             for (int i = 0; i < partialResults.size(); i++) {
 
-                ChoiceExtractDataResult data = (ChoiceExtractDataResult) partialResults.get(i).data;
+                ChoiceExtractDataResult data = (ChoiceExtractDataResult)partialResults.get(i).data;
                 if (data.score > topScore) {
                     topScore = data.score;
                     topResultIndex = i;

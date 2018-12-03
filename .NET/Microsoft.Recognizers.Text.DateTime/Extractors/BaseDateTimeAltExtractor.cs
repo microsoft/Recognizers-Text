@@ -90,8 +90,23 @@ namespace Microsoft.Recognizers.Text.DateTime
                     break;
                 }
 
-                types.Add(ers[pivot].Type);
-                pivot++;
+                var prefixEnd = ers[pivot - 1].Start ?? 0;
+                var prefixStr = text.Substring(0, prefixEnd);
+
+                if (IsEndsWithRangePrefix(prefixStr))
+                {
+                    break;
+                }
+
+                if (IsSupportedAltEntitySequence(ers.GetRange(startIndex, pivot - startIndex + 1)))
+                {
+                    types.Add(ers[pivot].Type);
+                    pivot++;
+                }
+                else
+                {
+                    break;
+                }
             }
 
             pivot--;
@@ -270,6 +285,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                    orTermMatches[0].Length == middleStr.Length;
         }
 
+        private bool IsEndsWithRangePrefix(string prefixText)
+        {
+            return config.RangePrefixRegex.MatchEnd(prefixText, trim: true).Success;
+        }
+
         private bool ExtractAndApplyMetadata(List<ExtractResult> extractResults, string parentText)
         {
             var success = ExtractAndApplyMetadata(extractResults, parentText, reverse: false);
@@ -277,6 +297,59 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (!success)
             {
                 success = ExtractAndApplyMetadata(extractResults, parentText, reverse: true);
+            }
+
+            if (!success && ShouldApplyParentText(extractResults))
+            {
+                success = ApplyParentTextMetadata(extractResults, parentText);
+            }
+
+            return success;
+        }
+
+        private bool ShouldApplyParentText(List<ExtractResult> extractResults)
+        {
+            var shouldApply = false;
+
+            if (IsSupportedAltEntitySequence(extractResults))
+            {
+                var firstEntityType = extractResults.First().Type;
+                var lastEntityType = extractResults.Last().Type;
+
+                if (firstEntityType.Equals(Constants.SYS_DATETIME_DATE) && lastEntityType.Equals(Constants.SYS_DATETIME_DATE))
+                {
+                    // "11/20 or 11/22"
+                    shouldApply = true;
+                }
+                else if (firstEntityType.Equals(Constants.SYS_DATETIME_TIME) && lastEntityType.Equals(Constants.SYS_DATETIME_TIME))
+                {
+                    // "7 oclock or 8 oclock"
+                    shouldApply = true;
+                }
+                else if (firstEntityType.Equals(Constants.SYS_DATETIME_DATETIME) && lastEntityType.Equals(Constants.SYS_DATETIME_DATETIME))
+                {
+                    // "Monday 1pm or Tuesday 2pm"
+                    shouldApply = true;
+                }
+            }
+
+            return shouldApply;
+        }
+
+        private bool ApplyParentTextMetadata(List<ExtractResult> extractResults, string parentText)
+        {
+            var success = false;
+
+            if (IsSupportedAltEntitySequence(extractResults))
+            {
+                foreach (var extractResult in extractResults)
+                {
+                    var metadata = CreateMetadata(extractResult.Type, parentText, contextEr: null);
+                    extractResult.Data = MergeMetadata(extractResult.Data, metadata);
+                    extractResult.Type = ExtractorName;
+                }
+
+                success = true;
             }
 
             return success;
@@ -400,14 +473,39 @@ namespace Microsoft.Recognizers.Text.DateTime
         private void ApplyMetadata(List<ExtractResult> ers, Dictionary<string, object> metadata, string parentText)
         {
             // The first extract results don't need any context
-            ers[0].Data = CreateMetadata(ers[0].Type, parentText, contextEr: null);
+            var metadataWithoutConext = CreateMetadata(ers[0].Type, parentText, contextEr: null);
+            ers[0].Data = MergeMetadata(ers[0].Data, metadataWithoutConext);
             ers[0].Type = ExtractorName;
 
             for (var i = 1; i < ers.Count; i++)
             {
-                ers[i].Data = metadata;
+                ers[i].Data = MergeMetadata(ers[i].Data, metadata);
                 ers[i].Type = ExtractorName;
             }
+        }
+
+        private Dictionary<string, object> MergeMetadata(object originalMetadata, Dictionary<string, object> newMetadata)
+        {
+            var result = new Dictionary<string, object>();
+
+            if (originalMetadata is Dictionary<string, object>)
+            {
+                result = originalMetadata as Dictionary<string, object>;
+            }
+
+            if (originalMetadata == null)
+            {
+                result = newMetadata;
+            }
+            else
+            {
+                foreach (var data in newMetadata)
+                {
+                    result.Add(data.Key, data.Value);
+                }
+            }
+
+            return result;
         }
 
         private Dictionary<string, object> CreateMetadata(string subType, string parentText, ExtractResult contextEr = null)

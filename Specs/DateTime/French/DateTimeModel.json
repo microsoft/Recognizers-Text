@@ -1092,9 +1092,9 @@
         "Resolution": {
           "values": [
             {
-              "timex": "2016-11-08T23:59",
+              "timex": "2016-11-08T23:59:59",
               "type": "datetime",
-              "value": "2016-11-08 23:59:00"
+              "value": "2016-11-08 23:59:59"
             }
           ]
         },
@@ -1115,14 +1115,14 @@
         "Resolution": {
           "values": [
             {
-              "timex": "XXXX-WXX-7T23:59",
+              "timex": "XXXX-WXX-7T23:59:59",
               "type": "datetime",
-              "value": "2016-11-06 23:59:00"
+              "value": "2016-11-06 23:59:59"
             },
             {
-              "timex": "XXXX-WXX-7T23:59",
+              "timex": "XXXX-WXX-7T23:59:59",
               "type": "datetime",
-              "value": "2016-11-13 23:59:00"
+              "value": "2016-11-13 23:59:59"
             }
           ]
         },
@@ -1143,9 +1143,9 @@
         "Resolution": {
           "values": [
             {
-              "timex": "2016-11-13T23:59",
+              "timex": "2016-11-13T23:59:59",
               "type": "datetime",
-              "value": "2016-11-13 23:59:00"
+              "value": "2016-11-13 23:59:59"
             }
           ]
         },

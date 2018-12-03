@@ -68,11 +68,14 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             SingleTimeExtractor = new BaseTimeExtractor(new GermanTimeExtractorConfiguration(this));
             UtilityConfiguration = new GermanDatetimeUtilityConfiguration();
             IntegerExtractor = Number.German.IntegerExtractor.GetInstance();
+            TimeZoneExtractor = new BaseTimeZoneExtractor(new GermanTimeZoneExtractorConfiguration(this));
         }
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
         public IDateTimeExtractor SingleTimeExtractor { get; }
+
+        public IDateTimeExtractor TimeZoneExtractor { get; }
 
         public IExtractor IntegerExtractor { get; }
 

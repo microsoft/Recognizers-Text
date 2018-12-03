@@ -31,6 +31,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             IntegerExtractor = Number.English.IntegerExtractor.GetInstance();
             OrdinalExtractor = Number.English.OrdinalExtractor.GetInstance();
 
+            TimeZoneParser = new BaseTimeZoneParser();
             NumberParser = new BaseNumberParser(new EnglishNumberParserConfiguration());
             DateExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration(this));
             TimeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration(this));
