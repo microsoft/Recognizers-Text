@@ -643,7 +643,7 @@ class FrenchDateTime:
     MonthTerms = ['mois']
     MonthToDateTerms = ['mois à ce jour']
     WeekendTerms = ['fin de semaine', 'le weekend']
-    WeekTerms = ['semaine', 'fin de semaine']
+    WeekTerms = ['semaine']
     YearTerms = ['années', 'ans', 'l\'annees', 'l\'annee']
     YearToDateTerms = ['année à ce jour', 'an à ce jour']
 # pylint: enable=line-too-long

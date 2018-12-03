@@ -248,8 +248,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public bool IsWeekOnly(string text)
         {
             var trimmedText = text.Trim().ToLowerInvariant();
-            return DateTimeDefinitions.WeekTerms.Any(o => trimmedText.EndsWith(o))
-                   && !DateTimeDefinitions.WeekendTerms.Any(o => trimmedText.EndsWith(o));
+            return DateTimeDefinitions.WeekTerms.Any(o => trimmedText.EndsWith(o)) &&
+                   !DateTimeDefinitions.WeekendTerms.Any(o => trimmedText.EndsWith(o));
         }
 
         public bool IsYearOnly(string text)

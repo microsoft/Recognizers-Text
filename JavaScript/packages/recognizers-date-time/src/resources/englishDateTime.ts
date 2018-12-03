@@ -272,10 +272,14 @@ export namespace EnglishDateTime {
 	export const FutureTerms = [ "this","next" ];
 	export const LastCardinalTerms = [ "last" ];
 	export const MonthTerms = [ "month" ];
+	export const MonthWithSpaceTerms = [ " month " ];
 	export const MonthToDateTerms = [ "month to date" ];
 	export const WeekendTerms = [ "weekend" ];
+	export const WeekendWithSpaceTerms = [ " weekend " ];
 	export const WeekTerms = [ "week" ];
+	export const WeekWithSpaceTerms = [ " week " ];
 	export const YearTerms = [ "year" ];
+	export const YearWithSpaceTerms = [ " year " ];
 	export const GenericYearTerms = [ "y" ];
 	export const YearToDateTerms = [ "year to date" ];
 }

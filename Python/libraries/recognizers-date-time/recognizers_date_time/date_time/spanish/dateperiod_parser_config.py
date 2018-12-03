@@ -241,7 +241,7 @@ class SpanishDatePeriodParserConfiguration(DatePeriodParserConfiguration):
 
     def is_week_only(self, source: str) -> bool:
         trimmed_source = source.strip().lower()
-        return any(trimmed_source.endswith(o) for o in SpanishDateTime.WeekTerms) and not \
+        return any(trimmed_source.endswith(o) for o in SpanishDateTime.WeekTerms) and not\
             any(trimmed_source.endswith(o) for o in SpanishDateTime.WeekendTerms)
 
     def is_weekend(self, source: str) -> bool:

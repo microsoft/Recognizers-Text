@@ -249,5 +249,5 @@ class EnglishDatePeriodParserConfiguration(DatePeriodParserConfiguration):
 
     def is_year_only(self, source: str) -> bool:
         trimmed_source = source.strip().lower()
-        return any(trimmed_source.endswith(o) for o in EnglishDateTime.YearTerms) or \
+        return any(trimmed_source.endswith(o) for o in EnglishDateTime.YearTerms) or\
                (any(trimmed_source.endswith(o) for o in EnglishDateTime.GenericYearTerms) and self.unspecific_end_of_range_regex.match(trimmed_source))

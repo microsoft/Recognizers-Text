@@ -763,8 +763,7 @@ namespace Microsoft.Recognizers.Definitions.French
 		};
 		public static readonly IList<string> WeekTerms = new List<string>
 		{
-			"semaine",
-			"fin de semaine"
+			"semaine"
 		};
 		public static readonly IList<string> YearTerms = new List<string>
 		{

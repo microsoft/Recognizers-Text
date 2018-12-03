@@ -223,8 +223,8 @@ export class FrenchDatePeriodParserConfiguration implements IDatePeriodParserCon
 
     isFuture(source: string): boolean {
         let trimedText = source.trim().toLowerCase();
-        return FrenchDateTime.FutureStartTerms.some(o => trimedText.startsWith(o))
-            || FrenchDateTime.FutureEndTerms.some(o => trimedText.endsWith(o));
+        return FrenchDateTime.FutureStartTerms.some(o => trimedText.startsWith(o)) ||
+            FrenchDateTime.FutureEndTerms.some(o => trimedText.endsWith(o));
     }
 
     isYearToDate(source: string): boolean {
@@ -239,8 +239,8 @@ export class FrenchDatePeriodParserConfiguration implements IDatePeriodParserCon
 
     isWeekOnly(source: string): boolean {
         let trimedText = source.trim().toLowerCase();
-        return FrenchDateTime.WeekTerms.some(o => trimedText.endsWith(o))
-            && !FrenchDateTime.WeekendTerms.some(o => trimedText.endsWith(o));
+        return FrenchDateTime.WeekTerms.some(o => trimedText.endsWith(o)) &&
+            !FrenchDateTime.WeekendTerms.some(o => trimedText.endsWith(o));
     }
 
     isWeekend(source: string): boolean {

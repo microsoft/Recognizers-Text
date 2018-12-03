@@ -225,8 +225,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         public bool IsFuture(string text)
         {
             var trimmedText = text.Trim().ToLowerInvariant();
-            return DateTimeDefinitions.FutureStartTerms.Any(o => trimmedText.StartsWith(o))
-                   || DateTimeDefinitions.FutureEndTerms.Any(o => trimmedText.EndsWith(o));
+            return DateTimeDefinitions.FutureStartTerms.Any(o => trimmedText.StartsWith(o)) ||
+                   DateTimeDefinitions.FutureEndTerms.Any(o => trimmedText.EndsWith(o));
         }
 
         public bool IsLastCardinal(string text)

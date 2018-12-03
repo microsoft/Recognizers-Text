@@ -215,8 +215,8 @@ export class SpanishDatePeriodParserConfiguration implements IDatePeriodParserCo
 
     isFuture(source: string): boolean {
         let trimedText = source.trim().toLowerCase();
-        return RegExpUtility.getFirstMatchIndex(this.thisPrefixRegex, trimedText).matched
-            || RegExpUtility.getFirstMatchIndex(this.nextPrefixRegex, trimedText).matched;
+        return RegExpUtility.getFirstMatchIndex(this.thisPrefixRegex, trimedText).matched ||
+            RegExpUtility.getFirstMatchIndex(this.nextPrefixRegex, trimedText).matched;
     }
 
     isYearToDate(source: string): boolean {
@@ -231,8 +231,8 @@ export class SpanishDatePeriodParserConfiguration implements IDatePeriodParserCo
 
     isWeekOnly(source: string): boolean {
         let trimedText = source.trim().toLowerCase();
-        return SpanishDateTime.WeekTerms.some(o => trimedText.endsWith(o))
-            && !SpanishDateTime.WeekendTerms.some(o => trimedText.endsWith(o));
+        return SpanishDateTime.WeekTerms.some(o => trimedText.endsWith(o)) &&
+            !SpanishDateTime.WeekendTerms.some(o => trimedText.endsWith(o));
     }
 
     isWeekend(source: string): boolean {

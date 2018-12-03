@@ -239,8 +239,8 @@ class FrenchDatePeriodParserConfiguration(DatePeriodParserConfiguration):
 
     def is_future(self, source: str) -> bool:
         trimmed_source = source.strip().lower()
-        return any(trimmed_source.startswith(o) for o in FrenchDateTime.FutureStartTerms) \
-               or any(trimmed_source.endswith(o) for o in FrenchDateTime.FutureEndTerms)
+        return any(trimmed_source.startswith(o) for o in FrenchDateTime.FutureStartTerms) or\
+               any(trimmed_source.endswith(o) for o in FrenchDateTime.FutureEndTerms)
 
     def is_year_to_date(self, source: str) -> bool:
         trimmed_source = source.strip().lower()
@@ -252,7 +252,7 @@ class FrenchDatePeriodParserConfiguration(DatePeriodParserConfiguration):
 
     def is_week_only(self, source: str) -> bool:
         trimmed_source = source.strip().lower()
-        return any(trimmed_source.endswith(o) for o in FrenchDateTime.WeekTerms) and not \
+        return any(trimmed_source.endswith(o) for o in FrenchDateTime.WeekTerms) and not\
             any(trimmed_source.endswith(o) for o in FrenchDateTime.WeekendTerms)
 
     def is_weekend(self, source: str) -> bool:

@@ -692,6 +692,10 @@ namespace Microsoft.Recognizers.Definitions.English
 		{
 			"month"
 		};
+		public static readonly IList<string> MonthWithSpaceTerms = new List<string>
+		{
+			" month "
+		};
 		public static readonly IList<string> MonthToDateTerms = new List<string>
 		{
 			"month to date"
@@ -700,13 +704,25 @@ namespace Microsoft.Recognizers.Definitions.English
 		{
 			"weekend"
 		};
+		public static readonly IList<string> WeekendWithSpaceTerms = new List<string>
+		{
+			" weekend "
+		};
 		public static readonly IList<string> WeekTerms = new List<string>
 		{
 			"week"
 		};
+		public static readonly IList<string> WeekWithSpaceTerms = new List<string>
+		{
+			" week "
+		};
 		public static readonly IList<string> YearTerms = new List<string>
 		{
 			"year"
+		};
+		public static readonly IList<string> YearWithSpaceTerms = new List<string>
+		{
+			" year "
 		};
 		public static readonly IList<string> GenericYearTerms = new List<string>
 		{
