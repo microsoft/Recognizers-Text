@@ -75,7 +75,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                             {
                                 endWithValidToken = true;
                             }
-                            else
+                            else if ((this.config.Options & DateTimeOptions.EnablePreview) != 0)
                             {
                                 endWithValidToken = StartsWithTimeZone(afterStr);
                             }
@@ -102,7 +102,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         {
                             var afterStr = text.Substring(match.Index + match.Length);
 
-                            if (StartsWithTimeZone(afterStr))
+                            if ((this.config.Options & DateTimeOptions.EnablePreview) != 0 && StartsWithTimeZone(afterStr))
                             {
                                 ret.Add(new Token(match.Index, match.Index + match.Length));
                             }
