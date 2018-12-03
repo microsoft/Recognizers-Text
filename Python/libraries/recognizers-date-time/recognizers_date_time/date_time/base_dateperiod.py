@@ -711,6 +711,9 @@ class BaseDatePeriodParser(DateTimeParser):
         result.success = True
         return result
 
+    def __Is_Present(self, swift):
+        return swift == 0
+
     def _parse_one_word_period(self, source: str, reference: datetime) -> DateTimeResolutionResult:
         result = DateTimeResolutionResult()
         year = reference.year
@@ -758,6 +761,13 @@ class BaseDatePeriodParser(DateTimeParser):
             trimmed_source = match.group('suffix')
             result.mod = TimeTypeConstants.MID_MOD
 
+        swift = 0
+        month_str = RegExpUtility.get_group(match, 'month')
+        if month_str:
+            swift = self.config.get_swift_year(trimmed_source)
+        else:
+            swift = self.config.get_swift_day_or_month(trimmed_source)
+            
         if self.config.unspecific_end_of_range_regex is not None and self.config.unspecific_end_of_range_regex.match(match.string):
             late_prefix = True
             trimmed_source = match.string
@@ -765,10 +775,12 @@ class BaseDatePeriodParser(DateTimeParser):
 
         if RegExpUtility.get_group(match, 'RelEarly'):
             early_prefix = True
-            result.mod = None
+            if self.__Is_Present(swift):
+                result.mod = None
         elif RegExpUtility.get_group(match, 'RelLate'):
             late_prefix = True
-            result.mod = None
+            if self.__Is_Present(swift):
+                result.mod = None
 
         month_str = RegExpUtility.get_group(match, 'month')
 

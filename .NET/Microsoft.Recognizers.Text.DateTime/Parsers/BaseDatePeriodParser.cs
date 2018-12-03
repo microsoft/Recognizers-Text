@@ -638,6 +638,10 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
+        private bool IsPresent(int swift)
+        {
+            return swift == 0;
+        }
         private DateTimeResolutionResult ParseOneWordPeriod(string text, DateObject referenceDate)
         {
             var ret = new DateTimeResolutionResult();
@@ -688,6 +692,16 @@ namespace Microsoft.Recognizers.Text.DateTime
                     ret.Mod = Constants.MID_MOD;
                 }
 
+                var swift = 0;
+                if (!string.IsNullOrEmpty(match.Groups["month"].Value))
+                {
+                    swift = this.config.GetSwiftYear(trimmedText);
+                }
+                else
+                {
+                    swift = this.config.GetSwiftDayOrMonth(trimmedText);
+                }
+                
                 // Handle the abbreviation of DatePeriod, e.g., 'eoy(end of year)', the behavior of 'eoy' should be the same as 'end of year'
                 if (this.config.UnspecificEndOfRangeRegex.IsMatch(match.Value))
                 {
@@ -699,12 +713,18 @@ namespace Microsoft.Recognizers.Text.DateTime
                 if (match.Groups["RelEarly"].Success)
                 {
                     earlierPrefix = true;
-                    ret.Mod = null;
+                    if (IsPresent(swift))
+                    {
+                        ret.Mod = null;
+                    }
                 }
                 else if (match.Groups["RelLate"].Success)
                 {
                     laterPrefix = true;
-                    ret.Mod = null;
+                    if (IsPresent(swift))
+                    {
+                        ret.Mod = null;
+                    }
                 }
 
                 var monthStr = match.Groups["month"].Value;
@@ -731,7 +751,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 if (!string.IsNullOrEmpty(monthStr))
                 {
-                    var swift = this.config.GetSwiftYear(trimmedText);
+                    swift = this.config.GetSwiftYear(trimmedText);
 
                     month = this.config.MonthOfYear[monthStr.ToLower()];
 
@@ -757,7 +777,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
                 else
                 {
-                    var swift = this.config.GetSwiftDayOrMonth(trimmedText);
+                    swift = this.config.GetSwiftDayOrMonth(trimmedText);
 
                     if (this.config.IsWeekOnly(trimmedText))
                     {
@@ -800,6 +820,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                             {
                                 beginDate = referenceDate;
                             }
+                        }
+
+                        if (latePrefix && swift != 0)
+                        {
+                            ret.Mod = Constants.LATE_MOD;
                         }
 
                         ret.FutureValue =
