@@ -261,19 +261,25 @@ namespace Microsoft.Recognizers.Text.DateTime
             return $"{dateTimex}{timeTimex}";
         }
 
-        public static string CombineMonthAndWeekTimex(string monthTimex, string weekTimex)
+        public static string GenerateWeekOfYearTimex(int year, int weekNum)
         {
-            return $"{monthTimex}-{weekTimex}";
-        }
+            var weekTimex = GenerateWeekTimex(weekNum);
+            var yearTimex = DateTimeFormatUtil.LuisDate(year);
 
-        public static string CombineYearAndWeekTimex(string yearTimex, string weekTimex)
-        {
             return $"{yearTimex}-{weekTimex}";
         }
 
-        public static string GenerateWeekTimex(int cardinal)
+        public static string GenerateWeekOfMonthTimex(int year, int month, int weekNum)
         {
-            return $"W{cardinal.ToString("D2")}";
+            var weekTimex = GenerateWeekTimex(weekNum);
+            var monthTimex = DateTimeFormatUtil.LuisDate(year, month);
+
+            return $"{monthTimex}-{weekTimex}";
+        }
+
+        public static string GenerateWeekTimex(int weekNum)
+        {
+            return $"W{weekNum.ToString("D2")}";
         }
 
         public static string GenerateDateTimePeriodTimex(string beginTimex, string endTimex, string durationTimex)

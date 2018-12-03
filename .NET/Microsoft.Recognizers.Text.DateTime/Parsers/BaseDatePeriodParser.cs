@@ -1443,13 +1443,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
             else
             {
-                var cardinal = this.config.CardinalMap[cardinalStr];
+                var weekNum = this.config.CardinalMap[cardinalStr];
                 targetWeekMonday = GetFirstThursday(year).This(DayOfWeek.Monday)
-                    .AddDays(Constants.WeekDayCount * (cardinal - 1));
+                    .AddDays(Constants.WeekDayCount * (weekNum - 1));
 
-                var weekTimex = TimexUtility.GenerateWeekTimex(cardinal);
-                var yearTimex = DateTimeFormatUtil.LuisDate(year);
-                ret.Timex = TimexUtility.CombineYearAndWeekTimex(yearTimex, weekTimex);
+                ret.Timex = TimexUtility.GenerateWeekOfYearTimex(year, weekNum);
             }
 
             ret.FutureValue = InclusiveEndPeriod
@@ -1751,21 +1749,17 @@ namespace Microsoft.Recognizers.Text.DateTime
                 pastDate = GetMondayOfTargetWeek(cardinalStr, month, year - 1);
             }
 
-            var monthTimex = DateTimeFormatUtil.LuisDate(year, month);
-
             if (noYear)
             {
-                monthTimex = DateTimeFormatUtil.LuisDate(Constants.InvalidYear, month);
+                year = Constants.InvalidYear;
             }
 
-            var cardinal = GetWeekNumberForMonth(cardinalStr);
-
-            // Note that if the cardinalStr equals to "last", the cardinalNumber would be fixed at "5"
+            // Note that if the cardinalStr equals to "last", the weekNumber would be fixed at "5"
             // This may lead to some inconsistancy between Timex and Resolution
             // the StartDate and EndDate of the resolution would always be correct (following ISO week definition)
             // But week number for "last week" might be inconsistancy with the resolution as we only have one Timex, but we may have past and future resolution which may have different week number
-            var weekTimex = TimexUtility.GenerateWeekTimex(cardinal);
-            ret.Timex = TimexUtility.CombineMonthAndWeekTimex(monthTimex, weekTimex);
+            var weekNum = GetWeekNumberForMonth(cardinalStr);
+            ret.Timex = TimexUtility.GenerateWeekOfMonthTimex(year, month, weekNum);
 
             ret.FutureValue = InclusiveEndPeriod
                 ? new Tuple<DateObject, DateObject>(futureDate, futureDate.AddDays(Constants.WeekDayCount - 1))
@@ -1866,7 +1860,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 // "last week of month" might not be "5th week of month"
                 // Sometimes it can also be "4th week of month" depends on specific year and month
                 // But as we only have one Timex, so we use "5" to indicate last week of month
-                cardinal = 5;
+                cardinal = Constants.MaxWeekOfMonth;
             }
             else
             {
