@@ -166,7 +166,7 @@
         "Text": "der letzten Woche im Juli",
         "Type": "daterange",
         "Value": {
-          "Timex": "XXXX-07-W04",
+          "Timex": "XXXX-07-W05",
           "FutureResolution": {
             "startDate": "2017-07-24",
             "endDate": "2017-07-31"
@@ -506,12 +506,12 @@
         "Value": {
           "Timex": "2016-11-W03",
           "FutureResolution": {
-            "startDate": "2016-11-21",
-            "endDate": "2016-11-28"
+            "startDate": "2016-11-14",
+            "endDate": "2016-11-21"
           },
           "PastResolution": {
-            "startDate": "2016-11-21",
-            "endDate": "2016-11-28"
+            "startDate": "2016-11-14",
+            "endDate": "2016-11-21"
           }
         },
         "Start": 19,
@@ -530,7 +530,7 @@
         "Text": "der letzten Woche im Juli",
         "Type": "daterange",
         "Value": {
-          "Timex": "XXXX-07-W04",
+          "Timex": "XXXX-07-W05",
           "FutureResolution": {
             "startDate": "2017-07-24",
             "endDate": "2017-07-31"
