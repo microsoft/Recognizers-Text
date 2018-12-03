@@ -21,24 +21,6 @@ namespace Microsoft.Recognizers.Text.DateTime
             return this.Parse(result, DateObject.Now);
         }
 
-        private bool ShouldResolveTimeZone(ExtractResult er)
-        {
-            var enablePreview = (config.Options & DateTimeOptions.EnablePreview) != 0;
-            var hasTimeZoneData = false;
-
-            if (er.Data is Dictionary<string, object>)
-            {
-                var metadata = er.Data as Dictionary<string, object>;
-
-                if (metadata != null && metadata.ContainsKey(Constants.SYS_DATETIME_TIMEZONE))
-                {
-                    hasTimeZoneData = true;
-                }
-            }
-
-            return enablePreview && hasTimeZoneData;
-        }
-
         public DateTimeParseResult Parse(ExtractResult er, DateObject referenceTime)
         {
             object value = null;
@@ -47,7 +29,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 DateTimeResolutionResult innerResult;
 
                 // Resolve timezome
-                if (ShouldResolveTimeZone(er))
+                if (TimeZoneUtility.ShouldResolveTimeZone(er, config.Options))
                 {
                     var metadata = er.Data as Dictionary<string, object>;
                     var timezoneEr = metadata[Constants.SYS_DATETIME_TIMEZONE] as ExtractResult;

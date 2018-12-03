@@ -13,6 +13,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         IExtractor IntegerExtractor { get; }
 
+        IDateTimeParser TimeZoneParser { get; }
+
         Regex PureNumberFromToRegex { get; }
 
         Regex PureNumberBetweenAndRegex { get; }

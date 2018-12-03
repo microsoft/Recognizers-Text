@@ -23,8 +23,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public IDateTimeParser HolidayParser { get; }
 
-        public IDateTimeParser TimeZoneParser { get; }
-
         public StringMatcher SuperfluousWordMatcher { get; }
 
         public EnglishMergedParserConfiguration(IOptionsConfiguration config) : base(config)

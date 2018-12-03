@@ -25,5 +25,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         bool IsConnectorToken(string text);
 
         bool GetBetweenTokenIndex(string text, out int index);
+
+        IDateTimeExtractor TimeZoneExtractor { get; }
     }
 }
