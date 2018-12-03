@@ -14,15 +14,15 @@ public class Culture {
     public static final String Italian = "it-it";
 
     public static final Culture[] SupportedCultures = new Culture[]{
-            new Culture("English", English),
-            new Culture("Chinese", Chinese),
-            new Culture("Spanish", Spanish),
-            new Culture("Portuguese", Portuguese),
-            new Culture("French", French),
-            new Culture("German", German),
-            new Culture("Japanese", Japanese),
-            new Culture("Dutch", Dutch),
-            new Culture("Italian", Italian),
+        new Culture("English", English),
+        new Culture("Chinese", Chinese),
+        new Culture("Spanish", Spanish),
+        new Culture("Portuguese", Portuguese),
+        new Culture("French", French),
+        new Culture("German", German),
+        new Culture("Japanese", Japanese),
+        new Culture("Dutch", Dutch),
+        new Culture("Italian", Italian),
     };
 
     public final String cultureName;
@@ -34,8 +34,8 @@ public class Culture {
     }
 
     public static String[] getSupportedCultureCodes() {
-        return Arrays.asList(SupportedCultures).stream()
+        return Arrays.stream(SupportedCultures)
                 .map(c -> c.cultureCode)
-                .toArray(size -> new String[size]);
+                .toArray(String[]::new);
     }
 }

@@ -155,10 +155,10 @@ public class FormatUtil {
             String hourStartStr = hourStartMatch.find() ? hourStartMatch.group(1) : "";
             String hourEndStr = hourEndMatch.find() ? hourEndMatch.group(1) : "";
 
-            if (IntegerUtility.canParse(weekDayStartStr)
-                    && IntegerUtility.canParse(weekDayEndStr)
-                    && IntegerUtility.canParse(hourStartStr)
-                    && IntegerUtility.canParse(hourEndStr)) {
+            if (IntegerUtility.canParse(weekDayStartStr) &&
+                    IntegerUtility.canParse(weekDayEndStr) &&
+                    IntegerUtility.canParse(hourStartStr) &&
+                    IntegerUtility.canParse(hourEndStr)) {
                 int weekDayStart = Integer.parseInt(weekDayStartStr);
                 int weekDayEnd = Integer.parseInt(weekDayEndStr);
                 int hourStart = Integer.parseInt(hourStartStr);

@@ -11,16 +11,28 @@ import java.util.regex.Pattern;
 
 public interface ITimePeriodParserConfiguration extends IOptionsConfiguration {
     IDateTimeExtractor getTimeExtractor();
+
     IDateTimeParser getTimeParser();
+
     IExtractor getIntegerExtractor();
+
     Pattern getPureNumberFromToRegex();
+
     Pattern getPureNumberBetweenAndRegex();
+
     Pattern getSpecificTimeFromToRegex();
+
     Pattern getSpecificTimeBetweenAndRegex();
+
     Pattern getTimeOfDayRegex();
+
     Pattern getGeneralEndingRegex();
+
     Pattern getTillRegex();
+
     ImmutableMap<String, Integer> getNumbers();
+
     IDateTimeUtilityConfiguration getUtilityConfiguration();
+
     MatchedTimeRangeResult getMatchedTimexRange(String text, String timex, int beginHour, int endHour, int endMin);
 }

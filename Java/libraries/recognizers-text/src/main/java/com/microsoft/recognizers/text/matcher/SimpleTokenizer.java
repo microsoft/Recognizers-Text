@@ -25,7 +25,7 @@ public class SimpleTokenizer implements ITokenizer {
                     tokens.add(new Token(tokenStart, i - tokenStart, input.substring(tokenStart, i)));
                     inToken = false;
                 }
-            } else if (!Character.isLetterOrDigit(c) || IsCjk(c)) {
+            } else if (!Character.isLetterOrDigit(c) || isCjk(c)) {
                 if (inToken) {
                     tokens.add(new Token(tokenStart, i - tokenStart, input.substring(tokenStart, i)));
                     inToken = false;
@@ -49,7 +49,7 @@ public class SimpleTokenizer implements ITokenizer {
 
     // Check the character is Chinese/Japanese/Korean.
     // For those languages which are not using whitespace delimited symbol, we only simply tokenize the sentence by each single character.
-    private boolean IsCjk(char c) {
-        return Character.isIdeographic((int) c);
+    private boolean isCjk(char c) {
+        return Character.isIdeographic((int)c);
     }
 }

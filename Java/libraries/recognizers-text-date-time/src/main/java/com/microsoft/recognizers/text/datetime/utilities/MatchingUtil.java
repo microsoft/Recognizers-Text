@@ -49,13 +49,11 @@ public class MatchingUtil {
     }
 
     // Temporary solution for remove superfluous words only under the Preview mode
-    public static ProcessedSuperfluousWords PreProcessTextRemoveSuperfluousWords(String text, StringMatcher matcher)
-    {
+    public static ProcessedSuperfluousWords preProcessTextRemoveSuperfluousWords(String text, StringMatcher matcher) {
         Iterable<MatchResult<String>> superfluousWordMatches = matcher.find(text);
         int bias = 0;
 
-        for (MatchResult<String> match : superfluousWordMatches)
-        {
+        for (MatchResult<String> match : superfluousWordMatches) {
             text = text.substring(0, match.getStart() - bias) + text.substring(match.getEnd() - bias);
             bias += match.getLength();
         }
@@ -64,21 +62,17 @@ public class MatchingUtil {
     }
 
     // Temporary solution for recover superfluous words only under the Preview mode
-    public static List<ExtractResult> PosProcessExtractionRecoverSuperfluousWords(List<ExtractResult> extractResults, Iterable<MatchResult<String>> superfluousWordMatches, String originText)
-    {
-        for (MatchResult<String> match : superfluousWordMatches)
-        {
-            for (ExtractResult extractResult : extractResults.toArray(new ExtractResult[0]))
-            {
+    public static List<ExtractResult> posProcessExtractionRecoverSuperfluousWords(List<ExtractResult> extractResults,
+                                                                                  Iterable<MatchResult<String>> superfluousWordMatches, String originText) {
+        for (MatchResult<String> match : superfluousWordMatches) {
+            for (ExtractResult extractResult : extractResults.toArray(new ExtractResult[0])) {
                 int index = 0;
                 int extractResultEnd = extractResult.start + extractResult.length;
-                if (match.getStart() > extractResult.start && extractResultEnd >= match.getStart())
-                {
+                if (match.getStart() > extractResult.start && extractResultEnd >= match.getStart()) {
                     extractResults.set(index, extractResult.withLength(extractResult.length + match.getLength()));
                 }
 
-                if (match.getStart() <= extractResult.start)
-                {
+                if (match.getStart() <= extractResult.start) {
                     extractResults.set(index, extractResult.withStart(extractResult.start + match.getLength()));
                 }
                 index++;
@@ -91,7 +85,7 @@ public class MatchingUtil {
             index++;
         }
 
-        return  extractResults;
+        return extractResults;
     }
 }
 

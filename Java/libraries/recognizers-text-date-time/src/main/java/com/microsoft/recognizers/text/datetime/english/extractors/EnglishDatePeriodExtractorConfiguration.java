@@ -266,9 +266,9 @@ public class EnglishDatePeriodExtractorConfiguration implements IDatePeriodExtra
         return numberParser;
     }
 
-	@Override
-	public String[] getDurationDateRestrictions() {
-		return durationDateRestrictions;
+    @Override
+    public String[] getDurationDateRestrictions() {
+        return durationDateRestrictions;
     }
     
     public DateTimeOptions getOptions() {
@@ -276,7 +276,7 @@ public class EnglishDatePeriodExtractorConfiguration implements IDatePeriodExtra
     }
 
     @Override
-    public ResultIndex GetFromTokenIndex(String text) {
+    public ResultIndex getFromTokenIndex(String text) {
         int index = -1;
         boolean result = false;
         if (text.endsWith("from")) {
@@ -288,7 +288,7 @@ public class EnglishDatePeriodExtractorConfiguration implements IDatePeriodExtra
     }
 
     @Override
-    public ResultIndex GetBetweenTokenIndex(String text) {
+    public ResultIndex getBetweenTokenIndex(String text) {
         int index = -1;
         boolean result = false;
         if (text.endsWith("between")) {
@@ -300,7 +300,7 @@ public class EnglishDatePeriodExtractorConfiguration implements IDatePeriodExtra
     }
 
     @Override
-    public boolean HasConnectorToken(String text) {
+    public boolean hasConnectorToken(String text) {
         Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(rangeConnectorRegex, text)).findFirst();
         return match.isPresent() && match.get().length == text.trim().length();
     }

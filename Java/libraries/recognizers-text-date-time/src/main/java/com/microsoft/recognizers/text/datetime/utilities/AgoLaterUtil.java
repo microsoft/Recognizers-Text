@@ -57,9 +57,9 @@ public class AgoLaterUtil {
         LocalDateTime resultDateTime = referenceTime;
         String timex = durationParseResult.timexStr;
 
-        if (((DateTimeResolutionResult) durationParseResult.value).getMod() == Constants.MORE_THAN_MOD) {
+        if (((DateTimeResolutionResult)durationParseResult.value).getMod() == Constants.MORE_THAN_MOD) {
             ret.setMod(Constants.MORE_THAN_MOD);
-        } else if (((DateTimeResolutionResult) durationParseResult.value).getMod() == Constants.LESS_THAN_MOD) {
+        } else if (((DateTimeResolutionResult)durationParseResult.value).getMod() == Constants.LESS_THAN_MOD) {
             ret.setMod(Constants.LESS_THAN_MOD);
         }
 
@@ -75,9 +75,9 @@ public class AgoLaterUtil {
 
             resultDateTime = DurationParsingUtil.shiftDateTime(timex, referenceTime.plusDays(swift), false);
 
-            ((DateTimeResolutionResult) durationParseResult.value).setMod(Constants.BEFORE_MOD);
-        } else if (MatchingUtil.containsAgoLaterIndex(afterStr, utilityConfiguration.getLaterRegex())
-                || MatchingUtil.containsTermIndex(beforeStr, utilityConfiguration.getInConnectorRegex())) {
+            ((DateTimeResolutionResult)durationParseResult.value).setMod(Constants.BEFORE_MOD);
+        } else if (MatchingUtil.containsAgoLaterIndex(afterStr, utilityConfiguration.getLaterRegex()) ||
+                MatchingUtil.containsTermIndex(beforeStr, utilityConfiguration.getInConnectorRegex())) {
             Optional<Match> match = Arrays
                     .stream(RegExpUtility.getMatches(utilityConfiguration.getLaterRegex(), afterStr)).findFirst();
             int swift = 0;
@@ -89,7 +89,7 @@ public class AgoLaterUtil {
 
             resultDateTime = DurationParsingUtil.shiftDateTime(timex, referenceTime.plusDays(swift), true);
 
-            ((DateTimeResolutionResult) durationParseResult.value).setMod(Constants.AFTER_MOD);
+            ((DateTimeResolutionResult)durationParseResult.value).setMod(Constants.AFTER_MOD);
         }
 
         if (resultDateTime != referenceTime) {

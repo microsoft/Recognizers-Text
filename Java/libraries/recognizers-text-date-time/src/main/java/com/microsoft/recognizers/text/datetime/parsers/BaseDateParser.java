@@ -73,12 +73,12 @@ public class BaseDateParser implements IDateTimeParser {
 
             if (innerResult.getSuccess()) {
                 ImmutableMap.Builder<String, String> futureResolution = ImmutableMap.builder();
-                futureResolution.put(TimeTypeConstants.DATE, FormatUtil.formatDate((LocalDateTime) innerResult.getFutureValue()));
+                futureResolution.put(TimeTypeConstants.DATE, FormatUtil.formatDate((LocalDateTime)innerResult.getFutureValue()));
 
                 innerResult.setFutureResolution(futureResolution.build());
 
                 ImmutableMap.Builder<String, String> pastResolution = ImmutableMap.builder();
-                pastResolution.put(TimeTypeConstants.DATE, FormatUtil.formatDate((LocalDateTime) innerResult.getPastValue()));
+                pastResolution.put(TimeTypeConstants.DATE, FormatUtil.formatDate((LocalDateTime)innerResult.getPastValue()));
 
                 innerResult.setPastResolution(pastResolution.build());
 
