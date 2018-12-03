@@ -476,6 +476,10 @@ export class BaseDatePeriodParser implements IDateTimeParser {
         return result;
     }
 
+    private isPresent(swift: number): boolean{
+        return swift == 0;
+    }
+
     protected parseOneWordPeriod(source: string, referenceDate: Date): DateTimeResolutionResult {
         let result = new DateTimeResolutionResult();
         let year = referenceDate.getFullYear();
@@ -536,21 +540,31 @@ export class BaseDatePeriodParser implements IDateTimeParser {
             result.mod = Constants.MID_MOD;
         }
 
+        let monthStr = match.groups('month').value;
+        let swift = 0;
+        if (!StringUtility.isNullOrEmpty(monthStr)){
+            swift = this.config.getSwiftYear(trimedText);
+        }
+        else{
+            swift = this.config.getSwiftDayOrMonth(trimedText);
+        }
+
         if (match.groups("RelEarly").value)
         {
             earlierPrefix = true;
-            result.mod = null;
+            if (this.isPresent(swift))
+                result.mod = null;
         }
 
         if (match.groups("RelLate").value)
         {
             laterPrefix = true;
-            result.mod = null;
+            if (this.isPresent(swift))
+                result.mod = null;
         }
 
-        let monthStr = match.groups('month').value;
         if (!StringUtility.isNullOrEmpty(monthStr)) {
-            let swift = this.config.getSwiftYear(trimedText);
+            swift = this.config.getSwiftYear(trimedText);
             month = this.config.monthOfYear.get(monthStr) - 1;
             if (swift >= -1) {
                 result.timex = `${DateTimeFormatUtil.toString(year + swift, 4)}-${DateTimeFormatUtil.toString(month + 1, 2)}`;
@@ -563,7 +577,7 @@ export class BaseDatePeriodParser implements IDateTimeParser {
                 if (month >= referenceDate.getMonth()) pastYear--;
             }
         } else {
-            let swift = this.config.getSwiftDayOrMonth(trimedText);
+            swift = this.config.getSwiftDayOrMonth(trimedText);
             if (this.config.isWeekOnly(trimedText)) {
                 let monday = DateUtils.addDays(DateUtils.this(referenceDate, DayOfWeek.Monday), 7 * swift);
 

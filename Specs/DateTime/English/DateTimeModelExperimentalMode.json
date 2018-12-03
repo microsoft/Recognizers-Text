@@ -6562,5 +6562,56 @@
         }
       }
     ]
+  },
+  {
+    "Input": "He took a test earlier previous week",
+    "Context": {
+      "ReferenceDateTime": "2018-11-30T12:00:00"
+    },
+    "NotSupportedByDesign": "java",
+    "Results": [
+      {
+        "Text": "earlier previous week",
+        "Start": 15,
+        "End": 35,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-W47",
+              "Mod": "start",
+              "type": "daterange",
+              "start": "2018-11-19",
+              "end": "2018-11-22"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I will finish the work later this week",
+    "Context": {
+      "ReferenceDateTime": "2018-11-30T12:00:00"
+    },
+    "NotSupportedByDesign": "java",
+    "Results":[
+      {
+        "Text": "later this week",
+        "Start": 23,
+        "End": 37,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-W48",
+              "type": "daterange",
+              "start": "2018-11-30",
+              "end": "2018-12-03"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
