@@ -325,7 +325,7 @@ TimeNumberCombinedWithUnit: !nestedRegex
 NowRegex: !simpleRegex
   def: \b(?<now>(genau\s+)?jetzt|so früh wie möglich|frühestmöglich|neulich|vorher)\b
 SuffixRegex: !simpleRegex
-  def: ^\s*((am|in der)\s+)?(morgen|morgens|frühe|vormittag|vormittags|mittag|mittags|nachmittag|nachmittags|abend|abends|nacht|nachts)\b
+  def: ^\s*((am|in der)\s+)?(morgen|morgens|frühe|früh|vormittag|vormittags|mittag|mittags|nachmittag|nachmittags|abend|abends|nacht|nachts)\b
 DateTimeTimeOfDayRegex: !simpleRegex
   def: \b(?<timeOfDay>morgen(s)?|vormittag(s)?|mittag(s)?|nachmittag(s)?|nacht(s)?|abend(s)?)\b
 DateTimeSpecificTimeOfDayRegex: !nestedRegex
@@ -1047,7 +1047,6 @@ PlusOneDayTerms: !list
   types: [ string ]
   entries: 
     - morgen
-    - tmr
 MinusOneDayTerms: !list
   types: [ string ]
   entries: 
