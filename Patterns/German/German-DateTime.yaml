@@ -241,7 +241,7 @@ MidnightRegex: !simpleRegex
 MidmorningRegex: !simpleRegex
   def: (?<midmorning>vormittag|vormittags)
 MidafternoonRegex: !simpleRegex
-  def: ^[\.]
+  def: (?<midafternoon>nachmittag|nachmittags)
 MiddayRegex: !simpleRegex
   def: (?<midday>mittag|mittags)
 MidTimeRegex: !nestedRegex
