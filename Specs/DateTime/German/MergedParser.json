@@ -76,8 +76,34 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "Comment": "Returning only the future resolution",
-    "NotSupported": "dotnet, javascript, python",
+    "Comment": "Returning only the future resolution, which is sematically correct in that case",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "Freitag Nachmittag",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-11TAF",
+              "type": "datetimerange",
+              "start": "2016-11-11 12:00:00",
+              "end": "2016-11-11 16:00:00"
+            }
+          ]
+        },
+        "Start": 3,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Letzten Freitag Nachmittag habe ich Feierabend gemacht",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Comment": "Returning only the future resolution, should be only past based on the word 'letzten'",
+    "NotSupported": "dotNet, javascript, python",
     "Results": [
       {
         "Text": "Freitag Nachmittag",
@@ -98,7 +124,7 @@
             }
           ]
         },
-        "Start": 3,
+        "Start": 8,
         "Length": 18
       }
     ]
