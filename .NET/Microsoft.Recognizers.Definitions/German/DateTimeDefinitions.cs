@@ -141,7 +141,7 @@ namespace Microsoft.Recognizers.Definitions.German
 		public static readonly string TimeFollowedUnit = $@"^\s*{TimeUnitRegex}$";
 		public static readonly string TimeNumberCombinedWithUnit = $@"(?<num>\d+(\,\d*)?){TimeUnitRegex}";
 		public const string NowRegex = @"\b(?<now>(genau\s+)?jetzt|so früh wie möglich|frühestmöglich|neulich|vorher)\b";
-		public const string SuffixRegex = @"^\s*((am|in der)\s+)?(morgen|morgens|frühe|vormittag|vormittags|mittag|mittags|nachmittag|nachmittags|abend|abends|nacht|nachts)\b";
+		public const string SuffixRegex = @"^\s*((am|in der)\s+)?(morgen|morgens|frühe|früh|vormittag|vormittags|mittag|mittags|nachmittag|nachmittags|abend|abends|nacht|nachts)\b";
 		public const string DateTimeTimeOfDayRegex = @"\b(?<timeOfDay>morgen(s)?|vormittag(s)?|mittag(s)?|nachmittag(s)?|nacht(s)?|abend(s)?)\b";
 		public static readonly string DateTimeSpecificTimeOfDayRegex = $@"\b(({RelativeRegex}\s+{DateTimeTimeOfDayRegex})\b|\bheute)\b";
 		public static readonly string TimeOfTodayAfterRegex = $@"^\s*(,\s*)?((am|in der)\s+)?{DateTimeSpecificTimeOfDayRegex}";
@@ -172,9 +172,9 @@ namespace Microsoft.Recognizers.Definitions.German
 		public const string AllRegex = @"\b(?<all>ganz(en|es|er|e)\s+(?<unit>jahr|monat|woche|tag))\b";
 		public const string HalfRegex = @"(((ein(en|er|es|e)?)\s*)|\b)(?<half>halb(en|er|es|e)?\s+(?<unit>jahr(er|es|e)?|monat(s|e)?|woch(en|e)?|tag(en|er|es|e)?|stund(en|e)?))\b";
 		public const string ConjunctionRegex = @"\b((und(\s+für)?)|mit|für)\b";
-		public static readonly string HolidayRegex1 = $@"\b((dieses jahr)\s*)?(?<holiday>reformationstag|reformationsfest|gedenktag der reformation|martinstag|st. martin|sankt martin|martinsfest|martini|nikolaustag|dreikönigstag|dreikönigsfest|walpurgisnacht|nationalfeiertag|mariä empfängnis|weihnachten|weihnachtstag|erste(r|n)? weihnachtstag|1. weihnachtstag|erste(r|n)? weihnachtsfeiertag|1\. weihnachtsfeiertag|zweite(r|n)? weihnachtstag|zweite(r|n)? weihnachtsfeiertag|2\. weihnachtstag|zweite(r|n)? weihnachtsfeiertag|stefanitag|stafanstag|berchtoldstag|bechtelistag|bächtelistag|berchtelistag|bärzelistag|josefstag|joseftag|josefitag|ostermontag|ostersonntag|bundesfeiertag|bundesfeier|mariä himmelfahrt|tag der deutschen einheit|ostern|vatertag|muttertag|erntedankfest|thanksgiving|martin luther king day|martin luther king jr day|washington's birthday|washington birthday|canberraday|tag der arbeit|columbus day|memorial day|yuandan|mao's birthday|teachersday|teacher day|single day|allerheiligen|tag der jugend|kindertag|frauentag|treeplanting day|tag des baumes|girlsday|white lover day|loverday|weihnachten|weihnachtstag|xmas|neujahr|neujahrstag|neujahr|neujahrstag|neujahr|inauguration day|murmeltiertag|valentinstag|st patrick day|erster april|april scherz|georgstag|mayday|maitag|tag der arbeit|maifeiertag|geburt johannes des täufers|us unabhängigkeitstag|unabhängigkeitstag|sturm auf die bastille|halloween|allerheiligen|allerseelen|guy fawkes day|guy fawkes night|veterans day|heiligabend|silvester)(\s+((diesen)\s+)?({YearRegex}|{RelativeRegex}\s+jahres))?\b";
-		public static readonly string HolidayRegex2 = $@"\b((dieses jahr)\s*)?(?<holiday>martin luther king|martin luther king jr|allerheiligen|tree planting day|white lover|st patrick|st george|independence|us independence|allerheiligen|allerseelen|guy fawkes|silvester|weiberfastnacht|karneval|aschermittwoch|palmensonntag|karfreitag|christi himmelfahrt|pfingstsonntag|pfingstmontag|fronleichnam|rosenmontag|fastnacht|gründonnerstag|himmelfahrt|volkstrauertag|buß und bettag|buß- und bettag|totensonntag|erste(r|n)? advent|1\. advent|zweite(r|n)? advent|2\. advent|dritte(r|n)? advent|3\. advent|vierte(r|n)? advent|4\. advent|schweizer buß und bettag|schweizer buß- und bettag)(\s+((diesen)\s+)?({YearRegex}|{RelativeRegex}\s+jahres))?\b";
-		public static readonly string HolidayRegex3 = $@"((dieses jahr)\s*)?(?<holiday>(canberra|columbus|thanks\s*giving|groundhog|bastille|halloween|veterans|memorial|spring|lantern|qingming|dragon boat)\s+(day))(\s+((diesen)\s+)?({YearRegex}|{RelativeRegex}\s+jahres))?";
+		public static readonly string HolidayRegex1 = $@"\b((dieses jahr)\s*)?(?<holiday>reformationstag|reformationsfest|gedenktag der reformation|martinstag|st. martin|sankt martin|martinsfest|martini|nikolaustag|dreikönigstag|dreikönigsfest|walpurgisnacht|nationalfeiertag|mariä empfängnis|weihnachten|weihnachtstag|erste(r|n)? weihnachtstag|1. weihnachtstag|erste(r|n)? weihnachtsfeiertag|1\. weihnachtsfeiertag|zweite(r|n)? weihnachtstag|zweite(r|n)? weihnachtsfeiertag|2\. weihnachtstag|zweite(r|n)? weihnachtsfeiertag|stefanitag|stafanstag|berchtoldstag|bechtelistag|bächtelistag|berchtelistag|bärzelistag|josefstag|joseftag|josefitag|ostermontag|ostersonntag|bundesfeiertag|bundesfeier|mariä himmelfahrt|tag der deutschen einheit|ostern|vatertag|muttertag|erntedankfest|thanksgiving|martin luther king day|martin luther king jr day|washington's birthday|washington birthday|canberraday|tag der arbeit|columbus day|memorial day|yuandan|mao's birthday|teachersday|teacher day|single day|allerheiligen|tag der jugend|kindertag|frauentag|treeplanting day|tag des baumes|girlsday|white lover day|loverday|weihnachten|weihnachtstag|xmas|neujahr|neujahrstag|neujahr|neujahrstag|neujahr|inauguration day|murmeltiertag|valentinstag|st patrick day|erster april|april scherz|georgstag|mayday|maitag|tag der arbeit|maifeiertag|geburt johannes des täufers|us unabhängigkeitstag|unabhängigkeitstag|sturm auf die bastille|halloween|allerheiligen|allerseelen|guy fawkes day|guy fawkes night|veterans day|heiligabend|silvester|pi-tag|pitag|pi (tag|day))(\s+((diesen)\s+)?(im jahr {YearRegex}|{YearRegex}|{RelativeRegex}\s+jahres))?\b";
+		public static readonly string HolidayRegex2 = $@"\b((dieses jahr)\s*)?(?<holiday>martin luther king|martin luther king jr|allerheiligen|tree planting day|white lover|st patrick|st george|independence|us independence|allerheiligen|allerseelen|guy fawkes|silvester|weiberfastnacht|karneval|aschermittwoch|palmensonntag|karfreitag|christi himmelfahrt|pfingstsonntag|pfingstmontag|fronleichnam|rosenmontag|fastnacht|gründonnerstag|himmelfahrt|volkstrauertag|buß und bettag|buß- und bettag|buss- und bettag|buss und bettag|totensonntag|erste(r|n)? advent|1\. advent|zweite(r|n)? advent|2\. advent|dritte(r|n)? advent|3\. advent|vierte(r|n)? advent|4\. advent|schweizer buss- und bettag|schweizer buss und bettag|schweizer buß und bettag|schweizer buß- und bettag)(\s+((diesen)\s+)?(im jahr {YearRegex}|{YearRegex}|{RelativeRegex}\s+jahres))?\b";
+		public static readonly string HolidayRegex3 = $@"((dieses jahr)\s*)?(?<holiday>(canberra|columbus|thanks\s*giving|groundhog|bastille|halloween|veterans|memorial|spring|lantern|qingming|dragon boat)\s+(day))(\s+((diesen)\s+)?(im jahr {YearRegex}|{YearRegex}|{RelativeRegex}\s+jahres))?";
 		public const string DateTokenPrefix = "am ";
 		public const string TimeTokenPrefix = "um ";
 		public const string TokenBeforeDate = "am ";
@@ -651,6 +651,7 @@ namespace Microsoft.Recognizers.Definitions.German
 			{ "allsoulsday", new string[] { "allerseelen" } },
 			{ "guyfawkesday", new string[] { "guyfawkesday", "guyfawkesnight" } },
 			{ "veteransday", new string[] { "veteransday" } },
+			{ "piday", new string[] { "piday", "pitag", "pi-tag" } },
 			{ "christmaseve", new string[] { "heiligabend" } },
 			{ "newyeareve", new string[] { "silvester" } },
 			{ "weiberfastnacht", new string[] { "weiberfastnacht" } },
@@ -666,13 +667,13 @@ namespace Microsoft.Recognizers.Definitions.German
 			{ "fastnacht", new string[] { "fastnacht" } },
 			{ "holythursday", new string[] { "gründonnerstag", "himmelfahrt" } },
 			{ "memorialdaygermany", new string[] { "volkstrauertag" } },
-			{ "dayofrepentance", new string[] { "bußundbettag" } },
+			{ "dayofrepentance", new string[] { "bußundbettag", "buß-undbettag", "bussundbettag" } },
 			{ "totensonntag", new string[] { "totensonntag" } },
 			{ "firstadvent", new string[] { "ersteadvent", "erstenadvent", "ersteradvent", "1.advent" } },
 			{ "secondadvent", new string[] { "zweiteadvent", "zweitenadvent", "zweiteradvent", "2.advent" } },
 			{ "thirdadvent", new string[] { "dritteadvent", "drittenadvent", "dritteradvent", "3.advent" } },
 			{ "fourthadvent", new string[] { "vierteadvent", "viertenadvent", "vierteradvent", "4.advent" } },
-			{ "chedayofrepentance", new string[] { "schweizerbußundbettag" } }
+			{ "chedayofrepentance", new string[] { "schweizerbußundbettag", "schweizerbuß-undbettag", "schweizerbussundbettag" } }
 		};
 		public static readonly Dictionary<string, int> WrittenDecades = new Dictionary<string, int>
 		{
@@ -727,8 +728,7 @@ namespace Microsoft.Recognizers.Definitions.German
 		};
 		public static readonly IList<string> PlusOneDayTerms = new List<string>
 		{
-			"morgen",
-			"tmr"
+			"morgen"
 		};
 		public static readonly IList<string> MinusOneDayTerms = new List<string>
 		{
