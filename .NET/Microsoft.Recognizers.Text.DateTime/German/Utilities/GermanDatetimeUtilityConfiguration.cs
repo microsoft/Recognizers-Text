@@ -1,5 +1,4 @@
 ﻿using System.Text.RegularExpressions;
-
 using Microsoft.Recognizers.Definitions.German;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
 
