@@ -93,20 +93,11 @@ MonthOfRegex: !simpleRegex
   def: (mese)(\s*)(di)
 MonthRegex: !simpleRegex
   def: (?<month>Aprile|Apr|Agosto|Ago|Dicembre|Dic|Febbraio|Feb|Gennaio|Gen|Luglio|Lug|Giugno|Giu|Marzo|Mar|Maggio|Mar|Novembre|Nov|Ottobre|Ott|Settembre|Set)
-AmDescRegex: !nestedRegex
-  def: (h|{BaseDateTime.AmDescRegex})
-  references: [BaseDateTime.AmDescRegex]
-PmDescRegex: !nestedRegex
-  def: (h|{BaseDateTime.PmDescRegex})
-  references: [BaseDateTime.PmDescRegex]
-AmPmDescRegex: !nestedRegex
-  def: (h|{BaseDateTime.AmPmDescRegex})
-  references: [BaseDateTime.AmPmDescRegex]
 #This is a look-behind assertion. Some cases should extract two digits as year like 11/25/16, where 16 means 2016. 
 #The assertion determines if not connected with am/pm or hour separator (:), which should be a time.
 DateYearRegex: !nestedRegex
   def: (?<year>19\d{2}|20\d{2}|(([0-27-9]\d)(?!(\s*((\:)|{AmDescRegex}|{PmDescRegex})))))
-  references: [ DescRegex, AmDescRegex, PmDescRegex ]
+  references: [ AmDescRegex, PmDescRegex ]
 OnRegex: !nestedRegex
   def: (?<=\b(di|su)\s+)({DayRegex}s?)\b
   references: [ DayRegex ]
@@ -195,9 +186,18 @@ RangeUnitRegex: !simpleRegex
   def: \b(?<unit>l'anno|ann[oi]?|mesi|settimane|settimana)\b
 SpecialDescRegex: !simpleRegex
   def: (p\b)
+AmDescRegex: !nestedRegex
+  def: (h|{BaseDateTime.BaseAmDescRegex})
+  references: [BaseDateTime.BaseAmDescRegex]
+PmDescRegex: !nestedRegex
+  def: (h|{BaseDateTime.BasePmDescRegex})
+  references: [BaseDateTime.BasePmDescRegex]
+AmPmDescRegex: !nestedRegex
+  def: (h|{BaseDateTime.BaseAmPmDescRegex})
+  references: [BaseDateTime.BaseAmPmDescRegex]
 DescRegex: !nestedRegex
-  def: (?<desc>h|{BaseDateTime.AmPmDescRegex}|{BaseDateTime.AmDescRegex}|{BaseDateTime.PmDescRegex}|{SpecialDescRegex})
-  references: [BaseDateTime.AmDescRegex, BaseDateTime.PmDescRegex, BaseDateTime.AmPmDescRegex, SpecialDescRegex]
+  def: (?<desc>{AmPmDescRegex}|{AmDescRegex}|{PmDescRegex}|{SpecialDescRegex})
+  references: [AmDescRegex, PmDescRegex, AmPmDescRegex, SpecialDescRegex]
 HourNumRegex: !simpleRegex
   def: \b(?<hournum>zero|uno|due|tre|quattro|cinque|sei|sette|otto|nove|dieci|undici|dodici)\b
 MinuteNumRegex: !simpleRegex

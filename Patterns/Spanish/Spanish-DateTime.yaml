@@ -7,15 +7,24 @@ DayRegex: !simpleRegex
   def: (?<day>01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|1|20|21|22|23|24|25|26|27|28|29|2|30|31|3|4|5|6|7|8|9)(?=\b|t)
 MonthNumRegex: !simpleRegex
   def: (?<month>01|02|03|04|05|06|07|08|09|10|11|12|1|2|3|4|5|6|7|8|9)\b
+AmDescRegex: !nestedRegex
+  def: ({BaseDateTime.BaseAmDescRegex})
+  references: [BaseDateTime.BaseAmDescRegex]
+PmDescRegex: !nestedRegex
+  def: ({BaseDateTime.BasePmDescRegex})
+  references: [BaseDateTime.BasePmDescRegex]
+AmPmDescRegex: !nestedRegex
+  def: ({BaseDateTime.BaseAmPmDescRegex})
+  references: [BaseDateTime.BaseAmPmDescRegex]
 DescRegex: !nestedRegex
-  def: (?<desc>({BaseDateTime.AmDescRegex}|{BaseDateTime.PmDescRegex}))
-  references: [ BaseDateTime.AmDescRegex, BaseDateTime.PmDescRegex ]
+  def: (?<desc>({AmDescRegex}|{PmDescRegex}))
+  references: [ AmDescRegex, PmDescRegex ]
 RangePrefixRegex: !simpleRegex
   def: ((desde|de|entre)\s+(la(s)?\s+)?)
 # As month number can't be 0, so add (?!\.0\b) to filter out some wrong cases
 TwoDigitYearRegex: !nestedRegex
-  def: \b(?<![$])(?<year>([0-27-9]\d))(?!(\s*((\:)|{BaseDateTime.AmDescRegex}|{BaseDateTime.PmDescRegex}|\.\d)))\b
-  references: [ BaseDateTime.AmDescRegex, BaseDateTime.PmDescRegex]
+  def: \b(?<![$])(?<year>([0-27-9]\d))(?!(\s*((\:)|{AmDescRegex}|{PmDescRegex}|\.\d)))\b
+  references: [ AmDescRegex, PmDescRegex]
 FullTextYearRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[\*]

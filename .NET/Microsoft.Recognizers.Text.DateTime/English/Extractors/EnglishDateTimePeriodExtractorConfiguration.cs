@@ -48,10 +48,10 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             new Regex(DateTimeDefinitions.MiddlePauseRegex, RegexOptions.Singleline);
 
         public static readonly Regex AmDescRegex =
-            new Regex(BaseDateTime.AmDescRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.AmDescRegex, RegexOptions.Singleline);
 
         public static readonly Regex PmDescRegex =
-            new Regex(BaseDateTime.PmDescRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.PmDescRegex, RegexOptions.Singleline);
 
         public static readonly Regex WithinNextPrefixRegex =
             new Regex(DateTimeDefinitions.WithinNextPrefixRegex, RegexOptions.Singleline);

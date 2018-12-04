@@ -19,18 +19,18 @@ MonthNumRegex: !simpleRegex
   def: (?<month>01|02|03|04|05|06|07|08|09|10|11|12|1|2|3|4|5|6|7|8|9)\b
 SpecialDescRegex: !simpleRegex
   def: (p\b)
-DescRegex: !nestedRegex
-  def: (?<desc>h|{BaseDateTime.AmPmDescRegex}|{BaseDateTime.AmDescRegex}|{BaseDateTime.PmDescRegex}|{SpecialDescRegex})
-  references: [BaseDateTime.AmDescRegex, BaseDateTime.PmDescRegex, BaseDateTime.AmPmDescRegex, SpecialDescRegex]
 AmDescRegex: !nestedRegex
-  def: (h|{BaseDateTime.AmDescRegex})
-  references: [BaseDateTime.AmDescRegex]
+  def: (h|{BaseDateTime.BaseAmDescRegex})
+  references: [BaseDateTime.BaseAmDescRegex]
 PmDescRegex: !nestedRegex
-  def: (h|{BaseDateTime.PmDescRegex})
-  references: [BaseDateTime.PmDescRegex]
+  def: (h|{BaseDateTime.BasePmDescRegex})
+  references: [BaseDateTime.BasePmDescRegex]
 AmPmDescRegex: !nestedRegex
-  def: (h|{BaseDateTime.AmPmDescRegex})
-  references: [BaseDateTime.AmPmDescRegex]
+  def: (h|{BaseDateTime.BaseAmPmDescRegex})
+  references: [BaseDateTime.BaseAmPmDescRegex]
+DescRegex: !nestedRegex
+  def: (?<desc>{AmPmDescRegex}|{AmDescRegex}|{PmDescRegex}|{SpecialDescRegex})
+  references: [AmDescRegex, PmDescRegex, AmPmDescRegex, SpecialDescRegex]
 # As month number can't be 0, so add (?!\.0\b) to filter out some wrong cases
 TwoDigitYearRegex: !nestedRegex
   def: \b(?<![$])(?<year>([0-27-9]\d))(?!(\s*((\:)|{AmDescRegex}|{PmDescRegex}|\.\d)))\b

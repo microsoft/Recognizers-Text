@@ -39,9 +39,25 @@ FullTextYearRegex: !nestedRegex
   def: \b((?<firsttwoyearnum>{CenturyRegex})\s+(?<lasttwoyearnum>((zero|twenty|thirty|forty|fourty|fifty|sixty|seventy|eighty|ninety)\s+{WrittenNumRegex})|{WrittenNumRegex}))\b|\b(?<firsttwoyearnum>{CenturyRegex})\b
   references: [ CenturyRegex, WrittenNumRegex ]
 # As month number can't be 0, so add (?!\.0\b) to filter out some wrong cases
+OclockRegex: !simpleRegex
+  def: (?<oclock>o\s*’\s*clock|o\s*‘\s*clock|o\s*'\s*clock|o\s*clock)
+SpecialDescRegex: !simpleRegex
+  def: (p\b)
+AmDescRegex: !nestedRegex
+  def: ({BaseDateTime.BaseAmDescRegex})
+  references: [BaseDateTime.BaseAmDescRegex]
+PmDescRegex: !nestedRegex
+  def: ({BaseDateTime.BasePmDescRegex})
+  references: [BaseDateTime.BasePmDescRegex]
+AmPmDescRegex: !nestedRegex
+  def: ({BaseDateTime.BaseAmPmDescRegex})
+  references: [BaseDateTime.BaseAmPmDescRegex]
+DescRegex: !nestedRegex
+  def: ((({OclockRegex}\s+)?(?<desc>({AmPmDescRegex}|{AmDescRegex}|{PmDescRegex}|{SpecialDescRegex})))|{OclockRegex})
+  references: [ OclockRegex, AmDescRegex, PmDescRegex, AmPmDescRegex, SpecialDescRegex ]
 TwoDigitYearRegex: !nestedRegex
-  def: \b(?<![$])(?<year>([0-27-9]\d))(?!(\s*((\:)|{BaseDateTime.AmDescRegex}|{BaseDateTime.PmDescRegex}|\.\d)))\b
-  references: [ BaseDateTime.AmDescRegex, BaseDateTime.PmDescRegex]
+  def: \b(?<![$])(?<year>([0-27-9]\d))(?!(\s*((\:)|{AmDescRegex}|{PmDescRegex}|\.\d)))\b
+  references: [ AmDescRegex, PmDescRegex]
 YearRegex: !nestedRegex
   def: ({BaseDateTime.FourDigitYearRegex}|{FullTextYearRegex})
   references: [ BaseDateTime.FourDigitYearRegex, FullTextYearRegex ]
@@ -242,13 +258,6 @@ WeekDayEnd: !nestedRegex
   references: [ WeekDayRegex ]
 RangeUnitRegex: !simpleRegex
   def: \b(?<unit>years|year|months|month|weeks|week)\b
-OclockRegex: !simpleRegex
-  def: (?<oclock>o\s*’\s*clock|o\s*‘\s*clock|o\s*'\s*clock|o\s*clock)
-SpecialDescRegex: !simpleRegex
-  def: (p\b)
-DescRegex: !nestedRegex
-  def: ((({OclockRegex}\s+)?(?<desc>({BaseDateTime.AmPmDescRegex}|{BaseDateTime.AmDescRegex}|{BaseDateTime.PmDescRegex}|{SpecialDescRegex})))|{OclockRegex})
-  references: [ OclockRegex, BaseDateTime.AmDescRegex, BaseDateTime.PmDescRegex, BaseDateTime.AmPmDescRegex, SpecialDescRegex ]
 HourNumRegex: !simpleRegex
   def: \b(?<hournum>zero|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve)\b
 MinuteNumRegex: !simpleRegex
@@ -491,11 +500,11 @@ WithinNextPrefixRegex: !nestedRegex
   references: [ NextPrefixRegex ]
 # "next" group here is used to judge uncommon unsupported cases like "within the next 5 days before today"
 MorningStartEndRegex: !nestedRegex
-  def: (^(morning|{BaseDateTime.AmDescRegex}))|((morning|{BaseDateTime.AmDescRegex})$)
-  references: [ BaseDateTime.AmDescRegex ]
+  def: (^(morning|{AmDescRegex}))|((morning|{AmDescRegex})$)
+  references: [ AmDescRegex ]
 AfternoonStartEndRegex: !nestedRegex
-  def: (^(afternoon|{BaseDateTime.PmDescRegex}))|((afternoon|{BaseDateTime.PmDescRegex})$)
-  references: [ BaseDateTime.PmDescRegex ]
+  def: (^(afternoon|{PmDescRegex}))|((afternoon|{PmDescRegex})$)
+  references: [ PmDescRegex ]
 EveningStartEndRegex: !simpleRegex
   def: (^(evening))|((evening)$)
 NightStartEndRegex: !simpleRegex
