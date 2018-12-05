@@ -54,9 +54,11 @@ public class EnglishDateExtractorConfiguration implements IDateExtractorConfigur
             add(RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor4, Pattern.CASE_INSENSITIVE));
             add(RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor5, Pattern.CASE_INSENSITIVE));
             add(RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor6, Pattern.CASE_INSENSITIVE));
-            add(RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor7, Pattern.CASE_INSENSITIVE));
+            add(RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor7L, Pattern.CASE_INSENSITIVE));
+            add(RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor7S, Pattern.CASE_INSENSITIVE));
             add(RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor8, Pattern.CASE_INSENSITIVE));
-            add(RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor9, Pattern.CASE_INSENSITIVE));
+            add(RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor9L, Pattern.CASE_INSENSITIVE));
+            add(RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor9S, Pattern.CASE_INSENSITIVE));
             add(RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractorA, Pattern.CASE_INSENSITIVE));
         }
     };

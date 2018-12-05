@@ -29,7 +29,7 @@ public class EnglishDateTimeExtractorConfiguration extends BaseOptionsConfigurat
     public static final Pattern TimeOfTodayBeforeRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TimeOfTodayBeforeRegex, Pattern.CASE_INSENSITIVE);
     public static final Pattern SimpleTimeOfTodayAfterRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SimpleTimeOfTodayAfterRegex, Pattern.CASE_INSENSITIVE);
     public static final Pattern SimpleTimeOfTodayBeforeRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SimpleTimeOfTodayBeforeRegex, Pattern.CASE_INSENSITIVE);
-    public static final Pattern TheEndOfRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TheEndOfRegex, Pattern.CASE_INSENSITIVE);
+    public static final Pattern TheEndOfRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SpecificEndOfRegex, Pattern.CASE_INSENSITIVE);
     public static final Pattern UnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TimeUnitRegex, Pattern.CASE_INSENSITIVE);
     public static final Pattern ConnectorRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.ConnectorRegex, Pattern.CASE_INSENSITIVE);
     public static final Pattern NumberAsTimeRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.NumberAsTimeRegex, Pattern.CASE_INSENSITIVE);
