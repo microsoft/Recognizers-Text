@@ -7093,6 +7093,30 @@
     ]
   },
   {
+    "Input": "create appointment at 3 p . m .",
+    "Context": {
+      "ReferenceDateTime": "2018-11-30T12:00:00"
+    },
+    "NotSupportedByDesign": "java",
+    "Results":[
+      {
+        "Text": "3 p . m .",
+        "Start": 22,
+        "End": 30,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T15",
+              "type": "time",
+              "value": "15:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
     "Input": "One may ask a question to themselves",
     "Context": {
       "ReferenceDateTime": "2018-12-05T12:00:00"

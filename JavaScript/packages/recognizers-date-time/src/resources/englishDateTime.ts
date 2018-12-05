@@ -24,10 +24,15 @@ export namespace EnglishDateTime {
 	export const ImplicitDayRegex = `(the\\s*)?(?<day>10th|11th|11st|12nd|12th|13rd|13th|14th|15th|16th|17th|18th|19th|1st|20th|21st|21th|22nd|22th|23rd|23th|24th|25th|26th|27th|28th|29th|2nd|30th|31st|3rd|4th|5th|6th|7th|8th|9th)\\b`;
 	export const MonthNumRegex = `(?<month>01|02|03|04|05|06|07|08|09|10|11|12|1|2|3|4|5|6|7|8|9)\\b`;
 	export const CenturyRegex = `\\b(?<century>((one|two)\\s+thousand(\\s+and)?(\\s+(one|two|three|four|five|six|seven|eight|nine)\\s+hundred(\\s+and)?)?)|((twenty one|twenty two|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty)(\\s+hundred)?(\\s+and)?))\\b`;
+	export const CenturyPhraseEndRegex = `\\b(?<century>((one|two)\\s+thousand(\\s+and)?(\\s+(one|two|three|four|five|six|seven|eight|nine)\\s+hundred(\\s+and)?)?)|((twenty one|twenty two|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty)(\\s+hundred)+(\\s+and)?))\\b`;
 	export const WrittenNumRegex = `(one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty|thirty|forty|fourty|fifty|sixty|seventy|eighty|ninety)`;
-	export const FullTextYearRegex = `\\b((?<firsttwoyearnum>${CenturyRegex})\\s+(?<lasttwoyearnum>((zero|twenty|thirty|forty|fourty|fifty|sixty|seventy|eighty|ninety)\\s+${WrittenNumRegex})|${WrittenNumRegex}))\\b|\\b(?<firsttwoyearnum>${CenturyRegex})\\b`;
-	export const AmDescRegex = `(am\\b|a\\.m\\.|a m\\b|a\\. m\\.|a\\.m\\b|a\\. m\\b|a m\\b)`;
-	export const PmDescRegex = `(pm\\b|p\\.m\\.|p\\b|p m\\b|p\\. m\\.|p\\.m\\b|p\\. m\\b|p m\\b)`;
+	export const FullTextYearRegex = `\\b((?<firsttwoyearnum>${CenturyRegex})\\s+(?<lasttwoyearnum>((zero|twenty|thirty|forty|fourty|fifty|sixty|seventy|eighty|ninety)\\s+${WrittenNumRegex})|${WrittenNumRegex}))\\b|\\b(?<firsttwoyearnum>${CenturyPhraseEndRegex})\\b`;
+	export const OclockRegex = `(?<oclock>o\\s*’\\s*clock|o\\s*‘\\s*clock|o\\s*'\\s*clock|o\\s*clock)`;
+	export const SpecialDescRegex = `(p\\b)`;
+	export const AmDescRegex = `(${BaseDateTime.BaseAmDescRegex})`;
+	export const PmDescRegex = `(${BaseDateTime.BasePmDescRegex})`;
+	export const AmPmDescRegex = `(${BaseDateTime.BaseAmPmDescRegex})`;
+	export const DescRegex = `(((${OclockRegex}\\s+)?(?<desc>(${AmPmDescRegex}|${AmDescRegex}|${PmDescRegex}|${SpecialDescRegex})))|${OclockRegex})`;
 	export const TwoDigitYearRegex = `\\b(?<![$])(?<year>([0-27-9]\\d))(?!(\\s*((\\:)|${AmDescRegex}|${PmDescRegex}|\\.\\d)))\\b`;
 	export const YearRegex = `(${BaseDateTime.FourDigitYearRegex}|${FullTextYearRegex})`;
 	export const WeekDayRegex = `\\b(?<weekday>sunday|monday|tuesday|wednesday|thursday|friday|saturday|mon|tues|tue|wedn|weds|wed|thurs|thur|thu|fri|sat|sun)s?\\b`;
@@ -103,8 +108,6 @@ export namespace EnglishDateTime {
 	export const MonthEnd = `${MonthRegex}\\s*(the)?\\s*$`;
 	export const WeekDayEnd = `(this\\s+)?${WeekDayRegex}\\s*,?\\s*$`;
 	export const RangeUnitRegex = `\\b(?<unit>years|year|months|month|weeks|week)\\b`;
-	export const OclockRegex = `(?<oclock>o\\s*’\\s*clock|o\\s*‘\\s*clock|o\\s*'\\s*clock|o\\s*clock)`;
-	export const DescRegex = `(((${OclockRegex}\\s+)?(?<desc>ampm|am\\b|a\\.m\\.|a m\\b|a\\. m\\.|a\\.m\\b|a\\. m\\b|a m\\b|pm\\b|p\\.m\\.|p m\\b|p\\. m\\.|p\\.m\\b|p\\. m\\b|p\\b|p m\\b))|${OclockRegex})`;
 	export const HourNumRegex = `\\b(?<hournum>zero|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve)\\b`;
 	export const MinuteNumRegex = `(?<minnum>one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty|thirty|forty|fifty)`;
 	export const DeltaMinuteNumRegex = `(?<deltaminnum>one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty|thirty|forty|fifty)`;
@@ -201,7 +204,6 @@ export namespace EnglishDateTime {
 	export const LaterRegex = `\\b(later|from now|(from|after) (?<day>tomorrow|tmr|today))\\b`;
 	export const InConnectorRegex = `\\b(in)\\b`;
 	export const WithinNextPrefixRegex = `\\b(within(\\s+the)?(\\s+(?<next>${NextPrefixRegex}))?)\\b`;
-	export const AmPmDescRegex = `(ampm)`;
 	export const MorningStartEndRegex = `(^(morning|${AmDescRegex}))|((morning|${AmDescRegex})$)`;
 	export const AfternoonStartEndRegex = `(^(afternoon|${PmDescRegex}))|((afternoon|${PmDescRegex})$)`;
 	export const EveningStartEndRegex = `(^(evening))|((evening)$)`;
