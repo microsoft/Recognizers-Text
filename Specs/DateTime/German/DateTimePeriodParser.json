@@ -57,7 +57,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "Comment": "Space at the end",
-    "NotSupported": "dotnet, javascript, python",
+    "NotSupported": "dotNet, javascript, python",
     "Results": [
       {
         "Text": "22.4.2016 von 5 bis 6",
@@ -136,7 +136,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "Comment": "Resolution is null",
-    "NotSupported": "dotnet, javascript, python",
+    "NotSupported": "dotNet, javascript, python",
     "Results": [
       {
         "Text": "dienstagabend",
@@ -189,7 +189,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "Comment": "Resolution is null",
-    "NotSupported": "dotnet, javascript, python",
+    "NotSupported": "dotNet, javascript, python",
     "Results": [
       {
         "Text": "dienstagnacht",
@@ -346,7 +346,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "Comment": "Resolution is null",
-    "NotSupported": "dotnet, javascript, python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "diesem vormittag",
@@ -503,7 +503,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "Comment": "Resolution is null",
-    "NotSupported": "dotnet, javascript, python",
+    "NotSupported": "dotNet, javascript, python",
     "Results": [
       {
         "Text": "dienstagmorgen",
@@ -529,7 +529,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet, javascript, python",
+    "NotSupported": "dotNet, javascript, python",
     "Comment": "Resolution is null",
     "Results": [
       {
@@ -557,7 +557,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "Comment": "Resolution is null",
-    "NotSupported": "dotnet, javascript, python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "dienstag am vormittag",

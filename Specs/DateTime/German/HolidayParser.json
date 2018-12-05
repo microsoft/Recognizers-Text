@@ -700,7 +700,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Buß- und Bettag",
@@ -724,7 +724,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Buß- und Bettag 2018",
@@ -1180,7 +1180,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "schweizer Buß- und Bettag",
@@ -1188,7 +1188,7 @@
         "Value": {
           "Timex": "XXXX",
           "FutureResolution": {
-            "date": "2017-09-16"
+            "date": "2017-09-17"
           },
           "PastResolution": {
             "date": "2016-09-18"
@@ -1348,7 +1348,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Vatertag im Jahr 2019",
@@ -1364,6 +1364,30 @@
         },
         "Start": 9,
         "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Wann ist Muttertag im Jahr 2019?",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "Muttertag im Jahr 2019",
+        "Type": "date",
+        "Value": {
+          "Timex": "2019-05-12",
+          "FutureResolution": {
+            "date": "2019-05-12"
+          },
+          "PastResolution": {
+            "date": "2019-05-12"
+          }
+        },
+        "Start": 9,
+        "Length": 22
       }
     ]
   },

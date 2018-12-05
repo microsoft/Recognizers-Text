@@ -61,8 +61,8 @@
   },
   {
     "Input": "Das meeting geht Morgen von 12 bis 14 Uhr.",
-    "Comment": "Returning only time, problem with ambiguity of morgen (morning) and morgen (tomorrow)",
-    "NotSupported": "dotnet, javascript, python",
+    "Comment": "Returning timerange, not datetimerange",
+    "NotSupported": "dotNet, javascript, python",
     "Results": [
       {
         "Text": "Morgen von 12 bis 14 Uhr",
@@ -194,8 +194,8 @@
   },
   {
     "Input": "das ist morgen um 4 Uhr ",
-    "Comment": "Wrong type. Currently returns only time, problem with ambiguity of morgen (morning) and morgen (tomorrow)",
-    "NotSupported": "dotnet, javascript, python",
+    "Comment": "Wrong type. Currently returns time, not datetime.",
+    "NotSupported": "dotNet, javascript, python",
     "Results": [
       {
         "Text": "morgen um 4 uhr",

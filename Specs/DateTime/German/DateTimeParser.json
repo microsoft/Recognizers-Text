@@ -436,7 +436,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "Comment": "Two separate entities extracted. Should be merged into one.",
     "NotSupported": "javascript, python",
     "Results": [
       {
@@ -461,7 +460,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "Comment": "Two separate entities extracted. Should be merged into one.",
     "NotSupported": "javascript, python",
     "Results": [
       {
