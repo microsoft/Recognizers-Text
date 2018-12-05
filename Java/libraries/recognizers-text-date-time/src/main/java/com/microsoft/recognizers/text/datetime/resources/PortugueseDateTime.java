@@ -24,13 +24,20 @@ public class PortugueseDateTime {
 
     public static final String MonthNumRegex = "(?<month>01|02|03|04|05|06|07|08|09|10|11|12|1|2|3|4|5|6|7|8|9)\\b";
 
-    public static final String DescRegex = "(?<desc>pm\\b|am\\b|p\\.m\\.|a\\.m\\.)";
+    public static final String AmDescRegex = "({BaseDateTime.BaseAmDescRegex})"
+            .replace("{BaseDateTime.BaseAmDescRegex}", BaseDateTime.BaseAmDescRegex);
 
-    public static final String AmDescRegex = "(am\\b|a\\.m\\.|a m\\b|a\\. m\\.\\b|a\\.m\\b|a\\. m\\b)";
+    public static final String PmDescRegex = "({BaseDateTime.BasePmDescRegex})"
+            .replace("{BaseDateTime.BasePmDescRegex}", BaseDateTime.BasePmDescRegex);
 
-    public static final String PmDescRegex = "(pm\\b|p\\.m\\.|p\\b|p m\\b|p\\. m\\.\\b|p\\.m\\b|p\\. m\\b)";
+    public static final String AmPmDescRegex = "({BaseDateTime.BaseAmPmDescRegex})"
+            .replace("{BaseDateTime.BaseAmPmDescRegex}", BaseDateTime.BaseAmPmDescRegex);
 
-    public static final String AmPmDescRegex = "(ampm)";
+    public static final String DescRegex = "(?<desc>({AmDescRegex}|{PmDescRegex}))"
+            .replace("{AmDescRegex}", AmDescRegex)
+            .replace("{PmDescRegex}", PmDescRegex);
+
+    public static final String RangePrefixRegex = "((desde|de|da|das|entre)\\s+(a(s)?\\s+)?)";
 
     public static final String TwoDigitYearRegex = "\\b(?<![$])(?<year>([0-27-9]\\d))(?!(\\s*((\\:)|{AmDescRegex}|{PmDescRegex}|\\.\\d)))\\b"
             .replace("{AmDescRegex}", AmDescRegex)
@@ -386,7 +393,11 @@ public class PortugueseDateTime {
             .replace("{HourNumRegex}", HourNumRegex)
             .replace("{BaseDateTime.HourRegex}", BaseDateTime.HourRegex);
 
-    public static final String TheEndOfRegex = "((no|ao)\\s+)?(fi(m|nal)|t[ée]rmin(o|ar))(\\s+d?o(\\s+dia)?(\\s+de)?)?\\s*$";
+    public static final String SpecificEndOfRegex = "((no|ao)\\s+)?(fi(m|nal)|t[ée]rmin(o|ar))(\\s+d?o(\\s+dia)?(\\s+de)?)?\\s*$";
+
+    public static final String UnspecificEndOfRegex = "^[.]";
+
+    public static final String UnspecificEndOfRangeRegex = "^[.]";
 
     public static final String UnitRegex = "(?<unit>anos|ano|meses|m[êe]s|semanas|semana|dias|dia|horas|hora|h|hr|hrs|hs|minutos|minuto|mins|min|segundos|segundo|segs|seg)\\b";
 

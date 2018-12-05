@@ -34,6 +34,8 @@ public class EnglishDateTime {
 
     public static final String ThisPrefixRegex = "(this|current)\\b";
 
+    public static final String RangePrefixRegex = "(from|between)";
+
     public static final String CenturySuffixRegex = "(^century)\\b";
 
     public static final String ReferencePrefixRegex = "(that|same)\\b";
@@ -54,9 +56,25 @@ public class EnglishDateTime {
             .replace("{CenturyRegex}", CenturyRegex)
             .replace("{WrittenNumRegex}", WrittenNumRegex);
 
-    public static final String AmDescRegex = "(am\\b|a\\.m\\.|a m\\b|a\\. m\\.|a\\.m\\b|a\\. m\\b|a m\\b)";
+    public static final String OclockRegex = "(?<oclock>o\\s*’\\s*clock|o\\s*‘\\s*clock|o\\s*'\\s*clock|o\\s*clock)";
 
-    public static final String PmDescRegex = "(pm\\b|p\\.m\\.|p\\b|p m\\b|p\\. m\\.|p\\.m\\b|p\\. m\\b|p m\\b)";
+    public static final String SpecialDescRegex = "(p\\b)";
+
+    public static final String AmDescRegex = "({BaseDateTime.BaseAmDescRegex})"
+            .replace("{BaseDateTime.BaseAmDescRegex}", BaseDateTime.BaseAmDescRegex);
+
+    public static final String PmDescRegex = "({BaseDateTime.BasePmDescRegex})"
+            .replace("{BaseDateTime.BasePmDescRegex}", BaseDateTime.BasePmDescRegex);
+
+    public static final String AmPmDescRegex = "({BaseDateTime.BaseAmPmDescRegex})"
+            .replace("{BaseDateTime.BaseAmPmDescRegex}", BaseDateTime.BaseAmPmDescRegex);
+
+    public static final String DescRegex = "((({OclockRegex}\\s+)?(?<desc>({AmPmDescRegex}|{AmDescRegex}|{PmDescRegex}|{SpecialDescRegex})))|{OclockRegex})"
+            .replace("{OclockRegex}", OclockRegex)
+            .replace("{AmDescRegex}", AmDescRegex)
+            .replace("{PmDescRegex}", PmDescRegex)
+            .replace("{AmPmDescRegex}", AmPmDescRegex)
+            .replace("{SpecialDescRegex}", SpecialDescRegex);
 
     public static final String TwoDigitYearRegex = "\\b(?<![$])(?<year>([0-27-9]\\d))(?!(\\s*((\\:)|{AmDescRegex}|{PmDescRegex}|\\.\\d)))\\b"
             .replace("{AmDescRegex}", AmDescRegex)
@@ -89,17 +107,19 @@ public class EnglishDateTime {
 
     public static final String TokenBeforeTime = "at ";
 
-    public static final String SimpleCasesRegex = "\\b((from|between)\\s+)?({DayRegex})\\s*{TillRegex}\\s*({DayRegex}\\s+{MonthSuffixRegex}|{MonthSuffixRegex}\\s+{DayRegex})((\\s+|\\s*,\\s*){YearRegex})?\\b"
+    public static final String SimpleCasesRegex = "\\b({RangePrefixRegex}\\s+)?({DayRegex})\\s*{TillRegex}\\s*({DayRegex}\\s+{MonthSuffixRegex}|{MonthSuffixRegex}\\s+{DayRegex})((\\s+|\\s*,\\s*){YearRegex})?\\b"
             .replace("{DayRegex}", DayRegex)
             .replace("{TillRegex}", TillRegex)
             .replace("{MonthSuffixRegex}", MonthSuffixRegex)
-            .replace("{YearRegex}", YearRegex);
+            .replace("{YearRegex}", YearRegex)
+            .replace("{RangePrefixRegex}", RangePrefixRegex);
 
-    public static final String MonthFrontSimpleCasesRegex = "\\b((from|between)\\s+)?{MonthSuffixRegex}\\s+((from)\\s+)?({DayRegex})\\s*{TillRegex}\\s*({DayRegex})((\\s+|\\s*,\\s*){YearRegex})?\\b"
+    public static final String MonthFrontSimpleCasesRegex = "\\b({RangePrefixRegex}\\s+)?{MonthSuffixRegex}\\s+((from)\\s+)?({DayRegex})\\s*{TillRegex}\\s*({DayRegex})((\\s+|\\s*,\\s*){YearRegex})?\\b"
             .replace("{MonthSuffixRegex}", MonthSuffixRegex)
             .replace("{DayRegex}", DayRegex)
             .replace("{TillRegex}", TillRegex)
-            .replace("{YearRegex}", YearRegex);
+            .replace("{YearRegex}", YearRegex)
+            .replace("{RangePrefixRegex}", RangePrefixRegex);
 
     public static final String MonthFrontBetweenRegex = "\\b{MonthSuffixRegex}\\s+(between\\s+)({DayRegex})\\s*{RangeConnectorRegex}\\s*({DayRegex})((\\s+|\\s*,\\s*){YearRegex})?\\b"
             .replace("{MonthSuffixRegex}", MonthSuffixRegex)
@@ -126,8 +146,10 @@ public class EnglishDateTime {
             .replace("{BaseDateTime.FourDigitYearRegex}", BaseDateTime.FourDigitYearRegex)
             .replace("{MonthNumRegex}", MonthNumRegex);
 
-    public static final String WeekOfMonthRegex = "\\b(?<wom>(the\\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th|fifth|5th|last)\\s+week\\s+{MonthSuffixRegex})\\b"
-            .replace("{MonthSuffixRegex}", MonthSuffixRegex);
+    public static final String WeekOfMonthRegex = "\\b(?<wom>(the\\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th|fifth|5th|last)\\s+week\\s+{MonthSuffixRegex}(\\s+{BaseDateTime.FourDigitYearRegex}|{RelativeRegex}\\s+year)?)\\b"
+            .replace("{MonthSuffixRegex}", MonthSuffixRegex)
+            .replace("{BaseDateTime.FourDigitYearRegex}", BaseDateTime.FourDigitYearRegex)
+            .replace("{RelativeRegex}", RelativeRegex);
 
     public static final String WeekOfYearRegex = "\\b(?<woy>(the\\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th|fifth|5th|last)\\s+week(\\s+of)?\\s+({YearRegex}|{RelativeRegex}\\s+year))\\b"
             .replace("{YearRegex}", YearRegex)
@@ -213,16 +235,21 @@ public class EnglishDateTime {
 
     public static final String RelaxedOnRegex = "(?<=\\b(on|at|in)\\s+)((?<day>10th|11th|11st|12nd|12th|13rd|13th|14th|15th|16th|17th|18th|19th|1st|20th|21st|21th|22nd|22th|23rd|23th|24th|25th|26th|27th|28th|29th|2nd|30th|31st|3rd|4th|5th|6th|7th|8th|9th)s?)\\b";
 
-    public static final String ThisRegex = "\\b((this(\\s*week)?(\\s*on)?\\s+){WeekDayRegex})|({WeekDayRegex}((\\s+of)?\\s+this\\s*week))\\b"
-            .replace("{WeekDayRegex}", WeekDayRegex);
+    public static final String PrefixWeekDayRegex = "(\\s*((,?\\s*on)|[-—–]))";
 
-    public static final String LastDateRegex = "\\b({PastPrefixRegex}(\\s*week)?\\s+{WeekDayRegex})|({WeekDayRegex}(\\s+last\\s*week))\\b"
+    public static final String ThisRegex = "\\b(this(\\s*week{PrefixWeekDayRegex}?)?\\s*{WeekDayRegex})|({WeekDayRegex}((\\s+of)?\\s+this\\s*week))\\b"
+            .replace("{WeekDayRegex}", WeekDayRegex)
+            .replace("{PrefixWeekDayRegex}", PrefixWeekDayRegex);
+
+    public static final String LastDateRegex = "\\b({PastPrefixRegex}(\\s*week{PrefixWeekDayRegex}?)?\\s*{WeekDayRegex})|({WeekDayRegex}(\\s+last\\s*week))\\b"
             .replace("{PastPrefixRegex}", PastPrefixRegex)
-            .replace("{WeekDayRegex}", WeekDayRegex);
+            .replace("{WeekDayRegex}", WeekDayRegex)
+            .replace("{PrefixWeekDayRegex}", PrefixWeekDayRegex);
 
-    public static final String NextDateRegex = "\\b({NextPrefixRegex}(\\s*week(\\s*,?\\s*on)?)?\\s+{WeekDayRegex})|((on\\s+)?{WeekDayRegex}((\\s+of)?\\s+(the\\s+following|(the\\s+)?next)\\s*week))\\b"
+    public static final String NextDateRegex = "\\b({NextPrefixRegex}(\\s*week{PrefixWeekDayRegex}?)?\\s*{WeekDayRegex})|((on\\s+)?{WeekDayRegex}((\\s+of)?\\s+(the\\s+following|(the\\s+)?next)\\s*week))\\b"
             .replace("{NextPrefixRegex}", NextPrefixRegex)
-            .replace("{WeekDayRegex}", WeekDayRegex);
+            .replace("{WeekDayRegex}", WeekDayRegex)
+            .replace("{PrefixWeekDayRegex}", PrefixWeekDayRegex);
 
     public static final String SpecialDayRegex = "\\b((the\\s+)?day before yesterday|(the\\s+)?day after (tomorrow|tmr)|the\\s+day\\s+(before|after)(?!=\\s+day)|((the\\s+)?({RelativeRegex}|my)\\s+day)|yesterday|tomorrow|tmr|today)\\b"
             .replace("{RelativeRegex}", RelativeRegex);
@@ -280,7 +307,13 @@ public class EnglishDateTime {
             .replace("{WeekDayRegex}", WeekDayRegex)
             .replace("{DatePreposition}", DatePreposition);
 
-    public static final String DateExtractor7 = "\\b({WeekDayRegex}\\s+)?{MonthNumRegex}\\s*/\\s*{DayRegex}((\\s+|\\s*,\\s*|\\s+of\\s+){DateYearRegex})?(?![%])\\b"
+    public static final String DateExtractor7L = "\\b({WeekDayRegex}\\s+)?{MonthNumRegex}\\s*/\\s*{DayRegex}((\\s+|\\s*,\\s*|\\s+of\\s+){DateYearRegex})(?![%])\\b"
+            .replace("{MonthNumRegex}", MonthNumRegex)
+            .replace("{DayRegex}", DayRegex)
+            .replace("{DateYearRegex}", DateYearRegex)
+            .replace("{WeekDayRegex}", WeekDayRegex);
+
+    public static final String DateExtractor7S = "\\b({WeekDayRegex}\\s+)?{MonthNumRegex}\\s*/\\s*{DayRegex}(?![%])\\b"
             .replace("{MonthNumRegex}", MonthNumRegex)
             .replace("{DayRegex}", DayRegex)
             .replace("{DateYearRegex}", DateYearRegex)
@@ -292,7 +325,13 @@ public class EnglishDateTime {
             .replace("{WeekDayRegex}", WeekDayRegex)
             .replace("{DatePreposition}", DatePreposition);
 
-    public static final String DateExtractor9 = "\\b({WeekDayRegex}\\s+)?{DayRegex}\\s*/\\s*{MonthNumRegex}((\\s+|\\s*,\\s*|\\s+of\\s+){DateYearRegex})?(?![%])\\b"
+    public static final String DateExtractor9L = "\\b({WeekDayRegex}\\s+)?{DayRegex}\\s*/\\s*{MonthNumRegex}((\\s+|\\s*,\\s*|\\s+of\\s+){DateYearRegex})(?![%])\\b"
+            .replace("{DayRegex}", DayRegex)
+            .replace("{MonthNumRegex}", MonthNumRegex)
+            .replace("{DateYearRegex}", DateYearRegex)
+            .replace("{WeekDayRegex}", WeekDayRegex);
+
+    public static final String DateExtractor9S = "\\b({WeekDayRegex}\\s+)?{DayRegex}\\s*/\\s*{MonthNumRegex}(?![%])\\b"
             .replace("{DayRegex}", DayRegex)
             .replace("{MonthNumRegex}", MonthNumRegex)
             .replace("{DateYearRegex}", DateYearRegex)
@@ -314,11 +353,6 @@ public class EnglishDateTime {
             .replace("{WeekDayRegex}", WeekDayRegex);
 
     public static final String RangeUnitRegex = "\\b(?<unit>years|year|months|month|weeks|week)\\b";
-
-    public static final String OclockRegex = "(?<oclock>o\\s*’\\s*clock|o\\s*‘\\s*clock|o\\s*'\\s*clock|o\\s*clock)";
-
-    public static final String DescRegex = "((({OclockRegex}\\s+)?(?<desc>ampm|am\\b|a\\.m\\.|a m\\b|a\\. m\\.|a\\.m\\b|a\\. m\\b|a m\\b|pm\\b|p\\.m\\.|p m\\b|p\\. m\\.|p\\.m\\b|p\\. m\\b|p\\b|p m\\b))|{OclockRegex})"
-            .replace("{OclockRegex}", OclockRegex);
 
     public static final String HourNumRegex = "\\b(?<hournum>zero|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve)\\b";
 
@@ -474,13 +508,14 @@ public class EnglishDateTime {
             .replace("{TimeRegexWithDotConnector}", TimeRegexWithDotConnector)
             .replace("{DescRegex}", DescRegex);
 
-    public static final String PureNumFromTo = "((from|between)\\s+)?({HourRegex}|{PeriodHourNumRegex})(\\s*(?<leftDesc>{DescRegex}))?\\s*{TillRegex}\\s*({HourRegex}|{PeriodHourNumRegex})(?<rightDesc>\\s*({PmRegex}|{AmRegex}|{DescRegex}))?"
+    public static final String PureNumFromTo = "({RangePrefixRegex}\\s+)?({HourRegex}|{PeriodHourNumRegex})(\\s*(?<leftDesc>{DescRegex}))?\\s*{TillRegex}\\s*({HourRegex}|{PeriodHourNumRegex})(?<rightDesc>\\s*({PmRegex}|{AmRegex}|{DescRegex}))?"
             .replace("{HourRegex}", HourRegex)
             .replace("{PeriodHourNumRegex}", PeriodHourNumRegex)
             .replace("{DescRegex}", DescRegex)
             .replace("{TillRegex}", TillRegex)
             .replace("{PmRegex}", PmRegex)
-            .replace("{AmRegex}", AmRegex);
+            .replace("{AmRegex}", AmRegex)
+            .replace("{RangePrefixRegex}", RangePrefixRegex);
 
     public static final String PureNumBetweenAnd = "(between\\s+)({HourRegex}|{PeriodHourNumRegex})(\\s*(?<leftDesc>{DescRegex}))?\\s*{RangeConnectorRegex}\\s*({HourRegex}|{PeriodHourNumRegex})(?<rightDesc>\\s*({PmRegex}|{AmRegex}|{DescRegex}))?"
             .replace("{HourRegex}", HourRegex)
@@ -490,7 +525,7 @@ public class EnglishDateTime {
             .replace("{AmRegex}", AmRegex)
             .replace("{RangeConnectorRegex}", RangeConnectorRegex);
 
-    public static final String SpecificTimeFromTo = "((from|between)\\s+)?(?<time1>(({TimeRegex2}|{FirstTimeRegexInTimeRange})|({HourRegex}|{PeriodHourNumRegex})(\\s*(?<leftDesc>{DescRegex}))?))\\s*{TillRegex}\\s*(?<time2>(({TimeRegex2}|{TimeRegexWithDotConnector}(?<rightDesc>\\s*{DescRegex}))|({HourRegex}|{PeriodHourNumRegex})(\\s*(?<rightDesc>{DescRegex}))?))"
+    public static final String SpecificTimeFromTo = "({RangePrefixRegex}\\s+)?(?<time1>(({TimeRegex2}|{FirstTimeRegexInTimeRange})|({HourRegex}|{PeriodHourNumRegex})(\\s*(?<leftDesc>{DescRegex}))?))\\s*{TillRegex}\\s*(?<time2>(({TimeRegex2}|{TimeRegexWithDotConnector}(?<rightDesc>\\s*{DescRegex}))|({HourRegex}|{PeriodHourNumRegex})(\\s*(?<rightDesc>{DescRegex}))?))"
             .replace("{TimeRegex2}", TimeRegex2)
             .replace("{FirstTimeRegexInTimeRange}", FirstTimeRegexInTimeRange)
             .replace("{TimeRegexWithDotConnector}", TimeRegexWithDotConnector)
@@ -499,7 +534,8 @@ public class EnglishDateTime {
             .replace("{PeriodHourNumRegex}", PeriodHourNumRegex)
             .replace("{DescRegex}", DescRegex)
             .replace("{PmRegex}", PmRegex)
-            .replace("{AmRegex}", AmRegex);
+            .replace("{AmRegex}", AmRegex)
+            .replace("{RangePrefixRegex}", RangePrefixRegex);
 
     public static final String SpecificTimeBetweenAnd = "(between\\s+)(?<time1>(({TimeRegex2}|{FirstTimeRegexInTimeRange})|({HourRegex}|{PeriodHourNumRegex})(\\s*(?<leftDesc>{DescRegex}))?))\\s*{RangeConnectorRegex}\\s*(?<time2>(({TimeRegex2}|{TimeRegexWithDotConnector}(?<rightDesc>\\s*{DescRegex}))|({HourRegex}|{PeriodHourNumRegex})(\\s*(?<rightDesc>{DescRegex}))?))"
             .replace("{TimeRegex2}", TimeRegex2)
@@ -554,7 +590,11 @@ public class EnglishDateTime {
             .replace("{HourNumRegex}", HourNumRegex)
             .replace("{BaseDateTime.HourRegex}", BaseDateTime.HourRegex);
 
-    public static final String TheEndOfRegex = "(the\\s+)?end of(\\s+the)?\\s*$";
+    public static final String SpecificEndOfRegex = "(the\\s+)?end of(\\s+the)?\\s*$";
+
+    public static final String UnspecificEndOfRegex = "\\b(the\\s+)?(eod|(end\\s+of\\s+day))\\b";
+
+    public static final String UnspecificEndOfRangeRegex = "\\b(eoy)\\b";
 
     public static final String PeriodTimeOfDayRegex = "\\b((in\\s+(the)?\\s+)?((?<early>early(\\s+|-))|(?<late>late(\\s+|-)))?(?<timeOfDay>morning|afternoon|night|evening))\\b";
 
@@ -587,7 +627,7 @@ public class EnglishDateTime {
 
     public static final String EachDayRegex = "^\\s*(each|every)\\s*day\\b";
 
-    public static final String DurationFollowedUnit = "^\\s*{SuffixAndRegex}?(\\s+|-)?{DurationUnitRegex}"
+    public static final String DurationFollowedUnit = "(^\\s*{DurationUnitRegex}\\s+{SuffixAndRegex})|(^\\s*{SuffixAndRegex}?(\\s+|-)?{DurationUnitRegex})"
             .replace("{SuffixAndRegex}", SuffixAndRegex)
             .replace("{DurationUnitRegex}", DurationUnitRegex);
 
@@ -641,8 +681,6 @@ public class EnglishDateTime {
 
     public static final String WithinNextPrefixRegex = "\\b(within(\\s+the)?(\\s+(?<next>{NextPrefixRegex}))?)\\b"
             .replace("{NextPrefixRegex}", NextPrefixRegex);
-
-    public static final String AmPmDescRegex = "(ampm)";
 
     public static final String MorningStartEndRegex = "(^(morning|{AmDescRegex}))|((morning|{AmDescRegex})$)"
             .replace("{AmDescRegex}", AmDescRegex);
@@ -710,9 +748,10 @@ public class EnglishDateTime {
 
     public static final String OneOnOneRegex = "\\b(1\\s*:\\s*1)|(one (on )?one|one\\s*-\\s*one|one\\s*:\\s*one)\\b";
 
-    public static final String LaterEarlyPeriodRegex = "\\b({PrefixPeriodRegex})\\s*\\b\\s*(?<suffix>{OneWordPeriodRegex})\\b"
+    public static final String LaterEarlyPeriodRegex = "\\b(({PrefixPeriodRegex})\\s*\\b\\s*(?<suffix>{OneWordPeriodRegex})|({UnspecificEndOfRangeRegex}))\\b"
             .replace("{PrefixPeriodRegex}", PrefixPeriodRegex)
-            .replace("{OneWordPeriodRegex}", OneWordPeriodRegex);
+            .replace("{OneWordPeriodRegex}", OneWordPeriodRegex)
+            .replace("{UnspecificEndOfRangeRegex}", UnspecificEndOfRangeRegex);
 
     public static final String WeekWithWeekDayRangeRegex = "\\b((?<week>({NextPrefixRegex}|{PastPrefixRegex}|this)\\s+week)((\\s+between\\s+{WeekDayRegex}\\s+and\\s+{WeekDayRegex})|(\\s+from\\s+{WeekDayRegex}\\s+to\\s+{WeekDayRegex})))\\b"
             .replace("{NextPrefixRegex}", NextPrefixRegex)
