@@ -13,6 +13,12 @@ IllegalYearRegex: !nestedRegex
   references: [ FourDigitYearRegex ]
 RangeConnectorSymbolRegex: !simpleRegex
   def: (--|-|—|——|~|–)
+BaseAmDescRegex: !simpleRegex
+  def: (am\b|a\s*\.\s*m\s*\.|a(\.)?\s*m\b)
+BasePmDescRegex: !simpleRegex
+  def: (pm\b|p\s*\.\s*m\s*\.|p(\.)?\s*m\b)
+BaseAmPmDescRegex: !simpleRegex
+  def: (ampm)
 MinYearNum: 1500
 MaxYearNum: 2100
 MaxTwoDigitYearFutureNum: 30

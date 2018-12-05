@@ -14,6 +14,9 @@ export namespace BaseDateTime {
 	export const FourDigitYearRegex = `\\b(?<![$])(?<year>((1\\d|20)\\d{2})|2100)(?!\\.0\\b)\\b`;
 	export const IllegalYearRegex = `([-])(${FourDigitYearRegex})([-])`;
 	export const RangeConnectorSymbolRegex = `(--|-|—|——|~|–)`;
+	export const BaseAmDescRegex = `(am\\b|a\\s*\\.\\s*m\\s*\\.|a(\\.)?\\s*m\\b)`;
+	export const BasePmDescRegex = `(pm\\b|p\\s*\\.\\s*m\\s*\\.|p(\\.)?\\s*m\\b)`;
+	export const BaseAmPmDescRegex = `(ampm)`;
 	export const MinYearNum = '1500';
 	export const MaxYearNum = '2100';
 	export const MaxTwoDigitYearFutureNum = '30';
