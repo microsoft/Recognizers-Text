@@ -1,4 +1,5 @@
-﻿using System.Collections.Immutable;
+﻿using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Linq;
 using System.Text.RegularExpressions;
 
@@ -13,6 +14,14 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public int MaxYearNum { get; }
 
         public string TokenBeforeDate { get; }
+
+        public IList<string> MonthTermsPadded { get; }
+
+        public IList<string> WeekendTermsPadded { get; }
+
+        public IList<string> WeekTermsPadded { get; }
+
+        public IList<string> YearTermsPadded { get; }
 
         #region internalParsers
 
@@ -118,7 +127,11 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public EnglishDatePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config)
         {
-            TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
+            TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;           
+            MonthTermsPadded = DateTimeDefinitions.MonthTerms.Select(str => $" {str} ").ToList();
+            WeekendTermsPadded = DateTimeDefinitions.WeekendTerms.Select(str => $" {str} ").ToList();
+            WeekTermsPadded = DateTimeDefinitions.WeekTerms.Select(str => $" {str} ").ToList();
+            YearTermsPadded = DateTimeDefinitions.YearTerms.Select(str => $" {str} ").ToList();
             CardinalExtractor = config.CardinalExtractor;
             OrdinalExtractor = config.OrdinalExtractor;
             IntegerExtractor = config.IntegerExtractor;
@@ -238,7 +251,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         {
             var trimmedText = text.Trim().ToLowerInvariant();
             return DateTimeDefinitions.MonthTerms.Any(o => trimmedText.EndsWith(o)) ||
-                   (DateTimeDefinitions.MonthWithSpaceTerms.Any(o => trimmedText.Contains(o)) && AfterNextSuffixRegex.IsMatch(trimmedText));
+                   (MonthTermsPadded.Any(o => trimmedText.Contains(o)) && AfterNextSuffixRegex.IsMatch(trimmedText));
         }
 
         public bool IsMonthToDate(string text)
@@ -251,21 +264,21 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         {
             var trimmedText = text.Trim().ToLowerInvariant();
             return DateTimeDefinitions.WeekendTerms.Any(o => trimmedText.EndsWith(o)) ||
-                   (DateTimeDefinitions.WeekendWithSpaceTerms.Any(o => trimmedText.Contains(o)) && AfterNextSuffixRegex.IsMatch(trimmedText));
+                   (WeekendTermsPadded.Any(o => trimmedText.Contains(o)) && AfterNextSuffixRegex.IsMatch(trimmedText));
         }
 
         public bool IsWeekOnly(string text)
         {
             var trimmedText = text.Trim().ToLowerInvariant();
             return DateTimeDefinitions.WeekTerms.Any(o => trimmedText.EndsWith(o)) ||
-                   (DateTimeDefinitions.WeekWithSpaceTerms.Any(o => trimmedText.Contains(o)) && AfterNextSuffixRegex.IsMatch(trimmedText));
+                   (WeekTermsPadded.Any(o => trimmedText.Contains(o)) && AfterNextSuffixRegex.IsMatch(trimmedText));
         }
 
         public bool IsYearOnly(string text)
         {
             var trimmedText = text.Trim().ToLowerInvariant();
             return DateTimeDefinitions.YearTerms.Any(o => trimmedText.EndsWith(o)) ||
-                   (DateTimeDefinitions.YearWithSpaceTerms.Any(o => trimmedText.Contains(o)) && AfterNextSuffixRegex.IsMatch(trimmedText)) ||
+                   (YearTermsPadded.Any(o => trimmedText.Contains(o)) && AfterNextSuffixRegex.IsMatch(trimmedText)) ||
                    (DateTimeDefinitions.GenericYearTerms.Any(o => trimmedText.EndsWith(o)) && UnspecificEndOfRangeRegex.IsMatch(trimmedText));
         }
 

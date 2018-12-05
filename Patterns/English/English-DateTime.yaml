@@ -1037,10 +1037,6 @@ MonthTerms: !list
   types: [ string ]
   entries:
     - month
-MonthWithSpaceTerms: !list
-  types: [ string ]
-  entries:
-    - ' month '
 MonthToDateTerms: !list
   types: [ string ]
   entries:
@@ -1049,26 +1045,14 @@ WeekendTerms: !list
   types: [ string ]
   entries:
     - weekend
-WeekendWithSpaceTerms: !list
-  types: [ string ]
-  entries:
-    - ' weekend '
 WeekTerms: !list
   types: [ string ]
   entries:
     - week
-WeekWithSpaceTerms: !list
-  types: [ string ]
-  entries:
-    - ' week '
 YearTerms: !list
   types: [ string ]
   entries:
     - year
-YearWithSpaceTerms: !list
-  types: [ string ]
-  entries:
-    - ' year '
 GenericYearTerms: !list
   types: [ string ]
   entries: 
