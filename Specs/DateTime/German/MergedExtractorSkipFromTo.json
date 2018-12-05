@@ -61,8 +61,8 @@
   },
   {
     "Input": "Das meeting geht Morgen von 12 bis 14 Uhr.",
-    "NotSupported": "dotnet,javascript, python",
-    "Comment": "Known issue, low priority as 12 to be recognized as time.",
+    "NotSupported": "dotNet, javascript, python",
+    "Comment": "Known issue, low priority as 12 to be recognized as time. Shouldn't this be datetimerange 'tomorrow 12-14'?",
     "Results": [
       {
         "Text": "Morgen",
