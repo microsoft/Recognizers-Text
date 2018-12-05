@@ -191,7 +191,7 @@ namespace Microsoft.Recognizers.Definitions.English
 		public const string SetEachRegex = @"\b(?<each>(each|(every))\s*)";
 		public const string SetLastRegex = @"(?<last>following|next|upcoming|this|last|past|previous|current)";
 		public const string EachDayRegex = @"^\s*(each|every)\s*day\b";
-		public static readonly string DurationFollowedUnit = $@"^\s*{SuffixAndRegex}?(\s+|-)?{DurationUnitRegex}";
+		public static readonly string DurationFollowedUnit = $@"(^\s*{DurationUnitRegex}\s+{SuffixAndRegex})|(^\s*{SuffixAndRegex}?(\s+|-)?{DurationUnitRegex})";
 		public static readonly string NumberCombinedWithDurationUnit = $@"\b(?<num>\d+(\.\d*)?)(-)?{DurationUnitRegex}";
 		public static readonly string AnUnitRegex = $@"\b((?<half>half\s+)?(an|a)|another)\s+{DurationUnitRegex}";
 		public const string DuringRegex = @"\b(for|during)\s+the\s+(?<unit>year|month|week|day)\b";
