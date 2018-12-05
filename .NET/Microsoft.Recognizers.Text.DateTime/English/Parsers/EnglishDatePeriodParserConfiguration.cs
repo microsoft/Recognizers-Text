@@ -15,13 +15,17 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public string TokenBeforeDate { get; }
 
-        public IList<string> MonthTermsPadded { get; }
+        public static IList<string> MonthTermsPadded = 
+            DateTimeDefinitions.MonthTerms.Select(str => $" {str} ").ToList();
 
-        public IList<string> WeekendTermsPadded { get; }
+        public static IList<string> WeekendTermsPadded = 
+            DateTimeDefinitions.WeekendTerms.Select(str => $" {str} ").ToList();
 
-        public IList<string> WeekTermsPadded { get; }
+        public static IList<string> WeekTermsPadded = 
+            DateTimeDefinitions.WeekTerms.Select(str => $" {str} ").ToList();
 
-        public IList<string> YearTermsPadded { get; }
+        public static IList<string> YearTermsPadded = 
+            DateTimeDefinitions.YearTerms.Select(str => $" {str} ").ToList();
 
         #region internalParsers
 
@@ -128,10 +132,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public EnglishDatePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config)
         {
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;           
-            MonthTermsPadded = DateTimeDefinitions.MonthTerms.Select(str => $" {str} ").ToList();
-            WeekendTermsPadded = DateTimeDefinitions.WeekendTerms.Select(str => $" {str} ").ToList();
-            WeekTermsPadded = DateTimeDefinitions.WeekTerms.Select(str => $" {str} ").ToList();
-            YearTermsPadded = DateTimeDefinitions.YearTerms.Select(str => $" {str} ").ToList();
             CardinalExtractor = config.CardinalExtractor;
             OrdinalExtractor = config.OrdinalExtractor;
             IntegerExtractor = config.IntegerExtractor;
