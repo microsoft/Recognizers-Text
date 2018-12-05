@@ -7,10 +7,13 @@ import com.microsoft.recognizers.text.matcher.StringMatcher;
 import com.microsoft.recognizers.text.utilities.Match;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
 
 public class MatchingUtil {
 
@@ -50,7 +53,7 @@ public class MatchingUtil {
 
     // Temporary solution for remove superfluous words only under the Preview mode
     public static ProcessedSuperfluousWords preProcessTextRemoveSuperfluousWords(String text, StringMatcher matcher) {
-        Iterable<MatchResult<String>> superfluousWordMatches = matcher.find(text);
+        List<MatchResult<String>> superfluousWordMatches = removeSubMatches(matcher.find(text));
         int bias = 0;
 
         for (MatchResult<String> match : superfluousWordMatches) {
@@ -87,5 +90,13 @@ public class MatchingUtil {
 
         return extractResults;
     }
-}
 
+    public static List<MatchResult<String>> removeSubMatches(Iterable<MatchResult<String>> matchResults) {
+
+        return StreamSupport.stream(matchResults.spliterator(), false)
+                .filter(item -> !StreamSupport.stream(matchResults.spliterator(), false)
+                        .anyMatch(ritem -> (ritem.getStart() < item.getStart() && ritem.getEnd() >= item.getEnd()) ||
+                                (ritem.getStart() <= item.getStart() && ritem.getEnd() > item.getEnd())))
+                .collect(Collectors.toCollection(ArrayList::new));
+    }
+}
