@@ -180,7 +180,7 @@ export namespace EnglishDateTime {
 	export const SetEachRegex = `\\b(?<each>(each|(every))\\s*)`;
 	export const SetLastRegex = `(?<last>following|next|upcoming|this|last|past|previous|current)`;
 	export const EachDayRegex = `^\\s*(each|every)\\s*day\\b`;
-	export const DurationFollowedUnit = `^\\s*${SuffixAndRegex}?(\\s+|-)?${DurationUnitRegex}`;
+	export const DurationFollowedUnit = `(^\\s*${DurationUnitRegex}\\s+${SuffixAndRegex})|(^\\s*${SuffixAndRegex}?(\\s+|-)?${DurationUnitRegex})`;
 	export const NumberCombinedWithDurationUnit = `\\b(?<num>\\d+(\\.\\d*)?)(-)?${DurationUnitRegex}`;
 	export const AnUnitRegex = `\\b((?<half>half\\s+)?(an|a)|another)\\s+${DurationUnitRegex}`;
 	export const DuringRegex = `\\b(for|during)\\s+the\\s+(?<unit>year|month|week|day)\\b`;

@@ -132,7 +132,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var ret = new DateTimeResolutionResult();
             var suffixStr = text;
 
-            // if there are spaces between nubmer and unit
+            // if there are spaces between number and unit
             var ers = this.config.CardinalExtractor.Extract(text);
             if (ers.Count == 1)
             {

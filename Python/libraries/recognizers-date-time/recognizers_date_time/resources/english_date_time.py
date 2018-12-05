@@ -181,7 +181,7 @@ class EnglishDateTime:
     SetEachRegex = f'\\b(?<each>(each|(every))\\s*)'
     SetLastRegex = f'(?<last>following|next|upcoming|this|last|past|previous|current)'
     EachDayRegex = f'^\\s*(each|every)\\s*day\\b'
-    DurationFollowedUnit = f'^\\s*{SuffixAndRegex}?(\\s+|-)?{DurationUnitRegex}'
+    DurationFollowedUnit = f'(^\\s*{DurationUnitRegex}\\s+{SuffixAndRegex})|(^\\s*{SuffixAndRegex}?(\\s+|-)?{DurationUnitRegex})'
     NumberCombinedWithDurationUnit = f'\\b(?<num>\\d+(\\.\\d*)?)(-)?{DurationUnitRegex}'
     AnUnitRegex = f'\\b((?<half>half\\s+)?(an|a)|another)\\s+{DurationUnitRegex}'
     DuringRegex = f'\\b(for|during)\\s+the\\s+(?<unit>year|month|week|day)\\b'
