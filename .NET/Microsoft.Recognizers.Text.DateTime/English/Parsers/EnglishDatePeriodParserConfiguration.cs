@@ -1,4 +1,6 @@
-﻿using System.Collections.Immutable;
+﻿using System.Collections.Generic;
+using System.Collections.Immutable;
+using System.Linq;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.English;
@@ -12,6 +14,18 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public int MaxYearNum { get; }
 
         public string TokenBeforeDate { get; }
+
+        public static IList<string> MonthTermsPadded = 
+            DateTimeDefinitions.MonthTerms.Select(str => $" {str} ").ToList();
+
+        public static IList<string> WeekendTermsPadded = 
+            DateTimeDefinitions.WeekendTerms.Select(str => $" {str} ").ToList();
+
+        public static IList<string> WeekTermsPadded = 
+            DateTimeDefinitions.WeekTerms.Select(str => $" {str} ").ToList();
+
+        public static IList<string> YearTermsPadded = 
+            DateTimeDefinitions.YearTerms.Select(str => $" {str} ").ToList();
 
         #region internalParsers
 
@@ -117,7 +131,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public EnglishDatePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config)
         {
-            TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
+            TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;           
             CardinalExtractor = config.CardinalExtractor;
             OrdinalExtractor = config.OrdinalExtractor;
             IntegerExtractor = config.IntegerExtractor;
@@ -224,50 +238,54 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public bool IsFuture(string text)
         {
             var trimmedText = text.Trim().ToLowerInvariant();
-            return (trimmedText.StartsWith("this") || trimmedText.StartsWith("next"));
+            return DateTimeDefinitions.FutureTerms.Any(o => trimmedText.StartsWith(o));
         }
 
         public bool IsLastCardinal(string text)
         {
             var trimmedText = text.Trim().ToLowerInvariant();
-            return trimmedText.Equals("last");
+            return DateTimeDefinitions.LastCardinalTerms.Any(o => trimmedText.Equals(o));
         }
 
         public bool IsMonthOnly(string text)
         {
             var trimmedText = text.Trim().ToLowerInvariant();
-            return trimmedText.EndsWith("month") || trimmedText.Contains(" month ") && AfterNextSuffixRegex.IsMatch(trimmedText);
+            return DateTimeDefinitions.MonthTerms.Any(o => trimmedText.EndsWith(o)) ||
+                   (MonthTermsPadded.Any(o => trimmedText.Contains(o)) && AfterNextSuffixRegex.IsMatch(trimmedText));
         }
 
         public bool IsMonthToDate(string text)
         {
             var trimmedText = text.Trim().ToLowerInvariant();
-            return trimmedText.Equals("month to date");
+            return DateTimeDefinitions.MonthToDateTerms.Any(o => trimmedText.Equals(o));
         }
 
         public bool IsWeekend(string text)
         {
             var trimmedText = text.Trim().ToLowerInvariant();
-            return trimmedText.EndsWith("weekend") || trimmedText.Contains(" weekend ") && AfterNextSuffixRegex.IsMatch(trimmedText);
+            return DateTimeDefinitions.WeekendTerms.Any(o => trimmedText.EndsWith(o)) ||
+                   (WeekendTermsPadded.Any(o => trimmedText.Contains(o)) && AfterNextSuffixRegex.IsMatch(trimmedText));
         }
 
         public bool IsWeekOnly(string text)
         {
             var trimmedText = text.Trim().ToLowerInvariant();
-            return trimmedText.EndsWith("week") || trimmedText.Contains(" week ") && AfterNextSuffixRegex.IsMatch(trimmedText);
+            return DateTimeDefinitions.WeekTerms.Any(o => trimmedText.EndsWith(o)) ||
+                   (WeekTermsPadded.Any(o => trimmedText.Contains(o)) && AfterNextSuffixRegex.IsMatch(trimmedText));
         }
 
         public bool IsYearOnly(string text)
         {
             var trimmedText = text.Trim().ToLowerInvariant();
-            return trimmedText.EndsWith("year") || (trimmedText.Contains(" year ") && AfterNextSuffixRegex.IsMatch(trimmedText))
-                                                || (trimmedText.EndsWith("y") && UnspecificEndOfRangeRegex.IsMatch(trimmedText));
+            return DateTimeDefinitions.YearTerms.Any(o => trimmedText.EndsWith(o)) ||
+                   (YearTermsPadded.Any(o => trimmedText.Contains(o)) && AfterNextSuffixRegex.IsMatch(trimmedText)) ||
+                   (DateTimeDefinitions.GenericYearTerms.Any(o => trimmedText.EndsWith(o)) && UnspecificEndOfRangeRegex.IsMatch(trimmedText));
         }
 
         public bool IsYearToDate(string text)
         {
             var trimmedText = text.Trim().ToLowerInvariant();
-            return trimmedText.Equals("year to date");
+            return DateTimeDefinitions.YearToDateTerms.Any(o => trimmedText.Equals(o));
         }
 
     }

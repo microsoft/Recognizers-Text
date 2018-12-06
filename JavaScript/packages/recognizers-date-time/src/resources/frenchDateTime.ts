@@ -17,10 +17,11 @@ export namespace FrenchDateTime {
 	export const RangePrefixRegex = `(du|de|des|depuis|entre)`;
 	export const DayRegex = `(?<day>01|02|03|04|05|06|07|08|09|10|11|11e|12|12e|13|13e|14|14e|15|15e|16|16e|17|17e|18|18e|19|19e|1er|1|21|21e|20|20e|22|22e|23|23e|24|24e|25|25e|26|26e|27|27e|28|28e|29|29e|2|2e|30|30e|31|31e|3|3e|4|4e|5|5e|6|6e|7|7e|8|8e|9|9e)(?=\\b|t)`;
 	export const MonthNumRegex = `(?<month>01|02|03|04|05|06|07|08|09|10|11|12|1|2|3|4|5|6|7|8|9)\\b`;
-	export const DescRegex = `(?<desc>h|ampm|am\\b|a\\.m\\.|a m\\b|a\\. m\\.|a\\.m\\b|a\\. m\\b|pm\\b|p\\.m\\.|p m\\b|p\\. m\\.|p\\.m\\b|p\\. m\\b|p\\b\\b)`;
-	export const AmDescRegex = `(h|am\\b|a\\.m\\.|a m\\b|a\\. m\\.|a\\.m\\b|a\\. m\\b)`;
-	export const PmDescRegex = `(h|pm\\b|p\\.m\\.|p\\b|p m\\b|p\\. m\\.|p\\.m\\b|p\\. m\\b)`;
-	export const AmPmDescRegex = `(h|ampm)`;
+	export const SpecialDescRegex = `(p\\b)`;
+	export const AmDescRegex = `(h|${BaseDateTime.BaseAmDescRegex})`;
+	export const PmDescRegex = `(h|${BaseDateTime.BasePmDescRegex})`;
+	export const AmPmDescRegex = `(h|${BaseDateTime.BaseAmPmDescRegex})`;
+	export const DescRegex = `(?<desc>${AmPmDescRegex}|${AmDescRegex}|${PmDescRegex}|${SpecialDescRegex})`;
 	export const TwoDigitYearRegex = `\\b(?<![$])(?<year>([0-27-9]\\d))(?!(\\s*((\\:)|${AmDescRegex}|${PmDescRegex}|\\.\\d)))\\b`;
 	export const FullTextYearRegex = `^[\\*]`;
 	export const YearRegex = `(${BaseDateTime.FourDigitYearRegex}|${FullTextYearRegex})`;
@@ -250,4 +251,13 @@ export namespace FrenchDateTime {
 	export const MinusOneDayTerms = [ "hier","dernier" ];
 	export const PlusTwoDayTerms = [ "après demain","après-demain","apres-demain" ];
 	export const MinusTwoDayTerms = [ "avant-hier","avant hier" ];
+	export const FutureStartTerms = [ "cette" ];
+	export const FutureEndTerms = [ "prochaine","prochain" ];
+	export const LastCardinalTerms = [ "dernières","dernière","dernieres","derniere","dernier" ];
+	export const MonthTerms = [ "mois" ];
+	export const MonthToDateTerms = [ "mois à ce jour" ];
+	export const WeekendTerms = [ "fin de semaine","le weekend" ];
+	export const WeekTerms = [ "semaine" ];
+	export const YearTerms = [ "années","ans","l'annees","l'annee" ];
+	export const YearToDateTerms = [ "année à ce jour","an à ce jour" ];
 }

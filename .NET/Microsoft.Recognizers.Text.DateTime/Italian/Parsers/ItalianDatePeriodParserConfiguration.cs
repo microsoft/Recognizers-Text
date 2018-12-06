@@ -1,4 +1,5 @@
 ﻿using System.Collections.Immutable;
+using System.Linq;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.Italian;
@@ -224,55 +225,51 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         public bool IsFuture(string text)
         {
             var trimmedText = text.Trim().ToLowerInvariant();
-            return (
-                trimmedText.StartsWith("cette") ||
-                trimmedText.EndsWith("prochaine") || trimmedText.EndsWith("prochain"));
+            return DateTimeDefinitions.FutureStartTerms.Any(o => trimmedText.StartsWith(o)) ||
+                   DateTimeDefinitions.FutureEndTerms.Any(o => trimmedText.EndsWith(o));
         }
 
         public bool IsLastCardinal(string text)
         {
             var trimmedText = text.Trim().ToLowerInvariant();
-            return (
-                trimmedText.Equals("dernières") || trimmedText.Equals("dernière") ||
-                trimmedText.Equals("dernieres") || trimmedText.Equals("derniere")||trimmedText.Equals("dernier"));
+            return DateTimeDefinitions.LastCardinalTerms.Any(o => trimmedText.Equals(o));
         }
 
         public bool IsMonthOnly(string text)
         {
             var trimmedText = text.Trim().ToLowerInvariant();
-            return trimmedText.EndsWith("mois");
+            return DateTimeDefinitions.MonthTerms.Any(o => trimmedText.EndsWith(o));
         }
 
         public bool IsMonthToDate(string text)
         {
             var trimmedText = text.Trim().ToLowerInvariant();
-            return trimmedText.Equals("mois à ce jour");
+            return DateTimeDefinitions.MonthToDateTerms.Any(o => trimmedText.Equals(o));
         }
 
         public bool IsWeekend(string text)
         {
             var trimmedText = text.Trim().ToLowerInvariant();
-            return (trimmedText.EndsWith("fin de semaine") || trimmedText.EndsWith("le weekend"));
+            return DateTimeDefinitions.WeekendTerms.Any(o => trimmedText.EndsWith(o));
         }
 
         public bool IsWeekOnly(string text)
         {
             var trimmedText = text.Trim().ToLowerInvariant();
-            return (trimmedText.EndsWith("semaine") && !trimmedText.EndsWith("fin de semaine"));
+            return DateTimeDefinitions.WeekTerms.Any(o => trimmedText.EndsWith(o)) &&
+                   !DateTimeDefinitions.WeekendTerms.Any(o => trimmedText.EndsWith(o));
         }
 
         public bool IsYearOnly(string text)
         {
             var trimmedText = text.Trim().ToLowerInvariant();
-            return (trimmedText.EndsWith("années") || trimmedText.EndsWith("ans")
-                || (trimmedText.EndsWith("l'annees") || trimmedText.EndsWith("l'annee"))
-                );
+            return DateTimeDefinitions.YearTerms.Any(o => trimmedText.EndsWith(o));
         }
 
         public bool IsYearToDate(string text)
         {
             var trimmedText = text.Trim().ToLowerInvariant();
-            return (trimmedText.Equals("année à ce jour") || trimmedText.Equals("an à ce jour"));
+            return DateTimeDefinitions.YearToDateTerms.Any(o => trimmedText.Equals(o));
         }
     }
 }

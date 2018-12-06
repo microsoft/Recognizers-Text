@@ -27,8 +27,12 @@ class EnglishDateTime:
     CenturyRegex = f'\\b(?<century>((one|two)\\s+thousand(\\s+and)?(\\s+(one|two|three|four|five|six|seven|eight|nine)\\s+hundred(\\s+and)?)?)|((twenty one|twenty two|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty)(\\s+hundred)?(\\s+and)?))\\b'
     WrittenNumRegex = f'(one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty|thirty|forty|fourty|fifty|sixty|seventy|eighty|ninety)'
     FullTextYearRegex = f'\\b((?<firsttwoyearnum>{CenturyRegex})\\s+(?<lasttwoyearnum>((zero|twenty|thirty|forty|fourty|fifty|sixty|seventy|eighty|ninety)\\s+{WrittenNumRegex})|{WrittenNumRegex}))\\b|\\b(?<firsttwoyearnum>{CenturyRegex})\\b'
-    AmDescRegex = f'(am\\b|a\\.m\\.|a m\\b|a\\. m\\.|a\\.m\\b|a\\. m\\b|a m\\b)'
-    PmDescRegex = f'(pm\\b|p\\.m\\.|p\\b|p m\\b|p\\. m\\.|p\\.m\\b|p\\. m\\b|p m\\b)'
+    OclockRegex = f'(?<oclock>o\\s*’\\s*clock|o\\s*‘\\s*clock|o\\s*\'\\s*clock|o\\s*clock)'
+    SpecialDescRegex = f'(p\\b)'
+    AmDescRegex = f'({BaseDateTime.BaseAmDescRegex})'
+    PmDescRegex = f'({BaseDateTime.BasePmDescRegex})'
+    AmPmDescRegex = f'({BaseDateTime.BaseAmPmDescRegex})'
+    DescRegex = f'((({OclockRegex}\\s+)?(?<desc>({AmPmDescRegex}|{AmDescRegex}|{PmDescRegex}|{SpecialDescRegex})))|{OclockRegex})'
     TwoDigitYearRegex = f'\\b(?<![$])(?<year>([0-27-9]\\d))(?!(\\s*((\\:)|{AmDescRegex}|{PmDescRegex}|\\.\\d)))\\b'
     YearRegex = f'({BaseDateTime.FourDigitYearRegex}|{FullTextYearRegex})'
     WeekDayRegex = f'\\b(?<weekday>sunday|monday|tuesday|wednesday|thursday|friday|saturday|mon|tues|tue|wedn|weds|wed|thurs|thur|thu|fri|sat|sun)s?\\b'
@@ -104,8 +108,6 @@ class EnglishDateTime:
     MonthEnd = f'{MonthRegex}\\s*(the)?\\s*$'
     WeekDayEnd = f'(this\\s+)?{WeekDayRegex}\\s*,?\\s*$'
     RangeUnitRegex = f'\\b(?<unit>years|year|months|month|weeks|week)\\b'
-    OclockRegex = f'(?<oclock>o\\s*’\\s*clock|o\\s*‘\\s*clock|o\\s*\'\\s*clock|o\\s*clock)'
-    DescRegex = f'((({OclockRegex}\\s+)?(?<desc>ampm|am\\b|a\\.m\\.|a m\\b|a\\. m\\.|a\\.m\\b|a\\. m\\b|a m\\b|pm\\b|p\\.m\\.|p m\\b|p\\. m\\.|p\\.m\\b|p\\. m\\b|p\\b|p m\\b))|{OclockRegex})'
     HourNumRegex = f'\\b(?<hournum>zero|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve)\\b'
     MinuteNumRegex = f'(?<minnum>one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty|thirty|forty|fifty)'
     DeltaMinuteNumRegex = f'(?<deltaminnum>one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty|thirty|forty|fifty)'
@@ -181,7 +183,7 @@ class EnglishDateTime:
     SetEachRegex = f'\\b(?<each>(each|(every))\\s*)'
     SetLastRegex = f'(?<last>following|next|upcoming|this|last|past|previous|current)'
     EachDayRegex = f'^\\s*(each|every)\\s*day\\b'
-    DurationFollowedUnit = f'^\\s*{SuffixAndRegex}?(\\s+|-)?{DurationUnitRegex}'
+    DurationFollowedUnit = f'(^\\s*{DurationUnitRegex}\\s+{SuffixAndRegex})|(^\\s*{SuffixAndRegex}?(\\s+|-)?{DurationUnitRegex})'
     NumberCombinedWithDurationUnit = f'\\b(?<num>\\d+(\\.\\d*)?)(-)?{DurationUnitRegex}'
     AnUnitRegex = f'\\b((?<half>half\\s+)?(an|a)|another)\\s+{DurationUnitRegex}'
     DuringRegex = f'\\b(for|during)\\s+the\\s+(?<unit>year|month|week|day)\\b'
@@ -202,7 +204,6 @@ class EnglishDateTime:
     LaterRegex = f'\\b(later|from now|(from|after) (?<day>tomorrow|tmr|today))\\b'
     InConnectorRegex = f'\\b(in)\\b'
     WithinNextPrefixRegex = f'\\b(within(\\s+the)?(\\s+(?<next>{NextPrefixRegex}))?)\\b'
-    AmPmDescRegex = f'(ampm)'
     MorningStartEndRegex = f'(^(morning|{AmDescRegex}))|((morning|{AmDescRegex})$)'
     AfternoonStartEndRegex = f'(^(afternoon|{PmDescRegex}))|((afternoon|{PmDescRegex})$)'
     EveningStartEndRegex = f'(^(evening))|((evening)$)'
@@ -588,4 +589,13 @@ class EnglishDateTime:
     MinusOneDayTerms = ['yesterday', 'day before']
     PlusTwoDayTerms = ['day after tomorrow', 'day after tmr']
     MinusTwoDayTerms = ['day before yesterday']
+    FutureTerms = ['this', 'next']
+    LastCardinalTerms = ['last']
+    MonthTerms = ['month']
+    MonthToDateTerms = ['month to date']
+    WeekendTerms = ['weekend']
+    WeekTerms = ['week']
+    YearTerms = ['year']
+    GenericYearTerms = ['y']
+    YearToDateTerms = ['year to date']
 # pylint: enable=line-too-long

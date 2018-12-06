@@ -10,6 +10,7 @@ package com.microsoft.recognizers.text.numberwithunit.resources;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import com.google.common.collect.ImmutableMap;
 
@@ -107,7 +108,7 @@ public class ChineseNumericWithUnit {
         .put("Grosz", "格罗希")
         .put("Qatari riyal", "卡达里亚尔")
         .put("Saudi riyal", "沙特里亚尔")
-        .put("Riyal", "里亚尔|")
+        .put("Riyal", "里亚尔")
         .put("Dirham", "迪拉姆")
         .put("Halala", "哈拉")
         .put("Samoan tālā", "萨摩亚塔拉")
@@ -176,7 +177,7 @@ public class ChineseNumericWithUnit {
         .put("Ruble", "卢布")
         .put("Algerian dinar", "阿尔及利亚第纳尔")
         .put("Bahraini dinar", "巴林第纳尔")
-        .put("Iraqi dinar", "伊拉克第纳尔|")
+        .put("Iraqi dinar", "伊拉克第纳尔")
         .put("Jordanian dinar", "约旦第纳尔")
         .put("Kuwaiti dinar", "科威特第纳尔|科威特币")
         .put("Libyan dinar", "利比亚第纳尔")
@@ -222,7 +223,7 @@ public class ChineseNumericWithUnit {
         .put("Brunei dollar", "文莱元")
         .put("Singapore dollar", "新加坡元|新元")
         .put("Canadian dollar", "加元|加拿大元")
-        .put("Cayman Islands dollar", "开曼岛元|")
+        .put("Cayman Islands dollar", "开曼岛元")
         .put("New Zealand dollar", "新西兰元|纽元")
         .put("Cook Islands dollar", "库克群岛元")
         .put("Fijian dollar", "斐济元|斐币")

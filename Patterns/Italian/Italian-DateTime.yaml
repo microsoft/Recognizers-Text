@@ -93,15 +93,11 @@ MonthOfRegex: !simpleRegex
   def: (mese)(\s*)(di)
 MonthRegex: !simpleRegex
   def: (?<month>Aprile|Apr|Agosto|Ago|Dicembre|Dic|Febbraio|Feb|Gennaio|Gen|Luglio|Lug|Giugno|Giu|Marzo|Mar|Maggio|Mar|Novembre|Nov|Ottobre|Ott|Settembre|Set)
-AmDescRegex: !simpleRegex
-  def: (am\b|a\.m\.|a m\b|a\. m\.|a\.m\b|a\. m\b|a m\b)
-PmDescRegex: !simpleRegex
-  def: (pm\b|p\.m\.|p\b|p m\b|p\. m\.|p\.m\b|p\. m\b|p m\b)
 #This is a look-behind assertion. Some cases should extract two digits as year like 11/25/16, where 16 means 2016. 
 #The assertion determines if not connected with am/pm or hour separator (:), which should be a time.
 DateYearRegex: !nestedRegex
   def: (?<year>19\d{2}|20\d{2}|(([0-27-9]\d)(?!(\s*((\:)|{AmDescRegex}|{PmDescRegex})))))
-  references: [ DescRegex, AmDescRegex, PmDescRegex ]
+  references: [ AmDescRegex, PmDescRegex ]
 OnRegex: !nestedRegex
   def: (?<=\b(di|su)\s+)({DayRegex}s?)\b
   references: [ DayRegex ]
@@ -188,8 +184,20 @@ WeekDayEnd: !nestedRegex
   references: [ WeekDayRegex ]
 RangeUnitRegex: !simpleRegex
   def: \b(?<unit>l'anno|ann[oi]?|mesi|settimane|settimana)\b
-DescRegex: !simpleRegex
-  def: (?<desc>h|ampm|am\b|a\.m\.|a m\b|a\. m\.|a\.m\b|a\. m\b|pm\b|p\.m\.|p m\b|p\. m\.|p\.m\b|p\. m\b|p\b\b)
+SpecialDescRegex: !simpleRegex
+  def: (p\b)
+AmDescRegex: !nestedRegex
+  def: (h|{BaseDateTime.BaseAmDescRegex})
+  references: [BaseDateTime.BaseAmDescRegex]
+PmDescRegex: !nestedRegex
+  def: (h|{BaseDateTime.BasePmDescRegex})
+  references: [BaseDateTime.BasePmDescRegex]
+AmPmDescRegex: !nestedRegex
+  def: (h|{BaseDateTime.BaseAmPmDescRegex})
+  references: [BaseDateTime.BaseAmPmDescRegex]
+DescRegex: !nestedRegex
+  def: (?<desc>{AmPmDescRegex}|{AmDescRegex}|{PmDescRegex}|{SpecialDescRegex})
+  references: [AmDescRegex, PmDescRegex, AmPmDescRegex, SpecialDescRegex]
 HourNumRegex: !simpleRegex
   def: \b(?<hournum>zero|uno|due|tre|quattro|cinque|sei|sette|otto|nove|dieci|undici|dodici)\b
 MinuteNumRegex: !simpleRegex
@@ -434,12 +442,6 @@ InConnectorRegex: !simpleRegex
 WithinNextPrefixRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
-AmDescRegex: !simpleRegex
-  def: (h|am\b|a\.m\.|a m\b|a\. m\.|a\.m\b|a\. m\b)
-PmDescRegex: !simpleRegex
-  def: (h|pm\b|p\.m\.|p\b|p m\b|p\. m\.|p\.m\b|p\. m\b)
-AmPmDescRegex: !simpleRegex
-  def: (h|ampm)
 MorningStartEndRegex: !simpleRegex
   def: (^(mattin[oa]))|((mattin[oa])$)
 AfternoonStartEndRegex: !simpleRegex
@@ -919,4 +921,51 @@ PlusOneDayTerms: []
 MinusOneDayTerms: []
 PlusTwoDayTerms: []
 MinusTwoDayTerms: []
+# For DatePeriodParserConfiguration Logic
+FutureStartTerms: !list
+  types: [ string ]
+  entries:
+    - cette
+FutureEndTerms: !list
+  types: [ string ]
+  entries:
+    - prochaine
+    - prochain
+LastCardinalTerms: !list
+  types: [ string ]
+  entries:
+    - dernières
+    - dernière
+    - dernieres
+    - derniere
+    - dernier
+MonthTerms: !list
+  types: [ string ]
+  entries:
+    - mois
+MonthToDateTerms: !list
+  types: [ string ]
+  entries:
+    - mois à ce jour
+WeekendTerms: !list
+  types: [ string ]
+  entries:
+    - fin de semaine
+    - le weekend
+WeekTerms: !list
+  types: [ string ]
+  entries:
+    - semaine
+YearTerms: !list
+  types: [ string ]
+  entries:
+    - années
+    - ans
+    - l'annees
+    - l'annee
+YearToDateTerms: !list
+  types: [ string ]
+  entries:
+    - année à ce jour
+    - an à ce jour
 ...

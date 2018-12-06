@@ -10,6 +10,7 @@ package com.microsoft.recognizers.text.numberwithunit.resources;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import com.google.common.collect.ImmutableMap;
 
@@ -131,7 +132,7 @@ public class FrenchNumericWithUnit {
         .put("Sene", "sene")
         .put("Dobra", "dobra|db|std")
         .put("Leone", "leone|sll")
-        .put("Florins Néerlandais", "florins hollandais|florins néerlandais|florins|ang|ƒ|florin|fl |")
+        .put("Florins Néerlandais", "florins hollandais|florins néerlandais|florins|ang|ƒ|florin|fl")
         .put("Lilangeni", "lilangeni|szl")
         .put("Somoni tadjikistan", "somoni tadjikistan|tjs|somoni")
         .put("Diram", "dirams|diram")

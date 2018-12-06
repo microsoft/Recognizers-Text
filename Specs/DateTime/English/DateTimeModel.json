@@ -9333,5 +9333,197 @@
         }
       }
     ]
+  },
+  {
+    "Input": "create appointment at 3 p . m .",
+    "Context": {
+      "ReferenceDateTime": "2018-11-30T12:00:00"
+    },
+    "NotSupportedByDesign": "java",
+    "Results":[
+      {
+        "Text": "3 p . m .",
+        "Start": 22,
+        "End": 30,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T15",
+              "type": "time",
+              "value": "15:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I suppose one hour and half is sufficient to finish the task.",
+    "Context": {
+      "ReferenceDateTime": "2018-12-05T12:00:00"
+    },
+    "NotSupportedByDesign": "java",
+    "Results": [
+      {
+        "Text": "one hour and half",
+        "Start": 10,
+        "End": 26,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT1.5H",
+              "type": "duration",
+              "value": "5400"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I suppose one hour and a half is sufficient to finish the task.",
+    "Context": {
+      "ReferenceDateTime": "2018-12-05T12:00:00"
+    },
+    "NotSupportedByDesign": "java",
+    "Results": [
+      {
+        "Text": "one hour and a half",
+        "Start": 10,
+        "End": 28,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT1.5H",
+              "type": "duration",
+              "value": "5400"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I suppose one and a half hour is sufficient to finish the task.",
+    "Context": {
+      "ReferenceDateTime": "2018-12-05T12:00:00"
+    },
+    "NotSupportedByDesign": "java",
+    "Results": [
+      {
+        "Text": "one and a half hour",
+        "Start": 10,
+        "End": 28,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT1.5H",
+              "type": "duration",
+              "value": "5400"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I suppose one and half hour is sufficient to finish the task.",
+    "Context": {
+      "ReferenceDateTime": "2018-12-05T12:00:00"
+    },
+    "NotSupportedByDesign": "java",
+    "Results": [
+      {
+        "Text": "one and half hour",
+        "Start": 10,
+        "End": 26,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT1.5H",
+              "type": "duration",
+              "value": "5400"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I suppose one and a half hours are sufficient to finish the task.",
+    "Context": {
+      "ReferenceDateTime": "2018-12-05T12:00:00"
+    },
+    "NotSupportedByDesign": "java",
+    "Results": [
+      {
+        "Text": "one and a half hours",
+        "Start": 10,
+        "End": 29,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT1.5H",
+              "type": "duration",
+              "value": "5400"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "He will take a one and a quarter year gap to work as an intern at an Internet company.",
+    "Context": {
+      "ReferenceDateTime": "2018-12-05T12:00:00"
+    },
+    "NotSupportedByDesign": "java",
+    "Results": [
+      {
+        "Text": "one and a quarter year",
+        "Start": 15,
+        "End": 36,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P1.25Y",
+              "type": "duration",
+              "value": "39420000"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "He will take a one year and a quarter gap to work as an intern at an Internet company.",
+    "Context": {
+      "ReferenceDateTime": "2018-12-05T12:00:00"
+    },
+    "NotSupportedByDesign": "java",
+    "Results": [
+      {
+        "Text": "one year and a quarter",
+        "Start": 15,
+        "End": 36,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P1.25Y",
+              "type": "duration",
+              "value": "39420000"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
