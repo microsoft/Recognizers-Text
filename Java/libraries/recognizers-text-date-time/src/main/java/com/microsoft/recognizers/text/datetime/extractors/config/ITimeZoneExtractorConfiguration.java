@@ -11,7 +11,7 @@ public interface ITimeZoneExtractorConfiguration extends IOptionsConfiguration {
 
     Pattern getLocationTimeSuffixRegex();
 
-    StringMatcher getCityMatcher();
+    StringMatcher getLocationMatcher();
 
     List<String> getAmbiguousTimezoneList();
 }
