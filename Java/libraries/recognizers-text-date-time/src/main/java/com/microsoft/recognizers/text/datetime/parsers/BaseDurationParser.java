@@ -212,7 +212,7 @@ public class BaseDurationParser implements IDateTimeParser {
             }
 
             if (match.isPresent() && !StringUtility.isNullOrEmpty(match.get().getGroup(Constants.BusinessDayGroupName).value)) {
-                int numVal = Integer.parseInt(pr.value.toString());
+                int numVal = Math.round(Double.valueOf(pr.value.toString()).floatValue());
 
                 String timex = TimexUtility.generateDurationTimex(numVal, Constants.TimexBusinessDay, false);
                 double timeValue = numVal * config.getUnitValueMap().get(srcUnit.split(" ")[1]);
@@ -225,7 +225,7 @@ public class BaseDurationParser implements IDateTimeParser {
             }
 
             if (config.getUnitMap().containsKey(srcUnit)) {
-                Double numVal = Double.parseDouble(pr.value.toString()) + parseNumberWithUnitAndSuffix(suffixStr);
+                double numVal = Double.parseDouble(pr.value.toString()) + parseNumberWithUnitAndSuffix(suffixStr);
 
                 String unitStr = config.getUnitMap().get(srcUnit);
 

@@ -551,7 +551,7 @@ public class BaseDateParser implements IDateTimeParser {
         }
         
         Object numberParsed = this.config.getNumberParser().parse(er.get(0)).value;
-        day = Integer.parseInt(numberParsed != null ? numberParsed.toString() : "0");
+        day = Math.round(((Double)numberParsed).floatValue());
 
         int month = referenceDate.getMonthValue();
         int year = referenceDate.getYear();

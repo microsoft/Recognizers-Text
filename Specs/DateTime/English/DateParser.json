@@ -1556,7 +1556,6 @@
   },
   {
     "Input": "I went back for the second",
-    "NotSupported": "java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -1580,7 +1579,6 @@
   },
   {
     "Input": "I went back for the twenty second",
-    "NotSupported": "java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -1604,7 +1602,6 @@
   },
   {
     "Input": "I went back for the thirty",
-    "NotSupported": "java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -2803,7 +2800,7 @@
     "Context": {
       "ReferenceDateTime": "2018-07-05T00:00:00"
     },
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "in 3 weeks",
@@ -2827,7 +2824,7 @@
     "Context": {
       "ReferenceDateTime": "2018-08-21T08:00:00"
     },
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "in four business days",
