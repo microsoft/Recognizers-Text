@@ -24,13 +24,20 @@ public class SpanishDateTime {
 
     public static final String MonthNumRegex = "(?<month>01|02|03|04|05|06|07|08|09|10|11|12|1|2|3|4|5|6|7|8|9)\\b";
 
-    public static final String DescRegex = "(?<desc>pm\\b|am\\b|p\\.m\\.|a\\.m\\.)";
+    public static final String AmDescRegex = "({BaseDateTime.BaseAmDescRegex})"
+            .replace("{BaseDateTime.BaseAmDescRegex}", BaseDateTime.BaseAmDescRegex);
 
-    public static final String AmDescRegex = "(am\\b|a\\.m\\.|a m\\b|a\\. m\\.\\b|a\\.m\\b|a\\. m\\b)";
+    public static final String PmDescRegex = "({BaseDateTime.BasePmDescRegex})"
+            .replace("{BaseDateTime.BasePmDescRegex}", BaseDateTime.BasePmDescRegex);
 
-    public static final String PmDescRegex = "(pm\\b|p\\.m\\.|p\\b|p m\\b|p\\. m\\.\\b|p\\.m\\b|p\\. m\\b)";
+    public static final String AmPmDescRegex = "({BaseDateTime.BaseAmPmDescRegex})"
+            .replace("{BaseDateTime.BaseAmPmDescRegex}", BaseDateTime.BaseAmPmDescRegex);
 
-    public static final String AmPmDescRegex = "(ampm)";
+    public static final String DescRegex = "(?<desc>({AmDescRegex}|{PmDescRegex}))"
+            .replace("{AmDescRegex}", AmDescRegex)
+            .replace("{PmDescRegex}", PmDescRegex);
+
+    public static final String RangePrefixRegex = "((desde|de|entre)\\s+(la(s)?\\s+)?)";
 
     public static final String TwoDigitYearRegex = "\\b(?<![$])(?<year>([0-27-9]\\d))(?!(\\s*((\\:)|{AmDescRegex}|{PmDescRegex}|\\.\\d)))\\b"
             .replace("{AmDescRegex}", AmDescRegex)
@@ -44,7 +51,7 @@ public class SpanishDateTime {
 
     public static final String RelativeMonthRegex = "(?<relmonth>(este|pr[oó]ximo|[uú]ltimo)\\s+mes)\\b";
 
-    public static final String MonthRegex = "(?<month>abril|abr|agosto|ago|diciembre|dic|febrero|feb|enero|ene|julio|jul|junio|jun|marzo|mar|mayo|may|noviembre|nov|octubre|oct|septiembre|setiembre|sept|set)";
+    public static final String MonthRegex = "\\b(?<month>abril|abr|agosto|ago|diciembre|dic|febrero|feb|enero|ene|julio|jul|junio|jun|marzo|mar|mayo|may|noviembre|nov|octubre|oct|septiembre|setiembre|sept|set)\\b";
 
     public static final String MonthSuffixRegex = "(?<msuf>(en\\s+|del\\s+|de\\s+)?({RelativeMonthRegex}|{MonthRegex}))"
             .replace("{RelativeMonthRegex}", RelativeMonthRegex)
@@ -355,7 +362,7 @@ public class SpanishDateTime {
             .replace("{BaseDateTime.MinuteRegex}", BaseDateTime.MinuteRegex)
             .replace("{DescRegex}", DescRegex);
 
-    public static final String PrepositionRegex = "(?<prep>(a(l)?|en|de(l)?)?(\\s*(la(s)?|el|los))?$)";
+    public static final String PrepositionRegex = "\\b(?<prep>(a(l)?|en|de(l)?)?(\\s*(la(s)?|el|los))?$)\\b";
 
     public static final String NowRegex = "\\b(?<now>(justo\\s+)?ahora(\\s+mismo)?|en\\s+este\\s+momento|tan\\s+pronto\\s+como\\s+sea\\s+posible|tan\\s+pronto\\s+como\\s+(pueda|puedas|podamos|puedan)|lo\\s+m[aá]s\\s+pronto\\s+posible|recientemente|previamente)\\b";
 
@@ -382,7 +389,11 @@ public class SpanishDateTime {
             .replace("{HourNumRegex}", HourNumRegex)
             .replace("{BaseDateTime.HourRegex}", BaseDateTime.HourRegex);
 
-    public static final String TheEndOfRegex = "((a|e)l\\s+)?fin(alizar|al)?(\\s+(el|de(l)?)(\\s+d[ií]a)?(\\s+de)?)?\\s*$";
+    public static final String SpecificEndOfRegex = "((a|e)l\\s+)?fin(alizar|al)?(\\s+(el|de(l)?)(\\s+d[ií]a)?(\\s+de)?)?\\s*$";
+
+    public static final String UnspecificEndOfRegex = "^[.]";
+
+    public static final String UnspecificEndOfRangeRegex = "^[.]";
 
     public static final String UnitRegex = "(?<unit>años|año|meses|mes|semanas|semana|d[ií]as|d[ií]a|horas|hora|h|hr|hrs|hs|minutos|minuto|mins|min|segundos|segundo|segs|seg)\\b";
 

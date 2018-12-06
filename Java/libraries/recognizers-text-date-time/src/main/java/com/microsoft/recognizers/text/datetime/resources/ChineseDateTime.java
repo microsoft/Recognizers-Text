@@ -224,9 +224,9 @@ public class ChineseDateTime {
             .replace("{DatePeriodTillSuffixRequiredRegex}", DatePeriodTillSuffixRequiredRegex)
             .replace("{DateRangePrepositions}", DateRangePrepositions);
 
-    public static final String PastRegex = "(?<past>(前|上|之前|近|过去))";
+    public static final String PastRegex = "(?<past>(之前|前|上|近|过去))";
 
-    public static final String FutureRegex = "(?<future>(后|後|(?<![一两几]\\s*)下|之后|之後|未来(的)?))";
+    public static final String FutureRegex = "(?<future>(之后|之後|后|後|(?<![一两几]\\s*)下|未来(的)?))";
 
     public static final String SeasonRegex = "(?<season>春|夏|秋|冬)(天|季)?";
 

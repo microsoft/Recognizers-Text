@@ -51,9 +51,7 @@ build_script:
 
     cd ..\java\
 
-    CALL mvn -v
-
-    mvn package
+    build.ci.cmd
 
 # disable automatic tests
 test: off
