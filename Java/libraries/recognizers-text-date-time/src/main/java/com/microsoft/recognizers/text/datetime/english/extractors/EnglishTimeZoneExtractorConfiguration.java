@@ -28,7 +28,7 @@ public class EnglishTimeZoneExtractorConfiguration extends BaseOptionsConfigurat
         }
     };
 
-    public static final StringMatcher CityMatcher = new StringMatcher();
+    public static final StringMatcher LocationMatcher = new StringMatcher();
 
     public static final List<String> AmbiguousTimezoneList = EnglishTimeZone.AmbiguousTimezoneList;
 
@@ -41,7 +41,7 @@ public class EnglishTimeZoneExtractorConfiguration extends BaseOptionsConfigurat
         super(options);
 
         if (options.match(DateTimeOptions.EnablePreview)) {
-            CityMatcher.init(
+            LocationMatcher.init(
                     EnglishTimeZone.MajorLocations.stream()
                             .map(o -> QueryProcessor.removeDiacritics(o.toLowerCase()))
                             .collect(Collectors.toCollection(ArrayList::new)));
@@ -59,8 +59,8 @@ public class EnglishTimeZoneExtractorConfiguration extends BaseOptionsConfigurat
     }
 
     @Override
-    public StringMatcher getCityMatcher() {
-        return CityMatcher;
+    public StringMatcher getLocationMatcher() {
+        return LocationMatcher;
     }
 
     @Override
