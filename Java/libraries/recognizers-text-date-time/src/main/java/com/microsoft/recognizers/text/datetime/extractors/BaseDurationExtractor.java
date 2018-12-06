@@ -160,7 +160,7 @@ public class BaseDurationExtractor implements IDateTimeExtractor {
                         totalUnit++;
 
                         if (DurationParsingUtil.isTimeDurationUnit(unitMap.get(nextUnitStr))) {
-                            totalUnit++;
+                            timeUnit++;
                         }
                     }
                 }
