@@ -589,4 +589,13 @@ class EnglishDateTime:
     MinusOneDayTerms = ['yesterday', 'day before']
     PlusTwoDayTerms = ['day after tomorrow', 'day after tmr']
     MinusTwoDayTerms = ['day before yesterday']
+    FutureTerms = ['this', 'next']
+    LastCardinalTerms = ['last']
+    MonthTerms = ['month']
+    MonthToDateTerms = ['month to date']
+    WeekendTerms = ['weekend']
+    WeekTerms = ['week']
+    YearTerms = ['year']
+    GenericYearTerms = ['y']
+    YearToDateTerms = ['year to date']
 # pylint: enable=line-too-long

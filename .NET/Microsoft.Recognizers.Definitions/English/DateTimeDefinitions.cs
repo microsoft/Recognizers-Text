@@ -680,5 +680,42 @@ namespace Microsoft.Recognizers.Definitions.English
 		{
 			"day before yesterday"
 		};
+		public static readonly IList<string> FutureTerms = new List<string>
+		{
+			"this",
+			"next"
+		};
+		public static readonly IList<string> LastCardinalTerms = new List<string>
+		{
+			"last"
+		};
+		public static readonly IList<string> MonthTerms = new List<string>
+		{
+			"month"
+		};
+		public static readonly IList<string> MonthToDateTerms = new List<string>
+		{
+			"month to date"
+		};
+		public static readonly IList<string> WeekendTerms = new List<string>
+		{
+			"weekend"
+		};
+		public static readonly IList<string> WeekTerms = new List<string>
+		{
+			"week"
+		};
+		public static readonly IList<string> YearTerms = new List<string>
+		{
+			"year"
+		};
+		public static readonly IList<string> GenericYearTerms = new List<string>
+		{
+			"y"
+		};
+		public static readonly IList<string> YearToDateTerms = new List<string>
+		{
+			"year to date"
+		};
 	}
 }
