@@ -29,6 +29,12 @@ public class BaseDateTime {
 
     public static final String RangeConnectorSymbolRegex = "(--|-|—|——|~|–)";
 
+    public static final String BaseAmDescRegex = "(am\\b|a\\s*\\.\\s*m\\s*\\.|a(\\.)?\\s*m\\b)";
+
+    public static final String BasePmDescRegex = "(pm\\b|p\\s*\\.\\s*m\\s*\\.|p(\\.)?\\s*m\\b)";
+
+    public static final String BaseAmPmDescRegex = "(ampm)";
+
     public static final int MinYearNum = 1500;
 
     public static final int MaxYearNum = 2100;
