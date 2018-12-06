@@ -3,6 +3,7 @@ package com.microsoft.recognizers.text.datetime.utilities;
 import com.google.common.collect.ImmutableMap;
 import com.microsoft.recognizers.text.datetime.Constants;
 import com.microsoft.recognizers.text.datetime.DatePeriodTimexType;
+import com.microsoft.recognizers.text.utilities.StringUtility;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -93,5 +94,23 @@ public class TimexUtility {
     private static String getDurationTimexWithoutPrefix(String timex) {
         // Remove "PT" prefix for TimeDuration, Remove "P" prefix for DateDuration
         return timex.substring(isTimeDurationTimex(timex) ? 2 : 1);
+    }
+
+    public static String generateDurationTimex(double number, String unitStr, boolean isLessThanDay) {
+        if (!Constants.TimexBusinessDay.equals(unitStr)) {
+            if (Constants.DECADE_UNIT.equals(unitStr)) {
+                number = number * 10;
+                unitStr = Constants.TimexYear;
+
+            } else {
+                unitStr = unitStr.substring(0, 1);
+            }
+        }
+
+        return  String.format("%s%s%s%s",
+                Constants.GeneralPeriodPrefix,
+                isLessThanDay ? Constants.TimeTimexPrefix : "",
+                StringUtility.format(number),
+                unitStr);
     }
 }
