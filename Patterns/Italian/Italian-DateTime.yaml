@@ -921,4 +921,51 @@ PlusOneDayTerms: []
 MinusOneDayTerms: []
 PlusTwoDayTerms: []
 MinusTwoDayTerms: []
+# For DatePeriodParserConfiguration Logic
+FutureStartTerms: !list
+  types: [ string ]
+  entries:
+    - cette
+FutureEndTerms: !list
+  types: [ string ]
+  entries:
+    - prochaine
+    - prochain
+LastCardinalTerms: !list
+  types: [ string ]
+  entries:
+    - dernières
+    - dernière
+    - dernieres
+    - derniere
+    - dernier
+MonthTerms: !list
+  types: [ string ]
+  entries:
+    - mois
+MonthToDateTerms: !list
+  types: [ string ]
+  entries:
+    - mois à ce jour
+WeekendTerms: !list
+  types: [ string ]
+  entries:
+    - fin de semaine
+    - le weekend
+WeekTerms: !list
+  types: [ string ]
+  entries:
+    - semaine
+YearTerms: !list
+  types: [ string ]
+  entries:
+    - années
+    - ans
+    - l'annees
+    - l'annee
+YearToDateTerms: !list
+  types: [ string ]
+  entries:
+    - année à ce jour
+    - an à ce jour
 ...

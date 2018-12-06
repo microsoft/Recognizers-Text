@@ -1,4 +1,5 @@
 ﻿using System.Collections.Immutable;
+using System.Linq;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.Portuguese;
@@ -230,38 +231,38 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         public bool IsMonthOnly(string text)
         {
             var trimmedText = text.Trim().ToLowerInvariant().Normalized();
-            return (trimmedText.EndsWith("mes") || trimmedText.EndsWith("meses"));
+            return DateTimeDefinitions.MonthTerms.Any(o => trimmedText.EndsWith(o));
         }
 
         public bool IsMonthToDate(string text)
         {
             var trimmedText = text.Trim().ToLowerInvariant().Normalized();
-            return (trimmedText.Equals("mes ate agora") || trimmedText.Equals("mes ate hoje") || trimmedText.Equals("mes ate a data"));
+            return DateTimeDefinitions.MonthToDateTerms.Any(o => trimmedText.Equals(o));
         }
 
         public bool IsWeekend(string text)
         {
             var trimmedText = text.Trim().ToLowerInvariant();
-            return trimmedText.EndsWith("fim de semana");
+            return DateTimeDefinitions.WeekendTerms.Any(o => trimmedText.EndsWith(o));
         }
 
         public bool IsWeekOnly(string text)
         {
             var trimmedText = text.Trim().ToLowerInvariant();
-            return (trimmedText.EndsWith("semana") && !trimmedText.EndsWith("fim de semana"));
+            return DateTimeDefinitions.WeekTerms.Any(o => trimmedText.EndsWith(o)) &&
+                   !DateTimeDefinitions.WeekendTerms.Any(o => trimmedText.EndsWith(o));
         }
 
         public bool IsYearOnly(string text)
         {
             var trimmedText = text.Trim().ToLowerInvariant();
-            return (trimmedText.EndsWith("ano") || trimmedText.EndsWith("anos"));
+            return DateTimeDefinitions.YearTerms.Any(o => trimmedText.EndsWith(o));
         }
 
         public bool IsYearToDate(string text)
         {
             var trimmedText = text.Trim().ToLowerInvariant().Normalized();
-            return (trimmedText.Equals("ano ate agora") || trimmedText.Equals("ano ate hoje") || trimmedText.Equals("ano ate a data") ||
-                    trimmedText.Equals("anos ate agora") || trimmedText.Equals("anos ate hoje") || trimmedText.Equals("anos ate a data"));
+            return DateTimeDefinitions.YearToDateTerms.Any(o => trimmedText.Equals(o));
         }
     }
 }

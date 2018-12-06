@@ -251,4 +251,13 @@ export namespace FrenchDateTime {
 	export const MinusOneDayTerms = [ "hier","dernier" ];
 	export const PlusTwoDayTerms = [ "après demain","après-demain","apres-demain" ];
 	export const MinusTwoDayTerms = [ "avant-hier","avant hier" ];
+	export const FutureStartTerms = [ "cette" ];
+	export const FutureEndTerms = [ "prochaine","prochain" ];
+	export const LastCardinalTerms = [ "dernières","dernière","dernieres","derniere","dernier" ];
+	export const MonthTerms = [ "mois" ];
+	export const MonthToDateTerms = [ "mois à ce jour" ];
+	export const WeekendTerms = [ "fin de semaine","le weekend" ];
+	export const WeekTerms = [ "semaine" ];
+	export const YearTerms = [ "années","ans","l'annees","l'annee" ];
+	export const YearToDateTerms = [ "année à ce jour","an à ce jour" ];
 }

@@ -742,5 +742,53 @@ namespace Microsoft.Recognizers.Definitions.German
 		{
 			"vorgestern"
 		};
+		public static readonly IList<string> FutureTerms = new List<string>
+		{
+			"dieser",
+			"diesen",
+			"dieses",
+			"diese",
+			"nächster",
+			"nächstes",
+			"nächsten",
+			"nächste"
+		};
+		public static readonly IList<string> LastCardinalTerms = new List<string>
+		{
+			"letzter",
+			"letztes",
+			"letzten"
+		};
+		public static readonly IList<string> MonthTerms = new List<string>
+		{
+			"monat",
+			"monate",
+			"monaten",
+			"monats"
+		};
+		public static readonly IList<string> MonthToDateTerms = new List<string>
+		{
+			"month to date"
+		};
+		public static readonly IList<string> WeekendTerms = new List<string>
+		{
+			"wochenende",
+			"wochenendes"
+		};
+		public static readonly IList<string> WeekTerms = new List<string>
+		{
+			"woche"
+		};
+		public static readonly IList<string> YearTerms = new List<string>
+		{
+			"jahr",
+			"jahre",
+			"jahren",
+			"jahres"
+		};
+		public static readonly IList<string> YearToDateTerms = new List<string>
+		{
+			"year to date"
+		};
 	}
 }

@@ -448,4 +448,10 @@ class PortugueseDateTime:
     MinusOneDayTerms = ['ontem', 'ultimo dia']
     PlusTwoDayTerms = ['depois de amanha', 'dia depois de amanha']
     MinusTwoDayTerms = ['anteontem', 'dia antes de ontem']
+    MonthTerms = ['mes', 'meses']
+    MonthToDateTerms = ['mes ate agora', 'mes ate hoje', 'mes ate a data']
+    WeekendTerms = ['fim de semana']
+    WeekTerms = ['semana']
+    YearTerms = ['ano', 'anos']
+    YearToDateTerms = ['ano ate agora', 'ano ate hoje', 'ano ate a data', 'anos ate agora', 'anos ate hoje', 'anos ate a data']
 # pylint: enable=line-too-long

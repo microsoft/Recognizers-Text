@@ -1029,4 +1029,42 @@ MinusTwoDayTerms: !list
   types: [ string ]
   entries: 
     - day before yesterday
+# For DatePeriodParserConfiguration Logic
+FutureTerms: !list
+  types: [ string ]
+  entries:
+    - this
+    - next
+LastCardinalTerms: !list
+  types: [ string ]
+  entries:
+    - last
+MonthTerms: !list
+  types: [ string ]
+  entries:
+    - month
+MonthToDateTerms: !list
+  types: [ string ]
+  entries:
+    - month to date
+WeekendTerms: !list
+  types: [ string ]
+  entries:
+    - weekend
+WeekTerms: !list
+  types: [ string ]
+  entries:
+    - week
+YearTerms: !list
+  types: [ string ]
+  entries:
+    - year
+GenericYearTerms: !list
+  types: [ string ]
+  entries: 
+    - y
+YearToDateTerms: !list
+  types: [ string ]
+  entries:
+    - year to date
 ...

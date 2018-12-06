@@ -540,5 +540,38 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
 			"anteontem",
 			"dia antes de ontem"
 		};
+		public static readonly IList<string> MonthTerms = new List<string>
+		{
+			"mes",
+			"meses"
+		};
+		public static readonly IList<string> MonthToDateTerms = new List<string>
+		{
+			"mes ate agora",
+			"mes ate hoje",
+			"mes ate a data"
+		};
+		public static readonly IList<string> WeekendTerms = new List<string>
+		{
+			"fim de semana"
+		};
+		public static readonly IList<string> WeekTerms = new List<string>
+		{
+			"semana"
+		};
+		public static readonly IList<string> YearTerms = new List<string>
+		{
+			"ano",
+			"anos"
+		};
+		public static readonly IList<string> YearToDateTerms = new List<string>
+		{
+			"ano ate agora",
+			"ano ate hoje",
+			"ano ate a data",
+			"anos ate agora",
+			"anos ate hoje",
+			"anos ate a data"
+		};
 	}
 }

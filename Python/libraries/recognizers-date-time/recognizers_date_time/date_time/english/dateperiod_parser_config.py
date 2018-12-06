@@ -221,32 +221,33 @@ class EnglishDatePeriodParserConfiguration(DatePeriodParserConfiguration):
 
     def is_future(self, source: str) -> bool:
         trimmed_source = source.strip().lower()
-        return trimmed_source.startswith('this') or trimmed_source.startswith('next')
+        return any(trimmed_source.startswith(o) for o in EnglishDateTime.FutureTerms)
 
     def is_year_to_date(self, source: str) -> bool:
         trimmed_source = source.strip().lower()
-        return trimmed_source == 'year to date'
+        return any(trimmed_source == o for o in EnglishDateTime.YearToDateTerms)
 
     def is_month_to_date(self, source: str) -> bool:
         trimmed_source = source.strip().lower()
-        return trimmed_source == 'month to date'
+        return any(trimmed_source == o for o in EnglishDateTime.MonthToDateTerms)
 
     def is_week_only(self, source: str) -> bool:
         trimmed_source = source.strip().lower()
-        return trimmed_source.endswith('week')
+        return any(trimmed_source.endswith(o) for o in EnglishDateTime.WeekTerms)
 
     def is_weekend(self, source: str) -> bool:
         trimmed_source = source.strip().lower()
-        return trimmed_source.endswith('weekend')
+        return any(trimmed_source.endswith(o) for o in EnglishDateTime.WeekendTerms)
 
     def is_month_only(self, source: str) -> bool:
         trimmed_source = source.strip().lower()
-        return trimmed_source.endswith('month')
+        return any(trimmed_source.endswith(o) for o in EnglishDateTime.MonthTerms)
 
     def is_last_cardinal(self, source: str) -> bool:
         trimmed_source = source.strip().lower()
-        return trimmed_source == 'last'
+        return any(trimmed_source == o for o in EnglishDateTime.LastCardinalTerms)
 
     def is_year_only(self, source: str) -> bool:
         trimmed_source = source.strip().lower()
-        return trimmed_source.endswith('year') or (trimmed_source.endswith('y') and self.unspecific_end_of_range_regex.match(trimmed_source))
+        return any(trimmed_source.endswith(o) for o in EnglishDateTime.YearTerms) or\
+               (any(trimmed_source.endswith(o) for o in EnglishDateTime.GenericYearTerms) and self.unspecific_end_of_range_regex.match(trimmed_source))
