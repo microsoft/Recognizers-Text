@@ -33,6 +33,17 @@
     ]
   },
   {
+    "Input": "I'll leave for 3.5 years",
+    "Results": [
+      {
+        "Text": "3.5 years",
+        "Type": "duration",
+        "Start": 15,
+        "Length": 9
+      }
+    ]
+  },
+  {
     "Input": "I'll leave for 3 h",
     "Results": [
       {
@@ -654,7 +665,7 @@
   },
   {
     "Input": "I'll leave for two decades.",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "two decades",
