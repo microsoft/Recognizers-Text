@@ -40,13 +40,16 @@ public class BaseDatePeriodExtractor implements IDateTimeExtractor {
         List<Token> tokens = new ArrayList<>();
 
         tokens.addAll(matchSimpleCases(input));
+
         List<ExtractResult> simpleCasesResults = Token.mergeAllTokens(tokens, input, getExtractorName());
+        List<ExtractResult> ordinalExtractions = config.getOrdinalExtractor().extract(input);
+
         tokens.addAll(mergeTwoTimePoints(input, reference));
         tokens.addAll(matchDuration(input, reference));
-        tokens.addAll(singleTimePointWithPatterns(input, reference));
+        tokens.addAll(singleTimePointWithPatterns(input, ordinalExtractions, reference));
         tokens.addAll(matchComplexCases(input, simpleCasesResults, reference));
         tokens.addAll(matchYearPeriod(input, reference));
-        tokens.addAll(matchOrdinalNumberWithCenturySuffix(input, reference));
+        tokens.addAll(matchOrdinalNumberWithCenturySuffix(input, ordinalExtractions));
 
         return Token.mergeAllTokens(tokens, input, getExtractorName());
     }
@@ -231,15 +234,19 @@ public class BaseDatePeriodExtractor implements IDateTimeExtractor {
 
     // 1. Extract the month of date, week of date to a date range
     // 2. Extract cases like within two weeks from/before today/tomorrow/yesterday
-    private List<Token> singleTimePointWithPatterns(String input, LocalDateTime reference) {
+    private List<Token> singleTimePointWithPatterns(String input, List<ExtractResult> ordinalExtractions, LocalDateTime reference) {
         List<Token> results = new ArrayList<>();
 
-        List<ExtractResult> ers = config.getDatePointExtractor().extract(input, reference);
-        if (ers.size() < 1) {
+        List<ExtractResult> datePoints = config.getDatePointExtractor().extract(input, reference);
+
+        // For cases like "week of the 18th"
+        datePoints.addAll(ordinalExtractions.stream().filter(o -> datePoints.stream().noneMatch(er -> er.isOverlap(o))).collect(Collectors.toList()));
+
+        if (datePoints.size() < 1) {
             return results;
         }
 
-        for (ExtractResult er : ers) {
+        for (ExtractResult er : datePoints) {
             if (er.start != null && er.length != null) {
                 String beforeStr = input.substring(0, er.start);
                 results.addAll(getTokenForRegexMatching(beforeStr, config.getWeekOfRegex(), er));
@@ -336,11 +343,10 @@ public class BaseDatePeriodExtractor implements IDateTimeExtractor {
         return results;
     }
 
-    private List<Token> matchOrdinalNumberWithCenturySuffix(String input, LocalDateTime reference) {
+    private List<Token> matchOrdinalNumberWithCenturySuffix(String input, List<ExtractResult>  ordinalExtractions) {
         List<Token> results = new ArrayList<>();
-        List<ExtractResult> ers = config.getOrdinalExtractor().extract(input);
 
-        for (ExtractResult er : ers) {
+        for (ExtractResult er : ordinalExtractions) {
             if (er.start + er.length >= input.length()) {
                 continue;
             }
