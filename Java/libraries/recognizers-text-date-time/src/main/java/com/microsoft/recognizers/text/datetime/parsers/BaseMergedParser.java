@@ -297,6 +297,7 @@ public class BaseMergedParser implements IDateTimeParser {
             List<Object> subEntities = ((DateTimeResolutionResult)slot.value).getSubDateTimeEntities();
             for (Object subEntity : subEntities) {
                 DateTimeParseResult result = (DateTimeParseResult)subEntity;
+                result.withStart(result.start + slot.start);
                 results.addAll(dateTimeResolutionForSplit(result));
             }
         } else {
