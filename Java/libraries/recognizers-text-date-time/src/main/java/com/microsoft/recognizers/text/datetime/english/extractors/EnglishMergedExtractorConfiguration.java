@@ -29,6 +29,7 @@ public class EnglishMergedExtractorConfiguration implements IMergedExtractorConf
 
     public static final Pattern AfterRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.AfterRegex, Pattern.CASE_INSENSITIVE);
     public static final Pattern SinceRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SinceRegex, Pattern.CASE_INSENSITIVE);
+    public static final Pattern AroundRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.AroundRegex, Pattern.CASE_INSENSITIVE);
     public static final Pattern BeforeRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.BeforeRegex, Pattern.CASE_INSENSITIVE);
     public static final Pattern FromToRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.FromToRegex, Pattern.CASE_INSENSITIVE);
     public static final Pattern DateAfterRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.DateAfterRegex, Pattern.CASE_INSENSITIVE);
@@ -161,6 +162,11 @@ public class EnglishMergedExtractorConfiguration implements IMergedExtractorConf
 
     public final Pattern getSinceRegex() {
         return SinceRegex;
+    }
+
+
+    public final Pattern getAroundRegex() {
+        return AroundRegex;
     }
 
     public final Pattern getBeforeRegex() {

@@ -6,7 +6,9 @@ import com.microsoft.recognizers.text.datetime.DateTimeOptions;
 import com.microsoft.recognizers.text.datetime.extractors.config.IMergedExtractorConfiguration;
 import com.microsoft.recognizers.text.datetime.extractors.config.ProcessedSuperfluousWords;
 import com.microsoft.recognizers.text.datetime.extractors.config.ResultIndex;
+import com.microsoft.recognizers.text.datetime.utilities.ConditionalMatch;
 import com.microsoft.recognizers.text.datetime.utilities.MatchingUtil;
+import com.microsoft.recognizers.text.datetime.utilities.RegexExtension;
 import com.microsoft.recognizers.text.datetime.utilities.Token;
 import com.microsoft.recognizers.text.matcher.MatchResult;
 import com.microsoft.recognizers.text.utilities.Match;
@@ -20,7 +22,6 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-import java.util.Locale;
 import java.util.Optional;
 import java.util.regex.Pattern;
 
@@ -72,7 +73,7 @@ public class BaseMergedExtractor implements IDateTimeExtractor {
         }
 
         ret = filterUnspecificDatePeriod(ret, input);
-        addMod(ret, input);
+        ret = addMod(ret, input);
 
         // filtering
         if (this.config.getOptions().match(DateTimeOptions.CalendarMode)) {
@@ -171,50 +172,82 @@ public class BaseMergedExtractor implements IDateTimeExtractor {
         return ers;
     }
 
-    private void addMod(List<ExtractResult> ers, String text) {
-        int lastEnd = 0;
-        int idx = 0;
+    private List<ExtractResult> addMod(List<ExtractResult> ers, String text) {
+        int index = 0;
+
         for (ExtractResult er : ers.toArray(new ExtractResult[0])) {
-            String beforeStr = text.substring(lastEnd, er.start).toLowerCase(Locale.ROOT);
+            MergeModifierResult modifiedToken = tryMergeModifierToken(er, config.getBeforeRegex(), text);
 
-            ResultIndex resultIndex = hasTokenIndex(beforeStr.replaceAll("\\s+$", ""), config.getBeforeRegex());
-            if (resultIndex.result) {
-                int modLenght = beforeStr.length() - resultIndex.index;
-                er = er.withLength(er.length + modLenght);
-                er = er.withStart(er.start - modLenght);
-                er = er.withText(text.substring(er.start, er.start + er.length));
+            if (!modifiedToken.result) {
+                modifiedToken = tryMergeModifierToken(er, config.getAfterRegex(), text);
             }
 
-            resultIndex = hasTokenIndex(beforeStr.replaceAll("\\s+$", ""), config.getAfterRegex());
-            if (resultIndex.result) {
-                int modLenght = beforeStr.length() - resultIndex.index;
-                er = er.withLength(er.length + modLenght);
-                er = er.withStart(er.start - modLenght);
-                er = er.withText(text.substring(er.start, er.start + er.length));
+            if (!modifiedToken.result) {
+                modifiedToken = tryMergeModifierToken(er, config.getSinceRegex(), text);
             }
 
-            resultIndex = hasTokenIndex(beforeStr.replaceAll("\\s+$", ""), config.getSinceRegex());
-            if (resultIndex.result) {
-                int modLenght = beforeStr.length() - resultIndex.index;
-                er = er.withLength(er.length + modLenght);
-                er = er.withStart(er.start - modLenght);
-                er = er.withText(text.substring(er.start, er.start + er.length));
+            if (!modifiedToken.result) {
+                modifiedToken = tryMergeModifierToken(er, config.getAroundRegex(), text);
             }
 
-            if (er.type.equals(Constants.SYS_DATETIME_DATEPERIOD)) {
+            ers.set(index, modifiedToken.er);
+
+            final ExtractResult newEr = modifiedToken.er;
+
+            if (newEr.type.equals(Constants.SYS_DATETIME_DATEPERIOD) || newEr.type.equals(Constants.SYS_DATETIME_DATE)) {
                 // 2012 or after/above
-                String afterStr = text.substring(er.start + er.length).toLowerCase(Locale.ROOT);
+                String afterStr = text.substring(newEr.start + newEr.length).toLowerCase();
 
-                Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(config.getDateAfterRegex(), StringUtility.trimStart(afterStr))).findFirst();
-                if (match.isPresent() && match.get().index == 0 && match.get().length == afterStr.trim().length()) {
-                    int modLenght = match.get().length + afterStr.indexOf(match.get().value);
-                    er = er.withLength(er.length + modLenght);
-                    er = er.withText(text.substring(er.start, er.start + er.length));
+                ConditionalMatch match = RegexExtension.matchBegin(config.getDateAfterRegex(), StringUtility.trimStart(afterStr), true);
+
+                if (match.getSuccess()) {
+                    boolean isFollowedByOtherEntity = true;
+
+                    if (match.getMatch().get().length == afterStr.trim().length()) {
+                        isFollowedByOtherEntity = false;
+
+                    } else {
+                        String nextStr = afterStr.trim().substring(match.getMatch().get().length).trim();
+                        ExtractResult nextEr = ers.stream().filter(t -> t.start > newEr.start).findFirst().orElse(null);
+
+                        if (nextEr == null || !nextStr.startsWith(nextEr.text)) {
+                            isFollowedByOtherEntity = false;
+                        }
+                    }
+
+                    if (!isFollowedByOtherEntity) {
+                        int modLength = match.getMatch().get().length + afterStr.indexOf(match.getMatch().get().value);
+                        int length = newEr.length + modLength;
+                        String newText = text.substring(newEr.start, newEr.start + length);
+
+                        ers.set(index, new ExtractResult(er.start, length, newText, er.type, er.data));
+                    }
                 }
             }
-            ers.set(idx, er);
-            idx++;
+
+            index++;
         }
+
+        return ers;
+    }
+
+    private MergeModifierResult tryMergeModifierToken(ExtractResult er, Pattern tokenRegex, String text) {
+        String beforeStr = text.substring(0, er.start).toLowerCase();
+
+        ResultIndex result = hasTokenIndex(StringUtility.trimEnd(beforeStr), tokenRegex);
+        if (result.result) {
+            int modLength = beforeStr.length() - result.index;
+            int length = er.length + modLength;
+            int start = er.start - modLength;
+            String newText = text.substring(start, start + length);
+
+            return new MergeModifierResult(true, er
+                    .withLength(length)
+                    .withStart(start)
+                    .withText(newText));
+        }
+
+        return new MergeModifierResult(false, er);
     }
 
     private ResultIndex hasTokenIndex(String text, Pattern pattern) {
@@ -242,6 +275,16 @@ public class BaseMergedExtractor implements IDateTimeExtractor {
                     ers.remove(er);
                 }
             }
+        }
+    }
+
+    private class MergeModifierResult {
+        public final boolean result;
+        public final ExtractResult er;
+
+        private MergeModifierResult(boolean result, ExtractResult er) {
+            this.result = result;
+            this.er = er;
         }
     }
 }
