@@ -39,7 +39,8 @@ public class EnglishDateTimeParserConfiguration extends BaseOptionsConfiguration
     private final Pattern simpleTimeOfTodayAfterRegex;
     private final Pattern simpleTimeOfTodayBeforeRegex;
     private final Pattern specificTimeOfDayRegex;
-    private final Pattern theEndOfRegex;
+    private final Pattern specificEndOfRegex;
+    private final Pattern unspecificEndOfRegex;
     private final Pattern unitRegex;
     private final Pattern dateNumberConnectorRegex;
 
@@ -72,7 +73,8 @@ public class EnglishDateTimeParserConfiguration extends BaseOptionsConfiguration
         simpleTimeOfTodayAfterRegex = EnglishDateTimeExtractorConfiguration.SimpleTimeOfTodayAfterRegex;
         simpleTimeOfTodayBeforeRegex = EnglishDateTimeExtractorConfiguration.SimpleTimeOfTodayBeforeRegex;
         specificTimeOfDayRegex = EnglishDateTimeExtractorConfiguration.SpecificTimeOfDayRegex;
-        theEndOfRegex = EnglishDateTimeExtractorConfiguration.TheEndOfRegex;
+        specificEndOfRegex = EnglishDateTimeExtractorConfiguration.SpecificEndOfRegex;
+        unspecificEndOfRegex = EnglishDateTimeExtractorConfiguration.UnspecificEndOfRegex;
         unitRegex = EnglishTimeExtractorConfiguration.TimeUnitRegex;
         dateNumberConnectorRegex = EnglishDateTimeExtractorConfiguration.DateNumberConnectorRegex;
 
@@ -167,8 +169,13 @@ public class EnglishDateTimeParserConfiguration extends BaseOptionsConfiguration
     }
 
     @Override
-    public Pattern getTheEndOfRegex() {
-        return theEndOfRegex;
+    public Pattern getSpecificEndOfRegex() {
+        return specificEndOfRegex;
+    }
+
+    @Override
+    public Pattern getUnspecificEndOfRegex() {
+        return unspecificEndOfRegex;
     }
 
     @Override
