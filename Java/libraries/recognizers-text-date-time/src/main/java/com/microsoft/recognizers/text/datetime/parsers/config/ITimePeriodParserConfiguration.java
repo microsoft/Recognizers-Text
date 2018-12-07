@@ -16,6 +16,8 @@ public interface ITimePeriodParserConfiguration extends IOptionsConfiguration {
 
     IExtractor getIntegerExtractor();
 
+    IDateTimeParser getTimeZoneParser();
+
     Pattern getPureNumberFromToRegex();
 
     Pattern getPureNumberBetweenAndRegex();

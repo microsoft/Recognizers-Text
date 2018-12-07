@@ -10,6 +10,7 @@ import com.microsoft.recognizers.text.datetime.parsers.config.MatchedTimeRangeRe
 import com.microsoft.recognizers.text.datetime.utilities.DateTimeResolutionResult;
 import com.microsoft.recognizers.text.datetime.utilities.DateUtil;
 import com.microsoft.recognizers.text.datetime.utilities.FormatUtil;
+import com.microsoft.recognizers.text.datetime.utilities.TimeZoneUtility;
 import com.microsoft.recognizers.text.utilities.Capture;
 import com.microsoft.recognizers.text.utilities.Match;
 import com.microsoft.recognizers.text.utilities.MatchGroup;
@@ -21,7 +22,9 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import org.javatuples.Pair;
 
@@ -50,13 +53,22 @@ public class BaseTimePeriodParser implements IDateTimeParser {
         Object value = null;
 
         if (er.type.equals(getParserName())) {
-            DateTimeResolutionResult innerResult = parseSimpleCases(er.text, reference);
-            if (!innerResult.getSuccess()) {
-                innerResult = mergeTwoTimePoints(er.text, reference);
-            }
 
-            if (!innerResult.getSuccess()) {
-                innerResult = parseNight(er.text, reference);
+            DateTimeResolutionResult innerResult;
+
+            if (TimeZoneUtility.shouldResolveTimeZone(er, config.getOptions())) {
+                Map<String, Object> metadata = (HashMap<String, Object>)er.data;
+
+                ExtractResult timezoneEr = (ExtractResult)metadata.get(Constants.SYS_DATETIME_TIMEZONE);
+                ParseResult timezonePr = config.getTimeZoneParser().parse(timezoneEr);
+
+                innerResult = internalParse(er.text.substring(0, er.length - timezoneEr.length), reference);
+
+                if (timezonePr.value != null) {
+                    innerResult.setTimeZoneResolution(((DateTimeResolutionResult)timezonePr.value).getTimeZoneResolution());
+                }
+            } else {
+                innerResult = internalParse(er.text, reference);
             }
 
             if (innerResult.getSuccess()) {
@@ -95,6 +107,20 @@ public class BaseTimePeriodParser implements IDateTimeParser {
                 value == null ? "" : ((DateTimeResolutionResult)value).getTimex());
 
         return ret;
+    }
+
+    private DateTimeResolutionResult internalParse(String text, LocalDateTime reference) {
+        DateTimeResolutionResult innerResult = parseSimpleCases(text, reference);
+
+        if (!innerResult.getSuccess()) {
+            innerResult = mergeTwoTimePoints(text, reference);
+        }
+
+        if (!innerResult.getSuccess()) {
+            innerResult = parseTimeOfDay(text, reference);
+        }
+
+        return innerResult;
     }
 
     // Cases like "from 3 to 5am" or "between 3:30 and 5" are parsed here
@@ -595,7 +621,7 @@ public class BaseTimePeriodParser implements IDateTimeParser {
         return ret;
     }
 
-    private DateTimeResolutionResult parseNight(String text, LocalDateTime referenceTime) {
+    private DateTimeResolutionResult parseTimeOfDay(String text, LocalDateTime referenceTime) {
         int day = referenceTime.getDayOfMonth();
         int month = referenceTime.getMonthValue();
         int year = referenceTime.getYear();
