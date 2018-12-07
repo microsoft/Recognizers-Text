@@ -113,4 +113,25 @@ public class TimexUtility {
                 StringUtility.format(number),
                 unitStr);
     }
+
+    public static TimeOfDayResolutionResult parseTimeOfDay(String tod) {
+        switch (tod) {
+            case Constants.EarlyMorning:
+                return new TimeOfDayResolutionResult(Constants.EarlyMorning, 4, 8, 0);
+            case Constants.Morning:
+                return new TimeOfDayResolutionResult(Constants.Morning, 8, 12, 0);
+            case Constants.Afternoon:
+                return new TimeOfDayResolutionResult(Constants.Afternoon, 12, 16, 0);
+            case Constants.Evening:
+                return new TimeOfDayResolutionResult(Constants.Evening, 16, 20, 0);
+            case Constants.Daytime:
+                return new TimeOfDayResolutionResult(Constants.Daytime, 8, 18, 0);
+            case Constants.BusinessHour:
+                return new TimeOfDayResolutionResult(Constants.BusinessHour, 8, 18, 0);
+            case Constants.Night:
+                return new TimeOfDayResolutionResult(Constants.Night, 20, 23, 59);
+            default:
+                return new TimeOfDayResolutionResult();
+        }
+    }
 }

@@ -1051,7 +1051,6 @@
   },
   {
     "Input": "set up meeting from 1:30 pm to 3:30",
-    "NotSupported": "java",
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
@@ -1077,7 +1076,6 @@
   },
   {
     "Input": "set up meeting from 1:30 pm to 3:30 pm",
-    "NotSupported": "java",
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
@@ -1538,7 +1536,7 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "in the business hours",
