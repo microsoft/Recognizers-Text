@@ -1882,17 +1882,17 @@
   },
   {
     "Input": "I'll be out in 3 years",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, python",
     "Results": []
   },
   {
     "Input": "I'll be out in 3 weeks",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, python",
     "Results": []
   },
   {
     "Input": "I'll be out in 3 months",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, python",
     "Results": []
   },
   {
@@ -3475,7 +3475,7 @@
   },
   {
     "Input": "I'll be out from last Monday April to 2019",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "from last Monday April to 2019",
@@ -3645,7 +3645,7 @@
   },
   {
     "Input": "Cortana, can you please set something up for the week of the 18th.",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "the week of the 18th",
@@ -3729,7 +3729,6 @@
   },
   {
     "Input": "from 10/1 to 11/7",
-    "NotSupportedByDesign": "java",
     "Results": [
       {
         "Text": "from 10/1 to 11/7",
