@@ -54,7 +54,7 @@ public class BaseDateTimeExtractor implements IDateTimeExtractor {
     // Special case for 'the end of today'
     public List<Token> specialTimeOfDay(String input, LocalDateTime reference) {
         List<Token> ret = new ArrayList<>();
-        Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(this.config.getTheEndOfRegex(), input)).findFirst();
+        Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(this.config.getSpecificEndOfRegex(), input)).findFirst();
         if (match.isPresent()) {
             ret.add(new Token(match.get().index, input.length()));
         }
@@ -91,17 +91,23 @@ public class BaseDateTimeExtractor implements IDateTimeExtractor {
         for (ExtractResult er : ers) {
             String beforeStr = input.substring(0, (er != null) ? er.start : 0);
 
-            Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(this.config.getTheEndOfRegex(), beforeStr)).findFirst();
+            Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(this.config.getSpecificEndOfRegex(), beforeStr)).findFirst();
             if (match.isPresent()) {
                 ret.add(new Token(match.get().index, (er != null) ? er.start + er.length : 0));
             } else {
                 String afterStr = input.substring((er != null) ? er.start + er.length : 0);
 
-                match = Arrays.stream(RegExpUtility.getMatches(this.config.getTheEndOfRegex(), afterStr)).findFirst();
+                match = Arrays.stream(RegExpUtility.getMatches(this.config.getSpecificEndOfRegex(), afterStr)).findFirst();
                 if (match.isPresent()) {
                     ret.add(new Token((er != null) ? er.start : 0, ((er != null) ? er.start + er.length : 0) + ((match != null) ? match.get().index + match.get().length : 0)));
                 }
             }
+        }
+
+        // Handle "eod, end of day"
+        Match[] matches = RegExpUtility.getMatches(config.getUnspecificEndOfRegex(), input);
+        for (Match match : matches) {
+            ret.add(new Token(match.index, match.index + match.length));
         }
 
         return ret;
