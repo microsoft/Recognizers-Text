@@ -42,6 +42,8 @@ public interface IDateExtractorConfiguration extends IOptionsConfiguration {
 
     Pattern getRangeUnitRegex();
 
+    Pattern getRangeConnectorSymbolRegex();
+
     IExtractor getIntegerExtractor();
 
     IExtractor getOrdinalExtractor();

@@ -73,6 +73,11 @@ public class Constants {
 
     // Invalid year
     public static final int InvalidYear = Integer.MIN_VALUE;
+    public static final int InvalidMonth = Integer.MIN_VALUE;
+    public static final int InvalidDay = Integer.MIN_VALUE;
+    public static final int InvalidHour = Integer.MIN_VALUE;
+    public static final int InvalidMinute = Integer.MIN_VALUE;
+    public static final int InvalidSecond = Integer.MIN_VALUE;
 
     public static final int MinYearNum = BaseDateTime.MinYearNum;
     public static final int MaxYearNum = BaseDateTime.MaxYearNum;
@@ -93,6 +98,7 @@ public class Constants {
     public static final int SemesterMonthCount = 6;
     public static final int WeekDayCount = 7;
     public static final int CenturyYearsCount = 100;
+    public static final int MaxWeekOfMonth = 5;
 
     // hours of one half day
     public static final int HalfDayHourCount = 12;

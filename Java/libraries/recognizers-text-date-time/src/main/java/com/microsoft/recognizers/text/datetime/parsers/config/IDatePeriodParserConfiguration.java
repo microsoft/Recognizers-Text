@@ -4,6 +4,7 @@ import com.google.common.collect.ImmutableMap;
 import com.microsoft.recognizers.text.IExtractor;
 import com.microsoft.recognizers.text.IParser;
 import com.microsoft.recognizers.text.datetime.config.IOptionsConfiguration;
+import com.microsoft.recognizers.text.datetime.extractors.IDateExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.IDateTimeExtractor;
 import com.microsoft.recognizers.text.datetime.parsers.IDateTimeParser;
 
@@ -12,7 +13,7 @@ import java.util.regex.Pattern;
 public interface IDatePeriodParserConfiguration extends IOptionsConfiguration {
     String getTokenBeforeDate();
 
-    IDateTimeExtractor getDateExtractor();
+    IDateExtractor getDateExtractor();
 
     IExtractor getCardinalExtractor();
 
@@ -107,6 +108,8 @@ public interface IDatePeriodParserConfiguration extends IOptionsConfiguration {
     Pattern getMoreThanRegex();
 
     Pattern getCenturySuffixRegex();
+
+    Pattern getRelativeRegex();
 
     ImmutableMap<String, String> getUnitMap();
 

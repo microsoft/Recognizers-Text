@@ -24,6 +24,7 @@ import com.microsoft.recognizers.text.utilities.StringUtility;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.Month;
 import java.time.temporal.ChronoUnit;
 import java.time.temporal.IsoFields;
 import java.util.ArrayList;
@@ -31,6 +32,8 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
+
 import org.javatuples.Pair;
 
 public class BaseDatePeriodParser implements IDateTimeParser {
@@ -1117,13 +1120,6 @@ public class BaseDatePeriodParser implements IDateTimeParser {
         boolean noYear = false;
         int year;
 
-        int cardinal;
-        if (this.config.isLastCardinal(cardinalStr)) {
-            cardinal = 5;
-        } else {
-            cardinal = this.config.getCardinalMap().get(cardinalStr);
-        }
-
         int month;
         if (StringUtility.isNullOrEmpty(monthStr)) {
             int swift = this.config.getSwiftDayOrMonth(trimmedText);
@@ -1132,11 +1128,15 @@ public class BaseDatePeriodParser implements IDateTimeParser {
             year = referenceDate.plusMonths(swift).getYear();
         } else {
             month = this.config.getMonthOfYear().get(monthStr);
-            year = referenceDate.getYear();
-            noYear = true;
+            year = config.getDateExtractor().getYearFromText(match.get());
+
+            if (year == Constants.InvalidYear) {
+                year = referenceDate.getYear();
+                noYear = true;
+            }
         }
 
-        ret = getWeekOfMonth(cardinal, month, year, referenceDate, noYear);
+        ret = getWeekOfMonth(cardinalStr, month, year, referenceDate, noYear);
 
         return ret;
     }
@@ -1346,10 +1346,19 @@ public class BaseDatePeriodParser implements IDateTimeParser {
     private DateTimeResolutionResult parseWeekOfDate(String text, LocalDateTime referenceDate) {
         DateTimeResolutionResult ret = new DateTimeResolutionResult();
         Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(config.getWeekOfRegex(), text)).findFirst();
-        List<ExtractResult> ex = config.getDateExtractor().extract(text, referenceDate);
+        List<ExtractResult> dateErs = config.getDateExtractor().extract(text, referenceDate);
 
-        if (match.isPresent() && ex.size() == 1) {
-            DateTimeResolutionResult pr = (DateTimeResolutionResult)config.getDateParser().parse(ex.get(0), referenceDate).value;
+        if (dateErs.isEmpty()) {
+            // For cases like "week of the 18th"
+            dateErs.addAll(
+                    config.getCardinalExtractor().extract(text).stream()
+                            .map(o -> o.withType(Constants.SYS_DATETIME_DATE))
+                            .filter(o -> dateErs.stream().noneMatch(er -> er.isOverlap(o)))
+                            .collect(Collectors.toList()));
+        }
+
+        if (match.isPresent() && dateErs.size() == 1) {
+            DateTimeResolutionResult pr = (DateTimeResolutionResult)config.getDateParser().parse(dateErs.get(0), referenceDate).value;
             if (config.getOptions().match(DateTimeOptions.CalendarMode)) {
                 LocalDateTime monday = DateUtil.thisDate((LocalDateTime)pr.getFutureValue(), DayOfWeek.MONDAY.getValue());
                 ret.setTimex(TimexUtility.generateWeekTimex(monday));
@@ -1420,49 +1429,120 @@ public class BaseDatePeriodParser implements IDateTimeParser {
         return ret;
     }
 
-    private static DateTimeResolutionResult getWeekOfMonth(int cardinal, int month, int year, LocalDateTime referenceDate, boolean noYear) {
+    private DateTimeResolutionResult getWeekOfMonth(String cardinalStr, int month, int year, LocalDateTime referenceDate, boolean noYear) {
         DateTimeResolutionResult ret = new DateTimeResolutionResult();
-        LocalDateTime value = computeDate(cardinal, 1, month, year);
 
-        if (value.getMonthValue() != month) {
-            cardinal -= 1;
-            value = value.minusDays(7);
-        }
+        LocalDateTime targetMonday = getMondayOfTargetWeek(cardinalStr, month, year);
 
-        LocalDateTime futureDate = value;
-        LocalDateTime pastDate = value;
+        LocalDateTime futureDate = targetMonday;
+        LocalDateTime pastDate = targetMonday;
+
         if (noYear && futureDate.isBefore(referenceDate)) {
-            futureDate = computeDate(cardinal, 1, month, year + 1);
+            futureDate = getMondayOfTargetWeek(cardinalStr, month, year + 1);
             if (futureDate.getMonthValue() != month) {
                 futureDate = futureDate.minusDays(7);
             }
         }
 
         if (noYear && pastDate.compareTo(referenceDate) >= 0) {
-            pastDate = computeDate(cardinal, 1, month, year - 1);
-            if (pastDate.getMonthValue() != month) {
-                pastDate = pastDate.minusDays(7);
-            }
+            pastDate = getMondayOfTargetWeek(cardinalStr, month, year - 1);
         }
 
         if (noYear) {
-            ret.setTimex(String.format("XXXX-%02d", month));
-        } else {
-            ret.setTimex(String.format("%04d-%02d", year, month));
+            year = Constants.InvalidYear;
         }
 
-        ret.setTimex(String.format("%s-W%02d", ret.getTimex(), cardinal));
+        // Note that if the cardinalStr equals to "last", the weekNumber would be fixed at "5"
+        // This may lead to some inconsistancy between Timex and Resolution
+        // the StartDate and EndDate of the resolution would always be correct (following ISO week definition)
+        // But week number for "last week" might be inconsistancy with the resolution as we only have one Timex,
+        // but we may have past and future resolution which may have different week number
+        int weekNum = getWeekNumberForMonth(cardinalStr);
+
+        String timex = TimexUtility.generateWeekOfMonthTimex(year, month, weekNum);
+        ret.setTimex(timex);
 
         ret.setFutureValue(inclusiveEndPeriod ?
-                new Pair<>(futureDate, futureDate.plusDays(6)) :
-                new Pair<>(futureDate, futureDate.plusDays(7)));
+                new Pair<>(futureDate, futureDate.plusDays(Constants.WeekDayCount - 1)) :
+                new Pair<>(futureDate, futureDate.plusDays(Constants.WeekDayCount)));
         ret.setPastValue(inclusiveEndPeriod ?
-                new Pair<>(pastDate, pastDate.plusDays(6)) :
-                new Pair<>(pastDate, pastDate.plusDays(7)));
+                new Pair<>(pastDate, pastDate.plusDays(Constants.WeekDayCount - 1)) :
+                new Pair<>(pastDate, pastDate.plusDays(Constants.WeekDayCount)));
 
         ret.setSuccess(true);
 
         return ret;
+    }
+
+    private LocalDateTime getMondayOfTargetWeek(String cardinalStr, int month, int year) {
+        LocalDateTime result;
+        if (config.isLastCardinal(cardinalStr)) {
+            LocalDateTime lastThursday = getLastThursday(year, month);
+            result = DateUtil.thisDate(lastThursday, DayOfWeek.MONDAY.getValue());
+        } else {
+            int cardinal = getWeekNumberForMonth(cardinalStr);
+            LocalDateTime firstThursday = getFirstThursday(year, month);
+
+            result = DateUtil.thisDate(firstThursday, DayOfWeek.MONDAY.getValue()).plusDays(Constants.WeekDayCount * (cardinal - 1));
+        }
+        
+        return result;
+    }
+
+    private int getWeekNumberForMonth(String cardinalStr) {
+        int cardinal;
+
+        if (config.isLastCardinal(cardinalStr)) {
+            // "last week of month" might not be "5th week of month"
+            // Sometimes it can also be "4th week of month" depends on specific year and month
+            // But as we only have one Timex, so we use "5" to indicate last week of month
+            cardinal = Constants.MaxWeekOfMonth;
+        } else {
+            cardinal = config.getCardinalMap().get(cardinalStr);
+        }
+
+        return cardinal;
+    }
+
+    private LocalDateTime getFirstThursday(int year, int month) {
+        int targetMonth = month;
+
+        if (month == Constants.InvalidMonth) {
+            targetMonth = Month.JANUARY.getValue();
+        }
+
+        LocalDateTime firstDay = LocalDateTime.of(year, targetMonth, 1, 0, 0);
+        LocalDateTime firstThursday = DateUtil.thisDate(firstDay, DayOfWeek.THURSDAY.getValue());
+
+        // Thursday fall into next year or next month
+        if (firstThursday.getMonthValue() != targetMonth) {
+            firstThursday = firstThursday.plusDays(Constants.WeekDayCount);
+        }
+
+        return firstThursday;
+    }
+
+    private LocalDateTime getLastThursday(int year, int month) {
+        int targetMonth = month;
+
+        if (month == Constants.InvalidMonth) {
+            targetMonth = Month.DECEMBER.getValue();
+        }
+
+        LocalDateTime lastDay = getLastDay(year, targetMonth);
+        LocalDateTime lastThursday = DateUtil.thisDate(lastDay, DayOfWeek.THURSDAY.getValue());
+
+        // Thursday fall into next year or next month
+        if (lastThursday.getMonthValue() != targetMonth) {
+            lastThursday = lastThursday.minusDays(Constants.WeekDayCount);
+        }
+
+        return lastThursday;
+    }
+
+    private LocalDateTime getLastDay(int year, int month) {
+        LocalDateTime firstDayOfMonth = LocalDateTime.of(year, month, 1, 0, 0);
+        return firstDayOfMonth.plusMonths(1).minusDays(1);
     }
 
     private static LocalDateTime computeDate(int cardinal, int weekday, int month, int year) {
