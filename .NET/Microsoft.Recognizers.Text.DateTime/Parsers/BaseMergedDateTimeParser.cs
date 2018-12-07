@@ -386,6 +386,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 foreach (var subEntity in subEntities)
                 {
                     var result = (DateTimeParseResult)subEntity;
+                    result.Start += slot.Start;
                     results.AddRange(DateTimeResolutionForSplit(result));
                 }
             }

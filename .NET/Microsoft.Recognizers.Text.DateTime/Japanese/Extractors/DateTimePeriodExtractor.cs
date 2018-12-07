@@ -58,7 +58,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             var tokens = new List<Token>();
             tokens.AddRange(MergeDateAndTimePeriod(text, referenceTime));
             tokens.AddRange(MergeTwoTimePoints(text, referenceTime));
-            tokens.AddRange(MatchNubmerWithUnit(text));
+            tokens.AddRange(MatchNumberWithUnit(text));
             tokens.AddRange(MatchNight(text, referenceTime));
 
             return Token.MergeAllTokens(tokens, text, ExtractorName);
@@ -246,7 +246,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             return ret;
         }
 
-        private List<Token> MatchNubmerWithUnit(string text)
+        private List<Token> MatchNumberWithUnit(string text)
         {
             var ret = new List<Token>();
 
