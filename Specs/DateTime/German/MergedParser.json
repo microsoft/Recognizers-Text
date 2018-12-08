@@ -102,7 +102,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "Comment": "Returning only the future resolution, should be only past based on the word 'letzten'",
+    "Comment": "Returning future resolution instead of past, seems to work for different reference date, see below.",
     "NotSupported": "dotNet, javascript, python",
     "Results": [
       {
@@ -111,16 +111,35 @@
         "Value": {
           "values": [
             {
-              "timex": "XXXX-WXX-5TAF",
+              "timex": "2016-11-04TAF",
               "type": "datetimerange",
               "start": "2016-11-04 12:00:00",
               "end": "2016-11-04 16:00:00"
-            },
+            }
+          ]
+        },
+        "Start": 8,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Letzten Freitag Nachmittag habe ich Feierabend gemacht",
+    "Context": {
+      "ReferenceDateTime": "2018-12-09T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "Freitag Nachmittag",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
             {
-              "timex": "XXXX-WXX-5TAF",
+              "timex": "2018-12-07TAF",
               "type": "datetimerange",
-              "start": "2016-11-11 12:00:00",
-              "end": "2016-11-11 16:00:00"
+              "start": "2018-12-07 12:00:00",
+              "end": "2018-12-07 16:00:00"
             }
           ]
         },

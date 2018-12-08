@@ -33,7 +33,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "Comment": "Currently not supported. The output is 2.2.2004. The dayregex selects two 2 instead of the 22th. 22.04 (date) has also double meaning with time",
+    "Comment": "Should be removed, as 22.04 could be an (incorrectly) formatted date (22.04.) or time (22:04).",
     "NotSupported": "dotNet, javascript, python",
     "Results": [
       {
@@ -179,8 +179,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "Comment": "Returning only the future resolution and wrong timex. In German that is right.",
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "freitag",
@@ -461,7 +460,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "Comment": "Resolution is null",
-    "NotSupported": "dotNet, python",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "22. april von 5 bis 6 uhr nachmittags",
@@ -970,8 +969,8 @@
     "NotSupported": "python",
     "Results": [
       {
-        "Text": "17 bis 18 uhr",
-        "Start": 12,
+        "Text": "von 17 bis 18 uhr",
+        "Start": 8,
         "End": 24,
         "TypeName": "datetimeV2.timerange",
         "Resolution": {
@@ -1021,8 +1020,8 @@
     "NotSupported": "python",
     "Results": [
       {
-        "Text": "5 uhr nachmittags bis 6 uhr nachmittags",
-        "Start": 12,
+        "Text": "von 5 uhr nachmittags bis 6 uhr nachmittags",
+        "Start": 8,
         "End": 50,
         "TypeName": "datetimeV2.timerange",
         "Resolution": {
