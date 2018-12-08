@@ -223,54 +223,43 @@ export class FrenchDatePeriodParserConfiguration implements IDatePeriodParserCon
 
     isFuture(source: string): boolean {
         let trimedText = source.trim().toLowerCase();
-        return (trimedText.startsWith("cette") ||
-            trimedText.endsWith("prochaine") || 
-            trimedText.endsWith("prochain"));
+        return FrenchDateTime.FutureStartTerms.some(o => trimedText.startsWith(o)) ||
+            FrenchDateTime.FutureEndTerms.some(o => trimedText.endsWith(o));
     }
 
     isYearToDate(source: string): boolean {
         let trimedText = source.trim().toLowerCase();
-        return (trimedText === "année à ce jour" || 
-            trimedText === "an à ce jour");
+        return FrenchDateTime.YearToDateTerms.some(o => trimedText === o);
     }
 
     isMonthToDate(source: string): boolean {
         let trimedText = source.trim().toLowerCase();
-        return trimedText === "mois à ce jour";
+        return FrenchDateTime.MonthToDateTerms.some(o => trimedText === o);
     }
 
     isWeekOnly(source: string): boolean {
         let trimedText = source.trim().toLowerCase();
-        return (trimedText.endsWith("semaine") && 
-            !trimedText.endsWith("fin de semaine"));
+        return FrenchDateTime.WeekTerms.some(o => trimedText.endsWith(o)) &&
+            !FrenchDateTime.WeekendTerms.some(o => trimedText.endsWith(o));
     }
 
     isWeekend(source: string): boolean {
         let trimedText = source.trim().toLowerCase();
-        return (trimedText.endsWith("fin de semaine") || 
-            trimedText.endsWith("le weekend"));
+        return FrenchDateTime.WeekendTerms.some(o => trimedText.endsWith(o));
     }
 
     isMonthOnly(source: string): boolean {
         let trimedText = source.trim().toLowerCase();
-        return trimedText.endsWith("mois");
+        return FrenchDateTime.MonthTerms.some(o => trimedText.endsWith(o));
     }
 
     isYearOnly(source: string): boolean {
         let trimedText = source.trim().toLowerCase();
-        return (trimedText.endsWith("années") || 
-            trimedText.endsWith("ans") || 
-            (trimedText.endsWith("l'annees") || 
-            trimedText.endsWith("l'annee"))
-        );
+        return FrenchDateTime.YearTerms.some(o => trimedText.endsWith(o));
     }
 
     isLastCardinal(source: string): boolean {
         let trimedText = source.trim().toLowerCase();
-        return (trimedText === "dernières" ||
-            trimedText === "dernière" ||
-            trimedText === "dernieres" || 
-            trimedText === "derniere"||
-            trimedText === "dernier");
+        return FrenchDateTime.LastCardinalTerms.some(o => trimedText === o);
     }
 }

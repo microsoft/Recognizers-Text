@@ -1206,7 +1206,7 @@
   },
   {
     "Input": "Let's start 3 minutes from now",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "3 minutes from now",
@@ -1218,7 +1218,7 @@
   },
   {
     "Input": "Let's start 3 minutes from today",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "3 minutes",

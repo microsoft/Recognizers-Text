@@ -46,6 +46,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         IDateTimeParser DateTimeAltParser { get; }
 
+        IDateTimeParser TimeZoneParser { get; }
+
         IImmutableDictionary<string, int> MonthOfYear { get; }
 
         IImmutableDictionary<string, int> Numbers { get; }

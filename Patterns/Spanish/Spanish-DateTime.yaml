@@ -7,14 +7,18 @@ DayRegex: !simpleRegex
   def: (?<day>01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|1|20|21|22|23|24|25|26|27|28|29|2|30|31|3|4|5|6|7|8|9)(?=\b|t)
 MonthNumRegex: !simpleRegex
   def: (?<month>01|02|03|04|05|06|07|08|09|10|11|12|1|2|3|4|5|6|7|8|9)\b
-DescRegex: !simpleRegex
-  def: (?<desc>pm\b|am\b|p\.m\.|a\.m\.)
-AmDescRegex: !simpleRegex
-  def: (am\b|a\.m\.|a m\b|a\. m\.\b|a\.m\b|a\. m\b)
-PmDescRegex: !simpleRegex
-  def: (pm\b|p\.m\.|p\b|p m\b|p\. m\.\b|p\.m\b|p\. m\b)
-AmPmDescRegex: !simpleRegex
-  def: (ampm)
+AmDescRegex: !nestedRegex
+  def: ({BaseDateTime.BaseAmDescRegex})
+  references: [BaseDateTime.BaseAmDescRegex]
+PmDescRegex: !nestedRegex
+  def: ({BaseDateTime.BasePmDescRegex})
+  references: [BaseDateTime.BasePmDescRegex]
+AmPmDescRegex: !nestedRegex
+  def: ({BaseDateTime.BaseAmPmDescRegex})
+  references: [BaseDateTime.BaseAmPmDescRegex]
+DescRegex: !nestedRegex
+  def: (?<desc>({AmDescRegex}|{PmDescRegex}))
+  references: [ AmDescRegex, PmDescRegex ]
 RangePrefixRegex: !simpleRegex
   def: ((desde|de|entre)\s+(la(s)?\s+)?)
 # As month number can't be 0, so add (?!\.0\b) to filter out some wrong cases
@@ -855,4 +859,33 @@ MinusTwoDayTerms: !list
   entries: 
     - anteayer
     - dia antes de ayer
+# For DatePeriodParserConfiguration Logic
+MonthTerms: !list
+  types: [ string ]
+  entries:
+    - mes
+    - meses
+MonthToDateTerms: !list
+  types: [ string ]
+  entries:
+    - mes a la fecha
+    - meses a la fecha
+WeekendTerms: !list
+  types: [ string ]
+  entries:
+    - fin de semana
+WeekTerms: !list
+  types: [ string ]
+  entries:
+    - semana
+YearTerms: !list
+  types: [ string ]
+  entries:
+    - año
+    - años
+YearToDateTerms: !list
+  types: [ string ]
+  entries:
+    - año a la fecha
+    - años a la fecha
 ...

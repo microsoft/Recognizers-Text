@@ -11,26 +11,50 @@ import java.util.regex.Pattern;
 
 public interface IMergedExtractorConfiguration extends IOptionsConfiguration {
     IDateTimeExtractor getDateExtractor();
+
     IDateTimeExtractor getTimeExtractor();
+
     IDateTimeExtractor getDateTimeExtractor();
+
     IDateTimeExtractor getDatePeriodExtractor();
+
     IDateTimeExtractor getTimePeriodExtractor();
+
     IDateTimeExtractor getDateTimePeriodExtractor();
+
     IDateTimeExtractor getDurationExtractor();
+
     IDateTimeExtractor getSetExtractor();
+
     IDateTimeExtractor getHolidayExtractor();
+
     IDateTimeZoneExtractor getTimeZoneExtractor();
+
     IDateTimeListExtractor getDateTimeAltExtractor();
+
     IExtractor getIntegerExtractor();
+
     Iterable<Pattern> getFilterWordRegexList();
+
     Pattern getAfterRegex();
+
     Pattern getBeforeRegex();
+
     Pattern getSinceRegex();
+
+    Pattern getAroundRegex();
+
     Pattern getFromToRegex();
+
     Pattern getSingleAmbiguousMonthRegex();
+
     Pattern getPrepositionSuffixRegex();
+
     Pattern getNumberEndingPattern();
+
     Pattern getDateAfterRegex();
+
     Pattern getUnspecificDatePeriodRegex();
+
     StringMatcher getSuperfluousWordMatcher();
 }

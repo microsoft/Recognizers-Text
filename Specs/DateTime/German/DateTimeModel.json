@@ -345,13 +345,13 @@
         "Resolution": {
           "values": [
             {
-              "timex": "XXXX-07-W04",
+              "timex": "XXXX-07-W05",
               "type": "daterange",
               "start": "2016-07-25",
               "end": "2016-08-01"
             },
             {
-              "timex": "XXXX-07-W04",
+              "timex": "XXXX-07-W05",
               "type": "daterange",
               "start": "2017-07-24",
               "end": "2017-07-31"

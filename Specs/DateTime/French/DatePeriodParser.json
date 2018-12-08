@@ -1037,12 +1037,14 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "java",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "le troisieme semaine de 2027",
         "Type": "daterange",
         "Value": {
-          "Timex": "2027-01-W03",
+          "Timex": "2027-W03",
           "FutureResolution": {
             "startDate": "2027-01-18",
             "endDate": "2027-01-25"

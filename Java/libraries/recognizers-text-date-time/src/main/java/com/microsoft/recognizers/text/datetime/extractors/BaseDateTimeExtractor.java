@@ -1,8 +1,5 @@
 package com.microsoft.recognizers.text.datetime.extractors;
 
-import java.time.LocalDateTime;
-import java.util.*;
-
 import com.microsoft.recognizers.text.ExtractResult;
 import com.microsoft.recognizers.text.datetime.Constants;
 import com.microsoft.recognizers.text.datetime.DateTimeOptions;
@@ -13,7 +10,15 @@ import com.microsoft.recognizers.text.utilities.Match;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
 import com.microsoft.recognizers.text.utilities.StringUtility;
 
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Optional;
+
 public class BaseDateTimeExtractor implements IDateTimeExtractor {
+    private static final String SYS_NUM_INTEGER = com.microsoft.recognizers.text.number.Constants.SYS_NUM;
 
     private final IDateTimeExtractorConfiguration config;
 
@@ -30,13 +35,13 @@ public class BaseDateTimeExtractor implements IDateTimeExtractor {
     public List<ExtractResult> extract(String input, LocalDateTime reference) {
         List<Token> tokens = new ArrayList<>();
 
-        tokens.addAll(MergeDateAndTime(input, reference));
-        tokens.addAll(BasicRegexMatch(input));
-        tokens.addAll(TimeOfTodayBefore(input, reference));
-        tokens.addAll(TimeOfTodayAfter(input, reference));
-        tokens.addAll(SpecialTimeOfDate(input, reference));
-        tokens.addAll(DurationWithBeforeAndAfter(input, reference));
-        tokens.addAll(SpecialTimeOfDay(input, reference));
+        tokens.addAll(mergeDateAndTime(input, reference));
+        tokens.addAll(basicRegexMatch(input));
+        tokens.addAll(timeOfTodayBefore(input, reference));
+        tokens.addAll(timeOfTodayAfter(input, reference));
+        tokens.addAll(specialTimeOfDate(input, reference));
+        tokens.addAll(durationWithBeforeAndAfter(input, reference));
+        tokens.addAll(specialTimeOfDay(input, reference));
 
         return Token.mergeAllTokens(tokens, input, getExtractorName());
     }
@@ -47,9 +52,9 @@ public class BaseDateTimeExtractor implements IDateTimeExtractor {
     }
 
     // Special case for 'the end of today'
-    public List<Token> SpecialTimeOfDay(String input, LocalDateTime reference) {
+    public List<Token> specialTimeOfDay(String input, LocalDateTime reference) {
         List<Token> ret = new ArrayList<>();
-        Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(this.config.getTheEndOfRegex(), input)).findFirst();
+        Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(this.config.getSpecificEndOfRegex(), input)).findFirst();
         if (match.isPresent()) {
             ret.add(new Token(match.get().index, input.length()));
         }
@@ -57,7 +62,7 @@ public class BaseDateTimeExtractor implements IDateTimeExtractor {
         return ret;
     }
 
-    private List<Token> DurationWithBeforeAndAfter(String input, LocalDateTime reference) {
+    private List<Token> durationWithBeforeAndAfter(String input, LocalDateTime reference) {
         List<Token> ret = new ArrayList<>();
 
         List<ExtractResult> ers = this.config.getDurationExtractor().extract(input, reference);
@@ -78,7 +83,7 @@ public class BaseDateTimeExtractor implements IDateTimeExtractor {
         return ret;
     }
 
-    public List<Token> SpecialTimeOfDate(String input, LocalDateTime reference) {
+    public List<Token> specialTimeOfDate(String input, LocalDateTime reference) {
         List<Token> ret = new ArrayList<>();
         List<ExtractResult> ers = this.config.getDatePointExtractor().extract(input, reference);
 
@@ -86,24 +91,30 @@ public class BaseDateTimeExtractor implements IDateTimeExtractor {
         for (ExtractResult er : ers) {
             String beforeStr = input.substring(0, (er != null) ? er.start : 0);
 
-            Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(this.config.getTheEndOfRegex(), beforeStr)).findFirst();
+            Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(this.config.getSpecificEndOfRegex(), beforeStr)).findFirst();
             if (match.isPresent()) {
                 ret.add(new Token(match.get().index, (er != null) ? er.start + er.length : 0));
             } else {
                 String afterStr = input.substring((er != null) ? er.start + er.length : 0);
 
-                match = Arrays.stream(RegExpUtility.getMatches(this.config.getTheEndOfRegex(), afterStr)).findFirst();
+                match = Arrays.stream(RegExpUtility.getMatches(this.config.getSpecificEndOfRegex(), afterStr)).findFirst();
                 if (match.isPresent()) {
                     ret.add(new Token((er != null) ? er.start : 0, ((er != null) ? er.start + er.length : 0) + ((match != null) ? match.get().index + match.get().length : 0)));
                 }
             }
         }
 
+        // Handle "eod, end of day"
+        Match[] matches = RegExpUtility.getMatches(config.getUnspecificEndOfRegex(), input);
+        for (Match match : matches) {
+            ret.add(new Token(match.index, match.index + match.length));
+        }
+
         return ret;
     }
 
     // Parses a specific time of today, tonight, this afternoon, like "seven this afternoon"
-    public List<Token> TimeOfTodayAfter(String input, LocalDateTime reference) {
+    public List<Token> timeOfTodayAfter(String input, LocalDateTime reference) {
         List<Token> ret = new ArrayList<>();
 
         List<ExtractResult> ers = this.config.getTimePointExtractor().extract(input, reference);
@@ -131,7 +142,7 @@ public class BaseDateTimeExtractor implements IDateTimeExtractor {
         return ret;
     }
 
-    public List<Token> TimeOfTodayBefore(String input, LocalDateTime reference) {
+    public List<Token> timeOfTodayBefore(String input, LocalDateTime reference) {
         List<Token> ret = new ArrayList<>();
         List<ExtractResult> ers = this.config.getTimePointExtractor().extract(input, reference);
         for (ExtractResult er : ers) {
@@ -164,7 +175,7 @@ public class BaseDateTimeExtractor implements IDateTimeExtractor {
     }
 
     // Match "now"
-    public List<Token> BasicRegexMatch(String input) {
+    public List<Token> basicRegexMatch(String input) {
         List<Token> ret = new ArrayList<>();
         input = input.trim().toLowerCase();
 
@@ -179,8 +190,7 @@ public class BaseDateTimeExtractor implements IDateTimeExtractor {
     }
 
     // Merge a Date entity and a Time entity, like "at 7 tomorrow"
-    public List<Token> MergeDateAndTime(String input, LocalDateTime reference) {
-        String SYS_NUM_INTEGER = com.microsoft.recognizers.text.number.Constants.SYS_NUM;
+    public List<Token> mergeDateAndTime(String input, LocalDateTime reference) {
         List<Token> ret = new ArrayList<>();
         List<ExtractResult> dateErs = this.config.getDatePointExtractor().extract(input, reference);
         if (dateErs.size() == 0) {
@@ -241,7 +251,7 @@ public class BaseDateTimeExtractor implements IDateTimeExtractor {
                         valid = true;
                     }
                 } else {
-                    if (this.config.IsConnector(middleStr)) {
+                    if (this.config.isConnector(middleStr)) {
                         valid = true;
                     }
                 }

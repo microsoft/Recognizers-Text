@@ -5,18 +5,19 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class ModelFactoryTest {
+
     @Test
-    public void NoExistingModelConfigurationThrows() {
+    public void noExistingModelConfigurationThrows() {
         try {
             ModelFactory<TestOptionsEnum> factory = new ModelFactory<>();
             factory.getModel(TestModel.class, "xx-xx", false, TestOptionsEnum.None);
-        } catch(IllegalArgumentException e) {
+        } catch (IllegalArgumentException e) {
             Assert.assertEquals("Could not find Model with the specified configuration: xx-xx, com.microsoft.recognizers.text.TestModel", e.getMessage());
         }
     }
 
     @Test
-    public void ProperModelConfigurationReturnsModel() {
+    public void properModelConfigurationReturnsModel() {
         ModelFactory<TestOptionsEnum> factory = new ModelFactory<>();
         factory.put(new Pair<>("xx-xx", TestModel.class), testOptionsEnum -> new TestModel());
 
@@ -25,7 +26,7 @@ public class ModelFactoryTest {
     }
 
     @Test
-    public void FactoryReturnsCachedModel() {
+    public void factoryReturnsCachedModel() {
         ModelFactory<TestOptionsEnum> factory = new ModelFactory<>();
         factory.put(new Pair<>("xx-xx", TestModel.class), testOptionsEnum -> new TestModel());
 
@@ -36,7 +37,7 @@ public class ModelFactoryTest {
     }
 
     @Test
-    public void DifferentOptionsShouldReturnDifferentModelInstances() {
+    public void differentOptionsShouldReturnDifferentModelInstances() {
         ModelFactory<TestOptionsEnum> factory = new ModelFactory<>();
         factory.put(new Pair<>("xx-xx", TestModel.class), testOptionsEnum -> new TestModel());
 

@@ -1,26 +1,28 @@
 package com.microsoft.recognizers.text.datetime.english.extractors;
 
 import com.microsoft.recognizers.text.IExtractor;
+import com.microsoft.recognizers.text.datetime.DateTimeOptions;
+import com.microsoft.recognizers.text.datetime.config.BaseOptionsConfiguration;
+import com.microsoft.recognizers.text.datetime.english.parsers.EnglishDatetimeUtilityConfiguration;
+import com.microsoft.recognizers.text.datetime.extractors.BaseTimeExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.IDateTimeExtractor;
+import com.microsoft.recognizers.text.datetime.extractors.config.ITimePeriodExtractorConfiguration;
 import com.microsoft.recognizers.text.datetime.extractors.config.ResultIndex;
+import com.microsoft.recognizers.text.datetime.resources.EnglishDateTime;
 import com.microsoft.recognizers.text.datetime.utilities.IDateTimeUtilityConfiguration;
 import com.microsoft.recognizers.text.number.english.extractors.IntegerExtractor;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
-import com.microsoft.recognizers.text.datetime.DateTimeOptions;
-import com.microsoft.recognizers.text.datetime.resources.EnglishDateTime;
-import com.microsoft.recognizers.text.datetime.extractors.BaseTimeExtractor;
-import com.microsoft.recognizers.text.datetime.config.BaseOptionsConfiguration;
-import com.microsoft.recognizers.text.datetime.extractors.config.ITimePeriodExtractorConfiguration;
-import com.microsoft.recognizers.text.datetime.english.parsers.EnglishDatetimeUtilityConfiguration;
 
 import java.util.ArrayList;
 import java.util.regex.Pattern;
 
 public class EnglishTimePeriodExtractorConfiguration extends BaseOptionsConfiguration implements ITimePeriodExtractorConfiguration {
 
-    private String TokenBeforeDate;
+    private String tokenBeforeDate;
 
-    public final String getTokenBeforeDate() { return TokenBeforeDate; }
+    public final String getTokenBeforeDate() {
+        return tokenBeforeDate;
+    }
 
     public static final Pattern AmRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.AmRegex);
     public static final Pattern PmRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PmRegex);
@@ -40,33 +42,40 @@ public class EnglishTimePeriodExtractorConfiguration extends BaseOptionsConfigur
     public static final Pattern SpecificTimeOfDayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SpecificTimeOfDayRegex);
     public static final Pattern TimeNumberCombinedWithUnit = RegExpUtility.getSafeRegExp(EnglishDateTime.TimeNumberCombinedWithUnit);
 
-    public EnglishTimePeriodExtractorConfiguration()
-    {
+    public EnglishTimePeriodExtractorConfiguration() {
         this(DateTimeOptions.None);
     }
 
     //C# TO JAVA CONVERTER WARNING: The following constructor is declared outside of its associated class:
     //ORIGINAL LINE: public EnglishTimePeriodExtractorConfiguration(DateTimeOptions options = DateTimeOptions.None)
     //C# TO JAVA CONVERTER NOTE: Java does not support optional parameters. Overloaded method(s) are created above:
-    public EnglishTimePeriodExtractorConfiguration(DateTimeOptions options)
-    {
+    public EnglishTimePeriodExtractorConfiguration(DateTimeOptions options) {
 
         super(options);
 
-        TokenBeforeDate = EnglishDateTime.TokenBeforeDate;
-        SingleTimeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration(options));
-        UtilityConfiguration = new EnglishDatetimeUtilityConfiguration();
+        tokenBeforeDate = EnglishDateTime.TokenBeforeDate;
+        singleTimeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration(options));
+        utilityConfiguration = new EnglishDatetimeUtilityConfiguration();
         integerExtractor = IntegerExtractor.getInstance();
     }
 
-    private IDateTimeUtilityConfiguration UtilityConfiguration;
-    public final IDateTimeUtilityConfiguration getUtilityConfiguration() { return UtilityConfiguration; }
+    private IDateTimeUtilityConfiguration utilityConfiguration;
 
-    private IDateTimeExtractor SingleTimeExtractor;
-    public final IDateTimeExtractor getSingleTimeExtractor() { return SingleTimeExtractor; }
+    public final IDateTimeUtilityConfiguration getUtilityConfiguration() {
+        return utilityConfiguration;
+    }
+
+    private IDateTimeExtractor singleTimeExtractor;
+
+    public final IDateTimeExtractor getSingleTimeExtractor() {
+        return singleTimeExtractor;
+    }
 
     private IExtractor integerExtractor;
-    public final IExtractor getIntegerExtractor() { return integerExtractor; }
+
+    public final IExtractor getIntegerExtractor() {
+        return integerExtractor;
+    }
 
     public Iterable<Pattern> getSimpleCasesRegex() {
         return getSimpleCasesRegex;
@@ -81,36 +90,39 @@ public class EnglishTimePeriodExtractorConfiguration extends BaseOptionsConfigur
         }
     };
 
-    public final Pattern getTillRegex() { return TillRegex; }
-    public final Pattern getTimeOfDayRegex() { return TimeOfDayRegex; }
-    public final Pattern getGeneralEndingRegex() { return GeneralEndingRegex; }
+    public final Pattern getTillRegex() {
+        return TillRegex;
+    }
 
-    public final ResultIndex GetFromTokenIndex(String input)
-    {
+    public final Pattern getTimeOfDayRegex() {
+        return TimeOfDayRegex;
+    }
+
+    public final Pattern getGeneralEndingRegex() {
+        return GeneralEndingRegex;
+    }
+
+    public final ResultIndex getFromTokenIndex(String input) {
         ResultIndex result = new ResultIndex(false, -1);
-        if (input.endsWith("from"))
-        {
-            result = result.withIndex( input.lastIndexOf("from" ) );
+        if (input.endsWith("from")) {
+            result = result.withIndex(input.lastIndexOf("from"));
             result = result.withResult(true);
         }
 
         return result;
     }
 
-    public final ResultIndex GetBetweenTokenIndex(String input)
-    {
+    public final ResultIndex getBetweenTokenIndex(String input) {
         ResultIndex result = new ResultIndex(false, -1);
-        if (input.endsWith("between"))
-        {
-            result = result.withIndex( input.lastIndexOf("between" ) );
+        if (input.endsWith("between")) {
+            result = result.withIndex(input.lastIndexOf("between"));
             result = result.withResult(true);
         }
 
         return result;
     }
 
-    public final boolean HasConnectorToken(String input)
-    {
+    public final boolean hasConnectorToken(String input) {
         return input.equals("and");
     }
 }

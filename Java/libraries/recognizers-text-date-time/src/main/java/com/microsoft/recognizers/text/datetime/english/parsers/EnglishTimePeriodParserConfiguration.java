@@ -1,6 +1,5 @@
 package com.microsoft.recognizers.text.datetime.english.parsers;
 
-
 import com.google.common.collect.ImmutableMap;
 import com.microsoft.recognizers.text.IExtractor;
 import com.microsoft.recognizers.text.datetime.Constants;
@@ -8,8 +7,13 @@ import com.microsoft.recognizers.text.datetime.config.BaseOptionsConfiguration;
 import com.microsoft.recognizers.text.datetime.english.extractors.EnglishTimePeriodExtractorConfiguration;
 import com.microsoft.recognizers.text.datetime.extractors.IDateTimeExtractor;
 import com.microsoft.recognizers.text.datetime.parsers.IDateTimeParser;
-import com.microsoft.recognizers.text.datetime.parsers.config.*;
+import com.microsoft.recognizers.text.datetime.parsers.config.ICommonDateTimeParserConfiguration;
+import com.microsoft.recognizers.text.datetime.parsers.config.ITimePeriodParserConfiguration;
+import com.microsoft.recognizers.text.datetime.parsers.config.MatchedTimeRangeResult;
+import com.microsoft.recognizers.text.datetime.resources.EnglishDateTime;
 import com.microsoft.recognizers.text.datetime.utilities.IDateTimeUtilityConfiguration;
+import com.microsoft.recognizers.text.datetime.utilities.TimeOfDayResolutionResult;
+import com.microsoft.recognizers.text.datetime.utilities.TimexUtility;
 
 import java.util.regex.Pattern;
 
@@ -18,6 +22,7 @@ public class EnglishTimePeriodParserConfiguration extends BaseOptionsConfigurati
     private final IDateTimeExtractor timeExtractor;
     private final IDateTimeParser timeParser;
     private final IExtractor integerExtractor;
+    private final IDateTimeParser timeZoneParser;
 
     private final Pattern specificTimeFromToRegex;
     private final Pattern specificTimeBetweenAndRegex;
@@ -37,6 +42,7 @@ public class EnglishTimePeriodParserConfiguration extends BaseOptionsConfigurati
         timeExtractor = config.getTimeExtractor();
         integerExtractor = config.getIntegerExtractor();
         timeParser = config.getTimeParser();
+        timeZoneParser = config.getTimeZoneParser();
         numbers = config.getNumbers();
         utilityConfiguration = config.getUtilityConfiguration();
 
@@ -63,6 +69,11 @@ public class EnglishTimePeriodParserConfiguration extends BaseOptionsConfigurati
     @Override
     public IExtractor getIntegerExtractor() {
         return integerExtractor;
+    }
+
+    @Override
+    public IDateTimeParser getTimeZoneParser() {
+        return timeZoneParser;
     }
 
     @Override
@@ -121,31 +132,28 @@ public class EnglishTimePeriodParserConfiguration extends BaseOptionsConfigurati
         beginHour = 0;
         endHour = 0;
         endMin = 0;
-        if (trimmedText.endsWith("morning")) {
-            timex = "TMO";
-            beginHour = 8;
-            endHour = Constants.HalfDayHourCount;
-        } else if (trimmedText.endsWith("afternoon")) {
-            timex = "TAF";
-            beginHour = Constants.HalfDayHourCount;
-            endHour = 16;
-        } else if (trimmedText.endsWith("evening")) {
-            timex = "TEV";
-            beginHour = 16;
-            endHour = 20;
-        } else if (trimmedText.equals("daytime")) {
-            timex = "TDT";
-            beginHour = 8;
-            endHour = 18;
-        } else if (trimmedText.endsWith("night")) {
-            timex = "TNI";
-            beginHour = 20;
-            endHour = 23;
-            endMin = 59;
+
+        String timeOfDay = "";
+
+        if (EnglishDateTime.MorningTermList.stream().anyMatch(trimmedText::endsWith)) {
+            timeOfDay = Constants.Morning;
+        } else if (EnglishDateTime.AfternoonTermList.stream().anyMatch(trimmedText::endsWith)) {
+            timeOfDay = Constants.Afternoon;
+        } else if (EnglishDateTime.EveningTermList.stream().anyMatch(trimmedText::endsWith)) {
+            timeOfDay = Constants.Evening;
+        } else if (EnglishDateTime.DaytimeTermList.stream().anyMatch(trimmedText::equals)) {
+            timeOfDay = Constants.Daytime;
+        } else if (EnglishDateTime.NightTermList.stream().anyMatch(trimmedText::endsWith)) {
+            timeOfDay = Constants.Night;
+        } else if (EnglishDateTime.BusinessHourSplitStrings.stream().allMatch(trimmedText::contains)) {
+            timeOfDay = Constants.BusinessHour;
         } else {
             timex = null;
+            return new MatchedTimeRangeResult(false, timex, beginHour, endHour, endMin);
         }
 
-        return new MatchedTimeRangeResult(true, timex, beginHour, endHour, endMin);
+        TimeOfDayResolutionResult result = TimexUtility.parseTimeOfDay(timeOfDay);
+
+        return new MatchedTimeRangeResult(true, result.getTimex(), result.getBeginHour(), result.getEndHour(), result.getEndMin());
     }
 }

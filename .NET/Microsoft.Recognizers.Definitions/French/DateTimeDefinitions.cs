@@ -26,10 +26,11 @@ namespace Microsoft.Recognizers.Definitions.French
 		public const string RangePrefixRegex = @"(du|de|des|depuis|entre)";
 		public const string DayRegex = @"(?<day>01|02|03|04|05|06|07|08|09|10|11|11e|12|12e|13|13e|14|14e|15|15e|16|16e|17|17e|18|18e|19|19e|1er|1|21|21e|20|20e|22|22e|23|23e|24|24e|25|25e|26|26e|27|27e|28|28e|29|29e|2|2e|30|30e|31|31e|3|3e|4|4e|5|5e|6|6e|7|7e|8|8e|9|9e)(?=\b|t)";
 		public const string MonthNumRegex = @"(?<month>01|02|03|04|05|06|07|08|09|10|11|12|1|2|3|4|5|6|7|8|9)\b";
-		public const string DescRegex = @"(?<desc>h|ampm|am\b|a\.m\.|a m\b|a\. m\.|a\.m\b|a\. m\b|pm\b|p\.m\.|p m\b|p\. m\.|p\.m\b|p\. m\b|p\b\b)";
-		public const string AmDescRegex = @"(h|am\b|a\.m\.|a m\b|a\. m\.|a\.m\b|a\. m\b)";
-		public const string PmDescRegex = @"(h|pm\b|p\.m\.|p\b|p m\b|p\. m\.|p\.m\b|p\. m\b)";
-		public const string AmPmDescRegex = @"(h|ampm)";
+		public const string SpecialDescRegex = @"(p\b)";
+		public static readonly string AmDescRegex = $@"(h|{BaseDateTime.BaseAmDescRegex})";
+		public static readonly string PmDescRegex = $@"(h|{BaseDateTime.BasePmDescRegex})";
+		public static readonly string AmPmDescRegex = $@"(h|{BaseDateTime.BaseAmPmDescRegex})";
+		public static readonly string DescRegex = $@"(?<desc>{AmPmDescRegex}|{AmDescRegex}|{PmDescRegex}|{SpecialDescRegex})";
 		public static readonly string TwoDigitYearRegex = $@"\b(?<![$])(?<year>([0-27-9]\d))(?!(\s*((\:)|{AmDescRegex}|{PmDescRegex}|\.\d)))\b";
 		public const string FullTextYearRegex = @"^[\*]";
 		public static readonly string YearRegex = $@"({BaseDateTime.FourDigitYearRegex}|{FullTextYearRegex})";
@@ -730,6 +731,52 @@ namespace Microsoft.Recognizers.Definitions.French
 		{
 			"avant-hier",
 			"avant hier"
+		};
+		public static readonly IList<string> FutureStartTerms = new List<string>
+		{
+			"cette"
+		};
+		public static readonly IList<string> FutureEndTerms = new List<string>
+		{
+			"prochaine",
+			"prochain"
+		};
+		public static readonly IList<string> LastCardinalTerms = new List<string>
+		{
+			"dernières",
+			"dernière",
+			"dernieres",
+			"derniere",
+			"dernier"
+		};
+		public static readonly IList<string> MonthTerms = new List<string>
+		{
+			"mois"
+		};
+		public static readonly IList<string> MonthToDateTerms = new List<string>
+		{
+			"mois à ce jour"
+		};
+		public static readonly IList<string> WeekendTerms = new List<string>
+		{
+			"fin de semaine",
+			"le weekend"
+		};
+		public static readonly IList<string> WeekTerms = new List<string>
+		{
+			"semaine"
+		};
+		public static readonly IList<string> YearTerms = new List<string>
+		{
+			"années",
+			"ans",
+			"l'annees",
+			"l'annee"
+		};
+		public static readonly IList<string> YearToDateTerms = new List<string>
+		{
+			"année à ce jour",
+			"an à ce jour"
 		};
 	}
 }

@@ -40,13 +40,16 @@ public class BaseDatePeriodExtractor implements IDateTimeExtractor {
         List<Token> tokens = new ArrayList<>();
 
         tokens.addAll(matchSimpleCases(input));
+
         List<ExtractResult> simpleCasesResults = Token.mergeAllTokens(tokens, input, getExtractorName());
+        List<ExtractResult> ordinalExtractions = config.getOrdinalExtractor().extract(input);
+
         tokens.addAll(mergeTwoTimePoints(input, reference));
         tokens.addAll(matchDuration(input, reference));
-        tokens.addAll(singleTimePointWithPatterns(input, reference));
+        tokens.addAll(singleTimePointWithPatterns(input, ordinalExtractions, reference));
         tokens.addAll(matchComplexCases(input, simpleCasesResults, reference));
         tokens.addAll(matchYearPeriod(input, reference));
-        tokens.addAll(matchOrdinalNumberWithCenturySuffix(input, reference));
+        tokens.addAll(matchOrdinalNumberWithCenturySuffix(input, ordinalExtractions));
 
         return Token.mergeAllTokens(tokens, input, getExtractorName());
     }
@@ -59,9 +62,9 @@ public class BaseDatePeriodExtractor implements IDateTimeExtractor {
 
             for (Match match : matches) {
                 Optional<Match> matchYear = Arrays.stream(RegExpUtility.getMatches(config.getYearRegex(), match.value)).findFirst();
-                
+
                 if (matchYear.isPresent() && matchYear.get().length == match.length) {
-                    int year = ((BaseDateExtractor) config.getDatePointExtractor()).getYearFromText(matchYear.get());
+                    int year = ((BaseDateExtractor)config.getDatePointExtractor()).getYearFromText(matchYear.get());
                     if (!(year >= Constants.MinYearNum && year <= Constants.MaxYearNum)) {
                         continue;
                     }
@@ -73,14 +76,14 @@ public class BaseDatePeriodExtractor implements IDateTimeExtractor {
         }
 
         return results;
-	}
+    }
 
     private List<Token> mergeTwoTimePoints(String input, LocalDateTime reference) {
         List<ExtractResult> ers = config.getDatePointExtractor().extract(input, reference);
 
         return mergeMultipleExtractions(input, ers);
     }
-    
+
     private List<Token> mergeMultipleExtractions(String input, List<ExtractResult> extractionResults) {
         List<Token> results = new ArrayList<>();
 
@@ -109,9 +112,9 @@ public class BaseDatePeriodExtractor implements IDateTimeExtractor {
 
                 // handle "from/between" together with till words (till/until/through...)
                 String beforeStr = input.substring(0, periodBegin).trim().toLowerCase();
-                
-                ResultIndex fromIndex = config.GetFromTokenIndex(beforeStr);
-                ResultIndex betweenIndex = config.GetBetweenTokenIndex(beforeStr);
+
+                ResultIndex fromIndex = config.getFromTokenIndex(beforeStr);
+                ResultIndex betweenIndex = config.getBetweenTokenIndex(beforeStr);
 
                 if (fromIndex.result) {
                     periodBegin = fromIndex.index;
@@ -122,26 +125,26 @@ public class BaseDatePeriodExtractor implements IDateTimeExtractor {
                 results.add(new Token(periodBegin, periodEnd));
 
                 // merge two tokens here, increase the index by two
-                idx =+ 2;
+                idx = +2;
                 continue;
             }
 
-            boolean hasConnectorToken = config.HasConnectorToken(middleStr);
+            boolean hasConnectorToken = config.hasConnectorToken(middleStr);
             if (hasConnectorToken) {
                 int periodBegin = thisResult.start;
                 int periodEnd = nextResult.start + nextResult.length;
 
                 // handle "between...and..." case
                 String beforeStr = input.substring(0, periodBegin).trim().toLowerCase();
-                
-                ResultIndex beforeIndex = config.GetBetweenTokenIndex(beforeStr);
+
+                ResultIndex beforeIndex = config.getBetweenTokenIndex(beforeStr);
 
                 if (beforeIndex.result) {
                     periodBegin = beforeIndex.index;
                     results.add(new Token(periodBegin, periodEnd));
-                    
+
                     // merge two tokens here, increase the index by two
-                    idx =+ 2;
+                    idx = +2;
                     continue;
                 }
             }
@@ -183,14 +186,15 @@ public class BaseDatePeriodExtractor implements IDateTimeExtractor {
                 continue;
             }
 
-            
+
             // within "Days/Weeks/Months/Years" should be handled as dateRange here
             // if duration contains "Seconds/Minutes/Hours", it should be treated as datetimeRange
             match = Arrays.stream(RegExpUtility.getMatches(config.getWithinNextPrefixRegex(), beforeStr)).reduce((f, s) -> s);
             if (matchPrefixRegexInSegment(beforeStr, match)) {
                 int startToken = match.get().index;
-                Match matchDate = Arrays.stream(RegExpUtility.getMatches(config.getDateUnitRegex(), input.substring(duration.getStart(), duration.getEnd()))).findFirst().orElse(null);
-                Match matchTime = Arrays.stream(RegExpUtility.getMatches(config.getTimeUnitRegex(), input.substring(duration.getStart(), duration.getEnd()))).findFirst().orElse(null);
+                String tokenString = input.substring(duration.getStart(), duration.getEnd());
+                Match matchDate = Arrays.stream(RegExpUtility.getMatches(config.getDateUnitRegex(), tokenString)).findFirst().orElse(null);
+                Match matchTime = Arrays.stream(RegExpUtility.getMatches(config.getTimeUnitRegex(), tokenString)).findFirst().orElse(null);
 
                 if (matchDate != null && matchTime == null) {
                     results.add(new Token(startToken, duration.getEnd()));
@@ -200,7 +204,7 @@ public class BaseDatePeriodExtractor implements IDateTimeExtractor {
 
             // For cases like "next five days"
             match = Arrays.stream(RegExpUtility.getMatches(config.getFutureRegex(), beforeStr)).reduce((f, s) -> s);
-            if(matchPrefixRegexInSegment(beforeStr, match)) {
+            if (matchPrefixRegexInSegment(beforeStr, match)) {
                 results.add(new Token(match.get().index, duration.getEnd()));
                 continue;
             }
@@ -230,15 +234,19 @@ public class BaseDatePeriodExtractor implements IDateTimeExtractor {
 
     // 1. Extract the month of date, week of date to a date range
     // 2. Extract cases like within two weeks from/before today/tomorrow/yesterday
-    private List<Token> singleTimePointWithPatterns(String input, LocalDateTime reference) {
+    private List<Token> singleTimePointWithPatterns(String input, List<ExtractResult> ordinalExtractions, LocalDateTime reference) {
         List<Token> results = new ArrayList<>();
 
-        List<ExtractResult> ers = config.getDatePointExtractor().extract(input, reference);
-        if (ers.size() < 1) {
+        List<ExtractResult> datePoints = config.getDatePointExtractor().extract(input, reference);
+
+        // For cases like "week of the 18th"
+        datePoints.addAll(ordinalExtractions.stream().filter(o -> datePoints.stream().noneMatch(er -> er.isOverlap(o))).collect(Collectors.toList()));
+
+        if (datePoints.size() < 1) {
             return results;
         }
 
-        for (ExtractResult er : ers) {
+        for (ExtractResult er : datePoints) {
             if (er.start != null && er.length != null) {
                 String beforeStr = input.substring(0, er.start);
                 results.addAll(getTokenForRegexMatching(beforeStr, config.getWeekOfRegex(), er));
@@ -298,7 +306,7 @@ public class BaseDatePeriodExtractor implements IDateTimeExtractor {
     // For Example: from|between {DateRange|DatePoint} to|till|and {DateRange|DatePoint}
     private List<Token> matchComplexCases(String input, List<ExtractResult> simpleCasesResults, LocalDateTime reference) {
         List<ExtractResult> ers = config.getDatePointExtractor().extract(input, reference);
-        
+
         // Filter out DateRange results that are part of DatePoint results
         // For example, "Feb 1st 2018" => "Feb" and "2018" should be filtered out here
         List<ExtractResult> simpleErs = simpleCasesResults.stream().filter(simpleDateRange -> filterErs(simpleDateRange, ers)).collect(Collectors.toList());
@@ -335,11 +343,10 @@ public class BaseDatePeriodExtractor implements IDateTimeExtractor {
         return results;
     }
 
-    private List<Token> matchOrdinalNumberWithCenturySuffix(String input, LocalDateTime reference) {
+    private List<Token> matchOrdinalNumberWithCenturySuffix(String input, List<ExtractResult>  ordinalExtractions) {
         List<Token> results = new ArrayList<>();
-        List<ExtractResult> ers = config.getOrdinalExtractor().extract(input);
 
-        for (ExtractResult er : ers) {
+        for (ExtractResult er : ordinalExtractions) {
             if (er.start + er.length >= input.length()) {
                 continue;
             }

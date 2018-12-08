@@ -98,8 +98,15 @@ namespace Microsoft.Recognizers.Text.DateTime
                     break;
                 }
 
-                types.Add(ers[pivot].Type);
-                pivot++;
+                if (IsSupportedAltEntitySequence(ers.GetRange(startIndex, pivot - startIndex + 1)))
+                {
+                    types.Add(ers[pivot].Type);
+                    pivot++;
+                }
+                else
+                {
+                    break;
+                }
             }
 
             pivot--;

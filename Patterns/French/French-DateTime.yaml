@@ -17,14 +17,20 @@ DayRegex: !simpleRegex
   def: (?<day>01|02|03|04|05|06|07|08|09|10|11|11e|12|12e|13|13e|14|14e|15|15e|16|16e|17|17e|18|18e|19|19e|1er|1|21|21e|20|20e|22|22e|23|23e|24|24e|25|25e|26|26e|27|27e|28|28e|29|29e|2|2e|30|30e|31|31e|3|3e|4|4e|5|5e|6|6e|7|7e|8|8e|9|9e)(?=\b|t)
 MonthNumRegex: !simpleRegex
   def: (?<month>01|02|03|04|05|06|07|08|09|10|11|12|1|2|3|4|5|6|7|8|9)\b
-DescRegex: !simpleRegex
-  def: (?<desc>h|ampm|am\b|a\.m\.|a m\b|a\. m\.|a\.m\b|a\. m\b|pm\b|p\.m\.|p m\b|p\. m\.|p\.m\b|p\. m\b|p\b\b)
-AmDescRegex: !simpleRegex
-  def: (h|am\b|a\.m\.|a m\b|a\. m\.|a\.m\b|a\. m\b)
-PmDescRegex: !simpleRegex
-  def: (h|pm\b|p\.m\.|p\b|p m\b|p\. m\.|p\.m\b|p\. m\b)
-AmPmDescRegex: !simpleRegex
-  def: (h|ampm)
+SpecialDescRegex: !simpleRegex
+  def: (p\b)
+AmDescRegex: !nestedRegex
+  def: (h|{BaseDateTime.BaseAmDescRegex})
+  references: [BaseDateTime.BaseAmDescRegex]
+PmDescRegex: !nestedRegex
+  def: (h|{BaseDateTime.BasePmDescRegex})
+  references: [BaseDateTime.BasePmDescRegex]
+AmPmDescRegex: !nestedRegex
+  def: (h|{BaseDateTime.BaseAmPmDescRegex})
+  references: [BaseDateTime.BaseAmPmDescRegex]
+DescRegex: !nestedRegex
+  def: (?<desc>{AmPmDescRegex}|{AmDescRegex}|{PmDescRegex}|{SpecialDescRegex})
+  references: [AmDescRegex, PmDescRegex, AmPmDescRegex, SpecialDescRegex]
 # As month number can't be 0, so add (?!\.0\b) to filter out some wrong cases
 TwoDigitYearRegex: !nestedRegex
   def: \b(?<![$])(?<year>([0-27-9]\d))(?!(\s*((\:)|{AmDescRegex}|{PmDescRegex}|\.\d)))\b
@@ -1057,4 +1063,51 @@ MinusTwoDayTerms: !list
   entries: 
     - avant-hier
     - avant hier
+# For DatePeriodParserConfiguration Logic
+FutureStartTerms: !list
+  types: [ string ]
+  entries:
+    - cette
+FutureEndTerms: !list
+  types: [ string ]
+  entries:
+    - prochaine
+    - prochain
+LastCardinalTerms: !list
+  types: [ string ]
+  entries:
+    - dernières
+    - dernière
+    - dernieres
+    - derniere
+    - dernier
+MonthTerms: !list
+  types: [ string ]
+  entries:
+    - mois
+MonthToDateTerms: !list
+  types: [ string ]
+  entries:
+    - mois à ce jour
+WeekendTerms: !list
+  types: [ string ]
+  entries:
+    - fin de semaine
+    - le weekend
+WeekTerms: !list
+  types: [ string ]
+  entries:
+    - semaine
+YearTerms: !list
+  types: [ string ]
+  entries:
+    - années
+    - ans
+    - l'annees
+    - l'annee
+YearToDateTerms: !list
+  types: [ string ]
+  entries:
+    - année à ce jour
+    - an à ce jour
 ...

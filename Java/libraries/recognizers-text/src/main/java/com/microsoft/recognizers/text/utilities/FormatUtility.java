@@ -61,7 +61,7 @@ public class FormatUtility {
     }
 
     public static String removeDiacritics(String query) {
-        if(query==null) {
+        if (query == null) {
             return null;
         }
 

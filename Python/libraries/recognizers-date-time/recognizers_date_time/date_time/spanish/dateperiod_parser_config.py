@@ -233,27 +233,28 @@ class SpanishDatePeriodParserConfiguration(DatePeriodParserConfiguration):
 
     def is_year_to_date(self, source: str) -> bool:
         trimmed_source = source.strip().lower()
-        return trimmed_source == 'año a la fecha' or trimmed_source == 'años a la fecha'
+        return any(trimmed_source == o for o in SpanishDateTime.YearToDateTerms)
 
     def is_month_to_date(self, source: str) -> bool:
         trimmed_source = source.strip().lower()
-        return trimmed_source.endswith('mes a la fecha') or trimmed_source.endswith('meses a la fecha')
+        return any(trimmed_source.endswith(o) for o in SpanishDateTime.MonthToDateTerms)
 
     def is_week_only(self, source: str) -> bool:
         trimmed_source = source.strip().lower()
-        return trimmed_source.endswith('semana') and not trimmed_source.endswith('fin de semana')
+        return any(trimmed_source.endswith(o) for o in SpanishDateTime.WeekTerms) and not\
+            any(trimmed_source.endswith(o) for o in SpanishDateTime.WeekendTerms)
 
     def is_weekend(self, source: str) -> bool:
         trimmed_source = source.strip().lower()
-        return trimmed_source.endswith('fin de semana')
+        return any(trimmed_source.endswith(o) for o in SpanishDateTime.WeekendTerms)
 
     def is_month_only(self, source: str) -> bool:
         trimmed_source = source.strip().lower()
-        return trimmed_source.endswith('mes') or trimmed_source.endswith('meses')
+        return any(trimmed_source.endswith(o) for o in SpanishDateTime.MonthTerms)
 
     def is_year_only(self, source: str) -> bool:
         trimmed_source = source.strip().lower()
-        return trimmed_source.endswith('año') or trimmed_source.endswith('años')
+        return any(trimmed_source.endswith(o) for o in SpanishDateTime.YearTerms)
 
     def is_last_cardinal(self, source: str) -> bool:
         trimmed_source = source.strip().lower()

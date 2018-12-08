@@ -9,20 +9,38 @@ import java.util.regex.Pattern;
 
 public interface IDateTimeExtractorConfiguration extends IOptionsConfiguration {
     Pattern getNowRegex();
+
     Pattern getSuffixRegex();
+
     Pattern getTimeOfTodayAfterRegex();
+
     Pattern getSimpleTimeOfTodayAfterRegex();
+
     Pattern getTimeOfTodayBeforeRegex();
+
     Pattern getSimpleTimeOfTodayBeforeRegex();
+
     Pattern getTimeOfDayRegex();
-    Pattern getTheEndOfRegex();
+
+    Pattern getSpecificEndOfRegex();
+
+    Pattern getUnspecificEndOfRegex();
+
     Pattern getUnitRegex();
+
     Pattern getNumberAsTimeRegex();
+
     Pattern getDateNumberConnectorRegex();
+
     IDateTimeExtractor getDurationExtractor();
+
     IDateTimeExtractor getDatePointExtractor();
+
     IDateTimeExtractor getTimePointExtractor();
+
     IExtractor getIntegerExtractor();
-    boolean IsConnector(String text);
+
+    boolean isConnector(String text);
+
     IDateTimeUtilityConfiguration getUtilityConfiguration();
 }

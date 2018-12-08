@@ -46,7 +46,9 @@ public interface IDateTimeParserConfiguration extends IOptionsConfiguration {
 
     Pattern getSpecificTimeOfDayRegex();
 
-    Pattern getTheEndOfRegex();
+    Pattern getSpecificEndOfRegex();
+
+    Pattern getUnspecificEndOfRegex();
 
     Pattern getUnitRegex();
 

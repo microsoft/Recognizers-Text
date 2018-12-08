@@ -44,7 +44,9 @@ public class MatchResult<T> {
         this.length = length;
     }
 
-    public T getText() { return text; }
+    public T getText() {
+        return text;
+    }
 
     public void setText(T text) {
         this.text = text;
@@ -58,5 +60,7 @@ public class MatchResult<T> {
         this.canonicalValues = canonicalValues;
     }
 
-    public  int getEnd() { return getStart()+getLength(); }
+    public  int getEnd() {
+        return getStart() + getLength();
+    }
 }

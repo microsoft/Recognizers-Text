@@ -7,10 +7,13 @@ import com.microsoft.recognizers.text.matcher.StringMatcher;
 import com.microsoft.recognizers.text.utilities.Match;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
 
 public class MatchingUtil {
 
@@ -49,13 +52,11 @@ public class MatchingUtil {
     }
 
     // Temporary solution for remove superfluous words only under the Preview mode
-    public static ProcessedSuperfluousWords PreProcessTextRemoveSuperfluousWords(String text, StringMatcher matcher)
-    {
-        Iterable<MatchResult<String>> superfluousWordMatches = matcher.find(text);
+    public static ProcessedSuperfluousWords preProcessTextRemoveSuperfluousWords(String text, StringMatcher matcher) {
+        List<MatchResult<String>> superfluousWordMatches = removeSubMatches(matcher.find(text));
         int bias = 0;
 
-        for (MatchResult<String> match : superfluousWordMatches)
-        {
+        for (MatchResult<String> match : superfluousWordMatches) {
             text = text.substring(0, match.getStart() - bias) + text.substring(match.getEnd() - bias);
             bias += match.getLength();
         }
@@ -64,21 +65,17 @@ public class MatchingUtil {
     }
 
     // Temporary solution for recover superfluous words only under the Preview mode
-    public static List<ExtractResult> PosProcessExtractionRecoverSuperfluousWords(List<ExtractResult> extractResults, Iterable<MatchResult<String>> superfluousWordMatches, String originText)
-    {
-        for (MatchResult<String> match : superfluousWordMatches)
-        {
-            for (ExtractResult extractResult : extractResults.toArray(new ExtractResult[0]))
-            {
+    public static List<ExtractResult> posProcessExtractionRecoverSuperfluousWords(List<ExtractResult> extractResults,
+                                                                                  Iterable<MatchResult<String>> superfluousWordMatches, String originText) {
+        for (MatchResult<String> match : superfluousWordMatches) {
+            for (ExtractResult extractResult : extractResults.toArray(new ExtractResult[0])) {
                 int index = 0;
                 int extractResultEnd = extractResult.start + extractResult.length;
-                if (match.getStart() > extractResult.start && extractResultEnd >= match.getStart())
-                {
+                if (match.getStart() > extractResult.start && extractResultEnd >= match.getStart()) {
                     extractResults.set(index, extractResult.withLength(extractResult.length + match.getLength()));
                 }
 
-                if (match.getStart() <= extractResult.start)
-                {
+                if (match.getStart() <= extractResult.start) {
                     extractResults.set(index, extractResult.withStart(extractResult.start + match.getLength()));
                 }
                 index++;
@@ -91,7 +88,15 @@ public class MatchingUtil {
             index++;
         }
 
-        return  extractResults;
+        return extractResults;
+    }
+
+    public static List<MatchResult<String>> removeSubMatches(Iterable<MatchResult<String>> matchResults) {
+
+        return StreamSupport.stream(matchResults.spliterator(), false)
+                .filter(item -> !StreamSupport.stream(matchResults.spliterator(), false)
+                        .anyMatch(ritem -> (ritem.getStart() < item.getStart() && ritem.getEnd() >= item.getEnd()) ||
+                                (ritem.getStart() <= item.getStart() && ritem.getEnd() > item.getEnd())))
+                .collect(Collectors.toCollection(ArrayList::new));
     }
 }
-

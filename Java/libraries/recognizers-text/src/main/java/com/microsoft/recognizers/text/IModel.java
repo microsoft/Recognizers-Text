@@ -4,5 +4,7 @@ import java.util.List;
 
 public interface IModel {
     String getModelTypeName();
+
     List<ModelResult> parse(String query);
+
 }

@@ -21,10 +21,10 @@ namespace Microsoft.Recognizers.Definitions.Spanish
 		public const string AndRegex = @"(?<and>y|y\s*el|--|-|—|——)";
 		public const string DayRegex = @"(?<day>01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|1|20|21|22|23|24|25|26|27|28|29|2|30|31|3|4|5|6|7|8|9)(?=\b|t)";
 		public const string MonthNumRegex = @"(?<month>01|02|03|04|05|06|07|08|09|10|11|12|1|2|3|4|5|6|7|8|9)\b";
-		public const string DescRegex = @"(?<desc>pm\b|am\b|p\.m\.|a\.m\.)";
-		public const string AmDescRegex = @"(am\b|a\.m\.|a m\b|a\. m\.\b|a\.m\b|a\. m\b)";
-		public const string PmDescRegex = @"(pm\b|p\.m\.|p\b|p m\b|p\. m\.\b|p\.m\b|p\. m\b)";
-		public const string AmPmDescRegex = @"(ampm)";
+		public static readonly string AmDescRegex = $@"({BaseDateTime.BaseAmDescRegex})";
+		public static readonly string PmDescRegex = $@"({BaseDateTime.BasePmDescRegex})";
+		public static readonly string AmPmDescRegex = $@"({BaseDateTime.BaseAmPmDescRegex})";
+		public static readonly string DescRegex = $@"(?<desc>({AmDescRegex}|{PmDescRegex}))";
 		public const string RangePrefixRegex = @"((desde|de|entre)\s+(la(s)?\s+)?)";
 		public static readonly string TwoDigitYearRegex = $@"\b(?<![$])(?<year>([0-27-9]\d))(?!(\s*((\:)|{AmDescRegex}|{PmDescRegex}|\.\d)))\b";
 		public const string FullTextYearRegex = @"^[\*]";
@@ -510,6 +510,34 @@ namespace Microsoft.Recognizers.Definitions.Spanish
 		{
 			"anteayer",
 			"dia antes de ayer"
+		};
+		public static readonly IList<string> MonthTerms = new List<string>
+		{
+			"mes",
+			"meses"
+		};
+		public static readonly IList<string> MonthToDateTerms = new List<string>
+		{
+			"mes a la fecha",
+			"meses a la fecha"
+		};
+		public static readonly IList<string> WeekendTerms = new List<string>
+		{
+			"fin de semana"
+		};
+		public static readonly IList<string> WeekTerms = new List<string>
+		{
+			"semana"
+		};
+		public static readonly IList<string> YearTerms = new List<string>
+		{
+			"año",
+			"años"
+		};
+		public static readonly IList<string> YearToDateTerms = new List<string>
+		{
+			"año a la fecha",
+			"años a la fecha"
 		};
 	}
 }

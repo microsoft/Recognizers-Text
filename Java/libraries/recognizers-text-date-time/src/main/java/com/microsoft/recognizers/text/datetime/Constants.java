@@ -114,6 +114,41 @@ public class Constants {
     public static final String SecondGroupName = "sec";
     public static final String MinuteGroupName = "min";
     public static final String HourGroupName = "hour";
+    public static final String TimeOfDayGroupName = "timeOfDay";
+    public static final String BusinessDayGroupName = "business";
+    public static final String LeftAmPmGroupName = "leftDesc";
+    public static final String RightAmPmGroupName = "rightDesc";
+
+    public static final String DECADE_UNIT = "10Y";
+
+    // Timex
+    public static final String[] DatePeriodTimexSplitter = { ",", "(", ")" };
+    public static final String TimexYear = "Y";
+    public static final String TimexMonth = "M";
+    public static final String TimexMonthFull = "MON";
+    public static final String TimexWeek = "W";
+    public static final String TimexDay = "D";
+    public static final String TimexBusinessDay = "BD";
+    public static final String TimexWeekend = "WE";
+    public static final String TimexHour = "H";
+    public static final String TimexMinute = "M";
+    public static final String TimexSecond = "S";
+    public static final char TimexFuzzy = 'X';
+    public static final String TimexFuzzyYear = "XXXX";
+    public static final String TimexFuzzyMonth = "XX";
+    public static final String TimexFuzzyWeek = "WXX";
+    public static final String TimexFuzzyDay = "XX";
+    public static final String DateTimexConnector = "-";
+    public static final String TimeTimexConnector = ":";
     public static final String GeneralPeriodPrefix = "P";
     public static final String TimeTimexPrefix = "T";
+
+    // Timex of TimeOfDay
+    public static final String EarlyMorning = "TDA";
+    public static final String Morning = "TMO";
+    public static final String Afternoon = "TAF";
+    public static final String Evening = "TEV";
+    public static final String Daytime = "TDT";
+    public static final String Night = "TNI";
+    public static final String BusinessHour = "TBH";
 }

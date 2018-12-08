@@ -57,18 +57,18 @@ public class DateUtil {
         }
 
         Integer[] validDays = {
-                31,
-                year % 4 == 0 && year % 100 != 0 || year % 400 == 0 ? 29 : 28,
-                31,
-                30,
-                31,
-                30,
-                31,
-                31,
-                30,
-                31,
-                30,
-                31
+            31,
+            year % 4 == 0 && year % 100 != 0 || year % 400 == 0 ? 29 : 28,
+            31,
+            30,
+            31,
+            30,
+            31,
+            31,
+            30,
+            31,
+            30,
+            31
         };
 
         return month >= 1 && month <= 12 && day >= 1 && day <= validDays[month - 1];

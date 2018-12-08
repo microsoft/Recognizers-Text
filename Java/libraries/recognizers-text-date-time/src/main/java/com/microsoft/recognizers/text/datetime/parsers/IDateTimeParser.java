@@ -8,6 +8,8 @@ import java.util.List;
 
 public interface IDateTimeParser extends IParser {
     String getParserName();
+
     DateTimeParseResult parse(ExtractResult er, LocalDateTime reference);
+
     List<DateTimeParseResult> filterResults(String query, List<DateTimeParseResult> candidateResults);
 }

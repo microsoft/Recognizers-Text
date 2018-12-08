@@ -69,11 +69,14 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             SingleTimeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration(this));
             UtilityConfiguration = new EnglishDatetimeUtilityConfiguration();
             IntegerExtractor = Number.English.IntegerExtractor.GetInstance();
+            TimeZoneExtractor = new BaseTimeZoneExtractor(new EnglishTimeZoneExtractorConfiguration(this));
         }
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
         public IDateTimeExtractor SingleTimeExtractor { get; }
+
+        public IDateTimeExtractor TimeZoneExtractor { get; }
 
         public IExtractor IntegerExtractor { get; }
 

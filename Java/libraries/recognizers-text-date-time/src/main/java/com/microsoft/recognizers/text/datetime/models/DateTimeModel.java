@@ -49,7 +49,7 @@ public class DateTimeModel implements IModel {
                 DateTimeParseResult parseResult = parser.parse(result, reference);
 
                 if (parseResult.value instanceof List) {
-                    parsedDateTimes.addAll((List<DateTimeParseResult>) parseResult.value);
+                    parsedDateTimes.addAll((List<DateTimeParseResult>)parseResult.value);
                 } else {
                     parsedDateTimes.add(parseResult);
                 }
@@ -71,7 +71,7 @@ public class DateTimeModel implements IModel {
         int start = parsedDateTime.start;
         int end = parsedDateTime.start + parsedDateTime.length - 1;
         String typeName = parsedDateTime.type;
-        SortedMap<String, Object> resolution = (SortedMap<String, Object>) parsedDateTime.value;
+        SortedMap<String, Object> resolution = (SortedMap<String, Object>)parsedDateTime.value;
         String text = parsedDateTime.text;
 
         ModelResult result = new ModelResult(text, start, end, typeName, resolution);
@@ -86,7 +86,7 @@ public class DateTimeModel implements IModel {
     }
 
     private String getParentText(DateTimeParseResult parsedDateTime) {
-        Map<String, Object> map = (Map<String, Object>) parsedDateTime.data;
+        Map<String, Object> map = (Map<String, Object>)parsedDateTime.data;
         Object result = map.get(ExtendedModelResult.ParentTextKey);
         return String.valueOf(result);
     }

@@ -33,7 +33,10 @@ public class Token {
         List<Token> mergedTokens = new ArrayList<>();
 
         tokens.sort((o1, o2) -> {
-            if (o1.start != o2.start) return o1.start - o2.start;
+            if (o1.start != o2.start) {
+                return o1.start - o2.start;
+            }
+
             return o2.getLength() - o1.getLength();
         });
 

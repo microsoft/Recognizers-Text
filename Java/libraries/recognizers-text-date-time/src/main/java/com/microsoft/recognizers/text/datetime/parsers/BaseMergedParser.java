@@ -67,7 +67,7 @@ public class BaseMergedParser implements IDateTimeParser {
 
         String originText = er.text;
         if (this.config.getOptions().match(DateTimeOptions.EnablePreview)) {
-            String newText = MatchingUtil.PreProcessTextRemoveSuperfluousWords(er.text, config.getSuperfluousWordMatcher()).text;
+            String newText = MatchingUtil.preProcessTextRemoveSuperfluousWords(er.text, config.getSuperfluousWordMatcher()).text;
             int newLength = er.length + er.text.length() - originText.length();
             er = new ExtractResult(er.start, newLength, newText, er.type, er.data);
         }

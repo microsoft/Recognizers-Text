@@ -29,7 +29,8 @@ public class EnglishDateTimeExtractorConfiguration extends BaseOptionsConfigurat
     public static final Pattern TimeOfTodayBeforeRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TimeOfTodayBeforeRegex, Pattern.CASE_INSENSITIVE);
     public static final Pattern SimpleTimeOfTodayAfterRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SimpleTimeOfTodayAfterRegex, Pattern.CASE_INSENSITIVE);
     public static final Pattern SimpleTimeOfTodayBeforeRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SimpleTimeOfTodayBeforeRegex, Pattern.CASE_INSENSITIVE);
-    public static final Pattern TheEndOfRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TheEndOfRegex, Pattern.CASE_INSENSITIVE);
+    public static final Pattern SpecificEndOfRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SpecificEndOfRegex, Pattern.CASE_INSENSITIVE);
+    public static final Pattern UnspecificEndOfRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.UnspecificEndOfRegex, Pattern.CASE_INSENSITIVE);
     public static final Pattern UnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TimeUnitRegex, Pattern.CASE_INSENSITIVE);
     public static final Pattern ConnectorRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.ConnectorRegex, Pattern.CASE_INSENSITIVE);
     public static final Pattern NumberAsTimeRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.NumberAsTimeRegex, Pattern.CASE_INSENSITIVE);
@@ -93,8 +94,13 @@ public class EnglishDateTimeExtractorConfiguration extends BaseOptionsConfigurat
     }
 
     @Override
-    public Pattern getTheEndOfRegex() {
-        return TheEndOfRegex;
+    public Pattern getSpecificEndOfRegex() {
+        return SpecificEndOfRegex;
+    }
+
+    @Override
+    public Pattern getUnspecificEndOfRegex() {
+        return UnspecificEndOfRegex;
     }
 
     @Override
@@ -137,7 +143,7 @@ public class EnglishDateTimeExtractorConfiguration extends BaseOptionsConfigurat
         return utilityConfiguration;
     }
 
-    public boolean IsConnector(String text) {
+    public boolean isConnector(String text) {
 
         text = text.trim();
 

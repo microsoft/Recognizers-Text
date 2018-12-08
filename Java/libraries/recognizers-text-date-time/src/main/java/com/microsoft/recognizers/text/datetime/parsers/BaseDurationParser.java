@@ -15,7 +15,12 @@ import com.microsoft.recognizers.text.utilities.RegExpUtility;
 import com.microsoft.recognizers.text.utilities.StringUtility;
 
 import java.time.LocalDateTime;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
 import java.util.regex.Pattern;
 
 public class BaseDurationParser implements IDateTimeParser {
@@ -56,11 +61,11 @@ public class BaseDurationParser implements IDateTimeParser {
 
             if (innerResult.getSuccess()) {
                 innerResult.setFutureResolution(ImmutableMap.<String, String>builder()
-                        .put(TimeTypeConstants.DURATION, StringUtility.format((Double) innerResult.getFutureValue()))
+                        .put(TimeTypeConstants.DURATION, StringUtility.format((Double)innerResult.getFutureValue()))
                         .build());
 
                 innerResult.setPastResolution(ImmutableMap.<String, String>builder()
-                        .put(TimeTypeConstants.DURATION, StringUtility.format((Double) innerResult.getPastValue()))
+                        .put(TimeTypeConstants.DURATION, StringUtility.format((Double)innerResult.getPastValue()))
                         .build());
 
                 if (er.data != null) {
@@ -83,7 +88,7 @@ public class BaseDurationParser implements IDateTimeParser {
                 er.data,
                 value,
                 "",
-                value == null ? "" : ((DateTimeResolutionResult) value).getTimex()
+                value == null ? "" : ((DateTimeResolutionResult)value).getTimex()
         );
 
         return result;
@@ -127,7 +132,7 @@ public class BaseDurationParser implements IDateTimeParser {
             Pattern unitRegex = config.getDurationUnitRegex();
             Optional<Match> unitMatch = Arrays.stream(RegExpUtility.getMatches(unitRegex, er.text)).findFirst();
             if (unitMatch.isPresent()) {
-                DateTimeParseResult pr = (DateTimeParseResult) parse(er);
+                DateTimeParseResult pr = (DateTimeParseResult)parse(er);
                 if (pr.value != null) {
                     timexMap.put(unitMatch.get().getGroup("unit").value, pr.timexStr);
                     prs.add(pr);
@@ -142,7 +147,7 @@ public class BaseDurationParser implements IDateTimeParser {
 
             double value = 0;
             for (DateTimeParseResult pr : prs) {
-                value += Double.parseDouble(((DateTimeResolutionResult) pr.value).getFutureValue().toString());
+                value += Double.parseDouble(((DateTimeResolutionResult)pr.value).getFutureValue().toString());
             }
 
             result.setFutureValue(value);
@@ -206,13 +211,25 @@ public class BaseDurationParser implements IDateTimeParser {
                 suffixStr = match.get().getGroup(Constants.SuffixGroupName).value.toLowerCase();
             }
 
+            if (match.isPresent() && !StringUtility.isNullOrEmpty(match.get().getGroup(Constants.BusinessDayGroupName).value)) {
+                int numVal = Math.round(Double.valueOf(pr.value.toString()).floatValue());
+
+                String timex = TimexUtility.generateDurationTimex(numVal, Constants.TimexBusinessDay, false);
+                double timeValue = numVal * config.getUnitValueMap().get(srcUnit.split(" ")[1]);
+
+                result.setTimex(timex);
+                result.setFutureValue(timeValue);
+                result.setPastValue(timeValue);
+
+                result.setSuccess(true);
+            }
+
             if (config.getUnitMap().containsKey(srcUnit)) {
-                Double numVal = Double.parseDouble(pr.value.toString()) + parseNumberWithUnitAndSuffix(suffixStr);
-                String numStr = StringUtility.format(numVal);
+                double numVal = Double.parseDouble(pr.value.toString()) + parseNumberWithUnitAndSuffix(suffixStr);
 
                 String unitStr = config.getUnitMap().get(srcUnit);
 
-                String timex = String.format("P%s%s%c", isLessThanDay(unitStr) ? "T" : "", numStr, unitStr.charAt(0));
+                String timex = TimexUtility.generateDurationTimex(numVal, unitStr, isLessThanDay(unitStr));
                 double timeValue = numVal * config.getUnitValueMap().get(srcUnit);
 
                 result.setTimex(timex);
@@ -220,7 +237,6 @@ public class BaseDurationParser implements IDateTimeParser {
                 result.setPastValue(timeValue);
 
                 result.setSuccess(true);
-                return result;
             }
         }
 
@@ -274,7 +290,7 @@ public class BaseDurationParser implements IDateTimeParser {
         }
 
         if (match.isPresent()) {
-            Double numVal = StringUtility.isNullOrEmpty(match.get().getGroup("half").value) ? 1 : 0.5;
+            double numVal = StringUtility.isNullOrEmpty(match.get().getGroup("half").value) ? 1 : 0.5;
             numVal += parseNumberWithUnitAndSuffix(suffixStr);
             String numStr = StringUtility.format(numVal);
 
@@ -291,7 +307,16 @@ public class BaseDurationParser implements IDateTimeParser {
                 result.setPastValue(timeValue);
 
                 result.setSuccess(true);
-                return result;
+
+            } else if (!StringUtility.isNullOrEmpty(match.get().getGroup(Constants.BusinessDayGroupName).value)) {
+                String timex = TimexUtility.generateDurationTimex(numVal, Constants.TimexBusinessDay, false);
+                double timeValue = numVal * config.getUnitValueMap().get(srcUnit.split(" ")[1]);
+
+                result.setTimex(timex);
+                result.setFutureValue(timeValue);
+                result.setPastValue(timeValue);
+
+                result.setSuccess(true);
             }
         }
 

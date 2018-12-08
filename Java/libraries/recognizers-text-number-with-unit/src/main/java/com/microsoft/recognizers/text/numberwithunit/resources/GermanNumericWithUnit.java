@@ -10,6 +10,7 @@ package com.microsoft.recognizers.text.numberwithunit.resources;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import com.google.common.collect.ImmutableMap;
 
@@ -144,7 +145,7 @@ public class GermanNumericWithUnit {
         .put("Diram", "dirams|diram")
         .put("Thai baht", "thailändischer baht|thailändische baht|thailändischen baht|thailaendischer baht|thailaendische baht|thailaendischen baht|thai baht|thai-baht|฿|thb")
         .put("Satang", "satang|satangs")
-        .put("Tongan paʻanga", "tongaischer paʻanga|tongaische paʻanga|tongaischen paʻanga|paʻanga|tonga paʻanga|tongaischer pa'anga|tongaische pa'anga|tongaischen pa'anga|pa'anga|tonga pa'anga|")
+        .put("Tongan paʻanga", "tongaischer paʻanga|tongaische paʻanga|tongaischen paʻanga|paʻanga|tonga paʻanga|tongaischer pa'anga|tongaische pa'anga|tongaischen pa'anga|pa'anga|tonga pa'anga")
         .put("Seniti", "seniti")
         .put("Ukrainian hryvnia", "ukrainischer hrywnja|ukrainische hrywnja|ukrainischen hrywnja|hrywnja|uah|₴")
         .put("Vanuatu vatu", "vanuatu-vatu|vanuatu vatu|vatu|vuv")
@@ -204,7 +205,7 @@ public class GermanNumericWithUnit {
         .put("Kapyeyka", "kapyeyka")
         .put("Ruble", "rubel|br")
         .put("Algerian dinar", "algerischer dinar|algerische dinar|algerischen dinar|د.ج|dzd")
-        .put("Bahraini dinar", "bahrain-dinar||bhd|.د.ب")
+        .put("Bahraini dinar", "bahrain-dinar|bhd|.د.ب")
         .put("Santeem", "santeem|santeeme")
         .put("Iraqi dinar", "irakischer dinar|irakische dinar|irakischen dinar|iqd|ع.د")
         .put("Jordanian dinar", "jordanischer dinar|jordanische dinar|jordanischen dinar|د.ا|jod")
