@@ -5,7 +5,7 @@
 
     <IsPackable>false</IsPackable>
 
-    <Copyright>Copyright ©  2018</Copyright>
+    <Copyright>© Microsoft Corporation. All rights reserved.</Copyright>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
