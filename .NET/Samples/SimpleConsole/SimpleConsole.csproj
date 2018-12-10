@@ -1,87 +1,22 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{062ACBE8-C3EF-4F5B-BFD1-04B129A7F1D2}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>SimpleConsole</RootNamespace>
-    <AssemblyName>SimpleConsole</AssemblyName>
-    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <TargetFrameworkProfile />
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <Copyright>© Microsoft Corporation. All rights reserved.</Copyright>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
+
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Xml" />
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
   </ItemGroup>
+
   <ItemGroup>
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <ProjectReference Include="..\..\Microsoft.Recognizers.Text.DateTime\Microsoft.Recognizers.Text.DateTime.csproj" />
+    <ProjectReference Include="..\..\Microsoft.Recognizers.Text.NumberWithUnit\Microsoft.Recognizers.Text.NumberWithUnit.csproj" />
+    <ProjectReference Include="..\..\Microsoft.Recognizers.Text.Choice\Microsoft.Recognizers.Text.Choice.csproj" />
+    <ProjectReference Include="..\..\Microsoft.Recognizers.Text.Number\Microsoft.Recognizers.Text.Number.csproj" />
+    <ProjectReference Include="..\..\Microsoft.Recognizers.Text.Sequence\Microsoft.Recognizers.Text.Sequence.csproj" />
+    <ProjectReference Include="..\..\Microsoft.Recognizers.Text\Microsoft.Recognizers.Text.csproj" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\Microsoft.Recognizers.Text.DateTime\Microsoft.Recognizers.Text.DateTime.csproj">
-      <Project>{19522b81-c63f-4dd5-ab4c-674cd44d67d6}</Project>
-      <Name>Microsoft.Recognizers.Text.DateTime</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Microsoft.Recognizers.Text.NumberWithUnit\Microsoft.Recognizers.Text.NumberWithUnit.csproj">
-      <Project>{e9be4f64-9cc5-433c-90cc-a379a732e5e8}</Project>
-      <Name>Microsoft.Recognizers.Text.NumberWithUnit</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Microsoft.Recognizers.Text.Choice\Microsoft.Recognizers.Text.Choice.csproj">
-      <Project>{9318ea22-c36a-48c8-9882-8a0d2d74c356}</Project>
-      <Name>Microsoft.Recognizers.Text.Choice</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Microsoft.Recognizers.Text.Number\Microsoft.Recognizers.Text.Number.csproj">
-      <Project>{f1005971-0341-4635-ac1b-b272681d0834}</Project>
-      <Name>Microsoft.Recognizers.Text.Number</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Microsoft.Recognizers.Text.Sequence\Microsoft.Recognizers.Text.Sequence.csproj">
-      <Project>{a5f60d50-81f7-44f8-a2b4-a63606376ee7}</Project>
-      <Name>Microsoft.Recognizers.Text.Sequence</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Microsoft.Recognizers.Text\Microsoft.Recognizers.Text.csproj">
-      <Project>{59755149-e656-4ef7-87a5-76eee3fd5146}</Project>
-      <Name>Microsoft.Recognizers.Text</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <PropertyGroup>
-    <PostBuildEvent>
-    </PostBuildEvent>
-  </PropertyGroup>
+
 </Project>

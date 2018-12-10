@@ -22,7 +22,9 @@ public interface IDateTimeExtractorConfiguration extends IOptionsConfiguration {
 
     Pattern getTimeOfDayRegex();
 
-    Pattern getTheEndOfRegex();
+    Pattern getSpecificEndOfRegex();
+
+    Pattern getUnspecificEndOfRegex();
 
     Pattern getUnitRegex();
 

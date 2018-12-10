@@ -42,6 +42,8 @@ public interface IMergedExtractorConfiguration extends IOptionsConfiguration {
 
     Pattern getSinceRegex();
 
+    Pattern getAroundRegex();
+
     Pattern getFromToRegex();
 
     Pattern getSingleAmbiguousMonthRegex();

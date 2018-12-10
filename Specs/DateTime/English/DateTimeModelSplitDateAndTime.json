@@ -7,8 +7,8 @@
     "Results": [
       {
         "Text": "hour",
-        "Start": 5,
-        "End": 8,
+        "Start": 17,
+        "End": 20,
         "TypeName": "datetimeV2.duration",
         "Resolution": {
           "values": [
@@ -31,8 +31,8 @@
     "Results": [
       {
         "Text": "5 minutes",
-        "Start": 5,
-        "End": 13,
+        "Start": 17,
+        "End": 25,
         "TypeName": "datetimeV2.duration",
         "Resolution": {
           "values": [
@@ -55,8 +55,8 @@
     "Results": [
       {
         "Text": "3 days",
-        "Start": 5,
-        "End": 10,
+        "Start": 17,
+        "End": 22,
         "TypeName": "datetimeV2.duration",
         "Resolution": {
           "values": [
@@ -153,8 +153,8 @@
     "Results": [
       {
         "Text": "2 hours",
-        "Start": 0,
-        "End": 6,
+        "Start": 19,
+        "End": 25,
         "TypeName": "datetimeV2.duration",
         "Resolution": {
           "values": [
@@ -177,8 +177,8 @@
     "Results": [
       {
         "Text": "tomorrow",
-        "Start": 0,
-        "End": 7,
+        "Start": 19,
+        "End": 26,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -192,8 +192,8 @@
       },
       {
         "Text": "5pm",
-        "Start": 5,
-        "End": 7,
+        "Start": 33,
+        "End": 35,
         "TypeName": "datetimeV2.time",
         "Resolution": {
           "values": [
@@ -207,8 +207,8 @@
       },
       {
         "Text": "7pm",
-        "Start": 12,
-        "End": 14,
+        "Start": 40,
+        "End": 42,
         "TypeName": "datetimeV2.time",
         "Resolution": {
           "values": [
@@ -230,8 +230,8 @@
     "Results": [
       {
         "Text": "today",
-        "Start": 0,
-        "End": 4,
+        "Start": 19,
+        "End": 23,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -245,8 +245,8 @@
       },
       {
         "Text": "5pm",
-        "Start": 5,
-        "End": 7,
+        "Start": 30,
+        "End": 32,
         "TypeName": "datetimeV2.time",
         "Resolution": {
           "values": [
@@ -260,8 +260,8 @@
       },
       {
         "Text": "7pm",
-        "Start": 12,
-        "End": 14,
+        "Start": 37,
+        "End": 39,
         "TypeName": "datetimeV2.time",
         "Resolution": {
           "values": [
@@ -283,8 +283,8 @@
     "Results": [
       {
         "Text": "next monday",
-        "Start": 0,
-        "End": 10,
+        "Start": 19,
+        "End": 29,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -298,8 +298,8 @@
       },
       {
         "Text": "5pm",
-        "Start": 5,
-        "End": 7,
+        "Start": 36,
+        "End": 38,
         "TypeName": "datetimeV2.time",
         "Resolution": {
           "values": [
@@ -313,8 +313,8 @@
       },
       {
         "Text": "7pm",
-        "Start": 12,
-        "End": 14,
+        "Start": 43,
+        "End": 45,
         "TypeName": "datetimeV2.time",
         "Resolution": {
           "values": [
@@ -336,8 +336,8 @@
     "Results": [
       {
         "Text": "tomorrow",
-        "Start": 1,
-        "End": 8,
+        "Start": 20,
+        "End": 27,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -351,8 +351,8 @@
       },
       {
         "Text": "5pm",
-        "Start": 5,
-        "End": 7,
+        "Start": 24,
+        "End": 26,
         "TypeName": "datetimeV2.time",
         "Resolution": {
           "values": [
@@ -366,8 +366,8 @@
       },
       {
         "Text": "7pm",
-        "Start": 12,
-        "End": 14,
+        "Start": 31,
+        "End": 33,
         "TypeName": "datetimeV2.time",
         "Resolution": {
           "values": [
@@ -389,8 +389,8 @@
     "Results": [
       {
         "Text": "today",
-        "Start": 1,
-        "End": 5,
+        "Start": 20,
+        "End": 24,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -404,8 +404,8 @@
       },
       {
         "Text": "5pm",
-        "Start": 5,
-        "End": 7,
+        "Start": 24,
+        "End": 26,
         "TypeName": "datetimeV2.time",
         "Resolution": {
           "values": [
@@ -419,8 +419,8 @@
       },
       {
         "Text": "7pm",
-        "Start": 12,
-        "End": 14,
+        "Start": 31,
+        "End": 33,
         "TypeName": "datetimeV2.time",
         "Resolution": {
           "values": [
@@ -442,8 +442,8 @@
     "Results": [
       {
         "Text": "next monday",
-        "Start": 1,
-        "End": 11,
+        "Start": 20,
+        "End": 30,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -457,8 +457,8 @@
       },
       {
         "Text": "5pm",
-        "Start": 5,
-        "End": 7,
+        "Start": 24,
+        "End": 26,
         "TypeName": "datetimeV2.time",
         "Resolution": {
           "values": [
@@ -472,8 +472,8 @@
       },
       {
         "Text": "7pm",
-        "Start": 12,
-        "End": 14,
+        "Start": 31,
+        "End": 33,
         "TypeName": "datetimeV2.time",
         "Resolution": {
           "values": [
@@ -495,8 +495,8 @@
     "Results": [
       {
         "Text": "tomorrow",
-        "Start": 0,
-        "End": 7,
+        "Start": 19,
+        "End": 26,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -510,8 +510,8 @@
       },
       {
         "Text": "from 5 to 7pm",
-        "Start": 9,
-        "End": 21,
+        "Start": 28,
+        "End": 40,
         "TypeName": "datetimeV2.timerange",
         "Resolution": {
           "values": [
@@ -534,8 +534,8 @@
     "Results": [
       {
         "Text": "sep.1st",
-        "Start": 5,
-        "End": 11,
+        "Start": 24,
+        "End": 30,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -554,8 +554,8 @@
       },
       {
         "Text": "sep.5th",
-        "Start": 16,
-        "End": 22,
+        "Start": 35,
+        "End": 41,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -582,8 +582,8 @@
     "Results": [
       {
         "Text": "july the 5th",
-        "Start": 5,
-        "End": 16,
+        "Start": 24,
+        "End": 35,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -602,8 +602,8 @@
       },
       {
         "Text": "july the 8th",
-        "Start": 21,
-        "End": 32,
+        "Start": 40,
+        "End": 51,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -630,8 +630,8 @@
     "Results": [
       {
         "Text": "5:30",
-        "Start": 5,
-        "End": 8,
+        "Start": 24,
+        "End": 27,
         "TypeName": "datetimeV2.time",
         "Resolution": {
           "values": [
@@ -650,8 +650,8 @@
       },
       {
         "Text": "7:00",
-        "Start": 13,
-        "End": 16,
+        "Start": 32,
+        "End": 35,
         "TypeName": "datetimeV2.time",
         "Resolution": {
           "values": [
@@ -678,8 +678,8 @@
     "Results": [
       {
         "Text": "5pm",
-        "Start": 5,
-        "End": 7,
+        "Start": 24,
+        "End": 26,
         "TypeName": "datetimeV2.time",
         "Resolution": {
           "values": [
@@ -693,8 +693,8 @@
       },
       {
         "Text": "7pm",
-        "Start": 12,
-        "End": 14,
+        "Start": 31,
+        "End": 33,
         "TypeName": "datetimeV2.time",
         "Resolution": {
           "values": [
@@ -716,8 +716,8 @@
     "Results": [
       {
         "Text": "5am",
-        "Start": 5,
-        "End": 7,
+        "Start": 24,
+        "End": 26,
         "TypeName": "datetimeV2.time",
         "Resolution": {
           "values": [
@@ -731,8 +731,8 @@
       },
       {
         "Text": "7pm",
-        "Start": 12,
-        "End": 14,
+        "Start": 31,
+        "End": 33,
         "TypeName": "datetimeV2.time",
         "Resolution": {
           "values": [
@@ -754,8 +754,8 @@
     "Results": [
       {
         "Text": "2 days",
-        "Start": 0,
-        "End": 5,
+        "Start": 19,
+        "End": 24,
         "TypeName": "datetimeV2.duration",
         "Resolution": {
           "values": [
@@ -778,8 +778,8 @@
     "Results": [
       {
         "Text": "2 minutes",
-        "Start": 0,
-        "End": 8,
+        "Start": 6,
+        "End": 14,
         "TypeName": "datetimeV2.duration",
         "Resolution": {
           "values": [
@@ -802,8 +802,8 @@
     "Results": [
       {
         "Text": "tomorrow",
-        "Start": 0,
-        "End": 7,
+        "Start": 19,
+        "End": 26,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -817,8 +817,8 @@
       },
       {
         "Text": "7pm",
-        "Start": 12,
-        "End": 14,
+        "Start": 31,
+        "End": 33,
         "TypeName": "datetimeV2.time",
         "Resolution": {
           "values": [
@@ -840,8 +840,8 @@
     "Results": [
       {
         "Text": "tomorrow",
-        "Start": 0,
-        "End": 7,
+        "Start": 19,
+        "End": 26,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -855,8 +855,8 @@
       },
       {
         "Text": "morning at 7pm",
-        "Start": 9,
-        "End": 22,
+        "Start": 28,
+        "End": 41,
         "TypeName": "datetimeV2.time",
         "Resolution": {
           "values": [
@@ -879,8 +879,8 @@
     "Results": [
       {
         "Text": "1/1/2015",
-        "Start": 4,
-        "End": 11,
+        "Start": 19,
+        "End": 26,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -894,8 +894,8 @@
       },
       {
         "Text": "11:30",
-        "Start": 15,
-        "End": 19,
+        "Start": 30,
+        "End": 34,
         "TypeName": "datetimeV2.time",
         "Resolution": {
           "values": [
@@ -923,8 +923,8 @@
     "Results": [
       {
         "Text": "1/1/2015",
-        "Start": 0,
-        "End": 7,
+        "Start": 15,
+        "End": 22,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -938,8 +938,8 @@
       },
       {
         "Text": "11:30",
-        "Start": 15,
-        "End": 19,
+        "Start": 39,
+        "End": 43,
         "TypeName": "datetimeV2.time",
         "Resolution": {
           "values": [
@@ -967,8 +967,8 @@
     "Results": [
       {
         "Text": "1/1/2015",
-        "Start": 4,
-        "End": 11,
+        "Start": 19,
+        "End": 26,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -982,8 +982,8 @@
       },
       {
         "Text": "10:30",
-        "Start": 5,
-        "End": 9,
+        "Start": 20,
+        "End": 24,
         "TypeName": "datetimeV2.time",
         "Resolution": {
           "values": [
@@ -1042,8 +1042,8 @@
     "Results": [
       {
         "Text": "1/1/2015",
-        "Start": 4,
-        "End": 11,
+        "Start": 19,
+        "End": 26,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -1057,8 +1057,8 @@
       },
       {
         "Text": "11:30",
-        "Start": 15,
-        "End": 19,
+        "Start": 30,
+        "End": 34,
         "TypeName": "datetimeV2.time",
         "Resolution": {
           "values": [
@@ -1086,8 +1086,8 @@
     "Results": [
       {
         "Text": "1/1/2015",
-        "Start": 0,
-        "End": 7,
+        "Start": 15,
+        "End": 22,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -1101,8 +1101,8 @@
       },
       {
         "Text": "2:00",
-        "Start": 15,
-        "End": 18,
+        "Start": 30,
+        "End": 33,
         "TypeName": "datetimeV2.time",
         "Resolution": {
           "values": [
@@ -1130,8 +1130,8 @@
     "Results": [
       {
         "Text": "today",
-        "Start": 0,
-        "End": 4,
+        "Start": 15,
+        "End": 19,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -1145,8 +1145,8 @@
       },
       {
         "Text": "4pm",
-        "Start": 13,
-        "End": 15,
+        "Start": 28,
+        "End": 30,
         "TypeName": "datetimeV2.time",
         "Resolution": {
           "values": [
@@ -1169,8 +1169,8 @@
     "Results": [
       {
         "Text": "next wednesday",
-        "Start": 0,
-        "End": 13,
+        "Start": 15,
+        "End": 28,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -1184,8 +1184,8 @@
       },
       {
         "Text": "10 in the morning",
-        "Start": 26,
-        "End": 42,
+        "Start": 41,
+        "End": 57,
         "TypeName": "datetimeV2.time",
         "Resolution": {
           "values": [
@@ -1208,8 +1208,8 @@
     "Results": [
       {
         "Text": "previous tuesday",
-        "Start": 0,
-        "End": 15,
+        "Start": 15,
+        "End": 30,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -1223,8 +1223,8 @@
       },
       {
         "Text": "2 in the afternoon",
-        "Start": 20,
-        "End": 37,
+        "Start": 35,
+        "End": 52,
         "TypeName": "datetimeV2.time",
         "Resolution": {
           "values": [
@@ -1247,8 +1247,8 @@
     "Results": [
       {
         "Text": "feb 1st",
-        "Start": 0,
-        "End": 6,
+        "Start": 12,
+        "End": 18,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -1267,8 +1267,8 @@
       },
       {
         "Text": "6:00",
-        "Start": 22,
-        "End": 25,
+        "Start": 34,
+        "End": 37,
         "TypeName": "datetimeV2.time",
         "Resolution": {
           "values": [

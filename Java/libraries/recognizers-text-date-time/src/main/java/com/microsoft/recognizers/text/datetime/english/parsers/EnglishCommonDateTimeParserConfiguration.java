@@ -26,6 +26,7 @@ import com.microsoft.recognizers.text.datetime.parsers.BaseDateTimeParser;
 import com.microsoft.recognizers.text.datetime.parsers.BaseDateTimePeriodParser;
 import com.microsoft.recognizers.text.datetime.parsers.BaseDurationParser;
 import com.microsoft.recognizers.text.datetime.parsers.BaseTimePeriodParser;
+import com.microsoft.recognizers.text.datetime.parsers.BaseTimeZoneParser;
 import com.microsoft.recognizers.text.datetime.parsers.IDateTimeParser;
 import com.microsoft.recognizers.text.datetime.parsers.config.BaseDateParserConfiguration;
 import com.microsoft.recognizers.text.datetime.parsers.config.ICommonDateTimeParserConfiguration;
@@ -79,6 +80,7 @@ public class EnglishCommonDateTimeParserConfiguration extends BaseDateParserConf
     private final IDateTimeParser timePeriodParser;
     private final IDateTimeParser dateTimePeriodParser;
     private final IDateTimeParser dateTimeAltParser;
+    private final IDateTimeParser timeZoneParser;
 
     public EnglishCommonDateTimeParserConfiguration(DateTimeOptions options) {
 
@@ -119,6 +121,7 @@ public class EnglishCommonDateTimeParserConfiguration extends BaseDateParserConf
         timePeriodParser = new BaseTimePeriodParser(new EnglishTimePeriodParserConfiguration(this));
         dateTimePeriodParser = new BaseDateTimePeriodParser(new EnglishDateTimePeriodParserConfiguration(this));
         dateTimeAltParser = new BaseDateTimeAltParser(new EnglishDateTimeAltParserConfiguration(this));
+        timeZoneParser = new BaseTimeZoneParser();
     }
 
     @Override
@@ -214,6 +217,11 @@ public class EnglishCommonDateTimeParserConfiguration extends BaseDateParserConf
     @Override
     public IDateTimeParser getDateTimeAltParser() {
         return dateTimeAltParser;
+    }
+
+    @Override
+    public IDateTimeParser getTimeZoneParser() {
+        return timeZoneParser;
     }
 
     @Override

@@ -809,7 +809,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java",
     "Results": [
       {
         "Text": "the end of the day",
@@ -833,7 +832,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java",
     "Results": [
       {
         "Text": "end of tomorrow",
@@ -857,7 +855,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java",
     "Results": [
       {
         "Text": "end of the sunday",
@@ -1180,7 +1177,7 @@
     "Context": {
       "ReferenceDateTime": "2017-11-23T19:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "1 day 2 hours later",
@@ -1204,7 +1201,7 @@
     "Context": {
       "ReferenceDateTime": "2017-11-23T19:15:00"
     },
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "1 month 2 days 2 hours 30 mins ago",
@@ -1277,7 +1274,6 @@
     "Context": {
       "ReferenceDateTime": "2018-11-21T12:00:00"
     },
-    "NotSupportedByDesign": "java",
     "Results": [
       {
         "Text": "end of the day",
@@ -1301,7 +1297,6 @@
     "Context": {
       "ReferenceDateTime": "2018-11-21T12:00:00"
     },
-    "NotSupportedByDesign": "java",
     "Results": [
       {
         "Text": "end of day",
@@ -1325,7 +1320,6 @@
     "Context": {
       "ReferenceDateTime": "2018-11-21T12:00:00"
     },
-    "NotSupportedByDesign": "java",
     "Results": [
       {
         "Text": "the eod",

@@ -8,6 +8,7 @@ import com.microsoft.recognizers.text.datetime.TimeTypeConstants;
 import com.microsoft.recognizers.text.datetime.extractors.config.ResultTimex;
 import com.microsoft.recognizers.text.datetime.parsers.config.IDateTimeParserConfiguration;
 import com.microsoft.recognizers.text.datetime.utilities.AgoLaterUtil;
+import com.microsoft.recognizers.text.datetime.utilities.DateTimeFormatUtil;
 import com.microsoft.recognizers.text.datetime.utilities.DateTimeResolutionResult;
 import com.microsoft.recognizers.text.datetime.utilities.DateUtil;
 import com.microsoft.recognizers.text.datetime.utilities.FormatUtil;
@@ -16,6 +17,7 @@ import com.microsoft.recognizers.text.utilities.RegExpUtility;
 import com.microsoft.recognizers.text.utilities.StringUtility;
 
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -327,7 +329,11 @@ public class BaseDateTimeParser implements IDateTimeParser {
     }
 
     private DateTimeResolutionResult parseSpecialTimeOfDate(String text, LocalDateTime reference) {
-        DateTimeResolutionResult result = new DateTimeResolutionResult();
+        DateTimeResolutionResult result = parseUnspecificTimeOfDate(text, reference);
+
+        if (result.getSuccess()) {
+            return result;
+        }
 
         List<ExtractResult> ers = config.getDateExtractor().extract(text, reference);
         if (ers.size() != 1) {
@@ -335,16 +341,40 @@ public class BaseDateTimeParser implements IDateTimeParser {
         }
 
         String beforeStr = text.substring(0, ers.get(0).start);
-        if (RegExpUtility.getMatches(config.getTheEndOfRegex(), beforeStr).length != 0) {
+        if (RegExpUtility.getMatches(config.getSpecificEndOfRegex(), beforeStr).length != 0) {
             DateTimeParseResult pr = config.getDateParser().parse(ers.get(0), reference);
             LocalDateTime futureDate = (LocalDateTime)((DateTimeResolutionResult)pr.value).getFutureValue();
             LocalDateTime pastDate = (LocalDateTime)((DateTimeResolutionResult)pr.value).getPastValue();
 
-            result.setTimex(pr.timexStr + "T23:59");
-            result.setFutureValue(futureDate.plusDays(1).minusMinutes(1));
-            result.setPastValue(pastDate.plusDays(1).minusMinutes(1));
-            result.setSuccess(true);
+            result = resolveEndOfDay(pr.timexStr, futureDate, pastDate);
         }
+
+        return result;
+    }
+
+    private DateTimeResolutionResult parseUnspecificTimeOfDate(String text, LocalDateTime reference) {
+        // Handle 'eod', 'end of day'
+        DateTimeResolutionResult result = new DateTimeResolutionResult();
+
+        Optional<Match> eod = Arrays.stream(RegExpUtility.getMatches(config.getUnspecificEndOfRegex(), text)).findFirst();
+
+        if (eod.isPresent()) {
+            result = resolveEndOfDay(DateTimeFormatUtil.formatDate(reference), reference, reference);
+        }
+
+        return result;
+    }
+
+    private DateTimeResolutionResult resolveEndOfDay(String timexPrefix, LocalDateTime futureDate, LocalDateTime pastDate) {
+        String timex = String.format("%sT23:59:59", timexPrefix);
+        LocalDateTime futureValue = LocalDateTime.of(futureDate.toLocalDate(), LocalTime.MIDNIGHT).plusDays(1).minusSeconds(1);
+        LocalDateTime pastValue = LocalDateTime.of(pastDate.toLocalDate(), LocalTime.MIDNIGHT).plusDays(1).minusSeconds(1);
+
+        DateTimeResolutionResult result = new DateTimeResolutionResult();
+        result.setTimex(timex);
+        result.setFutureValue(futureValue);
+        result.setPastValue(pastValue);
+        result.setSuccess(true);
 
         return result;
     }
