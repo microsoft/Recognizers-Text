@@ -596,9 +596,9 @@ public class BaseDateTimePeriodParser implements IDateTimeParser {
                 }
             }
 
-            List<ExtractResult> ers = config.getDateExtractor().extract(beforeStr, referenceDate);
+            List<ExtractResult> ers = config.getDateExtractor().extract(beforeStr + " " + afterStr, referenceDate);
 
-            if (ers.size() == 0 || ers.get(0).length != beforeStr.length()) {
+            if (ers.size() == 0 || ers.get(0).length < beforeStr.length()) {
                 boolean valid = false;
 
                 if (ers.size() > 0 && ers.get(0).start == 0) {

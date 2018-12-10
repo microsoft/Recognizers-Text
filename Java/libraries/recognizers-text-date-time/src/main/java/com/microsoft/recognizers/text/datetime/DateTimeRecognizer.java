@@ -5,7 +5,7 @@ import com.microsoft.recognizers.text.ModelResult;
 import com.microsoft.recognizers.text.Recognizer;
 import com.microsoft.recognizers.text.datetime.english.extractors.EnglishMergedExtractorConfiguration;
 import com.microsoft.recognizers.text.datetime.english.parsers.EnglishMergedParserConfiguration;
-import com.microsoft.recognizers.text.datetime.extractors.BaseMergedExtractor;
+import com.microsoft.recognizers.text.datetime.extractors.BaseMergedDateTimeExtractor;
 import com.microsoft.recognizers.text.datetime.models.DateTimeModel;
 import com.microsoft.recognizers.text.datetime.parsers.BaseMergedParser;
 
@@ -73,7 +73,7 @@ public class DateTimeRecognizer extends Recognizer<DateTimeOptions> {
         registerModel(DateTimeModel.class, Culture.English,
             (options) -> new DateTimeModel(
                 new BaseMergedParser(new EnglishMergedParserConfiguration(options)),
-                new BaseMergedExtractor(new EnglishMergedExtractorConfiguration(options))));
+                new BaseMergedDateTimeExtractor(new EnglishMergedExtractorConfiguration(options))));
         //endregion
     }
 }
