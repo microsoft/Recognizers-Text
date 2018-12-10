@@ -34,7 +34,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "Comment": "Should be removed, as 22.04 could be an (incorrectly) formatted date (22.04.) or time (22:04).",
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "dotnet, javascript, python",
     "Results": [
       {
         "Text": "22.04",
@@ -542,7 +542,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "Comment": "Resolution is null",
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "dotnet, javascript, python",
     "Results": [
       {
         "Text": "nächsten montagnachmittag",
@@ -992,7 +992,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "Comment" : "Output contains a trailing whitespace, morgens in this context means morning but is getting recognized as morgen = tomorrow",
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "dotnet, javascript, python",
     "Results": [
       {
         "Text": "morgens von 5 bis sieben",

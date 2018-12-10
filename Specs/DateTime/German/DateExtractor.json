@@ -53,7 +53,7 @@
   {
     "Input": "Ich komme am 22.04 zurück",
     "Comment": "Should be removed, as 22.04 could be an (incorrectly) formatted date (22.04.) or time (22:04).",
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "dotnet, javascript, python",
     "Results": [
       {
         "Text": "22.04",

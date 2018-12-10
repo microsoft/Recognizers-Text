@@ -103,7 +103,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "Comment": "Returning future resolution instead of past, seems to work for different reference date, see below.",
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "dotnet, javascript, python",
     "Results": [
       {
         "Text": "Freitag Nachmittag",

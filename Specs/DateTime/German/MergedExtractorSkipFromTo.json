@@ -61,7 +61,7 @@
   },
   {
     "Input": "Das meeting geht Morgen von 12 bis 14 Uhr.",
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "dotnet, javascript, python",
     "Comment": "issues with 'tomorrow' and 'morning'",
     "Results": [
       {
