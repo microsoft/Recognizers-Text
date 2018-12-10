@@ -33,7 +33,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             var className = context.FullyQualifiedTestClassName.Substring(classNameIndex + 1).Replace("Test", "");
             var recognizerLanguage = className.Split('_');
 
-            var directorySpecs = Path.Combine("..", "..", "..", "..", "Specs", recognizerLanguage[0], recognizerLanguage[1]);
+            var directorySpecs = Path.Combine("..", "..", "..", "..", "..", "Specs", recognizerLanguage[0], recognizerLanguage[1]);
 
             var specsFiles = Directory.GetFiles(directorySpecs, "*.json");
             foreach (var specsFile in specsFiles)
