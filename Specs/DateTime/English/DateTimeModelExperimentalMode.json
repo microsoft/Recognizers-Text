@@ -7305,31 +7305,8 @@
     "Context": {
       "ReferenceDateTime": "2018-12-07T12:00:00"
     },
-    "NotSupportedByDesign": "java",
+    "NotSupported": "javascript, python, java, dotnet",
     "Comment": "Not extracted may as a datetime range is not supported for now",
-    "Results": [
-      {
-        "Text": "may",
-        "Start": 4,
-        "End": 6,
-        "TypeName": "datetimeV2.daterange",
-        "Resolution": {
-          "values": [
-            {
-              "timex": "XXXX-05",
-              "type": "daterange",
-              "start": "2018-05-01",
-              "end": "2018-06-01"
-            },
-            {
-              "timex": "XXXX-05",
-              "type": "daterange",
-              "start": "2019-05-01",
-              "end": "2019-06-01"
-            }
-          ]
-        }
-      }
-    ]
+    "Results": []
   }
 ]
