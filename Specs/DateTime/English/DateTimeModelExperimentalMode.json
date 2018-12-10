@@ -7305,7 +7305,7 @@
     "Context": {
       "ReferenceDateTime": "2018-12-07T12:00:00"
     },
-    "NotSupported": "javascript, python, java, dotnet",
+    "NotSupported": "java",
     "Comment": "Not extracted may as a datetime range is not supported for now",
     "Results": []
   }
