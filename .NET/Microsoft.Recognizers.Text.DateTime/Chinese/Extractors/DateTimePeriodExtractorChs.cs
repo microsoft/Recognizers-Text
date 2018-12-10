@@ -59,13 +59,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             var tokens = new List<Token>();
             tokens.AddRange(MergeDateAndTimePeriod(text, referenceTime));
             tokens.AddRange(MergeTwoTimePoints(text, referenceTime));
-            tokens.AddRange(MatchNubmerWithUnit(text));
+            tokens.AddRange(MatchNumberWithUnit(text));
             tokens.AddRange(MatchNight(text, referenceTime));
 
             return Token.MergeAllTokens(tokens, text, ExtractorName);
         }
 
-        // merge Date and Time peroid
+        // merge Date and Time period
         private List<Token> MergeDateAndTimePeriod(string text, DateObject referenceTime)
         {
             var ret = new List<Token>();
@@ -246,7 +246,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             return ret;
         }
 
-        private List<Token> MatchNubmerWithUnit(string text)
+        private List<Token> MatchNumberWithUnit(string text)
         {
             var ret = new List<Token>();
 
