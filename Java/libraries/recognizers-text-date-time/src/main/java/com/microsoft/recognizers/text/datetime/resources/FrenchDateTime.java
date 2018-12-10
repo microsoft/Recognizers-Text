@@ -1145,4 +1145,22 @@ public class FrenchDateTime {
     public static final List<String> PlusTwoDayTerms = Arrays.asList("après demain", "après-demain", "apres-demain");
 
     public static final List<String> MinusTwoDayTerms = Arrays.asList("avant-hier", "avant hier");
+
+    public static final List<String> FutureStartTerms = Arrays.asList("cette");
+
+    public static final List<String> FutureEndTerms = Arrays.asList("prochaine", "prochain");
+
+    public static final List<String> LastCardinalTerms = Arrays.asList("dernières", "dernière", "dernieres", "derniere", "dernier");
+
+    public static final List<String> MonthTerms = Arrays.asList("mois");
+
+    public static final List<String> MonthToDateTerms = Arrays.asList("mois à ce jour");
+
+    public static final List<String> WeekendTerms = Arrays.asList("fin de semaine", "le weekend");
+
+    public static final List<String> WeekTerms = Arrays.asList("semaine");
+
+    public static final List<String> YearTerms = Arrays.asList("années", "ans", "l'annees", "l'annee");
+
+    public static final List<String> YearToDateTerms = Arrays.asList("année à ce jour", "an à ce jour");
 }

@@ -80,7 +80,7 @@ CurrencySuffixList: !dictionary
     Croatian kuna: croatian kuna|kn|hrk|croatia kuna|croatian kunas|croatian kuna kunas
     Lipa: lipa
 #Czech koruna
-    Czech koruna: czech koruna|czk|Kč|czech korunas
+    Czech koruna: czech koruna|czk|kč|czech korunas
     Haléř: haléř
 #Eritrean nakfa
     Eritrean nakfa: eritrean nakfa|nfk|ern|eritrean nakfas
@@ -238,15 +238,15 @@ CurrencySuffixList: !dictionary
     Leu: leu
     Ban: bani|-ban|ban
 #Rupee
-    Nepalese rupee: nepalese rupee|npr
-    Pakistani rupee: pakistani rupee|pkr
-    Indian rupee: indian rupee|inr|₹|india rupee
-    Seychellois rupee: seychellois rupee|scr|sr|sre
-    Mauritian rupee: mauritian rupee|mur
-    Maldivian rufiyaa: maldivian rufiyaa|rf|mvr|.ރ|maldive rufiyaa
-    Sri Lankan rupee: sri Lankan rupee|lkr|රු|ரூ
-    Indonesian rupiah: Indonesian rupiah|rupiah|perak|rp|idr
-    Rupee: rupee|rs
+    Nepalese rupee: nepalese rupees|nepalese rupee|npr
+    Pakistani rupee: pakistani rupees|pakistani rupee|pkr
+    Indian rupee: indian rupees|indian rupee|inr|₹|india rupees|india rupee
+    Seychellois rupee: seychellois rupees|seychellois rupee|scr|sr|sre
+    Mauritian rupee: mauritian rupees|mauritian rupee|mur
+    Maldivian rufiyaa: maldivian rufiyaas|maldivian rufiyaa|rf|mvr|.ރ|maldive rufiyaas|maldive rufiyaa
+    Sri Lankan rupee: sri lankan rupees|sri lankan rupee|lkr|රු|ரூ
+    Indonesian rupiah: indonesian rupiah|rupiah|perak|rp|idr
+    Rupee: rupee|rupees|rs
 #Krone
     Danish krone: danish krone|dkk|denmark krone|denmark krones|danish krones
     Norwegian krone: norwegian krone|nok|norway krone|norway krones|norwegian krones
@@ -640,7 +640,7 @@ CompoundUnitConnectorRegex: !simpleRegex
 CurrencyPrefixList: !dictionary
   types: [ string, string ]
   entries:
-#Dollar Prefix
+# Currency Prefix Symbols/Terms
     Dollar: $
     United States dollar: united states $|us$|us $|u.s. $|u.s $
     East Caribbean dollar: east caribbean $
@@ -660,6 +660,7 @@ CurrencyPrefixList: !dictionary
     Fijian dollar: fijian $|fiji $
     Guyanese dollar: gy$|gy $|g$|g $
     Hong Kong dollar: hong kong $|hk$|hkd|hk $
+    Indian rupee: ₹
     Jamaican dollar: jamaican $|j$|jamaica $
     Kiribati dollar: kiribati $
     Liberian dollar: liberian $|liberia $
