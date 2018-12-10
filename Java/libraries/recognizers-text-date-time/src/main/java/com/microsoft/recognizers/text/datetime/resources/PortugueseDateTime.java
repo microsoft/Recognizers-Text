@@ -891,4 +891,16 @@ public class PortugueseDateTime {
     public static final List<String> PlusTwoDayTerms = Arrays.asList("depois de amanha", "dia depois de amanha");
 
     public static final List<String> MinusTwoDayTerms = Arrays.asList("anteontem", "dia antes de ontem");
+
+    public static final List<String> MonthTerms = Arrays.asList("mes", "meses");
+
+    public static final List<String> MonthToDateTerms = Arrays.asList("mes ate agora", "mes ate hoje", "mes ate a data");
+
+    public static final List<String> WeekendTerms = Arrays.asList("fim de semana");
+
+    public static final List<String> WeekTerms = Arrays.asList("semana");
+
+    public static final List<String> YearTerms = Arrays.asList("ano", "anos");
+
+    public static final List<String> YearToDateTerms = Arrays.asList("ano ate agora", "ano ate hoje", "ano ate a data", "anos ate agora", "anos ate hoje", "anos ate a data");
 }
