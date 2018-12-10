@@ -396,6 +396,7 @@ export class BaseMergedParser implements IDateTimeParser {
             let subEntities = slot.value.subDateTimeEntities;
             for (let subEntity of subEntities) {
                 let result = subEntity;
+                result.start += slot.start;
                 results.push(...this.dateTimeResolutionForSplit(result));
             }
         }
