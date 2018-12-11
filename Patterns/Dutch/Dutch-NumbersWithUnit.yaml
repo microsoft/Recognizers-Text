@@ -49,7 +49,7 @@ AmbiguousDimensionUnitList: !list
     - voeten
     - ons
     - dm
-    - \"
+    - '"'
 #DutchNumberWithUnitExtractorConfiguration
 BuildPrefix: !simpleRegex
   def: (?<=(\s|^))

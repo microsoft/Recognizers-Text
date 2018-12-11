@@ -348,5 +348,5 @@ RoundNumberMap: !dictionary
 AmbiguityFiltersDict: !dictionary
   types: [ string, string ]
   entries:
-    '\\bone\\b': '\\b(the|this|that|which)\\s+(one)\\b'
+    '\bone\b': '\b(the|this|that|which)\s+(one)\b'
 ...
