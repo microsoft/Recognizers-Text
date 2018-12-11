@@ -23,8 +23,6 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public IDateTimeParser HolidayParser { get; }
 
-        public IDateTimeParser TimeZoneParser { get; }
-
         public StringMatcher SuperfluousWordMatcher { get; }
 
         public FrenchMergedParserConfiguration(IOptionsConfiguration config) : base(config)

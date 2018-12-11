@@ -23,8 +23,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public IDateTimeParser HolidayParser { get; }
 
-        public IDateTimeParser TimeZoneParser { get; }
-
         public StringMatcher SuperfluousWordMatcher { get; }
 
         public ItalianMergedParserConfiguration(IOptionsConfiguration options) : base(options)

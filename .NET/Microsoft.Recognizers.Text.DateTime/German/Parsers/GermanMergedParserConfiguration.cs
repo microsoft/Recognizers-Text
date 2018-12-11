@@ -22,8 +22,6 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public IDateTimeParser HolidayParser { get; }
 
-        public IDateTimeParser TimeZoneParser { get; }
-
         public StringMatcher SuperfluousWordMatcher { get; }
 
         public GermanMergedParserConfiguration(IOptionsConfiguration config) : base(config)
