@@ -6,12 +6,12 @@ import com.microsoft.recognizers.text.datetime.DatePeriodTimexType;
 import com.microsoft.recognizers.text.utilities.StringUtility;
 
 import java.time.Duration;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.Period;
 import java.time.temporal.ChronoUnit;
-import java.time.temporal.IsoFields;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class TimexUtility {
     private static final HashMap<DatePeriodTimexType, String> DatePeriodTimexTypeToTimexSuffix = new HashMap<DatePeriodTimexType, String>() {
@@ -65,7 +65,7 @@ public class TimexUtility {
         if (alternativeBegin == null || alternativeEnd == null) {
             equalDurationLength = true;
         } else {
-            equalDurationLength = Duration.between(begin, end).equals(Duration.between(alternativeBegin, alternativeBegin));
+            equalDurationLength = Duration.between(begin, end).equals(Duration.between(alternativeBegin, alternativeEnd));
         }
 
         String unitCount = "XX";
@@ -101,6 +101,10 @@ public class TimexUtility {
         } else {
             return DateTimeFormatUtil.toIsoWeekTimex(monday);
         }
+    }
+
+    public static String generateWeekTimex(int weekNum) {
+        return "W" + String.format("%02d", weekNum);
     }
 
     public static String generateWeekendTimex() {
@@ -239,11 +243,7 @@ public class TimexUtility {
         return monthTimex + "-" + weekTimex;
     }
 
-    public static String generateWeekTimex(int weekNum) {
-        return "W" + String.format("%02d", weekNum);
-    }
-
-    public static String GenerateDateTimePeriodTimex(String beginTimex, String endTimex, String durationTimex) {
+    public static String generateDateTimePeriodTimex(String beginTimex, String endTimex, String durationTimex) {
         return "(" + beginTimex + "," + endTimex + "," + durationTimex + ")";
     }
 
@@ -253,10 +253,10 @@ public class TimexUtility {
         RangeTimexComponents result = new RangeTimexComponents();
 
         if (components.length == 3) {
-            result.BeginTimex = components[0];
-            result.EndTimex = components[1];
-            result.DurationTimex = components[2];
-            result.IsValid = true;
+            result.beginTimex = components[0];
+            result.endTimex = components[1];
+            result.durationTimex = components[2];
+            result.isValid = true;
         }
 
         return result;

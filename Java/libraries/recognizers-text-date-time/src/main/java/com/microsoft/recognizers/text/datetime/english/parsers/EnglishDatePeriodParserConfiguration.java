@@ -74,6 +74,7 @@ public class EnglishDatePeriodParserConfiguration extends BaseOptionsConfigurati
         moreThanRegex = EnglishDatePeriodExtractorConfiguration.MoreThanRegex;
         centurySuffixRegex = EnglishDatePeriodExtractorConfiguration.CenturySuffixRegex;
         relativeRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RelativeRegex, Pattern.CASE_INSENSITIVE);
+        unspecificEndOfRangeRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.UnspecificEndOfRangeRegex, Pattern.CASE_INSENSITIVE);
 
         unitMap = config.getUnitMap();
         cardinalMap = config.getCardinalMap();
@@ -143,6 +144,7 @@ public class EnglishDatePeriodParserConfiguration extends BaseOptionsConfigurati
     private final Pattern moreThanRegex;
     private final Pattern centurySuffixRegex;
     private final Pattern relativeRegex;
+    private final Pattern unspecificEndOfRangeRegex;
     private final Pattern nextPrefixRegex;
     private final Pattern pastPrefixRegex;
     private final Pattern thisPrefixRegex;
@@ -404,7 +406,14 @@ public class EnglishDatePeriodParserConfiguration extends BaseOptionsConfigurati
     }
 
     @Override
-    public Pattern getRelativeRegex() { return relativeRegex; }
+    public Pattern getRelativeRegex() {
+        return relativeRegex;
+    }
+
+    @Override
+    public Pattern getUnspecificEndOfRangeRegex() {
+        return unspecificEndOfRangeRegex;
+    }
 
     @Override
     public ImmutableMap<String, String> getUnitMap() {

@@ -121,12 +121,12 @@ public class DurationParsingUtil {
 
     }
 
-    private static LocalDateTime getNextBusinessDay(LocalDateTime startDate) {
+    public static LocalDateTime getNextBusinessDay(LocalDateTime startDate) {
         return getNextBusinessDay(startDate, true);
     }
 
     // By design it currently does not take holidays into account
-    private static LocalDateTime getNextBusinessDay(LocalDateTime startDate, boolean isFuture) {
+    public static LocalDateTime getNextBusinessDay(LocalDateTime startDate, boolean isFuture) {
         int dateIncrement = isFuture ? 1 : -1;
         LocalDateTime date = startDate.plusDays(dateIncrement);
 

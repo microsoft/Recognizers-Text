@@ -12,6 +12,8 @@ namespace Microsoft.Recognizers.Text.DateTime
     {
         public static readonly string ParserName = Constants.SYS_DATETIME_DATEPERIOD; //"DatePeriod";
 
+        private static readonly Calendar Cal = DateTimeFormatInfo.InvariantInfo.Calendar;
+
         private readonly IDatePeriodParserConfiguration config;
 
         private static bool InclusiveEndPeriod = false;

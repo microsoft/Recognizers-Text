@@ -2,10 +2,8 @@ package com.microsoft.recognizers.text.datetime.utilities;
 
 import com.microsoft.recognizers.text.datetime.Constants;
 import com.microsoft.recognizers.text.datetime.parsers.DateTimeParseResult;
-import org.javatuples.Pair;
-
-import java.time.LocalDate;
 import java.time.LocalDateTime;
+import org.javatuples.Pair;
 
 // Currently only Year is enabled as context, we may support Month or Week in the future
 public class DateContext {
@@ -23,7 +21,7 @@ public class DateContext {
         if (!isEmpty()) {
             originalResult = originalResult
                     .withTimexStr(TimexUtility.setTimexWithContext(originalResult.timexStr, this))
-                    .withValue(processDateEntityResolution((DateTimeResolutionResult) originalResult.value));
+                    .withValue(processDateEntityResolution((DateTimeResolutionResult)originalResult.value));
         }
 
         return originalResult;
@@ -32,8 +30,8 @@ public class DateContext {
     public DateTimeResolutionResult processDateEntityResolution(DateTimeResolutionResult resolutionResult) {
         if (!isEmpty()) {
             resolutionResult.setTimex(TimexUtility.setTimexWithContext(resolutionResult.getTimex(), this));
-            resolutionResult.setFutureValue(setDateWithContext((LocalDateTime) resolutionResult.getFutureValue()));
-            resolutionResult.setPastValue(setDateWithContext((LocalDateTime) resolutionResult.getPastValue()));
+            resolutionResult.setFutureValue(setDateWithContext((LocalDateTime)resolutionResult.getFutureValue()));
+            resolutionResult.setPastValue(setDateWithContext((LocalDateTime)resolutionResult.getPastValue()));
         }
 
         return resolutionResult;
@@ -42,8 +40,8 @@ public class DateContext {
     public DateTimeResolutionResult processDatePeriodEntityResolution(DateTimeResolutionResult resolutionResult) {
         if (!isEmpty()) {
             resolutionResult.setTimex(TimexUtility.setTimexWithContext(resolutionResult.getTimex(), this));
-            resolutionResult.setFutureValue(setDateRangeWithContext((Pair<LocalDateTime, LocalDateTime>) resolutionResult.getFutureValue()));
-            resolutionResult.setPastValue(setDateRangeWithContext((Pair<LocalDateTime, LocalDateTime>) resolutionResult.getPastValue()));
+            resolutionResult.setFutureValue(setDateRangeWithContext((Pair<LocalDateTime, LocalDateTime>)resolutionResult.getFutureValue()));
+            resolutionResult.setPastValue(setDateRangeWithContext((Pair<LocalDateTime, LocalDateTime>)resolutionResult.getPastValue()));
         }
 
         return resolutionResult;

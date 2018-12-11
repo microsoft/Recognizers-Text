@@ -1,11 +1,11 @@
 package com.microsoft.recognizers.text.datetime.utilities;
 
 public class RangeTimexComponents {
-    public String BeginTimex;
+    public String beginTimex;
 
-    public String EndTimex;
+    public String endTimex;
 
-    public String DurationTimex;
+    public String durationTimex;
 
-    public Boolean IsValid = false;
+    public Boolean isValid = false;
 }
