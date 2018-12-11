@@ -68,6 +68,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
                 {"veteransday", Veteransday},
                 {"christmaseve", ChristmasEve},
                 {"newyeareve", NewYearEve},
+                {"piday", PiDay }
 
             #endregion
 
@@ -102,7 +103,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             {"secondadvent", GetSecondAdvent},
             {"thirdadvent", GetThirdAdvent},
             {"fourthadvent", GetFourthAdvent},
-            {"chedayofrepentance", GetCheDayOfRepentance}
+            {"chedayofrepentance", GetCheDayOfRepentance},
+            {"mothers", GetMothersDayOfYear}
             
             #endregion
 
@@ -354,6 +356,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         private static DateObject AllSoulsday(int year) => new DateObject(year, 11, 2);
         private static DateObject GuyFawkesDay(int year) => new DateObject(year, 11, 5);
         private static DateObject Veteransday(int year) => new DateObject(year, 11, 11);
+        private static DateObject PiDay(int year) => new DateObject(year, 3, 14);
 
         private static DateObject GetEasterDay(int year)
         {
@@ -429,7 +432,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         private static DateObject GetCheDayOfRepentance(int year)
         {
-            return DateObject.MinValue.SafeCreateFromValue(year, 11, (from day in Enumerable.Range(1, 30)
+            return DateObject.MinValue.SafeCreateFromValue(year, 09, (from day in Enumerable.Range(1, 30)
                                                                       where DateObject.MinValue.SafeCreateFromValue(year, 9, day).DayOfWeek == DayOfWeek.Sunday
                                                                       select day).ElementAt(2));
         }

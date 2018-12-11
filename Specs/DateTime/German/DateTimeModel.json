@@ -33,7 +33,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "Comment": "Currently not supported. 04 will be parsed as the year",
+    "Comment": "Should be removed, as 22.04 could be an (incorrectly) formatted date (22.04.) or time (22:04).",
     "NotSupported": "dotnet, javascript, python",
     "Results": [
       {
@@ -179,8 +179,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "Comment": "Returning only the future resolution and wrong timex",
-    "NotSupported": "dotnet, javascript, python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "freitag",
@@ -190,12 +189,7 @@
         "Resolution": {
           "values": [
             {
-              "timex": "XXXX-WXX-5",
-              "type": "date",
-              "value": "2016-11-04"
-            },
-            {
-              "timex": "XXXX-WXX-5",
+              "timex": "2016-11-11",
               "type": "date",
               "value": "2016-11-11"
             }
@@ -466,7 +460,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "Comment": "Resolution is null",
-    "NotSupported": "dotnet, python",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "22. april von 5 bis 6 uhr nachmittags",
@@ -560,8 +554,33 @@
             {
               "timex": "2016-11-14TAF",
               "type": "datetimerange",
-              "start": "2016-11-14 14:00:00",
-              "end": "2016-11-14 18:00:00"
+              "start": "2016-11-14 12:00:00",
+              "end": "2016-11-14 16:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Ich gehe dann Dienstag Morgen zurück.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "dienstag morgen",
+        "Start": 14,
+        "End": 28,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-11-08TMO",
+              "type": "datetimerange",
+              "start": "2016-11-08 08:00:00",
+              "end": "2016-11-08 12:00:00"
             }
           ]
         }
@@ -950,8 +969,8 @@
     "NotSupported": "python",
     "Results": [
       {
-        "Text": "17 bis 18 uhr",
-        "Start": 12,
+        "Text": "von 17 bis 18 uhr",
+        "Start": 8,
         "End": 24,
         "TypeName": "datetimeV2.timerange",
         "Resolution": {
@@ -972,7 +991,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "Comment" : "Output contains a trailing whitespace",
+    "Comment" : "Output contains a trailing whitespace, morgens in this context means morning but is getting recognized as morgen = tomorrow",
     "NotSupported": "dotnet, javascript, python",
     "Results": [
       {
@@ -1001,8 +1020,8 @@
     "NotSupported": "python",
     "Results": [
       {
-        "Text": "5 uhr nachmittags bis 6 uhr nachmittags",
-        "Start": 12,
+        "Text": "von 5 uhr nachmittags bis 6 uhr nachmittags",
+        "Start": 8,
         "End": 50,
         "TypeName": "datetimeV2.timerange",
         "Resolution": {
@@ -1054,18 +1073,18 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "Comment": "Output is -gegen abend- should that be considered correct?",
-    "NotSupported": "dotnet, javascript, python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "abend",
-        "Start": 19,
-        "End": 24,
+        "Text": "gegen abend",
+        "Start": 13,
+        "End": 23,
         "TypeName": "datetimeV2.timerange",
         "Resolution": {
           "values": [
             {
               "timex": "TEV",
+              "Mod": "approx",
               "type": "timerange",
               "start": "16:00:00",
               "end": "20:00:00"

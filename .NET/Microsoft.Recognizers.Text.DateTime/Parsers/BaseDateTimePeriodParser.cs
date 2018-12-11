@@ -737,7 +737,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             // Handle time of day
 
             // Late/early only works with time of day
-            // Only standard time of day (morinng, afternoon, evening and night) will not directly return
+            // Only standard time of day (morning, afternoon, evening and night) will not directly return
             if (!this.Config.GetMatchedTimeRange(timeText, out string timeStr, out int beginHour, out int endHour, out int endMin))
             {
                 return ret;

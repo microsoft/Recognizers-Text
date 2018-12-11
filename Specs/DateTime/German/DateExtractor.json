@@ -52,13 +52,26 @@
   },
   {
     "Input": "Ich komme am 22.04 zurück",
-    "NotSupported": "javascript, python",
+    "Comment": "Should be removed, as 22.04 could be an (incorrectly) formatted date (22.04.) or time (22:04).",
+    "NotSupported": "dotnet, javascript, python",
     "Results": [
       {
         "Text": "22.04",
         "Type": "date",
         "Start": 13,
         "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "Ich komme am 22.04. zurück",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "22.04.",
+        "Type": "date",
+        "Start": 13,
+        "Length": 6
       }
     ]
   },

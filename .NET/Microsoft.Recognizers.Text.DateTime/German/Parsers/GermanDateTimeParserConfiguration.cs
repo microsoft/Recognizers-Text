@@ -108,7 +108,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public bool GetMatchedNowTimex(string text, out string timex)
         {
             var trimmedText = text.Trim().ToLowerInvariant();
-            if (trimmedText.EndsWith("jetzt"))
+            if (trimmedText.EndsWith("jetzt") || trimmedText.Equals("momentan") || trimmedText.Equals("gerade") || trimmedText.Equals("aktuell") || 
+                trimmedText.Equals("im moment") || trimmedText.Equals("in diesem moment") || trimmedText.Equals("derzeit"))
             {
                 timex = "PRESENT_REF";
             }
