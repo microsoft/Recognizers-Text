@@ -416,6 +416,9 @@ public class EnglishDatePeriodParserConfiguration extends BaseOptionsConfigurati
     }
 
     @Override
+    public Pattern getUnspecificEndOfRangeRegex() { return unspecificEndOfRangeRegex; }
+
+    @Override
     public ImmutableMap<String, String> getUnitMap() {
         return unitMap;
     }
