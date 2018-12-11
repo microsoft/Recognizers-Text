@@ -90,12 +90,12 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public bool GetFromTokenIndex(string text, out int index)
         {
             index = -1;
-            if (text.EndsWith("vom"))
+            if (text.EndsWith("von"))
             {
-                index = text.LastIndexOf("vom", StringComparison.Ordinal);
+                index = text.LastIndexOf("von", StringComparison.Ordinal);
                 return true;
             }
-
+            
             return false;
         }
 

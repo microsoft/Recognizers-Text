@@ -518,10 +518,10 @@
     ]
   },
   {
-    "Input": "Ich besuche dich am vierter Advent",
+    "Input": "Ich besuche dich am vierten Advent",
     "Results": [
       {
-        "Text": "vierter Advent",
+        "Text": "vierten Advent",
         "Type": "date",
         "Start": 20,
         "Length": 14
@@ -529,14 +529,14 @@
     ]
   },
   {
-    "Input": "Ich besuche dich am vierter Advent 2018",
+    "Input": "Ich besuche dich am vierten Advent 2018",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript, python, dotNet",
+    "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "vierter Advent 2018",
+        "Text": "vierten Advent 2018",
         "Type": "date",
         "Start": 20,
         "Length": 19

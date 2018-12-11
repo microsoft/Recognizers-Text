@@ -4,10 +4,10 @@
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "5 bis 6",
+        "Text": "von 5 bis 6",
         "Type": "timerange",
-        "Start": 14,
-        "Length": 7
+        "Start": 10,
+        "Length": 11
       }
     ]
   },
@@ -16,10 +16,10 @@
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "5 bis 6 Uhr",
+        "Text": "von 5 bis 6 Uhr",
         "Type": "timerange",
-        "Start": 14,
-        "Length": 11
+        "Start": 10,
+        "Length": 15
       }
     ]
   },
@@ -28,10 +28,10 @@
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "5 bis 6 Uhr Nachmittags",
+        "Text": "von 5 bis 6 Uhr Nachmittags",
         "Type": "timerange",
-        "Start": 14,
-        "Length": 23
+        "Start": 10,
+        "Length": 27
       }
     ]
   },
@@ -40,10 +40,10 @@
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "17 bis 18 Uhr",
+        "Text": "von 17 bis 18 Uhr",
         "Type": "timerange",
-        "Start": 14,
-        "Length": 13
+        "Start": 10,
+        "Length": 17
       }
     ]
   },
@@ -52,10 +52,10 @@
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "17 Uhr bis 18 Uhr",
+        "Text": "von 17 Uhr bis 18 Uhr",
         "Type": "timerange",
-        "Start": 14,
-        "Length": 17
+        "Start": 10,
+        "Length": 21
       }
     ]
   },
@@ -64,10 +64,10 @@
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "5 bis 6 Uhr Abends",
+        "Text": "von 5 bis 6 Uhr Abends",
         "Type": "timerange",
-        "Start": 12,
-        "Length": 18
+        "Start": 8,
+        "Length": 22
       }
     ]
   },
@@ -76,10 +76,10 @@
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "5 bis 6 Uhr Nachmittags",
+        "Text": "von 5 bis 6 Uhr Nachmittags",
         "Type": "timerange",
-        "Start": 12,
-        "Length": 23
+        "Start": 8,
+        "Length": 27
       }
     ]
   },
@@ -100,10 +100,10 @@
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "5 bis 6",
+        "Text": "von 5 bis 6",
         "Type": "timerange",
-        "Start": 12,
-        "Length": 7
+        "Start": 8,
+        "Length": 11
       }
     ]
   },
@@ -112,10 +112,10 @@
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "vier bis halb 5",
+        "Text": "von vier bis halb 5",
         "Type": "timerange",
-        "Start": 12,
-        "Length": 15
+        "Start": 8,
+        "Length": 19
       }
     ]
   },
@@ -124,10 +124,10 @@
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "3 bis 5 Uhr Morgens",
+        "Text": "von 3 bis 5 Uhr Morgens",
         "Type": "timerange",
-        "Start": 13,
-        "Length": 19
+        "Start": 9,
+        "Length": 23
       }
     ]
   },

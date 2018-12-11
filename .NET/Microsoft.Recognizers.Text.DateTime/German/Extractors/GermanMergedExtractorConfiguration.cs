@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 using Microsoft.Recognizers.Definitions.German;
 using Microsoft.Recognizers.Text.Matcher;
+using Microsoft.Recognizers.Definitions.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.German
 {
@@ -70,7 +71,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public IDateTimeListExtractor DateTimeAltExtractor { get; }
 
-        public Dictionary<Regex, Regex> AmbiguityFiltersDict { get; } = null;
+        public Dictionary<Regex, Regex> AmbiguityFiltersDict { get; }
 
         public GermanMergedExtractorConfiguration(DateTimeOptions options) : base(options)
         {
@@ -86,6 +87,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             TimeZoneExtractor = new BaseTimeZoneExtractor(new GermanTimeZoneExtractorConfiguration(this));
             IntegerExtractor = Number.German.IntegerExtractor.GetInstance();
             DateTimeAltExtractor = new BaseDateTimeAltExtractor(new GermanDateTimeAltExtractorConfiguration(this));
+
+            AmbiguityFiltersDict = DefinitionLoader.LoadAmbiguityFilters(DateTimeDefinitions.AmbiguityFiltersDict);
         }
 
         Regex IMergedExtractorConfiguration.AfterRegex => AfterRegex;
