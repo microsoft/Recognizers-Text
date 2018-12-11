@@ -9525,5 +9525,30 @@
         }
       }
     ]
+  },
+  {
+    "Input": "I have twenty-one coins in my pocket",
+    "Context": {
+      "ReferenceDateTime": "2018-12-07T12:00:00"
+    },
+    "NotSupportedByDesign": "java",
+    "Results": []
+  },
+  {
+    "Input": "There are two to four people in the room",
+    "Context": {
+      "ReferenceDateTime": "2018-12-07T12:00:00"
+    },
+    "NotSupportedByDesign": "java",
+    "Results": []
+  },
+  {
+    "Input": "One may ask a question to themselves",
+    "Context": {
+      "ReferenceDateTime": "2018-12-07T12:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Comment": "Not extracted may as a datetime range is not supported for now",
+    "Results": []
   }
 ]
