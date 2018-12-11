@@ -454,7 +454,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java",
     "NotSupported": "javascript, python",
     "Results": [
       {
@@ -481,7 +480,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java",
     "NotSupported": "javascript, python",
     "Results": [
       {
@@ -1599,7 +1597,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java",
     "NotSupported": "javascript, python",
     "Results": [
       {
@@ -1626,7 +1623,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java",
     "NotSupported": "javascript, python",
     "Results": [
       {
@@ -2483,7 +2479,6 @@
     "Context": {
       "ReferenceDateTime": "2017-11-17T00:00:00"
     },
-    "NotSupportedByDesign": "java",
     "NotSupported": "javascript, python",
     "Results": [
       {
@@ -2510,7 +2505,6 @@
     "Context": {
       "ReferenceDateTime": "2017-11-20T00:00:00"
     },
-    "NotSupportedByDesign": "java",
     "NotSupported": "javascript, python",
     "Results": [
       {
@@ -2537,7 +2531,6 @@
     "Context": {
       "ReferenceDateTime": "2017-11-20T00:00:00"
     },
-    "NotSupportedByDesign": "java",
     "NotSupported": "javascript, python",
     "Results": [
       {
@@ -2589,7 +2582,6 @@
     "Context": {
       "ReferenceDateTime": "2017-11-20T00:00:00"
     },
-    "NotSupportedByDesign": "java",
     "NotSupported": "javascript, python",
     "Results": [
       {
@@ -3136,7 +3128,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java",
     "NotSupported": "javascript, python",
     "Results": [
       {
@@ -5561,7 +5552,6 @@
     "Context": {
       "ReferenceDateTime": "2018-10-24T12:00:00"
     },
-    "NotSupportedByDesign": "java",
     "Results": [
       {
         "Text": "from 10/1 to 11/7",
@@ -5587,7 +5577,6 @@
     "Context": {
       "ReferenceDateTime": "2018-10-24T12:00:00"
     },
-    "NotSupportedByDesign": "java",
     "Results": [
       {
         "Text": "from 10/25 to 01/25",
