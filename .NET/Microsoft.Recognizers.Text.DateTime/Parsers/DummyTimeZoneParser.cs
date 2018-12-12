@@ -2,10 +2,8 @@ using System.Collections.Generic;
 
 using DateObject = System.DateTime;
 
-
-namespace Microsoft.Recognizers.Text.DateTime{
-    
-
+namespace Microsoft.Recognizers.Text.DateTime
+{
     public class DummyTimeZoneParser : IDateTimeParser
     {
 
@@ -23,7 +21,5 @@ namespace Microsoft.Recognizers.Text.DateTime{
         {
             return null;
         }
-
-
     }
 }
