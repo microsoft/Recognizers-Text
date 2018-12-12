@@ -39,7 +39,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             DateTimePeriodParser = new BaseDateTimePeriodParser(new ItalianDateTimePeriodParserConfiguration(this));
             SetParser = new BaseSetParser(new ItalianSetParserConfiguration(this));
             HolidayParser = new BaseHolidayParser(new ItalianHolidayParserConfiguration(this));
-            TimeZoneParser = new BaseTimeZoneParser();
+            TimeZoneParser = new DummyTimeZoneParser();
         }
     }
 }
