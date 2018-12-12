@@ -459,7 +459,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "Comment": "Resolution is null",
     "NotSupported": "python",
     "Results": [
       {
@@ -541,8 +540,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "Comment": "Resolution is null",
-    "NotSupported": "dotnet, javascript, python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "nächsten montagnachmittag",
@@ -592,8 +590,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "Comment": "Not supported, check resolution, returns null",
-    "NotSupported": "dotnet, javascript, python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "dienstagmorgen",
@@ -603,13 +600,7 @@
         "Resolution": {
           "values": [
             {
-              "timex": "XXXX-WXX-2TMO",
-              "type": "datetimerange",
-              "start": "2016-11-01 08:00:00",
-              "end": "2016-11-01 12:00:00"
-            },
-            {
-              "timex": "XXXX-WXX-2TMO",
+              "timex": "2016-11-08TMO",
               "type": "datetimerange",
               "start": "2016-11-08 08:00:00",
               "end": "2016-11-08 12:00:00"
@@ -991,7 +982,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "Comment" : "Output contains a trailing whitespace, morgens in this context means morning but is getting recognized as morgen = tomorrow",
+    "Comment" : "Output contains a trailing whitespace",
     "NotSupported": "dotnet, javascript, python",
     "Results": [
       {
