@@ -6,7 +6,6 @@ namespace Microsoft.Recognizers.Text.DateTime
 {
     public class DummyTimeZoneParser : IDateTimeParser
     {
-
         public ParseResult Parse(ExtractResult result)
         {
             return Parse(result, DateObject.Now);
@@ -19,7 +18,19 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public DateTimeParseResult Parse(ExtractResult er, DateObject refDate)
         {
-            return null;
+            var ret = new DateTimeParseResult
+            {
+                Text = er.Text,
+                Start = er.Start,
+                Length = er.Length,
+                Type = er.Type,
+                Data = er.Data,
+                Value = null,
+                TimexStr = null,
+                ResolutionStr = ""
+            };
+
+            return ret;
         }
     }
 }
