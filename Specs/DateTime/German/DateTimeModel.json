@@ -982,7 +982,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "Comment" : "Output contains a trailing whitespace, should this be a set?",
+    "Comment" : "Output contains a trailing whitespace",
     "NotSupported": "dotnet, javascript, python",
     "Results": [
       {

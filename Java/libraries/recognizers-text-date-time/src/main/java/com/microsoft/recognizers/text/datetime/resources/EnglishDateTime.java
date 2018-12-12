@@ -220,7 +220,7 @@ public class EnglishDateTime {
 
     public static final String MonthRegex = "(?<month>april|apr|august|aug|december|dec|february|feb|january|jan|july|jul|june|jun|march|mar|may|november|nov|october|oct|september|sept|sep)";
 
-    public static final String AmbiguousMonthP0Regex = "\\b((^may i)|(i|you|he|she|we|they)\\s+may|(may\\s+((((also|not|(also not)|well)\\s+)?(be|contain|constitute|email|e-mail|take|have|result|involve|get|work|reply))|(or may not))))\\b";
+    public static final String AmbiguousMonthP0Regex = "\\b((^may i)|(i|you|he|she|we|they)\\s+may|(may\\s+((((also|not|(also not)|well)\\s+)?(be|ask|contain|constitute|email|e-mail|take|have|result|involve|get|work|reply))|(or may not))))\\b";
 
     public static final String DateYearRegex = "(?<year>{BaseDateTime.FourDigitYearRegex}|{TwoDigitYearRegex})"
             .replace("{BaseDateTime.FourDigitYearRegex}", BaseDateTime.FourDigitYearRegex)
@@ -1182,7 +1182,7 @@ public class EnglishDateTime {
 
     public static final ImmutableMap<String, String> AmbiguityFiltersDict = ImmutableMap.<String, String>builder()
         .put("\\bmorning|afternoon|evening|night|day\\b", "\\\\b(good\\\\s+(morning|afternoon|evening|night|day))|(nighty\\\\s+night)\\\\b")
-        .put("\\bmay\\b", "\\\\b((^may i)|(i|you|he|she|we|they)\\\\s+may|(may\\\\s+((((also|not|(also not)|well)\\\\s+)?(be|contain|constitute|email|e-mail|take|have|result|involve|get|work|reply))|(or may not))))\\\\b")
+        .put("\\bmay\\b", "\\\\b((^may i)|(i|you|he|she|we|they)\\\\s+may|(may\\\\s+((((also|not|(also not)|well)\\\\s+)?(be|ask|contain|constitute|email|e-mail|take|have|result|involve|get|work|reply))|(or may not))))\\\\b")
         .build();
 
     public static final List<String> MorningTermList = Arrays.asList("morning");
@@ -1204,4 +1204,22 @@ public class EnglishDateTime {
     public static final List<String> PlusTwoDayTerms = Arrays.asList("day after tomorrow", "day after tmr");
 
     public static final List<String> MinusTwoDayTerms = Arrays.asList("day before yesterday");
+
+    public static final List<String> FutureTerms = Arrays.asList("this", "next");
+
+    public static final List<String> LastCardinalTerms = Arrays.asList("last");
+
+    public static final List<String> MonthTerms = Arrays.asList("month");
+
+    public static final List<String> MonthToDateTerms = Arrays.asList("month to date");
+
+    public static final List<String> WeekendTerms = Arrays.asList("weekend");
+
+    public static final List<String> WeekTerms = Arrays.asList("week");
+
+    public static final List<String> YearTerms = Arrays.asList("year");
+
+    public static final List<String> GenericYearTerms = Arrays.asList("y");
+
+    public static final List<String> YearToDateTerms = Arrays.asList("year to date");
 }

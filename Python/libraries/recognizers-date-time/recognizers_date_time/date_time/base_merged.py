@@ -455,6 +455,7 @@ class BaseMergedParser(DateTimeParser):
 
             for sub_entity in sub_entities:
                 result = sub_entity
+                result.start += slot.start
                 results += self._date_time_resolution_for_split(result)
         else:
             slot.value = self._date_time_resolution(slot, False, False, False)
