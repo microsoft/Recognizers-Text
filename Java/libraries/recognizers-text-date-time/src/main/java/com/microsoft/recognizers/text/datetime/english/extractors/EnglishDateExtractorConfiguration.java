@@ -8,6 +8,7 @@ import com.microsoft.recognizers.text.datetime.english.parsers.EnglishDatetimeUt
 import com.microsoft.recognizers.text.datetime.extractors.BaseDurationExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.IDateTimeExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.config.IDateExtractorConfiguration;
+import com.microsoft.recognizers.text.datetime.resources.BaseDateTime;
 import com.microsoft.recognizers.text.datetime.resources.EnglishDateTime;
 import com.microsoft.recognizers.text.datetime.utilities.IDateTimeUtilityConfiguration;
 import com.microsoft.recognizers.text.number.english.extractors.IntegerExtractor;
@@ -45,6 +46,7 @@ public class EnglishDateExtractorConfiguration implements IDateExtractorConfigur
     public static final Pattern PrefixArticleRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PrefixArticleRegex, Pattern.CASE_INSENSITIVE);
     public static final Pattern InConnectorRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.InConnectorRegex, Pattern.CASE_INSENSITIVE);
     public static final Pattern RangeUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RangeUnitRegex, Pattern.CASE_INSENSITIVE);
+    public static final Pattern RangeConnectorSymbolRegex = RegExpUtility.getSafeRegExp(BaseDateTime.RangeConnectorSymbolRegex, Pattern.CASE_INSENSITIVE);
 
     public static final List<Pattern> DateRegexList = new ArrayList<Pattern>() {
         {
@@ -181,6 +183,11 @@ public class EnglishDateExtractorConfiguration implements IDateExtractorConfigur
     @Override
     public Pattern getRangeUnitRegex() {
         return RangeUnitRegex;
+    }
+
+    @Override
+    public Pattern getRangeConnectorSymbolRegex() {
+        return RangeConnectorSymbolRegex;
     }
 
     @Override

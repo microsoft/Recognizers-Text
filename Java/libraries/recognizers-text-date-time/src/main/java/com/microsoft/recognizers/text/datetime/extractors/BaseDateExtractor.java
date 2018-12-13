@@ -10,6 +10,7 @@ import com.microsoft.recognizers.text.datetime.utilities.DateUtil;
 import com.microsoft.recognizers.text.datetime.utilities.RegexExtension;
 import com.microsoft.recognizers.text.datetime.utilities.Token;
 import com.microsoft.recognizers.text.utilities.Match;
+import com.microsoft.recognizers.text.utilities.MatchGroup;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
 import com.microsoft.recognizers.text.utilities.StringUtility;
 
@@ -23,9 +24,7 @@ import java.util.regex.Pattern;
 
 import org.javatuples.Pair;
 
-public class BaseDateExtractor implements IDateTimeExtractor {
-
-    private final IDateExtractorConfiguration config;
+public class BaseDateExtractor extends AbstractYearExtractor implements IDateTimeExtractor {
 
     @Override
     public String getExtractorName() {
@@ -33,7 +32,7 @@ public class BaseDateExtractor implements IDateTimeExtractor {
     }
 
     public BaseDateExtractor(IDateExtractorConfiguration config) {
-        this.config = config;
+        super(config);
     }
 
     @Override
@@ -61,11 +60,82 @@ public class BaseDateExtractor implements IDateTimeExtractor {
             Match[] matches = RegExpUtility.getMatches(regex, text);
 
             for (Match match : matches) {
-                result.add(new Token(match.index, match.index + match.length));
+                // some match might be part of the date range entity, and might be splitted in a wrong way
+
+                if (validateMatch(match, text)) {
+                    result.add(new Token(match.index, match.index + match.length));
+                }
             }
         }
 
         return result;
+    }
+
+    // this method is to validate whether the match is part of date range and is a correct split
+    // For example: in case "10-1 - 11-7", "10-1 - 11" can be matched by some of the Regexes,
+    // but the full text is a date range, so "10-1 - 11" is not a correct split
+    private boolean validateMatch(Match match, String text) {
+        // If the match doesn't contains "year" part, it will not be ambiguous and it's a valid match
+        boolean isValidMatch = StringUtility.isNullOrEmpty(match.getGroup("year").value);
+
+        if (!isValidMatch) {
+            MatchGroup yearGroup = match.getGroup("year");
+
+            // If the "year" part is not at the end of the match, it's a valid match
+            if (yearGroup.index + yearGroup.length == match.index + match.length) {
+                isValidMatch = true;
+            } else {
+                String subText = text.substring(yearGroup.index);
+
+                // If the following text (include the "year" part) doesn't start with a Date entity, it's a valid match
+                if (!startsWithBasicDate(subText)) {
+                    isValidMatch = true;
+                } else {
+                    // If the following text (include the "year" part) starts with a Date entity,
+                    // but the following text (doesn't include the "year" part) also starts with a valid Date entity,
+                    // the current match is still valid
+                    // For example, "10-1-2018-10-2-2018". Match "10-1-2018" is valid because though "2018-10-2" a valid match
+                    // (indicates the first year "2018" might belongs to the second Date entity), but "10-2-2018" is also a valid match.
+                    subText = text.substring(yearGroup.index + yearGroup.length).trim();
+                    subText = trimStartRangeConnectorSymbols(subText);
+                    isValidMatch = startsWithBasicDate(subText);
+                }
+            }
+        }
+
+        return isValidMatch;
+    }
+
+    // TODO: Simplify this method to improve the performance
+    private String trimStartRangeConnectorSymbols(String text) {
+        Match[] rangeConnectorSymbolMatches = RegExpUtility.getMatches(config.getRangeConnectorSymbolRegex(), text);
+
+        for (Match symbolMatch : rangeConnectorSymbolMatches) {
+            int startSymbolLength = -1;
+
+            if (symbolMatch.value != "" && symbolMatch.index == 0 && symbolMatch.length > startSymbolLength) {
+                startSymbolLength = symbolMatch.length;
+            }
+
+            if (startSymbolLength > 0) {
+                text = text.substring(startSymbolLength);
+            }
+        }
+
+        return text.trim();
+    }
+
+    // TODO: Simplify this method to improve the performance
+    private boolean startsWithBasicDate(String text) {
+        for (Pattern regex : config.getDateRegexList()) {
+            ConditionalMatch match = RegexExtension.matchBegin(regex, text, true);
+
+            if (match.getSuccess()) {
+                return true;
+            }
+        }
+
+        return true;
     }
 
     // match several other cases
@@ -264,7 +334,8 @@ public class BaseDateExtractor implements IDateTimeExtractor {
         return new Pair<>(startIndexResult, endIndexResult);
     }
 
-    // TODO: Remove the parsing logic from here
+    // Cases like "3 days from today", "5 weeks before yesterday", "2 months after tomorrow"
+    // Note that these cases are of type "date"
     private Collection<Token> extractRelativeDurationDate(String text, LocalDateTime reference) {
         List<Token> tokens = new ArrayList<>();
 
@@ -393,55 +464,5 @@ public class BaseDateExtractor implements IDateTimeExtractor {
 
     private boolean isMultipleDuration(ExtractResult er) {
         return er.data != null && er.data.toString().startsWith(Constants.MultipleDuration_Prefix);
-    }
-
-    public int getYearFromText(Match match) {
-        int year = Constants.InvalidYear;
-
-        String yearStr = match.getGroup("year").value;
-        if (!StringUtility.isNullOrEmpty(yearStr)) {
-            year = Integer.parseInt(yearStr);
-            if (year < 100 && year >= Constants.MinTwoDigitYearPastNum) {
-                year += 1900;
-            } else if (year >= 0 && year < Constants.MaxTwoDigitYearFutureNum) {
-                year += 2000;
-            }
-        } else {
-            String firstTwoYearNumStr = match.getGroup("firsttwoyearnum").value;
-            if (!StringUtility.isNullOrEmpty(firstTwoYearNumStr)) {
-                int start = match.getGroup("firsttwoyearnum").index;
-                int length = match.getGroup("firsttwoyearnum").length;
-
-                ExtractResult er = new ExtractResult(start, length, firstTwoYearNumStr, null, null);
-
-                Object numberParsed = this.config.getNumberParser().parse(er).value;
-                int firstTwoYearNum = Float.valueOf(numberParsed != null ? numberParsed.toString() : "0").intValue();
-
-                int lastTwoYearNum = 0;
-                String lastTwoYearNumStr = match.getGroup("lasttwoyearnum").value;
-                if (!StringUtility.isNullOrEmpty(lastTwoYearNumStr)) {
-                    er = er.withText(lastTwoYearNumStr);
-                    er = er.withStart(match.getGroup("lasttwoyearnum").index);
-                    er = er.withLength(match.getGroup("lasttwoyearnum").length);
-
-                    Object parsed = this.config.getNumberParser().parse(er).value;
-                    lastTwoYearNum = Float.valueOf(parsed != null ? parsed.toString() : "0").intValue();
-                }
-
-                // Exclude pure number like "nineteen", "twenty four"
-                if (firstTwoYearNum < 100 && lastTwoYearNum == 0 || firstTwoYearNum < 100 && firstTwoYearNum % 10 == 0 && lastTwoYearNumStr.trim().split(" ").length == 1) {
-                    year = Constants.InvalidYear;
-                    return year;
-                }
-
-                if (firstTwoYearNum >= 100) {
-                    year = firstTwoYearNum + lastTwoYearNum;
-                } else {
-                    year = firstTwoYearNum * 100 + lastTwoYearNum;
-                }
-            }
-        }
-
-        return year;
     }
 }

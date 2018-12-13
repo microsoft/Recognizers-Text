@@ -19,7 +19,7 @@ public class DateTimeParseResult extends ParseResult {
         this(er.start, er.length, er.text, er.type, er.data, null, null, null);
     }
 
-    public  DateTimeParseResult(ParseResult pr) {
+    public DateTimeParseResult(ParseResult pr) {
         this(pr.start, pr.length, pr.text, pr.type, pr.data, pr.value, pr.resolutionStr, null);
     }
 
@@ -33,5 +33,17 @@ public class DateTimeParseResult extends ParseResult {
                 this.value,
                 this.resolutionStr,
                 newTimexStr);
+    }
+
+    public DateTimeParseResult withValue(Object value) {
+        return new DateTimeParseResult(
+                this.start,
+                this.length,
+                this.text,
+                this.type,
+                this.data,
+                value,
+                this.resolutionStr,
+                this.timexStr);
     }
 }

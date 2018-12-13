@@ -135,8 +135,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "Comment": "Resolution is null",
-    "NotSupported": "dotnet, javascript, python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "dienstagabend",
@@ -144,12 +143,12 @@
         "Value": {
           "Timex": "2016-11-08TEV",
           "FutureResolution": {
-            "startDateTime": "2016-11-08 18:00:00",
-            "endDateTime": "2016-11-08 22:00:00"
+            "startDateTime": "2016-11-08 16:00:00",
+            "endDateTime": "2016-11-08 20:00:00"
           },
           "PastResolution": {
-            "startDateTime": "2016-11-08 18:00:00",
-            "endDateTime": "2016-11-08 22:00:00"
+            "startDateTime": "2016-11-08 16:00:00",
+            "endDateTime": "2016-11-08 20:00:00"
           }
         },
         "Start": 9,
@@ -188,8 +187,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "Comment": "Resolution is null",
-    "NotSupported": "dotnet, javascript, python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "dienstagnacht",
@@ -501,8 +499,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "Comment": "Resolution is null",
-    "NotSupported": "dotnet, javascript, python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "dienstagmorgen",
@@ -528,8 +525,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet, javascript, python",
-    "Comment": "Resolution is null",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Dienstagabend",
@@ -537,12 +533,12 @@
         "Value": {
           "Timex": "2016-11-08TEV",
           "FutureResolution": {
-            "startDateTime": "2016-11-08 18:00:00",
-            "endDateTime": "2016-11-08 22:00:00"
+            "startDateTime": "2016-11-08 16:00:00",
+            "endDateTime": "2016-11-08 20:00:00"
           },
           "PastResolution": {
-            "startDateTime": "2016-11-08 18:00:00",
-            "endDateTime": "2016-11-08 22:00:00"
+            "startDateTime": "2016-11-08 16:00:00",
+            "endDateTime": "2016-11-08 20:00:00"
           }
         },
         "Start": 26,
