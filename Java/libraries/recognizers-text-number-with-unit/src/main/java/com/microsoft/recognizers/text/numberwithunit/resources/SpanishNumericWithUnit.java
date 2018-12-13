@@ -401,7 +401,7 @@ public class SpanishNumericWithUnit {
         .put("Picómetro", "pm|picometro|picómetro|picometros|picometros")
         .put("Milla", "mi|milla|millas")
         .put("Yarda", "yd|yarda|yardas")
-        .put("Pulgada", "pulgada|pulgadas|\\\"")
+        .put("Pulgada", "pulgada|pulgadas|\"")
         .put("Pie", "pie|pies|ft")
         .put("Año luz", "año luz|años luz|al")
         .put("Metro por segundo", "metro/segundo|m/s|metro por segundo|metros por segundo|metros por segundos")
@@ -497,7 +497,7 @@ public class SpanishNumericWithUnit {
         .put("Picómetro", "pm|picometro|picómetro|picometros|picómetros")
         .put("Milla", "mi|milla|millas")
         .put("Yarda", "yd|yarda|yardas")
-        .put("Pulgada", "pulgada|pulgadas|\\\"")
+        .put("Pulgada", "pulgada|pulgadas|\"")
         .put("Pie", "pie|pies|ft")
         .put("Año luz", "año luz|años luz|al")
         .build();

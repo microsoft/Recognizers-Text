@@ -351,7 +351,7 @@ public class GermanNumericWithUnit {
         .put("Petabyte", "petabyte|pB|petabytes|peta byte|peta bytes|PByte")
         .build();
 
-    public static final List<String> AmbiguousDimensionUnitList = Arrays.asList("barrel", "grain", "gran", "grän", "korn", "pfund", "stone", "yard", "cord", "dram", "fuß", "gill", "knoten", "peck", "cup", "fps", "pts", "in", "\\\"");
+    public static final List<String> AmbiguousDimensionUnitList = Arrays.asList("barrel", "grain", "gran", "grän", "korn", "pfund", "stone", "yard", "cord", "dram", "fuß", "gill", "knoten", "peck", "cup", "fps", "pts", "in", "\"");
 
     public static final String BuildPrefix = "(?<=(\\s|^))";
 
@@ -370,7 +370,7 @@ public class GermanNumericWithUnit {
         .put("Picometer", "pm|pikometer|picometer|pikometern|picometern")
         .put("Mile", "meile|meilen")
         .put("Yard", "yard|yards")
-        .put("Inch", "zoll|inch|in|\\\"")
+        .put("Inch", "zoll|inch|in|\"")
         .put("Foot", "fuß|ft")
         .put("Light year", "lichtjahr|lichtjahre|lichtjahren")
         .put("Pt", "pt|pts")
