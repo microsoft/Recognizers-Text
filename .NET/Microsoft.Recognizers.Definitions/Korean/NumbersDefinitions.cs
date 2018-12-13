@@ -17,18 +17,18 @@ namespace Microsoft.Recognizers.Definitions.Korean
 
 	public static class NumbersDefinitions
 	{
-		public const string LangMarker = "";
+		public const string LangMarker = @"";
 		public const char DecimalSeparatorChar = '.';
-		public const string FractionMarkerToken = "";
+		public const string FractionMarkerToken = @"";
 		public const char NonDecimalSeparatorChar = ' ';
-		public const string HalfADozenText = "";
-		public const string WordSeparatorToken = "";
+		public const string HalfADozenText = @"";
+		public const string WordSeparatorToken = @"";
 		public static readonly Dictionary<string, long> RoundNumberMap = new Dictionary<string, long>
 		{
-			{ "k", 1000 },
-			{ "m", 1000000 },
-			{ "g", 1000000000 },
-			{ "t", 1000000000000 }
+			{ @"k", 1000 },
+			{ @"m", 1000000 },
+			{ @"g", 1000000000 },
+			{ @"t", 1000000000000 }
 		};
 		public static readonly Dictionary<char, long> RoundNumberMapChar = new Dictionary<char, long>
 		{
@@ -100,8 +100,8 @@ namespace Microsoft.Recognizers.Definitions.Korean
 		};
 		public static readonly Dictionary<string, string> UnitMap = new Dictionary<string, string>
 		{
-			{ " ", "" },
-			{ "몇", "" }
+			{ @" ", @"" },
+			{ @"몇", @"" }
 		};
 		public static readonly IList<char> RoundDirectList = new List<char>
 		{
@@ -120,7 +120,7 @@ namespace Microsoft.Recognizers.Definitions.Korean
 		public const string NegativeNumberTermsRegexNum = @"((?<!(\d+\s*)|[-－])[-－])";
 		public static readonly string NegativeNumberSignRegex = $@"^{NegativeNumberTermsRegex}|^{NegativeNumberTermsRegexNum}";
 		public static readonly string SpeGetNumberRegex = $@"{ZeroToNineFullHalfRegex}|{ZeroToNineIntegerRegex}|[십반]";
-		public const string PairRegex = ".*[쌍짝]$";
+		public const string PairRegex = @".*[쌍짝]$";
 		public const string RoundNumberIntegerRegex = @"[십백천만억조경열]";
 		public const string WhiteListRegex = @"(。|，|、|（|）|“|”|까지|가지|가치|갓|거리|국|[곳|군데]|개|그루|급|기|길|[까풀|꺼풀]|꼭지|닢|다스|대|돈|롤|리|미터|[밀리|미리]|마리|매|모|[면|페이지]|벌|박|배|부|분|살|술|승|쌈|[옴큼|웅큼]|원|일|잎|잔|장|전|점|제곱|주|종|평|평방|척|채|차|첩|켤레|쾌|탕|푼|[연|년]|월|일|\s|$)";
 		public static readonly string NotSingleRegex = $@"(({ZeroToNineIntegerRegex}|{ZeroToNineFullHalfRegex}|[십])\s*(\s*{RoundNumberIntegerRegex}){{1,2}}|십|{RoundNumberIntegerRegex}\s*({ZeroToNineIntegerRegex}|{ZeroToNineFullHalfRegex}|영))\s*((({ZeroToNineIntegerRegex}|{ZeroToNineFullHalfRegex})\s*(\s*{RoundNumberIntegerRegex}){{1,2}}|영)\s*)*{ZeroToNineIntegerRegex}?";
