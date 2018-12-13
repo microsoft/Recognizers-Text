@@ -35,10 +35,10 @@ public class EnglishSetExtractorConfiguration extends BaseOptionsConfiguration i
         super(options);
 
         timeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration(options));
-        dateExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration());
+        dateExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration(this));
         durationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration());
         dateTimeExtractor = new BaseDateTimeExtractor(new EnglishDateTimeExtractorConfiguration(options));
-        datePeriodExtractor = new BaseDatePeriodExtractor(new EnglishDatePeriodExtractorConfiguration());
+        datePeriodExtractor = new BaseDatePeriodExtractor(new EnglishDatePeriodExtractorConfiguration(this));
         timePeriodExtractor = new BaseTimePeriodExtractor(new EnglishTimePeriodExtractorConfiguration(options));
         dateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new EnglishDateTimePeriodExtractorConfiguration(options));
     }

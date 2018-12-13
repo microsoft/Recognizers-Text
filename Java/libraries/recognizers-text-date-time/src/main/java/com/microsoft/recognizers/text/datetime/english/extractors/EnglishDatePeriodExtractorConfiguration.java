@@ -3,6 +3,8 @@ package com.microsoft.recognizers.text.datetime.english.extractors;
 import com.microsoft.recognizers.text.IExtractor;
 import com.microsoft.recognizers.text.IParser;
 import com.microsoft.recognizers.text.datetime.DateTimeOptions;
+import com.microsoft.recognizers.text.datetime.config.BaseOptionsConfiguration;
+import com.microsoft.recognizers.text.datetime.config.IOptionsConfiguration;
 import com.microsoft.recognizers.text.datetime.extractors.BaseDateExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.BaseDurationExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.IDateTimeExtractor;
@@ -22,7 +24,7 @@ import java.util.Arrays;
 import java.util.Optional;
 import java.util.regex.Pattern;
 
-public class EnglishDatePeriodExtractorConfiguration implements IDatePeriodExtractorConfiguration {
+public class EnglishDatePeriodExtractorConfiguration extends BaseOptionsConfiguration implements IDatePeriodExtractorConfiguration {
 
     private static final int flags = Pattern.CASE_INSENSITIVE;
 
@@ -107,13 +109,11 @@ public class EnglishDatePeriodExtractorConfiguration implements IDatePeriodExtra
     private final IDateTimeExtractor durationExtractor;
     private final IParser numberParser;
     private final String[] durationDateRestrictions;
-    private final DateTimeOptions options;
 
-    public EnglishDatePeriodExtractorConfiguration() {
+    public EnglishDatePeriodExtractorConfiguration(IOptionsConfiguration config) {
+        super(config.getOptions());
 
-        options = DateTimeOptions.None;
-
-        datePointExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration());
+        datePointExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration(this));
         cardinalExtractor = CardinalExtractor.getInstance();
         ordinalExtractor = OrdinalExtractor.getInstance();
         durationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration());
@@ -276,10 +276,6 @@ public class EnglishDatePeriodExtractorConfiguration implements IDatePeriodExtra
     @Override
     public String[] getDurationDateRestrictions() {
         return durationDateRestrictions;
-    }
-    
-    public DateTimeOptions getOptions() {
-        return options;
     }
 
     @Override
