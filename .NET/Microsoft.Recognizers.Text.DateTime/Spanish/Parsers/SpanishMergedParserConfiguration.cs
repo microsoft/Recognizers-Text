@@ -23,8 +23,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public IDateTimeParser HolidayParser { get; }
 
-        public IDateTimeParser TimeZoneParser { get; }
-
         public StringMatcher SuperfluousWordMatcher { get; }
 
         public SpanishMergedParserConfiguration(IOptionsConfiguration config) : base(config)
@@ -42,7 +40,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             DateTimePeriodParser = new DateTimePeriodParser(new SpanishDateTimePeriodParserConfiguration(this));
             SetParser = new BaseSetParser(new SpanishSetParserConfiguration(this));
             HolidayParser = new BaseHolidayParser(new SpanishHolidayParserConfiguration(this));
-            TimeZoneParser = new BaseTimeZoneParser();
+            TimeZoneParser = new DummyTimeZoneParser();
         }
     }
 }

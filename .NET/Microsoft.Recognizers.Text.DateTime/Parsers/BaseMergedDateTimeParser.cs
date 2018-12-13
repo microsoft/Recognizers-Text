@@ -159,7 +159,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             // Pop, restore the MOD string
-            if (hasBefore && pr.Value != null)
+            if (hasBefore && (pr != null && pr.Value != null))
             {
                 pr.Length += modStr.Length;
                 pr.Start -= modStr.Length;
@@ -178,7 +178,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 pr.Value = val;
             }
 
-            if (hasAfter && pr.Value != null)
+            if (hasAfter && (pr != null && pr.Value != null))
             {
                 pr.Length += modStr.Length;
                 pr.Start -= modStr.Length;
@@ -197,7 +197,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 pr.Value = val;
             }
 
-            if (hasSince && pr.Value != null)
+            if (hasSince && (pr != null && pr.Value != null))
             {
                 pr.Length += modStr.Length;
                 pr.Start -= modStr.Length;
@@ -207,7 +207,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 pr.Value = val;
             }
 
-            if (hasAround && pr.Value != null)
+            if (hasAround && (pr != null && pr.Value != null))
             {
                 pr.Length += modStr.Length;
                 pr.Start -= modStr.Length;
@@ -217,7 +217,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 pr.Value = val;
             }
 
-            if (hasDateAfter && pr.Value != null)
+            if (hasDateAfter && (pr != null && pr.Value != null))
             {
                 pr.Length += modStr.Length;
                 pr.Text = pr.Text + modStr;
