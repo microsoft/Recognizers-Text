@@ -54,11 +54,11 @@ public class BaseMergedDateTimeExtractor implements IDateTimeExtractor {
         // The order is important, since there is a problem in merging
         addTo(ret, this.config.getDateExtractor().extract(input, reference), input);
         addTo(ret, this.config.getTimeExtractor().extract(input, reference), input);
-        addTo(ret, this.config.getDurationExtractor().extract(input, reference), input);
         addTo(ret, this.config.getDatePeriodExtractor().extract(input, reference), input);
-        addTo(ret, this.config.getDateTimeExtractor().extract(input, reference), input);
+        addTo(ret, this.config.getDurationExtractor().extract(input, reference), input);
         addTo(ret, this.config.getTimePeriodExtractor().extract(input, reference), input);
         addTo(ret, this.config.getDateTimePeriodExtractor().extract(input, reference), input);
+        addTo(ret, this.config.getDateTimeExtractor().extract(input, reference), input);
         addTo(ret, this.config.getSetExtractor().extract(input, reference), input);
         addTo(ret, this.config.getHolidayExtractor().extract(input, reference), input);
 

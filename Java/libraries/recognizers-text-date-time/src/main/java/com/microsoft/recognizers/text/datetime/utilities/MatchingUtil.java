@@ -18,10 +18,11 @@ import java.util.stream.StreamSupport;
 public class MatchingUtil {
 
     public static MatchingUtilResult getAgoLaterIndex(String text, Pattern pattern) {
-        Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(pattern, text.trim().toLowerCase())).findFirst();
+        int index = -1;
+        ConditionalMatch match = RegexExtension.matchBegin(pattern, text, true);
 
-        if (match.isPresent() && match.get().index == 0) {
-            int index = text.toLowerCase().lastIndexOf(match.get().value) + match.get().value.length();
+        if (match.getSuccess()) {
+            index = match.getMatch().get().index + match.getMatch().get().length;
             return new MatchingUtilResult(true, index);
         }
 

@@ -8,6 +8,7 @@ import com.microsoft.recognizers.text.datetime.DateTimeOptions;
 import com.microsoft.recognizers.text.datetime.DateTimeResolutionKey;
 import com.microsoft.recognizers.text.datetime.TimeTypeConstants;
 import com.microsoft.recognizers.text.datetime.parsers.config.IMergedParserConfiguration;
+import com.microsoft.recognizers.text.datetime.utilities.DateTimeFormatUtil;
 import com.microsoft.recognizers.text.datetime.utilities.DateTimeResolutionResult;
 import com.microsoft.recognizers.text.datetime.utilities.DateUtil;
 import com.microsoft.recognizers.text.datetime.utilities.FormatUtil;
@@ -30,7 +31,7 @@ import java.util.SortedMap;
 import java.util.TreeMap;
 import java.util.stream.Collectors;
 
-public class BaseMergedParser implements IDateTimeParser {
+public class BaseMergedDateTimeParser implements IDateTimeParser {
 
     private final String parserName = "datetimeV2";
     private final IMergedParserConfiguration config;
@@ -38,7 +39,7 @@ public class BaseMergedParser implements IDateTimeParser {
     private static final String dateTimeMinString = FormatUtil.formatDateTime(DateUtil.minValue());
     //private static final Calendar Cal = DateTimeFormatInfo.InvariantInfo.Calendar;
 
-    public BaseMergedParser(IMergedParserConfiguration config) {
+    public BaseMergedDateTimeParser(IMergedParserConfiguration config) {
         this.config = config;
     }
 
@@ -76,6 +77,7 @@ public class BaseMergedParser implements IDateTimeParser {
         boolean hasBefore = false;
         boolean hasAfter = false;
         boolean hasSince = false;
+        boolean hasAround = false;
         boolean hasYearAfter = false;
 
         // "InclusiveModifier" means MOD should include the start/end time
@@ -85,6 +87,7 @@ public class BaseMergedParser implements IDateTimeParser {
         Optional<Match> beforeMatch = Arrays.stream(RegExpUtility.getMatches(config.getBeforeRegex(), er.text)).findFirst();
         Optional<Match> afterMatch = Arrays.stream(RegExpUtility.getMatches(config.getAfterRegex(), er.text)).findFirst();
         Optional<Match> sinceMatch = Arrays.stream(RegExpUtility.getMatches(config.getSinceRegex(), er.text)).findFirst();
+        Optional<Match> aroundMatch = Arrays.stream(RegExpUtility.getMatches(config.getAroundRegex(), er.text)).findFirst();
 
         if (beforeMatch.isPresent() && beforeMatch.get().index == 0) {
             hasBefore = true;
@@ -112,7 +115,14 @@ public class BaseMergedParser implements IDateTimeParser {
                 .withLength(er.length - sinceMatch.get().length)
                 .withText(er.text.substring(sinceMatch.get().length));
             modStr = sinceMatch.get().value;
-        } else if (er.type.equals(Constants.SYS_DATETIME_DATEPERIOD) && Arrays.stream(RegExpUtility.getMatches(config.getYearRegex(), er.text)).findFirst().isPresent()) {
+        } else if (aroundMatch.isPresent() && aroundMatch.get().index == 0) {
+            hasAround = true;
+            er = er.withStart(er.start + aroundMatch.get().length)
+                    .withLength(er.length - aroundMatch.get().length)
+                    .withText(er.text.substring(aroundMatch.get().length));
+            modStr = aroundMatch.get().value;
+        } else if ((er.type.equals(Constants.SYS_DATETIME_DATEPERIOD) && Arrays.stream(RegExpUtility.getMatches(config.getYearRegex(), er.text)).findFirst().isPresent()) ||
+                (er.type.equals(Constants.SYS_DATETIME_DATE))) {
             // This has to be put at the end of the if, or cases like "before 2012" and "after 2012" would fall into this
             // 2012 or after/above
             Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(config.getDateAfterRegex(),er.text)).findFirst();
@@ -199,6 +209,18 @@ public class BaseMergedParser implements IDateTimeParser {
                     .withTimexStr(pr.timexStr);
             DateTimeResolutionResult val = (DateTimeResolutionResult)pr.value;
             val.setMod(Constants.SINCE_MOD);
+            pr = new DateTimeParseResult(pr.withValue(val)).withTimexStr(pr.timexStr);
+        }
+
+        if (hasAround && pr != null && pr.value != null) {
+            pr = new DateTimeParseResult(new ParseResult(
+                    pr.withStart(pr.start - modStr.length())
+                            .withText(modStr + pr.text))
+                    .withLength(pr.length + modStr.length())
+                    .withValue(pr.value))
+                    .withTimexStr(pr.timexStr);
+            DateTimeResolutionResult val = (DateTimeResolutionResult)pr.value;
+            val.setMod(Constants.APPROX_MOD);
             pr = new DateTimeParseResult(pr.withValue(val)).withTimexStr(pr.timexStr);
         }
 
@@ -329,8 +351,15 @@ public class BaseMergedParser implements IDateTimeParser {
 
         Boolean islunar = val.getIsLunar() != null ? val.getIsLunar() : false;
         String mod = val.getMod();
+        String list = null;
 
-        // With modifier, output Type might not be the same with type in resolution result
+        // Resolve dates list for date periods
+        if (slot.type.equals(Constants.SYS_DATETIME_DATEPERIOD) && val.getList() != null)
+        {
+            list = String.join(",", val.getList().stream().map(o -> DateTimeFormatUtil.luisDate((LocalDateTime)o)).collect(Collectors.toList()));
+        }
+
+        // With modifier, output Type might not be the same with type in resolution comments
         // For example, if the resolution type is "date", with modifier the output type should be "daterange"
         String typeOutput = determineDateTimeType(slot.type, !StringUtility.isNullOrEmpty(mod));
         String comment = val.getComment();
@@ -413,6 +442,7 @@ public class BaseMergedParser implements IDateTimeParser {
                 addResolutionFields(value, DateTimeResolutionKey.Mod, mod);
                 addResolutionFields(value, ResolutionKey.Type, typeOutput);
                 addResolutionFields(value, DateTimeResolutionKey.IsLunar, islunar ? islunar.toString() : "");
+                addResolutionFields(value, DateTimeResolutionKey.List, list);
 
                 if (hasTimeZone) {
                     addResolutionFields(value, Constants.TimeZone, val.getTimeZoneResolution().getValue());

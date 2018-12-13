@@ -127,8 +127,8 @@ public class AgoLaterUtil {
                 // We don't support cases like "5 minutes from today" for now
                 // Cases like "5 minutes ago" or "5 minutes from now" are supported
                 // Cases like "2 days before today" or "2 weeks from today" are also supported
-                boolean isDayMatchInAfterString = isDayMatchInAfterString(afterString,
-                        utilityConfiguration.getAgoRegex(), "day");
+                Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(utilityConfiguration.getAgoRegex(), afterString)).findFirst();
+                boolean isDayMatchInAfterString = match.isPresent() && !match.get().getGroup("day").value.equals("");
 
                 if (!(isTimeDuration && isDayMatchInAfterString)) {
                     result.add(new Token(er.start, er.start + er.length + resultIndex.index));
@@ -136,8 +136,8 @@ public class AgoLaterUtil {
             } else {
                 resultIndex = MatchingUtil.getAgoLaterIndex(afterString, utilityConfiguration.getLaterRegex());
                 if (resultIndex.result) {
-                    boolean isDayMatchInAfterString = isDayMatchInAfterString(afterString,
-                            utilityConfiguration.getLaterRegex(), "day");
+                    Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(utilityConfiguration.getLaterRegex(), afterString)).findFirst();
+                    boolean isDayMatchInAfterString = match.isPresent() && !match.get().getGroup("day").value.equals("");
 
                     if (!(isTimeDuration && isDayMatchInAfterString)) {
                         result.add(new Token(er.start, er.start + er.length + resultIndex.index));

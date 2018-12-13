@@ -20,6 +20,7 @@ public class EnglishMergedParserConfiguration extends EnglishCommonDateTimeParse
         beforeRegex = EnglishMergedExtractorConfiguration.BeforeRegex;
         afterRegex = EnglishMergedExtractorConfiguration.AfterRegex;
         sinceRegex = EnglishMergedExtractorConfiguration.SinceRegex;
+        aroundRegex = EnglishMergedExtractorConfiguration.AroundRegex;
         dateAfterRegex = EnglishMergedExtractorConfiguration.DateAfterRegex;
         yearRegex = EnglishDatePeriodExtractorConfiguration.YearRegex;
         superfluousWordMatcher = EnglishMergedExtractorConfiguration.SuperfluousWordMatcher;
@@ -32,6 +33,7 @@ public class EnglishMergedParserConfiguration extends EnglishCommonDateTimeParse
     private final Pattern beforeRegex;
     private final Pattern afterRegex;
     private final Pattern sinceRegex;
+    private final Pattern aroundRegex;
     private final Pattern dateAfterRegex;
     private final Pattern yearRegex;
     private final IDateTimeParser getParser;
@@ -47,9 +49,9 @@ public class EnglishMergedParserConfiguration extends EnglishCommonDateTimeParse
         return afterRegex;
     }
 
-    public Pattern getSinceRegex() {
-        return sinceRegex;
-    }
+    public Pattern getSinceRegex() { return sinceRegex; }
+
+    public Pattern getAroundRegex() { return aroundRegex; }
 
     public Pattern getDateAfterRegex() {
         return dateAfterRegex;

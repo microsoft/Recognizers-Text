@@ -124,7 +124,7 @@ public class BaseTimeParser implements IDateTimeParser {
         }
 
         // parse hour pattern, like "twenty one", "16"
-        // create a extract result which content the pass-in text
+        // create a extract comments which content the pass-in text
         Integer hour = null;
         if (config.getNumbers().containsKey(text)) {
             hour = config.getNumbers().get(text);
