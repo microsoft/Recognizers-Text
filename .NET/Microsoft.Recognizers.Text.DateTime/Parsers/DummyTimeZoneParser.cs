@@ -18,19 +18,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public DateTimeParseResult Parse(ExtractResult er, DateObject refDate)
         {
-            var ret = new DateTimeParseResult
-            {
-                Text = er.Text,
-                Start = er.Start,
-                Length = er.Length,
-                Type = er.Type,
-                Data = er.Data,
-                Value = null,
-                TimexStr = null,
-                ResolutionStr = ""
-            };
-
-            return ret;
+            return null;
         }
     }
 }
