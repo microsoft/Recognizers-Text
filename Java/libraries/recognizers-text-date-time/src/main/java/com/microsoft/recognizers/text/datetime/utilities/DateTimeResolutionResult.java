@@ -1,7 +1,5 @@
 package com.microsoft.recognizers.text.datetime.utilities;
 
-import com.google.common.collect.ImmutableMap;
-
 import java.util.List;
 import java.util.Map;
 
@@ -13,8 +11,8 @@ public class DateTimeResolutionResult {
     private String mod;
     private String comment;
 
-    private Map<String,String> futureResolution;
-    private Map<String,String> pastResolution;
+    private Map<String, String> futureResolution;
+    private Map<String, String> pastResolution;
 
     private Object futureValue;
     private Object pastValue;
@@ -22,6 +20,8 @@ public class DateTimeResolutionResult {
     private List<Object> subDateTimeEntities;
 
     private TimeZoneResolutionResult timeZoneResolution;
+
+    private List<Object> list;
 
     public DateTimeResolutionResult() {
         success = false;
@@ -61,8 +61,8 @@ public class DateTimeResolutionResult {
 
     public String getComment() {
         return this.comment;
-    }  
-  
+    }
+
     public void setComment(String comment) {
         this.comment = comment;
     }
@@ -113,5 +113,13 @@ public class DateTimeResolutionResult {
 
     public void setTimeZoneResolution(TimeZoneResolutionResult timeZoneResolution) {
         this.timeZoneResolution = timeZoneResolution;
+    }
+
+    public List<Object> getList() {
+        return this.list;
+    }
+
+    public void setList(List<Object> list) {
+        this.list = list;
     }
 }
