@@ -18,7 +18,7 @@ public class GermanNumeric {
 
     public static final String LangMarker = "Ger";
 
-    public static final String ZeroToNineIntegerRegex = "(drei|sieben|acht|vier|fuenf|fünf|null|neun|eins|ein|eine|einer|einen|zwei|sechs)";
+    public static final String ZeroToNineIntegerRegex = "(drei|sieben|acht|vier|fuenf|fünf|null|neun|eins|ein|eine|einer|einen|zwei|zwo|sechs)";
 
     public static final String RoundNumberIntegerRegex = "(hundert|einhundert|tausend|(\\s*million\\s*)|(\\s*millionen\\s*)|(\\s*mio\\s*)|(\\s*milliarde\\s*)|(\\s*milliarden\\s*)|(\\s*mrd\\s*)|(\\s*billion\\s*)|(\\s*billionen\\s*))";
 
@@ -188,6 +188,7 @@ public class GermanNumeric {
         .put("einer", 1L)
         .put("einen", 1L)
         .put("zwei", 2L)
+        .put("zwo", 2L)
         .put("drei", 3L)
         .put("vier", 4L)
         .put("fünf", 5L)

@@ -454,7 +454,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java",
     "NotSupported": "javascript, python",
     "Results": [
       {
@@ -481,7 +480,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java",
     "NotSupported": "javascript, python",
     "Results": [
       {
@@ -658,7 +656,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, python",
     "Results": []
   },
   {
@@ -1488,7 +1486,7 @@
   },
   {
     "Input": "I'll be out in 3 years",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, python",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -1599,7 +1597,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java",
     "NotSupported": "javascript, python",
     "Results": [
       {
@@ -1626,7 +1623,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java",
     "NotSupported": "javascript, python",
     "Results": [
       {
@@ -2483,7 +2479,6 @@
     "Context": {
       "ReferenceDateTime": "2017-11-17T00:00:00"
     },
-    "NotSupportedByDesign": "java",
     "NotSupported": "javascript, python",
     "Results": [
       {
@@ -2510,7 +2505,6 @@
     "Context": {
       "ReferenceDateTime": "2017-11-20T00:00:00"
     },
-    "NotSupportedByDesign": "java",
     "NotSupported": "javascript, python",
     "Results": [
       {
@@ -2537,7 +2531,6 @@
     "Context": {
       "ReferenceDateTime": "2017-11-20T00:00:00"
     },
-    "NotSupportedByDesign": "java",
     "NotSupported": "javascript, python",
     "Results": [
       {
@@ -2589,7 +2582,6 @@
     "Context": {
       "ReferenceDateTime": "2017-11-20T00:00:00"
     },
-    "NotSupportedByDesign": "java",
     "NotSupported": "javascript, python",
     "Results": [
       {
@@ -3136,7 +3128,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java",
     "NotSupported": "javascript, python",
     "Results": [
       {
@@ -4014,7 +4005,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, python",
     "Results": []
   },
   {
@@ -4651,7 +4642,7 @@
     "Context": {
       "ReferenceDateTime": "2018-11-07T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "from Feb 1st to March 2019",
@@ -4677,7 +4668,7 @@
     "Context": {
       "ReferenceDateTime": "2018-11-07T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "between Feb 1st and March 2019",
@@ -5483,7 +5474,7 @@
     "Context": {
       "ReferenceDateTime": "2018-08-08T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "the week of the 18th",
@@ -5509,7 +5500,7 @@
     "Context": {
       "ReferenceDateTime": "2018-08-28T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "the week of the 18th",
@@ -5535,7 +5526,7 @@
     "Context": {
       "ReferenceDateTime": "2018-08-31T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "this decade",
@@ -5561,7 +5552,6 @@
     "Context": {
       "ReferenceDateTime": "2018-10-24T12:00:00"
     },
-    "NotSupportedByDesign": "java",
     "Results": [
       {
         "Text": "from 10/1 to 11/7",
@@ -5587,7 +5577,6 @@
     "Context": {
       "ReferenceDateTime": "2018-10-24T12:00:00"
     },
-    "NotSupportedByDesign": "java",
     "Results": [
       {
         "Text": "from 10/25 to 01/25",

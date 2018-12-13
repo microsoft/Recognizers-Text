@@ -6,6 +6,7 @@ import com.microsoft.recognizers.text.IParser;
 import com.microsoft.recognizers.text.datetime.config.BaseOptionsConfiguration;
 import com.microsoft.recognizers.text.datetime.english.extractors.EnglishDatePeriodExtractorConfiguration;
 import com.microsoft.recognizers.text.datetime.english.extractors.EnglishDurationExtractorConfiguration;
+import com.microsoft.recognizers.text.datetime.extractors.IDateExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.IDateTimeExtractor;
 import com.microsoft.recognizers.text.datetime.parsers.IDateTimeParser;
 import com.microsoft.recognizers.text.datetime.parsers.config.ICommonDateTimeParserConfiguration;
@@ -72,6 +73,8 @@ public class EnglishDatePeriodParserConfiguration extends BaseOptionsConfigurati
         lessThanRegex = EnglishDatePeriodExtractorConfiguration.LessThanRegex;
         moreThanRegex = EnglishDatePeriodExtractorConfiguration.MoreThanRegex;
         centurySuffixRegex = EnglishDatePeriodExtractorConfiguration.CenturySuffixRegex;
+        relativeRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RelativeRegex, Pattern.CASE_INSENSITIVE);
+        unspecificEndOfRangeRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.UnspecificEndOfRangeRegex, Pattern.CASE_INSENSITIVE);
 
         unitMap = config.getUnitMap();
         cardinalMap = config.getCardinalMap();
@@ -92,7 +95,7 @@ public class EnglishDatePeriodParserConfiguration extends BaseOptionsConfigurati
 
     // InternalParsers
 
-    private final IDateTimeExtractor dateExtractor;
+    private final IDateExtractor dateExtractor;
     private final IExtractor cardinalExtractor;
     private final IExtractor ordinalExtractor;
     private final IDateTimeExtractor durationExtractor;
@@ -140,6 +143,8 @@ public class EnglishDatePeriodParserConfiguration extends BaseOptionsConfigurati
     private final Pattern lessThanRegex;
     private final Pattern moreThanRegex;
     private final Pattern centurySuffixRegex;
+    private final Pattern relativeRegex;
+    private final Pattern unspecificEndOfRangeRegex;
     private final Pattern nextPrefixRegex;
     private final Pattern pastPrefixRegex;
     private final Pattern thisPrefixRegex;
@@ -161,7 +166,7 @@ public class EnglishDatePeriodParserConfiguration extends BaseOptionsConfigurati
     }
 
     @Override
-    public IDateTimeExtractor getDateExtractor() {
+    public IDateExtractor getDateExtractor() {
         return dateExtractor;
     }
 
@@ -398,6 +403,16 @@ public class EnglishDatePeriodParserConfiguration extends BaseOptionsConfigurati
     @Override
     public Pattern getCenturySuffixRegex() {
         return centurySuffixRegex;
+    }
+
+    @Override
+    public Pattern getRelativeRegex() {
+        return relativeRegex;
+    }
+
+    @Override
+    public Pattern getUnspecificEndOfRangeRegex() {
+        return unspecificEndOfRangeRegex;
     }
 
     @Override
