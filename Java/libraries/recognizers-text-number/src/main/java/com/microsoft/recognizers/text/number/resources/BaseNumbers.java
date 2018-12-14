@@ -27,7 +27,7 @@ public class BaseNumbers {
 			.replace("{decimalmark}", decimalmark);
     }
 
-    public static final String PlaceHolderDefault = "\\\\D|\\\\b";
+    public static final String PlaceHolderDefault = "\\D|\\b";
 
     public static final String NumberMultiplierRegex = "(K|k|M|G|T|B|b)";
 

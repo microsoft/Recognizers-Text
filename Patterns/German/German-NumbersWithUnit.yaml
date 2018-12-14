@@ -501,7 +501,7 @@ AmbiguousDimensionUnitList: !list
     - fps
     - pts
     - in
-    - \"
+    - '"'
 #GermanNumberWithUnitExtractorConfiguration
 BuildPrefix: !simpleRegex
   def: (?<=(\s|^))
@@ -523,7 +523,7 @@ LengthSuffixList: !dictionary
     Picometer: pm|pikometer|picometer|pikometern|picometern
     Mile: meile|meilen
     Yard: yard|yards
-    Inch: zoll|inch|in|\"
+    Inch: zoll|inch|in|"
     Foot: fuß|ft
     Light year: lichtjahr|lichtjahre|lichtjahren
     Pt: pt|pts

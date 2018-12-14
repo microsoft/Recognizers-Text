@@ -74,7 +74,7 @@ FullToHalfMap: !dictionary
     ９: '9'
     ／: '/'
     －: '-'
-    ，: \'
+    ，: "'"
     Ｇ: G
     Ｍ: M
     Ｔ: T
@@ -286,5 +286,5 @@ LessOrEqualSuffix: !simpleRegex
 # DoubleRegexDefinition: !paramsRegex
 #   def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\.|\d+,)))\d{1,3}({thousandsmark}\d{3})+{decimalmark}\d+(?={placeholder})
 #   params: [ placeholder, thousandsmark, decimalmark ]
-# PlaceHolderDefault: \\D|\\b
+# PlaceHolderDefault: \D|\b
 ...

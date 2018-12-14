@@ -616,7 +616,7 @@ public class EnglishNumericWithUnit {
         .put("Petabyte", "-petabyte|-petabytes|petabyte|pB|PB|petabytes|peta byte|peta bytes|pbyte")
         .build();
 
-    public static final List<String> AmbiguousDimensionUnitList = Arrays.asList("barrel", "barrels", "grain", "pound", "stone", "yards", "yard", "cord", "dram", "feet", "foot", "gill", "knot", "peck", "cup", "fps", "pts", "in", "dm", "\\\"");
+    public static final List<String> AmbiguousDimensionUnitList = Arrays.asList("barrel", "barrels", "grain", "pound", "stone", "yards", "yard", "cord", "dram", "feet", "foot", "gill", "knot", "peck", "cup", "fps", "pts", "in", "dm", "\"");
 
     public static final String BuildPrefix = "(?<=(\\s|^))";
 
@@ -635,7 +635,7 @@ public class EnglishNumericWithUnit {
         .put("Picometer", "pm|picometer|picometre|picometers|picometres|pico meter|pico meters|pico metres|pico metre")
         .put("Mile", "-mile|mile|miles")
         .put("Yard", "yard|yards")
-        .put("Inch", "-inch|inch|inches|in|\\\"")
+        .put("Inch", "-inch|inch|inches|in|\"")
         .put("Foot", "-foot|foot|feet|ft")
         .put("Light year", "light year|light-year|light years|light-years")
         .put("Pt", "pt|pts")

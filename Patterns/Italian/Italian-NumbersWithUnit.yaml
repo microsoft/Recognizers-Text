@@ -500,7 +500,7 @@ AmbiguousDimensionUnitList: !list
     - fps
     - pts
     - in
-    - \"
+    - '"'
 #EnglishNumberWithUnitExtractorConfiguration
 BuildPrefix: !simpleRegex
   def: (?<=(\s|^))

@@ -430,7 +430,7 @@ public class PortugueseNumericWithUnit {
         .put("Picômetro", "pm|picometro|picômetro|picómetro|picometros|picômetros|picómetros")
         .put("Milha", "mi|milha|milhas")
         .put("Jarda", "yd|jarda|jardas")
-        .put("Polegada", "polegada|polegadas|\\\"")
+        .put("Polegada", "polegada|polegadas|\"")
         .put("Pé", "pé|pe|pés|pes|ft")
         .put("Ano luz", "ano luz|anos luz|al")
         .build();

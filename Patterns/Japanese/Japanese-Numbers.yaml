@@ -62,8 +62,8 @@ FullToHalfMap: !dictionary
     ９: '9'
     ／: '/'
     －: '-'
-    ，: \'
-    、: \'
+    ，: "'"
+    、: "'"
     Ｇ: G
     Ｍ: M
     Ｔ: T

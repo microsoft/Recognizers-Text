@@ -95,7 +95,7 @@ class DictionaryWriter extends CodeWriter {
         }
         
         for(let propName in entries) {
-            this.entries.push(`["${propName}", ${valueQuote1}${sanitize(entries[propName], this.valueType)}${valueQuote2}]`);
+            this.entries.push(`["${sanitize(propName, this.keyType)}", ${valueQuote1}${sanitize(entries[propName], this.valueType)}${valueQuote2}]`);
         }
     }
 
@@ -108,7 +108,6 @@ class DictionaryWriter extends CodeWriter {
 function sanitize(value: string, valueType: string = null) : string {
     if (!valueType) valueType = typeof value;
     if (valueType === 'number') return value;
-    else if (valueType === 'string') return value;
 
     let stringified = JSON.stringify(value);
     return stringified.slice(1, stringified.length - 1);

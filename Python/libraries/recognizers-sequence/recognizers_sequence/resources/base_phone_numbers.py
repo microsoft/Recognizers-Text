@@ -19,11 +19,11 @@ class BasePhoneNumbers:
     ITPhoneNumberRegex = f'((\\(\\s?(\\+\\s?|00)39\\s?\\)\\s?)|(((?<!\\d)\\+\\s?|\\b00)39\\s?)|\\b)((0[\\d\\s-]{{4,12}}\\d)|(3[\\d\\s-]{{7,12}}\\d))(?!-)\\b'
     NLPhoneNumberRegex = f'((((\\(\\s?(\\+\\s?|00)31\\s?\\)\\s?)|(((?<!\\d)\\+\\s?|\\b00)31\\s?))?(((\\b|(?<=31))0?\\d{{1,3}}|\\(\\s?0?\\d{{1,3}}\\s?\\)|\\(0\\)[-\\s]?\\d{{1,3}})\\s?-?[\\d\\s]{{5,11}}\\d))|\\b\\d{{10,12}})(?!-)\\b'
     SpecialPhoneNumberRegex = f'\\b(\\d{{3,4}}[/-]\\d{{1,4}}[/-]\\d{{3,4}})\\b'
-    TypicalDeductionRegexList = ['^\\d{3}-\\d{2}-\\d{4}$', '^\\d{5}-\\d{4}$']
+    TypicalDeductionRegexList = [r'^\d{3}-\d{2}-\d{4}$', r'^\d{5}-\d{4}$']
     PhoneNumberMaskRegex = f'([0-9A-E]{{2}}(\\s[0-9A-E]{{2}}){{7}})'
     CountryCodeRegex = f'^(\\(\\s?(\\+\\s?|00)\\d{{1,3}}\\s?\\)|(\\+\\s?|00)\\d{{1,3}})'
     AreaCodeIndicatorRegex = f'\\('
     FormatIndicatorRegex = f'(\\s|-|/|\\.)+'
-    SpecialBoundaryMarkers = ['-', ' ']
-    BoundaryMarkers = ['-', '.', '/', '+', '#', '*']
+    SpecialBoundaryMarkers = [r'-', r' ']
+    BoundaryMarkers = [r'-', r'.', r'/', r'+', r'#', r'*']
 # pylint: enable=line-too-long

@@ -601,7 +601,7 @@ CurrencyPrefixList: !dictionary
     New Taiwan dollar: nt$|nt $
     Samoan tālā: ws$
     Chinese yuan: ￥
-    Japanese yen: ¥|\\
+    Japanese yen: ¥|\
     Turkish lira: ₺
     Euro: €
     Pound: £
@@ -611,5 +611,5 @@ CurrencyAmbiguousValues: !list
   entries:
     - 円
     - 銭
-    - \\
+    - \
 ...
