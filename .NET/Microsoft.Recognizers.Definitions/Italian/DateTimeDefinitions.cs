@@ -173,10 +173,10 @@ namespace Microsoft.Recognizers.Definitions.Italian
 		public static readonly string HolidayRegex1 = $@"\b(?<holiday>le ceneri|mercoledì delle ceneri|martedì grasso|capodanno cinese|capodanno|primo dell'anno|festa del papà|pesce d'aprile|la vigilia|la vigilia di natale|natale|giorno di natale|halloween|pasqua|lunedì dell'angelo)(\s+(del\s+)?({YearRegex}|{{RelativeRegex}}\s+year))?\b";
 		public static readonly string HolidayRegex2 = $@"\b(?<holiday>i morti|tutti i santi|giorno dell'independenza|la liberazione|festa del lavoro|festa dei lavoratori)(\s+(del\s+)?({YearRegex}|{{RelativeRegex}}\s+year))?\b";
 		public static readonly string HolidayRegex3 = $@"(?<holiday>(pasqua|natale|donne|della memoria|festa della mamma|festa delle donne|festa della donna|san valentino|ferragosto|la madonna|la notte della madonna)\s+(giorno))(\s+(del\s+)?({YearRegex}|{{RelativeRegex}}\s+year))?";
-		public const string DateTokenPrefix = "di ";
-		public const string TimeTokenPrefix = "alle ";
-		public const string TokenBeforeDate = "di ";
-		public const string TokenBeforeTime = "alle ";
+		public const string DateTokenPrefix = @"di ";
+		public const string TimeTokenPrefix = @"alle ";
+		public const string TokenBeforeDate = @"di ";
+		public const string TokenBeforeTime = @"alle ";
 		public const string AMTimeRegex = @"(?<am>mattin[oa])";
 		public const string PMTimeRegex = @"\b(?<pm>pomeriggio|sera|notte)\b";
 		public const string BeforeRegex = @"\b(prima|prima di|prima della|(non dopo|precedente|presto) della fine|della fine (di|con)|della|fino a|a|al|fino al)\b";
@@ -234,367 +234,367 @@ namespace Microsoft.Recognizers.Definitions.Italian
 		public const string ComplexDatePeriodRegex = @"^[.]";
 		public static readonly Dictionary<string, string> UnitMap = new Dictionary<string, string>
 		{
-			{ "anni", "Y" },
-			{ "anno", "Y" },
-			{ "mesi", "MON" },
-			{ "mese", "MON" },
-			{ "settimane", "W" },
-			{ "settimana", "W" },
-			{ "giorni", "D" },
-			{ "giorno", "D" },
-			{ "ore", "H" },
-			{ "ora", "H" },
-			{ "hrs", "H" },
-			{ "hr", "H" },
-			{ "h", "H" },
-			{ "minuti", "M" },
-			{ "minuto", "M" },
-			{ "mins", "M" },
-			{ "min", "M" },
-			{ "secondi", "S" },
-			{ "secondo", "S" },
-			{ "secs", "S" },
-			{ "sec", "S" }
+			{ @"anni", @"Y" },
+			{ @"anno", @"Y" },
+			{ @"mesi", @"MON" },
+			{ @"mese", @"MON" },
+			{ @"settimane", @"W" },
+			{ @"settimana", @"W" },
+			{ @"giorni", @"D" },
+			{ @"giorno", @"D" },
+			{ @"ore", @"H" },
+			{ @"ora", @"H" },
+			{ @"hrs", @"H" },
+			{ @"hr", @"H" },
+			{ @"h", @"H" },
+			{ @"minuti", @"M" },
+			{ @"minuto", @"M" },
+			{ @"mins", @"M" },
+			{ @"min", @"M" },
+			{ @"secondi", @"S" },
+			{ @"secondo", @"S" },
+			{ @"secs", @"S" },
+			{ @"sec", @"S" }
 		};
 		public static readonly Dictionary<string, long> UnitValueMap = new Dictionary<string, long>
 		{
-			{ "anni", 31536000 },
-			{ "anno", 31536000 },
-			{ "mesi", 2592000 },
-			{ "mese", 2592000 },
-			{ "settimane", 604800 },
-			{ "settimana", 604800 },
-			{ "giorni", 86400 },
-			{ "giorno", 86400 },
-			{ "ore", 3600 },
-			{ "ora", 3600 },
-			{ "hrs", 3600 },
-			{ "hr", 3600 },
-			{ "h", 3600 },
-			{ "minuti", 60 },
-			{ "minuto", 60 },
-			{ "mins", 60 },
-			{ "min", 60 },
-			{ "secondi", 1 },
-			{ "secondo", 1 },
-			{ "secs", 1 },
-			{ "sec", 1 }
+			{ @"anni", 31536000 },
+			{ @"anno", 31536000 },
+			{ @"mesi", 2592000 },
+			{ @"mese", 2592000 },
+			{ @"settimane", 604800 },
+			{ @"settimana", 604800 },
+			{ @"giorni", 86400 },
+			{ @"giorno", 86400 },
+			{ @"ore", 3600 },
+			{ @"ora", 3600 },
+			{ @"hrs", 3600 },
+			{ @"hr", 3600 },
+			{ @"h", 3600 },
+			{ @"minuti", 60 },
+			{ @"minuto", 60 },
+			{ @"mins", 60 },
+			{ @"min", 60 },
+			{ @"secondi", 1 },
+			{ @"secondo", 1 },
+			{ @"secs", 1 },
+			{ @"sec", 1 }
 		};
 		public static readonly Dictionary<string, string> SeasonMap = new Dictionary<string, string>
 		{
-			{ "primavera", "SP" },
-			{ "estate", "SU" },
-			{ "autunno", "FA" },
-			{ "inverno", "WI" }
+			{ @"primavera", @"SP" },
+			{ @"estate", @"SU" },
+			{ @"autunno", @"FA" },
+			{ @"inverno", @"WI" }
 		};
 		public static readonly Dictionary<string, int> SeasonValueMap = new Dictionary<string, int>
 		{
-			{ "SP", 3 },
-			{ "SU", 6 },
-			{ "FA", 9 },
-			{ "WI", 12 }
+			{ @"SP", 3 },
+			{ @"SU", 6 },
+			{ @"FA", 9 },
+			{ @"WI", 12 }
 		};
 		public static readonly Dictionary<string, int> CardinalMap = new Dictionary<string, int>
 		{
-			{ "primo", 1 },
-			{ "prima", 1 },
-			{ "seconda", 2 },
-			{ "secondo", 2 },
-			{ "terzo", 3 },
-			{ "terza", 3 },
-			{ "quarta", 4 },
-			{ "quarto", 4 },
-			{ "quinta", 5 },
-			{ "quinto", 5 }
+			{ @"primo", 1 },
+			{ @"prima", 1 },
+			{ @"seconda", 2 },
+			{ @"secondo", 2 },
+			{ @"terzo", 3 },
+			{ @"terza", 3 },
+			{ @"quarta", 4 },
+			{ @"quarto", 4 },
+			{ @"quinta", 5 },
+			{ @"quinto", 5 }
 		};
 		public static readonly Dictionary<string, int> DayOfWeek = new Dictionary<string, int>
 		{
-			{ "lunedì", 1 },
-			{ "martedì", 2 },
-			{ "mercoledì", 3 },
-			{ "giovedì", 4 },
-			{ "venerdì", 5 },
-			{ "sabato", 6 },
-			{ "domenica", 0 },
-			{ "lun", 1 },
-			{ "mar", 2 },
-			{ "mer", 3 },
-			{ "gio", 4 },
-			{ "ven", 5 },
-			{ "sab", 6 },
-			{ "dom", 0 }
+			{ @"lunedì", 1 },
+			{ @"martedì", 2 },
+			{ @"mercoledì", 3 },
+			{ @"giovedì", 4 },
+			{ @"venerdì", 5 },
+			{ @"sabato", 6 },
+			{ @"domenica", 0 },
+			{ @"lun", 1 },
+			{ @"mar", 2 },
+			{ @"mer", 3 },
+			{ @"gio", 4 },
+			{ @"ven", 5 },
+			{ @"sab", 6 },
+			{ @"dom", 0 }
 		};
 		public static readonly Dictionary<string, int> MonthOfYear = new Dictionary<string, int>
 		{
-			{ "gennaio", 1 },
-			{ "febbraio", 2 },
-			{ "marzo", 3 },
-			{ "aprile", 4 },
-			{ "maggio", 5 },
-			{ "giugno", 6 },
-			{ "luglio", 7 },
-			{ "agosto", 8 },
-			{ "settembre", 9 },
-			{ "ottobre", 10 },
-			{ "novembre", 11 },
-			{ "dicembre", 12 },
-			{ "gen", 1 },
-			{ "feb", 2 },
-			{ "mar", 3 },
-			{ "apr", 4 },
-			{ "giu", 6 },
-			{ "lug", 7 },
-			{ "ago", 8 },
-			{ "set", 9 },
-			{ "ott", 10 },
-			{ "nov", 11 },
-			{ "dic", 12 },
-			{ "1", 1 },
-			{ "2", 2 },
-			{ "3", 3 },
-			{ "4", 4 },
-			{ "5", 5 },
-			{ "6", 6 },
-			{ "7", 7 },
-			{ "8", 8 },
-			{ "9", 9 },
-			{ "10", 10 },
-			{ "11", 11 },
-			{ "12", 12 },
-			{ "01", 1 },
-			{ "02", 2 },
-			{ "03", 3 },
-			{ "04", 4 },
-			{ "05", 5 },
-			{ "06", 6 },
-			{ "07", 7 },
-			{ "08", 8 },
-			{ "09", 9 }
+			{ @"gennaio", 1 },
+			{ @"febbraio", 2 },
+			{ @"marzo", 3 },
+			{ @"aprile", 4 },
+			{ @"maggio", 5 },
+			{ @"giugno", 6 },
+			{ @"luglio", 7 },
+			{ @"agosto", 8 },
+			{ @"settembre", 9 },
+			{ @"ottobre", 10 },
+			{ @"novembre", 11 },
+			{ @"dicembre", 12 },
+			{ @"gen", 1 },
+			{ @"feb", 2 },
+			{ @"mar", 3 },
+			{ @"apr", 4 },
+			{ @"giu", 6 },
+			{ @"lug", 7 },
+			{ @"ago", 8 },
+			{ @"set", 9 },
+			{ @"ott", 10 },
+			{ @"nov", 11 },
+			{ @"dic", 12 },
+			{ @"1", 1 },
+			{ @"2", 2 },
+			{ @"3", 3 },
+			{ @"4", 4 },
+			{ @"5", 5 },
+			{ @"6", 6 },
+			{ @"7", 7 },
+			{ @"8", 8 },
+			{ @"9", 9 },
+			{ @"10", 10 },
+			{ @"11", 11 },
+			{ @"12", 12 },
+			{ @"01", 1 },
+			{ @"02", 2 },
+			{ @"03", 3 },
+			{ @"04", 4 },
+			{ @"05", 5 },
+			{ @"06", 6 },
+			{ @"07", 7 },
+			{ @"08", 8 },
+			{ @"09", 9 }
 		};
 		public static readonly Dictionary<string, int> Numbers = new Dictionary<string, int>
 		{
-			{ "zero", 0 },
-			{ "uno", 1 },
-			{ "un", 1 },
-			{ "una", 1 },
-			{ "due", 2 },
-			{ "tre", 3 },
-			{ "quattro", 4 },
-			{ "cinque", 5 },
-			{ "sei", 6 },
-			{ "sette", 7 },
-			{ "otto", 8 },
-			{ "nove", 9 },
-			{ "dieci", 10 },
-			{ "undici", 11 },
-			{ "dodici", 12 },
-			{ "tredici", 13 },
-			{ "quattordici", 14 },
-			{ "quindici", 15 },
-			{ "sedici", 16 },
-			{ "diciassette", 17 },
-			{ "diciotto", 18 },
-			{ "diciannove", 19 },
-			{ "venti", 20 },
-			{ "ventuno", 21 },
-			{ "ventidue", 22 },
-			{ "twenty three", 23 },
-			{ "twenty four", 24 },
-			{ "twenty five", 25 },
-			{ "twenty six", 26 },
-			{ "twenty seven", 27 },
-			{ "twenty eight", 28 },
-			{ "twenty nine", 29 },
-			{ "thirty", 30 },
-			{ "thirty one", 31 },
-			{ "thirty two", 32 },
-			{ "thirty three", 33 },
-			{ "thirty four", 34 },
-			{ "thirty five", 35 },
-			{ "thirty six", 36 },
-			{ "thirty seven", 37 },
-			{ "thirty eight", 38 },
-			{ "thirty nine", 39 },
-			{ "forty", 40 },
-			{ "forty one", 41 },
-			{ "forty two", 42 },
-			{ "forty three", 43 },
-			{ "forty four", 44 },
-			{ "forty five", 45 },
-			{ "forty six", 46 },
-			{ "forty seven", 47 },
-			{ "forty eight", 48 },
-			{ "forty nine", 49 },
-			{ "fifty", 50 },
-			{ "fifty one", 51 },
-			{ "fifty two", 52 },
-			{ "fifty three", 53 },
-			{ "fifty four", 54 },
-			{ "fifty five", 55 },
-			{ "fifty six", 56 },
-			{ "fifty seven", 57 },
-			{ "fifty eight", 58 },
-			{ "fifty nine", 59 },
-			{ "sixty", 60 },
-			{ "sixty one", 61 },
-			{ "sixty two", 62 },
-			{ "sixty three", 63 },
-			{ "sixty four", 64 },
-			{ "sixty five", 65 },
-			{ "sixty six", 66 },
-			{ "sixty seven", 67 },
-			{ "sixty eight", 68 },
-			{ "sixty nine", 69 },
-			{ "seventy", 70 },
-			{ "seventy one", 71 },
-			{ "seventy two", 72 },
-			{ "seventy three", 73 },
-			{ "seventy four", 74 },
-			{ "seventy five", 75 },
-			{ "seventy six", 76 },
-			{ "seventy seven", 77 },
-			{ "seventy eight", 78 },
-			{ "seventy nine", 79 },
-			{ "eighty", 80 },
-			{ "eighty one", 81 },
-			{ "eighty two", 82 },
-			{ "eighty three", 83 },
-			{ "eighty four", 84 },
-			{ "eighty five", 85 },
-			{ "eighty six", 86 },
-			{ "eighty seven", 87 },
-			{ "eighty eight", 88 },
-			{ "eighty nine", 89 },
-			{ "ninety", 90 },
-			{ "ninety one", 91 },
-			{ "ninety two", 92 },
-			{ "ninety three", 93 },
-			{ "ninety four", 94 },
-			{ "ninety five", 95 },
-			{ "ninety six", 96 },
-			{ "ninety seven", 97 },
-			{ "ninety eight", 98 },
-			{ "ninety nine", 99 },
-			{ "one hundred", 100 }
+			{ @"zero", 0 },
+			{ @"uno", 1 },
+			{ @"un", 1 },
+			{ @"una", 1 },
+			{ @"due", 2 },
+			{ @"tre", 3 },
+			{ @"quattro", 4 },
+			{ @"cinque", 5 },
+			{ @"sei", 6 },
+			{ @"sette", 7 },
+			{ @"otto", 8 },
+			{ @"nove", 9 },
+			{ @"dieci", 10 },
+			{ @"undici", 11 },
+			{ @"dodici", 12 },
+			{ @"tredici", 13 },
+			{ @"quattordici", 14 },
+			{ @"quindici", 15 },
+			{ @"sedici", 16 },
+			{ @"diciassette", 17 },
+			{ @"diciotto", 18 },
+			{ @"diciannove", 19 },
+			{ @"venti", 20 },
+			{ @"ventuno", 21 },
+			{ @"ventidue", 22 },
+			{ @"twenty three", 23 },
+			{ @"twenty four", 24 },
+			{ @"twenty five", 25 },
+			{ @"twenty six", 26 },
+			{ @"twenty seven", 27 },
+			{ @"twenty eight", 28 },
+			{ @"twenty nine", 29 },
+			{ @"thirty", 30 },
+			{ @"thirty one", 31 },
+			{ @"thirty two", 32 },
+			{ @"thirty three", 33 },
+			{ @"thirty four", 34 },
+			{ @"thirty five", 35 },
+			{ @"thirty six", 36 },
+			{ @"thirty seven", 37 },
+			{ @"thirty eight", 38 },
+			{ @"thirty nine", 39 },
+			{ @"forty", 40 },
+			{ @"forty one", 41 },
+			{ @"forty two", 42 },
+			{ @"forty three", 43 },
+			{ @"forty four", 44 },
+			{ @"forty five", 45 },
+			{ @"forty six", 46 },
+			{ @"forty seven", 47 },
+			{ @"forty eight", 48 },
+			{ @"forty nine", 49 },
+			{ @"fifty", 50 },
+			{ @"fifty one", 51 },
+			{ @"fifty two", 52 },
+			{ @"fifty three", 53 },
+			{ @"fifty four", 54 },
+			{ @"fifty five", 55 },
+			{ @"fifty six", 56 },
+			{ @"fifty seven", 57 },
+			{ @"fifty eight", 58 },
+			{ @"fifty nine", 59 },
+			{ @"sixty", 60 },
+			{ @"sixty one", 61 },
+			{ @"sixty two", 62 },
+			{ @"sixty three", 63 },
+			{ @"sixty four", 64 },
+			{ @"sixty five", 65 },
+			{ @"sixty six", 66 },
+			{ @"sixty seven", 67 },
+			{ @"sixty eight", 68 },
+			{ @"sixty nine", 69 },
+			{ @"seventy", 70 },
+			{ @"seventy one", 71 },
+			{ @"seventy two", 72 },
+			{ @"seventy three", 73 },
+			{ @"seventy four", 74 },
+			{ @"seventy five", 75 },
+			{ @"seventy six", 76 },
+			{ @"seventy seven", 77 },
+			{ @"seventy eight", 78 },
+			{ @"seventy nine", 79 },
+			{ @"eighty", 80 },
+			{ @"eighty one", 81 },
+			{ @"eighty two", 82 },
+			{ @"eighty three", 83 },
+			{ @"eighty four", 84 },
+			{ @"eighty five", 85 },
+			{ @"eighty six", 86 },
+			{ @"eighty seven", 87 },
+			{ @"eighty eight", 88 },
+			{ @"eighty nine", 89 },
+			{ @"ninety", 90 },
+			{ @"ninety one", 91 },
+			{ @"ninety two", 92 },
+			{ @"ninety three", 93 },
+			{ @"ninety four", 94 },
+			{ @"ninety five", 95 },
+			{ @"ninety six", 96 },
+			{ @"ninety seven", 97 },
+			{ @"ninety eight", 98 },
+			{ @"ninety nine", 99 },
+			{ @"one hundred", 100 }
 		};
 		public static readonly Dictionary<string, int> DayOfMonth = new Dictionary<string, int>
 		{
-			{ "1st", 1 },
-			{ "2nd", 2 },
-			{ "3rd", 3 },
-			{ "4th", 4 },
-			{ "5th", 5 },
-			{ "6th", 6 },
-			{ "7th", 7 },
-			{ "8th", 8 },
-			{ "9th", 9 },
-			{ "10th", 10 },
-			{ "11th", 11 },
-			{ "11st", 11 },
-			{ "12th", 12 },
-			{ "12nd", 12 },
-			{ "13th", 13 },
-			{ "13rd", 13 },
-			{ "14th", 14 },
-			{ "15th", 15 },
-			{ "16th", 16 },
-			{ "17th", 17 },
-			{ "18th", 18 },
-			{ "19th", 19 },
-			{ "20th", 20 },
-			{ "21st", 21 },
-			{ "22nd", 22 },
-			{ "23rd", 23 },
-			{ "24th", 24 },
-			{ "25th", 25 },
-			{ "26th", 26 },
-			{ "27th", 27 },
-			{ "28th", 28 },
-			{ "29th", 29 },
-			{ "30th", 30 },
-			{ "31st", 31 }
+			{ @"1st", 1 },
+			{ @"2nd", 2 },
+			{ @"3rd", 3 },
+			{ @"4th", 4 },
+			{ @"5th", 5 },
+			{ @"6th", 6 },
+			{ @"7th", 7 },
+			{ @"8th", 8 },
+			{ @"9th", 9 },
+			{ @"10th", 10 },
+			{ @"11th", 11 },
+			{ @"11st", 11 },
+			{ @"12th", 12 },
+			{ @"12nd", 12 },
+			{ @"13th", 13 },
+			{ @"13rd", 13 },
+			{ @"14th", 14 },
+			{ @"15th", 15 },
+			{ @"16th", 16 },
+			{ @"17th", 17 },
+			{ @"18th", 18 },
+			{ @"19th", 19 },
+			{ @"20th", 20 },
+			{ @"21st", 21 },
+			{ @"22nd", 22 },
+			{ @"23rd", 23 },
+			{ @"24th", 24 },
+			{ @"25th", 25 },
+			{ @"26th", 26 },
+			{ @"27th", 27 },
+			{ @"28th", 28 },
+			{ @"29th", 29 },
+			{ @"30th", 30 },
+			{ @"31st", 31 }
 		};
 		public static readonly Dictionary<string, double> DoubleNumbers = new Dictionary<string, double>
 		{
-			{ "mezzo", 0.5 },
-			{ "quarto", 0.25 }
+			{ @"mezzo", 0.5 },
+			{ @"quarto", 0.25 }
 		};
 		public static readonly Dictionary<string, IEnumerable<string>> HolidayNames = new Dictionary<string, IEnumerable<string>>
 		{
-			{ "pasqua", new string[] { "pasqua" } },
-			{ "lunedidellangelo", new string[] { "lunedidellangelo" } },
-			{ "festadelpapa", new string[] { "festadelpapa" } },
-			{ "festadellamamma", new string[] { "festadellamamma" } },
-			{ "giornodellamemoria", new string[] { "giornodellamemoria" } },
-			{ "martedigrasso", new string[] { "martedigrasso" } },
-			{ "leceneri", new string[] { "leceneri", "mercoledidelleceneri" } },
-			{ "tuttiisanti", new string[] { "tuttiisanti" } },
-			{ "imorti", new string[] { "imorti" } },
-			{ "festadelladonna", new string[] { "festadelladonna" } },
-			{ "lamadonna", new string[] { "lamadonna" } },
-			{ "ferragosto", new string[] { "ferragosto" } },
-			{ "natale", new string[] { "natale" } },
-			{ "vigiliadinatale", new string[] { "vigiliadinatale" } },
-			{ "capodanno", new string[] { "capodanno" } },
-			{ "sanvalentino", new string[] { "sanvalentino" } },
-			{ "stpatrickday", new string[] { "stpatrickday" } },
-			{ "pescedaprile", new string[] { "pescedaprile" } },
-			{ "festadeilavoratori", new string[] { "festadeilavoratori" } },
-			{ "liberazione", new string[] { "liberazione" } },
-			{ "festadellarepubblica", new string[] { "festadellarepubblica" } },
-			{ "halloween", new string[] { "halloween" } },
-			{ "cenonedicapodoanno", new string[] { "cenonedicapodoanno" } }
+			{ @"pasqua", new string[] { @"pasqua" } },
+			{ @"lunedidellangelo", new string[] { @"lunedidellangelo" } },
+			{ @"festadelpapa", new string[] { @"festadelpapa" } },
+			{ @"festadellamamma", new string[] { @"festadellamamma" } },
+			{ @"giornodellamemoria", new string[] { @"giornodellamemoria" } },
+			{ @"martedigrasso", new string[] { @"martedigrasso" } },
+			{ @"leceneri", new string[] { @"leceneri", @"mercoledidelleceneri" } },
+			{ @"tuttiisanti", new string[] { @"tuttiisanti" } },
+			{ @"imorti", new string[] { @"imorti" } },
+			{ @"festadelladonna", new string[] { @"festadelladonna" } },
+			{ @"lamadonna", new string[] { @"lamadonna" } },
+			{ @"ferragosto", new string[] { @"ferragosto" } },
+			{ @"natale", new string[] { @"natale" } },
+			{ @"vigiliadinatale", new string[] { @"vigiliadinatale" } },
+			{ @"capodanno", new string[] { @"capodanno" } },
+			{ @"sanvalentino", new string[] { @"sanvalentino" } },
+			{ @"stpatrickday", new string[] { @"stpatrickday" } },
+			{ @"pescedaprile", new string[] { @"pescedaprile" } },
+			{ @"festadeilavoratori", new string[] { @"festadeilavoratori" } },
+			{ @"liberazione", new string[] { @"liberazione" } },
+			{ @"festadellarepubblica", new string[] { @"festadellarepubblica" } },
+			{ @"halloween", new string[] { @"halloween" } },
+			{ @"cenonedicapodoanno", new string[] { @"cenonedicapodoanno" } }
 		};
 		public static readonly Dictionary<string, int> WrittenDecades = new Dictionary<string, int>
 		{
-			{ "cento", 0 },
-			{ "dieci", 10 },
-			{ "decennio", 10 },
-			{ "venti", 20 },
-			{ "ventennio", 20 },
-			{ "trenta", 30 },
-			{ "quaranta", 40 },
-			{ "cinquanta", 50 },
-			{ "sessanta", 60 },
-			{ "settanta", 70 },
-			{ "ottanta", 80 },
-			{ "novanta", 90 }
+			{ @"cento", 0 },
+			{ @"dieci", 10 },
+			{ @"decennio", 10 },
+			{ @"venti", 20 },
+			{ @"ventennio", 20 },
+			{ @"trenta", 30 },
+			{ @"quaranta", 40 },
+			{ @"cinquanta", 50 },
+			{ @"sessanta", 60 },
+			{ @"settanta", 70 },
+			{ @"ottanta", 80 },
+			{ @"novanta", 90 }
 		};
 		public static readonly Dictionary<string, int> SpecialDecadeCases = new Dictionary<string, int>
 		{
-			{ "questo secolo", 2000 },
-			{ "duemila", 2000 }
+			{ @"questo secolo", 2000 },
+			{ @"duemila", 2000 }
 		};
-		public const string DefaultLanguageFallback = "DMY";
+		public const string DefaultLanguageFallback = @"DMY";
 		public static readonly string[] DurationDateRestrictions = {  };
 		public static readonly IList<string> MorningTermList = new List<string>
 		{
-			"matinee",
-			"matin",
-			"matinée"
+			@"matinee",
+			@"matin",
+			@"matinée"
 		};
 		public static readonly IList<string> AfternoonTermList = new List<string>
 		{
-			"apres-midi",
-			"apres midi",
-			"après midi",
-			"après-midi"
+			@"apres-midi",
+			@"apres midi",
+			@"après midi",
+			@"après-midi"
 		};
 		public static readonly IList<string> EveningTermList = new List<string>
 		{
-			"soir",
-			"soiree",
-			"soirée"
+			@"soir",
+			@"soiree",
+			@"soirée"
 		};
 		public static readonly IList<string> DaytimeTermList = new List<string>
 		{
-			"jour",
-			"journee",
-			"journée"
+			@"jour",
+			@"journee",
+			@"journée"
 		};
 		public static readonly IList<string> NightTermList = new List<string>
 		{
-			"nuit"
+			@"nuit"
 		};
 		public static readonly string[] SameDayTerms = {  };
 		public static readonly string[] PlusOneDayTerms = {  };
@@ -603,49 +603,49 @@ namespace Microsoft.Recognizers.Definitions.Italian
 		public static readonly string[] MinusTwoDayTerms = {  };
 		public static readonly IList<string> FutureStartTerms = new List<string>
 		{
-			"cette"
+			@"cette"
 		};
 		public static readonly IList<string> FutureEndTerms = new List<string>
 		{
-			"prochaine",
-			"prochain"
+			@"prochaine",
+			@"prochain"
 		};
 		public static readonly IList<string> LastCardinalTerms = new List<string>
 		{
-			"dernières",
-			"dernière",
-			"dernieres",
-			"derniere",
-			"dernier"
+			@"dernières",
+			@"dernière",
+			@"dernieres",
+			@"derniere",
+			@"dernier"
 		};
 		public static readonly IList<string> MonthTerms = new List<string>
 		{
-			"mois"
+			@"mois"
 		};
 		public static readonly IList<string> MonthToDateTerms = new List<string>
 		{
-			"mois à ce jour"
+			@"mois à ce jour"
 		};
 		public static readonly IList<string> WeekendTerms = new List<string>
 		{
-			"fin de semaine",
-			"le weekend"
+			@"fin de semaine",
+			@"le weekend"
 		};
 		public static readonly IList<string> WeekTerms = new List<string>
 		{
-			"semaine"
+			@"semaine"
 		};
 		public static readonly IList<string> YearTerms = new List<string>
 		{
-			"années",
-			"ans",
-			"l'annees",
-			"l'annee"
+			@"années",
+			@"ans",
+			@"l'annees",
+			@"l'annee"
 		};
 		public static readonly IList<string> YearToDateTerms = new List<string>
 		{
-			"année à ce jour",
-			"an à ce jour"
+			@"année à ce jour",
+			@"an à ce jour"
 		};
 	}
 }

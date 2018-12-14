@@ -17,19 +17,19 @@ namespace Microsoft.Recognizers.Definitions.Japanese
 
 	public static class NumbersDefinitions
 	{
-		public const string LangMarker = "";
+		public const string LangMarker = @"";
 		public const char DecimalSeparatorChar = '.';
-		public const string FractionMarkerToken = "";
+		public const string FractionMarkerToken = @"";
 		public const char NonDecimalSeparatorChar = ' ';
-		public const string HalfADozenText = "";
-		public const string WordSeparatorToken = "";
+		public const string HalfADozenText = @"";
+		public const string WordSeparatorToken = @"";
 		public static readonly Dictionary<string, long> RoundNumberMap = new Dictionary<string, long>
 		{
-			{ "k", 1000 },
-			{ "m", 1000000 },
-			{ "g", 1000000000 },
-			{ "t", 1000000000000 },
-			{ "b", 1000000000 }
+			{ @"k", 1000 },
+			{ @"m", 1000000 },
+			{ @"g", 1000000000 },
+			{ @"t", 1000000000000 },
+			{ @"b", 1000000000 }
 		};
 		public static readonly Dictionary<char, long> RoundNumberMapChar = new Dictionary<char, long>
 		{
@@ -89,10 +89,10 @@ namespace Microsoft.Recognizers.Definitions.Japanese
 		};
 		public static readonly Dictionary<string, string> UnitMap = new Dictionary<string, string>
 		{
-			{ "万万", "億" },
-			{ "億万", "兆" },
-			{ "万億", "兆" },
-			{ " ", "" }
+			{ @"万万", @"億" },
+			{ @"億万", @"兆" },
+			{ @"万億", @"兆" },
+			{ @" ", @"" }
 		};
 		public static readonly IList<char> RoundDirectList = new List<char>
 		{
@@ -112,7 +112,7 @@ namespace Microsoft.Recognizers.Definitions.Japanese
 		public const string NegativeNumberTermsRegexNum = @"(?<!(\d+\s*)|[-－])[-－]";
 		public static readonly string NegativeNumberSignRegex = $@"^{NegativeNumberTermsRegex}.*|^{NegativeNumberTermsRegexNum}.*";
 		public static readonly string SpeGetNumberRegex = $@"{ZeroToNineFullHalfRegex}|{ZeroToNineIntegerRegex}|[半対]|[分厘]";
-		public const string PairRegex = ".*[対膳足]$";
+		public const string PairRegex = @".*[対膳足]$";
 		public const string RoundNumberIntegerRegex = @"[十百千万億兆]";
 		public const string WhiteListRegex = @"(。|，|、|（|）|”｜国|週間|時間|時|匹|キロ|トン|年|個|足|本|\s|$)";
 		public static readonly string NotSingleRegex = $@"(?<!(第|だい))(({RoundNumberIntegerRegex}+({ZeroToNineIntegerRegex}+|{ZeroToNineFullHalfRegex}+|十)\s*))|(({ZeroToNineIntegerRegex}+|{ZeroToNineFullHalfRegex}+|十)\s*({RoundNumberIntegerRegex}\s*){{1,2}})\s*(([零]?({ZeroToNineIntegerRegex}+|{ZeroToNineFullHalfRegex}+|十)\s*{RoundNumberIntegerRegex}{{0,1}})\s*)*\s*(\s*(以上)?)";
