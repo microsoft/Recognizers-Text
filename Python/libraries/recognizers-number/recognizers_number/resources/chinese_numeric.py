@@ -122,6 +122,7 @@ class ChineseNumeric:
     DoubleAndRoundRegex = f'{ZeroToNineFullHalfRegex}+(\\.{ZeroToNineFullHalfRegex}+)?\\s*[多几余]?[万亿萬億]{{1,2}}'
     FracSplitRegex = f'又|分\\s*之'
     ZeroToNineIntegerRegex = f'[一二三四五六七八九零壹贰貳叁肆伍陆陸柒捌玖〇两兩俩倆仨]'
+    HalfUnitRegex = f'半'
     NegativeNumberTermsRegex = f'[负負]'
     NegativeNumberTermsRegexNum = f'((?<!(\\d+\\s*)|[-－])[-－])'
     NegativeNumberSignRegex = f'^{NegativeNumberTermsRegex}.*|^{NegativeNumberTermsRegexNum}.*'

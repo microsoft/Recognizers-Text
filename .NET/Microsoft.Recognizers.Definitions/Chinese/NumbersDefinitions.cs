@@ -155,6 +155,7 @@ namespace Microsoft.Recognizers.Definitions.Chinese
 		public static readonly string DoubleAndRoundRegex = $@"{ZeroToNineFullHalfRegex}+(\.{ZeroToNineFullHalfRegex}+)?\s*[多几余]?[万亿萬億]{{1,2}}";
 		public const string FracSplitRegex = @"又|分\s*之";
 		public const string ZeroToNineIntegerRegex = @"[一二三四五六七八九零壹贰貳叁肆伍陆陸柒捌玖〇两兩俩倆仨]";
+		public const string HalfUnitRegex = @"半";
 		public const string NegativeNumberTermsRegex = @"[负負]";
 		public const string NegativeNumberTermsRegexNum = @"((?<!(\d+\s*)|[-－])[-－])";
 		public static readonly string NegativeNumberSignRegex = $@"^{NegativeNumberTermsRegex}.*|^{NegativeNumberTermsRegexNum}.*";

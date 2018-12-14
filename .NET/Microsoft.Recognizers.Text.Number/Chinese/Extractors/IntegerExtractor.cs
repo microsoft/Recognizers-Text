@@ -33,6 +33,10 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
                     new Regex(NumbersDefinitions.NumbersWithHalfDozen, RegexOptions.Singleline), RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.CHINESE)
                 },
                 {
+                    //半
+                    new Regex(NumbersDefinitions.HalfUnitRegex, RegexOptions.Singleline), RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.CHINESE)
+                },
+                {
                     //一打  五十打
                     new Regex(NumbersDefinitions.NumbersWithDozen, RegexOptions.Singleline), RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.CHINESE)
                 }
