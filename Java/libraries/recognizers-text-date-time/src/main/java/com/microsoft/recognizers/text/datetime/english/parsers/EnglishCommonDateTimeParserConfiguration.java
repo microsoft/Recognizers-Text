@@ -18,6 +18,7 @@ import com.microsoft.recognizers.text.datetime.extractors.BaseDateTimePeriodExtr
 import com.microsoft.recognizers.text.datetime.extractors.BaseDurationExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.BaseTimeExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.BaseTimePeriodExtractor;
+import com.microsoft.recognizers.text.datetime.extractors.IDateExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.IDateTimeExtractor;
 import com.microsoft.recognizers.text.datetime.parsers.BaseDateParser;
 import com.microsoft.recognizers.text.datetime.parsers.BaseDatePeriodParser;
@@ -65,7 +66,7 @@ public class EnglishCommonDateTimeParserConfiguration extends BaseDateParserConf
     private final IParser numberParser;
 
     private final IDateTimeExtractor durationExtractor;
-    private final IDateTimeExtractor dateExtractor;
+    private final IDateExtractor dateExtractor;
     private final IDateTimeExtractor timeExtractor;
     private final IDateTimeExtractor dateTimeExtractor;
     private final IDateTimeExtractor datePeriodExtractor;
@@ -145,7 +146,7 @@ public class EnglishCommonDateTimeParserConfiguration extends BaseDateParserConf
     }
 
     @Override
-    public IDateTimeExtractor getDateExtractor() {
+    public IDateExtractor getDateExtractor() {
         return dateExtractor;
     }
 

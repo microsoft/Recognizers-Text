@@ -5,66 +5,23 @@ import com.microsoft.recognizers.text.datetime.Constants;
 import com.microsoft.recognizers.text.datetime.DatePeriodTimexType;
 import com.microsoft.recognizers.text.utilities.StringUtility;
 
-import java.time.LocalDate;
+import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
-import java.time.temporal.IsoFields;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class TimexUtility {
-
-    public static String generateDatePeriodTimex(LocalDateTime begin, LocalDateTime end, DatePeriodTimexType timexType) {
-        String datePeriodTimex;
-
-        if (timexType == DatePeriodTimexType.ByDay) {
-            datePeriodTimex = "P" + ChronoUnit.DAYS.between(begin, end) + "D";
-        } else if (timexType == DatePeriodTimexType.ByWeek) {
-            datePeriodTimex = "P" + (ChronoUnit.WEEKS.between(begin, end)) + "W";
-        } else if (timexType == DatePeriodTimexType.ByMonth) {
-            datePeriodTimex = "P" + ChronoUnit.MONTHS.between(begin, end) + "M"; // ((end.getYear() - begin.getYear()) * 12) + (end.getMonthValue() - begin.getMonthValue());
-        } else {
-            double yearDiff = (end.getYear() - begin.getYear()) + (end.getMonthValue() - begin.getMonthValue()) / 12.0;
-            datePeriodTimex = "P" + yearDiff + "Y";
+    private static final HashMap<DatePeriodTimexType, String> DatePeriodTimexTypeToTimexSuffix = new HashMap<DatePeriodTimexType, String>() {
+        {
+            put(DatePeriodTimexType.ByDay, Constants.TimexDay);
+            put(DatePeriodTimexType.ByWeek, Constants.TimexWeek);
+            put(DatePeriodTimexType.ByMonth, Constants.TimexMonth);
+            put(DatePeriodTimexType.ByYear, Constants.TimexYear);
         }
-
-        return "(" + FormatUtil.luisDate(begin) + "," + FormatUtil.luisDate(end) + "," + datePeriodTimex + ")";
-    }
-
-    public static String generateWeekTimex() {
-        return "XXXX-WXX";
-    }
-
-    public static String generateWeekTimex(LocalDateTime monday) {
-        int isoWeek = LocalDate.of(monday.getYear(), monday.getMonthValue(), monday.getDayOfMonth()).get(IsoFields.WEEK_OF_WEEK_BASED_YEAR);
-        return String.format("%04d-W%02d", monday.getYear(), isoWeek);
-    }
-
-    public static String generateWeekendTimex() {
-        return "XXXX-WXX-WE";
-    }
-
-    public static String generateWeekendTimex(LocalDateTime date) {
-        int isoWeek = LocalDate.of(date.getYear(), date.getMonthValue(), date.getDayOfMonth()).get(IsoFields.WEEK_OF_WEEK_BASED_YEAR);
-        return String.format("%04d-W%02d-WE", date.getYear(), isoWeek);
-    }
-
-    public static String generateMonthTimex() {
-        return "XXXX-XX";
-    }
-
-    public static String generateMonthTimex(LocalDateTime date) {
-        return String.format("%04d-%02d", date.getYear(), date.getMonthValue());
-    }
-
-    public static String generateYearTimex() {
-        return "XXXX";
-    }
-
-    public static String generateYearTimex(LocalDateTime date) {
-        return String.format("%04d", date.getYear());
-    }
+    };
 
     public static String generateCompoundDurationTimex(Map<String, String> unitToTimexComponents, ImmutableMap<String, Long> unitValueMap) {
         List<String> unitList = new ArrayList<>(unitToTimexComponents.keySet());
@@ -96,6 +53,92 @@ public class TimexUtility {
         return timex.substring(isTimeDurationTimex(timex) ? 2 : 1);
     }
 
+    public static String generateDatePeriodTimex(LocalDateTime begin, LocalDateTime end, DatePeriodTimexType timexType) {
+
+        return generateDatePeriodTimex(begin, end, timexType, null, null);
+    }
+
+    public static String generateDatePeriodTimex(LocalDateTime begin, LocalDateTime end, DatePeriodTimexType timexType,
+                                                 LocalDateTime alternativeBegin, LocalDateTime alternativeEnd) {
+
+        Boolean equalDurationLength;
+        if (alternativeBegin == null || alternativeEnd == null) {
+            equalDurationLength = true;
+        } else {
+            equalDurationLength = Duration.between(begin, end).equals(Duration.between(alternativeBegin, alternativeEnd));
+        }
+
+        String unitCount = "XX";
+
+        if (equalDurationLength) {
+            switch (timexType) {
+                case ByDay:
+                    unitCount = ChronoUnit.DAYS.between(begin, end) + "";
+                    break;
+                case ByWeek:
+                    unitCount = ChronoUnit.WEEKS.between(begin, end) + "";
+                    break;
+                case ByMonth:
+                    unitCount = ChronoUnit.MONTHS.between(begin, end) + "";
+                    break;
+                default:
+                    unitCount = ((end.getYear() - begin.getYear()) + (end.getMonthValue() - begin.getMonthValue()) / 12.0) + "";
+            }
+        }
+
+        String datePeriodTimex = "P" + unitCount + DatePeriodTimexTypeToTimexSuffix.get(timexType);
+        return "(" + DateTimeFormatUtil.luisDate(begin, alternativeBegin) + "," + DateTimeFormatUtil.luisDate(end, alternativeEnd) + "," + datePeriodTimex + ")";
+    }
+
+    public static String generateWeekTimex() {
+        return generateWeekTimex(null);
+    }
+
+    public static String generateWeekTimex(LocalDateTime monday) {
+
+        if (monday == null) {
+            return Constants.TimexFuzzyYear + Constants.DateTimexConnector + Constants.TimexFuzzyWeek;
+        } else {
+            return DateTimeFormatUtil.toIsoWeekTimex(monday);
+        }
+    }
+
+    public static String generateWeekTimex(int weekNum) {
+        return "W" + String.format("%02d", weekNum);
+    }
+
+    public static String generateWeekendTimex() {
+        return generateWeekendTimex(null);
+    }
+
+    public static String generateWeekendTimex(LocalDateTime date) {
+        if (date == null) {
+            return Constants.TimexFuzzyYear + Constants.DateTimexConnector + Constants.TimexFuzzyWeek + Constants.DateTimexConnector + Constants.TimexWeekend;
+        } else {
+            return DateTimeFormatUtil.toIsoWeekTimex(date) + Constants.DateTimexConnector + Constants.TimexWeekend;
+        }
+    }
+
+    public static String generateMonthTimex() {
+        return generateMonthTimex(null);
+    }
+
+    public static String generateMonthTimex(LocalDateTime date) {
+        if (date == null) {
+            return Constants.TimexFuzzyYear + Constants.DateTimexConnector + Constants.TimexFuzzyMonth;
+        } else {
+            return String.format("%04d-%02d", date.getYear(), date.getMonthValue());
+        }
+    }
+
+    public static String generateYearTimex() {
+        return Constants.TimexFuzzyYear;
+    }
+
+    public static String generateYearTimex(LocalDateTime date) {
+        return String.format("%04d", date.getYear());
+    }
+
     public static String generateDurationTimex(double number, String unitStr, boolean isLessThanDay) {
         if (!Constants.TimexBusinessDay.equals(unitStr)) {
             if (Constants.DECADE_UNIT.equals(unitStr)) {
@@ -107,11 +150,58 @@ public class TimexUtility {
             }
         }
 
-        return  String.format("%s%s%s%s",
+        return String.format("%s%s%s%s",
                 Constants.GeneralPeriodPrefix,
                 isLessThanDay ? Constants.TimeTimexPrefix : "",
                 StringUtility.format(number),
                 unitStr);
+    }
+
+    public static DatePeriodTimexType getDatePeriodTimexType(String durationTimex) {
+        DatePeriodTimexType result;
+
+        String minimumUnit = durationTimex.substring(durationTimex.length() - 1);
+
+        switch (minimumUnit) {
+            case Constants.TimexYear:
+                result = DatePeriodTimexType.ByYear;
+                break;
+            case Constants.TimexMonth:
+                result = DatePeriodTimexType.ByMonth;
+                break;
+            case Constants.TimexWeek:
+                result = DatePeriodTimexType.ByWeek;
+                break;
+            default:
+                result = DatePeriodTimexType.ByDay;
+                break;
+        }
+
+        return result;
+    }
+
+    public static LocalDateTime offsetDateObject(LocalDateTime date, int offset, DatePeriodTimexType timexType) {
+        LocalDateTime result;
+
+        switch (timexType) {
+            case ByYear:
+                result = date.plusYears(offset);
+                break;
+            case ByMonth:
+                result = date.plusMonths(offset);
+                break;
+            case ByWeek:
+                result = date.plusDays(7 * offset);
+                break;
+            case ByDay:
+                result = date.plusDays(offset);
+                break;
+            default:
+                result = date;
+                break;
+        }
+
+        return result;
     }
 
     public static TimeOfDayResolutionResult parseTimeOfDay(String tod) {
@@ -133,5 +223,50 @@ public class TimexUtility {
             default:
                 return new TimeOfDayResolutionResult();
         }
+    }
+
+    public static String combineDateAndTimeTimex(String dateTimex, String timeTimex) {
+        return dateTimex + timeTimex;
+    }
+
+    public static String generateWeekOfYearTimex(int year, int weekNum) {
+        String weekTimex = generateWeekTimex(weekNum);
+        String yearTimex = DateTimeFormatUtil.luisDate(year);
+
+        return yearTimex + "-" + weekTimex;
+    }
+
+    public static String generateWeekOfMonthTimex(int year, int month, int weekNum) {
+        String weekTimex = generateWeekTimex(weekNum);
+        String monthTimex = DateTimeFormatUtil.luisDate(year, month);
+
+        return monthTimex + "-" + weekTimex;
+    }
+
+    public static String generateDateTimePeriodTimex(String beginTimex, String endTimex, String durationTimex) {
+        return "(" + beginTimex + "," + endTimex + "," + durationTimex + ")";
+    }
+
+    public static RangeTimexComponents getRangeTimexComponents(String rangeTimex) {
+        rangeTimex = rangeTimex.replace("(", "").replace(")", "");
+        String[] components = rangeTimex.split(",");
+        RangeTimexComponents result = new RangeTimexComponents();
+
+        if (components.length == 3) {
+            result.beginTimex = components[0];
+            result.endTimex = components[1];
+            result.durationTimex = components[2];
+            result.isValid = true;
+        }
+
+        return result;
+    }
+
+    public static boolean isRangeTimex(String timex) {
+        return !StringUtility.isNullOrEmpty(timex) && timex.startsWith("(");
+    }
+
+    public static String setTimexWithContext(String timex, DateContext context) {
+        return timex.replace(Constants.TimexFuzzyYear, String.format("%04d", context.getYear()));
     }
 }

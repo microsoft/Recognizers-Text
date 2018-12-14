@@ -23,8 +23,6 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public IDateTimeParser HolidayParser { get; }
 
-        public IDateTimeParser TimeZoneParser { get; }
-
         public StringMatcher SuperfluousWordMatcher { get; }
 
         public FrenchMergedParserConfiguration(IOptionsConfiguration config) : base(config)
@@ -38,7 +36,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             SuperfluousWordMatcher = FrenchMergedExtractorConfiguration.SuperfluousWordMatcher;
             SetParser = new BaseSetParser(new FrenchSetParserConfiguration(this));
             HolidayParser = new BaseHolidayParser(new FrenchHolidayParserConfiguration(this));
-            TimeZoneParser = new BaseTimeZoneParser();
+            TimeZoneParser = new DummyTimeZoneParser();
         }
     }
 }
