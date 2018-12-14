@@ -9,17 +9,19 @@ using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.NumberWithUnit;
 using Microsoft.Recognizers.Text.Choice;
 using Microsoft.Recognizers.Text.Sequence;
+using System.Text;
 
 namespace SimpleConsole
 {
     class Program
     {
         // Use English for the Recognizers culture
-        private const string DefaultCulture = Culture.English;
+        private const string DefaultCulture = Culture.Chinese;
 
         static void Main(string[] args)
         {
-            ShowIntro();
+            //Console.OutputEncoding = Encoding.GetEncoding(936);
+               ShowIntro();
 
             while (true)
             {
@@ -27,18 +29,19 @@ namespace SimpleConsole
                 Console.WriteLine("Enter the text to recognize:");
                 var input = Console.ReadLine().Trim();
                 Console.WriteLine();
-
+                input = "29日";
                 if (input.ToLower() == "exit")
                 {
                     // Close application if user types "exit"
                     break;
                 }
-
+                
                 // Validate input 
                 if (input.Length > 0)
                 {
                     // Retrieve all the parsers and call 'Parse' to recognize all the values from the user input
-                    var results = ParseAll(input, DefaultCulture);
+                    // var results = ParseAll(input, DefaultCulture);
+                    var results = DateTimeRecognizer.RecognizeDateTime(input, DefaultCulture);
 
                     // Write output
                     Console.WriteLine(results.Any() ? string.Format("I found the following entities ({0:d}):", results.Count()) : "I found no entities.");
