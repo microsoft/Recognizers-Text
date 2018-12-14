@@ -76,11 +76,11 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
 		public const char NonDecimalSeparatorChar = '.';
 		public const string HalfADozenText = @"seis";
 		public const string WordSeparatorToken = @"e";
-		public static readonly string[] WrittenDecimalSeparatorTexts = { "virgula", "vírgula" };
-		public static readonly string[] WrittenGroupSeparatorTexts = { "ponto" };
-		public static readonly string[] WrittenIntegerSeparatorTexts = { "e" };
-		public static readonly string[] WrittenFractionSeparatorTexts = { "com" };
-		public static readonly string[] WrittenFractionSuffix = { "avo", "ava" };
+		public static readonly string[] WrittenDecimalSeparatorTexts = { @"virgula", @"vírgula" };
+		public static readonly string[] WrittenGroupSeparatorTexts = { @"ponto" };
+		public static readonly string[] WrittenIntegerSeparatorTexts = { @"e" };
+		public static readonly string[] WrittenFractionSeparatorTexts = { @"com" };
+		public static readonly string[] WrittenFractionSuffix = { @"avo", @"ava" };
 		public const char PluralSuffix = 's';
 		public const string HalfADozenRegex = @"meia\s+d[uú]zia";
 		public static readonly string DigitalNumberRegex = $@"((?<=\b)(mil|cem|milh[oõ]es|milh[aã]o|bilh[oõ]es|bilh[aã]o|trilh[oõ]es|trilh[aã]o|milhares|centena|centenas|dezena|dezenas?)(?=\b))|((?<=(\d|\b)){BaseNumbers.MultiplierLookupRegex}(?=\b))";

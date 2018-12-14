@@ -75,10 +75,10 @@ namespace Microsoft.Recognizers.Definitions.Spanish
 		public const char NonDecimalSeparatorChar = '.';
 		public const string HalfADozenText = @"seis";
 		public const string WordSeparatorToken = @"y";
-		public static readonly string[] WrittenDecimalSeparatorTexts = { "coma", "con" };
-		public static readonly string[] WrittenGroupSeparatorTexts = { "punto" };
-		public static readonly string[] WrittenIntegerSeparatorTexts = { "y" };
-		public static readonly string[] WrittenFractionSeparatorTexts = { "con" };
+		public static readonly string[] WrittenDecimalSeparatorTexts = { @"coma", @"con" };
+		public static readonly string[] WrittenGroupSeparatorTexts = { @"punto" };
+		public static readonly string[] WrittenIntegerSeparatorTexts = { @"y" };
+		public static readonly string[] WrittenFractionSeparatorTexts = { @"con" };
 		public const string HalfADozenRegex = @"media\s+docena";
 		public static readonly string DigitalNumberRegex = $@"((?<=\b)(mil|millones|mill[oó]n|billones|bill[oó]n|trillones|trill[oó]n|docenas?)(?=\b))|((?<=(\d|\b)){BaseNumbers.MultiplierLookupRegex}(?=\b))";
 		public static readonly Dictionary<string, long> CardinalNumberMap = new Dictionary<string, long>

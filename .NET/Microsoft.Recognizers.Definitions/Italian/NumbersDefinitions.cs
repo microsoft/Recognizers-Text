@@ -74,10 +74,10 @@ namespace Microsoft.Recognizers.Definitions.Italian
 		public const char NonDecimalSeparatorChar = '.';
 		public const string HalfADozenText = @"sei";
 		public const string WordSeparatorToken = @"e";
-		public static readonly string[] WrittenDecimalSeparatorTexts = { "virgule" };
-		public static readonly string[] WrittenGroupSeparatorTexts = { "point", "points" };
-		public static readonly string[] WrittenIntegerSeparatorTexts = { "e", "-" };
-		public static readonly string[] WrittenFractionSeparatorTexts = { "e", "su" };
+		public static readonly string[] WrittenDecimalSeparatorTexts = { @"virgule" };
+		public static readonly string[] WrittenGroupSeparatorTexts = { @"point", @"points" };
+		public static readonly string[] WrittenIntegerSeparatorTexts = { @"e", @"-" };
+		public static readonly string[] WrittenFractionSeparatorTexts = { @"e", @"su" };
 		public const string HalfADozenRegex = @"mezza\s+dozzina";
 		public static readonly string DigitalNumberRegex = $@"((?<=\b)(cento|mille|milione|milioni|miliardo|miliardi|trilione|trilioni|dozzina|dozzine)(?=\b))|((?<=(\d|\b)){BaseNumbers.MultiplierLookupRegex}(?=\b))";
 		public static readonly Dictionary<string, long> CardinalNumberMap = new Dictionary<string, long>

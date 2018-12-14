@@ -95,10 +95,10 @@ namespace Microsoft.Recognizers.Definitions.English
 		public const char NonDecimalSeparatorChar = ',';
 		public const string HalfADozenText = @"six";
 		public const string WordSeparatorToken = @"and";
-		public static readonly string[] WrittenDecimalSeparatorTexts = { "point" };
-		public static readonly string[] WrittenGroupSeparatorTexts = { "punto" };
-		public static readonly string[] WrittenIntegerSeparatorTexts = { "and" };
-		public static readonly string[] WrittenFractionSeparatorTexts = { "and" };
+		public static readonly string[] WrittenDecimalSeparatorTexts = { @"point" };
+		public static readonly string[] WrittenGroupSeparatorTexts = { @"punto" };
+		public static readonly string[] WrittenIntegerSeparatorTexts = { @"and" };
+		public static readonly string[] WrittenFractionSeparatorTexts = { @"and" };
 		public const string HalfADozenRegex = @"half\s+a\s+dozen";
 		public static readonly string DigitalNumberRegex = $@"((?<=\b)(hundred|thousand|million|billion|trillion|dozen(s)?)(?=\b))|((?<=(\d|\b)){BaseNumbers.MultiplierLookupRegex}(?=\b))";
 		public static readonly Dictionary<string, long> CardinalNumberMap = new Dictionary<string, long>

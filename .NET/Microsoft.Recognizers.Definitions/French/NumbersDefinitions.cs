@@ -74,10 +74,10 @@ namespace Microsoft.Recognizers.Definitions.French
 		public const char NonDecimalSeparatorChar = '.';
 		public const string HalfADozenText = @"six";
 		public const string WordSeparatorToken = @"et";
-		public static readonly string[] WrittenDecimalSeparatorTexts = { "virgule" };
-		public static readonly string[] WrittenGroupSeparatorTexts = { "point", "points" };
-		public static readonly string[] WrittenIntegerSeparatorTexts = { "et", "-" };
-		public static readonly string[] WrittenFractionSeparatorTexts = { "et", "sur" };
+		public static readonly string[] WrittenDecimalSeparatorTexts = { @"virgule" };
+		public static readonly string[] WrittenGroupSeparatorTexts = { @"point", @"points" };
+		public static readonly string[] WrittenIntegerSeparatorTexts = { @"et", @"-" };
+		public static readonly string[] WrittenFractionSeparatorTexts = { @"et", @"sur" };
 		public const string HalfADozenRegex = @"(?<=\b)+demi\s+douzaine";
 		public static readonly string DigitalNumberRegex = $@"((?<=\b)(cent|mille|million|millions|milliard|milliards|billions|billion|douzaine(s)?)(?=\b))|((?<=(\d|\b)){BaseNumbers.MultiplierLookupRegex}(?=\b))";
 		public const string AmbiguousFractionConnectorsRegex = @"^[.]";
