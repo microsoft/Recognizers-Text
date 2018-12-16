@@ -17,23 +17,21 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
             Extractors = new Dictionary<string, IDateTimeExtractor>();
             Parsers = new Dictionary<string, IDateTimeParser>();
         }
-        
+
         [NetCoreTestDataSource]
         [TestMethod]
         public void DateParser(TestModel testSpec)
         {
-            TestSpec = testSpec;
             base.ExtractorInitialize(Extractors);
             base.ParserInitialize(Parsers);
-            base.TestDateTimeParser();
+            base.TestDateTimeParser(testSpec);
         }
 
         [NetCoreTestDataSource]
         [TestMethod]
         public void DateTimeModel(TestModel testSpec)
         {
-            TestSpec = testSpec;
-            base.TestDateTime();
+            base.TestDateTime(testSpec);
         }
     }
 }

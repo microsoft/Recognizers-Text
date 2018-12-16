@@ -10,8 +10,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
         [TestMethod]
         public void NumberModel(TestModel testSpec)
         {
-            TestSpec = testSpec;
-            base.TestNumber();
+            base.TestNumber(testSpec);
         }
     }
 }

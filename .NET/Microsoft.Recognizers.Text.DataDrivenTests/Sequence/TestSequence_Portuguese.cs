@@ -10,16 +10,14 @@ namespace Microsoft.Recognizers.Text.Sequence.Tests
         [TestMethod]
         public void PhoneNumberModel(TestModel testSpec)
         {
-            TestSpec = testSpec;
-            TestPhoneNumber();
+            TestPhoneNumber(testSpec);
         }
 
         [NetCoreTestDataSource]
         [TestMethod]
         public void IpAddressModel(TestModel testSpec)
         {
-            TestSpec = testSpec;
-            TestIpAddress();
+            TestIpAddress(testSpec);
         }
-   }
+    }
 }

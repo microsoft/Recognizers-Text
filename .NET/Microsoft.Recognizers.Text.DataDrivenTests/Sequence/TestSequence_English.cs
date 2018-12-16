@@ -15,56 +15,49 @@ namespace Microsoft.Recognizers.Text.Sequence.Tests
         [TestMethod]
         public void PhoneNumberModel(TestModel testSpec)
         {
-            TestSpec = testSpec;
-            TestPhoneNumber();
+            TestPhoneNumber(testSpec);
         }
 
         [NetCoreTestDataSource]
         [TestMethod]
         public void IpAddressModel(TestModel testSpec)
         {
-            TestSpec = testSpec;
-            TestIpAddress();
+            TestIpAddress(testSpec);
         }
 
         [NetCoreTestDataSource]
         [TestMethod]
         public void MentionModel(TestModel testSpec)
         {
-            TestSpec = testSpec;
-            TestMention();
+            TestMention(testSpec);
         }
 
         [NetCoreTestDataSource]
         [TestMethod]
         public void HashtagModel(TestModel testSpec)
         {
-            TestSpec = testSpec;
-            TestHashtag();
+            TestHashtag(testSpec);
         }
 
         [NetCoreTestDataSource]
         [TestMethod]
         public void EmailModel(TestModel testSpec)
         {
-            TestSpec = testSpec;
-            TestEmail();
+            TestEmail(testSpec);
         }
 
         [NetCoreTestDataSource]
         [TestMethod]
         public void URLModel(TestModel testSpec)
         {
-            TestSpec = testSpec;
-            TestURL();
+            TestURL(testSpec);
         }
 
         [NetCoreTestDataSource]
         [TestMethod]
         public void GUIDModel(TestModel testSpec)
         {
-            TestSpec = testSpec;
-            TestGUID();
+            TestGUID(testSpec);
         }
     }
 }

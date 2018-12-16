@@ -12,32 +12,28 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
         [TestMethod]
         public void AgeModel(TestModel testSpec)
         {
-            TestSpec = testSpec;
-            base.TestNumberWithUnit();
+            base.TestNumberWithUnit(testSpec);
         }
 
         [NetCoreTestDataSource]
         [TestMethod]
         public void CurrencyModel(TestModel testSpec)
         {
-            TestSpec = testSpec;
-            base.TestNumberWithUnit();
+            base.TestNumberWithUnit(testSpec);
         }
 
         [NetCoreTestDataSource]
         [TestMethod]
         public void DimensionModel(TestModel testSpec)
         {
-            TestSpec = testSpec;
-            base.TestNumberWithUnit();
+            base.TestNumberWithUnit(testSpec);
         }
 
         [NetCoreTestDataSource]
         [TestMethod]
         public void TemperatureModel(TestModel testSpec)
         {
-            TestSpec = testSpec;
-            base.TestNumberWithUnit();
+            base.TestNumberWithUnit(testSpec);
         }
     }
 }

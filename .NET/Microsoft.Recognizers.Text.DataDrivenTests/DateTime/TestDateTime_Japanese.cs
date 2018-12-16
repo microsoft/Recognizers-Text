@@ -21,39 +21,35 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
         [TestMethod]
         public void DateExtractor(TestModel testSpec)
         {
-            TestSpec = testSpec;
             base.ExtractorInitialize(Extractors);
-            base.TestDateTimeExtractor();
+            base.TestDateTimeExtractor(testSpec);
         }
 
         [NetCoreTestDataSource]
         [TestMethod]
         public void DateParser(TestModel testSpec)
         {
-            TestSpec = testSpec;
             base.ExtractorInitialize(Extractors);
             base.ParserInitialize(Parsers);
-            base.TestDateTimeParser();
+            base.TestDateTimeParser(testSpec);
         }
 
         [NetCoreTestDataSource]
         [TestMethod]
         public void DatePeriodParser(TestModel testSpec)
         {
-            TestSpec = testSpec;
             base.ExtractorInitialize(Extractors);
             base.ParserInitialize(Parsers);
-            base.TestDateTimeParser();
+            base.TestDateTimeParser(testSpec);
         }
 
         [NetCoreTestDataSource]
         [TestMethod]
         public new void DateTimeParser(TestModel testSpec)
         {
-            TestSpec = testSpec;
             base.ExtractorInitialize(Extractors);
             base.ParserInitialize(Parsers);
-            base.TestDateTimeParser();
+            base.TestDateTimeParser(testSpec);
         }
     }
 }

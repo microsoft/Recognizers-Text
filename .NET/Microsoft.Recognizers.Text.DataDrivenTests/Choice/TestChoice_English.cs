@@ -9,8 +9,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests.Choice
         [TestMethod]
         public void BooleanModel(TestModel testSpec)
         {
-            TestSpec = testSpec;
-            TestChoice();
+            TestChoice(testSpec);
         }
     }
 }
