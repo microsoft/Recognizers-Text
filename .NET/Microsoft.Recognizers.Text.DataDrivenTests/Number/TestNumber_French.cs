@@ -6,39 +6,27 @@ namespace Microsoft.Recognizers.Text.Number.Tests
     [TestClass]
     public class TestNumber_French : TestBase
     {
-        public static TestResources TestResources { get; protected set; }
-
-        [ClassInitialize]
-        public static void ClassInitialize(TestContext context)
-        {
-            TestResources = new TestResources();
-            TestResources.InitFromTestContext(context);
-        }
-
-        [TestInitialize]
-        public void TestInitialize()
-        {
-            base.TestSpecInitialize(TestResources);
-        }
-
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "NumberModel-French.csv", "NumberModel-French#csv", DataAccessMethod.Sequential)]
+        [NetCoreTestDataSource]
         [TestMethod]
-        public void NumberModel()
+        public void NumberModel(TestModel testSpec)
         {
+            TestSpec = testSpec;
             base.TestNumber();
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "OrdinalModel-French.csv", "OrdinalModel-French#csv", DataAccessMethod.Sequential)]
+        [NetCoreTestDataSource]
         [TestMethod]
-        public void OrdinalModel()
+        public void OrdinalModel(TestModel testSpec)
         {
+            TestSpec = testSpec;
             base.TestNumber();
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "PercentModel-French.csv", "PercentModel-French#csv", DataAccessMethod.Sequential)]
+        [NetCoreTestDataSource]
         [TestMethod]
-        public void PercentModel()
+        public void PercentModel(TestModel testSpec)
         {
+            TestSpec = testSpec;
             base.TestNumber();
         }
     }

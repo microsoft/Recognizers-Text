@@ -7,46 +7,35 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
     [TestClass]
     public class TestNumberWithUnit_German : TestBase
     {
-        public static TestResources TestResources { get; protected set; }
-
-        [ClassInitialize]
-        public static void ClassInitialize(TestContext context)
-        {
-            TestResources = new TestResources();
-            TestResources.InitFromTestContext(context);
-        }
-
-        [TestInitialize]
-        public void TestInitialize()
-        {
-            base.TestSpecInitialize(TestResources);
-        }
-
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "AgeModel-German.csv", "AgeModel-German#csv", DataAccessMethod.Sequential)]
+        [NetCoreTestDataSource]
         [TestMethod]
-        public void AgeModel()
+        public void AgeModel(TestModel testSpec)
         {
+            TestSpec = testSpec;
             base.TestNumberWithUnit();
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "CurrencyModel-German.csv", "CurrencyModel-German#csv", DataAccessMethod.Sequential)]
+        [NetCoreTestDataSource]
         [TestMethod]
-        public void CurrencyModel()
+        public void CurrencyModel(TestModel testSpec)
         {
+            TestSpec = testSpec;
             base.TestNumberWithUnit();
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "DimensionModel-German.csv", "DimensionModel-German#csv", DataAccessMethod.Sequential)]
+        [NetCoreTestDataSource]
         [TestMethod]
-        public void DimensionModel()
+        public void DimensionModel(TestModel testSpec)
         {
+            TestSpec = testSpec;
             base.TestNumberWithUnit();
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "TemperatureModel-German.csv", "TemperatureModel-German#csv", DataAccessMethod.Sequential)]
+        [NetCoreTestDataSource]
         [TestMethod]
-        public void TemperatureModel()
+        public void TemperatureModel(TestModel testSpec)
         {
+            TestSpec = testSpec;
             base.TestNumberWithUnit();
         }
     }

@@ -26,12 +26,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
         public IDateTimeParser DateTimeParser { get; set; }
 
         public TestModel TestSpec { get; set; }
-
-        public void TestSpecInitialize(TestResources resources)
-        {
-            TestSpec = resources.GetSpecForContext(TestContext);
-        }
-
+        
         public void ExtractorInitialize(IDictionary<string, IDateTimeExtractor> extractors)
         {
             var key = TestContext.TestName;

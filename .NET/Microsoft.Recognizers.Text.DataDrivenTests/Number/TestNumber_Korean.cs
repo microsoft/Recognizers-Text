@@ -6,25 +6,11 @@ namespace Microsoft.Recognizers.Text.Number.Tests
     [TestClass]
     public class TestNumber_Korean : TestBase
     {
-        public static TestResources TestResources { get; protected set; }
-
-        [ClassInitialize]
-        public static void ClassInitialize(TestContext context)
-        {
-            TestResources = new TestResources();
-            TestResources.InitFromTestContext(context);
-        }
-
-        [TestInitialize]
-        public void TestInitialize()
-        {
-            base.TestSpecInitialize(TestResources);
-        }
-
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "NumberModel-Korean.csv", "NumberModel-Korean#csv", DataAccessMethod.Sequential)]
+        [NetCoreTestDataSource]
         [TestMethod]
-        public void NumberModel()
+        public void NumberModel(TestModel testSpec)
         {
+            TestSpec = testSpec;
             base.TestNumber();
         }
     }

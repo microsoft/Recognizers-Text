@@ -6,32 +6,19 @@ namespace Microsoft.Recognizers.Text.Sequence.Tests
     [TestClass]
     public class TestSequence_Portuguese : TestBase
     {
-        public static TestResources TestResources { get; protected set; }
-
-        [ClassInitialize]
-        public static void ClassInitialize(TestContext context)
-        {
-            TestResources = new TestResources();
-            TestResources.InitFromTestContext(context);
-        }
-
-        [TestInitialize]
-        public void TestInitialize()
-        {
-            base.TestSpecInitialize(TestResources);
-        }
-
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "PhoneNumberModel-Portuguese.csv", "PhoneNumberModel-Portuguese#csv", DataAccessMethod.Sequential)]
+        [NetCoreTestDataSource]
         [TestMethod]
-        public void PhoneNumberModel()
+        public void PhoneNumberModel(TestModel testSpec)
         {
+            TestSpec = testSpec;
             TestPhoneNumber();
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "IpAddressModel-Portuguese.csv", "IpAddressModel-Portuguese#csv", DataAccessMethod.Sequential)]
+        [NetCoreTestDataSource]
         [TestMethod]
-        public void IpAddressModel()
+        public void IpAddressModel(TestModel testSpec)
         {
+            TestSpec = testSpec;
             TestIpAddress();
         }
    }
