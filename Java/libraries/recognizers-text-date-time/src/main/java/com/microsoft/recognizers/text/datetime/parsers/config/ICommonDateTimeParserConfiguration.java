@@ -4,6 +4,7 @@ import com.google.common.collect.ImmutableMap;
 import com.microsoft.recognizers.text.IExtractor;
 import com.microsoft.recognizers.text.IParser;
 import com.microsoft.recognizers.text.datetime.config.IOptionsConfiguration;
+import com.microsoft.recognizers.text.datetime.extractors.IDateExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.IDateTimeExtractor;
 import com.microsoft.recognizers.text.datetime.parsers.IDateTimeParser;
 import com.microsoft.recognizers.text.datetime.utilities.IDateTimeUtilityConfiguration;
@@ -19,7 +20,7 @@ public interface ICommonDateTimeParserConfiguration extends IOptionsConfiguratio
 
     IParser getNumberParser();
 
-    IDateTimeExtractor getDateExtractor();
+    IDateExtractor getDateExtractor();
 
     IDateTimeExtractor getTimeExtractor();
 

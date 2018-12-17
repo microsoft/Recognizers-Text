@@ -397,6 +397,6 @@ public class FrenchNumericWithUnit {
     public static final List<String> AmbiguousWeightUnitList = Arrays.asList("g", "oz", "stone", "dram");
 
     public static final ImmutableMap<String, String> AmbiguityFiltersDict = ImmutableMap.<String, String>builder()
-        .put("\\bcent\\b", "\\\\bpour\\\\s+cent\\\\b")
+        .put("\\bcent\\b", "\\bpour\\s+cent\\b")
         .build();
 }

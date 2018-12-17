@@ -9550,5 +9550,13 @@
     "NotSupported": "javascript, python, java",
     "Comment": "Not extracted may as a datetime range is not supported for now",
     "Results": []
+  },
+  {
+    "Input": "Twenty-six people die in accident at Techiman",
+    "Context": {
+      "ReferenceDateTime": "2018-12-13T12:00:00"
+    },
+    "NotSupportedByDesign": "java",
+    "Results": []
   }
 ]

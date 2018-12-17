@@ -1025,9 +1025,9 @@ DurationDateRestrictions: [ heute , jetzt , momentan , aktuell , gerade ]
 AmbiguityFiltersDict: !dictionary
   types: [ string, string ]
   entries:
-    '\\bmorgen|nachmittag|abend|nacht|tag\\b': '\\b(gut(e|en)?\\s+(morgen|nachmittag|abend|nacht|tag))\\b'
+    '\bmorgen|nachmittag|abend|nacht|tag\b': '\b(gut(e|en)?\s+(morgen|nachmittag|abend|nacht|tag))\b'
 # As deciding between morgen (morning) and morgen (tomorrow) turns out to be rather difficult, we might want to ignore if for now
-#    '\\bmorgen\\b': '\\b(morgen\\s(morgen|nachmittag|abend|nacht|tag|früh))\\b'
+#    '\bmorgen\b': '\b(morgen\s(morgen|nachmittag|abend|nacht|tag|früh))\b'
 # For TimeOfDay resolution
 MorningTermList: !list
   types: [ string ] 

@@ -53,7 +53,7 @@ public class DictionaryWriter implements ICodeWriter {
         }
 
         String[] entries = this.def.entries.entrySet().stream()
-                .map(kv -> String.format("\n        .put(%s%s%s, %s%s%s%s)", keyQuote, kv.getKey(), keyQuote, prefix, valueQuote1, getEntryValue(kv.getValue(), valueType), valueQuote2))
+                .map(kv -> String.format("\n        .put(%s%s%s, %s%s%s%s)", keyQuote, sanitize(kv.getKey(), keyType), keyQuote, prefix, valueQuote1, getEntryValue(kv.getValue(), valueType), valueQuote2))
                 .toArray(size -> new String[size]);
 
         return String.format(

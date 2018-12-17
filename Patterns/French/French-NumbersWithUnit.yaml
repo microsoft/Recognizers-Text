@@ -554,5 +554,5 @@ AmbiguousWeightUnitList: !list
 AmbiguityFiltersDict: !dictionary
   types: [ string, string ]
   entries:
-    '\\bcent\\b': '\\bpour\\s+cent\\b'
+    '\bcent\b': '\bpour\s+cent\b'
 ...

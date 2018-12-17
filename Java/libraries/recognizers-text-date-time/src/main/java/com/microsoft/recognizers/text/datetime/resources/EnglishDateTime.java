@@ -48,13 +48,36 @@ public class EnglishDateTime {
 
     public static final String MonthNumRegex = "(?<month>01|02|03|04|05|06|07|08|09|10|11|12|1|2|3|4|5|6|7|8|9)\\b";
 
-    public static final String CenturyRegex = "\\b(?<century>((one|two)\\s+thousand(\\s+and)?(\\s+(one|two|three|four|five|six|seven|eight|nine)\\s+hundred(\\s+and)?)?)|((twenty one|twenty two|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty)(\\s+hundred)?(\\s+and)?))\\b";
+    public static final String WrittenOneToNineRegex = "(one|two|three|four|five|six|seven|eight|nine)";
 
-    public static final String WrittenNumRegex = "(one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty|thirty|forty|fourty|fifty|sixty|seventy|eighty|ninety)";
+    public static final String WrittenElevenToNineteenRegex = "(eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen)";
 
-    public static final String FullTextYearRegex = "\\b((?<firsttwoyearnum>{CenturyRegex})\\s+(?<lasttwoyearnum>((zero|twenty|thirty|forty|fourty|fifty|sixty|seventy|eighty|ninety)\\s+{WrittenNumRegex})|{WrittenNumRegex}))\\b|\\b(?<firsttwoyearnum>{CenturyRegex})\\b"
+    public static final String WrittenTensRegex = "(ten|twenty|thirty|forty|fourty|fifty|sixty|seventy|eighty|ninety)";
+
+    public static final String WrittenNumRegex = "({WrittenOneToNineRegex}|{WrittenElevenToNineteenRegex}|{WrittenTensRegex}(\\s+{WrittenOneToNineRegex})?)"
+            .replace("{WrittenOneToNineRegex}", WrittenOneToNineRegex)
+            .replace("{WrittenElevenToNineteenRegex}", WrittenElevenToNineteenRegex)
+            .replace("{WrittenTensRegex}", WrittenTensRegex);
+
+    public static final String WrittenCenturyFullYearRegex = "((one|two)\\s+thousand(\\s+and)?(\\s+{WrittenOneToNineRegex}\\s+hundred(\\s+and)?)?)"
+            .replace("{WrittenOneToNineRegex}", WrittenOneToNineRegex);
+
+    public static final String WrittenCenturyOrdinalYearRegex = "(twenty one|twenty two|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty)";
+
+    public static final String CenturyRegex = "\\b(?<century>{WrittenCenturyFullYearRegex}|{WrittenCenturyOrdinalYearRegex}(\\s+hundred)?(\\s+and)?)\\b"
+            .replace("{WrittenCenturyFullYearRegex}", WrittenCenturyFullYearRegex)
+            .replace("{WrittenCenturyOrdinalYearRegex}", WrittenCenturyOrdinalYearRegex);
+
+    public static final String LastTwoYearNumRegex = "(zero\\s+{WrittenOneToNineRegex}|{WrittenElevenToNineteenRegex}|{WrittenTensRegex}(\\s+{WrittenOneToNineRegex})?)"
+            .replace("{WrittenOneToNineRegex}", WrittenOneToNineRegex)
+            .replace("{WrittenElevenToNineteenRegex}", WrittenElevenToNineteenRegex)
+            .replace("{WrittenTensRegex}", WrittenTensRegex);
+
+    public static final String FullTextYearRegex = "\\b((?<firsttwoyearnum>{CenturyRegex})\\s+(?<lasttwoyearnum>{LastTwoYearNumRegex})\\b|\\b(?<firsttwoyearnum>{WrittenCenturyFullYearRegex}|{WrittenCenturyOrdinalYearRegex}\\s+hundred(\\s+and)?))\\b"
             .replace("{CenturyRegex}", CenturyRegex)
-            .replace("{WrittenNumRegex}", WrittenNumRegex);
+            .replace("{WrittenCenturyFullYearRegex}", WrittenCenturyFullYearRegex)
+            .replace("{WrittenCenturyOrdinalYearRegex}", WrittenCenturyOrdinalYearRegex)
+            .replace("{LastTwoYearNumRegex}", LastTwoYearNumRegex);
 
     public static final String OclockRegex = "(?<oclock>o\\s*’\\s*clock|o\\s*‘\\s*clock|o\\s*'\\s*clock|o\\s*clock)";
 
@@ -1181,8 +1204,8 @@ public class EnglishDateTime {
     public static final List<String> DurationDateRestrictions = Arrays.asList("today", "now");
 
     public static final ImmutableMap<String, String> AmbiguityFiltersDict = ImmutableMap.<String, String>builder()
-        .put("\\bmorning|afternoon|evening|night|day\\b", "\\\\b(good\\\\s+(morning|afternoon|evening|night|day))|(nighty\\\\s+night)\\\\b")
-        .put("\\bmay\\b", "\\\\b((^may i)|(i|you|he|she|we|they)\\\\s+may|(may\\\\s+((((also|not|(also not)|well)\\\\s+)?(be|ask|contain|constitute|email|e-mail|take|have|result|involve|get|work|reply))|(or may not))))\\\\b")
+        .put("\\bmorning|afternoon|evening|night|day\\b", "\\b(good\\s+(morning|afternoon|evening|night|day))|(nighty\\s+night)\\b")
+        .put("\\bmay\\b", "\\b((^may i)|(i|you|he|she|we|they)\\s+may|(may\\s+((((also|not|(also not)|well)\\s+)?(be|ask|contain|constitute|email|e-mail|take|have|result|involve|get|work|reply))|(or may not))))\\b")
         .build();
 
     public static final List<String> MorningTermList = Arrays.asList("morning");

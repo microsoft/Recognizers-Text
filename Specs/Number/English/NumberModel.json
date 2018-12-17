@@ -2467,5 +2467,21 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Twenty-six people die in accident at Techiman",
+    "NotSupportedByDesign": "java",
+    "Results": [
+      {
+        "Text": "twenty-six",
+        "Start": 0,
+        "End": 9,
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "26"
+        }
+      }
+    ]
   }
 ]

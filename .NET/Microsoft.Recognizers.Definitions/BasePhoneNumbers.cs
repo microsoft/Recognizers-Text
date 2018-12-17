@@ -17,7 +17,7 @@ namespace Microsoft.Recognizers.Definitions
 
 	public static class BasePhoneNumbers
 	{
-		public const string NumberReplaceToken = "@builtin.phonenumber";
+		public const string NumberReplaceToken = @"@builtin.phonenumber";
 		public const string GeneralPhoneNumberRegex = @"(\b(((\d[\s]?){7,15}\d))(?!-)\b)|(\(\d{5}\)\s?\d{5,6})|\+\d{2}\(\d\)\d{10}";
 		public const string BRPhoneNumberRegex = @"(((\B\(\s?))\d{2,3}(\s?\))|(\b\d{2,3}))\s?\d{4,5}-?\d{3,5}(?!-)\b";
 		public const string UKPhoneNumberRegex = @"(((\b(00)|\B\+)\s?)?(\b\d{2}\s?)?((\s?\(0\)[-\s]?|\b|(?<=(\b^#)\d{2}))\d{2,5}|\(0\d{3,4}\))[/-]?\s?(\d{5,8}|\d{3,4}[-\s]?\d{3,4})(?!-)\b)";
@@ -30,8 +30,8 @@ namespace Microsoft.Recognizers.Definitions
 		public const string SpecialPhoneNumberRegex = @"\b(\d{3,4}[/-]\d{1,4}[/-]\d{3,4})\b";
 		public static readonly IList<string> TypicalDeductionRegexList = new List<string>
 		{
-			"^\\d{3}-\\d{2}-\\d{4}$",
-			"^\\d{5}-\\d{4}$"
+			@"^\d{3}-\d{2}-\d{4}$",
+			@"^\d{5}-\d{4}$"
 		};
 		public const string PhoneNumberMaskRegex = @"([0-9A-E]{2}(\s[0-9A-E]{2}){7})";
 		public const string CountryCodeRegex = @"^(\(\s?(\+\s?|00)\d{1,3}\s?\)|(\+\s?|00)\d{1,3})";

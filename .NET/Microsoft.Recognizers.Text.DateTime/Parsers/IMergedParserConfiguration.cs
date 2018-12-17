@@ -23,8 +23,6 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         IDateTimeParser HolidayParser { get; }
 
-        IDateTimeParser TimeZoneParser { get; }
-
         StringMatcher SuperfluousWordMatcher { get; }
     }
 }

@@ -71,6 +71,9 @@ class ChineseIntegerExtractor(BaseNumberExtractor):
                 val='IntegerChs'),
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(ChineseNumeric.NumbersWithDozen),
+                val='IntegerChs'),
+            ReVal(
+                re=RegExpUtility.get_safe_reg_exp(ChineseNumeric.HalfUnitRegex),
                 val='IntegerChs')
         ]
         if mode == ChineseNumberExtractorMode.DEFAULT:

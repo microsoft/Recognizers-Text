@@ -21,8 +21,12 @@ public interface ICodeWriter {
     }
 
     Map<String, String> NumericTypes = ImmutableMap.of("Double", "D", "Long", "L");
+
     default String sanitize(String input, String valueType) {
-        if(valueType.equals("Character")) return input;
+        if(valueType.equals("Character")) {
+            return input.replace("'", "\\'");
+        }
+
         if(NumericTypes.containsKey(valueType)) {
             return input + (NumericTypes.get(valueType));
         }
