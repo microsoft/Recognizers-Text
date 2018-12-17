@@ -131,7 +131,7 @@ namespace Microsoft.Recognizers.Definitions.German
 		public static readonly string TimeRegex8 = $@"({TimeSuffixFull}(\s*(um|gegen)\s*){BasicTime}((\s*{DescRegex})?))";
 		public static readonly string TimeRegex9 = $@"({PeriodHourNumRegex}\s+{FivesRegex}((\s*{DescRegex})))";
 		public static readonly string TimeRegex10 = $@"({TimePrefix}\s+)?{BaseDateTime.HourRegex}(\s*h\s*){BaseDateTime.MinuteRegex}(\s*{DescRegex})?";
-		public static readonly string PureNumFromTo = $@"((von)\s+)?({HourRegex}|{PeriodHourNumRegex})(\s*(?<leftDesc>{DescRegex}))?\s*{TillRegex}\s*({HourRegex}|{PeriodHourNumRegex})\s*(?<rightDesc>\s*({PmRegex}|{AmRegex}|{DescRegex})){{0,2}}";
+		public static readonly string PureNumFromTo = $@"((von)\s+)?({HourRegex}|{PeriodHourNumRegex})(\s*(?<leftDesc>{DescRegex}))?\s*{TillRegex}\s*({HourRegex}|{PeriodHourNumRegex})(?<rightDesc>\s*({PmRegex}|{AmRegex}|{DescRegex})){{0,2}}";
 		public static readonly string PureNumBetweenAnd = $@"\b(zwischen\s+)({HourRegex}|{PeriodHourNumRegex})(\s*(?<leftDesc>{DescRegex}))?\s*{RangeConnectorRegex}\s*({HourRegex}|{PeriodHourNumRegex})\s*(?<rightDesc>\s*{PmRegex}|{AmRegex}|{DescRegex}){{0,2}}\b";
 		public static readonly string SpecificTimeFromTo = $@"((von)\s+)?(?<time1>({TimeRegex2}|({HourRegex}|{PeriodHourNumRegex})(\s*(?<leftDesc>{DescRegex}))?))\s*{TillRegex}\s*(?<time2>({TimeRegex2}|({HourRegex}|{PeriodHourNumRegex})(\s*(?<rightDesc>{DescRegex}))?))";
 		public static readonly string SpecificTimeBetweenAnd = $@"(zwischen\s+)(?<time1>({TimeRegex2}|({HourRegex}|{PeriodHourNumRegex})(\s*(?<leftDesc>{DescRegex}))?))\s*{RangeConnectorRegex}\s*(?<time2>({TimeRegex2}|({HourRegex}|{PeriodHourNumRegex})(\s*(?<rightDesc>{DescRegex}))?))";

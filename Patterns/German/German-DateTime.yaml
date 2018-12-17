@@ -301,7 +301,7 @@ TimeRegex10: !nestedRegex
   def: ({TimePrefix}\s+)?{BaseDateTime.HourRegex}(\s*h\s*){BaseDateTime.MinuteRegex}(\s*{DescRegex})?
   references: [ TimePrefix, BaseDateTime.HourRegex, BaseDateTime.MinuteRegex, DescRegex ]
 PureNumFromTo: !nestedRegex
-  def: ((von)\s+)?({HourRegex}|{PeriodHourNumRegex})(\s*(?<leftDesc>{DescRegex}))?\s*{TillRegex}\s*({HourRegex}|{PeriodHourNumRegex})\s*(?<rightDesc>\s*({PmRegex}|{AmRegex}|{DescRegex})){0,2}
+  def: ((von)\s+)?({HourRegex}|{PeriodHourNumRegex})(\s*(?<leftDesc>{DescRegex}))?\s*{TillRegex}\s*({HourRegex}|{PeriodHourNumRegex})(?<rightDesc>\s*({PmRegex}|{AmRegex}|{DescRegex})){0,2}
   references: [ HourRegex, PeriodHourNumRegex, DescRegex, TillRegex, PmRegex, AmRegex ]
 PureNumBetweenAnd: !nestedRegex
   def: \b(zwischen\s+)({HourRegex}|{PeriodHourNumRegex})(\s*(?<leftDesc>{DescRegex}))?\s*{RangeConnectorRegex}\s*({HourRegex}|{PeriodHourNumRegex})\s*(?<rightDesc>\s*{PmRegex}|{AmRegex}|{DescRegex}){0,2}\b
