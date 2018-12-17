@@ -193,7 +193,7 @@
     ]
   },
   {
-    "Input": "das ist morgen um 4 Uhr ",
+    "Input": "das ist morgen um 4 Uhr",
     "Comment": "Wrong type. Currently returns time, not datetime.",
     "NotSupported": "dotnet, javascript, python",
     "Results": [

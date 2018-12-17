@@ -982,8 +982,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet, javascript, python",
-    "Comment": "Extracts am and pm, not only morning",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "morgens von 5 bis sieben",
