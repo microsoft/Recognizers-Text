@@ -596,7 +596,7 @@ public class FrenchDateTime {
             .replace("{TimeUnitRegex}", TimeUnitRegex)
             .replace("{RestrictedTimeUnitRegex}", RestrictedTimeUnitRegex);
 
-    public static final String RelativeDurationUnitRegex = "(((?<=({ThisPrefixRegex})\\s+)?\\b({DurationUnitRegex})(\\s+{NextSuffixRegex}|{PastSuffixRegex})?)|((le|my))\\s+({RestrictedTimeUnitRegex}))"
+    public static final String RelativeDurationUnitRegex = "((\\b({DurationUnitRegex})(\\s+{NextSuffixRegex}|{PastSuffixRegex})?)|((le|my))\\s+({RestrictedTimeUnitRegex}))"
             .replace("{NextSuffixRegex}", NextSuffixRegex)
             .replace("{PastSuffixRegex}", PastSuffixRegex)
             .replace("{ThisPrefixRegex}", ThisPrefixRegex)

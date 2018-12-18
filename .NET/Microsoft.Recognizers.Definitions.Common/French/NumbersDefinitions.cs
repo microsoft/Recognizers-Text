@@ -37,14 +37,14 @@ namespace Microsoft.Recognizers.Definitions.French
 		public const string NumbersWithDozenSuffix = @"(((?<!\d+\s*)-\s*)|(?<=\b))\d+\s+douzaine(s)?(?=\b)";
 		public static readonly string AllIntRegexWithLocks = $@"((?<=\b){AllIntRegex}(?=\b))";
 		public static readonly string AllIntRegexWithDozenSuffixLocks = $@"(?<=\b)(((demi\s+)?\s+douzaine)|({AllIntRegex}\s+douzaines?))(?=\b)";
-		public const string SimpleRoundOrdinalRegex = @"(centi[eÃ¨]me|milli[eÃ¨]me|millioni[eÃ¨]me|milliardi[eÃ¨]me|billioni[eÃ¨]me)";
-		public const string OneToNineOrdinalRegex = @"(premier|premi[eÃ¨]re|deuxi[eÃ¨]me|second[e]|troisi[eÃ¨]me|tiers|tierce|quatri[eÃ¨]me|cinqui[eÃ¨]me|sixi[eÃ¨]me|septi[eÃ¨]me|huiti[eÃ¨]me|neuvi[eÃ¨]me)";
-		public const string SpecialUnderHundredOrdinalRegex = @"(onzi[eÃ¨]me|douzi[eÃ¨]me)";
-		public const string TensOrdinalRegex = @"(quatre-vingt-dixi[eÃ¨]me|quatre-vingti[eÃ¨]me|huitanti[eÃ¨]me|octanti[eÃ¨]me|soixante-dixi[eÃ¨]me|septanti[eÃ¨]me|soixanti[eÃ¨]me|cinquanti[eÃ¨]me|quaranti[eÃ¨]me|trenti[eÃ¨]me|vingti[eÃ¨]me)";
-		public static readonly string HundredOrdinalRegex = $@"({AllIntRegex}(\s+(centi[eÃ¨]me\s)))";
+		public const string SimpleRoundOrdinalRegex = @"(centi[eè]me|milli[eè]me|millioni[eè]me|milliardi[eè]me|billioni[eè]me)";
+		public const string OneToNineOrdinalRegex = @"(premier|premi[eè]re|deuxi[eè]me|second[e]|troisi[eè]me|tiers|tierce|quatri[eè]me|cinqui[eè]me|sixi[eè]me|septi[eè]me|huiti[eè]me|neuvi[eè]me)";
+		public const string SpecialUnderHundredOrdinalRegex = @"(onzi[eè]me|douzi[eè]me)";
+		public const string TensOrdinalRegex = @"(quatre-vingt-dixi[eè]me|quatre-vingti[eè]me|huitanti[eè]me|octanti[eè]me|soixante-dixi[eè]me|septanti[eè]me|soixanti[eè]me|cinquanti[eè]me|quaranti[eè]me|trenti[eè]me|vingti[eè]me)";
+		public static readonly string HundredOrdinalRegex = $@"({AllIntRegex}(\s+(centi[eè]me\s)))";
 		public static readonly string UnderHundredOrdinalRegex = $@"((({AllIntRegex}(\W)?)?{OneToNineOrdinalRegex})|({TensNumberIntegerRegex}(\W)?)?{OneToNineOrdinalRegex}|{TensOrdinalRegex}|{SpecialUnderHundredOrdinalRegex})";
 		public static readonly string UnderThousandOrdinalRegex = $@"((({HundredOrdinalRegex}(\s)?)?{UnderHundredOrdinalRegex})|(({AllIntRegex}(\W)?)?{SimpleRoundOrdinalRegex})|{HundredOrdinalRegex})";
-		public static readonly string OverThousandOrdinalRegex = $@"(({AllIntRegex})(i[eÃ¨]me))";
+		public static readonly string OverThousandOrdinalRegex = $@"(({AllIntRegex})(i[eè]me))";
 		public static readonly string ComplexOrdinalRegex = $@"(({OverThousandOrdinalRegex}(\s)?)?{UnderThousandOrdinalRegex}|{OverThousandOrdinalRegex}|{UnderHundredOrdinalRegex})";
 		public static readonly string SuffixOrdinalRegex = $@"(({AllIntRegex})({SimpleRoundOrdinalRegex}))";
 		public static readonly string ComplexRoundOrdinalRegex = $@"((({SuffixOrdinalRegex}(\s)?)?{ComplexOrdinalRegex})|{SuffixOrdinalRegex})";
@@ -78,12 +78,12 @@ namespace Microsoft.Recognizers.Definitions.French
 		public static readonly string[] WrittenGroupSeparatorTexts = { @"point", @"points" };
 		public static readonly string[] WrittenIntegerSeparatorTexts = { @"et", @"-" };
 		public static readonly string[] WrittenFractionSeparatorTexts = { @"et", @"sur" };
-		public const string HalfADozenRegex = @"(?<=\b)+demi\s+douzaine";
+		public const string HalfADozenRegex = @"(?<=\b)demi\s+douzaine";
 		public static readonly string DigitalNumberRegex = $@"((?<=\b)(cent|mille|million|millions|milliard|milliards|billions|billion|douzaine(s)?)(?=\b))|((?<=(\d|\b)){BaseNumbers.MultiplierLookupRegex}(?=\b))";
 		public const string AmbiguousFractionConnectorsRegex = @"^[.]";
 		public static readonly Dictionary<string, long> CardinalNumberMap = new Dictionary<string, long>
 		{
-			{ @"zÃ©ro", 0 },
+			{ @"zéro", 0 },
 			{ @"zero", 0 },
 			{ @"un", 1 },
 			{ @"une", 1 },
@@ -149,86 +149,86 @@ namespace Microsoft.Recognizers.Definitions.French
 		public static readonly Dictionary<string, long> OrdinalNumberMap = new Dictionary<string, long>
 		{
 			{ @"premier", 1 },
-			{ @"premiÃ¨re", 1 },
+			{ @"première", 1 },
 			{ @"premiere", 1 },
-			{ @"deuxiÃ¨me", 2 },
+			{ @"deuxième", 2 },
 			{ @"deuxieme", 2 },
 			{ @"second", 2 },
 			{ @"seconde", 2 },
-			{ @"troisiÃ¨me", 3 },
+			{ @"troisième", 3 },
 			{ @"demi", 2 },
 			{ @"tiers", 3 },
 			{ @"tierce", 3 },
 			{ @"quart", 4 },
 			{ @"quarts", 4 },
 			{ @"troisieme", 3 },
-			{ @"quatriÃ¨me", 4 },
+			{ @"quatrième", 4 },
 			{ @"quatrieme", 4 },
-			{ @"cinquiÃ¨me", 5 },
+			{ @"cinquième", 5 },
 			{ @"cinquieme", 5 },
-			{ @"sixiÃ¨me", 6 },
+			{ @"sixième", 6 },
 			{ @"sixieme", 6 },
-			{ @"septiÃ¨me", 7 },
+			{ @"septième", 7 },
 			{ @"septieme", 7 },
-			{ @"huitiÃ¨me", 8 },
+			{ @"huitième", 8 },
 			{ @"huitieme", 8 },
-			{ @"neuviÃ¨me", 9 },
+			{ @"neuvième", 9 },
 			{ @"neuvieme", 9 },
-			{ @"dixiÃ¨me", 10 },
+			{ @"dixième", 10 },
 			{ @"dixieme", 10 },
-			{ @"onziÃ¨me", 11 },
+			{ @"onzième", 11 },
 			{ @"onzieme", 11 },
-			{ @"douziÃ¨me", 12 },
+			{ @"douzième", 12 },
 			{ @"douzieme", 12 },
-			{ @"treiziÃ¨me", 13 },
+			{ @"treizième", 13 },
 			{ @"treizieme", 13 },
-			{ @"quatorziÃ¨me", 14 },
+			{ @"quatorzième", 14 },
 			{ @"quatorizieme", 14 },
-			{ @"quinziÃ¨me", 15 },
+			{ @"quinzième", 15 },
 			{ @"quinzieme", 15 },
-			{ @"seiziÃ¨me", 16 },
+			{ @"seizième", 16 },
 			{ @"seizieme", 16 },
-			{ @"dix-septiÃ¨me", 17 },
+			{ @"dix-septième", 17 },
 			{ @"dix-septieme", 17 },
-			{ @"dix-huitiÃ¨me", 18 },
+			{ @"dix-huitième", 18 },
 			{ @"dix-huitieme", 18 },
-			{ @"dix-neuviÃ¨me", 19 },
+			{ @"dix-neuvième", 19 },
 			{ @"dix-neuvieme", 19 },
-			{ @"vingtiÃ¨me", 20 },
+			{ @"vingtième", 20 },
 			{ @"vingtieme", 20 },
-			{ @"trentiÃ¨me", 30 },
+			{ @"trentième", 30 },
 			{ @"trentieme", 30 },
-			{ @"quarantiÃ¨me", 40 },
+			{ @"quarantième", 40 },
 			{ @"quarantieme", 40 },
-			{ @"cinquantiÃ¨me", 50 },
+			{ @"cinquantième", 50 },
 			{ @"cinquantieme", 50 },
-			{ @"soixantiÃ¨me", 60 },
+			{ @"soixantième", 60 },
 			{ @"soixantieme", 60 },
-			{ @"soixante-dixiÃ¨me", 70 },
+			{ @"soixante-dixième", 70 },
 			{ @"soixante-dixieme", 70 },
-			{ @"septantiÃ¨me", 70 },
+			{ @"septantième", 70 },
 			{ @"septantieme", 70 },
-			{ @"quatre-vingtiÃ¨me", 80 },
+			{ @"quatre-vingtième", 80 },
 			{ @"quatre-vingtieme", 80 },
-			{ @"huitantiÃ¨me", 80 },
+			{ @"huitantième", 80 },
 			{ @"huitantieme", 80 },
-			{ @"octantiÃ¨me", 80 },
+			{ @"octantième", 80 },
 			{ @"octantieme", 80 },
-			{ @"quatre-vingt-dixiÃ¨me", 90 },
+			{ @"quatre-vingt-dixième", 90 },
 			{ @"quatre-vingt-dixieme", 90 },
-			{ @"nonantiÃ¨me", 90 },
+			{ @"nonantième", 90 },
 			{ @"nonantieme", 90 },
-			{ @"centiÃ¨me", 100 },
+			{ @"centième", 100 },
 			{ @"centieme", 100 },
-			{ @"milliÃ¨me", 1000 },
+			{ @"millième", 1000 },
 			{ @"millieme", 1000 },
-			{ @"millioniÃ¨me", 1000000 },
+			{ @"millionième", 1000000 },
 			{ @"millionieme", 1000000 },
-			{ @"milliardiÃ¨me", 1000000000 },
+			{ @"milliardième", 1000000000 },
 			{ @"milliardieme", 1000000000 },
 			{ @"billionieme", 1000000000000 },
-			{ @"billioniÃ¨me", 1000000000000 },
-			{ @"trillioniÃ¨me", 1000000000000000000 },
+			{ @"billionième", 1000000000000 },
+			{ @"trillionième", 1000000000000000000 },
 			{ @"trillionieme", 1000000000000000000 }
 		};
 		public static readonly Dictionary<string, long> PrefixCardinalMap = new Dictionary<string, long>
@@ -299,9 +299,9 @@ namespace Microsoft.Recognizers.Definitions.French
 		};
 		public static readonly Dictionary<string, long> SuffixOrdinalMap = new Dictionary<string, long>
 		{
-			{ @"milliÃ¨me", 1000 },
+			{ @"millième", 1000 },
 			{ @"million", 1000000 },
-			{ @"milliardiÃ¨me", 1000000000000 }
+			{ @"milliardième", 1000000000000 }
 		};
 		public static readonly Dictionary<string, long> RoundNumberMap = new Dictionary<string, long>
 		{
@@ -314,24 +314,24 @@ namespace Microsoft.Recognizers.Definitions.French
 			{ @"billion", 1000000000000 },
 			{ @"billions", 1000000000000 },
 			{ @"centieme", 100 },
-			{ @"centiÃ¨me", 100 },
+			{ @"centième", 100 },
 			{ @"millieme", 1000 },
-			{ @"milliÃ¨me", 1000 },
-			{ @"millioniÃ¨me", 1000000 },
+			{ @"millième", 1000 },
+			{ @"millionième", 1000000 },
 			{ @"millionieme", 1000000 },
-			{ @"milliardiÃ¨me", 1000000000 },
+			{ @"milliardième", 1000000000 },
 			{ @"milliardieme", 1000000000 },
-			{ @"billioniÃ¨me", 1000000000000 },
+			{ @"billionième", 1000000000000 },
 			{ @"billionieme", 1000000000000 },
 			{ @"centiemes", 100 },
-			{ @"centiÃ¨mes", 100 },
-			{ @"milliÃ¨mes", 1000 },
+			{ @"centièmes", 100 },
+			{ @"millièmes", 1000 },
 			{ @"milliemes", 1000 },
-			{ @"millioniÃ¨mes", 1000000 },
+			{ @"millionièmes", 1000000 },
 			{ @"millioniemes", 1000000 },
-			{ @"milliardiÃ¨mes", 1000000000 },
+			{ @"milliardièmes", 1000000000 },
 			{ @"milliardiemes", 1000000000 },
-			{ @"billioniÃ¨mes", 1000000000000 },
+			{ @"billionièmes", 1000000000000 },
 			{ @"billioniemes", 1000000000000 },
 			{ @"douzaine", 12 },
 			{ @"douzaines", 12 },
