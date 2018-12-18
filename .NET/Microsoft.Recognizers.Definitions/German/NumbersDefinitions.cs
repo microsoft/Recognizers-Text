@@ -18,7 +18,7 @@ namespace Microsoft.Recognizers.Definitions.German
 	public static class NumbersDefinitions
 	{
 		public const string LangMarker = @"Ger";
-		public const string ZeroToNineIntegerRegex = @"(drei|sieben|acht|vier|fuenf|fünf|null|neun|eins|ein|eine|einer|einen|zwei|zwo|sechs)";
+		public const string ZeroToNineIntegerRegex = @"(drei|sieben|acht|vier|fuenf|fünf|null|neun|eins|(ein(?!($|\.|,|!|\?)))|eine|einer|einen|zwei|zwo|sechs)";
 		public const string RoundNumberIntegerRegex = @"(hundert|einhundert|tausend|(\s*million\s*)|(\s*millionen\s*)|(\s*mio\s*)|(\s*milliarde\s*)|(\s*milliarden\s*)|(\s*mrd\s*)|(\s*billion\s*)|(\s*billionen\s*))";
 		public const string AnIntRegex = @"(eine|ein)(?=\s)";
 		public const string TenToNineteenIntegerRegex = @"(siebzehn|dreizehn|vierzehn|achtzehn|neunzehn|fuenfzehn|sechzehn|elf|zwoelf|zwölf|zehn)";

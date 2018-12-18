@@ -15,17 +15,17 @@
     ]
   },
   {
-    "Input": "ein",
+    "Input": "eins",
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "ein",
+        "Text": "eins",
         "TypeName": "number",
         "Resolution": {
           "value": "1"
         },
         "Start": 0,
-        "End": 2
+        "End": 3
       }
     ]
   },
