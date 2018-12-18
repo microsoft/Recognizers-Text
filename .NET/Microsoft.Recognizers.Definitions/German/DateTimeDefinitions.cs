@@ -113,7 +113,7 @@ namespace Microsoft.Recognizers.Definitions.German
 		public const string MidafternoonRegex = @"(?<midafternoon>mitten am nachmittag)";
 		public const string MiddayRegex = @"((?<midday>(am )?mittag(s)?)|(?<midday>(?<=montag|dienstag|mittwoch|donnerstag|freitag|samstag|sonntag)(mittag(s)?)))";
 		public static readonly string MidTimeRegex = $@"(?<mid>({MidnightRegex}|{MidmorningRegex}|{MidafternoonRegex}|{MiddayRegex}))";
-		public static readonly string AtRegex = $@"\b(((?<=\b(um|gegen)\s+)({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}|{MidTimeRegex}))|{MidTimeRegex})\b";
+		public static readonly string AtRegex = $@"(((?<=\b(um|gegen)\s+)({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}|{MidTimeRegex}))|{MidTimeRegex})\b";
 		public static readonly string IshRegex = $@"\b({BaseDateTime.HourRegex}(-|——)?ish|noonish|noon)\b";
 		public const string TimeUnitRegex = @"(?<unit>stunden|stunde|std|st|h|minuten|minute|min|sekunden|sekunde|sek|s)\b";
 		public const string RestrictedTimeUnitRegex = @"(?<unit>stunde|minute)\b";
