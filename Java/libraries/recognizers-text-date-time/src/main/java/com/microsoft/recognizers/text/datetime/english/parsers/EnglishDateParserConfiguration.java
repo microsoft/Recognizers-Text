@@ -239,10 +239,14 @@ public class EnglishDateParserConfiguration extends BaseOptionsConfiguration imp
     }
 
     @Override
-    public Pattern getRelativeDayRegex() { return relativeDayRegex; }
+    public Pattern getRelativeDayRegex() {
+        return relativeDayRegex;
+    }
 
     @Override
-    public Pattern getNextPrefixRegex() { return nextPrefixRegex; }
+    public Pattern getNextPrefixRegex() {
+        return nextPrefixRegex;
+    }
 
     @Override
     public Pattern getPastPrefixRegex() {
@@ -275,19 +279,29 @@ public class EnglishDateParserConfiguration extends BaseOptionsConfiguration imp
     }
 
     @Override
-    public List<String> getSameDayTerms() { return sameDayTerms; }
+    public List<String> getSameDayTerms() {
+        return sameDayTerms;
+    }
 
     @Override
-    public List<String> getPlusOneDayTerms() { return plusOneDayTerms; }
+    public List<String> getPlusOneDayTerms() {
+        return plusOneDayTerms;
+    }
 
     @Override
-    public List<String> getMinusOneDayTerms() { return minusOneDayTerms; }
+    public List<String> getMinusOneDayTerms() {
+        return minusOneDayTerms;
+    }
 
     @Override
-    public List<String> getPlusTwoDayTerms() { return plusTwoDayTerms; }
+    public List<String> getPlusTwoDayTerms() {
+        return plusTwoDayTerms;
+    }
 
     @Override
-    public List<String> getMinusTwoDayTerms() { return minusTwoDayTerms; }
+    public List<String> getMinusTwoDayTerms() {
+        return minusTwoDayTerms;
+    }
 
     @Override
     public IDateTimeUtilityConfiguration getUtilityConfiguration() {
@@ -348,7 +362,7 @@ public class EnglishDateParserConfiguration extends BaseOptionsConfiguration imp
     }
 
     @Override
-    public String normalize(String text){
+    public String normalize(String text) {
         return text;
     }
 }

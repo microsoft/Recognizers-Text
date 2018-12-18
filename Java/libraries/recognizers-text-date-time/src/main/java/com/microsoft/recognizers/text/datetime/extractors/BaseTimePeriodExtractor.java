@@ -77,7 +77,7 @@ public class BaseTimePeriodExtractor implements IDateTimeExtractor {
                         boolean endWithAmPm = !match.getGroup(Constants.RightAmPmGroupName).value.equals("");
                         if (endWithGeneralEndings || endWithAmPm || afterStr.trim().startsWith(this.config.getTokenBeforeDate())) {
                             endWithValidToken = true;
-                        } else if(this.config.getOptions().match(DateTimeOptions.EnablePreview)){
+                        } else if (this.config.getOptions().match(DateTimeOptions.EnablePreview)) {
                             endWithValidToken = startsWithTimeZone(afterStr);
                         }
                     }
@@ -97,8 +97,7 @@ public class BaseTimePeriodExtractor implements IDateTimeExtractor {
                     } else {
                         String afterStr = input.substring(match.index + match.length);
 
-                        if ((this.config.getOptions().match(DateTimeOptions.EnablePreview))&& startsWithTimeZone(afterStr))
-                        {
+                        if ((this.config.getOptions().match(DateTimeOptions.EnablePreview)) && startsWithTimeZone(afterStr)) {
                             ret.add(new Token(match.index, match.index + match.length));
                         }
                     }

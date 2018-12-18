@@ -113,7 +113,7 @@ public class BaseDateTimePeriodExtractor implements IDateTimeExtractor {
                 timePoints.add(timeErs.get(j));
                 j++;
             }
-            
+
             while (j < timeErs.size() && timeErs.get(j).isOverlap(datetimeErs.get(i))) {
                 j++;
             }
@@ -258,15 +258,14 @@ public class BaseDateTimePeriodExtractor implements IDateTimeExtractor {
                 index = match.get().index;
             }
 
-            if(index<0) {
+            if (index < 0) {
                 match = Arrays.stream(RegExpUtility.getMatches(config.getNextPrefixRegex(), beforeStr)).findFirst();
                 if (match.isPresent() && StringUtility.isNullOrWhiteSpace(beforeStr.substring(match.get().index + match.get().length))) {
                     index = match.get().index;
                 }
             }
 
-            if (index >= 0)
-            {
+            if (index >= 0) {
                 String prefix = beforeStr.substring(0, index).trim();
                 String durationText = text.substring(duration.getStart(), duration.getEnd());
                 List<ExtractResult> numbersInPrefix = config.getCardinalExtractor().extract(prefix);
@@ -274,18 +273,14 @@ public class BaseDateTimePeriodExtractor implements IDateTimeExtractor {
 
                 // Cases like "2 upcoming days", should be supported here
                 // Cases like "2 upcoming 3 days" is invalid, only extract "upcoming 3 days" by default
-                if (!numbersInPrefix.isEmpty() && numbersInDuration.isEmpty())
-                {
+                if (!numbersInPrefix.isEmpty() && numbersInDuration.isEmpty()) {
                     ExtractResult lastNumber = numbersInPrefix.stream().reduce((f, s) -> f.start + f.length <= s.start + s.length ? s : f).get();
 
                     // Prefix should ends with the last number
-                    if (lastNumber.start + lastNumber.length == prefix.length())
-                    {
+                    if (lastNumber.start + lastNumber.length == prefix.length()) {
                         ret.add(new Token(lastNumber.start, duration.getEnd()));
                     }
-                }
-                else
-                {
+                } else {
                     ret.add(new Token(index, duration.getEnd()));
                 }
                 continue;
@@ -428,7 +423,7 @@ public class BaseDateTimePeriodExtractor implements IDateTimeExtractor {
                 String afterStr = input.substring(result.getStart() + result.getLength());
                 if (!StringUtility.isNullOrEmpty(afterStr)) {
                     List<ExtractResult> timeErs = config.getTimePeriodExtractor().extract(afterStr);
-                    for (ExtractResult timeEr: timeErs) {
+                    for (ExtractResult timeEr : timeErs) {
                         String midStr = afterStr.substring(0, timeEr.start);
                         if (StringUtility.isNullOrWhiteSpace(midStr)) {
                             results.add(new Token(result.getStart(), result.getStart() + result.getLength() + midStr.length() + timeEr.length));

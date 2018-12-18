@@ -58,7 +58,7 @@ public class EnglishTimePeriodExtractorConfiguration extends BaseOptionsConfigur
         singleTimeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration(options));
         utilityConfiguration = new EnglishDatetimeUtilityConfiguration();
         integerExtractor = IntegerExtractor.getInstance();
-        TimeZoneExtractor = new BaseTimeZoneExtractor(new EnglishTimeZoneExtractorConfiguration(options));
+        timeZoneExtractor = new BaseTimeZoneExtractor(new EnglishTimeZoneExtractorConfiguration(options));
     }
 
     private IDateTimeUtilityConfiguration utilityConfiguration;
@@ -79,9 +79,11 @@ public class EnglishTimePeriodExtractorConfiguration extends BaseOptionsConfigur
         return integerExtractor;
     }
 
-    private final IDateTimeExtractor TimeZoneExtractor;
+    private final IDateTimeExtractor timeZoneExtractor;
 
-    public IDateTimeExtractor getTimeZoneExtractor() { return TimeZoneExtractor; }
+    public IDateTimeExtractor getTimeZoneExtractor() {
+        return timeZoneExtractor;
+    }
 
 
     public Iterable<Pattern> getSimpleCasesRegex() {

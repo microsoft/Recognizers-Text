@@ -49,9 +49,13 @@ public class EnglishMergedParserConfiguration extends EnglishCommonDateTimeParse
         return afterRegex;
     }
 
-    public Pattern getSinceRegex() { return sinceRegex; }
+    public Pattern getSinceRegex() {
+        return sinceRegex;
+    }
 
-    public Pattern getAroundRegex() { return aroundRegex; }
+    public Pattern getAroundRegex() {
+        return aroundRegex;
+    }
 
     public Pattern getDateAfterRegex() {
         return dateAfterRegex;

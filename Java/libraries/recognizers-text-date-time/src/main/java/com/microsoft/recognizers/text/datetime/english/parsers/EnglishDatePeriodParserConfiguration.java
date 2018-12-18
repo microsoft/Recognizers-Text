@@ -545,8 +545,8 @@ public class EnglishDatePeriodParserConfiguration extends BaseOptionsConfigurati
     public boolean isYearOnly(String text) {
         String trimmedText = text.trim().toLowerCase();
         return EnglishDateTime.YearTerms.stream().anyMatch(o -> trimmedText.endsWith(o)) ||
-                (getYearTermsPadded().anyMatch(o -> trimmedText.contains(o)) && RegExpUtility.getMatches(afterNextSuffixRegex, trimmedText).length > 0) ||
-                (EnglishDateTime.GenericYearTerms.stream().anyMatch(o -> trimmedText.endsWith(o)) && RegExpUtility.getMatches(unspecificEndOfRangeRegex, trimmedText).length > 0);
+            (getYearTermsPadded().anyMatch(o -> trimmedText.contains(o)) && RegExpUtility.getMatches(afterNextSuffixRegex, trimmedText).length > 0) ||
+            (EnglishDateTime.GenericYearTerms.stream().anyMatch(o -> trimmedText.endsWith(o)) && RegExpUtility.getMatches(unspecificEndOfRangeRegex, trimmedText).length > 0);
     }
 
     @Override
@@ -555,7 +555,7 @@ public class EnglishDatePeriodParserConfiguration extends BaseOptionsConfigurati
         return trimmedText.equals("year to date");
     }
 
-    private Stream<String> getYearTermsPadded(){
-        return EnglishDateTime.YearTerms.stream().map(i-> String.format(" %s ", i));
+    private Stream<String> getYearTermsPadded() {
+        return EnglishDateTime.YearTerms.stream().map(i -> String.format(" %s ", i));
     }
 }
