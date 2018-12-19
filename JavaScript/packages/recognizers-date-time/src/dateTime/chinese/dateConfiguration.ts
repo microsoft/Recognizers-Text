@@ -295,11 +295,23 @@ export class ChineseDateParser extends BaseDateParser {
                 futureDate = DateUtils.safeCreateFromMinValue(year, month + 1, day);
                 pastDate = DateUtils.safeCreateFromMinValue(year, month - 1, day);
             } else {
-                futureDate = DateUtils.safeCreateFromMinValue(year, month, day);
-                pastDate = DateUtils.safeCreateFromMinValue(year, month, day);
+                if(!((year % 4 == 0)&&(year % 100 != 0) || (year % 400 == 0)) && (month == 1) && (day == 29)){
+                    futureDate = DateUtils.safeCreateFromMinValue(year, month-1, day);
+                    pastDate = DateUtils.safeCreateFromMinValue(year, month-1, day);
+                }
+                else{
+                    futureDate = DateUtils.safeCreateFromMinValue(year, month, day);
+                    pastDate = DateUtils.safeCreateFromMinValue(year, month, day);
+                }
+                
                 if (!hasMonth) {
-                    if (futureDate < referenceDate) futureDate = DateUtils.addMonths(futureDate, 1);
-                    if (pastDate >= referenceDate) pastDate = DateUtils.addMonths(pastDate, -1);
+                    if (futureDate < referenceDate) {
+                        if(((year % 4 == 0) && (year % 100 != 0) || (year % 400 == 0)) ||((month!=1) && (day != 29)))
+                            futureDate = DateUtils.addMonths(futureDate, 1);
+                    }
+                    if (pastDate >= referenceDate)
+                        if(((year % 4 == 0) && (year % 100 != 0) || (year % 400 == 0)) || ((month!=2) && (day != 29)))
+                            pastDate = DateUtils.addMonths(pastDate, -1);
                 } else if (hasMonth && !hasYear) {
                     if (futureDate < referenceDate) futureDate = DateUtils.addYears(futureDate, 1);
                     if (pastDate >= referenceDate) pastDate = DateUtils.addYears(pastDate, -1);

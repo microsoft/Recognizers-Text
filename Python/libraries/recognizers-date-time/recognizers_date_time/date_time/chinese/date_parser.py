@@ -117,14 +117,20 @@ class ChineseDateParser(BaseDateParser):
                 future_date = DateUtils.safe_create_from_min_value(year, month + 1, day)
                 past_date = DateUtils.safe_create_from_min_value(year, month - 1, day)
             else:
-                future_date = DateUtils.safe_create_from_min_value(year, month, day)
-                past_date = DateUtils.safe_create_from_min_value(year, month, day)
+                if not((year % 4 == 0) and (year % 100 != 0) or (year % 400 == 0)) and month == 2 and day == 29:
+                    future_date = DateUtils.safe_create_from_min_value(year, month - 1, day)
+                    past_date = DateUtils.safe_create_from_min_value(year, month - 1, day)
+                else:
+                    future_date = DateUtils.safe_create_from_min_value(year, month, day)
+                    past_date = DateUtils.safe_create_from_min_value(year, month, day)
 
                 if not has_month:
                     if future_date < reference:
-                        future_date += datedelta(months=1)
+                        if day != 29 and month != 2 or ((year % 4 == 0) and (year % 100 != 0) or (year % 400 == 0)):
+                            future_date += datedelta(months=1)
                     if past_date >= reference:
-                        past_date += datedelta(months=-1)
+                        if day != 29 and month != 3 or ((year % 4 == 0) and (year % 100 != 0) or (year % 400 == 0)):
+                            past_date += datedelta(months=-1)
                 elif has_month and not has_year:
                     if future_date < reference:
                         future_date += datedelta(years=1)
