@@ -191,7 +191,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 }
                 else
                 {
-                    if((!((year % 4 == 0)&&(year % 100 != 0)) || year % 400 == 0) && (month == 2) && (day == 29))
+                    if(!((year % 4 == 0)&&(year % 100 != 0) || (year % 400 == 0)) && (month == 2) && (day == 29))
                     {
                         futureDate = DateObject.MinValue.SafeCreateFromValue(year, month-1, day);
                         pastDate = DateObject.MinValue.SafeCreateFromValue(year, month-1, day);
@@ -205,13 +205,14 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     {
                         if (futureDate < referenceDate)
                         {
-                            if((month!=2) && (day != 29))
-                            futureDate = futureDate.AddMonths(1);
+                            if(((year % 4 == 0) && (year % 100 != 0) || (year % 400 == 0)) || ((month!=2) && (day != 29)))
+                                futureDate = futureDate.AddMonths(1);
                         }
 
                         if (pastDate >= referenceDate)
                         {
-                            pastDate = pastDate.AddMonths(-1);
+                            if (((year % 4 == 0) && (year % 100 != 0) || (year % 400 == 0)) || ((month != 3) && (day != 29)))
+                                pastDate = pastDate.AddMonths(-1);
                         }
                     }
                     else if (!hasYear)
