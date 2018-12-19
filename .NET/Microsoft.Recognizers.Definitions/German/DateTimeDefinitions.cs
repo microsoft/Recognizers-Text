@@ -68,7 +68,7 @@ namespace Microsoft.Recognizers.Definitions.German
 		public static readonly string ThisRegex = $@"(((diese((n|m)|(\s*woche))(\s*am)?\s+){WeekDayRegex})|({WeekDayRegex})|diese(n|r)?\s*(sommer|winter|frühling|herbst))";
 		public static readonly string LastDateRegex = $@"({PastPrefixRegex}(\s*(woche|monat|jahr)?(\s*(am|im))?)?\s+({WeekDayRegex}|sommer|winter|frühling|herbst))|((am\s+)?{WeekDayRegex}(\s+{PastPrefixRegex}\s*woche))";
 		public static readonly string NextDateRegex = $@"({NextPrefixRegex}(\s*(woche|monat|jahr)?(\s*(am|im))?)?\s+({WeekDayRegex}|sommer|winter|frühling|herbst))|((am\s+)?{WeekDayRegex}(\s+{NextPrefixRegex}\s*woche))";
-		public static readonly string SpecialDayRegex = $@"(vorgestern|übermorgen|((der\s+)?{RelativeRegex}\s+tag)|\bgestern\b|\bmorgen\b|heute|(heutig(e|en|es)?|aktuelle(n|s)?) (datum|tag(s|es)?))";
+		public static readonly string SpecialDayRegex = $@"(vorgestern|übermorgen|((der\s+)?{RelativeRegex}\s+(tag|morgen))|\bgestern\b|\bmorgen\b|heute|(heutig(e|en|es)?|aktuelle(n|s)?) (datum|tag(s|es)?))";
 		public static readonly string SpecialDayWithNumRegex = $@"\b((?<number>{WrittenNumRegex})\s+tage?\s+(von|nach|ab)\s+(?<day>\bgestern\b|\bmorgen\b|heute|(heutig(e|en|es)?|aktuelle(n|s)?) (datum|tag(s|es)?)))\b";
 		public static readonly string RelativeDayRegex = $@"((((der|dem|den|des)\s+)?{RelativeRegex}\s+tag(e(s)?)?))";
 		public const string SetWeekDayRegex = @"\b(?<prefix>(an)\s+)?(?<weekday>morgen|nachmittag|früh|abend|nacht|sonntag|montag|dienstag|mittwoch|donnerstag|freitag|samstag)(s|en)\b";
@@ -100,7 +100,7 @@ namespace Microsoft.Recognizers.Definitions.German
 		public const string AmRegex = @"(?<am>(((am|gegen)\s+)?(früh|vormittag(s)?)|(morgens|(am|gegen) morgen)))";
 		public const string LunchRegex = @"\b(mittag(s)?|mittagessen)\b";
 		public const string NightRegex = @"\b(mitternacht|(nacht(s)?|primetime))\b";
-		public const string AmPmPrefixRegex = @"((((um|gegen)\s*)?(morgen(s)?|(vor|nach)mittag(s)?|abend(s)?|früh|mitternacht(s)?)|(in der\s*)?nacht(s)?)\s*(um|gegen|von)\s*)";
+		public const string AmPmPrefixRegex = @"((((um|gegen)\s*)?((am morgen)|morgens|(vor|nach)mittag(s)?|abend(s)?|früh|mitternacht(s)?)|(in der\s*)?nacht(s)?)\s*(um|gegen|von)\s*)";
 		public const string CommonDatePrefixRegex = @"^[\.]";
 		public static readonly string LessThanOneHour = $@"(?<lth>(eine(r)?\s+)?(viertel|dreiviertel|halb(en|e)?)(\s+Stunde(n)?)?)|{BaseDateTime.DeltaMinuteRegex}(\s+(minute|minuten|min))|{DeltaMinuteNumRegex}(\s+(minute|minuten|min))";
 		public static readonly string WrittenTimeRegex = $@"(um\s*)?(?<writtentime>{HourNumRegex}(\s*{OclockRegex}\s*)({MinuteNumRegex}|{MinuteNumRegex}und(?<tens>zwanzig|dreißig|vierzig|fünfzig)))";
@@ -743,7 +743,15 @@ namespace Microsoft.Recognizers.Definitions.German
 			@"aktuelles datum",
 			@"aktuelle datum",
 			@"aktueller tag",
-			@"aktuelle tag"
+			@"aktuellen tag",
+			@"aktuelle tag",
+			@"dieser morgen",
+			@"diesem morgen",
+			@"diesen morgen",
+			@"aktuelle morgen",
+			@"aktuellen morgen",
+			@"jetzige morgen",
+			@"jetzigen morgen"
 		};
 		public static readonly IList<string> PlusOneDayTerms = new List<string>
 		{

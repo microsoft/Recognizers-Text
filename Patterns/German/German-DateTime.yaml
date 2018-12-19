@@ -134,7 +134,7 @@ NextDateRegex: !nestedRegex
   def: ({NextPrefixRegex}(\s*(woche|monat|jahr)?(\s*(am|im))?)?\s+({WeekDayRegex}|sommer|winter|frühling|herbst))|((am\s+)?{WeekDayRegex}(\s+{NextPrefixRegex}\s*woche))
   references: [ NextPrefixRegex, WeekDayRegex ]
 SpecialDayRegex: !nestedRegex
-  def: (vorgestern|übermorgen|((der\s+)?{RelativeRegex}\s+tag)|\bgestern\b|\bmorgen\b|heute|(heutig(e|en|es)?|aktuelle(n|s)?) (datum|tag(s|es)?))
+  def: (vorgestern|übermorgen|((der\s+)?{RelativeRegex}\s+(tag|morgen))|\bgestern\b|\bmorgen\b|heute|(heutig(e|en|es)?|aktuelle(n|s)?) (datum|tag(s|es)?))
   references: [ RelativeRegex]
 SpecialDayWithNumRegex: !nestedRegex
   def: \b((?<number>{WrittenNumRegex})\s+tage?\s+(von|nach|ab)\s+(?<day>\bgestern\b|\bmorgen\b|heute|(heutig(e|en|es)?|aktuelle(n|s)?) (datum|tag(s|es)?)))\b
@@ -218,7 +218,7 @@ LunchRegex: !simpleRegex
 NightRegex: !simpleRegex
   def: \b(mitternacht|(nacht(s)?|primetime))\b
 AmPmPrefixRegex: !simpleRegex
-  def: ((((um|gegen)\s*)?(morgen(s)?|(vor|nach)mittag(s)?|abend(s)?|früh|mitternacht(s)?)|(in der\s*)?nacht(s)?)\s*(um|gegen|von)\s*)
+  def: ((((um|gegen)\s*)?((am morgen)|morgens|(vor|nach)mittag(s)?|abend(s)?|früh|mitternacht(s)?)|(in der\s*)?nacht(s)?)\s*(um|gegen|von)\s*)
 CommonDatePrefixRegex: !simpleRegex
   def: ^[\.]
 LessThanOneHour: !nestedRegex
@@ -1065,7 +1065,15 @@ SameDayTerms: !list
     - aktuelles datum
     - aktuelle datum
     - aktueller tag
+    - aktuellen tag
     - aktuelle tag
+    - dieser morgen
+    - diesem morgen
+    - diesen morgen
+    - aktuelle morgen
+    - aktuellen morgen
+    - jetzige morgen
+    - jetzigen morgen
 PlusOneDayTerms: !list
   types: [ string ]
   entries: 
