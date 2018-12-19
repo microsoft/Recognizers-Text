@@ -143,7 +143,7 @@ RelativeDayRegex: !nestedRegex
   def: ((((der|dem|den|des)\s+)?{RelativeRegex}\s+tag(e(s)?)?))
   references: [ RelativeRegex]
 SetWeekDayRegex: !simpleRegex
-  def: \b(?<prefix>(an)\s+)?(?<weekday>morgen|nachmittag|früh|abend|nacht|sonntag|montag|dienstag|mittwoch|donnerstag|freitag|samstag)(s|en)\b
+  def: \b(?<prefix>(an)\s+)?(?<weekday>sonntag|montag|dienstag|mittwoch|donnerstag|freitag|samstag)(s|en)\b
 WeekDayOfMonthRegex: !nestedRegex
   def: \b(?<wom>((dem|der|des|am|an dem)\s+)?(?<cardinal>erst(er|en|e)|1.|zweit(er|en|e)|2.|dritt(er|en|e)|3.|viert(er|en|e)|4.|fünft(er|en|e)|5.|letzt(er|en|e))\s+{WeekDayRegex}\s+{MonthSuffixRegex})\b
   references: [ WeekDayRegex, MonthSuffixRegex ]
@@ -416,7 +416,7 @@ TimeTokenPrefix: 'um '
 TokenBeforeDate: 'am '
 TokenBeforeTime: 'um '
 AMTimeRegex: !simpleRegex
-  def: (?<am>morgen(s)?|vormittag(s)?|früh)
+  def: (?<am>morgens|vormittag(s)?|früh)
 PMTimeRegex: !simpleRegex
   def: (?<pm>nachmittag(s)?|abend(s)?|nacht(s)?)
 BeforeRegex: !simpleRegex

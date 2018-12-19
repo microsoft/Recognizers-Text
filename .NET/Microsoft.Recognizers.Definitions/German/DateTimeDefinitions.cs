@@ -71,7 +71,7 @@ namespace Microsoft.Recognizers.Definitions.German
 		public static readonly string SpecialDayRegex = $@"(vorgestern|übermorgen|((der\s+)?{RelativeRegex}\s+(tag|morgen))|\bgestern\b|\bmorgen\b|heute|(heutig(e|en|es)?|aktuelle(n|s)?) (datum|tag(s|es)?))";
 		public static readonly string SpecialDayWithNumRegex = $@"\b((?<number>{WrittenNumRegex})\s+tage?\s+(von|nach|ab)\s+(?<day>\bgestern\b|\bmorgen\b|heute|(heutig(e|en|es)?|aktuelle(n|s)?) (datum|tag(s|es)?)))\b";
 		public static readonly string RelativeDayRegex = $@"((((der|dem|den|des)\s+)?{RelativeRegex}\s+tag(e(s)?)?))";
-		public const string SetWeekDayRegex = @"\b(?<prefix>(an)\s+)?(?<weekday>morgen|nachmittag|früh|abend|nacht|sonntag|montag|dienstag|mittwoch|donnerstag|freitag|samstag)(s|en)\b";
+		public const string SetWeekDayRegex = @"\b(?<prefix>(an)\s+)?(?<weekday>sonntag|montag|dienstag|mittwoch|donnerstag|freitag|samstag)(s|en)\b";
 		public static readonly string WeekDayOfMonthRegex = $@"\b(?<wom>((dem|der|des|am|an dem)\s+)?(?<cardinal>erst(er|en|e)|1.|zweit(er|en|e)|2.|dritt(er|en|e)|3.|viert(er|en|e)|4.|fünft(er|en|e)|5.|letzt(er|en|e))\s+{WeekDayRegex}\s+{MonthSuffixRegex})\b";
 		public static readonly string RelativeWeekDayRegex = $@"\b({WrittenNumRegex}\s+{WeekDayRegex}e\s+(von\s+jetzt|später))\b";
 		public const string WrittenNumRegex = @"(ein|eins|zwei|zwo|drei|vier|fünf|fuenf|sechs|sieben|acht|neun|zehn|elf|zwölf|zwoelf|dreizehn|vierzehn|fünfzehn|sechzehn|siebzehn|achtzehn|neunzehn|zwanzig|dreißig|vierzig|fünfzig|sechzig|siebzig|achtzig|neunzig)";
@@ -179,7 +179,7 @@ namespace Microsoft.Recognizers.Definitions.German
 		public const string TimeTokenPrefix = @"um ";
 		public const string TokenBeforeDate = @"am ";
 		public const string TokenBeforeTime = @"um ";
-		public const string AMTimeRegex = @"(?<am>morgen(s)?|vormittag(s)?|früh)";
+		public const string AMTimeRegex = @"(?<am>morgens|vormittag(s)?|früh)";
 		public const string PMTimeRegex = @"(?<pm>nachmittag(s)?|abend(s)?|nacht(s)?)";
 		public const string BeforeRegex = @"(vorher(ige(s|n|r)?)?|bevor|vor\W|vorige(s|n|r)?)";
 		public const string AfterRegex = @"(nach\W)";
