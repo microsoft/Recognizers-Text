@@ -2,6 +2,29 @@
   {
     "Input": "29日",
     "Context": {
+      "ReferenceDateTime": "2018-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "29日",
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-XX-29",
+              "type": "date",
+              "value": "2018-03-29"
+            }
+          ]
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "29日",
+    "Context": {
       "ReferenceDateTime": "2016-03-22T00:00:00"
     },
     "Results": [
