@@ -163,6 +163,8 @@ public class BaseMergedDateTimeExtractor implements IDateTimeExtractor {
                 dst.clear();
                 dst.addAll(tempDst);
             }
+
+            dst.sort(Comparator.comparingInt(a -> a.start));
         }
     }
 
@@ -294,7 +296,7 @@ public class BaseMergedDateTimeExtractor implements IDateTimeExtractor {
     }
 
     private void checkCalendarFilterList(List<ExtractResult> ers, String text) {
-        List<ExtractResult> shallowCopy = ers.subList(0, ers.size());
+        List<ExtractResult> shallowCopy = new ArrayList<>(ers);
         Collections.reverse(shallowCopy);
         for (ExtractResult er : shallowCopy) {
             for (Pattern negRegex : this.config.getFilterWordRegexList()) {

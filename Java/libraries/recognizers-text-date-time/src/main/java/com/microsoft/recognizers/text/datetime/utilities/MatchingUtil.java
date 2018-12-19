@@ -69,8 +69,8 @@ public class MatchingUtil {
     public static List<ExtractResult> posProcessExtractionRecoverSuperfluousWords(List<ExtractResult> extractResults,
                                                                                   Iterable<MatchResult<String>> superfluousWordMatches, String originText) {
         for (MatchResult<String> match : superfluousWordMatches) {
+            int index = 0;
             for (ExtractResult extractResult : extractResults.toArray(new ExtractResult[0])) {
-                int index = 0;
                 int extractResultEnd = extractResult.start + extractResult.length;
                 if (match.getStart() > extractResult.start && extractResultEnd >= match.getStart()) {
                     extractResults.set(index, extractResult.withLength(extractResult.length + match.getLength()));
