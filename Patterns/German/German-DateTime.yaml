@@ -4,9 +4,9 @@ TillRegex: !simpleRegex
 RangeConnectorRegex : !simpleRegex
   def: (?<and>und|--|-|—|——)
 RelativeRegex: !simpleRegex
-  def: (?<order>nächst(er|en|es|e)|kommend(er|en|es|e)|dies(er|em|en|es|e)|letzt(er|en|es|e)|vergangen(er|en|es|e)|vorherig(er|en|es|e)|vorig(er|en|es|e)|dies(er|en|es|e)|jetzig(er|en|es|e)|heutig(er|en|es|e)|aktuell(er|en|es|e)|gestrig(er|en|es|e)|morgig(er|en|es|e)|nach\W)
+  def: (?<order>nächst(er|en|es|e)|kommend(er|en|es|e)|dies(er|em|en|es|e)|letzt(er|en|es|e)|vergangen(er|en|es|e)|vorherig(er|en|es|e)|vorig(er|en|es|e)|dies(er|en|es|e)|jetzig(er|en|es|e)|heutig(er|en|es|e)|aktuell(er|en|es|e)|gestrig(er|en|es|e)|morgig(er|en|es|e))
 StrictRelativeRegex: !simpleRegex
-  def: (?<order>nächst(er|en|es|e)|kommend(er|en|es|e)|dies(er|em|en|es|e)|letzt(er|en|es|e)|vergangen(er|en|es|e)|vorherig(er|en|es|e)|vorig(er|en|es|e)|dies(er|en|es|e)|jetzig(er|en|es|e)|heutig(er|en|es|e)|aktuell(er|en|es|e)|gestrig(er|en|es|e)|morgig(er|en|es|e)|nach\W)
+  def: (?<order>nächst(er|en|es|e)|kommend(er|en|es|e)|dies(er|em|en|es|e)|letzt(er|en|es|e)|vergangen(er|en|es|e)|vorherig(er|en|es|e)|vorig(er|en|es|e)|dies(er|en|es|e)|jetzig(er|en|es|e)|heutig(er|en|es|e)|aktuell(er|en|es|e)|gestrig(er|en|es|e)|morgig(er|en|es|e))
 NextPrefixRegex: !simpleRegex
   def: \b(nächst(er|en|es|e)|kommend(er|en|es|e))\b
 PastPrefixRegex: !simpleRegex
@@ -317,7 +317,7 @@ PrepositionRegex: !simpleRegex
 TimeOfDayRegex: !simpleRegex
   def: \b(?<timeOfDay>(((((?<early>(früh am|am frühen|früher)(\s+|-))|(?<late>(spät am|am späten|später)(\s+|-)))?(morgen(s)?(?! (früh|vor|nach|abend|(nacht|primetime)|morgen))|(vor|nach)mittag(s)?|abend(s)?|früh|(nacht(s)?|primetime))))))\b
 SpecificTimeOfDayRegex: !nestedRegex
-  def: \b((({StrictRelativeRegex}|heute)\s+{TimeOfDayRegex})\b|\bheute)s?\b
+  def: \b((({StrictRelativeRegex}|heute)\s+{TimeOfDayRegex}))\b
   references: [ TimeOfDayRegex, StrictRelativeRegex ]
 TimeFollowedUnit: !nestedRegex
   def: ^\s*{TimeUnitRegex}$
@@ -328,11 +328,11 @@ TimeNumberCombinedWithUnit: !nestedRegex
 NowRegex: !simpleRegex
   def: \b(?<now>(genau\s+)?jetzt|momentan|im moment|derzeit|in diesem moment|aktuell|gerade|so früh wie möglich|frühestmöglich|neulich|vorher)\b
 SuffixRegex: !simpleRegex
-  def: ^\s*((am|zur|in der)\s+)?(morgen|morgens|frühe|früh|(vor|nach)mittag(s)?|abend(s)?|(nacht|primetime)(s)?)\b
+  def: ^\s*((am|zur|in der)\s+)?(am morgen|morgens|frühe|früh|(vor|nach)mittag(s)?|abend(s)?|(nacht|primetime)(s)?)\b
 DateTimeTimeOfDayRegex: !simpleRegex
-  def: \b((?<weekday>montag|dienstag|mittwoch|donnerstag|freitag|samstag|sonntag)(?<timeOfDay>(vor|nach)mittag(s)?|mittag(s)?|abend(s)?|(nacht(s)?|primetime))|(?<timeOfDay>morgen(s)?|früh|(vor|nach)mittag(s)?|(nacht(s)?|primetime)|abend(s)?))\b
+  def: \b(?<timeOfDay>(vor|nach)mittag(s)?|mittag(s)?|abend(s)?|(nacht(s)?|primetime))\b
 DateTimeSpecificTimeOfDayRegex: !nestedRegex
-  def: \b((({RelativeRegex}|heute)\s+{DateTimeTimeOfDayRegex}|\bheute)\b)\b
+  def: \b((({RelativeRegex}|heute)\s+{DateTimeTimeOfDayRegex}))\b
   references: [ DateTimeTimeOfDayRegex, RelativeRegex ]
 TimeOfTodayAfterRegex: !nestedRegex
   def: ^\s*(,\s*)?((zur|am|in der)\s+)?{DateTimeSpecificTimeOfDayRegex}
@@ -1025,7 +1025,7 @@ SpecialDecadeCases: !dictionary
   entries:
     'zweitausender': 2000
 DefaultLanguageFallback: DMY
-DurationDateRestrictions: [ heute , jetzt , momentan , aktuell , gerade ]
+DurationDateRestrictions: [ today, now ]
 AmbiguityFiltersDict: !dictionary
   types: [ string, string ]
   entries:

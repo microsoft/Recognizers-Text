@@ -19,8 +19,8 @@ namespace Microsoft.Recognizers.Definitions.German
 	{
 		public const string TillRegex = @"(?<till>zu|bis\s*zum|zum|bis|bis\s*hin(\s*zum)?|--|-|—|——)";
 		public const string RangeConnectorRegex = @"(?<and>und|--|-|—|——)";
-		public const string RelativeRegex = @"(?<order>nächst(er|en|es|e)|kommend(er|en|es|e)|dies(er|em|en|es|e)|letzt(er|en|es|e)|vergangen(er|en|es|e)|vorherig(er|en|es|e)|vorig(er|en|es|e)|dies(er|en|es|e)|jetzig(er|en|es|e)|heutig(er|en|es|e)|aktuell(er|en|es|e)|gestrig(er|en|es|e)|morgig(er|en|es|e)|nach\W)";
-		public const string StrictRelativeRegex = @"(?<order>nächst(er|en|es|e)|kommend(er|en|es|e)|dies(er|em|en|es|e)|letzt(er|en|es|e)|vergangen(er|en|es|e)|vorherig(er|en|es|e)|vorig(er|en|es|e)|dies(er|en|es|e)|jetzig(er|en|es|e)|heutig(er|en|es|e)|aktuell(er|en|es|e)|gestrig(er|en|es|e)|morgig(er|en|es|e)|nach\W)";
+		public const string RelativeRegex = @"(?<order>nächst(er|en|es|e)|kommend(er|en|es|e)|dies(er|em|en|es|e)|letzt(er|en|es|e)|vergangen(er|en|es|e)|vorherig(er|en|es|e)|vorig(er|en|es|e)|dies(er|en|es|e)|jetzig(er|en|es|e)|heutig(er|en|es|e)|aktuell(er|en|es|e)|gestrig(er|en|es|e)|morgig(er|en|es|e))";
+		public const string StrictRelativeRegex = @"(?<order>nächst(er|en|es|e)|kommend(er|en|es|e)|dies(er|em|en|es|e)|letzt(er|en|es|e)|vergangen(er|en|es|e)|vorherig(er|en|es|e)|vorig(er|en|es|e)|dies(er|en|es|e)|jetzig(er|en|es|e)|heutig(er|en|es|e)|aktuell(er|en|es|e)|gestrig(er|en|es|e)|morgig(er|en|es|e))";
 		public const string NextPrefixRegex = @"\b(nächst(er|en|es|e)|kommend(er|en|es|e))\b";
 		public const string PastPrefixRegex = @"\b(letzt(er|en|es|e)|vergangen(er|en|es|e)|vorherig(er|en|es|e)|vorig(er|en|es|e)|vor)\b";
 		public const string ThisPrefixRegex = @"\b(dies(er|en|em|es|e)|jetzig(er|en|es|e)|heutig(er|en|es|e)|aktuell(er|en|es|e))\b";
@@ -137,13 +137,13 @@ namespace Microsoft.Recognizers.Definitions.German
 		public static readonly string SpecificTimeBetweenAnd = $@"(?<preDesc>({PmRegex}|{AmRegex})\s+)?(zwischen\s+)(?<time1>({TimeRegex2}|({HourRegex}|{PeriodHourNumRegex})(\s*(?<leftDesc>({PmRegex}|{AmRegex}|{DescRegex})))?))\s*{RangeConnectorRegex}\s*(?<time2>({TimeRegex2}|({HourRegex}|{PeriodHourNumRegex})(\s*(?<rightDesc>({PmRegex}|{AmRegex}|{DescRegex})))?))";
 		public const string PrepositionRegex = @"(?<prep>^(um|am|vom|von|in|zur)(\s+(der|dem|den))?$)";
 		public const string TimeOfDayRegex = @"\b(?<timeOfDay>(((((?<early>(früh am|am frühen|früher)(\s+|-))|(?<late>(spät am|am späten|später)(\s+|-)))?(morgen(s)?(?! (früh|vor|nach|abend|(nacht|primetime)|morgen))|(vor|nach)mittag(s)?|abend(s)?|früh|(nacht(s)?|primetime))))))\b";
-		public static readonly string SpecificTimeOfDayRegex = $@"\b((({StrictRelativeRegex}|heute)\s+{TimeOfDayRegex})\b|\bheute)s?\b";
+		public static readonly string SpecificTimeOfDayRegex = $@"\b((({StrictRelativeRegex}|heute)\s+{TimeOfDayRegex}))\b";
 		public static readonly string TimeFollowedUnit = $@"^\s*{TimeUnitRegex}$";
 		public static readonly string TimeNumberCombinedWithUnit = $@"(?<num>\d+(\,\d*)?){TimeUnitRegex}";
 		public const string NowRegex = @"\b(?<now>(genau\s+)?jetzt|momentan|im moment|derzeit|in diesem moment|aktuell|gerade|so früh wie möglich|frühestmöglich|neulich|vorher)\b";
-		public const string SuffixRegex = @"^\s*((am|zur|in der)\s+)?(morgen|morgens|frühe|früh|(vor|nach)mittag(s)?|abend(s)?|(nacht|primetime)(s)?)\b";
-		public const string DateTimeTimeOfDayRegex = @"\b((?<weekday>montag|dienstag|mittwoch|donnerstag|freitag|samstag|sonntag)(?<timeOfDay>(vor|nach)mittag(s)?|mittag(s)?|abend(s)?|(nacht(s)?|primetime))|(?<timeOfDay>morgen(s)?|früh|(vor|nach)mittag(s)?|(nacht(s)?|primetime)|abend(s)?))\b";
-		public static readonly string DateTimeSpecificTimeOfDayRegex = $@"\b((({RelativeRegex}|heute)\s+{DateTimeTimeOfDayRegex}|\bheute)\b)\b";
+		public const string SuffixRegex = @"^\s*((am|zur|in der)\s+)?(am morgen|morgens|frühe|früh|(vor|nach)mittag(s)?|abend(s)?|(nacht|primetime)(s)?)\b";
+		public const string DateTimeTimeOfDayRegex = @"\b(?<timeOfDay>(vor|nach)mittag(s)?|mittag(s)?|abend(s)?|(nacht(s)?|primetime))\b";
+		public static readonly string DateTimeSpecificTimeOfDayRegex = $@"\b((({RelativeRegex}|heute)\s+{DateTimeTimeOfDayRegex}))\b";
 		public static readonly string TimeOfTodayAfterRegex = $@"^\s*(,\s*)?((zur|am|in der)\s+)?{DateTimeSpecificTimeOfDayRegex}";
 		public static readonly string TimeOfTodayBeforeRegex = $@"{DateTimeSpecificTimeOfDayRegex}(\s*,)?(\s+(um|gegen|in|on))?\s*$";
 		public static readonly string SimpleTimeOfTodayAfterRegex = $@"({HourNumRegex}|{BaseDateTime.HourRegex})\s*(,\s*)?(am\s+)?{DateTimeSpecificTimeOfDayRegex}";
@@ -707,7 +707,7 @@ namespace Microsoft.Recognizers.Definitions.German
 			{ @"zweitausender", 2000 }
 		};
 		public const string DefaultLanguageFallback = @"DMY";
-		public static readonly string[] DurationDateRestrictions = { "heute", "jetzt", "momentan", "aktuell", "gerade" };
+		public static readonly string[] DurationDateRestrictions = { "today", "now" };
 		public static readonly Dictionary<string, string> AmbiguityFiltersDict = new Dictionary<string, string>
 		{
 			{ @"\bmorgen|nachmittag|abend|nacht|tag\b", @"\b(gut(e|en)?\s+(morgen|nachmittag|abend|nacht|tag))\b" }
