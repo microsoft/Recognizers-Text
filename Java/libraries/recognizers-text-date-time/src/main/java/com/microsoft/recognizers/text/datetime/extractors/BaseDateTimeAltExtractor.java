@@ -10,7 +10,6 @@ import com.microsoft.recognizers.text.utilities.RegExpUtility;
 import com.microsoft.recognizers.text.utilities.StringUtility;
 
 import java.time.LocalDateTime;
-import java.util.AbstractMap;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -55,7 +54,7 @@ public class BaseDateTimeAltExtractor implements IDateTimeListExtractor {
         List<ExtractResult> ers = addImplicitDates(extractResults, text);
 
         // Sort the extracted results for the further sequential process.
-        ers.sort(Comparator.comparingInt(erA -> erA.start));
+        ers.sort(Comparator.comparingInt(erA -> erA.getStart()));
 
         int i = 0;
         while (i < ers.size() - 1) {
@@ -68,8 +67,8 @@ public class BaseDateTimeAltExtractor implements IDateTimeListExtractor {
 
             int j = i + altErs.size() - 1;
 
-            int parentTextStart = ers.get(i).start;
-            int parentTextLen = ers.get(j).start + ers.get(j).length - ers.get(i).start;
+            int parentTextStart = ers.get(i).getStart();
+            int parentTextLen = ers.get(j).getStart() + ers.get(j).getLength() - ers.get(i).getStart();
             String parentText = text.substring(parentTextStart, parentTextStart + parentTextLen);
 
             boolean success = extractAndApplyMetadata(altErs, parentText);
@@ -90,23 +89,23 @@ public class BaseDateTimeAltExtractor implements IDateTimeListExtractor {
     private List<ExtractResult> getAltErsWithSameParentText(List<ExtractResult> ers, int startIndex, String text) {
         int pivot = startIndex + 1;
         HashSet types = new HashSet<String>();
-        types.add(ers.get(startIndex).type);
+        types.add(ers.get(startIndex).getType());
 
         while (pivot < ers.size()) {
             // Currently only support merge two kinds of types
-            if (!types.contains(ers.get(pivot).type) && types.size() > 1) {
+            if (!types.contains(ers.get(pivot).getType()) && types.size() > 1) {
                 break;
             }
 
             // Check whether middle string is a connector
-            int middleBegin = ers.get(pivot - 1).start + ers.get(pivot - 1).length;
-            int middleEnd = ers .get(pivot).start;
+            int middleBegin = ers.get(pivot - 1).getStart() + ers.get(pivot - 1).getLength();
+            int middleEnd = ers.get(pivot).getStart();
 
             if (!isConnectorOrWhiteSpace(middleBegin, middleEnd, text)) {
                 break;
             }
 
-            int prefixEnd = ers.get(pivot - 1).start;
+            int prefixEnd = ers.get(pivot - 1).getStart();
             String prefixStr = text.substring(0, prefixEnd);
 
             if (isEndsWithRangePrefix(prefixStr)) {
@@ -114,7 +113,7 @@ public class BaseDateTimeAltExtractor implements IDateTimeListExtractor {
             }
 
             if (isSupportedAltEntitySequence(ers.subList(startIndex, startIndex + (pivot - startIndex + 1)))) {
-                types.add(ers.get(pivot).type);
+                types.add(ers.get(pivot).getType());
                 pivot++;
             } else {
                 break;
@@ -135,19 +134,19 @@ public class BaseDateTimeAltExtractor implements IDateTimeListExtractor {
 
         Match[] implicitDateMatches = RegExpUtility.getMatches(config.getDayRegex(), text);
         int i = 0;
-        originalErs.sort(Comparator.comparingInt(er -> er.start));
+        originalErs.sort(Comparator.comparingInt(er -> er.getStart()));
 
         for (Match dateMatch : implicitDateMatches) {
             boolean notBeContained = true;
             while (i < originalErs.size()) {
-                if (originalErs.get(i).start <= dateMatch.index && originalErs.get(i).start + originalErs.get(i).length >= dateMatch.index + dateMatch.length) {
+                if (originalErs.get(i).getStart() <= dateMatch.index && originalErs.get(i).getStart() + originalErs.get(i).getLength() >= dateMatch.index + dateMatch.length) {
                     notBeContained = false;
                     break;
                 }
 
-                if (originalErs.get(i).start + originalErs.get(i).length < dateMatch.index + dateMatch.length) {
+                if (originalErs.get(i).getStart() + originalErs.get(i).getLength() < dateMatch.index + dateMatch.length) {
                     i++;
-                } else if (originalErs.get(i).start + originalErs.get(i).length >= dateMatch.index + dateMatch.length) {
+                } else if (originalErs.get(i).getStart() + originalErs.get(i).getLength() >= dateMatch.index + dateMatch.length) {
                     break;
                 }
             }
@@ -158,16 +157,16 @@ public class BaseDateTimeAltExtractor implements IDateTimeListExtractor {
                 dateMatch.value,
                 Constants.SYS_DATETIME_DATE);
 
-            dateEr = dateEr.withData(getExtractorName());
+            dateEr.setData(getExtractorName());
             if (notBeContained) {
                 result.add(dateEr);
             } else if (i + 1 < originalErs.size()) {
                 // For cases like "I am looking at 18 and 19 June"
                 // in which "18" is wrongly recognized as time without context.
                 ExtractResult nextEr = originalErs.get(i + 1);
-                if (nextEr.type.equals(Constants.SYS_DATETIME_DATE) &&
-                    originalErs.get(i).text.equals(dateEr.text) &&
-                    isConnectorOrWhiteSpace(dateEr.start + dateEr.length, nextEr.start, text)) {
+                if (nextEr.getType().equals(Constants.SYS_DATETIME_DATE) &&
+                    originalErs.get(i).getText().equals(dateEr.getText()) &&
+                    isConnectorOrWhiteSpace(dateEr.getStart() + dateEr.getLength(), nextEr.getStart(), text)) {
                     result.add(dateEr);
                     originalErs.remove(i);
                 }
@@ -175,14 +174,14 @@ public class BaseDateTimeAltExtractor implements IDateTimeListExtractor {
         }
 
         result.addAll(originalErs);
-        result.sort(Comparator.comparingInt(er -> er.start));
+        result.sort(Comparator.comparingInt(er -> er.getStart()));
 
         return result;
     }
 
     private List<ExtractResult> pruneInvalidImplicitDate(List<ExtractResult> ers) {
         ers.removeIf(er -> {
-            if (er.data != null && er.type.equals(Constants.SYS_DATETIME_DATE) && er.data.equals(getExtractorName())) {
+            if (er.getData() != null && er.getType().equals(Constants.SYS_DATETIME_DATE) && er.getData().equals(getExtractorName())) {
                 return true;
             }
             return false;
@@ -201,8 +200,8 @@ public class BaseDateTimeAltExtractor implements IDateTimeListExtractor {
         List<ExtractResult> relativeDatePeriodErs = new ArrayList<>();
         int i = 0;
         for (ExtractResult result : ers.toArray(new ExtractResult[0])) {
-            if (!result.type.equals(Constants.SYS_DATETIME_DATETIMEALT)) {
-                int resultEnd = result.start + result.length;
+            if (!result.getType().equals(Constants.SYS_DATETIME_DATETIMEALT)) {
+                int resultEnd = result.getStart() + result.getLength();
                 for (Match relativeTermsMatch : relativeTermsMatches) {
                     if (relativeTermsMatch.index > resultEnd) {
                         // Check whether middle string is a connector
@@ -211,26 +210,26 @@ public class BaseDateTimeAltExtractor implements IDateTimeListExtractor {
                         String middleStr = text.substring(middleBegin, middleEnd).trim().toLowerCase();
                         Match[] orTermMatches = RegExpUtility.getMatches(config.getOrRegex(), middleStr);
                         if (orTermMatches.length == 1 && orTermMatches[0].index == 0 && orTermMatches[0].length == middleStr.length()) {
-                            int parentTextStart = result.start;
+                            int parentTextStart = result.getStart();
                             int parentTextEnd = relativeTermsMatch.index + relativeTermsMatch.length;
                             String parentText = text.substring(parentTextStart, parentTextEnd);
 
                             ExtractResult contextErs = new ExtractResult();
                             for (Pattern regex : config.getRelativePrefixList()) {
-                                Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(regex, result.text)).findFirst();
+                                Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(regex, result.getText())).findFirst();
                                 if (match.isPresent()) {
                                     int matchEnd = match.get().index + match.get().length;
                                     contextErs = new ExtractResult(
                                         matchEnd,
-                                        result.length - matchEnd,
-                                        result.text.substring(matchEnd, result.length),
+                                        result.getLength() - matchEnd,
+                                        result.getText().substring(matchEnd, result.getLength()),
                                         Constants.ContextType_RelativeSuffix);
                                     break;
                                 }
                             }
 
                             Map<String, Object> customData = new LinkedHashMap<>();
-                            customData.put(Constants.SubType, result.type);
+                            customData.put(Constants.SubType, result.getType());
                             customData.put(ExtendedModelResult.ParentTextKey, parentText);
                             customData.put(Constants.Context, contextErs);
 
@@ -242,12 +241,12 @@ public class BaseDateTimeAltExtractor implements IDateTimeListExtractor {
                                 customData));
 
                             Map<String, Object> resultData = new LinkedHashMap<>();
-                            resultData.put(Constants.SubType, result.type);
+                            resultData.put(Constants.SubType, result.getType());
                             resultData.put(ExtendedModelResult.ParentTextKey, parentText);
 
-                            ers.set(i, result
-                                .withData(resultData)
-                                .withType(Constants.SYS_DATETIME_DATETIMEALT));
+                            result.setData(resultData);
+                            result.setType(Constants.SYS_DATETIME_DATETIMEALT);
+                            ers.set(i, result);
                         }
                     }
                 }
@@ -258,7 +257,7 @@ public class BaseDateTimeAltExtractor implements IDateTimeListExtractor {
         List<ExtractResult> result = new ArrayList<>();
         result.addAll(ers);
         result.addAll(relativeDatePeriodErs);
-        result.sort(Comparator.comparingInt(er -> er.start));
+        result.sort(Comparator.comparingInt(er -> er.getStart()));
 
         return result;
     }
@@ -346,8 +345,8 @@ public class BaseDateTimeAltExtractor implements IDateTimeListExtractor {
         boolean shouldApply = false;
 
         if (isSupportedAltEntitySequence(extractResults)) {
-            String firstEntityType = extractResults.stream().findFirst().get().type;
-            String lastEntityType = extractResults.get(extractResults.size() - 1).type;
+            String firstEntityType = extractResults.stream().findFirst().get().getType();
+            String lastEntityType = extractResults.get(extractResults.size() - 1).getType();
 
             if (firstEntityType.equals(Constants.SYS_DATETIME_DATE) && lastEntityType.equals(Constants.SYS_DATETIME_DATE)) {
                 shouldApply = true; // "11/20 or 11/22"
@@ -367,9 +366,11 @@ public class BaseDateTimeAltExtractor implements IDateTimeListExtractor {
         if (isSupportedAltEntitySequence(extractResults)) {
             for (int i = 0; i < extractResults.size(); i++) {
                 ExtractResult extractResult = extractResults.get(i);
-                Map<String, Object> metadata = createMetadata(extractResult.type, parentText, null);
-                Map<String, Object> data = mergeMetadata(extractResult.data, metadata);
-                extractResults.set(i, extractResult.withData(data).withType(getExtractorName()));
+                Map<String, Object> metadata = createMetadata(extractResult.getType(), parentText, null);
+                Map<String, Object> data = mergeMetadata(extractResult.getData(), metadata);
+                extractResult.setData(data);
+                extractResult.setType(getExtractorName());
+                extractResults.set(i, extractResult);
             }
 
             success = true;
@@ -383,8 +384,8 @@ public class BaseDateTimeAltExtractor implements IDateTimeListExtractor {
         List<String> entityTypes = new ArrayList<>();
 
         for (ExtractResult er : subSeq.toArray(ExtractResult[]::new)) {
-            if (!entityTypes.contains(er.type)) {
-                entityTypes.add(er.type);
+            if (!entityTypes.contains(er.getType())) {
+                entityTypes.add(er.getType());
             }
         }
 
@@ -395,12 +396,12 @@ public class BaseDateTimeAltExtractor implements IDateTimeListExtractor {
     // For cases like "next week Monday or Tuesday or previous Wednesday", ExtractMethods can be more than one
     private HashMap<String, Object> extractMetadata(ExtractResult targetEr, String parentText, List<ExtractResult> ers) {
         HashMap<String, Object> metadata = null;
-        ArrayList<Function<String, List<ExtractResult>>> extractMethods = getExtractMethods(targetEr.type, ers.get(ers.size() - 1).type);
-        BiConsumer<ExtractResult, ExtractResult> postProcessMethod = getPostProcessMethod(targetEr.type, ers.get(ers.size() - 1).type);
+        ArrayList<Function<String, List<ExtractResult>>> extractMethods = getExtractMethods(targetEr.getType(), ers.get(ers.size() - 1).getType());
+        BiConsumer<ExtractResult, ExtractResult> postProcessMethod = getPostProcessMethod(targetEr.getType(), ers.get(ers.size() - 1).getType());
         ExtractResult contextEr = extractContext(targetEr, extractMethods, postProcessMethod);
 
         if (shouldCreateMetadata(ers, contextEr)) {
-            metadata = createMetadata(targetEr.type, parentText, contextEr);
+            metadata = createMetadata(targetEr.getType(), parentText, contextEr);
         }
 
         return metadata;
@@ -411,7 +412,7 @@ public class BaseDateTimeAltExtractor implements IDateTimeListExtractor {
         ExtractResult contextEr = null;
 
         for (Function<String, List<ExtractResult>> extractMethod : extractMethods) {
-            List<ExtractResult> contextErCandidates = extractMethod.apply(er.text);
+            List<ExtractResult> contextErCandidates = extractMethod.apply(er.getText());
             if (contextErCandidates.size() == 1) {
                 contextEr = contextErCandidates.get(contextErCandidates.size() - 1);
                 break;
@@ -422,7 +423,7 @@ public class BaseDateTimeAltExtractor implements IDateTimeListExtractor {
             postProcessMethod.accept(contextEr, er);
         }
 
-        if (contextEr != null && StringUtility.isNullOrEmpty(contextEr.text)) {
+        if (contextEr != null && StringUtility.isNullOrEmpty(contextEr.getText())) {
             contextEr = null;
         }
 
@@ -432,18 +433,22 @@ public class BaseDateTimeAltExtractor implements IDateTimeListExtractor {
     private boolean shouldCreateMetadata(List<ExtractResult> originalErs, ExtractResult contextEr) {
         // For alternative entities sequence which are all DatePeriod, we should create metadata even if context is null
         return (contextEr != null ||
-            (originalErs.get(0).type == Constants.SYS_DATETIME_DATEPERIOD && originalErs.get(originalErs.size() - 1).type == Constants.SYS_DATETIME_DATEPERIOD));
+            (originalErs.get(0).getType() == Constants.SYS_DATETIME_DATEPERIOD && originalErs.get(originalErs.size() - 1).getType() == Constants.SYS_DATETIME_DATEPERIOD));
     }
 
     private void applyMetadata(List<ExtractResult> ers, HashMap<String, Object> metadata, String parentText) {
         // The first extract results don't need any context
-        HashMap<String, Object> metadataWithoutContext = createMetadata(ers.stream().findFirst().get().type, parentText, null);
-        ers.set(0, ers.stream().findFirst().get().withData(mergeMetadata(ers.stream().findFirst().get().data, metadataWithoutContext)));
-        ers.set(0,ers.stream().findFirst().get().withType(getExtractorName()));
+        ExtractResult first = ers.stream().findFirst().orElse(null);
+        HashMap<String, Object> metadataWithoutContext = createMetadata(first.getType(), parentText, null);
+        first.setData(mergeMetadata(first.getData(), metadataWithoutContext));
+        first.setType(getExtractorName());
+        ers.set(0, first);
 
         for (int i = 1; i < ers.size(); i++) {
-            ers.set(i, ers.get(i).withData(mergeMetadata(ers.get(i).data, metadata)));
-            ers.set(i, ers.get(i).withType(getExtractorName()));
+            ExtractResult er = ers.get(i);
+            er.setData(mergeMetadata(ers.get(i).getData(), metadata));
+            er.setType(getExtractorName());
+            ers.set(i, er);
         }
     }
 
@@ -491,10 +496,10 @@ public class BaseDateTimeAltExtractor implements IDateTimeListExtractor {
 
             if (match.find()) {
                 ExtractResult er = new ExtractResult();
-                er = er.withText(match.group());
-                er = er.withStart(match.start());
-                er = er.withLength(match.end() - match.start());
-                er = er.withType(Constants.ContextType_RelativePrefix);
+                er.setText(match.group());
+                er.setStart(match.start());
+                er.setLength(match.end() - match.start());
+                er.setType(Constants.ContextType_RelativePrefix);
                 results.add(er);
             }
         }
@@ -508,10 +513,10 @@ public class BaseDateTimeAltExtractor implements IDateTimeListExtractor {
             Matcher match = pattern.matcher(entityText);
             if (match.find()) {
                 ExtractResult er = new ExtractResult();
-                er = er.withText(match.group());
-                er = er.withStart(match.start());
-                er = er.withLength(match.end() - match.start());
-                er = er.withType(Constants.ContextType_AmPm);
+                er.setText(match.group());
+                er.setStart(match.start());
+                er.setLength(match.end() - match.start());
+                er.setType(Constants.ContextType_AmPm);
                 results.add(er);
             }
         }
@@ -522,12 +527,12 @@ public class BaseDateTimeAltExtractor implements IDateTimeListExtractor {
     private BiConsumer<ExtractResult, ExtractResult> getPostProcessMethod(String firstEntityType, String lastEntityType) {
         if (firstEntityType.equals(Constants.SYS_DATETIME_DATETIMEPERIOD) && lastEntityType.equals(Constants.SYS_DATETIME_DATE)) {
             return (contextEr, originalEr) -> {
-                contextEr.setText(originalEr.text.substring(0, contextEr.start) + originalEr.text.substring(contextEr.start + contextEr.length));
+                contextEr.setText(originalEr.getText().substring(0, contextEr.getStart()) + originalEr.getText().substring(contextEr.getStart() + contextEr.getLength()));
                 contextEr.setType(Constants.ContextType_RelativeSuffix);
             };
         } else if (firstEntityType.equals(Constants.SYS_DATETIME_DATE) && lastEntityType.equals(Constants.SYS_DATETIME_DATEPERIOD)) {
             return (contextEr, originalEr) -> {
-                contextEr.setText(originalEr.text.substring(0, contextEr.start));
+                contextEr.setText(originalEr.getText().substring(0, contextEr.getStart()));
             };
         }
 

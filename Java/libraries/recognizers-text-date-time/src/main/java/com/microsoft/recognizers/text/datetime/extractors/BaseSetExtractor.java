@@ -78,15 +78,15 @@ public class BaseSetExtractor implements IDateTimeExtractor {
         for (ExtractResult er : ers) {
             // "each last summer" doesn't make sense
             Pattern lastRegex = this.config.getLastRegex();
-            if (RegExpUtility.getMatches(lastRegex, er.text).length > 0) {
+            if (RegExpUtility.getMatches(lastRegex, er.getText()).length > 0) {
                 continue;
             }
 
-            String beforeStr = text.substring(0, (er.start != null) ? er.start : 0);
+            String beforeStr = text.substring(0, (er.getStart() != null) ? er.getStart() : 0);
             Pattern eachPrefixRegex = this.config.getEachPrefixRegex();
             Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(eachPrefixRegex, beforeStr)).findFirst();
             if (match.isPresent()) {
-                ret.add(new Token(match.get().index, er.start + er.length));
+                ret.add(new Token(match.get().index, er.getStart() + er.getLength()));
             }
         }
         return ret;
@@ -96,19 +96,19 @@ public class BaseSetExtractor implements IDateTimeExtractor {
         List<Token> ret = new ArrayList<>();
         List<ExtractResult> ers = this.config.getTimeExtractor().extract(text, reference);
         for (ExtractResult er : ers) {
-            String afterStr = text.substring(er.start + er.length);
+            String afterStr = text.substring(er.getStart() + er.getLength());
             if (StringUtility.isNullOrEmpty(afterStr) && this.config.getBeforeEachDayRegex() != null) {
-                String beforeStr = text.substring(0, er.start);
+                String beforeStr = text.substring(0, er.getStart());
                 Pattern eachPrefixRegex = this.config.getEachPrefixRegex();
                 Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(eachPrefixRegex, beforeStr)).findFirst();
                 if (match.isPresent()) {
-                    ret.add(new Token(match.get().index, er.start + er.length));
+                    ret.add(new Token(match.get().index, er.getStart() + er.getLength()));
                 }
             } else {
                 Pattern eachDayRegex = this.config.getEachDayRegex();
                 Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(eachDayRegex, afterStr)).findFirst();
                 if (match.isPresent()) {
-                    ret.add(new Token(er.start, er.start + er.length + match.get().length));
+                    ret.add(new Token(er.getStart(), er.getStart() + er.getLength() + match.get().length));
                 }
             }
         }
@@ -126,8 +126,8 @@ public class BaseSetExtractor implements IDateTimeExtractor {
                 String trimedText = sb.delete(match.index, match.index + match.length).toString();
                 List<ExtractResult> ers = extractor.extract(trimedText, reference);
                 for (ExtractResult er : ers) {
-                    if (er.start <= match.index && (er.start + er.length) > match.index) {
-                        ret.add(new Token(er.start, er.start + er.length + match.length));
+                    if (er.getStart() <= match.index && (er.getStart() + er.getLength()) > match.index) {
+                        ret.add(new Token(er.getStart(), er.getStart() + er.getLength() + match.length));
                     }
                 }
             }
@@ -144,12 +144,12 @@ public class BaseSetExtractor implements IDateTimeExtractor {
 
                 List<ExtractResult> ers = extractor.extract(trimedText, reference);
                 for (ExtractResult er : ers) {
-                    if (er.start <= match.index && er.text.contains(match.getGroup("weekday").value)) {
-                        int len = er.length + 1;
+                    if (er.getStart() <= match.index && er.getText().contains(match.getGroup("weekday").value)) {
+                        int len = er.getLength() + 1;
                         if (match.getGroup(Constants.PrefixGroupName).value != "") {
                             len += match.getGroup(Constants.PrefixGroupName).value.length();
                         }
-                        ret.add(new Token(er.start, er.start + len));
+                        ret.add(new Token(er.getStart(), er.getStart() + len));
                     }
                 }
             }

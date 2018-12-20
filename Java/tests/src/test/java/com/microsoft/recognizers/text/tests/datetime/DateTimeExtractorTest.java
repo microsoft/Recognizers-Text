@@ -60,10 +60,10 @@ public class DateTimeExtractorTest extends AbstractTest {
                     ExtractResult expected = t.getValue0();
                     ExtractResult actual = t.getValue1();
 
-                    Assert.assertEquals(getMessage(currentCase, "type"), expected.type, actual.type);
-                    Assert.assertEquals(getMessage(currentCase, "text"), expected.text, actual.text);
-                    Assert.assertEquals(getMessage(currentCase, "start"), expected.start, actual.start);
-                    Assert.assertEquals(getMessage(currentCase, "length"), expected.length, actual.length);
+                    Assert.assertEquals(getMessage(currentCase, "type"), expected.getType(), actual.getType());
+                    Assert.assertEquals(getMessage(currentCase, "text"), expected.getText(), actual.getText());
+                    Assert.assertEquals(getMessage(currentCase, "start"), expected.getStart(), actual.getStart());
+                    Assert.assertEquals(getMessage(currentCase, "length"), expected.getLength(), actual.getLength());
                 });
     }
 

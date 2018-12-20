@@ -119,10 +119,10 @@ public class BaseTimePeriodExtractor implements IDateTimeExtractor {
         boolean startsWithTimeZone = false;
 
         List<ExtractResult> timeZoneErs = config.getTimeZoneExtractor().extract(afterText);
-        Optional<ExtractResult> firstTimeZone = timeZoneErs.stream().sorted(Comparator.comparingInt(t -> t.start)).findFirst();
+        Optional<ExtractResult> firstTimeZone = timeZoneErs.stream().sorted(Comparator.comparingInt(t -> t.getStart())).findFirst();
 
         if (firstTimeZone.isPresent()) {
-            String beforeText = afterText.substring(0, firstTimeZone.get().start);
+            String beforeText = afterText.substring(0, firstTimeZone.get().getStart());
 
             if (StringUtility.isNullOrWhiteSpace(beforeText)) {
                 startsWithTimeZone = true;
@@ -147,10 +147,10 @@ public class BaseTimePeriodExtractor implements IDateTimeExtractor {
             // check if it is a ending number
             boolean endingNumber = false;
             ExtractResult num = numErs.get(numErs.size() - 1);
-            if (num.start + num.length == input.length()) {
+            if (num.getStart() + num.getLength() == input.length()) {
                 endingNumber = true;
             } else {
-                String afterStr = input.substring(num.start + num.length);
+                String afterStr = input.substring(num.getStart() + num.getLength());
                 Pattern generalEndingRegex = this.config.getGeneralEndingRegex();
                 Optional<Match> endingMatch = Arrays.stream(RegExpUtility.getMatches(generalEndingRegex, input)).findFirst();
                 if (endingMatch.isPresent()) {
@@ -166,8 +166,8 @@ public class BaseTimePeriodExtractor implements IDateTimeExtractor {
 
             while (i < numErs.size()) {
                 // find subsequent time point
-                int numEndPoint = numErs.get(i).start + numErs.get(i).length;
-                while (j < ers.size() && ers.get(j).start <= numEndPoint) {
+                int numEndPoint = numErs.get(i).getStart() + numErs.get(i).getLength();
+                while (j < ers.size() && ers.get(j).getStart() <= numEndPoint) {
                     j++;
                 }
 
@@ -176,7 +176,7 @@ public class BaseTimePeriodExtractor implements IDateTimeExtractor {
                 }
 
                 // check connector string
-                String midStr = input.substring(numEndPoint, ers.get(j).start);
+                String midStr = input.substring(numEndPoint, ers.get(j).getStart());
                 Pattern tillRegex = this.config.getTillRegex();
                 Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(tillRegex, midStr)).findFirst();
                 if (match.isPresent() && match.get().length == midStr.trim().length()) {
@@ -190,7 +190,7 @@ public class BaseTimePeriodExtractor implements IDateTimeExtractor {
             for (ExtractResult timeNum : timeNumbers) {
                 boolean overlap = false;
                 for (ExtractResult er : ers) {
-                    if (er.start <= timeNum.start && er.start + er.length >= timeNum.start) {
+                    if (er.getStart() <= timeNum.getStart() && er.getStart() + er.getLength() >= timeNum.getStart()) {
                         overlap = true;
                     }
                 }
@@ -200,13 +200,13 @@ public class BaseTimePeriodExtractor implements IDateTimeExtractor {
                 }
             }
 
-            ers.sort((x, y) -> x.start - y.start);
+            ers.sort((x, y) -> x.getStart() - y.getStart());
         }
 
         int idx = 0;
         while (idx < ers.size() - 1) {
-            int middleBegin = ers.get(idx).start + ers.get(idx).length;
-            int middleEnd = ers.get(idx + 1).start;
+            int middleBegin = ers.get(idx).getStart() + ers.get(idx).getLength();
+            int middleEnd = ers.get(idx + 1).getStart();
 
             if (middleEnd - middleBegin <= 0) {
                 idx++;
@@ -219,19 +219,19 @@ public class BaseTimePeriodExtractor implements IDateTimeExtractor {
 
             // Handle "{TimePoint} to {TimePoint}"
             if (match.isPresent() && match.get().index == 0 && match.get().length == middleStr.length()) {
-                int periodBegin = ers.get(idx).start;
-                int periodEnd = ers.get(idx + 1).start + ers.get(idx + 1).length;
+                int periodBegin = ers.get(idx).getStart();
+                int periodEnd = ers.get(idx + 1).getStart() + ers.get(idx + 1).getLength();
 
                 // Handle "from"
                 String beforeStr = StringUtility.trimEnd(input.substring(0, periodBegin)).toLowerCase();
                 ResultIndex fromIndex = this.config.getFromTokenIndex(beforeStr);
                 ResultIndex betweenIndex = this.config.getBetweenTokenIndex(beforeStr);
-                if (fromIndex.result) {
+                if (fromIndex.getResult()) {
                     // Handle "from"
-                    periodBegin = fromIndex.index;
-                } else if (betweenIndex.result) {
+                    periodBegin = fromIndex.getIndex();
+                } else if (betweenIndex.getResult()) {
                     // Handle "between"
-                    periodBegin = betweenIndex.index;
+                    periodBegin = betweenIndex.getIndex();
                 }
 
                 ret.add(new Token(periodBegin, periodEnd));
@@ -241,14 +241,14 @@ public class BaseTimePeriodExtractor implements IDateTimeExtractor {
 
             // Handle "between {TimePoint} and {TimePoint}"
             if (this.config.hasConnectorToken(middleStr)) {
-                int periodBegin = ers.get(idx).start;
-                int periodEnd = ers.get(idx + 1).start + ers.get(idx + 1).length;
+                int periodBegin = ers.get(idx).getStart();
+                int periodEnd = ers.get(idx + 1).getStart() + ers.get(idx + 1).getLength();
 
                 // Handle "between"
                 String beforeStr = input.substring(0, periodBegin).trim().toLowerCase(java.util.Locale.ROOT);
                 ResultIndex betweenIndex = this.config.getBetweenTokenIndex(beforeStr);
-                if (betweenIndex.result) {
-                    periodBegin = betweenIndex.index;
+                if (betweenIndex.getResult()) {
+                    periodBegin = betweenIndex.getIndex();
                     ret.add(new Token(periodBegin, periodEnd));
                     idx += 2;
                     continue;

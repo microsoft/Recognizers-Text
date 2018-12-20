@@ -45,24 +45,24 @@ public abstract class AbstractYearExtractor implements IDateExtractor {
             MatchGroup firstTwoYear = match.getGroup("firsttwoyearnum");
 
             if (!StringUtility.isNullOrEmpty(firstTwoYear.value)) {
-                ExtractResult er = new ExtractResult()
-                    .withText(firstTwoYear.value)
-                    .withStart(firstTwoYear.index)
-                    .withLength(firstTwoYear.length);
+                ExtractResult er = new ExtractResult();
+                er.setStart(firstTwoYear.index);
+                er.setLength(firstTwoYear.length);
+                er.setText(firstTwoYear.value);
 
-                int firstTwoYearNum = Math.round(Double.valueOf((double)config.getNumberParser().parse(er).value).floatValue());
+                int firstTwoYearNum = Math.round(Double.valueOf((double)config.getNumberParser().parse(er).getValue()).floatValue());
 
                 int lastTwoYearNum = 0;
 
                 MatchGroup lastTwoYear = match.getGroup("lasttwoyearnum");
 
                 if (!StringUtility.isNullOrEmpty(lastTwoYear.value)) {
-                    er = new ExtractResult()
-                        .withText(lastTwoYear.value)
-                        .withStart(lastTwoYear.index)
-                        .withLength(lastTwoYear.length);
+                    er = new ExtractResult();
+                    er.setStart(lastTwoYear.index);
+                    er.setLength(lastTwoYear.length);
+                    er.setText(lastTwoYear.value);
 
-                    lastTwoYearNum = Math.round(Double.valueOf((double)config.getNumberParser().parse(er).value).floatValue());
+                    lastTwoYearNum = Math.round(Double.valueOf((double)config.getNumberParser().parse(er).getValue()).floatValue());
                 }
 
                 // Exclude pure number like "nineteen", "twenty four"

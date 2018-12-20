@@ -2,11 +2,11 @@ package com.microsoft.recognizers.text;
 
 public class ExtractResult {
 
-    public final Integer start;
-    public final Integer length;
-    public final Object data;
-    public String type;
-    public String text;
+    private Integer start;
+    private Integer length;
+    private Object data;
+    private String type;
+    private String text;
 
     public ExtractResult() {
         this(null, null, null, null);
@@ -24,54 +24,9 @@ public class ExtractResult {
         this.data = data;
     }
 
-    public ExtractResult withStart(int newStart) {
-        return new ExtractResult(
-                newStart,
-                this.length,
-                this.text,
-                this.type,
-                this.data);
-    }
-
-    public ExtractResult withLength(int newLength) {
-        return new ExtractResult(
-                this.start,
-                newLength,
-                this.text,
-                this.type,
-                this.data);
-    }
-
-    public ExtractResult withText(String newText) {
-        return new ExtractResult(
-                this.start,
-                this.length,
-                newText,
-                this.type,
-                this.data);
-    }
-
-    public ExtractResult withType(String newType) {
-        return new ExtractResult(
-                this.start,
-                this.length,
-                this.text,
-                newType,
-                this.data);
-    }
-
-    public ExtractResult withData(Object newData) {
-        return new ExtractResult(
-                this.start,
-                this.length,
-                this.text,
-                this.type,
-                newData);
-    }
-
     private boolean isOverlap(ExtractResult er1, ExtractResult er2) {
-        return !(er1.start >= er2.start + er2.length) &&
-                !(er2.start >= er1.start + er1.length);
+        return !(er1.getStart() >= er2.getStart() + er2.getLength()) &&
+                !(er2.getStart() >= er1.getStart() + er1.getLength());
     }
 
     public boolean isOverlap(ExtractResult er) {
@@ -79,19 +34,51 @@ public class ExtractResult {
     }
 
     private boolean isCover(ExtractResult er1, ExtractResult er2) {
-        return ((er2.start < er1.start) && ((er2.start + er2.length) >= (er1.start + er1.length))) ||
-                ((er2.start <= er1.start) && ((er2.start + er2.length) > (er1.start + er1.length)));
+        return ((er2.getStart() < er1.getStart()) && ((er2.getStart() + er2.getLength()) >= (er1.getStart() + er1.getLength()))) ||
+                ((er2.getStart() <= er1.getStart()) && ((er2.getStart() + er2.getLength()) > (er1.getStart() + er1.getLength())));
     }
 
     public boolean isCover(ExtractResult er) {
         return isCover(this, er);
     }
 
-    public void setText(String text) {
-        this.text = text;
+    public Integer getStart() {
+        return start;
+    }
+
+    public void setStart(Integer start) {
+        this.start = start;
+    }
+
+    public Integer getLength() {
+        return length;
+    }
+
+    public void setLength(Integer length) {
+        this.length = length;
+    }
+
+    public Object getData() {
+        return data;
+    }
+
+    public void setData(Object data) {
+        this.data = data;
+    }
+
+    public String getType() {
+        return type;
     }
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public String getText() {
+        return text;
+    }
+
+    public void setText(String text) {
+        this.text = text;
     }
 }

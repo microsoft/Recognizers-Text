@@ -6,7 +6,6 @@ import com.microsoft.recognizers.text.datetime.Constants;
 import com.microsoft.recognizers.text.datetime.extractors.IDateTimeExtractor;
 import com.microsoft.recognizers.text.datetime.parsers.DateTimeParseResult;
 import com.microsoft.recognizers.text.datetime.parsers.IDateTimeParser;
-import com.microsoft.recognizers.text.datetime.parsers.config.IDateParserConfiguration;
 import com.microsoft.recognizers.text.utilities.Match;
 import com.microsoft.recognizers.text.utilities.MatchGroup;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
@@ -31,17 +30,17 @@ public class AgoLaterUtil {
             DateTimeParseResult pr = durationParser.parse(durationRes.get(0), referenceTime);
             Match[] matches = RegExpUtility.getMatches(unitRegex, text);
             if (matches.length > 0) {
-                String afterStr = text.substring(durationRes.get(0).start + durationRes.get(0).length).trim()
+                String afterStr = text.substring(durationRes.get(0).getStart() + durationRes.get(0).getLength()).trim()
                         .toLowerCase();
 
-                String beforeStr = text.substring(0, durationRes.get(0).start).trim().toLowerCase();
+                String beforeStr = text.substring(0, durationRes.get(0).getStart()).trim().toLowerCase();
 
                 AgoLaterMode mode = AgoLaterMode.DATE;
-                if (pr.timexStr.contains("T")) {
+                if (pr.getTimexStr().contains("T")) {
                     mode = AgoLaterMode.DATETIME;
                 }
 
-                if (pr.value != null) {
+                if (pr.getValue() != null) {
                     return getAgoLaterResult(pr, afterStr, beforeStr, referenceTime, utilityConfiguration, mode,
                             getSwiftDay);
                 }
@@ -55,11 +54,11 @@ public class AgoLaterUtil {
             AgoLaterMode mode, Function<String, Integer> getSwiftDay) {
         DateTimeResolutionResult ret = new DateTimeResolutionResult();
         LocalDateTime resultDateTime = referenceTime;
-        String timex = durationParseResult.timexStr;
+        String timex = durationParseResult.getTimexStr();
 
-        if (((DateTimeResolutionResult)durationParseResult.value).getMod() == Constants.MORE_THAN_MOD) {
+        if (((DateTimeResolutionResult)durationParseResult.getValue()).getMod() == Constants.MORE_THAN_MOD) {
             ret.setMod(Constants.MORE_THAN_MOD);
-        } else if (((DateTimeResolutionResult)durationParseResult.value).getMod() == Constants.LESS_THAN_MOD) {
+        } else if (((DateTimeResolutionResult)durationParseResult.getValue()).getMod() == Constants.LESS_THAN_MOD) {
             ret.setMod(Constants.LESS_THAN_MOD);
         }
 
@@ -75,7 +74,7 @@ public class AgoLaterUtil {
 
             resultDateTime = DurationParsingUtil.shiftDateTime(timex, referenceTime.plusDays(swift), false);
 
-            ((DateTimeResolutionResult)durationParseResult.value).setMod(Constants.BEFORE_MOD);
+            ((DateTimeResolutionResult)durationParseResult.getValue()).setMod(Constants.BEFORE_MOD);
         } else if (MatchingUtil.containsAgoLaterIndex(afterStr, utilityConfiguration.getLaterRegex()) ||
                 MatchingUtil.containsTermIndex(beforeStr, utilityConfiguration.getInConnectorRegex())) {
             Optional<Match> match = Arrays
@@ -89,7 +88,7 @@ public class AgoLaterUtil {
 
             resultDateTime = DurationParsingUtil.shiftDateTime(timex, referenceTime.plusDays(swift), true);
 
-            ((DateTimeResolutionResult)durationParseResult.value).setMod(Constants.AFTER_MOD);
+            ((DateTimeResolutionResult)durationParseResult.getValue()).setMod(Constants.AFTER_MOD);
         }
 
         if (resultDateTime != referenceTime) {
@@ -114,12 +113,12 @@ public class AgoLaterUtil {
 
     public static List<Token> extractorDurationWithBeforeAndAfter(String text, ExtractResult er, List<Token> result,
             IDateTimeUtilityConfiguration utilityConfiguration) {
-        int pos = er.start + er.length;
+        int pos = er.getStart() + er.getLength();
         if (pos <= text.length()) {
             String afterString = text.substring(pos);
-            String beforeString = text.substring(0, er.start);
+            String beforeString = text.substring(0, er.getStart());
             boolean isTimeDuration = RegExpUtility.getMatches(utilityConfiguration.getTimeUnitRegex(),
-                    er.text).length != 0;
+                    er.getText()).length != 0;
 
             MatchingUtilResult resultIndex = MatchingUtil.getAgoLaterIndex(afterString,
                     utilityConfiguration.getAgoRegex());
@@ -131,7 +130,7 @@ public class AgoLaterUtil {
                 boolean isDayMatchInAfterString = match.isPresent() && !match.get().getGroup("day").value.equals("");
 
                 if (!(isTimeDuration && isDayMatchInAfterString)) {
-                    result.add(new Token(er.start, er.start + er.length + resultIndex.index));
+                    result.add(new Token(er.getStart(), er.getStart() + er.getLength() + resultIndex.index));
                 }
             } else {
                 resultIndex = MatchingUtil.getAgoLaterIndex(afterString, utilityConfiguration.getLaterRegex());
@@ -140,7 +139,7 @@ public class AgoLaterUtil {
                     boolean isDayMatchInAfterString = match.isPresent() && !match.get().getGroup("day").value.equals("");
 
                     if (!(isTimeDuration && isDayMatchInAfterString)) {
-                        result.add(new Token(er.start, er.start + er.length + resultIndex.index));
+                        result.add(new Token(er.getStart(), er.getStart() + er.getLength() + resultIndex.index));
                     }
                 } else {
                     resultIndex = MatchingUtil.getTermIndex(beforeString, utilityConfiguration.getInConnectorRegex());
@@ -148,11 +147,11 @@ public class AgoLaterUtil {
                         // For range unit like "week, month, year", it should output dateRange or
                         // datetimeRange
                         Optional<Match> match = Arrays
-                                .stream(RegExpUtility.getMatches(utilityConfiguration.getRangeUnitRegex(), er.text))
+                                .stream(RegExpUtility.getMatches(utilityConfiguration.getRangeUnitRegex(), er.getText()))
                                 .findFirst();
                         if (!match.isPresent()) {
-                            if (er.start >= resultIndex.index) {
-                                result.add(new Token(er.start - resultIndex.index, er.start + er.length));
+                            if (er.getStart() >= resultIndex.index) {
+                                result.add(new Token(er.getStart() - resultIndex.index, er.getStart() + er.getLength()));
                             }
                         }
                     } else {
@@ -162,14 +161,14 @@ public class AgoLaterUtil {
                             // For range unit like "week, month, year, day, second, minute, hour", it should
                             // output dateRange or datetimeRange
                             Optional<Match> matchDateUnitRegex = Arrays
-                                    .stream(RegExpUtility.getMatches(utilityConfiguration.getDateUnitRegex(), er.text))
+                                    .stream(RegExpUtility.getMatches(utilityConfiguration.getDateUnitRegex(), er.getText()))
                                     .findFirst();
                             Optional<Match> matchTimeUnitRegex = Arrays
-                                    .stream(RegExpUtility.getMatches(utilityConfiguration.getTimeUnitRegex(), er.text))
+                                    .stream(RegExpUtility.getMatches(utilityConfiguration.getTimeUnitRegex(), er.getText()))
                                     .findFirst();
                             if (!matchDateUnitRegex.isPresent() && !matchTimeUnitRegex.isPresent()) {
-                                if (er.start >= resultIndex.index) {
-                                    result.add(new Token(er.start - resultIndex.index, er.start + er.length));
+                                if (er.getStart() >= resultIndex.index) {
+                                    result.add(new Token(er.getStart() - resultIndex.index, er.getStart() + er.getLength()));
                                 }
                             }
                         }

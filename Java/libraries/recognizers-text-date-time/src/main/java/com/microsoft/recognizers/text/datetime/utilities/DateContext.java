@@ -19,9 +19,8 @@ public class DateContext {
 
     public DateTimeParseResult processDateEntityParsingResult(DateTimeParseResult originalResult) {
         if (!isEmpty()) {
-            originalResult = originalResult
-                    .withTimexStr(TimexUtility.setTimexWithContext(originalResult.timexStr, this))
-                    .withValue(processDateEntityResolution((DateTimeResolutionResult)originalResult.value));
+            originalResult.setTimexStr(TimexUtility.setTimexWithContext(originalResult.getTimexStr(), this));
+            originalResult.setValue(processDateEntityResolution((DateTimeResolutionResult)originalResult.getValue()));
         }
 
         return originalResult;

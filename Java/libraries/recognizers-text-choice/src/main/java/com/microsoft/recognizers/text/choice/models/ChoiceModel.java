@@ -33,7 +33,7 @@ public abstract class ChoiceModel implements IModel {
         List<ParseResult> parseResults = extractResults.stream().map(exRes -> parser.parse(exRes)).collect(Collectors.toList());
         
         List<ModelResult> modelResults = parseResults.stream().map(
-            parseRes -> new ModelResult(parseRes.text, parseRes.start, parseRes.start + parseRes.length - 1, getModelTypeName(), getResolution(parseRes))
+            parseRes -> new ModelResult(parseRes.getText(), parseRes.getStart(), parseRes.getStart() + parseRes.getLength() - 1, getModelTypeName(), getResolution(parseRes))
         ).collect(Collectors.toList());
          
         return modelResults;

@@ -71,14 +71,14 @@ public class BaseDurationExtractor implements IDateTimeExtractor {
 
     private List<ExtractResult> tagInequalityPrefix(String input, List<ExtractResult> result) {
         Stream<ExtractResult> resultStream = result.stream().map(er -> {
-            String beforeString = input.substring(0, er.start);
+            String beforeString = input.substring(0, er.getStart());
             boolean isInequalityPrefixMatched = false;
 
             ConditionalMatch match = RegexExtension.matchEnd(this.config.getMoreThanRegex(), beforeString, true);
 
             // The second condition is necessary so for "1 week" in "more than 4 days and less than 1 week", it will not be tagged incorrectly as "more than"
             if (match.getSuccess()) {
-                er = er.withData(Constants.MORE_THAN_MOD);
+                er.setData(Constants.MORE_THAN_MOD);
                 isInequalityPrefixMatched = true;
             }
 
@@ -86,16 +86,18 @@ public class BaseDurationExtractor implements IDateTimeExtractor {
                 match = RegexExtension.matchEnd(this.config.getLessThanRegex(), beforeString, true);
 
                 if (match.getSuccess()) {
-                    er = er.withData(Constants.LESS_THAN_MOD);
+                    er.setData(Constants.LESS_THAN_MOD);
                     isInequalityPrefixMatched = true;
                 }
             }
 
             if (isInequalityPrefixMatched) {
-                int length = er.length + er.start - match.getMatch().get().index;
+                int length = er.getLength() + er.getStart() - match.getMatch().get().index;
                 int start = match.getMatch().get().index;
                 String text = input.substring(start, start + length);
-                er = er.withLength(length).withStart(start).withText(text);
+                er.setStart(start);
+                er.setLength(length);
+                er.setText(text);
             }
 
             return er;
@@ -120,7 +122,7 @@ public class BaseDurationExtractor implements IDateTimeExtractor {
 
         while (firstExtractionIndex < extractResults.size()) {
             String currentUnit = null;
-            Optional<Match> unitMatch = Arrays.stream(RegExpUtility.getMatches(unitRegex, extractResults.get(firstExtractionIndex).text)).findFirst();
+            Optional<Match> unitMatch = Arrays.stream(RegExpUtility.getMatches(unitRegex, extractResults.get(firstExtractionIndex).getText())).findFirst();
 
             if (unitMatch.isPresent() && unitMap.containsKey(unitMatch.get().getGroup("unit").value)) {
                 currentUnit = unitMatch.get().getGroup("unit").value;
@@ -138,13 +140,13 @@ public class BaseDurationExtractor implements IDateTimeExtractor {
             int secondExtractionIndex = firstExtractionIndex + 1;
             while (secondExtractionIndex < extractResults.size()) {
                 boolean valid = false;
-                int midStrBegin = extractResults.get(secondExtractionIndex - 1).start + extractResults.get(secondExtractionIndex - 1).length;
-                int midStrEnd = extractResults.get(secondExtractionIndex).start;
+                int midStrBegin = extractResults.get(secondExtractionIndex - 1).getStart() + extractResults.get(secondExtractionIndex - 1).getLength();
+                int midStrEnd = extractResults.get(secondExtractionIndex).getStart();
                 String midStr = input.substring(midStrBegin, midStrEnd);
                 Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(this.config.getDurationConnectorRegex(), midStr)).findFirst();
 
                 if (match.isPresent()) {
-                    unitMatch = Arrays.stream(RegExpUtility.getMatches(unitRegex, extractResults.get(secondExtractionIndex).text)).findFirst();
+                    unitMatch = Arrays.stream(RegExpUtility.getMatches(unitRegex, extractResults.get(secondExtractionIndex).getText())).findFirst();
 
                     if (unitMatch.isPresent() && unitMap.containsKey(unitMatch.get().getGroup("unit").value)) {
                         String nextUnitStr = unitMatch.get().getGroup("unit").value;
@@ -173,10 +175,10 @@ public class BaseDurationExtractor implements IDateTimeExtractor {
             }
 
             if (secondExtractionIndex - 1 > firstExtractionIndex) {
-                int start = extractResults.get(firstExtractionIndex).start;
-                int length = extractResults.get(secondExtractionIndex - 1).start + extractResults.get(secondExtractionIndex - 1).length - start;
+                int start = extractResults.get(firstExtractionIndex).getStart();
+                int length = extractResults.get(secondExtractionIndex - 1).getStart() + extractResults.get(secondExtractionIndex - 1).getLength() - start;
                 String text = input.substring(start, start + length);
-                String rType = extractResults.get(firstExtractionIndex).type;
+                String rType = extractResults.get(firstExtractionIndex).getType();
                 ExtractResult node = new ExtractResult(start, length, text, rType, null);
 
                 // add multiple duration type to extract result
@@ -190,7 +192,7 @@ public class BaseDurationExtractor implements IDateTimeExtractor {
                     type = Constants.MultipleDuration_DateTime;
                 }
 
-                node = node.withData(type);
+                node.setData(type);
                 result.add(node);
 
                 timeUnit = 0;
@@ -232,10 +234,10 @@ public class BaseDurationExtractor implements IDateTimeExtractor {
         List<Token> result = new ArrayList<>();
         List<ExtractResult> ers = this.config.getCardinalExtractor().extract(text);
         for (ExtractResult er : ers) {
-            String afterStr = text.substring(er.start + er.length);
+            String afterStr = text.substring(er.getStart() + er.getLength());
             Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(this.config.getFollowedUnit(), afterStr)).findFirst();
             if (match.isPresent() && match.get().index == 0) {
-                result.add(new Token(er.start, er.start + er.length + match.get().length));
+                result.add(new Token(er.getStart(), er.getStart() + er.getLength() + match.get().length));
             }
         }
 

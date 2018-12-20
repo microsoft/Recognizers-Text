@@ -25,7 +25,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
+
 import org.javatuples.Pair;
 
 public class BaseMergedDateTimeExtractor implements IDateTimeExtractor {
@@ -48,8 +48,8 @@ public class BaseMergedDateTimeExtractor implements IDateTimeExtractor {
         Iterable<MatchResult<String>> superfluousWordMatches = null;
         if (this.config.getOptions().match(DateTimeOptions.EnablePreview)) {
             ProcessedSuperfluousWords processedSuperfluousWords = MatchingUtil.preProcessTextRemoveSuperfluousWords(input, this.config.getSuperfluousWordMatcher());
-            input = processedSuperfluousWords.text;
-            superfluousWordMatches = processedSuperfluousWords.superfluousWordMatches;
+            input = processedSuperfluousWords.getText();
+            superfluousWordMatches = processedSuperfluousWords.getSuperfluousWordMatches();
         }
         // The order is important, since there is a problem in merging
         addTo(ret, this.config.getDateExtractor().extract(input, reference), input);
@@ -87,7 +87,7 @@ public class BaseMergedDateTimeExtractor implements IDateTimeExtractor {
             checkCalendarFilterList(ret, input);
         }
 
-        ret.sort(Comparator.comparingInt(r -> r.start));
+        ret.sort(Comparator.comparingInt(r -> r.getStart()));
 
         if (this.config.getOptions().match(DateTimeOptions.EnablePreview)) {
             ret = MatchingUtil.posProcessExtractionRecoverSuperfluousWords(ret, superfluousWordMatches, originInput);
@@ -111,7 +111,7 @@ public class BaseMergedDateTimeExtractor implements IDateTimeExtractor {
                 if (keyMatch.isPresent()) {
                     final Match[] matches = RegExpUtility.getMatches(value, input);
                     List<ExtractResult> newErs = ers.stream()
-                            .filter(er -> Arrays.stream(matches).noneMatch(m -> m.index < er.start + er.length && m.index + m.length > er.start))
+                            .filter(er -> Arrays.stream(matches).noneMatch(m -> m.index < er.getStart() + er.getLength() && m.index + m.length > er.getStart()))
                             .collect(Collectors.toList());
                     ers.clear();
                     ers.addAll(newErs);
@@ -164,20 +164,20 @@ public class BaseMergedDateTimeExtractor implements IDateTimeExtractor {
                 dst.addAll(tempDst);
             }
 
-            dst.sort(Comparator.comparingInt(a -> a.start));
+            dst.sort(Comparator.comparingInt(a -> a.getStart()));
         }
     }
 
     private boolean shouldSkipFromToMerge(ExtractResult er) {
-        return Arrays.stream(RegExpUtility.getMatches(config.getFromToRegex(), er.text)).findFirst().isPresent();
+        return Arrays.stream(RegExpUtility.getMatches(config.getFromToRegex(), er.getText())).findFirst().isPresent();
     }
 
     private List<ExtractResult> numberEndingRegexMatch(String text, List<ExtractResult> extractResults) {
         List<Token> tokens = new ArrayList<>();
 
         for (ExtractResult extractResult : extractResults) {
-            if (extractResult.type.equals(Constants.SYS_DATETIME_TIME) || extractResult.type.equals(Constants.SYS_DATETIME_DATETIME)) {
-                String stringAfter = text.substring(extractResult.start + extractResult.length);
+            if (extractResult.getType().equals(Constants.SYS_DATETIME_TIME) || extractResult.getType().equals(Constants.SYS_DATETIME_DATETIME)) {
+                String stringAfter = text.substring(extractResult.getStart() + extractResult.getLength());
                 Pattern numberEndingPattern = this.config.getNumberEndingPattern();
                 Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(numberEndingPattern, stringAfter)).findFirst();
                 if (match.isPresent()) {
@@ -187,7 +187,7 @@ public class BaseMergedDateTimeExtractor implements IDateTimeExtractor {
                         continue;
                     }
 
-                    int startPosition = extractResult.start + extractResult.length + newTime.index;
+                    int startPosition = extractResult.getStart() + extractResult.getLength() + newTime.index;
                     tokens.add(new Token(startPosition, startPosition + newTime.length));
                 }
 
@@ -198,7 +198,7 @@ public class BaseMergedDateTimeExtractor implements IDateTimeExtractor {
     }
 
     private List<ExtractResult> filterUnspecificDatePeriod(List<ExtractResult> ers, String text) {
-        ers.removeIf(er -> Arrays.stream(RegExpUtility.getMatches(config.getUnspecificDatePeriodRegex(), er.text)).findFirst().isPresent());
+        ers.removeIf(er -> Arrays.stream(RegExpUtility.getMatches(config.getUnspecificDatePeriodRegex(), er.getText())).findFirst().isPresent());
         return ers;
     }
 
@@ -224,9 +224,9 @@ public class BaseMergedDateTimeExtractor implements IDateTimeExtractor {
 
             final ExtractResult newEr = modifiedToken.er;
 
-            if (newEr.type.equals(Constants.SYS_DATETIME_DATEPERIOD) || newEr.type.equals(Constants.SYS_DATETIME_DATE)) {
+            if (newEr.getType().equals(Constants.SYS_DATETIME_DATEPERIOD) || newEr.getType().equals(Constants.SYS_DATETIME_DATE)) {
                 // 2012 or after/above
-                String afterStr = text.substring(newEr.start + newEr.length).toLowerCase();
+                String afterStr = text.substring(newEr.getStart() + newEr.getLength()).toLowerCase();
 
                 ConditionalMatch match = RegexExtension.matchBegin(config.getDateAfterRegex(), StringUtility.trimStart(afterStr), true);
 
@@ -238,19 +238,19 @@ public class BaseMergedDateTimeExtractor implements IDateTimeExtractor {
 
                     } else {
                         String nextStr = afterStr.trim().substring(match.getMatch().get().length).trim();
-                        ExtractResult nextEr = ers.stream().filter(t -> t.start > newEr.start).findFirst().orElse(null);
+                        ExtractResult nextEr = ers.stream().filter(t -> t.getStart() > newEr.getStart()).findFirst().orElse(null);
 
-                        if (nextEr == null || !nextStr.startsWith(nextEr.text)) {
+                        if (nextEr == null || !nextStr.startsWith(nextEr.getText())) {
                             isFollowedByOtherEntity = false;
                         }
                     }
 
                     if (!isFollowedByOtherEntity) {
                         int modLength = match.getMatch().get().length + afterStr.indexOf(match.getMatch().get().value);
-                        int length = newEr.length + modLength;
-                        String newText = text.substring(newEr.start, newEr.start + length);
+                        int length = newEr.getLength() + modLength;
+                        String newText = text.substring(newEr.getStart(), newEr.getStart() + length);
 
-                        ers.set(index, new ExtractResult(er.start, length, newText, er.type, er.data));
+                        ers.set(index, new ExtractResult(er.getStart(), length, newText, er.getType(), er.getData()));
                     }
                 }
             }
@@ -262,19 +262,20 @@ public class BaseMergedDateTimeExtractor implements IDateTimeExtractor {
     }
 
     private MergeModifierResult tryMergeModifierToken(ExtractResult er, Pattern tokenRegex, String text) {
-        String beforeStr = text.substring(0, er.start).toLowerCase();
+        String beforeStr = text.substring(0, er.getStart()).toLowerCase();
 
         ResultIndex result = hasTokenIndex(StringUtility.trimEnd(beforeStr), tokenRegex);
-        if (result.result) {
-            int modLength = beforeStr.length() - result.index;
-            int length = er.length + modLength;
-            int start = er.start - modLength;
+        if (result.getResult()) {
+            int modLength = beforeStr.length() - result.getIndex();
+            int length = er.getLength() + modLength;
+            int start = er.getStart() - modLength;
             String newText = text.substring(start, start + length);
 
-            return new MergeModifierResult(true, er
-                    .withLength(length)
-                    .withStart(start)
-                    .withText(newText));
+            er.setText(newText);
+            er.setLength(length);
+            er.setStart(start);
+
+            return new MergeModifierResult(true, er);
         }
 
         return new MergeModifierResult(false, er);
@@ -300,7 +301,7 @@ public class BaseMergedDateTimeExtractor implements IDateTimeExtractor {
         Collections.reverse(shallowCopy);
         for (ExtractResult er : shallowCopy) {
             for (Pattern negRegex : this.config.getFilterWordRegexList()) {
-                Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(negRegex, er.text)).findFirst();
+                Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(negRegex, er.getText())).findFirst();
                 if (match.isPresent()) {
                     ers.remove(er);
                 }

@@ -21,12 +21,12 @@ public class ChoiceParser<T> implements IParser {
     public ParseResult parse(ExtractResult extractResult) {
 
         ParseResult parseResult = new ParseResult(extractResult);
-        ChoiceExtractDataResult data = (ChoiceExtractDataResult)extractResult.data;
+        ChoiceExtractDataResult data = (ChoiceExtractDataResult)extractResult.getData();
         Map<String, Boolean> resolutions = this.config.getResolutions();
         List<OptionsOtherMatchParseResult> matches = data.otherMatches.stream().map(match -> getOptionsOtherMatchResult(match)).collect(Collectors.toList());
 
-        parseResult = parseResult.withData(new OptionsParseDataResult(data.score, matches));
-        parseResult = parseResult.withValue(resolutions.getOrDefault(parseResult.type, false));
+        parseResult.setData(new OptionsParseDataResult(data.score, matches));
+        parseResult.setValue(resolutions.getOrDefault(parseResult.getType(), false));
 
         return parseResult;
     }
@@ -34,9 +34,9 @@ public class ChoiceParser<T> implements IParser {
     private OptionsOtherMatchParseResult getOptionsOtherMatchResult(ExtractResult extractResult) {
 
         ParseResult parseResult = new ParseResult(extractResult);
-        ChoiceExtractDataResult data = (ChoiceExtractDataResult)extractResult.data;
+        ChoiceExtractDataResult data = (ChoiceExtractDataResult)extractResult.getData();
         Map<String, Boolean> resolutions = this.config.getResolutions();
-        OptionsOtherMatchParseResult result = new OptionsOtherMatchParseResult(parseResult.text, resolutions.get(parseResult.type), data.score);
+        OptionsOtherMatchParseResult result = new OptionsOtherMatchParseResult(parseResult.getText(), resolutions.get(parseResult.getType()), data.score);
 
         return result;
     }

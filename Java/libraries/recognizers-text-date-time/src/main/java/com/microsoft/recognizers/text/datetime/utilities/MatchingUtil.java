@@ -71,13 +71,15 @@ public class MatchingUtil {
         for (MatchResult<String> match : superfluousWordMatches) {
             int index = 0;
             for (ExtractResult extractResult : extractResults.toArray(new ExtractResult[0])) {
-                int extractResultEnd = extractResult.start + extractResult.length;
-                if (match.getStart() > extractResult.start && extractResultEnd >= match.getStart()) {
-                    extractResults.set(index, extractResult.withLength(extractResult.length + match.getLength()));
+                int extractResultEnd = extractResult.getStart() + extractResult.getLength();
+                if (match.getStart() > extractResult.getStart() && extractResultEnd >= match.getStart()) {
+                    extractResult.setLength(extractResult.getLength() + match.getLength());
+                    extractResults.set(index, extractResult);
                 }
 
-                if (match.getStart() <= extractResult.start) {
-                    extractResults.set(index, extractResult.withStart(extractResult.start + match.getLength()));
+                if (match.getStart() <= extractResult.getStart()) {
+                    extractResult.setStart(extractResult.getStart() + match.getLength());
+                    extractResults.set(index, extractResult);
                 }
                 index++;
             }
@@ -85,7 +87,8 @@ public class MatchingUtil {
 
         int index = 0;
         for (ExtractResult er : extractResults.toArray(new ExtractResult[0])) {
-            extractResults.set(index, er.withText(originText.substring(er.start, er.start + er.length)));
+            er.setText(originText.substring(er.getStart(), er.getStart() + er.getLength()));
+            extractResults.set(index, er);
             index++;
         }
 
