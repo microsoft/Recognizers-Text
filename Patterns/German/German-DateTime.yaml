@@ -330,7 +330,7 @@ NowRegex: !simpleRegex
 SuffixRegex: !simpleRegex
   def: ^\s*((am|zur|in der)\s+)?(am morgen|morgens|frühe|früh|(vor|nach)mittag(s)?|abend(s)?|(nacht|primetime)(s)?)\b
 DateTimeTimeOfDayRegex: !simpleRegex
-  def: \b(?<timeOfDay>(vor|nach)mittag(s)?|mittag(s)?|abend(s)?|(nacht(s)?|primetime))\b
+  def: \b(?<timeOfDay>(vor|nach)mittag(s)?|mittag(s)?|abend(s)?|(nacht(s)?|primetime|morgen))\b
 DateTimeSpecificTimeOfDayRegex: !nestedRegex
   def: \b((({RelativeRegex}|heute)\s+{DateTimeTimeOfDayRegex}))\b
   references: [ DateTimeTimeOfDayRegex, RelativeRegex ]
