@@ -637,7 +637,7 @@ DimensionSuffixList: !dictionary
     Picómetro: pm|picometro|picómetro|picometros|picometros
     Milla: mi|milla|millas
     Yarda: yd|yarda|yardas
-    Pulgada: pulgada|pulgadas|\"
+    Pulgada: pulgada|pulgadas|"
     Pie: pie|pies|ft
     Año luz: año luz|años luz|al
     # Speed
@@ -746,7 +746,7 @@ LengthSuffixList: !dictionary
     Picómetro: pm|picometro|picómetro|picometros|picómetros
     Milla: mi|milla|millas
     Yarda: yd|yarda|yardas
-    Pulgada: pulgada|pulgadas|\"
+    Pulgada: pulgada|pulgadas|"
     Pie: pie|pies|ft
     Año luz: año luz|años luz|al
 AmbiguousLengthUnitList: !list

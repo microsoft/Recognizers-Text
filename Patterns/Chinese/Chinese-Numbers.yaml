@@ -93,7 +93,7 @@ FullToHalfMap: !dictionary
     ９: '9'
     ／: '/'
     －: '-'
-    ，: \'
+    ，: "'"
     Ｇ: G
     Ｍ: M
     Ｔ: T
@@ -149,6 +149,8 @@ FracSplitRegex: !simpleRegex
   def: 又|分\s*之
 ZeroToNineIntegerRegex: !simpleRegex
   def: '[一二三四五六七八九零壹贰貳叁肆伍陆陸柒捌玖〇两兩俩倆仨]'
+HalfUnitRegex: !simpleRegex
+  def: 半
 NegativeNumberTermsRegex: !simpleRegex
   def: '[负負]'
 NegativeNumberTermsRegexNum: !simpleRegex

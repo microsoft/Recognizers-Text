@@ -587,7 +587,8 @@ export class BaseMergedParser implements IDateTimeParser {
                 // Mod "after" is also not inclusive the "start" ("After January", the start should be "XXXX-01-31" / "After 2018", the start should be "2017-12-31")
                 // So here the START day should be the inclusive end of the period, which is one day previous to the default end (exclusive end)
                 if (!StringUtility.isNullOrEmpty(start) && !StringUtility.isNullOrEmpty(end)) {
-                    var dateObj = new Date(end);
+                    // Create the end-date with time if not included
+                    var dateObj = new Date(end.includes(':') ? end : end + ' 00:00:00');
                     dateObj.setDate(dateObj.getDate() - 1);
                     result[TimeTypeConstants.START] = DateTimeFormatUtil.formatDate(dateObj);
                 } else {

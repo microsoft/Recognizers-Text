@@ -17,7 +17,7 @@ export namespace ChineseNumeric {
 	export const RoundNumberMap: ReadonlyMap<string, number> = new Map<string, number>([["k", 1000],["m", 1000000],["g", 1000000000],["t", 1000000000000]]);
 	export const RoundNumberMapChar: ReadonlyMap<string, number> = new Map<string, number>([["十", 10],["百", 100],["千", 1000],["万", 10000],["亿", 100000000],["兆", 1000000000000],["拾", 10],["佰", 100],["仟", 1000],["萬", 10000],["億", 100000000]]);
 	export const ZeroToNineMap: ReadonlyMap<string, number> = new Map<string, number>([["0", 0],["1", 1],["2", 2],["3", 3],["4", 4],["5", 5],["6", 6],["7", 7],["8", 8],["9", 9],["零", 0],["一", 1],["二", 2],["三", 3],["四", 4],["五", 5],["六", 6],["七", 7],["八", 8],["九", 9],["〇", 0],["壹", 1],["贰", 2],["貳", 2],["叁", 3],["肆", 4],["伍", 5],["陆", 6],["陸", 6],["柒", 7],["捌", 8],["玖", 9],["０", 0],["１", 1],["２", 2],["３", 3],["４", 4],["５", 5],["６", 6],["７", 7],["８", 8],["９", 9],["半", 0.5],["两", 2],["兩", 2],["俩", 2],["倆", 2],["仨", 3]]);
-	export const FullToHalfMap: ReadonlyMap<string, string> = new Map<string, string>([["０", "0"],["１", "1"],["２", "2"],["３", "3"],["４", "4"],["５", "5"],["６", "6"],["７", "7"],["８", "8"],["９", "9"],["／", "/"],["－", "-"],["，", "\'"],["Ｇ", "G"],["Ｍ", "M"],["Ｔ", "T"],["Ｋ", "K"],["ｋ", "k"],["．", "."]]);
+	export const FullToHalfMap: ReadonlyMap<string, string> = new Map<string, string>([["０", "0"],["１", "1"],["２", "2"],["３", "3"],["４", "4"],["５", "5"],["６", "6"],["７", "7"],["８", "8"],["９", "9"],["／", "/"],["－", "-"],["，", "'"],["Ｇ", "G"],["Ｍ", "M"],["Ｔ", "T"],["Ｋ", "K"],["ｋ", "k"],["．", "."]]);
 	export const TratoSimMap: ReadonlyMap<string, string> = new Map<string, string>([["佰", "百"],["點", "点"],["個", "个"],["幾", "几"],["對", "对"],["雙", "双"]]);
 	export const UnitMap: ReadonlyMap<string, string> = new Map<string, string>([["萬萬", "億"],["億萬", "兆"],["萬億", "兆"],["万万", "亿"],["万亿", "兆"],["亿万", "兆"],[" ", ""],["多", ""],["余", ""],["几", ""]]);
 	export const RoundDirectList = [ "万","萬","亿","兆","億" ];
@@ -29,6 +29,7 @@ export namespace ChineseNumeric {
 	export const DoubleAndRoundRegex = `${ZeroToNineFullHalfRegex}+(\\.${ZeroToNineFullHalfRegex}+)?\\s*[多几余]?[万亿萬億]{1,2}`;
 	export const FracSplitRegex = `又|分\\s*之`;
 	export const ZeroToNineIntegerRegex = `[一二三四五六七八九零壹贰貳叁肆伍陆陸柒捌玖〇两兩俩倆仨]`;
+	export const HalfUnitRegex = `半`;
 	export const NegativeNumberTermsRegex = `[负負]`;
 	export const NegativeNumberTermsRegexNum = `((?<!(\\d+\\s*)|[-－])[-－])`;
 	export const NegativeNumberSignRegex = `^${NegativeNumberTermsRegex}.*|^${NegativeNumberTermsRegexNum}.*`;

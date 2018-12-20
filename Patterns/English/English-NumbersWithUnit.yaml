@@ -770,7 +770,7 @@ AmbiguousDimensionUnitList: !list
     - pts
     - in
     - dm
-    - \"
+    - '"'
 #EnglishNumberWithUnitExtractorConfiguration
 BuildPrefix: !simpleRegex
   def: (?<=(\s|^))
@@ -792,7 +792,7 @@ LengthSuffixList: !dictionary
     Picometer: pm|picometer|picometre|picometers|picometres|pico meter|pico meters|pico metres|pico metre
     Mile: -mile|mile|miles
     Yard: yard|yards
-    Inch: -inch|inch|inches|in|\"
+    Inch: -inch|inch|inches|in|"
     Foot: -foot|foot|feet|ft
     Light year: light year|light-year|light years|light-years
     Pt: pt|pts

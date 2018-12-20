@@ -8369,6 +8369,14 @@
     "Results": []
   },
   {
+    "Input": "Twenty-six people die in accident at Techiman",
+    "Context": {
+      "ReferenceDateTime": "2018-12-13T12:00:00"
+    },
+    "NotSupportedByDesign": "java",
+    "Results": []
+  },
+  {
     "Input": "I will arrange a meeting from 6 to 7",
     "Context": {
       "ReferenceDateTime": "2018-12-20T12:00:00"

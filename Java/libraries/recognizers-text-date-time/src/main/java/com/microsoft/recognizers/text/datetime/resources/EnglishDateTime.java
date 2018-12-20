@@ -1204,8 +1204,8 @@ public class EnglishDateTime {
     public static final List<String> DurationDateRestrictions = Arrays.asList("today", "now");
 
     public static final ImmutableMap<String, String> AmbiguityFiltersDict = ImmutableMap.<String, String>builder()
-        .put("\\bmorning|afternoon|evening|night|day\\b", "\\\\b(good\\\\s+(morning|afternoon|evening|night|day))|(nighty\\\\s+night)\\\\b")
-        .put("\\bmay\\b", "\\\\b((^may i)|(i|you|he|she|we|they)\\\\s+may|(may\\\\s+((((also|not|(also not)|well)\\\\s+)?(be|ask|contain|constitute|email|e-mail|take|have|result|involve|get|work|reply))|(or may not))))\\\\b")
+        .put("\\bmorning|afternoon|evening|night|day\\b", "\\b(good\\s+(morning|afternoon|evening|night|day))|(nighty\\s+night)\\b")
+        .put("\\bmay\\b", "\\b((^may i)|(i|you|he|she|we|they)\\s+may|(may\\s+((((also|not|(also not)|well)\\s+)?(be|ask|contain|constitute|email|e-mail|take|have|result|involve|get|work|reply))|(or may not))))\\b")
         .build();
 
     public static final List<String> MorningTermList = Arrays.asList("morning");
