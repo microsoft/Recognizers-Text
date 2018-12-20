@@ -22,7 +22,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         }
 
         public List<ExtractResult> Extract(string text, DateObject reference)
-        {
+        {            
             var tokens = new List<Token>();
             tokens.AddRange(MatchSimpleCases(text));
             tokens.AddRange(MergeTwoTimePoints(text, reference));
@@ -34,6 +34,9 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 timePeriodErs = TimeZoneUtility.MergeTimeZones(timePeriodErs, config.TimeZoneExtractor.Extract(text, reference), text);
             }
+
+            //TODO: Quick fix to solve german morgen (morning) / morgen (tomorrow) ambiguity, move to config
+            if (text.Equals("morgen")) timePeriodErs.Clear();
 
             return timePeriodErs;
         }

@@ -315,7 +315,7 @@ SpecificTimeBetweenAnd: !nestedRegex
 PrepositionRegex: !simpleRegex
   def: (?<prep>^(um|am|vom|von|in|zur)(\s+(der|dem|den))?$)
 TimeOfDayRegex: !simpleRegex
-  def: \b(?<timeOfDay>(((((?<early>(früh am|am frühen|früher)(\s+|-))|(?<late>(spät am|am späten|später)(\s+|-)))?(morgen(s)?(?! (früh|vor|nach|abend|(nacht|primetime)|morgen))|(vor|nach)mittag(s)?|abend(s)?|früh|(nacht(s)?|primetime))))))\b
+  def: \b(?<timeOfDay>(((((?<early>(früh am|am frühen|früher)(\s+|-))|(?<late>(spät am|am späten|später)(\s+|-)))?((am )?morgen(s)?(?! (früh|vor|nach|abend|(nacht|primetime)|morgen))|(vor|nach)mittag(s)?|abend(s)?|früh|(nacht(s)?|primetime))))))\b
 SpecificTimeOfDayRegex: !nestedRegex
   def: \b((({StrictRelativeRegex}|heute)\s+{TimeOfDayRegex}))\b
   references: [ TimeOfDayRegex, StrictRelativeRegex ]

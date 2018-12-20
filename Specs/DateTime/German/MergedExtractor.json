@@ -61,8 +61,7 @@
   },
   {
     "Input": "Das meeting geht Morgen von 12 bis 14 Uhr.",
-    "Comment": "Returning timerange, not datetimerange",
-    "NotSupported": "dotnet, javascript, python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Morgen von 12 bis 14 Uhr",
@@ -194,8 +193,7 @@
   },
   {
     "Input": "das ist morgen um 4 Uhr",
-    "Comment": "Wrong type. Currently returns time, not datetime.",
-    "NotSupported": "dotnet, javascript, python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "morgen um 4 uhr",
