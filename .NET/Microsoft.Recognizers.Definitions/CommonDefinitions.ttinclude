@@ -46,7 +46,7 @@ namespace Microsoft.Recognizers.Definitions<#= this.Language != null ? "." + thi
         }
 		if (node.Value is IList<object>) {
 			var values = node.Value as IList<object>;
-#>		public static readonly string[] <#= node.Key #> = { <#= string.Join(", ", values.Select(x => string.Format("\"{0}\"", x))) #> };<#
+#>		public static readonly string[] <#= node.Key #> = { <#= string.Join(", ", values.Select(x => GetWriteable(x, "string"))) #> };<#
         }
 		if (nodeType == typeof(SimpleRegex))
 		{

@@ -703,7 +703,7 @@ namespace Microsoft.Recognizers.Definitions.German
 			{ @"zweitausender", 2000 }
 		};
 		public const string DefaultLanguageFallback = @"DMY";
-		public static readonly string[] DurationDateRestrictions = { "heute", "jetzt", "momentan", "aktuell", "gerade" };
+		public static readonly string[] DurationDateRestrictions = { @"heute", @"jetzt", @"momentan", @"aktuell", @"gerade" };
 		public static readonly Dictionary<string, string> AmbiguityFiltersDict = new Dictionary<string, string>
 		{
 			{ @"\bmorgen|nachmittag|abend|nacht|tag\b", @"\b(gut(e|en)?\s+(morgen|nachmittag|abend|nacht|tag))\b" }
