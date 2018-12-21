@@ -10,12 +10,21 @@ import com.microsoft.recognizers.text.utilities.RegExpUtility;
 import com.microsoft.recognizers.text.utilities.StringUtility;
 
 import java.time.LocalDateTime;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+import java.util.function.BiConsumer;
+import java.util.function.Function;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Stream;
-import java.util.function.Function;
-import java.util.function.BiConsumer;
 
 public class BaseDateTimeAltExtractor implements IDateTimeListExtractor {
 
@@ -277,46 +286,11 @@ public class BaseDateTimeAltExtractor implements IDateTimeListExtractor {
         boolean success = extractAndApplyMetadata(extractResults, parentText, false);
 
         if (!success) {
-            success = extractAndApplyMetadata(extractResults, parentText, true );
+            success = extractAndApplyMetadata(extractResults, parentText, true);
         }
 
         if (!success && shouldApplyParentText(extractResults)) {
             success = applyParentText(extractResults, parentText);
-        }
-
-        return success;
-    }
-
-    private boolean shouldApplyParentText(List<ExtractResult> extractResults) {
-        boolean shouldApply = false;
-
-        if (isSupportedAltEntitySequence(extractResults)) {
-            String firstEntityType = extractResults.stream().findFirst().get().type;
-            String lastEntityType = extractResults.get(extractResults.size() - 1).type;
-
-            if (firstEntityType.equals(Constants.SYS_DATETIME_DATE) && lastEntityType.equals(Constants.SYS_DATETIME_DATE)) {
-                shouldApply = true; // "11/20 or 11/22"
-            } else if (firstEntityType.equals(Constants.SYS_DATETIME_TIME) && lastEntityType.equals(Constants.SYS_DATETIME_DATE)) {
-                shouldApply = true; // "7 oclock or 8 oclock"
-            } else if (firstEntityType.equals(Constants.SYS_DATETIME_DATETIME) && lastEntityType.equals(Constants.SYS_DATETIME_DATETIME)) {
-                shouldApply = true; // "Monday 1pm or Tuesday 2pm"
-            }
-        }
-
-        return shouldApply;
-    }
-
-    private boolean applyParentText(List<ExtractResult> extractResults, String parentText) {
-        boolean success = false;
-
-        if (isSupportedAltEntitySequence(extractResults)) {
-            for (ExtractResult extractResult : extractResults) {
-                HashMap<String, Object> metadata = createMetadata(extractResult.type, parentText, null);
-                extractResult = extractResult.withData(mergeMetadata(extractResult.data, metadata));
-                extractResult = extractResult.withType(getExtractorName());
-            }
-
-            success = true;
         }
 
         return success;
@@ -367,11 +341,46 @@ public class BaseDateTimeAltExtractor implements IDateTimeListExtractor {
         return  success;
     }
 
+    private boolean shouldApplyParentText(List<ExtractResult> extractResults) {
+        boolean shouldApply = false;
+
+        if (isSupportedAltEntitySequence(extractResults)) {
+            String firstEntityType = extractResults.stream().findFirst().get().type;
+            String lastEntityType = extractResults.get(extractResults.size() - 1).type;
+
+            if (firstEntityType.equals(Constants.SYS_DATETIME_DATE) && lastEntityType.equals(Constants.SYS_DATETIME_DATE)) {
+                shouldApply = true; // "11/20 or 11/22"
+            } else if (firstEntityType.equals(Constants.SYS_DATETIME_TIME) && lastEntityType.equals(Constants.SYS_DATETIME_DATE)) {
+                shouldApply = true; // "7 oclock or 8 oclock"
+            } else if (firstEntityType.equals(Constants.SYS_DATETIME_DATETIME) && lastEntityType.equals(Constants.SYS_DATETIME_DATETIME)) {
+                shouldApply = true; // "Monday 1pm or Tuesday 2pm"
+            }
+        }
+
+        return shouldApply;
+    }
+
+    private boolean applyParentText(List<ExtractResult> extractResults, String parentText) {
+        boolean success = false;
+
+        if (isSupportedAltEntitySequence(extractResults)) {
+            for (ExtractResult extractResult : extractResults) {
+                HashMap<String, Object> metadata = createMetadata(extractResult.type, parentText, null);
+                extractResult = extractResult.withData(mergeMetadata(extractResult.data, metadata));
+                extractResult = extractResult.withType(getExtractorName());
+            }
+
+            success = true;
+        }
+
+        return success;
+    }
+
     private boolean isSupportedAltEntitySequence(List<ExtractResult> altEntities) {
         Stream<ExtractResult> subSeq = altEntities.stream().skip(1);
         List<String> entityTypes = new ArrayList<>();
 
-        for(ExtractResult er : subSeq.toArray(ExtractResult[]::new)) {
+        for (ExtractResult er : subSeq.toArray(ExtractResult[]::new)) {
             if (!entityTypes.contains(er.type)) {
                 entityTypes.add(er.type);
             }
@@ -395,10 +404,11 @@ public class BaseDateTimeAltExtractor implements IDateTimeListExtractor {
         return metadata;
     }
 
-    private ExtractResult extractContext(ExtractResult er, ArrayList<Function<String, List<ExtractResult>>> extractMethods, BiConsumer<ExtractResult, ExtractResult> postProcessMethod) {
+    private ExtractResult extractContext(ExtractResult er, ArrayList<Function<String,
+        List<ExtractResult>>> extractMethods, BiConsumer<ExtractResult, ExtractResult> postProcessMethod) {
         ExtractResult contextEr = null;
 
-        for (Function<String, List<ExtractResult>> extractMethod : extractMethods ) {
+        for (Function<String, List<ExtractResult>> extractMethod : extractMethods) {
             List<ExtractResult> contextErCandidates = extractMethod.apply(er.text);
             if (contextErCandidates.size() == 1) {
                 contextEr = contextErCandidates.get(contextErCandidates.size() - 1);
@@ -419,7 +429,8 @@ public class BaseDateTimeAltExtractor implements IDateTimeListExtractor {
 
     private boolean shouldCreateMetadata(List<ExtractResult> originalErs, ExtractResult contextEr) {
         // For alternative entities sequence which are all DatePeriod, we should create metadata even if context is null
-        return (contextEr != null || (originalErs.get(0).type == Constants.SYS_DATETIME_DATEPERIOD && originalErs.get(originalErs.size() - 1).type == Constants.SYS_DATETIME_DATEPERIOD));
+        return (contextEr != null ||
+            (originalErs.get(0).type == Constants.SYS_DATETIME_DATEPERIOD && originalErs.get(originalErs.size() - 1).type == Constants.SYS_DATETIME_DATEPERIOD));
     }
 
     private void applyMetadata(List<ExtractResult> ers, HashMap<String, Object> metadata, String parentText) {
@@ -473,7 +484,7 @@ public class BaseDateTimeAltExtractor implements IDateTimeListExtractor {
     private List<ExtractResult> extractRelativePrefixContext(String entityText) {
         List<ExtractResult> results = new ArrayList<>();
 
-        for(Pattern pattern : config.getRelativePrefixList()) {
+        for (Pattern pattern : config.getRelativePrefixList()) {
             Matcher match = pattern.matcher(entityText);
 
             if (match.find()) {
@@ -506,7 +517,7 @@ public class BaseDateTimeAltExtractor implements IDateTimeListExtractor {
         return results;
     }
 
-    private BiConsumer<ExtractResult, ExtractResult> getPostProcessMethod (String firstEntityType, String lastEntityType) {
+    private BiConsumer<ExtractResult, ExtractResult> getPostProcessMethod(String firstEntityType, String lastEntityType) {
         if (firstEntityType.equals(Constants.SYS_DATETIME_DATETIMEPERIOD) && lastEntityType.equals(Constants.SYS_DATETIME_DATE)) {
             return (contextEr, originalEr) -> {
                 contextEr.setText(originalEr.text.substring(0, contextEr.start) + originalEr.text.substring(contextEr.start + contextEr.length));

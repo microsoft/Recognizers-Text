@@ -117,8 +117,8 @@ public class BaseDateTimeAltParser implements IDateTimeParser {
                 dateTimePr = this.config.getDateTimePeriodParser().parse(dateTimeEr, referenceTime);
             }
         } else if (subType.equals(Constants.SYS_DATETIME_DATETIMEPERIOD)) {
-                dateTimeEr = dateTimeEr.withType(Constants.SYS_DATETIME_DATETIMEPERIOD);
-                dateTimePr = this.config.getDateTimePeriodParser().parse(dateTimeEr, referenceTime);
+            dateTimeEr = dateTimeEr.withType(Constants.SYS_DATETIME_DATETIMEPERIOD);
+            dateTimePr = this.config.getDateTimePeriodParser().parse(dateTimeEr, referenceTime);
         } else if (subType.equals(Constants.SYS_DATETIME_DATEPERIOD)) {
             dateTimeEr = dateTimeEr.withType(Constants.SYS_DATETIME_DATEPERIOD);
             dateTimePr = this.config.getDatePeriodParser().parse(dateTimeEr, referenceTime);
