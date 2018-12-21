@@ -999,8 +999,8 @@ DurationDateRestrictions: [ today, now ]
 AmbiguityFiltersDict: !dictionary
   types: [ string, string ]
   entries:
-    '\\bmorning|afternoon|evening|night|day\\b': '\\b(good\\s+(morning|afternoon|evening|night|day))|(nighty\\s+night)\\b'
-    '\\bmay\\b': '\\b((^may i)|(i|you|he|she|we|they)\\s+may|(may\\s+((((also|not|(also not)|well)\\s+)?(be|ask|contain|constitute|email|e-mail|take|have|result|involve|get|work|reply))|(or may not))))\\b'
+    '\bmorning|afternoon|evening|night|day\b': '\b(good\s+(morning|afternoon|evening|night|day))|(nighty\s+night)\b'
+    '\bmay\b': '\b((^may i)|(i|you|he|she|we|they)\s+may|(may\s+((((also|not|(also not)|well)\s+)?(be|ask|contain|constitute|email|e-mail|take|have|result|involve|get|work|reply))|(or may not))))\b'
 # For TimeOfDay resolution
 MorningTermList: !list
   types: [ string ]

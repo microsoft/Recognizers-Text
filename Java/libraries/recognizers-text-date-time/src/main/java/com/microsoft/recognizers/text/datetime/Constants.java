@@ -38,7 +38,7 @@ public class Constants {
     public static final String SubType = "subType";
 
     // Comment - internal tag used during entity processing, never exposed to users. 
-    // Tags are filtered out in BaseMergedParser DateTimeResolution()
+    // Tags are filtered out in BaseMergedDateTimeParser DateTimeResolution()
     public static final String Comment = "Comment";
     // AmPm time representation for time parser
     public static final String Comment_AmPm = "ampm";
@@ -70,6 +70,8 @@ public class Constants {
     public static final String LESS_THAN_MOD = "less";
 
     public static final String REF_UNDEF_MOD = "ref_undef";
+
+    public static final String APPROX_MOD = "approx";
 
     // Invalid year
     public static final int InvalidYear = Integer.MIN_VALUE;
@@ -104,6 +106,9 @@ public class Constants {
     public static final int HalfDayHourCount = 12;
     // hours of a half mid-day-duration
     public static final int HalfMidDayDurationHourCount = 2;
+
+    // the length of four digits year, e.g., 2018
+    public static final int FourDigitsYearLength = 4;
 
     public static final String DefaultLanguageFallback_MDY = "MDY";
     public static final String DefaultLanguageFallback_DMY = "DMY";

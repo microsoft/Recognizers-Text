@@ -177,14 +177,14 @@ public class BaseDateTimeParser implements IDateTimeParser {
         LocalDateTime time = (LocalDateTime)((DateTimeResolutionResult)prTime.value).getPastValue();
 
         int hour = time.getHour();
-        int minute = time.getMinute();
-        int second = time.getSecond();
+        int min = time.getMinute();
+        int sec = time.getSecond();
 
         // Handle morning, afternoon
-        if (RegExpUtility.getMatches(config.getPMTimeRegex(), text).length != 0 && hour < Constants.HalfDayHourCount) {
+        if (RegExpUtility.getMatches(config.getPMTimeRegex(), text).length != 0 && withinAfternoonHours(hour)) {
             hour += Constants.HalfDayHourCount;
         } else if (RegExpUtility.getMatches(config.getAMTimeRegex(), text).length != 0 &&
-                hour >= Constants.HalfDayHourCount) {
+                withinMorningHoursAndNoon(hour, min, sec)) {
             hour -= Constants.HalfDayHourCount;
         }
 
@@ -203,9 +203,9 @@ public class BaseDateTimeParser implements IDateTimeParser {
         }
 
         result.setFutureValue(DateUtil.safeCreateFromMinValue(futureDate.getYear(), futureDate.getMonthValue(),
-                futureDate.getDayOfMonth(), hour, minute, second));
+                futureDate.getDayOfMonth(), hour, min, sec));
         result.setPastValue(DateUtil.safeCreateFromMinValue(pastDate.getYear(), pastDate.getMonthValue(),
-                pastDate.getDayOfMonth(), hour, minute, second));
+                pastDate.getDayOfMonth(), hour, min, sec));
 
         result.setSuccess(true);
 
@@ -377,6 +377,14 @@ public class BaseDateTimeParser implements IDateTimeParser {
         result.setSuccess(true);
 
         return result;
+    }
+
+    private boolean withinAfternoonHours(int hour) {
+        return hour < Constants.HalfDayHourCount;
+    }
+
+    private boolean withinMorningHoursAndNoon(int hour, int min, int sec) {
+        return (hour > Constants.HalfDayHourCount || (hour == Constants.HalfDayHourCount && (min > 0 || sec > 0)));
     }
 
     private DateTimeResolutionResult parserDurationWithAgoAndLater(String text, LocalDateTime reference) {

@@ -42,11 +42,11 @@ namespace Microsoft.Recognizers.Definitions<#= this.Language != null ? "." + thi
 #>		public const char <#= node.Key #> = '<#= node.Value #>';<#
         }
 		if (nodeType == typeof(string)) {
-#>		public const string <#= node.Key #> = "<#= node.Value #>";<#
+#>		public const string <#= node.Key #> = @"<#= node.Value #>";<#
         }
 		if (node.Value is IList<object>) {
 			var values = node.Value as IList<object>;
-#>		public static readonly string[] <#= node.Key #> = { <#= string.Join(", ", values.Select(x => string.Format("\"{0}\"", x))) #> };<#
+#>		public static readonly string[] <#= node.Key #> = { <#= string.Join(", ", values.Select(x => GetWriteable(x, "string"))) #> };<#
         }
 		if (nodeType == typeof(SimpleRegex))
 		{
@@ -105,12 +105,12 @@ namespace Microsoft.Recognizers.Definitions<#= this.Language != null ? "." + thi
 		}
 		else {
 			switch (valueType) {
-				case "char": return string.Format("'{0}'", value);
+				case "char": return string.Format("'{0}'", value.ToString().Replace("'", @"\'"));
 				case "int": 
 				case "long": 
 				case "double": 
 				case "float": return string.Format("{0}", value);
-				default: return string.Format("\"{0}\"", value);
+				default: return string.Format("@\"{0}\"", value.ToString().Replace("\"", "\"\""));
 			}
 		}
 	}

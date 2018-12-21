@@ -528,12 +528,12 @@ public class JapaneseNumericWithUnit {
         .put("New Taiwan dollar", "nt$|nt $")
         .put("Samoan tālā", "ws$")
         .put("Chinese yuan", "￥")
-        .put("Japanese yen", "¥|\\\\")
+        .put("Japanese yen", "¥|\\")
         .put("Turkish lira", "₺")
         .put("Euro", "€")
         .put("Pound", "£")
         .put("Costa Rican colón", "₡")
         .build();
 
-    public static final List<String> CurrencyAmbiguousValues = Arrays.asList("円", "銭", "\\\\");
+    public static final List<String> CurrencyAmbiguousValues = Arrays.asList("円", "銭", "\\");
 }

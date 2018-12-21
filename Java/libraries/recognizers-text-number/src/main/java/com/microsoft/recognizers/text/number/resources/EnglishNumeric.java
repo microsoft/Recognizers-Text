@@ -420,6 +420,6 @@ public class EnglishNumeric {
         .build();
 
     public static final ImmutableMap<String, String> AmbiguityFiltersDict = ImmutableMap.<String, String>builder()
-        .put("\\bone\\b", "\\\\b(the|this|that|which)\\\\s+(one)\\\\b")
+        .put("\\bone\\b", "\\b(the|this|that|which)\\s+(one)\\b")
         .build();
 }
