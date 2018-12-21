@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime
@@ -511,11 +512,11 @@ namespace Microsoft.Recognizers.Text.DateTime
         }
 
         public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)
-        {    
+        {
             return candidateResults;
         }
 
-        private bool IsDurationWithBeforeAndAfter(ExtractResult er)                                                                                                                                              
+        private bool IsDurationWithBeforeAndAfter(ExtractResult er)
         {
             return er.Metadata != null && er.Metadata.IsDurationWithBeforeAndAfter;
         }

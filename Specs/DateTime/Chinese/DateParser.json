@@ -1,5 +1,74 @@
 [
   {
+    "Input": "29日",
+    "Context": {
+      "ReferenceDateTime": "2018-02-10T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "29日",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-XX-29",
+          "FutureResolution": {
+            "date": "2018-01-29"
+          },
+          "PastResolution": {
+            "date": "2018-01-29"
+          }
+        },
+        "Start": 0,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "29日",
+    "Context": {
+      "ReferenceDateTime": "2016-02-10T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "29日",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-XX-29",
+          "FutureResolution": {
+            "date": "2016-02-29"
+          },
+          "PastResolution": {
+            "date": "2016-01-29"
+          }
+        },
+        "Start": 0,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "29日",
+    "Context": {
+      "ReferenceDateTime": "2016-03-10T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "29日",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-XX-29",
+          "FutureResolution": {
+            "date": "2016-03-29"
+          },
+          "PastResolution": {
+            "date": "2016-02-29"
+          }
+        },
+        "Start": 0,
+        "Length": 3
+      }
+    ]
+  },
+  {
     "Input": "2010-01-29",
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
@@ -971,7 +1040,7 @@
       "ReferenceDateTime": "2018-09-18T18:00:00"
     },
     "Results": [
-      {
+     {
         "Text": "週三",
         "Type": "date",
         "Value": {
@@ -985,75 +1054,6 @@
         },
         "Start": 0,
         "Length": 2
-      }
-    ]
-  },
-  {
-    "Input": "29日",
-    "Context": {
-      "ReferenceDateTime": "2018-02-10T00:00:00"
-    },
-    "Results": [
-      {
-        "Text": "29日",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-XX-29",
-          "FutureResolution": {
-            "date": "2018-01-29"
-          },
-          "PastResolution": {
-            "date": "2018-01-29"
-          }
-        },
-        "Start": 0,
-        "Length": 3
-      }
-    ]
-  },
-  {
-    "Input": "29日",
-    "Context": {
-      "ReferenceDateTime": "2016-02-10T00:00:00"
-    },
-    "Results": [
-      {
-        "Text": "29日",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-XX-29",
-          "FutureResolution": {
-            "date": "2016-02-29"
-          },
-          "PastResolution": {
-            "date": "2016-01-29"
-          }
-        },
-        "Start": 0,
-        "Length": 3
-      }
-    ]
-  },
-  {
-    "Input": "29日",
-    "Context": {
-      "ReferenceDateTime": "2016-03-10T00:00:00"
-    },
-    "Results": [
-      {
-        "Text": "29日",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-XX-29",
-          "FutureResolution": {
-            "date": "2016-03-29"
-          },
-          "PastResolution": {
-            "date": "2016-02-29"
-          }
-        },
-        "Start": 0,
-        "Length": 3
       }
     ]
   }
