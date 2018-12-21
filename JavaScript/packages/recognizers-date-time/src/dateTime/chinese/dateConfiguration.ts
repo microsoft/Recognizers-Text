@@ -295,9 +295,9 @@ export class ChineseDateParser extends BaseDateParser {
                 futureDate = DateUtils.safeCreateFromMinValue(year, month + 1, day);
                 pastDate = DateUtils.safeCreateFromMinValue(year, month - 1, day);
             } else {
-                if(!((year % 4 == 0)&&(year % 100 != 0) || (year % 400 == 0)) && (month == 1) && (day == 29)){
-                    futureDate = DateUtils.safeCreateFromMinValue(year, month-1, day);
-                    pastDate = DateUtils.safeCreateFromMinValue(year, month-1, day);
+                if(!this.isLeapYear(year) && this.isFeb29th(month, day)){
+                    futureDate = DateUtils.safeCreateFromMinValue(year, month - 1, day);
+                    pastDate = DateUtils.safeCreateFromMinValue(year, month - 1, day);
                 }
                 else{
                     futureDate = DateUtils.safeCreateFromMinValue(year, month, day);
@@ -306,12 +306,15 @@ export class ChineseDateParser extends BaseDateParser {
                 
                 if (!hasMonth) {
                     if (futureDate < referenceDate) {
-                        if(((year % 4 == 0) && (year % 100 != 0) || (year % 400 == 0)) ||((month!=1) && (day != 29)))
+                        if(this.isLeapYear(year) || !this.isFeb29th(month, day)) {
                             futureDate = DateUtils.addMonths(futureDate, 1);
+                        }
                     }
-                    if (pastDate >= referenceDate)
-                        if(((year % 4 == 0) && (year % 100 != 0) || (year % 400 == 0)) || ((month!=2) && (day != 29)))
+                    if (pastDate >= referenceDate) {
+                        if(this.isLeapYear(year) || !this.isMar29th(month, day)) {
                             pastDate = DateUtils.addMonths(pastDate, -1);
+                        }
+                    }
                 } else if (hasMonth && !hasYear) {
                     if (futureDate < referenceDate) futureDate = DateUtils.addYears(futureDate, 1);
                     if (pastDate >= referenceDate) pastDate = DateUtils.addYears(pastDate, -1);
@@ -474,5 +477,17 @@ export class ChineseDateParser extends BaseDateParser {
         return this.config.dayOfMonth.get(source) > 31
             ? this.config.dayOfMonth.get(source) % 31
             : this.config.dayOfMonth.get(source);
+    }
+
+    private isLeapYear(year): boolean{
+        return (year % 4 === 0) && (year % 100 !== 0) || (year % 400 === 0);
+    }
+
+    private isFeb29th(month, day): boolean{
+        return month === 1 && day === 29;
+    }
+
+    private isMar29th(month, day): boolean{
+        return month === 2 && day === 29;
     }
 }
