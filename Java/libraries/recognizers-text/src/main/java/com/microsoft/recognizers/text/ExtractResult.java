@@ -4,9 +4,9 @@ public class ExtractResult {
 
     public final Integer start;
     public final Integer length;
-    public final String text;
-    public final String type;
     public final Object data;
+    public String type;
+    public String text;
 
     public ExtractResult() {
         this(null, null, null, null);
@@ -85,5 +85,13 @@ public class ExtractResult {
 
     public boolean isCover(ExtractResult er) {
         return isCover(this, er);
+    }
+
+    public void setText(String text) {
+        this.text = text;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 }
