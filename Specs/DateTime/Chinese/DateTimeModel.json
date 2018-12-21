@@ -2641,5 +2641,125 @@
         }
       }
     ]
+  },
+  {
+    "Input": "还有半小时饭就做好了",
+    "Context": {
+      "ReferenceDateTime": "2018-12-14T12:00:00"
+    },
+    "NotSupportedByDesign": "Java",
+    "Results": [
+      {
+        "Text": "半小时",
+        "Start": 2,
+        "End": 4,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT0.5H",
+              "type": "duration",
+              "value": "1800"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "他在希腊旅游了半个月",
+    "Context": {
+      "ReferenceDateTime": "2018-12-14T12:00:00"
+    },
+    "NotSupportedByDesign": "Java",
+    "Results": [
+      {
+        "Text": "半个月",
+        "Start": 7,
+        "End": 9,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P0.5M",
+              "type": "duration",
+              "value": "1296000"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "这个饭店已经营业半年了",
+    "Context": {
+      "ReferenceDateTime": "2018-12-14T12:00:00"
+    },
+    "NotSupportedByDesign": "Java",
+    "Results": [
+      {
+        "Text": "半年",
+        "Start": 8,
+        "End": 9,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P0.5Y",
+              "type": "duration",
+              "value": "15768000"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "已经过了一个钟头",
+    "Context": {
+      "ReferenceDateTime": "2018-12-14T12:00:00"
+    },
+    "NotSupportedByDesign": "Java",
+    "Results": [
+      {
+        "Text": "一个钟头",
+        "Start": 4,
+        "End": 7,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT1H",
+              "type": "duration",
+              "value": "3600"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "已经过了半个钟头",
+    "Context": {
+      "ReferenceDateTime": "2018-12-14T12:00:00"
+    },
+    "NotSupportedByDesign": "Java",
+    "Results": [
+      {
+        "Text": "半个钟头",
+        "Start": 4,
+        "End": 7,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT0.5H",
+              "type": "duration",
+              "value": "1800"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

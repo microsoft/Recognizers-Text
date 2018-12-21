@@ -995,5 +995,36 @@
         }
       }
     ]
+  },
+  {
+    "Input": "I will arrange a meeting from 6 to 7.",
+    "Context": {
+      "ReferenceDateTime": "2018-12-20T12:00:00"
+    },
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "from 6 to 7",
+        "Start": 25,
+        "End": 35,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(T06,T07,PT1H)",
+              "type": "timerange",
+              "start": "06:00:00",
+              "end": "07:00:00"
+            },
+            {
+              "timex": "(T18,T19,PT1H)",
+              "type": "timerange",
+              "start": "18:00:00",
+              "end": "19:00:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

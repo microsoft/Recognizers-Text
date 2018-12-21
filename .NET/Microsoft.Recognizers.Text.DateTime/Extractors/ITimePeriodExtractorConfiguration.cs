@@ -12,6 +12,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         IEnumerable<Regex> SimpleCasesRegex { get; }
 
+        IEnumerable<Regex> PureNumberRegex { get; }
+
         Regex TillRegex { get; }
 
         Regex TimeOfDayRegex { get; }

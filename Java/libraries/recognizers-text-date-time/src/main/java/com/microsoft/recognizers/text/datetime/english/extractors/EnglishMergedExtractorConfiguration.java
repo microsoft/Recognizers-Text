@@ -29,6 +29,8 @@ import java.util.stream.Collectors;
 
 import org.javatuples.Pair;
 
+import org.javatuples.Pair;
+
 public class EnglishMergedExtractorConfiguration extends BaseOptionsConfiguration implements IMergedExtractorConfiguration {
 
     public static final Pattern AfterRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.AfterRegex, Pattern.CASE_INSENSITIVE);

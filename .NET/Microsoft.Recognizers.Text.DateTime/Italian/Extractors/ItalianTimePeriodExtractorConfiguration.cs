@@ -92,6 +92,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public IEnumerable<Regex> SimpleCasesRegex => new[] { PureNumFromTo, PureNumBetweenAnd, PmRegex, AmRegex };
 
+        public IEnumerable<Regex> PureNumberRegex => new[] { PureNumFromTo, PureNumBetweenAnd };
+
         Regex ITimePeriodExtractorConfiguration.TillRegex => TillRegex;
 
         Regex ITimePeriodExtractorConfiguration.TimeOfDayRegex => ItalianDateTimeExtractorConfiguration.TimeOfDayRegex;

@@ -172,7 +172,7 @@ namespace Microsoft.Recognizers.Definitions.English
 		public static readonly string SpecificTimeOfDayRegex = $@"\b(({StrictRelativeRegex}\s+{TimeOfDayRegex})\b|\btonight)s?\b";
 		public static readonly string TimeFollowedUnit = $@"^\s*{TimeUnitRegex}";
 		public static readonly string TimeNumberCombinedWithUnit = $@"\b(?<num>\d+(\.\d*)?){TimeUnitRegex}";
-		public static readonly string[] BusinessHourSplitStrings = { "business", "hour" };
+		public static readonly string[] BusinessHourSplitStrings = { @"business", @"hour" };
 		public const string NowRegex = @"\b(?<now>(right\s+)?now|as soon as possible|asap|recently|previously)\b";
 		public const string SuffixRegex = @"^\s*(in the\s+)?(morning|afternoon|evening|night)\b";
 		public const string DateTimeTimeOfDayRegex = @"\b(?<timeOfDay>morning|afternoon|night|evening)\b";
@@ -636,7 +636,7 @@ namespace Microsoft.Recognizers.Definitions.English
 			@"say",
 			@"like"
 		};
-		public static readonly string[] DurationDateRestrictions = { "today", "now" };
+		public static readonly string[] DurationDateRestrictions = { @"today", @"now" };
 		public static readonly Dictionary<string, string> AmbiguityFiltersDict = new Dictionary<string, string>
 		{
 			{ @"\bmorning|afternoon|evening|night|day\b", @"\b(good\s+(morning|afternoon|evening|night|day))|(nighty\s+night)\b" },
