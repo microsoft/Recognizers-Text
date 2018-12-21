@@ -1,4 +1,5 @@
-[{
+[
+  {
     "Input": "When she was five years old, she learned to ride a bike.",
     "Results": [
       {
@@ -12,8 +13,7 @@
         "End": 26
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "This saga is ten years old.",
     "Results": [
@@ -28,8 +28,7 @@
         "End": 25
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "I'm only 29 years old!",
     "Results": [
@@ -44,8 +43,7 @@
         "End": 20
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Now, after ninety five years of age, perspectives change.",
     "Results": [
@@ -60,8 +58,7 @@
         "End": 34
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "The Great Wall of China is more than 500 years old and extends for more than 5,000 miles.",
     "Results": [
@@ -76,8 +73,7 @@
         "End": 49
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "She's 60 years old; she was born in May 8, 1945.",
     "Results": [
@@ -92,8 +88,7 @@
         "End": 17
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "25% of cases are not diagnosed until around 3 years of age.",
     "Results": [
@@ -108,8 +103,7 @@
         "End": 57
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "When will there be pressure to fulfil a promise that is one year old?",
     "Results": [
@@ -124,8 +118,7 @@
         "End": 67
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "It happened when the baby was only ten months old.",
     "Results": [
@@ -140,8 +133,7 @@
         "End": 48
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "The committee proposal is 8 months old.",
     "Results": [
@@ -156,8 +148,7 @@
         "End": 37
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Aproximately 50% of cases are diagnosed at around eighteen months of age.",
     "Results": [
@@ -172,8 +163,7 @@
         "End": 71
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "It is possible, but in 2006 95% of them were younger than three months old.",
     "Results": [
@@ -188,8 +178,7 @@
         "End": 73
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "If we go ahead in December, it will be three weeks old.",
     "Results": [
@@ -204,8 +193,7 @@
         "End": 53
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "At 6 weeks of age, one can already celebrate Christmas.",
     "Results": [
@@ -220,8 +208,7 @@
         "End": 16
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "A 90 day old utilities bill is quite late.",
     "Results": [
@@ -236,8 +223,7 @@
         "End": 11
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "He is about 40 - 50 years old.",
     "NotSupported": "javascript, java",

@@ -52,7 +52,7 @@
               "timex": "2018",
               "type": "daterange",
               "start": "2018-01-01",
-			  "end": "2019-01-01"
+              "end": "2019-01-01"
             }
           ]
         }
@@ -197,8 +197,7 @@
         }
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Ayer me encontré a Obama en Taco Bell y me pidio $ 5.00 prestados. Me los devolverá el 3 de Enero del 2019",
     "Context": {
@@ -237,8 +236,7 @@
         }
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Ayer me encontré a Obama en Taco Bell y me pidio 5.00$ prestados. Me los devolverá el 3 de Enero del 2019",
     "Context": {
@@ -277,8 +275,7 @@
         }
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Ayer me encontré a Obama en Taco Bell y me pidio 5.00 $ prestados. Me los devolverá el 3 de Enero del 2019",
     "Context": {
@@ -356,8 +353,7 @@
         }
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Ayer me encontré a Obama en Taco Bell y me pidio $ 5,00 prestados. Me los devolverá el 3 de Enero del 2019",
     "Context": {
@@ -396,8 +392,7 @@
         }
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Ayer me encontré a Obama en Taco Bell y me pidio 5,00$ prestados. Me los devolverá el 3 de Enero del 2019",
     "Context": {
@@ -436,8 +431,7 @@
         }
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Ayer me encontré a Obama en Taco Bell y me pidio 5,00 $ prestados. Me los devolverá el 3 de Enero del 2019",
     "Context": {
@@ -476,8 +470,7 @@
         }
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Que tal 00",
     "Context": {
@@ -485,8 +478,7 @@
     },
     "NotSupported": "python",
     "Results": []
-  }
-  ,
+  },
   {
     "Input": "En este registro, el Señor Carlos Duarte, que reside en la 36 Avenida “A” 15-00 Zona 5, Jardines de la Asuncion, Ciudad de Guatemala, certifica que él le pago un monto de 50,000 quetzales a la Sra. Margarita Orellana.",
     "Context": {

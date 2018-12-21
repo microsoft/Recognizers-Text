@@ -1,135 +1,128 @@
-[{
-  "Input": "100%",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "100%",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "100%"
+[
+  {
+    "Input": "100%",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "100%",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "100%"
+        }
       }
-    }
-  ]
-}
-,
-{
-  "Input": " 100% ",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "100%",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "100%"
+    ]
+  },
+  {
+    "Input": " 100% ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "100%",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "100%"
+        }
       }
-    }
-  ]
-}
-,
-{
-  "Input": " 100 percento",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "100 percento",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "100%"
+    ]
+  },
+  {
+    "Input": " 100 percento",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "100 percento",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "100%"
+        }
       }
-    }
-  ]
-}
-,
-{
-  "Input": " 100 percentuale",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "100 percentuale",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "100%"
+    ]
+  },
+  {
+    "Input": " 100 percentuale",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "100 percentuale",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "100%"
+        }
       }
-    }
-  ]
-}
-,
-{
-  "Input": "240 percento",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "240 percento",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "240%"
+    ]
+  },
+  {
+    "Input": "240 percento",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "240 percento",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "240%"
+        }
       }
-    }
-  ]
-}
-,
-{
-  "Input": "venti percento",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "venti percento",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "20%"
+    ]
+  },
+  {
+    "Input": "venti percento",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "venti percento",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "20%"
+        }
       }
-    }
-  ]
-}
-,
-{
-  "Input": "trenta percento",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "trenta percento",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "30%"
+    ]
+  },
+  {
+    "Input": "trenta percento",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "trenta percento",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "30%"
+        }
       }
-    }
-  ]
-}
-,
-{
-  "Input": "cento percento",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "cento percento",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "100%"
+    ]
+  },
+  {
+    "Input": "cento percento",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "cento percento",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "100%"
+        }
       }
-    }
-  ]
-}
-,
-{
-  "Input": "10 percento",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "10 percento",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "10%"
+    ]
+  },
+  {
+    "Input": "10 percento",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "10 percento",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "10%"
+        }
       }
-    }
-  ]
-}
+    ]
+  }
 ]

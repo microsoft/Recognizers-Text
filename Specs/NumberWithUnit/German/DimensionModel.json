@@ -15,8 +15,7 @@
         "End": 3
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Das Ding ist mindestens 3 Zoll breit.",
     "NotSupportedByDesign": "python",
@@ -33,8 +32,7 @@
         "End": 29
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Da müssen noch 3 Teelöffel Salz rein.",
     "NotSupportedByDesign": "python",
@@ -51,8 +49,7 @@
         "End": 25
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Auf dem Oktoberfest wurden bisher insgesamt ca. achtzig Millionen liter Bier ausgeschenkt.",
     "NotSupportedByDesign": "python",
@@ -69,8 +66,7 @@
         "End": 70
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Auf dem Oktoberfest wurden bisher insgesamt ca. achtzig Millionen liter Bier ausgeschenkt.",
     "NotSupportedByDesign": "python",
@@ -87,8 +83,7 @@
         "End": 70
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Ein Fußballfeld ist zwischen 4.050 m² und 10.800 m² groß.",
     "NotSupportedByDesign": "python",
@@ -103,8 +98,7 @@
         },
         "Start": 29,
         "End": 36
-      }
-      ,
+      },
       {
         "Text": "10.800 m²",
         "TypeName": "dimension",
@@ -116,8 +110,7 @@
         "End": 50
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Eine Geschwindigkeitsbegrenzung von 120 km/h macht auf der Autobahn keinen Sinn.",
     "NotSupportedByDesign": "python",
@@ -134,8 +127,7 @@
         "End": 43
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Dafür brauchen wir mindestens 12 Kubikmeter Beton.",
     "NotSupportedByDesign": "python",
@@ -152,8 +144,7 @@
         "End": 42
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Ein Pfund Hack bitte.",
     "NotSupportedByDesign": "python",
@@ -170,8 +161,7 @@
         "End": 8
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Das dürften ca. 50 Gigabyte an Daten sein die übertragen werden müssen.",
     "NotSupportedByDesign": "python",
@@ -188,8 +178,7 @@
         "End": 26
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Dreizehn Meilen westlich von hier liegt die nächste Stadt.",
     "NotSupportedByDesign": "python",
@@ -206,8 +195,7 @@
         "End": 14
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Ein Tennisfeld(Einzel) ist 195,63 Quadratmeter groß. Für Doppel sind es 260,76 Quadratmeter. Dagegen wirkt eine Tischtennisfeld mit 4,18m^2 mickrig.",
     "NotSupportedByDesign": "python",
@@ -222,8 +210,7 @@
         },
         "Start": 27,
         "End": 45
-      }
-      ,
+      },
       {
         "Text": "260,76 quadratmeter",
         "TypeName": "dimension",
@@ -233,8 +220,7 @@
         },
         "Start": 72,
         "End": 90
-      }
-      ,
+      },
       {
         "Text": "4,18m^2",
         "TypeName": "dimension",
@@ -246,8 +232,7 @@
         "End": 138
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Während der 4004-Prozessor noch eine Strukturgröße von 10 μm hatte, werden die Prozessoren mit der Skylake-Architektur mit 14 nm gefertigt. Toshibas NAND-Flashspeicher von 2013 hatte eine von 19 Nanometern.",
     "NotSupportedByDesign": "python",
@@ -262,8 +247,7 @@
         },
         "Start": 55,
         "End": 59
-      }
-      ,
+      },
       {
         "Text": "14 nm",
         "TypeName": "dimension",
@@ -273,8 +257,7 @@
         },
         "Start": 123,
         "End": 127
-      }
-      ,
+      },
       {
         "Text": "19 nanometern",
         "TypeName": "dimension",
@@ -286,8 +269,7 @@
         "End": 204
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Das Licht bewegt sich mit 299.792.458 Metern pro Sekunde durch den leeren Raum.",
     "NotSupportedByDesign": "python",
@@ -304,8 +286,7 @@
         "End": 55
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Bei 500Km ist Pause.",
     "NotSupportedByDesign": "python",
@@ -322,8 +303,7 @@
         "End": 8
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Eine BGM-109 erreich eine Höchstgeschwindigkeit von 878 km/h bzw. 244 Metern pro Sekunde",
     "NotSupportedByDesign": "python",
@@ -338,8 +318,7 @@
         },
         "Start": 52,
         "End": 59
-      }
-      ,
+      },
       {
         "Text": "244 metern pro sekunde",
         "TypeName": "dimension",
@@ -351,8 +330,7 @@
         "End": 87
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Wir brauchen da noch einen Teelöffel Salz.",
     "NotSupportedByDesign": "python",
@@ -369,15 +347,13 @@
         "End": 35
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Sekunde",
     "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
     "Results": []
-  }
-  ,
+  },
   {
     "Input": "2:00 pm",
     "NotSupported": "java",
