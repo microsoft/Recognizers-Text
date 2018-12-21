@@ -85,6 +85,11 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             PureNumFromTo, PureNumBetweenAnd, SpecificTimeFromTo, SpecificTimeBetweenAnd
         };
 
+        public IEnumerable<Regex> PureNumberRegex => new[]
+        {
+            PureNumFromTo, PureNumBetweenAnd
+        };
+
         Regex ITimePeriodExtractorConfiguration.TillRegex => TillRegex;
 
         Regex ITimePeriodExtractorConfiguration.TimeOfDayRegex => TimeOfDayRegex;

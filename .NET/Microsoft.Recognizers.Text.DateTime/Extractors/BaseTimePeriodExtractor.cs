@@ -28,6 +28,12 @@ namespace Microsoft.Recognizers.Text.DateTime
             tokens.AddRange(MergeTwoTimePoints(text, reference));
             tokens.AddRange(MatchTimeOfDay(text));
 
+            // Handle pure number cases like "from 6 to 7" cannot be extracted as time ranges under Calendar Mode
+            if ((this.config.Options & DateTimeOptions.CalendarMode) != 0)
+            {
+                tokens.AddRange(MatchPureNumberCases(text));
+            }
+
             var timePeriodErs = Token.MergeAllTokens(tokens, text, ExtractorName);
 
             if ((this.config.Options & DateTimeOptions.EnablePreview) != 0)
@@ -289,6 +295,27 @@ namespace Microsoft.Recognizers.Text.DateTime
                 ret.Add(new Token(match.Index, match.Index + match.Length));
             }
 
+            return ret;
+        }
+
+        // Support cases like "from 6 to 7" which are pure number ranges
+        // Only when the number range is at the end of a sentence, it will be considered as a time range
+        private List<Token> MatchPureNumberCases(string text)
+        {
+            var ret = new List<Token>();
+            foreach (var regex in this.config.PureNumberRegex)
+            {
+                var matches = regex.Matches(text);
+                foreach (Match match in matches)
+                {
+                    var afterStr = text.Substring(match.Index + match.Length);
+                    var endingMatch = this.config.GeneralEndingRegex.Match(afterStr);
+                    if (endingMatch.Success)
+                    {
+                        ret.Add(new Token(match.Index, match.Index + match.Length));
+                    }
+                }
+            }
             return ret;
         }
     }
