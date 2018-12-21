@@ -303,7 +303,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         private List<Token> MatchPureNumberCases(string text)
         {
             var ret = new List<Token>();
-            foreach (var regex in this.config.SimpleCasesRegex)
+            foreach (var regex in this.config.PureNumberRegex)
             {
                 var matches = regex.Matches(text);
                 foreach (Match match in matches)

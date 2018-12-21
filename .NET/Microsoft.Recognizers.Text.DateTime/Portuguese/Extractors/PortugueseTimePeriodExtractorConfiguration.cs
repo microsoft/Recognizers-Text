@@ -54,6 +54,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public IEnumerable<Regex> SimpleCasesRegex => new Regex[] { PureNumFromTo, PureNumBetweenAnd };
 
+        public IEnumerable<Regex> PureNumberRegex => new[] { PureNumFromTo, PureNumBetweenAnd };
+
         Regex ITimePeriodExtractorConfiguration.TillRegex => TillRegex;
 
         Regex ITimePeriodExtractorConfiguration.TimeOfDayRegex => PortugueseDateTimeExtractorConfiguration.TimeOfDayRegex;
