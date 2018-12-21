@@ -171,7 +171,7 @@ public class DateTimeParserTest extends AbstractTest {
             case "DateTimeAltParser":
                 return new BaseDateTimeAltParser(new EnglishDateTimeAltParserConfiguration(new EnglishCommonDateTimeParserConfiguration(DateTimeOptions.None)));
             case "MergedParser":
-                return new BaseMergedParser(new EnglishMergedParserConfiguration(DateTimeOptions.None));
+                return new BaseMergedDateTimeParser(new EnglishMergedParserConfiguration(DateTimeOptions.None));
             default:
                 throw new AssumptionViolatedException("Parser Type/Name not supported.");
         }

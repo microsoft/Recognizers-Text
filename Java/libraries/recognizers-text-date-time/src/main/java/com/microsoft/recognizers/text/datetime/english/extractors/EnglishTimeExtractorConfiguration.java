@@ -88,6 +88,10 @@ public class EnglishTimeExtractorConfiguration extends BaseOptionsConfiguration 
             // (three min past)? 3h00 (pm)?
             add(RegExpUtility.getSafeRegExp(EnglishDateTime.TimeRegex10, Pattern.CASE_INSENSITIVE));
 
+            // at 2.30, "at" prefix is required here
+            // 3.30pm, "am/pm" suffix is required here
+            add(RegExpUtility.getSafeRegExp(EnglishDateTime.TimeRegex11, Pattern.CASE_INSENSITIVE));
+
             // 340pm
             add(ConnectNumRegex);
         }

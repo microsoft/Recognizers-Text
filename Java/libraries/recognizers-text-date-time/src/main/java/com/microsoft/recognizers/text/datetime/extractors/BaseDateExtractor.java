@@ -82,7 +82,7 @@ public class BaseDateExtractor extends AbstractYearExtractor implements IDateTim
             MatchGroup yearGroup = match.getGroup("year");
 
             // If the "year" part is not at the end of the match, it's a valid match
-            if (yearGroup.index + yearGroup.length == match.index + match.length) {
+            if (yearGroup.index + yearGroup.length != match.index + match.length) {
                 isValidMatch = true;
             } else {
                 String subText = text.substring(yearGroup.index);
@@ -135,7 +135,7 @@ public class BaseDateExtractor extends AbstractYearExtractor implements IDateTim
             }
         }
 
-        return true;
+        return false;
     }
 
     // match several other cases
