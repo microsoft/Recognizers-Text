@@ -7,13 +7,13 @@ import com.microsoft.recognizers.text.ParseResult;
 import com.microsoft.recognizers.text.datetime.Constants;
 import com.microsoft.recognizers.text.datetime.TimeTypeConstants;
 import com.microsoft.recognizers.text.datetime.parsers.config.IDateTimeAltParserConfiguration;
+import com.microsoft.recognizers.text.datetime.utilities.DateTimeFormatUtil;
 import com.microsoft.recognizers.text.datetime.utilities.DateTimeResolutionResult;
 import com.microsoft.recognizers.text.datetime.utilities.FormatUtil;
 
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
-
 import org.javatuples.Pair;
 
 public class BaseDateTimeAltParser implements IDateTimeParser {
@@ -83,6 +83,7 @@ public class BaseDateTimeAltParser implements IDateTimeParser {
             dateTimeEr = dateTimeEr.withText(er.text);
         }
 
+        dateTimeEr = dateTimeEr.withData(er.data);
         DateTimeParseResult dateTimePr = null;
 
         if (subType.equals(Constants.SYS_DATETIME_DATE)) {
@@ -116,10 +117,8 @@ public class BaseDateTimeAltParser implements IDateTimeParser {
                 dateTimePr = this.config.getDateTimePeriodParser().parse(dateTimeEr, referenceTime);
             }
         } else if (subType.equals(Constants.SYS_DATETIME_DATETIMEPERIOD)) {
-            if (!hasContext) {
                 dateTimeEr = dateTimeEr.withType(Constants.SYS_DATETIME_DATETIMEPERIOD);
                 dateTimePr = this.config.getDateTimePeriodParser().parse(dateTimeEr, referenceTime);
-            }
         } else if (subType.equals(Constants.SYS_DATETIME_DATEPERIOD)) {
             dateTimeEr = dateTimeEr.withType(Constants.SYS_DATETIME_DATEPERIOD);
             dateTimePr = this.config.getDatePeriodParser().parse(dateTimeEr, referenceTime);
@@ -170,10 +169,17 @@ public class BaseDateTimeAltParser implements IDateTimeParser {
                 case Constants.SYS_DATETIME_DATETIMEPERIOD:
                     startPointType = TimeTypeConstants.START_DATETIME;
                     endPointType = TimeTypeConstants.END_DATETIME;
-                    pastStartPointResolution = FormatUtil.formatDateTime(((Pair<LocalDateTime, LocalDateTime>)ret.getPastValue()).getValue0());
-                    pastEndPointResolution = FormatUtil.formatDateTime(((Pair<LocalDateTime, LocalDateTime>)ret.getPastValue()).getValue1());
-                    futureStartPointResolution = FormatUtil.formatDateTime(((Pair<LocalDateTime, LocalDateTime>)ret.getFutureValue()).getValue0());
-                    futureEndPointResolution = FormatUtil.formatDateTime(((Pair<LocalDateTime, LocalDateTime>)ret.getFutureValue()).getValue1());
+
+                    if (ret.getPastValue() instanceof Pair<?, ?>) {
+                        pastStartPointResolution = FormatUtil.formatDateTime(((Pair<LocalDateTime, LocalDateTime>)ret.getPastValue()).getValue0());
+                        pastEndPointResolution = FormatUtil.formatDateTime(((Pair<LocalDateTime, LocalDateTime>)ret.getPastValue()).getValue1());
+                        futureStartPointResolution = FormatUtil.formatDateTime(((Pair<LocalDateTime, LocalDateTime>)ret.getFutureValue()).getValue0());
+                        futureEndPointResolution = FormatUtil.formatDateTime(((Pair<LocalDateTime, LocalDateTime>)ret.getFutureValue()).getValue1());
+                    } else if (ret.getPastValue() instanceof LocalDateTime) {
+                        pastStartPointResolution = FormatUtil.formatDateTime((LocalDateTime)ret.getPastValue());
+                        futureStartPointResolution = FormatUtil.formatDateTime((LocalDateTime)ret.getFutureValue());
+                    }
+
                     break;
 
                 case Constants.SYS_DATETIME_TIMEPERIOD:
@@ -231,6 +237,14 @@ public class BaseDateTimeAltParser implements IDateTimeParser {
                     .put(singlePointType, singlePointResolution)
                     .put(ExtendedModelResult.ParentTextKey, parentText)
                     .build());
+        }
+
+        if (((DateTimeResolutionResult)pr.value).getMod() != null) {
+            ret.setMod(((DateTimeResolutionResult)pr.value).getMod());
+        }
+
+        if (((DateTimeResolutionResult)pr.value).getTimeZoneResolution() != null) {
+            ret.setTimeZoneResolution(((DateTimeResolutionResult)pr.value).getTimeZoneResolution());
         }
     }
 
