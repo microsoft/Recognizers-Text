@@ -1,5 +1,6 @@
 package com.microsoft.recognizers.text.datetime.parsers.config;
 
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.microsoft.recognizers.text.IExtractor;
 import com.microsoft.recognizers.text.IParser;
@@ -8,6 +9,7 @@ import com.microsoft.recognizers.text.datetime.extractors.IDateTimeExtractor;
 import com.microsoft.recognizers.text.datetime.parsers.IDateTimeParser;
 import com.microsoft.recognizers.text.datetime.utilities.IDateTimeUtilityConfiguration;
 
+import java.util.List;
 import java.util.regex.Pattern;
 
 public interface IDateParserConfiguration extends IOptionsConfiguration {
@@ -59,6 +61,13 @@ public interface IDateParserConfiguration extends IOptionsConfiguration {
 
     Pattern getRelativeWeekDayRegex();
 
+    Pattern getRelativeDayRegex();
+
+    Pattern getNextPrefixRegex();
+
+    Pattern getPastPrefixRegex();
+
+
     ImmutableMap<String, String> getUnitMap();
 
     ImmutableMap<String, Integer> getDayOfMonth();
@@ -69,11 +78,23 @@ public interface IDateParserConfiguration extends IOptionsConfiguration {
 
     ImmutableMap<String, Integer> getCardinalMap();
 
+    List<String> getSameDayTerms();
+
+    List<String> getPlusOneDayTerms();
+
+    List<String> getMinusOneDayTerms();
+
+    List<String> getPlusTwoDayTerms();
+
+    List<String> getMinusTwoDayTerms();
+
     Integer getSwiftDay(String text);
 
     Integer getSwiftMonth(String text);
 
     Boolean isCardinalLast(String text);
+
+    String normalize(String text);
 
     IDateTimeUtilityConfiguration getUtilityConfiguration();
 }

@@ -280,12 +280,11 @@ public class BaseTimePeriodParser implements IDateTimeParser {
             // Cases like "4" is different with "4:00" as the Timex is different "T04H" vs "T04H00M"
             // Uses this invalidFlag to differentiate
             int beginHour;
-            int invalidFlag = -1;
-            int beginMinute = invalidFlag;
-            int beginSecond = invalidFlag;
+            int beginMinute = Constants.InvalidMinute;
+            int beginSecond = Constants.InvalidSecond;
             int endHour;
-            int endMinute = invalidFlag;
-            int endSecond = invalidFlag;
+            int endMinute = Constants.InvalidMinute;
+            int endSecond = Constants.InvalidSecond;
 
             // Get time1 and time2
             MatchGroup hourGroup = match.get().getGroup(Constants.HourGroupName);
@@ -382,7 +381,7 @@ public class BaseTimePeriodParser implements IDateTimeParser {
                 }
 
                 if (hasRightAm) {
-                    if (endHour >= Constants.HalfDayHourCount) {
+                    if (endHour > Constants.HalfDayHourCount) {
                         endDateTime = endDateTime.minusHours(Constants.HalfDayHourCount);
                     }
                 } else if (hasRightPm) {
@@ -444,7 +443,7 @@ public class BaseTimePeriodParser implements IDateTimeParser {
                         }
                     }
                 }
-            } else if (!hasLeft && !hasRight && beginHour <= Constants.HalfDayHourCount && endHour <= Constants.HalfDayHourCount) {
+            } else if (beginHour <= Constants.HalfDayHourCount && endHour <= Constants.HalfDayHourCount) {
                 // No 'am' or 'pm' indicator
                 if (beginHour > endHour) {
                     if (beginHour == Constants.HalfDayHourCount) {
@@ -474,7 +473,7 @@ public class BaseTimePeriodParser implements IDateTimeParser {
 
             // In SplitDateAndTime mode, time points will be get from these SubDateTimeEntities
             // Cases like "from 4 to 5pm", "4" should not be treated as SubDateTimeEntity
-            if (hasLeft || beginMinute != invalidFlag || beginSecond != invalidFlag) {
+            if (hasLeft || beginMinute != Constants.InvalidMinute || beginSecond != Constants.InvalidSecond) {
                 ExtractResult er = new ExtractResult(
                         time1StartIndex,
                         time1EndIndex - time1StartIndex,
@@ -486,7 +485,7 @@ public class BaseTimePeriodParser implements IDateTimeParser {
             }
 
             // Cases like "from 4am to 5", "5" should not be treated as SubDateTimeEntity
-            if (hasRight || endMinute != invalidFlag || endSecond != invalidFlag) {
+            if (hasRight || endMinute != Constants.InvalidMinute || endSecond != Constants.InvalidSecond) {
                 ExtractResult er = new ExtractResult(
 
                         time2StartIndex,
@@ -533,7 +532,7 @@ public class BaseTimePeriodParser implements IDateTimeParser {
                     }
 
                     // check if the middle string between the time point and the valid number is a connect string.
-                    String middleStr = text.substring(midStrBegin, midStrEnd);
+                    String middleStr = text.substring(midStrBegin, midStrBegin + midStrEnd);
                     Optional<Match> tillMatch = Arrays.stream(RegExpUtility.getMatches(this.config.getTillRegex(), middleStr)).findFirst();
                     if (tillMatch.isPresent()) {
                         ers.add(num.withData(null).withType(Constants.SYS_DATETIME_TIME));
