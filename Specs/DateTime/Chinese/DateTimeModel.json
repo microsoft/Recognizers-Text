@@ -2815,5 +2815,53 @@
         }
       }
     ]
+  },
+  {
+    "Input": "已经过了一个钟头",
+    "Context": {
+      "ReferenceDateTime": "2018-12-14T12:00:00"
+    },
+    "NotSupportedByDesign": "Java",
+    "Results": [
+      {
+        "Text": "一个钟头",
+        "Start": 4,
+        "End": 7,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT1H",
+              "type": "duration",
+              "value": "3600"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "已经过了半个钟头",
+    "Context": {
+      "ReferenceDateTime": "2018-12-14T12:00:00"
+    },
+    "NotSupportedByDesign": "Java",
+    "Results": [
+      {
+        "Text": "半个钟头",
+        "Start": 4,
+        "End": 7,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT0.5H",
+              "type": "duration",
+              "value": "1800"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
