@@ -191,10 +191,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 }
                 else
                 {
-                    if(!((year % 4 == 0)&&(year % 100 != 0) || (year % 400 == 0)) && (month == 2) && (day == 29))
+                    if(!IsLeapYear(year) && IsFeb29th(month, day))
                     {
-                        futureDate = DateObject.MinValue.SafeCreateFromValue(year, month-1, day);
-                        pastDate = DateObject.MinValue.SafeCreateFromValue(year, month-1, day);
+                        futureDate = DateObject.MinValue.SafeCreateFromValue(year, month - 1, day);
+                        pastDate = DateObject.MinValue.SafeCreateFromValue(year, month - 1, day);
                     }
                     else
                     {
@@ -205,13 +205,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     {
                         if (futureDate < referenceDate)
                         {
-                            if(((year % 4 == 0) && (year % 100 != 0) || (year % 400 == 0)) || ((month!=2) && (day != 29)))
+                            if(IsLeapYear(year) || !IsFeb29th(month, day))
                                 futureDate = futureDate.AddMonths(1);
                         }
 
                         if (pastDate >= referenceDate)
                         {
-                            if (((year % 4 == 0) && (year % 100 != 0) || (year % 400 == 0)) || ((month != 3) && (day != 29)))
+                            if (IsLeapYear(year) || !IsMar29th(month, day))
                                 pastDate = pastDate.AddMonths(-1);
                         }
                     }
@@ -672,6 +672,24 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             year = num;
 
             return year < 10 ? -1 : year;
+        }
+
+        //judge whether it is a leap year
+        private bool IsLeapYear(int year)
+        {
+            return (year % 4 == 0) && (year % 100 != 0) || (year % 400 == 0);
+        }
+
+        //judge whether it is Feb 29th
+        private bool IsFeb29th(int month, int day)
+        {
+            return month == 2 && day == 29;
+        }
+
+        //judge whether it is Mar 29th 
+        private bool IsMar29th(int month, int day)
+        {
+            return month == 3 && day == 29;
         }
 
         public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)

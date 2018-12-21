@@ -117,7 +117,7 @@ class ChineseDateParser(BaseDateParser):
                 future_date = DateUtils.safe_create_from_min_value(year, month + 1, day)
                 past_date = DateUtils.safe_create_from_min_value(year, month - 1, day)
             else:
-                if not((year % 4 == 0) and (year % 100 != 0) or (year % 400 == 0)) and month == 2 and day == 29:
+                if not self.is_leap_year(year) and self.is_feb_29th(month, day):
                     future_date = DateUtils.safe_create_from_min_value(year, month - 1, day)
                     past_date = DateUtils.safe_create_from_min_value(year, month - 1, day)
                 else:
@@ -126,10 +126,10 @@ class ChineseDateParser(BaseDateParser):
 
                 if not has_month:
                     if future_date < reference:
-                        if day != 29 and month != 2 or ((year % 4 == 0) and (year % 100 != 0) or (year % 400 == 0)):
+                        if not self.is_feb_29th(month, day) or self.is_leap_year(year):
                             future_date += datedelta(months=1)
                     if past_date >= reference:
-                        if day != 29 and month != 3 or ((year % 4 == 0) and (year % 100 != 0) or (year % 400 == 0)):
+                        if not self.is_mar_29th(month, day) or self.is_leap_year(year):
                             past_date += datedelta(months=-1)
                 elif has_month and not has_year:
                     if future_date < reference:
@@ -291,3 +291,12 @@ class ChineseDateParser(BaseDateParser):
         if self.config.day_of_month[source] > 31:
             return self.config.day_of_month[source] % 31
         return self.config.day_of_month[source]
+
+    def is_leap_year(self, year) -> bool:
+        return (year % 4 == 0) and (year % 100 != 0) or (year % 400 == 0)
+
+    def is_feb_29th(self, month, day) -> bool:
+        return month == 2 and day == 29
+
+    def is_mar_29th(self, month, day) -> bool:
+        return month == 3 and day == 29
