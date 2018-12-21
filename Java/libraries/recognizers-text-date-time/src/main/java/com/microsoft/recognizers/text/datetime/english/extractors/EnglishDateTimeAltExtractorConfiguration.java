@@ -15,17 +15,15 @@ import java.util.regex.Pattern;
 
 public class EnglishDateTimeAltExtractorConfiguration extends BaseOptionsConfiguration implements IDateTimeAltExtractorConfiguration {
 
-    private static final int flags = Pattern.CASE_INSENSITIVE;
+    private static final Pattern OrRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.OrRegex);
+    private static final Pattern DayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.DayRegex);
+    private static final Pattern RangePrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RangePrefixRegex);
 
-    private static final Pattern OrRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.OrRegex, flags);
-    private static final Pattern DayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.DayRegex, flags);
-    private static final Pattern RangePrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RangePrefixRegex, flags);
-
-    public static final Pattern ThisPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.ThisPrefixRegex, flags);
-    public static final Pattern PastPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PastPrefixRegex, flags);
-    public static final Pattern NextPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.NextPrefixRegex, flags);
-    public static final Pattern AmRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.AmRegex, flags);
-    public static final Pattern PmRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PmRegex, flags);
+    public static final Pattern ThisPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.ThisPrefixRegex);
+    public static final Pattern PastPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PastPrefixRegex);
+    public static final Pattern NextPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.NextPrefixRegex);
+    public static final Pattern AmRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.AmRegex);
+    public static final Pattern PmRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PmRegex);
 
     public static final Iterable<Pattern> RelativePrefixList = new ArrayList<Pattern>() {
         {

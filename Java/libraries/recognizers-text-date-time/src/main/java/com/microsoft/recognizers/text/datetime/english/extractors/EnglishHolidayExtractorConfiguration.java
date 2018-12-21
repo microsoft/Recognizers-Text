@@ -13,11 +13,11 @@ public class EnglishHolidayExtractorConfiguration extends BaseOptionsConfigurati
 
     public static final Pattern YearPattern = RegExpUtility.getSafeRegExp(EnglishDateTime.YearRegex);
 
-    public static final Pattern H1 = RegExpUtility.getSafeRegExp(EnglishDateTime.HolidayRegex1, Pattern.CASE_INSENSITIVE);
+    public static final Pattern H1 = RegExpUtility.getSafeRegExp(EnglishDateTime.HolidayRegex1);
 
     public static final Pattern H2 = RegExpUtility.getSafeRegExp(EnglishDateTime.HolidayRegex2);
 
-    public static final Pattern H3 = RegExpUtility.getSafeRegExp(EnglishDateTime.HolidayRegex3, Pattern.CASE_INSENSITIVE);
+    public static final Pattern H3 = RegExpUtility.getSafeRegExp(EnglishDateTime.HolidayRegex3);
 
     public static final Iterable<Pattern> HolidayRegexList = new ArrayList<Pattern>() {
         {
