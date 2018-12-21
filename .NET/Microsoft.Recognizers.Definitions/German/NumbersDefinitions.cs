@@ -66,10 +66,10 @@ namespace Microsoft.Recognizers.Definitions.German
 		public const char NonDecimalSeparatorChar = '.';
 		public const string HalfADozenText = @"sechs";
 		public const string WordSeparatorToken = @"und";
-		public static readonly string[] WrittenDecimalSeparatorTexts = { "komma" };
-		public static readonly string[] WrittenGroupSeparatorTexts = { "punkt" };
-		public static readonly string[] WrittenIntegerSeparatorTexts = { "und" };
-		public static readonly string[] WrittenFractionSeparatorTexts = { "durch" };
+		public static readonly string[] WrittenDecimalSeparatorTexts = { @"komma" };
+		public static readonly string[] WrittenGroupSeparatorTexts = { @"punkt" };
+		public static readonly string[] WrittenIntegerSeparatorTexts = { @"und" };
+		public static readonly string[] WrittenFractionSeparatorTexts = { @"durch" };
 		public const string HalfADozenRegex = @"ein\s+halbes\s+dutzend";
 		public static readonly string DigitalNumberRegex = $@"((?<=\b)(hundert|tausend|million(en)?|mio|milliarde(n)?|mrd|billion(en)?|dutzend(e)?)(?=\b))|((?<=(\d|\b)){BaseNumbers.MultiplierLookupRegex}(?=\b))";
 		public static readonly Dictionary<string, long> CardinalNumberMap = new Dictionary<string, long>

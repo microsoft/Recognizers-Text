@@ -92,10 +92,10 @@ namespace Microsoft.Recognizers.Definitions.Dutch
 		public const char NonDecimalSeparatorChar = '.';
 		public const string HalfADozenText = @"zes";
 		public const string WordSeparatorToken = @"en";
-		public static readonly string[] WrittenDecimalSeparatorTexts = { "komma" };
-		public static readonly string[] WrittenGroupSeparatorTexts = { "punt" };
-		public static readonly string[] WrittenIntegerSeparatorTexts = { "en" };
-		public static readonly string[] WrittenFractionSeparatorTexts = { "uit", "van de", "op de", "en" };
+		public static readonly string[] WrittenDecimalSeparatorTexts = { @"komma" };
+		public static readonly string[] WrittenGroupSeparatorTexts = { @"punt" };
+		public static readonly string[] WrittenIntegerSeparatorTexts = { @"en" };
+		public static readonly string[] WrittenFractionSeparatorTexts = { @"uit", @"van de", @"op de", @"en" };
 		public const string HalfADozenRegex = @"(een\s+)?half\s+dozijn";
 		public const string GrossRegex = @"(een\s+)?gros";
 		public static readonly string DigitalNumberRegex = $@"((?<=\b)(honderd|duizend|miljoen|miljard|biljoen|dozijn?)(?=\b))|((?<=(\d|\b)){BaseNumbers.MultiplierLookupRegex}(?=\b))";
