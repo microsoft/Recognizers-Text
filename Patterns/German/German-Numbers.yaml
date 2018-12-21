@@ -2,7 +2,7 @@
 LangMarker: Ger
 #Integer Regex
 ZeroToNineIntegerRegex: !simpleRegex
-  def: (drei|sieben|acht|vier|fuenf|fünf|null|neun|eins|ein|eine|einer|einen|zwei|zwo|sechs)
+  def: (drei|sieben|acht|vier|fuenf|fünf|null|neun|eins|(ein(?!($|\.|,|!|\?)))|eine|einer|einen|zwei|zwo|sechs)
 RoundNumberIntegerRegex: !simpleRegex
   def: (hundert|einhundert|tausend|(\s*million\s*)|(\s*millionen\s*)|(\s*mio\s*)|(\s*milliarde\s*)|(\s*milliarden\s*)|(\s*mrd\s*)|(\s*billion\s*)|(\s*billionen\s*))
 AnIntRegex: !simpleRegex

@@ -8,6 +8,7 @@ import com.microsoft.recognizers.text.datetime.extractors.BaseDurationExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.IDateTimeExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.config.IDatePeriodExtractorConfiguration;
 import com.microsoft.recognizers.text.datetime.extractors.config.ResultIndex;
+import com.microsoft.recognizers.text.datetime.resources.BaseDateTime;
 import com.microsoft.recognizers.text.datetime.resources.EnglishDateTime;
 import com.microsoft.recognizers.text.number.english.extractors.CardinalExtractor;
 import com.microsoft.recognizers.text.number.english.extractors.OrdinalExtractor;
@@ -48,7 +49,8 @@ public class EnglishDatePeriodExtractorConfiguration implements IDatePeriodExtra
     public static final Pattern LessThanRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.LessThanRegex, flags);
     public static final Pattern MoreThanRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.MoreThanRegex, flags);
     public static final Pattern CenturySuffixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.CenturySuffixRegex, flags);
-    
+    public static final Pattern IllegalYearRegex = RegExpUtility.getSafeRegExp(BaseDateTime.IllegalYearRegex, flags);
+
     // composite regexes
     public static final Pattern SimpleCasesRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SimpleCasesRegex, flags);
     public static final Pattern BetweenRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.BetweenRegex, flags);
@@ -124,6 +126,11 @@ public class EnglishDatePeriodExtractorConfiguration implements IDatePeriodExtra
     @Override
     public Iterable<Pattern> getSimpleCasesRegexes() {
         return SimpleCasesRegexes;
+    }
+
+    @Override
+    public Pattern getIllegalYearRegex() {
+        return IllegalYearRegex;
     }
 
     @Override

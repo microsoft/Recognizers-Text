@@ -16,8 +16,10 @@ import com.microsoft.recognizers.text.utilities.Match;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Optional;
 import java.util.regex.Pattern;
+import java.util.stream.Stream;
 
 public class EnglishDatePeriodParserConfiguration extends BaseOptionsConfiguration implements IDatePeriodParserConfiguration {
 
@@ -542,13 +544,18 @@ public class EnglishDatePeriodParserConfiguration extends BaseOptionsConfigurati
     @Override
     public boolean isYearOnly(String text) {
         String trimmedText = text.trim().toLowerCase();
-        Optional<Match> matchAfterNext = Arrays.stream(RegExpUtility.getMatches(afterNextSuffixRegex, trimmedText)).findFirst();
-        return trimmedText.endsWith("year") || trimmedText.contains(" year ") && matchAfterNext.isPresent();
+        return EnglishDateTime.YearTerms.stream().anyMatch(o -> trimmedText.endsWith(o)) ||
+            (getYearTermsPadded().anyMatch(o -> trimmedText.contains(o)) && RegExpUtility.getMatches(afterNextSuffixRegex, trimmedText).length > 0) ||
+            (EnglishDateTime.GenericYearTerms.stream().anyMatch(o -> trimmedText.endsWith(o)) && RegExpUtility.getMatches(unspecificEndOfRangeRegex, trimmedText).length > 0);
     }
 
     @Override
     public boolean isYearToDate(String text) {
         String trimmedText = text.trim().toLowerCase();
         return trimmedText.equals("year to date");
+    }
+
+    private Stream<String> getYearTermsPadded() {
+        return EnglishDateTime.YearTerms.stream().map(i -> String.format(" %s ", i));
     }
 }

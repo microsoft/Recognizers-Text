@@ -100,7 +100,7 @@ namespace Microsoft.Recognizers.Definitions.Chinese
 		public const string AmPmDescRegex = @"(?<daydesc>(am|a\.m\.|a m|a\. m\.|a\.m|a\. m|a m|pm|p\.m\.|p m|p\. m\.|p\.m|p\. m|p m))";
 		public const string TimeOfDayRegex = @"(?<timeOfDay>凌晨|清晨|早上|早|上午|中午|下午|午后|晚上|夜里|夜晚|半夜|夜间|深夜|傍晚|晚)";
 		public static readonly string SpecificTimeOfDayRegex = $@"((({DateTimePeriodThisRegex}|{DateTimePeriodNextRegex}|{DateTimePeriodLastRegex})\s+{TimeOfDayRegex})|(今晚|今早|今晨|明晚|明早|明晨|昨晚))";
-		public const string DateTimePeriodUnitRegex = @"(个)?(?<unit>(小时|分钟|秒钟|时|分|秒))";
+		public const string DateTimePeriodUnitRegex = @"(个)?(?<unit>(小时|钟头|分钟|秒钟|时|分|秒))";
 		public static readonly string DateTimePeriodFollowedUnit = $@"^\s*{DateTimePeriodUnitRegex}";
 		public static readonly string DateTimePeriodNumberCombinedWithUnit = $@"\b(?<num>\d+(\.\d*)?){DateTimePeriodUnitRegex}";
 		public const string DurationYearRegex = @"((\d{3,4})|0\d|两千)\s*年";
@@ -109,7 +109,7 @@ namespace Microsoft.Recognizers.Definitions.Chinese
 		{
 			{ @"M", @"分钟" },
 			{ @"S", @"秒钟|秒" },
-			{ @"H", @"个小时|小时" },
+			{ @"H", @"个小时|小时|个钟头|钟头" },
 			{ @"D", @"天" },
 			{ @"W", @"星期|个星期|周" },
 			{ @"Mon", @"个月" },

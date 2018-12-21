@@ -5,6 +5,7 @@ import com.microsoft.recognizers.text.datetime.DateTimeOptions;
 import com.microsoft.recognizers.text.datetime.config.BaseOptionsConfiguration;
 import com.microsoft.recognizers.text.datetime.english.parsers.EnglishDatetimeUtilityConfiguration;
 import com.microsoft.recognizers.text.datetime.extractors.BaseTimeExtractor;
+import com.microsoft.recognizers.text.datetime.extractors.BaseTimeZoneExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.IDateTimeExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.config.ITimePeriodExtractorConfiguration;
 import com.microsoft.recognizers.text.datetime.extractors.config.ResultIndex;
@@ -57,6 +58,7 @@ public class EnglishTimePeriodExtractorConfiguration extends BaseOptionsConfigur
         singleTimeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration(options));
         utilityConfiguration = new EnglishDatetimeUtilityConfiguration();
         integerExtractor = IntegerExtractor.getInstance();
+        timeZoneExtractor = new BaseTimeZoneExtractor(new EnglishTimeZoneExtractorConfiguration(options));
     }
 
     private IDateTimeUtilityConfiguration utilityConfiguration;
@@ -76,6 +78,13 @@ public class EnglishTimePeriodExtractorConfiguration extends BaseOptionsConfigur
     public final IExtractor getIntegerExtractor() {
         return integerExtractor;
     }
+
+    private final IDateTimeExtractor timeZoneExtractor;
+
+    public IDateTimeExtractor getTimeZoneExtractor() {
+        return timeZoneExtractor;
+    }
+
 
     public Iterable<Pattern> getSimpleCasesRegex() {
         return getSimpleCasesRegex;

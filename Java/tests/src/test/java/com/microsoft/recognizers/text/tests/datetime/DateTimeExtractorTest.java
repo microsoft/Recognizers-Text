@@ -102,9 +102,9 @@ public class DateTimeExtractorTest extends AbstractTest {
             case "HolidayExtractor":
                 return new BaseHolidayExtractor(new EnglishHolidayExtractorConfiguration());
             case "MergedExtractor":
-                return new BaseMergedExtractor(new EnglishMergedExtractorConfiguration(DateTimeOptions.None));
+                return new BaseMergedDateTimeExtractor(new EnglishMergedExtractorConfiguration(DateTimeOptions.None));
             case "MergedExtractorSkipFromTo":
-                return new BaseMergedExtractor(new EnglishMergedExtractorConfiguration(DateTimeOptions.SkipFromToMerge));
+                return new BaseMergedDateTimeExtractor(new EnglishMergedExtractorConfiguration(DateTimeOptions.SkipFromToMerge));
             case "SetExtractor":
                 return new BaseSetExtractor(new EnglishSetExtractorConfiguration());
             case "TimeExtractor":

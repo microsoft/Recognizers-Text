@@ -18,7 +18,7 @@ namespace Microsoft.Recognizers.Definitions.German
 	public static class NumbersDefinitions
 	{
 		public const string LangMarker = @"Ger";
-		public const string ZeroToNineIntegerRegex = @"(drei|sieben|acht|vier|fuenf|fünf|null|neun|eins|ein|eine|einer|einen|zwei|zwo|sechs)";
+		public const string ZeroToNineIntegerRegex = @"(drei|sieben|acht|vier|fuenf|fünf|null|neun|eins|(ein(?!($|\.|,|!|\?)))|eine|einer|einen|zwei|zwo|sechs)";
 		public const string RoundNumberIntegerRegex = @"(hundert|einhundert|tausend|(\s*million\s*)|(\s*millionen\s*)|(\s*mio\s*)|(\s*milliarde\s*)|(\s*milliarden\s*)|(\s*mrd\s*)|(\s*billion\s*)|(\s*billionen\s*))";
 		public const string AnIntRegex = @"(eine|ein)(?=\s)";
 		public const string TenToNineteenIntegerRegex = @"(siebzehn|dreizehn|vierzehn|achtzehn|neunzehn|fuenfzehn|sechzehn|elf|zwoelf|zwölf|zehn)";
@@ -66,10 +66,10 @@ namespace Microsoft.Recognizers.Definitions.German
 		public const char NonDecimalSeparatorChar = '.';
 		public const string HalfADozenText = @"sechs";
 		public const string WordSeparatorToken = @"und";
-		public static readonly string[] WrittenDecimalSeparatorTexts = { "komma" };
-		public static readonly string[] WrittenGroupSeparatorTexts = { "punkt" };
-		public static readonly string[] WrittenIntegerSeparatorTexts = { "und" };
-		public static readonly string[] WrittenFractionSeparatorTexts = { "durch" };
+		public static readonly string[] WrittenDecimalSeparatorTexts = { @"komma" };
+		public static readonly string[] WrittenGroupSeparatorTexts = { @"punkt" };
+		public static readonly string[] WrittenIntegerSeparatorTexts = { @"und" };
+		public static readonly string[] WrittenFractionSeparatorTexts = { @"durch" };
 		public const string HalfADozenRegex = @"ein\s+halbes\s+dutzend";
 		public static readonly string DigitalNumberRegex = $@"((?<=\b)(hundert|tausend|million(en)?|mio|milliarde(n)?|mrd|billion(en)?|dutzend(e)?)(?=\b))|((?<=(\d|\b)){BaseNumbers.MultiplierLookupRegex}(?=\b))";
 		public static readonly Dictionary<string, long> CardinalNumberMap = new Dictionary<string, long>

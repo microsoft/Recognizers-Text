@@ -9,6 +9,7 @@ import com.microsoft.recognizers.text.datetime.DateTimeOptions;
 import com.microsoft.recognizers.text.datetime.TimeTypeConstants;
 import com.microsoft.recognizers.text.datetime.extractors.BaseDateExtractor;
 import com.microsoft.recognizers.text.datetime.parsers.config.IDatePeriodParserConfiguration;
+import com.microsoft.recognizers.text.datetime.utilities.ConditionalMatch;
 import com.microsoft.recognizers.text.datetime.utilities.DateContext;
 import com.microsoft.recognizers.text.datetime.utilities.DateTimeFormatUtil;
 import com.microsoft.recognizers.text.datetime.utilities.DateTimeResolutionResult;
@@ -17,6 +18,7 @@ import com.microsoft.recognizers.text.datetime.utilities.DurationParsingUtil;
 import com.microsoft.recognizers.text.datetime.utilities.FormatUtil;
 import com.microsoft.recognizers.text.datetime.utilities.GetModAndDateResult;
 import com.microsoft.recognizers.text.datetime.utilities.NthBusinessDayResult;
+import com.microsoft.recognizers.text.datetime.utilities.RegexExtension;
 import com.microsoft.recognizers.text.datetime.utilities.TimexUtility;
 import com.microsoft.recognizers.text.utilities.IntegerUtility;
 import com.microsoft.recognizers.text.utilities.Match;
@@ -33,6 +35,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
+import java.util.concurrent.locks.Condition;
 import java.util.stream.Collectors;
 
 import org.javatuples.Pair;
@@ -559,36 +562,36 @@ public class BaseDatePeriodParser implements IDateTimeParser {
         boolean laterPrefix = false;
 
         String trimmedText = text.trim().toLowerCase();
-        Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(this.config.getOneWordPeriodRegex(), trimmedText)).findFirst();
+        ConditionalMatch match = RegexExtension.matchExact(this.config.getOneWordPeriodRegex(), trimmedText, true);
 
-        if (!match.isPresent() || match.get().length != trimmedText.length()) {
-            match = Arrays.stream(RegExpUtility.getMatches(this.config.getLaterEarlyPeriodRegex(), trimmedText)).findFirst();
+        if (!match.getSuccess()) {
+            match = RegexExtension.matchExact(this.config.getLaterEarlyPeriodRegex(), trimmedText, true);
         }
 
         // For cases "that week|month|year"
-        if (!match.isPresent() || match.get().length != trimmedText.length()) {
-            match = Arrays.stream(RegExpUtility.getMatches(this.config.getReferenceDatePeriodRegex(), trimmedText)).findFirst();
+        if (!match.getSuccess()) {
+            match = RegexExtension.matchExact(this.config.getReferenceDatePeriodRegex(), trimmedText, true);
             isRef = true;
             ret.setMod(Constants.REF_UNDEF_MOD);
         }
 
-        if (match.isPresent() && match.get().length == trimmedText.length()) {
-            if (!match.get().getGroup("EarlyPrefix").value.equals("")) {
+        if (match.getSuccess()) {
+            if (!match.getMatch().get().getGroup("EarlyPrefix").value.equals("")) {
                 earlyPrefix = true;
-                trimmedText = match.get().getGroup(Constants.SuffixGroupName).value;
+                trimmedText = match.getMatch().get().getGroup(Constants.SuffixGroupName).value;
                 ret.setMod(Constants.EARLY_MOD);
-            } else if (!match.get().getGroup("LatePrefix").value.equals("")) {
+            } else if (!match.getMatch().get().getGroup("LatePrefix").value.equals("")) {
                 latePrefix = true;
-                trimmedText = match.get().getGroup(Constants.SuffixGroupName).value;
+                trimmedText = match.getMatch().get().getGroup(Constants.SuffixGroupName).value;
                 ret.setMod(Constants.LATE_MOD);
-            } else if (!match.get().getGroup("MidPrefix").value.equals("")) {
+            } else if (!match.getMatch().get().getGroup("MidPrefix").value.equals("")) {
                 midPrefix = true;
-                trimmedText = match.get().getGroup(Constants.SuffixGroupName).value;
+                trimmedText = match.getMatch().get().getGroup(Constants.SuffixGroupName).value;
                 ret.setMod(Constants.MID_MOD);
             }
 
             int swift = 0;
-            String monthStr = match.get().getGroup("month").value;
+            String monthStr = match.getMatch().get().getGroup("month").value;
             if (!StringUtility.isNullOrEmpty(monthStr)) {
                 swift = this.config.getSwiftYear(trimmedText);
             } else {
@@ -596,19 +599,19 @@ public class BaseDatePeriodParser implements IDateTimeParser {
             }
 
             // Handle the abbreviation of DatePeriod, e.g., 'eoy(end of year)', the behavior of 'eoy' should be the same as 'end of year'
-            Optional<Match> unspecificEndOfRangeMatch = Arrays.stream(RegExpUtility.getMatches(config.getUnspecificEndOfRangeRegex(), match.get().value)).findFirst();
+            Optional<Match> unspecificEndOfRangeMatch = Arrays.stream(RegExpUtility.getMatches(config.getUnspecificEndOfRangeRegex(), match.getMatch().get().value)).findFirst();
             if (unspecificEndOfRangeMatch.isPresent()) {
                 latePrefix = true;
-                trimmedText = match.get().value;
+                trimmedText = match.getMatch().get().value;
                 ret.setMod(Constants.LATE_MOD);
             }
 
-            if (!match.get().getGroup("RelEarly").value.equals("")) {
+            if (!match.getMatch().get().getGroup("RelEarly").value.equals("")) {
                 earlierPrefix = true;
                 if (isPresent(swift)) {
                     ret.setMod(null);
                 }
-            } else if (!match.get().getGroup("RelLate").value.equals("")) {
+            } else if (!match.getMatch().get().getGroup("RelLate").value.equals("")) {
                 laterPrefix = true;
                 if (isPresent(swift)) {
                     ret.setMod(null);
@@ -959,11 +962,18 @@ public class BaseDatePeriodParser implements IDateTimeParser {
             er.set(1, er.get(1).withText(String.format("%s %s", weekPrefix, er.get(1).text)));
         }
 
-        ParseResult pr1 = this.config.getDateParser().parse(er.get(0), referenceDate);
-        ParseResult pr2 = this.config.getDateParser().parse(er.get(1), referenceDate);
+        DateContext dateContext = getYearContext(er.get(0).text, er.get(1).text, text);
+
+        DateTimeParseResult pr1 = this.config.getDateParser().parse(er.get(0), referenceDate);
+        DateTimeParseResult pr2 = this.config.getDateParser().parse(er.get(1), referenceDate);
+
         if (pr1.value == null || pr2.value == null) {
             return ret;
         }
+
+        pr1 = dateContext.processDateEntityParsingResult(pr1);
+        pr2 = dateContext.processDateEntityParsingResult(pr2);
+
 
         List<Object> subDateTimeEntities = new ArrayList<Object>();
         subDateTimeEntities.add(pr1);
@@ -1156,11 +1166,13 @@ public class BaseDatePeriodParser implements IDateTimeParser {
     }
 
     private GetModAndDateResult getModAndDate(LocalDateTime beginDate, LocalDateTime endDate, LocalDateTime referenceDate, String timex, boolean future) {
+        LocalDateTime beginDateResult = beginDate;
+        LocalDateTime endDateResult = endDate;
         boolean isBusinessDay = timex.endsWith(Constants.TimexBusinessDay);
         int businessDayCount = 0;
 
         if (isBusinessDay) {
-            businessDayCount = Integer.parseInt(timex.substring(1, timex.length() - 3));
+            businessDayCount = Integer.parseInt(timex.substring(1, timex.length() - 2));
         }
 
         if (future) {
@@ -1168,13 +1180,13 @@ public class BaseDatePeriodParser implements IDateTimeParser {
 
             // For future the beginDate should add 1 first
             if (isBusinessDay) {
-                LocalDateTime beginDateResult = DurationParsingUtil.getNextBusinessDay(referenceDate);
-                NthBusinessDayResult nthBusinessDayResult = DurationParsingUtil.getNthBusinessDay(beginDate, businessDayCount - 1, true);
-                LocalDateTime endDateResult = nthBusinessDayResult.result.plusDays(1);
+                beginDateResult = DurationParsingUtil.getNextBusinessDay(referenceDate);
+                NthBusinessDayResult nthBusinessDayResult = DurationParsingUtil.getNthBusinessDay(beginDateResult, businessDayCount - 1, true);
+                endDateResult = nthBusinessDayResult.result.plusDays(1);
                 return new GetModAndDateResult(beginDateResult, endDateResult, mod, nthBusinessDayResult.dateList);
             } else {
-                LocalDateTime beginDateResult = referenceDate.plusDays(1);
-                LocalDateTime endDateResult = DurationParsingUtil.shiftDateTime(timex, beginDateResult, true);
+                beginDateResult = referenceDate.plusDays(1);
+                endDateResult = DurationParsingUtil.shiftDateTime(timex, beginDateResult, true);
                 return new GetModAndDateResult(beginDateResult, endDateResult, mod, null);
             }
 
@@ -1182,14 +1194,14 @@ public class BaseDatePeriodParser implements IDateTimeParser {
             String mod = Constants.BEFORE_MOD;
 
             if (isBusinessDay) {
-                LocalDateTime endDateResult = DurationParsingUtil.getNextBusinessDay(endDate, false);
-                NthBusinessDayResult nthBusinessDayResult = DurationParsingUtil.getNthBusinessDay(endDate, businessDayCount - 1, false);
-                endDateResult = endDate.plusDays(1);
-                LocalDateTime beginDateResult = nthBusinessDayResult.result;
+                endDateResult = DurationParsingUtil.getNextBusinessDay(endDateResult, false);
+                NthBusinessDayResult nthBusinessDayResult = DurationParsingUtil.getNthBusinessDay(endDateResult, businessDayCount - 1, false);
+                endDateResult = endDateResult.plusDays(1);
+                beginDateResult = nthBusinessDayResult.result;
                 return new GetModAndDateResult(beginDateResult, endDateResult, mod, nthBusinessDayResult.dateList);
             } else {
-                LocalDateTime beginDateResult = DurationParsingUtil.shiftDateTime(timex, endDate, false);
-                return new GetModAndDateResult(beginDateResult, endDate, mod, null);
+                beginDateResult = DurationParsingUtil.shiftDateTime(timex, endDateResult, false);
+                return new GetModAndDateResult(beginDateResult, endDateResult, mod, null);
             }
         }
     }

@@ -9,6 +9,8 @@ import java.util.regex.Pattern;
 public interface IDatePeriodExtractorConfiguration {
     Iterable<Pattern> getSimpleCasesRegexes();
 
+    Pattern getIllegalYearRegex();
+
     Pattern getYearRegex();
 
     Pattern getTillRegex();

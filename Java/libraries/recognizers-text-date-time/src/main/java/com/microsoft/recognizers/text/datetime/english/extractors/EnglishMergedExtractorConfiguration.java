@@ -24,6 +24,9 @@ import com.microsoft.recognizers.text.utilities.RegExpUtility;
 
 import java.util.ArrayList;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
+
+import org.javatuples.Pair;
 
 public class EnglishMergedExtractorConfiguration implements IMergedExtractorConfiguration {
 
@@ -37,6 +40,7 @@ public class EnglishMergedExtractorConfiguration implements IMergedExtractorConf
     public static final Pattern PrepositionSuffixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PrepositionSuffixRegex, Pattern.CASE_INSENSITIVE);
     public static final Pattern SingleAmbiguousMonthRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SingleAmbiguousMonthRegex, Pattern.CASE_INSENSITIVE);
     public static final Pattern UnspecificDatePeriodRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.UnspecificDatePeriodRegex, Pattern.CASE_INSENSITIVE);
+    private final Iterable<Pair<Pattern, Pattern>> ambiguityFiltersDict;
 
     public static final StringMatcher SuperfluousWordMatcher = new StringMatcher();
     private static final Iterable<Pattern> filterWordRegexList = new ArrayList<Pattern>() {
@@ -151,6 +155,12 @@ public class EnglishMergedExtractorConfiguration implements IMergedExtractorConf
         dateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new EnglishDateTimePeriodExtractorConfiguration(options));
         integerExtractor = IntegerExtractor.getInstance();
 
+        ambiguityFiltersDict = EnglishDateTime.AmbiguityFiltersDict.entrySet().stream().map(pair -> {
+            Pattern key = RegExpUtility.getSafeRegExp(pair.getKey(), Pattern.CASE_INSENSITIVE);
+            Pattern val = RegExpUtility.getSafeRegExp(pair.getValue(), Pattern.CASE_INSENSITIVE);
+            return new Pair<Pattern, Pattern>(key, val);
+        }).collect(Collectors.toList());
+
         if (!this.options.match(DateTimeOptions.EnablePreview)) {
             getSuperfluousWordMatcher().init(EnglishDateTime.SuperfluousWordList);
         }
@@ -195,5 +205,9 @@ public class EnglishMergedExtractorConfiguration implements IMergedExtractorConf
 
     public final Pattern getUnspecificDatePeriodRegex() {
         return UnspecificDatePeriodRegex;
+    }
+
+    public final Iterable<Pair<Pattern, Pattern>> getAmbiguityFiltersDict() {
+        return ambiguityFiltersDict;
     }
 }

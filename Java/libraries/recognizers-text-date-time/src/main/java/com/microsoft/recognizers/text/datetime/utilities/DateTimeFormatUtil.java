@@ -80,8 +80,42 @@ public class DateTimeFormatUtil {
         return luisDate(time) + "T" + luisTime(time.getHour(), time.getMinute(), time.getSecond());
     }
 
+    public static String shortTime(int hour) {
+        return shortTime(hour, Constants.InvalidSecond);
+    }
+
+    public static String shortTime(int hour, int min) {
+        return shortTime(hour, min, Constants.InvalidSecond);
+    }
+
+    public static String shortTime(int hour, int min, int second) {
+        String timeString;
+
+        if (min == Constants.InvalidSecond && second == Constants.InvalidSecond) {
+            timeString = String.format("%s%02d", Constants.TimeTimexPrefix, hour);
+        } else if (second == Constants.InvalidSecond) {
+            timeString = String.format("%s%s", Constants.TimeTimexPrefix, luisTime(hour, min));
+        } else {
+            timeString = String.format("%s%s", Constants.TimeTimexPrefix, luisTime(hour, min, second));
+        }
+
+        return timeString;
+    }
+
+    public static String luisTime(int hour, int min) {
+        return luisTime(hour, min, Constants.InvalidSecond);
+    }
+
     public static String luisTime(int hour, int min, int second) {
-        return String.join(timeDelimiter, String.format("%02d", hour), String.format("%02d", min), String.format("%02d", second));
+
+        String result;
+        if (second == Constants.InvalidSecond) {
+            result = String.join(Constants.TimeTimexConnector, String.format("%02d", hour), String.format("%02d", min));
+        } else {
+            result = String.join(Constants.TimeTimexConnector, String.format("%02d", hour), String.format("%02d", min), String.format("%02d", second));
+        }
+
+        return result;
     }
 
     public static String formatDate(LocalDateTime date) {

@@ -2,6 +2,7 @@ package com.microsoft.recognizers.text.datetime.extractors;
 
 import com.microsoft.recognizers.text.ExtractResult;
 import com.microsoft.recognizers.text.datetime.Constants;
+import com.microsoft.recognizers.text.datetime.DateTimeOptions;
 import com.microsoft.recognizers.text.datetime.extractors.config.ITimePeriodExtractorConfiguration;
 import com.microsoft.recognizers.text.datetime.extractors.config.ResultIndex;
 import com.microsoft.recognizers.text.datetime.utilities.Token;
@@ -12,6 +13,7 @@ import com.microsoft.recognizers.text.utilities.StringUtility;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 import java.util.regex.Pattern;
@@ -70,10 +72,13 @@ public class BaseTimePeriodExtractor implements IDateTimeExtractor {
                         String afterStr = input.substring(match.index + match.length);
 
                         // "End with general ending tokens or "TokenBeforeDate" (like "on")
-                        Pattern generalEndingRegex = this.config.getGeneralEndingRegex();
-                        Optional<Match> endingMatch = Arrays.stream(RegExpUtility.getMatches(generalEndingRegex, afterStr)).findFirst();
-                        if (endingMatch.isPresent() || afterStr.trim().startsWith(this.config.getTokenBeforeDate())) {
+                        boolean endWithGeneralEndings = Arrays.stream(RegExpUtility.getMatches(this.config.getGeneralEndingRegex(), afterStr))
+                                .findFirst().isPresent();
+                        boolean endWithAmPm = !match.getGroup(Constants.RightAmPmGroupName).value.equals("");
+                        if (endWithGeneralEndings || endWithAmPm || afterStr.trim().startsWith(this.config.getTokenBeforeDate())) {
                             endWithValidToken = true;
+                        } else if (this.config.getOptions().match(DateTimeOptions.EnablePreview)) {
+                            endWithValidToken = startsWithTimeZone(afterStr);
                         }
                     }
 
@@ -86,15 +91,38 @@ public class BaseTimePeriodExtractor implements IDateTimeExtractor {
                     String amStr = match.getGroup(Constants.AmGroupName).value;
                     String descStr = match.getGroup(Constants.DescGroupName).value;
 
-                    // Check Constants.PmGroupName, Constants.AmGroupName
+                    // Check "pm", "am"
                     if (!StringUtility.isNullOrEmpty(pmStr) || !StringUtility.isNullOrEmpty(amStr) || !StringUtility.isNullOrEmpty(descStr)) {
                         ret.add(new Token(match.index, match.index + match.length));
+                    } else {
+                        String afterStr = input.substring(match.index + match.length);
+
+                        if ((this.config.getOptions().match(DateTimeOptions.EnablePreview)) && startsWithTimeZone(afterStr)) {
+                            ret.add(new Token(match.index, match.index + match.length));
+                        }
                     }
                 }
             }
         }
 
         return ret;
+    }
+
+    private boolean startsWithTimeZone(String afterText) {
+        boolean startsWithTimeZone = false;
+
+        List<ExtractResult> timeZoneErs = config.getTimeZoneExtractor().extract(afterText);
+        Optional<ExtractResult> firstTimeZone = timeZoneErs.stream().sorted(Comparator.comparingInt(t -> t.start)).findFirst();
+
+        if (firstTimeZone.isPresent()) {
+            String beforeText = afterText.substring(0, firstTimeZone.get().start);
+
+            if (StringUtility.isNullOrWhiteSpace(beforeText)) {
+                startsWithTimeZone = true;
+            }
+        }
+
+        return startsWithTimeZone;
     }
 
     private List<Token> mergeTwoTimePoints(String input, LocalDateTime reference) {
