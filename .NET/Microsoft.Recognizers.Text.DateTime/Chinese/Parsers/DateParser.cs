@@ -191,7 +191,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 }
                 else
                 {
-                    if(!IsLeapYear(year) && IsFeb29th(month, day))
+                    if (!IsLeapYear(year) && IsFeb29th(month, day))
                     {
                         futureDate = DateObject.MinValue.SafeCreateFromValue(year, month - 1, day);
                         pastDate = DateObject.MinValue.SafeCreateFromValue(year, month - 1, day);
@@ -205,7 +205,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     {
                         if (futureDate < referenceDate)
                         {
-                            if(IsLeapYear(year) || !IsFeb29th(month, day))
+                            if (IsLeapYear(year) || !IsFeb29th(month, day))
                                 futureDate = futureDate.AddMonths(1);
                         }
 
@@ -674,19 +674,19 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             return year < 10 ? -1 : year;
         }
 
-        //judge whether it is a leap year
+        //Judge the year is a leap year
         private bool IsLeapYear(int year)
         {
             return (year % 4 == 0) && (year % 100 != 0) || (year % 400 == 0);
         }
 
-        //judge whether it is Feb 29th
+        //Judge the date is Feb 29th
         private bool IsFeb29th(int month, int day)
         {
             return month == 2 && day == 29;
         }
 
-        //judge whether it is Mar 29th 
+        //Judge the date is Mar 29th 
         private bool IsMar29th(int month, int day)
         {
             return month == 3 && day == 29;
