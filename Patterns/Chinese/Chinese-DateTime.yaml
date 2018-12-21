@@ -217,7 +217,7 @@ SpecificTimeOfDayRegex: !nestedRegex
   def: ((({DateTimePeriodThisRegex}|{DateTimePeriodNextRegex}|{DateTimePeriodLastRegex})\s+{TimeOfDayRegex})|(今晚|今早|今晨|明晚|明早|明晨|昨晚))
   references: [DateTimePeriodThisRegex, DateTimePeriodNextRegex, DateTimePeriodLastRegex, TimeOfDayRegex]
 DateTimePeriodUnitRegex: !simpleRegex
-  def: (个)?(?<unit>(小时|分钟|秒钟|时|分|秒))
+  def: (个)?(?<unit>(小时|钟头|分钟|秒钟|时|分|秒))
 DateTimePeriodFollowedUnit: !nestedRegex
   def: ^\s*{DateTimePeriodUnitRegex}
   references: [DateTimePeriodUnitRegex]
@@ -234,7 +234,7 @@ DurationSuffixList: !dictionary
   entries:
     M: 分钟
     S: 秒钟|秒
-    H: 个小时|小时
+    H: 个小时|小时|个钟头|钟头
     D: 天
     W: 星期|个星期|周
     Mon: 个月
