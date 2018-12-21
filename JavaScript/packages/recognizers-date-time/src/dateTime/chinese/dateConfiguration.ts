@@ -295,7 +295,7 @@ export class ChineseDateParser extends BaseDateParser {
                 futureDate = DateUtils.safeCreateFromMinValue(year, month + 1, day);
                 pastDate = DateUtils.safeCreateFromMinValue(year, month - 1, day);
             } else {
-                if(!this.isLeapYear(year) && this.isFeb29th(month, day)){
+                if (!this.isLeapYear(year) && this.isFeb29th(month, day)){
                     futureDate = DateUtils.safeCreateFromMinValue(year, month - 1, day);
                     pastDate = DateUtils.safeCreateFromMinValue(year, month - 1, day);
                 }
@@ -306,12 +306,12 @@ export class ChineseDateParser extends BaseDateParser {
                 
                 if (!hasMonth) {
                     if (futureDate < referenceDate) {
-                        if(this.isLeapYear(year) || !this.isFeb29th(month, day)) {
+                        if (this.isLeapYear(year) || !this.isFeb29th(month, day)) {
                             futureDate = DateUtils.addMonths(futureDate, 1);
                         }
                     }
                     if (pastDate >= referenceDate) {
-                        if(this.isLeapYear(year) || !this.isMar29th(month, day)) {
+                        if (this.isLeapYear(year) || !this.isMar29th(month, day)) {
                             pastDate = DateUtils.addMonths(pastDate, -1);
                         }
                     }
