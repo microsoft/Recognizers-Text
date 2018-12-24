@@ -189,6 +189,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     futureDate = DateObject.MinValue.SafeCreateFromValue(year, month + 1, day);
                     pastDate = DateObject.MinValue.SafeCreateFromValue(year, month - 1, day);
                 }
+
                 else
                 {
                     if (!IsLeapYear(year) && IsFeb29th(month, day))
@@ -196,25 +197,32 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                         futureDate = DateObject.MinValue.SafeCreateFromValue(year, month - 1, day);
                         pastDate = DateObject.MinValue.SafeCreateFromValue(year, month - 1, day);
                     }
+
                     else
                     {
                         futureDate = DateObject.MinValue.SafeCreateFromValue(year, month, day);
                         pastDate = DateObject.MinValue.SafeCreateFromValue(year, month, day);
                     }
+
                     if (!hasMonth)
                     {
                         if (futureDate < referenceDate)
                         {
                             if (IsLeapYear(year) || !IsFeb29th(month, day))
-                                futureDate = futureDate.AddMonths(1);
+                            {
+                                 futureDate = futureDate.AddMonths(1);
+                            }
                         }
 
                         if (pastDate >= referenceDate)
                         {
                             if (IsLeapYear(year) || !IsMar29th(month, day))
+                            {
                                 pastDate = pastDate.AddMonths(-1);
+                            }
                         }
                     }
+                    
                     else if (!hasYear)
                     {
                         if (futureDate < referenceDate)
