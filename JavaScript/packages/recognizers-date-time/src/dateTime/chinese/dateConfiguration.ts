@@ -299,7 +299,7 @@ export class ChineseDateParser extends BaseDateParser {
                     futureDate = DateUtils.safeCreateFromMinValue(year, month - 1, day);
                     pastDate = DateUtils.safeCreateFromMinValue(year, month - 1, day);
                 }
-                else{
+                else {
                     futureDate = DateUtils.safeCreateFromMinValue(year, month, day);
                     pastDate = DateUtils.safeCreateFromMinValue(year, month, day);
                 }
