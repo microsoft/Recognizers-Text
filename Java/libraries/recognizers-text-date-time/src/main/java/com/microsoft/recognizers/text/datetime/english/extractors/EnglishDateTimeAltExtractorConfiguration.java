@@ -4,6 +4,7 @@ import com.microsoft.recognizers.text.datetime.config.BaseOptionsConfiguration;
 import com.microsoft.recognizers.text.datetime.config.IOptionsConfiguration;
 import com.microsoft.recognizers.text.datetime.extractors.BaseDateExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.BaseDatePeriodExtractor;
+import com.microsoft.recognizers.text.datetime.extractors.IDateExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.IDateTimeExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.config.IDateTimeAltExtractorConfiguration;
 import com.microsoft.recognizers.text.datetime.resources.EnglishDateTime;
@@ -18,6 +19,7 @@ public class EnglishDateTimeAltExtractorConfiguration extends BaseOptionsConfigu
 
     private static final Pattern OrRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.OrRegex, flags);
     private static final Pattern DayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.DayRegex, flags);
+    private static final Pattern RangePrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RangePrefixRegex, flags);
 
     public static final Pattern ThisPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.ThisPrefixRegex, flags);
     public static final Pattern PastPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PastPrefixRegex, flags);
@@ -40,7 +42,7 @@ public class EnglishDateTimeAltExtractorConfiguration extends BaseOptionsConfigu
         }
     };
 
-    private final IDateTimeExtractor dateExtractor;
+    private final IDateExtractor dateExtractor;
     private final IDateTimeExtractor datePeriodExtractor;
 
     public EnglishDateTimeAltExtractorConfiguration(IOptionsConfiguration config) {
@@ -50,7 +52,7 @@ public class EnglishDateTimeAltExtractorConfiguration extends BaseOptionsConfigu
     }
 
     @Override
-    public IDateTimeExtractor getDateExtractor() {
+    public IDateExtractor getDateExtractor() {
         return dateExtractor;
     }
 
@@ -77,5 +79,9 @@ public class EnglishDateTimeAltExtractorConfiguration extends BaseOptionsConfigu
     @Override
     public Pattern getDayRegex() {
         return DayRegex;
+    }
+
+    @Override public Pattern getRangePrefixRegex() {
+        return RangePrefixRegex;
     }
 }
