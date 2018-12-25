@@ -47,7 +47,7 @@ public class EnglishDateTimeExtractorConfiguration extends BaseOptionsConfigurat
         super(options);
 
         integerExtractor = IntegerExtractor.getInstance();
-        datePointExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration());
+        datePointExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration(this));
         timePointExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration(options));
         durationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration(options));
 

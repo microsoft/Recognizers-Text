@@ -2,6 +2,7 @@ package com.microsoft.recognizers.text.datetime.english.extractors;
 
 import com.microsoft.recognizers.text.IExtractor;
 import com.microsoft.recognizers.text.datetime.DateTimeOptions;
+import com.microsoft.recognizers.text.datetime.config.BaseOptionsConfiguration;
 import com.microsoft.recognizers.text.datetime.extractors.BaseDateExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.BaseDatePeriodExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.BaseDateTimeAltExtractor;
@@ -28,7 +29,9 @@ import java.util.stream.Collectors;
 
 import org.javatuples.Pair;
 
-public class EnglishMergedExtractorConfiguration implements IMergedExtractorConfiguration {
+import org.javatuples.Pair;
+
+public class EnglishMergedExtractorConfiguration extends BaseOptionsConfiguration implements IMergedExtractorConfiguration {
 
     public static final Pattern AfterRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.AfterRegex, Pattern.CASE_INSENSITIVE);
     public static final Pattern SinceRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SinceRegex, Pattern.CASE_INSENSITIVE);
@@ -59,12 +62,6 @@ public class EnglishMergedExtractorConfiguration implements IMergedExtractorConf
 
     public final StringMatcher getSuperfluousWordMatcher() {
         return SuperfluousWordMatcher;
-    }
-
-    private DateTimeOptions options;
-
-    public final DateTimeOptions getOptions() {
-        return options;
     }
 
     private IDateTimeExtractor setExtractor;
@@ -140,17 +137,17 @@ public class EnglishMergedExtractorConfiguration implements IMergedExtractorConf
     }
 
     public EnglishMergedExtractorConfiguration(DateTimeOptions options) {
-        this.options = options;
+        super(options);
 
         setExtractor = new BaseSetExtractor(new EnglishSetExtractorConfiguration(options));
-        dateExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration());
+        dateExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration(this));
         timeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration(options));
         holidayExtractor = new BaseHolidayExtractor(new EnglishHolidayExtractorConfiguration());
-        datePeriodExtractor = new BaseDatePeriodExtractor(new EnglishDatePeriodExtractorConfiguration());
+        datePeriodExtractor = new BaseDatePeriodExtractor(new EnglishDatePeriodExtractorConfiguration(this));
         dateTimeExtractor = new BaseDateTimeExtractor(new EnglishDateTimeExtractorConfiguration(options));
         durationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration(options));
         timeZoneExtractor = new BaseTimeZoneExtractor(new EnglishTimeZoneExtractorConfiguration(options));
-        dateTimeAltExtractor = new BaseDateTimeAltExtractor(new EnglishDateTimeAltExtractorConfiguration());
+        dateTimeAltExtractor = new BaseDateTimeAltExtractor(new EnglishDateTimeAltExtractorConfiguration(this));
         timePeriodExtractor = new BaseTimePeriodExtractor(new EnglishTimePeriodExtractorConfiguration(options));
         dateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new EnglishDateTimePeriodExtractorConfiguration(options));
         integerExtractor = IntegerExtractor.getInstance();
@@ -161,7 +158,7 @@ public class EnglishMergedExtractorConfiguration implements IMergedExtractorConf
             return new Pair<Pattern, Pattern>(key, val);
         }).collect(Collectors.toList());
 
-        if (!this.options.match(DateTimeOptions.EnablePreview)) {
+        if (!this.getOptions().match(DateTimeOptions.EnablePreview)) {
             getSuperfluousWordMatcher().init(EnglishDateTime.SuperfluousWordList);
         }
     }

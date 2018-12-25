@@ -4,6 +4,8 @@ import com.google.common.collect.ImmutableMap;
 import com.microsoft.recognizers.text.IExtractor;
 import com.microsoft.recognizers.text.IParser;
 import com.microsoft.recognizers.text.datetime.DateTimeOptions;
+import com.microsoft.recognizers.text.datetime.config.BaseOptionsConfiguration;
+import com.microsoft.recognizers.text.datetime.config.IOptionsConfiguration;
 import com.microsoft.recognizers.text.datetime.english.parsers.EnglishDatetimeUtilityConfiguration;
 import com.microsoft.recognizers.text.datetime.extractors.BaseDurationExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.IDateTimeExtractor;
@@ -21,10 +23,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
 
-public class EnglishDateExtractorConfiguration implements IDateExtractorConfiguration {
+public class EnglishDateExtractorConfiguration extends BaseOptionsConfiguration implements IDateExtractorConfiguration {
 
     public static final Pattern MonthRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.MonthRegex, Pattern.CASE_INSENSITIVE);
-    public static final Pattern DayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.DayRegex, Pattern.CASE_INSENSITIVE);
+    public static final Pattern DayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.ImplicitDayRegex, Pattern.CASE_INSENSITIVE);
     public static final Pattern MonthNumRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.MonthNumRegex, Pattern.CASE_INSENSITIVE);
     public static final Pattern YearRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.YearRegex, Pattern.CASE_INSENSITIVE);
     public static final Pattern WeekDayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.WeekDayRegex, Pattern.CASE_INSENSITIVE);
@@ -96,13 +98,20 @@ public class EnglishDateExtractorConfiguration implements IDateExtractorConfigur
     private final IParser numberParser;
     private final IDateTimeExtractor durationExtractor;
     private final IDateTimeUtilityConfiguration utilityConfiguration;
+    private final List<Pattern> implicitDateList;
 
-    public EnglishDateExtractorConfiguration() {
+    public EnglishDateExtractorConfiguration(IOptionsConfiguration config) {
+        super(config.getOptions());
         integerExtractor = IntegerExtractor.getInstance();
         ordinalExtractor = OrdinalExtractor.getInstance();
         numberParser = new BaseNumberParser(new EnglishNumberParserConfiguration());
         durationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration());
         utilityConfiguration = new EnglishDatetimeUtilityConfiguration();
+
+        implicitDateList = new ArrayList<>(ImplicitDateList);
+        if (this.getOptions().match(DateTimeOptions.CalendarMode)) {
+            implicitDateList.add(DayRegex);
+        }
     }
 
     @Override
@@ -112,7 +121,7 @@ public class EnglishDateExtractorConfiguration implements IDateExtractorConfigur
 
     @Override
     public Iterable<Pattern> getImplicitDateList() {
-        return ImplicitDateList;
+        return implicitDateList;
     }
 
     @Override
@@ -223,10 +232,5 @@ public class EnglishDateExtractorConfiguration implements IDateExtractorConfigur
     @Override
     public ImmutableMap<String, Integer> getMonthOfYear() {
         return MonthOfYear;
-    }
-
-    @Override
-    public DateTimeOptions getOptions() {
-        return DateTimeOptions.None;
     }
 }

@@ -38,7 +38,14 @@ public class TestCase {
     }
 
     public String toString() {
-        return String.format("%sRecognizer - %s - %s - \"%s\"", this.recognizerName, this.language, this.modelName, this.input);
+        String testName = String.format("%sRecognizer - %s - %s - \"%s\"", this.recognizerName, this.language, this.modelName, this.input);
+
+        if (this.context != null && this.context.containsKey("ReferenceDateTime")) {
+
+            return String.format("%s - [%s]", testName, this.context.get("ReferenceDateTime"));
+        }
+
+        return testName;
     }
 
     private String getDateTimePattern(String datetime) {
