@@ -8,11 +8,13 @@ import com.microsoft.recognizers.text.datetime.DateTimeOptions;
 import com.microsoft.recognizers.text.datetime.DateTimeResolutionKey;
 import com.microsoft.recognizers.text.datetime.TimeTypeConstants;
 import com.microsoft.recognizers.text.datetime.parsers.config.IMergedParserConfiguration;
+import com.microsoft.recognizers.text.datetime.utilities.ConditionalMatch;
 import com.microsoft.recognizers.text.datetime.utilities.DateTimeFormatUtil;
 import com.microsoft.recognizers.text.datetime.utilities.DateTimeResolutionResult;
 import com.microsoft.recognizers.text.datetime.utilities.DateUtil;
 import com.microsoft.recognizers.text.datetime.utilities.FormatUtil;
 import com.microsoft.recognizers.text.datetime.utilities.MatchingUtil;
+import com.microsoft.recognizers.text.datetime.utilities.RegexExtension;
 import com.microsoft.recognizers.text.datetime.utilities.TimexUtility;
 import com.microsoft.recognizers.text.utilities.Match;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
@@ -84,45 +86,45 @@ public class BaseMergedDateTimeParser implements IDateTimeParser {
         // For example, cases like "on or later than", "earlier than or in" have inclusive modifier
         boolean hasInclusiveModifier = false;
         String modStr = "";
-        Optional<Match> beforeMatch = Arrays.stream(RegExpUtility.getMatches(config.getBeforeRegex(), er.text)).findFirst();
-        Optional<Match> afterMatch = Arrays.stream(RegExpUtility.getMatches(config.getAfterRegex(), er.text)).findFirst();
-        Optional<Match> sinceMatch = Arrays.stream(RegExpUtility.getMatches(config.getSinceRegex(), er.text)).findFirst();
-        Optional<Match> aroundMatch = Arrays.stream(RegExpUtility.getMatches(config.getAroundRegex(), er.text)).findFirst();
+        ConditionalMatch beforeMatch = RegexExtension.matchBegin(config.getBeforeRegex(), er.text, true);
+        ConditionalMatch afterMatch = RegexExtension.matchBegin(config.getAfterRegex(), er.text, true);
+        ConditionalMatch sinceMatch = RegexExtension.matchBegin(config.getSinceRegex(), er.text, true);
+        ConditionalMatch aroundMatch = RegexExtension.matchBegin(config.getAroundRegex(), er.text, true);
 
-        if (beforeMatch.isPresent() && beforeMatch.get().index == 0) {
+        if (beforeMatch.getSuccess()) {
             hasBefore = true;
-            er = er.withStart(er.start + beforeMatch.get().length)
-                .withLength(er.length - beforeMatch.get().length)
-                .withText(er.text.substring(beforeMatch.get().length));
-            modStr = beforeMatch.get().value;
+            er = er.withStart(er.start + beforeMatch.getMatch().get().length)
+                .withLength(er.length - beforeMatch.getMatch().get().length)
+                .withText(er.text.substring(beforeMatch.getMatch().get().length));
+            modStr = beforeMatch.getMatch().get().value;
 
-            if (!StringUtility.isNullOrEmpty(beforeMatch.get().getGroup("include").value)) {
+            if (!StringUtility.isNullOrEmpty(beforeMatch.getMatch().get().getGroup("include").value)) {
                 hasInclusiveModifier = true;
             }
-        } else if (afterMatch.isPresent() && afterMatch.get().index == 0) {
+        } else if (afterMatch.getSuccess()) {
             hasAfter = true;
-            er = er.withStart(er.start + afterMatch.get().length)
-                .withLength(er.length - afterMatch.get().length)
-                .withText(er.text.substring(afterMatch.get().length));
-            modStr = afterMatch.get().value;
+            er = er.withStart(er.start + afterMatch.getMatch().get().length)
+                .withLength(er.length - afterMatch.getMatch().get().length)
+                .withText(er.text.substring(afterMatch.getMatch().get().length));
+            modStr = afterMatch.getMatch().get().value;
 
-            if (!StringUtility.isNullOrEmpty(afterMatch.get().getGroup("include").value)) {
+            if (!StringUtility.isNullOrEmpty(afterMatch.getMatch().get().getGroup("include").value)) {
                 hasInclusiveModifier = true;
             }
-        } else if (sinceMatch.isPresent() && sinceMatch.get().index == 0) {
+        } else if (sinceMatch.getSuccess()) {
             hasSince = true;
-            er = er.withStart(er.start + sinceMatch.get().length)
-                .withLength(er.length - sinceMatch.get().length)
-                .withText(er.text.substring(sinceMatch.get().length));
-            modStr = sinceMatch.get().value;
-        } else if (aroundMatch.isPresent() && aroundMatch.get().index == 0) {
+            er = er.withStart(er.start + sinceMatch.getMatch().get().length)
+                    .withLength(er.length - sinceMatch.getMatch().get().length)
+                    .withText(er.text.substring(sinceMatch.getMatch().get().length));
+            modStr = sinceMatch.getMatch().get().value;
+        } else if (aroundMatch.getSuccess()) {
             hasAround = true;
-            er = er.withStart(er.start + aroundMatch.get().length)
-                .withLength(er.length - aroundMatch.get().length)
-                .withText(er.text.substring(aroundMatch.get().length));
-            modStr = aroundMatch.get().value;
+            er = er.withStart(er.start + aroundMatch.getMatch().get().length)
+                    .withLength(er.length - aroundMatch.getMatch().get().length)
+                    .withText(er.text.substring(aroundMatch.getMatch().get().length));
+            modStr = aroundMatch.getMatch().get().value;
         } else if ((er.type.equals(Constants.SYS_DATETIME_DATEPERIOD) && Arrays.stream(RegExpUtility.getMatches(config.getYearRegex(), er.text)).findFirst().isPresent()) ||
-            (er.type.equals(Constants.SYS_DATETIME_DATE))) {
+                (er.type.equals(Constants.SYS_DATETIME_DATE))) {
             // This has to be put at the end of the if, or cases like "before 2012" and "after 2012" would fall into this
             // 2012 or after/above
             Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(config.getDateAfterRegex(), er.text)).findFirst();
@@ -166,11 +168,11 @@ public class BaseMergedDateTimeParser implements IDateTimeParser {
         // Pop, restore the MOD string
         if (hasBefore && pr != null && pr.value != null) {
             pr = new DateTimeParseResult(new ParseResult(
-                pr.withStart(pr.start - modStr.length())
+                    pr.withStart(pr.start - modStr.length())
                     .withText(modStr + pr.text))
-                .withLength(pr.length + modStr.length())
-                .withValue(pr.value))
-                .withTimexStr(pr.timexStr);
+                    .withLength(pr.length + modStr.length())
+                    .withValue(pr.value))
+                    .withTimexStr(pr.timexStr);
             DateTimeResolutionResult val = (DateTimeResolutionResult)pr.value;
 
             if (!hasInclusiveModifier) {
@@ -184,11 +186,11 @@ public class BaseMergedDateTimeParser implements IDateTimeParser {
 
         if (hasAfter && pr != null && pr.value != null) {
             pr = new DateTimeParseResult(new ParseResult(
-                pr.withStart(pr.start - modStr.length())
+                    pr.withStart(pr.start - modStr.length())
                     .withText(modStr + pr.text))
-                .withLength(pr.length + modStr.length())
-                .withValue(pr.value))
-                .withTimexStr(pr.timexStr);
+                    .withLength(pr.length + modStr.length())
+                    .withValue(pr.value))
+                    .withTimexStr(pr.timexStr);
             DateTimeResolutionResult val = (DateTimeResolutionResult)pr.value;
 
             if (!hasInclusiveModifier) {
@@ -202,11 +204,11 @@ public class BaseMergedDateTimeParser implements IDateTimeParser {
 
         if (hasSince && pr != null && pr.value != null) {
             pr = new DateTimeParseResult(new ParseResult(
-                pr.withStart(pr.start - modStr.length())
-                    .withText(modStr + pr.text))
-                .withLength(pr.length + modStr.length())
-                .withValue(pr.value))
-                .withTimexStr(pr.timexStr);
+                    pr.withStart(pr.start - modStr.length())
+                            .withText(modStr + pr.text))
+                    .withLength(pr.length + modStr.length())
+                    .withValue(pr.value))
+                    .withTimexStr(pr.timexStr);
             DateTimeResolutionResult val = (DateTimeResolutionResult)pr.value;
             val.setMod(Constants.SINCE_MOD);
             pr = new DateTimeParseResult(pr.withValue(val)).withTimexStr(pr.timexStr);
@@ -214,11 +216,11 @@ public class BaseMergedDateTimeParser implements IDateTimeParser {
 
         if (hasAround && pr != null && pr.value != null) {
             pr = new DateTimeParseResult(new ParseResult(
-                pr.withStart(pr.start - modStr.length())
-                    .withText(modStr + pr.text))
-                .withLength(pr.length + modStr.length())
-                .withValue(pr.value))
-                .withTimexStr(pr.timexStr);
+                    pr.withStart(pr.start - modStr.length())
+                            .withText(modStr + pr.text))
+                    .withLength(pr.length + modStr.length())
+                    .withValue(pr.value))
+                    .withTimexStr(pr.timexStr);
             DateTimeResolutionResult val = (DateTimeResolutionResult)pr.value;
             val.setMod(Constants.APPROX_MOD);
             pr = new DateTimeParseResult(pr.withValue(val)).withTimexStr(pr.timexStr);
@@ -226,10 +228,10 @@ public class BaseMergedDateTimeParser implements IDateTimeParser {
 
         if (hasYearAfter && pr != null && pr.value != null) {
             pr = new DateTimeParseResult(new ParseResult(
-                pr.withLength(pr.length + modStr.length())
+                    pr.withLength(pr.length + modStr.length())
                     .withText(pr.text + modStr))
-                .withValue(pr.value))
-                .withTimexStr(pr.timexStr);
+                    .withValue(pr.value))
+                    .withTimexStr(pr.timexStr);
             DateTimeResolutionResult val = (DateTimeResolutionResult)pr.value;
             val.setMod(Constants.SINCE_MOD);
             pr = new DateTimeParseResult(pr.withValue(val)).withTimexStr(pr.timexStr);
@@ -237,7 +239,7 @@ public class BaseMergedDateTimeParser implements IDateTimeParser {
         }
 
         if (config.getOptions().match(DateTimeOptions.SplitDateAndTime) && pr != null && pr.value != null &&
-            ((DateTimeResolutionResult)pr.value).getSubDateTimeEntities() != null) {
+                ((DateTimeResolutionResult)pr.value).getSubDateTimeEntities() != null) {
             pr = new DateTimeParseResult(pr.withValue(dateTimeResolutionForSplit(pr))).withTimexStr(pr.timexStr);
         } else {
             boolean hasModifier = hasBefore || hasAfter || hasSince;
@@ -263,8 +265,10 @@ public class BaseMergedDateTimeParser implements IDateTimeParser {
                 for (Match match : matches) {
                     // Check for intersections/overlaps
                     candidateResults = candidateResults.stream().filter(
-                        c -> filterResultsPredicate(c, match)).collect(Collectors.toList());
+                        c -> filterResultsPredicate(c, match))
+                        .collect(Collectors.toList());
                 }
+
             }
         }
 
@@ -281,8 +285,8 @@ public class BaseMergedDateTimeParser implements IDateTimeParser {
         String type = String.format("%s.%s", parserName, determineDateTimeType(slot.type, hasMod));
 
         slot = new DateTimeParseResult(new ParseResult(slot.withType(type))
-            .withValue(slotValue))
-            .withTimexStr(slot.timexStr);
+                .withValue(slotValue))
+                .withTimexStr(slot.timexStr);
 
         return slot;
     }
@@ -322,9 +326,9 @@ public class BaseMergedDateTimeParser implements IDateTimeParser {
             }
         } else {
             slot = new DateTimeParseResult(new ParseResult(
-                slot.withType(String.format("%s.%s", parserName, determineDateTimeType(slot.type, false))))
-                .withValue(dateTimeResolution(slot)))
-                .withTimexStr(slot.timexStr);
+                    slot.withType(String.format("%s.%s",parserName, determineDateTimeType(slot.type, false))))
+                    .withValue(dateTimeResolution(slot)))
+                    .withTimexStr(slot.timexStr);
             results.add(slot);
         }
 
@@ -349,6 +353,7 @@ public class BaseMergedDateTimeParser implements IDateTimeParser {
 
         Boolean islunar = val.getIsLunar() != null ? val.getIsLunar() : false;
         String mod = val.getMod();
+
         String list = null;
 
         // Resolve dates list for date periods
@@ -427,11 +432,11 @@ public class BaseMergedDateTimeParser implements IDateTimeParser {
 
         // If WeekOf and in CalendarMode, modify the past part of our resolution
         if (config.getOptions().match(DateTimeOptions.CalendarMode) &&
-            !StringUtility.isNullOrEmpty(comment) && comment.equals(Constants.Comment_WeekOf)) {
+                !StringUtility.isNullOrEmpty(comment) && comment.equals(Constants.Comment_WeekOf)) {
             resolveWeekOf(res, Constants.ResolveToPast);
         }
 
-        for (Map.Entry<String, Object> p : res.entrySet()) {
+        for (Map.Entry<String,Object> p : res.entrySet()) {
             if (p.getValue() instanceof Map) {
                 Map<String, String> value = new LinkedHashMap<>();
 
@@ -673,7 +678,7 @@ public class BaseMergedDateTimeParser implements IDateTimeParser {
                 } else {
                     res.put(DateTimeResolutionKey.END, end);
                 }
-
+                
                 return;
             }
 
@@ -690,7 +695,7 @@ public class BaseMergedDateTimeParser implements IDateTimeParser {
                 } else {
                     res.put(DateTimeResolutionKey.START, start);
                 }
-
+                
                 return;
             }
 

@@ -291,7 +291,7 @@ public class ChineseDateTime {
             .replace("{DateTimePeriodLastRegex}", DateTimePeriodLastRegex)
             .replace("{TimeOfDayRegex}", TimeOfDayRegex);
 
-    public static final String DateTimePeriodUnitRegex = "(个)?(?<unit>(小时|分钟|秒钟|时|分|秒))";
+    public static final String DateTimePeriodUnitRegex = "(个)?(?<unit>(小时|钟头|分钟|秒钟|时|分|秒))";
 
     public static final String DateTimePeriodFollowedUnit = "^\\s*{DateTimePeriodUnitRegex}"
             .replace("{DateTimePeriodUnitRegex}", DateTimePeriodUnitRegex);
@@ -306,7 +306,7 @@ public class ChineseDateTime {
     public static final ImmutableMap<String, String> DurationSuffixList = ImmutableMap.<String, String>builder()
         .put("M", "分钟")
         .put("S", "秒钟|秒")
-        .put("H", "个小时|小时")
+        .put("H", "个小时|小时|个钟头|钟头")
         .put("D", "天")
         .put("W", "星期|个星期|周")
         .put("Mon", "个月")

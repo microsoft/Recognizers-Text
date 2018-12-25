@@ -1,5 +1,7 @@
 package com.microsoft.recognizers.text.datetime.english.extractors;
 
+import com.microsoft.recognizers.text.datetime.config.BaseOptionsConfiguration;
+import com.microsoft.recognizers.text.datetime.config.IOptionsConfiguration;
 import com.microsoft.recognizers.text.datetime.extractors.BaseDateExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.BaseDatePeriodExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.IDateTimeExtractor;
@@ -10,7 +12,7 @@ import com.microsoft.recognizers.text.utilities.RegExpUtility;
 import java.util.ArrayList;
 import java.util.regex.Pattern;
 
-public class EnglishDateTimeAltExtractorConfiguration implements IDateTimeAltExtractorConfiguration {
+public class EnglishDateTimeAltExtractorConfiguration extends BaseOptionsConfiguration implements IDateTimeAltExtractorConfiguration {
 
     private static final int flags = Pattern.CASE_INSENSITIVE;
 
@@ -41,9 +43,10 @@ public class EnglishDateTimeAltExtractorConfiguration implements IDateTimeAltExt
     private final IDateTimeExtractor dateExtractor;
     private final IDateTimeExtractor datePeriodExtractor;
 
-    public EnglishDateTimeAltExtractorConfiguration() {
-        dateExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration());
-        datePeriodExtractor = new BaseDatePeriodExtractor(new EnglishDatePeriodExtractorConfiguration());
+    public EnglishDateTimeAltExtractorConfiguration(IOptionsConfiguration config) {
+        super(config.getOptions());
+        dateExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration(this));
+        datePeriodExtractor = new BaseDatePeriodExtractor(new EnglishDatePeriodExtractorConfiguration(this));
     }
 
     @Override

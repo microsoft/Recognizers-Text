@@ -14,6 +14,7 @@ import com.microsoft.recognizers.text.utilities.StringUtility;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 import java.util.regex.Pattern;
@@ -84,6 +85,7 @@ public class BaseDatePeriodExtractor implements IDateTimeExtractor {
 
                 results.add(new Token(match.index, match.index + match.length));
             }
+
         }
 
         return results;
@@ -136,7 +138,7 @@ public class BaseDatePeriodExtractor implements IDateTimeExtractor {
                 results.add(new Token(periodBegin, periodEnd));
 
                 // merge two tokens here, increase the index by two
-                idx = +2;
+                idx += 2;
                 continue;
             }
 
@@ -155,7 +157,7 @@ public class BaseDatePeriodExtractor implements IDateTimeExtractor {
                     results.add(new Token(periodBegin, periodEnd));
 
                     // merge two tokens here, increase the index by two
-                    idx = +2;
+                    idx += 2;
                     continue;
                 }
             }
@@ -165,12 +167,12 @@ public class BaseDatePeriodExtractor implements IDateTimeExtractor {
         return results;
     }
 
-    private List<Token> matchDuration(String text, LocalDateTime reference) {
+    private List<Token> matchDuration(String input, LocalDateTime reference) {
 
-        List<Token> ret = new ArrayList<>();
+        List<Token> results = new ArrayList<>();
 
         List<Token> durations = new ArrayList<>();
-        Iterable<ExtractResult> durationExtractions = config.getDurationExtractor().extract(text, reference);
+        Iterable<ExtractResult> durationExtractions = config.getDurationExtractor().extract(input, reference);
 
         for (ExtractResult durationExtraction : durationExtractions) {
             Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(config.getDateUnitRegex(), durationExtraction.text)).findFirst();
@@ -180,8 +182,8 @@ public class BaseDatePeriodExtractor implements IDateTimeExtractor {
         }
 
         for (Token duration : durations) {
-            String beforeStr = text.substring(0, duration.getStart()).toLowerCase();
-            String afterStr = text.substring(duration.getStart() + duration.getLength()).toLowerCase();
+            String beforeStr = input.substring(0, duration.getStart()).toLowerCase();
+            String afterStr = input.substring(duration.getStart() + duration.getLength()).toLowerCase();
 
             if (StringUtility.isNullOrWhiteSpace(beforeStr) && StringUtility.isNullOrWhiteSpace(afterStr)) {
                 continue;
@@ -191,13 +193,14 @@ public class BaseDatePeriodExtractor implements IDateTimeExtractor {
             // if duration contains "Seconds/Minutes/Hours", it should be treated as datetimeRange
             ConditionalMatch match = RegexExtension.matchEnd(config.getWithinNextPrefixRegex(), beforeStr, true);
 
-            if (match.getSuccess() && match.getMatch().isPresent()) {
+            if (match.getSuccess()) {
                 int startToken = match.getMatch().get().index;
-                Optional<Match> matchDate = Arrays.stream(RegExpUtility.getMatches(config.getDateUnitRegex(), text.substring(duration.getStart(), duration.getEnd()))).findFirst();
-                Optional<Match> matchTime = Arrays.stream(RegExpUtility.getMatches(config.getTimeUnitRegex(), text.substring(duration.getStart(), duration.getEnd()))).findFirst();
+                String tokenString = input.substring(duration.getStart(), duration.getEnd());
+                Match matchDate = Arrays.stream(RegExpUtility.getMatches(config.getDateUnitRegex(), tokenString)).findFirst().orElse(null);
+                Match matchTime = Arrays.stream(RegExpUtility.getMatches(config.getTimeUnitRegex(), tokenString)).findFirst().orElse(null);
 
-                if (matchDate.isPresent() && !matchTime.isPresent()) {
-                    ret.add(new Token(startToken, duration.getEnd()));
+                if (matchDate != null && matchTime == null) {
+                    results.add(new Token(startToken, duration.getEnd()));
                     continue;
                 }
             }
@@ -207,7 +210,7 @@ public class BaseDatePeriodExtractor implements IDateTimeExtractor {
 
             int index = -1;
 
-            if (match.getSuccess() && match.getMatch().isPresent()) {
+            if (match.getSuccess()) {
                 index = match.getMatch().get().index;
             }
 
@@ -215,53 +218,59 @@ public class BaseDatePeriodExtractor implements IDateTimeExtractor {
                 // For cases like "next five days"
                 match = RegexExtension.matchEnd(config.getFutureRegex(), beforeStr, true);
 
-                if (match.getSuccess() && match.getMatch().isPresent()) {
+                if (match.getSuccess()) {
                     index = match.getMatch().get().index;
                 }
             }
 
             if (index >= 0) {
                 String prefix = beforeStr.substring(0, index).trim();
-                String durationText = text.substring(duration.getStart(), duration.getEnd());
+                String durationText = input.substring(duration.getStart(), duration.getStart() + duration.getLength());
                 List<ExtractResult> numbersInPrefix = config.getCardinalExtractor().extract(prefix);
                 List<ExtractResult> numbersInDuration = config.getCardinalExtractor().extract(durationText);
 
                 // Cases like "2 upcoming days", should be supported here
                 // Cases like "2 upcoming 3 days" is invalid, only extract "upcoming 3 days" by default
                 if (!numbersInPrefix.isEmpty() && numbersInDuration.isEmpty()) {
-                    ExtractResult lastNumber = numbersInPrefix.stream().reduce((f, s) -> f.start + f.length <= s.start + s.length ? s : f).get();
+                    ExtractResult lastNumber = numbersInPrefix.stream()
+                            .sorted(Comparator.comparingInt(x -> x.start + x.length))
+                            .reduce((acc, item) -> item).orElse(null);
 
                     // Prefix should ends with the last number
                     if (lastNumber.start + lastNumber.length == prefix.length()) {
-                        ret.add(new Token(lastNumber.start, duration.getEnd()));
+                        results.add(new Token(lastNumber.start, duration.getEnd()));
                     }
+
                 } else {
-                    ret.add(new Token(index, duration.getEnd()));
+                    results.add(new Token(index, duration.getEnd()));
                 }
+
                 continue;
             }
 
             // Match suffix
             match = RegexExtension.matchBegin(config.getPastRegex(), afterStr, true);
-            if (match.getSuccess() && match.getMatch().isPresent()) {
-                ret.add(new Token(duration.getStart(), duration.getEnd() + match.getMatch().get().index + match.getMatch().get().length));
+            if (match.getSuccess()) {
+                int matchLength = match.getMatch().get().index + match.getMatch().get().length;
+                results.add(new Token(duration.getStart(), duration.getEnd() + matchLength));
                 continue;
             }
 
             match = RegexExtension.matchBegin(config.getFutureRegex(), afterStr, true);
-            if (match.getSuccess() && match.getMatch().isPresent()) {
-                ret.add(new Token(duration.getStart(), duration.getEnd() + match.getMatch().get().index + match.getMatch().get().length));
+            if (match.getSuccess()) {
+                int matchLength = match.getMatch().get().index + match.getMatch().get().length;
+                results.add(new Token(duration.getStart(), duration.getEnd() + matchLength));
                 continue;
             }
 
             match = RegexExtension.matchBegin(config.getFutureSuffixRegex(), afterStr, true);
-            if (match.getSuccess() && match.getMatch().isPresent()) {
-                ret.add(new Token(duration.getStart(), duration.getEnd() + match.getMatch().get().index + match.getMatch().get().length));
-                continue;
+            if (match.getSuccess()) {
+                int matchLength = match.getMatch().get().index + match.getMatch().get().length;
+                results.add(new Token(duration.getStart(), duration.getEnd() + matchLength));
             }
         }
 
-        return ret;
+        return results;
     }
 
     // 1. Extract the month of date, week of date to a date range
@@ -375,7 +384,7 @@ public class BaseDatePeriodExtractor implements IDateTimeExtractor {
         return results;
     }
 
-    private List<Token> matchOrdinalNumberWithCenturySuffix(String input, List<ExtractResult> ordinalExtractions) {
+    private List<Token> matchOrdinalNumberWithCenturySuffix(String input, List<ExtractResult>  ordinalExtractions) {
         List<Token> results = new ArrayList<>();
 
         for (ExtractResult er : ordinalExtractions) {
@@ -396,6 +405,14 @@ public class BaseDatePeriodExtractor implements IDateTimeExtractor {
         }
 
         return results;
+    }
+
+    private boolean matchSuffixRegexInSegment(String input, Optional<Match> match) {
+        return match.isPresent() && StringUtility.isNullOrWhiteSpace(input.substring(0, match.get().index));
+    }
+
+    private boolean matchPrefixRegexInSegment(String input, Optional<Match> match) {
+        return match.isPresent() && StringUtility.isNullOrWhiteSpace(input.substring(match.get().index + match.get().length));
     }
 
     private boolean isDateRelativeToNowOrToday(ExtractResult input) {

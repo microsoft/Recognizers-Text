@@ -8,6 +8,8 @@ import com.microsoft.recognizers.text.Culture;
 import com.microsoft.recognizers.text.ExtractResult;
 import com.microsoft.recognizers.text.ModelResult;
 import com.microsoft.recognizers.text.datetime.DateTimeOptions;
+import com.microsoft.recognizers.text.datetime.config.BaseOptionsConfiguration;
+import com.microsoft.recognizers.text.datetime.config.IOptionsConfiguration;
 import com.microsoft.recognizers.text.datetime.english.extractors.*;
 import com.microsoft.recognizers.text.datetime.extractors.*;
 import com.microsoft.recognizers.text.tests.AbstractTest;
@@ -86,11 +88,12 @@ public class DateTimeExtractorTest extends AbstractTest {
 
     private static IDateTimeExtractor getEnglishExtractor(String name) {
 
+        IOptionsConfiguration config = new BaseOptionsConfiguration();
         switch (name) {
             case "DateExtractor":
-                return new BaseDateExtractor(new EnglishDateExtractorConfiguration());
+                return new BaseDateExtractor(new EnglishDateExtractorConfiguration(config));
             case "DatePeriodExtractor":
-                return new BaseDatePeriodExtractor(new EnglishDatePeriodExtractorConfiguration());
+                return new BaseDatePeriodExtractor(new EnglishDatePeriodExtractorConfiguration(config));
             //case "DateTimeAltExtractor":
             //    return new BaseDateTimeAltExtractor(new EnglishDateTimeAltExtractorConfiguration());
             case "DateTimeExtractor":

@@ -107,10 +107,10 @@ public class EnglishCommonDateTimeParserConfiguration extends BaseDateParserConf
         numberParser = new BaseNumberParser(new EnglishNumberParserConfiguration());
 
         durationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration());
-        dateExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration());
+        dateExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration(this));
         timeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration(options));
         dateTimeExtractor = new BaseDateTimeExtractor(new EnglishDateTimeExtractorConfiguration(options));
-        datePeriodExtractor = new BaseDatePeriodExtractor(new EnglishDatePeriodExtractorConfiguration());
+        datePeriodExtractor = new BaseDatePeriodExtractor(new EnglishDatePeriodExtractorConfiguration(this));
         timePeriodExtractor = new BaseTimePeriodExtractor(new EnglishTimePeriodExtractorConfiguration(options));
         dateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new EnglishDateTimePeriodExtractorConfiguration(options));
 
