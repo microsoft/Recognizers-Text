@@ -22,7 +22,9 @@ clone_depth: 1
 branches:
   only:
   - master
-  - feature/*
+  - /[Ff]eature\/.+/
+  - /[Ff]ix\/.+/
+  - /[Hh]otfix\/.+/
 
 build:
   parallel: true
