@@ -247,19 +247,6 @@
     "NotSupported": "dotNet"
   },
   {
-    "Input": "Ik ga terug op 1 januari",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "1 januari",
-        "Type": "date",
-        "Start": 15,
-        "Length": 9
-      }
-    ],
-    "NotSupported": "dotNet"
-  },
-  {
     "Input": "Ik ga terug op 1 jan",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
@@ -507,19 +494,6 @@
     "NotSupported": "dotNet"
   },
   {
-    "Input": "Ik ga morgen terug",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "morgen",
-        "Type": "date",
-        "Start": 6,
-        "Length": 6
-      }
-    ],
-    "NotSupported": "dotNet"
-  },
-  {
     "Input": "Ik kom morgen terug",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
@@ -619,19 +593,6 @@
         "Type": "date",
         "Start": 7,
         "Length": 17
-      }
-    ],
-    "NotSupported": "dotNet"
-  },
-  {
-    "Input": "Ik ga volgende week zondag terug",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "volgende week zondag",
-        "Type": "date",
-        "Start": 6,
-        "Length": 20
       }
     ],
     "NotSupported": "dotNet"

@@ -494,32 +494,6 @@
     ]
   },
   {
-    "Input": "Nos vemos de madrugada",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "NotSupported": "javascript, python",
-    "Results": [
-      {
-        "Text": "madrugada",
-        "Type": "timerange",
-        "Value": {
-          "Timex": "TDA",
-          "FutureResolution": {
-            "startTime": "04:00:00",
-            "endTime": "08:00:00"
-          },
-          "PastResolution": {
-            "startTime": "04:00:00",
-            "endTime": "08:00:00"
-          }
-        },
-        "Start": 13,
-        "Length": 9
-      }
-    ]
-  },
-  {
     "Input": "Nos vemos na manhã",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"

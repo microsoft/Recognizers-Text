@@ -399,27 +399,6 @@
     ]
   },
   {
-    "Input": "Es ist halb 9",
-    "NotSupported": "javascript, python",
-    "Results": [
-      {
-        "Text": "halb 9",
-        "Type": "time",
-        "Value": {
-          "Timex": "T08:30",
-          "FutureResolution": {
-            "time": "08:30:00"
-          },
-          "PastResolution": {
-            "time": "08:30:00"
-          }
-        },
-        "Start": 7,
-        "Length": 6
-      }
-    ]
-  },
-  {
     "Input": "Es ist 8 Uhr nachts",
     "NotSupported": "javascript, python",
     "Results": [

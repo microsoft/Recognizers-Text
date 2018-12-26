@@ -506,28 +506,6 @@
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
-    "Input": "Het is half negen",
-    "Results": [
-      {
-        "Text": "half negen",
-        "Type": "time",
-        "Value": {
-          "Timex": "T08:30",
-          "FutureResolution": {
-            "time": "08:30:00"
-          },
-          "PastResolution": {
-            "time": "08:30:00"
-          }
-        },
-        "Start": 7,
-        "Length": 10
-      }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
-  },
-  {
     "Input": "Het is kwart over acht",
     "Results": [
       {
@@ -1006,28 +984,6 @@
         },
         "Start": 10,
         "Length": 9
-      }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
-  },
-  {
-    "Input": "middernacht",
-    "Results": [
-      {
-        "Text": "middernacht",
-        "Type": "time",
-        "Value": {
-          "Timex": "T00",
-          "FutureResolution": {
-            "time": "00:00:00"
-          },
-          "PastResolution": {
-            "time": "00:00:00"
-          }
-        },
-        "Start": 0,
-        "Length": 11
       }
     ],
     "NotSupported": "dotNet",

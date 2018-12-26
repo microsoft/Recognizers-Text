@@ -39,19 +39,6 @@
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
-    "Input": "Ik ben om 7 uur ‘s avonds terug",
-    "Results": [
-      {
-        "Text": "7 uur ‘s avonds",
-        "Type": "time",
-        "Start": 10,
-        "Length": 15
-      }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
-  },
-  {
     "Input": "Ik ben om 7:56 ‘s avonds terug",
     "Results": [
       {
@@ -550,19 +537,6 @@
     "Results": [
       {
         "Text": "mid-morgen",
-        "Type": "time",
-        "Start": 0,
-        "Length": 10
-      }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
-  },
-  {
-    "Input": "mid morgen",
-    "Results": [
-      {
-        "Text": "mid morgen",
         "Type": "time",
         "Start": 0,
         "Length": 10

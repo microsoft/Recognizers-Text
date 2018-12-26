@@ -3138,30 +3138,6 @@
     ]
   },
   {
-    "Input": "I'll be out 11 -2016",
-    "NotSupported": "javascript",
-    "Results": [
-      {
-        "Text": "11 -2016",
-        "Type": "daterange",
-        "Start": 12,
-        "Length": 8
-      }
-    ]
-  },
-  {
-    "Input": "I'll be out 11- 2016",
-    "NotSupported": "javascript",
-    "Results": [
-      {
-        "Text": "11- 2016",
-        "Type": "daterange",
-        "Start": 12,
-        "Length": 8
-      }
-    ]
-  },
-  {
     "Input": "I'll be out 11 - 2016",
     "NotSupported": "javascript",
     "Results": [

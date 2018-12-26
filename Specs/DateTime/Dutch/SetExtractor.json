@@ -65,19 +65,6 @@
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
-    "Input": "Ik zal jaarlijks vertrekken",
-    "Results": [
-      {
-        "Text": "jaarlijks",
-        "Type": "set",
-        "Start": 7,
-        "Length": 9
-      }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
-  },
-  {
     "Input": "Ik zal elke twee dagen vertrekken",
     "Results": [
       {
@@ -293,32 +280,6 @@
         "Type": "set",
         "Start": 21,
         "Length": 30
-      }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
-  },
-  {
-    "Input": "Ik zal elke maandag vertrekken",
-    "Results": [
-      {
-        "Text": "elke maandag",
-        "Type": "set",
-        "Start": 7,
-        "Length": 12
-      }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
-  },
-  {
-    "Input": "Ik zal elke zondag vertrekken",
-    "Results": [
-      {
-        "Text": "elke zondag",
-        "Type": "set",
-        "Start": 7,
-        "Length": 11
       }
     ],
     "NotSupported": "dotNet",

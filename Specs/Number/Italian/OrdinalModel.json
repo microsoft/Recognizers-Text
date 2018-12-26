@@ -168,20 +168,6 @@
     ]
   },
   {
-    "Input": "trilionesimo",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
-    "Results": [
-      {
-        "Text": "trilionesimo",
-        "TypeName": "ordinal",
-        "Resolution": {
-          "value": "1000000000000"
-        }
-      }
-    ]
-  },
-  {
     "Input": "duecentesimo",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",

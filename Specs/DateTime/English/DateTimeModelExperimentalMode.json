@@ -5567,31 +5567,6 @@
     ]
   },
   {
-    "Input": "You can only leave on 1/1/2016 and later",
-    "Context": {
-      "ReferenceDateTime": "2018-08-31T12:00:00"
-    },
-    "NotSupported": "javascript, python, java",
-    "Results": [
-      {
-        "Text": "1/1/2016 and later",
-        "Start": 22,
-        "End": 39,
-        "TypeName": "datetimeV2.daterange",
-        "Resolution": {
-          "values": [
-            {
-              "timex": "2016-01-01",
-              "Mod": "since",
-              "type": "daterange",
-              "start": "2016-01-01"
-            }
-          ]
-        }
-      }
-    ]
-  },
-  {
     "Input": "You can only leave on 1/1/2016 and after",
     "Context": {
       "ReferenceDateTime": "2018-08-31T12:00:00"

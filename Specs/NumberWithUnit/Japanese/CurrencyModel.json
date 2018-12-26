@@ -433,23 +433,6 @@
     ]
   },
   {
-    "Input": "小山は毎月545ドルと5セントを多く支出しています。",
-    "NotSupported": "python",
-    "Results": [
-      {
-        "Text": "545ドルと5セント",
-        "TypeName": "currency",
-        "Resolution": {
-          "isoCurrency": "USD",
-          "value": "545.05",
-          "unit": "United States dollar"
-        },
-        "Start": 5,
-        "End": 14
-      }
-    ]
-  },
-  {
     "Input": "この本は5人民元と3角です",
     "NotSupported": "python",
     "Results": [

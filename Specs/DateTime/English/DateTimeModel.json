@@ -6726,31 +6726,6 @@
     ]
   },
   {
-    "Input": "You can only leave on 1/1/2016 and later",
-    "Context": {
-      "ReferenceDateTime": "2018-08-31T12:00:00"
-    },
-    "NotSupported": "javascript, python",
-    "Results": [
-      {
-        "Text": "1/1/2016 and later",
-        "Start": 22,
-        "End": 39,
-        "TypeName": "datetimeV2.daterange",
-        "Resolution": {
-          "values": [
-            {
-              "timex": "2016-01-01",
-              "Mod": "since",
-              "type": "daterange",
-              "start": "2016-01-01"
-            }
-          ]
-        }
-      }
-    ]
-  },
-  {
     "Input": "You can only leave on 1/1/2016 and after",
     "Context": {
       "ReferenceDateTime": "2018-08-31T12:00:00"
@@ -7563,31 +7538,6 @@
     ]
   },
   {
-    "Input": "I will have a long vacation between 10/1-11/7",
-    "Context": {
-      "ReferenceDateTime": "2018-10-24T12:00:00"
-    },
-    "NotSupportedByDesign": "javascript, python",
-    "Results": [
-      {
-        "Text": "between 10/1-11/7",
-        "Start": 28,
-        "End": 44,
-        "TypeName": "datetimeV2.daterange",
-        "Resolution": {
-          "values": [
-            {
-              "timex": "(XXXX-10-01,XXXX-11-07,P37D)",
-              "type": "daterange",
-              "start": "2018-10-01",
-              "end": "2018-11-07"
-            }
-          ]
-        }
-      }
-    ]
-  },
-  {
     "Input": "APEC will happen in Korea Jan-Feb 2017",
     "Context": {
       "ReferenceDateTime": "2018-10-24T12:00:00"
@@ -7680,31 +7630,6 @@
               "timex": "(2015-11-18,2015-12-19,P31D)",
               "type": "daterange",
               "start": "2015-11-18",
-              "end": "2015-12-19"
-            }
-          ]
-        }
-      }
-    ]
-  },
-  {
-    "Input": "APEC will happen in Korea Nov 18 2014-Dec 19 2015",
-    "Context": {
-      "ReferenceDateTime": "2018-10-24T12:00:00"
-    },
-    "NotSupportedByDesign": "javascript, python",
-    "Results": [
-      {
-        "Text": "nov 18 2014-dec 19 2015",
-        "Start": 26,
-        "End": 48,
-        "TypeName": "datetimeV2.daterange",
-        "Resolution": {
-          "values": [
-            {
-              "timex": "(2014-11-18,2015-12-19,P396D)",
-              "type": "daterange",
-              "start": "2014-11-18",
               "end": "2015-12-19"
             }
           ]
@@ -7972,31 +7897,6 @@
               "type": "datetimerange",
               "start": "2018-11-05 10:00:00",
               "end": "2018-11-05 12:00:00"
-            }
-          ]
-        }
-      }
-    ]
-  },
-  {
-    "Input": "Where were you yesterday afternoon from 3-8pm",
-    "Context": {
-      "ReferenceDateTime": "2018-11-01T12:00:00"
-    },
-    "NotSupportedByDesign": "javascript, python",
-    "Results": [
-      {
-        "Text": "yesterday afternoon from 3-8pm",
-        "Start": 15,
-        "End": 44,
-        "TypeName": "datetimeV2.datetimerange",
-        "Resolution": {
-          "values": [
-            {
-              "timex": "(2018-10-31T15,2018-10-31T20,PT5H)",
-              "type": "datetimerange",
-              "start": "2018-10-31 15:00:00",
-              "end": "2018-10-31 20:00:00"
             }
           ]
         }

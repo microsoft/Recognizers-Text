@@ -1320,26 +1320,6 @@
     ]
   },
   {
-    "Input": "Tornerò a mezzogiorno",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
-    "Results": [
-      {
-        "Text": "mezzogiorno",
-        "Type": "time",
-        "Value": {
-          "Timex": "T12",
-          "FutureResolution": {
-            "time": "12:00:00"
-          },
-          "PastResolution": {
-            "time": "12:00:00"
-          }
-        }
-      }
-    ]
-  },
-  {
     "Input": "Tornerò a ora di pranzo alle 12",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",

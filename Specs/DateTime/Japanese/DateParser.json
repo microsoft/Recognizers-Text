@@ -312,102 +312,6 @@
     ]
   },
   {
-    "Input": "私は4.22に戻ります",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupportedByDesign": "dotNet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "4.22",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-04-22",
-          "FutureResolution": {
-            "date": "2017-04-22"
-          },
-          "PastResolution": {
-            "date": "2016-04-22"
-          }
-        },
-        "Start": 2,
-        "Length": 4
-      }
-    ]
-  },
-  {
-    "Input": "私は4-22に戻ります",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupportedByDesign": "dotNet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "4-22",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-04-22",
-          "FutureResolution": {
-            "date": "2017-04-22"
-          },
-          "PastResolution": {
-            "date": "2016-04-22"
-          }
-        },
-        "Start": 2,
-        "Length": 4
-      }
-    ]
-  },
-  {
-    "Input": "私は4/22に戻ります",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupportedByDesign": "javascript, python, java",
-    "Results": [
-      {
-        "Text": "4/22",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-04-22",
-          "FutureResolution": {
-            "date": "2017-04-22"
-          },
-          "PastResolution": {
-            "date": "2016-04-22"
-          }
-        },
-        "Start": 2,
-        "Length": 4
-      }
-    ]
-  },
-  {
-    "Input": "私は22/04に戻ります",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupportedByDesign": "javascript, python, java",
-    "Results": [
-      {
-        "Text": "22/04",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-04-22",
-          "FutureResolution": {
-            "date": "2017-04-22"
-          },
-          "PastResolution": {
-            "date": "2016-04-22"
-          }
-        },
-        "Start": 2,
-        "Length": 5
-      }
-    ]
-  },
-  {
     "Input": "私は4/22に戻ります",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -744,30 +648,6 @@
     ]
   },
   {
-    "Input": "私は金曜日に戻ります",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupportedByDesign": "javascript, python, java",
-    "Results": [
-      {
-        "Text": "金曜日",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-WXX-5",
-          "FutureResolution": {
-            "date": "2016-11-11"
-          },
-          "PastResolution": {
-            "date": "2016-11-04"
-          }
-        },
-        "Start": 2,
-        "Length": 3
-      }
-    ]
-  },
-  {
     "Input": "私は今日戻ります",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -907,30 +787,6 @@
           }
         },
         "Start": 0,
-        "Length": 3
-      }
-    ]
-  },
-  {
-    "Input": "私は次の日に戻ります",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupportedByDesign": "dotNet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "次の日",
-        "Type": "date",
-        "Value": {
-          "Timex": "2016-11-08",
-          "FutureResolution": {
-            "date": "2016-11-08"
-          },
-          "PastResolution": {
-            "date": "2016-11-08"
-          }
-        },
-        "Start": 2,
         "Length": 3
       }
     ]
@@ -1128,30 +984,6 @@
     ]
   },
   {
-    "Input": "私は昨日戻りました",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupportedByDesign": "javascript, python, java",
-    "Results": [
-      {
-        "Text": "昨日",
-        "Type": "date",
-        "Value": {
-          "Timex": "2016-11-06",
-          "FutureResolution": {
-            "date": "2016-11-06"
-          },
-          "PastResolution": {
-            "date": "2016-11-06"
-          }
-        },
-        "Start": 2,
-        "Length": 2
-      }
-    ]
-  },
-  {
     "Input": "私はその日に戻ります",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -1244,30 +1076,6 @@
         },
         "Start": 2,
         "Length": 8
-      }
-    ]
-  },
-  {
-    "Input": "私は来週の金曜日に戻ります",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupportedByDesign": "dotNet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "来週の金曜日",
-        "Type": "date",
-        "Value": {
-          "Timex": "2016-11-18",
-          "FutureResolution": {
-            "date": "2016-11-18"
-          },
-          "PastResolution": {
-            "date": "2016-11-18"
-          }
-        },
-        "Start": 2,
-        "Length": 6
       }
     ]
   },
