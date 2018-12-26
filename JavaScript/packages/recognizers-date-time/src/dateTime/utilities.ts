@@ -547,7 +547,7 @@ export class DateUtils {
 
     private static validDays(year: number) { return [31, this.isLeapYear(year) ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31] }
 
-    private static isValidDate(year: number, month: number, day: number): boolean {
+    static isValidDate(year: number, month: number, day: number): boolean {
         return year > 0 && year <= 9999
             && month >= 0 && month < 12
             && day > 0 && day <= this.validDays(year)[month];

@@ -1,6 +1,6 @@
 [
   {
-    "Input": "29日你去看电影吗",
+    "Input": "29日你去吃饭吗",
     "Context": {
       "ReferenceDateTime": "2018-02-10T00:00:00"
     },
@@ -46,7 +46,7 @@
     ]
   },
   {
-    "Input": "29日你去看电影吗",
+    "Input": "29日你上班吗",
     "Context": {
       "ReferenceDateTime": "2016-03-10T00:00:00"
     },

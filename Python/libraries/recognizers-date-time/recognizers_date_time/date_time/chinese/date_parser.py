@@ -93,13 +93,13 @@ class ChineseDateParser(BaseDateParser):
             if has_month:
                 if regex.search(self.token_next_regex, month_str):
                     month += 1
-                    if month == 12:
-                        month = 0
+                    if month == Constants.MaxMonth + 1:
+                        month = Constants.MinMonth
                         year += 1
                 elif regex.search(self.token_last_regex, month_str):
                     month -= 1
-                    if month == -1:
-                        month = 12
+                    if month == Constants.MinMonth - 1:
+                        month = Constants.MaxMonth
                         year -= 1
 
                 if has_year:
@@ -113,29 +113,52 @@ class ChineseDateParser(BaseDateParser):
             future_date: datetime
             past_date: datetime
 
-            if day > self.month_max_days[month]:
-                future_date = DateUtils.safe_create_from_min_value(year, month + 1, day)
-                past_date = DateUtils.safe_create_from_min_value(year, month - 1, day)
-            else:
-                if not self.is_leap_year(year) and self.is_feb_29th(month, day):
-                    future_date = DateUtils.safe_create_from_min_value(year, month - 1, day)
-                    past_date = DateUtils.safe_create_from_min_value(year, month - 1, day)
+            if day > self.get_month_max_day(year, month):
+                futureMonth = month + 1
+                pastMonth = month - 1
+                futureYear = year
+                pastYear = year
+
+                if futureMonth == Constants.MaxMonth + 1:
+                    futureMonth = Constants.MinMonth
+                    futureYear = year + 1
+
+                if pastMonth == Constants.MinMonth - 1:
+                    pastMonth = Constants.MaxMonth
+                    pastYear = year - 1
+
+                isFutureValid = DateUtils.is_valid_date(futureYear, futureMonth, day)
+                isPastValid = DateUtils.is_valid_date(pastYear, pastMonth, day)
+
+                if isFutureValid and isPastValid:
+                    future_date = DateUtils.safe_create_from_min_value(futureYear, futureMonth, day)
+                    past_date = DateUtils.safe_create_from_min_value(pastYear, pastMonth, day)
+                elif isFutureValid and not isPastValid:
+                    future_date = past_date = DateUtils.safe_create_from_min_value(futureYear, futureMonth, day)
+                elif not isFutureValid and not isPastValid:
+                    future_date = past_date = DateUtils.safe_create_from_min_value(pastYear,pastMonth, day)
                 else:
-                    future_date = DateUtils.safe_create_from_min_value(year, month, day)
-                    past_date = DateUtils.safe_create_from_min_value(year, month, day)
+                    future_date = past_date = DateUtils.safe_create_from_min_value(year, month, day)
+            else:
+                future_date = DateUtils.safe_create_from_min_value(year, month, day)
+                past_date = DateUtils.safe_create_from_min_value(year, month, day)
 
                 if not has_month:
                     if future_date < reference:
-                        if not self.is_feb_29th(month, day) or self.is_leap_year(year):
+                        if self.is_valid_date(year, month + 1, day):
                             future_date += datedelta(months=1)
                     if past_date >= reference:
-                        if not self.is_mar_29th(month, day) or self.is_leap_year(year):
+                        if self.is_valid_date(year, month - 1, day):
                             past_date += datedelta(months=-1)
+                        elif self.is_non_leap_year_Feb_29th(year, month - 1, day):
+                            past_date += datedelta(months=-2)
                 elif has_month and not has_year:
                     if future_date < reference:
-                        future_date += datedelta(years=1)
+                        if self.is_valid_date(year + 1, month, day):
+                            future_date += datedelta(years=1)
                     if past_date >= reference:
-                        past_date += datedelta(years=-1)
+                        if self.is_valid_date(year - 1, month, day):
+                            past_date += datedelta(years=-1)
 
             result.future_value = future_date
             result.past_value = past_date
@@ -295,8 +318,23 @@ class ChineseDateParser(BaseDateParser):
     def is_leap_year(self, year) -> bool:
         return (year % 4 == 0) and (year % 100 != 0) or (year % 400 == 0)
 
-    def is_feb_29th(self, month, day) -> bool:
-        return month == 2 and day == 29
+    def get_month_max_day(self, year, month) -> int:
+        maxDay = self.month_max_days[month - 1]
 
-    def is_mar_29th(self, month, day) -> bool:
-        return month == 3 and day == 29
+        if not self.is_leap_year(year) and month == 2:
+            maxDay -= 1
+        return maxDay
+
+    def is_valid_date(self, year, month, day):
+        if month < Constants.MinMonth:
+            year -= 1
+            month = Constants.MaxMonth
+
+        if month > Constants.MaxMonth:
+            year += 1
+            month = Constants.MinMonth
+
+        return DateUtils.is_valid_date(year, month, day)
+
+    def is_non_leap_year_Feb_29th(self, year, month, day):
+        return not self.is_leap_year(year) and month == 2 and day == 29

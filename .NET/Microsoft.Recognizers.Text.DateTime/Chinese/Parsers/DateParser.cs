@@ -235,7 +235,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     {
                         if (futureDate < referenceDate)
                         {
-                            if (IsValidDate(year, month, day))
+                            if (IsValidDate(year, month + 1, day))
                             {
                                 futureDate = futureDate.AddMonths(1);
                             }
@@ -248,7 +248,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                                 pastDate = pastDate.AddMonths(-1);
                             }
                             
-                            else if (IsNonleapYearMar29th(year, month, day))
+                            else if (IsNonleapYearFeb29th(year, month - 1, day))
                             {
                                 pastDate = pastDate.AddMonths(-2);
                             }
@@ -634,10 +634,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             return DateObjectExtension.IsValidDate(year, month, day);
         }
 
-        //Judge the date is non-leap year Mar 29th
-        private bool IsNonleapYearMar29th(int year, int month, int day)
+        //Judge the date is non-leap year Feb 29th
+        private bool IsNonleapYearFeb29th(int year, int month, int day)
         {
-            return !DateObject.IsLeapYear(year) && month == 3 && day == 29;
+            return !DateObject.IsLeapYear(year) && month == 2 && day == 29;
         }
 
         // parse a regex match which includes 'day', 'month' and 'year' (optional) group
