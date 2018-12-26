@@ -1,8 +1,9 @@
 ﻿<#@ assembly name="System.Core" #>
-<#@ assembly name="System.IO"#>
+<#@ assembly name="System.IO" #>
+<#@ assembly name="System.IO.FileSystem" #>
+<#@ assembly name="System.Linq"#>
 <#@ assembly name="System.Runtime"#>
-<#@ assembly name="System.Runtime"#>
-<#@ assembly name="$(SolutionDir)build\package\net462\Microsoft.Recognizers.Definitions.Common.dll" #>
+<#@ assembly name="System.Runtime.Extensions"#>
 <#@ import namespace="System" #>
 <#@ import namespace="System.IO" #>
 <#@ import namespace="System.Collections" #>
@@ -11,7 +12,7 @@
 <#@ import namespace="Microsoft.Recognizers.Definitions.Common" #>
 <#
 	// Read the model file 
-	var path = Host.ResolveAssemblyReference("$(SolutionDir)") + "..\\" + this.DataFilename;
+	var path = @"..\..\" + this.DataFilename;
 	var input = new StringReader(File.ReadAllText(path)); 
 	var yamlParser = new YamlParser();
 	var obj = yamlParser.Deserialize(input);
