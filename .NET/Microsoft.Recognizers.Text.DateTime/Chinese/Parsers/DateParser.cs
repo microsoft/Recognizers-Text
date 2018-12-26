@@ -634,7 +634,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             return DateObjectExtension.IsValidDate(year, month, day);
         }
 
-        //Judge the date is Mar 29th
+        //Judge the date is non-leap year Mar 29th
         private bool IsNonleapYearMar29th(int year, int month, int day)
         {
             return !DateObject.IsLeapYear(year) && month == 3 && day == 29;
