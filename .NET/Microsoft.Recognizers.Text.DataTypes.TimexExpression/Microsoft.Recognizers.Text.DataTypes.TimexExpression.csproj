@@ -1,10 +1,10 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;net462;net452;net45</TargetFrameworks>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
-	<CodeAnalysisRuleSet>Microsoft.Recognizers.Text.DataTypes.TimexExpression.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>../Recognizers-Text.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">

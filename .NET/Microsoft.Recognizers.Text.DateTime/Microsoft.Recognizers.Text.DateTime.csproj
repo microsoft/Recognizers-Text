@@ -5,7 +5,7 @@
     <!-- Disable GenerateAssemblyInfo to use the existing AssemblyInfo.cs -->
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
-	<CodeAnalysisRuleSet>Microsoft.Recognizers.Text.DateTime.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>../Recognizers-Text.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
 
   <ItemGroup>

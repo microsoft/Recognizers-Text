@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;net462;net452;net45</TargetFrameworks>
@@ -9,7 +9,7 @@
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net462|AnyCPU'">
     <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
-	<CodeAnalysisRuleSet>Microsoft.Recognizers.Definitions.ruleset</CodeAnalysisRuleSet>
+	  <CodeAnalysisRuleSet>../Recognizers-Text.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
 
   <ItemGroup>
