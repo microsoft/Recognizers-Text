@@ -4,10 +4,18 @@
     <TargetFrameworks>netstandard2.0;net462;net452;net45</TargetFrameworks>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+	<CodeAnalysisRuleSet>Microsoft.Recognizers.Text.DataTypes.TimexExpression.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
     <Exec Command="(robocopy /E /XO /R:3 /W:3 &quot;$(TargetDir)..&quot; &quot;$(SolutionDir)build\package&quot; *.*) ^&amp; IF %ERRORLEVEL% LSS 8 SET ERRORLEVEL = 0" />
   </Target>
+
+  <ItemGroup>
+    <PackageReference Include="StyleCop.Analyzers" Version="1.1.0-beta008">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
 
 </Project>

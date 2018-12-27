@@ -5,9 +5,14 @@
     <!-- Disable GenerateAssemblyInfo to use the existing AssemblyInfo.cs -->
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+	<CodeAnalysisRuleSet>Microsoft.Recognizers.Text.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="StyleCop.Analyzers" Version="1.1.0-beta008">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="System.Collections.Immutable" Version="1.4.0" />
     <PackageReference Include="NuGet.CommandLine" Version="4.3.0" />
     <PackageReference Include="System.ValueTuple" Version="4.4.0" />
