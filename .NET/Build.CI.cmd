@@ -8,16 +8,6 @@ ECHO.
 ECHO # Restoring NuGet dependencies
 CALL nuget restore
 
-ECHO.
-ECHO # Running BuildResources.cmd
-PUSHD Microsoft.Recognizers.Definitions
-CALL BuildResources.cmd
-IF %ERRORLEVEL% NEQ 0 (
-	ECHO # Failed to build resources.
-	EXIT /b -1
-)
-POPD
-
 set configuration=Release
 ECHO.
 ECHO # Building .NET solution (%configuration%)
