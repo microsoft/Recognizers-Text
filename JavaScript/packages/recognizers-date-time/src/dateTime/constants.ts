@@ -28,7 +28,7 @@ export class Constants {
     static readonly TrimesterMonthCount: number = 3;
     static readonly FourDigitsYearLength: number = 4;
     static readonly MaxMonth: number = 11;
-    static readonly MinMonth:number = 0;
+    static readonly MinMonth: number = 0;
 
     static readonly DefaultLanguageFallback_MDY: string = 'MDY';
     static readonly DefaultLanguageFallback_DMY: string = 'DMY';

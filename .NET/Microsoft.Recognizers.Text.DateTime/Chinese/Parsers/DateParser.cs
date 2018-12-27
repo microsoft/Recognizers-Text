@@ -247,7 +247,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                             {
                                 pastDate = pastDate.AddMonths(-1);
                             }
-                            
                             else if (IsNonleapYearFeb29th(year, month - 1, day))
                             {
                                 pastDate = pastDate.AddMonths(-2);
