@@ -4,6 +4,7 @@
     "Context": {
       "ReferenceDateTime": "2018-01-22T00:00:00"
     },
+    "NotSupportedByDesign": "Java",
     "Results": [
       {
         "Text": "29日",
@@ -32,6 +33,7 @@
     "Context": {
       "ReferenceDateTime": "2016-01-22T00:00:00"
     },
+    "NotSupportedByDesign": "Java",
     "Results": [
       {
         "Text": "29日",
@@ -60,6 +62,7 @@
     "Context": {
       "ReferenceDateTime": "2018-03-22T00:00:00"
     },
+    "NotSupportedByDesign": "Java",
     "Results": [
       {
         "Text": "29日",
@@ -88,6 +91,7 @@
     "Context": {
       "ReferenceDateTime": "2016-03-22T00:00:00"
     },
+    "NotSupportedByDesign": "Java",
     "Results": [
       {
         "Text": "29日",
@@ -116,6 +120,7 @@
     "Context": {
       "ReferenceDateTime": "2016-02-22T00:00:00"
     },
+    "NotSupportedByDesign": "Java",
     "Results": [
       {
         "Text": "29日",
@@ -144,6 +149,7 @@
     "Context": {
       "ReferenceDateTime": "2018-02-22T00:00:00"
     },
+    "NotSupportedByDesign": "Java",
     "Results": [
       {
         "Text": "29日",

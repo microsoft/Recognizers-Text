@@ -4,6 +4,7 @@
     "Context": {
       "ReferenceDateTime": "2018-02-10T00:00:00"
     },
+    "NotSupportedByDesign": "Java",
     "Results": [
       {
         "Text": "29日",
@@ -27,6 +28,7 @@
     "Context": {
       "ReferenceDateTime": "2016-02-10T00:00:00"
     },
+    "NotSupportedByDesign": "Java",
     "Results": [
       {
         "Text": "29日",
@@ -50,6 +52,7 @@
     "Context": {
       "ReferenceDateTime": "2016-03-10T00:00:00"
     },
+    "NotSupportedByDesign": "Java",
     "Results": [
       {
         "Text": "29日",
