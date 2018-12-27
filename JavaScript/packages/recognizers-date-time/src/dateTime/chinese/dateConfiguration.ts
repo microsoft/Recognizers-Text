@@ -336,7 +336,7 @@ export class ChineseDateParser extends BaseDateParser {
                         if (this.isValidDate(year, month - 1, day)) {
                             pastDate = DateUtils.addMonths(pastDate, -1);
                         }
-                        else if (this.isNonleapYearFeb29th(year, month, day)){
+                        else if (this.isNonleapYearFeb29th(year, month - 1, day)){
                             pastDate = DateUtils.addMonths(pastDate, -2);
                         }
                     }
