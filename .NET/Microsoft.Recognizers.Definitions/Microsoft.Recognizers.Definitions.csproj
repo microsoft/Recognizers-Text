@@ -261,197 +261,107 @@
 
   <ItemGroup>
     <None Update="BaseCurrency.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>BaseCurrency.cs</LastGenOutput>
     </None>
     <None Update="BaseDateTime.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>BaseDateTime.cs</LastGenOutput>
     </None>
     <None Update="BaseEmail.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>BaseEmail.cs</LastGenOutput>
     </None>
     <None Update="BaseGUID.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>BaseGUID.cs</LastGenOutput>
     </None>
     <None Update="BaseHashtag.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>BaseHashTag.cs</LastGenOutput>
     </None>
     <None Update="BaseIp.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>BaseIp.cs</LastGenOutput>
     </None>
     <None Update="BaseMention.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>BaseMention.cs</LastGenOutput>
     </None>
     <None Update="BaseNumbers.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>BaseNumbers.cs</LastGenOutput>
     </None>
     <None Update="BasePhoneNumbers.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>BasePhoneNumbers.cs</LastGenOutput>
     </None>
     <None Update="BaseUnits.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>BaseUnits.cs</LastGenOutput>
     </None>
     <None Update="BaseURL.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>BaseURL.cs</LastGenOutput>
     </None>
     <None Update="Chinese\ChoiceDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ChoiceDefinitions.cs</LastGenOutput>
     </None>
     <None Update="Chinese\DateTimeDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>DateTimeDefinitions.cs</LastGenOutput>
     </None>
     <None Update="Chinese\NumbersDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>NumbersDefinitions.cs</LastGenOutput>
     </None>
     <None Update="Chinese\NumbersWithUnitDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>NumbersWithUnitDefinitions.cs</LastGenOutput>
     </None>
     <None Update="Dutch\ChoiceDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ChoiceDefinitions.cs</LastGenOutput>
     </None>
     <None Update="Dutch\NumberDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>NumberDefinitions.cs</LastGenOutput>
     </None>
     <None Update="Dutch\NumbersWithUnitDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>NumbersWithUnitDefinitions.cs</LastGenOutput>
     </None>
     <None Update="English\ChoiceDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ChoiceDefinitions.cs</LastGenOutput>
     </None>
     <None Update="English\DateTimeDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>DateTimeDefinitions.cs</LastGenOutput>
     </None>
     <None Update="English\NumbersDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>NumbersDefinitions.cs</LastGenOutput>
     </None>
     <None Update="English\NumbersWithUnitDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>NumbersWithUnitDefinitions.cs</LastGenOutput>
     </None>
     <None Update="English\TimeZoneDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>TimeZoneDefinitions.cs</LastGenOutput>
     </None>
-	<None Update="French\ChoiceDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ChoiceDefinitions.cs</LastGenOutput>
+    <None Update="French\ChoiceDefinitions.tt">
     </None>
     <None Update="French\DateTimeDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>DateTimeDefinitions.cs</LastGenOutput>
     </None>
     <None Update="French\NumbersDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>NumbersDefinitions.cs</LastGenOutput>
     </None>
     <None Update="French\NumbersWithUnitDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>NumbersWithUnitDefinitions.cs</LastGenOutput>
     </None>
-	<None Update="German\ChoiceDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ChoiceDefinitions.cs</LastGenOutput>
+    <None Update="German\ChoiceDefinitions.tt">
     </None>
     <None Update="German\DateTimeDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>DateTimeDefinitions.cs</LastGenOutput>
     </None>
     <None Update="German\NumbersDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>NumbersDefinitions.cs</LastGenOutput>
     </None>
     <None Update="German\NumbersWithUnitDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>NumbersWithUnitDefinitions.cs</LastGenOutput>
     </None>
     <None Update="Italian\DateTimeDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>DateTimeDefinitions.cs</LastGenOutput>
     </None>
     <None Update="Italian\NumbersDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>NumbersDefinitions.cs</LastGenOutput>
     </None>
     <None Update="Italian\NumbersWithUnitDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>NumbersWithUnitDefinitions.cs</LastGenOutput>
     </None>
     <None Update="Japanese\ChoiceDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ChoiceDefinitions.cs</LastGenOutput>
     </None>
     <None Update="Japanese\DateTimeDefinitions.tt"> 
-      <LastGenOutput>DateTimeDefinitions.cs</LastGenOutput> 
-      <Generator>TextTemplatingFileGenerator</Generator> 
     </None> 
     <None Update="Japanese\NumbersDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>NumbersDefinitions.cs</LastGenOutput>
     </None>
     <None Update="Japanese\NumbersWithUnitDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>NumbersWithUnitDefinitions.cs</LastGenOutput>
     </None>
     <None Update="Korean\NumbersDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>NumbersDefinitions.cs</LastGenOutput>
     </None>
     <None Update="Portuguese\ChoiceDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ChoiceDefinitions.cs</LastGenOutput>
     </None>
     <None Update="Portuguese\DateTimeDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>DateTimeDefinitions.cs</LastGenOutput>
     </None>
     <None Update="Portuguese\NumbersDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>NumbersDefinitions.cs</LastGenOutput>
     </None>
     <None Update="Portuguese\NumbersWithUnitDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>NumbersWithUnitDefinitions.cs</LastGenOutput>
     </None>
     <None Update="Spanish\ChoiceDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ChoiceDefinitions.cs</LastGenOutput>
     </None>
     <None Update="Spanish\DateTimeDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>DateTimeDefinitions.cs</LastGenOutput>
     </None>
     <None Update="Spanish\NumbersDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>NumbersDefinitions.cs</LastGenOutput>
     </None>
     <None Update="Spanish\NumbersWithUnitDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>NumbersWithUnitDefinitions.cs</LastGenOutput>
     </None>
   </ItemGroup>
 
   <ItemGroup>
     <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <DotNetCliToolReference Include="T5.TextTransform.Tool" Version="1.1.0-*" />
   </ItemGroup>
 
 </Project>
