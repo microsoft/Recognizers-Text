@@ -7,13 +7,23 @@ public class ExtractResult {
     private Object data;
     private String type;
     private String text;
+    private Metadata metadata;
 
     public ExtractResult() {
         this(null, null, null, null);
     }
 
     public ExtractResult(Integer start, Integer length, String text, String type) {
-        this(start, length, text, type, null);
+        this(start, length, text, type, null, null);
+    }
+
+    public ExtractResult(Integer start, Integer length, String text, String type, Object data, Metadata metadata) {
+        this.start = start;
+        this.length = length;
+        this.text = text;
+        this.type = type;
+        this.data = data;
+        this.metadata = metadata;
     }
 
     public ExtractResult(Integer start, Integer length, String text, String type, Object data) {
@@ -22,6 +32,7 @@ public class ExtractResult {
         this.text = text;
         this.type = type;
         this.data = data;
+        this.metadata = null;
     }
 
     private boolean isOverlap(ExtractResult er1, ExtractResult er2) {
@@ -80,5 +91,13 @@ public class ExtractResult {
 
     public void setText(String text) {
         this.text = text;
+    }
+
+    public Metadata getMetadata() {
+        return metadata;
+    }
+
+    public void setMetadata(Metadata metadata) {
+        this.metadata = metadata;
     }
 }
