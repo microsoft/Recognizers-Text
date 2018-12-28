@@ -82,9 +82,6 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.Recognizers.Definitions.Common", "Microsoft.Recognizers.Definitions.Common\Microsoft.Recognizers.Definitions.Common.csproj", "{E6BAD17F-2FB0-4A3C-B897-BA9331DEB88A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.Recognizers.Definitions", "Microsoft.Recognizers.Definitions\Microsoft.Recognizers.Definitions.csproj", "{9A4EED9D-A3CE-4BA2-9021-042768D14A48}"
-	ProjectSection(ProjectDependencies) = postProject
-		{E6BAD17F-2FB0-4A3C-B897-BA9331DEB88A} = {E6BAD17F-2FB0-4A3C-B897-BA9331DEB88A}
-	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.Recognizers.Text.NumberWithUnit", "Microsoft.Recognizers.Text.NumberWithUnit\Microsoft.Recognizers.Text.NumberWithUnit.csproj", "{E9BE4F64-9CC5-433C-90CC-A379A732E5E8}"
 EndProject

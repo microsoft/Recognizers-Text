@@ -10,6 +10,9 @@ CALL nuget restore
 
 set configuration=Release
 ECHO.
+ECHO # Generate resources
+CALL msbuild Microsoft.Recognizers.Definitions.Common\Microsoft.Recognizers.Definitions.Common.csproj /t:Clean,Build /p:Configuration=%configuration%
+
 ECHO # Building .NET solution (%configuration%)
 CALL msbuild Microsoft.Recognizers.Text.sln /t:Clean,Build /p:Configuration=%configuration%
 

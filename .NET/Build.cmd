@@ -39,6 +39,9 @@ ECHO # Restoring NuGet dependencies
 CALL "buildtools\nuget" restore
 
 ECHO.
+ECHO # Generate resources
+CALL "!MsBuildDir!\msbuild" Microsoft.Recognizers.Definitions.Common\Microsoft.Recognizers.Definitions.Common.csproj /t:Clean,Build /p:Configuration=Release
+
 ECHO # Building .NET solution (release)
 CALL !MSBuild! Microsoft.Recognizers.Text.sln /t:Clean,Build /p:Configuration=Release
 
