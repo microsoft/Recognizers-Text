@@ -8,6 +8,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
     <ProjectReference Include="..\..\Microsoft.Recognizers.Text.DateTime\Microsoft.Recognizers.Text.DateTime.csproj" />
     <ProjectReference Include="..\..\Microsoft.Recognizers.Text.NumberWithUnit\Microsoft.Recognizers.Text.NumberWithUnit.csproj" />
     <ProjectReference Include="..\..\Microsoft.Recognizers.Text.Choice\Microsoft.Recognizers.Text.Choice.csproj" />
