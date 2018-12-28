@@ -2,44 +2,20 @@
   <PropertyGroup>
     <TargetFramework>net462</TargetFramework>
   </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Sdk.Functions" Version="1.0.24" />
-    <PackageReference Include="Microsoft.Recognizers.Text" Version="1.1.4" />
-    <PackageReference Include="Microsoft.Recognizers.Text.Choice" Version="1.1.4" />
-    <PackageReference Include="Microsoft.Recognizers.Text.DateTime" Version="1.1.4" />
-    <PackageReference Include="Microsoft.Recognizers.Text.Number" Version="1.1.4" />
-    <PackageReference Include="Microsoft.Recognizers.Text.Sequence" Version="1.1.4" />
   </ItemGroup>
+
   <ItemGroup>
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Microsoft.Recognizers.Definitions">
-      <HintPath>..\..\..\..\Projects\NEW\Recognizers-Text\.NET\build\package\net462\Microsoft.Recognizers.Definitions.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Recognizers.Definitions.Common">
-      <HintPath>..\..\..\..\Projects\NEW\Recognizers-Text\.NET\build\package\net462\Microsoft.Recognizers.Definitions.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Recognizers.Text">
-      <HintPath>..\..\..\..\Projects\NEW\Recognizers-Text\.NET\build\package\net462\Microsoft.Recognizers.Text.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Recognizers.Text.Choice">
-      <HintPath>..\..\..\..\Projects\NEW\Recognizers-Text\.NET\build\package\net462\Microsoft.Recognizers.Text.Choice.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Recognizers.Text.DataTypes.TimexExpression">
-      <HintPath>..\..\..\..\Projects\NEW\Recognizers-Text\.NET\build\package\net462\Microsoft.Recognizers.Text.DataTypes.TimexExpression.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Recognizers.Text.DateTime">
-      <HintPath>..\..\..\..\Projects\NEW\Recognizers-Text\.NET\build\package\net462\Microsoft.Recognizers.Text.DateTime.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Recognizers.Text.Number">
-      <HintPath>..\..\..\..\Projects\NEW\Recognizers-Text\.NET\build\package\net462\Microsoft.Recognizers.Text.Number.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Recognizers.Text.NumberWithUnit">
-      <HintPath>..\..\..\..\Projects\NEW\Recognizers-Text\.NET\build\package\net462\Microsoft.Recognizers.Text.NumberWithUnit.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Recognizers.Text.Sequence">
-      <HintPath>..\..\..\..\Projects\NEW\Recognizers-Text\.NET\build\package\net462\Microsoft.Recognizers.Text.Sequence.dll</HintPath>
-    </Reference>
+    <ProjectReference Include="..\..\Microsoft.Recognizers.Text.DateTime\Microsoft.Recognizers.Text.DateTime.csproj" />
+    <ProjectReference Include="..\..\Microsoft.Recognizers.Text.NumberWithUnit\Microsoft.Recognizers.Text.NumberWithUnit.csproj" />
+    <ProjectReference Include="..\..\Microsoft.Recognizers.Text.Choice\Microsoft.Recognizers.Text.Choice.csproj" />
+    <ProjectReference Include="..\..\Microsoft.Recognizers.Text.Number\Microsoft.Recognizers.Text.Number.csproj" />
+    <ProjectReference Include="..\..\Microsoft.Recognizers.Text.Sequence\Microsoft.Recognizers.Text.Sequence.csproj" />
+    <ProjectReference Include="..\..\Microsoft.Recognizers.Text\Microsoft.Recognizers.Text.csproj" />
   </ItemGroup>
+
   <ItemGroup>
     <None Update="host.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
