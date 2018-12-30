@@ -351,7 +351,7 @@ private async Task OnDeliverySelected(IDialogContext context, IAwaitable<IEnumer
 }
 ````
 
-## Recognizer-Function ([source](./Recognizer-Function))
+## Recognizer Function ([source](./RecognizerFunction))
 This sample is a variant of the SimpleConsole, which you can deploy as a Web API using Azure Functions (serverless). It is a combination of all Recognizers to extract possible values from the user's input. 
 
 You can pass the `text` (required) and culture (optional) properties to the WebAPI using GET or POST. The response will be a JSON array containing all entities. 
