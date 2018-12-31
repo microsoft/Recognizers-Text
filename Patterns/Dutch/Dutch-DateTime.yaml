@@ -14,9 +14,9 @@ NextPrefixRegex: !simpleRegex
 AfterNextSuffixRegex: !simpleRegex
   def: \b(after\s+(the\s+)?next)\b
 PastPrefixRegex: !simpleRegex
-  def: (last|past|previous)\b
+  def: (vorig|verleden|vorige|laatste)\b
 ThisPrefixRegex: !simpleRegex
-  def: (this|current)\b
+  def: (deze|huidige)\b
 RangePrefixRegex: !simpleRegex
   def: (from|between)
 CenturySuffixRegex: !simpleRegex
@@ -79,9 +79,9 @@ YearRegex: !nestedRegex
   def: ({BaseDateTime.FourDigitYearRegex}|{FullTextYearRegex})
   references: [ BaseDateTime.FourDigitYearRegex, FullTextYearRegex ]
 WeekDayRegex: !simpleRegex
-  def: \b(?<weekday>sunday|monday|tuesday|wednesday|thursday|friday|saturday|mon|tues|tue|wedn|weds|wed|thurs|thur|thu|fri|sat|sun)s?\b
+  def: \b(?<weekday>maandag|dinsdag|woensdag|donderdag|vrijdag|zaterdag|zondag|ma|ma.|di|di.|wo|wo.|woe|woe.|do|do.|vr|vr.|vrij|za|za.|zat|zat.|zo|zo.)s?\b
 SingleWeekDayRegex: !simpleRegex
-  def: \b(?<weekday>sunday|monday|tuesday|wednesday|thursday|friday|saturday|mon|tue|tues|wedn|weds|wed|thurs|thur|thu|fri|((?<=on\s+)(sat|sun)))\b
+  def: \b(?<weekday>maandag|dinsdag|woensdag|donderdag|vrijdag|zaterdag|zondag|ma|ma.|di|di.|wo|wo.|woe|woe.|do|do.|vr|vr.|vrij|za|za.|zat|zat.|zo|zo.)s?\b
 RelativeMonthRegex: !nestedRegex
   def: (?<relmonth>(of\s+)?{RelativeRegex}\s+month)\b
   references: [RelativeRegex]
@@ -720,7 +720,7 @@ DayOfWeek: !dictionary
     zaterdag: 6
     zondag: 0
     ma: 1
-    ma.: 1 #TODO Is it also required to add a .? (like the German DateTime file)
+    ma.: 1 # TODO Is it also required to add a .? (like the German DateTime file)
     di: 2
     di.: 2
     wo: 3

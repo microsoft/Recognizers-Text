@@ -23,8 +23,8 @@ namespace Microsoft.Recognizers.Definitions.Dutch
 		public const string StrictRelativeRegex = @"\b(?<order>following|next|coming|upcoming|this|last|past|previous|current)\b";
 		public const string NextPrefixRegex = @"\b(following|next|upcoming|coming)\b";
 		public const string AfterNextSuffixRegex = @"\b(after\s+(the\s+)?next)\b";
-		public const string PastPrefixRegex = @"(last|past|previous)\b";
-		public const string ThisPrefixRegex = @"(this|current)\b";
+		public const string PastPrefixRegex = @"(vorig|verleden|vorige|laatste)\b";
+		public const string ThisPrefixRegex = @"(deze|huidige)\b";
 		public const string RangePrefixRegex = @"(from|between)";
 		public const string CenturySuffixRegex = @"(^century)\b";
 		public const string ReferencePrefixRegex = @"(that|same)\b";
@@ -49,8 +49,8 @@ namespace Microsoft.Recognizers.Definitions.Dutch
 		public static readonly string DescRegex = $@"((({OclockRegex}\s+)?(?<desc>ampm|am\b|a\.m\.|a m\b|a\. m\.|a\.m\b|a\. m\b|a m\b|pm\b|p\.m\.|p m\b|p\. m\.|p\.m\b|p\. m\b|p\b|p m\b))|{OclockRegex})";
 		public static readonly string TwoDigitYearRegex = $@"\b(?<![$])(?<year>([0-27-9]\d))(?!(\s*((\:)|{AmDescRegex}|{PmDescRegex}|\.\d)))\b";
 		public static readonly string YearRegex = $@"({BaseDateTime.FourDigitYearRegex}|{FullTextYearRegex})";
-		public const string WeekDayRegex = @"\b(?<weekday>sunday|monday|tuesday|wednesday|thursday|friday|saturday|mon|tues|tue|wedn|weds|wed|thurs|thur|thu|fri|sat|sun)s?\b";
-		public const string SingleWeekDayRegex = @"\b(?<weekday>sunday|monday|tuesday|wednesday|thursday|friday|saturday|mon|tue|tues|wedn|weds|wed|thurs|thur|thu|fri|((?<=on\s+)(sat|sun)))\b";
+		public const string WeekDayRegex = @"\b(?<weekday>maandag|dinsdag|woensdag|donderdag|vrijdag|zaterdag|zondag|ma|ma.|di|di.|wo|wo.|woe|woe.|do|do.|vr|vr.|vrij|za|za.|zat|zat.|zo|zo.)s?\b";
+		public const string SingleWeekDayRegex = @"\b(?<weekday>maandag|dinsdag|woensdag|donderdag|vrijdag|zaterdag|zondag|ma|ma.|di|di.|wo|wo.|woe|woe.|do|do.|vr|vr.|vrij|za|za.|zat|zat.|zo|zo.)s?\b";
 		public static readonly string RelativeMonthRegex = $@"(?<relmonth>(of\s+)?{RelativeRegex}\s+month)\b";
 		public const string WrittenMonthRegex = @"(((the\s+)?month of\s+)?(?<month>april|apr|august|aug|december|dec|february|feb|january|jan|july|jul|june|jun|march|mar|may|november|nov|october|oct|september|sept|sep))";
 		public static readonly string MonthSuffixRegex = $@"(?<msuf>((in|of|on)\s+)?({RelativeMonthRegex}|{WrittenMonthRegex}))";
