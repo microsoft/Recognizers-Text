@@ -1,11 +1,13 @@
-using System.Linq;
-using System.Net;
-using System.Net.Http;
+using System;
+using System.Collections.Generic;
+using System.IO;
 using System.Threading.Tasks;
+using System.Linq;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.Http;
-using Microsoft.Azure.WebJobs.Host;
-using System.Collections.Generic;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 
 using Microsoft.Recognizers.Text;
@@ -14,7 +16,6 @@ using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.NumberWithUnit;
 using Microsoft.Recognizers.Text.Choice;
 using Microsoft.Recognizers.Text.Sequence;
-using System.Net.Http.Formatting;
 
 namespace RecognizerFunction
 {
@@ -24,26 +25,23 @@ namespace RecognizerFunction
         private const string DefaultCulture = Culture.English;
 
         [FunctionName("entities")]
-        public static async Task<HttpResponseMessage> Run([HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = null)]HttpRequestMessage req, TraceWriter log)
+        public static async Task<IActionResult> Run(
+            [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = null)] HttpRequest req,
+            ILogger log)
         {
-            log.Info("C# AnalyzeEntities function processed a request.");
+            log.LogInformation("C# AnalyzeEntities function processed a request.");
 
-            // Parse query parameter
-            string text = req.GetQueryNameValuePairs()
-                .FirstOrDefault(q => string.Compare(q.Key, "text", true) == 0).Value;
-            string cultureCode = req.GetQueryNameValuePairs()
-                .FirstOrDefault(q => string.Compare(q.Key, "culture", true) == 0).Value;
+            string text = req.Query["text"];
+            string cultureCode = req.Query["culture"];
 
-            // Get request body
-            dynamic data = await req.Content.ReadAsAsync<object>();
-
-            // Set name to query string or body data
+            string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
+            dynamic data = JsonConvert.DeserializeObject(requestBody);
             text = text ?? data?.text;
             cultureCode = cultureCode ?? data?.cultureCode;
 
             if (text == null)
             {
-                return req.CreateResponse(HttpStatusCode.BadRequest, "Please pass a text on the query string or in the request body", JsonMediaTypeFormatter.DefaultMediaType);
+                return new BadRequestObjectResult("Please pass a text on the query string or in the request body");
             }
 
             string culture = ResolveCulture(cultureCode);
@@ -52,11 +50,11 @@ namespace RecognizerFunction
             var results = ParseAll(text, culture);
 
             // Log output
-            log.Info(results.Any() ? string.Format("I found {0:d} entities in culture {1}:", results.Count(), culture) : string.Format("I found no entities in culture {0}.", culture));
-            results.ToList().ForEach(result => log.Info(JsonConvert.SerializeObject(result, Formatting.Indented)));
+            log.LogInformation(results.Any() ? string.Format("I found {0:d} entities in culture {1}:", results.Count(), culture) : string.Format("I found no entities in culture {0}.", culture));
+            results.ToList().ForEach(result => log.LogInformation(JsonConvert.SerializeObject(result, Formatting.Indented)));
 
             // Return array
-            return req.CreateResponse(HttpStatusCode.OK, results, JsonMediaTypeFormatter.DefaultMediaType);
+            return (ActionResult)new OkObjectResult(results);
         }
 
         /// <summary>
@@ -148,7 +146,7 @@ namespace RecognizerFunction
             if (supportedCultures.Contains(cultureCode))
             {
                 return cultureCode;
-            } 
+            }
             else
             {
                 return Culture.MapToNearestLanguage(cultureCode);
