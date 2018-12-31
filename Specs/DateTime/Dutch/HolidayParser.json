@@ -21,8 +21,7 @@
         "Start": 16,
         "Length": 5
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga terug op 1e kerstdag",
@@ -46,8 +45,7 @@
         "Start": 15,
         "Length": 11
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga terug op eerste kerstdag",
@@ -71,8 +69,7 @@
         "Start": 15,
         "Length": 15
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga terug op nieuwjaarsdag",
@@ -96,8 +93,7 @@
         "Start": 15,
         "Length": 13
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga terug op oudejaarsavond",
@@ -121,8 +117,7 @@
         "Start": 15,
         "Length": 14
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga terug met kerst",
@@ -146,8 +141,7 @@
         "Start": 16,
         "Length": 5
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga terug op Nieuwjaarsdag.",
@@ -171,8 +165,7 @@
         "Start": 15,
         "Length": 13
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga terug op thanks giving day",
@@ -196,8 +189,7 @@
         "Start": 15,
         "Length": 17
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga terug met thanksgiving",
@@ -221,8 +213,7 @@
         "Start": 16,
         "Length": 12
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga terug op vaderdag",
@@ -246,8 +237,7 @@
         "Start": 15,
         "Length": 8
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga terug op Nieuwjaarsdag volgend jaar",
@@ -271,8 +261,7 @@
         "Start": 15,
         "Length": 26
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga terug op thanksgiving day 2010",
@@ -296,8 +285,7 @@
         "Start": 15,
         "Length": 21
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga terug op vaderdag 2015",
@@ -321,8 +309,7 @@
         "Start": 15,
         "Length": 13
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Hier op Pershing Square tijdens Dag van de Arbeid.",
@@ -361,7 +348,6 @@
         "Start": 32,
         "Length": 17
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   }
 ]
