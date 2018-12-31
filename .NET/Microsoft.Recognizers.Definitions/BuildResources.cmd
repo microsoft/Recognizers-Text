@@ -2,12 +2,16 @@
 SETLOCAL EnableDelayedExpansion
 SET COMMONASSEMBLYPATH=%~dp0..\build\package\net462\Microsoft.Recognizers.Definitions.Common.dll
 
+IF NOT EXIST "%COMMONASSEMBLYPATH%" (
+	ECHO "%COMMONASSEMBLYPATH%" could not be found, build the Microsoft.Recognizers.Definitions solution first.
+	EXIT /B
+) 
 
 ECHO.
 ECHO # Transform All T4 Templates
 
 ECHO.
-FOR /R %%i IN (*.tt) DO (ECHO # Transform %%i to %%~dpni.cs & dotnet tt %%i -o %%~dpni.cs -r %COMMONASSEMBLYPATH%)
+FOR /R %%i IN (*.tt) DO (ECHO # Transform %%i to %%~dpni.cs & dotnet tt "%%i" -o "%%~dpni.cs" -r "%COMMONASSEMBLYPATH%")
 
 EXIT /b 0
 

@@ -4,30 +4,35 @@ SETLOCAL EnableDelayedExpansion
 ECHO.
 ECHO # Building .NET platform
 
-SET "Vs2017SubDir=\Microsoft Visual Studio\2017\Enterprise"
-SET MsBuildSubDir=\MSBuild\15.0\bin
-SET VsCommonSubDir=\Common7\IDE\CommonExtensions\Microsoft\TestWindow
+REM vswhere is an optional component for Visual Studio and also installed with Build Tools. 
+REM vswhere will look for Community, Professional, and Enterprise editions of Visual Studio
+REM (only works with Visual Studio 2017 Update 2 or newer installed)
+SET vswhere="%ProgramFiles(x86)%\Microsoft Visual Studio\Installer\vswhere.exe"
 
-SET "ProgFilesDir=%programfiles(x86)%"
-
-ECHO # Finding MSBuild
-SET "MsBuildDir=!ProgFilesDir!%Vs2017SubDir%%MsBuildSubDir%"
-REM SET MsBuildDir=%programfiles(x86)%\MSBuild\14.0\Bin
-IF NOT EXIST "!MsBuildDir!\msbuild.exe" (
-	SET "ProgFilesDir=F:\Program Files (x86)"
-	SET "MsBuildDir=!ProgFilesDir!%Vs2017SubDir%%MsBuildSubDir%"
-	IF NOT EXIST "!MsBuildDir!\msbuild.exe" (
-		ECHO "msbuild.exe" could not be found at "!MsBuildDir!"
-		EXIT /B
-	)
+for /f "usebackq tokens=*" %%i in (`!vswhere! -latest -products * -requires Microsoft.Component.MSBuild -property installationPath`) do (
+  set VSInstallDir=%%i
 )
 
-ECHO # Finding VsTest
-SET "VsTestDir=!ProgFilesDir!%Vs2017SubDir%%VsCommonSubDir%"
-IF NOT EXIST "%VsTestDir%\vstest.console.exe" (
-    ECHO "vstest.console.exe" could not be found at "%VsTestDir%"
-    EXIT /B
+ECHO.
+SET MsBuildVersion=15.0
+ECHO # Finding MSBuild !MsBuildVersion!
+
+if EXIST "%VSInstallDir%\MSBuild\!MsBuildVersion!\Bin\MSBuild.exe" (
+	SET MSBuild="%VSInstallDir%\MSBuild\15.0\Bin\MSBuild.exe" %*
+	ECHO Found MSBuild !MSBuild!
+) else (
+	ECHO "msbuild.exe" could not be found at "!VSInstallDir!"
+	EXIT /B
 )
+
+ECHO.
+ECHO # Finding VSTest
+SET VSTestDir=%VSInstallDir%\Common7\IDE\CommonExtensions\Microsoft\TestWindow
+
+IF NOT EXIST "%VSTestDir%\vstest.console.exe" (
+	ECHO "vstest.console.exe" could not be found at "%VSTestDir%"
+	EXIT /B
+) 
 
 ECHO.
 ECHO # Restoring NuGet dependencies
@@ -45,7 +50,7 @@ POPD
 
 ECHO.
 ECHO # Building .NET solution (release)
-CALL "!MsBuildDir!\msbuild" Microsoft.Recognizers.Text.sln /t:Clean,Build /p:Configuration=Release
+CALL !MSBuild! Microsoft.Recognizers.Text.sln /t:Clean,Build /p:Configuration=Release
 
 ECHO.
 ECHO # Running .NET Tests

@@ -7,7 +7,6 @@
         "Type": "timerange"
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -18,7 +17,6 @@
         "Type": "timerange"
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -29,7 +27,6 @@
         "Type": "timerange"
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -40,7 +37,6 @@
         "Type": "timerange"
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -51,7 +47,6 @@
         "Type": "timerange"
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -62,7 +57,6 @@
         "Type": "timerange"
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -73,7 +67,6 @@
         "Type": "timerange"
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -84,7 +77,6 @@
         "Type": "timerange"
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -95,7 +87,6 @@
         "Type": "timerange"
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -106,7 +97,6 @@
         "Type": "timerange"
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -117,7 +107,6 @@
         "Type": "timerange"
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -128,7 +117,6 @@
         "Type": "timerange"
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -139,7 +127,6 @@
         "Type": "timerange"
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -150,7 +137,6 @@
         "Type": "timerange"
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -161,7 +147,6 @@
         "Type": "timerange"
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -172,7 +157,6 @@
         "Type": "timerange"
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -183,7 +167,6 @@
         "Type": "timerange"
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -194,7 +177,6 @@
         "Type": "timerange"
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -205,7 +187,6 @@
         "Type": "timerange"
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -216,7 +197,6 @@
         "Type": "timerange"
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -227,7 +207,6 @@
         "Type": "timerange"
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -238,7 +217,6 @@
         "Type": "timerange"
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -249,7 +227,6 @@
         "Type": "timerange"
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -260,7 +237,6 @@
         "Type": "timerange"
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -271,7 +247,6 @@
         "Type": "timerange"
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -282,7 +257,6 @@
         "Type": "timerange"
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -293,7 +267,6 @@
         "Type": "timerange"
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -304,7 +277,6 @@
         "Type": "timerange"
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -315,7 +287,6 @@
         "Type": "timerange"
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -326,7 +297,6 @@
         "Type": "timerange"
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -337,7 +307,6 @@
         "Type": "timerange"
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -348,7 +317,6 @@
         "Type": "timerange"
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -359,7 +327,6 @@
         "Type": "timerange"
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -370,7 +337,6 @@
         "Type": "timerange"
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -381,7 +347,6 @@
         "Type": "timerange"
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -392,7 +357,6 @@
         "Type": "timerange"
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -403,7 +367,6 @@
         "Type": "timerange"
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -414,7 +377,6 @@
         "Type": "timerange"
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -425,7 +387,6 @@
         "Type": "timerange"
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -436,7 +397,6 @@
         "Type": "timerange"
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -447,7 +407,6 @@
         "Type": "timerange"
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -458,7 +417,6 @@
         "Type": "timerange"
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -469,7 +427,6 @@
         "Type": "timerange"
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -480,7 +437,6 @@
         "Type": "timerange"
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -491,7 +447,6 @@
         "Type": "timerange"
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -502,7 +457,6 @@
         "Type": "timerange"
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -513,7 +467,6 @@
         "Type": "timerange"
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -524,7 +477,6 @@
         "Type": "timerange"
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -535,7 +487,6 @@
         "Type": "timerange"
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -546,7 +497,6 @@
         "Type": "timerange"
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -557,7 +507,6 @@
         "Type": "timerange"
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -568,7 +517,6 @@
         "Type": "timerange"
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -579,7 +527,6 @@
         "Type": "timerange"
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -590,7 +537,6 @@
         "Type": "timerange"
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -601,7 +547,6 @@
         "Type": "timerange"
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -612,30 +557,25 @@
         "Type": "timerange"
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "afspraak maken 13:30 voor 4 personen",
     "Results": [],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "afspraak maken 13:30 uur voor 4 personen",
     "Results": [],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "afspraak maken om 13:30 uur voor 4 personen",
     "Results": [],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "Hi Cortana- Maak alsjeblieft een skype afspraak met Jennifer.  Ik heb een afspraak van 30 minuten in de middag nodig, deze vrijdag zal ik vertrekken.",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "in de middag",
@@ -646,7 +586,6 @@
   },
   {
     "Input": "Hi Cortana- Maak alsjeblieft een skype afspraak met Jennifer. Ik heb vrijdag een afspraak van 30 minuten nodig, in de middag zal ik vertrekken.",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "in de middag",
@@ -663,7 +602,6 @@
         "Type": "timerange"
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -674,7 +612,6 @@
         "Type": "timerange"
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -685,7 +622,6 @@
         "Type": "timerange"
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -696,7 +632,6 @@
         "Type": "timerange"
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -707,12 +642,10 @@
         "Type": "timerange"
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "maak afspraak tussen 10 en 11:30",
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -723,7 +656,6 @@
   },
   {
     "Input": "maak afspraak tussen 10:10am en 12:50",
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -734,7 +666,6 @@
   },
   {
     "Input": "maak afspraak tussen 10:10pm en 3",
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -745,7 +676,6 @@
   },
   {
     "Input": "maak afspraak van 22:10 tot 10",
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -756,7 +686,6 @@
   },
   {
     "Input": "maak afspraak van 10:30am tot 23",
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {

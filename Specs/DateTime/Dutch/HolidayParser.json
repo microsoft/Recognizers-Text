@@ -19,8 +19,7 @@
           }
         }
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga terug op 1e kerstdag",
@@ -42,8 +41,7 @@
           }
         }
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga terug op eerste kerstdag",
@@ -65,8 +63,7 @@
           }
         }
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga terug op nieuwjaarsdag",
@@ -88,8 +85,7 @@
           }
         }
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga terug op oudejaarsavond",
@@ -111,8 +107,7 @@
           }
         }
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga terug met kerst",
@@ -134,8 +129,7 @@
           }
         }
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga terug op Nieuwjaarsdag.",
@@ -157,8 +151,7 @@
           }
         }
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga terug op thanks giving day",
@@ -180,8 +173,7 @@
           }
         }
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga terug met thanksgiving",
@@ -203,8 +195,7 @@
           }
         }
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga terug op vaderdag",
@@ -226,8 +217,7 @@
           }
         }
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga terug op Nieuwjaarsdag volgend jaar",
@@ -249,8 +239,7 @@
           }
         }
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga terug op thanksgiving day 2010",
@@ -272,8 +261,7 @@
           }
         }
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga terug op vaderdag 2015",
@@ -295,8 +283,7 @@
           }
         }
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Hier op Pershing Square tijdens Dag van de Arbeid.",
@@ -331,7 +318,6 @@
           }
         }
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   }
 ]

@@ -7,8 +7,7 @@
         "Text": "15e",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga terug op 22 april",
@@ -18,8 +17,7 @@
         "Text": "22 april",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga terug op 1 januari",
@@ -29,8 +27,7 @@
         "Text": "1 januari",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga terug op 1 jan.",
@@ -40,8 +37,7 @@
         "Text": "1 jan.",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga terug op 2 oktober",
@@ -51,8 +47,7 @@
         "Text": "2 oktober",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga terug op 12 januari 2016",
@@ -62,8 +57,7 @@
         "Text": "12 januari 2016",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga terug op 12 jan. 2016",
@@ -73,8 +67,7 @@
         "Text": "12 jan. 2016",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga terug op maandag 12 januari 2016",
@@ -84,8 +77,7 @@
         "Text": "maandag 12 januari 2016",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga terug op 22/02/2016",
@@ -95,8 +87,7 @@
         "Text": "22/02/2016",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga terug op 21/04/2016",
@@ -106,8 +97,7 @@
         "Text": "21/04/2016",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga terug op 21/04/16",
@@ -117,8 +107,7 @@
         "Text": "21/04/16",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga terug op 9-18-15",
@@ -128,8 +117,7 @@
         "Text": "9-18-15",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga terug op 22.4",
@@ -139,8 +127,7 @@
         "Text": "22.4.",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga terug op 22-4",
@@ -150,8 +137,7 @@
         "Text": "22-4",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga terug op 22/4",
@@ -161,8 +147,7 @@
         "Text": "22/4",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga terug op 22/04",
@@ -172,8 +157,7 @@
         "Text": "22/04",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga terug op 12 augustus 2015",
@@ -183,8 +167,7 @@
         "Text": "12 augustus 2015",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga terug op 12/11/2016",
@@ -194,8 +177,7 @@
         "Text": "12/11/2016",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga terug op 12-11-16",
@@ -205,8 +187,7 @@
         "Text": "12-11-16",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga terug op 1 januari",
@@ -216,8 +197,7 @@
         "Text": "1 januari",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga terug op 1 jan",
@@ -227,8 +207,7 @@
         "Text": "1 jan",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga terug op 28 november",
@@ -238,8 +217,7 @@
         "Text": "28 november",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga terug op wo. 22 jan",
@@ -249,8 +227,7 @@
         "Text": "wo. 22 jan",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga terug op de eerste vrijdag van Juli",
@@ -260,8 +237,7 @@
         "Text": "de eerste vrijdag van Juli",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga terug op de eerste vrijdag van deze maand",
@@ -271,8 +247,7 @@
         "Text": "de eerste vrijdag van deze maand",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga terug over twee weken",
@@ -282,8 +257,7 @@
         "Text": "over twee weken",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga volgende week vrijdag terug",
@@ -293,8 +267,7 @@
         "Text": "volgende week vrijdag",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga terug volgende week vrijdag",
@@ -304,8 +277,7 @@
         "Text": "volgende week vrijdag",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "afgelopen maandag",
@@ -315,8 +287,7 @@
         "Text": "afgelopen maandag",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik kom terug op dinsdag.",
@@ -326,8 +297,7 @@
         "Text": "dinsdag",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Goed nieuws, ik ga terug op dinsdag.",
@@ -337,8 +307,7 @@
         "Text": "dinsdag",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga terug op dinsdag",
@@ -348,8 +317,7 @@
         "Text": "Dinsdag",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga terug op vrijdag",
@@ -359,8 +327,7 @@
         "Text": "vrijdag",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik kom terug op vrijdag",
@@ -370,8 +337,7 @@
         "Text": "vrijdag",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga vandaag terug",
@@ -381,8 +347,7 @@
         "Text": "vandaag",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga morgen terug",
@@ -392,8 +357,7 @@
         "Text": "morgen",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ben gisteren teruggekomen",
@@ -403,8 +367,7 @@
         "Text": "gisteren",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ben eergisteren teruggekomen",
@@ -414,8 +377,7 @@
         "Text": "eergisteren",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik kom overmorgen terug",
@@ -425,8 +387,7 @@
         "Text": "overmorgen",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga morgen terug",
@@ -436,8 +397,7 @@
         "Text": "morgen",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik kom morgen terug",
@@ -447,8 +407,7 @@
         "Text": "morgen",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga deze vrijdag terug",
@@ -458,8 +417,7 @@
         "Text": "deze vrijdag",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga volgende week zondag terug",
@@ -469,8 +427,7 @@
         "Text": "volgende week zondag",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik kwam afgelopen zondag terug",
@@ -480,8 +437,7 @@
         "Text": "afgelopen zondag",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga de laatste dag terug",
@@ -491,8 +447,7 @@
         "Text": "laatste dag",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik kom de laatste dag terug",
@@ -502,8 +457,7 @@
         "Text": "laatste dag",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik kom vandaag terug",
@@ -513,8 +467,7 @@
         "Text": "vandaag",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik kom deze week vrijdag terug",
@@ -524,8 +477,7 @@
         "Text": "deze week vrijdag",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga volgende week zondag terug",
@@ -535,8 +487,7 @@
         "Text": "volgende week zondag",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik kwam vorige week zondag terug.",
@@ -546,8 +497,7 @@
         "Text": "vorige week zondag",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga terug op 15 juni 2016",
@@ -557,8 +507,7 @@
         "Text": "15 juni 2016",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik speel honkbal op elf mei",
@@ -568,8 +517,7 @@
         "Text": "elf mei",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga terug op vier mei",
@@ -579,8 +527,7 @@
         "Text": "vier mei",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga terug op 4 maart",
@@ -590,8 +537,7 @@
         "Text": "4 maart",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga de eerste van januari terug",
@@ -601,8 +547,7 @@
         "Text": "eerste van januari",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga eenentwintig mei terug",
@@ -612,8 +557,7 @@
         "Text": "eenentwintig mei",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik kom eenentwintig mei terug",
@@ -623,8 +567,7 @@
         "Text": "eenentwintig mei",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga de tweede dag van augustus terug",
@@ -634,8 +577,7 @@
         "Text": "tweede dag van augustus",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga twintig juni terug",
@@ -645,8 +587,7 @@
         "Text": "twintig juni",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ben twee maanden geleden teruggekomen",
@@ -656,8 +597,7 @@
         "Text": "twee maanden geleden",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga twee dagen later terug",
@@ -667,8 +607,7 @@
         "Text": "twee dagen later",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "wie heb ik een maand geleden een email gestuurd",
@@ -678,8 +617,7 @@
         "Text": "een maand geleden",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ging terug voor de 27ste",
@@ -689,8 +627,7 @@
         "Text": "voor de 27ste",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ging terug voor de 27",
@@ -700,8 +637,7 @@
         "Text": "voor de 27",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ging terug voor de 21ste",
@@ -711,8 +647,7 @@
         "Text": "voor de 21ste",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ging terug voor de 22e",
@@ -722,8 +657,7 @@
         "Text": "voor de 22e",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ging voor de tweede terug",
@@ -733,8 +667,7 @@
         "Text": "voor de tweede",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ging terug voor de eenendertigste",
@@ -744,8 +677,7 @@
         "Text": "voor de eenendertigste",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ging terug op de 27e",
@@ -755,8 +687,7 @@
         "Text": "op de 27e",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik kwam terug op de 21ste",
@@ -766,8 +697,7 @@
         "Text": "op de 21ste",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ging terug op de 22e",
@@ -777,8 +707,7 @@
         "Text": "op de 22e",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik kwam terug op de tweede!",
@@ -788,8 +717,7 @@
         "Text": "op de tweede",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Kwam je terug op de tweeëntwintigste?",
@@ -799,31 +727,26 @@
         "Text": "op de tweeëntwintigste",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "de eerste prijs",
     "Results": [],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "Ik ga naar de 27ste verdieping",
     "Results": [],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": " Herdenkingsevenementen voor de 25ste verjaardag van de diplomatieke betrekkingen tussen Singapore en China",
     "Results": [],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "Koop kaartjes voor de 17de voor het evenement",
     "Results": [],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -837,8 +760,7 @@
         "Text": "zaterdag de tweede",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Een ontmoeting voor woensdag de 27e met Joe Smith",
@@ -851,8 +773,7 @@
         "Text": "voor woensdag de 27e",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga terug op donderdag de 21ste",
@@ -865,8 +786,7 @@
         "Text": "donderdag de 21ste",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga terug op vrijdag de 22ste",
@@ -879,8 +799,7 @@
         "Text": "vrijdag de 22ste",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga zaterdag de 23ste terug",
@@ -893,8 +812,7 @@
         "Text": "zaterdag de 23ste",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga vrijdag de 15e terug",
@@ -907,8 +825,7 @@
         "Text": "vrijdag de 15e",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga donderdag de eenentwintigste terug",
@@ -921,8 +838,7 @@
         "Text": "donderdag de eenentwintigste",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga terug voor vrijdag de tweeëntwintigste",
@@ -935,8 +851,7 @@
         "Text": "vrijdag de tweeëntwintigste",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga terug op vrijdag de vijftiende",
@@ -949,8 +864,7 @@
         "Text": "vrijdag de vijftiende",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga terug op donderdag de zevende",
@@ -963,8 +877,7 @@
         "Text": "donderdag de zevende",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga de tweede zondag terug",
@@ -974,8 +887,7 @@
         "Text": "tweede zondag",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga de eerste zondag terug",
@@ -985,8 +897,7 @@
         "Text": "eerste zondag",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga de derde dinsdag terug",
@@ -996,8 +907,7 @@
         "Text": "derde dinsdag",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga de vijfde zondag terug",
@@ -1007,8 +917,7 @@
         "Text": "vijfde zondag",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga de zesde zondag terug",
@@ -1018,8 +927,7 @@
         "Text": "zesde zondag",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga de tiende maandag terug",
@@ -1029,8 +937,7 @@
         "Text": "tiende maandag",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga volgende maand de 20ste terug",
@@ -1040,8 +947,7 @@
         "Text": "volgende maand de 20ste",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga de 31ste deze maand terug",
@@ -1051,8 +957,7 @@
         "Text": "31ste deze maand",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Cortana kan een Skype call organiseren op vrijdag deze week of donderdag volgende week",
@@ -1066,8 +971,7 @@
         "Text": "donderdag volgende week",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Cortana kan een Skype call organiseren voor vrijdag of zondag deze week",
@@ -1077,8 +981,7 @@
         "Text": "vrijdag of zondag deze week",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "16 nov 2016",
@@ -1088,12 +991,10 @@
         "Text": "16 nov 2016",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "We hadden een meeting 1 maand 21 dagen geleden",
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1104,7 +1005,6 @@
   },
   {
     "Input": "Ik ben hier 2 jaar 1 maand en 21 dagen geleden weggegaan",
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1115,7 +1015,6 @@
   },
   {
     "Input": "Ik ga hier 2 jaar en 21 dagen later weg",
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1126,7 +1025,6 @@
   },
   {
     "Input": "Ik ging 1 maand 2 jaar 21 dagen geleden weg",
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1137,7 +1035,6 @@
   },
   {
     "Input": "Ik vertrek de 20ste volgende maand",
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1154,12 +1051,10 @@
         "Text": "5 december 1391",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Maandag, tweeëntwintig jan. 2018",
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1170,7 +1065,6 @@
   },
   {
     "Input": "op zondag eenentwintig januari tweeduizend en achttien",
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1181,7 +1075,6 @@
   },
   {
     "Input": "op eenentwintig september negentien achtenzeventig",
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1192,7 +1085,6 @@
   },
   {
     "Input": "op 20 september negentienhonderd een één",
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1203,7 +1095,6 @@
   },
   {
     "Input": "op de tiende van september tweeduizend",
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1220,8 +1111,7 @@
         "Text": "13-5-2015",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ben je beschikbaar op 13-05-2015?",
@@ -1231,8 +1121,7 @@
         "Text": "13-05-2015",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ben je volgende week zondag beschikbaar?",
@@ -1242,8 +1131,7 @@
         "Text": "volgende week zondag",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ben je volgende week maandag beschikbaar?",
@@ -1253,7 +1141,6 @@
         "Text": "volgende week maandag",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   }
 ]

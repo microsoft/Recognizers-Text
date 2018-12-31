@@ -7,8 +7,7 @@
         "Text": "kerst",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": " Ik ga terug met kerst ",
@@ -18,8 +17,7 @@
         "Text": "kerst",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga terug op Nieuwjaarsdag.",
@@ -29,8 +27,7 @@
         "Text": "Nieuwjaarsdag",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga terug met thanksgiving",
@@ -40,8 +37,7 @@
         "Text": "thanksgiving",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga terug op vaderdag.",
@@ -51,8 +47,7 @@
         "Text": "vaderdag",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga terug op Nieuwjaarsdag dit jaar",
@@ -62,8 +57,7 @@
         "Text": "Nieuwjaarsdag dit jaar",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": " Ik ga terug op Nieuwjaarsdag 2016",
@@ -73,8 +67,7 @@
         "Text": "Nieuwjaarsdag 2016",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": " Ik ga terug op nieuwjaarsdag 2016",
@@ -84,8 +77,7 @@
         "Text": "nieuwjaarsdag 2016",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga terug op clean monday",
@@ -95,7 +87,6 @@
         "Text": "clean monday",
         "Type": "date"
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   }
 ]

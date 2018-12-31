@@ -7,6 +7,7 @@ using DateObject = System.DateTime;
 
 using Microsoft.Recognizers.Text.Choice;
 using Microsoft.Recognizers.Text.DateTime;
+using Microsoft.Recognizers.Text.DateTime.Dutch;
 using Microsoft.Recognizers.Text.DateTime.English;
 using Microsoft.Recognizers.Text.DateTime.French;
 using Microsoft.Recognizers.Text.DateTime.German;
@@ -180,6 +181,8 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                     return GetGermanExtractor(extractorName);
                 case Culture.Italian:
                     return GetItalianExtractor(extractorName);
+                case Culture.Dutch:
+                    return GetDutchExtractor(extractorName);
                 case Culture.Japanese:
                     return GetJapaneseExtractor(extractorName);
         }
@@ -211,6 +214,8 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                     return GetItalianParser(parserName);
                 case Culture.Japanese:
                     return GetJapaneseParser(parserName);
+                case Culture.Dutch:
+                    return GetDutchParser(parserName);
       }
 
             throw new Exception($"Parser '{parserName}' for '{culture}' not supported");
@@ -409,6 +414,73 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             }
 
             throw new Exception($"Parser '{parserName}' for English not supported");
+        }
+
+        public static IDateTimeExtractor GetDutchExtractor(DateTimeExtractors extractorName)
+        {
+            var config = new BaseOptionsConfiguration();
+            var previewConfig = new BaseOptionsConfiguration(DateTimeOptions.EnablePreview);
+            switch (extractorName)
+            {
+                case DateTimeExtractors.Date:
+                    return new BaseDateExtractor(new DutchDateExtractorConfiguration(config));
+                case DateTimeExtractors.Time:
+                    return new BaseTimeExtractor(new DutchTimeExtractorConfiguration(config));
+                case DateTimeExtractors.DatePeriod:
+                    return new BaseDatePeriodExtractor(new DutchDatePeriodExtractorConfiguration(config));
+                case DateTimeExtractors.TimePeriod:
+                    return new BaseTimePeriodExtractor(new DutchTimePeriodExtractorConfiguration(config));
+                case DateTimeExtractors.DateTime:
+                    return new BaseDateTimeExtractor(new DutchDateTimeExtractorConfiguration(config));
+                case DateTimeExtractors.DateTimePeriod:
+                    return new BaseDateTimePeriodExtractor(new DutchDateTimePeriodExtractorConfiguration(config));
+                case DateTimeExtractors.Duration:
+                    return new BaseDurationExtractor(new DutchDurationExtractorConfiguration(config));
+                case DateTimeExtractors.Holiday:
+                    return new BaseHolidayExtractor(new DutchHolidayExtractorConfiguration(config));
+                case DateTimeExtractors.TimeZone:
+                    return new BaseTimeZoneExtractor(new DutchTimeZoneExtractorConfiguration(previewConfig));
+                case DateTimeExtractors.Set:
+                    return new BaseSetExtractor(new DutchSetExtractorConfiguration(config));
+                case DateTimeExtractors.Merged:
+                    return new BaseMergedDateTimeExtractor(new DutchMergedExtractorConfiguration(config));
+                case DateTimeExtractors.MergedSkipFromTo:
+                    return new BaseMergedDateTimeExtractor(new DutchMergedExtractorConfiguration(new BaseOptionsConfiguration(DateTimeOptions.SkipFromToMerge)));
+            }
+
+            throw new Exception($"Extractor '{extractorName}' for Dutch not supported");
+        }
+
+        public static IDateTimeParser GetDutchParser(DateTimeParsers parserName)
+        {
+            var commonConfiguration = new DutchCommonDateTimeParserConfiguration(new BaseOptionsConfiguration());
+            switch (parserName)
+            {
+                case DateTimeParsers.Date:
+                    return new BaseDateParser(new DutchDateParserConfiguration(commonConfiguration));
+                case DateTimeParsers.Time:
+                    return new DateTime.Dutch.TimeParser(new DutchTimeParserConfiguration(commonConfiguration));
+                case DateTimeParsers.DatePeriod:
+                    return new BaseDatePeriodParser(new DutchDatePeriodParserConfiguration(commonConfiguration));
+                case DateTimeParsers.TimePeriod:
+                    return new BaseTimePeriodParser(new DutchTimePeriodParserConfiguration(commonConfiguration));
+                case DateTimeParsers.DateTime:
+                    return new BaseDateTimeParser(new DutchDateTimeParserConfiguration(commonConfiguration));
+                case DateTimeParsers.DateTimePeriod:
+                    return new BaseDateTimePeriodParser(new DutchDateTimePeriodParserConfiguration(commonConfiguration));
+                case DateTimeParsers.Duration:
+                    return new BaseDurationParser(new DutchDurationParserConfiguration(commonConfiguration));
+                case DateTimeParsers.Holiday:
+                    return new BaseHolidayParser(new DutchHolidayParserConfiguration(commonConfiguration));
+                case DateTimeParsers.TimeZone:
+                    return new BaseTimeZoneParser();
+                case DateTimeParsers.Set:
+                    return new BaseSetParser(new DutchSetParserConfiguration(commonConfiguration));
+                case DateTimeParsers.Merged:
+                    return new BaseMergedDateTimeParser(new DutchMergedParserConfiguration(new BaseOptionsConfiguration()));
+            }
+
+            throw new Exception($"Parser '{parserName}' for Dutch not supported");
         }
 
         public static IDateTimeExtractor GetJapaneseExtractor(DateTimeExtractors extractorName)
