@@ -26,15 +26,15 @@ namespace Microsoft.Recognizers.Definitions.Dutch
 		public const string PastPrefixRegex = @"(vorig|verleden|vorige|laatste)\b";
 		public const string ThisPrefixRegex = @"(deze|huidige)\b";
 		public const string RangePrefixRegex = @"(from|between)";
-		public const string CenturySuffixRegex = @"(^century)\b";
+		public const string CenturySuffixRegex = @"(^eeuw)\b";
 		public const string ReferencePrefixRegex = @"(that|same)\b";
-		public const string FutureSuffixRegex = @"\b(in\s+the\s+)?(future|hence)\b";
+		public const string FutureSuffixRegex = @"\b(in\s+de\s+)?(toekomst)\b";
 		public const string DayRegex = @"(the\s*)?(?<day>01|02|03|04|05|06|07|08|09|10th|10|11th|11st|11|12nd|12th|12|13rd|13th|13|14th|14|15th|15|16th|16|17th|17|18th|18|19th|19|1st|1|20th|20|21st|21th|21|22nd|22th|22|23rd|23th|23|24th|24|25th|25|26th|26|27th|27|28th|28|29th|29|2nd|2|30th|30|31st|31|3rd|3|4th|4|5th|5|6th|6|7th|7|8th|8|9th|9)(?=\b|t)";
 		public const string ImplicitDayRegex = @"(the\s*)?(?<day>10th|11th|11st|12nd|12th|13rd|13th|14th|15th|16th|17th|18th|19th|1st|20th|21st|21th|22nd|22th|23rd|23th|24th|25th|26th|27th|28th|29th|2nd|30th|31st|3rd|4th|5th|6th|7th|8th|9th)\b";
 		public const string MonthNumRegex = @"(?<month>01|02|03|04|05|06|07|08|09|10|11|12|1|2|3|4|5|6|7|8|9)\b";
-		public const string WrittenOneToNineRegex = @"(one|two|three|four|five|six|seven|eight|nine)";
-		public const string WrittenElevenToNineteenRegex = @"(eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen)";
-		public const string WrittenTensRegex = @"(ten|twenty|thirty|forty|fourty|fifty|sixty|seventy|eighty|ninety)";
+		public const string WrittenOneToNineRegex = @"(één|een|twee|drie|vier|vijf|zes|zeven|acht|negen)";
+		public const string WrittenElevenToNineteenRegex = @"(elf|twaalf|dertien|veertien|vijftien|zestien|zeventien|achttien|negentien)";
+		public const string WrittenTensRegex = @"(tien|twintig|dertig|veertig|vijftig|zestig|zeventig|tachtig|negentig)";
 		public static readonly string WrittenNumRegex = $@"({WrittenOneToNineRegex}|{WrittenElevenToNineteenRegex}|{WrittenTensRegex}(\s+{WrittenOneToNineRegex})?)";
 		public static readonly string WrittenCenturyFullYearRegex = $@"((one|two)\s+thousand(\s+and)?(\s+{WrittenOneToNineRegex}\s+hundred(\s+and)?)?)";
 		public const string WrittenCenturyOrdinalYearRegex = @"(twenty one|twenty two|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty)";
@@ -93,12 +93,12 @@ namespace Microsoft.Recognizers.Definitions.Dutch
 		public static readonly string DateYearRegex = $@"(?<year>((1\d|20)\d{{2}})|2100|(([0-27-9]\d)\b(?!(\s*((\:)|{AmDescRegex}|{PmDescRegex})))))";
 		public static readonly string YearSuffix = $@"(,?\s*({DateYearRegex}|{FullTextYearRegex}))";
 		public static readonly string OnRegex = $@"(?<=\bon\s+)({DayRegex}s?)\b";
-		public const string RelaxedOnRegex = @"(?<=\b(on|at|in)\s+)((?<day>10th|11th|11st|12nd|12th|13rd|13th|14th|15th|16th|17th|18th|19th|1st|20th|21st|21th|22nd|22th|23rd|23th|24th|25th|26th|27th|28th|29th|2nd|30th|31st|3rd|4th|5th|6th|7th|8th|9th)s?)\b";
+		public const string RelaxedOnRegex = @"(\b(op\s+de\s+)?)((?<day>10|11|12|13|14|15|16|17|18|19|1|20|21|22|23|24|25|26|27|28|29|2|30|31|3|4|5|6|7|8|9)(e|de)?s?)\b";
 		public const string PrefixWeekDayRegex = @"(\s*((,?\s*on)|[-—–]))";
 		public static readonly string ThisRegex = $@"\b((this(\s*week)?(\s*on)?\s+){WeekDayRegex})|({WeekDayRegex}((\s+of)?\s+this\s*week))\b";
 		public static readonly string LastDateRegex = $@"\b({PastPrefixRegex}(\s*week)?\s+{WeekDayRegex})|({WeekDayRegex}(\s+last\s*week))\b";
 		public static readonly string NextDateRegex = $@"\b({NextPrefixRegex}(\s*week(\s*,?\s*on)?)?\s+{WeekDayRegex})|((on\s+)?{WeekDayRegex}((\s+of)?\s+(the\s+following|(the\s+)?next)\s*week))\b";
-		public static readonly string SpecialDayRegex = $@"\b((the\s+)?day before yesterday|(the\s+)?day after (tomorrow|tmr)|((the\s+)?({RelativeRegex}|my)\s+day)|yesterday|tomorrow|tmr|today)\b";
+		public static readonly string SpecialDayRegex = $@"\b((the\s+)?day before yesterday|(the\s+)?day after (tomorrow|tmr)|((the\s+)?({RelativeRegex}|my)\s+day)|gisteren|morgen|vandaag)\b";
 		public static readonly string SpecialDayWithNumRegex = $@"\b((?<number>{WrittenNumRegex})\s+dagen?\s+vanaf\s+(?<day>gisteren|morgen|vandaag))\b";
 		public static readonly string RelativeDayRegex = $@"\b(((the\s+)?{RelativeRegex}\s+day))\b";
 		public const string SetWeekDayRegex = @"\b(?<prefix>on\s+)?(?<weekday>morning|afternoon|evening|night|Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday)s\b";
@@ -706,17 +706,16 @@ namespace Microsoft.Recognizers.Definitions.Dutch
 		};
 		public static readonly IList<string> MinusOneDayTerms = new List<string>
 		{
-			@"yesterday",
-			@"day voor"
+			@"gisteren",
+			@"dag voor"
 		};
 		public static readonly IList<string> PlusTwoDayTerms = new List<string>
 		{
-			@"day after tomorrow",
-			@"day after tmr"
+			@"overmorgen"
 		};
 		public static readonly IList<string> MinusTwoDayTerms = new List<string>
 		{
-			@"day before yesterday"
+			@"eergisteren"
 		};
 		public static readonly IList<string> FutureTerms = new List<string>
 		{
