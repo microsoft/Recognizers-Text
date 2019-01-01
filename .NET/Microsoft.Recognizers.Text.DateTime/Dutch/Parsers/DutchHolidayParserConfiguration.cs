@@ -95,15 +95,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         {
             var trimmedText = text.Trim().ToLowerInvariant();
             var swift = -10;
-            if (trimmedText.StartsWith("next"))
+            if (trimmedText.StartsWith("volgende"))
             {
                 swift = 1;
             }
-            else if (trimmedText.StartsWith("last"))
+            else if (trimmedText.StartsWith("vorige") || trimmedText.StartsWith("laatste"))
             {
                 swift = -1;
             }
-            else if (trimmedText.StartsWith("this"))
+            else if (trimmedText.StartsWith("deze"))
             {
                 swift = 0;
             }

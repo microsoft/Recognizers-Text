@@ -77,23 +77,23 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         public bool GetMatchedDailyTimex(string text, out string timex)
         {
             var trimmedText = text.Trim().ToLowerInvariant();
-            if (trimmedText.Equals("daily"))
+            if (trimmedText.Equals("dagelijks"))
             {
                 timex = "P1D";
             }
-            else if (trimmedText.Equals("weekly"))
+            else if (trimmedText.Equals("wekelijks"))
             {
                 timex = "P1W";
             }
-            else if (trimmedText.Equals("biweekly"))
+            else if (trimmedText.Equals("tweewekelijks"))
             {
                 timex = "P2W";
             }
-            else if (trimmedText.Equals("monthly"))
+            else if (trimmedText.Equals("maandelijks"))
             {
                 timex = "P1M";
             }
-            else if (trimmedText.Equals("yearly") || trimmedText.Equals("annually") || trimmedText.Equals("annual"))
+            else if (trimmedText.Equals("elk jaar") || trimmedText.Equals("jaarlijks"))
             {
                 timex = "P1Y";
             }
@@ -109,7 +109,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         public bool GetMatchedUnitTimex(string text, out string timex)
         {
             var trimmedText = text.Trim().ToLowerInvariant();
-            if (trimmedText.Equals("day"))
+            if (trimmedText.Equals("dag"))
             {
                 timex = "P1D";
             }
@@ -117,11 +117,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
             {
                 timex = "P1W";
             }
-            else if (trimmedText.Equals("month"))
+            else if (trimmedText.Equals("maand"))
             {
                 timex = "P1M";
             }
-            else if (trimmedText.Equals("year"))
+            else if (trimmedText.Equals("jaar"))
             {
                 timex = "P1Y";
             }

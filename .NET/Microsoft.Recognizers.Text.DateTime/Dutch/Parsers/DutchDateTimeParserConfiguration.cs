@@ -103,11 +103,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
             var trimmedText = text.Trim().ToLowerInvariant();
             
-            if (trimmedText.EndsWith("morning") && hour >= Constants.HalfDayHourCount)
+            if (trimmedText.EndsWith("ochtend") && hour >= Constants.HalfDayHourCount)
             {
                 result -= Constants.HalfDayHourCount;
             }
-            else if (!trimmedText.EndsWith("morning") && hour < Constants.HalfDayHourCount)
+            else if (!trimmedText.EndsWith("ochtend") && hour < Constants.HalfDayHourCount)
             {
                 result += Constants.HalfDayHourCount;
             }
@@ -119,15 +119,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         {
             var trimmedText = text.Trim().ToLowerInvariant();
 
-            if (trimmedText.EndsWith("now"))
+            if (trimmedText.EndsWith("nu"))
             {
                 timex = "PRESENT_REF";
             }
-            else if (trimmedText.Equals("recently") || trimmedText.Equals("previously"))
+            else if (trimmedText.Equals("kort geleden") || trimmedText.Equals("eerder"))
             {
                 timex = "PAST_REF";
             }
-            else if (trimmedText.Equals("as soon as possible") || trimmedText.Equals("asap"))
+            else if (trimmedText.Equals("zo snel mogelijk") || trimmedText.Equals("zsm"))
             {
                 timex = "FUTURE_REF";
             }
@@ -145,11 +145,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
             var trimmedText = text.Trim().ToLowerInvariant();
 
             var swift = 0;
-            if (trimmedText.StartsWith("next"))
+            if (trimmedText.StartsWith("volgende"))
             {
                 swift = 1;
             }
-            else if (trimmedText.StartsWith("last"))
+            else if (trimmedText.StartsWith("vorige") || trimmedText.StartsWith("laatste"))
             {
                 swift = -1;
             }
