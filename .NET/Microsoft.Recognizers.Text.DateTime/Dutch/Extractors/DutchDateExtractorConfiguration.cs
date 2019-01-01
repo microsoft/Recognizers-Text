@@ -169,10 +169,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
             // "(Sunday,)? 7/23", year part is not required
             var dateRegex7S = new Regex(DateTimeDefinitions.DateExtractor7S, dateRegexOption);
 
-            // "(Sunday,)? 23/7, 2018", year part is required
+            // "(Sunday,)? 23/7 or 23-7 or 23.7, 2018", year part is required
             var dateRegex9L = new Regex(DateTimeDefinitions.DateExtractor9L, dateRegexOption);
 
-            // "(Sunday,)? 23/7", year part is not required
+            // "(Sunday,)? 23/7 or 23-7 or 23.7", year part is not required
             var dateRegex9S = new Regex(DateTimeDefinitions.DateExtractor9S, dateRegexOption);
 
             // (Sunday,)? 2015-12-23
@@ -188,7 +188,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
                 // (Sunday,)? 6th of April
                 new Regex(DateTimeDefinitions.DateExtractor3, dateRegexOption),
-
             };
 
             var enableDmy = DmyDateFormat || 
