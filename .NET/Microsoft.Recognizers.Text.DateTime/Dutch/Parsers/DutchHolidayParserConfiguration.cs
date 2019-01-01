@@ -72,7 +72,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         private static DateObject FemaleDay(int year) => new DateObject(year, 3, 8);
         private static DateObject ChildrenDay(int year) => new DateObject(year, 6, 1);
         private static DateObject YouthDay(int year) => new DateObject(year, 5, 4);
-        private static DateObject TeacherDay(int year) => new DateObject(year, 9, 10);
+        private static DateObject TeacherDay(int year) => new DateObject(year, 10, 5);
         private static DateObject SinglesDay(int year) => new DateObject(year, 11, 11);
         private static DateObject MaoBirthday(int year) => new DateObject(year, 12, 26);
         private static DateObject InaugurationDay(int year) => new DateObject(year, 1, 20);

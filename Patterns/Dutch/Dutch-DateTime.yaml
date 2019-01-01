@@ -947,53 +947,62 @@ DoubleNumbers: !dictionary
 HolidayNames: !dictionary
   types: [ string, 'string[]' ]
   entries: 
+    # Dutch specific Holidays
+    kingsday: [ koningsdag ] # 27 april
+    queensday: [ koninginnedag ] # 30 april
+    prinsjesdag: [ prinsjesdag ] # 3rd Tuesday of September
+    dodenherdenking: [ nationale dodenherdenking, nationale dodenherdenking, dodenherdenking] # 4 May
+    bevrijdingsdag: [ bevrijdingsdag ] # 5 May
+    hemelvaartsdag: [ hemelvaartsdag ]
+    teachersday: [ dag van de leraar ] # Dutch variant on 5 october
+    veteransday: [ nederlandse veteranendag, veteranendag ] # Dutch Veteranendag is on a different date - last Saturday of June
+    # International Holidays
     easterday: [ pasen ] 
     fathers: [ vaderdag, vadersdag ] 
     mothers: [ moederdag, moedersdag ] 
-    thanksgiving: [ thanksgivingday, thanksgiving, dankzeggingsdag ] 
-    martinlutherking: [ martinlutherkingday, martinlutherkingjrday ] # TODO or remove?
-    washingtonsbirthday: [ washingtonsbirthday, washingtonbirthday ] # TODO or remove?
-    canberra: [ canberraday ] # TODO or remove?
     labour: [ dag van de arbeid, dag van den arbeid ]
-    columbus: [ columbusday ] # TODO or remove?
-    memorial: [ memorialday ] # TODO or remove?
-    yuandan: [ yuandan ] # TODO or remove?
-    maosbirthday: [ maosbirthday ] # TODO or remove?
-    teachersday: [ dag van de leraar, teachersday, teacherday ] # TODO or remove?
-    singleday: [ singleday ] # TODO or remove?
-    allsaintsday: [ allsaintsday ] # TODO or remove?
-    youthday: [ youthday ] # TODO or remove?
-    childrenday: [ childrenday, childday ] # TODO or remove?
+    singleday: [ singleday, vrijgezellendag ] 
     femaleday: [ femaleday, vrouwendag ]
     treeplantingday: [ boomplantdag, boomfeestdag ]
-    arborday: [ arborday ] # TODO or remove?
     girlsday: [ girlsday, meisjesdag ]
-    whiteloverday: [ whiteloverday ] # TODO or remove?
-    loverday: [ loverday ] # TODO or remove?
-    christmas: [ kerstfeest, kerstmis, kerst ]
-    xmas: [ xmas ]
+    christmas: [ kerstfeest, kerstmis, kerst, xmas ]
     newyear: [ oud en nieuw, oud & nieuw ]
     newyearday: [ nieuwjaarsdag ]
     newyearsday: [ nieuwjaarsdag ]
     newyeareve: [ oudejaarsavond, silvester, silvesteravond ]
-    inaugurationday: [ inaugurationday, inauguratie dag ] 
-    groundhougday: [ groundhougday, bosmarmottendag ]
     valentinesday: [ valentijnsdag, valetijnsdag ]
-    stpatrickday: [ stpatrickday ] # TODO or remove?
     aprilfools: [ 1 aprilgrap, 1 april ]
+    independenceday: [ onafhankelijkheidsdag ]
+    bastilleday: [ franse nationale feestdag, bestorming van de bastille ]
+    halloweenday: [ halloween, allerheiligenavond ]
+    allhallowday: [ allerheiligen ]
+    allsaintsday: [ allerheiligen ] # Duplicate of allhallowday?
+    allsoulsday: [ allerzielen ]
+    christmaseve: [ kerstavond ]
+    # Holidays not celebrated extensively in the Netherlands
+    columbus: [ columbusday ] # TODO or remove?
+    thanksgiving: [ thanksgivingday, thanksgiving, dankzeggingsdag ] 
+    martinlutherking: [ martinlutherkingday, martinlutherkingjrday ] # TODO or remove?
+    washingtonsbirthday: [ washingtonsbirthday, washingtonbirthday ] # TODO or remove?
+    canberra: [ canberraday ] # TODO or remove?
+    memorial: [ memorialday, memorial day ] # US only, no Dutch variant
+    yuandan: [ yuandan ] # TODO or remove?
+    maosbirthday: [ maosbirthday ] # TODO or remove?
+    youthday: [ youthday ] # TODO or remove?
+    childrenday: [ childrenday, childday ] # TODO or remove?
     stgeorgeday: [ sint joris ]
     mayday: [ mayday ]
     cincodemayoday: [ cinco de mayo ]
     baptisteday: [ baptisteday ] # TODO or remove?
     usindependenceday: [ amerikaanse onafhankelijkheidsdag, us onafhankelijkheidsdag ]
-    independenceday: [ onafhankelijkheidsdag ]
-    bastilleday: [ franse nationale feestdag, bestorming van de bastille ]
-    halloweenday: [ halloween, allerheiligenavond ]
-    allhallowday: [ allerheiligen ]
-    allsoulsday: [ allerzielen ]
-    guyfawkesday: [ guy fawkes day, guy fawkes night, bonfire night, firework night ]
-    veteransday: [ nederlandse veteranendag, veteranendag ] # NOTE Veteranendag (Dutch) is on a different date, last Saturday in June!
-    christmaseve: [ kerstavond ]
+    stpatrickday: [ stpatrickday ] # TODO or remove?
+    whiteloverday: [ whiteloverday ] # TODO or remove?
+    loverday: [ loverday ] # TODO or remove?
+    groundhougday: [ groundhougday, bosmarmottendag ]
+    inaugurationday: [ inaugurationday, inauguratie dag ] 
+    arborday: [ arborday ] # TODO or remove?
+    guyfawkesday: [ guy fawkes day, guy fawkes night, bonfire night, firework night ] # TODO or remove?
+
 WrittenDecades: !dictionary
   types: [ string, int ]
   entries:
