@@ -91,7 +91,7 @@ MonthSuffixRegex: !nestedRegex
   def: (?<msuf>((in)\s+)?({RelativeMonthRegex}|{WrittenMonthRegex}))
   references: [ RelativeMonthRegex, WrittenMonthRegex ]
 DateUnitRegex: !simpleRegex
-  def: (?<unit>decades?|years?|months?|weeks?|(?<business>business\s+)?days?)\b
+  def: (?<unit>decades?|jaren?|maanden?|weken?|(?<business>werk\s+)?dagen?)\b
 DateTokenPrefix: 'op '
 TimeTokenPrefix: 'om '
 TokenBeforeDate: 'op '
@@ -229,8 +229,8 @@ SpecialDate: !nestedRegex
 DatePreposition: !simpleRegex
   def: \b(on|in)
 DateExtractor1: !nestedRegex
-  def: \b({WeekDayRegex}\s*[,-]?\s*)?(({DayRegex}(\.)?\s*[/\\.,-]?\s*{MonthRegex})|(\({DayRegex}\s*[-.]\s*{MonthRegex}\)))(\s*\(\s*{WeekDayRegex}\s*\))?
-  references: [ WeekDayRegex, MonthRegex, DayRegex ]
+  def: \b(({WeekDayRegex})(\s+|\s*,\s*))?({DayRegex})((\s*){MonthRegex})\b
+  references: [ WeekDayRegex, DayRegex, MonthRegex ]
 DateExtractor2: !nestedRegex
   def: \b{DateExtractor1}(\s+|\s*,\s*|\s+in\s+){DateYearRegex}\b
   references: [ DateExtractor1, DateYearRegex ]

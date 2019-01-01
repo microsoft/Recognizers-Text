@@ -54,7 +54,7 @@ namespace Microsoft.Recognizers.Definitions.Dutch
 		public static readonly string RelativeMonthRegex = $@"(?<relmonth>(of\s+)?{RelativeRegex}\s+maand)\b";
 		public const string WrittenMonthRegex = @"(((de\s+)?maand van\s+)?(?<month>januari|februari|maart|april|mei|juni|juli|augustus|september|oktober|december|jan|feb|mar|apr|jun|jul|aug|sep|sept|oct|okt|nov|dec))";
 		public static readonly string MonthSuffixRegex = $@"(?<msuf>((in)\s+)?({RelativeMonthRegex}|{WrittenMonthRegex}))";
-		public const string DateUnitRegex = @"(?<unit>decades?|years?|months?|weeks?|(?<business>business\s+)?days?)\b";
+		public const string DateUnitRegex = @"(?<unit>decades?|jaren?|maanden?|weken?|(?<business>werk\s+)?dagen?)\b";
 		public const string DateTokenPrefix = @"op ";
 		public const string TimeTokenPrefix = @"om ";
 		public const string TokenBeforeDate = @"op ";
@@ -106,7 +106,7 @@ namespace Microsoft.Recognizers.Definitions.Dutch
 		public static readonly string RelativeWeekDayRegex = $@"\b({WrittenNumRegex}\s+{WeekDayRegex}\s+(from\s+now|later))\b";
 		public static readonly string SpecialDate = $@"(?=\b(on|at)\s+the\s+){DayRegex}\b";
 		public const string DatePreposition = @"\b(on|in)";
-		public static readonly string DateExtractor1 = $@"\b({WeekDayRegex}\s*[,-]?\s*)?(({DayRegex}(\.)?\s*[/\\.,-]?\s*{MonthRegex})|(\({DayRegex}\s*[-.]\s*{MonthRegex}\)))(\s*\(\s*{WeekDayRegex}\s*\))?";
+		public static readonly string DateExtractor1 = $@"\b(({WeekDayRegex})(\s+|\s*,\s*))?({DayRegex})((\s*){MonthRegex})\b";
 		public static readonly string DateExtractor2 = $@"\b{DateExtractor1}(\s+|\s*,\s*|\s+in\s+){DateYearRegex}\b";
 		public static readonly string DateExtractor3 = $@"\b({WeekDayRegex}(\s+|\s*,\s*))?{DayRegex}(\.)?(\s+|\s*,\s*|\s+of\s+|\s*-\s*){MonthRegex}(\.)?((\s+|\s*,\s*){DateYearRegex})?\b";
 		public static readonly string DateExtractor4 = $@"\b{MonthNumRegex}\s*[/\\\-]\s*{DayRegex}(\.)?\s*[/\\\-]\s*{DateYearRegex}";
