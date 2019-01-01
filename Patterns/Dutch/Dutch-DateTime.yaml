@@ -6,19 +6,19 @@ RangeConnectorRegex : !nestedRegex
   def: (?<and>\b(and|through|to)\b|{BaseDateTime.RangeConnectorSymbolRegex})
   references: [ BaseDateTime.RangeConnectorSymbolRegex ]
 RelativeRegex: !simpleRegex
-  def: \b(?<order>following|next|coming|upcoming|this|last|past|previous|current|the)\b
+  def: \b(?<order>volgende|komende|aankomende|aanstaande|deze|huidige|aanstaande|vorig|verleden|vorige|laatste)\b
 StrictRelativeRegex: !simpleRegex
-  def: \b(?<order>following|next|coming|upcoming|this|last|past|previous|current)\b
+  def: \b(?<order>volgende|komende|aankomende|aanstaande|deze|huidige|aanstaande|vorig|verleden|vorige|laatste)\b
 NextPrefixRegex: !simpleRegex
-  def: \b(following|next|upcoming|coming)\b
+  def: \b(volgende|komende|aankomende)\b
 AfterNextSuffixRegex: !simpleRegex
   def: \b(after\s+(the\s+)?next)\b
 PastPrefixRegex: !simpleRegex
   def: (vorig|verleden|vorige|laatste)\b
 ThisPrefixRegex: !simpleRegex
-  def: (deze|huidige)\b
+  def: (deze|huidige|aanstaande)\b
 RangePrefixRegex: !simpleRegex
-  def: (from|between)
+  def: (van|tot)
 CenturySuffixRegex: !simpleRegex
   def: (^eeuw)\b
 ReferencePrefixRegex: !simpleRegex
@@ -470,9 +470,9 @@ EachPrefixRegex: !simpleRegex
 SetEachRegex: !simpleRegex
   def: \b(?<each>(each|(every))\s*)
 SetLastRegex: !simpleRegex
-  def: (?<last>following|next|upcoming|this|last|past|previous|current)
+  def: (?<last>olgende|komende|aankomende|aanstaande|deze|huidige|aanstaande|vorig|verleden|vorige|laatste)
 EachDayRegex: !simpleRegex
-  def: ^\s*(each|every)\s*day\b
+  def: ^\s*(elke)\s*dag\b
 DurationFollowedUnit: !nestedRegex
   def: ^\s*{SuffixAndRegex}?(\s+|-)?{DurationUnitRegex}
   references: [ SuffixAndRegex, DurationUnitRegex ]
@@ -487,7 +487,7 @@ DuringRegex: !simpleRegex
 AllRegex: !simpleRegex
   def: \b(?<all>(all|full|whole)(\s+|-)(?<unit>jaar|maand|week|dag))\b
 HalfRegex: !simpleRegex
-  def: (((a|an)\s*)|\b)(?<half>half\s+(?<unit>jaar|maand|week|dag|uur))\b
+  def: (((een)\s*)|\b)(?<half>half\s+(?<unit>jaar|maand|week|dag|uur))\b
 ConjunctionRegex: !simpleRegex
   def: \b((and(\s+for)?)|with)\b
 HolidayRegex1: !nestedRegex
@@ -953,8 +953,8 @@ HolidayNames: !dictionary
     prinsjesdag: [ prinsjesdag ] # 3rd Tuesday of September
     dodenherdenking: [ nationale dodenherdenking, nationale dodenherdenking, dodenherdenking] # 4 May
     bevrijdingsdag: [ bevrijdingsdag ] # 5 May
-    hemelvaartsdag: [ hemelvaartsdag ]
-    teachersday: [ dag van de leraar ] # Dutch variant on 5 october
+    hemelvaartsdag: [ hemelvaartsdag ] # 39 Days after Easter
+    teachersday: [ dag van de leraar ] # Dutch Teachersday is on a different date - 5 October
     veteransday: [ nederlandse veteranendag, veteranendag ] # Dutch Veteranendag is on a different date - last Saturday of June
     # International Holidays
     easterday: [ pasen ] 

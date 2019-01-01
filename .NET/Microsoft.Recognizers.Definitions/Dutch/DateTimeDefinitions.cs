@@ -19,13 +19,13 @@ namespace Microsoft.Recognizers.Definitions.Dutch
 	{
 		public static readonly string TillRegex = $@"(?<till>\b(to|till|til|until|thru|through)\b|{BaseDateTime.RangeConnectorSymbolRegex})";
 		public static readonly string RangeConnectorRegex = $@"(?<and>\b(and|through|to)\b|{BaseDateTime.RangeConnectorSymbolRegex})";
-		public const string RelativeRegex = @"\b(?<order>following|next|coming|upcoming|this|last|past|previous|current|the)\b";
-		public const string StrictRelativeRegex = @"\b(?<order>following|next|coming|upcoming|this|last|past|previous|current)\b";
-		public const string NextPrefixRegex = @"\b(following|next|upcoming|coming)\b";
+		public const string RelativeRegex = @"\b(?<order>volgende|komende|aankomende|aanstaande|deze|huidige|aanstaande|vorig|verleden|vorige|laatste)\b";
+		public const string StrictRelativeRegex = @"\b(?<order>volgende|komende|aankomende|aanstaande|deze|huidige|aanstaande|vorig|verleden|vorige|laatste)\b";
+		public const string NextPrefixRegex = @"\b(volgende|komende|aankomende)\b";
 		public const string AfterNextSuffixRegex = @"\b(after\s+(the\s+)?next)\b";
 		public const string PastPrefixRegex = @"(vorig|verleden|vorige|laatste)\b";
-		public const string ThisPrefixRegex = @"(deze|huidige)\b";
-		public const string RangePrefixRegex = @"(from|between)";
+		public const string ThisPrefixRegex = @"(deze|huidige|aanstaande)\b";
+		public const string RangePrefixRegex = @"(van|tot)";
 		public const string CenturySuffixRegex = @"(^eeuw)\b";
 		public const string ReferencePrefixRegex = @"(that|same)\b";
 		public const string FutureSuffixRegex = @"\b(in\s+de\s+)?(toekomst)\b";
@@ -195,14 +195,14 @@ namespace Microsoft.Recognizers.Definitions.Dutch
 		public static readonly string EachUnitRegex = $@"(?<each>(each|every)(?<other>\s+other)?\s*{DurationUnitRegex})";
 		public const string EachPrefixRegex = @"\b(?<each>(each|(every))\s*$)";
 		public const string SetEachRegex = @"\b(?<each>(each|(every))\s*)";
-		public const string SetLastRegex = @"(?<last>following|next|upcoming|this|last|past|previous|current)";
-		public const string EachDayRegex = @"^\s*(each|every)\s*day\b";
+		public const string SetLastRegex = @"(?<last>olgende|komende|aankomende|aanstaande|deze|huidige|aanstaande|vorig|verleden|vorige|laatste)";
+		public const string EachDayRegex = @"^\s*(elke)\s*dag\b";
 		public static readonly string DurationFollowedUnit = $@"^\s*{SuffixAndRegex}?(\s+|-)?{DurationUnitRegex}";
 		public static readonly string NumberCombinedWithDurationUnit = $@"\b(?<num>\d+(\.\d*)?)(-)?{DurationUnitRegex}";
 		public static readonly string AnUnitRegex = $@"\b((?<half>half\s+)?(an|a)|another)\s+{DurationUnitRegex}";
 		public const string DuringRegex = @"\b(for|during)\s+the\s+(?<unit>jaar|maand|week|dag)\b";
 		public const string AllRegex = @"\b(?<all>(all|full|whole)(\s+|-)(?<unit>jaar|maand|week|dag))\b";
-		public const string HalfRegex = @"(((a|an)\s*)|\b)(?<half>half\s+(?<unit>jaar|maand|week|dag|uur))\b";
+		public const string HalfRegex = @"(((een)\s*)|\b)(?<half>half\s+(?<unit>jaar|maand|week|dag|uur))\b";
 		public const string ConjunctionRegex = @"\b((and(\s+for)?)|with)\b";
 		public static readonly string HolidayRegex1 = $@"\b(?<holiday>clean monday|good friday|ash wednesday|mardi gras|washington's birthday|mao's birthday|chinese new Year|new years' eve|new year's eve|new year 's eve|new years eve|new year eve|new years'|new year's|new year 's|new years|new year|may\s*day|yuan dan|april fools|christmas eve|christmas|xmas|thanksgiving|halloween|yuandan|pasen)(\s+(of\s+)?({YearRegex}|{RelativeRegex}\s+year))?\b";
 		public static readonly string HolidayRegex2 = $@"\b(?<holiday>all saint's|tree planting day|white lover|st patrick|st george|cinco de mayo|us independence|all hallow|all souls|guy fawkes)(\s+(of\s+)?({YearRegex}|{RelativeRegex}\s+year))?\b";
