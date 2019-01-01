@@ -56,7 +56,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
                 {"veteransday", Veteransday},
                 {"christmaseve", ChristmasEve},
                 {"newyeareve", NewYearEve},
-                {"easterday", EasterDay}
+                {"easterday", EasterDay},
+                {"kingsday", KingsDay},
+                {"queensday", QueensDay},
+                {"prinsjesdag", Prinsjesdag}
             };
         }
 
@@ -90,6 +93,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         private static DateObject GuyFawkesDay(int year) => new DateObject(year, 11, 5);
         private static DateObject Veteransday(int year) => new DateObject(year, 11, 11);
         private static DateObject EasterDay(int year) => DateObject.MinValue;
+        private static DateObject KingsDay(int year) => new DateObject(year, 4, 27);
+        private static DateObject QueensDay(int year) => new DateObject(year, 4, 30);
+        private static DateObject Prinsjesdag(int year) => DateObject.MinValue.SafeCreateFromValue(year, 9, GetDay(year, 9, 3, DayOfWeek.Tuesday));
 
         public override int GetSwiftYear(string text)
         {

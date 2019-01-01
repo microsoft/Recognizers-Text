@@ -497,7 +497,8 @@ HolidayRegex2: !nestedRegex
   def: \b(?<holiday>all saint's|tree planting day|white lover|st patrick|st george|cinco de mayo|us independence|all hallow|all souls|guy fawkes)(\s+(of\s+)?({YearRegex}|{RelativeRegex}\s+year))?\b
   references: [ YearRegex, RelativeRegex ]
 HolidayRegex3: !nestedRegex
-  def: (?<holiday>(independence|mlk|martin luther king|martin luther king jr|canberra|columbus|thanks\s*giving|christmas|xmas|labour|(international|int'l)\s+workers'?|mother's|mother|mothers|father's|father|fathers|female|single|teacher's|youth|children|arbor|girls|chsmilbuild|lover|labor|inauguration|groundhog|valentine's|baptiste|bastille|halloween|veterans|memorial|mid(-| )autumn|moon|spring|lantern|qingming|dragon boat|new years'|new year's|new year 's|new years|nieuw jaar)\s+(day|dag))(\s+(of\s+)?({YearRegex}|{RelativeRegex}\s+year))?
+  def: (?<holiday>(valentijns|valetijns|nieuwjaars|prinsjes|konings|koninginne)\s*(dag))(\s+(van\s+|in\s+)?({YearRegex}|{RelativeRegex}\s+jaar))?
+  # def: (?<holiday>(independence|mlk|martin luther king|martin luther king jr|canberra|columbus|thanks\s*giving|christmas|xmas|labour|(international|int'l)\s+workers'?|mother's|mother|mothers|father's|father|fathers|female|single|teacher's|youth|children|arbor|girls|chsmilbuild|lover|labor|inauguration|groundhog|valentine's|baptiste|bastille|halloween|veterans|memorial|mid(-| )autumn|moon|spring|lantern|qingming|dragon boat|new years'|new year's|new year 's|new years|nieuw jaar)\s+(day|dag))(\s+(of\s+)?({YearRegex}|{RelativeRegex}\s+year))?
   references: [ YearRegex, RelativeRegex ]
 DateTokenPrefix: 'op '
 TimeTokenPrefix: 'om '

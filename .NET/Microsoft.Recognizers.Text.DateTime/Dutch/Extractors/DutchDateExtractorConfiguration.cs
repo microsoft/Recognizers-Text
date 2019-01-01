@@ -180,10 +180,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
             DateRegexList = new List<Regex>
             {
-                // ((this)? Sunday,)? April 5
+                // ((this)? Sunday,)? 5 April 
                 new Regex(DateTimeDefinitions.DateExtractor1, dateRegexOption),
 
-                // ((this)? Sunday,)? April 5, 2016
+                // ((this)? Sunday,)? 5 April, 2016
                 new Regex(DateTimeDefinitions.DateExtractor2, dateRegexOption),
 
                 // (Sunday,)? 6th of April
