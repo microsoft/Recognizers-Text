@@ -95,7 +95,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         private static DateObject EasterDay(int year) => DateObject.MinValue;
         private static DateObject KingsDay(int year) => new DateObject(year, 4, 27);
         private static DateObject QueensDay(int year) => new DateObject(year, 4, 30);
-        private static DateObject Prinsjesdag(int year) => DateObject.MinValue.SafeCreateFromValue(year, 9, GetDay(year, 9, 3, DayOfWeek.Tuesday));
+        private static DateObject Prinsjesdag(int year) => DateObject.MinValue.SafeCreateFromValue(year, 9, GetDay(year, 9, 2, DayOfWeek.Tuesday));
 
         public override int GetSwiftYear(string text)
         {
