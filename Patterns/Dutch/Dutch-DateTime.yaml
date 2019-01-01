@@ -229,10 +229,10 @@ SpecialDate: !nestedRegex
 DatePreposition: !simpleRegex
   def: \b(on|in)
 DateExtractor1: !nestedRegex
-  def: \b((this\s+)?{WeekDayRegex}\s*[,-]?\s*)?(({MonthRegex}(\.)?\s*[/\\.,-]?\s*{DayRegex})|(\({MonthRegex}\s*[-.]\s*{DayRegex}\)))(\s*\(\s*{WeekDayRegex}\s*\))?
+  def: \b({WeekDayRegex}\s*[,-]?\s*)?(({DayRegex}(\.)?\s*[/\\.,-]?\s*{MonthRegex})|(\({DayRegex}\s*[-.]\s*{MonthRegex}\)))(\s*\(\s*{WeekDayRegex}\s*\))?
   references: [ WeekDayRegex, MonthRegex, DayRegex ]
 DateExtractor2: !nestedRegex
-  def: \b{DateExtractor1}(\s+|\s*,\s*|\s+of\s+){DateYearRegex}\b
+  def: \b{DateExtractor1}(\s+|\s*,\s*|\s+in\s+){DateYearRegex}\b
   references: [ DateExtractor1, DateYearRegex ]
 DateExtractor3: !nestedRegex
   def: \b({WeekDayRegex}(\s+|\s*,\s*))?{DayRegex}(\.)?(\s+|\s*,\s*|\s+of\s+|\s*-\s*){MonthRegex}(\.)?((\s+|\s*,\s*){DateYearRegex})?\b
