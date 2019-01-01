@@ -17,7 +17,9 @@
           "PastResolution": {
             "date": "0001-01-01"
           }
-        }
+        },
+        "Start": 16,
+        "Length": 5
       }
     ],
     "NotSupported": "dotNet"
@@ -40,7 +42,9 @@
           "PastResolution": {
             "date": "2015-12-25"
           }
-        }
+        },
+        "Start": 15,
+        "Length": 11
       }
     ],
     "NotSupported": "dotNet"
@@ -63,7 +67,9 @@
           "PastResolution": {
             "date": "2015-12-25"
           }
-        }
+        },
+        "Start": 15,
+        "Length": 15
       }
     ],
     "NotSupported": "dotNet"
@@ -86,7 +92,9 @@
           "PastResolution": {
             "date": "2015-12-31"
           }
-        }
+        },
+        "Start": 15,
+        "Length": 13
       }
     ],
     "NotSupported": "dotNet"
@@ -109,7 +117,9 @@
           "PastResolution": {
             "date": "2015-12-31"
           }
-        }
+        },
+        "Start": 15,
+        "Length": 14
       }
     ],
     "NotSupported": "dotNet"
@@ -132,7 +142,9 @@
           "PastResolution": {
             "date": "2015-12-25"
           }
-        }
+        },
+        "Start": 16,
+        "Length": 5
       }
     ],
     "NotSupported": "dotNet"
@@ -155,7 +167,9 @@
           "PastResolution": {
             "date": "2016-01-01"
           }
-        }
+        },
+        "Start": 15,
+        "Length": 13
       }
     ],
     "NotSupported": "dotNet"
@@ -178,7 +192,9 @@
           "PastResolution": {
             "date": "2015-11-26"
           }
-        }
+        },
+        "Start": 15,
+        "Length": 17
       }
     ],
     "NotSupported": "dotNet"
@@ -201,7 +217,9 @@
           "PastResolution": {
             "date": "2015-11-26"
           }
-        }
+        },
+        "Start": 16,
+        "Length": 12
       }
     ],
     "NotSupported": "dotNet"
@@ -224,7 +242,9 @@
           "PastResolution": {
             "date": "2016-06-19"
           }
-        }
+        },
+        "Start": 15,
+        "Length": 8
       }
     ],
     "NotSupported": "dotNet"
@@ -247,7 +267,9 @@
           "PastResolution": {
             "date": "2017-01-01"
           }
-        }
+        },
+        "Start": 15,
+        "Length": 26
       }
     ],
     "NotSupported": "dotNet"
@@ -270,7 +292,9 @@
           "PastResolution": {
             "date": "2010-11-25"
           }
-        }
+        },
+        "Start": 15,
+        "Length": 21
       }
     ],
     "NotSupported": "dotNet"
@@ -293,7 +317,9 @@
           "PastResolution": {
             "date": "2015-06-21"
           }
-        }
+        },
+        "Start": 15,
+        "Length": 13
       }
     ],
     "NotSupported": "dotNet"
@@ -316,7 +342,9 @@
           "PastResolution": {
             "date": "2018-05-01"
           }
-        }
+        },
+        "Start": 32,
+        "Length": 17
       },
       {
         "Text": "Dag van de Arbeid",
@@ -329,7 +357,9 @@
           "PastResolution": {
             "date": "2018-05-01"
           }
-        }
+        },
+        "Start": 32,
+        "Length": 17
       }
     ],
     "NotSupported": "dotNet"
