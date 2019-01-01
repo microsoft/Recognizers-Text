@@ -418,8 +418,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
         public static IDateTimeExtractor GetDutchExtractor(DateTimeExtractors extractorName)
         {
-            var enableDmyConfig = new BaseOptionsConfiguration(DateTimeOptions.None, true);
-            var enableDmyPreviewConfig = new BaseOptionsConfiguration(DateTimeOptions.EnablePreview, true);
+            var enableDmyConfig = new BaseOptionsConfiguration(DateTimeOptions.None, dmyDateFormat: true);
 
             switch (extractorName)
             {
@@ -454,7 +453,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
         public static IDateTimeParser GetDutchParser(DateTimeParsers parserName)
         {
-            var commonConfiguration = new EnglishCommonDateTimeParserConfiguration(new BaseOptionsConfiguration(DateTimeOptions.None, true));
+            var commonConfiguration = new DutchCommonDateTimeParserConfiguration(new BaseOptionsConfiguration(DateTimeOptions.None, dmyDateFormat: true));
 
             switch (parserName)
             {
@@ -479,7 +478,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 case DateTimeParsers.Set:
                     return new BaseSetParser(new DutchSetParserConfiguration(commonConfiguration));
                 case DateTimeParsers.Merged:
-                    return new BaseMergedDateTimeParser(new DutchMergedParserConfiguration(new BaseOptionsConfiguration()));
+                    return new BaseMergedDateTimeParser(new DutchMergedParserConfiguration(new BaseOptionsConfiguration(DateTimeOptions.None, dmyDateFormat: true)));
             }
 
             throw new Exception($"Parser '{parserName}' for Dutch not supported");
