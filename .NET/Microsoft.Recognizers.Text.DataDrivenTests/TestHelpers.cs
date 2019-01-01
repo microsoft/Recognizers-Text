@@ -418,32 +418,33 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
         public static IDateTimeExtractor GetDutchExtractor(DateTimeExtractors extractorName)
         {
-            var config = new BaseOptionsConfiguration();
-            var previewConfig = new BaseOptionsConfiguration(DateTimeOptions.EnablePreview);
+            var enableDmyConfig = new BaseOptionsConfiguration(DateTimeOptions.None, true);
+            var enableDmyPreviewConfig = new BaseOptionsConfiguration(DateTimeOptions.EnablePreview, true);
+
             switch (extractorName)
             {
                 case DateTimeExtractors.Date:
-                    return new BaseDateExtractor(new DutchDateExtractorConfiguration(config));
+                    return new BaseDateExtractor(new DutchDateExtractorConfiguration(enableDmyConfig));
                 case DateTimeExtractors.Time:
-                    return new BaseTimeExtractor(new DutchTimeExtractorConfiguration(config));
+                    return new BaseTimeExtractor(new DutchTimeExtractorConfiguration(enableDmyConfig));
                 case DateTimeExtractors.DatePeriod:
-                    return new BaseDatePeriodExtractor(new DutchDatePeriodExtractorConfiguration(config));
+                    return new BaseDatePeriodExtractor(new DutchDatePeriodExtractorConfiguration(enableDmyConfig));
                 case DateTimeExtractors.TimePeriod:
-                    return new BaseTimePeriodExtractor(new DutchTimePeriodExtractorConfiguration(config));
+                    return new BaseTimePeriodExtractor(new DutchTimePeriodExtractorConfiguration(enableDmyConfig));
                 case DateTimeExtractors.DateTime:
-                    return new BaseDateTimeExtractor(new DutchDateTimeExtractorConfiguration(config));
+                    return new BaseDateTimeExtractor(new DutchDateTimeExtractorConfiguration(enableDmyConfig));
                 case DateTimeExtractors.DateTimePeriod:
-                    return new BaseDateTimePeriodExtractor(new DutchDateTimePeriodExtractorConfiguration(config));
+                    return new BaseDateTimePeriodExtractor(new DutchDateTimePeriodExtractorConfiguration(enableDmyConfig));
                 case DateTimeExtractors.Duration:
-                    return new BaseDurationExtractor(new DutchDurationExtractorConfiguration(config));
+                    return new BaseDurationExtractor(new DutchDurationExtractorConfiguration(enableDmyConfig));
                 case DateTimeExtractors.Holiday:
-                    return new BaseHolidayExtractor(new DutchHolidayExtractorConfiguration(config));
+                    return new BaseHolidayExtractor(new DutchHolidayExtractorConfiguration(enableDmyConfig));
                 case DateTimeExtractors.TimeZone:
-                    return new BaseTimeZoneExtractor(new DutchTimeZoneExtractorConfiguration(previewConfig));
+                    return new BaseTimeZoneExtractor(new DutchTimeZoneExtractorConfiguration(enableDmyConfig));
                 case DateTimeExtractors.Set:
-                    return new BaseSetExtractor(new DutchSetExtractorConfiguration(config));
+                    return new BaseSetExtractor(new DutchSetExtractorConfiguration(enableDmyConfig));
                 case DateTimeExtractors.Merged:
-                    return new BaseMergedDateTimeExtractor(new DutchMergedExtractorConfiguration(config));
+                    return new BaseMergedDateTimeExtractor(new DutchMergedExtractorConfiguration(enableDmyConfig));
                 case DateTimeExtractors.MergedSkipFromTo:
                     return new BaseMergedDateTimeExtractor(new DutchMergedExtractorConfiguration(new BaseOptionsConfiguration(DateTimeOptions.SkipFromToMerge)));
             }
@@ -453,7 +454,8 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
         public static IDateTimeParser GetDutchParser(DateTimeParsers parserName)
         {
-            var commonConfiguration = new DutchCommonDateTimeParserConfiguration(new BaseOptionsConfiguration());
+            var commonConfiguration = new EnglishCommonDateTimeParserConfiguration(new BaseOptionsConfiguration(DateTimeOptions.None, true));
+
             switch (parserName)
             {
                 case DateTimeParsers.Date:
