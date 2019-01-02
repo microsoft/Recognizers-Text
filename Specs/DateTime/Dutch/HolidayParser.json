@@ -82,12 +82,12 @@
         "Text": "nieuwjaarsdag",
         "Type": "date",
         "Value": {
-          "Timex": "XXXX-12-31",
+          "Timex": "XXXX-01-01",
           "FutureResolution": {
-            "date": "2016-12-31"
+            "date": "2017-01-01"
           },
           "PastResolution": {
-            "date": "2015-12-31"
+            "date": "2016-01-01"
           }
         },
         "Start": 15,
@@ -168,54 +168,6 @@
     ]
   },
   {
-    "Input": "Ik ga terug op thanks giving day",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "thanks giving day",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-11-WXX-4-4",
-          "FutureResolution": {
-            "date": "2016-11-24"
-          },
-          "PastResolution": {
-            "date": "2015-11-26"
-          }
-        },
-        "Start": 15,
-        "Length": 17
-      }
-    ]
-  },
-  {
-    "Input": "Ik ga terug met thanksgiving",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "thanksgiving",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-11-WXX-4-4",
-          "FutureResolution": {
-            "date": "2016-11-24"
-          },
-          "PastResolution": {
-            "date": "2015-11-26"
-          }
-        },
-        "Start": 16,
-        "Length": 12
-      }
-    ]
-  },
-  {
     "Input": "Ik ga terug op vaderdag",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -264,26 +216,41 @@
     ]
   },
   {
-    "Input": "Ik ga terug op thanksgiving day 2010",
+    "Input": "In Nederland vieren we tegenwoordig Koningsdag, in plaats van Koninginnedag.",
     "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
+      "ReferenceDateTime": "2019-01-02T00:00:00"
     },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "thanksgiving day 2010",
+        "Text": "Koningsdag",
         "Type": "date",
         "Value": {
-          "Timex": "2010-11-WXX-4-4",
+          "Timex": "XXXX-04-27",
           "FutureResolution": {
-            "date": "2010-11-25"
+            "date": "2019-04-27"
           },
           "PastResolution": {
-            "date": "2010-11-25"
+            "date": "2018-04-27"
           }
         },
-        "Start": 15,
-        "Length": 21
+        "Start": 36,
+        "Length": 45
+      },
+      {
+        "Text": "Koninginnedag",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-04-30",
+          "FutureResolution": {
+            "date": "2019-04-30"
+          },
+          "PastResolution": {
+            "date": "2018-04-30"
+          }
+        },
+        "Start": 62,
+        "Length": 74
       }
     ]
   },

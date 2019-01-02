@@ -63,7 +63,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
                 {"eerstekerstdag", ChristmasDay},
                 {"tweedekerstdag", SecondChristmasDay},
                 {"bevrijdingsdag", Bevrijdingsdag},
-                {"dodenherdenking", Dodenherdenking}
+                {"dodenherdenking", Dodenherdenking},
+                {"dagvandearbeid", Dagvandearbeid}
             };
         }
 
@@ -105,6 +106,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         private static DateObject Bevrijdingsdag(int year) => new DateObject(year, 5, 5);
         private static DateObject DutchTeachersDay(int year) => new DateObject(year, 10, 5);
         private static DateObject DutchVeteransday(int year) => DateObject.MinValue.SafeCreateFromValue(year, 6, GetLastDay(year, 6, DayOfWeek.Saturday));
+        private static DateObject Dagvandearbeid(int year) => new DateObject(year, 5, 1);
 
         public override int GetSwiftYear(string text)
         {
