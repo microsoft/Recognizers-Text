@@ -91,5 +91,8 @@
 		"@microsoft/recognizers-text-sequence": "file:./packages/recognizers-sequence",
 		"@microsoft/recognizers-text-suite": "file:./packages/recognizers-text-suite",
 		"@microsoft/recognizers-text-data-types-timex-expression": "file:./packages/datatypes-date-time"
+	},
+	"engines": {
+		"node": ">=10.3.0"
 	}
 }
