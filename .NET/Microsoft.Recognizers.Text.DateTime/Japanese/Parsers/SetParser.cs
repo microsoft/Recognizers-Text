@@ -57,12 +57,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 {
                     innerResult.FutureResolution = new Dictionary<string, string>
                     {
-                        {TimeTypeConstants.SET, (string) innerResult.FutureValue}
+                        { TimeTypeConstants.SET, (string)innerResult.FutureValue },
                     };
 
                     innerResult.PastResolution = new Dictionary<string, string>
                     {
-                        {TimeTypeConstants.SET, (string) innerResult.PastValue}
+                        { TimeTypeConstants.SET, (string)innerResult.PastValue },
                     };
 
                     value = innerResult;
@@ -77,8 +77,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 Type = er.Type,
                 Data = er.Data,
                 Value = value,
-                TimexStr = value == null ? "" : ((DateTimeResolutionResult) value).Timex,
-                ResolutionStr = ""
+                TimexStr = value == null ? string.Empty : ((DateTimeResolutionResult)value).Timex,
+                ResolutionStr = string.Empty,
             };
             return ret;
         }
@@ -86,6 +86,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)
         {
             return candidateResults;
+        }
+
+        private static bool IsLessThanDay(string unit)
+        {
+            return unit.Equals("S") || unit.Equals("M") || unit.Equals("H");
         }
 
         private DateTimeResolutionResult ParseEachDuration(string text, DateObject refDate)
@@ -113,6 +118,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         private DateTimeResolutionResult ParseEachUnit(string text)
         {
             var ret = new DateTimeResolutionResult();
+
             // handle "each month"
             var match = SetExtractor.EachUnitRegex.MatchExact(text, trim: true);
 
@@ -193,6 +199,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 ret.Success = true;
                 return ret;
             }
+
             return ret;
         }
 
@@ -215,12 +222,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 ret.Success = true;
                 return ret;
             }
-            return ret;
-        }
 
-        private static bool IsLessThanDay(string unit)
-        {
-            return (unit.Equals("S") || unit.Equals("M") || unit.Equals("H"));
+            return ret;
         }
     }
 }
