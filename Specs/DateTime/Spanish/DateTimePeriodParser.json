@@ -300,31 +300,6 @@
     ]
   },
   {
-    "Input": "Regresaré a la noche",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "Results": [
-      {
-        "Text": "a la noche",
-        "Type": "datetimerange",
-        "Value": {
-          "Timex": "2016-11-07TNI",
-          "FutureResolution": {
-            "startDateTime": "2016-11-07 20:00:00",
-            "endDateTime": "2016-11-07 23:59:59"
-          },
-          "PastResolution": {
-            "startDateTime": "2016-11-07 20:00:00",
-            "endDateTime": "2016-11-07 23:59:59"
-          }
-        },
-        "Start": 10,
-        "Length": 10
-      }
-    ]
-  },
-  {
     "Input": "Regresaré esta noche",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
@@ -400,56 +375,6 @@
     ]
   },
   {
-    "Input": "Regresaré pasado el mediodia de hoy",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "Results": [
-      {
-        "Text": "pasado el mediodia",
-        "Type": "datetimerange",
-        "Value": {
-          "Timex": "2016-11-07TAF",
-          "FutureResolution": {
-            "startDateTime": "2016-11-07 12:00:00",
-            "endDateTime": "2016-11-07 16:00:00"
-          },
-          "PastResolution": {
-            "startDateTime": "2016-11-07 12:00:00",
-            "endDateTime": "2016-11-07 16:00:00"
-          }
-        },
-        "Start": 10,
-        "Length": 18
-      }
-    ]
-  },
-  {
-    "Input": "Regresaré mañana a la noche",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "Results": [
-      {
-        "Text": "mañana a la noche",
-        "Type": "datetimerange",
-        "Value": {
-          "Timex": "2016-11-08TNI",
-          "FutureResolution": {
-            "startDateTime": "2016-11-08 20:00:00",
-            "endDateTime": "2016-11-08 23:59:59"
-          },
-          "PastResolution": {
-            "startDateTime": "2016-11-08 20:00:00",
-            "endDateTime": "2016-11-08 23:59:59"
-          }
-        },
-        "Start": 10,
-        "Length": 17
-      }
-    ]
-  },
-  {
     "Input": "Regresé anoche",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
@@ -496,31 +421,6 @@
         },
         "Start": 10,
         "Length": 19
-      }
-    ]
-  },
-  {
-    "Input": "Regresaré el próximo lunes a la tarde",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "Results": [
-      {
-        "Text": "próximo lunes a la tarde",
-        "Type": "datetimerange",
-        "Value": {
-          "Timex": "2016-11-14TEV",
-          "FutureResolution": {
-            "startDateTime": "2016-11-14 16:00:00",
-            "endDateTime": "2016-11-14 20:00:00"
-          },
-          "PastResolution": {
-            "startDateTime": "2016-11-14 16:00:00",
-            "endDateTime": "2016-11-14 20:00:00"
-          }
-        },
-        "Start": 13,
-        "Length": 24
       }
     ]
   },
@@ -771,31 +671,6 @@
         },
         "Start": 14,
         "Length": 21
-      }
-    ]
-  },
-  {
-    "Input": "Regresaré mañana a la mañana",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "Results": [
-      {
-        "Text": "mañana a la mañana",
-        "Type": "datetimerange",
-        "Value": {
-          "Timex": "2016-11-08TMO",
-          "FutureResolution": {
-            "startDateTime": "2016-11-08 08:00:00",
-            "endDateTime": "2016-11-08 12:00:00"
-          },
-          "PastResolution": {
-            "startDateTime": "2016-11-08 08:00:00",
-            "endDateTime": "2016-11-08 12:00:00"
-          }
-        },
-        "Start": 10,
-        "Length": 18
       }
     ]
   },
