@@ -96,14 +96,14 @@
     ]
   },
   {
-    "Input": "Ik ga terug op clean monday",
+    "Input": "Ik ga terug op koningsdag",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "clean monday",
+        "Text": "koningsdag",
         "Type": "date",
         "Start": 15,
-        "Length": 12
+        "Length": 10
       }
     ]
   }
