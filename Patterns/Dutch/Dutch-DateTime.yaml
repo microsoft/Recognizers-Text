@@ -6,9 +6,9 @@ RangeConnectorRegex : !nestedRegex
   def: (?<and>\b(and|through|to)\b|{BaseDateTime.RangeConnectorSymbolRegex})
   references: [ BaseDateTime.RangeConnectorSymbolRegex ]
 RelativeRegex: !simpleRegex
-  def: \b(?<order>volgende|komende|aankomende|aanstaande|deze|huidige|aanstaande|vorig|verleden|vorige|laatste)\b
+  def: \b(?<order>dit|volgende|komende|aankomende|aanstaande|deze|huidige|aanstaande|vorig|verleden|vorige|laatste)\b
 StrictRelativeRegex: !simpleRegex
-  def: \b(?<order>volgende|komende|aankomende|aanstaande|deze|huidige|aanstaande|vorig|verleden|vorige|laatste)\b
+  def: \b(?<order>dit|volgende|komende|aankomende|aanstaande|deze|huidige|aanstaande|vorig|verleden|vorige|laatste)\b
 NextPrefixRegex: !simpleRegex
   def: \b(volgende|komende|aankomende)\b
 AfterNextSuffixRegex: !simpleRegex
@@ -1109,6 +1109,7 @@ FutureTerms: !list
   entries:
     - deze
     - volgende
+    - dit 
 LastCardinalTerms: !list
   types: [ string ]
   entries:

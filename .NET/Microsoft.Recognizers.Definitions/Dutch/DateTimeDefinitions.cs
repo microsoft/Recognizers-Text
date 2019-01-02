@@ -19,8 +19,8 @@ namespace Microsoft.Recognizers.Definitions.Dutch
 	{
 		public static readonly string TillRegex = $@"(?<till>\b(to|till|til|until|thru|through)\b|{BaseDateTime.RangeConnectorSymbolRegex})";
 		public static readonly string RangeConnectorRegex = $@"(?<and>\b(and|through|to)\b|{BaseDateTime.RangeConnectorSymbolRegex})";
-		public const string RelativeRegex = @"\b(?<order>volgende|komende|aankomende|aanstaande|deze|huidige|aanstaande|vorig|verleden|vorige|laatste)\b";
-		public const string StrictRelativeRegex = @"\b(?<order>volgende|komende|aankomende|aanstaande|deze|huidige|aanstaande|vorig|verleden|vorige|laatste)\b";
+		public const string RelativeRegex = @"\b(?<order>dit|volgende|komende|aankomende|aanstaande|deze|huidige|aanstaande|vorig|verleden|vorige|laatste)\b";
+		public const string StrictRelativeRegex = @"\b(?<order>dit|volgende|komende|aankomende|aanstaande|deze|huidige|aanstaande|vorig|verleden|vorige|laatste)\b";
 		public const string NextPrefixRegex = @"\b(volgende|komende|aankomende)\b";
 		public const string AfterNextSuffixRegex = @"\b(after\s+(the\s+)?next)\b";
 		public const string PastPrefixRegex = @"(vorig|verleden|vorige|laatste)\b";
@@ -727,7 +727,8 @@ namespace Microsoft.Recognizers.Definitions.Dutch
 		public static readonly IList<string> FutureTerms = new List<string>
 		{
 			@"deze",
-			@"volgende"
+			@"volgende",
+			@"dit"
 		};
 		public static readonly IList<string> LastCardinalTerms = new List<string>
 		{
