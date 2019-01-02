@@ -21,7 +21,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
             {
                 {"maosbirthday", MaoBirthday},
                 {"yuandan", NewYear},
-                {"teachersday", TeacherDay},
+                {"teachersday", DutchTeachersDay},
                 {"singleday", SinglesDay},
                 {"allsaintsday", HalloweenDay},
                 {"youthday", YouthDay},
@@ -59,13 +59,18 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
                 {"easterday", EasterDay},
                 {"kingsday", KingsDay},
                 {"queensday", QueensDay},
-                {"prinsjesdag", Prinsjesdag}
+                {"prinsjesdag", Prinsjesdag},
+                {"eerstekerstdag", ChristmasDay},
+                {"tweedekerstdag", SecondChristmasDay},
+                {"bevrijdingsdag", Bevrijdingsdag},
+                {"dodenherdenking", Dodenherdenking}
             };
         }
 
         private static DateObject NewYear(int year) => new DateObject(year, 1, 1);
         private static DateObject NewYearEve(int year) => new DateObject(year, 12, 31);
         private static DateObject ChristmasDay(int year) => new DateObject(year, 12, 25);
+        private static DateObject ChristmasDay(int year) => new DateObject(year, 12, 26);
         private static DateObject ChristmasEve(int year) => new DateObject(year, 12, 24);
         private static DateObject ValentinesDay(int year) => new DateObject(year, 2, 14);
         private static DateObject WhiteLoverDay(int year) => new DateObject(year, 3, 14);
@@ -96,6 +101,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         private static DateObject KingsDay(int year) => new DateObject(year, 4, 27);
         private static DateObject QueensDay(int year) => new DateObject(year, 4, 30);
         private static DateObject Prinsjesdag(int year) => DateObject.MinValue.SafeCreateFromValue(year, 9, GetDay(year, 9, 2, DayOfWeek.Tuesday));
+        private static DateObject Dodenherdenking(int year) => new DateObject(year, 5, 4);
+        private static DateObject Bevrijdingsdag(int year) => new DateObject(year, 5, 5);
+        private static DateObject DutchTeachersDay(int year) => new DateObject(year, 10, 5);
 
         public override int GetSwiftYear(string text)
         {
