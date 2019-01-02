@@ -53,7 +53,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
                 {"allhallowday", AllHallowDay},
                 {"allsoulsday", AllSoulsday},
                 {"guyfawkesday", GuyFawkesDay},
-                {"veteransday", Veteransday},
+                {"veteransday", DutchVeteransday},
                 {"christmaseve", ChristmasEve},
                 {"newyeareve", NewYearEve},
                 {"easterday", EasterDay},
@@ -104,6 +104,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         private static DateObject Dodenherdenking(int year) => new DateObject(year, 5, 4);
         private static DateObject Bevrijdingsdag(int year) => new DateObject(year, 5, 5);
         private static DateObject DutchTeachersDay(int year) => new DateObject(year, 10, 5);
+        private static DateObject DutchVeteransday(int year) => DateObject.MinValue.SafeCreateFromValue(year, 6, GetLastDay(year, 6, DayOfWeek.Saturday));
 
         public override int GetSwiftYear(string text)
         {
