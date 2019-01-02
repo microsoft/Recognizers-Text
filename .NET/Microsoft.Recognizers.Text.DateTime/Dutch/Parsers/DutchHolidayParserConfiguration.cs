@@ -70,7 +70,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         private static DateObject NewYear(int year) => new DateObject(year, 1, 1);
         private static DateObject NewYearEve(int year) => new DateObject(year, 12, 31);
         private static DateObject ChristmasDay(int year) => new DateObject(year, 12, 25);
-        private static DateObject ChristmasDay(int year) => new DateObject(year, 12, 26);
+        private static DateObject SecondChristmasDay(int year) => new DateObject(year, 12, 26);
         private static DateObject ChristmasEve(int year) => new DateObject(year, 12, 24);
         private static DateObject ValentinesDay(int year) => new DateObject(year, 2, 14);
         private static DateObject WhiteLoverDay(int year) => new DateObject(year, 3, 14);

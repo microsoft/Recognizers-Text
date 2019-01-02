@@ -491,7 +491,7 @@ HalfRegex: !simpleRegex
 ConjunctionRegex: !simpleRegex
   def: \b((and(\s+for)?)|with)\b
 HolidayRegex1: !nestedRegex
-  def: \b(?<holiday>pasen|kerst|kerstavond|xmas|thanksgiving|halloween|yuandan|oudejaarsavond|silvester|silvesteravond)?\b
+  def: \b(?<holiday>pasen|kerst|kerstavond|xmas|thanksgiving|halloween|yuandan|oudejaarsavond|silvester|silvesteravond)(\s+(van\s+|in\s+)?({YearRegex}|{RelativeRegex}\s+jaar))?\b
   references: [ YearRegex, RelativeRegex ]
 HolidayRegex2: !nestedRegex
   def: \b(?<holiday>nationale dodenherdenking|nationale herdenking|dodenherdenking|dag van de leraar|dag van de arbeid)(\s+(van\s+|in\s+)?({YearRegex}|{RelativeRegex}\s+jaar))?\b
@@ -951,31 +951,31 @@ HolidayNames: !dictionary
     kingsday: [ koningsdag ] # 27 april
     queensday: [ koninginnedag ] # 30 april
     prinsjesdag: [ prinsjesdag ] # 3rd Tuesday of September
-    dodenherdenking: [ nationale dodenherdenking, nationale herdenking, dodenherdenking] # 4 May
+    dodenherdenking: [ nationaledodenherdenking, nationaleherdenking, dodenherdenking] # 4 May
     bevrijdingsdag: [ bevrijdingsdag ] # 5 May
     hemelvaartsdag: [ hemelvaartsdag ] # 39 Days after Easter
-    teachersday: [ dag van de leraar ] # Dutch Teachersday is on a different date - 5 October
-    veteransday: [ nederlandse veteranendag, veteranendag ] # Dutch Veteranendag is on a different date - last Saturday of June
-    eerstekerstdag: [ eerste kerstdag, 1e kerstdag ]
-    tweedekerstdag: [ tweede kerstdag, 2e kerstdag ]
+    teachersday: [ dagvandeleraar ] # Dutch Teachersday is on a different date - 5 October
+    veteransday: [ nederlandseveteranendag, veteranendag ] # Dutch Veteranendag is on a different date - last Saturday of June
+    eerstekerstdag: [ eerstekerstdag, 1ekerstdag ] # 25 May
+    tweedekerstdag: [ tweedekerstdag, 2ekerstdag ] # 26 May
+    dagvandearbeid: [ dagvandearbeid, dagvandenarbeid ] # 1 May
     # International Holidays
     christmas: [ kerstfeest, kerstmis, kerst, xmas ]
     easterday: [ pasen ] 
     fathers: [ vaderdag, vadersdag ] 
     mothers: [ moederdag, moedersdag ] 
-    labour: [ dag van de arbeid, dag van den arbeid ]
     singleday: [ singleday, vrijgezellendag ] 
     femaleday: [ femaleday, vrouwendag ]
     treeplantingday: [ boomplantdag, boomfeestdag ]
     girlsday: [ girlsday, meisjesdag ]
-    newyear: [ oud en nieuw, oud & nieuw ]
+    newyear: [ oudennieuw, oud&nieuw ]
     newyearday: [ nieuwjaarsdag ]
     newyearsday: [ nieuwjaarsdag ]
     newyeareve: [ oudejaarsavond, silvester, silvesteravond ]
     valentinesday: [ valentijnsdag, valetijnsdag ]
-    aprilfools: [ 1 aprilgrap, 1 april ]
+    aprilfools: [ 1aprilgrap, 1april ]
     independenceday: [ onafhankelijkheidsdag ]
-    bastilleday: [ franse nationale feestdag, bestorming van de bastille ]
+    bastilleday: [ fransenationalefeestdag, bestormingvandebastille ]
     halloweenday: [ halloween, allerheiligenavond ]
     allhallowday: [ allerheiligen ]
     allsaintsday: [ allerheiligen ] # Duplicate of allhallowday?
@@ -992,16 +992,16 @@ HolidayNames: !dictionary
     maosbirthday: [ maosbirthday ] # TODO or remove?
     youthday: [ youthday ] # TODO or remove?
     childrenday: [ childrenday, childday ] # TODO or remove?
-    stgeorgeday: [ sint joris ]
+    stgeorgeday: [ sintjoris ]
     mayday: [ mayday ]
-    cincodemayoday: [ cinco de mayo ]
+    cincodemayoday: [ cincodemayo ]
     baptisteday: [ baptisteday ] # TODO or remove?
-    usindependenceday: [ amerikaanse onafhankelijkheidsdag, us onafhankelijkheidsdag ]
+    usindependenceday: [ amerikaanseonafhankelijkheidsdag, usonafhankelijkheidsdag ]
     stpatrickday: [ stpatrickday ] # TODO or remove?
     whiteloverday: [ whiteloverday ] # TODO or remove?
     loverday: [ loverday ] # TODO or remove?
     groundhougday: [ groundhougday, bosmarmottendag ]
-    inaugurationday: [ inaugurationday, inauguratie dag ] 
+    inaugurationday: [ inaugurationday, inauguratiedag ] 
     arborday: [ arborday ] # TODO or remove?
     guyfawkesday: [ guy fawkes day, guy fawkes night, bonfire night, firework night ] # TODO or remove?
 
