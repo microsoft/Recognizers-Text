@@ -220,17 +220,6 @@
     ]
   },
   {
-    "Input": "Estaré fuera de 4pm a cinco treinta",
-    "Results": [
-      {
-        "Text": "de 4pm a cinco treinta",
-        "Type": "timerange",
-        "Start": 13,
-        "Length": 22
-      }
-    ]
-  },
-  {
     "Input": "Estaré fuera de 3 de la mañana hasta las 5pm",
     "Results": [
       {
@@ -276,9 +265,11 @@
   },
   {
     "Input": "Nos vemos en la mañana",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "mañana",
+        "Text": "en la mañana",
         "Type": "timerange",
         "Start": 16,
         "Length": 6
@@ -287,9 +278,11 @@
   },
   {
     "Input": "Nos vemos por la tarde",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "tarde",
+        "Text": "por la tarde",
         "Type": "timerange",
         "Start": 17,
         "Length": 5
@@ -297,34 +290,14 @@
     ]
   },
   {
-    "Input": "Te veo a la noche",
-    "Results": [
-      {
-        "Text": "noche",
-        "Type": "timerange",
-        "Start": 12,
-        "Length": 5
-      }
-    ]
-  },
-  {
     "Input": "Nos vemos en la madrugada",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "madrugada",
+        "Text": "en la madrugada",
         "Type": "timerange",
         "Start": 16,
-        "Length": 9
-      }
-    ]
-  },
-  {
-    "Input": "Nos vemos de madrugada",
-    "Results": [
-      {
-        "Text": "madrugada",
-        "Type": "timerange",
-        "Start": 13,
         "Length": 9
       }
     ]

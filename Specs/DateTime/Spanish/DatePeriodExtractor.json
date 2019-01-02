@@ -23,12 +23,14 @@
   },
   {
     "Input": "Estare afuera desde 4-23 del proximo mes",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "desde 4-23 del proximo mes",
+        "Text": "4-23 del proximo mes",
         "Type": "daterange",
-        "Start": 14,
-        "Length": 26
+        "Start": 20,
+        "Length": 20
       }
     ]
   },
@@ -40,17 +42,6 @@
         "Type": "daterange",
         "Start": 14,
         "Length": 30
-      }
-    ]
-  },
-  {
-    "Input": "Estare afuera 4 hasta 23 del proximo mes",
-    "Results": [
-      {
-        "Text": "4 hasta 23 del proximo mes",
-        "Type": "daterange",
-        "Start": 14,
-        "Length": 26
       }
     ]
   },
@@ -100,12 +91,14 @@
   },
   {
     "Input": "Estare afuera entre 4-22 enero, 2017",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "entre 4-22 enero, 2017",
+        "Text": "4-22 enero, 2017",
         "Type": "daterange",
-        "Start": 14,
-        "Length": 22
+        "Start": 20,
+        "Length": 16
       }
     ]
   },
@@ -122,12 +115,14 @@
   },
   {
     "Input": "Estare afuera en Septiembre",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "en Septiembre",
+        "Text": "Septiembre",
         "Type": "daterange",
-        "Start": 14,
-        "Length": 13
+        "Start": 17,
+        "Length": 10
       }
     ]
   },
@@ -166,23 +161,27 @@
   },
   {
     "Input": "Estare afuera en junio 2016",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "en junio 2016",
+        "Text": "junio 2016",
         "Type": "daterange",
-        "Start": 14,
-        "Length": 13
+        "Start": 17,
+        "Length": 10
       }
     ]
   },
   {
     "Input": "Estare afuera en junio del proximo año",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "en junio del proximo año",
+        "Text": "junio del proximo año",
         "Type": "daterange",
-        "Start": 14,
-        "Length": 24
+        "Start": 17,
+        "Length": 21
       }
     ]
   },
@@ -199,23 +198,27 @@
   },
   {
     "Input": "Estare afuera la tercera semana de este mes",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "la tercera semana de este mes",
+        "Text": "tercera semana de este mes",
         "Type": "daterange",
-        "Start": 14,
-        "Length": 29
+        "Start": 17,
+        "Length": 26
       }
     ]
   },
   {
     "Input": "Estare afuera la ultima semana de julio",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "la ultima semana de julio",
+        "Text": "ultima semana de julio",
         "Type": "daterange",
-        "Start": 14,
-        "Length": 25
+        "Start": 17,
+        "Length": 22
       }
     ]
   },
@@ -264,17 +267,6 @@
     ]
   },
   {
-    "Input": "Estuve afuera los ultimos 3años",
-    "Results": [
-      {
-        "Text": "ultimos 3años",
-        "Type": "daterange",
-        "Start": 18,
-        "Length": 13
-      }
-    ]
-  },
-  {
     "Input": "Estuve afuera las anteriores 3 semanas",
     "Results": [
       {
@@ -286,17 +278,6 @@
     ]
   },
   {
-    "Input": "Estare afuera el 2 de Oct hasta 22 de Octubre",
-    "Results": [
-      {
-        "Text": "2 de Oct hasta 22 de Octubre",
-        "Type": "daterange",
-        "Start": 17,
-        "Length": 28
-      }
-    ]
-  },
-  {
     "Input": "Estare afuera el 12 de Enero, 2016 - 22/02/2016",
     "Results": [
       {
@@ -304,72 +285,6 @@
         "Type": "daterange",
         "Start": 17,
         "Length": 30
-      }
-    ]
-  },
-  {
-    "Input": "Estare afuera el 1ro de Ene hasta Mi, 22 de Ene",
-    "Results": [
-      {
-        "Text": "1ro de Ene hasta Mi, 22 de Ene",
-        "Type": "daterange",
-        "Start": 17,
-        "Length": 30
-      }
-    ]
-  },
-  {
-    "Input": "Estare afuera hoy hasta mañana",
-    "Results": [
-      {
-        "Text": "hoy hasta mañana",
-        "Type": "daterange",
-        "Start": 14,
-        "Length": 16
-      }
-    ]
-  },
-  {
-    "Input": "Estare afuera hoy hasta 22 de Octubre",
-    "Results": [
-      {
-        "Text": "hoy hasta 22 de Octubre",
-        "Type": "daterange",
-        "Start": 14,
-        "Length": 23
-      }
-    ]
-  },
-  {
-    "Input": "Estare afuera 2 de Oct hasta el dia despues de mañana",
-    "Results": [
-      {
-        "Text": "2 de Oct hasta el dia despues de mañana",
-        "Type": "daterange",
-        "Start": 14,
-        "Length": 39
-      }
-    ]
-  },
-  {
-    "Input": "Estare afuera hoy hasta proximo domingo",
-    "Results": [
-      {
-        "Text": "hoy hasta proximo domingo",
-        "Type": "daterange",
-        "Start": 14,
-        "Length": 25
-      }
-    ]
-  },
-  {
-    "Input": "Estare afuera este viernes hasta siguiente domingo",
-    "Results": [
-      {
-        "Text": "este viernes hasta siguiente domingo",
-        "Type": "daterange",
-        "Start": 14,
-        "Length": 36
       }
     ]
   },
@@ -463,67 +378,27 @@
   },
   {
     "Input": "Estare afuera el tercer cuatrimestre de 2016",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "el tercer cuatrimestre de 2016",
+        "Text": "tercer cuatrimestre de 2016",
         "Type": "daterange",
-        "Start": 14,
-        "Length": 30
-      }
-    ]
-  },
-  {
-    "Input": "Estare afuera el tercer cuatrimestre de este año",
-    "Results": [
-      {
-        "Text": "el tercer cuatrimestre de este año",
-        "Type": "daterange",
-        "Start": 14,
-        "Length": 34
-      }
-    ]
-  },
-  {
-    "Input": "Estare afuera 2016 el tercer cuatrimestre",
-    "Results": [
-      {
-        "Text": "2016 el tercer cuatrimestre",
-        "Type": "daterange",
-        "Start": 14,
+        "Start": 17,
         "Length": 27
       }
     ]
   },
   {
-    "Input": "Estare afuera 2015.3",
+    "Input": "Estare afuera el tercer cuatrimestre de este año",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "2015.3",
+        "Text": "tercer cuatrimestre de este año",
         "Type": "daterange",
-        "Start": 14,
-        "Length": 6
-      }
-    ]
-  },
-  {
-    "Input": "Estare afuera 2015-3",
-    "Results": [
-      {
-        "Text": "2015-3",
-        "Type": "daterange",
-        "Start": 14,
-        "Length": 6
-      }
-    ]
-  },
-  {
-    "Input": "Estare afuera 2015/3",
-    "Results": [
-      {
-        "Text": "2015/3",
-        "Type": "daterange",
-        "Start": 14,
-        "Length": 6
+        "Start": 17,
+        "Length": 31
       }
     ]
   },
@@ -540,23 +415,27 @@
   },
   {
     "Input": "Estare afuera la tercer semana de 2027",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "la tercer semana de 2027",
+        "Text": "tercer semana de 2027",
         "Type": "daterange",
-        "Start": 14,
-        "Length": 24
+        "Start": 17,
+        "Length": 21
       }
     ]
   },
   {
     "Input": "Estare afuera la tercer semana proximo año",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "la tercer semana proximo año",
+        "Text": "tercer semana proximo año",
         "Type": "daterange",
-        "Start": 14,
-        "Length": 28
+        "Start": 17,
+        "Length": 25
       }
     ]
   },
@@ -579,28 +458,6 @@
         "Type": "daterange",
         "Start": 17,
         "Length": 19
-      }
-    ]
-  },
-  {
-    "Input": "Estare afuera el verano",
-    "Results": [
-      {
-        "Text": "el verano",
-        "Type": "daterange",
-        "Start": 14,
-        "Length": 9
-      }
-    ]
-  },
-  {
-    "Input": "Estare afuera verano",
-    "Results": [
-      {
-        "Text": "verano",
-        "Type": "daterange",
-        "Start": 14,
-        "Length": 6
       }
     ]
   },

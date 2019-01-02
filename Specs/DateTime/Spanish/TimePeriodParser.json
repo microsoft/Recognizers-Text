@@ -350,88 +350,15 @@
     ]
   },
   {
-    "Input": "Nos veamos a la madrugada",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "Results": [
-      {
-        "Text": "madrugada",
-        "Type": "timerange",
-        "Value": {
-          "Timex": "TDA",
-          "FutureResolution": {
-            "startTime": "04:00:00",
-            "endTime": "08:00:00"
-          },
-          "PastResolution": {
-            "startTime": "04:00:00",
-            "endTime": "08:00:00"
-          }
-        },
-        "Start": 16,
-        "Length": 9
-      }
-    ]
-  },
-  {
-    "Input": "Nos veamos a la mañana",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "Results": [
-      {
-        "Text": "mañana",
-        "Type": "timerange",
-        "Value": {
-          "Timex": "TMO",
-          "FutureResolution": {
-            "startTime": "08:00:00",
-            "endTime": "12:00:00"
-          },
-          "PastResolution": {
-            "startTime": "08:00:00",
-            "endTime": "12:00:00"
-          }
-        },
-        "Start": 16,
-        "Length": 6
-      }
-    ]
-  },
-  {
-    "Input": "No vemos pasado el mediodia",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "Results": [
-      {
-        "Text": "pasado el mediodia",
-        "Type": "timerange",
-        "Value": {
-          "Timex": "TAF",
-          "FutureResolution": {
-            "startTime": "12:00:00",
-            "endTime": "16:00:00"
-          },
-          "PastResolution": {
-            "startTime": "12:00:00",
-            "endTime": "16:00:00"
-          }
-        },
-        "Start": 9,
-        "Length": 18
-      }
-    ]
-  },
-  {
     "Input": "Nos vemos en la noche",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "noche",
+        "Text": "en la noche",
         "Type": "timerange",
         "Value": {
           "Timex": "TNI",
@@ -446,106 +373,6 @@
         },
         "Start": 16,
         "Length": 5
-      }
-    ]
-  },
-  {
-    "Input": "Nos vemos a la tarde",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "Results": [
-      {
-        "Text": "tarde",
-        "Type": "timerange",
-        "Value": {
-          "Timex": "TEV",
-          "FutureResolution": {
-            "startTime": "16:00:00",
-            "endTime": "20:00:00"
-          },
-          "PastResolution": {
-            "startTime": "16:00:00",
-            "endTime": "20:00:00"
-          }
-        },
-        "Start": 15,
-        "Length": 5
-      }
-    ]
-  },
-  {
-    "Input": "Nos vemos a la madrugada",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "Results": [
-      {
-        "Text": "madrugada",
-        "Type": "timerange",
-        "Value": {
-          "Timex": "TDA",
-          "FutureResolution": {
-            "startTime": "04:00:00",
-            "endTime": "08:00:00"
-          },
-          "PastResolution": {
-            "startTime": "04:00:00",
-            "endTime": "08:00:00"
-          }
-        },
-        "Start": 15,
-        "Length": 9
-      }
-    ]
-  },
-  {
-    "Input": "Nos vemos a la mañana",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "Results": [
-      {
-        "Text": "mañana",
-        "Type": "timerange",
-        "Value": {
-          "Timex": "TMO",
-          "FutureResolution": {
-            "startTime": "08:00:00",
-            "endTime": "12:00:00"
-          },
-          "PastResolution": {
-            "startTime": "08:00:00",
-            "endTime": "12:00:00"
-          }
-        },
-        "Start": 15,
-        "Length": 6
-      }
-    ]
-  },
-  {
-    "Input": "Nos vemos pasado el mediodia",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "Results": [
-      {
-        "Text": "pasado el mediodia",
-        "Type": "timerange",
-        "Value": {
-          "Timex": "TAF",
-          "FutureResolution": {
-            "startTime": "12:00:00",
-            "endTime": "16:00:00"
-          },
-          "PastResolution": {
-            "startTime": "12:00:00",
-            "endTime": "16:00:00"
-          }
-        },
-        "Start": 10,
-        "Length": 18
       }
     ]
   },
