@@ -1,28 +1,11 @@
-﻿using System.Text.RegularExpressions;
-using System.Collections.Generic;
-
+﻿using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.French;
 
 namespace Microsoft.Recognizers.Text.DateTime.French
 {
     public class FrenchDateTimeAltExtractorConfiguration : BaseOptionsConfiguration, IDateTimeAltExtractorConfiguration
     {
-        public FrenchDateTimeAltExtractorConfiguration(IOptionsConfiguration config) : base(config)
-        {
-            DateExtractor = new BaseDateExtractor(new FrenchDateExtractorConfiguration(this));
-            DatePeriodExtractor = new BaseDatePeriodExtractor(new FrenchDatePeriodExtractorConfiguration(this));
-        }
-
-        public IDateExtractor DateExtractor { get; }
-
-        public IDateTimeExtractor DatePeriodExtractor { get; }
-
-        private static readonly Regex OrRegex =
-            new Regex(DateTimeDefinitions.OrRegex, RegexOptions.Singleline);
-
-        private static readonly Regex DayRegex =
-            new Regex(DateTimeDefinitions.DayRegex, RegexOptions.Singleline);
-
         public static readonly Regex ThisPrefixRegex =
             new Regex(DateTimeDefinitions.ThisPrefixRegex, RegexOptions.Singleline);
 
@@ -37,13 +20,26 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public static readonly Regex[] RelativePrefixList =
         {
-            ThisPrefixRegex
+            ThisPrefixRegex,
         };
 
         public static readonly Regex[] AmPmRegexList =
         {
             AmRegex, PmRegex,
         };
+
+        private static readonly Regex OrRegex =
+            new Regex(DateTimeDefinitions.OrRegex, RegexOptions.Singleline);
+
+        private static readonly Regex DayRegex =
+            new Regex(DateTimeDefinitions.DayRegex, RegexOptions.Singleline);
+
+        public FrenchDateTimeAltExtractorConfiguration(IOptionsConfiguration config)
+            : base(config)
+        {
+            DateExtractor = new BaseDateExtractor(new FrenchDateExtractorConfiguration(this));
+            DatePeriodExtractor = new BaseDatePeriodExtractor(new FrenchDatePeriodExtractorConfiguration(this));
+        }
 
         IEnumerable<Regex> IDateTimeAltExtractorConfiguration.RelativePrefixList => RelativePrefixList;
 
@@ -54,5 +50,9 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         Regex IDateTimeAltExtractorConfiguration.DayRegex => DayRegex;
 
         Regex IDateTimeAltExtractorConfiguration.RangePrefixRegex => RangePrefixRegex;
+
+        public IDateExtractor DateExtractor { get; }
+
+        public IDateTimeExtractor DatePeriodExtractor { get; }
     }
 }
