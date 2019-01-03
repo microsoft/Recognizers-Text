@@ -30,68 +30,57 @@ public class SpanishDatetimeUtilityConfiguration implements IDateTimeUtilityConf
     public static final Pattern CommonDatePrefixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.CommonDatePrefixRegex);
 
     @Override
-    public final Pattern getLaterRegex()
-    {
+    public final Pattern getLaterRegex() {
         return LaterRegex;
     }
 
     @Override
-    public final Pattern getAgoRegex()
-    {
+    public final Pattern getAgoRegex() {
         return AgoRegex;
     }
 
     @Override
-    public final Pattern getInConnectorRegex()
-    {
+    public final Pattern getInConnectorRegex() {
         return InConnectorRegex;
     }
 
     @Override
-    public final Pattern getWithinNextPrefixRegex()
-    {
+    public final Pattern getWithinNextPrefixRegex() {
         return WithinNextPrefixRegex;
     }
 
     @Override
-    public final Pattern getAmDescRegex()
-    {
+    public final Pattern getAmDescRegex() {
         return AmDescRegex;
     }
 
     @Override
-    public final Pattern getPmDescRegex()
-    {
+    public final Pattern getPmDescRegex() {
         return PmDescRegex;
     }
 
     @Override
-    public final Pattern getAmPmDescRegex()
-    {
+    public final Pattern getAmPmDescRegex() {
         return AmPmDescRegex;
     }
 
     @Override
-    public final Pattern getRangeUnitRegex()
-    {
+    public final Pattern getRangeUnitRegex() {
         return RangeUnitRegex;
     }
 
     @Override
-    public final Pattern getTimeUnitRegex()
-    {
+    public final Pattern getTimeUnitRegex() {
         return TimeUnitRegex;
     }
 
     @Override
-    public final Pattern getDateUnitRegex()
-    {
+    public final Pattern getDateUnitRegex() {
         return DateUnitRegex;
     }
 
     @Override
-    public final Pattern getCommonDatePrefixRegex()
-    {
+    public final Pattern getCommonDatePrefixRegex() {
         return CommonDatePrefixRegex;
     }
 }
