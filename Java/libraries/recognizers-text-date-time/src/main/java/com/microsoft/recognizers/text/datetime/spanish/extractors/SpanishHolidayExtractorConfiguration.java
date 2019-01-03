@@ -14,11 +14,6 @@ public class SpanishHolidayExtractorConfiguration extends BaseOptionsConfigurati
     RegExpUtility.getSafeRegExp(SpanishDateTime.HolidayRegex1),
     RegExpUtility.getSafeRegExp(SpanishDateTime.HolidayRegex2),
     RegExpUtility.getSafeRegExp(SpanishDateTime.HolidayRegex3)};
-    
-   
-    public SpanishHolidayExtractorConfiguration() {
-
-    }
 
     @Override
     public Iterable<Pattern> getHolidayRegexes() {
