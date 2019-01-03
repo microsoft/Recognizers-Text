@@ -4,7 +4,9 @@
     "Results": [
       {
         "Text": "wekelijks",
-        "Type": "set"
+        "Type": "set",
+        "Start": 7,
+        "Length": 9
       }
     ],
     "NotSupported": "dotNet",
@@ -15,7 +17,9 @@
     "Results": [
       {
         "Text": "dagelijks",
-        "Type": "set"
+        "Type": "set",
+        "Start": 7,
+        "Length": 9
       }
     ],
     "NotSupported": "dotNet",
@@ -26,7 +30,9 @@
     "Results": [
       {
         "Text": "elke dag",
-        "Type": "set"
+        "Type": "set",
+        "Start": 7,
+        "Length": 8
       }
     ],
     "NotSupported": "dotNet",
@@ -37,7 +43,9 @@
     "Results": [
       {
         "Text": "elke maand",
-        "Type": "set"
+        "Type": "set",
+        "Start": 7,
+        "Length": 10
       }
     ],
     "NotSupported": "dotNet",
@@ -48,7 +56,9 @@
     "Results": [
       {
         "Text": "jaarlijks",
-        "Type": "set"
+        "Type": "set",
+        "Start": 7,
+        "Length": 9
       }
     ],
     "NotSupported": "dotNet",
@@ -59,7 +69,9 @@
     "Results": [
       {
         "Text": "jaarlijks",
-        "Type": "set"
+        "Type": "set",
+        "Start": 7,
+        "Length": 9
       }
     ],
     "NotSupported": "dotNet",
@@ -70,7 +82,9 @@
     "Results": [
       {
         "Text": "elke twee dagen",
-        "Type": "set"
+        "Type": "set",
+        "Start": 7,
+        "Length": 15
       }
     ],
     "NotSupported": "dotNet",
@@ -81,7 +95,9 @@
     "Results": [
       {
         "Text": "elke drie weken",
-        "Type": "set"
+        "Type": "set",
+        "Start": 7,
+        "Length": 15
       }
     ],
     "NotSupported": "dotNet",
@@ -92,7 +108,9 @@
     "Results": [
       {
         "Text": "15:00 elke dag",
-        "Type": "set"
+        "Type": "set",
+        "Start": -1,
+        "Length": 14
       }
     ],
     "NotSupported": "dotNet",
@@ -103,7 +121,9 @@
     "Results": [
       {
         "Text": "15:00 iedere dag",
-        "Type": "set"
+        "Type": "set",
+        "Start": -1,
+        "Length": 16
       }
     ],
     "NotSupported": "dotNet",
@@ -114,7 +134,9 @@
     "Results": [
       {
         "Text": "elke 4/15",
-        "Type": "set"
+        "Type": "set",
+        "Start": 7,
+        "Length": 9
       }
     ],
     "NotSupported": "dotNet",
@@ -125,7 +147,9 @@
     "Results": [
       {
         "Text": "elke maandag",
-        "Type": "set"
+        "Type": "set",
+        "Start": 7,
+        "Length": 12
       }
     ],
     "NotSupported": "dotNet",
@@ -136,7 +160,9 @@
     "Results": [
       {
         "Text": "elke maandag om 16:00",
-        "Type": "set"
+        "Type": "set",
+        "Start": 7,
+        "Length": 21
       }
     ],
     "NotSupported": "dotNet",
@@ -147,7 +173,9 @@
     "Results": [
       {
         "Text": "elke ochtend",
-        "Type": "set"
+        "Type": "set",
+        "Start": 7,
+        "Length": 12
       }
     ],
     "NotSupported": "dotNet",
@@ -158,7 +186,9 @@
     "Results": [
       {
         "Text": "elke ochtend om 09:00",
-        "Type": "set"
+        "Type": "set",
+        "Start": 7,
+        "Length": 21
       }
     ],
     "NotSupported": "dotNet",
@@ -169,7 +199,9 @@
     "Results": [
       {
         "Text": "elke middag om 16:00",
-        "Type": "set"
+        "Type": "set",
+        "Start": 7,
+        "Length": 20
       }
     ],
     "NotSupported": "dotNet",
@@ -180,7 +212,9 @@
     "Results": [
       {
         "Text": "elke dag om 21:00",
-        "Type": "set"
+        "Type": "set",
+        "Start": 7,
+        "Length": 17
       }
     ],
     "NotSupported": "dotNet",
@@ -191,7 +225,9 @@
     "Results": [
       {
         "Text": "elke avond om 9",
-        "Type": "set"
+        "Type": "set",
+        "Start": -1,
+        "Length": 15
       }
     ],
     "NotSupported": "dotNet",
@@ -202,7 +238,9 @@
     "Results": [
       {
         "Text": "09:00 's ochtends",
-        "Type": "set"
+        "Type": "set",
+        "Start": 21,
+        "Length": 17
       }
     ],
     "NotSupported": "dotNet",
@@ -213,7 +251,9 @@
     "Results": [
       {
         "Text": "'s ochtends om 9",
-        "Type": "set"
+        "Type": "set",
+        "Start": 18,
+        "Length": 16
       }
     ],
     "NotSupported": "dotNet",
@@ -224,7 +264,9 @@
     "Results": [
       {
         "Text": "9am every Sunday",
-        "Type": "set"
+        "Type": "set",
+        "Start": -1,
+        "Length": 16
       }
     ],
     "NotSupported": "dotNet",
@@ -235,7 +277,9 @@
     "Results": [
       {
         "Text": "maandag vertrekken om 09:00",
-        "Type": "set"
+        "Type": "set",
+        "Start": 12,
+        "Length": 27
       }
     ],
     "NotSupported": "dotNet",
@@ -246,7 +290,9 @@
     "Results": [
       {
         "Text": "9 uur 's ochtends elke maandag",
-        "Type": "set"
+        "Type": "set",
+        "Start": 21,
+        "Length": 30
       }
     ],
     "NotSupported": "dotNet",
@@ -257,7 +303,9 @@
     "Results": [
       {
         "Text": "elke maandag",
-        "Type": "set"
+        "Type": "set",
+        "Start": 7,
+        "Length": 12
       }
     ],
     "NotSupported": "dotNet",
@@ -268,7 +316,9 @@
     "Results": [
       {
         "Text": "elke zondag",
-        "Type": "set"
+        "Type": "set",
+        "Start": 7,
+        "Length": 11
       }
     ],
     "NotSupported": "dotNet",
@@ -279,7 +329,9 @@
     "Results": [
       {
         "Text": "elke zondag",
-        "Type": "set"
+        "Type": "set",
+        "Start": 7,
+        "Length": 11
       }
     ],
     "NotSupported": "dotNet",
