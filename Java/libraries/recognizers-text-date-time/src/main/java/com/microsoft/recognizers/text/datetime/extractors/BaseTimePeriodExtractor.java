@@ -5,6 +5,7 @@ import com.microsoft.recognizers.text.datetime.Constants;
 import com.microsoft.recognizers.text.datetime.DateTimeOptions;
 import com.microsoft.recognizers.text.datetime.extractors.config.ITimePeriodExtractorConfiguration;
 import com.microsoft.recognizers.text.datetime.extractors.config.ResultIndex;
+import com.microsoft.recognizers.text.datetime.utilities.TimeZoneUtility;
 import com.microsoft.recognizers.text.datetime.utilities.Token;
 import com.microsoft.recognizers.text.utilities.Match;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
@@ -39,7 +40,13 @@ public class BaseTimePeriodExtractor implements IDateTimeExtractor {
         tokens.addAll(mergeTwoTimePoints(input, reference));
         tokens.addAll(matchTimeOfDay(input));
 
-        return Token.mergeAllTokens(tokens, input, getExtractorName());
+        List<ExtractResult> timePeriodErs = Token.mergeAllTokens(tokens, input, getExtractorName());
+
+        if (config.getOptions().match(DateTimeOptions.EnablePreview)) {
+            timePeriodErs = TimeZoneUtility.mergeTimeZones(timePeriodErs, config.getTimeZoneExtractor().extract(input, reference), input);
+        }
+
+        return timePeriodErs;
     }
 
     @Override
@@ -216,7 +223,7 @@ public class BaseTimePeriodExtractor implements IDateTimeExtractor {
                 int periodEnd = ers.get(idx + 1).start + ers.get(idx + 1).length;
 
                 // Handle "from"
-                String beforeStr = input.substring(0, periodBegin).trim().toLowerCase(java.util.Locale.ROOT);
+                String beforeStr = StringUtility.trimEnd(input.substring(0, periodBegin)).toLowerCase();
                 ResultIndex fromIndex = this.config.getFromTokenIndex(beforeStr);
                 ResultIndex betweenIndex = this.config.getBetweenTokenIndex(beforeStr);
                 if (fromIndex.result) {

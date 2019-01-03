@@ -61,6 +61,7 @@ public class DateTimeModel implements IModel {
         } catch (Exception e) {
             // Nothing to do. Exceptions in parse should not break users of recognizers.
             // No result.
+            e.getMessage();
         }
 
         return parsedDateTimes.stream().map(this::getModelResult).collect(Collectors.toList());

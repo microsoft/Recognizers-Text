@@ -60,7 +60,8 @@ public class BaseDateTimeAltParser implements IDateTimeParser {
     }
 
     // merge the entity with its related contexts and then parse the combine text
-    public DateTimeResolutionResult parseDateTimeAndTimeAlt(ExtractResult er, LocalDateTime referenceTime) {
+    private DateTimeResolutionResult parseDateTimeAndTimeAlt(ExtractResult er, LocalDateTime referenceTime) {
+
         DateTimeResolutionResult ret = new DateTimeResolutionResult();
 
         // Original type of the extracted entity

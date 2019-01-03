@@ -10,6 +10,7 @@ import com.microsoft.recognizers.text.utilities.RegExpUtility;
 import com.microsoft.recognizers.text.utilities.StringUtility;
 
 import java.time.LocalDateTime;
+import java.util.AbstractMap;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -350,7 +351,7 @@ public class BaseDateTimeAltExtractor implements IDateTimeListExtractor {
 
             if (firstEntityType.equals(Constants.SYS_DATETIME_DATE) && lastEntityType.equals(Constants.SYS_DATETIME_DATE)) {
                 shouldApply = true; // "11/20 or 11/22"
-            } else if (firstEntityType.equals(Constants.SYS_DATETIME_TIME) && lastEntityType.equals(Constants.SYS_DATETIME_DATE)) {
+            } else if (firstEntityType.equals(Constants.SYS_DATETIME_TIME) && lastEntityType.equals(Constants.SYS_DATETIME_TIME)) {
                 shouldApply = true; // "7 oclock or 8 oclock"
             } else if (firstEntityType.equals(Constants.SYS_DATETIME_DATETIME) && lastEntityType.equals(Constants.SYS_DATETIME_DATETIME)) {
                 shouldApply = true; // "Monday 1pm or Tuesday 2pm"
@@ -364,10 +365,11 @@ public class BaseDateTimeAltExtractor implements IDateTimeListExtractor {
         boolean success = false;
 
         if (isSupportedAltEntitySequence(extractResults)) {
-            for (ExtractResult extractResult : extractResults) {
-                HashMap<String, Object> metadata = createMetadata(extractResult.type, parentText, null);
-                extractResult = extractResult.withData(mergeMetadata(extractResult.data, metadata));
-                extractResult = extractResult.withType(getExtractorName());
+            for (int i = 0; i < extractResults.size(); i++) {
+                ExtractResult extractResult = extractResults.get(i);
+                Map<String, Object> metadata = createMetadata(extractResult.type, parentText, null);
+                Map<String, Object> data = mergeMetadata(extractResult.data, metadata);
+                extractResults.set(i, extractResult.withData(data).withType(getExtractorName()));
             }
 
             success = true;
@@ -445,11 +447,11 @@ public class BaseDateTimeAltExtractor implements IDateTimeListExtractor {
         }
     }
 
-    private HashMap<String, Object> mergeMetadata(Object originalMetadata, HashMap<String, Object> newMetadata) {
-        HashMap<String, Object> result = new HashMap<>();
+    private Map<String, Object> mergeMetadata(Object originalMetadata, Map<String, Object> newMetadata) {
+        Map<String, Object> result = new HashMap<>();
 
-        if (originalMetadata instanceof HashMap<?, ?>) {
-            result = originalMetadata instanceof HashMap<?, ?> ? (HashMap<String, Object>)originalMetadata : null;
+        if (originalMetadata instanceof Map) {
+            result = (Map)originalMetadata;
         }
 
         if (originalMetadata == null) {
@@ -492,7 +494,7 @@ public class BaseDateTimeAltExtractor implements IDateTimeListExtractor {
                 er = er.withText(match.group());
                 er = er.withStart(match.start());
                 er = er.withLength(match.end() - match.start());
-                er = er.withType(Constants.ContextType_RelativeSuffix);
+                er = er.withType(Constants.ContextType_RelativePrefix);
                 results.add(er);
             }
         }
