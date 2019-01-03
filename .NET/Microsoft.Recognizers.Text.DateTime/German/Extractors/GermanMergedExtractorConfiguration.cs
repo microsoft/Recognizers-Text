@@ -1,18 +1,17 @@
-﻿using System.Text.RegularExpressions;
-using System.Collections.Generic;
-
+﻿using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.German;
-using Microsoft.Recognizers.Text.Matcher;
 using Microsoft.Recognizers.Definitions.Utilities;
+using Microsoft.Recognizers.Text.Matcher;
 
 namespace Microsoft.Recognizers.Text.DateTime.German
 {
     public class GermanMergedExtractorConfiguration : BaseOptionsConfiguration, IMergedExtractorConfiguration
     {
-        public static readonly Regex BeforeRegex = 
+        public static readonly Regex BeforeRegex =
             new Regex(DateTimeDefinitions.BeforeRegex, RegexOptions.Singleline);
 
-        public static readonly Regex AfterRegex = 
+        public static readonly Regex AfterRegex =
             new Regex(DateTimeDefinitions.AfterRegex, RegexOptions.Singleline);
 
         public static readonly Regex SinceRegex =
@@ -21,7 +20,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public static readonly Regex AroundRegex =
             new Regex(DateTimeDefinitions.AroundRegex, RegexOptions.Singleline);
 
-        public static readonly Regex FromToRegex = 
+        public static readonly Regex FromToRegex =
             new Regex(DateTimeDefinitions.FromToRegex, RegexOptions.Singleline);
 
         public static readonly Regex SingleAmbiguousMonthRegex =
@@ -46,6 +45,25 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             // one on one
             new Regex(DateTimeDefinitions.OneOnOneRegex, RegexOptions.Singleline),
         };
+
+        public GermanMergedExtractorConfiguration(DateTimeOptions options)
+            : base(options)
+        {
+            DateExtractor = new BaseDateExtractor(new GermanDateExtractorConfiguration(this));
+            TimeExtractor = new BaseTimeExtractor(new GermanTimeExtractorConfiguration(this));
+            DateTimeExtractor = new BaseDateTimeExtractor(new GermanDateTimeExtractorConfiguration(this));
+            DatePeriodExtractor = new BaseDatePeriodExtractor(new GermanDatePeriodExtractorConfiguration(this));
+            TimePeriodExtractor = new BaseTimePeriodExtractor(new GermanTimePeriodExtractorConfiguration(this));
+            DateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new GermanDateTimePeriodExtractorConfiguration(this));
+            DurationExtractor = new BaseDurationExtractor(new GermanDurationExtractorConfiguration(this));
+            SetExtractor = new BaseSetExtractor(new GermanSetExtractorConfiguration(this));
+            HolidayExtractor = new BaseHolidayExtractor(new GermanHolidayExtractorConfiguration(this));
+            TimeZoneExtractor = new BaseTimeZoneExtractor(new GermanTimeZoneExtractorConfiguration(this));
+            IntegerExtractor = Number.German.IntegerExtractor.GetInstance();
+            DateTimeAltExtractor = new BaseDateTimeAltExtractor(new GermanDateTimeAltExtractorConfiguration(this));
+
+            AmbiguityFiltersDict = DefinitionLoader.LoadAmbiguityFilters(DateTimeDefinitions.AmbiguityFiltersDict);
+        }
 
         public IDateExtractor DateExtractor { get; }
 
@@ -73,35 +91,28 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public Dictionary<Regex, Regex> AmbiguityFiltersDict { get; }
 
-        public GermanMergedExtractorConfiguration(DateTimeOptions options) : base(options)
-        {
-            DateExtractor = new BaseDateExtractor(new GermanDateExtractorConfiguration(this));
-            TimeExtractor = new BaseTimeExtractor(new GermanTimeExtractorConfiguration(this));
-            DateTimeExtractor = new BaseDateTimeExtractor(new GermanDateTimeExtractorConfiguration(this));
-            DatePeriodExtractor = new BaseDatePeriodExtractor(new GermanDatePeriodExtractorConfiguration(this));
-            TimePeriodExtractor = new BaseTimePeriodExtractor(new GermanTimePeriodExtractorConfiguration(this));
-            DateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new GermanDateTimePeriodExtractorConfiguration(this));
-            DurationExtractor = new BaseDurationExtractor(new GermanDurationExtractorConfiguration(this));
-            SetExtractor = new BaseSetExtractor(new GermanSetExtractorConfiguration(this));
-            HolidayExtractor = new BaseHolidayExtractor(new GermanHolidayExtractorConfiguration(this));
-            TimeZoneExtractor = new BaseTimeZoneExtractor(new GermanTimeZoneExtractorConfiguration(this));
-            IntegerExtractor = Number.German.IntegerExtractor.GetInstance();
-            DateTimeAltExtractor = new BaseDateTimeAltExtractor(new GermanDateTimeAltExtractorConfiguration(this));
-
-            AmbiguityFiltersDict = DefinitionLoader.LoadAmbiguityFilters(DateTimeDefinitions.AmbiguityFiltersDict);
-        }
-
         Regex IMergedExtractorConfiguration.AfterRegex => AfterRegex;
+
         Regex IMergedExtractorConfiguration.BeforeRegex => BeforeRegex;
+
         Regex IMergedExtractorConfiguration.SinceRegex => SinceRegex;
+
         Regex IMergedExtractorConfiguration.AroundRegex => AroundRegex;
+
         Regex IMergedExtractorConfiguration.FromToRegex => FromToRegex;
+
         Regex IMergedExtractorConfiguration.SingleAmbiguousMonthRegex => SingleAmbiguousMonthRegex;
+
         Regex IMergedExtractorConfiguration.PrepositionSuffixRegex => PrepositionSuffixRegex;
+
         Regex IMergedExtractorConfiguration.NumberEndingPattern => NumberEndingPattern;
+
         Regex IMergedExtractorConfiguration.DateAfterRegex => DateAfterRegex;
+
         Regex IMergedExtractorConfiguration.UnspecificDatePeriodRegex => UnspecificDatePeriodRegex;
+
         IEnumerable<Regex> IMergedExtractorConfiguration.TermFilterRegexes => TermFilterRegexes;
+
         StringMatcher IMergedExtractorConfiguration.SuperfluousWordMatcher => SuperfluousWordMatcher;
     }
 }
