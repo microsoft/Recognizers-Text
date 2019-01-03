@@ -7,7 +7,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 {
     public class BaseTimePeriodExtractor : IDateTimeExtractor
     {
-        public static readonly string ExtractorName = Constants.SYS_DATETIME_TIMEPERIOD; //"TimePeriod";
+        public static readonly string ExtractorName = Constants.SYS_DATETIME_TIMEPERIOD; // "TimePeriod";
 
         private readonly ITimePeriodExtractorConfiguration config;
 
@@ -95,12 +95,12 @@ namespace Microsoft.Recognizers.Text.DateTime
                     else
                     {
                         // Is there "pm" or "am"?
-                        var pmStr = match.Groups[Constants.PmGroupName].Value;
-                        var amStr = match.Groups[Constants.AmGroupName].Value;
+                        var time_pmStr = match.Groups[Constants.PmGroupName].Value;
+                        var time_amStr = match.Groups[Constants.AmGroupName].Value;
                         var descStr = match.Groups[Constants.DescGroupName].Value;
 
-                        // Check "pm", "am" 
-                        if (!string.IsNullOrEmpty(pmStr) || !string.IsNullOrEmpty(amStr) || !string.IsNullOrEmpty(descStr))
+                        // Check "pm", "am"
+                        if (!string.IsNullOrEmpty(time_pmStr) || !string.IsNullOrEmpty(time_amStr) || !string.IsNullOrEmpty(descStr))
                         {
                             ret.Add(new Token(match.Index, match.Index + match.Length));
                         }
@@ -194,7 +194,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
 
                     // check connector string
-                    var midStr = text.Substring(numEndPoint?? 0, ers[j].Start-numEndPoint?? 0);
+                    var midStr = text.Substring(numEndPoint ?? 0, ers[j].Start - numEndPoint ?? 0);
 
                     if (config.TillRegex.IsExactMatch(midStr, trim: true) || config.IsConnectorToken(midStr.Trim()))
                     {
@@ -238,7 +238,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
 
                 var middleStr = text.Substring(middleBegin, middleEnd - middleBegin).Trim().ToLowerInvariant();
-                
+
                 // Handle "{TimePoint} to {TimePoint}"
                 if (config.TillRegex.IsExactMatch(middleStr, trim: true))
                 {
@@ -316,6 +316,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
                 }
             }
+
             return ret;
         }
     }
