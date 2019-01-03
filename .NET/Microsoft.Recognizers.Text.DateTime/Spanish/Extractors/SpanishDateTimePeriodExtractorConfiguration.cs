@@ -7,20 +7,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
     public class SpanishDateTimePeriodExtractorConfiguration : BaseOptionsConfiguration,
         IDateTimePeriodExtractorConfiguration
     {
-        public string TokenBeforeDate { get; }
-
         public static readonly Regex NumberCombinedWithUnit =
-            new Regex(DateTimeDefinitions.DateTimePeriodNumberCombinedWithUnit,
+            new Regex(
+                DateTimeDefinitions.DateTimePeriodNumberCombinedWithUnit,
                 RegexOptions.Singleline);
-
-        private static readonly Regex FromRegex = new Regex(DateTimeDefinitions.FromRegex,
-            RegexOptions.Singleline);
-
-        private static readonly Regex ConnectorAndRegex = new Regex(DateTimeDefinitions.ConnectorAndRegex,
-            RegexOptions.Singleline);
-
-        private static readonly Regex BetweenRegex = new Regex(DateTimeDefinitions.BetweenRegex,
-            RegexOptions.Singleline);
 
         public static readonly Regex WeekDayRegex =
             new Regex(DateTimeDefinitions.WeekDayRegex, RegexOptions.Singleline);
@@ -29,10 +19,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             new Regex(DateTimeDefinitions.RestOfDateTimeRegex, RegexOptions.Singleline);
 
         public static readonly Regex PeriodTimeOfDayWithDateRegex =
-            new Regex(DateTimeDefinitions.PeriodTimeOfDayWithDateRegex,
+            new Regex(
+                DateTimeDefinitions.PeriodTimeOfDayWithDateRegex,
                 RegexOptions.Singleline);
 
-        public static readonly Regex RelativeTimeUnitRegex = new Regex(DateTimeDefinitions.RelativeTimeUnitRegex,
+        public static readonly Regex RelativeTimeUnitRegex = new Regex(
+            DateTimeDefinitions.RelativeTimeUnitRegex,
             RegexOptions.Singleline);
 
         public static readonly Regex GeneralEndingRegex =
@@ -54,7 +46,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             new Regex(DateTimeDefinitions.DateUnitRegex, RegexOptions.Singleline);
 
         public static readonly Regex PrefixDayRegex =
-            new Regex(DateTimeDefinitions.PrefixDayRegex,
+            new Regex(
+                DateTimeDefinitions.PrefixDayRegex,
                 RegexOptions.Singleline | RegexOptions.RightToLeft);
 
         public static readonly Regex SuffixRegex =
@@ -66,7 +59,20 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public static readonly Regex AfterRegex =
             new Regex(DateTimeDefinitions.AfterRegex, RegexOptions.Singleline);
 
-        public SpanishDateTimePeriodExtractorConfiguration(IOptionsConfiguration config) : base(config)
+        private static readonly Regex FromRegex = new Regex(
+            DateTimeDefinitions.FromRegex,
+            RegexOptions.Singleline);
+
+        private static readonly Regex ConnectorAndRegex = new Regex(
+            DateTimeDefinitions.ConnectorAndRegex,
+            RegexOptions.Singleline);
+
+        private static readonly Regex BetweenRegex = new Regex(
+            DateTimeDefinitions.BetweenRegex,
+            RegexOptions.Singleline);
+
+        public SpanishDateTimePeriodExtractorConfiguration(IOptionsConfiguration config)
+            : base(config)
         {
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
 
@@ -78,6 +84,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             DurationExtractor = new BaseDurationExtractor(new SpanishDurationExtractorConfiguration(this));
             TimePeriodExtractor = new BaseTimePeriodExtractor(new SpanishTimePeriodExtractorConfiguration(this));
         }
+
+        public string TokenBeforeDate { get; }
 
         public IExtractor CardinalExtractor { get; }
 
@@ -94,7 +102,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public IEnumerable<Regex> SimpleCasesRegex => new[]
         {
             SpanishTimePeriodExtractorConfiguration.PureNumFromTo,
-            SpanishTimePeriodExtractorConfiguration.PureNumBetweenAnd
+            SpanishTimePeriodExtractorConfiguration.PureNumBetweenAnd,
         };
 
         public Regex PrepositionRegex => SpanishDateTimeExtractorConfiguration.PrepositionRegex;
