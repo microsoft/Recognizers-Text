@@ -1,7 +1,7 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Globalization;
+using System.Linq;
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime
@@ -10,15 +10,14 @@ namespace Microsoft.Recognizers.Text.DateTime
     {
         public const string ParserTypeName = "datetimeV2";
 
-        protected readonly IMergedParserConfiguration Config;
-
         public static readonly string DateMinString = DateTimeFormatUtil.FormatDate(DateObject.MinValue);
         public static readonly string DateTimeMinString = DateTimeFormatUtil.FormatDateTime(DateObject.MinValue);
         private static readonly Calendar Cal = DateTimeFormatInfo.InvariantInfo.Calendar;
+        private readonly IMergedParserConfiguration config;
 
         public BaseMergedDateTimeParser(IMergedParserConfiguration configuration)
         {
-            Config = configuration;
+            config = configuration;
         }
 
         public ParseResult Parse(ExtractResult er)
@@ -32,9 +31,9 @@ namespace Microsoft.Recognizers.Text.DateTime
             DateTimeParseResult pr = null;
 
             var originText = er.Text;
-            if ((this.Config.Options & DateTimeOptions.EnablePreview) != 0)
+            if ((this.config.Options & DateTimeOptions.EnablePreview) != 0)
             {
-                er.Text = MatchingUtil.PreProcessTextRemoveSuperfluousWords(er.Text, Config.SuperfluousWordMatcher, out var _);
+                er.Text = MatchingUtil.PreProcessTextRemoveSuperfluousWords(er.Text, config.SuperfluousWordMatcher, out var _);
                 er.Length += er.Text.Length - originText.Length;
             }
 
@@ -45,10 +44,10 @@ namespace Microsoft.Recognizers.Text.DateTime
             // For example, cases like "on or later than", "earlier than or in" have inclusive modifier
             bool hasInclusiveModifier = false;
             var modStr = string.Empty;
-            var beforeMatch = Config.BeforeRegex.MatchBegin(er.Text, trim: true);
-            var afterMatch = Config.AfterRegex.MatchBegin(er.Text, trim: true);
-            var sinceMatch = Config.SinceRegex.MatchBegin(er.Text, trim: true);
-            var aroundMatch = Config.AroundRegex.MatchBegin(er.Text, trim: true);
+            var beforeMatch = config.BeforeRegex.MatchBegin(er.Text, trim: true);
+            var afterMatch = config.AfterRegex.MatchBegin(er.Text, trim: true);
+            var sinceMatch = config.SinceRegex.MatchBegin(er.Text, trim: true);
+            var aroundMatch = config.AroundRegex.MatchBegin(er.Text, trim: true);
 
             if (beforeMatch.Success)
             {
@@ -92,11 +91,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                 er.Text = er.Text.Substring(aroundMatch.Length);
                 modStr = aroundMatch.Value;
             }
-            else if ((er.Type.Equals(Constants.SYS_DATETIME_DATEPERIOD) && Config.YearRegex.Match(er.Text).Success) || (er.Type.Equals(Constants.SYS_DATETIME_DATE)))
+            else if ((er.Type.Equals(Constants.SYS_DATETIME_DATEPERIOD) && config.YearRegex.Match(er.Text).Success) || er.Type.Equals(Constants.SYS_DATETIME_DATE))
             {
                 // This has to be put at the end of the if, or cases like "before 2012" and "after 2012" would fall into this
                 // 2012 or after/above
-                var match = Config.DateAfter.MatchEnd(er.Text, trim: true);
+                var match = config.DateAfter.MatchEnd(er.Text, trim: true);
                 if (match.Success)
                 {
                     hasDateAfter = true;
@@ -108,49 +107,49 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if (er.Type.Equals(Constants.SYS_DATETIME_DATE))
             {
-                pr = this.Config.DateParser.Parse(er, referenceTime);
+                pr = this.config.DateParser.Parse(er, referenceTime);
                 if (pr.Value == null)
                 {
-                    pr = Config.HolidayParser.Parse(er, referenceTime);
+                    pr = config.HolidayParser.Parse(er, referenceTime);
                 }
             }
             else if (er.Type.Equals(Constants.SYS_DATETIME_TIME))
             {
-                pr = this.Config.TimeParser.Parse(er, referenceTime);
+                pr = this.config.TimeParser.Parse(er, referenceTime);
             }
             else if (er.Type.Equals(Constants.SYS_DATETIME_DATETIME))
             {
-                pr = this.Config.DateTimeParser.Parse(er, referenceTime);
+                pr = this.config.DateTimeParser.Parse(er, referenceTime);
             }
             else if (er.Type.Equals(Constants.SYS_DATETIME_DATEPERIOD))
             {
-                pr = this.Config.DatePeriodParser.Parse(er, referenceTime);
+                pr = this.config.DatePeriodParser.Parse(er, referenceTime);
             }
             else if (er.Type.Equals(Constants.SYS_DATETIME_TIMEPERIOD))
             {
-                pr = this.Config.TimePeriodParser.Parse(er, referenceTime);
+                pr = this.config.TimePeriodParser.Parse(er, referenceTime);
             }
             else if (er.Type.Equals(Constants.SYS_DATETIME_DATETIMEPERIOD))
             {
-                pr = this.Config.DateTimePeriodParser.Parse(er, referenceTime);
+                pr = this.config.DateTimePeriodParser.Parse(er, referenceTime);
             }
             else if (er.Type.Equals(Constants.SYS_DATETIME_DURATION))
             {
-                pr = this.Config.DurationParser.Parse(er, referenceTime);
+                pr = this.config.DurationParser.Parse(er, referenceTime);
             }
             else if (er.Type.Equals(Constants.SYS_DATETIME_SET))
             {
-                pr = this.Config.SetParser.Parse(er, referenceTime);
+                pr = this.config.SetParser.Parse(er, referenceTime);
             }
             else if (er.Type.Equals(Constants.SYS_DATETIME_DATETIMEALT))
             {
-                pr = this.Config.DateTimeAltParser.Parse(er, referenceTime);
+                pr = this.config.DateTimeAltParser.Parse(er, referenceTime);
             }
             else if (er.Type.Equals(Constants.SYS_DATETIME_TIMEZONE))
             {
-                if ((Config.Options & DateTimeOptions.EnablePreview) != 0)
+                if ((config.Options & DateTimeOptions.EnablePreview) != 0)
                 {
-                    pr = this.Config.TimeZoneParser.Parse(er, referenceTime);
+                    pr = this.config.TimeZoneParser.Parse(er, referenceTime);
                 }
             }
             else
@@ -227,7 +226,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 hasSince = true;
             }
 
-            if ((Config.Options & DateTimeOptions.SplitDateAndTime) != 0 &&
+            if ((config.Options & DateTimeOptions.SplitDateAndTime) != 0 &&
                 ((DateTimeResolutionResult)pr.Value)?.SubDateTimeEntities != null)
             {
                 pr.Value = DateTimeResolutionForSplit(pr);
@@ -239,7 +238,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             // In this version, ExperimentalMode only cope with the "IncludePeriodEnd" case
-            if ((this.Config.Options & DateTimeOptions.ExperimentalMode) != 0)
+            if ((this.config.Options & DateTimeOptions.ExperimentalMode) != 0)
             {
                 if (pr.Metadata != null && pr.Metadata.PossiblyIncludePeriodEnd)
                 {
@@ -247,7 +246,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
             }
 
-            if ((this.Config.Options & DateTimeOptions.EnablePreview) != 0)
+            if ((this.config.Options & DateTimeOptions.EnablePreview) != 0)
             {
                 pr.Length += originText.Length - pr.Text.Length;
                 pr.Text = originText;
@@ -346,7 +345,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public string DetermineDateTimeType(string type, bool hasMod)
         {
-            if ((Config.Options & DateTimeOptions.SplitDateAndTime) != 0)
+            if ((config.Options & DateTimeOptions.SplitDateAndTime) != 0)
             {
                 if (type.Equals(Constants.SYS_DATETIME_DATETIME))
                 {
@@ -429,7 +428,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 list = string.Join(",", val.List.Select(o => DateTimeFormatUtil.LuisDate((DateObject)o)).ToArray());
             }
 
-            // With modifier, output Type might not be the same with type in resolution result 
+            // With modifier, output Type might not be the same with type in resolution result
             // For example, if the resolution type is "date", with modifier the output type should be "daterange"
             var typeOutput = DetermineDateTimeType(slot.Type, hasMod: !string.IsNullOrEmpty(mod));
             var comment = val.Comment;
@@ -452,8 +451,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                     // single timezone
                     AddResolutionFields(res, Constants.ResolveTimeZone, new Dictionary<string, string>
                     {
-                        {ResolutionKey.Value, val.TimeZoneResolution.Value},
-                        {Constants.UtcOffsetMinsKey, val.TimeZoneResolution.UtcOffsetMins.ToString()}
+                        { ResolutionKey.Value, val.TimeZoneResolution.Value },
+                        { Constants.UtcOffsetMinsKey, val.TimeZoneResolution.UtcOffsetMins.ToString() },
                     });
                 }
                 else
@@ -514,7 +513,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             // If WeekOf and in CalendarMode, modify the past part of our resolution
-            if ((Config.Options & DateTimeOptions.CalendarMode) != 0 &&
+            if ((config.Options & DateTimeOptions.CalendarMode) != 0 &&
                 !string.IsNullOrEmpty(comment) && comment.Equals(Constants.Comment_WeekOf))
             {
                 ResolveWeekOf(res, Constants.ResolveToPast);
@@ -557,7 +556,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if (resolutionPast.Count == 0 && resolutionFuture.Count == 0 && val.TimeZoneResolution == null)
             {
-                var notResolved = new Dictionary<string, string> {
+                var notResolved = new Dictionary<string, string>
+                {
                     {
                         DateTimeResolutionKey.Timex, timex
                     },
@@ -566,7 +566,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     },
                     {
                         ResolutionKey.Value, "not resolved"
-                    }
+                    },
                 };
 
                 resolutions.Add(notResolved);
@@ -575,22 +575,157 @@ namespace Microsoft.Recognizers.Text.DateTime
             return new SortedDictionary<string, object> { { ResolutionKey.ValueSet, resolutions } };
         }
 
-        private string DetermineResolutionDateTimeType(Dictionary<string, string> pastResolutionStr)
+        public void AddAltPeriodToResolution(Dictionary<string, string> resolutionDic, string mod, Dictionary<string, string> res)
         {
-            switch (pastResolutionStr.Keys.First())
+            if (resolutionDic.ContainsKey(TimeTypeConstants.START_DATETIME) || resolutionDic.ContainsKey(TimeTypeConstants.END_DATETIME))
             {
-                case TimeTypeConstants.START_DATE:
-                    return Constants.SYS_DATETIME_DATEPERIOD;
-
-                case TimeTypeConstants.START_DATETIME:
-                    return Constants.SYS_DATETIME_DATETIMEPERIOD;
-
-                case TimeTypeConstants.START_TIME:
-                    return Constants.SYS_DATETIME_TIMEPERIOD;
-
-                default:
-                    return pastResolutionStr.Keys.First().ToLower();
+                AddPeriodToResolution(resolutionDic, TimeTypeConstants.START_DATETIME, TimeTypeConstants.END_DATETIME, mod, res);
             }
+            else if (resolutionDic.ContainsKey(TimeTypeConstants.START_DATE) || resolutionDic.ContainsKey(TimeTypeConstants.END_DATE))
+            {
+                AddPeriodToResolution(resolutionDic, TimeTypeConstants.START_DATE, TimeTypeConstants.END_DATE, mod, res);
+            }
+            else if (resolutionDic.ContainsKey(TimeTypeConstants.START_TIME) || resolutionDic.ContainsKey(TimeTypeConstants.END_TIME))
+            {
+                AddPeriodToResolution(resolutionDic, TimeTypeConstants.START_TIME, TimeTypeConstants.END_TIME, mod, res);
+            }
+        }
+
+        public void AddAltSingleDateTimeToResolution(Dictionary<string, string> resolutionDic, string type, string mod, Dictionary<string, string> res)
+        {
+            if (resolutionDic.ContainsKey(TimeTypeConstants.DATE))
+            {
+                AddSingleDateTimeToResolution(resolutionDic, TimeTypeConstants.DATE, mod, res);
+            }
+            else if (resolutionDic.ContainsKey(TimeTypeConstants.DATETIME))
+            {
+                AddSingleDateTimeToResolution(resolutionDic, TimeTypeConstants.DATETIME, mod, res);
+            }
+            else if (resolutionDic.ContainsKey(TimeTypeConstants.TIME))
+            {
+                AddSingleDateTimeToResolution(resolutionDic, TimeTypeConstants.TIME, mod, res);
+            }
+        }
+
+        public void AddSingleDateTimeToResolution(Dictionary<string, string> resolutionDic, string type, string mod, Dictionary<string, string> res)
+        {
+            if (resolutionDic.ContainsKey(type) &&
+                !resolutionDic[type].Equals(DateMinString) && !resolutionDic[type].Equals(DateTimeMinString))
+            {
+                if (!string.IsNullOrEmpty(mod))
+                {
+                    if (mod.Equals(Constants.BEFORE_MOD))
+                    {
+                        res.Add(DateTimeResolutionKey.END, resolutionDic[type]);
+                        return;
+                    }
+
+                    if (mod.Equals(Constants.AFTER_MOD))
+                    {
+                        res.Add(DateTimeResolutionKey.START, resolutionDic[type]);
+                        return;
+                    }
+
+                    if (mod.Equals(Constants.SINCE_MOD))
+                    {
+                        res.Add(DateTimeResolutionKey.START, resolutionDic[type]);
+                        return;
+                    }
+
+                    if (mod.Equals(Constants.UNTIL_MOD))
+                    {
+                        res.Add(DateTimeResolutionKey.END, resolutionDic[type]);
+                        return;
+                    }
+                }
+
+                res.Add(ResolutionKey.Value, resolutionDic[type]);
+            }
+        }
+
+        public void AddPeriodToResolution(Dictionary<string, string> resolutionDic, string startType, string endType, string mod, Dictionary<string, string> res)
+        {
+            var start = string.Empty;
+            var end = string.Empty;
+
+            if (resolutionDic.ContainsKey(startType))
+            {
+                start = resolutionDic[startType];
+            }
+
+            if (resolutionDic.ContainsKey(endType))
+            {
+                end = resolutionDic[endType];
+            }
+
+            if (!string.IsNullOrEmpty(mod))
+            {
+                // For the 'before' mod
+                // 1. Cases like "Before December", the start of the period should be the end of the new period, not the start
+                // 2. Cases like "More than 3 days before today", the date point should be the end of the new period
+                if (mod.Equals(Constants.BEFORE_MOD))
+                {
+                    if (!string.IsNullOrEmpty(start) && !string.IsNullOrEmpty(end))
+                    {
+                        res.Add(DateTimeResolutionKey.END, start);
+                    }
+                    else
+                    {
+                        res.Add(DateTimeResolutionKey.END, end);
+                    }
+
+                    return;
+                }
+
+                // For the 'after' mod
+                // 1. Cases like "After January", the end of the period should be the start of the new period, not the end
+                // 2. Cases like "More than 3 days after today", the date point should be the start of the new period
+                if (mod.Equals(Constants.AFTER_MOD))
+                {
+                    // For cases like "After January" or "After 2018"
+                    // The "end" of the period is not inclusive by default ("January", the end should be "XXXX-02-01" / "2018", the end should be "2019-01-01")
+                    // Mod "after" is also not inclusive the "start" ("After January", the start should be "XXXX-01-31" / "After 2018", the start should be "2017-12-31")
+                    // So here the START day should be the inclusive end of the period, which is one day previous to the default end (exclusive end)
+                    if (!string.IsNullOrEmpty(start) && !string.IsNullOrEmpty(end))
+                    {
+                        res.Add(DateTimeResolutionKey.START, GetPreviousDay(end));
+                    }
+                    else
+                    {
+                        res.Add(DateTimeResolutionKey.START, start);
+                    }
+
+                    return;
+                }
+
+                // For the 'since' mod, the start of the period should be the start of the new period, not the end
+                if (mod.Equals(Constants.SINCE_MOD))
+                {
+                    res.Add(DateTimeResolutionKey.START, start);
+                    return;
+                }
+
+                // For the 'until' mod, the end of the period should be the end of the new period, not the start
+                if (mod.Equals(Constants.UNTIL_MOD))
+                {
+                    res.Add(DateTimeResolutionKey.END, end);
+                    return;
+                }
+            }
+
+            if (!string.IsNullOrEmpty(start) && !string.IsNullOrEmpty(end))
+            {
+                res.Add(DateTimeResolutionKey.START, start);
+                res.Add(DateTimeResolutionKey.END, end);
+            }
+        }
+
+        public string GetPreviousDay(string dateStr)
+        {
+            // Here the dateString is in standard format, so Parse should work perfectly
+            var date = DateObject.Parse(dateStr);
+            date = date.AddDays(-1);
+            return DateTimeFormatUtil.LuisDate(date);
         }
 
         internal void AddResolutionFields(Dictionary<string, string> dic, string key, string value)
@@ -744,163 +879,22 @@ namespace Microsoft.Recognizers.Text.DateTime
             return res;
         }
 
-        public void AddAltPeriodToResolution(Dictionary<string, string> resolutionDic, string mod, Dictionary<string, string> res)
+        private string DetermineResolutionDateTimeType(Dictionary<string, string> pastResolutionStr)
         {
-            if (resolutionDic.ContainsKey(TimeTypeConstants.START_DATETIME) || resolutionDic.ContainsKey(TimeTypeConstants.END_DATETIME))
+            switch (pastResolutionStr.Keys.First())
             {
-                AddPeriodToResolution(resolutionDic, TimeTypeConstants.START_DATETIME, TimeTypeConstants.END_DATETIME, mod, res);
+                case TimeTypeConstants.START_DATE:
+                    return Constants.SYS_DATETIME_DATEPERIOD;
+
+                case TimeTypeConstants.START_DATETIME:
+                    return Constants.SYS_DATETIME_DATETIMEPERIOD;
+
+                case TimeTypeConstants.START_TIME:
+                    return Constants.SYS_DATETIME_TIMEPERIOD;
+
+                default:
+                    return pastResolutionStr.Keys.First().ToLower();
             }
-            else if (resolutionDic.ContainsKey(TimeTypeConstants.START_DATE) || resolutionDic.ContainsKey(TimeTypeConstants.END_DATE))
-            {
-                AddPeriodToResolution(resolutionDic, TimeTypeConstants.START_DATE, TimeTypeConstants.END_DATE, mod, res);
-            }
-            else if (resolutionDic.ContainsKey(TimeTypeConstants.START_TIME) || resolutionDic.ContainsKey(TimeTypeConstants.END_TIME))
-            {
-                AddPeriodToResolution(resolutionDic, TimeTypeConstants.START_TIME, TimeTypeConstants.END_TIME, mod, res);
-            }
-
-        }
-
-        public void AddAltSingleDateTimeToResolution(Dictionary<string, string> resolutionDic, string type, string mod,
-            Dictionary<string, string> res)
-        {
-            if (resolutionDic.ContainsKey(TimeTypeConstants.DATE))
-            {
-                AddSingleDateTimeToResolution(resolutionDic, TimeTypeConstants.DATE, mod, res);
-            }
-            else if (resolutionDic.ContainsKey(TimeTypeConstants.DATETIME))
-            {
-                AddSingleDateTimeToResolution(resolutionDic, TimeTypeConstants.DATETIME, mod, res);
-            }
-            else if (resolutionDic.ContainsKey(TimeTypeConstants.TIME))
-            {
-                AddSingleDateTimeToResolution(resolutionDic, TimeTypeConstants.TIME, mod, res);
-            }
-
-        }
-
-        public void AddSingleDateTimeToResolution(Dictionary<string, string> resolutionDic, string type, string mod,
-            Dictionary<string, string> res)
-        {
-            if (resolutionDic.ContainsKey(type) &&
-                !resolutionDic[type].Equals(DateMinString) && !resolutionDic[type].Equals(DateTimeMinString))
-            {
-
-                if (!string.IsNullOrEmpty(mod))
-                {
-                    if (mod.Equals(Constants.BEFORE_MOD))
-                    {
-                        res.Add(DateTimeResolutionKey.END, resolutionDic[type]);
-                        return;
-                    }
-
-                    if (mod.Equals(Constants.AFTER_MOD))
-                    {
-                        res.Add(DateTimeResolutionKey.START, resolutionDic[type]);
-                        return;
-                    }
-
-                    if (mod.Equals(Constants.SINCE_MOD))
-                    {
-                        res.Add(DateTimeResolutionKey.START, resolutionDic[type]);
-                        return;
-                    }
-
-                    if (mod.Equals(Constants.UNTIL_MOD))
-                    {
-                        res.Add(DateTimeResolutionKey.END, resolutionDic[type]);
-                        return;
-                    }
-                }
-
-                res.Add(ResolutionKey.Value, resolutionDic[type]);
-            }
-        }
-
-        public void AddPeriodToResolution(Dictionary<string, string> resolutionDic, string startType, string endType,
-            string mod, Dictionary<string, string> res)
-        {
-            var start = "";
-            var end = "";
-
-            if (resolutionDic.ContainsKey(startType))
-            {
-                start = resolutionDic[startType];
-            }
-
-            if (resolutionDic.ContainsKey(endType))
-            {
-                end = resolutionDic[endType];
-            }
-
-            if (!string.IsNullOrEmpty(mod))
-            {
-                // For the 'before' mod
-                // 1. Cases like "Before December", the start of the period should be the end of the new period, not the start
-                // 2. Cases like "More than 3 days before today", the date point should be the end of the new period
-                if (mod.Equals(Constants.BEFORE_MOD))
-                {
-                    if (!string.IsNullOrEmpty(start) && !string.IsNullOrEmpty(end))
-                    {
-                        res.Add(DateTimeResolutionKey.END, start);
-                    }
-                    else
-                    {
-                        res.Add(DateTimeResolutionKey.END, end);
-                    }
-
-                    return;
-                }
-
-                // For the 'after' mod
-                // 1. Cases like "After January", the end of the period should be the start of the new period, not the end 
-                // 2. Cases like "More than 3 days after today", the date point should be the start of the new period
-                if (mod.Equals(Constants.AFTER_MOD))
-                {
-                    // For cases like "After January" or "After 2018"
-                    // The "end" of the period is not inclusive by default ("January", the end should be "XXXX-02-01" / "2018", the end should be "2019-01-01")
-                    // Mod "after" is also not inclusive the "start" ("After January", the start should be "XXXX-01-31" / "After 2018", the start should be "2017-12-31")
-                    // So here the START day should be the inclusive end of the period, which is one day previous to the default end (exclusive end)
-                    if (!string.IsNullOrEmpty(start) && !string.IsNullOrEmpty(end))
-                    {
-                        res.Add(DateTimeResolutionKey.START, GetPreviousDay(end));
-                    }
-                    else
-                    {
-                        res.Add(DateTimeResolutionKey.START, start);
-                    }
-
-                    return;
-                }
-
-                // For the 'since' mod, the start of the period should be the start of the new period, not the end 
-                if (mod.Equals(Constants.SINCE_MOD))
-                {
-                    res.Add(DateTimeResolutionKey.START, start);
-                    return;
-                }
-
-                // For the 'until' mod, the end of the period should be the end of the new period, not the start 
-                if (mod.Equals(Constants.UNTIL_MOD))
-                {
-                    res.Add(DateTimeResolutionKey.END, end);
-                    return;
-                }
-            }
-
-            if (!string.IsNullOrEmpty(start) && !string.IsNullOrEmpty(end))
-            {
-                res.Add(DateTimeResolutionKey.START, start);
-                res.Add(DateTimeResolutionKey.END, end);
-            }
-        }
-
-        public string GetPreviousDay(string dateStr)
-        {
-            // Here the dateString is in standard format, so Parse should work perfectly
-            var date = DateObject.Parse(dateStr);
-            date = date.AddDays(-1);
-            return DateTimeFormatUtil.LuisDate(date);
         }
     }
 }
