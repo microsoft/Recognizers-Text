@@ -7,6 +7,58 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 {
     public class EnglishDateTimePeriodParserConfiguration : BaseOptionsConfiguration, IDateTimePeriodParserConfiguration
     {
+        public static readonly Regex MorningStartEndRegex =
+            new Regex(DateTimeDefinitions.MorningStartEndRegex, RegexOptions.Singleline);
+
+        public static readonly Regex AfternoonStartEndRegex =
+            new Regex(DateTimeDefinitions.AfternoonStartEndRegex, RegexOptions.Singleline);
+
+        public static readonly Regex EveningStartEndRegex =
+            new Regex(DateTimeDefinitions.EveningStartEndRegex, RegexOptions.Singleline);
+
+        public static readonly Regex NightStartEndRegex =
+            new Regex(DateTimeDefinitions.NightStartEndRegex, RegexOptions.Singleline);
+
+        public EnglishDateTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config)
+            : base(config)
+        {
+            TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
+
+            DateExtractor = config.DateExtractor;
+            TimeExtractor = config.TimeExtractor;
+            DateTimeExtractor = config.DateTimeExtractor;
+            TimePeriodExtractor = config.TimePeriodExtractor;
+            CardinalExtractor = config.CardinalExtractor;
+            DurationExtractor = config.DurationExtractor;
+            NumberParser = config.NumberParser;
+            DateParser = config.DateParser;
+            TimeParser = config.TimeParser;
+            TimePeriodParser = config.TimePeriodParser;
+            DurationParser = config.DurationParser;
+            DateTimeParser = config.DateTimeParser;
+
+            PureNumberFromToRegex = EnglishTimePeriodExtractorConfiguration.PureNumFromTo;
+            PureNumberBetweenAndRegex = EnglishTimePeriodExtractorConfiguration.PureNumBetweenAnd;
+            SpecificTimeOfDayRegex = EnglishDateTimeExtractorConfiguration.SpecificTimeOfDayRegex;
+            TimeOfDayRegex = EnglishDateTimeExtractorConfiguration.TimeOfDayRegex;
+            PastRegex = EnglishDatePeriodExtractorConfiguration.PastPrefixRegex;
+            FutureRegex = EnglishDatePeriodExtractorConfiguration.NextPrefixRegex;
+            FutureSuffixRegex = EnglishDatePeriodExtractorConfiguration.FutureSuffixRegex;
+            NumberCombinedWithUnitRegex = EnglishDateTimePeriodExtractorConfiguration.TimeNumberCombinedWithUnit;
+            UnitRegex = EnglishTimePeriodExtractorConfiguration.TimeUnitRegex;
+            PeriodTimeOfDayWithDateRegex = EnglishDateTimePeriodExtractorConfiguration.PeriodTimeOfDayWithDateRegex;
+            RelativeTimeUnitRegex = EnglishDateTimePeriodExtractorConfiguration.RelativeTimeUnitRegex;
+            RestOfDateTimeRegex = EnglishDateTimePeriodExtractorConfiguration.RestOfDateTimeRegex;
+            AmDescRegex = EnglishDateTimePeriodExtractorConfiguration.AmDescRegex;
+            PmDescRegex = EnglishDateTimePeriodExtractorConfiguration.PmDescRegex;
+            WithinNextPrefixRegex = EnglishDateTimePeriodExtractorConfiguration.WithinNextPrefixRegex;
+            PrefixDayRegex = EnglishDateTimePeriodExtractorConfiguration.PrefixDayRegex;
+            BeforeRegex = EnglishDateTimePeriodExtractorConfiguration.BeforeRegex;
+            AfterRegex = EnglishDateTimePeriodExtractorConfiguration.AfterRegex;
+            UnitMap = config.UnitMap;
+            Numbers = config.Numbers;
+        }
+
         public string TokenBeforeDate { get; }
 
         public IDateExtractor DateExtractor { get; }
@@ -73,57 +125,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public IImmutableDictionary<string, int> Numbers { get; }
 
-        public EnglishDateTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config)
-        {
-            TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
-
-            DateExtractor = config.DateExtractor;
-            TimeExtractor = config.TimeExtractor;
-            DateTimeExtractor = config.DateTimeExtractor;
-            TimePeriodExtractor = config.TimePeriodExtractor;
-            CardinalExtractor = config.CardinalExtractor;
-            DurationExtractor = config.DurationExtractor;
-            NumberParser = config.NumberParser;
-            DateParser = config.DateParser;
-            TimeParser = config.TimeParser;
-            TimePeriodParser = config.TimePeriodParser;
-            DurationParser = config.DurationParser;
-            DateTimeParser = config.DateTimeParser;
-
-            PureNumberFromToRegex = EnglishTimePeriodExtractorConfiguration.PureNumFromTo;
-            PureNumberBetweenAndRegex = EnglishTimePeriodExtractorConfiguration.PureNumBetweenAnd;
-            SpecificTimeOfDayRegex = EnglishDateTimeExtractorConfiguration.SpecificTimeOfDayRegex;
-            TimeOfDayRegex = EnglishDateTimeExtractorConfiguration.TimeOfDayRegex;
-            PastRegex = EnglishDatePeriodExtractorConfiguration.PastPrefixRegex;
-            FutureRegex = EnglishDatePeriodExtractorConfiguration.NextPrefixRegex;
-            FutureSuffixRegex = EnglishDatePeriodExtractorConfiguration.FutureSuffixRegex;
-            NumberCombinedWithUnitRegex = EnglishDateTimePeriodExtractorConfiguration.TimeNumberCombinedWithUnit;
-            UnitRegex = EnglishTimePeriodExtractorConfiguration.TimeUnitRegex;
-            PeriodTimeOfDayWithDateRegex = EnglishDateTimePeriodExtractorConfiguration.PeriodTimeOfDayWithDateRegex;
-            RelativeTimeUnitRegex = EnglishDateTimePeriodExtractorConfiguration.RelativeTimeUnitRegex;
-            RestOfDateTimeRegex = EnglishDateTimePeriodExtractorConfiguration.RestOfDateTimeRegex;
-            AmDescRegex = EnglishDateTimePeriodExtractorConfiguration.AmDescRegex;
-            PmDescRegex = EnglishDateTimePeriodExtractorConfiguration.PmDescRegex;
-            WithinNextPrefixRegex = EnglishDateTimePeriodExtractorConfiguration.WithinNextPrefixRegex;
-            PrefixDayRegex = EnglishDateTimePeriodExtractorConfiguration.PrefixDayRegex;
-            BeforeRegex = EnglishDateTimePeriodExtractorConfiguration.BeforeRegex;
-            AfterRegex = EnglishDateTimePeriodExtractorConfiguration.AfterRegex;
-            UnitMap = config.UnitMap;
-            Numbers = config.Numbers;
-        }
-
-        public static readonly Regex MorningStartEndRegex = 
-            new Regex(DateTimeDefinitions.MorningStartEndRegex, RegexOptions.Singleline);
-
-        public static readonly Regex AfternoonStartEndRegex = 
-            new Regex(DateTimeDefinitions.AfternoonStartEndRegex, RegexOptions.Singleline);
-
-        public static readonly Regex EveningStartEndRegex = 
-            new Regex(DateTimeDefinitions.EveningStartEndRegex, RegexOptions.Singleline);
-
-        public static readonly Regex NightStartEndRegex = 
-            new Regex(DateTimeDefinitions.NightStartEndRegex, RegexOptions.Singleline);
-
         public bool GetMatchedTimeRange(string text, out string timeStr, out int beginHour, out int endHour, out int endMin)
         {
             var trimmedText = text.Trim().ToLowerInvariant();
@@ -181,6 +182,5 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
             return swift;
         }
-
     }
 }
