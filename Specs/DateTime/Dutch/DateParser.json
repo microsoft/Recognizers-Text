@@ -483,7 +483,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "08/12,15",
+        "Text": "12-08-2015",
         "Type": "date",
         "Value": {
           "Timex": "2015-08-12",
@@ -494,8 +494,8 @@
             "date": "2015-08-12"
           }
         },
-        "Start": -1,
-        "Length": 8
+        "Length": 8,
+        "Start": 15
       }
     ]
   },

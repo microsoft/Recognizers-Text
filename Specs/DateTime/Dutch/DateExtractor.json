@@ -160,10 +160,10 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "22.4.",
+        "Text": "22.4",
         "Type": "date",
-        "Start": -1,
-        "Length": 5
+        "Length": 5,
+        "Start": 15
       }
     ],
     "NotSupported": "dotNet"
@@ -407,9 +407,9 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Dinsdag",
+        "Text": "dinsdag",
         "Type": "date",
-        "Start": -1,
+        "Start": 15,
         "Length": 7
       }
     ],
