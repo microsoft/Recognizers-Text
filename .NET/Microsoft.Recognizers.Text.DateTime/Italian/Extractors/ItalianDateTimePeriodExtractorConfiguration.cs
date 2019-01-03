@@ -7,34 +7,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 {
     public class ItalianDateTimePeriodExtractorConfiguration : BaseOptionsConfiguration, IDateTimePeriodExtractorConfiguration
     {
-
-        public string TokenBeforeDate { get; }
-
-        public ItalianDateTimePeriodExtractorConfiguration(IOptionsConfiguration config) : base(config)
-        {
-            TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
-
-            CardinalExtractor = Number.English.CardinalExtractor.GetInstance();
-            SingleDateExtractor = new BaseDateExtractor(new ItalianDateExtractorConfiguration(this));
-            SingleTimeExtractor = new BaseTimeExtractor(new ItalianTimeExtractorConfiguration(this));
-            SingleDateTimeExtractor = new BaseDateTimeExtractor(new ItalianDateTimeExtractorConfiguration(this));
-            DurationExtractor = new BaseDurationExtractor(new ItalianDurationExtractorConfiguration(this));
-            TimePeriodExtractor = new BaseTimePeriodExtractor(new ItalianTimePeriodExtractorConfiguration(this));
-        }
-
-        private static readonly Regex[] SimpleCases =
-        {
-            ItalianTimePeriodExtractorConfiguration.PureNumFromTo,
-            ItalianTimePeriodExtractorConfiguration.PureNumBetweenAnd,
-            ItalianTimePeriodExtractorConfiguration.SpecificTimeOfDayRegex
-        };
-
-        private static readonly Regex FromRegex = 
-            new Regex(DateTimeDefinitions.FromRegex2, RegexOptions.Singleline);
-
-        private static readonly Regex ConnectorAndRegex = 
-            new Regex(DateTimeDefinitions.ConnectorAndRegex, RegexOptions.Singleline);
-
         public static readonly Regex SuffixRegex =
             new Regex(DateTimeDefinitions.SuffixRegex, RegexOptions.Singleline);
 
@@ -43,28 +15,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public static readonly Regex BeforeRegex =
             new Regex(DateTimeDefinitions.BeforeRegex, RegexOptions.Singleline);
-
-        public IEnumerable<Regex> SimpleCasesRegex => SimpleCases;
-
-        public Regex PrepositionRegex => ItalianTimePeriodExtractorConfiguration.PrepositionRegex;
-
-        public Regex TillRegex => ItalianTimePeriodExtractorConfiguration.TillRegex;
-
-        private static readonly Regex PeriodTimeOfDayRegex =
-            new Regex(DateTimeDefinitions.PeriodTimeOfDayRegex, RegexOptions.Singleline);
-
-        private static readonly Regex PeriodSpecificTimeOfDayRegex =
-            new Regex(DateTimeDefinitions.PeriodSpecificTimeOfDayRegex, RegexOptions.Singleline);
-
-        public Regex TimeOfDayRegex => PeriodTimeOfDayRegex;
-
-        public Regex SpecificTimeOfDayRegex => PeriodSpecificTimeOfDayRegex;
-
-        private static readonly Regex TimeTimeUnitRegex =
-            new Regex(DateTimeDefinitions.TimeUnitRegex, RegexOptions.Singleline);
-
-        private static readonly Regex TimeFollowedUnit =
-            new Regex(DateTimeDefinitions.TimeFollowedUnit, RegexOptions.Singleline);
 
         public static readonly Regex TimeNumberCombinedWithUnit =
             new Regex(DateTimeDefinitions.TimeNumberCombinedWithUnit, RegexOptions.Singleline);
@@ -99,6 +49,54 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         public static readonly Regex PrefixDayRegex =
             new Regex(DateTimeDefinitions.PrefixDayRegex, RegexOptions.Singleline | RegexOptions.RightToLeft);
 
+        private static readonly Regex[] SimpleCases =
+        {
+            ItalianTimePeriodExtractorConfiguration.PureNumFromTo,
+            ItalianTimePeriodExtractorConfiguration.PureNumBetweenAnd,
+            ItalianTimePeriodExtractorConfiguration.SpecificTimeOfDayRegex,
+        };
+
+        private static readonly Regex FromRegex =
+            new Regex(DateTimeDefinitions.FromRegex2, RegexOptions.Singleline);
+
+        private static readonly Regex ConnectorAndRegex =
+            new Regex(DateTimeDefinitions.ConnectorAndRegex, RegexOptions.Singleline);
+
+        private static readonly Regex PeriodTimeOfDayRegex =
+            new Regex(DateTimeDefinitions.PeriodTimeOfDayRegex, RegexOptions.Singleline);
+
+        private static readonly Regex PeriodSpecificTimeOfDayRegex =
+            new Regex(DateTimeDefinitions.PeriodSpecificTimeOfDayRegex, RegexOptions.Singleline);
+
+        private static readonly Regex TimeTimeUnitRegex =
+            new Regex(DateTimeDefinitions.TimeUnitRegex, RegexOptions.Singleline);
+
+        private static readonly Regex TimeFollowedUnit =
+            new Regex(DateTimeDefinitions.TimeFollowedUnit, RegexOptions.Singleline);
+
+        public ItalianDateTimePeriodExtractorConfiguration(IOptionsConfiguration config)
+            : base(config)
+        {
+            TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
+
+            CardinalExtractor = Number.English.CardinalExtractor.GetInstance();
+            SingleDateExtractor = new BaseDateExtractor(new ItalianDateExtractorConfiguration(this));
+            SingleTimeExtractor = new BaseTimeExtractor(new ItalianTimeExtractorConfiguration(this));
+            SingleDateTimeExtractor = new BaseDateTimeExtractor(new ItalianDateTimeExtractorConfiguration(this));
+            DurationExtractor = new BaseDurationExtractor(new ItalianDurationExtractorConfiguration(this));
+            TimePeriodExtractor = new BaseTimePeriodExtractor(new ItalianTimePeriodExtractorConfiguration(this));
+        }
+
+        public IEnumerable<Regex> SimpleCasesRegex => SimpleCases;
+
+        public Regex PrepositionRegex => ItalianTimePeriodExtractorConfiguration.PrepositionRegex;
+
+        public Regex TillRegex => ItalianTimePeriodExtractorConfiguration.TillRegex;
+
+        public Regex TimeOfDayRegex => PeriodTimeOfDayRegex;
+
+        public Regex SpecificTimeOfDayRegex => PeriodSpecificTimeOfDayRegex;
+
         public Regex FollowedUnit => TimeFollowedUnit;
 
         Regex IDateTimePeriodExtractorConfiguration.NumberCombinedWithUnit => TimeNumberCombinedWithUnit;
@@ -128,6 +126,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         Regex IDateTimePeriodExtractorConfiguration.PmDescRegex => PmDescRegex;
 
         Regex IDateTimePeriodExtractorConfiguration.WithinNextPrefixRegex => WithinNextPrefixRegex;
+
+        public string TokenBeforeDate { get; }
 
         public IExtractor CardinalExtractor { get; }
 
@@ -159,6 +159,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             {
                 index = fromMatch.Index;
             }
+
             return fromMatch.Success;
         }
 
@@ -170,6 +171,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             {
                 index = beforeMatch.Index;
             }
+
             return beforeMatch.Success;
         }
 
