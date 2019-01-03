@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -7,12 +7,12 @@ namespace Microsoft.Recognizers.Text.DateTime
 {
     public abstract class AbstractYearExtractor : IDateExtractor
     {
-        protected readonly IDateExtractorConfiguration config;
-
         public AbstractYearExtractor(IDateExtractorConfiguration config)
         {
             this.config = config;
         }
+
+        protected IDateExtractorConfiguration Config { get; private set; }
 
         public abstract List<ExtractResult> Extract(string input);
 
@@ -44,7 +44,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     {
                         Text = firstTwoYearNumStr,
                         Start = match.Groups["firsttwoyearnum"].Index,
-                        Length = match.Groups["firsttwoyearnum"].Length
+                        Length = match.Groups["firsttwoyearnum"].Length,
                     };
 
                     var firstTwoYearNum = Convert.ToInt32((double)(this.config.NumberParser.Parse(er).Value ?? 0));
@@ -61,7 +61,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
 
                     // Exclude pure number like "nineteen", "twenty four"
-                    if (firstTwoYearNum < 100 && lastTwoYearNum == 0 || firstTwoYearNum < 100 && firstTwoYearNum % 10 == 0 && lastTwoYearNumStr.Trim().Split(' ').Length == 1)
+                    if ((firstTwoYearNum < 100 && lastTwoYearNum == 0) || (firstTwoYearNum < 100 && firstTwoYearNum % 10 == 0 && lastTwoYearNumStr.Trim().Split(' ').Length == 1))
                     {
                         year = Constants.InvalidYear;
                         return year;
@@ -73,7 +73,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
                     else
                     {
-                        year = firstTwoYearNum * 100 + lastTwoYearNum;
+                        year = (firstTwoYearNum * 100) + lastTwoYearNum;
                     }
                 }
             }

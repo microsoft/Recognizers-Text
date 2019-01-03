@@ -1,4 +1,4 @@
-﻿using Microsoft.Recognizers.Text.DateTime.Utilities;
+using Microsoft.Recognizers.Text.DateTime.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
