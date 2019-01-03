@@ -6,13 +6,27 @@ using Microsoft.Recognizers.Definitions.Japanese;
 
 namespace Microsoft.Recognizers.Text.DateTime.Japanese
 {
+    public enum TimeType
+    {
+        /// <summary>
+        /// 十二点二十三分五十八秒,12点23分53秒
+        /// </summary>
+        JapaneseTime,
+
+        /// <summary>
+        /// 差五分十二点
+        /// </summary>
+        LessTime,
+
+        /// <summary>
+        /// 大约早上10:00
+        /// </summary>
+        DigitTime,
+    }
+
     public class TimeExtractor : BaseDateTimeExtractor<TimeType>
     {
-        internal sealed override ImmutableDictionary<Regex, TimeType> Regexes { get; }
-
-        protected sealed override string ExtractType { get; } = Constants.SYS_DATETIME_TIME; // "Fraction";
-
-        //e.g: 早上九点
+        // e.g: 早上九点
         public static readonly string DayDescRegex = DateTimeDefinitions.TimeDayDescRegex;
 
         public TimeExtractor()
@@ -30,19 +44,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 {
                     new Regex(DateTimeDefinitions.TimeRegexes3, RegexOptions.Singleline),
                     TimeType.LessTime
-                }
+                },
             };
             Regexes = regexes.ToImmutableDictionary();
         }
-    }
 
-    public enum TimeType
-    {
-        //十二点二十三分五十八秒,12点23分53秒
-        JapaneseTime,
-        //差五分十二点
-        LessTime,
-        //大约早上10:00
-        DigitTime
+        internal sealed override ImmutableDictionary<Regex, TimeType> Regexes { get; }
+
+        protected sealed override string ExtractType { get; } = Constants.SYS_DATETIME_TIME; // "Fraction";
     }
 }
