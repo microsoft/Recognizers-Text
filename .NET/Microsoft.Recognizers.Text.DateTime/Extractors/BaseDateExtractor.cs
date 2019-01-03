@@ -257,7 +257,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                             resStart = prefixMatch.Index;
                         }
 
-                        ret.Add(new Token(resStart ?? 0, resEnd?? 0));
+                        ret.Add(new Token(resStart ?? 0, resEnd ?? 0));
                     }
 
                     // Handling cases like 'second Sunday'
