@@ -16,8 +16,6 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         string DatePrefix { get; }
 
-        #region Regexes
-
         IEnumerable<Regex> DateRegexList { get; }
 
         Regex NextRegex { get; }
@@ -40,10 +38,6 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex SinceSuffixRegex { get; }
 
-        #endregion
-
-        #region Dictionaries
-
         ImmutableDictionary<string, string> UnitMap { get; }
 
         ImmutableDictionary<string, long> UnitValueMap { get; }
@@ -60,24 +54,25 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         ImmutableDictionary<string, int> MonthOfYear { get; }
 
-        //TODO we need to use number parser
+        // TODO we need to use number parser
         ImmutableDictionary<string, int> Numbers { get; }
 
-        #endregion
-
-        #region internalParsers
-
         IDateTimeParser DateParser { get; }
+
         IDateTimeParser TimeParser { get; }
+
         IDateTimeParser DateTimeParser { get; }
+
         IDateTimeParser DatePeriodParser { get; }
+
         IDateTimeParser TimePeriodParser { get; }
+
         IDateTimeParser DateTimePeriodParser { get; }
+
         IDateTimeParser DurationParser { get; }
+
         IDateTimeParser GetParser { get; }
+
         IDateTimeParser HolidayParser { get; }
-
-        #endregion
-
     }
 }
