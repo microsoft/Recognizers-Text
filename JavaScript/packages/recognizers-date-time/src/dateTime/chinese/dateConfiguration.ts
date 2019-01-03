@@ -267,14 +267,14 @@ export class ChineseDateParser extends BaseDateParser {
             if (hasMonth) {
                 if (RegExpUtility.isMatch(this.tokenNextRegex, monthStr)) {
                     month++;
-                    if (month === 12) {
-                        month = 0;
+                    if (month === Constants.MaxMonth + 1) {
+                        month = Constants.MinMonth;
                         year++;
                     }
                 } else if (RegExpUtility.isMatch(this.tokenLastRegex, monthStr)) {
                     month--;
-                    if (month === -1) {
-                        month = 12;
+                    if (month === Constants.MinMonth - 1) {
+                        month = Constants.MaxMonth;
                         year--;
                     }
                 }
@@ -291,18 +291,66 @@ export class ChineseDateParser extends BaseDateParser {
             let futureDate: Date;
             let pastDate: Date;
 
-            if (day > this.monthMaxDays[month]) {
-                futureDate = DateUtils.safeCreateFromMinValue(year, month + 1, day);
-                pastDate = DateUtils.safeCreateFromMinValue(year, month - 1, day);
+            if (day > this.getMonthMaxDay(year, month)) {
+                let futureMonth = month + 1;
+                let pastMonth = month - 1;
+                let futureYear = year;
+                let pastYear = year;
+
+                if (futureMonth === Constants.MaxMonth + 1) {
+                    futureMonth = Constants.MinMonth;
+                    futureYear = year++;
+                }
+                if (pastMonth === Constants.MinMonth - 1) {
+                    pastMonth = Constants.MaxMonth;
+                    pastYear = year--;
+                }
+
+                let isFutureValid = DateUtils.isValidDate(futureYear, futureMonth, day);
+                let isPastValid = DateUtils.isValidDate(pastYear, pastMonth, day);
+
+                if (isFutureValid && isPastValid) {
+                    futureDate = DateUtils.safeCreateFromMinValue(futureYear, futureMonth, day);
+                    pastDate = DateUtils.safeCreateFromMinValue(pastYear, pastMonth, day);
+                }
+                else if (isFutureValid && !isPastValid) {
+                    futureDate = pastDate = DateUtils.safeCreateFromMinValue(futureYear, futureMonth, day);
+                }
+                else if (!isFutureValid && !isPastValid){
+                    futureDate = pastDate = DateUtils.safeCreateFromMinValue(pastYear, pastMonth, day);
+                }
+                else {
+                    futureDate = pastDate = DateUtils.safeCreateFromMinValue(year, month, day);
+                }
             } else {
                 futureDate = DateUtils.safeCreateFromMinValue(year, month, day);
                 pastDate = DateUtils.safeCreateFromMinValue(year, month, day);
+                
                 if (!hasMonth) {
-                    if (futureDate < referenceDate) futureDate = DateUtils.addMonths(futureDate, 1);
-                    if (pastDate >= referenceDate) pastDate = DateUtils.addMonths(pastDate, -1);
+                    if (futureDate < referenceDate) {
+                        if (this.isValidDate(year, month + 1, day)) {
+                            futureDate = DateUtils.addMonths(futureDate, 1);
+                        }
+                    }
+                    if (pastDate >= referenceDate) {
+                        if (this.isValidDate(year, month - 1, day)) {
+                            pastDate = DateUtils.addMonths(pastDate, -1);
+                        }
+                        else if (this.isNonleapYearFeb29th(year, month - 1, day)){
+                            pastDate = DateUtils.addMonths(pastDate, -2);
+                        }
+                    }
                 } else if (hasMonth && !hasYear) {
-                    if (futureDate < referenceDate) futureDate = DateUtils.addYears(futureDate, 1);
-                    if (pastDate >= referenceDate) pastDate = DateUtils.addYears(pastDate, -1);
+                    if (futureDate < referenceDate) {
+                        if (DateUtils.isValidDate(year + 1, month, day)) {
+                            futureDate = DateUtils.addYears(futureDate, 1);
+                        }
+                    }
+                    if (pastDate >= referenceDate) {
+                        if (DateUtils.isValidDate(year - 1, month, day)){
+                            pastDate = DateUtils.addYears(pastDate, -1);
+                        }
+                    }
                 }
             }
 
@@ -462,5 +510,35 @@ export class ChineseDateParser extends BaseDateParser {
         return this.config.dayOfMonth.get(source) > 31
             ? this.config.dayOfMonth.get(source) % 31
             : this.config.dayOfMonth.get(source);
+    }
+
+    private getMonthMaxDay(year: number, month: number): number {
+        let maxDay = this.monthMaxDays[month];
+
+            if (!DateUtils.isLeapYear(year) && month === 1)
+            {
+                maxDay -= 1;
+            }
+
+            return maxDay;
+    }
+
+    private isValidDate(year: number, month: number, day: number): boolean {
+        if (month < Constants.MinMonth)
+            {
+                year--;
+                month = Constants.MaxMonth;
+            }
+
+            if (month > Constants.MaxMonth)
+            {
+                year++;
+                month = Constants.MinMonth;
+            }
+            return DateUtils.isValidDate(year, month, day);
+    }
+
+    private isNonleapYearFeb29th(year: number, month: number, day: number): boolean {
+        return !DateUtils.isLeapYear(year) && month === 1 && day === 29;
     }
 }

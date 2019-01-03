@@ -24,6 +24,8 @@ class Constants:
     SemesterMonthCount: int = 6
     TrimesterMonthCount: int = 3
     FourDigitsYearLength: int = 4
+    MinMonth: int = 1
+    MaxMonth: int = 12
 
     MinYearNum: int = int(BaseDateTime.MinYearNum)
     MaxYearNum: int = int(BaseDateTime.MaxYearNum)
