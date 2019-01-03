@@ -12,7 +12,9 @@ import com.microsoft.recognizers.text.utilities.StringUtility;
 import java.time.LocalDateTime;
 import java.util.AbstractMap;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.regex.Pattern;
 
 public class BaseTimeExtractor implements IDateTimeExtractor {
@@ -60,11 +62,14 @@ public class BaseTimeExtractor implements IDateTimeExtractor {
 
                     if (StringUtility.isNullOrWhiteSpace(gapText)) {
                         int newLenght = timeZoneEr.start + timeZoneEr.length;
+                        String newText = text.substring(er.start, newLenght);
+                        Map<String, Object> newData = new HashMap<>();
+                        newData.put(Constants.SYS_DATETIME_TIMEZONE, timeZoneEr);
 
                         timeErs.set(erIndex, er
-                                .withText(text.substring(er.start, newLenght))
+                                .withText(newText)
                                 .withLength(newLenght - er.start)
-                                .withData(new AbstractMap.SimpleEntry<>(Constants.SYS_DATETIME_TIMEZONE, timeZoneEr)));
+                                .withData(newData));
                     }
                 }
             }

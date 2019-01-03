@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Linq;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Japanese;
 using Microsoft.Recognizers.Text.Number.Japanese;
@@ -115,8 +115,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                         idx += 2;
                         continue;
                     }
+
                     idx++;
                 }
+
                 idx++;
             }
 
@@ -170,7 +172,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 var middleEnd = timePoints[idx + 1].Start ?? 0;
 
                 var middleStr = text.Substring(middleBegin, middleEnd - middleBegin).Trim();
-                
+
                 // handle "{TimePoint} to {TimePoint}"
                 if (TillRegex.IsExactMatch(middleStr, trim: true))
                 {

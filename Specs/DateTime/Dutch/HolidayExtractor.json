@@ -5,7 +5,9 @@
     "Results": [
       {
         "Text": "kerst",
-        "Type": "date"
+        "Type": "date",
+        "Start": 16,
+        "Length": 5
       }
     ],
     "NotSupported": "dotNet"
@@ -16,7 +18,9 @@
     "Results": [
       {
         "Text": "kerst",
-        "Type": "date"
+        "Type": "date",
+        "Start": 17,
+        "Length": 5
       }
     ],
     "NotSupported": "dotNet"
@@ -27,7 +31,9 @@
     "Results": [
       {
         "Text": "Nieuwjaarsdag",
-        "Type": "date"
+        "Type": "date",
+        "Start": 15,
+        "Length": 13
       }
     ],
     "NotSupported": "dotNet"
@@ -38,7 +44,9 @@
     "Results": [
       {
         "Text": "thanksgiving",
-        "Type": "date"
+        "Type": "date",
+        "Start": 16,
+        "Length": 12
       }
     ],
     "NotSupported": "dotNet"
@@ -49,7 +57,9 @@
     "Results": [
       {
         "Text": "vaderdag",
-        "Type": "date"
+        "Type": "date",
+        "Start": 15,
+        "Length": 8
       }
     ],
     "NotSupported": "dotNet"
@@ -60,7 +70,9 @@
     "Results": [
       {
         "Text": "Nieuwjaarsdag dit jaar",
-        "Type": "date"
+        "Type": "date",
+        "Start": 15,
+        "Length": 22
       }
     ],
     "NotSupported": "dotNet"
@@ -71,7 +83,9 @@
     "Results": [
       {
         "Text": "Nieuwjaarsdag 2016",
-        "Type": "date"
+        "Type": "date",
+        "Start": 16,
+        "Length": 18
       }
     ],
     "NotSupported": "dotNet"
@@ -82,7 +96,9 @@
     "Results": [
       {
         "Text": "nieuwjaarsdag 2016",
-        "Type": "date"
+        "Type": "date",
+        "Start": 16,
+        "Length": 18
       }
     ],
     "NotSupported": "dotNet"
@@ -93,7 +109,9 @@
     "Results": [
       {
         "Text": "clean monday",
-        "Type": "date"
+        "Type": "date",
+        "Start": 15,
+        "Length": 12
       }
     ],
     "NotSupported": "dotNet"

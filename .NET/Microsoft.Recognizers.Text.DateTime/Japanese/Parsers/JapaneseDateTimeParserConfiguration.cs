@@ -8,7 +8,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 {
   public class JapaneseDateTimeParserConfiguration : BaseOptionsConfiguration, IFullDateTimeParserConfiguration
   {
-    public JapaneseDateTimeParserConfiguration(DateTimeOptions options = DateTimeOptions.None) : base(options)
+    public JapaneseDateTimeParserConfiguration(DateTimeOptions options = DateTimeOptions.None)
+            : base(options)
     {
       DateParser = new DateParser(this);
       TimeParser = new TimeParser(this);
@@ -51,8 +52,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
     public string DatePrefix => DateTimeDefinitions.ParserConfigurationDatePrefix;
 
-    #region internalParsers
-
     public IDateTimeParser DateParser { get; }
 
     public IDateTimeParser TimeParser { get; }
@@ -71,10 +70,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
     public IDateTimeParser HolidayParser { get; }
 
-    #endregion
-
-    #region Dictionaries
-
     public ImmutableDictionary<string, string> UnitMap { get; }
 
     public ImmutableDictionary<string, long> UnitValueMap { get; }
@@ -92,10 +87,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
     public ImmutableDictionary<string, int> MonthOfYear { get; }
 
     public ImmutableDictionary<string, int> Numbers { get; }
-
-    #endregion
-
-    #region Regexes
 
     public IEnumerable<Regex> DateRegexList { get; }
 
@@ -119,18 +110,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
     public Regex SinceSuffixRegex { get; }
 
-    #endregion
-
-    private static ImmutableDictionary<string, int> InitNumbers()
-    {
-      return new Dictionary<string, int>
-      {
-      }.ToImmutableDictionary();
-    }
-
     public int GetSwiftDay(string text)
     {
-      //Today: 今天, 今日, 最近, きょう, この日
+      // Today: 今天, 今日, 最近, きょう, この日
       var value = 0;
 
       if (text.StartsWith("来") || text.Equals("あす") || text.Equals("あした") || text.Equals("明日"))
@@ -163,7 +145,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
     public int GetSwiftMonth(string text)
     {
-      //Current month: 今月
+      // Current month: 今月
       var value = 0;
 
       if (text.Equals("来月"))
@@ -178,13 +160,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
       {
         value = 2;
       }
-      
+
       return value;
     }
 
     public int GetSwiftYear(string text)
     {
-      //Current year: 今年
+      // Current year: 今年
       var value = 0;
 
       if (text.Equals("来年") || text.Equals("らいねん"))
@@ -197,6 +179,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
       }
 
       return value;
+    }
+
+    private static ImmutableDictionary<string, int> InitNumbers()
+    {
+        return new Dictionary<string, int>
+        {
+        }.ToImmutableDictionary();
     }
   }
 }

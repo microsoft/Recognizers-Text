@@ -13,6 +13,7 @@ import com.microsoft.recognizers.text.datetime.utilities.DateTimeResolutionResul
 import com.microsoft.recognizers.text.datetime.utilities.DateUtil;
 import com.microsoft.recognizers.text.datetime.utilities.FormatUtil;
 import com.microsoft.recognizers.text.datetime.utilities.TimeZoneResolutionResult;
+import com.microsoft.recognizers.text.datetime.utilities.TimeZoneUtility;
 import com.microsoft.recognizers.text.utilities.IntegerUtility;
 import com.microsoft.recognizers.text.utilities.Match;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
@@ -59,11 +60,12 @@ public class BaseTimeParser implements IDateTimeParser {
             DateTimeResolutionResult innerResult;
 
             // Resolve timezome
-            if (config.getOptions().match(DateTimeOptions.EnablePreview) && er.data instanceof Map.Entry) {
-                ExtractResult timezoneEr = ((Map.Entry<String, ExtractResult>)er.data).getValue();
+            if (TimeZoneUtility.shouldResolveTimeZone(er, config.getOptions())) {
+                Map<String, Object> metadata = (Map)er.data;
+                ExtractResult timezoneEr = (ExtractResult)metadata.get(Constants.SYS_DATETIME_TIMEZONE);
                 ParseResult timezonePr = config.getTimeZoneParser().parse(timezoneEr);
 
-                innerResult = internalParse(er.text.substring(0, er.length - timezoneEr.length), referenceTime);
+                innerResult = internalParse(er.text.substring(0, er.text.length() - timezoneEr.length), referenceTime);
 
                 if (timezonePr.value != null) {
                     TimeZoneResolutionResult timeZoneResolution = ((DateTimeResolutionResult)timezonePr.value).getTimeZoneResolution();

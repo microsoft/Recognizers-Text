@@ -1,11 +1,11 @@
 ﻿using System;
-using System.Linq;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Chinese;
+using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.Number.Chinese;
 using DateObject = System.DateTime;
-using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
@@ -116,8 +116,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                         idx += 2;
                         continue;
                     }
+
                     idx++;
                 }
+
                 idx++;
             }
 
@@ -171,7 +173,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 var middleEnd = timePoints[idx + 1].Start ?? 0;
 
                 var middleStr = text.Substring(middleBegin, middleEnd - middleBegin).Trim();
-                
+
                 // handle "{TimePoint} to {TimePoint}"
                 if (TillRegex.IsExactMatch(middleStr, trim: true))
                 {

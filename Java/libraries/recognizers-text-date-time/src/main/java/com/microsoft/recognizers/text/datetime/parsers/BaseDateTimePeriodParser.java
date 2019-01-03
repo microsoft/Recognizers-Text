@@ -981,6 +981,10 @@ public class BaseDateTimePeriodParser implements IDateTimeParser {
 
                         result.setSubDateTimeEntities(subDateTimeEntities);
 
+                        if (((DateTimeResolutionResult)timePr.value).getTimeZoneResolution() != null) {
+                            result.setTimeZoneResolution(((DateTimeResolutionResult)timePr.value).getTimeZoneResolution());
+                        }
+
                         result.setSuccess(true);
                     }
                 }
