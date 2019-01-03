@@ -16,6 +16,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             config = configuration;
         }
 
+        public static bool IsLessThanDay(string unit)
+        {
+            return unit.Equals("S") || unit.Equals("M") || unit.Equals("H");
+        }
+
         public ParseResult Parse(ExtractResult result)
         {
             return this.Parse(result, DateObject.Now);
@@ -43,12 +48,12 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     innerResult.FutureResolution = new Dictionary<string, string>
                     {
-                        {TimeTypeConstants.DURATION, innerResult.FutureValue.ToString()}
+                        { TimeTypeConstants.DURATION, innerResult.FutureValue.ToString() },
                     };
 
                     innerResult.PastResolution = new Dictionary<string, string>
                     {
-                        {TimeTypeConstants.DURATION, innerResult.PastValue.ToString()}
+                        { TimeTypeConstants.DURATION, innerResult.PastValue.ToString() },
                     };
                     value = innerResult;
                 }
@@ -75,10 +80,15 @@ namespace Microsoft.Recognizers.Text.DateTime
                 Type = er.Type,
                 Data = er.Data,
                 Value = value,
-                TimexStr = value == null ? "" : ((DateTimeResolutionResult)value).Timex,
-                ResolutionStr = ""
+                TimexStr = value == null ? string.Empty : ((DateTimeResolutionResult)value).Timex,
+                ResolutionStr = string.Empty,
             };
             return ret;
+        }
+
+        public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)
+        {
+            return candidateResults;
         }
 
         // check {and} suffix after a {number} {unit}
@@ -87,7 +97,8 @@ namespace Microsoft.Recognizers.Text.DateTime
             double numVal = 0;
 
             var match = this.config.SuffixAndRegex.Match(text);
-            if (match.Success) {
+            if (match.Success)
+            {
                 var numStr = match.Groups["suffix_num"].Value.ToLower();
                 if (this.config.DoubleNumbers.ContainsKey(numStr))
                 {
@@ -101,7 +112,6 @@ namespace Microsoft.Recognizers.Text.DateTime
         // simple cases made by a number followed an unit
         private DateTimeResolutionResult ParseNumberWithUnit(string text, DateObject referenceTime)
         {
-
             DateTimeResolutionResult ret;
 
             if ((ret = ParseNumberSpaceUnit(text)).Success)
@@ -169,6 +179,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     return ret;
                 }
             }
+
             return ret;
         }
 
@@ -202,6 +213,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     return ret;
                 }
             }
+
             return ret;
         }
 
@@ -276,6 +288,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     ret.Success = true;
                 }
             }
+
             return ret;
         }
 
@@ -333,10 +346,6 @@ namespace Microsoft.Recognizers.Text.DateTime
             return match.Success;
         }
 
-        public static bool IsLessThanDay(string unit) {
-            return unit.Equals("S") || unit.Equals("M") || unit.Equals("H");
-        }
-
         private DateTimeResolutionResult ParseMergedDuration(string text, DateObject referenceTime)
         {
             var ret = new DateTimeResolutionResult();
@@ -362,7 +371,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
             }
 
-            var end = ers[ers.Count - 1].Start + ers[ers.Count - 1].Length?? 0;
+            var end = ers[ers.Count - 1].Start + ers[ers.Count - 1].Length ?? 0;
             if (end != text.Length)
             {
                 var afterStr = text.Substring(end);
@@ -374,6 +383,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             var prs = new List<DateTimeParseResult>();
             var timexDict = new Dictionary<string, string>();
+
             // insert timex into a dictionary
             foreach (var er in ers)
             {
@@ -406,11 +416,6 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             ret.Success = true;
             return ret;
-        }
-
-        public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)
-        {
-            return candidateResults;
         }
     }
 }
