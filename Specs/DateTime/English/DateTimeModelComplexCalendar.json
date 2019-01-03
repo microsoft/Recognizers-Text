@@ -7886,7 +7886,7 @@
     "Context": {
       "ReferenceDateTime": "2018-11-30T12:00:00"
     },
-    "Results":[
+    "Results": [
       {
         "Text": "later this week",
         "Start": 23,
@@ -7910,7 +7910,7 @@
     "Context": {
       "ReferenceDateTime": "2018-11-30T12:00:00"
     },
-    "Results":[
+    "Results": [
       {
         "Text": "3 p . m .",
         "Start": 22,
