@@ -1,5 +1,5 @@
-﻿using System.Linq;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Linq;
 using System.Text.RegularExpressions;
 using DateObject = System.DateTime;
 
@@ -10,6 +10,12 @@ namespace Microsoft.Recognizers.Text.DateTime
         public static readonly string ExtractorName = Constants.SYS_DATETIME_DATETIMEPERIOD;
 
         private readonly IDateTimePeriodExtractorConfiguration config;
+
+        private static bool MatchPrefixRegexInSegment(string beforeStr, Match match)
+        {
+            var result = match.Success && string.IsNullOrWhiteSpace(beforeStr.Substring(match.Index + match.Length));
+            return result;
+        }
 
         public BaseDateTimePeriodExtractor(IDateTimePeriodExtractorConfiguration config)
         {
@@ -96,6 +102,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     i = j + 1;
                     continue;
                 }
+
                 i = j;
             }
 
@@ -121,7 +128,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var beforeAfterRegexes = new List<Regex>
             {
                 this.config.BeforeRegex,
-                this.config.AfterRegex
+                this.config.AfterRegex,
             };
 
             foreach (var regex in beforeAfterRegexes)
@@ -209,7 +216,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var ret = new List<Token>();
             var dateTimeErs = this.config.SingleDateTimeExtractor.Extract(text, reference);
             var timePoints = new List<ExtractResult>();
-            
+
             // Handle the overlap problem
             var j = 0;
             foreach (var er in dateTimeErs)
@@ -289,6 +296,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         continue;
                     }
                 }
+
                 idx++;
             }
 
@@ -356,7 +364,6 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 if (match.Success)
                 {
-
                     // For cases like "Friday afternoon between 1PM and 4 PM" which "Friday afternoon" need to be extracted first
                     if (string.IsNullOrWhiteSpace(afterStr.Substring(0, match.Index)))
                     {
@@ -374,7 +381,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     if (config.MiddlePauseRegex.IsExactMatch(connectorStr, trim: false))
                     {
                         var suffix = afterStr.Substring(match.Index + match.Length).TrimStart();
-    
+
                         var endingMatch = config.GeneralEndingRegex.Match(suffix);
                         if (endingMatch.Success)
                         {
@@ -401,7 +408,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
                 }
 
-                var prefixStr = text.Substring(0, er.Start?? 0);
+                var prefixStr = text.Substring(0, er.Start ?? 0);
 
                 match = this.config.PeriodTimeOfDayWithDateRegex.Match(prefixStr);
                 if (match.Success)
@@ -421,7 +428,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         // Trim here is set to false as the Regex might catch white spaces before or after the text
                         if (config.MiddlePauseRegex.IsExactMatch(connectorStr, trim: false))
                         {
-                            var suffix = text.Substring(er.Start + er.Length?? 0).TrimStart(' ');
+                            var suffix = text.Substring(er.Start + er.Length ?? 0).TrimStart(' ');
 
                             var endingMatch = config.GeneralEndingRegex.Match(suffix);
                             if (endingMatch.Success)
@@ -436,7 +443,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             // Check whether there are adjacent time period strings, before or after
             foreach (var e in ret.ToArray())
             {
-                // Try to extract a time period in before-string 
+                // Try to extract a time period in before-string
                 if (e.Start > 0)
                 {
                     var beforeStr = text.Substring(0, e.Start);
@@ -482,7 +489,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        //TODO: this can be abstracted with the similar method in BaseDatePeriodExtractor
+        // TODO: this can be abstracted with the similar method in BaseDatePeriodExtractor
         private List<Token> MatchDuration(string text, DateObject reference)
         {
             var ret = new List<Token>();
@@ -495,8 +502,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var match = config.TimeUnitRegex.Match(durationExtraction.Text);
                 if (match.Success)
                 {
-                    durations.Add(new Token(durationExtraction.Start ?? 0,
-                        (durationExtraction.Start + durationExtraction.Length ?? 0)));
+                    durations.Add(new Token(
+                        durationExtraction.Start ?? 0,
+                        durationExtraction.Start + durationExtraction.Length ?? 0));
                 }
             }
 
@@ -563,6 +571,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     {
                         ret.Add(new Token(index, duration.End));
                     }
+
                     continue;
                 }
 
@@ -603,18 +612,12 @@ namespace Microsoft.Recognizers.Text.DateTime
                 matches = this.config.RestOfDateTimeRegex.Matches(text);
             }
 
-            foreach(Match match in matches)
+            foreach (Match match in matches)
             {
                 ret.Add(new Token(match.Index, match.Index + match.Length));
             }
 
             return ret;
-        }
-
-        private static bool MatchPrefixRegexInSegment(string beforeStr, Match match)
-        {
-            var result = match.Success && string.IsNullOrWhiteSpace(beforeStr.Substring(match.Index + match.Length));
-            return result;
         }
     }
 }
