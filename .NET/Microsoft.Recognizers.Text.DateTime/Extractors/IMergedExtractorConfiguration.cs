@@ -7,7 +7,6 @@ namespace Microsoft.Recognizers.Text.DateTime
 {
     public interface IMergedExtractorConfiguration : IOptionsConfiguration
     {
-
         IDateExtractor DateExtractor { get; }
 
         IDateTimeExtractor TimeExtractor { get; }
@@ -57,6 +56,5 @@ namespace Microsoft.Recognizers.Text.DateTime
         StringMatcher SuperfluousWordMatcher { get; }
 
         Dictionary<Regex, Regex> AmbiguityFiltersDict { get; }
-
     }
 }
