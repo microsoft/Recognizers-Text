@@ -36,7 +36,10 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             //TODO: Quick fix to solve german morgen (morning) / morgen (tomorrow) ambiguity, move to config
-            if (text.Equals("morgen")) timePeriodErs.Clear();
+            if (text.Equals("morgen"))
+            {
+                timePeriodErs.Clear();
+            }
 
             return timePeriodErs;
         }
