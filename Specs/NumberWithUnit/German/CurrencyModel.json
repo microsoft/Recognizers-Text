@@ -1,4 +1,5 @@
-[{
+[
+  {
     "Input": "3 $",
     "NotSupported": "javascript",
     "NotSupportedByDesign": "python",
@@ -12,8 +13,7 @@
         }
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "3 €",
     "NotSupported": "javascript",
@@ -28,8 +28,7 @@
         }
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "3 USD",
     "NotSupported": "javascript",
@@ -44,8 +43,7 @@
         }
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "17 dollar",
     "NotSupported": "javascript",
@@ -60,8 +58,7 @@
         }
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "sieben Euro",
     "NotSupported": "javascript",
@@ -76,8 +73,7 @@
         }
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "30 kambodschanische Riel",
     "NotSupported": "javascript",
@@ -92,8 +88,7 @@
         }
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "75 Millionen Dollar",
     "NotSupported": "javascript",
@@ -108,8 +103,7 @@
         }
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Das finnische Konglomerat Nokia oy ab sagte, es habe eine Einigung erzielt, dass niederländische Unternehmen Nkf Kabel b.v. für 420000000 finnische Mark zu kaufen.",
     "NotSupportedByDesign": "python",
@@ -124,8 +118,7 @@
         }
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "National zahlte Siegel und Shuster 94.000 $, damit alle klagen fallen gelassen werden.",
     "NotSupportedByDesign": "python",
@@ -140,8 +133,7 @@
         }
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "National zahlte Siegel und Shuster 94.000 $, um alle klagen fallen zu lassen.",
     "NotSupportedByDesign": "python",
@@ -156,8 +148,7 @@
         }
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Das dürften ca. 99$ pro Kopf sein.",
     "NotSupportedByDesign": "python",
@@ -172,8 +163,7 @@
         }
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "94£",
     "NotSupportedByDesign": "python",
@@ -188,8 +178,7 @@
         }
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "General Dynamics Services Co., eine Abteilung der General Dynamics Corp., hat einen 48 Millionen Dollar Vertrag, zur Errichtung von Wartungseinrichtungen für Kettenfahrzeuge der Armee, gewonnen.",
     "NotSupportedByDesign": "python",
@@ -204,8 +193,7 @@
         }
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Der Preis für einen zweiten Simulator liegt bei 16,4 Millionen kanadischen Dollar.",
     "NotSupportedByDesign": "python",
@@ -220,8 +208,7 @@
         }
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "bard / ems hatte 1988 Verkäufe mit einem Wert von rund 14 Millionen Dollar, sagte Birchter.",
     "NotSupportedByDesign": "python",
@@ -236,8 +223,7 @@
         }
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Preise starten bei 12.345$.",
     "NotSupportedByDesign": "python",
@@ -252,8 +238,7 @@
         }
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Der Haushalt beläuft sich auf 12 500 EUR.",
     "NotSupportedByDesign": "python",
@@ -268,8 +253,7 @@
         }
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Der Wert dieses Unternehmens liegt bei 2,5 Mio USD",
     "NotSupportedByDesign": "python",
@@ -284,8 +268,7 @@
         }
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Der Umsatz sank in der zweiten Jahreshälfte um 27% auf 300 000 GBP",
     "NotSupportedByDesign": "python",
@@ -300,8 +283,7 @@
         }
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Hast du mal einen Euro für mich?",
     "NotSupportedByDesign": "python",
@@ -316,8 +298,7 @@
         }
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Hast du zwei Euro für mich?",
     "NotSupportedByDesign": "python",
@@ -332,8 +313,7 @@
         }
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "zwei Euro fünfzig",
     "NotSupportedByDesign": "python",
@@ -348,8 +328,7 @@
         }
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "zwei Euro und fünfzig cent",
     "NotSupportedByDesign": "python",
@@ -372,8 +351,7 @@
         }
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "siebenhundert Euro",
     "NotSupportedByDesign": "python",
@@ -388,8 +366,7 @@
         }
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "achtundsiebzig Millionen Dollar",
     "NotSupportedByDesign": "python",
@@ -404,8 +381,7 @@
         }
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "try the Dollar haben sie gesagt",
     "NotSupportedByDesign": "python",
@@ -420,8 +396,7 @@
         }
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "für drei Dollar können sie jetzt das SOS Signal senden",
     "NotSupportedByDesign": "python",
@@ -437,4 +412,4 @@
       }
     ]
   }
-  ]
+]

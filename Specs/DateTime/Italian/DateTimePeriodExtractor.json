@@ -1,930 +1,849 @@
-[{
-  "Input": "Sarò fuori dalle cinque alle sette di oggi",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "dalle cinque alle sette di oggi",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Sarò fuori dalle cinque alle sette di domani",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "dalle cinque alle sette di domani",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Sarò fuori dalle 5 alle 6 la prossima domenica",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "dalle 5 alle 6 la prossima domenica",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Sarò fuori dalle 5 alle 6pm la prossima domenica",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "dalle 5 alle 6pm la prossima domenica",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Sarò fuori dalle 4pm alle 5pm di oggi",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "dalle 4pm alle 5pm di oggi",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Sarò fuori dalle 4pm di oggi alle 5pm di domani",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "dalle 4pm di oggi alle 5pm di domani",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Sarò fuori dalle 4pm alle 5pm di domani",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "dalle 4pm alle 5pm di domani",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Sarò fuori dalle 4pm alle 5pm di 2017-6-6",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "dalle 4pm alle 5pm di 2017-6-6",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Sarò fuori dalle 4pm alle 5pm il 5 Maggio 2018",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "dalle 4pm alle 5pm il 5 Maggio 2018",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Sarò fuori dalle 4:00 alle 5pm il 5 Maggio 2018",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "dalle 4:00 alle 5pm il 5 Maggio 2018",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Sarò fuori dalle 4pm del 1 Gen 2016 alle 5pm di oggi",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "dalle 4pm del 1 Gen 2016 alle 5pm di oggi",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Sarò fuori dalle 2:00pm, 2016-2-21 alle 3:32, 04/23/2016",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "dalle 2:00pm, 2016-2-21 alle 3:32, 04/23/2016",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Sarò fuori da oggi alle 4 al prossimo mer alle 5",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "da oggi alle 4 al prossimo mer alle 5",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Sarò fuori tra le 4pm e le 5pm di oggi",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "tra le 4pm e le 5pm di oggi",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Sarò fuori tra le 4pm del 1 Gen 2016 e le 5pm di oggi",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "tra le 4pm del 1 Gen 2016 e le 5pm di oggi",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò stanotte",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "stanotte",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò questa notte",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "questa notte",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò questa sera",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "questa sera",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò questa mattina",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "questa mattina",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò questo pomeriggio",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "questo pomeriggio",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Pornerò la prossima notte",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "la prossima notte",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Sono tornato la scorsa notte",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "la scorsa notte",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò domani notte",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "domani notte",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò il prossimo lunedì pomeriggio",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "il prossimo lunedì pomeriggio",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò il 5 Maggio notte",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "5 Maggio notte",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò negli ultimi 3 minuti",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "ultimi 3 minuti",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Sono tornato nei 3 minuti precedenti",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "3 minuti precedenti",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-
-{
-  "Input": "Tornerò nelle prossime 5 ore",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "prossime 5 ore",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò nell'ultimo minuto",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "nell'ultimo minuto",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò la prossima ora",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "prossima ora",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò gli ultimi minuti",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "ultimi minuti",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Sono tornato diversi minuti passati",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "diversi minuti passati",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò martedì mattina",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "martedì mattina",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò martedì pomeriggio",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "martedì pomeriggio",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò martedì sera",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "martedì sera",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "incontriamoci in prima mattinata martedì",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "al mattino presto martedì",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "incontriamoci in tarda mattinata martedì",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "in tarda mattinata martedì",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "incontriamoci nel primo pomeriggio martedì",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "nel primo pomeriggio martedì",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "incontriamoci nel tardo pomeriggio martedì",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "nel tardo pomeriggio martedì",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "incontriamoci di sera presto martedì",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "di sera presto martedì",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "incontriamoci in tarda serata martedì",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "in tarda serata martedì",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "incontriamoci di notte presto martedì",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "di notte presto martedì",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "incontriamoci in tarda nottata martedì",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "in tarda nottata martedì",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "incontriamoci a notte fonda martedì",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "a notte fonda martedì",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "incontriamoci la mattina presto di martedì",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "la mattina presto di martedì",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "incontriamoci nella tarda mattinata di martedì",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "nella tarda mattinata di martedì",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "incontriamoci nel primo pomeriggio di martedì",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "nel primo pomeriggio di martedì",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "incontriamoci nel tardo pomeriggio di martedì",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "nel tardo pomeriggio di martedì",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "incontriamoci nella sera presto di martedì",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "di sera presto di martedì",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "incontriamoci nella tarda serata di martedì",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "nella tarda serata di martedì",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "incontriamoci nella notte presto di martedì",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "nella notte presto di martedì",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "incontriamoci nella tarda nottata di martedì",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "nella tarda nottata di martedì",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "incontriamoci martedì il prima mattinata",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "martedì in prima mattinata",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "incontriamoci martedì in tarda mattinata",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "martedì in tarda mattinata",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "incontriamoci martedì nel primo pomeriggio",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "martedì nel primo pomeriggio",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "incontriamoci martedì nel tardo pomeriggio",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "martedì nel tardo pomeriggio",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "incontriamoci martedì di sera presto",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "martedì di sera presto",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "incontriamoci martedì in tarda serata",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "martedì in tarda serata",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "incontriamoci martedì di notte presto",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "martedì di notte presto",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "incontriamoci martedì in tarda nottata",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "martedì in tarda nottata",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "incontriamoci martedì a tarda notte",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "martedì a tarda notte",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Sarò fuori il resto della giornata",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "resto della giornata",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Sarò fuori il resto di questa giornata",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "resto di questa giornata",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Sarò fuori il resto della giornata corrente",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "resto della giornata corrente",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Sarò fuori il resto del giorno",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "il resto del giorno",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Cortana, per favore organizza uno schiky per una riunione d'affari con Wayne, venerdì tra le 1PM e le 4 PM. ",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": " venerdì tra le 1PM e le 4 PM",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Ci puoi calendarizzare domani tra le 8am e le 2pm?",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "domani tra le 8am e le 2pm",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Ci puoi calendarizzare il 9 Dic tra le 8am e le 2pm?",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "9 Dic tra le 8am e le 2pm",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Ciao Cortana- Per favore organizza un colloquio skype con Jennifer. Ho bisogno di un colloquio di 30 min questo venerdì, nel pomeriggio.",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "questo venerdì, nel pomeriggio",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Ciao Cortana- Per favore organizza un colloquio skype con Jennifer. Ho bisogno di un colloquio di 30 min nel pomeriggio, questo venerdì",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "nel pomeriggio, questo venerdì",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Cortana, per favore organizza uno skype per una riunione di lavoro con Wayne, venerdì pomeriggio tra le 1PM e le 4 PM.",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "venerdì pomeriggio tra le 1PM e le 4 PM",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Cortana, per favore organizza uno skype per una riunione di lavoro con Wayne, nel pomeriggio di venerdì tra le 1PM e le 4 PM.",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "nel pomeriggio di venerdì tra le 1PM e le 4 PM",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Ci puoi calendarizzare il 2015-09-23 dalle 1p.m. alle 4",
-  "NotSupported": "javascript",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "2015-09-23 dalle 1p.m. alle 4",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Ci puoi calendarizzare il 2015-09-23 dalle 1:30p.m. alle 4.",
-  "NotSupported": "javascript",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "2015-09-23 dalle 1:30p.m. alle 4",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò martedì AM",
-  "NotSupported": "javascript",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "martedì AM",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò martedì PM",
-  "NotSupported": "javascript",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "martedì PM",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Succederà 2 ore in futuro",
-  "NotSupported": "javascript",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "2 ore in futuro",
-      "Type": "datetimerange"
-    }
-  ]
-}
+[
+  {
+    "Input": "Sarò fuori dalle cinque alle sette di oggi",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "dalle cinque alle sette di oggi",
+        "Type": "datetimerange"
+      }
+    ]
+  },
+  {
+    "Input": "Sarò fuori dalle cinque alle sette di domani",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "dalle cinque alle sette di domani",
+        "Type": "datetimerange"
+      }
+    ]
+  },
+  {
+    "Input": "Sarò fuori dalle 5 alle 6 la prossima domenica",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "dalle 5 alle 6 la prossima domenica",
+        "Type": "datetimerange"
+      }
+    ]
+  },
+  {
+    "Input": "Sarò fuori dalle 5 alle 6pm la prossima domenica",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "dalle 5 alle 6pm la prossima domenica",
+        "Type": "datetimerange"
+      }
+    ]
+  },
+  {
+    "Input": "Sarò fuori dalle 4pm alle 5pm di oggi",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "dalle 4pm alle 5pm di oggi",
+        "Type": "datetimerange"
+      }
+    ]
+  },
+  {
+    "Input": "Sarò fuori dalle 4pm di oggi alle 5pm di domani",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "dalle 4pm di oggi alle 5pm di domani",
+        "Type": "datetimerange"
+      }
+    ]
+  },
+  {
+    "Input": "Sarò fuori dalle 4pm alle 5pm di domani",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "dalle 4pm alle 5pm di domani",
+        "Type": "datetimerange"
+      }
+    ]
+  },
+  {
+    "Input": "Sarò fuori dalle 4pm alle 5pm di 2017-6-6",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "dalle 4pm alle 5pm di 2017-6-6",
+        "Type": "datetimerange"
+      }
+    ]
+  },
+  {
+    "Input": "Sarò fuori dalle 4pm alle 5pm il 5 Maggio 2018",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "dalle 4pm alle 5pm il 5 Maggio 2018",
+        "Type": "datetimerange"
+      }
+    ]
+  },
+  {
+    "Input": "Sarò fuori dalle 4:00 alle 5pm il 5 Maggio 2018",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "dalle 4:00 alle 5pm il 5 Maggio 2018",
+        "Type": "datetimerange"
+      }
+    ]
+  },
+  {
+    "Input": "Sarò fuori dalle 4pm del 1 Gen 2016 alle 5pm di oggi",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "dalle 4pm del 1 Gen 2016 alle 5pm di oggi",
+        "Type": "datetimerange"
+      }
+    ]
+  },
+  {
+    "Input": "Sarò fuori dalle 2:00pm, 2016-2-21 alle 3:32, 04/23/2016",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "dalle 2:00pm, 2016-2-21 alle 3:32, 04/23/2016",
+        "Type": "datetimerange"
+      }
+    ]
+  },
+  {
+    "Input": "Sarò fuori da oggi alle 4 al prossimo mer alle 5",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "da oggi alle 4 al prossimo mer alle 5",
+        "Type": "datetimerange"
+      }
+    ]
+  },
+  {
+    "Input": "Sarò fuori tra le 4pm e le 5pm di oggi",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "tra le 4pm e le 5pm di oggi",
+        "Type": "datetimerange"
+      }
+    ]
+  },
+  {
+    "Input": "Sarò fuori tra le 4pm del 1 Gen 2016 e le 5pm di oggi",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "tra le 4pm del 1 Gen 2016 e le 5pm di oggi",
+        "Type": "datetimerange"
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò stanotte",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "stanotte",
+        "Type": "datetimerange"
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò questa notte",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "questa notte",
+        "Type": "datetimerange"
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò questa sera",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "questa sera",
+        "Type": "datetimerange"
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò questa mattina",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "questa mattina",
+        "Type": "datetimerange"
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò questo pomeriggio",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "questo pomeriggio",
+        "Type": "datetimerange"
+      }
+    ]
+  },
+  {
+    "Input": "Pornerò la prossima notte",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "la prossima notte",
+        "Type": "datetimerange"
+      }
+    ]
+  },
+  {
+    "Input": "Sono tornato la scorsa notte",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "la scorsa notte",
+        "Type": "datetimerange"
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò domani notte",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "domani notte",
+        "Type": "datetimerange"
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il prossimo lunedì pomeriggio",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "il prossimo lunedì pomeriggio",
+        "Type": "datetimerange"
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il 5 Maggio notte",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "5 Maggio notte",
+        "Type": "datetimerange"
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò negli ultimi 3 minuti",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "ultimi 3 minuti",
+        "Type": "datetimerange"
+      }
+    ]
+  },
+  {
+    "Input": "Sono tornato nei 3 minuti precedenti",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "3 minuti precedenti",
+        "Type": "datetimerange"
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò nelle prossime 5 ore",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "prossime 5 ore",
+        "Type": "datetimerange"
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò nell'ultimo minuto",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "nell'ultimo minuto",
+        "Type": "datetimerange"
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò la prossima ora",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "prossima ora",
+        "Type": "datetimerange"
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò gli ultimi minuti",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "ultimi minuti",
+        "Type": "datetimerange"
+      }
+    ]
+  },
+  {
+    "Input": "Sono tornato diversi minuti passati",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "diversi minuti passati",
+        "Type": "datetimerange"
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò martedì mattina",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "martedì mattina",
+        "Type": "datetimerange"
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò martedì pomeriggio",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "martedì pomeriggio",
+        "Type": "datetimerange"
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò martedì sera",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "martedì sera",
+        "Type": "datetimerange"
+      }
+    ]
+  },
+  {
+    "Input": "incontriamoci in prima mattinata martedì",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "al mattino presto martedì",
+        "Type": "datetimerange"
+      }
+    ]
+  },
+  {
+    "Input": "incontriamoci in tarda mattinata martedì",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "in tarda mattinata martedì",
+        "Type": "datetimerange"
+      }
+    ]
+  },
+  {
+    "Input": "incontriamoci nel primo pomeriggio martedì",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "nel primo pomeriggio martedì",
+        "Type": "datetimerange"
+      }
+    ]
+  },
+  {
+    "Input": "incontriamoci nel tardo pomeriggio martedì",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "nel tardo pomeriggio martedì",
+        "Type": "datetimerange"
+      }
+    ]
+  },
+  {
+    "Input": "incontriamoci di sera presto martedì",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "di sera presto martedì",
+        "Type": "datetimerange"
+      }
+    ]
+  },
+  {
+    "Input": "incontriamoci in tarda serata martedì",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "in tarda serata martedì",
+        "Type": "datetimerange"
+      }
+    ]
+  },
+  {
+    "Input": "incontriamoci di notte presto martedì",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "di notte presto martedì",
+        "Type": "datetimerange"
+      }
+    ]
+  },
+  {
+    "Input": "incontriamoci in tarda nottata martedì",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "in tarda nottata martedì",
+        "Type": "datetimerange"
+      }
+    ]
+  },
+  {
+    "Input": "incontriamoci a notte fonda martedì",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "a notte fonda martedì",
+        "Type": "datetimerange"
+      }
+    ]
+  },
+  {
+    "Input": "incontriamoci la mattina presto di martedì",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "la mattina presto di martedì",
+        "Type": "datetimerange"
+      }
+    ]
+  },
+  {
+    "Input": "incontriamoci nella tarda mattinata di martedì",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "nella tarda mattinata di martedì",
+        "Type": "datetimerange"
+      }
+    ]
+  },
+  {
+    "Input": "incontriamoci nel primo pomeriggio di martedì",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "nel primo pomeriggio di martedì",
+        "Type": "datetimerange"
+      }
+    ]
+  },
+  {
+    "Input": "incontriamoci nel tardo pomeriggio di martedì",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "nel tardo pomeriggio di martedì",
+        "Type": "datetimerange"
+      }
+    ]
+  },
+  {
+    "Input": "incontriamoci nella sera presto di martedì",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "di sera presto di martedì",
+        "Type": "datetimerange"
+      }
+    ]
+  },
+  {
+    "Input": "incontriamoci nella tarda serata di martedì",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "nella tarda serata di martedì",
+        "Type": "datetimerange"
+      }
+    ]
+  },
+  {
+    "Input": "incontriamoci nella notte presto di martedì",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "nella notte presto di martedì",
+        "Type": "datetimerange"
+      }
+    ]
+  },
+  {
+    "Input": "incontriamoci nella tarda nottata di martedì",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "nella tarda nottata di martedì",
+        "Type": "datetimerange"
+      }
+    ]
+  },
+  {
+    "Input": "incontriamoci martedì il prima mattinata",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "martedì in prima mattinata",
+        "Type": "datetimerange"
+      }
+    ]
+  },
+  {
+    "Input": "incontriamoci martedì in tarda mattinata",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "martedì in tarda mattinata",
+        "Type": "datetimerange"
+      }
+    ]
+  },
+  {
+    "Input": "incontriamoci martedì nel primo pomeriggio",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "martedì nel primo pomeriggio",
+        "Type": "datetimerange"
+      }
+    ]
+  },
+  {
+    "Input": "incontriamoci martedì nel tardo pomeriggio",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "martedì nel tardo pomeriggio",
+        "Type": "datetimerange"
+      }
+    ]
+  },
+  {
+    "Input": "incontriamoci martedì di sera presto",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "martedì di sera presto",
+        "Type": "datetimerange"
+      }
+    ]
+  },
+  {
+    "Input": "incontriamoci martedì in tarda serata",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "martedì in tarda serata",
+        "Type": "datetimerange"
+      }
+    ]
+  },
+  {
+    "Input": "incontriamoci martedì di notte presto",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "martedì di notte presto",
+        "Type": "datetimerange"
+      }
+    ]
+  },
+  {
+    "Input": "incontriamoci martedì in tarda nottata",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "martedì in tarda nottata",
+        "Type": "datetimerange"
+      }
+    ]
+  },
+  {
+    "Input": "incontriamoci martedì a tarda notte",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "martedì a tarda notte",
+        "Type": "datetimerange"
+      }
+    ]
+  },
+  {
+    "Input": "Sarò fuori il resto della giornata",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "resto della giornata",
+        "Type": "datetimerange"
+      }
+    ]
+  },
+  {
+    "Input": "Sarò fuori il resto di questa giornata",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "resto di questa giornata",
+        "Type": "datetimerange"
+      }
+    ]
+  },
+  {
+    "Input": "Sarò fuori il resto della giornata corrente",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "resto della giornata corrente",
+        "Type": "datetimerange"
+      }
+    ]
+  },
+  {
+    "Input": "Sarò fuori il resto del giorno",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "il resto del giorno",
+        "Type": "datetimerange"
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, per favore organizza uno schiky per una riunione d'affari con Wayne, venerdì tra le 1PM e le 4 PM. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": " venerdì tra le 1PM e le 4 PM",
+        "Type": "datetimerange"
+      }
+    ]
+  },
+  {
+    "Input": "Ci puoi calendarizzare domani tra le 8am e le 2pm?",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "domani tra le 8am e le 2pm",
+        "Type": "datetimerange"
+      }
+    ]
+  },
+  {
+    "Input": "Ci puoi calendarizzare il 9 Dic tra le 8am e le 2pm?",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "9 Dic tra le 8am e le 2pm",
+        "Type": "datetimerange"
+      }
+    ]
+  },
+  {
+    "Input": "Ciao Cortana- Per favore organizza un colloquio skype con Jennifer. Ho bisogno di un colloquio di 30 min questo venerdì, nel pomeriggio.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "questo venerdì, nel pomeriggio",
+        "Type": "datetimerange"
+      }
+    ]
+  },
+  {
+    "Input": "Ciao Cortana- Per favore organizza un colloquio skype con Jennifer. Ho bisogno di un colloquio di 30 min nel pomeriggio, questo venerdì",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "nel pomeriggio, questo venerdì",
+        "Type": "datetimerange"
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, per favore organizza uno skype per una riunione di lavoro con Wayne, venerdì pomeriggio tra le 1PM e le 4 PM.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "venerdì pomeriggio tra le 1PM e le 4 PM",
+        "Type": "datetimerange"
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, per favore organizza uno skype per una riunione di lavoro con Wayne, nel pomeriggio di venerdì tra le 1PM e le 4 PM.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "nel pomeriggio di venerdì tra le 1PM e le 4 PM",
+        "Type": "datetimerange"
+      }
+    ]
+  },
+  {
+    "Input": "Ci puoi calendarizzare il 2015-09-23 dalle 1p.m. alle 4",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "2015-09-23 dalle 1p.m. alle 4",
+        "Type": "datetimerange"
+      }
+    ]
+  },
+  {
+    "Input": "Ci puoi calendarizzare il 2015-09-23 dalle 1:30p.m. alle 4.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "2015-09-23 dalle 1:30p.m. alle 4",
+        "Type": "datetimerange"
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò martedì AM",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "martedì AM",
+        "Type": "datetimerange"
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò martedì PM",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "martedì PM",
+        "Type": "datetimerange"
+      }
+    ]
+  },
+  {
+    "Input": "Succederà 2 ore in futuro",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "2 ore in futuro",
+        "Type": "datetimerange"
+      }
+    ]
+  }
 ]

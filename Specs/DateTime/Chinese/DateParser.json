@@ -1043,7 +1043,7 @@
       "ReferenceDateTime": "2018-09-18T18:00:00"
     },
     "Results": [
-     {
+      {
         "Text": "週三",
         "Type": "date",
         "Value": {

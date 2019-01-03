@@ -1,4 +1,5 @@
-[{
+[
+  {
     "Input": "Als sie 5 Jahre alt war, lernte sie Fahrrad fahren.",
     "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
@@ -14,8 +15,7 @@
         "End": 18
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Diese Sage ist zehn Jahre alt.",
     "NotSupportedByDesign": "python",
@@ -32,8 +32,7 @@
         "End": 28
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Ich bin nur 29 Jahre alt!",
     "NotSupportedByDesign": "python",
@@ -50,8 +49,7 @@
         "End": 23
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Jetzt, mit einem Alter von 95 Jahren, hat man eine andere Perspektive.",
     "NotSupportedByDesign": "python",
@@ -68,8 +66,7 @@
         "End": 35
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Die große Mauer von China ist mehr als 500 Jahre alt und erstreckt sich über 5000 Meilen.",
     "NotSupportedByDesign": "python",
@@ -86,8 +83,7 @@
         "End": 51
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Sie ist 60 Jahre alt. Sie wurde am 8. May 1945 geboren.",
     "NotSupportedByDesign": "python",
@@ -104,8 +100,7 @@
         "End": 19
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "25% aller Fälle werden bis zu einem Alter von 3 Jahren nicht diagnostiziert.",
     "NotSupportedByDesign": "python",
@@ -122,8 +117,7 @@
         "End": 53
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Es ist passiert als das Baby nur zehn Monate alt war.",
     "NotSupportedByDesign": "python",
@@ -140,8 +134,7 @@
         "End": 47
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Das Angebot des Komitees ist 8 Monate her.",
     "NotSupportedByDesign": "python",
@@ -158,8 +151,7 @@
         "End": 36
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Es ist möglich, allerdings waren 2006 95% von ihnen jünger als drei Monate alt.",
     "NotSupportedByDesign": "python",
@@ -176,8 +168,7 @@
         "End": 77
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Wenn wir im Dezember weiter machen, wird es drei Wochen alt sein.",
     "NotSupportedByDesign": "python",
@@ -194,8 +185,7 @@
         "End": 58
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Im Alter von 6 Wochen kann man schon Weihnachten feiern.",
     "NotSupportedByDesign": "python",
@@ -212,8 +202,7 @@
         "End": 20
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Er ist ungefähr 40 - 50 Jahre alt.",
     "NotSupportedByDesign": "python",

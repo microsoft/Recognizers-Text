@@ -1,1523 +1,1478 @@
-[{
-  "Input": "alle 715ampm",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "715ampm",
-      "Type": "datetimeV2.time",
-      "Value": {
-        "values": [
-          {
-            "timex": "T07:15",
-            "type": "time",
-            "value": "07:15:00"
-          },
-          {
-            "timex": "T19:15",
-            "type": "time",
-            "value": "19:15:00"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "PRANZO ALLE 12.30 PM DI VEN",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "12:30 PM DI VEN",
-      "Type": "datetimeV2.datetime",
-      "Value": {
-        "values": [
-          {
-            "timex": "XXXX-WXX-5T12:30",
-            "type": "datetime",
-            "value": "2016-11-04 12:30:00"
-          },
-          {
-            "timex": "XXXX-WXX-5T12:30",
-            "type": "datetime",
-            "value": "2016-11-11 12:30:00"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Cosa devo fare la settimana del 30 Novembre?",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "la settimana del 30 Novembre",
-      "Type": "datetimeV2.daterange",
-      "Value": {
-        "values": [
-          {
-            "timex": "XXXX-11-30",
-            "type": "daterange",
-            "start": "2015-11-30",
-            "end": "2015-12-07"
-          },
-          {
-            "timex": "XXXX-11-30",
-            "type": "daterange",
-            "start": "2016-11-28",
-            "end": "2016-12-05"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Per quattro lunedì a mezzogiorno",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "lunedì a mezzogiorno",
-      "Type": "datetimeV2.datetime",
-      "Value": {
-        "values": [
-          {
-            "timex": "XXXX-WXX-1T12",
-            "type": "datetime",
-            "value": "2016-10-31 12:00:00"
-          },
-          {
-            "timex": "XXXX-WXX-1T12",
-            "type": "datetime",
-            "value": "2016-11-07 12:00:00"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Aggiungi 649 stanotte a mezzanotte",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "stanotte a mezzanotte",
-      "Type": "datetimeV2.datetime",
-      "Value": {
-        "values": [
-          {
-            "timex": "2016-11-07T12",
-            "type": "datetime",
-            "value": "2016-11-07 12:00:00"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "ho bisogno di prenotare per tre persone da pizza joint a seattle per stanotte verso le 8 pm",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "stanotte verso 8 pm",
-      "Type": "datetimeV2.datetime",
-      "Value": {
-        "values": [
-          {
-            "timex": "2016-11-07T20",
-            "type": "datetime",
-            "value": "2016-11-07 20:00:00"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Fissa un appuntamento per Pasqua",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "pasqua",
-      "Type": "datetimeV2.date",
-      "Value": {
-        "values": [
-          {
-            "timex": "",
-            "type": "date",
-            "value": "not resolved"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "dopodomani",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "dopodomani",
-      "Type": "datetimeV2.date",
-      "Value": {
-        "values": [
-          {
-            "timex": "2016-11-09",
-            "type": "date",
-            "value": "2016-11-09"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "dopodomani alle 8am",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "dopodomani alle 8am",
-      "Type": "datetimeV2.datetime",
-      "Value": {
-        "values": [
-          {
-            "timex": "2016-11-09T08",
-            "type": "datetime",
-            "value": "2016-11-09 08:00:00"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "di venerdì pomeriggio",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "venerdì pomeriggio",
-      "Type": "datetimeV2.datetimerange",
-      "Value": {
-        "values": [
-          {
-            "timex": "XXXX-WXX-5TAF",
-            "type": "datetimerange",
-            "start": "2016-11-04 12:00:00",
-            "end": "2016-11-04 16:00:00"
-          },
-          {
-            "timex": "XXXX-WXX-5TAF",
-            "type": "datetimerange",
-            "start": "2016-11-11 12:00:00",
-            "end": "2016-11-11 16:00:00"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "di venerdì per le 3 di pomeriggio",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "venerdì per le 3 di pomeriggio",
-      "Type": "datetimeV2.datetime",
-      "Value": {
-        "values": [
-          {
-            "timex": "XXXX-WXX-5T15",
-            "type": "datetime",
-            "value": "2016-11-04 15:00:00"
-          },
-          {
-            "timex": "XXXX-WXX-5T15",
-            "type": "datetime",
-            "value": "2016-11-11 15:00:00"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Fissa un appuntamento per domani mattina alle 9.",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "domani mattina alle 9",
-      "Type": "datetimeV2.datetime",
-      "Value": {
-        "values": [
-          {
-            "timex": "2016-11-08T09",
-            "type": "datetime",
-            "value": "2016-11-08 09:00:00"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "metti il matrimonio di cable nel mio calendario per mercoledì trentuno",
-  "Context": {
-    "ReferenceDateTime": "2017-09-15T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "mercoledì",
-      "Type": "datetimeV2.date",
-      "Value": {
-        "values": [
-          {
-            "timex": "XXXX-WXX-3",
-            "type": "date",
-            "value": "2017-09-13"
-          },
-          {
-            "timex": "XXXX-WXX-3",
-            "type": "date",
-            "value": "2017-09-20"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "metti il matrimonio di cable nel mio calendario per martedì trentuno",
-  "Context": {
-    "ReferenceDateTime": "2017-10-15T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "martedì trentuno",
-      "Type": "datetimeV2.date",
-      "Value": {
-        "values": [
-          {
-            "timex": "2017-10-31",
-            "type": "date",
-            "value": "2017-10-31"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "programma un appuntamento tra 8 minuti",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "tra 8 minuti",
-      "Type": "datetimeV2.datetime",
-      "Value": {
-        "values": [
-          {
-            "timex": "2016-11-07T00:08:00",
-            "type": "datetime",
-            "value": "2016-11-07 00:08:00"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "programma un appuntamento tra 10 ore",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "tra 10 ore",
-      "Type": "datetimeV2.datetime",
-      "Value": {
-        "values": [
-          {
-            "timex": "2016-11-07T10:00:00",
-            "type": "datetime",
-            "value": "2016-11-07 10:00:00"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "programma un appuntamento tra 10 giorni",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "tra 10 giorni",
-      "Type": "datetimeV2.date",
-      "Value": {
-        "values": [
-          {
-            "timex": "2016-11-17",
-            "type": "date",
-            "value": "2016-11-17"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "programma un appuntamento tra 3 settimane",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "tra 3 settimane",
-      "Type": "datetimeV2.daterange",
-      "Value": {
-        "values": [
-          {
-            "timex": "(2016-11-22,2016-11-29,P1W)",
-            "type": "daterange",
-            "start": "2016-11-22",
-            "end": "2016-11-29"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "programma un appuntamento tra 3 mesi",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "tra 3 mesi",
-      "Type": "datetimeV2.daterange",
-      "Value": {
-        "values": [
-          {
-            "timex": "(2017-01-08,2017-02-08,P1M)",
-            "type": "daterange",
-            "start": "2017-01-08",
-            "end": "2017-02-08"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Sarò fuori tra 3 anni",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "tra 3 anni",
-      "Type": "datetimeV2.daterange",
-      "Value": {
-        "values": [
-          {
-            "timex": "(2018-11-08,2019-11-08,P1Y)",
-            "type": "daterange",
-            "start": "2018-11-08",
-            "end": "2019-11-08"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "dopo le 8pm",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "dopo le 8pm",
-      "Type": "datetimeV2.timerange",
-      "Value": {
-        "values": [
-          {
-            "timex": "T20",
-            "Mod": "after",
-            "type": "timerange",
-            "start": "20:00:00"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "prima delle 8pm",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "prima delle 8pm",
-      "Type": "datetimeV2.timerange",
-      "Value": {
-        "values": [
-          {
-            "timex": "T20",
-            "Mod": "before",
-            "type": "timerange",
-            "end": "20:00:00"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "dalle 8pm",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "dalle 8pm",
-      "Type": "datetimeV2.timerange",
-      "Value": {
-        "values": [
-          {
-            "timex": "T20",
-            "Mod": "since",
-            "type": "timerange",
-            "start": "20:00:00"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "2016-2-30",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "2016-2-30",
-      "Type": "datetimeV2.date",
-      "Value": {
-        "values": [
-          {
-            "timex": "2016-02-30",
-            "type": "date",
-            "value": "not resolved"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "2015-1-32",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "2015-1",
-      "Type": "datetimeV2.daterange",
-      "Value": {
-        "values": [
-          {
-            "timex": "2015-01",
-            "type": "daterange",
-            "start": "2015-01-01",
-            "end": "2015-02-01"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "2017-13-12",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "2017",
-      "Type": "datetimeV2.daterange",
-      "Value": {
-        "values": [
-          {
-            "timex": "2017",
-            "type": "daterange",
-            "start": "2017-01-01",
-            "end": "2018-01-01"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "aggiungi yoga al calendario personale di lunedì e mercoledì alle 3pm",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "lunedì",
-      "Type": "datetimeV2.date",
-      "Value": {
-        "values": [
-          {
-            "timex": "XXXX-WXX-1",
-            "type": "date",
-            "value": "2016-10-31"
-          },
-          {
-            "timex": "XXXX-WXX-1",
-            "type": "date",
-            "value": "2016-11-07"
-          }
-        ]
-      }
+[
+  {
+    "Input": "alle 715ampm",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    {
-      "Text": "mercoledì alle 3pm",
-      "Type": "datetimeV2.datetime",
-      "Value": {
-        "values": [
-          {
-            "timex": "XXXX-WXX-3T15",
-            "type": "datetime",
-            "value": "2016-11-02 15:00:00"
-          },
-          {
-            "timex": "XXXX-WXX-3T15",
-            "type": "datetime",
-            "value": "2016-11-09 15:00:00"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "programma un appuntamento alle 8 am ogni settimana",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "8 am",
-      "Type": "datetimeV2.time",
-      "Value": {
-        "values": [
-          {
-            "timex": "T08",
-            "type": "time",
-            "value": "08:00:00"
-          }
-        ]
-      }
-    },
-    {
-      "Text": "ogni settimana",
-      "Type": "datetimeV2.set",
-      "Value": {
-        "values": [
-          {
-            "timex": "P1W",
-            "type": "set",
-            "value": "not resolved"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "programma il secondo sabato di ogni mese",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "secondo sabato",
-      "Type": "datetimeV2.date",
-      "Value": {
-        "values": [
-          {
-            "timex": "2016-11-12",
-            "type": "date",
-            "value": "2016-11-12"
-          }
-        ]
-      }
-    },
-    {
-      "Text": "ogni mese",
-      "Type": "datetimeV2.set",
-      "Value": {
-        "values": [
-          {
-            "timex": "P1M",
-            "type": "set",
-            "value": "not resolved"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Fissa un appuntamento per la domenica di Pasqua",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "Pasqua",
-      "Type": "datetimeV2.date",
-      "Value": {
-        "values": [
-          {
-            "timex": "",
-            "type": "date",
-            "value": "not resolved"
-          }
-        ]
-      }
-    },
-    {
-      "Text": "domenica",
-      "Type": "datetimeV2.date",
-      "Value": {
-        "values": [
-          {
-            "timex": "XXXX-WXX-7",
-            "type": "date",
-            "value": "2016-11-06"
-          },
-          {
-            "timex": "XXXX-WXX-7",
-            "type": "date",
-            "value": "2016-11-13"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "blocca 1 ora sul mio calendario domani mattina",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "1 ora",
-      "Type": "datetimeV2.duration",
-      "Value": {
-        "values": [
-          {
-            "timex": "PT1H",
-            "type": "duration",
-            "value": "3600"
-          }
-        ]
-      }
-    },
-    {
-      "Text": "domani mattina",
-      "Type": "datetimeV2.datetimerange",
-      "Value": {
-        "values": [
-          {
-            "timex": "2016-11-08TMO",
-            "type": "datetimerange",
-            "start": "2016-11-08 08:00:00",
-            "end": "2016-11-08 12:00:00"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Cambia l'appuntamento nel 22 Luglio a Bellavue al 22 Agosto",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "22 Luglio",
-      "Type": "datetimeV2.date",
-      "Value": {
-        "values": [
-          {
-            "timex": "XXXX-07-22",
-            "type": "date",
-            "value": "2016-07-22"
-          },
-          {
-            "timex": "XXXX-07-22",
-            "type": "date",
-            "value": "2017-07-22"
-          }
-        ]
-      }
-    },
-    {
-      "Text": "22 Agosto",
-      "Type": "datetimeV2.date",
-      "Value": {
-        "values": [
-          {
-            "timex": "XXXX-08-22",
-            "type": "date",
-            "value": "2016-08-22"
-          },
-          {
-            "timex": "XXXX-08-22",
-            "type": "date",
-            "value": "2017-08-22"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "di venerdì per 3 a Bellavue nel pomeriggio",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "venerdì",
-      "Type": "datetimeV2.date",
-      "Value": {
-        "values": [
-          {
-            "timex": "XXXX-WXX-5",
-            "type": "date",
-            "value": "2016-11-04"
-          },
-          {
-            "timex": "XXXX-WXX-5",
-            "type": "date",
-            "value": "2016-11-11"
-          }
-        ]
-      }
-    },
-    {
-      "Text": "nel pomeriggio",
-      "Type": "datetimeV2.timerange",
-      "Value": {
-        "values": [
-          {
-            "timex": "TAF",
-            "type": "timerange",
-            "start": "12:00:00",
-            "end": "16:00:00"
-          }
-        ]
-      }
-    }
-  ]
-},
-{
-  "Input": "ritira le medicine di jordan alla costco pharmacy sull' havana un po' prima del prossimo martedì alle 12:00",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "prima del prossimo martedì alle 12:00",
-      "Type": "datetimeV2.datetimerange",
-      "Value": {
-        "values": [
-		  {
-			"timex": "2016-11-15T12:00",
-			"Mod": "before",
-			"type": "datetimerange",
-			"end": "2016-11-15 12:00:00"
-		  },
-		  {
-			"timex": "2016-11-15T00:00",
-			"Mod": "before",
-			"type": "datetimerange",
-			"end": "2016-11-15 00:00:00"
-		  }
-		]
-      }
-    }
-  ]
-},
-{
-  "Input": "programma un appuntamento prima delle 2pm",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "prima delle 2pm",
-      "Type": "datetimeV2.timerange",
-      "Value": {
-        "values": [
-		  {
-			"timex": "T14",
-			"Mod": "before",
-			"type": "timerange",
-			"end": "14:00:00"
-		  }
-		]
-      }
-    }
-  ]
-}
-,
-
-{
-  "Input": "Cambierò l'appuntamento delle dieci am alle venti!",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "dieci am",
-      "Type": "datetimeV2.time",
-      "Value": {
-        "values": [
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
       {
-      "timex": "T10",
-      "type": "time",
-      "value": "10:00:00"
+        "Text": "715ampm",
+        "Type": "datetimeV2.time",
+        "Value": {
+          "values": [
+            {
+              "timex": "T07:15",
+              "type": "time",
+              "value": "07:15:00"
+            },
+            {
+              "timex": "T19:15",
+              "type": "time",
+              "value": "19:15:00"
+            }
+          ]
+        }
       }
     ]
-      }
+  },
+  {
+    "Input": "PRANZO ALLE 12.30 PM DI VEN",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    {
-      "Text": "venti",
-      "Type": "datetimeV2.time",
-      "Value": {
-        "values": [
-          {
-          "timex": "T20",
-          "type": "time",
-          "value": "20:00:00"
-          }
-        ]
-      }
-    }
-  ]
-},
-{
-  "Input": "Cambierò l'appuntamento delle dieci am alle 20!",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "dieci am",
-      "Type": "datetimeV2.time",
-      "Value": {
-        "values": [
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
       {
-      "timex": "T10",
-      "type": "time",
-      "value": "10:00:00"
+        "Text": "12:30 PM DI VEN",
+        "Type": "datetimeV2.datetime",
+        "Value": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-5T12:30",
+              "type": "datetime",
+              "value": "2016-11-04 12:30:00"
+            },
+            {
+              "timex": "XXXX-WXX-5T12:30",
+              "type": "datetime",
+              "value": "2016-11-11 12:30:00"
+            }
+          ]
+        }
       }
     ]
-      }
+  },
+  {
+    "Input": "Cosa devo fare la settimana del 30 Novembre?",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    {
-      "Text": "20",
-      "Type": "datetimeV2.time",
-      "Value": {
-        "values": [
-          {
-          "timex": "T20",
-          "type": "time",
-          "value": "20:00:00"
-          }
-        ]
-      }
-    }
-  ]
-},
-{
-  "Input": "Cambierò l'appuntamento delle dieci am alle nove!",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "dieci am",
-      "Type": "datetimeV2.time",
-      "Value": {
-        "values": [
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
       {
-      "timex": "T10",
-      "type": "time",
-      "value": "10:00:00"
+        "Text": "la settimana del 30 Novembre",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "XXXX-11-30",
+              "type": "daterange",
+              "start": "2015-11-30",
+              "end": "2015-12-07"
+            },
+            {
+              "timex": "XXXX-11-30",
+              "type": "daterange",
+              "start": "2016-11-28",
+              "end": "2016-12-05"
+            }
+          ]
+        }
       }
     ]
-      }
+  },
+  {
+    "Input": "Per quattro lunedì a mezzogiorno",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    {
-      "Text": "nove",
-      "Type": "datetimeV2.time",
-      "Value": {
-        "values": [
-          {
-          "timex": "T09",
-          "type": "time",
-          "value": "09:00:00"
-          },
-          {
-          "timex": "T21",
-          "type": "time",
-          "value": "21:00:00"
-          }
-        ]
-      }
-    }
-  ]
-},
-{
-  "Input": "Cambierò l'appuntamento delle dieci am alle 26!",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "dieci am",
-      "Type": "datetimeV2.time",
-      "Value": {
-        "values": [
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
       {
-      "timex": "T10",
-      "type": "time",
-      "value": "10:00:00"
+        "Text": "lunedì a mezzogiorno",
+        "Type": "datetimeV2.datetime",
+        "Value": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-1T12",
+              "type": "datetime",
+              "value": "2016-10-31 12:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-1T12",
+              "type": "datetime",
+              "value": "2016-11-07 12:00:00"
+            }
+          ]
+        }
       }
     ]
-      }
-    }
-  ]
-},
-{
-  "Input": "Cambierò l'appuntamento delle dieci am alle ventisei.",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "dieci am",
-      "Type": "datetimeV2.time",
-      "Value": {
-        "values": [
+  {
+    "Input": "Aggiungi 649 stanotte a mezzanotte",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
       {
-      "timex": "T10",
-      "type": "time",
-      "value": "10:00:00"
+        "Text": "stanotte a mezzanotte",
+        "Type": "datetimeV2.datetime",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-07T12",
+              "type": "datetime",
+              "value": "2016-11-07 12:00:00"
+            }
+          ]
+        }
       }
     ]
-      }
-    }
-  ]
-},
-{
-  "Input": "Tornerò tra 5 minuti",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "tra 5 minuti",
-      "Type": "datetimeV2.datetime",
-      "Value": {
-        "values": [
-          {
-            "timex": "2016-11-07T00:05:00",
-            "type": "datetime",
-            "value": "2016-11-07 00:05:00"
-          }
-        ]
+  {
+    "Input": "ho bisogno di prenotare per tre persone da pizza joint a seattle per stanotte verso le 8 pm",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "stanotte verso 8 pm",
+        "Type": "datetimeV2.datetime",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-07T20",
+              "type": "datetime",
+              "value": "2016-11-07 20:00:00"
+            }
+          ]
+        }
       }
-    }
-  ]
-},
-{
-  "Input": "tra 5 minuti",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "tra 5 minuti",
-      "Type": "datetimeV2.datetime",
-      "Value": {
-        "values": [
-          {
-            "timex": "2016-11-07T00:05:00",
-            "type": "datetime",
-            "value": "2016-11-07 00:05:00"
-          }
-        ]
+  {
+    "Input": "Fissa un appuntamento per Pasqua",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "pasqua",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "",
+              "type": "date",
+              "value": "not resolved"
+            }
+          ]
+        }
       }
-    }
-  ]
-},
-{
-  "Input": "Programma durante la mattinata",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
+    ]
   },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "mattinata",
-      "Type": "timerange",
-      "Value": {
-        "values": [
-          {
-            "timex": "TMO",
-            "type": "timerange",
-            "start": "08:00:00",
-            "end": "12:00:00"
-          }
-        ]
+  {
+    "Input": "dopodomani",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "dopodomani",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-09",
+              "type": "date",
+              "value": "2016-11-09"
+            }
+          ]
+        }
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Partirò entro domani",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
+    ]
   },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "entro domani",
-      "Type": "daterange",
-      "Value": {
-        "values": [
-          {
-            "timex": "2016-11-08",
-            "Mod": "before",
-            "type": "daterange",
-            "end": "2016-11-08"
-          }
-        ]
+  {
+    "Input": "dopodomani alle 8am",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "dopodomani alle 8am",
+        "Type": "datetimeV2.datetime",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-09T08",
+              "type": "datetime",
+              "value": "2016-11-09 08:00:00"
+            }
+          ]
+        }
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Partirò prima di domani",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
+    ]
   },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "prima di domani",
-      "Type": "daterange",
-      "Value": {
-        "values": [
-          {
-            "timex": "2016-11-08",
-            "Mod": "before",
-            "type": "daterange",
-            "end": "2016-11-08"
-          }
-        ]
+  {
+    "Input": "di venerdì pomeriggio",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "venerdì pomeriggio",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-5TAF",
+              "type": "datetimerange",
+              "start": "2016-11-04 12:00:00",
+              "end": "2016-11-04 16:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-5TAF",
+              "type": "datetimerange",
+              "start": "2016-11-11 12:00:00",
+              "end": "2016-11-11 16:00:00"
+            }
+          ]
+        }
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Partitò non più tardi di domani",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
+    ]
   },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "non più tardi di domani",
-      "Type": "daterange",
-      "Value": {
-        "values": [
-          {
-            "timex": "2016-11-08",
-            "Mod": "before",
-            "type": "daterange",
-            "end": "2016-11-08"
-          }
-        ]
+  {
+    "Input": "di venerdì per le 3 di pomeriggio",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "venerdì per le 3 di pomeriggio",
+        "Type": "datetimeV2.datetime",
+        "Value": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-5T15",
+              "type": "datetime",
+              "value": "2016-11-04 15:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-5T15",
+              "type": "datetime",
+              "value": "2016-11-11 15:00:00"
+            }
+          ]
+        }
       }
-    }
-  ]
-}
-,
-{
-  "Input": "dammi tutti i luoghi aperti con data successiva o uguale al 1/1/2016",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
+    ]
   },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "successiva o uguale al 1/1/2016",
-      "Type": "daterange",
-      "Value": {
-        "values": [
-          {
-            "timex": "2016-01-01",
-            "Mod": "since",
-            "type": "daterange",
-            "start": "2016-01-01"
-          }
-        ]
+  {
+    "Input": "Fissa un appuntamento per domani mattina alle 9.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "domani mattina alle 9",
+        "Type": "datetimeV2.datetime",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-08T09",
+              "type": "datetime",
+              "value": "2016-11-08 09:00:00"
+            }
+          ]
+        }
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Partirò dopo il 1/1/2016",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
+    ]
   },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "dopo il 1/1/2016",
-      "Type": "daterange",
-      "Value": {
-        "values": [
-          {
-            "timex": "2016-01-01",
-            "Mod": "after",
-            "type": "daterange",
-            "start": "2016-01-01"
-          }
-        ]
+  {
+    "Input": "metti il matrimonio di cable nel mio calendario per mercoledì trentuno",
+    "Context": {
+      "ReferenceDateTime": "2017-09-15T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "mercoledì",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-3",
+              "type": "date",
+              "value": "2017-09-13"
+            },
+            {
+              "timex": "XXXX-WXX-3",
+              "type": "date",
+              "value": "2017-09-20"
+            }
+          ]
+        }
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Partirò prima del 1/1/2016",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
+    ]
   },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "prima del 1/1/2016",
-      "Type": "daterange",
-      "Value": {
-        "values": [
-          {
-            "timex": "2016-01-01",
-            "Mod": "after",
-            "type": "daterange",
-            "start": "2016-01-01"
-          }
-        ]
+  {
+    "Input": "metti il matrimonio di cable nel mio calendario per martedì trentuno",
+    "Context": {
+      "ReferenceDateTime": "2017-10-15T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "martedì trentuno",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2017-10-31",
+              "type": "date",
+              "value": "2017-10-31"
+            }
+          ]
+        }
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Chiuderà a partire dal 1/1/2016",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
+    ]
   },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "a partire dal 1/1/2016",
-      "Type": "daterange",
-      "Value": {
-        "values": [
-          {
-            "timex": "2016-01-01",
-            "Mod": "since",
-            "type": "daterange",
-            "start": "2016-01-01"
-          }
-        ]
+  {
+    "Input": "programma un appuntamento tra 8 minuti",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "tra 8 minuti",
+        "Type": "datetimeV2.datetime",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-07T00:08:00",
+              "type": "datetime",
+              "value": "2016-11-07 00:08:00"
+            }
+          ]
+        }
       }
-    }
-  ]
-}
-,
-{
-  "Input": "termina con il 1/1/2016",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
+    ]
   },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "termina con il 1/1/2016",
-      "Type": "daterange",
-      "Value": {
-        "values": [
-          {
-            "timex": "2016-01-01",
-            "Mod": "before",
-            "type": "daterange",
-            "end": "2016-01-01"
-          }
-        ]
+  {
+    "Input": "programma un appuntamento tra 10 ore",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "tra 10 ore",
+        "Type": "datetimeV2.datetime",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-07T10:00:00",
+              "type": "datetime",
+              "value": "2016-11-07 10:00:00"
+            }
+          ]
+        }
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Partirò prima del 2020",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
+    ]
   },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "prima del 2020",
-      "Type": "daterange",
-      "Value": {
-        "values": [
-          {
-            "timex": "2020",
-            "Mod": "before",
-            "type": "daterange",
-            "end": "2020-01-01"
-          }
-        ]
+  {
+    "Input": "programma un appuntamento tra 10 giorni",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "tra 10 giorni",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-17",
+              "type": "date",
+              "value": "2016-11-17"
+            }
+          ]
+        }
       }
-    }
-  ]
-}
-,
-{
-  "Input": "L'intervallo è fino al 2012",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
+    ]
   },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "fino al 2012",
-      "Type": "daterange",
-      "Value": {
-        "values": [
-          {
-            "timex": "2012",
-            "Mod": "before",
-            "type": "daterange",
-            "end": "2012-01-01"
-          }
-        ]
+  {
+    "Input": "programma un appuntamento tra 3 settimane",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "tra 3 settimane",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "(2016-11-22,2016-11-29,P1W)",
+              "type": "daterange",
+              "start": "2016-11-22",
+              "end": "2016-11-29"
+            }
+          ]
+        }
       }
-    }
-  ]
-}
-,
-{
-  "Input": "L'intervallo è 2012 o dopo",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
+    ]
   },
-  "NotSupported": "javascript",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "2012 o dopo",
-      "Type": "daterange",
-      "Value": {
-        "values": [
-          {
-            "timex": "2012",
-            "Mod": "since",
-            "type": "daterange",
-            "start": "2012-01-01"
-          }
-        ]
+  {
+    "Input": "programma un appuntamento tra 3 mesi",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "tra 3 mesi",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "(2017-01-08,2017-02-08,P1M)",
+              "type": "daterange",
+              "start": "2017-01-08",
+              "end": "2017-02-08"
+            }
+          ]
+        }
       }
-    }
-  ]
-}
+    ]
+  },
+  {
+    "Input": "Sarò fuori tra 3 anni",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "tra 3 anni",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "(2018-11-08,2019-11-08,P1Y)",
+              "type": "daterange",
+              "start": "2018-11-08",
+              "end": "2019-11-08"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "dopo le 8pm",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "dopo le 8pm",
+        "Type": "datetimeV2.timerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "T20",
+              "Mod": "after",
+              "type": "timerange",
+              "start": "20:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "prima delle 8pm",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "prima delle 8pm",
+        "Type": "datetimeV2.timerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "T20",
+              "Mod": "before",
+              "type": "timerange",
+              "end": "20:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "dalle 8pm",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "dalle 8pm",
+        "Type": "datetimeV2.timerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "T20",
+              "Mod": "since",
+              "type": "timerange",
+              "start": "20:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "2016-2-30",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "2016-2-30",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-02-30",
+              "type": "date",
+              "value": "not resolved"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "2015-1-32",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "2015-1",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2015-01",
+              "type": "daterange",
+              "start": "2015-01-01",
+              "end": "2015-02-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "2017-13-12",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "2017",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2017",
+              "type": "daterange",
+              "start": "2017-01-01",
+              "end": "2018-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "aggiungi yoga al calendario personale di lunedì e mercoledì alle 3pm",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "lunedì",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-1",
+              "type": "date",
+              "value": "2016-10-31"
+            },
+            {
+              "timex": "XXXX-WXX-1",
+              "type": "date",
+              "value": "2016-11-07"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "mercoledì alle 3pm",
+        "Type": "datetimeV2.datetime",
+        "Value": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-3T15",
+              "type": "datetime",
+              "value": "2016-11-02 15:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-3T15",
+              "type": "datetime",
+              "value": "2016-11-09 15:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "programma un appuntamento alle 8 am ogni settimana",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "8 am",
+        "Type": "datetimeV2.time",
+        "Value": {
+          "values": [
+            {
+              "timex": "T08",
+              "type": "time",
+              "value": "08:00:00"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "ogni settimana",
+        "Type": "datetimeV2.set",
+        "Value": {
+          "values": [
+            {
+              "timex": "P1W",
+              "type": "set",
+              "value": "not resolved"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "programma il secondo sabato di ogni mese",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "secondo sabato",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-12",
+              "type": "date",
+              "value": "2016-11-12"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "ogni mese",
+        "Type": "datetimeV2.set",
+        "Value": {
+          "values": [
+            {
+              "timex": "P1M",
+              "type": "set",
+              "value": "not resolved"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Fissa un appuntamento per la domenica di Pasqua",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "Pasqua",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "",
+              "type": "date",
+              "value": "not resolved"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "domenica",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-7",
+              "type": "date",
+              "value": "2016-11-06"
+            },
+            {
+              "timex": "XXXX-WXX-7",
+              "type": "date",
+              "value": "2016-11-13"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "blocca 1 ora sul mio calendario domani mattina",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "1 ora",
+        "Type": "datetimeV2.duration",
+        "Value": {
+          "values": [
+            {
+              "timex": "PT1H",
+              "type": "duration",
+              "value": "3600"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "domani mattina",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-08TMO",
+              "type": "datetimerange",
+              "start": "2016-11-08 08:00:00",
+              "end": "2016-11-08 12:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Cambia l'appuntamento nel 22 Luglio a Bellavue al 22 Agosto",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "22 Luglio",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "XXXX-07-22",
+              "type": "date",
+              "value": "2016-07-22"
+            },
+            {
+              "timex": "XXXX-07-22",
+              "type": "date",
+              "value": "2017-07-22"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "22 Agosto",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "XXXX-08-22",
+              "type": "date",
+              "value": "2016-08-22"
+            },
+            {
+              "timex": "XXXX-08-22",
+              "type": "date",
+              "value": "2017-08-22"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "di venerdì per 3 a Bellavue nel pomeriggio",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "venerdì",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-5",
+              "type": "date",
+              "value": "2016-11-04"
+            },
+            {
+              "timex": "XXXX-WXX-5",
+              "type": "date",
+              "value": "2016-11-11"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "nel pomeriggio",
+        "Type": "datetimeV2.timerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "TAF",
+              "type": "timerange",
+              "start": "12:00:00",
+              "end": "16:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "ritira le medicine di jordan alla costco pharmacy sull' havana un po' prima del prossimo martedì alle 12:00",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "prima del prossimo martedì alle 12:00",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-15T12:00",
+              "Mod": "before",
+              "type": "datetimerange",
+              "end": "2016-11-15 12:00:00"
+            },
+            {
+              "timex": "2016-11-15T00:00",
+              "Mod": "before",
+              "type": "datetimerange",
+              "end": "2016-11-15 00:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "programma un appuntamento prima delle 2pm",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "prima delle 2pm",
+        "Type": "datetimeV2.timerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "T14",
+              "Mod": "before",
+              "type": "timerange",
+              "end": "14:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Cambierò l'appuntamento delle dieci am alle venti!",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "dieci am",
+        "Type": "datetimeV2.time",
+        "Value": {
+          "values": [
+            {
+              "timex": "T10",
+              "type": "time",
+              "value": "10:00:00"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "venti",
+        "Type": "datetimeV2.time",
+        "Value": {
+          "values": [
+            {
+              "timex": "T20",
+              "type": "time",
+              "value": "20:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Cambierò l'appuntamento delle dieci am alle 20!",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "dieci am",
+        "Type": "datetimeV2.time",
+        "Value": {
+          "values": [
+            {
+              "timex": "T10",
+              "type": "time",
+              "value": "10:00:00"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "20",
+        "Type": "datetimeV2.time",
+        "Value": {
+          "values": [
+            {
+              "timex": "T20",
+              "type": "time",
+              "value": "20:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Cambierò l'appuntamento delle dieci am alle nove!",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "dieci am",
+        "Type": "datetimeV2.time",
+        "Value": {
+          "values": [
+            {
+              "timex": "T10",
+              "type": "time",
+              "value": "10:00:00"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "nove",
+        "Type": "datetimeV2.time",
+        "Value": {
+          "values": [
+            {
+              "timex": "T09",
+              "type": "time",
+              "value": "09:00:00"
+            },
+            {
+              "timex": "T21",
+              "type": "time",
+              "value": "21:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Cambierò l'appuntamento delle dieci am alle 26!",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "dieci am",
+        "Type": "datetimeV2.time",
+        "Value": {
+          "values": [
+            {
+              "timex": "T10",
+              "type": "time",
+              "value": "10:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Cambierò l'appuntamento delle dieci am alle ventisei.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "dieci am",
+        "Type": "datetimeV2.time",
+        "Value": {
+          "values": [
+            {
+              "timex": "T10",
+              "type": "time",
+              "value": "10:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò tra 5 minuti",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "tra 5 minuti",
+        "Type": "datetimeV2.datetime",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-07T00:05:00",
+              "type": "datetime",
+              "value": "2016-11-07 00:05:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "tra 5 minuti",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "tra 5 minuti",
+        "Type": "datetimeV2.datetime",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-07T00:05:00",
+              "type": "datetime",
+              "value": "2016-11-07 00:05:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Programma durante la mattinata",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "mattinata",
+        "Type": "timerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "TMO",
+              "type": "timerange",
+              "start": "08:00:00",
+              "end": "12:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Partirò entro domani",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "entro domani",
+        "Type": "daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-08",
+              "Mod": "before",
+              "type": "daterange",
+              "end": "2016-11-08"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Partirò prima di domani",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "prima di domani",
+        "Type": "daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-08",
+              "Mod": "before",
+              "type": "daterange",
+              "end": "2016-11-08"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Partitò non più tardi di domani",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "non più tardi di domani",
+        "Type": "daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-08",
+              "Mod": "before",
+              "type": "daterange",
+              "end": "2016-11-08"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "dammi tutti i luoghi aperti con data successiva o uguale al 1/1/2016",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "successiva o uguale al 1/1/2016",
+        "Type": "daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-01-01",
+              "Mod": "since",
+              "type": "daterange",
+              "start": "2016-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Partirò dopo il 1/1/2016",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "dopo il 1/1/2016",
+        "Type": "daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-01-01",
+              "Mod": "after",
+              "type": "daterange",
+              "start": "2016-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Partirò prima del 1/1/2016",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "prima del 1/1/2016",
+        "Type": "daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-01-01",
+              "Mod": "after",
+              "type": "daterange",
+              "start": "2016-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Chiuderà a partire dal 1/1/2016",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "a partire dal 1/1/2016",
+        "Type": "daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-01-01",
+              "Mod": "since",
+              "type": "daterange",
+              "start": "2016-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "termina con il 1/1/2016",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "termina con il 1/1/2016",
+        "Type": "daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-01-01",
+              "Mod": "before",
+              "type": "daterange",
+              "end": "2016-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Partirò prima del 2020",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "prima del 2020",
+        "Type": "daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2020",
+              "Mod": "before",
+              "type": "daterange",
+              "end": "2020-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "L'intervallo è fino al 2012",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "fino al 2012",
+        "Type": "daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2012",
+              "Mod": "before",
+              "type": "daterange",
+              "end": "2012-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "L'intervallo è 2012 o dopo",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "2012 o dopo",
+        "Type": "daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2012",
+              "Mod": "since",
+              "type": "daterange",
+              "start": "2012-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  }
 ]

@@ -2382,7 +2382,7 @@
             }
           ]
         }
-      } 
+      }
     ]
   },
   {
@@ -4291,7 +4291,7 @@
             }
           ]
         }
-      } 
+      }
     ]
   },
   {
@@ -6193,7 +6193,7 @@
         "Start": 0,
         "End": 16,
         "TypeName": "datetimeV2.daterange",
-        "Resolution":{
+        "Resolution": {
           "values": [
             {
               "timex": "(XXXX-10-01,XXXX-11-07,P37D)",
@@ -6217,7 +6217,7 @@
         "Start": 0,
         "End": 18,
         "TypeName": "datetimeV2.daterange",
-        "Resolution":{
+        "Resolution": {
           "values": [
             {
               "timex": "(XXXX-10-25,XXXX-01-25,P92D)",
@@ -7337,7 +7337,7 @@
             {
               "timex": "2018-11-21T23:59:59",
               "type": "datetime",
-              "value": "2018-11-21 23:59:59"  
+              "value": "2018-11-21 23:59:59"
             }
           ]
         }
@@ -7360,7 +7360,7 @@
             {
               "timex": "2018-11-21T23:59:59",
               "type": "datetime",
-              "value": "2018-11-21 23:59:59"  
+              "value": "2018-11-21 23:59:59"
             }
           ]
         }
@@ -7408,7 +7408,7 @@
               "Mod": "end",
               "type": "daterange",
               "start": "2018-07-01",
-              "end": "2019-01-01"  
+              "end": "2019-01-01"
             }
           ]
         }
@@ -7484,7 +7484,7 @@
               "Mod": "end",
               "type": "daterange",
               "start": "2018-07-01",
-              "end": "2019-01-01"  
+              "end": "2019-01-01"
             }
           ]
         }
@@ -7509,7 +7509,7 @@
               "Mod": "end",
               "type": "daterange",
               "start": "2018-11-16",
-              "end": "2018-12-01"  
+              "end": "2018-12-01"
             }
           ]
         }
@@ -7534,7 +7534,7 @@
               "Mod": "end",
               "type": "daterange",
               "start": "2018-11-29",
-              "end": "2018-12-03"  
+              "end": "2018-12-03"
             }
           ]
         }
@@ -7886,7 +7886,7 @@
     "Context": {
       "ReferenceDateTime": "2018-11-30T12:00:00"
     },
-    "Results":[
+    "Results": [
       {
         "Text": "later this week",
         "Start": 23,
@@ -7910,7 +7910,7 @@
     "Context": {
       "ReferenceDateTime": "2018-11-30T12:00:00"
     },
-    "Results":[
+    "Results": [
       {
         "Text": "3 p . m .",
         "Start": 22,
