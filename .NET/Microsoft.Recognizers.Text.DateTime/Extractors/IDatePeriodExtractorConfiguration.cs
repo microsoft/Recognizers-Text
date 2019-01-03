@@ -65,12 +65,12 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         IParser NumberParser { get; }
 
+        string[] DurationDateRestrictions { get; }
+
         bool GetFromTokenIndex(string text, out int index);
 
         bool HasConnectorToken(string text);
 
         bool GetBetweenTokenIndex(string text, out int index);
-
-        string[] DurationDateRestrictions { get; }
     }
 }
