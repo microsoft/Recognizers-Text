@@ -9,8 +9,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
     {
         // part 1: smallest component
         // --------------------------------
-
-        public static readonly Regex DescRegex = 
+        public static readonly Regex DescRegex =
             new Regex(DateTimeDefinitions.DescRegex, RegexOptions.Singleline);
 
         public static readonly Regex HourNumRegex =
@@ -22,8 +21,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         // part 2: middle level component
         // --------------------------------------
         // handle "... heures (o'clock, en punto)"
-
-        public static readonly Regex OclockRegex = 
+        public static readonly Regex OclockRegex =
             new Regex(DateTimeDefinitions.OclockRegex, RegexOptions.Singleline);
 
         // handle "... après midi (afternoon, tarde)"
@@ -31,7 +29,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             new Regex(DateTimeDefinitions.PmRegex, RegexOptions.Singleline);
 
         // handle "... dans la matinee (in the morning)"
-        public static readonly Regex AmRegex = 
+        public static readonly Regex AmRegex =
             new Regex(DateTimeDefinitions.AmRegex, RegexOptions.Singleline);
 
         // handle "half past ..." "a quarter to ..."
@@ -43,7 +41,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             new Regex(DateTimeDefinitions.WrittenTimeRegex, RegexOptions.Singleline);
 
         // TODO - will have change below
-        // handle "six heures et demie" (six thirty), "six heures et vingt-et-un" (six twenty one) 
+        // handle "six heures et demie" (six thirty), "six heures et vingt-et-un" (six twenty one)
         public static readonly Regex TimePrefix =
             new Regex(DateTimeDefinitions.TimePrefix, RegexOptions.Singleline);
 
@@ -55,8 +53,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         // handle special time such as 'at midnight', 'midnight', 'midday'
         // midnight - le minuit, la zero heure
-        // midday - midi 
-
+        // midday - midi
         public static readonly Regex MidnightRegex =
             new Regex(DateTimeDefinitions.MidnightRegex, RegexOptions.Singleline);
 
@@ -78,10 +75,10 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public static readonly Regex AtRegex =
             new Regex(DateTimeDefinitions.AtRegex, RegexOptions.Singleline);
 
-        public static readonly Regex IshRegex = 
+        public static readonly Regex IshRegex =
             new Regex(DateTimeDefinitions.IshRegex, RegexOptions.Singleline);
 
-        public static readonly Regex TimeUnitRegex = 
+        public static readonly Regex TimeUnitRegex =
             new Regex(DateTimeDefinitions.TimeUnitRegex, RegexOptions.Singleline);
 
         public static readonly Regex ConnectNumRegex =
@@ -121,8 +118,15 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             new Regex(DateTimeDefinitions.TimeRegex10, RegexOptions.Singleline),
 
             // 340pm
-            ConnectNumRegex
+            ConnectNumRegex,
         };
+
+        public FrenchTimeExtractorConfiguration(IOptionsConfiguration config)
+            : base(config)
+        {
+            DurationExtractor = new BaseDurationExtractor(new FrenchDurationExtractorConfiguration(this));
+            TimeZoneExtractor = new BaseTimeZoneExtractor(new FrenchTimeZoneExtractorConfiguration(this));
+        }
 
         Regex ITimeExtractorConfiguration.IshRegex => IshRegex;
 
@@ -135,11 +139,5 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public IDateTimeExtractor DurationExtractor { get; }
 
         public IDateTimeExtractor TimeZoneExtractor { get; }
-
-        public FrenchTimeExtractorConfiguration(IOptionsConfiguration config) : base(config)
-        {
-            DurationExtractor = new BaseDurationExtractor(new FrenchDurationExtractorConfiguration(this));
-            TimeZoneExtractor = new BaseTimeZoneExtractor(new FrenchTimeZoneExtractorConfiguration(this));
-        }
     }
 }
