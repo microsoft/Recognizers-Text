@@ -112,6 +112,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                     i = j + 1;
                     continue;
                 }
+
                 i = j;
             }
 
@@ -173,6 +174,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                     }
                 }
             }
+
             return ret;
         }
     }
