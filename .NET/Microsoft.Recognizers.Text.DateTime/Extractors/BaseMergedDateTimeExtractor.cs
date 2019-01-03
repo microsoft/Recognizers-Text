@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
-using DateObject = System.DateTime;
-
 using Microsoft.Recognizers.Text.Matcher;
+using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
@@ -30,8 +29,10 @@ namespace Microsoft.Recognizers.Text.DateTime
             List<MatchResult<string>> superfluousWordMatches = null;
             if ((this.config.Options & DateTimeOptions.EnablePreview) != 0)
             {
-                text = MatchingUtil.PreProcessTextRemoveSuperfluousWords(text, this.config.SuperfluousWordMatcher, 
-                                                                         out superfluousWordMatches);
+                text = MatchingUtil.PreProcessTextRemoveSuperfluousWords(
+                    text,
+                    this.config.SuperfluousWordMatcher,
+                    out superfluousWordMatches);
             }
 
             // The order is important, since there can be conflicts in merging
@@ -81,6 +82,42 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             return ret;
+        }
+
+        public bool TryMergeModifierToken(ExtractResult er, Regex tokenRegex, string text)
+        {
+            var beforeStr = text.Substring(0, er.Start ?? 0).ToLowerInvariant();
+
+            if (HasTokenIndex(beforeStr.TrimEnd(), tokenRegex, out var tokenIndex))
+            {
+                var modLength = beforeStr.Length - tokenIndex;
+
+                er.Length += modLength;
+                er.Start -= modLength;
+                er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
+
+                return true;
+            }
+
+            return false;
+        }
+
+        public bool HasTokenIndex(string text, Regex regex, out int index)
+        {
+            index = -1;
+
+            // Support cases has two or more specific tokens
+            // For example, "show me sales after 2010 and before 2018 or before 2000"
+            // When extract "before 2000", we need the second "before" which will be matched in the second Regex match
+            var match = Regex.Match(text, regex.ToString(), RegexOptions.RightToLeft | RegexOptions.Singleline);
+
+            if (match.Success && string.IsNullOrEmpty(text.Substring(match.Index + match.Length)))
+            {
+                index = match.Index;
+                return true;
+            }
+
+            return false;
         }
 
         private List<ExtractResult> CheckCalendarModeFilters(List<ExtractResult> ers, string text)
@@ -286,43 +323,6 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             return ers;
-        }
-
-        public bool TryMergeModifierToken(ExtractResult er, Regex tokenRegex, string text)
-        {
-            var beforeStr = text.Substring(0, er.Start ?? 0).ToLowerInvariant();
-
-            if (HasTokenIndex(beforeStr.TrimEnd(), tokenRegex, out var tokenIndex))
-            {
-                var modLength = beforeStr.Length - tokenIndex;
-
-                er.Length += modLength;
-                er.Start -= modLength;
-                er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
-
-                return true;
-            }
-
-            return false;
-        }
-
-        public bool HasTokenIndex(string text, Regex regex, out int index)
-        {
-            index = -1;
-
-            // Support cases has two or more specific tokens
-            // For example, "show me sales after 2010 and before 2018 or before 2000"
-            // When extract "before 2000", we need the second "before" which will be matched in the second Regex match
-
-            var match = Regex.Match(text, regex.ToString(), RegexOptions.RightToLeft | RegexOptions.Singleline);
-
-            if (match.Success && string.IsNullOrEmpty(text.Substring(match.Index + match.Length)))
-            {
-                index = match.Index;
-                return true;
-            }
-
-            return false;
         }
     }
 }
