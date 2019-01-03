@@ -9,7 +9,7 @@ namespace Microsoft.Recognizers.Text.DateTime
     {
         public AbstractYearExtractor(IDateExtractorConfiguration config)
         {
-            this.config = config;
+            this.Config = config;
         }
 
         protected IDateExtractorConfiguration Config { get; private set; }
@@ -47,7 +47,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         Length = match.Groups["firsttwoyearnum"].Length,
                     };
 
-                    var firstTwoYearNum = Convert.ToInt32((double)(this.config.NumberParser.Parse(er).Value ?? 0));
+                    var firstTwoYearNum = Convert.ToInt32((double)(this.Config.NumberParser.Parse(er).Value ?? 0));
 
                     var lastTwoYearNum = 0;
                     var lastTwoYearNumStr = match.Groups["lasttwoyearnum"].Value;
@@ -57,7 +57,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         er.Start = match.Groups["lasttwoyearnum"].Index;
                         er.Length = match.Groups["lasttwoyearnum"].Length;
 
-                        lastTwoYearNum = Convert.ToInt32((double)(this.config.NumberParser.Parse(er).Value ?? 0));
+                        lastTwoYearNum = Convert.ToInt32((double)(this.Config.NumberParser.Parse(er).Value ?? 0));
                     }
 
                     // Exclude pure number like "nineteen", "twenty four"
