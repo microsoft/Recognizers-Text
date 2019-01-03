@@ -8,8 +8,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 {
     public abstract class BaseDateParserConfiguration : BaseOptionsConfiguration, ICommonDateTimeParserConfiguration
     {
-
-        protected BaseDateParserConfiguration(IOptionsConfiguration config) : base(config)
+        protected BaseDateParserConfiguration(IOptionsConfiguration config)
+            : base(config)
         {
         }
 
@@ -76,6 +76,5 @@ namespace Microsoft.Recognizers.Text.DateTime
         public virtual IImmutableDictionary<string, int> SpecialDecadeCases { get; protected set; }
 
         public virtual IDateTimeUtilityConfiguration UtilityConfiguration { get; protected set; }
-
     }
 }
