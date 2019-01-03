@@ -10,7 +10,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 {
     public class BaseDateParser : IDateTimeParser
     {
-        public static readonly string ParserName = Constants.SYS_DATETIME_DATE; //"Date";
+        public static readonly string ParserName = Constants.SYS_DATETIME_DATE; // "Date";
 
         public static readonly DateObject NoDate = DateObject.MinValue.SafeCreateFromValue(0, 0, 0);
 
@@ -65,12 +65,12 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     innerResult.FutureResolution = new Dictionary<string, string>
                     {
-                        {TimeTypeConstants.DATE, DateTimeFormatUtil.FormatDate((DateObject) innerResult.FutureValue)}
+                        { TimeTypeConstants.DATE, DateTimeFormatUtil.FormatDate((DateObject)innerResult.FutureValue) },
                     };
 
                     innerResult.PastResolution = new Dictionary<string, string>
                     {
-                        {TimeTypeConstants.DATE, DateTimeFormatUtil.FormatDate((DateObject) innerResult.PastValue)}
+                        { TimeTypeConstants.DATE, DateTimeFormatUtil.FormatDate((DateObject)innerResult.PastValue) },
                     };
 
                     value = innerResult;
@@ -85,11 +85,40 @@ namespace Microsoft.Recognizers.Text.DateTime
                 Type = er.Type,
                 Data = er.Data,
                 Value = value,
-                TimexStr = value == null ? "" : ((DateTimeResolutionResult)value).Timex,
-                ResolutionStr = ""
+                TimexStr = value == null ? string.Empty : ((DateTimeResolutionResult)value).Timex,
+                ResolutionStr = string.Empty,
             };
 
             return ret;
+        }
+
+        public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)
+        {
+            return candidateResults;
+        }
+
+        private static DateObject ComputeDate(int cardinal, int weekday, int month, int year)
+        {
+            var firstDay = DateObject.MinValue.SafeCreateFromValue(year, month, 1);
+            var firstWeekday = firstDay.This((DayOfWeek)weekday);
+            int dayOfWeekOfFirstDay = (int)firstDay.DayOfWeek;
+
+            if (weekday == 0)
+            {
+                weekday = 7;
+            }
+
+            if (dayOfWeekOfFirstDay == 0)
+            {
+                dayOfWeekOfFirstDay = 7;
+            }
+
+            if (weekday < dayOfWeekOfFirstDay)
+            {
+                firstWeekday = firstDay.Next((DayOfWeek)weekday);
+            }
+
+            return firstWeekday.AddDays(7 * (cardinal - 1));
         }
 
         // parse basic patterns in DateRegexList
@@ -113,6 +142,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     return ret;
                 }
             }
+
             return new DateTimeResolutionResult();
         }
 
@@ -197,7 +227,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 return ret;
             }
-            
+
             // handle "two sundays from now"
             exactMatch = this.config.RelativeWeekDayRegex.MatchExact(trimmedText, trim: true);
 
@@ -322,7 +352,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     Text = dayStr,
                     Start = match.Groups["DayOfMonth"].Index,
-                    Length = match.Groups["DayOfMonth"].Length
+                    Length = match.Groups["DayOfMonth"].Length,
                 };
 
                 day = Convert.ToInt32((double)(this.config.NumberParser.Parse(er).Value ?? 0));
@@ -352,21 +382,22 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (match.Success)
             {
                 int month = referenceDate.Month, year = referenceDate.Year;
+
                 // create a extract result which content ordinal string of text
-                ExtractResult erTmp = new ExtractResult
+                ExtractResult ertmp = new ExtractResult
                 {
                     Text = match.Groups["DayOfMonth"].Value,
                     Start = match.Groups["DayOfMonth"].Index,
-                    Length = match.Groups["DayOfMonth"].Length
+                    Length = match.Groups["DayOfMonth"].Length,
                 };
 
                 // parse the day in text into number
-                var day = Convert.ToInt32((double)(this.config.NumberParser.Parse(erTmp).Value ?? 0));
-                
+                var day = Convert.ToInt32((double)(this.config.NumberParser.Parse(ertmp).Value ?? 0));
+
                 // the validity of the phrase is guaranteed in the Date Extractor
                 ret.Timex = DateTimeFormatUtil.LuisDate(year, month, day);
-                ret.FutureValue = new DateObject(year, month, day); ;
-                ret.PastValue = new DateObject(year, month, day); ;
+                ret.FutureValue = new DateObject(year, month, day);
+                ret.PastValue = new DateObject(year, month, day);
                 ret.Success = true;
 
                 return ret;
@@ -413,7 +444,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     {
                         ambiguous = false;
                     }
-                } 
+                }
             }
 
             // handling relatived month
@@ -438,12 +469,13 @@ namespace Microsoft.Recognizers.Text.DateTime
                 if (match.Success)
                 {
                     month = referenceDate.Month;
+
                     // resolve the date of wanted week day
                     var wantedWeekDay = this.config.DayOfWeek[match.Groups["weekday"].Value];
                     var firstDate = DateObject.MinValue.SafeCreateFromValue(referenceDate.Year, referenceDate.Month, 1);
                     var firstWeekDay = (int)firstDate.DayOfWeek;
                     var firstWantedWeekDay = firstDate.AddDays(wantedWeekDay > firstWeekDay ? wantedWeekDay - firstWeekDay : wantedWeekDay - firstWeekDay + 7);
-                    var answerDay = firstWantedWeekDay.Day + (num - 1) * 7;
+                    var answerDay = firstWantedWeekDay.Day + ((num - 1) * 7);
                     day = answerDay;
                     ambiguous = false;
                 }
@@ -526,13 +558,18 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        // Handle cases like "two days ago" 
+        // Handle cases like "two days ago"
         private DateTimeResolutionResult ParseDurationWithAgoAndLater(string text, DateObject referenceDate)
         {
-
-            return AgoLaterUtil.ParseDurationWithAgoAndLater(text, referenceDate,
-                config.DurationExtractor, config.DurationParser, config.UnitMap, config.UnitRegex,
-                config.UtilityConfiguration, GetSwiftDay);
+            return AgoLaterUtil.ParseDurationWithAgoAndLater(
+                text,
+                referenceDate,
+                config.DurationExtractor,
+                config.DurationParser,
+                config.UnitMap,
+                config.UnitRegex,
+                config.UtilityConfiguration,
+                GetSwiftDay);
         }
 
         // parse a regex match which includes 'day', 'month' and 'year' (optional) group
@@ -664,35 +701,6 @@ namespace Microsoft.Recognizers.Text.DateTime
             ret.Success = true;
 
             return ret;
-        }
-
-        private static DateObject ComputeDate(int cardinal, int weekday, int month, int year)
-        {
-            var firstDay = DateObject.MinValue.SafeCreateFromValue(year, month, 1);
-            var firstWeekday = firstDay.This((DayOfWeek)weekday);
-            int dayOfWeekOfFirstDay = (int)firstDay.DayOfWeek;
-
-            if (weekday == 0)
-            {
-                weekday = 7;
-            }
-
-            if (dayOfWeekOfFirstDay == 0)
-            {
-                dayOfWeekOfFirstDay = 7;
-            }
-
-            if (weekday < dayOfWeekOfFirstDay)
-            {
-                firstWeekday = firstDay.Next((DayOfWeek)weekday);
-            }
-
-            return firstWeekday.AddDays(7 * (cardinal - 1));
-        }
-
-        public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)
-        {
-            return candidateResults;
         }
 
         private int GetSwiftDay(string text)
