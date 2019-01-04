@@ -1,28 +1,11 @@
-﻿using System.Text.RegularExpressions;
-using System.Collections.Generic;
-
+﻿using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Italian;
 
 namespace Microsoft.Recognizers.Text.DateTime.Italian
 {
     public class ItalianDateTimeAltExtractorConfiguration : BaseOptionsConfiguration, IDateTimeAltExtractorConfiguration
     {
-        public ItalianDateTimeAltExtractorConfiguration(IOptionsConfiguration config) : base(config)
-        {
-            DateExtractor = new BaseDateExtractor(new ItalianDateExtractorConfiguration(this));
-            DatePeriodExtractor = new BaseDatePeriodExtractor(new ItalianDatePeriodExtractorConfiguration(this));
-        }
-
-        public IDateExtractor DateExtractor { get; }
-
-        public IDateTimeExtractor DatePeriodExtractor { get; }
-
-        private static readonly Regex OrRegex =
-            new Regex(DateTimeDefinitions.OrRegex, RegexOptions.Singleline);
-
-        private static readonly Regex DayRegex =
-            new Regex(DateTimeDefinitions.DayRegex, RegexOptions.Singleline);
-
         public static readonly Regex ThisPrefixRegex =
             new Regex(DateTimeDefinitions.ThisPrefixRegex, RegexOptions.Singleline);
 
@@ -37,13 +20,30 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public static readonly Regex[] RelativePrefixList =
         {
-            ThisPrefixRegex
+            ThisPrefixRegex,
         };
 
         public static readonly Regex[] AmPmRegexList =
         {
             AmRegex, PmRegex,
         };
+
+        private static readonly Regex OrRegex =
+            new Regex(DateTimeDefinitions.OrRegex, RegexOptions.Singleline);
+
+        private static readonly Regex DayRegex =
+            new Regex(DateTimeDefinitions.DayRegex, RegexOptions.Singleline);
+
+        public ItalianDateTimeAltExtractorConfiguration(IOptionsConfiguration config)
+            : base(config)
+        {
+            DateExtractor = new BaseDateExtractor(new ItalianDateExtractorConfiguration(this));
+            DatePeriodExtractor = new BaseDatePeriodExtractor(new ItalianDatePeriodExtractorConfiguration(this));
+        }
+
+        public IDateExtractor DateExtractor { get; }
+
+        public IDateTimeExtractor DatePeriodExtractor { get; }
 
         IEnumerable<Regex> IDateTimeAltExtractorConfiguration.RelativePrefixList => RelativePrefixList;
 
