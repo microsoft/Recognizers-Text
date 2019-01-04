@@ -6,37 +6,37 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish.Utilities
 {
     public class SpanishDatetimeUtilityConfiguration : IDateTimeUtilityConfiguration
     {
-        public static readonly Regex AgoRegex = 
+        public static readonly Regex AgoRegex =
             new Regex(DateTimeDefinitions.AgoRegex, RegexOptions.Singleline);
 
-        public static readonly Regex LaterRegex = 
+        public static readonly Regex LaterRegex =
             new Regex(DateTimeDefinitions.LaterRegex, RegexOptions.Singleline);
 
-        public static readonly Regex InConnectorRegex = 
+        public static readonly Regex InConnectorRegex =
             new Regex(DateTimeDefinitions.InConnectorRegex, RegexOptions.Singleline);
 
-        public static readonly Regex WithinNextPrefixRegex = 
+        public static readonly Regex WithinNextPrefixRegex =
             new Regex(DateTimeDefinitions.WithinNextPrefixRegex, RegexOptions.Singleline);
 
-        public static readonly Regex AmDescRegex = 
+        public static readonly Regex AmDescRegex =
             new Regex(DateTimeDefinitions.AmDescRegex, RegexOptions.Singleline);
 
-        public static readonly Regex PmDescRegex = 
+        public static readonly Regex PmDescRegex =
             new Regex(DateTimeDefinitions.PmDescRegex, RegexOptions.Singleline);
 
-        public static readonly Regex AmPmDescRegex = 
+        public static readonly Regex AmPmDescRegex =
             new Regex(DateTimeDefinitions.AmPmDescRegex, RegexOptions.Singleline);
 
-        public static readonly Regex RangeUnitRegex = 
+        public static readonly Regex RangeUnitRegex =
             new Regex(DateTimeDefinitions.RangeUnitRegex, RegexOptions.Singleline);
 
-        public static readonly Regex TimeUnitRegex = 
+        public static readonly Regex TimeUnitRegex =
             new Regex(DateTimeDefinitions.TimeUnitRegex, RegexOptions.Singleline);
 
-        public static readonly Regex DateUnitRegex = 
+        public static readonly Regex DateUnitRegex =
             new Regex(DateTimeDefinitions.DateUnitRegex, RegexOptions.Singleline);
 
-        public static readonly Regex CommonDatePrefixRegex = 
+        public static readonly Regex CommonDatePrefixRegex =
             new Regex(DateTimeDefinitions.CommonDatePrefixRegex, RegexOptions.Singleline);
 
         Regex IDateTimeUtilityConfiguration.LaterRegex => LaterRegex;
@@ -60,6 +60,5 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish.Utilities
         Regex IDateTimeUtilityConfiguration.DateUnitRegex => DateUnitRegex;
 
         Regex IDateTimeUtilityConfiguration.CommonDatePrefixRegex => CommonDatePrefixRegex;
-
     }
 }
