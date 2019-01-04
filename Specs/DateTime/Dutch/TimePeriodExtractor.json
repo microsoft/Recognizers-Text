@@ -13,12 +13,12 @@
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
-    "Input": "Ik ben weg 17:00 tot 18:00",
+    "Input": "Ik ben weg van 17:00 tot 18:00",
     "Results": [
       {
         "Text": "van 17:00 tot 18:00",
         "Type": "timerange",
-        "Start": -1,
+        "Start": 11,
         "Length": 19
       }
     ],
@@ -26,12 +26,12 @@
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
-    "Input": "Ik ben weg 17:00 tot 18:00 uur",
+    "Input": "Ik ben weg van 17:00 tot 18:00 uur",
     "Results": [
       {
         "Text": "van 17:00 tot 18:00 uur",
         "Type": "timerange",
-        "Start": -1,
+        "Start": 11,
         "Length": 23
       }
     ],
@@ -39,12 +39,12 @@
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
-    "Input": "Ik ben weg 5 tot 6 ʼs middags",
+    "Input": "Ik ben weg van 5 tot 6 ʼs middags",
     "Results": [
       {
         "Text": "van 5 tot 6 ʼs middags",
         "Type": "timerange",
-        "Start": -1,
+        "Start": 11,
         "Length": 22
       }
     ],
@@ -52,12 +52,12 @@
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
-    "Input": "Ik ben weg 5 tot zeven in de ochtend",
+    "Input": "Ik ben weg van 5 tot zeven in de ochtend",
     "Results": [
       {
         "Text": "van 5 tot zeven in de ochtend",
         "Type": "timerange",
-        "Start": -1,
+        "Start": 11,
         "Length": 29
       }
     ],
@@ -208,12 +208,12 @@
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
-    "Input": "Ik ben weg 4pm – 5pm",
+    "Input": "Ik ben weg van 4pm - 5pm",
     "Results": [
       {
         "Text": "4pm - 5pm",
         "Type": "timerange",
-        "Start": -1,
+        "Start": 15,
         "Length": 9
       }
     ],
@@ -286,13 +286,13 @@
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
-    "Input": "Ik ben weg van 4pm tot 5 pm",
+    "Input": "Ik ben weg van 4 pm tot 5 pm",
     "Results": [
       {
-        "Text": "van 4pm tot 5pm",
+        "Text": "van 4 pm tot 5 pm",
         "Type": "timerange",
-        "Start": -1,
-        "Length": 15
+        "Start": 11,
+        "Length": 17
       }
     ],
     "NotSupported": "dotNet",
@@ -312,13 +312,13 @@
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
-    "Input": "Ik ben weg van 16:00 tot 5 pm",
+    "Input": "Ik ben weg van 16:00 tot 17:00",
     "Results": [
       {
-        "Text": "van 16:00 tot 5pm",
+        "Text": "van 16:00 tot 17:00",
         "Type": "timerange",
-        "Start": -1,
-        "Length": 17
+        "Start": 11,
+        "Length": 19
       }
     ],
     "NotSupported": "dotNet",
@@ -811,10 +811,10 @@
     "Input": "maak afspraak van 1 tot 3:30",
     "Results": [
       {
-        "Text": "van 1 tot t3:30",
+        "Text": "van 1 tot 3:30",
         "Type": "timerange",
-        "Start": -1,
-        "Length": 15
+        "Start": 14,
+        "Length": 14
       }
     ],
     "NotSupported": "dotNet",

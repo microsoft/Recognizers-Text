@@ -281,7 +281,7 @@
     },
     "Results": [
       {
-        "Text": "two weken",
+        "Text": "twee weken",
         "Type": "duration",
         "Value": {
           "Timex": "P2W",
@@ -292,8 +292,8 @@
             "duration": "1209600"
           }
         },
-        "Start": -1,
-        "Length": 9
+        "Start": 7,
+        "Length": 10
       }
     ],
     "NotSupported": "dotNet",

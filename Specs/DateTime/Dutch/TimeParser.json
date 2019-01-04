@@ -1235,7 +1235,7 @@
     "Input": "Ik ben om 12 uur in de nacht terug",
     "Results": [
       {
-        "Text": "12 uur in the nacht",
+        "Text": "12 uur in de nacht",
         "Type": "time",
         "Value": {
           "Timex": "T00",
@@ -1246,8 +1246,8 @@
             "time": "00:00:00"
           }
         },
-        "Start": -1,
-        "Length": 19
+        "Start": 10,
+        "Length": 18
       }
     ],
     "NotSupported": "dotNet",
@@ -1455,7 +1455,7 @@
     "Input": "Ik ga om half zes ’s avonds terug",
     "Results": [
       {
-        "Text": "half zes ‘s avonds",
+        "Text": "half zes ’s avonds",
         "Type": "time",
         "Value": {
           "Timex": "T17:30",
@@ -1466,7 +1466,7 @@
             "time": "17:30:00"
           }
         },
-        "Start": -1,
+        "Start": 9,
         "Length": 18
       }
     ],

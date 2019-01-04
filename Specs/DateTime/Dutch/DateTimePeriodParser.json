@@ -6,7 +6,7 @@
     },
     "Results": [
       {
-        "Text": "vijf tot zeven vandaag",
+        "Text": "vandaag weg tussen vijf en zeven",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2016-11-07T05,2016-11-07T07,PT2H)",
@@ -19,15 +19,15 @@
             "endDateTime": "2016-11-07 07:00:00"
           }
         },
-        "Start": -1,
-        "Length": 22
+        "Start": 7,
+        "Length": 32
       }
     ],
     "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
-    "Input": "ik ben weg tussen 5 en 6 op 22/4/2016",
+    "Input": "ik ben weg van 5 tot 6 op 22/4/2016",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -46,7 +46,7 @@
             "endDateTime": "2016-04-22 06:00:00"
           }
         },
-        "Start": -1,
+        "Start": 11,
         "Length": 24
       }
     ],
@@ -81,7 +81,7 @@
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
-    "Input": "Ik ben weg van 5 to 6 ‘s middags op 22 april",
+    "Input": "Ik ben weg van 5 tot 6 ‘s middags op 22 april",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -100,7 +100,7 @@
             "endDateTime": "2016-04-22 18:00:00"
           }
         },
-        "Start": -1,
+        "Start": 11,
         "Length": 34
       }
     ],
@@ -114,7 +114,7 @@
     },
     "Results": [
       {
-        "Text": "op 1 januari van 5 tot 6",
+        "Text": "op 1 januari weg van 5 tot 6",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(XXXX-01-01T05,XXXX-01-01T06,PT1H)",
@@ -127,8 +127,8 @@
             "endDateTime": "2016-01-01 06:00:00"
           }
         },
-        "Start": -1,
-        "Length": 24
+        "Start": 7,
+        "Length": 28
       }
     ],
     "NotSupported": "dotNet",
@@ -141,7 +141,7 @@
     },
     "Results": [
       {
-        "Text": "morgen tussen 3 en 4 uur ‘s middags",
+        "Text": "tussen 3 en 4 uur ’s middags",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2016-11-08T15,2016-11-08T16,PT1H)",
@@ -154,8 +154,8 @@
             "endDateTime": "2016-11-08 16:00:00"
           }
         },
-        "Start": -1,
-        "Length": 35
+        "Start": 18,
+        "Length": 28
       }
     ],
     "NotSupported": "dotNet",
@@ -168,7 +168,7 @@
     },
     "Results": [
       {
-        "Text": "Morgen van 3 tot 4 uur",
+        "Text": "tussen 3 en 4 uur ‘s middags",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2016-11-08T03:00,2016-11-08T04:00,PT1H)",
@@ -181,8 +181,8 @@
             "endDateTime": "2016-11-08 04:00:00"
           }
         },
-        "Start": -1,
-        "Length": 22
+        "Start": 18,
+        "Length": 28
       }
     ],
     "NotSupported": "dotNet",
@@ -196,7 +196,7 @@
     "NotSupported": "dotNet",
     "Results": [
       {
-        "Text": "morgen van half acht tot 4 uur ‘s middags",
+        "Text": "van half acht tot 4 uur ‘s middags",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2016-11-08T07:30,2016-11-08T16,PT8H30M)",
@@ -209,8 +209,8 @@
             "endDateTime": "2016-11-08 16:00:00"
           }
         },
-        "Start": -1,
-        "Length": 41
+        "Start": 18,
+        "Length": 34
       }
     ],
     "NotSupportedByDesign": "javascript,python,java"
@@ -222,7 +222,7 @@
     },
     "Results": [
       {
-        "Text": "Vandaag van 4 tot morgen 5 uur",
+        "Text": "vanaf 4 uur vandaag tot morgen 5 uur ’s middags",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2016-11-07T16,2016-11-08T17,PT25H)",
@@ -235,8 +235,8 @@
             "endDateTime": "2016-11-08 17:00:00"
           }
         },
-        "Start": -1,
-        "Length": 30
+        "Start": 11,
+        "Length": 47
       }
     ],
     "NotSupported": "dotNet",
@@ -249,7 +249,7 @@
     },
     "Results": [
       {
-        "Text": "van 2016-2-21 14:00 tot 2016-04-23 15:32",
+        "Text": "van 2016-2-21 vanaf 14:00 tot 2016-04-23 15:32",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2016-02-21T14:00,2016-04-23T03:32,PT1478H)",
@@ -262,8 +262,8 @@
             "endDateTime": "2016-04-23 03:32:00"
           }
         },
-        "Start": -1,
-        "Length": 40
+        "Start": 11,
+        "Length": 46
       }
     ],
     "NotSupported": "dotNet",
@@ -276,7 +276,7 @@
     },
     "Results": [
       {
-        "Text": "Vanmiddag tussen 4 en 5",
+        "Text": "tussen 4 en 5 uur in de middag",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2016-11-07T16,2016-11-07T17,PT1H)",
@@ -289,8 +289,8 @@
             "endDateTime": "2016-11-07 17:00:00"
           }
         },
-        "Start": -1,
-        "Length": 23
+        "Start": 15,
+        "Length": 30
       }
     ],
     "NotSupported": "dotNet",
@@ -303,7 +303,7 @@
     },
     "Results": [
       {
-        "Text": "Tussen 4 uur van 1 jan 2016 en 5 uur vandaag",
+        "Text": "tussen 1 januari 2016 vanaf 4 uur tot vandaag 5 uur in de middag",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2016-01-01T16,2016-11-07T17,PT7465H)",
@@ -316,8 +316,8 @@
             "endDateTime": "2016-11-07 17:00:00"
           }
         },
-        "Start": -1,
-        "Length": 44
+        "Start": 24,
+        "Length": 64
       }
     ],
     "NotSupported": "dotNet",
@@ -411,7 +411,7 @@
     },
     "Results": [
       {
-        "Text": "deze avond",
+        "Text": "vanavond",
         "Type": "datetimerange",
         "Value": {
           "Timex": "2016-11-07TEV",
@@ -424,8 +424,8 @@
             "endDateTime": "2016-11-07 20:00:00"
           }
         },
-        "Start": -1,
-        "Length": 10
+        "Start": 6,
+        "Length": 8
       }
     ],
     "NotSupported": "dotNet",
@@ -621,13 +621,13 @@
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
-    "Input": "Ik ga drie minute terug ",
+    "Input": "Ik ga drie minuten terug",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "Results": [
       {
-        "Text": "laatste 3 minuten",
+        "Text": "drie minuten terug",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2016-11-07T16:09:00,2016-11-07T16:12:00,PT3M)",
@@ -640,8 +640,8 @@
             "endDateTime": "2016-11-07 16:12:00"
           }
         },
-        "Start": -1,
-        "Length": 17
+        "Start": 6,
+        "Length": 18
       }
     ],
     "NotSupported": "dotNet",
@@ -681,7 +681,7 @@
     },
     "Results": [
       {
-        "Text": "vorige 3 minuten",
+        "Text": "3 minuten terug",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2016-11-07T16:09:00,2016-11-07T16:12:00,PT3M)",
@@ -694,8 +694,8 @@
             "endDateTime": "2016-11-07 16:12:00"
           }
         },
-        "Start": -1,
-        "Length": 16
+        "Start": 6,
+        "Length": 15
       }
     ],
     "NotSupported": "dotNet",
@@ -708,7 +708,7 @@
     },
     "Results": [
       {
-        "Text": "vorige 3 minuten",
+        "Text": "drie minuten terug",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2016-11-07T16:09:00,2016-11-07T16:12:00,PT3M)",
@@ -721,8 +721,8 @@
             "endDateTime": "2016-11-07 16:12:00"
           }
         },
-        "Start": -1,
-        "Length": 16
+        "Start": 6,
+        "Length": 18
       }
     ],
     "NotSupported": "dotNet",
@@ -1188,7 +1188,7 @@
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
-    "Input": "Laten we dinsdagvond laat afspreken",
+    "Input": "Laten we dinsdagavond laat afspreken",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -1207,7 +1207,7 @@
             "endDateTime": "2016-11-01 23:59:59"
           }
         },
-        "Start": -1,
+        "Start": 9,
         "Length": 17
       }
     ],
@@ -1437,7 +1437,7 @@
     },
     "Results": [
       {
-        "Text": "dinsdagavond",
+        "Text": "dinsdag in de avond",
         "Type": "datetimerange",
         "Value": {
           "Timex": "XXXX-WXX-2TNI",
@@ -1450,8 +1450,8 @@
             "endDateTime": "2016-11-01 22:00:00"
           }
         },
-        "Start": -1,
-        "Length": 12
+        "Start": 10,
+        "Length": 19
       }
     ],
     "NotSupported": "dotNet",
@@ -1788,7 +1788,7 @@
     },
     "Results": [
       {
-        "Text": "9 december tussen 8 en 2",
+        "Text": "9 december tussen 8 uur ‘s ochtends en 2 uur ‘s middags",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(XXXX-12-09T08,XXXX-12-09T14,PT6H)",
@@ -1801,8 +1801,8 @@
             "endDateTime": "2016-12-09 14:00:00"
           }
         },
-        "Start": -1,
-        "Length": 24
+        "Start": 14,
+        "Length": 55
       }
     ],
     "NotSupported": "dotNet",
@@ -2349,7 +2349,7 @@
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
-    "Input": "ik ben maandag tussen 8 en  terug",
+    "Input": "ik ben maandag tussen 8 en 9 terug",
     "Context": {
       "ReferenceDateTime": "2018-04-19T08:12:00"
     },
@@ -2369,7 +2369,7 @@
             "endDateTime": "2018-04-16 09:00:00"
           }
         },
-        "Start": -1,
+        "Start": 7,
         "Length": 21
       }
     ],
