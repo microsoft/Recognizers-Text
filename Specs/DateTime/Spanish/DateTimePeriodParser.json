@@ -791,7 +791,7 @@
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "5-6 de 22 de abril",
+        "Text": "de 5-6 de 22 de abril",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(XXXX-04-22T05,XXXX-04-22T06,PT1H)",
@@ -804,8 +804,8 @@
             "endDateTime": "2016-04-22 06:00:00"
           }
         },
-        "Start": 17,
-        "Length": 18
+        "Start": 14,
+        "Length": 21
       }
     ]
   },
@@ -953,7 +953,7 @@
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "from 4pm today to 5pm tomorrow",
+        "Text": "desde hoy a las 4 pm hasta mañana a las 5 pm",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2016-11-07T16,2016-11-08T17,PT25H)",
@@ -2141,7 +2141,7 @@
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "8-2 de mañana",
+        "Text": "de 8-2 de mañana",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2017-11-10T08,2017-11-10T14,PT6H)",
@@ -2154,8 +2154,8 @@
             "endDateTime": "2017-11-10 14:00:00"
           }
         },
-        "Start": 24,
-        "Length": 13
+        "Start": 21,
+        "Length": 16
       }
     ]
   },
@@ -2195,7 +2195,7 @@
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "8-2 del 9 de dic",
+        "Text": "de 8-2 del 9 de dic",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(XXXX-12-09T08,XXXX-12-09T14,PT6H)",
@@ -2208,8 +2208,8 @@
             "endDateTime": "2016-12-09 14:00:00"
           }
         },
-        "Start": 24,
-        "Length": 16
+        "Start": 21,
+        "Length": 19
       }
     ]
   },
@@ -2735,7 +2735,7 @@
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "8-9 de lunes",
+        "Text": "de 8-9 de lunes",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(XXXX-WXX-1T08,XXXX-WXX-1T09,PT1H)",
@@ -2748,8 +2748,8 @@
             "endDateTime": "2018-04-16 09:00:00"
           }
         },
-        "Start": 11,
-        "Length": 12
+        "Start": 8,
+        "Length": 15
       }
     ]
   },

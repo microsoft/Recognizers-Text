@@ -204,11 +204,9 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "4-22 enero,  1995",
+        "Text": "entre 4-22 enero,  1995",
         "Type": "daterange",
         "Value": {
           "Timex": "(1995-01-04,1995-01-22,P18D)",
@@ -221,8 +219,8 @@
             "endDate": "1995-01-22"
           }
         },
-        "Start": 20,
-        "Length": 17
+        "Start": 14,
+        "Length": 23
       }
     ]
   },
@@ -358,11 +356,9 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "tercera semana de este mes",
+        "Text": "la tercera semana de este mes",
         "Type": "daterange",
         "Value": {
           "Timex": "2016-11-W03",
@@ -375,8 +371,8 @@
             "endDate": "2016-11-21"
           }
         },
-        "Start": 17,
-        "Length": 26
+        "Start": 14,
+        "Length": 29
       }
     ]
   },
@@ -385,11 +381,9 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "ultima semana de julio",
+        "Text": "la ultima semana de julio",
         "Type": "daterange",
         "Value": {
           "Timex": "XXXX-07-W05",
@@ -402,8 +396,8 @@
             "endDate": "2016-08-01"
           }
         },
-        "Start": 17,
-        "Length": 22
+        "Start": 14,
+        "Length": 25
       }
     ]
   },
