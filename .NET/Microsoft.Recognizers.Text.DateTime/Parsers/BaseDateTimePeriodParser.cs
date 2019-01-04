@@ -10,12 +10,12 @@ namespace Microsoft.Recognizers.Text.DateTime
     {
         public static readonly string ParserName = Constants.SYS_DATETIME_DATETIMEPERIOD;
 
-        protected readonly IDateTimePeriodParserConfiguration Config;
-
         public BaseDateTimePeriodParser(IDateTimePeriodParserConfiguration configuration)
         {
             Config = configuration;
         }
+
+        protected IDateTimePeriodParserConfiguration Config { get;  private set; }
 
         public ParseResult Parse(ExtractResult result)
         {
