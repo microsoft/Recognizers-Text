@@ -1,27 +1,11 @@
-﻿using System.Text.RegularExpressions;
-
+﻿using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Portuguese;
-using System.Collections.Generic;
 
 namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 {
-    class PortugueseDateTimeAltExtractorConfiguration : BaseOptionsConfiguration, IDateTimeAltExtractorConfiguration
+    internal class PortugueseDateTimeAltExtractorConfiguration : BaseOptionsConfiguration, IDateTimeAltExtractorConfiguration
     {
-        public PortugueseDateTimeAltExtractorConfiguration(IOptionsConfiguration config) : base(config)
-        {
-            DateExtractor = new BaseDateExtractor(new PortugueseDateExtractorConfiguration(this));
-            DatePeriodExtractor = new BaseDatePeriodExtractor(new PortugueseDatePeriodExtractorConfiguration(this));
-        }
-
-        public IDateExtractor DateExtractor { get; }
-        public IDateTimeExtractor DatePeriodExtractor { get; }
-
-        private static readonly Regex OrRegex =
-            new Regex(DateTimeDefinitions.OrRegex, RegexOptions.Singleline);
-
-        private static readonly Regex DayRegex =
-            new Regex(DateTimeDefinitions.DayRegex, RegexOptions.Singleline);
-
         public static readonly Regex ThisPrefixRegex =
             new Regex(DateTimeDefinitions.ThisPrefixRegex, RegexOptions.Singleline);
 
@@ -49,6 +33,23 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         {
             AmRegex, PmRegex,
         };
+
+        private static readonly Regex OrRegex =
+            new Regex(DateTimeDefinitions.OrRegex, RegexOptions.Singleline);
+
+        private static readonly Regex DayRegex =
+            new Regex(DateTimeDefinitions.DayRegex, RegexOptions.Singleline);
+
+        public PortugueseDateTimeAltExtractorConfiguration(IOptionsConfiguration config)
+            : base(config)
+        {
+            DateExtractor = new BaseDateExtractor(new PortugueseDateExtractorConfiguration(this));
+            DatePeriodExtractor = new BaseDatePeriodExtractor(new PortugueseDatePeriodExtractorConfiguration(this));
+        }
+
+        public IDateExtractor DateExtractor { get; }
+
+        public IDateTimeExtractor DatePeriodExtractor { get; }
 
         IEnumerable<Regex> IDateTimeAltExtractorConfiguration.RelativePrefixList => RelativePrefixList;
 
