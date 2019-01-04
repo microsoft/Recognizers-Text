@@ -545,10 +545,10 @@ namespace Microsoft.Recognizers.Text.DateTime
                     ret.TimeZoneResolution = timePeriodResolutionResult.TimeZoneResolution;
                 }
 
-                var timePeriodTimex = timePeriodResolutionResult.Timex;
+                var periodTimex = timePeriodResolutionResult.Timex;
 
                 // If it is a range type timex
-                if (TimexUtility.IsRangeTimex(timePeriodTimex))
+                if (TimexUtility.IsRangeTimex(periodTimex))
                 {
                     var dateResult = this.Config.DateExtractor.Extract(trimmedText.Replace(ers[0].Text, string.Empty), referenceTime);
 
@@ -575,7 +575,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                             return ParsePureNumberCases(text, referenceTime);
                         }
 
-                        var rangeTimexComponents = TimexUtility.GetRangeTimexComponents(timePeriodTimex);
+                        var rangeTimexComponents = TimexUtility.GetRangeTimexComponents(periodTimex);
 
                         if (rangeTimexComponents.IsValid)
                         {
