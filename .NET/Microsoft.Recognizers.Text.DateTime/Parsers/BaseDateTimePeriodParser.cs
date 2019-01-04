@@ -728,9 +728,9 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             // Parse "pm"
             var matchPmStr = match.Groups[Constants.PmGroupName].Value;
-            var timeAmStr = match.Groups[Constants.AmGroupName].Value;
+            var matchAmStr = match.Groups[Constants.AmGroupName].Value;
             var descStr = match.Groups[Constants.DescGroupName].Value;
-            if (!string.IsNullOrEmpty(timeAmStr) || (!string.IsNullOrEmpty(descStr) && descStr.StartsWith("a")))
+            if (!string.IsNullOrEmpty(matchAmStr) || (!string.IsNullOrEmpty(descStr) && descStr.StartsWith("a")))
             {
                 if (beginHour >= Constants.HalfDayHourCount)
                 {
