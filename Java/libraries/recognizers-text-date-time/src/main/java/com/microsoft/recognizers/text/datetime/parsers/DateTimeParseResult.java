@@ -1,6 +1,7 @@
 package com.microsoft.recognizers.text.datetime.parsers;
 
 import com.microsoft.recognizers.text.ExtractResult;
+import com.microsoft.recognizers.text.Metadata;
 import com.microsoft.recognizers.text.ParseResult;
 
 public class DateTimeParseResult extends ParseResult {
@@ -19,6 +20,11 @@ public class DateTimeParseResult extends ParseResult {
 
     public DateTimeParseResult(ParseResult pr) {
         this(pr.getStart(), pr.getLength(), pr.getText(), pr.getType(), pr.getData(), pr.getValue(), pr.getResolutionStr(), null);
+    }
+
+    public DateTimeParseResult(Integer start, Integer length, String text, String type, Object data, Object value, String resolutionStr, String timexStr, Metadata metadata) {
+        super(start, length, text, type, data, value, resolutionStr, metadata);
+        this.timexStr = timexStr;
     }
 
     public String getTimexStr() {

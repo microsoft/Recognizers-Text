@@ -250,7 +250,7 @@ public class BaseMergedDateTimeExtractor implements IDateTimeExtractor {
                         int length = newEr.getLength() + modLength;
                         String newText = text.substring(newEr.getStart(), newEr.getStart() + length);
 
-                        ers.set(index, new ExtractResult(er.getStart(), length, newText, er.getType(), er.getData()));
+                        ers.set(index, new ExtractResult(er.getStart(), length, newText, er.getType(), er.getData(), er.getMetadata()));
                     }
                 }
             }

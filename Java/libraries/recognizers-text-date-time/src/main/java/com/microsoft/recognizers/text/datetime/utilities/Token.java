@@ -1,19 +1,26 @@
 package com.microsoft.recognizers.text.datetime.utilities;
 
 import com.microsoft.recognizers.text.ExtractResult;
+import com.microsoft.recognizers.text.Metadata;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 public class Token {
     private final int start;
     private final int end;
+    private final Metadata metadata;
+
+    public Token(int start, int end, Metadata metadata) {
+        this.start = start;
+        this.end = end;
+        this.metadata = metadata;
+    }
 
     public Token(int start, int end) {
         this.start = start;
         this.end = end;
+        this.metadata = null;
     }
 
     public int getStart() {
@@ -70,7 +77,7 @@ public class Token {
         for (Token token : mergedTokens) {
             String substring = text.substring(token.start, token.end);
 
-            ExtractResult er = new ExtractResult(token.start, token.getLength(), substring, extractorName, null);
+            ExtractResult er = new ExtractResult(token.start, token.getLength(), substring, extractorName, null, token.metadata);
 
             result.add(er);
         }

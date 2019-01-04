@@ -7,14 +7,17 @@ import com.microsoft.recognizers.text.datetime.DateTimeOptions;
 import com.microsoft.recognizers.text.datetime.DateTimeRecognizer;
 import com.microsoft.recognizers.text.tests.AbstractTest;
 import com.microsoft.recognizers.text.tests.TestCase;
+
+import java.time.LocalDateTime;
+import java.util.Collection;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.IntStream;
+
 import org.javatuples.Pair;
 import org.junit.Assert;
 import org.junit.AssumptionViolatedException;
 import org.junit.runners.Parameterized;
-
-import java.time.LocalDateTime;
-import java.util.*;
-import java.util.stream.IntStream;
 
 public class DateTimeTest extends AbstractTest {
 
@@ -51,13 +54,16 @@ public class DateTimeTest extends AbstractTest {
                     Assert.assertEquals(getMessage(currentCase, "typeName"), expected.typeName, actual.typeName);
                     Assert.assertEquals(getMessage(currentCase, "text"), expected.text, actual.text);
                     if (actual instanceof ExtendedModelResult) {
-                        Assert.assertEquals(getMessage(currentCase, "parentText"), expected.parentText, ((ExtendedModelResult) actual).parentText);
+                        Assert.assertEquals(getMessage(currentCase, "parentText"), expected.parentText, ((ExtendedModelResult)actual).parentText);
                     }
 
                     if (expected.resolution.containsKey(ResolutionKey.ValueSet)) {
                         Assert.assertNotNull(getMessage(currentCase, "resolution"), actual.resolution);
                         Assert.assertNotNull(getMessage(currentCase, ResolutionKey.ValueSet), actual.resolution.get(ResolutionKey.ValueSet));
-                        assertValueSet(currentCase, (List<Map<String, Object>>) expected.resolution.get(ResolutionKey.ValueSet), (List<Map<String, Object>>) actual.resolution.get(ResolutionKey.ValueSet));
+                        assertValueSet(
+                            currentCase,
+                            (List<Map<String, Object>>)expected.resolution.get(ResolutionKey.ValueSet),
+                            (List<Map<String, Object>>)actual.resolution.get(ResolutionKey.ValueSet));
                     }
                 });
     }
@@ -66,13 +72,13 @@ public class DateTimeTest extends AbstractTest {
         Assert.assertEquals(getMessage(currentCase, "\"Result Count\""), expected.size(), actual.size());
 
         expected.sort((a, b) -> {
-            String timexA = (String) a.getOrDefault("timex", "");
-            String timexB = (String) b.getOrDefault("timex", "");
+            String timexA = (String)a.getOrDefault("timex", "");
+            String timexB = (String)b.getOrDefault("timex", "");
             return timexA.compareTo(timexB);
         });
         actual.sort((a, b) -> {
-            String timexA = (String) a.getOrDefault("timex", "");
-            String timexB = (String) b.getOrDefault("timex", "");
+            String timexA = (String)a.getOrDefault("timex", "");
+            String timexB = (String)b.getOrDefault("timex", "");
             return timexA.compareTo(timexB);
         });
 
@@ -99,6 +105,8 @@ public class DateTimeTest extends AbstractTest {
                     return DateTimeRecognizer.recognizeDateTime(currentCase.input, culture, DateTimeOptions.None, false, reference);
                 case "DateTimeModelCalendarMode":
                     return DateTimeRecognizer.recognizeDateTime(currentCase.input, culture, DateTimeOptions.CalendarMode, false, reference);
+                case "DateTimeModelExperimentalMode":
+                    return DateTimeRecognizer.recognizeDateTime(currentCase.input, culture, DateTimeOptions.ExperimentalMode, false, reference);
                 case "DateTimeModelExtendedTypes":
                     return DateTimeRecognizer.recognizeDateTime(currentCase.input, culture, DateTimeOptions.ExtendedTypes, false, reference);
                 case "DateTimeModelSplitDateAndTime":

@@ -114,7 +114,7 @@ public class BaseDatePeriodParser implements IDateTimeParser {
             }
         }
 
-        DateTimeParseResult ret = new DateTimeParseResult(er.getStart(), er.getLength(), er.getText(), er.getType(), er.getData(), value, "", "");
+        DateTimeParseResult ret = new DateTimeParseResult(er.getStart(), er.getLength(), er.getText(), er.getType(), er.getData(), value, "", "", er.getMetadata());
 
         if (value != null) {
             ret.setTimexStr(value.getTimex());

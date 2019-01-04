@@ -84,7 +84,8 @@ public class BaseNumberParser implements IParser {
                     extractResult.getLength(),
                     extractResult.getText().substring(matchNegative.group(1).length()),
                     extractResult.getType(),
-                    extractResult.getData());
+                    extractResult.getData(),
+                    extractResult.getMetadata());
         }
 
         if (extra.contains("Num")) {

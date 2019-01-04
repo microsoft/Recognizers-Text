@@ -4,6 +4,7 @@ import com.microsoft.recognizers.text.ExtractResult;
 import com.microsoft.recognizers.text.ParseResult;
 import com.microsoft.recognizers.text.ResolutionKey;
 import com.microsoft.recognizers.text.datetime.Constants;
+import com.microsoft.recognizers.text.datetime.DatePeriodTimexType;
 import com.microsoft.recognizers.text.datetime.DateTimeOptions;
 import com.microsoft.recognizers.text.datetime.DateTimeResolutionKey;
 import com.microsoft.recognizers.text.datetime.TimeTypeConstants;
@@ -20,6 +21,7 @@ import com.microsoft.recognizers.text.utilities.Match;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
 import com.microsoft.recognizers.text.utilities.StringUtility;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -32,6 +34,7 @@ import java.util.Optional;
 import java.util.SortedMap;
 import java.util.TreeMap;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class BaseMergedDateTimeParser implements IDateTimeParser {
 
@@ -72,7 +75,7 @@ public class BaseMergedDateTimeParser implements IDateTimeParser {
         if (this.config.getOptions().match(DateTimeOptions.EnablePreview)) {
             String newText = MatchingUtil.preProcessTextRemoveSuperfluousWords(er.getText(), config.getSuperfluousWordMatcher()).getText();
             int newLength = er.getLength() + er.getText().length() - originText.length();
-            er = new ExtractResult(er.getStart(), newLength, newText, er.getType(), er.getData());
+            er = new ExtractResult(er.getStart(), newLength, newText, er.getType(), er.getData(), er.getMetadata());
         }
 
         // Push, save the MOD string
@@ -242,6 +245,13 @@ public class BaseMergedDateTimeParser implements IDateTimeParser {
             pr = setParseResult(pr, hasModifier);
         }
 
+        // In this version, ExperimentalMode only cope with the "IncludePeriodEnd" case
+        if (this.config.getOptions().match(DateTimeOptions.ExperimentalMode)) {
+            if (pr.getMetadata() != null && pr.getMetadata().getIsPossiblyIncludePeriodEnd()) {
+                pr = setInclusivePeriodEnd(pr);
+            }
+        }
+
         if (this.config.getOptions().match(DateTimeOptions.EnablePreview)) {
             int prLength = pr.getLength() + originText.length() - pr.getText().length();
             pr = new DateTimeParseResult(pr.getStart(), prLength, originText, pr.getType(), pr.getData(), pr.getValue(), pr.getResolutionStr(), pr.getTimexStr());
@@ -284,6 +294,76 @@ public class BaseMergedDateTimeParser implements IDateTimeParser {
         slot.setType(type);
 
         return slot;
+    }
+
+    public DateTimeParseResult setInclusivePeriodEnd(DateTimeParseResult slot) {
+        String currentType =  parserName + "." + Constants.SYS_DATETIME_DATEPERIOD;
+        if (slot.getType().equals(currentType)) {
+            Stream<String> timexStream = Arrays.asList(slot.getTimexStr().split(",|\\(|\\)")).stream();
+            String[] timexComponents = timexStream.filter(str -> !str.isEmpty()).collect(Collectors.toList()).toArray(new String[0]);
+
+            // Only handle DatePeriod like "(StartDate,EndDate,Duration)"
+            if (timexComponents.length == 3) {
+                TreeMap<String, Object> value = (TreeMap<String, Object>)slot.getValue();
+                String altTimex = "";
+
+                if (value != null && value.containsKey(ResolutionKey.ValueSet)) {
+                    if (value.get(ResolutionKey.ValueSet) instanceof List) {
+                        List<HashMap<String, String>> valueSet = (List<HashMap<String, String>>)value.get(ResolutionKey.ValueSet);
+                        if (!value.isEmpty()) {
+
+                            for (HashMap<String, String> values : valueSet) {
+                                // This is only a sanity check, as here we only handle DatePeriod like "(StartDate,EndDate,Duration)"
+                                if (values.containsKey(DateTimeResolutionKey.START) &&
+                                    values.containsKey(DateTimeResolutionKey.END) &&
+                                    values.containsKey(DateTimeResolutionKey.Timex)) {
+
+                                    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+                                    LocalDateTime startDate = LocalDate.parse(values.get(DateTimeResolutionKey.START), formatter).atStartOfDay();
+                                    LocalDateTime endDate = LocalDate.parse(values.get(DateTimeResolutionKey.END), formatter).atStartOfDay();
+                                    String durationStr = timexComponents[2];
+                                    DatePeriodTimexType datePeriodTimexType = TimexUtility.getDatePeriodTimexType(durationStr);
+
+                                    endDate = TimexUtility.offsetDateObject(endDate, 1, datePeriodTimexType);
+                                    values.put(DateTimeResolutionKey.END, DateTimeFormatUtil.luisDate(endDate));
+                                    values.put(DateTimeResolutionKey.Timex, generateEndInclusiveTimex(slot.getTimexStr(), datePeriodTimexType, startDate, endDate));
+
+                                    if (StringUtility.isNullOrEmpty(altTimex)) {
+                                        altTimex = values.get(DateTimeResolutionKey.Timex);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                slot.setValue(value);
+                slot.setTimexStr(altTimex);
+            }
+        }
+        return slot;
+    }
+
+    public String generateEndInclusiveTimex(String originalTimex, DatePeriodTimexType datePeriodTimexType, LocalDateTime startDate, LocalDateTime endDate) {
+        String timexEndInclusive = TimexUtility.generateDatePeriodTimex(startDate, endDate, datePeriodTimexType);
+
+        // Sometimes the original timex contains fuzzy part like "XXXX-05-31"
+        // The fuzzy part needs to stay the same in the new end-inclusive timex
+        if (originalTimex.contains(Character.toString(Constants.TimexFuzzy)) && originalTimex.length() == timexEndInclusive.length()) {
+            char[] timexCharSet = new char[timexEndInclusive.length()];
+
+            for (int i = 0; i < originalTimex.length(); i++) {
+                if (originalTimex.charAt(i) != Constants.TimexFuzzy) {
+                    timexCharSet[i] = timexEndInclusive.charAt(i);
+                } else {
+                    timexCharSet[i] = Constants.TimexFuzzy;
+                }
+            }
+
+            timexEndInclusive = new String(timexCharSet);
+        }
+
+        return timexEndInclusive;
     }
 
     public String determineDateTimeType(String type, boolean hasMod) {
