@@ -8,7 +8,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
     public class ChineseDateTimeParserConfiguration : BaseOptionsConfiguration, IFullDateTimeParserConfiguration
     {
-        public ChineseDateTimeParserConfiguration(DateTimeOptions options = DateTimeOptions.None) : base(options)
+        public ChineseDateTimeParserConfiguration(DateTimeOptions options = DateTimeOptions.None)
+            : base(options)
         {
             DateParser = new DateParser(this);
             TimeParser = new TimeParserChs(this);
@@ -51,8 +52,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         public string DatePrefix => DateTimeDefinitions.ParserConfigurationDatePrefix;
 
-        #region internalParsers
-
         public IDateTimeParser DateParser { get; }
 
         public IDateTimeParser TimeParser { get; }
@@ -71,10 +70,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         public IDateTimeParser HolidayParser { get; }
 
-        #endregion
-
-        #region Dictionaries
-
         public ImmutableDictionary<string, string> UnitMap { get; }
 
         public ImmutableDictionary<string, long> UnitValueMap { get; }
@@ -92,10 +87,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         public ImmutableDictionary<string, int> MonthOfYear { get; }
 
         public ImmutableDictionary<string, int> Numbers { get; }
-
-        #endregion
-
-        #region Regexes
 
         public IEnumerable<Regex> DateRegexList { get; }
 
@@ -118,15 +109,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         public Regex SincePrefixRegex { get; }
 
         public Regex SinceSuffixRegex { get; }
-
-        #endregion
-
-        private static ImmutableDictionary<string, int> InitNumbers()
-        {
-            return new Dictionary<string, int>
-            {
-            }.ToImmutableDictionary();
-        }
 
         public int GetSwiftDay(string text)
         {
@@ -162,6 +144,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             }
 
             return value;
+        }
+
+        private static ImmutableDictionary<string, int> InitNumbers()
+        {
+            return new Dictionary<string, int>
+            {
+            }.ToImmutableDictionary();
         }
     }
 }
