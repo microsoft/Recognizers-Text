@@ -1,9 +1,8 @@
 ﻿using System.Collections.Generic;
-using System.Text.RegularExpressions;
-using DateObject = System.DateTime;
-
-using Microsoft.Recognizers.Definitions.Chinese;
 using System.Linq;
+using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Definitions.Chinese;
+using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
@@ -58,6 +57,23 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             ret = ret.OrderBy(p => p.Start).ToList();
 
             return ret;
+        }
+
+        private static List<ExtractResult> MoveOverlap(List<ExtractResult> dst, ExtractResult result)
+        {
+            var duplicate = new List<int>();
+            for (var i = 0; i < dst.Count; ++i)
+            {
+                if (result.Text.Contains(dst[i].Text) &&
+                    (result.Start == dst[i].Start || result.Start + result.Length == dst[i].Start + dst[i].Length))
+                {
+                    duplicate.Add(i);
+                }
+            }
+
+            var tempDst = dst.Where((_, i) => !duplicate.Contains(i)).ToList();
+
+            return tempDst;
         }
 
         // add some negative case
@@ -145,25 +161,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     er.Length += modLengh;
                     er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
                 }
-
             }
-        }
-
-        private static List<ExtractResult> MoveOverlap(List<ExtractResult> dst, ExtractResult result)
-        {
-            var duplicate = new List<int>();
-            for (var i = 0; i < dst.Count; ++i)
-            {
-                if (result.Text.Contains(dst[i].Text) &&
-                    (result.Start == dst[i].Start || result.Start + result.Length == dst[i].Start + dst[i].Length))
-                {
-                    duplicate.Add(i);
-                }
-            }
-
-            var tempDst = dst.Where((_, i) => !duplicate.Contains(i)).ToList();
-
-            return tempDst;
         }
 
         private void AddTo(List<ExtractResult> dst, List<ExtractResult> src)
@@ -171,7 +169,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             foreach (var result in src)
             {
                 var isFound = false;
-                int rmIndex = -1, rmLength = 1;
+                int indexRM = -1, lengthRM = 1;
                 for (var i = 0; i < dst.Count; i++)
                 {
                     if (dst[i].IsOverlap(result))
@@ -179,14 +177,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                         isFound = true;
                         if (result.Length > dst[i].Length)
                         {
-                            rmIndex = i;
+                            indexRM = i;
                             var j = i + 1;
                             while (j < dst.Count && dst[j].IsOverlap(result))
                             {
-                                rmLength++;
+                                lengthRM++;
                                 j++;
                             }
                         }
+
                         break;
                     }
                 }
@@ -195,13 +194,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 {
                     dst.Add(result);
                 }
-                else if (rmIndex >= 0)
+                else if (indexRM >= 0)
                 {
-                    dst.RemoveRange(rmIndex, rmLength);
+                    dst.RemoveRange(indexRM, lengthRM);
                     var tmpDst = MoveOverlap(dst, result);
                     dst.Clear();
                     dst.AddRange(tmpDst);
-                    dst.Insert(rmIndex, result);
+                    dst.Insert(indexRM, result);
                 }
             }
         }
