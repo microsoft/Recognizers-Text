@@ -1303,7 +1303,7 @@
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "11:00-11:50 a. m.",
+        "Text": "de 11:00-11:50 a. m.",
         "Type": "timerange",
         "Value": {
           "Timex": "(T11,T11:50,PT50M)",
@@ -1316,8 +1316,8 @@
             "endTime": "11:50:00"
           }
         },
-        "Start": 24,
-        "Length": 17
+        "Start": 21,
+        "Length": 20
       }
     ]
   },
@@ -1330,7 +1330,7 @@
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "1:30-3:30 pm",
+        "Text": "de 1:30-3:30 pm",
         "Type": "timerange",
         "Value": {
           "Timex": "(T13:30,T15:30,PT2H)",
@@ -1343,8 +1343,8 @@
             "endTime": "15:30:00"
           }
         },
-        "Start": 24,
-        "Length": 12
+        "Start": 21,
+        "Length": 15
       }
     ]
   },
@@ -1357,7 +1357,7 @@
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "1:30-3:30 de la tarde",
+        "Text": "de 1:30-3:30 de la tarde",
         "Type": "timerange",
         "Value": {
           "Timex": "(T13:30,T15:30,PT2H)",
@@ -1370,8 +1370,8 @@
             "endTime": "15:30:00"
           }
         },
-        "Start": 24,
-        "Length": 21
+        "Start": 21,
+        "Length": 24
       }
     ]
   },
@@ -1384,7 +1384,7 @@
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "1.30-3.30 p. m.",
+        "Text": "de 1.30-3.30 p. m.",
         "Type": "timerange",
         "Value": {
           "Timex": "(T13:30,T15:30,PT2H)",
@@ -1397,8 +1397,8 @@
             "endTime": "15:30:00"
           }
         },
-        "Start": 24,
-        "Length": 15
+        "Start": 21,
+        "Length": 18
       }
     ]
   },
@@ -1465,7 +1465,7 @@
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "0:01-1:00 de la madrugada",
+        "Text": "desde 0:01-1:00 de la madrugada",
         "Type": "timerange",
         "Value": {
           "Timex": "(T00:01,T01,PT59M)",
@@ -1478,8 +1478,8 @@
             "endTime": "01:00:00"
           }
         },
-        "Start": 23,
-        "Length": 25
+        "Start": 20,
+        "Length": 31
       }
     ]
   },
@@ -1681,7 +1681,7 @@
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "10:00-11:00 a. m.",
+        "Text": "de 10:00-11:00 a. m.",
         "Type": "timerange",
         "Value": {
           "Timex": "(T10,T11,PT1H)",
@@ -1694,8 +1694,8 @@
             "endTime": "11:00:00"
           }
         },
-        "Start": 24,
-        "Length": 17
+        "Start": 21,
+        "Length": 20
       }
     ]
   },
@@ -1708,7 +1708,7 @@
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "23:00-3:00",
+        "Text": "de 23:00-3:00",
         "Type": "timerange",
         "Value": {
           "Timex": "(T23,T03,PT4H)",
@@ -1721,8 +1721,8 @@
             "endTime": "03:00:00"
           }
         },
-        "Start": 24,
-        "Length": 10
+        "Start": 21,
+        "Length": 13
       }
     ]
   },
@@ -1735,7 +1735,7 @@
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "23.00-3.00",
+        "Text": "de 23.00-3.00",
         "Type": "timerange",
         "Value": {
           "Timex": "(T23,T03,PT4H)",
@@ -1748,8 +1748,8 @@
             "endTime": "03:00:00"
           }
         },
-        "Start": 24,
-        "Length": 10
+        "Start": 21,
+        "Length": 13
       }
     ]
   },
@@ -1816,7 +1816,7 @@
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "23:00-15:00",
+        "Text": "de 23:00-15:00",
         "Type": "timerange",
         "Value": {
           "Timex": "(T23,T15,PT16H)",
@@ -1829,8 +1829,8 @@
             "endTime": "15:00:00"
           }
         },
-        "Start": 24,
-        "Length": 11
+        "Start": 21,
+        "Length": 14
       }
     ]
   },
