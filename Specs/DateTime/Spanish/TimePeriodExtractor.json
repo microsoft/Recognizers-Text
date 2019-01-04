@@ -290,6 +290,17 @@
     ]
   },
   {
+    "Input": "Te veo a la noche",
+    "Results": [
+      {
+        "Text": "noche",
+        "Type": "timerange",
+        "Start": 12,
+        "Length": 5
+      }
+    ]
+  },
+  {
     "Input": "Nos vemos en la madrugada",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript, python, java",
