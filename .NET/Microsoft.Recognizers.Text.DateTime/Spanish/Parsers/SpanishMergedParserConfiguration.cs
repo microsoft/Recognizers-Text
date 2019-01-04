@@ -6,6 +6,24 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
     public sealed class SpanishMergedParserConfiguration : SpanishCommonDateTimeParserConfiguration, IMergedParserConfiguration
     {
+        public SpanishMergedParserConfiguration(IOptionsConfiguration config)
+            : base(config)
+        {
+            BeforeRegex = SpanishMergedExtractorConfiguration.BeforeRegex;
+            AfterRegex = SpanishMergedExtractorConfiguration.AfterRegex;
+            SinceRegex = SpanishMergedExtractorConfiguration.SinceRegex;
+            AroundRegex = SpanishMergedExtractorConfiguration.AroundRegex;
+            DateAfter = SpanishMergedExtractorConfiguration.DateAfterRegex;
+            YearRegex = SpanishDatePeriodExtractorConfiguration.YearRegex;
+            SuperfluousWordMatcher = SpanishMergedExtractorConfiguration.SuperfluousWordMatcher;
+
+            DatePeriodParser = new BaseDatePeriodParser(new SpanishDatePeriodParserConfiguration(this));
+            TimePeriodParser = new BaseTimePeriodParser(new SpanishTimePeriodParserConfiguration(this));
+            DateTimePeriodParser = new DateTimePeriodParser(new SpanishDateTimePeriodParserConfiguration(this));
+            SetParser = new BaseSetParser(new SpanishSetParserConfiguration(this));
+            HolidayParser = new BaseHolidayParser(new SpanishHolidayParserConfiguration(this));
+            TimeZoneParser = new DummyTimeZoneParser();
+        }
 
         public Regex BeforeRegex { get; }
 
@@ -24,23 +42,5 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public IDateTimeParser HolidayParser { get; }
 
         public StringMatcher SuperfluousWordMatcher { get; }
-
-        public SpanishMergedParserConfiguration(IOptionsConfiguration config) : base(config)
-        {
-            BeforeRegex = SpanishMergedExtractorConfiguration.BeforeRegex;
-            AfterRegex = SpanishMergedExtractorConfiguration.AfterRegex;
-            SinceRegex = SpanishMergedExtractorConfiguration.SinceRegex;
-            AroundRegex = SpanishMergedExtractorConfiguration.AroundRegex;
-            DateAfter = SpanishMergedExtractorConfiguration.DateAfterRegex;
-            YearRegex = SpanishDatePeriodExtractorConfiguration.YearRegex;
-            SuperfluousWordMatcher = SpanishMergedExtractorConfiguration.SuperfluousWordMatcher;
-
-            DatePeriodParser = new BaseDatePeriodParser(new SpanishDatePeriodParserConfiguration(this));
-            TimePeriodParser = new BaseTimePeriodParser(new SpanishTimePeriodParserConfiguration(this));
-            DateTimePeriodParser = new DateTimePeriodParser(new SpanishDateTimePeriodParserConfiguration(this));
-            SetParser = new BaseSetParser(new SpanishSetParserConfiguration(this));
-            HolidayParser = new BaseHolidayParser(new SpanishHolidayParserConfiguration(this));
-            TimeZoneParser = new DummyTimeZoneParser();
-        }
     }
 }
