@@ -23,10 +23,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese.Utilities
 
         public static readonly Regex RangeUnitRegex = new Regex(DateTimeDefinitions.RangeUnitRegex, RegexOptions.Singleline);
 
-        public static readonly Regex TimeUnitRegex = new Regex(DateTimeDefinitions.TimeUnitRegex,
+        public static readonly Regex TimeUnitRegex = new Regex(
+            DateTimeDefinitions.TimeUnitRegex,
             RegexOptions.Singleline);
 
-        public static readonly Regex DateUnitRegex = new Regex(DateTimeDefinitions.DateUnitRegex,
+        public static readonly Regex DateUnitRegex = new Regex(
+            DateTimeDefinitions.DateUnitRegex,
             RegexOptions.Singleline);
 
         public static readonly Regex CommonDatePrefixRegex = new Regex(DateTimeDefinitions.CommonDatePrefixRegex, RegexOptions.Singleline);
@@ -52,6 +54,5 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese.Utilities
         Regex IDateTimeUtilityConfiguration.DateUnitRegex => DateUnitRegex;
 
         Regex IDateTimeUtilityConfiguration.CommonDatePrefixRegex => CommonDatePrefixRegex;
-
     }
 }
