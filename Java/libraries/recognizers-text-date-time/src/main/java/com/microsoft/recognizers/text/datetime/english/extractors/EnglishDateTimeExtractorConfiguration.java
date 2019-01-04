@@ -20,21 +20,21 @@ import java.util.regex.Pattern;
 
 public class EnglishDateTimeExtractorConfiguration extends BaseOptionsConfiguration implements IDateTimeExtractorConfiguration {
 
-    public static final Pattern PrepositionRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PrepositionRegex, Pattern.CASE_INSENSITIVE);
-    public static final Pattern NowRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.NowRegex, Pattern.CASE_INSENSITIVE);
-    public static final Pattern SuffixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SuffixRegex, Pattern.CASE_INSENSITIVE);
-    public static final Pattern TimeOfDayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TimeOfDayRegex, Pattern.CASE_INSENSITIVE);
-    public static final Pattern SpecificTimeOfDayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SpecificTimeOfDayRegex, Pattern.CASE_INSENSITIVE);
-    public static final Pattern TimeOfTodayAfterRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TimeOfTodayAfterRegex, Pattern.CASE_INSENSITIVE);
-    public static final Pattern TimeOfTodayBeforeRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TimeOfTodayBeforeRegex, Pattern.CASE_INSENSITIVE);
-    public static final Pattern SimpleTimeOfTodayAfterRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SimpleTimeOfTodayAfterRegex, Pattern.CASE_INSENSITIVE);
-    public static final Pattern SimpleTimeOfTodayBeforeRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SimpleTimeOfTodayBeforeRegex, Pattern.CASE_INSENSITIVE);
-    public static final Pattern SpecificEndOfRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SpecificEndOfRegex, Pattern.CASE_INSENSITIVE);
-    public static final Pattern UnspecificEndOfRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.UnspecificEndOfRegex, Pattern.CASE_INSENSITIVE);
-    public static final Pattern UnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TimeUnitRegex, Pattern.CASE_INSENSITIVE);
-    public static final Pattern ConnectorRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.ConnectorRegex, Pattern.CASE_INSENSITIVE);
-    public static final Pattern NumberAsTimeRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.NumberAsTimeRegex, Pattern.CASE_INSENSITIVE);
-    public static final Pattern DateNumberConnectorRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.DateNumberConnectorRegex, Pattern.CASE_INSENSITIVE);
+    public static final Pattern PrepositionRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PrepositionRegex);
+    public static final Pattern NowRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.NowRegex);
+    public static final Pattern SuffixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SuffixRegex);
+    public static final Pattern TimeOfDayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TimeOfDayRegex);
+    public static final Pattern SpecificTimeOfDayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SpecificTimeOfDayRegex);
+    public static final Pattern TimeOfTodayAfterRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TimeOfTodayAfterRegex);
+    public static final Pattern TimeOfTodayBeforeRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TimeOfTodayBeforeRegex);
+    public static final Pattern SimpleTimeOfTodayAfterRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SimpleTimeOfTodayAfterRegex);
+    public static final Pattern SimpleTimeOfTodayBeforeRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SimpleTimeOfTodayBeforeRegex);
+    public static final Pattern SpecificEndOfRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SpecificEndOfRegex);
+    public static final Pattern UnspecificEndOfRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.UnspecificEndOfRegex);
+    public static final Pattern UnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TimeUnitRegex);
+    public static final Pattern ConnectorRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.ConnectorRegex);
+    public static final Pattern NumberAsTimeRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.NumberAsTimeRegex);
+    public static final Pattern DateNumberConnectorRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.DateNumberConnectorRegex);
 
     public IExtractor integerExtractor;
     public IDateTimeExtractor datePointExtractor;

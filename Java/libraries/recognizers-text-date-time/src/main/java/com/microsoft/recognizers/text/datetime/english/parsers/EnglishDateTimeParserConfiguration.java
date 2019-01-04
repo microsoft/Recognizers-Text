@@ -67,8 +67,8 @@ public class EnglishDateTimeParserConfiguration extends BaseOptionsConfiguration
         
         nowRegex = EnglishDateTimeExtractorConfiguration.NowRegex;
 
-        amTimeRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.AMTimeRegex, Pattern.CASE_INSENSITIVE);
-        pmTimeRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PMTimeRegex, Pattern.CASE_INSENSITIVE);
+        amTimeRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.AMTimeRegex);
+        pmTimeRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PMTimeRegex);
 
         simpleTimeOfTodayAfterRegex = EnglishDateTimeExtractorConfiguration.SimpleTimeOfTodayAfterRegex;
         simpleTimeOfTodayBeforeRegex = EnglishDateTimeExtractorConfiguration.SimpleTimeOfTodayBeforeRegex;

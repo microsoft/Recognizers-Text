@@ -75,8 +75,8 @@ public class EnglishDatePeriodParserConfiguration extends BaseOptionsConfigurati
         lessThanRegex = EnglishDatePeriodExtractorConfiguration.LessThanRegex;
         moreThanRegex = EnglishDatePeriodExtractorConfiguration.MoreThanRegex;
         centurySuffixRegex = EnglishDatePeriodExtractorConfiguration.CenturySuffixRegex;
-        relativeRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RelativeRegex, Pattern.CASE_INSENSITIVE);
-        unspecificEndOfRangeRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.UnspecificEndOfRangeRegex, Pattern.CASE_INSENSITIVE);
+        relativeRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RelativeRegex);
+        unspecificEndOfRangeRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.UnspecificEndOfRangeRegex);
 
         unitMap = config.getUnitMap();
         cardinalMap = config.getCardinalMap();
@@ -87,10 +87,10 @@ public class EnglishDatePeriodParserConfiguration extends BaseOptionsConfigurati
         numbers = config.getNumbers();
         specialDecadeCases = config.getSpecialDecadeCases();
 
-        nextPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.NextPrefixRegex, Pattern.CASE_INSENSITIVE);
-        pastPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PastPrefixRegex, Pattern.CASE_INSENSITIVE);
-        thisPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.ThisPrefixRegex, Pattern.CASE_INSENSITIVE);
-        afterNextSuffixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.AfterNextSuffixRegex, Pattern.CASE_INSENSITIVE);
+        nextPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.NextPrefixRegex);
+        pastPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PastPrefixRegex);
+        thisPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.ThisPrefixRegex);
+        afterNextSuffixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.AfterNextSuffixRegex);
     }
 
     private final String tokenBeforeDate;

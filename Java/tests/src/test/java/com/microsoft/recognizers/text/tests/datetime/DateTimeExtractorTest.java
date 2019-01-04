@@ -1,21 +1,43 @@
 package com.microsoft.recognizers.text.tests.datetime;
 
-import java.util.Collection;
-import java.util.List;
-import java.util.stream.IntStream;
-
 import com.microsoft.recognizers.text.Culture;
 import com.microsoft.recognizers.text.ExtractResult;
 import com.microsoft.recognizers.text.ModelResult;
 import com.microsoft.recognizers.text.datetime.DateTimeOptions;
 import com.microsoft.recognizers.text.datetime.config.BaseOptionsConfiguration;
 import com.microsoft.recognizers.text.datetime.config.IOptionsConfiguration;
-import com.microsoft.recognizers.text.datetime.english.extractors.*;
-import com.microsoft.recognizers.text.datetime.extractors.*;
+import com.microsoft.recognizers.text.datetime.english.extractors.EnglishDateExtractorConfiguration;
+import com.microsoft.recognizers.text.datetime.english.extractors.EnglishDatePeriodExtractorConfiguration;
+import com.microsoft.recognizers.text.datetime.english.extractors.EnglishDateTimeExtractorConfiguration;
+import com.microsoft.recognizers.text.datetime.english.extractors.EnglishDateTimePeriodExtractorConfiguration;
+import com.microsoft.recognizers.text.datetime.english.extractors.EnglishDurationExtractorConfiguration;
+import com.microsoft.recognizers.text.datetime.english.extractors.EnglishHolidayExtractorConfiguration;
+import com.microsoft.recognizers.text.datetime.english.extractors.EnglishMergedExtractorConfiguration;
+import com.microsoft.recognizers.text.datetime.english.extractors.EnglishSetExtractorConfiguration;
+import com.microsoft.recognizers.text.datetime.english.extractors.EnglishTimeExtractorConfiguration;
+import com.microsoft.recognizers.text.datetime.english.extractors.EnglishTimePeriodExtractorConfiguration;
+import com.microsoft.recognizers.text.datetime.english.extractors.EnglishTimeZoneExtractorConfiguration;
+import com.microsoft.recognizers.text.datetime.extractors.BaseDateExtractor;
+import com.microsoft.recognizers.text.datetime.extractors.BaseDatePeriodExtractor;
+import com.microsoft.recognizers.text.datetime.extractors.BaseDateTimeExtractor;
+import com.microsoft.recognizers.text.datetime.extractors.BaseDateTimePeriodExtractor;
+import com.microsoft.recognizers.text.datetime.extractors.BaseDurationExtractor;
+import com.microsoft.recognizers.text.datetime.extractors.BaseHolidayExtractor;
+import com.microsoft.recognizers.text.datetime.extractors.BaseMergedDateTimeExtractor;
+import com.microsoft.recognizers.text.datetime.extractors.BaseSetExtractor;
+import com.microsoft.recognizers.text.datetime.extractors.BaseTimeExtractor;
+import com.microsoft.recognizers.text.datetime.extractors.BaseTimePeriodExtractor;
+import com.microsoft.recognizers.text.datetime.extractors.BaseTimeZoneExtractor;
+import com.microsoft.recognizers.text.datetime.extractors.IDateTimeExtractor;
 import com.microsoft.recognizers.text.datetime.spanish.extractors.SpanishDurationExtractorConfiguration;
 import com.microsoft.recognizers.text.datetime.spanish.extractors.SpanishHolidayExtractorConfiguration;
 import com.microsoft.recognizers.text.tests.AbstractTest;
 import com.microsoft.recognizers.text.tests.TestCase;
+
+import java.util.Collection;
+import java.util.List;
+import java.util.Locale;
+import java.util.stream.IntStream;
 
 import org.javatuples.Pair;
 import org.junit.Assert;
@@ -42,7 +64,7 @@ public class DateTimeExtractorTest extends AbstractTest {
 
     protected List<ExtractResult> extract(TestCase currentCase) {
         IDateTimeExtractor extractor = getExtractor(currentCase);
-        return extractor.extract(currentCase.input, currentCase.getReferenceDateTime());
+        return extractor.extract(currentCase.input.toLowerCase(Locale.ROOT), currentCase.getReferenceDateTime());
     }
 
     @Override
@@ -63,7 +85,7 @@ public class DateTimeExtractorTest extends AbstractTest {
                     ExtractResult actual = t.getValue1();
 
                     Assert.assertEquals(getMessage(currentCase, "type"), expected.getType(), actual.getType());
-                    Assert.assertEquals(getMessage(currentCase, "text"), expected.getText(), actual.getText());
+                    Assert.assertTrue(getMessage(currentCase, "text"), expected.getText().equalsIgnoreCase(actual.getText()));
                     Assert.assertEquals(getMessage(currentCase, "start"), expected.getStart(), actual.getStart());
                     Assert.assertEquals(getMessage(currentCase, "length"), expected.getLength(), actual.getLength());
                 });
