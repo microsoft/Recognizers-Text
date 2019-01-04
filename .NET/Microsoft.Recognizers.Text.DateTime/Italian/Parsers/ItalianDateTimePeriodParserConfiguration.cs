@@ -7,6 +7,57 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 {
     public class ItalianDateTimePeriodParserConfiguration : BaseOptionsConfiguration, IDateTimePeriodParserConfiguration
     {
+        public static readonly Regex MorningStartEndRegex = new Regex(
+            DateTimeDefinitions.MorningStartEndRegex, RegexOptions.Singleline);
+
+        public static readonly Regex AfternoonStartEndRegex = new Regex(
+            DateTimeDefinitions.AfternoonStartEndRegex, RegexOptions.Singleline);
+
+        public static readonly Regex EveningStartEndRegex = new Regex(
+            DateTimeDefinitions.EveningStartEndRegex, RegexOptions.Singleline);
+
+        public static readonly Regex NightStartEndRegex = new Regex(
+            DateTimeDefinitions.NightStartEndRegex,
+            RegexOptions.Singleline);
+
+        public ItalianDateTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config)
+            : base(config.Options)
+        {
+            TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
+            DateExtractor = config.DateExtractor;
+            TimeExtractor = config.TimeExtractor;
+            DateTimeExtractor = config.DateTimeExtractor;
+            TimePeriodExtractor = config.TimePeriodExtractor;
+            CardinalExtractor = config.CardinalExtractor;
+            DurationExtractor = config.DurationExtractor;
+            NumberParser = config.NumberParser;
+            DateParser = config.DateParser;
+            TimeParser = config.TimeParser;
+            TimePeriodParser = config.TimePeriodParser;
+            DurationParser = config.DurationParser;
+            DateTimeParser = config.DateTimeParser;
+
+            PureNumberFromToRegex = ItalianTimePeriodExtractorConfiguration.PureNumFromTo;
+            PureNumberBetweenAndRegex = ItalianTimePeriodExtractorConfiguration.PureNumBetweenAnd;
+            SpecificTimeOfDayRegex = ItalianDateTimeExtractorConfiguration.SpecificTimeOfDayRegex;
+            TimeOfDayRegex = ItalianDateTimeExtractorConfiguration.TimeOfDayRegex;
+            PastRegex = ItalianDatePeriodExtractorConfiguration.PastPrefixRegex;
+            FutureRegex = ItalianDatePeriodExtractorConfiguration.NextPrefixRegex;
+            FutureSuffixRegex = ItalianDatePeriodExtractorConfiguration.FutureSuffixRegex;
+            NumberCombinedWithUnitRegex = ItalianDateTimePeriodExtractorConfiguration.TimeNumberCombinedWithUnit;
+            UnitRegex = ItalianTimePeriodExtractorConfiguration.TimeUnitRegex;
+            PeriodTimeOfDayWithDateRegex = ItalianDateTimePeriodExtractorConfiguration.PeriodTimeOfDayWithDateRegex;
+            RelativeTimeUnitRegex = ItalianDateTimePeriodExtractorConfiguration.RelativeTimeUnitRegex;
+            RestOfDateTimeRegex = ItalianDateTimePeriodExtractorConfiguration.RestOfDateTimeRegex;
+            AmDescRegex = ItalianDateTimePeriodExtractorConfiguration.AmDescRegex;
+            PmDescRegex = ItalianDateTimePeriodExtractorConfiguration.PmDescRegex;
+            WithinNextPrefixRegex = ItalianDateTimePeriodExtractorConfiguration.WithinNextPrefixRegex;
+            PrefixDayRegex = ItalianDateTimePeriodExtractorConfiguration.PrefixDayRegex;
+            BeforeRegex = ItalianDateTimePeriodExtractorConfiguration.BeforeRegex;
+            AfterRegex = ItalianDateTimePeriodExtractorConfiguration.AfterRegex;
+            UnitMap = config.UnitMap;
+            Numbers = config.Numbers;
+        }
 
         public string TokenBeforeDate { get; }
 
@@ -74,56 +125,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public IImmutableDictionary<string, int> Numbers { get; }
 
-        public ItalianDateTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config.Options)
-        {
-            TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
-            DateExtractor = config.DateExtractor;
-            TimeExtractor = config.TimeExtractor;
-            DateTimeExtractor = config.DateTimeExtractor;
-            TimePeriodExtractor = config.TimePeriodExtractor;
-            CardinalExtractor = config.CardinalExtractor;
-            DurationExtractor = config.DurationExtractor;
-            NumberParser = config.NumberParser;
-            DateParser = config.DateParser;
-            TimeParser = config.TimeParser;
-            TimePeriodParser = config.TimePeriodParser;
-            DurationParser = config.DurationParser;
-            DateTimeParser = config.DateTimeParser;
-
-            PureNumberFromToRegex = ItalianTimePeriodExtractorConfiguration.PureNumFromTo;
-            PureNumberBetweenAndRegex = ItalianTimePeriodExtractorConfiguration.PureNumBetweenAnd;
-            SpecificTimeOfDayRegex = ItalianDateTimeExtractorConfiguration.SpecificTimeOfDayRegex;
-            TimeOfDayRegex = ItalianDateTimeExtractorConfiguration.TimeOfDayRegex;
-            PastRegex = ItalianDatePeriodExtractorConfiguration.PastPrefixRegex;          
-            FutureRegex = ItalianDatePeriodExtractorConfiguration.NextPrefixRegex;
-            FutureSuffixRegex = ItalianDatePeriodExtractorConfiguration.FutureSuffixRegex;
-            NumberCombinedWithUnitRegex = ItalianDateTimePeriodExtractorConfiguration.TimeNumberCombinedWithUnit;
-            UnitRegex = ItalianTimePeriodExtractorConfiguration.TimeUnitRegex;
-            PeriodTimeOfDayWithDateRegex = ItalianDateTimePeriodExtractorConfiguration.PeriodTimeOfDayWithDateRegex;
-            RelativeTimeUnitRegex = ItalianDateTimePeriodExtractorConfiguration.RelativeTimeUnitRegex;
-            RestOfDateTimeRegex = ItalianDateTimePeriodExtractorConfiguration.RestOfDateTimeRegex;
-            AmDescRegex = ItalianDateTimePeriodExtractorConfiguration.AmDescRegex;
-            PmDescRegex = ItalianDateTimePeriodExtractorConfiguration.PmDescRegex;
-            WithinNextPrefixRegex = ItalianDateTimePeriodExtractorConfiguration.WithinNextPrefixRegex;
-            PrefixDayRegex = ItalianDateTimePeriodExtractorConfiguration.PrefixDayRegex;
-            BeforeRegex = ItalianDateTimePeriodExtractorConfiguration.BeforeRegex;
-            AfterRegex = ItalianDateTimePeriodExtractorConfiguration.AfterRegex;
-            UnitMap = config.UnitMap;
-            Numbers = config.Numbers;
-        }
-
-        public static readonly Regex MorningStartEndRegex = new Regex(DateTimeDefinitions.MorningStartEndRegex,
-            RegexOptions.Singleline);
-
-        public static readonly Regex AfternoonStartEndRegex = new Regex(DateTimeDefinitions.AfternoonStartEndRegex,
-            RegexOptions.Singleline);
-
-        public static readonly Regex EveningStartEndRegex = new Regex(DateTimeDefinitions.EveningStartEndRegex,
-            RegexOptions.Singleline);
-
-        public static readonly Regex NightStartEndRegex = new Regex(DateTimeDefinitions.NightStartEndRegex,
-            RegexOptions.Singleline);
-
         public bool GetMatchedTimeRange(string text, out string timeStr, out int beginHour, out int endHour, out int endMin)
         {
             var trimmedText = text.Trim().ToLowerInvariant();
@@ -174,11 +175,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             {
                 swift = 1;
             }
-            else if (trimmedText.StartsWith("derniere")|| trimmedText.StartsWith("dernier")||
+            else if (trimmedText.StartsWith("derniere") || trimmedText.StartsWith("dernier") ||
                      trimmedText.EndsWith("derniere") || trimmedText.EndsWith("dernier"))
             {
                 swift = -1;
             }
+
             return swift;
         }
     }
