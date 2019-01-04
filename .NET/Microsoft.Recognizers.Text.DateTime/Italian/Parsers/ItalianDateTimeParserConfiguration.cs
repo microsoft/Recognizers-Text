@@ -1,6 +1,5 @@
 ﻿using System.Collections.Immutable;
 using System.Text.RegularExpressions;
-
 using Microsoft.Recognizers.Definitions.Italian;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
 
@@ -8,6 +7,35 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 {
     public class ItalianDateTimeParserConfiguration : BaseOptionsConfiguration, IDateTimeParserConfiguration
     {
+        public ItalianDateTimeParserConfiguration(ICommonDateTimeParserConfiguration config)
+            : base(config.Options)
+        {
+            TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
+            TokenBeforeTime = DateTimeDefinitions.TokenBeforeTime;
+            DateExtractor = config.DateExtractor;
+            TimeExtractor = config.TimeExtractor;
+            DateParser = config.DateParser;
+            TimeParser = config.TimeParser;
+            NowRegex = ItalianDateTimeExtractorConfiguration.NowRegex;
+            AMTimeRegex = new Regex(DateTimeDefinitions.AMTimeRegex, RegexOptions.Singleline);
+            PMTimeRegex = new Regex(DateTimeDefinitions.PMTimeRegex, RegexOptions.Singleline);
+            SimpleTimeOfTodayAfterRegex = ItalianDateTimeExtractorConfiguration.SimpleTimeOfTodayAfterRegex;
+            SimpleTimeOfTodayBeforeRegex = ItalianDateTimeExtractorConfiguration.SimpleTimeOfTodayBeforeRegex;
+            SpecificTimeOfDayRegex = ItalianDateTimeExtractorConfiguration.SpecificTimeOfDayRegex;
+            SpecificEndOfRegex = ItalianDateTimeExtractorConfiguration.SpecificEndOfRegex;
+            UnspecificEndOfRegex = ItalianDateTimeExtractorConfiguration.UnspecificEndOfRegex;
+            UnitRegex = ItalianTimeExtractorConfiguration.TimeUnitRegex;
+            DateNumberConnectorRegex = ItalianDateTimeExtractorConfiguration.DateNumberConnectorRegex;
+            Numbers = config.Numbers;
+            CardinalExtractor = config.CardinalExtractor;
+            IntegerExtractor = config.IntegerExtractor;
+            NumberParser = config.NumberParser;
+            DurationExtractor = config.DurationExtractor;
+            DurationParser = config.DurationParser;
+            UnitMap = config.UnitMap;
+            UtilityConfiguration = config.UtilityConfiguration;
+        }
+
         public string TokenBeforeDate { get; }
 
         public string TokenBeforeTime { get; }
@@ -47,7 +75,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         public Regex SpecificEndOfRegex { get; }
 
         public Regex UnspecificEndOfRegex { get; }
-        
+
         public Regex UnitRegex { get; }
 
         public Regex DateNumberConnectorRegex { get; }
@@ -58,36 +86,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
-        public ItalianDateTimeParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config.Options)
-        {
-            TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
-            TokenBeforeTime = DateTimeDefinitions.TokenBeforeTime;
-            DateExtractor = config.DateExtractor;
-            TimeExtractor = config.TimeExtractor;
-            DateParser = config.DateParser;
-            TimeParser = config.TimeParser;
-            NowRegex = ItalianDateTimeExtractorConfiguration.NowRegex;
-            AMTimeRegex = new Regex(DateTimeDefinitions.AMTimeRegex, RegexOptions.Singleline);
-            PMTimeRegex = new Regex(DateTimeDefinitions.PMTimeRegex, RegexOptions.Singleline);
-            SimpleTimeOfTodayAfterRegex = ItalianDateTimeExtractorConfiguration.SimpleTimeOfTodayAfterRegex;
-            SimpleTimeOfTodayBeforeRegex = ItalianDateTimeExtractorConfiguration.SimpleTimeOfTodayBeforeRegex;
-            SpecificTimeOfDayRegex = ItalianDateTimeExtractorConfiguration.SpecificTimeOfDayRegex;
-            SpecificEndOfRegex = ItalianDateTimeExtractorConfiguration.SpecificEndOfRegex;
-            UnspecificEndOfRegex = ItalianDateTimeExtractorConfiguration.UnspecificEndOfRegex;
-            UnitRegex = ItalianTimeExtractorConfiguration.TimeUnitRegex;
-            DateNumberConnectorRegex = ItalianDateTimeExtractorConfiguration.DateNumberConnectorRegex;
-            Numbers = config.Numbers;
-            CardinalExtractor = config.CardinalExtractor;
-            IntegerExtractor = config.IntegerExtractor;
-            NumberParser = config.NumberParser;
-            DurationExtractor = config.DurationExtractor;
-            DurationParser = config.DurationParser;
-            UnitMap = config.UnitMap;
-            UtilityConfiguration = config.UtilityConfiguration;
-        }
-
-        // Note: Italian typically uses 24:00 time, consider removing 12:00 am/pm 
-
+        // Note: Italian typically uses 24:00 time, consider removing 12:00 am/pm
         public int GetHour(string text, int hour)
         {
             var trimmedText = text.Trim().ToLowerInvariant();
@@ -100,6 +99,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             {
                 result += 12;
             }
+
             return result;
         }
 
@@ -110,7 +110,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             {
                 timex = "PRESENT_REF";
             }
-            else if (trimmedText.Equals("récemment") || trimmedText.Equals("précédemment")||trimmedText.Equals("auparavant"))
+            else if (trimmedText.Equals("récemment") || trimmedText.Equals("précédemment") || trimmedText.Equals("auparavant"))
             {
                 timex = "PAST_REF";
             }
@@ -123,6 +123,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
                 timex = null;
                 return false;
             }
+
             return true;
         }
 
@@ -140,6 +141,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             {
                 swift = -1;
             }
+
             return swift;
         }
 
