@@ -6,27 +6,27 @@ namespace Microsoft.Recognizers.Text.DateTime
 {
     public static class Constants
     {
-        public const string SYS_DATETIME_DATE = "date";
-        public const string SYS_DATETIME_TIME = "time";
-        public const string SYS_DATETIME_DATEPERIOD = "daterange";
-        public const string SYS_DATETIME_DATETIME = "datetime";
-        public const string SYS_DATETIME_TIMEPERIOD = "timerange";
-        public const string SYS_DATETIME_DATETIMEPERIOD = "datetimerange";
-        public const string SYS_DATETIME_DURATION = "duration";
-        public const string SYS_DATETIME_SET = "set";
-        public const string SYS_DATETIME_DATETIMEALT = "datetimealt";
-        public const string SYS_DATETIME_TIMEZONE = "timezone";
+        public const string SYSDATETIMEDATE = "date";
+        public const string SYSDATETIMETIME = "time";
+        public const string SYSDATETIMEDATEPERIOD = "daterange";
+        public const string SYSDATETIMEDATETIME = "datetime";
+        public const string SYSDATETIMETIMEPERIOD = "timerange";
+        public const string SYSDATETIMEDATETIMEPERIOD = "datetimerange";
+        public const string SYSDATETIMEDURATION = "duration";
+        public const string SYSDATETIMESET = "set";
+        public const string SYSDATETIMEDATETIMEALT = "datetimealt";
+        public const string SYSDATETIMETIMEZONE = "timezone";
 
         // Model Name
-        public const string MODEL_DATETIME = "datetime";
+        public const string MODELDATETIME = "datetime";
 
         // Multiple Duration Types
-        public const string MultipleDuration_Prefix = "multipleDuration";
-        public const string MultipleDuration_Type = MultipleDuration_Prefix + "Type";
-        public const string MultipleDuration_DateTime = MultipleDuration_Prefix + "DateTime";
-        public const string MultipleDuration_Date = MultipleDuration_Prefix + "Date";
-        public const string MultipleDuration_Time = MultipleDuration_Prefix + "Time";
-        
+        public const string MultipleDurationPrefix = "multipleDuration";
+        public const string MultipleDurationType = MultipleDurationPrefix + "Type";
+        public const string MultipleDurationDateTime = MultipleDurationPrefix + "DateTime";
+        public const string MultipleDurationDate = MultipleDurationPrefix + "Date";
+        public const string MultipleDurationTime = MultipleDurationPrefix + "Time";
+
         // DateTime Parse
         public const string Resolve = "resolve";
         public const string ResolveToPast = "resolveToPast";
@@ -34,46 +34,49 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         // In the ExtractResult data
         public const string Context = "context";
-        public const string ContextType_RelativePrefix = "relativePrefix";
-        public const string ContextType_RelativeSuffix = "relativeSuffix";
-        public const string ContextType_AmPm = "AmPm";
+        public const string ContextTypeRelativePrefix = "relativePrefix";
+        public const string ContextTypeRelativeSuffix = "relativeSuffix";
+        public const string ContextTypeAmPm = "AmPm";
         public const string SubType = "subType";
 
-        // Comment - internal tag used during entity processing, never exposed to users. 
+        // Comment - internal tag used during entity processing, never exposed to users.
         // Tags are filtered out in BaseMergedDateTimeParser DateTimeResolution()
         public const string Comment = "Comment";
+
         // AmPm time representation for time parser
-        public const string Comment_AmPm = "ampm";
+        public const string CommentAmPm = "ampm";
+
         // Prefix early/late for time parser
-        public const string Comment_Early = "early";
-        public const string Comment_Late = "late";
+        public const string CommentEarly = "early";
+        public const string CommentLate = "late";
+
         // Parse week of date format
-        public const string Comment_WeekOf = "WeekOf";
-        public const string Comment_MonthOf = "MonthOf";
+        public const string CommentWeekOf = "WeekOf";
+        public const string CommentMonthOf = "MonthOf";
 
         // MOD Value
         // "before" -> To mean "preceding in time". I.e. Does not include the extracted datetime entity in the resolution's ending point. Equivalent to "<"
-        public const string BEFORE_MOD = "before";
+        public const string BEFOREMOD = "before";
 
         // "after" -> To mean "following in time". I.e. Does not include the extracted datetime entity in the resolution's starting point. Equivalent to ">"
-        public const string AFTER_MOD = "after";
+        public const string AFTERMOD = "after";
 
         // "since" -> Same as "after", but including the extracted datetime entity. Equivalent to ">="
-        public const string SINCE_MOD = "since";
+        public const string SINCEMOD = "since";
 
         // "until" -> Same as "before", but including the extracted datetime entity. Equivalent to "<="
-        public const string UNTIL_MOD = "until";
+        public const string UNTILMOD = "until";
 
-        public const string EARLY_MOD = "start";
-        public const string MID_MOD = "mid";
-        public const string LATE_MOD = "end";
+        public const string EARLYMOD = "start";
+        public const string MIDMOD = "mid";
+        public const string LATEMOD = "end";
 
-        public const string MORE_THAN_MOD = "more";
-        public const string LESS_THAN_MOD = "less";
+        public const string MORETHANMOD = "more";
+        public const string LESSTHANMOD = "less";
 
-        public const string REF_UNDEF_MOD = "ref_undef";
+        public const string REFUNDEFMOD = "ref_undef";
 
-        public const string APPROX_MOD = "approx";
+        public const string APPROXMOD = "approx";
 
         // Invalid year
         public const int InvalidYear = int.MinValue;
@@ -82,12 +85,6 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const int InvalidHour = int.MinValue;
         public const int InvalidMinute = int.MinValue;
         public const int InvalidSecond = int.MinValue;
-
-        public static readonly int MinYearNum = int.Parse(BaseDateTime.MinYearNum);
-        public static readonly int MaxYearNum = int.Parse(BaseDateTime.MaxYearNum);
-
-        public static readonly int MaxTwoDigitYearFutureNum = int.Parse(BaseDateTime.MaxTwoDigitYearFutureNum);
-        public static readonly int MinTwoDigitYearPastNum = int.Parse(BaseDateTime.MinTwoDigitYearPastNum);
 
         // These are some particular values for timezone recognition
         public const int InvalidOffsetValue = -10000;
@@ -108,14 +105,15 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         // hours of one half day
         public const int HalfDayHourCount = 12;
+
         // hours of a half mid-day-duration
         public const int HalfMidDayDurationHourCount = 2;
 
         // the length of four digits year, e.g., 2018
         public const int FourDigitsYearLength = 4;
 
-        public const string DefaultLanguageFallback_MDY = "MDY";
-        public const string DefaultLanguageFallback_DMY = "DMY";
+        public const string DefaultLanguageFallbackMDY = "MDY";
+        public const string DefaultLanguageFallbackDMY = "DMY";
 
         // Groups' names for named groups in regexes
         public const string NextGroupName = "next";
@@ -134,10 +132,9 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string LeftAmPmGroupName = "leftDesc";
         public const string RightAmPmGroupName = "rightDesc";
 
-        public const string DECADE_UNIT = "10Y";
+        public const string DECADEUNIT = "10Y";
 
         // Timex
-        public static readonly string[] DatePeriodTimexSplitter = { ",", "(", ")" };
         public const string TimexYear = "Y";
         public const string TimexMonth = "M";
         public const string TimexMonthFull = "MON";
@@ -166,5 +163,12 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string Daytime = "TDT";
         public const string Night = "TNI";
         public const string BusinessHour = "TBH";
+
+        // Non Constants
+        public static readonly int MinYearNum = int.Parse(BaseDateTime.MinYearNum);
+        public static readonly int MaxYearNum = int.Parse(BaseDateTime.MaxYearNum);
+        public static readonly int MaxTwoDigitYearFutureNum = int.Parse(BaseDateTime.MaxTwoDigitYearFutureNum);
+        public static readonly int MinTwoDigitYearPastNum = int.Parse(BaseDateTime.MinTwoDigitYearPastNum);
+        public static readonly string[] DatePeriodTimexSplitter = { ",", "(", ")" };
     }
 }
