@@ -8,6 +8,24 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 {
     public class ItalianTimePeriodParserConfiguration : BaseOptionsConfiguration, ITimePeriodParserConfiguration
     {
+        public ItalianTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config)
+            : base(config.Options)
+        {
+            TimeExtractor = config.TimeExtractor;
+            IntegerExtractor = config.IntegerExtractor;
+            TimeParser = config.TimeParser;
+            TimeZoneParser = config.TimeZoneParser;
+            PureNumberFromToRegex = ItalianTimePeriodExtractorConfiguration.PureNumFromTo;
+            PureNumberBetweenAndRegex = ItalianTimePeriodExtractorConfiguration.PureNumBetweenAnd;
+            SpecificTimeFromToRegex = ItalianTimePeriodExtractorConfiguration.SpecificTimeFromTo;
+            SpecificTimeBetweenAndRegex = ItalianTimePeriodExtractorConfiguration.SpecificTimeBetweenAnd;
+            TimeOfDayRegex = ItalianTimePeriodExtractorConfiguration.TimeOfDayRegex;
+            GeneralEndingRegex = ItalianTimePeriodExtractorConfiguration.GeneralEndingRegex;
+            TillRegex = ItalianTimePeriodExtractorConfiguration.TillRegex;
+            Numbers = config.Numbers;
+            UtilityConfiguration = config.UtilityConfiguration;
+        }
+
         public IDateTimeExtractor TimeExtractor { get; }
 
         public IDateTimeParser TimeParser { get; }
@@ -34,23 +52,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
-        public ItalianTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config.Options)
-        {
-            TimeExtractor = config.TimeExtractor;
-            IntegerExtractor = config.IntegerExtractor;
-            TimeParser = config.TimeParser;
-            TimeZoneParser = config.TimeZoneParser;
-            PureNumberFromToRegex = ItalianTimePeriodExtractorConfiguration.PureNumFromTo; 
-            PureNumberBetweenAndRegex = ItalianTimePeriodExtractorConfiguration.PureNumBetweenAnd;
-            SpecificTimeFromToRegex = ItalianTimePeriodExtractorConfiguration.SpecificTimeFromTo;
-            SpecificTimeBetweenAndRegex = ItalianTimePeriodExtractorConfiguration.SpecificTimeBetweenAnd;
-            TimeOfDayRegex = ItalianTimePeriodExtractorConfiguration.TimeOfDayRegex;
-            GeneralEndingRegex = ItalianTimePeriodExtractorConfiguration.GeneralEndingRegex;
-            TillRegex = ItalianTimePeriodExtractorConfiguration.TillRegex;
-            Numbers = config.Numbers;
-            UtilityConfiguration = config.UtilityConfiguration;
-        }
-
         public bool GetMatchedTimexRange(string text, out string timex, out int beginHour, out int endHour, out int endMin)
         {
             var trimmedText = text.Trim().ToLowerInvariant();
@@ -63,7 +64,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             endHour = 0;
             endMin = 0;
 
-            var timeOfDay = "";
+            var timeOfDay = string.Empty;
             if (DateTimeDefinitions.MorningTermList.Any(o => trimmedText.EndsWith(o)))
             {
                 timeOfDay = Constants.Morning;
@@ -98,6 +99,5 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
             return true;
         }
-
     }
 }
