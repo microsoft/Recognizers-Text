@@ -60,32 +60,32 @@ public class BaseDateTimePeriodParser implements IDateTimeParser {
 
         Object value = null;
 
-        if (er.type.equals(getParserName())) {
-            DateTimeResolutionResult innerResult = this.mergeDateAndTimePeriods(er.text, referenceDate);
+        if (er.getType().equals(getParserName())) {
+            DateTimeResolutionResult innerResult = this.mergeDateAndTimePeriods(er.getText(), referenceDate);
 
             if (!innerResult.getSuccess()) {
-                innerResult = this.mergeTwoTimePoints(er.text, referenceDate);
+                innerResult = this.mergeTwoTimePoints(er.getText(), referenceDate);
             }
 
             if (!innerResult.getSuccess()) {
-                innerResult = this.parseSpecificTimeOfDay(er.text, referenceDate);
+                innerResult = this.parseSpecificTimeOfDay(er.getText(), referenceDate);
             }
 
             if (!innerResult.getSuccess()) {
-                innerResult = this.parseDuration(er.text, referenceDate);
+                innerResult = this.parseDuration(er.getText(), referenceDate);
             }
 
             if (!innerResult.getSuccess()) {
-                innerResult = this.parseRelativeUnit(er.text, referenceDate);
+                innerResult = this.parseRelativeUnit(er.getText(), referenceDate);
             }
 
             if (!innerResult.getSuccess()) {
-                innerResult = this.parseDateWithPeriodPrefix(er.text, referenceDate);
+                innerResult = this.parseDateWithPeriodPrefix(er.getText(), referenceDate);
             }
 
             if (!innerResult.getSuccess()) {
                 // Cases like "today after 2:00pm", "1/1/2015 before 2:00 in the afternoon"
-                innerResult = this.parseDateWithTimePeriodSuffix(er.text, referenceDate);
+                innerResult = this.parseDateWithTimePeriodSuffix(er.getText(), referenceDate);
             }
 
             if (innerResult.getSuccess()) {
@@ -133,11 +133,11 @@ public class BaseDateTimePeriodParser implements IDateTimeParser {
         }
 
         DateTimeParseResult ret = new DateTimeParseResult(
-                er.start,
-                er.length,
-                er.text,
-                er.type,
-                er.data,
+                er.getStart(),
+                er.getLength(),
+                er.getText(),
+                er.getType(),
+                er.getData(),
                 value,
                 "",
                 value == null ? "" : ((DateTimeResolutionResult)value).getTimex());
@@ -161,7 +161,7 @@ public class BaseDateTimePeriodParser implements IDateTimeParser {
             return parsePureNumberCases(text, referenceTime);
         } else if (ers.size() == 1) {
             ParseResult timePeriodParseResult = config.getTimePeriodParser().parse(ers.get(0));
-            DateTimeResolutionResult timePeriodResolutionResult = (DateTimeResolutionResult)timePeriodParseResult.value;
+            DateTimeResolutionResult timePeriodResolutionResult = (DateTimeResolutionResult)timePeriodParseResult.getValue();
 
             if (timePeriodResolutionResult == null) {
                 return parsePureNumberCases(text, referenceTime);
@@ -176,22 +176,22 @@ public class BaseDateTimePeriodParser implements IDateTimeParser {
 
             // If it is a range type timex
             if (TimexUtility.isRangeTimex(timePeriodTimex)) {
-                List<ExtractResult> dateResult = config.getDateExtractor().extract(trimmedText.replace(ers.get(0).text, ""), referenceTime);
-                String dateText = trimmedText.replace(ers.get(0).text, "").replace(config.getTokenBeforeDate(), "").trim();
+                List<ExtractResult> dateResult = config.getDateExtractor().extract(trimmedText.replace(ers.get(0).getText(), ""), referenceTime);
+                String dateText = trimmedText.replace(ers.get(0).getText(), "").replace(config.getTokenBeforeDate(), "").trim();
 
                 // If only one Date is extracted and the Date text equals to the rest part of source text
-                if (dateResult.size() == 1 && dateText.equals(dateResult.get(0).text)) {
+                if (dateResult.size() == 1 && dateText.equals(dateResult.get(0).getText())) {
                     String dateTimex;
                     LocalDateTime futureTime;
                     LocalDateTime pastTime;
 
                     DateTimeParseResult pr = config.getDateParser().parse(dateResult.get(0), referenceTime);
 
-                    if (pr.value != null) {
-                        futureTime = (LocalDateTime)((DateTimeResolutionResult)pr.value).getFutureValue();
-                        pastTime = (LocalDateTime)((DateTimeResolutionResult)pr.value).getPastValue();
+                    if (pr.getValue() != null) {
+                        futureTime = (LocalDateTime)((DateTimeResolutionResult)pr.getValue()).getFutureValue();
+                        pastTime = (LocalDateTime)((DateTimeResolutionResult)pr.getValue()).getPastValue();
 
-                        dateTimex = pr.timexStr;
+                        dateTimex = pr.getTimexStr();
                     } else {
                         return parsePureNumberCases(text, referenceTime);
                     }
@@ -273,12 +273,12 @@ public class BaseDateTimePeriodParser implements IDateTimeParser {
 
             if (ers.size() > 0) {
                 DateTimeParseResult pr = config.getDateParser().parse(ers.get(0), referenceTime);
-                if (pr.value != null) {
-                    DateTimeResolutionResult prValue = (DateTimeResolutionResult)pr.value;
+                if (pr.getValue() != null) {
+                    DateTimeResolutionResult prValue = (DateTimeResolutionResult)pr.getValue();
                     futureDate = (LocalDateTime)prValue.getFutureValue();
                     pastDate = (LocalDateTime)prValue.getPastValue();
 
-                    dateStr = pr.timexStr;
+                    dateStr = pr.getTimexStr();
 
                     if (prValue.getTimeZoneResolution() != null) {
                         ret.setTimeZoneResolution(prValue.getTimeZoneResolution());
@@ -411,11 +411,11 @@ public class BaseDateTimePeriodParser implements IDateTimeParser {
                 beginHasDate = true;
             }
         } else if (dateTimeExtractResults.size() == 1 && timeExtractResults.size() == 1) {
-            if (timeExtractResults.get(0).start < dateTimeExtractResults.get(0).start) {
+            if (timeExtractResults.get(0).getStart() < dateTimeExtractResults.get(0).getStart()) {
                 pr1 = config.getTimeParser().parse(timeExtractResults.get(0), referenceDate);
                 pr2 = config.getDateTimeParser().parse(dateTimeExtractResults.get(0), referenceDate);
                 endHasDate = true;
-            } else if (timeExtractResults.get(0).start >= dateTimeExtractResults.get(0).start + dateTimeExtractResults.get(0).length) {
+            } else if (timeExtractResults.get(0).getStart() >= dateTimeExtractResults.get(0).getStart() + dateTimeExtractResults.get(0).getLength()) {
                 pr1 = config.getDateTimeParser().parse(dateTimeExtractResults.get(0), referenceDate);
                 pr2 = config.getTimeParser().parse(timeExtractResults.get(0), referenceDate);
                 beginHasDate = true;
@@ -430,15 +430,15 @@ public class BaseDateTimePeriodParser implements IDateTimeParser {
             return result;
         }
 
-        if (pr1.value == null || pr2.value == null) {
+        if (pr1.getValue() == null || pr2.getValue() == null) {
             return result;
         }
 
-        LocalDateTime futureBegin = (LocalDateTime)((DateTimeResolutionResult)pr1.value).getFutureValue();
-        LocalDateTime futureEnd = (LocalDateTime)((DateTimeResolutionResult)pr2.value).getFutureValue();
+        LocalDateTime futureBegin = (LocalDateTime)((DateTimeResolutionResult)pr1.getValue()).getFutureValue();
+        LocalDateTime futureEnd = (LocalDateTime)((DateTimeResolutionResult)pr2.getValue()).getFutureValue();
 
-        LocalDateTime pastBegin = (LocalDateTime)((DateTimeResolutionResult)pr1.value).getPastValue();
-        LocalDateTime pastEnd = (LocalDateTime)((DateTimeResolutionResult)pr2.value).getPastValue();
+        LocalDateTime pastBegin = (LocalDateTime)((DateTimeResolutionResult)pr1.getValue()).getPastValue();
+        LocalDateTime pastEnd = (LocalDateTime)((DateTimeResolutionResult)pr2.getValue()).getPastValue();
 
         if (bothHaveDates) {
             if (futureBegin.isAfter(futureEnd)) {
@@ -451,14 +451,14 @@ public class BaseDateTimePeriodParser implements IDateTimeParser {
         }
 
         if (bothHaveDates) {
-            result.setTimex(String.format("(%s,%s,PT%dH)", pr1.timexStr, pr2.timexStr, Math.round(ChronoUnit.SECONDS.between(futureBegin, futureEnd) / 3600f)));
+            result.setTimex(String.format("(%s,%s,PT%dH)", pr1.getTimexStr(), pr2.getTimexStr(), Math.round(ChronoUnit.SECONDS.between(futureBegin, futureEnd) / 3600f)));
             // Do nothing
         } else if (beginHasDate) {
             futureEnd = DateUtil.safeCreateFromMinValue(futureBegin.toLocalDate(), futureEnd.toLocalTime());
             pastEnd = DateUtil.safeCreateFromMinValue(pastBegin.toLocalDate(), pastEnd.toLocalTime());
 
-            String dateStr = pr1.timexStr.split("T")[0];
-            result.setTimex(String.format("(%s,%s,PT%dH)", pr1.timexStr, dateStr + pr2.timexStr, ChronoUnit.HOURS.between(futureBegin, futureEnd)));
+            String dateStr = pr1.getTimexStr().split("T")[0];
+            result.setTimex(String.format("(%s,%s,PT%dH)", pr1.getTimexStr(), dateStr + pr2.getTimexStr(), ChronoUnit.HOURS.between(futureBegin, futureEnd)));
         } else if (endHasDate) {
             futureBegin = DateUtil.safeCreateFromMinValue(futureEnd.getYear(), futureEnd.getMonthValue(), futureEnd.getDayOfMonth(),
                     futureBegin.getHour(), futureBegin.getMinute(), futureBegin.getSecond());
@@ -467,12 +467,12 @@ public class BaseDateTimePeriodParser implements IDateTimeParser {
                     pastBegin.getHour(), pastBegin.getMinute(), pastBegin.getSecond());
 
 
-            String dateStr = pr2.timexStr.split("T")[0];
-            result.setTimex(String.format("(%s,%s,PT%dH)", dateStr + pr1.timexStr, pr2.timexStr, ChronoUnit.HOURS.between(futureBegin, futureEnd)));
+            String dateStr = pr2.getTimexStr().split("T")[0];
+            result.setTimex(String.format("(%s,%s,PT%dH)", dateStr + pr1.getTimexStr(), pr2.getTimexStr(), ChronoUnit.HOURS.between(futureBegin, futureEnd)));
         }
 
-        DateTimeResolutionResult pr1Value = (DateTimeResolutionResult)pr1.value;
-        DateTimeResolutionResult pr2Value = (DateTimeResolutionResult)pr2.value;
+        DateTimeResolutionResult pr1Value = (DateTimeResolutionResult)pr1.getValue();
+        DateTimeResolutionResult pr2Value = (DateTimeResolutionResult)pr2.getValue();
 
         String ampmStr1 = pr1Value.getComment();
         String ampmStr2 = pr2Value.getComment();
@@ -610,21 +610,23 @@ public class BaseDateTimePeriodParser implements IDateTimeParser {
             // Eliminate time period, if any
             List<ExtractResult> timePeriodErs = config.getTimePeriodExtractor().extract(beforeStr);
             if (timePeriodErs.size() > 0) {
-                beforeStr = beforeStr.substring(0, timePeriodErs.get(0).start) + beforeStr.substring(timePeriodErs.get(0).start + timePeriodErs.get(0).length).trim();
+                beforeStr = beforeStr.substring(0, timePeriodErs.get(0).getStart()) + beforeStr.substring(timePeriodErs.get(0).getStart() + timePeriodErs.get(0).getLength())
+                        .trim();
             } else {
                 timePeriodErs = config.getTimePeriodExtractor().extract(afterStr);
                 if (timePeriodErs.size() > 0) {
-                    afterStr = afterStr.substring(0, timePeriodErs.get(0).start) + afterStr.substring(timePeriodErs.get(0).start + timePeriodErs.get(0).length).trim();
+                    afterStr = afterStr.substring(0, timePeriodErs.get(0).getStart()) + afterStr.substring(timePeriodErs.get(0).getStart() + timePeriodErs.get(0).getLength())
+                            .trim();
                 }
             }
 
             List<ExtractResult> ers = config.getDateExtractor().extract(beforeStr + " " + afterStr, referenceDate);
 
-            if (ers.size() == 0 || ers.get(0).length < beforeStr.length()) {
+            if (ers.size() == 0 || ers.get(0).getLength() < beforeStr.length()) {
                 boolean valid = false;
 
-                if (ers.size() > 0 && ers.get(0).start == 0) {
-                    String midStr = beforeStr.substring(ers.get(0).start + ers.get(0).length);
+                if (ers.size() > 0 && ers.get(0).getStart() == 0) {
+                    String midStr = beforeStr.substring(ers.get(0).getStart() + ers.get(0).getLength());
                     if (StringUtility.isNullOrWhiteSpace(midStr.replace(",", " "))) {
                         valid = true;
                     }
@@ -633,9 +635,9 @@ public class BaseDateTimePeriodParser implements IDateTimeParser {
                 if (!valid) {
                     ers = config.getDateExtractor().extract(afterStr, referenceDate);
 
-                    if (ers.size() == 0 || ers.get(0).length != beforeStr.length()) {
-                        if (ers.size() > 0 && ers.get(0).start + ers.get(0).length == afterStr.length()) {
-                            String midStr = afterStr.substring(0, ers.get(0).start);
+                    if (ers.size() == 0 || ers.get(0).getLength() != beforeStr.length()) {
+                        if (ers.size() > 0 && ers.get(0).getStart() + ers.get(0).getLength() == afterStr.length()) {
+                            String midStr = afterStr.substring(0, ers.get(0).getStart());
                             if (StringUtility.isNullOrWhiteSpace(midStr.replace(",", " "))) {
                                 valid = true;
                             }
@@ -654,8 +656,8 @@ public class BaseDateTimePeriodParser implements IDateTimeParser {
             if (timePeriodErs.size() > 0) {
                 DateTimeParseResult timePr = config.getTimePeriodParser().parse(timePeriodErs.get(0), referenceDate);
                 if (timePr != null) {
-                    Pair<LocalDateTime, LocalDateTime> periodFuture = (Pair<LocalDateTime, LocalDateTime>)((DateTimeResolutionResult)timePr.value).getFutureValue();
-                    Pair<LocalDateTime, LocalDateTime> periodPast = (Pair<LocalDateTime, LocalDateTime>)((DateTimeResolutionResult)timePr.value).getPastValue();
+                    Pair<LocalDateTime, LocalDateTime> periodFuture = (Pair<LocalDateTime, LocalDateTime>)((DateTimeResolutionResult)timePr.getValue()).getFutureValue();
+                    Pair<LocalDateTime, LocalDateTime> periodPast = (Pair<LocalDateTime, LocalDateTime>)((DateTimeResolutionResult)timePr.getValue()).getPastValue();
 
                     if (periodFuture == periodPast) {
                         beginHour = periodFuture.getValue0().getHour();
@@ -675,13 +677,13 @@ public class BaseDateTimePeriodParser implements IDateTimeParser {
             }
 
             DateTimeParseResult pr = config.getDateParser().parse(ers.get(0), referenceDate);
-            LocalDateTime futureDate = (LocalDateTime)((DateTimeResolutionResult)pr.value).getFutureValue();
-            LocalDateTime pastDate = (LocalDateTime)((DateTimeResolutionResult)pr.value).getPastValue();
+            LocalDateTime futureDate = (LocalDateTime)((DateTimeResolutionResult)pr.getValue()).getFutureValue();
+            LocalDateTime pastDate = (LocalDateTime)((DateTimeResolutionResult)pr.getValue()).getPastValue();
 
             if (!hasSpecificTimePeriod) {
-                result.setTimex(pr.timexStr + timeStr);
+                result.setTimex(pr.getTimexStr() + timeStr);
             } else {
-                result.setTimex(String.format("(%sT%d,%sT%d,PT%dH)", pr.timexStr, beginHour, pr.timexStr, endHour, endHour - beginHour));
+                result.setTimex(String.format("(%sT%d,%sT%d,PT%dH)", pr.getTimexStr(), beginHour, pr.getTimexStr(), endHour, endHour - beginHour));
             }
 
             Pair<LocalDateTime, LocalDateTime> futureResult = new Pair<LocalDateTime, LocalDateTime>(
@@ -728,31 +730,31 @@ public class BaseDateTimePeriodParser implements IDateTimeParser {
         if (ers.size() == 1) {
             ParseResult pr = config.getDurationParser().parse(ers.get(0));
 
-            String beforeStr = text.substring(0, pr.start).trim().toLowerCase();
-            String afterStr = text.substring(pr.start + pr.length).trim().toLowerCase();
+            String beforeStr = text.substring(0, pr.getStart()).trim().toLowerCase();
+            String afterStr = text.substring(pr.getStart() + pr.getLength()).trim().toLowerCase();
 
             List<ExtractResult> numbersInSuffix = config.getCardinalExtractor().extract(beforeStr);
-            List<ExtractResult> numbersInDuration = config.getCardinalExtractor().extract(ers.get(0).text);
+            List<ExtractResult> numbersInDuration = config.getCardinalExtractor().extract(ers.get(0).getText());
 
             // Handle cases like "2 upcoming days", "5 previous years"
             if (!numbersInSuffix.isEmpty() && numbersInDuration.isEmpty()) {
                 ExtractResult numberEr = numbersInSuffix.get(0);
-                String numberText = numberEr.text;
-                String durationText = ers.get(0).text;
+                String numberText = numberEr.getText();
+                String durationText = ers.get(0).getText();
                 String combinedText = String.format("%s %s", numberText, durationText);
                 List<ExtractResult> combinedDurationEr = config.getDurationExtractor().extract(combinedText, referenceTime);
 
                 if (!combinedDurationEr.isEmpty()) {
                     pr = config.getDurationParser().parse(combinedDurationEr.get(0));
-                    int startIndex = numberEr.start + numberEr.length;
+                    int startIndex = numberEr.getStart() + numberEr.getLength();
                     beforeStr = beforeStr.substring(startIndex).trim();
                 }
             }
 
-            if (pr.value != null) {
+            if (pr.getValue() != null) {
                 int swiftSeconds = 0;
                 String mod = "";
-                DateTimeResolutionResult durationResult = (DateTimeResolutionResult)pr.value;
+                DateTimeResolutionResult durationResult = (DateTimeResolutionResult)pr.getValue();
 
                 if (durationResult.getPastValue() instanceof Double && durationResult.getFutureValue() instanceof Double) {
                     swiftSeconds = Math.round(((Double)durationResult.getPastValue()).floatValue());
@@ -809,7 +811,7 @@ public class BaseDateTimePeriodParser implements IDateTimeParser {
                 result.setSuccess(true);
 
                 if (!StringUtility.isNullOrEmpty(mod)) {
-                    ((DateTimeResolutionResult)pr.value).setMod(mod);
+                    ((DateTimeResolutionResult)pr.getValue()).setMod(mod);
                 }
 
                 List<Object> subDateTimeEntities = new ArrayList<Object>();
@@ -900,12 +902,12 @@ public class BaseDateTimePeriodParser implements IDateTimeParser {
 
         List<ExtractResult> dateResult = config.getDateExtractor().extract(text);
         if (dateResult.size() > 0) {
-            String beforeStr = StringUtility.trimEnd(text.substring(0, dateResult.get(dateResult.size() - 1).start));
+            String beforeStr = StringUtility.trimEnd(text.substring(0, dateResult.get(dateResult.size() - 1).getStart()));
             Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(config.getPrefixDayRegex(), beforeStr)).findFirst();
             if (match.isPresent()) {
                 DateTimeParseResult pr = config.getDateParser().parse(dateResult.get(dateResult.size() - 1), referenceDate);
-                if (pr.value != null) {
-                    LocalDateTime startTime = (LocalDateTime)((DateTimeResolutionResult)pr.value).getFutureValue();
+                if (pr.getValue() != null) {
+                    LocalDateTime startTime = (LocalDateTime)((DateTimeResolutionResult)pr.getValue()).getFutureValue();
                     startTime = LocalDateTime.of(startTime.getYear(), startTime.getMonthValue(), startTime.getDayOfMonth(), 0, 0, 0);
                     LocalDateTime endTime = startTime;
 
@@ -924,7 +926,7 @@ public class BaseDateTimePeriodParser implements IDateTimeParser {
                         return result;
                     }
 
-                    result.setTimex(pr.timexStr);
+                    result.setTimex(pr.getTimexStr());
 
                     Pair<LocalDateTime, LocalDateTime> resultValue = new Pair<LocalDateTime, LocalDateTime>(startTime, endTime);
 
@@ -946,25 +948,25 @@ public class BaseDateTimePeriodParser implements IDateTimeParser {
         Optional<ExtractResult> timeEr = config.getTimeExtractor().extract(text).stream().findFirst();
 
         if (dateEr.isPresent() && timeEr.isPresent()) {
-            int dateStrEnd = dateEr.get().start + dateEr.get().length;
+            int dateStrEnd = dateEr.get().getStart() + dateEr.get().getLength();
 
-            if (dateStrEnd < timeEr.get().start) {
-                String midStr = text.substring(dateStrEnd, timeEr.get().start);
+            if (dateStrEnd < timeEr.get().getStart()) {
+                String midStr = text.substring(dateStrEnd, timeEr.get().getStart());
 
                 if (isValidConnectorForDateAndTimePeriod(midStr)) {
                     DateTimeParseResult datePr = config.getDateParser().parse(dateEr.get(), referenceDate);
                     DateTimeParseResult timePr = config.getTimeParser().parse(timeEr.get(), referenceDate);
 
                     if (datePr != null && timePr != null) {
-                        DateTimeResolutionResult timeResolutionResult = (DateTimeResolutionResult)timePr.value;
-                        DateTimeResolutionResult dateResolutionResult = (DateTimeResolutionResult)datePr.value;
+                        DateTimeResolutionResult timeResolutionResult = (DateTimeResolutionResult)timePr.getValue();
+                        DateTimeResolutionResult dateResolutionResult = (DateTimeResolutionResult)datePr.getValue();
                         LocalDateTime futureDateValue = (LocalDateTime)dateResolutionResult.getFutureValue();
                         LocalDateTime pastDateValue = (LocalDateTime)dateResolutionResult.getPastValue();
                         LocalDateTime futureTimeValue = (LocalDateTime)timeResolutionResult.getFutureValue();
                         LocalDateTime pastTimeValue = (LocalDateTime)timeResolutionResult.getPastValue();
 
                         result.setComment(timeResolutionResult.getComment());
-                        result.setTimex(datePr.timexStr + timePr.timexStr);
+                        result.setTimex(datePr.getTimexStr() + timePr.getTimexStr());
 
                         result.setFutureValue(DateUtil.safeCreateFromMinValue(futureDateValue.toLocalDate(), futureTimeValue.toLocalTime()));
                         result.setPastValue(DateUtil.safeCreateFromMinValue(pastDateValue.toLocalDate(), pastTimeValue.toLocalTime()));
@@ -981,8 +983,8 @@ public class BaseDateTimePeriodParser implements IDateTimeParser {
 
                         result.setSubDateTimeEntities(subDateTimeEntities);
 
-                        if (((DateTimeResolutionResult)timePr.value).getTimeZoneResolution() != null) {
-                            result.setTimeZoneResolution(((DateTimeResolutionResult)timePr.value).getTimeZoneResolution());
+                        if (((DateTimeResolutionResult)timePr.getValue()).getTimeZoneResolution() != null) {
+                            result.setTimeZoneResolution(((DateTimeResolutionResult)timePr.getValue()).getTimeZoneResolution());
                         }
 
                         result.setSuccess(true);

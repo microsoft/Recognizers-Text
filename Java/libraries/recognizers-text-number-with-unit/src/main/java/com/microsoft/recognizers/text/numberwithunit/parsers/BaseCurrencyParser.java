@@ -29,11 +29,11 @@ public class BaseCurrencyParser implements IParser {
     public ParseResult parse(ExtractResult extResult) {
 
         ParseResult pr;
-        if (extResult.data instanceof List) {
+        if (extResult.getData() instanceof List) {
             return mergeCompoundUnit(extResult);
         } else {
             pr = numberWithUnitParser.parse(extResult);
-            UnitValue value = (UnitValue)pr.value;
+            UnitValue value = (UnitValue)pr.getValue();
 
             String mainUnitIsoCode = null;
             if (value != null && config.getCurrencyNameToIsoCodeMap().containsKey(value.unit)) {
@@ -41,17 +41,18 @@ public class BaseCurrencyParser implements IParser {
             }
 
             if (mainUnitIsoCode == null || mainUnitIsoCode.isEmpty() || mainUnitIsoCode.startsWith(Constants.FAKE_ISO_CODE_PREFIX)) {
-                return pr.withValue(new UnitValue(value.number, value.unit));
+                pr.setValue(new UnitValue(value.number, value.unit));
             } else {
-                return pr.withValue(new CurrencyUnitValue(value.number, value.unit, mainUnitIsoCode));
+                pr.setValue(new CurrencyUnitValue(value.number, value.unit, mainUnitIsoCode));
             }
+            return pr;
         }
     }
 
     @SuppressWarnings("unchecked")
     private ParseResult mergeCompoundUnit(ExtractResult compoundResult) {
         List<ParseResult> results = new ArrayList<>();
-        List<ExtractResult> compoundUnit = (List<ExtractResult>)compoundResult.data;
+        List<ExtractResult> compoundUnit = (List<ExtractResult>)compoundResult.getData();
 
         int count = 0;
         ParseResult result = null;
@@ -63,26 +64,26 @@ public class BaseCurrencyParser implements IParser {
         for (int idx = 0; idx < compoundUnit.size(); idx++) {
             ExtractResult extractResult = compoundUnit.get(idx);
             ParseResult parseResult = numberWithUnitParser.parse(extractResult);
-            Optional<UnitValue> parseResultValue = Optional.ofNullable(parseResult.value instanceof UnitValue ? (UnitValue)parseResult.value : null);
+            Optional<UnitValue> parseResultValue = Optional.ofNullable(parseResult.getValue() instanceof UnitValue ? (UnitValue)parseResult.getValue() : null);
             String unitValue = parseResultValue.isPresent() ? parseResultValue.get().unit : "";
 
             // Process a new group
             if (count == 0) {
-                if (!extractResult.type.equals(Constants.SYS_UNIT_CURRENCY)) {
+                if (!extractResult.getType().equals(Constants.SYS_UNIT_CURRENCY)) {
                     continue;
                 }
 
                 // Initialize a new result
-                result = new ParseResult(extractResult.start, extractResult.length, extractResult.text, extractResult.type, null, null, null);
+                result = new ParseResult(extractResult.getStart(), extractResult.getLength(), extractResult.getText(), extractResult.getType(), null, null, null);
 
                 mainUnitValue = unitValue;
                 numberValue = parseResultValue.isPresent() ? Double.parseDouble(parseResultValue.get().number) : 0;
-                result = result.withResolutionStr(parseResult.resolutionStr);
+                result.setResolutionStr(parseResult.getResolutionStr());
                 mainUnitIsoCode = config.getCurrencyNameToIsoCodeMap().containsKey(unitValue) ? config.getCurrencyNameToIsoCodeMap().get(unitValue) : mainUnitIsoCode;
 
                 // If the main unit can't be recognized, finish process this group.
                 if (mainUnitIsoCode == null || mainUnitIsoCode.isEmpty()) {
-                    result = result.withValue(new UnitValue(String.valueOf(numberValue), mainUnitValue));
+                    result.setValue(new UnitValue(String.valueOf(numberValue), mainUnitValue));
                     results.add(result);
                     result = null;
                     continue;
@@ -94,11 +95,10 @@ public class BaseCurrencyParser implements IParser {
             } else {
 
                 // Match pure number as fraction unit.
-                if (extractResult.type.equals(Constants.SYS_NUM)) {
-                    numberValue += (double)parseResult.value * (1.0 / 100);
-                    result = result
-                            .withResolutionStr(result.resolutionStr + " " + parseResult.resolutionStr)
-                            .withLength(parseResult.start + parseResult.length - result.start);
+                if (extractResult.getType().equals(Constants.SYS_NUM)) {
+                    numberValue += (double)parseResult.getValue() * (1.0 / 100);
+                    result.setLength(parseResult.getStart() + parseResult.getLength() - result.getStart());
+                    result.setResolutionStr(result.getResolutionStr() + " " + parseResult.getResolutionStr());
                     count++;
                     continue;
                 }
@@ -115,17 +115,16 @@ public class BaseCurrencyParser implements IParser {
                 if (fractionUnitCode != null && !fractionUnitCode.isEmpty() && fractionNumValue.isPresent() && fractionNumValue.get() != 0 &&
                     checkUnitsStringContains(fractionUnitCode, fractionUnitsString)) {
                     numberValue += Double.parseDouble(parseResultValue.get().number) * (1.0 / fractionNumValue.get());
-                    result = result
-                            .withResolutionStr(result.resolutionStr + " " + parseResult.resolutionStr)
-                            .withLength(parseResult.start + parseResult.length - result.start);
+                    result.setLength(parseResult.getStart() + parseResult.getLength() - result.getStart());
+                    result.setResolutionStr(result.getResolutionStr() + " " + parseResult.getResolutionStr());
                 } else {
                     // If the fraction unit doesn't match the main unit, finish process this group.
                     if (result != null) {
                         if (mainUnitIsoCode == null || mainUnitIsoCode.isEmpty() ||
                             mainUnitIsoCode.startsWith(Constants.FAKE_ISO_CODE_PREFIX)) {
-                            result = result.withValue(new UnitValue(String.valueOf(numberValue), mainUnitValue));
+                            result.setValue(new UnitValue(String.valueOf(numberValue), mainUnitValue));
                         } else {
-                            result = result.withValue(new CurrencyUnitValue(String.valueOf(numberValue), mainUnitValue, mainUnitIsoCode));
+                            result.setValue(new CurrencyUnitValue(String.valueOf(numberValue), mainUnitValue, mainUnitIsoCode));
                         }
 
                         results.add(result);
@@ -144,15 +143,15 @@ public class BaseCurrencyParser implements IParser {
         if (result != null) {
             if (mainUnitIsoCode == null || mainUnitIsoCode.isEmpty() ||
                 mainUnitIsoCode.startsWith(Constants.FAKE_ISO_CODE_PREFIX)) {
-                result = result.withValue(new UnitValue(String.valueOf(numberValue), mainUnitValue));
+                result.setValue(new UnitValue(String.valueOf(numberValue), mainUnitValue));
             } else {
-                result = result.withValue(new CurrencyUnitValue(String.valueOf(numberValue), mainUnitValue, mainUnitIsoCode));
+                result.setValue(new CurrencyUnitValue(String.valueOf(numberValue), mainUnitValue, mainUnitIsoCode));
             }
 
             results.add(result);
         }
 
-        resolveText(results, compoundResult.text, compoundResult.start);
+        resolveText(results, compoundResult.getText(), compoundResult.getStart());
 
         return new ParseResult(null, null, null, null, null, results, null);
     }
@@ -165,11 +164,10 @@ public class BaseCurrencyParser implements IParser {
 
     private void resolveText(List<ParseResult> prs, String source, int bias) {
         for (ParseResult parseResult : prs) {
-            if (parseResult.start != null && parseResult.length != null) {
-                int start = parseResult.start - bias;
-                prs.set(
-                        prs.indexOf(parseResult),
-                        parseResult.withText(source.substring(start, start + parseResult.length)));
+            if (parseResult.getStart() != null && parseResult.getLength() != null) {
+                int start = parseResult.getStart() - bias;
+                parseResult.setText(source.substring(start, start + parseResult.getLength()));
+                prs.set(prs.indexOf(parseResult), parseResult);
             }
         }
     }

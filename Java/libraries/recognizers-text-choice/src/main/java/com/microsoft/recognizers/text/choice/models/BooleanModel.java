@@ -23,11 +23,11 @@ public class BooleanModel extends ChoiceModel {
     @Override
     protected SortedMap<String, Object> getResolution(ParseResult parseResult) {
 
-        OptionsParseDataResult parseResultData = (OptionsParseDataResult)parseResult.data;
+        OptionsParseDataResult parseResultData = (OptionsParseDataResult)parseResult.getData();
         SortedMap<String, Object> results = new TreeMap<String, Object>();
         SortedMap<String, Object> otherMatchesMap = new TreeMap<String, Object>();
 
-        results.put("value", parseResult.value);
+        results.put("value", parseResult.getValue());
         results.put("score", parseResultData.score);
 
         for (OptionsOtherMatchParseResult otherMatchParseRes : parseResultData.otherMatches) {

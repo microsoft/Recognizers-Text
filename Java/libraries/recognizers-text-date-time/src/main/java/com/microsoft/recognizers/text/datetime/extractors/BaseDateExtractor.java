@@ -165,7 +165,7 @@ public class BaseDateExtractor extends AbstractYearExtractor implements IDateTim
             int num;
             try {
                 ParseResult parseResult = config.getNumberParser().parse(result);
-                num = Float.valueOf(parseResult.value.toString()).intValue();
+                num = Float.valueOf(parseResult.getValue().toString()).intValue();
             } catch (NumberFormatException e) {
                 num = 0;
             }
@@ -174,14 +174,14 @@ public class BaseDateExtractor extends AbstractYearExtractor implements IDateTim
                 continue;
             }
 
-            if (result.start >= 0) {
+            if (result.getStart() >= 0) {
                 // Handling cases like '(Monday,) Jan twenty two'
-                String frontStr = text.substring(0, result.start);
+                String frontStr = text.substring(0, result.getStart());
 
                 Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(config.getMonthEnd(), frontStr)).findFirst();
                 if (match.isPresent()) {
                     int startIndex = match.get().index;
-                    int endIndex = match.get().index + match.get().length + result.length;
+                    int endIndex = match.get().index + match.get().length + result.getLength();
 
                     int month = config.getMonthOfYear().getOrDefault(match.get().getGroup("month").value.toLowerCase(), reference.getMonthValue());
 
@@ -198,7 +198,7 @@ public class BaseDateExtractor extends AbstractYearExtractor implements IDateTim
                 for (Match matchCase : matches) {
                     if (matchCase != null) {
                         String ordinalNum = matchCase.getGroup("DayOfMonth").value;
-                        if (ordinalNum.equals(result.text)) {
+                        if (ordinalNum.equals(result.getText())) {
                             int endLenght = 0;
                             if (!matchCase.getGroup("end").value.equals("")) {
                                 endLenght = matchCase.getGroup("end").value.length();
@@ -220,7 +220,7 @@ public class BaseDateExtractor extends AbstractYearExtractor implements IDateTim
                 for (Match matchCase : matches) {
                     if (matchCase != null) {
                         String ordinalNum = matchCase.getGroup("DayOfMonth").value;
-                        if (ordinalNum.equals(result.text)) {
+                        if (ordinalNum.equals(result.getText())) {
                             // Get week of day for the ordinal number which is regarded as a date of reference month
                             LocalDateTime date = DateUtil.safeCreateFromMinValue(reference.getYear(), reference.getMonthValue(), num);
                             String numWeekDayStr = date.getDayOfWeek().toString().toLowerCase();
@@ -232,7 +232,7 @@ public class BaseDateExtractor extends AbstractYearExtractor implements IDateTim
                             int extractedWeekDay = config.getDayOfWeek().get(extractedWeekDayStr);
 
                             if (date != DateUtil.minValue() && numWeekDay == extractedWeekDay) {
-                                tokens.add(new Token(matchCase.index, result.start + result.length));
+                                tokens.add(new Token(matchCase.index, result.getStart() + result.getLength()));
                                 isFound = true;
                             }
                         }
@@ -244,12 +244,12 @@ public class BaseDateExtractor extends AbstractYearExtractor implements IDateTim
                 }
 
                 // Handling cases like '20th of next month'
-                String suffixStr = text.substring(result.start + result.length);
+                String suffixStr = text.substring(result.getStart() + result.getLength());
                 match = Arrays.stream(RegExpUtility.getMatches(config.getRelativeMonthRegex(), suffixStr.trim())).findFirst();
                 if (match.isPresent() && match.get().index == 0) {
                     int spaceLen = suffixStr.length() - suffixStr.trim().length();
-                    int resStart = result.start;
-                    int resEnd = resStart + result.length + spaceLen + match.get().length;
+                    int resStart = result.getStart();
+                    int resEnd = resStart + result.getLength() + spaceLen + match.get().length;
 
                     // Check if prefix contains 'the', include it if any
                     String prefix = text.substring(0, resStart);
@@ -262,25 +262,25 @@ public class BaseDateExtractor extends AbstractYearExtractor implements IDateTim
                 }
 
                 // Handling cases like 'second Sunday'
-                suffixStr = text.substring(result.start + result.length);
+                suffixStr = text.substring(result.getStart() + result.getLength());
                 match = Arrays.stream(RegExpUtility.getMatches(config.getWeekDayRegex(), suffixStr.trim())).findFirst();
-                if (match.isPresent() && match.get().index == 0 && num <= 5 && result.type.equals("builtin.num.ordinal")) {
+                if (match.isPresent() && match.get().index == 0 && num <= 5 && result.getType().equals("builtin.num.ordinal")) {
                     String weekDayStr = match.get().getGroup("weekday").value.toLowerCase();
                     if (config.getDayOfWeek().containsKey(weekDayStr)) {
                         int spaceLen = suffixStr.length() - suffixStr.trim().length();
-                        tokens.add(new Token(result.start, result.start + result.length + spaceLen + match.get().length));
+                        tokens.add(new Token(result.getStart(), result.getStart() + result.getLength() + spaceLen + match.get().length));
                     }
                 }
             }
 
             // For cases like "I'll go back twenty second of June"
-            if (result.start + result.length < text.length()) {
-                String afterStr = text.substring(result.start + result.length);
+            if (result.getStart() + result.getLength() < text.length()) {
+                String afterStr = text.substring(result.getStart() + result.getLength());
 
                 Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(config.getOfMonth(), afterStr)).findFirst();
                 if (match.isPresent()) {
-                    int startIndex = result.start;
-                    int endIndex = result.start + result.length + match.get().length;
+                    int startIndex = result.getStart();
+                    int endIndex = result.getStart() + result.getLength() + match.get().length;
 
                     int month = config.getMonthOfYear().getOrDefault(match.get().getGroup("month").value.toLowerCase(), reference.getMonthValue());
 
@@ -358,7 +358,7 @@ public class BaseDateExtractor extends AbstractYearExtractor implements IDateTim
                 duration = stripInequalityDuration(duration);
             }
 
-            Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(config.getDateUnitRegex(), duration.text)).findFirst();
+            Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(config.getDateUnitRegex(), duration.getText())).findFirst();
 
             if (match.isPresent()) {
                 tokens = AgoLaterUtil.extractorDurationWithBeforeAndAfter(text, duration, tokens, config.getUtilityConfiguration());
@@ -396,10 +396,10 @@ public class BaseDateExtractor extends AbstractYearExtractor implements IDateTim
         List<Token> durations = new ArrayList<>();
 
         for (ExtractResult durationExtraction : durationEr) {
-            Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(config.getDateUnitRegex(), durationExtraction.text)).findFirst();
+            Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(config.getDateUnitRegex(), durationExtraction.getText())).findFirst();
             if (match.isPresent()) {
-                int start = durationExtraction.start != null ? durationExtraction.start : 0;
-                int end = start + (durationExtraction.length != null ? durationExtraction.length : 0);
+                int start = durationExtraction.getStart() != null ? durationExtraction.getStart() : 0;
+                int end = start + (durationExtraction.getLength() != null ? durationExtraction.getLength() : 0);
                 durations.add(new Token(start, end));
             }
         }
@@ -439,15 +439,18 @@ public class BaseDateExtractor extends AbstractYearExtractor implements IDateTim
 
     private ExtractResult stripInequalityPrefix(ExtractResult er, Pattern regex) {
         ExtractResult result = er;
-        Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(regex, er.text)).findFirst();
+        Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(regex, er.getText())).findFirst();
 
         if (match.isPresent()) {
-            int originalLength = er.text.length();
-            String text = er.text.replace(match.get().value, "").trim();
-            int start = er.start + originalLength - text.length();
+            int originalLength = er.getText().length();
+            String text = er.getText().replace(match.get().value, "").trim();
+            int start = er.getStart() + originalLength - text.length();
             int length = text.length();
             String data = "";
-            result = er.withText(text).withStart(start).withLength(length).withData(data);
+            result.setStart(start);
+            result.setLength(length);
+            result.setText(text);
+            result.setData(data);
         }
 
         return result;
@@ -455,14 +458,14 @@ public class BaseDateExtractor extends AbstractYearExtractor implements IDateTim
 
     // Cases like "more than 3 days", "less than 4 weeks"
     private boolean isInequalityDuration(ExtractResult er) {
-        return er.data != null && (er.data.toString().equals(Constants.MORE_THAN_MOD) || er.data.toString().equals(Constants.LESS_THAN_MOD));
+        return er.getData() != null && (er.getData().toString().equals(Constants.MORE_THAN_MOD) || er.getData().toString().equals(Constants.LESS_THAN_MOD));
     }
 
     private boolean isMultipleDurationDate(ExtractResult er) {
-        return er.data != null && er.data.toString().equals(Constants.MultipleDuration_Date);
+        return er.getData() != null && er.getData().toString().equals(Constants.MultipleDuration_Date);
     }
 
     private boolean isMultipleDuration(ExtractResult er) {
-        return er.data != null && er.data.toString().startsWith(Constants.MultipleDuration_Prefix);
+        return er.getData() != null && er.getData().toString().startsWith(Constants.MultipleDuration_Prefix);
     }
 }

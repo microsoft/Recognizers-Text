@@ -211,10 +211,10 @@
     "Input": "Het is kwart over acht",
     "Results": [
       {
-        "Text": "kwart over 8",
+        "Text": "kwart over acht",
         "Type": "time",
-        "Start": -1,
-        "Length": 12
+        "Start": 7,
+        "Length": 15
       }
     ],
     "NotSupported": "dotNet",
@@ -627,9 +627,9 @@
     "Input": "Ik ben om 7 uur p.m. terug",
     "Results": [
       {
-        "Text": "7 uur p. m",
+        "Text": "7 uur p.m.",
         "Type": "time",
-        "Start": -1,
+        "Start": 10,
         "Length": 10
       }
     ],
@@ -754,10 +754,10 @@
     "Input": "Ik ben met lunchtijd 12 uur terug",
     "Results": [
       {
-        "Text": "at lunchtijd 12 uur",
+        "Text": "met lunchtijd 12 uur",
         "Type": "time",
-        "Start": -1,
-        "Length": 19
+        "Start": 7,
+        "Length": 20
       }
     ],
     "NotSupported": "dotNet",

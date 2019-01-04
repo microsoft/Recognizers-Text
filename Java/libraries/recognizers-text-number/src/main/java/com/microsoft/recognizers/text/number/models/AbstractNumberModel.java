@@ -49,12 +49,12 @@ public abstract class AbstractNumberModel implements IModel {
 
         return parsedNumbers.stream().map(o -> {
             SortedMap<String, Object> sortedMap = new TreeMap<String, Object>();
-            sortedMap.put(ResolutionKey.Value, o.resolutionStr);
+            sortedMap.put(ResolutionKey.Value, o.getResolutionStr());
 
             return new ModelResult(
-                o.text,
-                o.start,
-                o.start + o.length,
+                    o.getText(),
+                    o.getStart(),
+                o.getStart() + o.getLength(),
                 getModelTypeName(),
                 sortedMap
             );                

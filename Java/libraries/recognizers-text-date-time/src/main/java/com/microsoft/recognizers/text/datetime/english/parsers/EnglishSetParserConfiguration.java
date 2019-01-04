@@ -175,19 +175,19 @@ public class EnglishSetParserConfiguration extends BaseOptionsConfiguration impl
         String trimmedText = text.trim().toLowerCase(Locale.ROOT);
 
         if (trimmedText.equals("daily")) {
-            result = result.withTimex("P1D");
+            result.setTimex("P1D");
         } else if (trimmedText.equals("weekly")) {
-            result = result.withTimex("P1W");
+            result.setTimex("P1W");
         } else if (trimmedText.equals("biweekly")) {
-            result = result.withTimex("P2W");
+            result.setTimex("P2W");
         } else if (trimmedText.equals("monthly")) {
-            result = result.withTimex("P1M");
+            result.setTimex("P1M");
         } else if (trimmedText.equals("yearly") || trimmedText.equals("annually") || trimmedText.equals("annual")) {
-            result = result.withTimex("P1Y");
+            result.setTimex("P1Y");
         }
 
-        if (result.timex != "") {
-            result = result.withResult(true);
+        if (result.getTimex() != "") {
+            result.setResult(true);
         }
 
         return result;
@@ -199,17 +199,17 @@ public class EnglishSetParserConfiguration extends BaseOptionsConfiguration impl
         String trimmedText = text.trim().toLowerCase(Locale.ROOT);
 
         if (trimmedText.equals("day")) {
-            result = result.withTimex("P1D");
+            result.setTimex("P1D");
         } else if (trimmedText.equals("week")) {
-            result = result.withTimex("P1W");
+            result.setTimex("P1W");
         } else if (trimmedText.equals("month")) {
-            result = result.withTimex("P1M");
+            result.setTimex("P1M");
         } else if (trimmedText.equals("year")) {
-            result = result.withTimex("P1Y");
+            result.setTimex("P1Y");
         }
 
-        if (result.timex != "") {
-            result = result.withResult(true);
+        if (result.getTimex() != "") {
+            result.setResult(true);
         }
 
         return result;

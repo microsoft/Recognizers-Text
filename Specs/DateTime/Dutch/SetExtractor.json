@@ -107,10 +107,10 @@
     "Input": "Ik zal elke dag om 15:00 vertrekken",
     "Results": [
       {
-        "Text": "15:00 elke dag",
+        "Text": "elke dag om 15:00",
         "Type": "set",
-        "Start": -1,
-        "Length": 14
+        "Start": 7,
+        "Length": 17
       }
     ],
     "NotSupported": "dotNet",
@@ -120,20 +120,20 @@
     "Input": "Ik zal iedere dag om 15:00 vertrekken",
     "Results": [
       {
-        "Text": "15:00 iedere dag",
+        "Text": "iedere dag om 15:00",
         "Type": "set",
-        "Start": -1,
-        "Length": 16
+        "Start": 7,
+        "Length": 19
       }
     ],
     "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
-    "Input": "Ik zal elke 4/15 vertrekken",
+    "Input": "Ik zal elke 15/4 vertrekken",
     "Results": [
       {
-        "Text": "elke 4/15",
+        "Text": "elke 15/4",
         "Type": "set",
         "Start": 7,
         "Length": 9
@@ -221,13 +221,13 @@
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
-    "Input": "Ik zal elke avond vertrekken om 9",
+    "Input": "Ik zal elke avond om 9 uur vertrekken",
     "Results": [
       {
-        "Text": "elke avond om 9",
+        "Text": "elke avond om 9 uur",
         "Type": "set",
-        "Start": -1,
-        "Length": 15
+        "Start": 7,
+        "Length": 19
       }
     ],
     "NotSupported": "dotNet",
@@ -263,10 +263,10 @@
     "Input": "Ik vertrek elke zondag ochtend om 9 uur",
     "Results": [
       {
-        "Text": "9am every Sunday",
+        "Text": "elke zondag ochtend om 9 uur",
         "Type": "set",
-        "Start": -1,
-        "Length": 16
+        "Start": 11,
+        "Length": 28
       }
     ],
     "NotSupported": "dotNet",
