@@ -178,7 +178,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         var leftDesc = match.Groups["leftDesc"].Value;
                         var rightDesc = match.Groups["rightDesc"].Value;
                         var matchPmStr = match.Groups[Constants.PmGroupName].Value;
-                        var timeAmStr = match.Groups[Constants.AmGroupName].Value;
+                        var matchAmStr = match.Groups[Constants.AmGroupName].Value;
                         var descStr = match.Groups[Constants.DescGroupName].Value;
 
                         // The "ampm" only occurs in time, we don't have to consider it here
@@ -189,7 +189,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                             var rightPmValid = !string.IsNullOrEmpty(rightDesc) &&
                                             config.UtilityConfiguration.PmDescRegex.Match(rightDesc.ToLower()).Success;
 
-                            if (!string.IsNullOrEmpty(timeAmStr) || rightAmValid)
+                            if (!string.IsNullOrEmpty(matchAmStr) || rightAmValid)
                             {
                                 if (endHour >= Constants.HalfDayHourCount)
                                 {
