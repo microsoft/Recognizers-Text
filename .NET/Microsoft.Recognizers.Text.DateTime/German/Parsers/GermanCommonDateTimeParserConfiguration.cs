@@ -1,16 +1,16 @@
 ﻿using System.Collections.Immutable;
-
-using Microsoft.Recognizers.Text.DateTime.German.Utilities;
-using Microsoft.Recognizers.Definitions.German;
 using Microsoft.Recognizers.Definitions;
-using Microsoft.Recognizers.Text.Number.German;
+using Microsoft.Recognizers.Definitions.German;
+using Microsoft.Recognizers.Text.DateTime.German.Utilities;
 using Microsoft.Recognizers.Text.Number;
+using Microsoft.Recognizers.Text.Number.German;
 
 namespace Microsoft.Recognizers.Text.DateTime.German
 {
     public class GermanCommonDateTimeParserConfiguration : BaseDateParserConfiguration
     {
-        public GermanCommonDateTimeParserConfiguration(IOptionsConfiguration config) : base(config)
+        public GermanCommonDateTimeParserConfiguration(IOptionsConfiguration config)
+            : base(config)
         {
             UtilityConfiguration = new GermanDatetimeUtilityConfiguration();
 
