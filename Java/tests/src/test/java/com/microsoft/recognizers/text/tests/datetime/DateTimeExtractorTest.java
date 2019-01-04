@@ -33,6 +33,7 @@ import com.microsoft.recognizers.text.datetime.extractors.IDateTimeExtractor;
 import com.microsoft.recognizers.text.datetime.spanish.extractors.SpanishDateTimeExtractorConfiguration;
 import com.microsoft.recognizers.text.datetime.spanish.extractors.SpanishDurationExtractorConfiguration;
 import com.microsoft.recognizers.text.datetime.spanish.extractors.SpanishHolidayExtractorConfiguration;
+import com.microsoft.recognizers.text.datetime.spanish.extractors.SpanishTimeExtractorConfiguration;
 import com.microsoft.recognizers.text.tests.AbstractTest;
 import com.microsoft.recognizers.text.tests.TestCase;
 
@@ -174,8 +175,8 @@ public class DateTimeExtractorTest extends AbstractTest {
             //    return new BaseMergedDateTimeExtractor(new SpanishMergedExtractorConfiguration(DateTimeOptions.SkipFromToMerge));
             //case "SetExtractor":
             //    return new BaseSetExtractor(new SpanishSetExtractorConfiguration());
-            //case "TimeExtractor":
-            //    return new BaseTimeExtractor(new SpanishTimeExtractorConfiguration());
+            case "TimeExtractor":
+                return new BaseTimeExtractor(new SpanishTimeExtractorConfiguration());
             //case "TimePeriodExtractor":
             //    return new BaseTimePeriodExtractor(new SpanishTimePeriodExtractorConfiguration());
             //case "TimeZoneExtractor":
