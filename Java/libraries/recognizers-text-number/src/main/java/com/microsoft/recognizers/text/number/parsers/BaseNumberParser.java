@@ -57,17 +57,17 @@ public class BaseNumberParser implements IParser {
     @Override
     public ParseResult parse(ExtractResult extractResult) {
         // check if the parser is configured to support specific types
-        if (supportedTypes.isPresent() && !this.supportedTypes.get().contains(extractResult.type)) {
+        if (supportedTypes.isPresent() && !this.supportedTypes.get().contains(extractResult.getType())) {
             return null;
         }
 
         String extra;
         ParseResult ret = null;
 
-        if (extractResult.data instanceof String) {
-            extra = (String)extractResult.data;
+        if (extractResult.getData() instanceof String) {
+            extra = (String)extractResult.getData();
         } else {
-            if (this.longFormatRegex.matcher(extractResult.text).find()) {
+            if (this.longFormatRegex.matcher(extractResult.getText()).find()) {
                 extra = "Num";
             } else {
                 extra = config.getLangMarker();
@@ -76,15 +76,15 @@ public class BaseNumberParser implements IParser {
 
         // Resolve symbol prefix
         boolean isNegative = false;
-        Matcher matchNegative = config.getNegativeNumberSignRegex().matcher(extractResult.text);
+        Matcher matchNegative = config.getNegativeNumberSignRegex().matcher(extractResult.getText());
         if (matchNegative.find()) {
             isNegative = true;
             extractResult = new ExtractResult(
-                    extractResult.start,
-                    extractResult.length,
-                    extractResult.text.substring(matchNegative.group(1).length()),
-                    extractResult.type,
-                    extractResult.data);
+                    extractResult.getStart(),
+                    extractResult.getLength(),
+                    extractResult.getText().substring(matchNegative.group(1).length()),
+                    extractResult.getType(),
+                    extractResult.getData());
         }
 
         if (extra.contains("Num")) {
@@ -98,25 +98,25 @@ public class BaseNumberParser implements IParser {
             ret = powerNumberParse(extractResult);
         }
 
-        if (ret != null && ret.value != null) {
+        if (ret != null && ret.getValue() != null) {
             if (isNegative) {
                 // Recover to the original extracted Text
                 ret = new ParseResult(
-                        ret.start,
-                        ret.length,
-                        matchNegative.group(1) + extractResult.text,
-                        ret.type,
-                        ret.data,
-                        -(double)ret.value,
-                        ret.resolutionStr);
+                        ret.getStart(),
+                        ret.getLength(),
+                        matchNegative.group(1) + extractResult.getText(),
+                        ret.getType(),
+                        ret.getData(),
+                        -(double)ret.getValue(),
+                        ret.getResolutionStr());
             }
 
-            String resolutionStr = config.getCultureInfo() != null ? NumberFormatUtility.format(ret.value, config.getCultureInfo()) : ret.value.toString();
-            ret = ret.withResolutionStr(resolutionStr);
+            String resolutionStr = config.getCultureInfo() != null ? NumberFormatUtility.format(ret.getValue(), config.getCultureInfo()) : ret.getValue().toString();
+            ret.setResolutionStr(resolutionStr);
         }
 
         if (ret != null) {
-            ret = ret.withText(ret.text.toLowerCase(Locale.ROOT));
+            ret.setText(ret.getText().toLowerCase(Locale.ROOT));
         }
 
         return ret;
@@ -130,8 +130,8 @@ public class BaseNumberParser implements IParser {
      */
     protected ParseResult digitNumberParse(ExtractResult extractResult) {
 
-        ParseResult result = new ParseResult(extractResult.start, extractResult.length, extractResult.text,
-                                             extractResult.type,null,null,null);
+        ParseResult result = new ParseResult(extractResult.getStart(), extractResult.getLength(), extractResult.getText(),
+                extractResult.getType(),null,null,null);
 
         //[1] 24
         //[2] 12 32/33
@@ -141,7 +141,7 @@ public class BaseNumberParser implements IParser {
         //[6] 2 hundred
         //dot occurred.
         double power = 1;
-        String handle = extractResult.text.toLowerCase();
+        String handle = extractResult.getText().toLowerCase();
         Matcher match = config.getDigitalNumberRegex().matcher(handle);
         int startIndex = 0;
         while (match.find()) {
@@ -160,15 +160,15 @@ public class BaseNumberParser implements IParser {
         }
 
         // Scale used in the calculate of double
-        result = result.withValue(getDigitalValue(handle, power));
+        result.setValue(getDigitalValue(handle, power));
 
         return result;
     }
 
     private ParseResult fracLikeNumberParse(ExtractResult extractResult) {
 
-        ParseResult result = new ParseResult(extractResult.start, extractResult.length, extractResult.text, extractResult.type, null, null, null);
-        String resultText = extractResult.text.toLowerCase();
+        ParseResult result = new ParseResult(extractResult.getStart(), extractResult.getLength(), extractResult.getText(), extractResult.getType(), null, null, null);
+        String resultText = extractResult.getText().toLowerCase();
 
         Matcher match = config.getFractionPrepositionRegex().matcher(resultText);
         if (match.find()) {
@@ -184,7 +184,7 @@ public class BaseNumberParser implements IParser {
                     getDigitalValue(denominator, 1) :
                     getIntValue(getMatches(denominator));
 
-            result = result.withValue(smallValue / bigValue);
+            result.setValue(smallValue / bigValue);
         } else {
             List<String> fracWords = config.normalizeTokenSet(Arrays.asList(resultText.split(" ")), result);
 
@@ -279,9 +279,9 @@ public class BaseNumberParser implements IParser {
 
             // Find mixed number
             if (mixedIndex != fracWords.size() && numerValue < denomiValue) {
-                result = result.withValue(intValue + numerValue / denomiValue);
+                result.setValue(intValue + numerValue / denomiValue);
             } else {
-                result = result.withValue((intValue + numerValue) / denomiValue);
+                result.setValue((intValue + numerValue) / denomiValue);
             }
         }
 
@@ -290,8 +290,8 @@ public class BaseNumberParser implements IParser {
 
     private ParseResult textNumberParse(ExtractResult extractResult) {
 
-        ParseResult result = new ParseResult(extractResult.start, extractResult.length, extractResult.text, extractResult.type, null, null, null);
-        String handle = extractResult.text.toLowerCase();
+        ParseResult result = new ParseResult(extractResult.getStart(), extractResult.getLength(), extractResult.getText(), extractResult.getType(), null, null, null);
+        String handle = extractResult.getText().toLowerCase();
 
         //region Special case for "dozen"
         handle = config.getHalfADozenRegex().matcher(handle).replaceAll(config.getHalfADozenText());
@@ -328,17 +328,17 @@ public class BaseNumberParser implements IParser {
         }
         //endregion
 
-        result = result.withValue(intPartRet + pointPartRet);
+        result.setValue(intPartRet + pointPartRet);
 
         return result;
     }
 
     protected ParseResult powerNumberParse(ExtractResult extractResult) {
 
-        ParseResult result = new ParseResult(extractResult.start, extractResult.length, extractResult.text, extractResult.type, null, null, null);
+        ParseResult result = new ParseResult(extractResult.getStart(), extractResult.getLength(), extractResult.getText(), extractResult.getType(), null, null, null);
 
-        String handle = extractResult.text.toUpperCase();
-        boolean isE = !extractResult.text.contains("^");
+        String handle = extractResult.getText().toUpperCase();
+        boolean isE = !extractResult.getText().contains("^");
 
         //[1] 1e10
         //[2] 1.1^-23
@@ -392,9 +392,9 @@ public class BaseNumberParser implements IParser {
             ret = Math.pow(calStack.remove(0), calStack.remove(0));
         }
 
-        result = result
-                .withValue(ret)
-                .withResolutionStr(NumberFormatUtility.format(ret, config.getCultureInfo()));
+
+        result.setValue(ret);
+        result.setResolutionStr(NumberFormatUtility.format(ret, config.getCultureInfo()));
 
         return result;
     }

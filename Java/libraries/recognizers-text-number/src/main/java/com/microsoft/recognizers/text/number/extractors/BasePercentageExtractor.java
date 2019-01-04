@@ -98,9 +98,9 @@ public abstract class BasePercentageExtractor implements IExtractor {
         String replaceFracNumText = "@" + FracNumExtType;
 
         for (int i = 0; i < results.size(); i++) {
-            int start = results.get(i).start;
-            int end = start + results.get(i).length;
-            String str = results.get(i).text;
+            int start = results.get(i).getStart();
+            int end = start + results.get(i).getLength();
+            String str = results.get(i).getText();
             List<Pair<String, ExtractResult>> data = new ArrayList<>();
 
             String replaceText;
@@ -113,7 +113,7 @@ public abstract class BasePercentageExtractor implements IExtractor {
             if (positionMap.containsKey(start) && positionMap.containsKey(end)) {
                 int originStart = positionMap.get(start);
                 int originLength = positionMap.get(end) - originStart;
-                results.set(i, new ExtractResult(originStart, originLength, originSource.substring(originStart, originLength + originStart), results.get(i).type, null));
+                results.set(i, new ExtractResult(originStart, originLength, originSource.substring(originStart, originLength + originStart), results.get(i).getType(), null));
 
                 int numStart = str.indexOf(replaceText);
                 if (numStart != -1) {
@@ -121,10 +121,10 @@ public abstract class BasePercentageExtractor implements IExtractor {
                         for (int j = i; j < numExtResults.size(); j++) {
                             ExtractResult r = results.get(i);
                             ExtractResult n = numExtResults.get(j);
-                            if ((r.start.equals(n.start) ||
-                                r.start + r.length == n.start + n.length) &&
-                                r.text.contains(n.text)) {
-                                data.add(Pair.with(n.text, n));
+                            if ((r.getStart().equals(n.getStart()) ||
+                                r.getStart() + r.getLength() == n.getStart() + n.getLength()) &&
+                                r.getText().contains(n.getText())) {
+                                data.add(Pair.with(n.getText(), n));
                             }
                         }
                     }
@@ -135,14 +135,14 @@ public abstract class BasePercentageExtractor implements IExtractor {
                 // deal with special cases like "<fraction number> of" and "one in two" in percentageMode
                 if (str.contains(replaceFracNumText) || data.size() > 1) {
                     ExtractResult r = results.get(i);
-                    results.set(i, new ExtractResult(r.start, r.length, r.text, r.type, data));
+                    results.set(i, new ExtractResult(r.getStart(), r.getLength(), r.getText(), r.getType(), data));
                 } else if (data.size() == 1) {
                     ExtractResult r = results.get(i);
-                    results.set(i, new ExtractResult(r.start, r.length, r.text, r.type, data.get(0)));
+                    results.set(i, new ExtractResult(r.getStart(), r.getLength(), r.getText(), r.getType(), data.get(0)));
                 }
             } else if (data.size() == 1) {
                 ExtractResult r = results.get(i);
-                results.set(i, new ExtractResult(r.start, r.length, r.text, r.type, data.get(0)));
+                results.set(i, new ExtractResult(r.getStart(), r.getLength(), r.getText(), r.getType(), data.get(0)));
             }
         }
     }
@@ -165,11 +165,11 @@ public abstract class BasePercentageExtractor implements IExtractor {
 
         for (int i = 0; i < numExtractResults.size(); i++) {
             ExtractResult extraction = numExtractResults.get(i);
-            start = extraction.start;
-            end = extraction.length + start;
+            start = extraction.getStart();
+            end = extraction.getLength() + start;
             for (int j = start; j < end; j++) {
                 if (match[j] == 0) {
-                    if (percentModeEnabled && extraction.data.toString().startsWith("Frac")) {
+                    if (percentModeEnabled && extraction.getData().toString().startsWith("Frac")) {
                         match[j] = -(i + 1);
                     } else {
                         match[j] = i + 1;

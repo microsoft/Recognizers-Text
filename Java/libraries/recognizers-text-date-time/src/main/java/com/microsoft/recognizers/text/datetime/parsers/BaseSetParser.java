@@ -35,41 +35,41 @@ public class BaseSetParser implements IDateTimeParser {
     public DateTimeParseResult parse(ExtractResult er, LocalDateTime reference) {
         DateTimeResolutionResult value = null;
 
-        if (er.type.equals(getParserName())) {
+        if (er.getType().equals(getParserName())) {
 
-            DateTimeResolutionResult innerResult = parseEachUnit(er.text);
+            DateTimeResolutionResult innerResult = parseEachUnit(er.getText());
             if (!innerResult.getSuccess()) {
-                innerResult = parseEachDuration(er.text, reference);
+                innerResult = parseEachDuration(er.getText(), reference);
             }
 
             if (!innerResult.getSuccess()) {
-                innerResult = parserTimeEveryday(er.text, reference);
+                innerResult = parserTimeEveryday(er.getText(), reference);
             }
 
             // NOTE: Please do not change the order of following function
             // datetimeperiod>dateperiod>timeperiod>datetime>date>time
             if (!innerResult.getSuccess()) {
-                innerResult = parseEach(config.getDateTimePeriodExtractor(), config.getDateTimePeriodParser(), er.text, reference);
+                innerResult = parseEach(config.getDateTimePeriodExtractor(), config.getDateTimePeriodParser(), er.getText(), reference);
             }
 
             if (!innerResult.getSuccess()) {
-                innerResult = parseEach(config.getDatePeriodExtractor(), config.getDatePeriodParser(), er.text, reference);
+                innerResult = parseEach(config.getDatePeriodExtractor(), config.getDatePeriodParser(), er.getText(), reference);
             }
 
             if (!innerResult.getSuccess()) {
-                innerResult = parseEach(config.getTimePeriodExtractor(), config.getTimePeriodParser(), er.text, reference);
+                innerResult = parseEach(config.getTimePeriodExtractor(), config.getTimePeriodParser(), er.getText(), reference);
             }
 
             if (!innerResult.getSuccess()) {
-                innerResult = parseEach(config.getDateTimeExtractor(), config.getDateTimeParser(), er.text, reference);
+                innerResult = parseEach(config.getDateTimeExtractor(), config.getDateTimeParser(), er.getText(), reference);
             }
 
             if (!innerResult.getSuccess()) {
-                innerResult = parseEach(config.getDateExtractor(), config.getDateParser(), er.text, reference);
+                innerResult = parseEach(config.getDateExtractor(), config.getDateParser(), er.getText(), reference);
             }
 
             if (!innerResult.getSuccess()) {
-                innerResult = parseEach(config.getTimeExtractor(), config.getTimeParser(), er.text, reference);
+                innerResult = parseEach(config.getTimeExtractor(), config.getTimeParser(), er.getText(), reference);
             }
 
             if (innerResult.getSuccess()) {
@@ -86,11 +86,11 @@ public class BaseSetParser implements IDateTimeParser {
         }
 
         DateTimeParseResult ret = new DateTimeParseResult(
-                er.start,
-                er.length,
-                er.text,
-                er.type,
-                er.data,
+                er.getStart(),
+                er.getLength(),
+                er.getText(),
+                er.getType(),
+                er.getData(),
                 value,
                 "",
                 value.getTimex()
@@ -112,17 +112,17 @@ public class BaseSetParser implements IDateTimeParser {
     private DateTimeResolutionResult parseEachDuration(String text, LocalDateTime refDate) {
         DateTimeResolutionResult ret = new DateTimeResolutionResult();
         List<ExtractResult> ers = this.config.getDurationExtractor().extract(text, refDate);
-        if (ers.size() != 1 || !StringUtility.isNullOrWhiteSpace(text.substring(ers.get(0).start + ers.get(0).length))) {
+        if (ers.size() != 1 || !StringUtility.isNullOrWhiteSpace(text.substring(ers.get(0).getStart() + ers.get(0).getLength()))) {
             return ret;
         }
 
-        String beforeStr = text.substring(0, ers.get(0).start);
+        String beforeStr = text.substring(0, ers.get(0).getStart());
         Matcher regexMatch = this.config.getEachPrefixRegex().matcher(beforeStr);
         if (regexMatch.find()) {
             DateTimeParseResult pr = this.config.getDurationParser().parse(ers.get(0), LocalDateTime.now());
-            ret.setTimex(pr.timexStr);
-            ret.setFutureValue("Set: " + pr.timexStr);
-            ret.setPastValue("Set: " + pr.timexStr);
+            ret.setTimex(pr.getTimexStr());
+            ret.setFutureValue("Set: " + pr.getTimexStr());
+            ret.setPastValue("Set: " + pr.getTimexStr());
             ret.setSuccess(true);
             return ret;
         }
@@ -137,11 +137,11 @@ public class BaseSetParser implements IDateTimeParser {
         if (matched.isPresent()) {
 
             MatchedTimexResult result = this.config.getMatchedDailyTimex(text);
-            if (!result.result) {
+            if (!result.getResult()) {
                 return ret;
             }
 
-            ret.setTimex(result.timex);
+            ret.setTimex(result.getTimex());
             ret.setFutureValue("Set: " + ret.getTimex());
             ret.setPastValue("Set: " + ret.getTimex());
             ret.setSuccess(true);
@@ -157,7 +157,7 @@ public class BaseSetParser implements IDateTimeParser {
             if (!StringUtility.isNullOrEmpty(sourceUnit) && this.config.getUnitMap().containsKey(sourceUnit)) {
 
                 MatchedTimexResult result = this.config.getMatchedUnitTimex(sourceUnit);
-                if (!result.result) {
+                if (!result.getResult()) {
                     return ret;
                 }
 
@@ -165,10 +165,10 @@ public class BaseSetParser implements IDateTimeParser {
                 Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(this.config.getEachUnitRegex(), text)).findFirst();
 
                 if (match.get().getGroup("other").value != "") {
-                    result = result.withTimex(result.timex.replace("1", "2"));
+                    result.setTimex(result.getTimex().replace("1", "2"));
                 }
 
-                ret.setTimex(result.timex);
+                ret.setTimex(result.getTimex());
                 ret.setFutureValue("Set: " + ret.getTimex());
                 ret.setPastValue("Set: " + ret.getTimex());
                 ret.setSuccess(true);
@@ -187,11 +187,11 @@ public class BaseSetParser implements IDateTimeParser {
             return ret;
         }
 
-        String afterStr = text.replace(ers.get(0).text, "");
+        String afterStr = text.replace(ers.get(0).getText(), "");
         Matcher match = this.config.getEachDayRegex().matcher(afterStr);
         if (match.find()) {
             DateTimeParseResult pr = this.config.getTimeParser().parse(ers.get(0), LocalDateTime.now());
-            ret.setTimex(pr.timexStr);
+            ret.setTimex(pr.getTimexStr());
             ret.setFutureValue("Set: " + ret.getTimex());
             ret.setPastValue("Set: " + ret.getTimex());
             ret.setSuccess(true);
@@ -214,7 +214,7 @@ public class BaseSetParser implements IDateTimeParser {
             StringBuilder sb = new StringBuilder(text);
             String trimmedText = sb.delete(match.get().index, match.get().index + match.get().length).toString();
             ers = extractor.extract(trimmedText, refDate);
-            if (ers.size() == 1 && ers.get(0).length == trimmedText.length()) {
+            if (ers.size() == 1 && ers.get(0).getLength() == trimmedText.length()) {
 
                 success = true;
             }
@@ -228,7 +228,7 @@ public class BaseSetParser implements IDateTimeParser {
             String trimmedText = sb.delete(match.get().index, match.get().index + match.get().length).toString();
             trimmedText = new StringBuilder(trimmedText).insert(match.get().index, match.get().getGroup("weekday").value).toString();
             ers = extractor.extract(trimmedText, refDate);
-            if (ers.size() == 1 && ers.get(0).length == trimmedText.length()) {
+            if (ers.size() == 1 && ers.get(0).getLength() == trimmedText.length()) {
 
                 success = true;
             }
@@ -236,7 +236,7 @@ public class BaseSetParser implements IDateTimeParser {
 
         if (success) {
             DateTimeParseResult pr = parser.parse(ers.get(0), refDate);
-            ret.setTimex(pr.timexStr);
+            ret.setTimex(pr.getTimexStr());
             ret.setFutureValue("Set: " + ret.getTimex());
             ret.setPastValue("Set: " + ret.getTimex());
             ret.setSuccess(true);

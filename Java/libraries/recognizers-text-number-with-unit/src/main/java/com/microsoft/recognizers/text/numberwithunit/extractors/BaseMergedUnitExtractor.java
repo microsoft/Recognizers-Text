@@ -43,19 +43,19 @@ public class BaseMergedUnitExtractor implements IExtractor {
         int[] groups = new int[ers.size()];
         groups[0] = 0;
         for (int idx = 0; idx < ers.size() - 1; idx++) {
-            if (!ers.get(idx).type.equals(ers.get(idx + 1).type) &&
-                !ers.get(idx).type.equals(Constants.SYS_NUM) &&
-                !ers.get(idx + 1).type.equals(Constants.SYS_NUM)) {
+            if (!ers.get(idx).getType().equals(ers.get(idx + 1).getType()) &&
+                !ers.get(idx).getType().equals(Constants.SYS_NUM) &&
+                !ers.get(idx + 1).getType().equals(Constants.SYS_NUM)) {
                 continue;
             }
 
-            if (ers.get(idx).data instanceof ExtractResult && !((ExtractResult)ers.get(idx).data).data.toString().startsWith("Integer")) {
+            if (ers.get(idx).getData() instanceof ExtractResult && !((ExtractResult)ers.get(idx).getData()).getData().toString().startsWith("Integer")) {
                 groups[idx + 1] = groups[idx] + 1;
                 continue;
             }
 
-            int middleBegin = ers.get(idx).start + ers.get(idx).length;
-            int middleEnd = ers.get(idx + 1).start;
+            int middleBegin = ers.get(idx).getStart() + ers.get(idx).getLength();
+            int middleEnd = ers.get(idx + 1).getStart();
 
             String middleStr = source.substring(middleBegin, middleEnd).trim().toLowerCase();
 
@@ -77,13 +77,13 @@ public class BaseMergedUnitExtractor implements IExtractor {
         for (int idx = 0; idx < ers.size(); idx++) {
             if (idx == 0 || groups[idx] != groups[idx - 1]) {
                 ExtractResult tmpExtractResult = ers.get(idx);
-                tmpExtractResult = tmpExtractResult.withData(Lists.newArrayList(
+                tmpExtractResult.setData(Lists.newArrayList(
                         new ExtractResult(
-                                tmpExtractResult.start,
-                                tmpExtractResult.length,
-                                tmpExtractResult.text,
-                                tmpExtractResult.type,
-                                tmpExtractResult.data)));
+                                tmpExtractResult.getStart(),
+                                tmpExtractResult.getLength(),
+                                tmpExtractResult.getText(),
+                                tmpExtractResult.getType(),
+                                tmpExtractResult.getData())));
 
                 ers.set(idx, tmpExtractResult);
                 result.add(tmpExtractResult);
@@ -93,32 +93,32 @@ public class BaseMergedUnitExtractor implements IExtractor {
             if (idx + 1 < ers.size() && groups[idx + 1] == groups[idx]) {
                 int group = groups[idx];
 
-                int periodBegin = result.get(group).start;
-                int periodEnd = ers.get(idx + 1).start + ers.get(idx + 1).length;
+                int periodBegin = result.get(group).getStart();
+                int periodEnd = ers.get(idx + 1).getStart() + ers.get(idx + 1).getLength();
 
                 ExtractResult r = result.get(group);
 
-                List<ExtractResult> data = (List<ExtractResult>)r.data;
+                List<ExtractResult> data = (List<ExtractResult>)r.getData();
                 data.add(ers.get(idx + 1));
-                r = r.withLength(periodEnd - periodBegin)
-                        .withText(source.substring(periodBegin, periodEnd))
-                        .withType(Constants.SYS_UNIT_CURRENCY)
-                        .withData(data);
+                r.setLength(periodEnd - periodBegin);
+                r.setText(source.substring(periodBegin, periodEnd));
+                r.setType(Constants.SYS_UNIT_CURRENCY);
+                r.setData(data);
 
                 result.set(group, r);
             }
         }
 
         for (int idx = 0; idx < result.size(); idx++) {
-            if (result.get(idx).data instanceof List) {
-                List<ExtractResult> innerData = (List<ExtractResult>)result.get(idx).data;
+            if (result.get(idx).getData() instanceof List) {
+                List<ExtractResult> innerData = (List<ExtractResult>)result.get(idx).getData();
                 if (innerData.size() == 1) {
                     result.set(idx, innerData.get(0));
                 }
             }
         }
 
-        result = result.stream().filter(o -> !o.type.equals(Constants.SYS_NUM))
+        result = result.stream().filter(o -> !o.getType().equals(Constants.SYS_NUM))
                 .collect(Collectors.toList());
 
         return result;
@@ -130,7 +130,7 @@ public class BaseMergedUnitExtractor implements IExtractor {
         List<ExtractResult> unitNumbers = new ArrayList<>();
         for (int i = 0, j = 0; i < numErs.size(); i++) {
             boolean hasBehindExtraction = false;
-            while (j < ers.size() && ers.get(j).start + ers.get(j).length < numErs.get(i).start) {
+            while (j < ers.size() && ers.get(j).getStart() + ers.get(j).getLength() < numErs.get(i).getStart()) {
                 hasBehindExtraction = true;
                 j++;
             }
@@ -139,8 +139,8 @@ public class BaseMergedUnitExtractor implements IExtractor {
                 continue;
             }
 
-            int middleBegin = ers.get(j - 1).start + ers.get(j - 1).length;
-            int middleEnd = numErs.get(i).start;
+            int middleBegin = ers.get(j - 1).getStart() + ers.get(j - 1).getLength();
+            int middleEnd = numErs.get(i).getStart();
 
             String middleStr = source.substring(middleBegin, middleEnd).trim().toLowerCase();
 
@@ -166,7 +166,7 @@ public class BaseMergedUnitExtractor implements IExtractor {
         for (ExtractResult extractResult : unitNumbers) {
             boolean overlap = false;
             for (ExtractResult er : ers) {
-                if (er.start <= extractResult.start && er.start + er.length >= extractResult.start) {
+                if (er.getStart() <= extractResult.getStart() && er.getStart() + er.getLength() >= extractResult.getStart()) {
                     overlap = true;
                 }
             }
@@ -179,7 +179,7 @@ public class BaseMergedUnitExtractor implements IExtractor {
         Collections.sort(ers, (Comparator<ExtractResult>)(xo, yo) -> {
             ExtractResult x = (ExtractResult)xo;
             ExtractResult y = (ExtractResult)yo;
-            return x.start - y.start;
+            return x.getStart() - y.getStart();
         });
     }
 }

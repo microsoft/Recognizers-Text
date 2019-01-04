@@ -1,8 +1,8 @@
 package com.microsoft.recognizers.text.datetime.utilities;
 
 public class MatchedTimexResult {
-    public final boolean result;
-    public final String timex;
+    private boolean result;
+    private String timex;
 
     public MatchedTimexResult(boolean result, String timex) {
         this.result = result;
@@ -13,11 +13,19 @@ public class MatchedTimexResult {
         this(false, "");
     }
 
-    public MatchedTimexResult withTimex(String timex) {
-        return new MatchedTimexResult(this.result, timex);
+    public boolean getResult() {
+        return result;
     }
 
-    public MatchedTimexResult withResult(boolean result) {
-        return new MatchedTimexResult(result, this.timex);
+    public String getTimex() {
+        return timex;
+    }
+
+    public void setResult(boolean result) {
+        this.result = result;
+    }
+
+    public void setTimex(String timex) {
+        this.timex = timex;
     }
 }

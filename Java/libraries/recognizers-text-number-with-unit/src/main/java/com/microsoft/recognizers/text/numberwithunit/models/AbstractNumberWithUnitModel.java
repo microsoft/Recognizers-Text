@@ -48,8 +48,8 @@ public abstract class AbstractNumberWithUnitModel implements IModel {
 
                 for (ExtractResult result : extractedResults) {
                     ParseResult parseResult = parser.parse(result);
-                    if (parseResult.value instanceof List) {
-                        parsedResults.addAll((List<ParseResult>)parseResult.value);
+                    if (parseResult.getValue() instanceof List) {
+                        parsedResults.addAll((List<ParseResult>)parseResult.getValue());
                     } else {
                         parsedResults.add(parseResult);
                     }
@@ -58,21 +58,21 @@ public abstract class AbstractNumberWithUnitModel implements IModel {
                 List<ModelResult> modelResults = parsedResults.stream().map(o -> {
                     
                     SortedMap<String, Object> resolutionValues = new TreeMap<String, Object>();
-                    if (o.value instanceof UnitValue) {
-                        resolutionValues.put(ResolutionKey.Value, ((UnitValue)o.value).number);
-                        resolutionValues.put(ResolutionKey.Unit, ((UnitValue)o.value).unit);
-                    } else if (o.value instanceof CurrencyUnitValue) {
-                        resolutionValues.put(ResolutionKey.Value, ((CurrencyUnitValue)o.value).number);
-                        resolutionValues.put(ResolutionKey.Unit, ((CurrencyUnitValue)o.value).unit);
-                        resolutionValues.put(ResolutionKey.IsoCurrency, ((CurrencyUnitValue)o.value).isoCurrency);
+                    if (o.getValue() instanceof UnitValue) {
+                        resolutionValues.put(ResolutionKey.Value, ((UnitValue)o.getValue()).number);
+                        resolutionValues.put(ResolutionKey.Unit, ((UnitValue)o.getValue()).unit);
+                    } else if (o.getValue() instanceof CurrencyUnitValue) {
+                        resolutionValues.put(ResolutionKey.Value, ((CurrencyUnitValue)o.getValue()).number);
+                        resolutionValues.put(ResolutionKey.Unit, ((CurrencyUnitValue)o.getValue()).unit);
+                        resolutionValues.put(ResolutionKey.IsoCurrency, ((CurrencyUnitValue)o.getValue()).isoCurrency);
                     } else {
-                        resolutionValues.put(ResolutionKey.Value, (String)o.value);
+                        resolutionValues.put(ResolutionKey.Value, (String)o.getValue());
                     }
 
                     return new ModelResult(
-                            o.text,
-                            o.start,
-                            o.start + o.length - 1,
+                            o.getText(),
+                            o.getStart(),
+                            o.getStart() + o.getLength() - 1,
                             getModelTypeName(),
                             resolutionValues);
                 }).collect(Collectors.toList());

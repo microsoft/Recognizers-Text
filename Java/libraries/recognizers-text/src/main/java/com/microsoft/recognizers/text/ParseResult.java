@@ -6,11 +6,11 @@ public class ParseResult extends ExtractResult {
     // e.g. 1000 for "one thousand".
     // The resolutions are different for different parsers.
     // Therefore, we use object here.
-    public final Object value;
+    private Object value;
 
     // Output the value in string format.
     // It is used in some parsers.
-    public final String resolutionStr;
+    private String resolutionStr;
 
     public ParseResult(Integer start, Integer length, String text, String type, Object data, Object value, String resolutionStr) {
         super(start, length, text, type, data);
@@ -19,61 +19,22 @@ public class ParseResult extends ExtractResult {
     }
 
     public ParseResult(ExtractResult er) {
-        this(er.start, er.length, er.text, er.type, er.data, null, null);
+        this(er.getStart(), er.getLength(), er.getText(), er.getType(), er.getData(), null, null);
     }
 
-    public ParseResult withLength(int newLength) {
-        return new ParseResult(
-                this.start,
-                newLength,
-                this.text,
-                this.type,
-                this.data,
-                this.value,
-                this.resolutionStr);
+    public Object getValue() {
+        return value;
     }
 
-    public ParseResult withText(String newText) {
-        return new ParseResult(
-                this.start,
-                this.length,
-                newText,
-                this.type,
-                this.data,
-                this.value,
-                this.resolutionStr);
+    public void setValue(Object value) {
+        this.value = value;
     }
 
-    public ParseResult withData(Object newData) {
-        return new ParseResult(
-                this.start,
-                this.length,
-                this.text,
-                this.type,
-                newData,
-                this.value,
-                this.resolutionStr);
+    public String getResolutionStr() {
+        return resolutionStr;
     }
 
-    public ParseResult withValue(Object newVale) {
-        return new ParseResult(
-                this.start,
-                this.length,
-                this.text,
-                this.type,
-                this.data,
-                newVale,
-                this.resolutionStr);
-    }
-
-    public ParseResult withResolutionStr(String newResolutionStr) {
-        return new ParseResult(
-                this.start,
-                this.length,
-                this.text,
-                this.type,
-                this.data,
-                this.value,
-                newResolutionStr);
+    public void setResolutionStr(String resolutionStr) {
+        this.resolutionStr = resolutionStr;
     }
 }

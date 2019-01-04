@@ -48,8 +48,8 @@ public class DateTimeModel implements IModel {
             for (ExtractResult result : extractResults) {
                 DateTimeParseResult parseResult = parser.parse(result, reference);
 
-                if (parseResult.value instanceof List) {
-                    parsedDateTimes.addAll((List<DateTimeParseResult>)parseResult.value);
+                if (parseResult.getValue() instanceof List) {
+                    parsedDateTimes.addAll((List<DateTimeParseResult>)parseResult.getValue());
                 } else {
                     parsedDateTimes.add(parseResult);
                 }
@@ -69,15 +69,15 @@ public class DateTimeModel implements IModel {
 
     private ModelResult getModelResult(DateTimeParseResult parsedDateTime) {
 
-        int start = parsedDateTime.start;
-        int end = parsedDateTime.start + parsedDateTime.length - 1;
-        String typeName = parsedDateTime.type;
-        SortedMap<String, Object> resolution = (SortedMap<String, Object>)parsedDateTime.value;
-        String text = parsedDateTime.text;
+        int start = parsedDateTime.getStart();
+        int end = parsedDateTime.getStart() + parsedDateTime.getLength() - 1;
+        String typeName = parsedDateTime.getType();
+        SortedMap<String, Object> resolution = (SortedMap<String, Object>)parsedDateTime.getValue();
+        String text = parsedDateTime.getText();
 
         ModelResult result = new ModelResult(text, start, end, typeName, resolution);
 
-        String[] types = parsedDateTime.type.split("\\.");
+        String[] types = parsedDateTime.getType().split("\\.");
         String type = types[types.length - 1];
         if (type.equals(Constants.SYS_DATETIME_DATETIMEALT)) {
             result = new ExtendedModelResult(result, getParentText(parsedDateTime));
@@ -87,7 +87,7 @@ public class DateTimeModel implements IModel {
     }
 
     private String getParentText(DateTimeParseResult parsedDateTime) {
-        Map<String, Object> map = (Map<String, Object>)parsedDateTime.data;
+        Map<String, Object> map = (Map<String, Object>)parsedDateTime.getData();
         Object result = map.get(ExtendedModelResult.ParentTextKey);
         return String.valueOf(result);
     }

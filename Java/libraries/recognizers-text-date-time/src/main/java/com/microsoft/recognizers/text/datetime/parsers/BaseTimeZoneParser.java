@@ -42,7 +42,7 @@ public class BaseTimeZoneParser implements IDateTimeParser {
         DateTimeParseResult result;
         result = new DateTimeParseResult(er);
 
-        String text = er.text.toLowerCase();
+        String text = er.getText().toLowerCase();
         Match match = Arrays.stream(RegExpUtility.getMatches(directUtcRegex, text)).findFirst().orElse(null);
         String matched = match != null ? match.getGroup("").value : "";
         int offsetInMinutes = computeMinutes(matched);
@@ -51,24 +51,24 @@ public class BaseTimeZoneParser implements IDateTimeParser {
             DateTimeResolutionResult value = getDateTimeResolutionResult(offsetInMinutes, text);
             String resolutionStr = String.format("%s: %d", Constants.UtcOffsetMinsKey, offsetInMinutes);
 
-            result = new DateTimeParseResult(result.withValue(value));
-            result = new DateTimeParseResult(result.withResolutionStr(resolutionStr));
+            result.setValue(value);
+            result.setResolutionStr(resolutionStr);
         } else if (checkAbbrToMin(text)) {
             int utcMinuteShift = EnglishTimeZone.AbbrToMinMapping.getOrDefault(text, 0);
 
             DateTimeResolutionResult value = getDateTimeResolutionResult(utcMinuteShift, text);
             String resolutionStr = String.format("%s: %d", Constants.UtcOffsetMinsKey, utcMinuteShift);
 
-            result = new DateTimeParseResult(result.withValue(value));
-            result = new DateTimeParseResult(result.withResolutionStr(resolutionStr));
+            result.setValue(value);
+            result.setResolutionStr(resolutionStr);
         } else if (checkFullToMin(text)) {
             int utcMinuteShift = EnglishTimeZone.FullToMinMapping.getOrDefault(text, 0);
 
             DateTimeResolutionResult value = getDateTimeResolutionResult(utcMinuteShift, text);
             String resolutionStr = String.format("%s: %d", Constants.UtcOffsetMinsKey, utcMinuteShift);
 
-            result = new DateTimeParseResult(result.withValue(value));
-            result = new DateTimeParseResult(result.withResolutionStr(resolutionStr));
+            result.setValue(value);
+            result.setResolutionStr(resolutionStr);
         } else {
             // TODO: Temporary solution for city timezone and ambiguous data
             DateTimeResolutionResult value = new DateTimeResolutionResult();
@@ -76,8 +76,8 @@ public class BaseTimeZoneParser implements IDateTimeParser {
             value.setTimeZoneResolution(new TimeZoneResolutionResult("UTC+XX:XX", Constants.InvalidOffsetValue, text));
             String resolutionStr = String.format("%s: %s", Constants.UtcOffsetMinsKey, "XX:XX");
 
-            result = new DateTimeParseResult(result.withValue(value));
-            result = new DateTimeParseResult(result.withResolutionStr(resolutionStr));
+            result.setValue(value);
+            result.setResolutionStr(resolutionStr);
         }
 
         return result;

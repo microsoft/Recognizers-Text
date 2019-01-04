@@ -77,10 +77,10 @@ public class DateTimeParserTest extends AbstractTest {
                     DateTimeParseResult expected = t.getValue0();
                     DateTimeParseResult actual = t.getValue1();
 
-                    Assert.assertEquals(getMessage(currentCase, "type"), expected.type, actual.type);
-                    Assert.assertEquals(getMessage(currentCase, "text"), expected.text, actual.text);
-                    Assert.assertEquals(getMessage(currentCase, "start"), expected.start, actual.start);
-                    Assert.assertEquals(getMessage(currentCase, "length"), expected.length, actual.length);
+                    Assert.assertEquals(getMessage(currentCase, "type"), expected.getType(), actual.getType());
+                    Assert.assertEquals(getMessage(currentCase, "text"), expected.getText(), actual.getText());
+                    Assert.assertEquals(getMessage(currentCase, "start"), expected.getStart(), actual.getStart());
+                    Assert.assertEquals(getMessage(currentCase, "length"), expected.getLength(), actual.getLength());
 
                     if (currentCase.modelName.equals("MergedParser")) {
                         assertMergedParserResults(currentCase, expected, actual);
@@ -92,9 +92,9 @@ public class DateTimeParserTest extends AbstractTest {
 
     private static void assertParserResults(TestCase currentCase, DateTimeParseResult expected, DateTimeParseResult actual) {
 
-        if (expected.value != null) {
-            DateTimeResolutionResult expectedValue = parseDateTimeResolutionResult(DateTimeResolutionResult.class, expected.value);
-            DateTimeResolutionResult actualValue = (DateTimeResolutionResult) actual.value;
+        if (expected.getValue() != null) {
+            DateTimeResolutionResult expectedValue = parseDateTimeResolutionResult(DateTimeResolutionResult.class, expected.getValue());
+            DateTimeResolutionResult actualValue = (DateTimeResolutionResult) actual.getValue();
 
             Assert.assertEquals(getMessage(currentCase, "timex"), expectedValue.getTimex(), actualValue.getTimex());
             Assert.assertEquals(getMessage(currentCase, "futureResolution"), expectedValue.getFutureResolution(), actualValue.getFutureResolution());
@@ -104,9 +104,9 @@ public class DateTimeParserTest extends AbstractTest {
 
     private static void assertMergedParserResults(TestCase currentCase, DateTimeParseResult expected, DateTimeParseResult actual) {
 
-        if (expected.value != null) {
-            Map<String, List<Map<String, Object>>> expectedValue = parseDateTimeResolutionResult(expected.value);
-            Map<String, List<Map<String, Object>>> actualValue = (Map<String, List<Map<String, Object>>>) actual.value;
+        if (expected.getValue() != null) {
+            Map<String, List<Map<String, Object>>> expectedValue = parseDateTimeResolutionResult(expected.getValue());
+            Map<String, List<Map<String, Object>>> actualValue = (Map<String, List<Map<String, Object>>>) actual.getValue();
 
             List<Map<String, Object>> expectedResults = expectedValue.get("values");
             List<Map<String, Object>> actualResults = actualValue.get("values");

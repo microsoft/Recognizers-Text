@@ -48,29 +48,29 @@ public class BaseDateParser implements IDateTimeParser {
 
         Object value = null;
 
-        if (er.type.equals(getParserName())) {
-            DateTimeResolutionResult innerResult = this.parseBasicRegexMatch(er.text, referenceDate);
+        if (er.getType().equals(getParserName())) {
+            DateTimeResolutionResult innerResult = this.parseBasicRegexMatch(er.getText(), referenceDate);
 
             if (!innerResult.getSuccess()) {
-                innerResult = this.parseImplicitDate(er.text, referenceDate);
+                innerResult = this.parseImplicitDate(er.getText(), referenceDate);
             }
 
             if (!innerResult.getSuccess()) {
-                innerResult = this.parseWeekdayOfMonth(er.text, referenceDate);
+                innerResult = this.parseWeekdayOfMonth(er.getText(), referenceDate);
             }
 
             if (!innerResult.getSuccess()) {
-                innerResult = this.parseDurationWithAgoAndLater(er.text, referenceDate);
+                innerResult = this.parseDurationWithAgoAndLater(er.getText(), referenceDate);
             }
 
             // NumberWithMonth must be the second last one, because it only need to find a number and a month to get a "success"
             if (!innerResult.getSuccess()) {
-                innerResult = this.parseNumberWithMonth(er.text, referenceDate);
+                innerResult = this.parseNumberWithMonth(er.getText(), referenceDate);
             }
 
             // SingleNumber last one
             if (!innerResult.getSuccess()) {
-                innerResult = this.parseSingleNumber(er.text, referenceDate);
+                innerResult = this.parseSingleNumber(er.getText(), referenceDate);
             }
 
             if (innerResult.getSuccess()) {
@@ -89,11 +89,11 @@ public class BaseDateParser implements IDateTimeParser {
         }
 
         DateTimeParseResult ret = new DateTimeParseResult(
-                er.start,
-                er.length,
-                er.text,
-                er.type,
-                er.data,
+                er.getStart(),
+                er.getLength(),
+                er.getText(),
+                er.getType(),
+                er.getData(),
                 value,
                 "",
                 value == null ? "" : ((DateTimeResolutionResult)value).getTimex());
@@ -195,7 +195,7 @@ public class BaseDateParser implements IDateTimeParser {
 
             int swift = getSwiftDay(exactMatch.getMatch().get().getGroup("day").value);
             List<ExtractResult> numErs = this.config.getIntegerExtractor().extract(trimmedText);
-            Object numberParsed = this.config.getNumberParser().parse(numErs.get(0)).value;
+            Object numberParsed = this.config.getNumberParser().parse(numErs.get(0)).getValue();
             int numOfDays = Math.round(((Double)numberParsed).floatValue());
 
             LocalDateTime value = referenceDate.plusDays(numOfDays + swift);
@@ -213,7 +213,7 @@ public class BaseDateParser implements IDateTimeParser {
 
         if (exactMatch.getSuccess()) {
             List<ExtractResult> numErs = this.config.getIntegerExtractor().extract(trimmedText);
-            Object numberParsed = this.config.getNumberParser().parse(numErs.get(0)).value;
+            Object numberParsed = this.config.getNumberParser().parse(numErs.get(0)).getValue();
             int num = Math.round(((Double)numberParsed).floatValue());
 
             String weekdayStr = exactMatch.getMatch().get().getGroup("weekday").value.toLowerCase();
@@ -329,7 +329,7 @@ public class BaseDateParser implements IDateTimeParser {
             // create a extract comments which content ordinal string of text
             ExtractResult er = new ExtractResult(start, length, dayStr, null, null);
 
-            Object numberParsed = this.config.getNumberParser().parse(er).value;
+            Object numberParsed = this.config.getNumberParser().parse(er).getValue();
             day = Math.round(((Double)numberParsed).floatValue());
 
             ret.setTimex(FormatUtil.luisDate(-1, -1, day));
@@ -363,7 +363,7 @@ public class BaseDateParser implements IDateTimeParser {
             // create a extract comments which content ordinal string of text
             ExtractResult erTmp = new ExtractResult(start, length, dayStr, null, null);
 
-            Object numberParsed = this.config.getNumberParser().parse(erTmp).value;
+            Object numberParsed = this.config.getNumberParser().parse(erTmp).getValue();
             int day = Math.round(((Double)numberParsed).floatValue());
 
             // the validity of the phrase is guaranteed in the Date Extractor
@@ -467,7 +467,7 @@ public class BaseDateParser implements IDateTimeParser {
             return ret;
         }
 
-        Object numberParsed = this.config.getNumberParser().parse(er.get(0)).value;
+        Object numberParsed = this.config.getNumberParser().parse(er.get(0)).getValue();
         int num = Math.round(((Double)numberParsed).floatValue());
 
         Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(this.config.getMonthRegex(), trimmedText)).findFirst();
@@ -475,7 +475,7 @@ public class BaseDateParser implements IDateTimeParser {
             month = this.config.getMonthOfYear().get(match.get().value.trim());
             day = num;
 
-            String suffix = trimmedText.substring((er.get(0).start + er.get(0).length));
+            String suffix = trimmedText.substring((er.get(0).getStart() + er.get(0).getLength()));
 
             Optional<Match> matchYear = Arrays.stream(RegExpUtility.getMatches(this.config.getYearSuffix(), suffix)).findFirst();
             if (matchYear.isPresent()) {
@@ -559,7 +559,7 @@ public class BaseDateParser implements IDateTimeParser {
             return ret;
         }
 
-        Object numberParsed = this.config.getNumberParser().parse(er.get(0)).value;
+        Object numberParsed = this.config.getNumberParser().parse(er.get(0)).getValue();
         day = Math.round(((Double)numberParsed).floatValue());
 
         int month = referenceDate.getMonthValue();

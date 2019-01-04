@@ -84,11 +84,11 @@ public class NumberWithUnitExtractor implements IExtractor {
             for (int i = 0; i < numbers.size(); i++) {
                 ExtractResult number = numbers.get(i);
 
-                Match[] matches = RegExpUtility.getMatches(ambiguousMultiplierRegex, number.text);
+                Match[] matches = RegExpUtility.getMatches(ambiguousMultiplierRegex, number.getText());
                 if (matches.length == 1) {
-                    int newLength = number.length - matches[0].length;
-                    numbers.set(i, new ExtractResult(number.start, newLength, number.text.substring(0, newLength),
-                                                     number.type, number.data));
+                    int newLength = number.getLength() - matches[0].length;
+                    numbers.set(i, new ExtractResult(number.getStart(), newLength, number.getText().substring(0, newLength),
+                            number.getType(), number.getData()));
                 }
             }
         }
@@ -96,17 +96,17 @@ public class NumberWithUnitExtractor implements IExtractor {
         /* Mix prefix and numbers, make up a prefix-number combination */
         if (maxPrefixMatchLen != 0) {
             for (ExtractResult number : numbers) {
-                if (number.start == null || number.length == null) {
+                if (number.getStart() == null || number.getLength() == null) {
                     continue;
                 }
 
-                int maxFindPref = Math.min(maxPrefixMatchLen, number.start);
+                int maxFindPref = Math.min(maxPrefixMatchLen, number.getStart());
                 if (maxFindPref == 0) {
                     continue;
                 }
 
                 /* Scan from left to right , find the longest match */
-                String leftStr = source.substring(number.start - maxFindPref, number.start);
+                String leftStr = source.substring(number.getStart() - maxFindPref, number.getStart());
                 int lastIndex = leftStr.length();
 
                 MatchResult bestMatch = null;
@@ -124,18 +124,18 @@ public class NumberWithUnitExtractor implements IExtractor {
                 if (bestMatch != null) {
                     int offset = lastIndex - bestMatch.start();
                     String unitStr = leftStr.substring(bestMatch.start(), lastIndex);
-                    mappingPrefix.put(number.start, new PrefixUnitResult(offset, unitStr));
+                    mappingPrefix.put(number.getStart(), new PrefixUnitResult(offset, unitStr));
                 }
             }
         }
 
         for (ExtractResult number : numbers) {
-            if (number.start == null || number.length == null) {
+            if (number.getStart() == null || number.getLength() == null) {
                 continue;
             }
 
-            int start = number.start;
-            int length = number.length;
+            int start = number.getStart();
+            int length = number.getLength();
             int maxFindLen = sourceLen - start - length;
 
             PrefixUnitResult prefixUnit = null;
@@ -170,15 +170,14 @@ public class NumberWithUnitExtractor implements IExtractor {
                     ExtractResult er = new ExtractResult(start, length + maxlen, substr, this.config.getExtractType(), null);
 
                     if (prefixUnit != null) {
-                        er = er
-                                .withStart(er.start - prefixUnit.offset)
-                                .withLength(er.length + prefixUnit.offset)
-                                .withText(prefixUnit.unitStr + er.text);
+                        er.setStart(er.getStart() - prefixUnit.offset);
+                        er.setLength(er.getLength() + prefixUnit.offset);
+                        er.setText(prefixUnit.unitStr + er.getText());
                     }
 
                     /* Relative position will be used in Parser */
-                    number = number.withStart(start - er.start);
-                    er = er.withData(number);
+                    number.setStart(start - er.getStart());
+                    er.setData(number);
                     result.add(er);
 
                     continue;
@@ -187,15 +186,15 @@ public class NumberWithUnitExtractor implements IExtractor {
 
             if (prefixUnit != null) {
                 ExtractResult er = new ExtractResult(
-                        number.start - prefixUnit.offset,
-                        number.length + prefixUnit.offset,
-                        prefixUnit.unitStr + number.text,
+                        number.getStart() - prefixUnit.offset,
+                        number.getLength() + prefixUnit.offset,
+                        prefixUnit.unitStr + number.getText(),
                         this.config.getExtractType(),
                         null);
 
                 /* Relative position will be used in Parser */
-                number = number.withStart(start - er.start);
-                er = er.withData(number);
+                number.setStart(start - er.getStart());
+                er.setData(number);
                 result.add(er);
             }
         }
@@ -214,11 +213,11 @@ public class NumberWithUnitExtractor implements IExtractor {
         Arrays.fill(matchResult, false);
 
         for (ExtractResult numDependResult : numDependResults) {
-            int start = numDependResult.start;
+            int start = numDependResult.getStart();
             int i = 0;
             do {
                 matchResult[start + i++] = true;
-            } while (i < numDependResult.length);
+            } while (i < numDependResult.getLength());
         }
 
         //Extract all SeparateUnits, then merge it with numDependResults
