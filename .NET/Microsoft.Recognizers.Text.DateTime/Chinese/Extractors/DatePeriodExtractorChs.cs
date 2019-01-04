@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Chinese;
+using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.Number.Chinese;
 using DateObject = System.DateTime;
-using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
@@ -42,7 +42,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         public static readonly Regex MonthSuffixRegex = new Regex(DateTimeDefinitions.MonthSuffixRegex, RegexOptions.Singleline);
 
-        // for case "(从)?(2017年)?一月十日到十二日" 
+        // for case "(从)?(2017年)?一月十日到十二日"
         public static readonly Regex SimpleCasesRegex = new Regex(DateTimeDefinitions.SimpleCasesRegex, RegexOptions.Singleline);
 
         public static readonly Regex YearAndMonth = new Regex(DateTimeDefinitions.YearAndMonth, RegexOptions.Singleline);
@@ -98,7 +98,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             WeekOfMonthRegex,
             SeasonWithYear,
             QuarterRegex,
-            DecadeRegex
+            DecadeRegex,
         };
 
         public List<ExtractResult> Extract(string text)
@@ -128,6 +128,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     ret.Add(new Token(match.Index, match.Index + match.Length));
                 }
             }
+
             return ret;
         }
 
@@ -171,6 +172,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     idx += 2;
                     continue;
                 }
+
                 idx++;
             }
 
