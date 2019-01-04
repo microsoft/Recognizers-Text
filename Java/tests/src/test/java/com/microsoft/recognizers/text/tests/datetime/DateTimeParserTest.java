@@ -104,6 +104,7 @@ public class DateTimeParserTest extends AbstractTest {
 
                     Assert.assertEquals(getMessage(currentCase, "type"), expected.getType(), actual.getType());
                     Assert.assertTrue(getMessage(currentCase, "text"), expected.getText().equalsIgnoreCase(actual.getText()));
+
                     Assert.assertEquals(getMessage(currentCase, "start"), expected.getStart(), actual.getStart());
                     Assert.assertEquals(getMessage(currentCase, "length"), expected.getLength(), actual.getLength());
 
@@ -130,6 +131,7 @@ public class DateTimeParserTest extends AbstractTest {
     private static void assertMergedParserResults(TestCase currentCase, DateTimeParseResult expected, DateTimeParseResult actual) {
 
         if (expected.getValue() != null) {
+
             Map<String, List<Map<String, Object>>> expectedValue = parseDateTimeResolutionResult(expected.getValue());
             Map<String, List<Map<String, Object>>> actualValue = (Map<String, List<Map<String, Object>>>)actual.getValue();
 
