@@ -727,7 +727,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             // Parse "pm"
-            var timePmStr = match.Groups[Constants.PmGroupName].Value;
+            var matchPmStr = match.Groups[Constants.PmGroupName].Value;
             var timeAmStr = match.Groups[Constants.AmGroupName].Value;
             var descStr = match.Groups[Constants.DescGroupName].Value;
             if (!string.IsNullOrEmpty(timeAmStr) || (!string.IsNullOrEmpty(descStr) && descStr.StartsWith("a")))
@@ -744,7 +744,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 hasAm = true;
             }
-            else if (!string.IsNullOrEmpty(timePmStr) || (!string.IsNullOrEmpty(descStr) && descStr.StartsWith("p")))
+            else if (!string.IsNullOrEmpty(matchPmStr) || (!string.IsNullOrEmpty(descStr) && descStr.StartsWith("p")))
             {
                 if (beginHour < Constants.HalfDayHourCount)
                 {
