@@ -95,12 +95,12 @@ namespace Microsoft.Recognizers.Text.DateTime
                     else
                     {
                         // Is there "pm" or "am"?
-                        var time_pmStr = match.Groups[Constants.PmGroupName].Value;
-                        var time_amStr = match.Groups[Constants.AmGroupName].Value;
+                        var matchPmStr = match.Groups[Constants.PmGroupName].Value;
+                        var matchAmStr = match.Groups[Constants.AmGroupName].Value;
                         var descStr = match.Groups[Constants.DescGroupName].Value;
 
                         // Check "pm", "am"
-                        if (!string.IsNullOrEmpty(time_pmStr) || !string.IsNullOrEmpty(time_amStr) || !string.IsNullOrEmpty(descStr))
+                        if (!string.IsNullOrEmpty(matchPmStr) || !string.IsNullOrEmpty(matchAmStr) || !string.IsNullOrEmpty(descStr))
                         {
                             ret.Add(new Token(match.Index, match.Index + match.Length));
                         }
