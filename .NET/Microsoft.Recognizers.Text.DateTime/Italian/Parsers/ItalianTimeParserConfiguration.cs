@@ -80,8 +80,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
                 var oclockStr = match.Groups["heures"].Value;
                 if (string.IsNullOrEmpty(oclockStr))
                 {
-                    var time_amStr = match.Groups["am"].Value;
-                    if (!string.IsNullOrEmpty(time_amStr))
+                    var matchAmStr = match.Groups["am"].Value;
+                    if (!string.IsNullOrEmpty(matchAmStr))
                     {
                         if (hour >= 12)
                         {
@@ -91,8 +91,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
                         hasAm = true;
                     }
 
-                    var time_pmStr = match.Groups["pm"].Value;
-                    if (!string.IsNullOrEmpty(time_pmStr))
+                    var matchPmStr = match.Groups["pm"].Value;
+                    if (!string.IsNullOrEmpty(matchPmStr))
                     {
                         if (hour < 12)
                         {
