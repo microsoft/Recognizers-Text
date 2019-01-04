@@ -8,18 +8,11 @@ ECHO.
 ECHO # Restoring NuGet dependencies
 CALL nuget restore
 
-ECHO.
-ECHO # Running BuildResources.cmd
-PUSHD Microsoft.Recognizers.Definitions
-CALL BuildResources.cmd
-IF %ERRORLEVEL% NEQ 0 (
-	ECHO # Failed to build resources.
-	EXIT /b -1
-)
-POPD
-
 set configuration=Release
 ECHO.
+ECHO # Generate resources
+CALL msbuild Microsoft.Recognizers.Definitions.Common\Microsoft.Recognizers.Definitions.Common.csproj /t:Clean,Build /p:Configuration=%configuration%
+
 ECHO # Building .NET solution (%configuration%)
 CALL msbuild Microsoft.Recognizers.Text.sln /t:Clean,Build /p:Configuration=%configuration%
 

@@ -1,13 +1,49 @@
 ﻿using System.Collections.Immutable;
 using System.Text.RegularExpressions;
-
-using Microsoft.Recognizers.Text.DateTime.Utilities;
 using Microsoft.Recognizers.Definitions.English;
+using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
 {
     public class EnglishDateTimeParserConfiguration : BaseOptionsConfiguration, IDateTimeParserConfiguration
     {
+        public static readonly Regex AmTimeRegex =
+             new Regex(DateTimeDefinitions.AMTimeRegex, RegexOptions.Singleline);
+
+        public static readonly Regex PmTimeRegex =
+            new Regex(DateTimeDefinitions.PMTimeRegex, RegexOptions.Singleline);
+
+        public EnglishDateTimeParserConfiguration(ICommonDateTimeParserConfiguration config)
+         : base(config)
+        {
+            TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
+            TokenBeforeTime = DateTimeDefinitions.TokenBeforeTime;
+
+            DateExtractor = config.DateExtractor;
+            TimeExtractor = config.TimeExtractor;
+            DateParser = config.DateParser;
+            TimeParser = config.TimeParser;
+
+            NowRegex = EnglishDateTimeExtractorConfiguration.NowRegex;
+
+            SimpleTimeOfTodayAfterRegex = EnglishDateTimeExtractorConfiguration.SimpleTimeOfTodayAfterRegex;
+            SimpleTimeOfTodayBeforeRegex = EnglishDateTimeExtractorConfiguration.SimpleTimeOfTodayBeforeRegex;
+            SpecificTimeOfDayRegex = EnglishDateTimeExtractorConfiguration.SpecificTimeOfDayRegex;
+            SpecificEndOfRegex = EnglishDateTimeExtractorConfiguration.SpecificEndOfRegex;
+            UnspecificEndOfRegex = EnglishDateTimeExtractorConfiguration.UnspecificEndOfRegex;
+            UnitRegex = EnglishTimeExtractorConfiguration.TimeUnitRegex;
+            DateNumberConnectorRegex = EnglishDateTimeExtractorConfiguration.DateNumberConnectorRegex;
+
+            Numbers = config.Numbers;
+            CardinalExtractor = config.CardinalExtractor;
+            IntegerExtractor = config.IntegerExtractor;
+            NumberParser = config.NumberParser;
+            DurationExtractor = config.DurationExtractor;
+            DurationParser = config.DurationParser;
+            UnitMap = config.UnitMap;
+            UtilityConfiguration = config.UtilityConfiguration;
+        }
+
         public string TokenBeforeDate { get; }
 
         public string TokenBeforeTime { get; }
@@ -38,12 +74,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public Regex PMTimeRegex => PmTimeRegex;
 
-        public static readonly Regex AmTimeRegex = 
-            new Regex(DateTimeDefinitions.AMTimeRegex, RegexOptions.Singleline);
-
-        public static readonly Regex PmTimeRegex =
-            new Regex(DateTimeDefinitions.PMTimeRegex, RegexOptions.Singleline);
-
         public Regex SimpleTimeOfTodayAfterRegex { get; }
 
         public Regex SimpleTimeOfTodayBeforeRegex { get; }
@@ -66,43 +96,12 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
-        public EnglishDateTimeParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config)
-        {
-
-            TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
-            TokenBeforeTime = DateTimeDefinitions.TokenBeforeTime;
-
-            DateExtractor = config.DateExtractor;
-            TimeExtractor = config.TimeExtractor;
-            DateParser = config.DateParser;
-            TimeParser = config.TimeParser;
-
-            NowRegex = EnglishDateTimeExtractorConfiguration.NowRegex;
-
-            SimpleTimeOfTodayAfterRegex = EnglishDateTimeExtractorConfiguration.SimpleTimeOfTodayAfterRegex;
-            SimpleTimeOfTodayBeforeRegex = EnglishDateTimeExtractorConfiguration.SimpleTimeOfTodayBeforeRegex;
-            SpecificTimeOfDayRegex = EnglishDateTimeExtractorConfiguration.SpecificTimeOfDayRegex;
-            SpecificEndOfRegex = EnglishDateTimeExtractorConfiguration.SpecificEndOfRegex;
-            UnspecificEndOfRegex = EnglishDateTimeExtractorConfiguration.UnspecificEndOfRegex;
-            UnitRegex = EnglishTimeExtractorConfiguration.TimeUnitRegex;
-            DateNumberConnectorRegex = EnglishDateTimeExtractorConfiguration.DateNumberConnectorRegex;
-
-            Numbers = config.Numbers;
-            CardinalExtractor = config.CardinalExtractor;
-            IntegerExtractor = config.IntegerExtractor;
-            NumberParser = config.NumberParser;
-            DurationExtractor = config.DurationExtractor;
-            DurationParser = config.DurationParser;
-            UnitMap = config.UnitMap;
-            UtilityConfiguration = config.UtilityConfiguration;
-        }
-
         public int GetHour(string text, int hour)
         {
             int result = hour;
 
             var trimmedText = text.Trim().ToLowerInvariant();
-            
+
             if (trimmedText.EndsWith("morning") && hour >= Constants.HalfDayHourCount)
             {
                 result -= Constants.HalfDayHourCount;

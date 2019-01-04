@@ -8,7 +8,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
     public class FrenchDateTimePeriodExtractorConfiguration : BaseOptionsConfiguration, IDateTimePeriodExtractorConfiguration
     {
         public static readonly Regex TimeNumberCombinedWithUnit =
-    new Regex(DateTimeDefinitions.TimeNumberCombinedWithUnit, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.TimeNumberCombinedWithUnit, RegexOptions.Singleline);
 
         public static readonly Regex PeriodTimeOfDayWithDateRegex =
             new Regex(DateTimeDefinitions.PeriodTimeOfDayWithDateRegex, RegexOptions.Singleline);
