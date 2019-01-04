@@ -1,12 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Text.RegularExpressions;
-
-using DateObject = System.DateTime;
-
 using Microsoft.Recognizers.Definitions.Japanese;
-using Microsoft.Recognizers.Text.Number.Japanese;
-using System;
 using Microsoft.Recognizers.Text.Number;
+using Microsoft.Recognizers.Text.Number.Japanese;
+using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Japanese
 {
@@ -20,9 +18,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
         private static readonly IDateTimeExtractor SingleDateExtractor = new DateExtractor();
         private static readonly IDateTimeExtractor SingleTimeExtractor = new TimeExtractor();
-        private readonly IDateTimeExtractor DurationExtractor = new DurationExtractor();
-        private readonly IExtractor IntegerExtractor = new IntegerExtractor();
-        private readonly IParser NumberParser = new BaseCJKNumberParser(new JapaneseNumberParserConfiguration());
+        private readonly IDateTimeExtractor durationExtractor = new DurationExtractor();
+        private readonly IExtractor integerExtractor = new IntegerExtractor();
+        private readonly IParser numberParser = new BaseCJKNumberParser(new JapaneseNumberParserConfiguration());
 
         private readonly IFullDateTimeParserConfiguration config;
 
@@ -63,12 +61,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 {
                     innerResult.FutureResolution = new Dictionary<string, string>
                     {
-                        {TimeTypeConstants.DATETIME, DateTimeFormatUtil.FormatDateTime((DateObject) innerResult.FutureValue)}
+                        { TimeTypeConstants.DATETIME, DateTimeFormatUtil.FormatDateTime((DateObject)innerResult.FutureValue) },
                     };
 
                     innerResult.PastResolution = new Dictionary<string, string>
                     {
-                        {TimeTypeConstants.DATETIME, DateTimeFormatUtil.FormatDateTime((DateObject) innerResult.PastValue)}
+                        { TimeTypeConstants.DATETIME, DateTimeFormatUtil.FormatDateTime((DateObject)innerResult.PastValue) },
                     };
 
                     innerResult.IsLunar = IsLunarCalendar(er.Text);
@@ -85,27 +83,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 Type = er.Type,
                 Data = er.Data,
                 Value = value,
-                TimexStr = value == null ? "" : ((DateTimeResolutionResult) value).Timex,
-                ResolutionStr = ""
+                TimexStr = value == null ? string.Empty : ((DateTimeResolutionResult)value).Timex,
+                ResolutionStr = string.Empty,
             };
             return ret;
         }
 
-        public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults) {
-            return candidateResults;
-        }
-
-        // parse if lunar contains
-        private bool IsLunarCalendar(string text)
+        public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)
         {
-            var trimmedText = text.Trim();
-            var match = DateExtractor.LunarRegex.Match(trimmedText);
-            if (match.Success)
-            {
-                return true;
-            }
-
-            return JapaneseHolidayExtractorConfiguration.LunarHolidayRegex.IsMatch(trimmedText);
+            return candidateResults;
         }
 
         private static DateTimeResolutionResult ParseBasicRegex(string text, DateObject referenceTime)
@@ -139,6 +125,19 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             return ret;
         }
 
+        // parse if lunar contains
+        private bool IsLunarCalendar(string text)
+        {
+            var trimmedText = text.Trim();
+            var match = DateExtractor.LunarRegex.Match(trimmedText);
+            if (match.Success)
+            {
+                return true;
+            }
+
+            return JapaneseHolidayExtractorConfiguration.LunarHolidayRegex.IsMatch(trimmedText);
+        }
+
         // merge a Date entity and a Time entity
         private DateTimeResolutionResult MergeDateAndTime(string text, DateObject referenceTime)
         {
@@ -165,9 +164,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 return ret;
             }
 
-            var futureDate = (DateObject) ((DateTimeResolutionResult) pr1.Value).FutureValue;
-            var pastDate = (DateObject) ((DateTimeResolutionResult) pr1.Value).PastValue;
-            var time = (DateObject) ((DateTimeResolutionResult) pr2.Value).FutureValue;
+            var futureDate = (DateObject)((DateTimeResolutionResult)pr1.Value).FutureValue;
+            var pastDate = (DateObject)((DateTimeResolutionResult)pr1.Value).PastValue;
+            var time = (DateObject)((DateTimeResolutionResult)pr2.Value).FutureValue;
 
             var hour = time.Hour;
             var min = time.Minute;
@@ -188,15 +187,16 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             {
                 timeStr = timeStr.Substring(0, timeStr.Length - 4);
             }
+
             timeStr = "T" + hour.ToString("D2") + timeStr.Substring(3);
             ret.Timex = pr1.TimexStr + timeStr;
 
-            var val = (DateTimeResolutionResult) pr2.Value;
+            var val = (DateTimeResolutionResult)pr2.Value;
 
             if (hour <= Constants.HalfDayHourCount && !SimplePmRegex.IsMatch(text) && !SimpleAmRegex.IsMatch(text) &&
                 !string.IsNullOrEmpty(val.Comment))
             {
-                //ret.Timex += "ampm";
+                // ret.Timex += "ampm";
                 ret.Comment = Constants.Comment_AmPm;
             }
 
@@ -223,7 +223,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 return ret;
             }
 
-            var time = (DateObject) ((DateTimeResolutionResult) pr.Value).FutureValue;
+            var time = (DateObject)((DateTimeResolutionResult)pr.Value).FutureValue;
 
             var hour = time.Hour;
             var min = time.Minute;
@@ -234,8 +234,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             if (match.Success)
             {
                 var matchStr = match.Value.ToLowerInvariant();
-
-
                 var swift = 0;
                 switch (matchStr)
                 {
@@ -244,6 +242,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                         {
                             hour += Constants.HalfDayHourCount;
                         }
+
                         break;
                     case "今早":
                     case "今晨":
@@ -251,6 +250,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                         {
                             hour -= Constants.HalfDayHourCount;
                         }
+
                         break;
                     case "明晚":
                         swift = 1;
@@ -258,6 +258,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                         {
                             hour += Constants.HalfDayHourCount;
                         }
+
                         break;
                     case "明早":
                     case "明晨":
@@ -266,6 +267,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                         {
                             hour -= Constants.HalfDayHourCount;
                         }
+
                         break;
                     case "昨晚":
                         swift = -1;
@@ -273,6 +275,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                         {
                             hour += Constants.HalfDayHourCount;
                         }
+
                         break;
                     default:
                         break;
@@ -286,6 +289,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 {
                     timeStr = timeStr.Substring(0, timeStr.Length - 4);
                 }
+
                 timeStr = "T" + hour.ToString("D2") + timeStr.Substring(3);
 
                 ret.Timex = DateTimeFormatUtil.FormatDate(date) + timeStr;
@@ -301,7 +305,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         private DateTimeResolutionResult ParserDurationWithBeforeAndAfter(string text, DateObject referenceDate)
         {
             var ret = new DateTimeResolutionResult();
-            var durationRes = DurationExtractor.Extract(text, referenceDate);
+            var durationRes = durationExtractor.Extract(text, referenceDate);
             var numStr = string.Empty;
             var unitStr = string.Empty;
             if (durationRes.Count > 0)
@@ -342,6 +346,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                                 default:
                                     return ret;
                             }
+
                             ret.Timex = $"{DateTimeFormatUtil.LuisDate(date)}";
                             ret.FutureValue = ret.PastValue = date;
                             ret.Success = true;
@@ -383,14 +388,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         private int ConvertJapaneseToNum(string numStr)
         {
             var num = -1;
-            var er = IntegerExtractor.Extract(numStr);
+            var er = integerExtractor.Extract(numStr);
             if (er.Count != 0)
             {
                 if (er[0].Type.Equals(Number.Constants.SYS_NUM_INTEGER))
                 {
-                    num = Convert.ToInt32((double)(NumberParser.Parse(er[0]).Value ?? 0));
+                    num = Convert.ToInt32((double)(numberParser.Parse(er[0]).Value ?? 0));
                 }
             }
+
             return num;
         }
     }
