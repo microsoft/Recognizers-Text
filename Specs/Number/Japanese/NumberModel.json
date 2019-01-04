@@ -1125,34 +1125,6 @@
     ]
   },
   {
-    "Input": "12.32e+14",
-    "Results": [
-      {
-        "Text": "12.32e+14",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "1.232E+15"
-        },
-        "Start": 0,
-        "End": 8
-      }
-    ]
-  },
-  {
-    "Input": "-12e-1",
-    "Results": [
-      {
-        "Text": "-12e-1",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "-1.2"
-        },
-        "Start": 0,
-        "End": 5
-      }
-    ]
-  },
-  {
     "Input": "-1.1^--23",
     "Results": [
       {
@@ -1205,62 +1177,6 @@
         },
         "Start": 0,
         "End": 6
-      }
-    ]
-  },
-  {
-    "Input": "2222.2222.22222.222",
-    "NotSupported": "javascript, python",
-    "Results": [
-      {
-        "Text": "2222",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "2222"
-        },
-        "Start": 0,
-        "End": 3
-      },
-      {
-        "Text": "2222",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "2222"
-        },
-        "Start": 5,
-        "End": 8
-      },
-      {
-        "Text": "22222",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "22222"
-        },
-        "Start": 10,
-        "End": 14
-      },
-      {
-        "Text": "222",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "222"
-        },
-        "Start": 16,
-        "End": 18
-      }
-    ]
-  },
-  {
-    "Input": "4.800",
-    "Results": [
-      {
-        "Text": "4.800",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "4.8"
-        },
-        "Start": 0,
-        "End": 4
       }
     ]
   },

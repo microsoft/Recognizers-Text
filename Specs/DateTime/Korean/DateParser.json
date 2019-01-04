@@ -286,94 +286,6 @@
     ]
   },
   {
-    "Input": "4.22에 돌아가겠습니다",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
-    "Results": [
-      {
-        "Text": "4.22",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-04-22",
-          "FutureResolution": {
-            "date": "2017-04-22"
-          },
-          "PastResolution": {
-            "date": "2016-04-22"
-          }
-        }
-      }
-    ]
-  },
-  {
-    "Input": "4-22에 돌아가겠습니다",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
-    "Results": [
-      {
-        "Text": "4-22",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-04-22",
-          "FutureResolution": {
-            "date": "2017-04-22"
-          },
-          "PastResolution": {
-            "date": "2016-04-22"
-          }
-        }
-      }
-    ]
-  },
-  {
-    "Input": "4/22에 돌아가겠습니다",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
-    "Results": [
-      {
-        "Text": "4/22",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-04-22",
-          "FutureResolution": {
-            "date": "2017-04-22"
-          },
-          "PastResolution": {
-            "date": "2016-04-22"
-          }
-        }
-      }
-    ]
-  },
-  {
-    "Input": "22/04에 돌아가겠습니다",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
-    "Results": [
-      {
-        "Text": "22/04",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-04-22",
-          "FutureResolution": {
-            "date": "2017-04-22"
-          },
-          "PastResolution": {
-            "date": "2016-04-22"
-          }
-        }
-      }
-    ]
-  },
-  {
     "Input": "4/22에 돌아가겠습니다",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -1314,28 +1226,6 @@
           },
           "PastResolution": {
             "date": "2016-11-04"
-          }
-        }
-      }
-    ]
-  },
-  {
-    "Input": "27일에 돌아왔어요",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
-    "Results": [
-      {
-        "Text": "27일에",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-XX-27",
-          "FutureResolution": {
-            "date": "2016-11-27"
-          },
-          "PastResolution": {
-            "date": "2016-11-27"
           }
         }
       }

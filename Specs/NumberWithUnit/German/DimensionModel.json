@@ -68,23 +68,6 @@
     ]
   },
   {
-    "Input": "Auf dem Oktoberfest wurden bisher insgesamt ca. achtzig Millionen liter Bier ausgeschenkt.",
-    "NotSupportedByDesign": "python",
-    "NotSupported": "javascript",
-    "Results": [
-      {
-        "Text": "achtzig millionen liter",
-        "TypeName": "dimension",
-        "Resolution": {
-          "value": "80000000",
-          "unit": "Liter"
-        },
-        "Start": 48,
-        "End": 70
-      }
-    ]
-  },
-  {
     "Input": "Ein Fußballfeld ist zwischen 4.050 m² und 10.800 m² groß.",
     "NotSupportedByDesign": "python",
     "NotSupported": "javascript",

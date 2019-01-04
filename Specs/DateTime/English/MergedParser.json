@@ -1037,30 +1037,6 @@
     ]
   },
   {
-    "Input": "schedule a meeting in advance of 2pm",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "Results": [
-      {
-        "Text": "in advance of 2pm",
-        "Type": "datetimeV2.timerange",
-        "Value": {
-          "values": [
-            {
-              "timex": "T14",
-              "Mod": "before",
-              "type": "timerange",
-              "end": "14:00:00"
-            }
-          ]
-        },
-        "Start": 19,
-        "Length": 17
-      }
-    ]
-  },
-  {
     "Input": "schedule a meeting prior to 2pm",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -2362,54 +2338,6 @@
         },
         "Start": 12,
         "Length": 9
-      }
-    ]
-  },
-  {
-    "Input": "I'll be out 11- 2016",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "Results": [
-      {
-        "Text": "11- 2016",
-        "Type": "datetimeV2.daterange",
-        "Value": {
-          "values": [
-            {
-              "timex": "2016-11",
-              "type": "daterange",
-              "start": "2016-11-01",
-              "end": "2016-12-01"
-            }
-          ]
-        },
-        "Start": 12,
-        "Length": 8
-      }
-    ]
-  },
-  {
-    "Input": "I'll be out 11 -2016",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "Results": [
-      {
-        "Text": "11 -2016",
-        "Type": "datetimeV2.daterange",
-        "Value": {
-          "values": [
-            {
-              "timex": "2016-11",
-              "type": "daterange",
-              "start": "2016-11-01",
-              "end": "2016-12-01"
-            }
-          ]
-        },
-        "Start": 12,
-        "Length": 8
       }
     ]
   },

@@ -110,17 +110,6 @@
     ]
   },
   {
-    "Input": "Sarò fuori dalle 4:00 fino alle 5pm",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
-    "Results": [
-      {
-        "Text": "dalle 4:00 fino alle 5pm",
-        "Type": "timerange"
-      }
-    ]
-  },
-  {
     "Input": "Sarò fuori dalle 4:00 alle 7",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
