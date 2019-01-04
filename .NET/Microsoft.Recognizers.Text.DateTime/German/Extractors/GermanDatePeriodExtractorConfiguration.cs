@@ -11,10 +11,10 @@ namespace Microsoft.Recognizers.Text.DateTime.German
     public class GermanDatePeriodExtractorConfiguration : BaseOptionsConfiguration, IDatePeriodExtractorConfiguration
     {
         // base regexes
-        public static readonly Regex TillRegex = 
+        public static readonly Regex TillRegex =
             new Regex(DateTimeDefinitions.TillRegex, RegexOptions.Singleline);
 
-        public static readonly Regex AndRegex = 
+        public static readonly Regex AndRegex =
             new Regex(DateTimeDefinitions.RangeConnectorRegex, RegexOptions.Singleline);
 
         public static readonly Regex DayRegex =
@@ -26,13 +26,13 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public static readonly Regex IllegalYearRegex =
             new Regex(BaseDateTime.IllegalYearRegex, RegexOptions.Singleline);
 
-        public static readonly Regex YearRegex = 
+        public static readonly Regex YearRegex =
             new Regex(DateTimeDefinitions.YearRegex, RegexOptions.Singleline);
 
         public static readonly Regex WeekDayRegex =
             new Regex(DateTimeDefinitions.WeekDayRegex, RegexOptions.Singleline);
 
-        public static readonly Regex RelativeMonthRegex = 
+        public static readonly Regex RelativeMonthRegex =
             new Regex(DateTimeDefinitions.RelativeMonthRegex, RegexOptions.Singleline);
 
         public static readonly Regex WrittenMonthRegex =
@@ -41,16 +41,16 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public static readonly Regex MonthSuffixRegex =
             new Regex(DateTimeDefinitions.MonthSuffixRegex, RegexOptions.Singleline);
 
-        public static readonly Regex DateUnitRegex = 
+        public static readonly Regex DateUnitRegex =
             new Regex(DateTimeDefinitions.DateUnitRegex, RegexOptions.Singleline);
 
         public static readonly Regex TimeUnitRegex =
             new Regex(DateTimeDefinitions.TimeUnitRegex, RegexOptions.Singleline);
 
-        public static readonly Regex PastPrefixRegex = 
+        public static readonly Regex PastPrefixRegex =
             new Regex(DateTimeDefinitions.PastPrefixRegex, RegexOptions.Singleline);
 
-        public static readonly Regex NextPrefixRegex = 
+        public static readonly Regex NextPrefixRegex =
             new Regex(DateTimeDefinitions.NextPrefixRegex, RegexOptions.Singleline);
 
         public static readonly Regex FutureSuffixRegex =
@@ -84,7 +84,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public static readonly Regex WeekOfYearRegex =
             new Regex(DateTimeDefinitions.WeekOfYearRegex, RegexOptions.Singleline);
 
-        public static readonly Regex FollowedDateUnit = 
+        public static readonly Regex FollowedDateUnit =
             new Regex(DateTimeDefinitions.FollowedDateUnit, RegexOptions.Singleline);
 
         public static readonly Regex NumberCombinedWithDateUnit =
@@ -184,10 +184,11 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             WeekWithWeekDayRangeRegex,
             YearPlusNumberRegex,
             DecadeWithCenturyRegex,
-            RelativeDecadeRegex
+            RelativeDecadeRegex,
         };
 
-        public GermanDatePeriodExtractorConfiguration(IOptionsConfiguration config) : base(config)
+        public GermanDatePeriodExtractorConfiguration(IOptionsConfiguration config)
+            : base(config)
         {
             DatePointExtractor = new BaseDateExtractor(new GermanDateExtractorConfiguration(this));
             CardinalExtractor = Number.German.CardinalExtractor.GetInstance();
