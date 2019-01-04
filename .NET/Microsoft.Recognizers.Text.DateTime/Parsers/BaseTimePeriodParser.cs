@@ -177,7 +177,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         // parse "pm"
                         var leftDesc = match.Groups["leftDesc"].Value;
                         var rightDesc = match.Groups["rightDesc"].Value;
-                        var timePmStr = match.Groups[Constants.PmGroupName].Value;
+                        var matchPmStr = match.Groups[Constants.PmGroupName].Value;
                         var timeAmStr = match.Groups[Constants.AmGroupName].Value;
                         var descStr = match.Groups[Constants.DescGroupName].Value;
 
@@ -209,7 +209,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                                 isValid = true;
                             }
-                            else if (!string.IsNullOrEmpty(timePmStr) || rightPmValid)
+                            else if (!string.IsNullOrEmpty(matchPmStr) || rightPmValid)
                             {
                                 if (endHour < Constants.HalfDayHourCount)
                                 {
