@@ -1,13 +1,12 @@
 ﻿using System.Collections.Generic;
-using System.Text.RegularExpressions;
 using System.Collections.Immutable;
 using System.Linq;
-
+using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Definitions.English;
 using Microsoft.Recognizers.Text.DateTime.English.Utilities;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
-using Microsoft.Recognizers.Definitions.English;
-using Microsoft.Recognizers.Text.Number.English;
 using Microsoft.Recognizers.Text.Number;
+using Microsoft.Recognizers.Text.Number.English;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
 {
@@ -15,9 +14,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English
     {
         public static readonly Regex MonthRegex =
             new Regex(DateTimeDefinitions.MonthRegex, RegexOptions.Singleline);
-
-        private static readonly Regex DayRegex =
-            new Regex(DateTimeDefinitions.ImplicitDayRegex, RegexOptions.Singleline);
 
         public static readonly Regex MonthNumRegex =
             new Regex(DateTimeDefinitions.MonthNumRegex, RegexOptions.Singleline);
@@ -100,7 +96,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex RangeUnitRegex =
             new Regex(DateTimeDefinitions.RangeUnitRegex, RegexOptions.Singleline);
 
-        public static readonly Regex RangeConnectorSymbolRegex = 
+        public static readonly Regex RangeConnectorSymbolRegex =
             new Regex(Definitions.BaseDateTime.RangeConnectorSymbolRegex, RegexOptions.Singleline);
 
         public static readonly ImmutableDictionary<string, int> DayOfWeek =
@@ -109,7 +105,11 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly ImmutableDictionary<string, int> MonthOfYear =
             DateTimeDefinitions.MonthOfYear.ToImmutableDictionary();
 
-        public EnglishDateExtractorConfiguration(IOptionsConfiguration config) : base(config)
+        private static readonly Regex DayRegex =
+            new Regex(DateTimeDefinitions.ImplicitDayRegex, RegexOptions.Singleline);
+
+        public EnglishDateExtractorConfiguration(IOptionsConfiguration config)
+            : base(config)
         {
             IntegerExtractor = Number.English.IntegerExtractor.GetInstance();
             OrdinalExtractor = Number.English.OrdinalExtractor.GetInstance();
@@ -122,31 +122,41 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             {
                 // extract "12" from "on 12"
                 OnRegex,
+
                 // extract "12th" from "on/at/in 12th"
                 RelaxedOnRegex,
+
                 // "the day before yesterday", "previous day", "today", "yesterday", "tomorrow"
                 SpecialDayRegex,
+
                 // "this Monday", "Tuesday of this week"
                 ThisRegex,
+
                 // "last/previous Monday", "Monday of last week"
                 LastDateRegex,
+
                 // "next/following Monday", "Monday of next week"
                 NextDateRegex,
+
                 // "Sunday", "Weds"
                 SingleWeekDayRegex,
+
                 // "2nd Monday of April"
                 WeekDayOfMonthRegex,
+
                 // "on the 12th"
                 SpecialDate,
+
                 // "two days from today", "five days from tomorrow"
                 SpecialDayWithNumRegex,
+
                 // "three Monday from now"
-                RelativeWeekDayRegex
+                RelativeWeekDayRegex,
             };
 
             if ((Options & DateTimeOptions.CalendarMode) != 0)
             {
-                ImplicitDateList = ImplicitDateList.Concat(new[] {DayRegex});
+                ImplicitDateList = ImplicitDateList.Concat(new[] { DayRegex });
             }
 
             const RegexOptions dateRegexOption = RegexOptions.Singleline;
@@ -188,15 +198,14 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
                 // (Sunday,)? 6th of April
                 new Regex(DateTimeDefinitions.DateExtractor3, dateRegexOption),
-
             };
 
-            var enableDmy = DmyDateFormat || 
+            var enableDmy = DmyDateFormat ||
                             DateTimeDefinitions.DefaultLanguageFallback == Constants.DefaultLanguageFallback_DMY;
 
-            DateRegexList = DateRegexList.Concat(enableDmy ? 
-                new[] {dateRegex5, dateRegex8, dateRegex9L, dateRegex9S, dateRegex4, dateRegex6, dateRegex7L, dateRegex7S, dateRegexA} :
-                new[] {dateRegex4, dateRegex6, dateRegex7L, dateRegex7S, dateRegex5, dateRegex8, dateRegex9L, dateRegex9S, dateRegexA});
+            DateRegexList = DateRegexList.Concat(enableDmy ?
+                new[] { dateRegex5, dateRegex8, dateRegex9L, dateRegex9S, dateRegex4, dateRegex6, dateRegex7L, dateRegex7S, dateRegexA } :
+                new[] { dateRegex4, dateRegex6, dateRegex7L, dateRegex7S, dateRegex5, dateRegex8, dateRegex9L, dateRegex9S, dateRegexA });
         }
 
         public IEnumerable<Regex> DateRegexList { get; }
