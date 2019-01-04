@@ -101,8 +101,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
                 var oclockStr = match.Groups["oclock"].Value;
                 if (string.IsNullOrEmpty(oclockStr))
                 {
-                    var time_amStr = match.Groups[Constants.AmGroupName].Value;
-                    if (!string.IsNullOrEmpty(time_amStr))
+                    var matchAmStr = match.Groups[Constants.AmGroupName].Value;
+                    if (!string.IsNullOrEmpty(matchAmStr))
                     {
                         if (hour >= Constants.HalfDayHourCount)
                         {
@@ -114,15 +114,15 @@ namespace Microsoft.Recognizers.Text.DateTime.English
                         }
                     }
 
-                    var time_pmStr = match.Groups[Constants.PmGroupName].Value;
-                    if (!string.IsNullOrEmpty(time_pmStr))
+                    var matchPmStr = match.Groups[Constants.PmGroupName].Value;
+                    if (!string.IsNullOrEmpty(matchPmStr))
                     {
                         if (hour < Constants.HalfDayHourCount)
                         {
                             deltaHour = Constants.HalfDayHourCount;
                         }
 
-                        if (LunchRegex.IsMatch(time_pmStr))
+                        if (LunchRegex.IsMatch(matchPmStr))
                         {
                             if (hour >= 10 && hour <= Constants.HalfDayHourCount)
                             {
@@ -141,7 +141,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
                                 hasPm = true;
                             }
                         }
-                        else if (NightRegex.IsMatch(time_pmStr))
+                        else if (NightRegex.IsMatch(matchPmStr))
                         {
                             if (hour <= 3 || hour == Constants.HalfDayHourCount)
                             {
