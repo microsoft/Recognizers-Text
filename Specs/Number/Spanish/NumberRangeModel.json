@@ -1,13 +1,11 @@
 [
     {
       "Input": "1995-01",
-      "NotSupported": "dotnet",
       "NotSupportedByDesign": "javascript, python, java",
       "Results": []
     },
     {
       "Input": "Este número es mayor que veinte y menor o igual a treinta y cinco.",
-      "NotSupported": "dotnet",
       "NotSupportedByDesign": "javascript, python, java",
       "Results": [
         {
@@ -23,7 +21,6 @@
     },
     {
       "Input": "Este número es mayor que veinte y menor o igual que treinta y cinco.",
-      "NotSupported": "dotnet",
       "NotSupportedByDesign": "javascript, python, java",
       "Results": [
         {
@@ -39,7 +36,6 @@
     },
     {
       "Input": "Este número es entre 20 y 30.",
-      "NotSupported": "dotnet",
       "NotSupportedByDesign": "javascript, python, java",
       "Results": [
         {
@@ -55,7 +51,6 @@
     },
     {
       "Input": "Ocupa un lugar entre el diez y el quince.",
-      "NotSupported": "dotnet",
       "NotSupportedByDesign": "javascript, python, java",
       "Results": [
         {
@@ -71,7 +66,6 @@
     },
     {
       "Input": "Saca una nota entre menos diez y quince.",
-      "NotSupported": "dotnet",
       "NotSupportedByDesign": "javascript, python, java",
       "Results": [
         {
@@ -87,7 +81,6 @@
     },
     {
       "Input": "Tiene un nivel más alto que el diez pero más bajo que el quince.",
-      "NotSupported": "dotnet",
       "NotSupportedByDesign": "javascript, python, java",
       "Results": [
         {
@@ -103,7 +96,6 @@
     },
     {
       "Input": "Es un número que es mayor que 100 y menor que 300",
-      "NotSupported": "dotnet",
       "NotSupportedByDesign": "javascript, python, java",
       "Results": [
         {
@@ -119,7 +111,6 @@
     },
     {
       "Input": "Es un número mayor que 100 y menor que 300",
-      "NotSupported": "dotnet",
       "NotSupportedByDesign": "javascript, python, java",
       "Results": [
         {
@@ -135,7 +126,6 @@
     },
     {
       "Input": "Este número es mayor o igual a cien, menor o igual a trescientos",
-      "NotSupported": "dotnet",
       "NotSupportedByDesign": "javascript, python, java",
       "Results": [
         {
@@ -151,7 +141,6 @@
     },
     {
       "Input": "Este número es mayor o igual que cien, menor o igual que trescientos",
-      "NotSupported": "dotnet",
       "NotSupportedByDesign": "javascript, python, java",
       "Results": [
         {
@@ -167,7 +156,6 @@
     },
     {
       "Input": "Hay como máximo 100 y como mínimo 20 manzanas.",
-      "NotSupported": "dotnet",
       "NotSupportedByDesign": "javascript, python, java",
       "Results": [
         {
@@ -183,7 +171,6 @@
     },
     {
       "Input": "Hay 100 como máximo y 20 como mínimo manzanas.",
-      "NotSupported": "dotnet",
       "NotSupportedByDesign": "javascript, python, java",
       "Results": [
         {
@@ -199,7 +186,6 @@
     },
     {
       "Input": "Hay al menos 20 manzanas.",
-      "NotSupported": "dotnet",
       "NotSupportedByDesign": "javascript, python, java",
       "Results": [
         {
@@ -215,7 +201,6 @@
     },
     {
       "Input": "Hay por lo menos 20 manzanas.",
-      "NotSupported": "dotnet",
       "NotSupportedByDesign": "javascript, python, java",
       "Results": [
         {
@@ -231,7 +216,6 @@
     },
     {
       "Input": "Hay entre 20 y 100 manzanas",
-      "NotSupported": "dotnet",
       "NotSupportedByDesign": "javascript, python, java",
       "Results": [
         {
@@ -247,7 +231,6 @@
     },
     {
       "Input": "El rango de números es desde 20 hasta 100",
-      "NotSupported": "dotnet",
       "NotSupportedByDesign": "javascript, python, java",
       "Results": [
         {
@@ -263,7 +246,6 @@
     },
     {
       "Input": "El rango de números es desde mil hasta mil quinientos.",
-      "NotSupported": "dotnet",
       "NotSupportedByDesign": "javascript, python, java",
       "Results": [
         {
@@ -279,7 +261,6 @@
     },
     {
       "Input": "Esta cifra es más alta que 1000 y más baja que 1500",
-      "NotSupported": "dotnet",
       "NotSupportedByDesign": "javascript, python, java",
       "Results": [
         {
@@ -311,7 +292,6 @@
     },
     {
       "Input": "Esta cifra es mayor o igual a tres mil novecientos sesenta y cinco.",
-      "NotSupported": "dotnet",
       "NotSupportedByDesign": "javascript, python, java",
       "Results": [
         {
@@ -327,7 +307,6 @@
     },
     {
       "Input": "Este número es mayor que 4.565",
-      "NotSupported": "dotnet",
       "NotSupportedByDesign": "javascript, python, java",
       "Results": [
         {
@@ -343,7 +322,6 @@
     },
     {
       "Input": "Este número es mayor que 4565",
-      "NotSupported": "dotnet",
       "NotSupportedByDesign": "javascript, python, java",
       "Results": [
         {
@@ -359,7 +337,6 @@
     },
     {
       "Input": "Tiene más de treinta años.",
-      "NotSupported": "dotnet",
       "NotSupportedByDesign": "javascript, python, java",
       "Results": [
         {
@@ -375,7 +352,6 @@
     },
     {
       "Input": "Es mayor de treinta años de edad.",
-      "NotSupported": "dotnet",
       "NotSupportedByDesign": "javascript, python, java",
       "Results": [
         {
@@ -391,7 +367,6 @@
     },
     {
       "Input": "Tiene una edad de no menos de treinta años.",
-      "NotSupported": "dotnet",
       "NotSupportedByDesign": "javascript, python, java",
       "Results": [
         {
@@ -407,7 +382,6 @@
     },
     {
       "Input": "Hay alrededor de quinientos o más productos.",
-      "NotSupported": "dotnet",
       "NotSupportedByDesign": "javascript, python, java",
       "Results": [
         {
@@ -439,7 +413,6 @@
     },
     {
       "Input": "Busca los números primos que son menores o iguales a 100",
-      "NotSupported": "dotnet",
       "NotSupportedByDesign": "javascript, python, java",
       "Results": [
         {
@@ -455,7 +428,6 @@
     },
     {
       "Input": "Busca los números primos menores o iguales a 100",
-      "NotSupported": "dotnet",
       "NotSupportedByDesign": "javascript, python, java",
       "Results": [
         {
@@ -471,7 +443,6 @@
     },
     {
       "Input": "Hay aproximadamente quinientos o menos productos.",
-      "NotSupported": "dotnet",
       "NotSupportedByDesign": "javascript, python, java",
       "Results": [
         {
@@ -487,7 +458,6 @@
     },
     {
       "Input": "Busca los números primos <=100",
-      "NotSupported": "dotnet",
       "NotSupportedByDesign": "javascript, python, java",
       "Results": [
         {
@@ -503,7 +473,6 @@
     },
     {
       "Input": "Mide menos de 170.",
-      "NotSupported": "dotnet",
       "NotSupportedByDesign": "javascript, python, java",
       "Results": [
         {
@@ -519,7 +488,6 @@
     },
     {
       "Input": "Tiene menos de 170 de estatura.",
-      "NotSupported": "dotnet",
       "NotSupportedByDesign": "javascript, python, java",
       "Results": [
         {
@@ -535,11 +503,10 @@
     },
     {
       "Input": "Menos de mil pandas todavían viven en la naturaleza.",
-      "NotSupported": "dotnet",
       "NotSupportedByDesign": "javascript, python, java",
       "Results": [
         {
-          "Text": "Menos de mil",
+          "Text": "menos de mil",
           "TypeName": "numberrange",
           "Resolution": {
             "value": "(,1000)"
@@ -551,7 +518,6 @@
     },
     {
       "Input": "x es igual a ciento setenta.",
-      "NotSupported": "dotnet",
       "NotSupportedByDesign": "javascript, python, java",
       "Results": [
         {
@@ -567,7 +533,6 @@
     },
     {
       "Input": "x>10 y y<20",
-      "NotSupported": "dotnet",
       "NotSupportedByDesign": "javascript, python, java",
       "Results": [
         {
@@ -592,7 +557,6 @@
     },
     {
       "Input": "x es mayor que 10 y menor que 20. y tiene un valor de no más de 50 y no menos de 20.",
-      "NotSupported": "dotnet",
       "NotSupportedByDesign": "javascript, python, java",
       "Results": [
         {
@@ -617,13 +581,11 @@
     },
     {
       "Input": "Un cuarto es un número fraccionario.",
-      "NotSupported": "dotnet",
       "NotSupportedByDesign": "javascript, python, java",
       "Results": []
     },
     {
       "Input": "Este número equivale a 20.",
-      "NotSupported": "dotnet",
       "NotSupportedByDesign": "javascript, python, java",
       "Results": [
         {
@@ -639,11 +601,10 @@
     },
     {
       "Input": "Son 20 los estudiantes de nuestro grupo y no es una cifra significativa.",
-      "NotSupported": "dotnet",
       "NotSupportedByDesign": "javascript, python, java",
       "Results": [
         {
-          "Text": "Son 20",
+          "Text": "son 20",
           "TypeName": "numberrange",
           "Resolution": {
             "value": "[20,20]"
@@ -655,19 +616,16 @@
     },
     {
       "Input": "+1-222-2222/2222 es un número de teléfono.",
-      "NotSupported": "dotnet",
       "NotSupportedByDesign": "javascript, python, java",
       "Results": []
     },
     {
       "Input": "+1-222-2222-2222 es un número de teléfono.",
-      "NotSupported": "dotnet",
       "NotSupportedByDesign": "javascript, python, java",
       "Results": []
     },
     {
       "Input": "Su calificación es 200 o mayor",
-      "NotSupported": "dotnet",
       "NotSupportedByDesign": "javascript, python, java",
       "Results": [
         {
@@ -683,7 +641,6 @@
     },
     {
       "Input": "Saca una calificación de 200 o mayor de 190",
-      "NotSupported": "dotnet",
       "NotSupportedByDesign": "javascript, python, java",
       "Results": [
         {
@@ -699,7 +656,6 @@
     },
     {
       "Input": "Saca una calificación de 200 o mayor",
-      "NotSupported": "dotnet",
       "NotSupportedByDesign": "javascript, python, java",
       "Results": [
         {
@@ -715,7 +671,6 @@
     },
     {
       "Input": "Saca una calificación de 200 o más de 190",
-      "NotSupported": "dotnet",
       "NotSupportedByDesign": "javascript, python, java",
       "Results": [
         {
@@ -731,7 +686,6 @@
     },
     {
       "Input": "Saca una calificación de 200 o más",
-      "NotSupported": "dotnet",
       "NotSupportedByDesign": "javascript, python, java",
       "Results": [
         {
@@ -747,7 +701,6 @@
     },
     {
       "Input": "Su nota es menor o igual a 30",
-      "NotSupported": "dotnet",
       "NotSupportedByDesign": "javascript, python, java",
       "Results": [
         {
@@ -763,7 +716,6 @@
     },
     {
       "Input": "Su nota es igual o menor que 30",
-      "NotSupported": "dotnet",
       "NotSupportedByDesign": "javascript, python, java",
       "Results": [
         {
@@ -779,7 +731,6 @@
     },
     {
       "Input": "Su nota es igual a o menor que 30",
-      "NotSupported": "dotnet",
       "NotSupportedByDesign": "javascript, python, java",
       "Results": [
         {
@@ -795,7 +746,6 @@
     },
     {
       "Input": "Saca una nota de por lo menos 30",
-      "NotSupported": "dotnet",
       "NotSupportedByDesign": "javascript, python, java",
       "Results": [
         {
@@ -811,7 +761,6 @@
     },
     {
       "Input": "Saca una nota de 30 por lo menos",
-      "NotSupported": "dotnet",
       "NotSupportedByDesign": "javascript, python, java",
       "Results": [
         {
@@ -827,7 +776,6 @@
     },
     {
       "Input": "Saca una nota de 30 al menos",
-      "NotSupported": "dotnet",
       "NotSupportedByDesign": "javascript, python, java",
       "Results": [
         {
@@ -843,7 +791,6 @@
     },
     {
       "Input": "Saca una nota de al menos 30",
-      "NotSupported": "dotnet",
       "NotSupportedByDesign": "javascript, python, java",
       "Results": [
         {
@@ -859,7 +806,6 @@
     },
     {
       "Input": "Su nota es igual a o mayor que 30",
-      "NotSupported": "dotnet",
       "NotSupportedByDesign": "javascript, python, java",
       "Results": [
         {
@@ -875,7 +821,6 @@
     },
     {
       "Input": "Su nota es igual o mayor que 30",
-      "NotSupported": "dotnet",
       "NotSupportedByDesign": "javascript, python, java",
       "Results": [
         {
@@ -891,7 +836,6 @@
     },
     {
       "Input": "Su nota es igual a 5000 o menor",
-      "NotSupported": "dotnet",
       "NotSupportedByDesign": "javascript, python, java",
       "Results": [
         {
@@ -907,7 +851,6 @@
     },
     {
       "Input": "Saca una nota igual a 5000 o menos de 6000",
-      "NotSupported": "dotnet",
       "NotSupportedByDesign": "javascript, python, java",
       "Results": [
         {
@@ -932,7 +875,6 @@
     },
     {
       "Input": "Saca una nota igual a 5000 o mayor",
-      "NotSupported": "dotnet",
       "NotSupportedByDesign": "javascript, python, java",
       "Results": [
         {
@@ -948,7 +890,6 @@
     },
     {
       "Input": "Su nota es igual a 5000 o mayor que 4500",
-      "NotSupported": "dotnet",
       "NotSupportedByDesign": "javascript, python, java",
       "Results": [
         {
@@ -973,7 +914,6 @@
     },
     {
       "Input": "Saca una nota de menos de 5000 o igual",
-      "NotSupported": "dotnet",
       "NotSupportedByDesign": "javascript, python, java",
       "Results": [
         {
@@ -989,7 +929,6 @@
     },
     {
       "Input": "Tiene una nota mayor que 5000 o igual",
-      "NotSupported": "dotnet",
       "NotSupportedByDesign": "javascript, python, java",
       "Results": [
         {
@@ -1005,23 +944,21 @@
     },
     {
       "Input": "Tiene una nota mayor que 5000 o igual a eso",
-      "NotSupported": "dotnet",
       "NotSupportedByDesign": "javascript, python, java",
       "Results": [
         {
-          "Text": "mayor que 5000 o igual",
+          "Text": "mayor que 5000 o igual a",
           "TypeName": "numberrange",
           "Resolution": {
             "value": "[5000,)"
           },
-          "Start": 13,
+          "Start": 15,
           "End": 38
         }
       ]
     },
     {
       "Input": "Tiene una nota mayor que 5000 o igual a 6000",
-      "NotSupported": "dotnet",
       "NotSupportedByDesign": "javascript, python, java",
       "Results": [
         {
@@ -1046,7 +983,6 @@
     },
     {
       "Input": "Su nota es igual a 5000 o menor que 5000",
-      "NotSupported": "dotnet",
       "NotSupportedByDesign": "javascript, python, java",
       "Results": [
         {
@@ -1071,7 +1007,6 @@
     },
     {
       "Input": "El rango de números es 1000-5000",
-      "NotSupported": "dotnet",
       "NotSupportedByDesign": "javascript, python, java",
       "Results": [
         {
@@ -1087,7 +1022,6 @@
     },
     {
       "Input": "El rango de números es 1000 - 5000",
-      "NotSupported": "dotnet",
       "NotSupportedByDesign": "javascript, python, java",
       "Results": [
         {
@@ -1136,14 +1070,13 @@
     },
     {
       "Input": "Puedes mostrarme registros de más de 3000 en 2009",
-      "NotSupported": "dotnet",
       "NotSupportedByDesign": "javascript, python, java",
       "Results": [
         {
           "Text": "más de 3000",
           "TypeName": "numberrange",
           "Resolution": {
-            "value": "(30000,)"
+            "value": "(3000,)"
           },
           "Start": 30,
           "End": 40
@@ -1152,7 +1085,6 @@
     },
     {
       "Input": "Puedes mostrarme registros de menos de 3000 en 2009",
-      "NotSupported": "dotnet",
       "NotSupportedByDesign": "javascript, python, java",
       "Results": [
         {
@@ -1168,7 +1100,6 @@
     },
     {
       "Input": "Es aún así cuando >30",
-      "NotSupported": "dotnet",
       "NotSupportedByDesign": "javascript, python, java",
       "Results": [
         {
@@ -1184,7 +1115,6 @@
     },
     {
       "Input": "Es aún así cuando >=30",
-      "NotSupported": "dotnet",
       "NotSupportedByDesign": "javascript, python, java",
       "Results": [
         {
@@ -1200,7 +1130,6 @@
     },
     {
       "Input": "Es aún así cuando <-30",
-      "NotSupported": "dotnet",
       "NotSupportedByDesign": "javascript, python, java",
       "Results": [
         {
@@ -1216,7 +1145,6 @@
     },
     {
       "Input": "Es aún así cuando <=-30",
-      "NotSupported": "dotnet",
       "NotSupportedByDesign": "javascript, python, java",
       "Results": [
         {
@@ -1232,25 +1160,21 @@
     },
     {
       "Input": "<>30",
-      "NotSupported": "dotnet",
       "NotSupportedByDesign": "javascript, python, java",
       "Results": []
     },
     {
       "Input": "=>30",
-      "NotSupported": "dotnet",
       "NotSupportedByDesign": "javascript, python, java",
       "Results": []
     },
     {
       "Input": "=<30",
-      "NotSupported": "dotnet",
       "NotSupportedByDesign": "javascript, python, java",
       "Results": []
     },
     {
       "Input": "La cifra equivale a 20000 en 1998",
-      "NotSupported": "dotnet",
       "NotSupportedByDesign": "javascript, python, java",
       "Results": [
         {
@@ -1259,14 +1183,13 @@
           "End": 24,
           "TypeName": "numberrange",
           "Resolution": {
-            "value": "[2000,2000]"
+            "value": "[20000,20000]"
           }
         }
       ]
     },
     {
       "Input": "La cifra es desde 200 hasta 3000000 en 2008",
-      "NotSupported": "dotnet",
       "NotSupportedByDesign": "javascript, python, java",
       "Results": [
         {
