@@ -204,9 +204,11 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "entre 4-22 enero,  1995",
+        "Text": "4-22 enero,  1995",
         "Type": "daterange",
         "Value": {
           "Timex": "(1995-01-04,1995-01-22,P18D)",
@@ -219,8 +221,8 @@
             "endDate": "1995-01-22"
           }
         },
-        "Start": 14,
-        "Length": 23
+        "Start": 20,
+        "Length": 17
       }
     ]
   },

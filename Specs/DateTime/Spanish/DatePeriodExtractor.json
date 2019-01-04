@@ -23,12 +23,14 @@
   },
   {
     "Input": "Estare afuera desde 4-23 del proximo mes",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "desde 4-23 del proximo mes",
+        "Text": "4-23 del proximo mes",
         "Type": "daterange",
-        "Start": 14,
-        "Length": 26
+        "Start": 20,
+        "Length": 20
       }
     ]
   },
@@ -89,12 +91,14 @@
   },
   {
     "Input": "Estare afuera entre 4-22 enero, 2017",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "entre 4-22 enero, 2017",
+        "Text": "4-22 enero, 2017",
         "Type": "daterange",
-        "Start": 14,
-        "Length": 22
+        "Start": 20,
+        "Length": 16
       }
     ]
   },
@@ -194,23 +198,27 @@
   },
   {
     "Input": "Estare afuera la tercera semana de este mes",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "la tercera semana de este mes",
         "Type": "daterange",
-        "Start": 14,
-        "Length": 29
+        "Start": 17,
+        "Length": 28
       }
     ]
   },
   {
     "Input": "Estare afuera la ultima semana de julio",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "la ultima semana de julio",
         "Type": "daterange",
-        "Start": 14,
-        "Length": 25
+        "Start": 17,
+        "Length": 24
       }
     ]
   },
@@ -270,6 +278,7 @@
     ]
   },
   {
+
     "Input": "Estuve afuera las anteriores 3 semanas",
     "Results": [
       {
@@ -292,6 +301,7 @@
     ]
   },
   {
+
     "Input": "Estare afuera el 12 de Enero, 2016 - 22/02/2016",
     "Results": [
       {
@@ -381,12 +391,15 @@
   },
   {
     "Input": "Estare afuera el tercer cuatrimestre de 2016",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "el tercer cuatrimestre de 2016",
         "Type": "daterange",
         "Start": 14,
         "Length": 30
+
       }
     ]
   },
@@ -398,6 +411,7 @@
         "Type": "daterange",
         "Start": 14,
         "Length": 34
+
       }
     ]
   },
