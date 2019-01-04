@@ -621,33 +621,6 @@
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
-    "Input": "Ik ga drie minuten terug",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "Results": [
-      {
-        "Text": "drie minuten terug",
-        "Type": "datetimerange",
-        "Value": {
-          "Timex": "(2016-11-07T16:09:00,2016-11-07T16:12:00,PT3M)",
-          "FutureResolution": {
-            "startDateTime": "2016-11-07 16:09:00",
-            "endDateTime": "2016-11-07 16:12:00"
-          },
-          "PastResolution": {
-            "startDateTime": "2016-11-07 16:09:00",
-            "endDateTime": "2016-11-07 16:12:00"
-          }
-        },
-        "Start": 6,
-        "Length": 18
-      }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
-  },
-  {
     "Input": "Ik ga de laatste 3 minuten terug",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
