@@ -3,7 +3,7 @@ using System.Diagnostics.CodeAnalysis;
 
 namespace Microsoft.Recognizers.Text.Number
 {
-    [SuppressMessage("StyleCop.CSharp.NamingRules", "SA1310:Field names should not contain underscore", Justification = "Reviwed.")]
+    [SuppressMessage("StyleCop.CSharp.NamingRules", "SA1310:Field names should not contain underscore", Justification = "Constant names are written in upper case so they can be readily distinguished from camel case variable names.")]
     public static class Constants
     {
         public const string SYS_NUM_CARDINAL = "builtin.num.cardinal";
