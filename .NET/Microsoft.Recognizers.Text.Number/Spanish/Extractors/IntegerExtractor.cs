@@ -9,24 +9,8 @@ namespace Microsoft.Recognizers.Text.Number.Spanish
 {
     public class IntegerExtractor : BaseNumberExtractor
     {
-        internal sealed override ImmutableDictionary<Regex, TypeTag> Regexes { get; }
-
-        protected sealed override string ExtractType { get; } = Constants.SYS_NUM_INTEGER;
-
         private static readonly ConcurrentDictionary<string, IntegerExtractor> Instances =
             new ConcurrentDictionary<string, IntegerExtractor>();
-
-        public static IntegerExtractor GetInstance(string placeholder = NumbersDefinitions.PlaceHolderDefault)
-        {
-
-            if (!Instances.ContainsKey(placeholder))
-            {
-                var instance = new IntegerExtractor(placeholder);
-                Instances.TryAdd(placeholder, instance);
-            }
-
-            return Instances[placeholder];
-        }
 
         private IntegerExtractor(string placeholder = NumbersDefinitions.PlaceHolderDefault)
         {
@@ -65,12 +49,27 @@ namespace Microsoft.Recognizers.Text.Number.Spanish
                     RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.SPANISH)
                 },
                 {
-                new Regex(NumbersDefinitions.AllIntRegexWithDozenSuffixLocks, RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.AllIntRegexWithDozenSuffixLocks, RegexOptions.Singleline),
                     RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.SPANISH)
-                }
+                },
             };
 
             this.Regexes = regexes.ToImmutableDictionary();
+        }
+
+        internal sealed override ImmutableDictionary<Regex, TypeTag> Regexes { get; }
+
+        protected sealed override string ExtractType { get; } = Constants.SYS_NUM_INTEGER;
+
+        public static IntegerExtractor GetInstance(string placeholder = NumbersDefinitions.PlaceHolderDefault)
+        {
+            if (!Instances.ContainsKey(placeholder))
+            {
+                var instance = new IntegerExtractor(placeholder);
+                Instances.TryAdd(placeholder, instance);
+            }
+
+            return Instances[placeholder];
         }
     }
 }
