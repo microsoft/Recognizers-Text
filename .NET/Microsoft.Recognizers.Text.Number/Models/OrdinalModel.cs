@@ -2,7 +2,8 @@
 {
     public class OrdinalModel : AbstractNumberModel
     {
-        public OrdinalModel(IParser parser, IExtractor extractor) : base(parser, extractor)
+        public OrdinalModel(IParser parser, IExtractor extractor)
+            : base(parser, extractor)
         {
         }
 
