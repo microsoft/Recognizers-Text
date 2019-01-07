@@ -9,24 +9,8 @@ namespace Microsoft.Recognizers.Text.Number.French
 {
     public class DoubleExtractor : BaseNumberExtractor
     {
-        internal sealed override ImmutableDictionary<Regex, TypeTag> Regexes { get; }
-
-        protected sealed override string ExtractType { get; } = Constants.SYS_NUM_DOUBLE;
-
         private static readonly ConcurrentDictionary<string, DoubleExtractor> Instances =
             new ConcurrentDictionary<string, DoubleExtractor>();
-
-        public static DoubleExtractor GetInstance(string placeholder = NumbersDefinitions.PlaceHolderDefault)
-        {
-
-            if (!Instances.ContainsKey(placeholder))
-            {
-                var instance = new DoubleExtractor(placeholder);
-                Instances.TryAdd(placeholder, instance);
-            }
-
-            return Instances[placeholder];
-        }
 
         private DoubleExtractor(string placeholder = NumbersDefinitions.PlaceHolderDefault)
         {
@@ -67,10 +51,23 @@ namespace Microsoft.Recognizers.Text.Number.French
                 {
                     GenerateLongFormatNumberRegexes(LongFormatType.DoubleNumNoBreakSpaceComma, placeholder),
                     RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)
-                }
-
+                },
             }.ToImmutableDictionary();
         }
 
+        internal sealed override ImmutableDictionary<Regex, TypeTag> Regexes { get; }
+
+        protected sealed override string ExtractType { get; } = Constants.SYS_NUM_DOUBLE;
+
+        public static DoubleExtractor GetInstance(string placeholder = NumbersDefinitions.PlaceHolderDefault)
+        {
+            if (!Instances.ContainsKey(placeholder))
+            {
+                var instance = new DoubleExtractor(placeholder);
+                Instances.TryAdd(placeholder, instance);
+            }
+
+            return Instances[placeholder];
+        }
     }
 }
