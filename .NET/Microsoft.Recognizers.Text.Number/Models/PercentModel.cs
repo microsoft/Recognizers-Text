@@ -2,7 +2,8 @@
 {
     public class PercentModel : AbstractNumberModel
     {
-        public PercentModel(IParser parser, IExtractor extractor) : base(parser, extractor)
+        public PercentModel(IParser parser, IExtractor extractor)
+            : base(parser, extractor)
         {
         }
 
