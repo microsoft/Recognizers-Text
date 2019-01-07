@@ -8,10 +8,6 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
 {
     public class DoubleExtractor : BaseNumberExtractor
     {
-        internal sealed override ImmutableDictionary<Regex, TypeTag> Regexes { get; }
-
-        protected sealed override string ExtractType { get; } = Constants.SYS_NUM_DOUBLE;
-
         public DoubleExtractor()
         {
             var regexes = new Dictionary<Regex, TypeTag>
@@ -26,7 +22,7 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
                     RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
-                    //(-).2 
+                    // (-).2
                     new Regex(NumbersDefinitions.SimpleDoubleSpecialsChars, RegexOptions.Singleline),
                     RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)
                 },
@@ -36,12 +32,12 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
                     RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
-                    //１５.２万
+                    // １５.２万
                     new Regex(NumbersDefinitions.DoubleWithThousandsRegex, RegexOptions.Singleline),
                     RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.CHINESE)
                 },
                 {
-                    //四十五点三三
+                    // 四十五点三三
                     new Regex(NumbersDefinitions.DoubleAllFloatRegex, RegexOptions.Singleline),
                     RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.CHINESE)
                 },
@@ -51,13 +47,16 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
                     RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.POWER_SUFFIX)
                 },
                 {
-                    //2^5
+                    // 2^5
                     new Regex(NumbersDefinitions.DoubleScientificNotationRegex, RegexOptions.Singleline),
                     RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.POWER_SUFFIX)
-                }
+                },
             };
-
             Regexes = regexes.ToImmutableDictionary();
         }
+
+        internal sealed override ImmutableDictionary<Regex, TypeTag> Regexes { get; }
+
+        protected sealed override string ExtractType { get; } = Constants.SYS_NUM_DOUBLE;
     }
 }
