@@ -10,9 +10,10 @@ import com.microsoft.recognizers.text.utilities.RegExpUtility;
 import com.microsoft.recognizers.text.utilities.StringUtility;
 
 import java.time.LocalDateTime;
-import java.util.AbstractMap;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.regex.Pattern;
 
 public class BaseTimeExtractor implements IDateTimeExtractor {
@@ -52,19 +53,22 @@ public class BaseTimeExtractor implements IDateTimeExtractor {
         int erIndex = 0;
         for (ExtractResult er : timeErs.toArray(new ExtractResult[0])) {
             for (ExtractResult timeZoneEr : timeZoneErs) {
-                int begin = er.start + er.length;
-                int end = timeZoneEr.start;
+                int begin = er.getStart() + er.getLength();
+                int end = timeZoneEr.getStart();
 
                 if (begin < end) {
                     String gapText = text.substring(begin, end);
 
                     if (StringUtility.isNullOrWhiteSpace(gapText)) {
-                        int newLenght = timeZoneEr.start + timeZoneEr.length;
+                        int newLenght = timeZoneEr.getStart() + timeZoneEr.getLength();
+                        String newText = text.substring(er.getStart(), newLenght);
+                        Map<String, Object> newData = new HashMap<>();
+                        newData.put(Constants.SYS_DATETIME_TIMEZONE, timeZoneEr);
 
-                        timeErs.set(erIndex, er
-                                .withText(text.substring(er.start, newLenght))
-                                .withLength(newLenght - er.start)
-                                .withData(new AbstractMap.SimpleEntry<>(Constants.SYS_DATETIME_TIMEZONE, timeZoneEr)));
+                        er.setData(newData);
+                        er.setText(newText);
+                        er.setLength(newLenght - er.getStart());
+                        timeErs.set(erIndex, er);
                     }
                 }
             }

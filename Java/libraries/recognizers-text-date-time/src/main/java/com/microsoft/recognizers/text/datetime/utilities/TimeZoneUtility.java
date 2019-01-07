@@ -15,18 +15,18 @@ public abstract class TimeZoneUtility {
         int index = 0;
         for (ExtractResult er : originalErs.toArray(new ExtractResult[0])) {
             for (ExtractResult timeZoneEr : timeZoneErs) {
-                int begin = er.start + er.length;
-                int end = timeZoneEr.start;
+                int begin = er.getStart() + er.getLength();
+                int end = timeZoneEr.getStart();
 
                 if (begin < end) {
                     String gapText = text.substring(begin, end);
 
                     if (StringUtility.isNullOrWhiteSpace(gapText)) {
-                        int length = timeZoneEr.start + timeZoneEr.length - er.start;
+                        int length = timeZoneEr.getStart() + timeZoneEr.getLength() - er.getStart();
                         Map<String, Object> data = new HashMap<>();
                         data.put(Constants.SYS_DATETIME_TIMEZONE, timeZoneEr);
 
-                        originalErs.set(index, new ExtractResult(er.start, length, text.substring(er.start, er.start + length), er.type, data));
+                        originalErs.set(index, new ExtractResult(er.getStart(), length, text.substring(er.getStart(), er.getStart() + length), er.getType(), data));
                     }
                 }
             }
@@ -40,8 +40,8 @@ public abstract class TimeZoneUtility {
         boolean enablePreview = options.match(DateTimeOptions.EnablePreview);
         boolean hasTimeZoneData = false;
 
-        if (er.data instanceof Map) {
-            Map<String, Object> metadata = (HashMap<String, Object>)er.data;
+        if (er.getData() instanceof Map) {
+            Map<String, Object> metadata = (HashMap<String, Object>)er.getData();
 
             if (metadata.containsKey(Constants.SYS_DATETIME_TIMEZONE)) {
                 hasTimeZoneData = true;

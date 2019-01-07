@@ -1,4 +1,5 @@
-[{
+[
+  {
     "Input": "今日の日経平均は2222円13銭です。",
     "NotSupported": "python",
     "Results": [
@@ -14,14 +15,12 @@
         "End": 15
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "次の停車駅は銭函",
     "NotSupported": "python",
     "Results": []
-  }
-  ,
+  },
   {
     "Input": "35億円",
     "NotSupported": "python",
@@ -38,8 +37,7 @@
         "End": 3
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "そのシュークリームは1個\\100です",
     "NotSupported": "python",
@@ -56,14 +54,12 @@
         "End": 15
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "printf(\"1\\n2\\n\");",
     "NotSupported": "python",
     "Results": []
-  }
-  ,
+  },
   {
     "Input": "1,280円",
     "NotSupported": "python",
@@ -80,8 +76,7 @@
         "End": 5
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "その中で、四川の彩友の中で1注1000万人民元の基本的なトップ賞を得ました。",
     "NotSupported": "python",
@@ -98,8 +93,7 @@
         "End": 22
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "今回の受賞終了後、賞池の金額が36.57億人民元に上った。",
     "NotSupported": "python",
@@ -116,8 +110,7 @@
         "End": 23
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "1ユーロでいいです。",
     "NotSupported": "python",
@@ -134,8 +127,7 @@
         "End": 3
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "両替1.0753ドル",
     "NotSupported": "python",
@@ -152,8 +144,7 @@
         "End": 9
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "両替1.0092スイス・フラン",
     "NotSupported": "python",
@@ -170,8 +161,7 @@
         "End": 14
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "2016年は合併などで直接投資し、中国の資金は1200億ドルが流出した",
     "NotSupported": "python",
@@ -188,8 +178,7 @@
         "End": 29
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "宝安科学技術会社は、国際精密な15人の株主と買収協議を締結し、1株当たり1.95香港ドルで",
     "NotSupported": "python",
@@ -206,8 +195,7 @@
         "End": 43
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "中央銀行は期限切れの5306億ニュー台湾ドルを確定する",
     "NotSupported": "python",
@@ -224,8 +212,7 @@
         "End": 21
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "東芝はもう1万億円で取引銀行に融資を申請した",
     "NotSupported": "python",
@@ -242,8 +229,7 @@
         "End": 8
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "445ナイラで両替する",
     "NotSupported": "python",
@@ -260,8 +246,7 @@
         "End": 5
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "15ドル",
     "NotSupported": "python",
@@ -278,8 +263,7 @@
         "End": 3
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "10ドル",
     "NotSupported": "python",
@@ -296,8 +280,7 @@
         "End": 3
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "りんごが1ドル割引する",
     "NotSupported": "python",
@@ -314,8 +297,7 @@
         "End": 6
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "このパソコンは2ドルです",
     "NotSupported": "python",
@@ -332,8 +314,7 @@
         "End": 9
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "このパソコンは2ドル3セントです。",
     "NotSupported": "python",
@@ -350,8 +331,7 @@
         "End": 13
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "中国移動の年間収入は$ 48.2 万で、とてもすごいです",
     "NotSupported": "python",
@@ -367,8 +347,7 @@
         "End": 17
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "中国移動の年間収入はus$ 48.2 万で、とてもすごいです",
     "NotSupported": "python",
@@ -385,8 +364,7 @@
         "End": 19
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "高田は毎日€ 1.5 かかります",
     "NotSupported": "python",
@@ -403,8 +381,7 @@
         "End": 9
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "彼女がいた後、小山は毎月£ 512.5を多く支出しています。",
     "NotSupported": "python",
@@ -420,8 +397,7 @@
         "End": 18
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "彼女がいた後、小山は毎月545パナマ・バルボアを多く支出しています。",
     "NotSupported": "python",
@@ -438,8 +414,7 @@
         "End": 22
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "小山は毎月545ドルと5セントを多く支出しています。",
     "NotSupported": "python",
@@ -456,26 +431,7 @@
         "End": 14
       }
     ]
-  }
-  ,
-  {
-    "Input": "小山は毎月545ドルと5セントを多く支出しています。",
-    "NotSupported": "python",
-    "Results": [
-      {
-        "Text": "545ドルと5セント",
-        "TypeName": "currency",
-        "Resolution": {
-          "isoCurrency": "USD",
-          "value": "545.05",
-          "unit": "United States dollar"
-        },
-        "Start": 5,
-        "End": 14
-      }
-    ]
-  }
-  ,
+  },
   {
     "Input": "この本は5人民元と3角です",
     "NotSupported": "python",
@@ -492,8 +448,7 @@
         "End": 10
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "ドルはアメリカの通貨です。",
     "NotSupported": "python",
@@ -510,8 +465,7 @@
         "End": 1
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "ユーロはEU圏の通貨です。",
     "NotSupported": "python",
@@ -528,8 +482,7 @@
         "End": 2
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "この自転車は100ユーロと30です。",
     "NotSupported": "python",

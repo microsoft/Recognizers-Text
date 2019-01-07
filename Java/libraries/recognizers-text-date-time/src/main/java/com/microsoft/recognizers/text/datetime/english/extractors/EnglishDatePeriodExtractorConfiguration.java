@@ -26,53 +26,51 @@ import java.util.regex.Pattern;
 
 public class EnglishDatePeriodExtractorConfiguration extends BaseOptionsConfiguration implements IDatePeriodExtractorConfiguration {
 
-    private static final int flags = Pattern.CASE_INSENSITIVE;
-
-    public static final Pattern YearRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.YearRegex, flags);
-    public static final Pattern TillRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TillRegex, flags);
-    public static final Pattern DateUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.DateUnitRegex, flags);
-    public static final Pattern TimeUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TimeUnitRegex, flags);
-    public static final Pattern FollowedDateUnit = RegExpUtility.getSafeRegExp(EnglishDateTime.FollowedDateUnit, flags);
-    public static final Pattern NumberCombinedWithDateUnit = RegExpUtility.getSafeRegExp(EnglishDateTime.NumberCombinedWithDateUnit, flags);
-    public static final Pattern PastPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PastPrefixRegex, flags);
-    public static final Pattern NextPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.NextPrefixRegex, flags);
-    public static final Pattern FutureSuffixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.FutureSuffixRegex, flags);
-    public static final Pattern WeekOfRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.WeekOfRegex, flags);
-    public static final Pattern MonthOfRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.MonthOfRegex, flags);
-    public static final Pattern RangeUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RangeUnitRegex, flags);
-    public static final Pattern InConnectorRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.InConnectorRegex, flags);
-    public static final Pattern WithinNextPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.WithinNextPrefixRegex, flags);
-    public static final Pattern YearPeriodRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.YearPeriodRegex, flags);
-    public static final Pattern RelativeDecadeRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RelativeDecadeRegex, flags);
-    public static final Pattern ComplexDatePeriodRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.ComplexDatePeriodRegex, flags);
-    public static final Pattern ReferenceDatePeriodRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.ReferenceDatePeriodRegex, flags);
-    public static final Pattern AgoRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.AgoRegex, flags);
-    public static final Pattern LaterRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.LaterRegex, flags);
-    public static final Pattern LessThanRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.LessThanRegex, flags);
-    public static final Pattern MoreThanRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.MoreThanRegex, flags);
-    public static final Pattern CenturySuffixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.CenturySuffixRegex, flags);
-    public static final Pattern IllegalYearRegex = RegExpUtility.getSafeRegExp(BaseDateTime.IllegalYearRegex, flags);
+    public static final Pattern YearRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.YearRegex);
+    public static final Pattern TillRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TillRegex);
+    public static final Pattern DateUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.DateUnitRegex);
+    public static final Pattern TimeUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TimeUnitRegex);
+    public static final Pattern FollowedDateUnit = RegExpUtility.getSafeRegExp(EnglishDateTime.FollowedDateUnit);
+    public static final Pattern NumberCombinedWithDateUnit = RegExpUtility.getSafeRegExp(EnglishDateTime.NumberCombinedWithDateUnit);
+    public static final Pattern PastPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PastPrefixRegex);
+    public static final Pattern NextPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.NextPrefixRegex);
+    public static final Pattern FutureSuffixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.FutureSuffixRegex);
+    public static final Pattern WeekOfRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.WeekOfRegex);
+    public static final Pattern MonthOfRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.MonthOfRegex);
+    public static final Pattern RangeUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RangeUnitRegex);
+    public static final Pattern InConnectorRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.InConnectorRegex);
+    public static final Pattern WithinNextPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.WithinNextPrefixRegex);
+    public static final Pattern YearPeriodRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.YearPeriodRegex);
+    public static final Pattern RelativeDecadeRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RelativeDecadeRegex);
+    public static final Pattern ComplexDatePeriodRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.ComplexDatePeriodRegex);
+    public static final Pattern ReferenceDatePeriodRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.ReferenceDatePeriodRegex);
+    public static final Pattern AgoRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.AgoRegex);
+    public static final Pattern LaterRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.LaterRegex);
+    public static final Pattern LessThanRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.LessThanRegex);
+    public static final Pattern MoreThanRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.MoreThanRegex);
+    public static final Pattern CenturySuffixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.CenturySuffixRegex);
+    public static final Pattern IllegalYearRegex = RegExpUtility.getSafeRegExp(BaseDateTime.IllegalYearRegex);
 
     // composite regexes
-    public static final Pattern SimpleCasesRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SimpleCasesRegex, flags);
-    public static final Pattern BetweenRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.BetweenRegex, flags);
-    public static final Pattern OneWordPeriodRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.OneWordPeriodRegex, flags);
-    public static final Pattern MonthWithYear = RegExpUtility.getSafeRegExp(EnglishDateTime.MonthWithYear, flags);
-    public static final Pattern MonthNumWithYear = RegExpUtility.getSafeRegExp(EnglishDateTime.MonthNumWithYear, flags);
-    public static final Pattern WeekOfMonthRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.WeekOfMonthRegex, flags);
-    public static final Pattern WeekOfYearRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.WeekOfYearRegex, flags);
-    public static final Pattern MonthFrontBetweenRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.MonthFrontBetweenRegex, flags);
-    public static final Pattern MonthFrontSimpleCasesRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.MonthFrontSimpleCasesRegex, flags);
-    public static final Pattern QuarterRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.QuarterRegex, flags);
-    public static final Pattern QuarterRegexYearFront = RegExpUtility.getSafeRegExp(EnglishDateTime.QuarterRegexYearFront, flags);
-    public static final Pattern AllHalfYearRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.AllHalfYearRegex, flags);
-    public static final Pattern SeasonRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SeasonRegex, flags);
-    public static final Pattern WhichWeekRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.WhichWeekRegex, flags);
-    public static final Pattern RestOfDateRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RestOfDateRegex, flags);
-    public static final Pattern LaterEarlyPeriodRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.LaterEarlyPeriodRegex, flags);
-    public static final Pattern WeekWithWeekDayRangeRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.WeekWithWeekDayRangeRegex, flags);
-    public static final Pattern YearPlusNumberRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.YearPlusNumberRegex, flags);
-    public static final Pattern DecadeWithCenturyRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.DecadeWithCenturyRegex, flags);
+    public static final Pattern SimpleCasesRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SimpleCasesRegex);
+    public static final Pattern BetweenRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.BetweenRegex);
+    public static final Pattern OneWordPeriodRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.OneWordPeriodRegex);
+    public static final Pattern MonthWithYear = RegExpUtility.getSafeRegExp(EnglishDateTime.MonthWithYear);
+    public static final Pattern MonthNumWithYear = RegExpUtility.getSafeRegExp(EnglishDateTime.MonthNumWithYear);
+    public static final Pattern WeekOfMonthRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.WeekOfMonthRegex);
+    public static final Pattern WeekOfYearRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.WeekOfYearRegex);
+    public static final Pattern MonthFrontBetweenRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.MonthFrontBetweenRegex);
+    public static final Pattern MonthFrontSimpleCasesRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.MonthFrontSimpleCasesRegex);
+    public static final Pattern QuarterRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.QuarterRegex);
+    public static final Pattern QuarterRegexYearFront = RegExpUtility.getSafeRegExp(EnglishDateTime.QuarterRegexYearFront);
+    public static final Pattern AllHalfYearRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.AllHalfYearRegex);
+    public static final Pattern SeasonRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SeasonRegex);
+    public static final Pattern WhichWeekRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.WhichWeekRegex);
+    public static final Pattern RestOfDateRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RestOfDateRegex);
+    public static final Pattern LaterEarlyPeriodRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.LaterEarlyPeriodRegex);
+    public static final Pattern WeekWithWeekDayRangeRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.WeekWithWeekDayRangeRegex);
+    public static final Pattern YearPlusNumberRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.YearPlusNumberRegex);
+    public static final Pattern DecadeWithCenturyRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.DecadeWithCenturyRegex);
     
     public static final Iterable<Pattern> SimpleCasesRegexes = new ArrayList<Pattern>() {
         {
@@ -120,7 +118,7 @@ public class EnglishDatePeriodExtractorConfiguration extends BaseOptionsConfigur
         numberParser = new BaseNumberParser(new EnglishNumberParserConfiguration());
 
         durationDateRestrictions = EnglishDateTime.DurationDateRestrictions.toArray(new String[0]);
-        rangeConnectorRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RangeConnectorRegex, flags);
+        rangeConnectorRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RangeConnectorRegex);
     }
 
     @Override

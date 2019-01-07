@@ -1,1428 +1,1342 @@
-[{
-  "Input": "imposta una sveglia per le otto e quaranta",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "otto e quaranta",
-      "Type": "time",
-      "Value": {
-        "Timex": "T08:40",
-        "FutureResolution": {
-          "time": "08:40:00"
-        },
-        "PastResolution": {
-          "time": "08:40:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "imposta una sveglia per le otto e quaranta am",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "otto e quaranta am",
-      "Type": "time",
-      "Value": {
-        "Timex": "T08:40",
-        "FutureResolution": {
-          "time": "08:40:00"
-        },
-        "PastResolution": {
-          "time": "08:40:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "imposta una sveglia per le otto e quaranta pm",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "otto e quaranta pm",
-      "Type": "time",
-      "Value": {
-        "Timex": "T20:40",
-        "FutureResolution": {
-          "time": "20:40:00"
-        },
-        "PastResolution": {
-          "time": "20:40:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "imposta una sveglia per le dieci e quarantacinque",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "dieci e quarantacinque",
-      "Type": "time",
-      "Value": {
-        "Timex": "T10:45",
-        "FutureResolution": {
-          "time": "10:45:00"
-        },
-        "PastResolution": {
-          "time": "10:45:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "imposta una sveglia per le quindici e quindici p m",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "quindici e quindici p m",
-      "Type": "time",
-      "Value": {
-        "Timex": "T15:15",
-        "FutureResolution": {
-          "time": "15:15:00"
-        },
-        "PastResolution": {
-          "time": "15:15:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "imposta una sveglia per le quindici e trenta p m",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "quindici e trenta p m",
-      "Type": "time",
-      "Value": {
-        "Timex": "T15:30",
-        "FutureResolution": {
-          "time": "15:30:00"
-        },
-        "PastResolution": {
-          "time": "15:30:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "imposta una sveglia per le dieci e dieci",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "dieci e dieci",
-      "Type": "time",
-      "Value": {
-        "Timex": "T10:10",
-        "FutureResolution": {
-          "time": "10:10:00"
-        },
-        "PastResolution": {
-          "time": "10:10:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "imposta una sveglia per le dieci e cinquantacinque p. m.",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "dieci e cinquantacinque p. m.",
-      "Type": "time",
-      "Value": {
-        "Timex": "T22:55",
-        "FutureResolution": {
-          "time": "22:55:00"
-        },
-        "PastResolution": {
-          "time": "22:55:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò alle 7ampm",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "7ampm",
-      "Type": "time",
-      "Value": {
-        "Timex": "T07",
-        "FutureResolution": {
-          "time": "07:00:00"
-        },
-        "PastResolution": {
-          "time": "07:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò alle 7",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "7",
-      "Type": "time",
-      "Value": {
-        "Timex": "T07",
-        "FutureResolution": {
-          "time": "07:00:00"
-        },
-        "PastResolution": {
-          "time": "07:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò alle sette",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "sette",
-      "Type": "time",
-      "Value": {
-        "Timex": "T07",
-        "FutureResolution": {
-          "time": "07:00:00"
-        },
-        "PastResolution": {
-          "time": "07:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò alle 7pm",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "7pm",
-      "Type": "time",
-      "Value": {
-        "Timex": "T19",
-        "FutureResolution": {
-          "time": "19:00:00"
-        },
-        "PastResolution": {
-          "time": "19:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò alle 7:56pm",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "7:56pm",
-      "Type": "time",
-      "Value": {
-        "Timex": "T19:56",
-        "FutureResolution": {
-          "time": "19:56:00"
-        },
-        "PastResolution": {
-          "time": "19:56:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò alle 7:56:30pm",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "7:56:30pm",
-      "Type": "time",
-      "Value": {
-        "Timex": "T19:56:30",
-        "FutureResolution": {
-          "time": "19:56:30"
-        },
-        "PastResolution": {
-          "time": "19:56:30"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò alle 7:56:30 pm",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "7:56:30 pm",
-      "Type": "time",
-      "Value": {
-        "Timex": "T19:56:30",
-        "FutureResolution": {
-          "time": "19:56:30"
-        },
-        "PastResolution": {
-          "time": "19:56:30"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò alle 12:34",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "12:34",
-      "Type": "time",
-      "Value": {
-        "Timex": "T12:34",
-        "FutureResolution": {
-          "time": "12:34:00"
-        },
-        "PastResolution": {
-          "time": "12:34:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò alle 12:34:25 ",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "12:34:25",
-      "Type": "time",
-      "Value": {
-        "Timex": "T12:34:25",
-        "FutureResolution": {
-          "time": "12:34:25"
-        },
-        "PastResolution": {
-          "time": "12:34:25"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Sono le 7",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "7",
-      "Type": "time",
-      "Value": {
-        "Timex": "T07",
-        "FutureResolution": {
-          "time": "07:00:00"
-        },
-        "PastResolution": {
-          "time": "07:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Sono le sette",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "sette",
-      "Type": "time",
-      "Value": {
-        "Timex": "T07",
-        "FutureResolution": {
-          "time": "07:00:00"
-        },
-        "PastResolution": {
-          "time": "07:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Sono le 8 del mattino",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "8 del mattino",
-      "Type": "time",
-      "Value": {
-        "Timex": "T08",
-        "FutureResolution": {
-          "time": "08:00:00"
-        },
-        "PastResolution": {
-          "time": "08:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Sono le 8 di notte",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "8 di notte",
-      "Type": "time",
-      "Value": {
-        "Timex": "T20",
-        "FutureResolution": {
-          "time": "20:00:00"
-        },
-        "PastResolution": {
-          "time": "20:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Sono le otto e mezza",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "otto e mezza",
-      "Type": "time",
-      "Value": {
-        "Timex": "T08:30",
-        "FutureResolution": {
-          "time": "08:30:00"
-        },
-        "PastResolution": {
-          "time": "08:30:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Sono le 8 e mezza pm",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "8 e mezza pm",
-      "Type": "time",
-      "Value": {
-        "Timex": "T20:30",
-        "FutureResolution": {
-          "time": "20:30:00"
-        },
-        "PastResolution": {
-          "time": "20:30:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Sono le otto e 30 min",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "otto e 30 min",
-      "Type": "time",
-      "Value": {
-        "Timex": "T08:30",
-        "FutureResolution": {
-          "time": "08:30:00"
-        },
-        "PastResolution": {
-          "time": "08:30:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Sono le otto e un quarto",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "otto e un quarto",
-      "Type": "time",
-      "Value": {
-        "Timex": "T08:15",
-        "FutureResolution": {
-          "time": "08:15:00"
-        },
-        "PastResolution": {
-          "time": "08:15:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Sono le 9pm e tre quarti",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "9pm e tre quarti",
-      "Type": "time",
-      "Value": {
-        "Timex": "T21:45",
-        "FutureResolution": {
-          "time": "21:45:00"
-        },
-        "PastResolution": {
-          "time": "21:45:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Sono le otto meno tre minuti",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "otto meno tre minuti",
-      "Type": "time",
-      "Value": {
-        "Timex": "T07:57",
-        "FutureResolution": {
-          "time": "07:57:00"
-        },
-        "PastResolution": {
-          "time": "07:57:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Sono le sette e mezza",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "sette e mezza",
-      "Type": "time",
-      "Value": {
-        "Timex": "T07:30",
-        "FutureResolution": {
-          "time": "07:30:00"
-        },
-        "PastResolution": {
-          "time": "07:30:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Sono le sette e mezza di pomeriggio",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "sette e mezza di pomeriggio",
-      "Type": "time",
-      "Value": {
-        "Timex": "T19:30",
-        "FutureResolution": {
-          "time": "19:30:00"
-        },
-        "PastResolution": {
-          "time": "19:30:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Sono le sette e mezza del mattino",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "sette e mezza del mattino",
-      "Type": "time",
-      "Value": {
-        "Timex": "T07:30",
-        "FutureResolution": {
-          "time": "07:30:00"
-        },
-        "PastResolution": {
-          "time": "07:30:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Sono le 8 meno un quarto del mattino",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "8 meno un quarto del mattino",
-      "Type": "time",
-      "Value": {
-        "Timex": "T07:45",
-        "FutureResolution": {
-          "time": "07:45:00"
-        },
-        "PastResolution": {
-          "time": "07:45:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Sono le otto e 20 min di sera",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "otto e 20 min di sera",
-      "Type": "time",
-      "Value": {
-        "Timex": "T20:20",
-        "FutureResolution": {
-          "time": "20:20:00"
-        },
-        "PastResolution": {
-          "time": "20:20:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò nel pomeriggio alle 7",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "nel pomeriggio alle 7",
-      "Type": "time",
-      "Value": {
-        "Timex": "T19",
-        "FutureResolution": {
-          "time": "19:00:00"
-        },
-        "PastResolution": {
-          "time": "19:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò all  7 di pomeriggio",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "7 di pomeriggio",
-      "Type": "time",
-      "Value": {
-        "Timex": "T19",
-        "FutureResolution": {
-          "time": "19:00:00"
-        },
-        "PastResolution": {
-          "time": "19:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò alle 7:00 di pomeriggio",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "7:00 di pomeriggio",
-      "Type": "time",
-      "Value": {
-        "Timex": "T19:00",
-        "FutureResolution": {
-          "time": "19:00:00"
-        },
-        "PastResolution": {
-          "time": "19:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò alle 7:00:05 di pomeriggio",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "7:00:05 di pomeriggio",
-      "Type": "time",
-      "Value": {
-        "Timex": "T19:00:05",
-        "FutureResolution": {
-          "time": "19:00:05"
-        },
-        "PastResolution": {
-          "time": "19:00:05"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò alle sette pm di pomeriggio",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "sette pm di pomeriggio",
-      "Type": "time",
-      "Value": {
-        "Timex": "T19",
-        "FutureResolution": {
-          "time": "19:00:00"
-        },
-        "PastResolution": {
-          "time": "19:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò alle sette e trenta pm",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "sette e trenta pm",
-      "Type": "time",
-      "Value": {
-        "Timex": "T19:30",
-        "FutureResolution": {
-          "time": "19:30:00"
-        },
-        "PastResolution": {
-          "time": "19:30:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò alle sette e trentacinque pm",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "sette e trentacinque pm",
-      "Type": "time",
-      "Value": {
-        "Timex": "T19:35",
-        "FutureResolution": {
-          "time": "19:35:00"
-        },
-        "PastResolution": {
-          "time": "19:35:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò alle undici e venti pm",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "undici e venti pm",
-      "Type": "time",
-      "Value": {
-        "Timex": "T23:20",
-        "FutureResolution": {
-          "time": "23:20:00"
-        },
-        "PastResolution": {
-          "time": "23:20:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò più o meno a mezzogiorno",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "più o meno a mezzogiorno",
-      "Type": "time",
-      "Value": {
-        "Timex": "T12",
-        "FutureResolution": {
-          "time": "12:00:00"
-        },
-        "PastResolution": {
-          "time": "12:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò a mezzogiorno",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "mezzogiorno",
-      "Type": "time",
-      "Value": {
-        "Timex": "T12",
-        "FutureResolution": {
-          "time": "12:00:00"
-        },
-        "PastResolution": {
-          "time": "12:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò più o meno alle 11",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "più o meno alle 11",
-      "Type": "time",
-      "Value": {
-        "Timex": "T11",
-        "FutureResolution": {
-          "time": "11:00:00"
-        },
-        "PastResolution": {
-          "time": "11:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò alle 340pm",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "340pm",
-      "Type": "time",
-      "Value": {
-        "Timex": "T15:40",
-        "FutureResolution": {
-          "time": "15:40:00"
-        },
-        "PastResolution": {
-          "time": "15:40:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò alle 1140 a.m.",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "1140 a.m.",
-      "Type": "time",
-      "Value": {
-        "Timex": "T11:40",
-        "FutureResolution": {
-          "time": "11:40:00"
-        },
-        "PastResolution": {
-          "time": "11:40:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "mezzanotte",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "mezzanotte",
-      "Type": "time",
-      "Value": {
-        "Timex": "T00",
-        "FutureResolution": {
-          "time": "00:00:00"
-        },
-        "PastResolution": {
-          "time": "00:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "metà mattina",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "metà mattina",
-      "Type": "time",
-      "Value": {
-        "Timex": "T10",
-        "FutureResolution": {
-          "time": "10:00:00"
-        },
-        "PastResolution": {
-          "time": "10:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "metà mattinata",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "metà mattinata",
-      "Type": "time",
-      "Value": {
-        "Timex": "T10",
-        "FutureResolution": {
-          "time": "10:00:00"
-        },
-        "PastResolution": {
-          "time": "10:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "metà pomeriggio",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "metà pomeriggio",
-      "Type": "time",
-      "Value": {
-        "Timex": "T14",
-        "FutureResolution": {
-          "time": "14:00:00"
-        },
-        "PastResolution": {
-          "time": "14:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "metà giornata",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "metà giornata",
-      "Type": "time",
-      "Value": {
-        "Timex": "T12",
-        "FutureResolution": {
-          "time": "12:00:00"
-        },
-        "PastResolution": {
-          "time": "12:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "mezzogiorno",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "mezzogiorno",
-      "Type": "time",
-      "Value": {
-        "Timex": "T12",
-        "FutureResolution": {
-          "time": "12:00:00"
-        },
-        "PastResolution": {
-          "time": "12:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò alle 12 ora di pranzo",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "alle 12 ora di pranzo",
-      "Type": "time",
-      "Value": {
-        "Timex": "T12",
-        "FutureResolution": {
-          "time": "12:00:00"
-        },
-        "PastResolution": {
-          "time": "12:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò alle 12 mezzanotte",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "12 mezzanotte",
-      "Type": "time",
-      "Value": {
-        "Timex": "T00",
-        "FutureResolution": {
-          "time": "00:00:00"
-        },
-        "PastResolution": {
-          "time": "00:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò alle 12 di notte",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "12 di notte",
-      "Type": "time",
-      "Value": {
-        "Timex": "T00",
-        "FutureResolution": {
-          "time": "00:00:00"
-        },
-        "PastResolution": {
-          "time": "00:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò all'1 di notte",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "1 di notte",
-      "Type": "time",
-      "Value": {
-        "Timex": "T01",
-        "FutureResolution": {
-          "time": "01:00:00"
-        },
-        "PastResolution": {
-          "time": "01:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò alle 11 ora di pranzo",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "11 ora di pranzo",
-      "Type": "time",
-      "Value": {
-        "Timex": "T11",
-        "FutureResolution": {
-          "time": "11:00:00"
-        },
-        "PastResolution": {
-          "time": "11:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò all'1 ora di pranzo",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "1 ora di pranzo",
-      "Type": "time",
-      "Value": {
-        "Timex": "T13",
-        "FutureResolution": {
-          "time": "13:00:00"
-        },
-        "PastResolution": {
-          "time": "13:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò a ora di pranzo alle 11",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "a ora di pranzo alle 11",
-      "Type": "time",
-      "Value": {
-        "Timex": "T11",
-        "FutureResolution": {
-          "time": "11:00:00"
-        },
-        "PastResolution": {
-          "time": "11:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò alle 7:56:13 pm",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "7:56:13 pm",
-      "Type": "time",
-      "Value": {
-        "Timex": "T19:56:13",
-        "FutureResolution": {
-          "time": "19:56:13"
-        },
-        "PastResolution": {
-          "time": "19:56:13"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò alle 12:34:45 ",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "12:34:45",
-      "Type": "time",
-      "Value": {
-        "Timex": "T12:34:45",
-        "FutureResolution": {
-          "time": "12:34:45"
-        },
-        "PastResolution": {
-          "time": "12:34:45"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò alle 7:00:25 di pomeriggio",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "7:00:25 di pomeriggio",
-      "Type": "time",
-      "Value": {
-        "Timex": "T19:00:25",
-        "FutureResolution": {
-          "time": "19:00:25"
-        },
-        "PastResolution": {
-          "time": "19:00:25"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò alle sette e trenta am",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "sette e trenta am",
-      "Type": "time",
-      "Value": {
-        "Timex": "T07:30",
-        "FutureResolution": {
-          "time": "07:30:00"
-        },
-        "PastResolution": {
-          "time": "07:30:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò alle undici e cinque",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "undici e cinque",
-      "Type": "time",
-      "Value": {
-        "Timex": "T11:05",
-        "FutureResolution": {
-          "time": "11:05:00"
-        },
-        "PastResolution": {
-          "time": "11:05:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò alle cinque e mezza meno tre minuti ",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "cinque e mezza meno tre minuti",
-      "Type": "time",
-      "Value": {
-        "Timex": "T05:27",
-        "FutureResolution": {
-          "time": "05:27:00"
-        },
-        "PastResolution": {
-          "time": "05:27:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò alle cinque e mezza di notte",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "cinque e mezza di notte",
-      "Type": "time",
-      "Value": {
-        "Timex": "T17:30",
-        "FutureResolution": {
-          "time": "17:30:00"
-        },
-        "PastResolution": {
-          "time": "17:30:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò di notte alle cinque e mezza",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "di notte alle cinque e mezza",
-      "Type": "time",
-      "Value": {
-        "Timex": "T17:30",
-        "FutureResolution": {
-          "time": "17:30:00"
-        },
-        "PastResolution": {
-          "time": "17:30:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò a mezzogiorno",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "mezzogiorno",
-      "Type": "time",
-      "Value": {
-        "Timex": "T12",
-        "FutureResolution": {
-          "time": "12:00:00"
-        },
-        "PastResolution": {
-          "time": "12:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò a ora di pranzo alle 12",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "ora di pranzo alle 12",
-      "Type": "time",
-      "Value": {
-        "Timex": "T12",
-        "FutureResolution": {
-          "time": "12:00:00"
-        },
-        "PastResolution": {
-          "time": "12:00:00"
-        }
-      }
-    }
-  ]
-}
+[
+  {
+    "Input": "imposta una sveglia per le otto e quaranta",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "otto e quaranta",
+        "Type": "time",
+        "Value": {
+          "Timex": "T08:40",
+          "FutureResolution": {
+            "time": "08:40:00"
+          },
+          "PastResolution": {
+            "time": "08:40:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "imposta una sveglia per le otto e quaranta am",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "otto e quaranta am",
+        "Type": "time",
+        "Value": {
+          "Timex": "T08:40",
+          "FutureResolution": {
+            "time": "08:40:00"
+          },
+          "PastResolution": {
+            "time": "08:40:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "imposta una sveglia per le otto e quaranta pm",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "otto e quaranta pm",
+        "Type": "time",
+        "Value": {
+          "Timex": "T20:40",
+          "FutureResolution": {
+            "time": "20:40:00"
+          },
+          "PastResolution": {
+            "time": "20:40:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "imposta una sveglia per le dieci e quarantacinque",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "dieci e quarantacinque",
+        "Type": "time",
+        "Value": {
+          "Timex": "T10:45",
+          "FutureResolution": {
+            "time": "10:45:00"
+          },
+          "PastResolution": {
+            "time": "10:45:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "imposta una sveglia per le quindici e quindici p m",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "quindici e quindici p m",
+        "Type": "time",
+        "Value": {
+          "Timex": "T15:15",
+          "FutureResolution": {
+            "time": "15:15:00"
+          },
+          "PastResolution": {
+            "time": "15:15:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "imposta una sveglia per le quindici e trenta p m",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "quindici e trenta p m",
+        "Type": "time",
+        "Value": {
+          "Timex": "T15:30",
+          "FutureResolution": {
+            "time": "15:30:00"
+          },
+          "PastResolution": {
+            "time": "15:30:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "imposta una sveglia per le dieci e dieci",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "dieci e dieci",
+        "Type": "time",
+        "Value": {
+          "Timex": "T10:10",
+          "FutureResolution": {
+            "time": "10:10:00"
+          },
+          "PastResolution": {
+            "time": "10:10:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "imposta una sveglia per le dieci e cinquantacinque p. m.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "dieci e cinquantacinque p. m.",
+        "Type": "time",
+        "Value": {
+          "Timex": "T22:55",
+          "FutureResolution": {
+            "time": "22:55:00"
+          },
+          "PastResolution": {
+            "time": "22:55:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò alle 7ampm",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "7ampm",
+        "Type": "time",
+        "Value": {
+          "Timex": "T07",
+          "FutureResolution": {
+            "time": "07:00:00"
+          },
+          "PastResolution": {
+            "time": "07:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò alle 7",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "7",
+        "Type": "time",
+        "Value": {
+          "Timex": "T07",
+          "FutureResolution": {
+            "time": "07:00:00"
+          },
+          "PastResolution": {
+            "time": "07:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò alle sette",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "sette",
+        "Type": "time",
+        "Value": {
+          "Timex": "T07",
+          "FutureResolution": {
+            "time": "07:00:00"
+          },
+          "PastResolution": {
+            "time": "07:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò alle 7pm",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "7pm",
+        "Type": "time",
+        "Value": {
+          "Timex": "T19",
+          "FutureResolution": {
+            "time": "19:00:00"
+          },
+          "PastResolution": {
+            "time": "19:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò alle 7:56pm",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "7:56pm",
+        "Type": "time",
+        "Value": {
+          "Timex": "T19:56",
+          "FutureResolution": {
+            "time": "19:56:00"
+          },
+          "PastResolution": {
+            "time": "19:56:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò alle 7:56:30pm",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "7:56:30pm",
+        "Type": "time",
+        "Value": {
+          "Timex": "T19:56:30",
+          "FutureResolution": {
+            "time": "19:56:30"
+          },
+          "PastResolution": {
+            "time": "19:56:30"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò alle 7:56:30 pm",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "7:56:30 pm",
+        "Type": "time",
+        "Value": {
+          "Timex": "T19:56:30",
+          "FutureResolution": {
+            "time": "19:56:30"
+          },
+          "PastResolution": {
+            "time": "19:56:30"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò alle 12:34",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "12:34",
+        "Type": "time",
+        "Value": {
+          "Timex": "T12:34",
+          "FutureResolution": {
+            "time": "12:34:00"
+          },
+          "PastResolution": {
+            "time": "12:34:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò alle 12:34:25 ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "12:34:25",
+        "Type": "time",
+        "Value": {
+          "Timex": "T12:34:25",
+          "FutureResolution": {
+            "time": "12:34:25"
+          },
+          "PastResolution": {
+            "time": "12:34:25"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Sono le 7",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "7",
+        "Type": "time",
+        "Value": {
+          "Timex": "T07",
+          "FutureResolution": {
+            "time": "07:00:00"
+          },
+          "PastResolution": {
+            "time": "07:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Sono le sette",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "sette",
+        "Type": "time",
+        "Value": {
+          "Timex": "T07",
+          "FutureResolution": {
+            "time": "07:00:00"
+          },
+          "PastResolution": {
+            "time": "07:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Sono le 8 del mattino",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "8 del mattino",
+        "Type": "time",
+        "Value": {
+          "Timex": "T08",
+          "FutureResolution": {
+            "time": "08:00:00"
+          },
+          "PastResolution": {
+            "time": "08:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Sono le 8 di notte",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "8 di notte",
+        "Type": "time",
+        "Value": {
+          "Timex": "T20",
+          "FutureResolution": {
+            "time": "20:00:00"
+          },
+          "PastResolution": {
+            "time": "20:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Sono le otto e mezza",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "otto e mezza",
+        "Type": "time",
+        "Value": {
+          "Timex": "T08:30",
+          "FutureResolution": {
+            "time": "08:30:00"
+          },
+          "PastResolution": {
+            "time": "08:30:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Sono le 8 e mezza pm",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "8 e mezza pm",
+        "Type": "time",
+        "Value": {
+          "Timex": "T20:30",
+          "FutureResolution": {
+            "time": "20:30:00"
+          },
+          "PastResolution": {
+            "time": "20:30:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Sono le otto e 30 min",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "otto e 30 min",
+        "Type": "time",
+        "Value": {
+          "Timex": "T08:30",
+          "FutureResolution": {
+            "time": "08:30:00"
+          },
+          "PastResolution": {
+            "time": "08:30:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Sono le otto e un quarto",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "otto e un quarto",
+        "Type": "time",
+        "Value": {
+          "Timex": "T08:15",
+          "FutureResolution": {
+            "time": "08:15:00"
+          },
+          "PastResolution": {
+            "time": "08:15:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Sono le 9pm e tre quarti",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "9pm e tre quarti",
+        "Type": "time",
+        "Value": {
+          "Timex": "T21:45",
+          "FutureResolution": {
+            "time": "21:45:00"
+          },
+          "PastResolution": {
+            "time": "21:45:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Sono le otto meno tre minuti",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "otto meno tre minuti",
+        "Type": "time",
+        "Value": {
+          "Timex": "T07:57",
+          "FutureResolution": {
+            "time": "07:57:00"
+          },
+          "PastResolution": {
+            "time": "07:57:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Sono le sette e mezza",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "sette e mezza",
+        "Type": "time",
+        "Value": {
+          "Timex": "T07:30",
+          "FutureResolution": {
+            "time": "07:30:00"
+          },
+          "PastResolution": {
+            "time": "07:30:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Sono le sette e mezza di pomeriggio",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "sette e mezza di pomeriggio",
+        "Type": "time",
+        "Value": {
+          "Timex": "T19:30",
+          "FutureResolution": {
+            "time": "19:30:00"
+          },
+          "PastResolution": {
+            "time": "19:30:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Sono le sette e mezza del mattino",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "sette e mezza del mattino",
+        "Type": "time",
+        "Value": {
+          "Timex": "T07:30",
+          "FutureResolution": {
+            "time": "07:30:00"
+          },
+          "PastResolution": {
+            "time": "07:30:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Sono le 8 meno un quarto del mattino",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "8 meno un quarto del mattino",
+        "Type": "time",
+        "Value": {
+          "Timex": "T07:45",
+          "FutureResolution": {
+            "time": "07:45:00"
+          },
+          "PastResolution": {
+            "time": "07:45:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Sono le otto e 20 min di sera",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "otto e 20 min di sera",
+        "Type": "time",
+        "Value": {
+          "Timex": "T20:20",
+          "FutureResolution": {
+            "time": "20:20:00"
+          },
+          "PastResolution": {
+            "time": "20:20:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò nel pomeriggio alle 7",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "nel pomeriggio alle 7",
+        "Type": "time",
+        "Value": {
+          "Timex": "T19",
+          "FutureResolution": {
+            "time": "19:00:00"
+          },
+          "PastResolution": {
+            "time": "19:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò all  7 di pomeriggio",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "7 di pomeriggio",
+        "Type": "time",
+        "Value": {
+          "Timex": "T19",
+          "FutureResolution": {
+            "time": "19:00:00"
+          },
+          "PastResolution": {
+            "time": "19:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò alle 7:00 di pomeriggio",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "7:00 di pomeriggio",
+        "Type": "time",
+        "Value": {
+          "Timex": "T19:00",
+          "FutureResolution": {
+            "time": "19:00:00"
+          },
+          "PastResolution": {
+            "time": "19:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò alle 7:00:05 di pomeriggio",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "7:00:05 di pomeriggio",
+        "Type": "time",
+        "Value": {
+          "Timex": "T19:00:05",
+          "FutureResolution": {
+            "time": "19:00:05"
+          },
+          "PastResolution": {
+            "time": "19:00:05"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò alle sette pm di pomeriggio",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "sette pm di pomeriggio",
+        "Type": "time",
+        "Value": {
+          "Timex": "T19",
+          "FutureResolution": {
+            "time": "19:00:00"
+          },
+          "PastResolution": {
+            "time": "19:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò alle sette e trenta pm",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "sette e trenta pm",
+        "Type": "time",
+        "Value": {
+          "Timex": "T19:30",
+          "FutureResolution": {
+            "time": "19:30:00"
+          },
+          "PastResolution": {
+            "time": "19:30:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò alle sette e trentacinque pm",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "sette e trentacinque pm",
+        "Type": "time",
+        "Value": {
+          "Timex": "T19:35",
+          "FutureResolution": {
+            "time": "19:35:00"
+          },
+          "PastResolution": {
+            "time": "19:35:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò alle undici e venti pm",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "undici e venti pm",
+        "Type": "time",
+        "Value": {
+          "Timex": "T23:20",
+          "FutureResolution": {
+            "time": "23:20:00"
+          },
+          "PastResolution": {
+            "time": "23:20:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò più o meno a mezzogiorno",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "più o meno a mezzogiorno",
+        "Type": "time",
+        "Value": {
+          "Timex": "T12",
+          "FutureResolution": {
+            "time": "12:00:00"
+          },
+          "PastResolution": {
+            "time": "12:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò a mezzogiorno",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "mezzogiorno",
+        "Type": "time",
+        "Value": {
+          "Timex": "T12",
+          "FutureResolution": {
+            "time": "12:00:00"
+          },
+          "PastResolution": {
+            "time": "12:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò più o meno alle 11",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "più o meno alle 11",
+        "Type": "time",
+        "Value": {
+          "Timex": "T11",
+          "FutureResolution": {
+            "time": "11:00:00"
+          },
+          "PastResolution": {
+            "time": "11:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò alle 340pm",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "340pm",
+        "Type": "time",
+        "Value": {
+          "Timex": "T15:40",
+          "FutureResolution": {
+            "time": "15:40:00"
+          },
+          "PastResolution": {
+            "time": "15:40:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò alle 1140 a.m.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "1140 a.m.",
+        "Type": "time",
+        "Value": {
+          "Timex": "T11:40",
+          "FutureResolution": {
+            "time": "11:40:00"
+          },
+          "PastResolution": {
+            "time": "11:40:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "mezzanotte",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "mezzanotte",
+        "Type": "time",
+        "Value": {
+          "Timex": "T00",
+          "FutureResolution": {
+            "time": "00:00:00"
+          },
+          "PastResolution": {
+            "time": "00:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "metà mattina",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "metà mattina",
+        "Type": "time",
+        "Value": {
+          "Timex": "T10",
+          "FutureResolution": {
+            "time": "10:00:00"
+          },
+          "PastResolution": {
+            "time": "10:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "metà mattinata",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "metà mattinata",
+        "Type": "time",
+        "Value": {
+          "Timex": "T10",
+          "FutureResolution": {
+            "time": "10:00:00"
+          },
+          "PastResolution": {
+            "time": "10:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "metà pomeriggio",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "metà pomeriggio",
+        "Type": "time",
+        "Value": {
+          "Timex": "T14",
+          "FutureResolution": {
+            "time": "14:00:00"
+          },
+          "PastResolution": {
+            "time": "14:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "metà giornata",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "metà giornata",
+        "Type": "time",
+        "Value": {
+          "Timex": "T12",
+          "FutureResolution": {
+            "time": "12:00:00"
+          },
+          "PastResolution": {
+            "time": "12:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "mezzogiorno",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "mezzogiorno",
+        "Type": "time",
+        "Value": {
+          "Timex": "T12",
+          "FutureResolution": {
+            "time": "12:00:00"
+          },
+          "PastResolution": {
+            "time": "12:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò alle 12 ora di pranzo",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "alle 12 ora di pranzo",
+        "Type": "time",
+        "Value": {
+          "Timex": "T12",
+          "FutureResolution": {
+            "time": "12:00:00"
+          },
+          "PastResolution": {
+            "time": "12:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò alle 12 mezzanotte",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "12 mezzanotte",
+        "Type": "time",
+        "Value": {
+          "Timex": "T00",
+          "FutureResolution": {
+            "time": "00:00:00"
+          },
+          "PastResolution": {
+            "time": "00:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò alle 12 di notte",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "12 di notte",
+        "Type": "time",
+        "Value": {
+          "Timex": "T00",
+          "FutureResolution": {
+            "time": "00:00:00"
+          },
+          "PastResolution": {
+            "time": "00:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò all'1 di notte",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "1 di notte",
+        "Type": "time",
+        "Value": {
+          "Timex": "T01",
+          "FutureResolution": {
+            "time": "01:00:00"
+          },
+          "PastResolution": {
+            "time": "01:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò alle 11 ora di pranzo",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "11 ora di pranzo",
+        "Type": "time",
+        "Value": {
+          "Timex": "T11",
+          "FutureResolution": {
+            "time": "11:00:00"
+          },
+          "PastResolution": {
+            "time": "11:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò all'1 ora di pranzo",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "1 ora di pranzo",
+        "Type": "time",
+        "Value": {
+          "Timex": "T13",
+          "FutureResolution": {
+            "time": "13:00:00"
+          },
+          "PastResolution": {
+            "time": "13:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò a ora di pranzo alle 11",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "a ora di pranzo alle 11",
+        "Type": "time",
+        "Value": {
+          "Timex": "T11",
+          "FutureResolution": {
+            "time": "11:00:00"
+          },
+          "PastResolution": {
+            "time": "11:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò alle 7:56:13 pm",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "7:56:13 pm",
+        "Type": "time",
+        "Value": {
+          "Timex": "T19:56:13",
+          "FutureResolution": {
+            "time": "19:56:13"
+          },
+          "PastResolution": {
+            "time": "19:56:13"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò alle 12:34:45 ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "12:34:45",
+        "Type": "time",
+        "Value": {
+          "Timex": "T12:34:45",
+          "FutureResolution": {
+            "time": "12:34:45"
+          },
+          "PastResolution": {
+            "time": "12:34:45"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò alle 7:00:25 di pomeriggio",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "7:00:25 di pomeriggio",
+        "Type": "time",
+        "Value": {
+          "Timex": "T19:00:25",
+          "FutureResolution": {
+            "time": "19:00:25"
+          },
+          "PastResolution": {
+            "time": "19:00:25"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò alle sette e trenta am",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "sette e trenta am",
+        "Type": "time",
+        "Value": {
+          "Timex": "T07:30",
+          "FutureResolution": {
+            "time": "07:30:00"
+          },
+          "PastResolution": {
+            "time": "07:30:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò alle undici e cinque",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "undici e cinque",
+        "Type": "time",
+        "Value": {
+          "Timex": "T11:05",
+          "FutureResolution": {
+            "time": "11:05:00"
+          },
+          "PastResolution": {
+            "time": "11:05:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò alle cinque e mezza meno tre minuti ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "cinque e mezza meno tre minuti",
+        "Type": "time",
+        "Value": {
+          "Timex": "T05:27",
+          "FutureResolution": {
+            "time": "05:27:00"
+          },
+          "PastResolution": {
+            "time": "05:27:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò alle cinque e mezza di notte",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "cinque e mezza di notte",
+        "Type": "time",
+        "Value": {
+          "Timex": "T17:30",
+          "FutureResolution": {
+            "time": "17:30:00"
+          },
+          "PastResolution": {
+            "time": "17:30:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò di notte alle cinque e mezza",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "di notte alle cinque e mezza",
+        "Type": "time",
+        "Value": {
+          "Timex": "T17:30",
+          "FutureResolution": {
+            "time": "17:30:00"
+          },
+          "PastResolution": {
+            "time": "17:30:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò a ora di pranzo alle 12",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "ora di pranzo alle 12",
+        "Type": "time",
+        "Value": {
+          "Timex": "T12",
+          "FutureResolution": {
+            "time": "12:00:00"
+          },
+          "PastResolution": {
+            "time": "12:00:00"
+          }
+        }
+      }
+    ]
+  }
 ]

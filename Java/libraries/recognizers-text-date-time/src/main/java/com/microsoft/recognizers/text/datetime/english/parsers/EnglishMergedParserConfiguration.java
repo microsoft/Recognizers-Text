@@ -27,7 +27,6 @@ public class EnglishMergedParserConfiguration extends EnglishCommonDateTimeParse
 
         getParser = new BaseSetParser(new EnglishSetParserConfiguration(this));
         holidayParser = new BaseHolidayParser(new EnglishHolidayParserConfiguration());
-        timeZoneParser = new BaseTimeZoneParser();
     }
 
     private final Pattern beforeRegex;
@@ -38,7 +37,6 @@ public class EnglishMergedParserConfiguration extends EnglishCommonDateTimeParse
     private final Pattern yearRegex;
     private final IDateTimeParser getParser;
     private final IDateTimeParser holidayParser;
-    private final IDateTimeParser timeZoneParser;
     private final StringMatcher superfluousWordMatcher;
 
     public Pattern getBeforeRegex() {
@@ -71,10 +69,6 @@ public class EnglishMergedParserConfiguration extends EnglishCommonDateTimeParse
 
     public IDateTimeParser getHolidayParser() {
         return holidayParser;
-    }
-
-    public IDateTimeParser getTimeZoneParser() {
-        return timeZoneParser;
     }
 
     public StringMatcher getSuperfluousWordMatcher() {

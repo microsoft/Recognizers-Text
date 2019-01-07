@@ -15,6 +15,7 @@ import java.util.stream.Collectors;
 
 public class EnglishTimeZoneExtractorConfiguration extends BaseOptionsConfiguration implements ITimeZoneExtractorConfiguration {
 
+    // These regexes do need to be case insensitive for them to work correctly
     public static final Pattern DirectUtcRegex = RegExpUtility.getSafeRegExp(EnglishTimeZone.DirectUtcRegex, Pattern.CASE_INSENSITIVE);
     public static final Pattern AbbreviationRegex = RegExpUtility.getSafeRegExp(EnglishTimeZone.AbbreviationsRegex, Pattern.CASE_INSENSITIVE);
     public static final Pattern StandardTimeRegex = RegExpUtility.getSafeRegExp(EnglishTimeZone.FullNameRegex, Pattern.CASE_INSENSITIVE);

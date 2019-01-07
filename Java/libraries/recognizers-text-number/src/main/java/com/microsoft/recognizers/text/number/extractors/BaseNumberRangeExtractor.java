@@ -118,15 +118,15 @@ public abstract class BaseNumberRangeExtractor implements IExtractor {
             if (extractNumList1 != null && extractNumList2 != null) {
                 if (type.contains(NumberRangeConstants.TWONUMTILL)) {
                     // num1 must have same type with num2
-                    if (!extractNumList1.get(0).type.equals(extractNumList2.get(0).type)) {
+                    if (!extractNumList1.get(0).getType().equals(extractNumList2.get(0).getType())) {
                         return Pair.with(start, length);
                     }
 
                     // num1 must less than num2
                     ParseResult numExt1 = numberParser.parse(extractNumList1.get(0));
                     ParseResult numExt2 = numberParser.parse(extractNumList2.get(0));
-                    double num1 = numExt1.value != null ? (double)numExt1.value : 0;
-                    double num2 = numExt1.value != null ? (double)numExt2.value : 0;
+                    double num1 = numExt1.getValue() != null ? (double)numExt1.getValue() : 0;
+                    double num2 = numExt1.getValue() != null ? (double)numExt2.getValue() : 0;
 
                     if (num1 > num2) {
                         return Pair.with(start, length);
@@ -179,14 +179,14 @@ public abstract class BaseNumberRangeExtractor implements IExtractor {
         boolean validNum = false;
 
         for (ExtractResult extractNum : extractNumList) {
-            if (numberStr.trim().endsWith(extractNum.text) && match.group().startsWith(numberStr)) {
-                start = source.indexOf(numberStr) + (extractNum.start != null ? extractNum.start : 0);
-                length = length - (extractNum.start != null ? extractNum.start : 0);
+            if (numberStr.trim().endsWith(extractNum.getText()) && match.group().startsWith(numberStr)) {
+                start = source.indexOf(numberStr) + (extractNum.getStart() != null ? extractNum.getStart() : 0);
+                length = length - (extractNum.getStart() != null ? extractNum.getStart() : 0);
                 validNum = true;
-            } else if (extractNum.start == 0 && match.group().endsWith(numberStr)) {
-                length = length - numberStr.length() + (extractNum.length != null ? extractNum.length : 0);
+            } else if (extractNum.getStart() == 0 && match.group().endsWith(numberStr)) {
+                length = length - numberStr.length() + (extractNum.getLength() != null ? extractNum.getLength() : 0);
                 validNum = true;
-            } else if (extractNum.start == 0 && extractNum.length == numberStr.trim().length()) {
+            } else if (extractNum.getStart() == 0 && extractNum.getLength() == numberStr.trim().length()) {
                 validNum = true;
             }
 
@@ -214,16 +214,16 @@ public abstract class BaseNumberRangeExtractor implements IExtractor {
 
         //        extractNumber = extractNumber.OrderByDescending(num => num.Length).ThenByDescending(num => num.Start).ToList();
         Collections.sort(extractNumber, (Comparator<ExtractResult>)(o1, o2) -> {
-            Integer x1 = ((ExtractResult)o1).length;
-            Integer x2 = ((ExtractResult)o2).length;
+            Integer x1 = ((ExtractResult)o1).getLength();
+            Integer x2 = ((ExtractResult)o2).getLength();
             int scomp = x2.compareTo(x1);
 
             if (scomp != 0) {
                 return scomp;
             }
 
-            x1 = ((ExtractResult)o1).start;
-            x2 = ((ExtractResult)o2).start;
+            x1 = ((ExtractResult)o1).getStart();
+            x2 = ((ExtractResult)o2).getStart();
             return x2.compareTo(x1);
         });
 

@@ -15,7 +15,9 @@
             "Value": "UTC+08:00",
             "UtcOffsetMins": 480
           }
-        }
+        },
+        "Start": 18,
+        "Length": 12
       }
     ]
   },
@@ -35,7 +37,9 @@
             "Value": "UTC+04:30",
             "UtcOffsetMins": 270
           }
-        }
+        },
+        "Start": 27,
+        "Length": 7
       }
     ]
   },
@@ -55,7 +59,9 @@
             "Value": "UTC-03:00",
             "UtcOffsetMins": -180
           }
-        }
+        },
+        "Start": 23,
+        "Length": 5
       }
     ]
   },
@@ -75,7 +81,9 @@
             "Value": "UTC+04:30",
             "UtcOffsetMins": 270
           }
-        }
+        },
+        "Start": 26,
+        "Length": 29
       }
     ]
   },
@@ -95,7 +103,9 @@
             "Value": "UTC+04:30",
             "UtcOffsetMins": 270
           }
-        }
+        },
+        "Start": 20,
+        "Length": 12
       }
     ]
   },
@@ -115,7 +125,9 @@
             "Value": "UTC+00:00",
             "UtcOffsetMins": 0
           }
-        }
+        },
+        "Start": 23,
+        "Length": 5
       }
     ]
   },
@@ -135,7 +147,9 @@
             "Value": "UTC-07:00",
             "UtcOffsetMins": -420
           }
-        }
+        },
+        "Start": 21,
+        "Length": 4
       }
     ]
   },
@@ -155,7 +169,9 @@
             "Value": "UTC+09:00",
             "UtcOffsetMins": 540
           }
-        }
+        },
+        "Start": 21,
+        "Length": 4
       }
     ]
   },
@@ -175,7 +191,9 @@
             "Value": "UTC-05:00",
             "UtcOffsetMins": -300
           }
-        }
+        },
+        "Start": 21,
+        "Length": 3
       }
     ]
   },
@@ -195,7 +213,9 @@
             "Value": "UTC+08:00",
             "UtcOffsetMins": 480
           }
-        }
+        },
+        "Start": 21,
+        "Length": 3
       }
     ]
   },
@@ -215,7 +235,9 @@
             "Value": "UTC-07:00",
             "UtcOffsetMins": -420
           }
-        }
+        },
+        "Start": 21,
+        "Length": 28
       }
     ]
   },
@@ -235,7 +257,9 @@
             "Value": "UTC+09:00",
             "UtcOffsetMins": 540
           }
-        }
+        },
+        "Start": 21,
+        "Length": 33
       }
     ]
   },
@@ -255,7 +279,9 @@
             "Value": "UTC+09:00",
             "UtcOffsetMins": 540
           }
-        }
+        },
+        "Start": 21,
+        "Length": 30
       }
     ]
   },
@@ -275,7 +301,9 @@
             "Value": "UTC-05:00",
             "UtcOffsetMins": -300
           }
-        }
+        },
+        "Start": 21,
+        "Length": 13
       }
     ]
   },
@@ -295,7 +323,9 @@
             "Value": "UTC+08:00",
             "UtcOffsetMins": 480
           }
-        }
+        },
+        "Start": 21,
+        "Length": 14
       }
     ]
   },
@@ -315,7 +345,9 @@
             "Value": "UTC+11:00",
             "UtcOffsetMins": 660
           }
-        }
+        },
+        "Start": 21,
+        "Length": 4
       }
     ]
   },
@@ -335,7 +367,9 @@
             "Value": "UTC-07:00",
             "UtcOffsetMins": -420
           }
-        }
+        },
+        "Start": 21,
+        "Length": 3
       }
     ]
   },
@@ -355,7 +389,9 @@
             "Value": "UTC+14:00",
             "UtcOffsetMins": 840
           }
-        }
+        },
+        "Start": 21,
+        "Length": 4
       }
     ]
   },
@@ -375,7 +411,9 @@
             "Value": "UTC-07:00",
             "UtcOffsetMins": -420
           }
-        }
+        },
+        "Start": 21,
+        "Length": 21
       }
     ]
   }

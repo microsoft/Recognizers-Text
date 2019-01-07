@@ -15,7 +15,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
-import java.util.stream.StreamSupport;
 
 public class BaseTimeZoneExtractor implements IDateTimeZoneExtractor {
 
@@ -46,7 +45,7 @@ public class BaseTimeZoneExtractor implements IDateTimeZoneExtractor {
 
     @Override
     public List<ExtractResult> removeAmbiguousTimezone(List<ExtractResult> extractResults) {
-        return extractResults.stream().filter(o -> !config.getAmbiguousTimezoneList().contains(o.text.toLowerCase())).collect(Collectors.toList());
+        return extractResults.stream().filter(o -> !config.getAmbiguousTimezoneList().contains(o.getText().toLowerCase())).collect(Collectors.toList());
     }
 
     private List<Token> matchLocationTimes(String text) {

@@ -1,4 +1,5 @@
-[{
+[
+  {
     "Input": "the temperature outside is 40 deg celsius",
     "Results": [
       {
@@ -12,8 +13,7 @@
         "End": 40
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "its 90 fahrenheit in texas",
     "Results": [
@@ -28,8 +28,7 @@
         "End": 16
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "-5 degree fahrenheit",
     "Results": [
@@ -44,8 +43,7 @@
         "End": 19
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "6 deg c",
     "Results": [
@@ -60,8 +58,7 @@
         "End": 6
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "98.6 degrees f is normal temperature",
     "Results": [
@@ -76,8 +73,7 @@
         "End": 13
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "set the temperature to 30 degrees celsius",
     "Results": [
@@ -92,8 +88,7 @@
         "End": 40
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "normal temperature is 98.6 degrees fahrenheit",
     "Results": [
@@ -108,8 +103,7 @@
         "End": 44
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "100 degrees f",
     "Results": [
@@ -124,8 +118,7 @@
         "End": 12
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "20 degrees c",
     "Results": [
@@ -140,8 +133,7 @@
         "End": 11
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "100.2 degrees farenheit is low",
     "Results": [
@@ -156,8 +148,7 @@
         "End": 22
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "10.5 celcius",
     "Results": [
@@ -172,8 +163,7 @@
         "End": 11
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "20 degrees celsius",
     "Results": [
@@ -188,8 +178,7 @@
         "End": 17
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "20.3 celsius",
     "Results": [
@@ -204,8 +193,7 @@
         "End": 11
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "34.5 celcius",
     "Results": [
@@ -220,8 +208,7 @@
         "End": 11
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "the temperature outside is 98 degrees",
     "Results": [
@@ -236,8 +223,7 @@
         "End": 36
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "set the thermostat to 85°",
     "Results": [
@@ -252,8 +238,7 @@
         "End": 24
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "raise the temperature by 5 degrees",
     "Results": [
@@ -268,8 +253,7 @@
         "End": 33
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "set the temperature to 70 degrees f",
     "Results": [
@@ -284,8 +268,7 @@
         "End": 34
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "raise the temperature by 20 degrees",
     "Results": [
@@ -300,8 +283,7 @@
         "End": 34
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "set the temperature to 100 degrees",
     "Results": [
@@ -316,8 +298,7 @@
         "End": 33
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "keep the temperature at 75 degrees f",
     "Results": [
@@ -332,8 +313,7 @@
         "End": 35
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "let the temperature be at 40 celsius",
     "Results": [
@@ -348,8 +328,7 @@
         "End": 35
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "let the temperature be at 50 deg. ",
     "Results": [
@@ -364,8 +343,7 @@
         "End": 32
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "convert 10 celsius to fahrenheit",
     "Results": [
@@ -378,8 +356,7 @@
         },
         "Start": 8,
         "End": 17
-      }
-      ,
+      },
       {
         "Text": "fahrenheit",
         "TypeName": "temperature",
@@ -391,8 +368,7 @@
         "End": 31
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "34.9 centigrate to farenheit",
     "Results": [
@@ -405,8 +381,7 @@
         },
         "Start": 0,
         "End": 14
-      }
-      ,
+      },
       {
         "Text": "farenheit",
         "TypeName": "temperature",
@@ -418,8 +393,7 @@
         "End": 27
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "convert 200 celsius celsius into fahrenheit",
     "Results": [
@@ -432,8 +406,7 @@
         },
         "Start": 8,
         "End": 18
-      }
-      ,
+      },
       {
         "Text": "celsius",
         "TypeName": "temperature",
@@ -443,8 +416,7 @@
         },
         "Start": 20,
         "End": 26
-      }
-      ,
+      },
       {
         "Text": "fahrenheit",
         "TypeName": "temperature",
@@ -456,8 +428,7 @@
         "End": 42
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "fahrenheit to celsius 101 fahrenheit is how much celsius",
     "Results": [
@@ -470,8 +441,7 @@
         },
         "Start": 22,
         "End": 35
-      }
-      ,
+      },
       {
         "Text": "fahrenheit",
         "TypeName": "temperature",
@@ -481,8 +451,7 @@
         },
         "Start": 0,
         "End": 9
-      }
-      ,
+      },
       {
         "Text": "celsius",
         "TypeName": "temperature",
@@ -492,8 +461,7 @@
         },
         "Start": 14,
         "End": 20
-      }
-      ,
+      },
       {
         "Text": "celsius",
         "TypeName": "temperature",
@@ -505,8 +473,7 @@
         "End": 55
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "50 degrees celsius celsius to fahrenheit",
     "Results": [
@@ -519,8 +486,7 @@
         },
         "Start": 0,
         "End": 17
-      }
-      ,
+      },
       {
         "Text": "celsius",
         "TypeName": "temperature",
@@ -530,8 +496,7 @@
         },
         "Start": 19,
         "End": 25
-      }
-      ,
+      },
       {
         "Text": "fahrenheit",
         "TypeName": "temperature",
@@ -543,8 +508,7 @@
         "End": 39
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "could you convert 51 fahrenheit to degrees celsius",
     "Results": [
@@ -557,8 +521,7 @@
         },
         "Start": 18,
         "End": 30
-      }
-      ,
+      },
       {
         "Text": "degrees celsius",
         "TypeName": "temperature",
@@ -570,8 +533,7 @@
         "End": 49
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "convert 106 degree fahrenheit to degrees celsius",
     "Results": [
@@ -584,8 +546,7 @@
         },
         "Start": 8,
         "End": 28
-      }
-      ,
+      },
       {
         "Text": "degrees celsius",
         "TypeName": "temperature",
@@ -597,8 +558,7 @@
         "End": 47
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "convert 45 degrees fahrenheit to celsius",
     "Results": [
@@ -611,8 +571,7 @@
         },
         "Start": 8,
         "End": 28
-      }
-      ,
+      },
       {
         "Text": "celsius",
         "TypeName": "temperature",
@@ -624,8 +583,7 @@
         "End": 39
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "how to convert - 20 degrees fahrenheit to celsius",
     "Results": [
@@ -638,8 +596,7 @@
         },
         "Start": 15,
         "End": 37
-      }
-      ,
+      },
       {
         "Text": "celsius",
         "TypeName": "temperature",

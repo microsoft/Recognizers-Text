@@ -29,7 +29,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             durationExtractor = new DurationExtractorChs();
             numberParser = new BaseCJKNumberParser(new ChineseNumberParserConfiguration());
         }
-        
+
         public ParseResult Parse(ExtractResult extResult)
         {
             return this.Parse(extResult, DateObject.Now);
@@ -150,18 +150,18 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     if (DateExtractorChs.NextRe.Match(monthStr).Success)
                     {
                         month++;
-                        if (month == 13)
+                        if (month == Constants.MaxMonth + 1)
                         {
-                            month = 1;
+                            month = Constants.MinMonth;
                             year++;
                         }
                     }
                     else if (DateExtractorChs.LastRe.Match(monthStr).Success)
                     {
                         month--;
-                        if (month == 0)
+                        if (month == Constants.MinMonth - 1)
                         {
-                            month = 12;
+                            month = Constants.MaxMonth;
                             year--;
                         }
                     }
@@ -184,37 +184,92 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
                 DateObject futureDate, pastDate;
 
-                if (day > MonthMaxDays[month - 1])
+                if (day > GetMonthMaxDay(year, month))
                 {
-                    futureDate = DateObject.MinValue.SafeCreateFromValue(year, month + 1, day);
-                    pastDate = DateObject.MinValue.SafeCreateFromValue(year, month - 1, day);
+                    var futureMonth = month + 1;
+                    var pastMonth = month - 1;
+                    var futureYear = year;
+                    var pastYear = year;
+
+                    if (futureMonth == Constants.MaxMonth + 1)
+                    {
+                        futureMonth = Constants.MinMonth;
+                        futureYear = year++;
+                    }
+
+                    if (pastMonth == Constants.MinMonth - 1)
+                    {
+                        pastMonth = Constants.MaxMonth;
+                        pastYear = year--;
+                    }
+
+                    var isFutureValid = DateObjectExtension.IsValidDate(futureYear, futureMonth, day);
+                    var isPastValid = DateObjectExtension.IsValidDate(pastYear, pastMonth, day);
+
+                    if (isFutureValid && isPastValid)
+                    {
+                        futureDate = DateObject.MinValue.SafeCreateFromValue(futureYear, futureMonth, day);
+                        pastDate = DateObject.MinValue.SafeCreateFromValue(pastYear, pastMonth, day);
+                    }
+                    else if (isFutureValid && !isPastValid)
+                    {
+                        futureDate = pastDate = DateObject.MinValue.SafeCreateFromValue(futureYear, futureMonth, day);
+                    }
+                    else if (!isFutureValid && !isPastValid)
+                    {
+                        futureDate = pastDate = DateObject.MinValue.SafeCreateFromValue(pastYear, pastMonth, day);
+                    }
+                    else
+                    {
+                        // Fall back to normal cases, might lead to resolution failure
+                        // TODO: Ideally, this failure should be filtered out in extract phase
+                        futureDate = pastDate = DateObject.MinValue.SafeCreateFromValue(year, month, day);
+                    }
                 }
                 else
                 {
                     futureDate = DateObject.MinValue.SafeCreateFromValue(year, month, day);
                     pastDate = DateObject.MinValue.SafeCreateFromValue(year, month, day);
+
                     if (!hasMonth)
                     {
                         if (futureDate < referenceDate)
                         {
-                            futureDate = futureDate.AddMonths(1);
+                            if (IsValidDate(year, month + 1, day))
+                            {
+                                futureDate = futureDate.AddMonths(1);
+                            }
                         }
 
                         if (pastDate >= referenceDate)
                         {
-                            pastDate = pastDate.AddMonths(-1);
+                            if (IsValidDate(year, month - 1, day))
+                            {
+                                pastDate = pastDate.AddMonths(-1);
+                            }
+                            else if (IsNonleapYearFeb29th(year, month - 1, day))
+                            {
+                                pastDate = pastDate.AddMonths(-2);
+                            }
                         }
                     }
+
                     else if (!hasYear)
                     {
                         if (futureDate < referenceDate)
                         {
-                            futureDate = futureDate.AddYears(1);
+                            if (IsValidDate(year + 1, month, day))
+                            {
+                                futureDate = futureDate.AddYears(1);
+                            }
                         }
 
                         if (pastDate >= referenceDate)
                         {
-                            pastDate = pastDate.AddYears(-1);
+                            if (IsValidDate(year - 1, month, day))
+                            {
+                                pastDate = pastDate.AddYears(-1);
+                            }
                         }
                     }
                 }
@@ -239,7 +294,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 return ret;
             }
 
-            if(!ret.Success)
+            if (!ret.Success)
             {
                 ret = MatchThisWeekday(text, referenceDate);
             }
@@ -260,6 +315,18 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             }
 
             return ret;
+        }
+
+        private int GetMonthMaxDay(int year, int month)
+        {
+            var maxDay = MonthMaxDays[month - 1];
+
+            if (!DateObject.IsLeapYear(year) && month == 2)
+            {
+                maxDay -= 1;
+            }
+
+            return maxDay;
         }
 
         protected DateTimeResolutionResult MatchNextWeekday(string text, DateObject reference)
@@ -549,6 +616,29 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             return ret;
         }
 
+        //Judge the date is valid
+        private bool IsValidDate(int year, int month, int day)
+        {
+            if (month < Constants.MinMonth)
+            {
+                year--;
+                month = Constants.MaxMonth;
+            }
+
+            if (month > Constants.MaxMonth)
+            {
+                year++;
+                month = Constants.MinMonth;
+            }
+            return DateObjectExtension.IsValidDate(year, month, day);
+        }
+
+        //Judge the date is non-leap year Feb 29th
+        private bool IsNonleapYearFeb29th(int year, int month, int day)
+        {
+            return !DateObject.IsLeapYear(year) && month == 2 && day == 29;
+        }
+
         // parse a regex match which includes 'day', 'month' and 'year' (optional) group
         protected DateTimeResolutionResult Match2Date(Match match, DateObject referenceDate)
         {
@@ -626,7 +716,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             }
             return num;
         }
-        
+
         // convert Chinese Year to Integer
         private int ConvertChineseYearToInteger(string yearChsStr)
         {

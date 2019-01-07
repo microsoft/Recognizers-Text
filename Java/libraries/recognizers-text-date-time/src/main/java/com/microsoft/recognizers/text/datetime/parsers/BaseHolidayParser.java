@@ -49,9 +49,9 @@ public class BaseHolidayParser implements IDateTimeParser {
         LocalDateTime referenceDate = reference;
         Object value = null;
 
-        if (er.type.equals(getParserName())) {
+        if (er.getType().equals(getParserName())) {
             
-            DateTimeResolutionResult innerResult = parseHolidayRegexMatch(er.text, referenceDate);
+            DateTimeResolutionResult innerResult = parseHolidayRegexMatch(er.getText(), referenceDate);
 
             if (innerResult.getSuccess()) {
                 HashMap<String, String> futureResolution = new HashMap<>();
@@ -66,11 +66,11 @@ public class BaseHolidayParser implements IDateTimeParser {
         }
 
         DateTimeParseResult ret = new DateTimeParseResult(
-                er.start,
-                er.length,
-                er.text,
-                er.type,
-                er.data,
+                er.getStart(),
+                er.getLength(),
+                er.getText(),
+                er.getType(),
+                er.getData(),
                 value,
                 "",
                 value == null ? "" : ((DateTimeResolutionResult)value).getTimex()

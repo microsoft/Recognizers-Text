@@ -1,800 +1,717 @@
-[{
-  "Input": "questo è 2 giorni",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "2 giorni",
-      "Type": "duration"
-    }
-  ]
-}
-,
-{
-  "Input": "questo è prima dell 4pm",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "prima delle 4pm",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "Input": "questo è prima delle 4pm di domani",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "prima delle 4pm di domani",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "questo è prima di domani alle 4pm ",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "prima di domani alle 4pm",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "questo è dopo le 4pm",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "dopo le 4pm",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "Input": "questo è dopo le 4pm di domani",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "dopo le 4pm di domani",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "questo è dopo di domani alle 4pm ",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "dopo di domani alle 4pm",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò tra 5 minuti",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "tra 5 minuti",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "scorsa settimana",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "scorsa settimana",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "programma un appuntamento tra 10 ore",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "tra 10 ore",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Com'è questa giornata?",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "questa giornata",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Com'è questa settimana?",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "questa settimana",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Com'è la mia settimana?",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "mia settimana",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Com'è la settimana?",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "la settimana",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Com'è la mia giornata?",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "la mia giornata",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Com'è la giornata?",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "la giornata",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Programma un appuntamento dalle 9am alle 11am",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "dalle 9am alle 11am",
-      "Type": "timerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Programma un appuntamento dalle 9am alle 11am di domani",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "dalle 9am alle 11am di domani",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Cambia l'appuntamento del 22 Luglio a Bellevue al 22 Agosto",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "22 Luglio",
-      "Type": "date"
-    },
-    {
-      "Text": "22 Agosto",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "dopo il 7/2 ",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "dopo il 7/2",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "dal 7/2 ",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "dal 7/2",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "prima del 7/2 ",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "prima del 7/2",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "06/06 12:15",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "06/06 12:15",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "06/06/12 15:15",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "06/06/12 15:15",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "06/06, 2015",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "06/06, 2015",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "29 Maggio",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "29 Maggio",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "29 Marzo",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "29 Marzo",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Sono nato a Marzo",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "Marzo",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "è successo a Maggio",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "Maggio",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Qual è l'orario di Palomino? ",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": []
-}
-,
-{
-  "Input": "al sole",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": []
-}
-,
-{
-  "Input": "quale email ha avuto una risposta",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": []
-}
-,
-{
-  "Input": "Lui è spesso da solo",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": []
-}
-,
-
-{
-  "Input": "ore di michigan",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": []
-}
-,
-{
-  "Input": "Cambierò l'appuntamento delle 3pm alle 4.",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "3pm",
-      "Type": "time"
-    }
-    ,
-    {
-      "Text": "4",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "Input": "Cambierò l'appuntamento delle 3pm alle 4,",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "3pm",
-      "Type": "time"
-    }
-    ,
-    {
-      "Text": "4",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "Input": "Cambierò l'appuntamento delle tre pm alle quattro",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "tre pm",
-      "Type": "time"
-    }
-    ,
-    {
-      "Text": "quattro",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "Input": "Cambierò l'appuntamento delle dieci am alle undici",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "dieci am",
-      "Type": "time"
-    }
-    ,
-    {
-      "Text": "undici",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "Input": "Cambierò l'appuntamento delle dieci am alle 4.,",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "dieci am",
-      "Type": "time"
-    }
-    ,
-    {
-      "Text": "4",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "Input": "Cambierò l'appuntamento delle dieci am alle undici!",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "dieci am",
-      "Type": "time"
-    }
-    ,
-    {
-      "Text": "undici",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "Input": "Cambierò l'appuntamento delle dieci am alle undici?",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "dieci am",
-      "Type": "time"
-    }
-    ,
-    {
-      "Text": "undici",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "Input": "Cambierò l'appuntamento delle dieci am alle 20!",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "dieci am",
-      "Type": "time"
-    }
-    ,
-    {
-      "Text": "20",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "Input": "Cambierò l'appuntamento delle dieci am alle venti!",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "dieci am",
-      "Type": "time"
-    }
-    ,
-    {
-      "Text": "venti",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "Input": "Cambierò l'appuntamento delle dieci am alle tredici!",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "dieci am",
-      "Type": "time"
-    }
-    ,
-    {
-      "Text": "tredici",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "Input": "Cambierò l'appuntamento delle dieci am alle 13!",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "dieci am",
-      "Type": "time"
-    }
-    ,
-    {
-      "Text": "13",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "Input": "Cambierò l'appuntamento delle dieci am alle 0!",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "dieci am",
-      "Type": "time"
-    }
-    ,
-    {
-      "Text": "0",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "Input": "Cambierò l'appuntamento delle dieci am alle 24!",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "dieci am",
-      "Type": "time"
-    }
-    ,
-    {
-      "Text": "24",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "Input": "Cambierò l'appuntamento delle dieci am alle zero.",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "dieci am",
-      "Type": "time"
-    }
-    ,
-    {
-      "Text": "zero",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "Input": "Cambierò l'appuntamento delle dieci am alle ventiquattro.",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "dieci am",
-      "Type": "time"
-    }
-    ,
-    {
-      "Text": "ventiquattro",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "Input": "Cambierò l'appuntamento delle dieci am alle 4, cosa ne pensi?",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "dieci am",
-      "Type": "time"
-    }
-  	,
-    {
-      "Text": "4",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "Input": "Cambierò l'appuntamento delle dieci am alle 4.3",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "dieci am",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "Input": "Cambierò l'appuntamento delle dieci am alle ventisei",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "dieci am",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "Input": "Cambierò l'appuntamento delle dieci am alle 4 o più tardi",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "dieci am",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "Input": "Cambierò l'appuntamento delle dieci am alle 25",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "dieci am",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "Input": "Cambierò l'appuntamento delle dieci am alle venticinque",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "dieci am",
-      "Type": "time"
-    }
-    ,
-    {
-      "Text": "venticinque",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "Input": "il prossimo incontro si terrà il 16 Marzo 2017, cosa ne dici di avere una discussione alle 2pm questo pomeriggio?",
-  "NotSupported": "javascript",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "16 Marzo 2017",
-      "Type": "date"
-    }
-    ,
-    {
-      "Text": "2pm questo pomeriggio",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "1 Aprile 2018, possiamo pianificarlo alle 2pm questo pomeriggio",
-  "NotSupported": "javascript",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "1 Aprile 2018",
-      "Type": "date"
-    }
-    ,
-    {
-      "Text": "2pm questo pomeriggio",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "L'intervallo è prima del 2012",
-  "NotSupported": "javascript",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "prima del 2012",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "L'intervallo è fino al 2012",
-  "NotSupported": "javascript",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "fino al 2012",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "L'intervallo è 2012 o dopo",
-  "NotSupported": "javascript",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "2012 o dopo",
-      "Type": "daterange"
-    }
-  ]
-}
+[
+  {
+    "Input": "questo è 2 giorni",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "2 giorni",
+        "Type": "duration"
+      }
+    ]
+  },
+  {
+    "Input": "questo è prima dell 4pm",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "prima delle 4pm",
+        "Type": "time"
+      }
+    ]
+  },
+  {
+    "Input": "questo è prima delle 4pm di domani",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "prima delle 4pm di domani",
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "questo è prima di domani alle 4pm ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "prima di domani alle 4pm",
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "questo è dopo le 4pm",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "dopo le 4pm",
+        "Type": "time"
+      }
+    ]
+  },
+  {
+    "Input": "questo è dopo le 4pm di domani",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "dopo le 4pm di domani",
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "questo è dopo di domani alle 4pm ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "dopo di domani alle 4pm",
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò tra 5 minuti",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "tra 5 minuti",
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "scorsa settimana",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "scorsa settimana",
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "programma un appuntamento tra 10 ore",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "tra 10 ore",
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "Com'è questa giornata?",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "questa giornata",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "Com'è questa settimana?",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "questa settimana",
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "Com'è la mia settimana?",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "mia settimana",
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "Com'è la settimana?",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "la settimana",
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "Com'è la mia giornata?",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "la mia giornata",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "Com'è la giornata?",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "la giornata",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "Programma un appuntamento dalle 9am alle 11am",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "dalle 9am alle 11am",
+        "Type": "timerange"
+      }
+    ]
+  },
+  {
+    "Input": "Programma un appuntamento dalle 9am alle 11am di domani",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "dalle 9am alle 11am di domani",
+        "Type": "datetimerange"
+      }
+    ]
+  },
+  {
+    "Input": "Cambia l'appuntamento del 22 Luglio a Bellevue al 22 Agosto",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "22 Luglio",
+        "Type": "date"
+      },
+      {
+        "Text": "22 Agosto",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "dopo il 7/2 ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "dopo il 7/2",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "dal 7/2 ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "dal 7/2",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "prima del 7/2 ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "prima del 7/2",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "06/06 12:15",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "06/06 12:15",
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "06/06/12 15:15",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "06/06/12 15:15",
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "06/06, 2015",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "06/06, 2015",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "29 Maggio",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "29 Maggio",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "29 Marzo",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "29 Marzo",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "Sono nato a Marzo",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "Marzo",
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "è successo a Maggio",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "Maggio",
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "Qual è l'orario di Palomino? ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": []
+  },
+  {
+    "Input": "al sole",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": []
+  },
+  {
+    "Input": "quale email ha avuto una risposta",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": []
+  },
+  {
+    "Input": "Lui è spesso da solo",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": []
+  },
+  {
+    "Input": "ore di michigan",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": []
+  },
+  {
+    "Input": "Cambierò l'appuntamento delle 3pm alle 4.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "3pm",
+        "Type": "time"
+      },
+      {
+        "Text": "4",
+        "Type": "time"
+      }
+    ]
+  },
+  {
+    "Input": "Cambierò l'appuntamento delle 3pm alle 4,",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "3pm",
+        "Type": "time"
+      },
+      {
+        "Text": "4",
+        "Type": "time"
+      }
+    ]
+  },
+  {
+    "Input": "Cambierò l'appuntamento delle tre pm alle quattro",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "tre pm",
+        "Type": "time"
+      },
+      {
+        "Text": "quattro",
+        "Type": "time"
+      }
+    ]
+  },
+  {
+    "Input": "Cambierò l'appuntamento delle dieci am alle undici",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "dieci am",
+        "Type": "time"
+      },
+      {
+        "Text": "undici",
+        "Type": "time"
+      }
+    ]
+  },
+  {
+    "Input": "Cambierò l'appuntamento delle dieci am alle 4.,",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "dieci am",
+        "Type": "time"
+      },
+      {
+        "Text": "4",
+        "Type": "time"
+      }
+    ]
+  },
+  {
+    "Input": "Cambierò l'appuntamento delle dieci am alle undici!",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "dieci am",
+        "Type": "time"
+      },
+      {
+        "Text": "undici",
+        "Type": "time"
+      }
+    ]
+  },
+  {
+    "Input": "Cambierò l'appuntamento delle dieci am alle undici?",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "dieci am",
+        "Type": "time"
+      },
+      {
+        "Text": "undici",
+        "Type": "time"
+      }
+    ]
+  },
+  {
+    "Input": "Cambierò l'appuntamento delle dieci am alle 20!",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "dieci am",
+        "Type": "time"
+      },
+      {
+        "Text": "20",
+        "Type": "time"
+      }
+    ]
+  },
+  {
+    "Input": "Cambierò l'appuntamento delle dieci am alle venti!",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "dieci am",
+        "Type": "time"
+      },
+      {
+        "Text": "venti",
+        "Type": "time"
+      }
+    ]
+  },
+  {
+    "Input": "Cambierò l'appuntamento delle dieci am alle tredici!",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "dieci am",
+        "Type": "time"
+      },
+      {
+        "Text": "tredici",
+        "Type": "time"
+      }
+    ]
+  },
+  {
+    "Input": "Cambierò l'appuntamento delle dieci am alle 13!",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "dieci am",
+        "Type": "time"
+      },
+      {
+        "Text": "13",
+        "Type": "time"
+      }
+    ]
+  },
+  {
+    "Input": "Cambierò l'appuntamento delle dieci am alle 0!",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "dieci am",
+        "Type": "time"
+      },
+      {
+        "Text": "0",
+        "Type": "time"
+      }
+    ]
+  },
+  {
+    "Input": "Cambierò l'appuntamento delle dieci am alle 24!",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "dieci am",
+        "Type": "time"
+      },
+      {
+        "Text": "24",
+        "Type": "time"
+      }
+    ]
+  },
+  {
+    "Input": "Cambierò l'appuntamento delle dieci am alle zero.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "dieci am",
+        "Type": "time"
+      },
+      {
+        "Text": "zero",
+        "Type": "time"
+      }
+    ]
+  },
+  {
+    "Input": "Cambierò l'appuntamento delle dieci am alle ventiquattro.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "dieci am",
+        "Type": "time"
+      },
+      {
+        "Text": "ventiquattro",
+        "Type": "time"
+      }
+    ]
+  },
+  {
+    "Input": "Cambierò l'appuntamento delle dieci am alle 4, cosa ne pensi?",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "dieci am",
+        "Type": "time"
+      },
+      {
+        "Text": "4",
+        "Type": "time"
+      }
+    ]
+  },
+  {
+    "Input": "Cambierò l'appuntamento delle dieci am alle 4.3",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "dieci am",
+        "Type": "time"
+      }
+    ]
+  },
+  {
+    "Input": "Cambierò l'appuntamento delle dieci am alle ventisei",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "dieci am",
+        "Type": "time"
+      }
+    ]
+  },
+  {
+    "Input": "Cambierò l'appuntamento delle dieci am alle 4 o più tardi",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "dieci am",
+        "Type": "time"
+      }
+    ]
+  },
+  {
+    "Input": "Cambierò l'appuntamento delle dieci am alle 25",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "dieci am",
+        "Type": "time"
+      }
+    ]
+  },
+  {
+    "Input": "Cambierò l'appuntamento delle dieci am alle venticinque",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "dieci am",
+        "Type": "time"
+      },
+      {
+        "Text": "venticinque",
+        "Type": "time"
+      }
+    ]
+  },
+  {
+    "Input": "il prossimo incontro si terrà il 16 Marzo 2017, cosa ne dici di avere una discussione alle 2pm questo pomeriggio?",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "16 Marzo 2017",
+        "Type": "date"
+      },
+      {
+        "Text": "2pm questo pomeriggio",
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "1 Aprile 2018, possiamo pianificarlo alle 2pm questo pomeriggio",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "1 Aprile 2018",
+        "Type": "date"
+      },
+      {
+        "Text": "2pm questo pomeriggio",
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "L'intervallo è prima del 2012",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "prima del 2012",
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "L'intervallo è fino al 2012",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "fino al 2012",
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "L'intervallo è 2012 o dopo",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "2012 o dopo",
+        "Type": "daterange"
+      }
+    ]
+  }
 ]

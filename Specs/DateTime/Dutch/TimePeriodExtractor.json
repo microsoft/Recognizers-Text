@@ -4,51 +4,61 @@
     "Results": [
       {
         "Text": "van 5 tot 6PM",
-        "Type": "timerange"
+        "Type": "timerange",
+        "Start": 11,
+        "Length": 13
       }
     ],
     "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
-    "Input": "Ik ben weg 17:00 tot 18:00",
+    "Input": "Ik ben weg van 17:00 tot 18:00",
     "Results": [
       {
         "Text": "van 17:00 tot 18:00",
-        "Type": "timerange"
+        "Type": "timerange",
+        "Start": 11,
+        "Length": 19
       }
     ],
     "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
-    "Input": "Ik ben weg 17:00 tot 18:00 uur",
+    "Input": "Ik ben weg van 17:00 tot 18:00 uur",
     "Results": [
       {
         "Text": "van 17:00 tot 18:00 uur",
-        "Type": "timerange"
+        "Type": "timerange",
+        "Start": 11,
+        "Length": 23
       }
     ],
     "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
-    "Input": "Ik ben weg 5 tot 6 ʼs middags",
+    "Input": "Ik ben weg van 5 tot 6 ʼs middags",
     "Results": [
       {
         "Text": "van 5 tot 6 ʼs middags",
-        "Type": "timerange"
+        "Type": "timerange",
+        "Start": 11,
+        "Length": 22
       }
     ],
     "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
-    "Input": "Ik ben weg 5 tot zeven in de ochtend",
+    "Input": "Ik ben weg van 5 tot zeven in de ochtend",
     "Results": [
       {
         "Text": "van 5 tot zeven in de ochtend",
-        "Type": "timerange"
+        "Type": "timerange",
+        "Start": 11,
+        "Length": 29
       }
     ],
     "NotSupported": "dotNet",
@@ -59,7 +69,9 @@
     "Results": [
       {
         "Text": "van 5:00 tot 6:00PM",
-        "Type": "timerange"
+        "Type": "timerange",
+        "Start": 11,
+        "Length": 19
       }
     ],
     "NotSupported": "dotNet",
@@ -70,7 +82,9 @@
     "Results": [
       {
         "Text": "tussen 5 en 6PM",
-        "Type": "timerange"
+        "Type": "timerange",
+        "Start": 11,
+        "Length": 15
       }
     ],
     "NotSupported": "dotNet",
@@ -81,7 +95,9 @@
     "Results": [
       {
         "Text": "tussen 5PM en 6PM",
-        "Type": "timerange"
+        "Type": "timerange",
+        "Start": 11,
+        "Length": 17
       }
     ],
     "NotSupported": "dotNet",
@@ -92,7 +108,9 @@
     "Results": [
       {
         "Text": "tussen 5 en 6 ʼs middags",
-        "Type": "timerange"
+        "Type": "timerange",
+        "Start": 11,
+        "Length": 24
       }
     ],
     "NotSupported": "dotNet",
@@ -103,7 +121,9 @@
     "Results": [
       {
         "Text": "4pm tot 5pm",
-        "Type": "timerange"
+        "Type": "timerange",
+        "Start": 11,
+        "Length": 11
       }
     ],
     "NotSupported": "dotNet",
@@ -114,7 +134,9 @@
     "Results": [
       {
         "Text": "4-5pm",
-        "Type": "timerange"
+        "Type": "timerange",
+        "Start": 11,
+        "Length": 5
       }
     ],
     "NotSupported": "dotNet",
@@ -125,7 +147,9 @@
     "Results": [
       {
         "Text": "4:00 tot 5pm",
-        "Type": "timerange"
+        "Type": "timerange",
+        "Start": 11,
+        "Length": 12
       }
     ],
     "NotSupported": "dotNet",
@@ -136,7 +160,9 @@
     "Results": [
       {
         "Text": "4:00-5pm",
-        "Type": "timerange"
+        "Type": "timerange",
+        "Start": 11,
+        "Length": 8
       }
     ],
     "NotSupported": "dotNet",
@@ -147,7 +173,9 @@
     "Results": [
       {
         "Text": "van 4:00 tot 7 uur",
-        "Type": "timerange"
+        "Type": "timerange",
+        "Start": 11,
+        "Length": 18
       }
     ],
     "NotSupported": "dotNet",
@@ -158,7 +186,9 @@
     "Results": [
       {
         "Text": "van 3pm tot half acht",
-        "Type": "timerange"
+        "Type": "timerange",
+        "Start": 11,
+        "Length": 21
       }
     ],
     "NotSupported": "dotNet",
@@ -169,18 +199,22 @@
     "Results": [
       {
         "Text": "van 4pm-5pm",
-        "Type": "timerange"
+        "Type": "timerange",
+        "Start": 11,
+        "Length": 11
       }
     ],
     "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
-    "Input": "Ik ben weg 4pm – 5pm",
+    "Input": "Ik ben weg van 4pm - 5pm",
     "Results": [
       {
         "Text": "4pm - 5pm",
-        "Type": "timerange"
+        "Type": "timerange",
+        "Start": 15,
+        "Length": 9
       }
     ],
     "NotSupported": "dotNet",
@@ -191,7 +225,9 @@
     "Results": [
       {
         "Text": "16:00 – 17:00",
-        "Type": "timerange"
+        "Type": "timerange",
+        "Start": 11,
+        "Length": 13
       }
     ],
     "NotSupported": "dotNet",
@@ -202,7 +238,9 @@
     "Results": [
       {
         "Text": "van 16:00–17:00",
-        "Type": "timerange"
+        "Type": "timerange",
+        "Start": 11,
+        "Length": 15
       }
     ],
     "NotSupported": "dotNet",
@@ -213,7 +251,9 @@
     "Results": [
       {
         "Text": "van 16:00 – 17:00",
-        "Type": "timerange"
+        "Type": "timerange",
+        "Start": 11,
+        "Length": 17
       }
     ],
     "NotSupported": "dotNet",
@@ -224,7 +264,9 @@
     "Results": [
       {
         "Text": "16:00–17:00",
-        "Type": "timerange"
+        "Type": "timerange",
+        "Start": 11,
+        "Length": 11
       }
     ],
     "NotSupported": "dotNet",
@@ -235,18 +277,22 @@
     "Results": [
       {
         "Text": "20 minuten tot drie voor acht ʼs avonds",
-        "Type": "timerange"
+        "Type": "timerange",
+        "Start": 11,
+        "Length": 39
       }
     ],
     "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
-    "Input": "Ik ben weg van 4pm tot 5 pm",
+    "Input": "Ik ben weg van 4 pm tot 5 pm",
     "Results": [
       {
-        "Text": "van 4pm tot 5pm",
-        "Type": "timerange"
+        "Text": "van 4 pm tot 5 pm",
+        "Type": "timerange",
+        "Start": 11,
+        "Length": 17
       }
     ],
     "NotSupported": "dotNet",
@@ -257,18 +303,22 @@
     "Results": [
       {
         "Text": "van 4pm tot half zes",
-        "Type": "timerange"
+        "Type": "timerange",
+        "Start": 11,
+        "Length": 20
       }
     ],
     "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
-    "Input": "Ik ben weg van 16:00 tot 5 pm",
+    "Input": "Ik ben weg van 16:00 tot 17:00",
     "Results": [
       {
-        "Text": "van 16:00 tot 5pm",
-        "Type": "timerange"
+        "Text": "van 16:00 tot 17:00",
+        "Type": "timerange",
+        "Start": 11,
+        "Length": 19
       }
     ],
     "NotSupported": "dotNet",
@@ -279,7 +329,9 @@
     "Results": [
       {
         "Text": "van 16:00 tot half zes",
-        "Type": "timerange"
+        "Type": "timerange",
+        "Start": 11,
+        "Length": 22
       }
     ],
     "NotSupported": "dotNet",
@@ -290,7 +342,9 @@
     "Results": [
       {
         "Text": "van 3 uur in de ochtend tot 5pm",
-        "Type": "timerange"
+        "Type": "timerange",
+        "Start": 11,
+        "Length": 31
       }
     ],
     "NotSupported": "dotNet",
@@ -301,7 +355,9 @@
     "Results": [
       {
         "Text": "van 3 uur in de ochtend tot vijf uur in de middag",
-        "Type": "timerange"
+        "Type": "timerange",
+        "Start": 11,
+        "Length": 49
       }
     ],
     "NotSupported": "dotNet",
@@ -312,7 +368,9 @@
     "Results": [
       {
         "Text": "tussen 16:00 uur en half zes",
-        "Type": "timerange"
+        "Type": "timerange",
+        "Start": 11,
+        "Length": 28
       }
     ],
     "NotSupported": "dotNet",
@@ -323,7 +381,9 @@
     "Results": [
       {
         "Text": "tussen 3 uur in de ochtend en 17:00 uur",
-        "Type": "timerange"
+        "Type": "timerange",
+        "Start": 11,
+        "Length": 39
       }
     ],
     "NotSupported": "dotNet",
@@ -334,7 +394,9 @@
     "Results": [
       {
         "Text": "in de ochtend",
-        "Type": "timerange"
+        "Type": "timerange",
+        "Start": 9,
+        "Length": 13
       }
     ],
     "NotSupported": "dotNet",
@@ -345,7 +407,9 @@
     "Results": [
       {
         "Text": "in de middag",
-        "Type": "timerange"
+        "Type": "timerange",
+        "Start": 9,
+        "Length": 12
       }
     ],
     "NotSupported": "dotNet",
@@ -356,7 +420,9 @@
     "Results": [
       {
         "Text": "in de avond",
-        "Type": "timerange"
+        "Type": "timerange",
+        "Start": 9,
+        "Length": 11
       }
     ],
     "NotSupported": "dotNet",
@@ -367,7 +433,9 @@
     "Results": [
       {
         "Text": "ʼs avonds",
-        "Type": "timerange"
+        "Type": "timerange",
+        "Start": 9,
+        "Length": 9
       }
     ],
     "NotSupported": "dotNet",
@@ -378,7 +446,9 @@
     "Results": [
       {
         "Text": "in de nacht",
-        "Type": "timerange"
+        "Type": "timerange",
+        "Start": 9,
+        "Length": 11
       }
     ],
     "NotSupported": "dotNet",
@@ -389,7 +459,9 @@
     "Results": [
       {
         "Text": "ʼs nachts",
-        "Type": "timerange"
+        "Type": "timerange",
+        "Start": 9,
+        "Length": 9
       }
     ],
     "NotSupported": "dotNet",
@@ -400,7 +472,9 @@
     "Results": [
       {
         "Text": "in de avonden",
-        "Type": "timerange"
+        "Type": "timerange",
+        "Start": 9,
+        "Length": 13
       }
     ],
     "NotSupported": "dotNet",
@@ -411,7 +485,9 @@
     "Results": [
       {
         "Text": "in de vroege ochtenden",
-        "Type": "timerange"
+        "Type": "timerange",
+        "Start": 9,
+        "Length": 22
       }
     ],
     "NotSupported": "dotNet",
@@ -422,7 +498,9 @@
     "Results": [
       {
         "Text": "in de late ochtenden",
-        "Type": "timerange"
+        "Type": "timerange",
+        "Start": 9,
+        "Length": 20
       }
     ],
     "NotSupported": "dotNet",
@@ -433,7 +511,9 @@
     "Results": [
       {
         "Text": "vroeg in de ochtend",
-        "Type": "timerange"
+        "Type": "timerange",
+        "Start": 9,
+        "Length": 19
       }
     ],
     "NotSupported": "dotNet",
@@ -444,7 +524,9 @@
     "Results": [
       {
         "Text": "laat in de ochtend",
-        "Type": "timerange"
+        "Type": "timerange",
+        "Start": 9,
+        "Length": 18
       }
     ],
     "NotSupported": "dotNet",
@@ -455,7 +537,9 @@
     "Results": [
       {
         "Text": "vroeg in de middag",
-        "Type": "timerange"
+        "Type": "timerange",
+        "Start": 9,
+        "Length": 18
       }
     ],
     "NotSupported": "dotNet",
@@ -466,7 +550,9 @@
     "Results": [
       {
         "Text": "laat in de middag",
-        "Type": "timerange"
+        "Type": "timerange",
+        "Start": 9,
+        "Length": 17
       }
     ],
     "NotSupported": "dotNet",
@@ -477,7 +563,9 @@
     "Results": [
       {
         "Text": "vroeg in de avond",
-        "Type": "timerange"
+        "Type": "timerange",
+        "Start": 9,
+        "Length": 17
       }
     ],
     "NotSupported": "dotNet",
@@ -488,7 +576,9 @@
     "Results": [
       {
         "Text": "laat in de avond",
-        "Type": "timerange"
+        "Type": "timerange",
+        "Start": 9,
+        "Length": 16
       }
     ],
     "NotSupported": "dotNet",
@@ -499,7 +589,9 @@
     "Results": [
       {
         "Text": "vroeg in de nacht",
-        "Type": "timerange"
+        "Type": "timerange",
+        "Start": 9,
+        "Length": 17
       }
     ],
     "NotSupported": "dotNet",
@@ -510,7 +602,9 @@
     "Results": [
       {
         "Text": "ʼs nachts laat",
-        "Type": "timerange"
+        "Type": "timerange",
+        "Start": 9,
+        "Length": 14
       }
     ],
     "NotSupported": "dotNet",
@@ -521,7 +615,9 @@
     "Results": [
       {
         "Text": "ʼs nachts vroeg",
-        "Type": "timerange"
+        "Type": "timerange",
+        "Start": 9,
+        "Length": 15
       }
     ],
     "NotSupported": "dotNet",
@@ -532,7 +628,9 @@
     "Results": [
       {
         "Text": "van twee tot vijf ʼs middags",
-        "Type": "timerange"
+        "Type": "timerange",
+        "Start": 15,
+        "Length": 28
       }
     ],
     "NotSupported": "dotNet",
@@ -543,7 +641,9 @@
     "Results": [
       {
         "Text": "van 18:00 tot 23:00 uur",
-        "Type": "timerange"
+        "Type": "timerange",
+        "Start": 17,
+        "Length": 23
       }
     ],
     "NotSupported": "dotNet",
@@ -554,7 +654,9 @@
     "Results": [
       {
         "Text": "van 14:00 tot 16:30",
-        "Type": "timerange"
+        "Type": "timerange",
+        "Start": 15,
+        "Length": 19
       }
     ],
     "NotSupported": "dotNet",
@@ -565,7 +667,9 @@
     "Results": [
       {
         "Text": "van twee tot vijf in de middag",
-        "Type": "timerange"
+        "Type": "timerange",
+        "Start": 15,
+        "Length": 30
       }
     ],
     "NotSupported": "dotNet",
@@ -576,7 +680,9 @@
     "Results": [
       {
         "Text": "van 1 uur ʼs middags tot 4",
-        "Type": "timerange"
+        "Type": "timerange",
+        "Start": 15,
+        "Length": 26
       }
     ],
     "NotSupported": "dotNet",
@@ -587,7 +693,9 @@
     "Results": [
       {
         "Text": "van 1 uur in de middag tot 4",
-        "Type": "timerange"
+        "Type": "timerange",
+        "Start": 15,
+        "Length": 28
       }
     ],
     "NotSupported": "dotNet",
@@ -598,7 +706,9 @@
     "Results": [
       {
         "Text": "van 13:30 tot 4",
-        "Type": "timerange"
+        "Type": "timerange",
+        "Start": 15,
+        "Length": 15
       }
     ],
     "NotSupported": "dotNet",
@@ -609,7 +719,9 @@
     "Results": [
       {
         "Text": "van 13:30 uur tot 4",
-        "Type": "timerange"
+        "Type": "timerange",
+        "Start": 15,
+        "Length": 19
       }
     ],
     "NotSupported": "dotNet",
@@ -618,19 +730,16 @@
   {
     "Input": "afspraak maken 13:30 voor 4 personen",
     "Results": [],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "afspraak maken 13:30 uur voor 4 personen",
     "Results": [],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "afspraak maken om 13:30 uur voor 4 personen",
     "Results": [],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -639,7 +748,9 @@
     "Results": [
       {
         "Text": "in de middag",
-        "Type": "timerange"
+        "Type": "timerange",
+        "Start": 98,
+        "Length": 12
       }
     ],
     "NotSupportedByDesign": "javascript,python,java"
@@ -650,7 +761,9 @@
     "Results": [
       {
         "Text": "in de middag",
-        "Type": "timerange"
+        "Type": "timerange",
+        "Start": 112,
+        "Length": 12
       }
     ],
     "NotSupportedByDesign": "javascript,python,java"
@@ -660,7 +773,9 @@
     "Results": [
       {
         "Text": "van 1:30 tot 3:30",
-        "Type": "timerange"
+        "Type": "timerange",
+        "Start": 14,
+        "Length": 17
       }
     ],
     "NotSupported": "dotNet",
@@ -671,7 +786,9 @@
     "Results": [
       {
         "Text": "van 1:30 pm tot 3:30",
-        "Type": "timerange"
+        "Type": "timerange",
+        "Start": 14,
+        "Length": 20
       }
     ],
     "NotSupported": "dotNet",
@@ -682,7 +799,9 @@
     "Results": [
       {
         "Text": "van 1:30 pm tot 3:30 pm",
-        "Type": "timerange"
+        "Type": "timerange",
+        "Start": 14,
+        "Length": 23
       }
     ],
     "NotSupported": "dotNet",
@@ -692,8 +811,10 @@
     "Input": "maak afspraak van 1 tot 3:30",
     "Results": [
       {
-        "Text": "van 1 tot t3:30",
-        "Type": "timerange"
+        "Text": "van 1 tot 3:30",
+        "Type": "timerange",
+        "Start": 14,
+        "Length": 14
       }
     ],
     "NotSupported": "dotNet",
@@ -704,7 +825,9 @@
     "Results": [
       {
         "Text": "van 1:30 tot 3",
-        "Type": "timerange"
+        "Type": "timerange",
+        "Start": 14,
+        "Length": 14
       }
     ],
     "NotSupported": "dotNet",
@@ -717,7 +840,9 @@
     "Results": [
       {
         "Text": "tussen 10 en 11:30",
-        "Type": "timerange"
+        "Type": "timerange",
+        "Start": 14,
+        "Length": 18
       }
     ]
   },
@@ -728,7 +853,9 @@
     "Results": [
       {
         "Text": "tussen 10:10am en 12:50",
-        "Type": "timerange"
+        "Type": "timerange",
+        "Start": 14,
+        "Length": 23
       }
     ]
   },
@@ -739,7 +866,9 @@
     "Results": [
       {
         "Text": "tussen 10:10pm en 3",
-        "Type": "timerange"
+        "Type": "timerange",
+        "Start": 14,
+        "Length": 19
       }
     ]
   },
@@ -750,7 +879,9 @@
     "Results": [
       {
         "Text": "van 22:10 tot 10",
-        "Type": "timerange"
+        "Type": "timerange",
+        "Start": 14,
+        "Length": 16
       }
     ]
   },
@@ -761,7 +892,9 @@
     "Results": [
       {
         "Text": "van 10:30am tot 23",
-        "Type": "timerange"
+        "Type": "timerange",
+        "Start": 14,
+        "Length": 18
       }
     ]
   }

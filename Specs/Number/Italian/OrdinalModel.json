@@ -1,224 +1,198 @@
-[{
-  "Input": "tre trilionesimo",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "tre trilionesimo",
-      "TypeName": "ordinal",
-      "Resolution": {
-        "value": "3000000000000"
+[
+  {
+    "Input": "tre trilionesimo",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "tre trilionesimo",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "3000000000000"
+        }
       }
-    }
-  ]
-}
-,
-{
-  "Input": "trilionesimo",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-	{
-      "Text": "trilionesimo",
-      "TypeName": "ordinal",
-      "Resolution": {
-        "value": "1000000000000"
+    ]
+  },
+  {
+    "Input": "trilionesimo",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "trilionesimo",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "1000000000000"
+        }
       }
-    }
-  ]
-}
-,
-{
-  "Input": "cento trilioni",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "cento trilioni",
-      "TypeName": "ordinal",
-      "Resolution": {
-        "value": "100000000000000"
+    ]
+  },
+  {
+    "Input": "cento trilioni",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "cento trilioni",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "100000000000000"
+        }
       }
-    }
-  ]
-}
-,
-{
-  "Input": "11th",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "11th",
-      "TypeName": "ordinal",
-      "Resolution": {
-        "value": "11"
+    ]
+  },
+  {
+    "Input": "11th",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "11th",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "11"
+        }
       }
-    }
-  ]
-}
-,
-{
-  "Input": "21st",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "21st",
-      "TypeName": "ordinal",
-      "Resolution": {
-        "value": "21"
+    ]
+  },
+  {
+    "Input": "21st",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "21st",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "21"
+        }
       }
-    }
-  ]
-}
-,
-{
-  "Input": "30th",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "30th",
-      "TypeName": "ordinal",
-      "Resolution": {
-        "value": "30"
+    ]
+  },
+  {
+    "Input": "30th",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "30th",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "30"
+        }
       }
-    }
-  ]
-}
-,
-{
-  "Input": "2nd",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "2nd",
-      "TypeName": "ordinal",
-      "Resolution": {
-        "value": "2"
+    ]
+  },
+  {
+    "Input": "2nd",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "2nd",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "2"
+        }
       }
-    }
-  ]
-}
-,
-{
-  "Input": "undicesimo",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "undicesimo",
-      "TypeName": "ordinal",
-      "Resolution": {
-        "value": "11"
+    ]
+  },
+  {
+    "Input": "undicesimo",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "undicesimo",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "11"
+        }
       }
-    }
-  ]
-}
-,
-{
-  "Input": "ventesimo",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "ventesimo",
-      "TypeName": "ordinal",
-      "Resolution": {
-        "value": "20"
+    ]
+  },
+  {
+    "Input": "ventesimo",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "ventesimo",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "20"
+        }
       }
-    }
-  ]
-}
-,
-{
-  "Input": "venticinquesimo",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "venticinquesimo",
-      "TypeName": "ordinal",
-      "Resolution": {
-        "value": "25"
+    ]
+  },
+  {
+    "Input": "venticinquesimo",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "venticinquesimo",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "25"
+        }
       }
-    }
-  ]
-}
-,
-{
-  "Input": "ventunesimo",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "ventunesimo",
-      "TypeName": "ordinal",
-      "Resolution": {
-        "value": "21"
+    ]
+  },
+  {
+    "Input": "ventunesimo",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "ventunesimo",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "21"
+        }
       }
-    }
-  ]
-}
-,
-{
-  "Input": "centoventicinquensimo",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "centoventicinquensimo",
-      "TypeName": "ordinal",
-      "Resolution": {
-        "value": "125"
+    ]
+  },
+  {
+    "Input": "centoventicinquensimo",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "centoventicinquensimo",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "125"
+        }
       }
-    }
-  ]
-}
-,
-{
-  "Input": "trilionesimo",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "trilionesimo",
-      "TypeName": "ordinal",
-      "Resolution": {
-        "value": "1000000000000"
+    ]
+  },
+  {
+    "Input": "duecentesimo",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "duecentesimo",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "200"
+        }
       }
-    }
-  ]
-}
-,
-{
-  "Input": "duecentesimo",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "duecentesimo",
-      "TypeName": "ordinal",
-      "Resolution": {
-        "value": "200"
+    ]
+  },
+  {
+    "Input": "Prenota un posto in prima classe per Seattle",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "prima",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "1"
+        }
       }
-    }
-  ]
-},
-{
-  "Input": "Prenota un posto in prima classe per Seattle",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "prima",
-      "TypeName": "ordinal",
-      "Resolution": {
-        "value": "1"
-      }
-    }
-  ]
-}
+    ]
+  }
 ]

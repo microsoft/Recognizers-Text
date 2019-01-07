@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Chinese;
-using DateObject = System.DateTime;
 using Microsoft.Recognizers.Text.Number;
+using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
@@ -69,29 +69,32 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
             DateTimeDefinitions.DefaultLanguageFallback == Constants.DefaultLanguageFallback_DMY
                 ?
+
                 // 23-3-2015
                 new Regex(DateTimeDefinitions.DateRegexList7, RegexOptions.Singleline)
                 :
+
                 // 3-23-2017
                 new Regex(DateTimeDefinitions.DateRegexList6, RegexOptions.Singleline),
 
             DateTimeDefinitions.DefaultLanguageFallback == Constants.DefaultLanguageFallback_DMY
                 ?
+
                 // 3-23-2017
                 new Regex(DateTimeDefinitions.DateRegexList6, RegexOptions.Singleline)
                 :
+
                 // 23-3-2015
                 new Regex(DateTimeDefinitions.DateRegexList7, RegexOptions.Singleline),
 
             // 2015-12-23
-            new Regex(DateTimeDefinitions.DateRegexList8, RegexOptions.Singleline)
+            new Regex(DateTimeDefinitions.DateRegexList8, RegexOptions.Singleline),
         };
-
 
         public static readonly Regex[] ImplicitDateList =
         {
             LunarRegex, SpecialDayRegex, ThisRegex, LastRegex, NextRegex,
-            WeekDayRegex, WeekDayOfMonthRegex, SpecialDate
+            WeekDayRegex, WeekDayOfMonthRegex, SpecialDate,
         };
 
         public static readonly Regex BeforeRegex = new Regex(DateTimeDefinitions.BeforeRegex, RegexOptions.Singleline);
@@ -138,6 +141,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     ret.Add(new Token(match.Index, match.Index + match.Length));
                 }
             }
+
             return ret;
         }
 
@@ -153,6 +157,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     ret.Add(new Token(match.Index, match.Index + match.Length));
                 }
             }
+
             return ret;
         }
 
@@ -177,13 +182,14 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     var beforeMatch = BeforeRegex.Match(suffix);
                     var afterMatch = AfterRegex.Match(suffix);
 
-                    if ((beforeMatch.Success && suffix.StartsWith(beforeMatch.Value))|| (afterMatch.Success && suffix.StartsWith(afterMatch.Value)))
+                    if ((beforeMatch.Success && suffix.StartsWith(beforeMatch.Value)) || (afterMatch.Success && suffix.StartsWith(afterMatch.Value)))
                     {
                         var metadata = new Metadata() { IsDurationWithBeforeAndAfter = true };
                         ret.Add(new Token(er.Start ?? 0, (er.Start + er.Length ?? 0) + 1, metadata));
                     }
                 }
             }
+
             return ret;
         }
     }

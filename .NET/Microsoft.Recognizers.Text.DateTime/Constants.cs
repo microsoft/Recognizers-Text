@@ -103,6 +103,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const int WeekDayCount = 7;
         public const int CenturyYearsCount = 100;
         public const int MaxWeekOfMonth = 5;
+        public const int MaxMonth = 12;
+        public const int MinMonth = 1;
 
         // hours of one half day
         public const int HalfDayHourCount = 12;

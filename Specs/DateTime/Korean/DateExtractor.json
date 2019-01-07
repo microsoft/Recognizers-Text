@@ -1,1361 +1,1160 @@
-[{
-  "Input": "15일에 돌아갈게요",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "15",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "4월 22일에 돌아갈게요",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "2월 22일",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "1월-1일에 돌아갈게요",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "1월-1일",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "1월/1일에 돌아갈게요",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "1월/1일",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "10월.2일에 돌아갈게요",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "10월.2일",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "1월 12일, 2016에 돌아갈게요",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "1월 12일, 2016",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "2016년 1월 12일에 돌아갈게요",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "2016년 1월 12일",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "1월 12일 월요일, 2016에 돌아갈게요",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "1월 12일 월요일, 2016",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "02/22/2016에 돌아갈게요",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "02/22/2016",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "21/04/2016에 돌아갈게요",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "21/04/2016",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "21/04/16에 돌아갈게요",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "21/04/16",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "9-18-15에 돌아갈게요",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "9-18-15",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "4.22에 돌아갈게요",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "4.22",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "4-22에 돌아가요",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "4-22",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "4.22에 돌아갈게요",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "4.22",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "4-22에 돌아갈게요",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "4-22",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "4/22 에 돌아갈게요",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "4/22",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "22/04에 돌아갈게요",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "22/04",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "4/22에 돌아갈게요",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "4/22",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "22/04에 돌아갈게요",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "22/04",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "2015/08/12에 돌아갈게요",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "2015/08/12",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "11/12,2016에 돌아갈게요",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "11/12,2016",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "11/12,16에 돌아갈게요",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "11/12,16",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "1월 1일에 돌아갈게요",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "1월 1일",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "1월-1일에 돌아갈게요",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "1월-1일",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "11월-28일에 돌아갈게요",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "11월-28일",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "1월 22일 수요일에 돌아갈게요",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "1월 22일 수요일",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "7월 첫째 주 금요일에 돌아갈게요",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "7월 첫째 주 금요일",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "이번 달 첫 번째 금요일에 돌아갈게요",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "이번 달 첫 번째 금요일",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "2주 후에 돌아갈게요",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "2주 후",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "다음 주 금요일에 돌아갈게요",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "다음 주 금요일",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "다음 금요일에 돌아갈게요",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "다음 금요일",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "지난 월요일",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "지난 월요일",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "화요일에 돌아갈게요.",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "화요일",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "좋은 소식. 화요일에 돌아갈게요.",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "화요일",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "화요일에 돌아갈게요",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "화요일",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "금요일에 돌아갈게요",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "금요일",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "금요일에 돌아갈게요",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "금요일",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "오늘 돌아갈게요",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "오늘",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "내일 돌아갈게요",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "내일",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "어제로 돌아갈거야",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "어제",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "그제로 돌아갈거야",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "그제",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "모레 돌아올게요",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "모레",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "그 다음날 돌아올거야",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "그 다음날",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "다음날 돌아올거야",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "다음날",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "이번 금요일에 돌아올거야",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "이번 금요일",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "다음주 일요일에 돌아올거야",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "다음주 일요일",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "지난 주 일요일로 돌아갈거야",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "지난 주 일요일",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "전날로 돌아갈거야",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "전날",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "그 전날로 돌아갈거야",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "그 전날",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "그 날로 돌아갈거야",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "그 날",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "이번 금요일에 돌아올거야",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "이번 금요일",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "다음 주 일요일에 돌아올거야",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "다음주 일요일",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "지난 주 일요일로 돌아갈거야",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "지난 주 일요일",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "2016년 6월 15에 돌아올거야",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "2016년 6월 15",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "5월 11에 야구",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "5월 11",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "5월 4일에 돌아갈게요",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "5월 4일",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "3월 4일에 돌아갈게요",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "3월 4일",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "새해 첫 날에 돌아갈게요",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "새해 첫 날",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "5월 21일에 돌아갈게요",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "5월 21일",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "5월 21에 돌아갈게요",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "5월 21",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "8월 2일에 돌아갈게요",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "8월 2일",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "6월 22일에 돌아갈게요",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "6월 22일에 돌아갈게요",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "두달 전에 돌아왔어요",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "두달 전",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "이틀 후에 돌아갈게요",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "이틀 후",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "한달 전에 누구한테 메일 보냈지",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "한달 전",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "27일에 돌아왔다.",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "27일에",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "27일에 돌아왔다!",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "27일에",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "27일에 돌아왔다 .",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "27일에",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "27일에 돌아옴!",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "27일에",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "27일에 돌아옴 .",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "27일에",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "21일에 돌아왔다",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "21일에",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "22일에 돌아왔다",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "22일에",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "이일에 돌아왔다",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "이일",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "이십이일에 돌아옴",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "이십이일",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "삼십일일에 돌아왔다",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "삼십일일",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "27일에 돌아왔다",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "27일에",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "21일에 돌아왔다",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "21일에",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "22일에 돌아왔다",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "22일에",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "2일에 돌아왔어!",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "2일에",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "22일에 돌아왔어?",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "22일에",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "1등상",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": []
-}
-,
-{
-  "Input": "27층으로 갈거야",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": []
-}
-,
-{
-  "Input": "싱가포르와 중국의 외교 관계 수립 25 주년 기념 행사",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": []
-}
-,
-{
-  "Input": "17번째 방탈출 체험 티켓 구하기",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": []
-}
-,
-{
-  "Input": "둘째 토요일에 뭐하지",
-  "Context": {
-    "ReferenceDateTime": "2017-09-01T00:00:00"
+[
+  {
+    "Input": "15일에 돌아갈게요",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "15",
+        "Type": "date"
+      }
+    ]
   },
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "둘째 토요일",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "27일 수요일 조 스미스와 미팅",
-  "Context": {
-    "ReferenceDateTime": "2017-09-01T00:00:00"
+  {
+    "Input": "4월 22일에 돌아갈게요",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "2월 22일",
+        "Type": "date"
+      }
+    ]
   },
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "27일 수요일",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "21일 목요일에 돌아갈게요",
-  "Context": {
-    "ReferenceDateTime": "2017-09-01T00:00:00"
+  {
+    "Input": "1월-1일에 돌아갈게요",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "1월-1일",
+        "Type": "date"
+      }
+    ]
   },
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "21일 목요일",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "22일 금요일에 돌아갈게요",
-  "Context": {
-    "ReferenceDateTime": "2017-09-01T00:00:00"
+  {
+    "Input": "1월/1일에 돌아갈게요",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "1월/1일",
+        "Type": "date"
+      }
+    ]
   },
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "22일 금요일",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "23일 토요일에 돌아갈게요",
-  "Context": {
-    "ReferenceDateTime": "2017-09-01T00:00:00"
+  {
+    "Input": "10월.2일에 돌아갈게요",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "10월.2일",
+        "Type": "date"
+      }
+    ]
   },
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "23일 토요일",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "15일 금요일에 돌아갈게요",
-  "Context": {
-    "ReferenceDateTime": "2017-09-01T00:00:00"
+  {
+    "Input": "1월 12일, 2016에 돌아갈게요",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "1월 12일, 2016",
+        "Type": "date"
+      }
+    ]
   },
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "15일 금요일",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "이십일일 목요일에 돌아갈게요",
-  "Context": {
-    "ReferenceDateTime": "2017-09-01T00:00:00"
+  {
+    "Input": "2016년 1월 12일에 돌아갈게요",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "2016년 1월 12일",
+        "Type": "date"
+      }
+    ]
   },
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "이십일일 목요일",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "이십이일 금요일에 돌아갈게요",
-  "Context": {
-    "ReferenceDateTime": "2017-09-01T00:00:00"
+  {
+    "Input": "1월 12일 월요일, 2016에 돌아갈게요",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "1월 12일 월요일, 2016",
+        "Type": "date"
+      }
+    ]
   },
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "이십이일 금요일",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "십오일 금요일에 돌아갈게요",
-  "Context": {
-    "ReferenceDateTime": "2017-09-01T00:00:00"
+  {
+    "Input": "02/22/2016에 돌아갈게요",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "02/22/2016",
+        "Type": "date"
+      }
+    ]
   },
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "십오일 금요일",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "칠일 목요일에 돌아갈게요",
-  "Context": {
-    "ReferenceDateTime": "2017-09-01T00:00:00"
+  {
+    "Input": "21/04/2016에 돌아갈게요",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "21/04/2016",
+        "Type": "date"
+      }
+    ]
   },
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "칠일 목요일",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "두번째 일요일에 돌아갈게요",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "두번째 일요일",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "첫번째 일요일에 돌아갈게요",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "첫번째 일요일",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "세번째 화요일에 돌아갈게요",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "세번째 화요일",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "다섯 번째 일요일에 돌아갈게요",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "다섯 번째 일요일",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "여섯 번째 일요일에 돌아갈게요",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "여섯 번째 일요일",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "열번 째 월요일에 돌아갈게요",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "열번 째 월요일",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "다음 달 20일에 돌아갈게요",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "다음 달 20일",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "이번 달 31일에 돌아갈게요",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "이번 달 31일",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Cortana는 이번 주 금요일이나 다음 주 화요일에 Skype통화를 하려고 합니다.",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "이번 주 금요일",
-      "Type": "date"
-    }
-    ,
-    {
-      "Text": "다음 주 화요일",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Cortana는 이번 주 금요일이나 이번 주 토요일에 Skype통화를 하려고 합니다.",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "이번 주 금요일",
-      "Type": "date"
-    }
-    ,
-    {
-      "Text": "이번 주 토요일",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "16. 11월. 2016",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "16. 11월. 2016",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "우리는 한달 21일 전에 회의가 있었다.",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "한달 21일 전",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "나는 2년 1개월 21일 전에 이곳을 떠났다",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "2년 1개월 21일 전",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "나는 2년 21일 후에 이곳을 떠날 것이다",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "2년 21일 후",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "나는 1개월 2년 21일 전에 이 곳을 떠났다.",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "1개월 2년 21일 전",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "나는 다음 달 20일에 여기를 떠났다.",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "다음 달 20일",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "나는 5 12월 1391에 이곳을 떠났다.",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "5 12월 1391",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "월요일, 1월 22일, 2018",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "월요일, 1월 22일, 2018",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "일요일 1월 이십일일 이천팔년에",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "일요일 1월 이십일일 이천팔년",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "9월 21일 1978에",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "9월 21일 1978",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "9월 10일, 1901에",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "9월 10일, 1901",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "구월 십일, 2000에",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "구월 십일, 2000",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "13.5.2015에 한가해?",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "13.5.2015",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "2015.5.13에 시간 괜찮아?",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "2015.5.13",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "앞으로 2주 동안 일요일에 시간 괜찮아?",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "앞으로 2주 동안 일요일에",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "2주 동안 월요일에 시간 괜찮아?",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
-  "Results": [
-    {
-      "Text": "2주 동안 월요일",
-      "Type": "date"
-    }
-  ]
-}
+  {
+    "Input": "21/04/16에 돌아갈게요",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "21/04/16",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "9-18-15에 돌아갈게요",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "9-18-15",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "4.22에 돌아갈게요",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "4.22",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "4-22에 돌아가요",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "4-22",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "4-22에 돌아갈게요",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "4-22",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "4/22 에 돌아갈게요",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "4/22",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "22/04에 돌아갈게요",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "22/04",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "4/22에 돌아갈게요",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "4/22",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "2015/08/12에 돌아갈게요",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "2015/08/12",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "11/12,2016에 돌아갈게요",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "11/12,2016",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "11/12,16에 돌아갈게요",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "11/12,16",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "1월 1일에 돌아갈게요",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "1월 1일",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "11월-28일에 돌아갈게요",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "11월-28일",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "1월 22일 수요일에 돌아갈게요",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "1월 22일 수요일",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "7월 첫째 주 금요일에 돌아갈게요",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "7월 첫째 주 금요일",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "이번 달 첫 번째 금요일에 돌아갈게요",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "이번 달 첫 번째 금요일",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "2주 후에 돌아갈게요",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "2주 후",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "다음 주 금요일에 돌아갈게요",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "다음 주 금요일",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "다음 금요일에 돌아갈게요",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "다음 금요일",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "지난 월요일",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "지난 월요일",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "화요일에 돌아갈게요.",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "화요일",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "좋은 소식. 화요일에 돌아갈게요.",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "화요일",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "화요일에 돌아갈게요",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "화요일",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "금요일에 돌아갈게요",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "금요일",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "오늘 돌아갈게요",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "오늘",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "내일 돌아갈게요",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "내일",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "어제로 돌아갈거야",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "어제",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "그제로 돌아갈거야",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "그제",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "모레 돌아올게요",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "모레",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "그 다음날 돌아올거야",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "그 다음날",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "다음날 돌아올거야",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "다음날",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "이번 금요일에 돌아올거야",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "이번 금요일",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "다음주 일요일에 돌아올거야",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "다음주 일요일",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "지난 주 일요일로 돌아갈거야",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "지난 주 일요일",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "전날로 돌아갈거야",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "전날",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "그 전날로 돌아갈거야",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "그 전날",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "그 날로 돌아갈거야",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "그 날",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "다음 주 일요일에 돌아올거야",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "다음주 일요일",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "2016년 6월 15에 돌아올거야",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "2016년 6월 15",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "5월 11에 야구",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "5월 11",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "5월 4일에 돌아갈게요",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "5월 4일",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "3월 4일에 돌아갈게요",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "3월 4일",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "새해 첫 날에 돌아갈게요",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "새해 첫 날",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "5월 21일에 돌아갈게요",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "5월 21일",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "5월 21에 돌아갈게요",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "5월 21",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "8월 2일에 돌아갈게요",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "8월 2일",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "6월 22일에 돌아갈게요",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "6월 22일에 돌아갈게요",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "두달 전에 돌아왔어요",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "두달 전",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "이틀 후에 돌아갈게요",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "이틀 후",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "한달 전에 누구한테 메일 보냈지",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "한달 전",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "27일에 돌아왔다.",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "27일에",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "27일에 돌아왔다!",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "27일에",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "27일에 돌아왔다 .",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "27일에",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "27일에 돌아옴!",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "27일에",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "27일에 돌아옴 .",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "27일에",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "21일에 돌아왔다",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "21일에",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "22일에 돌아왔다",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "22일에",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "이일에 돌아왔다",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "이일",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "이십이일에 돌아옴",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "이십이일",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "삼십일일에 돌아왔다",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "삼십일일",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "27일에 돌아왔다",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "27일에",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "2일에 돌아왔어!",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "2일에",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "22일에 돌아왔어?",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "22일에",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "1등상",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": []
+  },
+  {
+    "Input": "27층으로 갈거야",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": []
+  },
+  {
+    "Input": "싱가포르와 중국의 외교 관계 수립 25 주년 기념 행사",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": []
+  },
+  {
+    "Input": "17번째 방탈출 체험 티켓 구하기",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": []
+  },
+  {
+    "Input": "둘째 토요일에 뭐하지",
+    "Context": {
+      "ReferenceDateTime": "2017-09-01T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "둘째 토요일",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "27일 수요일 조 스미스와 미팅",
+    "Context": {
+      "ReferenceDateTime": "2017-09-01T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "27일 수요일",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "21일 목요일에 돌아갈게요",
+    "Context": {
+      "ReferenceDateTime": "2017-09-01T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "21일 목요일",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "22일 금요일에 돌아갈게요",
+    "Context": {
+      "ReferenceDateTime": "2017-09-01T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "22일 금요일",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "23일 토요일에 돌아갈게요",
+    "Context": {
+      "ReferenceDateTime": "2017-09-01T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "23일 토요일",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "15일 금요일에 돌아갈게요",
+    "Context": {
+      "ReferenceDateTime": "2017-09-01T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "15일 금요일",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "이십일일 목요일에 돌아갈게요",
+    "Context": {
+      "ReferenceDateTime": "2017-09-01T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "이십일일 목요일",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "이십이일 금요일에 돌아갈게요",
+    "Context": {
+      "ReferenceDateTime": "2017-09-01T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "이십이일 금요일",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "십오일 금요일에 돌아갈게요",
+    "Context": {
+      "ReferenceDateTime": "2017-09-01T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "십오일 금요일",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "칠일 목요일에 돌아갈게요",
+    "Context": {
+      "ReferenceDateTime": "2017-09-01T00:00:00"
+    },
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "칠일 목요일",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "두번째 일요일에 돌아갈게요",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "두번째 일요일",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "첫번째 일요일에 돌아갈게요",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "첫번째 일요일",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "세번째 화요일에 돌아갈게요",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "세번째 화요일",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "다섯 번째 일요일에 돌아갈게요",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "다섯 번째 일요일",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "여섯 번째 일요일에 돌아갈게요",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "여섯 번째 일요일",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "열번 째 월요일에 돌아갈게요",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "열번 째 월요일",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "다음 달 20일에 돌아갈게요",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "다음 달 20일",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "이번 달 31일에 돌아갈게요",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "이번 달 31일",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "Cortana는 이번 주 금요일이나 다음 주 화요일에 Skype통화를 하려고 합니다.",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "이번 주 금요일",
+        "Type": "date"
+      },
+      {
+        "Text": "다음 주 화요일",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "Cortana는 이번 주 금요일이나 이번 주 토요일에 Skype통화를 하려고 합니다.",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "이번 주 금요일",
+        "Type": "date"
+      },
+      {
+        "Text": "이번 주 토요일",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "16. 11월. 2016",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "16. 11월. 2016",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "우리는 한달 21일 전에 회의가 있었다.",
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "한달 21일 전",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "나는 2년 1개월 21일 전에 이곳을 떠났다",
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "2년 1개월 21일 전",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "나는 2년 21일 후에 이곳을 떠날 것이다",
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "2년 21일 후",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "나는 1개월 2년 21일 전에 이 곳을 떠났다.",
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "1개월 2년 21일 전",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "나는 다음 달 20일에 여기를 떠났다.",
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "다음 달 20일",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "나는 5 12월 1391에 이곳을 떠났다.",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "5 12월 1391",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "월요일, 1월 22일, 2018",
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "월요일, 1월 22일, 2018",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "일요일 1월 이십일일 이천팔년에",
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "일요일 1월 이십일일 이천팔년",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "9월 21일 1978에",
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "9월 21일 1978",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "9월 10일, 1901에",
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "9월 10일, 1901",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "구월 십일, 2000에",
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "구월 십일, 2000",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "13.5.2015에 한가해?",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "13.5.2015",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "2015.5.13에 시간 괜찮아?",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "2015.5.13",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "앞으로 2주 동안 일요일에 시간 괜찮아?",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "앞으로 2주 동안 일요일에",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "2주 동안 월요일에 시간 괜찮아?",
+    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "Results": [
+      {
+        "Text": "2주 동안 월요일",
+        "Type": "date"
+      }
+    ]
+  }
 ]

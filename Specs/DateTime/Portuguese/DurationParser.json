@@ -168,54 +168,6 @@
     ]
   },
   {
-    "Input": "Me vou por 3 dias",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "javascript, python",
-    "Results": [
-      {
-        "Text": "3 dias",
-        "Type": "duration",
-        "Value": {
-          "Timex": "P3D",
-          "FutureResolution": {
-            "duration": "259200"
-          },
-          "PastResolution": {
-            "duration": "259200"
-          }
-        },
-        "Start": 11,
-        "Length": 6
-      }
-    ]
-  },
-  {
-    "Input": "Me vou por 3 dias",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "javascript, python",
-    "Results": [
-      {
-        "Text": "3 dias",
-        "Type": "duration",
-        "Value": {
-          "Timex": "P3D",
-          "FutureResolution": {
-            "duration": "259200"
-          },
-          "PastResolution": {
-            "duration": "259200"
-          }
-        },
-        "Start": 11,
-        "Length": 6
-      }
-    ]
-  },
-  {
     "Input": "Me vou por 3 meses",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"

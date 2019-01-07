@@ -5389,7 +5389,7 @@
             }
           ]
         }
-      } 
+      }
     ]
   },
   {
@@ -6726,31 +6726,6 @@
     ]
   },
   {
-    "Input": "You can only leave on 1/1/2016 and later",
-    "Context": {
-      "ReferenceDateTime": "2018-08-31T12:00:00"
-    },
-    "NotSupported": "javascript, python",
-    "Results": [
-      {
-        "Text": "1/1/2016 and later",
-        "Start": 22,
-        "End": 39,
-        "TypeName": "datetimeV2.daterange",
-        "Resolution": {
-          "values": [
-            {
-              "timex": "2016-01-01",
-              "Mod": "since",
-              "type": "daterange",
-              "start": "2016-01-01"
-            }
-          ]
-        }
-      }
-    ]
-  },
-  {
     "Input": "You can only leave on 1/1/2016 and after",
     "Context": {
       "ReferenceDateTime": "2018-08-31T12:00:00"
@@ -7407,7 +7382,6 @@
       "ReferenceDateTime": "2018-10-16T12:00:00"
     },
     "Results": []
-    
   },
   {
     "Input": "from 10/1 to 11/7",
@@ -7420,7 +7394,7 @@
         "Start": 0,
         "End": 16,
         "TypeName": "datetimeV2.daterange",
-        "Resolution":{
+        "Resolution": {
           "values": [
             {
               "timex": "(XXXX-10-01,XXXX-11-07,P37D)",
@@ -7444,7 +7418,7 @@
         "Start": 0,
         "End": 18,
         "TypeName": "datetimeV2.daterange",
-        "Resolution":{
+        "Resolution": {
           "values": [
             {
               "timex": "(XXXX-10-25,XXXX-01-25,P92D)",
@@ -7532,31 +7506,6 @@
               "type": "daterange",
               "start": "2018-10-01",
               "end": "2018-10-07"
-            }
-          ]
-        }
-      }
-    ]
-  },
-  {
-    "Input": "I will have a long vacation between 10/1-11/7",
-    "Context": {
-      "ReferenceDateTime": "2018-10-24T12:00:00"
-    },
-    "NotSupportedByDesign": "javascript, python",
-    "Results": [
-      {
-        "Text": "between 10/1-11/7",
-        "Start": 28,
-        "End": 44,
-        "TypeName": "datetimeV2.daterange",
-        "Resolution": {
-          "values": [
-            {
-              "timex": "(XXXX-10-01,XXXX-11-07,P37D)",
-              "type": "daterange",
-              "start": "2018-10-01",
-              "end": "2018-11-07"
             }
           ]
         }
@@ -7681,31 +7630,6 @@
               "timex": "(2015-11-18,2015-12-19,P31D)",
               "type": "daterange",
               "start": "2015-11-18",
-              "end": "2015-12-19"
-            }
-          ]
-        }
-      }
-    ]
-  },
-  {
-    "Input": "APEC will happen in Korea Nov 18 2014-Dec 19 2015",
-    "Context": {
-      "ReferenceDateTime": "2018-10-24T12:00:00"
-    },
-    "NotSupportedByDesign": "javascript, python",
-    "Results": [
-      {
-        "Text": "nov 18 2014-dec 19 2015",
-        "Start": 26,
-        "End": 48,
-        "TypeName": "datetimeV2.daterange",
-        "Resolution": {
-          "values": [
-            {
-              "timex": "(2014-11-18,2015-12-19,P396D)",
-              "type": "daterange",
-              "start": "2014-11-18",
               "end": "2015-12-19"
             }
           ]
@@ -7973,31 +7897,6 @@
               "type": "datetimerange",
               "start": "2018-11-05 10:00:00",
               "end": "2018-11-05 12:00:00"
-            }
-          ]
-        }
-      }
-    ]
-  },
-  {
-    "Input": "Where were you yesterday afternoon from 3-8pm",
-    "Context": {
-      "ReferenceDateTime": "2018-11-01T12:00:00"
-    },
-    "NotSupportedByDesign": "javascript, python",
-    "Results": [
-      {
-        "Text": "yesterday afternoon from 3-8pm",
-        "Start": 15,
-        "End": 44,
-        "TypeName": "datetimeV2.datetimerange",
-        "Resolution": {
-          "values": [
-            {
-              "timex": "(2018-10-31T15,2018-10-31T20,PT5H)",
-              "type": "datetimerange",
-              "start": "2018-10-31 15:00:00",
-              "end": "2018-10-31 20:00:00"
             }
           ]
         }
@@ -8746,7 +8645,7 @@
             {
               "timex": "2018-11-21T23:59:59",
               "type": "datetime",
-              "value": "2018-11-21 23:59:59"  
+              "value": "2018-11-21 23:59:59"
             }
           ]
         }
@@ -8769,7 +8668,7 @@
             {
               "timex": "2018-11-21T23:59:59",
               "type": "datetime",
-              "value": "2018-11-21 23:59:59"  
+              "value": "2018-11-21 23:59:59"
             }
           ]
         }
@@ -8792,7 +8691,7 @@
             {
               "timex": "2018-11-21T23:59:59",
               "type": "datetime",
-              "value": "2018-11-21 23:59:59"  
+              "value": "2018-11-21 23:59:59"
             }
           ]
         }
@@ -8817,7 +8716,7 @@
               "Mod": "end",
               "type": "daterange",
               "start": "2018-07-01",
-              "end": "2019-01-01"  
+              "end": "2019-01-01"
             }
           ]
         }
@@ -8891,7 +8790,7 @@
               "Mod": "end",
               "type": "daterange",
               "start": "2018-07-01",
-              "end": "2019-01-01"  
+              "end": "2019-01-01"
             }
           ]
         }
@@ -8916,7 +8815,7 @@
               "Mod": "end",
               "type": "daterange",
               "start": "2018-11-16",
-              "end": "2018-12-01"  
+              "end": "2018-12-01"
             }
           ]
         }
@@ -8941,7 +8840,7 @@
               "Mod": "end",
               "type": "daterange",
               "start": "2018-11-29",
-              "end": "2018-12-03"  
+              "end": "2018-12-03"
             }
           ]
         }
@@ -9274,7 +9173,7 @@
     "Context": {
       "ReferenceDateTime": "2018-11-30T12:00:00"
     },
-    "Results":[
+    "Results": [
       {
         "Text": "later this week",
         "Start": 23,
@@ -9298,7 +9197,7 @@
     "Context": {
       "ReferenceDateTime": "2018-11-30T12:00:00"
     },
-    "Results":[
+    "Results": [
       {
         "Text": "3 p . m .",
         "Start": 22,

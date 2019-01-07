@@ -61,15 +61,15 @@ public class EnglishDateParserConfiguration extends BaseOptionsConfiguration imp
         cardinalMap = config.getCardinalMap();
         utilityConfiguration = config.getUtilityConfiguration();
 
+        relativeDayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RelativeDayRegex);
+        nextPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.NextPrefixRegex);
+        pastPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PastPrefixRegex);
         sameDayTerms = Collections.unmodifiableList(EnglishDateTime.SameDayTerms);
         plusOneDayTerms = Collections.unmodifiableList(EnglishDateTime.PlusOneDayTerms);
         plusTwoDayTerms = Collections.unmodifiableList(EnglishDateTime.PlusTwoDayTerms);
         minusOneDayTerms = Collections.unmodifiableList(EnglishDateTime.MinusOneDayTerms);
         minusTwoDayTerms = Collections.unmodifiableList(EnglishDateTime.MinusTwoDayTerms);
 
-        relativeDayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RelativeDayRegex, Pattern.CASE_INSENSITIVE);
-        nextPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.NextPrefixRegex, Pattern.CASE_INSENSITIVE);
-        pastPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PastPrefixRegex, Pattern.CASE_INSENSITIVE);
     }
 
     private final String dateTokenPrefix;

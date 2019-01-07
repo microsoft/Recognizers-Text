@@ -33,26 +33,26 @@ import org.javatuples.Pair;
 
 public class EnglishMergedExtractorConfiguration extends BaseOptionsConfiguration implements IMergedExtractorConfiguration {
 
-    public static final Pattern AfterRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.AfterRegex, Pattern.CASE_INSENSITIVE);
-    public static final Pattern SinceRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SinceRegex, Pattern.CASE_INSENSITIVE);
-    public static final Pattern AroundRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.AroundRegex, Pattern.CASE_INSENSITIVE);
-    public static final Pattern BeforeRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.BeforeRegex, Pattern.CASE_INSENSITIVE);
-    public static final Pattern FromToRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.FromToRegex, Pattern.CASE_INSENSITIVE);
-    public static final Pattern DateAfterRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.DateAfterRegex, Pattern.CASE_INSENSITIVE);
-    public static final Pattern NumberEndingPattern = RegExpUtility.getSafeRegExp(EnglishDateTime.NumberEndingPattern, Pattern.CASE_INSENSITIVE);
-    public static final Pattern PrepositionSuffixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PrepositionSuffixRegex, Pattern.CASE_INSENSITIVE);
-    public static final Pattern SingleAmbiguousMonthRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SingleAmbiguousMonthRegex, Pattern.CASE_INSENSITIVE);
-    public static final Pattern UnspecificDatePeriodRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.UnspecificDatePeriodRegex, Pattern.CASE_INSENSITIVE);
+    public static final Pattern AfterRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.AfterRegex);
+    public static final Pattern SinceRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SinceRegex);
+    public static final Pattern AroundRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.AroundRegex);
+    public static final Pattern BeforeRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.BeforeRegex);
+    public static final Pattern FromToRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.FromToRegex);
+    public static final Pattern DateAfterRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.DateAfterRegex);
+    public static final Pattern NumberEndingPattern = RegExpUtility.getSafeRegExp(EnglishDateTime.NumberEndingPattern);
+    public static final Pattern PrepositionSuffixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PrepositionSuffixRegex);
+    public static final Pattern SingleAmbiguousMonthRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SingleAmbiguousMonthRegex);
+    public static final Pattern UnspecificDatePeriodRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.UnspecificDatePeriodRegex);
     private final Iterable<Pair<Pattern, Pattern>> ambiguityFiltersDict;
 
     public static final StringMatcher SuperfluousWordMatcher = new StringMatcher();
     private static final Iterable<Pattern> filterWordRegexList = new ArrayList<Pattern>() {
         {
             // one on one
-            add(RegExpUtility.getSafeRegExp(EnglishDateTime.OneOnOneRegex, Pattern.CASE_INSENSITIVE));
+            add(RegExpUtility.getSafeRegExp(EnglishDateTime.OneOnOneRegex));
 
             // (the)? (day|week|month|year)
-            add(RegExpUtility.getSafeRegExp(EnglishDateTime.SingleAmbiguousTermsRegex, Pattern.CASE_INSENSITIVE));
+            add(RegExpUtility.getSafeRegExp(EnglishDateTime.SingleAmbiguousTermsRegex));
         }
     };
 
@@ -153,8 +153,8 @@ public class EnglishMergedExtractorConfiguration extends BaseOptionsConfiguratio
         integerExtractor = IntegerExtractor.getInstance();
 
         ambiguityFiltersDict = EnglishDateTime.AmbiguityFiltersDict.entrySet().stream().map(pair -> {
-            Pattern key = RegExpUtility.getSafeRegExp(pair.getKey(), Pattern.CASE_INSENSITIVE);
-            Pattern val = RegExpUtility.getSafeRegExp(pair.getValue(), Pattern.CASE_INSENSITIVE);
+            Pattern key = RegExpUtility.getSafeRegExp(pair.getKey());
+            Pattern val = RegExpUtility.getSafeRegExp(pair.getValue());
             return new Pair<Pattern, Pattern>(key, val);
         }).collect(Collectors.toList());
 

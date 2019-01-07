@@ -18,7 +18,7 @@ public class DecimalAndThousandsSeparatorsTest {
                 AgnosticNumberParserType.Double,
                 new LongFormTestConfiguration(decimalSep, nonDecimalSep));
         ParseResult resultJson = parser.parse(new ExtractResult(0, query.length(), query, "builtin.num.double", "Num"));
-        Assert.assertEquals(value, resultJson.resolutionStr);
+        Assert.assertEquals(value, resultJson.getResolutionStr());
     }
 
     @Test

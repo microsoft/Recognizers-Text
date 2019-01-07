@@ -71,7 +71,7 @@ public class ChoiceExtractor implements IExtractor {
             return results;
         }
 
-        partialResults.sort(Comparator.comparingInt(er -> er.start));
+        partialResults.sort(Comparator.comparingInt(er -> er.getStart()));
 
         if (this.config.getOnlyTopMatch()) {
 
@@ -80,7 +80,7 @@ public class ChoiceExtractor implements IExtractor {
 
             for (int i = 0; i < partialResults.size(); i++) {
 
-                ChoiceExtractDataResult data = (ChoiceExtractDataResult)partialResults.get(i).data;
+                ChoiceExtractDataResult data = (ChoiceExtractDataResult)partialResults.get(i).getData();
                 if (data.score > topScore) {
                     topScore = data.score;
                     topResultIndex = i;

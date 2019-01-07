@@ -9,129 +9,40 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 {
     public class EnglishDatePeriodParserConfiguration : BaseOptionsConfiguration, IDatePeriodParserConfiguration
     {
-        public int MinYearNum { get; }
-
-        public int MaxYearNum { get; }
-
-        public string TokenBeforeDate { get; }
-
-        public static IList<string> MonthTermsPadded = 
-            DateTimeDefinitions.MonthTerms.Select(str => $" {str} ").ToList();
-
-        public static IList<string> WeekendTermsPadded = 
-            DateTimeDefinitions.WeekendTerms.Select(str => $" {str} ").ToList();
-
-        public static IList<string> WeekTermsPadded = 
-            DateTimeDefinitions.WeekTerms.Select(str => $" {str} ").ToList();
-
-        public static IList<string> YearTermsPadded = 
-            DateTimeDefinitions.YearTerms.Select(str => $" {str} ").ToList();
-
-        #region internalParsers
-
-        public IDateExtractor DateExtractor { get; }
-
-        public IExtractor CardinalExtractor { get; }
-
-        public IExtractor OrdinalExtractor { get; }
-
-        public IDateTimeExtractor DurationExtractor { get; }
-
-        public IExtractor IntegerExtractor { get; }
-
-        public IParser NumberParser { get; }
-
-        public IDateTimeParser DateParser { get; }
-
-        public IDateTimeParser DurationParser { get; }
-
-        #endregion
-
-        #region Regexes
-
-        public Regex MonthFrontBetweenRegex { get; }
-        public Regex BetweenRegex { get; }
-        public Regex MonthFrontSimpleCasesRegex { get; }
-        public Regex SimpleCasesRegex { get; }
-        public Regex OneWordPeriodRegex { get; }
-        public Regex MonthWithYear { get; }
-        public Regex MonthNumWithYear { get; }
-        public Regex YearRegex { get; }
-        public Regex PastRegex { get; }
-        public Regex FutureRegex { get; }
-        public Regex FutureSuffixRegex { get; }
-        public Regex NumberCombinedWithUnit { get; }
-        public Regex WeekOfMonthRegex { get; }
-        public Regex WeekOfYearRegex { get; }
-        public Regex QuarterRegex { get; }
-        public Regex QuarterRegexYearFront { get; }
-        public Regex AllHalfYearRegex { get; }
-        public Regex SeasonRegex { get; }
-        public Regex WhichWeekRegex { get; }
-        public Regex WeekOfRegex { get; }
-        public Regex MonthOfRegex { get; }
-        public Regex InConnectorRegex { get; }
-        public Regex WithinNextPrefixRegex { get; }
-        public Regex RestOfDateRegex { get; }
-        public Regex LaterEarlyPeriodRegex { get; }
-        public Regex WeekWithWeekDayRangeRegex { get; }
-        public Regex YearPlusNumberRegex { get; }
-        public Regex DecadeWithCenturyRegex { get; }
-        public Regex YearPeriodRegex { get; }
-        public Regex ComplexDatePeriodRegex { get; }
-        public Regex RelativeDecadeRegex { get; }
-        public Regex ReferenceDatePeriodRegex { get; }
-        public Regex AgoRegex { get; }
-        public Regex LaterRegex { get; }
-        public Regex LessThanRegex { get; }
-        public Regex MoreThanRegex { get; }
-        public Regex CenturySuffixRegex { get; }
-
-        public static readonly Regex NextPrefixRegex =
-            new Regex(DateTimeDefinitions.NextPrefixRegex, RegexOptions.Singleline);
         public static readonly Regex PastPrefixRegex =
             new Regex(DateTimeDefinitions.PastPrefixRegex, RegexOptions.Singleline);
+
         public static readonly Regex ThisPrefixRegex =
             new Regex(DateTimeDefinitions.ThisPrefixRegex, RegexOptions.Singleline);
+
         public static readonly Regex AfterNextSuffixRegex =
             new Regex(DateTimeDefinitions.AfterNextSuffixRegex, RegexOptions.Singleline);
+
         public static readonly Regex RelativeRegex =
             new Regex(DateTimeDefinitions.RelativeRegex, RegexOptions.Singleline);
+
         public static readonly Regex UnspecificEndOfRangeRegex =
             new Regex(DateTimeDefinitions.UnspecificEndOfRangeRegex, RegexOptions.Singleline);
 
-        Regex IDatePeriodParserConfiguration.NextPrefixRegex => NextPrefixRegex;
-        Regex IDatePeriodParserConfiguration.PastPrefixRegex => PastPrefixRegex;
-        Regex IDatePeriodParserConfiguration.ThisPrefixRegex => ThisPrefixRegex;
-        Regex IDatePeriodParserConfiguration.RelativeRegex => RelativeRegex;
-        Regex IDatePeriodParserConfiguration.UnspecificEndOfRangeRegex => UnspecificEndOfRangeRegex;
+        private static IList<string> monthTermsPadded =
+            DateTimeDefinitions.MonthTerms.Select(str => $" {str} ").ToList();
 
-        #endregion
+        private static IList<string> weekendTermsPadded =
+            DateTimeDefinitions.WeekendTerms.Select(str => $" {str} ").ToList();
 
-        #region Dictionaries
-        public IImmutableDictionary<string, string> UnitMap { get; }
+        private static IList<string> weekTermsPadded =
+            DateTimeDefinitions.WeekTerms.Select(str => $" {str} ").ToList();
 
-        public IImmutableDictionary<string, int> CardinalMap { get; }
+        private static IList<string> yearTermsPadded =
+            DateTimeDefinitions.YearTerms.Select(str => $" {str} ").ToList();
 
-        public IImmutableDictionary<string, int> DayOfMonth { get; }
+        private static readonly Regex NextPrefixRegex =
+            new Regex(DateTimeDefinitions.NextPrefixRegex, RegexOptions.Singleline);
 
-        public IImmutableDictionary<string, int> MonthOfYear { get; }
-
-        public IImmutableDictionary<string, string> SeasonMap { get; }
-
-        public IImmutableDictionary<string, int> WrittenDecades { get; }
-
-        public IImmutableDictionary<string, int> Numbers { get; }
-
-        public IImmutableDictionary<string, int> SpecialDecadeCases { get; }
-
-        #endregion
-
-        public IImmutableList<string> InStringList { get; }
-
-        public EnglishDatePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config)
+        public EnglishDatePeriodParserConfiguration(ICommonDateTimeParserConfiguration config)
+            : base(config)
         {
-            TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;           
+            TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
             CardinalExtractor = config.CardinalExtractor;
             OrdinalExtractor = config.OrdinalExtractor;
             IntegerExtractor = config.IntegerExtractor;
@@ -159,7 +70,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             AllHalfYearRegex = EnglishDatePeriodExtractorConfiguration.AllHalfYearRegex;
             SeasonRegex = EnglishDatePeriodExtractorConfiguration.SeasonRegex;
             WhichWeekRegex = EnglishDatePeriodExtractorConfiguration.WhichWeekRegex;
-            WeekOfRegex= EnglishDatePeriodExtractorConfiguration.WeekOfRegex;
+            WeekOfRegex = EnglishDatePeriodExtractorConfiguration.WeekOfRegex;
             MonthOfRegex = EnglishDatePeriodExtractorConfiguration.MonthOfRegex;
             RestOfDateRegex = EnglishDatePeriodExtractorConfiguration.RestOfDateRegex;
             LaterEarlyPeriodRegex = EnglishDatePeriodExtractorConfiguration.LaterEarlyPeriodRegex;
@@ -187,12 +98,136 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             SpecialDecadeCases = config.SpecialDecadeCases;
         }
 
+        public int MinYearNum { get; }
+
+        public int MaxYearNum { get; }
+
+        public string TokenBeforeDate { get; }
+
+        public IDateExtractor DateExtractor { get; }
+
+        public IExtractor CardinalExtractor { get; }
+
+        public IExtractor OrdinalExtractor { get; }
+
+        public IDateTimeExtractor DurationExtractor { get; }
+
+        public IExtractor IntegerExtractor { get; }
+
+        public IParser NumberParser { get; }
+
+        public IDateTimeParser DateParser { get; }
+
+        public IDateTimeParser DurationParser { get; }
+
+        public Regex MonthFrontBetweenRegex { get; }
+
+        public Regex BetweenRegex { get; }
+
+        public Regex MonthFrontSimpleCasesRegex { get; }
+
+        public Regex SimpleCasesRegex { get; }
+
+        public Regex OneWordPeriodRegex { get; }
+
+        public Regex MonthWithYear { get; }
+
+        public Regex MonthNumWithYear { get; }
+
+        public Regex YearRegex { get; }
+
+        public Regex PastRegex { get; }
+
+        public Regex FutureRegex { get; }
+
+        public Regex FutureSuffixRegex { get; }
+
+        public Regex NumberCombinedWithUnit { get; }
+
+        public Regex WeekOfMonthRegex { get; }
+
+        public Regex WeekOfYearRegex { get; }
+
+        public Regex QuarterRegex { get; }
+
+        public Regex QuarterRegexYearFront { get; }
+
+        public Regex AllHalfYearRegex { get; }
+
+        public Regex SeasonRegex { get; }
+
+        public Regex WhichWeekRegex { get; }
+
+        public Regex WeekOfRegex { get; }
+
+        public Regex MonthOfRegex { get; }
+
+        public Regex InConnectorRegex { get; }
+
+        public Regex WithinNextPrefixRegex { get; }
+
+        public Regex RestOfDateRegex { get; }
+
+        public Regex LaterEarlyPeriodRegex { get; }
+
+        public Regex WeekWithWeekDayRangeRegex { get; }
+
+        public Regex YearPlusNumberRegex { get; }
+
+        public Regex DecadeWithCenturyRegex { get; }
+
+        public Regex YearPeriodRegex { get; }
+
+        public Regex ComplexDatePeriodRegex { get; }
+
+        public Regex RelativeDecadeRegex { get; }
+
+        public Regex ReferenceDatePeriodRegex { get; }
+
+        public Regex AgoRegex { get; }
+
+        public Regex LaterRegex { get; }
+
+        public Regex LessThanRegex { get; }
+
+        public Regex MoreThanRegex { get; }
+
+        public Regex CenturySuffixRegex { get; }
+
+        Regex IDatePeriodParserConfiguration.NextPrefixRegex => NextPrefixRegex;
+
+        Regex IDatePeriodParserConfiguration.PastPrefixRegex => PastPrefixRegex;
+
+        Regex IDatePeriodParserConfiguration.ThisPrefixRegex => ThisPrefixRegex;
+
+        Regex IDatePeriodParserConfiguration.RelativeRegex => RelativeRegex;
+
+        Regex IDatePeriodParserConfiguration.UnspecificEndOfRangeRegex => UnspecificEndOfRangeRegex;
+
+        public IImmutableDictionary<string, string> UnitMap { get; }
+
+        public IImmutableDictionary<string, int> CardinalMap { get; }
+
+        public IImmutableDictionary<string, int> DayOfMonth { get; }
+
+        public IImmutableDictionary<string, int> MonthOfYear { get; }
+
+        public IImmutableDictionary<string, string> SeasonMap { get; }
+
+        public IImmutableDictionary<string, int> WrittenDecades { get; }
+
+        public IImmutableDictionary<string, int> Numbers { get; }
+
+        public IImmutableDictionary<string, int> SpecialDecadeCases { get; }
+
+        public IImmutableList<string> InStringList { get; }
+
         public int GetSwiftDayOrMonth(string text)
         {
             var swift = 0;
 
             var trimmedText = text.Trim().ToLowerInvariant();
-            
+
             if (AfterNextSuffixRegex.IsMatch(trimmedText))
             {
                 swift = 2;
@@ -214,7 +249,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             var swift = -10;
 
             var trimmedText = text.Trim().ToLowerInvariant();
-            
+
             if (AfterNextSuffixRegex.IsMatch(trimmedText))
             {
                 swift = 2;
@@ -251,7 +286,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         {
             var trimmedText = text.Trim().ToLowerInvariant();
             return DateTimeDefinitions.MonthTerms.Any(o => trimmedText.EndsWith(o)) ||
-                   (MonthTermsPadded.Any(o => trimmedText.Contains(o)) && AfterNextSuffixRegex.IsMatch(trimmedText));
+                   (monthTermsPadded.Any(o => trimmedText.Contains(o)) && AfterNextSuffixRegex.IsMatch(trimmedText));
         }
 
         public bool IsMonthToDate(string text)
@@ -264,21 +299,21 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         {
             var trimmedText = text.Trim().ToLowerInvariant();
             return DateTimeDefinitions.WeekendTerms.Any(o => trimmedText.EndsWith(o)) ||
-                   (WeekendTermsPadded.Any(o => trimmedText.Contains(o)) && AfterNextSuffixRegex.IsMatch(trimmedText));
+                   (weekendTermsPadded.Any(o => trimmedText.Contains(o)) && AfterNextSuffixRegex.IsMatch(trimmedText));
         }
 
         public bool IsWeekOnly(string text)
         {
             var trimmedText = text.Trim().ToLowerInvariant();
             return DateTimeDefinitions.WeekTerms.Any(o => trimmedText.EndsWith(o)) ||
-                   (WeekTermsPadded.Any(o => trimmedText.Contains(o)) && AfterNextSuffixRegex.IsMatch(trimmedText));
+                   (weekTermsPadded.Any(o => trimmedText.Contains(o)) && AfterNextSuffixRegex.IsMatch(trimmedText));
         }
 
         public bool IsYearOnly(string text)
         {
             var trimmedText = text.Trim().ToLowerInvariant();
             return DateTimeDefinitions.YearTerms.Any(o => trimmedText.EndsWith(o)) ||
-                   (YearTermsPadded.Any(o => trimmedText.Contains(o)) && AfterNextSuffixRegex.IsMatch(trimmedText)) ||
+                   (yearTermsPadded.Any(o => trimmedText.Contains(o)) && AfterNextSuffixRegex.IsMatch(trimmedText)) ||
                    (DateTimeDefinitions.GenericYearTerms.Any(o => trimmedText.EndsWith(o)) && UnspecificEndOfRangeRegex.IsMatch(trimmedText));
         }
 
@@ -287,6 +322,5 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             var trimmedText = text.Trim().ToLowerInvariant();
             return DateTimeDefinitions.YearToDateTerms.Any(o => trimmedText.Equals(o));
         }
-
     }
 }

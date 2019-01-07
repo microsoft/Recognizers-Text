@@ -61,7 +61,7 @@ export class BaseCJKNumberParser extends BaseNumberParser {
         } else if (extra.includes("Num")) {
             getExtResult.text = this.replaceFullWithHalf(getExtResult.text);
             result = this.digitNumberParse(getExtResult);
-            if(this.config.negativeNumberSignRegex.test(getExtResult.text) && result.value > 0){
+            if(RegExpUtility.isMatch(this.config.negativeNumberSignRegex, getExtResult.text) && result.value > 0){
                 result.value = - result.value;
             }
             result.resolutionStr = this.toString(result.value);

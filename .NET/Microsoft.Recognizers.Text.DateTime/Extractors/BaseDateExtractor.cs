@@ -1,4 +1,4 @@
-﻿using Microsoft.Recognizers.Text.DateTime.Utilities;
+using Microsoft.Recognizers.Text.DateTime.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
@@ -35,7 +35,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         private List<Token> BasicRegexMatch(string text)
         {
             var ret = new List<Token>();
-            foreach (var regex in this.config.DateRegexList)
+            foreach (var regex in this.Config.DateRegexList)
             {
                 var matches = regex.Matches(text);
                 foreach (Match match in matches)
@@ -93,7 +93,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         // TODO: Simplify this method to improve the performance
         private string TrimStartRangeConnectorSymbols(string text)
         {
-            var rangeConnectorSymbolMatches = config.RangeConnectorSymbolRegex.Matches(text);
+            var rangeConnectorSymbolMatches = Config.RangeConnectorSymbolRegex.Matches(text);
 
             foreach (Match symbolMatch in rangeConnectorSymbolMatches)
             {
@@ -116,7 +116,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         // TODO: Simplify this method to improve the performance
         private bool StartsWithBasicDate(string text)
         {
-            foreach (var regex in this.config.DateRegexList)
+            foreach (var regex in this.Config.DateRegexList)
             {
                 var match = regex.MatchBegin(text, trim: true);
 
@@ -134,7 +134,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         private List<Token> ImplicitDate(string text)
         {
             var ret = new List<Token>();
-            foreach (var regex in this.config.ImplicitDateList)
+            foreach (var regex in this.Config.ImplicitDateList)
             {
                 var matches = regex.Matches(text);
                 foreach (Match match in matches)
@@ -151,13 +151,13 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var ret = new List<Token>();
 
-            var er = this.config.OrdinalExtractor.Extract(text);
-            er.AddRange(this.config.IntegerExtractor.Extract(text));
+            var er = this.Config.OrdinalExtractor.Extract(text);
+            er.AddRange(this.Config.IntegerExtractor.Extract(text));
 
             foreach (var result in er)
             {
 
-                int.TryParse((this.config.NumberParser.Parse(result).Value ?? 0).ToString(), out int num);
+                int.TryParse((this.Config.NumberParser.Parse(result).Value ?? 0).ToString(), out int num);
 
                 if (num < 1 || num > 31)
                 {
@@ -169,14 +169,14 @@ namespace Microsoft.Recognizers.Text.DateTime
                     // Handling cases like '(Monday,) Jan twenty two'
                     var frontStr = text.Substring(0, result.Start ?? 0);
 
-                    var match = this.config.MonthEnd.Match(frontStr);
+                    var match = this.Config.MonthEnd.Match(frontStr);
                     if (match.Success)
                     {
                         var startIndex = match.Index;
                         var endIndex = match.Index + match.Length + (result.Length ?? 0);
 
                         ExtendWithWeekdayAndYear(ref startIndex, ref endIndex,
-                            config.MonthOfYear.GetValueOrDefault(match.Groups["month"].Value.ToLower(), reference.Month),
+                            Config.MonthOfYear.GetValueOrDefault(match.Groups["month"].Value.ToLower(), reference.Month),
                             num, text, reference);
 
                         ret.Add(new Token(startIndex, endIndex));
@@ -184,7 +184,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
 
                     // Handling cases like 'for the 25th'
-                    var matches = this.config.ForTheRegex.Matches(text);
+                    var matches = this.Config.ForTheRegex.Matches(text);
                     bool isFound = false;
                     foreach (Match matchCase in matches)
                     {
@@ -210,7 +210,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
 
                     // Handling cases like 'Thursday the 21st', which both 'Thursday' and '21st' refer to a same date
-                    matches = this.config.WeekDayAndDayOfMonthRegex.Matches(text);
+                    matches = this.Config.WeekDayAndDayOfMonthRegex.Matches(text);
                     foreach (Match matchCase in matches)
                     {
                         if (matchCase.Success)
@@ -226,7 +226,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                                 // to see whether they refer to the same week day
                                 var extractedWeekDayStr = matchCase.Groups["weekday"].Value.ToLower();
                                 if (!date.Equals(DateObject.MinValue) &&
-                                    numWeekDayInt == config.DayOfWeek[extractedWeekDayStr])
+                                    numWeekDayInt == Config.DayOfWeek[extractedWeekDayStr])
                                 {
                                     ret.Add(new Token(matchCase.Index, result.Start + result.Length ?? 0));
                                     isFound = true;
@@ -242,7 +242,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     // Handling cases like '20th of next month'
                     var suffixStr = text.Substring(result.Start + result.Length ?? 0);
-                    var beginMatch = this.config.RelativeMonthRegex.MatchBegin(suffixStr.Trim(), trim: true);
+                    var beginMatch = this.Config.RelativeMonthRegex.MatchBegin(suffixStr.Trim(), trim: true);
                     if (beginMatch.Success && beginMatch.Index == 0)
                     {
                         var spaceLen = suffixStr.Length - suffixStr.Trim().Length;
@@ -251,7 +251,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                         // Check if prefix contains 'the', include it if any
                         var prefix = text.Substring(0, resStart ?? 0);
-                        var prefixMatch = this.config.PrefixArticleRegex.Match(prefix);
+                        var prefixMatch = this.Config.PrefixArticleRegex.Match(prefix);
                         if (prefixMatch.Success)
                         {
                             resStart = prefixMatch.Index;
@@ -263,14 +263,14 @@ namespace Microsoft.Recognizers.Text.DateTime
                     // Handling cases like 'second Sunday'
                     suffixStr = text.Substring(result.Start + result.Length ?? 0);
 
-                    beginMatch = this.config.WeekDayRegex.MatchBegin(suffixStr.Trim(), trim: true);
+                    beginMatch = this.Config.WeekDayRegex.MatchBegin(suffixStr.Trim(), trim: true);
 
                     if (beginMatch.Success && num >= 1 && num <= 5 
                         && result.Type.Equals(Number.Constants.SYS_NUM_ORDINAL))
                     {
 
                         var weekDayStr = beginMatch.Groups["weekday"].Value.ToLower();
-                        if (this.config.DayOfWeek.ContainsKey(weekDayStr))
+                        if (this.Config.DayOfWeek.ContainsKey(weekDayStr))
                         {
                             var spaceLen = suffixStr.Length - suffixStr.Trim().Length;
                             ret.Add(new Token(result.Start ?? 0, result.Start + result.Length + spaceLen + beginMatch.Length ?? 0));
@@ -283,14 +283,14 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     var afterStr = text.Substring(result.Start + result.Length ?? 0);
 
-                    var match = this.config.OfMonth.Match(afterStr);
+                    var match = this.Config.OfMonth.Match(afterStr);
                     if (match.Success)
                     {
                         var startIndex = result.Start ?? 0;
                         var endIndex = (result.Start + result.Length ?? 0) + match.Length;
 
                         ExtendWithWeekdayAndYear(ref startIndex, ref endIndex,
-                            config.MonthOfYear.GetValueOrDefault(match.Groups["month"].Value.ToLower(), reference.Month),
+                            Config.MonthOfYear.GetValueOrDefault(match.Groups["month"].Value.ToLower(), reference.Month),
                             num, text, reference);
 
                         ret.Add(new Token(startIndex, endIndex));
@@ -309,7 +309,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             // Check whether there's a year
             var suffix = text.Substring(endIndex);
-            var matchYear = this.config.YearSuffix.Match(suffix);
+            var matchYear = this.Config.YearSuffix.Match(suffix);
             if (matchYear.Success && matchYear.Index == 0)
             {
                 year = GetYearFromText(matchYear);
@@ -324,7 +324,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             // Check whether there's a weekday
             var prefix = text.Substring(0, startIndex);
-            var matchWeekDay = this.config.WeekDayEnd.Match(prefix);
+            var matchWeekDay = this.Config.WeekDayEnd.Match(prefix);
             if (matchWeekDay.Success)
             {
 
@@ -333,8 +333,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var extractedWeekDayStr = matchWeekDay.Groups["weekday"].Value.ToLower();
                 var numWeekDayStr = date.DayOfWeek.ToString().ToLower();
 
-                if (config.DayOfWeek.TryGetValue(numWeekDayStr, out var weekDay1) &&
-                    config.DayOfWeek.TryGetValue(extractedWeekDayStr, out var weekDay2))
+                if (Config.DayOfWeek.TryGetValue(numWeekDayStr, out var weekDay1) &&
+                    Config.DayOfWeek.TryGetValue(extractedWeekDayStr, out var weekDay2))
                 {
                     if (!date.Equals(DateObject.MinValue) && weekDay1 == weekDay2)
                     {
@@ -349,7 +349,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         private List<Token> ExtractRelativeDurationDate(string text, DateObject reference)
         {
             var ret = new List<Token>();
-            var durationEr = config.DurationExtractor.Extract(text, reference);
+            var durationEr = Config.DurationExtractor.Extract(text, reference);
 
             foreach (var er in durationEr)
             {
@@ -369,12 +369,12 @@ namespace Microsoft.Recognizers.Text.DateTime
                     StripInequalityDuration(er);
                 }
 
-                var match = config.DateUnitRegex.Match(er.Text);
+                var match = Config.DateUnitRegex.Match(er.Text);
 
                 if (match.Success)
                 {                    
                     ret.AddRange(AgoLaterUtil.ExtractorDurationWithBeforeAndAfter(text,
-                        er, ret, config.UtilityConfiguration));
+                        er, ret, Config.UtilityConfiguration));
                 }
             }
 
@@ -415,7 +415,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             foreach (var durationExtraction in durationEr)
             {
-                var match = config.DateUnitRegex.Match(durationExtraction.Text);
+                var match = Config.DateUnitRegex.Match(durationExtraction.Text);
                 if (match.Success)
                 {
                     durations.Add(new Token(durationExtraction.Start ?? 0,
@@ -433,12 +433,12 @@ namespace Microsoft.Recognizers.Text.DateTime
                     continue;
                 }
 
-                var match = config.InConnectorRegex.MatchEnd(beforeStr, trim: true);
+                var match = Config.InConnectorRegex.MatchEnd(beforeStr, trim: true);
 
                 if (match.Success)
                 {
                     var startToken = match.Index;
-                    var rangeUnitMatch = config.RangeUnitRegex.Match(text.Substring(duration.Start, duration.Length));
+                    var rangeUnitMatch = Config.RangeUnitRegex.Match(text.Substring(duration.Start, duration.Length));
 
                     if (rangeUnitMatch.Success)
                     {
@@ -452,8 +452,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         private void StripInequalityDuration(ExtractResult er)
         {
-            StripInequalityPrefix(er, config.MoreThanRegex);
-            StripInequalityPrefix(er, config.LessThanRegex);
+            StripInequalityPrefix(er, Config.MoreThanRegex);
+            StripInequalityPrefix(er, Config.LessThanRegex);
         }
 
         private static void StripInequalityPrefix(ExtractResult er, Regex regex)

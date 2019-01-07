@@ -1,2195 +1,2072 @@
-[{
-  "Input": "Tornerò il 15",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "15",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-XX-15",
-        "FutureResolution": {
-          "date": "2016-11-15"
-        },
-        "PastResolution": {
-          "date": "2016-10-15"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò il 2 Ott.",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "2 Ott.",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-10-02",
-        "FutureResolution": {
-          "date": "2017-10-02"
-        },
-        "PastResolution": {
-          "date": "2016-10-02"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò il 2-Ott",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "2-Ott",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-10-02",
-        "FutureResolution": {
-          "date": "2017-10-02"
-        },
-        "PastResolution": {
-          "date": "2016-10-02"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò il 2/Ott",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "2/Ott",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-10-02",
-        "FutureResolution": {
-          "date": "2017-10-02"
-        },
-        "PastResolution": {
-          "date": "2016-10-02"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò il 2 Ottobre",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "2 Ottobre",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-10-02",
-        "FutureResolution": {
-          "date": "2017-10-02"
-        },
-        "PastResolution": {
-          "date": "2016-10-02"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò il 12 Gennaio 2106",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "12 Gennaio, 2106",
-      "Type": "date",
-      "Value": {
-        "Timex": "2016-01-12",
-        "FutureResolution": {
-          "date": "2016-01-12"
-        },
-        "PastResolution": {
-          "date": "2016-01-12"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò Lunedì 12 Gennaio 2016",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "Lunedì 12 Gennaio 2016",
-      "Type": "date",
-      "Value": {
-        "Timex": "2016-01-12",
-        "FutureResolution": {
-          "date": "2016-01-12"
-        },
-        "PastResolution": {
-          "date": "2016-01-12"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò il 02/22/2016",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "02/22/2016",
-      "Type": "date",
-      "Value": {
-        "Timex": "2016-02-22",
-        "FutureResolution": {
-          "date": "2016-02-22"
-        },
-        "PastResolution": {
-          "date": "2016-02-22"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "TOrnerò il 21/04/2016",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "21/04/2016",
-      "Type": "date",
-      "Value": {
-        "Timex": "2016-04-21",
-        "FutureResolution": {
-          "date": "2016-04-21"
-        },
-        "PastResolution": {
-          "date": "2016-04-21"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò il 21/04/16",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "21/04/16",
-      "Type": "date",
-      "Value": {
-        "Timex": "2016-04-21",
-        "FutureResolution": {
-          "date": "2016-04-21"
-        },
-        "PastResolution": {
-          "date": "2016-04-21"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò il 21-04-2016",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "21-04-2016",
-      "Type": "date",
-      "Value": {
-        "Timex": "2016-04-21",
-        "FutureResolution": {
-          "date": "2016-04-21"
-        },
-        "PastResolution": {
-          "date": "2016-04-21"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò il on 4.22",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "4.22",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-04-22",
-        "FutureResolution": {
-          "date": "2017-04-22"
-        },
-        "PastResolution": {
-          "date": "2016-04-22"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò il 4-22",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "4-22",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-04-22",
-        "FutureResolution": {
-          "date": "2017-04-22"
-        },
-        "PastResolution": {
-          "date": "2016-04-22"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò il    4/22",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "4/22",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-04-22",
-        "FutureResolution": {
-          "date": "2017-04-22"
-        },
-        "PastResolution": {
-          "date": "2016-04-22"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò il 22/04",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "22/04",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-04-22",
-        "FutureResolution": {
-          "date": "2017-04-22"
-        },
-        "PastResolution": {
-          "date": "2016-04-22"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò il     4/22",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "4/22",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-04-22",
-        "FutureResolution": {
-          "date": "2017-04-22"
-        },
-        "PastResolution": {
-          "date": "2016-04-22"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò il 2015/08/12",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "2015/08/12",
-      "Type": "date",
-      "Value": {
-        "Timex": "2015-08-12",
-        "FutureResolution": {
-          "date": "2015-08-12"
-        },
-        "PastResolution": {
-          "date": "2015-08-12"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Tonerò il 08/12,2015",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "08/12,2015",
-      "Type": "date",
-      "Value": {
-        "Timex": "2015-08-12",
-        "FutureResolution": {
-          "date": "2015-08-12"
-        },
-        "PastResolution": {
-          "date": "2015-08-12"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò il 08/12,15",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "08/12,15",
-      "Type": "date",
-      "Value": {
-        "Timex": "2015-08-12",
-        "FutureResolution": {
-          "date": "2015-08-12"
-        },
-        "PastResolution": {
-          "date": "2015-08-12"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò il 1 Gen",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "1 Gen",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-01-01",
-        "FutureResolution": {
-          "date": "2017-01-01"
-        },
-        "PastResolution": {
-          "date": "2016-01-01"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò il primo Gen",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "primo Gen",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-01-01",
-        "FutureResolution": {
-          "date": "2017-01-01"
-        },
-        "PastResolution": {
-          "date": "2016-01-01"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò Mer, 22 Gen",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "Mer, 22 Gen",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-01-22",
-        "FutureResolution": {
-          "date": "2017-01-22"
-        },
-        "PastResolution": {
-          "date": "2016-01-22"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò il ventuno Maggio",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "ventuno Maggio",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-05-21",
-        "FutureResolution": {
-          "date": "2017-05-21"
-        },
-        "PastResolution": {
-          "date": "2016-05-21"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò il due di Ago.",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "due di Ago",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-08-02",
-        "FutureResolution": {
-          "date": "2017-08-02"
-        },
-        "PastResolution": {
-          "date": "2016-08-02"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò il ventidue di Giugno",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": " ventidue di Giugno",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-06-22",
-        "FutureResolution": {
-          "date": "2017-06-22"
-        },
-        "PastResolution": {
-          "date": "2016-06-22"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò Venerdì",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "Venerdì",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-WXX-5",
-        "FutureResolution": {
-          "date": "2016-11-11"
-        },
-        "PastResolution": {
-          "date": "2016-11-04"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò oggi",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "oggi",
-      "Type": "date",
-      "Value": {
-        "Timex": "2016-11-07",
-        "FutureResolution": {
-          "date": "2016-11-07"
-        },
-        "PastResolution": {
-          "date": "2016-11-07"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò domani",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "domani",
-      "Type": "date",
-      "Value": {
-        "Timex": "2016-11-08",
-        "FutureResolution": {
-          "date": "2016-11-08"
-        },
-        "PastResolution": {
-          "date": "2016-11-08"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Sono tornato ieri",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "ieri",
-      "Type": "date",
-      "Value": {
-        "Timex": "2016-11-06",
-        "FutureResolution": {
-          "date": "2016-11-06"
-        },
-        "PastResolution": {
-          "date": "2016-11-06"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Sono tornato l'altroieri",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "l'altroieri",
-      "Type": "date",
-      "Value": {
-        "Timex": "2016-11-05",
-        "FutureResolution": {
-          "date": "2016-11-05"
-        },
-        "PastResolution": {
-          "date": "2016-11-05"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò dopodomani",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "dopodomani",
-      "Type": "date",
-      "Value": {
-        "Timex": "2016-11-09",
-        "FutureResolution": {
-          "date": "2016-11-09"
-        },
-        "PastResolution": {
-          "date": "2016-11-09"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Dopodomani",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "Dopodomani",
-      "Type": "date",
-      "Value": {
-        "Timex": "2016-11-09",
-        "FutureResolution": {
-          "date": "2016-11-09"
-        },
-        "PastResolution": {
-          "date": "2016-11-09"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò il giorno dopo",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "il giorno dopo",
-      "Type": "date",
-      "Value": {
-        "Timex": "2016-11-08",
-        "FutureResolution": {
-          "date": "2016-11-08"
-        },
-        "PastResolution": {
-          "date": "2016-11-08"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò questo venerdì",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "questo venerdì",
-      "Type": "date",
-      "Value": {
-        "Timex": "2016-11-11",
-        "FutureResolution": {
-          "date": "2016-11-11"
-        },
-        "PastResolution": {
-          "date": "2016-11-11"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò domenica prossima",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "domenica prossima",
-      "Type": "date",
-      "Value": {
-        "Timex": "2016-11-20",
-        "FutureResolution": {
-          "date": "2016-11-20"
-        },
-        "PastResolution": {
-          "date": "2016-11-20"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Sono tornato domenica scorsa",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "domenica scorsa",
-      "Type": "date",
-      "Value": {
-        "Timex": "2016-11-06",
-        "FutureResolution": {
-          "date": "2016-11-06"
-        },
-        "PastResolution": {
-          "date": "2016-11-06"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò questa settimana, venerdì",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "questa settimana, venerdì",
-      "Type": "date",
-      "Value": {
-        "Timex": "2016-11-11",
-        "FutureResolution": {
-          "date": "2016-11-11"
-        },
-        "PastResolution": {
-          "date": "2016-11-11"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò la prossima settimana, domenica",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "la prossima settimana, domenica",
-      "Type": "date",
-      "Value": {
-        "Timex": "2016-11-20",
-        "FutureResolution": {
-          "date": "2016-11-20"
-        },
-        "PastResolution": {
-          "date": "2016-11-20"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Sono tornato la scorsa settimana, domenica",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "la scorsa settimana, domenica",
-      "Type": "date",
-      "Value": {
-        "Timex": "2016-11-06",
-        "FutureResolution": {
-          "date": "2016-11-06"
-        },
-        "PastResolution": {
-          "date": "2016-11-06"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Sono tornato l'ultimo giorno",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "l'ultimo giorno",
-      "Type": "date",
-      "Value": {
-        "Timex": "2016-11-06",
-        "FutureResolution": {
-          "date": "2016-11-06"
-        },
-        "PastResolution": {
-          "date": "2016-11-06"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò in giornata",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "in giornata",
-      "Type": "date",
-      "Value": {
-        "Timex": "2016-11-07",
-        "FutureResolution": {
-          "date": "2016-11-07"
-        },
-        "PastResolution": {
-          "date": "2016-11-07"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò il 15 Giugno 2016",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "15 Giugno 2016",
-      "Type": "date",
-      "Value": {
-        "Timex": "2016-06-15",
-        "FutureResolution": {
-          "date": "2016-06-15"
-        },
-        "PastResolution": {
-          "date": "2016-06-15"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò il primo venerdì di luglio",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "il primo venerdì di luglio",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-07-WXX-5-#1",
-        "FutureResolution": {
-          "date": "2017-07-07"
-        },
-        "PastResolution": {
-          "date": "2016-07-01"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò il primo venerdì di questo mese",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "il primo venerdì di questo mese",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-11-WXX-5-#1",
-        "FutureResolution": {
-          "date": "2016-11-04"
-        },
-        "PastResolution": {
-          "date": "2016-11-04"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò la prossima settimana, di venerdì",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "la prossima settimana, di venerdì",
-      "Type": "date",
-      "Value": {
-        "Timex": "2016-11-18",
-        "FutureResolution": {
-          "date": "2016-11-18"
-        },
-        "PastResolution": {
-          "date": "2016-11-18"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò venerdì della prossima settimana",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "venerdì della prossima settimana",
-      "Type": "date",
-      "Value": {
-        "Timex": "2016-11-18",
-        "FutureResolution": {
-          "date": "2016-11-18"
-        },
-        "PastResolution": {
-          "date": "2016-11-18"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò questo giorno",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "questo giorno",
-      "Type": "date",
-      "Value": {
-        "Timex": "2016-11-07",
-        "FutureResolution": {
-          "date": "2016-11-07"
-        },
-        "PastResolution": {
-          "date": "2016-11-07"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Sono tornato il giorno passato",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "il giorno passato",
-      "Type": "date",
-      "Value": {
-        "Timex": "2016-11-06",
-        "FutureResolution": {
-          "date": "2016-11-06"
-        },
-        "PastResolution": {
-          "date": "2016-11-06"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò tra due settimane da adesso",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "tra due settimane da adesso",
-      "Type": "date",
-      "Value": {
-        "Timex": "2016-11-21",
-        "FutureResolution": {
-          "date": "2016-11-21"
-        },
-        "PastResolution": {
-          "date": "2016-11-21"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "a chi ho mandato una email un mese fa",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "un mese fa",
-      "Type": "date",
-      "Value": {
-        "Timex": "2016-10-07",
-        "FutureResolution": {
-          "date": "2016-10-07"
-        },
-        "PastResolution": {
-          "date": "2016-10-07"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "a chi ho mandato una email pochi mesi fa",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "pochi mesi fa",
-      "Type": "date",
-      "Value": {
-        "Timex": "2016-08-07",
-        "FutureResolution": {
-          "date": "2016-08-07"
-        },
-        "PastResolution": {
-          "date": "2016-08-07"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "a chi ho mandato una email pochi giorni fa",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "pochi giorni fa",
-      "Type": "date",
-      "Value": {
-        "Timex": "2016-11-04",
-        "FutureResolution": {
-          "date": "2016-11-04"
-        },
-        "PastResolution": {
-          "date": "2016-11-04"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Sono tornato per il 27",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "per il 27",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-XX-27",
-        "FutureResolution": {
-          "date": "2016-11-27"
-        },
-        "PastResolution": {
-          "date": "2016-11-27"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Sono tornato per il 27.",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "per il 27",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-XX-27",
-        "FutureResolution": {
-          "date": "2016-11-27"
-        },
-        "PastResolution": {
-          "date": "2016-11-27"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Sono tornato per il 27!",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "per il 27",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-XX-27",
-        "FutureResolution": {
-          "date": "2016-11-27"
-        },
-        "PastResolution": {
-          "date": "2016-11-27"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Sono tornato per il 27 .",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "per il 27",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-XX-27",
-        "FutureResolution": {
-          "date": "2016-11-27"
-        },
-        "PastResolution": {
-          "date": "2016-11-27"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Sono tornato per il 21",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "per il 21",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-XX-21",
-        "FutureResolution": {
-          "date": "2016-11-21"
-        },
-        "PastResolution": {
-          "date": "2016-11-21"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Sono tornato per il 22",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "per il 22",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-XX-22",
-        "FutureResolution": {
-          "date": "2016-11-22"
-        },
-        "PastResolution": {
-          "date": "2016-11-22"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Sono tornato per il due",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "per il due",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-XX-02",
-        "FutureResolution": {
-          "date": "2016-11-02"
-        },
-        "PastResolution": {
-          "date": "2016-11-02"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Sono tornato per il ventidue",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "per il ventidue",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-XX-22",
-        "FutureResolution": {
-          "date": "2016-11-22"
-        },
-        "PastResolution": {
-          "date": "2016-11-22"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Sono tornato per il trenta",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "per il trenta",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-XX-30",
-        "FutureResolution": {
-          "date": "2016-11-30"
-        },
-        "PastResolution": {
-          "date": "2016-11-30"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Sono tornato giovedì 21",
-  "Context": {
-    "ReferenceDateTime": "2017-09-27T17:25:49.8080661+08:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "giovedì 21",
-      "Type": "date",
-      "Value": {
-        "Timex": "2017-09-21",
-        "FutureResolution": {
-          "date": "2017-09-21"
-        },
-        "PastResolution": {
-          "date": "2017-09-21"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Sono tornato venerdì 22",
-  "Context": {
-    "ReferenceDateTime": "2017-09-27T17:25:49.8110663+08:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "venerdì 22",
-      "Type": "date",
-      "Value": {
-        "Timex": "2017-09-22",
-        "FutureResolution": {
-          "date": "2017-09-22"
-        },
-        "PastResolution": {
-          "date": "2017-09-22"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Sono tornato sabato 23",
-  "Context": {
-    "ReferenceDateTime": "2017-09-27T17:25:49.8120465+08:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "sabato 23",
-      "Type": "date",
-      "Value": {
-        "Timex": "2017-09-23",
-        "FutureResolution": {
-          "date": "2017-09-23"
-        },
-        "PastResolution": {
-          "date": "2017-09-23"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Sono tornato venerdì 15",
-  "Context": {
-    "ReferenceDateTime": "2017-09-27T17:25:49.8130455+08:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "venerdì 15",
-      "Type": "date",
-      "Value": {
-        "Timex": "2017-09-15",
-        "FutureResolution": {
-          "date": "2017-09-15"
-        },
-        "PastResolution": {
-          "date": "2017-09-15"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Sono tornato giovedì ventuno",
-  "Context": {
-    "ReferenceDateTime": "2017-09-27T17:25:49.8140457+08:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "giovedì ventuno",
-      "Type": "date",
-      "Value": {
-        "Timex": "2017-09-21",
-        "FutureResolution": {
-          "date": "2017-09-21"
-        },
-        "PastResolution": {
-          "date": "2017-09-21"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Sono tornato venerdì ventidue",
-  "Context": {
-    "ReferenceDateTime": "2017-09-27T17:25:49.8150456+08:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "venerdì ventidue",
-      "Type": "date",
-      "Value": {
-        "Timex": "2017-09-22",
-        "FutureResolution": {
-          "date": "2017-09-22"
-        },
-        "PastResolution": {
-          "date": "2017-09-22"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Sono tornato venerdì quindici",
-  "Context": {
-    "ReferenceDateTime": "2017-09-27T17:25:49.8160454+08:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "venerdì quindici",
-      "Type": "date",
-      "Value": {
-        "Timex": "2017-09-15",
-        "FutureResolution": {
-          "date": "2017-09-15"
-        },
-        "PastResolution": {
-          "date": "2017-09-15"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò la seconda domenica",
-  "Context": {
-    "ReferenceDateTime": "2017-09-27T17:25:49.8200463+08:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "la seconda domenica",
-      "Type": "date",
-      "Value": {
-        "Timex": "2017-09-10",
-        "FutureResolution": {
-          "date": "2017-09-10"
-        },
-        "PastResolution": {
-          "date": "2017-09-10"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò la prima domenica",
-  "Context": {
-    "ReferenceDateTime": "2017-09-27T17:25:49.8200463+08:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "la prima domenica",
-      "Type": "date",
-      "Value": {
-        "Timex": "2017-09-03",
-        "FutureResolution": {
-          "date": "2017-09-03"
-        },
-        "PastResolution": {
-          "date": "2017-09-03"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò il terzo martedì",
-  "Context": {
-    "ReferenceDateTime": "2017-09-27T17:25:49.8210454+08:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "il terzo martedì",
-      "Type": "date",
-      "Value": {
-        "Timex": "2017-09-19",
-        "FutureResolution": {
-          "date": "2017-09-19"
-        },
-        "PastResolution": {
-          "date": "2017-09-19"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò la quinta domenica",
-  "Context": {
-    "ReferenceDateTime": "2017-09-27T17:25:49.8225493+08:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "quinta domenica",
-      "Type": "date",
-      "Value": {
-        "Timex": "2017-09-31",
-        "FutureResolution": {
-          "date": "0001-01-01"
-        },
-        "PastResolution": {
-          "date": "0001-01-01"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò il 20 del prossimo mese",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "il 20 del prossimo mese",
-      "Type": "date",
-      "Value": {
-        "Timex": "2016-12-20",
-        "FutureResolution": {
-          "date": "2016-12-20"
-        },
-        "PastResolution": {
-          "date": "2016-12-20"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Sono tornato il 31 di questo mese",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "il 31 di questo mese",
-      "Type": "date",
-      "Value": {
-        "Timex": "2016-11-31",
-        "FutureResolution": {
-          "date": "0001-01-01"
-        },
-        "PastResolution": {
-          "date": "0001-01-01"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò il 12 Gennaio 2018",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "12 Gennaio 2018",
-      "Type": "date",
-      "Value": {
-        "Timex": "2018-01-12",
-        "FutureResolution": {
-          "date": "2018-01-12"
-        },
-        "PastResolution": {
-          "date": "2018-01-12"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Tornerò il 9-18-15",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "9-18-15",
-      "Type": "date",
-      "Value": {
-        "Timex": "2015-09-18",
-        "FutureResolution": {
-          "date": "2015-09-18"
-        },
-        "PastResolution": {
-          "date": "2015-09-18"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Sono tornato due giorni fa",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "due giorni fa",
-      "Type": "date",
-      "Value": {
-        "Timex": "2016-11-05",
-        "FutureResolution": {
-          "date": "2016-11-05"
-        },
-        "PastResolution": {
-          "date": "2016-11-05"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Sono tornato due anni fa",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "due anni fa",
-      "Type": "date",
-      "Value": {
-        "Timex": "2014-11-07",
-        "FutureResolution": {
-          "date": "2014-11-07"
-        },
-        "PastResolution": {
-          "date": "2014-11-07"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "16. Nov. 2016",
-  "Context": {
-    "ReferenceDateTime": "2016-11-14T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "16. Nov. 2016",
-      "Type": "date",
-      "Value": {
-        "Timex": "2016-11-16",
-        "FutureResolution": {
-          "date": "2016-11-16"
-        },
-        "PastResolution": {
-          "date": "2016-11-16"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Abbiamo avuto un appuntamento 1 mese e 21 giorni fa",
-  "Context": {
-    "ReferenceDateTime": "2017-11-23T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "1 mese e 21 giorni fa",
-      "Type": "date",
-      "Value": {
-        "Timex": "2017-10-02",
-        "FutureResolution": {
-          "date": "2017-10-02"
-        },
-        "PastResolution": {
-          "date": "2017-10-02"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Sono partito 2 anni, 1 mese e 21 giorni fa",
-  "Context": {
-    "ReferenceDateTime": "2017-11-23T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "2 anni, 1 mese e 21 giorni fa",
-      "Type": "date",
-      "Value": {
-        "Timex": "2015-10-02",
-        "FutureResolution": {
-          "date": "2015-10-02"
-        },
-        "PastResolution": {
-          "date": "2015-10-02"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Partirò 2 anni e 21 giorni dopo",
-  "Context": {
-    "ReferenceDateTime": "2017-11-23T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "2 anni e 21 giorni dopo",
-      "Type": "date",
-      "Value": {
-        "Timex": "2019-12-14",
-        "FutureResolution": {
-          "date": "2019-12-14"
-        },
-        "PastResolution": {
-          "date": "2019-12-14"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Sono partito 1 mese, 2 anni e 21 giorni fa",
-  "Context": {
-    "ReferenceDateTime": "2017-11-23T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "1 mese, 2 anni e 21 giorni fa",
-      "Type": "date",
-      "Value": {
-        "Timex": "2015-10-02",
-        "FutureResolution": {
-          "date": "2015-10-02"
-        },
-        "PastResolution": {
-          "date": "2015-10-02"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Abbiamo avuto un appuntamento 1 mese e 21 giorni fa",
-  "Context": {
-    "ReferenceDateTime": "2017-11-23T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "1 mese e 21 giorni fa",
-      "Type": "date",
-      "Value": {
-        "Timex": "2017-10-02",
-        "FutureResolution": {
-          "date": "2017-10-02"
-        },
-        "PastResolution": {
-          "date": "2017-10-02"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Avremo un appuntamento il 20 del prossimo mese",
-  "Context": {
-    "ReferenceDateTime": "2017-12-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "il 20 del prossimo mese",
-      "Type": "date",
-      "Value": {
-        "Timex": "2018-01-20",
-        "FutureResolution": {
-          "date": "2018-01-20"
-        },
-        "PastResolution": {
-          "date": "2018-01-20"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Abbiamo avuto un appuntamento il 5 Dicembre 1391",
-  "Context": {
-    "ReferenceDateTime": "2017-12-18T00:00:00"
-  },
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "5 Dicembre 1391",
-      "Type": "date",
-      "Value": {
-        "Timex": "1391-12-05",
-        "FutureResolution": {
-          "date": "1391-12-05"
-        },
-        "PastResolution": {
-          "date": "1391-12-05"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Lunedì, ventidue Gen, 2018",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "Lunedì, ventidue Gen, 2018",
-      "Type": "date",
-      "Value": {
-        "Timex": "2018-01-22",
-        "FutureResolution": {
-          "date": "2018-01-22"
-        },
-        "PastResolution": {
-          "date": "2018-01-22"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Domenica ventuno Gen duemiladiciotto",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "Domenica ventuno Gen duemiladiciotto",
-      "Type": "date",
-      "Value": {
-        "Timex": "2018-01-21",
-        "FutureResolution": {
-          "date": "2018-01-21"
-        },
-        "PastResolution": {
-          "date": "2018-01-21"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "a Settembre, il ventuno, millenovecentosettantatre",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "Settembre, il ventuno, millenovecentosettantatre",
-      "Type": "date",
-      "Value": {
-        "Timex": "1978-09-21",
-        "FutureResolution": {
-          "date": "1978-09-21"
-        },
-        "PastResolution": {
-          "date": "1978-09-21"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "il 10 Settembre, millenovecentouno",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "10 Settembre, millenovecentouno",
-      "Type": "date",
-      "Value": {
-        "Timex": "1901-09-10",
-        "FutureResolution": {
-          "date": "1901-09-10"
-        },
-        "PastResolution": {
-          "date": "1901-09-10"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "il dieci di Settembre, duemila",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupported": "dotnet",
-  "NotSupportedByDesign": "python,javascript,python",
-  "Results": [
-    {
-      "Text": "dieci di Settembre, duemila",
-      "Type": "date",
-      "Value": {
-        "Timex": "2000-09-10",
-        "FutureResolution": {
-          "date": "2000-09-10"
-        },
-        "PastResolution": {
-          "date": "2000-09-10"
-        }
-      }
-    }
-  ]
-}
+[
+  {
+    "Input": "Tornerò il 15",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "15",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-XX-15",
+          "FutureResolution": {
+            "date": "2016-11-15"
+          },
+          "PastResolution": {
+            "date": "2016-10-15"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il 2 Ott.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "2 Ott.",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-10-02",
+          "FutureResolution": {
+            "date": "2017-10-02"
+          },
+          "PastResolution": {
+            "date": "2016-10-02"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il 2-Ott",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "2-Ott",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-10-02",
+          "FutureResolution": {
+            "date": "2017-10-02"
+          },
+          "PastResolution": {
+            "date": "2016-10-02"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il 2/Ott",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "2/Ott",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-10-02",
+          "FutureResolution": {
+            "date": "2017-10-02"
+          },
+          "PastResolution": {
+            "date": "2016-10-02"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il 2 Ottobre",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "2 Ottobre",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-10-02",
+          "FutureResolution": {
+            "date": "2017-10-02"
+          },
+          "PastResolution": {
+            "date": "2016-10-02"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il 12 Gennaio 2106",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "12 Gennaio, 2106",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-01-12",
+          "FutureResolution": {
+            "date": "2016-01-12"
+          },
+          "PastResolution": {
+            "date": "2016-01-12"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò Lunedì 12 Gennaio 2016",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "Lunedì 12 Gennaio 2016",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-01-12",
+          "FutureResolution": {
+            "date": "2016-01-12"
+          },
+          "PastResolution": {
+            "date": "2016-01-12"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il 02/22/2016",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "02/22/2016",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-02-22",
+          "FutureResolution": {
+            "date": "2016-02-22"
+          },
+          "PastResolution": {
+            "date": "2016-02-22"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "TOrnerò il 21/04/2016",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "21/04/2016",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-04-21",
+          "FutureResolution": {
+            "date": "2016-04-21"
+          },
+          "PastResolution": {
+            "date": "2016-04-21"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il 21/04/16",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "21/04/16",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-04-21",
+          "FutureResolution": {
+            "date": "2016-04-21"
+          },
+          "PastResolution": {
+            "date": "2016-04-21"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il 21-04-2016",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "21-04-2016",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-04-21",
+          "FutureResolution": {
+            "date": "2016-04-21"
+          },
+          "PastResolution": {
+            "date": "2016-04-21"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il on 4.22",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "4.22",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-04-22",
+          "FutureResolution": {
+            "date": "2017-04-22"
+          },
+          "PastResolution": {
+            "date": "2016-04-22"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il 4-22",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "4-22",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-04-22",
+          "FutureResolution": {
+            "date": "2017-04-22"
+          },
+          "PastResolution": {
+            "date": "2016-04-22"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il    4/22",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "4/22",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-04-22",
+          "FutureResolution": {
+            "date": "2017-04-22"
+          },
+          "PastResolution": {
+            "date": "2016-04-22"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il 22/04",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "22/04",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-04-22",
+          "FutureResolution": {
+            "date": "2017-04-22"
+          },
+          "PastResolution": {
+            "date": "2016-04-22"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il     4/22",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "4/22",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-04-22",
+          "FutureResolution": {
+            "date": "2017-04-22"
+          },
+          "PastResolution": {
+            "date": "2016-04-22"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il 2015/08/12",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "2015/08/12",
+        "Type": "date",
+        "Value": {
+          "Timex": "2015-08-12",
+          "FutureResolution": {
+            "date": "2015-08-12"
+          },
+          "PastResolution": {
+            "date": "2015-08-12"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tonerò il 08/12,2015",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "08/12,2015",
+        "Type": "date",
+        "Value": {
+          "Timex": "2015-08-12",
+          "FutureResolution": {
+            "date": "2015-08-12"
+          },
+          "PastResolution": {
+            "date": "2015-08-12"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il 08/12,15",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "08/12,15",
+        "Type": "date",
+        "Value": {
+          "Timex": "2015-08-12",
+          "FutureResolution": {
+            "date": "2015-08-12"
+          },
+          "PastResolution": {
+            "date": "2015-08-12"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il 1 Gen",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "1 Gen",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-01-01",
+          "FutureResolution": {
+            "date": "2017-01-01"
+          },
+          "PastResolution": {
+            "date": "2016-01-01"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il primo Gen",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "primo Gen",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-01-01",
+          "FutureResolution": {
+            "date": "2017-01-01"
+          },
+          "PastResolution": {
+            "date": "2016-01-01"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò Mer, 22 Gen",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "Mer, 22 Gen",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-01-22",
+          "FutureResolution": {
+            "date": "2017-01-22"
+          },
+          "PastResolution": {
+            "date": "2016-01-22"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il ventuno Maggio",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "ventuno Maggio",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-05-21",
+          "FutureResolution": {
+            "date": "2017-05-21"
+          },
+          "PastResolution": {
+            "date": "2016-05-21"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il due di Ago.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "due di Ago",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-08-02",
+          "FutureResolution": {
+            "date": "2017-08-02"
+          },
+          "PastResolution": {
+            "date": "2016-08-02"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il ventidue di Giugno",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": " ventidue di Giugno",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-06-22",
+          "FutureResolution": {
+            "date": "2017-06-22"
+          },
+          "PastResolution": {
+            "date": "2016-06-22"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò Venerdì",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "Venerdì",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-WXX-5",
+          "FutureResolution": {
+            "date": "2016-11-11"
+          },
+          "PastResolution": {
+            "date": "2016-11-04"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò oggi",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "oggi",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-07",
+          "FutureResolution": {
+            "date": "2016-11-07"
+          },
+          "PastResolution": {
+            "date": "2016-11-07"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò domani",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "domani",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-08",
+          "FutureResolution": {
+            "date": "2016-11-08"
+          },
+          "PastResolution": {
+            "date": "2016-11-08"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Sono tornato ieri",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "ieri",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-06",
+          "FutureResolution": {
+            "date": "2016-11-06"
+          },
+          "PastResolution": {
+            "date": "2016-11-06"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Sono tornato l'altroieri",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "l'altroieri",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-05",
+          "FutureResolution": {
+            "date": "2016-11-05"
+          },
+          "PastResolution": {
+            "date": "2016-11-05"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò dopodomani",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "dopodomani",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-09",
+          "FutureResolution": {
+            "date": "2016-11-09"
+          },
+          "PastResolution": {
+            "date": "2016-11-09"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Dopodomani",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "Dopodomani",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-09",
+          "FutureResolution": {
+            "date": "2016-11-09"
+          },
+          "PastResolution": {
+            "date": "2016-11-09"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il giorno dopo",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "il giorno dopo",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-08",
+          "FutureResolution": {
+            "date": "2016-11-08"
+          },
+          "PastResolution": {
+            "date": "2016-11-08"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò questo venerdì",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "questo venerdì",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-11",
+          "FutureResolution": {
+            "date": "2016-11-11"
+          },
+          "PastResolution": {
+            "date": "2016-11-11"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò domenica prossima",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "domenica prossima",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-20",
+          "FutureResolution": {
+            "date": "2016-11-20"
+          },
+          "PastResolution": {
+            "date": "2016-11-20"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Sono tornato domenica scorsa",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "domenica scorsa",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-06",
+          "FutureResolution": {
+            "date": "2016-11-06"
+          },
+          "PastResolution": {
+            "date": "2016-11-06"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò questa settimana, venerdì",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "questa settimana, venerdì",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-11",
+          "FutureResolution": {
+            "date": "2016-11-11"
+          },
+          "PastResolution": {
+            "date": "2016-11-11"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò la prossima settimana, domenica",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "la prossima settimana, domenica",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-20",
+          "FutureResolution": {
+            "date": "2016-11-20"
+          },
+          "PastResolution": {
+            "date": "2016-11-20"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Sono tornato la scorsa settimana, domenica",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "la scorsa settimana, domenica",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-06",
+          "FutureResolution": {
+            "date": "2016-11-06"
+          },
+          "PastResolution": {
+            "date": "2016-11-06"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Sono tornato l'ultimo giorno",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "l'ultimo giorno",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-06",
+          "FutureResolution": {
+            "date": "2016-11-06"
+          },
+          "PastResolution": {
+            "date": "2016-11-06"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò in giornata",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "in giornata",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-07",
+          "FutureResolution": {
+            "date": "2016-11-07"
+          },
+          "PastResolution": {
+            "date": "2016-11-07"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il 15 Giugno 2016",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "15 Giugno 2016",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-06-15",
+          "FutureResolution": {
+            "date": "2016-06-15"
+          },
+          "PastResolution": {
+            "date": "2016-06-15"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il primo venerdì di luglio",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "il primo venerdì di luglio",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-07-WXX-5-#1",
+          "FutureResolution": {
+            "date": "2017-07-07"
+          },
+          "PastResolution": {
+            "date": "2016-07-01"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il primo venerdì di questo mese",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "il primo venerdì di questo mese",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-11-WXX-5-#1",
+          "FutureResolution": {
+            "date": "2016-11-04"
+          },
+          "PastResolution": {
+            "date": "2016-11-04"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò la prossima settimana, di venerdì",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "la prossima settimana, di venerdì",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-18",
+          "FutureResolution": {
+            "date": "2016-11-18"
+          },
+          "PastResolution": {
+            "date": "2016-11-18"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò venerdì della prossima settimana",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "venerdì della prossima settimana",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-18",
+          "FutureResolution": {
+            "date": "2016-11-18"
+          },
+          "PastResolution": {
+            "date": "2016-11-18"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò questo giorno",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "questo giorno",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-07",
+          "FutureResolution": {
+            "date": "2016-11-07"
+          },
+          "PastResolution": {
+            "date": "2016-11-07"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Sono tornato il giorno passato",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "il giorno passato",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-06",
+          "FutureResolution": {
+            "date": "2016-11-06"
+          },
+          "PastResolution": {
+            "date": "2016-11-06"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò tra due settimane da adesso",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "tra due settimane da adesso",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-21",
+          "FutureResolution": {
+            "date": "2016-11-21"
+          },
+          "PastResolution": {
+            "date": "2016-11-21"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "a chi ho mandato una email un mese fa",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "un mese fa",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-10-07",
+          "FutureResolution": {
+            "date": "2016-10-07"
+          },
+          "PastResolution": {
+            "date": "2016-10-07"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "a chi ho mandato una email pochi mesi fa",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "pochi mesi fa",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-08-07",
+          "FutureResolution": {
+            "date": "2016-08-07"
+          },
+          "PastResolution": {
+            "date": "2016-08-07"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "a chi ho mandato una email pochi giorni fa",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "pochi giorni fa",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-04",
+          "FutureResolution": {
+            "date": "2016-11-04"
+          },
+          "PastResolution": {
+            "date": "2016-11-04"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Sono tornato per il 27",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "per il 27",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-XX-27",
+          "FutureResolution": {
+            "date": "2016-11-27"
+          },
+          "PastResolution": {
+            "date": "2016-11-27"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Sono tornato per il 27.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "per il 27",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-XX-27",
+          "FutureResolution": {
+            "date": "2016-11-27"
+          },
+          "PastResolution": {
+            "date": "2016-11-27"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Sono tornato per il 27!",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "per il 27",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-XX-27",
+          "FutureResolution": {
+            "date": "2016-11-27"
+          },
+          "PastResolution": {
+            "date": "2016-11-27"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Sono tornato per il 27 .",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "per il 27",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-XX-27",
+          "FutureResolution": {
+            "date": "2016-11-27"
+          },
+          "PastResolution": {
+            "date": "2016-11-27"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Sono tornato per il 21",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "per il 21",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-XX-21",
+          "FutureResolution": {
+            "date": "2016-11-21"
+          },
+          "PastResolution": {
+            "date": "2016-11-21"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Sono tornato per il 22",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "per il 22",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-XX-22",
+          "FutureResolution": {
+            "date": "2016-11-22"
+          },
+          "PastResolution": {
+            "date": "2016-11-22"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Sono tornato per il due",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "per il due",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-XX-02",
+          "FutureResolution": {
+            "date": "2016-11-02"
+          },
+          "PastResolution": {
+            "date": "2016-11-02"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Sono tornato per il ventidue",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "per il ventidue",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-XX-22",
+          "FutureResolution": {
+            "date": "2016-11-22"
+          },
+          "PastResolution": {
+            "date": "2016-11-22"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Sono tornato per il trenta",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "per il trenta",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-XX-30",
+          "FutureResolution": {
+            "date": "2016-11-30"
+          },
+          "PastResolution": {
+            "date": "2016-11-30"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Sono tornato giovedì 21",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T17:25:49.8080661+08:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "giovedì 21",
+        "Type": "date",
+        "Value": {
+          "Timex": "2017-09-21",
+          "FutureResolution": {
+            "date": "2017-09-21"
+          },
+          "PastResolution": {
+            "date": "2017-09-21"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Sono tornato venerdì 22",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T17:25:49.8110663+08:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "venerdì 22",
+        "Type": "date",
+        "Value": {
+          "Timex": "2017-09-22",
+          "FutureResolution": {
+            "date": "2017-09-22"
+          },
+          "PastResolution": {
+            "date": "2017-09-22"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Sono tornato sabato 23",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T17:25:49.8120465+08:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "sabato 23",
+        "Type": "date",
+        "Value": {
+          "Timex": "2017-09-23",
+          "FutureResolution": {
+            "date": "2017-09-23"
+          },
+          "PastResolution": {
+            "date": "2017-09-23"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Sono tornato venerdì 15",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T17:25:49.8130455+08:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "venerdì 15",
+        "Type": "date",
+        "Value": {
+          "Timex": "2017-09-15",
+          "FutureResolution": {
+            "date": "2017-09-15"
+          },
+          "PastResolution": {
+            "date": "2017-09-15"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Sono tornato giovedì ventuno",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T17:25:49.8140457+08:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "giovedì ventuno",
+        "Type": "date",
+        "Value": {
+          "Timex": "2017-09-21",
+          "FutureResolution": {
+            "date": "2017-09-21"
+          },
+          "PastResolution": {
+            "date": "2017-09-21"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Sono tornato venerdì ventidue",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T17:25:49.8150456+08:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "venerdì ventidue",
+        "Type": "date",
+        "Value": {
+          "Timex": "2017-09-22",
+          "FutureResolution": {
+            "date": "2017-09-22"
+          },
+          "PastResolution": {
+            "date": "2017-09-22"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Sono tornato venerdì quindici",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T17:25:49.8160454+08:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "venerdì quindici",
+        "Type": "date",
+        "Value": {
+          "Timex": "2017-09-15",
+          "FutureResolution": {
+            "date": "2017-09-15"
+          },
+          "PastResolution": {
+            "date": "2017-09-15"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò la seconda domenica",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T17:25:49.8200463+08:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "la seconda domenica",
+        "Type": "date",
+        "Value": {
+          "Timex": "2017-09-10",
+          "FutureResolution": {
+            "date": "2017-09-10"
+          },
+          "PastResolution": {
+            "date": "2017-09-10"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò la prima domenica",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T17:25:49.8200463+08:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "la prima domenica",
+        "Type": "date",
+        "Value": {
+          "Timex": "2017-09-03",
+          "FutureResolution": {
+            "date": "2017-09-03"
+          },
+          "PastResolution": {
+            "date": "2017-09-03"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il terzo martedì",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T17:25:49.8210454+08:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "il terzo martedì",
+        "Type": "date",
+        "Value": {
+          "Timex": "2017-09-19",
+          "FutureResolution": {
+            "date": "2017-09-19"
+          },
+          "PastResolution": {
+            "date": "2017-09-19"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò la quinta domenica",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T17:25:49.8225493+08:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "quinta domenica",
+        "Type": "date",
+        "Value": {
+          "Timex": "2017-09-31",
+          "FutureResolution": {
+            "date": "0001-01-01"
+          },
+          "PastResolution": {
+            "date": "0001-01-01"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il 20 del prossimo mese",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "il 20 del prossimo mese",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-12-20",
+          "FutureResolution": {
+            "date": "2016-12-20"
+          },
+          "PastResolution": {
+            "date": "2016-12-20"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Sono tornato il 31 di questo mese",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "il 31 di questo mese",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-31",
+          "FutureResolution": {
+            "date": "0001-01-01"
+          },
+          "PastResolution": {
+            "date": "0001-01-01"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il 12 Gennaio 2018",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "12 Gennaio 2018",
+        "Type": "date",
+        "Value": {
+          "Timex": "2018-01-12",
+          "FutureResolution": {
+            "date": "2018-01-12"
+          },
+          "PastResolution": {
+            "date": "2018-01-12"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tornerò il 9-18-15",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "9-18-15",
+        "Type": "date",
+        "Value": {
+          "Timex": "2015-09-18",
+          "FutureResolution": {
+            "date": "2015-09-18"
+          },
+          "PastResolution": {
+            "date": "2015-09-18"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Sono tornato due giorni fa",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "due giorni fa",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-05",
+          "FutureResolution": {
+            "date": "2016-11-05"
+          },
+          "PastResolution": {
+            "date": "2016-11-05"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Sono tornato due anni fa",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "due anni fa",
+        "Type": "date",
+        "Value": {
+          "Timex": "2014-11-07",
+          "FutureResolution": {
+            "date": "2014-11-07"
+          },
+          "PastResolution": {
+            "date": "2014-11-07"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "16. Nov. 2016",
+    "Context": {
+      "ReferenceDateTime": "2016-11-14T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "16. Nov. 2016",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-16",
+          "FutureResolution": {
+            "date": "2016-11-16"
+          },
+          "PastResolution": {
+            "date": "2016-11-16"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Abbiamo avuto un appuntamento 1 mese e 21 giorni fa",
+    "Context": {
+      "ReferenceDateTime": "2017-11-23T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "1 mese e 21 giorni fa",
+        "Type": "date",
+        "Value": {
+          "Timex": "2017-10-02",
+          "FutureResolution": {
+            "date": "2017-10-02"
+          },
+          "PastResolution": {
+            "date": "2017-10-02"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Sono partito 2 anni, 1 mese e 21 giorni fa",
+    "Context": {
+      "ReferenceDateTime": "2017-11-23T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "2 anni, 1 mese e 21 giorni fa",
+        "Type": "date",
+        "Value": {
+          "Timex": "2015-10-02",
+          "FutureResolution": {
+            "date": "2015-10-02"
+          },
+          "PastResolution": {
+            "date": "2015-10-02"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Partirò 2 anni e 21 giorni dopo",
+    "Context": {
+      "ReferenceDateTime": "2017-11-23T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "2 anni e 21 giorni dopo",
+        "Type": "date",
+        "Value": {
+          "Timex": "2019-12-14",
+          "FutureResolution": {
+            "date": "2019-12-14"
+          },
+          "PastResolution": {
+            "date": "2019-12-14"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Sono partito 1 mese, 2 anni e 21 giorni fa",
+    "Context": {
+      "ReferenceDateTime": "2017-11-23T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "1 mese, 2 anni e 21 giorni fa",
+        "Type": "date",
+        "Value": {
+          "Timex": "2015-10-02",
+          "FutureResolution": {
+            "date": "2015-10-02"
+          },
+          "PastResolution": {
+            "date": "2015-10-02"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Avremo un appuntamento il 20 del prossimo mese",
+    "Context": {
+      "ReferenceDateTime": "2017-12-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "il 20 del prossimo mese",
+        "Type": "date",
+        "Value": {
+          "Timex": "2018-01-20",
+          "FutureResolution": {
+            "date": "2018-01-20"
+          },
+          "PastResolution": {
+            "date": "2018-01-20"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Abbiamo avuto un appuntamento il 5 Dicembre 1391",
+    "Context": {
+      "ReferenceDateTime": "2017-12-18T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "5 Dicembre 1391",
+        "Type": "date",
+        "Value": {
+          "Timex": "1391-12-05",
+          "FutureResolution": {
+            "date": "1391-12-05"
+          },
+          "PastResolution": {
+            "date": "1391-12-05"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Lunedì, ventidue Gen, 2018",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "Lunedì, ventidue Gen, 2018",
+        "Type": "date",
+        "Value": {
+          "Timex": "2018-01-22",
+          "FutureResolution": {
+            "date": "2018-01-22"
+          },
+          "PastResolution": {
+            "date": "2018-01-22"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Domenica ventuno Gen duemiladiciotto",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "Domenica ventuno Gen duemiladiciotto",
+        "Type": "date",
+        "Value": {
+          "Timex": "2018-01-21",
+          "FutureResolution": {
+            "date": "2018-01-21"
+          },
+          "PastResolution": {
+            "date": "2018-01-21"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "a Settembre, il ventuno, millenovecentosettantatre",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "Settembre, il ventuno, millenovecentosettantatre",
+        "Type": "date",
+        "Value": {
+          "Timex": "1978-09-21",
+          "FutureResolution": {
+            "date": "1978-09-21"
+          },
+          "PastResolution": {
+            "date": "1978-09-21"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "il 10 Settembre, millenovecentouno",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "10 Settembre, millenovecentouno",
+        "Type": "date",
+        "Value": {
+          "Timex": "1901-09-10",
+          "FutureResolution": {
+            "date": "1901-09-10"
+          },
+          "PastResolution": {
+            "date": "1901-09-10"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "il dieci di Settembre, duemila",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "dieci di Settembre, duemila",
+        "Type": "date",
+        "Value": {
+          "Timex": "2000-09-10",
+          "FutureResolution": {
+            "date": "2000-09-10"
+          },
+          "PastResolution": {
+            "date": "2000-09-10"
+          }
+        }
+      }
+    ]
+  }
 ]

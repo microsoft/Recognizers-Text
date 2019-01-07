@@ -1272,54 +1272,6 @@
     ]
   },
   {
-    "Input": "voltarei em primeiro de Jan",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "javascript, python",
-    "Results": [
-      {
-        "Text": "primeiro de Jan",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-01-01",
-          "FutureResolution": {
-            "date": "2017-01-01"
-          },
-          "PastResolution": {
-            "date": "2016-01-01"
-          }
-        },
-        "Start": 12,
-        "Length": 15
-      }
-    ]
-  },
-  {
-    "Input": "voltarei em vinte e um de Maio",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "javascript, python",
-    "Results": [
-      {
-        "Text": "vinte e um de Maio",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-05-21",
-          "FutureResolution": {
-            "date": "2017-05-21"
-          },
-          "PastResolution": {
-            "date": "2016-05-21"
-          }
-        },
-        "Start": 12,
-        "Length": 18
-      }
-    ]
-  },
-  {
     "Input": "voltarei no segundo de Ago.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -1340,30 +1292,6 @@
         },
         "Start": 12,
         "Length": 14
-      }
-    ]
-  },
-  {
-    "Input": "voltarei no vigesimo segundo de Junho",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "javascript, python",
-    "Results": [
-      {
-        "Text": "vigesimo segundo de Junho",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-06-22",
-          "FutureResolution": {
-            "date": "2017-06-22"
-          },
-          "PastResolution": {
-            "date": "2016-06-22"
-          }
-        },
-        "Start": 12,
-        "Length": 25
       }
     ]
   },
@@ -1412,30 +1340,6 @@
         },
         "Start": 10,
         "Length": 18
-      }
-    ]
-  },
-  {
-    "Input": "voltarei depois de amanha",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "javascript, python",
-    "Results": [
-      {
-        "Text": "depois de amanha",
-        "Type": "date",
-        "Value": {
-          "Timex": "2016-11-09",
-          "FutureResolution": {
-            "date": "2016-11-09"
-          },
-          "PastResolution": {
-            "date": "2016-11-09"
-          }
-        },
-        "Start": 9,
-        "Length": 16
       }
     ]
   },

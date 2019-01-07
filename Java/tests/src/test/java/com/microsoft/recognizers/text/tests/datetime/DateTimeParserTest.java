@@ -8,29 +8,54 @@ import com.microsoft.recognizers.text.Culture;
 import com.microsoft.recognizers.text.ExtractResult;
 import com.microsoft.recognizers.text.ModelResult;
 import com.microsoft.recognizers.text.datetime.DateTimeOptions;
-import com.microsoft.recognizers.text.datetime.english.parsers.*;
+import com.microsoft.recognizers.text.datetime.english.parsers.EnglishCommonDateTimeParserConfiguration;
+import com.microsoft.recognizers.text.datetime.english.parsers.EnglishDateParserConfiguration;
+import com.microsoft.recognizers.text.datetime.english.parsers.EnglishDatePeriodParserConfiguration;
+import com.microsoft.recognizers.text.datetime.english.parsers.EnglishDateTimeAltParserConfiguration;
+import com.microsoft.recognizers.text.datetime.english.parsers.EnglishDateTimeParserConfiguration;
+import com.microsoft.recognizers.text.datetime.english.parsers.EnglishDateTimePeriodParserConfiguration;
+import com.microsoft.recognizers.text.datetime.english.parsers.EnglishDurationParserConfiguration;
 import com.microsoft.recognizers.text.datetime.english.parsers.EnglishHolidayParserConfiguration;
+import com.microsoft.recognizers.text.datetime.english.parsers.EnglishMergedParserConfiguration;
+import com.microsoft.recognizers.text.datetime.english.parsers.EnglishSetParserConfiguration;
+import com.microsoft.recognizers.text.datetime.english.parsers.EnglishTimeParserConfiguration;
+import com.microsoft.recognizers.text.datetime.english.parsers.EnglishTimePeriodParserConfiguration;
+import com.microsoft.recognizers.text.datetime.english.parsers.TimeParser;
 import com.microsoft.recognizers.text.datetime.extractors.IDateTimeExtractor;
-import com.microsoft.recognizers.text.datetime.parsers.*;
+import com.microsoft.recognizers.text.datetime.parsers.BaseDateParser;
+import com.microsoft.recognizers.text.datetime.parsers.BaseDatePeriodParser;
+import com.microsoft.recognizers.text.datetime.parsers.BaseDateTimeAltParser;
+import com.microsoft.recognizers.text.datetime.parsers.BaseDateTimeParser;
+import com.microsoft.recognizers.text.datetime.parsers.BaseDateTimePeriodParser;
+import com.microsoft.recognizers.text.datetime.parsers.BaseDurationParser;
+import com.microsoft.recognizers.text.datetime.parsers.BaseHolidayParser;
+import com.microsoft.recognizers.text.datetime.parsers.BaseMergedDateTimeParser;
+import com.microsoft.recognizers.text.datetime.parsers.BaseSetParser;
+import com.microsoft.recognizers.text.datetime.parsers.BaseTimePeriodParser;
+import com.microsoft.recognizers.text.datetime.parsers.BaseTimeZoneParser;
+import com.microsoft.recognizers.text.datetime.parsers.DateTimeParseResult;
+import com.microsoft.recognizers.text.datetime.parsers.IDateTimeParser;
 import com.microsoft.recognizers.text.datetime.utilities.DateTimeResolutionResult;
 import com.microsoft.recognizers.text.datetime.utilities.TimeZoneResolutionResult;
 import com.microsoft.recognizers.text.tests.AbstractTest;
 import com.microsoft.recognizers.text.tests.TestCase;
 import com.microsoft.recognizers.text.tests.helpers.DateTimeResolutionResultMixIn;
 import com.microsoft.recognizers.text.tests.helpers.TimeZoneResolutionResultMixIn;
-import org.javatuples.Pair;
-import org.junit.Assert;
-import org.junit.AssumptionViolatedException;
-import org.junit.runners.Parameterized;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
+
+import org.javatuples.Pair;
+import org.junit.Assert;
+import org.junit.AssumptionViolatedException;
+import org.junit.runners.Parameterized;
 
 public class DateTimeParserTest extends AbstractTest {
 
@@ -55,7 +80,7 @@ public class DateTimeParserTest extends AbstractTest {
         IDateTimeExtractor extractor = getExtractor(currentCase);
         IDateTimeParser parser = getParser(currentCase);
         LocalDateTime referenceDateTime = currentCase.getReferenceDateTime();
-        List<ExtractResult> extractResult = extractor.extract(currentCase.input, referenceDateTime);
+        List<ExtractResult> extractResult = extractor.extract(currentCase.input.toLowerCase(Locale.ROOT), referenceDateTime);
         return extractResult.stream().map(er -> parser.parse(er, referenceDateTime)).collect(Collectors.toList());
     }
 
@@ -77,10 +102,11 @@ public class DateTimeParserTest extends AbstractTest {
                     DateTimeParseResult expected = t.getValue0();
                     DateTimeParseResult actual = t.getValue1();
 
-                    Assert.assertEquals(getMessage(currentCase, "type"), expected.type, actual.type);
-                    Assert.assertEquals(getMessage(currentCase, "text"), expected.text, actual.text);
-                    Assert.assertEquals(getMessage(currentCase, "start"), expected.start, actual.start);
-                    Assert.assertEquals(getMessage(currentCase, "length"), expected.length, actual.length);
+                    Assert.assertEquals(getMessage(currentCase, "type"), expected.getType(), actual.getType());
+                    Assert.assertTrue(getMessage(currentCase, "text"), expected.getText().equalsIgnoreCase(actual.getText()));
+
+                    Assert.assertEquals(getMessage(currentCase, "start"), expected.getStart(), actual.getStart());
+                    Assert.assertEquals(getMessage(currentCase, "length"), expected.getLength(), actual.getLength());
 
                     if (currentCase.modelName.equals("MergedParser")) {
                         assertMergedParserResults(currentCase, expected, actual);
@@ -92,9 +118,9 @@ public class DateTimeParserTest extends AbstractTest {
 
     private static void assertParserResults(TestCase currentCase, DateTimeParseResult expected, DateTimeParseResult actual) {
 
-        if (expected.value != null) {
-            DateTimeResolutionResult expectedValue = parseDateTimeResolutionResult(DateTimeResolutionResult.class, expected.value);
-            DateTimeResolutionResult actualValue = (DateTimeResolutionResult) actual.value;
+        if (expected.getValue() != null) {
+            DateTimeResolutionResult expectedValue = parseDateTimeResolutionResult(DateTimeResolutionResult.class, expected.getValue());
+            DateTimeResolutionResult actualValue = (DateTimeResolutionResult)actual.getValue();
 
             Assert.assertEquals(getMessage(currentCase, "timex"), expectedValue.getTimex(), actualValue.getTimex());
             Assert.assertEquals(getMessage(currentCase, "futureResolution"), expectedValue.getFutureResolution(), actualValue.getFutureResolution());
@@ -104,9 +130,10 @@ public class DateTimeParserTest extends AbstractTest {
 
     private static void assertMergedParserResults(TestCase currentCase, DateTimeParseResult expected, DateTimeParseResult actual) {
 
-        if (expected.value != null) {
-            Map<String, List<Map<String, Object>>> expectedValue = parseDateTimeResolutionResult(expected.value);
-            Map<String, List<Map<String, Object>>> actualValue = (Map<String, List<Map<String, Object>>>) actual.value;
+        if (expected.getValue() != null) {
+
+            Map<String, List<Map<String, Object>>> expectedValue = parseDateTimeResolutionResult(expected.getValue());
+            Map<String, List<Map<String, Object>>> actualValue = (Map<String, List<Map<String, Object>>>)actual.getValue();
 
             List<Map<String, Object>> expectedResults = expectedValue.get("values");
             List<Map<String, Object>> actualResults = actualValue.get("values");
@@ -119,7 +146,8 @@ public class DateTimeParserTest extends AbstractTest {
             IntStream.range(0, expectedResults.size()).mapToObj(i -> new Pair<>(expectedResults.get(i), actualResults.get(i))).forEach(o -> {
                 Map<String, Object> expectedItem = o.getValue0();
                 Map<String, Object> actualItem = o.getValue1();
-                Assert.assertTrue(String.format("Keys error \n\tExpected:\t%s\n\tActual:\t%s", String.join(",", expectedItem.keySet()), String.join(",", actualItem.keySet())), actualItem.keySet().containsAll(expectedItem.keySet()));
+                Assert.assertTrue(String.format("Keys error \n\tExpected:\t%s\n\tActual:\t%s",
+                    String.join(",", expectedItem.keySet()), String.join(",", actualItem.keySet())), actualItem.keySet().containsAll(expectedItem.keySet()));
                 for (String key : expectedItem.keySet()) {
                     if (actualItem.containsKey(key)) {
                         Assert.assertEquals(getMessage(currentCase, "values." + key), expectedItem.get(key), actualItem.get(key));

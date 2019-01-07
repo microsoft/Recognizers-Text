@@ -13,7 +13,9 @@
           "PastResolution": {
             "time": "08:40:00"
           }
-        }
+        },
+        "Start": 17,
+        "Length": 20
       }
     ],
     "NotSupported": "dotNet",
@@ -33,7 +35,9 @@
           "PastResolution": {
             "time": "08:40:00"
           }
-        }
+        },
+        "Start": 18,
+        "Length": 32
       }
     ],
     "NotSupported": "dotNet",
@@ -53,7 +57,9 @@
           "PastResolution": {
             "time": "20:40:00"
           }
-        }
+        },
+        "Start": 18,
+        "Length": 30
       }
     ],
     "NotSupported": "dotNet",
@@ -73,7 +79,9 @@
           "PastResolution": {
             "time": "10:45:00"
           }
-        }
+        },
+        "Start": 17,
+        "Length": 14
       }
     ],
     "NotSupported": "dotNet",
@@ -93,7 +101,9 @@
           "PastResolution": {
             "time": "15:15:00"
           }
-        }
+        },
+        "Start": 17,
+        "Length": 21
       }
     ],
     "NotSupported": "dotNet",
@@ -113,7 +123,9 @@
           "PastResolution": {
             "time": "15:30:00"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 36
       }
     ],
     "NotSupported": "dotNet",
@@ -133,7 +145,9 @@
           "PastResolution": {
             "time": "10:10:00"
           }
-        }
+        },
+        "Start": 17,
+        "Length": 14
       }
     ],
     "NotSupported": "dotNet",
@@ -153,7 +167,9 @@
           "PastResolution": {
             "time": "22:55:00"
           }
-        }
+        },
+        "Start": 17,
+        "Length": 23
       }
     ],
     "NotSupported": "dotNet",
@@ -173,7 +189,9 @@
           "PastResolution": {
             "time": "07:00:00"
           }
-        }
+        },
+        "Start": 10,
+        "Length": 5
       }
     ],
     "NotSupported": "dotNet",
@@ -193,7 +211,9 @@
           "PastResolution": {
             "time": "07:00:00"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 1
       }
     ],
     "NotSupported": "dotNet",
@@ -213,7 +233,9 @@
           "PastResolution": {
             "time": "07:00:00"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 5
       }
     ],
     "NotSupported": "dotNet",
@@ -233,7 +255,9 @@
           "PastResolution": {
             "time": "19:00:00"
           }
-        }
+        },
+        "Start": 14,
+        "Length": 15
       }
     ],
     "NotSupported": "dotNet",
@@ -253,7 +277,9 @@
           "PastResolution": {
             "time": "19:56:00"
           }
-        }
+        },
+        "Start": 10,
+        "Length": 6
       }
     ],
     "NotSupported": "dotNet",
@@ -273,7 +299,9 @@
           "PastResolution": {
             "time": "19:56:30"
           }
-        }
+        },
+        "Start": 10,
+        "Length": 9
       }
     ],
     "NotSupported": "dotNet",
@@ -293,7 +321,9 @@
           "PastResolution": {
             "time": "19:56:30"
           }
-        }
+        },
+        "Start": 10,
+        "Length": 10
       }
     ],
     "NotSupported": "dotNet",
@@ -313,7 +343,9 @@
           "PastResolution": {
             "time": "12:34:00"
           }
-        }
+        },
+        "Start": 10,
+        "Length": 5
       }
     ],
     "NotSupported": "dotNet",
@@ -333,7 +365,9 @@
           "PastResolution": {
             "time": "12:34:25"
           }
-        }
+        },
+        "Start": 10,
+        "Length": 8
       }
     ],
     "NotSupported": "dotNet",
@@ -353,7 +387,9 @@
           "PastResolution": {
             "time": "07:00:00"
           }
-        }
+        },
+        "Start": 7,
+        "Length": 5
       }
     ],
     "NotSupported": "dotNet",
@@ -373,7 +409,9 @@
           "PastResolution": {
             "time": "07:00:00"
           }
-        }
+        },
+        "Start": 7,
+        "Length": 9
       }
     ],
     "NotSupported": "dotNet",
@@ -393,7 +431,9 @@
           "PastResolution": {
             "time": "08:00:00"
           }
-        }
+        },
+        "Start": 7,
+        "Length": 17
       }
     ],
     "NotSupported": "dotNet",
@@ -413,7 +453,9 @@
           "PastResolution": {
             "time": "20:00:00"
           }
-        }
+        },
+        "Start": 7,
+        "Length": 15
       }
     ],
     "NotSupported": "dotNet",
@@ -433,7 +475,9 @@
           "PastResolution": {
             "time": "08:30:00"
           }
-        }
+        },
+        "Start": 7,
+        "Length": 10
       }
     ],
     "NotSupported": "dotNet",
@@ -453,27 +497,9 @@
           "PastResolution": {
             "time": "20:30:00"
           }
-        }
-      }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
-  },
-  {
-    "Input": "Het is half negen",
-    "Results": [
-      {
-        "Text": "half negen",
-        "Type": "time",
-        "Value": {
-          "Timex": "T08:30",
-          "FutureResolution": {
-            "time": "08:30:00"
-          },
-          "PastResolution": {
-            "time": "08:30:00"
-          }
-        }
+        },
+        "Start": 8,
+        "Length": 20
       }
     ],
     "NotSupported": "dotNet",
@@ -493,7 +519,9 @@
           "PastResolution": {
             "time": "08:15:00"
           }
-        }
+        },
+        "Start": 7,
+        "Length": 15
       }
     ],
     "NotSupported": "dotNet",
@@ -513,7 +541,9 @@
           "PastResolution": {
             "time": "08:15:00"
           }
-        }
+        },
+        "Start": 8,
+        "Length": 15
       }
     ],
     "NotSupported": "dotNet",
@@ -533,7 +563,9 @@
           "PastResolution": {
             "time": "21:45:00"
           }
-        }
+        },
+        "Start": 7,
+        "Length": 15
       }
     ],
     "NotSupported": "dotNet",
@@ -553,7 +585,9 @@
           "PastResolution": {
             "time": "07:57:00"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 29
       }
     ],
     "NotSupported": "dotNet",
@@ -573,7 +607,9 @@
           "PastResolution": {
             "time": "07:30:00"
           }
-        }
+        },
+        "Start": 7,
+        "Length": 9
       }
     ],
     "NotSupported": "dotNet",
@@ -593,7 +629,9 @@
           "PastResolution": {
             "time": "19:30:00"
           }
-        }
+        },
+        "Start": 7,
+        "Length": 19
       }
     ],
     "NotSupported": "dotNet",
@@ -613,7 +651,9 @@
           "PastResolution": {
             "time": "07:30:00"
           }
-        }
+        },
+        "Start": 7,
+        "Length": 21
       }
     ],
     "NotSupported": "dotNet",
@@ -633,7 +673,9 @@
           "PastResolution": {
             "time": "07:45:00"
           }
-        }
+        },
+        "Start": 7,
+        "Length": 27
       }
     ],
     "NotSupported": "dotNet",
@@ -653,7 +695,9 @@
           "PastResolution": {
             "time": "20:20:00"
           }
-        }
+        },
+        "Start": 7,
+        "Length": 32
       }
     ],
     "NotSupported": "dotNet",
@@ -673,7 +717,9 @@
           "PastResolution": {
             "time": "19:00:00"
           }
-        }
+        },
+        "Start": 10,
+        "Length": 15
       }
     ],
     "NotSupported": "dotNet",
@@ -693,7 +739,9 @@
           "PastResolution": {
             "time": "15:00:00"
           }
-        }
+        },
+        "Start": 7,
+        "Length": 18
       }
     ],
     "NotSupported": "dotNet",
@@ -713,7 +761,9 @@
           "PastResolution": {
             "time": "19:00:05"
           }
-        }
+        },
+        "Start": 10,
+        "Length": 17
       }
     ],
     "NotSupported": "dotNet",
@@ -733,7 +783,9 @@
           "PastResolution": {
             "time": "19:00:00"
           }
-        }
+        },
+        "Start": 10,
+        "Length": 14
       }
     ],
     "NotSupported": "dotNet",
@@ -753,7 +805,9 @@
           "PastResolution": {
             "time": "19:30:00"
           }
-        }
+        },
+        "Start": 9,
+        "Length": 19
       }
     ],
     "NotSupported": "dotNet",
@@ -773,7 +827,9 @@
           "PastResolution": {
             "time": "19:35:00"
           }
-        }
+        },
+        "Start": 9,
+        "Length": 29
       }
     ],
     "NotSupported": "dotNet",
@@ -793,7 +849,9 @@
           "PastResolution": {
             "time": "23:20:00"
           }
-        }
+        },
+        "Start": 9,
+        "Length": 31
       }
     ],
     "NotSupported": "dotNet",
@@ -813,7 +871,9 @@
           "PastResolution": {
             "time": "12:00:00"
           }
-        }
+        },
+        "Start": 7,
+        "Length": 14
       }
     ],
     "NotSupported": "dotNet",
@@ -833,7 +893,9 @@
           "PastResolution": {
             "time": "12:00:00"
           }
-        }
+        },
+        "Start": 10,
+        "Length": 17
       }
     ],
     "NotSupported": "dotNet",
@@ -853,7 +915,9 @@
           "PastResolution": {
             "time": "11:00:00"
           }
-        }
+        },
+        "Start": 13,
+        "Length": 5
       }
     ],
     "NotSupported": "dotNet",
@@ -873,7 +937,9 @@
           "PastResolution": {
             "time": "11:00:00"
           }
-        }
+        },
+        "Start": 14,
+        "Length": 5
       }
     ],
     "NotSupported": "dotNet",
@@ -893,7 +959,9 @@
           "PastResolution": {
             "time": "15:40:00"
           }
-        }
+        },
+        "Start": 10,
+        "Length": 5
       }
     ],
     "NotSupported": "dotNet",
@@ -913,7 +981,9 @@
           "PastResolution": {
             "time": "11:40:00"
           }
-        }
+        },
+        "Start": 10,
+        "Length": 9
       }
     ],
     "NotSupported": "dotNet",
@@ -933,27 +1003,9 @@
           "PastResolution": {
             "time": "00:00:00"
           }
-        }
-      }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
-  },
-  {
-    "Input": "middernacht",
-    "Results": [
-      {
-        "Text": "middernacht",
-        "Type": "time",
-        "Value": {
-          "Timex": "T00",
-          "FutureResolution": {
-            "time": "00:00:00"
-          },
-          "PastResolution": {
-            "time": "00:00:00"
-          }
-        }
+        },
+        "Start": 0,
+        "Length": 11
       }
     ],
     "NotSupported": "dotNet",
@@ -973,7 +1025,9 @@
           "PastResolution": {
             "time": "10:00:00"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 10
       }
     ],
     "NotSupported": "dotNet",
@@ -993,7 +1047,9 @@
           "PastResolution": {
             "time": "10:00:00"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 21
       }
     ],
     "NotSupported": "dotNet",
@@ -1013,7 +1069,9 @@
           "PastResolution": {
             "time": "14:00:00"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 20
       }
     ],
     "NotSupported": "dotNet",
@@ -1033,7 +1091,9 @@
           "PastResolution": {
             "time": "12:00:00"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 6
       }
     ],
     "NotSupported": "dotNet",
@@ -1053,7 +1113,9 @@
           "PastResolution": {
             "time": "12:00:00"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 7
       }
     ],
     "NotSupported": "dotNet",
@@ -1073,7 +1135,9 @@
           "PastResolution": {
             "time": "12:00:00"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 17
       }
     ],
     "NotSupported": "dotNet",
@@ -1093,7 +1157,9 @@
           "PastResolution": {
             "time": "12:00:00"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 9
       }
     ],
     "NotSupported": "dotNet",
@@ -1113,7 +1179,9 @@
           "PastResolution": {
             "time": "00:00:00"
           }
-        }
+        },
+        "Start": 10,
+        "Length": 11
       }
     ],
     "NotSupported": "dotNet",
@@ -1123,7 +1191,7 @@
     "Input": "Ik ben om 12 uur in de nacht terug",
     "Results": [
       {
-        "Text": "12 uur in the nacht",
+        "Text": "12 uur in de nacht",
         "Type": "time",
         "Value": {
           "Timex": "T00",
@@ -1133,7 +1201,9 @@
           "PastResolution": {
             "time": "00:00:00"
           }
-        }
+        },
+        "Start": 10,
+        "Length": 18
       }
     ],
     "NotSupported": "dotNet",
@@ -1153,7 +1223,9 @@
           "PastResolution": {
             "time": "01:00:00"
           }
-        }
+        },
+        "Start": 10,
+        "Length": 5
       }
     ],
     "NotSupported": "dotNet",
@@ -1173,7 +1245,9 @@
           "PastResolution": {
             "time": "12:00:00"
           }
-        }
+        },
+        "Start": 10,
+        "Length": 16
       }
     ],
     "NotSupported": "dotNet",
@@ -1193,7 +1267,9 @@
           "PastResolution": {
             "time": "13:00:00"
           }
-        }
+        },
+        "Start": 10,
+        "Length": 15
       }
     ],
     "NotSupported": "dotNet",
@@ -1213,7 +1289,9 @@
           "PastResolution": {
             "time": "19:56:13"
           }
-        }
+        },
+        "Start": 10,
+        "Length": 10
       }
     ],
     "NotSupported": "dotNet",
@@ -1233,7 +1311,9 @@
           "PastResolution": {
             "time": "12:34:45"
           }
-        }
+        },
+        "Start": 12,
+        "Length": 8
       }
     ],
     "NotSupported": "dotNet",
@@ -1253,7 +1333,9 @@
           "PastResolution": {
             "time": "19:00:25"
           }
-        }
+        },
+        "Start": 10,
+        "Length": 17
       }
     ],
     "NotSupported": "dotNet",
@@ -1273,7 +1355,9 @@
           "PastResolution": {
             "time": "07:30:00"
           }
-        }
+        },
+        "Start": 9,
+        "Length": 28
       }
     ],
     "NotSupported": "dotNet",
@@ -1293,7 +1377,9 @@
           "PastResolution": {
             "time": "11:05:00"
           }
-        }
+        },
+        "Start": 9,
+        "Length": 13
       }
     ],
     "NotSupported": "dotNet",
@@ -1313,7 +1399,9 @@
           "PastResolution": {
             "time": "05:27:00"
           }
-        }
+        },
+        "Start": 9,
+        "Length": 26
       }
     ],
     "NotSupported": "dotNet",
@@ -1323,7 +1411,7 @@
     "Input": "Ik ga om half zes ’s avonds terug",
     "Results": [
       {
-        "Text": "half zes ‘s avonds",
+        "Text": "half zes ’s avonds",
         "Type": "time",
         "Value": {
           "Timex": "T17:30",
@@ -1333,7 +1421,9 @@
           "PastResolution": {
             "time": "17:30:00"
           }
-        }
+        },
+        "Start": 9,
+        "Length": 18
       }
     ],
     "NotSupported": "dotNet",
@@ -1353,7 +1443,9 @@
           "PastResolution": {
             "time": "12:00:00"
           }
-        }
+        },
+        "Start": 13,
+        "Length": 6
       }
     ],
     "NotSupported": "dotNet",
@@ -1374,7 +1466,9 @@
           "PastResolution": {
             "time": "07:01:00"
           }
-        }
+        },
+        "Start": 10,
+        "Length": 4
       }
     ],
     "NotSupportedByDesign": "javascript,python,java"
@@ -1394,7 +1488,9 @@
           "PastResolution": {
             "time": "22:10:00"
           }
-        }
+        },
+        "Start": 10,
+        "Length": 10
       }
     ],
     "NotSupportedByDesign": "javascript,python,java"
@@ -1413,7 +1509,9 @@
           "PastResolution": {
             "time": "18:05:00"
           }
-        }
+        },
+        "Start": 9,
+        "Length": 13
       }
     ],
     "NotSupported": "dotNet",
@@ -1433,7 +1531,9 @@
           "PastResolution": {
             "time": "18:05:00"
           }
-        }
+        },
+        "Start": 9,
+        "Length": 13
       }
     ],
     "NotSupported": "dotNet",
@@ -1453,7 +1553,9 @@
           "PastResolution": {
             "time": "18:15:00"
           }
-        }
+        },
+        "Start": 9,
+        "Length": 14
       }
     ],
     "NotSupported": "dotNet",
@@ -1473,7 +1575,9 @@
           "PastResolution": {
             "time": "18:20:00"
           }
-        }
+        },
+        "Start": 9,
+        "Length": 20
       }
     ],
     "NotSupported": "dotNet",
@@ -1493,7 +1597,9 @@
           "PastResolution": {
             "time": "18:25:00"
           }
-        }
+        },
+        "Start": 9,
+        "Length": 20
       }
     ],
     "NotSupported": "dotNet",
@@ -1513,7 +1619,9 @@
           "PastResolution": {
             "time": "18:30:00"
           }
-        }
+        },
+        "Start": 9,
+        "Length": 10
       }
     ],
     "NotSupported": "dotNet",
@@ -1533,7 +1641,9 @@
           "PastResolution": {
             "time": "18:35:00"
           }
-        }
+        },
+        "Start": 9,
+        "Length": 20
       }
     ],
     "NotSupported": "dotNet",
@@ -1553,7 +1663,9 @@
           "PastResolution": {
             "time": "18:40:00"
           }
-        }
+        },
+        "Start": 9,
+        "Length": 20
       }
     ],
     "NotSupported": "dotNet",
@@ -1573,7 +1685,9 @@
           "PastResolution": {
             "time": "18:45:00"
           }
-        }
+        },
+        "Start": 9,
+        "Length": 16
       }
     ],
     "NotSupported": "dotNet",
@@ -1593,7 +1707,9 @@
           "PastResolution": {
             "time": "18:50:00"
           }
-        }
+        },
+        "Start": 9,
+        "Length": 15
       }
     ],
     "NotSupported": "dotNet",
@@ -1613,7 +1729,9 @@
           "PastResolution": {
             "time": "18:55:00"
           }
-        }
+        },
+        "Start": 9,
+        "Length": 15
       }
     ],
     "NotSupported": "dotNet",

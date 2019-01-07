@@ -7,6 +7,7 @@ public enum DateTimeOptions {
     CalendarMode(4),
     ExtendedTypes(8),
     EnablePreview(8388608),
+    ExperimentalMode(4194304),
     ComplexCalendar(8 + 4 + 8388608);
 
     private final int value;

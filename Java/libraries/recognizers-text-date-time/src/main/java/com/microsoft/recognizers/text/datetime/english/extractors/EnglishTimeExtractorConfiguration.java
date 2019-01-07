@@ -60,37 +60,37 @@ public class EnglishTimeExtractorConfiguration extends BaseOptionsConfiguration 
     public static final Iterable<Pattern> TimeRegexList = new ArrayList<Pattern>() {
         {
             // (three min past)? seven|7|(senven thirty) pm
-            add(RegExpUtility.getSafeRegExp(EnglishDateTime.TimeRegex1, Pattern.CASE_INSENSITIVE));
+            add(RegExpUtility.getSafeRegExp(EnglishDateTime.TimeRegex1));
 
             // (three min past)? 3:00(:00)? (pm)?
-            add(RegExpUtility.getSafeRegExp(EnglishDateTime.TimeRegex2, Pattern.CASE_INSENSITIVE));
+            add(RegExpUtility.getSafeRegExp(EnglishDateTime.TimeRegex2));
 
             // (three min past)? 3.00 (pm)
-            add(RegExpUtility.getSafeRegExp(EnglishDateTime.TimeRegex3, Pattern.CASE_INSENSITIVE));
+            add(RegExpUtility.getSafeRegExp(EnglishDateTime.TimeRegex3));
 
             // (three min past) (five thirty|seven|7|7:00(:00)?) (pm)? (in the night)
-            add(RegExpUtility.getSafeRegExp(EnglishDateTime.TimeRegex4, Pattern.CASE_INSENSITIVE));
+            add(RegExpUtility.getSafeRegExp(EnglishDateTime.TimeRegex4));
 
             // (three min past) (five thirty|seven|7|7:00(:00)?) (pm)?
-            add(RegExpUtility.getSafeRegExp(EnglishDateTime.TimeRegex5, Pattern.CASE_INSENSITIVE));
+            add(RegExpUtility.getSafeRegExp(EnglishDateTime.TimeRegex5));
 
             // (five thirty|seven|7|7:00(:00)?) (pm)? (in the night)
-            add(RegExpUtility.getSafeRegExp(EnglishDateTime.TimeRegex6, Pattern.CASE_INSENSITIVE));
+            add(RegExpUtility.getSafeRegExp(EnglishDateTime.TimeRegex6));
 
             // (in the night) at (five thirty|seven|7|7:00(:00)?) (pm)?
-            add(RegExpUtility.getSafeRegExp(EnglishDateTime.TimeRegex7, Pattern.CASE_INSENSITIVE));
+            add(RegExpUtility.getSafeRegExp(EnglishDateTime.TimeRegex7));
 
             // (in the night) (five thirty|seven|7|7:00(:00)?) (pm)?
-            add(RegExpUtility.getSafeRegExp(EnglishDateTime.TimeRegex8, Pattern.CASE_INSENSITIVE));
+            add(RegExpUtility.getSafeRegExp(EnglishDateTime.TimeRegex8));
 
-            add(RegExpUtility.getSafeRegExp(EnglishDateTime.TimeRegex9, Pattern.CASE_INSENSITIVE));
+            add(RegExpUtility.getSafeRegExp(EnglishDateTime.TimeRegex9));
 
             // (three min past)? 3h00 (pm)?
-            add(RegExpUtility.getSafeRegExp(EnglishDateTime.TimeRegex10, Pattern.CASE_INSENSITIVE));
+            add(RegExpUtility.getSafeRegExp(EnglishDateTime.TimeRegex10));
 
             // at 2.30, "at" prefix is required here
             // 3.30pm, "am/pm" suffix is required here
-            add(RegExpUtility.getSafeRegExp(EnglishDateTime.TimeRegex11, Pattern.CASE_INSENSITIVE));
+            add(RegExpUtility.getSafeRegExp(EnglishDateTime.TimeRegex11));
 
             // 340pm
             add(ConnectNumRegex);

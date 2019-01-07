@@ -59,10 +59,10 @@ public class EnglishDateTimePeriodParserConfiguration extends BaseOptionsConfigu
     private final ImmutableMap<String, String> unitMap;
     private final ImmutableMap<String, Integer> numbers;
 
-    public static final Pattern MorningStartEndRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.MorningStartEndRegex, Pattern.CASE_INSENSITIVE);
-    public static final Pattern AfternoonStartEndRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.AfternoonStartEndRegex, Pattern.CASE_INSENSITIVE);
-    public static final Pattern EveningStartEndRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.EveningStartEndRegex, Pattern.CASE_INSENSITIVE);
-    public static final Pattern NightStartEndRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.NightStartEndRegex, Pattern.CASE_INSENSITIVE);
+    public static final Pattern MorningStartEndRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.MorningStartEndRegex);
+    public static final Pattern AfternoonStartEndRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.AfternoonStartEndRegex);
+    public static final Pattern EveningStartEndRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.EveningStartEndRegex);
+    public static final Pattern NightStartEndRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.NightStartEndRegex);
     
     public EnglishDateTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) {
 

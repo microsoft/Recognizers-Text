@@ -312,30 +312,6 @@
     ]
   },
   {
-    "Input": "私は10月14日の午前8:00に戻ります",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupportedByDesign": "dotnet,javascript,python,java",
-    "Results": [
-      {
-        "Text": "10月14日の午前8:00",
-        "Type": "datetime",
-        "Value": {
-          "Timex": "XXXX-10-14T08:00",
-          "FutureResolution": {
-            "dateTime": "2017-10-14 08:00:00"
-          },
-          "PastResolution": {
-            "dateTime": "2016-10-14 08:00:00"
-          }
-        },
-        "Start": 2,
-        "Length": 13
-      }
-    ]
-  },
-  {
     "Input": "私は10月14日の午前8:00:25に戻ります",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -380,30 +356,6 @@
         },
         "Start": 2,
         "Length": 18
-      }
-    ]
-  },
-  {
-    "Input": "私は15日の午後8時に戻ります",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupportedByDesign": "dotnet,javascript,python,java",
-    "Results": [
-      {
-        "Text": "15日の午後8時",
-        "Type": "datetime",
-        "Value": {
-          "Timex": "XXXX-XX-15T20",
-          "FutureResolution": {
-            "dateTime": "2016-11-15 20:00:00"
-          },
-          "PastResolution": {
-            "dateTime": "2016-10-15 20:00:00"
-          }
-        },
-        "Start": 2,
-        "Length": 8
       }
     ]
   },

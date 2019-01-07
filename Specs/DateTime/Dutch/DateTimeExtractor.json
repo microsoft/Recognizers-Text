@@ -5,7 +5,9 @@
     "Results": [
       {
         "Text": "nu",
-        "Type": "datetime"
+        "Type": "datetime",
+        "Start": 6,
+        "Length": 2
       }
     ],
     "NotSupported": "dotNet"
@@ -16,18 +18,9 @@
     "Results": [
       {
         "Text": "zo snel mogelijk",
-        "Type": "datetime"
-      }
-    ],
-    "NotSupported": "dotNet"
-  },
-  {
-    "Input": "Ik ga nu terug",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "nu",
-        "Type": "datetime"
+        "Type": "datetime",
+        "Start": 6,
+        "Length": 16
       }
     ],
     "NotSupported": "dotNet"
@@ -38,7 +31,9 @@
     "Results": [
       {
         "Text": "15 om 8:00",
-        "Type": "datetime"
+        "Type": "datetime",
+        "Start": 15,
+        "Length": 10
       }
     ],
     "NotSupported": "dotNet"
@@ -49,7 +44,9 @@
     "Results": [
       {
         "Text": "15 om 8.00:30",
-        "Type": "datetime"
+        "Type": "datetime",
+        "Start": 15,
+        "Length": 13
       }
     ],
     "NotSupported": "dotNet"
@@ -60,7 +57,9 @@
     "Results": [
       {
         "Text": "15, 20u",
-        "Type": "datetime"
+        "Type": "datetime",
+        "Start": 15,
+        "Length": 7
       }
     ],
     "NotSupported": "dotNet"
@@ -70,8 +69,10 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "04/21/2016, 20u",
-        "Type": "datetime"
+        "Text": "21/04/2016, 20u",
+        "Type": "datetime",
+        "Length": 15,
+        "Start": 15
       }
     ],
     "NotSupported": "dotNet"
@@ -81,8 +82,10 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "04/21/2016, 20:00:13u",
-        "Type": "datetime"
+        "Text": "21/04/2016, 20:00:13u",
+        "Type": "datetime",
+        "Length": 21,
+        "Start": 15
       }
     ],
     "NotSupported": "dotNet"
@@ -92,19 +95,23 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "23 Okt om zeven",
-        "Type": "datetime"
+        "Text": "23 Okt om 7",
+        "Type": "datetime",
+        "Length": 15,
+        "Start": 15
       }
     ],
     "NotSupported": "dotNet"
   },
   {
-    "Input": "Ik ga terug op 14 oktober 8u",
+    "Input": "Ik ga terug op 14 oktober 20:00",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Oktober 14 8:00u",
-        "Type": "datetime"
+        "Text": "14 oktober 20:00",
+        "Type": "datetime",
+        "Start": 15,
+        "Length": 16
       }
     ],
     "NotSupported": "dotNet"
@@ -114,8 +121,10 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Oktober 14 8:00:00u",
-        "Type": "datetime"
+        "Text": "14 oktober om 8:00:00u",
+        "Type": "datetime",
+        "Start": 15,
+        "Length": 22
       }
     ],
     "NotSupported": "dotNet"
@@ -125,41 +134,49 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Oktober 14, 8:00u",
-        "Type": "datetime"
+        "Text": "14 oktober, 8:00u",
+        "Type": "datetime",
+        "Start": 15,
+        "Length": 17
       }
     ],
     "NotSupported": "dotNet"
   },
   {
-    "Input": "Ik ga terug op 14 oktober, 8:00:01u",
+    "Input": "Ik ga terug op 14 oktober, 8:00:01",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "14 Oktober, 8:00:01u",
-        "Type": "datetime"
+        "Text": "14 oktober, 8:00:01",
+        "Type": "datetime",
+        "Start": 15,
+        "Length": 19
       }
     ],
     "NotSupported": "dotNet"
   },
   {
-    "Input": "Ik ga morgen terug om 8u",
+    "Input": "Ik ga morgen terug om 8:00",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "morgen, 8u",
-        "Type": "datetime"
+        "Text": "morgen terug om 8:00",
+        "Type": "datetime",
+        "Start": 6,
+        "Length": 20
       }
     ],
     "NotSupported": "dotNet"
   },
   {
-    "Input": "Ik ga morgen terug rond 8u",
+    "Input": "Ik ga morgen terug rond 8 uur",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "morgen rond 8u",
-        "Type": "datetime"
+        "Text": "morgen terug rond 8 uur",
+        "Type": "datetime",
+        "Start": 6,
+        "Length": 23
       }
     ],
     "NotSupported": "dotNet"
@@ -169,8 +186,10 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "morgen voor 8u",
-        "Type": "datetime"
+        "Text": "morgen terug voor 8u",
+        "Type": "datetime",
+        "Start": 6,
+        "Length": 20
       }
     ],
     "NotSupported": "dotNet"
@@ -180,19 +199,23 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "morgen 8:00:05u",
-        "Type": "datetime"
+        "Text": "morgen terug 8:00:05u",
+        "Type": "datetime",
+        "Start": 6,
+        "Length": 21
       }
     ],
     "NotSupported": "dotNet"
   },
   {
-    "Input": "Ik ga volgende week vrijdag terug om half 4",
+    "Input": "Ik ga volgende week vrijdag om half 4 terug",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "volgende week vrijdag om half 4",
-        "Type": "datetime"
+        "Type": "datetime",
+        "Start": 6,
+        "Length": 31
       }
     ],
     "NotSupported": "dotNet"
@@ -202,8 +225,10 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "5 mei, 2016, 20 minuten over 8 in de avond",
-        "Type": "datetime"
+        "Text": "5 mei 2016, 20 minuten over 8 in de avond",
+        "Type": "datetime",
+        "Start": 15,
+        "Length": 41
       }
     ],
     "NotSupported": "dotNet"
@@ -214,7 +239,9 @@
     "Results": [
       {
         "Text": "20.15u",
-        "Type": "datetime"
+        "Type": "datetime",
+        "Start": 15,
+        "Length": 6
       }
     ],
     "NotSupported": "dotNet"
@@ -225,7 +252,9 @@
     "Results": [
       {
         "Text": "zeven om 15",
-        "Type": "datetime"
+        "Type": "datetime",
+        "Start": 15,
+        "Length": 11
       }
     ],
     "NotSupported": "dotNet"
@@ -236,7 +265,9 @@
     "Results": [
       {
         "Text": "20u komende zondag",
-        "Type": "datetime"
+        "Type": "datetime",
+        "Start": 15,
+        "Length": 18
       }
     ],
     "NotSupported": "dotNet"
@@ -246,8 +277,10 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "20u vandaag",
-        "Type": "datetime"
+        "Text": "vandaag om 20u",
+        "Type": "datetime",
+        "Start": 6,
+        "Length": 14
       }
     ],
     "NotSupported": "dotNet"
@@ -258,7 +291,9 @@
     "Results": [
       {
         "Text": "om kwart voor zeven morgen",
-        "Type": "datetime"
+        "Type": "datetime",
+        "Start": 12,
+        "Length": 26
       }
     ],
     "NotSupported": "dotNet"
@@ -269,7 +304,9 @@
     "Results": [
       {
         "Text": "19u, 22-12-2016",
-        "Type": "datetime"
+        "Type": "datetime",
+        "Start": 15,
+        "Length": 15
       }
     ],
     "NotSupported": "dotNet"
@@ -280,7 +317,9 @@
     "Results": [
       {
         "Text": "zeven uur morgen",
-        "Type": "datetime"
+        "Type": "datetime",
+        "Start": 12,
+        "Length": 16
       }
     ],
     "NotSupported": "dotNet"
@@ -290,8 +329,10 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "morgenochtend 7uur",
-        "Type": "datetime"
+        "Text": "7 uur morgenochtend",
+        "Type": "datetime",
+        "Start": 15,
+        "Length": 19
       }
     ],
     "NotSupported": "dotNet"
@@ -302,7 +343,9 @@
     "Results": [
       {
         "Text": "19:00 op zondagavond",
-        "Type": "datetime"
+        "Type": "datetime",
+        "Start": 15,
+        "Length": 20
       }
     ],
     "NotSupported": "dotNet"
@@ -312,19 +355,23 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "twintig minuten over vijf morgenochtend",
-        "Type": "datetime"
+        "Text": "20 minuten over vijf morgenochtend",
+        "Type": "datetime",
+        "Start": 12,
+        "Length": 34
       }
     ],
     "NotSupported": "dotNet"
   },
   {
-    "Input": "Ik ga terug op 14 oktober om 8:00, 14 oktober",
+    "Input": "Ik ga terug op 14 oktober om 8:00",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "14 oktober 8:00",
-        "Type": "datetime"
+        "Text": "14 oktober om 8:00",
+        "Type": "datetime",
+        "Start": 15,
+        "Length": 18
       }
     ],
     "NotSupported": "dotNet"
@@ -335,7 +382,9 @@
     "Results": [
       {
         "Text": "7u, deze ochtend",
-        "Type": "datetime"
+        "Type": "datetime",
+        "Start": 15,
+        "Length": 16
       }
     ],
     "NotSupported": "dotNet"
@@ -346,7 +395,9 @@
     "Results": [
       {
         "Text": "20u vanavond, maandag",
-        "Type": "datetime"
+        "Type": "datetime",
+        "Start": 15,
+        "Length": 21
       }
     ],
     "NotSupported": "dotNet"
@@ -357,7 +408,9 @@
     "Results": [
       {
         "Text": "20u vanavond, 1 jan",
-        "Type": "datetime"
+        "Type": "datetime",
+        "Start": 12,
+        "Length": 19
       }
     ],
     "NotSupported": "dotNet"
@@ -367,8 +420,10 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "20u vanavond, 1 Jan",
-        "Type": "datetime"
+        "Text": "20u vanavond, 1 jan",
+        "Type": "datetime",
+        "Start": 15,
+        "Length": 19
       }
     ],
     "NotSupported": "dotNet"
@@ -379,7 +434,9 @@
     "Results": [
       {
         "Text": "22h vanavond",
-        "Type": "datetime"
+        "Type": "datetime",
+        "Start": 15,
+        "Length": 12
       }
     ],
     "NotSupported": "dotNet"
@@ -390,7 +447,9 @@
     "Results": [
       {
         "Text": "8u deze morgen",
-        "Type": "datetime"
+        "Type": "datetime",
+        "Start": 15,
+        "Length": 14
       }
     ],
     "NotSupported": "dotNet"
@@ -401,18 +460,22 @@
     "Results": [
       {
         "Text": "20u vanavond",
-        "Type": "datetime"
+        "Type": "datetime",
+        "Start": 15,
+        "Length": 12
       }
     ],
     "NotSupported": "dotNet"
   },
   {
-    "Input": "Ik ga terug vanaond rond 7",
+    "Input": "Ik ga terug vanavond rond 7",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "vanavond rond 7",
-        "Type": "datetime"
+        "Type": "datetime",
+        "Start": 12,
+        "Length": 15
       }
     ],
     "NotSupported": "dotNet"
@@ -423,7 +486,9 @@
     "Results": [
       {
         "Text": "deze morgen om 7",
-        "Type": "datetime"
+        "Type": "datetime",
+        "Start": 12,
+        "Length": 16
       }
     ],
     "NotSupported": "dotNet"
@@ -434,7 +499,9 @@
     "Results": [
       {
         "Text": "vanmorgen om 7u",
-        "Type": "datetime"
+        "Type": "datetime",
+        "Start": 12,
+        "Length": 15
       }
     ],
     "NotSupported": "dotNet"
@@ -445,7 +512,9 @@
     "Results": [
       {
         "Text": "deze morgen om zeven",
-        "Type": "datetime"
+        "Type": "datetime",
+        "Start": 6,
+        "Length": 20
       }
     ],
     "NotSupported": "dotNet"
@@ -456,7 +525,9 @@
     "Results": [
       {
         "Text": "deze morgen om 7:00",
-        "Type": "datetime"
+        "Type": "datetime",
+        "Start": 6,
+        "Length": 19
       }
     ],
     "NotSupported": "dotNet"
@@ -467,7 +538,9 @@
     "Results": [
       {
         "Text": "vanavond terug om 7",
-        "Type": "datetime"
+        "Type": "datetime",
+        "Start": 6,
+        "Length": 19
       }
     ],
     "NotSupported": "dotNet"
@@ -478,7 +551,9 @@
     "Results": [
       {
         "Text": "vanavond om 7",
-        "Type": "datetime"
+        "Type": "datetime",
+        "Start": 6,
+        "Length": 13
       }
     ],
     "NotSupported": "dotNet"
@@ -489,7 +564,9 @@
     "Results": [
       {
         "Text": "vanavond om 21.30u",
-        "Type": "datetime"
+        "Type": "datetime",
+        "Start": 16,
+        "Length": 18
       }
     ],
     "NotSupported": "dotNet"
@@ -500,7 +577,9 @@
     "Results": [
       {
         "Text": "vanavond om 21.30:31u",
-        "Type": "datetime"
+        "Type": "datetime",
+        "Start": 16,
+        "Length": 21
       }
     ],
     "NotSupported": "dotNet"
@@ -511,18 +590,22 @@
     "Results": [
       {
         "Text": "eind van de dag",
-        "Type": "datetime"
+        "Type": "datetime",
+        "Start": 6,
+        "Length": 15
       }
     ],
     "NotSupported": "dotNet"
   },
   {
-    "Input": "Ik ga morgen einde dag terug",
+    "Input": "Ik ga morgen einde van de dag terug",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "morgen einde van de dag",
-        "Type": "datetime"
+        "Type": "datetime",
+        "Start": 6,
+        "Length": 23
       }
     ],
     "NotSupported": "dotNet"
@@ -533,7 +616,9 @@
     "Results": [
       {
         "Text": "zondag eind van de dag",
-        "Type": "datetime"
+        "Type": "datetime",
+        "Start": 6,
+        "Length": 22
       }
     ],
     "NotSupported": "dotNet"
@@ -543,8 +628,10 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "5e om 4u ‘s morgens",
-        "Type": "datetime"
+        "Text": "5e terug om 4u ‘s morgens",
+        "Type": "datetime",
+        "Start": 12,
+        "Length": 25
       }
     ],
     "NotSupported": "dotNet"
@@ -555,7 +642,9 @@
     "Results": [
       {
         "Text": "16-12-2016 terug om 12.23:59u",
-        "Type": "datetime"
+        "Type": "datetime",
+        "Start": 9,
+        "Length": 29
       }
     ],
     "NotSupported": "dotNet"
@@ -566,18 +655,22 @@
     "Results": [
       {
         "Text": "over 5 uur",
-        "Type": "datetime"
+        "Type": "datetime",
+        "Start": 12,
+        "Length": 10
       }
     ],
     "NotSupported": "dotNet"
   },
   {
-    "Input": "belkijk of ik beschikbaar ben om 15u op zondag",
+    "Input": "bekijk of ik beschikbaar ben om 15u op zondag",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "15h op zondag",
-        "Type": "datetime"
+        "Text": "15u op zondag",
+        "Type": "datetime",
+        "Start": 32,
+        "Length": 13
       }
     ],
     "NotSupported": "dotNet"
@@ -588,7 +681,9 @@
     "Results": [
       {
         "Text": "morgenochtend om 9 uur",
-        "Type": "datetime"
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 22
       }
     ],
     "NotSupported": "dotNet"
@@ -599,7 +694,9 @@
     "Results": [
       {
         "Text": "morgenochtend om 9 uur",
-        "Type": "datetime"
+        "Type": "datetime",
+        "Start": 6,
+        "Length": 22
       }
     ],
     "NotSupported": "dotNet"
@@ -610,7 +707,9 @@
     "Results": [
       {
         "Text": "morgenochtend om 9u",
-        "Type": "datetime"
+        "Type": "datetime",
+        "Start": 6,
+        "Length": 19
       }
     ],
     "NotSupported": "dotNet"
@@ -621,18 +720,9 @@
     "Results": [
       {
         "Text": "morgen om 9 uur",
-        "Type": "datetime"
-      }
-    ],
-    "NotSupported": "dotNet"
-  },
-  {
-    "Input": "Ik ga morgen om 9 uur terug",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "morgen om 9 uur",
-        "Type": "datetime"
+        "Type": "datetime",
+        "Start": 6,
+        "Length": 15
       }
     ],
     "NotSupported": "dotNet"
@@ -642,8 +732,10 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "deze middag om 13u",
-        "Type": "datetime"
+        "Text": "deze vrijdag om 13u",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 19
       }
     ],
     "NotSupported": "dotNet"
@@ -654,7 +746,9 @@
     "Results": [
       {
         "Text": "12.30u OP VRIJDAG",
-        "Type": "datetime"
+        "Type": "datetime",
+        "Start": 18,
+        "Length": 17
       }
     ],
     "NotSupported": "dotNet"
@@ -665,7 +759,9 @@
     "Results": [
       {
         "Text": "middernacht vanacht",
-        "Type": "datetime"
+        "Type": "datetime",
+        "Start": 13,
+        "Length": 19
       }
     ],
     "NotSupported": "dotNet"
@@ -675,8 +771,10 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "1 augustus 11u",
-        "Type": "datetime"
+        "Text": "1 augustus om 11u",
+        "Type": "datetime",
+        "Start": 9,
+        "Length": 17
       }
     ],
     "NotSupported": "dotNet"
@@ -687,18 +785,22 @@
     "Results": [
       {
         "Text": "1 augustus om 23u",
-        "Type": "datetime"
+        "Type": "datetime",
+        "Start": 9,
+        "Length": 17
       }
     ],
     "NotSupported": "dotNet"
   },
   {
-    "Input": "Ik ga 1 augutus 23u terug",
+    "Input": "Ik ga 1 augustus 23u terug",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "1 augustus 23u",
-        "Type": "datetime"
+        "Type": "datetime",
+        "Start": 6,
+        "Length": 14
       }
     ],
     "NotSupported": "dotNet"
@@ -708,8 +810,10 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "25/02 om 11u",
-        "Type": "datetime"
+        "Text": "25/2 om 11u",
+        "Type": "datetime",
+        "Start": 6,
+        "Length": 11
       }
     ],
     "NotSupported": "dotNet"
@@ -720,7 +824,9 @@
     "Results": [
       {
         "Text": "6 jan 2017 6.37u",
-        "Type": "datetime"
+        "Type": "datetime",
+        "Start": 9,
+        "Length": 16
       }
     ],
     "NotSupported": "dotNet"
@@ -731,7 +837,9 @@
     "Results": [
       {
         "Text": "16 Nov. 2016 10.38",
-        "Type": "datetime"
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 18
       }
     ],
     "NotSupported": "dotNet"
@@ -742,8 +850,10 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "1 dag 2 uur later",
-        "Type": "datetime"
+        "Text": "1 dag en 2 uur later",
+        "Type": "datetime",
+        "Start": 11,
+        "Length": 20
       }
     ]
   },
@@ -753,7 +863,9 @@
     "Results": [
       {
         "Text": "over een uur",
-        "Type": "datetime"
+        "Type": "datetime",
+        "Start": 12,
+        "Length": 12
       }
     ],
     "NotSupported": "dotNet"
@@ -765,7 +877,9 @@
     "Results": [
       {
         "Text": "2 maanden 1 dag en 2 uur geleden",
-        "Type": "datetime"
+        "Type": "datetime",
+        "Start": 17,
+        "Length": 32
       }
     ]
   },
@@ -776,7 +890,9 @@
     "Results": [
       {
         "Text": "2 maanden 1 dag 2 uur geleden",
-        "Type": "datetime"
+        "Type": "datetime",
+        "Start": 17,
+        "Length": 29
       }
     ]
   },
@@ -787,7 +903,9 @@
     "Results": [
       {
         "Text": "1 dag en 30 minuten later",
-        "Type": "datetime"
+        "Type": "datetime",
+        "Start": 11,
+        "Length": 25
       }
     ]
   },
@@ -796,7 +914,9 @@
     "Results": [
       {
         "Text": "over 2 minuten",
-        "Type": "datetime"
+        "Type": "datetime",
+        "Start": 11,
+        "Length": 14
       }
     ],
     "NotSupported": "dotNet",

@@ -27,17 +27,18 @@ public class NumberWithUnitParser implements IParser {
         ParseResult ret = new ParseResult(extResult);
         ExtractResult numberResult;
 
-        if (extResult.data instanceof ExtractResult) {
-            numberResult = (ExtractResult)extResult.data;
-        } else if (extResult.type.equals(Constants.SYS_NUM)) {
-            return ret.withValue(config.getInternalNumberParser().parse(extResult).value);
+        if (extResult.getData() instanceof ExtractResult) {
+            numberResult = (ExtractResult)extResult.getData();
+        } else if (extResult.getType().equals(Constants.SYS_NUM)) {
+            ret.setValue(config.getInternalNumberParser().parse(extResult).getValue());
+            return ret;
         } else {
             // if there is no unitResult, means there is just unit
             numberResult = new ExtractResult(-1, 0, null, null, null);
         }
 
         // key contains units
-        String key = extResult.text;
+        String key = extResult.getText();
         StringBuilder unitKeyBuild = new StringBuilder();
         List<String> unitKeys = new ArrayList<>();
 
@@ -47,13 +48,13 @@ public class NumberWithUnitParser implements IParser {
                 if (unitKeyBuild.length() != 0) {
                     addIfNotContained(unitKeys, unitKeyBuild.toString().trim());
                 }
-            } else if (i == numberResult.start) {
+            } else if (i == numberResult.getStart()) {
                 // numberResult.start is a relative position
                 if (unitKeyBuild.length() != 0) {
                     addIfNotContained(unitKeys, unitKeyBuild.toString().trim());
                     unitKeyBuild = new StringBuilder();
                 }
-                i = numberResult.start + numberResult.length - 1;
+                i = numberResult.getStart() + numberResult.getLength() - 1;
             } else {
                 unitKeyBuild.append(key.charAt(i));
             }
@@ -80,19 +81,19 @@ public class NumberWithUnitParser implements IParser {
 
             if (unitValue != null) {
 
-                ParseResult numValue = numberResult.text == null || numberResult.text.isEmpty() ?
+                ParseResult numValue = numberResult.getText() == null || numberResult.getText().isEmpty() ?
                         null :
                         this.config.getInternalNumberParser().parse(numberResult);
 
-                String resolutionStr = numValue != null ? numValue.resolutionStr : null;
+                String resolutionStr = numValue != null ? numValue.getResolutionStr() : null;
 
-                ret = ret.withValue(new UnitValue(resolutionStr, unitValue))
-                         .withResolutionStr(String.format("%s %s", resolutionStr != null ? resolutionStr : "", unitValue).trim());
+                ret.setValue(new UnitValue(resolutionStr, unitValue));
+                ret.setResolutionStr(String.format("%s %s", resolutionStr != null ? resolutionStr : "", unitValue).trim());
             }
         }
 
         if (ret != null) {
-            ret = ret.withText(ret.text.toLowerCase(Locale.ROOT));
+            ret.setText(ret.getText().toLowerCase(Locale.ROOT));
         }
 
         return ret;
