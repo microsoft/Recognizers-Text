@@ -4,7 +4,8 @@ namespace Microsoft.Recognizers.Text.Number
 {
     public class BasePercentageParser : BaseNumberParser
     {
-        public BasePercentageParser(INumberParserConfiguration config) : base(config)
+        public BasePercentageParser(INumberParserConfiguration config)
+               : base(config)
         {
         }
 
@@ -23,7 +24,7 @@ namespace Microsoft.Recognizers.Text.Number
                     extResult.Data = $"Frac{Config.LangMarker}";
 
                     ret = base.Parse(extResult);
-                    ret.Value = (double) ret.Value * 100;
+                    ret.Value = (double)ret.Value * 100;
                 }
                 else if (extendedData1.Count == 1)
                 {
@@ -35,17 +36,18 @@ namespace Microsoft.Recognizers.Text.Number
 
                     if (extResult.Data.ToString().StartsWith("Frac"))
                     {
-                        ret.Value = (double) ret.Value * 100;
+                        ret.Value = (double)ret.Value * 100;
                     }
                 }
+
                 ret.ResolutionStr = Config.CultureInfo != null
-                    ? ((double) ret.Value).ToString(Config.CultureInfo) + "%"
+                    ? ((double)ret.Value).ToString(Config.CultureInfo) + "%"
                     : ret.Value + "%";
             }
-            else 
+            else
             {
                 // for case like "one percent" or "1%".
-                var extendedData = ((string, ExtractResult)) extResult.Data;
+                var extendedData = ((string, ExtractResult))extResult.Data;
                 extResult.Text = extendedData.Item1;
                 extResult.Data = extendedData.Item2.Data;
                 ret = base.Parse(extResult);
