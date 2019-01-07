@@ -8,20 +8,21 @@ namespace Microsoft.Recognizers.Text.Number.Spanish
 {
     public sealed class PercentageExtractor : BasePercentageExtractor
     {
-        protected override NumberOptions Options { get; }
-
-        public PercentageExtractor(NumberOptions options = NumberOptions.None) : base(
+        public PercentageExtractor(NumberOptions options = NumberOptions.None)
+               : base(
             NumberExtractor.GetInstance(options: options))
         {
             Options = options;
             Regexes = InitRegexes();
         }
 
+        protected override NumberOptions Options { get; }
+
         protected override ImmutableHashSet<Regex> InitRegexes()
         {
             HashSet<string> regexStrs = new HashSet<string>
             {
-                NumbersDefinitions.NumberWithPrefixPercentage
+                NumbersDefinitions.NumberWithPrefixPercentage,
             };
 
             return BuildRegexes(regexStrs);
