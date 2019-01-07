@@ -7,6 +7,6 @@ namespace Microsoft.Recognizers.Text.Number
     {
         None = 0,
         PercentageMode = 1,
-        ExperimentalMode = 2
+        ExperimentalMode = 2,
     }
 }
