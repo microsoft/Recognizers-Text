@@ -10,7 +10,10 @@ namespace Microsoft.Recognizers.Text.Number.Spanish
 {
     public class SpanishNumberParserConfiguration : INumberParserConfiguration
     {
-        public SpanishNumberParserConfiguration() : this(new CultureInfo(Culture.Spanish)) { }
+        public SpanishNumberParserConfiguration()
+               : this(new CultureInfo(Culture.Spanish))
+        {
+        }
 
         public SpanishNumberParserConfiguration(CultureInfo ci)
         {
@@ -35,7 +38,7 @@ namespace Microsoft.Recognizers.Text.Number.Spanish
             this.HalfADozenRegex = new Regex(NumbersDefinitions.HalfADozenRegex, RegexOptions.Singleline);
             this.DigitalNumberRegex = new Regex(NumbersDefinitions.DigitalNumberRegex, RegexOptions.Singleline);
             this.NegativeNumberSignRegex = new Regex(NumbersDefinitions.NegativeNumberSignRegex, RegexOptions.Singleline);
-            this.FractionPrepositionRegex  = new Regex(NumbersDefinitions.FractionPrepositionRegex, RegexOptions.Singleline);
+            this.FractionPrepositionRegex = new Regex(NumbersDefinitions.FractionPrepositionRegex, RegexOptions.Singleline);
         }
 
         public ImmutableDictionary<string, long> CardinalNumberMap { get; private set; }
@@ -142,6 +145,7 @@ namespace Microsoft.Recognizers.Text.Number.Spanish
                     lastGoodChar = i;
                     value = this.CardinalNumberMap[strBuilder.ToString()];
                 }
+
                 if ((i + 1) == numberStr.Length)
                 {
                     finalValue += value;
@@ -150,6 +154,7 @@ namespace Microsoft.Recognizers.Text.Number.Spanish
                     value = 0;
                 }
             }
+
             return finalValue;
         }
     }
