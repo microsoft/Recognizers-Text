@@ -8,10 +8,6 @@ namespace Microsoft.Recognizers.Text.Number.Korean
 {
     public class DoubleExtractor : BaseNumberExtractor
     {
-        internal sealed override ImmutableDictionary<Regex, TypeTag> Regexes { get; }
-
-        protected sealed override string ExtractType { get; } = Constants.SYS_NUM_DOUBLE;
-
         public DoubleExtractor()
         {
             var regexes = new Dictionary<Regex, TypeTag>
@@ -26,7 +22,7 @@ namespace Microsoft.Recognizers.Text.Number.Korean
                     RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
-                    //(-).2 
+                    // (-).2
                     new Regex(NumbersDefinitions.SimpleDoubleSpecialsChars, RegexOptions.Singleline),
                     RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)
                 },
@@ -36,7 +32,7 @@ namespace Microsoft.Recognizers.Text.Number.Korean
                     RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
-                    //１５.２만
+                    // １５.２만
                     new Regex(NumbersDefinitions.DoubleWithThousandsRegex, RegexOptions.Singleline),
                     RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.KOREAN)
                 },
@@ -46,13 +42,17 @@ namespace Microsoft.Recognizers.Text.Number.Korean
                     RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.POWER_SUFFIX)
                 },
                 {
-                    //2^5
+                    // 2^5
                     new Regex(NumbersDefinitions.DoubleScientificNotationRegex, RegexOptions.Singleline),
                     RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.POWER_SUFFIX)
-                }
+                },
             };
 
             Regexes = regexes.ToImmutableDictionary();
         }
+
+        internal sealed override ImmutableDictionary<Regex, TypeTag> Regexes { get; }
+
+        protected sealed override string ExtractType { get; } = Constants.SYS_NUM_DOUBLE;
     }
 }
