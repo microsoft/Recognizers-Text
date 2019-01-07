@@ -9,6 +9,17 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 {
     public class FrenchTimeParserConfiguration : BaseOptionsConfiguration, ITimeParserConfiguration
     {
+        public FrenchTimeParserConfiguration(ICommonDateTimeParserConfiguration config)
+            : base(config)
+        {
+            TimeTokenPrefix = DateTimeDefinitions.TimeTokenPrefix;
+            AtRegex = FrenchTimeExtractorConfiguration.AtRegex;
+            TimeRegexes = FrenchTimeExtractorConfiguration.TimeRegexList;
+            UtilityConfiguration = config.UtilityConfiguration;
+            Numbers = config.Numbers;
+            TimeZoneParser = config.TimeZoneParser;
+        }
+
         public string TimeTokenPrefix { get; }
 
         public Regex AtRegex { get; }
@@ -21,22 +32,13 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public IDateTimeParser TimeZoneParser { get; }
 
-        public FrenchTimeParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config)
-        {
-            TimeTokenPrefix = DateTimeDefinitions.TimeTokenPrefix; 
-            AtRegex = FrenchTimeExtractorConfiguration.AtRegex;
-            TimeRegexes = FrenchTimeExtractorConfiguration.TimeRegexList;
-            UtilityConfiguration = config.UtilityConfiguration;
-            Numbers = config.Numbers;
-            TimeZoneParser = config.TimeZoneParser;
-        }
-
         public void AdjustByPrefix(string prefix, ref int hour, ref int min, ref bool hasMin)
         {
             var deltaMin = 0;
             var trimedPrefix = prefix.Trim().ToLowerInvariant();
 
-            if (trimedPrefix.EndsWith("demie"))   // c'este 8 heures et demie, - "it's half past 8"
+            // c'este 8 heures et demie, - "it's half past 8"
+            if (trimedPrefix.EndsWith("demie"))
             {
                 deltaMin = 30;
             }
@@ -63,7 +65,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
                 }
             }
 
-            if (trimedPrefix.EndsWith("à")) // 'to' i.e 'one to five' = 'un à cinq'
+            // 'to' i.e 'one to five' = 'un à cinq'
+            if (trimedPrefix.EndsWith("à"))
             {
                 deltaMin = -deltaMin;
             }
@@ -74,6 +77,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
                 min += 60;
                 hour -= 1;
             }
+
             hasMin = true;
         }
 
@@ -88,23 +92,25 @@ namespace Microsoft.Recognizers.Text.DateTime.French
                 var oclockStr = match.Groups["heures"].Value;
                 if (string.IsNullOrEmpty(oclockStr))
                 {
-                    var amStr = match.Groups[Constants.AmGroupName].Value;
-                    if (!string.IsNullOrEmpty(amStr))
+                    var matchAmStr = match.Groups[Constants.AmGroupName].Value;
+                    if (!string.IsNullOrEmpty(matchAmStr))
                     {
                         if (hour >= Constants.HalfDayHourCount)
                         {
                             deltaHour = -Constants.HalfDayHourCount;
                         }
+
                         hasAm = true;
                     }
 
-                    var pmStr = match.Groups[Constants.PmGroupName].Value;
-                    if (!string.IsNullOrEmpty(pmStr))
+                    var matchPmStr = match.Groups[Constants.PmGroupName].Value;
+                    if (!string.IsNullOrEmpty(matchPmStr))
                     {
                         if (hour < Constants.HalfDayHourCount)
                         {
                             deltaHour = Constants.HalfDayHourCount;
                         }
+
                         hasPm = true;
                     }
                 }
