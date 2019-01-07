@@ -8,14 +8,48 @@ namespace Microsoft.Recognizers.Text.Number.Portuguese
 {
     public class NumberExtractor : BaseNumberExtractor
     {
+        private static readonly ConcurrentDictionary<(NumberMode, NumberOptions), NumberExtractor> Instances =
+            new ConcurrentDictionary<(NumberMode, NumberOptions), NumberExtractor>();
+
+        private NumberExtractor(NumberMode mode = NumberMode.Default, NumberOptions options = NumberOptions.None)
+        {
+            Options = options;
+
+            var builder = ImmutableDictionary.CreateBuilder<Regex, TypeTag>();
+
+            // Add Cardinal
+            CardinalExtractor cardExtract = null;
+            switch (mode)
+            {
+                case NumberMode.PureNumber:
+                    cardExtract = CardinalExtractor.GetInstance(NumbersDefinitions.PlaceHolderPureNumber);
+                    break;
+                case NumberMode.Currency:
+                    builder.Add(BaseNumberExtractor.CurrencyRegex, RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX));
+                    break;
+                case NumberMode.Default:
+                    break;
+            }
+
+            if (cardExtract == null)
+            {
+                cardExtract = CardinalExtractor.GetInstance();
+            }
+
+            builder.AddRange(cardExtract.Regexes);
+
+            // Add Fraction
+            var fracExtract = FractionExtractor.GetInstance(Options);
+            builder.AddRange(fracExtract.Regexes);
+
+            this.Regexes = builder.ToImmutable();
+        }
+
         internal sealed override ImmutableDictionary<Regex, TypeTag> Regexes { get; }
 
         protected sealed override NumberOptions Options { get; }
 
         protected sealed override string ExtractType { get; } = Constants.SYS_NUM; // "Number";
-
-        private static readonly ConcurrentDictionary<(NumberMode, NumberOptions), NumberExtractor> Instances =
-            new ConcurrentDictionary<(NumberMode, NumberOptions), NumberExtractor>();
 
         public static NumberExtractor GetInstance(NumberMode mode = NumberMode.Default, NumberOptions options = NumberOptions.None)
         {
@@ -27,41 +61,6 @@ namespace Microsoft.Recognizers.Text.Number.Portuguese
             }
 
             return Instances[cacheKey];
-        }
-
-        private NumberExtractor(NumberMode mode = NumberMode.Default, NumberOptions options = NumberOptions.None)
-        {
-
-            Options = options;
-
-            var builder = ImmutableDictionary.CreateBuilder<Regex, TypeTag>();
-
-            //Add Cardinal
-            CardinalExtractor cardExtract = null;
-            switch (mode)
-            {
-                case NumberMode.PureNumber:
-                    cardExtract = CardinalExtractor.GetInstance(NumbersDefinitions.PlaceHolderPureNumber);
-                    break;
-                case NumberMode.Currency:
-                    builder.Add(BaseNumberExtractor.CurrencyRegex,
-                                RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX));
-                    break;
-                case NumberMode.Default:
-                    break;
-            }
-
-            if (cardExtract == null)
-            {
-                cardExtract = CardinalExtractor.GetInstance();
-            }
-            builder.AddRange(cardExtract.Regexes);
-
-            //Add Fraction
-            var fracExtract = FractionExtractor.GetInstance(Options);
-            builder.AddRange(fracExtract.Regexes);
-
-            this.Regexes = builder.ToImmutable();
         }
     }
 }
