@@ -103,8 +103,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
                 var oclockStr = match.Groups["oclock"].Value;
                 if (string.IsNullOrEmpty(oclockStr))
                 {
-                    var strAm = match.Groups[Constants.AmGroupName].Value;
-                    if (!string.IsNullOrEmpty(strAm))
+                    var matchAmStr = match.Groups[Constants.AmGroupName].Value;
+                    if (!string.IsNullOrEmpty(matchAmStr))
                     {
                         if (hour >= Constants.HalfDayHourCount)
                         {
