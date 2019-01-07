@@ -8,32 +8,8 @@ namespace Microsoft.Recognizers.Text.Number.English
 {
     public class NumberExtractor : BaseNumberExtractor
     {
-        internal sealed override ImmutableDictionary<Regex, TypeTag> Regexes { get; }
-
-        protected sealed override ImmutableDictionary<Regex, Regex> AmbiguityFiltersDict { get; }
-
-        protected sealed override NumberOptions Options { get; }
-
-        protected sealed override string ExtractType { get; } = Constants.SYS_NUM; // "Number";
-
-        protected sealed override Regex NegativeNumberTermsRegex { get; }
-
-        protected sealed override Regex AmbiguousFractionConnectorsRegex { get; }
-
         private static readonly ConcurrentDictionary<(NumberMode, NumberOptions), NumberExtractor> Instances =
             new ConcurrentDictionary<(NumberMode, NumberOptions), NumberExtractor>();
-
-        public static NumberExtractor GetInstance(NumberMode mode = NumberMode.Default, NumberOptions options = NumberOptions.None)
-        {
-            var cacheKey = (mode, options);
-            if (!Instances.ContainsKey(cacheKey))
-            {
-                var instance = new NumberExtractor(mode, options);
-                Instances.TryAdd(cacheKey, instance);
-            }
-
-            return Instances[cacheKey];
-        }
 
         private NumberExtractor(NumberMode mode, NumberOptions options)
         {
@@ -44,7 +20,7 @@ namespace Microsoft.Recognizers.Text.Number.English
             Options = options;
 
             var builder = ImmutableDictionary.CreateBuilder<Regex, TypeTag>();
-            
+
             // Add Cardinal
             CardinalExtractor cardExtract = null;
             switch (mode)
@@ -53,8 +29,9 @@ namespace Microsoft.Recognizers.Text.Number.English
                     cardExtract = CardinalExtractor.GetInstance(NumbersDefinitions.PlaceHolderPureNumber);
                     break;
                 case NumberMode.Currency:
-                    builder.Add(BaseNumberExtractor.CurrencyRegex,
-                                RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX));
+                    builder.Add(
+                        BaseNumberExtractor.CurrencyRegex,
+                        RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX));
                     break;
                 case NumberMode.Default:
                     break;
@@ -66,7 +43,7 @@ namespace Microsoft.Recognizers.Text.Number.English
             }
 
             builder.AddRange(cardExtract.Regexes);
-            
+
             // Add Fraction
             var fracExtract = FractionExtractor.GetInstance(Options);
             builder.AddRange(fracExtract.Regexes);
@@ -81,6 +58,30 @@ namespace Microsoft.Recognizers.Text.Number.English
             }
 
             AmbiguityFiltersDict = ambiguityBuilder.ToImmutable();
+        }
+
+        internal sealed override ImmutableDictionary<Regex, TypeTag> Regexes { get; }
+
+        protected sealed override ImmutableDictionary<Regex, Regex> AmbiguityFiltersDict { get; }
+
+        protected sealed override NumberOptions Options { get; }
+
+        protected sealed override string ExtractType { get; } = Constants.SYS_NUM; // "Number";
+
+        protected sealed override Regex NegativeNumberTermsRegex { get; }
+
+        protected sealed override Regex AmbiguousFractionConnectorsRegex { get; }
+
+        public static NumberExtractor GetInstance(NumberMode mode = NumberMode.Default, NumberOptions options = NumberOptions.None)
+        {
+            var cacheKey = (mode, options);
+            if (!Instances.ContainsKey(cacheKey))
+            {
+                var instance = new NumberExtractor(mode, options);
+                Instances.TryAdd(cacheKey, instance);
+            }
+
+            return Instances[cacheKey];
         }
     }
 }
