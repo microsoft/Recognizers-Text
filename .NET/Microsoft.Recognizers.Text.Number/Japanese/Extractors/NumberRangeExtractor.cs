@@ -1,19 +1,14 @@
-﻿using Microsoft.Recognizers.Definitions.Japanese;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Definitions.Japanese;
 
 namespace Microsoft.Recognizers.Text.Number.Japanese
 {
     public class NumberRangeExtractor : BaseNumberRangeExtractor
     {
-        internal sealed override ImmutableDictionary<Regex, string> Regexes { get; }
-
-        internal sealed override Regex AmbiguousFractionConnectorsRegex { get; }
-
-        protected sealed override string ExtractType { get; } = Constants.SYS_NUMRANGE;
-
-        public NumberRangeExtractor(NumberOptions options = NumberOptions.None) : base(new NumberExtractor(), new OrdinalExtractor(), new BaseCJKNumberParser(new JapaneseNumberParserConfiguration()), options: options)
+        public NumberRangeExtractor(NumberOptions options = NumberOptions.None)
+            : base(new NumberExtractor(), new OrdinalExtractor(), new BaseCJKNumberParser(new JapaneseNumberParserConfiguration()), options: options)
         {
             var regexes = new Dictionary<Regex, string>
             {
@@ -71,13 +66,19 @@ namespace Microsoft.Recognizers.Text.Number.Japanese
                     // イコール...　｜　...等しい|
                     new Regex(NumbersDefinitions.OneNumberRangeEqualRegex, RegexOptions.Singleline),
                     NumberRangeConstants.EQUAL
-                }
+                },
             };
 
             Regexes = regexes.ToImmutableDictionary();
 
-            AmbiguousFractionConnectorsRegex = 
+            AmbiguousFractionConnectorsRegex =
                 new Regex(NumbersDefinitions.AmbiguousFractionConnectorsRegex, RegexOptions.Singleline);
         }
+
+        internal sealed override ImmutableDictionary<Regex, string> Regexes { get; }
+
+        internal sealed override Regex AmbiguousFractionConnectorsRegex { get; }
+
+        protected sealed override string ExtractType { get; } = Constants.SYS_NUMRANGE;
     }
 }
