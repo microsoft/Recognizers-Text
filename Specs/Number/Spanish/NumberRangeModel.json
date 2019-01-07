@@ -276,7 +276,7 @@
   },
   {
     "Input": "Este número es más alto que un cuarto y más bajo que un medio.",
-	"NotSupported": "dotnet",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
@@ -397,7 +397,7 @@
   },
   {
     "Input": "Más de la mitad de la genta vino aquí.",
-	"NotSupported": "dotnet",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
@@ -1037,7 +1037,7 @@
   },
   {
     "Input": "Qué tal dos quintos o más",
-	"NotSupported": "dotnet",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
@@ -1054,7 +1054,7 @@
   {
     "Input": "Qué tal más de dos quintos",
     "Comment": "As this can be ambiguous, by design the interpretation is left-to-right and the range is extracted first.",
-	"NotSupported": "dotnet",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
