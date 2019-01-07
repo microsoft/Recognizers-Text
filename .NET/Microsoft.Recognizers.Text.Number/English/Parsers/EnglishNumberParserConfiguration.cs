@@ -10,12 +10,16 @@ namespace Microsoft.Recognizers.Text.Number.English
 {
     public class EnglishNumberParserConfiguration : INumberParserConfiguration
     {
-        public EnglishNumberParserConfiguration(NumberOptions options) : this()
+        public EnglishNumberParserConfiguration(NumberOptions options)
+            : this()
         {
             this.Options = options;
         }
 
-        public EnglishNumberParserConfiguration() : this(new CultureInfo(Culture.English)) { }
+        public EnglishNumberParserConfiguration()
+            : this(new CultureInfo(Culture.English))
+        {
+        }
 
         public EnglishNumberParserConfiguration(CultureInfo ci)
         {
@@ -39,7 +43,7 @@ namespace Microsoft.Recognizers.Text.Number.English
             this.HalfADozenRegex = new Regex(NumbersDefinitions.HalfADozenRegex, RegexOptions.Singleline);
             this.DigitalNumberRegex = new Regex(NumbersDefinitions.DigitalNumberRegex, RegexOptions.Singleline);
             this.NegativeNumberSignRegex = new Regex(NumbersDefinitions.NegativeNumberSignRegex, RegexOptions.Singleline);
-            this.FractionPrepositionRegex  = new Regex(NumbersDefinitions.FractionPrepositionRegex, RegexOptions.Singleline);
+            this.FractionPrepositionRegex = new Regex(NumbersDefinitions.FractionPrepositionRegex, RegexOptions.Singleline);
         }
 
         public ImmutableDictionary<string, long> CardinalNumberMap { get; private set; }
@@ -128,7 +132,6 @@ namespace Microsoft.Recognizers.Text.Number.English
 
         public long ResolveCompositeNumber(string numberStr)
         {
-
             if (numberStr.Contains("-"))
             {
                 var numbers = numberStr.Split('-');
