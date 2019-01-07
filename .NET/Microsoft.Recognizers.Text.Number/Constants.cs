@@ -1,9 +1,9 @@
-﻿// ReSharper disable InconsistentNaming
-
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Microsoft.Recognizers.Text.Number
 {
+    [SuppressMessage("StyleCop.CSharp.NamingRules", "SA1310:Field names should not contain underscore", Justification = "Reviwed.")]
     public static class Constants
     {
         public const string SYS_NUM_CARDINAL = "builtin.num.cardinal";
