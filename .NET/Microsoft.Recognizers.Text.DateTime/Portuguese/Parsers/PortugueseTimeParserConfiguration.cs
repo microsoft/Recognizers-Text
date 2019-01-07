@@ -114,8 +114,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
                         hasAm = true;
                     }
 
-                    var strPm = match.Groups[Constants.PmGroupName].Value;
-                    if (!string.IsNullOrEmpty(strPm))
+                    var matchPmStr = match.Groups[Constants.PmGroupName].Value;
+                    if (!string.IsNullOrEmpty(matchPmStr))
                     {
                         if (hour < Constants.HalfDayHourCount)
                         {
