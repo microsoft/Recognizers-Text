@@ -1,10 +1,13 @@
 ﻿using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.French
-{ 
+{
     public class TimeParser : BaseTimeParser
     {
-        public TimeParser(ITimeParserConfiguration configuration) : base(configuration) { }
+        public TimeParser(ITimeParserConfiguration configuration)
+            : base(configuration)
+        {
+        }
 
         protected override DateTimeResolutionResult InternalParse(string text, DateObject referenceTime)
         {
@@ -13,6 +16,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             {
                 innerResult = ParseIsh(text, referenceTime);
             }
+
             return innerResult;
         }
 
