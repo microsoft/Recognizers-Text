@@ -7,9 +7,17 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Spanish
 {
     public class VolumeExtractorConfiguration : SpanishNumberWithUnitExtractorConfiguration
     {
-        public VolumeExtractorConfiguration() : this(new CultureInfo(Culture.Spanish)) { }
+        public static readonly ImmutableDictionary<string, string> VolumeSuffixList = NumbersWithUnitDefinitions.VolumeSuffixList.ToImmutableDictionary();
 
-        public VolumeExtractorConfiguration(CultureInfo ci) : base(ci) { }
+        public VolumeExtractorConfiguration()
+               : this(new CultureInfo(Culture.Spanish))
+        {
+        }
+
+        public VolumeExtractorConfiguration(CultureInfo ci)
+               : base(ci)
+        {
+        }
 
         public override ImmutableDictionary<string, string> SuffixList => VolumeSuffixList;
 
@@ -18,7 +26,5 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Spanish
         public override ImmutableList<string> AmbiguousUnitList => null;
 
         public override string ExtractType => Constants.SYS_UNIT_VOLUME;
-
-        public static readonly ImmutableDictionary<string, string> VolumeSuffixList = NumbersWithUnitDefinitions.VolumeSuffixList.ToImmutableDictionary();
     }
 }

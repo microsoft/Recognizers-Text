@@ -11,6 +11,12 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Spanish
 {
     public abstract class SpanishNumberWithUnitExtractorConfiguration : INumberWithUnitExtractorConfiguration
     {
+        private static readonly Regex CompoundUnitConnRegex =
+            new Regex(NumbersWithUnitDefinitions.CompoundUnitConnectorRegex, RegexOptions.None);
+
+        private static readonly Regex NonUnitsRegex =
+            new Regex(BaseUnits.PmNonUnitRegex, RegexOptions.None);
+
         protected SpanishNumberWithUnitExtractorConfiguration(CultureInfo ci)
         {
             this.CultureInfo = ci;
@@ -45,11 +51,5 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Spanish
         public abstract ImmutableDictionary<string, string> PrefixList { get; }
 
         public abstract ImmutableList<string> AmbiguousUnitList { get; }
-
-        private static readonly Regex CompoundUnitConnRegex =
-            new Regex(NumbersWithUnitDefinitions.CompoundUnitConnectorRegex, RegexOptions.None);
-
-        private static readonly Regex NonUnitsRegex =
-            new Regex(BaseUnits.PmNonUnitRegex, RegexOptions.None);
     }
 }

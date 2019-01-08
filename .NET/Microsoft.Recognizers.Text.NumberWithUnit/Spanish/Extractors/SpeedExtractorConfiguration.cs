@@ -7,9 +7,19 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Spanish
 {
     public class SpeedExtractorConfiguration : SpanishNumberWithUnitExtractorConfiguration
     {
-        public SpeedExtractorConfiguration() : base(new CultureInfo(Culture.Spanish)) { }
+        public static readonly ImmutableDictionary<string, string> SpeedSuffixList = NumbersWithUnitDefinitions.SpeedSuffixList.ToImmutableDictionary();
 
-        public SpeedExtractorConfiguration(CultureInfo ci) : base(ci) { }
+        private static readonly ImmutableList<string> AmbiguousValues = NumbersWithUnitDefinitions.AmbiguousSpeedUnitList.ToImmutableList();
+
+        public SpeedExtractorConfiguration()
+               : base(new CultureInfo(Culture.Spanish))
+        {
+        }
+
+        public SpeedExtractorConfiguration(CultureInfo ci)
+               : base(ci)
+        {
+        }
 
         public override ImmutableDictionary<string, string> SuffixList => SpeedSuffixList;
 
@@ -18,9 +28,5 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Spanish
         public override ImmutableList<string> AmbiguousUnitList => AmbiguousValues;
 
         public override string ExtractType => Constants.SYS_UNIT_SPEED;
-
-        public static readonly ImmutableDictionary<string, string> SpeedSuffixList = NumbersWithUnitDefinitions.SpeedSuffixList.ToImmutableDictionary();
-
-        private static readonly ImmutableList<string> AmbiguousValues = NumbersWithUnitDefinitions.AmbiguousSpeedUnitList.ToImmutableList();
     }
 }
