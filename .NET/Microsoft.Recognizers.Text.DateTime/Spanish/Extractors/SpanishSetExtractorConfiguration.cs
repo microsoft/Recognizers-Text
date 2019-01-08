@@ -16,7 +16,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public static readonly Regex SetWeekDayRegex = new Regex(DateTimeDefinitions.SetWeekDayRegex, RegexOptions.Singleline);
         public static readonly Regex SetEachRegex = new Regex(DateTimeDefinitions.SetEachRegex, RegexOptions.Singleline);
 
-        public SpanishSetExtractorConfiguration(IOptionsConfiguration config) : base(config)
+        public SpanishSetExtractorConfiguration(IOptionsConfiguration config)
+            : base(config)
         {
             DurationExtractor = new BaseDurationExtractor(new SpanishDurationExtractorConfiguration(this));
             TimeExtractor = new BaseTimeExtractor(new SpanishTimeExtractorConfiguration(this));
