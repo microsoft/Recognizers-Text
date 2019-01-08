@@ -7,9 +7,15 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Chinese
 {
     public class CurrencyExtractorConfiguration : ChineseNumberWithUnitExtractorConfiguration
     {
-        public CurrencyExtractorConfiguration() : this(new CultureInfo(Culture.Chinese)) { }
+        public CurrencyExtractorConfiguration()
+            : this(new CultureInfo(Culture.Chinese))
+        {
+        }
 
-        public CurrencyExtractorConfiguration(CultureInfo ci) : base(ci) { }
+        public CurrencyExtractorConfiguration(CultureInfo ci)
+            : base(ci)
+        {
+        }
 
         public override ImmutableDictionary<string, string> SuffixList => NumbersWithUnitDefinitions.CurrencySuffixList.ToImmutableDictionary();
 

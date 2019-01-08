@@ -9,24 +9,30 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Chinese
 {
     public class TemperatureExtractorConfiguration : ChineseNumberWithUnitExtractorConfiguration
     {
-        public TemperatureExtractorConfiguration() : this(new CultureInfo(Culture.Chinese)) { }
+        private static readonly Regex AmbiguousUnitMultiplierRegex =
+            new Regex(BaseUnits.AmbiguousUnitNumberMultiplierRegex, RegexOptions.None);
 
-        public TemperatureExtractorConfiguration(CultureInfo ci) : base(ci) { }
+        public TemperatureExtractorConfiguration()
+            : this(new CultureInfo(Culture.Chinese))
+        {
+        }
 
-        public override ImmutableDictionary<string, string> SuffixList => 
+        public TemperatureExtractorConfiguration(CultureInfo ci)
+            : base(ci)
+        {
+        }
+
+        public override ImmutableDictionary<string, string> SuffixList =>
             NumbersWithUnitDefinitions.TemperatureSuffixList.ToImmutableDictionary();
 
-        public override ImmutableDictionary<string, string> PrefixList => 
+        public override ImmutableDictionary<string, string> PrefixList =>
             NumbersWithUnitDefinitions.TemperaturePrefixList.ToImmutableDictionary();
 
-        public override ImmutableList<string> AmbiguousUnitList => 
+        public override ImmutableList<string> AmbiguousUnitList =>
             NumbersWithUnitDefinitions.TemperatureAmbiguousValues.ToImmutableList();
 
         public override string ExtractType => Constants.SYS_UNIT_TEMPERATURE;
 
         public override Regex AmbiguousUnitNumberMultiplierRegex => AmbiguousUnitMultiplierRegex;
-
-        private static readonly Regex AmbiguousUnitMultiplierRegex =
-            new Regex(BaseUnits.AmbiguousUnitNumberMultiplierRegex, RegexOptions.None);
     }
 }

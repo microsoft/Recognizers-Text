@@ -7,9 +7,15 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Chinese
 {
     public class DimensionExtractorConfiguration : ChineseNumberWithUnitExtractorConfiguration
     {
-        public DimensionExtractorConfiguration() : this(new CultureInfo(Culture.Chinese)) { }
+        public DimensionExtractorConfiguration()
+            : this(new CultureInfo(Culture.Chinese))
+        {
+        }
 
-        public DimensionExtractorConfiguration(CultureInfo ci) : base(ci) { }
+        public DimensionExtractorConfiguration(CultureInfo ci)
+            : base(ci)
+        {
+        }
 
         public override ImmutableDictionary<string, string> SuffixList => NumbersWithUnitDefinitions.DimensionSuffixList.ToImmutableDictionary();
 
