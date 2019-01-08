@@ -4488,7 +4488,6 @@
     ]
   },
   {
-<<<<<<< HEAD
     "Input": "Ya no estaré en el tercer cuarto de 2016",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript, python, java",
@@ -4502,8 +4501,6 @@
     ]
   },
   {
-=======
->>>>>>> upstream/master
     "Input": "Ya no estaré en 3º cuarto",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript, python, java",
