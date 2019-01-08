@@ -8,7 +8,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Italian
 {
     public class ItalianNumberWithUnitParserConfiguration : BaseNumberWithUnitParserConfiguration
     {
-        public ItalianNumberWithUnitParserConfiguration(CultureInfo ci) : base(ci)
+        public ItalianNumberWithUnitParserConfiguration(CultureInfo ci)
+            : base(ci)
         {
             this.InternalNumberExtractor = NumberExtractor.GetInstance();
             this.InternalNumberParser = AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new ItalianNumberParserConfiguration());
