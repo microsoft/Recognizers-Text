@@ -32,6 +32,5 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
         Regex AmbiguousUnitNumberMultiplierRegex { get; }
 
         Dictionary<Regex, Regex> AmbiguityFiltersDict { get; }
-
     }
 }
