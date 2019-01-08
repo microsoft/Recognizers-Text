@@ -220,6 +220,17 @@
     ]
   },
   {
+    "Input": "Estaré fuera de 4pm a cinco treinta",
+    "Results": [
+      {
+        "Text": "de 4pm a cinco treinta",
+        "Type": "timerange",
+        "Start": 13,
+        "Length": 22
+      }
+    ]
+  },
+  {
     "Input": "Estaré fuera de 3 de la mañana hasta las 5pm",
     "Results": [
       {

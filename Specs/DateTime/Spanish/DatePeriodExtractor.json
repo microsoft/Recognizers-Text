@@ -303,6 +303,18 @@
     ]
   },
   {
+    "Input": "Estare fuera del 1ro de Ene hasta Mi, 22 de Ene",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "1ro de Ene hasta Mi, 22 de Ene",
+        "Type": "daterange",
+        "Start": 17,
+        "Length": 30
+      }
+    ]
+  },
+  {
     "Input": "Estare afuera desde 2 de Oct hasta 22 de Octubre",
     "Results": [
       {
@@ -413,6 +425,30 @@
     ]
   },
   {
+    "Input": "Estare afuera la tercer semana del 2027",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "la tercer semana del 2027",
+        "Type": "daterange",
+        "Start": 14,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "Estare afuera la tercer semana del proximo año",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "la tercer semana del proximo año",
+        "Type": "daterange",
+        "Start": 14,
+        "Length": 32
+      }
+    ]
+  },
+  {
     "Input": "Estare afuera este verano",
     "Results": [
       {
@@ -420,6 +456,18 @@
         "Type": "daterange",
         "Start": 14,
         "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Estare fuera durante el verano",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "el verano",
+        "Type": "daterange",
+        "Start": 21,
+        "Length": 9
       }
     ]
   },
@@ -505,6 +553,18 @@
         "Type": "daterange",
         "Start": 16,
         "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Estare afuera la tercer semana del proximo año",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "la tercer semana del proximo año",
+        "Type": "daterange",
+        "Start": 14,
+        "Length": 32
       }
     ]
   },
