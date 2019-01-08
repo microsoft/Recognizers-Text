@@ -72,6 +72,30 @@
     ]
   },
   {
+    "Input": "Wie wird das Wetter morgen Mittag?",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "morgen mittag",
+        "Type": "datetime",
+        "Start": 20,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Wir sehen uns morgen früh!",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "morgen früh",
+        "Type": "datetimerange",
+        "Start": 14,
+        "Length": 11
+      }
+    ]
+  },
+  {
     "Input": "Verschieb mal das meeting vom 22. August auf den 23. August",
     "NotSupported": "javascript, python",
     "Results": [
