@@ -26,19 +26,6 @@
     "NotSupported": "dotNet"
   },
   {
-    "Input": "Ik ga nu terug",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "nu",
-        "Type": "datetime",
-        "Start": 6,
-        "Length": 2
-      }
-    ],
-    "NotSupported": "dotNet"
-  },
-  {
     "Input": "Ik ga terug op 15 om 8:00",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
@@ -723,19 +710,6 @@
         "Type": "datetime",
         "Start": 6,
         "Length": 19
-      }
-    ],
-    "NotSupported": "dotNet"
-  },
-  {
-    "Input": "Ik ga morgen om 9 uur terug",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "morgen om 9 uur",
-        "Type": "datetime",
-        "Start": 6,
-        "Length": 15
       }
     ],
     "NotSupported": "dotNet"

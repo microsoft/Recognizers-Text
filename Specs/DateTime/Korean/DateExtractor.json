@@ -140,16 +140,6 @@
     ]
   },
   {
-    "Input": "4.22에 돌아갈게요",
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
-    "Results": [
-      {
-        "Text": "4.22",
-        "Type": "date"
-      }
-    ]
-  },
-  {
     "Input": "4-22에 돌아갈게요",
     "NotSupportedByDesign": "dotNet,javascript,python,java,",
     "Results": [
@@ -190,16 +180,6 @@
     ]
   },
   {
-    "Input": "22/04에 돌아갈게요",
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
-    "Results": [
-      {
-        "Text": "22/04",
-        "Type": "date"
-      }
-    ]
-  },
-  {
     "Input": "2015/08/12에 돌아갈게요",
     "NotSupportedByDesign": "dotNet,javascript,python,java,",
     "Results": [
@@ -235,16 +215,6 @@
     "Results": [
       {
         "Text": "1월 1일",
-        "Type": "date"
-      }
-    ]
-  },
-  {
-    "Input": "1월-1일에 돌아갈게요",
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
-    "Results": [
-      {
-        "Text": "1월-1일",
         "Type": "date"
       }
     ]
@@ -355,16 +325,6 @@
     "Results": [
       {
         "Text": "화요일",
-        "Type": "date"
-      }
-    ]
-  },
-  {
-    "Input": "금요일에 돌아갈게요",
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
-    "Results": [
-      {
-        "Text": "금요일",
         "Type": "date"
       }
     ]
@@ -510,31 +470,11 @@
     ]
   },
   {
-    "Input": "이번 금요일에 돌아올거야",
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
-    "Results": [
-      {
-        "Text": "이번 금요일",
-        "Type": "date"
-      }
-    ]
-  },
-  {
     "Input": "다음 주 일요일에 돌아올거야",
     "NotSupportedByDesign": "dotNet,javascript,python,java,",
     "Results": [
       {
         "Text": "다음주 일요일",
-        "Type": "date"
-      }
-    ]
-  },
-  {
-    "Input": "지난 주 일요일로 돌아갈거야",
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
-    "Results": [
-      {
-        "Text": "지난 주 일요일",
         "Type": "date"
       }
     ]
@@ -765,26 +705,6 @@
     "Results": [
       {
         "Text": "27일에",
-        "Type": "date"
-      }
-    ]
-  },
-  {
-    "Input": "21일에 돌아왔다",
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
-    "Results": [
-      {
-        "Text": "21일에",
-        "Type": "date"
-      }
-    ]
-  },
-  {
-    "Input": "22일에 돌아왔다",
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
-    "Results": [
-      {
-        "Text": "22일에",
         "Type": "date"
       }
     ]

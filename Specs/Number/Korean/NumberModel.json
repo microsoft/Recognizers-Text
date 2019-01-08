@@ -653,19 +653,6 @@
     ]
   },
   {
-    "Input": "오십 이",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "오십 이",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "52"
-        }
-      }
-    ]
-  },
-  {
     "Input": "2  1/4",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
@@ -1082,19 +1069,6 @@
     ]
   },
   {
-    "Input": "삼십오분의 일백",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "삼십오분의 일백",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "2.85714285714286"
-        }
-      }
-    ]
-  },
-  {
     "Input": "일백오분의 일",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
@@ -1142,19 +1116,6 @@
         "TypeName": "number",
         "Resolution": {
           "value": "0.333333333333333"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "이십일분의 일",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "이십일분의 일",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "0.0476190476190476"
         }
       }
     ]
@@ -1363,32 +1324,6 @@
         "TypeName": "number",
         "Resolution": {
           "value": "0.25"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "팔분의 일",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "팔분의 일",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "0.125"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "팔분의 오",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "팔분의 오",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "0.625"
         }
       }
     ]

@@ -1450,56 +1450,6 @@
     ]
   },
   {
-    "Input": "Sarò fuori dalle 2:00pm del 2016-2-21 alle 3:32 del 04/23/2016",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
-    "Results": [
-      {
-        "Text": "dalle 2:00pm del 2016-2-21 alle 3:32 del 04/23/2016",
-        "Type": "datetimerange",
-        "Value": {
-          "Timex": "(2016-02-21T14:00,2016-04-23T03:32,PT1478H)",
-          "FutureResolution": {
-            "startDateTime": "2016-02-21 14:00:00",
-            "endDateTime": "2016-04-23 03:32:00"
-          },
-          "PastResolution": {
-            "startDateTime": "2016-02-21 14:00:00",
-            "endDateTime": "2016-04-23 03:32:00"
-          }
-        }
-      }
-    ]
-  },
-  {
-    "Input": "incontriamoci in tarda nottata martedì",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
-    "Results": [
-      {
-        "Text": "in tarda nottata martedì",
-        "Type": "datetimerange",
-        "Value": {
-          "Timex": "XXXX-WXX-2TNI",
-          "FutureResolution": {
-            "startDateTime": "2016-11-08 22:00:00",
-            "endDateTime": "2016-11-08 23:59:59"
-          },
-          "PastResolution": {
-            "startDateTime": "2016-11-01 22:00:00",
-            "endDateTime": "2016-11-01 23:59:59"
-          }
-        }
-      }
-    ]
-  },
-  {
     "Input": "Cortana, per favore programma uno skype per una riunione d'affari con Wayne, venerdì tra le 1PM e le 4 PM.",
     "Context": {
       "ReferenceDateTime": "2017-11-09T16:12:00"

@@ -1392,30 +1392,6 @@
     ]
   },
   {
-    "Input": "Ich bin an Ostern 2020 wieder zurück",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "javascript, python",
-    "Results": [
-      {
-        "Text": "Ostern 2020",
-        "Type": "date",
-        "Value": {
-          "Timex": "2020-04-12",
-          "FutureResolution": {
-            "date": "2020-04-12"
-          },
-          "PastResolution": {
-            "date": "2020-04-12"
-          }
-        },
-        "Start": 11,
-        "Length": 11
-      }
-    ]
-  },
-  {
     "Input": "An Mariä Himmelfahrt haben wir Bayern frei.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"

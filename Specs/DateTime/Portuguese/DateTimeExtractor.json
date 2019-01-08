@@ -720,18 +720,6 @@
     ]
   },
   {
-    "Input": "Vou voltar 8am de amanha",
-    "NotSupported": "javascript, python",
-    "Results": [
-      {
-        "Text": "8am de amanha",
-        "Type": "datetime",
-        "Start": 11,
-        "Length": 13
-      }
-    ]
-  },
-  {
     "Input": "Vou voltar 8pm do dia 15",
     "NotSupported": "javascript, python",
     "Results": [

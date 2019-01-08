@@ -7,6 +7,28 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 {
     public class EnglishDurationParserConfiguration : BaseOptionsConfiguration, IDurationParserConfiguration
     {
+        public EnglishDurationParserConfiguration(ICommonDateTimeParserConfiguration config)
+            : base(config)
+        {
+            CardinalExtractor = config.CardinalExtractor;
+            NumberParser = config.NumberParser;
+            DurationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration(this), false);
+            NumberCombinedWithUnit = EnglishDurationExtractorConfiguration.NumberCombinedWithDurationUnit;
+            AnUnitRegex = EnglishDurationExtractorConfiguration.AnUnitRegex;
+            DuringRegex = EnglishDurationExtractorConfiguration.DuringRegex;
+            AllDateUnitRegex = EnglishDurationExtractorConfiguration.AllRegex;
+            HalfDateUnitRegex = EnglishDurationExtractorConfiguration.HalfRegex;
+            SuffixAndRegex = EnglishDurationExtractorConfiguration.SuffixAndRegex;
+            FollowedUnit = EnglishDurationExtractorConfiguration.DurationFollowedUnit;
+            ConjunctionRegex = EnglishDurationExtractorConfiguration.ConjunctionRegex;
+            InexactNumberRegex = EnglishDurationExtractorConfiguration.InexactNumberRegex;
+            InexactNumberUnitRegex = EnglishDurationExtractorConfiguration.InexactNumberUnitRegex;
+            DurationUnitRegex = EnglishDurationExtractorConfiguration.DurationUnitRegex;
+            UnitMap = config.UnitMap;
+            UnitValueMap = config.UnitValueMap;
+            DoubleNumbers = config.DoubleNumbers;
+        }
+
         public IExtractor CardinalExtractor { get; }
 
         public IExtractor DurationExtractor { get; }
@@ -40,26 +62,5 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public IImmutableDictionary<string, long> UnitValueMap { get; }
 
         public IImmutableDictionary<string, double> DoubleNumbers { get; }
-
-        public EnglishDurationParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config)
-        {
-            CardinalExtractor = config.CardinalExtractor;
-            NumberParser = config.NumberParser;
-            DurationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration(this), false);
-            NumberCombinedWithUnit = EnglishDurationExtractorConfiguration.NumberCombinedWithDurationUnit;
-            AnUnitRegex = EnglishDurationExtractorConfiguration.AnUnitRegex;
-            DuringRegex = EnglishDurationExtractorConfiguration.DuringRegex;
-            AllDateUnitRegex = EnglishDurationExtractorConfiguration.AllRegex;
-            HalfDateUnitRegex = EnglishDurationExtractorConfiguration.HalfRegex;
-            SuffixAndRegex = EnglishDurationExtractorConfiguration.SuffixAndRegex;
-            FollowedUnit = EnglishDurationExtractorConfiguration.DurationFollowedUnit;
-            ConjunctionRegex = EnglishDurationExtractorConfiguration.ConjunctionRegex;
-            InexactNumberRegex = EnglishDurationExtractorConfiguration.InexactNumberRegex;
-            InexactNumberUnitRegex = EnglishDurationExtractorConfiguration.InexactNumberUnitRegex;
-            DurationUnitRegex = EnglishDurationExtractorConfiguration.DurationUnitRegex;
-            UnitMap = config.UnitMap;
-            UnitValueMap = config.UnitValueMap;
-            DoubleNumbers = config.DoubleNumbers;
-        }
     }
 }

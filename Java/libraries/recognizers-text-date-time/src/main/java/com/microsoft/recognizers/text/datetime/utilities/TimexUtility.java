@@ -5,6 +5,7 @@ import com.microsoft.recognizers.text.datetime.Constants;
 import com.microsoft.recognizers.text.datetime.DatePeriodTimexType;
 import com.microsoft.recognizers.text.utilities.StringUtility;
 
+import java.math.BigDecimal;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
@@ -73,16 +74,16 @@ public class TimexUtility {
         if (equalDurationLength) {
             switch (timexType) {
                 case ByDay:
-                    unitCount = ChronoUnit.DAYS.between(begin, end) + "";
+                    unitCount = Long.toString(ChronoUnit.DAYS.between(begin, end));
                     break;
                 case ByWeek:
-                    unitCount = ChronoUnit.WEEKS.between(begin, end) + "";
+                    unitCount = Long.toString(ChronoUnit.WEEKS.between(begin, end));
                     break;
                 case ByMonth:
-                    unitCount = ChronoUnit.MONTHS.between(begin, end) + "";
+                    unitCount = Long.toString(ChronoUnit.MONTHS.between(begin, end));
                     break;
                 default:
-                    unitCount = ((end.getYear() - begin.getYear()) + (end.getMonthValue() - begin.getMonthValue()) / 12.0) + "";
+                    unitCount = new BigDecimal((end.getYear() - begin.getYear()) + (end.getMonthValue() - begin.getMonthValue()) / 12.0).stripTrailingZeros().toString();
             }
         }
 

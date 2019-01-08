@@ -1,30 +1,20 @@
 ﻿using System.Collections.Generic;
 using System.Globalization;
-using DateObject = System.DateTime;
-
 using Microsoft.Recognizers.Definitions.Chinese;
-using Microsoft.Recognizers.Text.NumberWithUnit.Chinese;
 using Microsoft.Recognizers.Text.NumberWithUnit;
-
+using Microsoft.Recognizers.Text.NumberWithUnit.Chinese;
 using static Microsoft.Recognizers.Text.DateTime.Chinese.DurationExtractorChs;
+using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
     public class DurationParserChs : IDateTimeParser
     {
-        public static readonly string ParserName = Constants.SYS_DATETIME_DURATION; //"Duration";
-
-        private static readonly IParser InternalParser = new NumberWithUnitParser(new DurationParserConfiguration());
-
-        internal class DurationParserConfiguration : ChineseNumberWithUnitParserConfiguration
-        {
-            public DurationParserConfiguration() : base(new CultureInfo(Culture.Chinese))
-            {
-                this.BindDictionary(DurationExtractorConfiguration.DurationSuffixList);
-            }
-        }
+        public static readonly string ParserName = Constants.SYS_DATETIME_DURATION; // "Duration";
 
         public static readonly Dictionary<string, int> UnitValueMap = DateTimeDefinitions.DurationUnitValueMap;
+
+        private static readonly IParser InternalParser = new NumberWithUnitParser(new DurationParserConfiguration());
 
         private readonly IFullDateTimeParserConfiguration config;
 
@@ -59,7 +49,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 return null;
             }
 
-            var dtParseResult = new DateTimeResolutionResult();
+            var dateTimeParseResult = new DateTimeResolutionResult();
             var unitStr = unitResult.Unit;
             var numStr = unitResult.Number;
 
@@ -68,20 +58,20 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 numStr = (double.Parse(numStr) + 0.5).ToString(CultureInfo.InvariantCulture);
             }
 
-            dtParseResult.Timex = "P" + (BaseDurationParser.IsLessThanDay(unitStr) ? "T" : "") + numStr + unitStr[0];
-            dtParseResult.FutureValue = dtParseResult.PastValue = double.Parse(numStr) * UnitValueMap[unitStr];
-            dtParseResult.Success = true;
+            dateTimeParseResult.Timex = "P" + (BaseDurationParser.IsLessThanDay(unitStr) ? "T" : string.Empty) + numStr + unitStr[0];
+            dateTimeParseResult.FutureValue = dateTimeParseResult.PastValue = double.Parse(numStr) * UnitValueMap[unitStr];
+            dateTimeParseResult.Success = true;
 
-            if (dtParseResult.Success)
+            if (dateTimeParseResult.Success)
             {
-                dtParseResult.FutureResolution = new Dictionary<string, string>
+                dateTimeParseResult.FutureResolution = new Dictionary<string, string>
                 {
-                    {TimeTypeConstants.DURATION, dtParseResult.FutureValue.ToString()}
+                    { TimeTypeConstants.DURATION, dateTimeParseResult.FutureValue.ToString() },
                 };
 
-                dtParseResult.PastResolution = new Dictionary<string, string>
+                dateTimeParseResult.PastResolution = new Dictionary<string, string>
                 {
-                    {TimeTypeConstants.DURATION, dtParseResult.PastValue.ToString()}
+                    { TimeTypeConstants.DURATION, dateTimeParseResult.PastValue.ToString() },
                 };
             }
 
@@ -92,9 +82,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 Length = er.Length,
                 Type = er.Type,
                 Data = er.Data,
-                Value = dtParseResult,
-                TimexStr = dtParseResult.Timex,
-                ResolutionStr = ""
+                Value = dateTimeParseResult,
+                TimexStr = dateTimeParseResult.Timex,
+                ResolutionStr = string.Empty,
             };
 
             return ret;
@@ -105,5 +95,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             return candidateResults;
         }
 
+        internal class DurationParserConfiguration : ChineseNumberWithUnitParserConfiguration
+        {
+            public DurationParserConfiguration()
+                : base(new CultureInfo(Culture.Chinese))
+            {
+                this.BindDictionary(DurationExtractorConfiguration.DurationSuffixList);
+            }
+        }
     }
 }

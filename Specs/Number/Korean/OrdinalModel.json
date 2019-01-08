@@ -91,19 +91,6 @@
     ]
   },
   {
-    "Input": "열한 번째",
-    "NotSupportedByDesign": "dotNet,javascript,python,java",
-    "Results": [
-      {
-        "Text": "열한 번째",
-        "TypeName": "ordinal",
-        "Resolution": {
-          "value": "11"
-        }
-      }
-    ]
-  },
-  {
     "Input": "스무 번째",
     "NotSupportedByDesign": "dotNet,javascript,python,java",
     "Results": [
@@ -125,19 +112,6 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "25"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "스물한 번째",
-    "NotSupportedByDesign": "dotNet,javascript,python,java",
-    "Results": [
-      {
-        "Text": "스물한 번째",
-        "TypeName": "ordinal",
-        "Resolution": {
-          "value": "21"
         }
       }
     ]

@@ -1909,29 +1909,6 @@
     ]
   },
   {
-    "Input": "Abbiamo avuto un appuntamento 1 mese e 21 giorni fa",
-    "Context": {
-      "ReferenceDateTime": "2017-11-23T00:00:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
-    "Results": [
-      {
-        "Text": "1 mese e 21 giorni fa",
-        "Type": "date",
-        "Value": {
-          "Timex": "2017-10-02",
-          "FutureResolution": {
-            "date": "2017-10-02"
-          },
-          "PastResolution": {
-            "date": "2017-10-02"
-          }
-        }
-      }
-    ]
-  },
-  {
     "Input": "Avremo un appuntamento il 20 del prossimo mese",
     "Context": {
       "ReferenceDateTime": "2017-12-07T00:00:00"

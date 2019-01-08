@@ -275,31 +275,6 @@
     ]
   },
   {
-    "Input": "Ik ga terug op 21-04-2016.",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "21-04-2016",
-        "Type": "date",
-        "Value": {
-          "Timex": "2016-04-21",
-          "FutureResolution": {
-            "date": "2016-04-21"
-          },
-          "PastResolution": {
-            "date": "2016-04-21"
-          }
-        },
-        "Start": 15,
-        "Length": 10
-      }
-    ]
-  },
-  {
     "Input": " Ik ga terug op 22-04.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -1300,31 +1275,6 @@
     ]
   },
   {
-    "Input": "Ik ging gisteren terug.",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "gisteren",
-        "Type": "date",
-        "Value": {
-          "Timex": "2016-11-06",
-          "FutureResolution": {
-            "date": "2016-11-06"
-          },
-          "PastResolution": {
-            "date": "2016-11-06"
-          }
-        },
-        "Start": 8,
-        "Length": 8
-      }
-    ]
-  },
-  {
     "Input": "Ik ga over 2 weken terug.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -2146,31 +2096,6 @@
         },
         "Start": 7,
         "Length": 26
-      }
-    ]
-  },
-  {
-    "Input": "We hebben 1 maand en 21 dagen geleden een vergadering gehad.",
-    "Context": {
-      "ReferenceDateTime": "2017-11-23T00:00:00"
-    },
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "1 maand en 21 dagen geleden",
-        "Type": "date",
-        "Value": {
-          "Timex": "2017-10-02",
-          "FutureResolution": {
-            "date": "2017-10-02"
-          },
-          "PastResolution": {
-            "date": "2017-10-02"
-          }
-        },
-        "Start": 10,
-        "Length": 27
       }
     ]
   },

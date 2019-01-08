@@ -483,21 +483,6 @@
     ]
   },
   {
-    "Input": "Beim zweiten mal ist für gewöhnlich alles leichter.",
-    "NotSupported": "javascript, python",
-    "Results": [
-      {
-        "Text": "zweiten",
-        "TypeName": "ordinal",
-        "Resolution": {
-          "value": "2"
-        },
-        "Start": 5,
-        "End": 11
-      }
-    ]
-  },
-  {
     "Input": "Wäre unsere Sonne der jüngste Stern der Milchstraße, so wäre sie mindestens der einhundert Milliardste und höchstens der dreihundert Milliardste Stern.",
     "NotSupported": "javascript, python",
     "Results": [
