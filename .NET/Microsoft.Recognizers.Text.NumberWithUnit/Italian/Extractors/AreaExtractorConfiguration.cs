@@ -7,9 +7,17 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Italian
 {
     public class AreaExtractorConfiguration : ItalianNumberWithUnitExtractorConfiguration
     {
-        public AreaExtractorConfiguration() : this(new CultureInfo(Culture.Italian)) { }
+        public static readonly ImmutableDictionary<string, string> AreaSuffixList = NumbersWithUnitDefinitions.AreaSuffixList.ToImmutableDictionary();
 
-        public AreaExtractorConfiguration(CultureInfo ci) : base(ci) { }
+        public AreaExtractorConfiguration()
+            : this(new CultureInfo(Culture.Italian))
+        {
+        }
+
+        public AreaExtractorConfiguration(CultureInfo ci)
+            : base(ci)
+        {
+        }
 
         public override ImmutableDictionary<string, string> SuffixList => AreaSuffixList;
 
@@ -18,7 +26,5 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Italian
         public override ImmutableList<string> AmbiguousUnitList => null;
 
         public override string ExtractType => Constants.SYS_UNIT_AREA;
-
-        public static readonly ImmutableDictionary<string, string> AreaSuffixList = NumbersWithUnitDefinitions.AreaSuffixList.ToImmutableDictionary();
     }
 }

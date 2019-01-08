@@ -7,9 +7,17 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Italian
 {
     public class SpeedExtractorConfiguration : ItalianNumberWithUnitExtractorConfiguration
     {
-        public SpeedExtractorConfiguration() : base(new CultureInfo(Culture.Italian)) { }
+        public static readonly ImmutableDictionary<string, string> SpeedSuffixList = NumbersWithUnitDefinitions.SpeedSuffixList.ToImmutableDictionary();
 
-        public SpeedExtractorConfiguration(CultureInfo ci) : base(ci) { }
+        public SpeedExtractorConfiguration()
+            : base(new CultureInfo(Culture.Italian))
+        {
+        }
+
+        public SpeedExtractorConfiguration(CultureInfo ci)
+            : base(ci)
+        {
+        }
 
         public override ImmutableDictionary<string, string> SuffixList => SpeedSuffixList;
 
@@ -18,7 +26,5 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Italian
         public override ImmutableList<string> AmbiguousUnitList => null;
 
         public override string ExtractType => Constants.SYS_UNIT_SPEED;
-
-        public static readonly ImmutableDictionary<string, string> SpeedSuffixList = NumbersWithUnitDefinitions.SpeedSuffixList.ToImmutableDictionary();
     }
 }
