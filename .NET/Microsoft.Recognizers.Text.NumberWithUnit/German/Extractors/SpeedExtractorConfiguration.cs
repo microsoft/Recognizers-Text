@@ -7,9 +7,17 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.German
 {
     public class SpeedExtractorConfiguration : GermanNumberWithUnitExtractorConfiguration
     {
-        public SpeedExtractorConfiguration() : base(new CultureInfo(Culture.German)) { }
+        public static readonly ImmutableDictionary<string, string> SpeedSuffixList = NumbersWithUnitDefinitions.SpeedSuffixList.ToImmutableDictionary();
 
-        public SpeedExtractorConfiguration(CultureInfo ci) : base(ci) { }
+        public SpeedExtractorConfiguration()
+            : base(new CultureInfo(Culture.German))
+        {
+        }
+
+        public SpeedExtractorConfiguration(CultureInfo ci)
+            : base(ci)
+        {
+        }
 
         public override ImmutableDictionary<string, string> SuffixList => SpeedSuffixList;
 
@@ -18,7 +26,5 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.German
         public override ImmutableList<string> AmbiguousUnitList => null;
 
         public override string ExtractType => Constants.SYS_UNIT_SPEED;
-
-        public static readonly ImmutableDictionary<string, string> SpeedSuffixList = NumbersWithUnitDefinitions.SpeedSuffixList.ToImmutableDictionary();
     }
 }
