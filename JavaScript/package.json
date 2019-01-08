@@ -48,7 +48,7 @@
 		"@types/lodash.sortby": "^4.7.3",
 		"@types/lodash.tonumber": "^4.0.3",
 		"@types/lodash.trimend": "^4.5.1",
-		"@types/node": "^10.3.0",
+		"@types/node": "^10.12.18",
 		"@types/npm": "^2.0.29",
 		"ava": "^1.0.0",
 		"ava-spec": "^1.1.0",
@@ -93,6 +93,6 @@
 		"@microsoft/recognizers-text-data-types-timex-expression": "file:./packages/datatypes-date-time"
 	},
 	"engines": {
-		"node": ">=10.3.0"
+		"node": ">=10.15.0"
 	}
 }
