@@ -6,9 +6,13 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Chinese
 {
     public class AgeParserConfiguration : ChineseNumberWithUnitParserConfiguration
     {
-        public AgeParserConfiguration() : this(new CultureInfo(Culture.Chinese)) { }
+        public AgeParserConfiguration()
+            : this(new CultureInfo(Culture.Chinese))
+        {
+        }
 
-        public AgeParserConfiguration(CultureInfo ci) : base(ci)
+        public AgeParserConfiguration(CultureInfo ci)
+            : base(ci)
         {
             this.BindDictionary(NumbersWithUnitDefinitions.AgeSuffixList);
         }
