@@ -4,9 +4,13 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Spanish
 {
     public class SpeedParserConfiguration : SpanishNumberWithUnitParserConfiguration
     {
-        public SpeedParserConfiguration() : this(new CultureInfo(Culture.Spanish)) { }
+        public SpeedParserConfiguration()
+               : this(new CultureInfo(Culture.Spanish))
+        {
+        }
 
-        public SpeedParserConfiguration(CultureInfo ci) : base(ci)
+        public SpeedParserConfiguration(CultureInfo ci)
+               : base(ci)
         {
             this.BindDictionary(SpeedExtractorConfiguration.SpeedSuffixList);
         }
