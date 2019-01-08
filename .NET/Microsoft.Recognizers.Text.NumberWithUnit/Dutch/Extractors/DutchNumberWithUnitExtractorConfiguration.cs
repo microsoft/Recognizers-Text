@@ -2,15 +2,20 @@
 using System.Collections.Immutable;
 using System.Globalization;
 using System.Text.RegularExpressions;
-
+using Microsoft.Recognizers.Definitions;
 using Microsoft.Recognizers.Definitions.Dutch;
 using Microsoft.Recognizers.Text.Number.Dutch;
-using Microsoft.Recognizers.Definitions;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit.Dutch
 {
     public abstract class DutchNumberWithUnitExtractorConfiguration : INumberWithUnitExtractorConfiguration
     {
+        private static readonly Regex CompoundUnitConnRegex =
+            new Regex(NumbersWithUnitDefinitions.CompoundUnitConnectorRegex, RegexOptions.None);
+
+        private static readonly Regex NonUnitsRegex =
+            new Regex(BaseUnits.PmNonUnitRegex, RegexOptions.None);
+
         protected DutchNumberWithUnitExtractorConfiguration(CultureInfo ci)
         {
             this.CultureInfo = ci;
@@ -45,11 +50,5 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Dutch
         public abstract ImmutableDictionary<string, string> PrefixList { get; }
 
         public abstract ImmutableList<string> AmbiguousUnitList { get; }
-
-        private static readonly Regex CompoundUnitConnRegex =
-            new Regex(NumbersWithUnitDefinitions.CompoundUnitConnectorRegex, RegexOptions.None);
-
-        private static readonly Regex NonUnitsRegex =
-            new Regex(BaseUnits.PmNonUnitRegex, RegexOptions.None);
     }
 }
