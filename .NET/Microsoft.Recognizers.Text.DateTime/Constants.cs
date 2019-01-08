@@ -1,9 +1,9 @@
-﻿// ReSharper disable InconsistentNaming
-
+﻿using System.Diagnostics.CodeAnalysis;
 using Microsoft.Recognizers.Definitions;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
+    [SuppressMessage("StyleCop.CSharp.NamingRules", "SA1310: CSharp.Naming : Field names must not contain underscores.", Justification = "Constant names are written in upper case so they can be readily distinguished from camel case variable names.")]
     public static class Constants
     {
         public const string SYS_DATETIME_DATE = "date";
@@ -26,7 +26,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string MultipleDuration_DateTime = MultipleDuration_Prefix + "DateTime";
         public const string MultipleDuration_Date = MultipleDuration_Prefix + "Date";
         public const string MultipleDuration_Time = MultipleDuration_Prefix + "Time";
-        
+
         // DateTime Parse
         public const string Resolve = "resolve";
         public const string ResolveToPast = "resolveToPast";
@@ -39,14 +39,17 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string ContextType_AmPm = "AmPm";
         public const string SubType = "subType";
 
-        // Comment - internal tag used during entity processing, never exposed to users. 
+        // Comment - internal tag used during entity processing, never exposed to users.
         // Tags are filtered out in BaseMergedDateTimeParser DateTimeResolution()
         public const string Comment = "Comment";
+
         // AmPm time representation for time parser
         public const string Comment_AmPm = "ampm";
+
         // Prefix early/late for time parser
         public const string Comment_Early = "early";
         public const string Comment_Late = "late";
+
         // Parse week of date format
         public const string Comment_WeekOf = "WeekOf";
         public const string Comment_MonthOf = "MonthOf";
@@ -75,20 +78,6 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public const string APPROX_MOD = "approx";
 
-        // Invalid year
-        public const int InvalidYear = int.MinValue;
-        public const int InvalidMonth = int.MinValue;
-        public const int InvalidDay = int.MinValue;
-        public const int InvalidHour = int.MinValue;
-        public const int InvalidMinute = int.MinValue;
-        public const int InvalidSecond = int.MinValue;
-
-        public static readonly int MinYearNum = int.Parse(BaseDateTime.MinYearNum);
-        public static readonly int MaxYearNum = int.Parse(BaseDateTime.MaxYearNum);
-
-        public static readonly int MaxTwoDigitYearFutureNum = int.Parse(BaseDateTime.MaxTwoDigitYearFutureNum);
-        public static readonly int MinTwoDigitYearPastNum = int.Parse(BaseDateTime.MinTwoDigitYearPastNum);
-
         // These are some particular values for timezone recognition
         public const int InvalidOffsetValue = -10000;
         public const string UtcOffsetMinsKey = "utcOffsetMins";
@@ -108,6 +97,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         // hours of one half day
         public const int HalfDayHourCount = 12;
+
         // hours of a half mid-day-duration
         public const int HalfMidDayDurationHourCount = 2;
 
@@ -137,7 +127,6 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string DECADE_UNIT = "10Y";
 
         // Timex
-        public static readonly string[] DatePeriodTimexSplitter = { ",", "(", ")" };
         public const string TimexYear = "Y";
         public const string TimexMonth = "M";
         public const string TimexMonthFull = "MON";
@@ -166,5 +155,23 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string Daytime = "TDT";
         public const string Night = "TNI";
         public const string BusinessHour = "TBH";
+
+        // Invalid year
+        public const int InvalidYear = int.MinValue;
+        public const int InvalidMonth = int.MinValue;
+        public const int InvalidDay = int.MinValue;
+        public const int InvalidHour = int.MinValue;
+        public const int InvalidMinute = int.MinValue;
+        public const int InvalidSecond = int.MinValue;
+
+        // Invalid year non-constant
+        public static readonly int MinYearNum = int.Parse(BaseDateTime.MinYearNum);
+        public static readonly int MaxYearNum = int.Parse(BaseDateTime.MaxYearNum);
+
+        public static readonly int MaxTwoDigitYearFutureNum = int.Parse(BaseDateTime.MaxTwoDigitYearFutureNum);
+        public static readonly int MinTwoDigitYearPastNum = int.Parse(BaseDateTime.MinTwoDigitYearPastNum);
+
+        // Timex non-constant
+        public static readonly string[] DatePeriodTimexSplitter = { ",", "(", ")" };
     }
 }
