@@ -112,7 +112,6 @@
   {
     "Input": "Estare afuera en Septiembre",
     "NotSupportedByDesign": "javascript, python, java",
-    "Debug": true,
     "Results": [
       {
         "Text": "Septiembre",
