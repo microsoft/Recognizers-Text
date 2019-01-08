@@ -12,6 +12,12 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.French
 {
     public abstract class FrenchNumberWithUnitExtractorConfiguration : INumberWithUnitExtractorConfiguration
     {
+        private static readonly Regex CompoundUnitConnRegex =
+            new Regex(NumbersWithUnitDefinitions.CompoundUnitConnectorRegex, RegexOptions.None);
+
+        private static readonly Regex NonUnitsRegex =
+            new Regex(BaseUnits.PmNonUnitRegex, RegexOptions.None);
+
         protected FrenchNumberWithUnitExtractorConfiguration(CultureInfo ci)
         {
             this.CultureInfo = ci;
@@ -48,11 +54,5 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.French
         public abstract ImmutableDictionary<string, string> PrefixList { get; }
 
         public abstract ImmutableList<string> AmbiguousUnitList { get; }
-
-        private static readonly Regex CompoundUnitConnRegex =
-            new Regex(NumbersWithUnitDefinitions.CompoundUnitConnectorRegex, RegexOptions.None);
-
-        private static readonly Regex NonUnitsRegex =
-            new Regex(BaseUnits.PmNonUnitRegex, RegexOptions.None);
     }
 }
