@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
-
 using Microsoft.Recognizers.Definitions.English;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
 
@@ -9,12 +8,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 {
     public class EnglishTimeParserConfiguration : BaseOptionsConfiguration, ITimeParserConfiguration
     {
-        public string TimeTokenPrefix { get; }
-
-        public Regex AtRegex { get; }
-
-        public Regex MealTimeRegex { get; }
-
         private static readonly Regex TimeSuffixFull =
             new Regex(DateTimeDefinitions.TimeSuffixFull, RegexOptions.Singleline);
 
@@ -24,15 +17,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         private static readonly Regex NightRegex =
             new Regex(DateTimeDefinitions.NightRegex, RegexOptions.Singleline);
 
-        public IEnumerable<Regex> TimeRegexes { get; }
-
-        public IImmutableDictionary<string, int> Numbers { get; }
-
-        public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
-
-        public IDateTimeParser TimeZoneParser { get; }
-
-        public EnglishTimeParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config)
+        public EnglishTimeParserConfiguration(ICommonDateTimeParserConfiguration config)
+         : base(config)
         {
             TimeTokenPrefix = DateTimeDefinitions.TimeTokenPrefix;
             AtRegex = EnglishTimeExtractorConfiguration.AtRegex;
@@ -41,6 +27,20 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             Numbers = config.Numbers;
             TimeZoneParser = config.TimeZoneParser;
         }
+
+        public string TimeTokenPrefix { get; }
+
+        public Regex AtRegex { get; }
+
+        public Regex MealTimeRegex { get; }
+
+        public IEnumerable<Regex> TimeRegexes { get; }
+
+        public IImmutableDictionary<string, int> Numbers { get; }
+
+        public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
+
+        public IDateTimeParser TimeZoneParser { get; }
 
         public void AdjustByPrefix(string prefix, ref int hour, ref int min, ref bool hasMin)
         {
@@ -101,8 +101,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
                 var oclockStr = match.Groups["oclock"].Value;
                 if (string.IsNullOrEmpty(oclockStr))
                 {
-                    var amStr = match.Groups[Constants.AmGroupName].Value;
-                    if (!string.IsNullOrEmpty(amStr))
+                    var matchAmStr = match.Groups[Constants.AmGroupName].Value;
+                    if (!string.IsNullOrEmpty(matchAmStr))
                     {
                         if (hour >= Constants.HalfDayHourCount)
                         {
@@ -114,18 +114,17 @@ namespace Microsoft.Recognizers.Text.DateTime.English
                         }
                     }
 
-                    var pmStr = match.Groups[Constants.PmGroupName].Value;
-                    if (!string.IsNullOrEmpty(pmStr))
+                    var matchPmStr = match.Groups[Constants.PmGroupName].Value;
+                    if (!string.IsNullOrEmpty(matchPmStr))
                     {
                         if (hour < Constants.HalfDayHourCount)
                         {
                             deltaHour = Constants.HalfDayHourCount;
                         }
 
-                        if (LunchRegex.IsMatch(pmStr))
+                        if (LunchRegex.IsMatch(matchPmStr))
                         {
-                            // for hour>=10, <12
-                            if (hour >=10 && hour <=Constants.HalfDayHourCount)
+                            if (hour >= 10 && hour <= Constants.HalfDayHourCount)
                             {
                                 deltaHour = 0;
                                 if (hour == Constants.HalfDayHourCount)
@@ -142,15 +141,15 @@ namespace Microsoft.Recognizers.Text.DateTime.English
                                 hasPm = true;
                             }
                         }
-                        else if (NightRegex.IsMatch(pmStr))
+                        else if (NightRegex.IsMatch(matchPmStr))
                         {
-                            //For hour <=3 or ==12, we treat it as am, for example 1 in the night (midnight) == 1am
                             if (hour <= 3 || hour == Constants.HalfDayHourCount)
                             {
                                 if (hour == Constants.HalfDayHourCount)
                                 {
                                     hour = 0;
                                 }
+
                                 deltaHour = 0;
                                 hasAm = true;
                             }
@@ -163,7 +162,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English
                         {
                             hasPm = true;
                         }
-                        
                     }
                 }
             }
