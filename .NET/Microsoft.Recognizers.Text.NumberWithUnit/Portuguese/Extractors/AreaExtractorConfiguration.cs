@@ -8,9 +8,19 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Portuguese
 {
     public class AreaExtractorConfiguration : PortugueseNumberWithUnitExtractorConfiguration
     {
-        public AreaExtractorConfiguration() : this(new CultureInfo(Culture.Portuguese)) { }
+        public static readonly ImmutableDictionary<string, string> AreaSuffixList = NumbersWithUnitDefinitions.AreaSuffixList.ToImmutableDictionary();
 
-        public AreaExtractorConfiguration(CultureInfo ci) : base(ci) { }
+        private static readonly ImmutableList<string> AmbiguousValues = new List<string> { }.ToImmutableList();
+
+        public AreaExtractorConfiguration()
+               : this(new CultureInfo(Culture.Portuguese))
+        {
+        }
+
+        public AreaExtractorConfiguration(CultureInfo ci)
+               : base(ci)
+        {
+        }
 
         public override ImmutableDictionary<string, string> SuffixList => AreaSuffixList;
 
@@ -19,9 +29,5 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Portuguese
         public override ImmutableList<string> AmbiguousUnitList => AmbiguousValues;
 
         public override string ExtractType => Constants.SYS_UNIT_AREA;
-
-        public static readonly ImmutableDictionary<string, string> AreaSuffixList = NumbersWithUnitDefinitions.AreaSuffixList.ToImmutableDictionary();
-
-        private static readonly ImmutableList<string> AmbiguousValues = new List<string>{ }.ToImmutableList();
     }
 }
