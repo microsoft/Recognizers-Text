@@ -79,8 +79,8 @@ namespace Microsoft.Recognizers.Text.Number
                             Length = ers[idx].Length,
                             Start = ers[idx].Start,
                             Text = ers[idx].Text,
-                            Type = ers[idx].Type
-                        }
+                            Type = ers[idx].Type,
+                        },
                     };
                     result.Add(tmpExtractResult);
                 }
