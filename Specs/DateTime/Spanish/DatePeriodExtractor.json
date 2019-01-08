@@ -111,8 +111,8 @@
   },
   {
     "Input": "Estare afuera en Septiembre",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript, python, java",
+    "Debug": true,
     "Results": [
       {
         "Text": "Septiembre",
@@ -596,7 +596,6 @@
   },
   {
     "Input": "Ya no estaré en feb",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
@@ -674,7 +673,6 @@
   },
   {
     "Input": "Ya no estaré en mar",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
@@ -908,7 +906,6 @@
   },
   {
     "Input": "Ya no estaré en jun",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
@@ -986,7 +983,6 @@
   },
   {
     "Input": "Ya no estaré en jul",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
@@ -1064,7 +1060,6 @@
   },
   {
     "Input": "Ya no estaré en ago",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
@@ -1142,7 +1137,6 @@
   },
   {
     "Input": "Ya no estaré en sept",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
@@ -1220,7 +1214,6 @@
   },
   {
     "Input": "Ya no estaré en sep",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
@@ -1298,7 +1291,6 @@
   },
   {
     "Input": "Ya no estaré en oct",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
@@ -1376,7 +1368,6 @@
   },
   {
     "Input": "Ya no estaré en nov",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
@@ -1454,7 +1445,6 @@
   },
   {
     "Input": "Ya no estaré en dic",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
@@ -1532,7 +1522,6 @@
   },
   {
     "Input": "Ya no estaré en enero",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
@@ -1610,7 +1599,6 @@
   },
   {
     "Input": "Ya no estaré en febrero",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
@@ -1688,7 +1676,6 @@
   },
   {
     "Input": "Ya no estaré en marzo",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
@@ -1766,7 +1753,6 @@
   },
   {
     "Input": "Ya no estaré en junio",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
@@ -1844,7 +1830,6 @@
   },
   {
     "Input": "Ya no estaré en julio",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
@@ -1922,7 +1907,6 @@
   },
   {
     "Input": "Ya no estaré en agosto",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
@@ -2078,7 +2062,6 @@
   },
   {
     "Input": "Ya no estaré en octubre",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
@@ -2156,7 +2139,6 @@
   },
   {
     "Input": "Ya no estaré en diciembre",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {

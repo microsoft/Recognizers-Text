@@ -69,6 +69,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public static readonly Regex OneWordPeriodRegex =
             new Regex(DateTimeDefinitions.OneWordPeriodRegex, RegexOptions.Singleline);
 
+        public static readonly Regex OneWordInMonthPeriodRegex =
+            new Regex(DateTimeDefinitions.OneWordInMonthPeriodRegex, RegexOptions.Singleline);
+
         public static readonly Regex MonthWithYearRegex =
             new Regex(DateTimeDefinitions.MonthWithYearRegex, RegexOptions.Singleline);
 
@@ -174,6 +177,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         {
             SimpleCasesRegex,
             DayBetweenRegex,
+            OneWordInMonthPeriodRegex,
             OneWordPeriodRegex,
             MonthWithYearRegex,
             MonthNumWithYearRegex,
