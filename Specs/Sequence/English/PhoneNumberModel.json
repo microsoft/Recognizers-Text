@@ -1690,19 +1690,6 @@
     ]
   },
   {
-    "Input": "My phone number is (+55) 15 3702-7523.",
-    "NotSupported": "dotnet,javascript,python",
-    "Results": [
-      {
-        "Text": "(+55) 15 3702-7523",
-        "TypeName": "phonenumber",
-        "Resolution": {
-          "value": "(+55) 15 3702-7523"
-        }
-      }
-    ]
-  },
-  {
     "Input": "My phone number is (+55) 15 99202-7523.",
     "NotSupported": "dotnet,javascript,python",
     "Results": [
@@ -2379,19 +2366,6 @@
     ]
   },
   {
-    "Input": "My phone number is 0644444444.",
-    "Results": [
-      {
-        "Text": "0644444444",
-        "TypeName": "phonenumber",
-        "Resolution": {
-          "value": "0644444444",
-          "score": "0"
-        }
-      }
-    ]
-  },
-  {
     "Input": "My phone number is 0610245896.",
     "Results": [
       {
@@ -2413,32 +2387,6 @@
         "Resolution": {
           "value": "0630548564",
           "score": "0.5"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "My phone number is 06 44 44 44 44.",
-    "Results": [
-      {
-        "Text": "06 44 44 44 44",
-        "TypeName": "phonenumber",
-        "Resolution": {
-          "value": "06 44 44 44 44",
-          "score": "1"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "My phone number is 06-44-44-44-44.",
-    "NotSupported": "dotnet,javascript,python",
-    "Results": [
-      {
-        "Text": "06-44-44-44-44",
-        "TypeName": "phonenumber",
-        "Resolution": {
-          "value": "06-44-44-44-44"
         }
       }
     ]
@@ -3050,32 +2998,6 @@
         "TypeName": "phonenumber",
         "Resolution": {
           "value": "+421 123 456 789"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "My phone number is 123456789.",
-    "Results": [
-      {
-        "Text": "123456789",
-        "TypeName": "phonenumber",
-        "Resolution": {
-          "value": "123456789",
-          "score": "0.4"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "My phone number is 123 456 789.",
-    "Results": [
-      {
-        "Text": "123 456 789",
-        "TypeName": "phonenumber",
-        "Resolution": {
-          "value": "123 456 789",
-          "score": "0.8"
         }
       }
     ]

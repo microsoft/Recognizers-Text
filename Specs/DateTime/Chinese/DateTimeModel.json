@@ -1,5 +1,179 @@
 [
   {
+    "Input": "29日你开心吗",
+    "Context": {
+      "ReferenceDateTime": "2018-01-22T00:00:00"
+    },
+    "NotSupportedByDesign": "Java",
+    "Results": [
+      {
+        "Text": "29日",
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-XX-29",
+              "type": "date",
+              "value": "2017-12-29"
+            },
+            {
+              "timex": "XXXX-XX-29",
+              "type": "date",
+              "value": "2018-01-29"
+            }
+          ]
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "29日你快乐吗",
+    "Context": {
+      "ReferenceDateTime": "2016-01-22T00:00:00"
+    },
+    "NotSupportedByDesign": "Java",
+    "Results": [
+      {
+        "Text": "29日",
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-XX-29",
+              "type": "date",
+              "value": "2015-12-29"
+            },
+            {
+              "timex": "XXXX-XX-29",
+              "type": "date",
+              "value": "2016-01-29"
+            }
+          ]
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "29日你去看电影吗",
+    "Context": {
+      "ReferenceDateTime": "2018-03-22T00:00:00"
+    },
+    "NotSupportedByDesign": "Java",
+    "Results": [
+      {
+        "Text": "29日",
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-XX-29",
+              "type": "date",
+              "value": "2018-01-29"
+            },
+            {
+              "timex": "XXXX-XX-29",
+              "type": "date",
+              "value": "2018-03-29"
+            }
+          ]
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "29日你去吃饭吗",
+    "Context": {
+      "ReferenceDateTime": "2016-03-22T00:00:00"
+    },
+    "NotSupportedByDesign": "Java",
+    "Results": [
+      {
+        "Text": "29日",
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-XX-29",
+              "type": "date",
+              "value": "2016-02-29"
+            },
+            {
+              "timex": "XXXX-XX-29",
+              "type": "date",
+              "value": "2016-03-29"
+            }
+          ]
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "29日你来吗",
+    "Context": {
+      "ReferenceDateTime": "2016-02-22T00:00:00"
+    },
+    "NotSupportedByDesign": "Java",
+    "Results": [
+      {
+        "Text": "29日",
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-XX-29",
+              "type": "date",
+              "value": "2016-01-29"
+            },
+            {
+              "timex": "XXXX-XX-29",
+              "type": "date",
+              "value": "2016-02-29"
+            }
+          ]
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "29日你放假吗",
+    "Context": {
+      "ReferenceDateTime": "2018-02-22T00:00:00"
+    },
+    "NotSupportedByDesign": "Java",
+    "Results": [
+      {
+        "Text": "29日",
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-XX-29",
+              "type": "date",
+              "value": "2018-01-29"
+            },
+            {
+              "timex": "XXXX-XX-29",
+              "type": "date",
+              "value": "2018-03-29"
+            }
+          ]
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
     "Input": "比较一下2009年福特汽车和宝马汽车的销量",
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
@@ -2708,6 +2882,54 @@
               "timex": "P0.5Y",
               "type": "duration",
               "value": "15768000"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "已经过了一个钟头",
+    "Context": {
+      "ReferenceDateTime": "2018-12-14T12:00:00"
+    },
+    "NotSupportedByDesign": "Java",
+    "Results": [
+      {
+        "Text": "一个钟头",
+        "Start": 4,
+        "End": 7,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT1H",
+              "type": "duration",
+              "value": "3600"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "已经过了半个钟头",
+    "Context": {
+      "ReferenceDateTime": "2018-12-14T12:00:00"
+    },
+    "NotSupportedByDesign": "Java",
+    "Results": [
+      {
+        "Text": "半个钟头",
+        "Start": 4,
+        "End": 7,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT0.5H",
+              "type": "duration",
+              "value": "1800"
             }
           ]
         }

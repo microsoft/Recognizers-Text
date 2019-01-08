@@ -1,4 +1,5 @@
-[{
+[
+  {
     "Input": "A temperatura externa é de 40 graus Celsius",
     "Results": [
       {
@@ -12,8 +13,7 @@
         "End": 42
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Faz 90 fahrenheit no Texas",
     "Results": [
@@ -28,8 +28,7 @@
         "End": 16
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Converter 10 celsius em fahrenheit",
     "Results": [
@@ -42,8 +41,7 @@
         },
         "Start": 10,
         "End": 19
-      }
-      ,
+      },
       {
         "Text": "fahrenheit",
         "TypeName": "temperature",
@@ -55,8 +53,7 @@
         "End": 33
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "-5 graus Fahrenheit",
     "Results": [
@@ -71,8 +68,7 @@
         "End": 18
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "6 graus centígrados",
     "Results": [
@@ -87,8 +83,7 @@
         "End": 18
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "98,6 graus f é uma temperatura normal",
     "Results": [
@@ -103,8 +98,7 @@
         "End": 11
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Ajuste a temperatura para 30 graus celsius",
     "Results": [
@@ -119,8 +113,7 @@
         "End": 41
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "A temperatura normal é 98,6 graus Fahrenheit",
     "Results": [
@@ -135,8 +128,7 @@
         "End": 43
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "100 graus f",
     "Results": [
@@ -151,8 +143,7 @@
         "End": 10
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "20 Graus c",
     "Results": [
@@ -167,8 +158,7 @@
         "End": 9
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "100 °f",
     "Results": [
@@ -183,8 +173,7 @@
         "End": 5
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "20 °c",
     "Results": [
@@ -199,8 +188,7 @@
         "End": 4
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "100,2 Graus Fahrenheit é baixo",
     "Results": [
@@ -215,8 +203,7 @@
         "End": 21
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "34,9 centígrado pra fahrenheit",
     "Results": [
@@ -229,8 +216,7 @@
         },
         "Start": 0,
         "End": 14
-      }
-      ,
+      },
       {
         "Text": "fahrenheit",
         "TypeName": "temperature",
@@ -242,8 +228,7 @@
         "End": 29
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "converter 200 celsius em fahrenheit",
     "Results": [
@@ -256,8 +241,7 @@
         },
         "Start": 10,
         "End": 20
-      }
-      ,
+      },
       {
         "Text": "fahrenheit",
         "TypeName": "temperature",
@@ -269,8 +253,7 @@
         "End": 34
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "converter 200 K em fahrenheit",
     "Results": [
@@ -283,8 +266,7 @@
         },
         "Start": 10,
         "End": 14
-      }
-      ,
+      },
       {
         "Text": "fahrenheit",
         "TypeName": "temperature",
@@ -296,8 +278,7 @@
         "End": 28
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "fahrenheit pra celsius, quantos celsius são 101 fahrenheit",
     "Results": [
@@ -310,8 +291,7 @@
         },
         "Start": 44,
         "End": 57
-      }
-      ,
+      },
       {
         "Text": "fahrenheit",
         "TypeName": "temperature",
@@ -321,8 +301,7 @@
         },
         "Start": 0,
         "End": 9
-      }
-      ,
+      },
       {
         "Text": "celsius",
         "TypeName": "temperature",
@@ -332,8 +311,7 @@
         },
         "Start": 15,
         "End": 21
-      }
-      ,
+      },
       {
         "Text": "celsius",
         "TypeName": "temperature",
@@ -345,8 +323,7 @@
         "End": 38
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "50 graus centígrados celsius em fahrenheit",
     "Results": [
@@ -359,8 +336,7 @@
         },
         "Start": 0,
         "End": 19
-      }
-      ,
+      },
       {
         "Text": "celsius",
         "TypeName": "temperature",
@@ -370,8 +346,7 @@
         },
         "Start": 21,
         "End": 27
-      }
-      ,
+      },
       {
         "Text": "fahrenheit",
         "TypeName": "temperature",
@@ -383,8 +358,7 @@
         "End": 41
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Poderias converter 51 fahrenheit em graus celsius",
     "Results": [
@@ -397,8 +371,7 @@
         },
         "Start": 19,
         "End": 31
-      }
-      ,
+      },
       {
         "Text": "graus celsius",
         "TypeName": "temperature",
@@ -410,8 +383,7 @@
         "End": 48
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Converter 106 graus Fahrenheit em graus centígrados",
     "Results": [
@@ -424,8 +396,7 @@
         },
         "Start": 10,
         "End": 29
-      }
-      ,
+      },
       {
         "Text": "graus centígrados",
         "TypeName": "temperature",
@@ -437,8 +408,7 @@
         "End": 50
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Converter 106 K em graus centígrados",
     "Results": [
@@ -451,8 +421,7 @@
         },
         "Start": 10,
         "End": 14
-      }
-      ,
+      },
       {
         "Text": "graus centígrados",
         "TypeName": "temperature",
@@ -464,8 +433,7 @@
         "End": 35
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Converter 45 graus Fahrenheit a Celsius",
     "Results": [
@@ -478,8 +446,7 @@
         },
         "Start": 10,
         "End": 28
-      }
-      ,
+      },
       {
         "Text": "celsius",
         "TypeName": "temperature",
@@ -491,8 +458,7 @@
         "End": 38
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Como converter - 20 graus Fahrenheit para Celsius",
     "Results": [
@@ -505,8 +471,7 @@
         },
         "Start": 15,
         "End": 35
-      }
-      ,
+      },
       {
         "Text": "celsius",
         "TypeName": "temperature",
@@ -518,8 +483,7 @@
         "End": 48
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "10,5 celsius",
     "Results": [
@@ -534,8 +498,7 @@
         "End": 11
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "20 graus celsius",
     "Results": [
@@ -550,8 +513,7 @@
         "End": 15
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "20,3 celsius",
     "Results": [
@@ -566,8 +528,7 @@
         "End": 11
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "34,5 celsius",
     "Results": [
@@ -582,8 +543,7 @@
         "End": 11
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "A temperatura exterior é de 98 graus",
     "Results": [
@@ -598,8 +558,7 @@
         "End": 35
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Ajuste o termostato em 85 °",
     "Results": [
@@ -614,8 +573,7 @@
         "End": 26
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Ajuste o termostato em 85°",
     "Results": [
@@ -630,8 +588,7 @@
         "End": 25
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Aumente a temperatura em 5 graus",
     "Results": [
@@ -646,8 +603,7 @@
         "End": 31
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Ajuste a temperatura para 70 graus f",
     "Results": [
@@ -662,8 +618,7 @@
         "End": 35
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Aumentar a temperatura em 20 grau",
     "Results": [
@@ -678,8 +633,7 @@
         "End": 32
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Ajuste a temperatura a 100 graus",
     "Results": [
@@ -694,8 +648,7 @@
         "End": 31
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Ajuste a temperatura a 100 Kelvin",
     "Results": [
@@ -710,8 +663,7 @@
         "End": 32
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Mantenha a temperatura de 75 graus f",
     "Results": [
@@ -726,8 +678,7 @@
         "End": 35
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Deixe que a temperatura fique em 40 centígrados",
     "Results": [
@@ -742,8 +693,7 @@
         "End": 46
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Deixe a temperatura em 50 graus.",
     "Results": [

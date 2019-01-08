@@ -11,11 +11,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
     {
         // base regexes
         public static readonly Regex TillRegex = new Regex(
-            DateTimeDefinitions.TillRegex, // until 
+            DateTimeDefinitions.TillRegex, // until
             RegexOptions.Singleline);
 
         public static readonly Regex AndRegex = new Regex(
-            DateTimeDefinitions.RangeConnectorRegex, // and 
+            DateTimeDefinitions.RangeConnectorRegex, // and
             RegexOptions.Singleline);
 
         public static readonly Regex DayRegex =
@@ -33,7 +33,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
                 BaseDateTime.IllegalYearRegex,
                 RegexOptions.Singleline);
 
-        public static readonly Regex YearRegex = 
+        public static readonly Regex YearRegex =
             new Regex(
                 DateTimeDefinitions.YearRegex,
                 RegexOptions.Singleline);
@@ -43,7 +43,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
                 DateTimeDefinitions.WeekDayRegex,
                 RegexOptions.Singleline);
 
-        public static readonly Regex RelativeMonthRegex = 
+        public static readonly Regex RelativeMonthRegex =
             new Regex(
                 DateTimeDefinitions.RelativeMonthRegex, // this month, next month, last month
                 RegexOptions.Singleline);
@@ -65,18 +65,19 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             DateTimeDefinitions.DateUnitRegex, // year, month, week, day
             RegexOptions.Singleline);
 
-        public static readonly Regex PastPrefixRegex = // **In Italian, Past/Next is suffix, but interface enforces this 
+        public static readonly Regex PastPrefixRegex = // **In Italian, Past/Next is suffix, but interface enforces this
             new Regex(
                 DateTimeDefinitions.PastSuffixRegex, // past, last, previous
                 RegexOptions.Singleline);
 
-        public static readonly Regex NextPrefixRegex = // **In Italian, Past/Next is suffix, but interface enforces this 
+        public static readonly Regex NextPrefixRegex = // **In Italian, Past/Next is suffix, but interface enforces this
             new Regex(
                 DateTimeDefinitions.NextSuffixRegex, // next, in
                 RegexOptions.Singleline);
 
         public static readonly Regex FutureSuffixRegex =
-            new Regex(DateTimeDefinitions.FutureSuffixRegex,
+            new Regex(
+                DateTimeDefinitions.FutureSuffixRegex,
                 RegexOptions.Singleline);
 
         public static readonly Regex ThisPrefexRegex =
@@ -90,7 +91,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
                 DateTimeDefinitions.SimpleCasesRegex,
                 RegexOptions.Singleline);
 
-        public static readonly Regex MonthFrontSimpleCasesRegex = 
+        public static readonly Regex MonthFrontSimpleCasesRegex =
             new Regex(
                 DateTimeDefinitions.MonthFrontSimpleCasesRegex, // between 'x' until 'y', from 'x' until 'y'
                 RegexOptions.Singleline);
@@ -113,7 +114,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         public static readonly Regex OneWordPeriodRegex =
             new Regex(
                DateTimeDefinitions.OneWordPeriodRegex,
-                RegexOptions.Singleline); // a cote de - 'next to', cette - 'this', dernier - 'last' (always after the noun, i.e annee dernier - 'last year'  
+               RegexOptions.Singleline); // a cote de - 'next to', cette - 'this', dernier - 'last' (always after the noun, i.e annee dernier - 'last year'
 
         public static readonly Regex MonthNumWithYear =
             new Regex(
@@ -127,22 +128,22 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public static readonly Regex WeekOfYearRegex =
             new Regex(
-                DateTimeDefinitions.WeekOfYearRegex, 
+                DateTimeDefinitions.WeekOfYearRegex,
                 RegexOptions.Singleline);
 
-        public static readonly Regex FollowedDateUnit = 
+        public static readonly Regex FollowedDateUnit =
             new Regex(
                 DateTimeDefinitions.FollowedDateUnit,
                 RegexOptions.Singleline);
 
         public static readonly Regex NumberCombinedWithDateUnit =
             new Regex(
-                DateTimeDefinitions.NumberCombinedWithDateUnit, 
+                DateTimeDefinitions.NumberCombinedWithDateUnit,
                 RegexOptions.Singleline);
 
         public static readonly Regex QuarterRegex =
             new Regex(
-                DateTimeDefinitions.QuarterRegex, // 1st quarter of this year, 2nd quarter of next/last year, etc 
+                DateTimeDefinitions.QuarterRegex, // 1st quarter of this year, 2nd quarter of next/last year, etc
                 RegexOptions.Singleline);
 
         public static readonly Regex QuarterRegexYearFront =
@@ -162,7 +163,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public static readonly Regex WhichWeekRegex =
             new Regex(
-                DateTimeDefinitions.WhichWeekRegex, 
+                DateTimeDefinitions.WhichWeekRegex,
                 RegexOptions.Singleline);
 
         public static readonly Regex WeekOfRegex =
@@ -175,7 +176,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
                 DateTimeDefinitions.MonthOfRegex,
                 RegexOptions.Singleline);
 
-        //TODO: add regexs below
+        // TODO: add regexs below
         public static readonly Regex RangeUnitRegex =
             new Regex(
                 DateTimeDefinitions.RangeUnitRegex,
@@ -218,15 +219,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         public static readonly Regex ReferenceDatePeriodRegex =
             new Regex(DateTimeDefinitions.ReferenceDatePeriodRegex, RegexOptions.Singleline);
 
-        private static readonly Regex FromRegex = 
-            new Regex(DateTimeDefinitions.FromRegex, RegexOptions.Singleline);
-
-        private static readonly Regex ConnectorAndRegex = 
-            new Regex(DateTimeDefinitions.ConnectorAndRegex, RegexOptions.Singleline);
-
-        private static readonly Regex BeforeRegex = 
-            new Regex(DateTimeDefinitions.BeforeRegex2, RegexOptions.Singleline);
-
         public static readonly Regex AgoRegex =
             new Regex(DateTimeDefinitions.AgoRegex, RegexOptions.Singleline);
 
@@ -241,6 +233,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public static readonly Regex CenturySuffixRegex =
             new Regex(DateTimeDefinitions.CenturySuffixRegex, RegexOptions.Singleline);
+
+        private static readonly Regex FromRegex =
+            new Regex(DateTimeDefinitions.FromRegex, RegexOptions.Singleline);
+
+        private static readonly Regex ConnectorAndRegex =
+            new Regex(DateTimeDefinitions.ConnectorAndRegex, RegexOptions.Singleline);
+
+        private static readonly Regex BeforeRegex =
+            new Regex(DateTimeDefinitions.BeforeRegex2, RegexOptions.Singleline);
 
         private static readonly Regex[] SimpleCasesRegexes =
         {
@@ -265,10 +266,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             WeekWithWeekDayRangeRegex,
             YearPlusNumberRegex,
             DecadeWithCenturyRegex,
-            RelativeDecadeRegex
+            RelativeDecadeRegex,
         };
 
-        public ItalianDatePeriodExtractorConfiguration(IOptionsConfiguration config) : base(config)
+        public ItalianDatePeriodExtractorConfiguration(IOptionsConfiguration config)
+            : base(config)
         {
             DatePointExtractor = new BaseDateExtractor(new ItalianDateExtractorConfiguration(this));
             CardinalExtractor = Number.Italian.CardinalExtractor.GetInstance();
@@ -346,6 +348,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             {
                 index = fromMatch.Index;
             }
+
             return fromMatch.Success;
         }
 
@@ -357,6 +360,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             {
                 index = beforeMatch.Index;
             }
+
             return beforeMatch.Success;
         }
 

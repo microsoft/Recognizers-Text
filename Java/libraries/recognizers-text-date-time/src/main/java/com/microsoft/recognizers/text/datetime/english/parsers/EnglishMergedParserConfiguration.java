@@ -20,23 +20,23 @@ public class EnglishMergedParserConfiguration extends EnglishCommonDateTimeParse
         beforeRegex = EnglishMergedExtractorConfiguration.BeforeRegex;
         afterRegex = EnglishMergedExtractorConfiguration.AfterRegex;
         sinceRegex = EnglishMergedExtractorConfiguration.SinceRegex;
+        aroundRegex = EnglishMergedExtractorConfiguration.AroundRegex;
         dateAfterRegex = EnglishMergedExtractorConfiguration.DateAfterRegex;
         yearRegex = EnglishDatePeriodExtractorConfiguration.YearRegex;
         superfluousWordMatcher = EnglishMergedExtractorConfiguration.SuperfluousWordMatcher;
 
         getParser = new BaseSetParser(new EnglishSetParserConfiguration(this));
         holidayParser = new BaseHolidayParser(new EnglishHolidayParserConfiguration());
-        timeZoneParser = new BaseTimeZoneParser();
     }
 
     private final Pattern beforeRegex;
     private final Pattern afterRegex;
     private final Pattern sinceRegex;
+    private final Pattern aroundRegex;
     private final Pattern dateAfterRegex;
     private final Pattern yearRegex;
     private final IDateTimeParser getParser;
     private final IDateTimeParser holidayParser;
-    private final IDateTimeParser timeZoneParser;
     private final StringMatcher superfluousWordMatcher;
 
     public Pattern getBeforeRegex() {
@@ -49,6 +49,10 @@ public class EnglishMergedParserConfiguration extends EnglishCommonDateTimeParse
 
     public Pattern getSinceRegex() {
         return sinceRegex;
+    }
+
+    public Pattern getAroundRegex() {
+        return aroundRegex;
     }
 
     public Pattern getDateAfterRegex() {
@@ -65,10 +69,6 @@ public class EnglishMergedParserConfiguration extends EnglishCommonDateTimeParse
 
     public IDateTimeParser getHolidayParser() {
         return holidayParser;
-    }
-
-    public IDateTimeParser getTimeZoneParser() {
-        return timeZoneParser;
     }
 
     public StringMatcher getSuperfluousWordMatcher() {

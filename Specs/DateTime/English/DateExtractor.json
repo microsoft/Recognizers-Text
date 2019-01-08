@@ -158,17 +158,6 @@
     "Results": []
   },
   {
-    "Input": "I'll go back on 4.22",
-    "Results": [
-      {
-        "Text": "4.22",
-        "Type": "date",
-        "Start": 16,
-        "Length": 4
-      }
-    ]
-  },
-  {
     "Input": "I'll go back in 4-22",
     "Results": [
       {
@@ -1397,88 +1386,6 @@
     ]
   },
   {
-    "Input": "Are you free on 13.5.2015?",
-    "Results": [
-      {
-        "Text": "13.5.2015",
-        "Type": "date",
-        "Start": 16,
-        "Length": 9
-      }
-    ]
-  },
-  {
-    "Input": "Are you available on 2015.5.13?",
-    "Results": [
-      {
-        "Text": "2015.5.13",
-        "Type": "date",
-        "Start": 21,
-        "Length": 9
-      }
-    ]
-  },
-  {
-    "Input": "Are you available two sundays from now?",
-    "NotSupported": "python",
-    "Results": [
-      {
-        "Text": "two sundays from now",
-        "Type": "date",
-        "Start": 18,
-        "Length": 20
-      }
-    ]
-  },
-  {
-    "Input": "Are you available two monday later?",
-    "NotSupported": "python",
-    "Results": [
-      {
-        "Text": "two monday later",
-        "Type": "date",
-        "Start": 18,
-        "Length": 16
-      }
-    ]
-  },
-  {
-    "Input": "Are you available two days after today?",
-    "NotSupported": "javascript, python",
-    "Results": [
-      {
-        "Text": "two days after today",
-        "Type": "date",
-        "Start": 18,
-        "Length": 20
-      }
-    ]
-  },
-  {
-    "Input": "Are you available three weeks from tomorrow?",
-    "NotSupported": "javascript, python",
-    "Results": [
-      {
-        "Text": "three weeks from tomorrow",
-        "Type": "date",
-        "Start": 18,
-        "Length": 25
-      }
-    ]
-  },
-  {
-    "Input": "Where were you two days before yesterday?",
-    "NotSupported": "javascript, python",
-    "Results": [
-      {
-        "Text": "two days before yesterday",
-        "Type": "date",
-        "Start": 15,
-        "Length": 25
-      }
-    ]
-  },
-  {
     "Input": "Cortana, please set up a Skype call sometime this Friday-Jun-15 with Jim",
     "Context": {
       "ReferenceDateTime": "2018-06-14T00:00:00"
@@ -1558,8 +1465,7 @@
         "Length": 17
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "I will leave in 3 weeks",
     "Context": {

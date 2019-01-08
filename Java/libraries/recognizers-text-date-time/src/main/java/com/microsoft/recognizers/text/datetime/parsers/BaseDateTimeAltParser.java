@@ -13,7 +13,6 @@ import com.microsoft.recognizers.text.datetime.utilities.FormatUtil;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
-
 import org.javatuples.Pair;
 
 public class BaseDateTimeAltParser implements IDateTimeParser {
@@ -38,7 +37,7 @@ public class BaseDateTimeAltParser implements IDateTimeParser {
     @Override
     public DateTimeParseResult parse(ExtractResult er, LocalDateTime reference) {
         DateTimeResolutionResult value = null;
-        if (er.type.equals(getParserName())) {
+        if (er.getType().equals(getParserName())) {
             DateTimeResolutionResult innerResult = parseDateTimeAndTimeAlt(er, reference);
 
             if (innerResult.getSuccess()) {
@@ -47,11 +46,11 @@ public class BaseDateTimeAltParser implements IDateTimeParser {
         }
 
         DateTimeParseResult ret = new DateTimeParseResult(
-                er.start,
-                er.length,
-                er.text,
-                er.type,
-                er.data,
+                er.getStart(),
+                er.getLength(),
+                er.getText(),
+                er.getType(),
+                er.getData(),
                 value,
                 "",
                 value == null ? "" : value.getTimex());
@@ -60,75 +59,75 @@ public class BaseDateTimeAltParser implements IDateTimeParser {
     }
 
     // merge the entity with its related contexts and then parse the combine text
-    public DateTimeResolutionResult parseDateTimeAndTimeAlt(ExtractResult er, LocalDateTime referenceTime) {
+    private DateTimeResolutionResult parseDateTimeAndTimeAlt(ExtractResult er, LocalDateTime referenceTime) {
+
         DateTimeResolutionResult ret = new DateTimeResolutionResult();
 
         // Original type of the extracted entity
-        String subType = ((Map<String, Object>)(er.data)).get(Constants.SubType).toString();
+        String subType = ((Map<String, Object>)(er.getData())).get(Constants.SubType).toString();
         ExtractResult dateTimeEr = new ExtractResult();
 
         // e.g. {next week Mon} or {Tue}, formmer--"next week Mon" doesn't contain "context" key
         boolean hasContext = false;
         ExtractResult contextEr = null;
-        if (((Map<String, Object>)er.data).containsKey(Constants.Context)) {
-            contextEr = (ExtractResult)((Map<String, Object>)er.data).get(Constants.Context);
-            if (contextEr.type.equals(Constants.ContextType_RelativeSuffix)) {
-                dateTimeEr = dateTimeEr.withText(String.format("%s %s", er.text, contextEr.text));
+        if (((Map<String, Object>)er.getData()).containsKey(Constants.Context)) {
+            contextEr = (ExtractResult)((Map<String, Object>)er.getData()).get(Constants.Context);
+            if (contextEr.getType().equals(Constants.ContextType_RelativeSuffix)) {
+                dateTimeEr.setText(String.format("%s %s", er.getText(), contextEr.getText()));
             } else {
-                dateTimeEr = dateTimeEr.withText(String.format("%s %s", contextEr.text, er.text));
+                dateTimeEr.setText(String.format("%s %s", contextEr.getText(), er.getText()));
             }
 
             hasContext = true;
         } else {
-            dateTimeEr = dateTimeEr.withText(er.text);
+            dateTimeEr.setText(er.getText());
         }
 
+        dateTimeEr.setData(er.getData());
         DateTimeParseResult dateTimePr = null;
 
         if (subType.equals(Constants.SYS_DATETIME_DATE)) {
-            dateTimeEr = dateTimeEr.withType(Constants.SYS_DATETIME_DATE);
+            dateTimeEr.setType(Constants.SYS_DATETIME_DATE);
             dateTimePr = this.config.getDateParser().parse(dateTimeEr, referenceTime);
         } else if (subType.equals(Constants.SYS_DATETIME_TIME)) {
             if (!hasContext) {
-                dateTimeEr = dateTimeEr.withType(Constants.SYS_DATETIME_TIME);
+                dateTimeEr.setType(Constants.SYS_DATETIME_TIME);
                 dateTimePr = this.config.getTimeParser().parse(dateTimeEr, referenceTime);
-            } else if (contextEr.type.equals(Constants.SYS_DATETIME_DATE) || contextEr.type.equals(Constants.ContextType_RelativePrefix)) {
+            } else if (contextEr.getType().equals(Constants.SYS_DATETIME_DATE) || contextEr.getType().equals(Constants.ContextType_RelativePrefix)) {
                 // For cases:
                 //      Monday 9 am or 11 am
                 //      next 9 am or 11 am
-                dateTimeEr = dateTimeEr.withType(Constants.SYS_DATETIME_DATETIME);
+                dateTimeEr.setType(Constants.SYS_DATETIME_DATETIME);
                 dateTimePr = this.config.getDateTimeParser().parse(dateTimeEr, referenceTime);
-            } else if (contextEr.type.equals(Constants.ContextType_AmPm)) {
+            } else if (contextEr.getType().equals(Constants.ContextType_AmPm)) {
                 // For cases: in the afternoon 3 o'clock or 5 o'clock
-                dateTimeEr = dateTimeEr.withType(Constants.SYS_DATETIME_TIME);
+                dateTimeEr.setType(Constants.SYS_DATETIME_TIME);
                 dateTimePr = this.config.getTimeParser().parse(dateTimeEr, referenceTime);
             }
         } else if (subType.equals(Constants.SYS_DATETIME_DATETIME)) {
             // "next week Mon 9 am or Tue 1 pm"
-            dateTimeEr = dateTimeEr.withType(Constants.SYS_DATETIME_DATETIME);
+            dateTimeEr.setType(Constants.SYS_DATETIME_DATETIME);
             dateTimePr = this.config.getDateTimeParser().parse(dateTimeEr, referenceTime);
         } else if (subType.equals(Constants.SYS_DATETIME_TIMEPERIOD)) {
             if (!hasContext) {
-                dateTimeEr = dateTimeEr.withType(Constants.SYS_DATETIME_TIMEPERIOD);
+                dateTimeEr.setType(Constants.SYS_DATETIME_TIMEPERIOD);
                 dateTimePr = this.config.getTimePeriodParser().parse(dateTimeEr, referenceTime);
-            } else if (contextEr.type.equals(Constants.SYS_DATETIME_DATE) || contextEr.type.equals(Constants.ContextType_RelativePrefix)) {
-                dateTimeEr = dateTimeEr.withType(Constants.SYS_DATETIME_DATETIMEPERIOD);
+            } else if (contextEr.getType().equals(Constants.SYS_DATETIME_DATE) || contextEr.getType().equals(Constants.ContextType_RelativePrefix)) {
+                dateTimeEr.setType(Constants.SYS_DATETIME_DATETIMEPERIOD);
                 dateTimePr = this.config.getDateTimePeriodParser().parse(dateTimeEr, referenceTime);
             }
         } else if (subType.equals(Constants.SYS_DATETIME_DATETIMEPERIOD)) {
-            if (!hasContext) {
-                dateTimeEr = dateTimeEr.withType(Constants.SYS_DATETIME_DATETIMEPERIOD);
-                dateTimePr = this.config.getDateTimePeriodParser().parse(dateTimeEr, referenceTime);
-            }
+            dateTimeEr.setType(Constants.SYS_DATETIME_DATETIMEPERIOD);
+            dateTimePr = this.config.getDateTimePeriodParser().parse(dateTimeEr, referenceTime);
         } else if (subType.equals(Constants.SYS_DATETIME_DATEPERIOD)) {
-            dateTimeEr = dateTimeEr.withType(Constants.SYS_DATETIME_DATEPERIOD);
+            dateTimeEr.setType(Constants.SYS_DATETIME_DATEPERIOD);
             dateTimePr = this.config.getDatePeriodParser().parse(dateTimeEr, referenceTime);
         }
 
-        if (dateTimePr != null && dateTimePr.value != null) {
-            ret.setFutureValue(((DateTimeResolutionResult)dateTimePr.value).getFutureValue());
-            ret.setPastValue(((DateTimeResolutionResult)dateTimePr.value).getPastValue());
-            ret.setTimex(dateTimePr.timexStr);
+        if (dateTimePr != null && dateTimePr.getValue() != null) {
+            ret.setFutureValue(((DateTimeResolutionResult)dateTimePr.getValue()).getFutureValue());
+            ret.setPastValue(((DateTimeResolutionResult)dateTimePr.getValue()).getPastValue());
+            ret.setTimex(dateTimePr.getTimexStr());
 
             // Create resolution
             getResolution(er, dateTimePr, ret);
@@ -140,8 +139,8 @@ public class BaseDateTimeAltParser implements IDateTimeParser {
     }
 
     private void getResolution(ExtractResult er, DateTimeParseResult pr, DateTimeResolutionResult ret) {
-        String parentText = ((Map<String, Object>)er.data).get(ExtendedModelResult.ParentTextKey).toString();
-        String type = pr.type;
+        String parentText = ((Map<String, Object>)er.getData()).get(ExtendedModelResult.ParentTextKey).toString();
+        String type = pr.getType();
 
         boolean isPeriod = false;
         boolean isSinglePoint = false;
@@ -170,10 +169,17 @@ public class BaseDateTimeAltParser implements IDateTimeParser {
                 case Constants.SYS_DATETIME_DATETIMEPERIOD:
                     startPointType = TimeTypeConstants.START_DATETIME;
                     endPointType = TimeTypeConstants.END_DATETIME;
-                    pastStartPointResolution = FormatUtil.formatDateTime(((Pair<LocalDateTime, LocalDateTime>)ret.getPastValue()).getValue0());
-                    pastEndPointResolution = FormatUtil.formatDateTime(((Pair<LocalDateTime, LocalDateTime>)ret.getPastValue()).getValue1());
-                    futureStartPointResolution = FormatUtil.formatDateTime(((Pair<LocalDateTime, LocalDateTime>)ret.getFutureValue()).getValue0());
-                    futureEndPointResolution = FormatUtil.formatDateTime(((Pair<LocalDateTime, LocalDateTime>)ret.getFutureValue()).getValue1());
+
+                    if (ret.getPastValue() instanceof Pair<?, ?>) {
+                        pastStartPointResolution = FormatUtil.formatDateTime(((Pair<LocalDateTime, LocalDateTime>)ret.getPastValue()).getValue0());
+                        pastEndPointResolution = FormatUtil.formatDateTime(((Pair<LocalDateTime, LocalDateTime>)ret.getPastValue()).getValue1());
+                        futureStartPointResolution = FormatUtil.formatDateTime(((Pair<LocalDateTime, LocalDateTime>)ret.getFutureValue()).getValue0());
+                        futureEndPointResolution = FormatUtil.formatDateTime(((Pair<LocalDateTime, LocalDateTime>)ret.getFutureValue()).getValue1());
+                    } else if (ret.getPastValue() instanceof LocalDateTime) {
+                        pastStartPointResolution = FormatUtil.formatDateTime((LocalDateTime)ret.getPastValue());
+                        futureStartPointResolution = FormatUtil.formatDateTime((LocalDateTime)ret.getFutureValue());
+                    }
+
                     break;
 
                 case Constants.SYS_DATETIME_TIMEPERIOD:
@@ -231,6 +237,14 @@ public class BaseDateTimeAltParser implements IDateTimeParser {
                     .put(singlePointType, singlePointResolution)
                     .put(ExtendedModelResult.ParentTextKey, parentText)
                     .build());
+        }
+
+        if (((DateTimeResolutionResult)pr.getValue()).getMod() != null) {
+            ret.setMod(((DateTimeResolutionResult)pr.getValue()).getMod());
+        }
+
+        if (((DateTimeResolutionResult)pr.getValue()).getTimeZoneResolution() != null) {
+            ret.setTimeZoneResolution(((DateTimeResolutionResult)pr.getValue()).getTimeZoneResolution());
         }
     }
 

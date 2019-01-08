@@ -6,62 +6,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 {
     public class PortugueseDateTimePeriodExtractorConfiguration : BaseOptionsConfiguration, IDateTimePeriodExtractorConfiguration
     {
-        public string TokenBeforeDate { get; }
-
         public static readonly Regex NumberCombinedWithUnit = new Regex(DateTimeDefinitions.DateTimePeriodNumberCombinedWithUnit, RegexOptions.Singleline);
-
-        private static readonly Regex FromRegex = new Regex(DateTimeDefinitions.FromRegex, RegexOptions.Singleline);
-        private static readonly Regex ConnectorAndRegex = new Regex(DateTimeDefinitions.ConnectorAndRegex, RegexOptions.Singleline);
-        private static readonly Regex BetweenRegex = new Regex(DateTimeDefinitions.BetweenRegex, RegexOptions.Singleline);
-
-        public PortugueseDateTimePeriodExtractorConfiguration(IOptionsConfiguration config) : base(config)
-        {
-            TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
-
-            CardinalExtractor = Number.Portuguese.CardinalExtractor.GetInstance();
-
-            SingleDateExtractor = new BaseDateExtractor(new PortugueseDateExtractorConfiguration(this));
-            SingleTimeExtractor = new BaseTimeExtractor(new PortugueseTimeExtractorConfiguration(this));
-            SingleDateTimeExtractor = new BaseDateTimeExtractor(new PortugueseDateTimeExtractorConfiguration(this));
-            DurationExtractor = new BaseDurationExtractor(new PortugueseDurationExtractorConfiguration(this));
-            TimePeriodExtractor = new BaseTimePeriodExtractor(new PortugueseTimePeriodExtractorConfiguration(this));
-        }
-
-        public IExtractor CardinalExtractor { get; }
-
-        public IDateTimeExtractor SingleDateExtractor { get; }
-
-        public IDateTimeExtractor SingleTimeExtractor { get; }
-
-        public IDateTimeExtractor SingleDateTimeExtractor { get; }
-
-        public IDateTimeExtractor DurationExtractor { get; }
-
-        public IDateTimeExtractor TimePeriodExtractor { get; }
-
-        public IEnumerable<Regex> SimpleCasesRegex => new[] 
-        {
-            PortugueseTimePeriodExtractorConfiguration.PureNumFromTo,
-            PortugueseTimePeriodExtractorConfiguration.PureNumBetweenAnd
-        };
-
-        public Regex PrepositionRegex => PortugueseDateTimeExtractorConfiguration.PrepositionRegex;
-
-        public Regex TillRegex => PortugueseDatePeriodExtractorConfiguration.TillRegex;
-
-        public Regex SpecificTimeOfDayRegex => PortugueseDateTimeExtractorConfiguration.SpecificTimeOfDayRegex;
-
-        public Regex TimeOfDayRegex => PortugueseDateTimeExtractorConfiguration.TimeOfDayRegex;
-
-        public Regex FollowedUnit => PortugueseTimePeriodExtractorConfiguration.FollowedUnit;
-
-        public Regex TimeUnitRegex => PortugueseTimePeriodExtractorConfiguration.UnitRegex;
-
-        public Regex PastPrefixRegex => PortugueseDatePeriodExtractorConfiguration.PastRegex;
-
-        public Regex NextPrefixRegex => PortugueseDatePeriodExtractorConfiguration.FutureRegex;
-
-        public Regex FutureSuffixRegex => PortugueseDatePeriodExtractorConfiguration.FutureSuffixRegex;
 
         public static readonly Regex WeekDayRegex = new Regex(DateTimeDefinitions.WeekDayRegex, RegexOptions.Singleline);
 
@@ -90,7 +35,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             new Regex(DateTimeDefinitions.DateUnitRegex, RegexOptions.Singleline);
 
         public static readonly Regex PrefixDayRegex =
-            new Regex(DateTimeDefinitions.PrefixDayRegex,
+            new Regex(
+                DateTimeDefinitions.PrefixDayRegex,
                 RegexOptions.Singleline | RegexOptions.RightToLeft);
 
         public static readonly Regex SuffixRegex =
@@ -101,6 +47,64 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public static readonly Regex AfterRegex =
             new Regex(DateTimeDefinitions.AfterRegex, RegexOptions.Singleline);
+
+        private static readonly Regex FromRegex = new Regex(DateTimeDefinitions.FromRegex, RegexOptions.Singleline);
+
+        private static readonly Regex ConnectorAndRegex = new Regex(DateTimeDefinitions.ConnectorAndRegex, RegexOptions.Singleline);
+
+        private static readonly Regex BetweenRegex = new Regex(DateTimeDefinitions.BetweenRegex, RegexOptions.Singleline);
+
+        public PortugueseDateTimePeriodExtractorConfiguration(IOptionsConfiguration config)
+            : base(config)
+        {
+            TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
+
+            CardinalExtractor = Number.Portuguese.CardinalExtractor.GetInstance();
+
+            SingleDateExtractor = new BaseDateExtractor(new PortugueseDateExtractorConfiguration(this));
+            SingleTimeExtractor = new BaseTimeExtractor(new PortugueseTimeExtractorConfiguration(this));
+            SingleDateTimeExtractor = new BaseDateTimeExtractor(new PortugueseDateTimeExtractorConfiguration(this));
+            DurationExtractor = new BaseDurationExtractor(new PortugueseDurationExtractorConfiguration(this));
+            TimePeriodExtractor = new BaseTimePeriodExtractor(new PortugueseTimePeriodExtractorConfiguration(this));
+        }
+
+        public string TokenBeforeDate { get; }
+
+        public IExtractor CardinalExtractor { get; }
+
+        public IDateTimeExtractor SingleDateExtractor { get; }
+
+        public IDateTimeExtractor SingleTimeExtractor { get; }
+
+        public IDateTimeExtractor SingleDateTimeExtractor { get; }
+
+        public IDateTimeExtractor DurationExtractor { get; }
+
+        public IDateTimeExtractor TimePeriodExtractor { get; }
+
+        public IEnumerable<Regex> SimpleCasesRegex => new[]
+        {
+            PortugueseTimePeriodExtractorConfiguration.PureNumFromTo,
+            PortugueseTimePeriodExtractorConfiguration.PureNumBetweenAnd,
+        };
+
+        public Regex PrepositionRegex => PortugueseDateTimeExtractorConfiguration.PrepositionRegex;
+
+        public Regex TillRegex => PortugueseDatePeriodExtractorConfiguration.TillRegex;
+
+        public Regex SpecificTimeOfDayRegex => PortugueseDateTimeExtractorConfiguration.SpecificTimeOfDayRegex;
+
+        public Regex TimeOfDayRegex => PortugueseDateTimeExtractorConfiguration.TimeOfDayRegex;
+
+        public Regex FollowedUnit => PortugueseTimePeriodExtractorConfiguration.FollowedUnit;
+
+        public Regex TimeUnitRegex => PortugueseTimePeriodExtractorConfiguration.UnitRegex;
+
+        public Regex PastPrefixRegex => PortugueseDatePeriodExtractorConfiguration.PastRegex;
+
+        public Regex NextPrefixRegex => PortugueseDatePeriodExtractorConfiguration.FutureRegex;
+
+        public Regex FutureSuffixRegex => PortugueseDatePeriodExtractorConfiguration.FutureSuffixRegex;
 
         Regex IDateTimePeriodExtractorConfiguration.PrefixDayRegex => PrefixDayRegex;
 
@@ -140,6 +144,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             {
                 index = fromMatch.Index;
             }
+
             return fromMatch.Success;
         }
 

@@ -331,36 +331,6 @@
   },
   {
     "TestType": "BasicTest",
-    "Input": "Volveré en navidad",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "Results": [
-      {
-        "TimexStr": "XXXX-12-25",
-        "Value": {
-          "Success": true,
-          "Timex": "XXXX-12-25",
-          "IsLunar": false,
-          "FutureResolution": {
-            "date": "2016-12-25"
-          },
-          "PastResolution": {
-            "date": "2015-12-25"
-          },
-          "FutureValue": "2016-12-25T00:00:00",
-          "PastValue": "2015-12-25T00:00:00"
-        },
-        "ResolutionStr": "",
-        "Start": 11,
-        "Length": 7,
-        "Text": "navidad",
-        "Type": "date"
-      }
-    ]
-  },
-  {
-    "TestType": "BasicTest",
     "Input": "Volveré el día de navidad",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -475,36 +445,6 @@
         "Start": 11,
         "Length": 13,
         "Text": "día del padre",
-        "Type": "date"
-      }
-    ]
-  },
-  {
-    "TestType": "BasicTest",
-    "Input": "Volveré en Yuandan del próximo año",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "Results": [
-      {
-        "TimexStr": "2017-01-01",
-        "Value": {
-          "Success": true,
-          "Timex": "2017-01-01",
-          "IsLunar": false,
-          "FutureResolution": {
-            "date": "2017-01-01"
-          },
-          "PastResolution": {
-            "date": "2017-01-01"
-          },
-          "FutureValue": "2017-01-01T00:00:00",
-          "PastValue": "2017-01-01T00:00:00"
-        },
-        "ResolutionStr": "",
-        "Start": 11,
-        "Length": 23,
-        "Text": "Yuandan del próximo año",
         "Type": "date"
       }
     ]

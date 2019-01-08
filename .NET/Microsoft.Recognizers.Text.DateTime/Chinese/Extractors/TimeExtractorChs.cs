@@ -6,12 +6,26 @@ using Microsoft.Recognizers.Definitions.Chinese;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
+    public enum TimeType
+    {
+        /// <summary>
+        /// 十二点二十三分五十八秒,12点23分53秒
+        /// </summary>
+        ChineseTime,
+
+        /// <summary>
+        /// 差五分十二点
+        /// </summary>
+        LessTime,
+
+        /// <summary>
+        /// 大约早上10:00
+        /// </summary>
+        DigitTime,
+    }
+
     public class TimeExtractorChs : BaseDateTimeExtractor<TimeType>
     {
-        internal sealed override ImmutableDictionary<Regex, TimeType> Regexes { get; }
-
-        protected sealed override string ExtractType { get; } = Constants.SYS_DATETIME_TIME; // "Fraction";
-
         public static readonly string HourNumRegex = DateTimeDefinitions.TimeHourNumRegex;
 
         public static readonly string MinuteNumRegex = DateTimeDefinitions.TimeMinuteNumRegex;
@@ -32,7 +46,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         public static readonly string BanHourPrefixRegex = DateTimeDefinitions.TimeBanHourPrefixRegex;
 
-        //e.g: 12点, 十二点, 十二点整
+        // e.g: 12点, 十二点, 十二点整
         public static readonly string HourRegex = DateTimeDefinitions.TimeHourRegex;
 
         public static readonly string MinuteRegex = DateTimeDefinitions.TimeMinuteRegex;
@@ -43,13 +57,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         public static readonly string QuarterRegex = DateTimeDefinitions.TimeQuarterRegex;
 
-        //e.g: 十二点五十八分|半|一刻
+        // e.g: 十二点五十八分|半|一刻
         public static readonly string ChineseTimeRegex = DateTimeDefinitions.TimeChineseTimeRegex;
 
-        //e.g: 12:23
+        // e.g: 12:23
         public static readonly string DigitTimeRegex = DateTimeDefinitions.TimeDigitTimeRegex;
 
-        //e.g: 早上九点
+        // e.g: 早上九点
         public static readonly string DayDescRegex = DateTimeDefinitions.TimeDayDescRegex;
 
         public static readonly string ApproximateDescPreffixRegex = DateTimeDefinitions.TimeApproximateDescPreffixRegex;
@@ -71,19 +85,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 {
                     new Regex(DateTimeDefinitions.TimeRegexes3, RegexOptions.Singleline),
                     TimeType.LessTime
-                }
+                },
             };
             Regexes = regexes.ToImmutableDictionary();
         }
-    }
 
-    public enum TimeType
-    {
-        //十二点二十三分五十八秒,12点23分53秒
-        ChineseTime,
-        //差五分十二点
-        LessTime,
-        //大约早上10:00
-        DigitTime
+        internal sealed override ImmutableDictionary<Regex, TimeType> Regexes { get; }
+
+        protected sealed override string ExtractType { get; } = Constants.SYS_DATETIME_TIME; // "Fraction";
     }
 }

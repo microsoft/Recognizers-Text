@@ -2,6 +2,7 @@ package com.microsoft.recognizers.text.datetime.english.extractors;
 
 import com.microsoft.recognizers.text.IExtractor;
 import com.microsoft.recognizers.text.datetime.DateTimeOptions;
+import com.microsoft.recognizers.text.datetime.config.BaseOptionsConfiguration;
 import com.microsoft.recognizers.text.datetime.extractors.BaseDateExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.BaseDateTimeExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.BaseDurationExtractor;
@@ -20,9 +21,7 @@ import java.util.Arrays;
 import java.util.Optional;
 import java.util.regex.Pattern;
 
-public class EnglishDateTimePeriodExtractorConfiguration implements IDateTimePeriodExtractorConfiguration {
-
-    private static final int flags = Pattern.CASE_INSENSITIVE;
+public class EnglishDateTimePeriodExtractorConfiguration extends BaseOptionsConfiguration implements IDateTimePeriodExtractorConfiguration {
 
     public static final Iterable<Pattern> SimpleCases = new ArrayList<Pattern>() {
         {
@@ -31,26 +30,25 @@ public class EnglishDateTimePeriodExtractorConfiguration implements IDateTimePer
         }
     };
 
-    public static final Pattern PeriodTimeOfDayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PeriodTimeOfDayRegex, flags);
-    public static final Pattern PeriodSpecificTimeOfDayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PeriodSpecificTimeOfDayRegex, flags);
-    public static final Pattern TimeUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TimeUnitRegex, flags);
-    public static final Pattern TimeFollowedUnit = RegExpUtility.getSafeRegExp(EnglishDateTime.TimeFollowedUnit, flags);
-    public static final Pattern TimeNumberCombinedWithUnit = RegExpUtility.getSafeRegExp(EnglishDateTime.TimeNumberCombinedWithUnit, flags);
-    public static final Pattern PeriodTimeOfDayWithDateRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PeriodTimeOfDayWithDateRegex, flags);
-    public static final Pattern RelativeTimeUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RelativeTimeUnitRegex, flags);
-    public static final Pattern RestOfDateTimeRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RestOfDateTimeRegex, flags);
-    public static final Pattern GeneralEndingRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.GeneralEndingRegex, flags);
-    public static final Pattern MiddlePauseRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.MiddlePauseRegex, flags);
-    public static final Pattern AmDescRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.AmDescRegex, flags);
-    public static final Pattern PmDescRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PmDescRegex, flags);
-    public static final Pattern WithinNextPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.WithinNextPrefixRegex, flags);
-    public static final Pattern DateUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.DateUnitRegex, flags);
-    public static final Pattern PrefixDayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PrefixDayRegex, flags);
-    public static final Pattern SuffixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SuffixRegex, flags);
-    public static final Pattern BeforeRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.BeforeRegex, flags);
-    public static final Pattern AfterRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.AfterRegex, flags);
+    public static final Pattern PeriodTimeOfDayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PeriodTimeOfDayRegex);
+    public static final Pattern PeriodSpecificTimeOfDayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PeriodSpecificTimeOfDayRegex);
+    public static final Pattern TimeUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TimeUnitRegex);
+    public static final Pattern TimeFollowedUnit = RegExpUtility.getSafeRegExp(EnglishDateTime.TimeFollowedUnit);
+    public static final Pattern TimeNumberCombinedWithUnit = RegExpUtility.getSafeRegExp(EnglishDateTime.TimeNumberCombinedWithUnit);
+    public static final Pattern PeriodTimeOfDayWithDateRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PeriodTimeOfDayWithDateRegex);
+    public static final Pattern RelativeTimeUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RelativeTimeUnitRegex);
+    public static final Pattern RestOfDateTimeRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RestOfDateTimeRegex);
+    public static final Pattern GeneralEndingRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.GeneralEndingRegex);
+    public static final Pattern MiddlePauseRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.MiddlePauseRegex);
+    public static final Pattern AmDescRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.AmDescRegex);
+    public static final Pattern PmDescRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PmDescRegex);
+    public static final Pattern WithinNextPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.WithinNextPrefixRegex);
+    public static final Pattern DateUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.DateUnitRegex);
+    public static final Pattern PrefixDayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PrefixDayRegex);
+    public static final Pattern SuffixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SuffixRegex);
+    public static final Pattern BeforeRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.BeforeRegex);
+    public static final Pattern AfterRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.AfterRegex);
 
-    private final DateTimeOptions options;
     private final String tokenBeforeDate;
 
     private final IExtractor cardinalExtractor;
@@ -69,26 +67,20 @@ public class EnglishDateTimePeriodExtractorConfiguration implements IDateTimePer
 
     public EnglishDateTimePeriodExtractorConfiguration(DateTimeOptions options) {
 
-        super();
+        super(options);
 
         //TODO add english implementations
-        this.options = options;
         tokenBeforeDate = EnglishDateTime.TokenBeforeDate;
 
         cardinalExtractor = CardinalExtractor.getInstance();
-        singleDateExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration());
+        singleDateExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration(this));
         singleTimeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration(options));
         singleDateTimeExtractor = new BaseDateTimeExtractor(new EnglishDateTimeExtractorConfiguration(options));
         durationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration(options));
         timePeriodExtractor = new BaseTimePeriodExtractor(new EnglishTimePeriodExtractorConfiguration(options));
 
-        weekDayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.WeekDayRegex, flags);
-        rangeConnectorRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RangeConnectorRegex, flags);
-    }
-
-    @Override
-    public DateTimeOptions getOptions() {
-        return options;
+        weekDayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.WeekDayRegex);
+        rangeConnectorRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RangeConnectorRegex);
     }
 
     @Override

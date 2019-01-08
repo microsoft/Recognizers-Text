@@ -1,7 +1,10 @@
 package com.microsoft.recognizers.text.datetime.english.extractors;
 
+import com.microsoft.recognizers.text.datetime.config.BaseOptionsConfiguration;
+import com.microsoft.recognizers.text.datetime.config.IOptionsConfiguration;
 import com.microsoft.recognizers.text.datetime.extractors.BaseDateExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.BaseDatePeriodExtractor;
+import com.microsoft.recognizers.text.datetime.extractors.IDateExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.IDateTimeExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.config.IDateTimeAltExtractorConfiguration;
 import com.microsoft.recognizers.text.datetime.resources.EnglishDateTime;
@@ -10,18 +13,17 @@ import com.microsoft.recognizers.text.utilities.RegExpUtility;
 import java.util.ArrayList;
 import java.util.regex.Pattern;
 
-public class EnglishDateTimeAltExtractorConfiguration implements IDateTimeAltExtractorConfiguration {
+public class EnglishDateTimeAltExtractorConfiguration extends BaseOptionsConfiguration implements IDateTimeAltExtractorConfiguration {
 
-    private static final int flags = Pattern.CASE_INSENSITIVE;
+    private static final Pattern OrRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.OrRegex);
+    private static final Pattern DayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.DayRegex);
+    private static final Pattern RangePrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RangePrefixRegex);
 
-    private static final Pattern OrRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.OrRegex, flags);
-    private static final Pattern DayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.DayRegex, flags);
-
-    public static final Pattern ThisPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.ThisPrefixRegex, flags);
-    public static final Pattern PastPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PastPrefixRegex, flags);
-    public static final Pattern NextPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.NextPrefixRegex, flags);
-    public static final Pattern AmRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.AmRegex, flags);
-    public static final Pattern PmRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PmRegex, flags);
+    public static final Pattern ThisPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.ThisPrefixRegex);
+    public static final Pattern PastPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PastPrefixRegex);
+    public static final Pattern NextPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.NextPrefixRegex);
+    public static final Pattern AmRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.AmRegex);
+    public static final Pattern PmRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PmRegex);
 
     public static final Iterable<Pattern> RelativePrefixList = new ArrayList<Pattern>() {
         {
@@ -38,16 +40,17 @@ public class EnglishDateTimeAltExtractorConfiguration implements IDateTimeAltExt
         }
     };
 
-    private final IDateTimeExtractor dateExtractor;
+    private final IDateExtractor dateExtractor;
     private final IDateTimeExtractor datePeriodExtractor;
 
-    public EnglishDateTimeAltExtractorConfiguration() {
-        dateExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration());
-        datePeriodExtractor = new BaseDatePeriodExtractor(new EnglishDatePeriodExtractorConfiguration());
+    public EnglishDateTimeAltExtractorConfiguration(IOptionsConfiguration config) {
+        super(config.getOptions());
+        dateExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration(this));
+        datePeriodExtractor = new BaseDatePeriodExtractor(new EnglishDatePeriodExtractorConfiguration(this));
     }
 
     @Override
-    public IDateTimeExtractor getDateExtractor() {
+    public IDateExtractor getDateExtractor() {
         return dateExtractor;
     }
 
@@ -74,5 +77,9 @@ public class EnglishDateTimeAltExtractorConfiguration implements IDateTimeAltExt
     @Override
     public Pattern getDayRegex() {
         return DayRegex;
+    }
+
+    @Override public Pattern getRangePrefixRegex() {
+        return RangePrefixRegex;
     }
 }

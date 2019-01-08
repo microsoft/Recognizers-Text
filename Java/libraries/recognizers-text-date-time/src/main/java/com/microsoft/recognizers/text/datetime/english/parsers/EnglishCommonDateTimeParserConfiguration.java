@@ -44,7 +44,7 @@ import java.util.regex.Pattern;
 
 public class EnglishCommonDateTimeParserConfiguration extends BaseDateParserConfiguration implements ICommonDateTimeParserConfiguration {
 
-    public static final Pattern AmbiguousMonthP0Regex = RegExpUtility.getSafeRegExp(EnglishDateTime.AmbiguousMonthP0Regex, Pattern.CASE_INSENSITIVE);
+    public static final Pattern AmbiguousMonthP0Regex = RegExpUtility.getSafeRegExp(EnglishDateTime.AmbiguousMonthP0Regex);
 
     private final IDateTimeUtilityConfiguration utilityConfiguration;
 
@@ -107,13 +107,14 @@ public class EnglishCommonDateTimeParserConfiguration extends BaseDateParserConf
         numberParser = new BaseNumberParser(new EnglishNumberParserConfiguration());
 
         durationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration());
-        dateExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration());
+        dateExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration(this));
         timeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration(options));
         dateTimeExtractor = new BaseDateTimeExtractor(new EnglishDateTimeExtractorConfiguration(options));
-        datePeriodExtractor = new BaseDatePeriodExtractor(new EnglishDatePeriodExtractorConfiguration());
+        datePeriodExtractor = new BaseDatePeriodExtractor(new EnglishDatePeriodExtractorConfiguration(this));
         timePeriodExtractor = new BaseTimePeriodExtractor(new EnglishTimePeriodExtractorConfiguration(options));
         dateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new EnglishDateTimePeriodExtractorConfiguration(options));
 
+        timeZoneParser = new BaseTimeZoneParser();
         durationParser = new BaseDurationParser(new EnglishDurationParserConfiguration(this));
         dateParser = new BaseDateParser(new EnglishDateParserConfiguration(this));
         timeParser = new TimeParser(new EnglishTimeParserConfiguration(this));
@@ -122,7 +123,6 @@ public class EnglishCommonDateTimeParserConfiguration extends BaseDateParserConf
         timePeriodParser = new BaseTimePeriodParser(new EnglishTimePeriodParserConfiguration(this));
         dateTimePeriodParser = new BaseDateTimePeriodParser(new EnglishDateTimePeriodParserConfiguration(this));
         dateTimeAltParser = new BaseDateTimeAltParser(new EnglishDateTimeAltParserConfiguration(this));
-        timeZoneParser = new BaseTimeZoneParser();
     }
 
     @Override

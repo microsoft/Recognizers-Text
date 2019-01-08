@@ -25,7 +25,7 @@ public class EnglishSetExtractorConfiguration extends BaseOptionsConfiguration i
     public static final Pattern EachUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.EachUnitRegex);
     public static final Pattern SetUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.DurationUnitRegex);
     public static final Pattern EachPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.EachPrefixRegex);
-    public static final Pattern SetWeekDayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SetWeekDayRegex, Pattern.CASE_INSENSITIVE);
+    public static final Pattern SetWeekDayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SetWeekDayRegex);
 
     public EnglishSetExtractorConfiguration() {
         this(DateTimeOptions.None);
@@ -35,10 +35,10 @@ public class EnglishSetExtractorConfiguration extends BaseOptionsConfiguration i
         super(options);
 
         timeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration(options));
-        dateExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration());
+        dateExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration(this));
         durationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration());
         dateTimeExtractor = new BaseDateTimeExtractor(new EnglishDateTimeExtractorConfiguration(options));
-        datePeriodExtractor = new BaseDatePeriodExtractor(new EnglishDatePeriodExtractorConfiguration());
+        datePeriodExtractor = new BaseDatePeriodExtractor(new EnglishDatePeriodExtractorConfiguration(this));
         timePeriodExtractor = new BaseTimePeriodExtractor(new EnglishTimePeriodExtractorConfiguration(options));
         dateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new EnglishDateTimePeriodExtractorConfiguration(options));
     }

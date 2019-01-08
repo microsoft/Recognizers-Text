@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;net462;net452;net45</TargetFrameworks>
@@ -9,6 +9,7 @@
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net462|AnyCPU'">
     <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+	  <CodeAnalysisRuleSet>../Recognizers-Text.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
 
   <ItemGroup>
@@ -18,440 +19,73 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="BaseCurrency.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>BaseCurrency.tt</DependentUpon>
-    </Compile>
-    <Compile Update="BaseDateTime.cs">
-      <DependentUpon>BaseDateTime.tt</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
-    <Compile Update="BaseEmail.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>BaseEmail.tt</DependentUpon>
-    </Compile>
-    <Compile Update="BaseGUID.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>BaseGUID.tt</DependentUpon>
-    </Compile>
-    <Compile Update="BaseHashTag.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>BaseHashTag.tt</DependentUpon>
-    </Compile>
-    <Compile Update="BaseIp.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>BaseIp.tt</DependentUpon>
-    </Compile>
-    <Compile Update="BaseMention.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>BaseMention.tt</DependentUpon>
-    </Compile>
-    <Compile Update="BaseNumbers.cs">
-      <DependentUpon>BaseNumbers.tt</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
-    <Compile Update="BasePhoneNumbers.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>BasePhoneNumbers.tt</DependentUpon>
-    </Compile>
-    <Compile Update="BaseUnits.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>BaseUnits.tt</DependentUpon>
-    </Compile>
-    <Compile Update="BaseURL.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>BaseURL.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Chinese\ChoiceDefinitions.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>ChoiceDefinitions.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Chinese\DateTimeDefinitions.cs">
-      <DependentUpon>DateTimeDefinitions.tt</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
-    <Compile Update="Chinese\NumbersDefinitions.cs">
-      <DependentUpon>NumbersDefinitions.tt</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
-    <Compile Update="Chinese\NumbersWithUnitDefinitions.cs">
-      <DependentUpon>NumbersWithUnitDefinitions.tt</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
-    <Compile Update="Dutch\ChoiceDefinitions.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>ChoiceDefinitions.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Dutch\NumberDefinitions.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>NumberDefinitions.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Dutch\NumbersWithUnitDefinitions.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>NumbersWithUnitDefinitions.tt</DependentUpon>
-    </Compile>
-    <Compile Update="English\ChoiceDefinitions.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>ChoiceDefinitions.tt</DependentUpon>
-    </Compile>
-    <Compile Update="English\DateTimeDefinitions.cs">
-      <DependentUpon>DateTimeDefinitions.tt</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
-    <Compile Update="English\NumbersDefinitions.cs">
-      <DependentUpon>NumbersDefinitions.tt</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
-    <Compile Update="English\NumbersWithUnitDefinitions.cs">
-      <DependentUpon>NumbersWithUnitDefinitions.tt</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
-    <Compile Update="English\TimeZoneDefinitions.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>TimeZoneDefinitions.tt</DependentUpon>
-    </Compile>
-	<Compile Update="French\ChoiceDefinitions.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>ChoiceDefinitions.tt</DependentUpon>
-    </Compile>
-    <Compile Update="French\DateTimeDefinitions.cs">
-      <DependentUpon>DateTimeDefinitions.tt</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
-    <Compile Update="French\NumbersDefinitions.cs">
-      <DependentUpon>NumbersDefinitions.tt</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
-    <Compile Update="French\NumbersWithUnitDefinitions.cs">
-      <DependentUpon>NumbersWithUnitDefinitions.tt</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
-	<Compile Update="German\ChoiceDefinitions.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>ChoiceDefinitions.tt</DependentUpon>
-    </Compile>
-    <Compile Update="German\DateTimeDefinitions.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>DateTimeDefinitions.tt</DependentUpon>
-    </Compile>
-    <Compile Update="German\NumbersDefinitions.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>NumbersDefinitions.tt</DependentUpon>
-    </Compile>
-    <Compile Update="German\NumbersWithUnitDefinitions.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>NumbersWithUnitDefinitions.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Italian\DateTimeDefinitions.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>DateTimeDefinitions.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Italian\NumbersDefinitions.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>NumbersDefinitions.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Italian\NumbersWithUnitDefinitions.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>NumbersWithUnitDefinitions.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Japanese\ChoiceDefinitions.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>ChoiceDefinitions.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Japanese\DateTimeDefinitions.cs"> 
-      <DependentUpon>DateTimeDefinitions.tt</DependentUpon> 
-      <DesignTime>True</DesignTime> 
-      <AutoGen>True</AutoGen> 
-    </Compile>
-    <Compile Update="Japanese\NumbersDefinitions.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>NumbersDefinitions.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Japanese\NumbersWithUnitDefinitions.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>NumbersWithUnitDefinitions.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Korean\NumbersDefinitions.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>NumbersDefinitions.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Portuguese\ChoiceDefinitions.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>ChoiceDefinitions.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Portuguese\DateTimeDefinitions.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>DateTimeDefinitions.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Portuguese\NumbersDefinitions.cs">
-      <DependentUpon>NumbersDefinitions.tt</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
-    <Compile Update="Portuguese\NumbersWithUnitDefinitions.cs">
-      <DependentUpon>NumbersWithUnitDefinitions.tt</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
-    <Compile Update="Spanish\ChoiceDefinitions.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>ChoiceDefinitions.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Spanish\DateTimeDefinitions.cs">
-      <DependentUpon>DateTimeDefinitions.tt</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
-    <Compile Update="Spanish\NumbersDefinitions.cs">
-      <DependentUpon>NumbersDefinitions.tt</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
-    <Compile Update="Spanish\NumbersWithUnitDefinitions.cs">
-      <DependentUpon>NumbersWithUnitDefinitions.tt</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\BaseCurrency.cs" Link="BaseCurrency.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\BaseDateTime.cs" Link="BaseDateTime.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\BaseEmail.cs" Link="BaseEmail.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\BaseGUID.cs" Link="BaseGUID.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\BaseHashTag.cs" Link="BaseHashTag.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\BaseIp.cs" Link="BaseIp.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\BaseMention.cs" Link="BaseMention.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\BaseNumbers.cs" Link="BaseNumbers.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\BasePhoneNumbers.cs" Link="BasePhoneNumbers.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\BaseUnits.cs" Link="BaseUnits.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\BaseURL.cs" Link="BaseURL.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Chinese\ChoiceDefinitions.cs" Link="Chinese\ChoiceDefinitions.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Chinese\DateTimeDefinitions.cs" Link="Chinese\DateTimeDefinitions.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Chinese\NumbersDefinitions.cs" Link="Chinese\NumbersDefinitions.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Chinese\NumbersWithUnitDefinitions.cs" Link="Chinese\NumbersWithUnitDefinitions.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Dutch\ChoiceDefinitions.cs" Link="Dutch\ChoiceDefinitions.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Dutch\NumberDefinitions.cs" Link="Dutch\NumberDefinitions.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Dutch\NumbersWithUnitDefinitions.cs" Link="Dutch\NumbersWithUnitDefinitions.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\English\ChoiceDefinitions.cs" Link="English\ChoiceDefinitions.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\English\DateTimeDefinitions.cs" Link="English\DateTimeDefinitions.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\English\NumbersDefinitions.cs" Link="English\NumbersDefinitions.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\English\NumbersWithUnitDefinitions.cs" Link="English\NumbersWithUnitDefinitions.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\English\TimeZoneDefinitions.cs" Link="English\TimeZoneDefinitions.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\French\ChoiceDefinitions.cs" Link="French\ChoiceDefinitions.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\French\DateTimeDefinitions.cs" Link="French\DateTimeDefinitions.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\French\NumbersDefinitions.cs" Link="French\NumbersDefinitions.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\French\NumbersWithUnitDefinitions.cs" Link="French\NumbersWithUnitDefinitions.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\German\ChoiceDefinitions.cs" Link="German\ChoiceDefinitions.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\German\DateTimeDefinitions.cs" Link="German\DateTimeDefinitions.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\German\NumbersDefinitions.cs" Link="German\NumbersDefinitions.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\German\NumbersWithUnitDefinitions.cs" Link="German\NumbersWithUnitDefinitions.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Italian\DateTimeDefinitions.cs" Link="Italian\DateTimeDefinitions.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Italian\NumbersDefinitions.cs" Link="Italian\NumbersDefinitions.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Italian\NumbersWithUnitDefinitions.cs" Link="Italian\NumbersWithUnitDefinitions.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Japanese\ChoiceDefinitions.cs" Link="Japanese\ChoiceDefinitions.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Japanese\DateTimeDefinitions.cs" Link="Japanese\DateTimeDefinitions.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Japanese\NumbersDefinitions.cs" Link="Japanese\NumbersDefinitions.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Japanese\NumbersWithUnitDefinitions.cs" Link="Japanese\NumbersWithUnitDefinitions.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Korean\NumbersDefinitions.cs" Link="Korean\NumbersDefinitions.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Portuguese\ChoiceDefinitions.cs" Link="Portuguese\ChoiceDefinitions.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Portuguese\DateTimeDefinitions.cs" Link="Portuguese\DateTimeDefinitions.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Portuguese\NumbersDefinitions.cs" Link="Portuguese\NumbersDefinitions.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Portuguese\NumbersWithUnitDefinitions.cs" Link="Portuguese\NumbersWithUnitDefinitions.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Spanish\ChoiceDefinitions.cs" Link="Spanish\ChoiceDefinitions.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Spanish\DateTimeDefinitions.cs" Link="Spanish\DateTimeDefinitions.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Spanish\NumbersDefinitions.cs" Link="Spanish\NumbersDefinitions.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Spanish\NumbersWithUnitDefinitions.cs" Link="Spanish\NumbersWithUnitDefinitions.cs" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Microsoft.Recognizers.Definitions.Common\Microsoft.Recognizers.Definitions.Common.csproj" />
+    <Folder Include="Chinese\" />
+    <Folder Include="Dutch\" />
+    <Folder Include="English\" />
+    <Folder Include="French\" />
+    <Folder Include="German\" />
+    <Folder Include="Italian\" />
+    <Folder Include="Japanese\" />
+    <Folder Include="Korean\" />
+    <Folder Include="Spanish\" />
+    <Folder Include="Portuguese\" />
   </ItemGroup>
-
+  
   <ItemGroup>
-    <None Update="BaseCurrency.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>BaseCurrency.cs</LastGenOutput>
-    </None>
-    <None Update="BaseDateTime.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>BaseDateTime.cs</LastGenOutput>
-    </None>
-    <None Update="BaseEmail.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>BaseEmail.cs</LastGenOutput>
-    </None>
-    <None Update="BaseGUID.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>BaseGUID.cs</LastGenOutput>
-    </None>
-    <None Update="BaseHashtag.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>BaseHashTag.cs</LastGenOutput>
-    </None>
-    <None Update="BaseIp.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>BaseIp.cs</LastGenOutput>
-    </None>
-    <None Update="BaseMention.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>BaseMention.cs</LastGenOutput>
-    </None>
-    <None Update="BaseNumbers.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>BaseNumbers.cs</LastGenOutput>
-    </None>
-    <None Update="BasePhoneNumbers.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>BasePhoneNumbers.cs</LastGenOutput>
-    </None>
-    <None Update="BaseUnits.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>BaseUnits.cs</LastGenOutput>
-    </None>
-    <None Update="BaseURL.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>BaseURL.cs</LastGenOutput>
-    </None>
-    <None Update="Chinese\ChoiceDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ChoiceDefinitions.cs</LastGenOutput>
-    </None>
-    <None Update="Chinese\DateTimeDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>DateTimeDefinitions.cs</LastGenOutput>
-    </None>
-    <None Update="Chinese\NumbersDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>NumbersDefinitions.cs</LastGenOutput>
-    </None>
-    <None Update="Chinese\NumbersWithUnitDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>NumbersWithUnitDefinitions.cs</LastGenOutput>
-    </None>
-    <None Update="Dutch\ChoiceDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ChoiceDefinitions.cs</LastGenOutput>
-    </None>
-    <None Update="Dutch\NumberDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>NumberDefinitions.cs</LastGenOutput>
-    </None>
-    <None Update="Dutch\NumbersWithUnitDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>NumbersWithUnitDefinitions.cs</LastGenOutput>
-    </None>
-    <None Update="English\ChoiceDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ChoiceDefinitions.cs</LastGenOutput>
-    </None>
-    <None Update="English\DateTimeDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>DateTimeDefinitions.cs</LastGenOutput>
-    </None>
-    <None Update="English\NumbersDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>NumbersDefinitions.cs</LastGenOutput>
-    </None>
-    <None Update="English\NumbersWithUnitDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>NumbersWithUnitDefinitions.cs</LastGenOutput>
-    </None>
-    <None Update="English\TimeZoneDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>TimeZoneDefinitions.cs</LastGenOutput>
-    </None>
-	<None Update="French\ChoiceDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ChoiceDefinitions.cs</LastGenOutput>
-    </None>
-    <None Update="French\DateTimeDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>DateTimeDefinitions.cs</LastGenOutput>
-    </None>
-    <None Update="French\NumbersDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>NumbersDefinitions.cs</LastGenOutput>
-    </None>
-    <None Update="French\NumbersWithUnitDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>NumbersWithUnitDefinitions.cs</LastGenOutput>
-    </None>
-	<None Update="German\ChoiceDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ChoiceDefinitions.cs</LastGenOutput>
-    </None>
-    <None Update="German\DateTimeDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>DateTimeDefinitions.cs</LastGenOutput>
-    </None>
-    <None Update="German\NumbersDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>NumbersDefinitions.cs</LastGenOutput>
-    </None>
-    <None Update="German\NumbersWithUnitDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>NumbersWithUnitDefinitions.cs</LastGenOutput>
-    </None>
-    <None Update="Italian\DateTimeDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>DateTimeDefinitions.cs</LastGenOutput>
-    </None>
-    <None Update="Italian\NumbersDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>NumbersDefinitions.cs</LastGenOutput>
-    </None>
-    <None Update="Italian\NumbersWithUnitDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>NumbersWithUnitDefinitions.cs</LastGenOutput>
-    </None>
-    <None Update="Japanese\ChoiceDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ChoiceDefinitions.cs</LastGenOutput>
-    </None>
-    <None Update="Japanese\DateTimeDefinitions.tt"> 
-      <LastGenOutput>DateTimeDefinitions.cs</LastGenOutput> 
-      <Generator>TextTemplatingFileGenerator</Generator> 
-    </None> 
-    <None Update="Japanese\NumbersDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>NumbersDefinitions.cs</LastGenOutput>
-    </None>
-    <None Update="Japanese\NumbersWithUnitDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>NumbersWithUnitDefinitions.cs</LastGenOutput>
-    </None>
-    <None Update="Korean\NumbersDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>NumbersDefinitions.cs</LastGenOutput>
-    </None>
-    <None Update="Portuguese\ChoiceDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ChoiceDefinitions.cs</LastGenOutput>
-    </None>
-    <None Update="Portuguese\DateTimeDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>DateTimeDefinitions.cs</LastGenOutput>
-    </None>
-    <None Update="Portuguese\NumbersDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>NumbersDefinitions.cs</LastGenOutput>
-    </None>
-    <None Update="Portuguese\NumbersWithUnitDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>NumbersWithUnitDefinitions.cs</LastGenOutput>
-    </None>
-    <None Update="Spanish\ChoiceDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ChoiceDefinitions.cs</LastGenOutput>
-    </None>
-    <None Update="Spanish\DateTimeDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>DateTimeDefinitions.cs</LastGenOutput>
-    </None>
-    <None Update="Spanish\NumbersDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>NumbersDefinitions.cs</LastGenOutput>
-    </None>
-    <None Update="Spanish\NumbersWithUnitDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>NumbersWithUnitDefinitions.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+    <PackageReference Include="StyleCop.Analyzers" Version="1.1.0-beta008">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
 
 </Project>

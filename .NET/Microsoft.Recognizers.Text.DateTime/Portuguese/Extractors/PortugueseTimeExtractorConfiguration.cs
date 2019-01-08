@@ -43,8 +43,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         // part 3: regex for time
         // --------------------------------------
         // handle "a las cuatro" "a las 3"
-        //TODO: add some new regex which have used in AtRegex
-        //TODO: modify according to corresponding English regex
+        // TODO: add some new regex which have used in AtRegex
+        // TODO: modify according to corresponding English regex
         public static readonly Regex AtRegex = new Regex(DateTimeDefinitions.AtRegex, RegexOptions.Singleline);
 
         public static readonly Regex ConnectNumRegex = new Regex(DateTimeDefinitions.ConnectNumRegex, RegexOptions.Singleline);
@@ -61,7 +61,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
             // (tres min pasadas las)? 3.00 (pm)
             new Regex(DateTimeDefinitions.TimeRegex3, RegexOptions.Singleline),
-            
+
             // (tres min pasadas las) (cinco treinta|siete|7|7:00(:00)?) (pm)?
             new Regex(DateTimeDefinitions.TimeRegex4, RegexOptions.Singleline),
 
@@ -76,7 +76,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
             // (En la noche) (cinco treinta|siete|7|7:00(:00)?) (pm)?
             new Regex(DateTimeDefinitions.TimeRegex8, RegexOptions.Singleline),
-            
+
             // once (y)? veinticinco
             new Regex(DateTimeDefinitions.TimeRegex9, RegexOptions.Singleline),
 
@@ -91,8 +91,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             WrittenTimeRegex,
 
             // 340pm
-            ConnectNumRegex
+            ConnectNumRegex,
         };
+
+        public PortugueseTimeExtractorConfiguration(IOptionsConfiguration config)
+            : base(config)
+        {
+            DurationExtractor = new BaseDurationExtractor(new PortugueseDurationExtractorConfiguration(this));
+            TimeZoneExtractor = new BaseTimeZoneExtractor(new PortugueseTimeZoneExtractorConfiguration(this));
+        }
 
         Regex ITimeExtractorConfiguration.IshRegex => null;
 
@@ -105,11 +112,5 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         public IDateTimeExtractor DurationExtractor { get; }
 
         public IDateTimeExtractor TimeZoneExtractor { get; }
-
-        public PortugueseTimeExtractorConfiguration(IOptionsConfiguration config) : base(config)
-        {
-            DurationExtractor = new BaseDurationExtractor(new PortugueseDurationExtractorConfiguration(this));
-            TimeZoneExtractor = new BaseTimeZoneExtractor(new PortugueseTimeZoneExtractorConfiguration(this));
-        }
     }
 }

@@ -43,8 +43,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         // part 3: regex for time
         // --------------------------------------
         // handle "a las cuatro" "a las 3"
-        //TODO: add some new regex which have used in AtRegex
-        //TODO: modify according to corresponding English regex
+        // TODO: add some new regex which have used in AtRegex
+        // TODO: modify according to corresponding English regex
         public static readonly Regex AtRegex = new Regex(DateTimeDefinitions.AtRegex, RegexOptions.Singleline);
 
         public static readonly Regex ConnectNumRegex = new Regex(DateTimeDefinitions.ConnectNumRegex, RegexOptions.Singleline);
@@ -61,7 +61,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
             // (tres min pasadas las)? 3.00 (pm)
             new Regex(DateTimeDefinitions.TimeRegex3, RegexOptions.Singleline),
-            
+
             // (tres min pasadas las) (cinco treinta|siete|7|7:00(:00)?) (pm)?
             new Regex(DateTimeDefinitions.TimeRegex4, RegexOptions.Singleline),
 
@@ -76,7 +76,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
             // (En la noche) (cinco treinta|siete|7|7:00(:00)?) (pm)?
             new Regex(DateTimeDefinitions.TimeRegex8, RegexOptions.Singleline),
-            
+
             // once (y)? veinticinco
             new Regex(DateTimeDefinitions.TimeRegex9, RegexOptions.Singleline),
 
@@ -89,8 +89,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             new Regex(DateTimeDefinitions.TimeRegex12, RegexOptions.Singleline),
 
             // 340pm
-            ConnectNumRegex
+            ConnectNumRegex,
         };
+
+        public SpanishTimeExtractorConfiguration(IOptionsConfiguration config)
+            : base(config)
+        {
+            DurationExtractor = new BaseDurationExtractor(new SpanishDurationExtractorConfiguration(this));
+            TimeZoneExtractor = new BaseTimeZoneExtractor(new SpanishTimeZoneExtractorConfiguration(this));
+        }
 
         Regex ITimeExtractorConfiguration.IshRegex => null;
 
@@ -103,11 +110,5 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public IDateTimeExtractor DurationExtractor { get; }
 
         public IDateTimeExtractor TimeZoneExtractor { get; }
-
-        public SpanishTimeExtractorConfiguration(IOptionsConfiguration config) : base(config)
-        {
-            DurationExtractor = new BaseDurationExtractor(new SpanishDurationExtractorConfiguration(this));
-            TimeZoneExtractor = new BaseTimeZoneExtractor(new SpanishTimeZoneExtractorConfiguration(this));
-        }
     }
 }

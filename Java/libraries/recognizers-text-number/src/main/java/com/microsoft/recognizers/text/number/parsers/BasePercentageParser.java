@@ -13,57 +13,53 @@ public class BasePercentageParser extends BaseNumberParser {
     @Override
     @SuppressWarnings("unchecked")
     public ParseResult parse(ExtractResult extractResult) {
-        String originText = extractResult.text;
+        String originText = extractResult.getText();
         ParseResult ret = null;
 
         // replace text & data from extended info
-        if (extractResult.data instanceof List) {
-            List<Pair<String, ExtractResult>> extendedData = (List<Pair<String, ExtractResult>>)extractResult.data;
+        if (extractResult.getData() instanceof List) {
+            List<Pair<String, ExtractResult>> extendedData = (List<Pair<String, ExtractResult>>)extractResult.getData();
             if (extendedData.size() == 2) {
                 // for case like "2 out of 5".
                 String newText = extendedData.get(0).getValue0() + " " + config.getFractionMarkerToken() + " " + extendedData.get(1).getValue0();
-                extractResult = extractResult
-                        .withText(newText)
-                        .withData("Frac" + config.getLangMarker());
+                extractResult.setText(newText);
+                extractResult.setData("Frac" + config.getLangMarker());
 
                 ret = super.parse(extractResult);
-                ret = ret.withValue((double)ret.value * 100);
+                ret.setValue((double)ret.getValue() * 100);
             } else if (extendedData.size() == 1) {
                 // for case like "one third of".
-                extractResult = extractResult
-                        .withText(extendedData.get(0).getValue0())
-                        .withData(extendedData.get(0).getValue1().data);
+                extractResult.setText(extendedData.get(0).getValue0());
+                extractResult.setData(extendedData.get(0).getValue1().getData());
 
                 ret = super.parse(extractResult);
 
-                if (extractResult.data.toString().startsWith("Frac")) {
-                    ret = ret.withValue((double)ret.value * 100);
+                if (extractResult.getData().toString().startsWith("Frac")) {
+                    ret.setValue((double)ret.getValue() * 100);
                 }
             }
 
             String resolutionStr = config.getCultureInfo() != null ?
-                    NumberFormatUtility.format(ret.value, config.getCultureInfo()) + "%" :
-                    ret.value + "%";
-            ret = ret.withResolutionStr(resolutionStr);
+                    NumberFormatUtility.format(ret.getValue(), config.getCultureInfo()) + "%" :
+                    ret.getValue() + "%";
+            ret.setResolutionStr(resolutionStr);
         } else {
             // for case like "one percent" or "1%".
-            Pair<String, ExtractResult> extendedData = (Pair<String, ExtractResult>)extractResult.data;
-            extractResult = extractResult
-                    .withText(extendedData.getValue0())
-                    .withData(extendedData.getValue1().data);
+            Pair<String, ExtractResult> extendedData = (Pair<String, ExtractResult>)extractResult.getData();
+            extractResult.setText(extendedData.getValue0());
+            extractResult.setData(extendedData.getValue1().getData());
 
             ret = super.parse(extractResult);
 
-            if (ret.resolutionStr != null && !ret.resolutionStr.isEmpty()) {
-                if (!ret.resolutionStr.trim().endsWith("%")) {
-                    ret = ret.withResolutionStr(ret.resolutionStr.trim() + "%");
+            if (ret.getResolutionStr() != null && !ret.getResolutionStr().isEmpty()) {
+                if (!ret.getResolutionStr().trim().endsWith("%")) {
+                    ret.setResolutionStr(ret.getResolutionStr().trim() + "%");
                 }
             }
         }
 
-        ret = ret
-                .withText(originText)
-                .withData(extractResult.text);
+        ret.setText(originText);
+        ret.setData(extractResult.getText());
 
         return ret;
 

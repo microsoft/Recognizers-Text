@@ -16,6 +16,7 @@ import com.microsoft.recognizers.text.utilities.RegExpUtility;
 
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.List;
 import java.util.Optional;
 import java.util.regex.Pattern;
 
@@ -60,9 +61,15 @@ public class EnglishDateParserConfiguration extends BaseOptionsConfiguration imp
         cardinalMap = config.getCardinalMap();
         utilityConfiguration = config.getUtilityConfiguration();
 
-        relativeDayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RelativeDayRegex, Pattern.CASE_INSENSITIVE);
-        nextPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.NextPrefixRegex, Pattern.CASE_INSENSITIVE);
-        pastPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PastPrefixRegex, Pattern.CASE_INSENSITIVE);
+        relativeDayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RelativeDayRegex);
+        nextPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.NextPrefixRegex);
+        pastPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PastPrefixRegex);
+        sameDayTerms = Collections.unmodifiableList(EnglishDateTime.SameDayTerms);
+        plusOneDayTerms = Collections.unmodifiableList(EnglishDateTime.PlusOneDayTerms);
+        plusTwoDayTerms = Collections.unmodifiableList(EnglishDateTime.PlusTwoDayTerms);
+        minusOneDayTerms = Collections.unmodifiableList(EnglishDateTime.MinusOneDayTerms);
+        minusTwoDayTerms = Collections.unmodifiableList(EnglishDateTime.MinusTwoDayTerms);
+
     }
 
     private final String dateTokenPrefix;
@@ -97,6 +104,12 @@ public class EnglishDateParserConfiguration extends BaseOptionsConfiguration imp
     private final ImmutableMap<String, Integer> monthOfYear;
     private final ImmutableMap<String, Integer> cardinalMap;
     private final IDateTimeUtilityConfiguration utilityConfiguration;
+
+    private final List<String> sameDayTerms;
+    private final List<String> plusOneDayTerms;
+    private final List<String> plusTwoDayTerms;
+    private final List<String> minusOneDayTerms;
+    private final List<String> minusTwoDayTerms;
 
     // The following three regexes only used in this configuration
     // They are not used in the base parser, therefore they are not extracted
@@ -226,6 +239,21 @@ public class EnglishDateParserConfiguration extends BaseOptionsConfiguration imp
     }
 
     @Override
+    public Pattern getRelativeDayRegex() {
+        return relativeDayRegex;
+    }
+
+    @Override
+    public Pattern getNextPrefixRegex() {
+        return nextPrefixRegex;
+    }
+
+    @Override
+    public Pattern getPastPrefixRegex() {
+        return pastPrefixRegex;
+    }
+
+    @Override
     public ImmutableMap<String, String> getUnitMap() {
         return unitMap;
     }
@@ -248,6 +276,31 @@ public class EnglishDateParserConfiguration extends BaseOptionsConfiguration imp
     @Override
     public ImmutableMap<String, Integer> getCardinalMap() {
         return cardinalMap;
+    }
+
+    @Override
+    public List<String> getSameDayTerms() {
+        return sameDayTerms;
+    }
+
+    @Override
+    public List<String> getPlusOneDayTerms() {
+        return plusOneDayTerms;
+    }
+
+    @Override
+    public List<String> getMinusOneDayTerms() {
+        return minusOneDayTerms;
+    }
+
+    @Override
+    public List<String> getPlusTwoDayTerms() {
+        return plusTwoDayTerms;
+    }
+
+    @Override
+    public List<String> getMinusTwoDayTerms() {
+        return minusTwoDayTerms;
     }
 
     @Override
@@ -306,5 +359,10 @@ public class EnglishDateParserConfiguration extends BaseOptionsConfiguration imp
     public Boolean isCardinalLast(String text) {
         String trimmedText = text.trim().toLowerCase();
         return trimmedText.equals("last");
+    }
+
+    @Override
+    public String normalize(String text) {
+        return text;
     }
 }

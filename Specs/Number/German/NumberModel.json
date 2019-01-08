@@ -15,17 +15,17 @@
     ]
   },
   {
-    "Input": "ein",
+    "Input": "eins",
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "ein",
+        "Text": "eins",
         "TypeName": "number",
         "Resolution": {
           "value": "1"
         },
         "Start": 0,
-        "End": 2
+        "End": 3
       }
     ]
   },
@@ -211,21 +211,6 @@
     ]
   },
   {
-    "Input": "eins",
-    "NotSupported": "javascript, python",
-    "Results": [
-      {
-        "Text": "eins",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "1"
-        },
-        "Start": 0,
-        "End": 3
-      }
-    ]
-  },
-  {
     "Input": "4.800",
     "NotSupported": "javascript, python",
     "Results": [
@@ -402,21 +387,6 @@
         },
         "Start": 0,
         "End": 41
-      }
-    ]
-  },
-  {
-    "Input": "Eine Million dreihundertneunundneunzigtausendfuenfhundertneun",
-    "NotSupported": "javascript, python",
-    "Results": [
-      {
-        "Text": "eine million dreihundertneunundneunzigtausendfuenfhundertneun",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "1399509"
-        },
-        "Start": 0,
-        "End": 60
       }
     ]
   },

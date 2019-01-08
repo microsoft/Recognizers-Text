@@ -5,7 +5,9 @@
     "Results": [
       {
         "Text": "15e",
-        "Type": "date"
+        "Type": "date",
+        "Start": 18,
+        "Length": 3
       }
     ],
     "NotSupported": "dotNet"
@@ -16,7 +18,9 @@
     "Results": [
       {
         "Text": "22 april",
-        "Type": "date"
+        "Type": "date",
+        "Start": 15,
+        "Length": 8
       }
     ],
     "NotSupported": "dotNet"
@@ -27,7 +31,9 @@
     "Results": [
       {
         "Text": "1 januari",
-        "Type": "date"
+        "Type": "date",
+        "Start": 15,
+        "Length": 9
       }
     ],
     "NotSupported": "dotNet"
@@ -38,7 +44,9 @@
     "Results": [
       {
         "Text": "1 jan.",
-        "Type": "date"
+        "Type": "date",
+        "Start": 15,
+        "Length": 6
       }
     ],
     "NotSupported": "dotNet"
@@ -49,7 +57,9 @@
     "Results": [
       {
         "Text": "2 oktober",
-        "Type": "date"
+        "Type": "date",
+        "Start": 15,
+        "Length": 9
       }
     ],
     "NotSupported": "dotNet"
@@ -60,7 +70,9 @@
     "Results": [
       {
         "Text": "12 januari 2016",
-        "Type": "date"
+        "Type": "date",
+        "Start": 15,
+        "Length": 15
       }
     ],
     "NotSupported": "dotNet"
@@ -71,7 +83,9 @@
     "Results": [
       {
         "Text": "12 jan. 2016",
-        "Type": "date"
+        "Type": "date",
+        "Start": 15,
+        "Length": 12
       }
     ],
     "NotSupported": "dotNet"
@@ -82,7 +96,9 @@
     "Results": [
       {
         "Text": "maandag 12 januari 2016",
-        "Type": "date"
+        "Type": "date",
+        "Start": 15,
+        "Length": 23
       }
     ],
     "NotSupported": "dotNet"
@@ -93,7 +109,9 @@
     "Results": [
       {
         "Text": "22/02/2016",
-        "Type": "date"
+        "Type": "date",
+        "Start": 15,
+        "Length": 10
       }
     ],
     "NotSupported": "dotNet"
@@ -104,7 +122,9 @@
     "Results": [
       {
         "Text": "21/04/2016",
-        "Type": "date"
+        "Type": "date",
+        "Start": 15,
+        "Length": 10
       }
     ],
     "NotSupported": "dotNet"
@@ -115,7 +135,9 @@
     "Results": [
       {
         "Text": "21/04/16",
-        "Type": "date"
+        "Type": "date",
+        "Start": 15,
+        "Length": 8
       }
     ],
     "NotSupported": "dotNet"
@@ -126,7 +148,9 @@
     "Results": [
       {
         "Text": "9-18-15",
-        "Type": "date"
+        "Type": "date",
+        "Start": 15,
+        "Length": 7
       }
     ],
     "NotSupported": "dotNet"
@@ -136,8 +160,10 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "22.4.",
-        "Type": "date"
+        "Text": "22.4",
+        "Type": "date",
+        "Length": 5,
+        "Start": 15
       }
     ],
     "NotSupported": "dotNet"
@@ -148,7 +174,9 @@
     "Results": [
       {
         "Text": "22-4",
-        "Type": "date"
+        "Type": "date",
+        "Start": 15,
+        "Length": 4
       }
     ],
     "NotSupported": "dotNet"
@@ -159,7 +187,9 @@
     "Results": [
       {
         "Text": "22/4",
-        "Type": "date"
+        "Type": "date",
+        "Start": 15,
+        "Length": 4
       }
     ],
     "NotSupported": "dotNet"
@@ -170,7 +200,9 @@
     "Results": [
       {
         "Text": "22/04",
-        "Type": "date"
+        "Type": "date",
+        "Start": 15,
+        "Length": 5
       }
     ],
     "NotSupported": "dotNet"
@@ -181,7 +213,9 @@
     "Results": [
       {
         "Text": "12 augustus 2015",
-        "Type": "date"
+        "Type": "date",
+        "Start": 15,
+        "Length": 16
       }
     ],
     "NotSupported": "dotNet"
@@ -192,7 +226,9 @@
     "Results": [
       {
         "Text": "12/11/2016",
-        "Type": "date"
+        "Type": "date",
+        "Start": 15,
+        "Length": 10
       }
     ],
     "NotSupported": "dotNet"
@@ -203,18 +239,9 @@
     "Results": [
       {
         "Text": "12-11-16",
-        "Type": "date"
-      }
-    ],
-    "NotSupported": "dotNet"
-  },
-  {
-    "Input": "Ik ga terug op 1 januari",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "1 januari",
-        "Type": "date"
+        "Type": "date",
+        "Start": 15,
+        "Length": 8
       }
     ],
     "NotSupported": "dotNet"
@@ -225,7 +252,9 @@
     "Results": [
       {
         "Text": "1 jan",
-        "Type": "date"
+        "Type": "date",
+        "Start": 15,
+        "Length": 5
       }
     ],
     "NotSupported": "dotNet"
@@ -236,7 +265,9 @@
     "Results": [
       {
         "Text": "28 november",
-        "Type": "date"
+        "Type": "date",
+        "Start": 15,
+        "Length": 11
       }
     ],
     "NotSupported": "dotNet"
@@ -247,7 +278,9 @@
     "Results": [
       {
         "Text": "wo. 22 jan",
-        "Type": "date"
+        "Type": "date",
+        "Start": 15,
+        "Length": 10
       }
     ],
     "NotSupported": "dotNet"
@@ -258,7 +291,9 @@
     "Results": [
       {
         "Text": "de eerste vrijdag van Juli",
-        "Type": "date"
+        "Type": "date",
+        "Start": 15,
+        "Length": 26
       }
     ],
     "NotSupported": "dotNet"
@@ -269,7 +304,9 @@
     "Results": [
       {
         "Text": "de eerste vrijdag van deze maand",
-        "Type": "date"
+        "Type": "date",
+        "Start": 15,
+        "Length": 32
       }
     ],
     "NotSupported": "dotNet"
@@ -280,7 +317,9 @@
     "Results": [
       {
         "Text": "over twee weken",
-        "Type": "date"
+        "Type": "date",
+        "Start": 12,
+        "Length": 15
       }
     ],
     "NotSupported": "dotNet"
@@ -291,7 +330,9 @@
     "Results": [
       {
         "Text": "volgende week vrijdag",
-        "Type": "date"
+        "Type": "date",
+        "Start": 6,
+        "Length": 21
       }
     ],
     "NotSupported": "dotNet"
@@ -302,7 +343,9 @@
     "Results": [
       {
         "Text": "volgende week vrijdag",
-        "Type": "date"
+        "Type": "date",
+        "Start": 12,
+        "Length": 21
       }
     ],
     "NotSupported": "dotNet"
@@ -313,7 +356,9 @@
     "Results": [
       {
         "Text": "afgelopen maandag",
-        "Type": "date"
+        "Type": "date",
+        "Start": 0,
+        "Length": 17
       }
     ],
     "NotSupported": "dotNet"
@@ -324,7 +369,9 @@
     "Results": [
       {
         "Text": "dinsdag",
-        "Type": "date"
+        "Type": "date",
+        "Start": 16,
+        "Length": 7
       }
     ],
     "NotSupported": "dotNet"
@@ -335,7 +382,9 @@
     "Results": [
       {
         "Text": "dinsdag",
-        "Type": "date"
+        "Type": "date",
+        "Start": 28,
+        "Length": 7
       }
     ],
     "NotSupported": "dotNet"
@@ -345,8 +394,10 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Dinsdag",
-        "Type": "date"
+        "Text": "dinsdag",
+        "Type": "date",
+        "Start": 15,
+        "Length": 7
       }
     ],
     "NotSupported": "dotNet"
@@ -357,7 +408,9 @@
     "Results": [
       {
         "Text": "vrijdag",
-        "Type": "date"
+        "Type": "date",
+        "Start": 15,
+        "Length": 7
       }
     ],
     "NotSupported": "dotNet"
@@ -368,7 +421,9 @@
     "Results": [
       {
         "Text": "vrijdag",
-        "Type": "date"
+        "Type": "date",
+        "Start": 16,
+        "Length": 7
       }
     ],
     "NotSupported": "dotNet"
@@ -379,7 +434,9 @@
     "Results": [
       {
         "Text": "vandaag",
-        "Type": "date"
+        "Type": "date",
+        "Start": 6,
+        "Length": 7
       }
     ],
     "NotSupported": "dotNet"
@@ -390,7 +447,9 @@
     "Results": [
       {
         "Text": "morgen",
-        "Type": "date"
+        "Type": "date",
+        "Start": 6,
+        "Length": 6
       }
     ],
     "NotSupported": "dotNet"
@@ -401,7 +460,9 @@
     "Results": [
       {
         "Text": "gisteren",
-        "Type": "date"
+        "Type": "date",
+        "Start": 7,
+        "Length": 8
       }
     ],
     "NotSupported": "dotNet"
@@ -412,7 +473,9 @@
     "Results": [
       {
         "Text": "eergisteren",
-        "Type": "date"
+        "Type": "date",
+        "Start": 7,
+        "Length": 11
       }
     ],
     "NotSupported": "dotNet"
@@ -423,18 +486,9 @@
     "Results": [
       {
         "Text": "overmorgen",
-        "Type": "date"
-      }
-    ],
-    "NotSupported": "dotNet"
-  },
-  {
-    "Input": "Ik ga morgen terug",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "morgen",
-        "Type": "date"
+        "Type": "date",
+        "Start": 7,
+        "Length": 10
       }
     ],
     "NotSupported": "dotNet"
@@ -445,7 +499,9 @@
     "Results": [
       {
         "Text": "morgen",
-        "Type": "date"
+        "Type": "date",
+        "Start": 7,
+        "Length": 6
       }
     ],
     "NotSupported": "dotNet"
@@ -456,7 +512,9 @@
     "Results": [
       {
         "Text": "deze vrijdag",
-        "Type": "date"
+        "Type": "date",
+        "Start": 6,
+        "Length": 12
       }
     ],
     "NotSupported": "dotNet"
@@ -467,7 +525,9 @@
     "Results": [
       {
         "Text": "volgende week zondag",
-        "Type": "date"
+        "Type": "date",
+        "Start": 6,
+        "Length": 20
       }
     ],
     "NotSupported": "dotNet"
@@ -478,7 +538,9 @@
     "Results": [
       {
         "Text": "afgelopen zondag",
-        "Type": "date"
+        "Type": "date",
+        "Start": 8,
+        "Length": 16
       }
     ],
     "NotSupported": "dotNet"
@@ -489,7 +551,9 @@
     "Results": [
       {
         "Text": "laatste dag",
-        "Type": "date"
+        "Type": "date",
+        "Start": 9,
+        "Length": 11
       }
     ],
     "NotSupported": "dotNet"
@@ -500,7 +564,9 @@
     "Results": [
       {
         "Text": "laatste dag",
-        "Type": "date"
+        "Type": "date",
+        "Start": 10,
+        "Length": 11
       }
     ],
     "NotSupported": "dotNet"
@@ -511,7 +577,9 @@
     "Results": [
       {
         "Text": "vandaag",
-        "Type": "date"
+        "Type": "date",
+        "Start": 7,
+        "Length": 7
       }
     ],
     "NotSupported": "dotNet"
@@ -522,18 +590,9 @@
     "Results": [
       {
         "Text": "deze week vrijdag",
-        "Type": "date"
-      }
-    ],
-    "NotSupported": "dotNet"
-  },
-  {
-    "Input": "Ik ga volgende week zondag terug",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "volgende week zondag",
-        "Type": "date"
+        "Type": "date",
+        "Start": 7,
+        "Length": 17
       }
     ],
     "NotSupported": "dotNet"
@@ -544,7 +603,9 @@
     "Results": [
       {
         "Text": "vorige week zondag",
-        "Type": "date"
+        "Type": "date",
+        "Start": 8,
+        "Length": 18
       }
     ],
     "NotSupported": "dotNet"
@@ -555,7 +616,9 @@
     "Results": [
       {
         "Text": "15 juni 2016",
-        "Type": "date"
+        "Type": "date",
+        "Start": 15,
+        "Length": 12
       }
     ],
     "NotSupported": "dotNet"
@@ -566,7 +629,9 @@
     "Results": [
       {
         "Text": "elf mei",
-        "Type": "date"
+        "Type": "date",
+        "Start": 20,
+        "Length": 7
       }
     ],
     "NotSupported": "dotNet"
@@ -577,7 +642,9 @@
     "Results": [
       {
         "Text": "vier mei",
-        "Type": "date"
+        "Type": "date",
+        "Start": 15,
+        "Length": 8
       }
     ],
     "NotSupported": "dotNet"
@@ -588,7 +655,9 @@
     "Results": [
       {
         "Text": "4 maart",
-        "Type": "date"
+        "Type": "date",
+        "Start": 15,
+        "Length": 7
       }
     ],
     "NotSupported": "dotNet"
@@ -599,7 +668,9 @@
     "Results": [
       {
         "Text": "eerste van januari",
-        "Type": "date"
+        "Type": "date",
+        "Start": 9,
+        "Length": 18
       }
     ],
     "NotSupported": "dotNet"
@@ -610,7 +681,9 @@
     "Results": [
       {
         "Text": "eenentwintig mei",
-        "Type": "date"
+        "Type": "date",
+        "Start": 6,
+        "Length": 16
       }
     ],
     "NotSupported": "dotNet"
@@ -621,7 +694,9 @@
     "Results": [
       {
         "Text": "eenentwintig mei",
-        "Type": "date"
+        "Type": "date",
+        "Start": 7,
+        "Length": 16
       }
     ],
     "NotSupported": "dotNet"
@@ -632,7 +707,9 @@
     "Results": [
       {
         "Text": "tweede dag van augustus",
-        "Type": "date"
+        "Type": "date",
+        "Start": 9,
+        "Length": 23
       }
     ],
     "NotSupported": "dotNet"
@@ -643,7 +720,9 @@
     "Results": [
       {
         "Text": "twintig juni",
-        "Type": "date"
+        "Type": "date",
+        "Start": 6,
+        "Length": 12
       }
     ],
     "NotSupported": "dotNet"
@@ -654,7 +733,9 @@
     "Results": [
       {
         "Text": "twee maanden geleden",
-        "Type": "date"
+        "Type": "date",
+        "Start": 7,
+        "Length": 20
       }
     ],
     "NotSupported": "dotNet"
@@ -665,7 +746,9 @@
     "Results": [
       {
         "Text": "twee dagen later",
-        "Type": "date"
+        "Type": "date",
+        "Start": 6,
+        "Length": 16
       }
     ],
     "NotSupported": "dotNet"
@@ -676,7 +759,9 @@
     "Results": [
       {
         "Text": "een maand geleden",
-        "Type": "date"
+        "Type": "date",
+        "Start": 11,
+        "Length": 17
       }
     ],
     "NotSupported": "dotNet"
@@ -687,7 +772,9 @@
     "Results": [
       {
         "Text": "voor de 27ste",
-        "Type": "date"
+        "Type": "date",
+        "Start": 14,
+        "Length": 13
       }
     ],
     "NotSupported": "dotNet"
@@ -698,7 +785,9 @@
     "Results": [
       {
         "Text": "voor de 27",
-        "Type": "date"
+        "Type": "date",
+        "Start": 14,
+        "Length": 10
       }
     ],
     "NotSupported": "dotNet"
@@ -709,7 +798,9 @@
     "Results": [
       {
         "Text": "voor de 21ste",
-        "Type": "date"
+        "Type": "date",
+        "Start": 14,
+        "Length": 13
       }
     ],
     "NotSupported": "dotNet"
@@ -720,7 +811,9 @@
     "Results": [
       {
         "Text": "voor de 22e",
-        "Type": "date"
+        "Type": "date",
+        "Start": 14,
+        "Length": 11
       }
     ],
     "NotSupported": "dotNet"
@@ -731,7 +824,9 @@
     "Results": [
       {
         "Text": "voor de tweede",
-        "Type": "date"
+        "Type": "date",
+        "Start": 8,
+        "Length": 14
       }
     ],
     "NotSupported": "dotNet"
@@ -742,7 +837,9 @@
     "Results": [
       {
         "Text": "voor de eenendertigste",
-        "Type": "date"
+        "Type": "date",
+        "Start": 14,
+        "Length": 22
       }
     ],
     "NotSupported": "dotNet"
@@ -753,7 +850,9 @@
     "Results": [
       {
         "Text": "op de 27e",
-        "Type": "date"
+        "Type": "date",
+        "Start": 14,
+        "Length": 9
       }
     ],
     "NotSupported": "dotNet"
@@ -764,7 +863,9 @@
     "Results": [
       {
         "Text": "op de 21ste",
-        "Type": "date"
+        "Type": "date",
+        "Start": 14,
+        "Length": 11
       }
     ],
     "NotSupported": "dotNet"
@@ -775,7 +876,9 @@
     "Results": [
       {
         "Text": "op de 22e",
-        "Type": "date"
+        "Type": "date",
+        "Start": 14,
+        "Length": 9
       }
     ],
     "NotSupported": "dotNet"
@@ -786,7 +889,9 @@
     "Results": [
       {
         "Text": "op de tweede",
-        "Type": "date"
+        "Type": "date",
+        "Start": 14,
+        "Length": 12
       }
     ],
     "NotSupported": "dotNet"
@@ -797,7 +902,9 @@
     "Results": [
       {
         "Text": "op de tweeëntwintigste",
-        "Type": "date"
+        "Type": "date",
+        "Start": 14,
+        "Length": 22
       }
     ],
     "NotSupported": "dotNet"
@@ -805,25 +912,21 @@
   {
     "Input": "de eerste prijs",
     "Results": [],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "Ik ga naar de 27ste verdieping",
     "Results": [],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": " Herdenkingsevenementen voor de 25ste verjaardag van de diplomatieke betrekkingen tussen Singapore en China",
     "Results": [],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "Koop kaartjes voor de 17de voor het evenement",
     "Results": [],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -835,7 +938,9 @@
     "Results": [
       {
         "Text": "zaterdag de tweede",
-        "Type": "date"
+        "Type": "date",
+        "Start": 14,
+        "Length": 18
       }
     ],
     "NotSupported": "dotNet"
@@ -849,7 +954,9 @@
     "Results": [
       {
         "Text": "voor woensdag de 27e",
-        "Type": "date"
+        "Type": "date",
+        "Start": 15,
+        "Length": 20
       }
     ],
     "NotSupported": "dotNet"
@@ -863,7 +970,9 @@
     "Results": [
       {
         "Text": "donderdag de 21ste",
-        "Type": "date"
+        "Type": "date",
+        "Start": 15,
+        "Length": 18
       }
     ],
     "NotSupported": "dotNet"
@@ -877,7 +986,9 @@
     "Results": [
       {
         "Text": "vrijdag de 22ste",
-        "Type": "date"
+        "Type": "date",
+        "Start": 15,
+        "Length": 16
       }
     ],
     "NotSupported": "dotNet"
@@ -891,7 +1002,9 @@
     "Results": [
       {
         "Text": "zaterdag de 23ste",
-        "Type": "date"
+        "Type": "date",
+        "Start": 6,
+        "Length": 17
       }
     ],
     "NotSupported": "dotNet"
@@ -905,7 +1018,9 @@
     "Results": [
       {
         "Text": "vrijdag de 15e",
-        "Type": "date"
+        "Type": "date",
+        "Start": 6,
+        "Length": 14
       }
     ],
     "NotSupported": "dotNet"
@@ -919,7 +1034,9 @@
     "Results": [
       {
         "Text": "donderdag de eenentwintigste",
-        "Type": "date"
+        "Type": "date",
+        "Start": 6,
+        "Length": 28
       }
     ],
     "NotSupported": "dotNet"
@@ -933,7 +1050,9 @@
     "Results": [
       {
         "Text": "vrijdag de tweeëntwintigste",
-        "Type": "date"
+        "Type": "date",
+        "Start": 17,
+        "Length": 27
       }
     ],
     "NotSupported": "dotNet"
@@ -947,7 +1066,9 @@
     "Results": [
       {
         "Text": "vrijdag de vijftiende",
-        "Type": "date"
+        "Type": "date",
+        "Start": 15,
+        "Length": 21
       }
     ],
     "NotSupported": "dotNet"
@@ -961,7 +1082,9 @@
     "Results": [
       {
         "Text": "donderdag de zevende",
-        "Type": "date"
+        "Type": "date",
+        "Start": 15,
+        "Length": 20
       }
     ],
     "NotSupported": "dotNet"
@@ -972,7 +1095,9 @@
     "Results": [
       {
         "Text": "tweede zondag",
-        "Type": "date"
+        "Type": "date",
+        "Start": 9,
+        "Length": 13
       }
     ],
     "NotSupported": "dotNet"
@@ -983,7 +1108,9 @@
     "Results": [
       {
         "Text": "eerste zondag",
-        "Type": "date"
+        "Type": "date",
+        "Start": 9,
+        "Length": 13
       }
     ],
     "NotSupported": "dotNet"
@@ -994,7 +1121,9 @@
     "Results": [
       {
         "Text": "derde dinsdag",
-        "Type": "date"
+        "Type": "date",
+        "Start": 9,
+        "Length": 13
       }
     ],
     "NotSupported": "dotNet"
@@ -1005,7 +1134,9 @@
     "Results": [
       {
         "Text": "vijfde zondag",
-        "Type": "date"
+        "Type": "date",
+        "Start": 9,
+        "Length": 13
       }
     ],
     "NotSupported": "dotNet"
@@ -1016,7 +1147,9 @@
     "Results": [
       {
         "Text": "zesde zondag",
-        "Type": "date"
+        "Type": "date",
+        "Start": 9,
+        "Length": 12
       }
     ],
     "NotSupported": "dotNet"
@@ -1027,7 +1160,9 @@
     "Results": [
       {
         "Text": "tiende maandag",
-        "Type": "date"
+        "Type": "date",
+        "Start": 9,
+        "Length": 14
       }
     ],
     "NotSupported": "dotNet"
@@ -1038,7 +1173,9 @@
     "Results": [
       {
         "Text": "volgende maand de 20ste",
-        "Type": "date"
+        "Type": "date",
+        "Start": 6,
+        "Length": 23
       }
     ],
     "NotSupported": "dotNet"
@@ -1049,7 +1186,9 @@
     "Results": [
       {
         "Text": "31ste deze maand",
-        "Type": "date"
+        "Type": "date",
+        "Start": 9,
+        "Length": 16
       }
     ],
     "NotSupported": "dotNet"
@@ -1060,11 +1199,15 @@
     "Results": [
       {
         "Text": "vrijdag deze week",
-        "Type": "date"
+        "Type": "date",
+        "Start": 42,
+        "Length": 17
       },
       {
         "Text": "donderdag volgende week",
-        "Type": "date"
+        "Type": "date",
+        "Start": 63,
+        "Length": 23
       }
     ],
     "NotSupported": "dotNet"
@@ -1075,7 +1218,9 @@
     "Results": [
       {
         "Text": "vrijdag of zondag deze week",
-        "Type": "date"
+        "Type": "date",
+        "Start": 44,
+        "Length": 27
       }
     ],
     "NotSupported": "dotNet"
@@ -1086,7 +1231,9 @@
     "Results": [
       {
         "Text": "16 nov 2016",
-        "Type": "date"
+        "Type": "date",
+        "Start": 0,
+        "Length": 11
       }
     ],
     "NotSupported": "dotNet"
@@ -1098,7 +1245,9 @@
     "Results": [
       {
         "Text": "1 maand 21 dagen geleden",
-        "Type": "date"
+        "Type": "date",
+        "Start": 22,
+        "Length": 24
       }
     ]
   },
@@ -1109,7 +1258,9 @@
     "Results": [
       {
         "Text": "2 jaar 1 maand en 21 dagen geleden",
-        "Type": "date"
+        "Type": "date",
+        "Start": 12,
+        "Length": 34
       }
     ]
   },
@@ -1120,7 +1271,9 @@
     "Results": [
       {
         "Text": "2 jaar en 21 dagen later",
-        "Type": "date"
+        "Type": "date",
+        "Start": 11,
+        "Length": 24
       }
     ]
   },
@@ -1131,7 +1284,9 @@
     "Results": [
       {
         "Text": "1 maand 2 jaar 21 dagen geleden",
-        "Type": "date"
+        "Type": "date",
+        "Start": 8,
+        "Length": 31
       }
     ]
   },
@@ -1142,7 +1297,9 @@
     "Results": [
       {
         "Text": "de 20ste volgende maand",
-        "Type": "date"
+        "Type": "date",
+        "Start": 11,
+        "Length": 23
       }
     ]
   },
@@ -1152,7 +1309,9 @@
     "Results": [
       {
         "Text": "5 december 1391",
-        "Type": "date"
+        "Type": "date",
+        "Start": 7,
+        "Length": 15
       }
     ],
     "NotSupported": "dotNet"
@@ -1164,7 +1323,9 @@
     "Results": [
       {
         "Text": "Maandag, tweeëntwintig jan. 2018",
-        "Type": "date"
+        "Type": "date",
+        "Start": 0,
+        "Length": 32
       }
     ]
   },
@@ -1175,7 +1336,9 @@
     "Results": [
       {
         "Text": "zondag eenentwintig januari tweeduizend en achttien",
-        "Type": "date"
+        "Type": "date",
+        "Start": 3,
+        "Length": 51
       }
     ]
   },
@@ -1186,7 +1349,9 @@
     "Results": [
       {
         "Text": "eenentwintig september negentien achtenzeventig",
-        "Type": "date"
+        "Type": "date",
+        "Start": 3,
+        "Length": 47
       }
     ]
   },
@@ -1197,7 +1362,9 @@
     "Results": [
       {
         "Text": "20 september negentienhonderd een één",
-        "Type": "date"
+        "Type": "date",
+        "Start": 3,
+        "Length": 37
       }
     ]
   },
@@ -1208,7 +1375,9 @@
     "Results": [
       {
         "Text": "tiende van september tweeduizend",
-        "Type": "date"
+        "Type": "date",
+        "Start": 6,
+        "Length": 32
       }
     ]
   },
@@ -1218,7 +1387,9 @@
     "Results": [
       {
         "Text": "13-5-2015",
-        "Type": "date"
+        "Type": "date",
+        "Start": 15,
+        "Length": 9
       }
     ],
     "NotSupported": "dotNet"
@@ -1229,7 +1400,9 @@
     "Results": [
       {
         "Text": "13-05-2015",
-        "Type": "date"
+        "Type": "date",
+        "Start": 22,
+        "Length": 10
       }
     ],
     "NotSupported": "dotNet"
@@ -1240,7 +1413,9 @@
     "Results": [
       {
         "Text": "volgende week zondag",
-        "Type": "date"
+        "Type": "date",
+        "Start": 7,
+        "Length": 20
       }
     ],
     "NotSupported": "dotNet"
@@ -1251,7 +1426,9 @@
     "Results": [
       {
         "Text": "volgende week maandag",
-        "Type": "date"
+        "Type": "date",
+        "Start": 7,
+        "Length": 21
       }
     ],
     "NotSupported": "dotNet"

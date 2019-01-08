@@ -1,10 +1,9 @@
-﻿using System.Collections.Generic;
-using System.Text.RegularExpressions;
-using DateObject = System.DateTime;
-
-using Microsoft.Recognizers.Text.Number;
-using System;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Text.Number;
+using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
@@ -42,6 +41,127 @@ namespace Microsoft.Recognizers.Text.DateTime
             return Token.MergeAllTokens(tokens, text, ExtractorName);
         }
 
+        public List<Token> MatchDuration(string text, DateObject reference)
+        {
+            var ret = new List<Token>();
+
+            var durations = new List<Token>();
+            var durationExtractions = config.DurationExtractor.Extract(text, reference);
+            foreach (var durationExtraction in durationExtractions)
+            {
+                var match = config.DateUnitRegex.Match(durationExtraction.Text);
+                if (match.Success)
+                {
+                    durations.Add(new Token(
+                        durationExtraction.Start ?? 0,
+                        durationExtraction.Start + durationExtraction.Length ?? 0));
+                }
+            }
+
+            foreach (var duration in durations)
+            {
+                var beforeStr = text.Substring(0, duration.Start).ToLowerInvariant();
+                var afterStr = text.Substring(duration.Start + duration.Length).ToLowerInvariant();
+
+                if (string.IsNullOrWhiteSpace(beforeStr) && string.IsNullOrWhiteSpace(afterStr))
+                {
+                    continue;
+                }
+
+                // within "Days/Weeks/Months/Years" should be handled as dateRange here
+                // if duration contains "Seconds/Minutes/Hours", it should be treated as datetimeRange
+                var match = config.WithinNextPrefixRegex.MatchEnd(beforeStr, trim: true);
+
+                if (match.Success)
+                {
+                    var startToken = match.Index;
+                    var matchDate = config.DateUnitRegex.Match(text.Substring(duration.Start, duration.Length));
+                    var matchTime = config.TimeUnitRegex.Match(text.Substring(duration.Start, duration.Length));
+
+                    if (matchDate.Success && !matchTime.Success)
+                    {
+                        ret.Add(new Token(startToken, duration.End));
+                        continue;
+                    }
+                }
+
+                // Match prefix
+                match = this.config.PastRegex.MatchEnd(beforeStr, trim: true);
+
+                var index = -1;
+
+                if (match.Success)
+                {
+                    index = match.Index;
+                }
+
+                if (index < 0)
+                {
+                    // For cases like "next five days"
+                    match = config.FutureRegex.MatchEnd(beforeStr, trim: true);
+
+                    if (match.Success)
+                    {
+                        index = match.Index;
+                    }
+                }
+
+                if (index >= 0)
+                {
+                    var prefix = beforeStr.Substring(0, index).Trim();
+                    var durationText = text.Substring(duration.Start, duration.Length);
+                    var numbersInPrefix = config.CardinalExtractor.Extract(prefix);
+                    var numbersInDuration = config.CardinalExtractor.Extract(durationText);
+
+                    // Cases like "2 upcoming days", should be supported here
+                    // Cases like "2 upcoming 3 days" is invalid, only extract "upcoming 3 days" by default
+                    if (numbersInPrefix.Any() && !numbersInDuration.Any())
+                    {
+                        var lastNumber = numbersInPrefix.OrderBy(t => t.Start + t.Length).Last();
+
+                        // Prefix should ends with the last number
+                        if (lastNumber.Start + lastNumber.Length == prefix.Length)
+                        {
+                            ret.Add(new Token(lastNumber.Start.Value, duration.End));
+                        }
+                    }
+                    else
+                    {
+                        ret.Add(new Token(index, duration.End));
+                    }
+
+                    continue;
+                }
+
+                // Match suffix
+                match = this.config.PastRegex.MatchBegin(afterStr, trim: true);
+
+                if (match.Success)
+                {
+                    ret.Add(new Token(duration.Start, duration.End + match.Index + match.Length));
+                    continue;
+                }
+
+                match = this.config.FutureRegex.MatchBegin(afterStr, trim: true);
+
+                if (match.Success)
+                {
+                    ret.Add(new Token(duration.Start, duration.End + match.Index + match.Length));
+                    continue;
+                }
+
+                match = this.config.FutureSuffixRegex.MatchBegin(afterStr, trim: true);
+
+                if (match.Success)
+                {
+                    ret.Add(new Token(duration.Start, duration.End + match.Index + match.Length));
+                    continue;
+                }
+            }
+
+            return ret;
+        }
+
         // Cases like "21st century"
         private List<Token> MatchOrdinalNumberWithCenturySuffix(string text, List<ExtractResult> ordinalExtractions)
         {
@@ -60,7 +180,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var afterStringOffset = (er.Start + er.Length).Value + whiteSpacesCount;
 
                 var match = this.config.CenturySuffixRegex.Match(trimmedAfterString);
-                
+
                 if (match.Success)
                 {
                     ret.Add(new Token(er.Start.Value, afterStringOffset + match.Index + match.Length));
@@ -75,7 +195,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var ret = new List<Token>();
             var metadata = new Metadata
             {
-                PossiblyIncludePeriodEnd = true
+                PossiblyIncludePeriodEnd = true,
             };
 
             var matches = this.config.YearPeriodRegex.Matches(text);
@@ -119,20 +239,21 @@ namespace Microsoft.Recognizers.Text.DateTime
                             continue;
                         }
                     }
-                                          
-                    // handle single year which is surrounded by '-' at both sides, e.g., a single year falls in a GUID            
+
+                    // handle single year which is surrounded by '-' at both sides, e.g., a single year falls in a GUID
                     if (match.Length == Constants.FourDigitsYearLength && this.config.YearRegex.IsMatch(match.Value) && InfixBoundaryCheck(match, text))
-                    {                 
+                    {
                         var substr = text.Substring(match.Index - 1, 6);
                         if (this.config.IllegalYearRegex.IsMatch(substr))
                         {
                             continue;
                         }
-                    }                   
-                    
+                    }
+
                     ret.Add(new Token(match.Index, match.Index + match.Length));
                 }
             }
+
             return ret;
         }
 
@@ -155,7 +276,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         private List<Token> MergeTwoTimePoints(string text, DateObject reference)
         {
             var er = this.config.DatePointExtractor.Extract(text, reference);
-            
+
             return MergeMultipleExtractions(text, er);
         }
 
@@ -164,7 +285,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var ret = new List<Token>();
             var metadata = new Metadata
             {
-                PossiblyIncludePeriodEnd = true
+                PossiblyIncludePeriodEnd = true,
             };
 
             if (extractionResults.Count <= 1)
@@ -223,6 +344,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         continue;
                     }
                 }
+
                 idx++;
             }
 
@@ -304,124 +426,6 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 var startIndex = text.LastIndexOf(match.Value);
                 ret.Add(new Token(startIndex, (int)er.Start + (int)er.Length));
-            }
-            return ret;
-        }
-
-        public List<Token> MatchDuration(string text, DateObject reference)
-        {
-            var ret = new List<Token>();
-
-            var durations = new List<Token>();
-            var durationExtractions = config.DurationExtractor.Extract(text, reference);
-            foreach (var durationExtraction in durationExtractions)
-            {
-                var match = config.DateUnitRegex.Match(durationExtraction.Text);
-                if (match.Success)
-                {
-                    durations.Add(new Token(durationExtraction.Start ?? 0,
-                        (durationExtraction.Start + durationExtraction.Length ?? 0)));
-                }
-            }
-
-            foreach (var duration in durations)
-            {
-                var beforeStr = text.Substring(0, duration.Start).ToLowerInvariant();
-                var afterStr = text.Substring(duration.Start + duration.Length).ToLowerInvariant();
-
-                if (string.IsNullOrWhiteSpace(beforeStr) && string.IsNullOrWhiteSpace(afterStr))
-                {
-                    continue;
-                }
-
-                // within "Days/Weeks/Months/Years" should be handled as dateRange here
-                // if duration contains "Seconds/Minutes/Hours", it should be treated as datetimeRange
-                var match = config.WithinNextPrefixRegex.MatchEnd(beforeStr, trim: true);
-
-                if (match.Success)
-                {
-                    var startToken = match.Index;
-                    var matchDate = config.DateUnitRegex.Match(text.Substring(duration.Start, duration.Length));
-                    var matchTime = config.TimeUnitRegex.Match(text.Substring(duration.Start, duration.Length));
-
-                    if (matchDate.Success && !matchTime.Success)
-                    {
-                        ret.Add(new Token(startToken, duration.End));
-                        continue;
-                    }
-                }
-
-                // Match prefix
-                match = this.config.PastRegex.MatchEnd(beforeStr, trim: true);
-
-                var index = -1;
-
-                if (match.Success)
-                {
-                    index = match.Index;
-                }
-
-                if (index < 0)
-                {
-                    // For cases like "next five days"
-                    match = config.FutureRegex.MatchEnd(beforeStr, trim: true);
-
-                    if (match.Success)
-                    {
-                        index = match.Index;
-                    }
-                }
-
-                if (index >= 0)
-                {
-                    var prefix = beforeStr.Substring(0, index).Trim();
-                    var durationText = text.Substring(duration.Start, duration.Length);
-                    var numbersInPrefix = config.CardinalExtractor.Extract(prefix);
-                    var numbersInDuration = config.CardinalExtractor.Extract(durationText);
-
-                    // Cases like "2 upcoming days", should be supported here
-                    // Cases like "2 upcoming 3 days" is invalid, only extract "upcoming 3 days" by default
-                    if (numbersInPrefix.Any() && !numbersInDuration.Any())
-                    {
-                        var lastNumber = numbersInPrefix.OrderBy(t => t.Start + t.Length).Last();
-
-                        // Prefix should ends with the last number
-                        if (lastNumber.Start + lastNumber.Length == prefix.Length)
-                        {
-                            ret.Add(new Token(lastNumber.Start.Value, duration.End));
-                        }
-                    }
-                    else
-                    {
-                        ret.Add(new Token(index, duration.End));
-                    }
-                    continue;
-                }
-
-                // Match suffix
-                match = this.config.PastRegex.MatchBegin(afterStr, trim: true);
-
-                if (match.Success)
-                {
-                    ret.Add(new Token(duration.Start, duration.End + match.Index + match.Length));
-                    continue;
-                }
-
-                match = this.config.FutureRegex.MatchBegin(afterStr, trim: true);
-
-                if (match.Success)
-                {
-                    ret.Add(new Token(duration.Start, duration.End + match.Index + match.Length));
-                    continue;
-                }
-
-                match = this.config.FutureSuffixRegex.MatchBegin(afterStr, trim: true);
-
-                if (match.Success)
-                {
-                    ret.Add(new Token(duration.Start, duration.End + match.Index + match.Length));
-                    continue;
-                }
             }
 
             return ret;

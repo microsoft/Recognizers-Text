@@ -32,7 +32,11 @@
 	},
 	"ava": {
 		"files": [
-			"./test/index.js"
+			"./test/index-number.js",
+			"./test/index-number-with-unit.js",
+			"./test/index-datetime.js",
+			"./test/index-choice.js",
+			"./test/index-sequence.js"
 		]
 	},
 	"devDependencies": {

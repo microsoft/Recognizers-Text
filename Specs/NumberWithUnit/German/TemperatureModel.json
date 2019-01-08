@@ -1,4 +1,5 @@
-[{
+[
+  {
     "Input": "Draußen sind es 40 °Celsius.",
     "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
@@ -14,8 +15,7 @@
         "End": 26
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "in Texas sind es 90 Grad Fahrenheit",
     "NotSupportedByDesign": "python",
@@ -32,8 +32,7 @@
         "End": 34
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "-5 Grad Fahrenheit",
     "NotSupportedByDesign": "python",
@@ -50,8 +49,7 @@
         "End": 17
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "6 Grad Celsius",
     "NotSupportedByDesign": "python",
@@ -68,8 +66,7 @@
         "End": 13
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Heute waren es 8 Grad Celsius, das sind 5 Kelvin mehr als gestern!",
     "NotSupportedByDesign": "python",
@@ -84,8 +81,7 @@
         },
         "Start": 15,
         "End": 28
-      }
-      ,
+      },
       {
         "Text": "5 kelvin",
         "TypeName": "temperature",
@@ -97,8 +93,7 @@
         "End": 47
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Heute sollen es bis zu 35 °C im Schatten werden.",
     "NotSupportedByDesign": "python",
@@ -115,8 +110,7 @@
         "End": 27
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Heute sollen es bis zu fünfunddreißig °C im Schatten werden.",
     "NotSupportedByDesign": "python",
@@ -133,8 +127,7 @@
         "End": 39
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Im Dezember Betrug die Durchschnittstemperatur in Deutschland 2,6 Grad. Die bisher höchste Temperatur von 40,3 Grad wurde im August 2015 gemessen.",
     "NotSupportedByDesign": "python",
@@ -149,8 +142,7 @@
         },
         "Start": 62,
         "End": 69
-      }
-      ,
+      },
       {
         "Text": "40,3 grad",
         "TypeName": "temperature",

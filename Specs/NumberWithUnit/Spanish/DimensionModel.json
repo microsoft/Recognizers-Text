@@ -1,4 +1,5 @@
-[{
+[
+  {
     "Input": "75ml",
     "Results": [
       {
@@ -12,8 +13,7 @@
         "End": 3
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Su mayor inconveniente puede ser su espesor de 3 pulgadas, lo suficientemente grande como para que un consultor lo describa como \"clunky\".",
     "Results": [
@@ -28,8 +28,7 @@
         "End": 56
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Un tornado rugió a través de un area de unas diez millas de largo allí, matando al menos a catorce personas y convirtiendo decenas de hogares en escombros",
     "Results": [
@@ -44,8 +43,7 @@
         "End": 55
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Se necesita más de 10 1/2 millas de cable y alambre para conectar todo y 23 equipos",
     "Results": [
@@ -60,8 +58,7 @@
         "End": 31
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "El viaje de seis millas de mi hotel al aeropuerto que debería tardar 20 minutos, tardó más de tres horas.",
     "Results": [
@@ -76,8 +73,7 @@
         "End": 22
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Es lo que 1) explica por qué somos como nosotros mismos en lugar de Bo Jackson; 2) advierte que es posible ahogarse en un lago que promedia dos pies de profundidad; y 3) predice que 10.000 monos colocados ante 10.000 pianos producirían 1.118 melodías publicitables del rock'n'roll.",
     "Results": [
@@ -92,8 +88,7 @@
         "End": 147
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "El 19 de mayo, la FDA comenzó a detener las setas chinas en latas de 68 onzas después de que más de 100 personas en Mississippi, Nueva York y Pennsylvania se enfermaron al comer hongos contaminados.",
     "Results": [
@@ -108,8 +103,7 @@
         "End": 76
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "El sr. Hulings se regodea que vendió todas sus acciones una semana antes de que el mercado se desplomara 190 puntos en oct. 13, y está utilizando el dinero para ayudar a comprar una granja de caballos de 45 acres.",
     "Results": [
@@ -124,8 +118,7 @@
         "End": 211
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Bartlett había levantado paredes sin ventanas (ladrillo, enrejado, seto) de ocho a diez pies de alto, convirtiendo sus interiores en una sombra stygiana de un día.",
     "Results": [
@@ -140,8 +133,7 @@
         "End": 91
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "'La administración no quiere sorpresas', comenta Jack Zaves, quien, como director de servicios de combustible de American Airlines, compra unos 2.400 millones de galones de combustible para aviones al año.",
     "Results": [
@@ -156,8 +148,7 @@
         "End": 168
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Un refrigerador de agua de 10 galones había caído al suelo, empapando la alfombra roja.",
     "Results": [
@@ -172,8 +163,7 @@
         "End": 36
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Cerca, seis delfines se divertirán en un acuario de agua salada de 1,5 millones de galones.",
     "Results": [
@@ -188,8 +178,7 @@
         "End": 89
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Y este bebé tiene más de dos libras.",
     "Results": [
@@ -204,8 +193,7 @@
         "End": 34
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "No confío en las personas que no comen, dijo ms. Volokh, aunque ella misma dejó de comer el almuerzo hace unos años para bajar 25 libras.",
     "Results": [
@@ -220,8 +208,7 @@
         "End": 135
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Shell, una subsidiaria del grupo real holandés, se le permitirá exportar 0,9 billones de pies cúbicos, y el Golfo, una unidad de olympia & york developments ltd. se permitirá exportar",
     "Results": [
@@ -236,8 +223,7 @@
         "End": 100
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Ejércitos Tigrean ahora están 200 millas al norte de Addis Ababa, amenazando la ciudad de éstos, que cortaría la capital de Mengistu desde el puerto de Assab, a través del cual todos los combustibles y otros suministros llegan a Addis Ababa.",
     "Results": [
@@ -252,8 +238,7 @@
         "End": 39
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Dijo que una de las pc tomó un viaje de tres pies deslizándose por el suelo.",
     "Results": [
@@ -268,8 +253,7 @@
         "End": 48
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "El núcleo de sus propiedades es de 190.000 metros cuadrados de propiedad increíblemente caras en el distrito de Marunouchi, el centro financiero y de negocios de Tokyo, a menudo en broma llamada 'pueblo Mitsubishi'",
     "Results": [
@@ -284,8 +268,7 @@
         "End": 58
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "El satélite, construido por Hughes para la organización internacional de satélites de telecomunicaciones, forma parte de un contrato de 700 millones de dólares otorgado a Hughes en 1982 para desarrollar cinco satélites de tres toneladas.",
     "Results": [
@@ -300,8 +283,7 @@
         "End": 235
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "En un informe de 1996 sobre armas biológicas, el centro de estudios estratégicos e internacionales, una institución de investigación de políticas públicas en Washington, advirtió que era fácil para los posibles terroristas montar armas biológicas utilizando equipo comercial con una capacidad de 130 galones.",
     "Results": [
@@ -316,8 +298,7 @@
         "End": 306
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "La recopilación de datos del departamento de comercio del grupo de comercio mostró que las importaciones de Agosto, el segundo mayor mensual del año, subieron un 5% respecto de las 1.458.000 toneladas de julio, pero por debajo del máximo del año pasado en junio de 1988.",
     "Results": [
@@ -332,8 +313,7 @@
         "End": 199
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "El 1 de noviembre, Singh tiró a unos seis pies de la taza",
     "Results": [
@@ -348,8 +328,7 @@
         "End": 45
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Una t.métrica es igual a 2.204,62 libras.",
     "Results": [
@@ -364,8 +343,7 @@
         "End": 39
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Por lo que cuando el cultivo de psyllium del año que viene se coseche en marzo, puede ser menor que las 16.000 toneladas métricas de los últimos años, justo en la cresta del boom del psyllium.",
     "Results": [
@@ -380,8 +358,7 @@
         "End": 128
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "El 486 es el descendiente de una larga serie de chips Intel que comenzó a dominar el mercado desde que IBM eligió el chip de 16 bits 8088 para su primera computadora personal.",
     "Results": [
@@ -396,8 +373,7 @@
         "End": 131
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "El ''jiotto caspita'' puede funcionar a más de 188 millas por hora, dijo un portavoz de la compañía.",
     "Results": [
@@ -412,8 +388,7 @@
         "End": 65
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "La marina de guerra ha instalado una zona de aterrizaje para helicópteros de apenas 100 metros en una sala de operaciones móvil, apenas en las cercanías de Bagdad.",
     "Results": [
@@ -428,8 +403,7 @@
         "End": 93
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Caltrans planea añadir una segunda cubierta para autobuses y las flotas de autos por encima de la mediana de un tramo de 2,5 millas de la autopista Harbor, al sur de Los Ángeles, cerca del coliseo conmemorativo.",
     "Results": [
@@ -444,8 +418,7 @@
         "End": 130
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "En mi viaje de cuatro millas a la sede de la granja cada mañana, conduje por otras cuatro casas vacías.",
     "Results": [
@@ -460,8 +433,7 @@
         "End": 27
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Fuimos insultados, dijo Langa desde el cuartel general católico griego, a unos 325 kilómetros al noroeste de Bucarest.",
     "Results": [
@@ -476,8 +448,7 @@
         "End": 92
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Rotich es un pequeño (5 pies",
     "Results": [
@@ -492,8 +463,7 @@
         "End": 27
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "4 pulgadas) de 28 años de edad que no comenzó a correr en serio hasta hace tres años y no había competido en el interior hasta este mes.",
     "Results": [
@@ -508,8 +478,7 @@
         "End": 9
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Raceway park (Minnesota) en Shakopee es un óvalo pavimentado de 1/4 de milla.",
     "Results": [
@@ -524,8 +493,7 @@
         "End": 75
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Castlecrag montaña está situado al sur del lago Moat, 1,6 km al oeste del monte Frink a lo largo de la misma línea de cresta.",
     "Results": [
@@ -540,8 +508,7 @@
         "End": 59
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Las colinas de Javadi se encuentran a unos 17 km de Ambur.",
     "Results": [
@@ -556,8 +523,7 @@
         "End": 47
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Después de rodear el lago Michigan cerca de la exposición durante dos horas, el comandante Hugo Eckener aterrizó la aeronave de 776 pies en el cercano aeropuerto Curtiss-Wright en Glenview.",
     "Results": [
@@ -572,8 +538,7 @@
         "End": 135
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "El intercambio con la carretera 35 y la carretera 115 a Lindsay y Peterborough (salida 436) se encuentra a 500 metros al este de la carretera Bennett.",
     "Results": [
@@ -588,8 +553,7 @@
         "End": 116
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "En 1995 Cannon introdujo la primera lente SLR comercialmente disponible con estabilización de imagen interna, 75 - 300 mm f / 4 - 5. 6 es usm.",
     "NotSupported": "javascript, python, java",
@@ -605,8 +569,7 @@
         "End": 120
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Los aspectos más destacados de los proyectos de ley son: -- una restricción de la cantidad de bienes raíces que una familia puede poseer, a 660 metros cuadrados en las seis ciudades más grandes de la nación, pero más en ciudades pequeñas y áreas rurales.",
     "Results": [
@@ -621,8 +584,7 @@
         "End": 159
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "El proyecto cuesta 46,8 millones de dólares, y está destinado a aumentar la capacidad de producción de la empresa en un 25% a 34.500 toneladas métricas de cátodos de cobre al año.",
     "Results": [
@@ -637,8 +599,7 @@
         "End": 150
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "La producción canadiense de lingotes de acero totalizó 291.890 toneladas métricas en la semana terminada el oct. 7, un 14,8% más que el total de la semana anterior, informó Statistics Canada, una agencia federal.",
     "Results": [
@@ -653,8 +614,7 @@
         "End": 80
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Las panteras floridas viven en el hogar que se extiende por 190 km2.",
     "Results": [
@@ -669,8 +629,7 @@
         "End": 66
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Un asteroide de una milla de ancho nos golpea, en promedio, sólo una vez cada trescientos mil años.",
     "Results": [
@@ -685,8 +644,7 @@
         "End": 24
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Sin embargo, Premier incorporó el tren de potencia Nissan A12 (1.171 cc y 52 bhp) en lugar del motor Fiat original junto con una caja de cambios manual de Nissan.",
     "Results": [
@@ -701,8 +659,7 @@
         "End": 70
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "En toda la industria, la producción de petróleo en este país se redujo en 500.000 barriles diarios a [] barriles en los primeros ocho meses de este año.",
     "Results": [
@@ -715,8 +672,7 @@
         },
         "Start": 74,
         "End": 89
-      }
-      ,
+      },
       {
         "Text": "barriles",
         "TypeName": "dimension",
@@ -728,8 +684,7 @@
         "End": 111
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Sterling Armaments de Dagenham, Essex produjo un kit de conversión que comprende un nuevo barril de 7,62 mm, una revista, un extractor y un eyector para la venta comercial.",
     "Results": [
@@ -742,8 +697,7 @@
         },
         "Start": 100,
         "End": 106
-      }
-      ,
+      },
       {
         "Text": "barril",
         "TypeName": "dimension",
@@ -755,8 +709,7 @@
         "End": 95
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "2:00 pm",
     "NotSupported": "java",

@@ -26,4 +26,6 @@ public interface ITimePeriodExtractorConfiguration extends IOptionsConfiguration
     boolean hasConnectorToken(String text);
 
     ResultIndex getBetweenTokenIndex(String text);
+
+    IDateTimeExtractor getTimeZoneExtractor();
 }

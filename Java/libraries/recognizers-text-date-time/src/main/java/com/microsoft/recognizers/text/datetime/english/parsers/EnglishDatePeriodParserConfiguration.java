@@ -16,8 +16,10 @@ import com.microsoft.recognizers.text.utilities.Match;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Optional;
 import java.util.regex.Pattern;
+import java.util.stream.Stream;
 
 public class EnglishDatePeriodParserConfiguration extends BaseOptionsConfiguration implements IDatePeriodParserConfiguration {
 
@@ -73,8 +75,8 @@ public class EnglishDatePeriodParserConfiguration extends BaseOptionsConfigurati
         lessThanRegex = EnglishDatePeriodExtractorConfiguration.LessThanRegex;
         moreThanRegex = EnglishDatePeriodExtractorConfiguration.MoreThanRegex;
         centurySuffixRegex = EnglishDatePeriodExtractorConfiguration.CenturySuffixRegex;
-        relativeRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RelativeRegex, Pattern.CASE_INSENSITIVE);
-        unspecificEndOfRangeRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.UnspecificEndOfRangeRegex, Pattern.CASE_INSENSITIVE);
+        relativeRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RelativeRegex);
+        unspecificEndOfRangeRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.UnspecificEndOfRangeRegex);
 
         unitMap = config.getUnitMap();
         cardinalMap = config.getCardinalMap();
@@ -85,10 +87,10 @@ public class EnglishDatePeriodParserConfiguration extends BaseOptionsConfigurati
         numbers = config.getNumbers();
         specialDecadeCases = config.getSpecialDecadeCases();
 
-        nextPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.NextPrefixRegex, Pattern.CASE_INSENSITIVE);
-        pastPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PastPrefixRegex, Pattern.CASE_INSENSITIVE);
-        thisPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.ThisPrefixRegex, Pattern.CASE_INSENSITIVE);
-        afterNextSuffixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.AfterNextSuffixRegex, Pattern.CASE_INSENSITIVE);
+        nextPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.NextPrefixRegex);
+        pastPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PastPrefixRegex);
+        thisPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.ThisPrefixRegex);
+        afterNextSuffixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.AfterNextSuffixRegex);
     }
 
     private final String tokenBeforeDate;
@@ -542,13 +544,18 @@ public class EnglishDatePeriodParserConfiguration extends BaseOptionsConfigurati
     @Override
     public boolean isYearOnly(String text) {
         String trimmedText = text.trim().toLowerCase();
-        Optional<Match> matchAfterNext = Arrays.stream(RegExpUtility.getMatches(afterNextSuffixRegex, trimmedText)).findFirst();
-        return trimmedText.endsWith("year") || trimmedText.contains(" year ") && matchAfterNext.isPresent();
+        return EnglishDateTime.YearTerms.stream().anyMatch(o -> trimmedText.endsWith(o)) ||
+            (getYearTermsPadded().anyMatch(o -> trimmedText.contains(o)) && RegExpUtility.getMatches(afterNextSuffixRegex, trimmedText).length > 0) ||
+            (EnglishDateTime.GenericYearTerms.stream().anyMatch(o -> trimmedText.endsWith(o)) && RegExpUtility.getMatches(unspecificEndOfRangeRegex, trimmedText).length > 0);
     }
 
     @Override
     public boolean isYearToDate(String text) {
         String trimmedText = text.trim().toLowerCase();
         return trimmedText.equals("year to date");
+    }
+
+    private Stream<String> getYearTermsPadded() {
+        return EnglishDateTime.YearTerms.stream().map(i -> String.format(" %s ", i));
     }
 }

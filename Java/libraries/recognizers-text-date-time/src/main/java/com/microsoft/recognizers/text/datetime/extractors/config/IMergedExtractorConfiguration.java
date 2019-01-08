@@ -9,6 +9,8 @@ import com.microsoft.recognizers.text.matcher.StringMatcher;
 
 import java.util.regex.Pattern;
 
+import org.javatuples.Pair;
+
 public interface IMergedExtractorConfiguration extends IOptionsConfiguration {
     IDateTimeExtractor getDateExtractor();
 
@@ -57,4 +59,6 @@ public interface IMergedExtractorConfiguration extends IOptionsConfiguration {
     Pattern getUnspecificDatePeriodRegex();
 
     StringMatcher getSuperfluousWordMatcher();
+
+    Iterable<Pair<Pattern, Pattern>> getAmbiguityFiltersDict();
 }

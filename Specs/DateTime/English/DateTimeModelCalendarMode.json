@@ -587,7 +587,7 @@
     "Context": {
       "ReferenceDateTime": "2018-08-08T10:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "between the 21st and 23rd",
@@ -618,7 +618,7 @@
     "Context": {
       "ReferenceDateTime": "2018-08-08T10:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "the 21st",
@@ -648,7 +648,7 @@
     "Context": {
       "ReferenceDateTime": "2018-08-08T10:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "around the 21st",
@@ -679,7 +679,7 @@
     "Context": {
       "ReferenceDateTime": "2018-08-08T10:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "around the 21st this month",
@@ -704,7 +704,7 @@
     "Context": {
       "ReferenceDateTime": "2018-08-16T10:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "around tomorrow 10am",
@@ -729,7 +729,7 @@
     "Context": {
       "ReferenceDateTime": "2018-08-30T10:00:00"
     },
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "5 upcoming years",
@@ -754,7 +754,7 @@
     "Context": {
       "ReferenceDateTime": "2018-08-30T10:00:00"
     },
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "2 upcoming months",
@@ -779,7 +779,7 @@
     "Context": {
       "ReferenceDateTime": "2018-08-30T10:00:00"
     },
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "2 next days",
@@ -804,7 +804,7 @@
     "Context": {
       "ReferenceDateTime": "2018-08-30T10:00:00"
     },
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "5 coming minutes",
@@ -829,7 +829,7 @@
     "Context": {
       "ReferenceDateTime": "2018-08-30T10:00:00"
     },
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "5 past minutes",
@@ -854,7 +854,7 @@
     "Context": {
       "ReferenceDateTime": "2018-08-30T10:00:00"
     },
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "5 past years",
@@ -879,7 +879,7 @@
     "Context": {
       "ReferenceDateTime": "2018-08-30T10:00:00"
     },
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "10 previous weeks",
@@ -904,7 +904,6 @@
     "Context": {
       "ReferenceDateTime": "2018-11-01T12:00:00"
     },
-    "NotSupportedByDesign": "java",
     "Results": [
       {
         "Text": "dec-2018",
@@ -929,7 +928,6 @@
     "Context": {
       "ReferenceDateTime": "2018-11-01T12:00:00"
     },
-    "NotSupportedByDesign": "java",
     "Results": [
       {
         "Text": "dec/2018",
@@ -954,7 +952,6 @@
     "Context": {
       "ReferenceDateTime": "2018-11-01T12:00:00"
     },
-    "NotSupportedByDesign": "java",
     "Results": [
       {
         "Text": "dec, 2018",
@@ -979,7 +976,7 @@
     "Context": {
       "ReferenceDateTime": "2018-11-01T12:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "dec/2018-may/2019",
@@ -993,6 +990,37 @@
               "type": "daterange",
               "start": "2018-12-01",
               "end": "2019-05-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I will arrange a meeting from 6 to 7.",
+    "Context": {
+      "ReferenceDateTime": "2018-12-20T12:00:00"
+    },
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "from 6 to 7",
+        "Start": 25,
+        "End": 35,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(T06,T07,PT1H)",
+              "type": "timerange",
+              "start": "06:00:00",
+              "end": "07:00:00"
+            },
+            {
+              "timex": "(T18,T19,PT1H)",
+              "type": "timerange",
+              "start": "18:00:00",
+              "end": "19:00:00"
             }
           ]
         }

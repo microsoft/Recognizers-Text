@@ -4,7 +4,6 @@ import com.google.common.collect.ImmutableMap;
 import com.microsoft.recognizers.text.ExtractResult;
 import com.microsoft.recognizers.text.ParseResult;
 import com.microsoft.recognizers.text.datetime.Constants;
-import com.microsoft.recognizers.text.datetime.DateTimeOptions;
 import com.microsoft.recognizers.text.datetime.TimeTypeConstants;
 import com.microsoft.recognizers.text.datetime.parsers.config.ITimeParserConfiguration;
 import com.microsoft.recognizers.text.datetime.parsers.config.PrefixAdjustResult;
@@ -13,6 +12,7 @@ import com.microsoft.recognizers.text.datetime.utilities.DateTimeResolutionResul
 import com.microsoft.recognizers.text.datetime.utilities.DateUtil;
 import com.microsoft.recognizers.text.datetime.utilities.FormatUtil;
 import com.microsoft.recognizers.text.datetime.utilities.TimeZoneResolutionResult;
+import com.microsoft.recognizers.text.datetime.utilities.TimeZoneUtility;
 import com.microsoft.recognizers.text.utilities.IntegerUtility;
 import com.microsoft.recognizers.text.utilities.Match;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
@@ -55,23 +55,24 @@ public class BaseTimeParser implements IDateTimeParser {
 
         Object value = null;
 
-        if (er.type.equals(getParserName())) {
+        if (er.getType().equals(getParserName())) {
             DateTimeResolutionResult innerResult;
 
             // Resolve timezome
-            if (config.getOptions().match(DateTimeOptions.EnablePreview) && er.data instanceof Map.Entry) {
-                ExtractResult timezoneEr = ((Map.Entry<String, ExtractResult>)er.data).getValue();
+            if (TimeZoneUtility.shouldResolveTimeZone(er, config.getOptions())) {
+                Map<String, Object> metadata = (Map)er.getData();
+                ExtractResult timezoneEr = (ExtractResult)metadata.get(Constants.SYS_DATETIME_TIMEZONE);
                 ParseResult timezonePr = config.getTimeZoneParser().parse(timezoneEr);
 
-                innerResult = internalParse(er.text.substring(0, er.length - timezoneEr.length), referenceTime);
+                innerResult = internalParse(er.getText().substring(0, er.getText().length() - timezoneEr.getLength()), referenceTime);
 
-                if (timezonePr.value != null) {
-                    TimeZoneResolutionResult timeZoneResolution = ((DateTimeResolutionResult)timezonePr.value).getTimeZoneResolution();
+                if (timezonePr.getValue() != null) {
+                    TimeZoneResolutionResult timeZoneResolution = ((DateTimeResolutionResult)timezonePr.getValue()).getTimeZoneResolution();
                     innerResult.setTimeZoneResolution(timeZoneResolution);
                 }
 
             } else {
-                innerResult = internalParse(er.text, referenceTime);
+                innerResult = internalParse(er.getText(), referenceTime);
             }
 
             if (innerResult.getSuccess()) {
@@ -90,11 +91,11 @@ public class BaseTimeParser implements IDateTimeParser {
         }
 
         DateTimeParseResult ret = new DateTimeParseResult(
-                er.start,
-                er.length,
-                er.text,
-                er.type,
-                er.data,
+                er.getStart(),
+                er.getLength(),
+                er.getText(),
+                er.getType(),
+                er.getData(),
                 value,
                 "",
                 value == null ? "" : ((DateTimeResolutionResult)value).getTimex());
@@ -124,7 +125,7 @@ public class BaseTimeParser implements IDateTimeParser {
         }
 
         // parse hour pattern, like "twenty one", "16"
-        // create a extract result which content the pass-in text
+        // create a extract comments which content the pass-in text
         Integer hour = null;
         if (config.getNumbers().containsKey(text)) {
             hour = config.getNumbers().get(text);

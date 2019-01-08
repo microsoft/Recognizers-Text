@@ -1,4 +1,5 @@
-[{
+[
+  {
     "Input": "Quando tinha cinco anos, aprendeu a andar de bicicleta.",
     "Results": [
       {
@@ -12,8 +13,7 @@
         "End": 22
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Esta saga remonta a quase dez anos atrás.",
     "Results": [
@@ -28,8 +28,7 @@
         "End": 33
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Só tenho 29 anos!",
     "Results": [
@@ -44,8 +43,7 @@
         "End": 15
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Agora com noventa e cinco anos tens perspectiva das coisas.",
     "Results": [
@@ -60,8 +58,7 @@
         "End": 29
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "A Grande Muralha da China tem mais de 500 anos e se extende por mais de 5,000 milhas.",
     "Results": [
@@ -76,8 +73,7 @@
         "End": 45
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Já tem 60 anos, pois nasceu em 8 de maio de 1945.",
     "Results": [
@@ -92,8 +88,7 @@
         "End": 13
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "25% dos casos não são diagnosticados até por volta dos tres anos.",
     "Results": [
@@ -108,8 +103,7 @@
         "End": 63
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Quando haverá pressão para comprir essa promessa feita há um ano?",
     "Results": [
@@ -124,8 +118,7 @@
         "End": 63
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Aconteceu quando era um bebê e tinha apenas dez meses.",
     "Results": [
@@ -140,8 +133,7 @@
         "End": 52
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "A proposta da comissão já tem 8 meses de idade.",
     "Results": [
@@ -156,8 +148,7 @@
         "End": 36
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Aproximadamente 50% dos casos são diagnosticados aos dezoito meses de idade.",
     "Results": [
@@ -172,8 +163,7 @@
         "End": 65
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "É possível, mas em 2006 95% delas tinham menos de tres meses de vida.",
     "Results": [
@@ -188,8 +178,7 @@
         "End": 59
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Se seguirmos adiante no período de dezembro, terão tres semanas de existência.",
     "Results": [
@@ -204,8 +193,7 @@
         "End": 62
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Às 6 semanas de idade já comemora o Natal.",
     "Results": [
@@ -220,8 +208,7 @@
         "End": 11
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Outras matérias primas devem ser usadas num prazo de cinco dias.",
     "Results": [
@@ -236,8 +223,7 @@
         "End": 62
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Uma conta vencida a 90 dias está bem atrasada.",
     "Results": [
@@ -252,8 +238,7 @@
         "End": 26
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Ele tem cerca de 40 - 50 anos",
     "NotSupported": "javascript, java",

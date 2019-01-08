@@ -116,6 +116,7 @@
   },
   {
     "Input": "Estaré afuera de 4pm a 5pm del 2017-6-6",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "de 4pm a 5pm del 2017-6-6",
@@ -203,18 +204,21 @@
     ]
   },
   {
-    "Input": "Regresaré a la noche",
+    "Input": "Regresaré por la noche",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "a la noche",
+        "Text": "la noche",
         "Type": "datetimerange",
-        "Start": 10,
-        "Length": 10
+        "Start": 14,
+        "Length": 8
       }
     ]
   },
   {
     "Input": "Regresaré a la madrugada",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "a la madrugada",
@@ -236,32 +240,23 @@
     ]
   },
   {
+    "Input": "Regresaré por la mañana",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+        {
+          "Text": "la mañana",
+          "Type": "datetimerange",
+          "Start": 12,
+          "Length": 10
+        }
+      ]
+  },
+  {
     "Input": "Regresaré esta mañana",
     "Results": [
       {
         "Text": "esta mañana",
-        "Type": "datetimerange",
-        "Start": 10,
-        "Length": 11
-      }
-    ]
-  },
-  {
-    "Input": "Regresaré en la mañana",
-    "Results": [
-      {
-        "Text": " la mañana",
-        "Type": "datetimerange",
-        "Start": 12,
-        "Length": 10
-      }
-    ]
-  },
-  {
-    "Input": "Regresaré a la mañana",
-    "Results": [
-      {
-        "Text": "a la mañana",
         "Type": "datetimerange",
         "Start": 10,
         "Length": 11
@@ -298,17 +293,6 @@
         "Type": "datetimerange",
         "Start": 10,
         "Length": 19
-      }
-    ]
-  },
-  {
-    "Input": "Regresaré el próximo lunes a la tarde",
-    "Results": [
-      {
-        "Text": "próximo lunes a la tarde",
-        "Type": "datetimerange",
-        "Start": 13,
-        "Length": 24
       }
     ]
   },

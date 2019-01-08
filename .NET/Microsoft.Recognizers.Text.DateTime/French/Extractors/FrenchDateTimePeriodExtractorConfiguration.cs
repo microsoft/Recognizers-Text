@@ -7,45 +7,6 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 {
     public class FrenchDateTimePeriodExtractorConfiguration : BaseOptionsConfiguration, IDateTimePeriodExtractorConfiguration
     {
-        public string TokenBeforeDate { get; }
-
-        public FrenchDateTimePeriodExtractorConfiguration(IOptionsConfiguration config) : base(config)
-        {
-            TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
-
-            CardinalExtractor = Number.English.CardinalExtractor.GetInstance();
-            SingleDateExtractor = new BaseDateExtractor(new FrenchDateExtractorConfiguration(this));
-            SingleTimeExtractor = new BaseTimeExtractor(new FrenchTimeExtractorConfiguration(this));
-            SingleDateTimeExtractor = new BaseDateTimeExtractor(new FrenchDateTimeExtractorConfiguration(this));
-            DurationExtractor = new BaseDurationExtractor(new FrenchDurationExtractorConfiguration(this));
-            TimePeriodExtractor = new BaseTimePeriodExtractor(new FrenchTimePeriodExtractorConfiguration(this));
-        }
-
-        private static readonly Regex[] SimpleCases =
-        {
-            FrenchTimePeriodExtractorConfiguration.PureNumFromTo,
-            FrenchTimePeriodExtractorConfiguration.PureNumBetweenAnd,
-            FrenchTimePeriodExtractorConfiguration.SpecificTimeOfDayRegex
-        };
-
-        private static readonly Regex FromRegex = 
-            new Regex(DateTimeDefinitions.FromRegex2, RegexOptions.Singleline);
-
-        private static readonly Regex ConnectorAndRegex = 
-            new Regex(DateTimeDefinitions.ConnectorAndRegex, RegexOptions.Singleline);
-
-        private static readonly Regex PeriodTimeOfDayRegex =
-            new Regex(DateTimeDefinitions.PeriodTimeOfDayRegex, RegexOptions.Singleline);
-
-        private static readonly Regex PeriodSpecificTimeOfDayRegex =
-            new Regex(DateTimeDefinitions.PeriodSpecificTimeOfDayRegex, RegexOptions.Singleline);
-
-        private static readonly Regex TimeTimeUnitRegex =
-            new Regex(DateTimeDefinitions.TimeUnitRegex, RegexOptions.Singleline);
-
-        private static readonly Regex TimeFollowedUnit =
-            new Regex(DateTimeDefinitions.TimeFollowedUnit, RegexOptions.Singleline);
-
         public static readonly Regex TimeNumberCombinedWithUnit =
             new Regex(DateTimeDefinitions.TimeNumberCombinedWithUnit, RegexOptions.Singleline);
 
@@ -91,6 +52,44 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public static readonly Regex WeekDaysRegex =
             new Regex(DateTimeDefinitions.WeekDayRegex, RegexOptions.Singleline);
 
+        private static readonly Regex[] SimpleCases =
+{
+            FrenchTimePeriodExtractorConfiguration.PureNumFromTo,
+            FrenchTimePeriodExtractorConfiguration.PureNumBetweenAnd,
+            FrenchTimePeriodExtractorConfiguration.SpecificTimeOfDayRegex,
+        };
+
+        private static readonly Regex FromRegex =
+            new Regex(DateTimeDefinitions.FromRegex2, RegexOptions.Singleline);
+
+        private static readonly Regex ConnectorAndRegex =
+            new Regex(DateTimeDefinitions.ConnectorAndRegex, RegexOptions.Singleline);
+
+        private static readonly Regex PeriodTimeOfDayRegex =
+            new Regex(DateTimeDefinitions.PeriodTimeOfDayRegex, RegexOptions.Singleline);
+
+        private static readonly Regex PeriodSpecificTimeOfDayRegex =
+            new Regex(DateTimeDefinitions.PeriodSpecificTimeOfDayRegex, RegexOptions.Singleline);
+
+        private static readonly Regex TimeTimeUnitRegex =
+            new Regex(DateTimeDefinitions.TimeUnitRegex, RegexOptions.Singleline);
+
+        private static readonly Regex TimeFollowedUnit =
+            new Regex(DateTimeDefinitions.TimeFollowedUnit, RegexOptions.Singleline);
+
+        public FrenchDateTimePeriodExtractorConfiguration(IOptionsConfiguration config)
+            : base(config)
+        {
+            TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
+
+            CardinalExtractor = Number.English.CardinalExtractor.GetInstance();
+            SingleDateExtractor = new BaseDateExtractor(new FrenchDateExtractorConfiguration(this));
+            SingleTimeExtractor = new BaseTimeExtractor(new FrenchTimeExtractorConfiguration(this));
+            SingleDateTimeExtractor = new BaseDateTimeExtractor(new FrenchDateTimeExtractorConfiguration(this));
+            DurationExtractor = new BaseDurationExtractor(new FrenchDurationExtractorConfiguration(this));
+            TimePeriodExtractor = new BaseTimePeriodExtractor(new FrenchTimePeriodExtractorConfiguration(this));
+        }
+
         public IEnumerable<Regex> SimpleCasesRegex => SimpleCases;
 
         public Regex PrepositionRegex => FrenchTimePeriodExtractorConfiguration.PrepositionRegex;
@@ -107,11 +106,13 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public Regex PastPrefixRegex => FrenchDatePeriodExtractorConfiguration.PastPrefixRegex;
 
         // Note: FR 'next' i.e 'prochain' is a suffix following after, i.e 'lundi prochain', however 'prefix' is enforced by interface
-        public Regex NextPrefixRegex =>FrenchDatePeriodExtractorConfiguration.NextPrefixRegex; 
+        public Regex NextPrefixRegex => FrenchDatePeriodExtractorConfiguration.NextPrefixRegex;
 
         public Regex FutureSuffixRegex => FrenchDatePeriodExtractorConfiguration.FutureSuffixRegex;
 
         public Regex WeekDayRegex => WeekDaysRegex;
+
+        public string TokenBeforeDate { get; }
 
         public IExtractor CardinalExtractor { get; }
 

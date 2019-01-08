@@ -165,6 +165,8 @@ public class ChineseNumeric {
 
     public static final String ZeroToNineIntegerRegex = "[一二三四五六七八九零壹贰貳叁肆伍陆陸柒捌玖〇两兩俩倆仨]";
 
+    public static final String HalfUnitRegex = "半";
+
     public static final String NegativeNumberTermsRegex = "[负負]";
 
     public static final String NegativeNumberTermsRegexNum = "((?<!(\\d+\\s*)|[-－])[-－])";

@@ -205,8 +205,7 @@
     "Input": "Hello, @Carol, please write to me at Dave@abc.com for more information on task #A1",
     "NotSupportedByDesign": "python",
     "Results": []
-  }
-  ,
+  },
   {
     "Input": "http://127.0.0.1:8080",
     "NotSupportedByDesign": "python",
@@ -219,8 +218,7 @@
         }
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "http://localhost:8080",
     "NotSupportedByDesign": "python",
@@ -233,8 +231,7 @@
         }
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "http://localhost:8080#123",
     "NotSupportedByDesign": "python",
@@ -247,8 +244,7 @@
         }
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "http://localhost:8080/#/123",
     "NotSupportedByDesign": "python",
@@ -261,8 +257,7 @@
         }
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "http://127.0.0.1:8080/#/123",
     "NotSupportedByDesign": "python",
@@ -275,8 +270,7 @@
         }
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "['http://twitter.com/#!/KCGtechnoly/status/9042443475840', None]",
     "NotSupportedByDesign": "python",
@@ -289,14 +283,12 @@
         }
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "The DNS server is 8.8.8.8",
     "NotSupportedByDesign": "python",
     "Results": []
-  }
-  ,
+  },
   {
     "Input": "MORE:https://bit.ly/2jm6eu3",
     "NotSupportedByDesign": "python",
@@ -311,8 +303,7 @@
         }
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "May 5th.https://t.co/YCUZfuyyHZ",
     "NotSupportedByDesign": "python",
@@ -327,8 +318,7 @@
         }
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "All of these are valid URLs: bit.ly, nyti.ms, sound.academy, pep.si, lero.aws...",
     "NotSupportedByDesign": "python",
@@ -379,14 +369,12 @@
         }
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "john.de@cooso.com.au",
     "NotSupportedByDesign": "python",
     "Results": []
-  }
-  ,
+  },
   {
     "Input": "Please visit https://luis.ai?action=add for more information",
     "NotSupportedByDesign": "python",
@@ -401,8 +389,7 @@
         }
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Please visit https://luis.xxx?action=add for more information",
     "NotSupportedByDesign": "javascript, python",

@@ -16,7 +16,9 @@
           "PastResolution": {
             "duration": "10800"
           }
-        }
+        },
+        "Start": 7,
+        "Length": 2
       }
     ],
     "NotSupported": "dotNet",
@@ -39,7 +41,9 @@
           "PastResolution": {
             "duration": "259200"
           }
-        }
+        },
+        "Start": 7,
+        "Length": 7
       }
     ],
     "NotSupported": "dotNet",
@@ -62,7 +66,9 @@
           "PastResolution": {
             "duration": "110376000"
           }
-        }
+        },
+        "Start": 7,
+        "Length": 8
       }
     ],
     "NotSupported": "dotNet",
@@ -85,7 +91,9 @@
           "PastResolution": {
             "duration": "10800"
           }
-        }
+        },
+        "Start": 7,
+        "Length": 3
       }
     ],
     "NotSupported": "dotNet",
@@ -108,30 +116,9 @@
           "PastResolution": {
             "duration": "10800"
           }
-        }
-      }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
-  },
-  {
-    "Input": "Ik ben 3 dagen weg",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "Results": [
-      {
-        "Text": "3 dagen",
-        "Type": "duration",
-        "Value": {
-          "Timex": "P3D",
-          "FutureResolution": {
-            "duration": "259200"
-          },
-          "PastResolution": {
-            "duration": "259200"
-          }
-        }
+        },
+        "Start": 7,
+        "Length": 5
       }
     ],
     "NotSupported": "dotNet",
@@ -154,7 +141,9 @@
           "PastResolution": {
             "duration": "7776000"
           }
-        }
+        },
+        "Start": 7,
+        "Length": 9
       }
     ],
     "NotSupported": "dotNet",
@@ -177,7 +166,9 @@
           "PastResolution": {
             "duration": "180"
           }
-        }
+        },
+        "Start": 7,
+        "Length": 9
       }
     ],
     "NotSupported": "dotNet",
@@ -200,7 +191,9 @@
           "PastResolution": {
             "duration": "180"
           }
-        }
+        },
+        "Start": 7,
+        "Length": 5
       }
     ],
     "NotSupported": "dotNet",
@@ -223,7 +216,9 @@
           "PastResolution": {
             "duration": "3.5"
           }
-        }
+        },
+        "Start": 7,
+        "Length": 12
       }
     ],
     "NotSupported": "dotNet",
@@ -246,7 +241,9 @@
           "PastResolution": {
             "duration": "123.45"
           }
-        }
+        },
+        "Start": 7,
+        "Length": 10
       }
     ],
     "NotSupported": "dotNet",
@@ -259,7 +256,7 @@
     },
     "Results": [
       {
-        "Text": "two weken",
+        "Text": "twee weken",
         "Type": "duration",
         "Value": {
           "Timex": "P2W",
@@ -269,7 +266,9 @@
           "PastResolution": {
             "duration": "1209600"
           }
-        }
+        },
+        "Start": 7,
+        "Length": 10
       }
     ],
     "NotSupported": "dotNet",
@@ -292,7 +291,9 @@
           "PastResolution": {
             "duration": "1200"
           }
-        }
+        },
+        "Start": 8,
+        "Length": 11
       }
     ],
     "NotSupported": "dotNet",
@@ -315,7 +316,9 @@
           "PastResolution": {
             "duration": "86400"
           }
-        }
+        },
+        "Start": 7,
+        "Length": 13
       }
     ],
     "NotSupported": "dotNet",
@@ -338,7 +341,9 @@
           "PastResolution": {
             "duration": "86400"
           }
-        }
+        },
+        "Start": 7,
+        "Length": 11
       }
     ],
     "NotSupported": "dotNet",
@@ -361,7 +366,9 @@
           "PastResolution": {
             "duration": "604800"
           }
-        }
+        },
+        "Start": 7,
+        "Length": 12
       }
     ],
     "NotSupported": "dotNet",
@@ -384,7 +391,9 @@
           "PastResolution": {
             "duration": "2592000"
           }
-        }
+        },
+        "Start": 7,
+        "Length": 13
       }
     ],
     "NotSupported": "dotNet",
@@ -407,7 +416,9 @@
           "PastResolution": {
             "duration": "31536000"
           }
-        }
+        },
+        "Start": 7,
+        "Length": 13
       }
     ],
     "NotSupported": "dotNet",
@@ -430,7 +441,9 @@
           "PastResolution": {
             "duration": "86400"
           }
-        }
+        },
+        "Start": 7,
+        "Length": 12
       }
     ],
     "NotSupported": "dotNet",
@@ -453,7 +466,9 @@
           "PastResolution": {
             "duration": "604800"
           }
-        }
+        },
+        "Start": 7,
+        "Length": 13
       }
     ],
     "NotSupported": "dotNet",
@@ -476,7 +491,9 @@
           "PastResolution": {
             "duration": "2592000"
           }
-        }
+        },
+        "Start": 7,
+        "Length": 14
       }
     ],
     "NotSupported": "dotNet",
@@ -499,7 +516,9 @@
           "PastResolution": {
             "duration": "31536000"
           }
-        }
+        },
+        "Start": 7,
+        "Length": 14
       }
     ],
     "NotSupported": "dotNet",
@@ -522,30 +541,9 @@
           "PastResolution": {
             "duration": "3600"
           }
-        }
-      }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
-  },
-  {
-    "Input": "Ik ben de hele dag weg",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "Results": [
-      {
-        "Text": "de hele dag",
-        "Type": "duration",
-        "Value": {
-          "Timex": "P1D",
-          "FutureResolution": {
-            "duration": "86400"
-          },
-          "PastResolution": {
-            "duration": "86400"
-          }
-        }
+        },
+        "Start": 7,
+        "Length": 7
       }
     ],
     "NotSupported": "dotNet",
@@ -568,7 +566,9 @@
           "PastResolution": {
             "duration": "15768000"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 9
       }
     ],
     "NotSupported": "dotNet",
@@ -591,7 +591,9 @@
           "PastResolution": {
             "duration": "15768000"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 13
       }
     ],
     "NotSupported": "dotNet",
@@ -614,7 +616,9 @@
           "PastResolution": {
             "duration": "5400"
           }
-        }
+        },
+        "Start": 7,
+        "Length": 13
       }
     ],
     "NotSupported": "dotNet",
@@ -637,7 +641,9 @@
           "PastResolution": {
             "duration": "7776000"
           }
-        }
+        },
+        "Start": 7,
+        "Length": 14
       }
     ],
     "NotSupported": "dotNet",
@@ -660,7 +666,9 @@
           "PastResolution": {
             "duration": "900"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 8
       }
     ],
     "NotSupported": "dotNet",
@@ -683,7 +691,9 @@
           "PastResolution": {
             "duration": "1800"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 8
       }
     ],
     "NotSupported": "dotNet",
@@ -706,7 +716,9 @@
           "PastResolution": {
             "duration": "7200"
           }
-        }
+        },
+        "Start": 7,
+        "Length": 8
       }
     ],
     "NotSupported": "dotNet",
@@ -729,7 +741,9 @@
           "PastResolution": {
             "duration": "9000"
           }
-        }
+        },
+        "Start": 7,
+        "Length": 17
       }
     ],
     "NotSupported": "dotNet",
@@ -753,7 +767,9 @@
           "PastResolution": {
             "duration": "35942400"
           }
-        }
+        },
+        "Start": 7,
+        "Length": 27
       }
     ],
     "NotSupportedByDesign": "javascript,python,java"
@@ -776,7 +792,9 @@
           "PastResolution": {
             "duration": "2764800"
           }
-        }
+        },
+        "Start": 7,
+        "Length": 18
       }
     ],
     "NotSupportedByDesign": "javascript,python,java"
@@ -799,7 +817,9 @@
           "PastResolution": {
             "duration": "864000"
           }
-        }
+        },
+        "Start": 7,
+        "Length": 22
       }
     ],
     "NotSupportedByDesign": "javascript,python,java"
@@ -822,7 +842,9 @@
           "PastResolution": {
             "duration": "1209600"
           }
-        }
+        },
+        "Start": 7,
+        "Length": 14
       }
     ],
     "NotSupportedByDesign": "javascript,python,java"
@@ -845,7 +867,9 @@
           "PastResolution": {
             "duration": "172800"
           }
-        }
+        },
+        "Start": 7,
+        "Length": 14
       }
     ],
     "NotSupportedByDesign": "javascript,python,java"
@@ -869,7 +893,9 @@
           "PastResolution": {
             "duration": "172800"
           }
-        }
+        },
+        "Start": 7,
+        "Length": 25
       }
     ],
     "NotSupportedByDesign": "javascript,python,java"
@@ -893,7 +919,9 @@
           "PastResolution": {
             "duration": "3600"
           }
-        }
+        },
+        "Start": 7,
+        "Length": 16
       }
     ],
     "NotSupportedByDesign": "javascript,python,java"
@@ -915,7 +943,9 @@
           "PastResolution": {
             "duration": "3600"
           }
-        }
+        },
+        "Start": 7,
+        "Length": 11
       }
     ],
     "NotSupported": "dotNet",
@@ -938,7 +968,9 @@
           "PastResolution": {
             "duration": "604800"
           }
-        }
+        },
+        "Start": 21,
+        "Length": 12
       }
     ],
     "NotSupported": "dotNet",
@@ -961,7 +993,9 @@
           "PastResolution": {
             "duration": "2592000"
           }
-        }
+        },
+        "Start": 10,
+        "Length": 13
       }
     ],
     "NotSupported": "dotNet",

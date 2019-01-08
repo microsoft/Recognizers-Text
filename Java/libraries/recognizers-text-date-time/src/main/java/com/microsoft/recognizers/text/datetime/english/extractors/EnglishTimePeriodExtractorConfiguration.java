@@ -5,6 +5,7 @@ import com.microsoft.recognizers.text.datetime.DateTimeOptions;
 import com.microsoft.recognizers.text.datetime.config.BaseOptionsConfiguration;
 import com.microsoft.recognizers.text.datetime.english.parsers.EnglishDatetimeUtilityConfiguration;
 import com.microsoft.recognizers.text.datetime.extractors.BaseTimeExtractor;
+import com.microsoft.recognizers.text.datetime.extractors.BaseTimeZoneExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.IDateTimeExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.config.ITimePeriodExtractorConfiguration;
 import com.microsoft.recognizers.text.datetime.extractors.config.ResultIndex;
@@ -57,6 +58,7 @@ public class EnglishTimePeriodExtractorConfiguration extends BaseOptionsConfigur
         singleTimeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration(options));
         utilityConfiguration = new EnglishDatetimeUtilityConfiguration();
         integerExtractor = IntegerExtractor.getInstance();
+        timeZoneExtractor = new BaseTimeZoneExtractor(new EnglishTimeZoneExtractorConfiguration(options));
     }
 
     private IDateTimeUtilityConfiguration utilityConfiguration;
@@ -76,6 +78,13 @@ public class EnglishTimePeriodExtractorConfiguration extends BaseOptionsConfigur
     public final IExtractor getIntegerExtractor() {
         return integerExtractor;
     }
+
+    private final IDateTimeExtractor timeZoneExtractor;
+
+    public IDateTimeExtractor getTimeZoneExtractor() {
+        return timeZoneExtractor;
+    }
+
 
     public Iterable<Pattern> getSimpleCasesRegex() {
         return getSimpleCasesRegex;
@@ -105,8 +114,7 @@ public class EnglishTimePeriodExtractorConfiguration extends BaseOptionsConfigur
     public final ResultIndex getFromTokenIndex(String input) {
         ResultIndex result = new ResultIndex(false, -1);
         if (input.endsWith("from")) {
-            result = result.withIndex(input.lastIndexOf("from"));
-            result = result.withResult(true);
+            result = new ResultIndex(true, input.lastIndexOf("from"));
         }
 
         return result;
@@ -115,8 +123,7 @@ public class EnglishTimePeriodExtractorConfiguration extends BaseOptionsConfigur
     public final ResultIndex getBetweenTokenIndex(String input) {
         ResultIndex result = new ResultIndex(false, -1);
         if (input.endsWith("between")) {
-            result = result.withIndex(input.lastIndexOf("between"));
-            result = result.withResult(true);
+            result = new ResultIndex(true, input.lastIndexOf("between"));
         }
 
         return result;
