@@ -1,44 +1,44 @@
-﻿using System.Text.RegularExpressions;
-using System.Collections.Immutable;
+﻿using System.Collections.Immutable;
+using System.Text.RegularExpressions;
 
-using Microsoft.Recognizers.Definitions.Italian;
+using Microsoft.Recognizers.Definitions.French;
 
-namespace Microsoft.Recognizers.Text.DateTime.Italian
+namespace Microsoft.Recognizers.Text.DateTime.French
 {
-    public class ItalianDurationExtractorConfiguration : BaseOptionsConfiguration, IDurationExtractorConfiguration
+    public class FrenchDurationExtractorConfiguration : BaseOptionsConfiguration, IDurationExtractorConfiguration
     {
         public static readonly Regex DurationUnitRegex =
             new Regex(DateTimeDefinitions.DurationUnitRegex, RegexOptions.Singleline);
 
-        public static readonly Regex SuffixAndRegex = 
+        public static readonly Regex SuffixAndRegex =
             new Regex(DateTimeDefinitions.SuffixAndRegex, RegexOptions.Singleline);
 
-        public static readonly Regex DurationFollowedUnit = 
+        public static readonly Regex DurationFollowedUnit =
             new Regex(DateTimeDefinitions.DurationFollowedUnit, RegexOptions.Singleline);
 
-        public static readonly Regex NumberCombinedWithDurationUnit = 
+        public static readonly Regex NumberCombinedWithDurationUnit =
             new Regex(DateTimeDefinitions.NumberCombinedWithDurationUnit, RegexOptions.Singleline);
 
-        public static readonly Regex AnUnitRegex = 
+        public static readonly Regex AnUnitRegex =
             new Regex(DateTimeDefinitions.AnUnitRegex, RegexOptions.Singleline);
 
         public static readonly Regex DuringRegex =
             new Regex(DateTimeDefinitions.DuringRegex, RegexOptions.Singleline);
 
-        public static readonly Regex AllRegex = 
+        public static readonly Regex AllRegex =
             new Regex(DateTimeDefinitions.AllRegex, RegexOptions.Singleline);
 
-        public static readonly Regex HalfRegex = 
+        public static readonly Regex HalfRegex =
             new Regex(DateTimeDefinitions.HalfRegex, RegexOptions.Singleline);
 
-        public static readonly Regex ConjunctionRegex = 
+        public static readonly Regex ConjunctionRegex =
             new Regex(DateTimeDefinitions.ConjunctionRegex, RegexOptions.Singleline);
 
-        //quelques = "a few, some," etc 
-        public static readonly Regex InexactNumberRegex = 
+        // quelques = "a few, some," etc
+        public static readonly Regex InexactNumberRegex =
             new Regex(DateTimeDefinitions.InexactNumberRegex, RegexOptions.Singleline);
 
-        public static readonly Regex InexactNumberUnitRegex = 
+        public static readonly Regex InexactNumberUnitRegex =
             new Regex(DateTimeDefinitions.InexactNumberUnitRegex, RegexOptions.Singleline);
 
         public static readonly Regex RelativeDurationUnitRegex =
@@ -53,9 +53,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         public static readonly Regex LessThanRegex =
             new Regex(DateTimeDefinitions.LessThanRegex, RegexOptions.Singleline);
 
-        public ItalianDurationExtractorConfiguration(IOptionsConfiguration config) : base(config)
+        public FrenchDurationExtractorConfiguration(IOptionsConfiguration config)
+            : base(config)
         {
-            CardinalExtractor = Number.Italian.CardinalExtractor.GetInstance();
+            CardinalExtractor = Number.French.CardinalExtractor.GetInstance();
             UnitMap = DateTimeDefinitions.UnitMap.ToImmutableDictionary();
             UnitValueMap = DateTimeDefinitions.UnitValueMap.ToImmutableDictionary();
         }
@@ -66,7 +67,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public IImmutableDictionary<string, long> UnitValueMap { get; }
 
-        Regex IDurationExtractorConfiguration.FollowedUnit => DurationFollowedUnit; 
+        Regex IDurationExtractorConfiguration.FollowedUnit => DurationFollowedUnit;
 
         Regex IDurationExtractorConfiguration.NumberCombinedWithUnit => NumberCombinedWithDurationUnit;
 
