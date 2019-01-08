@@ -1,27 +1,25 @@
 ﻿using System.Text.RegularExpressions;
-
+using Microsoft.Recognizers.Definitions.French;
 using Microsoft.Recognizers.Text.DateTime.French.Utilities;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
-using Microsoft.Recognizers.Definitions.French;
 
 namespace Microsoft.Recognizers.Text.DateTime.French
 {
     public class FrenchDateTimeExtractorConfiguration : BaseOptionsConfiguration, IDateTimeExtractorConfiguration
     {
-
         // à - time at which, en - length of time, dans - amount of time
-        public static readonly Regex PrepositionRegex = 
+        public static readonly Regex PrepositionRegex =
           new Regex(DateTimeDefinitions.PrepositionRegex, RegexOptions.Singleline);
 
         // right now, as soon as possible, recently, previously
         public static readonly Regex NowRegex =
             new Regex(DateTimeDefinitions.NowRegex, RegexOptions.Singleline);
-        
+
         // in the evening, afternoon, morning, night
-        public static readonly Regex SuffixRegex = 
+        public static readonly Regex SuffixRegex =
             new Regex(DateTimeDefinitions.SuffixRegex, RegexOptions.Singleline);
 
-        public static readonly Regex TimeOfDayRegex = 
+        public static readonly Regex TimeOfDayRegex =
             new Regex(DateTimeDefinitions.TimeOfDayRegex, RegexOptions.Singleline);
 
         public static readonly Regex SpecificTimeOfDayRegex =
@@ -31,7 +29,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
              new Regex(DateTimeDefinitions.TimeOfTodayAfterRegex, RegexOptions.Singleline);
 
         public static readonly Regex TimeOfTodayBeforeRegex =
-            new Regex(DateTimeDefinitions.TimeOfTodayBeforeRegex, RegexOptions.Singleline); 
+            new Regex(DateTimeDefinitions.TimeOfTodayBeforeRegex, RegexOptions.Singleline);
 
         public static readonly Regex SimpleTimeOfTodayAfterRegex =
             new Regex(DateTimeDefinitions.SimpleTimeOfTodayAfterRegex, RegexOptions.Singleline);
@@ -39,22 +37,23 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public static readonly Regex SimpleTimeOfTodayBeforeRegex =
             new Regex(DateTimeDefinitions.SimpleTimeOfTodayBeforeRegex, RegexOptions.Singleline);
 
-        public static readonly Regex SpecificEndOfRegex = 
+        public static readonly Regex SpecificEndOfRegex =
             new Regex(DateTimeDefinitions.SpecificEndOfRegex, RegexOptions.Singleline);
 
         public static readonly Regex UnspecificEndOfRegex =
             new Regex(DateTimeDefinitions.UnspecificEndOfRegex, RegexOptions.Singleline);
 
-        public static readonly Regex UnitRegex = 
+        public static readonly Regex UnitRegex =
             new Regex(DateTimeDefinitions.TimeUnitRegex, RegexOptions.Singleline);
 
-        public static readonly Regex NumberAsTimeRegex = 
+        public static readonly Regex NumberAsTimeRegex =
             new Regex(DateTimeDefinitions.NumberAsTimeRegex, RegexOptions.Singleline);
 
-        public static readonly Regex DateNumberConnectorRegex = 
+        public static readonly Regex DateNumberConnectorRegex =
             new Regex(DateTimeDefinitions.DateNumberConnectorRegex, RegexOptions.Singleline);
 
-        public FrenchDateTimeExtractorConfiguration(IOptionsConfiguration config) : base(config)
+        public FrenchDateTimeExtractorConfiguration(IOptionsConfiguration config)
+            : base(config)
         {
             IntegerExtractor = Number.French.IntegerExtractor.GetInstance();
             DatePointExtractor = new BaseDateExtractor(new FrenchDateExtractorConfiguration(this));
@@ -99,9 +98,9 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public bool IsConnector(string text)
         {
-            return (string.IsNullOrEmpty(text) || text.Equals(",") ||
+            return string.IsNullOrEmpty(text) || text.Equals(",") ||
                         PrepositionRegex.IsMatch(text) || text.Equals("t") || text.Equals("pour") ||
-                        text.Equals("vers"));
+                        text.Equals("vers");
         }
     }
 }

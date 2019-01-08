@@ -1034,50 +1034,6 @@
     ]
   },
   {
-    "Input": "It will happen between 10 and 11:30 on 1/1/2015",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "javascript, python",
-    "Results": [
-      {
-        "Text": "1/1/2015",
-        "Start": 19,
-        "End": 26,
-        "TypeName": "datetimeV2.date",
-        "Resolution": {
-          "values": [
-            {
-              "timex": "2015-01-01",
-              "type": "date",
-              "value": "2015-01-01"
-            }
-          ]
-        }
-      },
-      {
-        "Text": "11:30",
-        "Start": 30,
-        "End": 34,
-        "TypeName": "datetimeV2.time",
-        "Resolution": {
-          "values": [
-            {
-              "timex": "T11:30",
-              "type": "time",
-              "value": "11:30:00"
-            },
-            {
-              "timex": "T23:30",
-              "type": "time",
-              "value": "23:30:00"
-            }
-          ]
-        }
-      }
-    ]
-  },
-  {
     "Input": "It will happen 1/1/2015 after 2:00",
     "Context": {
       "ReferenceDateTime": "2018-06-26T00:00:00"

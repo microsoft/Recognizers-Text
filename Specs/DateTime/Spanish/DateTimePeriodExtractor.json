@@ -115,6 +115,18 @@
     ]
   },
   {
+    "Input": "Estaré afuera de 4pm a 5pm del 2017-6-6",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "de 4pm a 5pm del 2017-6-6",
+        "Type": "datetimerange",
+        "Start": 14,
+        "Length": 25
+      }
+    ]
+  },
+  {
     "Input": "Estaré afuera de 4pm a 5pm el 5 de Mayo del 2018",
     "Results": [
       {
@@ -192,6 +204,31 @@
     ]
   },
   {
+    "Input": "Regresaré por la noche",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "la noche",
+        "Type": "datetimerange",
+        "Start": 14,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Regresaré a la madrugada",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "a la madrugada",
+        "Type": "datetimerange",
+        "Start": 10,
+        "Length": 14
+      }
+    ]
+  },
+  {
     "Input": "Regresaré esta tarde",
     "Results": [
       {
@@ -201,6 +238,19 @@
         "Length": 10
       }
     ]
+  },
+  {
+    "Input": "Regresaré por la mañana",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+        {
+          "Text": "la mañana",
+          "Type": "datetimerange",
+          "Start": 12,
+          "Length": 10
+        }
+      ]
   },
   {
     "Input": "Regresaré esta mañana",

@@ -5,6 +5,34 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 {
     public class PortugueseSetParserConfiguration : BaseOptionsConfiguration, ISetParserConfiguration
     {
+        public PortugueseSetParserConfiguration(ICommonDateTimeParserConfiguration config)
+            : base(config)
+        {
+            DurationExtractor = config.DurationExtractor;
+            TimeExtractor = config.TimeExtractor;
+            DateExtractor = config.DateExtractor;
+            DateTimeExtractor = config.DateTimeExtractor;
+            DatePeriodExtractor = config.DatePeriodExtractor;
+            TimePeriodExtractor = config.TimePeriodExtractor;
+            DateTimePeriodExtractor = config.DateTimePeriodExtractor;
+
+            DurationParser = config.DurationParser;
+            TimeParser = config.TimeParser;
+            DateParser = config.DateParser;
+            DateTimeParser = config.DateTimeParser;
+            DatePeriodParser = config.DatePeriodParser;
+            TimePeriodParser = config.TimePeriodParser;
+            DateTimePeriodParser = config.DateTimePeriodParser;
+            UnitMap = config.UnitMap;
+
+            EachPrefixRegex = PortugueseSetExtractorConfiguration.EachPrefixRegex;
+            PeriodicRegex = PortugueseSetExtractorConfiguration.PeriodicRegex;
+            EachUnitRegex = PortugueseSetExtractorConfiguration.EachUnitRegex;
+            EachDayRegex = PortugueseSetExtractorConfiguration.EachDayRegex;
+            SetWeekDayRegex = PortugueseSetExtractorConfiguration.SetWeekDayRegex;
+            SetEachRegex = PortugueseSetExtractorConfiguration.SetEachRegex;
+        }
+
         public IDateTimeExtractor DurationExtractor { get; }
 
         public IDateTimeParser DurationParser { get; }
@@ -46,33 +74,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         public Regex SetWeekDayRegex { get; }
 
         public Regex SetEachRegex { get; }
-
-        public PortugueseSetParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config)
-        {
-            DurationExtractor = config.DurationExtractor;
-            TimeExtractor = config.TimeExtractor;
-            DateExtractor = config.DateExtractor;
-            DateTimeExtractor = config.DateTimeExtractor;
-            DatePeriodExtractor = config.DatePeriodExtractor;
-            TimePeriodExtractor = config.TimePeriodExtractor;
-            DateTimePeriodExtractor = config.DateTimePeriodExtractor;
-
-            DurationParser = config.DurationParser;
-            TimeParser = config.TimeParser;
-            DateParser = config.DateParser;
-            DateTimeParser = config.DateTimeParser;
-            DatePeriodParser = config.DatePeriodParser;
-            TimePeriodParser = config.TimePeriodParser;
-            DateTimePeriodParser = config.DateTimePeriodParser;
-            UnitMap = config.UnitMap;
-
-            EachPrefixRegex = PortugueseSetExtractorConfiguration.EachPrefixRegex;
-            PeriodicRegex = PortugueseSetExtractorConfiguration.PeriodicRegex;
-            EachUnitRegex = PortugueseSetExtractorConfiguration.EachUnitRegex;
-            EachDayRegex = PortugueseSetExtractorConfiguration.EachDayRegex;
-            SetWeekDayRegex = PortugueseSetExtractorConfiguration.SetWeekDayRegex;
-            SetEachRegex = PortugueseSetExtractorConfiguration.SetEachRegex;
-        }
 
         public bool GetMatchedDailyTimex(string text, out string timex)
         {
@@ -136,5 +137,4 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             return true;
         }
     }
-
 }

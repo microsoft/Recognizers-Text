@@ -125,31 +125,6 @@
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
-    "Input": "Ik ben 3 dagen weg",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "Results": [
-      {
-        "Text": "3 dagen",
-        "Type": "duration",
-        "Value": {
-          "Timex": "P3D",
-          "FutureResolution": {
-            "duration": "259200"
-          },
-          "PastResolution": {
-            "duration": "259200"
-          }
-        },
-        "Start": 7,
-        "Length": 7
-      }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
-  },
-  {
     "Input": "Ik ben 3 maanden weg",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -569,31 +544,6 @@
         },
         "Start": 7,
         "Length": 7
-      }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
-  },
-  {
-    "Input": "Ik ben de hele dag weg",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "Results": [
-      {
-        "Text": "de hele dag",
-        "Type": "duration",
-        "Value": {
-          "Timex": "P1D",
-          "FutureResolution": {
-            "duration": "86400"
-          },
-          "PastResolution": {
-            "duration": "86400"
-          }
-        },
-        "Start": 7,
-        "Length": 11
       }
     ],
     "NotSupported": "dotNet",

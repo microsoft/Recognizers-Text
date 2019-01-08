@@ -5,6 +5,34 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 {
     public class FrenchSetParserConfiguration : BaseOptionsConfiguration, ISetParserConfiguration
     {
+        public FrenchSetParserConfiguration(ICommonDateTimeParserConfiguration config)
+            : base(config)
+        {
+            DurationExtractor = config.DurationExtractor;
+            TimeExtractor = config.TimeExtractor;
+            DateExtractor = config.DateExtractor;
+            DateTimeExtractor = config.DateTimeExtractor;
+            DatePeriodExtractor = config.DatePeriodExtractor;
+            TimePeriodExtractor = config.TimePeriodExtractor;
+            DateTimePeriodExtractor = config.DateTimePeriodExtractor;
+
+            DurationParser = config.DurationParser;
+            TimeParser = config.TimeParser;
+            DateParser = config.DateParser;
+            DateTimeParser = config.DateTimeParser;
+            DatePeriodParser = config.DatePeriodParser;
+            TimePeriodParser = config.TimePeriodParser;
+            DateTimePeriodParser = config.DateTimePeriodParser;
+            UnitMap = config.UnitMap;
+
+            EachPrefixRegex = FrenchSetExtractorConfiguration.EachPrefixRegex;
+            PeriodicRegex = FrenchSetExtractorConfiguration.PeriodicRegex;
+            EachUnitRegex = FrenchSetExtractorConfiguration.EachUnitRegex;
+            EachDayRegex = FrenchSetExtractorConfiguration.EachDayRegex;
+            SetWeekDayRegex = FrenchSetExtractorConfiguration.SetWeekDayRegex;
+            SetEachRegex = FrenchSetExtractorConfiguration.SetEachRegex;
+        }
+
         public IDateTimeExtractor DurationExtractor { get; }
 
         public IDateTimeParser DurationParser { get; }
@@ -47,55 +75,33 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public Regex SetEachRegex { get; }
 
-        public FrenchSetParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config)
-        {
-            DurationExtractor = config.DurationExtractor;
-            TimeExtractor = config.TimeExtractor;
-            DateExtractor = config.DateExtractor;
-            DateTimeExtractor = config.DateTimeExtractor;
-            DatePeriodExtractor = config.DatePeriodExtractor;
-            TimePeriodExtractor = config.TimePeriodExtractor;
-            DateTimePeriodExtractor = config.DateTimePeriodExtractor;
-
-            DurationParser = config.DurationParser;
-            TimeParser = config.TimeParser;
-            DateParser = config.DateParser;
-            DateTimeParser = config.DateTimeParser;
-            DatePeriodParser = config.DatePeriodParser;
-            TimePeriodParser = config.TimePeriodParser;
-            DateTimePeriodParser = config.DateTimePeriodParser;
-            UnitMap = config.UnitMap;
-
-            EachPrefixRegex = FrenchSetExtractorConfiguration.EachPrefixRegex;
-            PeriodicRegex = FrenchSetExtractorConfiguration.PeriodicRegex;
-            EachUnitRegex = FrenchSetExtractorConfiguration.EachUnitRegex;
-            EachDayRegex = FrenchSetExtractorConfiguration.EachDayRegex;
-            SetWeekDayRegex = FrenchSetExtractorConfiguration.SetWeekDayRegex;
-            SetEachRegex = FrenchSetExtractorConfiguration.SetEachRegex;
-        }
-
         public bool GetMatchedDailyTimex(string text, out string timex)
         {
             var trimmedText = text.Trim().ToLowerInvariant();
-            if (trimmedText.Equals("quotidien") || trimmedText.Equals("quotidienne") || 
-                trimmedText.Equals("jours") || trimmedText.Equals("journellement")) // daily
+            if (trimmedText.Equals("quotidien") || trimmedText.Equals("quotidienne") ||
+                trimmedText.Equals("jours") || trimmedText.Equals("journellement"))
             {
+                // daily
                 timex = "P1D";
             }
-            else if (trimmedText.Equals("hebdomadaire"))           // weekly
+            else if (trimmedText.Equals("hebdomadaire"))
             {
+                // weekly
                 timex = "P1W";
             }
-            else if (trimmedText.Equals("bihebdomadaire"))          // bi weekly
+            else if (trimmedText.Equals("bihebdomadaire"))
             {
+                // bi weekly
                 timex = "P2W";
             }
-            else if (trimmedText.Equals("mensuel") || trimmedText.Equals("mensuelle"))              // monthly
+            else if (trimmedText.Equals("mensuel") || trimmedText.Equals("mensuelle"))
             {
+                // monthly
                 timex = "P1M";
             }
-            else if (trimmedText.Equals("annuel") || trimmedText.Equals("annuellement")) // yearly/annually
+            else if (trimmedText.Equals("annuel") || trimmedText.Equals("annuellement"))
             {
+                // yearly/annually
                 timex = "P1Y";
             }
             else
@@ -103,13 +109,14 @@ namespace Microsoft.Recognizers.Text.DateTime.French
                 timex = null;
                 return false;
             }
+
             return true;
         }
 
         public bool GetMatchedUnitTimex(string text, out string timex)
         {
             var trimmedText = text.Trim().ToLowerInvariant();
-            if (trimmedText.Equals("jour")||trimmedText.Equals("journee"))
+            if (trimmedText.Equals("jour") || trimmedText.Equals("journee"))
             {
                 timex = "P1D";
             }
@@ -121,8 +128,9 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             {
                 timex = "P1M";
             }
-            else if (trimmedText.Equals("an")||trimmedText.Equals("annee")) // year
+            else if (trimmedText.Equals("an") || trimmedText.Equals("annee"))
             {
+                // year
                 timex = "P1Y";
             }
             else
@@ -133,6 +141,5 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
             return true;
         }
-
     }
 }

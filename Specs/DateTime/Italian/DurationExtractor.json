@@ -308,17 +308,6 @@
     ]
   },
   {
-    "Input": "Andrò via per 3 min",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
-    "Results": [
-      {
-        "Text": "3 min",
-        "Type": "duration"
-      }
-    ]
-  },
-  {
     "Input": "Andrò via per 30 minuti",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",

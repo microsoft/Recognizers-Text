@@ -1474,17 +1474,6 @@
     ]
   },
   {
-    "Input": "Sarò fuori a Settembre",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
-    "Results": [
-      {
-        "Text": "Settembre",
-        "Type": "daterange"
-      }
-    ]
-  },
-  {
     "Input": "Sono stato fuori lo scorso Set",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
@@ -1793,17 +1782,6 @@
     ]
   },
   {
-    "Input": "Sarò fuori dal 2 Ott. a Ottobre 22",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
-    "Results": [
-      {
-        "Text": "dal 2 Ott. a Ottobre 22",
-        "Type": "daterange"
-      }
-    ]
-  },
-  {
     "Input": "Sarò fuori da 2015/08/12 fino Ottobre 22",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
@@ -1821,28 +1799,6 @@
     "Results": [
       {
         "Text": "da venerdì 2 fino a giovedì 6",
-        "Type": "daterange"
-      }
-    ]
-  },
-  {
-    "Input": "Sarò fuori da oggi fino a domani",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
-    "Results": [
-      {
-        "Text": "da oggi fino a domani",
-        "Type": "daterange"
-      }
-    ]
-  },
-  {
-    "Input": "Sarò fuori da questo venerdì fino alla prossima domenica",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
-    "Results": [
-      {
-        "Text": "da questo venerdì fino alla prossima domenica",
         "Type": "daterange"
       }
     ]

@@ -2,10 +2,9 @@
 using System.Collections.Immutable;
 using System.Linq;
 using System.Text.RegularExpressions;
-
+using Microsoft.Recognizers.Definitions.Italian;
 using Microsoft.Recognizers.Text.DateTime.Italian.Utilities;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
-using Microsoft.Recognizers.Definitions.Italian;
 using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.Number.Italian;
 
@@ -28,7 +27,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
                 DateTimeDefinitions.MonthNumRegex,
                 RegexOptions.Singleline);
 
-        public static readonly Regex YearRegex = 
+        public static readonly Regex YearRegex =
             new Regex(
                 DateTimeDefinitions.YearRegex,
                 RegexOptions.Singleline);
@@ -38,7 +37,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
                 DateTimeDefinitions.WeekDayRegex,
                 RegexOptions.Singleline);
 
-        public static readonly Regex OnRegex = 
+        public static readonly Regex OnRegex =
             new Regex(
                 DateTimeDefinitions.OnRegex,
                 RegexOptions.Singleline);
@@ -48,22 +47,22 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
                 DateTimeDefinitions.RelaxedOnRegex,
                 RegexOptions.Singleline);
 
-        public static readonly Regex ThisRegex = 
+        public static readonly Regex ThisRegex =
             new Regex(
                 DateTimeDefinitions.ThisRegex,
                 RegexOptions.Singleline);
 
-        public static readonly Regex LastRegex = 
+        public static readonly Regex LastRegex =
             new Regex(
                 DateTimeDefinitions.LastDateRegex,
                 RegexOptions.Singleline);
 
-        public static readonly Regex NextRegex = 
+        public static readonly Regex NextRegex =
             new Regex(
                 DateTimeDefinitions.NextDateRegex,
                 RegexOptions.Singleline);
 
-        public static readonly Regex UnitRegex = 
+        public static readonly Regex UnitRegex =
             new Regex(
                 DateTimeDefinitions.DateUnitRegex,
                 RegexOptions.Singleline);
@@ -94,7 +93,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
                 DateTimeDefinitions.WeekDayOfMonthRegex,
                 RegexOptions.Singleline);
 
-        public static readonly Regex SpecialDate = 
+        public static readonly Regex SpecialDate =
             new Regex(
                 DateTimeDefinitions.SpecialDate,
                 RegexOptions.Singleline);
@@ -123,13 +122,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         public static readonly Regex[] ImplicitDateList =
         {
             OnRegex, RelaxedOnRegex, SpecialDayRegex, ThisRegex, LastRegex, NextRegex,
-            StrictWeekDay, WeekDayOfMonthRegex, SpecialDate
+            StrictWeekDay, WeekDayOfMonthRegex, SpecialDate,
         };
 
-        public static readonly Regex OfMonth = 
+        public static readonly Regex OfMonth =
             new Regex(DateTimeDefinitions.OfMonth, RegexOptions.Singleline);
 
-        public static readonly Regex MonthEnd = 
+        public static readonly Regex MonthEnd =
             new Regex(DateTimeDefinitions.MonthEnd, RegexOptions.Singleline);
 
         public static readonly Regex WeekDayEnd =
@@ -150,7 +149,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         public static readonly Regex RangeUnitRegex =
             new Regex(DateTimeDefinitions.RangeUnitRegex, RegexOptions.Singleline);
 
-        public static readonly Regex RangeConnectorSymbolRegex = 
+        public static readonly Regex RangeConnectorSymbolRegex =
             new Regex(Definitions.BaseDateTime.RangeConnectorSymbolRegex, RegexOptions.Singleline);
 
         public static readonly ImmutableDictionary<string, int> DayOfWeek =
@@ -159,10 +158,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         public static readonly ImmutableDictionary<string, int> MonthOfYear =
             DateTimeDefinitions.MonthOfYear.ToImmutableDictionary();
 
-        public static readonly Regex NonDateUnitRegex = 
+        public static readonly Regex NonDateUnitRegex =
             new Regex(@"(?<unit>heure|heures|hrs|secondes|seconde|secs|sec|minutes|minute|mins)\b", RegexOptions.Singleline);
 
-        public ItalianDateExtractorConfiguration(IOptionsConfiguration config) : base(config)
+        public ItalianDateExtractorConfiguration(IOptionsConfiguration config)
+            : base(config)
         {
             IntegerExtractor = Number.Italian.IntegerExtractor.GetInstance();
             OrdinalExtractor = Number.Italian.OrdinalExtractor.GetInstance();
@@ -203,7 +203,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
                 // (Sunday,)? 6th of April
                 new Regex(DateTimeDefinitions.DateExtractor3, dateRegexOption),
-
             };
 
             var enableDmy = DmyDateFormat ||

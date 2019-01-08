@@ -165,17 +165,6 @@
     ]
   },
   {
-    "Input": "Tornerò il 22/04",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
-    "Results": [
-      {
-        "Text": "22/04",
-        "Type": "date"
-      }
-    ]
-  },
-  {
     "Input": "Tornerò il 2015/08/12",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
@@ -204,17 +193,6 @@
     "Results": [
       {
         "Text": "11/12,16",
-        "Type": "date"
-      }
-    ]
-  },
-  {
-    "Input": "Tornerò il 1 Gen",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
-    "Results": [
-      {
-        "Text": "1 Gen",
         "Type": "date"
       }
     ]

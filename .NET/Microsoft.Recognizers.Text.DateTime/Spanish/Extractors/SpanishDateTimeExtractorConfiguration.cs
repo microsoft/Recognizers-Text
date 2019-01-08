@@ -14,7 +14,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public static readonly Regex NowRegex = new Regex(DateTimeDefinitions.NowRegex, RegexOptions.Singleline);
         public static readonly Regex SuffixRegex = new Regex(DateTimeDefinitions.SuffixRegex, RegexOptions.Singleline);
 
-        //TODO: modify it according to the corresponding English regex
+        // TODO: modify it according to the corresponding English regex
         public static readonly Regex TimeOfDayRegex = new Regex(DateTimeDefinitions.TimeOfDayRegex, RegexOptions.Singleline);
         public static readonly Regex SpecificTimeOfDayRegex = new Regex(DateTimeDefinitions.SpecificTimeOfDayRegex, RegexOptions.Singleline);
         public static readonly Regex TimeOfTodayAfterRegex = new Regex(DateTimeDefinitions.TimeOfTodayAfterRegex, RegexOptions.Singleline);
@@ -24,14 +24,16 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public static readonly Regex SpecificEndOfRegex = new Regex(DateTimeDefinitions.SpecificEndOfRegex, RegexOptions.Singleline);
         public static readonly Regex UnspecificEndOfRegex = new Regex(DateTimeDefinitions.UnspecificEndOfRegex, RegexOptions.Singleline);
 
-        //TODO: add this for Spanish
+        // TODO: add this for Spanish
         public static readonly Regex UnitRegex = new Regex(DateTimeDefinitions.UnitRegex, RegexOptions.Singleline);
         public static readonly Regex ConnectorRegex = new Regex(DateTimeDefinitions.ConnectorRegex, RegexOptions.Singleline);
         public static readonly Regex NumberAsTimeRegex = new Regex(DateTimeDefinitions.NumberAsTimeRegex, RegexOptions.Singleline);
-        public static readonly Regex DateNumberConnectorRegex = new Regex(DateTimeDefinitions.DateNumberConnectorRegex,
+        public static readonly Regex DateNumberConnectorRegex = new Regex(
+            DateTimeDefinitions.DateNumberConnectorRegex,
             RegexOptions.Singleline);
 
-        public SpanishDateTimeExtractorConfiguration(IOptionsConfiguration config) : base(config)
+        public SpanishDateTimeExtractorConfiguration(IOptionsConfiguration config)
+            : base(config)
         {
             IntegerExtractor = Number.Spanish.IntegerExtractor.GetInstance();
             DatePointExtractor = new BaseDateExtractor(new SpanishDateExtractorConfiguration(this));
@@ -77,9 +79,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public bool IsConnector(string text)
         {
             text = text.Trim();
-            return (string.IsNullOrEmpty(text)
+            return string.IsNullOrEmpty(text)
                     || PrepositionRegex.IsMatch(text)
-                    || ConnectorRegex.IsMatch(text));
+                    || ConnectorRegex.IsMatch(text);
         }
     }
 }

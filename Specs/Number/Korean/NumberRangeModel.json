@@ -641,19 +641,6 @@
     ]
   },
   {
-    "Input": "그의 점수는 5000 이하이다.",
-    "NotSupportedByDesign": "dotNet,javascript,python,java",
-    "Results": [
-      {
-        "Text": "5000 이하",
-        "TypeName": "numberrange",
-        "Resolution": {
-          "value": "(,5000]"
-        }
-      }
-    ]
-  },
-  {
     "Input": "그의 점수는 5000 보다 크거나 같다.",
     "NotSupportedByDesign": "dotNet,javascript,python,java",
     "Results": [

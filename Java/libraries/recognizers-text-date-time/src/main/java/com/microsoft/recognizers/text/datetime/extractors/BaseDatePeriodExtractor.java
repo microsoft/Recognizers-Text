@@ -1,6 +1,7 @@
 package com.microsoft.recognizers.text.datetime.extractors;
 
 import com.microsoft.recognizers.text.ExtractResult;
+import com.microsoft.recognizers.text.Metadata;
 import com.microsoft.recognizers.text.datetime.Constants;
 import com.microsoft.recognizers.text.datetime.extractors.config.IDatePeriodExtractorConfiguration;
 import com.microsoft.recognizers.text.datetime.extractors.config.ResultIndex;
@@ -100,6 +101,12 @@ public class BaseDatePeriodExtractor implements IDateTimeExtractor {
     private List<Token> mergeMultipleExtractions(String input, List<ExtractResult> extractionResults) {
         List<Token> results = new ArrayList<>();
 
+        Metadata metadata = new Metadata() {
+            {
+                setPossiblyIncludePeriodEnd(true);
+            }
+        };
+
         if (extractionResults.size() <= 1) {
             return results;
         }
@@ -135,7 +142,7 @@ public class BaseDatePeriodExtractor implements IDateTimeExtractor {
                     periodBegin = betweenIndex.getIndex();
                 }
 
-                results.add(new Token(periodBegin, periodEnd));
+                results.add(new Token(periodBegin, periodEnd, metadata));
 
                 // merge two tokens here, increase the index by two
                 idx += 2;
@@ -154,7 +161,7 @@ public class BaseDatePeriodExtractor implements IDateTimeExtractor {
 
                 if (beforeIndex.getResult()) {
                     periodBegin = beforeIndex.getIndex();
-                    results.add(new Token(periodBegin, periodEnd));
+                    results.add(new Token(periodBegin, periodEnd, metadata));
 
                     // merge two tokens here, increase the index by two
                     idx += 2;
@@ -368,6 +375,12 @@ public class BaseDatePeriodExtractor implements IDateTimeExtractor {
 
     private List<Token> matchYearPeriod(String input, LocalDateTime reference) {
         List<Token> results = new ArrayList<>();
+        Metadata metadata = new Metadata() {
+            {
+                setPossiblyIncludePeriodEnd(true);
+            }
+        };
+
         Match[] matches = RegExpUtility.getMatches(config.getYearPeriodRegex(), input);
         for (Match match : matches) {
             Match matchYear = Arrays.stream(RegExpUtility.getMatches(config.getYearRegex(), match.value)).findFirst().orElse(null);
@@ -376,9 +389,11 @@ public class BaseDatePeriodExtractor implements IDateTimeExtractor {
                 if (!(year >= Constants.MinYearNum && year <= Constants.MaxYearNum)) {
                     continue;
                 }
+                // Possibly include period end only apply for cases like "2014-2018", which are not single year cases
+                metadata.setPossiblyIncludePeriodEnd(false);
             }
 
-            results.add(new Token(match.index, match.index + match.length));
+            results.add(new Token(match.index, match.index + match.length, metadata));
         }
 
         return results;

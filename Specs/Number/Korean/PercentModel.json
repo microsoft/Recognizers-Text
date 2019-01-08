@@ -39,19 +39,6 @@
     ]
   },
   {
-    "Input": " 100 퍼센트",
-    "NotSupportedByDesign": "dotNet,javascript,python,java",
-    "Results": [
-      {
-        "Text": "100 퍼센트",
-        "TypeName": "percentage",
-        "Resolution": {
-          "value": "100%"
-        }
-      }
-    ]
-  },
-  {
     "Input": " 100 프로",
     "NotSupportedByDesign": "dotNet,javascript,python,java",
     "Results": [
@@ -138,19 +125,6 @@
         "TypeName": "percentage",
         "Resolution": {
           "value": "100%"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "이십 퍼센트",
-    "NotSupportedByDesign": "dotNet,javascript,python,java",
-    "Results": [
-      {
-        "Text": "이십 퍼센트",
-        "TypeName": "percentage",
-        "Resolution": {
-          "value": "20%"
         }
       }
     ]

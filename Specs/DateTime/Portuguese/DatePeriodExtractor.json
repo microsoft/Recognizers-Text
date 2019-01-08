@@ -432,18 +432,6 @@
     ]
   },
   {
-    "Input": "Estarei fora de hoje até amanhã",
-    "NotSupported": "javascript, python",
-    "Results": [
-      {
-        "Text": "de hoje até amanhã",
-        "Type": "daterange",
-        "Start": 13,
-        "Length": 18
-      }
-    ]
-  },
-  {
     "Input": "Estarei fora desde esta sexta-feira até proximo domingo",
     "NotSupported": "javascript, python",
     "Results": [
