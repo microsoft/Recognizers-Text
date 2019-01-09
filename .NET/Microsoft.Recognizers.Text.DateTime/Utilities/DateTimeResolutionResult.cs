@@ -33,24 +33,4 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public List<object> List { get; set; }
     }
-
-    public class TimeZoneResolutionResult
-    {
-        public string Value { get; set; }
-
-        public int UtcOffsetMins { get; set; }
-
-        public string TimeZoneText { get; set; }
-    }
-
-    public class TimeOfDayResolutionResult
-    {
-        public string Timex { get; set; }
-
-        public int BeginHour { get; set; }
-
-        public int EndHour { get; set; }
-
-        public int EndMin { get; set; }
-    }
 }
