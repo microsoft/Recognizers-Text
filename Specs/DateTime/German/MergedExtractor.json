@@ -61,14 +61,37 @@
   },
   {
     "Input": "Das meeting geht Morgen von 12 bis 14 Uhr.",
-    "Comment": "Returning timerange, not datetimerange",
-    "NotSupported": "dotnet, javascript, python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Morgen von 12 bis 14 Uhr",
         "Type": "datetimerange",
         "Start": 17,
         "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "Wie wird das Wetter morgen Mittag?",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "morgen mittag",
+        "Type": "datetime",
+        "Start": 20,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Wir sehen uns morgen früh!",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "morgen früh",
+        "Type": "datetimerange",
+        "Start": 14,
+        "Length": 11
       }
     ]
   },
@@ -193,9 +216,8 @@
     ]
   },
   {
-    "Input": "das ist morgen um 4 Uhr ",
-    "Comment": "Wrong type. Currently returns time, not datetime.",
-    "NotSupported": "dotnet, javascript, python",
+    "Input": "das ist morgen um 4 Uhr",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "morgen um 4 uhr",
