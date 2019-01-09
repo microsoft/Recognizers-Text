@@ -3,6 +3,7 @@ package com.microsoft.recognizers.text.datetime.spanish.extractors;
 import com.google.common.collect.ImmutableMap;
 import com.microsoft.recognizers.text.IExtractor;
 import com.microsoft.recognizers.text.IParser;
+import com.microsoft.recognizers.text.datetime.Constants;
 import com.microsoft.recognizers.text.datetime.config.BaseOptionsConfiguration;
 import com.microsoft.recognizers.text.datetime.config.IOptionsConfiguration;
 import com.microsoft.recognizers.text.datetime.extractors.BaseDurationExtractor;
@@ -17,9 +18,13 @@ import com.microsoft.recognizers.text.number.spanish.extractors.IntegerExtractor
 import com.microsoft.recognizers.text.number.spanish.extractors.OrdinalExtractor;
 import com.microsoft.recognizers.text.number.spanish.parsers.SpanishNumberParserConfiguration;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
+import com.sun.nio.sctp.PeerAddressChangeNotification;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
 import java.util.List;
+import java.util.ListIterator;
 import java.util.regex.Pattern;
 
 
@@ -71,6 +76,8 @@ public class SpanishDateExtractorConfiguration extends BaseOptionsConfiguration 
     public static final ImmutableMap<String, Integer> DayOfWeek = SpanishDateTime.DayOfWeek;
     public static final ImmutableMap<String, Integer> MonthOfYear = SpanishDateTime.MonthOfYear;
 
+    public static List<Pattern> DateRegexList;
+
     public SpanishDateExtractorConfiguration(IOptionsConfiguration config) {
         super(config.getOptions());
         integerExtractor = new IntegerExtractor(); // in other languages (english) has a method named get instance
@@ -79,22 +86,34 @@ public class SpanishDateExtractorConfiguration extends BaseOptionsConfiguration 
         durationExtractor = new BaseDurationExtractor(new SpanishDurationExtractorConfiguration());
         utilityConfiguration = new SpanishDatetimeUtilityConfiguration();
 
-    }
+        DateRegexList = new ArrayList<Pattern>() {
+            {
+                add(RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor1));
+                add(RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor2));
+                add(RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor3));
+            }
+        };
 
-    public static final List<Pattern> DateRegexList = new ArrayList<Pattern>() {
-        {
-            add(RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor1));
-            add(RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor2));
-            add(RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor3));
-            add(RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor4));
-            add(RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor5));
-            add(RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor6));
-            add(RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor7));
-            add(RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor8));
-            add(RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor9));
-            add(RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor10));
+        boolean enableDmy = getDmyDateFormat() || SpanishDateTime.DefaultLanguageFallback == Constants.DefaultLanguageFallback_DMY;
+
+        if (enableDmy) {
+            DateRegexList.add(RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor5));
+            DateRegexList.add(RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor8));
+            DateRegexList.add(RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor9));
+            DateRegexList.add(RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor4));
+            DateRegexList.add(RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor6));
+            DateRegexList.add(RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor7));
+            DateRegexList.add(RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor10));
+        } else {
+            DateRegexList.add(RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor4));
+            DateRegexList.add(RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor6));
+            DateRegexList.add(RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor7));
+            DateRegexList.add(RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor5));
+            DateRegexList.add(RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor8));
+            DateRegexList.add(RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor9));
+            DateRegexList.add(RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor10));
         }
-    };
+    }
 
     private final IExtractor integerExtractor;
     private final IExtractor ordinalExtractor;
