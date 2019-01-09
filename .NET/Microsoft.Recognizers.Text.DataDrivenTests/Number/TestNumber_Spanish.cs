@@ -20,35 +20,35 @@ namespace Microsoft.Recognizers.Text.Number.Tests
         [TestInitialize]
         public void TestInitialize()
         {
-            base.TestSpecInitialize(TestResources);
+            TestSpecInitialize(TestResources);
         }
 
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "NumberModel-Spanish.csv", "NumberModel-Spanish#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void NumberModel()
         {
-            base.TestNumber();
+            TestNumber();
         }
 
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "OrdinalModel-Spanish.csv", "OrdinalModel-Spanish#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void OrdinalModel()
         {
-            base.TestNumber();
+            TestNumber();
         }
 
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "PercentModel-Spanish.csv", "PercentModel-Spanish#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void PercentModel()
         {
-            base.TestNumber();
+            TestNumber();
         }
 
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "NumberRangeModel-Spanish.csv", "NumberRangeModel-Spanish#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void NumberRangeModel()
         {
-            base.TestNumber();
+            TestNumber();
         }
     }
 }

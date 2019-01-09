@@ -19,63 +19,63 @@ namespace Microsoft.Recognizers.Text.Number.Tests
         [TestInitialize]
         public void TestInitialize()
         {
-            base.TestSpecInitialize(TestResources);
+            TestSpecInitialize(TestResources);
         }
 
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "NumberModel-English.csv", "NumberModel-English#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void NumberModel()
         {
-            base.TestNumber();
+            TestNumber();
         }
 
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "NumberModelPercentMode-English.csv", "NumberModelPercentMode-English#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void NumberModelPercentMode()
         {
-            base.TestNumber();
+            TestNumber();
         }
 
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "NumberModelExperimentalMode-English.csv", "NumberModelExperimentalMode-English#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void NumberModelExperimentalMode()
         {
-            base.TestNumber();
+            TestNumber();
         }
 
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "OrdinalModel-English.csv", "OrdinalModel-English#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void OrdinalModel()
         {
-            base.TestNumber();
+            TestNumber();
         }
 
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "PercentModel-English.csv", "PercentModel-English#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void PercentModel()
         {
-            base.TestNumber();
+            TestNumber();
         }
 
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "PercentModelPercentMode-English.csv", "PercentModelPercentMode-English#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void PercentModelPercentMode()
         {
-            base.TestNumber();
+            TestNumber();
         }
 
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "NumberRangeModel-English.csv", "NumberRangeModel-English#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void NumberRangeModel()
         {
-            base.TestNumber();
+            TestNumber();
         }
 
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "NumberRangeModelExperimentalMode-English.csv", "NumberRangeModelExperimentalMode-English#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void NumberRangeModelExperimentalMode()
         {
-            base.TestNumber();
+            TestNumber();
         }
     }
 }
