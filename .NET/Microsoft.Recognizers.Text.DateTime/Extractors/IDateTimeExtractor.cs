@@ -1,7 +1,7 @@
 ﻿// Enable a reference time pass to the extractor
 
-using DateObject = System.DateTime;
 using System.Collections.Generic;
+using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
