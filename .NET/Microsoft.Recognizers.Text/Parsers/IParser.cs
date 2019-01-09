@@ -21,15 +21,14 @@
             Metadata = er.Metadata;
         }
 
-        //Value is for resolution. 
-        //e.g. 1000 for "one thousand".
-        //The resolutions are different for different parsers.
-        //Therefore, we use object here.
+        // Value is for resolution.
+        // e.g. 1000 for "one thousand".
+        // The resolutions are different for different parsers.
+        // Therefore, we use object here.
         public object Value { get; set; } = null;
 
-        //Output the value in string format.
-        //It is used in some parsers.
-        public string ResolutionStr { get; set; } = "";
-
+        // Output the value in string format.
+        // It is used in some parsers.
+        public string ResolutionStr { get; set; } = string.Empty;
     }
 }
