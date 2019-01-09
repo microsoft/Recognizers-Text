@@ -99,13 +99,13 @@ namespace Microsoft.Recognizers.Text.DateTime
                     new BaseMergedDateTimeExtractor(new GermanMergedExtractorConfiguration(options))));
 
             // TODO to be uncommented when all tests for Dutch are green.
-            RegisterModel<DateTimeModel>(
-                Culture.Dutch,
-                options => new DateTimeModel(
-                    new BaseMergedDateTimeParser(
-                        new DutchMergedParserConfiguration(new BaseOptionsConfiguration(options, dmyDateFormat: true))),
-                    new BaseMergedDateTimeExtractor(
-                        new DutchMergedExtractorConfiguration(new BaseOptionsConfiguration(options, dmyDateFormat: true)))));
+            // RegisterModel<DateTimeModel>(
+            //     Culture.Dutch,
+            //     options => new DateTimeModel(
+            //         new BaseMergedDateTimeParser(
+            //             new DutchMergedParserConfiguration(new BaseOptionsConfiguration(options, dmyDateFormat: true))),
+            //         new BaseMergedDateTimeExtractor(
+            //             new DutchMergedExtractorConfiguration(new BaseOptionsConfiguration(options, dmyDateFormat: true)))));
 
             // TODO to be uncommented when all tests for Japanese are green.
             //RegisterModel<DateTimeModel>(
