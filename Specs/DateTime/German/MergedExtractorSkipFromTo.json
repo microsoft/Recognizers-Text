@@ -61,12 +61,14 @@
   },
   {
     "Input": "Das meeting geht Morgen von 12 bis 14 Uhr.",
+    "Comment": "Works on the console, fails in the test.",
     "NotSupported": "dotnet, javascript, python",
-    "Comment": "issues with 'tomorrow' and 'morning'",
     "Results": [
       {
         "Text": "morgen von 12 bis 14 Uhr",
-        "Type": "datetimerange"
+        "Type": "datetimerange",
+        "Start": 17,
+        "Length": 23
       }
     ]
   },
