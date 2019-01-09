@@ -1,5 +1,5 @@
-﻿using DateObject = System.DateTime;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
