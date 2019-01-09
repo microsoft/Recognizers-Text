@@ -1,19 +1,17 @@
 ﻿using System.Collections.Generic;
 using System.Collections.Immutable;
-using System.Linq;
 using System.Globalization;
+using System.Linq;
 using System.Text.RegularExpressions;
-
 using Microsoft.Recognizers.Definitions.Korean;
 
 namespace Microsoft.Recognizers.Text.Number.Korean
 {
     public class KoreanNumberParserConfiguration : INumberParserConfiguration, ICJKNumberParserConfiguration
     {
-
-        public KoreanNumberParserConfiguration() : this(new CultureInfo(Culture.Korean))
+        public KoreanNumberParserConfiguration()
+            : this(new CultureInfo(Culture.Korean))
         {
-
         }
 
         public KoreanNumberParserConfiguration(CultureInfo ci)
