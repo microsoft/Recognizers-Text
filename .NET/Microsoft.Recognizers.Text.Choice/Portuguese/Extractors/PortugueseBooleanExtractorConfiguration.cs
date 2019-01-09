@@ -7,19 +7,19 @@ namespace Microsoft.Recognizers.Text.Choice.Portuguese
 {
     public class PortugueseBooleanExtractorConfiguration : IBooleanExtractorConfiguration
     {
-        public static readonly Regex TrueRegex = 
+        public static readonly Regex TrueRegex =
             new Regex(ChoiceDefinitions.TrueRegex, RegexOptions.Singleline);
 
-        public static readonly Regex FalseRegex = 
+        public static readonly Regex FalseRegex =
             new Regex(ChoiceDefinitions.FalseRegex, RegexOptions.Singleline);
 
-        public static readonly Regex TokenRegex = 
+        public static readonly Regex TokenRegex =
             new Regex(ChoiceDefinitions.TokenizerRegex, RegexOptions.Singleline);
 
         public static readonly IDictionary<Regex, string> MapRegexes = new Dictionary<Regex, string>()
         {
-            {TrueRegex, Constants.SYS_BOOLEAN_TRUE },
-            {FalseRegex, Constants.SYS_BOOLEAN_FALSE }
+            { TrueRegex, Constants.SYS_BOOLEAN_TRUE },
+            { FalseRegex, Constants.SYS_BOOLEAN_FALSE },
         };
 
         public PortugueseBooleanExtractorConfiguration(bool onlyTopMatch = true)
