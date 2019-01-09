@@ -1,4 +1,4 @@
-using System.Linq;
+﻿using System.Linq;
 
 namespace Microsoft.Recognizers.Text
 {
@@ -16,10 +16,8 @@ namespace Microsoft.Recognizers.Text
         public const string Dutch = "nl-nl";
         public const string Korean = "ko-kr";
 
-        public readonly string CultureName;
-        public readonly string CultureCode;
-
-        public static readonly Culture[] SupportedCultures = {
+        public static readonly Culture[] SupportedCultures =
+        {
             new Culture("EnglishOthers", EnglishOthers),
             new Culture("English", English),
             new Culture("Chinese", Chinese),
@@ -30,7 +28,7 @@ namespace Microsoft.Recognizers.Text
             new Culture("Italian", Italian),
             new Culture("Japanese", Japanese),
             new Culture("Dutch", Dutch),
-            new Culture("Korean", Korean)
+            new Culture("Korean", Korean),
         };
 
         private static readonly string[] SupportedCultureCodes = SupportedCultures.Select(c => c.CultureCode).ToArray();
@@ -40,6 +38,10 @@ namespace Microsoft.Recognizers.Text
             this.CultureName = cultureName;
             this.CultureCode = cultureCode;
         }
+
+        public string CultureName { get; private set; }
+
+        public string CultureCode { get; private set; }
 
         public static string[] GetSupportedCultureCodes()
         {
