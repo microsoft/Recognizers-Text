@@ -165,8 +165,8 @@ public class DateTimeExtractorTest extends AbstractTest {
             //    return new BaseDateTimeAltExtractor(new SpanishDateTimeAltExtractorConfiguration());
             case "DateTimeExtractor":
                 return new BaseDateTimeExtractor(new SpanishDateTimeExtractorConfiguration());
-            //case "DateTimePeriodExtractor":
-            //    return new BaseDateTimePeriodExtractor(new SpanishDateTimePeriodExtractorConfiguration());
+            case "DateTimePeriodExtractor":
+                return new BaseDateTimePeriodExtractor(new SpanishDateTimePeriodExtractorConfiguration());
             case "DurationExtractor":
                 return new BaseDurationExtractor(new SpanishDurationExtractorConfiguration());
             case "HolidayExtractor":
