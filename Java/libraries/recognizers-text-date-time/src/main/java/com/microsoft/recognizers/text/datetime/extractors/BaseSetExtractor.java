@@ -99,8 +99,8 @@ public class BaseSetExtractor implements IDateTimeExtractor {
             String afterStr = text.substring(er.getStart() + er.getLength());
             if (StringUtility.isNullOrEmpty(afterStr) && this.config.getBeforeEachDayRegex() != null) {
                 String beforeStr = text.substring(0, er.getStart());
-                Pattern eachPrefixRegex = this.config.getEachPrefixRegex();
-                Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(eachPrefixRegex, beforeStr)).findFirst();
+                Pattern beforeEachDayRegex = this.config.getBeforeEachDayRegex();
+                Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(beforeEachDayRegex, beforeStr)).findFirst();
                 if (match.isPresent()) {
                     ret.add(new Token(match.get().index, er.getStart() + er.getLength()));
                 }

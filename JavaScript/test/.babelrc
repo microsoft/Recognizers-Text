@@ -1,7 +1,6 @@
 {
     "presets": [
-        "es2015",
-        "stage-0"
+        "@ava/stage-4"
     ],
     "plugins": []
 }
