@@ -165,6 +165,8 @@ public class DateTimeParserTest extends AbstractTest {
             switch (culture) {
                 case Culture.English:
                     return getEnglishParser(name);
+                case Culture.Spanish:
+                    return getSpanishParser(name);
                 default:
                     throw new AssumptionViolatedException("Parser Type/Name not supported.");
             }
