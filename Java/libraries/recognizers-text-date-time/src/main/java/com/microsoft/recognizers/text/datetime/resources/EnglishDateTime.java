@@ -1194,6 +1194,7 @@ public class EnglishDateTime {
 
     public static final ImmutableMap<String, Integer> SpecialDecadeCases = ImmutableMap.<String, Integer>builder()
         .put("noughties", 2000)
+        .put("aughts", 2000)
         .put("two thousands", 2000)
         .build();
 
@@ -1205,6 +1206,7 @@ public class EnglishDateTime {
 
     public static final ImmutableMap<String, String> AmbiguityFiltersDict = ImmutableMap.<String, String>builder()
         .put("\\bmorning|afternoon|evening|night|day\\b", "\\b(good\\s+(morning|afternoon|evening|night|day))|(nighty\\s+night)\\b")
+        .put("\\bnow\\b", "\\b(^now,)|\\b((is|are)\\s+now\\s+for|for\\s+now)\\b")
         .put("\\bmay\\b", "\\b((^may i)|(i|you|he|she|we|they)\\s+may|(may\\s+((((also|not|(also not)|well)\\s+)?(be|ask|contain|constitute|email|e-mail|take|have|result|involve|get|work|reply))|(or may not))))\\b")
         .build();
 

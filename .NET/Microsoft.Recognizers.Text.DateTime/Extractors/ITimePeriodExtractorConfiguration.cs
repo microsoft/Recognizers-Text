@@ -1,6 +1,6 @@
-﻿using Microsoft.Recognizers.Text.Number;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
@@ -21,13 +21,13 @@ namespace Microsoft.Recognizers.Text.DateTime
         Regex GeneralEndingRegex { get; }
 
         IDateTimeExtractor SingleTimeExtractor { get; }
-        
+
+        IDateTimeExtractor TimeZoneExtractor { get; }
+
         bool GetFromTokenIndex(string text, out int index);
 
         bool IsConnectorToken(string text);
 
         bool GetBetweenTokenIndex(string text, out int index);
-
-        IDateTimeExtractor TimeZoneExtractor { get; }
     }
 }

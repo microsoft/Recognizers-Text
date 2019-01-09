@@ -41,6 +41,23 @@ namespace Microsoft.Recognizers.Text.DateTime
                 timePeriodErs = TimeZoneUtility.MergeTimeZones(timePeriodErs, config.TimeZoneExtractor.Extract(text, reference), text);
             }
 
+            //TODO: Fix to solve german morgen (morning) / morgen (tomorrow) ambiguity. To be removed after the first version of DateTimeV2 in German is in production.
+            timePeriodErs = GermanMorgenWorkaround(text, timePeriodErs);
+
+            return timePeriodErs;
+        }
+
+        // For German there is a problem with cases like "Morgen Abend" which is parsed as "Morning Evening" as "Morgen" can mean both "tomorrow" and "morning". 
+        // When the extractor extracts "Abend" in this example it will take the string before that to look for a relative shift to another day like "yesterday", "tomorrow" etc. 
+        // When trying to do this on the string "morgen" it will be extracted as a time period ("morning") by the TimePeriodExtractor, and not as "tomorrow". 
+        // Filtering out the string "morgen" from the TimePeriodExtractor will fix the problem as only in the case where "morgen" is NOT a time period the string "morgen" will be passed to this extractor. 
+        // It should also be solvable through the config but we do not want to introduce changes to the interface and configs for all other languages.
+        private List<ExtractResult> GermanMorgenWorkaround(string text, List<ExtractResult> timePeriodErs)
+        {
+            if (text.Equals("morgen"))
+            {
+                timePeriodErs.Clear();
+            }
             return timePeriodErs;
         }
 

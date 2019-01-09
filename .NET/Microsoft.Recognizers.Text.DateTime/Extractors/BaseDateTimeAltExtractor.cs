@@ -1,8 +1,8 @@
-using System.Linq;
+﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text.RegularExpressions;
 using DateObject = System.DateTime;
-using System;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
@@ -156,7 +156,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     Length = dateMatch.Length,
                     Text = dateMatch.Value,
                     Type = Constants.SYS_DATETIME_DATE,
-                    Data = ExtractorName
+                    Data = ExtractorName,
                 };
 
                 if (notIncluded)
@@ -243,16 +243,16 @@ namespace Microsoft.Recognizers.Text.DateTime
                                     Type = ExtractorName,
                                     Data = new Dictionary<string, object>
                                     {
-                                        {Constants.SubType, result.Type},
-                                        {ExtendedModelResult.ParentTextKey, parentText},
-                                        {Constants.Context, contextErs}
-                                    }
+                                        { Constants.SubType, result.Type },
+                                        { ExtendedModelResult.ParentTextKey, parentText },
+                                        { Constants.Context, contextErs },
+                                    },
                                 });
 
                                 result.Data = new Dictionary<string, object>
                                 {
-                                    {Constants.SubType, result.Type},
-                                    {ExtendedModelResult.ParentTextKey, parentText}
+                                    { Constants.SubType, result.Type },
+                                    { ExtendedModelResult.ParentTextKey, parentText },
                                 };
                                 result.Type = ExtractorName;
                             }
@@ -466,8 +466,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         private bool ShouldCreateMetadata(List<ExtractResult> originalErs, ExtractResult contextEr)
         {
             // For alternative entities sequence which are all DatePeriod, we should create metadata even if context is null
-            return (contextEr != null
-                || (originalErs.First().Type == Constants.SYS_DATETIME_DATEPERIOD && originalErs.Last().Type == Constants.SYS_DATETIME_DATEPERIOD));
+            return contextEr != null
+                || (originalErs.First().Type == Constants.SYS_DATETIME_DATEPERIOD && originalErs.Last().Type == Constants.SYS_DATETIME_DATEPERIOD);
         }
 
         private void ApplyMetadata(List<ExtractResult> ers, Dictionary<string, object> metadata, string parentText)
@@ -530,7 +530,6 @@ namespace Microsoft.Recognizers.Text.DateTime
             return data;
         }
 
-
         private List<ExtractResult> ExtractRelativePrefixContext(string entityText)
         {
             List<ExtractResult> results = new List<ExtractResult>();
@@ -546,7 +545,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         Text = match.Value,
                         Start = match.Index,
                         Length = match.Length,
-                        Type = Constants.ContextType_RelativePrefix
+                        Type = Constants.ContextType_RelativePrefix,
                     });
                 }
             }
@@ -569,7 +568,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         Text = match.Value,
                         Start = match.Index,
                         Length = match.Length,
-                        Type = Constants.ContextType_AmPm
+                        Type = Constants.ContextType_AmPm,
                     });
                 }
             }
