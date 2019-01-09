@@ -35,6 +35,7 @@ import com.microsoft.recognizers.text.datetime.spanish.extractors.SpanishDateTim
 import com.microsoft.recognizers.text.datetime.spanish.extractors.SpanishDateTimePeriodExtractorConfiguration;
 import com.microsoft.recognizers.text.datetime.spanish.extractors.SpanishDurationExtractorConfiguration;
 import com.microsoft.recognizers.text.datetime.spanish.extractors.SpanishHolidayExtractorConfiguration;
+import com.microsoft.recognizers.text.datetime.spanish.extractors.SpanishMergedExtractorConfiguration;
 import com.microsoft.recognizers.text.datetime.spanish.extractors.SpanishSetExtractorConfiguration;
 import com.microsoft.recognizers.text.datetime.spanish.extractors.SpanishTimeExtractorConfiguration;
 import com.microsoft.recognizers.text.datetime.spanish.extractors.SpanishTimePeriodExtractorConfiguration;
@@ -173,8 +174,8 @@ public class DateTimeExtractorTest extends AbstractTest {
                 return new BaseDurationExtractor(new SpanishDurationExtractorConfiguration());
             case "HolidayExtractor":
                 return new BaseHolidayExtractor(new SpanishHolidayExtractorConfiguration());
-            //case "MergedExtractor":
-            //   return new BaseMergedDateTimeExtractor(new SpanishMergedExtractorConfiguration(DateTimeOptions.None));
+            case "MergedExtractor":
+               return new BaseMergedDateTimeExtractor(new SpanishMergedExtractorConfiguration(DateTimeOptions.None));
             //case "MergedExtractorSkipFromTo":
             //    return new BaseMergedDateTimeExtractor(new SpanishMergedExtractorConfiguration(DateTimeOptions.SkipFromToMerge));
             case "SetExtractor":
