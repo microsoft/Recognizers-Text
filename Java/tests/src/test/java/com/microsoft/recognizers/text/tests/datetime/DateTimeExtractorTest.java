@@ -29,7 +29,13 @@ import com.microsoft.recognizers.text.datetime.extractors.BaseTimeExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.BaseTimePeriodExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.BaseTimeZoneExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.IDateTimeExtractor;
-import com.microsoft.recognizers.text.datetime.spanish.extractors.*;
+import com.microsoft.recognizers.text.datetime.spanish.extractors.SpanishDateTimeExtractorConfiguration;
+import com.microsoft.recognizers.text.datetime.spanish.extractors.SpanishDateExtractorConfiguration;
+import com.microsoft.recognizers.text.datetime.spanish.extractors.SpanishDatePeriodExtractorConfiguration;
+import com.microsoft.recognizers.text.datetime.spanish.extractors.SpanishDurationExtractorConfiguration;
+import com.microsoft.recognizers.text.datetime.spanish.extractors.SpanishHolidayExtractorConfiguration;
+import com.microsoft.recognizers.text.datetime.spanish.extractors.SpanishTimeExtractorConfiguration;
+import com.microsoft.recognizers.text.datetime.spanish.extractors.SpanishTimePeriodExtractorConfiguration;
 import com.microsoft.recognizers.text.tests.AbstractTest;
 import com.microsoft.recognizers.text.tests.TestCase;
 
