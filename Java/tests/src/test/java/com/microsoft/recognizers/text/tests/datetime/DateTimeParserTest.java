@@ -35,6 +35,8 @@ import com.microsoft.recognizers.text.datetime.parsers.BaseTimePeriodParser;
 import com.microsoft.recognizers.text.datetime.parsers.BaseTimeZoneParser;
 import com.microsoft.recognizers.text.datetime.parsers.DateTimeParseResult;
 import com.microsoft.recognizers.text.datetime.parsers.IDateTimeParser;
+import com.microsoft.recognizers.text.datetime.spanish.parsers.SpanishCommonDateTimeParserConfiguration;
+import com.microsoft.recognizers.text.datetime.spanish.parsers.SpanishTimeParserConfiguration;
 import com.microsoft.recognizers.text.datetime.utilities.DateTimeResolutionResult;
 import com.microsoft.recognizers.text.datetime.utilities.TimeZoneResolutionResult;
 import com.microsoft.recognizers.text.tests.AbstractTest;
@@ -228,8 +230,8 @@ public class DateTimeParserTest extends AbstractTest {
             //    return new BaseSetParser(new SpanishSetParserConfiguration(new SpanishCommonDateTimeParserConfiguration(DateTimeOptions.None)));
             //case "MergedParser":
             //    return new BaseMergedDateTimeParser(new EnglishMergedParserConfiguration(DateTimeOptions.None));
-            //case "TimeParser":
-            //    return new TimeParser(new SpanishTimeParserConfiguration(new SpanishCommonDateTimeParserConfiguration(DateTimeOptions.None)));
+            case "TimeParser":
+                return new TimeParser(new SpanishTimeParserConfiguration(new SpanishCommonDateTimeParserConfiguration(DateTimeOptions.None)));
             //case "TimePeriodParser":
             //    return new BaseTimePeriodParser(new SpanishTimePeriodParserConfiguration(new SpanishCommonDateTimeParserConfiguration(DateTimeOptions.None)));
             default:
