@@ -11,8 +11,8 @@ namespace Microsoft.Recognizers.Text
         public int End { get; set; } = Constants.InvalidIndex;
 
         public string TypeName { get; set; }
-        
-        //Resolution field
+
+        // Resolution field
         public SortedDictionary<string, object> Resolution { get; set; }
     }
 }
