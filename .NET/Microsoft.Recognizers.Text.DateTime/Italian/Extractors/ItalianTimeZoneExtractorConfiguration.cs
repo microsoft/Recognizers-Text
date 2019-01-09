@@ -11,13 +11,17 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         {
         };
 
-        public ItalianTimeZoneExtractorConfiguration(IOptionsConfiguration config) : base(config)
+        public ItalianTimeZoneExtractorConfiguration(IOptionsConfiguration config)
+            : base(config)
         {
         }
 
         public IEnumerable<Regex> TimeZoneRegexes => TimeZoneRegexList;
+
         public Regex LocationTimeSuffixRegex { get; } = null;
+
         public StringMatcher LocationMatcher { get; } = new StringMatcher();
+
         public List<string> AmbiguousTimezoneList => new List<string>();
     }
 }
