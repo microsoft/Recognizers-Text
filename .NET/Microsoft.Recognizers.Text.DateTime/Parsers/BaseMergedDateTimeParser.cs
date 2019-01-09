@@ -292,7 +292,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                             foreach (var values in valueSet)
                             {
                                 // This is only a sanity check, as here we only handle DatePeriod like "(StartDate,EndDate,Duration)"
-                                if (values.ContainsKey(DateTimeResolutionKey.START) && values.ContainsKey(DateTimeResolutionKey.END) && 
+                                if (values.ContainsKey(DateTimeResolutionKey.START) && values.ContainsKey(DateTimeResolutionKey.END) &&
                                     values.ContainsKey(DateTimeResolutionKey.Timex))
                                 {
                                     var startDate = DateObject.Parse(values[DateTimeResolutionKey.START]);
@@ -301,7 +301,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                                     var datePeriodTimexType = TimexUtility.GetDatePeriodTimexType(durationStr);
                                     endDate = TimexUtility.OffsetDateObject(endDate, offset: 1, timexType: datePeriodTimexType);
                                     values[DateTimeResolutionKey.END] = DateTimeFormatUtil.LuisDate(endDate);
-                                    values[DateTimeResolutionKey.Timex] = 
+                                    values[DateTimeResolutionKey.Timex] =
                                         GenerateEndInclusiveTimex(slot.TimexStr, datePeriodTimexType, startDate, endDate);
 
                                     if (string.IsNullOrEmpty(altTimex))
