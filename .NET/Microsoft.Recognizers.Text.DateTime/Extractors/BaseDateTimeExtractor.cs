@@ -1,5 +1,5 @@
-﻿using System.Linq;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Linq;
 using System.Text.RegularExpressions;
 using DateObject = System.DateTime;
 
@@ -84,10 +84,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                         Start = match.Index,
                         Length = match.Length,
                         Text = match.Value,
-                        Type = Number.Constants.SYS_NUM_INTEGER
+                        Type = Number.Constants.SYS_NUM_INTEGER,
                     };
                     numErs.Add(node);
                 }
+
                 ers.AddRange(numErs);
             }
 
@@ -107,9 +108,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                     break;
                 }
 
-                if (ers[i].Type.Equals(Constants.SYS_DATETIME_DATE) && ers[j].Type.Equals(Constants.SYS_DATETIME_TIME) ||
-                    ers[i].Type.Equals(Constants.SYS_DATETIME_TIME) && ers[j].Type.Equals(Constants.SYS_DATETIME_DATE) ||
-                    ers[i].Type.Equals(Constants.SYS_DATETIME_DATE) && ers[j].Type.Equals(Number.Constants.SYS_NUM_INTEGER))
+                if ((ers[i].Type.Equals(Constants.SYS_DATETIME_DATE) && ers[j].Type.Equals(Constants.SYS_DATETIME_TIME)) ||
+                    (ers[i].Type.Equals(Constants.SYS_DATETIME_TIME) && ers[j].Type.Equals(Constants.SYS_DATETIME_DATE)) ||
+                    (ers[i].Type.Equals(Constants.SYS_DATETIME_DATE) && ers[j].Type.Equals(Number.Constants.SYS_NUM_INTEGER)))
                 {
                     var middleBegin = ers[i].Start + ers[i].Length ?? 0;
                     var middleEnd = ers[j].Start ?? 0;
@@ -121,6 +122,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     var middleStr = text.Substring(middleBegin, middleEnd - middleBegin).Trim().ToLower();
                     var valid = false;
+
                     // for cases like "tomorrow 3",  "tomorrow at 3"
                     if (ers[j].Type.Equals(Number.Constants.SYS_NUM_INTEGER))
                     {
@@ -148,6 +150,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     i = j + 1;
                     continue;
                 }
+
                 i = j;
             }
 
