@@ -7,7 +7,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 {
     public class EnglishHolidayExtractorConfiguration : BaseOptionsConfiguration, IHolidayExtractorConfiguration
     {
-        public static readonly Regex YearRegex = 
+        public static readonly Regex YearRegex =
             new Regex(DateTimeDefinitions.YearRegex, RegexOptions.Singleline);
 
         public static readonly Regex H1 =
@@ -23,10 +23,11 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         {
             H1,
             H2,
-            H3
+            H3,
         };
 
-        public EnglishHolidayExtractorConfiguration(IOptionsConfiguration config) : base(config)
+        public EnglishHolidayExtractorConfiguration(IOptionsConfiguration config)
+            : base(config)
         {
         }
 

@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Globalization;
+using System.Linq;
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime
@@ -92,7 +92,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                 er.Text = er.Text.Substring(aroundMatch.Length);
                 modStr = aroundMatch.Value;
             }
-            else if ((er.Type.Equals(Constants.SYS_DATETIME_DATEPERIOD) && Config.YearRegex.Match(er.Text).Success) || (er.Type.Equals(Constants.SYS_DATETIME_DATE)))
+            else if ((er.Type.Equals(Constants.SYS_DATETIME_DATEPERIOD) && Config.YearRegex.Match(er.Text).Success) || 
+                     er.Type.Equals(Constants.SYS_DATETIME_DATE))
             {
                 // This has to be put at the end of the if, or cases like "before 2012" and "after 2012" would fall into this
                 // 2012 or after/above
@@ -228,9 +229,12 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             if ((Config.Options & DateTimeOptions.SplitDateAndTime) != 0 &&
-                ((DateTimeResolutionResult)pr.Value)?.SubDateTimeEntities != null)
+                ((DateTimeResolutionResult)pr?.Value)?.SubDateTimeEntities != null)
             {
-                pr.Value = DateTimeResolutionForSplit(pr);
+                if (pr != null)
+                {
+                    pr.Value = DateTimeResolutionForSplit(pr);
+                }
             }
             else
             {
@@ -241,7 +245,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             // In this version, ExperimentalMode only cope with the "IncludePeriodEnd" case
             if ((this.Config.Options & DateTimeOptions.ExperimentalMode) != 0)
             {
-                if (pr.Metadata != null && pr.Metadata.PossiblyIncludePeriodEnd)
+                if (pr?.Metadata != null && pr.Metadata.PossiblyIncludePeriodEnd)
                 {
                     pr = SetInclusivePeriodEnd(pr);
                 }
@@ -289,7 +293,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                             foreach (var values in valueSet)
                             {
                                 // This is only a sanity check, as here we only handle DatePeriod like "(StartDate,EndDate,Duration)"
-                                if (values.ContainsKey(DateTimeResolutionKey.START) && values.ContainsKey(DateTimeResolutionKey.END) && values.ContainsKey(DateTimeResolutionKey.Timex))
+                                if (values.ContainsKey(DateTimeResolutionKey.START) && values.ContainsKey(DateTimeResolutionKey.END) && 
+                                    values.ContainsKey(DateTimeResolutionKey.Timex))
                                 {
                                     var startDate = DateObject.Parse(values[DateTimeResolutionKey.START]);
                                     var endDate = DateObject.Parse(values[DateTimeResolutionKey.END]);
@@ -297,7 +302,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                                     var datePeriodTimexType = TimexUtility.GetDatePeriodTimexType(durationStr);
                                     endDate = TimexUtility.OffsetDateObject(endDate, offset: 1, timexType: datePeriodTimexType);
                                     values[DateTimeResolutionKey.END] = DateTimeFormatUtil.LuisDate(endDate);
-                                    values[DateTimeResolutionKey.Timex] = GenerateEndInclusiveTimex(slot.TimexStr, datePeriodTimexType, startDate, endDate);
+                                    values[DateTimeResolutionKey.Timex] = 
+                                        GenerateEndInclusiveTimex(slot.TimexStr, datePeriodTimexType, startDate, endDate);
 
                                     if (string.IsNullOrEmpty(altTimex))
                                     {
@@ -316,8 +322,10 @@ namespace Microsoft.Recognizers.Text.DateTime
             return slot;
         }
 
-        public string GenerateEndInclusiveTimex(string originalTimex, DatePeriodTimexType datePeriodTimexType, DateObject startDate, DateObject endDate)
+        public string GenerateEndInclusiveTimex(string originalTimex, DatePeriodTimexType datePeriodTimexType, 
+                                                DateObject startDate, DateObject endDate)
         {
+
             var timexEndInclusive = TimexUtility.GenerateDatePeriodTimex(startDate, endDate, datePeriodTimexType);
 
             // Sometimes the original timex contains fuzzy part like "XXXX-05-31"
@@ -762,7 +770,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         }
 
         public void AddAltSingleDateTimeToResolution(Dictionary<string, string> resolutionDic, string type, string mod,
-            Dictionary<string, string> res)
+                                                     Dictionary<string, string> res)
         {
             if (resolutionDic.ContainsKey(TimeTypeConstants.DATE))
             {
@@ -780,7 +788,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         }
 
         public void AddSingleDateTimeToResolution(Dictionary<string, string> resolutionDic, string type, string mod,
-            Dictionary<string, string> res)
+                                                  Dictionary<string, string> res)
         {
             if (resolutionDic.ContainsKey(type) &&
                 !resolutionDic[type].Equals(DateMinString) && !resolutionDic[type].Equals(DateTimeMinString))
@@ -818,7 +826,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         }
 
         public void AddPeriodToResolution(Dictionary<string, string> resolutionDic, string startType, string endType,
-            string mod, Dictionary<string, string> res)
+                                          string mod, Dictionary<string, string> res)
         {
             var start = "";
             var end = "";
