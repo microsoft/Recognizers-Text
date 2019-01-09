@@ -1,18 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
-
+using Microsoft.Recognizers.Definitions.English;
 using Microsoft.Recognizers.Text.DateTime.English.Utilities;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
-using Microsoft.Recognizers.Definitions.English;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
 {
     public class EnglishTimePeriodExtractorConfiguration : BaseOptionsConfiguration, ITimePeriodExtractorConfiguration
     {
-        public string TokenBeforeDate { get; }
-
-        public static readonly Regex TillRegex = 
+        public static readonly Regex TillRegex =
             new Regex(DateTimeDefinitions.TillRegex, RegexOptions.Singleline);
 
         public static readonly Regex HourRegex =
@@ -21,13 +18,13 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex PeriodHourNumRegex =
             new Regex(DateTimeDefinitions.PeriodHourNumRegex, RegexOptions.Singleline);
 
-        public static readonly Regex PeriodDescRegex = 
+        public static readonly Regex PeriodDescRegex =
             new Regex(DateTimeDefinitions.DescRegex, RegexOptions.Singleline);
 
         public static readonly Regex PmRegex =
             new Regex(DateTimeDefinitions.PmRegex, RegexOptions.Singleline);
 
-        public static readonly Regex AmRegex = 
+        public static readonly Regex AmRegex =
             new Regex(DateTimeDefinitions.AmRegex, RegexOptions.Singleline);
 
         public static readonly Regex PureNumFromTo =
@@ -36,13 +33,13 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex PureNumBetweenAnd =
             new Regex(DateTimeDefinitions.PureNumBetweenAnd, RegexOptions.Singleline);
 
-        public static readonly Regex SpecificTimeFromTo = 
+        public static readonly Regex SpecificTimeFromTo =
             new Regex(DateTimeDefinitions.SpecificTimeFromTo, RegexOptions.Singleline);
 
-        public static readonly Regex SpecificTimeBetweenAnd = 
+        public static readonly Regex SpecificTimeBetweenAnd =
             new Regex(DateTimeDefinitions.SpecificTimeBetweenAnd, RegexOptions.Singleline);
 
-        public static readonly Regex PrepositionRegex = 
+        public static readonly Regex PrepositionRegex =
             new Regex(DateTimeDefinitions.PrepositionRegex, RegexOptions.Singleline);
 
         public static readonly Regex TimeOfDayRegex =
@@ -54,7 +51,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex TimeUnitRegex =
             new Regex(DateTimeDefinitions.TimeUnitRegex, RegexOptions.Singleline);
 
-        public static readonly Regex TimeFollowedUnit = 
+        public static readonly Regex TimeFollowedUnit =
             new Regex(DateTimeDefinitions.TimeFollowedUnit, RegexOptions.Singleline);
 
         public static readonly Regex TimeNumberCombinedWithUnit =
@@ -63,7 +60,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex GeneralEndingRegex =
             new Regex(DateTimeDefinitions.GeneralEndingRegex, RegexOptions.Singleline);
 
-        public EnglishTimePeriodExtractorConfiguration(IOptionsConfiguration config) : base(config)
+        public EnglishTimePeriodExtractorConfiguration(IOptionsConfiguration config)
+            : base(config)
         {
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
             SingleTimeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration(this));
@@ -71,6 +69,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             IntegerExtractor = Number.English.IntegerExtractor.GetInstance();
             TimeZoneExtractor = new BaseTimeZoneExtractor(new EnglishTimeZoneExtractorConfiguration(this));
         }
+
+        public string TokenBeforeDate { get; }
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
@@ -80,14 +80,14 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public IExtractor IntegerExtractor { get; }
 
-        public IEnumerable<Regex> SimpleCasesRegex => new[] 
+        public IEnumerable<Regex> SimpleCasesRegex => new[]
         {
-            PureNumFromTo, PureNumBetweenAnd, SpecificTimeFromTo, SpecificTimeBetweenAnd
+            PureNumFromTo, PureNumBetweenAnd, SpecificTimeFromTo, SpecificTimeBetweenAnd,
         };
 
         public IEnumerable<Regex> PureNumberRegex => new[]
         {
-            PureNumFromTo, PureNumBetweenAnd
+            PureNumFromTo, PureNumBetweenAnd,
         };
 
         Regex ITimePeriodExtractorConfiguration.TillRegex => TillRegex;
