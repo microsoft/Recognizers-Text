@@ -205,7 +205,6 @@
   },
   {
     "Input": "Regresaré por la noche",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
@@ -241,14 +240,13 @@
   },
   {
     "Input": "Regresaré por la mañana",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
         {
           "Text": "la mañana",
           "Type": "datetimerange",
-          "Start": 12,
-          "Length": 10
+          "Start": 14,
+          "Length": 9
         }
       ]
   },
