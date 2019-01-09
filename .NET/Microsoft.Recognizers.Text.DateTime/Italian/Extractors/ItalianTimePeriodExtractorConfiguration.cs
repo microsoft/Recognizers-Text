@@ -9,11 +9,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 {
     public class ItalianTimePeriodExtractorConfiguration : BaseOptionsConfiguration, ITimePeriodExtractorConfiguration
     {
-        public string TokenBeforeDate { get; }
+        public static readonly string ExtractorName = Constants.SYS_DATETIME_TIMEPERIOD; // "TimePeriod";
 
-        public static readonly string ExtractorName = Constants.SYS_DATETIME_TIMEPERIOD; //"TimePeriod";
-
-        public static readonly Regex TillRegex = 
+        public static readonly Regex TillRegex =
             new Regex(DateTimeDefinitions.TillRegex, RegexOptions.Singleline);
 
         public static readonly Regex HourRegex =
@@ -43,7 +41,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         public static readonly Regex SpecificTimeBetweenAnd =
             new Regex(DateTimeDefinitions.SpecificTimeBetweenAnd, RegexOptions.Singleline);
 
-        public static readonly Regex PrepositionRegex = 
+        public static readonly Regex PrepositionRegex =
             new Regex(DateTimeDefinitions.PrepositionRegex, RegexOptions.Singleline);
 
         public static readonly Regex TimeOfDayRegex =
@@ -55,25 +53,26 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         public static readonly Regex TimeUnitRegex =
             new Regex(DateTimeDefinitions.TimeUnitRegex, RegexOptions.Singleline);
 
-        public static readonly Regex TimeFollowedUnit = 
+        public static readonly Regex TimeFollowedUnit =
             new Regex(DateTimeDefinitions.TimeFollowedUnit, RegexOptions.Singleline);
 
         public static readonly Regex TimeNumberCombinedWithUnit =
             new Regex(DateTimeDefinitions.TimeNumberCombinedWithUnit, RegexOptions.Singleline);
 
-        private static readonly Regex FromRegex = 
-            new Regex(DateTimeDefinitions.FromRegex2, RegexOptions.Singleline);
-
-        private static readonly Regex ConnectorAndRegex = 
-            new Regex(DateTimeDefinitions.ConnectorAndRegex, RegexOptions.Singleline);
-
-        private static readonly Regex BeforeRegex = 
-            new Regex(DateTimeDefinitions.BeforeRegex2, RegexOptions.Singleline);
-
         public static readonly Regex GeneralEndingRegex =
             new Regex(DateTimeDefinitions.GeneralEndingRegex, RegexOptions.Singleline);
 
-        public ItalianTimePeriodExtractorConfiguration(IOptionsConfiguration config) : base(config)
+        private static readonly Regex FromRegex =
+            new Regex(DateTimeDefinitions.FromRegex2, RegexOptions.Singleline);
+
+        private static readonly Regex ConnectorAndRegex =
+            new Regex(DateTimeDefinitions.ConnectorAndRegex, RegexOptions.Singleline);
+
+        private static readonly Regex BeforeRegex =
+            new Regex(DateTimeDefinitions.BeforeRegex2, RegexOptions.Singleline);
+
+        public ItalianTimePeriodExtractorConfiguration(IOptionsConfiguration config)
+            : base(config)
         {
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
             SingleTimeExtractor = new BaseTimeExtractor(new ItalianTimeExtractorConfiguration(this));
@@ -81,6 +80,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             IntegerExtractor = Number.English.IntegerExtractor.GetInstance();
             TimeZoneExtractor = new BaseTimeZoneExtractor(new ItalianTimeZoneExtractorConfiguration(this));
         }
+
+        public string TokenBeforeDate { get; }
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
@@ -108,6 +109,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             {
                 index = fromMatch.Index;
             }
+
             return fromMatch.Success;
         }
 
@@ -119,6 +121,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             {
                 index = beforeMatch.Index;
             }
+
             return beforeMatch.Success;
         }
 
@@ -131,6 +134,5 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         {
             return ConnectorAndRegex.IsMatch(text);
         }
-
     }
 }
