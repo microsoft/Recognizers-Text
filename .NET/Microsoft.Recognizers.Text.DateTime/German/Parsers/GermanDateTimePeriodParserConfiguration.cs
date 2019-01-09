@@ -6,8 +6,60 @@ using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.German
 {
-    public class GermanDateTimePeriodParserConfiguration : BaseOptionsConfiguration,IDateTimePeriodParserConfiguration
+    public class GermanDateTimePeriodParserConfiguration : BaseOptionsConfiguration, IDateTimePeriodParserConfiguration
     {
+        public static readonly Regex MorningStartEndRegex =
+            new Regex(DateTimeDefinitions.MorningStartEndRegex, RegexOptions.Singleline);
+
+        public static readonly Regex AfternoonStartEndRegex =
+            new Regex(DateTimeDefinitions.AfternoonStartEndRegex, RegexOptions.Singleline);
+
+        public static readonly Regex EveningStartEndRegex =
+            new Regex(DateTimeDefinitions.EveningStartEndRegex, RegexOptions.Singleline);
+
+        public static readonly Regex NightStartEndRegex =
+            new Regex(DateTimeDefinitions.NightStartEndRegex, RegexOptions.Singleline);
+
+        public GermanDateTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config)
+            : base(config)
+        {
+            TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
+
+            DateExtractor = config.DateExtractor;
+            TimeExtractor = config.TimeExtractor;
+            DateTimeExtractor = config.DateTimeExtractor;
+            TimePeriodExtractor = config.TimePeriodExtractor;
+            CardinalExtractor = config.CardinalExtractor;
+            DurationExtractor = config.DurationExtractor;
+            NumberParser = config.NumberParser;
+            DateParser = config.DateParser;
+            TimeParser = config.TimeParser;
+            TimePeriodParser = config.TimePeriodParser;
+            DurationParser = config.DurationParser;
+            DateTimeParser = config.DateTimeParser;
+
+            PureNumberFromToRegex = GermanTimePeriodExtractorConfiguration.PureNumFromTo;
+            PureNumberBetweenAndRegex = GermanTimePeriodExtractorConfiguration.PureNumBetweenAnd;
+            SpecificTimeOfDayRegex = GermanDateTimeExtractorConfiguration.SpecificTimeOfDayRegex;
+            TimeOfDayRegex = GermanDateTimeExtractorConfiguration.TimeOfDayRegex;
+            PastRegex = GermanDatePeriodExtractorConfiguration.PastPrefixRegex;
+            FutureRegex = GermanDatePeriodExtractorConfiguration.NextPrefixRegex;
+            FutureSuffixRegex = GermanDatePeriodExtractorConfiguration.FutureSuffixRegex;
+            NumberCombinedWithUnitRegex = GermanDateTimePeriodExtractorConfiguration.TimeNumberCombinedWithUnit;
+            UnitRegex = GermanTimePeriodExtractorConfiguration.TimeUnitRegex;
+            PeriodTimeOfDayWithDateRegex = GermanDateTimePeriodExtractorConfiguration.PeriodTimeOfDayWithDateRegex;
+            RelativeTimeUnitRegex = GermanDateTimePeriodExtractorConfiguration.RelativeTimeUnitRegex;
+            RestOfDateTimeRegex = GermanDateTimePeriodExtractorConfiguration.RestOfDateTimeRegex;
+            AmDescRegex = GermanDateTimePeriodExtractorConfiguration.AmDescRegex;
+            PmDescRegex = GermanDateTimePeriodExtractorConfiguration.PmDescRegex;
+            WithinNextPrefixRegex = GermanDateTimePeriodExtractorConfiguration.WithinNextPrefixRegex;
+            PrefixDayRegex = GermanDateTimePeriodExtractorConfiguration.PrefixDayRegex;
+            BeforeRegex = GermanDateTimePeriodExtractorConfiguration.BeforeRegex;
+            AfterRegex = GermanDateTimePeriodExtractorConfiguration.AfterRegex;
+            UnitMap = config.UnitMap;
+            Numbers = config.Numbers;
+        }
+
         public string TokenBeforeDate { get; }
 
         public IDateExtractor DateExtractor { get; }
@@ -73,57 +125,6 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public IImmutableDictionary<string, string> UnitMap { get; }
 
         public IImmutableDictionary<string, int> Numbers { get; }
-
-        public GermanDateTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config)
-        {
-            TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
-
-            DateExtractor = config.DateExtractor;
-            TimeExtractor = config.TimeExtractor;
-            DateTimeExtractor = config.DateTimeExtractor;
-            TimePeriodExtractor = config.TimePeriodExtractor;
-            CardinalExtractor = config.CardinalExtractor;
-            DurationExtractor = config.DurationExtractor;
-            NumberParser = config.NumberParser;
-            DateParser = config.DateParser;
-            TimeParser = config.TimeParser;
-            TimePeriodParser = config.TimePeriodParser;
-            DurationParser = config.DurationParser;
-            DateTimeParser = config.DateTimeParser;
-
-            PureNumberFromToRegex = GermanTimePeriodExtractorConfiguration.PureNumFromTo;
-            PureNumberBetweenAndRegex = GermanTimePeriodExtractorConfiguration.PureNumBetweenAnd;
-            SpecificTimeOfDayRegex = GermanDateTimeExtractorConfiguration.SpecificTimeOfDayRegex;
-            TimeOfDayRegex = GermanDateTimeExtractorConfiguration.TimeOfDayRegex;
-            PastRegex = GermanDatePeriodExtractorConfiguration.PastPrefixRegex;
-            FutureRegex = GermanDatePeriodExtractorConfiguration.NextPrefixRegex;
-            FutureSuffixRegex = GermanDatePeriodExtractorConfiguration.FutureSuffixRegex;
-            NumberCombinedWithUnitRegex = GermanDateTimePeriodExtractorConfiguration.TimeNumberCombinedWithUnit;
-            UnitRegex = GermanTimePeriodExtractorConfiguration.TimeUnitRegex;
-            PeriodTimeOfDayWithDateRegex = GermanDateTimePeriodExtractorConfiguration.PeriodTimeOfDayWithDateRegex;
-            RelativeTimeUnitRegex = GermanDateTimePeriodExtractorConfiguration.RelativeTimeUnitRegex;
-            RestOfDateTimeRegex = GermanDateTimePeriodExtractorConfiguration.RestOfDateTimeRegex;
-            AmDescRegex = GermanDateTimePeriodExtractorConfiguration.AmDescRegex;
-            PmDescRegex = GermanDateTimePeriodExtractorConfiguration.PmDescRegex;
-            WithinNextPrefixRegex = GermanDateTimePeriodExtractorConfiguration.WithinNextPrefixRegex;
-            PrefixDayRegex = GermanDateTimePeriodExtractorConfiguration.PrefixDayRegex;
-            BeforeRegex = GermanDateTimePeriodExtractorConfiguration.BeforeRegex;
-            AfterRegex = GermanDateTimePeriodExtractorConfiguration.AfterRegex;
-            UnitMap = config.UnitMap;
-            Numbers = config.Numbers;
-        }
-
-        public static readonly Regex MorningStartEndRegex = 
-            new Regex(DateTimeDefinitions.MorningStartEndRegex, RegexOptions.Singleline);
-
-        public static readonly Regex AfternoonStartEndRegex = 
-            new Regex(DateTimeDefinitions.AfternoonStartEndRegex, RegexOptions.Singleline);
-
-        public static readonly Regex EveningStartEndRegex = 
-            new Regex(DateTimeDefinitions.EveningStartEndRegex, RegexOptions.Singleline);
-
-        public static readonly Regex NightStartEndRegex = 
-            new Regex(DateTimeDefinitions.NightStartEndRegex, RegexOptions.Singleline);
 
         public bool GetMatchedTimeRange(string text, out string timeStr, out int beginHour, out int endHour, out int endMin)
         {
