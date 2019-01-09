@@ -13,12 +13,13 @@ namespace Microsoft.Recognizers.Text.DateTime
         public static readonly string DateMinString = DateTimeFormatUtil.FormatDate(DateObject.MinValue);
         public static readonly string DateTimeMinString = DateTimeFormatUtil.FormatDateTime(DateObject.MinValue);
         private static readonly Calendar Cal = DateTimeFormatInfo.InvariantInfo.Calendar;
-        private readonly IMergedParserConfiguration config;
 
         public BaseMergedDateTimeParser(IMergedParserConfiguration configuration)
         {
-            config = configuration;
+            Config = configuration;
         }
+
+        protected IMergedParserConfiguration Config { get; private set; }
 
         public ParseResult Parse(ExtractResult er)
         {
@@ -31,9 +32,9 @@ namespace Microsoft.Recognizers.Text.DateTime
             DateTimeParseResult pr = null;
 
             var originText = er.Text;
-            if ((this.config.Options & DateTimeOptions.EnablePreview) != 0)
+            if ((this.Config.Options & DateTimeOptions.EnablePreview) != 0)
             {
-                er.Text = MatchingUtil.PreProcessTextRemoveSuperfluousWords(er.Text, config.SuperfluousWordMatcher, out var _);
+                er.Text = MatchingUtil.PreProcessTextRemoveSuperfluousWords(er.Text, Config.SuperfluousWordMatcher, out var _);
                 er.Length += er.Text.Length - originText.Length;
             }
 
@@ -44,10 +45,10 @@ namespace Microsoft.Recognizers.Text.DateTime
             // For example, cases like "on or later than", "earlier than or in" have inclusive modifier
             bool hasInclusiveModifier = false;
             var modStr = string.Empty;
-            var beforeMatch = config.BeforeRegex.MatchBegin(er.Text, trim: true);
-            var afterMatch = config.AfterRegex.MatchBegin(er.Text, trim: true);
-            var sinceMatch = config.SinceRegex.MatchBegin(er.Text, trim: true);
-            var aroundMatch = config.AroundRegex.MatchBegin(er.Text, trim: true);
+            var beforeMatch = Config.BeforeRegex.MatchBegin(er.Text, trim: true);
+            var afterMatch = Config.AfterRegex.MatchBegin(er.Text, trim: true);
+            var sinceMatch = Config.SinceRegex.MatchBegin(er.Text, trim: true);
+            var aroundMatch = Config.AroundRegex.MatchBegin(er.Text, trim: true);
 
             if (beforeMatch.Success)
             {
@@ -91,11 +92,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                 er.Text = er.Text.Substring(aroundMatch.Length);
                 modStr = aroundMatch.Value;
             }
-            else if ((er.Type.Equals(Constants.SYS_DATETIME_DATEPERIOD) && config.YearRegex.Match(er.Text).Success) || er.Type.Equals(Constants.SYS_DATETIME_DATE))
+            else if ((er.Type.Equals(Constants.SYS_DATETIME_DATEPERIOD) && Config.YearRegex.Match(er.Text).Success) || er.Type.Equals(Constants.SYS_DATETIME_DATE))
             {
                 // This has to be put at the end of the if, or cases like "before 2012" and "after 2012" would fall into this
                 // 2012 or after/above
-                var match = config.DateAfter.MatchEnd(er.Text, trim: true);
+                var match = Config.DateAfter.MatchEnd(er.Text, trim: true);
                 if (match.Success)
                 {
                     hasDateAfter = true;
@@ -107,49 +108,49 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if (er.Type.Equals(Constants.SYS_DATETIME_DATE))
             {
-                pr = this.config.DateParser.Parse(er, referenceTime);
+                pr = this.Config.DateParser.Parse(er, referenceTime);
                 if (pr.Value == null)
                 {
-                    pr = config.HolidayParser.Parse(er, referenceTime);
+                    pr = Config.HolidayParser.Parse(er, referenceTime);
                 }
             }
             else if (er.Type.Equals(Constants.SYS_DATETIME_TIME))
             {
-                pr = this.config.TimeParser.Parse(er, referenceTime);
+                pr = this.Config.TimeParser.Parse(er, referenceTime);
             }
             else if (er.Type.Equals(Constants.SYS_DATETIME_DATETIME))
             {
-                pr = this.config.DateTimeParser.Parse(er, referenceTime);
+                pr = this.Config.DateTimeParser.Parse(er, referenceTime);
             }
             else if (er.Type.Equals(Constants.SYS_DATETIME_DATEPERIOD))
             {
-                pr = this.config.DatePeriodParser.Parse(er, referenceTime);
+                pr = this.Config.DatePeriodParser.Parse(er, referenceTime);
             }
             else if (er.Type.Equals(Constants.SYS_DATETIME_TIMEPERIOD))
             {
-                pr = this.config.TimePeriodParser.Parse(er, referenceTime);
+                pr = this.Config.TimePeriodParser.Parse(er, referenceTime);
             }
             else if (er.Type.Equals(Constants.SYS_DATETIME_DATETIMEPERIOD))
             {
-                pr = this.config.DateTimePeriodParser.Parse(er, referenceTime);
+                pr = this.Config.DateTimePeriodParser.Parse(er, referenceTime);
             }
             else if (er.Type.Equals(Constants.SYS_DATETIME_DURATION))
             {
-                pr = this.config.DurationParser.Parse(er, referenceTime);
+                pr = this.Config.DurationParser.Parse(er, referenceTime);
             }
             else if (er.Type.Equals(Constants.SYS_DATETIME_SET))
             {
-                pr = this.config.SetParser.Parse(er, referenceTime);
+                pr = this.Config.SetParser.Parse(er, referenceTime);
             }
             else if (er.Type.Equals(Constants.SYS_DATETIME_DATETIMEALT))
             {
-                pr = this.config.DateTimeAltParser.Parse(er, referenceTime);
+                pr = this.Config.DateTimeAltParser.Parse(er, referenceTime);
             }
             else if (er.Type.Equals(Constants.SYS_DATETIME_TIMEZONE))
             {
-                if ((config.Options & DateTimeOptions.EnablePreview) != 0)
+                if ((Config.Options & DateTimeOptions.EnablePreview) != 0)
                 {
-                    pr = this.config.TimeZoneParser.Parse(er, referenceTime);
+                    pr = this.Config.TimeZoneParser.Parse(er, referenceTime);
                 }
             }
             else
@@ -226,7 +227,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 hasSince = true;
             }
 
-            if ((config.Options & DateTimeOptions.SplitDateAndTime) != 0 &&
+            if ((Config.Options & DateTimeOptions.SplitDateAndTime) != 0 &&
                 ((DateTimeResolutionResult)pr.Value)?.SubDateTimeEntities != null)
             {
                 pr.Value = DateTimeResolutionForSplit(pr);
@@ -238,7 +239,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             // In this version, ExperimentalMode only cope with the "IncludePeriodEnd" case
-            if ((this.config.Options & DateTimeOptions.ExperimentalMode) != 0)
+            if ((this.Config.Options & DateTimeOptions.ExperimentalMode) != 0)
             {
                 if (pr.Metadata != null && pr.Metadata.PossiblyIncludePeriodEnd)
                 {
@@ -246,7 +247,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
             }
 
-            if ((this.config.Options & DateTimeOptions.EnablePreview) != 0)
+            if ((this.Config.Options & DateTimeOptions.EnablePreview) != 0)
             {
                 pr.Length += originText.Length - pr.Text.Length;
                 pr.Text = originText;
@@ -345,7 +346,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public string DetermineDateTimeType(string type, bool hasMod)
         {
-            if ((config.Options & DateTimeOptions.SplitDateAndTime) != 0)
+            if ((Config.Options & DateTimeOptions.SplitDateAndTime) != 0)
             {
                 if (type.Equals(Constants.SYS_DATETIME_DATETIME))
                 {
@@ -513,7 +514,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             // If WeekOf and in CalendarMode, modify the past part of our resolution
-            if ((config.Options & DateTimeOptions.CalendarMode) != 0 &&
+            if ((Config.Options & DateTimeOptions.CalendarMode) != 0 &&
                 !string.IsNullOrEmpty(comment) && comment.Equals(Constants.Comment_WeekOf))
             {
                 ResolveWeekOf(res, Constants.ResolveToPast);
