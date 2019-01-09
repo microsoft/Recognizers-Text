@@ -11,10 +11,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         {
             new Regex(DateTimeDefinitions.HolidayRegex1, RegexOptions.Singleline),
             new Regex(DateTimeDefinitions.HolidayRegex2, RegexOptions.Singleline),
-            new Regex(DateTimeDefinitions.HolidayRegex3, RegexOptions.Singleline)
+            new Regex(DateTimeDefinitions.HolidayRegex3, RegexOptions.Singleline),
         };
 
-        public PortugueseHolidayExtractorConfiguration(IOptionsConfiguration config) : base(config)
+        public PortugueseHolidayExtractorConfiguration(IOptionsConfiguration config)
+            : base(config)
         {
         }
 
