@@ -62,7 +62,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
 		public const string FromRegex = @"((desde|de)(\s*la(s)?)?)$";
 		public const string ConnectorAndRegex = @"(y\s*(la(s)?)?)$";
 		public const string BetweenRegex = @"(entre\s*(la(s)?)?)";
-		public const string WeekDayRegex = @"\b(?<weekday>domingos?|lunes|martes|mi[eé]rcoles|jueves|viernes|s[aá]bados?|lu|ma|mi|ju|vi|sa|do)\b";
+		public const string WeekDayRegex = @"\b(?<weekday>domingos?|lunes|martes|mi[eé]rcoles|jueves|viernes|s[aá]bados?|lun|mar|mi[eé]|jue|vie|s[aá]b|dom|lu|ma|mi|ju|vi|sa|do)\b";
 		public static readonly string OnRegex = $@"(?<=\ben\s+)({DayRegex}s?)\b";
 		public const string RelaxedOnRegex = @"(?<=\b(en|el|del)\s+)((?<day>10|11|12|13|14|15|16|17|18|19|1st|20|21|22|23|24|25|26|27|28|29|2|30|31|3|4|5|6|7|8|9)s?)\b";
 		public static readonly string ThisRegex = $@"\b((este\s*){WeekDayRegex})|({WeekDayRegex}\s*((de\s+)?esta\s+semana))\b";
