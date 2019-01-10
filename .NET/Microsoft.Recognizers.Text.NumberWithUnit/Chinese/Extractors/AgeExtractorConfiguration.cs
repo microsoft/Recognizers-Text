@@ -7,9 +7,15 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Chinese
 {
     public class AgeExtractorConfiguration : ChineseNumberWithUnitExtractorConfiguration
     {
-        public AgeExtractorConfiguration() : this(new CultureInfo(Culture.Chinese)) { }
+        public AgeExtractorConfiguration()
+            : this(new CultureInfo(Culture.Chinese))
+        {
+        }
 
-        public AgeExtractorConfiguration(CultureInfo ci) : base(ci) { }
+        public AgeExtractorConfiguration(CultureInfo ci)
+            : base(ci)
+        {
+        }
 
         public override ImmutableDictionary<string, string> SuffixList => NumbersWithUnitDefinitions.AgeSuffixList.ToImmutableDictionary();
 
