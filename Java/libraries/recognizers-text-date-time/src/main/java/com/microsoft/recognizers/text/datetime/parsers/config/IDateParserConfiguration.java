@@ -5,6 +5,7 @@ import com.google.common.collect.ImmutableMap;
 import com.microsoft.recognizers.text.IExtractor;
 import com.microsoft.recognizers.text.IParser;
 import com.microsoft.recognizers.text.datetime.config.IOptionsConfiguration;
+import com.microsoft.recognizers.text.datetime.extractors.IDateExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.IDateTimeExtractor;
 import com.microsoft.recognizers.text.datetime.parsers.IDateTimeParser;
 import com.microsoft.recognizers.text.datetime.utilities.IDateTimeUtilityConfiguration;
@@ -25,7 +26,7 @@ public interface IDateParserConfiguration extends IOptionsConfiguration {
 
     IDateTimeExtractor getDurationExtractor();
 
-    IDateTimeExtractor getDateExtractor();
+    IDateExtractor getDateExtractor();
 
     IDateTimeParser getDurationParser();
 
@@ -67,7 +68,6 @@ public interface IDateParserConfiguration extends IOptionsConfiguration {
 
     Pattern getPastPrefixRegex();
 
-
     ImmutableMap<String, String> getUnitMap();
 
     ImmutableMap<String, Integer> getDayOfMonth();
@@ -88,13 +88,11 @@ public interface IDateParserConfiguration extends IOptionsConfiguration {
 
     List<String> getMinusTwoDayTerms();
 
-    Integer getSwiftDay(String text);
+    IDateTimeUtilityConfiguration getUtilityConfiguration();
 
     Integer getSwiftMonth(String text);
 
     Boolean isCardinalLast(String text);
 
     String normalize(String text);
-
-    IDateTimeUtilityConfiguration getUtilityConfiguration();
 }
