@@ -6,12 +6,12 @@ namespace Microsoft.Recognizers.Text.Number
 {
     public class BaseNumberRangeParser : IParser
     {
-        protected readonly INumberRangeParserConfiguration Config;
-
         public BaseNumberRangeParser(INumberRangeParserConfiguration config)
         {
             this.Config = config;
         }
+
+        protected INumberRangeParserConfiguration Config { get; private set; }
 
         public virtual ParseResult Parse(ExtractResult extResult)
         {
@@ -40,7 +40,7 @@ namespace Microsoft.Recognizers.Text.Number
                 Start = extResult.Start,
                 Length = extResult.Length,
                 Text = extResult.Text,
-                Type = extResult.Type
+                Type = extResult.Type,
             };
 
             var er = Config.NumberExtractor.Extract(extResult.Text);
@@ -127,7 +127,7 @@ namespace Microsoft.Recognizers.Text.Number
             result.Value = new Dictionary<string, double>()
             {
                 { "StartValue", startValue },
-                { "EndValue", endValue }
+                { "EndValue", endValue },
             };
 
             result.ResolutionStr = string.Concat(leftBracket, startValueStr, NumberRangeConstants.INTERVAL_SEPARATOR, endValueStr, rightBracket);
@@ -142,7 +142,7 @@ namespace Microsoft.Recognizers.Text.Number
                 Start = extResult.Start,
                 Length = extResult.Length,
                 Text = extResult.Text,
-                Type = extResult.Type
+                Type = extResult.Type,
             };
 
             var er = Config.NumberExtractor.Extract(extResult.Text);
@@ -192,7 +192,7 @@ namespace Microsoft.Recognizers.Text.Number
 
                 result.Value = new Dictionary<string, double>()
                 {
-                    { "StartValue", num[0] }
+                    { "StartValue", num[0] },
                 };
             }
             else if (type.Contains(NumberRangeConstants.LESS))
@@ -224,7 +224,7 @@ namespace Microsoft.Recognizers.Text.Number
 
                 result.Value = new Dictionary<string, double>()
                 {
-                    { "EndValue", num[0] }
+                    { "EndValue", num[0] },
                 };
             }
             else
@@ -238,7 +238,7 @@ namespace Microsoft.Recognizers.Text.Number
                 result.Value = new Dictionary<string, double>()
                 {
                     { "StartValue", num[0] },
-                    { "EndValue", num[0] }
+                    { "EndValue", num[0] },
                 };
             }
 
