@@ -36,6 +36,7 @@ import com.microsoft.recognizers.text.datetime.parsers.BaseTimeZoneParser;
 import com.microsoft.recognizers.text.datetime.parsers.DateTimeParseResult;
 import com.microsoft.recognizers.text.datetime.parsers.IDateTimeParser;
 import com.microsoft.recognizers.text.datetime.spanish.parsers.SpanishCommonDateTimeParserConfiguration;
+import com.microsoft.recognizers.text.datetime.spanish.parsers.SpanishTimePeriodParserConfiguration;
 import com.microsoft.recognizers.text.datetime.spanish.parsers.SpanishDurationParserConfiguration;
 import com.microsoft.recognizers.text.datetime.spanish.parsers.SpanishTimeParserConfiguration;
 import com.microsoft.recognizers.text.datetime.utilities.DateTimeResolutionResult;
@@ -233,8 +234,8 @@ public class DateTimeParserTest extends AbstractTest {
             //    return new BaseMergedDateTimeParser(new EnglishMergedParserConfiguration(DateTimeOptions.None));
             case "TimeParser":
                 return new TimeParser(new SpanishTimeParserConfiguration(new SpanishCommonDateTimeParserConfiguration(DateTimeOptions.None)));
-            //case "TimePeriodParser":
-            //    return new BaseTimePeriodParser(new SpanishTimePeriodParserConfiguration(new SpanishCommonDateTimeParserConfiguration(DateTimeOptions.None)));
+            case "TimePeriodParser":
+                return new BaseTimePeriodParser(new SpanishTimePeriodParserConfiguration(new SpanishCommonDateTimeParserConfiguration(DateTimeOptions.None)));
             default:
                 throw new AssumptionViolatedException("Parser Type/Name not supported.");
         }
