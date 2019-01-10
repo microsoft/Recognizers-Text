@@ -2,7 +2,8 @@
 {
     public class MentionModel : AbstractSequenceModel
     {
-        public MentionModel(IParser parser, IExtractor extractor) : base(parser, extractor)
+        public MentionModel(IParser parser, IExtractor extractor)
+            : base(parser, extractor)
         {
         }
 
