@@ -29,6 +29,7 @@ namespace Microsoft.Recognizers.Text.Number.French
             this.WrittenFractionSeparatorTexts = NumbersDefinitions.WrittenFractionSeparatorTexts;
 
             this.CardinalNumberMap = NumbersDefinitions.CardinalNumberMap.ToImmutableDictionary();
+            this.RelativeReferenceMap = NumbersDefinitions.RelativeReferenceMap.ToImmutableDictionary();
             this.OrdinalNumberMap = NumberMapGenerator.InitOrdinalNumberMap(NumbersDefinitions.OrdinalNumberMap, NumbersDefinitions.PrefixCardinalMap, NumbersDefinitions.SuffixOrdinalMap);
             this.RoundNumberMap = NumbersDefinitions.RoundNumberMap.ToImmutableDictionary();
 
@@ -66,6 +67,8 @@ namespace Microsoft.Recognizers.Text.Number.French
         public string NonDecimalSeparatorText { get; private set; }
 
         public ImmutableDictionary<string, long> OrdinalNumberMap { get; private set; }
+
+        public ImmutableDictionary<string, string> RelativeReferenceMap { get; private set; }
 
         public ImmutableDictionary<string, long> RoundNumberMap { get; private set; }
 
@@ -120,6 +123,17 @@ namespace Microsoft.Recognizers.Text.Number.French
             }
 
             return finalValue;
+        }
+
+        // Handle cases like "last", "next one", "previous one"
+        public string ResolveSpecificString(string numberStr)
+        {
+            if (this.RelativeReferenceMap.ContainsKey(numberStr))
+            {
+                return this.RelativeReferenceMap[numberStr];
+            }
+
+            return string.Empty;
         }
     }
 }

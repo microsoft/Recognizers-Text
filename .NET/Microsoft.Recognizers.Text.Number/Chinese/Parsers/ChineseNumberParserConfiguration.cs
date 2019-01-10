@@ -32,6 +32,7 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
 
             CardinalNumberMap = new Dictionary<string, long>().ToImmutableDictionary();
             OrdinalNumberMap = new Dictionary<string, long>().ToImmutableDictionary();
+            RelativeReferenceMap = NumbersDefinitions.RelativeReferenceMap.ToImmutableDictionary();
             RoundNumberMap = NumbersDefinitions.RoundNumberMap.ToImmutableDictionary();
             ZeroToNineMap = NumbersDefinitions.ZeroToNineMap.ToImmutableDictionary();
             RoundNumberMapChar = NumbersDefinitions.RoundNumberMapChar.ToImmutableDictionary();
@@ -101,6 +102,8 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
 
         public ImmutableDictionary<string, long> OrdinalNumberMap { get; private set; }
 
+        public ImmutableDictionary<string, string> RelativeReferenceMap { get; private set; }
+
         public ImmutableDictionary<string, long> CardinalNumberMap { get; private set; }
 
         public ImmutableDictionary<string, long> RoundNumberMap { get; private set; }
@@ -135,6 +138,17 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
         public long ResolveCompositeNumber(string numberStr)
         {
             return 0;
+        }
+
+        // Handle cases like "last", "next one", "previous one"
+        public string ResolveSpecificString(string numberStr)
+        {
+            if (this.RelativeReferenceMap.ContainsKey(numberStr))
+            {
+                return this.RelativeReferenceMap[numberStr];
+            }
+
+            return string.Empty;
         }
     }
 }

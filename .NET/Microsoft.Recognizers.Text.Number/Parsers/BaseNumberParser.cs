@@ -194,9 +194,14 @@ namespace Microsoft.Recognizers.Text.Number
 
         private string GetResolutionStr(object value)
         {
-            return Config.CultureInfo != null ? 
-                ((double)value).ToString(Config.CultureInfo) : 
-                value.ToString();
+            var resolutionStr = value.ToString();
+
+            if (Config.CultureInfo != null && value is double)
+            {
+                resolutionStr = ((double)value).ToString(Config.CultureInfo);
+            }
+
+            return resolutionStr;
         }
 
         protected ParseResult PowerNumberParse(ExtractResult extResult)
@@ -300,7 +305,7 @@ namespace Microsoft.Recognizers.Text.Number
                 Start = extResult.Start,
                 Length = extResult.Length,
                 Text = extResult.Text,
-                Type = extResult.Type
+                Type = extResult.Type,
             };
 
             var handle = extResult.Text.ToLower();
@@ -311,36 +316,22 @@ namespace Microsoft.Recognizers.Text.Number
 
             #endregion
 
-            var numGroup = handle.Split(Config.WrittenDecimalSeparatorTexts.ToArray(), StringSplitOptions.RemoveEmptyEntries);
-
-            #region IntegerPart
-
-            var intPart = numGroup[0];
-            var sMatch = TextNumberRegex.Match(intPart);
-
-            // Store all match str.
-            var matchStrs = new List<string>();
-
-            while (sMatch.Success)
+            // Handling cases like "last", "next one", "previous one"
+            if (Config.RelativeReferenceMap.ContainsKey(extResult.Text))
             {
-                var matchStr = sMatch.Groups[0].Value.ToLower();
-                matchStrs.Add(matchStr);
-                sMatch = sMatch.NextMatch();
+                result.Value = Config.RelativeReferenceMap[extResult.Text];
             }
-
-            //Get the value recursively
-            var intPartRet = GetIntValue(matchStrs);
-
-            #endregion
-
-            #region DecimalPart
-
-            double pointPartRet = 0;
-            if (numGroup.Length == 2)
+            else
             {
-                var pointPart = numGroup[1];
-                sMatch = TextNumberRegex.Match(pointPart);
-                matchStrs.Clear();
+                var numGroup = handle.Split(Config.WrittenDecimalSeparatorTexts.ToArray(), StringSplitOptions.RemoveEmptyEntries);
+
+                #region IntegerPart
+
+                var intPart = numGroup[0];
+                var sMatch = TextNumberRegex.Match(intPart);
+
+                // Store all match str.
+                var matchStrs = new List<string>();
 
                 while (sMatch.Success)
                 {
@@ -349,12 +340,34 @@ namespace Microsoft.Recognizers.Text.Number
                     sMatch = sMatch.NextMatch();
                 }
 
-                pointPartRet += GetPointValue(matchStrs);
+                //Get the value recursively
+                var intPartRet = GetIntValue(matchStrs);
+
+                #endregion
+
+                #region DecimalPart
+
+                double pointPartRet = 0;
+                if (numGroup.Length == 2)
+                {
+                    var pointPart = numGroup[1];
+                    sMatch = TextNumberRegex.Match(pointPart);
+                    matchStrs.Clear();
+
+                    while (sMatch.Success)
+                    {
+                        var matchStr = sMatch.Groups[0].Value.ToLower();
+                        matchStrs.Add(matchStr);
+                        sMatch = sMatch.NextMatch();
+                    }
+
+                    pointPartRet += GetPointValue(matchStrs);
+                }
+
+                #endregion
+
+                result.Value = intPartRet + pointPartRet;
             }
-
-            #endregion
-
-            result.Value = intPartRet + pointPartRet;
 
             return result;
         }

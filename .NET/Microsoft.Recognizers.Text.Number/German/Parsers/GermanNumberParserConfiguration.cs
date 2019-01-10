@@ -30,6 +30,7 @@ namespace Microsoft.Recognizers.Text.Number.German
 
             this.CardinalNumberMap = NumbersDefinitions.CardinalNumberMap.ToImmutableDictionary();
             this.OrdinalNumberMap = NumbersDefinitions.OrdinalNumberMap.ToImmutableDictionary();
+            this.RelativeReferenceMap = NumbersDefinitions.RelativeReferenceMap.ToImmutableDictionary();
             this.RoundNumberMap = NumbersDefinitions.RoundNumberMap.ToImmutableDictionary();
             this.HalfADozenRegex = new Regex(NumbersDefinitions.HalfADozenRegex, RegexOptions.Singleline);
             this.DigitalNumberRegex = new Regex(NumbersDefinitions.DigitalNumberRegex, RegexOptions.Singleline);
@@ -64,6 +65,8 @@ namespace Microsoft.Recognizers.Text.Number.German
         public string NonDecimalSeparatorText { get; private set; }
 
         public ImmutableDictionary<string, long> OrdinalNumberMap { get; private set; }
+
+        public ImmutableDictionary<string, string> RelativeReferenceMap { get; private set; }
 
         public ImmutableDictionary<string, long> RoundNumberMap { get; private set; }
 
@@ -132,6 +135,17 @@ namespace Microsoft.Recognizers.Text.Number.German
             }
 
             return 0;
+        }
+
+        // Handle cases like "last", "next one", "previous one"
+        public string ResolveSpecificString(string numberStr)
+        {
+            if (this.RelativeReferenceMap.ContainsKey(numberStr))
+            {
+                return this.RelativeReferenceMap[numberStr];
+            }
+
+            return string.Empty;
         }
     }
 }

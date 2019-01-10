@@ -31,6 +31,7 @@ namespace Microsoft.Recognizers.Text.Number.Portuguese
 
             this.CardinalNumberMap = NumbersDefinitions.CardinalNumberMap.ToImmutableDictionary();
             this.OrdinalNumberMap = NumberMapGenerator.InitOrdinalNumberMap(NumbersDefinitions.OrdinalNumberMap, NumbersDefinitions.PrefixCardinalMap, NumbersDefinitions.SuffixOrdinalMap);
+            this.RelativeReferenceMap = NumbersDefinitions.RelativeReferenceMap.ToImmutableDictionary();
             this.RoundNumberMap = NumbersDefinitions.RoundNumberMap.ToImmutableDictionary();
 
             this.HalfADozenRegex = new Regex(NumbersDefinitions.HalfADozenRegex, RegexOptions.Singleline);
@@ -66,6 +67,8 @@ namespace Microsoft.Recognizers.Text.Number.Portuguese
         public string NonDecimalSeparatorText { get; private set; }
 
         public ImmutableDictionary<string, long> OrdinalNumberMap { get; private set; }
+
+        public ImmutableDictionary<string, string> RelativeReferenceMap { get; private set; }
 
         public ImmutableDictionary<string, long> RoundNumberMap { get; private set; }
 
@@ -159,6 +162,17 @@ namespace Microsoft.Recognizers.Text.Number.Portuguese
                 }
             }
             return finalValue;
+        }
+
+        // Handle cases like "last", "next one", "previous one"
+        public string ResolveSpecificString(string numberStr)
+        {
+            if (this.RelativeReferenceMap.ContainsKey(numberStr))
+            {
+                return this.RelativeReferenceMap[numberStr];
+            }
+
+            return string.Empty;
         }
     }
 }

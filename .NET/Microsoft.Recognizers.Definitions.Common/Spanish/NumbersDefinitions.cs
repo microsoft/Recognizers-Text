@@ -329,5 +329,9 @@ namespace Microsoft.Recognizers.Definitions.Spanish
 			{ @"t", 1000000000000 }
 		};
 		public const string AmbiguousFractionConnectorsRegex = @"^[.]";
+		public static readonly Dictionary<string, string> RelativeReferenceMap = new Dictionary<string, string>
+		{
+			{ @"", @"" }
+		};
 	}
 }

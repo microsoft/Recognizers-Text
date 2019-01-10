@@ -15,6 +15,8 @@ namespace Microsoft.Recognizers.Text.Number
 
         ImmutableDictionary<string, long> RoundNumberMap { get; }
 
+        ImmutableDictionary<string, string> RelativeReferenceMap { get; }
+
         #endregion
 
         #region language settings
