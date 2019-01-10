@@ -25,6 +25,8 @@ RangePrefixRegex: !simpleRegex
 TwoDigitYearRegex: !nestedRegex
   def: \b(?<![$])(?<year>([0-27-9]\d))(?!(\s*((\:)|{AmDescRegex}|{PmDescRegex}|\.\d)))\b
   references: [ AmDescRegex, PmDescRegex]
+RelativeYearRegex: !simpleRegex
+  def: (?<relYear>((este|pr[oó]ximo|([uú]ltim(o|as|os)))\s+año)|(año\s+((que\s+viene)|pasado)))\b
 FullTextYearRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[\*]
@@ -32,12 +34,16 @@ YearRegex: !nestedRegex
   def: ({BaseDateTime.FourDigitYearRegex}|{FullTextYearRegex})
   references: [ BaseDateTime.FourDigitYearRegex, FullTextYearRegex ]
 RelativeMonthRegex: !simpleRegex
-  def: (?<relmonth>((este|pr[oó]ximo|[uú]ltimo)\s+mes)|(mes\s+que\s+viene))\b
+  def: (?<relmonth>((este|pr[oó]ximo|([uú]ltim(o|as|os)))\s+mes)|(mes\s+((que\s+viene)|pasado)))\b
+RelativeWeekRegex: !simpleRegex
+  def: (?<relweek>((este|pr[oó]ximo|([uú]ltim(o|as|os)))\s+(semana|semanas))|((semana|semanas)\s+((que\s+viene)|pasado)))\b
 MonthRegex: !simpleRegex
   def: \b(?<month>abril|abr|agosto|ago|diciembre|dic|febrero|feb|enero|ene|julio|jul|junio|jun|marzo|mar|mayo|may|noviembre|nov|octubre|oct|septiembre|setiembre|sept|set|sep)\b
 MonthSuffixRegex: !nestedRegex
-  def: (?<msuf>(en\s+|del\s+|de\s+)?({RelativeMonthRegex}|{MonthRegex}))
+  def: (?<msuf>((del|de|la|el)\s+)?({RelativeMonthRegex}|{MonthRegex}))
   references: [ RelativeMonthRegex, MonthRegex ]
+RelativeDayRegex: !simpleRegex
+  def: (?<relday>((este|pr[oó]ximo|([uú]ltim(o|as|os)))\s+días)|(días\s+((que\s+viene)|pasado)))\b
 DateUnitRegex: !simpleRegex
   def: (?<unit>años|año|meses|mes|semanas|semana|d[ií]a(s)?)\b
 PastRegex: !simpleRegex
@@ -63,7 +69,7 @@ MonthWithYearRegex: !nestedRegex
   def: \b(((pr[oó]xim[oa](s)?|este|esta|[uú]ltim[oa]?)\s+)?({MonthRegex})\s+((de|del|de la)\s+)?({YearRegex}|(?<order>pr[oó]ximo(s)?|[uú]ltimo?|este)\s+año))\b
   references: [ MonthRegex, YearRegex ]
 MonthNumWithYearRegex: !nestedRegex
-  def: ({YearRegex}(\s*?)[/\-\.](\s*?){MonthNumRegex})|({MonthNumRegex}(\s*?)[/\-](\s*?){YearRegex})
+  def: ({YearRegex}(\s*?)[/\-\.](\s*?){MonthNumRegex})|({MonthNumRegex}(\s*?)[/\-\.](\s*?){YearRegex})
   references: [ YearRegex, MonthNumRegex ]
 WeekOfMonthRegex: !nestedRegex
   def: (?<wom>(la\s+)?(?<cardinal>primera?|1ra|segunda|2da|tercera?|3ra|cuarta|4ta|quinta|5ta|[uú]ltima)\s+semana\s+{MonthSuffixRegex})
@@ -78,7 +84,7 @@ NumberCombinedWithDateUnit: !nestedRegex
   def: \b(?<num>\d+(\.\d*)?){DateUnitRegex}
   references: [ DateUnitRegex ]
 QuarterRegex: !nestedRegex
-  def: (el\s+)?(?<cardinal>primer|1er|segundo|2do|tercer|3ro|cuarto|4to)\s+cuatrimestre(\s+de|\s*,\s*)?\s+({YearRegex}|(?<order>pr[oó]ximo(s)?|[uú]ltimo?|este)\s+año)
+  def: (el\s+)?(?<cardinal>primer|1er|segundo|2do|tercer|3ro|cuarto|4to|((1|2|3|4)º))\s+(cuatrimestre|cuarto)((\s+de|\s*,\s*)?\s+({YearRegex}|(?<order>pr[oó]ximo(s)?|[uú]ltimo?|este)\s+año))?
   references: [ YearRegex ]
 QuarterRegexYearFront: !nestedRegex
   def: ({YearRegex}|(?<order>pr[oó]ximo(s)?|[uú]ltimo?|este)\s+año)\s+(el\s+)?(?<cardinal>(primer|primero)|1er|segundo|2do|(tercer|terceo)|3ro|cuarto|4to)\s+cuatrimestre
@@ -751,9 +757,6 @@ PastPrefixRegex: !simpleRegex
   def: ([uú]ltim[oa])\b
 ThisPrefixRegex: !simpleRegex
   def: (est[ea])\b
-RelativeDayRegex: !simpleRegex
-  # TODO: implement the relative day regex if needed. If yes, they should be abstracted
-  def: ^[\.]
 RestOfDateRegex: !simpleRegex
   # TODO: add this regex, let it correspond to the one in English
   def: ^[\.]

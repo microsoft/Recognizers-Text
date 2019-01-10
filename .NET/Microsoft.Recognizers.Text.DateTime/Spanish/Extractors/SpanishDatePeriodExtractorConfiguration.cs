@@ -170,6 +170,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         private static readonly Regex BetweenRegex =
             new Regex(DateTimeDefinitions.BetweenRegex, RegexOptions.Singleline);
 
+        public static readonly Regex RelativeWeekRegex =
+           new Regex(DateTimeDefinitions.RelativeWeekRegex, RegexOptions.Singleline);
+
+        public static readonly Regex RelativeYearRegex =
+           new Regex(DateTimeDefinitions.RelativeYearRegex, RegexOptions.Singleline);
+
+        public static readonly Regex RelativeDayRegex =
+           new Regex(DateTimeDefinitions.RelativeDayRegex, RegexOptions.Singleline);
+
         private static readonly Regex[] SimpleCasesRegexes =
         {
             SimpleCasesRegex,
@@ -192,7 +201,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             YearPlusNumberRegex,
             DecadeWithCenturyRegex,
             RelativeDecadeRegex,
-            MonthOfRegex
+            MonthOfRegex,
+            RelativeWeekRegex,
+            RelativeYearRegex,
+            RelativeDayRegex,
+            RelativeMonthRegex
         };
 
         public SpanishDatePeriodExtractorConfiguration(IOptionsConfiguration config)
