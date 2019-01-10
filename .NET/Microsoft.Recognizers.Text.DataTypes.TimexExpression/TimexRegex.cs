@@ -27,7 +27,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
                     new Regex(@"^(?<year>\d\d\d\d)-W(?<weekOfYear>\d\d)-(?<weekend>WE)$"),
                     new Regex(@"^XXXX-(?<month>\d\d)$"),
                     new Regex(@"^XXXX-(?<month>\d\d)-W(?<weekOfMonth>\d\d)$"),
-                    new Regex(@"^XXXX-(?<month>\d\d)-WXX-(?<weekOfMonth>\d)-(?<dayOfWeek>\d)$")
+                    new Regex(@"^XXXX-(?<month>\d\d)-WXX-(?<weekOfMonth>\d)-(?<dayOfWeek>\d)$"),
                 }
             },
             {
@@ -39,17 +39,30 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
                     new Regex(@"^T(?<hour>\d\d):(?<minute>\d\d):(?<second>\d\d)$"),
 
                     // timerange
-                    new Regex(@"^T(?<partOfDay>DT|NI|MO|AF|EV)$")
+                    new Regex(@"^T(?<partOfDay>DT|NI|MO|AF|EV)$"),
                 }
             },
             {
                 "period", new Regex[]
                 {
                     new Regex(@"^P(?<amount>\d*\.?\d+)(?<dateUnit>Y|M|W|D)$"),
-                    new Regex(@"^PT(?<amount>\d*\.?\d+)(?<timeUnit>H|M|S)$")
+                    new Regex(@"^PT(?<amount>\d*\.?\d+)(?<timeUnit>H|M|S)$"),
+                }
+            },
+        };
+
+        public static bool Extract(string name, string timex, IDictionary<string, string> result)
+        {
+            foreach (var entry in timexRegex[name])
+            {
+                if (TryExtract(entry, timex, result))
+                {
+                    return true;
                 }
             }
-        };
+
+            return false;
+        }
 
         private static bool TryExtract(Regex regex, string timex, IDictionary<string, string> result)
         {
@@ -65,19 +78,6 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             }
 
             return true;
-        }
-
-        public static bool Extract(string name, string timex, IDictionary<string, string> result)
-        {
-            foreach (var entry in timexRegex[name])
-            {
-                if (TryExtract(entry, timex, result))
-                {
-                    return true;
-                }
-            }
-
-            return false;
         }
     }
 }
