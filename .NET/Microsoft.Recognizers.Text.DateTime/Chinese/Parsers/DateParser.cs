@@ -10,10 +10,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
     public class DateParser : IDateTimeParser
     {
-        public static readonly string ParserName = Constants.SYS_DATETIME_DATE; //"Date";
+        public static readonly string ParserName = Constants.SYS_DATETIME_DATE; // "Date";
 
+        private const string V = "";
         private static readonly int[] MonthMaxDays = { 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
-
         private readonly ChineseDateTimeParserConfiguration config;
 
         private readonly IExtractor integerExtractor;
@@ -52,11 +52,16 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 Type = er.Type,
                 Data = er.Data,
                 Value = value,
-                TimexStr = value == null ? "" : ((DateTimeResolutionResult)value).Timex,
-                ResolutionStr = ""
+                TimexStr = value == null ? V : ((DateTimeResolutionResult)value).Timex,
+                ResolutionStr = string.Empty,
             };
 
             return ret;
+        }
+
+        public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)
+        {
+            return candidateResults;
         }
 
         protected DateTimeResolutionResult InnerParser(string text, DateObject reference)
@@ -82,12 +87,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             {
                 innerResult.FutureResolution = new Dictionary<string, string>
                     {
-                        {TimeTypeConstants.DATE, DateTimeFormatUtil.FormatDate((DateObject) innerResult.FutureValue)}
+                        { TimeTypeConstants.DATE, DateTimeFormatUtil.FormatDate((DateObject)innerResult.FutureValue) },
                     };
 
                 innerResult.PastResolution = new Dictionary<string, string>
                     {
-                        {TimeTypeConstants.DATE, DateTimeFormatUtil.FormatDate((DateObject) innerResult.PastValue)}
+                        { TimeTypeConstants.DATE, DateTimeFormatUtil.FormatDate((DateObject)innerResult.PastValue) },
                     };
 
                 innerResult.IsLunar = IsLunarCalendar(text);
@@ -96,15 +101,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             }
 
             return null;
-        }
-
-        // parse if lunar contains
-        private static bool IsLunarCalendar(string text)
-        {
-            var trimmedText = text.Trim();
-            var match = DateExtractorChs.LunarRegex.Match(trimmedText);
-
-            return match.Success;
         }
 
         // parse basic patterns in DateRegexList
@@ -253,7 +249,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                             }
                         }
                     }
-
                     else if (!hasYear)
                     {
                         if (futureDate < referenceDate)
@@ -315,18 +310,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             }
 
             return ret;
-        }
-
-        private int GetMonthMaxDay(int year, int month)
-        {
-            var maxDay = MonthMaxDays[month - 1];
-
-            if (!DateObject.IsLeapYear(year) && month == 2)
-            {
-                maxDay -= 1;
-            }
-
-            return maxDay;
         }
 
         protected DateTimeResolutionResult MatchNextWeekday(string text, DateObject reference)
@@ -465,6 +448,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 {
                     swift = -1;
                 }
+
                 month = referenceDate.AddMonths(swift).Month;
                 year = referenceDate.AddMonths(swift).Year;
             }
@@ -509,134 +493,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             ret.Success = true;
 
             return ret;
-        }
-
-        private static DateObject ComputeDate(int cadinal, int weekday, int month, int year)
-        {
-            var firstDay = DateObject.MinValue.SafeCreateFromValue(year, month, 1);
-            var firstWeekday = firstDay.This((DayOfWeek)weekday);
-            if (weekday == 0)
-            {
-                weekday = 7;
-            }
-
-            if (weekday < (int)firstDay.DayOfWeek)
-            {
-                firstWeekday = firstDay.Next((DayOfWeek)weekday);
-            }
-
-            return firstWeekday.AddDays(7 * (cadinal - 1));
-        }
-
-        // handle cases like "三天前" 
-        private DateTimeResolutionResult ParserDurationWithBeforeAndAfter(string text, DateObject referenceDate)
-        {
-            var ret = new DateTimeResolutionResult();
-            var durationRes = durationExtractor.Extract(text, referenceDate);
-            var numStr = string.Empty;
-            var unitStr = string.Empty;
-            if (durationRes.Count > 0)
-            {
-                var match = DateExtractorChs.UnitRegex.Match(text);
-                if (match.Success)
-                {
-                    var suffix =
-                        text.Substring((int)durationRes[0].Start + (int)durationRes[0].Length)
-                            .Trim()
-                            .ToLowerInvariant();
-                    var srcUnit = match.Groups["unit"].Value.ToLowerInvariant();
-                    var numberStr =
-                        text.Substring((int)durationRes[0].Start, match.Index - (int)durationRes[0].Start)
-                            .Trim()
-                            .ToLowerInvariant();
-                    var number = ConvertChineseToNum(numberStr);
-                    if (this.config.UnitMap.ContainsKey(srcUnit))
-                    {
-                        unitStr = this.config.UnitMap[srcUnit];
-                        numStr = number.ToString();
-
-                        var beforeMatch = DateExtractorChs.BeforeRegex.Match(suffix);
-                        if (beforeMatch.Success && suffix.StartsWith(beforeMatch.Value))
-                        {
-                            DateObject date;
-                            switch (unitStr)
-                            {
-                                case Constants.TimexDay:
-                                    date = referenceDate.AddDays(-double.Parse(numStr));
-                                    break;
-                                case Constants.TimexWeek:
-                                    date = referenceDate.AddDays(-7 * double.Parse(numStr));
-                                    break;
-                                case Constants.TimexMonthFull:
-                                    date = referenceDate.AddMonths(-Convert.ToInt32(double.Parse(numStr)));
-                                    break;
-                                case Constants.TimexYear:
-                                    date = referenceDate.AddYears(-Convert.ToInt32(double.Parse(numStr)));
-                                    break;
-                                default:
-                                    return ret;
-                            }
-                            ret.Timex = $"{DateTimeFormatUtil.LuisDate(date)}";
-                            ret.FutureValue = ret.PastValue = date;
-                            ret.Success = true;
-                            return ret;
-                        }
-
-                        var afterMatch = DateExtractorChs.AfterRegex.Match(suffix);
-                        if (afterMatch.Success && suffix.StartsWith(afterMatch.Value))
-                        {
-                            DateObject date;
-                            switch (unitStr)
-                            {
-                                case Constants.TimexDay:
-                                    date = referenceDate.AddDays(double.Parse(numStr));
-                                    break;
-                                case Constants.TimexWeek:
-                                    date = referenceDate.AddDays(7 * double.Parse(numStr));
-                                    break;
-                                case Constants.TimexMonthFull:
-                                    date = referenceDate.AddMonths(Convert.ToInt32(double.Parse(numStr)));
-                                    break;
-                                case Constants.TimexYear:
-                                    date = referenceDate.AddYears(Convert.ToInt32(double.Parse(numStr)));
-                                    break;
-                                default:
-                                    return ret;
-                            }
-
-                            ret.Timex = $"{DateTimeFormatUtil.LuisDate(date)}";
-                            ret.FutureValue = ret.PastValue = date;
-                            ret.Success = true;
-                            return ret;
-                        }
-                    }
-                }
-            }
-
-            return ret;
-        }
-
-        //Judge the date is valid
-        private bool IsValidDate(int year, int month, int day)
-        {
-            if (month < Constants.MinMonth)
-            {
-                year--;
-                month = Constants.MaxMonth;
-            }
-
-            if (month > Constants.MaxMonth)
-            {
-                year++;
-                month = Constants.MinMonth;
-            }
-            return DateObjectExtension.IsValidDate(year, month, day);
-        }
-
-        //Judge the date is non-leap year Feb 29th
-        private bool IsNonleapYearFeb29th(int year, int month, int day)
-        {
-            return !DateObject.IsLeapYear(year) && month == 2 && day == 29;
         }
 
         // parse a regex match which includes 'day', 'month' and 'year' (optional) group
@@ -702,6 +558,157 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             return ret;
         }
 
+        // parse if lunar contains
+        private static bool IsLunarCalendar(string text)
+        {
+            var trimmedText = text.Trim();
+            var match = DateExtractorChs.LunarRegex.Match(trimmedText);
+
+            return match.Success;
+        }
+
+        private static DateObject ComputeDate(int cadinal, int weekday, int month, int year)
+        {
+            var firstDay = DateObject.MinValue.SafeCreateFromValue(year, month, 1);
+            var firstWeekday = firstDay.This((DayOfWeek)weekday);
+            if (weekday == 0)
+            {
+                weekday = 7;
+            }
+
+            if (weekday < (int)firstDay.DayOfWeek)
+            {
+                firstWeekday = firstDay.Next((DayOfWeek)weekday);
+            }
+
+            return firstWeekday.AddDays(7 * (cadinal - 1));
+        }
+
+        private int GetMonthMaxDay(int year, int month)
+        {
+            var maxDay = MonthMaxDays[month - 1];
+
+            if (!DateObject.IsLeapYear(year) && month == 2)
+            {
+                maxDay -= 1;
+            }
+
+            return maxDay;
+        }
+
+        // handle cases like "三天前"
+        private DateTimeResolutionResult ParserDurationWithBeforeAndAfter(string text, DateObject referenceDate)
+        {
+            var ret = new DateTimeResolutionResult();
+            var durationRes = durationExtractor.Extract(text, referenceDate);
+            var numStr = string.Empty;
+            var unitStr = string.Empty;
+            if (durationRes.Count > 0)
+            {
+                var match = DateExtractorChs.UnitRegex.Match(text);
+                if (match.Success)
+                {
+                    var suffix =
+                        text.Substring((int)durationRes[0].Start + (int)durationRes[0].Length)
+                            .Trim()
+                            .ToLowerInvariant();
+                    var srcUnit = match.Groups["unit"].Value.ToLowerInvariant();
+                    var numberStr =
+                        text.Substring((int)durationRes[0].Start, match.Index - (int)durationRes[0].Start)
+                            .Trim()
+                            .ToLowerInvariant();
+                    var number = ConvertChineseToNum(numberStr);
+                    if (this.config.UnitMap.ContainsKey(srcUnit))
+                    {
+                        unitStr = this.config.UnitMap[srcUnit];
+                        numStr = number.ToString();
+
+                        var beforeMatch = DateExtractorChs.BeforeRegex.Match(suffix);
+                        if (beforeMatch.Success && suffix.StartsWith(beforeMatch.Value))
+                        {
+                            DateObject date;
+                            switch (unitStr)
+                            {
+                                case Constants.TimexDay:
+                                    date = referenceDate.AddDays(-double.Parse(numStr));
+                                    break;
+                                case Constants.TimexWeek:
+                                    date = referenceDate.AddDays(-7 * double.Parse(numStr));
+                                    break;
+                                case Constants.TimexMonthFull:
+                                    date = referenceDate.AddMonths(-Convert.ToInt32(double.Parse(numStr)));
+                                    break;
+                                case Constants.TimexYear:
+                                    date = referenceDate.AddYears(-Convert.ToInt32(double.Parse(numStr)));
+                                    break;
+                                default:
+                                    return ret;
+                            }
+
+                            ret.Timex = $"{DateTimeFormatUtil.LuisDate(date)}";
+                            ret.FutureValue = ret.PastValue = date;
+                            ret.Success = true;
+                            return ret;
+                        }
+
+                        var afterMatch = DateExtractorChs.AfterRegex.Match(suffix);
+                        if (afterMatch.Success && suffix.StartsWith(afterMatch.Value))
+                        {
+                            DateObject date;
+                            switch (unitStr)
+                            {
+                                case Constants.TimexDay:
+                                    date = referenceDate.AddDays(double.Parse(numStr));
+                                    break;
+                                case Constants.TimexWeek:
+                                    date = referenceDate.AddDays(7 * double.Parse(numStr));
+                                    break;
+                                case Constants.TimexMonthFull:
+                                    date = referenceDate.AddMonths(Convert.ToInt32(double.Parse(numStr)));
+                                    break;
+                                case Constants.TimexYear:
+                                    date = referenceDate.AddYears(Convert.ToInt32(double.Parse(numStr)));
+                                    break;
+                                default:
+                                    return ret;
+                            }
+
+                            ret.Timex = $"{DateTimeFormatUtil.LuisDate(date)}";
+                            ret.FutureValue = ret.PastValue = date;
+                            ret.Success = true;
+                            return ret;
+                        }
+                    }
+                }
+            }
+
+            return ret;
+        }
+
+        // Judge the date is valid
+        private bool IsValidDate(int year, int month, int day)
+        {
+            if (month < Constants.MinMonth)
+            {
+                year--;
+                month = Constants.MaxMonth;
+            }
+
+            if (month > Constants.MaxMonth)
+            {
+                year++;
+                month = Constants.MinMonth;
+            }
+
+            return DateObjectExtension.IsValidDate(year, month, day);
+        }
+
+        // Judge the date is non-leap year Feb 29th
+        private bool IsNonleapYearFeb29th(int year, int month, int day)
+        {
+            return !DateObject.IsLeapYear(year) && month == 2 && day == 29;
+        }
+
         // concert Chinese Number to Integer
         private int ConvertChineseToNum(string numStr)
         {
@@ -714,6 +721,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     num = Convert.ToInt32((double)(numberParser.Parse(er[0]).Value ?? 0));
                 }
             }
+
             return num;
         }
 
@@ -752,11 +760,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             year = num;
 
             return year < 10 ? -1 : year;
-        }
-
-        public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)
-        {
-            return candidateResults;
         }
     }
 }
