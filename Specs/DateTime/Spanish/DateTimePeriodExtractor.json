@@ -600,7 +600,6 @@
   },
   {
     "Input": "Estaré afuera de hoy a las 4 al próximo mie a las 5",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
