@@ -6,6 +6,24 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 {
     public sealed class GermanMergedParserConfiguration : GermanCommonDateTimeParserConfiguration, IMergedParserConfiguration
     {
+        public GermanMergedParserConfiguration(IOptionsConfiguration config)
+            : base(config)
+        {
+            BeforeRegex = GermanMergedExtractorConfiguration.BeforeRegex;
+            AfterRegex = GermanMergedExtractorConfiguration.AfterRegex;
+            SinceRegex = GermanMergedExtractorConfiguration.SinceRegex;
+            AroundRegex = GermanMergedExtractorConfiguration.AroundRegex;
+            DateAfter = GermanMergedExtractorConfiguration.DateAfterRegex;
+            YearRegex = GermanDatePeriodExtractorConfiguration.YearRegex;
+            SuperfluousWordMatcher = GermanMergedExtractorConfiguration.SuperfluousWordMatcher;
+            DatePeriodParser = new BaseDatePeriodParser(new GermanDatePeriodParserConfiguration(this));
+            TimePeriodParser = new BaseTimePeriodParser(new GermanTimePeriodParserConfiguration(this));
+            DateTimePeriodParser = new BaseDateTimePeriodParser(new GermanDateTimePeriodParserConfiguration(this));
+            SetParser = new BaseSetParser(new GermanSetParserConfiguration(this));
+            HolidayParser = new HolidayParserGer(new GermanHolidayParserConfiguration(this));
+            TimeZoneParser = new DummyTimeZoneParser();
+        }
+
         public Regex BeforeRegex { get; }
 
         public Regex AfterRegex { get; }
@@ -23,22 +41,5 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public IDateTimeParser HolidayParser { get; }
 
         public StringMatcher SuperfluousWordMatcher { get; }
-
-        public GermanMergedParserConfiguration(IOptionsConfiguration config) : base(config)
-        {
-            BeforeRegex = GermanMergedExtractorConfiguration.BeforeRegex;
-            AfterRegex = GermanMergedExtractorConfiguration.AfterRegex;
-            SinceRegex = GermanMergedExtractorConfiguration.SinceRegex;
-            AroundRegex = GermanMergedExtractorConfiguration.AroundRegex;
-            DateAfter = GermanMergedExtractorConfiguration.DateAfterRegex;
-            YearRegex = GermanDatePeriodExtractorConfiguration.YearRegex;
-            SuperfluousWordMatcher = GermanMergedExtractorConfiguration.SuperfluousWordMatcher;
-            DatePeriodParser = new BaseDatePeriodParser(new GermanDatePeriodParserConfiguration(this));
-            TimePeriodParser = new BaseTimePeriodParser(new GermanTimePeriodParserConfiguration(this));
-            DateTimePeriodParser = new BaseDateTimePeriodParser(new GermanDateTimePeriodParserConfiguration(this));
-            SetParser = new BaseSetParser(new GermanSetParserConfiguration(this));
-            HolidayParser = new HolidayParserGer(new GermanHolidayParserConfiguration(this));
-            TimeZoneParser = new DummyTimeZoneParser();
-        }
     }
 }
