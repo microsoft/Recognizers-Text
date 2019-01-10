@@ -94,8 +94,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                             Length = ers[idx].Length,
                             Start = ers[idx].Start,
                             Text = ers[idx].Text,
-                            Type = ers[idx].Type
-                        }
+                            Type = ers[idx].Type,
+                        },
                     };
                     result.Add(tmpExtractResult);
                 }
@@ -186,7 +186,5 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
             ers.Sort((x, y) => x.Start - y.Start ?? 0);
         }
-
     }
-
 }

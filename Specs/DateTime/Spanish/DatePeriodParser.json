@@ -787,7 +787,7 @@
     },
     "Results": [
       {
-        "Text": "en junio 2016",
+        "Text": "junio 2016",
         "Type": "daterange",
         "Value": {
           "Timex": "2016-06",
@@ -800,8 +800,8 @@
             "endDate": "2016-07-01"
           }
         },
-        "Start": 14,
-        "Length": 13
+        "Start": 17,
+        "Length": 10
       }
     ]
   },
@@ -812,7 +812,7 @@
     },
     "Results": [
       {
-        "Text": "en junio del proximo año",
+        "Text": "junio del proximo año",
         "Type": "daterange",
         "Value": {
           "Timex": "2017-06",
@@ -825,8 +825,8 @@
             "endDate": "2017-07-01"
           }
         },
-        "Start": 14,
-        "Length": 24
+        "Start": 17,
+        "Length": 21
       }
     ]
   },

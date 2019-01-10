@@ -63,6 +63,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         public List<Token> MatchEachUnit(string text)
         {
             var ret = new List<Token>();
+
             // handle "daily", "monthly"
             var matches = this.config.PeriodicRegex.Matches(text);
             foreach (Match match in matches)
@@ -93,7 +94,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     var beforeMatch = this.config.BeforeEachDayRegex.Match(beforeStr);
                     if (beforeMatch.Success)
                     {
-                        ret.Add(new Token(beforeMatch.Index, (er.Start + er.Length ?? 0)));
+                        ret.Add(new Token(beforeMatch.Index, er.Start + er.Length ?? 0));
                     }
                 }
                 else
@@ -105,6 +106,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
                 }
             }
+
             return ret;
         }
 
@@ -120,7 +122,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     var ers = extractor.Extract(trimmedText, reference);
                     foreach (var er in ers)
                     {
-                        if (er.Start <= match.Index && (er.Start+er.Length) > match.Index)
+                        if (er.Start <= match.Index && (er.Start + er.Length) > match.Index)
                         {
                             ret.Add(new Token(er.Start ?? 0, (er.Start + match.Length + er.Length) ?? 0));
                         }
@@ -147,6 +149,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                             {
                                 len += match.Groups[Constants.PrefixGroupName].ToString().Length;
                             }
+
                             ret.Add(new Token(er.Start ?? 0, er.Start + len ?? 0));
                         }
                     }

@@ -7,17 +7,11 @@ namespace Microsoft.Recognizers.Text.Number
     {
         CultureInfo CultureInfo { get; }
 
-        #region Internal Parsers
-
         IExtractor NumberExtractor { get; }
 
         IExtractor OrdinalExtractor { get; }
 
         IParser NumberParser { get; }
-
-        #endregion
-
-        #region Regexes
 
         Regex MoreOrEqual { get; }
 
@@ -30,8 +24,5 @@ namespace Microsoft.Recognizers.Text.Number
         Regex MoreOrEqualSeparate { get; }
 
         Regex LessOrEqualSeparate { get; }
-
-        #endregion
-
     }
 }
