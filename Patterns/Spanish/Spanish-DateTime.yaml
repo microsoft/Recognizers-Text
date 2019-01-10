@@ -311,7 +311,7 @@ SuffixRegex: !simpleRegex
 TimeOfDayRegex: !simpleRegex
   def: \b(?<timeOfDay>mañana|madrugada|(pasado\s+(el\s+)?)?medio\s?d[ií]a|tarde|noche|anoche)\b
 SpecificTimeOfDayRegex: !nestedRegex
-  def: \b(((((a)?\s+la|esta|siguiente|pr[oó]xim[oa]|[uú]ltim[oa])\s+)?{TimeOfDayRegex}))\b
+  def: \b(((((a\s+)?la|esta|siguiente|pr[oó]xim[oa]|[uú]ltim[oa])\s+)?{TimeOfDayRegex}))\b
   references: [ TimeOfDayRegex ]
 TimeOfTodayAfterRegex: !nestedRegex
   def: ^\s*(,\s*)?(en|de(l)?\s+)?{SpecificTimeOfDayRegex}
