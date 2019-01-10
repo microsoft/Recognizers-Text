@@ -38,6 +38,7 @@ import com.microsoft.recognizers.text.datetime.parsers.IDateTimeParser;
 import com.microsoft.recognizers.text.datetime.spanish.parsers.SpanishCommonDateTimeParserConfiguration;
 import com.microsoft.recognizers.text.datetime.spanish.parsers.SpanishDateParserConfiguration;
 import com.microsoft.recognizers.text.datetime.spanish.parsers.SpanishDatePeriodParserConfiguration;
+import com.microsoft.recognizers.text.datetime.spanish.parsers.SpanishDateTimeParserConfiguration;
 import com.microsoft.recognizers.text.datetime.spanish.parsers.SpanishDurationParserConfiguration;
 import com.microsoft.recognizers.text.datetime.spanish.parsers.SpanishTimePeriodParserConfiguration;
 import com.microsoft.recognizers.text.datetime.spanish.parsers.SpanishDurationParserConfiguration;
@@ -223,8 +224,8 @@ public class DateTimeParserTest extends AbstractTest {
                 return new BaseDatePeriodParser(new SpanishDatePeriodParserConfiguration(new SpanishCommonDateTimeParserConfiguration(DateTimeOptions.None)));
             //case "DateTimeAltParser":
             //    return new BaseDateTimeAltParser(new EnglishDateTimeAltParserConfiguration(new EnglishCommonDateTimeParserConfiguration(DateTimeOptions.None)));
-            //case "DateTimeParser":
-            //    return new BaseDateTimeParser(new SpanishDateTimeParserConfiguration(new SpanishCommonDateTimeParserConfiguration(DateTimeOptions.None)));
+            case "DateTimeParser":
+                return new BaseDateTimeParser(new SpanishDateTimeParserConfiguration(new SpanishCommonDateTimeParserConfiguration(DateTimeOptions.None)));
             //case "DateTimePeriodParser":
             //    return new BaseDateTimePeriodParser(new SpanishDateTimePeriodParserConfiguration(new SpanishCommonDateTimeParserConfiguration(DateTimeOptions.None)));
             case "DurationParser":
