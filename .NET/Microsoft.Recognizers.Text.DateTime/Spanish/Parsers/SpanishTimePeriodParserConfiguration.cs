@@ -9,6 +9,24 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
     public class SpanishTimePeriodParserConfiguration : BaseOptionsConfiguration, ITimePeriodParserConfiguration
     {
+        public SpanishTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config)
+            : base(config)
+        {
+            TimeExtractor = config.TimeExtractor;
+            IntegerExtractor = config.IntegerExtractor;
+            TimeParser = config.TimeParser;
+            TimeZoneParser = config.TimeZoneParser;
+            PureNumberFromToRegex = SpanishTimePeriodExtractorConfiguration.PureNumFromTo;
+            PureNumberBetweenAndRegex = SpanishTimePeriodExtractorConfiguration.PureNumBetweenAnd;
+            SpecificTimeFromToRegex = SpanishTimePeriodExtractorConfiguration.SpecificTimeFromTo;
+            SpecificTimeBetweenAndRegex = SpanishTimePeriodExtractorConfiguration.SpecificTimeBetweenAnd;
+            TimeOfDayRegex = SpanishTimePeriodExtractorConfiguration.TimeOfDayRegex;
+            GeneralEndingRegex = SpanishTimePeriodExtractorConfiguration.GeneralEndingRegex;
+            TillRegex = SpanishTimePeriodExtractorConfiguration.TillRegex;
+            Numbers = config.Numbers;
+            UtilityConfiguration = config.UtilityConfiguration;
+        }
+
         public IDateTimeExtractor TimeExtractor { get; }
 
         public IDateTimeParser TimeParser { get; }
@@ -35,23 +53,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
-        public SpanishTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config)
-        {
-            TimeExtractor = config.TimeExtractor;
-            IntegerExtractor = config.IntegerExtractor;
-            TimeParser = config.TimeParser;
-            TimeZoneParser = config.TimeZoneParser;
-            PureNumberFromToRegex = SpanishTimePeriodExtractorConfiguration.PureNumFromTo;
-            PureNumberBetweenAndRegex = SpanishTimePeriodExtractorConfiguration.PureNumBetweenAnd;
-            SpecificTimeFromToRegex = SpanishTimePeriodExtractorConfiguration.SpecificTimeFromTo;
-            SpecificTimeBetweenAndRegex = SpanishTimePeriodExtractorConfiguration.SpecificTimeBetweenAnd;
-            TimeOfDayRegex = SpanishTimePeriodExtractorConfiguration.TimeOfDayRegex;
-            GeneralEndingRegex = SpanishTimePeriodExtractorConfiguration.GeneralEndingRegex;
-            TillRegex = SpanishTimePeriodExtractorConfiguration.TillRegex;
-            Numbers = config.Numbers;
-            UtilityConfiguration = config.UtilityConfiguration;
-        }
-
         public bool GetMatchedTimexRange(string text, out string timex, out int beginHour, out int endHour, out int endMin)
         {
             var trimmedText = text.Trim().ToLowerInvariant();
@@ -60,7 +61,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             endHour = 0;
             endMin = 0;
 
-            var timeOfDay = "";
+            var timeOfDay = string.Empty;
             if (DateTimeDefinitions.EarlyMorningTermList.Any(o => trimmedText.EndsWith(o)))
             {
                 timeOfDay = Constants.EarlyMorning;
