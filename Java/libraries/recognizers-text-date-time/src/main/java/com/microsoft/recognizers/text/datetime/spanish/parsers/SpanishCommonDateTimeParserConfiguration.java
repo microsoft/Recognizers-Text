@@ -77,7 +77,7 @@ public class SpanishCommonDateTimeParserConfiguration extends BaseDateParserConf
     //private final IDateTimeParser dateTimeParser;
     private final IDateTimeParser durationParser;
     //private final IDateTimeParser datePeriodParser;
-    //private final IDateTimeParser timePeriodParser;
+    private final IDateTimeParser timePeriodParser;
     //private final IDateTimeParser dateTimePeriodParser;
     //private final IDateTimeParser dateTimeAltParser;
 
@@ -117,7 +117,7 @@ public class SpanishCommonDateTimeParserConfiguration extends BaseDateParserConf
         //dateTimeParser = new BaseDateTimeParser(new SpanishDateTimeParserConfiguration(this));
         durationParser = new BaseDurationParser(new SpanishDurationParserConfiguration(this));
         //datePeriodParser = new BaseDatePeriodParser(new SpanishDatePeriodParserConfiguration(this));
-        //timePeriodParser = new BaseTimePeriodParser(new SpanishTimePeriodParserConfiguration(this));
+        timePeriodParser = new BaseTimePeriodParser(new SpanishTimePeriodParserConfiguration(this));
         //dateTimePeriodParser = new BaseDateTimePeriodParser(new SpanishDateTimePeriodParserConfiguration(this));
         //dateTimeAltParser = new BaseDateTimeAltParser(new SpanishDateTimeAltParserConfiguration(this));
     }
@@ -206,8 +206,7 @@ public class SpanishCommonDateTimeParserConfiguration extends BaseDateParserConf
 
     @Override
     public IDateTimeParser getTimePeriodParser() {
-        //return timePeriodParser;
-        return null;
+        return timePeriodParser;
     }
 
     @Override
