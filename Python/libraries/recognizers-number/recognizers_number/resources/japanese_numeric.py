@@ -161,4 +161,5 @@ class JapaneseNumeric:
     TwoNumberRangeRegex3 = f'({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2}|{OneNumberRangeLessRegex3}|{OneNumberRangeLessRegex4})\\s*(と|は|((と)?同時に)|((と)?そして)|が|，|、|,)?\\s*({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2}|{OneNumberRangeMoreRegex3}|{OneNumberRangeMoreRegex4})'
     TwoNumberRangeRegex4 = f'(?<number1>((?!((，(?!\\d+))|(,(?!\\d+))|。)).)+)\\s*{TillRegex}\\s*(?<number2>((?!((，(?!\\d+))|(,(?!\\d+))|。)).)+)'
     AmbiguousFractionConnectorsRegex = f'^[.]'
+    RelativeReferenceMap = dict([("", "")])
 # pylint: enable=line-too-long
