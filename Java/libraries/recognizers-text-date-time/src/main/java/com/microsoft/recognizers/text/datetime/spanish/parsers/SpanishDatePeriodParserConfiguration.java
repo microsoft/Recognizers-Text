@@ -22,6 +22,12 @@ import java.util.regex.Pattern;
 
 public class SpanishDatePeriodParserConfiguration extends BaseOptionsConfiguration implements IDatePeriodParserConfiguration {
 
+    public static final Pattern nextPrefixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.NextPrefixRegex);
+    public static final Pattern pastPrefixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PastPrefixRegex);
+    public static final Pattern thisPrefixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.ThisPrefixRegex);
+    public static final Pattern relativeRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.RelativeRegex);
+    public static final Pattern unspecificEndOfRangeRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.UnspecificEndOfRangeRegex);
+
     public SpanishDatePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) {
         super(config.getOptions());
 
@@ -80,13 +86,6 @@ public class SpanishDatePeriodParserConfiguration extends BaseOptionsConfigurati
         numbers = config.getNumbers();
         writtenDecades = config.getWrittenDecades();
         specialDecadeCases = config.getSpecialDecadeCases();
-
-        nextPrefixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.NextPrefixRegex);
-        pastPrefixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PastPrefixRegex);
-        thisPrefixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.ThisPrefixRegex);
-        relativeRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.RelativeRegex);
-        unspecificEndOfRangeRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.UnspecificEndOfRangeRegex);
-        afterNextSuffixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.AfterNextSuffixRegex);
     }
 
     // Regex
@@ -182,18 +181,6 @@ public class SpanishDatePeriodParserConfiguration extends BaseOptionsConfigurati
     private final Pattern moreThanRegex;
 
     private final Pattern centurySuffixRegex;
-
-    private final Pattern nextPrefixRegex;
-
-    private final Pattern pastPrefixRegex;
-
-    private final Pattern thisPrefixRegex;
-
-    private final Pattern relativeRegex;
-
-    private final Pattern unspecificEndOfRangeRegex;
-
-    private final Pattern afterNextSuffixRegex;
 
     // Dictionaries
     private final ImmutableMap<String, String> unitMap;
