@@ -36,6 +36,7 @@ import com.microsoft.recognizers.text.datetime.parsers.BaseTimeZoneParser;
 import com.microsoft.recognizers.text.datetime.parsers.DateTimeParseResult;
 import com.microsoft.recognizers.text.datetime.parsers.IDateTimeParser;
 import com.microsoft.recognizers.text.datetime.spanish.parsers.SpanishCommonDateTimeParserConfiguration;
+import com.microsoft.recognizers.text.datetime.spanish.parsers.SpanishDateParserConfiguration;
 import com.microsoft.recognizers.text.datetime.spanish.parsers.SpanishTimePeriodParserConfiguration;
 import com.microsoft.recognizers.text.datetime.spanish.parsers.SpanishDurationParserConfiguration;
 import com.microsoft.recognizers.text.datetime.spanish.parsers.SpanishTimeParserConfiguration;
@@ -214,8 +215,8 @@ public class DateTimeParserTest extends AbstractTest {
     private static IDateTimeParser getSpanishParser(String name) {
 
         switch (name) {
-            //case "DateParser":
-            //    return new BaseDateParser(new SpanishDateParserConfiguration(new SpanishCommonDateTimeParserConfiguration(DateTimeOptions.None)));
+            case "DateParser":
+                return new BaseDateParser(new SpanishDateParserConfiguration(new SpanishCommonDateTimeParserConfiguration(DateTimeOptions.None)));
             //case "DatePeriodParser":
             //    return new BaseDatePeriodParser(new SpanishDatePeriodParserConfiguration(new SpanishCommonDateTimeParserConfiguration(DateTimeOptions.None)));
             //case "DateTimeAltParser":
