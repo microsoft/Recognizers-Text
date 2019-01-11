@@ -284,7 +284,3 @@ public class SpanishCommonDateTimeParserConfiguration extends BaseDateParserConf
         return utilityConfiguration;
     }
 }
-    public IDateTimeUtilityConfiguration getUtilityConfiguration() {
-        return utilityConfiguration;
-    }
-}
