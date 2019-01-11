@@ -1,5 +1,50 @@
 [
   {
+    "Input": "Delete last sentence.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "last",
+        "Start": 7,
+        "End": 10,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "N"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Show me the previous one.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "previous one",
+        "Start": 12,
+        "End": 23,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "CURR - 1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Show me the next one.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "next one",
+        "Start": 12,
+        "End": 19,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "CURR + 1"
+        }
+      }
+    ]
+  },
+  {
     "Input": "three trillionth",
     "Results": [
       {
