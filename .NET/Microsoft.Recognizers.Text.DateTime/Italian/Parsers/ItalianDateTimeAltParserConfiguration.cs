@@ -2,6 +2,16 @@
 {
     public class ItalianDateTimeAltParserConfiguration : IDateTimeAltParserConfiguration
     {
+        public ItalianDateTimeAltParserConfiguration(ICommonDateTimeParserConfiguration config)
+        {
+            DateTimeParser = config.DateTimeParser;
+            DateParser = config.DateParser;
+            TimeParser = config.TimeParser;
+            DateTimePeriodParser = config.DateTimePeriodParser;
+            TimePeriodParser = config.TimePeriodParser;
+            DatePeriodParser = config.DatePeriodParser;
+        }
+
         public IDateTimeParser DateTimeParser { get; }
 
         public IDateTimeParser DateParser { get; }
@@ -13,16 +23,5 @@
         public IDateTimeParser TimePeriodParser { get; }
 
         public IDateTimeParser DatePeriodParser { get; }
-
-        public ItalianDateTimeAltParserConfiguration(ICommonDateTimeParserConfiguration config)
-        {
-            DateTimeParser = config.DateTimeParser;
-            DateParser = config.DateParser;
-            TimeParser = config.TimeParser;
-            DateTimePeriodParser = config.DateTimePeriodParser;
-            TimePeriodParser = config.TimePeriodParser;
-            DatePeriodParser = config.DatePeriodParser;
-        }
-
     }
 }
