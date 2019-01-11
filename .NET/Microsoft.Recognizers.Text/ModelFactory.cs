@@ -7,12 +7,13 @@ namespace Microsoft.Recognizers.Text
 {
     internal class ModelFactory<TModelOptions> : Dictionary<(string culture, Type modelType), Func<TModelOptions, IModel>>
     {
+        private const string FallbackCulture = Culture.English;
+
         private static ConcurrentDictionary<(string culture, Type modelType, string modelOptions), IModel> cache =
             new ConcurrentDictionary<(string culture, Type modelType, string modelOptions), IModel>();
 
-        private const string FallbackCulture = Culture.English;
-
-        public T GetModel<T>(string culture, bool fallbackToDefaultCulture, TModelOptions options) where T : IModel
+        public T GetModel<T>(string culture, bool fallbackToDefaultCulture, TModelOptions options)
+               where T : IModel
         {
             if (TryGetModel(culture, options, out T model))
             {
@@ -26,6 +27,11 @@ namespace Microsoft.Recognizers.Text
             throw new ArgumentException($"Could not find Model with the specified configuration: {culture}, {typeof(T).ToString()}");
         }
 
+        public new void Add((string culture, Type modelType) config, Func<TModelOptions, IModel> modelCreator)
+        {
+            base.Add(GenerateKey(config.culture, config.modelType), modelCreator);
+        }
+
         public void InitializeModels(string targetCulture, TModelOptions options)
         {
             this.Keys
@@ -34,12 +40,18 @@ namespace Microsoft.Recognizers.Text
                 .ForEach(key => this.InitializeModel(key.modelType, key.culture, options));
         }
 
+        private static (string culture, Type modelType) GenerateKey(string culture, Type modelType)
+        {
+            return (culture.ToLowerInvariant(), modelType);
+        }
+
         private void InitializeModel(Type modelType, string culture, TModelOptions options)
         {
             this.TryGetModel(modelType, culture, options, out IModel model);
         }
 
-        private bool TryGetModel<T>(string culture, TModelOptions options, out T model) where T : IModel
+        private bool TryGetModel<T>(string culture, TModelOptions options, out T model)
+                where T : IModel
         {
             var result = this.TryGetModel(typeof(T), culture, options, out IModel outModel);
             model = (T)outModel;
@@ -77,16 +89,6 @@ namespace Microsoft.Recognizers.Text
             }
 
             return false;
-        }
-
-        public new void Add((string culture, Type modelType) config, Func<TModelOptions, IModel> modelCreator)
-        {
-            base.Add(GenerateKey(config.culture, config.modelType), modelCreator);
-        }
-
-        private static (string culture, Type modelType) GenerateKey(string culture, Type modelType)
-        {
-            return (culture.ToLowerInvariant(), modelType);
         }
     }
 }
