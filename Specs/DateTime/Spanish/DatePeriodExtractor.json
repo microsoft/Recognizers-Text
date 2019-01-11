@@ -550,18 +550,6 @@
     ]
   },
   {
-    "Input": "Estare afuera la tercer semana del proximo año",
-    "NotSupportedByDesign": "javascript, python",
-    "Results": [
-      {
-        "Text": "la tercer semana del proximo año",
-        "Type": "daterange",
-        "Start": 14,
-        "Length": 32
-      }
-    ]
-  },
-  {
     "Input": "No estuve en ene de 2001",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
