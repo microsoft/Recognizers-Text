@@ -644,15 +644,15 @@ namespace Microsoft.Recognizers.Text.Number
 
         private List<string> GetMatches(string input)
         {
-            var strMatch = TextNumberRegex.Match(input);
+            var successMatch = TextNumberRegex.Match(input);
             var matchStrs = new List<string>();
 
             // Store all match str.
-            while (strMatch.Success)
+            while (successMatch.Success)
             {
-                var matchStr = strMatch.Groups[0].Value.ToLower();
+                var matchStr = successMatch.Groups[0].Value.ToLower();
                 matchStrs.Add(matchStr);
-                strMatch = strMatch.NextMatch();
+                successMatch = successMatch.NextMatch();
             }
 
             return matchStrs;
