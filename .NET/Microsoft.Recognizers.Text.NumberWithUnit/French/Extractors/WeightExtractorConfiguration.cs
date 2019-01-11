@@ -7,9 +7,19 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.French
 {
     public class WeightExtractorConfiguration : FrenchNumberWithUnitExtractorConfiguration
     {
-        public WeightExtractorConfiguration() : this(new CultureInfo(Culture.French)) { }
+        public static readonly ImmutableDictionary<string, string> WeightSuffixList = NumbersWithUnitDefinitions.WeightSuffixList.ToImmutableDictionary();
 
-        public WeightExtractorConfiguration(CultureInfo ci) : base(ci) { }
+        private static readonly ImmutableList<string> AmbiguousValues = NumbersWithUnitDefinitions.AmbiguousWeightUnitList.ToImmutableList();
+
+        public WeightExtractorConfiguration()
+            : this(new CultureInfo(Culture.French))
+        {
+        }
+
+        public WeightExtractorConfiguration(CultureInfo ci)
+            : base(ci)
+        {
+        }
 
         public override ImmutableDictionary<string, string> SuffixList => WeightSuffixList;
 
@@ -18,9 +28,5 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.French
         public override ImmutableList<string> AmbiguousUnitList => AmbiguousValues;
 
         public override string ExtractType => Constants.SYS_UNIT_WEIGHT;
-
-        public static readonly ImmutableDictionary<string, string> WeightSuffixList = NumbersWithUnitDefinitions.WeightSuffixList.ToImmutableDictionary();
-
-        private static readonly ImmutableList<string> AmbiguousValues = NumbersWithUnitDefinitions.AmbiguousWeightUnitList.ToImmutableList();
     }
 }
