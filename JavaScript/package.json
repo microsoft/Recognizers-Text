@@ -32,7 +32,11 @@
 	},
 	"ava": {
 		"files": [
-			"./test/index.js"
+			"./test/index-number.js",
+			"./test/index-number-with-unit.js",
+			"./test/index-datetime.js",
+			"./test/index-choice.js",
+			"./test/index-sequence.js"
 		]
 	},
 	"devDependencies": {
@@ -46,7 +50,7 @@
 		"@types/lodash.trimend": "^4.5.1",
 		"@types/node": "^8.0.20",
 		"@types/npm": "^2.0.29",
-		"ava": "^0.22.0",
+		"ava": "^1.0.0",
 		"ava-spec": "^1.1.0",
 		"babel-plugin-external-helpers": "^6.22.0",
 		"cached-path-relative": ">=1.0.2",

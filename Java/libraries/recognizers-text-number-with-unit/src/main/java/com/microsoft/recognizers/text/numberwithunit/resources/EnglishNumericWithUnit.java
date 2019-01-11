@@ -698,10 +698,10 @@ public class EnglishNumericWithUnit {
         .put("Gallon", "-gallon|gallons|gallon")
         .put("Metric ton", "metric tons|metric ton")
         .put("Ton", "-ton|ton|tons|tonne|tonnes")
-        .put("Pound", "pound|pounds|lb")
+        .put("Pound", "pound|pounds|lb|lbs")
         .put("Ounce", "-ounce|ounce|oz|ounces")
         .put("Weight unit", "pennyweight|grain|british long ton|us short hundredweight|stone|dram")
         .build();
 
-    public static final List<String> AmbiguousWeightUnitList = Arrays.asList("g", "oz", "stone", "dram");
+    public static final List<String> AmbiguousWeightUnitList = Arrays.asList("g", "oz", "stone", "dram", "lbs");
 }

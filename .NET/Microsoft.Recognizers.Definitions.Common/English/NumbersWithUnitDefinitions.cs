@@ -783,7 +783,7 @@ namespace Microsoft.Recognizers.Definitions.English
 			{ @"Gallon", @"-gallon|gallons|gallon" },
 			{ @"Metric ton", @"metric tons|metric ton" },
 			{ @"Ton", @"-ton|ton|tons|tonne|tonnes" },
-			{ @"Pound", @"pound|pounds|lb" },
+			{ @"Pound", @"pound|pounds|lb|lbs" },
 			{ @"Ounce", @"-ounce|ounce|oz|ounces" },
 			{ @"Weight unit", @"pennyweight|grain|british long ton|us short hundredweight|stone|dram" }
 		};
@@ -792,7 +792,8 @@ namespace Microsoft.Recognizers.Definitions.English
 			@"g",
 			@"oz",
 			@"stone",
-			@"dram"
+			@"dram",
+			@"lbs"
 		};
 	}
 }

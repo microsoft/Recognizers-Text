@@ -164,6 +164,12 @@ namespace Microsoft.Recognizers.Text.Number
                 (options) => new PercentModel(
                     AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new SpanishNumberParserConfiguration()),
                     new Spanish.PercentageExtractor()));
+
+            RegisterModel<NumberRangeModel>(
+                Culture.Spanish,
+                (options) => new NumberRangeModel(
+                    new BaseNumberRangeParser(new SpanishNumberRangeParserConfiguration()),
+                    new Spanish.NumberRangeExtractor(options)));
                     
             #endregion
 

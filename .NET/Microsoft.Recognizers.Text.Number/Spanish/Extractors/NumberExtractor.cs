@@ -14,6 +14,8 @@ namespace Microsoft.Recognizers.Text.Number.Spanish
 
         protected sealed override string ExtractType { get; } = Constants.SYS_NUM; // "Number";
 
+        protected sealed override Regex NegativeNumberTermsRegex { get; }
+
         private static readonly ConcurrentDictionary<(NumberMode, NumberOptions), NumberExtractor> Instances =
             new ConcurrentDictionary<(NumberMode, NumberOptions), NumberExtractor>();
 
@@ -31,6 +33,7 @@ namespace Microsoft.Recognizers.Text.Number.Spanish
 
         private NumberExtractor(NumberMode mode = NumberMode.Default, NumberOptions options = NumberOptions.None)
         {
+            NegativeNumberTermsRegex = new Regex(NumbersDefinitions.NegativeNumberTermsRegex + '$', RegexOptions.Singleline);
 
             Options = options;
 

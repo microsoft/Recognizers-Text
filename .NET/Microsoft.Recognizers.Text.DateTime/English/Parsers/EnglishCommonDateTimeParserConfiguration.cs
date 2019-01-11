@@ -1,17 +1,16 @@
 ﻿using System.Collections.Immutable;
-
-using Microsoft.Recognizers.Text.DateTime.English.Utilities;
-using Microsoft.Recognizers.Definitions.English;
 using Microsoft.Recognizers.Definitions;
-using Microsoft.Recognizers.Text.Number.English;
+using Microsoft.Recognizers.Definitions.English;
+using Microsoft.Recognizers.Text.DateTime.English.Utilities;
 using Microsoft.Recognizers.Text.Number;
+using Microsoft.Recognizers.Text.Number.English;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
 {
     public class EnglishCommonDateTimeParserConfiguration : BaseDateParserConfiguration, ICommonDateTimeParserConfiguration
     {
-
-        public EnglishCommonDateTimeParserConfiguration(IOptionsConfiguration config) : base(config)
+        public EnglishCommonDateTimeParserConfiguration(IOptionsConfiguration config)
+            : base(config)
         {
             UtilityConfiguration = new EnglishDatetimeUtilityConfiguration();
 

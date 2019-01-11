@@ -8,6 +8,24 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 {
     public class FrenchTimePeriodParserConfiguration : BaseOptionsConfiguration, ITimePeriodParserConfiguration
     {
+        public FrenchTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config)
+           : base(config)
+        {
+            TimeExtractor = config.TimeExtractor;
+            IntegerExtractor = config.IntegerExtractor;
+            TimeParser = config.TimeParser;
+            TimeZoneParser = config.TimeZoneParser;
+            PureNumberFromToRegex = FrenchTimePeriodExtractorConfiguration.PureNumFromTo;
+            PureNumberBetweenAndRegex = FrenchTimePeriodExtractorConfiguration.PureNumBetweenAnd;
+            SpecificTimeFromToRegex = FrenchTimePeriodExtractorConfiguration.SpecificTimeFromTo;
+            SpecificTimeBetweenAndRegex = FrenchTimePeriodExtractorConfiguration.SpecificTimeBetweenAnd;
+            TimeOfDayRegex = FrenchTimePeriodExtractorConfiguration.TimeOfDayRegex;
+            GeneralEndingRegex = FrenchTimePeriodExtractorConfiguration.GeneralEndingRegex;
+            TillRegex = FrenchTimePeriodExtractorConfiguration.TillRegex;
+            Numbers = config.Numbers;
+            UtilityConfiguration = config.UtilityConfiguration;
+        }
+
         public IDateTimeExtractor TimeExtractor { get; }
 
         public IDateTimeParser TimeParser { get; }
@@ -34,23 +52,6 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
-        public FrenchTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config)
-        {
-            TimeExtractor = config.TimeExtractor;
-            IntegerExtractor = config.IntegerExtractor;
-            TimeParser = config.TimeParser;
-            TimeZoneParser = config.TimeZoneParser;
-            PureNumberFromToRegex = FrenchTimePeriodExtractorConfiguration.PureNumFromTo; 
-            PureNumberBetweenAndRegex = FrenchTimePeriodExtractorConfiguration.PureNumBetweenAnd;
-            SpecificTimeFromToRegex = FrenchTimePeriodExtractorConfiguration.SpecificTimeFromTo;
-            SpecificTimeBetweenAndRegex = FrenchTimePeriodExtractorConfiguration.SpecificTimeBetweenAnd;
-            TimeOfDayRegex = FrenchTimePeriodExtractorConfiguration.TimeOfDayRegex;
-            GeneralEndingRegex = FrenchTimePeriodExtractorConfiguration.GeneralEndingRegex;
-            TillRegex = FrenchTimePeriodExtractorConfiguration.TillRegex;
-            Numbers = config.Numbers;
-            UtilityConfiguration = config.UtilityConfiguration;
-        }
-
         public bool GetMatchedTimexRange(string text, out string timex, out int beginHour, out int endHour, out int endMin)
         {
             var trimmedText = text.Trim().ToLowerInvariant();
@@ -63,7 +64,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             endHour = 0;
             endMin = 0;
 
-            var timeOfDay = "";      
+            var timeOfDay = string.Empty;
             if (DateTimeDefinitions.MorningTermList.Any(o => trimmedText.EndsWith(o)))
             {
                 timeOfDay = Constants.Morning;
@@ -75,7 +76,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             else if (DateTimeDefinitions.EveningTermList.Any(o => trimmedText.EndsWith(o)))
             {
                 timeOfDay = Constants.Evening;
-            }    
+            }
             else if (DateTimeDefinitions.DaytimeTermList.Any(o => trimmedText.Equals(o)))
             {
                 timeOfDay = Constants.Daytime;
@@ -98,6 +99,5 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
             return true;
         }
-
     }
 }

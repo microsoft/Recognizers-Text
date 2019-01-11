@@ -7,7 +7,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 {
     public class BaseTimeParser : IDateTimeParser
     {
-        public static readonly string ParserName = Constants.SYS_DATETIME_TIME; //"Time";
+        public static readonly string ParserName = Constants.SYS_DATETIME_TIME; // "Time";
 
         private readonly ITimeParserConfiguration config;
 
@@ -35,8 +35,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     var timezoneEr = metadata[Constants.SYS_DATETIME_TIMEZONE] as ExtractResult;
                     var timezonePr = config.TimeZoneParser.Parse(timezoneEr);
 
-                    innerResult = InternalParse(er.Text.Substring(0, (int)(er.Text.Length - timezoneEr.Length)),
-                        referenceTime);
+                    innerResult = InternalParse(er.Text.Substring(0, (int)(er.Text.Length - timezoneEr.Length)), referenceTime);
 
                     if (timezonePr != null && timezonePr.Value != null)
                     {
@@ -52,12 +51,12 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     innerResult.FutureResolution = new Dictionary<string, string>
                     {
-                        {TimeTypeConstants.TIME, DateTimeFormatUtil.FormatTime((DateObject)innerResult.FutureValue)}
+                        { TimeTypeConstants.TIME, DateTimeFormatUtil.FormatTime((DateObject)innerResult.FutureValue) },
                     };
 
                     innerResult.PastResolution = new Dictionary<string, string>
                     {
-                        {TimeTypeConstants.TIME, DateTimeFormatUtil.FormatTime((DateObject)innerResult.PastValue)}
+                        { TimeTypeConstants.TIME, DateTimeFormatUtil.FormatTime((DateObject)innerResult.PastValue) },
                     };
 
                     value = innerResult;
@@ -72,11 +71,16 @@ namespace Microsoft.Recognizers.Text.DateTime
                 Type = er.Type,
                 Data = er.Data,
                 Value = value,
-                TimexStr = value == null ? "" : ((DateTimeResolutionResult)value).Timex,
-                ResolutionStr = ""
+                TimexStr = value == null ? string.Empty : ((DateTimeResolutionResult)value).Timex,
+                ResolutionStr = string.Empty,
             };
 
             return ret;
+        }
+
+        public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)
+        {
+            return candidateResults;
         }
 
         protected virtual DateTimeResolutionResult InternalParse(string text, DateObject referenceTime)
@@ -176,6 +180,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     {
                         min += this.config.Numbers[tensStr];
                     }
+
                     hasMin = true;
                 }
             }
@@ -275,6 +280,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     hour -= Constants.HalfDayHourCount;
                 }
+
                 if (!config.UtilityConfiguration.AmPmDescRegex.Match(descStr).Success)
                 {
                     hasAm = true;
@@ -287,6 +293,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     hour += Constants.HalfDayHourCount;
                 }
+
                 hasPm = true;
             }
 
@@ -329,11 +336,6 @@ namespace Microsoft.Recognizers.Text.DateTime
             ret.Success = true;
 
             return ret;
-        }
-
-        public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)
-        {
-            return candidateResults;
         }
     }
 }

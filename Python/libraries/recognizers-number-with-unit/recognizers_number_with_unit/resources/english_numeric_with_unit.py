@@ -649,8 +649,8 @@ class EnglishNumericWithUnit:
                              ("Gallon", "-gallon|gallons|gallon"),
                              ("Metric ton", "metric tons|metric ton"),
                              ("Ton", "-ton|ton|tons|tonne|tonnes"),
-                             ("Pound", "pound|pounds|lb"),
+                             ("Pound", "pound|pounds|lb|lbs"),
                              ("Ounce", "-ounce|ounce|oz|ounces"),
                              ("Weight unit", "pennyweight|grain|british long ton|us short hundredweight|stone|dram")])
-    AmbiguousWeightUnitList = [r'g', r'oz', r'stone', r'dram']
+    AmbiguousWeightUnitList = [r'g', r'oz', r'stone', r'dram', r'lbs']
 # pylint: enable=line-too-long

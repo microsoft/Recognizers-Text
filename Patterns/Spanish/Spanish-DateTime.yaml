@@ -1,4 +1,4 @@
----
+﻿---
 TillRegex: !simpleRegex
   def: (?<till>hasta|al|a|--|-|—|——)(\s+(el|la(s)?))?
 AndRegex: !simpleRegex
@@ -32,9 +32,9 @@ YearRegex: !nestedRegex
   def: ({BaseDateTime.FourDigitYearRegex}|{FullTextYearRegex})
   references: [ BaseDateTime.FourDigitYearRegex, FullTextYearRegex ]
 RelativeMonthRegex: !simpleRegex
-  def: (?<relmonth>(este|pr[oó]ximo|[uú]ltimo)\s+mes)\b
+  def: (?<relmonth>((este|pr[oó]ximo|[uú]ltimo)\s+mes)|(mes\s+que\s+viene))\b
 MonthRegex: !simpleRegex
-  def: \b(?<month>abril|abr|agosto|ago|diciembre|dic|febrero|feb|enero|ene|julio|jul|junio|jun|marzo|mar|mayo|may|noviembre|nov|octubre|oct|septiembre|setiembre|sept|set)\b
+  def: \b(?<month>abril|abr|agosto|ago|diciembre|dic|febrero|feb|enero|ene|julio|jul|junio|jun|marzo|mar|mayo|may|noviembre|nov|octubre|oct|septiembre|setiembre|sept|set|sep)\b
 MonthSuffixRegex: !nestedRegex
   def: (?<msuf>(en\s+|del\s+|de\s+)?({RelativeMonthRegex}|{MonthRegex}))
   references: [ RelativeMonthRegex, MonthRegex ]
@@ -45,22 +45,23 @@ PastRegex: !simpleRegex
 FutureRegex: !simpleRegex
   def: (?<past>\b(siguiente(s)?|pr[oó]xim[oa](s)?|dentro\s+de|en)\b)
 SimpleCasesRegex: !nestedRegex
-  def: \b((desde\s+el|desde|del)\s+)?({DayRegex})\s*{TillRegex}\s*({DayRegex})\s+{MonthSuffixRegex}((\s+|\s*,\s*){YearRegex})?\b
+  def: \b((desde\s+el|desde|del|de)\s+)?({DayRegex})\s*{TillRegex}\s*({DayRegex})\s+{MonthSuffixRegex}((\s+|\s*,\s*)(en\s+|del\s+|de\s+)?{YearRegex})?\b
   references: [ DayRegex, TillRegex, MonthSuffixRegex, YearRegex ]
 MonthFrontSimpleCasesRegex: !nestedRegex
-  def: \b{MonthSuffixRegex}\s+((desde\s+el|desde|del)\s+)?({DayRegex})\s*{TillRegex}\s*({DayRegex})((\s+|\s*,\s*){YearRegex})?\b
+  def: \b{MonthSuffixRegex}\s+((desde\s+el|desde|del)\s+)?({DayRegex})\s*{TillRegex}\s*({DayRegex})((\s+|\s*,\s*)(en\s+|del\s+|de\s+)?{YearRegex})?\b
   references: [ MonthSuffixRegex, DayRegex, TillRegex, YearRegex ]
 MonthFrontBetweenRegex: !nestedRegex
-  def: \b{MonthSuffixRegex}\s+((entre|entre\s+el)\s+)({DayRegex})\s*{AndRegex}\s*({DayRegex})((\s+|\s*,\s*){YearRegex})?\b
+  def: \b{MonthSuffixRegex}\s+((entre|entre\s+el)\s+)({DayRegex})\s*{AndRegex}\s*({DayRegex})((\s+|\s*,\s*)(en\s+|del\s+|de\s+)?{YearRegex})?\b
   references: [ DayRegex, AndRegex, MonthSuffixRegex, YearRegex ]
 DayBetweenRegex: !nestedRegex
-  def: \b((entre|entre\s+el)\s+)({DayRegex})\s*{AndRegex}\s*({DayRegex})\s+{MonthSuffixRegex}((\s+|\s*,\s*){YearRegex})?\b
+  def: \b((entre|entre\s+el)\s+)({DayRegex})(\s+{MonthSuffixRegex})?\s*{AndRegex}\s*({DayRegex})\s+{MonthSuffixRegex}((\s+|\s*,\s*)(en\s+|del\s+|de\s+)?{YearRegex})?\b
   references: [ DayRegex, AndRegex, MonthSuffixRegex, YearRegex ]
-OneWordPeriodRegex: !simpleRegex
-  def: \b(((pr[oó]xim[oa]?|est[ea]|[uú]ltim[oa]?|en)\s+)?(?<month>abril|abr|agosto|ago|diciembre|dic|febrero|feb|enero|ene|julio|jul|junio|jun|marzo|mar|mayo|may|noviembre|nov|octubre|oct|septiembre|setiembre|sept|set)|(?<=\b(del|de la|el|la)\s+)?(pr[oó]xim[oa](s)?|[uú]ltim[oa]?|est(e|a))\s+(fin de semana|semana|mes|año)|fin de semana|(mes|años)? a la fecha)\b
+OneWordPeriodRegex: !nestedRegex
+  def: \b(((pr[oó]xim[oa]?|est[ea]|[uú]ltim[oa]?)\s+)?({MonthRegex})|(?<=\b(del|de la|el|la)\s+)?(pr[oó]xim[oa](s)?|[uú]ltim[oa]?|est(e|a))\s+(fin de semana|semana|mes|año)|fin de semana|(mes|años)? a la fecha)\b
+  references: [MonthRegex]
 MonthWithYearRegex: !nestedRegex
-  def: \b(((pr[oó]xim[oa](s)?|este|esta|[uú]ltim[oa]?|en)\s+)?(?<month>abril|abr|agosto|ago|diciembre|dic|febrero|feb|enero|ene|julio|jul|junio|jun|marzo|mar|mayo|may|noviembre|nov|octubre|oct|septiembre|setiembre|sept|set)\s+((de|del|de la)\s+)?({YearRegex}|(?<order>pr[oó]ximo(s)?|[uú]ltimo?|este)\s+año))\b
-  references: [ YearRegex ]
+  def: \b(((pr[oó]xim[oa](s)?|este|esta|[uú]ltim[oa]?)\s+)?({MonthRegex})\s+((de|del|de la)\s+)?({YearRegex}|(?<order>pr[oó]ximo(s)?|[uú]ltimo?|este)\s+año))\b
+  references: [ MonthRegex, YearRegex ]
 MonthNumWithYearRegex: !nestedRegex
   def: ({YearRegex}(\s*?)[/\-\.](\s*?){MonthNumRegex})|({MonthNumRegex}(\s*?)[/\-](\s*?){YearRegex})
   references: [ YearRegex, MonthNumRegex ]
@@ -101,8 +102,9 @@ WhichWeekRegex: !simpleRegex
   def: (semana)(\s*)(?<number>\d\d|\d|0\d)
 WeekOfRegex: !simpleRegex
   def: (semana)(\s*)((do|da|de))
-MonthOfRegex: !simpleRegex
-  def: (mes)(\s*)((do|da|de))
+MonthOfRegex: !nestedRegex
+  def: (mes)(\s+)((do|da|de)\s+){MonthRegex}
+  references: [MonthRegex]
 RangeUnitRegex: !simpleRegex
   def: \b(?<unit>años|año|meses|mes|semanas|semana)\b
 InConnectorRegex: !simpleRegex
@@ -117,7 +119,7 @@ ConnectorAndRegex: !simpleRegex
 BetweenRegex: !simpleRegex
   def: (entre\s*(la(s)?)?)
 WeekDayRegex: !simpleRegex
-  def: \b(?<weekday>domingos?|lunes|martes|mi[eé]rcoles|jueves|viernes|s[aá]bados?|lu|ma|mi|ju|vi|sa|do)\b
+  def: \b(?<weekday>domingos?|lunes|martes|mi[eé]rcoles|jueves|viernes|s[aá]bados?|lun|mar|mi[eé]|jue|vie|s[aá]b|dom|lu|ma|mi|ju|vi|sa|do)\b
 OnRegex: !nestedRegex
   def: (?<=\ben\s+)({DayRegex}s?)\b
   references: [ DayRegex ]
@@ -309,7 +311,7 @@ SuffixRegex: !simpleRegex
 TimeOfDayRegex: !simpleRegex
   def: \b(?<timeOfDay>mañana|madrugada|(pasado\s+(el\s+)?)?medio\s?d[ií]a|tarde|noche|anoche)\b
 SpecificTimeOfDayRegex: !nestedRegex
-  def: \b(((((a)?\s+la|esta|siguiente|pr[oó]xim[oa]|[uú]ltim[oa])\s+)?{TimeOfDayRegex}))\b
+  def: \b(((((a\s+)?la|esta|siguiente|pr[oó]xim[oa]|[uú]ltim[oa])\s+)?{TimeOfDayRegex}))\b
   references: [ TimeOfDayRegex ]
 TimeOfTodayAfterRegex: !nestedRegex
   def: ^\s*(,\s*)?(en|de(l)?\s+)?{SpecificTimeOfDayRegex}

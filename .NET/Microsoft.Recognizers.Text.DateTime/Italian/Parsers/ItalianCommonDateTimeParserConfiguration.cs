@@ -1,15 +1,15 @@
 ﻿using System.Collections.Immutable;
-
-using Microsoft.Recognizers.Text.DateTime.Italian.Utilities;
 using Microsoft.Recognizers.Definitions.Italian;
-using Microsoft.Recognizers.Text.Number.Italian;
+using Microsoft.Recognizers.Text.DateTime.Italian.Utilities;
 using Microsoft.Recognizers.Text.Number;
+using Microsoft.Recognizers.Text.Number.Italian;
 
 namespace Microsoft.Recognizers.Text.DateTime.Italian
 {
     public class ItalianCommonDateTimeParserConfiguration : BaseDateParserConfiguration
     {
-        public ItalianCommonDateTimeParserConfiguration(IOptionsConfiguration options) : base(options)
+        public ItalianCommonDateTimeParserConfiguration(IOptionsConfiguration options)
+            : base(options)
         {
             UtilityConfiguration = new ItalianDatetimeUtilityConfiguration();
 

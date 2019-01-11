@@ -8,7 +8,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
     public class TestDateTime_EnglishOthers : TestBase
     {
         public static TestResources TestResources { get; private set; }
+
         public static IDictionary<string, IDateTimeExtractor> Extractors { get; private set; }
+
         public static IDictionary<string, IDateTimeParser> Parsers { get; private set; }
 
         [ClassInitialize]
@@ -23,23 +25,23 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
         [TestInitialize]
         public void TestInitialize()
         {
-            base.TestSpecInitialize(TestResources);
+            TestSpecInitialize(TestResources);
         }
 
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "DateParser-EnglishOthers.csv", "DateParser-EnglishOthers#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void DateParser()
         {
-            base.ExtractorInitialize(Extractors);
-            base.ParserInitialize(Parsers);
-            base.TestDateTimeParser();
+            ExtractorInitialize(Extractors);
+            ParserInitialize(Parsers);
+            TestDateTimeParser();
         }
 
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "DateTimeModel-EnglishOthers.csv", "DateTimeModel-EnglishOthers#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void DateTimeModel()
         {
-            base.TestDateTime();
+            TestDateTime();
         }
     }
 }

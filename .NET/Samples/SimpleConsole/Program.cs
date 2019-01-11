@@ -15,7 +15,7 @@ namespace SimpleConsole
     class Program
     {
         // Use English for the Recognizers culture
-        private const string DefaultCulture = Culture.English;
+        private const string DefaultCulture = Culture.German;
 
         static void Main(string[] args)
         {

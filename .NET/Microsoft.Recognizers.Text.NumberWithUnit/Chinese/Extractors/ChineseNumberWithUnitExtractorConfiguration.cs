@@ -11,6 +11,12 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Chinese
 {
     public abstract class ChineseNumberWithUnitExtractorConfiguration : INumberWithUnitExtractorConfiguration
     {
+        private static readonly Regex CompoundUnitConnRegex =
+            new Regex(NumbersWithUnitDefinitions.CompoundUnitConnectorRegex, RegexOptions.None);
+
+        private static readonly Regex NonUnitsRegex =
+            new Regex(BaseUnits.PmNonUnitRegex, RegexOptions.None);
+
         protected ChineseNumberWithUnitExtractorConfiguration(CultureInfo ci)
         {
             this.CultureInfo = ci;
@@ -19,7 +25,13 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Chinese
             this.BuildSuffix = NumbersWithUnitDefinitions.BuildSuffix;
             this.ConnectorToken = NumbersWithUnitDefinitions.ConnectorToken;
         }
-         
+
+        public Regex CompoundUnitConnectorRegex => CompoundUnitConnRegex;
+
+        public Regex NonUnitRegex => NonUnitsRegex;
+
+        public virtual Regex AmbiguousUnitNumberMultiplierRegex => null;
+
         public abstract string ExtractType { get; }
 
         public CultureInfo CultureInfo { get; }
@@ -32,12 +44,6 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Chinese
 
         public string ConnectorToken { get; }
 
-        public Regex CompoundUnitConnectorRegex => CompoundUnitConnRegex;
-
-        public Regex NonUnitRegex => NonUnitsRegex;
-
-        public virtual Regex AmbiguousUnitNumberMultiplierRegex => null;
-
         public IExtractor IntegerExtractor { get; }
 
         public Dictionary<Regex, Regex> AmbiguityFiltersDict { get; } = null;
@@ -47,11 +53,5 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Chinese
         public abstract ImmutableDictionary<string, string> PrefixList { get; }
 
         public abstract ImmutableList<string> AmbiguousUnitList { get; }
-
-        private static readonly Regex CompoundUnitConnRegex =
-            new Regex(NumbersWithUnitDefinitions.CompoundUnitConnectorRegex, RegexOptions.None);
-
-        private static readonly Regex NonUnitsRegex =
-            new Regex(BaseUnits.PmNonUnitRegex, RegexOptions.None);
     }
 }

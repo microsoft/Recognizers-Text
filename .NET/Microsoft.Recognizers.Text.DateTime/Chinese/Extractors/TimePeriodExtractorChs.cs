@@ -6,23 +6,32 @@ using Microsoft.Recognizers.Definitions.Chinese;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
+    public enum PeriodType
+    {
+        /// <summary>
+        /// Represents a ShortTime.
+        /// </summary>
+        ShortTime,
+
+        /// <summary>
+        /// Represents a FullTime.
+        /// </summary>
+        FullTime,
+    }
+
     public class TimePeriodExtractorChs : BaseDateTimeExtractor<PeriodType>
     {
-        internal sealed override ImmutableDictionary<Regex, PeriodType> Regexes { get; }
-
-        protected sealed override string ExtractType { get; } = Constants.SYS_DATETIME_TIMEPERIOD;
-
         public const string TimePeriodConnectWords = DateTimeDefinitions.TimePeriodTimePeriodConnectWords;
 
-        //五点十分四十八秒
+        // 五点十分四十八秒
         public static readonly string ChineseTimeRegex = TimeExtractorChs.ChineseTimeRegex;
 
-        //六点 到 九点 | 六 到 九点
+        // 六点 到 九点 | 六 到 九点
         public static readonly string LeftChsTimeRegex = DateTimeDefinitions.TimePeriodLeftChsTimeRegex;
 
         public static readonly string RightChsTimeRegex = DateTimeDefinitions.TimePeriodRightChsTimeRegex;
 
-        //2:45
+        // 2:45
         public static readonly string DigitTimeRegex = TimeExtractorChs.DigitTimeRegex;
 
         public static readonly string LeftDigitTimeRegex = DateTimeDefinitions.TimePeriodLeftDigitTimeRegex;
@@ -48,16 +57,14 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 {
                     new Regex(DateTimeDefinitions.TimeOfDayRegex, RegexOptions.Singleline),
                     PeriodType.ShortTime
-                }
+                },
             };
 
             Regexes = regexes.ToImmutableDictionary();
         }
-    }
 
-    public enum PeriodType
-    {
-        ShortTime,
-        FullTime
+        internal sealed override ImmutableDictionary<Regex, PeriodType> Regexes { get; }
+
+        protected sealed override string ExtractType { get; } = Constants.SYS_DATETIME_TIMEPERIOD;
     }
 }

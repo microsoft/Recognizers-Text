@@ -22,7 +22,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         Regex SpecificTimeFromToRegex { get; }
 
         Regex SpecificTimeBetweenAndRegex { get; }
-        
+
         Regex TimeOfDayRegex { get; }
 
         Regex GeneralEndingRegex { get; }

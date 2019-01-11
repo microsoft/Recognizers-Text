@@ -11,9 +11,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         public static readonly Regex SetUnitRegex =
             new Regex(DateTimeDefinitions.DurationUnitRegex, RegexOptions.Singleline);
 
-        public static readonly Regex PeriodicRegex = 
+        public static readonly Regex PeriodicRegex =
             new Regex(
-                DateTimeDefinitions.PeriodicRegex, // TODO: Decide between adjective and adverb, i.e monthly - 'mensuel' vs 'mensuellement' 
+                DateTimeDefinitions.PeriodicRegex, // TODO: Decide between adjective and adverb, i.e monthly - 'mensuel' vs 'mensuellement'
                 RegexOptions.Singleline);
 
         public static readonly Regex EachUnitRegex = new Regex(
@@ -38,7 +38,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         public static readonly Regex SetEachRegex =
             new Regex(DateTimeDefinitions.SetEachRegex, RegexOptions.Singleline);
 
-        public ItalianSetExtractorConfiguration(IOptionsConfiguration config) : base(config)
+        public ItalianSetExtractorConfiguration(IOptionsConfiguration config)
+            : base(config)
         {
             DurationExtractor = new BaseDurationExtractor(new ItalianDurationExtractorConfiguration(this));
             TimeExtractor = new BaseTimeExtractor(new ItalianTimeExtractorConfiguration(this));

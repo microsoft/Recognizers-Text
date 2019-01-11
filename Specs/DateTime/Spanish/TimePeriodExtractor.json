@@ -276,9 +276,11 @@
   },
   {
     "Input": "Nos vemos en la mañana",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "mañana",
+        "Text": "en la mañana",
         "Type": "timerange",
         "Start": 16,
         "Length": 6
@@ -287,9 +289,11 @@
   },
   {
     "Input": "Nos vemos por la tarde",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "tarde",
+        "Text": "por la tarde",
         "Type": "timerange",
         "Start": 17,
         "Length": 5
@@ -309,22 +313,13 @@
   },
   {
     "Input": "Nos vemos en la madrugada",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "madrugada",
+        "Text": "en la madrugada",
         "Type": "timerange",
         "Start": 16,
-        "Length": 9
-      }
-    ]
-  },
-  {
-    "Input": "Nos vemos de madrugada",
-    "Results": [
-      {
-        "Text": "madrugada",
-        "Type": "timerange",
-        "Start": 13,
         "Length": 9
       }
     ]
@@ -595,7 +590,7 @@
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "from 3 in the morning until 5pm",
+        "Text": "de las 3 de la mañana a las 5 pm",
         "Type": "timerange",
         "Start": 14,
         "Length": 32
@@ -952,10 +947,10 @@
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "1:30-3:30",
+        "Text": "de 1:30-3:30",
         "Type": "timerange",
-        "Start": 24,
-        "Length": 9
+        "Start": 21,
+        "Length": 12
       }
     ]
   },
@@ -965,10 +960,10 @@
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "1.30-3.30",
+        "Text": "de 1.30-3.30",
         "Type": "timerange",
-        "Start": 24,
-        "Length": 9
+        "Start": 21,
+        "Length": 12
       }
     ]
   },
@@ -1004,10 +999,10 @@
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "1:30-3:30 p. m.",
+        "Text": "de 1:30-3:30 p. m.",
         "Type": "timerange",
-        "Start": 24,
-        "Length": 15
+        "Start": 21,
+        "Length": 18
       }
     ]
   },
@@ -1017,10 +1012,10 @@
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "1.30-3.30 pm",
+        "Text": "de 1.30-3.30 pm",
         "Type": "timerange",
-        "Start": 24,
-        "Length": 12
+        "Start": 21,
+        "Length": 15
       }
     ]
   },

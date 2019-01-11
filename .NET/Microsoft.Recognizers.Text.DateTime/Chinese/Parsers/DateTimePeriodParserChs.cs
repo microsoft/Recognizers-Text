@@ -1,27 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text.RegularExpressions;
 using System.Text;
-using DateObject = System.DateTime;
-
+using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Chinese;
-using Microsoft.Recognizers.Text.Number.Chinese;
 using Microsoft.Recognizers.Text.Number;
+using Microsoft.Recognizers.Text.Number.Chinese;
+using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
     public class DateTimePeriodParserChs : IDateTimeParser
     {
         public static readonly string ParserName = Constants.SYS_DATETIME_DATETIMEPERIOD;
-
-        private static readonly IDateTimeExtractor SingleDateExtractor = new DateExtractorChs();
-        private static readonly IDateTimeExtractor SingleTimeExtractor = new TimeExtractorChs();
-        private static readonly IDateTimeExtractor TimeWithDateExtractor = new DateTimeExtractorChs();
-        private static readonly IDateTimeExtractor TimePeriodExtractor = new TimePeriodExtractorChs();
-        private static readonly IExtractor CardinalExtractor = new CardinalExtractor();
-
-        private static readonly IParser CardinalParser = AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Cardinal,
-                                                                                               new ChineseNumberParserConfiguration());
 
         public static readonly Regex MORegex = new Regex(DateTimeDefinitions.DateTimePeriodMORegex, RegexOptions.Singleline);
 
@@ -31,11 +21,53 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         public static readonly Regex NIRegex = new Regex(DateTimeDefinitions.DateTimePeriodNIRegex, RegexOptions.Singleline);
 
+        private static readonly IDateTimeExtractor SingleDateExtractor = new DateExtractorChs();
+        private static readonly IDateTimeExtractor SingleTimeExtractor = new TimeExtractorChs();
+        private static readonly IDateTimeExtractor TimeWithDateExtractor = new DateTimeExtractorChs();
+        private static readonly IDateTimeExtractor TimePeriodExtractor = new TimePeriodExtractorChs();
+        private static readonly IExtractor CardinalExtractor = new CardinalExtractor();
+
+        private static readonly IParser CardinalParser = AgnosticNumberParserFactory.GetParser(
+            AgnosticNumberParserType.Cardinal, new ChineseNumberParserConfiguration());
+
         private readonly IFullDateTimeParserConfiguration config;
 
         public DateTimePeriodParserChs(IFullDateTimeParserConfiguration configuration)
         {
             config = configuration;
+        }
+
+        public static string BuildTimex(TimeResult timeResult)
+        {
+            var build = new StringBuilder("T");
+            if (timeResult.Hour >= 0)
+            {
+                build.Append(timeResult.Hour.ToString("D2"));
+            }
+
+            if (timeResult.Minute >= 0)
+            {
+                build.Append(":" + timeResult.Minute.ToString("D2"));
+            }
+
+            if (timeResult.Second >= 0)
+            {
+                build.Append(":" + timeResult.Second.ToString("D2"));
+            }
+
+            return build.ToString();
+        }
+
+        public static TimeResult DateObject2TimeResult(DateObject dateTime)
+        {
+            var timeResult = new TimeResult
+            {
+                Hour = dateTime.Hour,
+                Minute = dateTime.Minute,
+                Second = dateTime.Second,
+            };
+
+            return timeResult;
         }
 
         public ParseResult Parse(ExtractResult extResult)
@@ -72,24 +104,24 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     {
                         {
                             TimeTypeConstants.START_DATETIME,
-                            DateTimeFormatUtil.FormatDateTime(((Tuple<DateObject, DateObject>) innerResult.FutureValue).Item1)
+                            DateTimeFormatUtil.FormatDateTime(((Tuple<DateObject, DateObject>)innerResult.FutureValue).Item1)
                         },
                         {
                             TimeTypeConstants.END_DATETIME,
-                            DateTimeFormatUtil.FormatDateTime(((Tuple<DateObject, DateObject>) innerResult.FutureValue).Item2)
-                        }
+                            DateTimeFormatUtil.FormatDateTime(((Tuple<DateObject, DateObject>)innerResult.FutureValue).Item2)
+                        },
                     };
 
                     innerResult.PastResolution = new Dictionary<string, string>
                     {
                         {
                             TimeTypeConstants.START_DATETIME,
-                            DateTimeFormatUtil.FormatDateTime(((Tuple<DateObject, DateObject>) innerResult.PastValue).Item1)
+                            DateTimeFormatUtil.FormatDateTime(((Tuple<DateObject, DateObject>)innerResult.PastValue).Item1)
                         },
                         {
                             TimeTypeConstants.END_DATETIME,
-                            DateTimeFormatUtil.FormatDateTime(((Tuple<DateObject, DateObject>) innerResult.PastValue).Item2)
-                        }
+                            DateTimeFormatUtil.FormatDateTime(((Tuple<DateObject, DateObject>)innerResult.PastValue).Item2)
+                        },
                     };
 
                     value = innerResult;
@@ -104,8 +136,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 Type = er.Type,
                 Data = er.Data,
                 Value = value,
-                TimexStr = value == null ? "" : ((DateTimeResolutionResult)value).Timex,
-                ResolutionStr = ""
+                TimexStr = value == null ? string.Empty : ((DateTimeResolutionResult)value).Timex,
+                ResolutionStr = string.Empty,
             };
 
             return ret;
@@ -137,17 +169,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
             ret.FutureValue =
                 new Tuple<DateObject, DateObject>(
-                    DateObject.MinValue.SafeCreateFromValue(futureDate.Year, futureDate.Month, futureDate.Day, beginTime.Hour, beginTime.Minute,
-                        beginTime.Second),
-                    DateObject.MinValue.SafeCreateFromValue(futureDate.Year, futureDate.Month, futureDate.Day, endTime.Hour, endTime.Minute,
-                        endTime.Second));
+                    DateObject.MinValue.SafeCreateFromValue(futureDate.Year, futureDate.Month, futureDate.Day, beginTime.Hour, beginTime.Minute, beginTime.Second),
+                    DateObject.MinValue.SafeCreateFromValue(futureDate.Year, futureDate.Month, futureDate.Day, endTime.Hour, endTime.Minute, endTime.Second));
 
             ret.PastValue =
                 new Tuple<DateObject, DateObject>(
-                    DateObject.MinValue.SafeCreateFromValue(pastDate.Year, pastDate.Month, pastDate.Day, beginTime.Hour, beginTime.Minute,
-                        beginTime.Second),
-                    DateObject.MinValue.SafeCreateFromValue(pastDate.Year, pastDate.Month, pastDate.Day, endTime.Hour, endTime.Minute,
-                        endTime.Second));
+                    DateObject.MinValue.SafeCreateFromValue(pastDate.Year, pastDate.Month, pastDate.Day, beginTime.Hour, beginTime.Minute, beginTime.Second),
+                    DateObject.MinValue.SafeCreateFromValue(pastDate.Year, pastDate.Month, pastDate.Day, endTime.Hour, endTime.Minute, endTime.Second));
 
             var splited = pr2.TimexStr.Split('T');
             if (splited.Length != 4)
@@ -250,20 +278,20 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             else if (beginHasDate)
             {
                 // TODO: Handle "明天下午两点到五点"
-                futureEnd = DateObject.MinValue.SafeCreateFromValue(futureBegin.Year, futureBegin.Month, futureBegin.Day,
-                    futureEnd.Hour, futureEnd.Minute, futureEnd.Second);
-                pastEnd = DateObject.MinValue.SafeCreateFromValue(pastBegin.Year, pastBegin.Month, pastBegin.Day,
-                    pastEnd.Hour, pastEnd.Minute, pastEnd.Second);
+                futureEnd = DateObject.MinValue.SafeCreateFromValue(
+                    futureBegin.Year, futureBegin.Month, futureBegin.Day, futureEnd.Hour, futureEnd.Minute, futureEnd.Second);
+                pastEnd = DateObject.MinValue.SafeCreateFromValue(
+                    pastBegin.Year, pastBegin.Month, pastBegin.Day, pastEnd.Hour, pastEnd.Minute, pastEnd.Second);
 
                 leftTime = DateObject.MinValue.SafeCreateFromValue(futureBegin.Year, futureBegin.Month, futureBegin.Day);
             }
             else if (endHasDate)
             {
                 // TODO: Handle "明天下午两点到五点"
-                futureBegin = DateObject.MinValue.SafeCreateFromValue(futureEnd.Year, futureEnd.Month, futureEnd.Day,
-                    futureBegin.Hour, futureBegin.Minute, futureBegin.Second);
-                pastBegin = DateObject.MinValue.SafeCreateFromValue(pastEnd.Year, pastEnd.Month, pastEnd.Day,
-                    pastBegin.Hour, pastBegin.Minute, pastBegin.Second);
+                futureBegin = DateObject.MinValue.SafeCreateFromValue(
+                    futureEnd.Year, futureEnd.Month, futureEnd.Day, futureBegin.Hour, futureBegin.Minute, futureBegin.Second);
+                pastBegin = DateObject.MinValue.SafeCreateFromValue(
+                    pastEnd.Year, pastEnd.Month, pastEnd.Day, pastBegin.Hour, pastBegin.Minute, pastBegin.Second);
 
                 rightTime = DateObject.MinValue.SafeCreateFromValue(futureEnd.Year, futureEnd.Month, futureEnd.Day);
             }
@@ -277,7 +305,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 month = referenceTime.Month,
                 year = referenceTime.Year;
 
-            //check if the right time is smaller than the left time, if yes, add one day
+            // check if the right time is smaller than the left time, if yes, add one day
             int hour = leftResultTime.Hour > 0 ? leftResultTime.Hour : 0,
                 min = leftResultTime.Minute > 0 ? leftResultTime.Minute : 0,
                 second = leftResultTime.Second > 0 ? leftResultTime.Second : 0;
@@ -295,7 +323,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             rightTime = rightTime.AddMinutes(min);
             rightTime = rightTime.AddSeconds(second);
 
-            //the right side time contains "ampm", while the left side doesn't
+            // the right side time contains "ampm", while the left side doesn't
             if (rightResult.Comment != null && rightResult.Comment.Equals(Constants.Comment_AmPm) &&
                 leftResult.Comment == null && rightTime < leftTime)
             {
@@ -309,10 +337,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
             ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(leftTime, rightTime);
 
-            var leftTimex = "";
-            var rightTimex = "";
+            var leftTimex = string.Empty;
+            var rightTimex = string.Empty;
 
-            //"X" is timex token for not determined time
+            // "X" is timex token for not determined time
             if (!pr1.TimexStr.Contains("X") && !pr2.TimexStr.Contains("X"))
             {
                 leftTimex = DateTimeFormatUtil.LuisDateTime(leftTime);
@@ -386,7 +414,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 ret.Timex = DateTimeFormatUtil.FormatDate(date) + timeStr;
                 ret.FutureValue =
                     ret.PastValue =
-                        new Tuple<DateObject, DateObject>(DateObject.MinValue.SafeCreateFromValue(year, month, day, beginHour, 0, 0),
+                        new Tuple<DateObject, DateObject>(
+                            DateObject.MinValue.SafeCreateFromValue(year, month, day, beginHour, 0, 0),
                             DateObject.MinValue.SafeCreateFromValue(year, month, day, endHour, endMin, endMin));
                 ret.Success = true;
                 return ret;
@@ -441,12 +470,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 ret.Timex = DateTimeFormatUtil.FormatDate(date) + timeStr;
                 ret.FutureValue =
                     ret.PastValue =
-                        new Tuple<DateObject, DateObject>(DateObject.MinValue.SafeCreateFromValue(year, month, day, beginHour, 0, 0),
+                        new Tuple<DateObject, DateObject>(
+                            DateObject.MinValue.SafeCreateFromValue(year, month, day, beginHour, 0, 0),
                             DateObject.MinValue.SafeCreateFromValue(year, month, day, endHour, endMin, endMin));
                 ret.Success = true;
                 return ret;
             }
-
 
             // handle Date followed by morning, afternoon
             var match = DateTimePeriodExtractorChs.TimeOfDayRegex.Match(trimmedText);
@@ -636,40 +665,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     }
                 }
             }
+
             return ret;
-        }
-
-        public static string BuildTimex(TimeResult timeResult)
-        {
-            var build = new StringBuilder("T");
-            if (timeResult.Hour >= 0)
-            {
-                build.Append(timeResult.Hour.ToString("D2"));
-            }
-
-            if (timeResult.Minute >= 0)
-            {
-                build.Append(":" + timeResult.Minute.ToString("D2"));
-            }
-
-            if (timeResult.Second >= 0)
-            {
-                build.Append(":" + timeResult.Second.ToString("D2"));
-            }
-
-            return build.ToString();
-        }
-
-        public static TimeResult DateObject2TimeResult(DateObject dateTime)
-        {
-            var timeResult = new TimeResult
-            {
-                Hour = dateTime.Hour,
-                Minute = dateTime.Minute,
-                Second = dateTime.Second
-            };
-
-            return timeResult;
         }
     }
 }

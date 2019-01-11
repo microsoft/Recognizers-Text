@@ -9,7 +9,6 @@ import com.microsoft.recognizers.text.datetime.config.IOptionsConfiguration;
 import com.microsoft.recognizers.text.datetime.english.extractors.EnglishDateExtractorConfiguration;
 import com.microsoft.recognizers.text.datetime.english.extractors.EnglishDatePeriodExtractorConfiguration;
 import com.microsoft.recognizers.text.datetime.english.extractors.EnglishDateTimeExtractorConfiguration;
-import com.microsoft.recognizers.text.datetime.spanish.extractors.SpanishDateExtractorConfiguration;
 import com.microsoft.recognizers.text.datetime.english.extractors.EnglishDateTimePeriodExtractorConfiguration;
 import com.microsoft.recognizers.text.datetime.english.extractors.EnglishDurationExtractorConfiguration;
 import com.microsoft.recognizers.text.datetime.english.extractors.EnglishHolidayExtractorConfiguration;
@@ -30,10 +29,16 @@ import com.microsoft.recognizers.text.datetime.extractors.BaseTimeExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.BaseTimePeriodExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.BaseTimeZoneExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.IDateTimeExtractor;
+import com.microsoft.recognizers.text.datetime.spanish.extractors.SpanishDateExtractorConfiguration;
+import com.microsoft.recognizers.text.datetime.spanish.extractors.SpanishDatePeriodExtractorConfiguration;
 import com.microsoft.recognizers.text.datetime.spanish.extractors.SpanishDateTimeExtractorConfiguration;
+import com.microsoft.recognizers.text.datetime.spanish.extractors.SpanishDateTimePeriodExtractorConfiguration;
 import com.microsoft.recognizers.text.datetime.spanish.extractors.SpanishDurationExtractorConfiguration;
 import com.microsoft.recognizers.text.datetime.spanish.extractors.SpanishHolidayExtractorConfiguration;
+import com.microsoft.recognizers.text.datetime.spanish.extractors.SpanishMergedExtractorConfiguration;
+import com.microsoft.recognizers.text.datetime.spanish.extractors.SpanishSetExtractorConfiguration;
 import com.microsoft.recognizers.text.datetime.spanish.extractors.SpanishTimeExtractorConfiguration;
+import com.microsoft.recognizers.text.datetime.spanish.extractors.SpanishTimePeriodExtractorConfiguration;
 import com.microsoft.recognizers.text.tests.AbstractTest;
 import com.microsoft.recognizers.text.tests.TestCase;
 
@@ -157,28 +162,28 @@ public class DateTimeExtractorTest extends AbstractTest {
         switch (name) {
             case "DateExtractor":
                 return new BaseDateExtractor(new SpanishDateExtractorConfiguration(config));
-            //case "DatePeriodExtractor":
-            //    return new BaseDatePeriodExtractor(new SpanishDatePeriodExtractorConfiguration());
+            case "DatePeriodExtractor":
+                return new BaseDatePeriodExtractor(new SpanishDatePeriodExtractorConfiguration(config));
             //case "DateTimeAltExtractor":
             //    return new BaseDateTimeAltExtractor(new SpanishDateTimeAltExtractorConfiguration());
             case "DateTimeExtractor":
                 return new BaseDateTimeExtractor(new SpanishDateTimeExtractorConfiguration());
-            //case "DateTimePeriodExtractor":
-            //    return new BaseDateTimePeriodExtractor(new SpanishDateTimePeriodExtractorConfiguration());
+            case "DateTimePeriodExtractor":
+                return new BaseDateTimePeriodExtractor(new SpanishDateTimePeriodExtractorConfiguration());
             case "DurationExtractor":
                 return new BaseDurationExtractor(new SpanishDurationExtractorConfiguration());
             case "HolidayExtractor":
                 return new BaseHolidayExtractor(new SpanishHolidayExtractorConfiguration());
-            //case "MergedExtractor":
-            //   return new BaseMergedDateTimeExtractor(new SpanishMergedExtractorConfiguration(DateTimeOptions.None));
+            case "MergedExtractor":
+               return new BaseMergedDateTimeExtractor(new SpanishMergedExtractorConfiguration(DateTimeOptions.None));
             //case "MergedExtractorSkipFromTo":
             //    return new BaseMergedDateTimeExtractor(new SpanishMergedExtractorConfiguration(DateTimeOptions.SkipFromToMerge));
-            //case "SetExtractor":
-            //    return new BaseSetExtractor(new SpanishSetExtractorConfiguration());
+            case "SetExtractor":
+                return new BaseSetExtractor(new SpanishSetExtractorConfiguration());
             case "TimeExtractor":
                 return new BaseTimeExtractor(new SpanishTimeExtractorConfiguration());
-            //case "TimePeriodExtractor":
-            //    return new BaseTimePeriodExtractor(new SpanishTimePeriodExtractorConfiguration());
+            case "TimePeriodExtractor":
+                return new BaseTimePeriodExtractor(new SpanishTimePeriodExtractorConfiguration());
             //case "TimeZoneExtractor":
             //    return new BaseTimeZoneExtractor(new SpanishTimeZoneExtractorConfiguration(DateTimeOptions.EnablePreview));
 

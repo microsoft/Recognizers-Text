@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 
 namespace Microsoft.Recognizers.Text.Number
@@ -69,8 +70,8 @@ namespace Microsoft.Recognizers.Text.Number
                 endValue = nums[0];
             }
 
-            var startValueStr = Config.CultureInfo != null ? startValue.ToString(Config.CultureInfo) : startValue.ToString();
-            var endValueStr = Config.CultureInfo != null ? endValue.ToString(Config.CultureInfo) : endValue.ToString();
+            var startValueStr = startValue.ToString(CultureInfo.InvariantCulture);
+            var endValueStr = endValue.ToString(CultureInfo.InvariantCulture);
 
             char leftBracket, rightBracket;
             var type = extResult.Data as string;
@@ -187,7 +188,7 @@ namespace Microsoft.Recognizers.Text.Number
                     leftBracket = NumberRangeConstants.LEFT_OPEN;
                 }
 
-                startValueStr = Config.CultureInfo != null ? num[0].ToString(Config.CultureInfo) : num[0].ToString();
+                startValueStr = num[0].ToString(CultureInfo.InvariantCulture);
 
                 result.Value = new Dictionary<string, double>()
                 {
@@ -219,7 +220,7 @@ namespace Microsoft.Recognizers.Text.Number
                     rightBracket = NumberRangeConstants.RIGHT_OPEN;
                 }
 
-                endValueStr = Config.CultureInfo != null ? num[0].ToString(Config.CultureInfo) : num[0].ToString();
+                endValueStr = num[0].ToString(CultureInfo.InvariantCulture);
 
                 result.Value = new Dictionary<string, double>()
                 {
@@ -231,7 +232,7 @@ namespace Microsoft.Recognizers.Text.Number
                 leftBracket = NumberRangeConstants.LEFT_CLOSED;
                 rightBracket = NumberRangeConstants.RIGHT_CLOSED;
 
-                startValueStr = Config.CultureInfo != null ? num[0].ToString(Config.CultureInfo) : num[0].ToString();
+                startValueStr = num[0].ToString(CultureInfo.InvariantCulture);
                 endValueStr = startValueStr;
 
                 result.Value = new Dictionary<string, double>()

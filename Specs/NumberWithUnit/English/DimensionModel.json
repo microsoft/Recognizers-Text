@@ -1,5 +1,20 @@
 [
   {
+    "Input": "You weight 200lbs.",
+    "Results": [
+      {
+        "Text": "200lbs",
+        "Start": 11,
+        "End": 16,
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Pound",
+          "value": "200"
+        }
+      }
+    ]
+  },
+  {
     "Input": "75ml",
     "Results": [
       {

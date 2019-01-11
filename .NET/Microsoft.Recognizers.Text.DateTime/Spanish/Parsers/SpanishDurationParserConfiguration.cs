@@ -7,6 +7,28 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
     public class SpanishDurationParserConfiguration : BaseOptionsConfiguration, IDurationParserConfiguration
     {
+        public SpanishDurationParserConfiguration(ICommonDateTimeParserConfiguration config)
+            : base(config)
+        {
+            CardinalExtractor = config.CardinalExtractor;
+            NumberParser = config.NumberParser;
+            DurationExtractor = new BaseDurationExtractor(new SpanishDurationExtractorConfiguration(this), false);
+            NumberCombinedWithUnit = SpanishDurationExtractorConfiguration.NumberCombinedWithUnit;
+            AnUnitRegex = SpanishDurationExtractorConfiguration.AnUnitRegex;
+            DuringRegex = SpanishDurationExtractorConfiguration.DuringRegex;
+            AllDateUnitRegex = SpanishDurationExtractorConfiguration.AllRegex;
+            HalfDateUnitRegex = SpanishDurationExtractorConfiguration.HalfRegex;
+            SuffixAndRegex = SpanishDurationExtractorConfiguration.SuffixAndRegex;
+            UnitMap = config.UnitMap;
+            UnitValueMap = config.UnitValueMap;
+            DoubleNumbers = config.DoubleNumbers;
+            FollowedUnit = SpanishDurationExtractorConfiguration.FollowedUnit;
+            ConjunctionRegex = SpanishDurationExtractorConfiguration.ConjunctionRegex;
+            InexactNumberRegex = SpanishDurationExtractorConfiguration.InexactNumberRegex;
+            InexactNumberUnitRegex = SpanishDurationExtractorConfiguration.InexactNumberUnitRegex;
+            DurationUnitRegex = SpanishDurationExtractorConfiguration.DurationUnitRegex;
+        }
+
         public IExtractor CardinalExtractor { get; }
 
         public IParser NumberParser { get; }
@@ -40,26 +62,5 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public IImmutableDictionary<string, long> UnitValueMap { get; }
 
         public IImmutableDictionary<string, double> DoubleNumbers { get; }
-
-        public SpanishDurationParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config)
-        {
-            CardinalExtractor = config.CardinalExtractor;
-            NumberParser = config.NumberParser;
-            DurationExtractor = new BaseDurationExtractor(new SpanishDurationExtractorConfiguration(this), false);
-            NumberCombinedWithUnit = SpanishDurationExtractorConfiguration.NumberCombinedWithUnit;
-            AnUnitRegex = SpanishDurationExtractorConfiguration.AnUnitRegex;
-            DuringRegex = SpanishDurationExtractorConfiguration.DuringRegex;
-            AllDateUnitRegex = SpanishDurationExtractorConfiguration.AllRegex;
-            HalfDateUnitRegex = SpanishDurationExtractorConfiguration.HalfRegex;
-            SuffixAndRegex = SpanishDurationExtractorConfiguration.SuffixAndRegex;
-            UnitMap = config.UnitMap;
-            UnitValueMap = config.UnitValueMap;
-            DoubleNumbers = config.DoubleNumbers;
-            FollowedUnit = SpanishDurationExtractorConfiguration.FollowedUnit;
-            ConjunctionRegex = SpanishDurationExtractorConfiguration.ConjunctionRegex;
-            InexactNumberRegex = SpanishDurationExtractorConfiguration.InexactNumberRegex;
-            InexactNumberUnitRegex = SpanishDurationExtractorConfiguration.InexactNumberUnitRegex;
-            DurationUnitRegex = SpanishDurationExtractorConfiguration.DurationUnitRegex;
-        }
     }
 }
