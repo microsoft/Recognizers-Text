@@ -93,7 +93,7 @@ public class BaseSetParser implements IDateTimeParser {
                 er.getData(),
                 value,
                 "",
-                value.getTimex()
+                value == null ? "" : value.getTimex()
         );
 
         return ret;
