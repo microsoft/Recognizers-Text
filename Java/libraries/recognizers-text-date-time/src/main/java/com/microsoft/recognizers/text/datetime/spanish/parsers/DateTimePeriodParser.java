@@ -51,37 +51,14 @@ public class DateTimePeriodParser extends BaseDateTimePeriodParser {
             ret.setTimex(DateTimeFormatUtil.formatDate(date) + matchedTimeRangeResult.getTimeStr());
             ret.setFutureValue(new Pair<>(
                 DateUtil.safeCreateFromValue(
-                    date,
-                    year,
-                    month,
-                    day,
-                    matchedTimeRangeResult.getBeginHour(),
-                    0,
-                    0),
+                    date, year, month, day, matchedTimeRangeResult.getBeginHour(), 0, 0),
                 DateUtil.safeCreateFromValue(
-                    date,
-                    year,
-                    month,
-                    day,
-                    matchedTimeRangeResult.getEndHour(),
-                    matchedTimeRangeResult.getEndMin(),
-                    matchedTimeRangeResult.getEndMin())));
+                    date, year, month, day, matchedTimeRangeResult.getEndHour(), matchedTimeRangeResult.getEndMin(), matchedTimeRangeResult.getEndMin())));
             ret.setPastValue(new Pair<>(
                 DateUtil.safeCreateFromValue(
-                    date,
-                    year,
-                    month,
-                    day,
-                    matchedTimeRangeResult.getBeginHour(),
-                    0,
-                    0),
-                DateUtil.safeCreateFromValue(date,
-                    year,
-                    month,
-                    day,
-                    matchedTimeRangeResult.getEndHour(),
-                    matchedTimeRangeResult.getEndMin(),
-                    matchedTimeRangeResult.getEndMin())));
+                    date, year, month, day, matchedTimeRangeResult.getBeginHour(), 0, 0),
+                DateUtil.safeCreateFromValue(
+                    date, year, month, day, matchedTimeRangeResult.getEndHour(), matchedTimeRangeResult.getEndMin(), matchedTimeRangeResult.getEndMin())));
             ret.setSuccess(true);
 
             return ret;
