@@ -72,10 +72,10 @@ public class SpanishCommonDateTimeParserConfiguration extends BaseDateParserConf
     private final IDateTimeExtractor timePeriodExtractor;
     private final IDateTimeExtractor dateTimePeriodExtractor;
 
-    //private final IDateTimeParser dateParser;
+    private final IDateTimeParser dateParser;
     private final IDateTimeParser timeParser;
     //private final IDateTimeParser dateTimeParser;
-    //private final IDateTimeParser durationParser;
+    private final IDateTimeParser durationParser;
     //private final IDateTimeParser datePeriodParser;
     //private final IDateTimeParser timePeriodParser;
     //private final IDateTimeParser dateTimePeriodParser;
@@ -112,10 +112,10 @@ public class SpanishCommonDateTimeParserConfiguration extends BaseDateParserConf
         timePeriodExtractor = new BaseTimePeriodExtractor(new SpanishTimePeriodExtractorConfiguration(options));
         dateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new SpanishDateTimePeriodExtractorConfiguration(options));
 
-        //dateParser = new BaseDateParser(new SpanishDateParserConfiguration(this));
+        dateParser = new BaseDateParser(new SpanishDateParserConfiguration(this));
         timeParser = new TimeParser(new SpanishTimeParserConfiguration(this));
         //dateTimeParser = new BaseDateTimeParser(new SpanishDateTimeParserConfiguration(this));
-        //durationParser = new BaseDurationParser(new SpanishDurationParserConfiguration(this));
+        durationParser = new BaseDurationParser(new SpanishDurationParserConfiguration(this));
         //datePeriodParser = new BaseDatePeriodParser(new SpanishDatePeriodParserConfiguration(this));
         //timePeriodParser = new BaseTimePeriodParser(new SpanishTimePeriodParserConfiguration(this));
         //dateTimePeriodParser = new BaseDateTimePeriodParser(new SpanishDateTimePeriodParserConfiguration(this));
@@ -179,8 +179,7 @@ public class SpanishCommonDateTimeParserConfiguration extends BaseDateParserConf
 
     @Override
     public IDateTimeParser getDateParser() {
-        //return dateParser;
-        return null;
+        return dateParser;
     }
 
     @Override
@@ -196,8 +195,7 @@ public class SpanishCommonDateTimeParserConfiguration extends BaseDateParserConf
 
     @Override
     public IDateTimeParser getDurationParser() {
-        //return durationParser;
-        return null;
+        return durationParser;
     }
 
     @Override
