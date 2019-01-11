@@ -672,14 +672,13 @@
   },
   {
     "Input": "Volveré en la noche de hoy",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "noche de hoy",
+        "Text": "en la noche de hoy",
         "Type": "datetimerange",
-        "Start": 14,
-        "Length": 12
+        "Start": 8,
+        "Length": 18
       }
     ]
   },
@@ -733,14 +732,13 @@
   },
   {
     "Input": "Volveré en la noche de mañana",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "noche de mañana",
+        "Text": "en la noche de mañana",
         "Type": "datetimerange",
-        "Start": 14,
-        "Length": 15
+        "Start": 8,
+        "Length": 21
       }
     ]
   },
@@ -930,14 +928,13 @@
   },
   {
     "Input": "Volveré en la noche de martes",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "noche de martes",
+        "Text": "en la noche de martes",
         "Type": "datetimerange",
-        "Start": 14,
-        "Length": 15
+        "Start": 8,
+        "Length": 21
       }
     ]
   },

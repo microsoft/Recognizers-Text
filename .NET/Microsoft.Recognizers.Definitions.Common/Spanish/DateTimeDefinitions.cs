@@ -141,7 +141,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
 		public static readonly string TimeFollowedUnit = $@"^\s*{TimeUnitRegex}";
 		public static readonly string TimeNumberCombinedWithUnit = $@"\b(?<num>\d+(\,\d*)?)\s*{TimeUnitRegex}";
 		public static readonly string DateTimePeriodNumberCombinedWithUnit = $@"\b(?<num>\d+(\.\d*)?)\s*{TimeUnitRegex}";
-		public const string PeriodTimeOfDayWithDateRegex = @"\b(((y|a|en|por)\s+la|al)\s+)?(?<timeOfDay>mañana|madrugada|(pasado\s+(el\s+)?)?medio\s?d[ií]a|tarde|noche|anoche)\b";
+		public const string PeriodTimeOfDayWithDateRegex = @"\b((((y|a|en|por)\s+)?la|al)\s+)?(?<timeOfDay>mañana|madrugada|(pasado\s+(el\s+)?)?medio\s?d[ií]a|tarde|noche|anoche)(\s+de)?\b";
 		public static readonly string RelativeTimeUnitRegex = $@"({PastRegex}|{FutureRegex})\s+{UnitRegex}";
 		public const string LessThanRegex = @"^[.]";
 		public const string MoreThanRegex = @"^[.]";
