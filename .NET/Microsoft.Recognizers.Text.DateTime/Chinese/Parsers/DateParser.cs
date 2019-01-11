@@ -12,7 +12,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
     {
         public static readonly string ParserName = Constants.SYS_DATETIME_DATE; // "Date";
 
-        private const string V = "";
         private static readonly int[] MonthMaxDays = { 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
         private readonly ChineseDateTimeParserConfiguration config;
 
@@ -52,7 +51,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 Type = er.Type,
                 Data = er.Data,
                 Value = value,
-                TimexStr = value == null ? V : ((DateTimeResolutionResult)value).Timex,
+                TimexStr = value == null ? string.Empty : ((DateTimeResolutionResult)value).Timex,
                 ResolutionStr = string.Empty,
             };
 
