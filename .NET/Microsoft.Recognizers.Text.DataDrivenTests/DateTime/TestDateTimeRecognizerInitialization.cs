@@ -1,8 +1,8 @@
-﻿using Microsoft.Recognizers.Text.DateTime.English;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.Recognizers.Text.DateTime.English;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Microsoft.Recognizers.Text.DateTime.Tests
 {
