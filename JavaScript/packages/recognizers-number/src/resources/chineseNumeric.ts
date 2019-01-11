@@ -109,4 +109,5 @@ export namespace ChineseNumeric {
 	export const TwoNumberRangeRegex3 = `(${OneNumberRangeLessRegex1}|${OneNumberRangeLessRegex2}|${OneNumberRangeLessRegex3})\\s*(且|并且|而且|並且|((的)?同時)|((的)?同时)|[,，])?\\s*(${OneNumberRangeMoreRegex1}|${OneNumberRangeMoreRegex2}|${OneNumberRangeMoreRegex3})`;
 	export const TwoNumberRangeRegex4 = `(?<number1>((?!(([,，](?!\\d+))|。)).)+)\\s*${TillRegex}\\s*(?<number2>((?!(([,，](?!\\d+))|。)).)+)`;
 	export const AmbiguousFractionConnectorsRegex = `^[.]`;
+	export const RelativeReferenceMap: ReadonlyMap<string, string> = new Map<string, string>([["", ""]]);
 }

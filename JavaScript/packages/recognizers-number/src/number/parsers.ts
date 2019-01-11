@@ -322,7 +322,7 @@ export class BaseNumberParser implements IParser {
 
         let intPart = numGroup[0];
 
-        let matchStrs = intPart
+        let matchStrs = (intPart && intPart.match(this.textNumberRegex))
             ? intPart.match(this.textNumberRegex).map(s => s.toLowerCase())
             : new Array<string>();
 
