@@ -18,7 +18,7 @@ namespace Microsoft.Recognizers.Text.Sequence.Tests
         [TestInitialize]
         public void TestInitialize()
         {
-            base.TestSpecInitialize(TestResources);
+            this.TestSpecInitialize(TestResources);
         }
 
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "PhoneNumberModel-Portuguese.csv", "PhoneNumberModel-Portuguese#csv", DataAccessMethod.Sequential)]
