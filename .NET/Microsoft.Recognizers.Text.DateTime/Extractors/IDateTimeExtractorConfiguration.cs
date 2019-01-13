@@ -38,8 +38,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         IExtractor IntegerExtractor { get; }
 
-        bool IsConnector(string text);
-
         IDateTimeUtilityConfiguration UtilityConfiguration { get; }
+
+        bool IsConnector(string text);
     }
 }
