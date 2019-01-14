@@ -2,7 +2,8 @@
 {
     public class NumberRangeModel : AbstractNumberModel
     {
-        public NumberRangeModel(IParser parser, IExtractor extractor) : base(parser, extractor)
+        public NumberRangeModel(IParser parser, IExtractor extractor)
+            : base(parser, extractor)
         {
         }
 
