@@ -13,6 +13,8 @@ namespace Microsoft.Recognizers.Text.Number.Spanish
 
         private NumberExtractor(NumberMode mode = NumberMode.Default, NumberOptions options = NumberOptions.None)
         {
+            NegativeNumberTermsRegex = new Regex(NumbersDefinitions.NegativeNumberTermsRegex + '$', RegexOptions.Singleline);
+
             Options = options;
 
             var builder = ImmutableDictionary.CreateBuilder<Regex, TypeTag>();
@@ -51,6 +53,8 @@ namespace Microsoft.Recognizers.Text.Number.Spanish
 
         // "Number"
         protected sealed override string ExtractType { get; } = Constants.SYS_NUM;
+
+        protected sealed override Regex NegativeNumberTermsRegex { get; }
 
         public static NumberExtractor GetInstance(NumberMode mode = NumberMode.Default, NumberOptions options = NumberOptions.None)
         {
