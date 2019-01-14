@@ -8,10 +8,6 @@ namespace Microsoft.Recognizers.Text.Number.Japanese
 {
     public class PercentageExtractor : BaseNumberExtractor
     {
-        internal sealed override ImmutableDictionary<Regex, TypeTag> Regexes { get; }
-
-        protected sealed override string ExtractType { get; } = Constants.SYS_NUM_PERCENTAGE;
-
         public PercentageExtractor()
         {
             var regexes = new Dictionary<Regex, TypeTag>
@@ -35,10 +31,9 @@ namespace Microsoft.Recognizers.Text.Number.Japanese
                     // 3.2 k パーセント
                     new Regex(NumbersDefinitions.NumbersPercentageWithMultiplierRegex, RegexOptions.Singleline),
                     RegexTagGenerator.GenerateRegexTag(Constants.PERCENT_PREFIX, Constants.NUMBER_SUFFIX)
-                }
-                ,
+                },
                 {
-                    // 15kパーセント 
+                    // 15kパーセント
                     new Regex(NumbersDefinitions.SimpleNumbersPercentageWithMultiplierRegex, RegexOptions.Singleline),
                     RegexTagGenerator.GenerateRegexTag(Constants.PERCENT_PREFIX, Constants.NUMBER_SUFFIX)
                 },
@@ -81,10 +76,14 @@ namespace Microsoft.Recognizers.Text.Number.Japanese
                     // @TODO Example missing
                     new Regex(NumbersDefinitions.SpecialsFoldsPercentageRegex, RegexOptions.Singleline),
                     RegexTagGenerator.GenerateRegexTag(Constants.PERCENT_PREFIX, Constants.SPECIAL_SUFFIX)
-                }
+                },
             };
 
             Regexes = regexes.ToImmutableDictionary();
         }
+
+        internal sealed override ImmutableDictionary<Regex, TypeTag> Regexes { get; }
+
+        protected sealed override string ExtractType { get; } = Constants.SYS_NUM_PERCENTAGE;
     }
 }
