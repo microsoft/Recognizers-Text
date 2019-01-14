@@ -8,7 +8,6 @@ using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Japanese
 {
-
     public class TimeResult
     {
         public int Hour { get; set; }

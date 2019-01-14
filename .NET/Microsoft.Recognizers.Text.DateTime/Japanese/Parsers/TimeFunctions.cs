@@ -8,7 +8,6 @@ using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Japanese
 {
-
     public static class TimeFunctions
     {
         public static readonly Dictionary<char, int> NumberDictionary = DateTimeDefinitions.TimeNumberDictionary;
