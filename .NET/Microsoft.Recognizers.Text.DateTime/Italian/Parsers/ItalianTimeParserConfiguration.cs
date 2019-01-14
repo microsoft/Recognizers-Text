@@ -8,6 +8,17 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 {
     public class ItalianTimeParserConfiguration : BaseOptionsConfiguration, ITimeParserConfiguration
     {
+        public ItalianTimeParserConfiguration(ICommonDateTimeParserConfiguration config)
+            : base(config.Options)
+        {
+            TimeTokenPrefix = DateTimeDefinitions.TimeTokenPrefix;
+            AtRegex = ItalianTimeExtractorConfiguration.AtRegex;
+            TimeRegexes = ItalianTimeExtractorConfiguration.TimeRegexList;
+            UtilityConfiguration = config.UtilityConfiguration;
+            Numbers = config.Numbers;
+            TimeZoneParser = config.TimeZoneParser;
+        }
+
         public string TimeTokenPrefix { get; }
 
         public Regex AtRegex { get; }
