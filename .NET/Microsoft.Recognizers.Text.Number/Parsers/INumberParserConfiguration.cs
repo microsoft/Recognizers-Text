@@ -13,15 +13,10 @@ namespace Microsoft.Recognizers.Text.Number
 
         ImmutableDictionary<string, long> RoundNumberMap { get; }
 
-<<<<<<< HEAD
         ImmutableDictionary<string, string> RelativeReferenceMap { get; }
-
-        #endregion
 
         #region language settings
 
-=======
->>>>>>> upstream/master
         NumberOptions Options { get; }
 
         CultureInfo CultureInfo { get; }
@@ -53,6 +48,8 @@ namespace Microsoft.Recognizers.Text.Number
         IEnumerable<string> WrittenFractionSeparatorTexts { get; }
 
         Regex NegativeNumberSignRegex { get; }
+
+        #endregion
 
         /// <summary>
         /// Used when requiring to normalize a token to a valid expression supported by the ImmutableDictionaries (language dictionaries).
