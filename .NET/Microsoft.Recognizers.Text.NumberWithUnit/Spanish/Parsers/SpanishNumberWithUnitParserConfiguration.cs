@@ -8,7 +8,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Spanish
 {
     public class SpanishNumberWithUnitParserConfiguration : BaseNumberWithUnitParserConfiguration
     {
-        public SpanishNumberWithUnitParserConfiguration(CultureInfo ci) : base(ci)
+        public SpanishNumberWithUnitParserConfiguration(CultureInfo ci)
+               : base(ci)
         {
             this.InternalNumberExtractor = NumberExtractor.GetInstance();
             this.InternalNumberParser = AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new SpanishNumberParserConfiguration());

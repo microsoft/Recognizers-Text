@@ -10,7 +10,10 @@ namespace Microsoft.Recognizers.Text.Number.German
 {
     public class GermanNumberParserConfiguration : INumberParserConfiguration
     {
-        public GermanNumberParserConfiguration() : this(new CultureInfo(Culture.German)) { }
+        public GermanNumberParserConfiguration()
+            : this(new CultureInfo(Culture.German))
+        {
+        }
 
         public GermanNumberParserConfiguration(CultureInfo ci)
         {
@@ -35,7 +38,7 @@ namespace Microsoft.Recognizers.Text.Number.German
             this.HalfADozenRegex = new Regex(NumbersDefinitions.HalfADozenRegex, RegexOptions.Singleline);
             this.DigitalNumberRegex = new Regex(NumbersDefinitions.DigitalNumberRegex, RegexOptions.Singleline);
             this.NegativeNumberSignRegex = new Regex(NumbersDefinitions.NegativeNumberSignRegex, RegexOptions.Singleline);
-            this.FractionPrepositionRegex  = new Regex(NumbersDefinitions.FractionPrepositionRegex, RegexOptions.Singleline);
+            this.FractionPrepositionRegex = new Regex(NumbersDefinitions.FractionPrepositionRegex, RegexOptions.Singleline);
         }
 
         public ImmutableDictionary<string, long> CardinalNumberMap { get; private set; }
@@ -104,7 +107,6 @@ namespace Microsoft.Recognizers.Text.Number.German
 
         public long ResolveCompositeNumber(string numberStr)
         {
-
             if (numberStr.Contains("-"))
             {
                 var numbers = numberStr.Split('-');

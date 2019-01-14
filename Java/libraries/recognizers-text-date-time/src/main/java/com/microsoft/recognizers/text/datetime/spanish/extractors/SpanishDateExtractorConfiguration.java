@@ -18,13 +18,9 @@ import com.microsoft.recognizers.text.number.spanish.extractors.IntegerExtractor
 import com.microsoft.recognizers.text.number.spanish.extractors.OrdinalExtractor;
 import com.microsoft.recognizers.text.number.spanish.parsers.SpanishNumberParserConfiguration;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
-import com.sun.nio.sctp.PeerAddressChangeNotification;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
 import java.util.List;
-import java.util.ListIterator;
 import java.util.regex.Pattern;
 
 

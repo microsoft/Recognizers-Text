@@ -11,7 +11,10 @@ namespace Microsoft.Recognizers.Text.Number.Portuguese
 {
     public class PortugueseNumberParserConfiguration : INumberParserConfiguration
     {
-        public PortugueseNumberParserConfiguration() : this(new CultureInfo(Culture.Portuguese)) { }
+        public PortugueseNumberParserConfiguration()
+               : this(new CultureInfo(Culture.Portuguese))
+        {
+        }
 
         public PortugueseNumberParserConfiguration(CultureInfo ci)
         {
@@ -37,7 +40,7 @@ namespace Microsoft.Recognizers.Text.Number.Portuguese
             this.HalfADozenRegex = new Regex(NumbersDefinitions.HalfADozenRegex, RegexOptions.Singleline);
             this.DigitalNumberRegex = new Regex(NumbersDefinitions.DigitalNumberRegex, RegexOptions.Singleline);
             this.NegativeNumberSignRegex = new Regex(NumbersDefinitions.NegativeNumberSignRegex, RegexOptions.Singleline);
-            this.FractionPrepositionRegex  = new Regex(NumbersDefinitions.FractionPrepositionRegex, RegexOptions.Singleline);
+            this.FractionPrepositionRegex = new Regex(NumbersDefinitions.FractionPrepositionRegex, RegexOptions.Singleline);
         }
 
         public ImmutableDictionary<string, long> CardinalNumberMap { get; private set; }
@@ -102,7 +105,8 @@ namespace Microsoft.Recognizers.Text.Number.Portuguese
                     var newLength = origTempWord.Length;
                     tempWord = origTempWord.Remove(newLength - 3);
 
-                    if (string.IsNullOrWhiteSpace(tempWord)) {
+                    if (string.IsNullOrWhiteSpace(tempWord))
+                    {
                         // Ignore avos in fractions.
                         continue;
                     }
@@ -161,6 +165,7 @@ namespace Microsoft.Recognizers.Text.Number.Portuguese
                     value = 0;
                 }
             }
+
             return finalValue;
         }
 
