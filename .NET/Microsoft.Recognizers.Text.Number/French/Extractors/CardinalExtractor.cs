@@ -9,7 +9,7 @@ namespace Microsoft.Recognizers.Text.Number.French
     public class CardinalExtractor : BaseNumberExtractor
     {
         private static readonly ConcurrentDictionary<string, CardinalExtractor> Instances =
-         new ConcurrentDictionary<string, CardinalExtractor>();
+            new ConcurrentDictionary<string, CardinalExtractor>();
 
         private CardinalExtractor(string placeholder = NumbersDefinitions.PlaceHolderDefault)
         {
