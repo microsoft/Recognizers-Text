@@ -72,6 +72,7 @@ public class SpanishCommonDateTimeParserConfiguration extends BaseDateParserConf
     private final IDateTimeExtractor timePeriodExtractor;
     private final IDateTimeExtractor dateTimePeriodExtractor;
 
+    private final IDateTimeParser timeZoneParser;
     private final IDateTimeParser dateParser;
     private final IDateTimeParser timeParser;
     private final IDateTimeParser dateTimeParser;
@@ -79,7 +80,7 @@ public class SpanishCommonDateTimeParserConfiguration extends BaseDateParserConf
     private final IDateTimeParser datePeriodParser;
     private final IDateTimeParser timePeriodParser;
     private final IDateTimeParser dateTimePeriodParser;
-    //private final IDateTimeParser dateTimeAltParser;
+    private final IDateTimeParser dateTimeAltParser;
 
     public SpanishCommonDateTimeParserConfiguration(DateTimeOptions options) {
 
@@ -112,6 +113,7 @@ public class SpanishCommonDateTimeParserConfiguration extends BaseDateParserConf
         timePeriodExtractor = new BaseTimePeriodExtractor(new SpanishTimePeriodExtractorConfiguration(options));
         dateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new SpanishDateTimePeriodExtractorConfiguration(options));
 
+        timeZoneParser = new BaseTimeZoneParser();
         dateParser = new BaseDateParser(new SpanishDateParserConfiguration(this));
         timeParser = new TimeParser(new SpanishTimeParserConfiguration(this));
         dateTimeParser = new BaseDateTimeParser(new SpanishDateTimeParserConfiguration(this));
@@ -119,7 +121,7 @@ public class SpanishCommonDateTimeParserConfiguration extends BaseDateParserConf
         datePeriodParser = new BaseDatePeriodParser(new SpanishDatePeriodParserConfiguration(this));
         timePeriodParser = new BaseTimePeriodParser(new SpanishTimePeriodParserConfiguration(this));
         dateTimePeriodParser = new BaseDateTimePeriodParser(new SpanishDateTimePeriodParserConfiguration(this));
-        //dateTimeAltParser = new BaseDateTimeAltParser(new SpanishDateTimeAltParserConfiguration(this));
+        dateTimeAltParser = new BaseDateTimeAltParser(new SpanishDateTimeAltParserConfiguration(this));
     }
 
     @Override
@@ -214,17 +216,11 @@ public class SpanishCommonDateTimeParserConfiguration extends BaseDateParserConf
 
     @Override
     public IDateTimeParser getDateTimeAltParser() {
-        //return dateTimeAltParser;
-        return null;
+        return dateTimeAltParser;
     }
 
     @Override public IDateTimeParser getTimeZoneParser() {
-        return null;
-    }
-
-    @Override
-    public Pattern getAmbiguousMonthP0Regex() {
-        return null;
+        return timeZoneParser;
     }
 
     @Override

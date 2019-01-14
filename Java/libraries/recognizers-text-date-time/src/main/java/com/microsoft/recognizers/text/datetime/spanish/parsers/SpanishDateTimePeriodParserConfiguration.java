@@ -92,7 +92,7 @@ public class SpanishDateTimePeriodParserConfiguration extends BaseOptionsConfigu
         pastRegex = SpanishDatePeriodExtractorConfiguration.PastRegex;
         futureRegex = SpanishDatePeriodExtractorConfiguration.FutureRegex;
         futureSuffixRegex = SpanishDatePeriodExtractorConfiguration.FutureSuffixRegex;
-        numberCombinedWithUnitRegex = SpanishDateTimePeriodExtractorConfiguration.TimeNumberCombinedWithUnit;
+        numberCombinedWithUnitRegex = SpanishDateTimePeriodExtractorConfiguration.NumberCombinedWithUnit;
         unitRegex = SpanishTimePeriodExtractorConfiguration.UnitRegex;
         periodTimeOfDayWithDateRegex = SpanishDateTimePeriodExtractorConfiguration.PeriodTimeOfDayWithDateRegex;
         relativeTimeUnitRegex = SpanishDateTimePeriodExtractorConfiguration.RelativeTimeUnitRegex;
