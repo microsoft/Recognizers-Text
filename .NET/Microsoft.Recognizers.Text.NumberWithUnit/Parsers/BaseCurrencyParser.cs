@@ -10,11 +10,11 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
         public BaseCurrencyParser(BaseNumberWithUnitParserConfiguration config)
         {
-            this.Config = config;
+            this.config = config;
             numberWithUnitParser = new NumberWithUnitParser(config);
         }
 
-        protected BaseNumberWithUnitParserConfiguration Config { get; }
+        protected BaseNumberWithUnitParserConfiguration config { get; }
 
         public ParseResult Parse(ExtractResult extResult)
         {
@@ -29,7 +29,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                 pr = numberWithUnitParser.Parse(extResult);
                 var value = pr.Value as UnitValue;
 
-                Config.CurrencyNameToIsoCodeMap.TryGetValue(value?.Unit, out var mainUnitIsoCode);
+                config.CurrencyNameToIsoCodeMap.TryGetValue(value?.Unit, out var mainUnitIsoCode);
                 if (string.IsNullOrEmpty(mainUnitIsoCode) || mainUnitIsoCode.StartsWith(Constants.FAKE_ISO_CODE_PREFIX))
                 {
                     pr.Value = new UnitValue
@@ -65,8 +65,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
         private string GetResolutionStr(object value)
         {
-            return Config.CultureInfo != null
-                ? ((double)value).ToString(Config.CultureInfo)
+            return config.CultureInfo != null
+                ? ((double)value).ToString(config.CultureInfo)
                 : value.ToString();
         }
 
@@ -110,7 +110,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     numberValue = double.Parse(parseResultValue?.Number);
                     result.ResolutionStr = parseResult.ResolutionStr;
 
-                    Config.CurrencyNameToIsoCodeMap.TryGetValue(unitValue, out mainUnitIsoCode);
+                    config.CurrencyNameToIsoCodeMap.TryGetValue(unitValue, out mainUnitIsoCode);
 
                     // If the main unit can't be recognized, finish process this group.
                     if (string.IsNullOrEmpty(mainUnitIsoCode))
@@ -125,7 +125,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                         continue;
                     }
 
-                    Config.CurrencyFractionMapping.TryGetValue(mainUnitIsoCode, out fractionUnitsString);
+                    config.CurrencyFractionMapping.TryGetValue(mainUnitIsoCode, out fractionUnitsString);
                 }
                 else
                 {
@@ -139,8 +139,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                         continue;
                     }
 
-                    Config.CurrencyFractionCodeList.TryGetValue(unitValue, out var fractionUnitCode);
-                    Config.CurrencyFractionNumMap.TryGetValue(parseResultValue?.Unit, out var fractionNumValue);
+                    config.CurrencyFractionCodeList.TryGetValue(unitValue, out var fractionUnitCode);
+                    config.CurrencyFractionNumMap.TryGetValue(parseResultValue?.Unit, out var fractionNumValue);
 
                     if (!string.IsNullOrEmpty(fractionUnitCode) && fractionNumValue != 0 &&
                         CheckUnitsStringContains(fractionUnitCode, fractionUnitsString))
