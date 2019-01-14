@@ -52,18 +52,18 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     {
                         Start = o.Start.Value,
                         End = o.Start.Value + o.Length.Value - 1,
-                        Resolution = (o.Value is UnitValue) ? new SortedDictionary<string, object>
-                            {
-                                { ResolutionKey.Value, ((UnitValue)o.Value).Number },
-                                { ResolutionKey.Unit, ((UnitValue)o.Value).Unit },
-                            }
-                            : (o.Value is CurrencyUnitValue) ? new SortedDictionary<string, object>
+                        Resolution = (o.Value is CurrencyUnitValue) ? new SortedDictionary<string, object>
                             {
                                 { ResolutionKey.Value, ((CurrencyUnitValue)o.Value).Number },
                                 { ResolutionKey.Unit, ((CurrencyUnitValue)o.Value).Unit },
                                 { ResolutionKey.IsoCurrency, ((CurrencyUnitValue)o.Value).IsoCurrency },
                             }
-                                : new SortedDictionary<string, object>
+                            : (o.Value is UnitValue) ? new SortedDictionary<string, object>
+                            {
+                                { ResolutionKey.Value, ((UnitValue)o.Value).Number },
+                                { ResolutionKey.Unit, ((UnitValue)o.Value).Unit },
+                            }
+                            : new SortedDictionary<string, object>
                             {
                                 { ResolutionKey.Value, (string)o.Value },
                             },
@@ -73,17 +73,17 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
                     foreach (var result in modelResults)
                     {
-                        bool resultbAdd = true;
+                        bool shouldAdd = true;
 
                         foreach (var extractionResult in extractionResults)
                         {
                             if (extractionResult.Start == result.Start && extractionResult.End == result.End)
                             {
-                                resultbAdd = false;
+                                shouldAdd = false;
                             }
                         }
 
-                        if (resultbAdd)
+                        if (shouldAdd)
                         {
                             extractionResults.Add(result);
                         }
