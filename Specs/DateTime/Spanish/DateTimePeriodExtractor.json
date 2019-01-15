@@ -1135,7 +1135,6 @@
   },
   {
     "Input": "Hola Cortana- programa una reunión con Jennifer. Necesito una reunión de 30 minutos este viernes por la tarde",
-	"NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
