@@ -41,7 +41,7 @@ build_script:
 
     cd .NET\
 
-    build.ci.cmd
+    build.cmd
 
     cd ..\JavaScript\
 
