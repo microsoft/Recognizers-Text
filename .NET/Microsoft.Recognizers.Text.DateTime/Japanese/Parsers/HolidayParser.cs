@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -13,66 +13,54 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 {
     public class HolidayParser : IDateTimeParser
     {
-        public static readonly string ParserName = Constants.SYS_DATETIME_DATE; //"Date";
-
-        private static readonly IExtractor IntegerExtractor = new IntegerExtractor();
-
-        private static readonly IParser IntegerParser = new BaseCJKNumberParser(new JapaneseNumberParserConfiguration());
+        public static readonly string ParserName = Constants.SYS_DATETIME_DATE; // "Date";
 
         public static readonly Dictionary<string, Func<int, DateObject>> FixedHolidaysDict = new Dictionary<string, Func<int, DateObject>>
         {
-
-            #region Fixed Date Holidays
-
-            {"元旦", NewYear},
-            {"元旦节", NewYear},
-            {"教师节", TeacherDay},
-            {"青年节", YouthDay},
-            {"儿童节", ChildrenDay},
-            {"妇女节", FemaleDay},
-            {"植树节", TreePlantDay},
-            {"情人节", LoverDay},
-            {"圣诞节", ChristmasDay},
-            {"新年", NewYear},
-            {"愚人节", FoolDay},
-            {"五一", LaborDay},
-            {"劳动节", LaborDay},
-            {"万圣节", HalloweenDay},
-            {"中秋节", MidautumnDay},
-            {"中秋", MidautumnDay},
-            {"春节", SpringDay},
-            {"除夕", NewYearEve},
-            {"元宵节", LanternDay},
-            {"清明节", QingMingDay},
-            {"清明", QingMingDay},
-            {"端午节", DragonBoatDay},
-            {"端午", DragonBoatDay},
-            {"国庆节", JapNationalDay},
-            {"建军节", JapMilBuildDay},
-            {"女生节", GirlsDay},
-            {"光棍节", SinglesDay},
-            {"双十一", SinglesDay},
-            {"重阳节", ChongYangDay}
-
-            #endregion
-
+            { "元旦", NewYear },
+            { "元旦节", NewYear },
+            { "教师节", TeacherDay },
+            { "青年节", YouthDay },
+            { "儿童节", ChildrenDay },
+            { "妇女节", FemaleDay },
+            { "植树节", TreePlantDay },
+            { "情人节", LoverDay },
+            { "圣诞节", ChristmasDay },
+            { "新年", NewYear },
+            { "愚人节", FoolDay },
+            { "五一", LaborDay },
+            { "劳动节", LaborDay },
+            { "万圣节", HalloweenDay },
+            { "中秋节", MidautumnDay },
+            { "中秋", MidautumnDay },
+            { "春节", SpringDay },
+            { "除夕", NewYearEve },
+            { "元宵节", LanternDay },
+            { "清明节", QingMingDay },
+            { "清明", QingMingDay },
+            { "端午节", DragonBoatDay },
+            { "端午", DragonBoatDay },
+            { "国庆节", JapNationalDay },
+            { "建军节", JapMilBuildDay },
+            { "女生节", GirlsDay },
+            { "光棍节", SinglesDay },
+            { "双十一", SinglesDay },
+            { "重阳节", ChongYangDay },
         };
 
         public static readonly Dictionary<string, Func<int, DateObject>> HolidayFuncDict = new Dictionary
             <string, Func<int, DateObject>>
         {
-            
-            #region Holiday Functions
-
-            {"父亲节", GetFathersDayOfYear},
-            {"母亲节", GetMothersDayOfYear},
-            {"感恩节", GetThanksgivingDayOfYear}
-            
-            #endregion
-
+            { "父亲节", GetFathersDayOfYear },
+            { "母亲节", GetMothersDayOfYear },
+            { "感恩节", GetThanksgivingDayOfYear },
         };
 
         public static readonly Dictionary<string, string> NoFixedTimex = DateTimeDefinitions.HolidayNoFixedTimex;
+
+        private static readonly IExtractor IntegerExtractor = new IntegerExtractor();
+
+        private static readonly IParser IntegerParser = new BaseCJKNumberParser(new JapaneseNumberParserConfiguration());
 
         private readonly IFullDateTimeParserConfiguration config;
 
@@ -99,12 +87,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 {
                     innerResult.FutureResolution = new Dictionary<string, string>
                     {
-                        {TimeTypeConstants.DATE, DateTimeFormatUtil.FormatDate((DateObject) innerResult.FutureValue)}
+                        { TimeTypeConstants.DATE, DateTimeFormatUtil.FormatDate((DateObject)innerResult.FutureValue) },
                     };
 
                     innerResult.PastResolution = new Dictionary<string, string>
                     {
-                        {TimeTypeConstants.DATE, DateTimeFormatUtil.FormatDate((DateObject) innerResult.PastValue)}
+                        { TimeTypeConstants.DATE, DateTimeFormatUtil.FormatDate((DateObject)innerResult.PastValue) },
                     };
 
                     innerResult.IsLunar = IsLunarCalendar(er.Text);
@@ -120,8 +108,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 Type = er.Type,
                 Data = er.Data,
                 Value = value,
-                TimexStr = value == null ? "" : ((DateTimeResolutionResult) value).Timex,
-                ResolutionStr = ""
+                TimexStr = value == null ? string.Empty : ((DateTimeResolutionResult)value).Timex,
+                ResolutionStr = string.Empty,
             };
 
             return ret;
@@ -130,14 +118,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)
         {
             return candidateResults;
-        }
-
-        // parse if lunar contains
-        private bool IsLunarCalendar(string text)
-        {
-            var trimmedText = text.Trim();
-            var match = JapaneseHolidayExtractorConfiguration.LunarHolidayRegex.Match(trimmedText);
-            return match.Success;
         }
 
         private static DateTimeResolutionResult ParseHolidayRegexMatch(string text, DateObject referenceDate)
@@ -174,6 +154,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 {
                     yearNum = yearNum.Substring(0, yearNum.Length - 1);
                 }
+
                 year = int.Parse(yearNum);
             }
             else if (!string.IsNullOrEmpty(yearJap))
@@ -183,6 +164,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 {
                     yearJap = yearJap.Substring(0, yearJap.Length - 1);
                 }
+
                 year = ConvertJapaneseToInteger(yearJap);
             }
             else if (!string.IsNullOrEmpty(yearRel))
@@ -284,26 +266,47 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         }
 
         private static DateObject NewYear(int year) => new DateObject(year, 1, 1);
+
         private static DateObject TeacherDay(int year) => new DateObject(year, 9, 10);
+
         private static DateObject YouthDay(int year) => new DateObject(year, 5, 4);
+
         private static DateObject ChildrenDay(int year) => new DateObject(year, 6, 1);
+
         private static DateObject FemaleDay(int year) => new DateObject(year, 3, 8);
+
         private static DateObject TreePlantDay(int year) => new DateObject(year, 3, 12);
+
         private static DateObject LoverDay(int year) => new DateObject(year, 2, 14);
+
         private static DateObject ChristmasDay(int year) => new DateObject(year, 12, 25);
+
         private static DateObject FoolDay(int year) => new DateObject(year, 4, 1);
+
         private static DateObject LaborDay(int year) => new DateObject(year, 5, 1);
+
         private static DateObject HalloweenDay(int year) => new DateObject(year, 10, 31);
+
         private static DateObject MidautumnDay(int year) => new DateObject(year, 8, 15);
+
         private static DateObject SpringDay(int year) => new DateObject(year, 1, 1);
+
         private static DateObject NewYearEve(int year) => new DateObject(year, 1, 1).AddDays(-1);
+
         private static DateObject LanternDay(int year) => new DateObject(year, 1, 15);
+
         private static DateObject QingMingDay(int year) => new DateObject(year, 4, 4);
+
         private static DateObject DragonBoatDay(int year) => new DateObject(year, 5, 5);
+
         private static DateObject JapNationalDay(int year) => new DateObject(year, 10, 1);
+
         private static DateObject JapMilBuildDay(int year) => new DateObject(year, 8, 1);
+
         private static DateObject GirlsDay(int year) => new DateObject(year, 3, 7);
+
         private static DateObject SinglesDay(int year) => new DateObject(year, 11, 11);
+
         private static DateObject ChongYangDay(int year) => new DateObject(year, 9, 9);
 
         private static DateObject GetMothersDayOfYear(int year)
@@ -379,7 +382,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             {
                 if (er[0].Type.Equals(Number.Constants.SYS_NUM_INTEGER))
                 {
-                    num = Convert.ToInt32((double) (IntegerParser.Parse(er[0]).Value ?? 0));
+                    num = Convert.ToInt32((double)(IntegerParser.Parse(er[0]).Value ?? 0));
                 }
             }
 
@@ -394,10 +397,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                     {
                         if (er[0].Type.Equals(Number.Constants.SYS_NUM_INTEGER))
                         {
-                            num += Convert.ToInt32((double) (IntegerParser.Parse(er[0]).Value ?? 0));
+                            num += Convert.ToInt32((double)(IntegerParser.Parse(er[0]).Value ?? 0));
                         }
                     }
                 }
+
                 year = num;
             }
             else
@@ -407,6 +411,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
             return year == 0 ? -1 : year;
         }
-    }
 
+        // parse if lunar contains
+        private bool IsLunarCalendar(string text)
+        {
+            var trimmedText = text.Trim();
+            var match = JapaneseHolidayExtractorConfiguration.LunarHolidayRegex.Match(trimmedText);
+            return match.Success;
+        }
+    }
 }
