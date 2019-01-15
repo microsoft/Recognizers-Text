@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
-using DateObject = System.DateTime;
-
 using Microsoft.Recognizers.Definitions.German;
+using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.German
 {
     public class GermanHolidayParserConfiguration : BaseHolidayParserConfiguration
     {
-        public GermanHolidayParserConfiguration(IOptionsConfiguration config) : base(config)
+        public GermanHolidayParserConfiguration(IOptionsConfiguration config)
+            : base(config)
         {
             this.HolidayRegexList = GermanHolidayExtractorConfiguration.HolidayRegexList;
             this.HolidayNames = DateTimeDefinitions.HolidayNames.ToImmutableDictionary();
@@ -31,14 +31,15 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             {
                 swift = 0;
             }
+
             return swift;
         }
 
         public override string SanitizeHolidayToken(string holiday)
         {
             return holiday
-                .Replace(" ", "")
-                .Replace("'", "");
+                .Replace(" ", string.Empty)
+                .Replace("'", string.Empty);
         }
     }
 }
