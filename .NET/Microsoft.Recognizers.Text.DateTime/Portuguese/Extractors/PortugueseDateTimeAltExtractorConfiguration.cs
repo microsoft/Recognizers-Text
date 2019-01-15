@@ -4,7 +4,7 @@ using Microsoft.Recognizers.Definitions.Portuguese;
 
 namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 {
-    internal class PortugueseDateTimeAltExtractorConfiguration : BaseOptionsConfiguration, IDateTimeAltExtractorConfiguration
+    public class PortugueseDateTimeAltExtractorConfiguration : BaseOptionsConfiguration, IDateTimeAltExtractorConfiguration
     {
         public static readonly Regex ThisPrefixRegex =
             new Regex(DateTimeDefinitions.ThisPrefixRegex, RegexOptions.Singleline);
