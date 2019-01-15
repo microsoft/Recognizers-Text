@@ -14,7 +14,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         private static readonly Calendar Cal = DateTimeFormatInfo.InvariantInfo.Calendar;
 
-        private static bool InclusiveEndPeriod = false;
+        private static bool inclusiveEndPeriod = false;
 
         private readonly IDatePeriodParserConfiguration config;
 
@@ -842,20 +842,20 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                         ret.Timex = isRef ? TimexUtility.GenerateWeekTimex() : TimexUtility.GenerateWeekTimex(monday);
                         var beginDate = referenceDate.This(DayOfWeek.Monday).AddDays(Constants.WeekDayCount * swift);
-                        var endDate = InclusiveEndPeriod
+                        var endDate = inclusiveEndPeriod
                                         ? referenceDate.This(DayOfWeek.Sunday).AddDays(Constants.WeekDayCount * swift)
                                         : referenceDate.This(DayOfWeek.Sunday).AddDays(Constants.WeekDayCount * swift).AddDays(1);
 
                         if (earlyPrefix)
                         {
-                            endDate = InclusiveEndPeriod
+                            endDate = inclusiveEndPeriod
                                         ? referenceDate.This(DayOfWeek.Wednesday).AddDays(Constants.WeekDayCount * swift)
                                         : referenceDate.This(DayOfWeek.Wednesday).AddDays(Constants.WeekDayCount * swift).AddDays(1);
                         }
                         else if (midPrefix)
                         {
                             beginDate = referenceDate.This(DayOfWeek.Tuesday).AddDays(Constants.WeekDayCount * swift);
-                            endDate = InclusiveEndPeriod
+                            endDate = inclusiveEndPeriod
                                         ? referenceDate.This(DayOfWeek.Friday).AddDays(Constants.WeekDayCount * swift)
                                         : referenceDate.This(DayOfWeek.Friday).AddDays(Constants.WeekDayCount * swift).AddDays(1);
                         }
@@ -899,7 +899,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                         ret.Timex = isRef ? TimexUtility.GenerateWeekendTimex() : TimexUtility.GenerateWeekendTimex(beginDate);
 
-                        endDate = InclusiveEndPeriod ? endDate : endDate.AddDays(1);
+                        endDate = inclusiveEndPeriod ? endDate : endDate.AddDays(1);
 
                         ret.FutureValue =
                             ret.PastValue = new Tuple<DateObject, DateObject>(beginDate, endDate);
@@ -924,19 +924,19 @@ namespace Microsoft.Recognizers.Text.DateTime
                         year = date.Year;
 
                         var beginDate = DateObject.MinValue.SafeCreateFromValue(year, 1, 1);
-                        var endDate = InclusiveEndPeriod
+                        var endDate = inclusiveEndPeriod
                                     ? DateObject.MinValue.SafeCreateFromValue(year, 12, 31)
                                     : DateObject.MinValue.SafeCreateFromValue(year, 12, 31).AddDays(1);
                         if (earlyPrefix)
                         {
-                            endDate = InclusiveEndPeriod
+                            endDate = inclusiveEndPeriod
                                     ? DateObject.MinValue.SafeCreateFromValue(year, 6, 30)
                                     : DateObject.MinValue.SafeCreateFromValue(year, 6, 30).AddDays(1);
                         }
                         else if (midPrefix)
                         {
                             beginDate = DateObject.MinValue.SafeCreateFromValue(year, 4, 1);
-                            endDate = InclusiveEndPeriod
+                            endDate = inclusiveEndPeriod
                                     ? DateObject.MinValue.SafeCreateFromValue(year, 9, 30)
                                     : DateObject.MinValue.SafeCreateFromValue(year, 9, 30).AddDays(1);
                         }
@@ -978,19 +978,19 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             // only "month" will come to here
             var futureStart = DateObject.MinValue.SafeCreateFromValue(futureYear, month, 1);
-            var futureEnd = InclusiveEndPeriod
+            var futureEnd = inclusiveEndPeriod
                 ? DateObject.MinValue.SafeCreateFromValue(futureYear, month, 1).AddMonths(1).AddDays(-1)
                 : DateObject.MinValue.SafeCreateFromValue(futureYear, month, 1).AddMonths(1);
             var pastStart = DateObject.MinValue.SafeCreateFromValue(pastYear, month, 1);
-            var pastEnd = InclusiveEndPeriod
+            var pastEnd = inclusiveEndPeriod
                 ? DateObject.MinValue.SafeCreateFromValue(pastYear, month, 1).AddMonths(1).AddDays(-1)
                 : DateObject.MinValue.SafeCreateFromValue(pastYear, month, 1).AddMonths(1);
             if (earlyPrefix)
             {
-                futureEnd = InclusiveEndPeriod
+                futureEnd = inclusiveEndPeriod
                     ? DateObject.MinValue.SafeCreateFromValue(futureYear, month, 15)
                     : DateObject.MinValue.SafeCreateFromValue(futureYear, month, 15).AddDays(1);
-                pastEnd = InclusiveEndPeriod
+                pastEnd = inclusiveEndPeriod
                     ? DateObject.MinValue.SafeCreateFromValue(pastYear, month, 15)
                     : DateObject.MinValue.SafeCreateFromValue(pastYear, month, 15).AddDays(1);
             }
@@ -998,10 +998,10 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 futureStart = DateObject.MinValue.SafeCreateFromValue(futureYear, month, 10);
                 pastStart = DateObject.MinValue.SafeCreateFromValue(pastYear, month, 10);
-                futureEnd = InclusiveEndPeriod
+                futureEnd = inclusiveEndPeriod
                     ? DateObject.MinValue.SafeCreateFromValue(futureYear, month, 20)
                     : DateObject.MinValue.SafeCreateFromValue(futureYear, month, 20).AddDays(1);
-                pastEnd = InclusiveEndPeriod
+                pastEnd = inclusiveEndPeriod
                     ? DateObject.MinValue.SafeCreateFromValue(pastYear, month, 20)
                     : DateObject.MinValue.SafeCreateFromValue(pastYear, month, 20).AddDays(1);
             }
@@ -1066,7 +1066,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     year = referenceDate.Year + swift;
                 }
 
-                DateObject dateValue = InclusiveEndPeriod
+                DateObject dateValue = inclusiveEndPeriod
                         ? DateObject.MinValue.SafeCreateFromValue(year, month, 1).AddMonths(1).AddDays(-1)
                         : DateObject.MinValue.SafeCreateFromValue(year, month, 1).AddMonths(1);
                 ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(
@@ -1120,7 +1120,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     var beginDay = DateObject.MinValue.SafeCreateFromValue(beginYear, 1, 1);
 
-                    var endDay = InclusiveEndPeriod
+                    var endDay = inclusiveEndPeriod
                             ? DateObject.MinValue.SafeCreateFromValue(endYear, 1, 1).AddDays(-1)
                             : DateObject.MinValue.SafeCreateFromValue(endYear, 1, 1);
 
@@ -1158,7 +1158,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     var beginDay = DateObject.MinValue.SafeCreateFromValue(year, 1, 1);
 
-                    var endDay = InclusiveEndPeriod
+                    var endDay = inclusiveEndPeriod
                             ? DateObject.MinValue.SafeCreateFromValue(year + 1, 1, 1).AddDays(-1)
                             : DateObject.MinValue.SafeCreateFromValue(year + 1, 1, 1);
 
@@ -1385,7 +1385,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if (!beginDate.Equals(endDate) || restNowSunday)
             {
-                endDate = InclusiveEndPeriod ? endDate.AddDays(-1) : endDate;
+                endDate = inclusiveEndPeriod ? endDate.AddDays(-1) : endDate;
 
                 ret.Timex =
                     $"({DateTimeFormatUtil.LuisDate(beginDate)},{DateTimeFormatUtil.LuisDate(endDate)},{timex})";
@@ -1488,11 +1488,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                 ret.Timex = TimexUtility.GenerateWeekOfYearTimex(year, weekNum);
             }
 
-            ret.FutureValue = InclusiveEndPeriod
+            ret.FutureValue = inclusiveEndPeriod
                 ? new Tuple<DateObject, DateObject>(targetWeekMonday, targetWeekMonday.AddDays(Constants.WeekDayCount - 1))
                 : new Tuple<DateObject, DateObject>(targetWeekMonday, targetWeekMonday.AddDays(Constants.WeekDayCount));
 
-            ret.PastValue = InclusiveEndPeriod
+            ret.PastValue = inclusiveEndPeriod
                 ? new Tuple<DateObject, DateObject>(targetWeekMonday, targetWeekMonday.AddDays(Constants.WeekDayCount - 1))
                 : new Tuple<DateObject, DateObject>(targetWeekMonday, targetWeekMonday.AddDays(Constants.WeekDayCount));
 
@@ -1733,7 +1733,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         private Tuple<DateObject, DateObject> GetWeekRangeFromDate(DateObject date)
         {
             var startDate = date.This(DayOfWeek.Monday);
-            var endDate = InclusiveEndPeriod ? startDate.AddDays(Constants.WeekDayCount - 1) : startDate.AddDays(Constants.WeekDayCount);
+            var endDate = inclusiveEndPeriod ? startDate.AddDays(Constants.WeekDayCount - 1) : startDate.AddDays(Constants.WeekDayCount);
             return new Tuple<DateObject, DateObject>(startDate, endDate);
         }
 
@@ -1750,7 +1750,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 endDate = DateObject.MinValue.SafeCreateFromValue(date.Year + 1, 1, 1);
             }
 
-            endDate = InclusiveEndPeriod ? endDate.AddDays(-1) : endDate;
+            endDate = inclusiveEndPeriod ? endDate.AddDays(-1) : endDate;
             return new Tuple<DateObject, DateObject>(startDate, endDate);
         }
 
@@ -1808,11 +1808,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             var weekNum = GetWeekNumberForMonth(cardinalStr);
             ret.Timex = TimexUtility.GenerateWeekOfMonthTimex(year, month, weekNum);
 
-            ret.FutureValue = InclusiveEndPeriod
+            ret.FutureValue = inclusiveEndPeriod
                 ? new Tuple<DateObject, DateObject>(futureDate, futureDate.AddDays(Constants.WeekDayCount - 1))
                 : new Tuple<DateObject, DateObject>(futureDate, futureDate.AddDays(Constants.WeekDayCount));
 
-            ret.PastValue = InclusiveEndPeriod
+            ret.PastValue = inclusiveEndPeriod
                 ? new Tuple<DateObject, DateObject>(pastDate, pastDate.AddDays(Constants.WeekDayCount - 1))
                 : new Tuple<DateObject, DateObject>(pastDate, pastDate.AddDays(Constants.WeekDayCount));
 
