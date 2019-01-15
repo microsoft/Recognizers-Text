@@ -226,7 +226,7 @@ public class DateTimeParserTest extends AbstractTest {
             case "DatePeriodParser":
                 return new BaseDatePeriodParser(new SpanishDatePeriodParserConfiguration(new SpanishCommonDateTimeParserConfiguration(DateTimeOptions.None)));
             //case "DateTimeAltParser":
-            //    return new BaseDateTimeAltParser(new EnglishDateTimeAltParserConfiguration(new EnglishCommonDateTimeParserConfiguration(DateTimeOptions.None)));
+            //    return new BaseDateTimeAltParser(new SpanishDateTimeAltParserConfiguration(new EnglishCommonDateTimeParserConfiguration(DateTimeOptions.None)));
             case "DateTimeParser":
                 return new BaseDateTimeParser(new SpanishDateTimeParserConfiguration(new SpanishCommonDateTimeParserConfiguration(DateTimeOptions.None)));
             case "DateTimePeriodParser":
@@ -238,7 +238,7 @@ public class DateTimeParserTest extends AbstractTest {
             case "SetParser":
                 return new BaseSetParser(new SpanishSetParserConfiguration(new SpanishCommonDateTimeParserConfiguration(DateTimeOptions.None)));
             //case "MergedParser":
-            //    return new BaseMergedDateTimeParser(new EnglishMergedParserConfiguration(DateTimeOptions.None));
+            //    return new BaseMergedDateTimeParser(new SpanishMergedParserConfiguration(DateTimeOptions.None));
             case "TimeParser":
                 return new TimeParser(new SpanishTimeParserConfiguration(new SpanishCommonDateTimeParserConfiguration(DateTimeOptions.None)));
             case "TimePeriodParser":
