@@ -1,18 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
-using DateObject = System.DateTime;
-
-using Microsoft.Recognizers.Text.Number.Japanese;
 using Microsoft.Recognizers.Text.Number;
+using Microsoft.Recognizers.Text.Number.Japanese;
+using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Japanese
 {
     public class DatePeriodParser : IDateTimeParser
     {
-        private const int LastMonthOfYear = 12;
+        public static readonly string ParserName = Constants.SYS_DATETIME_DATEPERIOD; // "DatePeriod";
 
-        public static readonly string ParserName = Constants.SYS_DATETIME_DATEPERIOD; //"DatePeriod";
+        private const int LastMonthOfYear = 12;
 
         private static readonly IDateTimeExtractor SingleDateExtractor = new DateExtractor();
 
@@ -72,7 +71,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
                 if (!innerResult.Success)
                 {
-                  innerResult = ParseDayToDay(er.Text, referenceDate);
+                    innerResult = ParseDayToDay(er.Text, referenceDate);
                 }
 
                 if (!innerResult.Success)
@@ -108,24 +107,24 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                         {
                             {
                                 TimeTypeConstants.START_DATE,
-                                DateTimeFormatUtil.FormatDate(((Tuple<DateObject, DateObject>) innerResult.FutureValue).Item1)
+                                DateTimeFormatUtil.FormatDate(((Tuple<DateObject, DateObject>)innerResult.FutureValue).Item1)
                             },
                             {
                                 TimeTypeConstants.END_DATE,
-                                DateTimeFormatUtil.FormatDate(((Tuple<DateObject, DateObject>) innerResult.FutureValue).Item2)
-                            }
+                                DateTimeFormatUtil.FormatDate(((Tuple<DateObject, DateObject>)innerResult.FutureValue).Item2)
+                            },
                         };
 
                         innerResult.PastResolution = new Dictionary<string, string>
                         {
                             {
                                 TimeTypeConstants.START_DATE,
-                                DateTimeFormatUtil.FormatDate(((Tuple<DateObject, DateObject>) innerResult.PastValue).Item1)
+                                DateTimeFormatUtil.FormatDate(((Tuple<DateObject, DateObject>)innerResult.PastValue).Item1)
                             },
                             {
                                 TimeTypeConstants.END_DATE,
-                                DateTimeFormatUtil.FormatDate(((Tuple<DateObject, DateObject>) innerResult.PastValue).Item2)
-                            }
+                                DateTimeFormatUtil.FormatDate(((Tuple<DateObject, DateObject>)innerResult.PastValue).Item2)
+                            },
                         };
                     }
                     else
@@ -145,11 +144,90 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 Type = er.Type,
                 Data = er.Data,
                 Value = value,
-                TimexStr = value == null ? "" : ((DateTimeResolutionResult) value).Timex,
-                ResolutionStr = ""
+                TimexStr = value == null ? string.Empty : ((DateTimeResolutionResult)value).Timex,
+                ResolutionStr = string.Empty,
             };
 
             return ret;
+        }
+
+        public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)
+        {
+            return candidateResults;
+        }
+
+        // convert Japanese Number to Integer
+        private static int ConvertJapaneseToNum(string numStr)
+        {
+            var num = -1;
+            var er = IntegerExtractor.Extract(numStr);
+            if (er.Count != 0)
+            {
+                if (er[0].Type.Equals(Number.Constants.SYS_NUM_INTEGER))
+                {
+                    num = Convert.ToInt32((double)(IntegerParser.Parse(er[0]).Value ?? 0));
+                }
+            }
+
+            return num;
+        }
+
+        // convert Japanese Year to Integer
+        private static int ConvertJapaneseToInteger(string yearJapStr)
+        {
+            var year = 0;
+            var num = 0;
+
+            var er = IntegerExtractor.Extract(yearJapStr);
+            if (er.Count != 0)
+            {
+                if (er[0].Type.Equals(Number.Constants.SYS_NUM_INTEGER))
+                {
+                    num = Convert.ToInt32((double)(IntegerParser.Parse(er[0]).Value ?? 0));
+                }
+            }
+
+            if (num < 10)
+            {
+                num = 0;
+                foreach (var ch in yearJapStr)
+                {
+                    num *= 10;
+                    er = IntegerExtractor.Extract(ch.ToString());
+                    if (er.Count != 0)
+                    {
+                        if (er[0].Type.Equals(Number.Constants.SYS_NUM_INTEGER))
+                        {
+                            num += Convert.ToInt32((double)(IntegerParser.Parse(er[0]).Value ?? 0));
+                        }
+                    }
+                }
+
+                year = num;
+            }
+            else
+            {
+                year = num;
+            }
+
+            return year == 0 ? -1 : year;
+        }
+
+        private static DateObject ComputeDate(int cadinal, int weekday, int month, int year)
+        {
+            var firstDay = DateObject.MinValue.SafeCreateFromValue(year, month, 1);
+            var firstWeekday = firstDay.This((DayOfWeek)weekday);
+            if (weekday == 0)
+            {
+                weekday = 7;
+            }
+
+            if (weekday < (int)firstDay.DayOfWeek)
+            {
+                firstWeekday = firstDay.Next((DayOfWeek)weekday);
+            }
+
+            return firstWeekday.AddDays(7 * (cadinal - 1));
         }
 
         private DateTimeResolutionResult ParseSimpleCases(string text, DateObject referenceDate)
@@ -162,7 +240,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
             var match = DatePeriodExtractor.SimpleCasesRegex.MatchExact(text, trim: true);
             string beginLuisStr, endLuisStr;
-            
+
             if (match.Success)
             {
                 var days = match.Groups["day"];
@@ -275,9 +353,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             return ret;
         }
 
-            // handle like "2008年から2012年まで
-            private DateTimeResolutionResult ParseYearToYear(string text, DateObject referenceDate)
-            {
+        // handle like "2008年から2012年まで
+        private DateTimeResolutionResult ParseYearToYear(string text, DateObject referenceDate)
+        {
             var ret = new DateTimeResolutionResult();
             var match = DatePeriodExtractor.YearToYear.Match(text);
 
@@ -347,10 +425,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 ret.Success = true;
                 return ret;
             }
+
             return ret;
         }
 
-            // handle like "08月から12月まで
+        // handle like "08月から12月まで
         private DateTimeResolutionResult ParseMonthToMonth(string text, DateObject referenceDate)
         {
             int undefinedValue = -1;
@@ -429,134 +508,135 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                     ret.Success = true;
                 }
             }
+
             return ret;
         }
 
         private DateTimeResolutionResult ParseDayToDay(string text, DateObject referenceDate)
         {
-          int undefinedValue = -1;
-          var ret = new DateTimeResolutionResult();
-          var match = DatePeriodExtractor.DayToDay.Match(text);
+            int undefinedValue = -1;
+            var ret = new DateTimeResolutionResult();
+            var match = DatePeriodExtractor.DayToDay.Match(text);
 
-          if (match.Success)
-          {
-            var dayMatchMatch = DatePeriodExtractor.DayRegexForPeriod.Matches(text);
-            var beginDay = 0;
-            var endDay = 0;
-
-            if (dayMatchMatch.Count == 2)
+            if (match.Success)
             {
-              var dayFrom = dayMatchMatch[0].Groups["day"].Value;
-              var dayTo = dayMatchMatch[1].Groups["day"].Value;
-              beginDay = this.config.DayOfMonth[dayFrom];
-              endDay = this.config.DayOfMonth[dayTo];
+                var dayMatchMatch = DatePeriodExtractor.DayRegexForPeriod.Matches(text);
+                var beginDay = 0;
+                var endDay = 0;
+
+                if (dayMatchMatch.Count == 2)
+                {
+                    var dayFrom = dayMatchMatch[0].Groups["day"].Value;
+                    var dayTo = dayMatchMatch[1].Groups["day"].Value;
+                    beginDay = this.config.DayOfMonth[dayFrom];
+                    endDay = this.config.DayOfMonth[dayTo];
+                }
+
+                var beginYearForPastResolution = referenceDate.Year;
+                var endYearForPastResolution = referenceDate.Year;
+                var beginYearForFutureResolution = referenceDate.Year;
+                var endYearForFutureResolution = referenceDate.Year;
+                var currentMonth = referenceDate.Month;
+                var currentDay = referenceDate.Day;
+                var beginMonthForPastResolution = currentMonth;
+                var endMonthForPastResolution = currentMonth;
+                var beginMonthForFutureResolution = currentMonth;
+                var endMonthForFutureResolution = currentMonth;
+                var durationDays = 0;
+
+                if (beginDay < endDay)
+                {
+                    // For this case, FutureValue and PastValue share the same resolution
+                    if (beginDay < currentDay && endDay >= currentDay)
+                    {
+                        // Keep the beginMonth and endMonth equal to currentMonth
+                    }
+                    else if (beginDay >= currentDay)
+                    {
+                        if (currentMonth == 1)
+                        {
+                            beginMonthForPastResolution = endMonthForPastResolution = LastMonthOfYear;
+                            beginYearForPastResolution--;
+                            endYearForPastResolution--;
+                        }
+                        else
+                        {
+                            beginMonthForPastResolution = endMonthForPastResolution = currentMonth - 1;
+                        }
+                    }
+                    else if (endDay < currentDay)
+                    {
+                        if (currentMonth == LastMonthOfYear)
+                        {
+                            beginMonthForFutureResolution = endMonthForFutureResolution = 1;
+                            beginYearForFutureResolution++;
+                            endYearForFutureResolution++;
+                        }
+                        else
+                        {
+                            beginMonthForFutureResolution = endMonthForFutureResolution = currentMonth + 1;
+                        }
+                    }
+
+                    durationDays = endDay - beginDay;
+                }
+                else if (beginDay > endDay)
+                {
+                    // For this case, FutureValue and PastValue share the same resolution
+                    if (beginDay < currentDay)
+                    {
+                        if (currentMonth == LastMonthOfYear)
+                        {
+                            endMonthForPastResolution = endMonthForFutureResolution = 1;
+                            endYearForPastResolution++;
+                            endYearForFutureResolution++;
+                        }
+                        else
+                        {
+                            endMonthForPastResolution = endMonthForFutureResolution = currentMonth + 1;
+                        }
+                    }
+                    else
+                    {
+                        if (currentMonth == LastMonthOfYear)
+                        {
+                            beginMonthForPastResolution = currentMonth - 1;
+                            endMonthForFutureResolution = 1;
+                            endYearForFutureResolution++;
+                        }
+                        else if (currentMonth == 1)
+                        {
+                            beginMonthForPastResolution = 12;
+                            beginYearForPastResolution--;
+                            endMonthForFutureResolution = currentMonth + 1;
+                        }
+                        else
+                        {
+                            beginMonthForPastResolution = currentMonth - 1;
+                            endMonthForFutureResolution = currentMonth + 1;
+                        }
+                    }
+
+                    durationDays = beginDay - endDay;
+                }
+
+                if (durationDays != 0)
+                {
+                    var beginDateForPastResolution = DateObject.MinValue.SafeCreateFromValue(beginYearForPastResolution, beginMonthForPastResolution, beginDay);
+                    var endDateForPastResolution = DateObject.MinValue.SafeCreateFromValue(endYearForPastResolution, endMonthForPastResolution, endDay);
+                    var beginDateForFutureResolution = DateObject.MinValue.SafeCreateFromValue(beginYearForFutureResolution, beginMonthForFutureResolution, beginDay);
+                    var endDateForFutureResolution = DateObject.MinValue.SafeCreateFromValue(endYearForFutureResolution, endMonthForFutureResolution, endDay);
+                    var beginTimex = DateTimeFormatUtil.LuisDate(undefinedValue, undefinedValue, beginDay);
+                    var endTimex = DateTimeFormatUtil.LuisDate(undefinedValue, undefinedValue, endDay);
+
+                    ret.Timex = $"({beginTimex},{endTimex},P{durationDays}D)";
+                    ret.PastValue = new Tuple<DateObject, DateObject>(beginDateForPastResolution, endDateForPastResolution);
+                    ret.FutureValue = new Tuple<DateObject, DateObject>(beginDateForFutureResolution, endDateForFutureResolution);
+                    ret.Success = true;
+                }
             }
 
-            var beginYearForPastResolution = referenceDate.Year;
-            var endYearForPastResolution = referenceDate.Year;
-            var beginYearForFutureResolution = referenceDate.Year;
-            var endYearForFutureResolution = referenceDate.Year;
-            var currentMonth = referenceDate.Month;
-            var currentDay = referenceDate.Day;
-            var beginMonthForPastResolution = currentMonth;
-            var endMonthForPastResolution = currentMonth;
-            var beginMonthForFutureResolution = currentMonth;
-            var endMonthForFutureResolution = currentMonth;
-            var durationDays = 0;
-
-            if (beginDay < endDay)
-            {
-              // For this case, FutureValue and PastValue share the same resolution
-              if (beginDay < currentDay && endDay >= currentDay)
-              {
-                // Keep the beginMonth and endMonth equal to currentMonth
-              }
-              else if (beginDay >= currentDay)
-              {
-                if (currentMonth == 1)
-                {
-                  beginMonthForPastResolution = endMonthForPastResolution = LastMonthOfYear;
-                  beginYearForPastResolution--;
-                  endYearForPastResolution--;
-                }
-                else
-                {
-                  beginMonthForPastResolution = endMonthForPastResolution = currentMonth - 1;
-                }
-              }
-              else if (endDay < currentDay)
-              {
-                if (currentMonth == LastMonthOfYear)
-                {
-                  beginMonthForFutureResolution = endMonthForFutureResolution = 1;
-                  beginYearForFutureResolution++;
-                  endYearForFutureResolution++;
-                }
-                else
-                {
-                  beginMonthForFutureResolution = endMonthForFutureResolution = currentMonth + 1;
-                }
-              }
-
-              durationDays = endDay - beginDay;
-            }
-            else if (beginDay > endDay)
-              {
-                // For this case, FutureValue and PastValue share the same resolution
-                if (beginDay < currentDay)
-                {
-                  if (currentMonth == LastMonthOfYear)
-                  {
-                    endMonthForPastResolution = endMonthForFutureResolution = 1;
-                    endYearForPastResolution++;
-                    endYearForFutureResolution++;
-                  }
-                  else
-                  {
-                    endMonthForPastResolution = endMonthForFutureResolution = currentMonth + 1;
-                  }
-                }
-                else
-                {
-                  if (currentMonth == LastMonthOfYear)
-                  {
-                    beginMonthForPastResolution = currentMonth - 1;
-                    endMonthForFutureResolution = 1;
-                    endYearForFutureResolution++;
-                  }
-                  else if (currentMonth == 1)
-                  {
-                    beginMonthForPastResolution = 12;
-                    beginYearForPastResolution--;
-                    endMonthForFutureResolution = currentMonth + 1;
-                  }
-                  else
-                  {
-                    beginMonthForPastResolution = currentMonth - 1;
-                    endMonthForFutureResolution = currentMonth + 1;
-                  }
-                }
-
-                durationDays = beginDay - endDay;
-              }
-
-              if (durationDays != 0)
-              {
-                var beginDateForPastResolution = DateObject.MinValue.SafeCreateFromValue(beginYearForPastResolution, beginMonthForPastResolution, beginDay);
-                var endDateForPastResolution = DateObject.MinValue.SafeCreateFromValue(endYearForPastResolution, endMonthForPastResolution, endDay);
-                var beginDateForFutureResolution = DateObject.MinValue.SafeCreateFromValue(beginYearForFutureResolution, beginMonthForFutureResolution, beginDay);
-                var endDateForFutureResolution = DateObject.MinValue.SafeCreateFromValue(endYearForFutureResolution, endMonthForFutureResolution, endDay);
-                var beginTimex = DateTimeFormatUtil.LuisDate(undefinedValue, undefinedValue, beginDay);
-                var endTimex = DateTimeFormatUtil.LuisDate(undefinedValue, undefinedValue, endDay);
-
-                ret.Timex = $"({beginTimex},{endTimex},P{durationDays}D)";
-                ret.PastValue = new Tuple<DateObject, DateObject>(beginDateForPastResolution, endDateForPastResolution);
-                ret.FutureValue = new Tuple<DateObject, DateObject>(beginDateForFutureResolution, endDateForFutureResolution);
-                ret.Success = true;
-              }
-          }
-
-          return ret;
+            return ret;
         }
 
         // case like "今年三月" "这个周末" "五月"
@@ -592,7 +672,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
                     if (trimmedText.StartsWith("来年") || trimmedText.StartsWith("先年"))
                     {
-                      swift = 1;
+                        swift = 1;
                     }
                     else if (trimmedText.StartsWith("前年"))
                     {
@@ -639,21 +719,21 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
                     if (trimmedText.EndsWith("周") | trimmedText.EndsWith("星期"))
                     {
-                        var monday = referenceDate.This(DayOfWeek.Monday).AddDays(7*swift);
+                        var monday = referenceDate.This(DayOfWeek.Monday).AddDays(7 * swift);
                         ret.Timex = DateTimeFormatUtil.ToIsoWeekTimex(monday);
                         ret.FutureValue =
                             ret.PastValue =
                                 new Tuple<DateObject, DateObject>(
-                                    referenceDate.This(DayOfWeek.Monday).AddDays(7*swift),
-                                    referenceDate.This(DayOfWeek.Sunday).AddDays(7*swift).AddDays(1));
+                                    referenceDate.This(DayOfWeek.Monday).AddDays(7 * swift),
+                                    referenceDate.This(DayOfWeek.Sunday).AddDays(7 * swift).AddDays(1));
                         ret.Success = true;
                         return ret;
                     }
 
                     if (trimmedText.EndsWith("周末"))
                     {
-                        var beginDate = referenceDate.This(DayOfWeek.Saturday).AddDays(7*swift);
-                        var endDate = referenceDate.This(DayOfWeek.Sunday).AddDays(7*swift);
+                        var beginDate = referenceDate.This(DayOfWeek.Saturday).AddDays(7 * swift);
+                        var endDate = referenceDate.This(DayOfWeek.Sunday).AddDays(7 * swift);
 
                         ret.Timex = beginDate.Year.ToString("D4") + "-W" +
                                     Cal.GetWeekOfYear(beginDate, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday)
@@ -697,7 +777,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                         ret.Timex = year.ToString("D4");
                         ret.FutureValue =
                             ret.PastValue =
-                                new Tuple<DateObject, DateObject>(DateObject.MinValue.SafeCreateFromValue(year, 1, 1),
+                                new Tuple<DateObject, DateObject>(
+                                    DateObject.MinValue.SafeCreateFromValue(year, 1, 1),
                                     DateObject.MinValue.SafeCreateFromValue(year, 12, 31).AddDays(1));
                         ret.Success = true;
                         return ret;
@@ -721,60 +802,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             ret.Success = true;
 
             return ret;
-        }
-
-        // convert Japanese Number to Integer
-        private static int ConvertJapaneseToNum(string numStr)
-        {
-            var num = -1;
-            var er = IntegerExtractor.Extract(numStr);
-            if (er.Count != 0)
-            {
-                if (er[0].Type.Equals(Number.Constants.SYS_NUM_INTEGER))
-                {
-                    num = Convert.ToInt32((double) (IntegerParser.Parse(er[0]).Value ?? 0));
-                }
-            }
-            return num;
-        }
-
-        // convert Japanese Year to Integer
-        private static int ConvertJapaneseToInteger(string yearJapStr)
-        {
-            var year = 0;
-            var num = 0;
-
-            var er = IntegerExtractor.Extract(yearJapStr);
-            if (er.Count != 0)
-            {
-                if (er[0].Type.Equals(Number.Constants.SYS_NUM_INTEGER))
-                {
-                    num = Convert.ToInt32((double) (IntegerParser.Parse(er[0]).Value ?? 0));
-                }
-            }
-
-            if (num < 10)
-            {
-                num = 0;
-                foreach (var ch in yearJapStr)
-                {
-                    num *= 10;
-                    er = IntegerExtractor.Extract(ch.ToString());
-                    if (er.Count != 0)
-                    {
-                        if (er[0].Type.Equals(Number.Constants.SYS_NUM_INTEGER))
-                        {
-                            num += Convert.ToInt32((double) (IntegerParser.Parse(er[0]).Value ?? 0));
-                        }
-                    }
-                }
-                year = num;
-            }
-            else
-            {
-                year = num;
-            }
-            return year == 0 ? -1 : year;
         }
 
         // only contains year like "2016年"
@@ -806,6 +833,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                     {
                         num += 2000;
                     }
+
                     year = num;
                 }
                 else
@@ -875,6 +903,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 {
                     return ret;
                 }
+
                 er[0].Start -= 3;
                 er[1].Start -= 3;
             }
@@ -886,9 +915,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 return ret;
             }
 
-            DateObject futureBegin = (DateObject)((DateTimeResolutionResult) pr1.Value).FutureValue,
+            DateObject futureBegin = (DateObject)((DateTimeResolutionResult)pr1.Value).FutureValue,
                 futureEnd = (DateObject)((DateTimeResolutionResult)pr2.Value).FutureValue;
-            DateObject pastBegin = (DateObject)((DateTimeResolutionResult) pr1.Value).PastValue,
+            DateObject pastBegin = (DateObject)((DateTimeResolutionResult)pr1.Value).PastValue,
                 pastEnd = (DateObject)((DateTimeResolutionResult)pr2.Value).PastValue;
 
             if (futureBegin > futureEnd)
@@ -900,16 +929,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             {
                 pastEnd = futureEnd;
             }
-            
+
             if ((DatePeriodExtractor.YearAndMonth.IsMatch(pr1.Text) && DatePeriodExtractor.YearAndMonth.IsMatch(pr2.Text)) ||
                 (DatePeriodExtractor.SimpleYearAndMonth.IsMatch(pr1.Text) && DatePeriodExtractor.SimpleYearAndMonth.IsMatch(pr2.Text)))
-
             {
-              ret.Timex = $"({pr1.TimexStr},{pr2.TimexStr},P{(int)(futureEnd - futureBegin).TotalDays/30}M)";
+                ret.Timex = $"({pr1.TimexStr},{pr2.TimexStr},P{(int)(futureEnd - futureBegin).TotalDays / 30}M)";
             }
             else
             {
-              ret.Timex = $"({pr1.TimexStr},{pr2.TimexStr},P{(futureEnd - futureBegin).TotalDays}D)";
+                ret.Timex = $"({pr1.TimexStr},{pr2.TimexStr},P{(futureEnd - futureBegin).TotalDays}D)";
             }
 
             ret.FutureValue = new Tuple<DateObject, DateObject>(futureBegin, futureEnd);
@@ -949,7 +977,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                                 endDate = referenceDate;
                                 break;
                             case Constants.TimexWeek:
-                                beginDate = referenceDate.AddDays(-7*double.Parse(numStr));
+                                beginDate = referenceDate.AddDays(-7 * double.Parse(numStr));
                                 endDate = referenceDate;
                                 break;
                             case Constants.TimexMonthFull:
@@ -983,7 +1011,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                                 break;
                             case Constants.TimexWeek:
                                 beginDate = referenceDate;
-                                endDate = referenceDate.AddDays(7*double.Parse(numStr));
+                                endDate = referenceDate.AddDays(7 * double.Parse(numStr));
                                 break;
                             case Constants.TimexMonthFull:
                                 beginDate = referenceDate;
@@ -1034,7 +1062,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                                     endDate = referenceDate;
                                     break;
                                 case Constants.TimexWeek:
-                                    beginDate = referenceDate.AddDays(-7*double.Parse(numStr));
+                                    beginDate = referenceDate.AddDays(-7 * double.Parse(numStr));
                                     endDate = referenceDate;
                                     break;
                                 case Constants.TimexMonthFull:
@@ -1068,7 +1096,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                                     break;
                                 case Constants.TimexWeek:
                                     beginDate = referenceDate;
-                                    endDate = referenceDate.AddDays(7*double.Parse(numStr));
+                                    endDate = referenceDate.AddDays(7 * double.Parse(numStr));
                                     break;
                                 case Constants.TimexMonthFull:
                                     beginDate = referenceDate;
@@ -1093,6 +1121,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                     }
                 }
             }
+
             return ret;
         }
 
@@ -1134,6 +1163,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 {
                     swift = -1;
                 }
+
                 month = referenceDate.AddMonths(swift).Month;
                 year = referenceDate.AddMonths(swift).Year;
                 ret.Timex = referenceDate.Year.ToString("D4") + "-" + month.ToString("D2");
@@ -1184,7 +1214,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
             if (match.Success)
             {
-                // parse year 
+                // parse year
                 var year = referenceDate.Year;
                 var hasYear = false;
                 var yearNum = match.Groups["year"].Value;
@@ -1198,6 +1228,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                     {
                         yearNum = yearNum.Substring(0, yearNum.Length - 1);
                     }
+
                     year = int.Parse(yearNum);
                 }
                 else if (!string.IsNullOrEmpty(yearJap))
@@ -1207,6 +1238,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                     {
                         yearJap = yearJap.Substring(0, yearJap.Length - 1);
                     }
+
                     year = ConvertJapaneseToInteger(yearJap);
                 }
                 else if (!string.IsNullOrEmpty(yearRel))
@@ -1238,9 +1270,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 {
                     ret.Timex = year.ToString("D4") + "-" + ret.Timex;
                 }
+
                 ret.Success = true;
                 return ret;
             }
+
             return ret;
         }
 
@@ -1254,7 +1288,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 return ret;
             }
 
-            // pare year 
+            // pare year
             var year = referenceDate.Year;
             var yearNum = match.Groups["year"].Value;
             var yearJap = match.Groups["yearJap"].Value;
@@ -1265,6 +1299,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 {
                     yearNum = yearNum.Substring(0, yearNum.Length - 1);
                 }
+
                 year = int.Parse(yearNum);
             }
             else if (!string.IsNullOrEmpty(yearJap))
@@ -1273,6 +1308,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 {
                     yearJap = yearJap.Substring(0, yearJap.Length - 1);
                 }
+
                 year = ConvertJapaneseToInteger(yearJap);
             }
             else if (!string.IsNullOrEmpty(yearRel))
@@ -1300,8 +1336,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             var cardinalStr = match.Groups["cardinal"].Value;
             var quarterNum = this.config.CardinalMap[cardinalStr];
 
-            var beginDate = DateObject.MinValue.SafeCreateFromValue(year, quarterNum*3 - 2, 1);
-            var endDate = DateObject.MinValue.SafeCreateFromValue(year, quarterNum*3 + 1, 1);
+            var beginDate = DateObject.MinValue.SafeCreateFromValue(year, (quarterNum * 3) - 2, 1);
+            var endDate = DateObject.MinValue.SafeCreateFromValue(year, (quarterNum * 3) + 1, 1);
             ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginDate, endDate);
             ret.Timex = $"({DateTimeFormatUtil.LuisDate(beginDate)},{DateTimeFormatUtil.LuisDate(endDate)},P3M)";
             ret.Success = true;
@@ -1312,7 +1348,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         private DateTimeResolutionResult ParseDecade(string text, DateObject referenceDate)
         {
             var ret = new DateTimeResolutionResult();
-            int century = referenceDate.Year / 100 + 1;
+            int century = (referenceDate.Year / 100) + 1;
             int decade;
             int beginYear, endYear;
             int decadeLastYear = 10;
@@ -1336,34 +1372,35 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                     {
                         century = ConvertJapaneseToNum(centuryStr);
                     }
+
                     inputCentury = true;
                 }
                 else
                 {
-                	centuryStr = match.Groups["relcentury"].Value;
+                    centuryStr = match.Groups["relcentury"].Value;
 
-                	if (!string.IsNullOrEmpty(centuryStr))
-                	{
+                    if (!string.IsNullOrEmpty(centuryStr))
+                    {
                         centuryStr = centuryStr.Trim().ToLower();
-	                    var thismatch = DatePeriodExtractor.ThisRegex.Match(centuryStr);
-	                    var nextmatch = DatePeriodExtractor.NextRegex.Match(centuryStr);
-	                    var lastmatch = DatePeriodExtractor.LastRegex.Match(centuryStr);
+                        var thismatch = DatePeriodExtractor.ThisRegex.Match(centuryStr);
+                        var nextmatch = DatePeriodExtractor.NextRegex.Match(centuryStr);
+                        var lastmatch = DatePeriodExtractor.LastRegex.Match(centuryStr);
 
-	                    if (thismatch.Success)
-	                    {
-	                        // do nothing
-	                    }
-	                    else if (nextmatch.Success)
-	                    {
-	                        century++;
-	                    }
-	                    else
-	                    {
-	                        century--;
-	                    }
+                        if (thismatch.Success)
+                        {
+                            // do nothing
+                        }
+                        else if (nextmatch.Success)
+                        {
+                            century++;
+                        }
+                        else
+                        {
+                            century--;
+                        }
 
-	                    inputCentury = true;
-	                }
+                        inputCentury = true;
+                    }
                 }
             }
             else
@@ -1371,7 +1408,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 return ret;
             }
 
-            beginYear = (century - 1) * 100 + decade;
+            beginYear = ((century - 1) * 100) + decade;
             endYear = beginYear + decadeLastYear;
 
             if (inputCentury)
@@ -1389,6 +1426,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 endLuisStr = DateTimeFormatUtil.LuisDate(-1, 1, 1);
                 endLuisStr = endLuisStr.Replace("XXXX", endYearStr);
             }
+
             ret.Timex = $"({beginLuisStr},{endLuisStr},P10Y)";
 
             int futureYear = beginYear, pastYear = beginYear;
@@ -1416,31 +1454,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             return ret;
         }
 
-        private static DateObject ComputeDate(int cadinal, int weekday, int month, int year)
-        {
-            var firstDay = DateObject.MinValue.SafeCreateFromValue(year, month, 1);
-            var firstWeekday = firstDay.This((DayOfWeek) weekday);
-            if (weekday == 0)
-            {
-                weekday = 7;
-            }
-
-            if (weekday < (int) firstDay.DayOfWeek)
-            {
-                firstWeekday = firstDay.Next((DayOfWeek) weekday);
-            }
-
-            return firstWeekday.AddDays(7*(cadinal - 1));
-        }
-
         private int ToMonthNumber(string monthStr)
         {
             return this.config.MonthOfYear[monthStr] > 12 ? this.config.MonthOfYear[monthStr] % 12 : this.config.MonthOfYear[monthStr];
-        }
-
-        public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)
-        {
-            return candidateResults;
         }
     }
 }
