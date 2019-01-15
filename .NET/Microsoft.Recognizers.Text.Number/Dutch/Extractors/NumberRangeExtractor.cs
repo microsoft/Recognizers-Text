@@ -8,15 +8,8 @@ namespace Microsoft.Recognizers.Text.Number.Dutch
 {
     public class NumberRangeExtractor : BaseNumberRangeExtractor
     {
-        internal sealed override ImmutableDictionary<Regex, string> Regexes { get; }
-
-        internal sealed override Regex AmbiguousFractionConnectorsRegex { get; }
-
-        protected sealed override string ExtractType { get; } = Constants.SYS_NUMRANGE;
-
-        public NumberRangeExtractor(NumberOptions options = NumberOptions.None) 
-            : base(NumberExtractor.GetInstance(), OrdinalExtractor.GetInstance(), 
-                   new BaseNumberParser(new DutchNumberParserConfiguration()), options)
+        public NumberRangeExtractor(NumberOptions options = NumberOptions.None)
+            : base(NumberExtractor.GetInstance(), OrdinalExtractor.GetInstance(), new BaseNumberParser(new DutchNumberParserConfiguration()), options)
         {
             var regexes = new Dictionary<Regex, string>()
             {
@@ -74,13 +67,19 @@ namespace Microsoft.Recognizers.Text.Number.Dutch
                     // equal to 30 or less, smaller than 30 or equal ...
                     new Regex(NumbersDefinitions.OneNumberRangeLessSeparateRegex, RegexOptions.Singleline),
                     NumberRangeConstants.LESS
-                }
+                },
             };
 
             Regexes = regexes.ToImmutableDictionary();
 
-            AmbiguousFractionConnectorsRegex = 
+            AmbiguousFractionConnectorsRegex =
                 new Regex(NumbersDefinitions.AmbiguousFractionConnectorsRegex, RegexOptions.Singleline);
         }
+
+        internal sealed override ImmutableDictionary<Regex, string> Regexes { get; }
+
+        internal sealed override Regex AmbiguousFractionConnectorsRegex { get; }
+
+        protected sealed override string ExtractType { get; } = Constants.SYS_NUMRANGE;
     }
 }
