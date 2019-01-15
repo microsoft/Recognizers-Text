@@ -179,7 +179,7 @@ public class BaseTimePeriodExtractor implements IDateTimeExtractor {
                 String midStr = input.substring(numEndPoint, ers.get(j).getStart());
                 Pattern tillRegex = this.config.getTillRegex();
                 Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(tillRegex, midStr)).findFirst();
-                if (match.isPresent() && match.get().length == midStr.trim().length()) {
+                if ((match.isPresent() && match.get().length == midStr.trim().length()) || config.hasConnectorToken(midStr.trim())) {
                     timeNumbers.add(numErs.get(i));
                 }
 
