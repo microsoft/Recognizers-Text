@@ -40,7 +40,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                         var parseResult = parser.Parse(result);
                         if (parseResult.Value is List<ParseResult>)
                         {
-                            parsedResults.AddRange((List<ParseResult>) parseResult.Value);
+                            parsedResults.AddRange((List<ParseResult>)parseResult.Value);
                         }
                         else
                         {
@@ -54,20 +54,20 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                         End = o.Start.Value + o.Length.Value - 1,
                         Resolution = (o.Value is UnitValue) ? new SortedDictionary<string, object>
                             {
-                                {ResolutionKey.Value, ((UnitValue) o.Value).Number},
-                                {ResolutionKey.Unit, ((UnitValue) o.Value).Unit}
+                                {ResolutionKey.Value, ((UnitValue)o.Value).Number},
+                                {ResolutionKey.Unit, ((UnitValue)o.Value).Unit},
                             }
                             : (o.Value is CurrencyUnitValue) ? new SortedDictionary<string, object>
                             {
-                                {ResolutionKey.Value, ((CurrencyUnitValue) o.Value).Number},
-                                {ResolutionKey.Unit, ((CurrencyUnitValue) o.Value).Unit},
-                                {ResolutionKey.IsoCurrency, ((CurrencyUnitValue) o.Value).IsoCurrency}
+                                {ResolutionKey.Value, ((CurrencyUnitValue)o.Value).Number},
+                                {ResolutionKey.Unit, ((CurrencyUnitValue)o.Value).Unit},
+                                {ResolutionKey.IsoCurrency, ((CurrencyUnitValue)o.Value).IsoCurrency},
                             } : new SortedDictionary<string, object>
                             {
-                                {ResolutionKey.Value, (string) o.Value}
+                                {ResolutionKey.Value, (string)o.Value},
                             },
                         Text = o.Text,
-                        TypeName = ModelTypeName
+                        TypeName = ModelTypeName,
                     }).ToList();
 
                     foreach (var result in modelResults)
