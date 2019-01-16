@@ -106,17 +106,15 @@ public class BaseDateTimePeriodExtractor implements IDateTimeExtractor {
 
         // Handle the overlap problem
         int j = 0;
-        for(ExtractResult er : dateTimeErs){
+        for (ExtractResult er : dateTimeErs) {
             timePoints.add(er);
 
-            while (j < timeErs.size() && timeErs.get(j).getStart() + timeErs.get(j).getLength() < er.getStart())
-            {
+            while (j < timeErs.size() && timeErs.get(j).getStart() + timeErs.get(j).getLength() < er.getStart()) {
                 timePoints.add(timeErs.get(j));
                 j++;
             }
 
-            while (j < timeErs.size() && timeErs.get(j).isOverlap(er))
-            {
+            while (j < timeErs.size() && timeErs.get(j).isOverlap(er)) {
                 j++;
             }
         }
