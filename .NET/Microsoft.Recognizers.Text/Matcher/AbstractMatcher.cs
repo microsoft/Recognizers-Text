@@ -12,6 +12,11 @@ namespace Microsoft.Recognizers.Text.Matcher
 
         public abstract void Insert(IEnumerable<T> value, string id);
 
+        public bool IsMatch(IEnumerable<T> queryText)
+        {
+            return Find(queryText).FirstOrDefault() == null;
+        }
+
         protected void BatchInsert(IEnumerable<T>[] values, string[] ids)
         {
             if (values.Length != ids.Length)
@@ -24,7 +29,7 @@ namespace Microsoft.Recognizers.Text.Matcher
                 Insert(values[i], ids[i]);
             }
         }
-        
+
         protected void ConvertDictToList(Node<T> node)
         {
             if (node.Values != null)
@@ -44,11 +49,6 @@ namespace Microsoft.Recognizers.Text.Matcher
 
             // re-malloc dictionary to reduce memory usage
             node.Children = new Dictionary<T, Node<T>>(node.Children);
-        }
-        
-        public bool IsMatch(IEnumerable<T> queryText)
-        {
-            return Find(queryText).FirstOrDefault() == null;
         }
     }
 }

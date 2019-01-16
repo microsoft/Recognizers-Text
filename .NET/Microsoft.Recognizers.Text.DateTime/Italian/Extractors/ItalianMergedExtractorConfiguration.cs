@@ -12,7 +12,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             new Regex(DateTimeDefinitions.BeforeRegex, RegexOptions.Singleline); // avant - 'before'
 
         public static readonly Regex AfterRegex =
-            new Regex(DateTimeDefinitions.AfterRegex, RegexOptions.Singleline); // ensuite/puis are for adverbs, i.e 'i ate and then i walked', so we'll use apres 
+            new Regex(DateTimeDefinitions.AfterRegex, RegexOptions.Singleline); // ensuite/puis are for adverbs, i.e 'i ate and then i walked', so we'll use apres
 
         public static readonly Regex SinceRegex =
             new Regex(DateTimeDefinitions.SinceRegex, RegexOptions.Singleline);
@@ -30,8 +30,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             new Regex(DateTimeDefinitions.PrepositionSuffixRegex, RegexOptions.Singleline);
 
         public static readonly Regex NumberEndingPattern =
-            new Regex(DateTimeDefinitions.NumberEndingPattern,
-                RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.NumberEndingPattern, RegexOptions.Singleline);
 
         public static readonly Regex DateAfterRegex =
             new Regex(DateTimeDefinitions.YearAfterRegex, RegexOptions.Singleline);
@@ -41,10 +40,26 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public static readonly Regex[] TermFilterRegexes =
         {
-
         };
 
         public static readonly StringMatcher SuperfluousWordMatcher = new StringMatcher();
+
+        public ItalianMergedExtractorConfiguration(IOptionsConfiguration config)
+            : base(config)
+        {
+            DateExtractor = new BaseDateExtractor(new ItalianDateExtractorConfiguration(this));
+            TimeExtractor = new BaseTimeExtractor(new ItalianTimeExtractorConfiguration(this));
+            DateTimeExtractor = new BaseDateTimeExtractor(new ItalianDateTimeExtractorConfiguration(this));
+            DatePeriodExtractor = new BaseDatePeriodExtractor(new ItalianDatePeriodExtractorConfiguration(this));
+            TimePeriodExtractor = new BaseTimePeriodExtractor(new ItalianTimePeriodExtractorConfiguration(this));
+            DateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new ItalianDateTimePeriodExtractorConfiguration(this));
+            DurationExtractor = new BaseDurationExtractor(new ItalianDurationExtractorConfiguration(this));
+            SetExtractor = new BaseSetExtractor(new ItalianSetExtractorConfiguration(this));
+            HolidayExtractor = new BaseHolidayExtractor(new ItalianHolidayExtractorConfiguration(this));
+            TimeZoneExtractor = new BaseTimeZoneExtractor(new ItalianTimeZoneExtractorConfiguration(this));
+            DateTimeAltExtractor = new BaseDateTimeAltExtractor(new ItalianDateTimeAltExtractorConfiguration(this));
+            IntegerExtractor = Number.Italian.IntegerExtractor.GetInstance();
+        }
 
         public IDateExtractor DateExtractor { get; }
 
@@ -72,34 +87,28 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public Dictionary<Regex, Regex> AmbiguityFiltersDict { get; } = null;
 
-        public ItalianMergedExtractorConfiguration(IOptionsConfiguration config) : base(config)
-        {
-
-            DateExtractor = new BaseDateExtractor(new ItalianDateExtractorConfiguration(this));
-            TimeExtractor = new BaseTimeExtractor(new ItalianTimeExtractorConfiguration(this));
-            DateTimeExtractor = new BaseDateTimeExtractor(new ItalianDateTimeExtractorConfiguration(this));
-            DatePeriodExtractor = new BaseDatePeriodExtractor(new ItalianDatePeriodExtractorConfiguration(this));
-            TimePeriodExtractor = new BaseTimePeriodExtractor(new ItalianTimePeriodExtractorConfiguration(this));
-            DateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new ItalianDateTimePeriodExtractorConfiguration(this));
-            DurationExtractor = new BaseDurationExtractor(new ItalianDurationExtractorConfiguration(this));
-            SetExtractor = new BaseSetExtractor(new ItalianSetExtractorConfiguration(this));
-            HolidayExtractor = new BaseHolidayExtractor(new ItalianHolidayExtractorConfiguration(this));
-            TimeZoneExtractor = new BaseTimeZoneExtractor(new ItalianTimeZoneExtractorConfiguration(this));
-            DateTimeAltExtractor = new BaseDateTimeAltExtractor(new ItalianDateTimeAltExtractorConfiguration(this));
-            IntegerExtractor = Number.Italian.IntegerExtractor.GetInstance();
-        }
-
         Regex IMergedExtractorConfiguration.AfterRegex => AfterRegex;
+
         Regex IMergedExtractorConfiguration.BeforeRegex => BeforeRegex;
+
         Regex IMergedExtractorConfiguration.SinceRegex => SinceRegex;
+
         Regex IMergedExtractorConfiguration.AroundRegex => AroundRegex;
+
         Regex IMergedExtractorConfiguration.FromToRegex => FromToRegex;
+
         Regex IMergedExtractorConfiguration.SingleAmbiguousMonthRegex => SingleAmbiguousMonthRegex;
+
         Regex IMergedExtractorConfiguration.PrepositionSuffixRegex => PrepositionSuffixRegex;
+
         Regex IMergedExtractorConfiguration.NumberEndingPattern => NumberEndingPattern;
+
         Regex IMergedExtractorConfiguration.DateAfterRegex => DateAfterRegex;
+
         Regex IMergedExtractorConfiguration.UnspecificDatePeriodRegex => UnspecificDatePeriodRegex;
+
         IEnumerable<Regex> IMergedExtractorConfiguration.TermFilterRegexes => TermFilterRegexes;
+
         StringMatcher IMergedExtractorConfiguration.SuperfluousWordMatcher => SuperfluousWordMatcher;
     }
 }

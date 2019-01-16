@@ -15,6 +15,10 @@ CALL msbuild Microsoft.Recognizers.Definitions.Common\Microsoft.Recognizers.Defi
 
 ECHO # Building .NET solution (%configuration%)
 CALL msbuild Microsoft.Recognizers.Text.sln /t:Clean,Build /p:Configuration=%configuration%
+IF %ERRORLEVEL% NEQ 0 (
+	ECHO # Failed to build.
+	EXIT /b %ERRORLEVEL%
+)
 
 ECHO.
 ECHO # Running .NET Tests

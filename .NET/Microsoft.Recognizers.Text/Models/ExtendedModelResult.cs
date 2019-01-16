@@ -5,8 +5,6 @@
         // Parameter Key
         public static readonly string ParentTextKey = "parentText";
 
-        public string ParentText { get; set; }
-
         public ExtendedModelResult()
         {
         }
@@ -19,5 +17,7 @@
             Resolution = modelResult.Resolution;
             Text = modelResult.Text;
         }
+
+        public string ParentText { get; set; }
     }
 }

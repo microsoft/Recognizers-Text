@@ -7,7 +7,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 {
     public class BaseTimePeriodParser : IDateTimeParser
     {
-        public static readonly string ParserName = Constants.SYS_DATETIME_TIMEPERIOD; //"TimePeriod";
+        public static readonly string ParserName = Constants.SYS_DATETIME_TIMEPERIOD; // "TimePeriod";
 
         private readonly ITimePeriodParserConfiguration config;
 
@@ -36,9 +36,10 @@ namespace Microsoft.Recognizers.Text.DateTime
                     var timezoneEr = metadata[Constants.SYS_DATETIME_TIMEZONE] as ExtractResult;
                     var timezonePr = config.TimeZoneParser.Parse(timezoneEr);
 
-                    innerResult = InternalParse(er.Text.Substring(0, (int)(er.Length - timezoneEr.Length)),
+                    innerResult = InternalParse(
+                        er.Text.Substring(0, (int)(er.Length - timezoneEr.Length)),
                         referenceTime);
-                    
+
                     if (timezonePr != null && timezonePr.Value != null)
                     {
                         innerResult.TimeZoneResolution = ((DateTimeResolutionResult)timezonePr.Value).TimeZoneResolution;
@@ -55,24 +56,24 @@ namespace Microsoft.Recognizers.Text.DateTime
                     {
                         {
                             TimeTypeConstants.START_TIME,
-                            DateTimeFormatUtil.FormatTime(((Tuple<DateObject, DateObject>) innerResult.FutureValue).Item1)
+                            DateTimeFormatUtil.FormatTime(((Tuple<DateObject, DateObject>)innerResult.FutureValue).Item1)
                         },
                         {
                             TimeTypeConstants.END_TIME,
-                            DateTimeFormatUtil.FormatTime(((Tuple<DateObject, DateObject>) innerResult.FutureValue).Item2)
-                        }
+                            DateTimeFormatUtil.FormatTime(((Tuple<DateObject, DateObject>)innerResult.FutureValue).Item2)
+                        },
                     };
 
                     innerResult.PastResolution = new Dictionary<string, string>
                     {
                         {
                             TimeTypeConstants.START_TIME,
-                            DateTimeFormatUtil.FormatTime(((Tuple<DateObject, DateObject>) innerResult.PastValue).Item1)
+                            DateTimeFormatUtil.FormatTime(((Tuple<DateObject, DateObject>)innerResult.PastValue).Item1)
                         },
                         {
                             TimeTypeConstants.END_TIME,
-                            DateTimeFormatUtil.FormatTime(((Tuple<DateObject, DateObject>) innerResult.PastValue).Item2)
-                        }
+                            DateTimeFormatUtil.FormatTime(((Tuple<DateObject, DateObject>)innerResult.PastValue).Item2)
+                        },
                     };
 
                     value = innerResult;
@@ -87,11 +88,16 @@ namespace Microsoft.Recognizers.Text.DateTime
                 Type = er.Type,
                 Data = er.Data,
                 Value = value,
-                TimexStr = value == null ? "" : ((DateTimeResolutionResult)value).Timex,
-                ResolutionStr = ""
+                TimexStr = value == null ? string.Empty : ((DateTimeResolutionResult)value).Timex,
+                ResolutionStr = string.Empty,
             };
 
             return ret;
+        }
+
+        public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)
+        {
+            return candidateResults;
         }
 
         private DateTimeResolutionResult InternalParse(string entityText, DateObject referenceTime)
@@ -153,7 +159,6 @@ namespace Microsoft.Recognizers.Text.DateTime
                 // hard to integrate this part into the regex
                 if (afterHourIndex == trimmedText.Length || !trimmedText.Substring(afterHourIndex).Trim().StartsWith(":"))
                 {
-
                     if (!this.config.Numbers.TryGetValue(hourStr, out int beginHour))
                     {
                         beginHour = int.Parse(hourStr);
@@ -172,20 +177,19 @@ namespace Microsoft.Recognizers.Text.DateTime
                         // parse "pm"
                         var leftDesc = match.Groups["leftDesc"].Value;
                         var rightDesc = match.Groups["rightDesc"].Value;
-                        var pmStr = match.Groups[Constants.PmGroupName].Value;
-                        var amStr = match.Groups[Constants.AmGroupName].Value;
+                        var matchPmStr = match.Groups[Constants.PmGroupName].Value;
+                        var matchAmStr = match.Groups[Constants.AmGroupName].Value;
                         var descStr = match.Groups[Constants.DescGroupName].Value;
 
                         // The "ampm" only occurs in time, we don't have to consider it here
                         if (string.IsNullOrEmpty(leftDesc))
                         {
-
                             var rightAmValid = !string.IsNullOrEmpty(rightDesc) &&
                                                     config.UtilityConfiguration.AmDescRegex.Match(rightDesc.ToLower()).Success;
                             var rightPmValid = !string.IsNullOrEmpty(rightDesc) &&
                                             config.UtilityConfiguration.PmDescRegex.Match(rightDesc.ToLower()).Success;
 
-                            if (!string.IsNullOrEmpty(amStr) || rightAmValid)
+                            if (!string.IsNullOrEmpty(matchAmStr) || rightAmValid)
                             {
                                 if (endHour >= Constants.HalfDayHourCount)
                                 {
@@ -204,11 +208,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                                 }
 
                                 isValid = true;
-
                             }
-                            else if (!string.IsNullOrEmpty(pmStr) || rightPmValid)
+                            else if (!string.IsNullOrEmpty(matchPmStr) || rightPmValid)
                             {
-
                                 if (endHour < Constants.HalfDayHourCount)
                                 {
                                     endHour += Constants.HalfDayHourCount;
@@ -221,7 +223,6 @@ namespace Microsoft.Recognizers.Text.DateTime
                                 }
 
                                 isValid = true;
-
                             }
                         }
 
@@ -308,7 +309,6 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     beginHour = int.Parse(hourStr);
                 }
-
 
                 hourStr = hourGroup.Captures[1].Value;
 
@@ -506,6 +506,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                             endDateTime = endDateTime.AddHours(Constants.HalfDayHourCount);
                         }
                     }
+
                     ret.Comment = Constants.Comment_AmPm;
                 }
 
@@ -536,7 +537,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         Start = time1StartIndex,
                         Length = time1EndIndex - time1StartIndex,
                         Text = text.Substring(time1StartIndex, time1EndIndex - time1StartIndex),
-                        Type = $"{Constants.SYS_DATETIME_TIME}"
+                        Type = $"{Constants.SYS_DATETIME_TIME}",
                     };
 
                     var pr = this.config.TimeParser.Parse(er, referenceTime);
@@ -551,7 +552,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         Start = time2StartIndex,
                         Length = time2EndIndex - time2StartIndex,
                         Text = text.Substring(time2StartIndex, time2EndIndex - time2StartIndex),
-                        Type = $"{Constants.SYS_DATETIME_TIME}"
+                        Type = $"{Constants.SYS_DATETIME_TIME}",
                     };
 
                     var pr = this.config.TimeParser.Parse(er, referenceTime);
@@ -580,6 +581,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     foreach (var num in numErs)
                     {
                         int midStrBegin = 0, midStrEnd = 0;
+
                         // ending number
                         if (num.Start > ers[0].Start + ers[0].Length)
                         {
@@ -658,11 +660,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             var minutes = (endTime - beginTime).Minutes;
             var hours = (endTime - beginTime).Hours;
             ret.Timex = $"({pr1.TimexStr},{pr2.TimexStr}," +
-                        $"PT{(hours > 0 ? hours + "H" : "")}{(minutes > 0 ? minutes + "M" : "")})";
+                        $"PT{(hours > 0 ? hours + "H" : string.Empty)}{(minutes > 0 ? minutes + "M" : string.Empty)})";
             ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginTime, endTime);
             ret.Success = true;
-            
-            if (!string.IsNullOrEmpty(ampmStr1) && ampmStr1.EndsWith(Constants.Comment_AmPm)  && 
+
+            if (!string.IsNullOrEmpty(ampmStr1) && ampmStr1.EndsWith(Constants.Comment_AmPm) &&
                 !string.IsNullOrEmpty(ampmStr2) && ampmStr2.EndsWith(Constants.Comment_AmPm))
             {
                 ret.Comment = Constants.Comment_AmPm;
@@ -677,7 +679,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 ret.TimeZoneResolution = ((DateTimeResolutionResult)pr2.Value).TimeZoneResolution;
             }
 
-            ret.SubDateTimeEntities = new List<object> {pr1, pr2};
+            ret.SubDateTimeEntities = new List<object> { pr1, pr2 };
 
             return ret;
         }
@@ -698,7 +700,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 if (!string.IsNullOrEmpty(match.Groups["early"].Value))
                 {
                     var early = match.Groups["early"].Value;
-                    text = text.Replace(early, "");
+                    text = text.Replace(early, string.Empty);
                     hasEarly = true;
                     ret.Comment = Constants.Comment_Early;
                 }
@@ -706,7 +708,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 if (!hasEarly && !string.IsNullOrEmpty(match.Groups["late"].Value))
                 {
                     var late = match.Groups["late"].Value;
-                    text = text.Replace(late, "");
+                    text = text.Replace(late, string.Empty);
                     hasLate = true;
                     ret.Comment = Constants.Comment_Late;
                 }
@@ -721,6 +723,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (hasEarly)
             {
                 endHour = beginHour + 2;
+
                 // handling case: night end with 23:59
                 if (endMinSeg == 59)
                 {
@@ -736,17 +739,11 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(
                 DateObject.MinValue.SafeCreateFromValue(year, month, day, beginHour, 0, 0),
-                DateObject.MinValue.SafeCreateFromValue(year, month, day, endHour, endMinSeg, endMinSeg)
-                );
+                DateObject.MinValue.SafeCreateFromValue(year, month, day, endHour, endMinSeg, endMinSeg));
 
             ret.Success = true;
 
             return ret;
-        }
-
-        public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)
-        {
-            return candidateResults;
         }
     }
 }

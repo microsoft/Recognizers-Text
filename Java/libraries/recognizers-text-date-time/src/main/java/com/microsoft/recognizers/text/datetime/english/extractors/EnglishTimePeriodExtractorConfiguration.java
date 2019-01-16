@@ -47,9 +47,6 @@ public class EnglishTimePeriodExtractorConfiguration extends BaseOptionsConfigur
         this(DateTimeOptions.None);
     }
 
-    //C# TO JAVA CONVERTER WARNING: The following constructor is declared outside of its associated class:
-    //ORIGINAL LINE: public EnglishTimePeriodExtractorConfiguration(DateTimeOptions options = DateTimeOptions.None)
-    //C# TO JAVA CONVERTER NOTE: Java does not support optional parameters. Overloaded method(s) are created above:
     public EnglishTimePeriodExtractorConfiguration(DateTimeOptions options) {
 
         super(options);

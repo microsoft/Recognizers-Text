@@ -7,15 +7,15 @@ namespace Microsoft.Recognizers.Text.DateTime
 {
     public class ConditionalMatch
     {
-        public Match Match { get; }
-
-        public bool Success { get; }
-
         public ConditionalMatch(Match match, bool success)
         {
             Match = match;
             Success = success;
         }
+
+        public Match Match { get; }
+
+        public bool Success { get; }
 
         public int Index
         {

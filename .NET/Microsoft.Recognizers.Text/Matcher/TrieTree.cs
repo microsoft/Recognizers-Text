@@ -9,7 +9,6 @@ namespace Microsoft.Recognizers.Text.Matcher
 
         public TrieTree()
         {
-
         }
 
         public override void Insert(IEnumerable<T> value, string id)

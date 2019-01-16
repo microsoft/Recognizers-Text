@@ -13,9 +13,10 @@ namespace Microsoft.Recognizers.Text.DateTime
         }
 
         public int Start { get; }
-        public int End { get; }
-        public Metadata Metadata { get; }
 
+        public int End { get; }
+
+        public Metadata Metadata { get; }
 
         public int Length
         {
@@ -25,6 +26,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     return 0;
                 }
+
                 return End - Start;
             }
         }
@@ -39,30 +41,30 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 if (token != null)
                 {
-                    var bAdd = true;
-                    for (var index = 0; index < mergedTokens.Count && bAdd; index++)
+                    bool shouldAdd = true;
+                    for (var index = 0; index < mergedTokens.Count && shouldAdd; index++)
                     {
                         // It is included in one of the current tokens
                         if (token.Start >= mergedTokens[index].Start && token.End <= mergedTokens[index].End)
                         {
-                            bAdd = false;
+                            shouldAdd = false;
                         }
 
                         // If it contains overlaps
                         if (token.Start > mergedTokens[index].Start && token.Start < mergedTokens[index].End)
                         {
-                            bAdd = false;
+                            shouldAdd = false;
                         }
 
                         // It includes one of the tokens and should replace the included one
                         if (token.Start <= mergedTokens[index].Start && token.End >= mergedTokens[index].End)
                         {
-                            bAdd = false;
+                            shouldAdd = false;
                             mergedTokens[index] = token;
                         }
                     }
 
-                    if (bAdd)
+                    if (shouldAdd)
                     {
                         mergedTokens.Add(token);
                     }
@@ -82,7 +84,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     Text = substr,
                     Type = extractorName,
                     Data = null,
-                    Metadata = token.Metadata
+                    Metadata = token.Metadata,
                 };
 
                 ret.Add(er);

@@ -30,7 +30,6 @@ namespace Microsoft.Recognizers.Text.Sequence
                 {
                     parsedSequences.Add(Parser.Parse(result));
                 }
-
             }
             catch (Exception)
             {
@@ -44,7 +43,7 @@ namespace Microsoft.Recognizers.Text.Sequence
                 End = o.Start.Value + o.Length.Value - 1,
                 Resolution = new SortedDictionary<string, object> { { ResolutionKey.Value, o.ResolutionStr } },
                 Text = o.Text,
-                TypeName = ModelTypeName
+                TypeName = ModelTypeName,
             }).ToList();
         }
     }

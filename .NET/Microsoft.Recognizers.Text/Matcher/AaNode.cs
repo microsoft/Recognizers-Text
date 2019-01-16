@@ -7,7 +7,6 @@ namespace Microsoft.Recognizers.Text.Matcher
     {
         public AaNode()
         {
-
         }
 
         public AaNode(T c, int depth)
@@ -24,14 +23,20 @@ namespace Microsoft.Recognizers.Text.Matcher
         }
 
         public T Word { get; set; }
+
         public int Depth { get; set; }
+
         public AaNode<T> Parent { get; set; }
 
         public AaNode<T> Fail { get; set; } = null;
 
         public new AaNode<T> this[T c]
         {
-            get { return Children != null && Children.ContainsKey(c) ? Children[c] as AaNode<T> : null; }
+            get
+            {
+                return Children != null && Children.ContainsKey(c) ? Children[c] as AaNode<T> : null;
+            }
+
             set
             {
                 if (Children == null)

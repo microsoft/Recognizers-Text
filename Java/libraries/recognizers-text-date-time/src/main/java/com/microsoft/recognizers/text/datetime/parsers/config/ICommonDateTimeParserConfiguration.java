@@ -52,8 +52,6 @@ public interface ICommonDateTimeParserConfiguration extends IOptionsConfiguratio
 
     IDateTimeParser getTimeZoneParser();
 
-    Pattern getAmbiguousMonthP0Regex();
-
     ImmutableMap<String, Integer> getMonthOfYear();
 
     ImmutableMap<String, Integer> getNumbers();

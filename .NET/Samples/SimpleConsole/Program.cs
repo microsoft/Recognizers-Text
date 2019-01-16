@@ -1,23 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Newtonsoft.Json;
-
 using Microsoft.Recognizers.Text;
+using Microsoft.Recognizers.Text.Choice;
 using Microsoft.Recognizers.Text.DateTime;
 using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.NumberWithUnit;
-using Microsoft.Recognizers.Text.Choice;
 using Microsoft.Recognizers.Text.Sequence;
+using Newtonsoft.Json;
 
 namespace SimpleConsole
 {
-    class Program
+    public class Program
     {
         // Use English for the Recognizers culture
         private const string DefaultCulture = Culture.English;
 
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             ShowIntro();
 
@@ -25,23 +24,23 @@ namespace SimpleConsole
             {
                 // Read the text to recognize
                 Console.WriteLine("Enter the text to recognize:");
-                var input = Console.ReadLine().Trim();
+                var input = Console.ReadLine()?.Trim();
                 Console.WriteLine();
 
-                if (input.ToLower() == "exit")
+                if (input?.ToLower() == "exit")
                 {
                     // Close application if user types "exit"
                     break;
                 }
 
-                // Validate input 
-                if (input.Length > 0)
+                // Validate input
+                if (input?.Length > 0)
                 {
                     // Retrieve all the parsers and call 'Parse' to recognize all the values from the user input
                     var results = ParseAll(input, DefaultCulture);
 
                     // Write output
-                    Console.WriteLine(results.Any() ? string.Format("I found the following entities ({0:d}):", results.Count()) : "I found no entities.");
+                    Console.WriteLine(results.Any() ? $"I found the following entities ({results.Count():d}):" : "I found no entities.");
                     results.ToList().ForEach(result => Console.WriteLine(JsonConvert.SerializeObject(result, Formatting.Indented)));
                     Console.WriteLine();
                 }
@@ -49,11 +48,12 @@ namespace SimpleConsole
         }
 
         /// <summary>
-        /// Parse query with all recognizers
+        /// Parse query with all recognizers.
         /// </summary>
         private static IEnumerable<ModelResult> ParseAll(string query, string culture)
         {
             return MergeResults(
+
                 // Number recognizer will find any number from the input
                 // E.g "I have two apples" will return "2".
                 NumberRecognizer.RecognizeNumber(query, culture),
@@ -86,7 +86,7 @@ namespace SimpleConsole
                 // E.g "Set the temperature to 30 degrees celsius" will return "30 C"
                 NumberWithUnitRecognizer.RecognizeTemperature(query, culture),
 
-                // Datetime recognizer This model will find any Date even if its write in colloquial language 
+                // Datetime recognizer This model will find any Date even if its write in colloquial language
                 // E.g "I'll go back 8pm today" will return "2017-10-04 20:00:00"
                 DateTimeRecognizer.RecognizeDateTime(query, culture),
 
@@ -105,7 +105,7 @@ namespace SimpleConsole
                 // Hashtag recognizer will find all the hash tag usages
                 // E.g "task #123"
                 SequenceRecognizer.RecognizeHashtag(query, culture),
-                
+
                 // Email recognizer will find all the emails
                 // E.g "a@b.com"
                 SequenceRecognizer.RecognizeEmail(query, culture),
@@ -123,14 +123,14 @@ namespace SimpleConsole
                 ChoiceRecognizer.RecognizeBoolean(query, culture)
                 );
         }
-        
+
         private static IEnumerable<ModelResult> MergeResults(params List<ModelResult>[] results)
         {
             return results.SelectMany(o => o);
         }
 
         /// <summary>
-        /// Introduction
+        /// Introduction.
         /// </summary>
         private static void ShowIntro()
         {

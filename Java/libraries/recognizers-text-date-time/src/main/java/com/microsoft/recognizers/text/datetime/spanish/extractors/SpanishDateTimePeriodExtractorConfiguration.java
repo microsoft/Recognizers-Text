@@ -26,7 +26,7 @@ public class SpanishDateTimePeriodExtractorConfiguration extends BaseOptionsConf
     implements IDateTimePeriodExtractorConfiguration {
 
     public static final Pattern weekDayRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.WeekDayRegex);
-    public static final Pattern TimeNumberCombinedWithUnit = RegExpUtility.getSafeRegExp(SpanishDateTime.TimeNumberCombinedWithUnit);
+    public static final Pattern NumberCombinedWithUnit = RegExpUtility.getSafeRegExp(SpanishDateTime.DateTimePeriodNumberCombinedWithUnit);
     public static final Pattern RestOfDateTimeRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.RestOfDateTimeRegex);
     public static final Pattern PeriodTimeOfDayWithDateRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PeriodTimeOfDayWithDateRegex);
     public static final Pattern RelativeTimeUnitRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.RelativeTimeUnitRegex);
@@ -173,7 +173,7 @@ public class SpanishDateTimePeriodExtractorConfiguration extends BaseOptionsConf
 
     @Override
     public Pattern getNumberCombinedWithUnit() {
-        return TimeNumberCombinedWithUnit;
+        return NumberCombinedWithUnit;
     }
 
     @Override

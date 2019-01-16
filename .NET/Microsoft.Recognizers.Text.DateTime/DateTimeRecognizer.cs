@@ -7,8 +7,6 @@ using Microsoft.Recognizers.Text.DateTime.French;
 using Microsoft.Recognizers.Text.DateTime.German;
 using Microsoft.Recognizers.Text.DateTime.Portuguese;
 using Microsoft.Recognizers.Text.DateTime.Spanish;
-using Microsoft.Recognizers.Text.DateTime.Italian;
-using Microsoft.Recognizers.Text.DateTime.Japanese;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
@@ -34,16 +32,16 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
         }
 
-        public DateTimeModel GetDateTimeModel(string culture = null, bool fallbackToDefaultCulture = true)
-        {
-            return GetModel<DateTimeModel>(culture, fallbackToDefaultCulture);
-        }
-
         public static List<ModelResult> RecognizeDateTime(string query, string culture, DateTimeOptions options = DateTimeOptions.None, System.DateTime? refTime = null, bool fallbackToDefaultCulture = true)
         {
             var recognizer = new DateTimeRecognizer(options);
             var model = recognizer.GetDateTimeModel(culture, fallbackToDefaultCulture);
             return model.Parse(query, refTime ?? System.DateTime.Now);
+        }
+
+        public DateTimeModel GetDateTimeModel(string culture = null, bool fallbackToDefaultCulture = true)
+        {
+            return GetModel<DateTimeModel>(culture, fallbackToDefaultCulture);
         }
 
         protected override void InitializeConfiguration()
@@ -108,11 +106,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             //             new DutchMergedExtractorConfiguration(new BaseOptionsConfiguration(options, dmyDateFormat: true)))));
 
             // TODO to be uncommented when all tests for Japanese are green.
-            //RegisterModel<DateTimeModel>(
+            // RegisterModel<DateTimeModel>(
             //    Culture.Japanese,
             //    options => new DateTimeModel(
             //      new FullDateTimeParser(new JapaneseDateTimeParserConfiguration(options)),
-            //      new JapaneseMergedExtractor(options))); 
+            //      new JapaneseMergedExtractor(options)));
         }
     }
 }

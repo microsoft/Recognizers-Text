@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.IO;
@@ -860,12 +860,12 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
     {
         public static bool IsNotSupported(this TestModel testSpec)
         {
-            return testSpec.NotSupported.HasFlag(Platform.dotNet);
+            return testSpec.NotSupported.HasFlag(Platform.DotNet);
         }
 
         public static bool IsNotSupportedByDesign(this TestModel testSpec)
         {
-            return testSpec.NotSupportedByDesign.HasFlag(Platform.dotNet);
+            return testSpec.NotSupportedByDesign.HasFlag(Platform.DotNet);
         }
 
         public static DateObject GetReferenceDateTime(this TestModel testSpec)
