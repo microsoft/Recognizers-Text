@@ -5,6 +5,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
 using DateObject = System.DateTime;
+using TimeExtractorJpn = Microsoft.Recognizers.Text.DateTime.Japanese.TimeExtractor;
 
 using Microsoft.Recognizers.Definitions.Japanese;
 
@@ -16,12 +17,20 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
         private delegate TimeResult TimeFunction(DateTimeExtra<TimeType> extra);
 
+        private static TimeFunctions timeFunc = new TimeFunctions
+        {
+            NumberDictionary = DateTimeDefinitions.TimeNumberDictionary,
+            LowBoundDesc = DateTimeDefinitions.TimeLowBoundDesc,
+            DayDescRegex = TimeExtractorJpn.DayDescRegex,
+
+        };
+
         private static readonly Dictionary<TimeType, TimeFunction> FunctionMap =
             new Dictionary<TimeType, TimeFunction>
             {
-                {TimeType.DigitTime, TimeFunctions.HandleDigit},
-                {TimeType.CountryTime, TimeFunctions.HandleJapanese},
-                {TimeType.LessTime, TimeFunctions.HandleLess}
+                {TimeType.DigitTime, timeFunc.HandleDigit},
+                {TimeType.CountryTime, timeFunc.HandleJapanese},
+                {TimeType.LessTime, timeFunc.HandleLess}
             };
 
         private readonly IFullDateTimeParserConfiguration config;
@@ -49,7 +58,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             if (extra != null)
             {
                 var timeResult = FunctionMap[extra.Type](extra);
-                var parseResult = TimeFunctions.PackTimeResult(extra, timeResult, referenceTime);
+                var parseResult = timeFunc.PackTimeResult(extra, timeResult, referenceTime);
                 if (parseResult.Success)
                 {
                     parseResult.FutureResolution = new Dictionary<string, string>

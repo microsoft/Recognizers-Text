@@ -17,6 +17,14 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             config = configuration;
         }
 
+        private static TimeFunctions timeFunc = new TimeFunctions
+        {
+            NumberDictionary = DateTimeDefinitions.TimeNumberDictionary,
+            LowBoundDesc = DateTimeDefinitions.TimeLowBoundDesc,
+            DayDescRegex = TimeExtractorChs.DayDescRegex,
+
+        };
+
         public ParseResult Parse(ExtractResult extResult)
         {
             return this.Parse(extResult, DateObject.Now);
@@ -39,7 +47,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
                 if (!parseResult.Success)
                 {
-                    parseResult = TimePeriodFunctions.Handle(this.config.TimeParser, extra, referenceTime);
+                    parseResult = TimePeriodFunctions.Handle(this.config.TimeParser, extra, referenceTime, timeFunc);
                 }
 
                 if (parseResult.Success)

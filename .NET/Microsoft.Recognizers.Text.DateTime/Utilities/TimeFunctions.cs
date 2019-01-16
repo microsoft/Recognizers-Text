@@ -1,5 +1,4 @@
-﻿using Microsoft.Recognizers.Definitions.Chinese;
-using Microsoft.Recognizers.Text.DateTime.Chinese;
+﻿using Microsoft.Recognizers.Text.DateTime.Chinese;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,11 +10,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
 {
     public class TimeFunctions
     {
-        public static readonly Dictionary<char, int> NumberDictionary = DateTimeDefinitions.TimeNumberDictionary;
+        public Dictionary<char, int> NumberDictionary { get; set; }
 
-        public static readonly Dictionary<string, int> LowBoundDesc = DateTimeDefinitions.TimeLowBoundDesc;
+        public Dictionary<string, int> LowBoundDesc { get; set; }
 
-        public static TimeResult HandleLess(DateTimeExtra<TimeType> extra)
+        public string DayDescRegex { get; set; }
+
+        public TimeResult HandleLess(DateTimeExtra<TimeType> extra)
         {
             var hour = MatchToValue(extra.NamedEntity[Constants.HourGroupName].Value);
             var quarter = MatchToValue(extra.NamedEntity["quarter"].Value);
@@ -37,24 +38,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
             };
         }
 
-        public static TimeResult HandleChinese(DateTimeExtra<TimeType> extra)
-        {
-            //Dictionary<string, int> LowBoundDesc = Microsoft.Recognizers.Definitions.Chinese.DateTimeDefinitions.TimeLowBoundDesc;
-            var hour = MatchToValue(extra.NamedEntity[Constants.HourGroupName].Value);
-            var quarter = MatchToValue(extra.NamedEntity["quarter"].Value);
-            var minute = MatchToValue(extra.NamedEntity[Constants.MinuteGroupName].Value);
-            var second = MatchToValue(extra.NamedEntity[Constants.SecondGroupName].Value);
-            minute = !string.IsNullOrEmpty(extra.NamedEntity["half"].Value) ? 30 : quarter != -1 ? quarter * 15 : minute;
-
-            return new TimeResult
-            {
-                Hour = hour,
-                Minute = minute,
-                Second = second
-            };
-        }
-
-        public static TimeResult HandleJapanese(DateTimeExtra<TimeType> extra)
+        public TimeResult HandleChinese(DateTimeExtra<TimeType> extra)
         {
             var hour = MatchToValue(extra.NamedEntity[Constants.HourGroupName].Value);
             var quarter = MatchToValue(extra.NamedEntity["quarter"].Value);
@@ -70,7 +54,23 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
             };
         }
 
-        public static TimeResult HandleDigit(DateTimeExtra<TimeType> extra)
+        public TimeResult HandleJapanese(DateTimeExtra<TimeType> extra)
+        {
+            var hour = MatchToValue(extra.NamedEntity[Constants.HourGroupName].Value);
+            var quarter = MatchToValue(extra.NamedEntity["quarter"].Value);
+            var minute = MatchToValue(extra.NamedEntity[Constants.MinuteGroupName].Value);
+            var second = MatchToValue(extra.NamedEntity[Constants.SecondGroupName].Value);
+            minute = !string.IsNullOrEmpty(extra.NamedEntity["half"].Value) ? 30 : quarter != -1 ? quarter * 15 : minute;
+
+            return new TimeResult
+            {
+                Hour = hour,
+                Minute = minute,
+                Second = second
+            };
+        }
+
+        public TimeResult HandleDigit(DateTimeExtra<TimeType> extra)
         {
             var timeResult = new TimeResult
             {
@@ -81,7 +81,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
             return timeResult;
         }
 
-        public static DateTimeResolutionResult PackTimeResult(DateTimeExtra<TimeType> extra, TimeResult timeResult, DateObject referenceTime)
+        public DateTimeResolutionResult PackTimeResult(DateTimeExtra<TimeType> extra, TimeResult timeResult, DateObject referenceTime)
         {
             //Find if there is a description
             var noDesc = true;
@@ -134,7 +134,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
             return dtResult;
         }
 
-        public static int MatchToValue(string text)
+        public int MatchToValue(string text)
         {
             if (string.IsNullOrEmpty(text))
             {
@@ -171,7 +171,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
             return tempValue;
         }
 
-        public static void AddDesc(TimeResult result, string dayDesc)
+        public void AddDesc(TimeResult result, string dayDesc)
         {
             if (string.IsNullOrEmpty(dayDesc))
             {
@@ -192,15 +192,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
         }
 
         // Normalize cases like "p.m.", "p m" to canonical form "pm"
-        private static string NormalizeDayDesc(string dayDesc)
+        private string NormalizeDayDesc(string dayDesc)
         {
             return dayDesc.Replace(" ", string.Empty).Replace(".", string.Empty);
         }
 
-        public static TimeResult GetShortLeft(string text)
+        public TimeResult GetShortLeft(string text)
         {
             string des = null;
-            if (Regex.IsMatch(text, TimeExtractorChs.DayDescRegex))
+            if (Regex.IsMatch(text, DayDescRegex))
             {
                 des = text.Substring(0, text.Length - 1);
             }

@@ -1,4 +1,6 @@
-﻿using Microsoft.Recognizers.Text.DateTime.Utilities;
+﻿using Microsoft.Recognizers.Definitions.Japanese;
+using Microsoft.Recognizers.Text.DateTime.Japanese;
+using Microsoft.Recognizers.Text.DateTime.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -14,6 +16,14 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         {
             config = configuration;
         }
+
+        private static TimeFunctions timeFunc = new TimeFunctions
+        {
+            NumberDictionary = DateTimeDefinitions.TimeNumberDictionary,
+            LowBoundDesc = DateTimeDefinitions.TimeLowBoundDesc,
+            DayDescRegex = TimeExtractor.DayDescRegex,
+
+        };
 
         public ParseResult Parse(ExtractResult extResult)
         {
@@ -37,7 +47,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
                 if (!parseResult.Success)
                 {
-                    parseResult = TimePeriodFunctions.Handle(this.config.TimeParser, extra, referenceTime);
+                    parseResult = TimePeriodFunctions.Handle(this.config.TimeParser, extra, referenceTime, timeFunc);
                 }
 
                 if (parseResult.Success)

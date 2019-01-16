@@ -8,7 +8,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
 {
     public static class TimePeriodFunctions
     {
-        public static DateTimeResolutionResult Handle(IDateTimeParser timeParser, DateTimeExtra<PeriodType> extra, DateObject refTime)
+        public static DateTimeResolutionResult Handle(IDateTimeParser timeParser, DateTimeExtra<PeriodType> extra, DateObject refTime, TimeFunctions timeFunc)
         {
             //Left is a time
             var left = extra.NamedEntity["left"];
@@ -29,7 +29,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
             else
             {
                 // 下午四到五点
-                leftResult = TimeFunctions.GetShortLeft(left.Value);
+                leftResult = timeFunc.GetShortLeft(left.Value);
             }
 
             //Right is a time
