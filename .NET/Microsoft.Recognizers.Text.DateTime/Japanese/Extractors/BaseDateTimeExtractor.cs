@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Microsoft.Recognizers.Text.DateTime.Utilities;
+using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -85,12 +86,5 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             }
             return result;
         }
-    }
-
-    public class DateTimeExtra<T>
-    {
-        public GroupCollection NamedEntity { get; set; }
-
-        public T Type { get; set; }
     }
 }

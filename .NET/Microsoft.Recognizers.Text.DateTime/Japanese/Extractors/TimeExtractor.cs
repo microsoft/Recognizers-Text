@@ -6,24 +6,6 @@ using Microsoft.Recognizers.Definitions.Japanese;
 
 namespace Microsoft.Recognizers.Text.DateTime.Japanese
 {
-    public enum TimeType
-    {
-        /// <summary>
-        /// 十二点二十三分五十八秒,12点23分53秒
-        /// </summary>
-        JapaneseTime,
-
-        /// <summary>
-        /// 差五分十二点
-        /// </summary>
-        LessTime,
-
-        /// <summary>
-        /// 大约早上10:00
-        /// </summary>
-        DigitTime,
-    }
-
     public class TimeExtractor : BaseDateTimeExtractor<TimeType>
     {
         // e.g: 早上九点
@@ -35,7 +17,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             {
                 {
                     new Regex(DateTimeDefinitions.TimeRegexes1, RegexOptions.Singleline),
-                    TimeType.JapaneseTime
+                    TimeType.CountryTime
                 },
                 {
                     new Regex(DateTimeDefinitions.TimeRegexes2, RegexOptions.Singleline),

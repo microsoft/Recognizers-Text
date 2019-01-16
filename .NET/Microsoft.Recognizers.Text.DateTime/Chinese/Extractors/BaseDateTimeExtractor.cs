@@ -5,6 +5,7 @@ using System.Text.RegularExpressions;
 using DateObject = System.DateTime;
 
 using Microsoft.Recognizers.Text.Number;
+using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
@@ -87,12 +88,5 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             }
             return result;
         }
-    }
-
-    public class DateTimeExtra<T>
-    {
-        public GroupCollection NamedEntity { get; set; }
-
-        public T Type { get; set; }
     }
 }
