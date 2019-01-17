@@ -17,7 +17,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
             {
                 Year = d.Year,
                 Month = d.Month,
-                DayOfMonth = d.Day
+                DayOfMonth = d.Day,
             });
             Assert.AreEqual(expected, TimexCreator.Today());
         }
@@ -37,7 +37,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
             {
                 Year = d.Year,
                 Month = d.Month,
-                DayOfMonth = d.Day
+                DayOfMonth = d.Day,
             });
             Assert.AreEqual(expected, TimexCreator.Tomorrow());
         }
@@ -57,7 +57,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
             {
                 Year = d.Year,
                 Month = d.Month,
-                DayOfMonth = d.Day
+                DayOfMonth = d.Day,
             });
             Assert.AreEqual(expected, TimexCreator.Yesterday());
         }
@@ -77,7 +77,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
                 Year = d.Year,
                 Month = d.Month,
                 DayOfMonth = d.Day,
-                Days = 7
+                Days = 7,
             });
             Assert.AreEqual(expected, TimexCreator.WeekFromToday());
         }
@@ -98,7 +98,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
                 Year = d.Year,
                 Month = d.Month,
                 DayOfMonth = d.Day,
-                Days = 7
+                Days = 7,
             });
             Assert.AreEqual(expected, TimexCreator.WeekBackFromToday());
         }
@@ -124,7 +124,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
         {
             Assert.AreEqual("(2017-10-09,2017-10-16,P7D)", TimexCreator.NextWeek(new System.DateTime(2017, 10, 5)));
         }
-        
+
         [TestMethod]
         public void DataTypes_Creator_lastWeek()
         {
@@ -151,7 +151,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
                 Year = d.Year,
                 Month = d.Month,
                 DayOfMonth = d.Day,
-                Days = 14
+                Days = 14,
             });
             Assert.AreEqual(expected, TimexCreator.NextWeeksFromToday(2));
         }

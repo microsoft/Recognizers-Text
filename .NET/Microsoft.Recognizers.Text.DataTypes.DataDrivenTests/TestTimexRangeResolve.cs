@@ -14,7 +14,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
         public void DataTypes_RangeResolve_daterange_definite()
         {
             var candidates = new[] { "2017-09-28" };
-            var constraints = new[] { (new TimexProperty { Year = 2017, Month = 9, DayOfMonth = 27, Days = 2 }).TimexValue };
+            var constraints = new[] { new TimexProperty { Year = 2017, Month = 9, DayOfMonth = 27, Days = 2 }.TimexValue };
 
             var result = TimexRangeResolver.Evaluate(candidates, constraints);
 
@@ -40,7 +40,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
         public void DataTypes_RangeResolve_daterange_month_and_date()
         {
             var candidates = new[] { "XXXX-05-29" };
-            var constraints = new[] { (new TimexProperty { Year = 2006, Month = 1, DayOfMonth = 1, Years = 2 }).TimexValue };
+            var constraints = new[] { new TimexProperty { Year = 2006, Month = 1, DayOfMonth = 1, Years = 2 }.TimexValue };
 
             var result = TimexRangeResolver.Evaluate(candidates, constraints);
 
@@ -145,12 +145,12 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
             var candidates = new[]
             {
                 "XXXX-WXX-2",
-                "XXXX-WXX-4"
+                "XXXX-WXX-4",
             };
             var constraints = new[]
             {
                 "(2017-09-01,2017-09-08,P7D)",
-                "(2017-10-01,2017-10-08,P7D)"
+                "(2017-10-01,2017-10-08,P7D)",
             };
 
             var result = TimexRangeResolver.Evaluate(candidates, constraints);
@@ -180,7 +180,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
         public void DataTypes_RangeResolve_timerange_time_within_range()
         {
             var candidates = new[] { "T16" };
-            var constraints = new[] { (new TimexProperty { Hour = 14, Hours = 4 }).TimexValue };
+            var constraints = new[] { new TimexProperty { Hour = 14, Hours = 4 }.TimexValue };
 
             var result = TimexRangeResolver.Evaluate(candidates, constraints);
 
@@ -193,7 +193,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
         public void DataTypes_RangeResolve_timerange_multiple_times_within_range()
         {
             var candidates = new[] { "T12", "T16", "T16:30", "T17", "T18" };
-            var constraints = new[] { (new TimexProperty { Hour = 14, Hours = 4 }).TimexValue };
+            var constraints = new[] { new TimexProperty { Hour = 14, Hours = 4 }.TimexValue };
 
             var result = TimexRangeResolver.Evaluate(candidates, constraints);
 
@@ -207,7 +207,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
         [TestMethod]
         public void DataTypes_RangeResolve_timerange_time_with_overlapping_ranges()
         {
-            var constraints = new List<string> { (new TimexProperty { Hour = 16, Hours = 4 }).TimexValue };
+            var constraints = new List<string> { new TimexProperty { Hour = 16, Hours = 4 }.TimexValue };
 
             var result1 = TimexRangeResolver.Evaluate(new[] { "T19" }, constraints);
 
@@ -215,7 +215,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
             Assert.IsTrue(r1.Contains("T19"));
             Assert.AreEqual(1, r1.Count);
 
-            constraints.Add((new TimexProperty { Hour = 14, Hours = 4 }).TimexValue);
+            constraints.Add(new TimexProperty { Hour = 14, Hours = 4 }.TimexValue);
 
             var result2 = TimexRangeResolver.Evaluate(new[] { "T19" }, constraints);
 
@@ -232,7 +232,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
         [TestMethod]
         public void DataTypes_RangeResolve_multiple_times_with_overlapping_ranges()
         {
-            var constraints = new List<string> { (new TimexProperty { Hour = 16, Hours = 4 }).TimexValue };
+            var constraints = new List<string> { new TimexProperty { Hour = 16, Hours = 4 }.TimexValue };
 
             var result1 = TimexRangeResolver.Evaluate(new[] { "T19", "T19:30" }, constraints);
 
@@ -241,7 +241,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
             Assert.IsTrue(r1.Contains("T19:30"));
             Assert.AreEqual(2, r1.Count);
 
-            constraints.Add((new TimexProperty { Hour = 14, Hours = 4 }).TimexValue);
+            constraints.Add(new TimexProperty { Hour = 14, Hours = 4 }.TimexValue);
 
             var result2 = TimexRangeResolver.Evaluate(new[] { "T19", "T19:30" }, constraints);
 
@@ -259,7 +259,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
         [TestMethod]
         public void DataTypes_RangeResolve_filter_duplicate()
         {
-            var constraints = new List<string> { (new TimexProperty { Hour = 16, Hours = 4 }).TimexValue };
+            var constraints = new List<string> { new TimexProperty { Hour = 16, Hours = 4 }.TimexValue };
 
             var result = TimexRangeResolver.Evaluate(new[] { "T16", "T16", "T16" }, constraints);
 
@@ -273,7 +273,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
         {
             var constraints = new List<string>
             {
-                (new TimexProperty { Year = 2017, Month = 9, DayOfMonth = 27, Days = 2 }).TimexValue
+                new TimexProperty { Year = 2017, Month = 9, DayOfMonth = 27, Days = 2 }.TimexValue,
             };
 
             var result = TimexRangeResolver.Evaluate(new[] { "2017-09-28T18:30:01" }, constraints);
@@ -300,7 +300,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
         {
             var constraints = new List<string>
             {
-                (new TimexProperty { Year = 2006, Month = 1, DayOfMonth = 1, Years = 2 }).TimexValue
+                new TimexProperty { Year = 2006, Month = 1, DayOfMonth = 1, Years = 2 }.TimexValue,
             };
 
             var result = TimexRangeResolver.Evaluate(new[] { "XXXX-05-29T19:30" }, constraints);
@@ -347,7 +347,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
             var constraints = new List<string>
             {
                 "(2017-09-01,2017-09-08,P7D)",
-                "(2017-10-01,2017-10-08,P7D)"
+                "(2017-10-01,2017-10-08,P7D)",
             };
 
             var result = TimexRangeResolver.Evaluate(new[] { "XXXX-WXX-3T01:02" }, constraints);
@@ -363,8 +363,8 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
         {
             var constraints = new List<string>
             {
-                (new TimexProperty { Year = 2017, Month = 10, DayOfMonth = 5, Days = 7 }).TimexValue,
-                (new TimexProperty { Hour = 0, Minute = 0, Second = 0, Hours = 24 }).TimexValue
+                new TimexProperty { Year = 2017, Month = 10, DayOfMonth = 5, Days = 7 }.TimexValue,
+                new TimexProperty { Hour = 0, Minute = 0, Second = 0, Hours = 24 }.TimexValue,
             };
 
             var result = TimexRangeResolver.Evaluate(new[] { "XXXX-WXX-3T04", "XXXX-WXX-3T16" }, constraints);
@@ -380,8 +380,8 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
         {
             var constraints = new List<string>
             {
-                (new TimexProperty { Year = 2017, Month = 10, DayOfMonth = 5, Days = 7 }).TimexValue,
-                (new TimexProperty { Hour = 12, Minute = 0, Second = 0, Hours = 8 }).TimexValue
+                new TimexProperty { Year = 2017, Month = 10, DayOfMonth = 5, Days = 7 }.TimexValue,
+                new TimexProperty { Hour = 12, Minute = 0, Second = 0, Hours = 8 }.TimexValue,
             };
 
             var result = TimexRangeResolver.Evaluate(new[] { "XXXX-WXX-3T04", "XXXX-WXX-3T16" }, constraints);
@@ -414,7 +414,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
             {
                 "2017",
                 "T19:30:00",
-                "T20:01:01"
+                "T20:01:01",
             };
 
             var result = TimexRangeResolver.Evaluate(new[] { "XXXX-05-29" }, constraints);
@@ -430,7 +430,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
         {
             var constraints = new List<string>
             {
-                "2017-12-05T19:30:00"
+                "2017-12-05T19:30:00",
             };
 
             var result = TimexRangeResolver.Evaluate(new[] { "PT5M" }, constraints);
@@ -445,7 +445,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
         {
             var constraints = new List<string>
             {
-                "T19:30:00"
+                "T19:30:00",
             };
 
             var result = TimexRangeResolver.Evaluate(new[] { "PT5M" }, constraints);
@@ -474,7 +474,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
         {
             var constraints = new List<string>
             {
-                (new TimexProperty { Year = 2017, Month = 10, DayOfMonth = 5, Days = 7 }).TimexValue
+                new TimexProperty { Year = 2017, Month = 10, DayOfMonth = 5, Days = 7 }.TimexValue,
             };
 
             var result = TimexRangeResolver.Evaluate(new[] { "PT5M" }, constraints);
@@ -491,7 +491,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
             {
                 "(2018-06-04,2018-06-11,P7D)",  // e.g. this week
                 "(2018-06-11,2018-06-18,P7D)",  // e.g. next week
-                TimexCreator.Evening
+                TimexCreator.Evening,
             };
 
             var result = TimexRangeResolver.Evaluate(candidates, constraints);
@@ -509,7 +509,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
             var constraints = new[]
             {
                 "(2018-06-04,2018-06-11,P7D)",  // e.g. this week
-                "(2018-06-11,2018-06-18,P7D)"   // e.g. next week
+                "(2018-06-11,2018-06-18,P7D)",   // e.g. next week
             };
 
             var result = TimexRangeResolver.Evaluate(candidates, constraints);
@@ -528,7 +528,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
             {
                 "(2018-06-04,2018-06-11,P7D)",  // e.g. this week
                 "(2018-06-11,2018-06-18,P7D)",  // e.g. next week
-                "(T18,T22,PT4H)"
+                "(T18,T22,PT4H)",
             };
 
             var result = TimexRangeResolver.Evaluate(candidates, constraints);
@@ -547,7 +547,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
             {
                 "(2018-06-04,2018-06-11,P7D)",  // e.g. this week
                 "(2018-06-11,2018-06-18,P7D)",  // e.g. next week
-                "(T15,T19,PT4H)"
+                "(T15,T19,PT4H)",
             };
 
             var result = TimexRangeResolver.Evaluate(candidates, constraints);
@@ -566,7 +566,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
             {
                 "(2018-06-04,2018-06-11,P7D)",  // e.g. this week
                 "(2018-06-11,2018-06-18,P7D)",  // e.g. next week
-                TimexCreator.Morning
+                TimexCreator.Morning,
             };
 
             var result = TimexRangeResolver.Evaluate(candidates, constraints);
@@ -582,7 +582,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
             {
                 "(2018-06-04,2018-06-11,P7D)",  // e.g. this week
                 "(2018-06-11,2018-06-18,P7D)",  // e.g. next week
-                TimexCreator.Evening
+                TimexCreator.Evening,
             };
 
             var result = TimexRangeResolver.Evaluate(candidates, constraints);

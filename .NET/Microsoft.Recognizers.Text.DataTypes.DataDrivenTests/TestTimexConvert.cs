@@ -116,6 +116,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
         {
             Assert.AreEqual("summer 1999", TimexConvert.ConvertTimexToString(new TimexProperty("1999-SU")));
         }
+
         public void DataTypes_Convert_Season()
         {
             Assert.AreEqual("summer", TimexConvert.ConvertTimexToString(new TimexProperty("SU")));
@@ -170,7 +171,8 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
         {
             // date + time + duration
             var timex = new TimexProperty("(2017-09-08T21:19:29,2017-09-08T21:24:29,PT5M)");
-            // TODO 
+
+            // TODO
         }
 
         [TestMethod]
@@ -178,6 +180,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
         {
             // date + duration
             var timex = new TimexProperty("(XXXX-WXX-3,XXXX-WXX-6,P3D)");
+
             // TODO
         }
 
