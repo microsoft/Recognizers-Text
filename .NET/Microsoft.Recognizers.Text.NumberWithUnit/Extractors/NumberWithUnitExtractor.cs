@@ -309,12 +309,10 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
         protected StringMatcher BuildMatcherFromSet(IEnumerable<string> collection, bool ignoreCase = true)
         {
             StringMatcher matcher = new StringMatcher(MatchStrategy.TrieTree, new NumberWithUnitTokenizer());
-            List<string> matcherList = new List<string>();
-
-            matcherList = collection.SelectMany(words =>
+            List<string> matchTerms = collection.SelectMany(words =>
                 words.Trim().Split('|').Where(word => !string.IsNullOrWhiteSpace(word)).Distinct()).ToList();
 
-            matcher.Init(matcherList);
+            matcher.Init(matchTerms);
 
             return matcher;
         }
