@@ -1135,7 +1135,6 @@
   },
   {
     "Input": "Hola Cortana- programa una reunión con Jennifer. Necesito una reunión de 30 minutos este viernes por la tarde",
-	"NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -1222,7 +1221,6 @@
   },
   {
     "Input": "Ocurrirá el 1.1.2015 entre 10 y 11:30",
-	"NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
