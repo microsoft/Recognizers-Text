@@ -4,10 +4,25 @@ namespace Microsoft.Recognizers.Text.DateTime
 {
     public enum DatePeriodTimexType
     {
+        /// <summary>
+        /// Represents a day Period
+        /// </summary>
         ByDay,
+
+        /// <summary>
+        /// Represents a week Period
+        /// </summary>
         ByWeek,
+
+        /// <summary>
+        /// Represents a month Period
+        /// </summary>
         ByMonth,
-        ByYear
+
+        /// <summary>
+        /// Represents a year Period
+        /// </summary>
+        ByYear,
     }
 
     public enum PeriodType

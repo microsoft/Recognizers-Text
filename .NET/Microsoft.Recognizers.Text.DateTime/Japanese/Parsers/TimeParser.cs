@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Definitions.Japanese;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
 using DateObject = System.DateTime;
 using TimeExtractorJpn = Microsoft.Recognizers.Text.DateTime.Japanese.TimeExtractor;
-
-using Microsoft.Recognizers.Definitions.Japanese;
 
 namespace Microsoft.Recognizers.Text.DateTime.Japanese
 {
@@ -15,22 +14,19 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
     {
         public static readonly IDateTimeExtractor TimeExtractor = new TimeExtractor();
 
-        private delegate TimeResult TimeFunction(DateTimeExtra<TimeType> extra);
-
         private static TimeFunctions timeFunc = new TimeFunctions
         {
             NumberDictionary = DateTimeDefinitions.TimeNumberDictionary,
             LowBoundDesc = DateTimeDefinitions.TimeLowBoundDesc,
             DayDescRegex = TimeExtractorJpn.DayDescRegex,
-
         };
 
         private static readonly Dictionary<TimeType, TimeFunction> FunctionMap =
             new Dictionary<TimeType, TimeFunction>
             {
-                {TimeType.DigitTime, timeFunc.HandleDigit},
-                {TimeType.CountryTime, timeFunc.HandleJapanese},
-                {TimeType.LessTime, timeFunc.HandleLess}
+                { TimeType.DigitTime, timeFunc.HandleDigit },
+                { TimeType.CountryTime, timeFunc.HandleJapanese },
+                { TimeType.LessTime, timeFunc.HandleLess },
             };
 
         private readonly IFullDateTimeParserConfiguration config;
@@ -39,6 +35,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         {
             config = configuration;
         }
+
+        private delegate TimeResult TimeFunction(DateTimeExtra<TimeType> extra);
 
         public ParseResult Parse(ExtractResult extResult)
         {
@@ -63,12 +61,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 {
                     parseResult.FutureResolution = new Dictionary<string, string>
                     {
-                        {TimeTypeConstants.TIME, DateTimeFormatUtil.FormatTime((DateObject) parseResult.FutureValue)}
+                        { TimeTypeConstants.TIME, DateTimeFormatUtil.FormatTime((DateObject)parseResult.FutureValue) },
                     };
 
                     parseResult.PastResolution = new Dictionary<string, string>
                     {
-                        {TimeTypeConstants.TIME, DateTimeFormatUtil.FormatTime((DateObject) parseResult.PastValue)}
+                        { TimeTypeConstants.TIME, DateTimeFormatUtil.FormatTime((DateObject)parseResult.PastValue) },
                     };
                 }
 
@@ -80,8 +78,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                     Length = er.Length,
                     Value = parseResult,
                     Data = timeResult,
-                    ResolutionStr = "",
-                    TimexStr = parseResult.Timex
+                    ResolutionStr = string.Empty,
+                    TimexStr = parseResult.Timex,
                 };
 
                 return ret;
@@ -94,6 +92,5 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         {
             return candidateResults;
         }
-
     }
 }

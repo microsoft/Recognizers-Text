@@ -13,22 +13,19 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
     {
         public static readonly IDateTimeExtractor TimeExtractor = new TimeExtractorChs();
 
-        private delegate TimeResult TimeFunction(DateTimeExtra<TimeType> extra);
-
         private static TimeFunctions timeFunc = new TimeFunctions
         {
             NumberDictionary = DateTimeDefinitions.TimeNumberDictionary,
             LowBoundDesc = DateTimeDefinitions.TimeLowBoundDesc,
             DayDescRegex = TimeExtractorChs.DayDescRegex,
-
         };
 
         private static readonly Dictionary<TimeType, TimeFunction> FunctionMap =
             new Dictionary<TimeType, TimeFunction>
             {
-                {TimeType.DigitTime, timeFunc.HandleDigit},
-                {TimeType.CountryTime, timeFunc.HandleChinese},
-                {TimeType.LessTime, timeFunc.HandleLess}
+                { TimeType.DigitTime, timeFunc.HandleDigit },
+                { TimeType.CountryTime, timeFunc.HandleChinese },
+                { TimeType.LessTime, timeFunc.HandleLess },
             };
 
         private readonly IFullDateTimeParserConfiguration config;
@@ -37,6 +34,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         {
             config = configuration;
         }
+
+        private delegate TimeResult TimeFunction(DateTimeExtra<TimeType> extra);
 
         public ParseResult Parse(ExtractResult extResult)
         {
@@ -61,12 +60,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 {
                     parseResult.FutureResolution = new Dictionary<string, string>
                     {
-                        {TimeTypeConstants.TIME, DateTimeFormatUtil.FormatTime((DateObject) parseResult.FutureValue)}
+                        { TimeTypeConstants.TIME, DateTimeFormatUtil.FormatTime((DateObject)parseResult.FutureValue) },
                     };
 
                     parseResult.PastResolution = new Dictionary<string, string>
                     {
-                        {TimeTypeConstants.TIME, DateTimeFormatUtil.FormatTime((DateObject) parseResult.PastValue)}
+                        { TimeTypeConstants.TIME, DateTimeFormatUtil.FormatTime((DateObject)parseResult.PastValue) },
                     };
                 }
 
@@ -78,8 +77,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     Length = er.Length,
                     Value = parseResult,
                     Data = timeResult,
-                    ResolutionStr = "",
-                    TimexStr = parseResult.Timex
+                    ResolutionStr = string.Empty,
+                    TimexStr = parseResult.Timex,
                 };
 
                 return ret;
@@ -92,6 +91,5 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         {
             return candidateResults;
         }
-
     }
 }

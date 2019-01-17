@@ -1,9 +1,9 @@
-﻿using Microsoft.Recognizers.Text.DateTime.Chinese;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Text.DateTime.Chinese;
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Utilities
@@ -24,7 +24,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
             var second = MatchToValue(extra.NamedEntity[Constants.SecondGroupName].Value);
             var less = MatchToValue(extra.NamedEntity[Constants.MinuteGroupName].Value);
 
-            var all = hour * 60 + minute - less;
+            var all = (hour * 60) + minute - less;
             if (all < 0)
             {
                 all += 1440;
@@ -34,7 +34,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
             {
                 Hour = all / 60,
                 Minute = all % 60,
-                Second = second
+                Second = second,
             };
         }
 
@@ -50,7 +50,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
             {
                 Hour = hour,
                 Minute = minute,
-                Second = second
+                Second = second,
             };
         }
 
@@ -66,7 +66,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
             {
                 Hour = hour,
                 Minute = minute,
-                Second = second
+                Second = second,
             };
         }
 
@@ -76,14 +76,14 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
             {
                 Hour = MatchToValue(extra.NamedEntity[Constants.HourGroupName].Value),
                 Minute = MatchToValue(extra.NamedEntity[Constants.MinuteGroupName].Value),
-                Second = MatchToValue(extra.NamedEntity[Constants.SecondGroupName].Value)
+                Second = MatchToValue(extra.NamedEntity[Constants.SecondGroupName].Value),
             };
             return timeResult;
         }
 
         public DateTimeResolutionResult PackTimeResult(DateTimeExtra<TimeType> extra, TimeResult timeResult, DateObject referenceTime)
         {
-            //Find if there is a description
+            // Find if there is a description
             var noDesc = true;
             var dayDesc = extra.NamedEntity["daydesc"]?.Value;
             if (!string.IsNullOrEmpty(dayDesc))
@@ -99,7 +99,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
                 month = referenceTime.Month,
                 year = referenceTime.Year;
 
-            var dtResult = new DateTimeResolutionResult();
+            var dateTimeResult = new DateTimeResolutionResult();
 
             var build = new StringBuilder("T");
             if (timeResult.Hour >= 0)
@@ -119,19 +119,19 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
 
             if (noDesc)
             {
-                //build.Append("ampm");
-                dtResult.Comment = Constants.Comment_AmPm;
+                // build.Append("ampm");
+                dateTimeResult.Comment = Constants.Comment_AmPm;
             }
 
-            dtResult.Timex = build.ToString();
+            dateTimeResult.Timex = build.ToString();
             if (hour == 24)
             {
                 hour = 0;
             }
 
-            dtResult.FutureValue = dtResult.PastValue = DateObject.MinValue.SafeCreateFromValue(year, month, day, hour, min, second);
-            dtResult.Success = true;
-            return dtResult;
+            dateTimeResult.FutureValue = dateTimeResult.PastValue = DateObject.MinValue.SafeCreateFromValue(year, month, day, hour, min, second);
+            dateTimeResult.Success = true;
+            return dateTimeResult;
         }
 
         public int MatchToValue(string text)
@@ -143,7 +143,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
 
             if (Regex.IsMatch(text, @"\d+"))
             {
-                return Int32.Parse(text);
+                return int.Parse(text);
             }
 
             if (text.Length == 1)
@@ -151,7 +151,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
                 return NumberDictionary[text[0]];
             }
 
-            //五十九,十一,二
+            // 五十九,十一,二
             var tempValue = 1;
             foreach (var c in text)
             {
@@ -168,6 +168,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
                     tempValue += NumberDictionary[c];
                 }
             }
+
             return tempValue;
         }
 
@@ -191,12 +192,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
             }
         }
 
-        // Normalize cases like "p.m.", "p m" to canonical form "pm"
-        private string NormalizeDayDesc(string dayDesc)
-        {
-            return dayDesc.Replace(" ", string.Empty).Replace(".", string.Empty);
-        }
-
         public TimeResult GetShortLeft(string text)
         {
             string des = null;
@@ -210,11 +205,17 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
             {
                 Hour = hour,
                 Minute = -1,
-                Second = -1
+                Second = -1,
             };
             AddDesc(timeResult, des);
 
             return timeResult;
+        }
+
+        // Normalize cases like "p.m.", "p m" to canonical form "pm"
+        private string NormalizeDayDesc(string dayDesc)
+        {
+            return dayDesc.Replace(" ", string.Empty).Replace(".", string.Empty);
         }
     }
 }

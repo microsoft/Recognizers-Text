@@ -1,8 +1,8 @@
-﻿using Microsoft.Recognizers.Text.DateTime.Utilities;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Linq;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Text.DateTime.Utilities;
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Japanese
@@ -11,7 +11,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
     {
         internal abstract ImmutableDictionary<Regex, T> Regexes { get; }
 
-        protected virtual string ExtractType { get; } = "";
+        protected virtual string ExtractType { get; } = string.Empty;
 
         public List<ExtractResult> Extract(string text)
         {
@@ -42,7 +42,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                         matched[m.Index + j] = true;
                     }
 
-                    //Keep Source Data for extra information
+                    // Keep Source Data for extra information
                     matchSource.Add(m, collection.Value);
                 }
             }
@@ -71,9 +71,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                                     new DateTimeExtra<T>
                                     {
                                         NamedEntity = srcMatch.Groups,
-                                        Type = matchSource[srcMatch]
+                                        Type = matchSource[srcMatch],
                                     }
-                                    : null
+                                    : null,
                             };
                             result.Add(er);
                         }
@@ -84,6 +84,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                     last = i;
                 }
             }
+
             return result;
         }
     }

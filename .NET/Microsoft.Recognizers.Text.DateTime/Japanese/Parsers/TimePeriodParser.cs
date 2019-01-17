@@ -1,29 +1,28 @@
-﻿using Microsoft.Recognizers.Definitions.Japanese;
-using Microsoft.Recognizers.Text.DateTime.Japanese;
-using Microsoft.Recognizers.Text.DateTime.Utilities;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Microsoft.Recognizers.Definitions.Japanese;
+using Microsoft.Recognizers.Text.DateTime.Japanese;
+using Microsoft.Recognizers.Text.DateTime.Utilities;
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Japanese
 {
     public class TimePeriodParser : IDateTimeParser
     {
+        private static TimeFunctions timeFunc = new TimeFunctions
+        {
+            NumberDictionary = DateTimeDefinitions.TimeNumberDictionary,
+            LowBoundDesc = DateTimeDefinitions.TimeLowBoundDesc,
+            DayDescRegex = TimeExtractor.DayDescRegex,
+        };
+
         private readonly IFullDateTimeParserConfiguration config;
 
         public TimePeriodParser(IFullDateTimeParserConfiguration configuration)
         {
             config = configuration;
         }
-
-        private static TimeFunctions timeFunc = new TimeFunctions
-        {
-            NumberDictionary = DateTimeDefinitions.TimeNumberDictionary,
-            LowBoundDesc = DateTimeDefinitions.TimeLowBoundDesc,
-            DayDescRegex = TimeExtractor.DayDescRegex,
-
-        };
 
         public ParseResult Parse(ExtractResult extResult)
         {
@@ -56,24 +55,24 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                     {
                         {
                             TimeTypeConstants.START_TIME,
-                            DateTimeFormatUtil.FormatTime(((Tuple<DateObject, DateObject>) parseResult.FutureValue).Item1)
+                            DateTimeFormatUtil.FormatTime(((Tuple<DateObject, DateObject>)parseResult.FutureValue).Item1)
                         },
                         {
                             TimeTypeConstants.END_TIME,
-                            DateTimeFormatUtil.FormatTime(((Tuple<DateObject, DateObject>) parseResult.FutureValue).Item2)
-                        }
+                            DateTimeFormatUtil.FormatTime(((Tuple<DateObject, DateObject>)parseResult.FutureValue).Item2)
+                        },
                     };
 
                     parseResult.PastResolution = new Dictionary<string, string>
                     {
                         {
                             TimeTypeConstants.START_TIME,
-                            DateTimeFormatUtil.FormatTime(((Tuple<DateObject, DateObject>) parseResult.PastValue).Item1)
+                            DateTimeFormatUtil.FormatTime(((Tuple<DateObject, DateObject>)parseResult.PastValue).Item1)
                         },
                         {
                             TimeTypeConstants.END_TIME,
-                            DateTimeFormatUtil.FormatTime(((Tuple<DateObject, DateObject>) parseResult.PastValue).Item2)
-                        }
+                            DateTimeFormatUtil.FormatTime(((Tuple<DateObject, DateObject>)parseResult.PastValue).Item2)
+                        },
                     };
                 }
 
@@ -84,8 +83,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                     Type = er.Type,
                     Length = er.Length,
                     Value = parseResult,
-                    ResolutionStr = "",
-                    TimexStr = parseResult.Timex
+                    ResolutionStr = string.Empty,
+                    TimexStr = parseResult.Timex,
                 };
 
                 return ret;
@@ -94,35 +93,39 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             return null;
         }
 
+        public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)
+        {
+            return candidateResults;
+        }
+
         private DateTimeResolutionResult ParseJapaneseTimeOfDay(string text, DateObject referenceTime)
         {
             int day = referenceTime.Day,
                 month = referenceTime.Month,
                 year = referenceTime.Year;
             var ret = new DateTimeResolutionResult();
-            
+
             if (!GetMatchedTimexRange(text, out string timex, out int beginHour, out int endHour, out int endMinSeg))
             {
                 return new DateTimeResolutionResult();
             }
-            
+
             ret.Timex = timex;
             ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(
                DateObject.MinValue.SafeCreateFromValue(year, month, day, beginHour, 0, 0),
-               DateObject.MinValue.SafeCreateFromValue(year, month, day, endHour, endMinSeg, 0)
-               );
+               DateObject.MinValue.SafeCreateFromValue(year, month, day, endHour, endMinSeg, 0));
             ret.Success = true;
-            
+
             return ret;
         }
-        
+
         private bool GetMatchedTimexRange(string text, out string timex, out int beginHour, out int endHour, out int endMin)
         {
             var trimmedText = text.Trim();
             beginHour = 0;
             endHour = 0;
             endMin = 0;
-            
+
             if (trimmedText.EndsWith("上午"))
             {
                 timex = "TMO";
@@ -159,14 +162,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 timex = null;
                 return false;
             }
-            
+
             return true;
         }
-
-        public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)
-        {
-            return candidateResults;
-        }
-
     }
 }

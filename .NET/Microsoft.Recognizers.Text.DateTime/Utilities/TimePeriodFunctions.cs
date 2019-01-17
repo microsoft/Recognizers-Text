@@ -10,7 +10,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
     {
         public static DateTimeResolutionResult Handle(IDateTimeParser timeParser, DateTimeExtra<PeriodType> extra, DateObject refTime, TimeFunctions timeFunc)
         {
-            //Left is a time
+            // Left is a time
             var left = extra.NamedEntity["left"];
             TimeResult leftResult, rightResult = null;
 
@@ -22,7 +22,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
                     Start = left.Index,
                     Length = left.Length,
                     Text = left.Value,
-                    Type = Constants.SYS_DATETIME_TIME
+                    Type = Constants.SYS_DATETIME_TIME,
                 };
                 leftResult = timeParser.Parse(leftExtract, refTime).Data as TimeResult;
             }
@@ -32,24 +32,24 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
                 leftResult = timeFunc.GetShortLeft(left.Value);
             }
 
-            //Right is a time
+            // Right is a time
             var right = extra.NamedEntity["right"];
             var rightExtract = new ExtractResult
             {
                 Start = right.Index,
                 Length = right.Length,
                 Text = right.Value,
-                Type = Constants.SYS_DATETIME_TIME
+                Type = Constants.SYS_DATETIME_TIME,
             };
 
             rightResult = timeParser.Parse(rightExtract, refTime).Data as TimeResult;
 
             var ret = new DateTimeResolutionResult()
             {
-                Success = true
+                Success = true,
             };
 
-            //the right side doesn't contain desc while the left side does
+            // the right side doesn't contain desc while the left side does
             if (rightResult.LowBound == -1 && leftResult.LowBound != -1 && rightResult.Hour <= leftResult.LowBound)
             {
                 rightResult.Hour += Constants.HalfDayHourCount;
@@ -59,7 +59,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
                 month = refTime.Month,
                 year = refTime.Year;
 
-            //determine if the right side time is smaller than the left side, if yes, add one day
+            // determine if the right side time is smaller than the left side, if yes, add one day
             int hour = leftResult.Hour > 0 ? leftResult.Hour : 0,
                 min = leftResult.Minute > 0 ? leftResult.Minute : 0,
                 second = leftResult.Second > 0 ? leftResult.Second : 0;
@@ -162,6 +162,5 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
 
             return spanTimex.ToString();
         }
-
     }
 }

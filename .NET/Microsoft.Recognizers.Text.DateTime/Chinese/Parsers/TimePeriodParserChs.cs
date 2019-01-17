@@ -10,20 +10,19 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
     public class TimePeriodParserChs : IDateTimeParser
     {
+        private static TimeFunctions timeFunc = new TimeFunctions
+        {
+            NumberDictionary = DateTimeDefinitions.TimeNumberDictionary,
+            LowBoundDesc = DateTimeDefinitions.TimeLowBoundDesc,
+            DayDescRegex = TimeExtractorChs.DayDescRegex,
+        };
+
         private readonly IFullDateTimeParserConfiguration config;
 
         public TimePeriodParserChs(IFullDateTimeParserConfiguration configuration)
         {
             config = configuration;
         }
-
-        private static TimeFunctions timeFunc = new TimeFunctions
-        {
-            NumberDictionary = DateTimeDefinitions.TimeNumberDictionary,
-            LowBoundDesc = DateTimeDefinitions.TimeLowBoundDesc,
-            DayDescRegex = TimeExtractorChs.DayDescRegex,
-
-        };
 
         public ParseResult Parse(ExtractResult extResult)
         {
