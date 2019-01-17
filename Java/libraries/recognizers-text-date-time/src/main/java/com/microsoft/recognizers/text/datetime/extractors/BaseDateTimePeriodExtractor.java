@@ -71,7 +71,7 @@ public class BaseDateTimePeriodExtractor implements IDateTimeExtractor {
                         ExtractResult er = ers.get(ers.size() - 1);
                         int begin = er.getStart();
                         String middleStr = beforeStr.substring(begin + er.getLength()).trim().toLowerCase();
-                        if (StringUtility.isNullOrEmpty(middleStr) || RegexExtension.isExactMatch(config.getPrepositionRegex(), middleStr, true)) {
+                        if (StringUtility.isNullOrEmpty(middleStr) || RegExpUtility.getMatches(config.getPrepositionRegex(), middleStr).length > 0) {
                             results.add(new Token(begin, match.index + match.length));
                             hasBeforeDate = true;
                         }
@@ -87,7 +87,7 @@ public class BaseDateTimePeriodExtractor implements IDateTimeExtractor {
                         int begin = er.getStart();
                         int end = er.getStart() + er.getLength();
                         String middleStr = followedStr.substring(0, begin).trim().toLowerCase();
-                        if (StringUtility.isNullOrEmpty(middleStr) || RegexExtension.isExactMatch(config.getPrepositionRegex(), middleStr, true)) {
+                        if (StringUtility.isNullOrEmpty(middleStr) || RegExpUtility.getMatches(config.getPrepositionRegex(), middleStr).length > 0) {
                             results.add(new Token(match.index, match.index + match.length + end));
                         }
                     }
