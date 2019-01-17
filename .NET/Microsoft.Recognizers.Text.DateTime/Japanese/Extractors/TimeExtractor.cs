@@ -17,7 +17,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             {
                 {
                     new Regex(DateTimeDefinitions.TimeRegexes1, RegexOptions.Singleline),
-                    TimeType.CountryTime
+                    TimeType.KanjiTime
                 },
                 {
                     new Regex(DateTimeDefinitions.TimeRegexes2, RegexOptions.Singleline),

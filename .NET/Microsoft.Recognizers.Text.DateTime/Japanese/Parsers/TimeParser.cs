@@ -14,7 +14,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
     {
         public static readonly IDateTimeExtractor TimeExtractor = new TimeExtractor();
 
-        private static TimeFunctions timeFunc = new TimeFunctions
+        private static TimeFunctions timeFunctions = new TimeFunctions
         {
             NumberDictionary = DateTimeDefinitions.TimeNumberDictionary,
             LowBoundDesc = DateTimeDefinitions.TimeLowBoundDesc,
@@ -24,9 +24,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         private static readonly Dictionary<TimeType, TimeFunction> FunctionMap =
             new Dictionary<TimeType, TimeFunction>
             {
-                { TimeType.DigitTime, timeFunc.HandleDigit },
-                { TimeType.CountryTime, timeFunc.HandleJapanese },
-                { TimeType.LessTime, timeFunc.HandleLess },
+                { TimeType.DigitTime, timeFunctions.HandleDigit },
+                { TimeType.KanjiTime, timeFunctions.HandleKanji },
+                { TimeType.LessTime, timeFunctions.HandleLess },
             };
 
         private readonly IFullDateTimeParserConfiguration config;
@@ -56,7 +56,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             if (extra != null)
             {
                 var timeResult = FunctionMap[extra.Type](extra);
-                var parseResult = timeFunc.PackTimeResult(extra, timeResult, referenceTime);
+                var parseResult = timeFunctions.PackTimeResult(extra, timeResult, referenceTime);
                 if (parseResult.Success)
                 {
                     parseResult.FutureResolution = new Dictionary<string, string>

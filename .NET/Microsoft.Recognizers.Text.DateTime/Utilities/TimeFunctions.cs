@@ -38,23 +38,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
             };
         }
 
-        public TimeResult HandleChinese(DateTimeExtra<TimeType> extra)
-        {
-            var hour = MatchToValue(extra.NamedEntity[Constants.HourGroupName].Value);
-            var quarter = MatchToValue(extra.NamedEntity["quarter"].Value);
-            var minute = MatchToValue(extra.NamedEntity[Constants.MinuteGroupName].Value);
-            var second = MatchToValue(extra.NamedEntity[Constants.SecondGroupName].Value);
-            minute = !string.IsNullOrEmpty(extra.NamedEntity["half"].Value) ? 30 : quarter != -1 ? quarter * 15 : minute;
-
-            return new TimeResult
-            {
-                Hour = hour,
-                Minute = minute,
-                Second = second,
-            };
-        }
-
-        public TimeResult HandleJapanese(DateTimeExtra<TimeType> extra)
+        public TimeResult HandleKanji(DateTimeExtra<TimeType> extra)
         {
             var hour = MatchToValue(extra.NamedEntity[Constants.HourGroupName].Value);
             var quarter = MatchToValue(extra.NamedEntity["quarter"].Value);

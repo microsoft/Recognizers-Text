@@ -24,7 +24,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             new Dictionary<TimeType, TimeFunction>
             {
                 { TimeType.DigitTime, timeFunc.HandleDigit },
-                { TimeType.CountryTime, timeFunc.HandleChinese },
+                { TimeType.KanjiTime, timeFunc.HandleKanji },
                 { TimeType.LessTime, timeFunc.HandleLess },
             };
 

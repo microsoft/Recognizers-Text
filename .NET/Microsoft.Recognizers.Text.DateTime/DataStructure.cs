@@ -43,7 +43,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         /// <summary>
         /// 十二点二十三分五十八秒,12点23分53秒
         /// </summary>
-        CountryTime,
+        KanjiTime,
 
         /// <summary>
         /// 差五分十二点
