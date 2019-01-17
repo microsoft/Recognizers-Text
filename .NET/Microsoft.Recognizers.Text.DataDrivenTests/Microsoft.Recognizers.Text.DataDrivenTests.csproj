@@ -42,16 +42,16 @@
     <CodeAnalysisRuleSet>../Recognizers-Text.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup>
-	  <!--
+    <!--
 		Make sure any documentation comments which are included in code get checked for syntax during the build, but do
 		not report warnings for missing comments.
 
 		CS1573: Parameter 'parameter' has no matching param tag in the XML comment for 'parameter' (but other parameters do)
 		CS1591: Missing XML comment for publicly visible type or member 'Type_or_Member'
 	  -->
-	  <DocumentationFile>$(OutputPath)$(AssemblyName).xml</DocumentationFile>
-	  <NoWarn>$(NoWarn),1573,1591,1712</NoWarn>
-	</PropertyGroup>
+    <DocumentationFile>$(OutputPath)$(AssemblyName).xml</DocumentationFile>
+    <NoWarn>$(NoWarn),1573,1591,1712</NoWarn>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.VisualStudio.TestPlatform.TestFramework, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\MSTest.TestFramework.1.2.0\lib\net45\Microsoft.VisualStudio.TestPlatform.TestFramework.dll</HintPath>
@@ -119,14 +119,19 @@
     <Compile Include="Number\TestNumber_Chinese.cs" />
     <Compile Include="Number\TestNumber_Spanish.cs" />
     <Compile Include="Number\TestParserFactory.cs" />
+    <Compile Include="RecognizerExtensions.cs" />
     <Compile Include="Sequence\TestSequenceRecognizerCache.cs" />
     <Compile Include="Sequence\TestSequenceRecognizerInitialization.cs" />
     <Compile Include="Sequence\TestSequence_Portuguese.cs" />
     <Compile Include="Sequence\TestSequence_English.cs" />
     <Compile Include="TestBase.cs" />
-    <Compile Include="TestHelpers.cs" />
+    <Compile Include="TestContextExtensions.cs" />
+    <Compile Include="TestModelExtensions.cs" />
+    <Compile Include="TestResources.cs" />
     <Compile Include="TestModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestResourcesExtensions.cs" />
+    <Compile Include="TestUtils.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
