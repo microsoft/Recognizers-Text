@@ -114,7 +114,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="default.htm" />
-    <Content Include="Global.asax" />
+    <Content Include="WebApiApplication.asax" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -125,8 +125,8 @@
     <Compile Include="Dialogs\QuantityPrompt.cs" />
     <Compile Include="Dialogs\RootDialog.cs" />
     <Compile Include="Controllers\MessagesController.cs" />
-    <Compile Include="Global.asax.cs">
-      <DependentUpon>Global.asax</DependentUpon>
+    <Compile Include="WebApiApplication.asax.cs">
+      <DependentUpon>WebApiApplication.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
