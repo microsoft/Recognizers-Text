@@ -7,16 +7,6 @@ using Microsoft.Recognizers.Text.Choice.Utilities;
 
 namespace Microsoft.Recognizers.Text.Choice
 {
-
-    public class ChoiceExtractDataResult
-    {
-        public IEnumerable<ExtractResult> OtherMatches { get; set; }
-
-        public string Source { get; set; }
-
-        public double Score { get; set; }
-    }
-
     public class ChoiceExtractor : IExtractor
     {
         private readonly IChoiceExtractorConfiguration config;
@@ -66,8 +56,8 @@ namespace Microsoft.Recognizers.Text.Choice
                             {
                                 Source = text,
                                 Score = topScore,
-                                OtherMatches = new List<ExtractResult>()
-                            }
+                                OtherMatches = new List<ExtractResult>(),
+                            },
                         });
                     }
                 }
@@ -94,7 +84,7 @@ namespace Microsoft.Recognizers.Text.Choice
                     }
                 }
 
-                var topResultData = (partialResults[topResultIndex].Data as ChoiceExtractDataResult);
+                var topResultData = partialResults[topResultIndex].Data as ChoiceExtractDataResult;
                 topResultData.OtherMatches = partialResults;
                 results.Add(partialResults[topResultIndex]);
                 partialResults.RemoveAt(topResultIndex);
@@ -105,6 +95,16 @@ namespace Microsoft.Recognizers.Text.Choice
             }
 
             return results;
+        }
+
+        private static int IndexOfToken(List<string> tokens, string token, int startPos)
+        {
+            if (tokens.Count <= startPos)
+            {
+                return -1;
+            }
+
+            return tokens.FindIndex(startPos, x => x == token);
         }
 
         private double MatchValue(IEnumerable<string> source, IEnumerable<string> match, int startPosition)
@@ -135,17 +135,8 @@ namespace Microsoft.Recognizers.Text.Choice
 
                 score = 0.4 + (0.6 * initialScore);
             }
+
             return score;
-        }
-
-        private static int IndexOfToken(List<string> tokens, string token, int startPos)
-        {
-            if (tokens.Count <= startPos)
-            {
-                return -1;
-            }
-
-            return tokens.FindIndex(startPos, x => x == token);
         }
 
         private IList<string> Tokenize(string text)
