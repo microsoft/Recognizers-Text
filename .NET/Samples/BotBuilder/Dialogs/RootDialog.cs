@@ -19,7 +19,7 @@ namespace BotBuilderRecognizerSample
 
         private static string GetCurrentCultureCode()
         {
-            // Use English as default culture since the this sample bot that does not include any localization resources
+            // Use English as default culture since this sample bot that does not include any localization resources
             // Thread.CurrentThread.CurrentUICulture.IetfLanguageTag.ToLower() can be used to obtain the user's preferred culture
             return "en-us";
         }
