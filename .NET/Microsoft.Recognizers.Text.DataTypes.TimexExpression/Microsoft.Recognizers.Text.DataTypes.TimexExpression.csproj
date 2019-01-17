@@ -6,7 +6,17 @@
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <CodeAnalysisRuleSet>../Recognizers-Text.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
+<PropertyGroup>
+	  <!--
+		Make sure any documentation comments which are included in code get checked for syntax during the build, but do
+		not report warnings for missing comments.
 
+		CS1573: Parameter 'parameter' has no matching param tag in the XML comment for 'parameter' (but other parameters do)
+		CS1591: Missing XML comment for publicly visible type or member 'Type_or_Member'
+	  -->
+	  <DocumentationFile>$(OutputPath)$(AssemblyName).xml</DocumentationFile>
+	  <NoWarn>$(NoWarn),1573,1591,1712</NoWarn>
+	</PropertyGroup>
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
     <Exec Command="(robocopy /E /XO /R:3 /W:3 &quot;$(TargetDir)..&quot; &quot;$(ProjectDir)..\build\package&quot; *.*) ^&amp; IF %ERRORLEVEL% LSS 8 SET ERRORLEVEL = 0" />
   </Target>
