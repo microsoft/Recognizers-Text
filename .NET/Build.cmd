@@ -3,7 +3,6 @@ SETLOCAL EnableDelayedExpansion
 
 ECHO.
 ECHO # Building .NET platform
-
 REM vswhere is an optional component for Visual Studio and also installed with Build Tools. 
 REM vswhere will look for Community, Professional, and Enterprise editions of Visual Studio
 REM (only works with Visual Studio 2017 Update 2 or newer installed)
@@ -38,23 +37,29 @@ ECHO.
 ECHO # Restoring NuGet dependencies
 CALL "buildtools\nuget" restore
 
+set configuration=Release
 ECHO.
 ECHO # Generate resources
-CALL "!MsBuildDir!\msbuild" Microsoft.Recognizers.Definitions.Common\Microsoft.Recognizers.Definitions.Common.csproj /t:Clean,Build /p:Configuration=Release
+CALL "!MsBuildDir!\msbuild" Microsoft.Recognizers.Definitions.Common\Microsoft.Recognizers.Definitions.Common.csproj /t:Clean,Build /p:Configuration=%configuration%
 
-ECHO # Building .NET solution (release)
-CALL !MSBuild! Microsoft.Recognizers.Text.sln /t:Clean,Build /p:Configuration=Release
+ECHO # Building .NET solution (%configuration%)
+CALL !MSBuild! Microsoft.Recognizers.Text.sln /t:Clean,Build /p:Configuration=%configuration%
+IF %ERRORLEVEL% NEQ 0 (
+	ECHO # Failed to build.
+	EXIT /b %ERRORLEVEL%
+)
 
 ECHO.
 ECHO # Running .NET Tests
 SET testcontainer=
 FOR /R %%f IN (*Tests.dll) DO (
-	(ECHO "%%f" | FIND /V "\bin\Release" 1>NUL) || (
+	(ECHO "%%f" | FIND /V "\bin\%configuration%" 1>NUL) || (
 		SET testcontainer=!testcontainer! "%%f"
 	)
 )
 ECHO "!VsTestDir!\vstest.console"
 CALL "!VsTestDir!\vstest.console" /Parallel %testcontainer%
+IF %ERRORLEVEL% NEQ 0 GOTO TEST_ERROR
 
 ECHO.
 ECHO # Running CreateAllPackages.cmd
@@ -63,3 +68,9 @@ IF %ERRORLEVEL% NEQ 0 (
 	ECHO # Failed to create packages.
 	EXIT /b -1
 )
+
+EXIT /b 0
+
+:TEST_ERROR
+ECHO Test failure(s) found!
+EXIT /b 1
