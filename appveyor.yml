@@ -53,7 +53,7 @@ build_script:
 
     cd ..\java\
 
-    build.ci.cmd
+    build.cmd
 
 # disable automatic tests
 test: off
