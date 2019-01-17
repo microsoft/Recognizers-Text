@@ -15,7 +15,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             "Thursday",
             "Friday",
             "Saturday",
-            "Sunday"
+            "Sunday",
         };
 
         public static readonly string[] Months =
@@ -31,7 +31,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             "September",
             "October",
             "November",
-            "December"
+            "December",
         };
 
         public static readonly string[] DateAbbreviation =
@@ -45,13 +45,13 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             "th",
             "th",
             "th",
-            "th"
+            "th",
         };
 
         public static readonly string[] Hours =
         {
             "midnight", "1AM", "2AM", "3AM", "4AM", "5AM", "6AM", "7AM", "8AM", "9AM", "10AM", "11AM",
-            "midday", "1PM", "2PM", "3PM", "4PM", "5PM", "6PM", "7PM", "8PM", "9PM", "10PM", "11PM"
+            "midday", "1PM", "2PM", "3PM", "4PM", "5PM", "6PM", "7PM", "8PM", "9PM", "10PM", "11PM",
         };
 
         public static readonly IDictionary<string, string> Seasons = new Dictionary<string, string>
@@ -59,7 +59,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             { "SP", "spring" },
             { "SU", "summer" },
             { "FA", "fall" },
-            { "WI", "winter" }
+            { "WI", "winter" },
         };
 
         public static readonly string[] Weeks =
@@ -67,7 +67,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             "first",
             "second",
             "third",
-            "forth"
+            "forth",
         };
 
         public static readonly IDictionary<string, string> DayParts = new Dictionary<string, string>
@@ -76,7 +76,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             { "NI", "night" },
             { "MO", "morning" },
             { "AF", "afternoon" },
-            { "EV", "evening" }
+            { "EV", "evening" },
         };
     }
 }
