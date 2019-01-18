@@ -52,8 +52,8 @@ namespace SimpleConsole
         /// </summary>
         private static IEnumerable<ModelResult> ParseAll(string query, string culture)
         {
-            return MergeResults(
-
+            return MergeResults(new List<ModelResult>[]
+                {
                 // Number recognizer will find any number from the input
                 // E.g "I have two apples" will return "2".
                 NumberRecognizer.RecognizeNumber(query, culture),
@@ -120,8 +120,8 @@ namespace SimpleConsole
 
                 // Add Boolean recognizer - This model will find yes/no like responses, including emoji -
                 // E.g "yup, I need that" will return "True"
-                ChoiceRecognizer.RecognizeBoolean(query, culture)
-                );
+                ChoiceRecognizer.RecognizeBoolean(query, culture),
+                });
         }
 
         private static IEnumerable<ModelResult> MergeResults(params List<ModelResult>[] results)
