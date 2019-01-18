@@ -12,12 +12,13 @@
   },
   {
     "Input": "Hoy estaré fuera de cinco a siete",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript, python, java, dotnet",
+	"Comment": "There is no datetime period in this sentence, only a time period.",
     "Results": [
       {
-        "Text": "Hoy estaré fuera de cinco a siete",
+        "Text": "de cinco a siete",
         "Type": "datetimerange",
-        "Start": 0,
+        "Start": 17,
         "Length": 33
       }
     ]
