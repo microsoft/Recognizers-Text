@@ -73,12 +73,12 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     innerResult.FutureResolution = new Dictionary<string, string>
                     {
-                        { TimeTypeConstants.SET, (string) innerResult.FutureValue },
+                        { TimeTypeConstants.SET, (string)innerResult.FutureValue },
                     };
 
                     innerResult.PastResolution = new Dictionary<string, string>
                     {
-                        { TimeTypeConstants.SET, (string) innerResult.PastValue },
+                        { TimeTypeConstants.SET, (string)innerResult.PastValue },
                     };
 
                     value = innerResult;
