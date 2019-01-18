@@ -20,7 +20,6 @@ using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DataDrivenTests
 {
-
     public static class TestUtils
     {
         public static string GetCulture(string source)
@@ -56,7 +55,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
         public static string SanitizeSourceName(string source)
         {
-            return source.Replace("Model", "").Replace("Extractor", "").Replace("Parser", "");
+            return source.Replace("Model", string.Empty).Replace("Extractor", string.Empty).Replace("Parser", string.Empty);
         }
 
         public static Models GetModel(string source)
