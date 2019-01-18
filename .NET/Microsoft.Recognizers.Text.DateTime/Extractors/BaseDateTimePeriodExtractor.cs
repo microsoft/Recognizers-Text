@@ -181,7 +181,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                             var begin = er.Start ?? 0;
 
                             var middleStr = beforeStr.Substring(begin + (er.Length ?? 0)).Trim().ToLower();
-                            if (string.IsNullOrEmpty(middleStr) || this.config.PrepositionRegex.IsExactMatch(middleStr, trim: true))
+                            if (string.IsNullOrEmpty(middleStr) || this.config.PrepositionRegex.IsMatch(middleStr))
                             {
                                 ret.Add(new Token(begin, match.Index + match.Length));
                                 hasBeforeDate = true;
@@ -199,7 +199,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                             var begin = er[0].Start ?? 0;
                             var end = (er[0].Start ?? 0) + (er[0].Length ?? 0);
                             var middleStr = followedStr.Substring(0, begin).Trim().ToLower();
-                            if (string.IsNullOrEmpty(middleStr) || this.config.PrepositionRegex.IsExactMatch(middleStr, trim: true))
+                            if (string.IsNullOrEmpty(middleStr) || this.config.PrepositionRegex.IsMatch(middleStr))
                             {
                                 ret.Add(new Token(match.Index, match.Index + match.Length + end));
                             }
