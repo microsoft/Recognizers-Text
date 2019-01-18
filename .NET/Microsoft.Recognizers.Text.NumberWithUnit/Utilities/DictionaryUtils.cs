@@ -9,10 +9,14 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Utilities
     {
         // Safely bind dictionary which contains several key-value pairs to the destination dictionary.
         // This function is used to bind all the prefix and suffix for units.
-        public static void BindDictionary(IDictionary<string, string> dictionary,
+        public static void BindDictionary(
+            IDictionary<string, string> dictionary,
             IDictionary<string, string> sourceDictionary)
         {
-            if (dictionary == null) return;
+            if (dictionary == null)
+            {
+                return;
+            }
 
             foreach (var pair in dictionary)
             {
