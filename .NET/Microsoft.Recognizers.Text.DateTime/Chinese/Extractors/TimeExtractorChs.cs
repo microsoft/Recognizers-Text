@@ -6,24 +6,6 @@ using Microsoft.Recognizers.Definitions.Chinese;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
-    public enum TimeType
-    {
-        /// <summary>
-        /// 十二点二十三分五十八秒,12点23分53秒
-        /// </summary>
-        ChineseTime,
-
-        /// <summary>
-        /// 差五分十二点
-        /// </summary>
-        LessTime,
-
-        /// <summary>
-        /// 大约早上10:00
-        /// </summary>
-        DigitTime,
-    }
-
     public class TimeExtractorChs : BaseDateTimeExtractor<TimeType>
     {
         public static readonly string HourNumRegex = DateTimeDefinitions.TimeHourNumRegex;
@@ -76,7 +58,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             {
                 {
                     new Regex(DateTimeDefinitions.TimeRegexes1, RegexOptions.Singleline),
-                    TimeType.ChineseTime
+                    TimeType.KanjiTime
                 },
                 {
                     new Regex(DateTimeDefinitions.TimeRegexes2, RegexOptions.Singleline),
