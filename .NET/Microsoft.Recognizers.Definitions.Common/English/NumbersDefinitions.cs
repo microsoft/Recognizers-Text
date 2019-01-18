@@ -37,7 +37,7 @@ namespace Microsoft.Recognizers.Definitions.English
 		public static readonly string AllIntRegexWithDozenSuffixLocks = $@"(?<=\b)(((half\s+)?a\s+dozen)|({AllIntRegex}\s+dozen(s)?))(?=\b)";
 		public const string RoundNumberOrdinalRegex = @"(hundredth|thousandth|millionth|billionth|trillionth)";
 		public const string NumberOrdinalRegex = @"(first|second|third|fourth|fifth|sixth|seventh|eighth|ninth|tenth|eleventh|twelfth|thirteenth|fourteenth|fifteenth|sixteenth|seventeenth|eighteenth|nineteenth|twentieth|thirtieth|fortieth|fiftieth|sixtieth|seventieth|eightieth|ninetieth)";
-		public const string RelativeOrdinalRegex = @"(last|next one|previous one)";
+		public const string RelativeOrdinalRegex = @"(last|next one|previous one|the second to last|the one before the last one|next to last|penultimate|the last but one|antepenultimate)";
 		public static readonly string BasicOrdinalRegex = $@"({NumberOrdinalRegex}|{RelativeOrdinalRegex})";
 		public static readonly string SuffixBasicOrdinalRegex = $@"((((({TensNumberIntegerRegex}(\s+(and\s+)?|\s*-\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{AnIntRegex})(\s+{RoundNumberIntegerRegex})+)\s+(and\s+)?)*({TensNumberIntegerRegex}(\s+|\s*-\s*))?{BasicOrdinalRegex})";
 		public static readonly string SuffixRoundNumberOrdinalRegex = $@"(({AllIntRegex}\s+){RoundNumberOrdinalRegex})";
@@ -246,8 +246,14 @@ namespace Microsoft.Recognizers.Definitions.English
 		public static readonly Dictionary<string, string> RelativeReferenceMap = new Dictionary<string, string>
 		{
 			{ @"last", @"N" },
-			{ @"next one", @"CURR + 1" },
-			{ @"previous one", @"CURR - 1" }
+			{ @"next one", @"CURR+1" },
+			{ @"previous one", @"CURR-1" },
+			{ @"the second to last", @"CURR-1" },
+			{ @"the one before the last one", @"CURR-1" },
+			{ @"next to last", @"CURR-1" },
+			{ @"penultimate", @"CURR-1" },
+			{ @"the last but one", @"CURR-1" },
+			{ @"antepenultimate", @"CURR-2" }
 		};
 	}
 }
