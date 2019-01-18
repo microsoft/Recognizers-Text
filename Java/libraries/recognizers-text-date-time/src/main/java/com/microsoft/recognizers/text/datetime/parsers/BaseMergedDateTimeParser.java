@@ -548,11 +548,7 @@ public class BaseMergedDateTimeParser implements IDateTimeParser {
     }
 
     private void addResolutionFields(Map<String, Object> dic, String key, Object value) {
-        if (value instanceof String) {
-            if (!StringUtility.isNullOrEmpty((String)value)) {
-                dic.put(key, value);
-            }
-        } else {
+        if (value != null) {
             dic.put(key, value);
         }
     }
