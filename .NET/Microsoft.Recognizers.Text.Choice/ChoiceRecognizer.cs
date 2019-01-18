@@ -33,16 +33,16 @@ namespace Microsoft.Recognizers.Text.Choice
         {
         }
 
-        public IModel GetBooleanModel(string culture = null, bool fallbackToDefaultCulture = true)
-        {
-            return GetModel<BooleanModel>(culture, fallbackToDefaultCulture);
-        }
-
         public static List<ModelResult> RecognizeBoolean(string query, string culture, ChoiceOptions options = ChoiceOptions.None, bool fallbackToDefaultCulture = true)
         {
             var recognizer = new ChoiceRecognizer(options);
             var model = recognizer.GetBooleanModel(culture, fallbackToDefaultCulture);
             return model.Parse(query);
+        }
+
+        public IModel GetBooleanModel(string culture = null, bool fallbackToDefaultCulture = true)
+        {
+            return GetModel<BooleanModel>(culture, fallbackToDefaultCulture);
         }
 
         protected override void InitializeConfiguration()
