@@ -8,10 +8,6 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
 {
     public class FractionExtractor : BaseNumberExtractor
     {
-        internal sealed override ImmutableDictionary<Regex, TypeTag> Regexes { get; }
-
-        protected sealed override string ExtractType { get; } = Constants.SYS_NUM_FRACTION;
-        
         public FractionExtractor()
         {
             var regexes = new Dictionary<Regex, TypeTag>
@@ -21,16 +17,20 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
                     new Regex(NumbersDefinitions.FractionNotationSpecialsCharsRegex, RegexOptions.Singleline), RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
-                    // 8/3 
+                    // 8/3
                     new Regex(NumbersDefinitions.FractionNotationRegex, RegexOptions.Singleline), RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
-                    //四分之六十五
+                    // 四分之六十五
                     new Regex(NumbersDefinitions.AllFractionNumber, RegexOptions.Singleline), RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.CHINESE)
-                }
+                },
             };
 
             Regexes = regexes.ToImmutableDictionary();
         }
+
+        internal sealed override ImmutableDictionary<Regex, TypeTag> Regexes { get; }
+
+        protected sealed override string ExtractType { get; } = Constants.SYS_NUM_FRACTION;
     }
 }

@@ -9,7 +9,6 @@ namespace Microsoft.Recognizers.Text.Matcher
 
         public AcAutomaton()
         {
-
         }
 
         public override void Insert(IEnumerable<T> value, string id)

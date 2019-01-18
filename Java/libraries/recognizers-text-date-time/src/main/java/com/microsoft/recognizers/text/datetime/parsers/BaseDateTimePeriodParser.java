@@ -32,7 +32,7 @@ import org.javatuples.Pair;
 
 public class BaseDateTimePeriodParser implements IDateTimeParser {
 
-    private final IDateTimePeriodParserConfiguration config;
+    protected final IDateTimePeriodParserConfiguration config;
 
     public BaseDateTimePeriodParser(IDateTimePeriodParserConfiguration config) {
         this.config = config;
@@ -504,7 +504,7 @@ public class BaseDateTimePeriodParser implements IDateTimeParser {
     }
 
     // Parse specific TimeOfDay like "this night", "early morning", "late evening"
-    private DateTimeResolutionResult parseSpecificTimeOfDay(String text, LocalDateTime referenceDate) {
+    protected DateTimeResolutionResult parseSpecificTimeOfDay(String text, LocalDateTime referenceDate) {
         DateTimeResolutionResult result = new DateTimeResolutionResult();
         String trimmedText = text.trim().toLowerCase();
         String timeText = trimmedText;

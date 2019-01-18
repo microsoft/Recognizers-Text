@@ -35,15 +35,17 @@ import com.microsoft.recognizers.text.datetime.parsers.BaseTimePeriodParser;
 import com.microsoft.recognizers.text.datetime.parsers.BaseTimeZoneParser;
 import com.microsoft.recognizers.text.datetime.parsers.DateTimeParseResult;
 import com.microsoft.recognizers.text.datetime.parsers.IDateTimeParser;
+import com.microsoft.recognizers.text.datetime.spanish.parsers.DateTimePeriodParser;
 import com.microsoft.recognizers.text.datetime.spanish.parsers.SpanishCommonDateTimeParserConfiguration;
-import com.microsoft.recognizers.text.datetime.spanish.parsers.SpanishHolidayParserConfiguration;
+import com.microsoft.recognizers.text.datetime.spanish.parsers.SpanishDateTimePeriodParserConfiguration;
 import com.microsoft.recognizers.text.datetime.spanish.parsers.SpanishDateParserConfiguration;
 import com.microsoft.recognizers.text.datetime.spanish.parsers.SpanishDatePeriodParserConfiguration;
 import com.microsoft.recognizers.text.datetime.spanish.parsers.SpanishDateTimeParserConfiguration;
 import com.microsoft.recognizers.text.datetime.spanish.parsers.SpanishDurationParserConfiguration;
-import com.microsoft.recognizers.text.datetime.spanish.parsers.SpanishTimePeriodParserConfiguration;
-import com.microsoft.recognizers.text.datetime.spanish.parsers.SpanishDurationParserConfiguration;
+import com.microsoft.recognizers.text.datetime.spanish.parsers.SpanishHolidayParserConfiguration;
+import com.microsoft.recognizers.text.datetime.spanish.parsers.SpanishSetParserConfiguration;
 import com.microsoft.recognizers.text.datetime.spanish.parsers.SpanishTimeParserConfiguration;
+import com.microsoft.recognizers.text.datetime.spanish.parsers.SpanishTimePeriodParserConfiguration;
 import com.microsoft.recognizers.text.datetime.utilities.DateTimeResolutionResult;
 import com.microsoft.recognizers.text.datetime.utilities.TimeZoneResolutionResult;
 import com.microsoft.recognizers.text.tests.AbstractTest;
@@ -224,19 +226,19 @@ public class DateTimeParserTest extends AbstractTest {
             case "DatePeriodParser":
                 return new BaseDatePeriodParser(new SpanishDatePeriodParserConfiguration(new SpanishCommonDateTimeParserConfiguration(DateTimeOptions.None)));
             //case "DateTimeAltParser":
-            //    return new BaseDateTimeAltParser(new EnglishDateTimeAltParserConfiguration(new EnglishCommonDateTimeParserConfiguration(DateTimeOptions.None)));
+            //    return new BaseDateTimeAltParser(new SpanishDateTimeAltParserConfiguration(new EnglishCommonDateTimeParserConfiguration(DateTimeOptions.None)));
             case "DateTimeParser":
                 return new BaseDateTimeParser(new SpanishDateTimeParserConfiguration(new SpanishCommonDateTimeParserConfiguration(DateTimeOptions.None)));
-            //case "DateTimePeriodParser":
-            //    return new BaseDateTimePeriodParser(new SpanishDateTimePeriodParserConfiguration(new SpanishCommonDateTimeParserConfiguration(DateTimeOptions.None)));
+            case "DateTimePeriodParser":
+                return new DateTimePeriodParser(new SpanishDateTimePeriodParserConfiguration(new SpanishCommonDateTimeParserConfiguration(DateTimeOptions.None)));
             case "DurationParser":
                 return new BaseDurationParser(new SpanishDurationParserConfiguration(new SpanishCommonDateTimeParserConfiguration(DateTimeOptions.None)));
             case "HolidayParser":
                 return new BaseHolidayParser(new SpanishHolidayParserConfiguration());
-            //case "SetParser":
-            //    return new BaseSetParser(new SpanishSetParserConfiguration(new SpanishCommonDateTimeParserConfiguration(DateTimeOptions.None)));
+            case "SetParser":
+                return new BaseSetParser(new SpanishSetParserConfiguration(new SpanishCommonDateTimeParserConfiguration(DateTimeOptions.None)));
             //case "MergedParser":
-            //    return new BaseMergedDateTimeParser(new EnglishMergedParserConfiguration(DateTimeOptions.None));
+            //    return new BaseMergedDateTimeParser(new SpanishMergedParserConfiguration(DateTimeOptions.None));
             case "TimeParser":
                 return new TimeParser(new SpanishTimeParserConfiguration(new SpanishCommonDateTimeParserConfiguration(DateTimeOptions.None)));
             case "TimePeriodParser":

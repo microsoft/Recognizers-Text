@@ -20,7 +20,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
                 {
                     Start = start,
                     End = TimexDateTimeAdd(start, duration),
-                    Duration = duration
+                    Duration = duration,
                 };
             }
             else
@@ -90,9 +90,10 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             {
                 Start = start,
                 End = TimeAdd(start, duration),
-                Duration = duration
+                Duration = duration,
             };
         }
+
         public static TimexProperty TimexDateAdd(TimexProperty start, TimexProperty duration)
         {
             if (start.DayOfWeek != null)
@@ -115,10 +116,11 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
                         var d = new DateObject(start.Year.Value, start.Month.Value, start.DayOfMonth.Value, 0, 0, 0);
                         d = d.AddDays((double)duration.Days.Value);
 
-                        return new TimexProperty {
+                        return new TimexProperty
+                        {
                             Year = d.Year,
                             Month = d.Month,
-                            DayOfMonth = d.Day
+                            DayOfMonth = d.Day,
                         };
                     }
                     else
@@ -129,7 +131,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
                         return new TimexProperty
                         {
                             Month = d.Month,
-                            DayOfMonth = d.Day
+                            DayOfMonth = d.Day,
                         };
                     }
                 }
@@ -142,7 +144,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
                         {
                             Year = (int)(start.Year.Value + duration.Years.Value),
                             Month = start.Month,
-                            DayOfMonth = start.DayOfMonth
+                            DayOfMonth = start.DayOfMonth,
                         };
                     }
                 }
@@ -155,11 +157,12 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
                         {
                             Year = start.Year,
                             Month = (int)(start.Month + duration.Months),
-                            DayOfMonth = start.DayOfMonth
+                            DayOfMonth = start.DayOfMonth,
                         };
                     }
                 }
             }
+
             return start;
         }
 
@@ -235,7 +238,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             return new DateRange
             {
                 Start = DateFromTimex(expanded.Start),
-                End = DateFromTimex(expanded.End)
+                End = DateFromTimex(expanded.End),
             };
         }
 
@@ -245,7 +248,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             return new TimeRange
             {
                 Start = TimeFromTimex(expanded.Start),
-                End = TimeFromTimex(expanded.End)
+                End = TimeFromTimex(expanded.End),
             };
         }
 
@@ -255,7 +258,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             {
                 Hour = (int)(start.Hour.Value + duration.Hours ?? 0),
                 Minute = (int)(start.Minute + duration.Minutes ?? 0),
-                Second = (int)(start.Second + duration.Seconds ?? 0)
+                Second = (int)(start.Second + duration.Seconds ?? 0),
             };
         }
 

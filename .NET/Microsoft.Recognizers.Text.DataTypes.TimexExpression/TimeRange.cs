@@ -6,6 +6,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
     public class TimeRange
     {
         public Time Start { get; set; }
+
         public Time End { get; set; }
     }
 }

@@ -99,6 +99,7 @@ public class SpanishDatePeriodExtractorConfiguration extends BaseOptionsConfigur
             add(YearPlusNumberRegex);
             add(DecadeWithCenturyRegex);
             add(RelativeDecadeRegex);
+            add(MonthOfRegex);
         }
     };
 

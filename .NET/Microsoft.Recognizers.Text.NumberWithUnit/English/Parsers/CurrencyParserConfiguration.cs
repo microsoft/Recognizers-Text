@@ -7,15 +7,18 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.English
 {
     public class CurrencyParserConfiguration : EnglishNumberWithUnitParserConfiguration
     {
-        public CurrencyParserConfiguration() : this(new CultureInfo(Culture.English)) { }
+        public CurrencyParserConfiguration()
+               : this(new CultureInfo(Culture.English))
+        {
+        }
 
-        public CurrencyParserConfiguration(CultureInfo ci) : base(ci)
+        public CurrencyParserConfiguration(CultureInfo ci)
+               : base(ci)
         {
             this.BindDictionary(CurrencyExtractorConfiguration.CurrencySuffixList);
             this.BindDictionary(CurrencyExtractorConfiguration.CurrencyPrefixList);
             this.CurrencyNameToIsoCodeMap = NumbersWithUnitDefinitions.CurrencyNameToIsoCodeMap.ToImmutableDictionary();
             this.CurrencyFractionCodeList = NumbersWithUnitDefinitions.FractionalUnitNameToCodeMap.ToImmutableDictionary();
         }
-
     }
 }

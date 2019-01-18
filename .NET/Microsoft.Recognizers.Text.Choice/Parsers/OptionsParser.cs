@@ -3,22 +3,6 @@ using System.Linq;
 
 namespace Microsoft.Recognizers.Text.Choice
 {
-    public class OptionsOtherMatchParseResult
-    {
-        public double Score { get; set; }
-
-        public string Text { get; set; }
-
-        public object Value { get; set; }
-    }
-
-    public class OptionsParseDataResult
-    {
-        public double Score { get; set; }
-
-        public IEnumerable<OptionsOtherMatchParseResult> OtherMatches { get; set; }
-    }
-
     public class OptionsParser<T> : IParser
     {
         private readonly IChoiceParserConfiguration<T> config;
@@ -36,7 +20,7 @@ namespace Microsoft.Recognizers.Text.Choice
             result.Data = new OptionsParseDataResult()
             {
                 Score = data.Score,
-                OtherMatches = data.OtherMatches.Select(er => TOptionsOtherMatchReuslt(er))
+                OtherMatches = data.OtherMatches.Select(er => TOptionsOtherMatchReuslt(er)),
             };
 
             return result;
@@ -51,7 +35,7 @@ namespace Microsoft.Recognizers.Text.Choice
             {
                 Text = rp.Text,
                 Value = config.Resolutions[rp.Type],
-                Score = data.Score
+                Score = data.Score,
             };
 
             return result;

@@ -6,12 +6,12 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 {
     public class NumberWithUnitParser : IParser
     {
-        protected readonly INumberWithUnitParserConfiguration config;
-
         public NumberWithUnitParser(INumberWithUnitParserConfiguration config)
         {
             this.config = config;
         }
+
+        protected INumberWithUnitParserConfiguration config { get; private set; }
 
         public ParseResult Parse(ExtractResult extResult)
         {
@@ -28,7 +28,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                 return ret;
             }
             else
-            { 
+            {
                 // If there is no unitResult, means there is just unit
                 numberResult = new ExtractResult { Start = -1, Length = 0 };
             }
@@ -47,13 +47,14 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     }
                 }
                 else if (i == numberResult.Start)
-                {   
+                {
                     // numberResult.start is a relative position
                     if (unitKeyBuild.Length != 0)
                     {
                         AddIfNotContained(unitKeys, unitKeyBuild.ToString().Trim());
                         unitKeyBuild.Clear();
                     }
+
                     var o = numberResult.Start + numberResult.Length - 1;
                     if (o != null)
                     {
@@ -87,7 +88,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     ret.Value = new UnitValue
                     {
                         Number = numValue?.ResolutionStr,
-                        Unit = unitValue
+                        Unit = unitValue,
                     };
                     ret.ResolutionStr = $"{numValue?.ResolutionStr} {unitValue}".Trim();
                 }
@@ -115,11 +116,5 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                 unitKeys.Add(unit);
             }
         }
-    }
-
-    public class UnitValue
-    {
-        public string Number = "";
-        public string Unit = "";
     }
 }

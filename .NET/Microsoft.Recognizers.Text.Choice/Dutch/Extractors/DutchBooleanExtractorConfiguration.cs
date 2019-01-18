@@ -18,8 +18,8 @@ namespace Microsoft.Recognizers.Text.Choice.Dutch
 
         public static readonly IDictionary<Regex, string> MapRegexes = new Dictionary<Regex, string>()
         {
-            {TrueRegex, Constants.SYS_BOOLEAN_TRUE },
-            {FalseRegex, Constants.SYS_BOOLEAN_FALSE }
+            { TrueRegex, Constants.SYS_BOOLEAN_TRUE },
+            { FalseRegex, Constants.SYS_BOOLEAN_FALSE },
         };
 
         public DutchBooleanExtractorConfiguration(bool onlyTopMatch = true)

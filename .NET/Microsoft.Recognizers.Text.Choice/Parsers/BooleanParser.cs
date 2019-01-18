@@ -2,9 +2,9 @@
 {
     public class BooleanParser : OptionsParser<bool>
     {
-        public BooleanParser(): base(new BooleanParserConfiguration())
+        public BooleanParser()
+               : base(new BooleanParserConfiguration())
         {
-
         }
     }
 }

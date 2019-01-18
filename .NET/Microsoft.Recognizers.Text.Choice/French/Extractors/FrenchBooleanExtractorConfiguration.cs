@@ -5,7 +5,7 @@ using Microsoft.Recognizers.Definitions.French;
 
 namespace Microsoft.Recognizers.Text.Choice.French
 {
-    class FrenchBooleanExtractorConfiguration : IBooleanExtractorConfiguration
+    public class FrenchBooleanExtractorConfiguration : IBooleanExtractorConfiguration
     {
         public static readonly Regex TrueRegex =
             new Regex(ChoiceDefinitions.TrueRegex, RegexOptions.Singleline);
@@ -18,8 +18,8 @@ namespace Microsoft.Recognizers.Text.Choice.French
 
         public static readonly IDictionary<Regex, string> MapRegexes = new Dictionary<Regex, string>()
         {
-            {TrueRegex, Constants.SYS_BOOLEAN_TRUE },
-            {FalseRegex, Constants.SYS_BOOLEAN_FALSE }
+            { TrueRegex, Constants.SYS_BOOLEAN_TRUE },
+            { FalseRegex, Constants.SYS_BOOLEAN_FALSE },
         };
 
         public FrenchBooleanExtractorConfiguration(bool onlyTopMatch = true)
@@ -40,6 +40,5 @@ namespace Microsoft.Recognizers.Text.Choice.French
         public int MaxDistance => 2;
 
         public bool OnlyTopMatch { get; }
-
     }
 }

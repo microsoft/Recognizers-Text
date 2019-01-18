@@ -238,6 +238,16 @@ public class BaseTimePeriodParser implements IDateTimeParser {
                             ret.setTimex(String.format("(%s,%s,PT%sH)", beginStr, endStr, (endHour - beginHour + 24)));
                         }
 
+                        // Try to get the timezone resolution
+                        List<ExtractResult> timeErs = config.getTimeExtractor().extract(trimmedText);
+                        for (ExtractResult er : timeErs) {
+                            DateTimeParseResult pr = config.getTimeParser().parse(er, referenceTime);
+                            if (((DateTimeResolutionResult)pr.getValue()).getTimeZoneResolution() != null) {
+                                ret.setTimeZoneResolution(((DateTimeResolutionResult)pr.getValue()).getTimeZoneResolution());
+                                break;
+                            }
+                        }
+
                         ret.setFutureValue(
                                 new Pair<LocalDateTime, LocalDateTime>(DateUtil.safeCreateFromMinValue(year, month, day, beginHour, 0, 0),
                                         DateUtil.safeCreateFromMinValue(year, month, day, endHour, 0, 0)));

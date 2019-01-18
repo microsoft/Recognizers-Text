@@ -263,21 +263,6 @@ public class BaseMergedDateTimeParser implements IDateTimeParser {
 
     @Override
     public List<DateTimeParseResult> filterResults(String query, List<DateTimeParseResult> candidateResults) {
-        if (config.getAmbiguousMonthP0Regex() != null) {
-            if (candidateResults != null && !candidateResults.isEmpty()) {
-
-                List<Match> matches = Arrays.asList(RegExpUtility.getMatches(config.getAmbiguousMonthP0Regex(), query));
-
-                for (Match match : matches) {
-                    // Check for intersections/overlaps
-                    candidateResults = candidateResults.stream().filter(
-                        c -> filterResultsPredicate(c, match))
-                        .collect(Collectors.toList());
-                }
-
-            }
-        }
-
         return candidateResults;
     }
 
@@ -563,11 +548,7 @@ public class BaseMergedDateTimeParser implements IDateTimeParser {
     }
 
     private void addResolutionFields(Map<String, Object> dic, String key, Object value) {
-        if (value instanceof String) {
-            if (!StringUtility.isNullOrEmpty((String)value)) {
-                dic.put(key, value);
-            }
-        } else {
+        if (value != null) {
             dic.put(key, value);
         }
     }

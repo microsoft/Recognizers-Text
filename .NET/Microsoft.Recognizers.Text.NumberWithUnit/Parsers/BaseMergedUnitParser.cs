@@ -1,8 +1,7 @@
 ﻿namespace Microsoft.Recognizers.Text.NumberWithUnit
 {
-    class BaseMergedUnitParser : IParser
+    public class BaseMergedUnitParser : IParser
     {
-        protected readonly BaseNumberWithUnitParserConfiguration config;
         private readonly NumberWithUnitParser numberWithUnitParser;
 
         public BaseMergedUnitParser(BaseNumberWithUnitParserConfiguration config)
@@ -10,6 +9,8 @@
             this.config = config;
             numberWithUnitParser = new NumberWithUnitParser(config);
         }
+
+        protected BaseNumberWithUnitParserConfiguration config { get; private set; }
 
         public ParseResult Parse(ExtractResult extResult)
         {

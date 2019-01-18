@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
@@ -8,12 +8,24 @@ using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
+    public enum AgoLaterMode
+    {
+        /// <summary>
+        /// Date
+        /// </summary>
+        Date = 0,
+
+        /// <summary>
+        /// Datetime
+        /// </summary>
+        DateTime,
+    }
+
     public class AgoLaterUtil
     {
         public delegate int SwiftDayDelegate(string text);
 
-        public static List<Token> ExtractorDurationWithBeforeAndAfter(string text, ExtractResult er, List<Token> ret,
-            IDateTimeUtilityConfiguration utilityConfiguration)
+        public static List<Token> ExtractorDurationWithBeforeAndAfter(string text, ExtractResult er, List<Token> ret, IDateTimeUtilityConfiguration utilityConfiguration)
         {
             var pos = (int)er.Start + (int)er.Length;
 
@@ -66,22 +78,22 @@ namespace Microsoft.Recognizers.Text.DateTime
                             ret.Add(new Token((int)er.Start - index, (int)er.Start + (int)er.Length));
                         }
                     }
-                }                
+                }
             }
 
             return ret;
         }
 
-        public static DateTimeResolutionResult ParseDurationWithAgoAndLater(string text, 
+        public static DateTimeResolutionResult ParseDurationWithAgoAndLater(
+            string text,
             DateObject referenceTime,
             IDateTimeExtractor durationExtractor,
-            IDateTimeParser durationParser, 
+            IDateTimeParser durationParser,
             IImmutableDictionary<string, string> unitMap,
             Regex unitRegex,
             IDateTimeUtilityConfiguration utilityConfiguration,
             SwiftDayDelegate swiftDay)
         {
-
             var ret = new DateTimeResolutionResult();
             var durationRes = durationExtractor.Extract(text, referenceTime);
             if (durationRes.Count > 0)
@@ -90,7 +102,6 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var matches = unitRegex.Matches(text);
                 if (matches.Count > 0)
                 {
-
                     var afterStr =
                             text.Substring((int)durationRes[0].Start + (int)durationRes[0].Length)
                                 .Trim().ToLowerInvariant();
@@ -107,14 +118,14 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     if (pr.Value != null)
                     {
-                        return GetAgoLaterResult(pr, afterStr, beforeStr, referenceTime,
-                                                 utilityConfiguration, mode, swiftDay);
+                        return GetAgoLaterResult(pr, afterStr, beforeStr, referenceTime, utilityConfiguration, mode, swiftDay);
                     }
                 }
             }
+
             return ret;
         }
-        
+
         private static DateTimeResolutionResult GetAgoLaterResult(
             DateTimeParseResult durationParseResult,
             string afterStr,
@@ -124,7 +135,6 @@ namespace Microsoft.Recognizers.Text.DateTime
             AgoLaterMode mode,
             SwiftDayDelegate swiftDay)
         {
-
             var ret = new DateTimeResolutionResult();
             var resultDateTime = referenceTime;
             var timex = durationParseResult.TimexStr;
@@ -148,9 +158,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     swift = swiftDay(match.Groups["day"].Value);
                 }
-                
+
                 resultDateTime = DurationParsingUtil.ShiftDateTime(timex, referenceTime.AddDays(swift), false);
-                
+
                 ((DateTimeResolutionResult)durationParseResult.Value).Mod = Constants.BEFORE_MOD;
             }
             else if (MatchingUtil.ContainsAgoLaterIndex(afterStr, utilityConfiguration.LaterRegex) ||
@@ -185,14 +195,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                 ret.SubDateTimeEntities = new List<object> { durationParseResult };
                 ret.Success = true;
             }
-            
-            return ret;
-        }
 
-        public enum AgoLaterMode
-        {
-            Date = 0,
-            DateTime
+            return ret;
         }
     }
 }

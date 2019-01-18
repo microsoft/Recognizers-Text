@@ -10,7 +10,8 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
 {
     public class ChineseNumberParserConfiguration : ICJKNumberParserConfiguration
     {
-        public ChineseNumberParserConfiguration() : this(new CultureInfo(Culture.Chinese))
+        public ChineseNumberParserConfiguration()
+               : this(new CultureInfo(Culture.Chinese))
         {
         }
 

@@ -5,7 +5,7 @@ using Microsoft.Recognizers.Definitions.Chinese;
 
 namespace Microsoft.Recognizers.Text.Choice.Chinese
 {
-    class ChineseBooleanExtractorConfiguration : IBooleanExtractorConfiguration
+    public class ChineseBooleanExtractorConfiguration : IBooleanExtractorConfiguration
     {
         public static readonly Regex TrueRegex =
             new Regex(ChoiceDefinitions.TrueRegex, RegexOptions.Singleline);
@@ -18,8 +18,8 @@ namespace Microsoft.Recognizers.Text.Choice.Chinese
 
         public static readonly IDictionary<Regex, string> MapRegexes = new Dictionary<Regex, string>()
         {
-            {TrueRegex, Constants.SYS_BOOLEAN_TRUE },
-            {FalseRegex, Constants.SYS_BOOLEAN_FALSE }
+            { TrueRegex, Constants.SYS_BOOLEAN_TRUE },
+            { FalseRegex, Constants.SYS_BOOLEAN_FALSE },
         };
 
         public ChineseBooleanExtractorConfiguration(bool onlyTopMatch = true)

@@ -10,12 +10,16 @@ namespace Microsoft.Recognizers.Text.Number.Dutch
 {
     public class DutchNumberParserConfiguration : INumberParserConfiguration
     {
-        public DutchNumberParserConfiguration(NumberOptions options) : this()
+        public DutchNumberParserConfiguration(NumberOptions options)
+            : this()
         {
             this.Options = options;
         }
 
-        public DutchNumberParserConfiguration() : this(new CultureInfo(Culture.Dutch)) { }
+        public DutchNumberParserConfiguration()
+            : this(new CultureInfo(Culture.Dutch))
+        {
+        }
 
         public DutchNumberParserConfiguration(CultureInfo ci)
         {
@@ -42,7 +46,7 @@ namespace Microsoft.Recognizers.Text.Number.Dutch
             this.HalfADozenRegex = new Regex(NumbersDefinitions.HalfADozenRegex, RegexOptions.Singleline);
             this.DigitalNumberRegex = new Regex(NumbersDefinitions.DigitalNumberRegex, RegexOptions.Singleline);
             this.NegativeNumberSignRegex = new Regex(NumbersDefinitions.NegativeNumberSignRegex, RegexOptions.Singleline);
-            this.FractionPrepositionRegex  = new Regex(NumbersDefinitions.FractionPrepositionRegex, RegexOptions.Singleline);
+            this.FractionPrepositionRegex = new Regex(NumbersDefinitions.FractionPrepositionRegex, RegexOptions.Singleline);
         }
 
         public ImmutableDictionary<string, long> CardinalNumberMap { get; private set; }
@@ -133,7 +137,6 @@ namespace Microsoft.Recognizers.Text.Number.Dutch
 
         public long ResolveCompositeNumber(string numberStr)
         {
-
             if (numberStr.Contains("-"))
             {
                 var numbers = numberStr.Split('-');
