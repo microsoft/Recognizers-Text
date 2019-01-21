@@ -145,14 +145,16 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
         }
 
         [TestMethod]
-        public void DataTypes_RelativeConvert_DateRange_this_week(){
+        public void DataTypes_RelativeConvert_DateRange_this_week()
+        {
             var timex = new TimexProperty("2017-W40");
             var today = new System.DateTime(2017, 9, 25);
             Assert.AreEqual("this week", TimexRelativeConvert.ConvertTimexToStringRelative(timex, today));
         }
 
         [TestMethod]
-        public void DataTypes_RelativeConvert_DateRange_next_week(){
+        public void DataTypes_RelativeConvert_DateRange_next_week()
+        {
             var timex = new TimexProperty("2017-W41");
             var today = new System.DateTime(2017, 9, 25);
             Assert.AreEqual("next week", TimexRelativeConvert.ConvertTimexToStringRelative(timex, today));
@@ -205,6 +207,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
             var today = new System.DateTime(2017, 9, 25);
             Assert.AreEqual("next weekend", TimexRelativeConvert.ConvertTimexToStringRelative(timex, today));
         }
+
         [TestMethod]
         public void DataTypes_RelativeConvert_Weekend_last_weekend()
         {
@@ -236,6 +239,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
             var today = new System.DateTime(2017, 9, 25);
             Assert.AreEqual("last month", TimexRelativeConvert.ConvertTimexToStringRelative(timex, today));
         }
+
         [TestMethod]
         public void DataTypes_RelativeConvert_Year_this_year()
         {
