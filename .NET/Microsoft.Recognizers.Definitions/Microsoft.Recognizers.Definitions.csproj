@@ -38,6 +38,7 @@
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Dutch\DateTimeDefinitions.cs" Link="Dutch\DateTimeDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Dutch\NumberDefinitions.cs" Link="Dutch\NumberDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Dutch\NumbersWithUnitDefinitions.cs" Link="Dutch\NumbersWithUnitDefinitions.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Dutch\TimeZoneDefinitions.cs" Link="Dutch\TimeZoneDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\English\ChoiceDefinitions.cs" Link="English\ChoiceDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\English\DateTimeDefinitions.cs" Link="English\DateTimeDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\English\NumbersDefinitions.cs" Link="English\NumbersDefinitions.cs" />
