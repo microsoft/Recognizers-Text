@@ -54,17 +54,18 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                         End = o.Start.Value + o.Length.Value - 1,
                         Resolution = (o.Value is CurrencyUnitValue) ? new SortedDictionary<string, object>
                             {
-                                {ResolutionKey.Value, ((CurrencyUnitValue)o.Value).Number},
-                                {ResolutionKey.Unit, ((CurrencyUnitValue)o.Value).Unit},
-                                {ResolutionKey.IsoCurrency, ((CurrencyUnitValue)o.Value).IsoCurrency},
+                                { ResolutionKey.Value, ((CurrencyUnitValue)o.Value).Number },
+                                { ResolutionKey.Unit, ((CurrencyUnitValue)o.Value).Unit },
+                                { ResolutionKey.IsoCurrency, ((CurrencyUnitValue)o.Value).IsoCurrency },
                             }
                             : (o.Value is UnitValue) ? new SortedDictionary<string, object>
                             {
-                                {ResolutionKey.Value, ((UnitValue)o.Value).Number},
-                                {ResolutionKey.Unit, ((UnitValue)o.Value).Unit},
-                            } : new SortedDictionary<string, object>
+                                { ResolutionKey.Value, ((UnitValue)o.Value).Number },
+                                { ResolutionKey.Unit, ((UnitValue)o.Value).Unit },
+                            }
+                            : new SortedDictionary<string, object>
                             {
-                                {ResolutionKey.Value, (string)o.Value},
+                                { ResolutionKey.Value, (string)o.Value },
                             },
                         Text = o.Text,
                         TypeName = ModelTypeName,
@@ -72,17 +73,17 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
                     foreach (var result in modelResults)
                     {
-                        bool bAdd = true;
+                        bool shouldAdd = true;
 
                         foreach (var extractionResult in extractionResults)
                         {
                             if (extractionResult.Start == result.Start && extractionResult.End == result.End)
                             {
-                                bAdd = false;
+                                shouldAdd = false;
                             }
                         }
 
-                        if (bAdd)
+                        if (shouldAdd)
                         {
                             extractionResults.Add(result);
                         }
@@ -97,6 +98,5 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
             return extractionResults;
         }
-
     }
 }
