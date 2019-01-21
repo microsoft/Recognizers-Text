@@ -12,16 +12,8 @@
   },
   {
     "Input": "Hoy estaré fuera de cinco a siete",
-    "NotSupported": "javascript, python, java, dotnet",
-	"Comment": "There is no datetime period in this sentence, only a time period.",
-    "Results": [
-      {
-        "Text": "de cinco a siete",
-        "Type": "datetimerange",
-        "Start": 17,
-        "Length": 33
-      }
-    ]
+    "NotSupported": "javascript, python",
+    "Results": []
   },
   {
     "Input": "Estaré fuera hoy de cinco a siete",

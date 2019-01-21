@@ -21,17 +21,6 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
         }
 
         [TestMethod]
-        public void DataTypes_Timex_FromTime()
-        {
-            Assert.AreEqual("T23:59:30", TimexProperty.FromTime(new Time(23, 59, 30)).TimexValue);
-        }
-
-        private static void Roundtrip(string timex)
-        {
-            Assert.AreEqual(timex, (new TimexProperty(timex)).TimexValue);
-        }
-
-        [TestMethod]
         public void DataTypes_Timex_Roundtrip_Date()
         {
             Roundtrip("2017-09-27");
@@ -122,14 +111,25 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
         [TestMethod]
         public void DataTypes_Timex_ToString()
         {
-            Assert.AreEqual("5th May", (new TimexProperty("XXXX-05-05")).ToString());
+            Assert.AreEqual("5th May", new TimexProperty("XXXX-05-05").ToString());
         }
 
         [TestMethod]
         public void DataTypes_Timex_ToNaturalLanguage()
         {
             var today = new System.DateTime(2017, 10, 16);
-            Assert.AreEqual("tomorrow", (new TimexProperty("2017-10-17")).ToNaturalLanguage(today));
+            Assert.AreEqual("tomorrow", new TimexProperty("2017-10-17").ToNaturalLanguage(today));
+        }
+
+        [TestMethod]
+        public void DataTypes_Timex_FromTime()
+        {
+            Assert.AreEqual("T23:59:30", TimexProperty.FromTime(new Time(23, 59, 30)).TimexValue);
+        }
+
+        private static void Roundtrip(string timex)
+        {
+            Assert.AreEqual(timex, new TimexProperty(timex).TimexValue);
         }
     }
 }

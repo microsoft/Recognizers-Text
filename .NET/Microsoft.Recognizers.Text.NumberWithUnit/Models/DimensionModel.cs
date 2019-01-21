@@ -6,7 +6,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 {
     public class DimensionModel : AbstractNumberWithUnitModel
     {
-        public DimensionModel(Dictionary<IExtractor, IParser> extractorParserDic) 
+        public DimensionModel(Dictionary<IExtractor, IParser> extractorParserDic)
             : base(extractorParserDic)
         {
         }
