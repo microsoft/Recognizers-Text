@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Collections.Immutable;
+using System.Linq;
 using System.Globalization;
 using System.Text.RegularExpressions;
 
@@ -65,5 +66,137 @@ namespace Microsoft.Recognizers.Text.Number
         /// <param name="numberStr">composite number.</param>
         /// <returns>value of the string.</returns>
         long ResolveCompositeNumber(string numberStr);
+    }
+
+    public abstract class BaseNumberParserConfiguration : INumberParserConfiguration
+    {
+        public abstract ImmutableDictionary<string, long> CardinalNumberMap { get; set; }
+
+        public abstract ImmutableDictionary<string, long> OrdinalNumberMap { get; set; }
+
+        public abstract ImmutableDictionary<string, long> RoundNumberMap { get; set; }
+
+        public abstract ImmutableDictionary<string, string> RelativeReferenceMap { get; set; }
+
+        public abstract NumberOptions Options { get; set; }
+
+        public abstract CultureInfo CultureInfo { get; set; }
+
+        public abstract Regex DigitalNumberRegex { get; set; }
+
+        public abstract Regex FractionPrepositionRegex { get; }
+
+        public abstract string FractionMarkerToken { get; set; }
+
+        public abstract Regex HalfADozenRegex { get; set; }
+
+        public abstract string HalfADozenText { get; set; }
+
+        public abstract string LangMarker { get; set; }
+
+        public abstract char NonDecimalSeparatorChar { get; set; }
+
+        public abstract char DecimalSeparatorChar { get; set; }
+
+        public abstract string WordSeparatorToken { get; set; }
+
+        public abstract IEnumerable<string> WrittenDecimalSeparatorTexts { get; set; }
+
+        public abstract IEnumerable<string> WrittenGroupSeparatorTexts { get; set; }
+
+        public abstract IEnumerable<string> WrittenIntegerSeparatorTexts { get; set; }
+
+        public abstract IEnumerable<string> WrittenFractionSeparatorTexts { get; set; }
+
+        public abstract Regex NegativeNumberSignRegex { get; set; }
+
+        public virtual long ResolveCompositeNumber(string numberStr)
+        {
+            if (numberStr.Contains("-"))
+            {
+                var numbers = numberStr.Split('-');
+                long ret = 0;
+                foreach (var number in numbers)
+                {
+                    if (OrdinalNumberMap.ContainsKey(number))
+                    {
+                        ret += OrdinalNumberMap[number];
+                    }
+                    else if (CardinalNumberMap.ContainsKey(number))
+                    {
+                        ret += CardinalNumberMap[number];
+                    }
+                }
+
+                return ret;
+            }
+
+            if (this.OrdinalNumberMap.ContainsKey(numberStr))
+            {
+                return this.OrdinalNumberMap[numberStr];
+            }
+
+            if (this.CardinalNumberMap.ContainsKey(numberStr))
+            {
+                return this.CardinalNumberMap[numberStr];
+            }
+
+            return 0;
+        }
+
+        public virtual IEnumerable<string> NormalizeTokenSet(IEnumerable<string> tokens, ParseResult context)
+        {
+            var fracWords = new List<string>();
+            var tokenList = tokens.ToList();
+            var tokenLen = tokenList.Count;
+
+            for (var i = 0; i < tokenLen; i++)
+            {
+                if (tokenList[i].Contains("-"))
+                {
+                    var splitedTokens = tokenList[i].Split('-');
+                    if (splitedTokens.Length == 2 && OrdinalNumberMap.ContainsKey(splitedTokens[1]))
+                    {
+                        fracWords.Add(splitedTokens[0]);
+                        fracWords.Add(splitedTokens[1]);
+                    }
+                    else
+                    {
+                        fracWords.Add(tokenList[i]);
+                    }
+                }
+                else if (i < tokenLen - 2 && tokenList[i + 1] == "-")
+                {
+                    if (OrdinalNumberMap.ContainsKey(tokenList[i + 2]))
+                    {
+                        fracWords.Add(tokenList[i]);
+                        fracWords.Add(tokenList[i + 2]);
+                    }
+                    else
+                    {
+                        fracWords.Add(tokenList[i] + tokenList[i + 1] + tokenList[i + 2]);
+                    }
+
+                    i += 2;
+                }
+                else
+                {
+                    fracWords.Add(tokenList[i]);
+                }
+            }
+
+            return fracWords;
+        }
+
+        // Handle cases like "last", "next one", "previous one"
+        public virtual string ResolveSpecificString(string numberStr)
+        {
+            if (this.RelativeReferenceMap.ContainsKey(numberStr))
+            {
+                return this.RelativeReferenceMap[numberStr];
+            }
+
+            return string.Empty;
+        }
     }
 }

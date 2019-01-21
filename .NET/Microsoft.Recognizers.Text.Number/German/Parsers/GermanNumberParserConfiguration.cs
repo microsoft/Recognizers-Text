@@ -8,7 +8,7 @@ using Microsoft.Recognizers.Definitions.German;
 
 namespace Microsoft.Recognizers.Text.Number.German
 {
-    public class GermanNumberParserConfiguration : INumberParserConfiguration
+    public class GermanNumberParserConfiguration : BaseNumberParserConfiguration
     {
         public GermanNumberParserConfiguration()
             : this(new CultureInfo(Culture.German))
@@ -41,49 +41,49 @@ namespace Microsoft.Recognizers.Text.Number.German
             this.FractionPrepositionRegex = new Regex(NumbersDefinitions.FractionPrepositionRegex, RegexOptions.Singleline);
         }
 
-        public ImmutableDictionary<string, long> CardinalNumberMap { get; private set; }
+        public override ImmutableDictionary<string, long> CardinalNumberMap { get; set; }
 
-        public NumberOptions Options { get; }
+        public override NumberOptions Options { get; set; }
 
-        public CultureInfo CultureInfo { get; private set; }
+        public override CultureInfo CultureInfo { get; set; }
 
-        public char DecimalSeparatorChar { get; private set; }
+        public override char DecimalSeparatorChar { get; set; }
 
-        public Regex DigitalNumberRegex { get; private set; }
+        public override Regex DigitalNumberRegex { get; set; }
 
-        public Regex FractionPrepositionRegex { get; }
+        public override Regex FractionPrepositionRegex { get; }
 
-        public Regex NegativeNumberSignRegex { get; private set; }
+        public override Regex NegativeNumberSignRegex { get; set; }
 
-        public string FractionMarkerToken { get; private set; }
+        public override string FractionMarkerToken { get; set; }
 
-        public Regex HalfADozenRegex { get; private set; }
+        public override Regex HalfADozenRegex { get; set; }
 
-        public string HalfADozenText { get; private set; }
+        public override string HalfADozenText { get; set; }
 
-        public string LangMarker { get; private set; }
+        public override string LangMarker { get; set; }
 
-        public char NonDecimalSeparatorChar { get; private set; }
+        public override char NonDecimalSeparatorChar { get; set; }
 
         public string NonDecimalSeparatorText { get; private set; }
 
-        public ImmutableDictionary<string, long> OrdinalNumberMap { get; private set; }
+        public override ImmutableDictionary<string, long> OrdinalNumberMap { get; set; }
 
-        public ImmutableDictionary<string, string> RelativeReferenceMap { get; private set; }
+        public override ImmutableDictionary<string, string> RelativeReferenceMap { get; set; }
 
-        public ImmutableDictionary<string, long> RoundNumberMap { get; private set; }
+        public override ImmutableDictionary<string, long> RoundNumberMap { get; set; }
 
-        public string WordSeparatorToken { get; private set; }
+        public override string WordSeparatorToken { get; set; }
 
-        public IEnumerable<string> WrittenDecimalSeparatorTexts { get; private set; }
+        public override IEnumerable<string> WrittenDecimalSeparatorTexts { get; set; }
 
-        public IEnumerable<string> WrittenGroupSeparatorTexts { get; private set; }
+        public override IEnumerable<string> WrittenGroupSeparatorTexts { get; set; }
 
-        public IEnumerable<string> WrittenIntegerSeparatorTexts { get; private set; }
+        public override IEnumerable<string> WrittenIntegerSeparatorTexts { get; set; }
 
-        public IEnumerable<string> WrittenFractionSeparatorTexts { get; private set; }
+        public override IEnumerable<string> WrittenFractionSeparatorTexts { get; set; }
 
-        public IEnumerable<string> NormalizeTokenSet(IEnumerable<string> tokens, ParseResult context)
+        public override IEnumerable<string> NormalizeTokenSet(IEnumerable<string> tokens, ParseResult context)
         {
             var fracWords = new List<string>();
             var tokenList = tokens.ToList();
@@ -103,51 +103,6 @@ namespace Microsoft.Recognizers.Text.Number.German
             }
 
             return fracWords;
-        }
-
-        public long ResolveCompositeNumber(string numberStr)
-        {
-            if (numberStr.Contains("-"))
-            {
-                var numbers = numberStr.Split('-');
-                long ret = 0;
-                foreach (var number in numbers)
-                {
-                    if (OrdinalNumberMap.ContainsKey(number))
-                    {
-                        ret += OrdinalNumberMap[number];
-                    }
-                    else if (CardinalNumberMap.ContainsKey(number))
-                    {
-                        ret += CardinalNumberMap[number];
-                    }
-                }
-
-                return ret;
-            }
-
-            if (this.OrdinalNumberMap.ContainsKey(numberStr))
-            {
-                return this.OrdinalNumberMap[numberStr];
-            }
-
-            if (this.CardinalNumberMap.ContainsKey(numberStr))
-            {
-                return this.CardinalNumberMap[numberStr];
-            }
-
-            return 0;
-        }
-
-        // Handle cases like "last", "next one", "previous one"
-        public string ResolveSpecificString(string numberStr)
-        {
-            if (this.RelativeReferenceMap.ContainsKey(numberStr))
-            {
-                return this.RelativeReferenceMap[numberStr];
-            }
-
-            return string.Empty;
         }
     }
 }
