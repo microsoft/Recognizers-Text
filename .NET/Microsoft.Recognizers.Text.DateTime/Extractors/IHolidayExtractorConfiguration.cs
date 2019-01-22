@@ -3,7 +3,7 @@ using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
-    public interface IHolidayExtractorConfiguration: IOptionsConfiguration
+    public interface IHolidayExtractorConfiguration : IOptionsConfiguration
     {
         IEnumerable<Regex> HolidayRegexes { get; }
     }

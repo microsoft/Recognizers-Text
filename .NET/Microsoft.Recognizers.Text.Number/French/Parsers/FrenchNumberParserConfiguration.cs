@@ -10,7 +10,10 @@ namespace Microsoft.Recognizers.Text.Number.French
 {
     public class FrenchNumberParserConfiguration : INumberParserConfiguration
     {
-        public FrenchNumberParserConfiguration(): this(new CultureInfo(Culture.French)) { }
+        public FrenchNumberParserConfiguration()
+            : this(new CultureInfo(Culture.French))
+        {
+        }
 
         public FrenchNumberParserConfiguration(CultureInfo ci)
         {
@@ -18,7 +21,7 @@ namespace Microsoft.Recognizers.Text.Number.French
             this.CultureInfo = ci;
 
             this.DecimalSeparatorChar = NumbersDefinitions.DecimalSeparatorChar;
-            this.FractionMarkerToken = NumbersDefinitions.FractionMarkerToken; 
+            this.FractionMarkerToken = NumbersDefinitions.FractionMarkerToken;
             this.NonDecimalSeparatorChar = NumbersDefinitions.NonDecimalSeparatorChar;
             this.HalfADozenText = NumbersDefinitions.HalfADozenText;
             this.WordSeparatorToken = NumbersDefinitions.WordSeparatorToken;
@@ -36,7 +39,7 @@ namespace Microsoft.Recognizers.Text.Number.French
             this.HalfADozenRegex = new Regex(NumbersDefinitions.HalfADozenRegex, RegexOptions.Singleline);
             this.DigitalNumberRegex = new Regex(NumbersDefinitions.DigitalNumberRegex, RegexOptions.Singleline);
             this.NegativeNumberSignRegex = new Regex(NumbersDefinitions.NegativeNumberSignRegex, RegexOptions.Singleline);
-            this.FractionPrepositionRegex  = new Regex(NumbersDefinitions.FractionPrepositionRegex, RegexOptions.Singleline);
+            this.FractionPrepositionRegex = new Regex(NumbersDefinitions.FractionPrepositionRegex, RegexOptions.Singleline);
         }
 
         public ImmutableDictionary<string, long> CardinalNumberMap { get; private set; }

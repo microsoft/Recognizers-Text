@@ -1,25 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using DateObject = System.DateTime;
-
 using Microsoft.Recognizers.Text.Utilities;
+using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
     public class DateTimeModel : IModel
     {
-        public string ModelTypeName => Constants.MODEL_DATETIME;
-        
-        protected IDateTimeExtractor Extractor { get; private set; }
-
-        protected IDateTimeParser Parser { get; private set; }
-
         public DateTimeModel(IDateTimeParser parser, IDateTimeExtractor extractor)
         {
             this.Parser = parser;
             this.Extractor = extractor;
         }
+
+        public string ModelTypeName => Constants.MODEL_DATETIME;
+
+        protected IDateTimeExtractor Extractor { get; private set; }
+
+        protected IDateTimeParser Parser { get; private set; }
 
         public List<ModelResult> Parse(string query)
         {
@@ -33,8 +32,8 @@ namespace Microsoft.Recognizers.Text.DateTime
             // Preprocess the query
             query = QueryProcessor.Preprocess(query);
 
-            try {
-
+            try
+            {
                 var extractResults = Extractor.Extract(query, refTime);
 
                 foreach (var result in extractResults)
@@ -53,10 +52,9 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 // Filter out ambiguous cases. Naïve approach.
                 parsedDateTimes = Parser.FilterResults(query, parsedDateTimes);
-
             }
             catch (Exception)
-            { 
+            {
                 // Nothing to do. Exceptions in parse should not break users of recognizers.
                 // No result.
             }
@@ -73,7 +71,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 End = parsedDateTime.Start.Value + parsedDateTime.Length.Value - 1,
                 TypeName = parsedDateTime.Type,
                 Resolution = parsedDateTime.Value as SortedDictionary<string, object>,
-                Text = parsedDateTime.Text
+                Text = parsedDateTime.Text,
             };
 
             var type = parsedDateTime.Type.Split('.').Last();
@@ -81,7 +79,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 ret = new ExtendedModelResult(modelResult)
                 {
-                    ParentText = GetParentText(parsedDateTime)
+                    ParentText = GetParentText(parsedDateTime),
                 };
             }
             else
@@ -94,8 +92,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         private string GetParentText(DateTimeParseResult parsedDateTime)
         {
-            return ((Dictionary<string, object>)(parsedDateTime.Data))[ExtendedModelResult.ParentTextKey].ToString();
+            return ((Dictionary<string, object>)parsedDateTime.Data)[ExtendedModelResult.ParentTextKey].ToString();
         }
-
     }
 }

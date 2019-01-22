@@ -6,19 +6,21 @@ using Microsoft.Recognizers.Text.Matcher;
 
 namespace Microsoft.Recognizers.Text.DateTime.German
 {
-    class GermanTimeZoneExtractorConfiguration : BaseOptionsConfiguration, ITimeZoneExtractorConfiguration
+    public class GermanTimeZoneExtractorConfiguration : BaseOptionsConfiguration, ITimeZoneExtractorConfiguration
     {
-        public static readonly Regex[] TimeZoneRegexList =
-        {
-        };
-
-        public GermanTimeZoneExtractorConfiguration(IOptionsConfiguration config) : base(config)
+        public GermanTimeZoneExtractorConfiguration(IOptionsConfiguration config)
+            : base(config)
         {
         }
 
-        public IEnumerable<Regex> TimeZoneRegexes => TimeZoneRegexList;
+        public Regex DirectUtcRegex { get; }
+
         public Regex LocationTimeSuffixRegex { get; }
+
         public StringMatcher LocationMatcher { get; }
+
+        public StringMatcher TimeZoneMatcher { get; }
+
         public List<string> AmbiguousTimezoneList => new List<string>();
     }
 }

@@ -37,11 +37,11 @@ namespace Microsoft.Recognizers.Text.Sequence.English
         private static readonly Regex AreaCodeRegex = new Regex(BasePhoneNumbers.AreaCodeIndicatorRegex);
         private static readonly Regex FormatIndicatorRegex = new Regex(BasePhoneNumbers.FormatIndicatorRegex);
 
-        double ScorePhoneNumber(string phoneNumberText)
+        public double ScorePhoneNumber(string phoneNumberText)
         {
             double score = baseScore;
 
-            // Country code score or area code score 
+            // Country code score or area code score
             score += CountryCodeRegex.IsMatch(phoneNumberText) ?
                                     countryCodeAward : AreaCodeRegex.IsMatch(phoneNumberText) ? areaCodeAward : 0;
 
@@ -52,7 +52,7 @@ namespace Microsoft.Recognizers.Text.Sequence.English
                 int formatIndicatorCount = formatMatches.Count;
                 score += Math.Min(formatIndicatorCount, maxFormatIndicatorNum) * formattedAward;
                 score -= formatMatches.Cast<Match>().Any(o => o.Value.Length > 1) ? continueFormatIndicatorDeductionScore : 0;
-                if (Regex.IsMatch(phoneNumberText, singleBracketRegex) && 
+                if (Regex.IsMatch(phoneNumberText, singleBracketRegex) &&
                     !Regex.IsMatch(phoneNumberText, completeBracketRegex))
                 {
                     score -= wrongFormatDeductionScore;
@@ -60,7 +60,7 @@ namespace Microsoft.Recognizers.Text.Sequence.English
             }
 
             // Length score
-            score += Math.Min((Regex.Matches(phoneNumberText, digitRegex).Count - phoneNumberLengthBase), maxLengthAwardNum) * lengthAward;
+            score += Math.Min(Regex.Matches(phoneNumberText, digitRegex).Count - phoneNumberLengthBase, maxLengthAwardNum) * lengthAward;
 
             // Same tailing digit deduction
             if (Regex.IsMatch(phoneNumberText, tailSameDigitRegex))
@@ -83,7 +83,7 @@ namespace Microsoft.Recognizers.Text.Sequence.English
 
             return Math.Max(Math.Min(score, scoreUpperLimit), scoreLowerLimit) / (scoreUpperLimit - scoreLowerLimit);
         }
-        
+
         public override ParseResult Parse(ExtractResult extResult)
         {
             var result = new ParseResult

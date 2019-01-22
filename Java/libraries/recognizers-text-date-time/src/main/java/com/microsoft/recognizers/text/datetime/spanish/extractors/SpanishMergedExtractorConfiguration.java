@@ -27,7 +27,6 @@ import java.util.regex.Pattern;
 
 import org.javatuples.Pair;
 
-
 public class SpanishMergedExtractorConfiguration extends BaseOptionsConfiguration implements IMergedExtractorConfiguration {
 
     public static final Pattern BeforeRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.BeforeRegex);

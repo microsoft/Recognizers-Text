@@ -9,8 +9,8 @@
 
         public static bool IsCover(this ExtractResult er1, ExtractResult er2)
         {
-            return er2.Start < er1.Start && er2.Start + er2.Length >= er1.Start + er1.Length || 
-                   er2.Start <= er1.Start && er2.Start + er2.Length > er1.Start + er1.Length;
+            return (er2.Start < er1.Start && er2.Start + er2.Length >= er1.Start + er1.Length) ||
+                   (er2.Start <= er1.Start && er2.Start + er2.Length > er1.Start + er1.Length);
         }
     }
 }

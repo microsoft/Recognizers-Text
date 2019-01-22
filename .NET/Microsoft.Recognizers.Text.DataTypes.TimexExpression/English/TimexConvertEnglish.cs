@@ -37,8 +37,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             }
 
             // TODO: where appropriate delegate most the formatting delegate to Date.toLocaleString(options)
-
-            if (types.Contains(Constants.TimexTypes.DateTime)) 
+            if (types.Contains(Constants.TimexTypes.DateTime))
             {
                 return ConvertDateTime(timex);
             }
@@ -213,9 +212,8 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             }
 
             // date + time + duration
-            // - OR - 
+            // - OR -
             // date + duration
-
             return string.Empty;
         }
     }

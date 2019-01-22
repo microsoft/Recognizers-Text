@@ -8,15 +8,8 @@ namespace Microsoft.Recognizers.Text.Number.Spanish
 {
     public class NumberRangeExtractor : BaseNumberRangeExtractor
     {
-        internal sealed override ImmutableDictionary<Regex, string> Regexes { get; }
-
-        internal sealed override Regex AmbiguousFractionConnectorsRegex { get; }
-
-        protected sealed override string ExtractType { get; } = Constants.SYS_NUMRANGE;
-
         public NumberRangeExtractor(NumberOptions options = NumberOptions.None)
-            : base(NumberExtractor.GetInstance(), OrdinalExtractor.GetInstance(),
-                    new BaseNumberParser(new SpanishNumberParserConfiguration()), options)
+            : base(NumberExtractor.GetInstance(), OrdinalExtractor.GetInstance(), new BaseNumberParser(new SpanishNumberParserConfiguration()), options)
         {
             var regexes = new Dictionary<Regex, string>()
             {
@@ -74,7 +67,7 @@ namespace Microsoft.Recognizers.Text.Number.Spanish
                     // igual a 30 o menos, menos que 30 o igual ...
                     new Regex(NumbersDefinitions.OneNumberRangeLessSeparateRegex, RegexOptions.Singleline),
                     NumberRangeConstants.LESS
-                }
+                },
             };
 
             Regexes = regexes.ToImmutableDictionary();
@@ -82,5 +75,11 @@ namespace Microsoft.Recognizers.Text.Number.Spanish
             AmbiguousFractionConnectorsRegex =
                 new Regex(NumbersDefinitions.AmbiguousFractionConnectorsRegex, RegexOptions.Singleline);
         }
+
+        internal sealed override ImmutableDictionary<Regex, string> Regexes { get; }
+
+        internal sealed override Regex AmbiguousFractionConnectorsRegex { get; }
+
+        protected sealed override string ExtractType { get; } = Constants.SYS_NUMRANGE;
     }
 }

@@ -6,19 +6,6 @@ using Microsoft.Recognizers.Definitions.Chinese;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
-    public enum PeriodType
-    {
-        /// <summary>
-        /// Represents a ShortTime.
-        /// </summary>
-        ShortTime,
-
-        /// <summary>
-        /// Represents a FullTime.
-        /// </summary>
-        FullTime,
-    }
-
     public class TimePeriodExtractorChs : BaseDateTimeExtractor<PeriodType>
     {
         public const string TimePeriodConnectWords = DateTimeDefinitions.TimePeriodTimePeriodConnectWords;

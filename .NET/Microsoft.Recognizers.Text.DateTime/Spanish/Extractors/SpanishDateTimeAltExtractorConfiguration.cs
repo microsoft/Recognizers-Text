@@ -1,27 +1,11 @@
-﻿using System.Text.RegularExpressions;
-
+﻿using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Spanish;
-using System.Collections.Generic;
 
 namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
     public class SpanishDateTimeAltExtractorConfiguration : BaseOptionsConfiguration, IDateTimeAltExtractorConfiguration
     {
-        public SpanishDateTimeAltExtractorConfiguration(IOptionsConfiguration config) : base(config)
-        {
-            DateExtractor = new BaseDateExtractor(new SpanishDateExtractorConfiguration(this));
-            DatePeriodExtractor = new BaseDatePeriodExtractor(new SpanishDatePeriodExtractorConfiguration(this));
-        }
-
-        public IDateExtractor DateExtractor { get; }
-        public IDateTimeExtractor DatePeriodExtractor { get; }
-
-        private static readonly Regex OrRegex =
-            new Regex(DateTimeDefinitions.OrRegex, RegexOptions.Singleline);
-
-        private static readonly Regex DayRegex =
-            new Regex(DateTimeDefinitions.DayRegex, RegexOptions.Singleline);
-
         public static readonly Regex ThisPrefixRegex =
             new Regex(DateTimeDefinitions.ThisPrefixRegex, RegexOptions.Singleline);
 
@@ -49,6 +33,23 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         {
             AmRegex, PmRegex,
         };
+
+        private static readonly Regex OrRegex =
+            new Regex(DateTimeDefinitions.OrRegex, RegexOptions.Singleline);
+
+        private static readonly Regex DayRegex =
+            new Regex(DateTimeDefinitions.DayRegex, RegexOptions.Singleline);
+
+        public SpanishDateTimeAltExtractorConfiguration(IOptionsConfiguration config)
+            : base(config)
+        {
+            DateExtractor = new BaseDateExtractor(new SpanishDateExtractorConfiguration(this));
+            DatePeriodExtractor = new BaseDatePeriodExtractor(new SpanishDatePeriodExtractorConfiguration(this));
+        }
+
+        public IDateExtractor DateExtractor { get; }
+
+        public IDateTimeExtractor DatePeriodExtractor { get; }
 
         IEnumerable<Regex> IDateTimeAltExtractorConfiguration.RelativePrefixList => RelativePrefixList;
 

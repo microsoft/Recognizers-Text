@@ -125,8 +125,8 @@ public class BaseDatePeriodExtractor implements IDateTimeExtractor {
             }
 
             String middleStr = input.substring(middleBegin, middleEnd).trim().toLowerCase();
-            Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(config.getTillRegex(), middleStr)).findFirst();
-            if (match.isPresent() && match.get().index == 0 && match.get().length == middleStr.length()) {
+
+            if (RegexExtension.isExactMatch(config.getTillRegex(), middleStr, true)) {
                 int periodBegin = thisResult.getStart();
                 int periodEnd = nextResult.getStart() + nextResult.getLength();
 
@@ -420,14 +420,6 @@ public class BaseDatePeriodExtractor implements IDateTimeExtractor {
         }
 
         return results;
-    }
-
-    private boolean matchSuffixRegexInSegment(String input, Optional<Match> match) {
-        return match.isPresent() && StringUtility.isNullOrWhiteSpace(input.substring(0, match.get().index));
-    }
-
-    private boolean matchPrefixRegexInSegment(String input, Optional<Match> match) {
-        return match.isPresent() && StringUtility.isNullOrWhiteSpace(input.substring(match.get().index + match.get().length));
     }
 
     private boolean isDateRelativeToNowOrToday(ExtractResult input) {

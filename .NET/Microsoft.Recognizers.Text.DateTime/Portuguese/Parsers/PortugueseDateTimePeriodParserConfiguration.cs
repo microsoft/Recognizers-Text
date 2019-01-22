@@ -7,6 +7,46 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 {
     public class PortugueseDateTimePeriodParserConfiguration : BaseOptionsConfiguration, IDateTimePeriodParserConfiguration
     {
+        public PortugueseDateTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config)
+            : base(config)
+        {
+            TokenBeforeDate = Definitions.Portuguese.DateTimeDefinitions.TokenBeforeDate;
+
+            DateExtractor = config.DateExtractor;
+            TimeExtractor = config.TimeExtractor;
+            DateTimeExtractor = config.DateTimeExtractor;
+            TimePeriodExtractor = config.TimePeriodExtractor;
+            CardinalExtractor = config.CardinalExtractor;
+            DurationExtractor = config.DurationExtractor;
+            NumberParser = config.NumberParser;
+            DateParser = config.DateParser;
+            TimeParser = config.TimeParser;
+            DateTimeParser = config.DateTimeParser;
+            TimePeriodParser = config.TimePeriodParser;
+            DurationParser = config.DurationParser;
+
+            PureNumberFromToRegex = PortugueseTimePeriodExtractorConfiguration.PureNumFromTo;
+            PureNumberBetweenAndRegex = PortugueseTimePeriodExtractorConfiguration.PureNumBetweenAnd;
+            SpecificTimeOfDayRegex = PortugueseDateTimeExtractorConfiguration.SpecificTimeOfDayRegex;
+            TimeOfDayRegex = PortugueseDateTimeExtractorConfiguration.TimeOfDayRegex;
+            PastRegex = PortugueseDatePeriodExtractorConfiguration.PastRegex;
+            FutureRegex = PortugueseDatePeriodExtractorConfiguration.FutureRegex;
+            FutureSuffixRegex = PortugueseDatePeriodExtractorConfiguration.FutureSuffixRegex;
+            NumberCombinedWithUnitRegex = PortugueseDateTimePeriodExtractorConfiguration.NumberCombinedWithUnit;
+            UnitRegex = PortugueseTimePeriodExtractorConfiguration.UnitRegex;
+            PeriodTimeOfDayWithDateRegex = PortugueseDateTimePeriodExtractorConfiguration.PeriodTimeOfDayWithDateRegex;
+            RelativeTimeUnitRegex = PortugueseDateTimePeriodExtractorConfiguration.RelativeTimeUnitRegex;
+            RestOfDateTimeRegex = PortugueseDateTimePeriodExtractorConfiguration.RestOfDateTimeRegex;
+            AmDescRegex = PortugueseDateTimePeriodExtractorConfiguration.AmDescRegex;
+            PmDescRegex = PortugueseDateTimePeriodExtractorConfiguration.PmDescRegex;
+            WithinNextPrefixRegex = PortugueseDateTimePeriodExtractorConfiguration.WithinNextPrefixRegex;
+            PrefixDayRegex = PortugueseDateTimePeriodExtractorConfiguration.PrefixDayRegex;
+            BeforeRegex = PortugueseDateTimePeriodExtractorConfiguration.BeforeRegex;
+            AfterRegex = PortugueseDateTimePeriodExtractorConfiguration.AfterRegex;
+            UnitMap = config.UnitMap;
+            Numbers = config.Numbers;
+        }
+
         public string TokenBeforeDate { get; }
 
         public IDateExtractor DateExtractor { get; }
@@ -73,45 +113,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public IImmutableDictionary<string, int> Numbers { get; }
 
-        public PortugueseDateTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config)
-        {
-            TokenBeforeDate = Definitions.Portuguese.DateTimeDefinitions.TokenBeforeDate;
-
-            DateExtractor = config.DateExtractor;
-            TimeExtractor = config.TimeExtractor;
-            DateTimeExtractor = config.DateTimeExtractor;
-            TimePeriodExtractor = config.TimePeriodExtractor;
-            CardinalExtractor = config.CardinalExtractor;
-            DurationExtractor = config.DurationExtractor;
-            NumberParser = config.NumberParser;
-            DateParser = config.DateParser;
-            TimeParser = config.TimeParser;
-            DateTimeParser = config.DateTimeParser;
-            TimePeriodParser = config.TimePeriodParser;
-            DurationParser = config.DurationParser;
-
-            PureNumberFromToRegex = PortugueseTimePeriodExtractorConfiguration.PureNumFromTo;
-            PureNumberBetweenAndRegex = PortugueseTimePeriodExtractorConfiguration.PureNumBetweenAnd;
-            SpecificTimeOfDayRegex = PortugueseDateTimeExtractorConfiguration.SpecificTimeOfDayRegex;
-            TimeOfDayRegex = PortugueseDateTimeExtractorConfiguration.TimeOfDayRegex;
-            PastRegex = PortugueseDatePeriodExtractorConfiguration.PastRegex;
-            FutureRegex = PortugueseDatePeriodExtractorConfiguration.FutureRegex;
-            FutureSuffixRegex = PortugueseDatePeriodExtractorConfiguration.FutureSuffixRegex;
-            NumberCombinedWithUnitRegex = PortugueseDateTimePeriodExtractorConfiguration.NumberCombinedWithUnit;
-            UnitRegex = PortugueseTimePeriodExtractorConfiguration.UnitRegex;
-            PeriodTimeOfDayWithDateRegex = PortugueseDateTimePeriodExtractorConfiguration.PeriodTimeOfDayWithDateRegex;
-            RelativeTimeUnitRegex = PortugueseDateTimePeriodExtractorConfiguration.RelativeTimeUnitRegex;
-            RestOfDateTimeRegex = PortugueseDateTimePeriodExtractorConfiguration.RestOfDateTimeRegex;
-            AmDescRegex = PortugueseDateTimePeriodExtractorConfiguration.AmDescRegex;
-            PmDescRegex = PortugueseDateTimePeriodExtractorConfiguration.PmDescRegex;
-            WithinNextPrefixRegex = PortugueseDateTimePeriodExtractorConfiguration.WithinNextPrefixRegex;
-            PrefixDayRegex = PortugueseDateTimePeriodExtractorConfiguration.PrefixDayRegex;
-            BeforeRegex = PortugueseDateTimePeriodExtractorConfiguration.BeforeRegex;
-            AfterRegex = PortugueseDateTimePeriodExtractorConfiguration.AfterRegex;
-            UnitMap = config.UnitMap;
-            Numbers = config.Numbers;
-        }
-
         public bool GetMatchedTimeRange(string text, out string timeStr, out int beginHour, out int endHour, out int endMin)
         {
             var trimmedText = text.Trim().ToLowerInvariant().Normalized();
@@ -119,7 +120,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             endHour = 0;
             endMin = 0;
 
-            //TODO: modify it according to the coresponding function in English part
+            // TODO: modify it according to the coresponding function in English part
             if (trimmedText.EndsWith("madrugada"))
             {
                 timeStr = "TDA";
@@ -165,7 +166,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             var trimmedText = text.Trim().ToLowerInvariant();
             var swift = 0;
 
-            //TODO: Replace with a regex
+            // TODO: Replace with a regex
             if (PortugueseDatePeriodParserConfiguration.PastPrefixRegex.IsMatch(trimmedText) ||
                 trimmedText.Equals("anoche"))
             {

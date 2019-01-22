@@ -5,6 +5,7 @@ import com.microsoft.recognizers.text.IExtractor;
 import com.microsoft.recognizers.text.IParser;
 import com.microsoft.recognizers.text.datetime.config.BaseOptionsConfiguration;
 import com.microsoft.recognizers.text.datetime.english.extractors.EnglishDateExtractorConfiguration;
+import com.microsoft.recognizers.text.datetime.extractors.IDateExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.IDateTimeExtractor;
 import com.microsoft.recognizers.text.datetime.parsers.IDateTimeParser;
 import com.microsoft.recognizers.text.datetime.parsers.config.ICommonDateTimeParserConfiguration;
@@ -78,7 +79,7 @@ public class EnglishDateParserConfiguration extends BaseOptionsConfiguration imp
     private final IExtractor cardinalExtractor;
     private final IParser numberParser;
     private final IDateTimeExtractor durationExtractor;
-    private final IDateTimeExtractor dateExtractor;
+    private final IDateExtractor dateExtractor;
     private final IDateTimeParser durationParser;
     private final Iterable<Pattern> dateRegexes;
 
@@ -149,7 +150,7 @@ public class EnglishDateParserConfiguration extends BaseOptionsConfiguration imp
     }
 
     @Override
-    public IDateTimeExtractor getDateExtractor() {
+    public IDateExtractor getDateExtractor() {
         return dateExtractor;
     }
 
@@ -306,31 +307,6 @@ public class EnglishDateParserConfiguration extends BaseOptionsConfiguration imp
     @Override
     public IDateTimeUtilityConfiguration getUtilityConfiguration() {
         return utilityConfiguration;
-    }
-
-    @Override
-    public Integer getSwiftDay(String text) {
-
-        String trimmedText = text.trim().toLowerCase();
-        Integer swift = 0;
-
-        Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(relativeDayRegex, text)).findFirst();
-
-        if (trimmedText.equals("today")) {
-            swift = 0;
-        } else if (trimmedText.equals("tomorrow") || trimmedText.equals("tmr")) {
-            swift = 1;
-        } else if (trimmedText.equals("yesterday")) {
-            swift = -1;
-        } else if (trimmedText.endsWith("day after tomorrow") || trimmedText.endsWith("day after tmr")) {
-            swift = 2;
-        } else if (trimmedText.endsWith("day before yesterday")) {
-            swift = -2;
-        } else if (match.isPresent()) {
-            swift = getSwift(text);
-        }
-
-        return swift;
     }
 
     @Override

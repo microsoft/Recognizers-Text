@@ -1,19 +1,14 @@
-﻿using Microsoft.Recognizers.Definitions.Chinese;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Definitions.Chinese;
 
 namespace Microsoft.Recognizers.Text.Number.Chinese
 {
     public class NumberRangeExtractor : BaseNumberRangeExtractor
     {
-        internal sealed override ImmutableDictionary<Regex, string> Regexes { get; }
-
-        internal sealed override Regex AmbiguousFractionConnectorsRegex { get; }
-
-        protected sealed override string ExtractType { get; } = Constants.SYS_NUMRANGE;
-
-        public NumberRangeExtractor(NumberOptions options = NumberOptions.None) : base(new NumberExtractor(), new OrdinalExtractor(), new BaseCJKNumberParser(new ChineseNumberParserConfiguration()), options: options)
+        public NumberRangeExtractor(NumberOptions options = NumberOptions.None)
+            : base(new NumberExtractor(), new OrdinalExtractor(), new BaseCJKNumberParser(new ChineseNumberParserConfiguration()), options: options)
         {
             var regexes = new Dictionary<Regex, string>()
             {
@@ -71,13 +66,19 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
                     // 等于...
                     new Regex(NumbersDefinitions.OneNumberRangeEqualRegex, RegexOptions.Singleline),
                     NumberRangeConstants.EQUAL
-                }
+                },
             };
 
             Regexes = regexes.ToImmutableDictionary();
 
-            AmbiguousFractionConnectorsRegex = 
+            AmbiguousFractionConnectorsRegex =
                 new Regex(NumbersDefinitions.AmbiguousFractionConnectorsRegex, RegexOptions.Singleline);
         }
+
+        internal sealed override ImmutableDictionary<Regex, string> Regexes { get; }
+
+        internal sealed override Regex AmbiguousFractionConnectorsRegex { get; }
+
+        protected sealed override string ExtractType { get; } = Constants.SYS_NUMRANGE;
     }
 }

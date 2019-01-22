@@ -3,13 +3,10 @@ using Microsoft.Recognizers.Text.Utilities;
 
 namespace Microsoft.Recognizers.Text
 {
-    public abstract class Recognizer<TRecognizerOptions> where TRecognizerOptions : struct
+    public abstract class Recognizer<TRecognizerOptions>
+           where TRecognizerOptions : struct
     {
         private readonly ModelFactory<TRecognizerOptions> factory;
-
-        public string TargetCulture { get; private set; }
-
-        public TRecognizerOptions Options { get; private set; }
 
         protected Recognizer(string targetCulture, TRecognizerOptions options, bool lazyInitialization)
         {
@@ -24,8 +21,15 @@ namespace Microsoft.Recognizers.Text
                 this.InitializeModels(targetCulture, options);
             }
         }
-        
-        protected T GetModel<T>(string culture, bool fallbackToDefaultCulture) where T : IModel
+
+        public string TargetCulture { get; private set; }
+
+        public TRecognizerOptions Options { get; private set; }
+
+        public static TRecognizerOptions GetOptions(int value) => EnumUtils.Convert<TRecognizerOptions>(value);
+
+        protected T GetModel<T>(string culture, bool fallbackToDefaultCulture)
+                  where T : IModel
         {
             return this.factory.GetModel<T>(culture ?? TargetCulture, fallbackToDefaultCulture, Options);
         }
@@ -41,7 +45,5 @@ namespace Microsoft.Recognizers.Text
         {
             this.factory.InitializeModels(targetCulture, options);
         }
-
-        public static TRecognizerOptions GetOptions(int value) => EnumUtils.Convert<TRecognizerOptions>(value);
     }
 }

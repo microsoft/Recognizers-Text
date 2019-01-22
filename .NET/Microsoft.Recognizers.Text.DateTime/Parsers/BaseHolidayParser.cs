@@ -8,8 +8,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 {
     public class BaseHolidayParser : IDateTimeParser
     {
-        public static readonly string ParserName = Constants.SYS_DATETIME_DATE; //"Date";
-        
+        public static readonly string ParserName = Constants.SYS_DATETIME_DATE; // "Date"
+
         private readonly IHolidayParserConfiguration config;
 
         public BaseHolidayParser(IHolidayParserConfiguration config)
@@ -35,11 +35,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     innerResult.FutureResolution = new Dictionary<string, string>
                     {
-                        {TimeTypeConstants.DATE, DateTimeFormatUtil.FormatDate((DateObject) innerResult.FutureValue)}
+                        { TimeTypeConstants.DATE, DateTimeFormatUtil.FormatDate((DateObject)innerResult.FutureValue) },
                     };
                     innerResult.PastResolution = new Dictionary<string, string>
                     {
-                        {TimeTypeConstants.DATE, DateTimeFormatUtil.FormatDate((DateObject) innerResult.PastValue)}
+                        { TimeTypeConstants.DATE, DateTimeFormatUtil.FormatDate((DateObject)innerResult.PastValue) },
                     };
                     value = innerResult;
                 }
@@ -53,10 +53,16 @@ namespace Microsoft.Recognizers.Text.DateTime
                 Type = er.Type,
                 Data = er.Data,
                 Value = value,
-                TimexStr = value == null ? "" : ((DateTimeResolutionResult) value).Timex,
-                ResolutionStr = ""
+                TimexStr = value == null ? string.Empty : ((DateTimeResolutionResult)value).Timex,
+                ResolutionStr = string.Empty,
             };
+
             return ret;
+        }
+
+        public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)
+        {
+            return candidateResults;
         }
 
         private DateTimeResolutionResult ParseHolidayRegexMatch(string text, DateObject referenceDate)
@@ -72,6 +78,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     return ret;
                 }
             }
+
             return new DateTimeResolutionResult();
         }
 
@@ -98,6 +105,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     return ret;
                 }
+
                 year = referenceDate.Year + swift;
                 hasYear = true;
             }
@@ -115,7 +123,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     break;
                 }
             }
-            
+
             var timexStr = string.Empty;
             if (!string.IsNullOrEmpty(holidayKey))
             {
@@ -137,7 +145,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 if (value.Equals(DateObject.MinValue))
                 {
-                    ret.Timex = "";
+                    ret.Timex = string.Empty;
                     ret.FutureValue = ret.PastValue = DateObject.MinValue;
                     ret.Success = true;
                     return ret;
@@ -186,11 +194,6 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             return value;
-        }
-
-        public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)
-        {
-            return candidateResults;
         }
     }
 }

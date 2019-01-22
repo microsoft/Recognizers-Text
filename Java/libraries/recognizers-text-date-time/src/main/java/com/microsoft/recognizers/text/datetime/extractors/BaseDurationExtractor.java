@@ -235,9 +235,9 @@ public class BaseDurationExtractor implements IDateTimeExtractor {
         List<ExtractResult> ers = this.config.getCardinalExtractor().extract(text);
         for (ExtractResult er : ers) {
             String afterStr = text.substring(er.getStart() + er.getLength());
-            Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(this.config.getFollowedUnit(), afterStr)).findFirst();
-            if (match.isPresent() && match.get().index == 0) {
-                result.add(new Token(er.getStart(), er.getStart() + er.getLength() + match.get().length));
+            ConditionalMatch match = RegexExtension.matchBegin(this.config.getFollowedUnit(), afterStr, true);
+            if (match.getSuccess() && match.getMatch().get().index == 0) {
+                result.add(new Token(er.getStart(), er.getStart() + er.getLength() + match.getMatch().get().length));
             }
         }
 
@@ -270,9 +270,9 @@ public class BaseDurationExtractor implements IDateTimeExtractor {
 
         for (Token token : tokens) {
             String afterStr = text.substring(token.getStart() + token.getLength());
-            Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(this.config.getSuffixAndRegex(), afterStr)).findFirst();
-            if (match.isPresent() && match.get().index == 0) {
-                result.add(new Token(token.getStart(), token.getStart() + token.getLength() + match.get().length));
+            ConditionalMatch match = RegexExtension.matchBegin(this.config.getSuffixAndRegex(), afterStr, true);
+            if (match.getSuccess() && match.getMatch().get().index == 0) {
+                result.add(new Token(token.getStart(), token.getStart() + token.getLength() + match.getMatch().get().length));
             }
         }
 
