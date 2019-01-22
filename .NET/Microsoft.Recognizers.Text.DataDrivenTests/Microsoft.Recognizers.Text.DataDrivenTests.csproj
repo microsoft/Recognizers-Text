@@ -104,6 +104,7 @@
     <Compile Include="NumberWithUnit\TestNumberWithUnit_Chinese.cs" />
     <Compile Include="NumberWithUnit\TestNumberWithUnit_English.cs" />
     <Compile Include="NumberWithUnit\TestNumberWithUnitRecognizerInitialization.cs" />
+    <Compile Include="Number\LongFormTestConfiguration.cs" />
     <Compile Include="Number\TestDecimalAndThousandsSeparators.cs" />
     <Compile Include="Number\TestNumber_Italian.cs" />
     <Compile Include="Number\TestNumberRecognizerCache.cs" />
