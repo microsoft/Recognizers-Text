@@ -90,12 +90,20 @@ public class BaseTimeZoneExtractor implements IDateTimeZoneExtractor {
 
     private List<Token> matchTimeZones(String text) {
         List<Token> ret = new ArrayList<>();
-        for (Pattern regex : config.getTimeZoneRegexes()) {
-            Match[] matches = RegExpUtility.getMatches(regex, text);
-            for (Match match : matches) {
+
+        // Direct UTC matches
+        Match[] directUtcMatches = RegExpUtility.getMatches(config.getDirectUtcRegex(), text.toLowerCase());
+        if (directUtcMatches.length > 0) {
+            for (Match match : directUtcMatches) {
                 ret.add(new Token(match.index, match.index + match.length));
             }
         }
+
+        Iterable<MatchResult<String>> matches = config.getTimeZoneMatcher().find(text.toLowerCase());
+        for (MatchResult<String> match : matches) {
+            ret.add(new Token(match.getStart(), match.getStart() + match.getLength()));
+        }
+
         return ret;
     }
 }

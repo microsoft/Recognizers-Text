@@ -13,18 +13,14 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex DirectUtcRegex =
             new Regex(TimeZoneDefinitions.DirectUtcRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex AbbreviationRegex =
-            new Regex(TimeZoneDefinitions.AbbreviationsRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly List<string> AbbreviationsList =
+            new List<string>(TimeZoneDefinitions.AbbreviationsList);
 
-        public static readonly Regex StandardTimeRegex =
-            new Regex(TimeZoneDefinitions.FullNameRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly List<string> FullNameList =
+            new List<string>(TimeZoneDefinitions.FullNameList);
 
-        public static readonly Regex[] TimeZoneRegexList =
-        {
-            DirectUtcRegex,
-            AbbreviationRegex,
-            StandardTimeRegex,
-        };
+        public static readonly StringMatcher TimeZoneMatcher =
+            BuildMatcherFromLists(AbbreviationsList, FullNameList);
 
         public static readonly Regex LocationTimeSuffixRegex =
             new Regex(TimeZoneDefinitions.LocationTimeSuffixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -42,12 +38,31 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             }
         }
 
-        IEnumerable<Regex> ITimeZoneExtractorConfiguration.TimeZoneRegexes => TimeZoneRegexList;
+        Regex ITimeZoneExtractorConfiguration.DirectUtcRegex => DirectUtcRegex;
 
         Regex ITimeZoneExtractorConfiguration.LocationTimeSuffixRegex => LocationTimeSuffixRegex;
 
         StringMatcher ITimeZoneExtractorConfiguration.LocationMatcher => LocationMatcher;
 
+        StringMatcher ITimeZoneExtractorConfiguration.TimeZoneMatcher => TimeZoneMatcher;
+
         List<string> ITimeZoneExtractorConfiguration.AmbiguousTimezoneList => AmbiguousTimezoneList;
+
+        protected static StringMatcher BuildMatcherFromLists(params List<string>[] collections)
+        {
+            StringMatcher matcher = new StringMatcher(MatchStrategy.TrieTree, new NumberWithUnitTokenizer());
+            List<string> matcherList = new List<string>();
+
+            foreach (List<string> collection in collections)
+            {
+                collection.ForEach(o => matcherList.Add(o.Trim().ToLower()));
+            }
+
+            matcherList = matcherList.Distinct().ToList();
+
+            matcher.Init(matcherList);
+
+            return matcher;
+        }
     }
 }
