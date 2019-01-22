@@ -11,56 +11,56 @@ namespace Microsoft.Recognizers.Text.Number.Tests
         [TestMethod]
         public void NumberModel(TestModel testSpec)
         {
-            base.TestNumber(testSpec);
+            TestNumber(testSpec);
         }
 
         [NetCoreTestDataSource]
         [TestMethod]
         public void NumberModelPercentMode(TestModel testSpec)
         {
-            base.TestNumber(testSpec);
+            TestNumber(testSpec);
         }
 
         [NetCoreTestDataSource]
         [TestMethod]
         public void NumberModelExperimentalMode(TestModel testSpec)
         {
-            base.TestNumber(testSpec);
+            TestNumber(testSpec);
         }
 
         [NetCoreTestDataSource]
         [TestMethod]
         public void OrdinalModel(TestModel testSpec)
         {
-            base.TestNumber(testSpec);
+            TestNumber(testSpec);
         }
 
         [NetCoreTestDataSource]
         [TestMethod]
         public void PercentModel(TestModel testSpec)
         {
-            base.TestNumber(testSpec);
+            TestNumber(testSpec);
         }
 
         [NetCoreTestDataSource]
         [TestMethod]
         public void PercentModelPercentMode(TestModel testSpec)
         {
-            base.TestNumber(testSpec);
+            TestNumber(testSpec);
         }
 
         [NetCoreTestDataSource]
         [TestMethod]
         public void NumberRangeModel(TestModel testSpec)
         {
-            base.TestNumber(testSpec);
+            TestNumber(testSpec);
         }
 
         [NetCoreTestDataSource]
         [TestMethod]
         public void NumberRangeModelExperimentalMode(TestModel testSpec)
         {
-            base.TestNumber(testSpec);
+            TestNumber(testSpec);
         }
     }
 }
