@@ -454,7 +454,10 @@ public class BaseMergedDateTimeParser implements IDateTimeParser {
         }
 
         LinkedHashMap<String, String> pastResolutionStr = new LinkedHashMap<>();
-        pastResolutionStr.putAll(((DateTimeResolutionResult)slot.getValue()).getPastResolution());
+        if (((DateTimeResolutionResult)slot.getValue()).getPastResolution() != null) {
+            pastResolutionStr.putAll(((DateTimeResolutionResult)slot.getValue()).getPastResolution());
+        }
+
         Map<String, String> futureResolutionStr = ((DateTimeResolutionResult)slot.getValue()).getFutureResolution();
 
         if (typeOutput.equals(Constants.SYS_DATETIME_DATETIMEALT) && pastResolutionStr.size() > 0) {
