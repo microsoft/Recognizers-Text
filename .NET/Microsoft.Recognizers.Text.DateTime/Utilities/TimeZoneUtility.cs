@@ -27,7 +27,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                             er.Length = newLength;
                             er.Data = new Dictionary<string, object>()
                             {
-                                { Constants.SYS_DATETIME_TIMEZONE, timeZoneEr }
+                                { Constants.SYS_DATETIME_TIMEZONE, timeZoneEr },
                             };
                         }
                     }
@@ -44,9 +44,9 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if (er.Data is Dictionary<string, object>)
             {
-                var metadata = er.Data as Dictionary<string, object>;
+                var metaData = er.Data as Dictionary<string, object>;
 
-                if (metadata != null && metadata.ContainsKey(Constants.SYS_DATETIME_TIMEZONE))
+                if (metaData != null && metaData.ContainsKey(Constants.SYS_DATETIME_TIMEZONE))
                 {
                     hasTimeZoneData = true;
                 }

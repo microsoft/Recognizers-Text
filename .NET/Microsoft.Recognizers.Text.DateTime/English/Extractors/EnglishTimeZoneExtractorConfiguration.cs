@@ -22,14 +22,15 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly StringMatcher TimeZoneMatcher =
             BuildMatcherFromLists(AbbreviationsList, FullNameList);
 
-        public static readonly Regex LocationTimeSuffixRegex = 
+        public static readonly Regex LocationTimeSuffixRegex =
             new Regex(TimeZoneDefinitions.LocationTimeSuffixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly StringMatcher LocationMatcher = new StringMatcher();
 
         public static readonly List<string> AmbiguousTimezoneList = TimeZoneDefinitions.AmbiguousTimezoneList.ToList();
 
-        public EnglishTimeZoneExtractorConfiguration(IOptionsConfiguration config) : base(config)
+        public EnglishTimeZoneExtractorConfiguration(IOptionsConfiguration config)
+            : base(config)
         {
             if ((Options & DateTimeOptions.EnablePreview) != 0)
             {
