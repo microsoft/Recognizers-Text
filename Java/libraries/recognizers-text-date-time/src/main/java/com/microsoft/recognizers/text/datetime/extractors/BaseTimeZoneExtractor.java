@@ -91,7 +91,7 @@ public class BaseTimeZoneExtractor implements IDateTimeZoneExtractor {
     private List<Token> matchTimeZones(String text) {
         List<Token> ret = new ArrayList<>();
 
-        // Direct TUC matches
+        // Direct UTC matches
         Match[] directUtcMatches = RegExpUtility.getMatches(config.getDirectUtcRegex(), text.toLowerCase());
         if (directUtcMatches.length > 0) {
             for (Match match : directUtcMatches) {
