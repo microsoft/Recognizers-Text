@@ -159,6 +159,7 @@
     <Rule Id="CS8009" Action="Error" />
     <Rule Id="CS8012" Action="Error" />
     <Rule Id="CS8018" Action="Error" />
+    <Rule Id="CS8019" Action="Error" />
     <Rule Id="CS8021" Action="Error" />
     <Rule Id="CS8029" Action="Error" />
     <Rule Id="CS8032" Action="Error" />
