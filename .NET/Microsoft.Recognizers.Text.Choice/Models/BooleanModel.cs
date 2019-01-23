@@ -5,9 +5,9 @@ namespace Microsoft.Recognizers.Text.Choice
 {
     public class BooleanModel : ChoiceModel
     {
-        public BooleanModel(IParser parser, IExtractor extractor) : base(parser,extractor)
+        public BooleanModel(IParser parser, IExtractor extractor)
+               : base(parser, extractor)
         {
-
         }
 
         public override string ModelTypeName => Constants.MODEL_BOOLEAN;
@@ -19,16 +19,15 @@ namespace Microsoft.Recognizers.Text.Choice
             {
                 { "value", parseResult.Value },
                 { "score", data.Score },
-                { "otherResults", data.OtherMatches.Select(l => new
+                {
+                    "otherResults", data.OtherMatches.Select(l => new
                     {
                         Text = l.Text,
                         Value = l.Value,
-                        Score = l.Score
-                    } 
-                )},
-
+                        Score = l.Score,
+                    })
+                },
             };
-            
 
             return results;
         }

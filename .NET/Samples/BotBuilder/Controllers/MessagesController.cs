@@ -1,7 +1,6 @@
 ﻿namespace BotBuilderRecognizerSample
 {
     using System;
-    using System.Collections.Generic;
     using System.Linq;
     using System.Net;
     using System.Net.Http;
@@ -15,8 +14,10 @@
     {
         /// <summary>
         /// POST: api/Messages
-        /// Receive a message from a user and reply to it
+        /// Receive a message from a user and reply to it.
         /// </summary>
+        /// <param name="activity">dialogue activity.</param>
+        /// <returns>HttpResponseMensaje.</returns>
         public async Task<HttpResponseMessage> Post([FromBody]Activity activity)
         {
             if (activity.Type == ActivityTypes.Message)

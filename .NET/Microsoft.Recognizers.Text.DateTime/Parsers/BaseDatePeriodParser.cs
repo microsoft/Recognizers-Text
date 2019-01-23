@@ -1,5 +1,4 @@
-﻿using Microsoft.Recognizers.Text.DateTime.Utilities;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -42,7 +41,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
 
                 if (innerResult.Success)
-                {                                     
+                {
                     if (innerResult.Mod == Constants.BEFORE_MOD)
                     {
                         innerResult.FutureResolution = new Dictionary<string, string>
@@ -50,7 +49,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                             {
                                 TimeTypeConstants.END_DATE,
                                 DateTimeFormatUtil.FormatDate((DateObject)innerResult.FutureValue)
-                            }
+                            },
                         };
 
                         innerResult.PastResolution = new Dictionary<string, string>
@@ -58,7 +57,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                             {
                                 TimeTypeConstants.END_DATE,
                                 DateTimeFormatUtil.FormatDate((DateObject)innerResult.PastValue)
-                            }
+                            },
                         };
                     }
                     else if (innerResult.Mod == Constants.AFTER_MOD)
@@ -68,7 +67,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                             {
                                 TimeTypeConstants.START_DATE,
                                 DateTimeFormatUtil.FormatDate((DateObject)innerResult.FutureValue)
-                            }
+                            },
                         };
 
                         innerResult.PastResolution = new Dictionary<string, string>
@@ -76,7 +75,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                             {
                                 TimeTypeConstants.START_DATE,
                                 DateTimeFormatUtil.FormatDate((DateObject)innerResult.PastValue)
-                            }
+                            },
                         };
                     }
                     else if (innerResult.FutureValue != null && innerResult.PastValue != null)
@@ -90,7 +89,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                             {
                                 TimeTypeConstants.END_DATE,
                                 DateTimeFormatUtil.FormatDate(((Tuple<DateObject, DateObject>) innerResult.FutureValue).Item2)
-                            }
+                            },
                         };
 
                         innerResult.PastResolution = new Dictionary<string, string>
@@ -102,7 +101,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                             {
                                 TimeTypeConstants.END_DATE,
                                 DateTimeFormatUtil.FormatDate(((Tuple<DateObject, DateObject>) innerResult.PastValue).Item2)
-                            }
+                            },
                         };
                     }
                     else
@@ -124,7 +123,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 Metadata = er.Metadata,
                 Value = value,
                 TimexStr = value == null ? "" : ((DateTimeResolutionResult)value).Timex,
-                ResolutionStr = ""
+                ResolutionStr = "",
             };
 
             return ret;
@@ -575,6 +574,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                                 month = 1;
                                 year += 1;
                             }
+
                             break;
                         case -1:
                             if (month != 1)
@@ -586,6 +586,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                                 month = 12;
                                 year -= 1;
                             }
+
                             break;
                         default:
                             break;
@@ -642,6 +643,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             return swift == 0;
         }
+
         private DateTimeResolutionResult ParseOneWordPeriod(string text, DateObject referenceDate)
         {
             var ret = new DateTimeResolutionResult();
@@ -701,7 +703,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     swift = this.config.GetSwiftDayOrMonth(trimmedText);
                 }
-                
+
                 // Handle the abbreviation of DatePeriod, e.g., 'eoy(end of year)', the behavior of 'eoy' should be the same as 'end of year'
                 if (this.config.UnspecificEndOfRangeRegex.IsMatch(match.Value))
                 {
@@ -1005,6 +1007,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     {
                         return ret;
                     }
+
                     year = referenceDate.Year + swift;
                 }
 
@@ -1128,6 +1131,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     return ret;
                 }
+
                 er[0].Start -= this.config.TokenBeforeDate.Length;
                 er[1].Start -= this.config.TokenBeforeDate.Length;
             }
@@ -1210,7 +1214,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     var durationText = durationErs[0].Text;
                     var combinedText = $"{numberText} {durationText}";
                     var combinedDurationEr = config.DurationExtractor.Extract(combinedText, referenceDate);
-                    
+
                     if (combinedDurationEr.Any())
                     {
                         durationPr = config.DurationParser.Parse(combinedDurationEr.First());
@@ -1305,6 +1309,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         {
                             restNowSunday = true;
                         }
+
                         break;
 
                     case Constants.TimexMonthFull:
@@ -1455,6 +1460,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     return ret;
                 }
+
                 year = referenceDate.Year + swift;
             }
 
@@ -1511,6 +1517,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     return ret;
                 }
+
                 year = referenceDate.Year + swift;
             }
 
@@ -1563,6 +1570,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     swift = 0;
                     noSpecificYear = true;
                 }
+
                 year = referenceDate.Year + swift;
             }
 
@@ -1645,6 +1653,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         ret.Success = true;
                         return ret;
                     }
+
                     year = referenceDate.Year + swift;
                 }
 
@@ -1654,6 +1663,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 ret.Success = true;
                 return ret;
             }
+
             return ret;
         }
 
@@ -1685,11 +1695,13 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     ret.Timex = pr.Timex;
                 }
+
                 ret.Comment = Constants.Comment_WeekOf;
                 ret.FutureValue = GetWeekRangeFromDate((DateObject)pr.FutureValue);
                 ret.PastValue = GetWeekRangeFromDate((DateObject)pr.PastValue);
                 ret.Success = true;
             }
+
             return ret;
         }
 
@@ -1707,6 +1719,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 ret.PastValue = GetMonthRangeFromDate((DateObject)pr.PastValue);
                 ret.Success = true;
             }
+
             return ret;
         }
 
@@ -1729,6 +1742,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 endDate = DateObject.MinValue.SafeCreateFromValue(date.Year + 1, 1, 1);
             }
+
             endDate = InclusiveEndPeriod ? endDate.AddDays(-1) : endDate;
             return new Tuple<DateObject, DateObject>(startDate, endDate);
         }
@@ -1753,6 +1767,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 ret.PastValue = new Tuple<DateObject, DateObject>(pastDate, pastDate.AddDays(Constants.WeekDayCount));
                 ret.Success = true;
             }
+
             return ret;
         }
 
@@ -2011,6 +2026,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 endLuisStr = DateTimeFormatUtil.LuisDate(-1, 1, 1);
                 endLuisStr = endLuisStr.Replace("XXXX", endYearStr);
             }
+
             ret.Timex = $"({beginLuisStr},{endLuisStr},P{totalLastYear}Y)";
 
             int futureYear = beginYear, pastYear = beginYear;

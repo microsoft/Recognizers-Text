@@ -40,23 +40,35 @@ build_script:
     CALL node -e "console.log(process.versions.v8);"
 
     cd .NET\
-
+    
     build.ci.cmd
 
     cd ..\JavaScript\
-
-    build.cmd
-
+    
+    build.ci.cmd
+    
     cd ..\Python\
-
-    build.cmd
-
-    cd ..\java\
-
+    
     build.ci.cmd
 
-# disable automatic tests
-test: off
+    cd ..\java\
+    
+    build.ci.cmd
+    
+test:
+          
+test_script:
+    cd ..\.NET\
+    
+    tests.ci.cmd
+
+    cd ..\JavaScript\
+    
+    tests.ci.cmd
+    
+    cd ..\java\
+    
+    tests.ci.cmd
 
 artifacts:
     - path: '**\*Microsoft.Recognizers*.nupkg'
