@@ -1,8 +1,8 @@
-using Microsoft.Recognizers.Text.DateTime.Utilities;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Text.DateTime.Utilities;
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime
@@ -11,7 +11,8 @@ namespace Microsoft.Recognizers.Text.DateTime
     {
         public static readonly string ExtractorName = Constants.SYS_DATETIME_DATE; // "Date";
 
-        public BaseDateExtractor(IDateExtractorConfiguration config) : base(config)
+        public BaseDateExtractor(IDateExtractorConfiguration config)
+            : base(config)
         {
         }
 
@@ -29,6 +30,92 @@ namespace Microsoft.Recognizers.Text.DateTime
             tokens.AddRange(ExtractRelativeDurationDate(text, reference));
 
             return Token.MergeAllTokens(tokens, text, ExtractorName);
+        }
+
+        public bool IsOverlapWithExistExtractions(Token er, List<Token> existErs)
+        {
+            foreach (var existEr in existErs)
+            {
+                if (er.Start < existEr.End && er.End > existEr.Start)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        // "In 3 days/weeks/months/years" = "3 days/weeks/months/years from now"
+        public List<Token> ExtractRelativeDurationDateWithInPrefix(string text, List<ExtractResult> durationEr, DateObject reference)
+        {
+            var ret = new List<Token>();
+
+            var durations = new List<Token>();
+
+            foreach (var durationExtraction in durationEr)
+            {
+                var match = Config.DateUnitRegex.Match(durationExtraction.Text);
+                if (match.Success)
+                {
+                    durations.Add(new Token(
+                        durationExtraction.Start ?? 0,
+                        durationExtraction.Start + durationExtraction.Length ?? 0));
+                }
+            }
+
+            foreach (var duration in durations)
+            {
+                var beforeStr = text.Substring(0, duration.Start).ToLowerInvariant();
+                var afterStr = text.Substring(duration.Start + duration.Length).ToLowerInvariant();
+
+                if (string.IsNullOrWhiteSpace(beforeStr) && string.IsNullOrWhiteSpace(afterStr))
+                {
+                    continue;
+                }
+
+                var match = Config.InConnectorRegex.MatchEnd(beforeStr, trim: true);
+
+                if (match.Success)
+                {
+                    var startToken = match.Index;
+                    var rangeUnitMatch = Config.RangeUnitRegex.Match(text.Substring(duration.Start, duration.Length));
+
+                    if (rangeUnitMatch.Success)
+                    {
+                        ret.Add(new Token(startToken, duration.End));
+                    }
+                }
+            }
+
+            return ret;
+        }
+
+        private static void StripInequalityPrefix(ExtractResult er, Regex regex)
+        {
+            if (regex.IsMatch(er.Text))
+            {
+                var originalLength = er.Text.Length;
+                er.Text = regex.Replace(er.Text, string.Empty).Trim();
+                er.Start += originalLength - er.Text.Length;
+                er.Length = er.Text.Length;
+                er.Data = string.Empty;
+            }
+        }
+
+        private static bool IsMultipleDurationDate(ExtractResult er)
+        {
+            return er.Data != null && er.Data.ToString() == Constants.MultipleDuration_Date;
+        }
+
+        private static bool IsMultipleDuration(ExtractResult er)
+        {
+            return er.Data != null && er.Data.ToString().StartsWith(Constants.MultipleDuration_Prefix);
+        }
+
+        // Cases like "more than 3 days", "less than 4 weeks"
+        private static bool IsInequalityDuration(ExtractResult er)
+        {
+            return er.Data != null && (er.Data.ToString() == Constants.MORE_THAN_MOD || er.Data.ToString() == Constants.LESS_THAN_MOD);
         }
 
         // match basic patterns in DateRegexList
@@ -156,7 +243,6 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             foreach (var result in er)
             {
-
                 int.TryParse((this.Config.NumberParser.Parse(result).Value ?? 0).ToString(), out int num);
 
                 if (num < 1 || num > 31)
@@ -175,9 +261,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                         var startIndex = match.Index;
                         var endIndex = match.Index + match.Length + (result.Length ?? 0);
 
-                        ExtendWithWeekdayAndYear(ref startIndex, ref endIndex,
-                            Config.MonthOfYear.GetValueOrDefault(match.Groups["month"].Value.ToLower(), reference.Month),
-                            num, text, reference);
+                        ExtendWithWeekdayAndYear(
+                            ref startIndex, ref endIndex, Config.MonthOfYear.GetValueOrDefault(match.Groups["month"].Value.ToLower(), reference.Month), num, text, reference);
 
                         ret.Add(new Token(startIndex, endIndex));
                         continue;
@@ -198,6 +283,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                                 {
                                     endLenght = matchCase.Groups["end"].Value.Length;
                                 }
+
                                 ret.Add(new Token(matchCase.Index, matchCase.Index + matchCase.Length - endLenght));
                                 isFound = true;
                             }
@@ -257,7 +343,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                             resStart = prefixMatch.Index;
                         }
 
-                        ret.Add(new Token(resStart ?? 0, resEnd?? 0));
+                        ret.Add(new Token(resStart ?? 0, resEnd ?? 0));
                     }
 
                     // Handling cases like 'second Sunday'
@@ -265,10 +351,9 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     beginMatch = this.Config.WeekDayRegex.MatchBegin(suffixStr.Trim(), trim: true);
 
-                    if (beginMatch.Success && num >= 1 && num <= 5 
+                    if (beginMatch.Success && num >= 1 && num <= 5
                         && result.Type.Equals(Number.Constants.SYS_NUM_ORDINAL))
                     {
-
                         var weekDayStr = beginMatch.Groups["weekday"].Value.ToLower();
                         if (this.Config.DayOfWeek.ContainsKey(weekDayStr))
                         {
@@ -289,9 +374,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         var startIndex = result.Start ?? 0;
                         var endIndex = (result.Start + result.Length ?? 0) + match.Length;
 
-                        ExtendWithWeekdayAndYear(ref startIndex, ref endIndex,
-                            Config.MonthOfYear.GetValueOrDefault(match.Groups["month"].Value.ToLower(), reference.Month),
-                            num, text, reference);
+                        ExtendWithWeekdayAndYear(ref startIndex, ref endIndex, Config.MonthOfYear.GetValueOrDefault(match.Groups["month"].Value.ToLower(), reference.Month), num, text, reference);
 
                         ret.Add(new Token(startIndex, endIndex));
                     }
@@ -302,8 +385,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         }
 
         // TODO: Remove the parsing logic from here
-        private void ExtendWithWeekdayAndYear(ref int startIndex,
-            ref int endIndex, int month, int day, string text, DateObject reference)
+        private void ExtendWithWeekdayAndYear(
+            ref int startIndex, ref int endIndex, int month, int day, string text, DateObject reference)
         {
             var year = reference.Year;
 
@@ -318,7 +401,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     endIndex += matchYear.Length;
                 }
-            }           
+            }
 
             var date = DateObject.MinValue.SafeCreateFromValue(year, month, day);
 
@@ -327,7 +410,6 @@ namespace Microsoft.Recognizers.Text.DateTime
             var matchWeekDay = this.Config.WeekDayEnd.Match(prefix);
             if (matchWeekDay.Success)
             {
-
                 // Get weekday from context directly, compare it with the weekday extraction above
                 // to see whether they are referred to the same weekday
                 var extractedWeekDayStr = matchWeekDay.Groups["weekday"].Value.ToLower();
@@ -372,9 +454,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var match = Config.DateUnitRegex.Match(er.Text);
 
                 if (match.Success)
-                {                    
-                    ret.AddRange(AgoLaterUtil.ExtractorDurationWithBeforeAndAfter(text,
-                        er, ret, Config.UtilityConfiguration));
+                {
+                    ret.AddRange(AgoLaterUtil.ExtractorDurationWithBeforeAndAfter(text, er, ret, Config.UtilityConfiguration));
                 }
             }
 
@@ -382,68 +463,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             var relativeDurationDateWithInPrefix = ExtractRelativeDurationDateWithInPrefix(text, durationEr, reference);
 
             // For cases like "in 3 weeks from today", we should choose "3 weeks from today" as the extract result rather than "in 3 weeks" or "in 3 weeks from today"
-            foreach (var erWithInPrefix in relativeDurationDateWithInPrefix)
+            foreach (var extractResultWithInPrefix in relativeDurationDateWithInPrefix)
             {
-                if (!IsOverlapWithExistExtractions(erWithInPrefix, ret))
+                if (!IsOverlapWithExistExtractions(extractResultWithInPrefix, ret))
                 {
-                    ret.Add(erWithInPrefix);
-                }
-            }
-
-            return ret;
-        }
-
-        public bool IsOverlapWithExistExtractions(Token er, List<Token> existErs)
-        {
-            foreach (var existEr in existErs)
-            {
-                if (er.Start < existEr.End && er.End > existEr.Start)
-                {
-                    return true;
-                }
-            }
-
-            return false;
-        }
-
-        // "In 3 days/weeks/months/years" = "3 days/weeks/months/years from now"
-        public List<Token> ExtractRelativeDurationDateWithInPrefix(string text, List<ExtractResult> durationEr, DateObject reference)
-        {
-            var ret = new List<Token>();
-
-            var durations = new List<Token>();
-
-            foreach (var durationExtraction in durationEr)
-            {
-                var match = Config.DateUnitRegex.Match(durationExtraction.Text);
-                if (match.Success)
-                {
-                    durations.Add(new Token(durationExtraction.Start ?? 0,
-                        durationExtraction.Start + durationExtraction.Length ?? 0));
-                }
-            }
-
-            foreach (var duration in durations)
-            {
-                var beforeStr = text.Substring(0, duration.Start).ToLowerInvariant();
-                var afterStr = text.Substring(duration.Start + duration.Length).ToLowerInvariant();
-
-                if (string.IsNullOrWhiteSpace(beforeStr) && string.IsNullOrWhiteSpace(afterStr))
-                {
-                    continue;
-                }
-
-                var match = Config.InConnectorRegex.MatchEnd(beforeStr, trim: true);
-
-                if (match.Success)
-                {
-                    var startToken = match.Index;
-                    var rangeUnitMatch = Config.RangeUnitRegex.Match(text.Substring(duration.Start, duration.Length));
-
-                    if (rangeUnitMatch.Success)
-                    {
-                        ret.Add(new Token(startToken, duration.End));
-                    }
+                    ret.Add(extractResultWithInPrefix);
                 }
             }
 
@@ -454,34 +478,6 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             StripInequalityPrefix(er, Config.MoreThanRegex);
             StripInequalityPrefix(er, Config.LessThanRegex);
-        }
-
-        private static void StripInequalityPrefix(ExtractResult er, Regex regex)
-        {
-            if (regex.IsMatch(er.Text))
-            {
-                var originalLength = er.Text.Length;
-                er.Text = regex.Replace(er.Text, string.Empty).Trim();
-                er.Start += originalLength - er.Text.Length;
-                er.Length = er.Text.Length;
-                er.Data = string.Empty;
-            }
-        }
-
-        private static bool IsMultipleDurationDate(ExtractResult er)
-        {
-            return er.Data != null && er.Data.ToString() == Constants.MultipleDuration_Date;
-        }
-
-        private static bool IsMultipleDuration(ExtractResult er)
-        {
-            return er.Data != null && er.Data.ToString().StartsWith(Constants.MultipleDuration_Prefix);
-        }
-
-        // Cases like "more than 3 days", "less than 4 weeks"
-        private static bool IsInequalityDuration(ExtractResult er)
-        {
-            return er.Data != null && (er.Data.ToString() == Constants.MORE_THAN_MOD || er.Data.ToString() == Constants.LESS_THAN_MOD);
         }
     }
 }
