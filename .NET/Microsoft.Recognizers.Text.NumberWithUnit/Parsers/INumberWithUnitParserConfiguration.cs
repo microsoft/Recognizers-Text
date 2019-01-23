@@ -3,7 +3,6 @@ using System.Collections.Immutable;
 using System.Globalization;
 
 using Microsoft.Recognizers.Definitions;
-using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.NumberWithUnit.Utilities;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit

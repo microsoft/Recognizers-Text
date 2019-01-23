@@ -1,8 +1,6 @@
 ﻿using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
-using Microsoft.Recognizers.Text.Number;
-
 namespace Microsoft.Recognizers.Text.DateTime.German
 {
     public class GermanDurationParserConfiguration : BaseOptionsConfiguration, IDurationParserConfiguration

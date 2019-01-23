@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
-using Microsoft.Recognizers.Definitions.German;
 using Microsoft.Recognizers.Text.Matcher;
 
 namespace Microsoft.Recognizers.Text.DateTime.German
