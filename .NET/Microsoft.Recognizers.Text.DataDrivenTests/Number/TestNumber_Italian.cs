@@ -18,28 +18,28 @@ namespace Microsoft.Recognizers.Text.Number.Tests
         [TestInitialize]
         public void TestInitialize()
         {
-            base.TestSpecInitialize(TestResources);
+            TestSpecInitialize(TestResources);
         }
 
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "NumberModel-Italian.csv", "NumberModel-Italian#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void NumberModel()
         {
-            base.TestNumber();
+            TestNumber();
         }
 
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "OrdinalModel-Italian.csv", "OrdinalModel-Italian#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void OrdinalModel()
         {
-            base.TestNumber();
+            TestNumber();
         }
 
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "PercentModel-Italian.csv", "PercentModel-Italian#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void PercentModel()
         {
-            base.TestNumber();
+            TestNumber();
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Text.Matcher;
 using Microsoft.Recognizers.Text.Utilities;
 using DateObject = System.DateTime;
 
@@ -28,7 +29,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var normalizedText = QueryProcessor.RemoveDiacritics(text);
 
             tokens.AddRange(MatchTimeZones(normalizedText));
-            tokens.AddRange(MatchLocationTimes(normalizedText));
+            tokens.AddRange(MatchLocationTimes(normalizedText, tokens));
 
             return Token.MergeAllTokens(tokens, text, ExtractorName);
         }
@@ -39,7 +40,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ers;
         }
 
-        private IEnumerable<Token> MatchLocationTimes(string text)
+        private IEnumerable<Token> MatchLocationTimes(string text, List<Token> tokens)
         {
             var ret = new List<Token>();
 
@@ -50,7 +51,35 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             var timeMatch = config.LocationTimeSuffixRegex.Matches(text);
 
-            if (timeMatch.Count != 0)
+            // Before calling a Find() in location matcher, check if all the matched suffixes by
+            // LocationTimeSuffixRegex are already inside tokens extracted by TimeZone matcher.
+            // If so, don't call the Find() as they have been extracted by TimeZone matcher, otherwise, call it.
+            bool isAllSuffixInsideTokens = true;
+
+            foreach (Match match in timeMatch)
+            {
+                bool isInside = false;
+                foreach (Token token in tokens)
+                {
+                    if (token.Start <= match.Index && token.End >= match.Index + match.Length)
+                    {
+                        isInside = true;
+                        break;
+                    }
+                }
+
+                if (!isInside)
+                {
+                    isAllSuffixInsideTokens = false;
+                }
+
+                if (!isAllSuffixInsideTokens)
+                {
+                    break;
+                }
+            }
+
+            if (timeMatch.Count != 0 && !isAllSuffixInsideTokens)
             {
                 var lastMatchIndex = timeMatch[timeMatch.Count - 1].Index;
                 var matches = config.LocationMatcher.Find(text.Substring(0, lastMatchIndex).ToLowerInvariant());
@@ -91,13 +120,17 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var ret = new List<Token>();
 
-            foreach (var regex in this.config.TimeZoneRegexes)
+            // Direct UTC matches
+            var directUtc = this.config.DirectUtcRegex.Matches(text);
+            foreach (Match match in directUtc)
             {
-                var matches = regex.Matches(text);
-                foreach (Match match in matches)
-                {
-                    ret.Add(new Token(match.Index, match.Index + match.Length));
-                }
+                ret.Add(new Token(match.Index, match.Index + match.Length));
+            }
+
+            var matches = this.config.TimeZoneMatcher.Find(text);
+            foreach (MatchResult<string> match in matches)
+            {
+                ret.Add(new Token(match.Start, match.Start + match.Length));
             }
 
             return ret;

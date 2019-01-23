@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
+﻿using System.Collections.Generic;
+
 using Microsoft.Recognizers.Definitions.Japanese;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
 using DateObject = System.DateTime;
@@ -25,7 +22,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             new Dictionary<TimeType, TimeFunction>
             {
                 { TimeType.DigitTime, timeFunctions.HandleDigit },
-                { TimeType.KanjiTime, timeFunctions.HandleKanji },
+                { TimeType.CjkTime, timeFunctions.HandleKanji },
                 { TimeType.LessTime, timeFunctions.HandleLess },
             };
 

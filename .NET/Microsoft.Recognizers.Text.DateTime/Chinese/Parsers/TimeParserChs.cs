@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
+﻿using System.Collections.Generic;
+
 using Microsoft.Recognizers.Definitions.Chinese;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
 using DateObject = System.DateTime;
@@ -24,7 +21,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             new Dictionary<TimeType, TimeFunction>
             {
                 { TimeType.DigitTime, timeFunc.HandleDigit },
-                { TimeType.KanjiTime, timeFunc.HandleKanji },
+                { TimeType.CjkTime, timeFunc.HandleKanji },
                 { TimeType.LessTime, timeFunc.HandleLess },
             };
 

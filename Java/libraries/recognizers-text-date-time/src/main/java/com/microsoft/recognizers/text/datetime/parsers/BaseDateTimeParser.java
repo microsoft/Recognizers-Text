@@ -8,10 +8,12 @@ import com.microsoft.recognizers.text.datetime.TimeTypeConstants;
 import com.microsoft.recognizers.text.datetime.extractors.config.ResultTimex;
 import com.microsoft.recognizers.text.datetime.parsers.config.IDateTimeParserConfiguration;
 import com.microsoft.recognizers.text.datetime.utilities.AgoLaterUtil;
+import com.microsoft.recognizers.text.datetime.utilities.ConditionalMatch;
 import com.microsoft.recognizers.text.datetime.utilities.DateTimeFormatUtil;
 import com.microsoft.recognizers.text.datetime.utilities.DateTimeResolutionResult;
 import com.microsoft.recognizers.text.datetime.utilities.DateUtil;
 import com.microsoft.recognizers.text.datetime.utilities.FormatUtil;
+import com.microsoft.recognizers.text.datetime.utilities.RegexExtension;
 import com.microsoft.recognizers.text.utilities.Match;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
 import com.microsoft.recognizers.text.utilities.StringUtility;
@@ -237,8 +239,7 @@ public class BaseDateTimeParser implements IDateTimeParser {
         String trimmedText = text.trim().toLowerCase();
 
         // Handle "now"
-        Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(config.getNowRegex(), trimmedText)).findFirst();
-        if (match.isPresent() && match.get().index == 0 && match.get().length == trimmedText.length()) {
+        if (RegexExtension.isExactMatch(config.getNowRegex(), trimmedText, true)) {
             ResultTimex timexResult = config.getMatchedNowTimex(trimmedText);
             result.setTimex(timexResult.getTimex());
             result.setFutureValue(reference);
@@ -258,17 +259,15 @@ public class BaseDateTimeParser implements IDateTimeParser {
         int second = 0;
         String timeStr;
 
-        Optional<Match> wholeMatch = Arrays
-                .stream(RegExpUtility.getMatches(config.getSimpleTimeOfTodayAfterRegex(), trimmedText)).findFirst();
-        if (!(wholeMatch.isPresent() && wholeMatch.get().length == trimmedText.length())) {
-            wholeMatch = Arrays.stream(RegExpUtility.getMatches(config.getSimpleTimeOfTodayBeforeRegex(), trimmedText))
-                    .findFirst();
+        ConditionalMatch wholeMatch = RegexExtension.matchExact(config.getSimpleTimeOfTodayAfterRegex(), trimmedText, true);
+        if (!wholeMatch.getSuccess()) {
+            wholeMatch = RegexExtension.matchExact(config.getSimpleTimeOfTodayBeforeRegex(), trimmedText, true);
         }
 
-        if (wholeMatch.isPresent() && wholeMatch.get().length == trimmedText.length()) {
-            String hourStr = wholeMatch.get().getGroup(Constants.HourGroupName).value;
+        if (wholeMatch.getSuccess()) {
+            String hourStr = wholeMatch.getMatch().get().getGroup(Constants.HourGroupName).value;
             if (StringUtility.isNullOrEmpty(hourStr)) {
-                hourStr = wholeMatch.get().getGroup("hournum").value.toLowerCase();
+                hourStr = wholeMatch.getMatch().get().getGroup("hournum").value.toLowerCase();
                 hour = config.getNumbers().get(hourStr);
             } else {
                 hour = Integer.parseInt(hourStr);

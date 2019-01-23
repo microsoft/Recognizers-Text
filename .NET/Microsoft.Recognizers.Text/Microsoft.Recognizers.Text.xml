@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.Recognizers.Text</name>
+    </assembly>
+    <members>
+        <member name="F:Microsoft.Recognizers.Text.Matcher.MatchStrategy.AcAutomaton">
+            <summary>
+            AcAtomaton
+            </summary>
+        </member>
+        <member name="F:Microsoft.Recognizers.Text.Matcher.MatchStrategy.TrieTree">
+            <summary>
+            TrieTree
+            </summary>
+        </member>
+    </members>
+</doc>
