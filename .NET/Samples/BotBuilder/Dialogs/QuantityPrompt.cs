@@ -20,7 +20,8 @@ namespace BotBuilderRecognizerSample
 
         private readonly string culture;
 
-        public QuantityPrompt(string culture) : base(new PromptOptions<int>(QuantityPromptMessage, attempts: 5))
+        public QuantityPrompt(string culture)
+               : base(new PromptOptions<int>(QuantityPromptMessage, attempts: 5))
         {
             this.culture = culture;
         }

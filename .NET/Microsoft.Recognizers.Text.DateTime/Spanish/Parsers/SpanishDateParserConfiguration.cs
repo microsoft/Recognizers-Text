@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Collections.Immutable;
+using System.Diagnostics.CodeAnalysis;
 using System.Text.RegularExpressions;
-
 using Microsoft.Recognizers.Definitions.Spanish;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
 
@@ -9,6 +9,49 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
     public class SpanishDateParserConfiguration : BaseOptionsConfiguration, IDateParserConfiguration
     {
+        public SpanishDateParserConfiguration(ICommonDateTimeParserConfiguration config)
+            : base(config)
+        {
+            DateTokenPrefix = DateTimeDefinitions.DateTokenPrefix;
+            DateRegexes = new SpanishDateExtractorConfiguration(this).DateRegexList;
+            OnRegex = SpanishDateExtractorConfiguration.OnRegex;
+            SpecialDayRegex = SpanishDateExtractorConfiguration.SpecialDayRegex;
+            SpecialDayWithNumRegex = SpanishDateExtractorConfiguration.SpecialDayWithNumRegex;
+            NextRegex = SpanishDateExtractorConfiguration.NextDateRegex;
+            ThisRegex = SpanishDateExtractorConfiguration.ThisRegex;
+            LastRegex = SpanishDateExtractorConfiguration.LastDateRegex;
+            UnitRegex = SpanishDateExtractorConfiguration.DateUnitRegex;
+            WeekDayRegex = SpanishDateExtractorConfiguration.WeekDayRegex;
+            MonthRegex = SpanishDateExtractorConfiguration.MonthRegex;
+            WeekDayOfMonthRegex = SpanishDateExtractorConfiguration.WeekDayOfMonthRegex;
+            ForTheRegex = SpanishDateExtractorConfiguration.ForTheRegex;
+            WeekDayAndDayOfMothRegex = SpanishDateExtractorConfiguration.WeekDayAndDayOfMothRegex;
+            RelativeMonthRegex = SpanishDateExtractorConfiguration.RelativeMonthRegex;
+            YearSuffix = SpanishDateExtractorConfiguration.YearSuffix;
+            RelativeWeekDayRegex = SpanishDateExtractorConfiguration.RelativeWeekDayRegex;
+            RelativeDayRegex = new Regex(DateTimeDefinitions.RelativeDayRegex, RegexOptions.Singleline);
+            NextPrefixRegex = new Regex(DateTimeDefinitions.NextPrefixRegex, RegexOptions.Singleline);
+            PastPrefixRegex = new Regex(DateTimeDefinitions.PastPrefixRegex, RegexOptions.Singleline);
+            DayOfMonth = config.DayOfMonth;
+            DayOfWeek = config.DayOfWeek;
+            MonthOfYear = config.MonthOfYear;
+            CardinalMap = config.CardinalMap;
+            IntegerExtractor = config.IntegerExtractor;
+            OrdinalExtractor = config.OrdinalExtractor;
+            CardinalExtractor = config.CardinalExtractor;
+            NumberParser = config.NumberParser;
+            DurationExtractor = config.DurationExtractor;
+            DateExtractor = config.DateExtractor;
+            DurationParser = config.DurationParser;
+            UnitMap = config.UnitMap;
+            UtilityConfiguration = config.UtilityConfiguration;
+            SameDayTerms = DateTimeDefinitions.SameDayTerms.ToImmutableList();
+            PlusOneDayTerms = DateTimeDefinitions.PlusOneDayTerms.ToImmutableList();
+            PlusTwoDayTerms = DateTimeDefinitions.PlusTwoDayTerms.ToImmutableList();
+            MinusOneDayTerms = DateTimeDefinitions.MinusOneDayTerms.ToImmutableList();
+            MinusTwoDayTerms = DateTimeDefinitions.MinusTwoDayTerms.ToImmutableList();
+        }
+
         public string DateTokenPrefix { get; }
 
         public IExtractor IntegerExtractor { get; }
@@ -85,48 +128,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
-        public SpanishDateParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config)
-        {
-            DateTokenPrefix = DateTimeDefinitions.DateTokenPrefix;
-            DateRegexes = new SpanishDateExtractorConfiguration(this).DateRegexList;
-            OnRegex = SpanishDateExtractorConfiguration.OnRegex;
-            SpecialDayRegex = SpanishDateExtractorConfiguration.SpecialDayRegex;
-            SpecialDayWithNumRegex = SpanishDateExtractorConfiguration.SpecialDayWithNumRegex;
-            NextRegex = SpanishDateExtractorConfiguration.NextDateRegex;
-            ThisRegex = SpanishDateExtractorConfiguration.ThisRegex;
-            LastRegex = SpanishDateExtractorConfiguration.LastDateRegex;
-            UnitRegex = SpanishDateExtractorConfiguration.DateUnitRegex;
-            WeekDayRegex = SpanishDateExtractorConfiguration.WeekDayRegex;
-            MonthRegex = SpanishDateExtractorConfiguration.MonthRegex;
-            WeekDayOfMonthRegex = SpanishDateExtractorConfiguration.WeekDayOfMonthRegex;
-            ForTheRegex = SpanishDateExtractorConfiguration.ForTheRegex;
-            WeekDayAndDayOfMothRegex = SpanishDateExtractorConfiguration.WeekDayAndDayOfMothRegex;
-            RelativeMonthRegex = SpanishDateExtractorConfiguration.RelativeMonthRegex;
-            YearSuffix = SpanishDateExtractorConfiguration.YearSuffix;
-            RelativeWeekDayRegex = SpanishDateExtractorConfiguration.RelativeWeekDayRegex;
-            RelativeDayRegex = new Regex(DateTimeDefinitions.RelativeDayRegex, RegexOptions.Singleline);
-            NextPrefixRegex = new Regex(DateTimeDefinitions.NextPrefixRegex, RegexOptions.Singleline);
-            PastPrefixRegex = new Regex(DateTimeDefinitions.PastPrefixRegex, RegexOptions.Singleline);
-            DayOfMonth = config.DayOfMonth;
-            DayOfWeek = config.DayOfWeek;
-            MonthOfYear = config.MonthOfYear;
-            CardinalMap = config.CardinalMap;
-            IntegerExtractor = config.IntegerExtractor;
-            OrdinalExtractor = config.OrdinalExtractor;
-            CardinalExtractor = config.CardinalExtractor;
-            NumberParser = config.NumberParser;
-            DurationExtractor = config.DurationExtractor;
-            DateExtractor = config.DateExtractor;
-            DurationParser = config.DurationParser;
-            UnitMap = config.UnitMap;
-            UtilityConfiguration = config.UtilityConfiguration;
-            SameDayTerms = DateTimeDefinitions.SameDayTerms.ToImmutableList();
-            PlusOneDayTerms = DateTimeDefinitions.PlusOneDayTerms.ToImmutableList();
-            PlusTwoDayTerms = DateTimeDefinitions.PlusTwoDayTerms.ToImmutableList();
-            MinusOneDayTerms = DateTimeDefinitions.MinusOneDayTerms.ToImmutableList();
-            MinusTwoDayTerms = DateTimeDefinitions.MinusTwoDayTerms.ToImmutableList();
-        }
-
         public int GetSwiftMonth(string text)
         {
             var trimmedText = text.Trim().ToLowerInvariant().Normalized();
@@ -150,13 +151,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             var trimmedText = text.Trim().ToLowerInvariant().Normalized();
             return PastPrefixRegex.IsMatch(trimmedText);
         }
-        
+
         public string Normalize(string text)
         {
             return text.Normalized();
         }
     }
 
+    [SuppressMessage("StyleCop.CSharp.MaintainabilityRules", "SA1402:File may only contain a single type", Justification = "Temporarily ignored because this method will be refactored.", Scope = "type", Target = "~T:Microsoft.Recognizers.Text.DateTime.Spanish.StringExtension")]
+    [SuppressMessage("StyleCop.CSharp.OrderingRules", "SA1204:Static elements should appear before instance elements", Justification = "Temporarily ignored because this method will be refactored.", Scope = "type", Target = "~T:Microsoft.Recognizers.Text.DateTime.Spanish.StringExtension")]
     public static class StringExtension
     {
         public static string Normalized(this string text)

@@ -11,10 +11,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         {
             new Regex(DateTimeDefinitions.HolidayRegex1, RegexOptions.Singleline),
             new Regex(DateTimeDefinitions.HolidayRegex2, RegexOptions.Singleline),
-            new Regex(DateTimeDefinitions.HolidayRegex3, RegexOptions.Singleline)
+            new Regex(DateTimeDefinitions.HolidayRegex3, RegexOptions.Singleline),
         };
 
-        public SpanishHolidayExtractorConfiguration(IOptionsConfiguration config) : base(config)
+        public SpanishHolidayExtractorConfiguration(IOptionsConfiguration config)
+            : base(config)
         {
         }
 

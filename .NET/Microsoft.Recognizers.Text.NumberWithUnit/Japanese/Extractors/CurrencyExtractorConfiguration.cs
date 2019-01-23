@@ -6,9 +6,15 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Japanese
 {
     public class CurrencyExtractorConfiguration : JapaneseNumberWithUnitExtractorConfiguration
     {
-        public CurrencyExtractorConfiguration() : this(new CultureInfo(Culture.Japanese)) { }
+        public CurrencyExtractorConfiguration()
+            : this(new CultureInfo(Culture.Japanese))
+        {
+        }
 
-        public CurrencyExtractorConfiguration(CultureInfo ci) : base(ci) { }
+        public CurrencyExtractorConfiguration(CultureInfo ci)
+            : base(ci)
+        {
+        }
 
         public override ImmutableDictionary<string, string> SuffixList => NumbersWithUnitDefinitions.CurrencySuffixList.ToImmutableDictionary();
 

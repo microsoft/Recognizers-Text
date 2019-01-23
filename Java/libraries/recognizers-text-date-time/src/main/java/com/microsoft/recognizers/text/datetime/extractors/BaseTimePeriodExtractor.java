@@ -5,6 +5,8 @@ import com.microsoft.recognizers.text.datetime.Constants;
 import com.microsoft.recognizers.text.datetime.DateTimeOptions;
 import com.microsoft.recognizers.text.datetime.extractors.config.ITimePeriodExtractorConfiguration;
 import com.microsoft.recognizers.text.datetime.extractors.config.ResultIndex;
+import com.microsoft.recognizers.text.datetime.utilities.ConditionalMatch;
+import com.microsoft.recognizers.text.datetime.utilities.RegexExtension;
 import com.microsoft.recognizers.text.datetime.utilities.TimeZoneUtility;
 import com.microsoft.recognizers.text.datetime.utilities.Token;
 import com.microsoft.recognizers.text.utilities.Match;
@@ -178,8 +180,7 @@ public class BaseTimePeriodExtractor implements IDateTimeExtractor {
                 // check connector string
                 String midStr = input.substring(numEndPoint, ers.get(j).getStart());
                 Pattern tillRegex = this.config.getTillRegex();
-                Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(tillRegex, midStr)).findFirst();
-                if (match.isPresent() && match.get().length == midStr.trim().length()) {
+                if (RegexExtension.isExactMatch(tillRegex, midStr, true) || config.hasConnectorToken(midStr.trim())) {
                     timeNumbers.add(numErs.get(i));
                 }
 
@@ -215,10 +216,9 @@ public class BaseTimePeriodExtractor implements IDateTimeExtractor {
 
             String middleStr = input.substring(middleBegin, middleEnd).trim().toLowerCase(java.util.Locale.ROOT);
             Pattern tillRegex = this.config.getTillRegex();
-            Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(tillRegex, middleStr)).findFirst();
 
             // Handle "{TimePoint} to {TimePoint}"
-            if (match.isPresent() && match.get().index == 0 && match.get().length == middleStr.length()) {
+            if (RegexExtension.isExactMatch(tillRegex, middleStr, true)) {
                 int periodBegin = ers.get(idx).getStart();
                 int periodEnd = ers.get(idx + 1).getStart() + ers.get(idx + 1).getLength();
 

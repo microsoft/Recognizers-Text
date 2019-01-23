@@ -1,4 +1,4 @@
-// Copyright (c) Microsoft Corporation. All rights reserved.
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 using System.Linq;
@@ -36,7 +36,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
             Assert.IsNull(timex.Seconds);
             Assert.IsNull(timex.Now);
         }
-		
+
         [TestMethod]
         public void DataTypes_Parsing_MonthAndDayOfMonth()
         {
@@ -64,7 +64,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
             Assert.IsNull(timex.Seconds);
             Assert.IsNull(timex.Now);
         }
-		
+
         [TestMethod]
         public void DataTypes_Parsing_DayOfWeek()
         {
@@ -92,7 +92,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
             Assert.IsNull(timex.Seconds);
             Assert.IsNull(timex.Now);
         }
-		
+
         [TestMethod]
         public void DataTypes_Parsing_HoursMinutesAndSeconds()
         {
@@ -120,7 +120,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
             Assert.IsNull(timex.Seconds);
             Assert.IsNull(timex.Now);
         }
-		
+
         [TestMethod]
         public void DataTypes_Parsing_HoursAndMinutes()
         {
@@ -148,7 +148,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
             Assert.IsNull(timex.Seconds);
             Assert.IsNull(timex.Now);
         }
-		
+
         [TestMethod]
         public void DataTypes_Parsing_Hours()
         {
@@ -176,16 +176,19 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
             Assert.IsNull(timex.Seconds);
             Assert.IsNull(timex.Now);
         }
-		
+
         [TestMethod]
         public void DataTypes_Parsing_Now()
         {
             var timex = new TimexProperty("PRESENT_REF");
-            CollectionAssert.AreEquivalent(new[] {
+            CollectionAssert.AreEquivalent(
+                new[]
+                {
                 Constants.TimexTypes.Present,
                 Constants.TimexTypes.Date,
                 Constants.TimexTypes.Time,
-                Constants.TimexTypes.DateTime }, timex.Types.ToList());
+                Constants.TimexTypes.DateTime,
+                }, timex.Types.ToList());
 
             Assert.IsNull(timex.Year);
             Assert.IsNull(timex.Month);
@@ -208,16 +211,19 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
             Assert.IsNull(timex.Seconds);
             Assert.AreEqual(true, timex.Now);
         }
-		
+
         [TestMethod]
         public void DataTypes_Parsing_FullDatetime()
         {
             var timex = new TimexProperty("1984-01-03T18:30:45");
-            CollectionAssert.AreEquivalent(new[] {
+            CollectionAssert.AreEquivalent(
+                new[]
+                {
                 Constants.TimexTypes.Definite,
                 Constants.TimexTypes.Date,
                 Constants.TimexTypes.Time,
-                Constants.TimexTypes.DateTime }, timex.Types.ToList());
+                Constants.TimexTypes.DateTime,
+                }, timex.Types.ToList());
 
             Assert.AreEqual(1984, timex.Year);
             Assert.AreEqual(1, timex.Month);
@@ -240,13 +246,13 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
             Assert.IsNull(timex.Seconds);
             Assert.IsNull(timex.Now);
         }
-		
+
         [TestMethod]
         public void DataTypes_Parsing_ParicularTimeOnParticularDayOfWeek()
         {
             var timex = new TimexProperty("XXXX-WXX-3T16");
-            CollectionAssert.AreEquivalent(new[] { Constants.TimexTypes.Time, Constants.TimexTypes.Date, Constants.TimexTypes.DateTime }, 
-                                           timex.Types.ToList());
+            CollectionAssert.AreEquivalent(
+                new[] { Constants.TimexTypes.Time, Constants.TimexTypes.Date, Constants.TimexTypes.DateTime }, timex.Types.ToList());
 
             Assert.IsNull(timex.Year);
             Assert.IsNull(timex.Month);
@@ -269,7 +275,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
             Assert.IsNull(timex.Seconds);
             Assert.IsNull(timex.Now);
         }
-		
+
         [TestMethod]
         public void DataTypes_Parsing_Year()
         {
@@ -297,7 +303,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
             Assert.IsNull(timex.Seconds);
             Assert.IsNull(timex.Now);
         }
-		
+
         [TestMethod]
         public void DataTypes_Parsing_SummerOf1999()
         {
@@ -325,7 +331,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
             Assert.IsNull(timex.Seconds);
             Assert.IsNull(timex.Now);
         }
-		
+
         [TestMethod]
         public void DataTypes_Parsing_YearAndWeek()
         {
@@ -353,7 +359,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
             Assert.IsNull(timex.Seconds);
             Assert.IsNull(timex.Now);
         }
-		
+
         [TestMethod]
         public void DataTypes_Parsing_SeasonSummer()
         {
@@ -381,7 +387,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
             Assert.IsNull(timex.Seconds);
             Assert.IsNull(timex.Now);
         }
-		
+
         [TestMethod]
         public void DataTypes_Parsing_SeasonWinter()
         {
@@ -409,7 +415,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
             Assert.IsNull(timex.Seconds);
             Assert.IsNull(timex.Now);
         }
-		
+
         [TestMethod]
         public void DataTypes_Parsing_YearAndWeekend()
         {
@@ -437,7 +443,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
             Assert.IsNull(timex.Seconds);
             Assert.IsNull(timex.Now);
         }
-		
+
         [TestMethod]
         public void DataTypes_Parsing_May()
         {
@@ -465,7 +471,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
             Assert.IsNull(timex.Seconds);
             Assert.IsNull(timex.Now);
         }
-		
+
         [TestMethod]
         public void DataTypes_Parsing_July2020()
         {
@@ -493,7 +499,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
             Assert.IsNull(timex.Seconds);
             Assert.IsNull(timex.Now);
         }
-		
+
         [TestMethod]
         public void DataTypes_Parsing_WeekOfMonth()
         {
@@ -521,15 +527,18 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
             Assert.IsNull(timex.Seconds);
             Assert.IsNull(timex.Now);
         }
-		
+
         [TestMethod]
         public void DataTypes_Parsing_WednesdayToSaturday()
         {
             var timex = new TimexProperty("(XXXX-WXX-3,XXXX-WXX-6,P3D)");
-            CollectionAssert.AreEquivalent(new[] {
+            CollectionAssert.AreEquivalent(
+                new[]
+                {
                 Constants.TimexTypes.Date,
                 Constants.TimexTypes.Duration,
-                Constants.TimexTypes.DateRange }, timex.Types.ToList());
+                Constants.TimexTypes.DateRange,
+                }, timex.Types.ToList());
 
             Assert.IsNull(timex.Year);
             Assert.IsNull(timex.Month);
@@ -552,15 +561,18 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
             Assert.IsNull(timex.Seconds);
             Assert.IsNull(timex.Now);
         }
-		
+
         [TestMethod]
         public void DataTypes_Parsing_Jan1ToAug5()
         {
             var timex = new TimexProperty("(XXXX-01-01,XXXX-08-05,P216D)");
-            CollectionAssert.AreEquivalent(new[] {
+            CollectionAssert.AreEquivalent(
+                new[]
+                {
                 Constants.TimexTypes.Date,
                 Constants.TimexTypes.Duration,
-                Constants.TimexTypes.DateRange }, timex.Types.ToList());
+                Constants.TimexTypes.DateRange,
+                }, timex.Types.ToList());
 
             Assert.IsNull(timex.Year);
             Assert.AreEqual(1, timex.Month);
@@ -583,16 +595,19 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
             Assert.IsNull(timex.Seconds);
             Assert.IsNull(timex.Now);
         }
-		
+
         [TestMethod]
         public void DataTypes_Parsing_Jan1ToAug5Year2015()
         {
             var timex = new TimexProperty("(2015-01-01,2015-08-05,P216D)");
-            CollectionAssert.AreEquivalent(new[] {
+            CollectionAssert.AreEquivalent(
+                new[]
+                {
                 Constants.TimexTypes.Definite,
                 Constants.TimexTypes.Date,
                 Constants.TimexTypes.Duration,
-                Constants.TimexTypes.DateRange }, timex.Types.ToList());
+                Constants.TimexTypes.DateRange,
+                }, timex.Types.ToList());
 
             Assert.AreEqual(2015, timex.Year);
             Assert.AreEqual(1, timex.Month);
@@ -615,7 +630,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
             Assert.IsNull(timex.Seconds);
             Assert.IsNull(timex.Now);
         }
-		
+
         [TestMethod]
         public void DataTypes_Parsing_DayTime()
         {
@@ -643,7 +658,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
             Assert.IsNull(timex.Seconds);
             Assert.IsNull(timex.Now);
         }
-		
+
         [TestMethod]
         public void DataTypes_Parsing_NightTime()
         {
@@ -671,7 +686,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
             Assert.IsNull(timex.Seconds);
             Assert.IsNull(timex.Now);
         }
-		
+
         [TestMethod]
         public void DataTypes_Parsing_Morning()
         {
@@ -699,7 +714,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
             Assert.IsNull(timex.Seconds);
             Assert.IsNull(timex.Now);
         }
-		
+
         [TestMethod]
         public void DataTypes_Parsing_Afternoon()
         {
@@ -727,7 +742,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
             Assert.IsNull(timex.Seconds);
             Assert.IsNull(timex.Now);
         }
-		
+
         [TestMethod]
         public void DataTypes_Parsing_Evening()
         {
@@ -755,15 +770,18 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
             Assert.IsNull(timex.Seconds);
             Assert.IsNull(timex.Now);
         }
-		
+
         [TestMethod]
         public void DataTypes_Parsing_Timerange430pmTo445pm()
         {
             var timex = new TimexProperty("(T16:30,T16:45,PT15M)");
-            CollectionAssert.AreEquivalent(new[] {
+            CollectionAssert.AreEquivalent(
+                new[]
+                {
                 Constants.TimexTypes.Time,
                 Constants.TimexTypes.Duration,
-                Constants.TimexTypes.TimeRange }, timex.Types.ToList());
+                Constants.TimexTypes.TimeRange,
+                }, timex.Types.ToList());
 
             Assert.IsNull(timex.Year);
             Assert.IsNull(timex.Month);
@@ -786,15 +804,18 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
             Assert.IsNull(timex.Seconds);
             Assert.IsNull(timex.Now);
         }
-		
+
         [TestMethod]
         public void DataTypes_Parsing_DateTimeRange()
         {
             var timex = new TimexProperty("XXXX-WXX-5TEV");
-            CollectionAssert.AreEquivalent(new[] {
+            CollectionAssert.AreEquivalent(
+                new[]
+                {
                 Constants.TimexTypes.Date,
                 Constants.TimexTypes.TimeRange,
-                Constants.TimexTypes.DateTimeRange }, timex.Types.ToList());
+                Constants.TimexTypes.DateTimeRange,
+                }, timex.Types.ToList());
 
             Assert.IsNull(timex.Year);
             Assert.IsNull(timex.Month);
@@ -817,16 +838,19 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
             Assert.IsNull(timex.Seconds);
             Assert.IsNull(timex.Now);
         }
-		
+
         [TestMethod]
         public void DataTypes_Parsing_LastNight()
         {
             var timex = new TimexProperty("2017-09-07TNI");
-            CollectionAssert.AreEquivalent(new[] {
+            CollectionAssert.AreEquivalent(
+                new[]
+                {
                 Constants.TimexTypes.Definite,
                 Constants.TimexTypes.Date,
                 Constants.TimexTypes.TimeRange,
-                Constants.TimexTypes.DateTimeRange }, timex.Types.ToList());
+                Constants.TimexTypes.DateTimeRange,
+                }, timex.Types.ToList());
 
             Assert.AreEqual(2017, timex.Year);
             Assert.AreEqual(9, timex.Month);
@@ -849,12 +873,14 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
             Assert.IsNull(timex.Seconds);
             Assert.IsNull(timex.Now);
         }
-		
+
         [TestMethod]
         public void DataTypes_Parsing_Last5Minutes()
         {
             var timex = new TimexProperty("(2017-09-08T21:19:29,2017-09-08T21:24:29,PT5M)");
-            CollectionAssert.AreEquivalent(new[] {
+            CollectionAssert.AreEquivalent(
+                new[]
+                {
                 Constants.TimexTypes.Date,
                 Constants.TimexTypes.TimeRange,
                 Constants.TimexTypes.DateTimeRange,
@@ -862,7 +888,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
                 Constants.TimexTypes.DateTime,
                 Constants.TimexTypes.Duration,
                 Constants.TimexTypes.DateRange,
-                Constants.TimexTypes.Definite
+                Constants.TimexTypes.Definite,
             }, timex.Types.ToList());
 
             Assert.AreEqual(2017, timex.Year);
@@ -886,12 +912,14 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
             Assert.IsNull(timex.Seconds);
             Assert.IsNull(timex.Now);
         }
-		
+
         [TestMethod]
         public void DataTypes_Parsing_Wed4PMToSat3PM()
         {
             var timex = new TimexProperty("(XXXX-WXX-3T16,XXXX-WXX-6T15,PT71H)");
-            CollectionAssert.AreEquivalent(new[] {
+            CollectionAssert.AreEquivalent(
+                new[]
+                {
                 Constants.TimexTypes.Date,
                 Constants.TimexTypes.TimeRange,
                 Constants.TimexTypes.DateTimeRange,
@@ -922,7 +950,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
             Assert.IsNull(timex.Seconds);
             Assert.IsNull(timex.Now);
         }
-		
+
         [TestMethod]
         public void DataTypes_Parsing_DurationYears()
         {
@@ -950,7 +978,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
             Assert.IsNull(timex.Seconds);
             Assert.IsNull(timex.Now);
         }
-		
+
         [TestMethod]
         public void DataTypes_Parsing_DurationMonths()
         {
@@ -978,7 +1006,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
             Assert.IsNull(timex.Seconds);
             Assert.IsNull(timex.Now);
         }
-		
+
         [TestMethod]
         public void DataTypes_Parsing_DurationWeeks()
         {
@@ -1006,7 +1034,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
             Assert.IsNull(timex.Seconds);
             Assert.IsNull(timex.Now);
         }
-		
+
         [TestMethod]
         public void DataTypes_Parsing_DurationWeeksFloatingPoint()
         {
@@ -1034,7 +1062,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
             Assert.IsNull(timex.Seconds);
             Assert.IsNull(timex.Now);
         }
-		
+
         [TestMethod]
         public void DataTypes_Parsing_DurationDays()
         {
@@ -1062,7 +1090,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
             Assert.IsNull(timex.Seconds);
             Assert.IsNull(timex.Now);
         }
-		
+
         [TestMethod]
         public void DataTypes_Parsing_DurationHours()
         {
@@ -1090,7 +1118,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
             Assert.IsNull(timex.Seconds);
             Assert.IsNull(timex.Now);
         }
-		
+
         [TestMethod]
         public void DataTypes_Parsing_DurationMinutes()
         {
@@ -1118,7 +1146,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
             Assert.IsNull(timex.Seconds);
             Assert.IsNull(timex.Now);
         }
-		
+
         [TestMethod]
         public void DataTypes_Parsing_DurationSeconds()
         {

@@ -9,16 +9,15 @@ import java.util.ArrayList;
 import java.util.regex.Pattern;
 
 public class SpanishTimeZoneExtractorConfiguration extends BaseOptionsConfiguration implements ITimeZoneExtractorConfiguration {
-
-    public static final Iterable<Pattern> TimeZoneRegexList = new ArrayList<>();
-
     public SpanishTimeZoneExtractorConfiguration(DateTimeOptions options) {
         super(options);
 
     }
 
-    public final Iterable<Pattern> getTimeZoneRegexes() {
-        return TimeZoneRegexList;
+    private Pattern directUtcRegex;
+
+    public final Pattern getDirectUtcRegex() {
+        return directUtcRegex;
     }
 
     private Pattern locationTimeSuffixRegex;
@@ -31,6 +30,12 @@ public class SpanishTimeZoneExtractorConfiguration extends BaseOptionsConfigurat
 
     public final StringMatcher getLocationMatcher() {
         return locationMatcher;
+    }
+
+    private StringMatcher timeZoneMatcher;
+
+    public final StringMatcher getTimeZoneMatcher() {
+        return timeZoneMatcher;
     }
 
     public final ArrayList<String> getAmbiguousTimezoneList() {

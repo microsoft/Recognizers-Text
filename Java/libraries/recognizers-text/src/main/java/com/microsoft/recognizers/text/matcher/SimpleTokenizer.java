@@ -47,9 +47,32 @@ public class SimpleTokenizer implements ITokenizer {
         return tokens;
     }
 
+    protected boolean isChinese(char c) {
+        int uc = (int)c;
+
+        return (uc >= (int)0x4E00 && uc <= (int)0x9FBF) || (uc >= (int)0x3400 && uc <= (int)0x4DBF);
+    }
+
+    protected boolean isJapanese(char c) {
+        int uc = (int)c;
+
+        return (uc >= 0x3040 && uc <= 0x309F) ||
+            (uc >= 0x30A0 && uc <= (int)0x30FF) ||
+            (uc >= (int)0xFF66 && uc <= (int)0xFF9D);
+    }
+
+    protected boolean isKorean(char c) {
+        int uc = (int)c;
+
+        return (uc >= (int)0xAC00 && uc <= (int)0xD7AF) ||
+            (uc >= (int)0x1100 && uc <= (int)0x11FF) ||
+            (uc >= (int)0x3130 && uc <= (int)0x318F) ||
+            (uc >= (int)0xFFB0 && uc <= (int)0xFFDC);
+    }
+
     // Check the character is Chinese/Japanese/Korean.
     // For those languages which are not using whitespace delimited symbol, we only simply tokenize the sentence by each single character.
     private boolean isCjk(char c) {
-        return Character.isIdeographic((int)c);
+        return isChinese(c) || isJapanese(c) || isKorean(c);
     }
 }

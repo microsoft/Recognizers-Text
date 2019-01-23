@@ -25,21 +25,10 @@
 
         private readonly string culture;
 
-        public DeliveryPrompt(string culture) : base(new PromptOptions<DateTime>(DeliveryPromptMessage, attempts: 5))
+        public DeliveryPrompt(string culture)
+               : base(new PromptOptions<DateTime>(DeliveryPromptMessage, attempts: 5))
         {
             this.culture = culture;
-        }
-
-        protected override bool TryParse(IMessageActivity message, out IEnumerable<DateTime> result)
-        {
-            var extraction = ValidateAndExtract(message.Text, this.culture);
-            if (!extraction.IsValid)
-            {
-                this.promptOptions.DefaultRetry = extraction.ErrorMessage;
-            }
-
-            result = extraction.Values;
-            return extraction.IsValid;
         }
 
         public static Extraction ValidateAndExtract(string input, string culture)
@@ -53,7 +42,6 @@
                 // The DateTime model can return several resolution types (https://github.com/Microsoft/Recognizers-Text/blob/master/.NET/Microsoft.Recognizers.Text.DateTime/Constants.cs#L7-L14)
                 // We only care for those with a date, date and time, or date time period:
                 // date, daterange, datetime, datetimerange
-
                 var first = results.First();
                 var resolutionValues = (IList<Dictionary<string, string>>)first.Resolution["values"];
 
@@ -68,7 +56,7 @@
                         return new Extraction
                         {
                             IsValid = true,
-                            Values = new[] { moment }
+                            Values = new[] { moment },
                         };
                     }
 
@@ -77,7 +65,7 @@
                     {
                         IsValid = false,
                         Values = new[] { moment },
-                        ErrorMessage = PastValueErrorMessage.Replace("$moment$", MomentOrRangeToString(moment))
+                        ErrorMessage = PastValueErrorMessage.Replace("$moment$", MomentOrRangeToString(moment)),
                     };
                 }
                 else if (subType.Contains("date") && subType.Contains("range"))
@@ -91,7 +79,7 @@
                         return new Extraction
                         {
                             IsValid = true,
-                            Values = new[] { from, to }
+                            Values = new[] { from, to },
                         };
                     }
 
@@ -100,7 +88,7 @@
                     {
                         IsValid = false,
                         Values = values,
-                        ErrorMessage = PastValueErrorMessage.Replace("$moment$", MomentOrRangeToString(values))
+                        ErrorMessage = PastValueErrorMessage.Replace("$moment$", MomentOrRangeToString(values)),
                     };
                 }
             }
@@ -109,7 +97,7 @@
             {
                 IsValid = false,
                 Values = Enumerable.Empty<DateTime>(),
-                ErrorMessage = "I'm sorry, that doesn't seem to be a valid delivery date and time"
+                ErrorMessage = "I'm sorry, that doesn't seem to be a valid delivery date and time",
             };
         }
 
@@ -126,12 +114,24 @@
                 return MomentOrRangeToString(moments.First(), momentPrefix);
             }
 
-            return "from " + string.Join(" to ", moments.Select(m => MomentOrRangeToString(m, "")));
+            return "from " + string.Join(" to ", moments.Select(m => MomentOrRangeToString(m, string.Empty)));
         }
 
         public static string MomentOrRangeToString(DateTime moment, string momentPrefix = "on ")
         {
             return momentPrefix + moment.ToString();
+        }
+
+        protected override bool TryParse(IMessageActivity message, out IEnumerable<DateTime> result)
+        {
+            var extraction = ValidateAndExtract(message.Text, this.culture);
+            if (!extraction.IsValid)
+            {
+                this.promptOptions.DefaultRetry = extraction.ErrorMessage;
+            }
+
+            result = extraction.Values;
+            return extraction.IsValid;
         }
 
         public class Extraction

@@ -6,19 +6,6 @@ using Microsoft.Recognizers.Definitions.Japanese;
 
 namespace Microsoft.Recognizers.Text.DateTime.Japanese
 {
-    public enum PeriodType
-    {
-        /// <summary>
-        /// Represents a ShortTime.
-        /// </summary>
-        ShortTime,
-
-        /// <summary>
-        /// Represents a FullTime.
-        /// </summary>
-        FullTime,
-    }
-
     public class TimePeriodExtractor : BaseDateTimeExtractor<PeriodType>
     {
         public TimePeriodExtractor()

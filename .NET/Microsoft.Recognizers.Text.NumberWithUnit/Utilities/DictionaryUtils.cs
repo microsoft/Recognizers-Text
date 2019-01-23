@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Reflection;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit.Utilities
 {

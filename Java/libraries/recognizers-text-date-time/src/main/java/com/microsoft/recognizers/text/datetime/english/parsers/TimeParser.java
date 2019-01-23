@@ -4,8 +4,10 @@ import com.microsoft.recognizers.text.datetime.Constants;
 import com.microsoft.recognizers.text.datetime.english.extractors.EnglishTimeExtractorConfiguration;
 import com.microsoft.recognizers.text.datetime.parsers.BaseTimeParser;
 import com.microsoft.recognizers.text.datetime.parsers.config.ITimeParserConfiguration;
+import com.microsoft.recognizers.text.datetime.utilities.ConditionalMatch;
 import com.microsoft.recognizers.text.datetime.utilities.DateTimeResolutionResult;
 import com.microsoft.recognizers.text.datetime.utilities.DateUtil;
+import com.microsoft.recognizers.text.datetime.utilities.RegexExtension;
 import com.microsoft.recognizers.text.utilities.Match;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
 import com.microsoft.recognizers.text.utilities.StringUtility;
@@ -34,11 +36,11 @@ public class TimeParser extends BaseTimeParser {
     // parse "noonish", "11-ish"
     private DateTimeResolutionResult parseIsh(String text, LocalDateTime referenceTime) {
         DateTimeResolutionResult result = new DateTimeResolutionResult();
-        String trimmedText = text.trim().toLowerCase();
+        String lowerText = text.toLowerCase();
 
-        Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(EnglishTimeExtractorConfiguration.IshRegex, trimmedText)).findFirst();
-        if (match.isPresent() && match.get().length == trimmedText.length()) {
-            String hourStr = match.get().getGroup(Constants.HourGroupName).value;
+        ConditionalMatch match = RegexExtension.matchExact(EnglishTimeExtractorConfiguration.IshRegex, text, true);
+        if (match.getSuccess()) {
+            String hourStr = match.getMatch().get().getGroup(Constants.HourGroupName).value;
             int hour = Constants.HalfDayHourCount;
 
             if (!StringUtility.isNullOrEmpty(hourStr)) {
