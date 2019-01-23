@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Text.Matcher;
 using Microsoft.Recognizers.Text.Utilities;
 using DateObject = System.DateTime;
 
@@ -91,13 +92,17 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var ret = new List<Token>();
 
-            foreach (var regex in this.config.TimeZoneRegexes)
+            // Direct UTC matches
+            var directUtc = this.config.DirectUtcRegex.Matches(text);
+            foreach (Match match in directUtc)
             {
-                var matches = regex.Matches(text);
-                foreach (Match match in matches)
-                {
-                    ret.Add(new Token(match.Index, match.Index + match.Length));
-                }
+                ret.Add(new Token(match.Index, match.Index + match.Length));
+            }
+
+            var matches = this.config.TimeZoneMatcher.Find(text);
+            foreach (MatchResult<string> match in matches)
+            {
+                ret.Add(new Token(match.Start, match.Start + match.Length));
             }
 
             return ret;

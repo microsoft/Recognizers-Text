@@ -19,75 +19,9 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             TimexParsing.ParseString(timex, this);
         }
 
-        public static TimexProperty FromDate(DateObject date)
-        {
-            return new TimexProperty
-            {
-                Year = date.Year,
-                Month = date.Month,
-                DayOfMonth = date.Day
-            };
-        }
-		
-        public static TimexProperty FromDateTime(DateObject datetime)
-        {
-            var timex = FromDate(datetime);
-            timex.Hour = datetime.Hour;
-            timex.Minute = datetime.Minute;
-            timex.Second = datetime.Second;
-            return timex;
-        }
-		
-        public static TimexProperty FromTime(Time time)
-        {
-            return new TimexProperty
-            {
-                Hour = time.Hour,
-                Minute = time.Minute,
-                Second = time.Second
-            };
-        }
-
         public string TimexValue => TimexFormat.Format(this);
 
         public HashSet<string> Types => TimexInference.Infer(this);
-
-        public override string ToString()
-        {
-            return TimexConvert.ConvertTimexToString(this);
-        }
-
-        public string ToNaturalLanguage(DateObject referenceDate)
-        {
-            return TimexRelativeConvert.ConvertTimexToStringRelative(this, referenceDate);
-        }
-
-        public TimexProperty Clone()
-        {
-            return new TimexProperty
-            {
-                Now = Now,
-                Years = Years,
-                Months = Months,
-                Weeks = Weeks,
-                Days = Days,
-                Hours = Hours,
-                Minutes = Minutes,
-                Seconds = Seconds,
-                Year = Year,
-                Month = Month,
-                DayOfMonth = DayOfMonth,
-                DayOfWeek = DayOfWeek,
-                Season = Season,
-                WeekOfYear = WeekOfYear,
-                Weekend = Weekend,
-                WeekOfMonth = WeekOfMonth,
-                Hour = Hour,
-                Minute = Minute,
-                Second = Second,
-                PartOfDay = PartOfDay
-            };
-        }
 
         public bool? Now { get; set; }
 
@@ -123,7 +57,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 
         public int? Hour
         {
-            get { return time?.Hour; }
+            get => time?.Hour;
 
             set
             {
@@ -147,7 +81,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 
         public int? Minute
         {
-            get { return time?.Minute; }
+            get => time?.Minute;
 
             set
             {
@@ -171,7 +105,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 
         public int? Second
         {
-            get { return time?.Second; }
+            get => time?.Second;
 
             set
             {
@@ -194,6 +128,72 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
         }
 
         public string PartOfDay { get; set; }
+
+        public static TimexProperty FromDate(DateObject date)
+        {
+            return new TimexProperty
+            {
+                Year = date.Year,
+                Month = date.Month,
+                DayOfMonth = date.Day,
+            };
+        }
+
+        public static TimexProperty FromDateTime(DateObject datetime)
+        {
+            var timex = FromDate(datetime);
+            timex.Hour = datetime.Hour;
+            timex.Minute = datetime.Minute;
+            timex.Second = datetime.Second;
+            return timex;
+        }
+
+        public static TimexProperty FromTime(Time time)
+        {
+            return new TimexProperty
+            {
+                Hour = time.Hour,
+                Minute = time.Minute,
+                Second = time.Second,
+            };
+        }
+
+        public override string ToString()
+        {
+            return TimexConvert.ConvertTimexToString(this);
+        }
+
+        public string ToNaturalLanguage(DateObject referenceDate)
+        {
+            return TimexRelativeConvert.ConvertTimexToStringRelative(this, referenceDate);
+        }
+
+        public TimexProperty Clone()
+        {
+            return new TimexProperty
+            {
+                Now = Now,
+                Years = Years,
+                Months = Months,
+                Weeks = Weeks,
+                Days = Days,
+                Hours = Hours,
+                Minutes = Minutes,
+                Seconds = Seconds,
+                Year = Year,
+                Month = Month,
+                DayOfMonth = DayOfMonth,
+                DayOfWeek = DayOfWeek,
+                Season = Season,
+                WeekOfYear = WeekOfYear,
+                Weekend = Weekend,
+                WeekOfMonth = WeekOfMonth,
+                Hour = Hour,
+                Minute = Minute,
+                Second = Second,
+                PartOfDay = PartOfDay,
+            };
+        }
 
         public void AssignProperties(IDictionary<string, string> source)
         {

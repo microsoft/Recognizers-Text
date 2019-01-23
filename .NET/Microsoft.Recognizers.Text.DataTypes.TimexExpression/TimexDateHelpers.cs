@@ -72,9 +72,9 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 
             while (ds < de)
             {
-                var csDayOfWeek = ds.DayOfWeek;
+                var dayOfWeek = ds.DayOfWeek;
 
-                var isoDayOfWeek = (csDayOfWeek == 0) ? 7 : (int)csDayOfWeek;
+                var isoDayOfWeek = (dayOfWeek == 0) ? 7 : (int)dayOfWeek;
                 if (isoDayOfWeek == 7)
                 {
                     weeks++;

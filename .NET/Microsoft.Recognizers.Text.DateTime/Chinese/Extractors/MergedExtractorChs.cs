@@ -120,8 +120,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
                 if (match.Success)
                 {
-                    var modLengh = match.Index + match.Length;
-                    er.Length += modLengh;
+                    var modLength = match.Index + match.Length;
+                    er.Length += modLength;
                     er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
                 }
 
@@ -129,8 +129,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
                 if (match.Success)
                 {
-                    var modLengh = match.Index + match.Length;
-                    er.Length += modLengh;
+                    var modLength = match.Index + match.Length;
+                    er.Length += modLength;
                     er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
                 }
 
@@ -138,9 +138,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
                 if (match.Success)
                 {
-                    var modLengh = beforeStr.Length - match.Index;
-                    er.Length += modLengh;
-                    er.Start -= modLengh;
+                    var modLength = beforeStr.Length - match.Index;
+                    er.Length += modLength;
+                    er.Start -= modLength;
                     er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
                 }
 
@@ -148,17 +148,17 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
                 if (match.Success)
                 {
-                    var modLengh = beforeStr.Length - match.Index;
-                    er.Length += modLengh;
-                    er.Start -= modLengh;
+                    var modLength = beforeStr.Length - match.Index;
+                    er.Length += modLength;
+                    er.Start -= modLength;
                     er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
                 }
 
                 match = SinceSuffixRegex.MatchBegin(afterStr, trim: true);
                 if (match.Success)
                 {
-                    var modLengh = match.Index + match.Length;
-                    er.Length += modLengh;
+                    var modLength = match.Index + match.Length;
+                    er.Length += modLength;
                     er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
                 }
             }
@@ -169,7 +169,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             foreach (var result in src)
             {
                 var isFound = false;
-                int indexRM = -1, lengthRM = 1;
+                int indexRm = -1, lengthRm = 1;
                 for (var i = 0; i < dst.Count; i++)
                 {
                     if (dst[i].IsOverlap(result))
@@ -177,11 +177,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                         isFound = true;
                         if (result.Length > dst[i].Length)
                         {
-                            indexRM = i;
+                            indexRm = i;
                             var j = i + 1;
                             while (j < dst.Count && dst[j].IsOverlap(result))
                             {
-                                lengthRM++;
+                                lengthRm++;
                                 j++;
                             }
                         }
@@ -194,13 +194,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 {
                     dst.Add(result);
                 }
-                else if (indexRM >= 0)
+                else if (indexRm >= 0)
                 {
-                    dst.RemoveRange(indexRM, lengthRM);
+                    dst.RemoveRange(indexRm, lengthRm);
                     var tmpDst = MoveOverlap(dst, result);
                     dst.Clear();
                     dst.AddRange(tmpDst);
-                    dst.Insert(indexRM, result);
+                    dst.Insert(indexRm, result);
                 }
             }
         }

@@ -4,8 +4,8 @@ using Microsoft.Recognizers.Text.Number.French;
 using Microsoft.Recognizers.Text.Number.German;
 using Microsoft.Recognizers.Text.Number.Italian;
 using Microsoft.Recognizers.Text.Number.Japanese;
-using Microsoft.Recognizers.Text.Number.Spanish;
 using Microsoft.Recognizers.Text.Number.Korean;
+using Microsoft.Recognizers.Text.Number.Spanish;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Microsoft.Recognizers.Text.Number.Tests
@@ -13,16 +13,6 @@ namespace Microsoft.Recognizers.Text.Number.Tests
     [TestClass]
     public class TestParserFactory
     {
-        private ExtractResult getNumberToParse(string number, string data)
-        {
-            return new ExtractResult
-            {
-                Type = Constants.SYS_NUM,
-                Data = data,
-                Text = number
-            };
-        }
-
         [TestMethod]
         public void TestEnglishParser()
         {
@@ -97,7 +87,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
             IParser parseNumber = AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new GermanNumberParserConfiguration());
             IParser parseCardinal = AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Cardinal, new GermanNumberParserConfiguration());
             IParser parsePercentage = AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new GermanNumberParserConfiguration());
- 
+
             Assert.IsTrue(parseNumber is BaseNumberParser);
             Assert.IsTrue(parseCardinal is BaseNumberParser);
             Assert.IsTrue(parsePercentage is BasePercentageParser);
@@ -113,6 +103,16 @@ namespace Microsoft.Recognizers.Text.Number.Tests
             Assert.IsTrue(parseNumber is BaseNumberParser);
             Assert.IsTrue(parseCardinal is BaseNumberParser);
             Assert.IsTrue(parsePercentage is BasePercentageParser);
+        }
+
+        private ExtractResult GetNumberToParse(string number, string data)
+        {
+            return new ExtractResult
+            {
+                Type = Constants.SYS_NUM,
+                Data = data,
+                Text = number,
+            };
         }
     }
 }

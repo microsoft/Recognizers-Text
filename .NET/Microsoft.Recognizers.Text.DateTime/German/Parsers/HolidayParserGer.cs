@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 
-using Microsoft.Recognizers.Definitions.German;
-
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.German

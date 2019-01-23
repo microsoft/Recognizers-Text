@@ -139,7 +139,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             {
                 swift = 0;
             }
-            else if (trimmedText.Equals("demain") || trimmedText.Equals("a2m1") || 
+            else if (trimmedText.Equals("demain") || trimmedText.Equals("a2m1") ||
                      trimmedText.Equals("lendemain") || trimmedText.Equals("jour suivant"))
             {
                 swift = 1;
@@ -162,6 +162,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             {
                 swift = -1;
             }
+
             return swift;
         }
 
@@ -178,6 +179,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             {
                 swift = -1;
             }
+
             return swift;
         }
 

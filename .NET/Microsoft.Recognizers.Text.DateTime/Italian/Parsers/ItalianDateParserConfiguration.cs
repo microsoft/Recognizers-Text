@@ -143,6 +143,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             {
                 swift = -1;
             }
+
             return swift;
         }
 

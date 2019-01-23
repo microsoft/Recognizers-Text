@@ -93,7 +93,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
         {
             var timex = new TimexProperty("T00:05:00");
             var time = TimexHelpers.TimeFromTimex(timex);
-            Assert.AreEqual((new Time(0, 5, 0)).GetTime(), time.GetTime());
+            Assert.AreEqual(new Time(0, 5, 0).GetTime(), time.GetTime());
         }
     }
 }

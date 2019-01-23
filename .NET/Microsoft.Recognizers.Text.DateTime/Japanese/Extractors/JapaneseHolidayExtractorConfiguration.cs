@@ -12,14 +12,14 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         {
             new Regex(DateTimeDefinitions.HolidayRegexList1, RegexOptions.Singleline),
             new Regex(DateTimeDefinitions.HolidayRegexList2, RegexOptions.Singleline),
-            LunarHolidayRegex
+            LunarHolidayRegex,
         };
 
-        public IEnumerable<Regex> HolidayRegexes => HolidayRegexList;
-
-        public JapaneseHolidayExtractorConfiguration() : base()
+        public JapaneseHolidayExtractorConfiguration()
+            : base()
         {
         }
 
+        public IEnumerable<Regex> HolidayRegexes => HolidayRegexList;
     }
 }

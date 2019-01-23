@@ -1,7 +1,7 @@
-﻿using Microsoft.Recognizers.Text.Number.English;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
+﻿using System;
 using System.Linq;
+using Microsoft.Recognizers.Text.Number.English;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Microsoft.Recognizers.Text.Number.Tests
 {
@@ -22,7 +22,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
                     AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new EnglishNumberParserConfiguration()),
                     NumberExtractor.GetInstance(NumberMode.PureNumber));
         }
-        
+
         [TestMethod]
         public void WithoutCulture_UseTargetCulture()
         {
@@ -81,7 +81,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
             var recognizer = new NumberRecognizer(InvalidCulture);
             Assert.ThrowsException<ArgumentException>(() => recognizer.GetNumberModel(fallbackToDefaultCulture: false));
         }
-        
+
         [TestMethod]
         public void InitializationWithIntOption_ResolveOptionsEnum()
         {

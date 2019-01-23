@@ -21,15 +21,15 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             Second = second;
         }
 
-        public int GetTime()
-        {
-            return (Second * 1000) + (Minute * 60000) + (Hour * 3600000);
-        }
-
         public int Hour { get; set; }
 
         public int Minute { get; set; }
 
         public int Second { get; set; }
+
+        public int GetTime()
+        {
+            return (Second * 1000) + (Minute * 60000) + (Hour * 3600000);
+        }
     }
 }

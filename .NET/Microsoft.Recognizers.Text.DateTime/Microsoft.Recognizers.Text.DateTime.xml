@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.Recognizers.Text.DateTime</name>
+    </assembly>
+    <members>
+        <member name="F:Microsoft.Recognizers.Text.DateTime.Chinese.DurationType.WithNumber">
+            <summary>
+            Types of DurationType.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Recognizers.Text.DateTime.DatePeriodTimexType.ByDay">
+            <summary>
+            Represents a day Period
+            </summary>
+        </member>
+        <member name="F:Microsoft.Recognizers.Text.DateTime.DatePeriodTimexType.ByWeek">
+            <summary>
+            Represents a week Period
+            </summary>
+        </member>
+        <member name="F:Microsoft.Recognizers.Text.DateTime.DatePeriodTimexType.ByMonth">
+            <summary>
+            Represents a month Period
+            </summary>
+        </member>
+        <member name="F:Microsoft.Recognizers.Text.DateTime.DatePeriodTimexType.ByYear">
+            <summary>
+            Represents a year Period
+            </summary>
+        </member>
+        <member name="F:Microsoft.Recognizers.Text.DateTime.PeriodType.ShortTime">
+            <summary>
+            Represents a ShortTime.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Recognizers.Text.DateTime.PeriodType.FullTime">
+            <summary>
+            Represents a FullTime.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Recognizers.Text.DateTime.TimeType.CjkTime">
+            <summary>
+            十二点二十三分五十八秒,12点23分53秒
+            </summary>
+        </member>
+        <member name="F:Microsoft.Recognizers.Text.DateTime.TimeType.LessTime">
+            <summary>
+            差五分十二点
+            </summary>
+        </member>
+        <member name="F:Microsoft.Recognizers.Text.DateTime.TimeType.DigitTime">
+            <summary>
+            大约早上10:00
+            </summary>
+        </member>
+        <member name="F:Microsoft.Recognizers.Text.DateTime.Japanese.DurationType.WithNumber">
+            <summary>
+            Types of DurationType.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Recognizers.Text.DateTime.AgoLaterMode.Date">
+            <summary>
+            Date
+            </summary>
+        </member>
+        <member name="F:Microsoft.Recognizers.Text.DateTime.AgoLaterMode.DateTime">
+            <summary>
+            Datetime
+            </summary>
+        </member>
+        <member name="T:Microsoft.Recognizers.Text.DateTime.DurationParsingUtil.MultiDurationType">
+            <summary>
+            Represents multi duration.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Recognizers.Text.DateTime.DurationParsingUtil.MultiDurationType.Date">
+            <summary>
+            Represents a date
+            </summary>
+        </member>
+        <member name="F:Microsoft.Recognizers.Text.DateTime.DurationParsingUtil.MultiDurationType.Time">
+            <summary>
+            Represents a time
+            </summary>
+        </member>
+        <member name="F:Microsoft.Recognizers.Text.DateTime.DurationParsingUtil.MultiDurationType.DateTime">
+            <summary>
+            Represents the time of the date
+            </summary>
+        </member>
+    </members>
+</doc>
