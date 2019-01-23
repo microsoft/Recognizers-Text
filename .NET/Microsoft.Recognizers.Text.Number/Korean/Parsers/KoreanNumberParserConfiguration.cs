@@ -57,26 +57,6 @@ namespace Microsoft.Recognizers.Text.Number.Korean
             FractionPrepositionRegex = null;
         }
 
-        public override NumberOptions Options { get; set; }
-
-        public override CultureInfo CultureInfo { get; set; }
-
-        public override char DecimalSeparatorChar { get; set; }
-
-        public override Regex DigitalNumberRegex { get; set; }
-
-        public override Regex FractionPrepositionRegex { get; }
-
-        public override string FractionMarkerToken { get; set; }
-
-        public override Regex HalfADozenRegex { get; set; }
-
-        public override string HalfADozenText { get; set; }
-
-        public override string LangMarker { get; set; }
-
-        public override char NonDecimalSeparatorChar { get; set; }
-
         public string NonDecimalSeparatorText { get; private set; }
 
         public Regex DigitNumRegex { get; private set; }
@@ -91,8 +71,6 @@ namespace Microsoft.Recognizers.Text.Number.Korean
 
         public Regex NegativeNumberTermsRegex { get; private set; }
 
-        public override Regex NegativeNumberSignRegex { get; set; }
-
         public Regex PointRegex { get; private set; }
 
         public Regex SpeGetNumberRegex { get; private set; }
@@ -100,14 +78,6 @@ namespace Microsoft.Recognizers.Text.Number.Korean
         public Regex PairRegex { get; private set; }
 
         public Regex RoundNumberIntegerRegex { get; private set; }
-
-        public override ImmutableDictionary<string, long> OrdinalNumberMap { get; set; }
-
-        public override ImmutableDictionary<string, string> RelativeReferenceMap { get; set; }
-
-        public override ImmutableDictionary<string, long> CardinalNumberMap { get; set; }
-
-        public override ImmutableDictionary<string, long> RoundNumberMap { get; set; }
 
         public ImmutableDictionary<char, double> ZeroToNineMap { get; private set; }
 
@@ -120,16 +90,6 @@ namespace Microsoft.Recognizers.Text.Number.Korean
         public ImmutableDictionary<char, char> TratoSimMap { get; private set; }
 
         public ImmutableList<char> RoundDirectList { get; private set; }
-
-        public override string WordSeparatorToken { get; set; }
-
-        public override IEnumerable<string> WrittenDecimalSeparatorTexts { get; set; }
-
-        public override IEnumerable<string> WrittenGroupSeparatorTexts { get; set; }
-
-        public override IEnumerable<string> WrittenIntegerSeparatorTexts { get; set; }
-
-        public override IEnumerable<string> WrittenFractionSeparatorTexts { get; set; }
 
         public override IEnumerable<string> NormalizeTokenSet(IEnumerable<string> tokens, ParseResult context)
         {

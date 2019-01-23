@@ -42,48 +42,7 @@ namespace Microsoft.Recognizers.Text.Number.Portuguese
             this.NegativeNumberSignRegex = new Regex(NumbersDefinitions.NegativeNumberSignRegex, RegexOptions.Singleline);
             this.FractionPrepositionRegex = new Regex(NumbersDefinitions.FractionPrepositionRegex, RegexOptions.Singleline);
         }
-
-        public override ImmutableDictionary<string, long> CardinalNumberMap { get; set; }
-
-        public override NumberOptions Options { get; set; }
-
-        public override CultureInfo CultureInfo { get; set; }
-
-        public override char DecimalSeparatorChar { get; set; }
-
-        public override Regex DigitalNumberRegex { get; set; }
-
-        public override Regex FractionPrepositionRegex { get; }
-
-        public override Regex NegativeNumberSignRegex { get; set; }
-
-        public override string FractionMarkerToken { get; set; }
-
-        public override Regex HalfADozenRegex { get; set; }
-
-        public override string HalfADozenText { get; set; }
-
-        public override string LangMarker { get; set; }
-
-        public override char NonDecimalSeparatorChar { get; set; }
-
         public string NonDecimalSeparatorText { get; private set; }
-
-        public override ImmutableDictionary<string, long> OrdinalNumberMap { get; set; }
-
-        public override ImmutableDictionary<string, string> RelativeReferenceMap { get; set; }
-
-        public override ImmutableDictionary<string, long> RoundNumberMap { get; set; }
-
-        public override string WordSeparatorToken { get; set; }
-
-        public override IEnumerable<string> WrittenDecimalSeparatorTexts { get; set; }
-
-        public override IEnumerable<string> WrittenGroupSeparatorTexts { get; set; }
-
-        public override IEnumerable<string> WrittenIntegerSeparatorTexts { get; set; }
-
-        public override IEnumerable<string> WrittenFractionSeparatorTexts { get; set; }
 
         public override IEnumerable<string> NormalizeTokenSet(IEnumerable<string> tokens, ParseResult context)
         {

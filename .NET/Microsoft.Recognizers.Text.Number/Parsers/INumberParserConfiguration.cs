@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Collections.Immutable;
-using System.Linq;
 using System.Globalization;
+using System.Linq;
 using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text.Number
@@ -68,47 +68,47 @@ namespace Microsoft.Recognizers.Text.Number
         long ResolveCompositeNumber(string numberStr);
     }
 
-    public abstract class BaseNumberParserConfiguration : INumberParserConfiguration
+    public class BaseNumberParserConfiguration : INumberParserConfiguration
     {
-        public abstract ImmutableDictionary<string, long> CardinalNumberMap { get; set; }
+        public ImmutableDictionary<string, long> CardinalNumberMap { get; set; }
 
-        public abstract ImmutableDictionary<string, long> OrdinalNumberMap { get; set; }
+        public ImmutableDictionary<string, long> OrdinalNumberMap { get; set; }
 
-        public abstract ImmutableDictionary<string, long> RoundNumberMap { get; set; }
+        public ImmutableDictionary<string, long> RoundNumberMap { get; set; }
 
-        public abstract ImmutableDictionary<string, string> RelativeReferenceMap { get; set; }
+        public ImmutableDictionary<string, string> RelativeReferenceMap { get; set; }
 
-        public abstract NumberOptions Options { get; set; }
+        public NumberOptions Options { get; set; }
 
-        public abstract CultureInfo CultureInfo { get; set; }
+        public CultureInfo CultureInfo { get; set; }
 
-        public abstract Regex DigitalNumberRegex { get; set; }
+        public Regex DigitalNumberRegex { get; set; }
 
-        public abstract Regex FractionPrepositionRegex { get; }
+        public Regex FractionPrepositionRegex { get; set; }
 
-        public abstract string FractionMarkerToken { get; set; }
+        public string FractionMarkerToken { get; set; }
 
-        public abstract Regex HalfADozenRegex { get; set; }
+        public Regex HalfADozenRegex { get; set; }
 
-        public abstract string HalfADozenText { get; set; }
+        public string HalfADozenText { get; set; }
 
-        public abstract string LangMarker { get; set; }
+        public string LangMarker { get; set; }
 
-        public abstract char NonDecimalSeparatorChar { get; set; }
+        public char NonDecimalSeparatorChar { get; set; }
 
-        public abstract char DecimalSeparatorChar { get; set; }
+        public char DecimalSeparatorChar { get; set; }
 
-        public abstract string WordSeparatorToken { get; set; }
+        public string WordSeparatorToken { get; set; }
 
-        public abstract IEnumerable<string> WrittenDecimalSeparatorTexts { get; set; }
+        public IEnumerable<string> WrittenDecimalSeparatorTexts { get; set; }
 
-        public abstract IEnumerable<string> WrittenGroupSeparatorTexts { get; set; }
+        public IEnumerable<string> WrittenGroupSeparatorTexts { get; set; }
 
-        public abstract IEnumerable<string> WrittenIntegerSeparatorTexts { get; set; }
+        public IEnumerable<string> WrittenIntegerSeparatorTexts { get; set; }
 
-        public abstract IEnumerable<string> WrittenFractionSeparatorTexts { get; set; }
+        public IEnumerable<string> WrittenFractionSeparatorTexts { get; set; }
 
-        public abstract Regex NegativeNumberSignRegex { get; set; }
+        public Regex NegativeNumberSignRegex { get; set; }
 
         public virtual long ResolveCompositeNumber(string numberStr)
         {
