@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
+
 using Microsoft.Recognizers.Definitions.Japanese;
-using Microsoft.Recognizers.Text.DateTime.Japanese;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
 using DateObject = System.DateTime;
 

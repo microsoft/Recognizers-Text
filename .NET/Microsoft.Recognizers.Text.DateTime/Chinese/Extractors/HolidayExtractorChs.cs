@@ -12,7 +12,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         {
             new Regex(DateTimeDefinitions.HolidayRegexList1, RegexOptions.Singleline),
             new Regex(DateTimeDefinitions.HolidayRegexList2, RegexOptions.Singleline),
-            LunarHolidayRegex
+            LunarHolidayRegex,
         };
 
         public IEnumerable<Regex> HolidayRegexes => HolidayRegexList;

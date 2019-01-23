@@ -13,6 +13,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             {
                 innerResult = ParseIsh(text, referenceTime);
             }
+
             return innerResult;
         }
 

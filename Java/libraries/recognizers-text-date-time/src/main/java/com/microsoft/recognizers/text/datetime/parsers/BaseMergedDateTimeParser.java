@@ -131,12 +131,12 @@ public class BaseMergedDateTimeParser implements IDateTimeParser {
                 (er.getType().equals(Constants.SYS_DATETIME_DATE))) {
             // This has to be put at the end of the if, or cases like "before 2012" and "after 2012" would fall into this
             // 2012 or after/above
-            Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(config.getDateAfterRegex(), er.getText())).findFirst();
-            if (match.isPresent() && er.getText().endsWith(match.get().value)) {
+            ConditionalMatch match = RegexExtension.matchEnd(config.getDateAfterRegex(), er.getText(), true);
+            if (match.getSuccess()) {
                 hasYearAfter = true;
-                er.setLength(er.getLength() - match.get().length);
+                er.setLength(er.getLength() - match.getMatch().get().length);
                 er.setText(er.getLength() > 0 ? er.getText().substring(0, er.getLength()) : "");
-                modStr = match.get().value;
+                modStr = match.getMatch().get().value;
             }
         }
 
