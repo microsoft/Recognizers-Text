@@ -58,18 +58,17 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             foreach (Match match in timeMatch)
             {
-                if (tokens.Count > 0)
+                bool isInside = false;
+                foreach (Token token in tokens)
                 {
-                    foreach (Token token in tokens)
+                    if (token.Start <= match.Index && token.End >= match.Index + match.Length)
                     {
-                        if (!(token.Start <= match.Index && token.End >= match.Index + match.Length))
-                        {
-                            isAllSuffixInsideTokens = false;
-                            break;
-                        }
+                        isInside = true;
+                        break;
                     }
                 }
-                else
+
+                if (!isInside)
                 {
                     isAllSuffixInsideTokens = false;
                 }
@@ -80,7 +79,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
             }
 
-            if (timeMatch.Count != 0)
+            if (timeMatch.Count != 0 && !isAllSuffixInsideTokens)
             {
                 var lastMatchIndex = timeMatch[timeMatch.Count - 1].Index;
                 var matches = config.LocationMatcher.Find(text.Substring(0, lastMatchIndex).ToLowerInvariant());

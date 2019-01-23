@@ -177,7 +177,6 @@ FullNameList: !list
     - Central Standard Time
     - Central Standard Time
     - China Standard Time
-    - China Time
     - Dateline Standard Time
     - E. Africa Standard Time
     - E. Australia Standard Time
@@ -225,8 +224,6 @@ FullNameList: !list
     - Pacific SA Standard Time
     - Pacific Standard Time
     - Redmond time
-    - Seattle time
-    - Bellevue time
     - Pacific Daylight Time
     - Pacific Time
     - Pacific Standard Time
@@ -243,7 +240,6 @@ FullNameList: !list
     - Samoa Standard Time
     - SE Asia Standard Time
     - Singapore Standard Time
-    - Singapore Time
     - South Africa Standard Time
     - Sri Lanka Standard Time
     - Syria Standard Time
@@ -266,8 +262,6 @@ FullNameList: !list
     - Yakutsk Standard Time
     - Pacific Daylight Saving Time
     - Austrialian Western Daylight Time
-    - Colombia Time
-    - Hong Kong Time
     - Austrialian West Daylight Time
     - Central Europe Time
     - Central European Time
