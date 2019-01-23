@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-
-namespace Microsoft.Recognizers.Text.Choice
+﻿namespace Microsoft.Recognizers.Text.Choice
 {
     public class OptionsOtherMatchParseResult
     {

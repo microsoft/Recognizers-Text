@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text.RegularExpressions;
-
-using Microsoft.Recognizers.Text.Choice.Utilities;
+﻿using System.Collections.Generic;
 
 namespace Microsoft.Recognizers.Text.Choice
 {

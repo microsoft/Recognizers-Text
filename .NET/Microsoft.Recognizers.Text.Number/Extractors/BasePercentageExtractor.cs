@@ -81,7 +81,7 @@ namespace Microsoft.Recognizers.Text.Number
                             Start = start,
                             Length = length,
                             Text = substr,
-                            Type = ExtractType
+                            Type = ExtractType,
                         };
                         result.Add(er);
                     }
@@ -182,7 +182,7 @@ namespace Microsoft.Recognizers.Text.Number
 
                 if ((Options & NumberOptions.PercentageMode) != 0)
                 {
-                    // deal with special cases like "<fraction number> of" and "one in two" in percentageMode 
+                    // deal with special cases like "<fraction number> of" and "one in two" in percentageMode
                     if (str.Contains(replaceFracNumText) || data.Count > 1)
                     {
                         results[i].Data = data;

@@ -75,7 +75,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
         protected override void InitializeConfiguration()
         {
             #region English
-            
+
             RegisterModel<CurrencyModel>(
                 Culture.English,
                 (options) => new CurrencyModel(new Dictionary<IExtractor, IParser>
@@ -83,7 +83,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     {
                         new BaseMergedUnitExtractor(new English.CurrencyExtractorConfiguration()),
                         new BaseMergedUnitParser(new English.CurrencyParserConfiguration())
-                    }
+                    },
                 }));
 
             RegisterModel<TemperatureModel>(
@@ -93,7 +93,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     {
                         new NumberWithUnitExtractor(new English.TemperatureExtractorConfiguration()),
                         new NumberWithUnitParser(new English.TemperatureParserConfiguration())
-                    }
+                    },
                 }));
 
             RegisterModel<DimensionModel>(
@@ -103,7 +103,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     {
                         new NumberWithUnitExtractor(new English.DimensionExtractorConfiguration()),
                         new NumberWithUnitParser(new English.DimensionParserConfiguration())
-                    }
+                    },
                 }));
 
             RegisterModel<AgeModel>(
@@ -113,13 +113,13 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     {
                         new NumberWithUnitExtractor(new English.AgeExtractorConfiguration()),
                         new NumberWithUnitParser(new English.AgeParserConfiguration())
-                    }
+                    },
                 }));
-                
+
             #endregion
 
             #region Chinese
-            
+
             RegisterModel<CurrencyModel>(
                 Culture.Chinese,
                 (options) => new CurrencyModel(new Dictionary<IExtractor, IParser>
@@ -131,7 +131,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     {
                         new NumberWithUnitExtractor(new English.CurrencyExtractorConfiguration()),
                         new NumberWithUnitParser(new English.CurrencyParserConfiguration())
-                    }
+                    },
                 }));
 
             RegisterModel<TemperatureModel>(
@@ -145,7 +145,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     {
                         new NumberWithUnitExtractor(new English.TemperatureExtractorConfiguration()),
                         new NumberWithUnitParser(new English.TemperatureParserConfiguration())
-                    }
+                    },
                 }));
 
             RegisterModel<DimensionModel>(
@@ -159,7 +159,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     {
                         new NumberWithUnitExtractor(new English.DimensionExtractorConfiguration()),
                         new NumberWithUnitParser(new English.DimensionParserConfiguration())
-                    }
+                    },
                 }));
 
             RegisterModel<AgeModel>(
@@ -173,13 +173,13 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     {
                         new NumberWithUnitExtractor(new English.AgeExtractorConfiguration()),
                         new NumberWithUnitParser(new English.AgeParserConfiguration())
-                    }
+                    },
                 }));
-                
+
             #endregion
 
             #region Spanish
-            
+
             RegisterModel<CurrencyModel>(
                 Culture.Spanish,
                 (options) => new CurrencyModel(new Dictionary<IExtractor, IParser>
@@ -187,7 +187,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     {
                         new NumberWithUnitExtractor(new Spanish.CurrencyExtractorConfiguration()),
                         new NumberWithUnitParser(new Spanish.CurrencyParserConfiguration())
-                    }
+                    },
                 }));
 
             RegisterModel<TemperatureModel>(
@@ -197,7 +197,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     {
                         new NumberWithUnitExtractor(new Spanish.TemperatureExtractorConfiguration()),
                         new NumberWithUnitParser(new Spanish.TemperatureParserConfiguration())
-                    }
+                    },
                 }));
 
             RegisterModel<DimensionModel>(
@@ -207,7 +207,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     {
                         new NumberWithUnitExtractor(new Spanish.DimensionExtractorConfiguration()),
                         new NumberWithUnitParser(new Spanish.DimensionParserConfiguration())
-                    }
+                    },
                 }));
 
             RegisterModel<AgeModel>(
@@ -217,13 +217,13 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     {
                         new NumberWithUnitExtractor(new Spanish.AgeExtractorConfiguration()),
                         new NumberWithUnitParser(new Spanish.AgeParserConfiguration())
-                    }
+                    },
                 }));
-                
+
             #endregion
 
             #region Portuguese
-            
+
             RegisterModel<CurrencyModel>(
                 Culture.Portuguese,
                 (options) => new CurrencyModel(new Dictionary<IExtractor, IParser>
@@ -231,7 +231,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     {
                         new NumberWithUnitExtractor(new Portuguese.CurrencyExtractorConfiguration()),
                         new NumberWithUnitParser(new Portuguese.CurrencyParserConfiguration())
-                    }
+                    },
                 }));
 
             RegisterModel<TemperatureModel>(
@@ -241,7 +241,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     {
                         new NumberWithUnitExtractor(new Portuguese.TemperatureExtractorConfiguration()),
                         new NumberWithUnitParser(new Portuguese.TemperatureParserConfiguration())
-                    }
+                    },
                 }));
 
             RegisterModel<DimensionModel>(
@@ -251,7 +251,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     {
                         new NumberWithUnitExtractor(new Portuguese.DimensionExtractorConfiguration()),
                         new NumberWithUnitParser(new Portuguese.DimensionParserConfiguration())
-                    }
+                    },
                 }));
 
             RegisterModel<AgeModel>(
@@ -261,13 +261,13 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     {
                         new NumberWithUnitExtractor(new Portuguese.AgeExtractorConfiguration()),
                         new NumberWithUnitParser(new Portuguese.AgeParserConfiguration())
-                    }
+                    },
                 }));
-                
+
             #endregion
 
             #region French
-            
+
             RegisterModel<CurrencyModel>(
                 Culture.French,
                 (options) => new CurrencyModel(new Dictionary<IExtractor, IParser>
@@ -275,7 +275,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     {
                         new NumberWithUnitExtractor(new French.CurrencyExtractorConfiguration()),
                         new NumberWithUnitParser(new French.CurrencyParserConfiguration())
-                    }
+                    },
                 }));
 
             RegisterModel<TemperatureModel>(
@@ -285,7 +285,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     {
                         new NumberWithUnitExtractor(new French.TemperatureExtractorConfiguration()),
                         new NumberWithUnitParser(new French.TemperatureParserConfiguration())
-                    }
+                    },
                 }));
 
             RegisterModel<DimensionModel>(
@@ -295,7 +295,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     {
                         new NumberWithUnitExtractor(new French.DimensionExtractorConfiguration()),
                         new NumberWithUnitParser(new French.DimensionParserConfiguration())
-                    }
+                    },
                 }));
 
             RegisterModel<AgeModel>(
@@ -305,13 +305,13 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     {
                         new NumberWithUnitExtractor(new French.AgeExtractorConfiguration()),
                         new NumberWithUnitParser(new French.AgeParserConfiguration())
-                    }
+                    },
                 }));
-                
+
             #endregion
 
             #region German
-            
+
             RegisterModel<CurrencyModel>(
                 Culture.German,
                 (options) => new CurrencyModel(new Dictionary<IExtractor, IParser>
@@ -319,7 +319,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     {
                         new NumberWithUnitExtractor(new German.CurrencyExtractorConfiguration()),
                         new NumberWithUnitParser(new German.CurrencyParserConfiguration())
-                    }
+                    },
                  }));
 
             RegisterModel<TemperatureModel>(
@@ -329,7 +329,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     {
                         new NumberWithUnitExtractor(new German.TemperatureExtractorConfiguration()),
                         new NumberWithUnitParser(new German.TemperatureParserConfiguration())
-                    }
+                    },
                  }));
 
             RegisterModel<DimensionModel>(
@@ -339,7 +339,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     {
                         new NumberWithUnitExtractor(new German.DimensionExtractorConfiguration()),
                         new NumberWithUnitParser(new German.DimensionParserConfiguration())
-                    }
+                    },
                  }));
 
             RegisterModel<AgeModel>(
@@ -349,7 +349,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     {
                         new NumberWithUnitExtractor(new German.AgeExtractorConfiguration()),
                         new NumberWithUnitParser(new German.AgeParserConfiguration())
-                    }
+                    },
                 }));
 
             #endregion
@@ -409,7 +409,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     {
                         new BaseMergedUnitExtractor(new Japanese.CurrencyExtractorConfiguration()),
                         new BaseMergedUnitParser(new Japanese.CurrencyParserConfiguration())
-                    }/*,
+                    },/*,
                     {
                         new NumberWithUnitExtractor(new English.CurrencyExtractorConfiguration()),
                         new NumberWithUnitParser(new English.CurrencyParserConfiguration())
@@ -427,13 +427,13 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     {
                         new NumberWithUnitExtractor(new English.AgeExtractorConfiguration()),
                         new NumberWithUnitParser(new English.AgeParserConfiguration())
-                    }
+                    },
                 }));
-                
+
             #endregion
 
             #region Dutch
-            
+
             RegisterModel<CurrencyModel>(
                 Culture.Dutch,
                 (options) => new CurrencyModel(new Dictionary<IExtractor, IParser>
@@ -441,7 +441,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     {
                         new BaseMergedUnitExtractor(new Dutch.CurrencyExtractorConfiguration()),
                         new BaseMergedUnitParser(new Dutch.CurrencyParserConfiguration())
-                    }
+                    },
                 }));
 
             RegisterModel<TemperatureModel>(
@@ -451,7 +451,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     {
                         new NumberWithUnitExtractor(new Dutch.TemperatureExtractorConfiguration()),
                         new NumberWithUnitParser(new Dutch.TemperatureParserConfiguration())
-                    }
+                    },
                 }));
 
             RegisterModel<DimensionModel>(
@@ -461,7 +461,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     {
                         new NumberWithUnitExtractor(new Dutch.DimensionExtractorConfiguration()),
                         new NumberWithUnitParser(new Dutch.DimensionParserConfiguration())
-                    }
+                    },
                 }));
 
             RegisterModel<AgeModel>(
@@ -471,9 +471,9 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     {
                         new NumberWithUnitExtractor(new Dutch.AgeExtractorConfiguration()),
                         new NumberWithUnitParser(new Dutch.AgeParserConfiguration())
-                    }
+                    },
                 }));
-                                            
+
             #endregion
         }
     }

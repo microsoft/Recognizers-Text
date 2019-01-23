@@ -150,7 +150,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             var trimmedText = text.Trim().ToLowerInvariant().Normalized();
             return PastPrefixRegex.IsMatch(trimmedText);
         }
-        
+
         public string Normalize(string text)
         {
             return text.Normalized();

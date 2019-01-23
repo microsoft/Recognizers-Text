@@ -1,5 +1,3 @@
-using Microsoft.Recognizers.Text.DateTime.Utilities;
-using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
@@ -198,6 +196,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                                 {
                                     endLenght = matchCase.Groups["end"].Value.Length;
                                 }
+
                                 ret.Add(new Token(matchCase.Index, matchCase.Index + matchCase.Length - endLenght));
                                 isFound = true;
                             }
@@ -265,7 +264,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     beginMatch = this.Config.WeekDayRegex.MatchBegin(suffixStr.Trim(), trim: true);
 
-                    if (beginMatch.Success && num >= 1 && num <= 5 
+                    if (beginMatch.Success && num >= 1 && num <= 5
                         && result.Type.Equals(Number.Constants.SYS_NUM_ORDINAL))
                     {
 
@@ -318,7 +317,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     endIndex += matchYear.Length;
                 }
-            }           
+            }
 
             var date = DateObject.MinValue.SafeCreateFromValue(year, month, day);
 
@@ -372,7 +371,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var match = Config.DateUnitRegex.Match(er.Text);
 
                 if (match.Success)
-                {                    
+                {
                     ret.AddRange(AgoLaterUtil.ExtractorDurationWithBeforeAndAfter(text,
                         er, ret, Config.UtilityConfiguration));
                 }
