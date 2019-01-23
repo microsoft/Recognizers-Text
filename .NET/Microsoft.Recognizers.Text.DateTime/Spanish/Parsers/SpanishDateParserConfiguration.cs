@@ -130,7 +130,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public int GetSwiftMonth(string text)
         {
-            var trimmedText = text.Trim().ToLowerInvariant().Normalized();
+            var trimmedText = text.Trim().ToLowerInvariant().Normalized(DateTimeDefinitions.SpecialCharactersEquivalent);
             var swift = 0;
 
             if (NextPrefixRegex.IsMatch(trimmedText))
@@ -148,28 +148,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public bool IsCardinalLast(string text)
         {
-            var trimmedText = text.Trim().ToLowerInvariant().Normalized();
+            var trimmedText = text.Trim().ToLowerInvariant().Normalized(DateTimeDefinitions.SpecialCharactersEquivalent);
             return PastPrefixRegex.IsMatch(trimmedText);
         }
 
         public string Normalize(string text)
         {
-            return text.Normalized();
-        }
-    }
-
-    [SuppressMessage("StyleCop.CSharp.MaintainabilityRules", "SA1402:File may only contain a single type", Justification = "Temporarily ignored because this method will be refactored.", Scope = "type", Target = "~T:Microsoft.Recognizers.Text.DateTime.Spanish.StringExtension")]
-    [SuppressMessage("StyleCop.CSharp.OrderingRules", "SA1204:Static elements should appear before instance elements", Justification = "Temporarily ignored because this method will be refactored.", Scope = "type", Target = "~T:Microsoft.Recognizers.Text.DateTime.Spanish.StringExtension")]
-    public static class StringExtension
-    {
-        public static string Normalized(this string text)
-        {
-            return text
-                .Replace('á', 'a')
-                .Replace('é', 'e')
-                .Replace('í', 'i')
-                .Replace('ó', 'o')
-                .Replace('ú', 'u');
+            return text.Normalized(DateTimeDefinitions.SpecialCharactersEquivalent);
         }
     }
 }
