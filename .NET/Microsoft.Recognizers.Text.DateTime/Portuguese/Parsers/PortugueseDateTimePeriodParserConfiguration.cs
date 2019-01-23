@@ -1,6 +1,9 @@
 ﻿using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
+using Microsoft.Recognizers.Definitions.Portuguese;
+using Microsoft.Recognizers.Text.DateTime.Utilities;
+
 namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 {
     public class PortugueseDateTimePeriodParserConfiguration : BaseOptionsConfiguration, IDateTimePeriodParserConfiguration
@@ -113,7 +116,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public bool GetMatchedTimeRange(string text, out string timeStr, out int beginHour, out int endHour, out int endMin)
         {
-            var trimmedText = text.Trim().ToLowerInvariant().Normalized();
+            var trimmedText = text.Trim().ToLowerInvariant().Normalized(DateTimeDefinitions.SpecialCharactersEquivalent);
             beginHour = 0;
             endHour = 0;
             endMin = 0;
