@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.Immutable;
+﻿using System.Collections.Immutable;
 using DateObject = System.DateTime;
 
 using Microsoft.Recognizers.Definitions.German;
@@ -31,6 +29,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             {
                 swift = 0;
             }
+
             return swift;
         }
 

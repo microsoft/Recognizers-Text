@@ -58,7 +58,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             {
                 {
                     new Regex(DateTimeDefinitions.TimeRegexes1, RegexOptions.Singleline),
-                    TimeType.KanjiTime
+                    TimeType.CjkTime
                 },
                 {
                     new Regex(DateTimeDefinitions.TimeRegexes2, RegexOptions.Singleline),

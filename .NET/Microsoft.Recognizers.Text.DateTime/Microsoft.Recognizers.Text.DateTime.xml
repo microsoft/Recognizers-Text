@@ -9,59 +9,54 @@
             Types of DurationType.
             </summary>
         </member>
-        <member name="F:Microsoft.Recognizers.Text.DateTime.Chinese.TimeType.ChineseTime">
+        <member name="F:Microsoft.Recognizers.Text.DateTime.DatePeriodTimexType.ByDay">
             <summary>
-            十二点二十三分五十八秒,12点23分53秒
+            Represents a day Period
             </summary>
         </member>
-        <member name="F:Microsoft.Recognizers.Text.DateTime.Chinese.TimeType.LessTime">
+        <member name="F:Microsoft.Recognizers.Text.DateTime.DatePeriodTimexType.ByWeek">
             <summary>
-            差五分十二点
+            Represents a week Period
             </summary>
         </member>
-        <member name="F:Microsoft.Recognizers.Text.DateTime.Chinese.TimeType.DigitTime">
+        <member name="F:Microsoft.Recognizers.Text.DateTime.DatePeriodTimexType.ByMonth">
             <summary>
-            大约早上10:00
+            Represents a month Period
             </summary>
         </member>
-        <member name="F:Microsoft.Recognizers.Text.DateTime.Chinese.PeriodType.ShortTime">
+        <member name="F:Microsoft.Recognizers.Text.DateTime.DatePeriodTimexType.ByYear">
+            <summary>
+            Represents a year Period
+            </summary>
+        </member>
+        <member name="F:Microsoft.Recognizers.Text.DateTime.PeriodType.ShortTime">
             <summary>
             Represents a ShortTime.
             </summary>
         </member>
-        <member name="F:Microsoft.Recognizers.Text.DateTime.Chinese.PeriodType.FullTime">
+        <member name="F:Microsoft.Recognizers.Text.DateTime.PeriodType.FullTime">
             <summary>
             Represents a FullTime.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Recognizers.Text.DateTime.TimeType.CjkTime">
+            <summary>
+            十二点二十三分五十八秒,12点23分53秒
+            </summary>
+        </member>
+        <member name="F:Microsoft.Recognizers.Text.DateTime.TimeType.LessTime">
+            <summary>
+            差五分十二点
+            </summary>
+        </member>
+        <member name="F:Microsoft.Recognizers.Text.DateTime.TimeType.DigitTime">
+            <summary>
+            大约早上10:00
             </summary>
         </member>
         <member name="F:Microsoft.Recognizers.Text.DateTime.Japanese.DurationType.WithNumber">
             <summary>
             Types of DurationType.
-            </summary>
-        </member>
-        <member name="F:Microsoft.Recognizers.Text.DateTime.Japanese.TimeType.JapaneseTime">
-            <summary>
-            十二点二十三分五十八秒,12点23分53秒
-            </summary>
-        </member>
-        <member name="F:Microsoft.Recognizers.Text.DateTime.Japanese.TimeType.LessTime">
-            <summary>
-            差五分十二点
-            </summary>
-        </member>
-        <member name="F:Microsoft.Recognizers.Text.DateTime.Japanese.TimeType.DigitTime">
-            <summary>
-            大约早上10:00
-            </summary>
-        </member>
-        <member name="F:Microsoft.Recognizers.Text.DateTime.Japanese.PeriodType.ShortTime">
-            <summary>
-            Represents a ShortTime.
-            </summary>
-        </member>
-        <member name="F:Microsoft.Recognizers.Text.DateTime.Japanese.PeriodType.FullTime">
-            <summary>
-            Represents a FullTime.
             </summary>
         </member>
         <member name="F:Microsoft.Recognizers.Text.DateTime.AgoLaterMode.Date">

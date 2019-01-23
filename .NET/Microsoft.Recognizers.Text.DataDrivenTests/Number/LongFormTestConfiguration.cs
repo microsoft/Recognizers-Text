@@ -4,8 +4,6 @@ using System.Collections.Immutable;
 using System.Globalization;
 using System.Text.RegularExpressions;
 
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
 namespace Microsoft.Recognizers.Text.Number.Tests
 {
     public class LongFormTestConfiguration : INumberParserConfiguration

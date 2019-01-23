@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.IO;
@@ -67,7 +67,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
         TimeZone,
         Set,
         Merged,
-        MergedSkipFromTo
+        MergedSkipFromTo,
     }
 
     public enum DateTimeParsers
@@ -82,7 +82,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
         Holiday,
         TimeZone,
         Set,
-        Merged
+        Merged,
     }
 
     public static class TestContextExtensions
@@ -113,7 +113,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             { Models.Email, (test, culture) => SequenceRecognizer.RecognizeEmail(test.Input, culture, fallbackToDefaultCulture: false) },
             { Models.URL, (test, culture) => SequenceRecognizer.RecognizeURL(test.Input, culture, fallbackToDefaultCulture: false) },
             { Models.GUID, (test, culture) => SequenceRecognizer.RecognizeGUID(test.Input, culture, fallbackToDefaultCulture: false) },
-            { Models.Boolean, (test, culture) => ChoiceRecognizer.RecognizeBoolean(test.Input, culture, fallbackToDefaultCulture: false) }
+            { Models.Boolean, (test, culture) => ChoiceRecognizer.RecognizeBoolean(test.Input, culture, fallbackToDefaultCulture: false) },
         };
 
         public static IList<ModelResult> GetModelParseResults(this TestContext context, TestModel test)

@@ -8,9 +8,11 @@ import com.microsoft.recognizers.text.datetime.TimeTypeConstants;
 import com.microsoft.recognizers.text.datetime.parsers.config.ITimeParserConfiguration;
 import com.microsoft.recognizers.text.datetime.parsers.config.PrefixAdjustResult;
 import com.microsoft.recognizers.text.datetime.parsers.config.SuffixAdjustResult;
+import com.microsoft.recognizers.text.datetime.utilities.ConditionalMatch;
 import com.microsoft.recognizers.text.datetime.utilities.DateTimeResolutionResult;
 import com.microsoft.recognizers.text.datetime.utilities.DateUtil;
 import com.microsoft.recognizers.text.datetime.utilities.FormatUtil;
+import com.microsoft.recognizers.text.datetime.utilities.RegexExtension;
 import com.microsoft.recognizers.text.datetime.utilities.TimeZoneResolutionResult;
 import com.microsoft.recognizers.text.datetime.utilities.TimeZoneUtility;
 import com.microsoft.recognizers.text.utilities.IntegerUtility;
@@ -157,11 +159,10 @@ public class BaseTimeParser implements IDateTimeParser {
         }
 
         for (Pattern regex : config.getTimeRegexes()) {
-            offset = 0;
-            match = Arrays.stream(RegExpUtility.getMatches(regex, trimmedText)).findFirst();
+            ConditionalMatch exactMatch = RegexExtension.matchExact(regex, trimmedText, true);
 
-            if (match.isPresent() && match.get().index == offset && match.get().length == trimmedText.length()) {
-                return match2Time(match.get(), referenceTime);
+            if (exactMatch.getSuccess()) {
+                return match2Time(exactMatch.getMatch().get(), referenceTime);
             }
         }
 
