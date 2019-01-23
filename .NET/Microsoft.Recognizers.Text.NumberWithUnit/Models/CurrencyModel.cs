@@ -4,7 +4,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 {
     public class CurrencyModel : AbstractNumberWithUnitModel
     {
-        public CurrencyModel(Dictionary<IExtractor, IParser> extractorParserDic) 
+        public CurrencyModel(Dictionary<IExtractor, IParser> extractorParserDic)
             : base(extractorParserDic)
         {
         }

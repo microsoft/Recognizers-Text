@@ -5,10 +5,6 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
 {
     public class CardinalExtractor : BaseNumberExtractor
     {
-        internal sealed override ImmutableDictionary<Regex, TypeTag> Regexes { get; }
-
-        protected sealed override string ExtractType { get; } = Constants.SYS_NUM_CARDINAL;
-
         // CardinalExtractor = Int + Double
         public CardinalExtractor(ChineseNumberExtractorMode mode = ChineseNumberExtractorMode.Default)
         {
@@ -22,5 +18,9 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
 
             Regexes = builder.ToImmutable();
         }
+
+        internal sealed override ImmutableDictionary<Regex, TypeTag> Regexes { get; }
+
+        protected sealed override string ExtractType { get; } = Constants.SYS_NUM_CARDINAL;
     }
 }

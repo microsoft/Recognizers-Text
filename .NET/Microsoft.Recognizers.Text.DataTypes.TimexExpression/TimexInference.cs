@@ -80,7 +80,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             return types;
         }
 
-        private static bool IsPresent(TimexProperty obj) 
+        private static bool IsPresent(TimexProperty obj)
         {
             return obj.Now == true;
         }
@@ -108,9 +108,9 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 
         private static bool IsDateRange(TimexProperty obj)
         {
-            return (obj.Year != null && obj.DayOfMonth == null) || 
-                   (obj.Year != null && obj.Month != null && obj.DayOfMonth == null) || 
-                   (obj.Month != null && obj.DayOfMonth == null) || 
+            return (obj.Year != null && obj.DayOfMonth == null) ||
+                   (obj.Year != null && obj.Month != null && obj.DayOfMonth == null) ||
+                   (obj.Month != null && obj.DayOfMonth == null) ||
                    obj.Season != null || obj.WeekOfYear != null || obj.WeekOfMonth != null;
         }
 

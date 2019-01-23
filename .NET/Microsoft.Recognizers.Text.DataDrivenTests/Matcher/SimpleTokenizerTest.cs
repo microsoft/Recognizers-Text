@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.Recognizers.Text.Matcher;
+﻿using Microsoft.Recognizers.Text.Matcher;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Microsoft.Recognizers.Text.DataDrivenTests.Matcher

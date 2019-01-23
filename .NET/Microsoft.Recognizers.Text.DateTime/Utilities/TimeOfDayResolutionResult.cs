@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace Microsoft.Recognizers.Text.DateTime
+﻿namespace Microsoft.Recognizers.Text.DateTime
 {
     public class TimeOfDayResolutionResult
     {

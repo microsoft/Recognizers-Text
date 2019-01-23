@@ -1,7 +1,7 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
 {
@@ -23,7 +23,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
                 {
                     new NumberWithUnitExtractor(new English.CurrencyExtractorConfiguration()),
                     new NumberWithUnitParser(new English.CurrencyParserConfiguration())
-                }
+                },
             });
         }
 

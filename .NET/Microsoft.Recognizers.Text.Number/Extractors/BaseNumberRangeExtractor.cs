@@ -13,14 +13,6 @@ namespace Microsoft.Recognizers.Text.Number
 
         private readonly BaseNumberParser numberParser;
 
-        protected virtual NumberOptions Options { get; } = NumberOptions.None;
-
-        internal abstract System.Collections.Immutable.ImmutableDictionary<Regex, string> Regexes { get; }
-
-        internal abstract Regex AmbiguousFractionConnectorsRegex { get; }
-
-        protected virtual string ExtractType { get; } = "";
-
         public BaseNumberRangeExtractor(BaseNumberExtractor numberExtractor, BaseNumberExtractor ordinalExtractor, BaseNumberParser numberParser, NumberOptions options = NumberOptions.None)
         {
             this.numberExtractor = numberExtractor;
@@ -28,6 +20,14 @@ namespace Microsoft.Recognizers.Text.Number
             this.numberParser = numberParser;
             Options = options;
         }
+
+        internal abstract System.Collections.Immutable.ImmutableDictionary<Regex, string> Regexes { get; }
+
+        internal abstract Regex AmbiguousFractionConnectorsRegex { get; }
+
+        protected virtual NumberOptions Options { get; } = NumberOptions.None;
+
+        protected virtual string ExtractType { get; } = string.Empty;
 
         public virtual List<ExtractResult> Extract(string source)
         {
@@ -80,7 +80,7 @@ namespace Microsoft.Recognizers.Text.Number
                                 Length = length,
                                 Text = substr,
                                 Type = ExtractType,
-                                Data = matchSource.ContainsKey(srcMatch) ? matchSource[srcMatch] : null
+                                Data = matchSource.ContainsKey(srcMatch) ? matchSource[srcMatch] : null,
                             };
                             results.Add(er);
                         }
@@ -293,27 +293,5 @@ namespace Microsoft.Recognizers.Text.Number
 
             return ers;
         }
-    }
-
-    public static class NumberRangeConstants
-    {
-        // Number range regex type
-        public const string TWONUM = "TwoNum";
-        public const string TWONUMBETWEEN = "TwoNumBetween";
-        public const string TWONUMTILL = "TwoNumTill";
-        public const string TWONUMCLOSED = "TwoNumClosed";
-        public const string MORE = "More";
-        public const string LESS = "Less";
-        public const string EQUAL = "Equal";
-
-        // Brackets and comma for number range resolution value
-        public const char LEFT_OPEN = '(';
-        public const char RIGHT_OPEN = ')';
-        public const char LEFT_CLOSED = '[';
-        public const char RIGHT_CLOSED = ']';
-        public const char INTERVAL_SEPARATOR = ',';
-
-        // Invalid number
-        public const int INVALID_NUM = -1;
     }
 }

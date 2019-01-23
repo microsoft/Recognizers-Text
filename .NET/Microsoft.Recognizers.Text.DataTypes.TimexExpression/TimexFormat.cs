@@ -9,11 +9,12 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
         {
             var types = timex.Types.Count != 0 ? timex.Types : TimexInference.Infer(timex);
 
-            if (types.Contains(Constants.TimexTypes.Present)) {
+            if (types.Contains(Constants.TimexTypes.Present))
+            {
                 return "PRESENT_REF";
             }
 
-            if ((types.Contains(Constants.TimexTypes.DateTimeRange) || types.Contains(Constants.TimexTypes.DateRange) || 
+            if ((types.Contains(Constants.TimexTypes.DateTimeRange) || types.Contains(Constants.TimexTypes.DateRange) ||
                  types.Contains(Constants.TimexTypes.TimeRange)) && types.Contains(Constants.TimexTypes.Duration))
             {
                 var range = TimexHelpers.ExpandDateTimeRange(timex);
@@ -70,7 +71,8 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
                 return $"P{timex.Months}M";
             }
 
-            if (timex.Weeks != null) {
+            if (timex.Weeks != null)
+            {
                 return $"P{timex.Weeks}W";
             }
 
@@ -124,7 +126,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
                 return $"XXXX-{TimexDateHelpers.FixedFormatNumber(timex.Month, 2)}-{TimexDateHelpers.FixedFormatNumber(timex.DayOfMonth, 2)}";
             }
 
-            if (timex.DayOfWeek != null) 
+            if (timex.DayOfWeek != null)
             {
                 return $"XXXX-WXX-{timex.DayOfWeek}";
             }
@@ -144,7 +146,8 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
                 return $"{TimexDateHelpers.FixedFormatNumber(timex.Year, 4)}-W{TimexDateHelpers.FixedFormatNumber(timex.WeekOfYear, 2)}";
             }
 
-            if (timex.Year != null && timex.Season != null) {
+            if (timex.Year != null && timex.Season != null)
+            {
                 return $"{TimexDateHelpers.FixedFormatNumber(timex.Year, 4)}-{timex.Season}";
             }
 

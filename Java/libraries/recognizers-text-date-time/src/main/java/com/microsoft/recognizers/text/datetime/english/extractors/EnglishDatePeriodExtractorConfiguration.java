@@ -12,6 +12,7 @@ import com.microsoft.recognizers.text.datetime.extractors.config.IDatePeriodExtr
 import com.microsoft.recognizers.text.datetime.extractors.config.ResultIndex;
 import com.microsoft.recognizers.text.datetime.resources.BaseDateTime;
 import com.microsoft.recognizers.text.datetime.resources.EnglishDateTime;
+import com.microsoft.recognizers.text.datetime.utilities.RegexExtension;
 import com.microsoft.recognizers.text.number.english.extractors.CardinalExtractor;
 import com.microsoft.recognizers.text.number.english.extractors.OrdinalExtractor;
 import com.microsoft.recognizers.text.number.english.parsers.EnglishNumberParserConfiguration;
@@ -99,14 +100,14 @@ public class EnglishDatePeriodExtractorConfiguration extends BaseOptionsConfigur
         }
     };
 
-    private final Pattern rangeConnectorRegex;
+    private final Pattern rangeConnectorRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RangeConnectorRegex);
+    private final String[] durationDateRestrictions = EnglishDateTime.DurationDateRestrictions.toArray(new String[0]);
 
     private final IDateTimeExtractor datePointExtractor;
     private final IExtractor cardinalExtractor;
     private final IExtractor ordinalExtractor;
     private final IDateTimeExtractor durationExtractor;
     private final IParser numberParser;
-    private final String[] durationDateRestrictions;
 
     public EnglishDatePeriodExtractorConfiguration(IOptionsConfiguration config) {
         super(config.getOptions());
@@ -116,9 +117,6 @@ public class EnglishDatePeriodExtractorConfiguration extends BaseOptionsConfigur
         ordinalExtractor = OrdinalExtractor.getInstance();
         durationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration());
         numberParser = new BaseNumberParser(new EnglishNumberParserConfiguration());
-
-        durationDateRestrictions = EnglishDateTime.DurationDateRestrictions.toArray(new String[0]);
-        rangeConnectorRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RangeConnectorRegex);
     }
 
     @Override
@@ -302,7 +300,6 @@ public class EnglishDatePeriodExtractorConfiguration extends BaseOptionsConfigur
 
     @Override
     public boolean hasConnectorToken(String text) {
-        Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(rangeConnectorRegex, text)).findFirst();
-        return match.isPresent() && match.get().length == text.trim().length();
+        return RegexExtension.isExactMatch(rangeConnectorRegex, text, true);
     }
 }

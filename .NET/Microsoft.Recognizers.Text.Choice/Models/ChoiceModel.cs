@@ -28,7 +28,7 @@ namespace Microsoft.Recognizers.Text.Choice
                 End = pr.Start.Value + pr.Length.Value - 1,
                 Resolution = GetResolution(pr),
                 Text = pr.Text,
-                TypeName = ModelTypeName
+                TypeName = ModelTypeName,
             }).ToList();
         }
 

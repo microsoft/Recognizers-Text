@@ -5,7 +5,6 @@ using Microsoft.Recognizers.Text.Number.Dutch;
 using Microsoft.Recognizers.Text.Number.English;
 using Microsoft.Recognizers.Text.Number.French;
 using Microsoft.Recognizers.Text.Number.German;
-using Microsoft.Recognizers.Text.Number.Italian;
 using Microsoft.Recognizers.Text.Number.Japanese;
 using Microsoft.Recognizers.Text.Number.Korean;
 using Microsoft.Recognizers.Text.Number.Portuguese;
