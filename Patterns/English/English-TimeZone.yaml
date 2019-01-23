@@ -177,7 +177,6 @@ FullNameList: !list
     - Central Standard Time
     - Central Standard Time
     - China Standard Time
-    - China Time
     - Dateline Standard Time
     - E. Africa Standard Time
     - E. Australia Standard Time
@@ -224,9 +223,6 @@ FullNameList: !list
     - North Korea Standard Time
     - Pacific SA Standard Time
     - Pacific Standard Time
-    - Redmond time
-    - Seattle time
-    - Bellevue time
     - Pacific Daylight Time
     - Pacific Time
     - Pacific Standard Time
@@ -266,9 +262,9 @@ FullNameList: !list
     - Yakutsk Standard Time
     - Pacific Daylight Saving Time
     - Austrialian Western Daylight Time
+    - Austrialian West Daylight Time
     - Colombia Time
     - Hong Kong Time
-    - Austrialian West Daylight Time
     - Central Europe Time
     - Central European Time
     - Central Europe Summer Time
@@ -759,6 +755,7 @@ MajorLocations: !list
     - Quebec
     - Raleigh
     - Reading
+    - Redmond
     - Richmond
     - Rome
     - San Antonio
