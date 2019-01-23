@@ -1,6 +1,6 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
+﻿using System;
 using System.Linq;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Microsoft.Recognizers.Text.Sequence.Tests
 {
@@ -69,7 +69,7 @@ namespace Microsoft.Recognizers.Text.Sequence.Tests
             var recognizer = new SequenceRecognizer(InvalidCulture);
             Assert.AreEqual(recognizer.GetPhoneNumberModel(), recognizer.GetPhoneNumberModel(EnglishCulture));
         }
-        
+
         [TestMethod]
         public void InitializationWithIntOption_ResolveOptionsEnum()
         {

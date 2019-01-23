@@ -8,9 +8,11 @@ import com.microsoft.recognizers.text.ParseResult;
 import com.microsoft.recognizers.text.datetime.Constants;
 import com.microsoft.recognizers.text.datetime.TimeTypeConstants;
 import com.microsoft.recognizers.text.datetime.parsers.config.IHolidayParserConfiguration;
+import com.microsoft.recognizers.text.datetime.utilities.ConditionalMatch;
 import com.microsoft.recognizers.text.datetime.utilities.DateTimeResolutionResult;
 import com.microsoft.recognizers.text.datetime.utilities.DateUtil;
 import com.microsoft.recognizers.text.datetime.utilities.FormatUtil;
+import com.microsoft.recognizers.text.datetime.utilities.RegexExtension;
 import com.microsoft.recognizers.text.utilities.Match;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
 import com.microsoft.recognizers.text.utilities.StringUtility;
@@ -85,15 +87,12 @@ public class BaseHolidayParser implements IDateTimeParser {
     }
 
     private DateTimeResolutionResult parseHolidayRegexMatch(String text, LocalDateTime referenceDate) {
-        
-        String trimmedText = StringUtility.trimEnd(StringUtility.trimEnd(text));
+
         for (Pattern pattern : this.config.getHolidayRegexList()) {
-            
-            int offset = 0;
-            Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(pattern, text)).findFirst();
-            if (match.isPresent() && match.get().index == offset && match.get().length == trimmedText.length()) {
+            ConditionalMatch match = RegexExtension.matchExact(pattern, text, true);
+            if (match.getSuccess()) {
                 // LUIS value string will be set in Match2Date method
-                DateTimeResolutionResult ret = match2Date(match.get(), referenceDate);
+                DateTimeResolutionResult ret = match2Date(match.getMatch().get(), referenceDate);
 
                 return ret;
             }

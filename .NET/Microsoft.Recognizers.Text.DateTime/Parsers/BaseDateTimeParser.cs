@@ -51,12 +51,12 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     innerResult.FutureResolution = new Dictionary<string, string>
                     {
-                        {TimeTypeConstants.DATETIME, DateTimeFormatUtil.FormatDateTime((DateObject) innerResult.FutureValue)}
+                        { TimeTypeConstants.DATETIME, DateTimeFormatUtil.FormatDateTime((DateObject)innerResult.FutureValue) },
                     };
 
                     innerResult.PastResolution = new Dictionary<string, string>
                     {
-                        {TimeTypeConstants.DATETIME, DateTimeFormatUtil.FormatDateTime((DateObject) innerResult.PastValue)}
+                        { TimeTypeConstants.DATETIME, DateTimeFormatUtil.FormatDateTime((DateObject)innerResult.PastValue) },
                     };
 
                     value = innerResult;
@@ -71,11 +71,16 @@ namespace Microsoft.Recognizers.Text.DateTime
                 Type = er.Type,
                 Data = er.Data,
                 Value = value,
-                TimexStr = value == null ? "" : ((DateTimeResolutionResult)value).Timex,
-                ResolutionStr = ""
+                TimexStr = value == null ? string.Empty : ((DateTimeResolutionResult)value).Timex,
+                ResolutionStr = string.Empty,
             };
 
             return ret;
+        }
+
+        public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)
+        {
+            return candidateResults;
         }
 
         private DateTimeResolutionResult ParseBasicRegex(string text, DateObject referenceTime)
@@ -210,6 +215,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 timeStr = timeStr.Substring(0, timeStr.Length - 4);
             }
+
             timeStr = "T" + hour.ToString("D2") + timeStr.Substring(3);
             ret.Timex = pr1.TimexStr + timeStr;
 
@@ -228,7 +234,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             pr2.TimexStr = timeStr;
             if (!string.IsNullOrEmpty(ret.Comment))
             {
-                ((DateTimeResolutionResult)pr2.Value).Comment = ret.Comment.Equals(Constants.Comment_AmPm) ? Constants.Comment_AmPm : "";
+                ((DateTimeResolutionResult)pr2.Value).Comment = ret.Comment.Equals(Constants.Comment_AmPm) ? Constants.Comment_AmPm : string.Empty;
             }
 
             // Add the date and time object in case we want to split them
@@ -267,6 +273,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     hour = int.Parse(hourStr);
                 }
+
                 timeStr = "T" + hour.ToString("D2");
             }
             else
@@ -318,6 +325,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     timeStr = timeStr.Substring(0, timeStr.Length - 4);
                 }
+
                 timeStr = "T" + hour.ToString("D2") + timeStr.Substring(3);
 
                 ret.Timex = DateTimeFormatUtil.FormatDate(date) + timeStr;
@@ -338,7 +346,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 return ret;
             }
-           
+
             var ers = this.config.DateExtractor.Extract(text, refDateTime);
             if (ers.Count != 1)
             {
@@ -365,7 +373,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var eod = this.config.UnspecificEndOfRegex.Match(text);
             if (eod.Success)
             {
-                ret = ResolveEndOfDay(DateTimeFormatUtil.FormatDate(refDateTime), refDateTime, refDateTime);          
+                ret = ResolveEndOfDay(DateTimeFormatUtil.FormatDate(refDateTime), refDateTime, refDateTime);
             }
 
             return ret;
@@ -390,22 +398,21 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         private bool WithinMorningHoursAndNoon(int hour, int min, int sec)
         {
-            return (hour > Constants.HalfDayHourCount || (hour == Constants.HalfDayHourCount && (min > 0 || sec > 0)));
+            return hour > Constants.HalfDayHourCount || (hour == Constants.HalfDayHourCount && (min > 0 || sec > 0));
         }
 
-        // Handle cases like "two hours ago" 
+        // Handle cases like "two hours ago"
         private DateTimeResolutionResult ParserDurationWithAgoAndLater(string text, DateObject referenceTime)
         {
-
-            return AgoLaterUtil.ParseDurationWithAgoAndLater(text, referenceTime,
-                config.DurationExtractor, config.DurationParser, config.UnitMap, config.UnitRegex,
-                config.UtilityConfiguration, config.GetSwiftDay);
+            return AgoLaterUtil.ParseDurationWithAgoAndLater(
+                text,
+                referenceTime,
+                config.DurationExtractor,
+                config.DurationParser,
+                config.UnitMap,
+                config.UnitRegex,
+                config.UtilityConfiguration,
+                config.GetSwiftDay);
         }
-
-        public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)
-        {
-            return candidateResults;
-        }
-
     }
 }

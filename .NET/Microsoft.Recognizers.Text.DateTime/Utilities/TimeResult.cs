@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Microsoft.Recognizers.Text.DateTime.Utilities
+﻿namespace Microsoft.Recognizers.Text.DateTime.Utilities
 {
     public class TimeResult
     {

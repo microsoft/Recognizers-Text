@@ -11,7 +11,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults);
     }
-    
+
     public class DateTimeParseResult : ParseResult
     {
         //TimexStr is only used in extractors related with date and time

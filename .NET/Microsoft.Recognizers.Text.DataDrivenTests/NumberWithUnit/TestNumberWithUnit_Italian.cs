@@ -18,35 +18,35 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
         [TestInitialize]
         public void TestInitialize()
         {
-            base.TestSpecInitialize(TestResources);
+            TestSpecInitialize(TestResources);
         }
 
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "AgeModel-Italian.csv", "AgeModel-Italian#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void AgeModel()
         {
-            base.TestNumberWithUnit();
+            TestNumberWithUnit();
         }
 
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "CurrencyModel-Italian.csv", "CurrencyModel-Italian#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void CurrencyModel()
         {
-            base.TestNumberWithUnit();
+            TestNumberWithUnit();
         }
 
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "DimensionModel-Italian.csv", "DimensionModel-Italian#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void DimensionModel()
         {
-            base.TestNumberWithUnit();
+            TestNumberWithUnit();
         }
 
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "TemperatureModel-Italian.csv", "TemperatureModel-Italian#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void TemperatureModel()
         {
-            base.TestNumberWithUnit();
+            TestNumberWithUnit();
         }
     }
 }
