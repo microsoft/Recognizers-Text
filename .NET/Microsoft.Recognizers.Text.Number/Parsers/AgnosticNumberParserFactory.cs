@@ -1,20 +1,43 @@
 ﻿using System.Collections.Generic;
 
-using Microsoft.Recognizers.Text.Number.Chinese;
-using Microsoft.Recognizers.Text.Number.Japanese;
-using Microsoft.Recognizers.Text.Number.Korean;
-
 namespace Microsoft.Recognizers.Text.Number
 {
     public enum AgnosticNumberParserType
     {
+        /// <summary>
+        /// Type Cardinal
+        /// </summary>
         Cardinal,
+
+        /// <summary>
+        /// type Double
+        /// </summary>
         Double,
+
+        /// <summary>
+        /// Type Fraction
+        /// </summary>
         Fraction,
+
+        /// <summary>
+        /// Type Integer
+        /// </summary>
         Integer,
+
+        /// <summary>
+        /// Type Number
+        /// </summary>
         Number,
+
+        /// <summary>
+        /// Tyoe Ordinal
+        /// </summary>
         Ordinal,
-        Percentage
+
+        /// <summary>
+        /// Type Percentage
+        /// </summary>
+        Percentage,
     }
 
     public static class AgnosticNumberParserFactory
@@ -54,10 +77,11 @@ namespace Microsoft.Recognizers.Text.Number
                     parser.SupportedTypes = new List<string> { Constants.SYS_NUM_ORDINAL };
                     break;
                 case AgnosticNumberParserType.Percentage:
-                    if (!isChinese && !isJapanese || isKorean)
+                    if ((!isChinese && !isJapanese) || isKorean)
                     {
                         parser = new BasePercentageParser(languageConfiguration);
                     }
+
                     break;
             }
 

@@ -7,7 +7,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 {
     public class BaseTimePeriodExtractor : IDateTimeExtractor
     {
-        public static readonly string ExtractorName = Constants.SYS_DATETIME_TIMEPERIOD; //"TimePeriod";
+        public static readonly string ExtractorName = Constants.SYS_DATETIME_TIMEPERIOD; // "TimePeriod";
 
         private readonly ITimePeriodExtractorConfiguration config;
 
@@ -39,6 +39,24 @@ namespace Microsoft.Recognizers.Text.DateTime
             if ((this.config.Options & DateTimeOptions.EnablePreview) != 0)
             {
                 timePeriodErs = TimeZoneUtility.MergeTimeZones(timePeriodErs, config.TimeZoneExtractor.Extract(text, reference), text);
+            }
+
+            //TODO: Fix to solve german morgen (morning) / morgen (tomorrow) ambiguity. To be removed after the first version of DateTimeV2 in German is in production.
+            timePeriodErs = GermanMorgenWorkaround(text, timePeriodErs);
+
+            return timePeriodErs;
+        }
+
+        // For German there is a problem with cases like "Morgen Abend" which is parsed as "Morning Evening" as "Morgen" can mean both "tomorrow" and "morning".
+        // When the extractor extracts "Abend" in this example it will take the string before that to look for a relative shift to another day like "yesterday", "tomorrow" etc.
+        // When trying to do this on the string "morgen" it will be extracted as a time period ("morning") by the TimePeriodExtractor, and not as "tomorrow".
+        // Filtering out the string "morgen" from the TimePeriodExtractor will fix the problem as only in the case where "morgen" is NOT a time period the string "morgen" will be passed to this extractor.
+        // It should also be solvable through the config but we do not want to introduce changes to the interface and configs for all other languages.
+        private List<ExtractResult> GermanMorgenWorkaround(string text, List<ExtractResult> timePeriodErs)
+        {
+            if (text.Equals("morgen"))
+            {
+                timePeriodErs.Clear();
             }
 
             return timePeriodErs;
@@ -95,12 +113,12 @@ namespace Microsoft.Recognizers.Text.DateTime
                     else
                     {
                         // Is there "pm" or "am"?
-                        var pmStr = match.Groups[Constants.PmGroupName].Value;
-                        var amStr = match.Groups[Constants.AmGroupName].Value;
+                        var matchPmStr = match.Groups[Constants.PmGroupName].Value;
+                        var matchAmStr = match.Groups[Constants.AmGroupName].Value;
                         var descStr = match.Groups[Constants.DescGroupName].Value;
 
-                        // Check "pm", "am" 
-                        if (!string.IsNullOrEmpty(pmStr) || !string.IsNullOrEmpty(amStr) || !string.IsNullOrEmpty(descStr))
+                        // Check "pm", "am"
+                        if (!string.IsNullOrEmpty(matchPmStr) || !string.IsNullOrEmpty(matchAmStr) || !string.IsNullOrEmpty(descStr))
                         {
                             ret.Add(new Token(match.Index, match.Index + match.Length));
                         }
@@ -194,7 +212,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
 
                     // check connector string
-                    var midStr = text.Substring(numEndPoint?? 0, ers[j].Start-numEndPoint?? 0);
+                    var midStr = text.Substring(numEndPoint ?? 0, ers[j].Start - numEndPoint ?? 0);
 
                     if (config.TillRegex.IsExactMatch(midStr, trim: true) || config.IsConnectorToken(midStr.Trim()))
                     {
@@ -238,7 +256,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
 
                 var middleStr = text.Substring(middleBegin, middleEnd - middleBegin).Trim().ToLowerInvariant();
-                
+
                 // Handle "{TimePoint} to {TimePoint}"
                 if (config.TillRegex.IsExactMatch(middleStr, trim: true))
                 {
@@ -316,6 +334,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
                 }
             }
+
             return ret;
         }
     }

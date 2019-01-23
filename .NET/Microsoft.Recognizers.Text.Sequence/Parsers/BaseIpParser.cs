@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Microsoft.Recognizers.Text.Sequence
+﻿namespace Microsoft.Recognizers.Text.Sequence
 {
     public class BaseIpParser : BaseSequenceParser
     {
@@ -13,7 +11,7 @@ namespace Microsoft.Recognizers.Text.Sequence
                 Text = extResult.Text,
                 Type = extResult.Type,
                 ResolutionStr = DropLeadingZeros(extResult.Text),
-                Data = extResult.Data
+                Data = extResult.Data,
             };
 
             return result;
@@ -21,21 +19,22 @@ namespace Microsoft.Recognizers.Text.Sequence
 
         private string DropLeadingZeros(string text)
         {
-            var result = "";
-            var number = "";
-            for(var i = 0; i < text.Length; i++)
+            var result = string.Empty;
+            var number = string.Empty;
+            for (var i = 0; i < text.Length; i++)
             {
                 var c = text[i];
                 if (c == '.' || c == ':')
                 {
-                    if (number != "")
+                    if (number != string.Empty)
                     {
                         number = number == "0" ? number : number.TrimStart('0');
-                        number = number == "" ? "0" : number;
+                        number = number == string.Empty ? "0" : number;
                         result += number;
                     }
+
                     result += text[i];
-                    number = "";
+                    number = string.Empty;
                 }
                 else
                 {
@@ -43,7 +42,7 @@ namespace Microsoft.Recognizers.Text.Sequence
                     if (i == text.Length - 1)
                     {
                         number = number == "0" ? number : number.TrimStart('0');
-                        number = number == "" ? "0" : number;
+                        number = number == string.Empty ? "0" : number;
                         result += number;
                     }
                 }

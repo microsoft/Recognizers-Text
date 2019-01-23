@@ -33,6 +33,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             d = d.AddDays(1);
             return TimexProperty.FromDate(d).TimexValue;
         }
+
         public static string Yesterday(DateObject date = default(DateObject))
         {
             var d = (date == default(DateObject)) ? DateObject.Now : date;
@@ -86,7 +87,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             return t.TimexValue;
         }
 
-        public static string NextWeeksFromToday(int n, DateObject date = default(DateObject)) 
+        public static string NextWeeksFromToday(int n, DateObject date = default(DateObject))
         {
             var d = (date == default(DateObject)) ? DateObject.Now : date;
             var t = TimexProperty.FromDate(d);

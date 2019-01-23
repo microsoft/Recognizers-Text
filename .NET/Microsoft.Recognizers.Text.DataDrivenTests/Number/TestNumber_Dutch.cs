@@ -1,4 +1,4 @@
-using Microsoft.Recognizers.Text.DataDrivenTests;
+﻿using Microsoft.Recognizers.Text.DataDrivenTests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Microsoft.Recognizers.Text.Number.Tests
@@ -18,29 +18,29 @@ namespace Microsoft.Recognizers.Text.Number.Tests
         [TestInitialize]
         public void TestInitialize()
         {
-            base.TestSpecInitialize(TestResources);
+            TestSpecInitialize(TestResources);
         }
 
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "NumberModel-Dutch.csv", "NumberModel-Dutch#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void NumberModel()
         {
-            base.TestNumber();
+            TestNumber();
         }
 
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "NumberModelPercentMode-Dutch.csv", "NumberModelPercentMode-Dutch#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void NumberModelPercentMode()
         {
-            base.TestNumber();
+            TestNumber();
         }
-       
+
         /*
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "NumberModelExperimentalMode-Dutch.csv", "NumberModelExperimentalMode-Dutch#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void NumberModelExperimentalMode()
         {
-            base.TestNumber();
+            TestNumber();
         }
         */
 
@@ -48,7 +48,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
         [TestMethod]
         public void OrdinalModel()
         {
-            base.TestNumber();
+            TestNumber();
         }
 
         /*
@@ -56,14 +56,14 @@ namespace Microsoft.Recognizers.Text.Number.Tests
         [TestMethod]
         public void PercentModel()
         {
-            base.TestNumber();
+            TestNumber();
         }
 
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "PercentModelPercentMode-Dutch.csv", "PercentModelPercentMode-Dutch#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void PercentModelPercentMode()
         {
-            base.TestNumber();
+            TestNumber();
         }
 
         /*
@@ -71,7 +71,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
         [TestMethod]
         public void NumberRangeModel()
         {
-            base.TestNumber();
+            TestNumber();
         }
         */
 
@@ -80,9 +80,8 @@ namespace Microsoft.Recognizers.Text.Number.Tests
         [TestMethod]
         public void NumberRangeModelExperimentalMode()
         {
-            base.TestNumber();
+            TestNumber();
         }
         */
-
     }
 }

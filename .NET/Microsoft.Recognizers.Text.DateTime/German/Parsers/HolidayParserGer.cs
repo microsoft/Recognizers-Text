@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 
-using Microsoft.Recognizers.Definitions.German;
-
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.German
@@ -66,6 +64,10 @@ namespace Microsoft.Recognizers.Text.DateTime.German
                 { "christmaseve", ChristmasEve },
                 { "newyeareve", NewYearEve },
                 { "piday", PiDay },
+                { "beginningofsummer", BeginningOfSummer },
+                { "beginningofwinter", BeginningOfWinter },
+                { "beginningofspring", BeginningOfSpring },
+                { "beginningoffall", BeginningOfFall },
         };
 
         public static readonly Dictionary<string, Func<int, DateObject>> HolidayFuncDict = new Dictionary
@@ -295,6 +297,14 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         private static DateObject Veteransday(int year) => new DateObject(year, 11, 11);
 
         private static DateObject PiDay(int year) => new DateObject(year, 3, 14);
+
+        private static DateObject BeginningOfWinter(int year) => new DateObject(year, 12, 21);
+
+        private static DateObject BeginningOfSummer(int year) => new DateObject(year, 6, 21);
+
+        private static DateObject BeginningOfSpring(int year) => new DateObject(year, 3, 20);
+
+        private static DateObject BeginningOfFall(int year) => new DateObject(year, 9, 23);
 
         private static DateObject GetEasterDay(int year)
         {

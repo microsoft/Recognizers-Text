@@ -1,24 +1,25 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
-using Microsoft.Recognizers.Definitions.Portuguese;
 using Microsoft.Recognizers.Text.Matcher;
 
 namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 {
-    class PortugueseTimeZoneExtractorConfiguration : BaseOptionsConfiguration, ITimeZoneExtractorConfiguration
+    internal class PortugueseTimeZoneExtractorConfiguration : BaseOptionsConfiguration, ITimeZoneExtractorConfiguration
     {
-        public static readonly Regex[] TimeZoneRegexList =
-        {
-        };
-
-        public PortugueseTimeZoneExtractorConfiguration(IOptionsConfiguration config) : base(config)
+        public PortugueseTimeZoneExtractorConfiguration(IOptionsConfiguration config)
+            : base(config)
         {
         }
 
-        public IEnumerable<Regex> TimeZoneRegexes => TimeZoneRegexList;
+        public Regex DirectUtcRegex { get; }
+
         public Regex LocationTimeSuffixRegex { get; }
+
         public StringMatcher LocationMatcher { get; }
+
+        public StringMatcher TimeZoneMatcher { get; }
+
         public List<string> AmbiguousTimezoneList => new List<string>();
     }
 }

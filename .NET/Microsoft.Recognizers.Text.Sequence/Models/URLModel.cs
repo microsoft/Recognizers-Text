@@ -2,7 +2,8 @@
 {
     public class URLModel : AbstractSequenceModel
     {
-        public URLModel(IParser parser, IExtractor extractor) : base(parser, extractor)
+        public URLModel(IParser parser, IExtractor extractor)
+            : base(parser, extractor)
         {
         }
 

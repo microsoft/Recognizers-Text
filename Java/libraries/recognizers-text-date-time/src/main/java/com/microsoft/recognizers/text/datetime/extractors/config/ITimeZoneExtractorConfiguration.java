@@ -7,11 +7,13 @@ import java.util.List;
 import java.util.regex.Pattern;
 
 public interface ITimeZoneExtractorConfiguration extends IOptionsConfiguration {
-    Iterable<Pattern> getTimeZoneRegexes();
+    Pattern getDirectUtcRegex();
 
     Pattern getLocationTimeSuffixRegex();
 
     StringMatcher getLocationMatcher();
+
+    StringMatcher getTimeZoneMatcher();
 
     List<String> getAmbiguousTimezoneList();
 }

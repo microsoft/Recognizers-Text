@@ -1,7 +1,6 @@
 ﻿using System.Text.RegularExpressions;
-using DateObject = System.DateTime;
-
 using Microsoft.Recognizers.Definitions.Japanese;
+using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Japanese
 {
@@ -11,10 +10,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
         private static readonly Regex AfterRegex = new Regex(DateTimeDefinitions.MergedAfterRegex, RegexOptions.Singleline);
 
-        //TODO implement SinceRegex
+        // TODO implement SinceRegex
         private static readonly Regex SinceRegex = new Regex(DateTimeDefinitions.MergedAfterRegex, RegexOptions.Singleline);
 
-        public MergedDateTimeParser(IMergedParserConfiguration configuration) : base(configuration) { }
+        public MergedDateTimeParser(IMergedParserConfiguration configuration)
+            : base(configuration)
+        {
+        }
 
         public new ParseResult Parse(ExtractResult er)
         {
@@ -46,7 +48,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 pr = this.Config.DateParser.Parse(er, referenceTime);
                 if (pr.Value == null)
                 {
-                    //pr = this.config.HolidayParser.Parse(er, referenceTime);
+                    // pr = this.config.HolidayParser.Parse(er, referenceTime);
                 }
             }
             else if (er.Type.Equals(Constants.SYS_DATETIME_TIME))
@@ -90,6 +92,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 {
                     val.Mod = Constants.BEFORE_MOD;
                 }
+
                 pr.Value = val;
             }
 
@@ -100,6 +103,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 {
                     val.Mod = Constants.AFTER_MOD;
                 }
+
                 pr.Value = val;
             }
 
@@ -110,13 +114,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 {
                     val.Mod = Constants.SINCE_MOD;
                 }
+
                 pr.Value = val;
             }
 
             pr.Value = DateTimeResolution(pr);
 
             var hasModifier = hasBefore || hasAfter || hasSince;
-            //change the type at last for the after or before mode
+
+            // change the type at last for the after or before mode
             pr.Type = $"{ParserTypeName}.{DetermineDateTimeType(er.Type, hasModifier)}";
 
             return pr;

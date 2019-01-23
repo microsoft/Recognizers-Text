@@ -1,23 +1,22 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
-using DateObject = System.DateTime;
-
 using Microsoft.Recognizers.Definitions;
+using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
     public class BaseTimeExtractor : IDateTimeExtractor
     {
-        private static readonly string ExtractorName = Constants.SYS_DATETIME_TIME; // "Time";
-
-        public static readonly Regex HourRegex = 
+        public static readonly Regex HourRegex =
             new Regex(BaseDateTime.HourRegex, RegexOptions.Singleline);
 
-        public static readonly Regex MinuteRegex = 
+        public static readonly Regex MinuteRegex =
             new Regex(BaseDateTime.MinuteRegex, RegexOptions.Singleline);
 
-        public static readonly Regex SecondRegex = 
+        public static readonly Regex SecondRegex =
             new Regex(BaseDateTime.SecondRegex, RegexOptions.Singleline);
+
+        private static readonly string ExtractorName = Constants.SYS_DATETIME_TIME; // "Time";
 
         private readonly ITimeExtractorConfiguration config;
 
@@ -48,7 +47,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             return timeErs;
         }
-        
+
         private List<Token> BasicRegexMatch(string text)
         {
             var result = new List<Token>();
@@ -80,6 +79,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     {
                         continue;
                     }
+
                     result.Add(new Token(match.Index, match.Index + match.Length));
                 }
             }
@@ -105,6 +105,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
                 }
             }
+
             return result;
         }
 

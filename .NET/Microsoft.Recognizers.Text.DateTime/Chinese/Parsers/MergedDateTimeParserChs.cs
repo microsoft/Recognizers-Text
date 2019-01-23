@@ -1,8 +1,7 @@
 ﻿using System.Text.RegularExpressions;
-using DateObject = System.DateTime;
-
 using Microsoft.Recognizers.Definitions.Chinese;
-using Microsoft.Recognizers.Text.Number;
+
+using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
@@ -12,10 +11,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         private static readonly Regex AfterRegex = new Regex(DateTimeDefinitions.MergedAfterRegex, RegexOptions.Singleline);
 
-        //TODO implement SinceRegex
+        // TODO implement SinceRegex
         private static readonly Regex SinceRegex = new Regex(DateTimeDefinitions.MergedAfterRegex, RegexOptions.Singleline);
 
-        public MergedDateTimeParserChs(IMergedParserConfiguration configuration) : base(configuration) { }
+        public MergedDateTimeParserChs(IMergedParserConfiguration configuration)
+            : base(configuration)
+        {
+        }
 
         public new ParseResult Parse(ExtractResult er)
         {
@@ -47,7 +49,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 pr = this.Config.DateParser.Parse(er, referenceTime);
                 if (pr.Value == null)
                 {
-                    //pr = this.config.HolidayParser.Parse(er, referenceTime);
+                    // pr = this.config.HolidayParser.Parse(er, referenceTime);
                 }
             }
             else if (er.Type.Equals(Constants.SYS_DATETIME_TIME))
@@ -91,6 +93,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 {
                     val.Mod = Constants.BEFORE_MOD;
                 }
+
                 pr.Value = val;
             }
 
@@ -101,6 +104,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 {
                     val.Mod = Constants.AFTER_MOD;
                 }
+
                 pr.Value = val;
             }
 
@@ -111,13 +115,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 {
                     val.Mod = Constants.SINCE_MOD;
                 }
+
                 pr.Value = val;
             }
 
             pr.Value = DateTimeResolution(pr);
 
             var hasModifier = hasBefore || hasAfter || hasSince;
-            //change the type at last for the after or before mode
+
+            // change the type at last for the after or before mode
             pr.Type = $"{ParserTypeName}.{DetermineDateTimeType(er.Type, hasModifier)}";
 
             return pr;

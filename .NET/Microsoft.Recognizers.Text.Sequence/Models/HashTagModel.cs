@@ -2,7 +2,8 @@
 {
     public class HashtagModel : AbstractSequenceModel
     {
-        public HashtagModel(IParser parser, IExtractor extractor) : base(parser, extractor)
+        public HashtagModel(IParser parser, IExtractor extractor)
+            : base(parser, extractor)
         {
         }
 

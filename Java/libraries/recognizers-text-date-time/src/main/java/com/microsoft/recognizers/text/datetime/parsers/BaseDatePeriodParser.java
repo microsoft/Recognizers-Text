@@ -446,41 +446,40 @@ public class BaseDatePeriodParser implements IDateTimeParser {
         int endDay;
         boolean noYear = true;
 
-        String trimmedText = text.trim();
-        Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(this.config.getMonthFrontBetweenRegex(), trimmedText)).findFirst();
+        ConditionalMatch match = RegexExtension.matchExact(this.config.getMonthFrontBetweenRegex(), text, true);
         String beginLuisStr;
         String endLuisStr;
 
-        if (!match.isPresent() || match.get().length != trimmedText.length()) {
-            match = Arrays.stream(RegExpUtility.getMatches(this.config.getBetweenRegex(), trimmedText)).findFirst();
+        if (!match.getSuccess()) {
+            match = RegexExtension.matchExact(this.config.getBetweenRegex(), text, true);
         }
 
-        if (!match.isPresent() || match.get().length != trimmedText.length()) {
-            match = Arrays.stream(RegExpUtility.getMatches(this.config.getMonthFrontSimpleCasesRegex(), trimmedText)).findFirst();
+        if (!match.getSuccess()) {
+            match = RegexExtension.matchExact(this.config.getMonthFrontSimpleCasesRegex(), text, true);
         }
 
-        if (!match.isPresent() || match.get().length != trimmedText.length()) {
-            match = Arrays.stream(RegExpUtility.getMatches(this.config.getSimpleCasesRegex(), trimmedText)).findFirst();
+        if (!match.getSuccess()) {
+            match = RegexExtension.matchExact(this.config.getSimpleCasesRegex(), text, true);
         }
 
-        if (match.isPresent() && match.get().length == trimmedText.length()) {
-            MatchGroup days = match.get().getGroup("day");
+        if (match.getSuccess()) {
+            MatchGroup days = match.getMatch().get().getGroup("day");
             beginDay = this.config.getDayOfMonth().get(days.captures[0].value.toLowerCase());
             endDay = this.config.getDayOfMonth().get(days.captures[1].value.toLowerCase());
 
             // parse year
-            year = ((BaseDateExtractor)this.config.getDateExtractor()).getYearFromText(match.get());
+            year = ((BaseDateExtractor)this.config.getDateExtractor()).getYearFromText(match.getMatch().get());
             if (year != Constants.InvalidYear) {
                 noYear = false;
             } else {
                 year = referenceDate.getYear();
             }
 
-            String monthStr = match.get().getGroup("month").value;
+            String monthStr = match.getMatch().get().getGroup("month").value;
             if (!StringUtility.isNullOrEmpty(monthStr)) {
                 month = this.config.getMonthOfYear().get(monthStr.toLowerCase());
             } else {
-                monthStr = match.get().getGroup("relmonth").value.trim().toLowerCase();
+                monthStr = match.getMatch().get().getGroup("relmonth").value.trim().toLowerCase();
                 int swiftMonth = this.config.getSwiftDayOrMonth(monthStr);
                 switch (swiftMonth) {
                     case 1:
@@ -824,18 +823,18 @@ public class BaseDatePeriodParser implements IDateTimeParser {
 
         DateTimeResolutionResult ret = new DateTimeResolutionResult();
 
-        Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(this.config.getMonthWithYear(), text)).findFirst();
-        if (!match.isPresent() || match.get().length != text.length()) {
-            match = Arrays.stream(RegExpUtility.getMatches(this.config.getMonthNumWithYear(), text)).findFirst();
+        ConditionalMatch match = RegexExtension.matchExact(this.config.getMonthWithYear(), text, true);
+        if (!match.getSuccess()) {
+            match = RegexExtension.matchExact(this.config.getMonthNumWithYear(), text, true);
         }
 
-        if (match.isPresent() && match.get().length == text.length()) {
-            String monthStr = match.get().getGroup("month").value.toLowerCase();
-            String orderStr = match.get().getGroup("order").value.toLowerCase();
+        if (match.getSuccess()) {
+            String monthStr = match.getMatch().get().getGroup("month").value.toLowerCase();
+            String orderStr = match.getMatch().get().getGroup("order").value.toLowerCase();
 
             int month = this.config.getMonthOfYear().get(monthStr.toLowerCase());
 
-            int year = ((BaseDateExtractor)this.config.getDateExtractor()).getYearFromText(match.get());
+            int year = ((BaseDateExtractor)this.config.getDateExtractor()).getYearFromText(match.getMatch().get());
             if (year == Constants.InvalidYear) {
                 int swift = this.config.getSwiftYear(orderStr);
                 if (swift < -1) {
@@ -904,16 +903,16 @@ public class BaseDatePeriodParser implements IDateTimeParser {
                 return ret;
             }
         } else {
-            match = Arrays.stream(RegExpUtility.getMatches(this.config.getYearRegex(), text)).findFirst();
-            if (match.isPresent() && match.get().length == text.trim().length()) {
-                year = ((BaseDateExtractor)this.config.getDateExtractor()).getYearFromText(match.get());
+            ConditionalMatch exactMatch = RegexExtension.matchExact(this.config.getYearRegex(), text, true);
+            if (exactMatch.getSuccess()) {
+                year = this.config.getDateExtractor().getYearFromText(exactMatch.getMatch().get());
                 if (!(year >= Constants.MinYearNum && year <= Constants.MaxYearNum)) {
                     year = Constants.InvalidYear;
                 }
             } else {
-                match = Arrays.stream(RegExpUtility.getMatches(this.config.getYearPlusNumberRegex(), text)).findFirst();
-                if (match.isPresent() && match.get().length == text.trim().length()) {
-                    year = ((BaseDateExtractor)this.config.getDateExtractor()).getYearFromText(match.get());
+                exactMatch = RegexExtension.matchExact(this.config.getYearPlusNumberRegex(), text, true);
+                if (exactMatch.getSuccess()) {
+                    year = this.config.getDateExtractor().getYearFromText(exactMatch.getMatch().get());
                 }
             }
 
@@ -1059,9 +1058,7 @@ public class BaseDatePeriodParser implements IDateTimeParser {
 
                 // Handle the "within two weeks" case which means from today to the end of next two weeks
                 // Cases like "within 3 days before/after today" is not handled here (4th condition)
-                prefixMatch = Arrays.stream(RegExpUtility.getMatches(config.getWithinNextPrefixRegex(), beforeStr)).findFirst();
-                if (prefixMatch.isPresent() && prefixMatch.get().length == beforeStr.length() &&
-                        DurationParsingUtil.isDateDuration(durationResult.getTimex()) && StringUtility.isNullOrEmpty(afterStr)) {
+                if (RegexExtension.isExactMatch(config.getWithinNextPrefixRegex(), beforeStr, true)) {
                     getModAndDateResult = getModAndDate(beginDate, endDate, referenceDate, durationResult.getTimex(), true);
                     beginDate = getModAndDateResult.beginDate;
                     endDate = getModAndDateResult.endDate;
@@ -1071,8 +1068,7 @@ public class BaseDatePeriodParser implements IDateTimeParser {
                     endDate = endDate.minusDays(1);
                 }
 
-                prefixMatch = Arrays.stream(RegExpUtility.getMatches(config.getFutureRegex(), beforeStr)).findFirst();
-                if (prefixMatch.isPresent() && prefixMatch.get().length == beforeStr.length()) {
+                if (RegexExtension.isExactMatch(config.getFutureRegex(), beforeStr, true)) {
                     getModAndDateResult = getModAndDate(beginDate, endDate, referenceDate, durationResult.getTimex(), true);
                     beginDate = getModAndDateResult.beginDate;
                     endDate = getModAndDateResult.endDate;
@@ -1093,8 +1089,7 @@ public class BaseDatePeriodParser implements IDateTimeParser {
                 }
 
                 // Handle the "in two weeks" case which means the second week
-                prefixMatch = Arrays.stream(RegExpUtility.getMatches(config.getInConnectorRegex(), beforeStr)).findFirst();
-                if (prefixMatch.isPresent() && prefixMatch.get().length == beforeStr.length() &&
+                if (RegexExtension.isExactMatch(config.getInConnectorRegex(), beforeStr, true) &&
                         !DurationParsingUtil.isMultipleDuration(durationResult.getTimex())) {
                     getModAndDateResult = getModAndDate(beginDate, endDate, referenceDate, durationResult.getTimex(), true);
                     beginDate = getModAndDateResult.beginDate;
@@ -1218,13 +1213,13 @@ public class BaseDatePeriodParser implements IDateTimeParser {
         DateTimeResolutionResult ret = new DateTimeResolutionResult();
 
         String trimmedText = text.trim().toLowerCase();
-        Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(this.config.getWeekOfMonthRegex(), trimmedText)).findFirst();
-        if (!(match.isPresent() && match.get().length == text.length())) {
+        ConditionalMatch match = RegexExtension.matchExact(this.config.getWeekOfMonthRegex(), trimmedText, true);
+        if (!match.getSuccess()) {
             return ret;
         }
 
-        String cardinalStr = match.get().getGroup("cardinal").value;
-        String monthStr = match.get().getGroup("month").value;
+        String cardinalStr = match.getMatch().get().getGroup("cardinal").value;
+        String monthStr = match.getMatch().get().getGroup("month").value;
         boolean noYear = false;
         int year;
 
@@ -1236,7 +1231,7 @@ public class BaseDatePeriodParser implements IDateTimeParser {
             year = referenceDate.plusMonths(swift).getYear();
         } else {
             month = this.config.getMonthOfYear().get(monthStr);
-            year = config.getDateExtractor().getYearFromText(match.get());
+            year = config.getDateExtractor().getYearFromText(match.getMatch().get());
 
             if (year == Constants.InvalidYear) {
                 year = referenceDate.getYear();
@@ -1252,15 +1247,15 @@ public class BaseDatePeriodParser implements IDateTimeParser {
     private DateTimeResolutionResult parseWeekOfYear(String text, LocalDateTime referenceDate) {
         DateTimeResolutionResult ret = new DateTimeResolutionResult();
         String trimmedText = text.trim().toLowerCase();
-        Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(this.config.getWeekOfYearRegex(), trimmedText)).findFirst();
-        if (!(match.isPresent() && match.get().length == text.length())) {
+        ConditionalMatch match = RegexExtension.matchExact(this.config.getWeekOfYearRegex(), trimmedText, true);
+        if (!match.getSuccess()) {
             return ret;
         }
 
-        String cardinalStr = match.get().getGroup("cardinal").value;
-        String orderStr = match.get().getGroup("order").value.toLowerCase();
+        String cardinalStr = match.getMatch().get().getGroup("cardinal").value;
+        String orderStr = match.getMatch().get().getGroup("order").value.toLowerCase();
 
-        int year = ((BaseDateExtractor)this.config.getDateExtractor()).getYearFromText(match.get());
+        int year = this.config.getDateExtractor().getYearFromText(match.getMatch().get());
         if (year == Constants.InvalidYear) {
             int swift = this.config.getSwiftYear(orderStr);
             if (swift < -1) {
@@ -1297,17 +1292,17 @@ public class BaseDatePeriodParser implements IDateTimeParser {
 
     private DateTimeResolutionResult parseHalfYear(String text, LocalDateTime referenceDate) {
         DateTimeResolutionResult ret = new DateTimeResolutionResult();
-        Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(this.config.getAllHalfYearRegex(), text)).findFirst();
+        ConditionalMatch match = RegexExtension.matchExact(this.config.getAllHalfYearRegex(), text, true);
 
-        if (!(match.isPresent() && match.get().length == text.length())) {
+        if (!match.getSuccess()) {
             return ret;
         }
 
-        String cardinalStr = match.get().getGroup("cardinal").value.toLowerCase();
-        String orderStr = match.get().getGroup("order").value.toLowerCase();
-        String numberStr = match.get().getGroup("number").value;
+        String cardinalStr = match.getMatch().get().getGroup("cardinal").value.toLowerCase();
+        String orderStr = match.getMatch().get().getGroup("order").value.toLowerCase();
+        String numberStr = match.getMatch().get().getGroup("number").value;
 
-        int year = ((BaseDateExtractor)this.config.getDateExtractor()).getYearFromText(match.get());
+        int year = ((BaseDateExtractor)this.config.getDateExtractor()).getYearFromText(match.getMatch().get());
 
         if (year == Constants.InvalidYear) {
             int swift = this.config.getSwiftYear(orderStr);
@@ -1336,22 +1331,22 @@ public class BaseDatePeriodParser implements IDateTimeParser {
 
     private DateTimeResolutionResult parseQuarter(String text, LocalDateTime referenceDate) {
         DateTimeResolutionResult ret = new DateTimeResolutionResult();
-        Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(this.config.getQuarterRegex(), text)).findFirst();
+        ConditionalMatch match = RegexExtension.matchExact(this.config.getQuarterRegex(), text, true);
 
-        if (!(match.isPresent() && match.get().length == text.length())) {
-            match = Arrays.stream(RegExpUtility.getMatches(this.config.getQuarterRegexYearFront(), text)).findFirst();
+        if (!match.getSuccess()) {
+            match = RegexExtension.matchExact(this.config.getQuarterRegexYearFront(), text, true);
         }
 
-        if (!(match.isPresent() && match.get().length == text.length())) {
+        if (!match.getSuccess()) {
             return ret;
         }
 
-        String cardinalStr = match.get().getGroup("cardinal").value.toLowerCase();
-        String orderStr = match.get().getGroup("order").value.toLowerCase();
-        String numberStr = match.get().getGroup("number").value;
+        String cardinalStr = match.getMatch().get().getGroup("cardinal").value.toLowerCase();
+        String orderStr = match.getMatch().get().getGroup("order").value.toLowerCase();
+        String numberStr = match.getMatch().get().getGroup("number").value;
 
         boolean noSpecificYear = false;
-        int year = ((BaseDateExtractor)this.config.getDateExtractor()).getYearFromText(match.get());
+        int year = this.config.getDateExtractor().getYearFromText(match.getMatch().get());
 
         if (year == Constants.InvalidYear) {
             int swift = this.config.getSwiftYear(orderStr);
@@ -1402,19 +1397,19 @@ public class BaseDatePeriodParser implements IDateTimeParser {
 
     private DateTimeResolutionResult parseSeason(String text, LocalDateTime referenceDate) {
         DateTimeResolutionResult ret = new DateTimeResolutionResult();
-        Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(this.config.getSeasonRegex(), text)).findFirst();
-        if (match.isPresent() && match.get().length == text.length()) {
-            String seasonStr = this.config.getSeasonMap().get(match.get().getGroup("seas").value.toLowerCase());
+        ConditionalMatch match = RegexExtension.matchExact(this.config.getSeasonRegex(), text, true);
+        if (match.getSuccess()) {
+            String seasonStr = this.config.getSeasonMap().get(match.getMatch().get().getGroup("seas").value.toLowerCase());
 
-            if (!match.get().getGroup("EarlyPrefix").value.equals("")) {
+            if (!match.getMatch().get().getGroup("EarlyPrefix").value.equals("")) {
                 ret.setMod(Constants.EARLY_MOD);
-            } else if (!match.get().getGroup("MidPrefix").value.equals("")) {
+            } else if (!match.getMatch().get().getGroup("MidPrefix").value.equals("")) {
                 ret.setMod(Constants.MID_MOD);
-            } else if (!match.get().getGroup("LatePrefix").value.equals("")) {
+            } else if (!match.getMatch().get().getGroup("LatePrefix").value.equals("")) {
                 ret.setMod(Constants.LATE_MOD);
             }
 
-            int year = ((BaseDateExtractor)this.config.getDateExtractor()).getYearFromText(match.get());
+            int year = ((BaseDateExtractor)this.config.getDateExtractor()).getYearFromText(match.getMatch().get());
             if (year == Constants.InvalidYear) {
                 int swift = this.config.getSwiftYear(text);
                 if (swift < -1) {
@@ -1502,9 +1497,9 @@ public class BaseDatePeriodParser implements IDateTimeParser {
 
     private DateTimeResolutionResult parseWhichWeek(String text, LocalDateTime referenceDate) {
         DateTimeResolutionResult ret = new DateTimeResolutionResult();
-        Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(this.config.getWhichWeekRegex(), text)).findFirst();
-        if (match.isPresent() && match.get().length == text.length()) {
-            int num = Integer.parseInt(match.get().getGroup("number").value);
+        ConditionalMatch match = RegexExtension.matchExact(this.config.getWhichWeekRegex(), text, true);
+        if (match.getSuccess()) {
+            int num = Integer.parseInt(match.getMatch().get().getGroup("number").value);
             int year = referenceDate.getYear();
             ret.setTimex(String.format("%04d", year));
             LocalDateTime firstDay = DateUtil.safeCreateFromMinValue(year, 1, 1);
@@ -1657,13 +1652,13 @@ public class BaseDatePeriodParser implements IDateTimeParser {
         boolean inputCentury = false;
 
         String trimmedText = text.trim();
-        Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(this.config.getDecadeWithCenturyRegex(), trimmedText)).findFirst();
+        ConditionalMatch match = RegexExtension.matchExact(this.config.getDecadeWithCenturyRegex(), text, true);
         String beginLuisStr;
         String endLuisStr;
 
-        if (match.isPresent() && match.get().index == 0 && match.get().length == trimmedText.length()) {
+        if (match.getSuccess()) {
 
-            String decadeStr = match.get().getGroup("decade").value.toLowerCase();
+            String decadeStr = match.getMatch().get().getGroup("decade").value.toLowerCase();
             if (!IntegerUtility.canParse(decadeStr)) {
                 if (this.config.getWrittenDecades().containsKey(decadeStr)) {
                     decade = this.config.getWrittenDecades().get(decadeStr);
@@ -1676,7 +1671,7 @@ public class BaseDatePeriodParser implements IDateTimeParser {
                 decade = Integer.parseInt(decadeStr);
             }
 
-            String centuryStr = match.get().getGroup("century").value.toLowerCase();
+            String centuryStr = match.getMatch().get().getGroup("century").value.toLowerCase();
             if (!StringUtility.isNullOrEmpty(centuryStr)) {
                 if (!IntegerUtility.canParse(centuryStr)) {
                     if (this.config.getNumbers().containsKey(centuryStr)) {
@@ -1704,13 +1699,13 @@ public class BaseDatePeriodParser implements IDateTimeParser {
             }
         } else {
             // handle cases like "the last 2 decades" "the next decade"
-            match = Arrays.stream(RegExpUtility.getMatches(this.config.getRelativeDecadeRegex(), trimmedText)).findFirst();
-            if (match.isPresent() && match.get().index == 0 && match.get().length == trimmedText.length()) {
+            match = RegexExtension.matchExact(this.config.getRelativeDecadeRegex(), trimmedText, true);
+            if (match.getSuccess()) {
                 inputCentury = true;
 
                 swift = this.config.getSwiftDayOrMonth(trimmedText);
 
-                String numStr = match.get().getGroup("number").value.toLowerCase();
+                String numStr = match.getMatch().get().getGroup("number").value.toLowerCase();
                 List<ExtractResult> er = this.config.getIntegerExtractor().extract(numStr);
                 if (er.size() == 1) {
                     int swiftNum = Math.round(((Double)(this.config.getNumberParser().parse(er.get(0)).getValue() != null ?

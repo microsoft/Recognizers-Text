@@ -1,9 +1,5 @@
 @ECHO off
 
-ECHO.
-ECHO # Java environment info
-CALL mvn -v
+REM This is only used for local build. It executes the same build and test scripts than the CI server.
 
-ECHO.
-ECHO # Building Java platform
-mvn package
+build.ci.cmd & tests.ci.cmd

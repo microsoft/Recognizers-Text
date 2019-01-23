@@ -9,24 +9,8 @@ namespace Microsoft.Recognizers.Text.Number.German
 {
     public class FractionExtractor : BaseNumberExtractor
     {
-        internal sealed override ImmutableDictionary<Regex, TypeTag> Regexes { get; }
-
-        protected sealed override string ExtractType { get; } = Constants.SYS_NUM_FRACTION; // "Fraction";
-
-        private static readonly ConcurrentDictionary<string, FractionExtractor> Instances = 
-            new ConcurrentDictionary<string, FractionExtractor>();
-
-        public static FractionExtractor GetInstance(string placeholder = "")
-        {
-
-            if (!Instances.ContainsKey(placeholder))
-            {
-                var instance = new FractionExtractor();
-                Instances.TryAdd(placeholder, instance);
-            }
-
-            return Instances[placeholder];
-        }
+        private static readonly ConcurrentDictionary<string, FractionExtractor> Instances =
+         new ConcurrentDictionary<string, FractionExtractor>();
 
         private FractionExtractor()
         {
@@ -51,10 +35,26 @@ namespace Microsoft.Recognizers.Text.Number.German
                 {
                     new Regex(NumbersDefinitions.FractionPrepositionRegex, RegexOptions.Singleline),
                     RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.GERMAN)
-                }
+                },
             };
 
             Regexes = regexes.ToImmutableDictionary();
+        }
+
+        internal sealed override ImmutableDictionary<Regex, TypeTag> Regexes { get; }
+
+        // "Fraction";
+        protected sealed override string ExtractType { get; } = Constants.SYS_NUM_FRACTION;
+
+        public static FractionExtractor GetInstance(string placeholder = "")
+        {
+            if (!Instances.ContainsKey(placeholder))
+            {
+                var instance = new FractionExtractor();
+                Instances.TryAdd(placeholder, instance);
+            }
+
+            return Instances[placeholder];
         }
     }
 }

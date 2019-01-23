@@ -6,6 +6,20 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 {
     public sealed class FrenchMergedParserConfiguration : FrenchCommonDateTimeParserConfiguration, IMergedParserConfiguration
     {
+        public FrenchMergedParserConfiguration(IOptionsConfiguration config)
+            : base(config)
+        {
+            BeforeRegex = FrenchMergedExtractorConfiguration.BeforeRegex;
+            AfterRegex = FrenchMergedExtractorConfiguration.AfterRegex;
+            SinceRegex = FrenchMergedExtractorConfiguration.SinceRegex;
+            AroundRegex = FrenchMergedExtractorConfiguration.AroundRegex;
+            DateAfter = FrenchMergedExtractorConfiguration.DateAfterRegex;
+            YearRegex = FrenchDatePeriodExtractorConfiguration.YearRegex;
+            SuperfluousWordMatcher = FrenchMergedExtractorConfiguration.SuperfluousWordMatcher;
+            SetParser = new BaseSetParser(new FrenchSetParserConfiguration(this));
+            HolidayParser = new BaseHolidayParser(new FrenchHolidayParserConfiguration(this));
+            TimeZoneParser = new DummyTimeZoneParser();
+        }
 
         public Regex BeforeRegex { get; }
 
@@ -24,19 +38,5 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public IDateTimeParser HolidayParser { get; }
 
         public StringMatcher SuperfluousWordMatcher { get; }
-
-        public FrenchMergedParserConfiguration(IOptionsConfiguration config) : base(config)
-        {
-            BeforeRegex = FrenchMergedExtractorConfiguration.BeforeRegex;
-            AfterRegex = FrenchMergedExtractorConfiguration.AfterRegex;
-            SinceRegex = FrenchMergedExtractorConfiguration.SinceRegex;
-            AroundRegex = FrenchMergedExtractorConfiguration.AroundRegex;
-            DateAfter = FrenchMergedExtractorConfiguration.DateAfterRegex;
-            YearRegex = FrenchDatePeriodExtractorConfiguration.YearRegex;
-            SuperfluousWordMatcher = FrenchMergedExtractorConfiguration.SuperfluousWordMatcher;
-            SetParser = new BaseSetParser(new FrenchSetParserConfiguration(this));
-            HolidayParser = new BaseHolidayParser(new FrenchHolidayParserConfiguration(this));
-            TimeZoneParser = new DummyTimeZoneParser();
-        }
     }
 }

@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
-using Microsoft.Recognizers.Definitions.Japanese;
+using Microsoft.Recognizers.Definitions.Chinese;
 
-namespace Microsoft.Recognizers.Text.DateTime.Japanese
+namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
-    public class JapaneseHolidayExtractorConfiguration : BaseOptionsConfiguration, IHolidayExtractorConfiguration
+    public class ChineseHolidayExtractorConfiguration : BaseOptionsConfiguration, IHolidayExtractorConfiguration
     {
         public static readonly Regex LunarHolidayRegex = new Regex(DateTimeDefinitions.LunarHolidayRegex, RegexOptions.Singleline);
 
@@ -12,14 +12,14 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         {
             new Regex(DateTimeDefinitions.HolidayRegexList1, RegexOptions.Singleline),
             new Regex(DateTimeDefinitions.HolidayRegexList2, RegexOptions.Singleline),
-            LunarHolidayRegex
+            LunarHolidayRegex,
         };
 
-        public IEnumerable<Regex> HolidayRegexes => HolidayRegexList;
-
-        public JapaneseHolidayExtractorConfiguration() : base()
+        public ChineseHolidayExtractorConfiguration()
+            : base()
         {
         }
 
+        public IEnumerable<Regex> HolidayRegexes => HolidayRegexList;
     }
 }

@@ -14,7 +14,9 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
         {
             var r = ranges.ToList();
 
-            while (InnerCollapse(r)) { }
+            while (InnerCollapse(r))
+            {
+            }
 
             r.Sort((a, b) => a.Start.GetTime() - b.Start.GetTime());
             return r;
@@ -24,7 +26,9 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
         {
             var r = ranges.ToList();
 
-            while (InnerCollapse(r)) { }
+            while (InnerCollapse(r))
+            {
+            }
 
             r.Sort((a, b) => DateObject.Compare(a.Start, b.Start));
             return r;
@@ -32,16 +36,16 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 
         public static bool IsOverlapping(TimeRange r1, TimeRange r2)
         {
-            return r1.End.GetTime() > r2.Start.GetTime() && r1.Start.GetTime() <= r2.Start.GetTime() || 
-                   r1.Start.GetTime() < r2.End.GetTime() && r1.Start.GetTime() >= r2.Start.GetTime();
+            return (r1.End.GetTime() > r2.Start.GetTime() && r1.Start.GetTime() <= r2.Start.GetTime()) ||
+                   (r1.Start.GetTime() < r2.End.GetTime() && r1.Start.GetTime() >= r2.Start.GetTime());
         }
 
-        private static TimeRange CollapseOverlapping(TimeRange r1, TimeRange r2) 
+        private static TimeRange CollapseOverlapping(TimeRange r1, TimeRange r2)
         {
             return new TimeRange
             {
                 Start = new Time(Math.Max(r1.Start.GetTime(), r2.Start.GetTime())),
-                End = new Time(Math.Min(r1.End.GetTime(), r2.End.GetTime()))
+                End = new Time(Math.Min(r1.End.GetTime(), r2.End.GetTime())),
             };
         }
 
@@ -70,10 +74,11 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 
             return false;
         }
+
         private static bool IsOverlapping(DateRange r1, DateRange r2)
         {
-            return r1.End > r2.Start && r1.Start <= r2.Start || 
-                   r1.Start < r2.End && r1.Start >= r2.Start;
+            return (r1.End > r2.Start && r1.Start <= r2.Start) ||
+                   (r1.Start < r2.End && r1.Start >= r2.Start);
         }
 
         private static DateRange CollapseOverlapping(DateRange r1, DateRange r2)
@@ -81,7 +86,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             return new DateRange
             {
                 Start = r1.Start > r2.Start ? r1.Start : r2.Start,
-                End = r1.End < r2.End ? r1.End : r2.End
+                End = r1.End < r2.End ? r1.End : r2.End,
             };
         }
 

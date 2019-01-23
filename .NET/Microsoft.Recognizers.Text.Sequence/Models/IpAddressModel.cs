@@ -6,12 +6,13 @@ namespace Microsoft.Recognizers.Text.Sequence
 {
     public class IpAddressModel : AbstractSequenceModel
     {
-        public IpAddressModel(IParser parser, IExtractor extractor) : base(parser, extractor)
+        public IpAddressModel(IParser parser, IExtractor extractor)
+            : base(parser, extractor)
         {
         }
 
         public override string ModelTypeName => Constants.MODEL_IP;
-        
+
         public override List<ModelResult> Parse(string query)
         {
             var parsedSequences = new List<ParseResult>();
@@ -24,7 +25,6 @@ namespace Microsoft.Recognizers.Text.Sequence
                 {
                     parsedSequences.Add(Parser.Parse(result));
                 }
-
             }
             catch (Exception)
             {
@@ -36,12 +36,13 @@ namespace Microsoft.Recognizers.Text.Sequence
             {
                 Start = o.Start.Value,
                 End = o.Start.Value + o.Length.Value - 1,
-                Resolution = new SortedDictionary<string, object> {
+                Resolution = new SortedDictionary<string, object>
+                {
                     { ResolutionKey.Value, o.ResolutionStr },
-                    { ResolutionKey.Type, o.Data }
+                    { ResolutionKey.Type, o.Data },
                 },
                 Text = o.Text,
-                TypeName = ModelTypeName
+                TypeName = ModelTypeName,
             }).ToList();
         }
     }

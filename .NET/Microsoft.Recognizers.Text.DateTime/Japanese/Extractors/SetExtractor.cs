@@ -90,6 +90,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                     ret.Add(new Token(match.Index, match.Index + match.Length + (er.Length ?? 0)));
                 }
             }
+
             return ret;
         }
 
@@ -106,6 +107,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                     ret.Add(new Token(match.Index, match.Index + match.Length + (er.Length ?? 0)));
                 }
             }
+
             return ret;
         }
 
@@ -122,6 +124,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                     ret.Add(new Token(match.Index, match.Index + match.Length + (er.Length ?? 0)));
                 }
             }
+
             return ret;
         }
     }

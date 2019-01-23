@@ -1,9 +1,8 @@
 ﻿// A type of Extractors receiving ExtractResult List as its input
 
-using DateObject = System.DateTime;
 using System.Collections.Generic;
 
-using Microsoft.Recognizers.Text.Number;
+using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {

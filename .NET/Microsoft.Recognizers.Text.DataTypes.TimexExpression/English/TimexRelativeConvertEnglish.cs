@@ -93,7 +93,8 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             if (timex.Year != null)
             {
                 var year = date.Year;
-                if (timex.Year == year) {
+                if (timex.Year == year)
+                {
                     if (timex.WeekOfYear != null)
                     {
                         var thisWeek = TimexDateHelpers.WeekOfYear(date);
@@ -107,7 +108,8 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
                             return timex.Weekend != null ? "last weekend" : "last week";
                         }
 
-                        if (thisWeek == timex.WeekOfYear - 1) {
+                        if (thisWeek == timex.WeekOfYear - 1)
+                        {
                             return timex.Weekend != null ? "next weekend" : "next week";
                         }
                     }
@@ -143,6 +145,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
                     return (timex.Season != null) ? $"last {TimexConstantsEnglish.Seasons[timex.Season]}" : "last year";
                 }
             }
+
             return string.Empty;
         }
 

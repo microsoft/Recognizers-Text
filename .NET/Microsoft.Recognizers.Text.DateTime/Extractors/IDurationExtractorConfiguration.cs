@@ -1,7 +1,5 @@
-﻿using System.Text.RegularExpressions;
-
-using Microsoft.Recognizers.Text.Number;
-using System.Collections.Immutable;
+﻿using System.Collections.Immutable;
+using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {

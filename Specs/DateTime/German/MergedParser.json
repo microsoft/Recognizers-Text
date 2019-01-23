@@ -102,11 +102,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "Comment": "Returning future resolution instead of past, seems to work for different reference date, see below.",
-    "NotSupported": "dotnet, javascript, python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "Freitag Nachmittag",
+        "Text": "Letzten Freitag Nachmittag",
         "Type": "datetimeV2.datetimerange",
         "Value": {
           "values": [
@@ -118,20 +117,21 @@
             }
           ]
         },
-        "Start": 8,
-        "Length": 18
+        "Start": 0,
+        "Length": 26
       }
     ]
   },
   {
     "Input": "Letzten Freitag Nachmittag habe ich Feierabend gemacht",
+    "Comment": "In German it should be the 07.12. not the 30.11. It is false by design",
     "Context": {
       "ReferenceDateTime": "2018-12-09T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "dotNet, javascript, python",
     "Results": [
       {
-        "Text": "Freitag Nachmittag",
+        "Text": "Letzten Freitag Nachmittag",
         "Type": "datetimeV2.datetimerange",
         "Value": {
           "values": [
@@ -143,8 +143,8 @@
             }
           ]
         },
-        "Start": 8,
-        "Length": 18
+        "Start": 0,
+        "Length": 26
       }
     ]
   },

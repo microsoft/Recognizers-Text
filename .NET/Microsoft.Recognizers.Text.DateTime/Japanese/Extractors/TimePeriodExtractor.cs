@@ -8,10 +8,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 {
     public class TimePeriodExtractor : BaseDateTimeExtractor<PeriodType>
     {
-        internal sealed override ImmutableDictionary<Regex, PeriodType> Regexes { get; }
-
-        protected sealed override string ExtractType { get; } = Constants.SYS_DATETIME_TIMEPERIOD;
-    
         public TimePeriodExtractor()
         {
             var regexes = new Dictionary<Regex, PeriodType>
@@ -27,16 +23,14 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 {
                     new Regex(DateTimeDefinitions.TimeOfDayRegex, RegexOptions.Singleline),
                     PeriodType.ShortTime
-                }
+                },
             };
 
             Regexes = regexes.ToImmutableDictionary();
         }
-    }
 
-    public enum PeriodType
-    {
-        ShortTime,
-        FullTime
+        internal sealed override ImmutableDictionary<Regex, PeriodType> Regexes { get; }
+
+        protected sealed override string ExtractType { get; } = Constants.SYS_DATETIME_TIMEPERIOD;
     }
 }

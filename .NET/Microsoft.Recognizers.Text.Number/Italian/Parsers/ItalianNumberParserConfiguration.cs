@@ -10,7 +10,10 @@ namespace Microsoft.Recognizers.Text.Number.Italian
 {
     public class ItalianNumberParserConfiguration : INumberParserConfiguration
     {
-        public ItalianNumberParserConfiguration(): this(new CultureInfo(Culture.Italian)) { }
+        public ItalianNumberParserConfiguration()
+            : this(new CultureInfo(Culture.Italian))
+        {
+        }
 
         public ItalianNumberParserConfiguration(CultureInfo ci)
         {
@@ -18,7 +21,7 @@ namespace Microsoft.Recognizers.Text.Number.Italian
             this.CultureInfo = ci;
 
             this.DecimalSeparatorChar = NumbersDefinitions.DecimalSeparatorChar;
-            this.FractionMarkerToken = NumbersDefinitions.FractionMarkerToken; 
+            this.FractionMarkerToken = NumbersDefinitions.FractionMarkerToken;
             this.NonDecimalSeparatorChar = NumbersDefinitions.NonDecimalSeparatorChar;
             this.HalfADozenText = NumbersDefinitions.HalfADozenText;
             this.WordSeparatorToken = NumbersDefinitions.WordSeparatorToken;

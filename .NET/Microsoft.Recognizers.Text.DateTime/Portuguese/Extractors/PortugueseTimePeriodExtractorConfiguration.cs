@@ -4,15 +4,12 @@ using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Portuguese;
 using Microsoft.Recognizers.Text.DateTime.Portuguese.Utilities;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
-using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 {
     public class PortugueseTimePeriodExtractorConfiguration : BaseOptionsConfiguration, ITimePeriodExtractorConfiguration
     {
-        public string TokenBeforeDate { get; }
-
-        public static readonly string ExtractorName = Constants.SYS_DATETIME_TIMEPERIOD; //"TimePeriod";
+        public static readonly string ExtractorName = Constants.SYS_DATETIME_TIMEPERIOD; // "TimePeriod";
 
         public static readonly Regex HourNumRegex = new Regex(DateTimeDefinitions.TimeHourNumRegex, RegexOptions.Singleline);
         public static readonly Regex PureNumFromTo = new Regex(DateTimeDefinitions.PureNumFromTo, RegexOptions.Singleline);
@@ -22,20 +19,22 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         public static readonly Regex UnitRegex = new Regex(DateTimeDefinitions.TimeUnitRegex, RegexOptions.Singleline);
         public static readonly Regex FollowedUnit = new Regex(DateTimeDefinitions.TimeFollowedUnit, RegexOptions.Singleline);
         public static readonly Regex NumberCombinedWithUnit = new Regex(DateTimeDefinitions.TimeNumberCombinedWithUnit, RegexOptions.Singleline);
+
+        // TODO: add this according to coresponding English regex
+        public static readonly Regex TimeOfDayRegex = new Regex(string.Empty, RegexOptions.Singleline);
+        public static readonly Regex GeneralEndingRegex =
+            new Regex(DateTimeDefinitions.GeneralEndingRegex, RegexOptions.Singleline);
+
+        public static readonly Regex TillRegex = new Regex(
+            DateTimeDefinitions.TillRegex,
+            RegexOptions.Singleline);
+
         private static readonly Regex FromRegex = new Regex(DateTimeDefinitions.FromRegex, RegexOptions.Singleline);
         private static readonly Regex ConnectorAndRegex = new Regex(DateTimeDefinitions.ConnectorAndRegex, RegexOptions.Singleline);
         private static readonly Regex BetweenRegex = new Regex(DateTimeDefinitions.BetweenRegex, RegexOptions.Singleline);
 
-        //TODO: add this according to coresponding English regex
-        public static readonly Regex TimeOfDayRegex = new Regex(@"", RegexOptions.Singleline);
-
-        public static readonly Regex GeneralEndingRegex =
-            new Regex(DateTimeDefinitions.GeneralEndingRegex, RegexOptions.Singleline);
-
-        public static readonly Regex TillRegex = new Regex(DateTimeDefinitions.TillRegex,
-            RegexOptions.Singleline);
-
-        public PortugueseTimePeriodExtractorConfiguration(IOptionsConfiguration config) : base(config)
+        public PortugueseTimePeriodExtractorConfiguration(IOptionsConfiguration config)
+            : base(config)
         {
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
             SingleTimeExtractor = new BaseTimeExtractor(new PortugueseTimeExtractorConfiguration(this));
@@ -43,6 +42,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             IntegerExtractor = Number.English.IntegerExtractor.GetInstance();
             TimeZoneExtractor = new BaseTimeZoneExtractor(new PortugueseTimeZoneExtractorConfiguration(this));
         }
+
+        public string TokenBeforeDate { get; }
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
@@ -70,6 +71,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             {
                 index = fromMatch.Index;
             }
+
             return fromMatch.Success;
         }
 
@@ -81,6 +83,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             {
                 index = match.Index;
             }
+
             return match.Success;
         }
 

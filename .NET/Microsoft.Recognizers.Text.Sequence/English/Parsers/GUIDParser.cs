@@ -17,19 +17,19 @@ namespace Microsoft.Recognizers.Text.Sequence.English
 
         private static readonly Regex GuidElementRegex = new Regex(BaseGUID.GUIDRegexElement, RegexOptions.Compiled);
 
-        double ScoreGUID(string GUIDText)
+        public double ScoreGUID(string TextGUID)
         {
             double score = baseScore;
 
-            
-            Match elementMatch = GuidElementRegex.Match(GUIDText);
+
+            Match elementMatch = GuidElementRegex.Match(TextGUID);
             if (elementMatch.Success)
             {
                 int startIndex = elementMatch.Groups[1].Index;
                 string guidElement = elementMatch.Groups[1].Value;
                 score -= startIndex == 0 ? noBoundaryPenalty : 0;
                 score -= Regex.IsMatch(guidElement, formatRegex) ? 0 : noFormatPenalty;
-                score -= Regex.IsMatch(GUIDText, pureDigitRegex) ? pureDigitPenalty : 0;
+                score -= Regex.IsMatch(TextGUID, pureDigitRegex) ? pureDigitPenalty : 0;
             }
 
             return Math.Max(Math.Min(score, scoreUpperLimit), scoreLowerLimit) / (scoreUpperLimit - scoreLowerLimit);
@@ -44,7 +44,7 @@ namespace Microsoft.Recognizers.Text.Sequence.English
                 Text = extResult.Text,
                 Type = extResult.Type,
                 ResolutionStr = extResult.Text,
-                Value = ScoreGUID(extResult.Text)
+                Value = ScoreGUID(extResult.Text),
             };
 
             return result;

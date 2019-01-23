@@ -7,17 +7,11 @@ namespace Microsoft.Recognizers.Text.Number
 {
     public interface INumberParserConfiguration
     {
-        #region language dictionaries
-
         ImmutableDictionary<string, long> CardinalNumberMap { get; }
 
         ImmutableDictionary<string, long> OrdinalNumberMap { get; }
 
         ImmutableDictionary<string, long> RoundNumberMap { get; }
-
-        #endregion
-
-        #region language settings
 
         NumberOptions Options { get; }
 
@@ -51,21 +45,19 @@ namespace Microsoft.Recognizers.Text.Number
 
         Regex NegativeNumberSignRegex { get; }
 
-        #endregion
-
         /// <summary>
-        /// Used when requiring to normalize a token to a valid expression supported by the ImmutableDictionaries (language dictionaries)
+        /// Used when requiring to normalize a token to a valid expression supported by the ImmutableDictionaries (language dictionaries).
         /// </summary>
-        /// <param name="tokens">list of tokens to normalize</param>
-        /// <param name="context">context of the call</param>
-        /// <returns>list of normalized tokens</returns>
+        /// <param name="tokens">list of tokens to normalize.</param>
+        /// <param name="context">context of the call.</param>
+        /// <returns>list of normalized tokens.</returns>
         IEnumerable<string> NormalizeTokenSet(IEnumerable<string> tokens, ParseResult context);
 
         /// <summary>
-        /// Used when requiring to convert a string to a valid number supported by the language
+        /// Used when requiring to convert a string to a valid number supported by the language.
         /// </summary>
-        /// <param name="numberStr">composite number</param>
-        /// <returns>value of the string</returns>
+        /// <param name="numberStr">composite number.</param>
+        /// <returns>value of the string.</returns>
         long ResolveCompositeNumber(string numberStr);
     }
 }

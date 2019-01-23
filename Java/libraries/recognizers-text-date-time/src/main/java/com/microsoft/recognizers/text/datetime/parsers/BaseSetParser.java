@@ -6,8 +6,10 @@ import com.microsoft.recognizers.text.datetime.Constants;
 import com.microsoft.recognizers.text.datetime.TimeTypeConstants;
 import com.microsoft.recognizers.text.datetime.extractors.IDateTimeExtractor;
 import com.microsoft.recognizers.text.datetime.parsers.config.ISetParserConfiguration;
+import com.microsoft.recognizers.text.datetime.utilities.ConditionalMatch;
 import com.microsoft.recognizers.text.datetime.utilities.DateTimeResolutionResult;
 import com.microsoft.recognizers.text.datetime.utilities.MatchedTimexResult;
+import com.microsoft.recognizers.text.datetime.utilities.RegexExtension;
 import com.microsoft.recognizers.text.utilities.Match;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
 import com.microsoft.recognizers.text.utilities.StringUtility;
@@ -93,7 +95,7 @@ public class BaseSetParser implements IDateTimeParser {
                 er.getData(),
                 value,
                 "",
-                value.getTimex()
+                value == null ? "" : value.getTimex()
         );
 
         return ret;
@@ -150,10 +152,10 @@ public class BaseSetParser implements IDateTimeParser {
         }
 
         // Handle "each month"
-        matched = Arrays.stream(RegExpUtility.getMatches(this.config.getEachUnitRegex(), text)).findFirst();
-        if (matched.isPresent() && matched.get().length == text.length()) {
+        ConditionalMatch exactMatch = RegexExtension.matchExact(this.config.getEachUnitRegex(), text, true);
+        if (exactMatch.getSuccess()) {
 
-            String sourceUnit = matched.get().getGroup("unit").value;
+            String sourceUnit = exactMatch.getMatch().get().getGroup("unit").value;
             if (!StringUtility.isNullOrEmpty(sourceUnit) && this.config.getUnitMap().containsKey(sourceUnit)) {
 
                 MatchedTimexResult result = this.config.getMatchedUnitTimex(sourceUnit);
@@ -164,7 +166,7 @@ public class BaseSetParser implements IDateTimeParser {
                 // Handle "every other month"
                 Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(this.config.getEachUnitRegex(), text)).findFirst();
 
-                if (match.get().getGroup("other").value != "") {
+                if (exactMatch.getMatch().get().getGroup("other").value != "") {
                     result.setTimex(result.getTimex().replace("1", "2"));
                 }
 

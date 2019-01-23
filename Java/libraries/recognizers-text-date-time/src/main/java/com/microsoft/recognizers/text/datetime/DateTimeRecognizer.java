@@ -8,6 +8,8 @@ import com.microsoft.recognizers.text.datetime.english.parsers.EnglishMergedPars
 import com.microsoft.recognizers.text.datetime.extractors.BaseMergedDateTimeExtractor;
 import com.microsoft.recognizers.text.datetime.models.DateTimeModel;
 import com.microsoft.recognizers.text.datetime.parsers.BaseMergedDateTimeParser;
+import com.microsoft.recognizers.text.datetime.spanish.extractors.SpanishMergedExtractorConfiguration;
+import com.microsoft.recognizers.text.datetime.spanish.parsers.SpanishMergedParserConfiguration;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -69,11 +71,16 @@ public class DateTimeRecognizer extends Recognizer<DateTimeOptions> {
 
     @Override
     protected void initializeConfiguration() {
-        //region English
+        // English
         registerModel(DateTimeModel.class, Culture.English,
             (options) -> new DateTimeModel(
                 new BaseMergedDateTimeParser(new EnglishMergedParserConfiguration(options)),
                 new BaseMergedDateTimeExtractor(new EnglishMergedExtractorConfiguration(options))));
-        //endregion
+
+        // Spanish
+        registerModel(DateTimeModel.class, Culture.Spanish,
+            (options) -> new DateTimeModel(
+                new BaseMergedDateTimeParser(new SpanishMergedParserConfiguration(options)),
+                new BaseMergedDateTimeExtractor(new SpanishMergedExtractorConfiguration(options))));
     }
 }
