@@ -223,7 +223,6 @@ FullNameList: !list
     - North Korea Standard Time
     - Pacific SA Standard Time
     - Pacific Standard Time
-    - Redmond time
     - Pacific Daylight Time
     - Pacific Time
     - Pacific Standard Time
@@ -240,6 +239,7 @@ FullNameList: !list
     - Samoa Standard Time
     - SE Asia Standard Time
     - Singapore Standard Time
+    - Singapore Time
     - South Africa Standard Time
     - Sri Lanka Standard Time
     - Syria Standard Time
@@ -263,6 +263,8 @@ FullNameList: !list
     - Pacific Daylight Saving Time
     - Austrialian Western Daylight Time
     - Austrialian West Daylight Time
+    - Colombia Time
+    - Hong Kong Time
     - Central Europe Time
     - Central European Time
     - Central Europe Summer Time
@@ -753,6 +755,7 @@ MajorLocations: !list
     - Quebec
     - Raleigh
     - Reading
+    - Redmond
     - Richmond
     - Rome
     - San Antonio
