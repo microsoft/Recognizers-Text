@@ -1,12 +1,13 @@
 ﻿using System;
-using System.Linq;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Microsoft.Recognizers.Text.Sequence
 {
     public class GUIDModel : AbstractSequenceModel
     {
-        public GUIDModel(IParser parser, IExtractor extractor) : base(parser, extractor)
+        public GUIDModel(IParser parser, IExtractor extractor)
+            : base(parser, extractor)
         {
         }
 
@@ -24,7 +25,6 @@ namespace Microsoft.Recognizers.Text.Sequence
                 {
                     parsedSequences.Add(Parser.Parse(result));
                 }
-
             }
             catch (Exception)
             {
@@ -43,10 +43,10 @@ namespace Microsoft.Recognizers.Text.Sequence
                     },
                     {
                         ResolutionKey.Score, o.Value.ToString()
-                    }
+                    },
                 },
                 Text = o.Text,
-                TypeName = ModelTypeName
+                TypeName = ModelTypeName,
             }).ToList();
         }
     }

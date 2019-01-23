@@ -3,12 +3,29 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Portuguese;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
-using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 {
     public class PortugueseTimePeriodParserConfiguration : BaseOptionsConfiguration, ITimePeriodParserConfiguration
     {
+        public PortugueseTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config)
+            : base(config)
+        {
+            TimeExtractor = config.TimeExtractor;
+            IntegerExtractor = config.IntegerExtractor;
+            TimeParser = config.TimeParser;
+            TimeZoneParser = config.TimeZoneParser;
+            PureNumberFromToRegex = PortugueseTimePeriodExtractorConfiguration.PureNumFromTo;
+            PureNumberBetweenAndRegex = PortugueseTimePeriodExtractorConfiguration.PureNumBetweenAnd;
+            SpecificTimeFromToRegex = PortugueseTimePeriodExtractorConfiguration.SpecificTimeFromTo;
+            SpecificTimeBetweenAndRegex = PortugueseTimePeriodExtractorConfiguration.SpecificTimeBetweenAnd;
+            TimeOfDayRegex = PortugueseTimePeriodExtractorConfiguration.TimeOfDayRegex;
+            GeneralEndingRegex = PortugueseTimePeriodExtractorConfiguration.GeneralEndingRegex;
+            TillRegex = PortugueseTimePeriodExtractorConfiguration.TillRegex;
+            Numbers = config.Numbers;
+            UtilityConfiguration = config.UtilityConfiguration;
+        }
+
         public IDateTimeExtractor TimeExtractor { get; }
 
         public IDateTimeParser TimeParser { get; }
@@ -35,23 +52,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
-        public PortugueseTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config)
-        {
-            TimeExtractor = config.TimeExtractor;
-            IntegerExtractor = config.IntegerExtractor;
-            TimeParser = config.TimeParser;
-            TimeZoneParser = config.TimeZoneParser;
-            PureNumberFromToRegex = PortugueseTimePeriodExtractorConfiguration.PureNumFromTo;
-            PureNumberBetweenAndRegex = PortugueseTimePeriodExtractorConfiguration.PureNumBetweenAnd;
-            SpecificTimeFromToRegex = PortugueseTimePeriodExtractorConfiguration.SpecificTimeFromTo;
-            SpecificTimeBetweenAndRegex = PortugueseTimePeriodExtractorConfiguration.SpecificTimeBetweenAnd;
-            TimeOfDayRegex = PortugueseTimePeriodExtractorConfiguration.TimeOfDayRegex;
-            GeneralEndingRegex = PortugueseTimePeriodExtractorConfiguration.GeneralEndingRegex;
-            TillRegex = PortugueseTimePeriodExtractorConfiguration.TillRegex;
-            Numbers = config.Numbers;
-            UtilityConfiguration = config.UtilityConfiguration;
-        }
-
         public bool GetMatchedTimexRange(string text, out string timex, out int beginHour, out int endHour, out int endMin)
         {
             var trimmedText = text.Trim().ToLowerInvariant();
@@ -60,7 +60,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             endHour = 0;
             endMin = 0;
 
-            var timeOfDay = "";
+            var timeOfDay = string.Empty;
             if (DateTimeDefinitions.EarlyMorningTermList.Any(o => trimmedText.EndsWith(o)))
             {
                 timeOfDay = Constants.EarlyMorning;

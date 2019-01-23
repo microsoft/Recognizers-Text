@@ -10,7 +10,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 {
     public class DateParser : IDateTimeParser
     {
-        public static readonly string ParserName = Constants.SYS_DATETIME_DATE; //"Date";
+        public static readonly string ParserName = Constants.SYS_DATETIME_DATE; // "Date";
 
         private static readonly int[] MonthMaxDays = { 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
 
@@ -27,7 +27,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             durationExtractor = new DurationExtractor();
             numberParser = new BaseCJKNumberParser(new JapaneseNumberParserConfiguration());
         }
-        
+
         public ParseResult Parse(ExtractResult extResult)
         {
             return this.Parse(extResult, DateObject.Now);
@@ -50,11 +50,16 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 Type = er.Type,
                 Data = er.Data,
                 Value = value,
-                TimexStr = value == null ? "" : ((DateTimeResolutionResult)value).Timex,
-                ResolutionStr = ""
+                TimexStr = value == null ? string.Empty : ((DateTimeResolutionResult)value).Timex,
+                ResolutionStr = string.Empty,
             };
 
             return ret;
+        }
+
+        public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)
+        {
+            return candidateResults;
         }
 
         protected DateTimeResolutionResult InnerParser(string text, DateObject reference)
@@ -80,12 +85,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             {
                 innerResult.FutureResolution = new Dictionary<string, string>
                     {
-                        {TimeTypeConstants.DATE, DateTimeFormatUtil.FormatDate((DateObject) innerResult.FutureValue)}
+                        { TimeTypeConstants.DATE, DateTimeFormatUtil.FormatDate((DateObject)innerResult.FutureValue) },
                     };
 
                 innerResult.PastResolution = new Dictionary<string, string>
                     {
-                        {TimeTypeConstants.DATE, DateTimeFormatUtil.FormatDate((DateObject) innerResult.PastValue)}
+                        { TimeTypeConstants.DATE, DateTimeFormatUtil.FormatDate((DateObject)innerResult.PastValue) },
                     };
 
                 innerResult.IsLunar = IsLunarCalendar(text);
@@ -94,15 +99,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             }
 
             return null;
-        }
-
-        // parse if lunar contains
-        private static bool IsLunarCalendar(string text)
-        {
-            var trimmedText = text.Trim();
-            var match = DateExtractor.LunarRegex.Match(trimmedText);
-
-            return match.Success;
         }
 
         // parse basic patterns in DateRegexList
@@ -421,6 +417,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 {
                     swift = -1;
                 }
+
                 month = referenceDate.AddMonths(swift).Month;
                 year = referenceDate.AddMonths(swift).Year;
             }
@@ -463,111 +460,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             ret.FutureValue = futureDate;
             ret.PastValue = pastDate;
             ret.Success = true;
-
-            return ret;
-        }
-
-        private static DateObject ComputeDate(int cadinal, int weekday, int month, int year)
-        {
-            var firstDay = DateObject.MinValue.SafeCreateFromValue(year, month, 1);
-            var firstWeekday = firstDay.This((DayOfWeek)weekday);
-            if (weekday == 0)
-            {
-                weekday = 7;
-            }
-
-            if (weekday < (int)firstDay.DayOfWeek)
-            {
-                firstWeekday = firstDay.Next((DayOfWeek)weekday);
-            }
-
-            return firstWeekday.AddDays(7 * (cadinal - 1));
-        }
-
-        // handle cases like "三天前" 
-        private DateTimeResolutionResult ParserDurationWithBeforeAndAfter(string text, DateObject referenceDate)
-        {
-            var ret = new DateTimeResolutionResult();
-            var durationRes = durationExtractor.Extract(text, referenceDate);
-            var numStr = string.Empty;
-            var unitStr = string.Empty;
-            if (durationRes.Count > 0)
-            {
-                var match = DateExtractor.UnitRegex.Match(text);
-                if (match.Success)
-                {
-                    var suffix =
-                        text.Substring((int)durationRes[0].Start + (int)durationRes[0].Length)
-                            .Trim()
-                            .ToLowerInvariant();
-                    var srcUnit = match.Groups["unit"].Value.ToLowerInvariant();
-                    var numberStr =
-                        text.Substring((int)durationRes[0].Start, match.Index - (int)durationRes[0].Start)
-                            .Trim()
-                            .ToLowerInvariant();
-                    var number = ConvertJapaneseToNum(numberStr);
-                    if (this.config.UnitMap.ContainsKey(srcUnit))
-                    {
-                        unitStr = this.config.UnitMap[srcUnit];
-                        numStr = number.ToString();
-
-                        var beforeMatch = DateExtractor.BeforeRegex.Match(suffix);
-                        if (beforeMatch.Success && suffix.StartsWith(beforeMatch.Value))
-                        {
-                            DateObject date;
-                            switch (unitStr)
-                            {
-                                case Constants.TimexDay:
-                                    date = referenceDate.AddDays(-double.Parse(numStr));
-                                    break;
-                                case Constants.TimexWeek:
-                                    date = referenceDate.AddDays(-7 * double.Parse(numStr));
-                                    break;
-                                case Constants.TimexMonthFull:
-                                    date = referenceDate.AddMonths(-Convert.ToInt32(double.Parse(numStr)));
-                                    break;
-                                case Constants.TimexYear:
-                                    date = referenceDate.AddYears(-Convert.ToInt32(double.Parse(numStr)));
-                                    break;
-                                default:
-                                    return ret;
-                            }
-                            ret.Timex = $"{DateTimeFormatUtil.LuisDate(date)}";
-                            ret.FutureValue = ret.PastValue = date;
-                            ret.Success = true;
-                            return ret;
-                        }
-
-                        var afterMatch = DateExtractor.AfterRegex.Match(suffix);
-                        if (afterMatch.Success && suffix.StartsWith(afterMatch.Value))
-                        {
-                            DateObject date;
-                            switch (unitStr)
-                            {
-                                case Constants.TimexDay:
-                                    date = referenceDate.AddDays(double.Parse(numStr));
-                                    break;
-                                case Constants.TimexWeek:
-                                    date = referenceDate.AddDays(7 * double.Parse(numStr));
-                                    break;
-                                case Constants.TimexMonthFull:
-                                    date = referenceDate.AddMonths(Convert.ToInt32(double.Parse(numStr)));
-                                    break;
-                                case Constants.TimexYear:
-                                    date = referenceDate.AddYears(Convert.ToInt32(double.Parse(numStr)));
-                                    break;
-                                default:
-                                    return ret;
-                            }
-
-                            ret.Timex = $"{DateTimeFormatUtil.LuisDate(date)}";
-                            ret.FutureValue = ret.PastValue = date;
-                            ret.Success = true;
-                            return ret;
-                        }
-                    }
-                }
-            }
 
             return ret;
         }
@@ -639,6 +531,121 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             return ret;
         }
 
+        // parse if lunar contains
+        private static bool IsLunarCalendar(string text)
+        {
+            var trimmedText = text.Trim();
+            var match = DateExtractor.LunarRegex.Match(trimmedText);
+
+            return match.Success;
+        }
+
+        private static DateObject ComputeDate(int cadinal, int weekday, int month, int year)
+        {
+            var firstDay = DateObject.MinValue.SafeCreateFromValue(year, month, 1);
+            var firstWeekday = firstDay.This((DayOfWeek)weekday);
+            if (weekday == 0)
+            {
+                weekday = 7;
+            }
+
+            if (weekday < (int)firstDay.DayOfWeek)
+            {
+                firstWeekday = firstDay.Next((DayOfWeek)weekday);
+            }
+
+            return firstWeekday.AddDays(7 * (cadinal - 1));
+        }
+
+        // handle cases like "三天前"
+        private DateTimeResolutionResult ParserDurationWithBeforeAndAfter(string text, DateObject referenceDate)
+        {
+            var ret = new DateTimeResolutionResult();
+            var durationRes = durationExtractor.Extract(text, referenceDate);
+            var numStr = string.Empty;
+            var unitStr = string.Empty;
+            if (durationRes.Count > 0)
+            {
+                var match = DateExtractor.UnitRegex.Match(text);
+                if (match.Success)
+                {
+                    var suffix =
+                        text.Substring((int)durationRes[0].Start + (int)durationRes[0].Length)
+                            .Trim()
+                            .ToLowerInvariant();
+                    var srcUnit = match.Groups["unit"].Value.ToLowerInvariant();
+                    var numberStr =
+                        text.Substring((int)durationRes[0].Start, match.Index - (int)durationRes[0].Start)
+                            .Trim()
+                            .ToLowerInvariant();
+                    var number = ConvertJapaneseToNum(numberStr);
+                    if (this.config.UnitMap.ContainsKey(srcUnit))
+                    {
+                        unitStr = this.config.UnitMap[srcUnit];
+                        numStr = number.ToString();
+
+                        var beforeMatch = DateExtractor.BeforeRegex.Match(suffix);
+                        if (beforeMatch.Success && suffix.StartsWith(beforeMatch.Value))
+                        {
+                            DateObject date;
+                            switch (unitStr)
+                            {
+                                case Constants.TimexDay:
+                                    date = referenceDate.AddDays(-double.Parse(numStr));
+                                    break;
+                                case Constants.TimexWeek:
+                                    date = referenceDate.AddDays(-7 * double.Parse(numStr));
+                                    break;
+                                case Constants.TimexMonthFull:
+                                    date = referenceDate.AddMonths(-Convert.ToInt32(double.Parse(numStr)));
+                                    break;
+                                case Constants.TimexYear:
+                                    date = referenceDate.AddYears(-Convert.ToInt32(double.Parse(numStr)));
+                                    break;
+                                default:
+                                    return ret;
+                            }
+
+                            ret.Timex = $"{DateTimeFormatUtil.LuisDate(date)}";
+                            ret.FutureValue = ret.PastValue = date;
+                            ret.Success = true;
+                            return ret;
+                        }
+
+                        var afterMatch = DateExtractor.AfterRegex.Match(suffix);
+                        if (afterMatch.Success && suffix.StartsWith(afterMatch.Value))
+                        {
+                            DateObject date;
+                            switch (unitStr)
+                            {
+                                case Constants.TimexDay:
+                                    date = referenceDate.AddDays(double.Parse(numStr));
+                                    break;
+                                case Constants.TimexWeek:
+                                    date = referenceDate.AddDays(7 * double.Parse(numStr));
+                                    break;
+                                case Constants.TimexMonthFull:
+                                    date = referenceDate.AddMonths(Convert.ToInt32(double.Parse(numStr)));
+                                    break;
+                                case Constants.TimexYear:
+                                    date = referenceDate.AddYears(Convert.ToInt32(double.Parse(numStr)));
+                                    break;
+                                default:
+                                    return ret;
+                            }
+
+                            ret.Timex = $"{DateTimeFormatUtil.LuisDate(date)}";
+                            ret.FutureValue = ret.PastValue = date;
+                            ret.Success = true;
+                            return ret;
+                        }
+                    }
+                }
+            }
+
+            return ret;
+        }
+
         // concert Japanese Number to Integer
         private int ConvertJapaneseToNum(string numStr)
         {
@@ -651,9 +658,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                     num = Convert.ToInt32((double)(numberParser.Parse(er[0]).Value ?? 0));
                 }
             }
+
             return num;
         }
-        
+
         // convert Japanese Year to Integer
         private int ConvertJapaneseYearToInteger(string yearJapStr)
         {
@@ -689,11 +697,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             year = num;
 
             return year < 10 ? -1 : year;
-        }
-
-        public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)
-        {
-            return candidateResults;
         }
     }
 }

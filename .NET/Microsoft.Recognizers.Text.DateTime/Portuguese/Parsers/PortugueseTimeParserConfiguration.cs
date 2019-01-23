@@ -9,6 +9,17 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 {
     public class PortugueseTimeParserConfiguration : BaseOptionsConfiguration, ITimeParserConfiguration
     {
+        public PortugueseTimeParserConfiguration(ICommonDateTimeParserConfiguration config)
+            : base(config)
+        {
+            TimeTokenPrefix = DateTimeDefinitions.TimeTokenPrefix;
+            AtRegex = PortugueseTimeExtractorConfiguration.AtRegex;
+            TimeRegexes = PortugueseTimeExtractorConfiguration.TimeRegexList;
+            UtilityConfiguration = config.UtilityConfiguration;
+            Numbers = config.Numbers;
+            TimeZoneParser = config.TimeZoneParser;
+        }
+
         public string TimeTokenPrefix { get; }
 
         public Regex AtRegex { get; }
@@ -22,16 +33,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
         public IDateTimeParser TimeZoneParser { get; }
-
-        public PortugueseTimeParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config)
-        {
-            TimeTokenPrefix = DateTimeDefinitions.TimeTokenPrefix;
-            AtRegex = PortugueseTimeExtractorConfiguration.AtRegex;
-            TimeRegexes = PortugueseTimeExtractorConfiguration.TimeRegexList;
-            UtilityConfiguration = config.UtilityConfiguration;
-            Numbers = config.Numbers;
-            TimeZoneParser = config.TimeZoneParser;
-        }
 
         public void AdjustByPrefix(string prefix, ref int hour, ref int min, ref bool hasMin)
         {
@@ -70,7 +71,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
                 trimedPrefix.EndsWith("depois das") || trimedPrefix.EndsWith("depois da") || trimedPrefix.EndsWith("depois do") ||
                 trimedPrefix.EndsWith("passadas as") || trimedPrefix.EndsWith("passadas das"))
             {
-                //deltaMin it's positive
+            // deltaMin it's positive
             }
             else if (trimedPrefix.EndsWith("para a") || trimedPrefix.EndsWith("para as") ||
                      trimedPrefix.EndsWith("pra") || trimedPrefix.EndsWith("pras") ||
@@ -102,23 +103,25 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
                 var oclockStr = match.Groups["oclock"].Value;
                 if (string.IsNullOrEmpty(oclockStr))
                 {
-                    var amStr = match.Groups[Constants.AmGroupName].Value;
-                    if (!string.IsNullOrEmpty(amStr))
+                    var matchAmStr = match.Groups[Constants.AmGroupName].Value;
+                    if (!string.IsNullOrEmpty(matchAmStr))
                     {
                         if (hour >= Constants.HalfDayHourCount)
                         {
                             deltaHour = -Constants.HalfDayHourCount;
                         }
+
                         hasAm = true;
                     }
 
-                    var pmStr = match.Groups[Constants.PmGroupName].Value;
-                    if (!string.IsNullOrEmpty(pmStr))
+                    var matchPmStr = match.Groups[Constants.PmGroupName].Value;
+                    if (!string.IsNullOrEmpty(matchPmStr))
                     {
                         if (hour < Constants.HalfDayHourCount)
                         {
                             deltaHour = Constants.HalfDayHourCount;
                         }
+
                         hasPm = true;
                     }
                 }

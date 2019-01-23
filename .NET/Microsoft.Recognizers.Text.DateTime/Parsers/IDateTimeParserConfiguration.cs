@@ -1,7 +1,6 @@
 ﻿using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
-using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
@@ -53,6 +52,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         IImmutableDictionary<string, int> Numbers { get; }
 
+        IDateTimeUtilityConfiguration UtilityConfiguration { get; }
+
         bool ContainsAmbiguousToken(string text, string matchedText);
 
         bool GetMatchedNowTimex(string text, out string timex);
@@ -60,7 +61,5 @@ namespace Microsoft.Recognizers.Text.DateTime
         int GetSwiftDay(string text);
 
         int GetHour(string text, int hour);
-
-        IDateTimeUtilityConfiguration UtilityConfiguration { get; }
     }
 }

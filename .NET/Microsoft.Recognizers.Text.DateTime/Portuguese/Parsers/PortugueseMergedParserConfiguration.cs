@@ -6,6 +6,24 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 {
     public sealed class PortugueseMergedParserConfiguration : PortugueseCommonDateTimeParserConfiguration, IMergedParserConfiguration
     {
+        public PortugueseMergedParserConfiguration(IOptionsConfiguration config)
+            : base(config)
+        {
+            BeforeRegex = PortugueseMergedExtractorConfiguration.BeforeRegex;
+            AfterRegex = PortugueseMergedExtractorConfiguration.AfterRegex;
+            SinceRegex = PortugueseMergedExtractorConfiguration.SinceRegex;
+            AroundRegex = PortugueseMergedExtractorConfiguration.AroundRegex;
+            DateAfter = PortugueseMergedExtractorConfiguration.DateAfterRegex;
+            YearRegex = PortugueseDatePeriodExtractorConfiguration.YearRegex;
+            SuperfluousWordMatcher = PortugueseMergedExtractorConfiguration.SuperfluousWordMatcher;
+
+            DatePeriodParser = new BaseDatePeriodParser(new PortugueseDatePeriodParserConfiguration(this));
+            TimePeriodParser = new BaseTimePeriodParser(new PortugueseTimePeriodParserConfiguration(this));
+            DateTimePeriodParser = new DateTimePeriodParser(new PortugueseDateTimePeriodParserConfiguration(this));
+            SetParser = new BaseSetParser(new PortugueseSetParserConfiguration(this));
+            HolidayParser = new BaseHolidayParser(new PortugueseHolidayParserConfiguration(this));
+            TimeZoneParser = new DummyTimeZoneParser();
+        }
 
         public Regex BeforeRegex { get; }
 
@@ -24,23 +42,5 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         public IDateTimeParser HolidayParser { get; }
 
         public StringMatcher SuperfluousWordMatcher { get; }
-
-        public PortugueseMergedParserConfiguration(IOptionsConfiguration config) : base(config)
-        {
-            BeforeRegex = PortugueseMergedExtractorConfiguration.BeforeRegex;
-            AfterRegex = PortugueseMergedExtractorConfiguration.AfterRegex;
-            SinceRegex = PortugueseMergedExtractorConfiguration.SinceRegex;
-            AroundRegex = PortugueseMergedExtractorConfiguration.AroundRegex;
-            DateAfter = PortugueseMergedExtractorConfiguration.DateAfterRegex;
-            YearRegex = PortugueseDatePeriodExtractorConfiguration.YearRegex;
-            SuperfluousWordMatcher = PortugueseMergedExtractorConfiguration.SuperfluousWordMatcher;
-
-            DatePeriodParser = new BaseDatePeriodParser(new PortugueseDatePeriodParserConfiguration(this));
-            TimePeriodParser = new BaseTimePeriodParser(new PortugueseTimePeriodParserConfiguration(this));
-            DateTimePeriodParser = new DateTimePeriodParser(new PortugueseDateTimePeriodParserConfiguration(this));
-            SetParser = new BaseSetParser(new PortugueseSetParserConfiguration(this));
-            HolidayParser = new BaseHolidayParser(new PortugueseHolidayParserConfiguration(this));
-            TimeZoneParser = new DummyTimeZoneParser();
-        }
     }
 }

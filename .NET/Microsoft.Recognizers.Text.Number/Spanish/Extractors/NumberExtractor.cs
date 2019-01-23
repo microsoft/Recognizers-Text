@@ -8,29 +8,12 @@ namespace Microsoft.Recognizers.Text.Number.Spanish
 {
     public class NumberExtractor : BaseNumberExtractor
     {
-        internal sealed override ImmutableDictionary<Regex, TypeTag> Regexes { get; }
-
-        protected sealed override NumberOptions Options { get; }
-
-        protected sealed override string ExtractType { get; } = Constants.SYS_NUM; // "Number";
-
         private static readonly ConcurrentDictionary<(NumberMode, NumberOptions), NumberExtractor> Instances =
             new ConcurrentDictionary<(NumberMode, NumberOptions), NumberExtractor>();
 
-        public static NumberExtractor GetInstance(NumberMode mode = NumberMode.Default, NumberOptions options = NumberOptions.None)
-        {
-            var cacheKey = (mode, options);
-            if (!Instances.ContainsKey(cacheKey))
-            {
-                var instance = new NumberExtractor(mode, options);
-                Instances.TryAdd(cacheKey, instance);
-            }
-
-            return Instances[cacheKey];
-        }
-
         private NumberExtractor(NumberMode mode = NumberMode.Default, NumberOptions options = NumberOptions.None)
         {
+            NegativeNumberTermsRegex = new Regex(NumbersDefinitions.NegativeNumberTermsRegex + '$', RegexOptions.Singleline);
 
             Options = options;
 
@@ -44,8 +27,7 @@ namespace Microsoft.Recognizers.Text.Number.Spanish
                     cardExtract = CardinalExtractor.GetInstance(NumbersDefinitions.PlaceHolderPureNumber);
                     break;
                 case NumberMode.Currency:
-                    builder.Add(BaseNumberExtractor.CurrencyRegex,
-                                RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX));
+                    builder.Add(CurrencyRegex, RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX));
                     break;
                 case NumberMode.Default:
                     break;
@@ -63,6 +45,27 @@ namespace Microsoft.Recognizers.Text.Number.Spanish
             builder.AddRange(fracExtract.Regexes);
 
             Regexes = builder.ToImmutable();
+        }
+
+        internal sealed override ImmutableDictionary<Regex, TypeTag> Regexes { get; }
+
+        protected sealed override NumberOptions Options { get; }
+
+        // "Number"
+        protected sealed override string ExtractType { get; } = Constants.SYS_NUM;
+
+        protected sealed override Regex NegativeNumberTermsRegex { get; }
+
+        public static NumberExtractor GetInstance(NumberMode mode = NumberMode.Default, NumberOptions options = NumberOptions.None)
+        {
+            var cacheKey = (mode, options);
+            if (!Instances.ContainsKey(cacheKey))
+            {
+                var instance = new NumberExtractor(mode, options);
+                Instances.TryAdd(cacheKey, instance);
+            }
+
+            return Instances[cacheKey];
         }
     }
 }

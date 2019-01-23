@@ -12,6 +12,7 @@ import com.microsoft.recognizers.text.datetime.extractors.IDateTimeExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.config.IDateTimePeriodExtractorConfiguration;
 import com.microsoft.recognizers.text.datetime.extractors.config.ResultIndex;
 import com.microsoft.recognizers.text.datetime.resources.EnglishDateTime;
+import com.microsoft.recognizers.text.datetime.utilities.RegexExtension;
 import com.microsoft.recognizers.text.number.english.extractors.CardinalExtractor;
 import com.microsoft.recognizers.text.utilities.Match;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
@@ -58,8 +59,8 @@ public class EnglishDateTimePeriodExtractorConfiguration extends BaseOptionsConf
     private final IDateTimeExtractor durationExtractor;
     private final IDateTimeExtractor timePeriodExtractor;
 
-    private final Pattern weekDayRegex;
-    private final Pattern rangeConnectorRegex;
+    private final Pattern weekDayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.WeekDayRegex);
+    private final Pattern rangeConnectorRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RangeConnectorRegex);
 
     public EnglishDateTimePeriodExtractorConfiguration() {
         this(DateTimeOptions.None);
@@ -78,9 +79,6 @@ public class EnglishDateTimePeriodExtractorConfiguration extends BaseOptionsConf
         singleDateTimeExtractor = new BaseDateTimeExtractor(new EnglishDateTimeExtractorConfiguration(options));
         durationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration(options));
         timePeriodExtractor = new BaseTimePeriodExtractor(new EnglishTimePeriodExtractorConfiguration(options));
-
-        weekDayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.WeekDayRegex);
-        rangeConnectorRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RangeConnectorRegex);
     }
 
     @Override
@@ -270,7 +268,6 @@ public class EnglishDateTimePeriodExtractorConfiguration extends BaseOptionsConf
 
     @Override
     public boolean hasConnectorToken(String text) {
-        Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(rangeConnectorRegex, text)).findFirst();
-        return match.isPresent() && match.get().length == text.trim().length();
+        return RegexExtension.isExactMatch(rangeConnectorRegex, text, true);
     }
 }

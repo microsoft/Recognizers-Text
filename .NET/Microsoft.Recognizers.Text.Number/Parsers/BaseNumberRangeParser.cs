@@ -1,16 +1,17 @@
 ﻿using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 
 namespace Microsoft.Recognizers.Text.Number
 {
     public class BaseNumberRangeParser : IParser
     {
-        protected readonly INumberRangeParserConfiguration Config;
-
         public BaseNumberRangeParser(INumberRangeParserConfiguration config)
         {
             this.Config = config;
         }
+
+        protected INumberRangeParserConfiguration Config { get; private set; }
 
         public virtual ParseResult Parse(ExtractResult extResult)
         {
@@ -39,7 +40,7 @@ namespace Microsoft.Recognizers.Text.Number
                 Start = extResult.Start,
                 Length = extResult.Length,
                 Text = extResult.Text,
-                Type = extResult.Type
+                Type = extResult.Type,
             };
 
             var er = Config.NumberExtractor.Extract(extResult.Text);
@@ -69,8 +70,8 @@ namespace Microsoft.Recognizers.Text.Number
                 endValue = nums[0];
             }
 
-            var startValueStr = Config.CultureInfo != null ? startValue.ToString(Config.CultureInfo) : startValue.ToString();
-            var endValueStr = Config.CultureInfo != null ? endValue.ToString(Config.CultureInfo) : endValue.ToString();
+            var startValueStr = startValue.ToString(CultureInfo.InvariantCulture);
+            var endValueStr = endValue.ToString(CultureInfo.InvariantCulture);
 
             char leftBracket, rightBracket;
             var type = extResult.Data as string;
@@ -126,7 +127,7 @@ namespace Microsoft.Recognizers.Text.Number
             result.Value = new Dictionary<string, double>()
             {
                 { "StartValue", startValue },
-                { "EndValue", endValue }
+                { "EndValue", endValue },
             };
 
             result.ResolutionStr = string.Concat(leftBracket, startValueStr, NumberRangeConstants.INTERVAL_SEPARATOR, endValueStr, rightBracket);
@@ -141,7 +142,7 @@ namespace Microsoft.Recognizers.Text.Number
                 Start = extResult.Start,
                 Length = extResult.Length,
                 Text = extResult.Text,
-                Type = extResult.Type
+                Type = extResult.Type,
             };
 
             var er = Config.NumberExtractor.Extract(extResult.Text);
@@ -187,11 +188,11 @@ namespace Microsoft.Recognizers.Text.Number
                     leftBracket = NumberRangeConstants.LEFT_OPEN;
                 }
 
-                startValueStr = Config.CultureInfo != null ? num[0].ToString(Config.CultureInfo) : num[0].ToString();
+                startValueStr = num[0].ToString(CultureInfo.InvariantCulture);
 
                 result.Value = new Dictionary<string, double>()
                 {
-                    { "StartValue", num[0] }
+                    { "StartValue", num[0] },
                 };
             }
             else if (type.Contains(NumberRangeConstants.LESS))
@@ -219,11 +220,11 @@ namespace Microsoft.Recognizers.Text.Number
                     rightBracket = NumberRangeConstants.RIGHT_OPEN;
                 }
 
-                endValueStr = Config.CultureInfo != null ? num[0].ToString(Config.CultureInfo) : num[0].ToString();
+                endValueStr = num[0].ToString(CultureInfo.InvariantCulture);
 
                 result.Value = new Dictionary<string, double>()
                 {
-                    { "EndValue", num[0] }
+                    { "EndValue", num[0] },
                 };
             }
             else
@@ -231,13 +232,13 @@ namespace Microsoft.Recognizers.Text.Number
                 leftBracket = NumberRangeConstants.LEFT_CLOSED;
                 rightBracket = NumberRangeConstants.RIGHT_CLOSED;
 
-                startValueStr = Config.CultureInfo != null ? num[0].ToString(Config.CultureInfo) : num[0].ToString();
+                startValueStr = num[0].ToString(CultureInfo.InvariantCulture);
                 endValueStr = startValueStr;
 
                 result.Value = new Dictionary<string, double>()
                 {
                     { "StartValue", num[0] },
-                    { "EndValue", num[0] }
+                    { "EndValue", num[0] },
                 };
             }
 

@@ -1,7 +1,8 @@
-﻿// ReSharper disable InconsistentNaming
+﻿using System.Diagnostics.CodeAnalysis;
 
 namespace Microsoft.Recognizers.Text.Sequence
 {
+    [SuppressMessage("StyleCop.CSharp.NamingRules", "SA1310: CSharp.Naming : Field names must not contain underscores.", Justification = "Constant names are written in upper case so they can be readily distinguished from camel case variable names.")]
     public static class Constants
     {
         public const string SYS_PHONE_NUMBER = "builtin.phonenumber";
@@ -39,7 +40,7 @@ namespace Microsoft.Recognizers.Text.Sequence
 
         public const string IPV6_ELLIPSIS = "::";
 
-        public const string PHONE_NUMBER_REGEX_GENERAL= "GeneralPhoneNumber";
+        public const string PHONE_NUMBER_REGEX_GENERAL = "GeneralPhoneNumber";
 
         public const string PHONE_NUMBER_REGEX_BR = "BRPhoneNumber";
 

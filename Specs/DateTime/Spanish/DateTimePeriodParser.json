@@ -300,31 +300,6 @@
     ]
   },
   {
-    "Input": "Regresaré a la noche",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "Results": [
-      {
-        "Text": "a la noche",
-        "Type": "datetimerange",
-        "Value": {
-          "Timex": "2016-11-07TNI",
-          "FutureResolution": {
-            "startDateTime": "2016-11-07 20:00:00",
-            "endDateTime": "2016-11-07 23:59:59"
-          },
-          "PastResolution": {
-            "startDateTime": "2016-11-07 20:00:00",
-            "endDateTime": "2016-11-07 23:59:59"
-          }
-        },
-        "Start": 10,
-        "Length": 10
-      }
-    ]
-  },
-  {
     "Input": "Regresaré esta noche",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
@@ -400,56 +375,6 @@
     ]
   },
   {
-    "Input": "Regresaré pasado el mediodia de hoy",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "Results": [
-      {
-        "Text": "pasado el mediodia",
-        "Type": "datetimerange",
-        "Value": {
-          "Timex": "2016-11-07TAF",
-          "FutureResolution": {
-            "startDateTime": "2016-11-07 12:00:00",
-            "endDateTime": "2016-11-07 16:00:00"
-          },
-          "PastResolution": {
-            "startDateTime": "2016-11-07 12:00:00",
-            "endDateTime": "2016-11-07 16:00:00"
-          }
-        },
-        "Start": 10,
-        "Length": 18
-      }
-    ]
-  },
-  {
-    "Input": "Regresaré mañana a la noche",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "Results": [
-      {
-        "Text": "mañana a la noche",
-        "Type": "datetimerange",
-        "Value": {
-          "Timex": "2016-11-08TNI",
-          "FutureResolution": {
-            "startDateTime": "2016-11-08 20:00:00",
-            "endDateTime": "2016-11-08 23:59:59"
-          },
-          "PastResolution": {
-            "startDateTime": "2016-11-08 20:00:00",
-            "endDateTime": "2016-11-08 23:59:59"
-          }
-        },
-        "Start": 10,
-        "Length": 17
-      }
-    ]
-  },
-  {
     "Input": "Regresé anoche",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
@@ -496,31 +421,6 @@
         },
         "Start": 10,
         "Length": 19
-      }
-    ]
-  },
-  {
-    "Input": "Regresaré el próximo lunes a la tarde",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "Results": [
-      {
-        "Text": "próximo lunes a la tarde",
-        "Type": "datetimerange",
-        "Value": {
-          "Timex": "2016-11-14TEV",
-          "FutureResolution": {
-            "startDateTime": "2016-11-14 16:00:00",
-            "endDateTime": "2016-11-14 20:00:00"
-          },
-          "PastResolution": {
-            "startDateTime": "2016-11-14 16:00:00",
-            "endDateTime": "2016-11-14 20:00:00"
-          }
-        },
-        "Start": 13,
-        "Length": 24
       }
     ]
   },
@@ -775,37 +675,12 @@
     ]
   },
   {
-    "Input": "Regresaré mañana a la mañana",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "Results": [
-      {
-        "Text": "mañana a la mañana",
-        "Type": "datetimerange",
-        "Value": {
-          "Timex": "2016-11-08TMO",
-          "FutureResolution": {
-            "startDateTime": "2016-11-08 08:00:00",
-            "endDateTime": "2016-11-08 12:00:00"
-          },
-          "PastResolution": {
-            "startDateTime": "2016-11-08 08:00:00",
-            "endDateTime": "2016-11-08 12:00:00"
-          }
-        },
-        "Start": 10,
-        "Length": 18
-      }
-    ]
-  },
-  {
     "Input": "Estaré afuera hoy de cinco a siete",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "hoy de cinco a siete",
@@ -831,8 +706,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "de las 5 a las 6 de 4/22/2016",
@@ -858,8 +733,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "4.22.16 de las 5 a las 6",
@@ -885,8 +760,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "de 5 a 6 de 22 de abril",
@@ -912,11 +787,11 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "5-6 de 22 de abril",
+        "Text": "de 5-6 de 22 de abril",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(XXXX-04-22T05,XXXX-04-22T06,PT1H)",
@@ -929,8 +804,8 @@
             "endDateTime": "2016-04-22 06:00:00"
           }
         },
-        "Start": 17,
-        "Length": 18
+        "Start": 14,
+        "Length": 21
       }
     ]
   },
@@ -939,8 +814,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "desde las 5 hasta las 6 p. m. de 22 de abril",
@@ -966,8 +841,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "1 de ene desde las 5 hasta las 6",
@@ -993,8 +868,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "mañana de 3 a 4 pm",
@@ -1020,8 +895,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "de 3:00 a 4:00 de mañana",
@@ -1047,8 +922,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "mañana de las siete y media a las 4 p. m.",
@@ -1074,11 +949,11 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "from 4pm today to 5pm tomorrow",
+        "Text": "desde hoy a las 4 pm hasta mañana a las 5 pm",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2016-11-07T16,2016-11-08T17,PT25H)",
@@ -1101,8 +976,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "desde las 4 pm de hoy hasta las 5 pm de mañana",
@@ -1128,8 +1003,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "desde las 2 p. m. del 21 de feb de 2016 hasta el 4-23-16 a las 3:32",
@@ -1155,8 +1030,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "hoy entre las 4 y las 5 pm",
@@ -1182,8 +1057,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "entre el 1 de ene a las 16 h y hoy a las 5 p. m.",
@@ -1209,8 +1084,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "esta noche",
@@ -1236,8 +1111,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "hoy por la noche",
@@ -1263,8 +1138,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "noche de hoy",
@@ -1290,8 +1165,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "esta mañana",
@@ -1317,8 +1192,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "esta tarde",
@@ -1344,8 +1219,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "mañana por la noche",
@@ -1371,8 +1246,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "anoche",
@@ -1398,8 +1273,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "noche de mañana",
@@ -1425,8 +1300,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "próximo lunes por la tarde",
@@ -1452,8 +1327,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "tarde del próximo lunes",
@@ -1479,8 +1354,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "últimos 3 minutos",
@@ -1506,8 +1381,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "3 minutos pasados",
@@ -1533,8 +1408,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "3 minutos anteriores",
@@ -1560,8 +1435,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "últimos 3 min",
@@ -1587,8 +1462,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "próximas 5 horas",
@@ -1614,8 +1489,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "último minuto",
@@ -1641,8 +1516,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "próxima hora",
@@ -1668,8 +1543,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "próximas horas",
@@ -1695,8 +1570,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "martes por la mañana",
@@ -1722,8 +1597,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "mañana de este martes",
@@ -1749,8 +1624,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "martes en la mañana",
@@ -1776,8 +1651,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "martes por la tarde",
@@ -1803,8 +1678,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "martes por la noche",
@@ -1830,8 +1705,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "noche de martes",
@@ -1857,8 +1732,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "martes a primeras horas de la mañana",
@@ -1884,8 +1759,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "martes a últimas horas de la mañana",
@@ -1911,8 +1786,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "martes a primeras horas de la tarde",
@@ -1938,8 +1813,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "primeras horas de la tarde del martes",
@@ -1965,8 +1840,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "martes a últimas horas de la tarde",
@@ -1992,8 +1867,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "martes a primeras horas de la noche",
@@ -2019,8 +1894,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "últimas horas de la noche de martes",
@@ -2046,8 +1921,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "martes a últimas horas de la noche",
@@ -2073,8 +1948,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "martes a altas horas de la noche",
@@ -2100,8 +1975,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "resto del día de hoy",
@@ -2127,8 +2002,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "resto de la jornada de hoy",
@@ -2154,8 +2029,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "resto del día",
@@ -2181,8 +2056,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "desde las 14 h de 21-2-2016 hasta el 23.4.16 a las 3:32",
@@ -2208,8 +2083,8 @@
     "Context": {
       "ReferenceDateTime": "2017-11-09T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "entre las 1 pm y las 4 pm del viernes",
@@ -2235,8 +2110,8 @@
     "Context": {
       "ReferenceDateTime": "2017-11-09T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "mañana entre 8 a. m. y 2 p. m.",
@@ -2262,11 +2137,11 @@
     "Context": {
       "ReferenceDateTime": "2017-11-09T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "8-2 de mañana",
+        "Text": "de 8-2 de mañana",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2017-11-10T08,2017-11-10T14,PT6H)",
@@ -2279,8 +2154,8 @@
             "endDateTime": "2017-11-10 14:00:00"
           }
         },
-        "Start": 24,
-        "Length": 13
+        "Start": 21,
+        "Length": 16
       }
     ]
   },
@@ -2289,8 +2164,8 @@
     "Context": {
       "ReferenceDateTime": "2017-11-09T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "9 de dic entre las 8 am y las 2 pm",
@@ -2316,11 +2191,11 @@
     "Context": {
       "ReferenceDateTime": "2017-11-09T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "8-2 del 9 de dic",
+        "Text": "de 8-2 del 9 de dic",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(XXXX-12-09T08,XXXX-12-09T14,PT6H)",
@@ -2333,8 +2208,8 @@
             "endDateTime": "2016-12-09 14:00:00"
           }
         },
-        "Start": 24,
-        "Length": 16
+        "Start": 21,
+        "Length": 19
       }
     ]
   },
@@ -2343,8 +2218,8 @@
     "Context": {
       "ReferenceDateTime": "2017-11-13T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "este viernes por la tarde",
@@ -2370,8 +2245,8 @@
     "Context": {
       "ReferenceDateTime": "2017-11-13T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "tarde de este viernes",
@@ -2397,8 +2272,8 @@
     "Context": {
       "ReferenceDateTime": "2017-11-13T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "tarde del próximo viernes",
@@ -2424,8 +2299,8 @@
     "Context": {
       "ReferenceDateTime": "2017-11-13T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "viernes pasado por la tarde",
@@ -2451,8 +2326,8 @@
     "Context": {
       "ReferenceDateTime": "2017-11-14T19:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "viernes entre las 1 y las 4 de la tarde",
@@ -2478,8 +2353,8 @@
     "Context": {
       "ReferenceDateTime": "2017-11-14T19:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "viernes de 1-4 p. m.",
@@ -2505,8 +2380,8 @@
     "Context": {
       "ReferenceDateTime": "2017-11-17T19:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "23-9-2018 de 1 p. m. a 4",
@@ -2532,8 +2407,8 @@
     "Context": {
       "ReferenceDateTime": "2017-11-17T19:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "entre las 1.30 y las 4 pm de 23-9-18",
@@ -2559,8 +2434,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "5 de feb en la mañana",
@@ -2586,8 +2461,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "martes en la mañana",
@@ -2613,8 +2488,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "martes en la tarde",
@@ -2640,8 +2515,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "dentro de 2 horas",
@@ -2667,8 +2542,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "dentro de 15 segundos",
@@ -2694,8 +2569,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "dentro de 5 minutos",
@@ -2721,8 +2596,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "dentro de 5 horas",
@@ -2748,8 +2623,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "dentro de 1 día y 5 horas",
@@ -2775,8 +2650,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "dentro de 2 días, 1 hora, 5 minutos y 30 segundos",
@@ -2802,8 +2677,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "próximos 2 días, 1 hora, 5 minutos y 30 segundos",
@@ -2829,8 +2704,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "próximas 5 horas",
@@ -2856,11 +2731,11 @@
     "Context": {
       "ReferenceDateTime": "2018-04-19T08:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "8-9 de lunes",
+        "Text": "de 8-9 de lunes",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(XXXX-WXX-1T08,XXXX-WXX-1T09,PT1H)",
@@ -2873,8 +2748,8 @@
             "endDateTime": "2018-04-16 09:00:00"
           }
         },
-        "Start": 11,
-        "Length": 12
+        "Start": 8,
+        "Length": 15
       }
     ]
   },
@@ -2883,8 +2758,8 @@
     "Context": {
       "ReferenceDateTime": "2018-05-16T08:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "lunes de 12-4",
@@ -2910,8 +2785,8 @@
     "Context": {
       "ReferenceDateTime": "2018-05-16T08:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "lunes de 11-4",
@@ -2937,8 +2812,8 @@
     "Context": {
       "ReferenceDateTime": "2018-05-16T08:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "1/1/2015 entre las 10 h y las 11.30 h",
@@ -2964,8 +2839,8 @@
     "Context": {
       "ReferenceDateTime": "2018-05-16T08:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "1.1.2015 entre 10 y 11:30",
@@ -2991,8 +2866,8 @@
     "Context": {
       "ReferenceDateTime": "2018-05-16T08:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "desde las 10.30 h hasta las 15 h de 1/1/15",
@@ -3018,8 +2893,8 @@
     "Context": {
       "ReferenceDateTime": "2018-05-16T08:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "entre 3 y 5 del 1-1-2015",
@@ -3045,8 +2920,8 @@
     "Context": {
       "ReferenceDateTime": "2018-05-16T08:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "1.1.15 de 3.30 a 5.55",

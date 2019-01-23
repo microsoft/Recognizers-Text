@@ -13,7 +13,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         IImmutableDictionary<string, Func<int, DateObject>> HolidayFuncDictionary { get; }
 
         IImmutableDictionary<string, IEnumerable<string>> HolidayNames { get; }
-        
+
         IEnumerable<Regex> HolidayRegexList { get; }
 
         int GetSwiftYear(string text);

@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using Microsoft.Recognizers.Text.DataDrivenTests;
+﻿using Microsoft.Recognizers.Text.DataDrivenTests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
@@ -19,35 +18,35 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
         [TestInitialize]
         public void TestInitialize()
         {
-            base.TestSpecInitialize(TestResources);
+            TestSpecInitialize(TestResources);
         }
 
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "AgeModel-Portuguese.csv", "AgeModel-Portuguese#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void AgeModel()
         {
-            base.TestNumberWithUnit();
+            TestNumberWithUnit();
         }
 
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "CurrencyModel-Portuguese.csv", "CurrencyModel-Portuguese#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void CurrencyModel()
         {
-            base.TestNumberWithUnit();
+            TestNumberWithUnit();
         }
 
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "DimensionModel-Portuguese.csv", "DimensionModel-Portuguese#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void DimensionModel()
         {
-            base.TestNumberWithUnit();
+            TestNumberWithUnit();
         }
 
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "TemperatureModel-Portuguese.csv", "TemperatureModel-Portuguese#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void TemperatureModel()
         {
-            base.TestNumberWithUnit();
+            TestNumberWithUnit();
         }
     }
 }

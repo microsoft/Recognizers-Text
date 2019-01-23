@@ -31,11 +31,12 @@ namespace Microsoft.Recognizers.Definitions.Common
             return yamlDeserializer.Deserialize<IDictionary<string, object>>(obj);
         }
     }
-    
+
     public class SimpleRegex
     {
         [YamlMember(Alias = "def", ApplyNamingConventions = false)]
         public string Definition { get; set; }
+
         [YamlMember(Alias = "def_js", ApplyNamingConventions = false)]
         public string DefinitionJS { get; set; }
     }
@@ -44,6 +45,7 @@ namespace Microsoft.Recognizers.Definitions.Common
     {
         [YamlMember(Alias = "references", ApplyNamingConventions = false)]
         public IEnumerable<string> References { get; set; }
+
         public string SanitizedDefinition {
             get
             {
@@ -52,6 +54,7 @@ namespace Microsoft.Recognizers.Definitions.Common
                 {
                     result = result.Replace("{" + token + "}", token);
                 }
+
                 return result;
             }
         }
@@ -61,6 +64,7 @@ namespace Microsoft.Recognizers.Definitions.Common
     {
         [YamlMember(Alias = "params", ApplyNamingConventions = false)]
         public IEnumerable<string> Params { get; set; }
+
         public string SanitizedDefinition
         {
             get
@@ -70,6 +74,7 @@ namespace Microsoft.Recognizers.Definitions.Common
                 {
                     result = result.Replace("{" + token + "}", token);
                 }
+
                 return result;
             }
         }
@@ -79,6 +84,7 @@ namespace Microsoft.Recognizers.Definitions.Common
     {
         [YamlMember(Alias = "types", ApplyNamingConventions = false)]
         public IList<string> Types { get; set; }
+
         [YamlMember(Alias = "entries", ApplyNamingConventions = false)]
         public IDictionary<object, object> Entries { get; set; }
     }
@@ -87,6 +93,7 @@ namespace Microsoft.Recognizers.Definitions.Common
     {
         [YamlMember(Alias = "types", ApplyNamingConventions = false)]
         public IList<string> Types { get; set; }
+
         [YamlMember(Alias = "entries", ApplyNamingConventions = false)]
         public IEnumerable<object> Entries { get; set; }
     }

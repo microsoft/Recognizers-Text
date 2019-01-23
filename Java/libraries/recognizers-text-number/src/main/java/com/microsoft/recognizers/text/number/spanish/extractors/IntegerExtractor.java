@@ -9,6 +9,7 @@ import com.microsoft.recognizers.text.utilities.RegExpUtility;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.regex.Pattern;
 
 public class IntegerExtractor extends BaseNumberExtractor {
@@ -23,6 +24,21 @@ public class IntegerExtractor extends BaseNumberExtractor {
     @Override
     protected String getExtractType() {
         return Constants.SYS_NUM_INTEGER;
+    }
+
+    private static final ConcurrentHashMap<String, IntegerExtractor> instances = new ConcurrentHashMap<>();
+
+    public static IntegerExtractor getInstance() {
+        return getInstance(SpanishNumeric.PlaceHolderDefault);
+    }
+
+    public static IntegerExtractor getInstance(String placeholder) {
+        if (!instances.containsKey(placeholder)) {
+            IntegerExtractor instance = new IntegerExtractor(placeholder);
+            instances.put(placeholder, instance);
+        }
+
+        return instances.get(placeholder);
     }
 
     public IntegerExtractor() {

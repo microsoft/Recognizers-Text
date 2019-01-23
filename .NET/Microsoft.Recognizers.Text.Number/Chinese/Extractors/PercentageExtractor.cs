@@ -8,10 +8,6 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
 {
     public class PercentageExtractor : BaseNumberExtractor
     {
-        internal sealed override ImmutableDictionary<Regex, TypeTag> Regexes { get; }
-
-        protected sealed override string ExtractType { get; } = Constants.SYS_NUM_PERCENTAGE;
-
         public PercentageExtractor()
         {
             var regexes = new Dictionary<Regex, TypeTag>
@@ -33,7 +29,7 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
                     new Regex(NumbersDefinitions.NumbersPercentageWithSeparatorRegex, RegexOptions.Singleline), RegexTagGenerator.GenerateRegexTag(Constants.PERCENT_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
-                    // 百分之3.2 k 
+                    // 百分之3.2 k
                     new Regex(NumbersDefinitions.NumbersPercentageWithMultiplierRegex, RegexOptions.Singleline), RegexTagGenerator.GenerateRegexTag(Constants.PERCENT_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
@@ -53,7 +49,7 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
                     new Regex(NumbersDefinitions.SimpleNumbersPercentageRegex, RegexOptions.Singleline), RegexTagGenerator.GenerateRegexTag(Constants.PERCENT_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
-                    // 百分之15k 
+                    // 百分之15k
                     new Regex(NumbersDefinitions.SimpleNumbersPercentageWithMultiplierRegex, RegexOptions.Singleline), RegexTagGenerator.GenerateRegexTag(Constants.PERCENT_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
@@ -103,10 +99,14 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
                 {
                     // 打对折 半成
                     new Regex(NumbersDefinitions.SpecialsFoldsPercentageRegex, RegexOptions.Singleline), RegexTagGenerator.GenerateRegexTag(Constants.PERCENT_PREFIX, Constants.SPECIAL_SUFFIX)
-                }
+                },
             };
 
             Regexes = regexes.ToImmutableDictionary();
         }
+
+        internal sealed override ImmutableDictionary<Regex, TypeTag> Regexes { get; }
+
+        protected sealed override string ExtractType { get; } = Constants.SYS_NUM_PERCENTAGE;
     }
 }

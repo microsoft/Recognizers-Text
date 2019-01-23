@@ -1,14 +1,46 @@
 ﻿using System.Collections.Immutable;
 using System.Text.RegularExpressions;
-
-using Microsoft.Recognizers.Text.DateTime.Utilities;
 using Microsoft.Recognizers.Definitions.German;
-using Microsoft.Recognizers.Text.Number;
+using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.German
 {
     public class GermanDateTimeParserConfiguration : BaseOptionsConfiguration, IDateTimeParserConfiguration
     {
+        public GermanDateTimeParserConfiguration(ICommonDateTimeParserConfiguration config)
+            : base(config)
+        {
+            TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
+            TokenBeforeTime = DateTimeDefinitions.TokenBeforeTime;
+
+            DateExtractor = config.DateExtractor;
+            TimeExtractor = config.TimeExtractor;
+            DateParser = config.DateParser;
+            TimeParser = config.TimeParser;
+
+            NowRegex = GermanDateTimeExtractorConfiguration.NowRegex;
+
+            AMTimeRegex = new Regex(DateTimeDefinitions.AMTimeRegex, RegexOptions.Singleline);
+            PMTimeRegex = new Regex(DateTimeDefinitions.PMTimeRegex, RegexOptions.Singleline);
+
+            SimpleTimeOfTodayAfterRegex = GermanDateTimeExtractorConfiguration.SimpleTimeOfTodayAfterRegex;
+            SimpleTimeOfTodayBeforeRegex = GermanDateTimeExtractorConfiguration.SimpleTimeOfTodayBeforeRegex;
+            SpecificTimeOfDayRegex = GermanDateTimeExtractorConfiguration.SpecificTimeOfDayRegex;
+            SpecificEndOfRegex = GermanDateTimeExtractorConfiguration.SpecificEndOfRegex;
+            UnspecificEndOfRegex = GermanDateTimeExtractorConfiguration.UnspecificEndOfRegex;
+            UnitRegex = GermanTimeExtractorConfiguration.TimeUnitRegex;
+            DateNumberConnectorRegex = GermanDateTimeExtractorConfiguration.DateNumberConnectorRegex;
+
+            Numbers = config.Numbers;
+            CardinalExtractor = config.CardinalExtractor;
+            IntegerExtractor = config.IntegerExtractor;
+            NumberParser = config.NumberParser;
+            DurationExtractor = config.DurationExtractor;
+            DurationParser = config.DurationParser;
+            UnitMap = config.UnitMap;
+            UtilityConfiguration = config.UtilityConfiguration;
+        }
+
         public string TokenBeforeDate { get; }
 
         public string TokenBeforeTime { get; }
@@ -57,39 +89,6 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
-        public GermanDateTimeParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config)
-        {
-            TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
-            TokenBeforeTime = DateTimeDefinitions.TokenBeforeTime;
-
-            DateExtractor = config.DateExtractor;
-            TimeExtractor = config.TimeExtractor;
-            DateParser = config.DateParser;
-            TimeParser = config.TimeParser;
-
-            NowRegex = GermanDateTimeExtractorConfiguration.NowRegex;
-
-            AMTimeRegex = new Regex(DateTimeDefinitions.AMTimeRegex, RegexOptions.Singleline);
-            PMTimeRegex = new Regex(DateTimeDefinitions.PMTimeRegex, RegexOptions.Singleline);
-
-            SimpleTimeOfTodayAfterRegex = GermanDateTimeExtractorConfiguration.SimpleTimeOfTodayAfterRegex;
-            SimpleTimeOfTodayBeforeRegex = GermanDateTimeExtractorConfiguration.SimpleTimeOfTodayBeforeRegex;
-            SpecificTimeOfDayRegex = GermanDateTimeExtractorConfiguration.SpecificTimeOfDayRegex;
-            SpecificEndOfRegex = GermanDateTimeExtractorConfiguration.SpecificEndOfRegex;
-            UnspecificEndOfRegex = GermanDateTimeExtractorConfiguration.UnspecificEndOfRegex;
-            UnitRegex = GermanTimeExtractorConfiguration.TimeUnitRegex;
-            DateNumberConnectorRegex = GermanDateTimeExtractorConfiguration.DateNumberConnectorRegex;
-
-            Numbers = config.Numbers;
-            CardinalExtractor = config.CardinalExtractor;
-            IntegerExtractor = config.IntegerExtractor;
-            NumberParser = config.NumberParser;
-            DurationExtractor = config.DurationExtractor;
-            DurationParser = config.DurationParser;
-            UnitMap = config.UnitMap;
-            UtilityConfiguration = config.UtilityConfiguration;
-        }
-
         public int GetHour(string text, int hour)
         {
             var trimmedText = text.Trim().ToLowerInvariant();
@@ -102,13 +101,14 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             {
                 result += Constants.HalfDayHourCount;
             }
+
             return result;
         }
 
         public bool GetMatchedNowTimex(string text, out string timex)
         {
             var trimmedText = text.Trim().ToLowerInvariant();
-            if (trimmedText.EndsWith("jetzt") || trimmedText.Equals("momentan") || trimmedText.Equals("gerade") || trimmedText.Equals("aktuell") || 
+            if (trimmedText.EndsWith("jetzt") || trimmedText.Equals("momentan") || trimmedText.Equals("gerade") || trimmedText.Equals("aktuell") ||
                 trimmedText.Equals("im moment") || trimmedText.Equals("in diesem moment") || trimmedText.Equals("derzeit"))
             {
                 timex = "PRESENT_REF";

@@ -8,7 +8,7 @@ namespace Microsoft.Recognizers.Text.DateTime
     public class BaseSetParser : IDateTimeParser
     {
         public static readonly string ParserName = Constants.SYS_DATETIME_SET;
-        
+
         private readonly ISetParserConfiguration config;
 
         public BaseSetParser(ISetParserConfiguration configuration)
@@ -73,12 +73,12 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     innerResult.FutureResolution = new Dictionary<string, string>
                     {
-                        {TimeTypeConstants.SET, (string) innerResult.FutureValue}
+                        {TimeTypeConstants.SET, (string) innerResult.FutureValue},
                     };
 
                     innerResult.PastResolution = new Dictionary<string, string>
                     {
-                        {TimeTypeConstants.SET, (string) innerResult.PastValue}
+                        {TimeTypeConstants.SET, (string) innerResult.PastValue},
                     };
 
                     value = innerResult;
@@ -94,7 +94,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 Data = er.Data,
                 Value = value,
                 TimexStr = value == null ? "" : ((DateTimeResolutionResult) value).Timex,
-                ResolutionStr = ""
+                ResolutionStr = "",
             };
 
             return ret;

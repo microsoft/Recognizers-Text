@@ -10,7 +10,8 @@ namespace Microsoft.Recognizers.Text.Choice.Tests
         private const string TestInput = "true";
 
         private const string EnglishCulture = Culture.English;
-        //private const string SpanishCulture = Culture.Spanish;
+
+        // private const string SpanishCulture = Culture.Spanish;
         private const string InvalidCulture = "vo-id";
 
         private IModel controlModel;
@@ -90,7 +91,7 @@ namespace Microsoft.Recognizers.Text.Choice.Tests
         {
             Assert.ThrowsException<ArgumentOutOfRangeException>(() => new ChoiceRecognizer(EnglishCulture, -1));
         }
-        
+
         private void TestChoice(IModel testedModel, IModel controlModel, string source)
         {
             var expectedResults = controlModel.Parse(source);

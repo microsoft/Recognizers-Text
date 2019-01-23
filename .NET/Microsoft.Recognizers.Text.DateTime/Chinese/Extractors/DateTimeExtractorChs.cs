@@ -1,9 +1,9 @@
-﻿using System.Linq;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Linq;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Chinese;
+
 using DateObject = System.DateTime;
-using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
@@ -113,6 +113,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     i = j + 1;
                     continue;
                 }
+
                 i = j;
             }
 
@@ -175,6 +176,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     }
                 }
             }
+
             return ret;
         }
     }

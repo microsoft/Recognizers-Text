@@ -7,6 +7,7 @@ import com.microsoft.recognizers.text.datetime.Constants;
 import com.microsoft.recognizers.text.datetime.TimeTypeConstants;
 import com.microsoft.recognizers.text.datetime.parsers.config.IDateTimePeriodParserConfiguration;
 import com.microsoft.recognizers.text.datetime.parsers.config.MatchedTimeRangeResult;
+import com.microsoft.recognizers.text.datetime.utilities.ConditionalMatch;
 import com.microsoft.recognizers.text.datetime.utilities.DateTimeFormatUtil;
 import com.microsoft.recognizers.text.datetime.utilities.DateTimeResolutionResult;
 import com.microsoft.recognizers.text.datetime.utilities.DateUtil;
@@ -32,7 +33,7 @@ import org.javatuples.Pair;
 
 public class BaseDateTimePeriodParser implements IDateTimeParser {
 
-    private final IDateTimePeriodParserConfiguration config;
+    protected final IDateTimePeriodParserConfiguration config;
 
     public BaseDateTimePeriodParser(IDateTimePeriodParserConfiguration config) {
         this.config = config;
@@ -504,7 +505,7 @@ public class BaseDateTimePeriodParser implements IDateTimeParser {
     }
 
     // Parse specific TimeOfDay like "this night", "early morning", "late evening"
-    private DateTimeResolutionResult parseSpecificTimeOfDay(String text, LocalDateTime referenceDate) {
+    protected DateTimeResolutionResult parseSpecificTimeOfDay(String text, LocalDateTime referenceDate) {
         DateTimeResolutionResult result = new DateTimeResolutionResult();
         String trimmedText = text.trim().toLowerCase();
         String timeText = trimmedText;
@@ -1006,8 +1007,8 @@ public class BaseDateTimePeriodParser implements IDateTimeParser {
         text = text.trim();
 
         for (Pattern regex : beforeAfterRegexes) {
-            Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(regex, text)).findFirst();
-            if (match.isPresent() && match.get().length == text.length()) {
+            ConditionalMatch match = RegexExtension.matchExact(regex, text, true);
+            if (match.getSuccess()) {
                 return true;
             }
         }

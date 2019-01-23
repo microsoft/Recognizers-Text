@@ -3,7 +3,6 @@ using System.Collections.Immutable;
 using System.Globalization;
 
 using Microsoft.Recognizers.Definitions;
-using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.NumberWithUnit.Utilities;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit
@@ -14,8 +13,6 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
         IDictionary<string, long> CurrencyFractionNumMap { get; }
 
-        #region Language settings
-
         CultureInfo CultureInfo { get; }
 
         IParser InternalNumberParser { get; }
@@ -24,13 +21,21 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
         string ConnectorToken { get; }
 
-        #endregion
-
         void BindDictionary(IDictionary<string, string> dictionary);
     }
 
     public abstract class BaseNumberWithUnitParserConfiguration : INumberWithUnitParserConfiguration
     {
+        protected BaseNumberWithUnitParserConfiguration(CultureInfo ci)
+        {
+            this.CultureInfo = ci;
+            this.UnitMap = new Dictionary<string, string>();
+            this.CurrencyFractionNumMap = BaseCurrency.CurrencyFractionalRatios.ToImmutableDictionary();
+            this.CurrencyFractionMapping = BaseCurrency.CurrencyFractionMapping.ToImmutableDictionary();
+            this.CurrencyNameToIsoCodeMap = new Dictionary<string, string>();
+            this.CurrencyFractionCodeList = new Dictionary<string, string>();
+        }
+
         public IDictionary<string, string> UnitMap { get; }
 
         public IDictionary<string, long> CurrencyFractionNumMap { get; }
@@ -49,19 +54,9 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
         public IDictionary<string, string> CurrencyFractionCodeList { get; set; }
 
-        protected BaseNumberWithUnitParserConfiguration(CultureInfo ci)
-        {
-            this.CultureInfo = ci;
-            this.UnitMap = new Dictionary<string, string>();
-            this.CurrencyFractionNumMap = BaseCurrency.CurrencyFractionalRatios.ToImmutableDictionary();
-            this.CurrencyFractionMapping = BaseCurrency.CurrencyFractionMapping.ToImmutableDictionary();
-            this.CurrencyNameToIsoCodeMap = new Dictionary<string, string>();
-            this.CurrencyFractionCodeList = new Dictionary<string, string>();
-        }
-
         public void BindDictionary(IDictionary<string, string> dictionary)
         {
-           DictionaryUtils.BindDictionary(dictionary, UnitMap); 
+           DictionaryUtils.BindDictionary(dictionary, UnitMap);
         }
     }
 }

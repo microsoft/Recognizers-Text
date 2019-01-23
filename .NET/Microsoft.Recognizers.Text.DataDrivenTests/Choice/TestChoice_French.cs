@@ -17,7 +17,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests.Choice
         [TestInitialize]
         public void TestInitialize()
         {
-            base.TestSpecInitialize(TestResources);
+            TestSpecInitialize(TestResources);
         }
 
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "BooleanModel-French.cs", "BooleanModel-French#csv", DataAccessMethod.Sequential)]

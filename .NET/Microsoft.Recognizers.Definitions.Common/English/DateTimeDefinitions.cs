@@ -625,6 +625,7 @@ namespace Microsoft.Recognizers.Definitions.English
 		public static readonly Dictionary<string, int> SpecialDecadeCases = new Dictionary<string, int>
 		{
 			{ @"noughties", 2000 },
+			{ @"aughts", 2000 },
 			{ @"two thousands", 2000 }
 		};
 		public const string DefaultLanguageFallback = @"MDY";
@@ -640,6 +641,7 @@ namespace Microsoft.Recognizers.Definitions.English
 		public static readonly Dictionary<string, string> AmbiguityFiltersDict = new Dictionary<string, string>
 		{
 			{ @"\bmorning|afternoon|evening|night|day\b", @"\b(good\s+(morning|afternoon|evening|night|day))|(nighty\s+night)\b" },
+			{ @"\bnow\b", @"\b(^now,)|\b((is|are)\s+now\s+for|for\s+now)\b" },
 			{ @"\bmay\b", @"\b((^may i)|(i|you|he|she|we|they)\s+may|(may\s+((((also|not|(also not)|well)\s+)?(be|ask|contain|constitute|email|e-mail|take|have|result|involve|get|work|reply))|(or may not))))\b" }
 		};
 		public static readonly IList<string> MorningTermList = new List<string>

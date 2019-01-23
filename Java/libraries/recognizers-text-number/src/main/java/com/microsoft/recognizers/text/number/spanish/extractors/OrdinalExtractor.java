@@ -8,6 +8,7 @@ import com.microsoft.recognizers.text.utilities.RegExpUtility;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.regex.Pattern;
 
 public class OrdinalExtractor extends BaseNumberExtractor {
@@ -22,6 +23,21 @@ public class OrdinalExtractor extends BaseNumberExtractor {
     @Override
     protected String getExtractType() {
         return Constants.SYS_NUM_ORDINAL;
+    }
+
+    private static final ConcurrentHashMap<String, OrdinalExtractor> instances = new ConcurrentHashMap<>();
+
+    public static OrdinalExtractor getInstance() {
+        return getInstance("");
+    }
+
+    private static OrdinalExtractor getInstance(String placeholder) {
+        if (!instances.containsKey(placeholder)) {
+            OrdinalExtractor instance = new OrdinalExtractor();
+            instances.put(placeholder, instance);
+        }
+
+        return instances.get(placeholder);
     }
 
     public OrdinalExtractor() {

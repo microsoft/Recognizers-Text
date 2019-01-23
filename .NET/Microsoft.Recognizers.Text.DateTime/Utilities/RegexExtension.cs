@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Text.RegularExpressions;
+﻿using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
@@ -13,7 +10,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var match = regex.Match(text);
             var length = trim ? text.Trim().Length : text.Length;
 
-            return (match.Success && match.Length == length);
+            return match.Success && match.Length == length;
         }
 
         // We can't trim before match as we may use the match index later
@@ -22,14 +19,13 @@ namespace Microsoft.Recognizers.Text.DateTime
             var match = regex.Match(text);
             var length = trim ? text.Trim().Length : text.Length;
 
-            return new ConditionalMatch(match, (match.Success && match.Length == length));
+            return new ConditionalMatch(match, match.Success && match.Length == length);
         }
 
         // We can't trim before match as we may use the match index later
         public static ConditionalMatch MatchEnd(this Regex regex, string text, bool trim)
         {
-            var match = Regex.Match(text, regex.ToString(),
-                    RegexOptions.RightToLeft | regex.Options);
+            var match = Regex.Match(text, regex.ToString(), RegexOptions.RightToLeft | regex.Options);
             var strAfter = text.Substring(match.Index + match.Length);
 
             if (trim)
@@ -37,7 +33,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 strAfter = strAfter.Trim();
             }
 
-            return new ConditionalMatch(match, (match.Success && string.IsNullOrEmpty(strAfter)));
+            return new ConditionalMatch(match, match.Success && string.IsNullOrEmpty(strAfter));
         }
 
         // We can't trim before match as we may use the match index later
@@ -51,7 +47,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 strBefore = strBefore.Trim();
             }
 
-            return new ConditionalMatch(match, (match.Success && string.IsNullOrEmpty(strBefore)));
+            return new ConditionalMatch(match, match.Success && string.IsNullOrEmpty(strBefore));
         }
     }
 }

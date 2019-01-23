@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
-using System.Linq;
 using Microsoft.Recognizers.Definitions;
 
 namespace Microsoft.Recognizers.Text.Sequence.English
@@ -24,6 +23,7 @@ namespace Microsoft.Recognizers.Text.Sequence.English
                     }
                 }
             }
+
             return result;
         }
     }

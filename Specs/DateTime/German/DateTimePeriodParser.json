@@ -7,7 +7,7 @@
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "heute von fünf bis sieben ",
+        "Text": "heute von fünf bis sieben",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2016-11-07T05,2016-11-07T07,PT2H)",
@@ -21,7 +21,7 @@
           }
         },
         "Start": 8,
-        "Length": 26
+        "Length": 25
       }
     ]
   },
@@ -56,8 +56,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "Comment": "Space at the end",
-    "NotSupported": "dotnet, javascript, python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "22.4.2016 von 5 bis 6",
@@ -74,7 +73,7 @@
           }
         },
         "Start": 11,
-        "Length": 31
+        "Length": 21
       }
     ]
   },
@@ -86,7 +85,7 @@
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "Montag von fünf bis sieben ",
+        "Text": "Montag von fünf bis sieben",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2018-02-05T05,2018-02-05T07,PT2H)",
@@ -100,7 +99,7 @@
           }
         },
         "Start": 11,
-        "Length": 27
+        "Length": 26
       }
     ]
   },
@@ -112,7 +111,7 @@
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "nächsten Montag von 5 bis 7 ",
+        "Text": "nächsten Montag von 5 bis 7",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2018-02-12T05,2018-02-12T07,PT2H)",
@@ -126,7 +125,7 @@
           }
         },
         "Start": 8,
-        "Length": 28
+        "Length": 27
       }
     ]
   },
@@ -205,6 +204,58 @@
         },
         "Start": 21,
         "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Was kommt heute zur Primetime auf RTL.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-08T16:12:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "heute zur primetime",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "2016-11-08TNI",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 20:00:00",
+            "endDateTime": "2016-11-08 23:59:59"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-08 20:00:00",
+            "endDateTime": "2016-11-08 23:59:59"
+          }
+        },
+        "Start": 10,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Was kommt zur Primetime am Sonntag im Fernsehen.",
+    "Context": {
+      "ReferenceDateTime": "2018-12-18T16:12:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "zur primetime am sonntag",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "2018-12-23TNI",
+          "FutureResolution": {
+            "startDateTime": "2018-12-23 20:00:00",
+            "endDateTime": "2018-12-23 23:59:59"
+          },
+          "PastResolution": {
+            "startDateTime": "2018-12-23 20:00:00",
+            "endDateTime": "2018-12-23 23:59:59"
+          }
+        },
+        "Start": 10,
+        "Length": 24
       }
     ]
   },

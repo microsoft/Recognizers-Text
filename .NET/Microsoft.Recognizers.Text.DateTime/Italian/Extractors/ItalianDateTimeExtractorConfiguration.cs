@@ -1,17 +1,14 @@
 ﻿using System.Text.RegularExpressions;
-
+using Microsoft.Recognizers.Definitions.Italian;
 using Microsoft.Recognizers.Text.DateTime.Italian.Utilities;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
-using Microsoft.Recognizers.Definitions.Italian;
-using Microsoft.Recognizers.Text.Number;
-using Microsoft.Recognizers.Text.Number.Italian;
 
 namespace Microsoft.Recognizers.Text.DateTime.Italian
 {
     public class ItalianDateTimeExtractorConfiguration : BaseOptionsConfiguration, IDateTimeExtractorConfiguration
     {
-        public static readonly Regex PrepositionRegex = 
-          new Regex(  
+        public static readonly Regex PrepositionRegex =
+          new Regex(
             DateTimeDefinitions.PrepositionRegex, // à - time at which, en - length of time, dans - amount of time
             RegexOptions.Singleline);
 
@@ -20,12 +17,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
                 DateTimeDefinitions.NowRegex, // right now, as soon as possible, recently, previously
                 RegexOptions.Singleline);
 
-        public static readonly Regex SuffixRegex = 
+        public static readonly Regex SuffixRegex =
             new Regex(
                 DateTimeDefinitions.SuffixRegex, // in the evening, afternoon, morning, night
                 RegexOptions.Singleline);
 
-        public static readonly Regex TimeOfDayRegex = 
+        public static readonly Regex TimeOfDayRegex =
             new Regex(
                 DateTimeDefinitions.TimeOfDayRegex,
                 RegexOptions.Singleline);
@@ -37,13 +34,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public static readonly Regex TimeOfTodayAfterRegex =
              new Regex(
-                 DateTimeDefinitions.TimeOfTodayAfterRegex, 
+                 DateTimeDefinitions.TimeOfTodayAfterRegex,
                  RegexOptions.Singleline);
 
         public static readonly Regex TimeOfTodayBeforeRegex =
             new Regex(
-                DateTimeDefinitions.TimeOfTodayBeforeRegex, 
-                RegexOptions.Singleline); 
+                DateTimeDefinitions.TimeOfTodayBeforeRegex,
+                RegexOptions.Singleline);
 
         public static readonly Regex SimpleTimeOfTodayAfterRegex =
             new Regex(
@@ -55,7 +52,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
                 DateTimeDefinitions.SimpleTimeOfTodayBeforeRegex,
                 RegexOptions.Singleline);
 
-        public static readonly Regex SpecificEndOfRegex = 
+        public static readonly Regex SpecificEndOfRegex =
             new Regex(
                 DateTimeDefinitions.SpecificEndOfRegex,
                 RegexOptions.Singleline);
@@ -65,20 +62,22 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
                 DateTimeDefinitions.UnspecificEndOfRegex,
                 RegexOptions.Singleline);
 
-        public static readonly Regex UnitRegex = 
+        public static readonly Regex UnitRegex =
             new Regex(
                 DateTimeDefinitions.TimeUnitRegex,
                 RegexOptions.Singleline);
 
-        public static readonly Regex NumberAsTimeRegex = 
+        public static readonly Regex NumberAsTimeRegex =
             new Regex(
                 DateTimeDefinitions.NumberAsTimeRegex,
                 RegexOptions.Singleline);
 
-        public static readonly Regex DateNumberConnectorRegex = new Regex(DateTimeDefinitions.DateNumberConnectorRegex,
+        public static readonly Regex DateNumberConnectorRegex = new Regex(
+            DateTimeDefinitions.DateNumberConnectorRegex,
             RegexOptions.Singleline);
 
-        public ItalianDateTimeExtractorConfiguration(IOptionsConfiguration config) : base(config)
+        public ItalianDateTimeExtractorConfiguration(IOptionsConfiguration config)
+            : base(config)
         {
             IntegerExtractor = Number.Italian.IntegerExtractor.GetInstance();
             DatePointExtractor = new BaseDateExtractor(new ItalianDateExtractorConfiguration(this));
@@ -123,9 +122,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public bool IsConnector(string text)
         {
-            return (string.IsNullOrEmpty(text) || text.Equals(",") ||
+            return string.IsNullOrEmpty(text) || text.Equals(",") ||
                         PrepositionRegex.IsMatch(text) || text.Equals("t") || text.Equals("pour") ||
-                        text.Equals("vers"));
+                        text.Equals("vers");
         }
     }
 }

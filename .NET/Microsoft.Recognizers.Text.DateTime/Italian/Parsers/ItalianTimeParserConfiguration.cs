@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
-
 using Microsoft.Recognizers.Definitions.Italian;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
 
@@ -9,6 +8,17 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 {
     public class ItalianTimeParserConfiguration : BaseOptionsConfiguration, ITimeParserConfiguration
     {
+        public ItalianTimeParserConfiguration(ICommonDateTimeParserConfiguration config)
+            : base(config.Options)
+        {
+            TimeTokenPrefix = DateTimeDefinitions.TimeTokenPrefix;
+            AtRegex = ItalianTimeExtractorConfiguration.AtRegex;
+            TimeRegexes = ItalianTimeExtractorConfiguration.TimeRegexList;
+            UtilityConfiguration = config.UtilityConfiguration;
+            Numbers = config.Numbers;
+            TimeZoneParser = config.TimeZoneParser;
+        }
+
         public string TimeTokenPrefix { get; }
 
         public Regex AtRegex { get; }
@@ -21,22 +31,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public IDateTimeParser TimeZoneParser { get; }
 
-        public ItalianTimeParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config.Options)
-        {
-            TimeTokenPrefix = DateTimeDefinitions.TimeTokenPrefix; 
-            AtRegex = ItalianTimeExtractorConfiguration.AtRegex;
-            TimeRegexes = ItalianTimeExtractorConfiguration.TimeRegexList;
-            UtilityConfiguration = config.UtilityConfiguration;
-            Numbers = config.Numbers;
-            TimeZoneParser = config.TimeZoneParser;
-        }
-
         public void AdjustByPrefix(string prefix, ref int hour, ref int min, ref bool hasMin)
         {
             var deltaMin = 0;
             var trimedPrefix = prefix.Trim().ToLowerInvariant();
 
-            if (trimedPrefix.EndsWith("demie"))   // c'este 8 heures et demie, - "it's half past 8"
+            // c'este 8 heures et demie, - "it's half past 8"
+            if (trimedPrefix.EndsWith("demie"))
             {
                 deltaMin = 30;
             }
@@ -63,7 +64,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
                 }
             }
 
-            if (trimedPrefix.EndsWith("à")) // 'to' i.e 'one to five' = 'un à cinq'
+            // 'to' i.e 'one to five' = 'un à cinq'
+            if (trimedPrefix.EndsWith("à"))
             {
                 deltaMin = -deltaMin;
             }
@@ -74,6 +76,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
                 min += 60;
                 hour -= 1;
             }
+
             hasMin = true;
         }
 
@@ -88,23 +91,25 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
                 var oclockStr = match.Groups["heures"].Value;
                 if (string.IsNullOrEmpty(oclockStr))
                 {
-                    var amStr = match.Groups["am"].Value;
-                    if (!string.IsNullOrEmpty(amStr))
+                    var matchAmStr = match.Groups["am"].Value;
+                    if (!string.IsNullOrEmpty(matchAmStr))
                     {
                         if (hour >= 12)
                         {
                             deltaHour = -12;
                         }
+
                         hasAm = true;
                     }
 
-                    var pmStr = match.Groups["pm"].Value;
-                    if (!string.IsNullOrEmpty(pmStr))
+                    var matchPmStr = match.Groups["pm"].Value;
+                    if (!string.IsNullOrEmpty(matchPmStr))
                     {
                         if (hour < 12)
                         {
                             deltaHour = 12;
                         }
+
                         hasPm = true;
                     }
                 }

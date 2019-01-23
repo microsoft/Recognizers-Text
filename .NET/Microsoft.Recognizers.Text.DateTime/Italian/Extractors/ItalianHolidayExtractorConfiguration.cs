@@ -7,7 +7,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 {
     public class ItalianHolidayExtractorConfiguration : BaseOptionsConfiguration, IHolidayExtractorConfiguration
     {
-        public static readonly Regex YearRegex = 
+        public static readonly Regex YearRegex =
             new Regex(
                 DateTimeDefinitions.YearRegex,
                 RegexOptions.Singleline);
@@ -28,20 +28,21 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
                 RegexOptions.Singleline);
 
         // added to include more options, "fete des meres" mothers day, etc
-        //public static readonly Regex H4 =
+        // public static readonly Regex H4 =
         //    new Regex(
         //        DateTimeDefinitions.HolidayRegex4,
         //        RegexOptions.Singleline);
-
         public static readonly Regex[] HolidayRegexList =
         {
             H1,
             H2,
             H3,
-            //H4
+
+            // H4
         };
 
-        public ItalianHolidayExtractorConfiguration(IOptionsConfiguration config) : base(config)
+        public ItalianHolidayExtractorConfiguration(IOptionsConfiguration config)
+            : base(config)
         {
         }
 

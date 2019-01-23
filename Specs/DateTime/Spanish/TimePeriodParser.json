@@ -350,88 +350,15 @@
     ]
   },
   {
-    "Input": "Nos veamos a la madrugada",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "Results": [
-      {
-        "Text": "madrugada",
-        "Type": "timerange",
-        "Value": {
-          "Timex": "TDA",
-          "FutureResolution": {
-            "startTime": "04:00:00",
-            "endTime": "08:00:00"
-          },
-          "PastResolution": {
-            "startTime": "04:00:00",
-            "endTime": "08:00:00"
-          }
-        },
-        "Start": 16,
-        "Length": 9
-      }
-    ]
-  },
-  {
-    "Input": "Nos veamos a la mañana",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "Results": [
-      {
-        "Text": "mañana",
-        "Type": "timerange",
-        "Value": {
-          "Timex": "TMO",
-          "FutureResolution": {
-            "startTime": "08:00:00",
-            "endTime": "12:00:00"
-          },
-          "PastResolution": {
-            "startTime": "08:00:00",
-            "endTime": "12:00:00"
-          }
-        },
-        "Start": 16,
-        "Length": 6
-      }
-    ]
-  },
-  {
-    "Input": "No vemos pasado el mediodia",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "Results": [
-      {
-        "Text": "pasado el mediodia",
-        "Type": "timerange",
-        "Value": {
-          "Timex": "TAF",
-          "FutureResolution": {
-            "startTime": "12:00:00",
-            "endTime": "16:00:00"
-          },
-          "PastResolution": {
-            "startTime": "12:00:00",
-            "endTime": "16:00:00"
-          }
-        },
-        "Start": 9,
-        "Length": 18
-      }
-    ]
-  },
-  {
     "Input": "Nos vemos en la noche",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "noche",
+        "Text": "en la noche",
         "Type": "timerange",
         "Value": {
           "Timex": "TNI",
@@ -450,112 +377,12 @@
     ]
   },
   {
-    "Input": "Nos vemos a la tarde",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "Results": [
-      {
-        "Text": "tarde",
-        "Type": "timerange",
-        "Value": {
-          "Timex": "TEV",
-          "FutureResolution": {
-            "startTime": "16:00:00",
-            "endTime": "20:00:00"
-          },
-          "PastResolution": {
-            "startTime": "16:00:00",
-            "endTime": "20:00:00"
-          }
-        },
-        "Start": 15,
-        "Length": 5
-      }
-    ]
-  },
-  {
-    "Input": "Nos vemos a la madrugada",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "Results": [
-      {
-        "Text": "madrugada",
-        "Type": "timerange",
-        "Value": {
-          "Timex": "TDA",
-          "FutureResolution": {
-            "startTime": "04:00:00",
-            "endTime": "08:00:00"
-          },
-          "PastResolution": {
-            "startTime": "04:00:00",
-            "endTime": "08:00:00"
-          }
-        },
-        "Start": 15,
-        "Length": 9
-      }
-    ]
-  },
-  {
-    "Input": "Nos vemos a la mañana",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "Results": [
-      {
-        "Text": "mañana",
-        "Type": "timerange",
-        "Value": {
-          "Timex": "TMO",
-          "FutureResolution": {
-            "startTime": "08:00:00",
-            "endTime": "12:00:00"
-          },
-          "PastResolution": {
-            "startTime": "08:00:00",
-            "endTime": "12:00:00"
-          }
-        },
-        "Start": 15,
-        "Length": 6
-      }
-    ]
-  },
-  {
-    "Input": "Nos vemos pasado el mediodia",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "Results": [
-      {
-        "Text": "pasado el mediodia",
-        "Type": "timerange",
-        "Value": {
-          "Timex": "TAF",
-          "FutureResolution": {
-            "startTime": "12:00:00",
-            "endTime": "16:00:00"
-          },
-          "PastResolution": {
-            "startTime": "12:00:00",
-            "endTime": "16:00:00"
-          }
-        },
-        "Start": 10,
-        "Length": 18
-      }
-    ]
-  },
-  {
     "Input": "Estaré afuera de 5 a 6 pm",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "de 5 a 6 pm",
@@ -581,8 +408,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "de 5 a 6 p. m.",
@@ -608,8 +435,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "de las 5 a las siete de la mañana",
@@ -635,8 +462,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "de 5 a 6 de la tarde",
@@ -662,8 +489,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "entre 5 y 6 p. m.",
@@ -689,8 +516,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "entre 5 pm y 6 pm",
@@ -716,8 +543,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "entre las 5 y las 6 de la tarde",
@@ -743,8 +570,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "de las 1 am a las 5 pm",
@@ -770,8 +597,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "desde las 4 hasta las 5 p. m.",
@@ -797,8 +624,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "de las 4 a las 5 pm",
@@ -824,8 +651,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "de 4:00 a las 7",
@@ -851,8 +678,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "4 pm-5 pm",
@@ -878,8 +705,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "4 pm - 5 pm",
@@ -905,8 +732,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "desde las 3 de la mañana hasta las 5 pm",
@@ -932,8 +759,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "entre las 3 de la mañana y las 5 pm",
@@ -959,8 +786,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "entre 4 pm y 5 pm",
@@ -986,8 +813,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "por la mañana",
@@ -1013,8 +840,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "por la tarde",
@@ -1040,8 +867,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "por la noche",
@@ -1067,8 +894,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "primeras horas de la mañana",
@@ -1094,8 +921,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "últimas horas de la mañana",
@@ -1121,8 +948,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "primeras horas de la tarde",
@@ -1148,8 +975,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "últimas horas de la tarde",
@@ -1175,8 +1002,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "primeras horas de la noche",
@@ -1202,8 +1029,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "últimas horas de la noche",
@@ -1229,8 +1056,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "altas horas de la noche",
@@ -1256,8 +1083,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "desde las 1 hasta las 4 p. m.",
@@ -1283,8 +1110,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "de las 1:30 a las 4 pm",
@@ -1310,8 +1137,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "en la mañana",
@@ -1337,8 +1164,8 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "desde 1:30 hasta 3:00 de la mañana",
@@ -1364,8 +1191,8 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "de 11 am a 3",
@@ -1391,8 +1218,8 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "de 11 p. m. a 3",
@@ -1418,8 +1245,8 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "de 11:01 pm a 11",
@@ -1445,8 +1272,8 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "desde las 11:01 a. m. hasta las 11",
@@ -1472,11 +1299,11 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "11:00-11:50 a. m.",
+        "Text": "de 11:00-11:50 a. m.",
         "Type": "timerange",
         "Value": {
           "Timex": "(T11,T11:50,PT50M)",
@@ -1489,8 +1316,8 @@
             "endTime": "11:50:00"
           }
         },
-        "Start": 24,
-        "Length": 17
+        "Start": 21,
+        "Length": 20
       }
     ]
   },
@@ -1499,11 +1326,11 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "1:30-3:30 pm",
+        "Text": "de 1:30-3:30 pm",
         "Type": "timerange",
         "Value": {
           "Timex": "(T13:30,T15:30,PT2H)",
@@ -1516,8 +1343,8 @@
             "endTime": "15:30:00"
           }
         },
-        "Start": 24,
-        "Length": 12
+        "Start": 21,
+        "Length": 15
       }
     ]
   },
@@ -1526,11 +1353,11 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "1:30-3:30 de la tarde",
+        "Text": "de 1:30-3:30 de la tarde",
         "Type": "timerange",
         "Value": {
           "Timex": "(T13:30,T15:30,PT2H)",
@@ -1543,8 +1370,8 @@
             "endTime": "15:30:00"
           }
         },
-        "Start": 24,
-        "Length": 21
+        "Start": 21,
+        "Length": 24
       }
     ]
   },
@@ -1553,11 +1380,11 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "1.30-3.30 p. m.",
+        "Text": "de 1.30-3.30 p. m.",
         "Type": "timerange",
         "Value": {
           "Timex": "(T13:30,T15:30,PT2H)",
@@ -1570,8 +1397,8 @@
             "endTime": "15:30:00"
           }
         },
-        "Start": 24,
-        "Length": 15
+        "Start": 21,
+        "Length": 18
       }
     ]
   },
@@ -1580,8 +1407,8 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "de las 3 pm a las 3:30 pm",
@@ -1607,8 +1434,8 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "de 0:01 am a 1 pm",
@@ -1634,11 +1461,11 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "0:01-1:00 de la madrugada",
+        "Text": "desde 0:01-1:00 de la madrugada",
         "Type": "timerange",
         "Value": {
           "Timex": "(T00:01,T01,PT59M)",
@@ -1651,8 +1478,8 @@
             "endTime": "01:00:00"
           }
         },
-        "Start": 23,
-        "Length": 25
+        "Start": 20,
+        "Length": 31
       }
     ]
   },
@@ -1661,8 +1488,8 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "de 3 a 3:30",
@@ -1688,8 +1515,8 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "de las 1:30 a las 3",
@@ -1715,8 +1542,8 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "entre 1:30 y 3 p. m.",
@@ -1742,8 +1569,8 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "de 11 a 3",
@@ -1769,8 +1596,8 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "desde las 11 hasta las 11:50 del mediodía",
@@ -1796,8 +1623,8 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "desde las 11 hasta las 11:50 de la mañana",
@@ -1823,8 +1650,8 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "de 11 a 3 de la madrugada",
@@ -1850,11 +1677,11 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "10:00-11:00 a. m.",
+        "Text": "de 10:00-11:00 a. m.",
         "Type": "timerange",
         "Value": {
           "Timex": "(T10,T11,PT1H)",
@@ -1867,8 +1694,8 @@
             "endTime": "11:00:00"
           }
         },
-        "Start": 24,
-        "Length": 17
+        "Start": 21,
+        "Length": 20
       }
     ]
   },
@@ -1877,11 +1704,11 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "23:00-3:00",
+        "Text": "de 23:00-3:00",
         "Type": "timerange",
         "Value": {
           "Timex": "(T23,T03,PT4H)",
@@ -1894,8 +1721,8 @@
             "endTime": "03:00:00"
           }
         },
-        "Start": 24,
-        "Length": 10
+        "Start": 21,
+        "Length": 13
       }
     ]
   },
@@ -1904,11 +1731,11 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "23.00-3.00",
+        "Text": "de 23.00-3.00",
         "Type": "timerange",
         "Value": {
           "Timex": "(T23,T03,PT4H)",
@@ -1921,8 +1748,8 @@
             "endTime": "03:00:00"
           }
         },
-        "Start": 24,
-        "Length": 10
+        "Start": 21,
+        "Length": 13
       }
     ]
   },
@@ -1931,8 +1758,8 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "de las 23 h a las 3 h",
@@ -1958,8 +1785,8 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "de las 23 h a las 15 h",
@@ -1985,11 +1812,11 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "23:00-15:00",
+        "Text": "de 23:00-15:00",
         "Type": "timerange",
         "Value": {
           "Timex": "(T23,T15,PT16H)",
@@ -2002,8 +1829,8 @@
             "endTime": "15:00:00"
           }
         },
-        "Start": 24,
-        "Length": 11
+        "Start": 21,
+        "Length": 14
       }
     ]
   },
@@ -2012,8 +1839,8 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "entre 10 y 11:30",
@@ -2039,8 +1866,8 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "entre las 10:10 am y las 12:50",
@@ -2066,8 +1893,8 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "entre las 22.10 h y las 3 h",
@@ -2093,8 +1920,8 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "de las 10.10 pm a las 10",
@@ -2120,8 +1947,8 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "de las 10:30 a. m. a las 23 h",
@@ -2147,8 +1974,8 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "horas laborales",

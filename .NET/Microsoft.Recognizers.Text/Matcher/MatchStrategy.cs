@@ -1,12 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Microsoft.Recognizers.Text.Matcher
+﻿namespace Microsoft.Recognizers.Text.Matcher
 {
     public enum MatchStrategy
     {
+        /// <summary>
+        /// AcAtomaton
+        /// </summary>
         AcAutomaton,
-        TrieTree
+
+        /// <summary>
+        /// TrieTree
+        /// </summary>
+        TrieTree,
     }
 }

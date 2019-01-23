@@ -15,7 +15,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
                 obj.Now = true;
             }
             else if (timex.StartsWith("P"))
-            { // duration 
+            { // duration
                 ExtractDuration(timex, obj);
             }
             else if (timex.StartsWith("(") && timex.EndsWith(")"))
@@ -64,6 +64,5 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
                 obj.AssignProperties(extracted);
             }
         }
-
     }
 }

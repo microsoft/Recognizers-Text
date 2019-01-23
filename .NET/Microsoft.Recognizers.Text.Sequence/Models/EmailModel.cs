@@ -2,7 +2,8 @@
 {
     public class EmailModel : AbstractSequenceModel
     {
-        public EmailModel(IParser parser, IExtractor extractor) : base(parser, extractor)
+        public EmailModel(IParser parser, IExtractor extractor)
+            : base(parser, extractor)
         {
         }
 

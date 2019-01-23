@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Chinese;
+
 using DateObject = System.DateTime;
-using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
@@ -93,6 +93,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     ret.Add(new Token(match.Index, match.Index + match.Length + (er.Length ?? 0)));
                 }
             }
+
             return ret;
         }
 
@@ -109,6 +110,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     ret.Add(new Token(match.Index, match.Index + match.Length + (er.Length ?? 0)));
                 }
             }
+
             return ret;
         }
 
@@ -125,6 +127,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     ret.Add(new Token(match.Index, match.Index + match.Length + (er.Length ?? 0)));
                 }
             }
+
             return ret;
         }
     }

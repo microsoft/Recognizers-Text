@@ -10,7 +10,8 @@ namespace Microsoft.Recognizers.Text.Number.Japanese
 {
     public class JapaneseNumberParserConfiguration : INumberParserConfiguration, ICJKNumberParserConfiguration
     {
-        public JapaneseNumberParserConfiguration() : this(new CultureInfo(Culture.Japanese))
+        public JapaneseNumberParserConfiguration()
+            : this(new CultureInfo(Culture.Japanese))
         {
         }
 

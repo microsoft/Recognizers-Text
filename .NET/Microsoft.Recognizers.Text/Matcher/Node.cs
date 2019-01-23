@@ -5,9 +5,20 @@ namespace Microsoft.Recognizers.Text.Matcher
 {
     public class Node<T>
     {
+        public bool End => Values != null && Values.Any();
+
+        public HashSet<string> Values { get; set; } = null;
+
+        // Set Default Children to null to avoid instantiating empty dictionaries
+        public Dictionary<T, Node<T>> Children { get; set; } = null;
+
         public Node<T> this[T c]
         {
-            get { return Children != null && Children.ContainsKey(c) ? Children[c] : null; }
+            get
+            {
+                return Children != null && Children.ContainsKey(c) ? Children[c] : null;
+            }
+
             set
             {
                 if (Children == null)
@@ -23,13 +34,6 @@ namespace Microsoft.Recognizers.Text.Matcher
         {
             return Children?.Values.GetEnumerator();
         }
-
-        public bool End { get { return Values != null && Values.Any(); } }
-
-        public HashSet<string> Values { get; set; } = null;
-
-        // Set Default Children to null to avoid instantiating empty dictionaries
-        public Dictionary<T, Node<T>> Children { get; set; } = null;
 
         public void AddValue(string value)
         {

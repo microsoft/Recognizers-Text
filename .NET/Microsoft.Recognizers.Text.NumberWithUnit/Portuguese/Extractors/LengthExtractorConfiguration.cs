@@ -7,9 +7,19 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Portuguese
 {
     public class LengthExtractorConfiguration : PortugueseNumberWithUnitExtractorConfiguration
     {
-        public LengthExtractorConfiguration() : base(new CultureInfo(Culture.Portuguese)) { }
+        public static readonly ImmutableDictionary<string, string> LengthSuffixList = NumbersWithUnitDefinitions.LengthSuffixList.ToImmutableDictionary();
 
-        public LengthExtractorConfiguration(CultureInfo ci) : base(ci) { }
+        private static readonly ImmutableList<string> AmbiguousValues = NumbersWithUnitDefinitions.AmbiguousLengthUnitList.ToImmutableList();
+
+        public LengthExtractorConfiguration()
+               : base(new CultureInfo(Culture.Portuguese))
+        {
+        }
+
+        public LengthExtractorConfiguration(CultureInfo ci)
+               : base(ci)
+        {
+        }
 
         public override ImmutableDictionary<string, string> SuffixList => LengthSuffixList;
 
@@ -18,10 +28,5 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Portuguese
         public override ImmutableList<string> AmbiguousUnitList => AmbiguousValues;
 
         public override string ExtractType => Constants.SYS_UNIT_LENGTH;
-
-        public static readonly ImmutableDictionary<string, string> LengthSuffixList = NumbersWithUnitDefinitions.LengthSuffixList.ToImmutableDictionary();
-
-        private static readonly ImmutableList<string> AmbiguousValues = NumbersWithUnitDefinitions.AmbiguousLengthUnitList.ToImmutableList();
-
     }
 }

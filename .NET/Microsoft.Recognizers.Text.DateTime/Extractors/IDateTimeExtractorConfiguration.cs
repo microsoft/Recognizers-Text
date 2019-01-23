@@ -1,6 +1,5 @@
 ﻿using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
-using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
@@ -38,8 +37,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         IExtractor IntegerExtractor { get; }
 
-        bool IsConnector(string text);
-
         IDateTimeUtilityConfiguration UtilityConfiguration { get; }
+
+        bool IsConnector(string text);
     }
 }

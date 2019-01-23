@@ -1,7 +1,6 @@
-﻿using System.Text.RegularExpressions;
-
+﻿using System.Collections.Immutable;
+using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Spanish;
-using System.Collections.Immutable;
 
 namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
@@ -9,12 +8,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
     {
         public static readonly Regex UnitRegex = new Regex(DateTimeDefinitions.UnitRegex, RegexOptions.Singleline);
 
-        //TODO: improve Spanish the SuffixAndRegex
+        // TODO: improve Spanish the SuffixAndRegex
         public static readonly Regex SuffixAndRegex = new Regex(DateTimeDefinitions.SuffixAndRegex, RegexOptions.Singleline);
         public static readonly Regex FollowedUnit = new Regex(DateTimeDefinitions.FollowedUnit, RegexOptions.Singleline);
         public static readonly Regex NumberCombinedWithUnit = new Regex(DateTimeDefinitions.DurationNumberCombinedWithUnit, RegexOptions.Singleline);
 
-        //TODO: add half in AnUnitRegex
+        // TODO: add half in AnUnitRegex
         public static readonly Regex AnUnitRegex = new Regex(DateTimeDefinitions.AnUnitRegex, RegexOptions.Singleline);
         public static readonly Regex DuringRegex = new Regex(DateTimeDefinitions.DuringRegex, RegexOptions.Singleline);
         public static readonly Regex AllRegex = new Regex(DateTimeDefinitions.AllRegex, RegexOptions.Singleline);
@@ -37,8 +36,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public static readonly Regex LessThanRegex =
             new Regex(DateTimeDefinitions.LessThanRegex, RegexOptions.Singleline);
 
-
-        public SpanishDurationExtractorConfiguration(IOptionsConfiguration config) : base(config)
+        public SpanishDurationExtractorConfiguration(IOptionsConfiguration config)
+            : base(config)
         {
             CardinalExtractor = Number.Spanish.CardinalExtractor.GetInstance();
             UnitMap = DateTimeDefinitions.UnitMap.ToImmutableDictionary();

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace Microsoft.Recognizers.Text.Matcher
 {
@@ -60,30 +59,30 @@ namespace Microsoft.Recognizers.Text.Matcher
         // Check the character is Chinese by the unicode range (CJK Unified Ideographs, CJK Unified Ideographs Extension A)
         protected bool IsChinese(char c)
         {
-            UInt16 uc = (UInt16) c;
+            ushort uc = (ushort)c;
 
-            return (uc >= (UInt16)0x4E00 && uc <= (UInt16)0x9FBF) || (uc >= (UInt16)0x3400 && uc <= (UInt16)0x4DBF);
+            return (uc >= (ushort)0x4E00 && uc <= (ushort)0x9FBF) || (uc >= (ushort)0x3400 && uc <= (ushort)0x4DBF);
         }
 
         // Check the character is Japanese by the unicode range (Hiragana, Katakana, Katakana Pinyin)
         protected bool IsJapanese(char c)
         {
-            UInt16 uc = (UInt16) c;
+            ushort uc = (ushort)c;
 
-            return ((uc >= (UInt16)0x3040 && uc <= (UInt16)0x309F) || 
-                (uc >= (UInt16)0x30A0 && uc <= (UInt16)0x30FF) || 
-                (uc >= (UInt16)0xFF66 && uc <= (UInt16)0xFF9D));
+            return (uc >= 0x3040 && uc <= 0x309F) ||
+                (uc >= 0x30A0 && uc <= (ushort)0x30FF) ||
+                (uc >= (ushort)0xFF66 && uc <= (ushort)0xFF9D);
         }
 
         // Check the character is Korean by the unicode range (HangulSyllables, Hangul Jamo, Hangul Compatibility Jamo, Halfwidth Hangul Jamo)
         protected bool IsKorean(char c)
         {
-            UInt16 uc = (UInt16) c;
+            ushort uc = (ushort)c;
 
-            return ((uc >= (UInt16)0xAC00 && uc <= (UInt16)0xD7AF) || 
-                (uc >= (UInt16)0x1100 && uc <= (UInt16)0x11FF) || 
-                (uc >= (UInt16)0x3130 && uc <= (UInt16)0x318F) ||
-                (uc >= (UInt16)0xFFB0 && uc <= (UInt16)0xFFDC));
+            return (uc >= (ushort)0xAC00 && uc <= (ushort)0xD7AF) ||
+                (uc >= (ushort)0x1100 && uc <= (ushort)0x11FF) ||
+                (uc >= (ushort)0x3130 && uc <= (ushort)0x318F) ||
+                (uc >= (ushort)0xFFB0 && uc <= (ushort)0xFFDC);
         }
 
         // Check the character is Chinese/Japanese/Korean.

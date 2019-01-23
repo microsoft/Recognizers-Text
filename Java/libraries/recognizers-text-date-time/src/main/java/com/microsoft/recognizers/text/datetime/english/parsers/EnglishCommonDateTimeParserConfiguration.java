@@ -44,8 +44,6 @@ import java.util.regex.Pattern;
 
 public class EnglishCommonDateTimeParserConfiguration extends BaseDateParserConfiguration implements ICommonDateTimeParserConfiguration {
 
-    public static final Pattern AmbiguousMonthP0Regex = RegExpUtility.getSafeRegExp(EnglishDateTime.AmbiguousMonthP0Regex);
-
     private final IDateTimeUtilityConfiguration utilityConfiguration;
 
     private final ImmutableMap<String, String> unitMap;
@@ -223,11 +221,6 @@ public class EnglishCommonDateTimeParserConfiguration extends BaseDateParserConf
     @Override
     public IDateTimeParser getTimeZoneParser() {
         return timeZoneParser;
-    }
-
-    @Override
-    public Pattern getAmbiguousMonthP0Regex() {
-        return AmbiguousMonthP0Regex;
     }
 
     @Override

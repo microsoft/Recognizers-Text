@@ -9,6 +9,9 @@ module.exports = function (describe, specs) {
         describe(`${suite.config.type} - ${suite.config.language} - ${suite.config.subType} -`, it => {
             suite.specs.forEach(testCase => {
                 var caseName = `"${testCase.Input}"`;
+                if(suite.config.type === "DateTime" && testCase.Context){
+                    caseName += ` - "${testCase.Context.ReferenceDateTime}"`;
+                }   
 
                 // Not Supported by Design - right now we don't care about implementing it
                 var notSupportedByDesign = (testCase.NotSupportedByDesign || '').split(',').map(s => s.trim());

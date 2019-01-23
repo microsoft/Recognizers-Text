@@ -4,6 +4,8 @@ import com.microsoft.recognizers.text.datetime.DateTimeOptions;
 import com.microsoft.recognizers.text.datetime.config.BaseOptionsConfiguration;
 import com.microsoft.recognizers.text.datetime.extractors.config.ITimeZoneExtractorConfiguration;
 import com.microsoft.recognizers.text.datetime.resources.EnglishTimeZone;
+import com.microsoft.recognizers.text.matcher.MatchStrategy;
+import com.microsoft.recognizers.text.matcher.NumberWithUnitTokenizer;
 import com.microsoft.recognizers.text.matcher.StringMatcher;
 import com.microsoft.recognizers.text.utilities.QueryProcessor;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
@@ -17,19 +19,11 @@ public class EnglishTimeZoneExtractorConfiguration extends BaseOptionsConfigurat
 
     // These regexes do need to be case insensitive for them to work correctly
     public static final Pattern DirectUtcRegex = RegExpUtility.getSafeRegExp(EnglishTimeZone.DirectUtcRegex, Pattern.CASE_INSENSITIVE);
-    public static final Pattern AbbreviationRegex = RegExpUtility.getSafeRegExp(EnglishTimeZone.AbbreviationsRegex, Pattern.CASE_INSENSITIVE);
-    public static final Pattern StandardTimeRegex = RegExpUtility.getSafeRegExp(EnglishTimeZone.FullNameRegex, Pattern.CASE_INSENSITIVE);
+    public static final List<String> AbbreviationsList = EnglishTimeZone.AbbreviationsList;
+    public static final List<String> FullNameList = EnglishTimeZone.FullNameList;
     public static final Pattern LocationTimeSuffixRegex = RegExpUtility.getSafeRegExp(EnglishTimeZone.LocationTimeSuffixRegex, Pattern.CASE_INSENSITIVE);
-
-    public static final Iterable<Pattern> TimeZoneRegexList = new ArrayList<Pattern>() {
-        {
-            add(DirectUtcRegex);
-            add(AbbreviationRegex);
-            add(StandardTimeRegex);
-        }
-    };
-
     public static final StringMatcher LocationMatcher = new StringMatcher();
+    public static final StringMatcher TimeZoneMatcher = buildMatcherFromLists(AbbreviationsList, FullNameList);
 
     public static final List<String> AmbiguousTimezoneList = EnglishTimeZone.AmbiguousTimezoneList;
 
@@ -49,9 +43,32 @@ public class EnglishTimeZoneExtractorConfiguration extends BaseOptionsConfigurat
         }
     }
 
+    protected static StringMatcher buildMatcherFromLists(List<String>...collections) {
+        StringMatcher matcher = new StringMatcher(MatchStrategy.TrieTree, new NumberWithUnitTokenizer());
+        List<String> matcherList = new ArrayList<String>();
+
+        for (List<String> collection : collections) {
+            for (String item : collection) {
+                matcherList.add(item.toLowerCase());
+            }
+        }
+
+        matcherList.stream().forEach(
+            item -> {
+                if (!matcherList.contains(item)) {
+                    matcherList.add(item);
+                }
+            }
+        );
+        
+        matcher.init(matcherList);
+
+        return matcher;
+    }
+
     @Override
-    public Iterable<Pattern> getTimeZoneRegexes() {
-        return TimeZoneRegexList;
+    public Pattern getDirectUtcRegex() {
+        return DirectUtcRegex;
     }
 
     @Override
@@ -62,6 +79,11 @@ public class EnglishTimeZoneExtractorConfiguration extends BaseOptionsConfigurat
     @Override
     public StringMatcher getLocationMatcher() {
         return LocationMatcher;
+    }
+
+    @Override
+    public StringMatcher getTimeZoneMatcher() {
+        return TimeZoneMatcher;
     }
 
     @Override

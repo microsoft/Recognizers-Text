@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace Microsoft.Recognizers.Text.Matcher
 {
     public class NumberWithUnitTokenizer : SimpleTokenizer
     {
-        private static HashSet<char> SpecialTokenCharacters = new HashSet<Char> { '$' };
+        private static HashSet<char> specialTokenCharacters = new HashSet<char> { '$' };
 
         /* The main difference between this strategy and SimpleTokenizer is for cases like
          * 'Bob's $ 100 cash'. 's' and '$' are independent tokens in SimpleTokenizer.
@@ -37,7 +36,7 @@ namespace Microsoft.Recognizers.Text.Matcher
                         inToken = false;
                     }
                 }
-                else if ((!SpecialTokenCharacters.Contains(c) && !char.IsLetterOrDigit(c)) || IsChinese(c) || IsJapanese(c))
+                else if ((!specialTokenCharacters.Contains(c) && !char.IsLetterOrDigit(c)) || IsChinese(c) || IsJapanese(c))
                 {
                     // Non-splittable currency units (as "$") are treated as regular letters. For instance, 'us$' should be a single token
                     if (inToken)
@@ -86,7 +85,7 @@ namespace Microsoft.Recognizers.Text.Matcher
             }
 
             // Non-splittable currency units can't be mixed with digits. For example, '$100' or '100$' will be tokenized to '$' and '100', '1$50' will be tokenized to '1', '$', and '50'
-            if ((char.IsDigit(curChar) && SpecialTokenCharacters.Contains(preChar)) || (SpecialTokenCharacters.Contains(curChar) && char.IsDigit(preChar)))
+            if ((char.IsDigit(curChar) && specialTokenCharacters.Contains(preChar)) || (specialTokenCharacters.Contains(curChar) && char.IsDigit(preChar)))
             {
                 return true;
             }

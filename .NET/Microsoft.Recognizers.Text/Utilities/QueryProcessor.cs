@@ -1,4 +1,4 @@
-using System.Globalization;
+﻿using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -7,9 +7,12 @@ namespace Microsoft.Recognizers.Text.Utilities
 {
     public static class QueryProcessor
     {
+        private static readonly string Expression = @"(?<=(\s|\d))(kB|K[Bb]|K|M[Bb]|M|G[Bb]|G|B)\b";
+
+        private static readonly Regex SpecialTokensRegex = new Regex(Expression, RegexOptions.Compiled);
+
         public static string Preprocess(string query, bool caseSensitive = false, bool recode = true)
         {
-
             if (recode)
             {
                 query = query.Replace("０", "0");
@@ -38,22 +41,11 @@ namespace Microsoft.Recognizers.Text.Utilities
                 query = query.Replace("、", ",");
             }
 
-            query = caseSensitive ? 
-                ToLowerTermSensitive(query) : 
+            query = caseSensitive ?
+                ToLowerTermSensitive(query) :
                 query.ToLowerInvariant();
 
             return query;
-        }
-
-        private static readonly string Expression = @"(?<=(\s|\d))(kB|K[Bb]|K|M[Bb]|M|G[Bb]|G|B)\b";
-        private static readonly Regex SpecialTokensRegex = new Regex(Expression, RegexOptions.Compiled);
-
-        private static void ReApplyValue(int idx, ref StringBuilder outString, string value)
-        {
-            for (int i = 0; i < value.Length; ++i)
-            {
-                outString[idx + i] = value[i];
-            }
         }
 
         public static string ToLowerTermSensitive(string input)
@@ -87,11 +79,19 @@ namespace Microsoft.Recognizers.Text.Utilities
                 where uc != UnicodeCategory.NonSpacingMark
                 select c;
 
-            // FormC indicates that a Unicode string is normalized using full canonical decomposition, 
+            // FormC indicates that a Unicode string is normalized using full canonical decomposition,
             // followed by the replacement of sequences with their primary composites, if possible.
             var normalizedQuery = new string(chars.ToArray()).Normalize(NormalizationForm.FormC);
 
             return normalizedQuery;
+        }
+
+        private static void ReApplyValue(int idx, ref StringBuilder outString, string value)
+        {
+            for (int i = 0; i < value.Length; ++i)
+            {
+                outString[idx + i] = value[i];
+            }
         }
     }
 }

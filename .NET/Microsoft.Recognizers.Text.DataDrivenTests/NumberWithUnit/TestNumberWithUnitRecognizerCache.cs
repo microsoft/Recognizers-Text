@@ -1,6 +1,6 @@
-﻿using Microsoft.Recognizers.Text.DataDrivenTests;
+﻿using System.Linq;
+using Microsoft.Recognizers.Text.DataDrivenTests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Linq;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
 {

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.Recognizers.Text.Choice</name>
+    </assembly>
+    <members>
+        <member name="F:Microsoft.Recognizers.Text.Choice.ChoiceOptions.None">
+            <summary>
+            None
+            </summary>
+        </member>
+    </members>
+</doc>

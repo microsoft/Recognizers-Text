@@ -5,11 +5,10 @@ using Microsoft.Recognizers.Text.Number.Dutch;
 using Microsoft.Recognizers.Text.Number.English;
 using Microsoft.Recognizers.Text.Number.French;
 using Microsoft.Recognizers.Text.Number.German;
-using Microsoft.Recognizers.Text.Number.Italian;
 using Microsoft.Recognizers.Text.Number.Japanese;
+using Microsoft.Recognizers.Text.Number.Korean;
 using Microsoft.Recognizers.Text.Number.Portuguese;
 using Microsoft.Recognizers.Text.Number.Spanish;
-using Microsoft.Recognizers.Text.Number.Korean;
 
 namespace Microsoft.Recognizers.Text.Number
 {
@@ -35,26 +34,6 @@ namespace Microsoft.Recognizers.Text.Number
         {
         }
 
-        public NumberModel GetNumberModel(string culture = null, bool fallbackToDefaultCulture = true)
-        {
-            return GetModel<NumberModel>(culture, fallbackToDefaultCulture);
-        }
-
-        public OrdinalModel GetOrdinalModel(string culture = null, bool fallbackToDefaultCulture = true)
-        {
-            return GetModel<OrdinalModel>(culture, fallbackToDefaultCulture);
-        }
-
-        public PercentModel GetPercentageModel(string culture = null, bool fallbackToDefaultCulture = true)
-        {
-            return GetModel<PercentModel>(culture, fallbackToDefaultCulture);
-        }
-
-        public NumberRangeModel GetNumberRangeModel(string culture = null, bool fallbackToDefaultCulture = true)
-        {
-            return GetModel<NumberRangeModel>(culture, fallbackToDefaultCulture);
-        }
-
         public static List<ModelResult> RecognizeNumber(string query, string culture, NumberOptions options = NumberOptions.None, bool fallbackToDefaultCulture = true)
         {
             return RecognizeByModel(recognizer => recognizer.GetNumberModel(culture, fallbackToDefaultCulture), query, options);
@@ -77,36 +56,44 @@ namespace Microsoft.Recognizers.Text.Number
             return RecognizeByModel(recognizer => recognizer.GetNumberRangeModel(culture, fallbackToDefaultCulture), query, options);
         }
 
-        private static List<ModelResult> RecognizeByModel(Func<NumberRecognizer, IModel> getModelFunc, string query, NumberOptions options)
+        public NumberModel GetNumberModel(string culture = null, bool fallbackToDefaultCulture = true)
         {
-            var recognizer = new NumberRecognizer(options);
-            var model = getModelFunc(recognizer);
-            return model.Parse(query);
+            return GetModel<NumberModel>(culture, fallbackToDefaultCulture);
+        }
+
+        public OrdinalModel GetOrdinalModel(string culture = null, bool fallbackToDefaultCulture = true)
+        {
+            return GetModel<OrdinalModel>(culture, fallbackToDefaultCulture);
+        }
+
+        public PercentModel GetPercentageModel(string culture = null, bool fallbackToDefaultCulture = true)
+        {
+            return GetModel<PercentModel>(culture, fallbackToDefaultCulture);
+        }
+
+        public NumberRangeModel GetNumberRangeModel(string culture = null, bool fallbackToDefaultCulture = true)
+        {
+            return GetModel<NumberRangeModel>(culture, fallbackToDefaultCulture);
         }
 
         protected override void InitializeConfiguration()
         {
-            #region English
-
             RegisterModel<NumberModel>(
                 Culture.English,
                 options => new NumberModel(
-                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number,
-                        new EnglishNumberParserConfiguration(options)),
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new EnglishNumberParserConfiguration(options)),
                     English.MergedNumberExtractor.GetInstance(NumberMode.PureNumber, options)));
 
             RegisterModel<OrdinalModel>(
                 Culture.English,
                 options => new OrdinalModel(
-                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Ordinal,
-                        new EnglishNumberParserConfiguration(options)),
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Ordinal, new EnglishNumberParserConfiguration(options)),
                     English.OrdinalExtractor.GetInstance()));
 
             RegisterModel<PercentModel>(
                 Culture.English,
                 options => new PercentModel(
-                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage,
-                        new EnglishNumberParserConfiguration(options)),
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new EnglishNumberParserConfiguration(options)),
                     new English.PercentageExtractor(options)));
 
             RegisterModel<NumberRangeModel>(
@@ -114,11 +101,7 @@ namespace Microsoft.Recognizers.Text.Number
                 options => new NumberRangeModel(
                     new BaseNumberRangeParser(new EnglishNumberRangeParserConfiguration()),
                     new English.NumberRangeExtractor(options)));
-                    
-            #endregion
 
-            #region Chinese
-            
             RegisterModel<NumberModel>(
                 Culture.Chinese,
                 (options) => new NumberModel(
@@ -142,11 +125,7 @@ namespace Microsoft.Recognizers.Text.Number
                 (options) => new NumberRangeModel(
                             new BaseNumberRangeParser(new ChineseNumberRangeParserConfiguration()),
                             new Chinese.NumberRangeExtractor(options)));
-                            
-            #endregion
 
-            #region Spanish
-            
             RegisterModel<NumberModel>(
                 Culture.Spanish,
                 (options) => new NumberModel(
@@ -164,11 +143,13 @@ namespace Microsoft.Recognizers.Text.Number
                 (options) => new PercentModel(
                     AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new SpanishNumberParserConfiguration()),
                     new Spanish.PercentageExtractor()));
-                    
-            #endregion
 
-            #region Portuguese
-            
+            RegisterModel<NumberRangeModel>(
+                Culture.Spanish,
+                (options) => new NumberRangeModel(
+                    new BaseNumberRangeParser(new SpanishNumberRangeParserConfiguration()),
+                    new Spanish.NumberRangeExtractor(options)));
+
             RegisterModel<NumberModel>(
                 Culture.Portuguese,
                 (options) => new NumberModel(
@@ -186,11 +167,7 @@ namespace Microsoft.Recognizers.Text.Number
                 (options) => new PercentModel(
                     AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new PortugueseNumberParserConfiguration()),
                     new Portuguese.PercentageExtractor()));
-                    
-            #endregion
 
-            #region French
-            
             RegisterModel<NumberModel>(
                 Culture.French,
                 (options) => new NumberModel(
@@ -208,11 +185,7 @@ namespace Microsoft.Recognizers.Text.Number
                 (options) => new PercentModel(
                     AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new FrenchNumberParserConfiguration()),
                     new French.PercentageExtractor()));
-                    
-            #endregion
 
-            #region German
-            
             RegisterModel<NumberModel>(
                 Culture.German,
                 (options) => new NumberModel(
@@ -230,10 +203,6 @@ namespace Microsoft.Recognizers.Text.Number
                 (options) => new PercentModel(
                     AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new GermanNumberParserConfiguration()),
                     new German.PercentageExtractor()));
-
-            #endregion
-
-            #region Italian
 
             /*
             RegisterModel<NumberModel>(
@@ -254,10 +223,6 @@ namespace Microsoft.Recognizers.Text.Number
                     AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new ItalianNumberParserConfiguration()),
                     new Italian.PercentageExtractor()));
             */
-
-            #endregion
-
-            #region Japanese
 
             RegisterModel<NumberModel>(
                 Culture.Japanese,
@@ -284,27 +249,19 @@ namespace Microsoft.Recognizers.Text.Number
                     new BaseNumberRangeParser(new JapaneseNumberRangeParserConfiguration()),
                     new Japanese.NumberRangeExtractor(options)));
             */
-                            
-            #endregion
 
-            #region Korean
-            
             RegisterModel<NumberModel>(
                 Culture.Korean,
                 (options) => new NumberModel(
                     AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new KoreanNumberParserConfiguration()),
                     new Korean.NumberExtractor()));
 
-            #endregion
-
-            #region Dutch
-
             RegisterModel<NumberModel>(
                 Culture.Dutch,
                 (options) => new NumberModel(
                     AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new DutchNumberParserConfiguration()),
                     Dutch.NumberExtractor.GetInstance(NumberMode.PureNumber)));
-   
+
             RegisterModel<OrdinalModel>(
                 Culture.Dutch,
                 (options) => new OrdinalModel(
@@ -324,7 +281,13 @@ namespace Microsoft.Recognizers.Text.Number
                     new BaseNumberRangeParser(new DutchNumberRangeParserConfiguration()),
                     new Dutch.NumberRangeExtractor(options)));
             */
-            #endregion
+        }
+
+        private static List<ModelResult> RecognizeByModel(Func<NumberRecognizer, IModel> getModelFunc, string query, NumberOptions options)
+        {
+            var recognizer = new NumberRecognizer(options);
+            var model = getModelFunc(recognizer);
+            return model.Parse(query);
         }
     }
 }

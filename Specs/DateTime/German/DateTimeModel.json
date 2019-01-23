@@ -982,13 +982,12 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "Comment": "Output contains a trailing whitespace",
-    "NotSupported": "dotnet, javascript, python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "morgens von 5 bis sieben",
-        "Start": 0,
-        "End": 0,
+        "Start": 13,
+        "End": 36,
         "TypeName": "datetimeV2.timerange",
         "Resolution": {
           "values": [

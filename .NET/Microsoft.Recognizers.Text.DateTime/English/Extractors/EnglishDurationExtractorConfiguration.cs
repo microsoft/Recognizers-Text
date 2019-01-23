@@ -10,34 +10,34 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex DurationUnitRegex =
             new Regex(DateTimeDefinitions.DurationUnitRegex, RegexOptions.Singleline);
 
-        public static readonly Regex SuffixAndRegex = 
+        public static readonly Regex SuffixAndRegex =
             new Regex(DateTimeDefinitions.SuffixAndRegex, RegexOptions.Singleline);
 
-        public static readonly Regex DurationFollowedUnit = 
+        public static readonly Regex DurationFollowedUnit =
             new Regex(DateTimeDefinitions.DurationFollowedUnit, RegexOptions.Singleline);
 
         public static readonly Regex NumberCombinedWithDurationUnit =
             new Regex(DateTimeDefinitions.NumberCombinedWithDurationUnit, RegexOptions.Singleline);
 
-        public static readonly Regex AnUnitRegex = 
+        public static readonly Regex AnUnitRegex =
             new Regex(DateTimeDefinitions.AnUnitRegex, RegexOptions.Singleline);
 
-        public static readonly Regex DuringRegex = 
+        public static readonly Regex DuringRegex =
             new Regex(DateTimeDefinitions.DuringRegex, RegexOptions.Singleline);
 
-        public static readonly Regex AllRegex = 
+        public static readonly Regex AllRegex =
             new Regex(DateTimeDefinitions.AllRegex, RegexOptions.Singleline);
 
-        public static readonly Regex HalfRegex = 
+        public static readonly Regex HalfRegex =
             new Regex(DateTimeDefinitions.HalfRegex, RegexOptions.Singleline);
 
-        public static readonly Regex ConjunctionRegex = 
+        public static readonly Regex ConjunctionRegex =
             new Regex(DateTimeDefinitions.ConjunctionRegex, RegexOptions.Singleline);
 
-        public static readonly Regex InexactNumberRegex = 
+        public static readonly Regex InexactNumberRegex =
             new Regex(DateTimeDefinitions.InexactNumberRegex, RegexOptions.Singleline);
 
-        public static readonly Regex InexactNumberUnitRegex = 
+        public static readonly Regex InexactNumberUnitRegex =
             new Regex(DateTimeDefinitions.InexactNumberUnitRegex, RegexOptions.Singleline);
 
         public static readonly Regex RelativeDurationUnitRegex =
@@ -52,7 +52,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex LessThanRegex =
             new Regex(DateTimeDefinitions.LessThanRegex, RegexOptions.Singleline | RegexOptions.RightToLeft);
 
-        public EnglishDurationExtractorConfiguration(IOptionsConfiguration config) : base(config)
+        public EnglishDurationExtractorConfiguration(IOptionsConfiguration config)
+            : base(config)
         {
             CardinalExtractor = Number.English.CardinalExtractor.GetInstance();
             UnitMap = DateTimeDefinitions.UnitMap.ToImmutableDictionary();
@@ -76,7 +77,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         Regex IDurationExtractorConfiguration.AllRegex => AllRegex;
 
         Regex IDurationExtractorConfiguration.HalfRegex => HalfRegex;
-        
+
         Regex IDurationExtractorConfiguration.SuffixAndRegex => SuffixAndRegex;
 
         Regex IDurationExtractorConfiguration.ConjunctionRegex => ConjunctionRegex;

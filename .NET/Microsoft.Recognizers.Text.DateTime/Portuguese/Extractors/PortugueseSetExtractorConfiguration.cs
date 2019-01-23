@@ -16,7 +16,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         public static readonly Regex SetWeekDayRegex = new Regex(DateTimeDefinitions.SetWeekDayRegex, RegexOptions.Singleline);
         public static readonly Regex SetEachRegex = new Regex(DateTimeDefinitions.SetEachRegex, RegexOptions.Singleline);
 
-        public PortugueseSetExtractorConfiguration(IOptionsConfiguration config) : base(config)
+        public PortugueseSetExtractorConfiguration(IOptionsConfiguration config)
+            : base(config)
         {
             DurationExtractor = new BaseDurationExtractor(new PortugueseDurationExtractorConfiguration(this));
             TimeExtractor = new BaseTimeExtractor(new PortugueseTimeExtractorConfiguration(this));

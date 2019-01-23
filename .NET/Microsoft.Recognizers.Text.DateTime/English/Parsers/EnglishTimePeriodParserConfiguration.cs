@@ -1,15 +1,31 @@
 ﻿using System.Collections.Immutable;
 using System.Linq;
 using System.Text.RegularExpressions;
-
 using Microsoft.Recognizers.Definitions.English;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
-using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
 {
     public class EnglishTimePeriodParserConfiguration : BaseOptionsConfiguration, ITimePeriodParserConfiguration
     {
+        public EnglishTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config)
+            : base(config)
+        {
+            TimeExtractor = config.TimeExtractor;
+            IntegerExtractor = config.IntegerExtractor;
+            TimeParser = config.TimeParser;
+            TimeZoneParser = config.TimeZoneParser;
+            PureNumberFromToRegex = EnglishTimePeriodExtractorConfiguration.PureNumFromTo;
+            PureNumberBetweenAndRegex = EnglishTimePeriodExtractorConfiguration.PureNumBetweenAnd;
+            SpecificTimeFromToRegex = EnglishTimePeriodExtractorConfiguration.SpecificTimeFromTo;
+            SpecificTimeBetweenAndRegex = EnglishTimePeriodExtractorConfiguration.SpecificTimeBetweenAnd;
+            TimeOfDayRegex = EnglishTimePeriodExtractorConfiguration.TimeOfDayRegex;
+            GeneralEndingRegex = EnglishTimePeriodExtractorConfiguration.GeneralEndingRegex;
+            TillRegex = EnglishTimePeriodExtractorConfiguration.TillRegex;
+            Numbers = config.Numbers;
+            UtilityConfiguration = config.UtilityConfiguration;
+        }
+
         public IDateTimeExtractor TimeExtractor { get; }
 
         public IDateTimeParser TimeParser { get; }
@@ -36,23 +52,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
-        public EnglishTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config)
-        {
-            TimeExtractor = config.TimeExtractor;
-            IntegerExtractor = config.IntegerExtractor;
-            TimeParser = config.TimeParser;
-            TimeZoneParser = config.TimeZoneParser;
-            PureNumberFromToRegex = EnglishTimePeriodExtractorConfiguration.PureNumFromTo;
-            PureNumberBetweenAndRegex = EnglishTimePeriodExtractorConfiguration.PureNumBetweenAnd;
-            SpecificTimeFromToRegex = EnglishTimePeriodExtractorConfiguration.SpecificTimeFromTo;
-            SpecificTimeBetweenAndRegex = EnglishTimePeriodExtractorConfiguration.SpecificTimeBetweenAnd;
-            TimeOfDayRegex = EnglishTimePeriodExtractorConfiguration.TimeOfDayRegex;
-            GeneralEndingRegex = EnglishTimePeriodExtractorConfiguration.GeneralEndingRegex;
-            TillRegex = EnglishTimePeriodExtractorConfiguration.TillRegex;
-            Numbers = config.Numbers;
-            UtilityConfiguration = config.UtilityConfiguration;
-        }
-
         public bool GetMatchedTimexRange(string text, out string timex, out int beginHour, out int endHour, out int endMin)
         {
             var trimmedText = text.Trim().ToLowerInvariant();
@@ -65,7 +64,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             endHour = 0;
             endMin = 0;
 
-            var timeOfDay = "";
+            var timeOfDay = string.Empty;
             if (DateTimeDefinitions.MorningTermList.Any(o => trimmedText.EndsWith(o)))
             {
                 timeOfDay = Constants.Morning;

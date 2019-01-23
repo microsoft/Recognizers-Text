@@ -2,9 +2,9 @@
 {
     public class BooleanExtractor : ChoiceExtractor
     {
-        public BooleanExtractor(IBooleanExtractorConfiguration config) : base(config)
+        public BooleanExtractor(IBooleanExtractorConfiguration config)
+               : base(config)
         {
-
         }
     }
 }
