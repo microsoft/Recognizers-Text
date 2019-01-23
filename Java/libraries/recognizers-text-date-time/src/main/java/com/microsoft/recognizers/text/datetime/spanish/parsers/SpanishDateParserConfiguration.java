@@ -11,7 +11,9 @@ import com.microsoft.recognizers.text.datetime.parsers.config.ICommonDateTimePar
 import com.microsoft.recognizers.text.datetime.parsers.config.IDateParserConfiguration;
 import com.microsoft.recognizers.text.datetime.resources.SpanishDateTime;
 import com.microsoft.recognizers.text.datetime.spanish.extractors.SpanishDateExtractorConfiguration;
+import com.microsoft.recognizers.text.datetime.spanish.extractors.SpanishTimeExtractorConfiguration;
 import com.microsoft.recognizers.text.datetime.utilities.IDateTimeUtilityConfiguration;
+import com.microsoft.recognizers.text.datetime.utilities.StringExtension;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
 
 import java.util.Collections;
@@ -322,10 +324,6 @@ public class SpanishDateParserConfiguration  extends BaseOptionsConfiguration im
 
     @Override
     public String normalize(String text) {
-        return text.replace('á', 'a')
-                .replace('é', 'e')
-                .replace('í', 'i')
-                .replace('ó', 'o')
-                .replace('ú', 'u');
+        return StringExtension.normalize(text, SpanishDateTime.SpecialCharactersEquivalent);
     }
 }
