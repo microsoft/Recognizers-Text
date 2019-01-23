@@ -4,7 +4,6 @@ namespace BotBuilderRecognizerSample
 {
     using System;
     using System.Collections.Generic;
-    using System.Threading;
     using System.Threading.Tasks;
     using Microsoft.Bot.Builder.Dialogs;
     using Microsoft.Bot.Connector;
@@ -17,6 +16,13 @@ namespace BotBuilderRecognizerSample
             context.Wait(this.MessageReceivedAsync);
         }
 
+        private static string GetCurrentCultureCode()
+        {
+            // Use English as default culture since this sample bot that does not include any localization resources
+            // Thread.CurrentThread.CurrentUICulture.IetfLanguageTag.ToLower() can be used to obtain the user's preferred culture
+            return "en-us";
+        }
+
         private async Task MessageReceivedAsync(IDialogContext context, IAwaitable<IMessageActivity> activity)
         {
             // Welcome message
@@ -25,7 +31,7 @@ namespace BotBuilderRecognizerSample
             {
                 Title = "Welcome to Contoso Roses",
                 Subtitle = "These are the roses you are looking for!",
-                Images = new List<CardImage> { new CardImage("https://placeholdit.imgix.net/~text?txtsize=56&txt=Contoso%20Roses&w=640&h=330", "Contoso Roses") }
+                Images = new List<CardImage> { new CardImage("https://placeholdit.imgix.net/~text?txtsize=56&txt=Contoso%20Roses&w=640&h=330", "Contoso Roses") },
             }.ToAttachment());
             await context.PostAsync(welcome);
 
@@ -50,7 +56,6 @@ namespace BotBuilderRecognizerSample
                 // Prompt for delivery date
                 var prompt = new DeliveryPrompt(GetCurrentCultureCode());
                 context.Call(prompt, this.OnDeliverySelected);
-
             }
             catch (TooManyAttemptsException)
             {
@@ -66,8 +71,8 @@ namespace BotBuilderRecognizerSample
                 // "result" contains the date (or array of dates) returned from the prompt
                 var momentOrRange = await result;
                 var quantity = context.ConversationData.GetValue<int>("quantity");
-                var nRoses = quantity == 1 ? "Just one rose" : $"{quantity} roses";
-                var text = $"Thank you! I'll deliver {nRoses} {DeliveryPrompt.MomentOrRangeToString(momentOrRange)}.";
+                var quantityRoses = quantity == 1 ? "Just one rose" : $"{quantity} roses";
+                var text = $"Thank you! I'll deliver {quantityRoses} {DeliveryPrompt.MomentOrRangeToString(momentOrRange)}.";
 
                 await context.PostAsync(text);
 
@@ -82,13 +87,6 @@ namespace BotBuilderRecognizerSample
             {
                 context.Wait(this.MessageReceivedAsync);
             }
-        }
-
-        private static string GetCurrentCultureCode()
-        {
-            // Use English as default culture since the this sample bot that does not include any localization resources
-            // Thread.CurrentThread.CurrentUICulture.IetfLanguageTag.ToLower() can be used to obtain the user's preferred culture
-            return "en-us";
         }
     }
 }

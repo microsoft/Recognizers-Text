@@ -6,11 +6,13 @@ namespace Microsoft.Recognizers.Text.DateTime
 {
     public interface ITimeZoneExtractorConfiguration : IOptionsConfiguration
     {
-        IEnumerable<Regex> TimeZoneRegexes { get; }
+        Regex DirectUtcRegex { get; }
 
         Regex LocationTimeSuffixRegex { get; }
 
         StringMatcher LocationMatcher { get; }
+
+        StringMatcher TimeZoneMatcher { get; }
 
         List<string> AmbiguousTimezoneList { get; }
     }

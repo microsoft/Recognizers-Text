@@ -192,7 +192,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var subType = ((Dictionary<string, object>)er.Data)[Constants.SubType].ToString();
             var dateTimeEr = new ExtractResult();
 
-            // e.g. {next week Mon} or {Tue}, formmer--"next week Mon" doesn't contain "context" key
+            // e.g. {next week Mon} or {Tue}, former--"next week Mon" doesn't contain "context" key
             var hasContext = false;
             ExtractResult contextEr = null;
             if (((Dictionary<string, object>)er.Data).ContainsKey(Constants.Context))

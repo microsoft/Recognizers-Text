@@ -113,7 +113,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                             {
                                 TimeTypeConstants.END_DATE,
                                 DateTimeFormatUtil.FormatDate(((Tuple<DateObject, DateObject>) innerResult.FutureValue).Item2)
-                            }
+                            },
                         };
 
                         innerResult.PastResolution = new Dictionary<string, string>
@@ -125,7 +125,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                             {
                                 TimeTypeConstants.END_DATE,
                                 DateTimeFormatUtil.FormatDate(((Tuple<DateObject, DateObject>) innerResult.PastValue).Item2)
-                            }
+                            },
                         };
                     }
                     else
@@ -146,7 +146,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 Data = er.Data,
                 Value = value,
                 TimexStr = value == null ? "" : ((DateTimeResolutionResult) value).Timex,
-                ResolutionStr = ""
+                ResolutionStr = "",
             };
 
             return ret;
@@ -162,7 +162,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
             var match = DatePeriodExtractor.SimpleCasesRegex.MatchExact(text, trim: true);
             string beginLuisStr, endLuisStr;
-            
+
             if (match.Success)
             {
                 var days = match.Groups["day"];
@@ -347,6 +347,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 ret.Success = true;
                 return ret;
             }
+
             return ret;
         }
 
@@ -429,6 +430,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                     ret.Success = true;
                 }
             }
+
             return ret;
         }
 
@@ -735,6 +737,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                     num = Convert.ToInt32((double) (IntegerParser.Parse(er[0]).Value ?? 0));
                 }
             }
+
             return num;
         }
 
@@ -768,12 +771,14 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                         }
                     }
                 }
+
                 year = num;
             }
             else
             {
                 year = num;
             }
+
             return year == 0 ? -1 : year;
         }
 
@@ -806,6 +811,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                     {
                         num += 2000;
                     }
+
                     year = num;
                 }
                 else
@@ -875,6 +881,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 {
                     return ret;
                 }
+
                 er[0].Start -= 3;
                 er[1].Start -= 3;
             }
@@ -900,7 +907,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             {
                 pastEnd = futureEnd;
             }
-            
+
             if ((DatePeriodExtractor.YearAndMonth.IsMatch(pr1.Text) && DatePeriodExtractor.YearAndMonth.IsMatch(pr2.Text)) ||
                 (DatePeriodExtractor.SimpleYearAndMonth.IsMatch(pr1.Text) && DatePeriodExtractor.SimpleYearAndMonth.IsMatch(pr2.Text)))
 
@@ -1093,6 +1100,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                     }
                 }
             }
+
             return ret;
         }
 
@@ -1134,6 +1142,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 {
                     swift = -1;
                 }
+
                 month = referenceDate.AddMonths(swift).Month;
                 year = referenceDate.AddMonths(swift).Year;
                 ret.Timex = referenceDate.Year.ToString("D4") + "-" + month.ToString("D2");
@@ -1184,7 +1193,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
             if (match.Success)
             {
-                // parse year 
+                // parse year
                 var year = referenceDate.Year;
                 var hasYear = false;
                 var yearNum = match.Groups["year"].Value;
@@ -1198,6 +1207,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                     {
                         yearNum = yearNum.Substring(0, yearNum.Length - 1);
                     }
+
                     year = int.Parse(yearNum);
                 }
                 else if (!string.IsNullOrEmpty(yearJap))
@@ -1207,6 +1217,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                     {
                         yearJap = yearJap.Substring(0, yearJap.Length - 1);
                     }
+
                     year = ConvertJapaneseToInteger(yearJap);
                 }
                 else if (!string.IsNullOrEmpty(yearRel))
@@ -1238,9 +1249,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 {
                     ret.Timex = year.ToString("D4") + "-" + ret.Timex;
                 }
+
                 ret.Success = true;
                 return ret;
             }
+
             return ret;
         }
 
@@ -1254,7 +1267,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 return ret;
             }
 
-            // pare year 
+            // pare year
             var year = referenceDate.Year;
             var yearNum = match.Groups["year"].Value;
             var yearJap = match.Groups["yearJap"].Value;
@@ -1265,6 +1278,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 {
                     yearNum = yearNum.Substring(0, yearNum.Length - 1);
                 }
+
                 year = int.Parse(yearNum);
             }
             else if (!string.IsNullOrEmpty(yearJap))
@@ -1273,6 +1287,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 {
                     yearJap = yearJap.Substring(0, yearJap.Length - 1);
                 }
+
                 year = ConvertJapaneseToInteger(yearJap);
             }
             else if (!string.IsNullOrEmpty(yearRel))
@@ -1336,6 +1351,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                     {
                         century = ConvertJapaneseToNum(centuryStr);
                     }
+
                     inputCentury = true;
                 }
                 else
@@ -1389,6 +1405,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 endLuisStr = DateTimeFormatUtil.LuisDate(-1, 1, 1);
                 endLuisStr = endLuisStr.Replace("XXXX", endYearStr);
             }
+
             ret.Timex = $"({beginLuisStr},{endLuisStr},P10Y)";
 
             int futureYear = beginYear, pastYear = beginYear;

@@ -18,28 +18,28 @@ namespace Microsoft.Recognizers.Text.Number.Tests
         [TestInitialize]
         public void TestInitialize()
         {
-            base.TestSpecInitialize(TestResources);
+            TestSpecInitialize(TestResources);
         }
 
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "NumberModel-Japanese.csv", "NumberModel-Japanese#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void NumberModel()
         {
-            base.TestNumber();
+            TestNumber();
         }
 
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "OrdinalModel-Japanese.csv", "OrdinalModel-Japanese#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void OrdinalModel()
         {
-            base.TestNumber();
+            TestNumber();
         }
 
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "PercentModel-Japanese.csv", "PercentModel-Japanese#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void PercentModel()
         {
-            base.TestNumber();
+            TestNumber();
         }
 
         /*
@@ -47,14 +47,14 @@ namespace Microsoft.Recognizers.Text.Number.Tests
         [TestMethod]
         public void NumberRangeModel()
         {
-            base.TestNumber();
+            TestNumber();
         }
 
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "NumberRangeModelExperimentalMode-Japanese.csv", "NumberRangeModelExperimentalMode-Japanese#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void NumberRangeModelExperimentalMode()
         {
-            base.TestNumber();
+            TestNumber();
         }
         */
     }

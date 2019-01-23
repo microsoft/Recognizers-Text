@@ -11,7 +11,9 @@ import com.microsoft.recognizers.text.datetime.parsers.config.ITimeParserConfigu
 import com.microsoft.recognizers.text.datetime.parsers.config.PrefixAdjustResult;
 import com.microsoft.recognizers.text.datetime.parsers.config.SuffixAdjustResult;
 import com.microsoft.recognizers.text.datetime.resources.EnglishDateTime;
+import com.microsoft.recognizers.text.datetime.utilities.ConditionalMatch;
 import com.microsoft.recognizers.text.datetime.utilities.IDateTimeUtilityConfiguration;
+import com.microsoft.recognizers.text.datetime.utilities.RegexExtension;
 import com.microsoft.recognizers.text.utilities.Match;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
 import com.microsoft.recognizers.text.utilities.StringUtility;
@@ -28,9 +30,9 @@ public class EnglishTimeParserConfiguration extends BaseOptionsConfiguration imp
 
     private final Pattern atRegex;
     private final Iterable<Pattern> timeRegexes;
-    private final Pattern timeSuffixFull;
-    private final Pattern lunchRegex;
-    private final Pattern nightRegex;
+    private final Pattern timeSuffixFull = RegExpUtility.getSafeRegExp(EnglishDateTime.TimeSuffixFull);
+    private final Pattern lunchRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.LunchRegex);
+    private final Pattern nightRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.NightRegex);
 
     public EnglishTimeParserConfiguration(ICommonDateTimeParserConfiguration config) {
         
@@ -42,9 +44,6 @@ public class EnglishTimeParserConfiguration extends BaseOptionsConfiguration imp
 
         atRegex = EnglishTimeExtractorConfiguration.AtRegex;
         timeRegexes = EnglishTimeExtractorConfiguration.TimeRegexList;
-        timeSuffixFull = RegExpUtility.getSafeRegExp(EnglishDateTime.TimeSuffixFull);
-        lunchRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.LunchRegex);
-        nightRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.NightRegex);
     }
 
     @Override
@@ -119,16 +118,15 @@ public class EnglishTimeParserConfiguration extends BaseOptionsConfiguration imp
     @Override
     public SuffixAdjustResult adjustBySuffix(String suffix, int hour, int min, boolean hasMin, boolean hasAm, boolean hasPm) {
         
-        String trimmedSuffix = suffix.trim().toLowerCase();
+        String lowerSuffix = suffix.toLowerCase();
         int deltaHour = 0;
-        Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(timeSuffixFull, trimmedSuffix)).findFirst();
-        
-        if (match.isPresent() && match.get().index == 0 && match.get().length == trimmedSuffix.length()) {
+        ConditionalMatch match = RegexExtension.matchExact(timeSuffixFull, lowerSuffix, true);
+        if (match.getSuccess()) {
             
-            String oclockStr = match.get().getGroup("oclock").value;
+            String oclockStr = match.getMatch().get().getGroup("oclock").value;
             if (StringUtility.isNullOrEmpty(oclockStr)) {
                 
-                String amStr = match.get().getGroup(Constants.AmGroupName).value;
+                String amStr = match.getMatch().get().getGroup(Constants.AmGroupName).value;
                 if (!StringUtility.isNullOrEmpty(amStr)) {
                     if (hour >= Constants.HalfDayHourCount) {
                         deltaHour = -Constants.HalfDayHourCount;
@@ -138,7 +136,7 @@ public class EnglishTimeParserConfiguration extends BaseOptionsConfiguration imp
                     
                 }
 
-                String pmStr = match.get().getGroup(Constants.PmGroupName).value;
+                String pmStr = match.getMatch().get().getGroup(Constants.PmGroupName).value;
                 if (!StringUtility.isNullOrEmpty(pmStr)) {
                     if (hour < Constants.HalfDayHourCount) {
                         deltaHour = Constants.HalfDayHourCount;

@@ -1751,6 +1751,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             endDate = inclusiveEndPeriod ? endDate.AddDays(-1) : endDate;
+
             return new Tuple<DateObject, DateObject>(startDate, endDate);
         }
 

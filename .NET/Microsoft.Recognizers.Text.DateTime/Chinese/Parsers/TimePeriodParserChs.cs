@@ -1,14 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+
 using Microsoft.Recognizers.Definitions.Chinese;
+using Microsoft.Recognizers.Text.DateTime.Utilities;
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
     public class TimePeriodParserChs : IDateTimeParser
     {
+        private static TimeFunctions timeFunc = new TimeFunctions
+        {
+            NumberDictionary = DateTimeDefinitions.TimeNumberDictionary,
+            LowBoundDesc = DateTimeDefinitions.TimeLowBoundDesc,
+            DayDescRegex = TimeExtractorChs.DayDescRegex,
+        };
+
         private readonly IFullDateTimeParserConfiguration config;
 
         public TimePeriodParserChs(IFullDateTimeParserConfiguration configuration)
@@ -38,7 +46,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
                 if (!parseResult.Success)
                 {
-                    parseResult = TimePeriodFunctions.Handle(this.config.TimeParser, extra, referenceTime);
+                    parseResult = TimePeriodFunctions.Handle(this.config.TimeParser, extra, referenceTime, timeFunc);
                 }
 
                 if (parseResult.Success)

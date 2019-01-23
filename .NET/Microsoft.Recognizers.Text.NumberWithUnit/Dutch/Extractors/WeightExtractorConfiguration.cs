@@ -7,9 +7,19 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Dutch
 {
     public class WeightExtractorConfiguration : DutchNumberWithUnitExtractorConfiguration
     {
-        public WeightExtractorConfiguration() : this(new CultureInfo(Culture.Dutch)) { }
+        public static readonly ImmutableDictionary<string, string> WeightSuffixList = NumbersWithUnitDefinitions.WeightSuffixList.ToImmutableDictionary();
 
-        public WeightExtractorConfiguration(CultureInfo ci) : base(ci) { }
+        private static readonly ImmutableList<string> AmbiguousValues = NumbersWithUnitDefinitions.AmbiguousWeightUnitList.ToImmutableList();
+
+        public WeightExtractorConfiguration()
+            : this(new CultureInfo(Culture.Dutch))
+        {
+        }
+
+        public WeightExtractorConfiguration(CultureInfo ci)
+            : base(ci)
+        {
+        }
 
         public override ImmutableDictionary<string, string> SuffixList => WeightSuffixList;
 
@@ -18,9 +28,5 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Dutch
         public override ImmutableList<string> AmbiguousUnitList => AmbiguousValues;
 
         public override string ExtractType => Constants.SYS_UNIT_WEIGHT;
-
-        public static readonly ImmutableDictionary<string, string> WeightSuffixList = NumbersWithUnitDefinitions.WeightSuffixList.ToImmutableDictionary();
-
-        private static readonly ImmutableList<string> AmbiguousValues = NumbersWithUnitDefinitions.AmbiguousWeightUnitList.ToImmutableList();
     }
 }

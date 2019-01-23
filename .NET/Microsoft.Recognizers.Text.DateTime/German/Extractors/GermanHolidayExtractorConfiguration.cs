@@ -1,13 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
-
 using Microsoft.Recognizers.Definitions.German;
 
 namespace Microsoft.Recognizers.Text.DateTime.German
 {
     public class GermanHolidayExtractorConfiguration : BaseOptionsConfiguration, IHolidayExtractorConfiguration
     {
-        public static readonly Regex YearRegex = new Regex(DateTimeDefinitions.YearRegex,
+        public static readonly Regex YearRegex = new Regex(
+            DateTimeDefinitions.YearRegex,
             RegexOptions.Singleline);
 
         public static readonly Regex H1 =
@@ -29,10 +29,11 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         {
             H1,
             H2,
-            H3
+            H3,
         };
 
-        public GermanHolidayExtractorConfiguration(IOptionsConfiguration config) : base(config)
+        public GermanHolidayExtractorConfiguration(IOptionsConfiguration config)
+            : base(config)
         {
         }
 

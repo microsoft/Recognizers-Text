@@ -2,9 +2,9 @@
 using System.Collections.Immutable;
 using System.Linq;
 using System.Text.RegularExpressions;
-using DateObject = System.DateTime;
+using Microsoft.Recognizers.Text.DateTime.Utilities;
 
-using Microsoft.Recognizers.Text.Number;
+using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
@@ -12,7 +12,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
     {
         internal abstract ImmutableDictionary<Regex, T> Regexes { get; }
 
-        protected virtual string ExtractType { get; } = "";
+        protected virtual string ExtractType { get; } = string.Empty;
 
         public List<ExtractResult> Extract(string text)
         {
@@ -43,7 +43,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                         matched[m.Index + j] = true;
                     }
 
-                    //Keep Source Data for extra information
+                    // Keep Source Data for extra information
                     matchSource.Add(m, collection.Value);
                 }
             }
@@ -72,9 +72,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                                     new DateTimeExtra<T>
                                     {
                                         NamedEntity = srcMatch.Groups,
-                                        Type = matchSource[srcMatch]
+                                        Type = matchSource[srcMatch],
                                     }
-                                    : null
+                                    : null,
                             };
                             result.Add(er);
                         }
@@ -85,14 +85,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     last = i;
                 }
             }
+
             return result;
         }
-    }
-
-    public class DateTimeExtra<T>
-    {
-        public GroupCollection NamedEntity { get; set; }
-
-        public T Type { get; set; }
     }
 }

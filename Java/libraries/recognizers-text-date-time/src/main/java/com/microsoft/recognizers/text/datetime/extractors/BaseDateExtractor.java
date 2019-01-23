@@ -245,11 +245,11 @@ public class BaseDateExtractor extends AbstractYearExtractor implements IDateTim
 
                 // Handling cases like '20th of next month'
                 String suffixStr = text.substring(result.getStart() + result.getLength());
-                match = Arrays.stream(RegExpUtility.getMatches(config.getRelativeMonthRegex(), suffixStr.trim())).findFirst();
-                if (match.isPresent() && match.get().index == 0) {
+                ConditionalMatch beginMatch = RegexExtension.matchBegin(config.getRelativeMonthRegex(), suffixStr.trim(), true);
+                if (beginMatch.getSuccess() && beginMatch.getMatch().get().index == 0) {
                     int spaceLen = suffixStr.length() - suffixStr.trim().length();
                     int resStart = result.getStart();
-                    int resEnd = resStart + result.getLength() + spaceLen + match.get().length;
+                    int resEnd = resStart + result.getLength() + spaceLen + beginMatch.getMatch().get().length;
 
                     // Check if prefix contains 'the', include it if any
                     String prefix = text.substring(0, resStart);
@@ -263,12 +263,12 @@ public class BaseDateExtractor extends AbstractYearExtractor implements IDateTim
 
                 // Handling cases like 'second Sunday'
                 suffixStr = text.substring(result.getStart() + result.getLength());
-                match = Arrays.stream(RegExpUtility.getMatches(config.getWeekDayRegex(), suffixStr.trim())).findFirst();
-                if (match.isPresent() && match.get().index == 0 && num <= 5 && result.getType().equals("builtin.num.ordinal")) {
-                    String weekDayStr = match.get().getGroup("weekday").value.toLowerCase();
+                beginMatch = RegexExtension.matchBegin(config.getWeekDayRegex(), suffixStr.trim(), true);
+                if (beginMatch.getSuccess() && num >= 1 && num <= 5 && result.getType().equals("builtin.num.ordinal")) {
+                    String weekDayStr = beginMatch.getMatch().get().getGroup("weekday").value.toLowerCase();
                     if (config.getDayOfWeek().containsKey(weekDayStr)) {
                         int spaceLen = suffixStr.length() - suffixStr.trim().length();
-                        tokens.add(new Token(result.getStart(), result.getStart() + result.getLength() + spaceLen + match.get().length));
+                        tokens.add(new Token(result.getStart(), result.getStart() + result.getLength() + spaceLen + beginMatch.getMatch().get().length));
                     }
                 }
             }

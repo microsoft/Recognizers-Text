@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Microsoft.Recognizers.Text.Sequence
+﻿namespace Microsoft.Recognizers.Text.Sequence
 {
     public class BaseIpParser : BaseSequenceParser
     {
