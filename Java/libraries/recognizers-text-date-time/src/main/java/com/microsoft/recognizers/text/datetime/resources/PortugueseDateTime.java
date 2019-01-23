@@ -903,4 +903,18 @@ public class PortugueseDateTime {
     public static final List<String> YearTerms = Arrays.asList("ano", "anos");
 
     public static final List<String> YearToDateTerms = Arrays.asList("ano ate agora", "ano ate hoje", "ano ate a data", "anos ate agora", "anos ate hoje", "anos ate a data");
+
+    public static final ImmutableMap<Character, Character> SpecialCharactersEquivalent = ImmutableMap.<Character, Character>builder()
+        .put('á', 'a')
+        .put('é', 'e')
+        .put('í', 'i')
+        .put('ó', 'o')
+        .put('ú', 'u')
+        .put('ê', 'e')
+        .put('ô', 'o')
+        .put('ü', 'u')
+        .put('ã', 'a')
+        .put('õ', 'o')
+        .put('ç', 'c')
+        .build();
 }
