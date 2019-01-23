@@ -15,11 +15,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             LunarHolidayRegex,
         };
 
-        public IEnumerable<Regex> HolidayRegexes => HolidayRegexList;
-
-        public ChineseHolidayExtractorConfiguration() : base()
+        public ChineseHolidayExtractorConfiguration()
+            : base()
         {
         }
 
+        public IEnumerable<Regex> HolidayRegexes => HolidayRegexList;
     }
 }
