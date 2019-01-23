@@ -1,5 +1,30 @@
 [
   {
+    "Input": "Who are us presidents in 1990 s.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "1990 s",
+        "Start": 25,
+        "End": 30,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(1990-01-01,2000-01-01,P10Y)",
+              "type": "daterange",
+              "start": "1990-01-01",
+              "end": "2000-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
     "Input": "I'll go back Oct/2",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
