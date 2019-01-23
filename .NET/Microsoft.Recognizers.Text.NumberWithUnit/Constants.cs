@@ -1,9 +1,11 @@
 ﻿// ReSharper disable InconsistentNaming
 
+using System.Diagnostics.CodeAnalysis;
 using Microsoft.Recognizers.Definitions;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit
 {
+    [SuppressMessage("StyleCop.CSharp.NamingRules", "SA1310: CSharp.Naming : Field names must not contain underscores.", Justification = "Constant names are written in upper case so they can be readily distinguished from camel case variable names.")]
     public static class Constants
     {
         public const string SYS_UNIT_DIMENSION = "builtin.unit.dimension";
