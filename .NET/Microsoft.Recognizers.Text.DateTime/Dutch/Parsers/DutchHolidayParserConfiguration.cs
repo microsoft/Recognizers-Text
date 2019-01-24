@@ -9,7 +9,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 {
     public class DutchHolidayParserConfiguration : BaseHolidayParserConfiguration
     {
-        public DutchHolidayParserConfiguration(IOptionsConfiguration config) : base(config)
+        public DutchHolidayParserConfiguration(IOptionsConfiguration config)
+            : base(config)
         {
             this.HolidayRegexList = DutchHolidayExtractorConfiguration.HolidayRegexList;
             this.HolidayNames = DateTimeDefinitions.HolidayNames.ToImmutableDictionary();
@@ -19,52 +20,52 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         {
             return new Dictionary<string, Func<int, DateObject>>(base.InitHolidayFuncs())
             {
-                {"maosbirthday", MaoBirthday},
-                {"yuandan", NewYear},
-                {"teachersday", DutchTeachersDay},
-                {"singleday", SinglesDay},
-                {"allsaintsday", HalloweenDay},
-                {"youthday", YouthDay},
-                {"childrenday", ChildrenDay},
-                {"femaleday", FemaleDay},
-                {"treeplantingday", TreePlantDay},
-                {"arborday", TreePlantDay},
-                {"girlsday", GirlsDay},
-                {"whiteloverday", WhiteLoverDay},
-                {"loverday", ValentinesDay},
-                {"christmas", ChristmasDay},
-                {"xmas", ChristmasDay},
-                {"newyear", NewYear},
-                {"newyearday", NewYear},
-                {"newyearsday", NewYear},
-                {"inaugurationday", InaugurationDay},
-                {"groundhougday", GroundhogDay},
-                {"valentinesday", ValentinesDay},
-                {"stpatrickday", StPatrickDay},
-                {"aprilfools", FoolDay},
-                {"stgeorgeday", StGeorgeDay},
-                {"mayday", Mayday},
-                {"cincodemayoday", CincoDeMayoday},
-                {"baptisteday", BaptisteDay},
-                {"usindependenceday", UsaIndependenceDay},
-                {"independenceday", UsaIndependenceDay},
-                {"bastilleday", BastilleDay},
-                {"halloweenday", HalloweenDay},
-                {"allhallowday", AllHallowDay},
-                {"allsoulsday", AllSoulsday},
-                {"guyfawkesday", GuyFawkesDay},
-                {"veteransday", DutchVeteransday},
-                {"christmaseve", ChristmasEve},
-                {"newyeareve", NewYearEve},
-                {"easterday", EasterDay},
-                {"kingsday", KingsDay},
-                {"queensday", QueensDay},
-                {"prinsjesdag", Prinsjesdag},
-                {"eerstekerstdag", ChristmasDay},
-                {"tweedekerstdag", SecondChristmasDay},
-                {"bevrijdingsdag", Bevrijdingsdag},
-                {"dodenherdenking", Dodenherdenking},
-                {"dagvandearbeid", Dagvandearbeid}
+                { "maosbirthday", MaoBirthday },
+                { "yuandan", NewYear },
+                { "teachersday", DutchTeachersDay },
+                { "singleday", SinglesDay },
+                { "allsaintsday", HalloweenDay },
+                { "youthday", YouthDay },
+                { "childrenday", ChildrenDay },
+                { "femaleday", FemaleDay },
+                { "treeplantingday", TreePlantDay },
+                { "arborday", TreePlantDay },
+                { "girlsday", GirlsDay },
+                { "whiteloverday", WhiteLoverDay },
+                { "loverday", ValentinesDay },
+                { "christmas", ChristmasDay },
+                { "xmas", ChristmasDay },
+                { "newyear", NewYear },
+                { "newyearday", NewYear },
+                { "newyearsday", NewYear },
+                { "inaugurationday", InaugurationDay },
+                { "groundhougday", GroundhogDay },
+                { "valentinesday", ValentinesDay },
+                { "stpatrickday", StPatrickDay },
+                { "aprilfools", FoolDay },
+                { "stgeorgeday", StGeorgeDay },
+                { "mayday", Mayday },
+                { "cincodemayoday", CincoDeMayoday },
+                { "baptisteday", BaptisteDay },
+                { "usindependenceday", UsaIndependenceDay },
+                { "independenceday", UsaIndependenceDay },
+                { "bastilleday", BastilleDay },
+                { "halloweenday", HalloweenDay },
+                { "allhallowday", AllHallowDay },
+                { "allsoulsday", AllSoulsday },
+                { "guyfawkesday", GuyFawkesDay },
+                { "veteransday", DutchVeteransday },
+                { "christmaseve", ChristmasEve },
+                { "newyeareve", NewYearEve },
+                { "easterday", EasterDay },
+                { "kingsday", KingsDay },
+                { "queensday", QueensDay },
+                { "prinsjesdag", Prinsjesdag },
+                { "eerstekerstdag", ChristmasDay },
+                { "tweedekerstdag", SecondChristmasDay },
+                { "bevrijdingsdag", Bevrijdingsdag },
+                { "dodenherdenking", Dodenherdenking },
+                { "dagvandearbeid", Dagvandearbeid },
             };
         }
 
@@ -130,8 +131,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         public override string SanitizeHolidayToken(string holiday)
         {
             return holiday
-                .Replace(" ", "")
-                .Replace("'", "");
+                .Replace(" ", string.Empty)
+                .Replace("'", string.Empty);
         }
     }
 }

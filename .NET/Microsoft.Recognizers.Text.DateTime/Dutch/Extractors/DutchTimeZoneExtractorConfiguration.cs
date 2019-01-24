@@ -13,27 +13,24 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         public static readonly Regex DirectUtcRegex =
             new Regex(TimeZoneDefinitions.DirectUtcRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex AbbreviationRegex =
-            new Regex(TimeZoneDefinitions.AbbreviationsRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly List<string> AbbreviationsList =
+            new List<string>(TimeZoneDefinitions.AbbreviationsList);
 
-        public static readonly Regex StandardTimeRegex =
-            new Regex(TimeZoneDefinitions.FullNameRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly List<string> FullNameList =
+            new List<string>(TimeZoneDefinitions.FullNameList);
 
-        public static readonly Regex[] TimeZoneRegexList =
-        {
-            DirectUtcRegex,
-            AbbreviationRegex,
-            StandardTimeRegex
-        };
+        public static readonly StringMatcher TimeZoneMatcher =
+            TimeZoneUtility.BuildMatcherFromLists(AbbreviationsList, FullNameList);
 
-        public static readonly Regex LocationTimeSuffixRegex = 
+        public static readonly Regex LocationTimeSuffixRegex =
             new Regex(TimeZoneDefinitions.LocationTimeSuffixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly StringMatcher LocationMatcher = new StringMatcher();
 
         public static readonly List<string> AmbiguousTimezoneList = TimeZoneDefinitions.AmbiguousTimezoneList.ToList();
 
-        public DutchTimeZoneExtractorConfiguration(IOptionsConfiguration config) : base(config)
+        public DutchTimeZoneExtractorConfiguration(IOptionsConfiguration config)
+            : base(config)
         {
             if ((Options & DateTimeOptions.EnablePreview) != 0)
             {
@@ -41,11 +38,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
             }
         }
 
-        IEnumerable<Regex> ITimeZoneExtractorConfiguration.TimeZoneRegexes => TimeZoneRegexList;
+        Regex ITimeZoneExtractorConfiguration.DirectUtcRegex => DirectUtcRegex;
 
         Regex ITimeZoneExtractorConfiguration.LocationTimeSuffixRegex => LocationTimeSuffixRegex;
 
         StringMatcher ITimeZoneExtractorConfiguration.LocationMatcher => LocationMatcher;
+
+        StringMatcher ITimeZoneExtractorConfiguration.TimeZoneMatcher => TimeZoneMatcher;
 
         List<string> ITimeZoneExtractorConfiguration.AmbiguousTimezoneList => AmbiguousTimezoneList;
     }

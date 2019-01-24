@@ -32,7 +32,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         public IDateTimeParser TimeZoneParser { get; }
 
-        public DutchTimeParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config)
+        public DutchTimeParserConfiguration(ICommonDateTimeParserConfiguration config)
+            : base(config)
         {
             TimeTokenPrefix = DateTimeDefinitions.TimeTokenPrefix;
             AtRegex = DutchTimeExtractorConfiguration.AtRegex;
@@ -144,7 +145,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
                         }
                         else if (NightRegex.IsMatch(pmStr))
                         {
-                            //For hour <=3 or ==12, we treat it as am, for example 1 in the night (midnight) == 1am
+                            // For hour <=3 or ==12, we treat it as am, for example 1 in the night (midnight) == 1am
                             if (hour <= 3 || hour == Constants.HalfDayHourCount)
                             {
                                 if (hour == Constants.HalfDayHourCount)
@@ -163,7 +164,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
                         {
                             hasPm = true;
                         }
-                        
+
                     }
                 }
             }

@@ -15,16 +15,16 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         public string TokenBeforeDate { get; }
 
-        public static IList<string> MonthTermsPadded = 
+        public static IList<string> MonthTermsPadded =
             DateTimeDefinitions.MonthTerms.Select(str => $" {str} ").ToList();
 
-        public static IList<string> WeekendTermsPadded = 
+        public static IList<string> WeekendTermsPadded =
             DateTimeDefinitions.WeekendTerms.Select(str => $" {str} ").ToList();
 
-        public static IList<string> WeekTermsPadded = 
+        public static IList<string> WeekTermsPadded =
             DateTimeDefinitions.WeekTerms.Select(str => $" {str} ").ToList();
 
-        public static IList<string> YearTermsPadded = 
+        public static IList<string> YearTermsPadded =
             DateTimeDefinitions.YearTerms.Select(str => $" {str} ").ToList();
 
         #region internalParsers
@@ -129,9 +129,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         public IImmutableList<string> InStringList { get; }
 
-        public DutchDatePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config)
+        public DutchDatePeriodParserConfiguration(ICommonDateTimeParserConfiguration config)
+            : base(config)
         {
-            TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;           
+            TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
             CardinalExtractor = config.CardinalExtractor;
             OrdinalExtractor = config.OrdinalExtractor;
             IntegerExtractor = config.IntegerExtractor;
@@ -192,7 +193,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
             var swift = 0;
 
             var trimmedText = text.Trim().ToLowerInvariant();
-            
+
             if (AfterNextSuffixRegex.IsMatch(trimmedText))
             {
                 swift = 2;
@@ -214,7 +215,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
             var swift = -10;
 
             var trimmedText = text.Trim().ToLowerInvariant();
-            
+
             if (AfterNextSuffixRegex.IsMatch(trimmedText))
             {
                 swift = 2;

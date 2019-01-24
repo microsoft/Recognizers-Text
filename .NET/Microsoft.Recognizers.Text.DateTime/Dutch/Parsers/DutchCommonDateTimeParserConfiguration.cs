@@ -1,17 +1,17 @@
 ﻿using System.Collections.Immutable;
-
-using Microsoft.Recognizers.Text.DateTime.Dutch.Utilities;
-using Microsoft.Recognizers.Definitions.Dutch;
 using Microsoft.Recognizers.Definitions;
-using Microsoft.Recognizers.Text.Number.Dutch;
+using Microsoft.Recognizers.Definitions.Dutch;
+using Microsoft.Recognizers.Text.DateTime.Dutch.Utilities;
 using Microsoft.Recognizers.Text.Number;
+using Microsoft.Recognizers.Text.Number.Dutch;
 
 namespace Microsoft.Recognizers.Text.DateTime.Dutch
 {
     public class DutchCommonDateTimeParserConfiguration : BaseDateParserConfiguration, ICommonDateTimeParserConfiguration
     {
 
-        public DutchCommonDateTimeParserConfiguration(IOptionsConfiguration config) : base(config)
+        public DutchCommonDateTimeParserConfiguration(IOptionsConfiguration config)
+            : base(config)
         {
             UtilityConfiguration = new DutchDatetimeUtilityConfiguration();
 

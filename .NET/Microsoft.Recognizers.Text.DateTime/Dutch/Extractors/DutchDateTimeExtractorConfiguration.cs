@@ -1,23 +1,22 @@
 ﻿using System.Text.RegularExpressions;
-
+using Microsoft.Recognizers.Definitions.Dutch;
 using Microsoft.Recognizers.Text.DateTime.Dutch.Utilities;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
-using Microsoft.Recognizers.Definitions.Dutch;
 
 namespace Microsoft.Recognizers.Text.DateTime.Dutch
 {
     public class DutchDateTimeExtractorConfiguration : BaseOptionsConfiguration, IDateTimeExtractorConfiguration
     {
-        public static readonly Regex PrepositionRegex = 
+        public static readonly Regex PrepositionRegex =
             new Regex(DateTimeDefinitions.PrepositionRegex, RegexOptions.Singleline);
 
         public static readonly Regex NowRegex =
             new Regex(DateTimeDefinitions.NowRegex, RegexOptions.Singleline);
 
-        public static readonly Regex SuffixRegex = 
+        public static readonly Regex SuffixRegex =
             new Regex(DateTimeDefinitions.SuffixRegex, RegexOptions.Singleline);
 
-        public static readonly Regex TimeOfDayRegex = 
+        public static readonly Regex TimeOfDayRegex =
             new Regex(DateTimeDefinitions.TimeOfDayRegex, RegexOptions.Singleline);
 
         public static readonly Regex SpecificTimeOfDayRegex =
@@ -35,25 +34,26 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         public static readonly Regex SimpleTimeOfTodayBeforeRegex =
             new Regex(DateTimeDefinitions.SimpleTimeOfTodayBeforeRegex, RegexOptions.Singleline);
 
-        public static readonly Regex SpecificEndOfRegex = 
+        public static readonly Regex SpecificEndOfRegex =
             new Regex(DateTimeDefinitions.SpecificEndOfRegex, RegexOptions.Singleline);
 
         public static readonly Regex UnspecificEndOfRegex =
             new Regex(DateTimeDefinitions.UnspecificEndOfRegex, RegexOptions.Singleline);
 
-        public static readonly Regex UnitRegex = 
+        public static readonly Regex UnitRegex =
             new Regex(DateTimeDefinitions.TimeUnitRegex, RegexOptions.Singleline);
 
-        public static readonly Regex ConnectorRegex = 
+        public static readonly Regex ConnectorRegex =
             new Regex(DateTimeDefinitions.ConnectorRegex, RegexOptions.Singleline);
 
-        public static readonly Regex NumberAsTimeRegex = 
+        public static readonly Regex NumberAsTimeRegex =
             new Regex(DateTimeDefinitions.NumberAsTimeRegex, RegexOptions.Singleline);
 
-        public static readonly Regex DateNumberConnectorRegex = 
+        public static readonly Regex DateNumberConnectorRegex =
             new Regex(DateTimeDefinitions.DateNumberConnectorRegex, RegexOptions.Singleline);
 
-        public DutchDateTimeExtractorConfiguration(IOptionsConfiguration config) : base(config)
+        public DutchDateTimeExtractorConfiguration(IOptionsConfiguration config)
+            : base(config)
         {
             IntegerExtractor = Number.Dutch.IntegerExtractor.GetInstance();
             DatePointExtractor = new BaseDateExtractor(new DutchDateExtractorConfiguration(this));
@@ -82,7 +82,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         Regex IDateTimeExtractorConfiguration.SimpleTimeOfTodayBeforeRegex => SimpleTimeOfTodayBeforeRegex;
 
-        Regex IDateTimeExtractorConfiguration.TimeOfDayRegex => TimeOfDayRegex;  
+        Regex IDateTimeExtractorConfiguration.TimeOfDayRegex => TimeOfDayRegex;
 
         Regex IDateTimeExtractorConfiguration.SpecificEndOfRegex => SpecificEndOfRegex;
 

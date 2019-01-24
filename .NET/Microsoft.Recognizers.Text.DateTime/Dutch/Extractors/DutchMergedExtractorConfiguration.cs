@@ -9,10 +9,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 {
     public class DutchMergedExtractorConfiguration : BaseOptionsConfiguration, IMergedExtractorConfiguration
     {
-        public static readonly Regex BeforeRegex = 
+        public static readonly Regex BeforeRegex =
             new Regex(DateTimeDefinitions.BeforeRegex, RegexOptions.Singleline);
 
-        public static readonly Regex AfterRegex = 
+        public static readonly Regex AfterRegex =
             new Regex(DateTimeDefinitions.AfterRegex, RegexOptions.Singleline);
 
         public static readonly Regex SinceRegex =
@@ -21,7 +21,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         public static readonly Regex AroundRegex =
             new Regex(DateTimeDefinitions.AroundRegex, RegexOptions.Singleline);
 
-        public static readonly Regex FromToRegex = 
+        public static readonly Regex FromToRegex =
             new Regex(DateTimeDefinitions.FromToRegex, RegexOptions.Singleline);
 
         public static readonly Regex SingleAmbiguousMonthRegex =
@@ -43,8 +43,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         {
             // one on one
             new Regex(DateTimeDefinitions.OneOnOneRegex, RegexOptions.Singleline),
+
             // (the)? (day|week|month|year)
-            new Regex(DateTimeDefinitions.SingleAmbiguousTermsRegex, RegexOptions.Singleline)
+            new Regex(DateTimeDefinitions.SingleAmbiguousTermsRegex, RegexOptions.Singleline),
         };
 
         public static readonly StringMatcher SuperfluousWordMatcher = new StringMatcher();
@@ -75,7 +76,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         public Dictionary<Regex, Regex> AmbiguityFiltersDict { get; }
 
-        public DutchMergedExtractorConfiguration(IOptionsConfiguration config) : base(config)
+        public DutchMergedExtractorConfiguration(IOptionsConfiguration config)
+            : base(config)
         {
             DateExtractor = new BaseDateExtractor(new DutchDateExtractorConfiguration(this));
             TimeExtractor = new BaseTimeExtractor(new DutchTimeExtractorConfiguration(this));

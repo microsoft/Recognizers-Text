@@ -47,7 +47,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         public Regex SetEachRegex { get; }
 
-        public DutchSetParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config)
+        public DutchSetParserConfiguration(ICommonDateTimeParserConfiguration config)
+            : base(config)
         {
             DurationExtractor = config.DurationExtractor;
             TimeExtractor = config.TimeExtractor;

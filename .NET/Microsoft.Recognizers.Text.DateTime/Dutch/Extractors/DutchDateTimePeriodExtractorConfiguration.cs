@@ -13,7 +13,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         private static readonly Regex[] SimpleCases =
         {
             DutchTimePeriodExtractorConfiguration.PureNumFromTo,
-            DutchTimePeriodExtractorConfiguration.PureNumBetweenAnd
+            DutchTimePeriodExtractorConfiguration.PureNumBetweenAnd,
         };
 
         private static readonly Regex PeriodTimeOfDayRegex =
@@ -73,7 +73,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         public static readonly Regex WeekDaysRegex =
             new Regex(DateTimeDefinitions.WeekDayRegex, RegexOptions.Singleline);
 
-        public DutchDateTimePeriodExtractorConfiguration(IOptionsConfiguration config) : base(config)
+        public DutchDateTimePeriodExtractorConfiguration(IOptionsConfiguration config)
+            : base(config)
         {
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
 
@@ -147,7 +148,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         public IDateTimeExtractor TimePeriodExtractor { get; }
 
-        //TODO: these three methods are the same in DatePeriod, should be abstracted
+        // TODO: these three methods are the same in DatePeriod, should be abstracted
         public bool GetFromTokenIndex(string text, out int index)
         {
             index = -1;

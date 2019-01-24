@@ -1,9 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
-
-using Microsoft.Recognizers.Text.DateTime.Utilities;
 using Microsoft.Recognizers.Definitions.Dutch;
+using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.Dutch
 {
@@ -85,7 +84,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
-        public DutchDateParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config)
+        public DutchDateParserConfiguration(ICommonDateTimeParserConfiguration config)
+            : base(config)
         {
             DateTokenPrefix = DateTimeDefinitions.DateTokenPrefix;
             IntegerExtractor = config.IntegerExtractor;

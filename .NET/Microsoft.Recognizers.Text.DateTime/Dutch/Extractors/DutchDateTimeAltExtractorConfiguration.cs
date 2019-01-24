@@ -1,13 +1,13 @@
-﻿using System.Text.RegularExpressions;
-
+﻿using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Dutch;
-using System.Collections.Generic;
 
 namespace Microsoft.Recognizers.Text.DateTime.Dutch
 {
     public class DutchDateTimeAltExtractorConfiguration : BaseOptionsConfiguration, IDateTimeAltExtractorConfiguration
     {
-        public DutchDateTimeAltExtractorConfiguration(IOptionsConfiguration config) : base(config)
+        public DutchDateTimeAltExtractorConfiguration(IOptionsConfiguration config)
+            : base(config)
         {
             DateExtractor = new BaseDateExtractor(new DutchDateExtractorConfiguration(this));
             DatePeriodExtractor = new BaseDatePeriodExtractor(new DutchDatePeriodExtractorConfiguration(this));

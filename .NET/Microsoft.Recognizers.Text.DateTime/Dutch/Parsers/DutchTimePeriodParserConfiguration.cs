@@ -36,7 +36,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
-        public DutchTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config)
+        public DutchTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config)
+            : base(config)
         {
             TimeExtractor = config.TimeExtractor;
             IntegerExtractor = config.IntegerExtractor;
@@ -65,7 +66,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
             endHour = 0;
             endMin = 0;
 
-            var timeOfDay = "";
+            var timeOfDay = string.Empty;
             if (DateTimeDefinitions.MorningTermList.Any(o => trimmedText.EndsWith(o)))
             {
                 timeOfDay = Constants.Morning;
