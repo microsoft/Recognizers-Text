@@ -109,6 +109,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>ChoiceDefinitions.tt</DependentUpon>
     </Compile>
+    <Compile Update="Dutch\DateTimeDefinitions.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DateTimeDefinitions.tt</DependentUpon>
+    </Compile>
     <Compile Update="Dutch\NumberDefinitions.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -118,6 +123,11 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>NumbersWithUnitDefinitions.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Dutch\TimeZoneDefinitions.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>TimeZoneDefinitions.tt</DependentUpon>
     </Compile>
     <Compile Update="English\ChoiceDefinitions.cs">
       <DesignTime>True</DesignTime>
@@ -299,9 +309,13 @@
     </None>
     <None Update="Dutch\ChoiceDefinitions.tt">
     </None>
+    <None Update="Dutch\DateTimeDefinitions.tt">
+    </None>
     <None Update="Dutch\NumberDefinitions.tt">
     </None>
     <None Update="Dutch\NumbersWithUnitDefinitions.tt">
+    </None>
+    <None Update="Dutch\TimeZoneDefinitions.tt">
     </None>
     <None Update="English\ChoiceDefinitions.tt">
     </None>
