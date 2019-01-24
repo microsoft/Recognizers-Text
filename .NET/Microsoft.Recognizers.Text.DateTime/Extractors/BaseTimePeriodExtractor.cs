@@ -41,7 +41,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 timePeriodErs = TimeZoneUtility.MergeTimeZones(timePeriodErs, config.TimeZoneExtractor.Extract(text, reference), text);
             }
 
-            //TODO: Fix to solve german morgen (morning) / morgen (tomorrow) ambiguity. To be removed after the first version of DateTimeV2 in German is in production.
+            // TODO: Fix to solve german morgen (morning) / morgen (tomorrow) ambiguity. To be removed after the first version of DateTimeV2 in German is in production.
             timePeriodErs = GermanMorgenWorkaround(text, timePeriodErs);
 
             return timePeriodErs;
