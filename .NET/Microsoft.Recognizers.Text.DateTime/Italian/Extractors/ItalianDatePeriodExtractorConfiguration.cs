@@ -14,7 +14,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             DateTimeDefinitions.TillRegex, // until
             RegexOptions.Singleline);
 
-        public static readonly Regex AndRegex = new Regex(
+        public static readonly Regex RangeConnectorRegex = new Regex(
             DateTimeDefinitions.RangeConnectorRegex, // and
             RegexOptions.Singleline);
 
