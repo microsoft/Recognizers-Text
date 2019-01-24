@@ -17,19 +17,18 @@ namespace Microsoft.Recognizers.Text.Sequence.English
 
         private static readonly Regex GuidElementRegex = new Regex(BaseGUID.GUIDRegexElement, RegexOptions.Compiled);
 
-        public double ScoreGUID(string TextGUID)
+        public double ScoreGUID(string textGUID)
         {
             double score = baseScore;
 
-
-            Match elementMatch = GuidElementRegex.Match(TextGUID);
+            Match elementMatch = GuidElementRegex.Match(textGUID);
             if (elementMatch.Success)
             {
                 int startIndex = elementMatch.Groups[1].Index;
                 string guidElement = elementMatch.Groups[1].Value;
                 score -= startIndex == 0 ? noBoundaryPenalty : 0;
                 score -= Regex.IsMatch(guidElement, formatRegex) ? 0 : noFormatPenalty;
-                score -= Regex.IsMatch(TextGUID, pureDigitRegex) ? pureDigitPenalty : 0;
+                score -= Regex.IsMatch(textGUID, pureDigitRegex) ? pureDigitPenalty : 0;
             }
 
             return Math.Max(Math.Min(score, scoreUpperLimit), scoreLowerLimit) / (scoreUpperLimit - scoreLowerLimit);
