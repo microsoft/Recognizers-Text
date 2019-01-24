@@ -364,7 +364,7 @@ public class SpanishDatePeriodParserConfiguration extends BaseOptionsConfigurati
 
     @Override
     public final Pattern getWeekWithWeekDayRangeRegex() {
-        return laterEarlyPeriodRegex;
+        return weekWithWeekDayRangeRegex;
     }
 
     @Override
@@ -389,7 +389,7 @@ public class SpanishDatePeriodParserConfiguration extends BaseOptionsConfigurati
 
     @Override
     public final Pattern getRelativeDecadeRegex() {
-        return complexDatePeriodRegex;
+        return relativeDecadeRegex;
     }
 
     @Override

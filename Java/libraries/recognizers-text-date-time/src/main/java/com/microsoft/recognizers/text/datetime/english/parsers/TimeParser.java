@@ -38,7 +38,7 @@ public class TimeParser extends BaseTimeParser {
         DateTimeResolutionResult result = new DateTimeResolutionResult();
         String lowerText = text.toLowerCase();
 
-        ConditionalMatch match = RegexExtension.matchExact(EnglishTimeExtractorConfiguration.IshRegex, text, true);
+        ConditionalMatch match = RegexExtension.matchExact(EnglishTimeExtractorConfiguration.IshRegex, lowerText, true);
         if (match.getSuccess()) {
             String hourStr = match.getMatch().get().getGroup(Constants.HourGroupName).value;
             int hour = Constants.HalfDayHourCount;

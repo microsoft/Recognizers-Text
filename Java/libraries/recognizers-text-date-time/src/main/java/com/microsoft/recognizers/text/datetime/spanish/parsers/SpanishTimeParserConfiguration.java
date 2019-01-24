@@ -27,7 +27,6 @@ public class SpanishTimeParserConfiguration extends BaseOptionsConfiguration imp
     public String timeTokenPrefix = SpanishDateTime.TimeTokenPrefix;
 
     public final Pattern atRegex;
-    public Pattern mealTimeRegex;
 
     private final Iterable<Pattern> timeRegexes;
     private final ImmutableMap<String, Integer> numbers;
