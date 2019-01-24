@@ -1,3 +1,7 @@
+﻿// <copyright file="AssemblyInfo.cs" company="Microsoft Corporation">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
+
 using System.Reflection;
 using System.Runtime.InteropServices;
 
