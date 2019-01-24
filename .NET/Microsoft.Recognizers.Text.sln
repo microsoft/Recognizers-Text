@@ -33,6 +33,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Patterns", "Patterns", "{23
 		..\Patterns\Dutch\Dutch-Choice.yaml = ..\Patterns\Dutch\Dutch-Choice.yaml
 		..\Patterns\Dutch\Dutch-Numbers.yaml = ..\Patterns\Dutch\Dutch-Numbers.yaml
 		..\Patterns\Dutch\Dutch-NumbersWithUnit.yaml = ..\Patterns\Dutch\Dutch-NumbersWithUnit.yaml
+		..\Patterns\Dutch\Dutch-TimeZone.yaml = ..\Patterns\Dutch\Dutch-TimeZone.yaml
 		..\Patterns\English\English-Choice.yaml = ..\Patterns\English\English-Choice.yaml
 		..\Patterns\English\English-DateTime.yaml = ..\Patterns\English\English-DateTime.yaml
 		..\Patterns\English\English-Numbers.yaml = ..\Patterns\English\English-Numbers.yaml

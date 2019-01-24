@@ -1,26 +1,10 @@
 using System;
-using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using DateObject = System.DateTime;
-
-using Microsoft.Recognizers.Text.Choice;
-using Microsoft.Recognizers.Text.DateTime;
-using Microsoft.Recognizers.Text.DateTime.English;
-using Microsoft.Recognizers.Text.DateTime.French;
-using Microsoft.Recognizers.Text.DateTime.German;
-using Microsoft.Recognizers.Text.DateTime.Italian;
-using Microsoft.Recognizers.Text.DateTime.Spanish;
-using Microsoft.Recognizers.Text.DateTime.Portuguese;
-using Microsoft.Recognizers.Text.Number;
-using Microsoft.Recognizers.Text.NumberWithUnit;
-using Microsoft.Recognizers.Text.Sequence;
-
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-using Newtonsoft.Json;
 using System.Reflection;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Newtonsoft.Json;
 
 namespace Microsoft.Recognizers.Text.DataDrivenTests
 {
@@ -45,7 +29,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             var fileName = Path.GetFileNameWithoutExtension(specsFile) + "-" + recognizerLanguage[1];
             var rawData = File.ReadAllText(specsFile);
             var specs = JsonConvert.DeserializeObject<IList<TestModel>>(rawData);
-            
+
             var data = specs.Select(spec => new[] { spec });
             return data;
         }

@@ -54,6 +54,41 @@
             大约早上10:00
             </summary>
         </member>
+        <member name="F:Microsoft.Recognizers.Text.DateTime.DateTimeOptions.None">
+            <summary>
+            None
+            </summary>
+        </member>
+        <member name="F:Microsoft.Recognizers.Text.DateTime.DateTimeOptions.SkipFromToMerge">
+            <summary>
+            SkipFromToMerge
+            </summary>
+        </member>
+        <member name="F:Microsoft.Recognizers.Text.DateTime.DateTimeOptions.SplitDateAndTime">
+            <summary>
+            SplitDateAndTime
+            </summary>
+        </member>
+        <member name="F:Microsoft.Recognizers.Text.DateTime.DateTimeOptions.CalendarMode">
+            <summary>
+            CalendarMode
+            </summary>
+        </member>
+        <member name="F:Microsoft.Recognizers.Text.DateTime.DateTimeOptions.ExtendedTypes">
+            <summary>
+            ExtendedTypes
+            </summary>
+        </member>
+        <member name="F:Microsoft.Recognizers.Text.DateTime.DateTimeOptions.ExperimentalMode">
+            <summary>
+            ExperimentalMode
+            </summary>
+        </member>
+        <member name="F:Microsoft.Recognizers.Text.DateTime.DateTimeOptions.EnablePreview">
+            <summary>
+            EnablePreview
+            </summary>
+        </member>
         <member name="F:Microsoft.Recognizers.Text.DateTime.Japanese.DurationType.WithNumber">
             <summary>
             Types of DurationType.
