@@ -388,7 +388,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                 return null;
             }
 
-            regexTokens.Sort(new DinoComparer());
+            regexTokens.Sort(new StringComparer());
             var pattern = $@"{this.config.BuildPrefix}({string.Join("|", regexTokens)}){this.config.BuildSuffix}";
             var options = RegexOptions.Singleline | (ignoreCase ? RegexOptions.IgnoreCase : RegexOptions.None);
 
