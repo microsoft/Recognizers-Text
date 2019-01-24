@@ -1,0 +1,7 @@
+﻿﻿<#@ template debug="true" hostspecific="true" language="C#" #>
+<#
+	this.DataFilename = @"Patterns\Dutch\Dutch-DateTime.yaml";
+	this.Language = "Dutch";
+	this.ClassName = "DateTimeDefinitions";
+#>
+<#@ include file="..\CommonDefinitions.ttinclude"#>

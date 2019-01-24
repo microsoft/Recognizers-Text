@@ -39,7 +39,7 @@ public class BaseTimeZoneExtractor implements IDateTimeZoneExtractor {
         String normalizedText = QueryProcessor.removeDiacritics(input);
         List<Token> tokens = new ArrayList<>();
         tokens.addAll(matchTimeZones(normalizedText));
-        tokens.addAll(matchLocationTimes(normalizedText));
+        tokens.addAll(matchLocationTimes(normalizedText, tokens));
         return Token.mergeAllTokens(tokens, input, getExtractorName());
     }
 
@@ -48,7 +48,7 @@ public class BaseTimeZoneExtractor implements IDateTimeZoneExtractor {
         return extractResults.stream().filter(o -> !config.getAmbiguousTimezoneList().contains(o.getText().toLowerCase())).collect(Collectors.toList());
     }
 
-    private List<Token> matchLocationTimes(String text) {
+    private List<Token> matchLocationTimes(String text, List<Token> tokens) {
         List<Token> ret = new ArrayList<>();
 
         if (config.getLocationTimeSuffixRegex() == null) {
@@ -57,7 +57,31 @@ public class BaseTimeZoneExtractor implements IDateTimeZoneExtractor {
 
         Match[] timeMatch = RegExpUtility.getMatches(config.getLocationTimeSuffixRegex(), text);
 
-        if (timeMatch.length != 0) {
+        // Before calling a Find() in location matcher, check if all the matched suffixes by
+        // LocationTimeSuffixRegex are already inside tokens extracted by TimeZone matcher.
+        // If so, don't call the Find() as they have been extracted by TimeZone matcher, otherwise, call it.
+
+        boolean isAllSuffixInsideTokens = true;
+
+        for (Match match : timeMatch) {
+            boolean isInside = false;
+            for (Token token : tokens) {
+                if (token.getStart() <= match.index && token.getEnd() >= match.index + match.length) {
+                    isInside = true;
+                    break;
+                }
+            }
+
+            if (!isInside) {
+                isAllSuffixInsideTokens = false;
+            }
+
+            if (!isAllSuffixInsideTokens) {
+                break;
+            }
+        }
+
+        if (timeMatch.length != 0 && !isAllSuffixInsideTokens) {
             int lastMatchIndex = timeMatch[timeMatch.length - 1].index;
             Iterable<MatchResult<String>> matches = config.getLocationMatcher().find(text.substring(0, lastMatchIndex).toLowerCase());
             List<MatchResult<String>> locationMatches = MatchingUtil.removeSubMatches(matches);
