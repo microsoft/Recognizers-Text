@@ -143,7 +143,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        // handle cases that don't contain nubmer
+        // handle cases that don't contain number
         private List<Token> ImplicitDuration(string text)
         {
             var ret = new List<Token>();
