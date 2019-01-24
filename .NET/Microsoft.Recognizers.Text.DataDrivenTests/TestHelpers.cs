@@ -388,7 +388,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
         public static IDateTimeParser GetChineseParser(DateTimeParsers parserName)
         {
-            //var commonConfiguration = new EnglishCommonDateTimeParserConfiguration();
+            // var commonConfiguration = new EnglishCommonDateTimeParserConfiguration();
             switch (parserName)
             {
                 case DateTimeParsers.Date:

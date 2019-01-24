@@ -4,7 +4,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 {
     public class TimeParser : BaseTimeParser
     {
-        public TimeParser(ITimeParserConfiguration configuration) : base(configuration) { }
+        public TimeParser(ITimeParserConfiguration configuration)
+            : base(configuration) { }
 
         protected override DateTimeResolutionResult InternalParse(string text, DateObject referenceTime)
         {

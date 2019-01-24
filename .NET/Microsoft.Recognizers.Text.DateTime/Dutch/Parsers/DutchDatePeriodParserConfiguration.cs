@@ -129,7 +129,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         public IImmutableList<string> InStringList { get; }
 
-        public DutchDatePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config)
+        public DutchDatePeriodParserConfiguration(ICommonDateTimeParserConfiguration config)
+            : base(config)
         {
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;           
             CardinalExtractor = config.CardinalExtractor;

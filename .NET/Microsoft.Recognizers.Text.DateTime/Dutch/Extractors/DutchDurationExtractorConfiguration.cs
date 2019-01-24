@@ -52,7 +52,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         public static readonly Regex LessThanRegex =
             new Regex(DateTimeDefinitions.LessThanRegex, RegexOptions.Singleline | RegexOptions.RightToLeft);
 
-        public DutchDurationExtractorConfiguration(IOptionsConfiguration config) : base(config)
+        public DutchDurationExtractorConfiguration(IOptionsConfiguration config)
+            : base(config)
         {
             CardinalExtractor = Number.Dutch.CardinalExtractor.GetInstance();
             UnitMap = DateTimeDefinitions.UnitMap.ToImmutableDictionary();

@@ -63,7 +63,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         public static readonly Regex GeneralEndingRegex =
             new Regex(DateTimeDefinitions.GeneralEndingRegex, RegexOptions.Singleline);
 
-        public DutchTimePeriodExtractorConfiguration(IOptionsConfiguration config) : base(config)
+        public DutchTimePeriodExtractorConfiguration(IOptionsConfiguration config)
+            : base(config)
         {
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
             SingleTimeExtractor = new BaseTimeExtractor(new DutchTimeExtractorConfiguration(this));

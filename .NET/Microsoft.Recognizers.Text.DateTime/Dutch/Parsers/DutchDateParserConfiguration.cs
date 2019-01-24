@@ -85,7 +85,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
-        public DutchDateParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config)
+        public DutchDateParserConfiguration(ICommonDateTimeParserConfiguration config)
+            : base(config)
         {
             DateTokenPrefix = DateTimeDefinitions.DateTokenPrefix;
             IntegerExtractor = config.IntegerExtractor;

@@ -7,7 +7,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 {
     public class DutchDateTimeAltExtractorConfiguration : BaseOptionsConfiguration, IDateTimeAltExtractorConfiguration
     {
-        public DutchDateTimeAltExtractorConfiguration(IOptionsConfiguration config) : base(config)
+        public DutchDateTimeAltExtractorConfiguration(IOptionsConfiguration config)
+            : base(config)
         {
             DateExtractor = new BaseDateExtractor(new DutchDateExtractorConfiguration(this));
             DatePeriodExtractor = new BaseDatePeriodExtractor(new DutchDatePeriodExtractorConfiguration(this));

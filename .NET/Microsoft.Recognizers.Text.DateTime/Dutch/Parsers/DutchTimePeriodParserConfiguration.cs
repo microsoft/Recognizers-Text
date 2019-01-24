@@ -36,7 +36,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
-        public DutchTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config)
+        public DutchTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config)
+            : base(config)
         {
             TimeExtractor = config.TimeExtractor;
             IntegerExtractor = config.IntegerExtractor;

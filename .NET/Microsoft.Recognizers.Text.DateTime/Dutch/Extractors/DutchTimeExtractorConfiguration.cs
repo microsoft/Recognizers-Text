@@ -135,7 +135,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         public IDateTimeExtractor TimeZoneExtractor { get; }
 
-        public DutchTimeExtractorConfiguration(IOptionsConfiguration config) : base(config)
+        public DutchTimeExtractorConfiguration(IOptionsConfiguration config)
+            : base(config)
         {
             DurationExtractor = new BaseDurationExtractor(new DutchDurationExtractorConfiguration(this));
             TimeZoneExtractor = new BaseTimeZoneExtractor(new DutchTimeZoneExtractorConfiguration(this));

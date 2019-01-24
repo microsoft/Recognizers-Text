@@ -12,7 +12,7 @@ namespace Microsoft.Recognizers.Text.Number
 
         protected virtual NumberOptions Options { get; } = NumberOptions.None;
 
-        protected static readonly string NumExtType = Constants.SYS_NUM; //@sys.num
+        protected static readonly string NumExtType = Constants.SYS_NUM; // @sys.num
 
         protected static readonly string FracNumExtType = Constants.SYS_NUM_FRACTION;
 
@@ -216,7 +216,7 @@ namespace Microsoft.Recognizers.Text.Number
             string replaceFracText = "@" + FracNumExtType;
             bool percentModeEnabled = (Options & NumberOptions.PercentageMode) != 0;
 
-            //@TODO potential cause of GC
+            // @TODO potential cause of GC
             var match = new int[str.Length];
             var strParts = new List<Tuple<int, int>>();
             int start, end;

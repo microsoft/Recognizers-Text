@@ -20,7 +20,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             new List<string>(TimeZoneDefinitions.FullNameList);
 
         public static readonly StringMatcher TimeZoneMatcher =
-            BuildMatcherFromLists(AbbreviationsList, FullNameList);
+            TimeZoneUtility.BuildMatcherFromLists(AbbreviationsList, FullNameList);
 
         public static readonly Regex LocationTimeSuffixRegex =
             new Regex(TimeZoneDefinitions.LocationTimeSuffixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -47,22 +47,5 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         StringMatcher ITimeZoneExtractorConfiguration.TimeZoneMatcher => TimeZoneMatcher;
 
         List<string> ITimeZoneExtractorConfiguration.AmbiguousTimezoneList => AmbiguousTimezoneList;
-
-        protected static StringMatcher BuildMatcherFromLists(params List<string>[] collections)
-        {
-            StringMatcher matcher = new StringMatcher(MatchStrategy.TrieTree, new NumberWithUnitTokenizer());
-            List<string> matcherList = new List<string>();
-
-            foreach (List<string> collection in collections)
-            {
-                collection.ForEach(o => matcherList.Add(o.Trim().ToLower()));
-            }
-
-            matcherList = matcherList.Distinct().ToList();
-
-            matcher.Init(matcherList);
-
-            return matcher;
-        }
     }
 }

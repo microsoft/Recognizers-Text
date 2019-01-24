@@ -66,7 +66,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
-        public DutchDateTimeParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config)
+        public DutchDateTimeParserConfiguration(ICommonDateTimeParserConfiguration config)
+            : base(config)
         {
 
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;

@@ -53,7 +53,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         public static readonly Regex DateNumberConnectorRegex = 
             new Regex(DateTimeDefinitions.DateNumberConnectorRegex, RegexOptions.Singleline);
 
-        public DutchDateTimeExtractorConfiguration(IOptionsConfiguration config) : base(config)
+        public DutchDateTimeExtractorConfiguration(IOptionsConfiguration config)
+            : base(config)
         {
             IntegerExtractor = Number.Dutch.IntegerExtractor.GetInstance();
             DatePointExtractor = new BaseDateExtractor(new DutchDateExtractorConfiguration(this));

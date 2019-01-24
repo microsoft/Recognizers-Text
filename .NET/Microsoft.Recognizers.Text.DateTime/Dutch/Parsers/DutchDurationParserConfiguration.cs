@@ -41,7 +41,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         public IImmutableDictionary<string, double> DoubleNumbers { get; }
 
-        public DutchDurationParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config)
+        public DutchDurationParserConfiguration(ICommonDateTimeParserConfiguration config)
+            : base(config)
         {
             CardinalExtractor = config.CardinalExtractor;
             NumberParser = config.NumberParser;

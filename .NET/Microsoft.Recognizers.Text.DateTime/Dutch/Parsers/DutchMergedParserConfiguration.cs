@@ -25,7 +25,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         public StringMatcher SuperfluousWordMatcher { get; }
 
-        public DutchMergedParserConfiguration(IOptionsConfiguration config) : base(config)
+        public DutchMergedParserConfiguration(IOptionsConfiguration config)
+            : base(config)
         {
             BeforeRegex = DutchMergedExtractorConfiguration.BeforeRegex;
             AfterRegex = DutchMergedExtractorConfiguration.AfterRegex;

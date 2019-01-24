@@ -109,7 +109,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         public static readonly ImmutableDictionary<string, int> MonthOfYear =
             DateTimeDefinitions.MonthOfYear.ToImmutableDictionary();
 
-        public DutchDateExtractorConfiguration(IOptionsConfiguration config) : base(config)
+        public DutchDateExtractorConfiguration(IOptionsConfiguration config)
+            : base(config)
         {
             IntegerExtractor = Number.Dutch.IntegerExtractor.GetInstance();
             OrdinalExtractor = Number.Dutch.OrdinalExtractor.GetInstance();

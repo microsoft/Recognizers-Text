@@ -30,7 +30,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         public static readonly Regex SetEachRegex =
             new Regex(DateTimeDefinitions.SetEachRegex, RegexOptions.Singleline);
 
-        public DutchSetExtractorConfiguration(IOptionsConfiguration config) : base(config)
+        public DutchSetExtractorConfiguration(IOptionsConfiguration config)
+            : base(config)
         {
             DurationExtractor = new BaseDurationExtractor(new DutchDurationExtractorConfiguration(this));
             TimeExtractor = new BaseTimeExtractor(new DutchTimeExtractorConfiguration(this));

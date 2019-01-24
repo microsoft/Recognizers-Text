@@ -1,4 +1,7 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
+
+using Microsoft.Recognizers.Text.Matcher;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
@@ -51,6 +54,23 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             return enablePreview && hasTimeZoneData;
+        }
+
+        public static StringMatcher BuildMatcherFromLists(params List<string>[] collections)
+        {
+            StringMatcher matcher = new StringMatcher(MatchStrategy.TrieTree, new NumberWithUnitTokenizer());
+            List<string> matcherList = new List<string>();
+
+            foreach (List<string> collection in collections)
+            {
+                collection.ForEach(o => matcherList.Add(o.Trim().ToLower()));
+            }
+
+            matcherList = matcherList.Distinct().ToList();
+
+            matcher.Init(matcherList);
+
+            return matcher;
         }
     }
 }

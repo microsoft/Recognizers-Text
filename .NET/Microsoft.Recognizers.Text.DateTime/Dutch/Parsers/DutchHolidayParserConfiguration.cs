@@ -9,7 +9,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 {
     public class DutchHolidayParserConfiguration : BaseHolidayParserConfiguration
     {
-        public DutchHolidayParserConfiguration(IOptionsConfiguration config) : base(config)
+        public DutchHolidayParserConfiguration(IOptionsConfiguration config)
+            : base(config)
         {
             this.HolidayRegexList = DutchHolidayExtractorConfiguration.HolidayRegexList;
             this.HolidayNames = DateTimeDefinitions.HolidayNames.ToImmutableDictionary();

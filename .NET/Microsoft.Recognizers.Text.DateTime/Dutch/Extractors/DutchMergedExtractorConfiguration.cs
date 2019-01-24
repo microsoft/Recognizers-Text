@@ -75,7 +75,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         public Dictionary<Regex, Regex> AmbiguityFiltersDict { get; }
 
-        public DutchMergedExtractorConfiguration(IOptionsConfiguration config) : base(config)
+        public DutchMergedExtractorConfiguration(IOptionsConfiguration config)
+            : base(config)
         {
             DateExtractor = new BaseDateExtractor(new DutchDateExtractorConfiguration(this));
             TimeExtractor = new BaseTimeExtractor(new DutchTimeExtractorConfiguration(this));

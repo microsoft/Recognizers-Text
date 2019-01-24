@@ -210,7 +210,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
             ReferenceDatePeriodRegex
         };
 
-        public DutchDatePeriodExtractorConfiguration(IOptionsConfiguration config) : base(config)
+        public DutchDatePeriodExtractorConfiguration(IOptionsConfiguration config)
+            : base(config)
         {
             DatePointExtractor = new BaseDateExtractor(new DutchDateExtractorConfiguration(this));
             CardinalExtractor = Number.Dutch.CardinalExtractor.GetInstance();

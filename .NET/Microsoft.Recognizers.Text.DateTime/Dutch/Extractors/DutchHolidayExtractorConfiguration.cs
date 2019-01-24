@@ -26,7 +26,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
             H3
         };
 
-        public DutchHolidayExtractorConfiguration(IOptionsConfiguration config) : base(config)
+        public DutchHolidayExtractorConfiguration(IOptionsConfiguration config)
+            : base(config)
         {
         }
 

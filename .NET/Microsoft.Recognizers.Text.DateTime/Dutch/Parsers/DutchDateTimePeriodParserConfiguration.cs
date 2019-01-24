@@ -73,7 +73,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         public IImmutableDictionary<string, int> Numbers { get; }
 
-        public DutchDateTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config)
+        public DutchDateTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config)
+            : base(config)
         {
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
 
