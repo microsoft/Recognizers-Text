@@ -12,7 +12,6 @@ import com.microsoft.recognizers.text.datetime.utilities.ConditionalMatch;
 import com.microsoft.recognizers.text.datetime.utilities.DateTimeFormatUtil;
 import com.microsoft.recognizers.text.datetime.utilities.DateTimeResolutionResult;
 import com.microsoft.recognizers.text.datetime.utilities.DateUtil;
-import com.microsoft.recognizers.text.datetime.utilities.FormatUtil;
 import com.microsoft.recognizers.text.datetime.utilities.RegexExtension;
 import com.microsoft.recognizers.text.utilities.Match;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
@@ -73,13 +72,13 @@ public class BaseDateTimeParser implements IDateTimeParser {
             if (innerResult.getSuccess()) {
                 Map<String, String> futureResolution = ImmutableMap.<String, String>builder()
                         .put(TimeTypeConstants.DATETIME,
-                                FormatUtil.formatDateTime((LocalDateTime)innerResult.getFutureValue()))
+                                DateTimeFormatUtil.formatDateTime((LocalDateTime)innerResult.getFutureValue()))
                         .build();
                 innerResult.setFutureResolution(futureResolution);
 
                 Map<String, String> pastResolution = ImmutableMap.<String, String>builder()
                         .put(TimeTypeConstants.DATETIME,
-                                FormatUtil.formatDateTime((LocalDateTime)innerResult.getPastValue()))
+                                DateTimeFormatUtil.formatDateTime((LocalDateTime)innerResult.getPastValue()))
                         .build();
                 innerResult.setPastResolution(pastResolution);
 
@@ -320,7 +319,7 @@ public class BaseDateTimeParser implements IDateTimeParser {
 
             timeStr = String.format("T%02d%s", hour, timeStr.substring(3));
 
-            result.setTimex(FormatUtil.formatDate(date) + timeStr);
+            result.setTimex(DateTimeFormatUtil.formatDate(date) + timeStr);
             LocalDateTime dateResult = DateUtil.safeCreateFromMinValue(date.getYear(), date.getMonthValue(),
                     date.getDayOfMonth(), hour, minute, second);
 
