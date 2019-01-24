@@ -11,8 +11,6 @@ import java.util.regex.Pattern;
 
 public class EnglishHolidayExtractorConfiguration extends BaseOptionsConfiguration implements IHolidayExtractorConfiguration {
 
-    public static final Pattern YearPattern = RegExpUtility.getSafeRegExp(EnglishDateTime.YearRegex);
-
     public static final Pattern H1 = RegExpUtility.getSafeRegExp(EnglishDateTime.HolidayRegex1);
 
     public static final Pattern H2 = RegExpUtility.getSafeRegExp(EnglishDateTime.HolidayRegex2);

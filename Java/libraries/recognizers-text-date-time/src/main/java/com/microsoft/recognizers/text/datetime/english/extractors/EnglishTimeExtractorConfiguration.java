@@ -14,42 +14,10 @@ import java.util.regex.Pattern;
 
 public class EnglishTimeExtractorConfiguration extends BaseOptionsConfiguration implements ITimeExtractorConfiguration {
 
-    // part 1: smallest component
-    // --------------------------------------
-    public static final Pattern DescRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.DescRegex);
-    public static final Pattern HourNumRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.HourNumRegex);
-    public static final Pattern MinuteNumRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.MinuteNumRegex);
-
-    // part 2: middle level component
-    // --------------------------------------
-    // handle "... o'clock"
-    public static final Pattern OclockRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.OclockRegex);
-
-    // handle "... afternoon"
-    public static final Pattern PmRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PmRegex);
-
-    // handle "... in the morning"
-    public static final Pattern AmRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.AmRegex);
-
     // handle "half past ..." "a quarter to ..."
     // rename 'min' group to 'deltamin'
     public static final Pattern LessThanOneHour = RegExpUtility.getSafeRegExp(EnglishDateTime.LessThanOneHour);
 
-    // handle "six thirty", "six twenty one"
-    public static final Pattern BasicTime = RegExpUtility.getSafeRegExp(EnglishDateTime.BasicTime);
-    public static final Pattern TimePrefix = RegExpUtility.getSafeRegExp(EnglishDateTime.TimePrefix);
-    public static final Pattern TimeSuffix = RegExpUtility.getSafeRegExp(EnglishDateTime.TimeSuffix);
-    public static final Pattern WrittenTimeRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.WrittenTimeRegex);
-
-    // handle special time such as 'at midnight', 'midnight', 'midday'
-    public static final Pattern MiddayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.MiddayRegex);
-    public static final Pattern MidTimeRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.MidTimeRegex);
-    public static final Pattern MidnightRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.MidnightRegex);
-    public static final Pattern MidmorningRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.MidmorningRegex);
-    public static final Pattern MidafternoonRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.MidafternoonRegex);
-
-    // part 3: regex for time
-    // --------------------------------------
     // handle "at four" "at 3"
     public static final Pattern AtRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.AtRegex);
     public static final Pattern IshRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.IshRegex);
@@ -130,8 +98,6 @@ public class EnglishTimeExtractorConfiguration extends BaseOptionsConfiguration 
         this(DateTimeOptions.None);
     }
 
-    //C# TO JAVA CONVERTER NOTE: Java does not support optional parameters. Overloaded method(s) are created above:
-    //ORIGINAL LINE: public EnglishTimeExtractorConfiguration(DateTimeOptions options = DateTimeOptions.None)
     public EnglishTimeExtractorConfiguration(DateTimeOptions options) {
         super(options);
         durationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration());

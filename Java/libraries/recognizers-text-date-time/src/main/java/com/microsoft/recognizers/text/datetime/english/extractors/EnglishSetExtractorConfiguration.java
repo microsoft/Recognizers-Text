@@ -23,7 +23,6 @@ public class EnglishSetExtractorConfiguration extends BaseOptionsConfiguration i
     public static final Pattern SetEachRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SetEachRegex);
     public static final Pattern PeriodicRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PeriodicRegex);
     public static final Pattern EachUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.EachUnitRegex);
-    public static final Pattern SetUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.DurationUnitRegex);
     public static final Pattern EachPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.EachPrefixRegex);
     public static final Pattern SetWeekDayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SetWeekDayRegex);
 

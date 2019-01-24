@@ -25,23 +25,15 @@ public class EnglishTimePeriodExtractorConfiguration extends BaseOptionsConfigur
         return tokenBeforeDate;
     }
 
-    public static final Pattern AmRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.AmRegex);
-    public static final Pattern PmRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PmRegex);
-    public static final Pattern HourRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.HourRegex);
     public static final Pattern TillRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TillRegex);
-    public static final Pattern PeriodDescRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.DescRegex);
     public static final Pattern PureNumFromTo = RegExpUtility.getSafeRegExp(EnglishDateTime.PureNumFromTo);
     public static final Pattern TimeUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TimeUnitRegex);
     public static final Pattern TimeOfDayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TimeOfDayRegex);
     public static final Pattern PrepositionRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PrepositionRegex);
-    public static final Pattern TimeFollowedUnit = RegExpUtility.getSafeRegExp(EnglishDateTime.TimeFollowedUnit);
     public static final Pattern PureNumBetweenAnd = RegExpUtility.getSafeRegExp(EnglishDateTime.PureNumBetweenAnd);
     public static final Pattern GeneralEndingRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.GeneralEndingRegex);
-    public static final Pattern PeriodHourNumRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PeriodHourNumRegex);
     public static final Pattern SpecificTimeFromTo = RegExpUtility.getSafeRegExp(EnglishDateTime.SpecificTimeFromTo);
     public static final Pattern SpecificTimeBetweenAnd = RegExpUtility.getSafeRegExp(EnglishDateTime.SpecificTimeBetweenAnd);
-    public static final Pattern SpecificTimeOfDayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SpecificTimeOfDayRegex);
-    public static final Pattern TimeNumberCombinedWithUnit = RegExpUtility.getSafeRegExp(EnglishDateTime.TimeNumberCombinedWithUnit);
 
     public EnglishTimePeriodExtractorConfiguration() {
         this(DateTimeOptions.None);

@@ -27,8 +27,6 @@ public class EnglishDateExtractorConfiguration extends BaseOptionsConfiguration 
 
     public static final Pattern MonthRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.MonthRegex);
     public static final Pattern DayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.ImplicitDayRegex);
-    public static final Pattern MonthNumRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.MonthNumRegex);
-    public static final Pattern YearRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.YearRegex);
     public static final Pattern WeekDayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.WeekDayRegex);
     public static final Pattern SingleWeekDayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SingleWeekDayRegex);
     public static final Pattern OnRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.OnRegex);
