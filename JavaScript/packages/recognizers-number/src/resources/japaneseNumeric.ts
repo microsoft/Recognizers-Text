@@ -109,4 +109,5 @@ export namespace JapaneseNumeric {
 	export const TwoNumberRangeRegex3 = `(${OneNumberRangeLessRegex1}|${OneNumberRangeLessRegex2}|${OneNumberRangeLessRegex3}|${OneNumberRangeLessRegex4})\\s*(と|は|((と)?同時に)|((と)?そして)|が|，|、|,)?\\s*(${OneNumberRangeMoreRegex1}|${OneNumberRangeMoreRegex2}|${OneNumberRangeMoreRegex3}|${OneNumberRangeMoreRegex4})`;
 	export const TwoNumberRangeRegex4 = `(?<number1>((?!((，(?!\\d+))|(,(?!\\d+))|。)).)+)\\s*${TillRegex}\\s*(?<number2>((?!((，(?!\\d+))|(,(?!\\d+))|。)).)+)`;
 	export const AmbiguousFractionConnectorsRegex = `^[.]`;
+	export const RelativeReferenceMap: ReadonlyMap<string, string> = new Map<string, string>([["", ""]]);
 }

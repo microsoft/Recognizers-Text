@@ -3,9 +3,14 @@
     public enum NumberMode
     {
         /// <summary>
-        /// Default is for unit and datetime
+        /// Default is for datetime
         /// </summary>
         Default,
+
+        /// <summary>
+        /// Unit is for unit
+        /// </summary>
+        Unit,
 
         /// <summary>
         /// Add 67.5 billion & million support.

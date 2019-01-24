@@ -3,6 +3,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.Portuguese;
+using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 {
@@ -258,13 +259,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public bool IsMonthOnly(string text)
         {
-            var trimmedText = text.Trim().ToLowerInvariant().Normalized();
+            var trimmedText = text.Trim().ToLowerInvariant().Normalized(DateTimeDefinitions.SpecialCharactersEquivalent);
             return DateTimeDefinitions.MonthTerms.Any(o => trimmedText.EndsWith(o));
         }
 
         public bool IsMonthToDate(string text)
         {
-            var trimmedText = text.Trim().ToLowerInvariant().Normalized();
+            var trimmedText = text.Trim().ToLowerInvariant().Normalized(DateTimeDefinitions.SpecialCharactersEquivalent);
             return DateTimeDefinitions.MonthToDateTerms.Any(o => trimmedText.Equals(o));
         }
 
@@ -289,7 +290,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public bool IsYearToDate(string text)
         {
-            var trimmedText = text.Trim().ToLowerInvariant().Normalized();
+            var trimmedText = text.Trim().ToLowerInvariant().Normalized(DateTimeDefinitions.SpecialCharactersEquivalent);
             return DateTimeDefinitions.YearToDateTerms.Any(o => trimmedText.Equals(o));
         }
     }

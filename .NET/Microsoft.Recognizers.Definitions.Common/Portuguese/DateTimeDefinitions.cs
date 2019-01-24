@@ -573,5 +573,19 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
 			@"anos ate hoje",
 			@"anos ate a data"
 		};
+		public static readonly Dictionary<char, char> SpecialCharactersEquivalent = new Dictionary<char, char>
+		{
+			{ 'á', 'a' },
+			{ 'é', 'e' },
+			{ 'í', 'i' },
+			{ 'ó', 'o' },
+			{ 'ú', 'u' },
+			{ 'ê', 'e' },
+			{ 'ô', 'o' },
+			{ 'ü', 'u' },
+			{ 'ã', 'a' },
+			{ 'õ', 'o' },
+			{ 'ç', 'c' }
+		};
 	}
 }

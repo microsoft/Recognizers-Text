@@ -11,12 +11,6 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         private readonly IDateTimePeriodExtractorConfiguration config;
 
-        private static bool MatchPrefixRegexInSegment(string beforeStr, Match match)
-        {
-            var result = match.Success && string.IsNullOrWhiteSpace(beforeStr.Substring(match.Index + match.Length));
-            return result;
-        }
-
         public BaseDateTimePeriodExtractor(IDateTimePeriodExtractorConfiguration config)
         {
             this.config = config;
@@ -44,6 +38,12 @@ namespace Microsoft.Recognizers.Text.DateTime
             tokens.AddRange(MergeDateWithTimePeriodSuffix(text, new List<ExtractResult>(dateErs), new List<ExtractResult>(timeErs)));
 
             return Token.MergeAllTokens(tokens, text, ExtractorName);
+        }
+
+        private static bool MatchPrefixRegexInSegment(string beforeStr, Match match)
+        {
+            var result = match.Success && string.IsNullOrWhiteSpace(beforeStr.Substring(match.Index + match.Length));
+            return result;
         }
 
         // Cases like "today after 2:00pm", "1/1/2015 before 2:00 in the afternoon"

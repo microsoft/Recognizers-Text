@@ -4,5 +4,10 @@
         <name>Microsoft.Recognizers.Text.NumberWithUnit</name>
     </assembly>
     <members>
+        <member name="F:Microsoft.Recognizers.Text.NumberWithUnit.NumberWithUnitOptions.None">
+            <summary>
+            Represents None
+            </summary>
+        </member>
     </members>
 </doc>

@@ -46,8 +46,13 @@ AllIntRegexWithDozenSuffixLocks: !nestedRegex
 #Ordinal Regex
 RoundNumberOrdinalRegex: !simpleRegex
   def: (hundredth|thousandth|millionth|billionth|trillionth)
-BasicOrdinalRegex: !simpleRegex
+NumberOrdinalRegex: !simpleRegex
   def: (first|second|third|fourth|fifth|sixth|seventh|eighth|ninth|tenth|eleventh|twelfth|thirteenth|fourteenth|fifteenth|sixteenth|seventeenth|eighteenth|nineteenth|twentieth|thirtieth|fortieth|fiftieth|sixtieth|seventieth|eightieth|ninetieth)
+RelativeOrdinalRegex: !simpleRegex
+  def: (last|next one|previous one|the second to last|the one before the last one|next to last|penultimate|the last but one|antepenultimate)
+BasicOrdinalRegex: !nestedRegex
+  def: ({NumberOrdinalRegex}|{RelativeOrdinalRegex})
+  references: [ NumberOrdinalRegex, RelativeOrdinalRegex ]
 SuffixBasicOrdinalRegex: !nestedRegex
   def: ((((({TensNumberIntegerRegex}(\s+(and\s+)?|\s*-\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{AnIntRegex})(\s+{RoundNumberIntegerRegex})+)\s+(and\s+)?)*({TensNumberIntegerRegex}(\s+|\s*-\s*))?{BasicOrdinalRegex})
   references: [ TensNumberIntegerRegex, ZeroToNineIntegerRegex, AnIntRegex, RoundNumberIntegerRegex, BasicOrdinalRegex ]
@@ -349,4 +354,16 @@ AmbiguityFiltersDict: !dictionary
   types: [ string, string ]
   entries:
     '\bone\b': '\b(the|this|that|which)\s+(one)\b'
+RelativeReferenceMap: !dictionary
+  types: [ string, string ]
+  entries:
+    last: N
+    next one: CURR+1
+    previous one: CURR-1
+    the second to last: CURR-1
+    the one before the last one: CURR-1
+    next to last: CURR-1
+    penultimate: CURR-1
+    the last but one: CURR-1
+    antepenultimate: CURR-2
 ...

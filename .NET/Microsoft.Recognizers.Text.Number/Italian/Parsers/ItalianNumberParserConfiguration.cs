@@ -8,7 +8,7 @@ using Microsoft.Recognizers.Definitions.Italian;
 
 namespace Microsoft.Recognizers.Text.Number.Italian
 {
-    public class ItalianNumberParserConfiguration : INumberParserConfiguration
+    public class ItalianNumberParserConfiguration : BaseNumberParserConfiguration
     {
         public ItalianNumberParserConfiguration()
             : this(new CultureInfo(Culture.Italian))
@@ -33,58 +33,21 @@ namespace Microsoft.Recognizers.Text.Number.Italian
 
             this.CardinalNumberMap = NumbersDefinitions.CardinalNumberMap.ToImmutableDictionary();
             this.OrdinalNumberMap = NumberMapGenerator.InitOrdinalNumberMap(NumbersDefinitions.OrdinalNumberMap, NumbersDefinitions.PrefixCardinalMap, NumbersDefinitions.SuffixOrdinalMap);
+            this.RelativeReferenceMap = NumbersDefinitions.RelativeReferenceMap.ToImmutableDictionary();
             this.RoundNumberMap = NumbersDefinitions.RoundNumberMap.ToImmutableDictionary();
             this.HalfADozenRegex = new Regex(NumbersDefinitions.HalfADozenRegex, RegexOptions.Singleline);
             this.DigitalNumberRegex = new Regex(NumbersDefinitions.DigitalNumberRegex, RegexOptions.Singleline);
             this.NegativeNumberSignRegex = new Regex(NumbersDefinitions.NegativeNumberSignRegex, RegexOptions.Singleline);
         }
 
-        public ImmutableDictionary<string, long> CardinalNumberMap { get; private set; }
-
-        public NumberOptions Options { get; }
-
-        public CultureInfo CultureInfo { get; set; }
-
-        public char DecimalSeparatorChar { get; private set; }
-
-        public Regex DigitalNumberRegex { get; private set; }
-
-        public Regex FractionPrepositionRegex { get; }
-
-        public Regex NegativeNumberSignRegex { get; private set; }
-
-        public string FractionMarkerToken { get; private set; }
-
-        public Regex HalfADozenRegex { get; private set; }
-
-        public string HalfADozenText { get; private set; }
-
-        public string LangMarker { get; private set; }
-
-        public char NonDecimalSeparatorChar { get; private set; }
-
         public string NonDecimalSeparatorText { get; private set; }
 
-        public ImmutableDictionary<string, long> OrdinalNumberMap { get; private set; }
-
-        public ImmutableDictionary<string, long> RoundNumberMap { get; private set; }
-
-        public string WordSeparatorToken { get; private set; }
-
-        public IEnumerable<string> WrittenDecimalSeparatorTexts { get; private set; }
-
-        public IEnumerable<string> WrittenGroupSeparatorTexts { get; private set; }
-
-        public IEnumerable<string> WrittenIntegerSeparatorTexts { get; private set; }
-
-        public IEnumerable<string> WrittenFractionSeparatorTexts { get; private set; }
-
-        public IEnumerable<string> NormalizeTokenSet(IEnumerable<string> tokens, ParseResult context)
+        public override IEnumerable<string> NormalizeTokenSet(IEnumerable<string> tokens, ParseResult context)
         {
             return tokens;
         }
 
-        public long ResolveCompositeNumber(string numberStr)
+        public override long ResolveCompositeNumber(string numberStr)
         {
             if (this.OrdinalNumberMap.ContainsKey(numberStr))
             {

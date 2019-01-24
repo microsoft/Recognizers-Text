@@ -158,6 +158,53 @@ namespace Microsoft.Recognizers.Text.Number
             return ret;
         }
 
+        private static string DetermineType(ExtractResult er)
+        {
+            var data = er.Data as string;
+            var subType = string.Empty;
+
+            if (!string.IsNullOrEmpty(data))
+            {
+                if (data.StartsWith(Constants.FRACTION_PREFIX))
+                {
+                    subType = Constants.FRACTION;
+                }
+                else if (data.Contains(Constants.POWER_SUFFIX))
+                {
+                    subType = Constants.POWER;
+                }
+                else if (data.StartsWith(Constants.INTEGER_PREFIX))
+                {
+                    subType = Constants.INTEGER;
+                }
+                else if (data.StartsWith(Constants.DOUBLE_PREFIX))
+                {
+                    subType = Constants.DECIMAL;
+                }
+            }
+
+            return subType;
+        }
+
+        private static bool IsMergeable(double former, double later)
+        {
+            // The former number is an order of magnitude larger than the later number, and they must be integers
+            return Math.Abs(former % 1) < double.Epsilon && Math.Abs(later % 1) < double.Epsilon &&
+                   former > later && former.ToString(CultureInfo.InvariantCulture).Length > later.ToString(CultureInfo.InvariantCulture).Length && later > 0;
+        }
+
+        private string GetResolutionStr(object value)
+        {
+            var resolutionStr = value.ToString();
+
+            if (Config.CultureInfo != null && value is double)
+            {
+                resolutionStr = ((double)value).ToString(Config.CultureInfo);
+            }
+
+            return resolutionStr;
+        }
+
         protected ParseResult PowerNumberParse(ExtractResult extResult)
         {
             var result = new ParseResult
@@ -267,42 +314,58 @@ namespace Microsoft.Recognizers.Text.Number
 
             handle = Config.HalfADozenRegex.Replace(handle, Config.HalfADozenText);
 
-            var numGroup = handle.Split(Config.WrittenDecimalSeparatorTexts.ToArray(), StringSplitOptions.RemoveEmptyEntries);
-
-            var intPart = numGroup[0];
-            var strMatch = TextNumberRegex.Match(intPart);
-
-            // Store all match str.
-            var matchStrs = new List<string>();
-
-            while (strMatch.Success)
+            // Handling cases like "last", "next one", "previous one"
+            if (Config.RelativeReferenceMap.ContainsKey(extResult.Text))
             {
-                var matchStr = strMatch.Groups[0].Value.ToLower();
-                matchStrs.Add(matchStr);
-                strMatch = strMatch.NextMatch();
+                result.Value = Config.RelativeReferenceMap[extResult.Text];
             }
-
-            // Get the value recursively
-            var intPartRet = GetIntValue(matchStrs);
-
-            double pointPartRet = 0;
-            if (numGroup.Length == 2)
+            else
             {
-                var pointPart = numGroup[1];
-                strMatch = TextNumberRegex.Match(pointPart);
-                matchStrs.Clear();
+                var numGroup = handle.Split(Config.WrittenDecimalSeparatorTexts.ToArray(), StringSplitOptions.RemoveEmptyEntries);
 
-                while (strMatch.Success)
+                #region IntegerPart
+
+                var intPart = numGroup[0];
+                var sMatch = TextNumberRegex.Match(intPart);
+
+                // Store all match str.
+                var matchStrs = new List<string>();
+
+                while (sMatch.Success)
                 {
-                    var matchStr = strMatch.Groups[0].Value.ToLower();
+                    var matchStr = sMatch.Groups[0].Value.ToLower();
                     matchStrs.Add(matchStr);
-                    strMatch = strMatch.NextMatch();
+                    sMatch = sMatch.NextMatch();
                 }
 
-                pointPartRet += GetPointValue(matchStrs);
-            }
+                //Get the value recursively
+                var intPartRet = GetIntValue(matchStrs);
 
-            result.Value = intPartRet + pointPartRet;
+                #endregion
+
+                #region DecimalPart
+
+                double pointPartRet = 0;
+                if (numGroup.Length == 2)
+                {
+                    var pointPart = numGroup[1];
+                    sMatch = TextNumberRegex.Match(pointPart);
+                    matchStrs.Clear();
+
+                    while (sMatch.Success)
+                    {
+                        var matchStr = sMatch.Groups[0].Value.ToLower();
+                        matchStrs.Add(matchStr);
+                        sMatch = sMatch.NextMatch();
+                    }
+
+                    pointPartRet += GetPointValue(matchStrs);
+                }
+
+                #endregion
+
+                result.Value = intPartRet + pointPartRet;
+            }
 
             return result;
         }
@@ -590,41 +653,6 @@ namespace Microsoft.Recognizers.Text.Number
             return calResult;
         }
 
-        private static string DetermineType(ExtractResult er)
-        {
-            var data = er.Data as string;
-            var subType = string.Empty;
-
-            if (!string.IsNullOrEmpty(data))
-            {
-                if (data.StartsWith(Constants.FRACTION_PREFIX))
-                {
-                    subType = Constants.FRACTION;
-                }
-                else if (data.Contains(Constants.POWER_SUFFIX))
-                {
-                    subType = Constants.POWER;
-                }
-                else if (data.StartsWith(Constants.INTEGER_PREFIX))
-                {
-                    subType = Constants.INTEGER;
-                }
-                else if (data.StartsWith(Constants.DOUBLE_PREFIX))
-                {
-                    subType = Constants.DECIMAL;
-                }
-            }
-
-            return subType;
-        }
-
-        private static bool IsMergeable(double former, double later)
-        {
-            // The former number is an order of magnitude larger than the later number, and they must be integers
-            return Math.Abs(former % 1) < double.Epsilon && Math.Abs(later % 1) < double.Epsilon &&
-                   former > later && former.ToString(CultureInfo.InvariantCulture).Length > later.ToString(CultureInfo.InvariantCulture).Length && later > 0;
-        }
-
         // Special cases for multi-language countries where decimal separators can be used interchangeably. Mostly informally.
         // Ex: South Africa, Namibia; Puerto Rico in ES; or in Canada for EN and FR.
         // "me pidio $5.00 prestados" and "me pidio $5,00 prestados" -> currency $5
@@ -633,13 +661,6 @@ namespace Microsoft.Recognizers.Text.Number
             var decimalLength = 3;
 
             return ch == Config.NonDecimalSeparatorChar && !(distance <= decimalLength && CultureRegex.IsMatch(culture.Name));
-        }
-
-        private string GetResolutionStr(object value)
-        {
-            return Config.CultureInfo != null ?
-                ((double)value).ToString(Config.CultureInfo) :
-                value.ToString();
         }
 
         private List<string> GetMatches(string input)

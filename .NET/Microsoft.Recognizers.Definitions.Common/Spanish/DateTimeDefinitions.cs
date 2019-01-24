@@ -539,5 +539,13 @@ namespace Microsoft.Recognizers.Definitions.Spanish
 			@"año a la fecha",
 			@"años a la fecha"
 		};
+		public static readonly Dictionary<char, char> SpecialCharactersEquivalent = new Dictionary<char, char>
+		{
+			{ 'á', 'a' },
+			{ 'é', 'e' },
+			{ 'í', 'i' },
+			{ 'ó', 'o' },
+			{ 'ú', 'u' }
+		};
 	}
 }

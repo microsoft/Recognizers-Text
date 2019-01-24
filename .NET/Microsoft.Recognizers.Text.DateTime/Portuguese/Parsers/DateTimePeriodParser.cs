@@ -1,13 +1,13 @@
 ﻿using System;
-using DateObject = System.DateTime;
-
 using Microsoft.Recognizers.Definitions.Portuguese;
+using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 {
     public class DateTimePeriodParser : BaseDateTimePeriodParser
     {
-        public DateTimePeriodParser(IDateTimePeriodParserConfiguration configuration) : base(configuration)
+        public DateTimePeriodParser(IDateTimePeriodParserConfiguration configuration)
+            : base(configuration)
         {
         }
 
@@ -34,7 +34,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
                 ret.Timex = DateTimeFormatUtil.FormatDate(date) + timeStr;
                 ret.FutureValue =
                     ret.PastValue =
-                        new Tuple<DateObject, DateObject>(DateObject.MinValue.SafeCreateFromValue(year, month, day, beginHour, 0, 0),
+                        new Tuple<DateObject, DateObject>(
+                            DateObject.MinValue.SafeCreateFromValue(year, month, day, beginHour, 0, 0),
                             DateObject.MinValue.SafeCreateFromValue(year, month, day, endHour, endMin, endMin));
                 ret.Success = true;
                 return ret;

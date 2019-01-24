@@ -11,7 +11,9 @@ import com.microsoft.recognizers.text.datetime.parsers.config.PrefixAdjustResult
 import com.microsoft.recognizers.text.datetime.parsers.config.SuffixAdjustResult;
 import com.microsoft.recognizers.text.datetime.resources.SpanishDateTime;
 import com.microsoft.recognizers.text.datetime.spanish.extractors.SpanishTimeExtractorConfiguration;
+import com.microsoft.recognizers.text.datetime.utilities.ConditionalMatch;
 import com.microsoft.recognizers.text.datetime.utilities.IDateTimeUtilityConfiguration;
+import com.microsoft.recognizers.text.datetime.utilities.RegexExtension;
 import com.microsoft.recognizers.text.utilities.Match;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
 import com.microsoft.recognizers.text.utilities.StringUtility;
@@ -128,14 +130,13 @@ public class SpanishTimeParserConfiguration extends BaseOptionsConfiguration imp
         hasMin = prefixAdjustResult.hasMin;
 
         int deltaHour = 0;
-        Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(SpanishTimeExtractorConfiguration.TimeSuffix, trimmedSuffix)).findFirst();
+        ConditionalMatch match = RegexExtension.matchExact(SpanishTimeExtractorConfiguration.TimeSuffix, trimmedSuffix, true);
+        if (match.getSuccess()) {
 
-        if (match.isPresent() && match.get().index == 0 && match.get().length == trimmedSuffix.length()) {
-
-            String oclockStr = match.get().getGroup("oclock").value;
+            String oclockStr = match.getMatch().get().getGroup("oclock").value;
             if (StringUtility.isNullOrEmpty(oclockStr)) {
 
-                String amStr = match.get().getGroup(Constants.AmGroupName).value;
+                String amStr = match.getMatch().get().getGroup(Constants.AmGroupName).value;
                 if (!StringUtility.isNullOrEmpty(amStr)) {
                     if (hour >= Constants.HalfDayHourCount) {
                         deltaHour = -Constants.HalfDayHourCount;
@@ -143,7 +144,7 @@ public class SpanishTimeParserConfiguration extends BaseOptionsConfiguration imp
                     hasAm = true;
                 }
 
-                String pmStr = match.get().getGroup(Constants.PmGroupName).value;
+                String pmStr = match.getMatch().get().getGroup(Constants.PmGroupName).value;
                 if (!StringUtility.isNullOrEmpty(pmStr)) {
                     if (hour < Constants.HalfDayHourCount) {
                         deltaHour = Constants.HalfDayHourCount;
