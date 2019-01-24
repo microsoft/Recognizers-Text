@@ -24,7 +24,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
         public IDateTimeExtractor Extractor { get; set; }
 
         public IDateTimeParser DateTimeParser { get; set; }
-        
+
         public void ExtractorInitialize(IDictionary<string, IDateTimeExtractor> extractors)
         {
             var key = TestContext.TestName;

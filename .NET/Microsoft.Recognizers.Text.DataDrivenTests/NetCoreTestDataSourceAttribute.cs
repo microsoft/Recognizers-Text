@@ -10,7 +10,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 {
     /// <summary>
     /// This class replaces the DataSourceAttribute which is not available in .Net Core
-    /// See https://github.com/Microsoft/testfx/issues/233
+    /// See https://github.com/Microsoft/testfx/issues/233.
     /// </summary>
     public class NetCoreTestDataSourceAttribute : Attribute, ITestDataSource
     {

@@ -22,16 +22,16 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
         [TestMethod]
         public void DateParser(TestModel testSpec)
         {
-            base.ExtractorInitialize(Extractors);
-            base.ParserInitialize(Parsers);
-            base.TestDateTimeParser(testSpec);
+            ExtractorInitialize(Extractors);
+            ParserInitialize(Parsers);
+            TestDateTimeParser(testSpec);
         }
 
         [NetCoreTestDataSource]
         [TestMethod]
         public void DateTimeModel(TestModel testSpec)
         {
-            base.TestDateTime(testSpec);
+            TestDateTime(testSpec);
         }
     }
 }
