@@ -1,0 +1,50 @@
+---
+# Direct UTC Expression
+DirectUtcRegex: !simpleRegex
+  def: \b(utc|gmt)(\s*[+\-\u00B1]?\s*[\d]{1,2}(\s*:\s*[\d]{1,2})?)?\b
+AbbreviationsList: !list
+  types: [string]
+  entries:
+    - AFT
+FullNameList: !list
+  types: [string]
+  entries:
+    - Afghanistan Standard Time
+LocationTimeSuffixRegex: !simpleRegex
+  def: ((\s+|-)(tijdzone|tijd|timezone|time)\b)
+# For filtering ambiguous single timezone words
+AmbiguousTimezoneList: !list
+  types: [string]
+  entries:
+    - bit
+    - get
+    - art
+    - cast
+    - eat
+    - lint
+    - mat
+    - most
+    - west
+    - vet
+    - wet
+    - cot
+    - pt
+    - et
+    - eastern
+    - pacific
+    - central
+    - mountain
+# For Parsing
+AbbrToMinMapping: !dictionary
+ types: [ string , int ]
+ entries:
+   aft: 270
+FullToMinMapping: !dictionary
+ types: [ string , int ]
+ entries:
+   beijing time: 480
+MajorLocations: !list
+  types: [ string ]
+  entries:
+    # top due to conflict
+    - Dominican Republic

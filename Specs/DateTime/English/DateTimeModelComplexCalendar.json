@@ -8150,5 +8150,34 @@
         }
       }
     ]
+  },
+  {
+    "Input": "That one Tuesday was a blast!",
+    "Context": {
+      "ReferenceDateTime": "2019-01-24T12:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "tuesday",
+        "Start": 9,
+        "End": 15,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-2",
+              "type": "date",
+              "value": "2019-01-22"
+            },
+            {
+              "timex": "XXXX-WXX-2",
+              "type": "date",
+              "value": "2019-01-29"
+            }
+          ]
+        }
+      }
+    ] 
   }
 ]

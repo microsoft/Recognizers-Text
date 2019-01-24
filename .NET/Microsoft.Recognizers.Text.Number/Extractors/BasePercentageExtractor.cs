@@ -12,7 +12,7 @@ namespace Microsoft.Recognizers.Text.Number
 
         protected virtual NumberOptions Options { get; } = NumberOptions.None;
 
-        protected static readonly string NumExtType = Constants.SYS_NUM; //@sys.num
+        protected static readonly string NumExtType = Constants.SYS_NUM; // @sys.num
 
         protected static readonly string FracNumExtType = Constants.SYS_NUM_FRACTION;
 
@@ -40,6 +40,7 @@ namespace Microsoft.Recognizers.Text.Number
             source = PreprocessStrWithNumberExtracted(originSource, out var positionMap, out var numExtResults);
 
             var allMatches = new List<MatchCollection>();
+
             // match percentage with regexes
             foreach (var regex in Regexes)
             {
@@ -129,9 +130,8 @@ namespace Microsoft.Recognizers.Text.Number
         /// replace the @sys.num to the real patterns, directly modifies the ExtractResult
         /// </summary>
         /// <param name="results">extract results after number extractor</param>
-        /// <param name="originSource">the sentense after replacing the @sys.num, Example: @sys.num %</param>
-        private void PostProcessing(List<ExtractResult> results, string originSource, Dictionary<int, int> positionMap,
-            IList<ExtractResult> numExtResults)
+        /// <param name="originSource">the sentence after replacing the @sys.num, Example: @sys.num %</param>
+        private void PostProcessing(List<ExtractResult> results, string originSource, Dictionary<int, int> positionMap, IList<ExtractResult> numExtResults)
         {
             string replaceNumText = "@" + NumExtType;
             string replaceFracNumText = "@" + FracNumExtType;
@@ -216,7 +216,7 @@ namespace Microsoft.Recognizers.Text.Number
             string replaceFracText = "@" + FracNumExtType;
             bool percentModeEnabled = (Options & NumberOptions.PercentageMode) != 0;
 
-            //@TODO potential cause of GC
+            // @TODO potential cause of GC
             var match = new int[str.Length];
             var strParts = new List<Tuple<int, int>>();
             int start, end;
@@ -258,7 +258,7 @@ namespace Microsoft.Recognizers.Text.Number
 
             strParts.Add(new Tuple<int, int>(start, str.Length - 1));
 
-            string ret = "";
+            string ret = string.Empty;
             int index = 0;
             foreach (var strPart in strParts)
             {

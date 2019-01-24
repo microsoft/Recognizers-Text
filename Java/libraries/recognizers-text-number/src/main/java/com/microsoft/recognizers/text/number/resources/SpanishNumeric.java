@@ -548,4 +548,8 @@ public class SpanishNumeric {
         .build();
 
     public static final String AmbiguousFractionConnectorsRegex = "^[.]";
+
+    public static final ImmutableMap<String, String> RelativeReferenceMap = ImmutableMap.<String, String>builder()
+        .put("", "")
+        .build();
 }

@@ -154,28 +154,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public string Normalize(string text)
         {
-            return text.Normalized();
-        }
-    }
-
-    [SuppressMessage("StyleCop.CSharp.MaintainabilityRules", "SA1402:File may only contain a single type", Justification = "Temporarily ignored because this method will be refactored.", Scope = "type", Target = "~T:Microsoft.Recognizers.Text.DateTime.Portuguese.StringExtension")]
-    [SuppressMessage("StyleCop.CSharp.OrderingRules", "SA1204:Static elements should appear before instance elements", Justification = "Temporarily ignored because this method will be refactored.", Scope = "type", Target = "~T:Microsoft.Recognizers.Text.DateTime.Portuguese.StringExtension")]
-    public static class StringExtension
-    {
-        public static string Normalized(this string text)
-        {
-            return text
-                .Replace('á', 'a')
-                .Replace('é', 'e')
-                .Replace('í', 'i')
-                .Replace('ó', 'o')
-                .Replace('ú', 'u')
-                .Replace("ê", "e")
-                .Replace("ô", "o")
-                .Replace("ü", "u")
-                .Replace("ã", "a")
-                .Replace("õ", "o")
-                .Replace("ç", "c");
+            return text.Normalized(DateTimeDefinitions.SpecialCharactersEquivalent);
         }
     }
 }

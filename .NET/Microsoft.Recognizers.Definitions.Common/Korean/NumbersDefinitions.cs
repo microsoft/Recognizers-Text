@@ -171,5 +171,9 @@ namespace Microsoft.Recognizers.Definitions.Korean
 		public const string MoreOrEqualSuffix = @"\s*(이상)";
 		public static readonly string LessOrEqual = $@"(({LessRegex}\s*(거나)?\s*{EqualRegex}))";
 		public const string LessOrEqualSuffix = @"\s*(이상)";
+		public static readonly Dictionary<string, string> RelativeReferenceMap = new Dictionary<string, string>
+		{
+			{ @"", @"" }
+		};
 	}
 }

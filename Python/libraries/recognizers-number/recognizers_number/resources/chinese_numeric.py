@@ -202,4 +202,5 @@ class ChineseNumeric:
     TwoNumberRangeRegex3 = f'({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2}|{OneNumberRangeLessRegex3})\\s*(且|并且|而且|並且|((的)?同時)|((的)?同时)|[,，])?\\s*({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2}|{OneNumberRangeMoreRegex3})'
     TwoNumberRangeRegex4 = f'(?<number1>((?!(([,，](?!\\d+))|。)).)+)\\s*{TillRegex}\\s*(?<number2>((?!(([,，](?!\\d+))|。)).)+)'
     AmbiguousFractionConnectorsRegex = f'^[.]'
+    RelativeReferenceMap = dict([("", "")])
 # pylint: enable=line-too-long

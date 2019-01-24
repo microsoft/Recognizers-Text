@@ -9,8 +9,7 @@
         "Start": 16,
         "Length": 5
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": " Ik ga terug met kerst ",
@@ -22,8 +21,7 @@
         "Start": 17,
         "Length": 5
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga terug op Nieuwjaarsdag.",
@@ -35,8 +33,7 @@
         "Start": 15,
         "Length": 13
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga terug met thanksgiving",
@@ -48,8 +45,7 @@
         "Start": 16,
         "Length": 12
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga terug op vaderdag.",
@@ -61,8 +57,7 @@
         "Start": 15,
         "Length": 8
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": "Ik ga terug op Nieuwjaarsdag dit jaar",
@@ -74,8 +69,7 @@
         "Start": 15,
         "Length": 22
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": " Ik ga terug op Nieuwjaarsdag 2016",
@@ -87,8 +81,7 @@
         "Start": 16,
         "Length": 18
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
     "Input": " Ik ga terug op nieuwjaarsdag 2016",
@@ -100,20 +93,18 @@
         "Start": 16,
         "Length": 18
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   },
   {
-    "Input": "Ik ga terug op clean monday",
+    "Input": "Ik ga terug op koningsdag",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "clean monday",
+        "Text": "koningsdag",
         "Type": "date",
         "Start": 15,
-        "Length": 12
+        "Length": 10
       }
-    ],
-    "NotSupported": "dotNet"
+    ]
   }
 ]

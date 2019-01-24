@@ -1,6 +1,9 @@
 ﻿using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
+using Microsoft.Recognizers.Definitions.Portuguese;
+using Microsoft.Recognizers.Text.DateTime.Utilities;
+
 namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 {
     public class PortugueseSetParserConfiguration : BaseOptionsConfiguration, ISetParserConfiguration
@@ -77,7 +80,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public bool GetMatchedDailyTimex(string text, out string timex)
         {
-            var trimmedText = text.Trim().ToLowerInvariant().Normalized();
+            var trimmedText = text.Trim().ToLowerInvariant().Normalized(DateTimeDefinitions.SpecialCharactersEquivalent);
 
             if (trimmedText.EndsWith("diario") || trimmedText.EndsWith("diaria") || trimmedText.EndsWith("diariamente"))
             {
@@ -110,7 +113,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public bool GetMatchedUnitTimex(string text, out string timex)
         {
-            var trimmedText = text.Trim().ToLowerInvariant().Normalized();
+            var trimmedText = text.Trim().ToLowerInvariant().Normalized(DateTimeDefinitions.SpecialCharactersEquivalent);
 
             if (trimmedText.Equals("dia") || trimmedText.Equals("dias"))
             {
