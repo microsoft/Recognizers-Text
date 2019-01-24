@@ -5,6 +5,8 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
     <Copyright>© Microsoft Corporation. All rights reserved.</Copyright>
     <CodeAnalysisRuleSet>../../Recognizers-Text.ruleset</CodeAnalysisRuleSet>
+	<RuntimeIdentifiers>any</RuntimeIdentifiers>
+	<TargetLatestRuntimePatch>true</TargetLatestRuntimePatch>
   </PropertyGroup>
   
   <PropertyGroup>
@@ -21,10 +23,10 @@
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
-    <!-- <PackageReference Include="StyleCop.Analyzers" Version="1.1.0-beta008"> 
+    <PackageReference Include="StyleCop.Analyzers" Version="1.1.0-beta008"> 
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
-    </PackageReference> -->
+    </PackageReference>
   </ItemGroup>
 
   <ItemGroup>
