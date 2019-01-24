@@ -4,9 +4,9 @@ using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Utilities
 {
-    public class GetModAndDateResult
+    public class ModAndDateResult
     {
-        public GetModAndDateResult(DateObject beginDate, DateObject endDate, string mod, List<DateObject> dateList)
+        public ModAndDateResult(DateObject beginDate, DateObject endDate, string mod, List<DateObject> dateList)
         {
             this.BeginDate = beginDate;
             this.EndDate = endDate;
@@ -14,7 +14,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
             this.DateList = dateList;
         }
 
-        public GetModAndDateResult(DateObject beginDate, DateObject endDate)
+        public ModAndDateResult(DateObject beginDate, DateObject endDate)
         {
             this.BeginDate = beginDate;
             this.EndDate = endDate;
