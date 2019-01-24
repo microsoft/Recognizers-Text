@@ -330,16 +330,16 @@ export class NumberWithUnitExtractor implements IExtractor {
         return RegExpUtility.getSafeRegExp(pattern, options);
     }
 
-    protected stringComparer(x: string, y: string): number {
-        let localCompare= x.localeCompare(y);
-        if (localCompare !== 0 )
+    protected stringComparer(stringA: string, stringB: string): number {
+        if (!stringA && !stringB)
         {
-            return x.localeCompare(y);
+            return 0;
         }
         else
         {
-            if(localCompare === 0) return 0;
-            else return x.toLowerCase < y.toLowerCase? -1 : 1;
+            if (!stringA) return 1;
+            if (!stringB) return -1;
+            return stringB.localeCompare(stringA);
         }
     }
     
