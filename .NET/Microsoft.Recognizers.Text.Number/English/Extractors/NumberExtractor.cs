@@ -33,6 +33,8 @@ namespace Microsoft.Recognizers.Text.Number.English
                         BaseNumberExtractor.CurrencyRegex,
                         RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX));
                     break;
+                case NumberMode.Unit:
+                    break;
                 case NumberMode.Default:
                     break;
             }
@@ -52,9 +54,13 @@ namespace Microsoft.Recognizers.Text.Number.English
 
             var ambiguityBuilder = ImmutableDictionary.CreateBuilder<Regex, Regex>();
 
-            foreach (var item in NumbersDefinitions.AmbiguityFiltersDict)
+            // Do not filter the ambiguous number cases like 'that one' in NumberWithUnit, otherwise they can't be resolved.
+            if (mode != NumberMode.Unit)
             {
-                ambiguityBuilder.Add(new Regex(item.Key, RegexOptions.Singleline), new Regex(item.Value, RegexOptions.Singleline));
+                foreach (var item in NumbersDefinitions.AmbiguityFiltersDict)
+                {
+                    ambiguityBuilder.Add(new Regex(item.Key, RegexOptions.Singleline), new Regex(item.Value, RegexOptions.Singleline));
+                }
             }
 
             AmbiguityFiltersDict = ambiguityBuilder.ToImmutable();
