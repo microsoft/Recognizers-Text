@@ -130,9 +130,8 @@ namespace Microsoft.Recognizers.Text.Number
         /// replace the @sys.num to the real patterns, directly modifies the ExtractResult
         /// </summary>
         /// <param name="results">extract results after number extractor</param>
-        /// <param name="originSource">the sentense after replacing the @sys.num, Example: @sys.num %</param>
-        private void PostProcessing(List<ExtractResult> results, string originSource, Dictionary<int, int> positionMap,
-            IList<ExtractResult> numExtResults)
+        /// <param name="originSource">the sentence after replacing the @sys.num, Example: @sys.num %</param>
+        private void PostProcessing(List<ExtractResult> results, string originSource, Dictionary<int, int> positionMap, IList<ExtractResult> numExtResults)
         {
             string replaceNumText = "@" + NumExtType;
             string replaceFracNumText = "@" + FracNumExtType;
@@ -259,7 +258,7 @@ namespace Microsoft.Recognizers.Text.Number
 
             strParts.Add(new Tuple<int, int>(start, str.Length - 1));
 
-            string ret = "";
+            string ret = string.Empty;
             int index = 0;
             foreach (var strPart in strParts)
             {

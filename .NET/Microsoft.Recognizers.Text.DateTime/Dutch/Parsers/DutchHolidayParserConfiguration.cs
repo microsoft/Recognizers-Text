@@ -131,8 +131,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         public override string SanitizeHolidayToken(string holiday)
         {
             return holiday
-                .Replace(" ", "")
-                .Replace("'", "");
+                .Replace(" ", string.Empty)
+                .Replace("'", string.Empty);
         }
     }
 }

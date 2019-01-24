@@ -28,7 +28,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
         public static void InitFromTestContext(this TestResources resources, TestContext context)
         {
             var classNameIndex = context.FullyQualifiedTestClassName.LastIndexOf('.');
-            var className = context.FullyQualifiedTestClassName.Substring(classNameIndex + 1).Replace("Test", "");
+            var className = context.FullyQualifiedTestClassName.Substring(classNameIndex + 1).Replace("Test", string.Empty);
             var recognizerLanguage = className.Split('_');
 
             var directorySpecs = Path.Combine("..", "..", "..", "..", "Specs", recognizerLanguage[0], recognizerLanguage[1]);
@@ -912,7 +912,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
         public static string SanitizeSourceName(string source)
         {
-            return source.Replace("Model", "").Replace("Extractor", "").Replace("Parser", "");
+            return source.Replace("Model", string.Empty).Replace("Extractor", string.Empty).Replace("Parser", string.Empty);
         }
 
         public static Models GetModel(string source)
