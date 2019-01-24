@@ -26,7 +26,8 @@ namespace Microsoft.Recognizers.Text.Number.Spanish
 
         public Regex LessOrEqualSeparate { get; private set; }
 
-        public SpanishNumberRangeParserConfiguration() : this(new CultureInfo(Culture.Spanish))
+        public SpanishNumberRangeParserConfiguration()
+            : this(new CultureInfo(Culture.Spanish))
         {
 
         }

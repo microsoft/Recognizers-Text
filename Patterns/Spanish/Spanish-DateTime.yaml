@@ -888,4 +888,12 @@ YearToDateTerms: !list
   entries:
     - año a la fecha
     - años a la fecha
+SpecialCharactersEquivalent: !dictionary
+  types: [ char, char ]
+  entries:
+    á: a
+    é: e
+    í: i
+    ó: o
+    ú: u
 ...

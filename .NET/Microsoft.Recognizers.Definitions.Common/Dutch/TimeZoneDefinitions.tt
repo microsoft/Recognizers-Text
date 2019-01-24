@@ -1,0 +1,7 @@
+﻿﻿﻿<#@ template debug="true" hostspecific="true" language="C#" #>
+<#
+	this.DataFilename = @"Patterns\Dutch\Dutch-TimeZone.yaml";
+	this.Language = "Dutch";
+	this.ClassName = "TimeZoneDefinitions";
+#>
+<#@ include file="..\CommonDefinitions.ttinclude"#>

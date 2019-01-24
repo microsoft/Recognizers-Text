@@ -6,7 +6,6 @@ namespace Microsoft.Recognizers.Text.DateTime
 {
     public interface ICommonDateTimeParserConfiguration : IOptionsConfiguration
     {
-
         IExtractor CardinalExtractor { get; }
 
         IExtractor IntegerExtractor { get; }

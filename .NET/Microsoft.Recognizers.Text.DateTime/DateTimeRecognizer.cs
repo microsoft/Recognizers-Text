@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 
 using Microsoft.Recognizers.Text.DateTime.Chinese;
+using Microsoft.Recognizers.Text.DateTime.Dutch;
 using Microsoft.Recognizers.Text.DateTime.English;
 using Microsoft.Recognizers.Text.DateTime.French;
 using Microsoft.Recognizers.Text.DateTime.German;
@@ -95,12 +96,21 @@ namespace Microsoft.Recognizers.Text.DateTime
                         new GermanMergedParserConfiguration(new BaseOptionsConfiguration(options))),
                     new BaseMergedDateTimeExtractor(new GermanMergedExtractorConfiguration(options))));
 
+            // TODO to be uncommented when all tests for Dutch are green.
+            // RegisterModel<DateTimeModel>(
+            //     Culture.Dutch,
+            //     options => new DateTimeModel(
+            //         new BaseMergedDateTimeParser(
+            //             new DutchMergedParserConfiguration(new BaseOptionsConfiguration(options, dmyDateFormat: true))),
+            //         new BaseMergedDateTimeExtractor(
+            //             new DutchMergedExtractorConfiguration(new BaseOptionsConfiguration(options, dmyDateFormat: true)))));
+
             // TODO to be uncommented when all tests for Japanese are green.
             // RegisterModel<DateTimeModel>(
             //    Culture.Japanese,
             //    options => new DateTimeModel(
             //      new FullDateTimeParser(new JapaneseDateTimeParserConfiguration(options)),
             //      new JapaneseMergedExtractor(options)));
-    }
+        }
     }
 }

@@ -3,23 +3,21 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using DateObject = System.DateTime;
-
 using Microsoft.Recognizers.Text.Choice;
 using Microsoft.Recognizers.Text.DateTime;
+using Microsoft.Recognizers.Text.DateTime.Dutch;
 using Microsoft.Recognizers.Text.DateTime.English;
 using Microsoft.Recognizers.Text.DateTime.French;
 using Microsoft.Recognizers.Text.DateTime.German;
 using Microsoft.Recognizers.Text.DateTime.Italian;
-using Microsoft.Recognizers.Text.DateTime.Spanish;
 using Microsoft.Recognizers.Text.DateTime.Portuguese;
+using Microsoft.Recognizers.Text.DateTime.Spanish;
 using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.NumberWithUnit;
 using Microsoft.Recognizers.Text.Sequence;
-
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-
 using Newtonsoft.Json;
+using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DataDrivenTests
 {
@@ -30,7 +28,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
         public static void InitFromTestContext(this TestResources resources, TestContext context)
         {
             var classNameIndex = context.FullyQualifiedTestClassName.LastIndexOf('.');
-            var className = context.FullyQualifiedTestClassName.Substring(classNameIndex + 1).Replace("Test", "");
+            var className = context.FullyQualifiedTestClassName.Substring(classNameIndex + 1).Replace("Test", string.Empty);
             var recognizerLanguage = className.Split('_');
 
             var directorySpecs = Path.Combine("..", "..", "..", "..", "Specs", recognizerLanguage[0], recognizerLanguage[1]);
@@ -124,8 +122,8 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             { Models.NumberPercentMode, (test, culture) => NumberRecognizer.RecognizeNumber(test.Input, culture, NumberOptions.PercentageMode, fallbackToDefaultCulture: false) },
             { Models.NumberExperimentalMode, (test, culture) => NumberRecognizer.RecognizeNumber(test.Input, culture, NumberOptions.ExperimentalMode, fallbackToDefaultCulture: false) },
             { Models.Ordinal, (test, culture) => NumberRecognizer.RecognizeOrdinal(test.Input, culture, fallbackToDefaultCulture: false) },
-            { Models.Percent, (test, culture) => NumberRecognizer.RecognizePercentage(test.Input, culture, fallbackToDefaultCulture: false)},
-            { Models.PercentPercentMode, (test, culture) => NumberRecognizer.RecognizePercentage(test.Input, culture, NumberOptions.PercentageMode, fallbackToDefaultCulture: false)},
+            { Models.Percent, (test, culture) => NumberRecognizer.RecognizePercentage(test.Input, culture, fallbackToDefaultCulture: false) },
+            { Models.PercentPercentMode, (test, culture) => NumberRecognizer.RecognizePercentage(test.Input, culture, NumberOptions.PercentageMode, fallbackToDefaultCulture: false) },
             { Models.NumberRange, (test, culture) => NumberRecognizer.RecognizeNumberRange(test.Input, culture, fallbackToDefaultCulture: false) },
             { Models.NumberRangeExperimentalMode, (test, culture) => NumberRecognizer.RecognizeNumberRange(test.Input, culture, NumberOptions.ExperimentalMode, fallbackToDefaultCulture: false) },
             { Models.Age, (test, culture) => NumberWithUnitRecognizer.RecognizeAge(test.Input, culture, fallbackToDefaultCulture: false) },
@@ -180,6 +178,8 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                     return GetGermanExtractor(extractorName);
                 case Culture.Italian:
                     return GetItalianExtractor(extractorName);
+                case Culture.Dutch:
+                    return GetDutchExtractor(extractorName);
                 case Culture.Japanese:
                     return GetJapaneseExtractor(extractorName);
         }
@@ -211,6 +211,8 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                     return GetItalianParser(parserName);
                 case Culture.Japanese:
                     return GetJapaneseParser(parserName);
+                case Culture.Dutch:
+                    return GetDutchParser(parserName);
       }
 
             throw new Exception($"Parser '{parserName}' for '{culture}' not supported");
@@ -383,7 +385,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
         public static IDateTimeParser GetChineseParser(DateTimeParsers parserName)
         {
-            //var commonConfiguration = new EnglishCommonDateTimeParserConfiguration();
+            // var commonConfiguration = new EnglishCommonDateTimeParserConfiguration();
             switch (parserName)
             {
                 case DateTimeParsers.Date:
@@ -409,6 +411,74 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             }
 
             throw new Exception($"Parser '{parserName}' for English not supported");
+        }
+
+        public static IDateTimeExtractor GetDutchExtractor(DateTimeExtractors extractorName)
+        {
+            var enableDmyConfig = new BaseOptionsConfiguration(DateTimeOptions.None, dmyDateFormat: true);
+
+            switch (extractorName)
+            {
+                case DateTimeExtractors.Date:
+                    return new BaseDateExtractor(new DutchDateExtractorConfiguration(enableDmyConfig));
+                case DateTimeExtractors.Time:
+                    return new BaseTimeExtractor(new DutchTimeExtractorConfiguration(enableDmyConfig));
+                case DateTimeExtractors.DatePeriod:
+                    return new BaseDatePeriodExtractor(new DutchDatePeriodExtractorConfiguration(enableDmyConfig));
+                case DateTimeExtractors.TimePeriod:
+                    return new BaseTimePeriodExtractor(new DutchTimePeriodExtractorConfiguration(enableDmyConfig));
+                case DateTimeExtractors.DateTime:
+                    return new BaseDateTimeExtractor(new DutchDateTimeExtractorConfiguration(enableDmyConfig));
+                case DateTimeExtractors.DateTimePeriod:
+                    return new BaseDateTimePeriodExtractor(new DutchDateTimePeriodExtractorConfiguration(enableDmyConfig));
+                case DateTimeExtractors.Duration:
+                    return new BaseDurationExtractor(new DutchDurationExtractorConfiguration(enableDmyConfig));
+                case DateTimeExtractors.Holiday:
+                    return new BaseHolidayExtractor(new DutchHolidayExtractorConfiguration(enableDmyConfig));
+                case DateTimeExtractors.TimeZone:
+                    return new BaseTimeZoneExtractor(new DutchTimeZoneExtractorConfiguration(enableDmyConfig));
+                case DateTimeExtractors.Set:
+                    return new BaseSetExtractor(new DutchSetExtractorConfiguration(enableDmyConfig));
+                case DateTimeExtractors.Merged:
+                    return new BaseMergedDateTimeExtractor(new DutchMergedExtractorConfiguration(enableDmyConfig));
+                case DateTimeExtractors.MergedSkipFromTo:
+                    return new BaseMergedDateTimeExtractor(new DutchMergedExtractorConfiguration(new BaseOptionsConfiguration(DateTimeOptions.SkipFromToMerge)));
+            }
+
+            throw new Exception($"Extractor '{extractorName}' for Dutch not supported");
+        }
+
+        public static IDateTimeParser GetDutchParser(DateTimeParsers parserName)
+        {
+            var commonConfiguration = new DutchCommonDateTimeParserConfiguration(new BaseOptionsConfiguration(DateTimeOptions.None, dmyDateFormat: true));
+
+            switch (parserName)
+            {
+                case DateTimeParsers.Date:
+                    return new BaseDateParser(new DutchDateParserConfiguration(commonConfiguration));
+                case DateTimeParsers.Time:
+                    return new DateTime.Dutch.TimeParser(new DutchTimeParserConfiguration(commonConfiguration));
+                case DateTimeParsers.DatePeriod:
+                    return new BaseDatePeriodParser(new DutchDatePeriodParserConfiguration(commonConfiguration));
+                case DateTimeParsers.TimePeriod:
+                    return new BaseTimePeriodParser(new DutchTimePeriodParserConfiguration(commonConfiguration));
+                case DateTimeParsers.DateTime:
+                    return new BaseDateTimeParser(new DutchDateTimeParserConfiguration(commonConfiguration));
+                case DateTimeParsers.DateTimePeriod:
+                    return new BaseDateTimePeriodParser(new DutchDateTimePeriodParserConfiguration(commonConfiguration));
+                case DateTimeParsers.Duration:
+                    return new BaseDurationParser(new DutchDurationParserConfiguration(commonConfiguration));
+                case DateTimeParsers.Holiday:
+                    return new BaseHolidayParser(new DutchHolidayParserConfiguration(commonConfiguration));
+                case DateTimeParsers.TimeZone:
+                    return new BaseTimeZoneParser();
+                case DateTimeParsers.Set:
+                    return new BaseSetParser(new DutchSetParserConfiguration(commonConfiguration));
+                case DateTimeParsers.Merged:
+                    return new BaseMergedDateTimeParser(new DutchMergedParserConfiguration(new BaseOptionsConfiguration(DateTimeOptions.None, dmyDateFormat: true)));
+            }
+
+            throw new Exception($"Parser '{parserName}' for Dutch not supported");
         }
 
         public static IDateTimeExtractor GetJapaneseExtractor(DateTimeExtractors extractorName)
@@ -842,7 +912,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
         public static string SanitizeSourceName(string source)
         {
-            return source.Replace("Model", "").Replace("Extractor", "").Replace("Parser", "");
+            return source.Replace("Model", string.Empty).Replace("Extractor", string.Empty).Replace("Parser", string.Empty);
         }
 
         public static Models GetModel(string source)

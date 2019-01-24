@@ -793,5 +793,21 @@
         }
       }
     ]
+  },
+  {
+    "Input": "that one mile can provide.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "one mile",
+        "Start": 5,
+        "End": 12,
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Mile",
+          "value": "1"
+        }
+      }
+    ]
   }
 ]
