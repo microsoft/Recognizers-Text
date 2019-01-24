@@ -361,4 +361,5 @@ class PortugueseNumeric:
                            ("g", 1000000000),
                            ("b", 1000000000),
                            ("t", 1000000000000)])
+    RelativeReferenceMap = dict([("", "")])
 # pylint: enable=line-too-long

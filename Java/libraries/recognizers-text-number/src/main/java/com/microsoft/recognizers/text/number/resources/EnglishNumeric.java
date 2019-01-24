@@ -73,7 +73,13 @@ public class EnglishNumeric {
 
     public static final String RoundNumberOrdinalRegex = "(hundredth|thousandth|millionth|billionth|trillionth)";
 
-    public static final String BasicOrdinalRegex = "(first|second|third|fourth|fifth|sixth|seventh|eighth|ninth|tenth|eleventh|twelfth|thirteenth|fourteenth|fifteenth|sixteenth|seventeenth|eighteenth|nineteenth|twentieth|thirtieth|fortieth|fiftieth|sixtieth|seventieth|eightieth|ninetieth)";
+    public static final String NumberOrdinalRegex = "(first|second|third|fourth|fifth|sixth|seventh|eighth|ninth|tenth|eleventh|twelfth|thirteenth|fourteenth|fifteenth|sixteenth|seventeenth|eighteenth|nineteenth|twentieth|thirtieth|fortieth|fiftieth|sixtieth|seventieth|eightieth|ninetieth)";
+
+    public static final String RelativeOrdinalRegex = "(last|next one|previous one|the second to last|the one before the last one|next to last|penultimate|the last but one|antepenultimate)";
+
+    public static final String BasicOrdinalRegex = "({NumberOrdinalRegex}|{RelativeOrdinalRegex})"
+            .replace("{NumberOrdinalRegex}", NumberOrdinalRegex)
+            .replace("{RelativeOrdinalRegex}", RelativeOrdinalRegex);
 
     public static final String SuffixBasicOrdinalRegex = "((((({TensNumberIntegerRegex}(\\s+(and\\s+)?|\\s*-\\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{AnIntRegex})(\\s+{RoundNumberIntegerRegex})+)\\s+(and\\s+)?)*({TensNumberIntegerRegex}(\\s+|\\s*-\\s*))?{BasicOrdinalRegex})"
             .replace("{TensNumberIntegerRegex}", TensNumberIntegerRegex)
@@ -421,5 +427,17 @@ public class EnglishNumeric {
 
     public static final ImmutableMap<String, String> AmbiguityFiltersDict = ImmutableMap.<String, String>builder()
         .put("\\bone\\b", "\\b(the|this|that|which)\\s+(one)\\b")
+        .build();
+
+    public static final ImmutableMap<String, String> RelativeReferenceMap = ImmutableMap.<String, String>builder()
+        .put("last", "N")
+        .put("next one", "CURR+1")
+        .put("previous one", "CURR-1")
+        .put("the second to last", "CURR-1")
+        .put("the one before the last one", "CURR-1")
+        .put("next to last", "CURR-1")
+        .put("penultimate", "CURR-1")
+        .put("the last but one", "CURR-1")
+        .put("antepenultimate", "CURR-2")
         .build();
 }

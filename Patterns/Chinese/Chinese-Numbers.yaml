@@ -374,4 +374,9 @@ TwoNumberRangeRegex4: !nestedRegex
 AmbiguousFractionConnectorsRegex: !simpleRegex
 # TODO: modify below regex according to the counterpart in English
   def: ^[.]
+RelativeReferenceMap: !dictionary
+  types: [ string, string ]
+# TODO: modify below regex according to the counterpart in English
+  entries:
+    '': ''
 ...

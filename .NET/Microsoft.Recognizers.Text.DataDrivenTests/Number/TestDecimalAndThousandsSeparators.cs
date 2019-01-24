@@ -2,6 +2,7 @@
 
 namespace Microsoft.Recognizers.Text.Number.Tests
 {
+
     [TestClass]
     public class TestDecimalAndThousandsSeparators
     {

@@ -9,7 +9,7 @@ using Microsoft.Recognizers.Definitions.Portuguese;
 
 namespace Microsoft.Recognizers.Text.Number.Portuguese
 {
-    public class PortugueseNumberParserConfiguration : INumberParserConfiguration
+    public class PortugueseNumberParserConfiguration : BaseNumberParserConfiguration
     {
         public PortugueseNumberParserConfiguration()
                : this(new CultureInfo(Culture.Portuguese))
@@ -34,6 +34,7 @@ namespace Microsoft.Recognizers.Text.Number.Portuguese
 
             this.CardinalNumberMap = NumbersDefinitions.CardinalNumberMap.ToImmutableDictionary();
             this.OrdinalNumberMap = NumberMapGenerator.InitOrdinalNumberMap(NumbersDefinitions.OrdinalNumberMap, NumbersDefinitions.PrefixCardinalMap, NumbersDefinitions.SuffixOrdinalMap);
+            this.RelativeReferenceMap = NumbersDefinitions.RelativeReferenceMap.ToImmutableDictionary();
             this.RoundNumberMap = NumbersDefinitions.RoundNumberMap.ToImmutableDictionary();
 
             this.HalfADozenRegex = new Regex(NumbersDefinitions.HalfADozenRegex, RegexOptions.Singleline);
@@ -41,48 +42,9 @@ namespace Microsoft.Recognizers.Text.Number.Portuguese
             this.NegativeNumberSignRegex = new Regex(NumbersDefinitions.NegativeNumberSignRegex, RegexOptions.Singleline);
             this.FractionPrepositionRegex = new Regex(NumbersDefinitions.FractionPrepositionRegex, RegexOptions.Singleline);
         }
-
-        public ImmutableDictionary<string, long> CardinalNumberMap { get; private set; }
-
-        public NumberOptions Options { get; }
-
-        public CultureInfo CultureInfo { get; private set; }
-
-        public char DecimalSeparatorChar { get; private set; }
-
-        public Regex DigitalNumberRegex { get; private set; }
-
-        public Regex FractionPrepositionRegex { get; }
-
-        public Regex NegativeNumberSignRegex { get; private set; }
-
-        public string FractionMarkerToken { get; private set; }
-
-        public Regex HalfADozenRegex { get; private set; }
-
-        public string HalfADozenText { get; private set; }
-
-        public string LangMarker { get; private set; }
-
-        public char NonDecimalSeparatorChar { get; private set; }
-
         public string NonDecimalSeparatorText { get; private set; }
 
-        public ImmutableDictionary<string, long> OrdinalNumberMap { get; private set; }
-
-        public ImmutableDictionary<string, long> RoundNumberMap { get; private set; }
-
-        public string WordSeparatorToken { get; private set; }
-
-        public IEnumerable<string> WrittenDecimalSeparatorTexts { get; private set; }
-
-        public IEnumerable<string> WrittenGroupSeparatorTexts { get; private set; }
-
-        public IEnumerable<string> WrittenIntegerSeparatorTexts { get; private set; }
-
-        public IEnumerable<string> WrittenFractionSeparatorTexts { get; private set; }
-
-        public IEnumerable<string> NormalizeTokenSet(IEnumerable<string> tokens, ParseResult context)
+        public override IEnumerable<string> NormalizeTokenSet(IEnumerable<string> tokens, ParseResult context)
         {
             var result = new List<string>();
 
@@ -129,7 +91,7 @@ namespace Microsoft.Recognizers.Text.Number.Portuguese
             return result;
         }
 
-        public long ResolveCompositeNumber(string numberStr)
+        public override long ResolveCompositeNumber(string numberStr)
         {
             if (this.OrdinalNumberMap.ContainsKey(numberStr))
             {

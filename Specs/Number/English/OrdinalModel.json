@@ -1,5 +1,140 @@
 [
   {
+    "Input": "Show me the antepenultimate.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "antepenultimate",
+        "Start": 12,
+        "End": 26,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "CURR-2"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Show me the last but one.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "the last but one",
+        "Start": 8,
+        "End": 23,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "CURR-1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Show me the penultimate.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "penultimate",
+        "Start": 12,
+        "End": 22,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "CURR-1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Show me the next to last.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "next to last",
+        "Start": 12,
+        "End": 23,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "CURR-1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Show me the one before the last one.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "the one before the last one",
+        "Start": 8,
+        "End": 34,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "CURR-1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Show me the second to last.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "the second to last",
+        "Start": 8,
+        "End": 25,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "CURR-1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Delete last sentence.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "last",
+        "Start": 7,
+        "End": 10,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "N"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Show me the previous one.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "previous one",
+        "Start": 12,
+        "End": 23,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "CURR-1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Show me the next one.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "next one",
+        "Start": 12,
+        "End": 19,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "CURR+1"
+        }
+      }
+    ]
+  },
+  {
     "Input": "three trillionth",
     "Results": [
       {
