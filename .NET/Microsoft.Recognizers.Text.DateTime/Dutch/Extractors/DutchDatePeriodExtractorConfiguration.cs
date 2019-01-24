@@ -11,10 +11,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
     public class DutchDatePeriodExtractorConfiguration : BaseOptionsConfiguration, IDatePeriodExtractorConfiguration
     {
         // Base regexes
-        public static readonly Regex TillRegex = 
+        public static readonly Regex TillRegex =
             new Regex(DateTimeDefinitions.TillRegex, RegexOptions.Singleline);
 
-        public static readonly Regex AndRegex = 
+        public static readonly Regex AndRegex =
             new Regex(DateTimeDefinitions.RangeConnectorRegex, RegexOptions.Singleline);
 
         public static readonly Regex DayRegex =
@@ -26,13 +26,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         public static readonly Regex IllegalYearRegex =
             new Regex(BaseDateTime.IllegalYearRegex, RegexOptions.Singleline);
 
-        public static readonly Regex YearRegex = 
+        public static readonly Regex YearRegex =
             new Regex(DateTimeDefinitions.YearRegex, RegexOptions.Singleline);
 
         public static readonly Regex WeekDayRegex =
             new Regex(DateTimeDefinitions.WeekDayRegex, RegexOptions.Singleline);
 
-        public static readonly Regex RelativeMonthRegex = 
+        public static readonly Regex RelativeMonthRegex =
             new Regex(DateTimeDefinitions.RelativeMonthRegex, RegexOptions.Singleline);
 
         public static readonly Regex WrittenMonthRegex =
@@ -41,16 +41,16 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         public static readonly Regex MonthSuffixRegex =
             new Regex(DateTimeDefinitions.MonthSuffixRegex, RegexOptions.Singleline);
 
-        public static readonly Regex DateUnitRegex = 
+        public static readonly Regex DateUnitRegex =
             new Regex(DateTimeDefinitions.DateUnitRegex, RegexOptions.Singleline);
 
         public static readonly Regex TimeUnitRegex =
             new Regex(DateTimeDefinitions.TimeUnitRegex, RegexOptions.Singleline);
 
-        public static readonly Regex PastPrefixRegex = 
+        public static readonly Regex PastPrefixRegex =
             new Regex(DateTimeDefinitions.PastPrefixRegex, RegexOptions.Singleline);
 
-        public static readonly Regex NextPrefixRegex = 
+        public static readonly Regex NextPrefixRegex =
             new Regex(DateTimeDefinitions.NextPrefixRegex, RegexOptions.Singleline);
 
         public static readonly Regex FutureSuffixRegex =
@@ -84,7 +84,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         public static readonly Regex WeekOfYearRegex =
             new Regex(DateTimeDefinitions.WeekOfYearRegex, RegexOptions.Singleline);
 
-        public static readonly Regex FollowedDateUnit = 
+        public static readonly Regex FollowedDateUnit =
             new Regex(DateTimeDefinitions.FollowedDateUnit, RegexOptions.Singleline);
 
         public static readonly Regex NumberCombinedWithDateUnit =
@@ -166,48 +166,69 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         {
             // "3-5 Jan, 2018",
             SimpleCasesRegex,
+
             // "between 3 and 5 Jan, 2018"
             BetweenRegex,
+
             // "next april", "year to date", "previous year"
             OneWordPeriodRegex,
+
             // "January, 2018", "this year Feb"
             MonthWithYear,
+
             // "2018-3", "2018.3", "5-2015", only FourDigitYear is allow in this Regex
             MonthNumWithYear,
+
             // "2018", "two thousand and ten"
             YearRegex,
+
             // "4th week of Feb"
             WeekOfMonthRegex,
+
             // "3rd week of 2018", "4th week last year"
             WeekOfYearRegex,
+
             // "Jan between 8-10"
             MonthFrontBetweenRegex,
+
             // "from Jan 5th-10th", "Feb from 5-10"
             MonthFrontSimpleCasesRegex,
+
             // "Q1 2018", "2nd quarter"
             QuarterRegex,
+
             // "2016 Q1", "last year the 4th quarter"
             QuarterRegexYearFront,
+
             // "2015 the H1", "H2 of 2016", "1st half 2018", "2nd half this year"
             AllHalfYearRegex,
+
             // "last summer", "fall of 2018", "early this summer"
             SeasonRegex,
+
             // "week 25", "week 06"
             WhichWeekRegex,
+
             // "rest of this week", "rest of current year"
             RestOfDateRegex,
+
             // "early this year", "late next April"
             LaterEarlyPeriodRegex,
+
             // "this week between Mon and Wed", "next week from Tuesday to Wednesday"
             WeekWithWeekDayRangeRegex,
+
             // "year 834", "two thousand and nine"
             YearPlusNumberRegex,
+
             // "21st century 30's"
             DecadeWithCenturyRegex,
+
             // "next five decades", "previous 2 decades"
             RelativeDecadeRegex,
+
             // "this week", "same year"
-            ReferenceDatePeriodRegex
+            ReferenceDatePeriodRegex,
         };
 
         public DutchDatePeriodExtractorConfiguration(IOptionsConfiguration config)

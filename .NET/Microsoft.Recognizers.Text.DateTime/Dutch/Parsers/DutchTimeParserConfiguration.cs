@@ -164,7 +164,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
                         {
                             hasPm = true;
                         }
-                        
+
                     }
                 }
             }

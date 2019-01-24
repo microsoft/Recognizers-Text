@@ -3,8 +3,6 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using DateObject = System.DateTime;
-
 using Microsoft.Recognizers.Text.Choice;
 using Microsoft.Recognizers.Text.DateTime;
 using Microsoft.Recognizers.Text.DateTime.Dutch;
@@ -12,15 +10,14 @@ using Microsoft.Recognizers.Text.DateTime.English;
 using Microsoft.Recognizers.Text.DateTime.French;
 using Microsoft.Recognizers.Text.DateTime.German;
 using Microsoft.Recognizers.Text.DateTime.Italian;
-using Microsoft.Recognizers.Text.DateTime.Spanish;
 using Microsoft.Recognizers.Text.DateTime.Portuguese;
+using Microsoft.Recognizers.Text.DateTime.Spanish;
 using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.NumberWithUnit;
 using Microsoft.Recognizers.Text.Sequence;
-
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-
 using Newtonsoft.Json;
+using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DataDrivenTests
 {
@@ -125,8 +122,8 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             { Models.NumberPercentMode, (test, culture) => NumberRecognizer.RecognizeNumber(test.Input, culture, NumberOptions.PercentageMode, fallbackToDefaultCulture: false) },
             { Models.NumberExperimentalMode, (test, culture) => NumberRecognizer.RecognizeNumber(test.Input, culture, NumberOptions.ExperimentalMode, fallbackToDefaultCulture: false) },
             { Models.Ordinal, (test, culture) => NumberRecognizer.RecognizeOrdinal(test.Input, culture, fallbackToDefaultCulture: false) },
-            { Models.Percent, (test, culture) => NumberRecognizer.RecognizePercentage(test.Input, culture, fallbackToDefaultCulture: false)},
-            { Models.PercentPercentMode, (test, culture) => NumberRecognizer.RecognizePercentage(test.Input, culture, NumberOptions.PercentageMode, fallbackToDefaultCulture: false)},
+            { Models.Percent, (test, culture) => NumberRecognizer.RecognizePercentage(test.Input, culture, fallbackToDefaultCulture: false) },
+            { Models.PercentPercentMode, (test, culture) => NumberRecognizer.RecognizePercentage(test.Input, culture, NumberOptions.PercentageMode, fallbackToDefaultCulture: false) },
             { Models.NumberRange, (test, culture) => NumberRecognizer.RecognizeNumberRange(test.Input, culture, fallbackToDefaultCulture: false) },
             { Models.NumberRangeExperimentalMode, (test, culture) => NumberRecognizer.RecognizeNumberRange(test.Input, culture, NumberOptions.ExperimentalMode, fallbackToDefaultCulture: false) },
             { Models.Age, (test, culture) => NumberWithUnitRecognizer.RecognizeAge(test.Input, culture, fallbackToDefaultCulture: false) },

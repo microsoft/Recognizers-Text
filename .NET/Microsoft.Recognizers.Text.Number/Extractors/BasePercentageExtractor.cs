@@ -40,6 +40,7 @@ namespace Microsoft.Recognizers.Text.Number
             source = PreprocessStrWithNumberExtracted(originSource, out var positionMap, out var numExtResults);
 
             var allMatches = new List<MatchCollection>();
+
             // match percentage with regexes
             foreach (var regex in Regexes)
             {

@@ -1,7 +1,6 @@
-﻿using System.Text.RegularExpressions;
-
+﻿using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Dutch;
-using System.Collections.Generic;
 
 namespace Microsoft.Recognizers.Text.DateTime.Dutch
 {

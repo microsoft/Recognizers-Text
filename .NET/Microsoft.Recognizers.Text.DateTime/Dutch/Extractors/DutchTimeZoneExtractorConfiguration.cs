@@ -22,7 +22,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         public static readonly StringMatcher TimeZoneMatcher =
             TimeZoneUtility.BuildMatcherFromLists(AbbreviationsList, FullNameList);
 
-        public static readonly Regex LocationTimeSuffixRegex = 
+        public static readonly Regex LocationTimeSuffixRegex =
             new Regex(TimeZoneDefinitions.LocationTimeSuffixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly StringMatcher LocationMatcher = new StringMatcher();

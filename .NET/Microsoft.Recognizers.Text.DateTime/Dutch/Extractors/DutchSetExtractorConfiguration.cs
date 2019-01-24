@@ -9,22 +9,22 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         public static readonly Regex SetUnitRegex =
             new Regex(DateTimeDefinitions.DurationUnitRegex, RegexOptions.Singleline);
 
-        public static readonly Regex PeriodicRegex = 
+        public static readonly Regex PeriodicRegex =
             new Regex(DateTimeDefinitions.PeriodicRegex, RegexOptions.Singleline);
 
-        public static readonly Regex EachUnitRegex = 
+        public static readonly Regex EachUnitRegex =
             new Regex(DateTimeDefinitions.EachUnitRegex, RegexOptions.Singleline);
 
-        public static readonly Regex EachPrefixRegex = 
+        public static readonly Regex EachPrefixRegex =
             new Regex(DateTimeDefinitions.EachPrefixRegex, RegexOptions.Singleline);
 
-        public static readonly Regex SetLastRegex = 
+        public static readonly Regex SetLastRegex =
             new Regex(DateTimeDefinitions.SetLastRegex, RegexOptions.Singleline);
 
-        public static readonly Regex EachDayRegex = 
+        public static readonly Regex EachDayRegex =
             new Regex(DateTimeDefinitions.EachDayRegex, RegexOptions.Singleline);
 
-        public static readonly Regex SetWeekDayRegex = 
+        public static readonly Regex SetWeekDayRegex =
             new Regex(DateTimeDefinitions.SetWeekDayRegex, RegexOptions.Singleline);
 
         public static readonly Regex SetEachRegex =

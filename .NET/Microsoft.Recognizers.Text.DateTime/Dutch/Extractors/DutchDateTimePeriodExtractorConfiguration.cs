@@ -13,7 +13,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         private static readonly Regex[] SimpleCases =
         {
             DutchTimePeriodExtractorConfiguration.PureNumFromTo,
-            DutchTimePeriodExtractorConfiguration.PureNumBetweenAnd
+            DutchTimePeriodExtractorConfiguration.PureNumBetweenAnd,
         };
 
         private static readonly Regex PeriodTimeOfDayRegex =

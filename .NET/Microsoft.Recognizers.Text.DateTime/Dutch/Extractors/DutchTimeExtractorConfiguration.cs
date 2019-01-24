@@ -9,7 +9,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
     {
         // part 1: smallest component
         // --------------------------------------
-        public static readonly Regex DescRegex = 
+        public static readonly Regex DescRegex =
             new Regex(DateTimeDefinitions.DescRegex, RegexOptions.Singleline);
 
         public static readonly Regex HourNumRegex =
@@ -21,7 +21,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         // part 2: middle level component
         // --------------------------------------
         // handle "... o'clock"
-        public static readonly Regex OclockRegex = 
+        public static readonly Regex OclockRegex =
             new Regex(DateTimeDefinitions.OclockRegex, RegexOptions.Singleline);
 
         // handle "... afternoon"
@@ -29,7 +29,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
             new Regex(DateTimeDefinitions.PmRegex, RegexOptions.Singleline);
 
         // handle "... in the morning"
-        public static readonly Regex AmRegex = 
+        public static readonly Regex AmRegex =
             new Regex(DateTimeDefinitions.AmRegex, RegexOptions.Singleline);
 
         // handle "half past ..." "a quarter to ..."
@@ -37,7 +37,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         public static readonly Regex LessThanOneHour =
             new Regex(DateTimeDefinitions.LessThanOneHour, RegexOptions.Singleline);
 
-        // handle "six thirty", "six twenty one" 
+        // handle "six thirty", "six twenty one"
         public static readonly Regex WrittenTimeRegex =
             new Regex(DateTimeDefinitions.WrittenTimeRegex, RegexOptions.Singleline);
 
@@ -72,10 +72,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         public static readonly Regex AtRegex =
             new Regex(DateTimeDefinitions.AtRegex, RegexOptions.Singleline);
 
-        public static readonly Regex IshRegex = 
+        public static readonly Regex IshRegex =
             new Regex(DateTimeDefinitions.IshRegex, RegexOptions.Singleline);
 
-        public static readonly Regex TimeUnitRegex = 
+        public static readonly Regex TimeUnitRegex =
             new Regex(DateTimeDefinitions.TimeUnitRegex, RegexOptions.Singleline);
 
         public static readonly Regex ConnectNumRegex =
@@ -120,7 +120,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
             new Regex(DateTimeDefinitions.TimeRegex11, RegexOptions.Singleline),
 
             // 340pm
-            ConnectNumRegex
+            ConnectNumRegex,
         };
 
         IEnumerable<Regex> ITimeExtractorConfiguration.TimeRegexList => TimeRegexList;

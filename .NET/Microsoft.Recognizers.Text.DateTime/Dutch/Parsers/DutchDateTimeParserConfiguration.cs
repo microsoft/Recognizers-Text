@@ -1,8 +1,7 @@
 ﻿using System.Collections.Immutable;
 using System.Text.RegularExpressions;
-
-using Microsoft.Recognizers.Text.DateTime.Utilities;
 using Microsoft.Recognizers.Definitions.Dutch;
+using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.Dutch
 {
@@ -38,7 +37,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         public Regex PMTimeRegex => PmTimeRegex;
 
-        public static readonly Regex AmTimeRegex = 
+        public static readonly Regex AmTimeRegex =
             new Regex(DateTimeDefinitions.AMTimeRegex, RegexOptions.Singleline);
 
         public static readonly Regex PmTimeRegex =
@@ -103,7 +102,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
             int result = hour;
 
             var trimmedText = text.Trim().ToLowerInvariant();
-            
+
             if (trimmedText.EndsWith("ochtend") && hour >= Constants.HalfDayHourCount)
             {
                 result -= Constants.HalfDayHourCount;

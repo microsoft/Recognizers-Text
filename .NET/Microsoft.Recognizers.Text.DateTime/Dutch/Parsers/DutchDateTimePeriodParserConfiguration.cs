@@ -113,16 +113,16 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
             Numbers = config.Numbers;
         }
 
-        public static readonly Regex MorningStartEndRegex = 
+        public static readonly Regex MorningStartEndRegex =
             new Regex(DateTimeDefinitions.MorningStartEndRegex, RegexOptions.Singleline);
 
-        public static readonly Regex AfternoonStartEndRegex = 
+        public static readonly Regex AfternoonStartEndRegex =
             new Regex(DateTimeDefinitions.AfternoonStartEndRegex, RegexOptions.Singleline);
 
-        public static readonly Regex EveningStartEndRegex = 
+        public static readonly Regex EveningStartEndRegex =
             new Regex(DateTimeDefinitions.EveningStartEndRegex, RegexOptions.Singleline);
 
-        public static readonly Regex NightStartEndRegex = 
+        public static readonly Regex NightStartEndRegex =
             new Regex(DateTimeDefinitions.NightStartEndRegex, RegexOptions.Singleline);
 
         public bool GetMatchedTimeRange(string text, out string timeStr, out int beginHour, out int endHour, out int endMin)
