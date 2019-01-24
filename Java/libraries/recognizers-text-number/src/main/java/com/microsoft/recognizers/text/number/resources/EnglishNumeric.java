@@ -75,7 +75,7 @@ public class EnglishNumeric {
 
     public static final String NumberOrdinalRegex = "(first|second|third|fourth|fifth|sixth|seventh|eighth|ninth|tenth|eleventh|twelfth|thirteenth|fourteenth|fifteenth|sixteenth|seventeenth|eighteenth|nineteenth|twentieth|thirtieth|fortieth|fiftieth|sixtieth|seventieth|eightieth|ninetieth)";
 
-    public static final String RelativeOrdinalRegex = "(last|next one|previous one|the second to last|the one before the last one|next to last|penultimate|the last but one|antepenultimate)";
+    public static final String RelativeOrdinalRegex = "(last|next|next one|previous one|the second to last|the one before the last one|next to last|penultimate|the last but one|antepenultimate)";
 
     public static final String BasicOrdinalRegex = "({NumberOrdinalRegex}|{RelativeOrdinalRegex})"
             .replace("{NumberOrdinalRegex}", NumberOrdinalRegex)
@@ -431,6 +431,7 @@ public class EnglishNumeric {
 
     public static final ImmutableMap<String, String> RelativeReferenceMap = ImmutableMap.<String, String>builder()
         .put("last", "N")
+        .put("next", "CURR+1")
         .put("next one", "CURR+1")
         .put("previous one", "CURR-1")
         .put("the second to last", "CURR-1")

@@ -1,5 +1,44 @@
 [
   {
+    "Input": "delete last sentence in the note",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "last",
+        "Start": 7,
+        "End": 10,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "N"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Do you mean \"next\" or \"last\"?",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "next",
+        "Start": 13,
+        "End": 16,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "CURR+1"
+        }
+      },
+      {
+        "Text": "last",
+        "Start": 23,
+        "End": 26,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "N"
+        }
+      }
+    ]
+  },
+  {
     "Input": "Show me the antepenultimate.",
     "NotSupported": "javascript, python, java",
     "Results": [
