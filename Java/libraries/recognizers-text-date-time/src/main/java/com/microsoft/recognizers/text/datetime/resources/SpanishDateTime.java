@@ -879,4 +879,12 @@ public class SpanishDateTime {
     public static final List<String> YearTerms = Arrays.asList("año", "años");
 
     public static final List<String> YearToDateTerms = Arrays.asList("año a la fecha", "años a la fecha");
+
+    public static final ImmutableMap<Character, Character> SpecialCharactersEquivalent = ImmutableMap.<Character, Character>builder()
+        .put('á', 'a')
+        .put('é', 'e')
+        .put('í', 'i')
+        .put('ó', 'o')
+        .put('ú', 'u')
+        .build();
 }
