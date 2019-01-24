@@ -5,6 +5,7 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
     <Copyright>© Microsoft Corporation. All rights reserved.</Copyright>
     <CodeAnalysisRuleSet>../../Recognizers-Text.ruleset</CodeAnalysisRuleSet>
+	<TargetLatestRuntimePatch>true</TargetLatestRuntimePatch>
   </PropertyGroup>
   
  <PropertyGroup>
