@@ -228,7 +228,7 @@ namespace Microsoft.Recognizers.Definitions.Italian
 		public static readonly string RelativeDecadeRegex = $@"\b((il\s+)?{RelativeRegex}\s+((?<number>[\w,]+)\s+)?cento?)\b";
 		public const string FullTextYearRegex = @"^[.]";
 		public static readonly string YearSuffix = $@"(,?\s*({DateYearRegex}|{FullTextYearRegex}))";
-		public const string YearAfterRegex = @"\b(o\s+(dopo|passato))\b";
+		public const string DateAfterRegex = @"\b(o\s+(dopo|passato))\b";
 		public static readonly string YearPeriodRegex = $@"(((dal|durante|nel|tra)\s+)?{YearRegex}\s*{TillRegex}\s*{YearRegex})";
 		public const string FutureSuffixRegex = @"^[.]";
 		public const string ComplexDatePeriodRegex = @"^[.]";
