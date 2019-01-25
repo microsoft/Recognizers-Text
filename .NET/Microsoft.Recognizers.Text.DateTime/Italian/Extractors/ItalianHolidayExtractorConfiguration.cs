@@ -7,10 +7,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 {
     public class ItalianHolidayExtractorConfiguration : BaseOptionsConfiguration, IHolidayExtractorConfiguration
     {
-        public static readonly Regex YearRegex =
-            new Regex(
-                DateTimeDefinitions.YearRegex,
-                RegexOptions.Singleline);
 
         public static readonly Regex H1 =
             new Regex(

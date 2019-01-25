@@ -7,43 +7,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 {
     public class ItalianTimeExtractorConfiguration : BaseOptionsConfiguration, ITimeExtractorConfiguration
     {
-        // part 1: smallest component
-        // --------------------------------
-        public static readonly Regex DescRegex =
-            new Regex(DateTimeDefinitions.DescRegex, RegexOptions.Singleline);
-
-        public static readonly Regex HourNumRegex =
-            new Regex(DateTimeDefinitions.HourNumRegex, RegexOptions.Singleline);
-
-        public static readonly Regex MinuteNumRegex =
-            new Regex(DateTimeDefinitions.MinuteNumRegex, RegexOptions.Singleline);
-
-        // part 2: middle level component
-        // --------------------------------------
-        // handle "... heures (o'clock, en punto)"
-        public static readonly Regex OclockRegex =
-            new Regex(DateTimeDefinitions.OclockRegex, RegexOptions.Singleline);
-
-        // handle "... après midi (afternoon, tarde)"
-        public static readonly Regex PmRegex =
-            new Regex(DateTimeDefinitions.PmRegex, RegexOptions.Singleline);
-
-        // handle "... dans la matinee (in the morning)"
-        public static readonly Regex AmRegex =
-            new Regex(DateTimeDefinitions.AmRegex, RegexOptions.Singleline);
-
         // handle "half past ..." "a quarter to ..."
         // rename 'min' group to 'deltamin'
         public static readonly Regex LessThanOneHour =
             new Regex(DateTimeDefinitions.LessThanOneHour, RegexOptions.Singleline);
-
-        public static readonly Regex FrTimeRegex =
-            new Regex(DateTimeDefinitions.EngTimeRegex, RegexOptions.Singleline);
-
-        // TODO - will have change below
-        // handle "six heures et demie" (six thirty), "six heures et vingt-et-un" (six twenty one)
-        public static readonly Regex TimePrefix =
-            new Regex(DateTimeDefinitions.TimePrefix, RegexOptions.Singleline);
 
         public static readonly Regex TimeSuffix =
             new Regex(DateTimeDefinitions.TimeSuffix, RegexOptions.Singleline);
@@ -57,20 +24,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         public static readonly Regex MidnightRegex =
             new Regex(DateTimeDefinitions.MidnightRegex, RegexOptions.Singleline);
 
-        public static readonly Regex MidmorningRegex =
-            new Regex(DateTimeDefinitions.MidmorningRegex, RegexOptions.Singleline);
-
-        public static readonly Regex MidafternoonRegex =
-            new Regex(DateTimeDefinitions.MidafternoonRegex, RegexOptions.Singleline);
-
-        public static readonly Regex MiddayRegex =
-            new Regex(DateTimeDefinitions.MiddayRegex, RegexOptions.Singleline);
-
-        public static readonly Regex MidTimeRegex =
-            new Regex(DateTimeDefinitions.MidTimeRegex, RegexOptions.Singleline);
-
-        // part 3: regex for time
-        // --------------------------------------
         // handle "at four" "at 3"
         public static readonly Regex AtRegex =
             new Regex(DateTimeDefinitions.AtRegex, RegexOptions.Singleline);
