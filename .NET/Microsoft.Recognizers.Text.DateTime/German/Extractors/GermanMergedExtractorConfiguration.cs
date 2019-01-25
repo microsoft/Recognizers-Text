@@ -33,7 +33,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             new Regex(DateTimeDefinitions.NumberEndingPattern, RegexOptions.Singleline);
 
         public static readonly Regex DateAfterRegex =
-            new Regex(DateTimeDefinitions.YearAfterRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.DateAfterRegex, RegexOptions.Singleline);
 
         public static readonly Regex UnspecificDatePeriodRegex =
             new Regex(DateTimeDefinitions.UnspecificDatePeriodRegex, RegexOptions.Singleline);
