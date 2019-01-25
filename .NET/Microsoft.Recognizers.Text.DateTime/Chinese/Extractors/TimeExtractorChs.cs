@@ -8,25 +8,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
     public class TimeExtractorChs : BaseDateTimeExtractor<TimeType>
     {
-        public static readonly string HourNumRegex = DateTimeDefinitions.TimeHourNumRegex;
-
         public static readonly string MinuteNumRegex = DateTimeDefinitions.TimeMinuteNumRegex;
-
-        public static readonly string SecondNumRegex = DateTimeDefinitions.TimeSecondNumRegex;
-
-        public static readonly string HourChsRegex = DateTimeDefinitions.TimeHourChsRegex;
-
-        public static readonly string MinuteChsRegex = DateTimeDefinitions.TimeMinuteChsRegex;
-
-        public static readonly string SecondChsRegex = DateTimeDefinitions.TimeSecondChsRegex;
-
-        public static readonly string ClockDescRegex = DateTimeDefinitions.TimeClockDescRegex;
 
         public static readonly string MinuteDescRegex = DateTimeDefinitions.TimeMinuteDescRegex;
 
         public static readonly string SecondDescRegex = DateTimeDefinitions.TimeSecondDescRegex;
-
-        public static readonly string BanHourPrefixRegex = DateTimeDefinitions.TimeBanHourPrefixRegex;
 
         // e.g: 12点, 十二点, 十二点整
         public static readonly string HourRegex = DateTimeDefinitions.TimeHourRegex;
@@ -47,10 +33,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         // e.g: 早上九点
         public static readonly string DayDescRegex = DateTimeDefinitions.TimeDayDescRegex;
-
-        public static readonly string ApproximateDescPreffixRegex = DateTimeDefinitions.TimeApproximateDescPreffixRegex;
-
-        public static readonly string ApproximateDescSuffixRegex = DateTimeDefinitions.TimeApproximateDescSuffixRegex;
 
         public TimeExtractorChs()
         {

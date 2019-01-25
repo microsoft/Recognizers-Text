@@ -10,8 +10,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
     {
         public static readonly string ExtractorName = Constants.SYS_DATETIME_SET;
 
-        public static readonly Regex UnitRegex = new Regex(DateTimeDefinitions.SetUnitRegex, RegexOptions.Singleline);
-
         public static readonly Regex EachUnitRegex = new Regex(DateTimeDefinitions.SetEachUnitRegex, RegexOptions.Singleline);
 
         public static readonly Regex EachPrefixRegex = new Regex(DateTimeDefinitions.SetEachPrefixRegex, RegexOptions.Singleline);

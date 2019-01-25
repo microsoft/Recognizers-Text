@@ -15,8 +15,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         public static readonly Regex DayRegex = new Regex(DateTimeDefinitions.DayRegex, RegexOptions.Singleline);
 
-        public static readonly Regex DayRegexInChinese = new Regex(DateTimeDefinitions.DatePeriodDayRegexInChinese, RegexOptions.Singleline);
-
         public static readonly Regex MonthNumRegex = new Regex(DateTimeDefinitions.MonthNumRegex, RegexOptions.Singleline);
 
         public static readonly Regex ThisRegex = new Regex(DateTimeDefinitions.DatePeriodThisRegex, RegexOptions.Singleline);
@@ -32,10 +30,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         public static readonly Regex YearRegex = new Regex(DateTimeDefinitions.DatePeriodYearRegex, RegexOptions.Singleline);
 
         public static readonly Regex StrictYearRegex = new Regex(DateTimeDefinitions.StrictYearRegex, RegexOptions.Singleline);
-
-        public static readonly Regex YearRegexInNumber = new Regex(DateTimeDefinitions.YearRegexInNumber, RegexOptions.Singleline);
-
-        public static readonly Regex ZeroToNineIntegerRegexChs = new Regex(DateTimeDefinitions.ZeroToNineIntegerRegexChs, RegexOptions.Singleline);
 
         public static readonly Regex YearInChineseRegex = new Regex(DateTimeDefinitions.DatePeriodYearInChineseRegex, RegexOptions.Singleline);
 
