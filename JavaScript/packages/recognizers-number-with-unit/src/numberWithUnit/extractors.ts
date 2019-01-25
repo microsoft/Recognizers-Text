@@ -337,8 +337,14 @@ export class NumberWithUnitExtractor implements IExtractor {
         }
         else
         {
-            if (!stringA) return 1;
-            if (!stringB) return -1;
+            if (!stringA) 
+            {
+                return 1;
+            }
+            if (!stringB)
+            {
+                return -1;
+            } 
             return stringB.localeCompare(stringA);
         }
     }
