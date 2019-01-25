@@ -6,9 +6,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 {
     public class DutchSetExtractorConfiguration : BaseOptionsConfiguration, ISetExtractorConfiguration
     {
-        public static readonly Regex SetUnitRegex =
-            new Regex(DateTimeDefinitions.DurationUnitRegex, RegexOptions.Singleline);
-
         public static readonly Regex PeriodicRegex =
             new Regex(DateTimeDefinitions.PeriodicRegex, RegexOptions.Singleline);
 

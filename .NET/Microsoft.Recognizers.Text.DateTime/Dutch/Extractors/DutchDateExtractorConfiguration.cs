@@ -18,12 +18,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         private static readonly Regex DayRegex =
             new Regex(DateTimeDefinitions.ImplicitDayRegex, RegexOptions.Singleline);
 
-        public static readonly Regex MonthNumRegex =
-            new Regex(DateTimeDefinitions.MonthNumRegex, RegexOptions.Singleline);
-
-        public static readonly Regex YearRegex =
-            new Regex(DateTimeDefinitions.YearRegex, RegexOptions.Singleline);
-
         public static readonly Regex WeekDayRegex =
             new Regex(DateTimeDefinitions.WeekDayRegex, RegexOptions.Singleline);
 
