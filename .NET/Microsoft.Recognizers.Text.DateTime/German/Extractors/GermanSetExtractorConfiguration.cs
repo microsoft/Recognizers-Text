@@ -6,9 +6,6 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 {
     public class GermanSetExtractorConfiguration : BaseOptionsConfiguration, ISetExtractorConfiguration
     {
-        public static readonly Regex SetUnitRegex =
-            new Regex(DateTimeDefinitions.DurationUnitRegex, RegexOptions.Singleline);
-
         public static readonly Regex PeriodicRegex =
             new Regex(DateTimeDefinitions.PeriodicRegex, RegexOptions.Singleline);
 

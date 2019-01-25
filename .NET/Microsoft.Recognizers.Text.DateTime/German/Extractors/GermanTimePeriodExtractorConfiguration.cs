@@ -12,21 +12,6 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public static readonly Regex TillRegex =
             new Regex(DateTimeDefinitions.TillRegex, RegexOptions.Singleline);
 
-        public static readonly Regex HourRegex =
-            new Regex(DateTimeDefinitions.HourRegex, RegexOptions.Singleline);
-
-        public static readonly Regex PeriodHourNumRegex =
-            new Regex(DateTimeDefinitions.PeriodHourNumRegex, RegexOptions.Singleline);
-
-        public static readonly Regex PeriodDescRegex =
-            new Regex(DateTimeDefinitions.DescRegex, RegexOptions.Singleline);
-
-        public static readonly Regex PmRegex =
-            new Regex(DateTimeDefinitions.PmRegex, RegexOptions.Singleline);
-
-        public static readonly Regex AmRegex =
-            new Regex(DateTimeDefinitions.AmRegex, RegexOptions.Singleline);
-
         public static readonly Regex PureNumFromTo =
             new Regex(DateTimeDefinitions.PureNumFromTo, RegexOptions.Singleline);
 
@@ -43,17 +28,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public static readonly Regex TimeOfDayRegex =
             new Regex(DateTimeDefinitions.TimeOfDayRegex, RegexOptions.Singleline);
 
-        public static readonly Regex SpecificTimeOfDayRegex =
-            new Regex(DateTimeDefinitions.SpecificTimeOfDayRegex, RegexOptions.Singleline);
-
         public static readonly Regex TimeUnitRegex =
             new Regex(DateTimeDefinitions.TimeUnitRegex, RegexOptions.Singleline);
-
-        public static readonly Regex TimeFollowedUnit =
-            new Regex(DateTimeDefinitions.TimeFollowedUnit, RegexOptions.Singleline);
-
-        public static readonly Regex TimeNumberCombinedWithUnit =
-            new Regex(DateTimeDefinitions.TimeNumberCombinedWithUnit, RegexOptions.Singleline);
 
         public static readonly Regex GeneralEndingRegex =
             new Regex(DateTimeDefinitions.GeneralEndingRegex, RegexOptions.Singleline);

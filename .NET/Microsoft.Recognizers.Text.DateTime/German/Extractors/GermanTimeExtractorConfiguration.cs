@@ -7,45 +7,10 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 {
     public class GermanTimeExtractorConfiguration : BaseOptionsConfiguration, ITimeExtractorConfiguration
     {
-        // part 1: smallest component
-        // --------------------------------------
-        public static readonly Regex DescRegex =
-            new Regex(DateTimeDefinitions.DescRegex, RegexOptions.Singleline);
-
-        public static readonly Regex HourNumRegex =
-            new Regex(DateTimeDefinitions.HourNumRegex, RegexOptions.Singleline);
-
-        public static readonly Regex MinuteNumRegex =
-            new Regex(DateTimeDefinitions.MinuteNumRegex, RegexOptions.Singleline);
-
-        // part 2: middle level component
-        // --------------------------------------
-        // handle "... o'clock"
-        public static readonly Regex OclockRegex =
-            new Regex(DateTimeDefinitions.OclockRegex, RegexOptions.Singleline);
-
-        // handle "... afternoon"
-        public static readonly Regex PmRegex =
-            new Regex(DateTimeDefinitions.PmRegex, RegexOptions.Singleline);
-
-        // handle "... in the morning"
-        public static readonly Regex AmRegex =
-            new Regex(DateTimeDefinitions.AmRegex, RegexOptions.Singleline);
-
         // handle "half past ..." "a quarter to ..."
         // rename 'min' group to 'deltamin'
         public static readonly Regex LessThanOneHour =
             new Regex(DateTimeDefinitions.LessThanOneHour, RegexOptions.Singleline);
-
-        // handle "six thirty", "six twenty one"
-        public static readonly Regex WrittenTimeRegex =
-            new Regex(DateTimeDefinitions.WrittenTimeRegex, RegexOptions.Singleline);
-
-        public static readonly Regex TimePrefix =
-            new Regex(DateTimeDefinitions.TimePrefix, RegexOptions.Singleline);
-
-        public static readonly Regex TimeSuffix =
-            new Regex(DateTimeDefinitions.TimeSuffix, RegexOptions.Singleline);
 
         public static readonly Regex BasicTime =
             new Regex(DateTimeDefinitions.BasicTime, RegexOptions.Singleline);
@@ -54,20 +19,6 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public static readonly Regex MidnightRegex =
             new Regex(DateTimeDefinitions.MidnightRegex, RegexOptions.Singleline);
 
-        public static readonly Regex MidmorningRegex =
-            new Regex(DateTimeDefinitions.MidmorningRegex, RegexOptions.Singleline);
-
-        public static readonly Regex MidafternoonRegex =
-            new Regex(DateTimeDefinitions.MidafternoonRegex, RegexOptions.Singleline);
-
-        public static readonly Regex MiddayRegex =
-            new Regex(DateTimeDefinitions.MiddayRegex, RegexOptions.Singleline);
-
-        public static readonly Regex MidTimeRegex =
-            new Regex(DateTimeDefinitions.MidTimeRegex, RegexOptions.Singleline);
-
-        // part 3: regex for time
-        // --------------------------------------
         // handle "at four" "at 3"
         public static readonly Regex AtRegex =
             new Regex(DateTimeDefinitions.AtRegex, RegexOptions.Singleline);
