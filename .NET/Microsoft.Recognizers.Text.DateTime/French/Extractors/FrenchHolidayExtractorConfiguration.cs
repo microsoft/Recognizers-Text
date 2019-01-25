@@ -7,9 +7,6 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 {
     public class FrenchHolidayExtractorConfiguration : BaseOptionsConfiguration, IHolidayExtractorConfiguration
     {
-        public static readonly Regex YearRegex =
-            new Regex(DateTimeDefinitions.YearRegex, RegexOptions.Singleline);
-
         public static readonly Regex H1 =
             new Regex(DateTimeDefinitions.HolidayRegex1, RegexOptions.Singleline);
 

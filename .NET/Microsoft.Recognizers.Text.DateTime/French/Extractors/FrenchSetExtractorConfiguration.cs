@@ -6,11 +6,6 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 {
     public class FrenchSetExtractorConfiguration : BaseOptionsConfiguration, ISetExtractorConfiguration
     {
-        public static readonly string ExtractorName = Constants.SYS_DATETIME_SET;
-
-        public static readonly Regex SetUnitRegex =
-            new Regex(DateTimeDefinitions.DurationUnitRegex, RegexOptions.Singleline);
-
         // TODO: Decide between adjective and adverb, i.e monthly - 'mensuel' vs 'mensuellement'
         public static readonly Regex PeriodicRegex =
             new Regex(DateTimeDefinitions.PeriodicRegex, RegexOptions.Singleline);
