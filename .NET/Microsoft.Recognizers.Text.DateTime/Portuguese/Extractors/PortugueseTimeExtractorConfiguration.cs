@@ -7,41 +7,16 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 {
     public class PortugueseTimeExtractorConfiguration : BaseOptionsConfiguration, ITimeExtractorConfiguration
     {
-        // part 1: smallest component
-        // --------------------------------------
-        public static readonly Regex DescRegex = new Regex(DateTimeDefinitions.DescRegex, RegexOptions.Singleline);
-
-        public static readonly Regex HourNumRegex = new Regex(DateTimeDefinitions.HourNumRegex, RegexOptions.Singleline);
-
-        public static readonly Regex MinuteNumRegex = new Regex(DateTimeDefinitions.MinuteNumRegex, RegexOptions.Singleline);
-
-        // part 2: middle level component
-        // --------------------------------------
-        // handle "... en punto"
-        public static readonly Regex OclockRegex = new Regex(DateTimeDefinitions.OclockRegex, RegexOptions.Singleline);
-
-        // handle "... tarde"
-        public static readonly Regex PmRegex = new Regex(DateTimeDefinitions.PmRegex, RegexOptions.Singleline);
-
-        // handle "... de la mañana"
-        public static readonly Regex AmRegex = new Regex(DateTimeDefinitions.AmRegex, RegexOptions.Singleline);
-
         // handle "y media ..." "menos cuarto ..."
         public static readonly Regex LessThanOneHour = new Regex(DateTimeDefinitions.LessThanOneHour, RegexOptions.Singleline);
 
-        public static readonly Regex TensTimeRegex = new Regex(DateTimeDefinitions.TensTimeRegex, RegexOptions.Singleline);
-
         // handle "seis treinta", "seis veintiuno", "seis menos diez"
         public static readonly Regex WrittenTimeRegex = new Regex(DateTimeDefinitions.WrittenTimeRegex, RegexOptions.Singleline);
-
-        public static readonly Regex TimePrefix = new Regex(DateTimeDefinitions.TimePrefix, RegexOptions.Singleline);
 
         public static readonly Regex TimeSuffix = new Regex(DateTimeDefinitions.TimeSuffix, RegexOptions.Singleline);
 
         public static readonly Regex BasicTime = new Regex(DateTimeDefinitions.BasicTime, RegexOptions.Singleline);
 
-        // part 3: regex for time
-        // --------------------------------------
         // handle "a las cuatro" "a las 3"
         // TODO: add some new regex which have used in AtRegex
         // TODO: modify according to corresponding English regex
