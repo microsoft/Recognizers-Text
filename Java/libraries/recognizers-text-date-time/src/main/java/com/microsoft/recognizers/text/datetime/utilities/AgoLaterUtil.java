@@ -93,9 +93,9 @@ public class AgoLaterUtil {
 
         if (resultDateTime != referenceTime) {
             if (mode.equals(AgoLaterMode.DATE)) {
-                ret.setTimex(FormatUtil.luisDate(resultDateTime));
+                ret.setTimex(DateTimeFormatUtil.luisDate(resultDateTime));
             } else if (mode.equals(AgoLaterMode.DATETIME)) {
-                ret.setTimex(FormatUtil.luisDateTime(resultDateTime));
+                ret.setTimex(DateTimeFormatUtil.luisDateTime(resultDateTime));
             }
 
             ret.setFutureValue(resultDateTime);
