@@ -1,5 +1,5 @@
 ﻿// <copyright file="AssemblyInfo.cs" company="Microsoft Corporation">
-// Copyright (c) PlaceholderCompany. All rights reserved.
+// Copyright (c) Microsoft. All rights reserved.
 // </copyright>
 
 using System.Reflection;
