@@ -13,7 +13,7 @@
         Unit,
 
         /// <summary>
-        /// Add 67.5 billion & million support.
+        /// Add 67.5 billion and million support.
         /// </summary>
         Currency,
 
