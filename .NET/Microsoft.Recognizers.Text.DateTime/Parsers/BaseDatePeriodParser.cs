@@ -135,19 +135,13 @@ namespace Microsoft.Recognizers.Text.DateTime
             return candidateResults;
         }
 
-        // TODO: This method should be refactored as it takes too many parameters and has too many side-effects
-        private static void GetModAndDate(
-            out DateObject beginDate,
-            ref DateObject endDate,
-            DateObject referenceDate,
-            string timex,
-            bool future,
-            out string mod,
-            out List<DateObject> dateList)
+        private static ModAndDateResult GetModAndDate(DateObject beginDate, DateObject endDate, DateObject referenceDate, string timex, bool future)
         {
-            dateList = null;
+            DateObject beginDateResult = beginDate;
+            DateObject endDateResult = endDate;
             var isBusinessDay = timex.EndsWith(Constants.TimexBusinessDay);
             var businessDayCount = 0;
+            List<DateObject> dateList = null;
 
             if (isBusinessDay)
             {
@@ -156,34 +150,38 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if (future)
             {
-                mod = Constants.AFTER_MOD;
+                string mod = Constants.AFTER_MOD;
 
                 // For future the beginDate should add 1 first
                 if (isBusinessDay)
                 {
-                    beginDate = DurationParsingUtil.GetNextBusinessDay(referenceDate);
-                    endDate = DurationParsingUtil.GetNthBusinessDay(beginDate, businessDayCount - 1, true, out dateList);
-                    endDate = endDate.AddDays(1);
+                    beginDateResult = DurationParsingUtil.GetNextBusinessDay(referenceDate);
+                    endDateResult = DurationParsingUtil.GetNthBusinessDay(beginDateResult, businessDayCount - 1, true, out dateList);
+                    endDateResult = endDateResult.AddDays(1);
+                    return new ModAndDateResult(beginDateResult, endDateResult, mod, dateList);
                 }
                 else
                 {
-                    beginDate = referenceDate.AddDays(1);
-                    endDate = DurationParsingUtil.ShiftDateTime(timex, beginDate, true);
+                    beginDateResult = referenceDate.AddDays(1);
+                    endDateResult = DurationParsingUtil.ShiftDateTime(timex, beginDateResult, true);
+                    return new ModAndDateResult(beginDateResult, endDateResult, mod, null);
                 }
             }
             else
             {
-                mod = Constants.BEFORE_MOD;
+                string mod = Constants.BEFORE_MOD;
 
                 if (isBusinessDay)
                 {
-                    endDate = DurationParsingUtil.GetNextBusinessDay(endDate, false);
-                    beginDate = DurationParsingUtil.GetNthBusinessDay(endDate, businessDayCount - 1, false, out dateList);
-                    endDate = endDate.AddDays(1);
+                    endDateResult = DurationParsingUtil.GetNextBusinessDay(endDateResult, false);
+                    beginDateResult = DurationParsingUtil.GetNthBusinessDay(endDateResult, businessDayCount - 1, false, out dateList);
+                    endDateResult = endDateResult.AddDays(1);
+                    return new ModAndDateResult(beginDateResult, endDateResult, mod, dateList);
                 }
                 else
                 {
-                    beginDate = DurationParsingUtil.ShiftDateTime(timex, endDate, false);
+                    beginDateResult = DurationParsingUtil.ShiftDateTime(timex, endDateResult, false);
+                    return new ModAndDateResult(beginDateResult, endDateResult, mod, null);
                 }
             }
         }
@@ -1246,10 +1244,9 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var ret = new DateTimeResolutionResult();
             DateObject beginDate;
-            var endDate = beginDate = referenceDate;
+            DateObject endDate = beginDate = referenceDate;
             var timex = string.Empty;
             var restNowSunday = false;
-            List<DateObject> dateList = null;
 
             var durationErs = config.DurationExtractor.Extract(text, referenceDate);
             if (durationErs.Count == 1)
@@ -1278,7 +1275,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
                 }
 
-                var mod = string.Empty;
+                ModAndDateResult modAndDateResult = new ModAndDateResult(beginDate, endDate);
 
                 if (durationPr.Value != null)
                 {
@@ -1291,7 +1288,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     if (config.PastRegex.IsMatch(beforeStr) || config.PastRegex.IsMatch(afterStr))
                     {
-                        GetModAndDate(out beginDate, ref endDate, referenceDate, durationResult.Timex, false, out mod, out dateList);
+                        modAndDateResult = GetModAndDate(beginDate, endDate, referenceDate, durationResult.Timex, false);
+                        beginDate = modAndDateResult.BeginDate;
                     }
 
                     // Handle the "within two weeks" case which means from today to the end of next two weeks
@@ -1299,51 +1297,58 @@ namespace Microsoft.Recognizers.Text.DateTime
                     if (config.WithinNextPrefixRegex.IsExactMatch(beforeStr, trim: true) &&
                         DurationParsingUtil.IsDateDuration(durationResult.Timex) && string.IsNullOrEmpty(afterStr))
                     {
-                        GetModAndDate(out beginDate, ref endDate, referenceDate, durationResult.Timex, true, out mod, out dateList);
+                        modAndDateResult = GetModAndDate(beginDate, endDate, referenceDate, durationResult.Timex, true);
 
                         // In GetModAndDate, this "future" resolution will add one day to beginDate/endDate,
                         // but for the "within" case it should start from the current day.
-                        beginDate = beginDate.AddDays(-1);
-                        endDate = endDate.AddDays(-1);
+                        beginDate = modAndDateResult.BeginDate.AddDays(-1);
+                        endDate = modAndDateResult.EndDate.AddDays(-1);
                     }
 
                     if (config.FutureRegex.IsExactMatch(beforeStr, trim: true))
                     {
-                        GetModAndDate(out beginDate, ref endDate, referenceDate, durationResult.Timex, true, out mod, out dateList);
+                        modAndDateResult = GetModAndDate(beginDate, endDate, referenceDate, durationResult.Timex, true);
+                        beginDate = modAndDateResult.BeginDate;
+                        endDate = modAndDateResult.EndDate;
                     }
                     else if (config.FutureRegex.IsMatch(afterStr))
                     {
-                        GetModAndDate(out beginDate, ref endDate, referenceDate, durationResult.Timex, true, out mod, out dateList);
+                        modAndDateResult = GetModAndDate(beginDate, endDate, referenceDate, durationResult.Timex, true);
+                        beginDate = modAndDateResult.BeginDate;
+                        endDate = modAndDateResult.EndDate;
                     }
 
                     if (config.FutureSuffixRegex.IsMatch(afterStr))
                     {
-                        GetModAndDate(out beginDate, ref endDate, referenceDate, durationResult.Timex, true, out mod, out dateList);
+                        modAndDateResult = GetModAndDate(beginDate, endDate, referenceDate, durationResult.Timex, true);
+                        beginDate = modAndDateResult.BeginDate;
+                        endDate = modAndDateResult.EndDate;
                     }
 
                     // Handle the "in two weeks" case which means the second week
                     if (config.InConnectorRegex.IsExactMatch(beforeStr, trim: true) &&
                         !DurationParsingUtil.IsMultipleDuration(durationResult.Timex))
                     {
-                        GetModAndDate(out beginDate, ref endDate, referenceDate, durationResult.Timex, true, out mod, out dateList);
+                        modAndDateResult = GetModAndDate(beginDate, endDate, referenceDate, durationResult.Timex, true);
 
                         // Change the duration value and the beginDate
                         var unit = durationResult.Timex.Substring(durationResult.Timex.Length - 1);
 
                         durationResult.Timex = "P1" + unit;
-                        beginDate = DurationParsingUtil.ShiftDateTime(durationResult.Timex, endDate, false);
+                        beginDate = DurationParsingUtil.ShiftDateTime(durationResult.Timex, modAndDateResult.EndDate, false);
+                        endDate = modAndDateResult.EndDate;
                     }
 
-                    if (!string.IsNullOrEmpty(mod))
+                    if (!string.IsNullOrEmpty(modAndDateResult.Mod))
                     {
-                        ((DateTimeResolutionResult)durationPr.Value).Mod = mod;
+                        ((DateTimeResolutionResult)durationPr.Value).Mod = modAndDateResult.Mod;
                     }
 
                     timex = durationResult.Timex;
                     ret.SubDateTimeEntities = new List<object> { durationPr };
-                    if (dateList != null)
+                    if (modAndDateResult.DateList != null)
                     {
-                        ret.List = dateList.Cast<object>().ToList();
+                        ret.List = modAndDateResult.DateList.Cast<object>().ToList();
                     }
                 }
             }
