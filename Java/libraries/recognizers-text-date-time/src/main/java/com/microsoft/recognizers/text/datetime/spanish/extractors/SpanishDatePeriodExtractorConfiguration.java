@@ -26,14 +26,8 @@ import java.util.regex.Pattern;
 
 public class SpanishDatePeriodExtractorConfiguration extends BaseOptionsConfiguration implements IDatePeriodExtractorConfiguration {
     public static final Pattern TillRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.TillRegex);
-    public static final Pattern AndRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.AndRegex);
-    public static final Pattern DayRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.DayRegex);
-    public static final Pattern MonthNumRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.MonthNumRegex);
     public static final Pattern IllegalYearRegex = RegExpUtility.getSafeRegExp(BaseDateTime.IllegalYearRegex);
     public static final Pattern YearRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.YearRegex);
-    public static final Pattern RelativeMonthRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.RelativeMonthRegex);
-    public static final Pattern MonthRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.MonthRegex);
-    public static final Pattern MonthSuffixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.MonthSuffixRegex);
     public static final Pattern DateUnitRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.DateUnitRegex);
     public static final Pattern TimeUnitRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.TimeUnitRegex);
     public static final Pattern PastRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PastRegex);

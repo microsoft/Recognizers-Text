@@ -14,36 +14,13 @@ import java.util.regex.Pattern;
 
 public class SpanishTimeExtractorConfiguration extends BaseOptionsConfiguration
     implements ITimeExtractorConfiguration {
-
-    // part 1: smallest component
-    // --------------------------------------
-    public static final Pattern DescRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.DescRegex);
-    public static final Pattern HourNumRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.HourNumRegex);
-    public static final Pattern MinuteNumRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.MinuteNumRegex);
-
-    // part 2: middle level component
-    // --------------------------------------
-    // handle "... en punto"
-    public static final Pattern OclockRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.OclockRegex);
-
-    // handle "... tarde"
-    public static final Pattern PmRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PmRegex);
-
-    // handle "... de la mañana"
-    public static final Pattern AmRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.AmRegex);
-
     // handle "y media ..." "menos cuarto ..."
     public static final Pattern LessThanOneHour = RegExpUtility.getSafeRegExp(SpanishDateTime.LessThanOneHour);
-    public static final Pattern TensTimeRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.TensTimeRegex);
 
     // handle "seis treinta", "seis veintiuno", "seis menos diez"
-    public static final Pattern WrittenTimeRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.WrittenTimeRegex);
-    public static final Pattern TimePrefix = RegExpUtility.getSafeRegExp(SpanishDateTime.TimePrefix);
     public static final Pattern TimeSuffix = RegExpUtility.getSafeRegExp(SpanishDateTime.TimeSuffix);
     public static final Pattern BasicTime = RegExpUtility.getSafeRegExp(SpanishDateTime.BasicTime);
 
-    // part 3: regex for time
-    // --------------------------------------
     // handle "a las cuatro" "a las 3"
     //TODO: add some new regex which have used in AtRegex
     //TODO: modify according to corresponding English regex

@@ -29,14 +29,12 @@ public class SpanishTimePeriodExtractorConfiguration extends BaseOptionsConfigur
         return tokenBeforeDate;
     }
 
-    public static final Pattern HourNumRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.HourNumRegex);
     public static final Pattern PureNumFromTo = RegExpUtility.getSafeRegExp(SpanishDateTime.PureNumFromTo);
     public static final Pattern PureNumBetweenAnd = RegExpUtility.getSafeRegExp(SpanishDateTime.PureNumBetweenAnd);
     public static final Pattern SpecificTimeFromTo = RegExpUtility.getSafeRegExp(SpanishDateTime.SpecificTimeFromTo);
     public static final Pattern SpecificTimeBetweenAnd = RegExpUtility.getSafeRegExp(SpanishDateTime.SpecificTimeBetweenAnd);
     public static final Pattern UnitRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.UnitRegex);
     public static final Pattern FollowedUnit = RegExpUtility.getSafeRegExp(SpanishDateTime.FollowedUnit);
-    public static final Pattern NumberCombinedWithUnit = RegExpUtility.getSafeRegExp(SpanishDateTime.TimeNumberCombinedWithUnit);
 
     private static final Pattern FromRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.FromRegex);
     private static final Pattern ConnectorAndRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.ConnectorAndRegex);
@@ -56,15 +54,8 @@ public class SpanishTimePeriodExtractorConfiguration extends BaseOptionsConfigur
 
         tokenBeforeDate = SpanishDateTime.TokenBeforeDate;
         singleTimeExtractor = new BaseTimeExtractor(new SpanishTimeExtractorConfiguration(options));
-        utilityConfiguration = new SpanishDatetimeUtilityConfiguration();
         integerExtractor = IntegerExtractor.getInstance();
         timeZoneExtractor = new BaseTimeZoneExtractor(new SpanishTimeZoneExtractorConfiguration(options));
-    }
-
-    private IDateTimeUtilityConfiguration utilityConfiguration;
-
-    public final IDateTimeUtilityConfiguration getUtilityConfiguration() {
-        return utilityConfiguration;
     }
 
     private IDateTimeExtractor singleTimeExtractor;
@@ -96,10 +87,6 @@ public class SpanishTimePeriodExtractorConfiguration extends BaseOptionsConfigur
             add(PureNumBetweenAnd);
         }
     };
-
-    public Iterable<Pattern> getPureNumberRegex() {
-        return getPureNumberRegex;
-    }
 
     public final Iterable<Pattern> getPureNumberRegex = new ArrayList<Pattern>() {
         {

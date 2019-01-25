@@ -43,9 +43,7 @@ public class SpanishDateTimePeriodExtractorConfiguration extends BaseOptionsConf
     public static final Pattern FromRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.FromRegex);
     public static final Pattern ConnectorAndRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.ConnectorAndRegex);
     public static final Pattern BetweenRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.BetweenRegex);
-    public static final Pattern TimeOfDayRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.TimeOfDayRegex);
     public static final Pattern TimeUnitRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.TimeUnitRegex);
-    public static final Pattern TimeFollowedUnit = RegExpUtility.getSafeRegExp(SpanishDateTime.TimeFollowedUnit);
 
     private final String tokenBeforeDate;
 
@@ -138,7 +136,7 @@ public class SpanishDateTimePeriodExtractorConfiguration extends BaseOptionsConf
 
     @Override
     public Pattern getFollowedUnit() {
-        return TimeFollowedUnit;
+        return SpanishTimePeriodExtractorConfiguration.FollowedUnit;
     }
 
     @Override
