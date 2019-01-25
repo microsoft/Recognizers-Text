@@ -13,29 +13,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public static readonly Regex TillRegex =
             new Regex(DateTimeDefinitions.TillRegex, RegexOptions.Singleline);
 
-        public static readonly Regex AndRegex =
-            new Regex(DateTimeDefinitions.AndRegex, RegexOptions.Singleline);
-
-        public static readonly Regex DayRegex =
-            new Regex(DateTimeDefinitions.DayRegex, RegexOptions.Singleline);
-
-        public static readonly Regex MonthNumRegex =
-            new Regex(DateTimeDefinitions.MonthNumRegex, RegexOptions.Singleline);
-
         public static readonly Regex IllegalYearRegex =
             new Regex(BaseDateTime.IllegalYearRegex, RegexOptions.Singleline);
 
         public static readonly Regex YearRegex =
             new Regex(DateTimeDefinitions.YearRegex, RegexOptions.Singleline);
-
-        public static readonly Regex RelativeMonthRegex =
-            new Regex(DateTimeDefinitions.RelativeMonthRegex, RegexOptions.Singleline);
-
-        public static readonly Regex MonthRegex =
-            new Regex(DateTimeDefinitions.MonthRegex, RegexOptions.Singleline);
-
-        public static readonly Regex MonthSuffixRegex =
-            new Regex(DateTimeDefinitions.MonthSuffixRegex, RegexOptions.Singleline);
 
         public static readonly Regex DateUnitRegex =
             new Regex(DateTimeDefinitions.DateUnitRegex, RegexOptions.Singleline);

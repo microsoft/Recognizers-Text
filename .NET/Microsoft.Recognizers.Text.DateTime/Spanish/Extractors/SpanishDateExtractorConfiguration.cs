@@ -16,14 +16,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public static readonly Regex MonthRegex =
             new Regex(DateTimeDefinitions.MonthRegex, RegexOptions.Singleline);
 
+        // The functionality for this regex has not yet been implemented
         public static readonly Regex DayRegex =
             new Regex(DateTimeDefinitions.DayRegex, RegexOptions.Singleline);
-
-        public static readonly Regex MonthNumRegex =
-            new Regex(DateTimeDefinitions.MonthNumRegex, RegexOptions.Singleline);
-
-        public static readonly Regex YearRegex =
-            new Regex(DateTimeDefinitions.YearRegex, RegexOptions.Singleline);
 
         public static readonly Regex WeekDayRegex =
             new Regex(DateTimeDefinitions.WeekDayRegex, RegexOptions.Singleline);
