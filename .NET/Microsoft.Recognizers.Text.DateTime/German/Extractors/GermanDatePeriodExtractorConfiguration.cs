@@ -14,7 +14,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public static readonly Regex TillRegex =
             new Regex(DateTimeDefinitions.TillRegex, RegexOptions.Singleline);
 
-        public static readonly Regex AndRegex =
+        public static readonly Regex RangeConnectorRegex =
             new Regex(DateTimeDefinitions.RangeConnectorRegex, RegexOptions.Singleline);
 
         public static readonly Regex DayRegex =
@@ -285,7 +285,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public bool HasConnectorToken(string text)
         {
-            return AndRegex.IsExactMatch(text, trim: true);
+            return RangeConnectorRegex.IsExactMatch(text, trim: true);
         }
     }
 }
