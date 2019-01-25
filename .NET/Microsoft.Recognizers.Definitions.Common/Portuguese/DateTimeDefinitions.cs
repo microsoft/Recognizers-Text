@@ -72,6 +72,7 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
 		public const string SpecialDayWithNumRegex = @"^[.]";
 		public const string ForTheRegex = @".^";
 		public const string WeekDayAndDayOfMonthRegex = @".^";
+		public const string WeekDayAndDayRegex = @".^";
 		public static readonly string WeekDayOfMonthRegex = $@"(?<wom>(n?[ao]\s+)?(?<cardinal>primeir[ao]|1[ao]|segund[ao]|2[ao]|terceir[ao]|3[ao]|[qc]uart[ao]|4[ao]|quint[ao]|5[ao]|[uú]ltim[ao])\s+{WeekDayRegex}\s+{MonthSuffixRegex})";
 		public const string RelativeWeekDayRegex = @"^[.]";
 		public const string NumberEndingPattern = @"^[.]";

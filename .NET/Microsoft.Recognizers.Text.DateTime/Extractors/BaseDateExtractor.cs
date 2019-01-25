@@ -325,6 +325,23 @@ namespace Microsoft.Recognizers.Text.DateTime
                         continue;
                     }
 
+                    // Handling cases like 'Monday 21', which both 'Monday' and '21' refer to the same date
+                    // The year of expected date can be different to the year of referenceDate.
+                    matches = this.Config.WeekDayAndDayRegex.Matches(text);
+                    foreach (Match matchCase in matches)
+                    {
+                        if (matchCase.Success)
+                        {
+                            ret.Add(new Token(matchCase.Index, result.Start + result.Length ?? 0));
+                            isFound = true;
+                        }
+                    }
+
+                    if (isFound)
+                    {
+                        continue;
+                    }
+
                     // Handling cases like '20th of next month'
                     var suffixStr = text.Substring(result.Start + result.Length ?? 0);
                     var beginMatch = this.Config.RelativeMonthRegex.MatchBegin(suffixStr.Trim(), trim: true);

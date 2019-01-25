@@ -171,6 +171,8 @@ public class SpanishDateTime {
 
     public static final String WeekDayAndDayOfMonthRegex = "^[.]";
 
+    public static final String WeekDayAndDayRegex = "^[.]";
+
     public static final String WeekDayOfMonthRegex = "(?<wom>(el\\s+)?(?<cardinal>primer|1er|segundo|2do|tercer|3er|cuarto|4to|quinto|5to|[uú]ltimo)\\s+{WeekDayRegex}\\s+{MonthSuffixRegex})"
             .replace("{WeekDayRegex}", WeekDayRegex)
             .replace("{MonthSuffixRegex}", MonthSuffixRegex);
