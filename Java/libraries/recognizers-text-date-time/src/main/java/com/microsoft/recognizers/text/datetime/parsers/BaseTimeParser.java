@@ -9,9 +9,9 @@ import com.microsoft.recognizers.text.datetime.parsers.config.ITimeParserConfigu
 import com.microsoft.recognizers.text.datetime.parsers.config.PrefixAdjustResult;
 import com.microsoft.recognizers.text.datetime.parsers.config.SuffixAdjustResult;
 import com.microsoft.recognizers.text.datetime.utilities.ConditionalMatch;
+import com.microsoft.recognizers.text.datetime.utilities.DateTimeFormatUtil;
 import com.microsoft.recognizers.text.datetime.utilities.DateTimeResolutionResult;
 import com.microsoft.recognizers.text.datetime.utilities.DateUtil;
-import com.microsoft.recognizers.text.datetime.utilities.FormatUtil;
 import com.microsoft.recognizers.text.datetime.utilities.RegexExtension;
 import com.microsoft.recognizers.text.datetime.utilities.TimeZoneResolutionResult;
 import com.microsoft.recognizers.text.datetime.utilities.TimeZoneUtility;
@@ -79,12 +79,12 @@ public class BaseTimeParser implements IDateTimeParser {
 
             if (innerResult.getSuccess()) {
                 ImmutableMap.Builder<String, String> futureResolution = ImmutableMap.builder();
-                futureResolution.put(TimeTypeConstants.TIME, FormatUtil.formatTime((LocalDateTime)innerResult.getFutureValue()));
+                futureResolution.put(TimeTypeConstants.TIME, DateTimeFormatUtil.formatTime((LocalDateTime)innerResult.getFutureValue()));
 
                 innerResult.setFutureResolution(futureResolution.build());
 
                 ImmutableMap.Builder<String, String> pastResolution = ImmutableMap.builder();
-                pastResolution.put(TimeTypeConstants.TIME, FormatUtil.formatTime((LocalDateTime)innerResult.getPastValue()));
+                pastResolution.put(TimeTypeConstants.TIME, DateTimeFormatUtil.formatTime((LocalDateTime)innerResult.getPastValue()));
 
                 innerResult.setPastResolution(pastResolution.build());
 
