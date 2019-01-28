@@ -322,7 +322,7 @@ export class NumberWithUnitExtractor implements IExtractor {
         }
 
         // Sort SeparateWords using descending length.
-        regexTokens = regexTokens.sort(this.dinoComparer);
+        regexTokens = regexTokens.sort(this.stringComparer);
 
         let pattern = `${this.config.buildPrefix}(${regexTokens.join('|')})${this.config.buildSuffix}`;
         let options = "gs";
@@ -330,58 +330,25 @@ export class NumberWithUnitExtractor implements IExtractor {
         return RegExpUtility.getSafeRegExp(pattern, options);
     }
 
-    protected dinoComparer(x: string, y: string): number {
-        if (x === null) {
-            if (y === null) {
-                // If x is null and y is null, they're
-                // equal.
-                return 0;
-            }
-            else {
-                // If x is null and y is not null, y
-                // is greater.
+    protected stringComparer(stringA: string, stringB: string): number {
+        if (!stringA && !stringB)
+        {
+            return 0;
+        }
+        else
+        {
+            if (!stringA) 
+            {
                 return 1;
             }
-        }
-        else {
-            // If x is not null...
-            //
-            if (y === null)
-            // ...and y is null, x is greater.
+            if (!stringB)
             {
                 return -1;
-            }
-            else {
-                // ...and y is not null, compare the
-                // lengths of the two strings.
-                //
-                let retval = y.length - x.length;
-
-                if (retval !== 0) {
-                    // If the strings are not of equal length,
-                    // the longer string is greater.
-                    //
-                    return retval;
-                }
-                else {
-                    // If the strings are of equal length,
-                    // sort them with ordinary string comparison.
-                    //
-                    let xl = x.toLowerCase();
-                    let yl = y.toLowerCase();
-                    if (xl < yl) {
-                        return -1;
-                    }
-
-                    if (xl > yl) {
-                        return 1;
-                    }
-
-                    return 0;
-                }
-            }
+            } 
+            return stringB.localeCompare(stringA);
         }
     }
+    
 
     private DimensionInsideTime(dimension: Match, time: Match): boolean {
         let isSubMatch = false;
