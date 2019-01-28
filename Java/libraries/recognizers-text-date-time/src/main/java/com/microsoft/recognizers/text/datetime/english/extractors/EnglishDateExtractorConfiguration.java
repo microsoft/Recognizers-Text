@@ -6,7 +6,7 @@ import com.microsoft.recognizers.text.IParser;
 import com.microsoft.recognizers.text.datetime.DateTimeOptions;
 import com.microsoft.recognizers.text.datetime.config.BaseOptionsConfiguration;
 import com.microsoft.recognizers.text.datetime.config.IOptionsConfiguration;
-import com.microsoft.recognizers.text.datetime.english.parsers.EnglishDatetimeUtilityConfiguration;
+import com.microsoft.recognizers.text.datetime.english.utilities.EnglishDatetimeUtilityConfiguration;
 import com.microsoft.recognizers.text.datetime.extractors.BaseDurationExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.IDateTimeExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.config.IDateExtractorConfiguration;
