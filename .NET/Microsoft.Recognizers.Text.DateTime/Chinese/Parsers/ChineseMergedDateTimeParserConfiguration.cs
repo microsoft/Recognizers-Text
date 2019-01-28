@@ -5,7 +5,7 @@ using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
-    public class MergedDateTimeParserChs : BaseMergedDateTimeParser
+    public class ChineseMergedDateTimeParserConfiguration : BaseMergedDateTimeParser
     {
         private static readonly Regex BeforeRegex = new Regex(DateTimeDefinitions.MergedBeforeRegex, RegexOptions.Singleline);
 
@@ -14,7 +14,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         // TODO implement SinceRegex
         private static readonly Regex SinceRegex = new Regex(DateTimeDefinitions.MergedAfterRegex, RegexOptions.Singleline);
 
-        public MergedDateTimeParserChs(IMergedParserConfiguration configuration)
+        public ChineseMergedDateTimeParserConfiguration(IMergedParserConfiguration configuration)
             : base(configuration)
         {
         }

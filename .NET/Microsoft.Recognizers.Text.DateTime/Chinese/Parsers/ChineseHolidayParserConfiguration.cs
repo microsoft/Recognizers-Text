@@ -11,7 +11,7 @@ using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
-    public class HolidayParserChs : IDateTimeParser
+    public class ChineseHolidayParserConfiguration : IDateTimeParser
     {
         public static readonly string ParserName = Constants.SYS_DATETIME_DATE; // "Date";
 
@@ -64,7 +64,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         private readonly IFullDateTimeParserConfiguration config;
 
-        public HolidayParserChs(IFullDateTimeParserConfiguration configuration)
+        public ChineseHolidayParserConfiguration(IFullDateTimeParserConfiguration configuration)
         {
             config = configuration;
         }

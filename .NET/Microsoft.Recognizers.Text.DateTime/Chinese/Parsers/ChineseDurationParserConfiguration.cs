@@ -3,12 +3,12 @@ using System.Globalization;
 using Microsoft.Recognizers.Definitions.Chinese;
 using Microsoft.Recognizers.Text.NumberWithUnit;
 using Microsoft.Recognizers.Text.NumberWithUnit.Chinese;
-using static Microsoft.Recognizers.Text.DateTime.Chinese.DurationExtractorChs;
+using static Microsoft.Recognizers.Text.DateTime.Chinese.ChineseDurationExtractorConfiguration;
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
-    public class DurationParserChs : IDateTimeParser
+    public class ChineseDurationParserConfiguration : IDateTimeParser
     {
         public static readonly string ParserName = Constants.SYS_DATETIME_DURATION; // "Duration";
 
@@ -18,7 +18,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         private readonly IFullDateTimeParserConfiguration config;
 
-        public DurationParserChs(IFullDateTimeParserConfiguration configuration)
+        public ChineseDurationParserConfiguration(IFullDateTimeParserConfiguration configuration)
         {
             config = configuration;
         }

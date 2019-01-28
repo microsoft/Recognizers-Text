@@ -3,18 +3,18 @@ using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
-    public class SetParserChs : IDateTimeParser
+    public class ChineseSetParserConfiguration : IDateTimeParser
     {
         public static readonly string ParserName = Constants.SYS_DATETIME_SET;
 
-        private static readonly IDateTimeExtractor DurationExtractor = new DurationExtractorChs();
-        private static readonly IDateTimeExtractor TimeExtractor = new TimeExtractorChs();
-        private static readonly IDateTimeExtractor DateExtractor = new DateExtractorChs();
-        private static readonly IDateTimeExtractor DateTimeExtractor = new DateTimeExtractorChs();
+        private static readonly IDateTimeExtractor DurationExtractor = new ChineseDurationExtractorConfiguration();
+        private static readonly IDateTimeExtractor TimeExtractor = new ChineseTimeExtractorConfiguration();
+        private static readonly IDateTimeExtractor DateExtractor = new ChineseDateExtractorConfiguration();
+        private static readonly IDateTimeExtractor DateTimeExtractor = new ChineseDateTimeExtractorConfiguration();
 
         private readonly IFullDateTimeParserConfiguration config;
 
-        public SetParserChs(IFullDateTimeParserConfiguration configuration)
+        public ChineseSetParserConfiguration(IFullDateTimeParserConfiguration configuration)
         {
             config = configuration;
         }
@@ -103,7 +103,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             }
 
             var beforeStr = text.Substring(0, ers[0].Start ?? 0);
-            if (SetExtractorChs.EachPrefixRegex.IsMatch(beforeStr))
+            if (ChineseSetExtractorConfiguration.EachPrefixRegex.IsMatch(beforeStr))
             {
                 var pr = this.config.DurationParser.Parse(ers[0], DateObject.Now);
                 ret.Timex = pr.TimexStr;
@@ -120,7 +120,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             var ret = new DateTimeResolutionResult();
 
             // handle "each month"
-            var match = SetExtractorChs.EachUnitRegex.MatchExact(text, trim: true);
+            var match = ChineseSetExtractorConfiguration.EachUnitRegex.MatchExact(text, trim: true);
 
             if (match.Success)
             {
@@ -167,7 +167,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             }
 
             var beforeStr = text.Substring(0, ers[0].Start ?? 0);
-            var match = SetExtractorChs.EachDayRegex.Match(beforeStr);
+            var match = ChineseSetExtractorConfiguration.EachDayRegex.Match(beforeStr);
             if (match.Success)
             {
                 var pr = this.config.TimeParser.Parse(ers[0], DateObject.Now);
@@ -190,7 +190,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             }
 
             var beforeStr = text.Substring(0, ers[0].Start ?? 0);
-            var match = SetExtractorChs.EachPrefixRegex.Match(beforeStr);
+            var match = ChineseSetExtractorConfiguration.EachPrefixRegex.Match(beforeStr);
             if (match.Success)
             {
                 var pr = this.config.DateParser.Parse(ers[0], DateObject.Now);
@@ -213,7 +213,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             }
 
             var beforeStr = text.Substring(0, ers[0].Start ?? 0);
-            var match = SetExtractorChs.EachPrefixRegex.Match(beforeStr);
+            var match = ChineseSetExtractorConfiguration.EachPrefixRegex.Match(beforeStr);
             if (match.Success)
             {
                 var pr = this.config.DateTimeParser.Parse(ers[0], DateObject.Now);

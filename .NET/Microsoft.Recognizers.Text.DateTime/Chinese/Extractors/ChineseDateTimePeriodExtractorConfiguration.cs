@@ -8,7 +8,7 @@ using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
-    public class DateTimePeriodExtractorChs : IDateTimeExtractor
+    public class ChineseDateTimePeriodExtractorConfiguration : IDateTimeExtractor
     {
         public static readonly string ExtractorName = Constants.SYS_DATETIME_DATETIMEPERIOD;
 
@@ -42,11 +42,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         public static readonly Regex FutureRegex = new Regex(DateTimeDefinitions.FutureRegex, RegexOptions.Singleline);
 
-        private static readonly TimeExtractorChs SingleTimeExtractor = new TimeExtractorChs();
-        private static readonly DateTimeExtractorChs TimeWithDateExtractor = new DateTimeExtractorChs();
-        private static readonly DateExtractorChs SingleDateExtractor = new DateExtractorChs();
+        private static readonly ChineseTimeExtractorConfiguration SingleTimeExtractor = new ChineseTimeExtractorConfiguration();
+        private static readonly ChineseDateTimeExtractorConfiguration TimeWithDateExtractor = new ChineseDateTimeExtractorConfiguration();
+        private static readonly ChineseDateExtractorConfiguration SingleDateExtractor = new ChineseDateExtractorConfiguration();
         private static readonly CardinalExtractor CardinalExtractor = new CardinalExtractor();
-        private static readonly TimePeriodExtractorChs TimePeriodExtractor = new TimePeriodExtractorChs();
+        private static readonly ChineseTimePeriodExtractorChsConfiguration TimePeriodExtractor = new ChineseTimePeriodExtractorChsConfiguration();
 
         public List<ExtractResult> Extract(string text)
         {

@@ -357,27 +357,27 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             switch (extractorName)
             {
                 case DateTimeExtractors.Date:
-                    return new DateTime.Chinese.DateExtractorChs();
+                    return new DateTime.Chinese.ChineseDateExtractorConfiguration();
                 case DateTimeExtractors.Time:
-                    return new DateTime.Chinese.TimeExtractorChs();
+                    return new DateTime.Chinese.ChineseTimeExtractorConfiguration();
                 case DateTimeExtractors.DatePeriod:
-                    return new DateTime.Chinese.DatePeriodExtractorChs();
+                    return new DateTime.Chinese.ChineseDatePeriodExtractorConfiguration();
                 case DateTimeExtractors.TimePeriod:
-                    return new DateTime.Chinese.TimePeriodExtractorChs();
+                    return new DateTime.Chinese.ChineseTimePeriodExtractorChsConfiguration();
                 case DateTimeExtractors.DateTime:
-                    return new DateTime.Chinese.DateTimeExtractorChs();
+                    return new DateTime.Chinese.ChineseDateTimeExtractorConfiguration();
                 case DateTimeExtractors.DateTimePeriod:
-                    return new DateTime.Chinese.DateTimePeriodExtractorChs();
+                    return new DateTime.Chinese.ChineseDateTimePeriodExtractorConfiguration();
                 case DateTimeExtractors.Duration:
-                    return new DateTime.Chinese.DurationExtractorChs();
+                    return new DateTime.Chinese.ChineseDurationExtractorConfiguration();
                 case DateTimeExtractors.Holiday:
                     return new BaseHolidayExtractor(new DateTime.Chinese.ChineseHolidayExtractorConfiguration());
                 case DateTimeExtractors.Set:
-                    return new DateTime.Chinese.SetExtractorChs();
+                    return new DateTime.Chinese.ChineseSetExtractorConfiguration();
                 case DateTimeExtractors.Merged:
-                    return new DateTime.Chinese.MergedExtractorChs(DateTimeOptions.None);
+                    return new DateTime.Chinese.ChineseMergedExtractorConfiguration(DateTimeOptions.None);
                 case DateTimeExtractors.MergedSkipFromTo:
-                    return new DateTime.Chinese.MergedExtractorChs(DateTimeOptions.SkipFromToMerge);
+                    return new DateTime.Chinese.ChineseMergedExtractorConfiguration(DateTimeOptions.SkipFromToMerge);
             }
 
             throw new Exception($"Extractor '{extractorName}' for English not supported");
@@ -389,23 +389,23 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             switch (parserName)
             {
                 case DateTimeParsers.Date:
-                    return new DateTime.Chinese.DateParser(new DateTime.Chinese.ChineseDateTimeParserConfiguration());
+                    return new DateTime.Chinese.ChineseDateParserConfiguration(new DateTime.Chinese.ChineseDateTimeParserConfiguration());
                 case DateTimeParsers.Time:
-                    return new DateTime.Chinese.TimeParserChs(new DateTime.Chinese.ChineseDateTimeParserConfiguration());
+                    return new DateTime.Chinese.ChineseTimeParserConfiguration(new DateTime.Chinese.ChineseDateTimeParserConfiguration());
                 case DateTimeParsers.DatePeriod:
-                    return new DateTime.Chinese.DatePeriodParserChs(new DateTime.Chinese.ChineseDateTimeParserConfiguration());
+                    return new DateTime.Chinese.ChineseDatePeriodParserConfiguration(new DateTime.Chinese.ChineseDateTimeParserConfiguration());
                 case DateTimeParsers.TimePeriod:
-                    return new DateTime.Chinese.TimePeriodParserChs(new DateTime.Chinese.ChineseDateTimeParserConfiguration());
+                    return new DateTime.Chinese.ChineseTimePeriodParserConfiguration(new DateTime.Chinese.ChineseDateTimeParserConfiguration());
                 case DateTimeParsers.DateTime:
-                    return new DateTime.Chinese.DateTimeParserChs(new DateTime.Chinese.ChineseDateTimeParserConfiguration());
+                    return new DateTime.Chinese.ChineseDateTimeParser(new DateTime.Chinese.ChineseDateTimeParserConfiguration());
                 case DateTimeParsers.DateTimePeriod:
-                    return new DateTime.Chinese.DateTimePeriodParserChs(new DateTime.Chinese.ChineseDateTimeParserConfiguration());
+                    return new DateTime.Chinese.ChineseDateTimePeriodParserConfiguration(new DateTime.Chinese.ChineseDateTimeParserConfiguration());
                 case DateTimeParsers.Duration:
-                    return new DateTime.Chinese.DurationParserChs(new DateTime.Chinese.ChineseDateTimeParserConfiguration());
+                    return new DateTime.Chinese.ChineseDurationParserConfiguration(new DateTime.Chinese.ChineseDateTimeParserConfiguration());
                 case DateTimeParsers.Holiday:
-                    return new DateTime.Chinese.HolidayParserChs(new DateTime.Chinese.ChineseDateTimeParserConfiguration());
+                    return new DateTime.Chinese.ChineseHolidayParserConfiguration(new DateTime.Chinese.ChineseDateTimeParserConfiguration());
                 case DateTimeParsers.Set:
-                    return new DateTime.Chinese.SetParserChs(new DateTime.Chinese.ChineseDateTimeParserConfiguration());
+                    return new DateTime.Chinese.ChineseSetParserConfiguration(new DateTime.Chinese.ChineseDateTimeParserConfiguration());
                 case DateTimeParsers.Merged:
                     return new FullDateTimeParser(new DateTime.Chinese.ChineseDateTimeParserConfiguration());
             }

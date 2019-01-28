@@ -6,7 +6,7 @@ using Microsoft.Recognizers.Definitions.Chinese;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
-    public class TimeExtractorChs : BaseDateTimeExtractor<TimeType>
+    public class ChineseTimeExtractorConfiguration : ChineseBaseDateTimeExtractorConfiguration<TimeType>
     {
         public static readonly string HourNumRegex = DateTimeDefinitions.TimeHourNumRegex;
 
@@ -52,7 +52,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         public static readonly string ApproximateDescSuffixRegex = DateTimeDefinitions.TimeApproximateDescSuffixRegex;
 
-        public TimeExtractorChs()
+        public ChineseTimeExtractorConfiguration()
         {
             var regexes = new Dictionary<Regex, TimeType>
             {

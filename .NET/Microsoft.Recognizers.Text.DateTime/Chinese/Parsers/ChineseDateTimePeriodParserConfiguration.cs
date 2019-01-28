@@ -10,7 +10,7 @@ using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
-    public class DateTimePeriodParserChs : IDateTimeParser
+    public class ChineseDateTimePeriodParserConfiguration : IDateTimeParser
     {
         public static readonly string ParserName = Constants.SYS_DATETIME_DATETIMEPERIOD;
 
@@ -22,10 +22,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         public static readonly Regex NIRegex = new Regex(DateTimeDefinitions.DateTimePeriodNIRegex, RegexOptions.Singleline);
 
-        private static readonly IDateTimeExtractor SingleDateExtractor = new DateExtractorChs();
-        private static readonly IDateTimeExtractor SingleTimeExtractor = new TimeExtractorChs();
-        private static readonly IDateTimeExtractor TimeWithDateExtractor = new DateTimeExtractorChs();
-        private static readonly IDateTimeExtractor TimePeriodExtractor = new TimePeriodExtractorChs();
+        private static readonly IDateTimeExtractor SingleDateExtractor = new ChineseDateExtractorConfiguration();
+        private static readonly IDateTimeExtractor SingleTimeExtractor = new ChineseTimeExtractorConfiguration();
+        private static readonly IDateTimeExtractor TimeWithDateExtractor = new ChineseDateTimeExtractorConfiguration();
+        private static readonly IDateTimeExtractor TimePeriodExtractor = new ChineseTimePeriodExtractorChsConfiguration();
         private static readonly IExtractor CardinalExtractor = new CardinalExtractor();
 
         private static readonly IParser CardinalParser = AgnosticNumberParserFactory.GetParser(
@@ -33,7 +33,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         private readonly IFullDateTimeParserConfiguration config;
 
-        public DateTimePeriodParserChs(IFullDateTimeParserConfiguration configuration)
+        public ChineseDateTimePeriodParserConfiguration(IFullDateTimeParserConfiguration configuration)
         {
             config = configuration;
         }
@@ -368,7 +368,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             string timeStr;
 
             // handle 昨晚，今晨
-            if (DateTimePeriodExtractorChs.SpecificTimeOfDayRegex.IsExactMatch(trimmedText, trim: true))
+            if (ChineseDateTimePeriodExtractorConfiguration.SpecificTimeOfDayRegex.IsExactMatch(trimmedText, trim: true))
             {
                 var swift = 0;
                 switch (trimmedText)
@@ -453,14 +453,14 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 return ret;
             }
 
-            if (DateTimePeriodExtractorChs.SpecificTimeOfDayRegex.IsExactMatch(trimmedText, trim: true))
+            if (ChineseDateTimePeriodExtractorConfiguration.SpecificTimeOfDayRegex.IsExactMatch(trimmedText, trim: true))
             {
                 var swift = 0;
-                if (DateTimePeriodExtractorChs.NextRegex.IsMatch(trimmedText))
+                if (ChineseDateTimePeriodExtractorConfiguration.NextRegex.IsMatch(trimmedText))
                 {
                     swift = 1;
                 }
-                else if (DateTimePeriodExtractorChs.LastRegex.IsMatch(trimmedText))
+                else if (ChineseDateTimePeriodExtractorConfiguration.LastRegex.IsMatch(trimmedText))
                 {
                     swift = -1;
                 }
@@ -479,7 +479,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             }
 
             // handle Date followed by morning, afternoon
-            var match = DateTimePeriodExtractorChs.TimeOfDayRegex.Match(trimmedText);
+            var match = ChineseDateTimePeriodExtractorConfiguration.TimeOfDayRegex.Match(trimmedText);
 
             if (match.Success)
             {
@@ -537,7 +537,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 {
                     numStr = pr.ResolutionStr;
                     unitStr = this.config.UnitMap[srcUnit];
-                    var prefixMatch = DateTimePeriodExtractorChs.PastRegex.MatchExact(beforeStr, trim: true);
+                    var prefixMatch = ChineseDateTimePeriodExtractorConfiguration.PastRegex.MatchExact(beforeStr, trim: true);
 
                     if (prefixMatch.Success)
                     {
@@ -567,7 +567,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                         return ret;
                     }
 
-                    prefixMatch = DateTimePeriodExtractorChs.FutureRegex.MatchExact(beforeStr, trim: true);
+                    prefixMatch = ChineseDateTimePeriodExtractorConfiguration.FutureRegex.MatchExact(beforeStr, trim: true);
 
                     if (prefixMatch.Success)
                     {
@@ -600,7 +600,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             }
 
             // handle "last hour"
-            var match = DateTimePeriodExtractorChs.UnitRegex.Match(text);
+            var match = ChineseDateTimePeriodExtractorConfiguration.UnitRegex.Match(text);
             if (match.Success)
             {
                 var srcUnit = match.Groups["unit"].Value.ToLower();
@@ -609,7 +609,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 {
                     unitStr = this.config.UnitMap[srcUnit];
 
-                    if (DateTimePeriodExtractorChs.PastRegex.IsExactMatch(beforeStr, trim: true))
+                    if (ChineseDateTimePeriodExtractorConfiguration.PastRegex.IsExactMatch(beforeStr, trim: true))
                     {
                         DateObject beginDate, endDate;
                         switch (unitStr)
@@ -637,7 +637,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                         return ret;
                     }
 
-                    if (DateTimePeriodExtractorChs.FutureRegex.IsExactMatch(beforeStr, trim: true))
+                    if (ChineseDateTimePeriodExtractorConfiguration.FutureRegex.IsExactMatch(beforeStr, trim: true))
                     {
                         DateObject beginDate, endDate;
                         switch (unitStr)

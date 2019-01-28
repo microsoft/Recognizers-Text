@@ -19,7 +19,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         WithNumber,
     }
 
-    public class DurationExtractorChs : BaseDateTimeExtractor<DurationType>
+    public class ChineseDurationExtractorConfiguration : ChineseBaseDateTimeExtractorConfiguration<DurationType>
     {
         private static readonly IExtractor InternalExtractor = new NumberWithUnitExtractor(new DurationExtractorConfiguration());
 

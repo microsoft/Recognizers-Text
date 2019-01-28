@@ -8,7 +8,7 @@ using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
-    public abstract class BaseDateTimeExtractor<T> : IDateTimeExtractor
+    public abstract class ChineseBaseDateTimeExtractorConfiguration<T> : IDateTimeExtractor
     {
         internal abstract ImmutableDictionary<Regex, T> Regexes { get; }
 

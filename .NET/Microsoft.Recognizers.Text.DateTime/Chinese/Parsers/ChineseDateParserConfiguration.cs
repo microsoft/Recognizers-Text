@@ -8,7 +8,7 @@ using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
-    public class DateParser : IDateTimeParser
+    public class ChineseDateParserConfiguration : IDateTimeParser
     {
         public static readonly string ParserName = Constants.SYS_DATETIME_DATE; // "Date";
 
@@ -20,12 +20,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         private readonly IParser numberParser;
         private readonly IDateTimeExtractor durationExtractor;
 
-        public DateParser(ChineseDateTimeParserConfiguration configuration)
+        public ChineseDateParserConfiguration(ChineseDateTimeParserConfiguration configuration)
         {
             config = configuration;
             integerExtractor = new IntegerExtractor();
             ordinalExtractor = new OrdinalExtractor();
-            durationExtractor = new DurationExtractorChs();
+            durationExtractor = new ChineseDurationExtractorConfiguration();
             numberParser = new BaseCJKNumberParser(new ChineseNumberParserConfiguration());
         }
 
@@ -105,7 +105,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         // parse basic patterns in DateRegexList
         protected DateTimeResolutionResult ParseBasicRegexMatch(string text, DateObject referenceDate)
         {
-            foreach (var regex in DateExtractorChs.DateRegexList)
+            foreach (var regex in ChineseDateExtractorConfiguration.DateRegexList)
             {
                 var match = regex.MatchExact(text, trim: true);
 
@@ -127,7 +127,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             var ret = new DateTimeResolutionResult();
 
             // handle "十二日" "明年这个月三日" "本月十一日"
-            var match = DateExtractorChs.SpecialDate.MatchExact(text, trim: true);
+            var match = ChineseDateExtractorConfiguration.SpecialDate.MatchExact(text, trim: true);
             if (match.Success)
             {
                 var yearStr = match.Groups["thisyear"].Value.ToLower();
@@ -142,7 +142,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 if (!string.IsNullOrEmpty(monthStr))
                 {
                     hasMonth = true;
-                    if (DateExtractorChs.NextRe.Match(monthStr).Success)
+                    if (ChineseDateExtractorConfiguration.NextRe.Match(monthStr).Success)
                     {
                         month++;
                         if (month == Constants.MaxMonth + 1)
@@ -151,7 +151,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                             year++;
                         }
                     }
-                    else if (DateExtractorChs.LastRe.Match(monthStr).Success)
+                    else if (ChineseDateExtractorConfiguration.LastRe.Match(monthStr).Success)
                     {
                         month--;
                         if (month == Constants.MinMonth - 1)
@@ -164,11 +164,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     if (!string.IsNullOrEmpty(yearStr))
                     {
                         hasYear = true;
-                        if (DateExtractorChs.NextRe.Match(yearStr).Success)
+                        if (ChineseDateExtractorConfiguration.NextRe.Match(yearStr).Success)
                         {
                             ++year;
                         }
-                        else if (DateExtractorChs.LastRe.Match(yearStr).Success)
+                        else if (ChineseDateExtractorConfiguration.LastRe.Match(yearStr).Success)
                         {
                             --year;
                         }
@@ -276,7 +276,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             }
 
             // handle cases like "昨日", "明日", "大后天"
-            match = DateExtractorChs.SpecialDayRegex.MatchExact(text, trim: true);
+            match = ChineseDateExtractorConfiguration.SpecialDayRegex.MatchExact(text, trim: true);
 
             if (match.Success)
             {
@@ -561,7 +561,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         private static bool IsLunarCalendar(string text)
         {
             var trimmedText = text.Trim();
-            var match = DateExtractorChs.LunarRegex.Match(trimmedText);
+            var match = ChineseDateExtractorConfiguration.LunarRegex.Match(trimmedText);
 
             return match.Success;
         }
@@ -604,7 +604,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             var unitStr = string.Empty;
             if (durationRes.Count > 0)
             {
-                var match = DateExtractorChs.UnitRegex.Match(text);
+                var match = ChineseDateExtractorConfiguration.UnitRegex.Match(text);
                 if (match.Success)
                 {
                     var suffix =
@@ -622,7 +622,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                         unitStr = this.config.UnitMap[srcUnit];
                         numStr = number.ToString();
 
-                        var beforeMatch = DateExtractorChs.BeforeRegex.Match(suffix);
+                        var beforeMatch = ChineseDateExtractorConfiguration.BeforeRegex.Match(suffix);
                         if (beforeMatch.Success && suffix.StartsWith(beforeMatch.Value))
                         {
                             DateObject date;
@@ -650,7 +650,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                             return ret;
                         }
 
-                        var afterMatch = DateExtractorChs.AfterRegex.Match(suffix);
+                        var afterMatch = ChineseDateExtractorConfiguration.AfterRegex.Match(suffix);
                         if (afterMatch.Success && suffix.StartsWith(afterMatch.Value))
                         {
                             DateObject date;

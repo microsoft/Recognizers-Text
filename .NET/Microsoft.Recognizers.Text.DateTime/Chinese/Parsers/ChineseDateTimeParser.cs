@@ -8,7 +8,7 @@ using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
-    public class DateTimeParserChs : IDateTimeParser
+    public class ChineseDateTimeParser : IDateTimeParser
     {
         public static readonly string ParserName = Constants.SYS_DATETIME_DATETIME;
 
@@ -16,15 +16,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         public static readonly Regex SimplePmRegex = new Regex(DateTimeDefinitions.DateTimeSimplePmRegex, RegexOptions.Singleline);
 
-        private static readonly IDateTimeExtractor SingleDateExtractor = new DateExtractorChs();
-        private static readonly IDateTimeExtractor SingleTimeExtractor = new TimeExtractorChs();
-        private readonly IDateTimeExtractor durationExtractor = new DurationExtractorChs();
+        private static readonly IDateTimeExtractor SingleDateExtractor = new ChineseDateExtractorConfiguration();
+        private static readonly IDateTimeExtractor SingleTimeExtractor = new ChineseTimeExtractorConfiguration();
+        private readonly IDateTimeExtractor durationExtractor = new ChineseDurationExtractorConfiguration();
         private readonly IExtractor integerExtractor = new IntegerExtractor();
         private readonly IParser numberParser = new BaseCJKNumberParser(new ChineseNumberParserConfiguration());
 
         private readonly IFullDateTimeParserConfiguration config;
 
-        public DateTimeParserChs(IFullDateTimeParserConfiguration configuration)
+        public ChineseDateTimeParser(IFullDateTimeParserConfiguration configuration)
         {
             config = configuration;
         }
@@ -100,7 +100,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             var trimmedText = text.Trim().ToLower();
 
             // handle "现在"
-            var match = DateTimeExtractorChs.NowRegex.MatchExact(trimmedText, trim: true);
+            var match = ChineseDateTimeExtractorConfiguration.NowRegex.MatchExact(trimmedText, trim: true);
 
             if (match.Success)
             {
@@ -130,7 +130,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         private bool IsLunarCalendar(string text)
         {
             var trimmedText = text.Trim();
-            var match = DateExtractorChs.LunarRegex.Match(trimmedText);
+            var match = ChineseDateExtractorConfiguration.LunarRegex.Match(trimmedText);
             if (match.Success)
             {
                 return true;
@@ -230,7 +230,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             var min = time.Minute;
             var sec = time.Second;
 
-            var match = DateTimeExtractorChs.TimeOfTodayRegex.Match(text);
+            var match = ChineseDateTimeExtractorConfiguration.TimeOfTodayRegex.Match(text);
 
             if (match.Success)
             {
@@ -312,7 +312,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             var unitStr = string.Empty;
             if (durationRes.Count > 0)
             {
-                var match = DateTimeExtractorChs.DateTimePeriodUnitRegex.Match(text);
+                var match = ChineseDateTimeExtractorConfiguration.DateTimePeriodUnitRegex.Match(text);
                 if (match.Success)
                 {
                     var suffix =
@@ -330,7 +330,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                         unitStr = this.config.UnitMap[srcUnit];
                         numStr = number.ToString();
 
-                        var beforeMatch = DateTimeExtractorChs.BeforeRegex.Match(suffix);
+                        var beforeMatch = ChineseDateTimeExtractorConfiguration.BeforeRegex.Match(suffix);
                         if (beforeMatch.Success && suffix.StartsWith(beforeMatch.Value))
                         {
                             DateObject date;
@@ -355,7 +355,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                             return ret;
                         }
 
-                        var afterMatch = DateTimeExtractorChs.AfterRegex.Match(suffix);
+                        var afterMatch = ChineseDateTimeExtractorConfiguration.AfterRegex.Match(suffix);
                         if (afterMatch.Success && suffix.StartsWith(afterMatch.Value))
                         {
                             DateObject date;

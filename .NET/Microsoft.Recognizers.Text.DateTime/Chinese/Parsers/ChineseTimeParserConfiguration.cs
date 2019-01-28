@@ -6,15 +6,15 @@ using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
-    public class TimeParserChs : IDateTimeParser
+    public class ChineseTimeParserConfiguration : IDateTimeParser
     {
-        public static readonly IDateTimeExtractor TimeExtractor = new TimeExtractorChs();
+        public static readonly IDateTimeExtractor TimeExtractor = new ChineseTimeExtractorConfiguration();
 
         private static TimeFunctions timeFunc = new TimeFunctions
         {
             NumberDictionary = DateTimeDefinitions.TimeNumberDictionary,
             LowBoundDesc = DateTimeDefinitions.TimeLowBoundDesc,
-            DayDescRegex = TimeExtractorChs.DayDescRegex,
+            DayDescRegex = ChineseTimeExtractorConfiguration.DayDescRegex,
         };
 
         private static readonly Dictionary<TimeType, TimeFunction> FunctionMap =
@@ -27,7 +27,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         private readonly IFullDateTimeParserConfiguration config;
 
-        public TimeParserChs(IFullDateTimeParserConfiguration configuration)
+        public ChineseTimeParserConfiguration(IFullDateTimeParserConfiguration configuration)
         {
             config = configuration;
         }

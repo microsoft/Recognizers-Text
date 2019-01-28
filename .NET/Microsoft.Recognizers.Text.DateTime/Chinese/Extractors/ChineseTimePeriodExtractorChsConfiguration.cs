@@ -6,12 +6,12 @@ using Microsoft.Recognizers.Definitions.Chinese;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
-    public class TimePeriodExtractorChs : BaseDateTimeExtractor<PeriodType>
+    public class ChineseTimePeriodExtractorChsConfiguration : ChineseBaseDateTimeExtractorConfiguration<PeriodType>
     {
         public const string TimePeriodConnectWords = DateTimeDefinitions.TimePeriodTimePeriodConnectWords;
 
         // 五点十分四十八秒
-        public static readonly string ChineseTimeRegex = TimeExtractorChs.ChineseTimeRegex;
+        public static readonly string ChineseTimeRegex = ChineseTimeExtractorConfiguration.ChineseTimeRegex;
 
         // 六点 到 九点 | 六 到 九点
         public static readonly string LeftChsTimeRegex = DateTimeDefinitions.TimePeriodLeftChsTimeRegex;
@@ -19,7 +19,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         public static readonly string RightChsTimeRegex = DateTimeDefinitions.TimePeriodRightChsTimeRegex;
 
         // 2:45
-        public static readonly string DigitTimeRegex = TimeExtractorChs.DigitTimeRegex;
+        public static readonly string DigitTimeRegex = ChineseTimeExtractorConfiguration.DigitTimeRegex;
 
         public static readonly string LeftDigitTimeRegex = DateTimeDefinitions.TimePeriodLeftDigitTimeRegex;
 
@@ -29,7 +29,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         public static readonly string ShortLeftDigitTimeRegex = DateTimeDefinitions.TimePeriodShortLeftDigitTimeRegex;
 
-        public TimePeriodExtractorChs()
+        public ChineseTimePeriodExtractorChsConfiguration()
         {
             var regexes = new Dictionary<Regex, PeriodType>
             {

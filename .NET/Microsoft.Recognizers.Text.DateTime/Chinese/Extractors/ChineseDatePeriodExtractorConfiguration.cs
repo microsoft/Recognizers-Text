@@ -7,7 +7,7 @@ using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
-    public class DatePeriodExtractorChs : IDateTimeExtractor
+    public class ChineseDatePeriodExtractorConfiguration : IDateTimeExtractor
     {
         public static readonly string ExtractorName = Constants.SYS_DATETIME_DATEPERIOD; // "DatePeriod";
 
@@ -79,7 +79,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         public static readonly Regex DecadeRegex = new Regex(DateTimeDefinitions.DecadeRegex, RegexOptions.Singleline);
 
-        private static readonly DateExtractorChs DatePointExtractor = new DateExtractorChs();
+        private static readonly ChineseDateExtractorConfiguration DatePointExtractor = new ChineseDateExtractorConfiguration();
         private static readonly IntegerExtractor IntegerExtractor = new IntegerExtractor();
 
         private static readonly Regex[] SimpleCasesRegexes =

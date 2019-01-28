@@ -8,18 +8,18 @@ using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
-    public class TimePeriodParserChs : IDateTimeParser
+    public class ChineseTimePeriodParserConfiguration : IDateTimeParser
     {
         private static TimeFunctions timeFunc = new TimeFunctions
         {
             NumberDictionary = DateTimeDefinitions.TimeNumberDictionary,
             LowBoundDesc = DateTimeDefinitions.TimeLowBoundDesc,
-            DayDescRegex = TimeExtractorChs.DayDescRegex,
+            DayDescRegex = ChineseTimeExtractorConfiguration.DayDescRegex,
         };
 
         private readonly IFullDateTimeParserConfiguration config;
 
-        public TimePeriodParserChs(IFullDateTimeParserConfiguration configuration)
+        public ChineseTimePeriodParserConfiguration(IFullDateTimeParserConfiguration configuration)
         {
             config = configuration;
         }
@@ -35,7 +35,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             var extra = er.Data as DateTimeExtra<PeriodType>;
             if (extra == null)
             {
-                var result = new TimeExtractorChs().Extract(er.Text, refDate);
+                var result = new ChineseTimeExtractorConfiguration().Extract(er.Text, refDate);
                 extra = result[0]?.Data as DateTimeExtra<PeriodType>;
             }
 

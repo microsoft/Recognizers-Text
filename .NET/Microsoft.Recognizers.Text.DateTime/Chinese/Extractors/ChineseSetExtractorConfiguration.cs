@@ -6,7 +6,7 @@ using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
-    public class SetExtractorChs : IDateTimeExtractor
+    public class ChineseSetExtractorConfiguration : IDateTimeExtractor
     {
         public static readonly string ExtractorName = Constants.SYS_DATETIME_SET;
 
@@ -20,10 +20,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         public static readonly Regex EachDayRegex = new Regex(DateTimeDefinitions.SetEachDayRegex, RegexOptions.Singleline);
 
-        private static readonly DurationExtractorChs DurationExtractor = new DurationExtractorChs();
-        private static readonly TimeExtractorChs TimeExtractor = new TimeExtractorChs();
-        private static readonly DateExtractorChs DateExtractor = new DateExtractorChs();
-        private static readonly DateTimeExtractorChs DateTimeExtractor = new DateTimeExtractorChs();
+        private static readonly ChineseDurationExtractorConfiguration DurationExtractor = new ChineseDurationExtractorConfiguration();
+        private static readonly ChineseTimeExtractorConfiguration TimeExtractor = new ChineseTimeExtractorConfiguration();
+        private static readonly ChineseDateExtractorConfiguration DateExtractor = new ChineseDateExtractorConfiguration();
+        private static readonly ChineseDateTimeExtractorConfiguration DateTimeExtractor = new ChineseDateTimeExtractorConfiguration();
 
         public List<ExtractResult> Extract(string text)
         {

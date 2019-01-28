@@ -6,7 +6,7 @@ using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
-    public class MergedExtractorChs : IDateTimeExtractor
+    public class ChineseMergedExtractorConfiguration : IDateTimeExtractor
     {
         public static readonly Regex BeforeRegex = new Regex(DateTimeDefinitions.ParserConfigurationBefore, RegexOptions.Singleline);
         public static readonly Regex AfterRegex = new Regex(DateTimeDefinitions.ParserConfigurationAfter, RegexOptions.Singleline);
@@ -14,19 +14,19 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         public static readonly Regex SincePrefixRegex = new Regex(DateTimeDefinitions.ParserConfigurationSincePrefix, RegexOptions.Singleline);
         public static readonly Regex SinceSuffixRegex = new Regex(DateTimeDefinitions.ParserConfigurationSinceSuffix, RegexOptions.Singleline);
 
-        private static readonly DateExtractorChs DateExtractor = new DateExtractorChs();
-        private static readonly TimeExtractorChs TimeExtractor = new TimeExtractorChs();
-        private static readonly DateTimeExtractorChs DateTimeExtractor = new DateTimeExtractorChs();
-        private static readonly DatePeriodExtractorChs DatePeriodExtractor = new DatePeriodExtractorChs();
-        private static readonly TimePeriodExtractorChs TimePeriodExtractor = new TimePeriodExtractorChs();
-        private static readonly DateTimePeriodExtractorChs DateTimePeriodExtractor = new DateTimePeriodExtractorChs();
-        private static readonly DurationExtractorChs DurationExtractor = new DurationExtractorChs();
-        private static readonly SetExtractorChs SetExtractor = new SetExtractorChs();
+        private static readonly ChineseDateExtractorConfiguration DateExtractor = new ChineseDateExtractorConfiguration();
+        private static readonly ChineseTimeExtractorConfiguration TimeExtractor = new ChineseTimeExtractorConfiguration();
+        private static readonly ChineseDateTimeExtractorConfiguration DateTimeExtractor = new ChineseDateTimeExtractorConfiguration();
+        private static readonly ChineseDatePeriodExtractorConfiguration DatePeriodExtractor = new ChineseDatePeriodExtractorConfiguration();
+        private static readonly ChineseTimePeriodExtractorChsConfiguration TimePeriodExtractor = new ChineseTimePeriodExtractorChsConfiguration();
+        private static readonly ChineseDateTimePeriodExtractorConfiguration DateTimePeriodExtractor = new ChineseDateTimePeriodExtractorConfiguration();
+        private static readonly ChineseDurationExtractorConfiguration DurationExtractor = new ChineseDurationExtractorConfiguration();
+        private static readonly ChineseSetExtractorConfiguration SetExtractor = new ChineseSetExtractorConfiguration();
         private static readonly BaseHolidayExtractor HolidayExtractor = new BaseHolidayExtractor(new ChineseHolidayExtractorConfiguration());
 
         private readonly DateTimeOptions options;
 
-        public MergedExtractorChs(DateTimeOptions options)
+        public ChineseMergedExtractorConfiguration(DateTimeOptions options)
         {
             this.options = options;
         }
