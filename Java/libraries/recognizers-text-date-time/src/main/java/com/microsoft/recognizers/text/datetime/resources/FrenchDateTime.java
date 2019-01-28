@@ -674,7 +674,7 @@ public class FrenchDateTime {
             .replace("{DateYearRegex}", DateYearRegex)
             .replace("{FullTextYearRegex}", FullTextYearRegex);
 
-    public static final String YearAfterRegex = "^[.]";
+    public static final String DateAfterRegex = "^[.]";
 
     public static final String YearPeriodRegex = "^[.]";
 
