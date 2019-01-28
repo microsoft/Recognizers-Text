@@ -421,6 +421,12 @@ namespace Microsoft.Recognizers.Text.DateTime
                 // Parse the day in text into number
                 var day = Convert.ToInt32((double)(this.config.NumberParser.Parse(ertmp).Value ?? 0));
 
+                // Firstly, find a latest date with the "day" as pivotDate.
+                // Secondly, if the pivotDate equals the referenced date, in other word, the day of the referenced date is exactly the "day".
+                // In this way, check if the pivotDate is the weekday. If so, then the futureDate and the previousDate are the same date (referenced date).
+                // Otherwise, increase the pivotDate month by month to find the latest futureDate and decrease the pivotDate month
+                // by month to the latest previousDate.
+                // Notice: if the "day" is larger than 28, some months should be ignored in the increase or decrease procedure.
                 var pivotDate = new DateObject(year, month, 1);
                 var daysInMonth = DateObject.DaysInMonth(year, month);
                 if (daysInMonth >= day)
@@ -429,7 +435,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
                 else
                 {
-                    // Add 1 month is enough, since 1, 3, 5, 6, 8, 10, 12 months has 31 days
+                    // Add 1 month is enough, since 1, 3, 5, 7, 8, 10, 12 months has 31 days
                     pivotDate = pivotDate.AddMonths(1);
                     pivotDate = DateObject.MinValue.SafeCreateFromValue(pivotDate.Year, pivotDate.Month, day);
                 }
@@ -441,6 +447,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     if (day == referenceDate.Day && numWeekDayInt == weekDay)
                     {
+                        // The referenceDate is the weekday and with the "day".
                         ret.FutureValue = new DateObject(year, month, day);
                         ret.PastValue = new DateObject(year, month, day);
                         ret.Timex = DateTimeFormatUtil.LuisDate(year, month, day);
@@ -452,6 +459,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                         while ((int)futureDate.DayOfWeek != weekDay || futureDate.Day != day || futureDate < referenceDate)
                         {
+                            // Increase the futureDate month by month to find the expected date (the "day" is the weekday) and
+                            // make sure the futureDate not less than the referenceDate.
                             futureDate = futureDate.AddMonths(1);
                             var tmp = DateObject.DaysInMonth(futureDate.Year, futureDate.Month);
                             if (tmp >= day)
@@ -466,6 +475,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                         while ((int)pastDate.DayOfWeek != weekDay || pastDate.Day != day || pastDate > referenceDate)
                         {
+                            // Decrease the pastDate month by month to find the expected date (the "day" is the weekday) and
+                            // make sure the pastDate not larger than the referenceDate.
                             pastDate = pastDate.AddMonths(-1);
                             var tmp = DateObject.DaysInMonth(pastDate.Year, pastDate.Month);
                             if (tmp >= day)

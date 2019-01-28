@@ -110,7 +110,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
             WeekDayOfMonthRegex = DutchDateExtractorConfiguration.WeekDayOfMonthRegex;
             ForTheRegex = DutchDateExtractorConfiguration.ForTheRegex;
             WeekDayAndDayOfMothRegex = DutchDateExtractorConfiguration.WeekDayAndDayOfMothRegex;
-           WeekDayAndDayRegex = DutchDateExtractorConfiguration.WeekDayAndDayRegex; 
+            WeekDayAndDayRegex = DutchDateExtractorConfiguration.WeekDayAndDayRegex;
             RelativeMonthRegex = DutchDateExtractorConfiguration.RelativeMonthRegex;
             YearSuffix = DutchDateExtractorConfiguration.YearSuffix;
             RelativeWeekDayRegex = DutchDateExtractorConfiguration.RelativeWeekDayRegex;
