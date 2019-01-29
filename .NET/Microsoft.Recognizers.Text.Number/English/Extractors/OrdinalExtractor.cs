@@ -50,15 +50,16 @@ namespace Microsoft.Recognizers.Text.Number.English
 
         protected sealed override Regex RelativeReferenceRegex { get; }
 
-        public static OrdinalExtractor GetInstance(NumberOptions options = NumberOptions.None, string placeholder = "")
+        public static OrdinalExtractor GetInstance(NumberOptions options = NumberOptions.None)
         {
-            if (!Instances.ContainsKey(placeholder))
+            var cacheKey = options.ToString();
+            if (!Instances.ContainsKey(cacheKey))
             {
                 var instance = new OrdinalExtractor(options);
-                Instances.TryAdd(placeholder, instance);
+                Instances.TryAdd(cacheKey, instance);
             }
 
-            return Instances[placeholder];
+            return Instances[cacheKey];
         }
     }
 }
