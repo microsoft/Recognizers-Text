@@ -9,6 +9,7 @@ import com.microsoft.recognizers.text.datetime.extractors.BaseDateTimePeriodExtr
 import com.microsoft.recognizers.text.datetime.extractors.BaseDurationExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.BaseTimeExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.BaseTimePeriodExtractor;
+import com.microsoft.recognizers.text.datetime.extractors.IDateExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.IDateTimeExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.config.ISetExtractorConfiguration;
 import com.microsoft.recognizers.text.datetime.resources.EnglishDateTime;
@@ -49,9 +50,9 @@ public class EnglishSetExtractorConfiguration extends BaseOptionsConfiguration i
         return timeExtractor;
     }
 
-    private IDateTimeExtractor dateExtractor;
+    private IDateExtractor dateExtractor;
 
-    public final IDateTimeExtractor getDateExtractor() {
+    public final IDateExtractor getDateExtractor() {
         return dateExtractor;
     }
 
