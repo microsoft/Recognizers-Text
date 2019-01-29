@@ -7,7 +7,7 @@ using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Japanese
 {
-    public class DatePeriodExtractor : IDateTimeExtractor
+    public class JapaneseDatePeriodExtractorConfiguration : IDateTimeExtractor
     {
         public static readonly string ExtractorName = Constants.SYS_DATETIME_DATEPERIOD; // "DatePeriod";
 
@@ -87,7 +87,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
         public static readonly Regex DecadeRegex = new Regex(DateTimeDefinitions.DecadeRegex, RegexOptions.Singleline);
 
-        private static readonly DateExtractor DatePointExtractor = new DateExtractor();
+        private static readonly JapaneseDateExtractorConfiguration DatePointExtractor = new JapaneseDateExtractorConfiguration();
         private static readonly IntegerExtractor IntegerExtractor = new IntegerExtractor();
 
         private static readonly Regex[] SimpleCasesRegexes =

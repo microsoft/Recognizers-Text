@@ -3,18 +3,18 @@ using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Japanese
 {
-    public class SetParser : IDateTimeParser
+    public class JapaneseSetParserConfiguration : IDateTimeParser
     {
         public static readonly string ParserName = Constants.SYS_DATETIME_SET;
 
-        private static readonly IDateTimeExtractor DurationExtractor = new DurationExtractor();
-        private static readonly IDateTimeExtractor TimeExtractor = new TimeExtractor();
-        private static readonly IDateTimeExtractor DateExtractor = new DateExtractor();
-        private static readonly IDateTimeExtractor DateTimeExtractor = new DateTimeExtractor();
+        private static readonly IDateTimeExtractor DurationExtractor = new JapaneseDurationExtractorConfiguration();
+        private static readonly IDateTimeExtractor TimeExtractor = new JapaneseTimeExtractorConfiguration();
+        private static readonly IDateTimeExtractor DateExtractor = new JapaneseDateExtractorConfiguration();
+        private static readonly IDateTimeExtractor DateTimeExtractor = new JapaneseDateTimeExtractorConfiguration();
 
         private readonly IFullDateTimeParserConfiguration config;
 
-        public SetParser(IFullDateTimeParserConfiguration configuration)
+        public JapaneseSetParserConfiguration(IFullDateTimeParserConfiguration configuration)
         {
             config = configuration;
         }
@@ -103,7 +103,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             }
 
             var beforeStr = text.Substring(0, ers[0].Start ?? 0);
-            if (SetExtractor.EachPrefixRegex.IsMatch(beforeStr))
+            if (JapaneseSetExtractorConfiguration.EachPrefixRegex.IsMatch(beforeStr))
             {
                 var pr = this.config.DurationParser.Parse(ers[0], DateObject.Now);
                 ret.Timex = pr.TimexStr;
@@ -120,7 +120,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             var ret = new DateTimeResolutionResult();
 
             // handle "each month"
-            var match = SetExtractor.EachUnitRegex.MatchExact(text, trim: true);
+            var match = JapaneseSetExtractorConfiguration.EachUnitRegex.MatchExact(text, trim: true);
 
             if (match.Success)
             {
@@ -167,7 +167,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             }
 
             var beforeStr = text.Substring(0, ers[0].Start ?? 0);
-            var match = SetExtractor.EachDayRegex.Match(beforeStr);
+            var match = JapaneseSetExtractorConfiguration.EachDayRegex.Match(beforeStr);
             if (match.Success)
             {
                 var pr = this.config.TimeParser.Parse(ers[0], DateObject.Now);
@@ -190,7 +190,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             }
 
             var beforeStr = text.Substring(0, ers[0].Start ?? 0);
-            var match = SetExtractor.EachPrefixRegex.Match(beforeStr);
+            var match = JapaneseSetExtractorConfiguration.EachPrefixRegex.Match(beforeStr);
             if (match.Success)
             {
                 var pr = this.config.DateParser.Parse(ers[0], DateObject.Now);
@@ -213,7 +213,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             }
 
             var beforeStr = text.Substring(0, ers[0].Start ?? 0);
-            var match = SetExtractor.EachPrefixRegex.Match(beforeStr);
+            var match = JapaneseSetExtractorConfiguration.EachPrefixRegex.Match(beforeStr);
             if (match.Success)
             {
                 var pr = this.config.DateTimeParser.Parse(ers[0], DateObject.Now);

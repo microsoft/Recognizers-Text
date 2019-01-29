@@ -17,7 +17,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         WithNumber,
     }
 
-    public class DurationExtractor : BaseDateTimeExtractor<DurationType>
+    public class JapaneseDurationExtractorConfiguration : JapaneseBaseDateTimeExtractorConfiguration<DurationType>
     {
         private static readonly IExtractor InternalExtractor = new NumberWithUnitExtractor(new DurationExtractorConfiguration());
 

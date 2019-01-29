@@ -3,12 +3,12 @@ using System.Globalization;
 using Microsoft.Recognizers.Definitions.Japanese;
 using Microsoft.Recognizers.Text.NumberWithUnit;
 using Microsoft.Recognizers.Text.NumberWithUnit.Japanese;
-using static Microsoft.Recognizers.Text.DateTime.Japanese.DurationExtractor;
+using static Microsoft.Recognizers.Text.DateTime.Japanese.JapaneseDurationExtractorConfiguration;
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Japanese
 {
-    public class DurationParser : IDateTimeParser
+    public class JapaneseDurationParserConfiguration : IDateTimeParser
     {
         public static readonly Dictionary<string, int> UnitValueMap = DateTimeDefinitions.DurationUnitValueMap;
 
@@ -18,7 +18,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
         private readonly IFullDateTimeParserConfiguration config;
 
-        public DurationParser(IFullDateTimeParserConfiguration configuration)
+        public JapaneseDurationParserConfiguration(IFullDateTimeParserConfiguration configuration)
         {
             config = configuration;
         }

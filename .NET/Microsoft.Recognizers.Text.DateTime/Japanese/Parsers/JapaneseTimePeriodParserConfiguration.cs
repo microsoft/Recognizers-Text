@@ -7,18 +7,18 @@ using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Japanese
 {
-    public class TimePeriodParser : IDateTimeParser
+    public class JapaneseTimePeriodParserConfiguration : IDateTimeParser
     {
         private static TimeFunctions timeFunc = new TimeFunctions
         {
             NumberDictionary = DateTimeDefinitions.TimeNumberDictionary,
             LowBoundDesc = DateTimeDefinitions.TimeLowBoundDesc,
-            DayDescRegex = TimeExtractor.DayDescRegex,
+            DayDescRegex = JapaneseTimeExtractorConfiguration.DayDescRegex,
         };
 
         private readonly IFullDateTimeParserConfiguration config;
 
-        public TimePeriodParser(IFullDateTimeParserConfiguration configuration)
+        public JapaneseTimePeriodParserConfiguration(IFullDateTimeParserConfiguration configuration)
         {
             config = configuration;
         }
@@ -34,7 +34,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             var extra = er.Data as DateTimeExtra<PeriodType>;
             if (extra == null)
             {
-                var result = new TimeExtractor().Extract(er.Text, refDate);
+                var result = new JapaneseTimeExtractorConfiguration().Extract(er.Text, refDate);
                 extra = result[0]?.Data as DateTimeExtra<PeriodType>;
             }
 

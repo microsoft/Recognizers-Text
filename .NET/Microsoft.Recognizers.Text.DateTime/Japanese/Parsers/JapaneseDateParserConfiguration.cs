@@ -8,7 +8,7 @@ using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Japanese
 {
-    public class DateParser : IDateTimeParser
+    public class JapaneseDateParserConfiguration : IDateTimeParser
     {
         public static readonly string ParserName = Constants.SYS_DATETIME_DATE; // "Date";
 
@@ -20,11 +20,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         private readonly IParser numberParser;
         private readonly IDateTimeExtractor durationExtractor;
 
-        public DateParser(JapaneseDateTimeParserConfiguration configuration)
+        public JapaneseDateParserConfiguration(JapaneseDateTimeParserConfiguration configuration)
         {
             config = configuration;
             integerExtractor = new IntegerExtractor();
-            durationExtractor = new DurationExtractor();
+            durationExtractor = new JapaneseDurationExtractorConfiguration();
             numberParser = new BaseCJKNumberParser(new JapaneseNumberParserConfiguration());
         }
 
@@ -104,7 +104,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         // parse basic patterns in DateRegexList
         protected DateTimeResolutionResult ParseBasicRegexMatch(string text, DateObject referenceDate)
         {
-            foreach (var regex in DateExtractor.DateRegexList)
+            foreach (var regex in JapaneseDateExtractorConfiguration.DateRegexList)
             {
                 var match = regex.MatchExact(text, trim: true);
 
@@ -126,7 +126,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             var ret = new DateTimeResolutionResult();
 
             // handle "十二日" "明年这个月三日" "本月十一日"
-            var match = DateExtractor.SpecialDate.MatchExact(text, trim: true);
+            var match = JapaneseDateExtractorConfiguration.SpecialDate.MatchExact(text, trim: true);
 
             if (match.Success)
             {
@@ -142,7 +142,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 if (!string.IsNullOrEmpty(monthStr))
                 {
                     hasMonth = true;
-                    if (DateExtractor.NextRe.Match(monthStr).Success)
+                    if (JapaneseDateExtractorConfiguration.NextRe.Match(monthStr).Success)
                     {
                         month++;
                         if (month == 13)
@@ -151,7 +151,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                             year++;
                         }
                     }
-                    else if (DateExtractor.LastRe.Match(monthStr).Success)
+                    else if (JapaneseDateExtractorConfiguration.LastRe.Match(monthStr).Success)
                     {
                         month--;
                         if (month == 0)
@@ -164,11 +164,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                     if (!string.IsNullOrEmpty(yearStr))
                     {
                         hasYear = true;
-                        if (DateExtractor.NextRe.Match(yearStr).Success)
+                        if (JapaneseDateExtractorConfiguration.NextRe.Match(yearStr).Success)
                         {
                             ++year;
                         }
-                        else if (DateExtractor.LastRe.Match(yearStr).Success)
+                        else if (JapaneseDateExtractorConfiguration.LastRe.Match(yearStr).Success)
                         {
                             --year;
                         }
@@ -222,7 +222,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             }
 
             // handle cases like "昨日", "明日", "大后天"
-            match = DateExtractor.SpecialDayRegex.MatchExact(text, trim: true);
+            match = JapaneseDateExtractorConfiguration.SpecialDayRegex.MatchExact(text, trim: true);
 
             if (match.Success)
             {
@@ -234,7 +234,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 return ret;
             }
 
-            match = DateExtractor.SpecialMonthRegex.MatchExact(text, trim: true);
+            match = JapaneseDateExtractorConfiguration.SpecialMonthRegex.MatchExact(text, trim: true);
 
             if (match.Success)
             {
@@ -246,7 +246,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
               return ret;
             }
 
-            match = DateExtractor.SpecialYearRegex.MatchExact(text, trim: true);
+            match = JapaneseDateExtractorConfiguration.SpecialYearRegex.MatchExact(text, trim: true);
 
             if (match.Success)
             {
@@ -535,7 +535,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         private static bool IsLunarCalendar(string text)
         {
             var trimmedText = text.Trim();
-            var match = DateExtractor.LunarRegex.Match(trimmedText);
+            var match = JapaneseDateExtractorConfiguration.LunarRegex.Match(trimmedText);
 
             return match.Success;
         }
@@ -566,7 +566,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             var unitStr = string.Empty;
             if (durationRes.Count > 0)
             {
-                var match = DateExtractor.UnitRegex.Match(text);
+                var match = JapaneseDateExtractorConfiguration.UnitRegex.Match(text);
                 if (match.Success)
                 {
                     var suffix =
@@ -584,7 +584,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                         unitStr = this.config.UnitMap[srcUnit];
                         numStr = number.ToString();
 
-                        var beforeMatch = DateExtractor.BeforeRegex.Match(suffix);
+                        var beforeMatch = JapaneseDateExtractorConfiguration.BeforeRegex.Match(suffix);
                         if (beforeMatch.Success && suffix.StartsWith(beforeMatch.Value))
                         {
                             DateObject date;
@@ -612,7 +612,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                             return ret;
                         }
 
-                        var afterMatch = DateExtractor.AfterRegex.Match(suffix);
+                        var afterMatch = JapaneseDateExtractorConfiguration.AfterRegex.Match(suffix);
                         if (afterMatch.Success && suffix.StartsWith(afterMatch.Value))
                         {
                             DateObject date;

@@ -4,7 +4,7 @@ using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Japanese
 {
-    public class MergedDateTimeParser : BaseMergedDateTimeParser
+    public class JapaneseMergedDateTimeParserConfiguration : BaseMergedDateTimeParser
     {
         private static readonly Regex BeforeRegex = new Regex(DateTimeDefinitions.MergedBeforeRegex,  RegexOptions.Singleline);
 
@@ -13,7 +13,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         // TODO implement SinceRegex
         private static readonly Regex SinceRegex = new Regex(DateTimeDefinitions.MergedAfterRegex, RegexOptions.Singleline);
 
-        public MergedDateTimeParser(IMergedParserConfiguration configuration)
+        public JapaneseMergedDateTimeParserConfiguration(IMergedParserConfiguration configuration)
             : base(configuration)
         {
         }

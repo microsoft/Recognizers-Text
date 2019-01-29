@@ -6,7 +6,7 @@ using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Japanese
 {
-    public class DateTimeExtractor : IDateTimeExtractor
+    public class JapaneseDateTimeExtractorConfiguration : IDateTimeExtractor
     {
         public static readonly string ExtractorName = Constants.SYS_DATETIME_DATETIME; // "DateTime";
 
@@ -24,9 +24,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
         public static readonly Regex DateTimePeriodUnitRegex = new Regex(DateTimeDefinitions.DateTimePeriodUnitRegex, RegexOptions.Singleline);
 
-        private static readonly DateExtractor DatePointExtractor = new DateExtractor();
-        private static readonly TimeExtractor TimePointExtractor = new TimeExtractor();
-        private static readonly DurationExtractor DurationExtractor = new DurationExtractor();
+        private static readonly JapaneseDateExtractorConfiguration DatePointExtractor = new JapaneseDateExtractorConfiguration();
+        private static readonly JapaneseTimeExtractorConfiguration TimePointExtractor = new JapaneseTimeExtractorConfiguration();
+        private static readonly JapaneseDurationExtractorConfiguration DurationExtractor = new JapaneseDurationExtractorConfiguration();
 
         public List<ExtractResult> Extract(string text)
         {

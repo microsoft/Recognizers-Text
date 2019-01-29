@@ -3,13 +3,13 @@
 using Microsoft.Recognizers.Definitions.Japanese;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
 using DateObject = System.DateTime;
-using TimeExtractorJpn = Microsoft.Recognizers.Text.DateTime.Japanese.TimeExtractor;
+using TimeExtractorJpn = Microsoft.Recognizers.Text.DateTime.Japanese.JapaneseTimeExtractorConfiguration;
 
 namespace Microsoft.Recognizers.Text.DateTime.Japanese
 {
-    public class TimeParser : IDateTimeParser
+    public class JapaneseTimeParserConfiguration : IDateTimeParser
     {
-        public static readonly IDateTimeExtractor TimeExtractor = new TimeExtractor();
+        public static readonly IDateTimeExtractor TimeExtractor = new JapaneseTimeExtractorConfiguration();
 
         private static TimeFunctions timeFunctions = new TimeFunctions
         {
@@ -28,7 +28,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
         private readonly IFullDateTimeParserConfiguration config;
 
-        public TimeParser(IFullDateTimeParserConfiguration configuration)
+        public JapaneseTimeParserConfiguration(IFullDateTimeParserConfiguration configuration)
         {
             config = configuration;
         }

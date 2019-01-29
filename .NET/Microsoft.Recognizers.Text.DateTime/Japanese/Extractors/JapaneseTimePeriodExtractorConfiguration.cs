@@ -6,9 +6,9 @@ using Microsoft.Recognizers.Definitions.Japanese;
 
 namespace Microsoft.Recognizers.Text.DateTime.Japanese
 {
-    public class TimePeriodExtractor : BaseDateTimeExtractor<PeriodType>
+    public class JapaneseTimePeriodExtractorConfiguration : JapaneseBaseDateTimeExtractorConfiguration<PeriodType>
     {
-        public TimePeriodExtractor()
+        public JapaneseTimePeriodExtractorConfiguration()
         {
             var regexes = new Dictionary<Regex, PeriodType>
             {

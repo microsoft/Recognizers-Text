@@ -10,7 +10,7 @@ using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Japanese
 {
-    public class DateTimePeriodParser : IDateTimeParser
+    public class JapaneseDateTimePeriodParserConfiguration : IDateTimeParser
     {
         public static readonly string ParserName = Constants.SYS_DATETIME_DATETIMEPERIOD;
 
@@ -22,10 +22,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
         public static readonly Regex NIRegex = new Regex(DateTimeDefinitions.DateTimePeriodNIRegex, RegexOptions.Singleline);
 
-        private static readonly IDateTimeExtractor SingleDateExtractor = new DateExtractor();
-        private static readonly IDateTimeExtractor SingleTimeExtractor = new TimeExtractor();
-        private static readonly IDateTimeExtractor TimeWithDateExtractor = new DateTimeExtractor();
-        private static readonly IDateTimeExtractor TimePeriodExtractor = new TimePeriodExtractor();
+        private static readonly IDateTimeExtractor SingleDateExtractor = new JapaneseDateExtractorConfiguration();
+        private static readonly IDateTimeExtractor SingleTimeExtractor = new JapaneseTimeExtractorConfiguration();
+        private static readonly IDateTimeExtractor TimeWithDateExtractor = new JapaneseDateTimeExtractorConfiguration();
+        private static readonly IDateTimeExtractor TimePeriodExtractor = new JapaneseTimePeriodExtractorConfiguration();
         private static readonly IExtractor CardinalExtractor = new CardinalExtractor();
 
         private static readonly IParser CardinalParser = AgnosticNumberParserFactory.GetParser(
@@ -33,7 +33,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
         private readonly IFullDateTimeParserConfiguration config;
 
-        public DateTimePeriodParser(IFullDateTimeParserConfiguration configuration)
+        public JapaneseDateTimePeriodParserConfiguration(IFullDateTimeParserConfiguration configuration)
         {
             config = configuration;
         }
@@ -372,7 +372,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             string timeStr;
 
             // handle 昨晚，今晨
-            var exactMatch = DateTimePeriodExtractor.SpecificTimeOfDayRegex.MatchExact(trimmedText, trim: true);
+            var exactMatch = JapaneseDateTimePeriodExtractorConfiguration.SpecificTimeOfDayRegex.MatchExact(trimmedText, trim: true);
 
             if (exactMatch.Success)
             {
@@ -459,16 +459,16 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 return ret;
             }
 
-            exactMatch = DateTimePeriodExtractor.SpecificTimeOfDayRegex.MatchExact(trimmedText, trim: true);
+            exactMatch = JapaneseDateTimePeriodExtractorConfiguration.SpecificTimeOfDayRegex.MatchExact(trimmedText, trim: true);
 
             if (exactMatch.Success)
             {
                 var swift = 0;
-                if (DateTimePeriodExtractor.NextRegex.IsMatch(trimmedText))
+                if (JapaneseDateTimePeriodExtractorConfiguration.NextRegex.IsMatch(trimmedText))
                 {
                     swift = 1;
                 }
-                else if (DateTimePeriodExtractor.LastRegex.IsMatch(trimmedText))
+                else if (JapaneseDateTimePeriodExtractorConfiguration.LastRegex.IsMatch(trimmedText))
                 {
                     swift = -1;
                 }
@@ -487,7 +487,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             }
 
             // handle Date followed by morning, afternoon
-            var match = DateTimePeriodExtractor.TimeOfDayRegex.Match(trimmedText);
+            var match = JapaneseDateTimePeriodExtractorConfiguration.TimeOfDayRegex.Match(trimmedText);
 
             if (match.Success)
             {
@@ -545,7 +545,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                     numStr = pr.ResolutionStr;
                     unitStr = this.config.UnitMap[srcUnit];
 
-                    if (DateTimePeriodExtractor.PastRegex.IsExactMatch(beforeStr, trim: true))
+                    if (JapaneseDateTimePeriodExtractorConfiguration.PastRegex.IsExactMatch(beforeStr, trim: true))
                     {
                         DateObject beginDate, endDate;
                         switch (unitStr)
@@ -573,7 +573,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                         return ret;
                     }
 
-                    if (DateTimePeriodExtractor.FutureRegex.IsExactMatch(beforeStr, trim: true))
+                    if (JapaneseDateTimePeriodExtractorConfiguration.FutureRegex.IsExactMatch(beforeStr, trim: true))
                     {
                         DateObject beginDate, endDate;
                         switch (unitStr)
@@ -604,7 +604,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             }
 
             // handle "last hour"
-            var match = DateTimePeriodExtractor.UnitRegex.Match(text);
+            var match = JapaneseDateTimePeriodExtractorConfiguration.UnitRegex.Match(text);
             if (match.Success)
             {
                 var srcUnit = match.Groups["unit"].Value.ToLower();
@@ -613,7 +613,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 {
                     unitStr = this.config.UnitMap[srcUnit];
 
-                    if (DateTimePeriodExtractor.PastRegex.IsExactMatch(beforeStr, trim: true))
+                    if (JapaneseDateTimePeriodExtractorConfiguration.PastRegex.IsExactMatch(beforeStr, trim: true))
                     {
                         DateObject beginDate, endDate;
                         switch (unitStr)
@@ -641,7 +641,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                         return ret;
                     }
 
-                    if (DateTimePeriodExtractor.FutureRegex.IsExactMatch(beforeStr, trim: true))
+                    if (JapaneseDateTimePeriodExtractorConfiguration.FutureRegex.IsExactMatch(beforeStr, trim: true))
                     {
                         DateObject beginDate, endDate;
                         switch (unitStr)

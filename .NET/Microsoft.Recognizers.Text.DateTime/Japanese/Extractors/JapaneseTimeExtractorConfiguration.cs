@@ -6,12 +6,12 @@ using Microsoft.Recognizers.Definitions.Japanese;
 
 namespace Microsoft.Recognizers.Text.DateTime.Japanese
 {
-    public class TimeExtractor : BaseDateTimeExtractor<TimeType>
+    public class JapaneseTimeExtractorConfiguration : JapaneseBaseDateTimeExtractorConfiguration<TimeType>
     {
         // e.g: 早上九点
         public static readonly string DayDescRegex = DateTimeDefinitions.TimeDayDescRegex;
 
-        public TimeExtractor()
+        public JapaneseTimeExtractorConfiguration()
         {
             var regexes = new Dictionary<Regex, TimeType>
             {

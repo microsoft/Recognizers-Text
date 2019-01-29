@@ -8,7 +8,7 @@ using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Japanese
 {
-    public class DateTimePeriodExtractor : IDateTimeExtractor
+    public class JapaneseDateTimePeriodExtractorConfiguration : IDateTimeExtractor
     {
         public static readonly string ExtractorName = Constants.SYS_DATETIME_DATETIMEPERIOD;
 
@@ -42,11 +42,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
         public static readonly Regex FutureRegex = new Regex(DateTimeDefinitions.FutureRegex, RegexOptions.Singleline);
 
-        private static readonly TimeExtractor SingleTimeExtractor = new TimeExtractor();
-        private static readonly DateTimeExtractor TimeWithDateExtractor = new DateTimeExtractor();
-        private static readonly DateExtractor SingleDateExtractor = new DateExtractor();
+        private static readonly JapaneseTimeExtractorConfiguration SingleTimeExtractor = new JapaneseTimeExtractorConfiguration();
+        private static readonly JapaneseDateTimeExtractorConfiguration TimeWithDateExtractor = new JapaneseDateTimeExtractorConfiguration();
+        private static readonly JapaneseDateExtractorConfiguration SingleDateExtractor = new JapaneseDateExtractorConfiguration();
         private static readonly CardinalExtractor CardinalExtractor = new CardinalExtractor();
-        private static readonly TimePeriodExtractor TimePeriodExtractor = new TimePeriodExtractor();
+        private static readonly JapaneseTimePeriodExtractorConfiguration TimePeriodExtractor = new JapaneseTimePeriodExtractorConfiguration();
 
         public List<ExtractResult> Extract(string text)
         {

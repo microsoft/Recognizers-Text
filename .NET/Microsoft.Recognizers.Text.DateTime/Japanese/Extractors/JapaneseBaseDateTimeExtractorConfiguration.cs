@@ -7,7 +7,7 @@ using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Japanese
 {
-    public abstract class BaseDateTimeExtractor<T> : IDateTimeExtractor
+    public abstract class JapaneseBaseDateTimeExtractorConfiguration<T> : IDateTimeExtractor
     {
         internal abstract ImmutableDictionary<Regex, T> Regexes { get; }
 
