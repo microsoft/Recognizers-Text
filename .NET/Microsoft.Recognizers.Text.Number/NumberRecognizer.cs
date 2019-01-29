@@ -88,7 +88,7 @@ namespace Microsoft.Recognizers.Text.Number
                 Culture.English,
                 options => new OrdinalModel(
                     AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Ordinal, new EnglishNumberParserConfiguration(options)),
-                    English.OrdinalExtractor.GetInstance()));
+                    English.OrdinalExtractor.GetInstance(options)));
 
             RegisterModel<PercentModel>(
                 Culture.English,
