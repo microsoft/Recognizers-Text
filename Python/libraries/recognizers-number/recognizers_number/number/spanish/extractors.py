@@ -5,6 +5,7 @@ from recognizers_number.resources.spanish_numeric import SpanishNumeric
 from recognizers_number.number.extractors import ReVal, BaseNumberExtractor, BasePercentageExtractor
 from recognizers_number.number.constants import Constants
 
+
 class SpanishNumberExtractor(BaseNumberExtractor):
     @property
     def regexes(self) -> List[ReVal]:
@@ -31,6 +32,7 @@ class SpanishNumberExtractor(BaseNumberExtractor):
         fraction_ex = SpanishFractionExtractor()
         self.__regexes.extend(fraction_ex.regexes)
 
+
 class SpanishCardinalExtractor(BaseNumberExtractor):
     @property
     def regexes(self) -> List[ReVal]:
@@ -50,6 +52,7 @@ class SpanishCardinalExtractor(BaseNumberExtractor):
         # Add double regexes
         double_ex = SpanishDoubleExtractor(placeholder)
         self.__regexes.extend(double_ex.regexes)
+
 
 class SpanishIntegerExtractor(BaseNumberExtractor):
     @property
@@ -88,6 +91,7 @@ class SpanishIntegerExtractor(BaseNumberExtractor):
                 val='IntegerSpa')
         ]
 
+
 class SpanishDoubleExtractor(BaseNumberExtractor):
     @property
     def regexes(self) -> List[NamedTuple('re_val', [('re', Pattern), ('val', str)])]:
@@ -125,6 +129,7 @@ class SpanishDoubleExtractor(BaseNumberExtractor):
                 val='DoubleNum')
         ]
 
+
 class SpanishFractionExtractor(BaseNumberExtractor):
     @property
     def regexes(self) -> List[NamedTuple('re_val', [('re', Pattern), ('val', str)])]:
@@ -141,17 +146,9 @@ class SpanishFractionExtractor(BaseNumberExtractor):
                 val='FracNum'),
             ReVal(
                 re=SpanishNumeric.FractionNotationWithSpacesRegex,
-                val='FracNum'),
-            ReVal(
-                re=SpanishNumeric.FractionNounRegex,
-                val='FracSpa'),
-            ReVal(
-                re=SpanishNumeric.FractionNounWithArticleRegex,
-                val='FracSpa'),
-            ReVal(
-                re=SpanishNumeric.FractionPrepositionRegex,
-                val='FracSpa')
+                val='FracNum')
         ]
+
 
 class SpanishOrdinalExtractor(BaseNumberExtractor):
     @property
@@ -171,6 +168,7 @@ class SpanishOrdinalExtractor(BaseNumberExtractor):
                 re=SpanishNumeric.OrdinalNounRegex,
                 val='OrdSpa')
         ]
+
 
 class SpanishPercentageExtractor(BasePercentageExtractor):
     def __init__(self):

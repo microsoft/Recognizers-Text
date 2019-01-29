@@ -4,12 +4,15 @@
 import os
 from setuptools import setup, find_packages
 
+
 def read(fname):
     return open(os.path.join(os.path.dirname(__file__), fname)).read()
+
 
 NAME = 'recognizers-text-date-time'
 VERSION = '1.0.0.a0'
 REQUIRES = ['recognizers-text', 'recognizers-text-number', 'recognizers-text-number-with-unit', 'regex', 'datedelta']
+
 
 setup(
     name=NAME,
