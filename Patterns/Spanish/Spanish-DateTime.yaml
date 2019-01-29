@@ -789,7 +789,7 @@ DurationUnitRegex: !simpleRegex
 DurationConnectorRegex: !simpleRegex
   # TODO: add this according to the related part in English
   def: ^[.]
-YearAfterRegex: !simpleRegex
+DateAfterRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
 YearPeriodRegex: !simpleRegex
