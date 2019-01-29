@@ -19,5 +19,10 @@ namespace Microsoft.Recognizers.Text.Number
         /// Represents ExperimentalMode
         /// </summary>
         ExperimentalMode = 2,
+
+        /// <summary>
+        /// Represents Ordinal EnablePreview
+        /// </summary>
+        EnablePreview = 4,
     }
 }

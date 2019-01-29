@@ -37,7 +37,7 @@ public class SpanishMergedExtractorConfiguration extends BaseOptionsConfiguratio
     public static final Pattern SingleAmbiguousMonthRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.SingleAmbiguousMonthRegex);
     public static final Pattern PrepositionSuffixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PrepositionSuffixRegex);
     public static final Pattern NumberEndingPattern = RegExpUtility.getSafeRegExp(SpanishDateTime.NumberEndingPattern);
-    public static final Pattern DateAfterRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.YearAfterRegex);
+    public static final Pattern DateAfterRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.DateAfterRegex);
     public static final Pattern UnspecificDatePeriodRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.UnspecificDatePeriodRegex);
     public final Iterable<Pair<Pattern, Pattern>> ambiguityFiltersDict = null;
 

@@ -409,7 +409,7 @@ class SpanishDateTime:
     CommonDatePrefixRegex = f'^[\\.]'
     DurationUnitRegex = f'^[\\.]'
     DurationConnectorRegex = f'^[.]'
-    YearAfterRegex = f'^[.]'
+    DateAfterRegex = f'^[.]'
     YearPeriodRegex = f'^[.]'
     FutureSuffixRegex = f'^[.]'
     WrittenDecades = dict([("", 0)])

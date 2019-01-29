@@ -384,7 +384,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 int month = referenceDate.Month, year = referenceDate.Year;
 
                 // create a extract result which content ordinal string of text
-                ExtractResult ertmp = new ExtractResult
+                ExtractResult extractResultTmp = new ExtractResult
                 {
                     Text = match.Groups["DayOfMonth"].Value,
                     Start = match.Groups["DayOfMonth"].Index,
@@ -392,7 +392,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 };
 
                 // parse the day in text into number
-                var day = Convert.ToInt32((double)(this.config.NumberParser.Parse(ertmp).Value ?? 0));
+                var day = Convert.ToInt32((double)(this.config.NumberParser.Parse(extractResultTmp).Value ?? 0));
 
                 // the validity of the phrase is guaranteed in the Date Extractor
                 ret.Timex = DateTimeFormatUtil.LuisDate(year, month, day);

@@ -3,7 +3,7 @@ package com.microsoft.recognizers.text.numberwithunit.extractors;
 import com.microsoft.recognizers.text.ExtractResult;
 import com.microsoft.recognizers.text.IExtractor;
 import com.microsoft.recognizers.text.numberwithunit.models.PrefixUnitResult;
-import com.microsoft.recognizers.text.numberwithunit.utilities.DinoComparer;
+import com.microsoft.recognizers.text.numberwithunit.utilities.StringComparer;
 import com.microsoft.recognizers.text.utilities.Match;
 import com.microsoft.recognizers.text.utilities.QueryProcessor;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
@@ -325,7 +325,7 @@ public class NumberWithUnitExtractor implements IExtractor {
             return null;
         }
 
-        Collections.sort(regexTokens, new DinoComparer());
+        Collections.sort(regexTokens, new StringComparer());
         String pattern = String.format(
                 "%s(%s)%s",
                 this.config.getBuildPrefix(),
