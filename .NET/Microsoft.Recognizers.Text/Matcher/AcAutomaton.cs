@@ -5,15 +5,15 @@ namespace Microsoft.Recognizers.Text.Matcher
 {
     public class AcAutomaton<T> : AbstractMatcher<T>
     {
-        protected readonly AaNode<T> root = new AaNode<T>();
-
         public AcAutomaton()
         {
         }
 
+        protected AaNode<T> Root { get; private set; } = new AaNode<T>();
+
         public override void Insert(IEnumerable<T> value, string id)
         {
-            var node = root;
+            var node = Root;
             int i = 0;
             foreach (var item in value)
             {
@@ -35,7 +35,7 @@ namespace Microsoft.Recognizers.Text.Matcher
         {
             BatchInsert(values, ids);
             var queue = new Queue<AaNode<T>>();
-            queue.Enqueue(root);
+            queue.Enqueue(Root);
 
             while (queue.Any())
             {
@@ -49,41 +49,41 @@ namespace Microsoft.Recognizers.Text.Matcher
                     }
                 }
 
-                if (node == root)
+                if (node == Root)
                 {
-                    root.Fail = root;
+                    Root.Fail = Root;
                     continue;
                 }
 
                 var fail = node.Parent.Fail;
 
-                while (fail[node.Word] == null && fail != root)
+                while (fail[node.Word] == null && fail != Root)
                 {
                     fail = fail.Fail;
                 }
 
-                node.Fail = fail[node.Word] ?? root;
-                node.Fail = node.Fail == node ? root : node.Fail;
+                node.Fail = fail[node.Word] ?? Root;
+                node.Fail = node.Fail == node ? Root : node.Fail;
             }
 
-            ConvertDictToList(root);
+            ConvertDictToList(Root);
         }
 
         public override IEnumerable<MatchResult<T>> Find(IEnumerable<T> queryText)
         {
-            var node = root;
+            var node = Root;
             var i = 0;
 
             foreach (var c in queryText)
             {
-                while (node[c] == null && node != root)
+                while (node[c] == null && node != Root)
                 {
                     node = node.Fail;
                 }
 
-                node = node[c] ?? root;
+                node = node[c] ?? Root;
 
-                for (var t = node; t != root; t = t.Fail)
+                for (var t = node; t != Root; t = t.Fail)
                 {
                     if (t.End)
                     {

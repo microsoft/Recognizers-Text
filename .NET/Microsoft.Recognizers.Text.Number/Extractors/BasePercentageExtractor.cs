@@ -8,30 +8,28 @@ namespace Microsoft.Recognizers.Text.Number
 {
     public abstract class BasePercentageExtractor : IExtractor
     {
-        private readonly BaseNumberExtractor numberExtractor;
-
-        protected virtual NumberOptions Options { get; } = NumberOptions.None;
-
         protected static readonly string NumExtType = Constants.SYS_NUM; // @sys.num
 
         protected static readonly string FracNumExtType = Constants.SYS_NUM_FRACTION;
 
-        protected string ExtractType = Constants.SYS_NUM_PERCENTAGE;
-
-        protected ImmutableHashSet<Regex> Regexes;
+        private readonly BaseNumberExtractor numberExtractor;
 
         public BasePercentageExtractor(BaseNumberExtractor numberExtractor)
         {
             this.numberExtractor = numberExtractor;
         }
 
-        protected abstract ImmutableHashSet<Regex> InitRegexes();
+        protected string ExtractType { get; set; } = Constants.SYS_NUM_PERCENTAGE;
+
+        protected virtual NumberOptions Options { get; } = NumberOptions.None;
+
+        protected ImmutableHashSet<Regex> Regexes { get; set; }
 
         /// <summary>
-        /// extractor the percentage entities from the sentence
+        /// extractor the percentage entities from the sentence.
         /// </summary>
-        /// <param name="source"></param>
-        /// <returns></returns>
+        /// <param name="source">sentence.</param>
+        /// <returns>List of percentage entities from the sentence source.</returns>
         public List<ExtractResult> Extract(string source)
         {
             var originSource = source;
@@ -100,10 +98,11 @@ namespace Microsoft.Recognizers.Text.Number
         }
 
         /// <summary>
-        /// read the rules
+        /// read the rules.
         /// </summary>
-        /// <param name="regexStrs">rule list</param>
-        /// <param name="ignoreCase"></param>
+        /// <param name="regexStrs">rule list.</param>
+        /// <param name="ignoreCase">.</param>
+        /// <returns>Immutable HashSet of regex.</returns>
         protected static ImmutableHashSet<Regex> BuildRegexes(HashSet<string> regexStrs, bool ignoreCase = false)
         {
             var regexes = new HashSet<Regex>();
@@ -111,7 +110,6 @@ namespace Microsoft.Recognizers.Text.Number
             foreach (var regexStr in regexStrs)
             {
                 // var sl = "(?=\\b)(" + regexStr + ")(?=(s?\\b))";
-
                 var options = RegexOptions.Singleline;
                 if (ignoreCase)
                 {
@@ -126,12 +124,18 @@ namespace Microsoft.Recognizers.Text.Number
             return regexes.ToImmutableHashSet();
         }
 
+        protected abstract ImmutableHashSet<Regex> InitRegexes();
+
         /// <summary>
-        /// replace the @sys.num to the real patterns, directly modifies the ExtractResult
+        /// replace the @sys.num to the real patterns, directly modifies the ExtractResult.
         /// </summary>
-        /// <param name="results">extract results after number extractor</param>
-        /// <param name="originSource">the sentence after replacing the @sys.num, Example: @sys.num %</param>
-        private void PostProcessing(List<ExtractResult> results, string originSource, Dictionary<int, int> positionMap, IList<ExtractResult> numExtResults)
+        /// <param name="results">extract results after number extractor.</param>
+        /// <param name="originSource">the sentence after replacing the @sys.num, Example: @sys.num %.</param>
+        private void PostProcessing(
+            List<ExtractResult> results,
+            string originSource,
+            Dictionary<int, int> positionMap,
+            IList<ExtractResult> numExtResults)
         {
             string replaceNumText = "@" + NumExtType;
             string replaceFracNumText = "@" + FracNumExtType;
@@ -200,13 +204,15 @@ namespace Microsoft.Recognizers.Text.Number
         }
 
         /// <summary>
-        /// get the number extractor results and convert the extracted numbers to @sys.num, so that the regexes can work
+        /// get the number extractor results and convert the extracted numbers to @sys.num, so that the regexes can work.
         /// </summary>
-        /// <param name="str"></param>
-        /// <param name="positionMap"></param>
-        /// <param name="numExtResults"></param>
-        /// <returns></returns>
-        private string PreprocessStrWithNumberExtracted(string str, out Dictionary<int, int> positionMap,
+        /// <param name="str">sentence to process.</param>
+        /// <param name="positionMap">position Map.</param>
+        /// <param name="numExtResults">number extractor result.</param>
+        /// <returns>return according type "builtin.num" or "builtin.num.percentage".</returns>
+        private string PreprocessStrWithNumberExtracted(
+            string str,
+            out Dictionary<int, int> positionMap,
             out IList<ExtractResult> numExtResults)
         {
             positionMap = new Dictionary<int, int>();

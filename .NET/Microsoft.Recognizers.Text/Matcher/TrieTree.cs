@@ -5,15 +5,15 @@ namespace Microsoft.Recognizers.Text.Matcher
 {
     public class TrieTree<T> : AbstractMatcher<T>
     {
-        protected readonly Node<T> root = new Node<T>();
-
         public TrieTree()
         {
         }
 
+        protected Node<T> Root { get; private set; } = new Node<T>();
+
         public override void Insert(IEnumerable<T> value, string id)
         {
-            var node = root;
+            var node = Root;
 
             foreach (var item in value)
             {
@@ -33,7 +33,7 @@ namespace Microsoft.Recognizers.Text.Matcher
         public override void Init(IEnumerable<T>[] values, string[] ids)
         {
             BatchInsert(values, ids);
-            ConvertDictToList(root);
+            ConvertDictToList(Root);
         }
 
         public override IEnumerable<MatchResult<T>> Find(IEnumerable<T> queryText)
@@ -41,7 +41,7 @@ namespace Microsoft.Recognizers.Text.Matcher
             var queryArray = queryText.ToArray();
             for (var i = 0; i < queryArray.Length; i++)
             {
-                var node = root;
+                var node = Root;
                 for (var j = i; j <= queryArray.Length; j++)
                 {
                     if (node.End)

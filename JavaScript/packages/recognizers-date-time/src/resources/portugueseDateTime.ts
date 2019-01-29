@@ -212,7 +212,7 @@ export namespace PortugueseDateTime {
 	export const DecadeWithCenturyRegex = `^[.]`;
 	export const RelativeDecadeRegex = `^[.]`;
 	export const YearSuffix = `(,?\\s*(${YearRegex}|${FullTextYearRegex}))`;
-	export const YearAfterRegex = `^[.]`;
+	export const DateAfterRegex = `^[.]`;
 	export const YearPeriodRegex = `^[.]`;
 	export const FutureSuffixRegex = `^[.]`;
 	export const WrittenDecades: ReadonlyMap<string, number> = new Map<string, number>([["", 0]]);

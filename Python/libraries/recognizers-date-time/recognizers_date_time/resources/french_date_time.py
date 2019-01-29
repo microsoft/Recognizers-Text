@@ -222,7 +222,7 @@ class FrenchDateTime:
     DecadeWithCenturyRegex = f'^[.]'
     RelativeDecadeRegex = f'^[.]'
     YearSuffix = f'(,?\\s*({DateYearRegex}|{FullTextYearRegex}))'
-    YearAfterRegex = f'^[.]'
+    DateAfterRegex = f'^[.]'
     YearPeriodRegex = f'^[.]'
     FutureSuffixRegex = f'^[.]'
     ComplexDatePeriodRegex = f'^[.]'

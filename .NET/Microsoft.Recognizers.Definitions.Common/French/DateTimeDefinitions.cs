@@ -230,7 +230,7 @@ namespace Microsoft.Recognizers.Definitions.French
 		public const string DecadeWithCenturyRegex = @"^[.]";
 		public const string RelativeDecadeRegex = @"^[.]";
 		public static readonly string YearSuffix = $@"(,?\s*({DateYearRegex}|{FullTextYearRegex}))";
-		public const string YearAfterRegex = @"^[.]";
+		public const string DateAfterRegex = @"^[.]";
 		public const string YearPeriodRegex = @"^[.]";
 		public const string FutureSuffixRegex = @"^[.]";
 		public const string ComplexDatePeriodRegex = @"^[.]";

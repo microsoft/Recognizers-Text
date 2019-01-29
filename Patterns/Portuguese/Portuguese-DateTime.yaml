@@ -813,7 +813,7 @@ RelativeDecadeRegex: !simpleRegex
 YearSuffix: !nestedRegex
   def: (,?\s*({YearRegex}|{FullTextYearRegex}))
   references: [ YearRegex, FullTextYearRegex ]
-YearAfterRegex: !simpleRegex
+DateAfterRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
 YearPeriodRegex: !simpleRegex

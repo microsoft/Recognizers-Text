@@ -227,7 +227,7 @@ namespace Microsoft.Recognizers.Definitions.German
 		public static readonly string DecadeWithCenturyRegex = $@"(die\s+)?(((?<century>\d|1\d|2\d)?(')?(?<decade>\d0)(')?s)|(({CenturyRegex}(\s+|-)(und\s+)?)?{DecadeRegex})|({CenturyRegex}(\s+|-)(und\s+)?(?<decade>zehner|hunderter)))";
 		public static readonly string RelativeDecadeRegex = $@"\b((das|die\s+)?{RelativeRegex}\s+((?<number>[\w,]+)\s+)?jahrzehnte?)\b";
 		public static readonly string YearSuffix = $@"(,?\s*({DateYearRegex}|{FullTextYearRegex}))";
-		public const string YearAfterRegex = @"\b(o\s+(nach|in der Vergangenheit))\b";
+		public const string DateAfterRegex = @"\b(o\s+(nach|in der Vergangenheit))\b";
 		public static readonly string YearPeriodRegex = $@"((((von|während|zwischen)\s+)?{YearRegex}\s*({TillRegex})\s*{YearRegex})|(((zwischen)\s+){YearRegex}\s*({RangeConnectorRegex})\s*{YearRegex}))";
 		public const string FutureSuffixRegex = @"\b(in\s+der\s+)?(zukunft|zukünftig)\b";
 		public static readonly string ComplexDatePeriodRegex = $@"(((von|während|in)\s+)?(?<start>.+)\s*({TillRegex})\s*(?<end>.+)|((zwischen)\s+)(?<start>.+)\s*({RangeConnectorRegex})\s*(?<end>.+))";

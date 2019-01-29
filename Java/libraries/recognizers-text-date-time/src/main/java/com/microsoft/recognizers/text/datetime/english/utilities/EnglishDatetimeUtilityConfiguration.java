@@ -1,4 +1,4 @@
-package com.microsoft.recognizers.text.datetime.english.parsers;
+package com.microsoft.recognizers.text.datetime.english.utilities;
 
 import com.microsoft.recognizers.text.datetime.resources.EnglishDateTime;
 import com.microsoft.recognizers.text.datetime.utilities.IDateTimeUtilityConfiguration;

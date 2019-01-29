@@ -8,10 +8,10 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
     {
         public NumberWithUnitParser(INumberWithUnitParserConfiguration config)
         {
-            this.config = config;
+            this.Config = config;
         }
 
-        protected INumberWithUnitParserConfiguration config { get; private set; }
+        protected INumberWithUnitParserConfiguration Config { get; private set; }
 
         public ParseResult Parse(ExtractResult extResult)
         {
@@ -24,7 +24,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             }
             else if (extResult.Type.Equals(Constants.SYS_NUM))
             {
-                ret.Value = config.InternalNumberParser.Parse(extResult).Value;
+                ret.Value = Config.InternalNumberParser.Parse(extResult).Value;
                 return ret;
             }
             else
@@ -70,20 +70,20 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             // Unit type depends on last unit in suffix
             var lastUnit = unitKeys.Last();
             var normalizedLastUnit = lastUnit.ToLowerInvariant();
-            if (!string.IsNullOrEmpty(config.ConnectorToken) && normalizedLastUnit.StartsWith(config.ConnectorToken))
+            if (!string.IsNullOrEmpty(Config.ConnectorToken) && normalizedLastUnit.StartsWith(Config.ConnectorToken))
             {
-                normalizedLastUnit = normalizedLastUnit.Substring(config.ConnectorToken.Length).Trim();
-                lastUnit = lastUnit.Substring(config.ConnectorToken.Length).Trim();
+                normalizedLastUnit = normalizedLastUnit.Substring(Config.ConnectorToken.Length).Trim();
+                lastUnit = lastUnit.Substring(Config.ConnectorToken.Length).Trim();
             }
 
-            if (!string.IsNullOrWhiteSpace(key) && config.UnitMap != null)
+            if (!string.IsNullOrWhiteSpace(key) && Config.UnitMap != null)
             {
-                if (config.UnitMap.TryGetValue(lastUnit, out var unitValue) ||
-                    config.UnitMap.TryGetValue(normalizedLastUnit, out unitValue))
+                if (Config.UnitMap.TryGetValue(lastUnit, out var unitValue) ||
+                    Config.UnitMap.TryGetValue(normalizedLastUnit, out unitValue))
                 {
                     var numValue = string.IsNullOrEmpty(numberResult.Text) ?
                         null :
-                        this.config.InternalNumberParser.Parse(numberResult);
+                        this.Config.InternalNumberParser.Parse(numberResult);
 
                     ret.Value = new UnitValue
                     {

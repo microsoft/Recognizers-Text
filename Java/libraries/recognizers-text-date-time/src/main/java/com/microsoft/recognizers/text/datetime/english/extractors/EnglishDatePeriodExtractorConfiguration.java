@@ -100,7 +100,7 @@ public class EnglishDatePeriodExtractorConfiguration extends BaseOptionsConfigur
         }
     };
 
-    private final Pattern rangeConnectorRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RangeConnectorRegex);
+    public static final Pattern rangeConnectorRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RangeConnectorRegex);
     private final String[] durationDateRestrictions = EnglishDateTime.DurationDateRestrictions.toArray(new String[0]);
 
     private final IDateTimeExtractor datePointExtractor;

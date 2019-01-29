@@ -11,6 +11,7 @@ import com.microsoft.recognizers.text.datetime.english.extractors.EnglishDateTim
 import com.microsoft.recognizers.text.datetime.english.extractors.EnglishDurationExtractorConfiguration;
 import com.microsoft.recognizers.text.datetime.english.extractors.EnglishTimeExtractorConfiguration;
 import com.microsoft.recognizers.text.datetime.english.extractors.EnglishTimePeriodExtractorConfiguration;
+import com.microsoft.recognizers.text.datetime.english.utilities.EnglishDatetimeUtilityConfiguration;
 import com.microsoft.recognizers.text.datetime.extractors.BaseDateExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.BaseDatePeriodExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.BaseDateTimeExtractor;
@@ -38,9 +39,6 @@ import com.microsoft.recognizers.text.number.english.extractors.IntegerExtractor
 import com.microsoft.recognizers.text.number.english.extractors.OrdinalExtractor;
 import com.microsoft.recognizers.text.number.english.parsers.EnglishNumberParserConfiguration;
 import com.microsoft.recognizers.text.number.parsers.BaseNumberParser;
-import com.microsoft.recognizers.text.utilities.RegExpUtility;
-
-import java.util.regex.Pattern;
 
 public class EnglishCommonDateTimeParserConfiguration extends BaseDateParserConfiguration implements ICommonDateTimeParserConfiguration {
 
