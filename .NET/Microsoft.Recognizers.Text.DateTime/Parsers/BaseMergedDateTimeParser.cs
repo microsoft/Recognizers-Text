@@ -106,54 +106,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
             }
 
-            if (er.Type.Equals(Constants.SYS_DATETIME_DATE))
-            {
-                pr = this.Config.DateParser.Parse(er, referenceTime);
-                if (pr.Value == null)
-                {
-                    pr = Config.HolidayParser.Parse(er, referenceTime);
-                }
-            }
-            else if (er.Type.Equals(Constants.SYS_DATETIME_TIME))
-            {
-                pr = this.Config.TimeParser.Parse(er, referenceTime);
-            }
-            else if (er.Type.Equals(Constants.SYS_DATETIME_DATETIME))
-            {
-                pr = this.Config.DateTimeParser.Parse(er, referenceTime);
-            }
-            else if (er.Type.Equals(Constants.SYS_DATETIME_DATEPERIOD))
-            {
-                pr = this.Config.DatePeriodParser.Parse(er, referenceTime);
-            }
-            else if (er.Type.Equals(Constants.SYS_DATETIME_TIMEPERIOD))
-            {
-                pr = this.Config.TimePeriodParser.Parse(er, referenceTime);
-            }
-            else if (er.Type.Equals(Constants.SYS_DATETIME_DATETIMEPERIOD))
-            {
-                pr = this.Config.DateTimePeriodParser.Parse(er, referenceTime);
-            }
-            else if (er.Type.Equals(Constants.SYS_DATETIME_DURATION))
-            {
-                pr = this.Config.DurationParser.Parse(er, referenceTime);
-            }
-            else if (er.Type.Equals(Constants.SYS_DATETIME_SET))
-            {
-                pr = this.Config.SetParser.Parse(er, referenceTime);
-            }
-            else if (er.Type.Equals(Constants.SYS_DATETIME_DATETIMEALT))
-            {
-                pr = this.Config.DateTimeAltParser.Parse(er, referenceTime);
-            }
-            else if (er.Type.Equals(Constants.SYS_DATETIME_TIMEZONE))
-            {
-                if ((Config.Options & DateTimeOptions.EnablePreview) != 0)
-                {
-                    pr = this.Config.TimeZoneParser.Parse(er, referenceTime);
-                }
-            }
-            else
+            pr = ParseResult(er, referenceTime);
+            if (pr == null)
             {
                 return null;
             }
@@ -901,6 +855,64 @@ namespace Microsoft.Recognizers.Text.DateTime
                 default:
                     return pastResolutionStr.Keys.First().ToLower();
             }
+        }
+
+        private DateTimeParseResult ParseResult(ExtractResult extractResult, DateObject referenceTime)
+        {
+            DateTimeParseResult parseResult = null;
+            switch (extractResult.Type)
+            {
+                case Constants.SYS_DATETIME_DATE:
+                    parseResult = this.Config.DateParser.Parse(extractResult, referenceTime);
+                    if (parseResult.Value == null)
+                    {
+                        parseResult = Config.HolidayParser.Parse(extractResult, referenceTime);
+                    }
+
+                    break;
+                case Constants.SYS_DATETIME_TIME:
+                    parseResult = this.Config.TimeParser.Parse(extractResult, referenceTime);
+
+                    break;
+                case Constants.SYS_DATETIME_DATETIME:
+                    parseResult = this.Config.DateTimeParser.Parse(extractResult, referenceTime);
+
+                    break;
+                case Constants.SYS_DATETIME_DATEPERIOD:
+                    parseResult = this.Config.DatePeriodParser.Parse(extractResult, referenceTime);
+
+                    break;
+                case Constants.SYS_DATETIME_TIMEPERIOD:
+                    parseResult = this.Config.TimePeriodParser.Parse(extractResult, referenceTime);
+
+                    break;
+                case Constants.SYS_DATETIME_DATETIMEPERIOD:
+                    parseResult = this.Config.DateTimePeriodParser.Parse(extractResult, referenceTime);
+
+                    break;
+                case Constants.SYS_DATETIME_DURATION:
+                    parseResult = this.Config.DurationParser.Parse(extractResult, referenceTime);
+
+                    break;
+                case Constants.SYS_DATETIME_SET:
+                    parseResult = this.Config.SetParser.Parse(extractResult, referenceTime);
+
+                    break;
+                case Constants.SYS_DATETIME_DATETIMEALT:
+                    parseResult = this.Config.DateTimeAltParser.Parse(extractResult, referenceTime);
+
+                    break;
+                case Constants.SYS_DATETIME_TIMEZONE:
+                    if ((Config.Options & DateTimeOptions.EnablePreview) != 0)
+                    {
+                        parseResult = this.Config.TimeZoneParser.Parse(extractResult, referenceTime);
+                    }
+
+                    break;
+                default:
+                    return null;
+            }
+            return parseResult;
         }
     }
 }
