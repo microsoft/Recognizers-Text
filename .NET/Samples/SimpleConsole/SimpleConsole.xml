@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SimpleConsole</name>
+    </assembly>
+    <members>
+        <member name="M:SimpleConsole.Program.ParseAll(System.String,System.String)">
+            <summary>
+            Parse query with all recognizers.
+            </summary>
+        </member>
+        <member name="M:SimpleConsole.Program.ShowIntro">
+            <summary>
+            Introduction.
+            </summary>
+        </member>
+    </members>
+</doc>
