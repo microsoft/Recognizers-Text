@@ -14,6 +14,7 @@ import com.microsoft.recognizers.text.datetime.extractors.BaseSetExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.BaseTimeExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.BaseTimePeriodExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.BaseTimeZoneExtractor;
+import com.microsoft.recognizers.text.datetime.extractors.IDateExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.IDateTimeExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.IDateTimeListExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.IDateTimeZoneExtractor;
@@ -76,9 +77,9 @@ public class EnglishMergedExtractorConfiguration extends BaseOptionsConfiguratio
         return integerExtractor;
     }
 
-    private IDateTimeExtractor dateExtractor;
+    private IDateExtractor dateExtractor;
 
-    public final IDateTimeExtractor getDateExtractor() {
+    public final IDateExtractor getDateExtractor() {
         return dateExtractor;
     }
 
