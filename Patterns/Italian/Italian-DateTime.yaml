@@ -489,6 +489,9 @@ ForTheRegex: !nestedRegex
 WeekDayAndDayOfMonthRegex: !nestedRegex
   def: \b{WeekDayRegex}\s+(del\s+{FlexibleDayRegex})\b
   references: [WeekDayRegex, FlexibleDayRegex]
+WeekDayAndDayRegex: !nestedRegex
+  def: \b{WeekDayRegex}\s+(?!(the)){DayRegex}(?!([-]|(\s+({AmDescRegex}|{PmDescRegex}))))\b
+  references: [WeekDayRegex, DayRegex, AmDescRegex, PmDescRegex]
 RestOfDateRegex: !simpleRegex
   def: Fine\s+(di\s+)?((del|questo|questa|corrente)\s+)?(?<duration>settimana|mese|anno)\b
 RestOfDateTimeRegex: !simpleRegex

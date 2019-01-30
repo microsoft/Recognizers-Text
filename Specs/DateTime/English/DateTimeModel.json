@@ -9462,11 +9462,114 @@
     ] 
   },
   {
-    "Input": "Unless indicated, these views are the author's and may differ from those of X or others in the firm. We do not represent this is accurate or complete and we may not update this. Past performance is not indicative of future returns. You should not use e-mail to request or authorize any transaction. CONFIDENTIALITY NOTICE: All information in and with this message may be legally privileged, and is provided only for the use of the individuals(s) named above. This information may not be disseminated and we do not waive confidentiality by mis-transmission.",
+    "Input": "Do you have any arrangement on Monday 21!",
     "Context": {
-      "ReferenceDateTime": "2019-01-24T12:00:00"
+      "ReferenceDateTime": "2019-01-25T12:00:00"
     },
-    "NotSupported": "javascript, python, java",
-    "Results": [] 
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "monday 21",
+        "Start": 31,
+        "End": 39,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-1",
+              "type": "date",
+              "value": "2019-01-21"
+            },
+            {
+              "timex": "XXXX-WXX-1",
+              "type": "date",
+              "value": "2019-10-21"
+            }
+          ]
+        }
+      }
+    ] 
+  },
+  {
+    "Input": "Do you have any arrangement on Monday 21!",
+    "Context": {
+      "ReferenceDateTime": "2019-01-21T12:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "monday 21",
+        "Start": 31,
+        "End": 39,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-01-21",
+              "type": "date",
+              "value": "2019-01-21"
+            }
+          ]
+        }
+      }
+    ] 
+  },
+  {
+    "Input": "Do you have any arrangement on Sunday 31!",
+    "Context": {
+      "ReferenceDateTime": "2019-01-25T12:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "sunday 31",
+        "Start": 31,
+        "End": 39,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-7",
+              "type": "date",
+              "value": "2017-12-31"
+            },
+            {
+              "timex": "XXXX-WXX-7",
+              "type": "date",
+              "value": "2019-03-31"
+            }
+          ]
+        }
+      }
+    ] 
+  },
+  {
+    "Input": "Do you have any arrangement on Friday 31!",
+    "Context": {
+      "ReferenceDateTime": "2019-02-25T12:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "friday 31",
+        "Start": 31,
+        "End": 39,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-5",
+              "type": "date",
+              "value": "2018-08-31"
+            },
+            {
+              "timex": "XXXX-WXX-5",
+              "type": "date",
+              "value": "2019-05-31"
+            }
+          ]
+        }
+      }
+    ] 
   }
 ]

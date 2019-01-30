@@ -26,6 +26,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             WeekDayOfMonthRegex = PortugueseDateExtractorConfiguration.WeekDayOfMonthRegex;
             ForTheRegex = PortugueseDateExtractorConfiguration.ForTheRegex;
             WeekDayAndDayOfMothRegex = PortugueseDateExtractorConfiguration.WeekDayAndDayOfMothRegex;
+            WeekDayAndDayRegex = PortugueseDateExtractorConfiguration.WeekDayAndDayRegex;
             RelativeMonthRegex = PortugueseDateExtractorConfiguration.RelativeMonthRegex;
             YearSuffix = PortugueseDateExtractorConfiguration.YearSuffix;
             RelativeWeekDayRegex = PortugueseDateExtractorConfiguration.RelativeWeekDayRegex;
@@ -95,6 +96,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         public Regex ForTheRegex { get; }
 
         public Regex WeekDayAndDayOfMothRegex { get; }
+
+        public Regex WeekDayAndDayRegex { get; }
 
         public Regex RelativeMonthRegex { get; }
 
