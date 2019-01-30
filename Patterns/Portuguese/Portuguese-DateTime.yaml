@@ -143,6 +143,9 @@ ForTheRegex: !simpleRegex
 WeekDayAndDayOfMonthRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: .^
+WeekDayAndDayRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: .^
 WeekDayOfMonthRegex: !nestedRegex
   def: (?<wom>(n?[ao]\s+)?(?<cardinal>primeir[ao]|1[ao]|segund[ao]|2[ao]|terceir[ao]|3[ao]|[qc]uart[ao]|4[ao]|quint[ao]|5[ao]|[uú]ltim[ao])\s+{WeekDayRegex}\s+{MonthSuffixRegex})
   references: [ WeekDayRegex, MonthSuffixRegex ]

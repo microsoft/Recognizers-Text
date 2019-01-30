@@ -63,6 +63,7 @@ export namespace PortugueseDateTime {
 	export const SpecialDayWithNumRegex = `^[.]`;
 	export const ForTheRegex = `.^`;
 	export const WeekDayAndDayOfMonthRegex = `.^`;
+	export const WeekDayAndDayRegex = `.^`;
 	export const WeekDayOfMonthRegex = `(?<wom>(n?[ao]\\s+)?(?<cardinal>primeir[ao]|1[ao]|segund[ao]|2[ao]|terceir[ao]|3[ao]|[qc]uart[ao]|4[ao]|quint[ao]|5[ao]|[uú]ltim[ao])\\s+${WeekDayRegex}\\s+${MonthSuffixRegex})`;
 	export const RelativeWeekDayRegex = `^[.]`;
 	export const NumberEndingPattern = `^[.]`;
@@ -236,4 +237,5 @@ export namespace PortugueseDateTime {
 	export const WeekTerms = [ "semana" ];
 	export const YearTerms = [ "ano","anos" ];
 	export const YearToDateTerms = [ "ano ate agora","ano ate hoje","ano ate a data","anos ate agora","anos ate hoje","anos ate a data" ];
+	export const SpecialCharactersEquivalent: ReadonlyMap<string, string> = new Map<string, string>([["á", "a"],["é", "e"],["í", "i"],["ó", "o"],["ú", "u"],["ê", "e"],["ô", "o"],["ü", "u"],["ã", "a"],["õ", "o"],["ç", "c"]]);
 }

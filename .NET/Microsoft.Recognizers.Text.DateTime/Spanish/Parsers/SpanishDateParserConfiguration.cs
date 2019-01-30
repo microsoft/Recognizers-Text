@@ -26,6 +26,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             WeekDayOfMonthRegex = SpanishDateExtractorConfiguration.WeekDayOfMonthRegex;
             ForTheRegex = SpanishDateExtractorConfiguration.ForTheRegex;
             WeekDayAndDayOfMothRegex = SpanishDateExtractorConfiguration.WeekDayAndDayOfMothRegex;
+            WeekDayAndDayRegex = SpanishDateExtractorConfiguration.WeekDayAndDayRegex;
             RelativeMonthRegex = SpanishDateExtractorConfiguration.RelativeMonthRegex;
             YearSuffix = SpanishDateExtractorConfiguration.YearSuffix;
             RelativeWeekDayRegex = SpanishDateExtractorConfiguration.RelativeWeekDayRegex;
@@ -95,6 +96,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public Regex ForTheRegex { get; }
 
         public Regex WeekDayAndDayOfMothRegex { get; }
+
+        public Regex WeekDayAndDayRegex { get; }
 
         public Regex RelativeMonthRegex { get; }
 

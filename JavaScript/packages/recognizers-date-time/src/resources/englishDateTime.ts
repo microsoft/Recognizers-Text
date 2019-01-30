@@ -227,6 +227,7 @@ export namespace EnglishDateTime {
 	export const FlexibleDayRegex = `(?<DayOfMonth>([A-Za-z]+\\s)?[A-Za-z\\d]+)`;
 	export const ForTheRegex = `\\b((((?<=for\\s+)the\\s+${FlexibleDayRegex})|((?<=on\\s+)(the\\s+)?${FlexibleDayRegex}(?<=(st|nd|rd|th))))(?<end>\\s*(,|\\.|!|\\?|$)))`;
 	export const WeekDayAndDayOfMonthRegex = `\\b${WeekDayRegex}\\s+(the\\s+${FlexibleDayRegex})\\b`;
+	export const WeekDayAndDayRegex = `\\b${WeekDayRegex}\\s+(?!(the))${DayRegex}(?!([-]|(\\s+(${AmDescRegex}|${PmDescRegex}))))\\b`;
 	export const RestOfDateRegex = `\\brest\\s+(of\\s+)?((the|my|this|current)\\s+)?(?<duration>week|month|year|decade)\\b`;
 	export const RestOfDateTimeRegex = `\\brest\\s+(of\\s+)?((the|my|this|current)\\s+)?(?<unit>day)\\b`;
 	export const MealTimeRegex = `\\b(at\\s+)?(?<mealTime>lunchtime)\\b`;

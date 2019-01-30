@@ -32,6 +32,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             WeekDayOfMonthRegex = EnglishDateExtractorConfiguration.WeekDayOfMonthRegex;
             ForTheRegex = EnglishDateExtractorConfiguration.ForTheRegex;
             WeekDayAndDayOfMothRegex = EnglishDateExtractorConfiguration.WeekDayAndDayOfMothRegex;
+            WeekDayAndDayRegex = EnglishDateExtractorConfiguration.WeekDayAndDayRegex;
             RelativeMonthRegex = EnglishDateExtractorConfiguration.RelativeMonthRegex;
             YearSuffix = EnglishDateExtractorConfiguration.YearSuffix;
             RelativeWeekDayRegex = EnglishDateExtractorConfiguration.RelativeWeekDayRegex;
@@ -94,6 +95,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public Regex ForTheRegex { get; }
 
         public Regex WeekDayAndDayOfMothRegex { get; }
+
+        public Regex WeekDayAndDayRegex { get; }
 
         public Regex RelativeMonthRegex { get; }
 

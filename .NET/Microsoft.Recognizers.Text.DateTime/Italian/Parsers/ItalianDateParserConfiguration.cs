@@ -34,6 +34,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             WeekDayOfMonthRegex = ItalianDateExtractorConfiguration.WeekDayOfMonthRegex;
             ForTheRegex = ItalianDateExtractorConfiguration.ForTheRegex;
             WeekDayAndDayOfMothRegex = ItalianDateExtractorConfiguration.WeekDayAndDayOfMothRegex;
+            WeekDayAndDayRegex = ItalianDateExtractorConfiguration.WeekDayAndDayRegex;
             RelativeMonthRegex = ItalianDateExtractorConfiguration.RelativeMonthRegex;
             YearSuffix = ItalianDateExtractorConfiguration.YearSuffix;
             RelativeWeekDayRegex = ItalianDateExtractorConfiguration.RelativeWeekDayRegex;
@@ -98,6 +99,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         public Regex ForTheRegex { get; }
 
         public Regex WeekDayAndDayOfMothRegex { get; }
+
+        public Regex WeekDayAndDayRegex { get; }
 
         public Regex RelativeMonthRegex { get; }
 

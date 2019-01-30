@@ -49,6 +49,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex WeekDayAndDayOfMothRegex { get; }
 
+        Regex WeekDayAndDayRegex { get; }
+
         Regex RelativeMonthRegex { get; }
 
         Regex YearSuffix { get; }
