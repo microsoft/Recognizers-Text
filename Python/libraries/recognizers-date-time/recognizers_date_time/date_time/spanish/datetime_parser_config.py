@@ -113,7 +113,7 @@ class SpanishDateTimeParserConfiguration(DateTimeParserConfiguration):
         self._unit_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.UnitRegex)
 
         self.next_prefix_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.NextPrefixRegex)
-        self.past_prefix_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.PastPrefixRegex)
+        self.past_prefix_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.PreviousPrefixRegex)
 
         self._date_extractor = config.date_extractor
         self._time_extractor = config.time_extractor

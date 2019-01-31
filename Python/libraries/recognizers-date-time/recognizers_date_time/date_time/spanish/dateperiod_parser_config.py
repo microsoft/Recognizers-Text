@@ -192,7 +192,7 @@ class SpanishDatePeriodParserConfiguration(DatePeriodParserConfiguration):
         self._unspecific_end_of_range_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.UnspecificEndOfRangeRegex)
 
         self._next_prefix_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.NextPrefixRegex)
-        self._past_prefix_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.PastPrefixRegex)
+        self._past_prefix_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.PreviousPrefixRegex)
         self._this_prefix_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.ThisPrefixRegex)
 
         self._in_connector_regex = config.utility_configuration.in_connector_regex
