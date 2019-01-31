@@ -2815,7 +2815,6 @@
   },
   {
     "Input": "Ya no estaré en la 3ª semana de 2027",
-    "NotSupported": "dotnet, java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -2828,7 +2827,6 @@
   },
   {
     "Input": "Ya no estaré en la 3ª semana del próximo año",
-    "NotSupported": "dotnet, java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -2853,13 +2851,12 @@
   },
   {
     "Input": "Me iré la próxima primavera",
-    "NotSupported": "dotnet, java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "próxima primavera",
         "Type": "daterange",
-        "Start": 7,
+        "Start": 10,
         "Length": 17
       }
     ]
@@ -2878,13 +2875,12 @@
   },
   {
     "Input": "Me iré en verano",
-    "NotSupported": "dotnet, java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "verano",
         "Type": "daterange",
-        "Start": 4,
+        "Start": 10,
         "Length": 6
       }
     ]
@@ -2927,20 +2923,18 @@
   },
   {
     "Input": "vacaciones en el próximo mes",
-    "NotSupported": "dotnet, java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "próximo mes",
         "Type": "daterange",
-        "Start": 16,
+        "Start": 17,
         "Length": 11
       }
     ]
   },
   {
     "Input": "Qué tengo para la semana de 30 de noviembre",
-    "NotSupported": "dotnet, java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -2953,7 +2947,6 @@
   },
   {
     "Input": "la semana del 15 de septiembre",
-    "NotSupported": "dotnet, java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -2966,7 +2959,6 @@
   },
   {
     "Input": "semana de 15 septiembre",
-    "NotSupported": "dotnet, java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -2979,7 +2971,6 @@
   },
   {
     "Input": "mes del 15 de septiembre",
-    "NotSupported": "dotnet, java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -2992,7 +2983,6 @@
   },
   {
     "Input": "Me iré en el fin de semana",
-    "NotSupported": "dotnet, java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
