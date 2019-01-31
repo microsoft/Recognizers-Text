@@ -6,17 +6,17 @@ RangeConnectorRegex : !nestedRegex
   def: (?<and>\b(and|through|to)\b|{BaseDateTime.RangeConnectorSymbolRegex})
   references: [ BaseDateTime.RangeConnectorSymbolRegex ]
 RelativeRegex: !simpleRegex
-  def: \b(?<order>dit|volgende|komende|aankomende|aanstaande|deze|huidige|aanstaande|vorig|verleden|vorige|laatste)\b
+  def: \b(?<order>dit|volgende|komende|aankomende|aanstaande|deze|huidige|aanstaande|vorig|verleden|voorgaande|vorige|laatste)\b
 StrictRelativeRegex: !simpleRegex
-  def: \b(?<order>dit|volgende|komende|aankomende|aanstaande|deze|huidige|aanstaande|vorig|verleden|vorige|laatste)\b
+  def: \b(?<order>dit|volgende|komende|aankomende|aanstaande|deze|huidige|aanstaande|vorig|verleden|voorgaande|vorige|laatste)\b
 NextPrefixRegex: !simpleRegex
   def: \b(volgende|komende|aankomende)\b
 AfterNextSuffixRegex: !simpleRegex
   def: \b(after\s+(the\s+)?next)\b
 PastPrefixRegex: !simpleRegex
-  def: (vorig|verleden|vorige|laatste)\b
+  def: (voorgaande|vorig|verleden|vorige|laatste)\b
 ThisPrefixRegex: !simpleRegex
-  def: (deze|huidige|aanstaande)\b
+  def: (deze|huidige|aanstaande|aankomende|komende)\b
 RangePrefixRegex: !simpleRegex
   def: (van|tot)
 CenturySuffixRegex: !simpleRegex
