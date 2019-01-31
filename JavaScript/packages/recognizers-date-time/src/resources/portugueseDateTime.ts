@@ -191,8 +191,10 @@ export namespace PortugueseDateTime {
 	export const TimeTokenPrefix = 'as ';
 	export const TokenBeforeDate = 'o ';
 	export const TokenBeforeTime = 'as ';
-	export const NextPrefixRegex = `(pr[oó]xim[oa]|seguinte)\\b`;
-	export const PastPrefixRegex = `([uú]ltim[oa])\\b`;
+	export const UpcomingPrefixRegex = `.^`;
+	export const NextPrefixRegex = `(pr[oó]xim[oa]|seguinte|${UpcomingPrefixRegex})\\b`;
+	export const PastPrefixRegex = `.^`;
+	export const PreviousPrefixRegex = `([uú]ltim[oa]|${PastPrefixRegex})\\b`;
 	export const ThisPrefixRegex = `([nd]?es[st][ea])\\b`;
 	export const RelativeDayRegex = `^[\\.]`;
 	export const RestOfDateRegex = `^[\\.]`;

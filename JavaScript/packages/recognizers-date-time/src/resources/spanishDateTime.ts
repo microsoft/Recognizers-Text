@@ -195,8 +195,10 @@ export namespace SpanishDateTime {
 	export const TimeTokenPrefix = 'a las ';
 	export const TokenBeforeDate = 'el ';
 	export const TokenBeforeTime = 'la ';
-	export const NextPrefixRegex = `(pr[oó]xim[oa]|siguiente)\\b`;
-	export const PastPrefixRegex = `([uú]ltim[oa])\\b`;
+	export const UpcomingPrefixRegex = `.^`;
+	export const NextPrefixRegex = `(pr[oó]xim[oa]|siguiente|${UpcomingPrefixRegex})\\b`;
+	export const PastPrefixRegex = `.^`;
+	export const PreviousPrefixRegex = `([uú]ltim[oa]|${PastPrefixRegex})\\b`;
 	export const ThisPrefixRegex = `(est[ea])\\b`;
 	export const RelativeDayRegex = `(?<relday>((este|pr[oó]ximo|([uú]ltim(o|as|os)))\\s+días)|(días\\s+((que\\s+viene)|pasado)))\\b`;
 	export const RestOfDateRegex = `^[\\.]`;
