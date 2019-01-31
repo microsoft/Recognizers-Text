@@ -231,7 +231,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         Regex IDatePeriodExtractorConfiguration.NumberCombinedWithDateUnit => NumberCombinedWithDateUnit;
 
-        Regex IDatePeriodExtractorConfiguration.PastRegex => PastRegex;
+        Regex IDatePeriodExtractorConfiguration.PreviousPrefixRegex => PastRegex;
 
         Regex IDatePeriodExtractorConfiguration.FutureRegex => FutureRegex;
 

@@ -9,12 +9,20 @@ RelativeRegex: !simpleRegex
   def: \b(?<order>dit|volgende|komende|aankomende|aanstaande|deze|huidige|aanstaande|vorig|verleden|vorige|laatste)\b
 StrictRelativeRegex: !simpleRegex
   def: \b(?<order>dit|volgende|komende|aankomende|aanstaande|deze|huidige|aanstaande|vorig|verleden|vorige|laatste)\b
-NextPrefixRegex: !simpleRegex
-  def: \b(volgende|komende|aankomende)\b
+UpcomingPrefixRegex: !simpleRegex
+  def: .^
+# TODO: modify below regex according to the counterpart in English
+NextPrefixRegex: !nestedRegex
+  def: \b(volgende|komende|aankomende|{UpcomingPrefixRegex})\b
+  references: [ UpcomingPrefixRegex ]
 AfterNextSuffixRegex: !simpleRegex
   def: \b(after\s+(the\s+)?next)\b
 PastPrefixRegex: !simpleRegex
-  def: (vorig|verleden|vorige|laatste)\b
+  def: .^
+# TODO: modify below regex according to the counterpart in English
+PreviousPrefixRegex: !nestedRegex
+  def: (vorig|verleden|vorige|laatste|{PastPrefixRegex})\b
+  references: [ PastPrefixRegex ]
 ThisPrefixRegex: !simpleRegex
   def: (deze|huidige|aanstaande)\b
 RangePrefixRegex: !simpleRegex
@@ -201,8 +209,8 @@ ThisRegex: !nestedRegex
   def: \b((deze(\s*week)?(\s*op)?\s+){WeekDayRegex})|({WeekDayRegex}((\s+of)?\s+deze\s*week))\b
   references: [ WeekDayRegex ]
 LastDateRegex: !nestedRegex
-  def: \b({PastPrefixRegex}(\s*week)?\s+{WeekDayRegex})|({WeekDayRegex}(\s+vorige\s*week))\b
-  references: [ PastPrefixRegex, WeekDayRegex ]
+  def: \b({PreviousPrefixRegex}(\s*week)?\s+{WeekDayRegex})|({WeekDayRegex}(\s+vorige\s*week))\b
+  references: [ PreviousPrefixRegex, WeekDayRegex ]
 NextDateRegex: !nestedRegex
   def: \b({NextPrefixRegex}(\s*week(\s*,?\s*op)?)?\s+{WeekDayRegex})|((op\s+)?{WeekDayRegex}((\s+of)?\s+(the\s+following|(de\s+)?volgende)\s*week))\b
   references: [ NextPrefixRegex, WeekDayRegex ]
@@ -547,11 +555,11 @@ InexactNumberUnitRegex: !nestedRegex
   def: ({InexactNumberRegex})\s+({DurationUnitRegex})
   references: [InexactNumberRegex, DurationUnitRegex]
 RelativeTimeUnitRegex: !nestedRegex
-  def: ((({NextPrefixRegex}|{PastPrefixRegex}|{ThisPrefixRegex})\s+({TimeUnitRegex}))|((the|my))\s+({RestrictedTimeUnitRegex}))
-  references: [NextPrefixRegex, PastPrefixRegex, ThisPrefixRegex, TimeUnitRegex, RestrictedTimeUnitRegex]
+  def: ((({NextPrefixRegex}|{PreviousPrefixRegex}|{ThisPrefixRegex})\s+({TimeUnitRegex}))|((the|my))\s+({RestrictedTimeUnitRegex}))
+  references: [NextPrefixRegex, PreviousPrefixRegex, ThisPrefixRegex, TimeUnitRegex, RestrictedTimeUnitRegex]
 RelativeDurationUnitRegex: !nestedRegex
-  def: (((?<=({NextPrefixRegex}|{PastPrefixRegex}|{ThisPrefixRegex})\s+)({DurationUnitRegex}))|((the|my))\s+({RestrictedTimeUnitRegex}))
-  references: [NextPrefixRegex, PastPrefixRegex, ThisPrefixRegex, DurationUnitRegex, RestrictedTimeUnitRegex]
+  def: (((?<=({NextPrefixRegex}|{PreviousPrefixRegex}|{ThisPrefixRegex})\s+)({DurationUnitRegex}))|((the|my))\s+({RestrictedTimeUnitRegex}))
+  references: [NextPrefixRegex, PreviousPrefixRegex, ThisPrefixRegex, DurationUnitRegex, RestrictedTimeUnitRegex]
 ReferenceDatePeriodRegex: !nestedRegex
   def: \b{ReferencePrefixRegex}\s+(?<duration>week|maand|jaar|decennium|weekend)\b
   references: [ReferencePrefixRegex]
@@ -594,8 +602,8 @@ LaterEarlyPeriodRegex: !nestedRegex
   def: \b({PrefixPeriodRegex})\s*\b\s*(?<suffix>{OneWordPeriodRegex})\b
   references: [PrefixPeriodRegex, OneWordPeriodRegex]
 WeekWithWeekDayRangeRegex: !nestedRegex
-  def: \b((?<week>({NextPrefixRegex}|{PastPrefixRegex}|this)\s+week)((\s+between\s+{WeekDayRegex}\s+and\s+{WeekDayRegex})|(\s+from\s+{WeekDayRegex}\s+to\s+{WeekDayRegex})))\b
-  references: [NextPrefixRegex, PastPrefixRegex, WeekDayRegex]
+  def: \b((?<week>({NextPrefixRegex}|{PreviousPrefixRegex}|this)\s+week)((\s+between\s+{WeekDayRegex}\s+and\s+{WeekDayRegex})|(\s+from\s+{WeekDayRegex}\s+to\s+{WeekDayRegex})))\b
+  references: [NextPrefixRegex, PreviousPrefixRegex, WeekDayRegex]
 GeneralEndingRegex: !simpleRegex
   def: ^\s*((\.,)|\.|,|!|\?)?\s*$
 MiddlePauseRegex: !simpleRegex

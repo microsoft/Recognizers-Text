@@ -101,7 +101,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public Regex FollowedUnit => TimeFollowedUnit;
 
-        public Regex PastPrefixRegex => GermanDatePeriodExtractorConfiguration.PastPrefixRegex;
+        public Regex PreviousPrefixRegex => GermanDatePeriodExtractorConfiguration.PreviousPrefixRegex;
 
         public Regex NextPrefixRegex => GermanDatePeriodExtractorConfiguration.NextPrefixRegex;
 

@@ -21,9 +21,11 @@ namespace Microsoft.Recognizers.Definitions.English
 		public static readonly string RangeConnectorRegex = $@"(?<and>\b(and|through|to)\b|{BaseDateTime.RangeConnectorSymbolRegex})";
 		public const string RelativeRegex = @"\b(?<order>following|next|coming|upcoming|this|last|past|previous|current|the)\b";
 		public const string StrictRelativeRegex = @"\b(?<order>following|next|coming|upcoming|this|last|past|previous|current)\b";
-		public const string NextPrefixRegex = @"\b(following|next|upcoming|coming)\b";
+		public const string UpcomingPrefixRegex = @"((this)?(following|upcoming|coming))";
+		public static readonly string NextPrefixRegex = $@"\b(next|{UpcomingPrefixRegex})\b";
 		public const string AfterNextSuffixRegex = @"\b(after\s+(the\s+)?next)\b";
-		public const string PastPrefixRegex = @"(last|past|previous)\b";
+		public const string PastPrefixRegex = @"((this)?past)\b";
+		public static readonly string PreviousPrefixRegex = $@"(last|previous|{PastPrefixRegex})\b";
 		public const string ThisPrefixRegex = @"(this|current)\b";
 		public const string RangePrefixRegex = @"(from|between)";
 		public const string CenturySuffixRegex = @"(^century)\b";
@@ -96,7 +98,7 @@ namespace Microsoft.Recognizers.Definitions.English
 		public const string RelaxedOnRegex = @"(?<=\b(on|at|in)\s+)((?<day>10th|11th|11st|12nd|12th|13rd|13th|14th|15th|16th|17th|18th|19th|1st|20th|21st|21th|22nd|22th|23rd|23th|24th|25th|26th|27th|28th|29th|2nd|30th|31st|3rd|4th|5th|6th|7th|8th|9th)s?)\b";
 		public const string PrefixWeekDayRegex = @"(\s*((,?\s*on)|[-—–]))";
 		public static readonly string ThisRegex = $@"\b(this(\s*week{PrefixWeekDayRegex}?)?\s*{WeekDayRegex})|({WeekDayRegex}((\s+of)?\s+this\s*week))\b";
-		public static readonly string LastDateRegex = $@"\b({PastPrefixRegex}(\s*week{PrefixWeekDayRegex}?)?\s*{WeekDayRegex})|({WeekDayRegex}(\s+last\s*week))\b";
+		public static readonly string LastDateRegex = $@"\b({PreviousPrefixRegex}(\s*week{PrefixWeekDayRegex}?)?\s*{WeekDayRegex})|({WeekDayRegex}(\s+last\s*week))\b";
 		public static readonly string NextDateRegex = $@"\b({NextPrefixRegex}(\s*week{PrefixWeekDayRegex}?)?\s*{WeekDayRegex})|((on\s+)?{WeekDayRegex}((\s+of)?\s+(the\s+following|(the\s+)?next)\s*week))\b";
 		public static readonly string SpecialDayRegex = $@"\b((the\s+)?day before yesterday|(the\s+)?day after (tomorrow|tmr)|the\s+day\s+(before|after)(?!=\s+day)|((the\s+)?({RelativeRegex}|my)\s+day)|yesterday|tomorrow|tmr|today)\b";
 		public static readonly string SpecialDayWithNumRegex = $@"\b((?<number>{WrittenNumRegex})\s+days?\s+from\s+(?<day>yesterday|tomorrow|tmr|today))\b";
@@ -224,8 +226,8 @@ namespace Microsoft.Recognizers.Definitions.English
 		public const string NightStartEndRegex = @"(^(overnight|tonight|night))|((overnight|tonight|night)$)";
 		public const string InexactNumberRegex = @"\b(a few|few|some|several|(?<NumTwoTerm>(a\s+)?couple(\s+of)?))\b";
 		public static readonly string InexactNumberUnitRegex = $@"({InexactNumberRegex})\s+({DurationUnitRegex})";
-		public static readonly string RelativeTimeUnitRegex = $@"((({NextPrefixRegex}|{PastPrefixRegex}|{ThisPrefixRegex})\s+({TimeUnitRegex}))|((the|my))\s+({RestrictedTimeUnitRegex}))";
-		public static readonly string RelativeDurationUnitRegex = $@"(((?<=({NextPrefixRegex}|{PastPrefixRegex}|{ThisPrefixRegex})\s+)({DurationUnitRegex}))|((the|my))\s+({RestrictedTimeUnitRegex}))";
+		public static readonly string RelativeTimeUnitRegex = $@"((({NextPrefixRegex}|{PreviousPrefixRegex}|{ThisPrefixRegex})\s+({TimeUnitRegex}))|((the|my))\s+({RestrictedTimeUnitRegex}))";
+		public static readonly string RelativeDurationUnitRegex = $@"(((?<=({NextPrefixRegex}|{PreviousPrefixRegex}|{ThisPrefixRegex})\s+)({DurationUnitRegex}))|((the|my))\s+({RestrictedTimeUnitRegex}))";
 		public static readonly string ReferenceDatePeriodRegex = $@"\b{ReferencePrefixRegex}\s+(?<duration>week|month|year|decade|weekend)\b";
 		public const string ConnectorRegex = @"^(-|,|for|t|around|@)$";
 		public const string FromToRegex = @"\b(from).+(to)\b.+";
@@ -243,7 +245,7 @@ namespace Microsoft.Recognizers.Definitions.English
 		public static readonly string NumberEndingPattern = $@"^(\s+(?<meeting>meeting|appointment|conference|call|skype call)\s+to\s+(?<newTime>{PeriodHourNumRegex}|{HourRegex})((\.)?$|(\.,|,|!|\?)))";
 		public const string OneOnOneRegex = @"\b(1\s*:\s*1)|(one (on )?one|one\s*-\s*one|one\s*:\s*one)\b";
 		public static readonly string LaterEarlyPeriodRegex = $@"\b(({PrefixPeriodRegex})\s*\b\s*(?<suffix>{OneWordPeriodRegex})|({UnspecificEndOfRangeRegex}))\b";
-		public static readonly string WeekWithWeekDayRangeRegex = $@"\b((?<week>({NextPrefixRegex}|{PastPrefixRegex}|this)\s+week)((\s+between\s+{WeekDayRegex}\s+and\s+{WeekDayRegex})|(\s+from\s+{WeekDayRegex}\s+to\s+{WeekDayRegex})))\b";
+		public static readonly string WeekWithWeekDayRangeRegex = $@"\b((?<week>({NextPrefixRegex}|{PreviousPrefixRegex}|this)\s+week)((\s+between\s+{WeekDayRegex}\s+and\s+{WeekDayRegex})|(\s+from\s+{WeekDayRegex}\s+to\s+{WeekDayRegex})))\b";
 		public const string GeneralEndingRegex = @"^\s*((\.,)|\.|,|!|\?)?\s*$";
 		public const string MiddlePauseRegex = @"\s*(,)\s*";
 		public const string DurationConnectorRegex = @"^\s*(?<connector>\s+|and|,)\s*$";

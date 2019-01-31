@@ -179,7 +179,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         Regex IDatePeriodParserConfiguration.NextPrefixRegex => NextPrefixRegex;
 
-        Regex IDatePeriodParserConfiguration.PastPrefixRegex => PastPrefixRegex;
+        Regex IDatePeriodParserConfiguration.PreviousPrefixRegex => PastPrefixRegex;
 
         Regex IDatePeriodParserConfiguration.ThisPrefixRegex => ThisPrefixRegex;
 

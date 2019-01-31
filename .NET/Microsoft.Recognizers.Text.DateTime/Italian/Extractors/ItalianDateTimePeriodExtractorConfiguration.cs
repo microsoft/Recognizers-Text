@@ -107,7 +107,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         Regex IDateTimePeriodExtractorConfiguration.RestOfDateTimeRegex => RestOfDateTimeRegex;
 
-        public Regex PastPrefixRegex => ItalianDatePeriodExtractorConfiguration.PastPrefixRegex; // Note: FR 'past' i.e 'dernier' is a suffix following after, however interface enforces 'prefix' nomenclature
+        public Regex PreviousPrefixRegex => ItalianDatePeriodExtractorConfiguration.PastPrefixRegex; // Note: FR 'past' i.e 'dernier' is a suffix following after, however interface enforces 'prefix' nomenclature
 
         public Regex NextPrefixRegex => ItalianDatePeriodExtractorConfiguration.NextPrefixRegex; // Note: FR 'next' i.e 'prochain' is a suffix following after, i.e 'lundi prochain', however 'prefix' is enforced by interface
 

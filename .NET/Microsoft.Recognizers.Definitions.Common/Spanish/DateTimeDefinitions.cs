@@ -434,8 +434,10 @@ namespace Microsoft.Recognizers.Definitions.Spanish
 		public const string TimeTokenPrefix = @"a las ";
 		public const string TokenBeforeDate = @"el ";
 		public const string TokenBeforeTime = @"la ";
-		public const string NextPrefixRegex = @"(pr[oó]xim[oa]|siguiente)\b";
-		public const string PastPrefixRegex = @"([uú]ltim[oa])\b";
+		public const string UpcomingPrefixRegex = @".^";
+		public static readonly string NextPrefixRegex = $@"(pr[oó]xim[oa]|siguiente|{UpcomingPrefixRegex})\b";
+		public const string PastPrefixRegex = @".^";
+		public static readonly string PreviousPrefixRegex = $@"([uú]ltim[oa]|{PastPrefixRegex})\b";
 		public const string ThisPrefixRegex = @"(est[ea])\b";
 		public const string RelativeDayRegex = @"(?<relday>((este|pr[oó]ximo|([uú]ltim(o|as|os)))\s+días)|(días\s+((que\s+viene)|pasado)))\b";
 		public const string RestOfDateRegex = @"^[\.]";

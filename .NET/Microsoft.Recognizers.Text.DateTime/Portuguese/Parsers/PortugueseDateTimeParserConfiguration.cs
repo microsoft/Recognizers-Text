@@ -134,7 +134,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             var trimmedText = text.Trim().ToLowerInvariant();
             var swift = 0;
 
-            if (PortugueseDatePeriodParserConfiguration.PastPrefixRegex.IsMatch(trimmedText))
+            if (PortugueseDatePeriodParserConfiguration.PreviousPrefixRegex.IsMatch(trimmedText))
             {
                 swift = -1;
             }

@@ -747,10 +747,18 @@ DateTokenPrefix: 'en '
 TimeTokenPrefix: 'a las '
 TokenBeforeDate: 'el '
 TokenBeforeTime: 'la '
-NextPrefixRegex: !simpleRegex
-  def: (pr[oó]xim[oa]|siguiente)\b
+UpcomingPrefixRegex: !simpleRegex
+  def: .^
+# TODO: modify below regex according to the counterpart in English
+NextPrefixRegex: !nestedRegex
+  def: (pr[oó]xim[oa]|siguiente|{UpcomingPrefixRegex})\b
+  references: [ UpcomingPrefixRegex ]
 PastPrefixRegex: !simpleRegex
-  def: ([uú]ltim[oa])\b
+  def: .^
+# TODO: modify below regex according to the counterpart in English
+PreviousPrefixRegex: !nestedRegex
+  def: ([uú]ltim[oa]|{PastPrefixRegex})\b
+  references: [ PastPrefixRegex ]
 ThisPrefixRegex: !simpleRegex
   def: (est[ea])\b
 RelativeDayRegex: !simpleRegex

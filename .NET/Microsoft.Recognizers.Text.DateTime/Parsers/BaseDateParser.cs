@@ -849,7 +849,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 swift = 1;
             }
-            else if (this.config.PastPrefixRegex.IsMatch(trimmedText))
+            else if (this.config.PreviousPrefixRegex.IsMatch(trimmedText))
             {
                 swift = -1;
             }
