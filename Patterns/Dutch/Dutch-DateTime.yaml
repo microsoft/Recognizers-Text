@@ -224,10 +224,10 @@ RelativeWeekDayRegex: !nestedRegex
   def: \b({WrittenNumRegex}\s+{WeekDayRegex}\s+(from\s+now|later))\b
   references: [ WrittenNumRegex, WeekDayRegex ]
 SpecialDate: !nestedRegex
-  def: (?=\b(on|at)\s+the\s+){DayRegex}\b
+  def: (?=\b(over|op)\s+de\s+){DayRegex}\b
   references: [ DayRegex ]
 DatePreposition: !simpleRegex
-  def: \b(on|in)
+  def: \b(op|in)
 DateExtractor1: !nestedRegex
   def: \b(({WeekDayRegex})(\s+|\s*,\s*))?({DayRegex})((\s*){MonthRegex})\b
   references: [ WeekDayRegex, DayRegex, MonthRegex ]
@@ -461,16 +461,16 @@ DurationUnitRegex: !nestedRegex
 SuffixAndRegex: !simpleRegex
   def: (?<suffix>\s*(and)\s+((an|a)\s+)?(?<suffix_num>half|quarter))
 PeriodicRegex: !simpleRegex
-  def: \b(?<periodic>daily|monthly|weekly|biweekly|yearly|annually|annual)\b
+  def: \b(?<periodic>dagelijks|maandelijks|wekelijks|twee-wekelijks|jaarlijks)\b
 EachUnitRegex: !nestedRegex
-  def: (?<each>(each|every)(?<other>\s+other)?\s*{DurationUnitRegex})
+  def: (?<each>(iedere|elke)(?<other>\s+other)?\s*{DurationUnitRegex})
   references: [ DurationUnitRegex ]
 EachPrefixRegex: !simpleRegex
   def: \b(?<each>(each|(every))\s*$)
 SetEachRegex: !simpleRegex
   def: \b(?<each>(each|(every))\s*)
 SetLastRegex: !simpleRegex
-  def: (?<last>olgende|komende|aankomende|aanstaande|deze|huidige|aanstaande|vorig|verleden|vorige|laatste)
+  def: (?<last>volgende|komende|aankomende|aanstaande|deze|huidige|aanstaande|vorig|verleden|vorige|laatste)
 EachDayRegex: !simpleRegex
   def: ^\s*(elke)\s*dag\b
 DurationFollowedUnit: !nestedRegex
