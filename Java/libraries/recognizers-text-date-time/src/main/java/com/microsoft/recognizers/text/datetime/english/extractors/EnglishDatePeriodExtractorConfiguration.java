@@ -33,7 +33,7 @@ public class EnglishDatePeriodExtractorConfiguration extends BaseOptionsConfigur
     public static final Pattern TimeUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TimeUnitRegex);
     public static final Pattern FollowedDateUnit = RegExpUtility.getSafeRegExp(EnglishDateTime.FollowedDateUnit);
     public static final Pattern NumberCombinedWithDateUnit = RegExpUtility.getSafeRegExp(EnglishDateTime.NumberCombinedWithDateUnit);
-    public static final Pattern PastPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PastPrefixRegex);
+    public static final Pattern PreviousPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PreviousPrefixRegex);
     public static final Pattern NextPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.NextPrefixRegex);
     public static final Pattern FutureSuffixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.FutureSuffixRegex);
     public static final Pattern WeekOfRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.WeekOfRegex);
@@ -161,7 +161,7 @@ public class EnglishDatePeriodExtractorConfiguration extends BaseOptionsConfigur
 
     @Override
     public Pattern getPastRegex() {
-        return PastPrefixRegex;
+        return PreviousPrefixRegex;
     }
 
     @Override
