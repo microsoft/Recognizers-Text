@@ -256,12 +256,19 @@ namespace Microsoft.Recognizers.Text.DateTime
                 return ret;
             }
 
-            // Handle "next Sunday"
+            // Handle "next Sunday", "upcoming Sunday"
+            // We define "upcoming Sunday" as the nearest Sunday to come (not include today)
+            // We define "next Sunday" as Sunday of next week
             exactMatch = this.config.NextRegex.MatchExact(trimmedText, trim: true);
             if (exactMatch.Success)
             {
                 var weekdayStr = exactMatch.Groups["weekday"].Value.ToLower();
                 var value = referenceDate.Next((DayOfWeek)this.config.DayOfWeek[weekdayStr]);
+                
+                if (this.config.UpcomingPrefixRegex.MatchBegin(trimmedText, trim: true).Success)
+                {
+                    value = referenceDate.Upcoming((DayOfWeek)this.config.DayOfWeek[weekdayStr]);
+                }
 
                 ret.Timex = DateTimeFormatUtil.LuisDate(value);
                 ret.FutureValue = ret.PastValue = value;
@@ -286,12 +293,19 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             // Handle "last Friday", "last mon"
+            // We define "past Sunday" as the nearest Sunday that has already passed (not include today)
+            // We define "previous Sunday" as Sunday of previous week
             exactMatch = this.config.LastRegex.MatchExact(trimmedText, trim: true);
 
             if (exactMatch.Success)
             {
                 var weekdayStr = exactMatch.Groups["weekday"].Value.ToLower();
                 var value = referenceDate.Last((DayOfWeek)this.config.DayOfWeek[weekdayStr]);
+
+                if (this.config.PastPrefixRegex.MatchBegin(trimmedText, trim: true).Success)
+                {
+                    value = referenceDate.Past((DayOfWeek)this.config.DayOfWeek[weekdayStr]);
+                }
 
                 ret.Timex = DateTimeFormatUtil.LuisDate(value);
                 ret.FutureValue = ret.PastValue = value;

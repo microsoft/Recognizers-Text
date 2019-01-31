@@ -10,7 +10,7 @@ RelativeRegex: !simpleRegex
 StrictRelativeRegex: !simpleRegex
   def: \b(?<order>following|next|coming|upcoming|this|last|past|previous|current)\b
 UpcomingPrefixRegex: !simpleRegex
-  def: ((this)?(following|upcoming|coming))
+  def: ((this )?(following|upcoming|coming))
 NextPrefixRegex: !nestedRegex
   def: \b(next|{UpcomingPrefixRegex})\b
   references: [ UpcomingPrefixRegex ]
@@ -19,7 +19,7 @@ NextPrefixRegex: !nestedRegex
 AfterNextSuffixRegex: !simpleRegex
   def: \b(after\s+(the\s+)?next)\b
 PastPrefixRegex: !simpleRegex
-  def: ((this)?past)\b
+  def: ((this )?past)\b
 PreviousPrefixRegex: !nestedRegex
   def: (last|previous|{PastPrefixRegex})\b
   references: [ PastPrefixRegex ]
