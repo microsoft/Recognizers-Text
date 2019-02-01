@@ -19,8 +19,8 @@ namespace Microsoft.Recognizers.Definitions.Dutch
 	{
 		public static readonly string TillRegex = $@"(?<till>\b(to|till|til|until|thru|through)\b|{BaseDateTime.RangeConnectorSymbolRegex})";
 		public static readonly string RangeConnectorRegex = $@"(?<and>\b(and|through|to)\b|{BaseDateTime.RangeConnectorSymbolRegex})";
-		public const string RelativeRegex = @"\b(?<order>dit|volgende|komende|aankomende|aanstaande|deze|huidige|aanstaande|vorig|verleden|voorgaande|vorige|laatste)\b";
-		public const string StrictRelativeRegex = @"\b(?<order>dit|volgende|komende|aankomende|aanstaande|deze|huidige|aanstaande|vorig|verleden|voorgaande|vorige|laatste)\b";
+		public const string RelativeRegex = @"\b(?<order>dit|volgende|komende|aankomende|aanstaande|deze|huidige|vorig|verleden|voorgaande|vorige|laatste)\b";
+		public const string StrictRelativeRegex = @"\b(?<order>dit|volgende|komende|aankomende|aanstaande|deze|huidige|vorig|verleden|voorgaande|vorige|laatste)\b";
 		public const string NextPrefixRegex = @"\b(volgende|komende|aankomende)\b";
 		public const string AfterNextSuffixRegex = @"\b(na\s+(de\s+)?volgende)\b";
 		public const string PastPrefixRegex = @"(voorgaande|vorig|verleden|vorige|laatste)\b";
@@ -98,9 +98,9 @@ namespace Microsoft.Recognizers.Definitions.Dutch
 		public static readonly string ThisRegex = $@"\b((deze(\s*week)?(\s*op)?\s+){WeekDayRegex})|({WeekDayRegex}((\s+of)?\s+deze\s*week))\b";
 		public static readonly string LastDateRegex = $@"\b({PastPrefixRegex}(\s*week)?\s+{WeekDayRegex})|({WeekDayRegex}(\s+vorige\s*week))\b";
 		public static readonly string NextDateRegex = $@"\b({NextPrefixRegex}(\s*week(\s*,?\s*op)?)?\s+{WeekDayRegex})|((op\s+)?{WeekDayRegex}((\s+of)?\s+(the\s+following|(de\s+)?volgende)\s*week))\b";
-		public static readonly string SpecialDayRegex = $@"\b(eergisteren|overmorgen|((de\s+)?({RelativeRegex}|my)\s+day)|gisteren|morgen|vandaag)\b";
+		public static readonly string SpecialDayRegex = $@"\b(eergisteren|overmorgen|((de\s+)?({RelativeRegex}|my)\s+dag)|gisteren|morgen|vandaag)\b";
 		public static readonly string SpecialDayWithNumRegex = $@"\b((?<number>{WrittenNumRegex})\s+dagen?\s+(vanaf|voor)\s+(?<day>gisteren|morgen|vandaag))\b";
-		public static readonly string RelativeDayRegex = $@"\b(((the\s+)?{RelativeRegex}\s+day))\b";
+		public static readonly string RelativeDayRegex = $@"\b(((de\s+)?{RelativeRegex}\s+dag))\b";
 		public const string SetWeekDayRegex = @"\b(?<prefix>on\s+)?(?<weekday>morning|afternoon|evening|night|Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday)s\b";
 		public static readonly string WeekDayOfMonthRegex = $@"(?<wom>(the\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th|fifth|5th|last)\s+{WeekDayRegex}\s+{MonthSuffixRegex})";
 		public static readonly string RelativeWeekDayRegex = $@"\b({WrittenNumRegex}\s+{WeekDayRegex}\s+(from\s+now|later))\b";
@@ -721,12 +721,14 @@ namespace Microsoft.Recognizers.Definitions.Dutch
 		public static readonly IList<string> PlusOneDayTerms = new List<string>
 		{
 			@"morgen",
-			@"dag na"
+			@"dag na",
+			@"volgende dag"
 		};
 		public static readonly IList<string> MinusOneDayTerms = new List<string>
 		{
 			@"gisteren",
-			@"dag voor"
+			@"dag voor",
+			@"vorige dag"
 		};
 		public static readonly IList<string> PlusTwoDayTerms = new List<string>
 		{

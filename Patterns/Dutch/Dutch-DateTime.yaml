@@ -6,9 +6,9 @@ RangeConnectorRegex : !nestedRegex
   def: (?<and>\b(and|through|to)\b|{BaseDateTime.RangeConnectorSymbolRegex})
   references: [ BaseDateTime.RangeConnectorSymbolRegex ]
 RelativeRegex: !simpleRegex
-  def: \b(?<order>dit|volgende|komende|aankomende|aanstaande|deze|huidige|aanstaande|vorig|verleden|voorgaande|vorige|laatste)\b
+  def: \b(?<order>dit|volgende|komende|aankomende|aanstaande|deze|huidige|vorig|verleden|voorgaande|vorige|laatste)\b
 StrictRelativeRegex: !simpleRegex
-  def: \b(?<order>dit|volgende|komende|aankomende|aanstaande|deze|huidige|aanstaande|vorig|verleden|voorgaande|vorige|laatste)\b
+  def: \b(?<order>dit|volgende|komende|aankomende|aanstaande|deze|huidige|vorig|verleden|voorgaande|vorige|laatste)\b
 NextPrefixRegex: !simpleRegex
   def: \b(volgende|komende|aankomende)\b
 AfterNextSuffixRegex: !simpleRegex
@@ -207,13 +207,13 @@ NextDateRegex: !nestedRegex
   def: \b({NextPrefixRegex}(\s*week(\s*,?\s*op)?)?\s+{WeekDayRegex})|((op\s+)?{WeekDayRegex}((\s+of)?\s+(the\s+following|(de\s+)?volgende)\s*week))\b
   references: [ NextPrefixRegex, WeekDayRegex ]
 SpecialDayRegex: !nestedRegex
-  def: \b(eergisteren|overmorgen|((de\s+)?({RelativeRegex}|my)\s+day)|gisteren|morgen|vandaag)\b
+  def: \b(eergisteren|overmorgen|((de\s+)?({RelativeRegex}|my)\s+dag)|gisteren|morgen|vandaag)\b
   references: [ RelativeRegex ]
 SpecialDayWithNumRegex: !nestedRegex
   def: \b((?<number>{WrittenNumRegex})\s+dagen?\s+(vanaf|voor)\s+(?<day>gisteren|morgen|vandaag))\b
   references: [ WrittenNumRegex ]
 RelativeDayRegex: !nestedRegex
-  def: \b(((the\s+)?{RelativeRegex}\s+day))\b
+  def: \b(((de\s+)?{RelativeRegex}\s+dag))\b
   references: [ RelativeRegex ]
 SetWeekDayRegex: !simpleRegex
   def: \b(?<prefix>on\s+)?(?<weekday>morning|afternoon|evening|night|Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday)s\b
@@ -1107,11 +1107,13 @@ PlusOneDayTerms: !list
   entries: 
     - morgen
     - dag na
+    - volgende dag
 MinusOneDayTerms: !list
   types: [ string ]
   entries: 
     - gisteren
     - dag voor
+    - vorige dag
 PlusTwoDayTerms: !list
   types: [ string ]
   entries: 

@@ -389,7 +389,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -755,7 +754,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -804,11 +802,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "volgende dag",
+        "Text": "de volgende dag",
         "Type": "date",
         "Value": {
           "Timex": "2016-11-08",
@@ -819,8 +816,8 @@
             "date": "2016-11-08"
           }
         },
-        "Start": 9,
-        "Length": 12
+        "Start": 6,
+        "Length": 15
       }
     ]
   },
