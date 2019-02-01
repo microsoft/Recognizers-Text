@@ -122,11 +122,11 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 if (!hasInclusiveModifier)
                 {
-                    val.Mod = Constants.BEFORE_MOD;
+                    val.Mod = CombineMod(val.Mod, Constants.BEFORE_MOD);
                 }
                 else
                 {
-                    val.Mod = Constants.UNTIL_MOD;
+                    val.Mod = CombineMod(val.Mod, Constants.UNTIL_MOD);
                 }
 
                 pr.Value = val;
@@ -141,11 +141,11 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 if (!hasInclusiveModifier)
                 {
-                    val.Mod = Constants.AFTER_MOD;
+                    val.Mod = CombineMod(val.Mod, Constants.AFTER_MOD);
                 }
                 else
                 {
-                    val.Mod = Constants.SINCE_MOD;
+                    val.Mod = CombineMod(val.Mod, Constants.SINCE_MOD);
                 }
 
                 pr.Value = val;
@@ -157,7 +157,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 pr.Start -= modStr.Length;
                 pr.Text = modStr + pr.Text;
                 var val = (DateTimeResolutionResult)pr.Value;
-                val.Mod = Constants.SINCE_MOD;
+                val.Mod = CombineMod(val.Mod, Constants.SINCE_MOD);
                 pr.Value = val;
             }
 
@@ -167,7 +167,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 pr.Start -= modStr.Length;
                 pr.Text = modStr + pr.Text;
                 var val = (DateTimeResolutionResult)pr.Value;
-                val.Mod = Constants.APPROX_MOD;
+                val.Mod = CombineMod(val.Mod, Constants.APPROX_MOD);
                 pr.Value = val;
             }
 
@@ -176,7 +176,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 pr.Length += modStr.Length;
                 pr.Text = pr.Text + modStr;
                 var val = (DateTimeResolutionResult)pr.Value;
-                val.Mod = Constants.SINCE_MOD;
+                val.Mod = CombineMod(val.Mod, Constants.SINCE_MOD);
                 pr.Value = val;
                 hasSince = true;
             }
@@ -212,6 +212,19 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             return pr;
         }
+
+        private string CombineMod(string originalMod, string newMod)
+        {
+            var combinedMod = newMod;
+
+            if (!string.IsNullOrEmpty(originalMod))
+            {
+                combinedMod = $"{newMod}-{originalMod}";
+            }
+
+            return combinedMod;
+        }
+
 
         public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)
         {
