@@ -132,7 +132,7 @@ NumberCombinedWithDateUnit: !nestedRegex
 QuarterTermRegex: !simpleRegex
   def: \b(((?<cardinal>eerste|1e|1ste|tweede|2e|2de|derde|3e|3de|vierde|4e|4de)[ -]+kwartaal)|(Q(?<number>[1-4])))\b
 QuarterRegex: !nestedRegex
-  def: (the\s+)?{QuarterTermRegex}((\s+of|\s*,\s*)?\s+({YearRegex}|{RelativeRegex}\s+jaar))?
+  def: (het\s+)?{QuarterTermRegex}((\s+of|\s*,\s*)?\s+({YearRegex}|{RelativeRegex}\s+jaar))?
   references: [ YearRegex, RelativeRegex, QuarterTermRegex ]
 QuarterRegexYearFront: !nestedRegex
   def: ({YearRegex}|{RelativeRegex}\s+jaar)('s)?\s+(the\s+)?{QuarterTermRegex}
@@ -143,10 +143,10 @@ HalfYearFrontRegex: !nestedRegex
   def: (?<jaar>((1[5-9]|20)\d{2})|2100)\s*(the\s+)?H(?<number>[1-2])
   references: [ YearRegex ]
 HalfYearBackRegex: !nestedRegex
-  def: (the\s+)?(H(?<number>[1-2])|({HalfYearTermRegex}))(\s+of|\s*,\s*)?\s+({YearRegex})
+  def: (het\s+)?(H(?<number>[1-2])|({HalfYearTermRegex}))(\s+van|\s*,\s*)?\s+({YearRegex})
   references: [ YearRegex, HalfYearTermRegex ]
 HalfYearRelativeRegex: !nestedRegex
-  def: (the\s+)?{HalfYearTermRegex}(\s+of|\s*,\s*)?\s+({RelativeRegex}\s+jaar)
+  def: (het\s+)?{HalfYearTermRegex}(\s+van|\s*,\s*)?\s+({RelativeRegex}\s+jaar)
   references: [ RelativeRegex, HalfYearTermRegex ]
 AllHalfYearRegex: !nestedRegex
   def: ({HalfYearFrontRegex})|({HalfYearBackRegex})|({HalfYearRelativeRegex})
@@ -161,7 +161,7 @@ PrefixPeriodRegex: !nestedRegex
   def: ({EarlyPrefixRegex}|{MidPrefixRegex}|{LaterPrefixRegex})
   references: [EarlyPrefixRegex, MidPrefixRegex, LaterPrefixRegex]
 PrefixDayRegex: !simpleRegex
-  def: \b((?<EarlyPrefix>early)|(?<MidPrefix>mid|middle)|(?<LatePrefix>late|later))(\s+in)?(\s+the\s+day)?$
+  def: \b((?<EarlyPrefix>eerder)|(?<MidPrefix>midden)|(?<LatePrefix>later))(\s+op)?(\s+de\s+dag)?$
 SeasonDescRegex: !simpleRegex
   def: (?<seas>lente|zomer|herfst|winter)
 SeasonRegex: !nestedRegex
