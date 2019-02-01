@@ -389,6 +389,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -429,30 +430,6 @@
         },
         "Start": 15,
         "Length": 11
-      }
-    ]
-  },
-  {
-    "Input": "Ik ga terug op 12-08-2015.",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "12-08-2015",
-        "Type": "date",
-        "Value": {
-          "Timex": "2015-08-12",
-          "FutureResolution": {
-            "date": "2015-08-12"
-          },
-          "PastResolution": {
-            "date": "2015-08-12"
-          }
-        },
-        "Length": 8,
-        "Start": 15
       }
     ]
   },
@@ -2390,6 +2367,7 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
