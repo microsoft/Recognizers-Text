@@ -26,7 +26,7 @@ class FrenchDateTimePeriodParserConfiguration(DateTimePeriodParserConfiguration)
         self._numbers = config.numbers
 
         self.next_prefix_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.NextSuffixRegex)
-        self.past_prefix_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.PastSuffixRegex)
+        self.previous_prefix_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.PastSuffixRegex)
         self.this_prefix_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.ThisPrefixRegex)
 
         self.morning_start_end_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.MorningStartEndRegex)

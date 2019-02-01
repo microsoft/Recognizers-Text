@@ -113,7 +113,7 @@ class ChineseDatePeriodParserConfiguration(DatePeriodParserConfiguration):
         return self._next_prefix_regex
 
     @property
-    def past_prefix_regex(self) -> Pattern:
+    def previous_prefix_regex(self) -> Pattern:
         return self._past_prefix_regex
 
     @property
@@ -202,7 +202,7 @@ class ChineseDatePeriodParserConfiguration(DatePeriodParserConfiguration):
             return 0
         if regex.search(self.next_prefix_regex, source):
             return 1
-        if regex.search(self.past_prefix_regex, source):
+        if regex.search(self.previous_prefix_regex, source):
             return -1
         return 0
 
