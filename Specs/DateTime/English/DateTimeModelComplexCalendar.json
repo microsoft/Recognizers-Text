@@ -8290,5 +8290,104 @@
         }
       }
     ] 
+  },
+  {
+    "Input": "Do you have any plan after mid May?",
+    "Context": {
+      "ReferenceDateTime": "2019-02-25T12:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "after mid may",
+        "Start": 21,
+        "End": 33,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-05",
+              "Mod": "after-mid",
+              "type": "daterange",
+              "start": "2018-05-10",
+              "end": "2018-05-21"
+            },
+            {
+              "timex": "XXXX-05",
+              "Mod": "after-mid",
+              "type": "daterange",
+              "start": "2019-05-10",
+              "end": "2019-05-21"
+            }
+          ]
+        }
+      }
+    ] 
+  },
+  {
+    "Input": "What happened before early September",
+    "Context": {
+      "ReferenceDateTime": "2019-02-25T12:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "before early september",
+        "Start": 14,
+        "End": 35,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-09",
+              "Mod": "before-start",
+              "type": "daterange",
+              "start": "2018-09-01",
+              "end": "2018-09-16"
+            },
+            {
+              "timex": "XXXX-09",
+              "Mod": "before-start",
+              "type": "daterange",
+              "start": "2019-09-01",
+              "end": "2019-09-16"
+            }
+          ]
+        }
+      }
+    ] 
+  },
+  {
+    "Input": "What happened since late July?",
+    "Context": {
+      "ReferenceDateTime": "2019-02-25T12:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "since late july",
+        "Start": 14,
+        "End": 28,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-07",
+              "Mod": "since-end",
+              "type": "daterange",
+              "start": "2018-07-16",
+              "end": "2018-08-01"
+            },
+            {
+              "timex": "XXXX-07",
+              "Mod": "since-end",
+              "type": "daterange",
+              "start": "2019-07-16",
+              "end": "2019-08-01"
+            }
+          ]
+        }
+      }
+    ] 
   }
 ]
