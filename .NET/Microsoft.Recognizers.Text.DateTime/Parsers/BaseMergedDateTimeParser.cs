@@ -587,25 +587,25 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 if (!string.IsNullOrEmpty(mod))
                 {
-                    if (mod.Equals(Constants.BEFORE_MOD))
+                    if (mod.StartsWith(Constants.BEFORE_MOD))
                     {
                         res.Add(DateTimeResolutionKey.END, resolutionDic[type]);
                         return;
                     }
 
-                    if (mod.Equals(Constants.AFTER_MOD))
+                    if (mod.StartsWith(Constants.AFTER_MOD))
                     {
                         res.Add(DateTimeResolutionKey.START, resolutionDic[type]);
                         return;
                     }
 
-                    if (mod.Equals(Constants.SINCE_MOD))
+                    if (mod.StartsWith(Constants.SINCE_MOD))
                     {
                         res.Add(DateTimeResolutionKey.START, resolutionDic[type]);
                         return;
                     }
 
-                    if (mod.Equals(Constants.UNTIL_MOD))
+                    if (mod.StartsWith(Constants.UNTIL_MOD))
                     {
                         res.Add(DateTimeResolutionKey.END, resolutionDic[type]);
                         return;
@@ -636,7 +636,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 // For the 'before' mod
                 // 1. Cases like "Before December", the start of the period should be the end of the new period, not the start
                 // 2. Cases like "More than 3 days before today", the date point should be the end of the new period
-                if (mod.Equals(Constants.BEFORE_MOD))
+                if (mod.StartsWith(Constants.BEFORE_MOD))
                 {
                     if (!string.IsNullOrEmpty(start) && !string.IsNullOrEmpty(end))
                     {
@@ -653,15 +653,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                 // For the 'after' mod
                 // 1. Cases like "After January", the end of the period should be the start of the new period, not the end
                 // 2. Cases like "More than 3 days after today", the date point should be the start of the new period
-                if (mod.Equals(Constants.AFTER_MOD))
+                if (mod.StartsWith(Constants.AFTER_MOD))
                 {
-                    // For cases like "After January" or "After 2018"
-                    // The "end" of the period is not inclusive by default ("January", the end should be "XXXX-02-01" / "2018", the end should be "2019-01-01")
-                    // Mod "after" is also not inclusive the "start" ("After January", the start should be "XXXX-01-31" / "After 2018", the start should be "2017-12-31")
-                    // So here the START day should be the inclusive end of the period, which is one day previous to the default end (exclusive end)
                     if (!string.IsNullOrEmpty(start) && !string.IsNullOrEmpty(end))
                     {
-                        res.Add(DateTimeResolutionKey.START, GetPreviousDay(end));
+                        res.Add(DateTimeResolutionKey.START, end);
                     }
                     else
                     {
@@ -672,14 +668,14 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
 
                 // For the 'since' mod, the start of the period should be the start of the new period, not the end
-                if (mod.Equals(Constants.SINCE_MOD))
+                if (mod.StartsWith(Constants.SINCE_MOD))
                 {
                     res.Add(DateTimeResolutionKey.START, start);
                     return;
                 }
 
                 // For the 'until' mod, the end of the period should be the end of the new period, not the start
-                if (mod.Equals(Constants.UNTIL_MOD))
+                if (mod.StartsWith(Constants.UNTIL_MOD))
                 {
                     res.Add(DateTimeResolutionKey.END, end);
                     return;
@@ -691,14 +687,6 @@ namespace Microsoft.Recognizers.Text.DateTime
                 res.Add(DateTimeResolutionKey.START, start);
                 res.Add(DateTimeResolutionKey.END, end);
             }
-        }
-
-        public string GetPreviousDay(string dateStr)
-        {
-            // Here the dateString is in standard format, so Parse should work perfectly
-            var date = DateObject.Parse(dateStr);
-            date = date.AddDays(-1);
-            return DateTimeFormatUtil.LuisDate(date);
         }
 
         internal void AddResolutionFields(Dictionary<string, string> dic, string key, string value)

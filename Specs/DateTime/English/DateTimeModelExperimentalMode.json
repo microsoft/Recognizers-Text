@@ -3755,7 +3755,7 @@
               "timex": "2018",
               "Mod": "after",
               "type": "daterange",
-              "start": "2018-12-31"
+              "start": "2019-01-01"
             }
           ]
         }
@@ -3780,7 +3780,7 @@
               "timex": "2010",
               "Mod": "after",
               "type": "daterange",
-              "start": "2010-12-31"
+              "start": "2011-01-01"
             }
           ]
         }
@@ -4242,7 +4242,7 @@
               "timex": "2018",
               "Mod": "after",
               "type": "daterange",
-              "start": "2018-12-31"
+              "start": "2019-01-01"
             }
           ]
         }
@@ -4267,7 +4267,7 @@
               "timex": "2018-02",
               "Mod": "after",
               "type": "daterange",
-              "start": "2018-02-28"
+              "start": "2018-03-01"
             }
           ]
         }
@@ -4292,13 +4292,13 @@
               "timex": "XXXX-02",
               "Mod": "after",
               "type": "daterange",
-              "start": "2018-02-28"
+              "start": "2018-03-01"
             },
             {
               "timex": "XXXX-02",
               "Mod": "after",
               "type": "daterange",
-              "start": "2019-02-28"
+              "start": "2019-03-01"
             }
           ]
         }
@@ -5482,7 +5482,7 @@
               "timex": "2012",
               "Mod": "after",
               "type": "daterange",
-              "start": "2012-12-31"
+              "start": "2013-01-01"
             }
           ]
         }
@@ -5713,7 +5713,7 @@
               "timex": "2020",
               "Mod": "after",
               "type": "daterange",
-              "start": "2020-12-31"
+              "start": "2021-01-01"
             }
           ]
         }
@@ -5738,7 +5738,7 @@
               "timex": "2018",
               "Mod": "after",
               "type": "daterange",
-              "start": "2018-12-31"
+              "start": "2019-01-01"
             }
           ]
         }
@@ -7418,15 +7418,13 @@
               "timex": "XXXX-05",
               "Mod": "after-mid",
               "type": "daterange",
-              "start": "2018-05-10",
-              "end": "2018-05-21"
+              "start": "2018-05-21"
             },
             {
               "timex": "XXXX-05",
               "Mod": "after-mid",
               "type": "daterange",
-              "start": "2019-05-10",
-              "end": "2019-05-21"
+              "start": "2019-05-21"
             }
           ]
         }
@@ -7451,15 +7449,13 @@
               "timex": "XXXX-09",
               "Mod": "before-start",
               "type": "daterange",
-              "start": "2018-09-01",
-              "end": "2018-09-16"
+              "end": "2018-09-01"
             },
             {
               "timex": "XXXX-09",
               "Mod": "before-start",
               "type": "daterange",
-              "start": "2019-09-01",
-              "end": "2019-09-16"
+              "end": "2019-09-01"
             }
           ]
         }
@@ -7484,15 +7480,13 @@
               "timex": "XXXX-07",
               "Mod": "since-end",
               "type": "daterange",
-              "start": "2018-07-16",
-              "end": "2018-08-01"
+              "start": "2018-07-16"
             },
             {
               "timex": "XXXX-07",
               "Mod": "since-end",
               "type": "daterange",
-              "start": "2019-07-16",
-              "end": "2019-08-01"
+              "start": "2019-07-16"
             }
           ]
         }
