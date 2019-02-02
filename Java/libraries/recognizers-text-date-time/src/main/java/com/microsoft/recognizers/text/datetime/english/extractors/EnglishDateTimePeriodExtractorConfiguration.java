@@ -128,7 +128,7 @@ public class EnglishDateTimePeriodExtractorConfiguration extends BaseOptionsConf
 
     @Override
     public Pattern getPastPrefixRegex() {
-        return EnglishDatePeriodExtractorConfiguration.PastPrefixRegex;
+        return EnglishDatePeriodExtractorConfiguration.PreviousPrefixRegex;
     }
 
     @Override

@@ -79,7 +79,7 @@ class EnglishDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfigu
         return self._time_unit_regex
 
     @property
-    def past_prefix_regex(self) -> Pattern:
+    def previous_prefix_regex(self) -> Pattern:
         return self._past_prefix_regex
 
     @property
@@ -121,7 +121,7 @@ class EnglishDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfigu
         self._followed_unit = RegExpUtility.get_safe_reg_exp(EnglishDateTime.TimeFollowedUnit)
         self._number_combined_with_unit = RegExpUtility.get_safe_reg_exp(EnglishDateTime.TimeNumberCombinedWithUnit)
         self._time_unit_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.TimeUnitRegex)
-        self._past_prefix_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.PastPrefixRegex)
+        self._past_prefix_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.PreviousPrefixRegex)
         self._next_prefix_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.NextPrefixRegex)
         self._relative_time_unit_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.RelativeTimeUnitRegex)
         self._rest_of_date_time_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.RestOfDateTimeRegex)

@@ -532,7 +532,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
                 }
 
-                match = this.config.PastPrefixRegex.Match(beforeStr);
+                match = this.config.PreviousPrefixRegex.Match(beforeStr);
                 var index = -1;
                 if (match.Success && string.IsNullOrWhiteSpace(beforeStr.Substring(match.Index + match.Length)))
                 {
@@ -578,7 +578,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var matchDateUnit = this.config.DateUnitRegex.Match(afterStr);
                 if (!matchDateUnit.Success)
                 {
-                    match = this.config.PastPrefixRegex.Match(afterStr);
+                    match = this.config.PreviousPrefixRegex.Match(afterStr);
                     if (match.Success && string.IsNullOrWhiteSpace(afterStr.Substring(0, match.Index)))
                     {
                         ret.Add(new Token(duration.Start, duration.Start + duration.Length + match.Index + match.Length));

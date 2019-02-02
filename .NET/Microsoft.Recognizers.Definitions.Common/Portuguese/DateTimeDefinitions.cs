@@ -450,8 +450,10 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
 		public const string TimeTokenPrefix = @"as ";
 		public const string TokenBeforeDate = @"o ";
 		public const string TokenBeforeTime = @"as ";
-		public const string NextPrefixRegex = @"(pr[oó]xim[oa]|seguinte)\b";
-		public const string PastPrefixRegex = @"([uú]ltim[oa])\b";
+		public const string UpcomingPrefixRegex = @".^";
+		public static readonly string NextPrefixRegex = $@"(pr[oó]xim[oa]|seguinte|{UpcomingPrefixRegex})\b";
+		public const string PastPrefixRegex = @".^";
+		public static readonly string PreviousPrefixRegex = $@"([uú]ltim[oa]|{PastPrefixRegex})\b";
 		public const string ThisPrefixRegex = @"([nd]?es[st][ea])\b";
 		public const string RelativeDayRegex = @"^[\.]";
 		public const string RestOfDateRegex = @"^[\.]";

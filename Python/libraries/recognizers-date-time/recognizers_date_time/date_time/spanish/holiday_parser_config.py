@@ -30,7 +30,7 @@ class SpanishHolidayParserConfiguration(BaseHolidayParserConfiguration):
         self._variable_holidays_timex_dictionary = SpanishDateTime.VariableHolidaysTimexDictionary
 
         self.next_prefix_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.NextPrefixRegex)
-        self.past_prefix_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.PastPrefixRegex)
+        self.previous_prefix_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.PreviousPrefixRegex)
         self.this_prefix_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.ThisPrefixRegex)
 
     def _init_holiday_funcs(self) -> Dict[str, Callable[[int], datetime]]:
@@ -98,7 +98,7 @@ class SpanishHolidayParserConfiguration(BaseHolidayParserConfiguration):
         if self.next_prefix_regex.search(trimmed_text):
             swift = 1
 
-        if self.past_prefix_regex.search(trimmed_text):
+        if self.previous_prefix_regex.search(trimmed_text):
             swift = -1
 
         if self.this_prefix_regex.search(trimmed_text):

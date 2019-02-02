@@ -806,9 +806,15 @@ public class PortugueseDateTime {
 
     public static final String TokenBeforeTime = "as ";
 
-    public static final String NextPrefixRegex = "(pr[oó]xim[oa]|seguinte)\\b";
+    public static final String UpcomingPrefixRegex = ".^";
 
-    public static final String PastPrefixRegex = "([uú]ltim[oa])\\b";
+    public static final String NextPrefixRegex = "(pr[oó]xim[oa]|seguinte|{UpcomingPrefixRegex})\\b"
+            .replace("{UpcomingPrefixRegex}", UpcomingPrefixRegex);
+
+    public static final String PastPrefixRegex = ".^";
+
+    public static final String PreviousPrefixRegex = "([uú]ltim[oa]|{PastPrefixRegex})\\b"
+            .replace("{PastPrefixRegex}", PastPrefixRegex);
 
     public static final String ThisPrefixRegex = "([nd]?es[st][ea])\\b";
 

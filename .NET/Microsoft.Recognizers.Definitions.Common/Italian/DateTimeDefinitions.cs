@@ -68,8 +68,10 @@ namespace Microsoft.Recognizers.Definitions.Italian
 		public static readonly string WeekDayOfMonthRegex = $@"(?<wom>(la\s+)?(?<cardinal>prima|seconda|terza|quarta|quinta|ultima)\s+{WeekDayRegex}\s+{MonthSuffixRegex})";
 		public const string RelativeWeekDayRegex = @"^[.]";
 		public const string NumberEndingPattern = @"^[.]";
-		public const string NextPrefixRegex = @"^[.]";
-		public const string PastPrefixRegex = @"^[.]";
+		public const string UpcomingPrefixRegex = @".^";
+		public const string NextPrefixRegex = @".^";
+		public const string PastPrefixRegex = @".^";
+		public const string PreviousPrefixRegex = @".^";
 		public static readonly string SpecialDate = $@"(?=\b(di|al)\s+il\s+){DayRegex}\b";
 		public static readonly string DateExtractor1 = $@"\b({WeekDayRegex}(\s+|\s*,\s*))?{MonthRegex}\s*[/\\\.\-]?\s*{DayRegex}\b";
 		public static readonly string DateExtractor2 = $@"\b({WeekDayRegex}(\s+|\s*,\s*))?{DayRegex}(\s+|\s*,\s*|\s+){MonthRegex}\s*[\.\-]?\s*{DateYearRegex}\b";

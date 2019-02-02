@@ -1,0 +1,181 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.Recognizers.Text.Number</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.Recognizers.Text.Number.Chinese.ChineseNumberExtractorMode">
+            <summary>
+            These modes only apply to ChineseNumberExtractor.
+            The default more urilizes an allow list to avoid extracting numbers in ambiguous/undesired combinations of Chinese ideograms.
+            ExtractAll mode is to be used in cases where extraction should be more aggressive (e.g. in Units extraction).
+            </summary>
+        </member>
+        <member name="F:Microsoft.Recognizers.Text.Number.Chinese.ChineseNumberExtractorMode.Default">
+            <summary>
+            Number extraction with an allow list that filters what numbers to extract.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Recognizers.Text.Number.Chinese.ChineseNumberExtractorMode.ExtractAll">
+            <summary>
+            Extract all number-related terms aggressively.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Recognizers.Text.Number.BasePercentageExtractor.Extract(System.String)">
+            <summary>
+            extractor the percentage entities from the sentence.
+            </summary>
+            <param name="source">sentence.</param>
+            <returns>List of percentage entities from the sentence source.</returns>
+        </member>
+        <member name="M:Microsoft.Recognizers.Text.Number.BasePercentageExtractor.BuildRegexes(System.Collections.Generic.HashSet{System.String},System.Boolean)">
+            <summary>
+            read the rules.
+            </summary>
+            <param name="regexStrs">rule list.</param>
+            <param name="ignoreCase">.</param>
+            <returns>Immutable HashSet of regex.</returns>
+        </member>
+        <member name="M:Microsoft.Recognizers.Text.Number.BasePercentageExtractor.PostProcessing(System.Collections.Generic.List{Microsoft.Recognizers.Text.ExtractResult},System.String,System.Collections.Generic.Dictionary{System.Int32,System.Int32},System.Collections.Generic.IList{Microsoft.Recognizers.Text.ExtractResult})">
+            <summary>
+            replace the @sys.num to the real patterns, directly modifies the ExtractResult.
+            </summary>
+            <param name="results">extract results after number extractor.</param>
+            <param name="originSource">the sentence after replacing the @sys.num, Example: @sys.num %.</param>
+        </member>
+        <member name="M:Microsoft.Recognizers.Text.Number.BasePercentageExtractor.PreprocessStrWithNumberExtracted(System.String,System.Collections.Generic.Dictionary{System.Int32,System.Int32}@,System.Collections.Generic.IList{Microsoft.Recognizers.Text.ExtractResult}@)">
+            <summary>
+            get the number extractor results and convert the extracted numbers to @sys.num, so that the regexes can work.
+            </summary>
+            <param name="str">sentence to process.</param>
+            <param name="positionMap">position Map.</param>
+            <param name="numExtResults">number extractor result.</param>
+            <returns>return according type "builtin.num" or "builtin.num.percentage".</returns>
+        </member>
+        <member name="F:Microsoft.Recognizers.Text.Number.Japanese.JapaneseNumberExtractorMode.Default">
+            <summary>
+            Number extraction with an allow list that filters what numbers to extract.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Recognizers.Text.Number.Japanese.JapaneseNumberExtractorMode.ExtractAll">
+            <summary>
+            Extract all number-related terms aggressively.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Recognizers.Text.Number.Korean.KoreanNumberExtractorMode">
+            <summary>
+            These modes can be applied to KoreanNumberExtractor.
+            The default more urilizes an allow list to avoid extracting numbers in ambiguous/undesired combinations of Korean ideograms.
+            --> such as "십이지장(十二指腸)" is organ name(duodenum, part of small intestine) in Korean, should not be extracted.
+            ExtractAll mode is to be used in cases where extraction should be more aggressive (e.g. in Units extraction).
+            </summary>
+        </member>
+        <member name="F:Microsoft.Recognizers.Text.Number.Korean.KoreanNumberExtractorMode.Default">
+            <summary>
+            Number extraction with an allow list that filters what numbers to extract.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Recognizers.Text.Number.Korean.KoreanNumberExtractorMode.ExtractAll">
+            <summary>
+            Extract all number-related terms aggressively.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Recognizers.Text.Number.NumberMode.Default">
+            <summary>
+            Default is for datetime
+            </summary>
+        </member>
+        <member name="F:Microsoft.Recognizers.Text.Number.NumberMode.Unit">
+            <summary>
+            Unit is for unit
+            </summary>
+        </member>
+        <member name="F:Microsoft.Recognizers.Text.Number.NumberMode.Currency">
+            <summary>
+            Add 67.5 billion and million support.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Recognizers.Text.Number.NumberMode.PureNumber">
+            <summary>
+            Don't extract number from cases like 16ml
+            </summary>
+        </member>
+        <member name="F:Microsoft.Recognizers.Text.Number.NumberOptions.None">
+            <summary>
+            Represents None
+            </summary>
+        </member>
+        <member name="F:Microsoft.Recognizers.Text.Number.NumberOptions.PercentageMode">
+            <summary>
+            Represents PercentageMode
+            </summary>
+        </member>
+        <member name="F:Microsoft.Recognizers.Text.Number.NumberOptions.ExperimentalMode">
+            <summary>
+            Represents ExperimentalMode
+            </summary>
+        </member>
+        <member name="F:Microsoft.Recognizers.Text.Number.NumberOptions.EnablePreview">
+            <summary>
+            Represents Ordinal EnablePreview
+            </summary>
+        </member>
+        <member name="F:Microsoft.Recognizers.Text.Number.AgnosticNumberParserType.Cardinal">
+            <summary>
+            Type Cardinal
+            </summary>
+        </member>
+        <member name="F:Microsoft.Recognizers.Text.Number.AgnosticNumberParserType.Double">
+            <summary>
+            type Double
+            </summary>
+        </member>
+        <member name="F:Microsoft.Recognizers.Text.Number.AgnosticNumberParserType.Fraction">
+            <summary>
+            Type Fraction
+            </summary>
+        </member>
+        <member name="F:Microsoft.Recognizers.Text.Number.AgnosticNumberParserType.Integer">
+            <summary>
+            Type Integer
+            </summary>
+        </member>
+        <member name="F:Microsoft.Recognizers.Text.Number.AgnosticNumberParserType.Number">
+            <summary>
+            Type Number
+            </summary>
+        </member>
+        <member name="F:Microsoft.Recognizers.Text.Number.AgnosticNumberParserType.Ordinal">
+            <summary>
+            Tyoe Ordinal
+            </summary>
+        </member>
+        <member name="F:Microsoft.Recognizers.Text.Number.AgnosticNumberParserType.Percentage">
+            <summary>
+            Type Percentage
+            </summary>
+        </member>
+        <member name="M:Microsoft.Recognizers.Text.Number.BaseNumberParser.DigitNumberParse(Microsoft.Recognizers.Text.ExtractResult)">
+            <summary>
+            Precondition: ExtResult must have arabic numerals.
+            </summary>
+            <param name="extResult">input arabic number.</param>
+            <returns>parsed result.</returns>
+        </member>
+        <member name="M:Microsoft.Recognizers.Text.Number.INumberParserConfiguration.NormalizeTokenSet(System.Collections.Generic.IEnumerable{System.String},Microsoft.Recognizers.Text.ParseResult)">
+            <summary>
+            Used when requiring to normalize a token to a valid expression supported by the ImmutableDictionaries (language dictionaries).
+            </summary>
+            <param name="tokens">list of tokens to normalize.</param>
+            <param name="context">context of the call.</param>
+            <returns>list of normalized tokens.</returns>
+        </member>
+        <member name="M:Microsoft.Recognizers.Text.Number.INumberParserConfiguration.ResolveCompositeNumber(System.String)">
+            <summary>
+            Used when requiring to convert a string to a valid number supported by the language.
+            </summary>
+            <param name="numberStr">composite number.</param>
+            <returns>value of the string.</returns>
+        </member>
+    </members>
+</doc>

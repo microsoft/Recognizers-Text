@@ -15,7 +15,7 @@ class EnglishDateTimePeriodParserConfiguration(DateTimePeriodParserConfiguration
         self._pure_number_between_and_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.PureNumBetweenAnd)
         self._period_time_of_day_with_date_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.PeriodTimeOfDayWithDateRegex)
         self._specific_time_of_day_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.SpecificTimeOfDayRegex)
-        self._past_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.PastPrefixRegex)
+        self._past_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.PreviousPrefixRegex)
         self._future_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.NextPrefixRegex)
         self._relative_time_unit_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.RelativeTimeUnitRegex)
         self._rest_of_date_time_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.RestOfDateTimeRegex)

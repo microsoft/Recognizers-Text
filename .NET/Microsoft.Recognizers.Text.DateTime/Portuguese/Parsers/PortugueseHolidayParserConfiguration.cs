@@ -26,7 +26,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
                 swift = 1;
             }
 
-            if (PortugueseDatePeriodParserConfiguration.PastPrefixRegex.IsMatch(trimmedText))
+            if (PortugueseDatePeriodParserConfiguration.PreviousPrefixRegex.IsMatch(trimmedText))
             {
                 swift = -1;
             }

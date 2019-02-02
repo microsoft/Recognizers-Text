@@ -129,7 +129,7 @@ export class FrenchDatePeriodParserConfiguration implements IDatePeriodParserCon
     readonly unitMap: ReadonlyMap<string, string>;
 
     readonly nextPrefixRegex: RegExp;
-    readonly pastPrefixRegex: RegExp;
+    readonly previousPrefixRegex: RegExp;
     readonly thisPrefixRegex: RegExp;
     readonly numberCombinedWithUnit: RegExp;
     readonly laterEarlyPeriodRegex: RegExp;
@@ -171,7 +171,7 @@ export class FrenchDatePeriodParserConfiguration implements IDatePeriodParserCon
         this.unspecificEndOfRangeRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.UnspecificEndOfRangeRegex);
 
         this.nextPrefixRegex = RegExpUtility.getSafeRegExp("(prochain|prochaine)\b");
-        this.pastPrefixRegex = RegExpUtility.getSafeRegExp("(dernier)\b");
+        this.previousPrefixRegex = RegExpUtility.getSafeRegExp("(dernier)\b");
         this.thisPrefixRegex = RegExpUtility.getSafeRegExp("(ce|cette)\b");
 
         this.inConnectorRegex = config.utilityConfiguration.inConnectorRegex;

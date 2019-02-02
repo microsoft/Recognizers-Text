@@ -321,7 +321,7 @@ public class SpanishDateTimePeriodParserConfiguration extends BaseOptionsConfigu
 
         String trimmedText = text.trim().toLowerCase();
 
-        Pattern regex = Pattern.compile(SpanishDateTime.PastPrefixRegex);
+        Pattern regex = Pattern.compile(SpanishDateTime.PreviousPrefixRegex);
         Matcher regexMatcher = regex.matcher(trimmedText);
 
         int swift = 0;
