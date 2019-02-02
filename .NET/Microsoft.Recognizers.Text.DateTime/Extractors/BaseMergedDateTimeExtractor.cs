@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
+
+using Microsoft.Recognizers.Definitions.English;
 using Microsoft.Recognizers.Text.Matcher;
 using DateObject = System.DateTime;
 
@@ -10,6 +12,8 @@ namespace Microsoft.Recognizers.Text.DateTime
     public class BaseMergedDateTimeExtractor : IDateTimeExtractor
     {
         private readonly IMergedExtractorConfiguration config;
+
+        private static readonly Regex ffast = new Regex(DateTimeDefinitions.FailFastRegex, RegexOptions.Singleline | RegexOptions.Compiled);
 
         public BaseMergedDateTimeExtractor(IMergedExtractorConfiguration config)
         {
@@ -24,6 +28,11 @@ namespace Microsoft.Recognizers.Text.DateTime
         public List<ExtractResult> Extract(string text, DateObject reference)
         {
             var ret = new List<ExtractResult>();
+
+            if (!ffast.IsMatch(text))
+            {
+                return ret;
+            }
 
             var originText = text;
             List<MatchResult<string>> superfluousWordMatches = null;
