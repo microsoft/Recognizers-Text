@@ -88,7 +88,6 @@ namespace SimpleConsole
 
                 // Datetime recognizer This model will find any Date even if its write in colloquial language
                 // E.g "I'll go back 8pm today" will return "2017-10-04 20:00:00"
-                // DateTimeRecognizer.RecognizeDateTime(query, culture),
                 DateTimeRecognizer.RecognizeDateTime(query, culture),
 
                 // PhoneNumber recognizer will find any phone number presented
