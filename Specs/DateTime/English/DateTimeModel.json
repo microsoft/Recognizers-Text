@@ -9621,6 +9621,30 @@
     ] 
   },
   {
+    "Input": "Do you have any arrangement on following Friday?",
+    "Context": {
+      "ReferenceDateTime": "2019-01-31T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "following friday",
+        "Start": 31,
+        "End": 46,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-02-08",
+              "type": "date",
+              "value": "2019-02-08"
+            }
+          ]
+        }
+      }
+    ] 
+  },
+  {
     "Input": "Do you have any arrangement on coming Thursday?",
     "Context": {
       "ReferenceDateTime": "2019-01-31T00:00:00"

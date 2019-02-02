@@ -21,8 +21,8 @@ namespace Microsoft.Recognizers.Definitions.English
 		public static readonly string RangeConnectorRegex = $@"(?<and>\b(and|through|to)\b|{BaseDateTime.RangeConnectorSymbolRegex})";
 		public const string RelativeRegex = @"\b(?<order>following|next|coming|upcoming|this|last|past|previous|current|the)\b";
 		public const string StrictRelativeRegex = @"\b(?<order>following|next|coming|upcoming|this|last|past|previous|current)\b";
-		public const string UpcomingPrefixRegex = @"((this )?(following|upcoming|coming))";
-		public static readonly string NextPrefixRegex = $@"\b(next|{UpcomingPrefixRegex})\b";
+		public const string UpcomingPrefixRegex = @"((this )?(upcoming|coming))";
+		public static readonly string NextPrefixRegex = $@"\b(following|next|{UpcomingPrefixRegex})\b";
 		public const string AfterNextSuffixRegex = @"\b(after\s+(the\s+)?next)\b";
 		public const string PastPrefixRegex = @"((this )?past)\b";
 		public static readonly string PreviousPrefixRegex = $@"(last|previous|{PastPrefixRegex})\b";

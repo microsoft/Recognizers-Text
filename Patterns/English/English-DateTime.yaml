@@ -10,9 +10,9 @@ RelativeRegex: !simpleRegex
 StrictRelativeRegex: !simpleRegex
   def: \b(?<order>following|next|coming|upcoming|this|last|past|previous|current)\b
 UpcomingPrefixRegex: !simpleRegex
-  def: ((this )?(following|upcoming|coming))
+  def: ((this )?(upcoming|coming))
 NextPrefixRegex: !nestedRegex
-  def: \b(next|{UpcomingPrefixRegex})\b
+  def: \b(following|next|{UpcomingPrefixRegex})\b
   references: [ UpcomingPrefixRegex ]
 # We make "next" and "upcoming" separately as when parsing, some behaviours are different
 # "next Friday" might be different from "upcoming Friday"

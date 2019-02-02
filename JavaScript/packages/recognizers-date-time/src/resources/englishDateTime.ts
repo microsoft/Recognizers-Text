@@ -12,8 +12,8 @@ export namespace EnglishDateTime {
 	export const RangeConnectorRegex = `(?<and>\\b(and|through|to)\\b|${BaseDateTime.RangeConnectorSymbolRegex})`;
 	export const RelativeRegex = `\\b(?<order>following|next|coming|upcoming|this|last|past|previous|current|the)\\b`;
 	export const StrictRelativeRegex = `\\b(?<order>following|next|coming|upcoming|this|last|past|previous|current)\\b`;
-	export const UpcomingPrefixRegex = `((this )?(following|upcoming|coming))`;
-	export const NextPrefixRegex = `\\b(next|${UpcomingPrefixRegex})\\b`;
+	export const UpcomingPrefixRegex = `((this )?(upcoming|coming))`;
+	export const NextPrefixRegex = `\\b(following|next|${UpcomingPrefixRegex})\\b`;
 	export const AfterNextSuffixRegex = `\\b(after\\s+(the\\s+)?next)\\b`;
 	export const PastPrefixRegex = `((this )?past)\\b`;
 	export const PreviousPrefixRegex = `(last|previous|${PastPrefixRegex})\\b`;

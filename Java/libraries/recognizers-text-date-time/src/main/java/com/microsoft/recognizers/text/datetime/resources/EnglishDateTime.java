@@ -26,9 +26,9 @@ public class EnglishDateTime {
 
     public static final String StrictRelativeRegex = "\\b(?<order>following|next|coming|upcoming|this|last|past|previous|current)\\b";
 
-    public static final String UpcomingPrefixRegex = "((this )?(following|upcoming|coming))";
+    public static final String UpcomingPrefixRegex = "((this )?(upcoming|coming))";
 
-    public static final String NextPrefixRegex = "\\b(next|{UpcomingPrefixRegex})\\b"
+    public static final String NextPrefixRegex = "\\b(following|next|{UpcomingPrefixRegex})\\b"
             .replace("{UpcomingPrefixRegex}", UpcomingPrefixRegex);
 
     public static final String AfterNextSuffixRegex = "\\b(after\\s+(the\\s+)?next)\\b";
