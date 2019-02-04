@@ -605,9 +605,13 @@ public class FrenchDateTime {
 
     public static final String ReferenceDatePeriodRegex = "^[.]";
 
-    public static final String NextPrefixRegex = "^[\\.]";
+    public static final String UpcomingPrefixRegex = ".^";
 
-    public static final String PastPrefixRegex = "^[\\.]";
+    public static final String NextPrefixRegex = ".^";
+
+    public static final String PastPrefixRegex = ".^";
+
+    public static final String PreviousPrefixRegex = ".^";
 
     public static final String RelativeDayRegex = "^[\\.]";
 
@@ -635,6 +639,12 @@ public class FrenchDateTime {
     public static final String WeekDayAndDayOfMonthRegex = "\\b{WeekDayRegex}\\s+(le\\s+{FlexibleDayRegex})\\b"
             .replace("{WeekDayRegex}", WeekDayRegex)
             .replace("{FlexibleDayRegex}", FlexibleDayRegex);
+
+    public static final String WeekDayAndDayRegex = "\\b{WeekDayRegex}\\s+(?!(the)){DayRegex}(?!([-]|(\\s+({AmDescRegex}|{PmDescRegex}))))\\b"
+            .replace("{WeekDayRegex}", WeekDayRegex)
+            .replace("{DayRegex}", DayRegex)
+            .replace("{AmDescRegex}", AmDescRegex)
+            .replace("{PmDescRegex}", PmDescRegex);
 
     public static final String RestOfDateRegex = "\\b(reste|fin)\\s+(d[eu]\\s+)?((le|cette|ce)\\s+)?(?<duration>semaine|mois|l'ann[ée]e)\\b";
 

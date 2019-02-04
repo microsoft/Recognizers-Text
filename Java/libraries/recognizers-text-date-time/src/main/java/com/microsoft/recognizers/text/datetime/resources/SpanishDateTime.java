@@ -171,6 +171,8 @@ public class SpanishDateTime {
 
     public static final String WeekDayAndDayOfMonthRegex = "^[.]";
 
+    public static final String WeekDayAndDayRegex = "^[.]";
+
     public static final String WeekDayOfMonthRegex = "(?<wom>(el\\s+)?(?<cardinal>primer|1er|segundo|2do|tercer|3er|cuarto|4to|quinto|5to|[uú]ltimo)\\s+{WeekDayRegex}\\s+{MonthSuffixRegex})"
             .replace("{WeekDayRegex}", WeekDayRegex)
             .replace("{MonthSuffixRegex}", MonthSuffixRegex);
@@ -796,9 +798,15 @@ public class SpanishDateTime {
 
     public static final String TokenBeforeTime = "la ";
 
-    public static final String NextPrefixRegex = "(pr[oó]xim[oa]|siguiente)\\b";
+    public static final String UpcomingPrefixRegex = ".^";
 
-    public static final String PastPrefixRegex = "([uú]ltim[oa])\\b";
+    public static final String NextPrefixRegex = "(pr[oó]xim[oa]|siguiente|{UpcomingPrefixRegex})\\b"
+            .replace("{UpcomingPrefixRegex}", UpcomingPrefixRegex);
+
+    public static final String PastPrefixRegex = ".^";
+
+    public static final String PreviousPrefixRegex = "([uú]ltim[oa]|{PastPrefixRegex})\\b"
+            .replace("{PastPrefixRegex}", PastPrefixRegex);
 
     public static final String ThisPrefixRegex = "(est[ea])\\b";
 

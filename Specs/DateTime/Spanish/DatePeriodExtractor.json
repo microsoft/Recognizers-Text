@@ -530,10 +530,10 @@
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de ene",
+        "Text": "el mes de ene",
         "Type": "daterange",
-        "Start": 19,
-        "Length": 10
+        "Start": 16,
+        "Length": 13
       }
     ]
   },
@@ -542,10 +542,10 @@
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de ene",
+        "Text": "el mes de ene",
         "Type": "daterange",
-        "Start": 16,
-        "Length": 10
+        "Start": 13,
+        "Length": 13
       }
     ]
   },
@@ -602,10 +602,10 @@
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de feb",
+        "Text": "el mes de feb",
         "Type": "daterange",
-        "Start": 19,
-        "Length": 10
+        "Start": 16,
+        "Length": 13
       }
     ]
   },
@@ -614,10 +614,10 @@
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de feb",
+        "Text": "el mes de feb",
         "Type": "daterange",
-        "Start": 16,
-        "Length": 10
+        "Start": 13,
+        "Length": 13
       }
     ]
   },
@@ -674,10 +674,10 @@
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de mar",
+        "Text": "el mes de mar",
         "Type": "daterange",
-        "Start": 19,
-        "Length": 10
+        "Start": 16,
+        "Length": 13
       }
     ]
   },
@@ -686,10 +686,10 @@
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de mar",
+        "Text": "el mes de mar",
         "Type": "daterange",
-        "Start": 16,
-        "Length": 10
+        "Start": 13,
+        "Length": 13
       }
     ]
   },
@@ -746,10 +746,10 @@
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de abr",
+        "Text": "el mes de abr",
         "Type": "daterange",
-        "Start": 19,
-        "Length": 10
+        "Start": 16,
+        "Length": 13
       }
     ]
   },
@@ -758,10 +758,10 @@
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de abr",
+        "Text": "el mes de abr",
         "Type": "daterange",
-        "Start": 16,
-        "Length": 10
+        "Start": 13,
+        "Length": 13
       }
     ]
   },
@@ -818,10 +818,10 @@
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de mayo",
+        "Text": "el mes de mayo",
         "Type": "daterange",
-        "Start": 19,
-        "Length": 11
+        "Start": 16,
+        "Length": 14
       }
     ]
   },
@@ -830,10 +830,10 @@
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de mayo",
+        "Text": "el mes de mayo",
         "Type": "daterange",
-        "Start": 16,
-        "Length": 11
+        "Start": 13,
+        "Length": 14
       }
     ]
   },
@@ -890,10 +890,10 @@
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de jun",
+        "Text": "el mes de jun",
         "Type": "daterange",
-        "Start": 19,
-        "Length": 10
+        "Start": 16,
+        "Length": 13
       }
     ]
   },
@@ -902,10 +902,10 @@
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de jun",
+        "Text": "el mes de jun",
         "Type": "daterange",
-        "Start": 16,
-        "Length": 10
+        "Start": 13,
+        "Length": 13
       }
     ]
   },
@@ -962,10 +962,10 @@
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de jul",
+        "Text": "el mes de jul",
         "Type": "daterange",
-        "Start": 19,
-        "Length": 10
+        "Start": 16,
+        "Length": 13
       }
     ]
   },
@@ -974,10 +974,10 @@
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de jul",
+        "Text": "el mes de jul",
         "Type": "daterange",
-        "Start": 16,
-        "Length": 10
+        "Start": 13,
+        "Length": 13
       }
     ]
   },
@@ -1034,10 +1034,10 @@
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de ago",
+        "Text": "el mes de ago",
         "Type": "daterange",
-        "Start": 19,
-        "Length": 10
+        "Start": 16,
+        "Length": 13
       }
     ]
   },
@@ -1046,10 +1046,10 @@
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de ago",
+        "Text": "el mes de ago",
         "Type": "daterange",
-        "Start": 16,
-        "Length": 10
+        "Start": 13,
+        "Length": 13
       }
     ]
   },
@@ -1106,10 +1106,10 @@
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de sept",
+        "Text": "el mes de sept",
         "Type": "daterange",
-        "Start": 19,
-        "Length": 11
+        "Start": 16,
+        "Length": 14
       }
     ]
   },
@@ -1118,10 +1118,10 @@
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de sept",
+        "Text": "el mes de sept",
         "Type": "daterange",
-        "Start": 16,
-        "Length": 11
+        "Start": 13,
+        "Length": 14
       }
     ]
   },
@@ -1178,10 +1178,10 @@
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de sep",
+        "Text": "el mes de sep",
         "Type": "daterange",
-        "Start": 19,
-        "Length": 10
+        "Start": 16,
+        "Length": 13
       }
     ]
   },
@@ -1190,10 +1190,10 @@
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de sep",
+        "Text": "el mes de sep",
         "Type": "daterange",
-        "Start": 16,
-        "Length": 10
+        "Start": 13,
+        "Length": 13
       }
     ]
   },
@@ -1250,10 +1250,10 @@
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de oct",
+        "Text": "el mes de oct",
         "Type": "daterange",
-        "Start": 19,
-        "Length": 10
+        "Start": 16,
+        "Length": 13
       }
     ]
   },
@@ -1262,10 +1262,10 @@
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de oct",
+        "Text": "el mes de oct",
         "Type": "daterange",
-        "Start": 16,
-        "Length": 10
+        "Start": 13,
+        "Length": 13
       }
     ]
   },
@@ -1322,10 +1322,10 @@
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de nov",
+        "Text": "el mes de nov",
         "Type": "daterange",
-        "Start": 19,
-        "Length": 10
+        "Start": 16,
+        "Length": 13
       }
     ]
   },
@@ -1334,10 +1334,10 @@
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de nov",
+        "Text": "el mes de nov",
         "Type": "daterange",
-        "Start": 16,
-        "Length": 10
+        "Start": 13,
+        "Length": 13
       }
     ]
   },
@@ -1394,10 +1394,10 @@
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de dic",
+        "Text": "el mes de dic",
         "Type": "daterange",
-        "Start": 19,
-        "Length": 10
+        "Start": 16,
+        "Length": 13
       }
     ]
   },
@@ -1406,10 +1406,10 @@
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de dic",
+        "Text": "el mes de dic",
         "Type": "daterange",
-        "Start": 16,
-        "Length": 10
+        "Start": 13,
+        "Length": 13
       }
     ]
   },
@@ -1466,10 +1466,10 @@
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de enero",
+        "Text": "el mes de enero",
         "Type": "daterange",
-        "Start": 19,
-        "Length": 12
+        "Start": 16,
+        "Length": 15
       }
     ]
   },
@@ -1478,10 +1478,10 @@
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de enero",
+        "Text": "el mes de enero",
         "Type": "daterange",
-        "Start": 16,
-        "Length": 12
+        "Start": 13,
+        "Length": 15
       }
     ]
   },
@@ -1538,10 +1538,10 @@
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de febrero",
+        "Text": "el mes de febrero",
         "Type": "daterange",
-        "Start": 19,
-        "Length": 14
+        "Start": 16,
+        "Length": 17
       }
     ]
   },
@@ -1550,10 +1550,10 @@
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de febrero",
+        "Text": "el mes de febrero",
         "Type": "daterange",
-        "Start": 16,
-        "Length": 14
+        "Start": 13,
+        "Length": 17
       }
     ]
   },
@@ -1610,10 +1610,10 @@
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de marzo",
+        "Text": "el mes de marzo",
         "Type": "daterange",
-        "Start": 19,
-        "Length": 12
+        "Start": 16,
+        "Length": 15
       }
     ]
   },
@@ -1622,10 +1622,10 @@
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de marzo",
+        "Text": "el mes de marzo",
         "Type": "daterange",
-        "Start": 16,
-        "Length": 12
+        "Start": 13,
+        "Length": 15
       }
     ]
   },
@@ -1682,10 +1682,10 @@
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de junio",
+        "Text": "el mes de junio",
         "Type": "daterange",
-        "Start": 19,
-        "Length": 12
+        "Start": 16,
+        "Length": 15
       }
     ]
   },
@@ -1694,10 +1694,10 @@
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de junio",
+        "Text": "el mes de junio",
         "Type": "daterange",
-        "Start": 16,
-        "Length": 12
+        "Start": 13,
+        "Length": 15
       }
     ]
   },
@@ -1754,10 +1754,10 @@
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de julio",
+        "Text": "el mes de julio",
         "Type": "daterange",
-        "Start": 19,
-        "Length": 12
+        "Start": 16,
+        "Length": 15
       }
     ]
   },
@@ -1766,10 +1766,10 @@
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de julio",
+        "Text": "el mes de julio",
         "Type": "daterange",
-        "Start": 16,
-        "Length": 12
+        "Start": 13,
+        "Length": 15
       }
     ]
   },
@@ -1826,10 +1826,10 @@
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de agosto",
+        "Text": "el mes de agosto",
         "Type": "daterange",
-        "Start": 19,
-        "Length": 13
+        "Start": 16,
+        "Length": 16
       }
     ]
   },
@@ -1838,10 +1838,10 @@
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de agosto",
+        "Text": "el mes de agosto",
         "Type": "daterange",
-        "Start": 16,
-        "Length": 13
+        "Start": 13,
+        "Length": 16
       }
     ]
   },
@@ -1898,10 +1898,10 @@
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de septiembre",
+        "Text": "el mes de septiembre",
         "Type": "daterange",
-        "Start": 19,
-        "Length": 17
+        "Start": 16,
+        "Length": 20
       }
     ]
   },
@@ -1910,10 +1910,10 @@
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de septiembre",
+        "Text": "el mes de septiembre",
         "Type": "daterange",
-        "Start": 16,
-        "Length": 17
+        "Start": 13,
+        "Length": 20
       }
     ]
   },
@@ -1970,10 +1970,10 @@
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de octubre",
+        "Text": "el mes de octubre",
         "Type": "daterange",
-        "Start": 19,
-        "Length": 14
+        "Start": 16,
+        "Length": 17
       }
     ]
   },
@@ -1982,10 +1982,10 @@
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de octubre",
+        "Text": "el mes de octubre",
         "Type": "daterange",
-        "Start": 16,
-        "Length": 14
+        "Start": 13,
+        "Length": 17
       }
     ]
   },
@@ -2042,10 +2042,10 @@
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de diciembre",
+        "Text": "el mes de diciembre",
         "Type": "daterange",
-        "Start": 19,
-        "Length": 16
+        "Start": 16,
+        "Length": 19
       }
     ]
   },
@@ -2054,10 +2054,10 @@
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de diciembre",
+        "Text": "el mes de diciembre",
         "Type": "daterange",
-        "Start": 16,
-        "Length": 16
+        "Start": 13,
+        "Length": 19
       }
     ]
   },
@@ -2090,10 +2090,10 @@
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de septiembre",
+        "Text": "el mes de septiembre",
         "Type": "daterange",
-        "Start": 19,
-        "Length": 17
+        "Start": 16,
+        "Length": 20
       }
     ]
   },
@@ -2270,10 +2270,10 @@
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "semana que viene",
+        "Text": "la semana que viene",
         "Type": "daterange",
-        "Start": 16,
-        "Length": 16
+        "Start": 13,
+        "Length": 19
       }
     ]
   },
@@ -2441,10 +2441,10 @@
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "año pasado",
+        "Text": "el año pasado",
         "Type": "daterange",
-        "Start": 16,
-        "Length": 10
+        "Start": 13,
+        "Length": 13
       }
     ]
   },
@@ -2453,10 +2453,10 @@
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes pasado",
+        "Text": "el mes pasado",
         "Type": "daterange",
-        "Start": 16,
-        "Length": 10
+        "Start": 13,
+        "Length": 13
       }
     ]
   },
@@ -2815,7 +2815,6 @@
   },
   {
     "Input": "Ya no estaré en la 3ª semana de 2027",
-    "NotSupported": "dotnet, java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -2828,7 +2827,6 @@
   },
   {
     "Input": "Ya no estaré en la 3ª semana del próximo año",
-    "NotSupported": "dotnet, java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -2853,13 +2851,12 @@
   },
   {
     "Input": "Me iré la próxima primavera",
-    "NotSupported": "dotnet, java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "próxima primavera",
         "Type": "daterange",
-        "Start": 7,
+        "Start": 10,
         "Length": 17
       }
     ]
@@ -2878,13 +2875,12 @@
   },
   {
     "Input": "Me iré en verano",
-    "NotSupported": "dotnet, java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "verano",
         "Type": "daterange",
-        "Start": 4,
+        "Start": 10,
         "Length": 6
       }
     ]
@@ -2918,29 +2914,27 @@
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes que viene",
+        "Text": "el mes que viene",
         "Type": "daterange",
-        "Start": 16,
-        "Length": 13
+        "Start": 13,
+        "Length": 16
       }
     ]
   },
   {
     "Input": "vacaciones en el próximo mes",
-    "NotSupported": "dotnet, java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "próximo mes",
+        "Text": "el próximo mes",
         "Type": "daterange",
-        "Start": 16,
-        "Length": 11
+        "Start": 14,
+        "Length": 14
       }
     ]
   },
   {
     "Input": "Qué tengo para la semana de 30 de noviembre",
-    "NotSupported": "dotnet, java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -2953,7 +2947,6 @@
   },
   {
     "Input": "la semana del 15 de septiembre",
-    "NotSupported": "dotnet, java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -2966,7 +2959,6 @@
   },
   {
     "Input": "semana de 15 septiembre",
-    "NotSupported": "dotnet, java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -2979,7 +2971,6 @@
   },
   {
     "Input": "mes del 15 de septiembre",
-    "NotSupported": "dotnet, java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -2992,20 +2983,18 @@
   },
   {
     "Input": "Me iré en el fin de semana",
-    "NotSupported": "dotnet, java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "fin de semana",
+        "Text": "el fin de semana",
         "Type": "daterange",
-        "Start": 13,
-        "Length": 13
+        "Start": 10,
+        "Length": 16
       }
     ]
   },
   {
     "Input": "Me iré en el resto de la semana",
-    "NotSupported": "dotnet, java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -3018,7 +3007,6 @@
   },
   {
     "Input": "Me iré resto de la semana",
-    "NotSupported": "dotnet, java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -3031,7 +3019,6 @@
   },
   {
     "Input": "Me iré en el resto de semana",
-    "NotSupported": "dotnet, java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -3044,7 +3031,6 @@
   },
   {
     "Input": "Me iré resto de semana",
-    "NotSupported": "dotnet, java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -3057,7 +3043,6 @@
   },
   {
     "Input": "Me iré en el resto de esta semana",
-    "NotSupported": "dotnet, java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -3070,7 +3055,6 @@
   },
   {
     "Input": "Me iré en el resto de la semana actual",
-    "NotSupported": "dotnet, java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -3083,7 +3067,6 @@
   },
   {
     "Input": "Me iré en el resto del mes",
-    "NotSupported": "dotnet, java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -3096,7 +3079,6 @@
   },
   {
     "Input": "Me iré en el resto del año",
-    "NotSupported": "dotnet, java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -3109,7 +3091,6 @@
   },
   {
     "Input": "Búscanos un tiempo conveniente para fines de este mes",
-    "NotSupported": "dotnet, java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -3122,7 +3103,6 @@
   },
   {
     "Input": "Búscanos un tiempo conveniente para fines de esta semana",
-    "NotSupported": "dotnet, java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -3135,7 +3115,6 @@
   },
   {
     "Input": "Búscanos un tiempo conveniente para fines de la próxima semana",
-    "NotSupported": "dotnet, java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -3148,7 +3127,6 @@
   },
   {
     "Input": "Búscanos un tiempo conveniente para fines del próximo año",
-    "NotSupported": "dotnet, java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {

@@ -18,7 +18,7 @@ export class SpanishHolidayExtractorConfiguration implements IHolidayExtractorCo
 export class SpanishHolidayParserConfiguration extends BaseHolidayParserConfiguration {
 
     readonly nextPrefixRegex: RegExp;
-    readonly pastPrefixRegex: RegExp;
+    readonly previousPrefixRegex: RegExp;
     readonly thisPrefixRegex: RegExp;
 
     constructor() {
@@ -35,7 +35,7 @@ export class SpanishHolidayParserConfiguration extends BaseHolidayParserConfigur
         this.variableHolidaysTimexDictionary = SpanishDateTime.VariableHolidaysTimexDictionary;
 
         this.nextPrefixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.NextPrefixRegex);
-        this.pastPrefixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PastPrefixRegex);
+        this.previousPrefixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PreviousPrefixRegex);
         this.thisPrefixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.ThisPrefixRegex);
     }
 
@@ -81,7 +81,7 @@ export class SpanishHolidayParserConfiguration extends BaseHolidayParserConfigur
             swift = 1;
         }
 
-        if (RegExpUtility.getFirstMatchIndex(this.pastPrefixRegex, trimedText).matched) {
+        if (RegExpUtility.getFirstMatchIndex(this.previousPrefixRegex, trimedText).matched) {
             swift = -1;
         }
         else if (RegExpUtility.getFirstMatchIndex(this.thisPrefixRegex, trimedText).matched) {
