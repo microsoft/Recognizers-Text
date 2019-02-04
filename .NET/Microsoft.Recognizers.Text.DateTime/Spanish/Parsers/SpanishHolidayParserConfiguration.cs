@@ -26,7 +26,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
                 swift = 1;
             }
 
-            if (SpanishDatePeriodParserConfiguration.PastPrefixRegex.IsMatch(trimmedText))
+            if (SpanishDatePeriodParserConfiguration.PreviousPrefixRegex.IsMatch(trimmedText))
             {
                 swift = -1;
             }

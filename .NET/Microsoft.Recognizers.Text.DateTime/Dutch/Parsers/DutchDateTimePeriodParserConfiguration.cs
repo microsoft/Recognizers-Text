@@ -41,7 +41,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         public Regex TimeOfDayRegex { get; }
 
-        public Regex PastRegex { get; }
+        public Regex PreviousPrefixRegex { get; }
 
         public Regex FutureRegex { get; }
 
@@ -95,7 +95,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
             PureNumberBetweenAndRegex = DutchTimePeriodExtractorConfiguration.PureNumBetweenAnd;
             SpecificTimeOfDayRegex = DutchDateTimeExtractorConfiguration.SpecificTimeOfDayRegex;
             TimeOfDayRegex = DutchDateTimeExtractorConfiguration.TimeOfDayRegex;
-            PastRegex = DutchDatePeriodExtractorConfiguration.PastPrefixRegex;
+            PreviousPrefixRegex = DutchDatePeriodExtractorConfiguration.PreviousPrefixRegex;
             FutureRegex = DutchDatePeriodExtractorConfiguration.NextPrefixRegex;
             FutureSuffixRegex = DutchDatePeriodExtractorConfiguration.FutureSuffixRegex;
             NumberCombinedWithUnitRegex = DutchDateTimePeriodExtractorConfiguration.TimeNumberCombinedWithUnit;

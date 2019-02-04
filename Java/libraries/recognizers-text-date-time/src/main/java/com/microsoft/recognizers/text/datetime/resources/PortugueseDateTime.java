@@ -167,6 +167,8 @@ public class PortugueseDateTime {
 
     public static final String WeekDayAndDayOfMonthRegex = ".^";
 
+    public static final String WeekDayAndDayRegex = ".^";
+
     public static final String WeekDayOfMonthRegex = "(?<wom>(n?[ao]\\s+)?(?<cardinal>primeir[ao]|1[ao]|segund[ao]|2[ao]|terceir[ao]|3[ao]|[qc]uart[ao]|4[ao]|quint[ao]|5[ao]|[uú]ltim[ao])\\s+{WeekDayRegex}\\s+{MonthSuffixRegex})"
             .replace("{WeekDayRegex}", WeekDayRegex)
             .replace("{MonthSuffixRegex}", MonthSuffixRegex);
@@ -804,9 +806,15 @@ public class PortugueseDateTime {
 
     public static final String TokenBeforeTime = "as ";
 
-    public static final String NextPrefixRegex = "(pr[oó]xim[oa]|seguinte)\\b";
+    public static final String UpcomingPrefixRegex = ".^";
 
-    public static final String PastPrefixRegex = "([uú]ltim[oa])\\b";
+    public static final String NextPrefixRegex = "(pr[oó]xim[oa]|seguinte|{UpcomingPrefixRegex})\\b"
+            .replace("{UpcomingPrefixRegex}", UpcomingPrefixRegex);
+
+    public static final String PastPrefixRegex = ".^";
+
+    public static final String PreviousPrefixRegex = "([uú]ltim[oa]|{PastPrefixRegex})\\b"
+            .replace("{PastPrefixRegex}", PastPrefixRegex);
 
     public static final String ThisPrefixRegex = "([nd]?es[st][ea])\\b";
 
@@ -850,7 +858,7 @@ public class PortugueseDateTime {
             .replace("{YearRegex}", YearRegex)
             .replace("{FullTextYearRegex}", FullTextYearRegex);
 
-    public static final String YearAfterRegex = "^[.]";
+    public static final String DateAfterRegex = "^[.]";
 
     public static final String YearPeriodRegex = "^[.]";
 

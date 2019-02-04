@@ -68,8 +68,10 @@ namespace Microsoft.Recognizers.Definitions.Italian
 		public static readonly string WeekDayOfMonthRegex = $@"(?<wom>(la\s+)?(?<cardinal>prima|seconda|terza|quarta|quinta|ultima)\s+{WeekDayRegex}\s+{MonthSuffixRegex})";
 		public const string RelativeWeekDayRegex = @"^[.]";
 		public const string NumberEndingPattern = @"^[.]";
-		public const string NextPrefixRegex = @"^[.]";
-		public const string PastPrefixRegex = @"^[.]";
+		public const string UpcomingPrefixRegex = @".^";
+		public const string NextPrefixRegex = @".^";
+		public const string PastPrefixRegex = @".^";
+		public const string PreviousPrefixRegex = @".^";
 		public static readonly string SpecialDate = $@"(?=\b(di|al)\s+il\s+){DayRegex}\b";
 		public static readonly string DateExtractor1 = $@"\b({WeekDayRegex}(\s+|\s*,\s*))?{MonthRegex}\s*[/\\\.\-]?\s*{DayRegex}\b";
 		public static readonly string DateExtractor2 = $@"\b({WeekDayRegex}(\s+|\s*,\s*))?{DayRegex}(\s+|\s*,\s*|\s+){MonthRegex}\s*[\.\-]?\s*{DateYearRegex}\b";
@@ -209,6 +211,7 @@ namespace Microsoft.Recognizers.Definitions.Italian
 		public const string FlexibleDayRegex = @"(?<DayOfMonth>([A-Za-z]+\s)?[A-Za-z\d]+)";
 		public static readonly string ForTheRegex = $@"\b(((dal {FlexibleDayRegex})|(di (il\s+)?{FlexibleDayRegex}(?<=(st|nd|rd|th))))(?<end>\s*(,|\.|!|\?|$)))";
 		public static readonly string WeekDayAndDayOfMonthRegex = $@"\b{WeekDayRegex}\s+(del\s+{FlexibleDayRegex})\b";
+		public static readonly string WeekDayAndDayRegex = $@"\b{WeekDayRegex}\s+(?!(the)){DayRegex}(?!([-]|(\s+({AmDescRegex}|{PmDescRegex}))))\b";
 		public const string RestOfDateRegex = @"Fine\s+(di\s+)?((del|questo|questa|corrente)\s+)?(?<duration>settimana|mese|anno)\b";
 		public const string RestOfDateTimeRegex = @"Fine\s+(di\s+)?((del|questo|questa|corrente)\s+)?(?<unit>giorno)\b";
 		public const string LaterEarlyPeriodRegex = @"^[.]";
@@ -228,7 +231,7 @@ namespace Microsoft.Recognizers.Definitions.Italian
 		public static readonly string RelativeDecadeRegex = $@"\b((il\s+)?{RelativeRegex}\s+((?<number>[\w,]+)\s+)?cento?)\b";
 		public const string FullTextYearRegex = @"^[.]";
 		public static readonly string YearSuffix = $@"(,?\s*({DateYearRegex}|{FullTextYearRegex}))";
-		public const string YearAfterRegex = @"\b(o\s+(dopo|passato))\b";
+		public const string DateAfterRegex = @"\b(o\s+(dopo|passato))\b";
 		public static readonly string YearPeriodRegex = $@"(((dal|durante|nel|tra)\s+)?{YearRegex}\s*{TillRegex}\s*{YearRegex})";
 		public const string FutureSuffixRegex = @"^[.]";
 		public const string ComplexDatePeriodRegex = @"^[.]";

@@ -26,11 +26,14 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             WeekDayOfMonthRegex = PortugueseDateExtractorConfiguration.WeekDayOfMonthRegex;
             ForTheRegex = PortugueseDateExtractorConfiguration.ForTheRegex;
             WeekDayAndDayOfMothRegex = PortugueseDateExtractorConfiguration.WeekDayAndDayOfMothRegex;
+            WeekDayAndDayRegex = PortugueseDateExtractorConfiguration.WeekDayAndDayRegex;
             RelativeMonthRegex = PortugueseDateExtractorConfiguration.RelativeMonthRegex;
             YearSuffix = PortugueseDateExtractorConfiguration.YearSuffix;
             RelativeWeekDayRegex = PortugueseDateExtractorConfiguration.RelativeWeekDayRegex;
             RelativeDayRegex = new Regex(DateTimeDefinitions.RelativeDayRegex, RegexOptions.Singleline);
             NextPrefixRegex = new Regex(DateTimeDefinitions.NextPrefixRegex, RegexOptions.Singleline);
+            PreviousPrefixRegex = new Regex(DateTimeDefinitions.PreviousPrefixRegex, RegexOptions.Singleline);
+            UpcomingPrefixRegex = new Regex(DateTimeDefinitions.UpcomingPrefixRegex, RegexOptions.Singleline);
             PastPrefixRegex = new Regex(DateTimeDefinitions.PastPrefixRegex, RegexOptions.Singleline);
             DayOfMonth = config.DayOfMonth;
             DayOfWeek = config.DayOfWeek;
@@ -96,6 +99,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public Regex WeekDayAndDayOfMothRegex { get; }
 
+        public Regex WeekDayAndDayRegex { get; }
+
         public Regex RelativeMonthRegex { get; }
 
         public Regex YearSuffix { get; }
@@ -105,6 +110,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         public Regex RelativeDayRegex { get; }
 
         public Regex NextPrefixRegex { get; }
+
+        public Regex PreviousPrefixRegex { get; }
+
+        public Regex UpcomingPrefixRegex { get; }
 
         public Regex PastPrefixRegex { get; }
 
@@ -138,7 +147,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
                 swift = 1;
             }
 
-            if (PastPrefixRegex.IsMatch(trimmedText))
+            if (PreviousPrefixRegex.IsMatch(trimmedText))
             {
                 swift = -1;
             }
@@ -149,7 +158,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         public bool IsCardinalLast(string text)
         {
             var trimmedText = text.Trim().ToLowerInvariant();
-            return PastPrefixRegex.IsMatch(trimmedText);
+            return PreviousPrefixRegex.IsMatch(trimmedText);
         }
 
         public string Normalize(string text)

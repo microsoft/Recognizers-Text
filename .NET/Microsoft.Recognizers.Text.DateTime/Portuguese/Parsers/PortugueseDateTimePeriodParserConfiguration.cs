@@ -30,7 +30,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             PureNumberBetweenAndRegex = PortugueseTimePeriodExtractorConfiguration.PureNumBetweenAnd;
             SpecificTimeOfDayRegex = PortugueseDateTimeExtractorConfiguration.SpecificTimeOfDayRegex;
             TimeOfDayRegex = PortugueseDateTimeExtractorConfiguration.TimeOfDayRegex;
-            PastRegex = PortugueseDatePeriodExtractorConfiguration.PastRegex;
+            PreviousPrefixRegex = PortugueseDatePeriodExtractorConfiguration.PastRegex;
             FutureRegex = PortugueseDatePeriodExtractorConfiguration.FutureRegex;
             FutureSuffixRegex = PortugueseDatePeriodExtractorConfiguration.FutureSuffixRegex;
             NumberCombinedWithUnitRegex = PortugueseDateTimePeriodExtractorConfiguration.NumberCombinedWithUnit;
@@ -82,7 +82,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public Regex TimeOfDayRegex { get; }
 
-        public Regex PastRegex { get; }
+        public Regex PreviousPrefixRegex { get; }
 
         public Regex FutureRegex { get; }
 
@@ -168,7 +168,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             var swift = 0;
 
             // TODO: Replace with a regex
-            if (PortugueseDatePeriodParserConfiguration.PastPrefixRegex.IsMatch(trimmedText) ||
+            if (PortugueseDatePeriodParserConfiguration.PreviousPrefixRegex.IsMatch(trimmedText) ||
                 trimmedText.Equals("anoche"))
             {
                 swift = -1;

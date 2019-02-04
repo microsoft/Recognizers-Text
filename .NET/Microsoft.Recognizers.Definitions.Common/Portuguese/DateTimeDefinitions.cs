@@ -72,6 +72,7 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
 		public const string SpecialDayWithNumRegex = @"^[.]";
 		public const string ForTheRegex = @".^";
 		public const string WeekDayAndDayOfMonthRegex = @".^";
+		public const string WeekDayAndDayRegex = @".^";
 		public static readonly string WeekDayOfMonthRegex = $@"(?<wom>(n?[ao]\s+)?(?<cardinal>primeir[ao]|1[ao]|segund[ao]|2[ao]|terceir[ao]|3[ao]|[qc]uart[ao]|4[ao]|quint[ao]|5[ao]|[uú]ltim[ao])\s+{WeekDayRegex}\s+{MonthSuffixRegex})";
 		public const string RelativeWeekDayRegex = @"^[.]";
 		public const string NumberEndingPattern = @"^[.]";
@@ -449,8 +450,10 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
 		public const string TimeTokenPrefix = @"as ";
 		public const string TokenBeforeDate = @"o ";
 		public const string TokenBeforeTime = @"as ";
-		public const string NextPrefixRegex = @"(pr[oó]xim[oa]|seguinte)\b";
-		public const string PastPrefixRegex = @"([uú]ltim[oa])\b";
+		public const string UpcomingPrefixRegex = @".^";
+		public static readonly string NextPrefixRegex = $@"(pr[oó]xim[oa]|seguinte|{UpcomingPrefixRegex})\b";
+		public const string PastPrefixRegex = @".^";
+		public static readonly string PreviousPrefixRegex = $@"([uú]ltim[oa]|{PastPrefixRegex})\b";
 		public const string ThisPrefixRegex = @"([nd]?es[st][ea])\b";
 		public const string RelativeDayRegex = @"^[\.]";
 		public const string RestOfDateRegex = @"^[\.]";
@@ -471,7 +474,7 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
 		public const string DecadeWithCenturyRegex = @"^[.]";
 		public const string RelativeDecadeRegex = @"^[.]";
 		public static readonly string YearSuffix = $@"(,?\s*({YearRegex}|{FullTextYearRegex}))";
-		public const string YearAfterRegex = @"^[.]";
+		public const string DateAfterRegex = @"^[.]";
 		public const string YearPeriodRegex = @"^[.]";
 		public const string FutureSuffixRegex = @"^[.]";
 		public static readonly Dictionary<string, int> WrittenDecades = new Dictionary<string, int>

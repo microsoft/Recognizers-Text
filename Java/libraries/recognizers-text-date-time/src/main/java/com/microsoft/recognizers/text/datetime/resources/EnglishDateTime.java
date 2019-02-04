@@ -26,11 +26,17 @@ public class EnglishDateTime {
 
     public static final String StrictRelativeRegex = "\\b(?<order>following|next|coming|upcoming|this|last|past|previous|current)\\b";
 
-    public static final String NextPrefixRegex = "\\b(following|next|upcoming|coming)\\b";
+    public static final String UpcomingPrefixRegex = "((this )?(upcoming|coming))";
+
+    public static final String NextPrefixRegex = "\\b(following|next|{UpcomingPrefixRegex})\\b"
+            .replace("{UpcomingPrefixRegex}", UpcomingPrefixRegex);
 
     public static final String AfterNextSuffixRegex = "\\b(after\\s+(the\\s+)?next)\\b";
 
-    public static final String PastPrefixRegex = "(last|past|previous)\\b";
+    public static final String PastPrefixRegex = "((this )?past)\\b";
+
+    public static final String PreviousPrefixRegex = "(last|previous|{PastPrefixRegex})\\b"
+            .replace("{PastPrefixRegex}", PastPrefixRegex);
 
     public static final String ThisPrefixRegex = "(this|current)\\b";
 
@@ -243,7 +249,7 @@ public class EnglishDateTime {
 
     public static final String MonthRegex = "(?<month>april|apr|august|aug|december|dec|february|feb|january|jan|july|jul|june|jun|march|mar|may|november|nov|october|oct|september|sept|sep)";
 
-    public static final String AmbiguousMonthP0Regex = "\\b((^may i)|(i|you|he|she|we|they)\\s+may|(may\\s+((((also|not|(also not)|well)\\s+)?(be|ask|contain|constitute|email|e-mail|take|have|result|involve|get|work|reply))|(or may not))))\\b";
+    public static final String AmbiguousMonthP0Regex = "\\b((^may i)|(i|you|he|she|we|they)\\s+may|(may\\s+((((also|not|(also not)|well)\\s+)?(be|ask|contain|constitute|email|e-mail|take|have|result|involve|get|work|reply|differ))|(or may not))))\\b";
 
     public static final String DateYearRegex = "(?<year>{BaseDateTime.FourDigitYearRegex}|{TwoDigitYearRegex})"
             .replace("{BaseDateTime.FourDigitYearRegex}", BaseDateTime.FourDigitYearRegex)
@@ -264,8 +270,8 @@ public class EnglishDateTime {
             .replace("{WeekDayRegex}", WeekDayRegex)
             .replace("{PrefixWeekDayRegex}", PrefixWeekDayRegex);
 
-    public static final String LastDateRegex = "\\b({PastPrefixRegex}(\\s*week{PrefixWeekDayRegex}?)?\\s*{WeekDayRegex})|({WeekDayRegex}(\\s+last\\s*week))\\b"
-            .replace("{PastPrefixRegex}", PastPrefixRegex)
+    public static final String LastDateRegex = "\\b({PreviousPrefixRegex}(\\s*week{PrefixWeekDayRegex}?)?\\s*{WeekDayRegex})|({WeekDayRegex}(\\s+last\\s*week))\\b"
+            .replace("{PreviousPrefixRegex}", PreviousPrefixRegex)
             .replace("{WeekDayRegex}", WeekDayRegex)
             .replace("{PrefixWeekDayRegex}", PrefixWeekDayRegex);
 
@@ -721,16 +727,16 @@ public class EnglishDateTime {
             .replace("{InexactNumberRegex}", InexactNumberRegex)
             .replace("{DurationUnitRegex}", DurationUnitRegex);
 
-    public static final String RelativeTimeUnitRegex = "((({NextPrefixRegex}|{PastPrefixRegex}|{ThisPrefixRegex})\\s+({TimeUnitRegex}))|((the|my))\\s+({RestrictedTimeUnitRegex}))"
+    public static final String RelativeTimeUnitRegex = "((({NextPrefixRegex}|{PreviousPrefixRegex}|{ThisPrefixRegex})\\s+({TimeUnitRegex}))|((the|my))\\s+({RestrictedTimeUnitRegex}))"
             .replace("{NextPrefixRegex}", NextPrefixRegex)
-            .replace("{PastPrefixRegex}", PastPrefixRegex)
+            .replace("{PreviousPrefixRegex}", PreviousPrefixRegex)
             .replace("{ThisPrefixRegex}", ThisPrefixRegex)
             .replace("{TimeUnitRegex}", TimeUnitRegex)
             .replace("{RestrictedTimeUnitRegex}", RestrictedTimeUnitRegex);
 
-    public static final String RelativeDurationUnitRegex = "(((?<=({NextPrefixRegex}|{PastPrefixRegex}|{ThisPrefixRegex})\\s+)({DurationUnitRegex}))|((the|my))\\s+({RestrictedTimeUnitRegex}))"
+    public static final String RelativeDurationUnitRegex = "(((?<=({NextPrefixRegex}|{PreviousPrefixRegex}|{ThisPrefixRegex})\\s+)({DurationUnitRegex}))|((the|my))\\s+({RestrictedTimeUnitRegex}))"
             .replace("{NextPrefixRegex}", NextPrefixRegex)
-            .replace("{PastPrefixRegex}", PastPrefixRegex)
+            .replace("{PreviousPrefixRegex}", PreviousPrefixRegex)
             .replace("{ThisPrefixRegex}", ThisPrefixRegex)
             .replace("{DurationUnitRegex}", DurationUnitRegex)
             .replace("{RestrictedTimeUnitRegex}", RestrictedTimeUnitRegex);
@@ -759,6 +765,12 @@ public class EnglishDateTime {
             .replace("{WeekDayRegex}", WeekDayRegex)
             .replace("{FlexibleDayRegex}", FlexibleDayRegex);
 
+    public static final String WeekDayAndDayRegex = "\\b{WeekDayRegex}\\s+(?!(the)){DayRegex}(?!([-]|(\\s+({AmDescRegex}|{PmDescRegex}))))\\b"
+            .replace("{WeekDayRegex}", WeekDayRegex)
+            .replace("{DayRegex}", DayRegex)
+            .replace("{AmDescRegex}", AmDescRegex)
+            .replace("{PmDescRegex}", PmDescRegex);
+
     public static final String RestOfDateRegex = "\\brest\\s+(of\\s+)?((the|my|this|current)\\s+)?(?<duration>week|month|year|decade)\\b";
 
     public static final String RestOfDateTimeRegex = "\\brest\\s+(of\\s+)?((the|my|this|current)\\s+)?(?<unit>day)\\b";
@@ -776,9 +788,9 @@ public class EnglishDateTime {
             .replace("{OneWordPeriodRegex}", OneWordPeriodRegex)
             .replace("{UnspecificEndOfRangeRegex}", UnspecificEndOfRangeRegex);
 
-    public static final String WeekWithWeekDayRangeRegex = "\\b((?<week>({NextPrefixRegex}|{PastPrefixRegex}|this)\\s+week)((\\s+between\\s+{WeekDayRegex}\\s+and\\s+{WeekDayRegex})|(\\s+from\\s+{WeekDayRegex}\\s+to\\s+{WeekDayRegex})))\\b"
+    public static final String WeekWithWeekDayRangeRegex = "\\b((?<week>({NextPrefixRegex}|{PreviousPrefixRegex}|this)\\s+week)((\\s+between\\s+{WeekDayRegex}\\s+and\\s+{WeekDayRegex})|(\\s+from\\s+{WeekDayRegex}\\s+to\\s+{WeekDayRegex})))\\b"
             .replace("{NextPrefixRegex}", NextPrefixRegex)
-            .replace("{PastPrefixRegex}", PastPrefixRegex)
+            .replace("{PreviousPrefixRegex}", PreviousPrefixRegex)
             .replace("{WeekDayRegex}", WeekDayRegex);
 
     public static final String GeneralEndingRegex = "^\\s*((\\.,)|\\.|,|!|\\?)?\\s*$";
@@ -1207,7 +1219,7 @@ public class EnglishDateTime {
     public static final ImmutableMap<String, String> AmbiguityFiltersDict = ImmutableMap.<String, String>builder()
         .put("\\bmorning|afternoon|evening|night|day\\b", "\\b(good\\s+(morning|afternoon|evening|night|day))|(nighty\\s+night)\\b")
         .put("\\bnow\\b", "\\b(^now,)|\\b((is|are)\\s+now\\s+for|for\\s+now)\\b")
-        .put("\\bmay\\b", "\\b((^may i)|(i|you|he|she|we|they)\\s+may|(may\\s+((((also|not|(also not)|well)\\s+)?(be|ask|contain|constitute|email|e-mail|take|have|result|involve|get|work|reply))|(or may not))))\\b")
+        .put("\\bmay\\b", "\\b((^may i)|(i|you|he|she|we|they)\\s+may|(may\\s+((((also|not|(also not)|well)\\s+)?(be|ask|contain|constitute|email|e-mail|take|have|result|involve|get|work|reply|differ))|(or may not))))\\b")
         .build();
 
     public static final List<String> MorningTermList = Arrays.asList("morning");

@@ -742,12 +742,8 @@ public class BaseMergedDateTimeParser implements IDateTimeParser {
             // 1. Cases like "After January", the end of the period should be the start of the new period, not the end 
             // 2. Cases like "More than 3 days after today", the date point should be the start of the new period
             if (mod.equals(Constants.AFTER_MOD)) {
-                // For cases like "After January" or "After 2018"
-                // The "end" of the period is not inclusive by default ("January", the end should be "XXXX-02-01" / "2018", the end should be "2019-01-01")
-                // Mod "after" is also not inclusive the "start" ("After January", the start should be "XXXX-01-31" / "After 2018", the start should be "2017-12-31")
-                // So here the START day should be the inclusive end of the period, which is one day previous to the default end (exclusive end)
                 if (!StringUtility.isNullOrEmpty(start) && !StringUtility.isNullOrEmpty(end)) {
-                    res.put(DateTimeResolutionKey.START, getPreviousDay(end));
+                    res.put(DateTimeResolutionKey.START, end);
                 } else {
                     res.put(DateTimeResolutionKey.START, start);
                 }
@@ -772,12 +768,5 @@ public class BaseMergedDateTimeParser implements IDateTimeParser {
             res.put(DateTimeResolutionKey.START, start);
             res.put(DateTimeResolutionKey.END, end);
         }
-    }
-
-    public String getPreviousDay(String dateStr) {
-        // Here the dateString is in standard format, so Parse should work perfectly
-        LocalDateTime date = DateUtil.tryParse(dateStr)
-            .minusDays(1);
-        return DateTimeFormatUtil.luisDate(date);
     }
 }

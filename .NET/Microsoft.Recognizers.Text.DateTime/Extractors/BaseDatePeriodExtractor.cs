@@ -85,7 +85,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
 
                 // Match prefix
-                match = this.config.PastRegex.MatchEnd(beforeStr, trim: true);
+                match = this.config.PreviousPrefixRegex.MatchEnd(beforeStr, trim: true);
 
                 var index = -1;
 
@@ -133,7 +133,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
 
                 // Match suffix
-                match = this.config.PastRegex.MatchBegin(afterStr, trim: true);
+                match = this.config.PreviousPrefixRegex.MatchBegin(afterStr, trim: true);
 
                 if (match.Success)
                 {

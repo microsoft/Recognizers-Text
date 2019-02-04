@@ -134,12 +134,18 @@ RelativeWeekDayRegex: !simpleRegex
 NumberEndingPattern: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
+UpcomingPrefixRegex: !simpleRegex
+  def: .^
+  # TODO: modify below regex according to the counterpart in English
 NextPrefixRegex: !simpleRegex
-  # TODO: modify below regex according to the counterpart in English
-  def: ^[.]
+  # TODO: implement the relative day regex if needed. If yes, they should be abstracted
+  def: .^
 PastPrefixRegex: !simpleRegex
+  def: .^
   # TODO: modify below regex according to the counterpart in English
-  def: ^[.]
+PreviousPrefixRegex: !simpleRegex
+  # TODO: implement the relative day regex if needed. If yes, they should be abstracted
+  def: .^
 SpecialDate: !nestedRegex
   def: (?=\b(di|al)\s+il\s+){DayRegex}\b
   references: [ DayRegex ]
@@ -489,6 +495,9 @@ ForTheRegex: !nestedRegex
 WeekDayAndDayOfMonthRegex: !nestedRegex
   def: \b{WeekDayRegex}\s+(del\s+{FlexibleDayRegex})\b
   references: [WeekDayRegex, FlexibleDayRegex]
+WeekDayAndDayRegex: !nestedRegex
+  def: \b{WeekDayRegex}\s+(?!(the)){DayRegex}(?!([-]|(\s+({AmDescRegex}|{PmDescRegex}))))\b
+  references: [WeekDayRegex, DayRegex, AmDescRegex, PmDescRegex]
 RestOfDateRegex: !simpleRegex
   def: Fine\s+(di\s+)?((del|questo|questa|corrente)\s+)?(?<duration>settimana|mese|anno)\b
 RestOfDateTimeRegex: !simpleRegex
@@ -537,7 +546,7 @@ FullTextYearRegex: !simpleRegex
 YearSuffix: !nestedRegex
   def: (,?\s*({DateYearRegex}|{FullTextYearRegex}))
   references: [ DateYearRegex, FullTextYearRegex ]
-YearAfterRegex: !simpleRegex
+DateAfterRegex: !simpleRegex
   def: \b(o\s+(dopo|passato))\b
 YearPeriodRegex: !nestedRegex
   def: (((dal|durante|nel|tra)\s+)?{YearRegex}\s*{TillRegex}\s*{YearRegex})

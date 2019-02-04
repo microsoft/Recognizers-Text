@@ -14,6 +14,7 @@ import com.microsoft.recognizers.text.datetime.extractors.BaseSetExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.BaseTimeExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.BaseTimePeriodExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.BaseTimeZoneExtractor;
+import com.microsoft.recognizers.text.datetime.extractors.IDateExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.IDateTimeExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.IDateTimeListExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.IDateTimeZoneExtractor;
@@ -37,7 +38,7 @@ public class SpanishMergedExtractorConfiguration extends BaseOptionsConfiguratio
     public static final Pattern SingleAmbiguousMonthRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.SingleAmbiguousMonthRegex);
     public static final Pattern PrepositionSuffixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PrepositionSuffixRegex);
     public static final Pattern NumberEndingPattern = RegExpUtility.getSafeRegExp(SpanishDateTime.NumberEndingPattern);
-    public static final Pattern DateAfterRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.YearAfterRegex);
+    public static final Pattern DateAfterRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.DateAfterRegex);
     public static final Pattern UnspecificDatePeriodRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.UnspecificDatePeriodRegex);
     public final Iterable<Pair<Pattern, Pattern>> ambiguityFiltersDict = null;
 
@@ -64,9 +65,9 @@ public class SpanishMergedExtractorConfiguration extends BaseOptionsConfiguratio
         return SuperfluousWordMatcher;
     }
 
-    private IDateTimeExtractor dateExtractor;
+    private IDateExtractor dateExtractor;
 
-    public final IDateTimeExtractor getDateExtractor() {
+    public final IDateExtractor getDateExtractor() {
         return dateExtractor;
     }
 

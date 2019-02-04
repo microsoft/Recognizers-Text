@@ -304,7 +304,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         Regex IDatePeriodExtractorConfiguration.NumberCombinedWithDateUnit => NumberCombinedWithDateUnit;
 
-        Regex IDatePeriodExtractorConfiguration.PastRegex => PastPrefixRegex;
+        Regex IDatePeriodExtractorConfiguration.PreviousPrefixRegex => PastPrefixRegex;
 
         Regex IDatePeriodExtractorConfiguration.FutureRegex => NextPrefixRegex;
 

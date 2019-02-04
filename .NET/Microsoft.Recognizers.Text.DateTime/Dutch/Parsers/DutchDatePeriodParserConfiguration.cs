@@ -89,8 +89,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         public static readonly Regex NextPrefixRegex =
             new Regex(DateTimeDefinitions.NextPrefixRegex, RegexOptions.Singleline);
-        public static readonly Regex PastPrefixRegex =
-            new Regex(DateTimeDefinitions.PastPrefixRegex, RegexOptions.Singleline);
+        public static readonly Regex PreviousPrefixRegex =
+            new Regex(DateTimeDefinitions.PreviousPrefixRegex, RegexOptions.Singleline);
         public static readonly Regex ThisPrefixRegex =
             new Regex(DateTimeDefinitions.ThisPrefixRegex, RegexOptions.Singleline);
         public static readonly Regex AfterNextSuffixRegex =
@@ -101,7 +101,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
             new Regex(DateTimeDefinitions.UnspecificEndOfRangeRegex, RegexOptions.Singleline);
 
         Regex IDatePeriodParserConfiguration.NextPrefixRegex => NextPrefixRegex;
-        Regex IDatePeriodParserConfiguration.PastPrefixRegex => PastPrefixRegex;
+        Regex IDatePeriodParserConfiguration.PreviousPrefixRegex => PreviousPrefixRegex;
         Regex IDatePeriodParserConfiguration.ThisPrefixRegex => ThisPrefixRegex;
         Regex IDatePeriodParserConfiguration.RelativeRegex => RelativeRegex;
         Regex IDatePeriodParserConfiguration.UnspecificEndOfRangeRegex => UnspecificEndOfRangeRegex;
@@ -149,7 +149,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
             MonthWithYear = DutchDatePeriodExtractorConfiguration.MonthWithYear;
             MonthNumWithYear = DutchDatePeriodExtractorConfiguration.MonthNumWithYear;
             YearRegex = DutchDatePeriodExtractorConfiguration.YearRegex;
-            PastRegex = DutchDatePeriodExtractorConfiguration.PastPrefixRegex;
+            PastRegex = DutchDatePeriodExtractorConfiguration.PreviousPrefixRegex;
             FutureRegex = DutchDatePeriodExtractorConfiguration.NextPrefixRegex;
             FutureSuffixRegex = DutchDatePeriodExtractorConfiguration.FutureSuffixRegex;
             NumberCombinedWithUnit = DutchDurationExtractorConfiguration.NumberCombinedWithDurationUnit;
@@ -202,7 +202,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
             {
                 swift = 1;
             }
-            else if (PastPrefixRegex.IsMatch(trimmedText))
+            else if (PreviousPrefixRegex.IsMatch(trimmedText))
             {
                 swift = -1;
             }
@@ -224,7 +224,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
             {
                 swift = 1;
             }
-            else if (PastPrefixRegex.IsMatch(trimmedText))
+            else if (PreviousPrefixRegex.IsMatch(trimmedText))
             {
                 swift = -1;
             }

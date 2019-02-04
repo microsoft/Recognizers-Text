@@ -112,7 +112,7 @@ class EnglishDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
         self._till_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.TillRegex)
         self._followed_unit = RegExpUtility.get_safe_reg_exp(EnglishDateTime.FollowedDateUnit)
         self._number_combined_with_unit = RegExpUtility.get_safe_reg_exp(EnglishDateTime.NumberCombinedWithDateUnit)
-        self._past_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.PastPrefixRegex)
+        self._past_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.PreviousPrefixRegex)
         self._future_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.NextPrefixRegex)
         self._week_of_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.WeekOfRegex)
         self._month_of_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.MonthOfRegex)

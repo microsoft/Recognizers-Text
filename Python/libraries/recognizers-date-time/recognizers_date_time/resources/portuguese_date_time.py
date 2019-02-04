@@ -64,6 +64,7 @@ class PortugueseDateTime:
     SpecialDayWithNumRegex = f'^[.]'
     ForTheRegex = f'.^'
     WeekDayAndDayOfMonthRegex = f'.^'
+    WeekDayAndDayRegex = f'.^'
     WeekDayOfMonthRegex = f'(?<wom>(n?[ao]\\s+)?(?<cardinal>primeir[ao]|1[ao]|segund[ao]|2[ao]|terceir[ao]|3[ao]|[qc]uart[ao]|4[ao]|quint[ao]|5[ao]|[uú]ltim[ao])\\s+{WeekDayRegex}\\s+{MonthSuffixRegex})'
     RelativeWeekDayRegex = f'^[.]'
     NumberEndingPattern = f'^[.]'
@@ -408,8 +409,10 @@ class PortugueseDateTime:
     TimeTokenPrefix = 'as '
     TokenBeforeDate = 'o '
     TokenBeforeTime = 'as '
-    NextPrefixRegex = f'(pr[oó]xim[oa]|seguinte)\\b'
-    PastPrefixRegex = f'([uú]ltim[oa])\\b'
+    UpcomingPrefixRegex = f'.^'
+    NextPrefixRegex = f'(pr[oó]xim[oa]|seguinte|{UpcomingPrefixRegex})\\b'
+    PastPrefixRegex = f'.^'
+    PreviousPrefixRegex = f'([uú]ltim[oa]|{PastPrefixRegex})\\b'
     ThisPrefixRegex = f'([nd]?es[st][ea])\\b'
     RelativeDayRegex = f'^[\\.]'
     RestOfDateRegex = f'^[\\.]'
@@ -430,7 +433,7 @@ class PortugueseDateTime:
     DecadeWithCenturyRegex = f'^[.]'
     RelativeDecadeRegex = f'^[.]'
     YearSuffix = f'(,?\\s*({YearRegex}|{FullTextYearRegex}))'
-    YearAfterRegex = f'^[.]'
+    DateAfterRegex = f'^[.]'
     YearPeriodRegex = f'^[.]'
     FutureSuffixRegex = f'^[.]'
     WrittenDecades = dict([("", 0)])
@@ -454,4 +457,15 @@ class PortugueseDateTime:
     WeekTerms = [r'semana']
     YearTerms = [r'ano', r'anos']
     YearToDateTerms = [r'ano ate agora', r'ano ate hoje', r'ano ate a data', r'anos ate agora', r'anos ate hoje', r'anos ate a data']
+    SpecialCharactersEquivalent = dict([("á", "a"),
+                                        ("é", "e"),
+                                        ("í", "i"),
+                                        ("ó", "o"),
+                                        ("ú", "u"),
+                                        ("ê", "e"),
+                                        ("ô", "o"),
+                                        ("ü", "u"),
+                                        ("ã", "a"),
+                                        ("õ", "o"),
+                                        ("ç", "c")])
 # pylint: enable=line-too-long

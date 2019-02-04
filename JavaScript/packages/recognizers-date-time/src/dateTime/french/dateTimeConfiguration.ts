@@ -91,7 +91,7 @@ export class FrenchDateTimeParserConfiguration implements IDateTimeParserConfigu
     readonly utilityConfiguration: IDateTimeUtilityConfiguration;
 
     readonly nextPrefixRegex: RegExp;
-    readonly pastPrefixRegex: RegExp;
+    readonly previousPrefixRegex: RegExp;
 
     constructor(config: ICommonDateTimeParserConfiguration) {
         this.tokenBeforeDate = FrenchDateTime.TokenBeforeDate;

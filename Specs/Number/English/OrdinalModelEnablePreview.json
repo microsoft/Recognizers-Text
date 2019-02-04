@@ -1,0 +1,421 @@
+[
+  {
+    "Input": "delete last sentence in the note",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "last",
+        "Start": 7,
+        "End": 10,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "N"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Do you mean \"next\" or \"last\"?",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "next",
+        "Start": 13,
+        "End": 16,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "CURR+1"
+        }
+      },
+      {
+        "Text": "last",
+        "Start": 23,
+        "End": 26,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "N"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Show me the antepenultimate.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "antepenultimate",
+        "Start": 12,
+        "End": 26,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "N-2"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Show me the last but one.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "the last but one",
+        "Start": 8,
+        "End": 23,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "N-1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Show me the penultimate.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "penultimate",
+        "Start": 12,
+        "End": 22,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "N-1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Show me the next to last.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "next to last",
+        "Start": 12,
+        "End": 23,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "N-1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Show me the one before the last one.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "the one before the last one",
+        "Start": 8,
+        "End": 34,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "N-1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Show me the second to last.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "the second to last",
+        "Start": 8,
+        "End": 25,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "N-1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Delete last sentence.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "last",
+        "Start": 7,
+        "End": 10,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "N"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Show me the previous one.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "previous one",
+        "Start": 12,
+        "End": 23,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "CURR-1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Show me the next one.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "next one",
+        "Start": 12,
+        "End": 19,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "CURR+1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "three trillionth",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "three trillionth",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "3000000000000"
+        },
+        "Start": 0,
+        "End": 15
+      }
+    ]
+  },
+  {
+    "Input": "a trillionth",
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "a hundred trillionth",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "a hundred trillionth",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "100000000000000"
+        },
+        "Start": 0,
+        "End": 19
+      }
+    ]
+  },
+  {
+    "Input": "11th",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "11th",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "11"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "21st",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "21st",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "21"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "30th",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "30th",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "30"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "2nd",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "2nd",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "2"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "eleventh",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "eleventh",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "11"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "twentieth",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "twentieth",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "20"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "twenty-fifth",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "twenty-fifth",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "25"
+        },
+        "Start": 0,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "twenty-first",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "twenty-first",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "21"
+        },
+        "Start": 0,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "one hundred twenty fifth",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "one hundred twenty fifth",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "125"
+        },
+        "Start": 0,
+        "End": 23
+      }
+    ]
+  },
+  {
+    "Input": "one hundred twenty-fifth",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "one hundred twenty-fifth",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "125"
+        },
+        "Start": 0,
+        "End": 23
+      }
+    ]
+  },
+  {
+    "Input": "trillionth",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "trillionth",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "1000000000000"
+        },
+        "Start": 0,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "twenty-one trillion and three hundred twenty second",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "twenty-one trillion and three hundred twenty second",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "21000000000322"
+        },
+        "Start": 0,
+        "End": 50
+      }
+    ]
+  },
+  {
+    "Input": "two hundredth",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "two hundredth",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "200"
+        },
+        "Start": 0,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": "Book a first class seat to seattle",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "first",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "1"
+        },
+        "Start": 7,
+        "End": 11
+      }
+    ]
+  }
+]

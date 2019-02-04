@@ -33,7 +33,7 @@ class ChineseDateTimePeriodExtractorConfiguration implements IDateTimePeriodExtr
     readonly followedUnit: RegExp
     readonly numberCombinedWithUnit: RegExp
     readonly timeUnitRegex: RegExp
-    readonly pastPrefixRegex: RegExp
+    readonly previousPrefixRegex: RegExp
     readonly nextPrefixRegex: RegExp
     readonly rangeConnectorRegex: RegExp
     readonly relativeTimeUnitRegex: RegExp

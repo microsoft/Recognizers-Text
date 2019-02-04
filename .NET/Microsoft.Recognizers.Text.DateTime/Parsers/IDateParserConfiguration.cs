@@ -39,6 +39,10 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex UnitRegex { get; }
 
+        Regex UpcomingPrefixRegex { get; }
+
+        Regex PastPrefixRegex { get; }
+
         Regex WeekDayRegex { get; }
 
         Regex MonthRegex { get; }
@@ -48,6 +52,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         Regex ForTheRegex { get; }
 
         Regex WeekDayAndDayOfMothRegex { get; }
+
+        Regex WeekDayAndDayRegex { get; }
 
         Regex RelativeMonthRegex { get; }
 
@@ -59,7 +65,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex NextPrefixRegex { get; }
 
-        Regex PastPrefixRegex { get; }
+        Regex PreviousPrefixRegex { get; }
 
         IImmutableDictionary<string, string> UnitMap { get; }
 

@@ -63,6 +63,7 @@ export namespace PortugueseDateTime {
 	export const SpecialDayWithNumRegex = `^[.]`;
 	export const ForTheRegex = `.^`;
 	export const WeekDayAndDayOfMonthRegex = `.^`;
+	export const WeekDayAndDayRegex = `.^`;
 	export const WeekDayOfMonthRegex = `(?<wom>(n?[ao]\\s+)?(?<cardinal>primeir[ao]|1[ao]|segund[ao]|2[ao]|terceir[ao]|3[ao]|[qc]uart[ao]|4[ao]|quint[ao]|5[ao]|[uú]ltim[ao])\\s+${WeekDayRegex}\\s+${MonthSuffixRegex})`;
 	export const RelativeWeekDayRegex = `^[.]`;
 	export const NumberEndingPattern = `^[.]`;
@@ -190,8 +191,10 @@ export namespace PortugueseDateTime {
 	export const TimeTokenPrefix = 'as ';
 	export const TokenBeforeDate = 'o ';
 	export const TokenBeforeTime = 'as ';
-	export const NextPrefixRegex = `(pr[oó]xim[oa]|seguinte)\\b`;
-	export const PastPrefixRegex = `([uú]ltim[oa])\\b`;
+	export const UpcomingPrefixRegex = `.^`;
+	export const NextPrefixRegex = `(pr[oó]xim[oa]|seguinte|${UpcomingPrefixRegex})\\b`;
+	export const PastPrefixRegex = `.^`;
+	export const PreviousPrefixRegex = `([uú]ltim[oa]|${PastPrefixRegex})\\b`;
 	export const ThisPrefixRegex = `([nd]?es[st][ea])\\b`;
 	export const RelativeDayRegex = `^[\\.]`;
 	export const RestOfDateRegex = `^[\\.]`;
@@ -212,7 +215,7 @@ export namespace PortugueseDateTime {
 	export const DecadeWithCenturyRegex = `^[.]`;
 	export const RelativeDecadeRegex = `^[.]`;
 	export const YearSuffix = `(,?\\s*(${YearRegex}|${FullTextYearRegex}))`;
-	export const YearAfterRegex = `^[.]`;
+	export const DateAfterRegex = `^[.]`;
 	export const YearPeriodRegex = `^[.]`;
 	export const FutureSuffixRegex = `^[.]`;
 	export const WrittenDecades: ReadonlyMap<string, number> = new Map<string, number>([["", 0]]);
@@ -236,4 +239,5 @@ export namespace PortugueseDateTime {
 	export const WeekTerms = [ "semana" ];
 	export const YearTerms = [ "ano","anos" ];
 	export const YearToDateTerms = [ "ano ate agora","ano ate hoje","ano ate a data","anos ate agora","anos ate hoje","anos ate a data" ];
+	export const SpecialCharactersEquivalent: ReadonlyMap<string, string> = new Map<string, string>([["á", "a"],["é", "e"],["í", "i"],["ó", "o"],["ú", "u"],["ê", "e"],["ô", "o"],["ü", "u"],["ã", "a"],["õ", "o"],["ç", "c"]]);
 }

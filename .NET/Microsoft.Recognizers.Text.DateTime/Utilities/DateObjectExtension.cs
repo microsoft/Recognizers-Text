@@ -23,6 +23,31 @@ namespace Microsoft.Recognizers.Text.DateTime
             return from.AddDays(target - start + 7);
         }
 
+        public static DateObject Upcoming(this DateObject from, DayOfWeek dayOfWeek)
+        {
+            var start = (int)from.DayOfWeek;
+            var target = (int)dayOfWeek;
+
+            if (start == 0)
+            {
+                start = 7;
+            }
+
+            if (target == 0)
+            {
+                target = 7;
+            }
+
+            if (start < target)
+            {
+                return This(from, dayOfWeek);
+            }
+            else
+            {
+                return Next(from, dayOfWeek);
+            }
+        }
+
         public static DateObject This(this DateObject from, DayOfWeek dayOfWeek)
         {
             var start = (int)from.DayOfWeek;
@@ -57,6 +82,31 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             return from.AddDays(target - start - 7);
+        }
+
+        public static DateObject Past(this DateObject from, DayOfWeek dayOfWeek)
+        {
+            var start = (int)from.DayOfWeek;
+            var target = (int)dayOfWeek;
+
+            if (start == 0)
+            {
+                start = 7;
+            }
+
+            if (target == 0)
+            {
+                target = 7;
+            }
+
+            if (start > target)
+            {
+                return This(from, dayOfWeek);
+            }
+            else
+            {
+                return Last(from, dayOfWeek);
+            }
         }
 
         public static DateObject SafeCreateFromValue(this DateObject datetime, int year, int month, int day)
