@@ -9,8 +9,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 {
     public class DutchTimePeriodExtractorConfiguration : BaseOptionsConfiguration, ITimePeriodExtractorConfiguration
     {
-        public string TokenBeforeDate { get; }
-
         public static readonly Regex TillRegex =
             new Regex(DateTimeDefinitions.TillRegex, RegexOptions.Singleline);
 
@@ -71,6 +69,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
             IntegerExtractor = Number.Dutch.IntegerExtractor.GetInstance();
             TimeZoneExtractor = new BaseTimeZoneExtractor(new DutchTimeZoneExtractorConfiguration(this));
         }
+
+        public string TokenBeforeDate { get; }
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 

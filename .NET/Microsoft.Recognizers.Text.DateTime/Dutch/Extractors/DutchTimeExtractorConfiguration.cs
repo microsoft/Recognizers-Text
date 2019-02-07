@@ -123,6 +123,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
             ConnectNumRegex,
         };
 
+        public DutchTimeExtractorConfiguration(IOptionsConfiguration config)
+            : base(config)
+        {
+            DurationExtractor = new BaseDurationExtractor(new DutchDurationExtractorConfiguration(this));
+            TimeZoneExtractor = new BaseTimeZoneExtractor(new DutchTimeZoneExtractorConfiguration(this));
+        }
+
         IEnumerable<Regex> ITimeExtractorConfiguration.TimeRegexList => TimeRegexList;
 
         Regex ITimeExtractorConfiguration.AtRegex => AtRegex;
@@ -134,12 +141,5 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         public IDateTimeExtractor DurationExtractor { get; }
 
         public IDateTimeExtractor TimeZoneExtractor { get; }
-
-        public DutchTimeExtractorConfiguration(IOptionsConfiguration config)
-            : base(config)
-        {
-            DurationExtractor = new BaseDurationExtractor(new DutchDurationExtractorConfiguration(this));
-            TimeZoneExtractor = new BaseTimeZoneExtractor(new DutchTimeZoneExtractorConfiguration(this));
-        }
     }
 }
