@@ -121,16 +121,6 @@ namespace Microsoft.Recognizers.Text.Number
             return result;
         }
 
-        private bool IsRelativeOrdinal(string matchValue)
-        {
-            if (RelativeReferenceRegex == null)
-            {
-                return false;
-            }
-
-            return RelativeReferenceRegex.Match(matchValue).Success;
-        }
-
         protected Regex GenerateLongFormatNumberRegexes(LongFormatType type, string placeholder = BaseNumbers.PlaceHolderDefault)
         {
             var thousandsMark = Regex.Escape(type.ThousandsMark.ToString());
@@ -141,6 +131,16 @@ namespace Microsoft.Recognizers.Text.Number
                 BaseNumbers.DoubleRegexDefinition(placeholder, thousandsMark, decimalsMark);
 
             return new Regex(regexDefinition, RegexOptions.Singleline);
+        }
+
+        private bool IsRelativeOrdinal(string matchValue)
+        {
+            if (RelativeReferenceRegex == null)
+            {
+                return false;
+            }
+
+            return RelativeReferenceRegex.Match(matchValue).Success;
         }
 
         private List<ExtractResult> FilterAmbiguity(List<ExtractResult> ers, string text)
