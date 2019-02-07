@@ -8,6 +8,52 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 {
     public class DutchDateParserConfiguration : BaseOptionsConfiguration, IDateParserConfiguration
     {
+        public DutchDateParserConfiguration(ICommonDateTimeParserConfiguration config)
+            : base(config)
+        {
+            DateTokenPrefix = DateTimeDefinitions.DateTokenPrefix;
+            IntegerExtractor = config.IntegerExtractor;
+            OrdinalExtractor = config.OrdinalExtractor;
+            CardinalExtractor = config.CardinalExtractor;
+            NumberParser = config.NumberParser;
+            DurationExtractor = config.DurationExtractor;
+            DateExtractor = config.DateExtractor;
+            DurationParser = config.DurationParser;
+            DateRegexes = new DutchDateExtractorConfiguration(this).DateRegexList;
+            OnRegex = DutchDateExtractorConfiguration.OnRegex;
+            SpecialDayRegex = DutchDateExtractorConfiguration.SpecialDayRegex;
+            SpecialDayWithNumRegex = DutchDateExtractorConfiguration.SpecialDayWithNumRegex;
+            NextRegex = DutchDateExtractorConfiguration.NextDateRegex;
+            ThisRegex = DutchDateExtractorConfiguration.ThisRegex;
+            LastRegex = DutchDateExtractorConfiguration.LastDateRegex;
+            UnitRegex = DutchDateExtractorConfiguration.DateUnitRegex;
+            WeekDayRegex = DutchDateExtractorConfiguration.WeekDayRegex;
+            MonthRegex = DutchDateExtractorConfiguration.MonthRegex;
+            WeekDayOfMonthRegex = DutchDateExtractorConfiguration.WeekDayOfMonthRegex;
+            ForTheRegex = DutchDateExtractorConfiguration.ForTheRegex;
+            WeekDayAndDayOfMothRegex = DutchDateExtractorConfiguration.WeekDayAndDayOfMothRegex;
+            WeekDayAndDayRegex = DutchDateExtractorConfiguration.WeekDayAndDayRegex;
+            RelativeMonthRegex = DutchDateExtractorConfiguration.RelativeMonthRegex;
+            YearSuffix = DutchDateExtractorConfiguration.YearSuffix;
+            RelativeWeekDayRegex = DutchDateExtractorConfiguration.RelativeWeekDayRegex;
+            RelativeDayRegex = new Regex(DateTimeDefinitions.RelativeDayRegex, RegexOptions.Singleline);
+            NextPrefixRegex = new Regex(DateTimeDefinitions.NextPrefixRegex, RegexOptions.Singleline);
+            PreviousPrefixRegex = new Regex(DateTimeDefinitions.PreviousPrefixRegex, RegexOptions.Singleline);
+            UpcomingPrefixRegex = new Regex(DateTimeDefinitions.UpcomingPrefixRegex, RegexOptions.Singleline);
+            PastPrefixRegex = new Regex(DateTimeDefinitions.PastPrefixRegex, RegexOptions.Singleline);
+            DayOfMonth = config.DayOfMonth;
+            DayOfWeek = config.DayOfWeek;
+            MonthOfYear = config.MonthOfYear;
+            CardinalMap = config.CardinalMap;
+            UnitMap = config.UnitMap;
+            UtilityConfiguration = config.UtilityConfiguration;
+            SameDayTerms = DateTimeDefinitions.SameDayTerms.ToImmutableList();
+            PlusOneDayTerms = DateTimeDefinitions.PlusOneDayTerms.ToImmutableList();
+            PlusTwoDayTerms = DateTimeDefinitions.PlusTwoDayTerms.ToImmutableList();
+            MinusOneDayTerms = DateTimeDefinitions.MinusOneDayTerms.ToImmutableList();
+            MinusTwoDayTerms = DateTimeDefinitions.MinusTwoDayTerms.ToImmutableList();
+        }
+
         public string DateTokenPrefix { get; }
 
         public IExtractor IntegerExtractor { get; }
@@ -89,52 +135,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         public IImmutableList<string> MinusTwoDayTerms { get; }
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
-
-        public DutchDateParserConfiguration(ICommonDateTimeParserConfiguration config)
-            : base(config)
-        {
-            DateTokenPrefix = DateTimeDefinitions.DateTokenPrefix;
-            IntegerExtractor = config.IntegerExtractor;
-            OrdinalExtractor = config.OrdinalExtractor;
-            CardinalExtractor = config.CardinalExtractor;
-            NumberParser = config.NumberParser;
-            DurationExtractor = config.DurationExtractor;
-            DateExtractor = config.DateExtractor;
-            DurationParser = config.DurationParser;
-            DateRegexes = new DutchDateExtractorConfiguration(this).DateRegexList;
-            OnRegex = DutchDateExtractorConfiguration.OnRegex;
-            SpecialDayRegex = DutchDateExtractorConfiguration.SpecialDayRegex;
-            SpecialDayWithNumRegex = DutchDateExtractorConfiguration.SpecialDayWithNumRegex;
-            NextRegex = DutchDateExtractorConfiguration.NextDateRegex;
-            ThisRegex = DutchDateExtractorConfiguration.ThisRegex;
-            LastRegex = DutchDateExtractorConfiguration.LastDateRegex;
-            UnitRegex = DutchDateExtractorConfiguration.DateUnitRegex;
-            WeekDayRegex = DutchDateExtractorConfiguration.WeekDayRegex;
-            MonthRegex = DutchDateExtractorConfiguration.MonthRegex;
-            WeekDayOfMonthRegex = DutchDateExtractorConfiguration.WeekDayOfMonthRegex;
-            ForTheRegex = DutchDateExtractorConfiguration.ForTheRegex;
-            WeekDayAndDayOfMothRegex = DutchDateExtractorConfiguration.WeekDayAndDayOfMothRegex;
-            WeekDayAndDayRegex = DutchDateExtractorConfiguration.WeekDayAndDayRegex;
-            RelativeMonthRegex = DutchDateExtractorConfiguration.RelativeMonthRegex;
-            YearSuffix = DutchDateExtractorConfiguration.YearSuffix;
-            RelativeWeekDayRegex = DutchDateExtractorConfiguration.RelativeWeekDayRegex;
-            RelativeDayRegex = new Regex(DateTimeDefinitions.RelativeDayRegex, RegexOptions.Singleline);
-            NextPrefixRegex = new Regex(DateTimeDefinitions.NextPrefixRegex, RegexOptions.Singleline);
-            PreviousPrefixRegex = new Regex(DateTimeDefinitions.PreviousPrefixRegex, RegexOptions.Singleline);
-            UpcomingPrefixRegex = new Regex(DateTimeDefinitions.UpcomingPrefixRegex, RegexOptions.Singleline);
-            PastPrefixRegex = new Regex(DateTimeDefinitions.PastPrefixRegex, RegexOptions.Singleline);
-            DayOfMonth = config.DayOfMonth;
-            DayOfWeek = config.DayOfWeek;
-            MonthOfYear = config.MonthOfYear;
-            CardinalMap = config.CardinalMap;
-            UnitMap = config.UnitMap;
-            UtilityConfiguration = config.UtilityConfiguration;
-            SameDayTerms = DateTimeDefinitions.SameDayTerms.ToImmutableList();
-            PlusOneDayTerms = DateTimeDefinitions.PlusOneDayTerms.ToImmutableList();
-            PlusTwoDayTerms = DateTimeDefinitions.PlusTwoDayTerms.ToImmutableList();
-            MinusOneDayTerms = DateTimeDefinitions.MinusOneDayTerms.ToImmutableList();
-            MinusTwoDayTerms = DateTimeDefinitions.MinusTwoDayTerms.ToImmutableList();
-        }
 
         public int GetSwiftMonth(string text)
         {
