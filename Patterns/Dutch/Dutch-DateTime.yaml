@@ -91,7 +91,7 @@ WeekDayRegex: !simpleRegex
 SingleWeekDayRegex: !simpleRegex
   def: \b(?<weekday>maandag|dinsdag|woensdag|donderdag|vrijdag|zaterdag|zondag|ma|ma.|di|di.|wo|wo.|woe|woe.|do|do.|vr|vr.|vrij|za|za.|zat|zat.|zo|zo.)s?\b
 RelativeMonthRegex: !nestedRegex
-  def: (?<relmonth>(de\s+)?{RelativeRegex}\s+maand)\b
+  def: (?<relmonth>((van\s+)?de\s+)?{RelativeRegex}\s+maand)\b
   references: [RelativeRegex]
 WrittenMonthRegex: !simpleRegex
   def: (((de\s+)?maand\s+)?(?<month>januari|februari|maart|april|mei|juni|juli|augustus|september|oktober|december|jan|feb|mar|apr|jun|jul|aug|sep|sept|oct|okt|nov|dec))
@@ -215,10 +215,10 @@ NextDateRegex: !nestedRegex
   def: \b({NextPrefixRegex}(\s*week(\s*,?\s*op)?)?\s+{WeekDayRegex})|((op\s+)?{WeekDayRegex}((\s+of)?\s+(the\s+following|(de\s+)?volgende)\s*week))\b
   references: [ NextPrefixRegex, WeekDayRegex ]
 SpecialDayRegex: !nestedRegex
-  def: \b(eergisteren|overmorgen|((de\s+)?({RelativeRegex}|my)\s+dag)|gisteren|morgen|vandaag)\b
+  def: \b(eergisteren|overmorgen|((de\s+)?({RelativeRegex})\s+dag)|gisteren|morgen|vandaag)\b
   references: [ RelativeRegex ]
 SpecialDayWithNumRegex: !nestedRegex
-  def: \b((?<number>{WrittenNumRegex})\s+dagen?\s+(vanaf|voor)\s+(?<day>gisteren|morgen|vandaag))\b
+  def: \b((?<number>{WrittenNumRegex})\s+dagen?\s+(vanaf)\s+(?<day>gisteren|morgen|vandaag))\b
   references: [ WrittenNumRegex ]
 RelativeDayRegex: !nestedRegex
   def: \b(((de\s+)?{RelativeRegex}\s+dag))\b
@@ -592,7 +592,7 @@ RestOfDateRegex: !simpleRegex
 RestOfDateTimeRegex: !simpleRegex
   def: \bRest\s+(of\s+)?((the|my|this|current)\s+)?(?<unit>day)\b
 MealTimeRegex: !simpleRegex
-  def: \b(at\s+)?(?<mealTime>lunchtime)\b
+  def: \b(tijdens de\s+)?(?<mealTime>lunch)\b
 NumberEndingPattern: !nestedRegex
   def: ^(\s+(?<meeting>meeting|appointment|conference|call|skype call)\s+to\s+(?<newTime>{PeriodHourNumRegex}|{HourRegex})((\.)?$|(\.,|,|!|\?)))
   references: [PeriodHourNumRegex, HourRegex]
