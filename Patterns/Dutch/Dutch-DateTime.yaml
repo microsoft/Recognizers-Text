@@ -206,7 +206,7 @@ RelaxedOnRegex: !simpleRegex
 PrefixWeekDayRegex: !simpleRegex
   def: (\s*((,?\s*on)|[-—–]))
 ThisRegex: !nestedRegex
-  def: \b((deze(\s*week)?(\s*op)?\s+){WeekDayRegex})|({WeekDayRegex}((\s+of)?\s+deze\s*week))\b
+  def: \b((deze(\s*week)?(\s*op)?\s+){WeekDayRegex})|({WeekDayRegex}((\s+van)?\s+deze\s*week))\b
   references: [ WeekDayRegex ]
 LastDateRegex: !nestedRegex
   def: \b({PreviousPrefixRegex}(\s*week)?\s+{WeekDayRegex})|({WeekDayRegex}(\s+vorige\s*week))\b
@@ -224,12 +224,12 @@ RelativeDayRegex: !nestedRegex
   def: \b(((de\s+)?{RelativeRegex}\s+dag))\b
   references: [ RelativeRegex ]
 SetWeekDayRegex: !simpleRegex
-  def: \b(?<prefix>on\s+)?(?<weekday>morning|afternoon|evening|night|Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday)s\b
+  def: \b(?<prefix>op\s+)?(?<weekday>morgen|middag|avond|nacht|zondag|maandag|dinsdag|woensdag|donderdag|vrijdag|zaterdag)s\b
 WeekDayOfMonthRegex: !nestedRegex
   def: (?<wom>(de\s+)?(?<cardinal>eerste|tweede|derde|vierde|vijfde|1e|1ste|2e|2de|3e|3de|4e|4de|5e|5de|laatste)\s+{WeekDayRegex}\s+{MonthSuffixRegex})
   references: [ WeekDayRegex, MonthSuffixRegex ]
 RelativeWeekDayRegex: !nestedRegex
-  def: \b({WrittenNumRegex}\s+{WeekDayRegex}\s+(from\s+now|later))\b
+  def: \b({WrittenNumRegex}\s+{WeekDayRegex}\s+(vanaf\s+nu|later))\b
   references: [ WrittenNumRegex, WeekDayRegex ]
 SpecialDate: !nestedRegex
   def: (?=\b(over|op)\s+de\s+){DayRegex}\b
@@ -255,7 +255,7 @@ DateExtractor6: !nestedRegex
   def: (?<={DatePreposition}\s+)({WeekDayRegex}\s+)?{MonthNumRegex}[\-\.]{DayRegex}(?![%])\b
   references: [ MonthNumRegex, DayRegex, WeekDayRegex, DatePreposition ]
 DateExtractor7L: !nestedRegex
-  def: \b({WeekDayRegex}\s+)?{MonthNumRegex}\s*/\s*{DayRegex}((\s+|\s*,\s*|\s+of\s+){DateYearRegex})(?![%])\b
+  def: \b({WeekDayRegex}\s+)?{MonthNumRegex}\s*/\s*{DayRegex}((\s+|\s*,\s*|\s+in\s+){DateYearRegex})(?![%])\b
   references: [ MonthNumRegex, DayRegex, DateYearRegex, WeekDayRegex ]
 DateExtractor7S: !nestedRegex
   def: \b({WeekDayRegex}\s+)?{MonthNumRegex}\s*/\s*{DayRegex}(?![%])\b
@@ -288,7 +288,7 @@ WeekDayEnd: !nestedRegex
 RangeUnitRegex: !simpleRegex
   def: \b(?<unit>jaren|jaar|maanden|maand|weken|week)\b
 OclockRegex: !simpleRegex
-  def: (?<oclock>o\s*’\s*clock|o\s*‘\s*clock|o\s*'\s*clock|o\s*clock)
+  def: (?<oclock>uur)
 DescRegex: !nestedRegex
   def: ((({OclockRegex}\s+)?(?<desc>ampm|am\b|a\.m\.|a m\b|a\. m\.|a\.m\b|a\. m\b|a m\b|pm\b|p\.m\.|p m\b|p\. m\.|p\.m\b|p\. m\b|p\b|p m\b))|{OclockRegex})
   references: [ OclockRegex ]
