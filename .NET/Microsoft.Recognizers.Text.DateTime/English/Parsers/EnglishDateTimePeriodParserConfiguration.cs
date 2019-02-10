@@ -41,7 +41,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             PureNumberBetweenAndRegex = EnglishTimePeriodExtractorConfiguration.PureNumBetweenAnd;
             SpecificTimeOfDayRegex = EnglishDateTimeExtractorConfiguration.SpecificTimeOfDayRegex;
             TimeOfDayRegex = EnglishDateTimeExtractorConfiguration.TimeOfDayRegex;
-            PastRegex = EnglishDatePeriodExtractorConfiguration.PastPrefixRegex;
+            PreviousPrefixRegex = EnglishDatePeriodExtractorConfiguration.PreviousPrefixRegex;
             FutureRegex = EnglishDatePeriodExtractorConfiguration.NextPrefixRegex;
             FutureSuffixRegex = EnglishDatePeriodExtractorConfiguration.FutureSuffixRegex;
             NumberCombinedWithUnitRegex = EnglishDateTimePeriodExtractorConfiguration.TimeNumberCombinedWithUnit;
@@ -93,7 +93,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public Regex TimeOfDayRegex { get; }
 
-        public Regex PastRegex { get; }
+        public Regex PreviousPrefixRegex { get; }
 
         public Regex FutureRegex { get; }
 

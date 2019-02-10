@@ -117,7 +117,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public Regex TimeUnitRegex => SpanishTimePeriodExtractorConfiguration.UnitRegex;
 
-        public Regex PastPrefixRegex => SpanishDatePeriodExtractorConfiguration.PastRegex;
+        public Regex PreviousPrefixRegex => SpanishDatePeriodExtractorConfiguration.PastRegex;
 
         public Regex NextPrefixRegex => SpanishDatePeriodExtractorConfiguration.FutureRegex;
 

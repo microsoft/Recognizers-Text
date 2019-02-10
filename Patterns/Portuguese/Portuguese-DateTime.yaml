@@ -755,10 +755,18 @@ DateTokenPrefix: 'em '
 TimeTokenPrefix: 'as '
 TokenBeforeDate: 'o '
 TokenBeforeTime: 'as '
-NextPrefixRegex: !simpleRegex
-  def: (pr[oó]xim[oa]|seguinte)\b
+UpcomingPrefixRegex: !simpleRegex
+  def: .^
+# TODO: modify below regex according to the counterpart in English
+NextPrefixRegex: !nestedRegex
+  def: (pr[oó]xim[oa]|seguinte|{UpcomingPrefixRegex})\b
+  references: [ UpcomingPrefixRegex ]
 PastPrefixRegex: !simpleRegex
-  def: ([uú]ltim[oa])\b
+  def: .^
+# TODO: modify below regex according to the counterpart in English
+PreviousPrefixRegex: !nestedRegex
+  def: ([uú]ltim[oa]|{PastPrefixRegex})\b
+  references: [PastPrefixRegex]
 ThisPrefixRegex: !simpleRegex
   def: ([nd]?es[st][ea])\b
 RelativeDayRegex: !simpleRegex

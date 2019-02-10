@@ -56,7 +56,7 @@ export class EnglishDatePeriodExtractorConfiguration implements IDatePeriodExtra
         this.tillRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TillRegex);
         this.followedUnit = RegExpUtility.getSafeRegExp(EnglishDateTime.FollowedDateUnit);
         this.numberCombinedWithUnit = RegExpUtility.getSafeRegExp(EnglishDateTime.NumberCombinedWithDateUnit);
-        this.pastRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PastPrefixRegex);
+        this.pastRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PreviousPrefixRegex);
         this.futureRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.NextPrefixRegex);
         this.weekOfRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.WeekOfRegex);
         this.monthOfRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.MonthOfRegex);
@@ -120,7 +120,7 @@ export class EnglishDatePeriodParserConfiguration implements IDatePeriodParserCo
     readonly monthOfRegex: RegExp
     readonly whichWeekRegex: RegExp
     readonly nextPrefixRegex: RegExp
-    readonly pastPrefixRegex: RegExp
+    readonly previousPrefixRegex: RegExp
     readonly thisPrefixRegex: RegExp
     readonly restOfDateRegex : RegExp
     readonly laterEarlyPeriodRegex: RegExp
@@ -146,7 +146,7 @@ export class EnglishDatePeriodParserConfiguration implements IDatePeriodParserCo
         this.monthWithYear = RegExpUtility.getSafeRegExp(EnglishDateTime.MonthWithYear);
         this.monthNumWithYear = RegExpUtility.getSafeRegExp(EnglishDateTime.MonthNumWithYear);
         this.yearRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.YearRegex);
-        this.pastRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PastPrefixRegex);
+        this.pastRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PreviousPrefixRegex);
         this.futureRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.NextPrefixRegex);
         this.inConnectorRegex = config.utilityConfiguration.inConnectorRegex;
         this.weekOfMonthRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.WeekOfMonthRegex);
@@ -159,7 +159,7 @@ export class EnglishDatePeriodParserConfiguration implements IDatePeriodParserCo
         this.monthOfRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.MonthOfRegex);
         this.whichWeekRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.WhichWeekRegex);
         this.nextPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.NextPrefixRegex);
-        this.pastPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PastPrefixRegex);
+        this.previousPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PreviousPrefixRegex);
         this.thisPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.ThisPrefixRegex);
         this.restOfDateRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RestOfDateRegex);
         this.laterEarlyPeriodRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.LaterEarlyPeriodRegex);
@@ -178,7 +178,7 @@ export class EnglishDatePeriodParserConfiguration implements IDatePeriodParserCo
         let swift = 0;
         if (RegExpUtility.getMatches(this.nextPrefixRegex, trimmedSource).length > 0) {
             swift = 1;
-        } else if (RegExpUtility.getMatches(this.pastPrefixRegex, trimmedSource).length > 0) {
+        } else if (RegExpUtility.getMatches(this.previousPrefixRegex, trimmedSource).length > 0) {
             swift = -1;
         }
         return swift;
@@ -189,7 +189,7 @@ export class EnglishDatePeriodParserConfiguration implements IDatePeriodParserCo
         let swift = -10;
         if (RegExpUtility.getMatches(this.nextPrefixRegex, trimmedSource).length > 0) {
             swift = 1;
-        } else if (RegExpUtility.getMatches(this.pastPrefixRegex, trimmedSource).length > 0) {
+        } else if (RegExpUtility.getMatches(this.previousPrefixRegex, trimmedSource).length > 0) {
             swift = -1;
         } else if (RegExpUtility.getMatches(this.thisPrefixRegex, trimmedSource).length > 0) {
             swift = 0;

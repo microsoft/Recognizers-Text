@@ -94,7 +94,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public Regex SpecificTimeOfDayRegex => PeriodSpecificTimeOfDayRegex;
 
-        public Regex PastPrefixRegex => EnglishDatePeriodExtractorConfiguration.PastPrefixRegex;
+        public Regex PreviousPrefixRegex => EnglishDatePeriodExtractorConfiguration.PreviousPrefixRegex;
 
         public Regex NextPrefixRegex => EnglishDatePeriodExtractorConfiguration.NextPrefixRegex;
 

@@ -96,7 +96,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         public Regex SpecificTimeOfDayRegex => PeriodSpecificTimeOfDayRegex;
 
-        public Regex PastPrefixRegex => DutchDatePeriodExtractorConfiguration.PastPrefixRegex;
+        public Regex PreviousPrefixRegex => DutchDatePeriodExtractorConfiguration.PreviousPrefixRegex;
 
         public Regex NextPrefixRegex => DutchDatePeriodExtractorConfiguration.NextPrefixRegex;
 

@@ -134,12 +134,18 @@ RelativeWeekDayRegex: !simpleRegex
 NumberEndingPattern: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
+UpcomingPrefixRegex: !simpleRegex
+  def: .^
+  # TODO: modify below regex according to the counterpart in English
 NextPrefixRegex: !simpleRegex
-  # TODO: modify below regex according to the counterpart in English
-  def: ^[.]
+  # TODO: implement the relative day regex if needed. If yes, they should be abstracted
+  def: .^
 PastPrefixRegex: !simpleRegex
+  def: .^
   # TODO: modify below regex according to the counterpart in English
-  def: ^[.]
+PreviousPrefixRegex: !simpleRegex
+  # TODO: implement the relative day regex if needed. If yes, they should be abstracted
+  def: .^
 SpecialDate: !nestedRegex
   def: (?=\b(di|al)\s+il\s+){DayRegex}\b
   references: [ DayRegex ]

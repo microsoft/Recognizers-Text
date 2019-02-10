@@ -72,7 +72,7 @@ class ChineseDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfigu
         return self._time_unit_regex
 
     @property
-    def past_prefix_regex(self) -> Pattern:
+    def previous_prefix_regex(self) -> Pattern:
         return None
 
     @property

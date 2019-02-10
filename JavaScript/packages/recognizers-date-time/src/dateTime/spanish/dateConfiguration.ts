@@ -119,7 +119,7 @@ export class SpanishDateParserConfiguration implements IDateParserConfiguration 
     // TODO: implement the relative day regex if needed. If yes, they should be abstracted
     static readonly relativeDayRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.RelativeDayRegex);
     static readonly nextPrefixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.NextPrefixRegex);
-    static readonly pastPrefixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PastPrefixRegex);
+    static readonly previousPrefixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PreviousPrefixRegex);
 
     constructor(config: SpanishCommonDateTimeParserConfiguration) {
         this.ordinalExtractor = config.ordinalExtractor;
@@ -187,7 +187,7 @@ export class SpanishDateParserConfiguration implements IDateParserConfiguration 
             swift = 1;
         }
 
-        if (RegExpUtility.getMatches(SpanishDateParserConfiguration.pastPrefixRegex, trimedText).length) {
+        if (RegExpUtility.getMatches(SpanishDateParserConfiguration.previousPrefixRegex, trimedText).length) {
             swift = -1;
         }
 
@@ -196,7 +196,7 @@ export class SpanishDateParserConfiguration implements IDateParserConfiguration 
 
     isCardinalLast(source: string): boolean {
         let trimedText = source.trim().toLowerCase();
-        return RegExpUtility.getMatches(SpanishDateParserConfiguration.pastPrefixRegex, trimedText).length > 0;
+        return RegExpUtility.getMatches(SpanishDateParserConfiguration.previousPrefixRegex, trimedText).length > 0;
     }
 
     private static normalize(source: string): string {

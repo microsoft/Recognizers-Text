@@ -110,7 +110,7 @@ class DateTimePeriodExtractorConfiguration(ABC):
 
     @property
     @abstractmethod
-    def past_prefix_regex(self) -> Pattern:
+    def previous_prefix_regex(self) -> Pattern:
         raise NotImplementedError
 
     @property
@@ -288,7 +288,7 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
         for duration in durations:
             before_str = source[0:duration.start].strip()
             if before_str:
-                match = regex.search(self.config.past_prefix_regex, before_str)
+                match = regex.search(self.config.previous_prefix_regex, before_str)
                 if match and not before_str[match.end():]:
                     tokens.append(Token(match.start(), duration.end))
                     continue

@@ -51,7 +51,7 @@ public class SpanishDateParserConfiguration  extends BaseOptionsConfiguration im
     private final Pattern relativeWeekDayRegex;
     private final Pattern relativeDayRegex;
     private final Pattern nextPrefixRegex;
-    private final Pattern pastPrefixRegex;
+    private final Pattern previousPrefixRegex;
 
     private final ImmutableMap<String, Integer> dayOfMonth;
     private final ImmutableMap<String, Integer> dayOfWeek;
@@ -94,7 +94,7 @@ public class SpanishDateParserConfiguration  extends BaseOptionsConfiguration im
         relativeWeekDayRegex = SpanishDateExtractorConfiguration.RelativeWeekDayRegex;
         relativeDayRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.RelativeDayRegex);
         nextPrefixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.NextPrefixRegex);
-        pastPrefixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PastPrefixRegex);
+        previousPrefixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PreviousPrefixRegex);
         dayOfMonth = config.getDayOfMonth();
         dayOfWeek = config.getDayOfWeek();
         monthOfYear = config.getMonthOfYear();
@@ -240,7 +240,7 @@ public class SpanishDateParserConfiguration  extends BaseOptionsConfiguration im
 
     @Override
     public Pattern getPastPrefixRegex() {
-        return pastPrefixRegex;
+        return previousPrefixRegex;
     }
 
     @Override
@@ -308,7 +308,7 @@ public class SpanishDateParserConfiguration  extends BaseOptionsConfiguration im
             swift = 1;
         }
 
-        regexMatcher = pastPrefixRegex.matcher(trimmedText);
+        regexMatcher = previousPrefixRegex.matcher(trimmedText);
         if (regexMatcher.find()) {
             swift = -1;
         }

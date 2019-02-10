@@ -605,9 +605,13 @@ public class FrenchDateTime {
 
     public static final String ReferenceDatePeriodRegex = "^[.]";
 
-    public static final String NextPrefixRegex = "^[\\.]";
+    public static final String UpcomingPrefixRegex = ".^";
 
-    public static final String PastPrefixRegex = "^[\\.]";
+    public static final String NextPrefixRegex = ".^";
+
+    public static final String PastPrefixRegex = ".^";
+
+    public static final String PreviousPrefixRegex = ".^";
 
     public static final String RelativeDayRegex = "^[\\.]";
 

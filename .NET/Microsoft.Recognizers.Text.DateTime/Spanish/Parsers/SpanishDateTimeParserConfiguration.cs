@@ -137,7 +137,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             var trimmedText = text.Trim().ToLowerInvariant();
             var swift = 0;
 
-            if (SpanishDatePeriodParserConfiguration.PastPrefixRegex.IsMatch(trimmedText))
+            if (SpanishDatePeriodParserConfiguration.PreviousPrefixRegex.IsMatch(trimmedText))
             {
                 swift = -1;
             }
