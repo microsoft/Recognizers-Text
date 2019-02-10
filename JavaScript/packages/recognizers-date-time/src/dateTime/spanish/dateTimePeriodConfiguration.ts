@@ -31,7 +31,7 @@ export class SpanishDateTimePeriodExtractorConfiguration implements IDateTimePer
     readonly followedUnit: RegExp;
     readonly numberCombinedWithUnit: RegExp;
     readonly timeUnitRegex: RegExp;
-    readonly pastPrefixRegex: RegExp;
+    readonly previousPrefixRegex: RegExp;
     readonly nextPrefixRegex: RegExp;
     readonly relativeTimeUnitRegex: RegExp;
     readonly restOfDateTimeRegex: RegExp;
@@ -56,7 +56,7 @@ export class SpanishDateTimePeriodExtractorConfiguration implements IDateTimePer
         this.timeOfDayRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.TimeOfDayRegex);
         this.followedUnit = RegExpUtility.getSafeRegExp(SpanishDateTime.FollowedUnit);
         this.timeUnitRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.UnitRegex);
-        this.pastPrefixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PastRegex);
+        this.previousPrefixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PastRegex);
         this.nextPrefixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.FutureRegex);
         this.numberCombinedWithUnit = RegExpUtility.getSafeRegExp(SpanishDateTime.DateTimePeriodNumberCombinedWithUnit);
         this.weekDayRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.WeekDayRegex);
@@ -106,7 +106,7 @@ export class SpanishDateTimePeriodParserConfiguration implements IDateTimePeriod
     readonly unitRegex: RegExp;
 
     readonly nextPrefixRegex: RegExp;
-    readonly pastPrefixRegex: RegExp;
+    readonly previousPrefixRegex: RegExp;
     readonly thisPrefixRegex: RegExp;
 
     readonly numbers: ReadonlyMap<string, number>;
@@ -141,7 +141,7 @@ export class SpanishDateTimePeriodParserConfiguration implements IDateTimePeriod
         this.numbers = config.numbers;
 
         this.nextPrefixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.NextPrefixRegex);
-        this.pastPrefixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PastPrefixRegex);
+        this.previousPrefixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PreviousPrefixRegex);
         this.thisPrefixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.ThisPrefixRegex);
 
         this.pureNumberFromToRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PureNumFromTo);
@@ -215,7 +215,7 @@ export class SpanishDateTimePeriodParserConfiguration implements IDateTimePeriod
         let swift = 0;
 
         // TODO: Replace with a regex
-        if (RegExpUtility.getFirstMatchIndex(this.pastPrefixRegex, trimedText).matched ||
+        if (RegExpUtility.getFirstMatchIndex(this.previousPrefixRegex, trimedText).matched ||
             trimedText === "anoche") {
             swift = -1;
         }

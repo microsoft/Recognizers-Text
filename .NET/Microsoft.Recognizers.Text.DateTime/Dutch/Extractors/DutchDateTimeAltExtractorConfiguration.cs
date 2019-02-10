@@ -25,8 +25,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         public static readonly Regex ThisPrefixRegex =
             new Regex(DateTimeDefinitions.ThisPrefixRegex, RegexOptions.Singleline);
 
-        public static readonly Regex PastPrefixRegex =
-            new Regex(DateTimeDefinitions.PastPrefixRegex, RegexOptions.Singleline);
+        public static readonly Regex PreviousPrefixRegex =
+            new Regex(DateTimeDefinitions.PreviousPrefixRegex, RegexOptions.Singleline);
 
         public static readonly Regex NextPrefixRegex =
             new Regex(DateTimeDefinitions.NextPrefixRegex, RegexOptions.Singleline);
@@ -42,7 +42,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         public static readonly Regex[] RelativePrefixList =
         {
-            ThisPrefixRegex, PastPrefixRegex, NextPrefixRegex,
+            ThisPrefixRegex, PreviousPrefixRegex, NextPrefixRegex,
         };
 
         public static readonly Regex[] AmPmRegexList =

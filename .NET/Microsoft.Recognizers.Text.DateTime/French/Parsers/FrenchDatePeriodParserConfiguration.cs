@@ -184,7 +184,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         Regex IDatePeriodParserConfiguration.NextPrefixRegex => NextPrefixRegex;
 
-        Regex IDatePeriodParserConfiguration.PastPrefixRegex => PastPrefixRegex;
+        Regex IDatePeriodParserConfiguration.PreviousPrefixRegex => PastPrefixRegex;
 
         Regex IDatePeriodParserConfiguration.ThisPrefixRegex => ThisPrefixRegex;
 

@@ -78,7 +78,7 @@ class FrenchDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfigur
         return self._time_unit_regex
 
     @property
-    def past_prefix_regex(self) -> Pattern:
+    def previous_prefix_regex(self) -> Pattern:
         return self._past_prefix_regex
 
     @property

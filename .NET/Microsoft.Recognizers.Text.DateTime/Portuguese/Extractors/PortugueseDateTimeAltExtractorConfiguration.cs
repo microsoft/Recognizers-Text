@@ -10,7 +10,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             new Regex(DateTimeDefinitions.ThisPrefixRegex, RegexOptions.Singleline);
 
         public static readonly Regex PastPrefixRegex =
-            new Regex(DateTimeDefinitions.PastPrefixRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.PreviousPrefixRegex, RegexOptions.Singleline);
 
         public static readonly Regex NextPrefixRegex =
             new Regex(DateTimeDefinitions.NextPrefixRegex, RegexOptions.Singleline);

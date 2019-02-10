@@ -119,7 +119,7 @@ public class SpanishDateTimeParserConfiguration extends BaseOptionsConfiguration
     public int getSwiftDay(String text) {
 
         String trimmedText = text.trim().toLowerCase(Locale.ROOT);
-        Matcher regexMatcher = SpanishDatePeriodParserConfiguration.pastPrefixRegex.matcher(trimmedText);
+        Matcher regexMatcher = SpanishDatePeriodParserConfiguration.previousPrefixRegex.matcher(trimmedText);
 
         int swift = 0;
         if (regexMatcher.find()) {

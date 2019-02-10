@@ -13,9 +13,11 @@ class EnglishDateTime:
     RangeConnectorRegex = f'(?<and>\\b(and|through|to)\\b|{BaseDateTime.RangeConnectorSymbolRegex})'
     RelativeRegex = f'\\b(?<order>following|next|coming|upcoming|this|last|past|previous|current|the)\\b'
     StrictRelativeRegex = f'\\b(?<order>following|next|coming|upcoming|this|last|past|previous|current)\\b'
-    NextPrefixRegex = f'\\b(following|next|upcoming|coming)\\b'
+    UpcomingPrefixRegex = f'((this )?(upcoming|coming))'
+    NextPrefixRegex = f'\\b(following|next|{UpcomingPrefixRegex})\\b'
     AfterNextSuffixRegex = f'\\b(after\\s+(the\\s+)?next)\\b'
-    PastPrefixRegex = f'(last|past|previous)\\b'
+    PastPrefixRegex = f'((this )?past)\\b'
+    PreviousPrefixRegex = f'(last|previous|{PastPrefixRegex})\\b'
     ThisPrefixRegex = f'(this|current)\\b'
     RangePrefixRegex = f'(from|between)'
     CenturySuffixRegex = f'(^century)\\b'
@@ -81,14 +83,14 @@ class EnglishDateTime:
     WeekOfRegex = f'(the\\s+)?(week)(\\s+of)(\\s+the)?'
     MonthOfRegex = f'(month)(\\s*)(of)'
     MonthRegex = f'(?<month>april|apr|august|aug|december|dec|february|feb|january|jan|july|jul|june|jun|march|mar|may|november|nov|october|oct|september|sept|sep)'
-    AmbiguousMonthP0Regex = f'\\b((^may i)|(i|you|he|she|we|they)\\s+may|(may\\s+((((also|not|(also not)|well)\\s+)?(be|ask|contain|constitute|email|e-mail|take|have|result|involve|get|work|reply))|(or may not))))\\b'
+    AmbiguousMonthP0Regex = f'\\b((^may i)|(i|you|he|she|we|they)\\s+may|(may\\s+((((also|not|(also not)|well)\\s+)?(be|ask|contain|constitute|email|e-mail|take|have|result|involve|get|work|reply|differ))|(or may not))))\\b'
     DateYearRegex = f'(?<year>{BaseDateTime.FourDigitYearRegex}|{TwoDigitYearRegex})'
     YearSuffix = f'(,?\\s*({DateYearRegex}|{FullTextYearRegex}))'
     OnRegex = f'(?<=\\bon\\s+)({DayRegex}s?)\\b'
     RelaxedOnRegex = f'(?<=\\b(on|at|in)\\s+)((?<day>10th|11th|11st|12nd|12th|13rd|13th|14th|15th|16th|17th|18th|19th|1st|20th|21st|21th|22nd|22th|23rd|23th|24th|25th|26th|27th|28th|29th|2nd|30th|31st|3rd|4th|5th|6th|7th|8th|9th)s?)\\b'
     PrefixWeekDayRegex = f'(\\s*((,?\\s*on)|[-—–]))'
     ThisRegex = f'\\b(this(\\s*week{PrefixWeekDayRegex}?)?\\s*{WeekDayRegex})|({WeekDayRegex}((\\s+of)?\\s+this\\s*week))\\b'
-    LastDateRegex = f'\\b({PastPrefixRegex}(\\s*week{PrefixWeekDayRegex}?)?\\s*{WeekDayRegex})|({WeekDayRegex}(\\s+last\\s*week))\\b'
+    LastDateRegex = f'\\b({PreviousPrefixRegex}(\\s*week{PrefixWeekDayRegex}?)?\\s*{WeekDayRegex})|({WeekDayRegex}(\\s+last\\s*week))\\b'
     NextDateRegex = f'\\b({NextPrefixRegex}(\\s*week{PrefixWeekDayRegex}?)?\\s*{WeekDayRegex})|((on\\s+)?{WeekDayRegex}((\\s+of)?\\s+(the\\s+following|(the\\s+)?next)\\s*week))\\b'
     SpecialDayRegex = f'\\b((the\\s+)?day before yesterday|(the\\s+)?day after (tomorrow|tmr)|the\\s+day\\s+(before|after)(?!=\\s+day)|((the\\s+)?({RelativeRegex}|my)\\s+day)|yesterday|tomorrow|tmr|today)\\b'
     SpecialDayWithNumRegex = f'\\b((?<number>{WrittenNumRegex})\\s+days?\\s+from\\s+(?<day>yesterday|tomorrow|tmr|today))\\b'
@@ -216,8 +218,8 @@ class EnglishDateTime:
     NightStartEndRegex = f'(^(overnight|tonight|night))|((overnight|tonight|night)$)'
     InexactNumberRegex = f'\\b(a few|few|some|several|(?<NumTwoTerm>(a\\s+)?couple(\\s+of)?))\\b'
     InexactNumberUnitRegex = f'({InexactNumberRegex})\\s+({DurationUnitRegex})'
-    RelativeTimeUnitRegex = f'((({NextPrefixRegex}|{PastPrefixRegex}|{ThisPrefixRegex})\\s+({TimeUnitRegex}))|((the|my))\\s+({RestrictedTimeUnitRegex}))'
-    RelativeDurationUnitRegex = f'(((?<=({NextPrefixRegex}|{PastPrefixRegex}|{ThisPrefixRegex})\\s+)({DurationUnitRegex}))|((the|my))\\s+({RestrictedTimeUnitRegex}))'
+    RelativeTimeUnitRegex = f'((({NextPrefixRegex}|{PreviousPrefixRegex}|{ThisPrefixRegex})\\s+({TimeUnitRegex}))|((the|my))\\s+({RestrictedTimeUnitRegex}))'
+    RelativeDurationUnitRegex = f'(((?<=({NextPrefixRegex}|{PreviousPrefixRegex}|{ThisPrefixRegex})\\s+)({DurationUnitRegex}))|((the|my))\\s+({RestrictedTimeUnitRegex}))'
     ReferenceDatePeriodRegex = f'\\b{ReferencePrefixRegex}\\s+(?<duration>week|month|year|decade|weekend)\\b'
     ConnectorRegex = f'^(-|,|for|t|around|@)$'
     FromToRegex = f'\\b(from).+(to)\\b.+'
@@ -235,7 +237,7 @@ class EnglishDateTime:
     NumberEndingPattern = f'^(\\s+(?<meeting>meeting|appointment|conference|call|skype call)\\s+to\\s+(?<newTime>{PeriodHourNumRegex}|{HourRegex})((\\.)?$|(\\.,|,|!|\\?)))'
     OneOnOneRegex = f'\\b(1\\s*:\\s*1)|(one (on )?one|one\\s*-\\s*one|one\\s*:\\s*one)\\b'
     LaterEarlyPeriodRegex = f'\\b(({PrefixPeriodRegex})\\s*\\b\\s*(?<suffix>{OneWordPeriodRegex})|({UnspecificEndOfRangeRegex}))\\b'
-    WeekWithWeekDayRangeRegex = f'\\b((?<week>({NextPrefixRegex}|{PastPrefixRegex}|this)\\s+week)((\\s+between\\s+{WeekDayRegex}\\s+and\\s+{WeekDayRegex})|(\\s+from\\s+{WeekDayRegex}\\s+to\\s+{WeekDayRegex})))\\b'
+    WeekWithWeekDayRangeRegex = f'\\b((?<week>({NextPrefixRegex}|{PreviousPrefixRegex}|this)\\s+week)((\\s+between\\s+{WeekDayRegex}\\s+and\\s+{WeekDayRegex})|(\\s+from\\s+{WeekDayRegex}\\s+to\\s+{WeekDayRegex})))\\b'
     GeneralEndingRegex = f'^\\s*((\\.,)|\\.|,|!|\\?)?\\s*$'
     MiddlePauseRegex = f'\\s*(,)\\s*'
     DurationConnectorRegex = f'^\\s*(?<connector>\\s+|and|,)\\s*$'
@@ -587,7 +589,7 @@ class EnglishDateTime:
     DurationDateRestrictions = [r'today', r'now']
     AmbiguityFiltersDict = dict([("\\bmorning|afternoon|evening|night|day\\b", "\\b(good\\s+(morning|afternoon|evening|night|day))|(nighty\\s+night)\\b"),
                                  ("\\bnow\\b", "\\b(^now,)|\\b((is|are)\\s+now\\s+for|for\\s+now)\\b"),
-                                 ("\\bmay\\b", "\\b((^may i)|(i|you|he|she|we|they)\\s+may|(may\\s+((((also|not|(also not)|well)\\s+)?(be|ask|contain|constitute|email|e-mail|take|have|result|involve|get|work|reply))|(or may not))))\\b")])
+                                 ("\\bmay\\b", "\\b((^may i)|(i|you|he|she|we|they)\\s+may|(may\\s+((((also|not|(also not)|well)\\s+)?(be|ask|contain|constitute|email|e-mail|take|have|result|involve|get|work|reply|differ))|(or may not))))\\b")])
     MorningTermList = [r'morning']
     AfternoonTermList = [r'afternoon']
     EveningTermList = [r'evening']

@@ -463,12 +463,18 @@ RelativeDurationUnitRegex: !nestedRegex
 ReferenceDatePeriodRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
+UpcomingPrefixRegex: !simpleRegex
+  def: .^
+  # TODO: modify below regex according to the counterpart in English
 NextPrefixRegex: !simpleRegex
   # TODO: implement the relative day regex if needed. If yes, they should be abstracted
-  def: ^[\.]
+  def: .^
 PastPrefixRegex: !simpleRegex
+  def: .^
+  # TODO: modify below regex according to the counterpart in English
+PreviousPrefixRegex: !simpleRegex
   # TODO: implement the relative day regex if needed. If yes, they should be abstracted
-  def: ^[\.]
+  def: .^
 RelativeDayRegex: !simpleRegex
   # TODO: implement the relative day regex if needed. If yes, they should be abstracted
   def: ^[\.]

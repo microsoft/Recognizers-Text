@@ -156,7 +156,7 @@ class ChineseDatePeriodParserConfiguration implements IDatePeriodParserConfigura
     readonly monthOfRegex: RegExp
     readonly whichWeekRegex: RegExp
     readonly nextPrefixRegex: RegExp
-    readonly pastPrefixRegex: RegExp
+    readonly previousPrefixRegex: RegExp
     readonly thisPrefixRegex: RegExp
     readonly restOfDateRegex: RegExp
     readonly laterEarlyPeriodRegex: RegExp
@@ -190,7 +190,7 @@ class ChineseDatePeriodParserConfiguration implements IDatePeriodParserConfigura
         this.weekOfMonthRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.WeekOfMonthRegex);
         this.thisPrefixRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.DatePeriodThisRegex);
         this.nextPrefixRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.DatePeriodNextRegex);
-        this.pastPrefixRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.DatePeriodLastRegex);
+        this.previousPrefixRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.DatePeriodLastRegex);
 
     }
 
@@ -220,7 +220,7 @@ class ChineseDatePeriodParserConfiguration implements IDatePeriodParserConfigura
         if (RegExpUtility.isMatch(this.nextPrefixRegex, trimmedSource)) {
             return 1;
         }
-        if (RegExpUtility.isMatch(this.pastPrefixRegex, trimmedSource)) {
+        if (RegExpUtility.isMatch(this.previousPrefixRegex, trimmedSource)) {
             return -1;
         }
         return 0;

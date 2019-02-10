@@ -32,7 +32,7 @@ export class EnglishDateTimePeriodExtractorConfiguration implements IDateTimePer
     readonly followedUnit: RegExp
     readonly numberCombinedWithUnit: RegExp
     readonly timeUnitRegex: RegExp
-    readonly pastPrefixRegex: RegExp
+    readonly previousPrefixRegex: RegExp
     readonly nextPrefixRegex: RegExp
     readonly rangeConnectorRegex: RegExp
     readonly relativeTimeUnitRegex: RegExp
@@ -59,7 +59,7 @@ export class EnglishDateTimePeriodExtractorConfiguration implements IDateTimePer
         this.followedUnit = RegExpUtility.getSafeRegExp(EnglishDateTime.TimeFollowedUnit);
         this.numberCombinedWithUnit = RegExpUtility.getSafeRegExp(EnglishDateTime.TimeNumberCombinedWithUnit);
         this.timeUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TimeUnitRegex);
-        this.pastPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PastPrefixRegex);
+        this.previousPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PreviousPrefixRegex);
         this.nextPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.NextPrefixRegex);
         this.rangeConnectorRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RangeConnectorRegex);
         this.relativeTimeUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RelativeTimeUnitRegex);
@@ -122,7 +122,7 @@ export class EnglishDateTimePeriodParserConfiguration implements IDateTimePeriod
         this.pureNumberBetweenAndRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PureNumBetweenAnd);
         this.periodTimeOfDayWithDateRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PeriodTimeOfDayWithDateRegex);
         this.specificTimeOfDayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SpecificTimeOfDayRegex);
-        this.pastRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PastPrefixRegex);
+        this.pastRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PreviousPrefixRegex);
         this.futureRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.NextPrefixRegex);
         this.relativeTimeUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RelativeTimeUnitRegex);
         this.numbers = config.numbers;

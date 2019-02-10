@@ -26,7 +26,7 @@ class SpanishDateTimePeriodParserConfiguration(DateTimePeriodParserConfiguration
         self._numbers = config.numbers
 
         self.next_prefix_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.NextPrefixRegex)
-        self.past_prefix_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.PastPrefixRegex)
+        self.previous_prefix_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.PreviousPrefixRegex)
         self.this_prefix_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.ThisPrefixRegex)
 
         self._pure_number_from_to_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.PureNumFromTo)
@@ -159,7 +159,7 @@ class SpanishDateTimePeriodParserConfiguration(DateTimePeriodParserConfiguration
         swift = 0
 
         # TODO: replace with regex
-        if self.past_prefix_regex.search(trimmed_source) or trimmed_source == 'anoche':
+        if self.previous_prefix_regex.search(trimmed_source) or trimmed_source == 'anoche':
             swift = -1
         elif self.next_prefix_regex.search(trimmed_source):
             swift = 1

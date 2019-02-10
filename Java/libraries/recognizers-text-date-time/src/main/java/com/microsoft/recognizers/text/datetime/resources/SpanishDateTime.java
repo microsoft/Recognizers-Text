@@ -798,9 +798,15 @@ public class SpanishDateTime {
 
     public static final String TokenBeforeTime = "la ";
 
-    public static final String NextPrefixRegex = "(pr[oó]xim[oa]|siguiente)\\b";
+    public static final String UpcomingPrefixRegex = ".^";
 
-    public static final String PastPrefixRegex = "([uú]ltim[oa])\\b";
+    public static final String NextPrefixRegex = "(pr[oó]xim[oa]|siguiente|{UpcomingPrefixRegex})\\b"
+            .replace("{UpcomingPrefixRegex}", UpcomingPrefixRegex);
+
+    public static final String PastPrefixRegex = ".^";
+
+    public static final String PreviousPrefixRegex = "([uú]ltim[oa]|{PastPrefixRegex})\\b"
+            .replace("{PastPrefixRegex}", PastPrefixRegex);
 
     public static final String ThisPrefixRegex = "(est[ea])\\b";
 

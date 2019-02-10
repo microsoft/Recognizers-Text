@@ -23,7 +23,7 @@ import java.util.regex.Pattern;
 public class SpanishDatePeriodParserConfiguration extends BaseOptionsConfiguration implements IDatePeriodParserConfiguration {
 
     public static final Pattern nextPrefixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.NextPrefixRegex);
-    public static final Pattern pastPrefixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PastPrefixRegex);
+    public static final Pattern previousPrefixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PreviousPrefixRegex);
     public static final Pattern thisPrefixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.ThisPrefixRegex);
     public static final Pattern relativeRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.RelativeRegex);
     public static final Pattern unspecificEndOfRangeRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.UnspecificEndOfRangeRegex);
@@ -429,7 +429,7 @@ public class SpanishDatePeriodParserConfiguration extends BaseOptionsConfigurati
 
     @Override
     public final Pattern getPastPrefixRegex() {
-        return pastPrefixRegex;
+        return previousPrefixRegex;
     }
 
     @Override
@@ -494,7 +494,7 @@ public class SpanishDatePeriodParserConfiguration extends BaseOptionsConfigurati
         int swift = 0;
 
         Optional<Match> matchNext = Arrays.stream(RegExpUtility.getMatches(nextPrefixRegex, trimmedText)).findFirst();
-        Optional<Match> matchPast = Arrays.stream(RegExpUtility.getMatches(pastPrefixRegex, trimmedText)).findFirst();
+        Optional<Match> matchPast = Arrays.stream(RegExpUtility.getMatches(previousPrefixRegex, trimmedText)).findFirst();
 
         if (matchNext.isPresent()) {
             swift = 1;
@@ -512,7 +512,7 @@ public class SpanishDatePeriodParserConfiguration extends BaseOptionsConfigurati
         int swift = -10;
 
         Optional<Match> matchNext = Arrays.stream(RegExpUtility.getMatches(nextPrefixRegex, trimmedText)).findFirst();
-        Optional<Match> matchPast = Arrays.stream(RegExpUtility.getMatches(pastPrefixRegex, trimmedText)).findFirst();
+        Optional<Match> matchPast = Arrays.stream(RegExpUtility.getMatches(previousPrefixRegex, trimmedText)).findFirst();
         Optional<Match> matchThisPresent = Arrays.stream(RegExpUtility.getMatches(thisPrefixRegex, trimmedText)).findFirst();
 
         if (matchNext.isPresent()) {
@@ -539,7 +539,7 @@ public class SpanishDatePeriodParserConfiguration extends BaseOptionsConfigurati
     public boolean isLastCardinal(String text) {
         String trimmedText = text.trim().toLowerCase();
 
-        Optional<Match> matchLast = Arrays.stream(RegExpUtility.getMatches(pastPrefixRegex, trimmedText)).findFirst();
+        Optional<Match> matchLast = Arrays.stream(RegExpUtility.getMatches(previousPrefixRegex, trimmedText)).findFirst();
         return matchLast.isPresent();
     }
 
