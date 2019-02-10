@@ -524,7 +524,7 @@ AgoRegex: !simpleRegex
 LaterRegex: !simpleRegex
   def: \b(later|vanaf nu|(van|na) (?<day>morgen|vandaag))\b
 InConnectorRegex: !simpleRegex
-  def: \b(in)\b
+  def: \b(in|over)\b
 WithinNextPrefixRegex: !nestedRegex
   def: \b(in(\s+de)?(\s+(?<next>{NextPrefixRegex}))?)\b
   references: [ NextPrefixRegex ]

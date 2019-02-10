@@ -216,7 +216,7 @@ namespace Microsoft.Recognizers.Definitions.Dutch
 		public const string AroundRegex = @"(\b(around|circa)\s*\b)";
 		public const string AgoRegex = @"\b(ago|before\s+(?<day>gisteren|vandaag))\b";
 		public const string LaterRegex = @"\b(later|vanaf nu|(van|na) (?<day>morgen|vandaag))\b";
-		public const string InConnectorRegex = @"\b(in)\b";
+		public const string InConnectorRegex = @"\b(in|over)\b";
 		public static readonly string WithinNextPrefixRegex = $@"\b(in(\s+de)?(\s+(?<next>{NextPrefixRegex}))?)\b";
 		public static readonly string MorningStartEndRegex = $@"(^('s morgens|in de morgen|{AmDescRegex}))|(('s morgens|in de morgen|{AmDescRegex})$)";
 		public static readonly string AfternoonStartEndRegex = $@"(^('s middags|in de middag|{PmDescRegex}))|(('s middags|in de middag|{PmDescRegex})$)";
