@@ -550,14 +550,14 @@
   },
   {
     "Input": "Estaré afuera de 4-5 pm de 5 de mayo de 2018",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "4-5 pm de 5 de mayo de 2018",
+        "Text": "de 4-5 pm de 5 de mayo de 2018",
         "Type": "datetimerange",
-        "Start": 17,
-        "Length": 27
+        "Start": 14,
+        "Length": 30
       }
     ]
   },
