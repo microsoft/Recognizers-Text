@@ -575,7 +575,7 @@
   },
   {
     "Input": "Estaré afuera desde las 16 h de 1 de ene de 2016 hasta hoy a las 17 h",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
