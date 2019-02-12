@@ -5,7 +5,6 @@ using YamlDotNet.Serialization;
 
 namespace Microsoft.Recognizers.Definitions.Common
 {
-
     public class NestedRegex : SimpleRegex
     {
         [YamlMember(Alias = "references", ApplyNamingConventions = false)]
