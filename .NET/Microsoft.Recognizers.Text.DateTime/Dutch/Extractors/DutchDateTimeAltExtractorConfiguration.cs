@@ -6,22 +6,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 {
     public class DutchDateTimeAltExtractorConfiguration : BaseOptionsConfiguration, IDateTimeAltExtractorConfiguration
     {
-        public DutchDateTimeAltExtractorConfiguration(IOptionsConfiguration config)
-            : base(config)
-        {
-            DateExtractor = new BaseDateExtractor(new DutchDateExtractorConfiguration(this));
-            DatePeriodExtractor = new BaseDatePeriodExtractor(new DutchDatePeriodExtractorConfiguration(this));
-        }
-
-        public IDateExtractor DateExtractor { get; }
-        public IDateTimeExtractor DatePeriodExtractor { get; }
-
-        private static readonly Regex OrRegex =
-            new Regex(DateTimeDefinitions.OrRegex, RegexOptions.Singleline);
-
-        private static readonly Regex DayRegex =
-            new Regex(DateTimeDefinitions.DayRegex, RegexOptions.Singleline);
-
         public static readonly Regex ThisPrefixRegex =
             new Regex(DateTimeDefinitions.ThisPrefixRegex, RegexOptions.Singleline);
 
@@ -49,6 +33,23 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         {
             AmRegex, PmRegex,
         };
+
+        private static readonly Regex OrRegex =
+            new Regex(DateTimeDefinitions.OrRegex, RegexOptions.Singleline);
+
+        private static readonly Regex DayRegex =
+            new Regex(DateTimeDefinitions.DayRegex, RegexOptions.Singleline);
+
+        public DutchDateTimeAltExtractorConfiguration(IOptionsConfiguration config)
+            : base(config)
+        {
+            DateExtractor = new BaseDateExtractor(new DutchDateExtractorConfiguration(this));
+            DatePeriodExtractor = new BaseDatePeriodExtractor(new DutchDatePeriodExtractorConfiguration(this));
+        }
+
+        public IDateExtractor DateExtractor { get; }
+
+        public IDateTimeExtractor DatePeriodExtractor { get; }
 
         IEnumerable<Regex> IDateTimeAltExtractorConfiguration.RelativePrefixList => RelativePrefixList;
 

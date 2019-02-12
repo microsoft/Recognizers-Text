@@ -50,6 +50,30 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         public static readonly StringMatcher SuperfluousWordMatcher = new StringMatcher();
 
+        public DutchMergedExtractorConfiguration(IOptionsConfiguration config)
+            : base(config)
+        {
+            DateExtractor = new BaseDateExtractor(new DutchDateExtractorConfiguration(this));
+            TimeExtractor = new BaseTimeExtractor(new DutchTimeExtractorConfiguration(this));
+            DateTimeExtractor = new BaseDateTimeExtractor(new DutchDateTimeExtractorConfiguration(this));
+            DatePeriodExtractor = new BaseDatePeriodExtractor(new DutchDatePeriodExtractorConfiguration(this));
+            TimePeriodExtractor = new BaseTimePeriodExtractor(new DutchTimePeriodExtractorConfiguration(this));
+            DateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new DutchDateTimePeriodExtractorConfiguration(this));
+            DurationExtractor = new BaseDurationExtractor(new DutchDurationExtractorConfiguration(this));
+            SetExtractor = new BaseSetExtractor(new DutchSetExtractorConfiguration(this));
+            HolidayExtractor = new BaseHolidayExtractor(new DutchHolidayExtractorConfiguration(this));
+            TimeZoneExtractor = new BaseTimeZoneExtractor(new DutchTimeZoneExtractorConfiguration(this));
+            DateTimeAltExtractor = new BaseDateTimeAltExtractor(new DutchDateTimeAltExtractorConfiguration(this));
+            IntegerExtractor = Number.Dutch.IntegerExtractor.GetInstance();
+
+            AmbiguityFiltersDict = DefinitionLoader.LoadAmbiguityFilters(DateTimeDefinitions.AmbiguityFiltersDict);
+
+            if ((Options & DateTimeOptions.EnablePreview) != 0)
+            {
+                SuperfluousWordMatcher.Init(DateTimeDefinitions.SuperfluousWordList);
+            }
+        }
+
         public IDateExtractor DateExtractor { get; }
 
         public IDateTimeExtractor TimeExtractor { get; }
@@ -76,42 +100,28 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         public Dictionary<Regex, Regex> AmbiguityFiltersDict { get; }
 
-        public DutchMergedExtractorConfiguration(IOptionsConfiguration config)
-            : base(config)
-        {
-            DateExtractor = new BaseDateExtractor(new DutchDateExtractorConfiguration(this));
-            TimeExtractor = new BaseTimeExtractor(new DutchTimeExtractorConfiguration(this));
-            DateTimeExtractor = new BaseDateTimeExtractor(new DutchDateTimeExtractorConfiguration(this));
-            DatePeriodExtractor = new BaseDatePeriodExtractor(new DutchDatePeriodExtractorConfiguration(this));
-            TimePeriodExtractor = new BaseTimePeriodExtractor(new DutchTimePeriodExtractorConfiguration(this));
-            DateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new DutchDateTimePeriodExtractorConfiguration(this));
-            DurationExtractor = new BaseDurationExtractor(new DutchDurationExtractorConfiguration(this));
-            SetExtractor = new BaseSetExtractor(new DutchSetExtractorConfiguration(this));
-            HolidayExtractor = new BaseHolidayExtractor(new DutchHolidayExtractorConfiguration(this));
-            TimeZoneExtractor = new BaseTimeZoneExtractor(new DutchTimeZoneExtractorConfiguration(this));
-            DateTimeAltExtractor = new BaseDateTimeAltExtractor(new DutchDateTimeAltExtractorConfiguration(this));
-            IntegerExtractor = Number.Dutch.IntegerExtractor.GetInstance();
-
-            AmbiguityFiltersDict = DefinitionLoader.LoadAmbiguityFilters(DateTimeDefinitions.AmbiguityFiltersDict);
-
-            if ((Options & DateTimeOptions.EnablePreview) != 0)
-            {
-                SuperfluousWordMatcher.Init(DateTimeDefinitions.SuperfluousWordList);
-            }
-
-        }
-
         Regex IMergedExtractorConfiguration.AfterRegex => AfterRegex;
+
         Regex IMergedExtractorConfiguration.BeforeRegex => BeforeRegex;
+
         Regex IMergedExtractorConfiguration.SinceRegex => SinceRegex;
+
         Regex IMergedExtractorConfiguration.AroundRegex => AroundRegex;
+
         Regex IMergedExtractorConfiguration.FromToRegex => FromToRegex;
+
         Regex IMergedExtractorConfiguration.SingleAmbiguousMonthRegex => SingleAmbiguousMonthRegex;
+
         Regex IMergedExtractorConfiguration.PrepositionSuffixRegex => PrepositionSuffixRegex;
+
         Regex IMergedExtractorConfiguration.NumberEndingPattern => NumberEndingPattern;
+
         Regex IMergedExtractorConfiguration.DateAfterRegex => DateAfterRegex;
+
         Regex IMergedExtractorConfiguration.UnspecificDatePeriodRegex => UnspecificDatePeriodRegex;
+
         IEnumerable<Regex> IMergedExtractorConfiguration.TermFilterRegexes => TermFilterRegexes;
+
         StringMatcher IMergedExtractorConfiguration.SuperfluousWordMatcher => SuperfluousWordMatcher;
     }
 }
