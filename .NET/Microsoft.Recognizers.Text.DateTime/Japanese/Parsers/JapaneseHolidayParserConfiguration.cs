@@ -46,7 +46,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             { "光棍节", SinglesDay },
             { "双十一", SinglesDay },
             { "重阳节", ChongYangDay },
-
         };
 
         public static readonly Dictionary<string, Func<int, DateObject>> HolidayFuncDict = new Dictionary
