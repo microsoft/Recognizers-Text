@@ -3,7 +3,7 @@
 ![Build Status](https://msrasia.visualstudio.com/_apis/public/build/definitions/310c848f-b260-4305-9255-b97bfb69974b/116/badge)
 ![Build Status](https://ci.appveyor.com/api/projects/status/github/Microsoft/Recognizers-Text?branch=master&svg=true&passingText=all%20plats%20-%20OK)
 
-Microsoft.Recognizers.Text provides robust recognition and resolution of entities like numbers, units, and date/time; expressed in multiple languages. Full support for Chinese, English, French, Spanish, and Portuguese. Partial support for German, Japanese, Korean, and Dutch. More on the way.
+Microsoft.Recognizers.Text provides robust recognition and resolution of entities like numbers, units, and date/time; expressed in multiple languages. Full support for Chinese, English, French, Spanish, and Brazilian Portuguese. Partial support for German, Japanese, Korean and Dutch. More on the way.
 
 # Utilizing the Project
 
@@ -37,7 +37,7 @@ The links below describe the project structure and provide both an overview and 
 
 The table below summarizes the currently supported entities. Support for English is usually more complete than others. The primary platform is .NET (shown in table) and support should propagate to the others.
 
-| Entity Type       | EN      | ZH-CN   | NL    | FR     | DE    | IT      | JA     | KO     | PT     | ES      |
+| Entity Type       | EN      | ZH-CN   | NL    | FR     | DE    | IT      | JA     | KO     | BR-PT     | ES      |
 |:-----------------:|:-------:|:-------:|:-----:|:------:|:-----:|:-------:|:------:|:------:|:------:|:-------:| 
 | Number (cardinal)    | ✓    | ✓       | ✓    | ✓     | ✓     | **SO**  | ✓      | ✓      | ✓     | ✓       |
 | Ordinal              | ✓    | ✓       | ✓    | ✓     | ✓     | **SO**  | ✓      | **SO** | ✓      | ✓      |
