@@ -37,7 +37,7 @@ The links below describe the project structure and provide both an overview and 
 
 The table below summarizes the currently supported entities. Support for English is usually more complete than others. The primary platform is .NET (shown in table) and support should propagate to the others.
 
-| Entity Type       | EN      | ZH-CN   | NL    | FR     | DE    | IT      | JA     | KO     | BR-PT     | ES      |
+| Entity Type       | EN      | ZH-CN   | NL    | FR     | DE    | IT      | JA     | KO     | PT-BR     | ES      |
 |:-----------------:|:-------:|:-------:|:-----:|:------:|:-----:|:-------:|:------:|:------:|:------:|:-------:| 
 | Number (cardinal)    | ✓    | ✓       | ✓    | ✓     | ✓     | **SO**  | ✓      | ✓      | ✓     | ✓       |
 | Ordinal              | ✓    | ✓       | ✓    | ✓     | ✓     | **SO**  | ✓      | **SO** | ✓      | ✓      |
