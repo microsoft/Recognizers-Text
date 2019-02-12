@@ -5,7 +5,6 @@ using YamlDotNet.Serialization;
 
 namespace Microsoft.Recognizers.Definitions.Common
 {
-
     public class List
     {
         [YamlMember(Alias = "types", ApplyNamingConventions = false)]

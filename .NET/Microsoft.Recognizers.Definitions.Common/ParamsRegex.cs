@@ -5,7 +5,6 @@ using YamlDotNet.Serialization;
 
 namespace Microsoft.Recognizers.Definitions.Common
 {
-
     public class ParamsRegex : SimpleRegex
     {
         [YamlMember(Alias = "params", ApplyNamingConventions = false)]

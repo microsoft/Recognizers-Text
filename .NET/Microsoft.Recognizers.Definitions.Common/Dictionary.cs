@@ -5,7 +5,6 @@ using YamlDotNet.Serialization;
 
 namespace Microsoft.Recognizers.Definitions.Common
 {
-
     public class Dictionary
     {
         [YamlMember(Alias = "types", ApplyNamingConventions = false)]
