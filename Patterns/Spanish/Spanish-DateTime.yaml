@@ -516,6 +516,7 @@ UnitMap: !dictionary
     dia: D
     días: D
     día: D
+    jornada: D
     horas: H
     hora: H
     hrs: H
@@ -787,8 +788,7 @@ PrepositionSuffixRegex: !simpleRegex
   # TODO: change to Spanish according to corresponding Regex
   def: \b(on|in|at|around|for|during|since|from|to)$
 RestOfDateTimeRegex: !simpleRegex
-  # TODO: add this according to the related part in English
-  def: ^[\.]
+  def: \bresto\s+((del|de)\s+)?((la|el|est[ae])\s+)?(?<unit>(día|jornada))(\s+de\s+hoy)?\b
 SetWeekDayRegex: !simpleRegex
   # TODO: add this according to the related part in English
   def: ^[\.]

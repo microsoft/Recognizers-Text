@@ -202,6 +202,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
 			{ @"dia", @"D" },
 			{ @"días", @"D" },
 			{ @"día", @"D" },
+			{ @"jornada", @"D" },
 			{ @"horas", @"H" },
 			{ @"hora", @"H" },
 			{ @"hrs", @"H" },
@@ -448,7 +449,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
 		public const string SingleAmbiguousMonthRegex = @"^(the\s+)?(may|march)$";
 		public const string UnspecificDatePeriodRegex = @"^[.]";
 		public const string PrepositionSuffixRegex = @"\b(on|in|at|around|for|during|since|from|to)$";
-		public const string RestOfDateTimeRegex = @"^[\.]";
+		public const string RestOfDateTimeRegex = @"\bresto\s+((del|de)\s+)?((la|el|est[ae])\s+)?(?<unit>(día|jornada))(\s+de\s+hoy)?\b";
 		public const string SetWeekDayRegex = @"^[\.]";
 		public const string NightRegex = @"\b(medionoche|noche)\b";
 		public const string CommonDatePrefixRegex = @"^[\.]";
