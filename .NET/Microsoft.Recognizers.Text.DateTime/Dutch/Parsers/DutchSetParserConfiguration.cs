@@ -5,6 +5,34 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 {
     public class DutchSetParserConfiguration : BaseOptionsConfiguration, ISetParserConfiguration
     {
+        public DutchSetParserConfiguration(ICommonDateTimeParserConfiguration config)
+            : base(config)
+        {
+            DurationExtractor = config.DurationExtractor;
+            TimeExtractor = config.TimeExtractor;
+            DateExtractor = config.DateExtractor;
+            DateTimeExtractor = config.DateTimeExtractor;
+            DatePeriodExtractor = config.DatePeriodExtractor;
+            TimePeriodExtractor = config.TimePeriodExtractor;
+            DateTimePeriodExtractor = config.DateTimePeriodExtractor;
+
+            DurationParser = config.DurationParser;
+            TimeParser = config.TimeParser;
+            DateParser = config.DateParser;
+            DateTimeParser = config.DateTimeParser;
+            DatePeriodParser = config.DatePeriodParser;
+            TimePeriodParser = config.TimePeriodParser;
+            DateTimePeriodParser = config.DateTimePeriodParser;
+            UnitMap = config.UnitMap;
+
+            EachPrefixRegex = DutchSetExtractorConfiguration.EachPrefixRegex;
+            PeriodicRegex = DutchSetExtractorConfiguration.PeriodicRegex;
+            EachUnitRegex = DutchSetExtractorConfiguration.EachUnitRegex;
+            EachDayRegex = DutchSetExtractorConfiguration.EachDayRegex;
+            SetWeekDayRegex = DutchSetExtractorConfiguration.SetWeekDayRegex;
+            SetEachRegex = DutchSetExtractorConfiguration.SetEachRegex;
+        }
+
         public IDateTimeExtractor DurationExtractor { get; }
 
         public IDateTimeParser DurationParser { get; }
@@ -46,34 +74,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         public Regex SetWeekDayRegex { get; }
 
         public Regex SetEachRegex { get; }
-
-        public DutchSetParserConfiguration(ICommonDateTimeParserConfiguration config)
-            : base(config)
-        {
-            DurationExtractor = config.DurationExtractor;
-            TimeExtractor = config.TimeExtractor;
-            DateExtractor = config.DateExtractor;
-            DateTimeExtractor = config.DateTimeExtractor;
-            DatePeriodExtractor = config.DatePeriodExtractor;
-            TimePeriodExtractor = config.TimePeriodExtractor;
-            DateTimePeriodExtractor = config.DateTimePeriodExtractor;
-
-            DurationParser = config.DurationParser;
-            TimeParser = config.TimeParser;
-            DateParser = config.DateParser;
-            DateTimeParser = config.DateTimeParser;
-            DatePeriodParser = config.DatePeriodParser;
-            TimePeriodParser = config.TimePeriodParser;
-            DateTimePeriodParser = config.DateTimePeriodParser;
-            UnitMap = config.UnitMap;
-
-            EachPrefixRegex = DutchSetExtractorConfiguration.EachPrefixRegex;
-            PeriodicRegex = DutchSetExtractorConfiguration.PeriodicRegex;
-            EachUnitRegex = DutchSetExtractorConfiguration.EachUnitRegex;
-            EachDayRegex = DutchSetExtractorConfiguration.EachDayRegex;
-            SetWeekDayRegex = DutchSetExtractorConfiguration.SetWeekDayRegex;
-            SetEachRegex = DutchSetExtractorConfiguration.SetEachRegex;
-        }
 
         public bool GetMatchedDailyTimex(string text, out string timex)
         {
