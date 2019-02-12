@@ -3139,7 +3139,6 @@
   },
   {
     "Input": "Nos vimos a finales de la semana pasada",
-    "NotSupported": "dotnet, java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -3152,7 +3151,6 @@
   },
   {
     "Input": "Búscanos un tiempo conveniente para comienzos de este mes",
-    "NotSupported": "dotnet, java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -3165,7 +3163,6 @@
   },
   {
     "Input": "Búscanos un tiempo conveniente para comienzos de esta semana",
-    "NotSupported": "dotnet, java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -3178,7 +3175,6 @@
   },
   {
     "Input": "Búscanos un tiempo conveniente para comienzos de la próxima semana",
-    "NotSupported": "dotnet, java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -3191,7 +3187,6 @@
   },
   {
     "Input": "Búscanos un tiempo conveniente para comienzos del próximo año",
-    "NotSupported": "dotnet, java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -3204,7 +3199,6 @@
   },
   {
     "Input": "Cortana, programa una reunión de 25 minutos con Antonio entre miércoles y viernes de la próxima semana.",
-    "NotSupported": "dotnet, java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -3217,33 +3211,30 @@
   },
   {
     "Input": "Cortana, programa una reunión de 25 minutos con Antonio para la próxima semana entre miércoles y viernes.",
-    "NotSupported": "dotnet, java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "próxima semana entre miércoles y viernes",
+        "Text": "la próxima semana entre miércoles y viernes",
         "Type": "daterange",
-        "Start": 64,
-        "Length": 40
+        "Start": 61,
+        "Length": 43
       }
     ]
   },
   {
     "Input": "Cortana, programa una reunión de 25 minutos con Antonio para la semana pasada de miércoles a viernes.",
-    "NotSupported": "dotnet, java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "semana pasada de miércoles a viernes",
+        "Text": "la semana pasada de miércoles a viernes",
         "Type": "daterange",
-        "Start": 64,
-        "Length": 36
+        "Start": 61,
+        "Length": 39
       }
     ]
   },
   {
     "Input": "Cortana, programa una reunión de 25 minutos con Antonio para esta semana entre miércoles y viernes.",
-    "NotSupported": "dotnet, java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -3269,7 +3260,6 @@
   },
   {
     "Input": "en los años 1970",
-    "NotSupported": "dotnet, java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -3282,7 +3272,6 @@
   },
   {
     "Input": "Nació en los años 2000",
-    "NotSupported": "dotnet, java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -3308,14 +3297,13 @@
   },
   {
     "Input": "en los años 70",
-    "NotSupported": "dotnet, java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "años 70",
         "Type": "daterange",
         "Start": 7,
-        "Length": 6
+        "Length": 7
       }
     ]
   },
@@ -3328,7 +3316,7 @@
         "Text": "los 70",
         "Type": "daterange",
         "Start": 3,
-        "Length": 6
+        "Length": 7
       }
     ]
   },
