@@ -42,6 +42,7 @@ namespace Microsoft.Recognizers.Text.Number.Portuguese
             this.NegativeNumberSignRegex = new Regex(NumbersDefinitions.NegativeNumberSignRegex, RegexOptions.Singleline);
             this.FractionPrepositionRegex = new Regex(NumbersDefinitions.FractionPrepositionRegex, RegexOptions.Singleline);
         }
+
         public string NonDecimalSeparatorText { get; private set; }
 
         public override IEnumerable<string> NormalizeTokenSet(IEnumerable<string> tokens, ParseResult context)

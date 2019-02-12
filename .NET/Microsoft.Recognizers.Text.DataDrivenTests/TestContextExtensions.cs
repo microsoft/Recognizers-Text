@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Concurrent;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using Microsoft.Recognizers.Text.Choice;
 using Microsoft.Recognizers.Text.DateTime;
 using Microsoft.Recognizers.Text.DateTime.Dutch;
@@ -16,109 +13,14 @@ using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.NumberWithUnit;
 using Microsoft.Recognizers.Text.Sequence;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Newtonsoft.Json;
 using DateObject = System.DateTime;
-
 namespace Microsoft.Recognizers.Text.DataDrivenTests
 {
-    public class TestResources : Dictionary<string, IList<TestModel>> { }
-
-    public static class TestResourcesExtensions
-    {
-        public static void InitFromTestContext(this TestResources resources, TestContext context)
-        {
-            var classNameIndex = context.FullyQualifiedTestClassName.LastIndexOf('.');
-            var className = context.FullyQualifiedTestClassName.Substring(classNameIndex + 1).Replace("Test", string.Empty);
-            var recognizerLanguage = className.Split('_');
-
-            var directorySpecs = Path.Combine("..", "..", "..", "..", "Specs", recognizerLanguage[0], recognizerLanguage[1]);
-
-            var specsFiles = Directory.GetFiles(directorySpecs, "*.json");
-            foreach (var specsFile in specsFiles)
-            {
-                var fileName = Path.GetFileNameWithoutExtension(specsFile) + "-" + recognizerLanguage[1];
-                var rawData = File.ReadAllText(specsFile);
-                var specs = JsonConvert.DeserializeObject<IList<TestModel>>(rawData);
-                File.WriteAllText(fileName + ".csv", "Index" + Environment.NewLine +
-                                  string.Join(Environment.NewLine, Enumerable.Range(0, specs.Count).Select(o => o.ToString())));
-                resources.Add(Path.GetFileNameWithoutExtension(specsFile), specs);
-            }
-
-        }
-
-        public static TestModel GetSpecForContext(this TestResources resources, TestContext context)
-        {
-            var index = Convert.ToInt32(context.DataRow[0]);
-            return resources[context.TestName][index];
-        }
-    }
-
-    public enum Models
-    {
-        Number,
-        NumberPercentMode,
-        NumberExperimentalMode,
-        Ordinal,
-        OrdinalEnablePreview,
-        Percent,
-        PercentPercentMode,
-        NumberRange,
-        NumberRangeExperimentalMode,
-        CustomNumber,
-        Age,
-        Currency,
-        Dimension,
-        Temperature,
-        DateTime,
-        DateTimeSplitDateAndTime,
-        DateTimeCalendarMode,
-        DateTimeExtendedTypes,
-        DateTimeComplexCalendar,
-        DateTimeExperimentalMode,
-        PhoneNumber,
-        IpAddress,
-        Mention,
-        Hashtag,
-        Email,
-        URL,
-        GUID,
-        Boolean,
-    }
-
-    public enum DateTimeExtractors
-    {
-        Date,
-        Time,
-        DatePeriod,
-        TimePeriod,
-        DateTime,
-        DateTimePeriod,
-        Duration,
-        Holiday,
-        TimeZone,
-        Set,
-        Merged,
-        MergedSkipFromTo,
-    }
-
-    public enum DateTimeParsers
-    {
-        Date,
-        Time,
-        DatePeriod,
-        TimePeriod,
-        DateTime,
-        DateTimePeriod,
-        Duration,
-        Holiday,
-        TimeZone,
-        Set,
-        Merged,
-    }
 
     public static class TestContextExtensions
     {
-        private static IDictionary<Models, Func<TestModel, string, IList<ModelResult>>> modelFunctions = new Dictionary<Models, Func<TestModel, string, IList<ModelResult>>>() {
+        private static IDictionary<Models, Func<TestModel, string, IList<ModelResult>>> modelFunctions = new Dictionary<Models, Func<TestModel, string, IList<ModelResult>>>()
+        {
             { Models.Number, (test, culture) => NumberRecognizer.RecognizeNumber(test.Input, culture, fallbackToDefaultCulture: false) },
             { Models.NumberPercentMode, (test, culture) => NumberRecognizer.RecognizeNumber(test.Input, culture, NumberOptions.PercentageMode, fallbackToDefaultCulture: false) },
             { Models.NumberExperimentalMode, (test, culture) => NumberRecognizer.RecognizeNumber(test.Input, culture, NumberOptions.ExperimentalMode, fallbackToDefaultCulture: false) },
@@ -851,117 +753,6 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             }
 
             throw new Exception($"Parser '{parserName}' for Italian not supported");
-        }
-
-    }
-
-    public static class TestModelExtensions
-    {
-        public static bool IsNotSupported(this TestModel testSpec)
-        {
-            return testSpec.NotSupported.HasFlag(Platform.DotNet);
-        }
-
-        public static bool IsNotSupportedByDesign(this TestModel testSpec)
-        {
-            return testSpec.NotSupportedByDesign.HasFlag(Platform.DotNet);
-        }
-
-        public static DateObject GetReferenceDateTime(this TestModel testSpec)
-        {
-
-            if (testSpec.Context.TryGetValue("ReferenceDateTime", out object dateTimeObject))
-            {
-                return (DateObject)dateTimeObject;
-            }
-
-            return DateObject.Now;
-        }
-    }
-
-    public static class TestUtils
-    {
-        public static string GetCulture(string source)
-        {
-            var langStr = source.Substring(source.LastIndexOf('_') + 1);
-            return Culture.SupportedCultures.First(c => c.CultureName == langStr).CultureCode;
-        }
-
-        public static bool EvaluateSpec(TestModel spec, out string message)
-        {
-            if (string.IsNullOrEmpty(spec.Input))
-            {
-                message = $"spec not found";
-                return true;
-            }
-
-            if (spec.IsNotSupported())
-            {
-                message = $"input '{spec.Input}' not supported";
-                return true;
-            }
-
-            if (spec.IsNotSupportedByDesign())
-            {
-                message = $"input '{spec.Input}' not supported by design";
-                return true;
-            }
-
-            message = string.Empty;
-
-            return false;
-        }
-
-        public static string SanitizeSourceName(string source)
-        {
-            return source.Replace("Model", string.Empty).Replace("Extractor", string.Empty).Replace("Parser", string.Empty);
-        }
-
-        public static Models GetModel(string source)
-        {
-            var model = SanitizeSourceName(source);
-            Models modelEnum = Models.Number;
-            if (Enum.TryParse(model, out modelEnum))
-            {
-                return modelEnum;
-            }
-
-            throw new Exception($"Model '{model}' not supported");
-        }
-
-        public static DateTimeParsers GetParser(string source)
-        {
-            var parser = SanitizeSourceName(source);
-            DateTimeParsers parserEnum = DateTimeParsers.Date;
-            if (Enum.TryParse(parser, out parserEnum))
-            {
-                return parserEnum;
-            }
-
-            throw new Exception($"Parser '{parser}' not supported");
-        }
-
-        public static DateTimeExtractors GetExtractor(string source)
-        {
-            var extractor = SanitizeSourceName(source);
-            DateTimeExtractors extractorEnum = DateTimeExtractors.Date;
-            if (Enum.TryParse(extractor, out extractorEnum))
-            {
-                return extractorEnum;
-            }
-
-            throw new Exception($"Extractor '{extractor}' not supported");
-        }
-    }
-
-    public static class RecognizerExtensions
-    {
-        public static ConcurrentDictionary<(string culture, Type modelType, string modelOptions), IModel> GetInternalCache<TRecognizerOptions>(this Recognizer<TRecognizerOptions> source) where TRecognizerOptions : struct
-        {
-            var modelFactoryProp = typeof(Recognizer<TRecognizerOptions>).GetField("factory", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
-            var modelFactory = modelFactoryProp.GetValue(source);
-            var cacheProp = modelFactory.GetType().GetField("cache", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Static);
-            return cacheProp.GetValue(modelFactory) as ConcurrentDictionary<(string culture, Type modelType, string modelOptions), IModel>;
         }
     }
 }

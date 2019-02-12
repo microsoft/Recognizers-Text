@@ -6,25 +6,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 {
     public sealed class DutchMergedParserConfiguration : DutchCommonDateTimeParserConfiguration, IMergedParserConfiguration
     {
-
-        public Regex BeforeRegex { get; }
-
-        public Regex AfterRegex { get; }
-
-        public Regex SinceRegex { get; }
-
-        public Regex AroundRegex { get; }
-
-        public Regex DateAfter { get; }
-
-        public Regex YearRegex { get; }
-
-        public IDateTimeParser SetParser { get; }
-
-        public IDateTimeParser HolidayParser { get; }
-
-        public StringMatcher SuperfluousWordMatcher { get; }
-
         public DutchMergedParserConfiguration(IOptionsConfiguration config)
             : base(config)
         {
@@ -43,5 +24,23 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
             HolidayParser = new BaseHolidayParser(new DutchHolidayParserConfiguration(this));
             TimeZoneParser = new BaseTimeZoneParser();
         }
+
+        public Regex BeforeRegex { get; }
+
+        public Regex AfterRegex { get; }
+
+        public Regex SinceRegex { get; }
+
+        public Regex AroundRegex { get; }
+
+        public Regex DateAfter { get; }
+
+        public Regex YearRegex { get; }
+
+        public IDateTimeParser SetParser { get; }
+
+        public IDateTimeParser HolidayParser { get; }
+
+        public StringMatcher SuperfluousWordMatcher { get; }
     }
 }

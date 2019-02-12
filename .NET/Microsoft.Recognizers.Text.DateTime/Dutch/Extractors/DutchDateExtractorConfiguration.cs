@@ -12,12 +12,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 {
     public class DutchDateExtractorConfiguration : BaseOptionsConfiguration, IDateExtractorConfiguration
     {
-        public static readonly Regex MonthRegex =
-            new Regex(DateTimeDefinitions.MonthRegex, RegexOptions.Singleline);
-
-        private static readonly Regex DayRegex =
-            new Regex(DateTimeDefinitions.ImplicitDayRegex, RegexOptions.Singleline);
-
         public static readonly Regex MonthNumRegex =
             new Regex(DateTimeDefinitions.MonthNumRegex, RegexOptions.Singleline);
 
@@ -110,6 +104,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         public static readonly ImmutableDictionary<string, int> MonthOfYear =
             DateTimeDefinitions.MonthOfYear.ToImmutableDictionary();
+
+        public static readonly Regex MonthRegex =
+            new Regex(DateTimeDefinitions.MonthRegex, RegexOptions.Singleline);
+
+        private static readonly Regex DayRegex =
+            new Regex(DateTimeDefinitions.ImplicitDayRegex, RegexOptions.Singleline);
 
         public DutchDateExtractorConfiguration(IOptionsConfiguration config)
             : base(config)
