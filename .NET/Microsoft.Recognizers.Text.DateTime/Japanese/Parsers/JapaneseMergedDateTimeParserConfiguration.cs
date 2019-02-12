@@ -46,10 +46,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             if (er.Type.Equals(Constants.SYS_DATETIME_DATE))
             {
                 pr = this.Config.DateParser.Parse(er, referenceTime);
-                if (pr.Value == null)
-                {
-                    // pr = this.config.HolidayParser.Parse(er, referenceTime);
-                }
             }
             else if (er.Type.Equals(Constants.SYS_DATETIME_TIME))
             {
