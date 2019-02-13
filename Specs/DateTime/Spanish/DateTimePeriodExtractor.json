@@ -831,7 +831,7 @@
   },
   {
     "Input": "Volveré en las próximas 5 horas",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -844,7 +844,7 @@
   },
   {
     "Input": "Volveré en las próximas 5 h",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -881,14 +881,14 @@
   },
   {
     "Input": "Volví en los últimos minutos",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "últimos minutos",
         "Type": "datetimerange",
         "Start": 13,
-        "Length": 16
+        "Length": 15
       }
     ]
   },
