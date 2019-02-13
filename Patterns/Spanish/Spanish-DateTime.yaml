@@ -283,8 +283,8 @@ TimeRegex2: !nestedRegex
   def: (\b{TimePrefix}\s+)?(t)?{BaseDateTime.HourRegex}(\s*)?:(\s*)?{BaseDateTime.MinuteRegex}((\s*)?:(\s*)?{BaseDateTime.SecondRegex})?((\s*{DescRegex})|\b)
   references: [ TimePrefix, BaseDateTime.HourRegex, BaseDateTime.MinuteRegex, BaseDateTime.SecondRegex, DescRegex ]
 TimeRegex3: !nestedRegex
-  # (tres min pasadas las)? 3.00 (pm)
-  def: (\b{TimePrefix}\s+)?{BaseDateTime.HourRegex}\.{BaseDateTime.MinuteRegex}(\s*{DescRegex})
+  # (tres min pasadas las)? 3.00 (pm|h)
+  def: (\b{TimePrefix}\s+)?{BaseDateTime.HourRegex}\.{BaseDateTime.MinuteRegex}(\s*({DescRegex}|\bh\b))
   references: [ TimePrefix, BaseDateTime.HourRegex, BaseDateTime.MinuteRegex, DescRegex ]
 TimeRegex4: !nestedRegex
   # (tres min pasadas las) (cinco treinta|siete|7|7:00(:00)?) (pm)?

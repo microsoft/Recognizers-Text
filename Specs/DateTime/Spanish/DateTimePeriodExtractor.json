@@ -1196,6 +1196,7 @@
   },
   {
     "Input": "Busca un tiempo entre las 1.30 y las 4 pm de 23-9-15",
+    "Comment": "'de' is not the 'TokenBeforeDate'. We cannot merge '1.30 y las 4 pm' and '23-9-15'",
     "NotSupported": "dotnet, java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
@@ -1233,7 +1234,7 @@
   },
   {
     "Input": "Ocurrirá 1/1/2015 entre las 10 h y las 11.30 h",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -1246,7 +1247,7 @@
   },
   {
     "Input": "Ocurrirá desde las 10.30 h hasta las 15 h de 1/1/15",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
