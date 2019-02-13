@@ -144,12 +144,12 @@ namespace Microsoft.Recognizers.Definitions.Spanish
 		public static readonly string PureNumBetweenAnd = $@"(entre\s+(la(s)?\s+)?)({BaseDateTime.HourRegex}|{TimeHourNumRegex})(\s*(?<leftDesc>{DescRegex}))?\s*y\s*(la(s)?\s+)?({BaseDateTime.HourRegex}|{TimeHourNumRegex})\s*(?<rightDesc>{PmRegex}|{AmRegex}|{DescRegex})?";
 		public const string SpecificTimeFromTo = @"^[.]";
 		public const string SpecificTimeBetweenAnd = @"^[.]";
-		public const string TimeUnitRegex = @"(?<unit>horas|hora|h|minutos|minuto|mins|min|segundos|segundo|secs|sec)\b";
+		public const string TimeUnitRegex = @"([^A-Za-z]{1,}|\b)(?<unit>horas|hora|h|minutos|minuto|mins|min|segundos|segundo|secs|sec)\b";
 		public static readonly string TimeFollowedUnit = $@"^\s*{TimeUnitRegex}";
 		public static readonly string TimeNumberCombinedWithUnit = $@"\b(?<num>\d+(\,\d*)?)\s*{TimeUnitRegex}";
 		public static readonly string DateTimePeriodNumberCombinedWithUnit = $@"\b(?<num>\d+(\.\d*)?)\s*{TimeUnitRegex}";
 		public const string PeriodTimeOfDayWithDateRegex = @"\b(((y|a|en|por)\s+la|al)\s+)?(?<timeOfDay>mañana|madrugada|(pasado\s+(el\s+)?)?medio\s?d[ií]a|tarde|noche|anoche)\b";
-		public static readonly string RelativeTimeUnitRegex = $@"({PastRegex}|{FutureRegex})\s+{UnitRegex}";
+		public static readonly string RelativeTimeUnitRegex = $@"({PastRegex}|{FutureRegex})\s+{TimeUnitRegex}";
 		public const string LessThanRegex = @"^[.]";
 		public const string MoreThanRegex = @"^[.]";
 		public const string SuffixAndRegex = @"(?<suffix>\s*(y)\s+((un|uno|una)\s+)?(?<suffix_num>media|cuarto))";
