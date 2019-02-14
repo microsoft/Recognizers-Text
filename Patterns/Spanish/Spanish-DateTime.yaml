@@ -93,7 +93,6 @@ NumberCombinedWithDateUnit: !nestedRegex
 QuarterTermRegex: !simpleRegex
   def: (?<cardinal>primer|1er|segundo|2do|tercer|3ro|4to|((1|2|3|4)º))\s+(cuatrimestre|cuarto)
 QuarterRegex: !nestedRegex
-      #(el\s+)?(?<cardinal>primer|1er|segundo|2do|tercer|3ro|4to|((1|2|3|4)º))\s+(cuatrimestre|cuarto)((\s+de|\s*,\s*)?\s+({YearRegex}|(?<order>pr[oó]ximo(s)?|[uú]ltimo?|este)\s+año))?
   def: (el\s+)?{QuarterTermRegex}((\s+del?|\s*,\s*)?\s+({YearRegex}|(?<order>pr[oó]ximo(s)?|[uú]ltimo?|este)\s+a[ñn]o|a[ñn]o(\s+{AfterNextSuffixRegex})))?
   references: [ YearRegex, QuarterTermRegex, RelativeRegex, AfterNextSuffixRegex]
 QuarterRegexYearFront: !nestedRegex
