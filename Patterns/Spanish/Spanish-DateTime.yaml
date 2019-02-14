@@ -70,7 +70,7 @@ DayBetweenRegex: !nestedRegex
   def: \b((entre|entre\s+el)\s+)({DayRegex})(\s+{MonthSuffixRegex})?\s*{AndRegex}\s*({DayRegex})\s+{MonthSuffixRegex}((\s+|\s*,\s*)(en\s+|del\s+|de\s+)?{YearRegex})?\b
   references: [ DayRegex, AndRegex, MonthSuffixRegex, YearRegex ]
 OneWordPeriodRegex: !nestedRegex
-  def: \b(((((la|el)\s+)?mes\s+(({OfPrepositionRegex})\s+))|((pr[oó]xim[oa]?|est[ea]|[uú]ltim[oa]?)\s+))?({MonthRegex})|((la|el)\s+)?((({RelativeRegex}\s+)(semanas|semana|año|mes|días)(\s+{AfterNextSuffixRegex})?)|(semanas|semana|año|mes|días)(\s+{AfterNextSuffixRegex})))
+  def: \b(((((la|el)\s+)?mes\s+(({OfPrepositionRegex})\s+))|((pr[oó]xim[oa]?|est[ea]|[uú]ltim[oa]?)\s+))?({MonthRegex})|((la|el)\s+)?((({RelativeRegex}\s+)(semanas|semana|año|mes|días)(\s+{AfterNextSuffixRegex})?)|(semanas|semana|año|mes|días)(\s+{AfterNextSuffixRegex}))|va\s+de\s+(semanas|semana|a[ñn]o|mes|días))
   references: [MonthRegex, RelativeRegex, OfPrepositionRegex, AfterNextSuffixRegex]
 MonthWithYearRegex: !nestedRegex
   def: \b(((pr[oó]xim[oa](s)?|este|esta|[uú]ltim[oa]?)\s+)?({MonthRegex})(\s+|(\s*[,-]\s*))((de|del|de la)\s+)?({YearRegex}|(?<order>pr[oó]ximo(s)?|[uú]ltimo?|este)\s+año))\b
@@ -90,12 +90,15 @@ FollowedDateUnit: !nestedRegex
 NumberCombinedWithDateUnit: !nestedRegex
   def: \b(?<num>\d+(\.\d*)?){DateUnitRegex}
   references: [ DateUnitRegex ]
+QuarterTermRegex: !simpleRegex
+  def: (?<cardinal>primer|1er|segundo|2do|tercer|3ro|4to|((1|2|3|4)º))\s+(cuatrimestre|cuarto)
 QuarterRegex: !nestedRegex
-  def: (el\s+)?(?<cardinal>primer|1er|segundo|2do|tercer|3ro|cuarto|4to|((1|2|3|4)º))\s+(cuatrimestre|cuarto)((\s+de|\s*,\s*)?\s+({YearRegex}|(?<order>pr[oó]ximo(s)?|[uú]ltimo?|este)\s+año))?
-  references: [ YearRegex ]
+      #(el\s+)?(?<cardinal>primer|1er|segundo|2do|tercer|3ro|4to|((1|2|3|4)º))\s+(cuatrimestre|cuarto)((\s+de|\s*,\s*)?\s+({YearRegex}|(?<order>pr[oó]ximo(s)?|[uú]ltimo?|este)\s+año))?
+  def: (el\s+)?{QuarterTermRegex}((\s+del?|\s*,\s*)?\s+({YearRegex}|(?<order>pr[oó]ximo(s)?|[uú]ltimo?|este)\s+a[ñn]o|a[ñn]o(\s+{AfterNextSuffixRegex})))?
+  references: [ YearRegex, QuarterTermRegex, RelativeRegex, AfterNextSuffixRegex]
 QuarterRegexYearFront: !nestedRegex
-  def: ({YearRegex}|(?<order>pr[oó]ximo(s)?|[uú]ltimo?|este)\s+año)\s+(el\s+)?(?<cardinal>(primer|primero)|1er|segundo|2do|(tercer|terceo)|3ro|cuarto|4to)\s+cuatrimestre
-  references: [ YearRegex ]
+  def: ({YearRegex}|(?<order>pr[oó]ximo(s)?|[uú]ltimo?|este)\s+a[ñn]o)\s+(el\s+)?{QuarterTermRegex}
+  references: [ YearRegex, QuarterTermRegex ]
 AllHalfYearRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
