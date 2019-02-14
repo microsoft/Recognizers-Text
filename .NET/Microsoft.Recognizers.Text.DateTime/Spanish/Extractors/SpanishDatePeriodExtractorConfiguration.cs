@@ -192,6 +192,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             YearPlusNumberRegex,
             DecadeWithCenturyRegex,
             RelativeDecadeRegex,
+            WhichWeekRegex,
+            ReferenceDatePeriodRegex
         };
 
         public SpanishDatePeriodExtractorConfiguration(IOptionsConfiguration config)
