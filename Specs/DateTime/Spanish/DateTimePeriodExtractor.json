@@ -1060,7 +1060,7 @@
   },
   {
     "Input": "Estaré afuera en el resto del día de hoy",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -1073,7 +1073,7 @@
   },
   {
     "Input": "Estaré afuera en el resto de la jornada de hoy",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -1086,7 +1086,7 @@
   },
   {
     "Input": "Estaré afuera en el resto del día",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
