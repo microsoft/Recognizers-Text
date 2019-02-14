@@ -51,7 +51,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
         //    ExtractorInitialize(Extractors);
         //    TestDateTimeExtractor();
         // }
-
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "TimePeriodExtractor-Dutch.csv", "TimePeriodExtractor-Dutch#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void TimePeriodExtractor()
@@ -75,7 +74,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
         //    ExtractorInitialize(Extractors);
         //    TestDateTimeExtractor();
         // }
-
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "HolidayExtractor-Dutch.csv", "HolidayExtractor-Dutch#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void HolidayExtractor()
@@ -91,7 +89,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
         //    ExtractorInitialize(Extractors);
         //    TestDateTimeExtractor();
         // }
-
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "DurationExtractor-Dutch.csv", "DurationExtractor-Dutch#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void DurationExtractor()
@@ -123,7 +120,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
         //    ExtractorInitialize(Extractors);
         //    TestDateTimeExtractor();
         // }
-
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "DateParser-Dutch.csv", "DateParser-Dutch#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void DateParser()
@@ -168,7 +164,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
         //    ParserInitialize(Parsers);
         //    TestDateTimeParser();
         // }
-
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "DateTimePeriodParser-Dutch.csv", "DateTimePeriodParser-Dutch#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void DateTimePeriodParser()

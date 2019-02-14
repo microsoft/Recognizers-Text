@@ -264,7 +264,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 var weekdayStr = exactMatch.Groups["weekday"].Value.ToLower();
                 var value = referenceDate.Next((DayOfWeek)this.config.DayOfWeek[weekdayStr]);
-                
+
                 if (this.config.UpcomingPrefixRegex.MatchBegin(trimmedText, trim: true).Success)
                 {
                     value = referenceDate.Upcoming((DayOfWeek)this.config.DayOfWeek[weekdayStr]);
