@@ -22,13 +22,7 @@
 	  <DocumentationFile>$(OutputPath)$(AssemblyName).xml</DocumentationFile>
 	  <NoWarn>$(NoWarn),1573,1591,1712</NoWarn>
 	</PropertyGroup>
-  <ItemGroup>
-    <PackageReference Include="StyleCop.Analyzers" Version="1.1.0-beta008">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
-    </PackageReference>
-  </ItemGroup>
-  
+   
   <ItemGroup>
     <Compile Remove="build\**" />
     <EmbeddedResource Remove="build\**" />
