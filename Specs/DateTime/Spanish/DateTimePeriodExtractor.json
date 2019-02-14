@@ -1233,7 +1233,7 @@
   },
   {
     "Input": "Ocurrirá 1/1/2015 entre las 10 h y las 11.30 h",
-    "NotSupported": "java",
+    "NotSupported": "dotnet, java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -1271,7 +1271,7 @@
   },
   {
     "Input": "Ocurrirá el 1.1.15 de 3.30 a 5.55",
-    "NotSupported": "java",
+    "NotSupported": "dotnet, java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
