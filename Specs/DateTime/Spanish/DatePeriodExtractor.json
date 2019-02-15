@@ -4434,66 +4434,66 @@
   },
   {
     "Input": "durante más de 2 semanas antes de hoy",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "durante más de 2 semanas antes de hoy",
         "Type": "daterange",
         "Start": 0,
-        "Length": 21
+        "Length": 37
       }
     ]
   },
   {
     "Input": "dentro de 2 semanas a partir de hoy",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "dentro de 2 semanas a partir de hoy",
         "Type": "daterange",
         "Start": 0,
-        "Length": 19
+        "Length": 35
       }
     ]
   },
   {
     "Input": "dentro de menos de 2 semanas a partir de hoy",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "dentro de menos de 2 semanas a partir de hoy",
         "Type": "daterange",
         "Start": 0,
-        "Length": 28
+        "Length": 44
       }
     ]
   },
   {
     "Input": "durante más de 2 días antes de ayer",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "durante más de 2 días antes de ayer",
         "Type": "daterange",
         "Start": 0,
-        "Length": 22
+        "Length": 35
       }
     ]
   },
   {
     "Input": "dentro de menos de 3 días a partir de mañana",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "dentro de menos de 3 días a partir de mañana",
         "Type": "daterange",
         "Start": 0,
-        "Length": 15
+        "Length": 44
       }
     ]
   },
