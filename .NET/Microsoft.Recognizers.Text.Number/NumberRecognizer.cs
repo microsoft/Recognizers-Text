@@ -274,13 +274,11 @@ namespace Microsoft.Recognizers.Text.Number
                     AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new DutchNumberParserConfiguration()),
                     new Dutch.PercentageExtractor(options)));
 
-            /*
             RegisterModel<NumberRangeModel>(
                 Culture.Dutch,
                 (options) => new NumberRangeModel(
                     new BaseNumberRangeParser(new DutchNumberRangeParserConfiguration()),
                     new Dutch.NumberRangeExtractor(options)));
-            */
         }
 
         private static List<ModelResult> RecognizeByModel(Func<NumberRecognizer, IModel> getModelFunc, string query, NumberOptions options)
