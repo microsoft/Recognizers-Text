@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 
-using Microsoft.Recognizers.Definitions.English;
 using Microsoft.Recognizers.Text.Matcher;
 using DateObject = System.DateTime;
 
@@ -13,11 +12,45 @@ namespace Microsoft.Recognizers.Text.DateTime
     {
         private readonly IMergedExtractorConfiguration config;
 
-        private static readonly Regex ffast = new Regex(DateTimeDefinitions.FailFastRegex, RegexOptions.Singleline | RegexOptions.Compiled);
-
         public BaseMergedDateTimeExtractor(IMergedExtractorConfiguration config)
         {
             this.config = config;
+        }
+
+        public static bool TryMergeModifierToken(ExtractResult er, Regex tokenRegex, string text)
+        {
+            var beforeStr = text.Substring(0, er.Start ?? 0).ToLowerInvariant();
+
+            if (HasTokenIndex(beforeStr.TrimEnd(), tokenRegex, out var tokenIndex))
+            {
+                var modLength = beforeStr.Length - tokenIndex;
+
+                er.Length += modLength;
+                er.Start -= modLength;
+                er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
+
+                return true;
+            }
+
+            return false;
+        }
+
+        public static bool HasTokenIndex(string text, Regex regex, out int index)
+        {
+            index = -1;
+
+            // Support cases has two or more specific tokens
+            // For example, "show me sales after 2010 and before 2018 or before 2000"
+            // When extract "before 2000", we need the second "before" which will be matched in the second Regex match
+            var match = Regex.Match(text, regex.ToString(), RegexOptions.RightToLeft | RegexOptions.Singleline);
+
+            if (match.Success && string.IsNullOrEmpty(text.Substring(match.Index + match.Length)))
+            {
+                index = match.Index;
+                return true;
+            }
+
+            return false;
         }
 
         public List<ExtractResult> Extract(string text)
@@ -29,7 +62,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var ret = new List<ExtractResult>();
 
-            if (!ffast.IsMatch(text))
+            if (IsFailFastCase(text))
             {
                 return ret;
             }
@@ -93,40 +126,9 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        public bool TryMergeModifierToken(ExtractResult er, Regex tokenRegex, string text)
+        private bool IsFailFastCase(string input)
         {
-            var beforeStr = text.Substring(0, er.Start ?? 0).ToLowerInvariant();
-
-            if (HasTokenIndex(beforeStr.TrimEnd(), tokenRegex, out var tokenIndex))
-            {
-                var modLength = beforeStr.Length - tokenIndex;
-
-                er.Length += modLength;
-                er.Start -= modLength;
-                er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
-
-                return true;
-            }
-
-            return false;
-        }
-
-        public bool HasTokenIndex(string text, Regex regex, out int index)
-        {
-            index = -1;
-
-            // Support cases has two or more specific tokens
-            // For example, "show me sales after 2010 and before 2018 or before 2000"
-            // When extract "before 2000", we need the second "before" which will be matched in the second Regex match
-            var match = Regex.Match(text, regex.ToString(), RegexOptions.RightToLeft | RegexOptions.Singleline);
-
-            if (match.Success && string.IsNullOrEmpty(text.Substring(match.Index + match.Length)))
-            {
-                index = match.Index;
-                return true;
-            }
-
-            return false;
+            return (config.FailFastRegex != null) && (!config.FailFastRegex.IsMatch(input));
         }
 
         private List<ExtractResult> CheckCalendarModeFilters(List<ExtractResult> ers, string text)
@@ -251,8 +253,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             foreach (var extractResult in extractResults)
             {
-                if (extractResult.Type.Equals(Constants.SYS_DATETIME_TIME) ||
-                    extractResult.Type.Equals(Constants.SYS_DATETIME_DATETIME))
+                if (extractResult.Type.Equals(Constants.SYS_DATETIME_TIME, StringComparison.InvariantCulture) ||
+                    extractResult.Type.Equals(Constants.SYS_DATETIME_DATETIME, StringComparison.InvariantCulture))
                 {
                     var stringAfter = text.Substring((int)extractResult.Start + (int)extractResult.Length);
                     var match = this.config.NumberEndingPattern.Match(stringAfter);
@@ -295,7 +297,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                     TryMergeModifierToken(er, config.AroundRegex, text);
                 }
 
-                if (er.Type.Equals(Constants.SYS_DATETIME_DATEPERIOD) || er.Type.Equals(Constants.SYS_DATETIME_DATE))
+                if (er.Type.Equals(Constants.SYS_DATETIME_DATEPERIOD, StringComparison.InvariantCulture) ||
+                    er.Type.Equals(Constants.SYS_DATETIME_DATE, StringComparison.InvariantCulture))
                 {
                     // 2012 or after/above
                     var afterStr = text.Substring((er.Start ?? 0) + (er.Length ?? 0)).ToLowerInvariant();
