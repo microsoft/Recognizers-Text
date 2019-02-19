@@ -1272,7 +1272,7 @@
   },
   {
     "Input": "Ocurrirá el 1.1.15 de 3.30 a 5.55",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
