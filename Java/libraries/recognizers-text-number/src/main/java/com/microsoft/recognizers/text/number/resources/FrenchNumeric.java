@@ -206,7 +206,7 @@ public class FrenchNumeric {
 
     public static final List<String> WrittenFractionSeparatorTexts = Arrays.asList("et", "sur");
 
-    public static final String HalfADozenRegex = "(?<=\\b)+demi\\s+douzaine";
+    public static final String HalfADozenRegex = "(?<=\\b)demi\\s+douzaine";
 
     public static final String DigitalNumberRegex = "((?<=\\b)(cent|mille|million|millions|milliard|milliards|billions|billion|douzaine(s)?)(?=\\b))|((?<=(\\d|\\b)){BaseNumbers.MultiplierLookupRegex}(?=\\b))"
             .replace("{BaseNumbers.MultiplierLookupRegex}", BaseNumbers.MultiplierLookupRegex);

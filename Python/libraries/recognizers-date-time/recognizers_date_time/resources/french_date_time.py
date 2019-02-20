@@ -188,7 +188,7 @@ class FrenchDateTime:
     InexactNumberRegex = f'\\b(quelque|quel qu[ée]s|quelqu[ée]s|plusieur|plusieurs|divers)\\b'
     InexactNumberUnitRegex = f'({InexactNumberRegex})\\s+({DurationUnitRegex})'
     RelativeTimeUnitRegex = f'(((({ThisPrefixRegex})?)\\s+({TimeUnitRegex}(\\s*{NextSuffixRegex}|{PastSuffixRegex})?))|((le))\\s+({RestrictedTimeUnitRegex}))'
-    RelativeDurationUnitRegex = f'(((?<=({ThisPrefixRegex})\\s+)?\\b({DurationUnitRegex})(\\s+{NextSuffixRegex}|{PastSuffixRegex})?)|((le|my))\\s+({RestrictedTimeUnitRegex}))'
+    RelativeDurationUnitRegex = f'((\\b({DurationUnitRegex})(\\s+{NextSuffixRegex}|{PastSuffixRegex})?)|((le|my))\\s+({RestrictedTimeUnitRegex}))'
     ReferenceDatePeriodRegex = f'^[.]'
     UpcomingPrefixRegex = f'.^'
     NextPrefixRegex = f'.^'
