@@ -943,7 +943,7 @@
   },
   {
     "Input": "Nos vemos el martes a primeras horas de la mañana",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -956,7 +956,7 @@
   },
   {
     "Input": "Nos vemos el martes a últimas horas de la mañana",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -969,7 +969,7 @@
   },
   {
     "Input": "Nos vemos el martes a primeras horas de la tarde",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -995,7 +995,7 @@
   },
   {
     "Input": "Nos vemos el martes a últimas horas de la tarde",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -1008,7 +1008,7 @@
   },
   {
     "Input": "Nos vemos el martes a primeras horas de la noche",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -1021,7 +1021,7 @@
   },
   {
     "Input": "Nos vemos el martes a últimas horas de la noche",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -1047,7 +1047,7 @@
   },
   {
     "Input": "Nos vemos el martes a altas horas de la noche",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
