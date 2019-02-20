@@ -20,6 +20,7 @@ namespace Microsoft.Recognizers.Definitions.English
 		public const string DirectUtcRegex = @"\b(utc|gmt)(\s*[+\-\u00B1]?\s*[\d]{1,2}(\s*:\s*[\d]{1,2})?)?\b";
 		public static readonly IList<string> AbbreviationsList = new List<string>
 		{
+			@"ACT",
 			@"AFT",
 			@"AKST",
 			@"AKDT",
@@ -161,6 +162,7 @@ namespace Microsoft.Recognizers.Definitions.English
 		};
 		public static readonly IList<string> FullNameList = new List<string>
 		{
+			@"Acre Time",
 			@"Afghanistan Standard Time",
 			@"Alaskan Standard Time",
 			@"Arab Standard Time",
@@ -169,7 +171,9 @@ namespace Microsoft.Recognizers.Definitions.English
 			@"Argentina Standard Time",
 			@"Atlantic Standard Time",
 			@"AUS Central Standard Time",
+			@"Australian Central Time",
 			@"AUS Eastern Standard Time",
+			@"Australian Eastern Time",
 			@"Azerbaijan Standard Time",
 			@"Azores Standard Time",
 			@"Bahia Standard Time",
@@ -316,6 +320,7 @@ namespace Microsoft.Recognizers.Definitions.English
 		};
 		public static readonly Dictionary<string, int> AbbrToMinMapping = new Dictionary<string, int>
 		{
+			{ @"act", -10000 },
 			{ @"aft", 270 },
 			{ @"akst", -540 },
 			{ @"akdt", -480 },
