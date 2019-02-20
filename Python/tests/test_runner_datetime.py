@@ -10,6 +10,7 @@ MODELFUNCTION = {
 }
 
 
+@pytest.mark.skip(reason='Not using this library')
 @pytest.mark.parametrize(
     'culture, model, options, context, source, expected_results',
     get_specs(
@@ -37,6 +38,7 @@ def test_datetime_extractor(
         simple_extractor_assert(actual, expected, 'length', 'Length')
 
 
+@pytest.mark.skip(reason='Not using this library')
 @pytest.mark.parametrize(
     'culture, model, options, context, source, expected_results',
     get_specs(
@@ -82,6 +84,7 @@ def test_datetime_parser(
                 'PastResolution')
 
 
+@pytest.mark.skip(reason='Not using this library')
 @pytest.mark.parametrize(
     'culture, model, options, context, source, expected_results',
     get_specs(
@@ -119,6 +122,7 @@ def test_datetime_mergedparser(
                         assert actual_values[key] == expected_values[key]
 
 
+@pytest.mark.skip(reason='Not using this library')
 @pytest.mark.parametrize(
     'culture, model, options, context, source, expected_results',
     get_specs(

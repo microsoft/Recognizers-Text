@@ -10,7 +10,7 @@ MODELFUNCTION = {
     'Dimension': recognize_dimension,
 }
 
-
+@pytest.mark.skip(reason='Not using this library')
 @pytest.mark.parametrize('culture, model, options, context, source, expected_results',
                          get_specs(recognizer='NumberWithUnit', entity='Model'))
 def test_number_with_unit_recognizer(

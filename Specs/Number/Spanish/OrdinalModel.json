@@ -944,45 +944,29 @@
     ]
   },
   {
-    "Input": "el primer lugar",
+    "Input": "quiero ver el cuarto episodio de la temporada primera",
     "Results": [
       {
-        "Text": "primer",
+        "Text": "cuarto",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "1",
-          "offset":"1",
-          "relativeTo":"start"
-        },
-        "Start": 3,
-        "End": 8
-      }
-    ]
-  },
-  {
-    "Input": "decimoctavo o décimo octavo",
-    "Results": [
-      {
-        "Text": "decimoctavo",
-        "TypeName": "ordinal",
-        "Resolution": {
-          "value": "18",
-          "offset":"18",
-          "relativeTo":"start"
-        },
-        "Start": 0,
-        "End": 10
-      },
-	  {
-        "Text": "décimo octavo",
-        "TypeName": "ordinal",
-        "Resolution": {
-          "value": "18",
-          "offset":"18",
+          "value": "4",
+          "offset":"4",
           "relativeTo":"start"
         },
         "Start": 14,
-        "End": 26
+        "End": 19
+      },
+      {
+        "Text": "primera",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset":"1",
+          "relativeTo":"start",
+          "value": "1"
+        },
+        "Start": 46,
+        "End": 52
       }
     ]
   }
