@@ -10,7 +10,6 @@
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net462|AnyCPU'">
     <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
-	  <CodeAnalysisRuleSet>../Recognizers-Text.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
 <PropertyGroup>
 	  <!--
@@ -23,6 +22,7 @@
 	  <DocumentationFile>$(OutputPath)$(AssemblyName).xml</DocumentationFile>
 	  <NoWarn>$(NoWarn),1573,1591,1712</NoWarn>
 	</PropertyGroup>
+   
   <ItemGroup>
     <Compile Remove="build\**" />
     <EmbeddedResource Remove="build\**" />
