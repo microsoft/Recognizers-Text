@@ -394,7 +394,7 @@ DateTimePeriodNumberCombinedWithUnit: !nestedRegex
   def: \b(?<num>\d+(\.\d*)?)\s*{TimeUnitRegex}
   references: [ TimeUnitRegex ]
 PeriodTimeOfDayWithDateRegex: !simpleRegex
-  def: \b(((y|a|en|por)\s+la|al)\s+)?(?<timeOfDay>mañana|madrugada|(pasado\s+(el\s+)?)?medio\s?d[ií]a|tarde|noche|anoche)\b
+  def: \b(((y|a|en|por)\s+(la\s+)?|al\s+)?(((?<early>primeras\s+horas\s+)|(?<late>(últimas|altas)\s+horas\s+))?(de\s+la\s+)?(?<timeOfDay>(mañana|madrugada|(pasado\s+(el\s+)?)?medio\s?d[ií]a|tarde|noche|anoche))))\b
 RelativeTimeUnitRegex: !nestedRegex
   def: ({PastRegex}|{FutureRegex})\s+{TimeUnitRegex}
   references: [ PastRegex, FutureRegex, TimeUnitRegex ]
