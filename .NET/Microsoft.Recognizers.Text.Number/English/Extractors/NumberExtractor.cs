@@ -17,6 +17,8 @@ namespace Microsoft.Recognizers.Text.Number.English
 
             AmbiguousFractionConnectorsRegex = new Regex(NumbersDefinitions.AmbiguousFractionConnectorsRegex, RegexOptions.Singleline);
 
+            RelativeReferenceRegex = new Regex(NumbersDefinitions.RelativeOrdinalRegex, RegexOptions.Singleline);
+
             Options = options;
 
             var builder = ImmutableDictionary.CreateBuilder<Regex, TypeTag>();
@@ -77,6 +79,8 @@ namespace Microsoft.Recognizers.Text.Number.English
         protected sealed override Regex NegativeNumberTermsRegex { get; }
 
         protected sealed override Regex AmbiguousFractionConnectorsRegex { get; }
+
+        protected sealed override Regex RelativeReferenceRegex { get; }
 
         public static NumberExtractor GetInstance(NumberMode mode = NumberMode.Default, NumberOptions options = NumberOptions.None)
         {

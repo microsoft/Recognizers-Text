@@ -971,7 +971,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     DateObject beginTime;
                     var endTime = beginTime = referenceTime;
 
-                    if (Config.PastRegex.IsExactMatch(beforeStr, trim: true))
+                    if (Config.PreviousPrefixRegex.IsExactMatch(beforeStr, trim: true))
                     {
                         mod = Constants.BEFORE_MOD;
                         beginTime = referenceTime.AddSeconds(-swiftSeconds);
@@ -991,7 +991,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         endTime = beginTime.AddSeconds(swiftSeconds);
                     }
 
-                    if (Config.PastRegex.IsExactMatch(afterStr, trim: true))
+                    if (Config.PreviousPrefixRegex.IsExactMatch(afterStr, trim: true))
                     {
                         mod = Constants.BEFORE_MOD;
                         beginTime = referenceTime.AddSeconds(-swiftSeconds);
@@ -1050,7 +1050,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var unitStr = Config.UnitMap[srcUnit];
 
                 int swiftValue = 1;
-                var prefixMatch = Config.PastRegex.Match(text);
+                var prefixMatch = Config.PreviousPrefixRegex.Match(text);
                 if (prefixMatch.Success)
                 {
                     swiftValue = -1;

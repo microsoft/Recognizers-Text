@@ -106,54 +106,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
             }
 
-            if (er.Type.Equals(Constants.SYS_DATETIME_DATE))
-            {
-                pr = this.Config.DateParser.Parse(er, referenceTime);
-                if (pr.Value == null)
-                {
-                    pr = Config.HolidayParser.Parse(er, referenceTime);
-                }
-            }
-            else if (er.Type.Equals(Constants.SYS_DATETIME_TIME))
-            {
-                pr = this.Config.TimeParser.Parse(er, referenceTime);
-            }
-            else if (er.Type.Equals(Constants.SYS_DATETIME_DATETIME))
-            {
-                pr = this.Config.DateTimeParser.Parse(er, referenceTime);
-            }
-            else if (er.Type.Equals(Constants.SYS_DATETIME_DATEPERIOD))
-            {
-                pr = this.Config.DatePeriodParser.Parse(er, referenceTime);
-            }
-            else if (er.Type.Equals(Constants.SYS_DATETIME_TIMEPERIOD))
-            {
-                pr = this.Config.TimePeriodParser.Parse(er, referenceTime);
-            }
-            else if (er.Type.Equals(Constants.SYS_DATETIME_DATETIMEPERIOD))
-            {
-                pr = this.Config.DateTimePeriodParser.Parse(er, referenceTime);
-            }
-            else if (er.Type.Equals(Constants.SYS_DATETIME_DURATION))
-            {
-                pr = this.Config.DurationParser.Parse(er, referenceTime);
-            }
-            else if (er.Type.Equals(Constants.SYS_DATETIME_SET))
-            {
-                pr = this.Config.SetParser.Parse(er, referenceTime);
-            }
-            else if (er.Type.Equals(Constants.SYS_DATETIME_DATETIMEALT))
-            {
-                pr = this.Config.DateTimeAltParser.Parse(er, referenceTime);
-            }
-            else if (er.Type.Equals(Constants.SYS_DATETIME_TIMEZONE))
-            {
-                if ((Config.Options & DateTimeOptions.EnablePreview) != 0)
-                {
-                    pr = this.Config.TimeZoneParser.Parse(er, referenceTime);
-                }
-            }
-            else
+            pr = ParseResult(er, referenceTime);
+            if (pr == null)
             {
                 return null;
             }
@@ -168,11 +122,11 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 if (!hasInclusiveModifier)
                 {
-                    val.Mod = Constants.BEFORE_MOD;
+                    val.Mod = CombineMod(val.Mod, Constants.BEFORE_MOD);
                 }
                 else
                 {
-                    val.Mod = Constants.UNTIL_MOD;
+                    val.Mod = CombineMod(val.Mod, Constants.UNTIL_MOD);
                 }
 
                 pr.Value = val;
@@ -187,11 +141,11 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 if (!hasInclusiveModifier)
                 {
-                    val.Mod = Constants.AFTER_MOD;
+                    val.Mod = CombineMod(val.Mod, Constants.AFTER_MOD);
                 }
                 else
                 {
-                    val.Mod = Constants.SINCE_MOD;
+                    val.Mod = CombineMod(val.Mod, Constants.SINCE_MOD);
                 }
 
                 pr.Value = val;
@@ -203,7 +157,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 pr.Start -= modStr.Length;
                 pr.Text = modStr + pr.Text;
                 var val = (DateTimeResolutionResult)pr.Value;
-                val.Mod = Constants.SINCE_MOD;
+                val.Mod = CombineMod(val.Mod, Constants.SINCE_MOD);
                 pr.Value = val;
             }
 
@@ -213,7 +167,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 pr.Start -= modStr.Length;
                 pr.Text = modStr + pr.Text;
                 var val = (DateTimeResolutionResult)pr.Value;
-                val.Mod = Constants.APPROX_MOD;
+                val.Mod = CombineMod(val.Mod, Constants.APPROX_MOD);
                 pr.Value = val;
             }
 
@@ -222,7 +176,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 pr.Length += modStr.Length;
                 pr.Text = pr.Text + modStr;
                 var val = (DateTimeResolutionResult)pr.Value;
-                val.Mod = Constants.SINCE_MOD;
+                val.Mod = CombineMod(val.Mod, Constants.SINCE_MOD);
                 pr.Value = val;
                 hasSince = true;
             }
@@ -620,25 +574,25 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 if (!string.IsNullOrEmpty(mod))
                 {
-                    if (mod.Equals(Constants.BEFORE_MOD))
+                    if (mod.StartsWith(Constants.BEFORE_MOD))
                     {
                         res.Add(DateTimeResolutionKey.END, resolutionDic[type]);
                         return;
                     }
 
-                    if (mod.Equals(Constants.AFTER_MOD))
+                    if (mod.StartsWith(Constants.AFTER_MOD))
                     {
                         res.Add(DateTimeResolutionKey.START, resolutionDic[type]);
                         return;
                     }
 
-                    if (mod.Equals(Constants.SINCE_MOD))
+                    if (mod.StartsWith(Constants.SINCE_MOD))
                     {
                         res.Add(DateTimeResolutionKey.START, resolutionDic[type]);
                         return;
                     }
 
-                    if (mod.Equals(Constants.UNTIL_MOD))
+                    if (mod.StartsWith(Constants.UNTIL_MOD))
                     {
                         res.Add(DateTimeResolutionKey.END, resolutionDic[type]);
                         return;
@@ -669,7 +623,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 // For the 'before' mod
                 // 1. Cases like "Before December", the start of the period should be the end of the new period, not the start
                 // 2. Cases like "More than 3 days before today", the date point should be the end of the new period
-                if (mod.Equals(Constants.BEFORE_MOD))
+                if (mod.StartsWith(Constants.BEFORE_MOD))
                 {
                     if (!string.IsNullOrEmpty(start) && !string.IsNullOrEmpty(end))
                     {
@@ -686,15 +640,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                 // For the 'after' mod
                 // 1. Cases like "After January", the end of the period should be the start of the new period, not the end
                 // 2. Cases like "More than 3 days after today", the date point should be the start of the new period
-                if (mod.Equals(Constants.AFTER_MOD))
+                if (mod.StartsWith(Constants.AFTER_MOD))
                 {
-                    // For cases like "After January" or "After 2018"
-                    // The "end" of the period is not inclusive by default ("January", the end should be "XXXX-02-01" / "2018", the end should be "2019-01-01")
-                    // Mod "after" is also not inclusive the "start" ("After January", the start should be "XXXX-01-31" / "After 2018", the start should be "2017-12-31")
-                    // So here the START day should be the inclusive end of the period, which is one day previous to the default end (exclusive end)
                     if (!string.IsNullOrEmpty(start) && !string.IsNullOrEmpty(end))
                     {
-                        res.Add(DateTimeResolutionKey.START, GetPreviousDay(end));
+                        res.Add(DateTimeResolutionKey.START, end);
                     }
                     else
                     {
@@ -705,14 +655,14 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
 
                 // For the 'since' mod, the start of the period should be the start of the new period, not the end
-                if (mod.Equals(Constants.SINCE_MOD))
+                if (mod.StartsWith(Constants.SINCE_MOD))
                 {
                     res.Add(DateTimeResolutionKey.START, start);
                     return;
                 }
 
                 // For the 'until' mod, the end of the period should be the end of the new period, not the start
-                if (mod.Equals(Constants.UNTIL_MOD))
+                if (mod.StartsWith(Constants.UNTIL_MOD))
                 {
                     res.Add(DateTimeResolutionKey.END, end);
                     return;
@@ -724,14 +674,6 @@ namespace Microsoft.Recognizers.Text.DateTime
                 res.Add(DateTimeResolutionKey.START, start);
                 res.Add(DateTimeResolutionKey.END, end);
             }
-        }
-
-        public string GetPreviousDay(string dateStr)
-        {
-            // Here the dateString is in standard format, so Parse should work perfectly
-            var date = DateObject.Parse(dateStr);
-            date = date.AddDays(-1);
-            return DateTimeFormatUtil.LuisDate(date);
         }
 
         internal void AddResolutionFields(Dictionary<string, string> dic, string key, string value)
@@ -885,6 +827,18 @@ namespace Microsoft.Recognizers.Text.DateTime
             return res;
         }
 
+        private string CombineMod(string originalMod, string newMod)
+        {
+            var combinedMod = newMod;
+
+            if (!string.IsNullOrEmpty(originalMod))
+            {
+                combinedMod = $"{newMod}-{originalMod}";
+            }
+
+            return combinedMod;
+        }
+
         private string DetermineResolutionDateTimeType(Dictionary<string, string> pastResolutionStr)
         {
             switch (pastResolutionStr.Keys.First())
@@ -901,6 +855,65 @@ namespace Microsoft.Recognizers.Text.DateTime
                 default:
                     return pastResolutionStr.Keys.First().ToLower();
             }
+        }
+
+        private DateTimeParseResult ParseResult(ExtractResult extractResult, DateObject referenceTime)
+        {
+            DateTimeParseResult parseResult = null;
+            switch (extractResult.Type)
+            {
+                case Constants.SYS_DATETIME_DATE:
+                    parseResult = this.Config.DateParser.Parse(extractResult, referenceTime);
+                    if (parseResult.Value == null)
+                    {
+                        parseResult = Config.HolidayParser.Parse(extractResult, referenceTime);
+                    }
+
+                    break;
+                case Constants.SYS_DATETIME_TIME:
+                    parseResult = this.Config.TimeParser.Parse(extractResult, referenceTime);
+
+                    break;
+                case Constants.SYS_DATETIME_DATETIME:
+                    parseResult = this.Config.DateTimeParser.Parse(extractResult, referenceTime);
+
+                    break;
+                case Constants.SYS_DATETIME_DATEPERIOD:
+                    parseResult = this.Config.DatePeriodParser.Parse(extractResult, referenceTime);
+
+                    break;
+                case Constants.SYS_DATETIME_TIMEPERIOD:
+                    parseResult = this.Config.TimePeriodParser.Parse(extractResult, referenceTime);
+
+                    break;
+                case Constants.SYS_DATETIME_DATETIMEPERIOD:
+                    parseResult = this.Config.DateTimePeriodParser.Parse(extractResult, referenceTime);
+
+                    break;
+                case Constants.SYS_DATETIME_DURATION:
+                    parseResult = this.Config.DurationParser.Parse(extractResult, referenceTime);
+
+                    break;
+                case Constants.SYS_DATETIME_SET:
+                    parseResult = this.Config.SetParser.Parse(extractResult, referenceTime);
+
+                    break;
+                case Constants.SYS_DATETIME_DATETIMEALT:
+                    parseResult = this.Config.DateTimeAltParser.Parse(extractResult, referenceTime);
+
+                    break;
+                case Constants.SYS_DATETIME_TIMEZONE:
+                    if ((Config.Options & DateTimeOptions.EnablePreview) != 0)
+                    {
+                        parseResult = this.Config.TimeZoneParser.Parse(extractResult, referenceTime);
+                    }
+
+                    break;
+                default:
+                    return null;
+            }
+
+            return parseResult;
         }
     }
 }

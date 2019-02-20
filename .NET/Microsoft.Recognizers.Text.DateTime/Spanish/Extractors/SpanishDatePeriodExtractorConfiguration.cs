@@ -122,7 +122,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         // TODO: add this regex, let it correspond to the one in English
         public static readonly Regex RestOfDateRegex =
-            new Regex(@"^[.]", RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.RestOfDateRegex, RegexOptions.Singleline);
 
         // TODO: add this regex, let it correspond to the one in English
         public static readonly Regex WeekWithWeekDayRangeRegex =
@@ -192,7 +192,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             YearPlusNumberRegex,
             DecadeWithCenturyRegex,
             RelativeDecadeRegex,
-            MonthOfRegex,
+            WhichWeekRegex,
+            ReferenceDatePeriodRegex,
         };
 
         public SpanishDatePeriodExtractorConfiguration(IOptionsConfiguration config)
@@ -231,7 +232,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         Regex IDatePeriodExtractorConfiguration.NumberCombinedWithDateUnit => NumberCombinedWithDateUnit;
 
-        Regex IDatePeriodExtractorConfiguration.PastRegex => PastRegex;
+        Regex IDatePeriodExtractorConfiguration.PreviousPrefixRegex => PastRegex;
 
         Regex IDatePeriodExtractorConfiguration.FutureRegex => FutureRegex;
 

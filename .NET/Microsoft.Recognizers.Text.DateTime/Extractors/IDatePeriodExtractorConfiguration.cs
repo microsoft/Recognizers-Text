@@ -21,7 +21,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex NumberCombinedWithDateUnit { get; }
 
-        Regex PastRegex { get; }
+        Regex PreviousPrefixRegex { get; }
 
         Regex FutureRegex { get; }
 

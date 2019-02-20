@@ -503,6 +503,7 @@
   },
   {
     "Input": "Ya no estaré en ene",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -515,6 +516,7 @@
   },
   {
     "Input": "Ya no estaré este ene",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -527,30 +529,33 @@
   },
   {
     "Input": "Ya no estaré en el mes de ene",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de ene",
+        "Text": "el mes de ene",
         "Type": "daterange",
-        "Start": 19,
-        "Length": 10
+        "Start": 16,
+        "Length": 13
       }
     ]
   },
   {
     "Input": "Ya no estaré el mes de ene",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de ene",
+        "Text": "el mes de ene",
         "Type": "daterange",
-        "Start": 16,
-        "Length": 10
+        "Start": 13,
+        "Length": 13
       }
     ]
   },
   {
     "Input": "No estuve en ene de 2001",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -563,6 +568,7 @@
   },
   {
     "Input": "No estuve ene 2001",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -575,6 +581,7 @@
   },
   {
     "Input": "Ya no estaré en feb",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -587,6 +594,7 @@
   },
   {
     "Input": "Ya no estaré este feb",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -599,30 +607,33 @@
   },
   {
     "Input": "Ya no estaré en el mes de feb",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de feb",
+        "Text": "el mes de feb",
         "Type": "daterange",
-        "Start": 19,
-        "Length": 10
+        "Start": 16,
+        "Length": 13
       }
     ]
   },
   {
     "Input": "Ya no estaré el mes de feb",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de feb",
+        "Text": "el mes de feb",
         "Type": "daterange",
-        "Start": 16,
-        "Length": 10
+        "Start": 13,
+        "Length": 13
       }
     ]
   },
   {
     "Input": "No estuve en feb de 2001",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -635,6 +646,7 @@
   },
   {
     "Input": "No estuve feb 2001",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -647,6 +659,7 @@
   },
   {
     "Input": "Ya no estaré en mar",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -659,6 +672,7 @@
   },
   {
     "Input": "Ya no estaré este mar",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -671,30 +685,33 @@
   },
   {
     "Input": "Ya no estaré en el mes de mar",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de mar",
+        "Text": "el mes de mar",
         "Type": "daterange",
-        "Start": 19,
-        "Length": 10
+        "Start": 16,
+        "Length": 13
       }
     ]
   },
   {
     "Input": "Ya no estaré el mes de mar",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de mar",
+        "Text": "el mes de mar",
         "Type": "daterange",
-        "Start": 16,
-        "Length": 10
+        "Start": 13,
+        "Length": 13
       }
     ]
   },
   {
     "Input": "No estuve en mar de 2001",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -707,6 +724,7 @@
   },
   {
     "Input": "No estuve mar 2001",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -719,6 +737,7 @@
   },
   {
     "Input": "Ya no estaré en abr",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -731,6 +750,7 @@
   },
   {
     "Input": "Ya no estaré este abr",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -743,30 +763,33 @@
   },
   {
     "Input": "Ya no estaré en el mes de abr",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de abr",
+        "Text": "el mes de abr",
         "Type": "daterange",
-        "Start": 19,
-        "Length": 10
+        "Start": 16,
+        "Length": 13
       }
     ]
   },
   {
     "Input": "Ya no estaré el mes de abr",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de abr",
+        "Text": "el mes de abr",
         "Type": "daterange",
-        "Start": 16,
-        "Length": 10
+        "Start": 13,
+        "Length": 13
       }
     ]
   },
   {
     "Input": "No estuve en abr de 2001",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -779,6 +802,7 @@
   },
   {
     "Input": "No estuve abr 2001",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -791,6 +815,7 @@
   },
   {
     "Input": "Ya no estaré en mayo",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -803,6 +828,7 @@
   },
   {
     "Input": "Ya no estaré este mayo",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -815,30 +841,33 @@
   },
   {
     "Input": "Ya no estaré en el mes de mayo",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de mayo",
+        "Text": "el mes de mayo",
         "Type": "daterange",
-        "Start": 19,
-        "Length": 11
+        "Start": 16,
+        "Length": 14
       }
     ]
   },
   {
     "Input": "Ya no estaré el mes de mayo",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de mayo",
+        "Text": "el mes de mayo",
         "Type": "daterange",
-        "Start": 16,
-        "Length": 11
+        "Start": 13,
+        "Length": 14
       }
     ]
   },
   {
     "Input": "No estuve en mayo de 2001",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -851,6 +880,7 @@
   },
   {
     "Input": "No estuve mayo 2001",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -863,6 +893,7 @@
   },
   {
     "Input": "Ya no estaré en jun",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -875,6 +906,7 @@
   },
   {
     "Input": "Ya no estaré este jun",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -887,30 +919,33 @@
   },
   {
     "Input": "Ya no estaré en el mes de jun",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de jun",
+        "Text": "el mes de jun",
         "Type": "daterange",
-        "Start": 19,
-        "Length": 10
+        "Start": 16,
+        "Length": 13
       }
     ]
   },
   {
     "Input": "Ya no estaré el mes de jun",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de jun",
+        "Text": "el mes de jun",
         "Type": "daterange",
-        "Start": 16,
-        "Length": 10
+        "Start": 13,
+        "Length": 13
       }
     ]
   },
   {
     "Input": "No estuve en jun de 2001",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -923,6 +958,7 @@
   },
   {
     "Input": "No estuve jun 2001",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -935,6 +971,7 @@
   },
   {
     "Input": "Ya no estaré en jul",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -947,6 +984,7 @@
   },
   {
     "Input": "Ya no estaré este jul",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -959,30 +997,33 @@
   },
   {
     "Input": "Ya no estaré en el mes de jul",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de jul",
+        "Text": "el mes de jul",
         "Type": "daterange",
-        "Start": 19,
-        "Length": 10
+        "Start": 16,
+        "Length": 13
       }
     ]
   },
   {
     "Input": "Ya no estaré el mes de jul",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de jul",
+        "Text": "el mes de jul",
         "Type": "daterange",
-        "Start": 16,
-        "Length": 10
+        "Start": 13,
+        "Length": 13
       }
     ]
   },
   {
     "Input": "No estuve en jul de 2001",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -995,6 +1036,7 @@
   },
   {
     "Input": "No estuve jul 2001",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -1007,6 +1049,7 @@
   },
   {
     "Input": "Ya no estaré en ago",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -1019,6 +1062,7 @@
   },
   {
     "Input": "Ya no estaré este ago",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -1031,30 +1075,33 @@
   },
   {
     "Input": "Ya no estaré en el mes de ago",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de ago",
+        "Text": "el mes de ago",
         "Type": "daterange",
-        "Start": 19,
-        "Length": 10
+        "Start": 16,
+        "Length": 13
       }
     ]
   },
   {
     "Input": "Ya no estaré el mes de ago",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de ago",
+        "Text": "el mes de ago",
         "Type": "daterange",
-        "Start": 16,
-        "Length": 10
+        "Start": 13,
+        "Length": 13
       }
     ]
   },
   {
     "Input": "No estuve en ago de 2001",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -1067,6 +1114,7 @@
   },
   {
     "Input": "No estuve ago 2001",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -1079,6 +1127,7 @@
   },
   {
     "Input": "Ya no estaré en sept",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -1091,6 +1140,7 @@
   },
   {
     "Input": "Ya no estaré este sept",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -1103,30 +1153,33 @@
   },
   {
     "Input": "Ya no estaré en el mes de sept",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de sept",
+        "Text": "el mes de sept",
         "Type": "daterange",
-        "Start": 19,
-        "Length": 11
+        "Start": 16,
+        "Length": 14
       }
     ]
   },
   {
     "Input": "Ya no estaré el mes de sept",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de sept",
+        "Text": "el mes de sept",
         "Type": "daterange",
-        "Start": 16,
-        "Length": 11
+        "Start": 13,
+        "Length": 14
       }
     ]
   },
   {
     "Input": "No estuve en sept de 2001",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -1139,6 +1192,7 @@
   },
   {
     "Input": "No estuve sept 2001",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -1151,6 +1205,7 @@
   },
   {
     "Input": "Ya no estaré en sep",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -1163,6 +1218,7 @@
   },
   {
     "Input": "Ya no estaré este sep",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -1175,30 +1231,33 @@
   },
   {
     "Input": "Ya no estaré en el mes de sep",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de sep",
+        "Text": "el mes de sep",
         "Type": "daterange",
-        "Start": 19,
-        "Length": 10
+        "Start": 16,
+        "Length": 13
       }
     ]
   },
   {
     "Input": "Ya no estaré el mes de sep",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de sep",
+        "Text": "el mes de sep",
         "Type": "daterange",
-        "Start": 16,
-        "Length": 10
+        "Start": 13,
+        "Length": 13
       }
     ]
   },
   {
     "Input": "No estuve en sep de 2001",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -1211,6 +1270,7 @@
   },
   {
     "Input": "No estuve sep 2001",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -1223,6 +1283,7 @@
   },
   {
     "Input": "Ya no estaré en oct",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -1235,6 +1296,7 @@
   },
   {
     "Input": "Ya no estaré este oct",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -1247,30 +1309,33 @@
   },
   {
     "Input": "Ya no estaré en el mes de oct",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de oct",
+        "Text": "el mes de oct",
         "Type": "daterange",
-        "Start": 19,
-        "Length": 10
+        "Start": 16,
+        "Length": 13
       }
     ]
   },
   {
     "Input": "Ya no estaré el mes de oct",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de oct",
+        "Text": "el mes de oct",
         "Type": "daterange",
-        "Start": 16,
-        "Length": 10
+        "Start": 13,
+        "Length": 13
       }
     ]
   },
   {
     "Input": "No estuve en oct de 2001",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -1283,6 +1348,7 @@
   },
   {
     "Input": "No estuve oct 2001",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -1295,6 +1361,7 @@
   },
   {
     "Input": "Ya no estaré en nov",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -1307,6 +1374,7 @@
   },
   {
     "Input": "Ya no estaré este nov",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -1319,30 +1387,33 @@
   },
   {
     "Input": "Ya no estaré en el mes de nov",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de nov",
+        "Text": "el mes de nov",
         "Type": "daterange",
-        "Start": 19,
-        "Length": 10
+        "Start": 16,
+        "Length": 13
       }
     ]
   },
   {
     "Input": "Ya no estaré el mes de nov",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de nov",
+        "Text": "el mes de nov",
         "Type": "daterange",
-        "Start": 16,
-        "Length": 10
+        "Start": 13,
+        "Length": 13
       }
     ]
   },
   {
     "Input": "No estuve en nov de 2001",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -1355,6 +1426,7 @@
   },
   {
     "Input": "No estuve nov 2001",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -1367,6 +1439,7 @@
   },
   {
     "Input": "Ya no estaré en dic",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -1379,6 +1452,7 @@
   },
   {
     "Input": "Ya no estaré este dic",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -1391,30 +1465,33 @@
   },
   {
     "Input": "Ya no estaré en el mes de dic",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de dic",
+        "Text": "el mes de dic",
         "Type": "daterange",
-        "Start": 19,
-        "Length": 10
+        "Start": 16,
+        "Length": 13
       }
     ]
   },
   {
     "Input": "Ya no estaré el mes de dic",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de dic",
+        "Text": "el mes de dic",
         "Type": "daterange",
-        "Start": 16,
-        "Length": 10
+        "Start": 13,
+        "Length": 13
       }
     ]
   },
   {
     "Input": "No estuve en dic de 2001",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -1427,6 +1504,7 @@
   },
   {
     "Input": "No estuve dic 2001",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -1439,6 +1517,7 @@
   },
   {
     "Input": "Ya no estaré en enero",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -1451,6 +1530,7 @@
   },
   {
     "Input": "Ya no estaré este enero",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -1463,30 +1543,33 @@
   },
   {
     "Input": "Ya no estaré en el mes de enero",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de enero",
+        "Text": "el mes de enero",
         "Type": "daterange",
-        "Start": 19,
-        "Length": 12
+        "Start": 16,
+        "Length": 15
       }
     ]
   },
   {
     "Input": "Ya no estaré el mes de enero",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de enero",
+        "Text": "el mes de enero",
         "Type": "daterange",
-        "Start": 16,
-        "Length": 12
+        "Start": 13,
+        "Length": 15
       }
     ]
   },
   {
     "Input": "No estuve en enero de 2001",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -1499,6 +1582,7 @@
   },
   {
     "Input": "No estuve enero 2001",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -1511,6 +1595,7 @@
   },
   {
     "Input": "Ya no estaré en febrero",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -1523,6 +1608,7 @@
   },
   {
     "Input": "Ya no estaré este febrero",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -1535,30 +1621,33 @@
   },
   {
     "Input": "Ya no estaré en el mes de febrero",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de febrero",
+        "Text": "el mes de febrero",
         "Type": "daterange",
-        "Start": 19,
-        "Length": 14
+        "Start": 16,
+        "Length": 17
       }
     ]
   },
   {
     "Input": "Ya no estaré el mes de febrero",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de febrero",
+        "Text": "el mes de febrero",
         "Type": "daterange",
-        "Start": 16,
-        "Length": 14
+        "Start": 13,
+        "Length": 17
       }
     ]
   },
   {
     "Input": "No estuve en febrero de 2001",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -1571,6 +1660,7 @@
   },
   {
     "Input": "No estuve febrero 2001",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -1583,6 +1673,7 @@
   },
   {
     "Input": "Ya no estaré en marzo",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -1595,6 +1686,7 @@
   },
   {
     "Input": "Ya no estaré este marzo",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -1607,30 +1699,33 @@
   },
   {
     "Input": "Ya no estaré en el mes de marzo",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de marzo",
+        "Text": "el mes de marzo",
         "Type": "daterange",
-        "Start": 19,
-        "Length": 12
+        "Start": 16,
+        "Length": 15
       }
     ]
   },
   {
     "Input": "Ya no estaré el mes de marzo",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de marzo",
+        "Text": "el mes de marzo",
         "Type": "daterange",
-        "Start": 16,
-        "Length": 12
+        "Start": 13,
+        "Length": 15
       }
     ]
   },
   {
     "Input": "No estuve en marzo de 2001",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -1643,6 +1738,7 @@
   },
   {
     "Input": "No estuve marzo 2001",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -1655,6 +1751,7 @@
   },
   {
     "Input": "Ya no estaré en junio",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -1667,6 +1764,7 @@
   },
   {
     "Input": "Ya no estaré este junio",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -1679,30 +1777,33 @@
   },
   {
     "Input": "Ya no estaré en el mes de junio",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de junio",
+        "Text": "el mes de junio",
         "Type": "daterange",
-        "Start": 19,
-        "Length": 12
+        "Start": 16,
+        "Length": 15
       }
     ]
   },
   {
     "Input": "Ya no estaré el mes de junio",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de junio",
+        "Text": "el mes de junio",
         "Type": "daterange",
-        "Start": 16,
-        "Length": 12
+        "Start": 13,
+        "Length": 15
       }
     ]
   },
   {
     "Input": "No estuve en junio de 2001",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -1715,6 +1816,7 @@
   },
   {
     "Input": "No estuve junio 2001",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -1727,6 +1829,7 @@
   },
   {
     "Input": "Ya no estaré en julio",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -1739,6 +1842,7 @@
   },
   {
     "Input": "Ya no estaré este julio",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -1751,30 +1855,33 @@
   },
   {
     "Input": "Ya no estaré en el mes de julio",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de julio",
+        "Text": "el mes de julio",
         "Type": "daterange",
-        "Start": 19,
-        "Length": 12
+        "Start": 16,
+        "Length": 15
       }
     ]
   },
   {
     "Input": "Ya no estaré el mes de julio",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de julio",
+        "Text": "el mes de julio",
         "Type": "daterange",
-        "Start": 16,
-        "Length": 12
+        "Start": 13,
+        "Length": 15
       }
     ]
   },
   {
     "Input": "No estuve en julio de 2001",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -1787,6 +1894,7 @@
   },
   {
     "Input": "No estuve julio 2001",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -1799,6 +1907,7 @@
   },
   {
     "Input": "Ya no estaré en agosto",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -1811,6 +1920,7 @@
   },
   {
     "Input": "Ya no estaré este agosto",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -1823,30 +1933,33 @@
   },
   {
     "Input": "Ya no estaré en el mes de agosto",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de agosto",
+        "Text": "el mes de agosto",
         "Type": "daterange",
-        "Start": 19,
-        "Length": 13
+        "Start": 16,
+        "Length": 16
       }
     ]
   },
   {
     "Input": "Ya no estaré el mes de agosto",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de agosto",
+        "Text": "el mes de agosto",
         "Type": "daterange",
-        "Start": 16,
-        "Length": 13
+        "Start": 13,
+        "Length": 16
       }
     ]
   },
   {
     "Input": "No estuve en agosto de 2001",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -1859,6 +1972,7 @@
   },
   {
     "Input": "No estuve agosto 2001",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -1871,6 +1985,7 @@
   },
   {
     "Input": "Ya no estaré en septiembre",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -1883,6 +1998,7 @@
   },
   {
     "Input": "Ya no estaré este septiembre",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -1895,30 +2011,33 @@
   },
   {
     "Input": "Ya no estaré en el mes de septiembre",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de septiembre",
+        "Text": "el mes de septiembre",
         "Type": "daterange",
-        "Start": 19,
-        "Length": 17
+        "Start": 16,
+        "Length": 20
       }
     ]
   },
   {
     "Input": "Ya no estaré el mes de septiembre",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de septiembre",
+        "Text": "el mes de septiembre",
         "Type": "daterange",
-        "Start": 16,
-        "Length": 17
+        "Start": 13,
+        "Length": 20
       }
     ]
   },
   {
     "Input": "No estuve en septiembre de 2001",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -1931,6 +2050,7 @@
   },
   {
     "Input": "No estuve septiembre 2001",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -1943,6 +2063,7 @@
   },
   {
     "Input": "Ya no estaré en octubre",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -1955,6 +2076,7 @@
   },
   {
     "Input": "Ya no estaré este octubre",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -1967,30 +2089,33 @@
   },
   {
     "Input": "Ya no estaré en el mes de octubre",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de octubre",
+        "Text": "el mes de octubre",
         "Type": "daterange",
-        "Start": 19,
-        "Length": 14
+        "Start": 16,
+        "Length": 17
       }
     ]
   },
   {
     "Input": "Ya no estaré el mes de octubre",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de octubre",
+        "Text": "el mes de octubre",
         "Type": "daterange",
-        "Start": 16,
-        "Length": 14
+        "Start": 13,
+        "Length": 17
       }
     ]
   },
   {
     "Input": "No estuve en octubre de 2001",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -2003,6 +2128,7 @@
   },
   {
     "Input": "No estuve octubre 2001",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -2015,6 +2141,7 @@
   },
   {
     "Input": "Ya no estaré en diciembre",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -2027,6 +2154,7 @@
   },
   {
     "Input": "Ya no estaré este diciembre",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -2039,30 +2167,33 @@
   },
   {
     "Input": "Ya no estaré en el mes de diciembre",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de diciembre",
+        "Text": "el mes de diciembre",
         "Type": "daterange",
-        "Start": 19,
-        "Length": 16
+        "Start": 16,
+        "Length": 19
       }
     ]
   },
   {
     "Input": "Ya no estaré el mes de diciembre",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de diciembre",
+        "Text": "el mes de diciembre",
         "Type": "daterange",
-        "Start": 16,
-        "Length": 16
+        "Start": 13,
+        "Length": 19
       }
     ]
   },
   {
     "Input": "No estuve en diciembre de 2001",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -2075,6 +2206,7 @@
   },
   {
     "Input": "No estuve diciembre 2001",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -2087,18 +2219,20 @@
   },
   {
     "Input": "Calendario para el mes de septiembre",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes de septiembre",
+        "Text": "el mes de septiembre",
         "Type": "daterange",
-        "Start": 19,
-        "Length": 17
+        "Start": 16,
+        "Length": 20
       }
     ]
   },
   {
     "Input": "Ya no estaré del 4 al 22 de este mes",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -2111,6 +2245,7 @@
   },
   {
     "Input": "Ya no estaré de 4-23 del próximo mes",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -2123,6 +2258,7 @@
   },
   {
     "Input": "Ya no estaré desde el 3 hasta el 12 de sept",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -2135,6 +2271,7 @@
   },
   {
     "Input": "Ya no estaré de 4 a 23 del mes que viene",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -2147,6 +2284,7 @@
   },
   {
     "Input": "Ya no estaré desde 4 hasta 23 de este mes",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -2159,6 +2297,7 @@
   },
   {
     "Input": "Ya no estaré entre 4 y 22 de este mes",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -2171,6 +2310,7 @@
   },
   {
     "Input": "Ya no estaré entre el 3 y el 12 de sept jajaja",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -2183,6 +2323,7 @@
   },
   {
     "Input": "Ya no estaré entre el 4 de septiembre y el 8 de septiembre",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -2195,6 +2336,7 @@
   },
   {
     "Input": "Ya no estaré entre el 15 y el 19 de noviembre",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -2207,6 +2349,7 @@
   },
   {
     "Input": "Ya no estaré entre 15 y 19 de noviembre",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -2219,6 +2362,7 @@
   },
   {
     "Input": "Ya no estaré desde el 15 hasta el 19 de noviembre",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -2231,6 +2375,7 @@
   },
   {
     "Input": "Ya no estaré del 4 al 22 de enero de 2017",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -2243,6 +2388,7 @@
   },
   {
     "Input": "Ya no estaré entre 4-22 de enero de 2017",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -2255,6 +2401,7 @@
   },
   {
     "Input": "Ya no estaré esta semana",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -2267,18 +2414,20 @@
   },
   {
     "Input": "Ya no estaré la semana que viene",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "semana que viene",
+        "Text": "la semana que viene",
         "Type": "daterange",
-        "Start": 16,
-        "Length": 16
+        "Start": 13,
+        "Length": 19
       }
     ]
   },
   {
     "Input": "Ya no estaré el último sept",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -2291,6 +2440,7 @@
   },
   {
     "Input": "Ya no estaré el próximo junio",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -2303,6 +2453,7 @@
   },
   {
     "Input": "Ya no estaré en junio 2016",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -2315,6 +2466,7 @@
   },
   {
     "Input": "Ya no estaré en junio del próximo año",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -2327,6 +2479,7 @@
   },
   {
     "Input": "Ya no estaré este fin de semana",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -2339,6 +2492,7 @@
   },
   {
     "Input": "Ya no estaré la tercera semana de este mes",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -2351,6 +2505,7 @@
   },
   {
     "Input": "Ya no estaré en la última semana de julio",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -2363,6 +2518,7 @@
   },
   {
     "Input": "Programa camping de viernes a domingo",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -2375,6 +2531,7 @@
   },
   {
     "Input": "Ya no estaré los 3 días siguientes",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -2387,6 +2544,7 @@
   },
   {
     "Input": "Ya no estaré en los 3 meses siguientes",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -2414,6 +2572,7 @@
   },
   {
     "Input": "Ya no estuve en las últimas 3 semanas",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -2426,6 +2585,7 @@
   },
   {
     "Input": "Ya no estuve los últimos 3 años",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -2438,30 +2598,33 @@
   },
   {
     "Input": "Ya no estuve el año pasado",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "año pasado",
+        "Text": "el año pasado",
         "Type": "daterange",
-        "Start": 16,
-        "Length": 10
+        "Start": 13,
+        "Length": 13
       }
     ]
   },
   {
     "Input": "Ya no estuve el mes pasado",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes pasado",
+        "Text": "el mes pasado",
         "Type": "daterange",
-        "Start": 16,
-        "Length": 10
+        "Start": 13,
+        "Length": 13
       }
     ]
   },
   {
     "Input": "Ya no estuve en las 3 semanas anteriores",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -2474,6 +2637,7 @@
   },
   {
     "Input": "últimas semanas",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -2486,6 +2650,7 @@
   },
   {
     "Input": "últimos días",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -2498,6 +2663,7 @@
   },
   {
     "Input": "Ya no estaré de 2 de oct a 22 de octubre",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -2510,6 +2676,7 @@
   },
   {
     "Input": "Ya no estaré 12 de ene de 2016-22/2/2016",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -2522,6 +2689,7 @@
   },
   {
     "Input": "Ya no estaré desde 1 ene hasta miércoles 22 de ene",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -2534,6 +2702,7 @@
   },
   {
     "Input": "Ya no estaré desde hoy hasta mañana",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -2546,6 +2715,7 @@
   },
   {
     "Input": "Ya no estaré de hoy a 22 de octubre",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -2558,6 +2728,7 @@
   },
   {
     "Input": "Ya no estaré desde 2 oct hasta pasado mañana",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -2570,6 +2741,7 @@
   },
   {
     "Input": "Ya no estaré desde hoy hasta próximo sábado",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -2582,6 +2754,7 @@
   },
   {
     "Input": "Ya no estaré de este viernes al próximo sábado",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -2594,6 +2767,7 @@
   },
   {
     "Input": "Ya no estaré desde 2 oct hasta 22 de octubre",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -2606,6 +2780,7 @@
   },
   {
     "Input": "Ya no estaré desde 12/8/2015 hasta 22 de octubre",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -2634,6 +2809,7 @@
   },
   {
     "Input": "Ya no estaré de hoy a mañana",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -2646,6 +2822,7 @@
   },
   {
     "Input": "Ya no estaré desde este viernes hasta el próximo sábado",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -2658,6 +2835,7 @@
   },
   {
     "Input": "Ya no estaré entre 2 de oct y 22 de octubre",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -2670,6 +2848,7 @@
   },
   {
     "Input": "Ya no estaré 19-20 noviembre",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -2682,6 +2861,7 @@
   },
   {
     "Input": "Ya no estaré de 19 a 20 de noviembre",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -2694,6 +2874,7 @@
   },
   {
     "Input": "Ya no estaré entre 19 y 20 de noviembre",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -2706,6 +2887,7 @@
   },
   {
     "Input": "Ya no estaré en el tercer cuarto de 2016",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -2718,6 +2900,7 @@
   },
   {
     "Input": "Ya no estaré el tercer cuarto de este año",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -2730,6 +2913,7 @@
   },
   {
     "Input": "Ya no estaré tercer cuarto de 2016",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -2742,6 +2926,7 @@
   },
   {
     "Input": "Volveré en el 1º cuarto",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -2754,6 +2939,7 @@
   },
   {
     "Input": "Ya no estaré en el 3º cuarto",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -2766,6 +2952,7 @@
   },
   {
     "Input": "Ya no estaré 3.2015",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -2778,6 +2965,7 @@
   },
   {
     "Input": "Ya no estaré 3-2015",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -2790,6 +2978,7 @@
   },
   {
     "Input": "Ya no estaré 3/2015",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -2802,8 +2991,8 @@
   },
   {
     "Input": "Ya no estaré 3/15",
-    "NotSupported": "dotnet, java",
-    "NotSupportedByDesign": "javascript, python",
+    "Comment": "Won't fix, 3/15 is date not date period",
+    "NotSupported": "dotnet, java, javascript, python",
     "Results": [
       {
         "Text": "3/15",
@@ -2815,7 +3004,7 @@
   },
   {
     "Input": "Ya no estaré en la 3ª semana de 2027",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -2828,7 +3017,7 @@
   },
   {
     "Input": "Ya no estaré en la 3ª semana del próximo año",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -2841,6 +3030,7 @@
   },
   {
     "Input": "Me iré este verano",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -2853,19 +3043,20 @@
   },
   {
     "Input": "Me iré la próxima primavera",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "próxima primavera",
         "Type": "daterange",
-        "Start": 7,
+        "Start": 10,
         "Length": 17
       }
     ]
   },
   {
     "Input": "Me iré en el verano",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -2878,19 +3069,20 @@
   },
   {
     "Input": "Me iré en verano",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "verano",
         "Type": "daterange",
-        "Start": 4,
+        "Start": 10,
         "Length": 6
       }
     ]
   },
   {
     "Input": "Me iré en verano 2016",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -2903,6 +3095,7 @@
   },
   {
     "Input": "Me iré en el verano de 2016",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -2915,32 +3108,33 @@
   },
   {
     "Input": "vacacione en el mes que viene",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "mes que viene",
+        "Text": "el mes que viene",
         "Type": "daterange",
-        "Start": 16,
-        "Length": 13
+        "Start": 13,
+        "Length": 16
       }
     ]
   },
   {
     "Input": "vacaciones en el próximo mes",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "próximo mes",
+        "Text": "el próximo mes",
         "Type": "daterange",
-        "Start": 16,
-        "Length": 11
+        "Start": 14,
+        "Length": 14
       }
     ]
   },
   {
     "Input": "Qué tengo para la semana de 30 de noviembre",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -2953,7 +3147,7 @@
   },
   {
     "Input": "la semana del 15 de septiembre",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -2966,7 +3160,7 @@
   },
   {
     "Input": "semana de 15 septiembre",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -2979,7 +3173,7 @@
   },
   {
     "Input": "mes del 15 de septiembre",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -2992,20 +3186,20 @@
   },
   {
     "Input": "Me iré en el fin de semana",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "fin de semana",
+        "Text": "el fin de semana",
         "Type": "daterange",
-        "Start": 13,
-        "Length": 13
+        "Start": 10,
+        "Length": 16
       }
     ]
   },
   {
     "Input": "Me iré en el resto de la semana",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -3018,7 +3212,7 @@
   },
   {
     "Input": "Me iré resto de la semana",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -3031,7 +3225,7 @@
   },
   {
     "Input": "Me iré en el resto de semana",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -3044,7 +3238,7 @@
   },
   {
     "Input": "Me iré resto de semana",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -3057,7 +3251,7 @@
   },
   {
     "Input": "Me iré en el resto de esta semana",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -3070,7 +3264,7 @@
   },
   {
     "Input": "Me iré en el resto de la semana actual",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -3083,7 +3277,7 @@
   },
   {
     "Input": "Me iré en el resto del mes",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -3096,7 +3290,7 @@
   },
   {
     "Input": "Me iré en el resto del año",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -3109,7 +3303,7 @@
   },
   {
     "Input": "Búscanos un tiempo conveniente para fines de este mes",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -3122,7 +3316,7 @@
   },
   {
     "Input": "Búscanos un tiempo conveniente para fines de esta semana",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -3135,7 +3329,7 @@
   },
   {
     "Input": "Búscanos un tiempo conveniente para fines de la próxima semana",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -3148,7 +3342,7 @@
   },
   {
     "Input": "Búscanos un tiempo conveniente para fines del próximo año",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -3161,7 +3355,7 @@
   },
   {
     "Input": "Nos vimos a finales de la semana pasada",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -3174,7 +3368,7 @@
   },
   {
     "Input": "Búscanos un tiempo conveniente para comienzos de este mes",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -3187,7 +3381,7 @@
   },
   {
     "Input": "Búscanos un tiempo conveniente para comienzos de esta semana",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -3200,7 +3394,7 @@
   },
   {
     "Input": "Búscanos un tiempo conveniente para comienzos de la próxima semana",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -3213,7 +3407,7 @@
   },
   {
     "Input": "Búscanos un tiempo conveniente para comienzos del próximo año",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -3226,7 +3420,7 @@
   },
   {
     "Input": "Cortana, programa una reunión de 25 minutos con Antonio entre miércoles y viernes de la próxima semana.",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -3239,33 +3433,33 @@
   },
   {
     "Input": "Cortana, programa una reunión de 25 minutos con Antonio para la próxima semana entre miércoles y viernes.",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "próxima semana entre miércoles y viernes",
+        "Text": "la próxima semana entre miércoles y viernes",
         "Type": "daterange",
-        "Start": 64,
-        "Length": 40
+        "Start": 61,
+        "Length": 43
       }
     ]
   },
   {
     "Input": "Cortana, programa una reunión de 25 minutos con Antonio para la semana pasada de miércoles a viernes.",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "semana pasada de miércoles a viernes",
+        "Text": "la semana pasada de miércoles a viernes",
         "Type": "daterange",
-        "Start": 64,
-        "Length": 36
+        "Start": 61,
+        "Length": 39
       }
     ]
   },
   {
     "Input": "Cortana, programa una reunión de 25 minutos con Antonio para esta semana entre miércoles y viernes.",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -3278,7 +3472,7 @@
   },
   {
     "Input": "Ya no estaré en el año 247",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -3291,7 +3485,7 @@
   },
   {
     "Input": "en los años 1970",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -3304,7 +3498,7 @@
   },
   {
     "Input": "Nació en los años 2000",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -3317,7 +3511,7 @@
   },
   {
     "Input": "en la década de 1970",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -3330,21 +3524,21 @@
   },
   {
     "Input": "en los años 70",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "años 70",
         "Type": "daterange",
         "Start": 7,
-        "Length": 6
+        "Length": 7
       }
     ]
   },
   {
     "Input": "en los 70",
-    "NotSupported": "dotnet, java",
-    "NotSupportedByDesign": "javascript, python",
+    "Comment": "Won't fix, because 'los 70' has ambiguity, will be extracted as number or datetime",
+    "NotSupported": "javascript, python, dotnet, java",
     "Results": [
       {
         "Text": "los 70",
@@ -3356,7 +3550,7 @@
   },
   {
     "Input": "en la década 40",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -3369,73 +3563,74 @@
   },
   {
     "Input": "en los años setenta",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "años setenta",
+        "Text": "los años setenta",
         "Type": "daterange",
-        "Start": 7,
-        "Length": 12
+        "Start": 3,
+        "Length": 16
       }
     ]
   },
   {
     "Input": "en los años mil novecientos sesenta",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "años mil novecientos sesenta",
+        "Text": "los años mil novecientos sesenta",
         "Type": "daterange",
-        "Start": 7,
-        "Length": 28
+        "Start": 3,
+        "Length": 32
       }
     ]
   },
   {
     "Input": "en los años dos mil diez",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "años dos mil diez",
+        "Text": "los años dos mil diez",
         "Type": "daterange",
-        "Start": 7,
-        "Length": 17
+        "Start": 3,
+        "Length": 21
       }
     ]
   },
   {
     "Input": "en los años diez",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "años diez",
+        "Text": "los años diez",
         "Type": "daterange",
-        "Start": 7,
-        "Length": 9
+        "Start": 3,
+        "Length": 13
       }
     ]
   },
   {
     "Input": "en los años dos mil",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "años dos mil",
+        "Text": "los años dos mil",
         "Type": "daterange",
-        "Start": 7,
-        "Length": 12
+        "Start": 3,
+        "Length": 16
       }
     ]
   },
   {
     "Input": "en los noventa",
-    "NotSupported": "dotnet, java",
-    "NotSupportedByDesign": "javascript, python",
+    "NotSupported": "java",
+    "Comment": "Won't fix, because 'los noventa' has ambiguity, will be extracted as number or datetime",
+    "NotSupported": "javascript, python, dotnet, java",
     "Results": [
       {
         "Text": "los noventa",
@@ -3447,7 +3642,7 @@
   },
   {
     "Input": "Ya no estaré de 2 a 7 de feb de dos mil dieciocho",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -3460,7 +3655,7 @@
   },
   {
     "Input": "Ya no estaré entre 2 y 7 de feb de dos mil dieciocho",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -3473,7 +3668,7 @@
   },
   {
     "Input": "Ya no estaré entre 2-7 de feb de dos mil dieciocho",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -3486,7 +3681,7 @@
   },
   {
     "Input": "Ocurrió en junio de mil novecientos noventa y nueve",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -3512,7 +3707,7 @@
   },
   {
     "Input": "Ya no estaré en la primera semana de dos mil veintisiete",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -3525,7 +3720,7 @@
   },
   {
     "Input": "Ya no estaré en el 1º cuarto de dos mil veinte",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -3538,20 +3733,20 @@
   },
   {
     "Input": "En la primavera de mil novecientos setenta y ocho",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "primavera de mil novecientos setenta y ocho",
+        "Text": "la primavera de mil novecientos setenta y ocho",
         "Type": "daterange",
-        "Start": 6,
-        "Length": 43
+        "Start": 3,
+        "Length": 46
       }
     ]
   },
   {
     "Input": "Año dos mil sesenta y siete,",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -3564,7 +3759,7 @@
   },
   {
     "Input": "Ya no estaré en dos semanas",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -3577,46 +3772,46 @@
   },
   {
     "Input": "Ocurrió en las últimas 2 décadas",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "últimas 2 décadas",
+        "Text": "las últimas 2 décadas",
         "Type": "daterange",
-        "Start": 15,
-        "Length": 17
+        "Start": 11,
+        "Length": 21
       }
     ]
   },
   {
     "Input": "Ocurrió en las últimas dos décadas",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "últimas dos décadas",
+        "Text": "las últimas dos décadas",
         "Type": "daterange",
-        "Start": 15,
-        "Length": 19
+        "Start": 11,
+        "Length": 23
       }
     ]
   },
   {
     "Input": "Ocurrirá en la próxima década",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "próxima década",
+        "Text": "la próxima década",
         "Type": "daterange",
-        "Start": 15,
-        "Length": 14
+        "Start": 12,
+        "Length": 17
       }
     ]
   },
   {
     "Input": "Ocurrirá en 4 semanas",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -3629,7 +3824,7 @@
   },
   {
     "Input": "Ocurrirá 2 días después",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -3642,7 +3837,7 @@
   },
   {
     "Input": "Cortana puede buscarnos un tiempo para inicios de la próxima semana",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -3655,7 +3850,7 @@
   },
   {
     "Input": "Claro, vamos a hablar por skype a finales de próxima semana",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -3668,7 +3863,7 @@
   },
   {
     "Input": "Claro, vamos a hablar por skype a comienzos de próxima semana",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -3681,7 +3876,7 @@
   },
   {
     "Input": "Cortana, búscanos un tiempo a finales de marzo",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -3694,7 +3889,7 @@
   },
   {
     "Input": "Cortana, búscanos un tiempo a mediados de la próxima semana",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -3707,7 +3902,7 @@
   },
   {
     "Input": "cortana puede buscarnos un tiempo para vernos a mediados de marzo",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -3720,7 +3915,7 @@
   },
   {
     "Input": "qué tal a mediados de verano?",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -3733,7 +3928,7 @@
   },
   {
     "Input": "Yo puedo fijar un tiempo para nosotros a comienzos de la semana que viene",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -3746,7 +3941,7 @@
   },
   {
     "Input": "Ya no estaré 11 -2016",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -3759,7 +3954,7 @@
   },
   {
     "Input": "Ya no estaré 11- 2016",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -3772,7 +3967,7 @@
   },
   {
     "Input": "Ya no estaré 11 / 2016",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -3785,7 +3980,7 @@
   },
   {
     "Input": "Ya no estaré 11/2016",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -3798,7 +3993,7 @@
   },
   {
     "Input": "Ya no estaré 11 - 2016",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -3811,7 +4006,7 @@
   },
   {
     "Input": "Ya no estaré 11-2016",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -3824,7 +4019,7 @@
   },
   {
     "Input": "Ya no estaré 11. 2016",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -3837,7 +4032,7 @@
   },
   {
     "Input": "Ya no estaré 11 .2016",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -3850,20 +4045,20 @@
   },
   {
     "Input": "Ya no estaré 11 . 2016",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "11 . 2016",
         "Type": "daterange",
-        "Start": 12,
+        "Start": 13,
         "Length": 9
       }
     ]
   },
   {
     "Input": "Ya no estaré 11.2016",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -3876,7 +4071,7 @@
   },
   {
     "Input": "Ya no estaré 11~ 2016",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -3889,7 +4084,7 @@
   },
   {
     "Input": "Ya no estaré 11 ~2016",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -3902,20 +4097,20 @@
   },
   {
     "Input": "Ya no estaré 11 ~ 2016",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "11 ~ 2016",
         "Type": "daterange",
-        "Start": 12,
+        "Start": 13,
         "Length": 9
       }
     ]
   },
   {
     "Input": "Ya no estaré 11~2016",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -3928,7 +4123,7 @@
   },
   {
     "Input": "Ya no estaré noviembre 2016",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -3941,7 +4136,7 @@
   },
   {
     "Input": "Ya no estaré noviembre , 2016",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -3954,11 +4149,11 @@
   },
   {
     "Input": "Ya no estaré nov de 2016",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "nov , 2016",
+        "Text": "nov de 2016",
         "Type": "daterange",
         "Start": 13,
         "Length": 11
@@ -3967,7 +4162,7 @@
   },
   {
     "Input": "Ya no estaré nov, 2016",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -3980,7 +4175,7 @@
   },
   {
     "Input": "Ya no estaré entre 1 de enero y 5 de enero",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -3993,7 +4188,7 @@
   },
   {
     "Input": "Ya no estaré entre 1 de enero de 2015 y 5 de febrero de 2018",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -4006,7 +4201,7 @@
   },
   {
     "Input": "Ya no estaré entre 1 de enero de 2015 y feb de 2018",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -4019,7 +4214,7 @@
   },
   {
     "Input": "Ya no estaré entre 2015 y feb de 2018",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -4032,7 +4227,7 @@
   },
   {
     "Input": "Ya no estaré desde 1 de feb hasta marzo de 2019",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -4045,7 +4240,7 @@
   },
   {
     "Input": "Ya no estaré entre 1 de feb y marzo de 2019",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -4058,7 +4253,7 @@
   },
   {
     "Input": "Ya no estaré entre junio de 2015 y mayo de 2018",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -4071,7 +4266,7 @@
   },
   {
     "Input": "Ya no estaré entre mayo de 2015 y 2018",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -4084,7 +4279,7 @@
   },
   {
     "Input": "Ya no estaré desde mayo de 2015 hasta 2018",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -4097,7 +4292,7 @@
   },
   {
     "Input": "Ya no estaré entre mayo de 2015 y junio de 2018",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -4110,7 +4305,7 @@
   },
   {
     "Input": "Ya no estaré entre 2015 y 5 de enero de 2018",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -4123,7 +4318,7 @@
   },
   {
     "Input": "Ya no estaré desde 2015 hasta 5 de mayo de 2017",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -4136,7 +4331,7 @@
   },
   {
     "Input": "Ya no estaré desde el último lunes de enero hasta 2019",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -4149,7 +4344,7 @@
   },
   {
     "Input": "Ya no estaré desde semana 31 hasta semana 35",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -4162,7 +4357,7 @@
   },
   {
     "Input": "Ya no estaré entre semana 31 y semana 35",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -4188,7 +4383,7 @@
   },
   {
     "Input": "Cuánto es mi bono de enero de 2017?",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -4201,7 +4396,7 @@
   },
   {
     "Input": "No estuve allí el mismo mes en que ocurrió eso.",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -4214,7 +4409,7 @@
   },
   {
     "Input": "No estuve allí la misma semana en que ocurrió eso.",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -4227,7 +4422,7 @@
   },
   {
     "Input": "No estuve allí aquel año.",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {

@@ -1,5 +1,4 @@
-using System.Collections.Immutable;
-using DateObject = System.DateTime;
+﻿using System.Collections.Immutable;
 using Microsoft.Recognizers.Definitions.German;
 
 namespace Microsoft.Recognizers.Text.DateTime.German

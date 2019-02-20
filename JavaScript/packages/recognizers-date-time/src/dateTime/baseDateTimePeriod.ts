@@ -24,7 +24,7 @@ export interface IDateTimePeriodExtractorConfiguration {
     followedUnit: RegExp
     numberCombinedWithUnit: RegExp
     timeUnitRegex: RegExp
-    pastPrefixRegex: RegExp
+    previousPrefixRegex: RegExp
     nextPrefixRegex: RegExp
     relativeTimeUnitRegex: RegExp
     restOfDateTimeRegex: RegExp
@@ -169,7 +169,7 @@ export class BaseDateTimePeriodExtractor implements IDateTimeExtractor {
         durations.forEach(duration => {
             let beforeStr = source.substr(0, duration.start).toLowerCase()
             if (StringUtility.isNullOrWhitespace(beforeStr)) return;
-            let match = RegExpUtility.getMatches(this.config.pastPrefixRegex, beforeStr).pop();
+            let match = RegExpUtility.getMatches(this.config.previousPrefixRegex, beforeStr).pop();
             if (match && StringUtility.isNullOrWhitespace(beforeStr.substr(match.index + match.length))) {
                 tokens.push(new Token(match.index, duration.end))
                 return;

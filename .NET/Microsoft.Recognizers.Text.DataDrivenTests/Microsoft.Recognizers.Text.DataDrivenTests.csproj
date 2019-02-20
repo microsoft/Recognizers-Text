@@ -120,14 +120,19 @@
     <Compile Include="Number\TestNumber_Chinese.cs" />
     <Compile Include="Number\TestNumber_Spanish.cs" />
     <Compile Include="Number\TestParserFactory.cs" />
+    <Compile Include="RecognizerExtensions.cs" />
     <Compile Include="Sequence\TestSequenceRecognizerCache.cs" />
     <Compile Include="Sequence\TestSequenceRecognizerInitialization.cs" />
     <Compile Include="Sequence\TestSequence_Portuguese.cs" />
     <Compile Include="Sequence\TestSequence_English.cs" />
     <Compile Include="TestBase.cs" />
-    <Compile Include="TestHelpers.cs" />
+    <Compile Include="TestContextExtensions.cs" />
+    <Compile Include="TestModelExtensions.cs" />
+    <Compile Include="TestResources.cs" />
     <Compile Include="TestModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestResourcesExtensions.cs" />
+    <Compile Include="TestUtils.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config">
@@ -159,10 +164,6 @@
       <Project>{59755149-e656-4ef7-87a5-76eee3fd5146}</Project>
       <Name>Microsoft.Recognizers.Text</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Analyzer Include="..\packages\StyleCop.Analyzers.1.1.0-beta008\analyzers\dotnet\cs\StyleCop.Analyzers.CodeFixes.dll" />
-    <Analyzer Include="..\packages\StyleCop.Analyzers.1.1.0-beta008\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

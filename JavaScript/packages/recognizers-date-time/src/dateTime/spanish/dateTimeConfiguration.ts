@@ -89,7 +89,7 @@ export class SpanishDateTimeParserConfiguration implements IDateTimeParserConfig
     readonly utilityConfiguration: IDateTimeUtilityConfiguration;
 
     readonly nextPrefixRegex: RegExp;
-    readonly pastPrefixRegex: RegExp;
+    readonly previousPrefixRegex: RegExp;
 
     constructor(config: ICommonDateTimeParserConfiguration) {
         this.tokenBeforeDate = SpanishDateTime.TokenBeforeDate;
@@ -105,7 +105,7 @@ export class SpanishDateTimeParserConfiguration implements IDateTimeParserConfig
         this.unitRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.UnitRegex, "gis");
 
         this.nextPrefixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.NextPrefixRegex, "gis");
-        this.pastPrefixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PastPrefixRegex, "gis");
+        this.previousPrefixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PreviousPrefixRegex, "gis");
 
         this.dateExtractor = config.dateExtractor;
         this.timeExtractor = config.timeExtractor;
@@ -155,7 +155,7 @@ export class SpanishDateTimeParserConfiguration implements IDateTimeParserConfig
         let trimedText = text.trim().toLowerCase();
         let swift = 0;
 
-        if (RegExpUtility.getFirstMatchIndex(this.pastPrefixRegex, trimedText).matched) {
+        if (RegExpUtility.getFirstMatchIndex(this.previousPrefixRegex, trimedText).matched) {
             swift = -1;
         }
         else if (RegExpUtility.getFirstMatchIndex(this.nextPrefixRegex, trimedText).matched) {

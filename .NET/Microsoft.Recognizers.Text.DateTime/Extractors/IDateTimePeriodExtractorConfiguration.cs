@@ -23,7 +23,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex TimeUnitRegex { get; }
 
-        Regex PastPrefixRegex { get; }
+        Regex PreviousPrefixRegex { get; }
 
         Regex NextPrefixRegex { get; }
 

@@ -277,6 +277,8 @@ public class SpanishNumeric {
             .replace("{TillRegex}", TillRegex)
             .replace("{NumberSplitMark}", NumberSplitMark);
 
+    public static final String AmbiguousFractionConnectorsRegex = "(\\b(en|de)\\b)";
+
     public static final Character DecimalSeparatorChar = ',';
 
     public static final String FractionMarkerToken = "sobre";
@@ -546,8 +548,6 @@ public class SpanishNumeric {
         .put("b", 1000000000L)
         .put("t", 1000000000000L)
         .build();
-
-    public static final String AmbiguousFractionConnectorsRegex = "^[.]";
 
     public static final ImmutableMap<String, String> RelativeReferenceMap = ImmutableMap.<String, String>builder()
         .put("", "")

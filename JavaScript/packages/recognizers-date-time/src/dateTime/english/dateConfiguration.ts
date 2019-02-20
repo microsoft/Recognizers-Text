@@ -127,7 +127,7 @@ export class EnglishDateParserConfiguration implements IDateParserConfiguration 
     // If the spanish date parser need the same regexes, they should be extracted
     static readonly relativeDayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RelativeDayRegex);
     static readonly nextPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.NextPrefixRegex);
-    static readonly pastPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PastPrefixRegex);
+    static readonly previousPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PreviousPrefixRegex);
 
     constructor(config: EnglishCommonDateTimeParserConfiguration) {
         this.ordinalExtractor = config.ordinalExtractor;
@@ -193,7 +193,7 @@ export class EnglishDateParserConfiguration implements IDateParserConfiguration 
         let trimmedText = source.trim().toLowerCase();
         let swift = 0;
         let nextPrefixMatches = RegExpUtility.getMatches(EnglishDateParserConfiguration.nextPrefixRegex, trimmedText);
-        let pastPrefixMatches = RegExpUtility.getMatches(EnglishDateParserConfiguration.pastPrefixRegex, trimmedText);
+        let pastPrefixMatches = RegExpUtility.getMatches(EnglishDateParserConfiguration.previousPrefixRegex, trimmedText);
         if (nextPrefixMatches.length) {
             swift = 1;
         } else if (pastPrefixMatches.length) {
