@@ -95,7 +95,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
 		public static readonly string TwoNumberRangeRegex2 = $@"({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2})\s*(\by\b|\be\b|pero|,)\s*({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2})";
 		public static readonly string TwoNumberRangeRegex3 = $@"({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2})\s*(\by\b|\be\b|pero|,)\s*({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2})";
 		public static readonly string TwoNumberRangeRegex4 = $@"((de|desde)\s+)?((el|la|los|las)\s+)?(?<number1>({NumberSplitMark}(?!\b(entre|de|desde|es)\b).)+)\s*{TillRegex}\s*((el|la|los|las)\s+)?(?<number2>({NumberSplitMark}.)+)";
-		public const string AmbiguousFractionConnectorsRegex = @"^[.]";
+		public const string AmbiguousFractionConnectorsRegex = @"(\b(en|de)\b)";
 		public const char DecimalSeparatorChar = ',';
 		public const string FractionMarkerToken = @"sobre";
 		public const char NonDecimalSeparatorChar = '.';

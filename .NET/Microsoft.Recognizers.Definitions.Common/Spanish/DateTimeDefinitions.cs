@@ -152,7 +152,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
 		public static readonly string TimeFollowedUnit = $@"^\s*{TimeUnitRegex}";
 		public static readonly string TimeNumberCombinedWithUnit = $@"\b(?<num>\d+(\,\d*)?)\s*{TimeUnitRegex}";
 		public static readonly string DateTimePeriodNumberCombinedWithUnit = $@"\b(?<num>\d+(\.\d*)?)\s*{TimeUnitRegex}";
-		public const string PeriodTimeOfDayWithDateRegex = @"\b(((y|a|en|por)\s+(la\s+)?|al\s+)?(((?<early>primeras\s+horas\s+)|(?<late>(últimas|altas)\s+horas\s+))?(de\s+la\s+)?(?<timeOfDay>(mañana|madrugada|(pasado\s+(el\s+)?)?medio\s?d[ií]a|tarde|noche|anoche))))\b";
+		public const string PeriodTimeOfDayWithDateRegex = @"\b(((y|a|en|por)\s+(la\s+)?|al\s+)?(((?<early>primeras\s+horas\s+)|(?<late>(últimas|altas)\s+horas\s+))?(de\s+la\s+)?(?<timeOfDay>(mañana|madrugada|(pasado\s+(el\s+)?)?medio\s?d[ií]a|tarde|noche|anoche))))(\s+(del|de))?\b";
 		public static readonly string RelativeTimeUnitRegex = $@"({PastRegex}|{FutureRegex})\s+{TimeUnitRegex}";
 		public const string LessThanRegex = @"^[.]";
 		public const string MoreThanRegex = @"^[.]";
