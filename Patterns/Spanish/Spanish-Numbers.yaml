@@ -29,7 +29,7 @@ DigitsNumberRegex: !simpleRegex
   def: \d|\d{1,3}(\.\d{3})
 BelowHundredsRegex: !nestedRegex
   def: (({TenToNineteenIntegerRegex}|{TwentiesIntegerRegex}|({TensNumberIntegerRegex}(\s+y\s+{ZeroToNineIntegerRegexExt})?))|{ZeroToNineIntegerRegex})
-  references: [ TenToNineteenIntegerRegex, TwentiesIntegerRegex, TensNumberIntegerRegex, ZeroToNineIntegerRegex ]
+  references: [ TenToNineteenIntegerRegex, TwentiesIntegerRegex, TensNumberIntegerRegex, ZeroToNineIntegerRegex, ZeroToNineIntegerRegexExt ]
 BelowThousandsRegex: !nestedRegex
   def: ({HundredsNumberIntegerRegex}(\s+{BelowHundredsRegex})?|{BelowHundredsRegex})
   references: [ HundredsNumberIntegerRegex, BelowHundredsRegex ]
@@ -213,8 +213,8 @@ TwoNumberRangeRegex3: !nestedRegex
 TwoNumberRangeRegex4: !nestedRegex
   def: ((de|desde)\s+)?((el|la|los|las)\s+)?(?<number1>({NumberSplitMark}(?!\b(entre|de|desde|es)\b).)+)\s*{TillRegex}\s*((el|la|los|las)\s+)?(?<number2>({NumberSplitMark}.)+)
   references: [ TillRegex, NumberSplitMark ]
-AmbiguousFractionConnectorsRegex: !simpleRegex
-  def: (\b(en|de)\b)
+#AmbiguousFractionConnectorsRegex: !simpleRegex
+#  def: (\b(en|de)\b)
 
 DecimalSeparatorChar: !char ','
 FractionMarkerToken: sobre
