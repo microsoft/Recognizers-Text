@@ -37,20 +37,6 @@
     ]
   },
   {
-    "Input": "un millon",
-    "Results": [
-      {
-        "Text": "un millon",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "1000000"
-        },
-        "Start": 0,
-        "End": 8
-      }
-    ]
-  },
-  {
     "Input": "seis tres cinco quinientos treinta y dos dos tres uno",
     "Results": [
       {
@@ -148,30 +134,10 @@
   },
   {
     "Input": "quiero una camiseta",
-    "Results": [
-      {
-        "Text": "una",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "1"
-        },
-        "Start": 7,
-        "End": 9
-      }
-    ]
+    "Results": []
   },
   {
     "Input": "toma un vaso",
-    "Results": [
-      {
-        "Text": "un",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "1"
-        },
-        "Start": 5,
-        "End": 6
-      }
-    ]
+    "Results": []
   }
 ]

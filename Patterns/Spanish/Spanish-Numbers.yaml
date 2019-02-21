@@ -13,7 +13,7 @@ RoundNumberIntegerRegex: !simpleRegex
 ZeroToNineIntegerRegex: !simpleRegex
   def: (cuatro|cinco|siete|nueve|cero|tres|seis|ocho|dos|uno)
 ZeroToNineIntegerRegexExt: !simpleRegex
-  def: (cuatro|cinco|siete|nueve|cero|tres|seis|ocho|dos|un[oa]?)
+  def: (cuatro|cinco|siete|nueve|cero|tres|seis|ocho|dos)
 TenToNineteenIntegerRegex: !simpleRegex
   def: (diecisiete|diecinueve|diecis[eé]is|dieciocho|catorce|quince|trece|diez|once|doce)
 TwentiesIntegerRegex: !simpleRegex
@@ -28,7 +28,7 @@ NegativeNumberSignRegex: !nestedRegex
 DigitsNumberRegex: !simpleRegex
   def: \d|\d{1,3}(\.\d{3})
 BelowHundredsRegex: !nestedRegex
-  def: (({TenToNineteenIntegerRegex}|{TwentiesIntegerRegex}|({TensNumberIntegerRegex}(\\s+y\\s+{ZeroToNineIntegerRegexExt})?))|{ZeroToNineIntegerRegex})
+  def: (({TenToNineteenIntegerRegex}|{TwentiesIntegerRegex}|({TensNumberIntegerRegex}(\s+y\s+{ZeroToNineIntegerRegexExt})?))|{ZeroToNineIntegerRegex})
   references: [ TenToNineteenIntegerRegex, TwentiesIntegerRegex, TensNumberIntegerRegex, ZeroToNineIntegerRegex ]
 BelowThousandsRegex: !nestedRegex
   def: ({HundredsNumberIntegerRegex}(\s+{BelowHundredsRegex})?|{BelowHundredsRegex})

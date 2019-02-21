@@ -18,15 +18,16 @@ class SpanishNumeric:
     CompoundNumberLanguage = False
     MultiDecimalSeparatorCulture = True
     HundredsNumberIntegerRegex = f'(cuatrocient[ao]s|trescient[ao]s|seiscient[ao]s|setecient[ao]s|ochocient[ao]s|novecient[ao]s|doscient[ao]s|quinient[ao]s|(?<!por\\s+)(cien(to)?))'
-    RoundNumberIntegerRegex = f'(mil millones|millones|mill[oó]n|mil|billones|bill[oó]n|trillones|trill[oó]n|cuatrillones|cuatrill[oó]n|quintillones|quintill[oó]n|sextillones|sextill[oó]n|septillones|septill[oó]n)'
-    ZeroToNineIntegerRegex = f'(cuatro|cinco|siete|nueve|cero|tres|seis|ocho|dos|un[ao]?)'
+    RoundNumberIntegerRegex = f'(mil millones|mil|millones|mill[oó]n|billones|bill[oó]n|trillones|trill[oó]n|cuatrillones|cuatrill[oó]n|quintillones|quintill[oó]n|sextillones|sextill[oó]n|septillones|septill[oó]n)'
+    ZeroToNineIntegerRegex = f'(cuatro|cinco|siete|nueve|cero|tres|seis|ocho|dos|uno)'
+    ZeroToNineIntegerRegexExt = f'(cuatro|cinco|siete|nueve|cero|tres|seis|ocho|dos)'
     TenToNineteenIntegerRegex = f'(diecisiete|diecinueve|diecis[eé]is|dieciocho|catorce|quince|trece|diez|once|doce)'
     TwentiesIntegerRegex = f'(veinticuatro|veinticinco|veintisiete|veintinueve|veintitr[eé]s|veintis[eé]is|veintiocho|veintid[oó]s|ventiun[ao]|veinti[uú]n[oa]?|veinte)'
     TensNumberIntegerRegex = f'(cincuenta|cuarenta|treinta|sesenta|setenta|ochenta|noventa)'
-    NegativeNumberTermsRegex = f'(?<negTerm>(?<!(al|lo)\\s+)menos\\s+)'
+    NegativeNumberTermsRegex = f'((?<!(al|lo)\\s+)menos\\s+)'
     NegativeNumberSignRegex = f'^{NegativeNumberTermsRegex}.*'
     DigitsNumberRegex = f'\\d|\\d{{1,3}}(\\.\\d{{3}})'
-    BelowHundredsRegex = f'(({TenToNineteenIntegerRegex}|{TwentiesIntegerRegex}|({TensNumberIntegerRegex}(\\s+y\\s+{ZeroToNineIntegerRegex})?))|{ZeroToNineIntegerRegex})'
+    BelowHundredsRegex = f'(({TenToNineteenIntegerRegex}|{TwentiesIntegerRegex}|({TensNumberIntegerRegex}(\\s+y\\s+{ZeroToNineIntegerRegexExt})?))|{ZeroToNineIntegerRegex})'
     BelowThousandsRegex = f'({HundredsNumberIntegerRegex}(\\s+{BelowHundredsRegex})?|{BelowHundredsRegex})'
     SupportThousandsRegex = f'(({BelowThousandsRegex}|{BelowHundredsRegex})\\s+{RoundNumberIntegerRegex}(\\s+{RoundNumberIntegerRegex})?)'
     SeparaIntRegex = f'({SupportThousandsRegex}(\\s+{SupportThousandsRegex})*(\\s+{BelowThousandsRegex})?|{BelowThousandsRegex})'
@@ -42,7 +43,7 @@ class SpanishNumeric:
     AllIntRegexWithLocks = f'((?<=\\b){AllIntRegex}(?=\\b))'
     AllIntRegexWithDozenSuffixLocks = f'(?<=\\b)(((media\\s+)?\\s+docena)|({AllIntRegex}\\s+(y|con)\\s+)?({AllIntRegex}\\s+docenas?))(?=\\b)'
     SimpleRoundOrdinalRegex = f'(mil[eé]simo|millon[eé]sim[oa]|billon[eé]sim[oa]|trillon[eé]sim[oa]|cuatrillon[eé]sim[oa]|quintillon[eé]sim[oa]|sextillon[eé]sim[oa]|septillon[eé]sim[oa])'
-    OneToNineOrdinalRegex = f'(primer[oa]?|segund[oa]|tercer[oa]?|cuart[oa]|quint[oa]|sext[oa]|s[eé]ptim[oa]|octav[oa]|noven[oa])'
+    OneToNineOrdinalRegex = f'(primer[oa]?|segund[oa]|tercer[oa]|cuart[oa]|quint[oa]|sext[oa]|s[eé]ptim[oa]|octav[oa]|noven[oa])'
     TensOrdinalRegex = f'(nonag[eé]sim[oa]|octog[eé]sim[oa]|septuag[eé]sim[oa]|sexag[eé]sim[oa]|quincuag[eé]sim[oa]|cuadrag[eé]sim[oa]|trig[eé]sim[oa]|vig[eé]sim[oa]|d[eé]cim[oa])'
     HundredOrdinalRegex = f'(cent[eé]sim[oa]|ducent[eé]sim[oa]|tricent[eé]sim[oa]|cuadringent[eé]sim[oa]|quingent[eé]sim[oa]|sexcent[eé]sim[oa]|septingent[eé]sim[oa]|octingent[eé]sim[oa]|noningent[eé]sim[oa])'
     SpecialUnderHundredOrdinalRegex = f'(und[eé]cim[oa]|duod[eé]cimo|decimoctav[oa])'
@@ -81,10 +82,10 @@ class SpanishNumeric:
     EqualRegex = f'((igual(es)?|equivalente(s)?|equivale|equivalen|son)(\\s+(a|que|de|al|del))?|(?<!<|>)=)'
     MoreOrEqualPrefix = f'((no\\s+{LessRegex})|(por\\s+lo\\s+menos|como\\s+m[íi]nimo|al\\s+menos))'
     MoreOrEqual = f'(({MoreRegex}\\s+(o)?\\s+{EqualRegex})|({EqualRegex}\\s+(o|y)\\s+{MoreRegex})|{MoreOrEqualPrefix}(\\s+(o)\\s+{EqualRegex})?|({EqualRegex}\\s+(o)\\s+)?{MoreOrEqualPrefix}|>\\s*=)'
-    MoreOrEqualSuffix = f'((\\b(y|o)\\b\\s+(m[áa]s|mayor|mayores)((?!\\s+(alt[oa]|baj[oa]|que|de|del))|(\\s+(que|de|del)(?!(\\s*\\d+)))))|como\\s+m[íi]nimo|por\\s+lo\\s+menos|al\\s+menos)'
+    MoreOrEqualSuffix = f'((\\b(y|o)\\b\\s+(m[áa]s|mayor|mayores)((?!\\s+(alt[oa]|baj[oa]|que|de|del))|(\\s+(que|de|del)(?!(\\s*\\d+)))))|como\\s+m[áa]ximo|por\\s+lo\\s+menos|al\\s+menos)'
     LessOrEqualPrefix = f'((no\\s+{MoreRegex})|(como\\s+máximo|como\\s+maximo|como\\s+mucho))'
     LessOrEqual = f'(({LessRegex}\\s+(o)?\\s+{EqualRegex})|({EqualRegex}\\s+(o)?\\s+{LessRegex})|{LessOrEqualPrefix}(\\s+(o)?\\s+{EqualRegex})?|({EqualRegex}\\s+(o)?\\s+)?{LessOrEqualPrefix}|<\\s*=)'
-    LessOrEqualSuffix = f'((\\b(y|o)\\b\\s+(menos|menor|menores)((?!\\s+(alt[oa]|baj[oa]|que|de|del))|(\\s+(que|de|del)(?!(\\s*\\d+)))))|como\\s+m[áa]ximo)'
+    LessOrEqualSuffix = f'((\\b(y|o)\\b\\s+(menos|menor|menores)((?!\\s+(alt[oa]|baj[oa]|que|de|del))|(\\s+(que|de|del)(?!(\\s*\\d+)))))|como\\s+m[íi]nimo)'
     NumberSplitMark = f'(?![,.](?!\\d+))'
     MoreRegexNoNumberSucceed = f'((m[áa]s|mayor|mayores)((?!\\s+(que|de|del))|\\s+((que|de|del)(?!(\\s*\\d+))))|(por encima)(?!(\\s*\\d+)))'
     LessRegexNoNumberSucceed = f'((menos|menor|menores)((?!\\s+(que|de|del))|\\s+((que|de|del)(?!(\\s*\\d+))))|(por debajo)(?!(\\s*\\d+)))'
@@ -100,7 +101,6 @@ class SpanishNumeric:
     TwoNumberRangeRegex2 = f'({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2})\\s*(\\by\\b|\\be\\b|pero|,)\\s*({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2})'
     TwoNumberRangeRegex3 = f'({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2})\\s*(\\by\\b|\\be\\b|pero|,)\\s*({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2})'
     TwoNumberRangeRegex4 = f'((de|desde)\\s+)?((el|la|los|las)\\s+)?(?<number1>({NumberSplitMark}(?!\\b(entre|de|desde|es)\\b).)+)\\s*{TillRegex}\\s*((el|la|los|las)\\s+)?(?<number2>({NumberSplitMark}.)+)'
-    AmbiguousFractionConnectorsRegex = f'(\\b(en|de)\\b)'
     DecimalSeparatorChar = ','
     FractionMarkerToken = 'sobre'
     NonDecimalSeparatorChar = '.'
@@ -349,4 +349,6 @@ class SpanishNumeric:
     AmbiguityFiltersDict = dict([("^[.]", "")])
     RelativeReferenceOffsetMap = dict([("", "")])
     RelativeReferenceRelativeToMap = dict([("", "")])
+    AmbiguousFractionConnectorsRegex = f'^[.]'
+    RelativeReferenceMap = dict([("", "")])
 # pylint: enable=line-too-long
