@@ -982,13 +982,13 @@
   },
   {
     "Input": "Nos vemos a primeras horas de la tarde del martes",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "primeras horas de la tarde del martes",
+        "Text": "a primeras horas de la tarde del martes",
         "Type": "datetimerange",
-        "Start": 12,
+        "Start": 10,
         "Length": 39
       }
     ]
@@ -1034,14 +1034,14 @@
   },
   {
     "Input": "Nos vemos a últimas horas de la noche de martes",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "últimas horas de la noche de martes",
+        "Text": "a últimas horas de la noche de martes",
         "Type": "datetimerange",
-        "Start": 12,
-        "Length": 35
+        "Start": 10,
+        "Length": 37
       }
     ]
   },
