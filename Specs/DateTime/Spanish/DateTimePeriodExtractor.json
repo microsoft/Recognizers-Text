@@ -1147,14 +1147,14 @@
   },
   {
     "Input": "Hola Cortana- programa una reunión con Jennifer.  Necesito una reunión de 30 minutos en la tarde de este viernes",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "tarde de este viernes",
+        "Text": "en la tarde de este viernes",
         "Type": "datetimerange",
-        "Start": 91,
-        "Length": 21
+        "Start": 85,
+        "Length": 27
       }
     ]
   },
