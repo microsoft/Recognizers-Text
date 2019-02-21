@@ -13,7 +13,7 @@ RoundNumberIntegerRegex: !simpleRegex
 ZeroToNineIntegerRegex: !simpleRegex
   def: (cuatro|cinco|siete|nueve|cero|tres|seis|ocho|dos|uno)
 ZeroToNineIntegerRegexExt: !simpleRegex
-  def: (cuatro|cinco|siete|nueve|cero|tres|seis|ocho|dos)
+  def: (cuatro|cinco|siete|nueve|cero|tres|seis|ocho|dos|un[oa]?)
 TenToNineteenIntegerRegex: !simpleRegex
   def: (diecisiete|diecinueve|diecis[eé]is|dieciocho|catorce|quince|trece|diez|once|doce)
 TwentiesIntegerRegex: !simpleRegex
