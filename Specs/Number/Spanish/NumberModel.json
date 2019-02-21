@@ -147,34 +147,30 @@
     ]
   },
   {
-    "Input": "1&123 deben ser reconocidos como dos números",
+    "Input": "quiero una camiseta",
     "Results": [
       {
-        "Text": "1",
-        "Start": 0,
-        "End": 0,
+        "Text": "una",
         "TypeName": "number",
         "Resolution": {
           "value": "1"
-        }
-      },
+        },
+        "Start": 7,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "toma un vaso",
+    "Results": [
       {
-        "Text": "123",
-        "Start": 2,
-        "End": 4,
+        "Text": "un",
         "TypeName": "number",
         "Resolution": {
-          "value": "123"
-        }
-      },
-      {
-        "Text": "dos",
-        "Start": 33,
-        "End": 35,
-        "TypeName": "number",
-        "Resolution": {
-          "value": "2"
-        }
+          "value": "1"
+        },
+        "Start": 5,
+        "End": 6
       }
     ]
   }

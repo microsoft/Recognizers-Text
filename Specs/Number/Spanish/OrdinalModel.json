@@ -969,5 +969,19 @@
         "End": 52
       }
     ]
+  },
+  {
+    "Input": "el primer hombre en la luna",
+    "Results": [
+      {
+        "Text": "primer",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "1"
+        },
+        "Start": 3,
+        "End": 8
+      }
+    ]
   }
 ]
