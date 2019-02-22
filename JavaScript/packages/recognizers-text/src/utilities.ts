@@ -21,69 +21,8 @@ export class Match {
 export class RegExpUtility {
     static getMatches(regex: RegExp, source: string): Array<Match> {
         if (!regex) return [];
-        let rawRegex: string = (regex as any).xregexp.source;
-        if (!rawRegex.includes('(?<nlb__')) {
-            return this.getMatchesSimple(regex, source);
-        }
-        let realMatches = new Array<Match>();
 
-        let negativeLookbehindRegexes = new Array<RegExp>();
-
-        let flags = regex.flags;
-
-        let closePos = 0;
-        let startPos = rawRegex.indexOf('(?<nlb__', 0);
-        while (startPos >= 0) {
-            closePos = this.getClosePos(rawRegex, startPos);
-            let nlbRegex = XRegExp(rawRegex.substring(startPos, closePos + 1), flags);
-            let nextRegex = RegExpUtility.getNextRegex(rawRegex, startPos);
-            (nlbRegex as any).nextRegex = nextRegex ? XRegExp(nextRegex, flags) : null;
-            negativeLookbehindRegexes.push(nlbRegex);
-            rawRegex = rawRegex.substr(0, startPos) + rawRegex.substr(closePos + 1);
-            startPos = rawRegex.indexOf('(?<nlb__', 0);
-        }
-
-        let tempRegex = XRegExp(rawRegex, flags);
-        let tempMatches = RegExpUtility.getMatchesSimple(tempRegex, source);
-        tempMatches.forEach(match => {
-            let clean = true;
-            negativeLookbehindRegexes.forEach(regex => {
-                let negativeLookbehindMatches = RegExpUtility.getMatchesSimple(regex, source);
-                negativeLookbehindMatches.forEach(negativeLookbehindMatch => {
-                    let negativeLookbehindEnd = negativeLookbehindMatch.index + negativeLookbehindMatch.length;
-                    let nextRegex = (regex as any).nextRegex;
-                    if (match.index === negativeLookbehindEnd) {
-                        if (!nextRegex) {
-                            clean = false;
-                            return;
-                        } else {
-                            let nextMatch = RegExpUtility.getFirstMatchIndex(nextRegex, source.substring(negativeLookbehindMatch.index));
-                            if (nextMatch.matched && ((nextMatch.index === negativeLookbehindMatch.length) || (source.includes(nextMatch.value + match.value)))) {
-                                clean = false;
-                                return;
-                            }
-                        }
-                    }
-                    if (negativeLookbehindMatch.value.includes(match.value)) {
-                        let preMatches = RegExpUtility.getMatchesSimple(regex, source.substring(0, match.index));
-                        preMatches.forEach(preMatch => {
-                            if (source.includes(preMatch.value + match.value)) {
-                                clean = false;
-                                return;
-                            }
-                        });
-                    }
-                });
-                if (!clean) {
-                    return;
-                }
-            });
-            if (clean) {
-                realMatches.push(match);
-            }
-        });
-
-        return realMatches;
+        return this.getMatchesSimple(regex, source);
     }
 
     static getMatchesSimple(regex: RegExp, source: string): Array<Match> {
@@ -96,26 +35,10 @@ export class RegExpUtility {
 
         let matches = new Array<Match>();
         XRegExp.forEach(normalized, regex, match => {
-            let positiveLookbehinds = [];
             let groups: { [id: string]: { value: string, index: number, length: number, captures: string[] } } = {};
             let lastGroup = '';
 
             Object.keys(match).forEach(key => {
-                if (!key.includes('__')) return;
-                if (key.startsWith('plb') && match[key]) {
-                    if (match[0].indexOf(match[key]) !== 0 && !StringUtility.isNullOrEmpty(lastGroup)) {
-                        let index = match.index + match[0].indexOf(match[key]);
-                        let length = match[key].length;
-                        let value = source.substr(index, length);
-
-                        groups[lastGroup].value = groups[lastGroup].value + value;
-                    }
-                    positiveLookbehinds.push({ key: key, value: match[key] });
-                    return;
-                }
-                if (key.startsWith('nlb')) {
-                    return;
-                }
 
                 let groupKey = key.substr(0, key.lastIndexOf('__'));
                 lastGroup = groupKey;
@@ -136,14 +59,7 @@ export class RegExpUtility {
             let value = match[0];
             let index = match.index;
             let length = value.length;
-
-            if (positiveLookbehinds && positiveLookbehinds.length > 0 && value.indexOf(positiveLookbehinds[0].value) === 0) {
-                value = source.substr(index, length).substr(positiveLookbehinds[0].value.length);
-                index += positiveLookbehinds[0].value.length;
-                length -= positiveLookbehinds[0].value.length;
-            } else {
-                value = source.substr(index, length);
-            }
+            value = source.substr(index, length);
 
             matches.push(new Match(index, length, value, groups));
         });
@@ -185,10 +101,6 @@ export class RegExpUtility {
     private static sanitizeGroups(source: string): string {
         let index = 0;
         let result = XRegExp.replace(source, this.matchGroup, (match, name) => match.replace(name, `${name}__${index++}`));
-        index = 0;
-        result = XRegExp.replace(result, this.matchPositiveLookbehind, () => `(?<plb__${index++}>`);
-        index = 0;
-        result = XRegExp.replace(result, this.matchNegativeLookbehind, () => `(?<nlb__${index++}>`);
         return result;
     }
 

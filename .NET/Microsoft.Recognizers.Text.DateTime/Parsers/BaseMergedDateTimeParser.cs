@@ -213,19 +213,6 @@ namespace Microsoft.Recognizers.Text.DateTime
             return pr;
         }
 
-        private string CombineMod(string originalMod, string newMod)
-        {
-            var combinedMod = newMod;
-
-            if (!string.IsNullOrEmpty(originalMod))
-            {
-                combinedMod = $"{newMod}-{originalMod}";
-            }
-
-            return combinedMod;
-        }
-
-
         public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)
         {
             return candidateResults;
@@ -840,6 +827,18 @@ namespace Microsoft.Recognizers.Text.DateTime
             return res;
         }
 
+        private string CombineMod(string originalMod, string newMod)
+        {
+            var combinedMod = newMod;
+
+            if (!string.IsNullOrEmpty(originalMod))
+            {
+                combinedMod = $"{newMod}-{originalMod}";
+            }
+
+            return combinedMod;
+        }
+
         private string DetermineResolutionDateTimeType(Dictionary<string, string> pastResolutionStr)
         {
             switch (pastResolutionStr.Keys.First())
@@ -913,6 +912,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 default:
                     return null;
             }
+
             return parseResult;
         }
     }

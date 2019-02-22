@@ -5,6 +5,7 @@ DirectUtcRegex: !simpleRegex
 AbbreviationsList: !list
   types: [string]
   entries:
+    - ACT
     - AFT
     - AKST
     - AKDT
@@ -146,6 +147,7 @@ AbbreviationsList: !list
 FullNameList: !list
   types: [string]
   entries:
+    - Acre Time
     - Afghanistan Standard Time
     - Alaskan Standard Time
     - Arab Standard Time
@@ -154,7 +156,9 @@ FullNameList: !list
     - Argentina Standard Time
     - Atlantic Standard Time
     - AUS Central Standard Time
+    - Australian Central Time
     - AUS Eastern Standard Time
+    - Australian Eastern Time
     - Azerbaijan Standard Time
     - Azores Standard Time
     - Bahia Standard Time
@@ -304,6 +308,7 @@ AmbiguousTimezoneList: !list
 AbbrToMinMapping: !dictionary
  types: [ string , int ]
  entries:
+   act: -10000
    aft: 270
    akst: -540
    akdt: -480

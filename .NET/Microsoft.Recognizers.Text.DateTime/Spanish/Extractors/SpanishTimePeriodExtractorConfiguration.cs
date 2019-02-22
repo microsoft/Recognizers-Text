@@ -53,7 +53,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public IDateTimeExtractor TimeZoneExtractor { get; }
 
-        public IEnumerable<Regex> SimpleCasesRegex => new Regex[] { PureNumFromTo, PureNumBetweenAnd };
+        public IEnumerable<Regex> SimpleCasesRegex => new Regex[] { PureNumFromTo, PureNumBetweenAnd, SpecificTimeFromTo, SpecificTimeBetweenAnd };
 
         public IEnumerable<Regex> PureNumberRegex => new Regex[] { PureNumFromTo, PureNumBetweenAnd };
 
