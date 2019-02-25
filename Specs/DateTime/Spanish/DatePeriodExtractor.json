@@ -3693,8 +3693,8 @@
   },
   {
     "Input": "En mil novecientos veintiocho",
-    "Comment": "Won't fix, because 'mil novecientos veintiocho' has ambiguity, will be extracted as number or datetime",
-    "NotSupported": "dotnet, java, javascript, python",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "mil novecientos veintiocho",
@@ -4433,66 +4433,79 @@
     ]
   },
   {
-    "Input": "durante más de 2 semanas antes de hoy",
+    "Input": "Ya terminé todos los trabajos hace durante más de 2 semanas antes de hoy",
     "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "durante más de 2 semanas antes de hoy",
         "Type": "daterange",
-        "Start": 0,
+        "Start": 35,
         "Length": 37
       }
     ]
   },
   {
-    "Input": "dentro de 2 semanas a partir de hoy",
+    "Input": "Ya terminé todos los trabajos hace más de 2 semanas",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
+    "Results": [
+      {
+        "Text": "hace más de 2 semanas",
+        "Type": "daterange",
+        "Start": 30,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Volveré dentro de 2 semanas a partir de hoy",
     "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "dentro de 2 semanas a partir de hoy",
         "Type": "daterange",
-        "Start": 0,
+        "Start": 8,
         "Length": 35
       }
     ]
   },
   {
-    "Input": "dentro de menos de 2 semanas a partir de hoy",
+    "Input": "Volveré dentro de menos de 2 semanas a partir de hoy",
     "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "dentro de menos de 2 semanas a partir de hoy",
         "Type": "daterange",
-        "Start": 0,
+        "Start": 8,
         "Length": 44
       }
     ]
   },
   {
-    "Input": "durante más de 2 días antes de ayer",
+    "Input": "Esta tarea debió ser terminada durante más de 2 días antes de ayer",
     "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "durante más de 2 días antes de ayer",
         "Type": "daterange",
-        "Start": 0,
+        "Start": 31,
         "Length": 35
       }
     ]
   },
   {
-    "Input": "dentro de menos de 3 días a partir de mañana",
+    "Input": "Esta tarea debe ser terminada dentro de menos de 3 días a partir de mañana",
     "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "dentro de menos de 3 días a partir de mañana",
         "Type": "daterange",
-        "Start": 0,
+        "Start": 30,
         "Length": 44
       }
     ]

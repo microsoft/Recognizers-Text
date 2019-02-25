@@ -218,5 +218,44 @@
         "Length": 6
       }
     ]
+  },
+  {
+    "Input": "Volveré dentro de menos de 2 semanas",
+    "NotSupported": "java",
+    "NotSupportedByDesign": "javascript, python",
+    "Results": [
+      {
+        "Text": "dentro de menos de 2 semanas",
+        "Type": "duration",
+        "Start": 8,
+        "Length": 28
+      }
+    ]
+  },
+  {
+    "Input": "Esta tarea debió ser terminada más de tres días antes",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
+    "Results": [
+      {
+        "Text": "más de tres días antes",
+        "Type": "duration",
+        "Start": 31,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "Esta tarea debe ser terminada en menos de 4 días",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
+    "Results": [
+      {
+        "Text": "menos de 4 días",
+        "Type": "duration",
+        "Start":33,
+        "Length": 41
+      }
+    ]
   }
 ]
