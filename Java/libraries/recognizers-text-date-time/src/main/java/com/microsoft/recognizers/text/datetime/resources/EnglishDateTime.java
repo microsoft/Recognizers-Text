@@ -48,7 +48,7 @@ public class EnglishDateTime {
 
     public static final String FutureSuffixRegex = "\\b(in\\s+the\\s+)?(future|hence)\\b";
 
-    public static final String DayRegex = "(the\\s*)?(?<day>01|02|03|04|05|06|07|08|09|10th|10|11th|11st|11|12nd|12th|12|13rd|13th|13|14th|14|15th|15|16th|16|17th|17|18th|18|19th|19|1st|1|20th|20|21st|21th|21|22nd|22th|22|23rd|23th|23|24th|24|25th|25|26th|26|27th|27|28th|28|29th|29|2nd|2|30th|30|31st|31|3rd|3|4th|4|5th|5|6th|6|7th|7|8th|8|9th|9)(?=\\b|t)";
+    public static final String DayRegex = "(the\\s*)?(?<day>01|01st|02|02nd|03|03rd|04|04th|05|05th|06|06th|07|07th|08|08th|09|09th|10th|10|11th|11st|11|12nd|12th|12|13rd|13th|13|14th|14|15th|15|16th|16|17th|17|18th|18|19th|19|1st|1|20th|20|21st|21th|21|22nd|22th|22|23rd|23th|23|24th|24|25th|25|26th|26|27th|27|28th|28|29th|29|2nd|2|30th|30|31st|31|3rd|3|4th|4|5th|5|6th|6|7th|7|8th|8|9th|9)(?=\\b|t)";
 
     public static final String ImplicitDayRegex = "(the\\s*)?(?<day>10th|11th|11st|12nd|12th|13rd|13th|14th|15th|16th|17th|18th|19th|1st|20th|21st|21th|22nd|22th|23rd|23th|24th|25th|26th|27th|28th|29th|2nd|30th|31st|3rd|4th|5th|6th|7th|8th|9th)\\b";
 
@@ -1134,6 +1134,15 @@ public class EnglishDateTime {
         .put("29th", 29)
         .put("30th", 30)
         .put("31st", 31)
+        .put("01st", 1)
+        .put("02nd", 2)
+        .put("03rd", 3)
+        .put("04th", 4)
+        .put("05th", 5)
+        .put("06th", 6)
+        .put("07th", 7)
+        .put("08th", 8)
+        .put("09th", 9)
         .build();
 
     public static final ImmutableMap<String, Double> DoubleNumbers = ImmutableMap.<String, Double>builder()

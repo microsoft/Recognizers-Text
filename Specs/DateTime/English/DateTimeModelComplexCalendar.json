@@ -1,5 +1,97 @@
 [
   {
+    "Input": "I'll go back 04th Jan 2019.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "04th jan 2019",
+        "Start": 13,
+        "End": 25,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-01-04",
+              "type": "date",
+              "value": "2019-01-04"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back 03rd Jan 2019.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "03rd jan 2019",
+        "Start": 13,
+        "End": 25,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-01-03",
+              "type": "date",
+              "value": "2019-01-03"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back 02nd Jan 2019.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "02nd jan 2019",
+        "Start": 13,
+        "End": 25,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-01-02",
+              "type": "date",
+              "value": "2019-01-02"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back 01st Jan 2019.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "01st jan 2019",
+        "Start": 13,
+        "End": 25,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-01-01",
+              "type": "date",
+              "value": "2019-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
     "Input": "Could you help me and Joan find a time to meet in my office (112/2108) the week of April 10?",
     "Context": {
       "ReferenceDateTime": "2018-02-08T00:00:00"
