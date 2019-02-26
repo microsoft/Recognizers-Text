@@ -129,6 +129,104 @@ namespace Microsoft.Recognizers.Text.DateTime
                 ret = ParseSpecificTimeCases(text, referenceTime);
             }
 
+            if (!ret.Success)
+            {
+                // Cases like "between 0730-0930"
+                ret = ParsePureDigitNumCases(text, referenceTime);
+            }
+
+            return ret;
+        }
+
+        // Cases like "between 0730 to 0930", only this case is handled in this method
+        private DateTimeResolutionResult ParsePureDigitNumCases(string text, DateObject referenceTime)
+        {
+            var ret = new DateTimeResolutionResult();
+            int year = referenceTime.Year, month = referenceTime.Month, day = referenceTime.Day;
+            var trimmedText = text.Trim().ToLower();
+
+            var match = this.config.PureNumberBetweenAndRegex.MatchBegin(trimmedText, trim: true);
+
+            if (match.Success)
+            {
+                // get hours
+                var hourGroup = match.Groups[Constants.HourGroupName];
+                var minuteGroup = match.Groups[Constants.MinuteGroupName];
+
+                if (hourGroup.Captures.Count == 2 && minuteGroup.Captures.Count == 2)
+                {
+                    var beginHourEndIndex = hourGroup.Captures[0].Index + hourGroup.Captures[0].Length;
+                    var beginMinuteStartIndex = minuteGroup.Captures[0].Index;
+                    var endHourEndIndex = hourGroup.Captures[1].Index + hourGroup.Captures[1].Length;
+                    var endMinuteStartIndex = minuteGroup.Captures[1].Index;
+
+                    // falls into the case "between 0730 to 0930"
+                    if (beginHourEndIndex == beginMinuteStartIndex && endHourEndIndex == endMinuteStartIndex)
+                    {
+                        var startHourStr = hourGroup.Captures[0].Value;
+                        var startMinuteStr = minuteGroup.Captures[0].Value;
+                        var endHourStr = hourGroup.Captures[1].Value;
+                        var endMinuteStr = minuteGroup.Captures[1].Value;
+
+                        if (!this.config.Numbers.TryGetValue(startHourStr, out int beginHour))
+                        {
+                            beginHour = int.Parse(startHourStr);
+                        }
+
+                        if (!this.config.Numbers.TryGetValue(startMinuteStr, out int beginMinute))
+                        {
+                            beginMinute = int.Parse(startMinuteStr);
+                        }
+
+                        if (!this.config.Numbers.TryGetValue(endHourStr, out int endHour))
+                        {
+                            endHour = int.Parse(endHourStr);
+                        }
+
+                        if (!this.config.Numbers.TryGetValue(endMinuteStr, out int endMinute))
+                        {
+                            endMinute = int.Parse(endMinuteStr);
+                        }
+
+                        var beginDateTime = DateObject.MinValue.SafeCreateFromValue(year, month, day, beginHour, beginMinute, 0);
+                        var endDateTime = DateObject.MinValue.SafeCreateFromValue(year, month, day, endHour, endMinute, 0);
+
+                        if (beginHour <= Constants.HalfDayHourCount && endHour <= Constants.HalfDayHourCount)
+                        {
+                            if (beginHour > endHour)
+                            {
+                                if (beginHour == Constants.HalfDayHourCount)
+                                {
+                                    beginDateTime = beginDateTime.AddHours(-Constants.HalfDayHourCount);
+                                }
+                                else
+                                {
+                                    endDateTime = endDateTime.AddHours(Constants.HalfDayHourCount);
+                                }
+                            }
+
+                            ret.Comment = Constants.Comment_AmPm;
+                        }
+
+                        if (endDateTime < beginDateTime)
+                        {
+                            endDateTime = endDateTime.AddHours(24);
+                        }
+
+                        var beginStr = DateTimeFormatUtil.ShortTime(beginDateTime.Hour, beginMinute);
+                        var endStr = DateTimeFormatUtil.ShortTime(endDateTime.Hour, endMinute);
+
+                        ret.Timex = $"({beginStr},{endStr},{DateTimeFormatUtil.LuisTimeSpan(endDateTime - beginDateTime)})";
+
+                        ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(
+                            beginDateTime,
+                            endDateTime);
+
+                        ret.Success = true;
+                    }
+                }
+            }
+
             return ret;
         }
 

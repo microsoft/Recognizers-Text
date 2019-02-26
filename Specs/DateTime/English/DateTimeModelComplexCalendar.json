@@ -8675,5 +8675,118 @@
         }
       }
     ] 
+  },
+  {
+    "Input": "Where were you the 12th between 0730-0930",
+    "Context": {
+      "ReferenceDateTime": "2019-02-26T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "the 12th between 0730-0930",
+        "Start": 15,
+        "End": 40,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-XX-12T07:30,XXXX-XX-12T09:30,PT2H)",
+              "type": "datetimerange",
+              "start": "2019-02-12 07:30:00",
+              "end": "2019-02-12 09:30:00"
+            },
+            {
+              "timex": "(XXXX-XX-12T07:30,XXXX-XX-12T09:30,PT2H)",
+              "type": "datetimerange",
+              "start": "2019-03-12 07:30:00",
+              "end": "2019-03-12 09:30:00"
+            },
+            {
+              "timex": "(XXXX-XX-12T19:30,XXXX-XX-12T21:30,PT2H)",
+              "type": "datetimerange",
+              "start": "2019-02-12 19:30:00",
+              "end": "2019-02-12 21:30:00"
+            },
+            {
+              "timex": "(XXXX-XX-12T19:30,XXXX-XX-12T21:30,PT2H)",
+              "type": "datetimerange",
+              "start": "2019-03-12 19:30:00",
+              "end": "2019-03-12 21:30:00"
+            }
+          ]
+        }
+      }
+    ] 
+  },
+  {
+    "Input": "Where were you between 0730-0930?",
+    "Context": {
+      "ReferenceDateTime": "2019-01-31T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "between 0730-0930",
+        "Start": 15,
+        "End": 31,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(T07:30,T09:30,PT2H)",
+              "type": "timerange",
+              "start": "07:30:00",
+              "end": "09:30:00"
+            },
+            {
+              "timex": "(T19:30,T21:30,PT2H)",
+              "type": "timerange",
+              "start": "19:30:00",
+              "end": "21:30:00"
+            }
+          ]
+        }
+      }
+    ] 
+  },
+  {
+    "Input": "Where were you between 0930-0730?",
+    "Context": {
+      "ReferenceDateTime": "2019-01-31T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "between 0930-0730",
+        "Start": 15,
+        "End": 31,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(T09:30,T19:30,PT10H)",
+              "type": "timerange",
+              "start": "09:30:00",
+              "end": "19:30:00"
+            },
+            {
+              "timex": "(T21:30,T07:30,PT10H)",
+              "type": "timerange",
+              "start": "21:30:00",
+              "end": "07:30:00"
+            }
+          ]
+        }
+      }
+    ] 
+  },
+  {
+    "Input": "Where were you between 730-930?",
+    "Context": {
+      "ReferenceDateTime": "2019-01-31T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [] 
   }
 ]
