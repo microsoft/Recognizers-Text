@@ -36,7 +36,7 @@ ReferencePrefixRegex: !simpleRegex
 FutureSuffixRegex: !simpleRegex
   def: \b(in\s+the\s+)?(future|hence)\b
 DayRegex: !simpleRegex
-  def: (the\s*)?(?<day>01|02|03|04|05|06|07|08|09|10th|10|11th|11st|11|12nd|12th|12|13rd|13th|13|14th|14|15th|15|16th|16|17th|17|18th|18|19th|19|1st|1|20th|20|21st|21th|21|22nd|22th|22|23rd|23th|23|24th|24|25th|25|26th|26|27th|27|28th|28|29th|29|2nd|2|30th|30|31st|31|3rd|3|4th|4|5th|5|6th|6|7th|7|8th|8|9th|9)(?=\b|t)
+  def: (the\s*)?(?<day>(0)?1(st)?|(0)?2(nd)?|(0)?3(rd)?|(0)?4(th)?|(0)?5(th)?|(0)?6(th)?|(0)?7(th)?|(0)?8(th)?|(0)?9(th)?|10(th)?|11(th|st)?|12(nd|th)?|13(rd|th)?|14(th)?|15(th)?|16(th)?|17(th)?|18(th)?|19(th)?|20(th)?|21(st|th)?|22(nd|th)?|23(rd|th)?|24(th)?|25(th)?|26(th)?|27(th)?|28(th)?|29(th)?|30(th)?|31(st|th)?)(?=\b|t)
 ImplicitDayRegex: !simpleRegex
   def: (the\s*)?(?<day>10th|11th|11st|12nd|12th|13rd|13th|14th|15th|16th|17th|18th|19th|1st|20th|21st|21th|22nd|22th|23rd|23th|24th|25th|26th|27th|28th|29th|2nd|30th|31st|3rd|4th|5th|6th|7th|8th|9th)\b
 MonthNumRegex: !simpleRegex
@@ -924,6 +924,15 @@ DayOfMonth: !dictionary
     '29th': 29
     '30th': 30
     '31st': 31
+    '01st': 1
+    '02nd': 2
+    '03rd': 3
+    '04th': 4
+    '05th': 5
+    '06th': 6
+    '07th': 7
+    '08th': 8
+    '09th': 9
 DoubleNumbers: !dictionary
   types: [ string, double ]
   entries: 
