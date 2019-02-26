@@ -67,7 +67,7 @@ AllIntRegexWithDozenSuffixLocks: !nestedRegex
 SimpleRoundOrdinalRegex: !simpleRegex
   def: (mil[eé]simo|millon[eé]sim[oa]|billon[eé]sim[oa]|trillon[eé]sim[oa]|cuatrillon[eé]sim[oa]|quintillon[eé]sim[oa]|sextillon[eé]sim[oa]|septillon[eé]sim[oa])
 OneToNineOrdinalRegex: !simpleRegex
-  def: (primer[oa]?|segund[oa]|tercer[oa]|cuart[oa]|quint[oa]|sext[oa]|s[eé]ptim[oa]|octav[oa]|noven[oa])
+  def: (primer[oa]?|segund[oa]|tercer[oa]?|cuart[oa]|quint[oa]|sext[oa]|s[eé]ptim[oa]|octav[oa]|noven[oa])
 TensOrdinalRegex: !simpleRegex
   def: (nonag[eé]sim[oa]|octog[eé]sim[oa]|septuag[eé]sim[oa]|sexag[eé]sim[oa]|quincuag[eé]sim[oa]|cuadrag[eé]sim[oa]|trig[eé]sim[oa]|vig[eé]sim[oa]|d[eé]cim[oa])
 HundredOrdinalRegex: !simpleRegex
