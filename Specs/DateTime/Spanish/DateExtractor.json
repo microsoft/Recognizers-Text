@@ -636,5 +636,18 @@
         "Length": 9
       }
     ]
+  },
+  {
+    "Input": "Volveré dentro de 2 semanas",
+    "NotSupported": "dotnet, java",
+    "NotSupportedByDesign": "javascript, python",
+    "Results": [
+      {
+        "Text": "dentro de 2 semanas",
+        "Type": "date",
+        "Start": 8,
+        "Length": 19
+      }
+    ]
   }
 ]
