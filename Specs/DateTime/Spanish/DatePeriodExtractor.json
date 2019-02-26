@@ -3628,7 +3628,6 @@
   },
   {
     "Input": "en los noventa",
-    "NotSupported": "java",
     "Comment": "Won't fix, because 'los noventa' has ambiguity, will be extracted as number or datetime",
     "NotSupported": "javascript, python, dotnet, java",
     "Results": [
@@ -4434,6 +4433,19 @@
     ]
   },
   {
+    "Input": "Ya terminé todos los trabajos hace durante más de 2 semanas antes de hoy",
+    "NotSupported": "java",
+    "NotSupportedByDesign": "javascript, python",
+    "Results": [
+      {
+        "Text": "durante más de 2 semanas antes de hoy",
+        "Type": "daterange",
+        "Start": 35,
+        "Length": 37
+      }
+    ]
+  },
+  {
     "Input": "Ya terminé todos los trabajos hace más de 2 semanas",
     "NotSupported": "dotnet, java",
     "NotSupportedByDesign": "javascript, python",
@@ -4447,54 +4459,54 @@
     ]
   },
   {
-    "Input": "Volveré dentro de 2 semanas",
-    "NotSupported": "dotnet, java",
+    "Input": "Volveré dentro de 2 semanas a partir de hoy",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "dentro de 2 semanas",
+        "Text": "dentro de 2 semanas a partir de hoy",
         "Type": "daterange",
         "Start": 8,
-        "Length": 19
+        "Length": 35
       }
     ]
   },
   {
-    "Input": "Volveré dentro de menos de 2 semanas",
-    "NotSupported": "dotnet, java",
+    "Input": "Volveré dentro de menos de 2 semanas a partir de hoy",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "dentro de menos de 2 semanas",
+        "Text": "dentro de menos de 2 semanas a partir de hoy",
         "Type": "daterange",
         "Start": 8,
-        "Length": 28
+        "Length": 44
       }
     ]
   },
   {
-    "Input": "Esta tarea debió ser terminada más de tres días antes",
-    "NotSupported": "dotnet, java",
+    "Input": "Esta tarea debió ser terminada durante más de 2 días antes de ayer",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "más de tres días antes",
+        "Text": "durante más de 2 días antes de ayer",
         "Type": "daterange",
         "Start": 31,
-        "Length": 22
+        "Length": 35
       }
     ]
   },
   {
-    "Input": "Esta tarea debe ser terminada en menos de 4 días",
-    "NotSupported": "dotnet, java",
+    "Input": "Esta tarea debe ser terminada dentro de menos de 3 días a partir de mañana",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "en menos de 4 días",
+        "Text": "dentro de menos de 3 días a partir de mañana",
         "Type": "daterange",
         "Start": 30,
-        "Length": 18
+        "Length": 44
       }
     ]
   },
@@ -4505,7 +4517,7 @@
   },
   {
     "Input": "Cortana, programa algo para la semana del 18",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -4518,7 +4530,7 @@
   },
   {
     "Input": "ventas hechas en esta década",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -4531,7 +4543,7 @@
   },
   {
     "Input": "Ya no estaré en el tercer cuarto de 2016",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -4544,7 +4556,7 @@
   },
   {
     "Input": "Ya no estaré en 3º cuarto",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -4557,7 +4569,7 @@
   },
   {
     "Input": "Ya no estaré en el 3º cuarto del año que viene",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -4570,7 +4582,7 @@
   },
   {
     "Input": "Ya no estaré en el 4º cuarto del próximo año",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -4584,13 +4596,13 @@
   {
     "Input": "Convierte $2000 en gdp",
     "Comment": "2000 shouldn't recognized as year here",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": []
   },
   {
     "Input": "Las acciones del banco han disminuido un 20% en lo que va de año",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
