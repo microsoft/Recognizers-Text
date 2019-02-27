@@ -10057,5 +10057,36 @@
     },
     "NotSupported": "javascript, python, java",
     "Results": [] 
+  },
+  {
+    "Input": "Book a meeting for Monday 21 between 9:30 and 3:00 pm PST.",
+    "Context": {
+      "ReferenceDateTime": "2019-02-27T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "monday 21 between 9:30 and 3:00 pm",
+        "Start": 19,
+        "End": 52,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-WXX-1T09:30,XXXX-WXX-1T15:00,PT5H30M)",
+              "type": "datetimerange",
+              "start": "2019-01-21 09:30:00",
+              "end": "2019-01-21 15:00:00"
+            },
+            {
+              "timex": "(XXXX-WXX-1T09:30,XXXX-WXX-1T15:00,PT5H30M)",
+              "type": "datetimerange",
+              "start": "2019-10-21 09:30:00",
+              "end": "2019-10-21 15:00:00"
+            }
+          ]
+        }
+      }
+    ] 
   }
 ]

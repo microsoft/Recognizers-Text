@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
-using Microsoft.Recognizers.Text.DateTime.Utilities;
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime
@@ -310,8 +309,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                                 // Get week day from text directly, compare it with the weekday generated above
                                 // to see whether they refer to the same week day
                                 var extractedWeekDayStr = matchCase.Groups["weekday"].Value.ToLower();
+                                var matchLength = result.Start + result.Length - matchCase.Index;
+
                                 if (!date.Equals(DateObject.MinValue) &&
-                                    numWeekDayInt == Config.DayOfWeek[extractedWeekDayStr])
+                                    numWeekDayInt == Config.DayOfWeek[extractedWeekDayStr] &&
+                                    matchCase.Length == matchLength)
                                 {
                                     ret.Add(new Token(matchCase.Index, result.Start + result.Length ?? 0));
                                     isFound = true;
@@ -332,8 +334,13 @@ namespace Microsoft.Recognizers.Text.DateTime
                     {
                         if (matchCase.Success)
                         {
-                            ret.Add(new Token(matchCase.Index, result.Start + result.Length ?? 0));
-                            isFound = true;
+                            var matchLength = result.Start + result.Length - matchCase.Index;
+
+                            if (matchLength == matchCase.Length)
+                            {
+                                ret.Add(new Token(matchCase.Index, result.Start + result.Length ?? 0));
+                                isFound = true;
+                            }
                         }
                     }
 
