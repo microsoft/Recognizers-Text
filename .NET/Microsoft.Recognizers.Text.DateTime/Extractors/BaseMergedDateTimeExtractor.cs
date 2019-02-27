@@ -120,7 +120,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if ((this.config.Options & DateTimeOptions.EnablePreview) != 0)
             {
-                ret = MatchingUtil.PosProcessExtractionRecoverSuperfluousWords(ret, superfluousWordMatches, originText);
+                ret = MatchingUtil.PostProcessRecoverSuperfluousWords(ret, superfluousWordMatches, originText);
             }
 
             return ret;

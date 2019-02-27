@@ -65,7 +65,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         }
 
         // Temporary solution for recover superfluous words only under the Preview mode
-        public static List<ExtractResult> PosProcessExtractionRecoverSuperfluousWords(List<ExtractResult> extractResults, List<MatchResult<string>> superfluousWordMatches, string originText)
+        public static List<ExtractResult> PostProcessRecoverSuperfluousWords(List<ExtractResult> extractResults, List<MatchResult<string>> superfluousWordMatches, string originText)
         {
             foreach (var match in superfluousWordMatches)
             {
