@@ -10059,30 +10059,30 @@
     "Results": [] 
   },
   {
-    "Input": "Will you be free Tuesday, Jan 15, 1:00 PM - 1:15 PM?",
+    "Input": "Book a meeting for Monday 21 between 9:30 and 3:00 pm PST.",
     "Context": {
       "ReferenceDateTime": "2019-02-27T00:00:00"
     },
-    "NotSupported": "javascript, java, python",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "tuesday, jan 15, 1:00 pm - 1:15 pm",
-        "Start": 17,
-        "End": 50,
+        "Text": "monday 21 between 9:30 and 3:00 pm",
+        "Start": 19,
+        "End": 52,
         "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
           "values": [
             {
-              "timex": "(XXXX-01-15T13:00,XXXX-01-15T13:15,PT15M",
+              "timex": "(XXXX-WXX-1T09:30,XXXX-WXX-1T15:00,PT5H30M)",
               "type": "datetimerange",
-              "start": "2019-01-15 13:00:00",
-              "end": "2019-01-15 13:15:00"
+              "start": "2019-01-21 09:30:00",
+              "end": "2019-01-21 15:00:00"
             },
             {
-              "timex": "(XXXX-01-15T13:00,XXXX-01-15T13:15,PT15M",
+              "timex": "(XXXX-WXX-1T09:30,XXXX-WXX-1T15:00,PT5H30M)",
               "type": "datetimerange",
-              "start": "2020-01-15 13:00:00",
-              "end": "2020-01-15 13:15:00"
+              "start": "2019-10-21 09:30:00",
+              "end": "2019-10-21 15:00:00"
             }
           ]
         }
