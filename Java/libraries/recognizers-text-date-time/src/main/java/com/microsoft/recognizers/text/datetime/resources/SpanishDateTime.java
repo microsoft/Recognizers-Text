@@ -72,7 +72,7 @@ public class SpanishDateTime {
             .replace("{RelativeMonthRegex}", RelativeMonthRegex)
             .replace("{MonthRegex}", MonthRegex);
 
-    public static final String DateUnitRegex = "(?<unit>años|año|meses|mes|semanas|semana|d[ií]a(s)?)\\b";
+    public static final String DateUnitRegex = "(?<unit>años?|mes(es)?|semanas?|d[ií]as?)\\b";
 
     public static final String PastRegex = "(?<past>\\b(pasad(a|o)(s)?|[uú]ltim[oa](s)?|anterior(es)?|previo(s)?)\\b)";
 
@@ -102,11 +102,12 @@ public class SpanishDateTime {
             .replace("{MonthSuffixRegex}", MonthSuffixRegex)
             .replace("{YearRegex}", YearRegex);
 
-    public static final String OneWordPeriodRegex = "\\b(((((la|el)\\s+)?mes\\s+(({OfPrepositionRegex})\\s+))|((pr[oó]xim[oa]?|est[ea]|[uú]ltim[oa]?)\\s+))?({MonthRegex})|((la|el)\\s+)?((({RelativeRegex}\\s+)(semanas|semana|año|mes|días)(\\s+{AfterNextSuffixRegex})?)|(semanas|semana|año|mes|días)(\\s+{AfterNextSuffixRegex})))"
+    public static final String OneWordPeriodRegex = "\\b(((((la|el)\\s+)?mes\\s+(({OfPrepositionRegex})\\s+))|((pr[oó]xim[oa]?|est[ea]|[uú]ltim[oa]?)\\s+))?({MonthRegex})|((la|el)\\s+)?((({RelativeRegex}\\s+){DateUnitRegex}(\\s+{AfterNextSuffixRegex})?)|{DateUnitRegex}(\\s+{AfterNextSuffixRegex}))|va\\s+de\\s+{DateUnitRegex})"
             .replace("{MonthRegex}", MonthRegex)
             .replace("{RelativeRegex}", RelativeRegex)
             .replace("{OfPrepositionRegex}", OfPrepositionRegex)
-            .replace("{AfterNextSuffixRegex}", AfterNextSuffixRegex);
+            .replace("{AfterNextSuffixRegex}", AfterNextSuffixRegex)
+            .replace("{DateUnitRegex}", DateUnitRegex);
 
     public static final String MonthWithYearRegex = "\\b(((pr[oó]xim[oa](s)?|este|esta|[uú]ltim[oa]?)\\s+)?({MonthRegex})(\\s+|(\\s*[,-]\\s*))((de|del|de la)\\s+)?({YearRegex}|(?<order>pr[oó]ximo(s)?|[uú]ltimo?|este)\\s+año))\\b"
             .replace("{MonthRegex}", MonthRegex)
@@ -128,11 +129,17 @@ public class SpanishDateTime {
     public static final String NumberCombinedWithDateUnit = "\\b(?<num>\\d+(\\.\\d*)?){DateUnitRegex}"
             .replace("{DateUnitRegex}", DateUnitRegex);
 
-    public static final String QuarterRegex = "(el\\s+)?(?<cardinal>primer|1er|segundo|2do|tercer|3ro|cuarto|4to|((1|2|3|4)º))\\s+(cuatrimestre|cuarto)((\\s+de|\\s*,\\s*)?\\s+({YearRegex}|(?<order>pr[oó]ximo(s)?|[uú]ltimo?|este)\\s+año))?"
-            .replace("{YearRegex}", YearRegex);
+    public static final String QuarterTermRegex = "(?<cardinal>primer|1er|segundo|2do|tercer|3ro|4to|((1|2|3|4)º))\\s+(cuatrimestre|cuarto)";
 
-    public static final String QuarterRegexYearFront = "({YearRegex}|(?<order>pr[oó]ximo(s)?|[uú]ltimo?|este)\\s+año)\\s+(el\\s+)?(?<cardinal>(primer|primero)|1er|segundo|2do|(tercer|terceo)|3ro|cuarto|4to)\\s+cuatrimestre"
-            .replace("{YearRegex}", YearRegex);
+    public static final String QuarterRegex = "(el\\s+)?{QuarterTermRegex}((\\s+del?|\\s*,\\s*)?\\s+({YearRegex}|(?<order>pr[oó]ximo(s)?|[uú]ltimo?|este)\\s+a[ñn]o|a[ñn]o(\\s+{AfterNextSuffixRegex})))?"
+            .replace("{YearRegex}", YearRegex)
+            .replace("{QuarterTermRegex}", QuarterTermRegex)
+            .replace("{RelativeRegex}", RelativeRegex)
+            .replace("{AfterNextSuffixRegex}", AfterNextSuffixRegex);
+
+    public static final String QuarterRegexYearFront = "({YearRegex}|(?<order>pr[oó]ximo(s)?|[uú]ltimo?|este)\\s+a[ñn]o)\\s+(el\\s+)?{QuarterTermRegex}"
+            .replace("{YearRegex}", YearRegex)
+            .replace("{QuarterTermRegex}", QuarterTermRegex);
 
     public static final String AllHalfYearRegex = "^[.]";
 
@@ -170,7 +177,7 @@ public class SpanishDateTime {
 
     public static final String InConnectorRegex = "\\b(in)\\b";
 
-    public static final String WithinNextPrefixRegex = "^[.]";
+    public static final String WithinNextPrefixRegex = "\\b(dentro\\s+de)\\b";
 
     public static final String FromRegex = "((desde|de)(\\s*la(s)?)?)$";
 
@@ -487,16 +494,16 @@ public class SpanishDateTime {
     public static final String DateTimePeriodNumberCombinedWithUnit = "\\b(?<num>\\d+(\\.\\d*)?)\\s*{TimeUnitRegex}"
             .replace("{TimeUnitRegex}", TimeUnitRegex);
 
-    public static final String PeriodTimeOfDayWithDateRegex = "\\b(((y|a|en|por)\\s+(la\\s+)?|al\\s+)?(((?<early>primeras\\s+horas\\s+)|(?<late>(últimas|altas)\\s+horas\\s+))?(de\\s+la\\s+)?(?<timeOfDay>(mañana|madrugada|(pasado\\s+(el\\s+)?)?medio\\s?d[ií]a|tarde|noche|anoche))))\\b";
+    public static final String PeriodTimeOfDayWithDateRegex = "\\b(((y|a|en|por)\\s+(la\\s+)?|al\\s+)?(((?<early>primeras\\s+horas\\s+)|(?<late>(últimas|altas)\\s+horas\\s+))?(de\\s+la\\s+)?(?<timeOfDay>(mañana|madrugada|(pasado\\s+(el\\s+)?)?medio\\s?d[ií]a|tarde|noche|anoche))))(\\s+(del|de))?\\b";
 
     public static final String RelativeTimeUnitRegex = "({PastRegex}|{FutureRegex})\\s+{TimeUnitRegex}"
             .replace("{PastRegex}", PastRegex)
             .replace("{FutureRegex}", FutureRegex)
             .replace("{TimeUnitRegex}", TimeUnitRegex);
 
-    public static final String LessThanRegex = "^[.]";
+    public static final String LessThanRegex = "\\b(dentro\\s+de\\s+menos\\s+de)\\b";
 
-    public static final String MoreThanRegex = "^[.]";
+    public static final String MoreThanRegex = "\\b(durante\\s+(m[áa]s\\s+)?de)\\b";
 
     public static final String SuffixAndRegex = "(?<suffix>\\s*(y)\\s+((un|uno|una)\\s+)?(?<suffix_num>media|cuarto))";
 
@@ -606,9 +613,9 @@ public class SpanishDateTime {
             .replace("{YearRegex}", YearRegex)
             .replace("{FullTextYearRegex}", FullTextYearRegex);
 
-    public static final String AgoRegex = "\\b(antes)\\b";
+    public static final String AgoRegex = "\\b(antes\\s+de\\s+(?<day>hoy|ayer|mañana)|antes)\\b";
 
-    public static final String LaterRegex = "\\b(despu[eé]s|desde ahora)\\b";
+    public static final String LaterRegex = "\\b(despu[eé]s|desde\\s+ahora|a\\s+partir\\s+de\\s+(?<day>hoy|ayer|mañana))\\b";
 
     public static final String Tomorrow = "mañana";
 
@@ -922,7 +929,7 @@ public class SpanishDateTime {
 
     public static final String DefaultLanguageFallback = "DMY";
 
-    public static final List<String> DurationDateRestrictions = Arrays.asList();
+    public static final List<String> DurationDateRestrictions = Arrays.asList("hoy");
 
     public static final List<String> EarlyMorningTermList = Arrays.asList("madrugada");
 
