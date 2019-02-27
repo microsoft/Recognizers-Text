@@ -9,7 +9,7 @@
 # pylint: disable=line-too-long
 class BasePhoneNumbers:
     NumberReplaceToken = '@builtin.phonenumber'
-    GeneralPhoneNumberRegex = f'(\\b(((\\d[\\s]?){{7,15}}\\d))(?!-)\\b)|(\\(\\d{{5}}\\)\\s?\\d{{5,6}})|\\+\\d{{2}}\\(\\d\\)\\d{{10}}'
+    GeneralPhoneNumberRegex = f'(\\b(((\\d[\\s]?){{4,12}}))(-?[\\d\\s?]{{3}}\\d)(?!-)\\b)|(\\(\\d{{5}}\\)\\s?\\d{{5,6}})|\\+\\d{{2}}\\(\\d\\)\\d{{10}}'
     BRPhoneNumberRegex = f'(((\\B\\(\\s?))\\d{{2,3}}(\\s?\\))|(\\b\\d{{2,3}}))\\s?\\d{{4,5}}-?\\d{{3,5}}(?!-)\\b'
     UKPhoneNumberRegex = f'(((\\b(00)|\\B\\+)\\s?)?(\\b\\d{{2}}\\s?)?((\\s?\\(0\\)[-\\s]?|\\b|(?<=(\\b^#)\\d{{2}}))\\d{{2,5}}|\\(0\\d{{3,4}}\\))[/-]?\\s?(\\d{{5,8}}|\\d{{3,4}}[-\\s]?\\d{{3,4}})(?!-)\\b)'
     DEPhoneNumberRegex = f'((\\+\\d{{2}}\\s?((\\(0\\))?\\d\\s?)?|\\b)(\\d{{2,4}}\\s?[-/]?[\\s\\d]{{7,10}}\\d)(?!-)\\b)'

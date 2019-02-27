@@ -1,5 +1,97 @@
 [
   {
+    "Input": "I'll go back 04th Jan 2019.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "04th jan 2019",
+        "Start": 13,
+        "End": 25,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-01-04",
+              "type": "date",
+              "value": "2019-01-04"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back 03rd Jan 2019.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "03rd jan 2019",
+        "Start": 13,
+        "End": 25,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-01-03",
+              "type": "date",
+              "value": "2019-01-03"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back 02nd Jan 2019.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "02nd jan 2019",
+        "Start": 13,
+        "End": 25,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-01-02",
+              "type": "date",
+              "value": "2019-01-02"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back 01st Jan 2019.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "01st jan 2019",
+        "Start": 13,
+        "End": 25,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-01-01",
+              "type": "date",
+              "value": "2019-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
     "Input": "Who are us presidents in 1990 s.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -4157,8 +4249,8 @@
     },
     "Results": [
       {
-        "Text": "09th of may",
-        "Start": 27,
+        "Text": "the 09th of may",
+        "Start": 23,
         "End": 37,
         "TypeName": "datetimeV2.date",
         "Resolution": {
@@ -9859,6 +9951,169 @@
               "timex": "2019-01-23",
               "type": "date",
               "value": "2019-01-23"
+            }
+          ]
+        }
+      }
+    ] 
+  },
+  {
+    "Input": "Where were you the 12th between 0730-0930",
+    "Context": {
+      "ReferenceDateTime": "2019-01-31T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "between 0730-0930",
+        "Start": 24,
+        "End": 40,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(T07:30,T09:30,PT2H)",
+              "type": "timerange",
+              "start": "07:30:00",
+              "end": "09:30:00"
+            },
+            {
+              "timex": "(T19:30,T21:30,PT2H)",
+              "type": "timerange",
+              "start": "19:30:00",
+              "end": "21:30:00"
+            }
+          ]
+        }
+      }
+    ] 
+  },
+  {
+    "Input": "Where were you between 0730-0930?",
+    "Context": {
+      "ReferenceDateTime": "2019-01-31T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "between 0730-0930",
+        "Start": 15,
+        "End": 31,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(T07:30,T09:30,PT2H)",
+              "type": "timerange",
+              "start": "07:30:00",
+              "end": "09:30:00"
+            },
+            {
+              "timex": "(T19:30,T21:30,PT2H)",
+              "type": "timerange",
+              "start": "19:30:00",
+              "end": "21:30:00"
+            }
+          ]
+        }
+      }
+    ] 
+  },
+  {
+    "Input": "Where were you between 0930-0730?",
+    "Context": {
+      "ReferenceDateTime": "2019-01-31T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "between 0930-0730",
+        "Start": 15,
+        "End": 31,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(T09:30,T19:30,PT10H)",
+              "type": "timerange",
+              "start": "09:30:00",
+              "end": "19:30:00"
+            },
+            {
+              "timex": "(T21:30,T07:30,PT10H)",
+              "type": "timerange",
+              "start": "21:30:00",
+              "end": "07:30:00"
+            }
+          ]
+        }
+      }
+    ] 
+  },
+  {
+    "Input": "Where were you between 730-930?",
+    "Context": {
+      "ReferenceDateTime": "2019-01-31T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [] 
+  },
+  {
+    "Input": "Book a meeting for Monday 21 between 9:30 and 3:00 pm PST.",
+    "Context": {
+      "ReferenceDateTime": "2019-02-27T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "monday 21 between 9:30 and 3:00 pm",
+        "Start": 19,
+        "End": 52,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-WXX-1T09:30,XXXX-WXX-1T15:00,PT5H30M)",
+              "type": "datetimerange",
+              "start": "2019-01-21 09:30:00",
+              "end": "2019-01-21 15:00:00"
+            },
+            {
+              "timex": "(XXXX-WXX-1T09:30,XXXX-WXX-1T15:00,PT5H30M)",
+              "type": "datetimerange",
+              "start": "2019-10-21 09:30:00",
+              "end": "2019-10-21 15:00:00"
+            }
+          ]
+        }
+      }
+    ] 
+  },
+  {
+    "Input": "Will you be free Tuesday, Jan 15, 1:00 PM - 1:15 PM?",
+    "Context": {
+      "ReferenceDateTime": "2019-02-27T00:00:00"
+    },
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "tuesday, jan 15, 1:00 pm - 1:15 pm",
+        "Start": 17,
+        "End": 50,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-01-15T13:00,XXXX-01-15T13:15,PT15M",
+              "type": "datetimerange",
+              "start": "2019-01-15 13:00:00",
+              "end": "2019-01-15 13:15:00"
+            },
+            {
+              "timex": "(XXXX-01-15T13:00,XXXX-01-15T13:15,PT15M",
+              "type": "datetimerange",
+              "start": "2020-01-15 13:00:00",
+              "end": "2020-01-15 13:15:00"
             }
           ]
         }

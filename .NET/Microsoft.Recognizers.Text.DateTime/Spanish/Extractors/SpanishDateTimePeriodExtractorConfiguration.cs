@@ -119,7 +119,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public Regex PreviousPrefixRegex => SpanishDatePeriodExtractorConfiguration.PastRegex;
 
-        public Regex NextPrefixRegex => SpanishDatePeriodExtractorConfiguration.FutureRegex;
+        public Regex NextPrefixRegex => SpanishDateTimeAltExtractorConfiguration.NextPrefixRegex;
 
         public Regex FutureSuffixRegex => SpanishDatePeriodExtractorConfiguration.FutureSuffixRegex;
 

@@ -1,5 +1,20 @@
 [
   {
+    "Input": "Tel: 000 111 82-2100.",
+    "Results": [
+      {
+        "Text": "000 111 82-2100",
+        "Start": 5,
+        "End": 19,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "1",
+          "value": "000 111 82-2100"
+        }
+      }
+    ]
+  },
+  {
     "Input": "My phone number is 1 (877) 609-2233.",
     "Results": [
       {
