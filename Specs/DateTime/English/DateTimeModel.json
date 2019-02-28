@@ -10121,31 +10121,6 @@
     ] 
   },
   {
-    "Input": "Is this a valid date? 12-2015",
-    "Context": {
-      "ReferenceDateTime": "2019-02-27T00:00:00"
-    },
-    "NotSupported": "javascript, java, python",
-    "Results": [
-      {
-        "Text": "12-2015",
-        "Start": 22,
-        "End": 28,
-        "TypeName": "datetimeV2.daterange",
-        "Resolution": {
-          "values": [
-            {
-              "timex": "2015-12",
-              "type": "daterange",
-              "start": "2015-12-01",
-              "end": "2016-01-01"
-            }
-          ]
-        }
-      }
-    ] 
-  },
-  {
     "Input": "Is this a valid date? 32-2015",
     "Context": {
       "ReferenceDateTime": "2019-02-27T00:00:00"
