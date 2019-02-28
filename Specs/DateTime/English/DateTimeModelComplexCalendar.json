@@ -8856,5 +8856,44 @@
         }
       }
     ] 
+  },
+  {
+    "Input": "Your renewal will be January 18, 2019.  You have until then to add the paid support. @Cortana, Please schedule a Skype call at 3pm today.",
+    "Context": {
+      "ReferenceDateTime": "2019-02-28T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "january 18, 2019",
+        "Start": 21,
+        "End": 36,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-01-18",
+              "type": "date",
+              "value": "2019-01-18"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "3pm today",
+        "Start": 127,
+        "End": 135,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-02-28T15",
+              "type": "datetime",
+              "value": "2019-02-28 15:00:00"
+            }
+          ]
+        }
+      }
+    ] 
   }
 ]

@@ -65,7 +65,7 @@ class FrenchDateTime:
     WeekDayOfMonthRegex = f'(?<wom>(le\\s+)?(?<cardinal>premier|1er|duexi[èe]me|2|troisi[èe]me|3|quatri[èe]me|4|cinqi[èe]me|5)\\s+{WeekDayRegex}\\s+{MonthSuffixRegex})'
     RelativeWeekDayRegex = f'^[.]'
     NumberEndingPattern = f'^[.]'
-    SpecialDate = f'(?<=\\b([àa]|au|le)\\s+){DayRegex}\\b'
+    SpecialDate = f'(?<=\\b([àa]|au|le)\\s+){DayRegex}(?!:)\\b'
     DateYearRegex = f'(?<year>{YearRegex}|{TwoDigitYearRegex})'
     DateExtractor1 = f'\\b({WeekDayRegex}(\\s+|\\s*,\\s*))?{MonthRegex}\\s*[/\\\\\\.\\-]?\\s*{DayRegex}\\b'
     DateExtractor2 = f'\\b({WeekDayRegex}(\\s+|\\s*,\\s*))?{DayRegex}(\\s+|\\s*,\\s*|\\s+){MonthRegex}\\s*[\\.\\-]?\\s*{DateYearRegex}\\b'
