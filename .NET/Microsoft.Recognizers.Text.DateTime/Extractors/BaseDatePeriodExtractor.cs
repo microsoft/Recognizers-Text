@@ -288,6 +288,9 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
+        // This method is to detect the invalid dash context
+        // Some match with invalid dash context might be false positives
+        // For example, it can be part of the phone number like "Tel: 138-2010-2015"
         private bool HasInvalidDashContext(Match match, string text)
         {
             var hasInvalidDashContext = false;
