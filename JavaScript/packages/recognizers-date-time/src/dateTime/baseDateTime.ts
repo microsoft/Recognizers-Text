@@ -80,9 +80,9 @@ export class BaseDateTimeExtractor implements IDateTimeExtractor {
                     let begin = ers[i].start;
                     let end = ers[j].start + ers[j].length;
                     tokens.push(new Token(begin, end));
+                    i = j + 1;
+                    continue;
                 }
-                i = j + 1;
-                continue;
             }
             i = j;
         }
