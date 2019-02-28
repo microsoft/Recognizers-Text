@@ -8862,7 +8862,7 @@
     "Context": {
       "ReferenceDateTime": "2019-02-28T00:00:00"
     },
-    "NotSupported": "javascript, java, python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "january 18, 2019",

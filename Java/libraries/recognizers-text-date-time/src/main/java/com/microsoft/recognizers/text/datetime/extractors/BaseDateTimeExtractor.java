@@ -264,10 +264,9 @@ public class BaseDateTimeExtractor implements IDateTimeExtractor {
                     int begin = ersI.getStart();
                     int end = ersJ.getStart() + ersJ.getLength();
                     ret.add(new Token(begin, end));
+                    i = j + 1;
+                    continue;
                 }
-
-                i = j + 1;
-                continue;
             }
             i = j;
         }
