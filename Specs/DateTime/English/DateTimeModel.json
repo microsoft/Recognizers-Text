@@ -10158,5 +10158,111 @@
         }
       }
     ] 
+  },
+  {
+    "Input": "Is this a valid date? 12-2015",
+    "Context": {
+      "ReferenceDateTime": "2019-02-27T00:00:00"
+    },
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "12-2015",
+        "Start": 22,
+        "End": 28,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2015-12",
+              "type": "daterange",
+              "start": "2015-12-01",
+              "end": "2016-01-01"
+            }
+          ]
+        }
+      }
+    ] 
+  },
+  {
+    "Input": "Is this a valid date? 32-2015",
+    "Context": {
+      "ReferenceDateTime": "2019-02-27T00:00:00"
+    },
+    "NotSupported": "javascript, java, python",
+    "Results": [] 
+  },
+  {
+    "Input": "Is this a valid date? 32 - 2015",
+    "Context": {
+      "ReferenceDateTime": "2019-02-27T00:00:00"
+    },
+    "NotSupported": "javascript, java, python",
+    "Results": [] 
+  },
+  {
+    "Input": "Is this a valid date? 2015-12",
+    "Context": {
+      "ReferenceDateTime": "2019-02-27T00:00:00"
+    },
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "2015-12",
+        "Start": 22,
+        "End": 28,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2015-12",
+              "type": "daterange",
+              "start": "2015-12-01",
+              "end": "2016-01-01"
+            }
+          ]
+        }
+      }
+    ] 
+  },
+  {
+    "Input": "Is this a valid date? 2015-32",
+    "Context": {
+      "ReferenceDateTime": "2019-02-27T00:00:00"
+    },
+    "NotSupported": "javascript, java, python",
+    "Results": [] 
+  },
+  {
+    "Input": "Is this a valid date? 2015 - 32",
+    "Context": {
+      "ReferenceDateTime": "2019-02-27T00:00:00"
+    },
+    "NotSupported": "javascript, java, python",
+    "Results": [] 
+  },
+  {
+    "Input": "Tel: +86 138-2010-2015",
+    "Context": {
+      "ReferenceDateTime": "2019-02-27T00:00:00"
+    },
+    "NotSupported": "javascript, java, python",
+    "Results": [] 
+  },
+  {
+    "Input": "Tel: +86 2010-2015-86",
+    "Context": {
+      "ReferenceDateTime": "2019-02-27T00:00:00"
+    },
+    "NotSupported": "javascript, java, python",
+    "Results": [] 
+  },
+  {
+    "Input": "Tel: 000 111 82-2100",
+    "Context": {
+      "ReferenceDateTime": "2019-02-27T00:00:00"
+    },
+    "NotSupported": "javascript, java, python",
+    "Results": [] 
   }
 ]

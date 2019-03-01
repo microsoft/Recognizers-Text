@@ -257,6 +257,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         Regex IDatePeriodExtractorConfiguration.CenturySuffixRegex => CenturySuffixRegex;
 
+        Regex IDatePeriodExtractorConfiguration.MonthNumRegex => MonthNumRegex;
+
         string[] IDatePeriodExtractorConfiguration.DurationDateRestrictions => DateTimeDefinitions.DurationDateRestrictions;
 
         public bool GetFromTokenIndex(string text, out int index)

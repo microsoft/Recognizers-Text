@@ -214,6 +214,29 @@ namespace Microsoft.Recognizers.Text.DateTime
                     // Possibly include period end only apply for cases like "2014-2018", which are not single year cases
                     metadata.PossiblyIncludePeriodEnd = false;
                 }
+                else
+                {
+                    var yearMatches = this.config.YearRegex.Matches(match.Value);
+                    var allDigitYear = true;
+
+                    foreach (Match yearMatch in yearMatches)
+                    {
+                        if (yearMatch.Length != Constants.FourDigitsYearLength)
+                        {
+                            allDigitYear = false;
+                        }
+                    }
+
+                    // Cases like "2010-2015"
+                    if (allDigitYear)
+                    {
+                        // Filter out cases like "82-2010-2015" or "2010-2015-82" where "2010-2015" should not be extracted as a DateRange
+                        if (HasInvalidDashContext(match, text))
+                        {
+                            continue;
+                        }
+                    }
+                }
 
                 ret.Add(new Token(match.Index, match.Index + match.Length, metadata));
             }
@@ -239,11 +262,20 @@ namespace Microsoft.Recognizers.Text.DateTime
                         }
                     }
 
-                    // handle single year which is surrounded by '-' at both sides, e.g., a single year falls in a GUID
-                    if (match.Length == Constants.FourDigitsYearLength && this.config.YearRegex.IsMatch(match.Value) && InfixBoundaryCheck(match, text))
+                    if (match.Length == Constants.FourDigitsYearLength && this.config.YearRegex.IsMatch(match.Value))
                     {
-                        var substr = text.Substring(match.Index - 1, 6);
-                        if (this.config.IllegalYearRegex.IsMatch(substr))
+                        // handle single year which is surrounded by '-' at both sides, e.g., a single year falls in a GUID
+                        if (InfixBoundaryCheck(match, text))
+                        {
+                            var substr = text.Substring(match.Index - 1, 6);
+                            if (this.config.IllegalYearRegex.IsMatch(substr))
+                            {
+                                continue;
+                            }
+                        }
+
+                        // filter out cases like "82-2010", "2010-82" where "2010" should not be extracted as DateRange
+                        if (HasInvalidDashContext(match, text))
                         {
                             continue;
                         }
@@ -254,6 +286,47 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             return ret;
+        }
+
+        // This method is to detect the invalid dash context
+        // Some match with invalid dash context might be false positives
+        // For example, it can be part of the phone number like "Tel: 138-2010-2015"
+        private bool HasInvalidDashContext(Match match, string text)
+        {
+            var hasInvalidDashContext = false;
+
+            // Filter out cases like "82-2100" where "2100" should not be extracted as a DateRange
+            // Filter out cases like "82-2010-2015" where "2010-2015" should not be extracted as a DateRange
+            if (HasDashPrefix(match, text, out int dashPrefixIndex))
+            {
+                if (HasDigitNumberBeforeDash(text, dashPrefixIndex, out int numberStartIndex))
+                {
+                    var digitNumberStr = text.Substring(numberStartIndex, match.Index - 1 - numberStartIndex);
+
+                    if (!this.config.MonthNumRegex.IsExactMatch(digitNumberStr, trim: true))
+                    {
+                        hasInvalidDashContext = true;
+                    }
+                }
+            }
+
+            // Filter out cases like "2100-82" where "2100" should not be extracted as a DateRange
+            // Filter out cases like "2010-2015-82" where "2010-2015" should not be extracted as a DateRange
+            if (HasDashSuffix(match, text, out int dashSuffixIndex))
+            {
+                if (HasDigitNumberAfterDash(text, dashSuffixIndex, out int numberEndIndex))
+                {
+                    var numberStartIndex = match.Index + match.Length + 1;
+                    var digitNumberStr = text.Substring(numberStartIndex, numberEndIndex - numberStartIndex);
+
+                    if (!this.config.MonthNumRegex.IsExactMatch(digitNumberStr, trim: true))
+                    {
+                        hasInvalidDashContext = true;
+                    }
+                }
+            }
+
+            return hasInvalidDashContext;
         }
 
         // Complex cases refer to the combination of daterange and datepoint
@@ -456,6 +529,127 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             return isMatchInfixOfSource;
+        }
+
+        private bool IsDigitChar(char ch)
+        {
+            return ch >= '0' && ch <= '9';
+        }
+
+        private bool HasDashPrefix(Match match, string source, out int dashPrefixIndex)
+        {
+            bool hasDashPrefix = false;
+            dashPrefixIndex = -1;
+
+            for (var i = match.Index - 1; i >= 0; i--)
+            {
+                if (source[i] != ' ' && source[i] != '-')
+                {
+                    break;
+                }
+                else if (source[i] == '-')
+                {
+                    hasDashPrefix = true;
+                    dashPrefixIndex = i;
+                    break;
+                }
+            }
+
+            return hasDashPrefix;
+        }
+
+        private bool HasDigitNumberBeforeDash(string source, int dashPrefixIndex, out int numberStartIndex)
+        {
+            bool hasDigitNumberBeforeDash = false;
+            numberStartIndex = -1;
+
+            for (var i = dashPrefixIndex - 1; i >= 0; i--)
+            {
+                if (source[i] == ' ')
+                {
+                    continue;
+                }
+
+                if (IsDigitChar(source[i]))
+                {
+                    hasDigitNumberBeforeDash = true;
+                }
+
+                if (!IsDigitChar(source[i]))
+                {
+                    if (hasDigitNumberBeforeDash)
+                    {
+                        numberStartIndex = i + 1;
+                    }
+
+                    break;
+                }
+            }
+
+            if (hasDigitNumberBeforeDash && numberStartIndex == -1)
+            {
+                numberStartIndex = 0;
+            }
+
+            return hasDigitNumberBeforeDash;
+        }
+
+        private bool HasDashSuffix(Match match, string source, out int dashSuffixIndex)
+        {
+            bool hasDashSuffix = false;
+            dashSuffixIndex = -1;
+
+            for (var i = match.Index + match.Length; i < source.Length; i++)
+            {
+                if (source[i] != ' ' && source[i] != '-')
+                {
+                    break;
+                }
+                else if (source[i] == '-')
+                {
+                    hasDashSuffix = true;
+                    dashSuffixIndex = i;
+                    break;
+                }
+            }
+
+            return hasDashSuffix;
+        }
+
+        private bool HasDigitNumberAfterDash(string source, int dashSuffixIndex, out int numberEndIndex)
+        {
+            bool hasDigitNumberAfterDash = false;
+            numberEndIndex = -1;
+
+            for (var i = dashSuffixIndex + 1; i < source.Length; i++)
+            {
+                if (source[i] == ' ')
+                {
+                    continue;
+                }
+
+                if (IsDigitChar(source[i]))
+                {
+                    hasDigitNumberAfterDash = true;
+                }
+
+                if (!IsDigitChar(source[i]))
+                {
+                    if (hasDigitNumberAfterDash)
+                    {
+                        numberEndIndex = i;
+                    }
+
+                    break;
+                }
+            }
+
+            if (hasDigitNumberAfterDash && numberEndIndex == -1)
+            {
+                numberEndIndex = source.Length;
+            }
+
+            return hasDigitNumberAfterDash;
         }
     }
 }
