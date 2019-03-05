@@ -14,6 +14,7 @@ class PhoneNumberParser(SequenceParser):
     areaCodeAward = 30
     formattedAward = 20
     lengthAward = 10
+    specialUSphoneNumberAward = 15
     typicalFormatDeductionScore = 40
     continueDigitDeductionScore = 10
     tailSameDeductionScore = 10
@@ -37,6 +38,7 @@ class PhoneNumberParser(SequenceParser):
         country_code_regex = re.compile(BasePhoneNumbers.CountryCodeRegex)
         area_code_regex = re.compile(BasePhoneNumbers.AreaCodeIndicatorRegex)
         format_indicator_regex = re.compile(BasePhoneNumbers.FormatIndicatorRegex, re.IGNORECASE | re.DOTALL)
+        special_USphonenumbe_regex = re.compile(BasePhoneNumbers.SpecialUSPhoneNumberRegex)
 
         # Country code score or area code score
         score += self.countryCodeAward if country_code_regex.search(
@@ -79,6 +81,10 @@ class PhoneNumberParser(SequenceParser):
         if self.continueDigitRegex.search(phone_number_text):
             score -= max(len(list(self.continueDigitRegex.finditer(phone_number_text))) - 1,
                          0) * self.continueDigitDeductionScore
+
+        # Special award for special USphonenumber, i.e. 123-4567 or 123 - 4567
+        if special_USphonenumbe_regex.match(phone_number_text):
+            score += self.specialUSphoneNumberAward
 
         return max(min(score, self.scoreUpperLimit), self.scoreLowerLimit) / (
                 self.scoreUpperLimit - self.scoreLowerLimit)

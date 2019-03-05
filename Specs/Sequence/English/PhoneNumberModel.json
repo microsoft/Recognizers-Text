@@ -3207,7 +3207,7 @@
         "TypeName": "phonenumber",
         "Resolution": {
           "value": "123-4567",
-          "score": "0.5"
+          "score": "0.55"
         }
       }
     ]

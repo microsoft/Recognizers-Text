@@ -24,7 +24,7 @@ namespace Microsoft.Recognizers.Text.Sequence.English
         private static int tailSameLimit = 2;
         private static int phoneNumberLengthBase = 8;
         private static int pureDigitLengthLimit = 11;
-        private static int specialUSphoneNumberAward = 10;
+        private static int specialUSphoneNumberAward = 15;
 
         // @TODO move regexes to base resource files
         private static string completeBracketRegex = @"\(.*\)";
