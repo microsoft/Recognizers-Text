@@ -3200,6 +3200,19 @@
     ]
   },
   {
+    "Input": "My phone number is 123-4567.",
+    "Results": [
+      {
+        "Text": "123-4567",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "123-4567",
+          "score": "0.5"
+        }
+      }
+    ]
+  },
+  {
     "Input": "Do you know bazinga?",
     "Results": []
   },
