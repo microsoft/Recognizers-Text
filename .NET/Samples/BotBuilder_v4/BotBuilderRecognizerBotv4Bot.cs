@@ -154,41 +154,34 @@ namespace BotBuilderRecognizerSample
         public Task<bool> QuantityValidatorAsync(PromptValidatorContext<string> promptContext, CancellationToken cancellationToken)
         {
             var result = promptContext.Recognized.Value;
-            promptContext.Recognized.Succeeded = false;
 
-            if (result != null)
+            if (result is null)
             {
-                var results = NumberRecognizer.RecognizeNumber(result, "en-us");
+                return Task.FromResult(false);
+            }
 
-                if (results.Count > 0)
-                {
-                    if (results.First().TypeName == "number" && double.TryParse(results.First().Resolution["value"].ToString(), out double value))
-                    {
-                        // Validate number
-                        if (value > 0)
-                        {
-                            // return as string
-                            quantityRoses = Convert.ToInt32(results.First().Resolution["value"]);
-                            var quantityMessage = quantityRoses == 1
-                            ? "I'll send just one rose."
-                            : $"I'll send {quantityRoses} roses.";
-                            promptContext.Recognized.Value = quantityMessage;
-                            return Task.FromResult(true);
-                        }
-                        else
-                        {
-                            return Task.FromResult(false);
-                        }
-                    }
-                    else
-                    {
-                        return Task.FromResult(false);
-                    }
-                }
-                else
+            var results = NumberRecognizer.RecognizeNumber(result, "en-us");
+
+            if (results.Count == 0)
+            {
+                return Task.FromResult(false);
+            }
+
+            if (results.First().TypeName == "number" && double.TryParse(results.First().Resolution["value"].ToString(), out double value))
+            {
+                // Validate number
+                if (value < 0)
                 {
                     return Task.FromResult(false);
                 }
+
+                // return as string
+                quantityRoses = Convert.ToInt32(results.First().Resolution["value"]);
+                var quantityMessage = quantityRoses == 1
+                ? "I'll send just one rose."
+                : $"I'll send {quantityRoses} roses.";
+                promptContext.Recognized.Value = quantityMessage;
+                return Task.FromResult(true);
             }
             else
             {
@@ -200,38 +193,38 @@ namespace BotBuilderRecognizerSample
         {
             var result = promptContext.Recognized.Value;
 
-            if (result != null)
+            if (result is null)
             {
-                var results = DateTimeRecognizer.RecognizeDateTime(result, "en-us");
-
-                if (results.Count > 0 && results.First().TypeName == "datetimeV2.date")
-                {
-                    // The DateTime model can return several resolution types (https://github.com/Microsoft/Recognizers-Text/blob/master/.NET/Microsoft.Recognizers.Text.DateTime/Constants.cs#L7-L14)
-                    // We only care for those with a date, date and time, or date time period:
-                    var first = results.First();
-                    var resolutionValues = (IList<Dictionary<string, string>>)first.Resolution["values"];
-
-                    var subType = first.TypeName.Split('.').Last();
-                    if (subType.Contains("date"))
-                    {
-                        // a date (or date & time) or multiple
-                        var moment = resolutionValues.Select(v => DateTime.Parse(v["value"])).FirstOrDefault();
-                        if (IsFuture(moment))
-                        {
-                            // a future moment, valid!
-                            promptContext.Recognized.Value = $"Thank you! I'll deliver the roses on {moment}.";
-                            isDeliverySet = true;
-                            return Task.FromResult(true);
-                        }
-
-                        // a past moment
-                        promptContext.Recognized.Value = PastValueErrorMessage.Replace("$moment$", MomentOrRangeToString(moment));
-                        return Task.FromResult(true);
-                    }
-                }
-
                 promptContext.Recognized.Value = "I'm sorry, that doesn't seem to be a valid delivery date and time";
                 return Task.FromResult(false);
+            }
+
+                var results = DateTimeRecognizer.RecognizeDateTime(result, "en-us");
+
+            if (results.Count > 0 && results.First().TypeName == "datetimeV2.date")
+            {
+                // The DateTime model can return several resolution types (https://github.com/Microsoft/Recognizers-Text/blob/master/.NET/Microsoft.Recognizers.Text.DateTime/Constants.cs#L7-L14)
+                // We only care for those with a date, date and time, or date time period:
+                var first = results.First();
+                var resolutionValues = (IList<Dictionary<string, string>>)first.Resolution["values"];
+
+                var subType = first.TypeName.Split('.').Last();
+                if (subType.Contains("date"))
+                {
+                    // a date (or date & time) or multiple
+                    var moment = resolutionValues.Select(v => DateTime.Parse(v["value"])).FirstOrDefault();
+                    if (IsFuture(moment))
+                    {
+                        // a future moment, valid!
+                        promptContext.Recognized.Value = $"Thank you! I'll deliver the roses on {moment}.";
+                        isDeliverySet = true;
+                        return Task.FromResult(true);
+                    }
+
+                    // a past moment
+                    promptContext.Recognized.Value = PastValueErrorMessage.Replace("$moment$", MomentOrRangeToString(moment));
+                    return Task.FromResult(true);
+                }
             }
 
             promptContext.Recognized.Value = "I'm sorry, that doesn't seem to be a valid delivery date and time";
