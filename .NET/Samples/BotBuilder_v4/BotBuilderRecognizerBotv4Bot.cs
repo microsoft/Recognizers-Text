@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using Microsoft.Bot.Builder;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Schema;
+using Microsoft.Recognizers.Text.DateTime;
 using Microsoft.Recognizers.Text.Number;
 
 namespace BotBuilderRecognizerSample
@@ -26,7 +27,9 @@ namespace BotBuilderRecognizerSample
     /// <seealso cref="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-2.1"/>
     public class BotBuilderRecognizerBotv4Bot : IBot
     {
-        private const string WelcomeText = "This bot will introduce you to prompt validations using Recognizers. Type anything to get started";
+        private const string WelcomeText = "Welcome to Contoso Roses. These are the roses you are looking for! Type anything to get started";
+
+        private const string PastValueErrorMessage = "I'm sorry, but I need at least an hour to deliver.\n\n $moment$ is no good for me.\n\nWhat other moment suits you best?";
 
         private readonly BotBuilderRecognizerBotv4Accessors _accessors;
 
@@ -35,17 +38,26 @@ namespace BotBuilderRecognizerSample
         /// </summary>
         private readonly DialogSet _dialogs;
 
-        //private int value;
+        private bool isDeliverySet = false;
+
+        private int quantityRoses;
+
+        public static bool IsFuture(DateTime date)
+        {
+            // at least one hour
+            return date > DateTime.Now.AddHours(1);
+        }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="PromptValidationsBot"/> class.
+        /// Initializes a new instance of the <see cref="BotBuilderRecognizerBotv4Bot"/> class.
         /// </summary>
         /// <param name="accessors">The state accessors this instance will be needing at runtime.</param>
         public BotBuilderRecognizerBotv4Bot(BotBuilderRecognizerBotv4Accessors accessors)
         {
             _accessors = accessors ?? throw new ArgumentNullException(nameof(accessors));
             _dialogs = new DialogSet(accessors.ConversationDialogState);
-            _dialogs.Add(new TextPrompt("number", CustomPromptValidatorAsync));
+            _dialogs.Add(new TextPrompt("quantity", QuantityValidatorAsync));
+            _dialogs.Add(new TextPrompt("delivery", DeliveryValidatorAsync));
         }
 
         /// <summary>
@@ -76,23 +88,42 @@ namespace BotBuilderRecognizerSample
                     // A prompt dialog can be started directly on from the DialogContext. The prompt text is given in the PromptOptions.
                     // We have defined a RetryPrompt here so this will be used. Otherwise the Prompt text will be repeated.
                     await dialogContext.PromptAsync(
-                        "number",
+                        "quantity",
                         new PromptOptions
                         {
-                            Prompt = MessageFactory.Text("Please enter a number."),
-                            RetryPrompt = MessageFactory.Text("That wasn't a valid number. Please try again."),
+                            Prompt = MessageFactory.Text("How many roses do you want to send ?\n\n" +
+                            "Some valid options are:\n\n" +
+                            " - A dozen\n\n" +
+                            " - 22\n\n" +
+                            " - Just one rose"),
+                            RetryPrompt = MessageFactory.Text("That wasn't a valid quantity. Please try again."),
                         },
                         cancellationToken);
                 }
-
-                // We had a dialog run (it was the prompt) now it is Complete.
-                else //if (results.Status == DialogTurnStatus.Complete)
+                else
                 {
                     // Check for a result.
                     if (results.Result != null)
                     {
                         // And finish by sending a message to the user. Next time ContinueAsync is called it will return DialogTurnStatus.Empty.
                         await turnContext.SendActivityAsync(MessageFactory.Text(results.Result.ToString()),cancellationToken);
+
+                        if (!isDeliverySet)
+                        {
+                            await dialogContext.PromptAsync(
+                            "delivery",
+                            new PromptOptions
+                            {
+                                Prompt = MessageFactory.Text("When do you want to receive the delivery?\n\n" +
+                                "Some valid options are:\n\n" +
+                                " - Tomorrow morning\n\n" +
+                                " - 12/30/2017\n\n" +
+                                " - 9PM Tomorrow\n\n" +
+                                " - Five hours from now"),
+                                RetryPrompt = MessageFactory.Text("I'm sorry, that doesn't seem to be a valid delivery date and time"),
+                            },
+                            cancellationToken);
+                        }
                     }
                 }
             }
@@ -120,9 +151,10 @@ namespace BotBuilderRecognizerSample
         /// <param name="promptContext">The <see cref="PromptValidatorContext"/> gives the validator code access to the runtime, including the recognized value and the turn context.</param>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns>A <see cref="Task"/> representing the operation result of the Turn operation.</returns>
-        public Task<bool> CustomPromptValidatorAsync(PromptValidatorContext<string> promptContext, CancellationToken cancellationToken)
+        public Task<bool> QuantityValidatorAsync(PromptValidatorContext<string> promptContext, CancellationToken cancellationToken)
         {
             var result = promptContext.Recognized.Value;
+            promptContext.Recognized.Succeeded = false;
 
             if (result != null)
             {
@@ -133,24 +165,20 @@ namespace BotBuilderRecognizerSample
                     if (results.First().TypeName == "number" && double.TryParse(results.First().Resolution["value"].ToString(), out double value))
                     {
                         // Validate number
-                        if (value < 1)
+                        if (value > 0)
                         {
-                            promptContext.Recognized.Value = "I need to deliver at least one rose =)";
+                            // return as string
+                            quantityRoses = Convert.ToInt32(results.First().Resolution["value"]);
+                            var quantityMessage = quantityRoses == 1
+                            ? "I'll send just one rose."
+                            : $"I'll send {quantityRoses} roses.";
+                            promptContext.Recognized.Value = quantityMessage;
                             return Task.FromResult(true);
                         }
-                        else if (value > 100)
+                        else
                         {
-                            promptContext.Recognized.Value = "You cannot order more than 100 roses per day. Sorry!";
-                            return Task.FromResult(true);
+                            return Task.FromResult(false);
                         }
-                        else if (value % 1 != 0)
-                        {
-                            promptContext.Recognized.Value = "I need to send whole roses, not fractions of them. How many would you like to send?";
-                            return Task.FromResult(true);
-                        }
-                        // return as string
-                        promptContext.Recognized.Value = $"Thank you, I have your number as {results.First().Resolution["value"].ToString()}.";
-                        return Task.FromResult(true);
                     }
                     else
                     {
@@ -168,6 +196,48 @@ namespace BotBuilderRecognizerSample
             }
         }
 
+        public Task<bool> DeliveryValidatorAsync(PromptValidatorContext<string> promptContext, CancellationToken cancellationToken)
+        {
+            var result = promptContext.Recognized.Value;
+
+            if (result != null)
+            {
+                var results = DateTimeRecognizer.RecognizeDateTime(result, "en-us");
+
+                if (results.Count > 0 && results.First().TypeName == "datetimeV2.date")
+                {
+                    // The DateTime model can return several resolution types (https://github.com/Microsoft/Recognizers-Text/blob/master/.NET/Microsoft.Recognizers.Text.DateTime/Constants.cs#L7-L14)
+                    // We only care for those with a date, date and time, or date time period:
+                    var first = results.First();
+                    var resolutionValues = (IList<Dictionary<string, string>>)first.Resolution["values"];
+
+                    var subType = first.TypeName.Split('.').Last();
+                    if (subType.Contains("date"))
+                    {
+                        // a date (or date & time) or multiple
+                        var moment = resolutionValues.Select(v => DateTime.Parse(v["value"])).FirstOrDefault();
+                        if (IsFuture(moment))
+                        {
+                            // a future moment, valid!
+                            promptContext.Recognized.Value = $"Thank you! I'll deliver the roses on {moment}.";
+                            isDeliverySet = true;
+                            return Task.FromResult(true);
+                        }
+
+                        // a past moment
+                        promptContext.Recognized.Value = PastValueErrorMessage.Replace("$moment$", MomentOrRangeToString(moment));
+                        return Task.FromResult(true);
+                    }
+                }
+
+                promptContext.Recognized.Value = "I'm sorry, that doesn't seem to be a valid delivery date and time";
+                return Task.FromResult(false);
+            }
+
+            promptContext.Recognized.Value = "I'm sorry, that doesn't seem to be a valid delivery date and time";
+            return Task.FromResult(false);
+        }
+
         /// <summary>
         /// On a conversation update activity sent to the bot, the bot will
         /// send a message to the any new user(s) that were added.
@@ -182,11 +252,24 @@ namespace BotBuilderRecognizerSample
             {
                 if (member.Id != turnContext.Activity.Recipient.Id)
                 {
-                    await turnContext.SendActivityAsync(
-                        $"Welcome to BotBuilderRecognizerBot_v4! {WelcomeText}",
-                        cancellationToken: cancellationToken);
+                    await turnContext.SendActivityAsync(WelcomeText, cancellationToken: cancellationToken);
                 }
             }
+        }
+
+        public static string MomentOrRangeToString(IEnumerable<DateTime> moments, string momentPrefix = "on ")
+        {
+            if (moments.Count() == 1)
+            {
+                return MomentOrRangeToString(moments.First(), momentPrefix);
+            }
+
+            return "from " + string.Join(" to ", moments.Select(m => MomentOrRangeToString(m, string.Empty)));
+        }
+
+        public static string MomentOrRangeToString(DateTime moment, string momentPrefix = "on ")
+        {
+            return momentPrefix + moment.ToString();
         }
     }
 }

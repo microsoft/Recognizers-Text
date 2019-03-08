@@ -1,6 +1,6 @@
 ﻿# BotBuilderRecognizerBotv4
 
-This bot is a simple bot that accepts input from the user and echoes it back.
+This sample demonstrate how the Recognizers can be used with a BotBuilder Bot to parse user input. The bot provides a basic experience for ordering roses, it starts by asking the amount of roses and then asks for a delivery date and time.
 This bot has been created using [Microsoft Bot Framework][1], 
 
 # Prerequisites
