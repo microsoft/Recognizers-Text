@@ -10,6 +10,7 @@ from recognizers_text.utilities import RegExpUtility
 from recognizers_text.extractor import Extractor, ExtractResult
 from recognizers_number.culture import CultureInfo
 from recognizers_sequence.resources import BasePhoneNumbers
+from recognizers_sequence.resources import BaseEmail
 
 ReVal = namedtuple('ReVal', ['re', 'val'])
 MatchesVal = namedtuple('MatchesVal', ['matches', 'val'])
@@ -113,4 +114,19 @@ class BasePhoneNumberExtractor(SequenceExtractor):
             ReVal(RegExpUtility.get_safe_reg_exp(BasePhoneNumbers.NLPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_NL),
             ReVal(RegExpUtility.get_safe_reg_exp(BasePhoneNumbers.SpecialPhoneNumberRegex),
                   Constants.PHONE_NUMBER_REGEX_SPECIAL),
+        ]
+
+class BaseEmailExtractor(SequenceExtractor):
+    @property
+    def _extract_type(self) -> str:
+        return 'email'
+
+    @property
+    def regexes(self) -> List[ReVal]:
+        return self._regexes
+
+    def __init__(self):
+        self._regexes = [
+            ReVal(RegExpUtility.get_safe_reg_exp(BaseEmail.EmailRegex), Constants.EMAIL_REGEX),
+            #ReVal(RegExpUtility.get_safe_reg_exp(BaseEmail.EmailRegex2), Constants.EMAIL_REGEX),
         ]

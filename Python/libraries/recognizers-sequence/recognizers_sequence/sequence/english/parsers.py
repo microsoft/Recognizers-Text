@@ -88,3 +88,6 @@ class PhoneNumberParser(SequenceParser):
         result.resolution_str = source.text
         result.value = self.score_phone_number(source.text)
         return result
+
+class EmailParser(SequenceParser):
+    pass
