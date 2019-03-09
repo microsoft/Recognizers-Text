@@ -2,10 +2,8 @@ from enum import IntFlag
 
 from recognizers_text import Culture, Recognizer
 
-from .english.extractors import PhoneNumberExtractor
-from .english.parsers import PhoneNumberParser
-from .english.extractors import EmailExtractor
-from .english.parsers import EmailParser
+from .english.extractors import PhoneNumberExtractor, EmailExtractor
+from .english.parsers import PhoneNumberParser, EmailParser
 from .models import *
 from .parsers import *
 

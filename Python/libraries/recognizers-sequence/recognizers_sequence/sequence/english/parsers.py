@@ -1,6 +1,6 @@
 import regex as re
 from recognizers_sequence.sequence.parsers import SequenceParser
-from recognizers_sequence.resources import BasePhoneNumbers
+from recognizers_sequence.resources import BasePhoneNumbers, BaseEmail
 from recognizers_text.parser import Parser, ParseResult
 from recognizers_text import ExtractResult
 from recognizers_text.utilities import RegExpUtility
