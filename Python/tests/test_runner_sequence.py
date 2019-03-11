@@ -7,6 +7,7 @@ MODEL_FUNCTION = {
     'Email':recognize_email,
 }
 
+
 @pytest.mark.parametrize('culture, model, options, context, source, expected_results',
                          get_specs(recognizer='Sequence', entity='Model'))
 def test_sequence_recognizer(culture, model, options, context, source, expected_results):
