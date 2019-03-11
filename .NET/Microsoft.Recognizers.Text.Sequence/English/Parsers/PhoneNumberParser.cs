@@ -24,7 +24,6 @@ namespace Microsoft.Recognizers.Text.Sequence.English
         private static int tailSameLimit = 2;
         private static int phoneNumberLengthBase = 8;
         private static int pureDigitLengthLimit = 11;
-        private static int specialUSphoneNumberAward = 15;
 
         // @TODO move regexes to base resource files
         private static string completeBracketRegex = @"\(.*\)";
@@ -37,7 +36,7 @@ namespace Microsoft.Recognizers.Text.Sequence.English
         private static readonly Regex CountryCodeRegex = new Regex(BasePhoneNumbers.CountryCodeRegex);
         private static readonly Regex AreaCodeRegex = new Regex(BasePhoneNumbers.AreaCodeIndicatorRegex);
         private static readonly Regex FormatIndicatorRegex = new Regex(BasePhoneNumbers.FormatIndicatorRegex);
-        private static readonly Regex SpecialUSphonenumbeRegex = new Regex(BasePhoneNumbers.SpecialUSPhoneNumberRegex);
+        private static readonly Regex NoAreaCodeUSphonenumbeRegex = new Regex(BasePhoneNumbers.NoAreaCodeUSPhoneNumberRegex);
 
         public double ScorePhoneNumber(string phoneNumberText)
         {
@@ -83,10 +82,10 @@ namespace Microsoft.Recognizers.Text.Sequence.English
             // Continue digit deduction
             score -= Math.Max(Regex.Matches(phoneNumberText, continueDigitRegex).Count - 1, 0) * continueDigitDeductionScore;
 
-            // Special award for special USphonenumber, i.e. 123-4567 or 123 - 4567
-            if (SpecialUSphonenumbeRegex.IsMatch(phoneNumberText))
+            // Special award for USphonenumber without area code, i.e. 223-4567 or 223 - 4567
+            if (NoAreaCodeUSphonenumbeRegex.IsMatch(phoneNumberText))
             {
-                score += specialUSphoneNumberAward;
+                score += (phoneNumberLengthBase - Regex.Matches(phoneNumberText, digitRegex).Count) * lengthAward * 1.5;
             }
 
             return Math.Max(Math.Min(score, scoreUpperLimit), scoreLowerLimit) / (scoreUpperLimit - scoreLowerLimit);

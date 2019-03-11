@@ -11,7 +11,6 @@ export class PhoneNumberParser extends BaseSequenceParser {
     areaCodeAward = 30;
     formattedAward = 20;
     lengthAward = 10;
-    specialUSphoneNumberAward = 15;
     typicalFormatDeductionScore = 40;
     continueDigitDeductionScore = 10;
     tailSameDeductionScore = 10;
@@ -35,7 +34,7 @@ export class PhoneNumberParser extends BaseSequenceParser {
         let countryCodeRegex = new RegExp(BasePhoneNumbers.CountryCodeRegex);
         let areaCodeRegex = new RegExp(BasePhoneNumbers.AreaCodeIndicatorRegex);
         let formatIndicatorRegex = new RegExp(BasePhoneNumbers.FormatIndicatorRegex, "ig");
-        let specialUSphonenumbeRegex = new RegExp(BasePhoneNumbers.SpecialUSPhoneNumberRegex);
+        let noAreaCodeUSphonenumbeRegex = new RegExp(BasePhoneNumbers.NoAreaCodeUSPhoneNumberRegex);
 
         // Country code score or area code score 
         score += countryCodeRegex.test(phoneNumberText) ?
@@ -78,10 +77,10 @@ export class PhoneNumberParser extends BaseSequenceParser {
             score -= Math.max(phoneNumberText.match(this.continueDigitRegex).length - 1, 0) * this.continueDigitDeductionScore;
         }
 
-        // Special award for special USphonenumber, i.e. 123-4567 or 123 - 4567
-        if (specialUSphonenumbeRegex.test(phoneNumberText))
+        // Special award for special USphonenumber, i.e. 223-4567 or 223 - 4567
+        if (noAreaCodeUSphonenumbeRegex.test(phoneNumberText))
         {
-            score += this.specialUSphoneNumberAward;
+            score += (this.phoneNumberLengthBase - phoneNumberText.match(this.digitRegex).length) * this.lengthAward * 1.5;
         }
 
         return Math.max(Math.min(score, this.scoreUpperLimit), this.scoreLowerLimit) / (this.scoreUpperLimit - this.scoreLowerLimit);
