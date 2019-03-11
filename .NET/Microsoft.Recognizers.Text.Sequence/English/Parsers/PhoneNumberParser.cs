@@ -36,6 +36,7 @@ namespace Microsoft.Recognizers.Text.Sequence.English
         private static readonly Regex CountryCodeRegex = new Regex(BasePhoneNumbers.CountryCodeRegex);
         private static readonly Regex AreaCodeRegex = new Regex(BasePhoneNumbers.AreaCodeIndicatorRegex);
         private static readonly Regex FormatIndicatorRegex = new Regex(BasePhoneNumbers.FormatIndicatorRegex);
+        private static readonly Regex NoAreaCodeUSphonenumbeRegex = new Regex(BasePhoneNumbers.NoAreaCodeUSPhoneNumberRegex);
 
         public double ScorePhoneNumber(string phoneNumberText)
         {
@@ -80,6 +81,12 @@ namespace Microsoft.Recognizers.Text.Sequence.English
 
             // Continue digit deduction
             score -= Math.Max(Regex.Matches(phoneNumberText, continueDigitRegex).Count - 1, 0) * continueDigitDeductionScore;
+
+            // Special award for USphonenumber without area code, i.e. 223-4567 or 223 - 4567
+            if (NoAreaCodeUSphonenumbeRegex.IsMatch(phoneNumberText))
+            {
+                score += lengthAward * 1.5;
+            }
 
             return Math.Max(Math.Min(score, scoreUpperLimit), scoreLowerLimit) / (scoreUpperLimit - scoreLowerLimit);
         }
