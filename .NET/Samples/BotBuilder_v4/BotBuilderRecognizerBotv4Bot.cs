@@ -6,9 +6,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using BotBuilderRecognizerBotv4.Dialogs;
 using Microsoft.Bot.Builder;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Schema;
+using Microsoft.Extensions.Logging;
 using Microsoft.Recognizers.Text.DateTime;
 using Microsoft.Recognizers.Text.Number;
 
@@ -31,14 +33,12 @@ namespace BotBuilderRecognizerSample
 
         private const string PastValueErrorMessage = "I'm sorry, but I need at least an hour to deliver.\n\n $moment$ is no good for me.\n\nWhat other moment suits you best?";
 
-        private readonly BotBuilderRecognizerBotv4Accessors _accessors;
+        //private readonly IStatePropertyAccessor<DeliveryState> _accessors;
 
-        /// <summary>
-        /// The <see cref="DialogSet"/> that contains all the Dialogs that can be used at runtime.
-        /// </summary>
-        private readonly DialogSet _dialogs;
-
-        private bool isDeliverySet = false;
+        private readonly IStatePropertyAccessor<DeliveryState> _deliveryStateAccessor;
+        private readonly IStatePropertyAccessor<DialogState> _dialogStateAccessor;
+        private readonly UserState _userState;
+        private readonly ConversationState _conversationState;
 
         private int quantityRoses;
 
@@ -52,13 +52,20 @@ namespace BotBuilderRecognizerSample
         /// Initializes a new instance of the <see cref="BotBuilderRecognizerBotv4Bot"/> class.
         /// </summary>
         /// <param name="accessors">The state accessors this instance will be needing at runtime.</param>
-        public BotBuilderRecognizerBotv4Bot(BotBuilderRecognizerBotv4Accessors accessors)
+        public BotBuilderRecognizerBotv4Bot(UserState userState, ConversationState conversationState, ILoggerFactory loggerFactory)
         {
-            _accessors = accessors ?? throw new ArgumentNullException(nameof(accessors));
-            _dialogs = new DialogSet(accessors.ConversationDialogState);
-            _dialogs.Add(new TextPrompt("quantity", QuantityValidatorAsync));
-            _dialogs.Add(new TextPrompt("delivery", DeliveryValidatorAsync));
+            _userState = userState ?? throw new ArgumentNullException(nameof(userState));
+            _conversationState = conversationState ?? throw new ArgumentNullException(nameof(conversationState));
+
+            _deliveryStateAccessor = _userState.CreateProperty<DeliveryState>(nameof(DeliveryState));
+            _dialogStateAccessor = _conversationState.CreateProperty<DialogState>(nameof(DialogState));
+
+
+            Dialogs = new DialogSet(_dialogStateAccessor);
+            Dialogs.Add(new DeliveryDialog(_deliveryStateAccessor, loggerFactory));
         }
+
+        private DialogSet Dialogs { get; set; }
 
         /// <summary>
         /// This controls what happens when an <see cref="Activity"/> gets sent to the bot.
@@ -69,61 +76,30 @@ namespace BotBuilderRecognizerSample
         /// <returns>>A <see cref="Task"/> representing the operation result of the Turn operation.</returns>
         public async Task OnTurnAsync(ITurnContext turnContext, CancellationToken cancellationToken = default(CancellationToken))
         {
-            if (turnContext == null)
-            {
-                throw new ArgumentNullException(nameof(turnContext));
-            }
+            var activity = turnContext.Activity;
+            var dialogContext = await Dialogs.CreateContextAsync(turnContext);
 
             // We are only interested in Message Activities.
             if (turnContext.Activity.Type == ActivityTypes.Message)
             {
-                // Run the DialogSet - let the framework identify the current state of the dialog from
-                // the dialog stack and figure out what (if any) is the active dialog.
-                var dialogContext = await _dialogs.CreateContextAsync(turnContext, cancellationToken);
-                var results = await dialogContext.ContinueDialogAsync(cancellationToken);
+                var results = await dialogContext.ContinueDialogAsync();
 
                 // If the DialogTurnStatus is Empty we should start a new dialog.
-                if (results.Status == DialogTurnStatus.Empty)
+                if (!dialogContext.Context.Responded)
                 {
-                    // A prompt dialog can be started directly on from the DialogContext. The prompt text is given in the PromptOptions.
-                    // We have defined a RetryPrompt here so this will be used. Otherwise the Prompt text will be repeated.
-                    await dialogContext.PromptAsync(
-                        "quantity",
-                        new PromptOptions
-                        {
-                            Prompt = MessageFactory.Text("How many roses do you want to send ?\n\n" +
-                            "Some valid options are:\n\n" +
-                            " - A dozen\n\n" +
-                            " - 22\n\n" +
-                            " - Just one rose"),
-                            RetryPrompt = MessageFactory.Text("That wasn't a valid quantity. Please try again."),
-                        },
-                        cancellationToken);
-                }
-                else
-                {
-                    // Check for a result.
-                    if (results.Result != null)
+                    // examine results from active dialog
+                    switch (results.Status)
                     {
-                        // And finish by sending a message to the user. Next time ContinueAsync is called it will return DialogTurnStatus.Empty.
-                        await turnContext.SendActivityAsync(MessageFactory.Text(results.Result.ToString()),cancellationToken);
+                        case DialogTurnStatus.Empty:
+                            await dialogContext.BeginDialogAsync(nameof(DeliveryDialog));
+                            break;
+                        case DialogTurnStatus.Complete:
+                            await dialogContext.EndDialogAsync();
+                            break;
 
-                        if (!isDeliverySet)
-                        {
-                            await dialogContext.PromptAsync(
-                            "delivery",
-                            new PromptOptions
-                            {
-                                Prompt = MessageFactory.Text("When do you want to receive the delivery?\n\n" +
-                                "Some valid options are:\n\n" +
-                                " - Tomorrow morning\n\n" +
-                                " - 12/30/2017\n\n" +
-                                " - 9PM Tomorrow\n\n" +
-                                " - Five hours from now"),
-                                RetryPrompt = MessageFactory.Text("I'm sorry, that doesn't seem to be a valid delivery date and time"),
-                            },
-                            cancellationToken);
-                        }
+                        default:
+                            await dialogContext.CancelAllDialogsAsync();
+                            break;
                     }
                 }
             }
@@ -141,7 +117,8 @@ namespace BotBuilderRecognizerSample
             }
 
             // Save the new turn count into the conversation state.
-            await _accessors.ConversationState.SaveChangesAsync(turnContext, false, cancellationToken);
+            await _conversationState.SaveChangesAsync(turnContext);
+            await _userState.SaveChangesAsync(turnContext);
         }
 
         /// <summary>
