@@ -80,7 +80,7 @@ export class PhoneNumberParser extends BaseSequenceParser {
         // Special award for special USphonenumber, i.e. 223-4567 or 223 - 4567
         if (noAreaCodeUSphonenumbeRegex.test(phoneNumberText))
         {
-            score += (this.phoneNumberLengthBase - phoneNumberText.match(this.digitRegex).length) * this.lengthAward * 1.5;
+            score += this.lengthAward * 1.5;
         }
 
         return Math.max(Math.min(score, this.scoreUpperLimit), this.scoreLowerLimit) / (this.scoreUpperLimit - this.scoreLowerLimit);

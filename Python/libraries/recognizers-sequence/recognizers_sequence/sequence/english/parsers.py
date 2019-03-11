@@ -83,7 +83,7 @@ class PhoneNumberParser(SequenceParser):
 
         # Special award for special USphonenumber, i.e. 223-4567 or 223 - 4567
         if no_area_code_USphonenumber_regex.match(phone_number_text):
-            score += (self.phoneNumberLengthBase - len(list(self.digitRegex.finditer(phone_number_text)))) * self.lengthAward * 1.5
+            score += self.lengthAward * 1.5
 
         return max(min(score, self.scoreUpperLimit), self.scoreLowerLimit) / (
                 self.scoreUpperLimit - self.scoreLowerLimit)

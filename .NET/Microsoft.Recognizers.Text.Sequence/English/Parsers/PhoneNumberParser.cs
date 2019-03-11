@@ -85,7 +85,7 @@ namespace Microsoft.Recognizers.Text.Sequence.English
             // Special award for USphonenumber without area code, i.e. 223-4567 or 223 - 4567
             if (NoAreaCodeUSphonenumbeRegex.IsMatch(phoneNumberText))
             {
-                score += (phoneNumberLengthBase - Regex.Matches(phoneNumberText, digitRegex).Count) * lengthAward * 1.5;
+                score += lengthAward * 1.5;
             }
 
             return Math.Max(Math.Min(score, scoreUpperLimit), scoreLowerLimit) / (scoreUpperLimit - scoreLowerLimit);
