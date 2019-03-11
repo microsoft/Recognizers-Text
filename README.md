@@ -3,7 +3,7 @@
 ![Build Status](https://msrasia.visualstudio.com/_apis/public/build/definitions/310c848f-b260-4305-9255-b97bfb69974b/116/badge)
 ![Build Status](https://ci.appveyor.com/api/projects/status/github/Microsoft/Recognizers-Text?branch=master&svg=true&passingText=all%20plats%20-%20OK)
 
-Microsoft.Recognizers.Text provides robust recognition and resolution of entities like numbers, units, and date/time; expressed in multiple languages. Full support for Chinese, English, French, Spanish, and Portuguese. Partial support for German, Japanese, Korean, and Dutch. More on the way.
+Microsoft.Recognizers.Text provides robust recognition and resolution of entities like numbers, units, and date/time; expressed in multiple languages. Full support for Chinese, English, French, Spanish, Portuguese, and German. Partial support for Dutch, Japanese, and Korean. More on the way.
 
 # Utilizing the Project
 
@@ -16,7 +16,7 @@ The Microsoft.Recognizers.Text packages currently target four platforms:
 * [Java](https://github.com/Microsoft/Recognizers-Text/tree/master/Java) (in progress)
 
 Contributions are greatly welcome! Both for fixes and extensions in the currently supported languages and for expansion to new ones.
-Especially for Japanese, Italian, Korean, and Dutch. More info below.
+Especially for Dutch, Italian, Japanese, Korean, and Turkish. More info below.
 
 # Contributing
 
@@ -53,7 +53,7 @@ The table below summarizes the currently supported entities. Support for English
 | Seq. - IP Address    | G    | G        | G    | G      | G     | G       | G      | G      | G      | G       |
 | Seq. - Phone Number  | G    | G        | G    | G      | G     | G       | G      | G      | G      | G       |
 | Seq. - URL           | G    | G*       | G    | G      | G     | G       | G      | G      | G      | G       |
-| DateTime (+subtypes) | ✓    | ✓       | **SP**    | ✓     | **partial (bugs)** :warning: | **SO** | **SI min** | **SI min** | ✓  | ✓      | 
+| DateTime (+subtypes) | ✓    | ✓       | **SP**    | ✓     | ✓ | **SO** | **SI min** | **SI min** | ✓  | ✓      | 
 * G: Generic entity, not language-specific (* unicode TLDs not-supported);
 * SO: Specs-only;
 * SP: Partial specs;
