@@ -10,7 +10,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Recognizers.Text.DateTime;
 using Microsoft.Recognizers.Text.Number;
 
-namespace BotBuiderV4
+namespace BotBuilderRecognizerBot
 {
     public class DeliveryDialog : ComponentDialog
     {

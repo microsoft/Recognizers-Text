@@ -1,5 +1,5 @@
-# BotBuiderV4
-This sample demonstrates how the Recognizers can be used with a BotBuilder Bot to parse user input. The bot provides a basic experience for ordering roses, it starts by asking the amount of roses and then asks for a delivery date and time.
+# BotBuilderRecognizerBot
+This sample demonstrates how the Recognizers can be used with a BotBuilder v4 Bot to parse user input. The bot provides a basic experience for ordering roses, it starts by asking the amount of roses and then asks for a delivery date and time.
 This bot has been created using [Bot Framework][1], it shows how to:
 - Implement a multi-turn conversation using Dialogs
 - Prompt for and validate requests for information from the user

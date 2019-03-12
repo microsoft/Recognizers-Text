@@ -15,7 +15,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
-namespace BotBuiderV4
+namespace BotBuilderRecognizerBot
 {
     /// <summary>
     /// The Startup class configures services and the app's request pipeline.
@@ -127,13 +127,13 @@ namespace BotBuiderV4
             var userState = new UserState(dataStore);
             services.AddSingleton(userState);
 
-            services.AddBot<BotBuiderV4Bot>(options =>
+            services.AddBot<BotBuilderRecognizerBot>(options =>
           {
               options.CredentialProvider = new SimpleCredentialProvider(endpointService.AppId, endpointService.AppPassword);
 
              // Catches any errors that occur during a conversation turn and logs them to currently
              // configured ILogger.
-              ILogger logger = _loggerFactory.CreateLogger<BotBuiderV4Bot>();
+              ILogger logger = _loggerFactory.CreateLogger<BotBuilderRecognizerBot>();
 
               options.OnTurnError = async (context, exception) =>
               {

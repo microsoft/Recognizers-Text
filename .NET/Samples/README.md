@@ -351,7 +351,7 @@ private async Task OnDeliverySelected(IDialogContext context, IAwaitable<IEnumer
 }
 ````
 ## BotBuilder V4 Sample ([source](./BotBuilderV4))
-This sample is a variant of the BotBuilder sample implementing the version 4 of the SDK. It uses a waterfall dialog instead of individual prompts to obtein user input.
+This sample is a variant of the BotBuilder sample implementing the version 4 of the SDK. It uses a waterfall dialog instead of individual prompts to obtain user input.
 
 ````C#
 public DeliveryDialog(IStatePropertyAccessor<DeliveryState> userProfileStateAccessor, string culture, ILoggerFactory loggerFactory)

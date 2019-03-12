@@ -9,12 +9,12 @@ using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Schema;
 using Microsoft.Extensions.Logging;
 
-namespace BotBuiderV4
+namespace BotBuilderRecognizerBot
 {
     /// <summary>
     /// Main entry point and orchestration for bot.
     /// </summary>
-    public class BotBuiderV4Bot : IBot
+    public class BotBuilderRecognizerBot : IBot
     {
         private const string WelcomeText = "Welcome to Contoso Roses. These are the roses you are looking for! Type anything to get started";
 
@@ -27,12 +27,12 @@ namespace BotBuiderV4
         private readonly ConversationState _conversationState;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="BotBuiderV4Bot"/> class.
+        /// Initializes a new instance of the <see cref="BotBuilderRecognizerBot"/> class.
         /// </summary>
         /// <param name="userState">User State accessor.</param>
         /// <param name="conversationState">Conversation State accessor.</param>
         /// <param name="loggerFactory">loggerFactory.</param>
-        public BotBuiderV4Bot(UserState userState, ConversationState conversationState, ILoggerFactory loggerFactory)
+        public BotBuilderRecognizerBot(UserState userState, ConversationState conversationState, ILoggerFactory loggerFactory)
         {
             _userState = userState ?? throw new ArgumentNullException(nameof(userState));
             _conversationState = conversationState ?? throw new ArgumentNullException(nameof(conversationState));

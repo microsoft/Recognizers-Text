@@ -6,7 +6,7 @@ using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace BotBuiderV4
+namespace BotBuilderRecognizerBot
 {
     public class Program
     {
