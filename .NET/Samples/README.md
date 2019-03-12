@@ -350,6 +350,30 @@ private async Task OnDeliverySelected(IDialogContext context, IAwaitable<IEnumer
     }
 }
 ````
+## BotBuilder V4 Sample ([source](./BotBuilderV4))
+This sample is a variant of the BotBuilder sample implementing the version 4 of the SDK. It uses a waterfall dialog instead of individual prompts to obtein user input.
+
+````C#
+public DeliveryDialog(IStatePropertyAccessor<DeliveryState> userProfileStateAccessor, string culture, ILoggerFactory loggerFactory)
+	: base(nameof(DeliveryDialog))
+{
+	UserProfileAccessor = userProfileStateAccessor ?? throw new ArgumentNullException(nameof(userProfileStateAccessor));
+
+	this.culture = culture;
+
+	// Add control flow dialogs
+	var waterfallSteps = new WaterfallStep[]
+	{
+		InitializeStateStepAsync,
+		PromptForQuantityStepAsync,
+		PromptForDateStepAsync,
+		DisplayDeliveryStateStepAsync,
+	};
+	AddDialog(new WaterfallDialog(ProfileDialog, waterfallSteps));
+	AddDialog(new TextPrompt(QuantityPrompt, ValidateQuantity));
+	AddDialog(new TextPrompt(DatePrompt, ValidateDate));
+}
+````
 
 ## Recognizer Function ([source](./RecognizerFunction))
 This sample is a variant of the SimpleConsole, which you can deploy as a Web API using Azure Functions (serverless). It is a combination of all Recognizers to extract possible values from the user's input. 
