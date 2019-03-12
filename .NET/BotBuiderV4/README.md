@@ -1,9 +1,7 @@
 # BotBuiderV4
-
+This sample demonstrate how the Recognizers can be used with a BotBuilder Bot to parse user input. The bot provides a basic experience for ordering roses, it starts by asking the amount of roses and then asks for a delivery date and time.
 This bot has been created using [Bot Framework][1], it shows how to:
-- Use [LUIS][11] to implement core AI capabilities
 - Implement a multi-turn conversation using Dialogs
-- Handle user interruptions for such things as `Help` or `Cancel`
 - Prompt for and validate requests for information from the user
 
 This sample requires prerequisites in order to run.
@@ -15,38 +13,6 @@ This sample requires prerequisites in order to run.
     # change into project folder
 	cd <your_project_folder>/BotBuiderV4
     ```
-- Setup LUIS
-
-    Assuming prerequisites have been installed:
-    ```bash
-    # log into Azure
-    az login
-    ```
-    ```bash
-    # set you Azure subscription
-    az account set --subscription "<azure-subscription>"
-    ```
-    Before creating the Luis service application, is recommendable following the next steps:
-
-    - Delete the auto-generated .bot file, as the `msbot clone services` command can't update an existing file.
-    - As the command `msbot clone services` uses secret-manager to safely store the key generated for encrypting the bot file, it's necessary adding the next code in your BotBuiderV4.csproj file:
-
-    ```
-        <PropertyGroup>
-            <UserSecretsId>GUID</UserSecretsId>
-        </PropertyGroup>
-    ```
-    **Note**: You can add any arbitrary `GUID` value for the `UserSecretsId` property, but you can not repeat `GUID` values among the projects, as they must be unique.
-
-    - Install Microsoft.Extensions.Configuration.UserSecrets NuGet package
-
-    ```bash
-    # Create LUIS service application
-    msbot clone services --name "BotBuiderV4" --luisAuthoringKey <LUIS-authoring-key> --code-dir "." --location westus --sdkLanguage "CSharp" --folder deploymentScripts/msbotClone --verbose
-    ```
-
-    **Note**: Once the Luis service application is created, change the value of `LuisConfiguration` variable in BotBuiderV4Bot.cs with the Luis service name, which can be found in BotBuiderV4.bot file (it should be `BotBuiderV4_core-bot-LUIS`).
-
 - Run the bot from a terminal or from Visual Studio, choose option A or B.
 
 	A) From a terminal

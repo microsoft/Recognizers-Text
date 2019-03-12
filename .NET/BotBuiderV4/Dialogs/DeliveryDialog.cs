@@ -14,19 +14,22 @@ namespace BotBuiderV4
 {
     public class DeliveryDialog : ComponentDialog
     {
-        // User state for greeting dialog
-        private const string GDeliveryStateProperty = "deliveryState";
+        // User state for delivery dialog
+        private const string DeliveryStateProperty = "deliveryState";
         private const string QuantityValue = "deliveryQuantity";
         private const string DateValue = "deliveryDate";
 
-        // Prompts names
+        // Prompts
         private const string QuantityPrompt = "quantityPrompt";
         private const string DatePrompt = "datePrompt";
 
         // Dialog IDs
         private const string ProfileDialog = "profileDialog";
 
-        private const string PastValueErrorMessage = "I'm sorry, but I need at least an hour to deliver.\n\n $moment$ is no good for me.";
+        // Error messages
+        private const string InvalidQuantityErrorMessage = "I'm sorry, that doesn't seem to be a valid quantity of roses. Please, try again";
+        private const string InvalidDateErrorMessage = "I'm sorry, that doesn't seem to be a valid delivery date and time. Please, try again";
+        private const string PastValueErrorMessage = "I'm sorry, but I need at least an hour to deliver.\n\n $moment$ is no good for me.\n\nWhat other moment suits you best?";
 
         public static bool IsFuture(DateTime date)
         {
@@ -56,20 +59,7 @@ namespace BotBuiderV4
 
         private async Task<DialogTurnResult> InitializeStateStepAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
         {
-            //var deliveryState = await UserProfileAccessor.GetAsync(stepContext.Context, () => null);
-            //if (deliveryState == null)
-            //{
-            //    var deliveryStateOpt = stepContext.Options as DeliveryState;
-            //    if (deliveryStateOpt != null)
-            //    {
-            //        await UserProfileAccessor.SetAsync(stepContext.Context, deliveryStateOpt);
-            //    }
-            //    else
-            //    {
-                    await UserProfileAccessor.SetAsync(stepContext.Context, new DeliveryState());
-            //    }
-            //}
-
+            await UserProfileAccessor.SetAsync(stepContext.Context, new DeliveryState());
             return await stepContext.NextAsync();
         }
 
@@ -79,7 +69,7 @@ namespace BotBuiderV4
         {
             var deliveryState = await UserProfileAccessor.GetAsync(stepContext.Context);
 
-            // if we have everything we need, greet user and return.
+            // if we have everything we need, confirm delivery user and return.
             if (deliveryState != null && !string.IsNullOrWhiteSpace(deliveryState.Quantity) && !string.IsNullOrWhiteSpace(deliveryState.Date))
             {
                 return await ConfirmDelivery(stepContext);
@@ -87,7 +77,7 @@ namespace BotBuiderV4
 
             if (string.IsNullOrWhiteSpace(deliveryState.Quantity))
             {
-                // prompt for name, if missing
+                // prompt for quantity, if missing
                 var opts = new PromptOptions
                 {
                     Prompt = new Activity
@@ -157,7 +147,7 @@ namespace BotBuiderV4
         }
 
         /// <summary>
-        /// Validator function to verify if the user name meets required constraints.
+        /// Validator function to verify if the quantity the user entered gets recognized.
         /// </summary>
         /// <param name="promptContext">Context for this prompt.</param>
         /// <param name="cancellationToken">A <see cref="CancellationToken"/> that can be used by other objects
@@ -170,7 +160,7 @@ namespace BotBuiderV4
 
             if (results.Count == 0)
             {
-                await promptContext.Context.SendActivityAsync($"Sorry, that doesn't seem to be a valid quantity of roses. Please, try again");
+                await promptContext.Context.SendActivityAsync(InvalidQuantityErrorMessage);
                 return false;
             }
 
@@ -179,29 +169,28 @@ namespace BotBuiderV4
                 // Validate number
                 if ((value < 0) || (value % 1 != 0) )
                 {
-                    await promptContext.Context.SendActivityAsync($"Sorry, that doesn't seem to be a valid quantity of roses. Please, try again");
+                    await promptContext.Context.SendActivityAsync(InvalidQuantityErrorMessage);
                     return false;
                 }
 
-                // return as string
                 var quantityRoses = Convert.ToInt32(results.First().Resolution["value"]);
                 var quantityMessage = quantityRoses == 1
                 ? "I'll send just one rose."
                 : $"I'll send {quantityRoses} roses.";
+                promptContext.Recognized.Value = quantityRoses.ToString();
                 await promptContext.Context.SendActivityAsync(quantityMessage);
-                //promptContext.Recognized.Value = quantityRoses.ToString();
                 return true;
             }
             else
             {
-                await promptContext.Context.SendActivityAsync($"Sorry, that doesn't seem to be a valid quantity of roses. Please, try again");
+                await promptContext.Context.SendActivityAsync(InvalidQuantityErrorMessage);
                 return false;
             }
 
         }
 
         /// <summary>
-        /// Validator function to verify if city meets required constraints.
+        /// Validator function to verify if date the user entered gets recognized.
         /// </summary>
         /// <param name="promptContext">Context for this prompt.</param>
         /// <param name="cancellationToken">A <see cref="CancellationToken"/> that can be used by other objects
@@ -213,7 +202,7 @@ namespace BotBuiderV4
 
             if (result is null)
             {
-                await promptContext.Context.SendActivityAsync("I'm sorry, that doesn't seem to be a valid delivery date and time");
+                await promptContext.Context.SendActivityAsync(InvalidDateErrorMessage);
                 return false;
             }
 
@@ -234,21 +223,18 @@ namespace BotBuiderV4
                     if (IsFuture(moment))
                     {
                         // a future moment, valid!
-                        //promptContext.Recognized.Value = $"Thank you! I'll deliver the roses on {moment}.";
                         promptContext.Recognized.Value = moment.ToString();
                         return true;
                     }
 
                     // a past moment
-                    //promptContext.Recognized.Value = PastValueErrorMessage.Replace("$moment$", MomentOrRangeToString(moment));
-                    promptContext.Context.SendActivityAsync(PastValueErrorMessage.Replace("$moment$", MomentOrRangeToString(moment)));
+                    await promptContext.Context.SendActivityAsync(PastValueErrorMessage.Replace("$moment$", MomentOrRangeToString(moment)));
                     return false;
                 }
             }
 
-            promptContext.Context.SendActivityAsync("I'm sorry, that doesn't seem to be a valid delivery date and time");
+            await promptContext.Context.SendActivityAsync(InvalidDateErrorMessage);
             return false;
-
         }
 
         public static string MomentOrRangeToString(IEnumerable<DateTime> moments, string momentPrefix = "on ")
