@@ -167,7 +167,7 @@ namespace BotBuiderV4
             if (results.First().TypeName == "number" && double.TryParse(results.First().Resolution["value"].ToString(), out double value))
             {
                 // Validate number
-                if ((value < 0) || (value % 1 != 0) )
+                if ((value < 1) || (value % 1 != 0) )
                 {
                     await promptContext.Context.SendActivityAsync(InvalidQuantityErrorMessage);
                     return false;
