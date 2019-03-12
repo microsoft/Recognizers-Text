@@ -1,7 +1,6 @@
 [
   {
     "Input": "v-abc@microsoft.com",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "v-abc@microsoft.com",
@@ -14,7 +13,6 @@
   },
   {
     "Input": "abc@google.com",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "abc@google.com",
@@ -27,7 +25,6 @@
   },
   {
     "Input": "a_b.c@163.com",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "a_b.c@163.com",
@@ -40,7 +37,6 @@
   },
   {
     "Input": "123456789@tx.com",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "123456789@tx.com",
@@ -53,7 +49,6 @@
   },
   {
     "Input": "Alice_1@outlook.com",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "Alice_1@outlook.com",
@@ -66,7 +61,6 @@
   },
   {
     "Input": "Bob@try1989.com",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "Bob@try1989.com",
@@ -79,7 +73,6 @@
   },
   {
     "Input": "Hello, @Carol, please write to me at Dave@abc.com for more information on task #A1",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "Dave@abc.com",
@@ -92,27 +85,22 @@
   },
   {
     "Input": "Alice@abc is invalid",
-    "NotSupportedByDesign": "python",
     "Results": []
   },
   {
     "Input": "Bob@abc.c is invalid",
-    "NotSupportedByDesign": "python",
     "Results": []
   },
   {
     "Input": "Carol@new_type.com is invalid because _ is not allowed in the host name",
-    "NotSupportedByDesign": "python",
     "Results": []
   },
   {
     "Input": "Hi, @Eve, you can find my CV at https://frank.website.com/CV/#cite_2",
-    "NotSupportedByDesign": "python",
     "Results": []
   },
   {
     "Input": "d.j@server1.proseware.com is a valid email address",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "d.j@server1.proseware.com",
@@ -138,12 +126,10 @@
   },
   {
     "Input": "j_9@129.126.118.1 is an invalid email address",
-    "NotSupportedByDesign": "python",
     "Results": []
   },
   {
     "Input": "user.name+tag@lero.com is a valid email address",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "user.name+tag@lero.com",

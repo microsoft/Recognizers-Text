@@ -52,3 +52,8 @@ class PhoneNumberModel(AbstractSequenceModel):
             'value': data.resolution_str,
             'score': '%g'% data.value
         }
+
+class EmailModel(AbstractSequenceModel):
+    @property
+    def model_type_name(self) -> str:
+        return 'email'
