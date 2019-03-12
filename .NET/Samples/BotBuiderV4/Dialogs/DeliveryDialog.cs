@@ -261,8 +261,12 @@ namespace BotBuiderV4
             var context = stepContext.Context;
             var deliveryState = await UserProfileAccessor.GetAsync(context);
 
+            var confirmMessage = deliveryState.Quantity == "1"
+                ? $"Thank you! I'll deliver one rose on {deliveryState.Date}."
+                : $"Thank you! I'll deliver {deliveryState.Quantity} roses on {deliveryState.Date}.";
+
             // Display the profile information and end dialog.
-            await context.SendActivityAsync($"Thank you! I'll deliver {deliveryState.Quantity} roses on {deliveryState.Date}.");
+            await context.SendActivityAsync(confirmMessage);
             return await stepContext.EndDialogAsync();
         }
     }
