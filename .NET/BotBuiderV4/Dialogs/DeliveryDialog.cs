@@ -31,16 +31,20 @@ namespace BotBuiderV4
         private const string InvalidDateErrorMessage = "I'm sorry, that doesn't seem to be a valid delivery date and time. Please, try again";
         private const string PastValueErrorMessage = "I'm sorry, but I need at least an hour to deliver.\n\n $moment$ is no good for me.\n\nWhat other moment suits you best?";
 
+        private readonly string culture;
+
         public static bool IsFuture(DateTime date)
         {
             // at least one hour
             return date > DateTime.Now.AddHours(1);
         }
 
-        public DeliveryDialog(IStatePropertyAccessor<DeliveryState> userProfileStateAccessor, ILoggerFactory loggerFactory)
+        public DeliveryDialog(IStatePropertyAccessor<DeliveryState> userProfileStateAccessor, string culture, ILoggerFactory loggerFactory)
             : base(nameof(DeliveryDialog))
         {
             UserProfileAccessor = userProfileStateAccessor ?? throw new ArgumentNullException(nameof(userProfileStateAccessor));
+
+            this.culture = culture;
 
             // Add control flow dialogs
             var waterfallSteps = new WaterfallStep[]
@@ -156,7 +160,7 @@ namespace BotBuiderV4
         private async Task<bool> ValidateQuantity(PromptValidatorContext<string> promptContext, CancellationToken cancellationToken)
         {
             var result = promptContext.Recognized.Value ?? string.Empty;
-            var results = NumberRecognizer.RecognizeNumber(result, "en-us");
+            var results = NumberRecognizer.RecognizeNumber(result, culture);
 
             if (results.Count == 0)
             {
@@ -206,9 +210,9 @@ namespace BotBuiderV4
                 return false;
             }
 
-            var results = DateTimeRecognizer.RecognizeDateTime(result, "en-us");
+            var results = DateTimeRecognizer.RecognizeDateTime(result, culture);
 
-            if (results.Count > 0 && results.First().TypeName == "datetimeV2.date")
+            if (results.Count > 0 && results.First().TypeName.StartsWith("datetimeV2"))
             {
                 // The DateTime model can return several resolution types (https://github.com/Microsoft/Recognizers-Text/blob/master/.NET/Microsoft.Recognizers.Text.DateTime/Constants.cs#L7-L14)
                 // We only care for those with a date, date and time, or date time period:

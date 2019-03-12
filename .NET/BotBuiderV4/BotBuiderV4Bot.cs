@@ -41,10 +41,17 @@ namespace BotBuiderV4
             _dialogStateAccessor = _conversationState.CreateProperty<DialogState>(nameof(DialogState));
 
             Dialogs = new DialogSet(_dialogStateAccessor);
-            Dialogs.Add(new DeliveryDialog(_deliveryStateAccessor, loggerFactory));
+            Dialogs.Add(new DeliveryDialog(_deliveryStateAccessor, GetCurrentCultureCode(), loggerFactory));
         }
 
         private DialogSet Dialogs { get; set; }
+
+        private static string GetCurrentCultureCode()
+        {
+            // Use English as default culture since this sample bot that does not include any localization resources
+            // Thread.CurrentThread.CurrentUICulture.IetfLanguageTag.ToLower() can be used to obtain the user's preferred culture
+            return "en-us";
+        }
 
         /// <summary>
         /// Run every turn of the conversation. Handles orchestration of messages.
