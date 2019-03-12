@@ -26,16 +26,14 @@ namespace BotBuiderV4
 
         private readonly ConversationState _conversationState;
 
-        private readonly BotServices _services;
-
         /// <summary>
         /// Initializes a new instance of the <see cref="BotBuiderV4Bot"/> class.
         /// <param name="botServices">Bot services.</param>
         /// <param name="accessors">Bot State Accessors.</param>
         /// </summary>
-        public BotBuiderV4Bot(BotServices services, UserState userState, ConversationState conversationState, ILoggerFactory loggerFactory)
+        //public BotBuiderV4Bot(BotServices services, UserState userState, ConversationState conversationState, ILoggerFactory loggerFactory)
+        public BotBuiderV4Bot(UserState userState, ConversationState conversationState, ILoggerFactory loggerFactory)
         {
-            _services = services ?? throw new ArgumentNullException(nameof(services));
             _userState = userState ?? throw new ArgumentNullException(nameof(userState));
             _conversationState = conversationState ?? throw new ArgumentNullException(nameof(conversationState));
 

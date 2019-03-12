@@ -16,23 +16,18 @@
     {
       "type": "abs",
       "id": "3",
-      "name": "core-Bot"
+      "name": "BotBuiderV4-Bot"
     },
     {
       "type": "appInsights",
       "id": "4",
-      "name": "core-Insights"
+      "name": "BotBuiderV4-Insights"
     },
     {
       "type": "blob",
       "id": "5",
-      "name": "core-Blob",
+      "name": "BotBuiderV4-Blob",
       "container": "botstatestore"
-    },
-    {
-      "type": "luis",
-      "id": "34",
-      "name": "core-bot-LUIS"
     }
   ]
 }

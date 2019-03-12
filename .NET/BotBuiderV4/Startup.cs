@@ -84,10 +84,6 @@ namespace BotBuiderV4
 
             services.AddSingleton(sp => botConfig ?? throw new InvalidOperationException($"The .bot configuration file could not be loaded. botFilePath: {botFilePath}"));
 
-            // Add BotServices singleton.
-            // Create the connected services from .bot file.
-            services.AddSingleton(sp => new BotServices(botConfig));
-
             // Retrieve current endpoint.
             var environment = _isProduction ? "production" : "development";
             var service = botConfig.Services.FirstOrDefault(s => s.Type == "endpoint" && s.Name == environment);
