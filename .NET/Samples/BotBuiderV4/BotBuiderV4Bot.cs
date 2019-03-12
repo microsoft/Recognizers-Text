@@ -28,10 +28,10 @@ namespace BotBuiderV4
 
         /// <summary>
         /// Initializes a new instance of the <see cref="BotBuiderV4Bot"/> class.
-        /// <param name="botServices">Bot services.</param>
-        /// <param name="accessors">Bot State Accessors.</param>
         /// </summary>
-        //public BotBuiderV4Bot(BotServices services, UserState userState, ConversationState conversationState, ILoggerFactory loggerFactory)
+        /// <param name="userState">User State accessor.</param>
+        /// <param name="conversationState">Conversation State accessor.</param>
+        /// <param name="loggerFactory">loggerFactory.</param>
         public BotBuiderV4Bot(UserState userState, ConversationState conversationState, ILoggerFactory loggerFactory)
         {
             _userState = userState ?? throw new ArgumentNullException(nameof(userState));
@@ -46,19 +46,12 @@ namespace BotBuiderV4
 
         private DialogSet Dialogs { get; set; }
 
-        private static string GetCurrentCultureCode()
-        {
-            // Use English as default culture since this sample bot that does not include any localization resources
-            // Thread.CurrentThread.CurrentUICulture.IetfLanguageTag.ToLower() can be used to obtain the user's preferred culture
-            return "en-us";
-        }
-
         /// <summary>
         /// Run every turn of the conversation. Handles orchestration of messages.
+        /// </summary>
         /// <param name="turnContext">Bot Turn Context.</param>
         /// <param name="cancellationToken">Task CancellationToken.</param>
         /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
-        /// </summary>
         public async Task OnTurnAsync(ITurnContext turnContext, CancellationToken cancellationToken)
         {
             var activity = turnContext.Activity;
@@ -114,6 +107,13 @@ namespace BotBuiderV4
 
             await _conversationState.SaveChangesAsync(turnContext);
             await _userState.SaveChangesAsync(turnContext);
+        }
+
+        private static string GetCurrentCultureCode()
+        {
+            // Use English as default culture since this sample bot that does not include any localization resources
+            // Thread.CurrentThread.CurrentUICulture.IetfLanguageTag.ToLower() can be used to obtain the user's preferred culture
+            return "en-us";
         }
 
         // Create a message response.

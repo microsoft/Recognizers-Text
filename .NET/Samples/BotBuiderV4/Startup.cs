@@ -29,9 +29,9 @@ namespace BotBuiderV4
         /// Initializes a new instance of the <see cref="Startup"/> class.
         /// This method gets called by the runtime. Use this method to add services to the container.
         /// For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940.
-        /// <param name="env">Provides information about the web hosting environment an application is running in.</param>
         /// </summary>
-        //  See https://docs.microsoft.com/en-us/aspnet/core/fundamentals/startup?view=aspnetcore-2.1 for startup fundamentals.
+        /// <param name="env">Provides information about the web hosting environment an application is running in.</param>
+        // See https://docs.microsoft.com/en-us/aspnet/core/fundamentals/startup?view=aspnetcore-2.1 for startup fundamentals.
         public Startup(IHostingEnvironment env)
         {
             _isProduction = env.IsProduction();
@@ -47,16 +47,16 @@ namespace BotBuiderV4
 
         /// <summary>
         /// Gets the configuration that represents a set of key/value application configuration properties.
+        /// </summary>
         /// <value>
         /// The <see cref="IConfiguration"/> that represents a set of key/value application configuration properties.
         /// </value>
-        /// </summary>
         public IConfiguration Configuration { get; }
 
         /// <summary>
         /// This method gets called by the runtime. Use this method to add services to the container.
-        /// <param name="services">Specifies the contract for a <see cref="IServiceCollection"/> of service descriptors.</param>
         /// </summary>
+        /// <param name="services">Specifies the contract for a <see cref="IServiceCollection"/> of service descriptors.</param>
         public void ConfigureServices(IServiceCollection services)
         {
             var secretKey = Configuration.GetSection("botFileSecret")?.Value;
@@ -131,9 +131,9 @@ namespace BotBuiderV4
           {
               options.CredentialProvider = new SimpleCredentialProvider(endpointService.AppId, endpointService.AppPassword);
 
-                // Catches any errors that occur during a conversation turn and logs them to currently
-                // configured ILogger.
-                ILogger logger = _loggerFactory.CreateLogger<BotBuiderV4Bot>();
+             // Catches any errors that occur during a conversation turn and logs them to currently
+             // configured ILogger.
+              ILogger logger = _loggerFactory.CreateLogger<BotBuiderV4Bot>();
 
               options.OnTurnError = async (context, exception) =>
               {
@@ -145,10 +145,10 @@ namespace BotBuiderV4
 
         /// <summary>
         /// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        /// </summary>
         /// <param name="app">Application Builder.</param>
         /// <param name="env">Hosting Environment.</param>
         /// <param name="loggerFactory">The <see cref="ILoggerFactory"/> to create logger object for tracing.</param>
-        /// </summary>
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
             _loggerFactory = loggerFactory;

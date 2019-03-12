@@ -33,12 +33,6 @@ namespace BotBuiderV4
 
         private readonly string culture;
 
-        public static bool IsFuture(DateTime date)
-        {
-            // at least one hour
-            return date > DateTime.Now.AddHours(1);
-        }
-
         public DeliveryDialog(IStatePropertyAccessor<DeliveryState> userProfileStateAccessor, string culture, ILoggerFactory loggerFactory)
             : base(nameof(DeliveryDialog))
         {
@@ -60,6 +54,27 @@ namespace BotBuiderV4
         }
 
         public IStatePropertyAccessor<DeliveryState> UserProfileAccessor { get; }
+
+        public static bool IsFuture(DateTime date)
+        {
+            // at least one hour
+            return date > DateTime.Now.AddHours(1);
+        }
+
+        public static string MomentOrRangeToString(IEnumerable<DateTime> moments, string momentPrefix = "on ")
+        {
+            if (moments.Count() == 1)
+            {
+                return MomentOrRangeToString(moments.First(), momentPrefix);
+            }
+
+            return "from " + string.Join(" to ", moments.Select(m => MomentOrRangeToString(m, string.Empty)));
+        }
+
+        public static string MomentOrRangeToString(DateTime moment, string momentPrefix = "on ")
+        {
+            return momentPrefix + moment.ToString();
+        }
 
         private async Task<DialogTurnResult> InitializeStateStepAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
         {
@@ -171,7 +186,7 @@ namespace BotBuiderV4
             if (results.First().TypeName == "number" && double.TryParse(results.First().Resolution["value"].ToString(), out double value))
             {
                 // Validate number
-                if ((value < 1) || (value % 1 != 0) )
+                if ((value < 1) || (value % 1 != 0))
                 {
                     await promptContext.Context.SendActivityAsync(InvalidQuantityErrorMessage);
                     return false;
@@ -190,7 +205,6 @@ namespace BotBuiderV4
                 await promptContext.Context.SendActivityAsync(InvalidQuantityErrorMessage);
                 return false;
             }
-
         }
 
         /// <summary>
@@ -239,21 +253,6 @@ namespace BotBuiderV4
 
             await promptContext.Context.SendActivityAsync(InvalidDateErrorMessage);
             return false;
-        }
-
-        public static string MomentOrRangeToString(IEnumerable<DateTime> moments, string momentPrefix = "on ")
-        {
-            if (moments.Count() == 1)
-            {
-                return MomentOrRangeToString(moments.First(), momentPrefix);
-            }
-
-            return "from " + string.Join(" to ", moments.Select(m => MomentOrRangeToString(m, string.Empty)));
-        }
-
-        public static string MomentOrRangeToString(DateTime moment, string momentPrefix = "on ")
-        {
-            return momentPrefix + moment.ToString();
         }
 
         // Helper function to confirm the information in DeliveryState.
