@@ -7,7 +7,7 @@ Microsoft.Recognizers.Text provides robust recognition and resolution of entitie
 
 # Utilizing the Project
 
-Microsoft.Recognizers.Text powers pre-built entities in both [**LUIS: Language Understanding Intelligent Service**](https://www.luis.ai/home) and [**Microsoft Bot Framework**](https://dev.botframework.com/); base entity types in [[**Text Analytics Cognitive Service**](https://docs.microsoft.com/en-us/azure/cognitive-services/text-analytics/how-tos/text-analytics-how-to-entity-linking); and it is also available as standalone packages (for the base classes and the different entity recognizers).
+Microsoft.Recognizers.Text powers pre-built entities in both [**LUIS: Language Understanding Intelligent Service**](https://www.luis.ai/home) and [**Microsoft Bot Framework**](https://dev.botframework.com/); base entity types in [**Text Analytics Cognitive Service**](https://docs.microsoft.com/en-us/azure/cognitive-services/text-analytics/how-tos/text-analytics-how-to-entity-linking); and it is also available as standalone packages (for the base classes and the different entity recognizers).
 
 The Microsoft.Recognizers.Text packages currently target four platforms:
 * [C#/.NET](https://github.com/Microsoft/Recognizers-Text/tree/master/.NET) - **NuGet packages** available at: https://www.nuget.org/profiles/Recognizers.Text
