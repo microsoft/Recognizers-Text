@@ -95,7 +95,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Recognizers.Text.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RecognizerFunction", "Samples\RecognizerFunction\RecognizerFunction.csproj", "{AC7B58DC-209E-47FA-9B03-A1E0FB5E7B05}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BotBuilderRecognizerBot", "Samples\BotBuider\BotBuilderRecognizerBot.csproj", "{5039FC31-E88A-45EC-811B-3C406162A863}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BotBuilderRecognizerBot", "Samples\BotBuilder\BotBuilderRecognizerBot.csproj", "{5039FC31-E88A-45EC-811B-3C406162A863}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

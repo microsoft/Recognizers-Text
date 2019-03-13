@@ -1,6 +1,5 @@
 ﻿// Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
-// Generated with `dotnet new corebot` vX.X.X
 
 using System;
 using System.IO;
