@@ -7,7 +7,7 @@ Microsoft.Recognizers.Text provides robust recognition and resolution of entitie
 
 # Utilizing the Project
 
-Microsoft.Recognizers.Text powers pre-built entities in both [**LUIS: Language Understanding Intelligent Service**](https://www.luis.ai/home) and [**Microsoft Bot Framework**](https://dev.botframework.com/); and is also available as standalone packages (for the base classes and the different entity recognizers).
+Microsoft.Recognizers.Text powers pre-built entities in both [**LUIS: Language Understanding Intelligent Service**](https://www.luis.ai/home) and [**Microsoft Bot Framework**](https://dev.botframework.com/); base entity types in [[**Text Analytics Cognitive Service**](https://docs.microsoft.com/en-us/azure/cognitive-services/text-analytics/how-tos/text-analytics-how-to-entity-linking); and it is also available as standalone packages (for the base classes and the different entity recognizers).
 
 The Microsoft.Recognizers.Text packages currently target four platforms:
 * [C#/.NET](https://github.com/Microsoft/Recognizers-Text/tree/master/.NET) - **NuGet packages** available at: https://www.nuget.org/profiles/Recognizers.Text
@@ -18,6 +18,10 @@ The Microsoft.Recognizers.Text packages currently target four platforms:
 Contributions are greatly welcome! Both for fixes and extensions in the currently supported languages and for expansion to new ones.
 Especially for Dutch, Italian, Japanese, Korean, and Turkish. More info below.
 
+# Help
+
+If you have any questions, please go ahead and [open an issue](https://github.com/Microsoft/Recognizers-Text/issues/new/choose), even if it's not an actual bug. Issues are an acceptable discussion forum as well.
+
 # Contributing
 
 This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
@@ -27,7 +31,7 @@ Good starting points for contribution are:
 * the json spec cases temporarily marked as ```NotSupported``` ([Specs](./Specs)); and
 * translating json test spec cases that work in English, but don't yet exist in a target language.
 
-The links below describe the project structure and provide both an overview and tips on how to contribute. Thank you!
+The links below describe the project structure and provide both an overview and tips on how to contribute (altough some steps may have become a little out-of-date). Thank you!
 
 * [Overview and language resources](https://blog.botframework.com/2018/01/24/contributing-luis-microsoft-recognizers-text-part-1/)
 * [Implementing language specific behaviour](https://blog.botframework.com/2018/02/01/contributing-luis-microsoft-recognizers-text-part-2/)
