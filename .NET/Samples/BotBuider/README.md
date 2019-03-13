@@ -1,5 +1,5 @@
 # BotBuilderRecognizerBot
-This sample demonstrates how the Recognizers can be used with a BotBuilder v4 Bot to parse user input. The bot provides a basic experience for ordering roses, it starts by asking the amount of roses and then asks for a delivery date and time.
+This sample demonstrates how the Prompts can be used with a BotBuilder Bot to parse user input. The bot provides a basic experience for ordering roses, it starts by asking the amount of roses and then asks for a delivery date and time.
 This bot has been created using [Bot Framework][1], it shows how to:
 - Implement a multi-turn conversation using Dialogs
 - Prompt for and validate requests for information from the user
@@ -8,10 +8,10 @@ This sample requires prerequisites in order to run.
 - [Required Prerequisites][41]
 
 # To try this sample
-- In a terminal, navigate to `<your_project_folder>/BotBuiderV4`
+- In a terminal, navigate to `<your_project_folder>/BotBuilder`
     ```bash
     # change into project folder
-	cd <your_project_folder>/BotBuiderV4
+	cd <your_project_folder>/BotBuilder
     ```
 - Run the bot from a terminal or from Visual Studio, choose option A or B.
 
@@ -24,8 +24,8 @@ This sample requires prerequisites in order to run.
 	B) Or from Visual Studio
 	- Launch Visual Studio
 	- File -> Open -> Project/Solution
-	- Navigate to `<your_project_folder>/BotBuiderV4` folder
-	- Select `BotBuiderV4.csproj` file
+	- Navigate to `<your_project_folder>/BotBuider` folder
+	- Select `BotBuilderRecognizerBot.csproj` file
 	- Press `F5` to run the project
 
 # Testing the bot using Bot Framework Emulator **v4**
@@ -36,8 +36,8 @@ This sample requires prerequisites in order to run.
 ## Connect to the bot using Bot Framework Emulator **v4**
 - Launch Bot Framework Emulator
 - File -> Open Bot Configuration
-- Navigate to `<your_project_folder>/BotBuiderV4` folder
-- Select `BotBuiderV4.bot` file
+- Navigate to `<your_project_folder>/BotBuider` folder
+- Select `BotBuilderRecognizerBot.bot` file
 
 # Deploy the bot to Azure
 ## Prerequisites
@@ -87,8 +87,6 @@ To learn more about deploying a bot to Azure, see [Deploy your bot to Azure][40]
 - [Azure Portal][10]
 - [Language Understanding using LUIS][11]
 - [Channels and Bot Connector Service][27]
-
-#### Generated with `dotnet new corebot` vX.X.X
 
 [1]: https://dev.botframework.com
 [4]: https://dotnet.microsoft.com/download

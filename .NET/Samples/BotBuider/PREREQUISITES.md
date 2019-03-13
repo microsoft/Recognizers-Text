@@ -21,8 +21,6 @@ Prerequisites are provided that will enable the bot to be deployed to Azure usin
     ```
 [Return to README.md][1]
 
-#### Generated with `dotnet new corebot` vX.X.X
-
 [1]: ./README.md
 [2]: https://nodejs.org
 [3]: https://azure.microsoft.com/free/

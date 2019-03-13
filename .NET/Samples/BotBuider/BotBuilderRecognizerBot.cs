@@ -41,7 +41,7 @@ namespace BotBuilderRecognizerBot
             _dialogStateAccessor = _conversationState.CreateProperty<DialogState>(nameof(DialogState));
 
             Dialogs = new DialogSet(_dialogStateAccessor);
-            Dialogs.Add(new DeliveryDialog(_deliveryStateAccessor, GetCurrentCultureCode(), loggerFactory));
+            Dialogs.Add(new DeliveryDialog(_deliveryStateAccessor, loggerFactory));
         }
 
         private DialogSet Dialogs { get; set; }
@@ -107,13 +107,6 @@ namespace BotBuilderRecognizerBot
 
             await _conversationState.SaveChangesAsync(turnContext);
             await _userState.SaveChangesAsync(turnContext);
-        }
-
-        private static string GetCurrentCultureCode()
-        {
-            // Use English as default culture since this sample bot that does not include any localization resources
-            // Thread.CurrentThread.CurrentUICulture.IetfLanguageTag.ToLower() can be used to obtain the user's preferred culture
-            return "en-us";
         }
 
         // Create a message response.
