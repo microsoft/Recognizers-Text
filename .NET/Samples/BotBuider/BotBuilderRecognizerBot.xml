@@ -25,23 +25,28 @@
             <param name="cancellationToken">Task CancellationToken.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
         </member>
-        <member name="M:BotBuilderRecognizerBot.DeliveryDialog.ValidateQuantity(Microsoft.Bot.Builder.Dialogs.PromptValidatorContext{System.String},System.Threading.CancellationToken)">
+        <member name="M:BotBuilderRecognizerBot.DeliveryDialog.ValidateQuantity(Microsoft.Bot.Builder.Dialogs.PromptValidatorContext{System.Int32},System.Threading.CancellationToken)">
             <summary>
-            Validator function to verify if the quantity the user entered gets recognized.
+            Validator function to verify if the quantity the user entered is valid.
             </summary>
             <param name="promptContext">Context for this prompt.</param>
             <param name="cancellationToken">A <see cref="T:System.Threading.CancellationToken"/> that can be used by other objects
             or threads to receive notice of cancellation.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the work queued to execute.</returns>
         </member>
-        <member name="M:BotBuilderRecognizerBot.DeliveryDialog.ValidateDate(Microsoft.Bot.Builder.Dialogs.PromptValidatorContext{System.String},System.Threading.CancellationToken)">
+        <member name="M:BotBuilderRecognizerBot.DeliveryDialog.ValidateDate(Microsoft.Bot.Builder.Dialogs.PromptValidatorContext{System.Collections.Generic.IList{Microsoft.Bot.Builder.Dialogs.DateTimeResolution}},System.Threading.CancellationToken)">
             <summary>
-            Validator function to verify if date the user entered gets recognized.
+            Validator function to verify if the date the user entered is valid.
             </summary>
             <param name="promptContext">Context for this prompt.</param>
             <param name="cancellationToken">A <see cref="T:System.Threading.CancellationToken"/> that can be used by other objects
             or threads to receive notice of cancellation.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the work queued to execute.</returns>
+        </member>
+        <member name="M:BotBuilderRecognizerBot.DeliveryDialog.ConfirmDelivery(Microsoft.Bot.Builder.Dialogs.WaterfallStepContext)">
+            <summary>
+            Helper function to confirm the information in DeliveryState.
+            </summary>
         </member>
         <member name="T:BotBuilderRecognizerBot.Startup">
             <summary>

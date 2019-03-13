@@ -103,13 +103,13 @@ var result = model.Parse("I have twenty apples");
 
 ## BotBuilder Sample ([source](./BotBuilder))
 
-This sample demonstrate how the Recognizers can be used with a BotBuilder Bot to parse user input. The bot provides a basic experience for ordering roses, it starts by asking the amount of roses and then asks for a delivery date and time.
+This sample demonstrate how the Prompts can be used with a BotBuilder Bot to parse user input. The bot provides a basic experience for ordering roses, it starts by asking the amount of roses and then asks for a delivery date and time.
 
 Then, launch the [BotFramework Emulator](https://github.com/Microsoft/BotFramework-Emulator/releases) and connect it to **http://127.0.0.1:3979/api/messages**.
 
 Once connected, the bot will send a welcome message. You can start the order flow by sending any message to the bot.
 
-In order to validate user input, Custom Prompts Dialogs are used: [`QuantityPrompt`](./BotBuilder/Dialogs/QuantityPrompt.cs) and [`DeliveryPrompt`](./BotBuilder/Dialogs/DeliveryPrompt.cs).
+In order to validate user input, Dialog Prompts are used: [`NumberPrompt`](./BotBuilder/Dialogs/NumberPrompt.cs) and [`DateTimePrompt`](./BotBuilder/Dialogs/DateTimePrompt.cs).
 
 The minimum required code for a Custom Prompt is the `TryParse` method. This is a copy of the [QuantityPrompt](./BotBuilder/Dialogs/QuantityPrompt.cs) `TryParse` method, which validates that the user input is an Integer, between 1 and 100 and not a decimal number:
 

@@ -147,7 +147,7 @@ namespace BotBuilderRecognizerBot
         }
 
         /// <summary>
-        /// Validator function to verify if the quantity the user entered is valid
+        /// Validator function to verify if the quantity the user entered is valid.
         /// </summary>
         /// <param name="promptContext">Context for this prompt.</param>
         /// <param name="cancellationToken">A <see cref="CancellationToken"/> that can be used by other objects
