@@ -46,9 +46,9 @@ export class FrenchDateTimePeriodExtractorConfiguration implements IDateTimePeri
 
     constructor() {
         this.simpleCasesRegexes = [
-            RegExpUtility.getSafeRegExp(FrenchDateTime.PureNumFromTo),
-            RegExpUtility.getSafeRegExp(FrenchDateTime.PureNumBetweenAnd),
-            RegExpUtility.getSafeRegExp(FrenchDateTime.SpecificTimeOfDayRegex)
+            RegExpUtility.getSafeRegExp(FrenchDateTime.PureNumFromTo, "gis"),
+            RegExpUtility.getSafeRegExp(FrenchDateTime.PureNumBetweenAnd, "gis"),
+            RegExpUtility.getSafeRegExp(FrenchDateTime.SpecificTimeOfDayRegex, "gis")
         ]
 
         this.prepositionRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.PrepositionRegex);

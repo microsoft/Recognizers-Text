@@ -52,11 +52,11 @@ export class BaseMergedExtractor implements IDateTimeExtractor {
         let result: Array<ExtractResult> = new Array<ExtractResult>();
         this.addTo(result, this.config.dateExtractor.extract(source, referenceDate), source);
         this.addTo(result, this.config.timeExtractor.extract(source, referenceDate), source);
-        this.addTo(result, this.config.durationExtractor.extract(source, referenceDate), source);
         this.addTo(result, this.config.datePeriodExtractor.extract(source, referenceDate), source);
-        this.addTo(result, this.config.dateTimeExtractor.extract(source, referenceDate), source);
+        this.addTo(result, this.config.durationExtractor.extract(source, referenceDate), source);
         this.addTo(result, this.config.timePeriodExtractor.extract(source, referenceDate), source);
         this.addTo(result, this.config.dateTimePeriodExtractor.extract(source, referenceDate), source);
+        this.addTo(result, this.config.dateTimeExtractor.extract(source, referenceDate), source);
         this.addTo(result, this.config.setExtractor.extract(source, referenceDate), source);
         this.addTo(result, this.config.holidayExtractor.extract(source, referenceDate), source);
 
