@@ -92,6 +92,7 @@
     <Folder Include="Korean\" />
     <Folder Include="Spanish\" />
     <Folder Include="Portuguese\" />
+    <Folder Include="Swedish\" />
   </ItemGroup>
   
   <ItemGroup>
@@ -103,6 +104,10 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
   </ItemGroup>
 
 </Project>

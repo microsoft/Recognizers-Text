@@ -200,6 +200,7 @@ AmbiguousFractionConnectorsRegex: !simpleRegex
   def: (\bin\b)
 # "in" is ambiguous for cases like "more than 30000 in 2009", other connector "out of", "over" is not ambiguous in English
 #Parser
+
 DecimalSeparatorChar: !char ','
 FractionMarkerToken: av
 NonDecimalSeparatorChar: !char '.'
@@ -217,8 +218,8 @@ DigitalNumberRegex: !nestedRegex
 CardinalNumberMap: !dictionary
   types: [ string, long ]
   entries:
-	ingen: 0
-	inga: 0
+    ingen: 0
+    inga: 0
     noll: 0
     en: 1
     ett: 1
@@ -235,7 +236,7 @@ CardinalNumberMap: !dictionary
     tolv: 12
     dussin: 12
     dussintal: 12
-	dussintals: 12
+    dussintals: 12
     tretton: 13
     fjorton: 14
     femton: 15
@@ -244,10 +245,10 @@ CardinalNumberMap: !dictionary
     arton: 18
     nitton: 19
     tjugo: 20
-	tjog: 20
-	tjogvis: 20
+    tjog: 20
+    tjogvis: 20
     trettio: 30
-	tretti: 30
+    tretti: 30
     fyrtio: 40
     femtio: 50
     sextio: 60
@@ -263,13 +264,13 @@ OrdinalNumberMap: !dictionary
   types: [ string, long ]
   entries:
     första: 1
-	förste: 1
-	etta: 1
-	ettan: 1
-	andra: 2
-	andre: 2
-	tvåa: 2	
-	tvåan: 2
+    förste: 1
+    etta: 1
+    ettan: 1
+    andra: 2
+    andre: 2
+    tvåa: 2	
+    tvåan: 2
     halva: 2
     tredje: 3
     fjärde: 4
@@ -362,18 +363,18 @@ RoundNumberMap: !dictionary
 AmbiguityFiltersDict: !dictionary
   types: [ string, string ]
   entries:
-    '\ben\b': '\b(en)\s+(en)\b' #I skogen står en En
+    '\ben\b': '\b(en)\s+(en)\b'
 RelativeReferenceMap: !dictionary
   types: [ string, string ]
   entries:
-    last: N
-    next one: CURR+1
-    previous one: CURR-1
-    the second to last: N-1
-    the one before the last one: N-1
-    next to last: N-1
-    penultimate: N-1
-    the last but one: N-1
-    antepenultimate: N-2
-    next: CURR+1
+    sist: N
+    sista: N
+    siste: N
+    nästa: CURR+1
+    näste: CURR+1
+    föregående: CURR-1
+    andra från slutet: N-1
+    andre från slutet: N-1
+    näst sista: N-1
+    näst siste: N-1
 ...

@@ -326,6 +326,8 @@
     <None Update="English\DateTimeDefinitions.tt">
     </None>
     <None Update="English\NumbersDefinitions.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>NumbersDefinitions.cs</LastGenOutput>
     </None>
     <None Update="English\NumbersWithUnitDefinitions.tt">
     </None>
@@ -379,10 +381,18 @@
     </None>
     <None Update="Spanish\NumbersWithUnitDefinitions.tt">
     </None>
+    <None Update="Swedish\NumbersDefinitions.tt">
+      <Generator></Generator>
+      <CustomToolNamespace></CustomToolNamespace>
+    </None>
   </ItemGroup>
 
   <ItemGroup>
     <DotNetCliToolReference Include="T5.TextTransform.Tool" Version="1.1.0-*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
