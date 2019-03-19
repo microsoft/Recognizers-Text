@@ -39,7 +39,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             index = -1;
 
-            // Support cases has two or more specific tokens
+            // Support cases that have two or more specific tokens
             // For example, "show me sales after 2010 and before 2018 or before 2000"
             // When extract "before 2000", we need the second "before" which will be matched in the second Regex match
             var match = Regex.Match(text, regex.ToString(), RegexOptions.RightToLeft | RegexOptions.Singleline);
@@ -62,8 +62,12 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var ret = new List<ExtractResult>();
 
-            if (IsFailFastCase(text))
+            if (((this.config.Options & DateTimeOptions.FailFast) != 0) && IsFailFastCase(text))
             {
+                // @TODO needs better handling of holidays.
+                // AddTo(ret, this.config.HolidayExtractor.Extract(text, reference), text);
+                // ret = AddMod(ret, text);
+
                 return ret;
             }
 
