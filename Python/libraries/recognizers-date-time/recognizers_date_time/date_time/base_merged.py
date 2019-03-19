@@ -128,11 +128,11 @@ class BaseMergedExtractor(DateTimeExtractor):
         result: List[ExtractResult] = list()
         result = self.add_to(result, self.config.date_extractor.extract(source, reference), source)
         result = self.add_to(result, self.config.time_extractor.extract(source, reference), source)
-        result = self.add_to(result, self.config.duration_extractor.extract(source, reference), source)
         result = self.add_to(result, self.config.date_period_extractor.extract(source, reference), source)
-        result = self.add_to(result, self.config.date_time_extractor.extract(source, reference), source)
+        result = self.add_to(result, self.config.duration_extractor.extract(source, reference), source)
         result = self.add_to(result, self.config.time_period_extractor.extract(source, reference), source)
         result = self.add_to(result, self.config.date_time_period_extractor.extract(source, reference), source)
+        result = self.add_to(result, self.config.date_time_extractor.extract(source, reference), source)
         result = self.add_to(result, self.config.set_extractor.extract(source, reference), source)
         result = self.add_to(result, self.config.holiday_extractor.extract(source, reference), source)
 
@@ -509,11 +509,11 @@ class BaseMergedParser(DateTimeParser):
                 self._add_resolution_fields_any(result, Constants.ResolveToFutureKey, future)
 
         if comment == 'ampm':
-            if 'resolve' in result:
-                self._resolve_ampm(result, 'resolve')
+            if Constants.ResolveKey in result:
+                self._resolve_ampm(result, Constants.ResolveKey)
             else:
-                self._resolve_ampm(result, 'resolveToPast')
-                self._resolve_ampm(result, 'resolveToFuture')
+                self._resolve_ampm(result, Constants.ResolveToPastKey)
+                self._resolve_ampm(result, Constants.ResolveToFutureKey)
 
         for value in result.values():
             if isinstance(value, dict):
@@ -609,10 +609,10 @@ class BaseMergedParser(DateTimeParser):
         result[TimeTypeConstants.END] = end
 
     def _resolve_ampm(self, values_map: Dict[str, str], keyname: str):
-        if not keyname in values_map:
+        if keyname not in values_map:
             return
         resolution = values_map[keyname]
-        if not 'timex' in values_map:
+        if Constants.TimexKey not in values_map:
             return
         timex = values_map['timex']
         values_map.pop(keyname, None)
