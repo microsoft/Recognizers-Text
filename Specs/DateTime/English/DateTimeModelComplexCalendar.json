@@ -8856,5 +8856,195 @@
         }
       }
     ] 
+  },
+  {
+    "Input": "Your renewal will be January 18, 2019.  You have until then to add the paid support. @Cortana, Please schedule a Skype call at 3pm today.",
+    "Context": {
+      "ReferenceDateTime": "2019-02-28T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "january 18, 2019",
+        "Start": 21,
+        "End": 36,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-01-18",
+              "type": "date",
+              "value": "2019-01-18"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "3pm today",
+        "Start": 127,
+        "End": 135,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-02-28T15",
+              "type": "datetime",
+              "value": "2019-02-28 15:00:00"
+            }
+          ]
+        }
+      }
+    ] 
+  },
+  {
+    "Input": "book my time for swimming every Tuesday and Thursday 19:00 - 21:00.",
+    "Context": {
+      "ReferenceDateTime": "2019-03-01T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "every tuesday",
+        "Start": 26,
+        "End": 38,
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-2",
+              "type": "set",
+              "value": "not resolved"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "thursday 19:00 - 21:00",
+        "Start": 44,
+        "End": 65,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-WXX-4T19:00,XXXX-WXX-4T21:00,PT2H)",
+              "type": "datetimerange",
+              "start": "2019-02-28 19:00:00",
+              "end": "2019-02-28 21:00:00"
+            },
+            {
+              "timex": "(XXXX-WXX-4T19:00,XXXX-WXX-4T21:00,PT2H)",
+              "type": "datetimerange",
+              "start": "2019-03-07 19:00:00",
+              "end": "2019-03-07 21:00:00"
+            }
+          ]
+        }
+      }
+    ] 
+  },
+  {
+    "Input": "Is this a valid date? 12-2015",
+    "Context": {
+      "ReferenceDateTime": "2019-02-27T00:00:00"
+    },
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "12-2015",
+        "Start": 22,
+        "End": 28,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2015-12",
+              "type": "daterange",
+              "start": "2015-12-01",
+              "end": "2016-01-01"
+            }
+          ]
+        }
+      }
+    ] 
+  },
+  {
+    "Input": "Is this a valid date? 32-2015",
+    "Context": {
+      "ReferenceDateTime": "2019-02-27T00:00:00"
+    },
+    "NotSupported": "javascript, java, python",
+    "Results": [] 
+  },
+  {
+    "Input": "Is this a valid date? 32 - 2015",
+    "Context": {
+      "ReferenceDateTime": "2019-02-27T00:00:00"
+    },
+    "NotSupported": "javascript, java, python",
+    "Results": [] 
+  },
+  {
+    "Input": "Is this a valid date? 2015-12",
+    "Context": {
+      "ReferenceDateTime": "2019-02-27T00:00:00"
+    },
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "2015-12",
+        "Start": 22,
+        "End": 28,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2015-12",
+              "type": "daterange",
+              "start": "2015-12-01",
+              "end": "2016-01-01"
+            }
+          ]
+        }
+      }
+    ] 
+  },
+  {
+    "Input": "Is this a valid date? 2015-32",
+    "Context": {
+      "ReferenceDateTime": "2019-02-27T00:00:00"
+    },
+    "NotSupported": "javascript, java, python",
+    "Results": [] 
+  },
+  {
+    "Input": "Is this a valid date? 2015 - 32",
+    "Context": {
+      "ReferenceDateTime": "2019-02-27T00:00:00"
+    },
+    "NotSupported": "javascript, java, python",
+    "Results": [] 
+  },
+  {
+    "Input": "Tel: +86 138-2010-2015",
+    "Context": {
+      "ReferenceDateTime": "2019-02-27T00:00:00"
+    },
+    "NotSupported": "javascript, java, python",
+    "Results": [] 
+  },
+  {
+    "Input": "Tel: +86 2010-2015-86",
+    "Context": {
+      "ReferenceDateTime": "2019-02-27T00:00:00"
+    },
+    "NotSupported": "javascript, java, python",
+    "Results": [] 
+  },
+  {
+    "Input": "Tel: 000 111 82-2100",
+    "Context": {
+      "ReferenceDateTime": "2019-02-27T00:00:00"
+    },
+    "NotSupported": "javascript, java, python",
+    "Results": [] 
   }
 ]

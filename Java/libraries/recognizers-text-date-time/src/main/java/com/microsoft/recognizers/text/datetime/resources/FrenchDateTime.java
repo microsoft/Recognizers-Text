@@ -190,7 +190,7 @@ public class FrenchDateTime {
 
     public static final String NumberEndingPattern = "^[.]";
 
-    public static final String SpecialDate = "(?<=\\b([àa]|au|le)\\s+){DayRegex}\\b"
+    public static final String SpecialDate = "(?<=\\b([àa]|au|le)\\s+){DayRegex}(?!:)\\b"
             .replace("{DayRegex}", DayRegex);
 
     public static final String DateYearRegex = "(?<year>{YearRegex}|{TwoDigitYearRegex})"
@@ -424,7 +424,7 @@ public class FrenchDateTime {
 
     public static final String SpecificTimeBetweenAnd = "^[.]";
 
-    public static final String PrepositionRegex = "(?<prep>^([aà] la|en|sur\\s*l[ea]|sur|de)$)";
+    public static final String PrepositionRegex = "(?<prep>^([aà]|[aà] la|en|sur\\s*l[ea]|sur|de)$)";
 
     public static final String TimeOfDayRegex = "\\b(?<timeOfDay>((((dans\\s+(l[ea])?\\s+)?((?<early>d[eé]but(\\s+|-)|t[oô]t(\\s+|-)(l[ea]\\s*)?)|(?<late>fin\\s*|fin de(\\s+(la)?)|tard\\s*))?(matin[ée]e|matin|((d|l)?'?)apr[eè]s[-|\\s*]midi|nuit|soir[eé]e|soir)))|(((\\s+(l[ea])?\\s+)?)(jour|journ[eé]e)))s?)\\b";
 

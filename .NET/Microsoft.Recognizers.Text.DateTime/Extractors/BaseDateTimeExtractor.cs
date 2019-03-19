@@ -145,10 +145,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                         var begin = ers[i].Start ?? 0;
                         var end = (ers[j].Start ?? 0) + (ers[j].Length ?? 0);
                         ret.Add(new Token(begin, end));
+                        i = j + 1;
+                        continue;
                     }
-
-                    i = j + 1;
-                    continue;
                 }
 
                 i = j;

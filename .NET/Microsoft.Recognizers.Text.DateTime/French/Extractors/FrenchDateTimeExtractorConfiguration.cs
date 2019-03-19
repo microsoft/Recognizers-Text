@@ -46,6 +46,9 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public static readonly Regex UnitRegex =
             new Regex(DateTimeDefinitions.TimeUnitRegex, RegexOptions.Singleline);
 
+        public static readonly Regex ConnectorRegex =
+            new Regex(DateTimeDefinitions.ConnectorRegex, RegexOptions.Singleline);
+
         public static readonly Regex NumberAsTimeRegex =
             new Regex(DateTimeDefinitions.NumberAsTimeRegex, RegexOptions.Singleline);
 
@@ -98,9 +101,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public bool IsConnector(string text)
         {
-            return string.IsNullOrEmpty(text) || text.Equals(",") ||
-                        PrepositionRegex.IsMatch(text) || text.Equals("t") || text.Equals("pour") ||
-                        text.Equals("vers");
+            return string.IsNullOrEmpty(text) || PrepositionRegex.IsMatch(text) || ConnectorRegex.IsMatch(text);
         }
     }
 }
