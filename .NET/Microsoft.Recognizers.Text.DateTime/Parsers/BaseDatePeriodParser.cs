@@ -979,12 +979,10 @@ namespace Microsoft.Recognizers.Text.DateTime
                 DateObject.MinValue.SafeCreateFromValue(futureYear, month, 1).AddMonths(1).AddDays(-1) :
                 DateObject.MinValue.SafeCreateFromValue(futureYear, month, 1).AddMonths(1);
 
-
             var pastStart = DateObject.MinValue.SafeCreateFromValue(pastYear, month, 1);
             var pastEnd = inclusiveEndPeriod ?
                 DateObject.MinValue.SafeCreateFromValue(pastYear, month, 1).AddMonths(1).AddDays(-1) :
                 DateObject.MinValue.SafeCreateFromValue(pastYear, month, 1).AddMonths(1);
-
 
             if (earlyPrefix)
             {
