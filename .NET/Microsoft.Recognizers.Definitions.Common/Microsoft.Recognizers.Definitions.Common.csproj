@@ -278,6 +278,16 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
+    <Compile Update="Swedish\ChoiceDefinitions.cs">
+      <DependentUpon>ChoiceDefinitions.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Swedish\NumbersWithUnitDefinitions.cs">
+      <DependentUpon>NumbersWithUnitDefinitions.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -381,9 +391,16 @@
     </None>
     <None Update="Spanish\NumbersWithUnitDefinitions.tt">
     </None>
+    <None Update="Swedish\ChoiceDefinitions.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+    </None>
     <None Update="Swedish\NumbersDefinitions.tt">
-      <Generator></Generator>
+      <Generator>TextTemplatingFileGenerator</Generator>
       <CustomToolNamespace></CustomToolNamespace>
+    </None>
+    <None Update="Swedish\NumbersWithUnitDefinitions.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>NumbersWithUnitDefinitions.cs</LastGenOutput>
     </None>
   </ItemGroup>
 
