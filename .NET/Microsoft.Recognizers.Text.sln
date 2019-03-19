@@ -65,6 +65,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Patterns", "Patterns", "{23
 		..\Patterns\Spanish\Spanish-Numbers.yaml = ..\Patterns\Spanish\Spanish-Numbers.yaml
 		..\Patterns\Spanish\Spanish-NumbersWithUnit.yaml = ..\Patterns\Spanish\Spanish-NumbersWithUnit.yaml
 		..\Patterns\Swedish\Swedish-Choice.yaml = ..\Patterns\Swedish\Swedish-Choice.yaml
+		..\Patterns\Swedish\Swedish-DateTime.yaml = ..\Patterns\Swedish\Swedish-DateTime.yaml
 		..\Patterns\Swedish\Swedish-Numbers.yaml = ..\Patterns\Swedish\Swedish-Numbers.yaml
 		..\Patterns\Swedish\Swedish-NumbersWithUnit.yaml = ..\Patterns\Swedish\Swedish-NumbersWithUnit.yaml
 	EndProjectSection
