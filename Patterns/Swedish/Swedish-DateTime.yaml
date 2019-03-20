@@ -1044,7 +1044,7 @@ DaytimeTermList: !list
   types: [ string ]
   entries: 
     - dagtid
-	- mitt på dagen
+    - mitt på dagen
 NightTermList: !list
   types: [ string ]
   entries: 
@@ -1053,37 +1053,37 @@ SameDayTerms: !list
   types: [ string ]
   entries: 
     - idag
-	- i dag
+    - i dag
 PlusOneDayTerms: !list
   types: [ string ]
   entries: 
     - imorgon
-	- i morgon
+    - i morgon
     - nästa dag
 MinusOneDayTerms: !list
   types: [ string ]
   entries: 
     - i går
-	- igår
+    - igår
     - dagen innan
 PlusTwoDayTerms: !list
   types: [ string ]
   entries: 
     - i övermorgon
-	- övermorgon
+    - övermorgon
 MinusTwoDayTerms: !list
   types: [ string ]
   entries: 
     - i förrgår
-	- förrgår
+    - förrgår
 # For DatePeriodParserConfiguration Logic
 FutureTerms: !list
   types: [ string ]
   entries:
     - denna
-	- detta
+    - detta
     - nästa
-	- kommande
+    - kommande
 LastCardinalTerms: !list
   types: [ string ]
   entries:
@@ -1092,8 +1092,8 @@ MonthTerms: !list
   types: [ string ]
   entries:
     - månad
-	- mån
-	- mndr
+    - mån
+    - mndr
 MonthToDateTerms: !list
   types: [ string ]
   entries:
