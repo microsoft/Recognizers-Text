@@ -14,7 +14,7 @@ if exist ..\nuget\Microsoft.Recognizers.Text.NumberWithUnit*nupkg erase /s ..\nu
 for /f %%v in ('powershell -noprofile "(Get-Command .\bin\release\netstandard2.0\Microsoft.Recognizers.Text.dll).FileVersionInfo.FileVersion"') do set basic=%%v
 for /f %%v in ('powershell -noprofile "(Get-Command .\bin\release\netstandard2.0\Microsoft.Recognizers.Text.Number.dll).FileVersionInfo.FileVersion"') do set number=%%v
 for /f %%v in ('powershell -noprofile "(Get-Command .\bin\release\netstandard2.0\Microsoft.Recognizers.Text.NumberWithUnit.dll).FileVersionInfo.FileVersion"') do set version=%%v
-..\packages\NuGet.CommandLine.4.3.0\tools\NuGet.exe pack Microsoft.Recognizers.Text.NumberWithUnit.nuspec -symbols -properties version=%version%;basic=%basic%;number=%number% -OutputDirectory ..\nuget
+..\buildtools\NuGet.exe pack Microsoft.Recognizers.Text.NumberWithUnit.nuspec -symbols -properties version=%version%;basic=%basic%;number=%number% -OutputDirectory ..\nuget
 
 set error=%errorlevel%
 set packageName=Microsoft.Recognizers.Text.NumberWithUnit

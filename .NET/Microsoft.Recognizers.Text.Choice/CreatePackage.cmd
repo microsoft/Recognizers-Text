@@ -13,7 +13,7 @@ if exist ..\nuget\Microsoft.Recognizers.Text.Choice*.nupkg erase /s ..\nuget\Mic
 "%MSBuildDir%\MSBuild\15.0\Bin\MSBuild.exe" /property:Configuration=release Microsoft.Recognizers.Text.Choice.csproj
 for /f %%v in ('powershell -noprofile "(Get-Command .\bin\release\netstandard2.0\Microsoft.Recognizers.Text.dll).FileVersionInfo.FileVersion"') do set basic=%%v
 for /f %%v in ('powershell -noprofile "(Get-Command .\bin\release\netstandard2.0\Microsoft.Recognizers.Text.Choice.dll).FileVersionInfo.FileVersion"') do set numberVersion=%%v
-..\packages\NuGet.CommandLine.4.3.0\tools\NuGet.exe pack Microsoft.Recognizers.Text.Choice.nuspec -symbols -properties version=%numberVersion%;basic=%basic% -OutputDirectory ..\nuget
+..\buildtools\NuGet.exe pack Microsoft.Recognizers.Text.Choice.nuspec -symbols -properties version=%numberVersion%;basic=%basic% -OutputDirectory ..\nuget
 
 set error=%errorlevel%
 set packageName=Microsoft.Recognizers.Text.Choice
