@@ -287,7 +287,7 @@ namespace Microsoft.Recognizers.Text.Number
                 Culture.Swedish,
                 options => new NumberModel(
                     AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new SwedishNumberParserConfiguration(options)),
-                    Swedish.MergedNumberExtractor.GetInstance(NumberMode.PureNumber, options)));
+                    Swedish.MergedNumberExtractor.GetInstance(NumberMode.Default, options)));
 
             RegisterModel<OrdinalModel>(
                 Culture.Swedish,

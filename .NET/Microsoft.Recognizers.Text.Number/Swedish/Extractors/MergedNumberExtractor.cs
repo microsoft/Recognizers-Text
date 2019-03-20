@@ -12,7 +12,7 @@ namespace Microsoft.Recognizers.Text.Number.Swedish
 
         public MergedNumberExtractor(NumberMode mode, NumberOptions options)
         {
-            NumberExtractor = English.NumberExtractor.GetInstance(mode, options);
+            NumberExtractor = Swedish.NumberExtractor.GetInstance(mode, options);
             RoundNumberIntegerRegexWithLocks =
                 new Regex(NumbersDefinitions.RoundNumberIntegerRegexWithLocks, RegexOptions.Singleline);
             ConnectorRegex =

@@ -15,8 +15,8 @@ namespace Microsoft.Recognizers.Text.Number.Swedish
         {
             CultureInfo = ci;
 
-            NumberExtractor = English.NumberExtractor.GetInstance();
-            OrdinalExtractor = English.OrdinalExtractor.GetInstance();
+            NumberExtractor = Swedish.NumberExtractor.GetInstance();
+            OrdinalExtractor = Swedish.OrdinalExtractor.GetInstance();
             NumberParser = new BaseNumberParser(new SwedishNumberParserConfiguration());
             MoreOrEqual = new Regex(NumbersDefinitions.MoreOrEqual, RegexOptions.Singleline);
             LessOrEqual = new Regex(NumbersDefinitions.LessOrEqual, RegexOptions.Singleline);
