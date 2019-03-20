@@ -103,25 +103,69 @@ var result = model.Parse("I have twenty apples");
 
 ## BotBuilder Sample ([source](./BotBuilder))
 
-This sample demonstrate how the Prompts can be used with a BotBuilder Bot to parse user input. The bot provides a basic experience for ordering roses, it starts by asking the amount of roses and then asks for a delivery date and time.
+This sample demonstrate how the Recognizers can be used with a BotBuilder Bot to parse user input. The bot provides a basic experience for ordering roses, it starts by asking the amount of roses and then asks for a delivery date and time.
 
 To test the sample:
-- Launch the [BotFramework Emulator](https://github.com/Microsoft/BotFramework-Emulator/releases) and connect it to **http://127.0.0.1:3979/api/messages**.
+- Launch the [BotFramework Emulator](https://github.com/Microsoft/BotFramework-Emulator/releases).
 - File -> Open bot and navigate to <your_project_folder>/Samples/BotBuilder folder.
 - Select BotBuilderRecognizerBot.bot file.
 
 Once connected, the bot will send a welcome message. You can start the order flow by sending any message to the bot.
 
-In order to validate user input, Dialog Prompts are used: [`NumberPrompt`](./BotBuilder/Dialogs/NumberPrompt.cs) and [`DateTimePrompt`](./BotBuilder/Dialogs/DateTimePrompt.cs).
+In order to validate user input, Recognizers-Text are used: [`Recognizers-Text.Number`](./Recognizers-Text/.NET/Microsoft.Recognizers.Text.Number/NumberRecognizer.cs) and [`Recognizers-Text.DateTime`](/Recognizers-Text/.NET/Microsoft.Recognizers.Text.Number/DateTimeRecognizer.cs).
 
-The Prompts are added in the waterfall Dialog:
+This is a copy of the [DeliveryDialog](./BotBuilder/Dialogs/DeliveryDialog.cs) _ValidateQuantity_ method which validates that the user input is an Integer, between 1 and 100 and not a decimal number:
 
 ````C#
-		public DeliveryDialog(IStatePropertyAccessor<DeliveryState> userProfileStateAccessor, ILoggerFactory loggerFactory)
+	private async Task<bool> ValidateQuantity(PromptValidatorContext<string> promptContext, CancellationToken cancellationToken)
+        {
+            var result = promptContext.Recognized.Value ?? string.Empty;
+            var results = NumberRecognizer.RecognizeNumber(result, culture);
+
+            if (results.Count == 0)
+            {
+                await promptContext.Context.SendActivityAsync(InvalidQuantityErrorMessage);
+                return false;
+            }
+
+            if (results.First().TypeName == "number" && double.TryParse(results.First().Resolution["value"].ToString(), out double value))
+            {
+                // Validate number
+                if ((value < 1) || (value % 1 != 0))
+                {
+                    await promptContext.Context.SendActivityAsync(InvalidQuantityErrorMessage);
+                    return false;
+                }
+
+                if (value > 100)
+                {
+                    await promptContext.Context.SendActivityAsync(InvalidOverQuantityErrorMessage);
+                    return false;
+                }
+
+                var quantityRoses = Convert.ToInt32(results.First().Resolution["value"]);
+                var quantityMessage = quantityRoses == 1
+                ? "I'll send just one rose."
+                : $"I'll send {quantityRoses} roses.";
+                promptContext.Recognized.Value = quantityRoses.ToString();
+                await promptContext.Context.SendActivityAsync(quantityMessage);
+                return true;
+            }
+            else
+            {
+                await promptContext.Context.SendActivityAsync(InvalidQuantityErrorMessage);
+                return false;
+            }
+        }
+````
+
+The Prompts are added in a waterfall Dialog:
+
+````C#
+	public DeliveryDialog(IStatePropertyAccessor<DeliveryState> userProfileStateAccessor, ILoggerFactory loggerFactory)
             : base(nameof(DeliveryDialog))
         {
             UserProfileAccessor = userProfileStateAccessor ?? throw new ArgumentNullException(nameof(userProfileStateAccessor));
-
             // Add control flow dialogs
             var waterfallSteps = new WaterfallStep[]
             {
@@ -131,10 +175,23 @@ The Prompts are added in the waterfall Dialog:
                     DisplayDeliveryStateStepAsync,
             };
             AddDialog(new WaterfallDialog(ProfileDialog, waterfallSteps));
-            AddDialog(new NumberPrompt<int>(QuantityPrompt, ValidateQuantity));
-            AddDialog(new DateTimePrompt(DatePrompt, ValidateDate));
+            AddDialog(new TextPrompt(QuantityPrompt, ValidateQuantity));
+            AddDialog(new TextPrompt(DatePrompt, ValidateDate));
         }
 ````
+
+Asking the user for a specific delivery time may require special parsing, like extracting both date and time from the user input, or even obtain a range of dates and times.
+
+The [`DeliveryDialog`](./BotBuilder/Dialogs/DeliveryDialog.cs) _ValidateDate_ method does exactly that. It will prompt the user for a possible delivery time, parse the user's input and extract, at least, one of these available return values using the DateTime Recognizer:
+
+ - date
+ - daterange
+ - datetime
+ - datetimerange
+
+(These are the DateTime Recognizer types that contains *date* information)
+
+> NOTE: The DateTime Recognizer uses LUIS datetimeV2 subtypes. For a full list, please visit [LUIS prebuilt entities - Subtypes of datetimeV2](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/pre-builtentities#subtypes-of-datetimev2).
 
 ## Recognizer Function ([source](./RecognizerFunction))
 This sample is a variant of the SimpleConsole, which you can deploy as a Web API using Azure Functions (serverless). It is a combination of all Recognizers to extract possible values from the user's input. 

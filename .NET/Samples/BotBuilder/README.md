@@ -1,5 +1,5 @@
 # BotBuilderRecognizerBot
-This sample demonstrates how the Prompts can be used with a BotBuilder Bot to parse user input. The bot provides a basic experience for ordering roses, it starts by asking the amount of roses and then asks for a delivery date and time.
+This sample demonstrates how the Recognizers can be used with a BotBuilder Bot to parse user input. The bot provides a basic experience for ordering roses, it starts by asking the amount of roses and then asks for a delivery date and time.
 This bot has been created using [Bot Framework][1], it shows how to:
 - Implement a multi-turn conversation using Dialogs
 - Prompt for and validate requests for information from the user
@@ -24,7 +24,7 @@ This sample requires prerequisites in order to run.
 	B) Or from Visual Studio
 	- Launch Visual Studio
 	- File -> Open -> Project/Solution
-	- Navigate to `<your_project_folder>/BotBuider` folder
+	- Navigate to `<your_project_folder>/BotBuilder` folder
 	- Select `BotBuilderRecognizerBot.csproj` file
 	- Press `F5` to run the project
 
@@ -36,7 +36,7 @@ This sample requires prerequisites in order to run.
 ## Connect to the bot using Bot Framework Emulator **v4**
 - Launch Bot Framework Emulator
 - File -> Open Bot Configuration
-- Navigate to `<your_project_folder>/BotBuider` folder
+- Navigate to `<your_project_folder>/BotBuilder` folder
 - Select `BotBuilderRecognizerBot.bot` file
 
 # Deploy the bot to Azure
@@ -58,7 +58,7 @@ az account set --subscription "<azure-subscription>"
 
 ```bash
 # provision Azure Bot Services resources to host your bot
-msbot clone services --name "BotBuiderV4" --code-dir "." --location westus --sdkLanguage "Csharp" --folder deploymentScripts/msbotClone --verbose
+msbot clone services --name "BotBuilder" --code-dir "." --location westus --sdkLanguage "Csharp" --folder deploymentScripts/msbotClone --verbose
 ```
 
 ### Publishing Changes to Azure Bot Service
@@ -101,7 +101,7 @@ To learn more about deploying a bot to Azure, see [Deploy your bot to Azure][40]
 [21]: https://docs.microsoft.com/azure/bot-service/bot-service-overview-introduction?view=azure-bot-service-4.0
 [22]: https://docs.microsoft.com/azure/bot-service/?view=azure-bot-service-4.0
 [23]: https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-prompts?view=azure-bot-service-4.0
-[24]: https://docs.microsoft.com/en-us/javascript/api/botbuilder-dialogs/waterfall
+[24]: https://docs.microsoft.com/en-us/javascript/api/botbuilder-dialogs/waterfalldialog
 [25]: https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-concept-activity-processing?view=azure-bot-service-4.0
 [26]: https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-tutorial-waterfall?view=azure-bot-service-4.0
 [27]: https://docs.microsoft.com/en-us/azure/bot-service/bot-concepts?view=azure-bot-service-4.0

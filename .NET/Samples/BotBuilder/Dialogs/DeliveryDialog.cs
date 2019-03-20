@@ -5,7 +5,10 @@ using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Bot.Builder;
 using Microsoft.Bot.Builder.Dialogs;
+using Microsoft.Bot.Schema;
 using Microsoft.Extensions.Logging;
+using Microsoft.Recognizers.Text.DateTime;
+using Microsoft.Recognizers.Text.Number;
 
 namespace BotBuilderRecognizerBot
 {
@@ -25,15 +28,19 @@ namespace BotBuilderRecognizerBot
 
         // Error messages
         private const string InvalidQuantityErrorMessage = "I'm sorry, that doesn't seem to be a valid quantity of roses. Please, try again";
+        private const string InvalidOverQuantityErrorMessage = "I'm sorry, you can send a maximum of 100 roses in one day. Please, try again";
         private const string InvalidDateErrorMessage = "I'm sorry, that doesn't seem to be a valid delivery date and time. Please, try again";
         private const string PastValueErrorMessage = "I'm sorry, but I need at least an hour to deliver.\n\n $moment$ is no good for me.\n\nWhat other moment suits you best?";
 
+        private readonly string culture;
         private IEnumerable<DateTime> values;
 
-        public DeliveryDialog(IStatePropertyAccessor<DeliveryState> userProfileStateAccessor, ILoggerFactory loggerFactory)
+        public DeliveryDialog(IStatePropertyAccessor<DeliveryState> userProfileStateAccessor, string culture, ILoggerFactory loggerFactory)
             : base(nameof(DeliveryDialog))
         {
             UserProfileAccessor = userProfileStateAccessor ?? throw new ArgumentNullException(nameof(userProfileStateAccessor));
+
+            this.culture = culture;
 
             // Add control flow dialogs
             var waterfallSteps = new WaterfallStep[]
@@ -44,8 +51,8 @@ namespace BotBuilderRecognizerBot
                     DisplayDeliveryStateStepAsync,
             };
             AddDialog(new WaterfallDialog(ProfileDialog, waterfallSteps));
-            AddDialog(new NumberPrompt<int>(QuantityPrompt, ValidateQuantity));
-            AddDialog(new DateTimePrompt(DatePrompt, ValidateDate));
+            AddDialog(new TextPrompt(QuantityPrompt, ValidateQuantity));
+            AddDialog(new TextPrompt(DatePrompt, ValidateDate));
         }
 
         public IStatePropertyAccessor<DeliveryState> UserProfileAccessor { get; }
@@ -91,9 +98,16 @@ namespace BotBuilderRecognizerBot
 
             if (string.IsNullOrWhiteSpace(deliveryState.Quantity))
             {
-                // WaterfallStep always finishes with the end of the Waterfall or with another dialog; here it is a Prompt Dialog.
-                // Running a prompt here means the next WaterfallStep will be run when the users response is received.
-                return await stepContext.PromptAsync(QuantityPrompt, new PromptOptions { Prompt = MessageFactory.Text("How many roses do you want to send?") }, cancellationToken);
+                // prompt for quantity, if missing
+                var opts = new PromptOptions
+                {
+                    Prompt = new Activity
+                    {
+                        Type = ActivityTypes.Message,
+                        Text = "How many roses do you want to send?",
+                    },
+                };
+                return await stepContext.PromptAsync(QuantityPrompt, opts);
             }
             else
             {
@@ -108,7 +122,7 @@ namespace BotBuilderRecognizerBot
             // Get the current profile object from user state
             var deliveryState = await UserProfileAccessor.GetAsync(stepContext.Context);
 
-            var quantity = stepContext.Result.ToString(); // as string;
+            var quantity = stepContext.Result as string;
             if (string.IsNullOrWhiteSpace(deliveryState.Quantity))
             {
                 // save quantity.
@@ -118,8 +132,15 @@ namespace BotBuilderRecognizerBot
 
             if (string.IsNullOrWhiteSpace(deliveryState.Date))
             {
-                // WaterfallStep always finishes with the end of the Waterfall or with another dialog, here it is a Prompt Dialog.
-                return await stepContext.PromptAsync(DatePrompt, new PromptOptions { Prompt = MessageFactory.Text("When do you want to receive the delivery?") }, cancellationToken);
+                var opts = new PromptOptions
+                {
+                    Prompt = new Activity
+                    {
+                        Type = ActivityTypes.Message,
+                        Text = "When do you want to receive the delivery?",
+                    },
+                };
+                return await stepContext.PromptAsync(DatePrompt, opts);
             }
             else
             {
@@ -147,39 +168,61 @@ namespace BotBuilderRecognizerBot
         }
 
         /// <summary>
-        /// Validator function to verify if the quantity the user entered is valid.
+        /// Validator function to verify if the quantity the user entered gets recognized.
         /// </summary>
         /// <param name="promptContext">Context for this prompt.</param>
         /// <param name="cancellationToken">A <see cref="CancellationToken"/> that can be used by other objects
         /// or threads to receive notice of cancellation.</param>
         /// <returns>A <see cref="Task"/> that represents the work queued to execute.</returns>
-        private async Task<bool> ValidateQuantity(PromptValidatorContext<int> promptContext, CancellationToken cancellationToken)
+        private async Task<bool> ValidateQuantity(PromptValidatorContext<string> promptContext, CancellationToken cancellationToken)
         {
-            var quantityRoses = Convert.ToDouble(promptContext.Recognized.Value);
+            var result = promptContext.Recognized.Value ?? string.Empty;
+            var results = NumberRecognizer.RecognizeNumber(result, culture);
 
-            // Validate number
-            if ((quantityRoses < 1) || (quantityRoses % 1 != 0))
+            if (results.Count == 0)
             {
                 await promptContext.Context.SendActivityAsync(InvalidQuantityErrorMessage);
                 return false;
             }
 
-            var quantityMessage = quantityRoses == 1
-            ? "I'll send just one rose."
-            : $"I'll send {quantityRoses} roses.";
-            promptContext.Recognized.Value = Convert.ToInt32(quantityRoses);
-            await promptContext.Context.SendActivityAsync(quantityMessage);
-            return true;
+            if (results.First().TypeName == "number" && double.TryParse(results.First().Resolution["value"].ToString(), out double value))
+            {
+                // Validate number
+                if ((value < 1) || (value % 1 != 0))
+                {
+                    await promptContext.Context.SendActivityAsync(InvalidQuantityErrorMessage);
+                    return false;
+                }
+
+                if (value > 100)
+                {
+                    await promptContext.Context.SendActivityAsync(InvalidOverQuantityErrorMessage);
+                    return false;
+                }
+
+                var quantityRoses = Convert.ToInt32(results.First().Resolution["value"]);
+                var quantityMessage = quantityRoses == 1
+                ? "I'll send just one rose."
+                : $"I'll send {quantityRoses} roses.";
+                promptContext.Recognized.Value = quantityRoses.ToString();
+                await promptContext.Context.SendActivityAsync(quantityMessage);
+                return true;
+            }
+            else
+            {
+                await promptContext.Context.SendActivityAsync(InvalidQuantityErrorMessage);
+                return false;
+            }
         }
 
         /// <summary>
-        /// Validator function to verify if the date the user entered is valid.
+        /// Validator function to verify if date the user entered gets recognized.
         /// </summary>
         /// <param name="promptContext">Context for this prompt.</param>
         /// <param name="cancellationToken">A <see cref="CancellationToken"/> that can be used by other objects
         /// or threads to receive notice of cancellation.</param>
         /// <returns>A <see cref="Task"/> that represents the work queued to execute.</returns>
-        private async Task<bool> ValidateDate(PromptValidatorContext<IList<DateTimeResolution>> promptContext, CancellationToken cancellationToken)
+        private async Task<bool> ValidateDate(PromptValidatorContext<string> promptContext, CancellationToken cancellationToken)
         {
             var dates = promptContext.Recognized.Value;
 
@@ -189,12 +232,27 @@ namespace BotBuilderRecognizerBot
                 return false;
             }
 
-            if (dates.First().Start is null)
-            {
-                var moment = DateTime.Parse(dates.First().Value);
+            var results = DateTimeRecognizer.RecognizeDateTime(dates, culture);
 
+            if (results.Count <= 0 || !results.First().TypeName.StartsWith("datetimeV2"))
+            {
+                await promptContext.Context.SendActivityAsync(InvalidDateErrorMessage);
+                return false;
+            }
+
+            // The DateTime model can return several resolution types (https://github.com/Microsoft/Recognizers-Text/blob/master/.NET/Microsoft.Recognizers.Text.DateTime/Constants.cs#L7-L14)
+            // We only care for those with a date, date and time, or date time period:
+            var first = results.First();
+            var resolutionValues = (IList<Dictionary<string, string>>)first.Resolution["values"];
+            var subType = first.TypeName.Split('.').Last();
+
+            if (subType.Contains("date") && !subType.Contains("range"))
+            {
+                // a date (or date & time) or multiple
+                var moment = resolutionValues.Select(v => DateTime.Parse(v["value"])).FirstOrDefault();
                 if (IsFuture(moment))
                 {
+                    // a future moment, valid!
                     this.values = new[] { moment };
                     return true;
                 }
@@ -203,21 +261,24 @@ namespace BotBuilderRecognizerBot
                 await promptContext.Context.SendActivityAsync(PastValueErrorMessage.Replace("$moment$", MomentOrRangeToString(moment)));
                 return false;
             }
-            else
+            else if (subType.Contains("date") && subType.Contains("range"))
             {
                 // range
-                var from = DateTime.Parse(dates.First().Start);
-                var to = DateTime.Parse(dates.First().End);
+                var from = DateTime.Parse(resolutionValues.First()["start"]);
+                var to = DateTime.Parse(resolutionValues.First()["end"]);
                 this.values = new[] { from, to };
-
                 if (IsFuture(from) && IsFuture(to))
                 {
                     return true;
                 }
 
+                // a past moment
                 await promptContext.Context.SendActivityAsync(PastValueErrorMessage.Replace("$moment$", MomentOrRangeToString(values)));
                 return false;
             }
+
+            await promptContext.Context.SendActivityAsync(InvalidDateErrorMessage);
+            return false;
         }
 
         /// <summary>
