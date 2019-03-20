@@ -41,7 +41,7 @@ namespace Microsoft.Recognizers.Text.Number
 
         internal IEnumerable<string> SupportedTypes { get; set; }
 
-        protected Regex LongFormatRegex => LongFormRegex;
+        protected static Regex LongFormatRegex => LongFormRegex;
 
         protected INumberParserConfiguration Config { get; private set; }
 
@@ -156,6 +156,12 @@ namespace Microsoft.Recognizers.Text.Number
             }
 
             return ret;
+        }
+
+        protected static string GetKeyRegex(IEnumerable<string> keyCollection)
+        {
+            var sortKeys = keyCollection.OrderByDescending(key => key.Length);
+            return string.Join("|", sortKeys);
         }
 
         protected ParseResult PowerNumberParse(ExtractResult extResult)
@@ -466,12 +472,6 @@ namespace Microsoft.Recognizers.Text.Number
             return result;
         }
 
-        protected string GetKeyRegex(IEnumerable<string> keyCollection)
-        {
-            var sortKeys = keyCollection.OrderByDescending(key => key.Length);
-            return string.Join("|", sortKeys);
-        }
-
         /// <summary>
         /// Precondition: ExtResult must have arabic numerals.
         /// </summary>
@@ -633,6 +633,15 @@ namespace Microsoft.Recognizers.Text.Number
                    former > later && former.ToString(CultureInfo.InvariantCulture).Length > later.ToString(CultureInfo.InvariantCulture).Length && later > 0;
         }
 
+        // Test if big and combine with small.
+        // e.g. "hundred" can combine with "thirty" but "twenty" can't combine with "thirty".
+        private static bool IsComposable(long big, long small)
+        {
+            var baseNumber = small > 10 ? 100 : 10;
+
+            return big % baseNumber == 0 && big / baseNumber >= 1;
+        }
+
         private string GetResolutionStr(object value)
         {
             var resolutionStr = value.ToString();
@@ -669,15 +678,6 @@ namespace Microsoft.Recognizers.Text.Number
             }
 
             return matchStrs;
-        }
-
-        // Test if big and combine with small.
-        // e.g. "hundred" can combine with "thirty" but "twenty" can't combine with "thirty".
-        private bool IsComposable(long big, long small)
-        {
-            var baseNumber = small > 10 ? 100 : 10;
-
-            return big % baseNumber == 0 && big / baseNumber >= 1;
         }
 
         private double GetIntValue(List<string> matchStrs)

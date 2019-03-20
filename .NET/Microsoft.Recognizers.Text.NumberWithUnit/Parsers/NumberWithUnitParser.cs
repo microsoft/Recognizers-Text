@@ -116,6 +116,5 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
             return ret;
         }
-
     }
 }

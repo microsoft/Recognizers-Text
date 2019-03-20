@@ -225,6 +225,5 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                 Value = results,
             };
         }
-
     }
 }

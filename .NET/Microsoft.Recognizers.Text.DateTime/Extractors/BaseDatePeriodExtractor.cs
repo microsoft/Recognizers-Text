@@ -161,6 +161,155 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
+        private static List<Token> GetTokenForRegexMatching(string text, Regex regex, ExtractResult er)
+        {
+            var ret = new List<Token>();
+            var match = regex.Match(text);
+            if (match.Success && text.Trim().EndsWith(match.Value.Trim()))
+            {
+                var startIndex = text.LastIndexOf(match.Value);
+                ret.Add(new Token(startIndex, (int)er.Start + (int)er.Length));
+            }
+
+            return ret;
+        }
+
+        // Check whether the match is an infix of source
+        private static bool InfixBoundaryCheck(Match match, string source)
+        {
+            bool isMatchInfixOfSource = false;
+            if (match.Index > 0 && match.Index + match.Length < source.Length)
+            {
+                if (source.Substring(match.Index, match.Length).Equals(match.Value))
+                {
+                    isMatchInfixOfSource = true;
+                }
+            }
+
+            return isMatchInfixOfSource;
+        }
+
+        private static bool IsDigitChar(char ch)
+        {
+            return ch >= '0' && ch <= '9';
+        }
+
+        private static bool HasDashPrefix(Match match, string source, out int dashPrefixIndex)
+        {
+            bool hasDashPrefix = false;
+            dashPrefixIndex = -1;
+
+            for (var i = match.Index - 1; i >= 0; i--)
+            {
+                if (source[i] != ' ' && source[i] != '-')
+                {
+                    break;
+                }
+                else if (source[i] == '-')
+                {
+                    hasDashPrefix = true;
+                    dashPrefixIndex = i;
+                    break;
+                }
+            }
+
+            return hasDashPrefix;
+        }
+
+        private static bool HasDashSuffix(Match match, string source, out int dashSuffixIndex)
+        {
+            bool hasDashSuffix = false;
+            dashSuffixIndex = -1;
+
+            for (var i = match.Index + match.Length; i < source.Length; i++)
+            {
+                if (source[i] != ' ' && source[i] != '-')
+                {
+                    break;
+                }
+                else if (source[i] == '-')
+                {
+                    hasDashSuffix = true;
+                    dashSuffixIndex = i;
+                    break;
+                }
+            }
+
+            return hasDashSuffix;
+        }
+
+        private static bool HasDigitNumberBeforeDash(string source, int dashPrefixIndex, out int numberStartIndex)
+        {
+            bool hasDigitNumberBeforeDash = false;
+            numberStartIndex = -1;
+
+            for (var i = dashPrefixIndex - 1; i >= 0; i--)
+            {
+                if (source[i] == ' ')
+                {
+                    continue;
+                }
+
+                if (IsDigitChar(source[i]))
+                {
+                    hasDigitNumberBeforeDash = true;
+                }
+
+                if (!IsDigitChar(source[i]))
+                {
+                    if (hasDigitNumberBeforeDash)
+                    {
+                        numberStartIndex = i + 1;
+                    }
+
+                    break;
+                }
+            }
+
+            if (hasDigitNumberBeforeDash && numberStartIndex == -1)
+            {
+                numberStartIndex = 0;
+            }
+
+            return hasDigitNumberBeforeDash;
+        }
+
+        private static bool HasDigitNumberAfterDash(string source, int dashSuffixIndex, out int numberEndIndex)
+        {
+            bool hasDigitNumberAfterDash = false;
+            numberEndIndex = -1;
+
+            for (var i = dashSuffixIndex + 1; i < source.Length; i++)
+            {
+                if (source[i] == ' ')
+                {
+                    continue;
+                }
+
+                if (IsDigitChar(source[i]))
+                {
+                    hasDigitNumberAfterDash = true;
+                }
+
+                if (!IsDigitChar(source[i]))
+                {
+                    if (hasDigitNumberAfterDash)
+                    {
+                        numberEndIndex = i;
+                    }
+
+                    break;
+                }
+            }
+
+            if (hasDigitNumberAfterDash && numberEndIndex == -1)
+            {
+                numberEndIndex = source.Length;
+            }
+
+            return hasDigitNumberAfterDash;
+        }
+
         // Cases like "21st century"
         private List<Token> MatchOrdinalNumberWithCenturySuffix(string text, List<ExtractResult> ordinalExtractions)
         {
@@ -490,19 +639,6 @@ namespace Microsoft.Recognizers.Text.DateTime
             return this.config.AgoRegex.Match(er.Text).Success;
         }
 
-        private List<Token> GetTokenForRegexMatching(string text, Regex regex, ExtractResult er)
-        {
-            var ret = new List<Token>();
-            var match = regex.Match(text);
-            if (match.Success && text.Trim().EndsWith(match.Value.Trim()))
-            {
-                var startIndex = text.LastIndexOf(match.Value);
-                ret.Add(new Token(startIndex, (int)er.Start + (int)er.Length));
-            }
-
-            return ret;
-        }
-
         private bool IsDateRelativeToNowOrToday(ExtractResult er)
         {
             foreach (var flagWord in config.DurationDateRestrictions)
@@ -514,142 +650,6 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             return false;
-        }
-
-        // check whether the match is an infix of source
-        private bool InfixBoundaryCheck(Match match, string source)
-        {
-            bool isMatchInfixOfSource = false;
-            if (match.Index > 0 && match.Index + match.Length < source.Length)
-            {
-                if (source.Substring(match.Index, match.Length).Equals(match.Value))
-                {
-                    isMatchInfixOfSource = true;
-                }
-            }
-
-            return isMatchInfixOfSource;
-        }
-
-        private bool IsDigitChar(char ch)
-        {
-            return ch >= '0' && ch <= '9';
-        }
-
-        private bool HasDashPrefix(Match match, string source, out int dashPrefixIndex)
-        {
-            bool hasDashPrefix = false;
-            dashPrefixIndex = -1;
-
-            for (var i = match.Index - 1; i >= 0; i--)
-            {
-                if (source[i] != ' ' && source[i] != '-')
-                {
-                    break;
-                }
-                else if (source[i] == '-')
-                {
-                    hasDashPrefix = true;
-                    dashPrefixIndex = i;
-                    break;
-                }
-            }
-
-            return hasDashPrefix;
-        }
-
-        private bool HasDigitNumberBeforeDash(string source, int dashPrefixIndex, out int numberStartIndex)
-        {
-            bool hasDigitNumberBeforeDash = false;
-            numberStartIndex = -1;
-
-            for (var i = dashPrefixIndex - 1; i >= 0; i--)
-            {
-                if (source[i] == ' ')
-                {
-                    continue;
-                }
-
-                if (IsDigitChar(source[i]))
-                {
-                    hasDigitNumberBeforeDash = true;
-                }
-
-                if (!IsDigitChar(source[i]))
-                {
-                    if (hasDigitNumberBeforeDash)
-                    {
-                        numberStartIndex = i + 1;
-                    }
-
-                    break;
-                }
-            }
-
-            if (hasDigitNumberBeforeDash && numberStartIndex == -1)
-            {
-                numberStartIndex = 0;
-            }
-
-            return hasDigitNumberBeforeDash;
-        }
-
-        private bool HasDashSuffix(Match match, string source, out int dashSuffixIndex)
-        {
-            bool hasDashSuffix = false;
-            dashSuffixIndex = -1;
-
-            for (var i = match.Index + match.Length; i < source.Length; i++)
-            {
-                if (source[i] != ' ' && source[i] != '-')
-                {
-                    break;
-                }
-                else if (source[i] == '-')
-                {
-                    hasDashSuffix = true;
-                    dashSuffixIndex = i;
-                    break;
-                }
-            }
-
-            return hasDashSuffix;
-        }
-
-        private bool HasDigitNumberAfterDash(string source, int dashSuffixIndex, out int numberEndIndex)
-        {
-            bool hasDigitNumberAfterDash = false;
-            numberEndIndex = -1;
-
-            for (var i = dashSuffixIndex + 1; i < source.Length; i++)
-            {
-                if (source[i] == ' ')
-                {
-                    continue;
-                }
-
-                if (IsDigitChar(source[i]))
-                {
-                    hasDigitNumberAfterDash = true;
-                }
-
-                if (!IsDigitChar(source[i]))
-                {
-                    if (hasDigitNumberAfterDash)
-                    {
-                        numberEndIndex = i;
-                    }
-
-                    break;
-                }
-            }
-
-            if (hasDigitNumberAfterDash && numberEndIndex == -1)
-            {
-                numberEndIndex = source.Length;
-            }
-
-            return hasDigitNumberAfterDash;
         }
     }
 }

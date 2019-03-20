@@ -17,7 +17,7 @@ namespace Microsoft.Recognizers.Text.Sequence.English
 
         private static readonly Regex GuidElementRegex = new Regex(BaseGUID.GUIDRegexElement, RegexOptions.Compiled);
 
-        public double ScoreGUID(string textGUID)
+        public static double ScoreGUID(string textGUID)
         {
             double score = baseScore;
 

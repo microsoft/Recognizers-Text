@@ -110,7 +110,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
     public Regex SinceSuffixRegex { get; }
 
-    public int GetSwiftDay(string text)
+    public static int GetSwiftDay(string text)
     {
       // Today: 今天, 今日, 最近, きょう, この日
       var value = 0;
@@ -143,7 +143,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
       return value;
     }
 
-    public int GetSwiftMonth(string text)
+    public static int GetSwiftMonth(string text)
     {
       // Current month: 今月
       var value = 0;
@@ -164,7 +164,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
       return value;
     }
 
-    public int GetSwiftYear(string text)
+    public static int GetSwiftYear(string text)
     {
       // Current year: 今年
       var value = 0;

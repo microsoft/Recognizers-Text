@@ -62,6 +62,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             return parsedDateTimes.Select(o => GetModelResult(o)).ToList();
         }
 
+        private static string GetParentText(DateTimeParseResult parsedDateTime)
+        {
+            return ((Dictionary<string, object>)parsedDateTime.Data)[ExtendedModelResult.ParentTextKey].ToString();
+        }
+
         private ModelResult GetModelResult(DateTimeParseResult parsedDateTime)
         {
             ModelResult ret;
@@ -88,11 +93,6 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             return ret;
-        }
-
-        private string GetParentText(DateTimeParseResult parsedDateTime)
-        {
-            return ((Dictionary<string, object>)parsedDateTime.Data)[ExtendedModelResult.ParentTextKey].ToString();
         }
     }
 }

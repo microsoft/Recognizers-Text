@@ -280,7 +280,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
             if (match.Success)
             {
-                var value = referenceDate.AddDays(config.GetSwiftDay(match.Value.ToLower()));
+                var value = referenceDate.AddDays(ChineseDateTimeParserConfiguration.GetSwiftDay(match.Value.ToLower()));
                 ret.Timex = DateTimeFormatUtil.LuisDate(value);
                 ret.FutureValue = ret.PastValue = value;
                 ret.Success = true;
@@ -583,7 +583,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             return firstWeekday.AddDays(7 * (cadinal - 1));
         }
 
-        private int GetMonthMaxDay(int year, int month)
+        private static int GetMonthMaxDay(int year, int month)
         {
             var maxDay = MonthMaxDays[month - 1];
 
@@ -595,7 +595,31 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             return maxDay;
         }
 
-        // handle cases like "三天前"
+        // Judge if a date is valid
+        private static bool IsValidDate(int year, int month, int day)
+        {
+            if (month < Constants.MinMonth)
+            {
+                year--;
+                month = Constants.MaxMonth;
+            }
+
+            if (month > Constants.MaxMonth)
+            {
+                year++;
+                month = Constants.MinMonth;
+            }
+
+            return DateObjectExtension.IsValidDate(year, month, day);
+        }
+
+        // Judge the date is non-leap year Feb 29th
+        private static bool IsNonleapYearFeb29th(int year, int month, int day)
+        {
+            return !DateObject.IsLeapYear(year) && month == 2 && day == 29;
+        }
+
+        // Handle cases like "三天前"
         private DateTimeResolutionResult ParserDurationWithBeforeAndAfter(string text, DateObject referenceDate)
         {
             var ret = new DateTimeResolutionResult();
@@ -684,31 +708,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             return ret;
         }
 
-        // Judge the date is valid
-        private bool IsValidDate(int year, int month, int day)
-        {
-            if (month < Constants.MinMonth)
-            {
-                year--;
-                month = Constants.MaxMonth;
-            }
-
-            if (month > Constants.MaxMonth)
-            {
-                year++;
-                month = Constants.MinMonth;
-            }
-
-            return DateObjectExtension.IsValidDate(year, month, day);
-        }
-
-        // Judge the date is non-leap year Feb 29th
-        private bool IsNonleapYearFeb29th(int year, int month, int day)
-        {
-            return !DateObject.IsLeapYear(year) && month == 2 && day == 29;
-        }
-
-        // concert Chinese Number to Integer
+        // Convert Chinese Number to Integer
         private int ConvertChineseToNum(string numStr)
         {
             var num = -1;
