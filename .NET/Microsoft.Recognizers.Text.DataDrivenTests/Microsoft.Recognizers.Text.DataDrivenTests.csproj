@@ -108,6 +108,7 @@
     <Compile Include="NumberWithUnit\TestNumberWithUnitRecognizerInitialization.cs" />
     <Compile Include="Number\LongFormTestConfiguration.cs" />
     <Compile Include="Number\TestDecimalAndThousandsSeparators.cs" />
+    <Compile Include="Number\TestNumber_Swedish.cs" />
     <Compile Include="Number\TestNumber_Italian.cs" />
     <Compile Include="Number\TestNumberRecognizerCache.cs" />
     <Compile Include="Number\TestNumberRecognizerInitialization.cs" />

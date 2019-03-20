@@ -1,0 +1,222 @@
+[
+  {
+    "Input": "100%",
+    "Results": [
+      {
+        "Text": "100%",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "100%"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": " 100% ",
+    "Results": [
+      {
+        "Text": "100%",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "100%"
+        },
+        "Start": 1,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": " 100 percent",
+    "Results": [
+      {
+        "Text": "100 percent",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "100%"
+        },
+        "Start": 1,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": " 100 percentage",
+    "Results": [
+      {
+        "Text": "100 percentage",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "100%"
+        },
+        "Start": 1,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "240 percent",
+    "Results": [
+      {
+        "Text": "240 percent",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "240%"
+        },
+        "Start": 0,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "twenty percent",
+    "Results": [
+      {
+        "Text": "twenty percent",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "20%"
+        },
+        "Start": 0,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "thirty percentage",
+    "Results": [
+      {
+        "Text": "thirty percentage",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "30%"
+        },
+        "Start": 0,
+        "End": 16
+      }
+    ]
+  },
+  {
+    "Input": "one hundred percent",
+    "Results": [
+      {
+        "Text": "one hundred percent",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "100%"
+        },
+        "Start": 0,
+        "End": 18
+      }
+    ]
+  },
+  {
+    "Input": "one hundred percents",
+    "Results": [
+      {
+        "Text": "one hundred percents",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "100%"
+        },
+        "Start": 0,
+        "End": 19
+      }
+    ]
+  },
+  {
+    "Input": "percents of twenty",
+    "Results": [
+      {
+        "Text": "percents of twenty",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "20%"
+        },
+        "Start": 0,
+        "End": 17
+      }
+    ]
+  },
+  {
+    "Input": "percent of 10",
+    "Results": [
+      {
+        "Text": "percent of 10",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "10%"
+        },
+        "Start": 0,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": "per cent of twenty-two",
+    "Results": [
+      {
+        "Text": "per cent of twenty-two",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "22%"
+        },
+        "Start": 0,
+        "End": 21
+      }
+    ]
+  },
+  {
+    "Input": "per cent of 210",
+    "Results": [
+      {
+        "Text": "per cent of 210",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "210%"
+        },
+        "Start": 0,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "10 percent",
+    "Results": [
+      {
+        "Text": "10 percent",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "10%"
+        },
+        "Start": 0,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "just need minus five percent",
+    "Results": [
+      {
+        "Text": "minus five percent",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "-5%"
+        },
+        "Start": 10,
+        "End": 27
+      }
+    ]
+  },
+  {
+    "Input": "You can go to http://proquest.umi.com/pqdweb?RQT=305&SQ=issn%280024%2D9114%29%20and%20%28ti%28Using%203D%20CAD%20to%20design%20a%20dog%29%20or%20startpage%28158%29%29%20and%20volume%2872%29%20and%20issue%289%29%20and%20pdn%28%3E01%2F01%2F2000%20AND%20%3C12%2F31%2F2000%29&clientId=17859 for more details.",
+    "NotSupported": "javascript",
+    "Results": []
+  },
+  {
+    "Input": "You can go to https://www.test.com/search?q=30%25%2020%",
+    "NotSupported": "javascript",
+    "Results": []
+  }
+]

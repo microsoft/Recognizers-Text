@@ -1,0 +1,157 @@
+[
+  {
+    "Input": "100%",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "100%",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "100%"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "twenty percent",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "twenty percent",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "20%"
+        },
+        "Start": 0,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "one hundred percents",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "one hundred percents",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "100%"
+        },
+        "Start": 0,
+        "End": 19
+      }
+    ]
+  },
+  {
+    "Input": "percents of twenty",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "percents of twenty",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "20%"
+        },
+        "Start": 0,
+        "End": 17
+      }
+    ]
+  },
+  {
+    "Input": "one out of three",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "one out of three",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "33.3333333333333%"
+        },
+        "Start": 0,
+        "End": 15
+      }
+    ]
+  },
+  {
+    "Input": "one in two",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "one in two",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "50%"
+        },
+        "Start": 0,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "1/4 of",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "1/4 of",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "25%"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "one fourth of",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "one fourth of",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "25%"
+        },
+        "Start": 0,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": "one half of",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "one half of",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "50%"
+        },
+        "Start": 0,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "one quarter of",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "one quarter of",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "25%"
+        },
+        "Start": 0,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "one third",
+    "NotSupported": "javascript, python",
+    "Results": []
+  }
+]
