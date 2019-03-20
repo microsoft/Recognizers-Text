@@ -190,6 +190,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
                 Minute = -1,
                 Second = -1,
             };
+
             AddDesc(timeResult, des);
 
             return timeResult;

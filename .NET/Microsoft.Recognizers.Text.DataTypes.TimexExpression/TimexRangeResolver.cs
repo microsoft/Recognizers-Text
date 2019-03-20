@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 {
-    public class TimexRangeResolver
+    public static class TimexRangeResolver
     {
         public static List<TimexProperty> Evaluate(IEnumerable<string> candidates, IEnumerable<string> constraints)
         {

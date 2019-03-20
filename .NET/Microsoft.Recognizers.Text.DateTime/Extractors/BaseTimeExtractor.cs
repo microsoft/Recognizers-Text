@@ -16,7 +16,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         public static readonly Regex SecondRegex =
             new Regex(BaseDateTime.SecondRegex, RegexOptions.Singleline);
 
-        private static readonly string ExtractorName = Constants.SYS_DATETIME_TIME; // "Time";
+        private const string ExtractorName = Constants.SYS_DATETIME_TIME; // "Time";
 
         private readonly ITimeExtractorConfiguration config;
 
