@@ -1,10 +1,10 @@
 [
   {
-    "Input": "Prima!",
+    "Input": "sant",
     "NotSupportedByDesign": "python,java",
     "Results": [
       {
-        "Text": "Prima",
+        "Text": "sant",
         "TypeName": "boolean",
         "Resolution": {
           "value": true,
@@ -14,21 +14,7 @@
     ]
   },
   {
-    "Input": "Ik denk het niet.",
-    "NotSupportedByDesign": "python,java",
-    "Results": [
-      {
-        "Text": "niet",
-        "TypeName": "boolean",
-        "Resolution": {
-          "value": false,
-          "score": 0.55
-        }
-      }
-    ]
-  },
-  {
-    "Input": "Ik denk dat het wel gaat werken, dus ja ik zal het doen.",
+    "Input": "ja",
     "NotSupportedByDesign": "python,java",
     "Results": [
       {
@@ -36,59 +22,17 @@
         "TypeName": "boolean",
         "Resolution": {
           "value": true,
-          "score": 0.44615384615384618
+          "score": 1.0
         }
       }
     ]
   },
   {
-    "Input": "Nee, ik zei 4 juli.",
+    "Input": "ja det är ok",
     "NotSupportedByDesign": "python,java",
     "Results": [
       {
-        "Text": "Nee",
-        "TypeName": "boolean",
-        "Resolution": {
-          "value": false,
-          "score": 0.52
-        }
-      }
-    ]
-  },
-  {
-    "Input": "Ja... Ik heb dat nooit gezegd",
-    "NotSupportedByDesign": "python,java",
-    "Results": [
-      {
-        "Text": "Ja",
-        "TypeName": "boolean",
-        "Resolution": {
-          "value": true,
-          "score": 0.5
-        }
-      }
-    ]
-  },
-  {
-    "Input": "Ik zei NEE in plaats van ja!",
-    "NotSupportedByDesign": "python,java",
-    "Results": [
-      {
-        "Text": "NEE",
-        "TypeName": "boolean",
-        "Resolution": {
-          "value": false,
-          "score": 0.48571428571428571
-        }
-      }
-    ]
-  },
-  {
-    "Input": "Ja. Ik zei nee",
-    "NotSupportedByDesign": "python,java",
-    "Results": [
-      {
-        "Text": "Ja",
+        "Text": "ja",
         "TypeName": "boolean",
         "Resolution": {
           "value": true,
@@ -98,15 +42,253 @@
     ]
   },
   {
-    "Input": "👌 Dat is ok",
+    "Input": "ja, det är ok",
     "NotSupportedByDesign": "python,java",
     "Results": [
       {
-        "Text": "👌",
+        "Text": "ja",
         "TypeName": "boolean",
         "Resolution": {
           "value": true,
           "score": 0.55
+        }
+      }
+    ]
+  },
+  {
+    "Input": "yes",
+    "NotSupportedByDesign": "python,java",
+    "Results": [
+      {
+        "Text": "yes",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 1.0
+        }
+      }
+    ]
+  },
+  {
+    "Input": "y",
+    "NotSupportedByDesign": "python,java",
+    "Results": [
+      {
+        "Text": "y",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 1.0
+        }
+      }
+    ]
+  },
+  {
+    "Input": "j",
+    "NotSupportedByDesign": "python,java",
+    "Results": [
+      {
+        "Text": "j",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 1.0
+        }
+      }
+    ]
+  },
+  {
+    "Input": "ok",
+    "NotSupportedByDesign": "python,java",
+    "Results": [
+      {
+        "Text": "ok",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 1.0
+        }
+      }
+    ]
+  },
+  {
+    "Input": "ok då",
+    "NotSupportedByDesign": "python,java",
+    "Results": [
+      {
+        "Text": "ok",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 0.7
+        }
+      }
+    ]
+  },
+  {
+    "Input": "det är ok",
+    "NotSupportedByDesign": "python,java",
+    "Results": [
+      {
+        "Text": "ok",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 0.6
+        }
+      }
+    ]
+  },
+  {
+    "Input": "ja det är ok",
+    "NotSupportedByDesign": "python,java",
+    "Results": [
+      {
+        "Text": "ja",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 0.55
+        }
+      }
+    ]
+  },
+  {
+    "Input": "ja, det är ok",
+    "NotSupportedByDesign": "python,java",
+    "Results": [
+      {
+        "Text": "ja",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 0.55
+        }
+      }
+    ]
+  },
+  {
+    "Input": "japp",
+    "NotSupportedByDesign": "python,java",
+    "Results": [
+      {
+        "Text": "japp",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 1.0
+        }
+      }
+    ]
+  },
+  {
+    "Input": "jupp",
+    "NotSupportedByDesign": "python,java",
+    "Results": [
+      {
+        "Text": "jupp",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 1.0
+        }
+      }
+    ]
+  },
+  {
+    "Input": "jepp",
+    "NotSupportedByDesign": "python,java",
+    "Results": [
+      {
+        "Text": "jepp",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 1.0
+        }
+      }
+    ]
+  },
+  {
+    "Input": "absolut",
+    "NotSupportedByDesign": "python,java",
+    "Results": [
+      {
+        "Text": "absolut",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 1.0
+        }
+      }
+    ]
+  },
+  {
+    "Input": "säkert",
+    "NotSupportedByDesign": "python,java",
+    "Results": [
+      {
+        "Text": "säkert",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 1.0
+        }
+      }
+    ]
+  },
+  {
+    "Input": "instämmer",
+    "NotSupportedByDesign": "python,java",
+    "Results": [
+      {
+        "Text": "instämmer",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 1.0
+        }
+      }
+    ]
+  },
+  {
+    "Input": "javisst",
+    "NotSupportedByDesign": "python,java",
+    "Results": [
+      {
+        "Text": "javisst",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 1.0
+        }
+      }
+    ]
+  },
+  {
+    "Input": "kör",
+    "NotSupportedByDesign": "python,java",
+    "Results": [
+      {
+        "Text": "kör",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 1.0
+        }
+      }
+    ]
+  },
+  {
+    "Input": "kör på!",
+    "NotSupportedByDesign": "python,java",
+    "Results": [
+      {
+        "Text": "kör",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 0.7
         }
       }
     ]
@@ -126,57 +308,169 @@
     ]
   },
   {
-    "Input": "Ik ga akkoord",
+    "Input": "falskt",
     "NotSupportedByDesign": "python,java",
     "Results": [
       {
-        "Text": "akkoord",
-        "TypeName": "boolean",
-        "Resolution": {
-          "value": true,
-          "score": 0.6
-        }
-      }
-    ]
-  },
-  {
-    "Input": "Ik ga niet akkoord",
-    "NotSupportedByDesign": "python,java",
-    "Results": [
-      {
-        "Text": "niet",
+        "Text": "falskt",
         "TypeName": "boolean",
         "Resolution": {
           "value": false,
-          "score": 0.55
+          "score": 1.0
         }
       }
     ]
   },
   {
-    "Input": "Dat is vanzelfsprekend",
+    "Input": "nej",
     "NotSupportedByDesign": "python,java",
     "Results": [
       {
-        "Text": "vanzelfsprekend",
+        "Text": "nej",
         "TypeName": "boolean",
         "Resolution": {
-          "value": true,
-          "score": 0.6
+          "value": false,
+          "score": 1.0
         }
       }
     ]
   },
   {
-    "Input": "Natuurlijk gaan we dat doen!",
+    "Input": "näpp",
     "NotSupportedByDesign": "python,java",
     "Results": [
       {
-        "Text": "Natuurlijk",
+        "Text": "näpp",
         "TypeName": "boolean",
         "Resolution": {
-          "value": true,
-          "score": 0.52
+          "value": false,
+          "score": 1.0
+        }
+      }
+    ]
+  },
+  {
+    "Input": "nope",
+    "NotSupportedByDesign": "python,java",
+    "Results": [
+      {
+        "Text": "nope",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": false,
+          "score": 1.0
+        }
+      }
+    ]
+  },
+  {
+    "Input": "misstycker",
+    "NotSupportedByDesign": "python,java",
+    "Results": [
+      {
+        "Text": "misstycker",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": false,
+          "score": 1.0
+        }
+      }
+    ]
+  },
+  {
+    "Input": "aldrig",
+    "NotSupportedByDesign": "python,java",
+    "Results": [
+      {
+        "Text": "aldrig",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": false,
+          "score": 1.0
+        }
+      }
+    ]
+  },
+  {
+    "Input": "n",
+    "NotSupportedByDesign": "python,java",
+    "Results": [
+      {
+        "Text": "n",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": false,
+          "score": 1.0
+        }
+      }
+    ]
+  },
+  {
+    "Input": "nä",
+    "NotSupportedByDesign": "python,java",
+    "Results": [
+      {
+        "Text": "nä",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": false,
+          "score": 1.0
+        }
+      }
+    ]
+  },
+  {
+    "Input": "absolut inte",
+    "NotSupportedByDesign": "python,java",
+    "Results": [
+      {
+        "Text": "absolut inte",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": false,
+          "score": 1.0
+        }
+      }
+    ]
+  },
+  {
+    "Input": "glöm det",
+    "NotSupportedByDesign": "python,java",
+    "Results": [
+      {
+        "Text": "glöm det",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": false,
+          "score": 1.0
+        }
+      }
+    ]
+  },
+  {
+    "Input": "jag säger bara, glöm det!",
+    "NotSupportedByDesign": "python,java",
+    "Results": [
+      {
+        "Text": "glöm det",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": false,
+          "score": 0.64
+        }
+      }
+    ]
+  },
+    {
+    "Input": "öh, nä",
+    "NotSupportedByDesign": "python,java",
+    "Results": [
+      {
+        "Text": "nä",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": false,
+          "score": 0.7
         }
       }
     ]

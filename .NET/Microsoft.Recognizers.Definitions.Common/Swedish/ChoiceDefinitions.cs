@@ -19,7 +19,7 @@ namespace Microsoft.Recognizers.Definitions.Swedish
 	{
 		public const string LangMarker = @"Swe";
 		public const string TokenizerRegex = @"[^\w\d\u00E0-\u00FC]";
-		public const string TrueRegex = @"\b(sant|ja|yes|y|j||ok|japp|jepp|absolut|säkert|instämmer|javisst|kör)\b|(\uD83D\uDC4D|\uD83D\uDC4C)";
-		public const string FalseRegex = @"\b(falskt|nej|näpp|nope|misstycker|aldrig|nä)\b|(\uD83D\uDC4E|\u270B|\uD83D\uDD90)";
+		public const string TrueRegex = @"\b(sant|ja|yes|y|j|ok|japp|jupp|jepp|absolut|säkert|instämmer|javisst|kör)\b|(\uD83D\uDC4D|\uD83D\uDC4C)";
+		public const string FalseRegex = @"\b(falskt|nej|näpp|nope|misstycker|aldrig|n|nä|absolut inte|glöm det)\b|(\uD83D\uDC4E|\u270B|\uD83D\uDD90)";
 	}
 }
