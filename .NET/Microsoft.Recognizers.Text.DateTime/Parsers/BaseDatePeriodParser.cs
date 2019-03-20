@@ -259,7 +259,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                             }
                             else
                             {
-                                futureBegin = dateContext.SwiftDateObject(futureBegin, futureEnd);
+                                futureBegin = DateContext.SwiftDateObject(futureBegin, futureEnd);
                             }
                         }
 
@@ -271,7 +271,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                             }
                             else
                             {
-                                pastBegin = dateContext.SwiftDateObject(pastBegin, pastEnd);
+                                pastBegin = DateContext.SwiftDateObject(pastBegin, pastEnd);
                             }
                         }
 

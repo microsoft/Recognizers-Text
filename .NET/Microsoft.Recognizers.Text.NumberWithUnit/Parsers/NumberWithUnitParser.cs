@@ -13,6 +13,24 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
         protected INumberWithUnitParserConfiguration Config { get; private set; }
 
+        public static void AddIfNotContained(List<string> unitKeys, string unit)
+        {
+            var add = true;
+            foreach (var unitKey in unitKeys)
+            {
+                if (unitKey.Contains(unit))
+                {
+                    add = false;
+                    break;
+                }
+            }
+
+            if (add)
+            {
+                unitKeys.Add(unit);
+            }
+        }
+
         public ParseResult Parse(ExtractResult extResult)
         {
             var ret = new ParseResult(extResult);
@@ -99,22 +117,5 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             return ret;
         }
 
-        public void AddIfNotContained(List<string> unitKeys, string unit)
-        {
-            var add = true;
-            foreach (var unitKey in unitKeys)
-            {
-                if (unitKey.Contains(unit))
-                {
-                    add = false;
-                    break;
-                }
-            }
-
-            if (add)
-            {
-                unitKeys.Add(unit);
-            }
-        }
     }
 }
