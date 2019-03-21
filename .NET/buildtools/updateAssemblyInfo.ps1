@@ -34,7 +34,7 @@ function UpdateAssemblyInfo()
 function AddCodeSign()
 {
 
-    $csAppend = "`r`n[assembly: AssemblyKeyFileAttribute(@`"" + ($PSScriptRoot + "\35MSSharedLib1024.snk") + "`")] `r`n [assembly: AssemblyDelaySignAttribute(true)]"
+    $csAppend = "`r`n[assembly: AssemblyKeyFileAttribute(@`"" + ($PSScriptRoot + "\35MSSharedLib1024.snk") + "`")]`r`n[assembly: AssemblyDelaySignAttribute(true)]"
     #Write-Host ("CSAppend:" + $csAppend)
     $fileContent = $fileContent + $csAppend
     return $fileContent

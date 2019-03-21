@@ -14,7 +14,7 @@
     <Rule Id="CS0108" Action="Error" />
     <Rule Id="CS0109" Action="Error" />
     <Rule Id="CS0114" Action="Error" />
-    <Rule Id="CS0162" Action="Error" />
+    <Rule Id="CS0162" Action="Warning" />
     <Rule Id="CS0164" Action="Error" />
     <Rule Id="CS0168" Action="Error" />
     <Rule Id="CS0183" Action="Error" />
@@ -355,6 +355,9 @@
   <Rules AnalyzerId="Microsoft.CodeAnalysis.VisualBasic.Features" RuleNamespace="Microsoft.CodeAnalysis.VisualBasic.Features">
     <Rule Id="IDE0043" Action="Error" />
   </Rules>
+  <Rules AnalyzerId="Microsoft.Analyzers.ManagedCodeAnalysis" RuleNamespace="Microsoft.Rules.Managed">
+    <Rule Id="CA1707" Action="None" />
+  </Rules>
   <Rules AnalyzerId="StyleCop.Analyzers" RuleNamespace="StyleCop.Analyzers">
     <Rule Id="SA0001" Action="Error" />
     <Rule Id="SA0002" Action="Error" />
@@ -476,7 +479,7 @@
     <Rule Id="SA1505" Action="Error" />
     <Rule Id="SA1506" Action="Error" />
     <Rule Id="SA1507" Action="Error" />
-    <Rule Id="SA1508" Action="Error" />
+    <Rule Id="SA1508" Action="None" />
     <Rule Id="SA1509" Action="Error" />
     <Rule Id="SA1510" Action="Error" />
     <Rule Id="SA1511" Action="Error" />
