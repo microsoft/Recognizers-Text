@@ -367,7 +367,6 @@ AbbrToMinMapping: !dictionary
    eat: 180
    eet: 120
    #eet: -10000
-   eest: 180
    esat: -180
    esast: -180
    est: -300
@@ -633,7 +632,6 @@ FullToMinMapping: !dictionary
    western europe summer time: 60
    w. europe summer time: 60
    western european summer time: 60
-   western europe summer time: 60
    west europe summer time: 60
    west asia standard time: 300
    west pacific standard time: 600
