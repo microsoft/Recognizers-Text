@@ -1,29 +1,13 @@
 [
   {
-    "Input": "5",
-    "NotSupported": "javascript, python, java",
+    "Input": ",08",
     "Results": [
       {
-        "Text": "5",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype":"integer",
-          "value": "5"
-        },
-        "Start": 0,
-        "End": 0
-      }
-    ]
-  },
-  {
-    "Input": ".08",
-    "Results": [
-      {
-        "Text": ".08",
+        "Text": ",08",
         "TypeName": "number",
         "Resolution": {
           "subtype": "decimal",
-          "value": "0.08"
+          "value": "0,08"
         },
         "Start": 0,
         "End": 2
