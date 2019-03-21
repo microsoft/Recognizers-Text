@@ -105,107 +105,84 @@ var result = model.Parse("I have twenty apples");
 
 This sample demonstrate how the Recognizers can be used with a BotBuilder Bot to parse user input. The bot provides a basic experience for ordering roses, it starts by asking the amount of roses and then asks for a delivery date and time.
 
-Then, launch the [BotFramework Emulator](https://github.com/Microsoft/BotFramework-Emulator/releases) and connect it to **http://127.0.0.1:3979/api/messages**.
+To test the sample:
+- Launch the [BotFramework Emulator](https://github.com/Microsoft/BotFramework-Emulator/releases).
+- File -> Open bot and navigate to <your_project_folder>/Samples/BotBuilder folder.
+- Select BotBuilderRecognizerBot.bot file.
 
 Once connected, the bot will send a welcome message. You can start the order flow by sending any message to the bot.
 
-In order to validate user input, Custom Prompts Dialogs are used: [`QuantityPrompt`](./BotBuilder/Dialogs/QuantityPrompt.cs) and [`DeliveryPrompt`](./BotBuilder/Dialogs/DeliveryPrompt.cs).
+In order to validate user input, Recognizers-Text are used: [`Recognizers-Text.Number`](./Recognizers-Text/.NET/Microsoft.Recognizers.Text.Number/NumberRecognizer.cs) and [`Recognizers-Text.DateTime`](/Recognizers-Text/.NET/Microsoft.Recognizers.Text.Number/DateTimeRecognizer.cs).
 
-The minimum required code for a Custom Prompt is the `TryParse` method. This is a copy of the [QuantityPrompt](./BotBuilder/Dialogs/QuantityPrompt.cs) `TryParse` method, which validates that the user input is an Integer, between 1 and 100 and not a decimal number:
+This is a copy of the [DeliveryDialog](./BotBuilder/Dialogs/DeliveryDialog.cs) _ValidateQuantity_ method which validates that the user input is an Integer, between 1 and 100 and not a decimal number:
 
 ````C#
-protected override bool TryParse(IMessageActivity message, out int result)
-{
-    result = 0;
-
-    // Get Number for the specified culture
-    var results = NumberRecognizer.RecognizeNumber(message.Text, this.culture);
-    if (results.Count > 0)
-    {
-        if (results.First().TypeName == "number" &&
-            double.TryParse(results.First().Resolution["value"].ToString(), out double value))
+	private async Task<bool> ValidateQuantity(PromptValidatorContext<string> promptContext, CancellationToken cancellationToken)
         {
-            // Validate number
-            if (value < 1)
+            var result = promptContext.Recognized.Value ?? string.Empty;
+            var results = NumberRecognizer.RecognizeNumber(result, culture);
+
+            if (results.Count == 0)
             {
-                this.promptOptions.DefaultRetry = "I need to deliver at least one rose =)";
-                return false;
-            }
-            else if (value > 100)
-            {
-                this.promptOptions.DefaultRetry = "You cannot order more than 100 roses per day. Sorry!";
-                return false;
-            }
-            else if (value % 1 != 0)
-            {
-                this.promptOptions.DefaultRetry = "I need to send whole roses, not fractions of them. How many would you like to send?";
+                await promptContext.Context.SendActivityAsync(InvalidQuantityErrorMessage);
                 return false;
             }
 
-            // return as Int
-            result = Convert.ToInt32(value);
-            return true;
+            if (results.First().TypeName == "number" && double.TryParse(results.First().Resolution["value"].ToString(), out double value))
+            {
+                // Validate number
+                if ((value < 1) || (value % 1 != 0))
+                {
+                    await promptContext.Context.SendActivityAsync(InvalidQuantityErrorMessage);
+                    return false;
+                }
+
+                if (value > 100)
+                {
+                    await promptContext.Context.SendActivityAsync(InvalidOverQuantityErrorMessage);
+                    return false;
+                }
+
+                var quantityRoses = Convert.ToInt32(results.First().Resolution["value"]);
+                var quantityMessage = quantityRoses == 1
+                ? "I'll send just one rose."
+                : $"I'll send {quantityRoses} roses.";
+                promptContext.Recognized.Value = quantityRoses.ToString();
+                await promptContext.Context.SendActivityAsync(quantityMessage);
+                return true;
+            }
+            else
+            {
+                await promptContext.Context.SendActivityAsync(InvalidQuantityErrorMessage);
+                return false;
+            }
         }
-    }
-
-    // No parse results
-    this.promptOptions.DefaultRetry = "I'm sorry, that doesn't seem to be a valid quantity";
-    return false;
-}
 ````
 
-From our existing dialog, we can invoke this prompt as follows:
+The Prompts are added in a waterfall Dialog:
 
 ````C#
-[Serializable]
-public class RootDialog : IDialog<object>
-{
-    public async Task StartAsync(IDialogContext context)
-    {
-        context.Wait(this.MessageReceivedAsync);
-    }
-
-    private async Task MessageReceivedAsync(IDialogContext context, IAwaitable<IMessageActivity> activity)
-    {
-        // Welcome message
-        // ...
-
-        // Prompt for amount of roses
-        var prompt = new QuantityPrompt(GetCurrentCultureCode());
-        context.Call(prompt, this.OnQuantitySelected);
-    }
-
-    private async Task OnQuantitySelected(IDialogContext context, IAwaitable<int> result)
-    {
-        try
+	public DeliveryDialog(IStatePropertyAccessor<DeliveryState> userProfileStateAccessor, ILoggerFactory loggerFactory)
+            : base(nameof(DeliveryDialog))
         {
-            var quantity = await result;
-            var quantityMessage = quantity == 1
-                ? "I'll send just one rose."
-                : $"I'll send {quantity} roses.";
-            await context.PostAsync(quantityMessage);
-
-            // Store amount
-            context.ConversationData.SetValue("quantity", quantity);
-
-            // Prompt for delivery date
-            // ...
-
+            UserProfileAccessor = userProfileStateAccessor ?? throw new ArgumentNullException(nameof(userProfileStateAccessor));
+            // Add control flow dialogs
+            var waterfallSteps = new WaterfallStep[]
+            {
+                    InitializeStateStepAsync,
+                    PromptForQuantityStepAsync,
+                    PromptForDateStepAsync,
+                    DisplayDeliveryStateStepAsync,
+            };
+            AddDialog(new WaterfallDialog(ProfileDialog, waterfallSteps));
+            AddDialog(new TextPrompt(QuantityPrompt, ValidateQuantity));
+            AddDialog(new TextPrompt(DatePrompt, ValidateDate));
         }
-        catch (TooManyAttemptsException)
-        {
-            await context.PostAsync("Restarting now...");
-            context.Wait(this.MessageReceivedAsync);
-        }
-    }
-
-    // ...
-}
 ````
 
 Asking the user for a specific delivery time may require special parsing, like extracting both date and time from the user input, or even obtain a range of dates and times.
 
-The [`DeliveryPrompt`](./BotBuilder/Dialogs/DeliveryPrompt.cs) does exactly that. It will prompt the user for a possible delivery time, parse the user's input and extract, at least, one of these avaliable return values using the DateTime Recognizer:
+The [`DeliveryDialog`](./BotBuilder/Dialogs/DeliveryDialog.cs) _ValidateDate_ method does exactly that. It will prompt the user for a possible delivery time, parse the user's input and extract, at least, one of these available return values using the DateTime Recognizer:
 
  - date
  - daterange
@@ -215,141 +192,6 @@ The [`DeliveryPrompt`](./BotBuilder/Dialogs/DeliveryPrompt.cs) does exactly that
 (These are the DateTime Recognizer types that contains *date* information)
 
 > NOTE: The DateTime Recognizer uses LUIS datetimeV2 subtypes. For a full list, please visit [LUIS prebuilt entities - Subtypes of datetimeV2](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/pre-builtentities#subtypes-of-datetimev2).
-
-This prompt uses a helper method to call the DateTime Recognizer, to validate the subtype and check the selected delivery moment is at least one hour from now:
-
-````C#
-public static Extraction ValidateAndExtract(string input)
-{
-    // Get DateTime for the specified culture
-    var results = DateTimeRecognizer.RecognizeDateTime(input, culture);
-
-    // Check there are valid results
-    if (results.Count > 0 && results.First().TypeName.StartsWith("datetimeV2"))
-    {
-        // The DateTime model can return several resolution types (https://github.com/Microsoft/Recognizers-Text/blob/master/.NET/Microsoft.Recognizers.Text.DateTime/Constants.cs#L7-L15)
-        // We only care for those with a date, date and time, or date time period:
-        // date, daterange, datetime, datetimerange
-
-        var first = results.First();
-        var resolutionValues = (IList<Dictionary<string, string>>)first.Resolution["values"];
-
-        var subType = first.TypeName.Split('.').Last();
-        if (subType.Contains("date") && !subType.Contains("range"))
-        {
-            // a date (or date & time) or multiple
-            var moment = resolutionValues.Select(v => DateTime.Parse(v["value"])).FirstOrDefault();
-            if (IsFuture(moment))
-            {
-                // a future moment, valid!
-                return new Extraction
-                {
-                    IsValid = true,
-                    Values = new[] { moment }
-                };
-            }
-
-            // a past moment
-            return new Extraction
-            {
-                IsValid = false,
-                Values = new[] { moment },
-                ErrorMessage = PastValueErrorMessage.Replace("$moment$", MomentOrRangeToString(moment))
-            };
-        }
-        else if (subType.Contains("date") && subType.Contains("range"))
-        {
-            // range
-            var from = DateTime.Parse(resolutionValues.First()["start"]);
-            var to = DateTime.Parse(resolutionValues.First()["end"]);
-            if (IsFuture(from) && IsFuture(to))
-            {
-                // future
-                return new Extraction
-                {
-                    IsValid = true,
-                    Values = new[] { from, to }
-                };
-            }
-
-            var values = new[] { from, to };
-            return new Extraction
-            {
-                IsValid = false,
-                Values = values,
-                ErrorMessage = PastValueErrorMessage.Replace("$moment$", MomentOrRangeToString(values))
-            };
-        }
-    }
-
-    return new Extraction
-    {
-        IsValid = false,
-        Values = Enumerable.Empty<DateTime>(),
-        ErrorMessage = "I'm sorry, that doesn't seem to be a valid delivery date and time"
-    };
-}
-
-public static bool IsFuture(DateTime date)
-{
-    // at least one hour
-    return date > DateTime.Now.AddHours(1);
-}
-````
-
-We use the helper function from Custom Prompt form the [`TryParse` method](./BotBuilder/Dialogs/DeliveryPrompt.cs#L33):
-
-````C#
-protected override bool TryParse(IMessageActivity message, out IEnumerable<DateTime> result)
-{
-    var extraction = ValidateAndExtract(message.Text, this.culture);
-    if (!extraction.IsValid)
-    {
-        this.promptOptions.DefaultRetry = extraction.ErrorMessage;
-    }
-
-    result = extraction.Values;
-    return extraction.IsValid;
-}
-````
-
-Finally, this is how you call the prompt and obtain the date (or dates) back:
-
-````C#
-private async Task OnQuantitySelected(IDialogContext context, IAwaitable<int> result)
-{
-        // ...
-        
-        // Prompt for delivery date
-        var prompt = new DeliveryPrompt(GetCurrentCultureCode());
-        context.Call(prompt, this.OnDeliverySelected);
-}
-
-private async Task OnDeliverySelected(IDialogContext context, IAwaitable<IEnumerable<DateTime>> result)
-{
-    try
-    {
-        // "result" contains the date (or array of dates) returned from the prompt
-        var momentOrRange = await result;
-        var quantity = context.ConversationData.GetValue<int>("quantity");
-        var nRoses = quantity == 1 ? "Just one rose" : $"{quantity} roses";
-        var text = $"Thank you! I'll deliver {nRoses} {DeliveryPrompt.MomentOrRangeToString(momentOrRange)}.";
-
-        await context.PostAsync(text);
-
-        // TODO: It should continue to a checkout dialog or page
-        await context.PostAsync("Have a nice day!");
-    }
-    catch (TooManyAttemptsException)
-    {
-        await context.PostAsync("Restarting now...");
-    }
-    finally
-    {
-        context.Wait(this.MessageReceivedAsync);
-    }
-}
-````
 
 ## Recognizer Function ([source](./RecognizerFunction))
 This sample is a variant of the SimpleConsole, which you can deploy as a Web API using Azure Functions (serverless). It is a combination of all Recognizers to extract possible values from the user's input. 

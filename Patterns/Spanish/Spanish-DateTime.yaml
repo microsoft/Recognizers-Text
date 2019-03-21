@@ -1,4 +1,4 @@
-﻿---
+---
 TillRegex: !simpleRegex
   def: (?<till>hasta|al|a|--|-|—|——)(\s+(el|la(s)?))?
 AndRegex: !simpleRegex

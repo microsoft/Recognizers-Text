@@ -183,15 +183,11 @@ MonthOfRegex: !simpleRegex
   def: (maand)(\s*)(van)
 MonthRegex: !simpleRegex
   def: (?<month>januari|februari|maart|april|mei|juni|juli|augustus|september|oktober|december|jan|feb|mar|apr|jun|jul|aug|sep|sept|oct|okt|nov|dec)
-#Cases collected from mined data 
+# Cases collected from mined data 
 AmbiguousMonthP0Regex: !simpleRegex
   def: \b((^may i)|(i|you|he|she|we|they)\s+may|(may\s+((((also|not|(also not)|well)\s+)?(be|contain|constitute|email|e-mail|take|have|result|involve|get|work|reply))|(or may not))))\b
-AmDescRegex: !simpleRegex
-  def: (am\b|a\.m\.|a m\b|a\. m\.|a\.m\b|a\. m\b|a m\b)
-PmDescRegex: !simpleRegex
-  def: (pm\b|p\.m\.|p\b|p m\b|p\. m\.|p\.m\b|p\. m\b|p m\b)
-#This is a look-behind assertion. Some cases should extract two digits as year like 11/25/16, where 16 means 2016. 
-#The assertion determines if not connected with am/pm or hour separator (:), which should be a time.
+# This is a look-behind assertion. Some cases should extract two digits as year like 11/25/16, where 16 means 2016. 
+# The assertion determines if not connected with am/pm or hour separator (:), which should be a time.
 DateYearRegex: !nestedRegex
   def: (?<year>((1\d|20)\d{2})|2100|(([0-27-9]\d)\b(?!(\s*((\:)|{AmDescRegex}|{PmDescRegex})))))
   references: [ AmDescRegex, PmDescRegex ]
@@ -287,11 +283,6 @@ WeekDayEnd: !nestedRegex
   references: [ WeekDayRegex ]
 RangeUnitRegex: !simpleRegex
   def: \b(?<unit>jaren|jaar|maanden|maand|weken|week)\b
-OclockRegex: !simpleRegex
-  def: (?<oclock>uur)
-DescRegex: !nestedRegex
-  def: ((({OclockRegex}\s+)?(?<desc>ampm|am\b|a\.m\.|a m\b|a\. m\.|a\.m\b|a\. m\b|a m\b|pm\b|p\.m\.|p m\b|p\. m\.|p\.m\b|p\. m\b|p\b|p m\b))|{OclockRegex})
-  references: [ OclockRegex ]
 HourNumRegex: !simpleRegex
   def: \b(?<hournum>nul|een|één|twee|drie|vier|vijf|zes|zeven|acht|negen|tien|elf|twaalf|dertien|veertien|vijftien|zestien|zeventien|achttien|negentien|twintig|eenentwintig|tweeentwintig|drieentwintig|vierentwintig)\b
 MinuteNumRegex: !simpleRegex
@@ -507,10 +498,6 @@ HolidayRegex2: !nestedRegex
 HolidayRegex3: !nestedRegex # -dag suffix
   def: (?<holiday>(valentijns|valetijns|nieuwjaars|prinsjes|konings|koninginne|bevrijdings|hemelvaarts|eerste kerst|1e kerst|tweede kerst|2e kerst|vaders|vader|moeders|moeder|meisjes|amerikaanse onafhankelijkheids|onafhankelijkheids|dankzeggings|bosmarmotten|inauguratie|boomplant|boomfeest|vrijgezellen|nederlandse veteranen|veteranen)\s*(dag))(\s+(van\s+|in\s+)?({YearRegex}|{RelativeRegex}\s+jaar))?
   references: [ YearRegex, RelativeRegex ]
-DateTokenPrefix: 'op '
-TimeTokenPrefix: 'om '
-TokenBeforeDate: 'op '
-TokenBeforeTime: 'om '
 AMTimeRegex: !simpleRegex
   def: (?<am>'s morgens)
 PMTimeRegex: !simpleRegex
@@ -537,8 +524,6 @@ WithinNextPrefixRegex: !nestedRegex
   def: \b(in(\s+de)?(\s+(?<next>{NextPrefixRegex}))?)\b
   references: [ NextPrefixRegex ]
 # "next" group here is used to judge for illegal cases like "within the next 5 days before today"
-AmPmDescRegex: !simpleRegex
-  def: (ampm)
 MorningStartEndRegex: !nestedRegex
   def: (^('s morgens|in de morgen|{AmDescRegex}))|(('s morgens|in de morgen|{AmDescRegex})$)
   references: [ AmDescRegex ]
@@ -949,10 +934,7 @@ DayOfMonth: !dictionary
     '19e': 19
     '20e': 20
     '21e': 21
-    '21e': 21
     '22e': 22
-    '22e': 22
-    '23e': 23
     '23e': 23
     '24e': 24
     '25e': 25

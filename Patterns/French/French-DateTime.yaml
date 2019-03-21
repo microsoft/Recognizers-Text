@@ -308,7 +308,7 @@ SpecificTimeBetweenAnd: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
 PrepositionRegex: !simpleRegex
-  def: (?<prep>^([aà] la|en|sur\s*l[ea]|sur|de)$)
+  def: (?<prep>^([aà]|[aà] la|en|sur\s*l[ea]|sur|de)$)
 TimeOfDayRegex: !simpleRegex
   def: \b(?<timeOfDay>((((dans\s+(l[ea])?\s+)?((?<early>d[eé]but(\s+|-)|t[oô]t(\s+|-)(l[ea]\s*)?)|(?<late>fin\s*|fin de(\s+(la)?)|tard\s*))?(matin[ée]e|matin|((d|l)?'?)apr[eè]s[-|\s*]midi|nuit|soir[eé]e|soir)))|(((\s+(l[ea])?\s+)?)(jour|journ[eé]e)))s?)\b
 SpecificTimeOfDayRegex: !nestedRegex

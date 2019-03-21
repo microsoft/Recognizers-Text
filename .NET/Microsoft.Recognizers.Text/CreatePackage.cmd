@@ -12,7 +12,7 @@ if not exist ..\nuget mkdir ..\nuget
 if exist ..\nuget\Microsoft.Recognizers.Text*.nupkg erase /s ..\nuget\Microsoft.Recognizers.Text*.nupkg
 "%MSBuildDir%\MSBuild\15.0\Bin\MSBuild.exe" /property:Configuration=release Microsoft.Recognizers.Text.csproj
 for /f %%v in ('powershell -noprofile "(Get-Command .\bin\release\netstandard2.0\Microsoft.Recognizers.Text.dll).FileVersionInfo.FileVersion"') do set basicVersion=%%v
-..\packages\NuGet.CommandLine.4.3.0\tools\NuGet.exe pack Microsoft.Recognizers.Text.nuspec -symbols -properties version=%basicVersion% -OutputDirectory ..\nuget
+..\buildtools\NuGet.exe pack Microsoft.Recognizers.Text.nuspec -symbols -properties version=%basicVersion% -OutputDirectory ..\nuget
 
 set error=%errorlevel%
 set packageName=Microsoft.Recognizers.Text

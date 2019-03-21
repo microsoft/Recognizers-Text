@@ -125,7 +125,7 @@ class FrenchDateTime:
     PureNumBetweenAnd = f'(entre\\s+)({HourRegex}|{PeriodHourNumRegex})(\\s*(?<leftDesc>{PeriodDescRegex}))?\\s*{RangeConnectorRegex}\\s*({HourRegex}|{PeriodHourNumRegex})\\s*(?<rightDesc>{PmRegex}|{AmRegex}|{PeriodDescRegex})?'
     SpecificTimeFromTo = f'^[.]'
     SpecificTimeBetweenAnd = f'^[.]'
-    PrepositionRegex = f'(?<prep>^([aà] la|en|sur\\s*l[ea]|sur|de)$)'
+    PrepositionRegex = f'(?<prep>^([aà]|[aà] la|en|sur\\s*l[ea]|sur|de)$)'
     TimeOfDayRegex = f'\\b(?<timeOfDay>((((dans\\s+(l[ea])?\\s+)?((?<early>d[eé]but(\\s+|-)|t[oô]t(\\s+|-)(l[ea]\\s*)?)|(?<late>fin\\s*|fin de(\\s+(la)?)|tard\\s*))?(matin[ée]e|matin|((d|l)?\'?)apr[eè]s[-|\\s*]midi|nuit|soir[eé]e|soir)))|(((\\s+(l[ea])?\\s+)?)(jour|journ[eé]e)))s?)\\b'
     SpecificTimeOfDayRegex = f'\\b(({RelativeRegex}\\s+{TimeOfDayRegex})|({TimeOfDayRegex}\\s*({NextSuffixRegex}))\\b|\\bsoir|\\bdu soir)s?\\b'
     TimeFollowedUnit = f'^\\s*{TimeUnitRegex}'
