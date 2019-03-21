@@ -1,46 +1,32 @@
 [
   {
-    "Input": ",231001",
+    "Input": "5",
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": ",231001",
+        "Text": "5",
         "TypeName": "number",
         "Resolution": {
-          "value": "0,231001"
+          "subtype":"integer",
+          "value": "5"
         },
         "Start": 0,
-        "End": 6
+        "End": 0
       }
     ]
   },
   {
-    "Input": "ett",
-    "NotSupported": "javascript, python, java",
+    "Input": ".08",
     "Results": [
       {
-        "Text": "ett",
+        "Text": ".08",
         "TypeName": "number",
         "Resolution": {
-          "value": "1"
+          "subtype": "decimal",
+          "value": "0.08"
         },
         "Start": 0,
         "End": 2
-      }
-    ]
-  },
-  {
-    "Input": "etthundra",
-    "NotSupported": "javascript, python, java",
-    "Results": [
-      {
-        "Text": "etthundra",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "100"
-        },
-        "Start": 0,
-        "End": 8
       }
     ]
   }
