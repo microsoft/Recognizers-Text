@@ -57,6 +57,7 @@
 		"colors": "^1.1.2",
 		"js-yaml": "^3.9.1",
 		"lerna": "^2.11.0",
+		"lodash": "^4.17.11",
 		"lodash.camelcase": "^4.3.0",
 		"lodash.keys": "^4.2.0",
 		"prettier": "^1.6.1",
