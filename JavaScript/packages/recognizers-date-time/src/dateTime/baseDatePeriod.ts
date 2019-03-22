@@ -588,8 +588,8 @@ export class BaseDatePeriodParser implements IDateTimeParser {
             swift = this.config.getSwiftDayOrMonth(trimedText);
             if (this.config.isWeekOnly(trimedText)) {
                 let monday = DateUtils.addDays(DateUtils.this(referenceDate, DayOfWeek.Monday), 7 * swift);
-
-                result.timex = `${DateTimeFormatUtil.toString(monday.getFullYear(), 4)}-W${DateTimeFormatUtil.toString(DateUtils.getWeekNumber(monday).weekNo, 2)}`;
+                
+                result.timex = `${DateTimeFormatUtil.toString(DateUtils.getWeekNumber(monday).year, 4)}-W${DateTimeFormatUtil.toString(DateUtils.getWeekNumber(monday).weekNo, 2)}`;
 
                 let beginDate = DateUtils.addDays(DateUtils.this(referenceDate, DayOfWeek.Monday), 7 * swift);
                 let endDate = this.inclusiveEndPeriod
