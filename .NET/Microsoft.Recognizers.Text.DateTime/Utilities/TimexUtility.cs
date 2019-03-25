@@ -7,7 +7,7 @@ using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
-    public class TimexUtility
+    public static class TimexUtility
     {
         private static readonly Calendar Cal = DateTimeFormatInfo.InvariantInfo.Calendar;
 

@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System.Collections.Generic;
 using System.IO;
 
 using YamlDotNet.Serialization;
@@ -21,14 +24,14 @@ namespace Microsoft.Recognizers.Definitions.Common
                 .Build();
         }
 
-        public IDictionary<string, object> Deserialize(TextReader obj)
+        public IDictionary<string, object> Deserialize(TextReader jsonPayload)
         {
-            return yamlDeserializer.Deserialize<IDictionary<string, object>>(obj);
+            return yamlDeserializer.Deserialize<IDictionary<string, object>>(jsonPayload);
         }
 
-        public IDictionary<string, object> Deserialize(string obj)
+        public IDictionary<string, object> Deserialize(string jsonPayload)
         {
-            return yamlDeserializer.Deserialize<IDictionary<string, object>>(obj);
+            return yamlDeserializer.Deserialize<IDictionary<string, object>>(jsonPayload);
         }
     }
 }

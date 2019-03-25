@@ -25,18 +25,18 @@
             <param name="cancellationToken">Task CancellationToken.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
         </member>
-        <member name="M:BotBuilderRecognizerBot.DeliveryDialog.ValidateQuantity(Microsoft.Bot.Builder.Dialogs.PromptValidatorContext{System.Int32},System.Threading.CancellationToken)">
+        <member name="M:BotBuilderRecognizerBot.DeliveryDialog.ValidateQuantity(Microsoft.Bot.Builder.Dialogs.PromptValidatorContext{System.String},System.Threading.CancellationToken)">
             <summary>
-            Validator function to verify if the quantity the user entered is valid.
+            Validator function to verify if the quantity the user entered gets recognized.
             </summary>
             <param name="promptContext">Context for this prompt.</param>
             <param name="cancellationToken">A <see cref="T:System.Threading.CancellationToken"/> that can be used by other objects
             or threads to receive notice of cancellation.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the work queued to execute.</returns>
         </member>
-        <member name="M:BotBuilderRecognizerBot.DeliveryDialog.ValidateDate(Microsoft.Bot.Builder.Dialogs.PromptValidatorContext{System.Collections.Generic.IList{Microsoft.Bot.Builder.Dialogs.DateTimeResolution}},System.Threading.CancellationToken)">
+        <member name="M:BotBuilderRecognizerBot.DeliveryDialog.ValidateDate(Microsoft.Bot.Builder.Dialogs.PromptValidatorContext{System.String},System.Threading.CancellationToken)">
             <summary>
-            Validator function to verify if the date the user entered is valid.
+            Validator function to verify if date the user entered gets recognized.
             </summary>
             <param name="promptContext">Context for this prompt.</param>
             <param name="cancellationToken">A <see cref="T:System.Threading.CancellationToken"/> that can be used by other objects

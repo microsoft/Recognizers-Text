@@ -121,6 +121,22 @@ namespace Microsoft.Recognizers.Text.DateTime
             return firstWeekday.AddDays(7 * (cardinal - 1));
         }
 
+        private static bool EndsWithTerms(string text, IImmutableList<string> terms)
+        {
+            var result = false;
+
+            foreach (var term in terms)
+            {
+                if (text.EndsWith(term))
+                {
+                    result = true;
+                    break;
+                }
+            }
+
+            return result;
+        }
+
         // Parse basic patterns in DateRegexList
         private DateTimeResolutionResult ParseBasicRegexMatch(string text, DateObject referenceDate)
         {
@@ -869,22 +885,6 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             return swift;
-        }
-
-        private bool EndsWithTerms(string text, IImmutableList<string> terms)
-        {
-            var result = false;
-
-            foreach (var term in terms)
-            {
-                if (text.EndsWith(term))
-                {
-                    result = true;
-                    break;
-                }
-            }
-
-            return result;
         }
     }
 }

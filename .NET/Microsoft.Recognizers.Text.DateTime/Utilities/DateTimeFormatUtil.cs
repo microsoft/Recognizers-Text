@@ -7,7 +7,7 @@ using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
-    public class DateTimeFormatUtil
+    public static class DateTimeFormatUtil
     {
         private static readonly Regex HourTimexRegex = new Regex(@"(?<!P)T(\d{2})");
         private static readonly Regex WeekDayTimexRegex = new Regex(@"XXXX-WXX-(\d)");

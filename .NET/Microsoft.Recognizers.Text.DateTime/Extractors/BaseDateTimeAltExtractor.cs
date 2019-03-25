@@ -68,6 +68,184 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ers;
         }
 
+        private static void PruneInvalidImplicitDate(List<ExtractResult> ers)
+        {
+            ers.RemoveAll(er => er.Data != null && er.Type.Equals(Constants.SYS_DATETIME_DATE) && er.Data.Equals(ExtractorName));
+        }
+
+        private static bool IsSupportedAltEntitySequence(List<ExtractResult> altEntities)
+        {
+            var subSeq = altEntities.Skip(1);
+            var entityTypes = subSeq.Select(t => t.Type).Distinct();
+
+            return entityTypes.Count() == 1;
+        }
+
+        private static ExtractResult ExtractContext(ExtractResult er, List<Func<string, List<ExtractResult>>> extractMethods, Action<ExtractResult, ExtractResult> postProcessMethod)
+        {
+            ExtractResult contextEr = null;
+
+            foreach (var extractMethod in extractMethods)
+            {
+                var contextErCandidates = extractMethod(er.Text);
+
+                if (contextErCandidates.Count == 1)
+                {
+                    contextEr = contextErCandidates.Single();
+                    break;
+                }
+            }
+
+            if (contextEr != null)
+            {
+                postProcessMethod?.Invoke(contextEr, er);
+            }
+
+            if (contextEr != null && string.IsNullOrEmpty(contextEr.Text))
+            {
+                contextEr = null;
+            }
+
+            return contextEr;
+        }
+
+        private static bool ShouldCreateMetadata(List<ExtractResult> originalErs, ExtractResult contextEr)
+        {
+            // For alternative entities sequence which are all DatePeriod, we should create metadata even if context is null
+            return contextEr != null ||
+                   (originalErs.First().Type == Constants.SYS_DATETIME_DATEPERIOD && originalErs.Last().Type == Constants.SYS_DATETIME_DATEPERIOD);
+        }
+
+        private static Dictionary<string, object> MergeMetadata(object originalMetadata, Dictionary<string, object> newMetadata)
+        {
+            var result = new Dictionary<string, object>();
+
+            if (originalMetadata is Dictionary<string, object>)
+            {
+                result = originalMetadata as Dictionary<string, object>;
+            }
+
+            if (originalMetadata == null)
+            {
+                result = newMetadata;
+            }
+            else
+            {
+                foreach (var data in newMetadata)
+                {
+                    result.Add(data.Key, data.Value);
+                }
+            }
+
+            return result;
+        }
+
+        private static Dictionary<string, object> CreateMetadata(string subType, string parentText, ExtractResult contextEr = null)
+        {
+            var data = new Dictionary<string, object>();
+
+            if (!string.IsNullOrEmpty(subType))
+            {
+                data.Add(Constants.SubType, subType);
+            }
+
+            if (!string.IsNullOrEmpty(parentText))
+            {
+                data.Add(ExtendedModelResult.ParentTextKey, parentText);
+            }
+
+            if (contextEr != null)
+            {
+                data.Add(Constants.Context, contextEr);
+            }
+
+            return data;
+        }
+
+        private static Action<ExtractResult, ExtractResult> GetPostProcessMethod(string firstEntityType, string lastEntityType)
+        {
+            if (firstEntityType.Equals(Constants.SYS_DATETIME_DATETIMEPERIOD) && lastEntityType.Equals(Constants.SYS_DATETIME_DATE))
+            {
+                return (contextEr, originalEr) =>
+                {
+                    contextEr.Text = originalEr.Text.Substring(0, (int)contextEr.Start) +
+                                  originalEr.Text.Substring((int)(contextEr.Start + contextEr.Length));
+                    contextEr.Type = Constants.ContextType_RelativeSuffix;
+                };
+            }
+            else if (firstEntityType.Equals(Constants.SYS_DATETIME_DATE) && lastEntityType.Equals(Constants.SYS_DATETIME_DATEPERIOD))
+            {
+                return (contextEr, originalEr) =>
+                {
+                    contextEr.Text = originalEr.Text.Substring(0, (int)contextEr.Start);
+                };
+            }
+
+            return null;
+        }
+
+        private static bool ShouldApplyParentText(List<ExtractResult> extractResults)
+        {
+            var shouldApply = false;
+
+            if (IsSupportedAltEntitySequence(extractResults))
+            {
+                var firstEntityType = extractResults.First().Type;
+                var lastEntityType = extractResults.Last().Type;
+
+                if (firstEntityType.Equals(Constants.SYS_DATETIME_DATE) && lastEntityType.Equals(Constants.SYS_DATETIME_DATE))
+                {
+                    // "11/20 or 11/22"
+                    shouldApply = true;
+                }
+                else if (firstEntityType.Equals(Constants.SYS_DATETIME_TIME) && lastEntityType.Equals(Constants.SYS_DATETIME_TIME))
+                {
+                    // "7 oclock or 8 oclock"
+                    shouldApply = true;
+                }
+                else if (firstEntityType.Equals(Constants.SYS_DATETIME_DATETIME) && lastEntityType.Equals(Constants.SYS_DATETIME_DATETIME))
+                {
+                    // "Monday 1pm or Tuesday 2pm"
+                    shouldApply = true;
+                }
+            }
+
+            return shouldApply;
+        }
+
+        private static bool ApplyParentTextMetadata(List<ExtractResult> extractResults, string parentText)
+        {
+            var success = false;
+
+            if (IsSupportedAltEntitySequence(extractResults))
+            {
+                foreach (var extractResult in extractResults)
+                {
+                    var metadata = CreateMetadata(extractResult.Type, parentText, contextEr: null);
+                    extractResult.Data = MergeMetadata(extractResult.Data, metadata);
+                    extractResult.Type = ExtractorName;
+                }
+
+                success = true;
+            }
+
+            return success;
+        }
+
+        private static void ApplyMetadata(List<ExtractResult> ers, Dictionary<string, object> metadata, string parentText)
+        {
+            // The first extract results don't need any context
+            var metadataWithoutConext = CreateMetadata(ers[0].Type, parentText, contextEr: null);
+            ers[0].Data = MergeMetadata(ers[0].Data, metadataWithoutConext);
+            ers[0].Type = ExtractorName;
+
+            for (var i = 1; i < ers.Count; i++)
+            {
+                ers[i].Data = MergeMetadata(ers[i].Data, metadata);
+                ers[i].Type = ExtractorName;
+            }
+        }
+
         private List<ExtractResult> GetAltErsWithSameParentText(List<ExtractResult> ers, int startIndex, string text)
         {
             var pivot = startIndex + 1;
@@ -180,11 +358,6 @@ namespace Microsoft.Recognizers.Text.DateTime
             ret.AddRange(originalErs);
             ret = ret.OrderBy(o => o.Start).ToList();
             return ret;
-        }
-
-        private void PruneInvalidImplicitDate(List<ExtractResult> ers)
-        {
-            ers.RemoveAll(er => er.Data != null && er.Type.Equals(Constants.SYS_DATETIME_DATE) && er.Data.Equals(ExtractorName));
         }
 
         // Resolve cases like "this week or next".
@@ -307,54 +480,6 @@ namespace Microsoft.Recognizers.Text.DateTime
             return success;
         }
 
-        private bool ShouldApplyParentText(List<ExtractResult> extractResults)
-        {
-            var shouldApply = false;
-
-            if (IsSupportedAltEntitySequence(extractResults))
-            {
-                var firstEntityType = extractResults.First().Type;
-                var lastEntityType = extractResults.Last().Type;
-
-                if (firstEntityType.Equals(Constants.SYS_DATETIME_DATE) && lastEntityType.Equals(Constants.SYS_DATETIME_DATE))
-                {
-                    // "11/20 or 11/22"
-                    shouldApply = true;
-                }
-                else if (firstEntityType.Equals(Constants.SYS_DATETIME_TIME) && lastEntityType.Equals(Constants.SYS_DATETIME_TIME))
-                {
-                    // "7 oclock or 8 oclock"
-                    shouldApply = true;
-                }
-                else if (firstEntityType.Equals(Constants.SYS_DATETIME_DATETIME) && lastEntityType.Equals(Constants.SYS_DATETIME_DATETIME))
-                {
-                    // "Monday 1pm or Tuesday 2pm"
-                    shouldApply = true;
-                }
-            }
-
-            return shouldApply;
-        }
-
-        private bool ApplyParentTextMetadata(List<ExtractResult> extractResults, string parentText)
-        {
-            var success = false;
-
-            if (IsSupportedAltEntitySequence(extractResults))
-            {
-                foreach (var extractResult in extractResults)
-                {
-                    var metadata = CreateMetadata(extractResult.Type, parentText, contextEr: null);
-                    extractResult.Data = MergeMetadata(extractResult.Data, metadata);
-                    extractResult.Type = ExtractorName;
-                }
-
-                success = true;
-            }
-
-            return success;
-        }
-
         private bool ExtractAndApplyMetadata(List<ExtractResult> extractResults, string parentText, bool reverse)
         {
             if (reverse)
@@ -410,14 +535,6 @@ namespace Microsoft.Recognizers.Text.DateTime
             return success;
         }
 
-        private bool IsSupportedAltEntitySequence(List<ExtractResult> altEntities)
-        {
-            var subSeq = altEntities.Skip(1);
-            var entityTypes = subSeq.Select(t => t.Type).Distinct();
-
-            return entityTypes.Count() == 1;
-        }
-
         // This method is to extract metadata from the targeted ExtractResult
         // For cases like "next week Monday or Tuesday or previous Wednesday", ExtractMethods can be more than one
         private Dictionary<string, object> ExtractMetadata(ExtractResult targetEr, string parentText, List<ExtractResult> ers)
@@ -433,101 +550,6 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             return metadata;
-        }
-
-        private ExtractResult ExtractContext(ExtractResult er, List<Func<string, List<ExtractResult>>> extractMethods, Action<ExtractResult, ExtractResult> postProcessMethod)
-        {
-            ExtractResult contextEr = null;
-
-            foreach (var extractMethod in extractMethods)
-            {
-                var contextErCandidates = extractMethod(er.Text);
-
-                if (contextErCandidates.Count == 1)
-                {
-                    contextEr = contextErCandidates.Single();
-                    break;
-                }
-            }
-
-            if (contextEr != null)
-            {
-                postProcessMethod?.Invoke(contextEr, er);
-            }
-
-            if (contextEr != null && string.IsNullOrEmpty(contextEr.Text))
-            {
-                contextEr = null;
-            }
-
-            return contextEr;
-        }
-
-        private bool ShouldCreateMetadata(List<ExtractResult> originalErs, ExtractResult contextEr)
-        {
-            // For alternative entities sequence which are all DatePeriod, we should create metadata even if context is null
-            return contextEr != null
-                || (originalErs.First().Type == Constants.SYS_DATETIME_DATEPERIOD && originalErs.Last().Type == Constants.SYS_DATETIME_DATEPERIOD);
-        }
-
-        private void ApplyMetadata(List<ExtractResult> ers, Dictionary<string, object> metadata, string parentText)
-        {
-            // The first extract results don't need any context
-            var metadataWithoutConext = CreateMetadata(ers[0].Type, parentText, contextEr: null);
-            ers[0].Data = MergeMetadata(ers[0].Data, metadataWithoutConext);
-            ers[0].Type = ExtractorName;
-
-            for (var i = 1; i < ers.Count; i++)
-            {
-                ers[i].Data = MergeMetadata(ers[i].Data, metadata);
-                ers[i].Type = ExtractorName;
-            }
-        }
-
-        private Dictionary<string, object> MergeMetadata(object originalMetadata, Dictionary<string, object> newMetadata)
-        {
-            var result = new Dictionary<string, object>();
-
-            if (originalMetadata is Dictionary<string, object>)
-            {
-                result = originalMetadata as Dictionary<string, object>;
-            }
-
-            if (originalMetadata == null)
-            {
-                result = newMetadata;
-            }
-            else
-            {
-                foreach (var data in newMetadata)
-                {
-                    result.Add(data.Key, data.Value);
-                }
-            }
-
-            return result;
-        }
-
-        private Dictionary<string, object> CreateMetadata(string subType, string parentText, ExtractResult contextEr = null)
-        {
-            var data = new Dictionary<string, object>();
-
-            if (!string.IsNullOrEmpty(subType))
-            {
-                data.Add(Constants.SubType, subType);
-            }
-
-            if (!string.IsNullOrEmpty(parentText))
-            {
-                data.Add(ExtendedModelResult.ParentTextKey, parentText);
-            }
-
-            if (contextEr != null)
-            {
-                data.Add(Constants.Context, contextEr);
-            }
-
-            return data;
         }
 
         private List<ExtractResult> ExtractRelativePrefixContext(string entityText)
@@ -574,28 +596,6 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             return results;
-        }
-
-        private Action<ExtractResult, ExtractResult> GetPostProcessMethod(string firstEntityType, string lastEntityType)
-        {
-            if (firstEntityType.Equals(Constants.SYS_DATETIME_DATETIMEPERIOD) && lastEntityType.Equals(Constants.SYS_DATETIME_DATE))
-            {
-                return (contextEr, originalEr) =>
-                {
-                    contextEr.Text = originalEr.Text.Substring(0, (int)contextEr.Start) +
-                                  originalEr.Text.Substring((int)(contextEr.Start + contextEr.Length));
-                    contextEr.Type = Constants.ContextType_RelativeSuffix;
-                };
-            }
-            else if (firstEntityType.Equals(Constants.SYS_DATETIME_DATE) && lastEntityType.Equals(Constants.SYS_DATETIME_DATEPERIOD))
-            {
-                return (contextEr, originalEr) =>
-                {
-                    contextEr.Text = originalEr.Text.Substring(0, (int)contextEr.Start);
-                };
-            }
-
-            return null;
         }
 
         private List<Func<string, List<ExtractResult>>> GetExtractMethods(string firstEntityType, string lastEntityType)

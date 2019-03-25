@@ -2,7 +2,7 @@
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit.Utilities
 {
-    public class DictionaryUtils
+    public static class DictionaryUtils
     {
         // Safely bind dictionary which contains several key-value pairs to the destination dictionary.
         // This function is used to bind all the prefix and suffix for units.

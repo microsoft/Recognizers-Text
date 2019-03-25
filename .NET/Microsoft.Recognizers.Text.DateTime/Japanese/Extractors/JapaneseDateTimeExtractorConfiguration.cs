@@ -28,24 +28,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         private static readonly JapaneseTimeExtractorConfiguration TimePointExtractor = new JapaneseTimeExtractorConfiguration();
         private static readonly JapaneseDurationExtractorConfiguration DurationExtractor = new JapaneseDurationExtractorConfiguration();
 
-        public List<ExtractResult> Extract(string text)
-        {
-            return Extract(text, DateObject.Now);
-        }
-
-        public List<ExtractResult> Extract(string text, DateObject referenceTime)
-        {
-            var tokens = new List<Token>();
-            tokens.AddRange(MergeDateAndTime(text, referenceTime));
-            tokens.AddRange(BasicRegexMatch(text));
-            tokens.AddRange(TimeOfToday(text, referenceTime));
-            tokens.AddRange(DurationWithBeforeAndAfter(text, referenceTime));
-
-            return Token.MergeAllTokens(tokens, text, ExtractorName);
-        }
-
-        // match now
-        public List<Token> BasicRegexMatch(string text)
+        // Match now
+        public static List<Token> BasicRegexMatch(string text)
         {
             var ret = new List<Token>();
             text = text.Trim().ToLower();
@@ -60,8 +44,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             return ret;
         }
 
-        // merge a Date entity and a Time entity, like "明天早上七点"
-        public List<Token> MergeDateAndTime(string text, DateObject referenceTime)
+        // Merge a Date entity and a Time entity, like "明天早上七点"
+        public static List<Token> MergeDateAndTime(string text, DateObject referenceTime)
         {
             var ret = new List<Token>();
             var ers = DatePointExtractor.Extract(text, referenceTime);
@@ -119,8 +103,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             return ret;
         }
 
-        // parse a specific time of today, tonight, this afternoon, "今天下午七点"
-        public List<Token> TimeOfToday(string text, DateObject referenceTime)
+        // Parse a specific time of today, tonight, this afternoon, "今天下午七点"
+        public static List<Token> TimeOfToday(string text, DateObject referenceTime)
         {
             var ret = new List<Token>();
             var ers = TimePointExtractor.Extract(text, referenceTime);
@@ -153,7 +137,23 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             return ret;
         }
 
-        // process case like "5分钟前" "二小时后"
+        public List<ExtractResult> Extract(string text)
+        {
+            return Extract(text, DateObject.Now);
+        }
+
+        public List<ExtractResult> Extract(string text, DateObject referenceTime)
+        {
+            var tokens = new List<Token>();
+            tokens.AddRange(MergeDateAndTime(text, referenceTime));
+            tokens.AddRange(BasicRegexMatch(text));
+            tokens.AddRange(TimeOfToday(text, referenceTime));
+            tokens.AddRange(DurationWithBeforeAndAfter(text, referenceTime));
+
+            return Token.MergeAllTokens(tokens, text, ExtractorName);
+        }
+
+        // Process case like "5分钟前" "二小时后"
         private List<Token> DurationWithBeforeAndAfter(string text, DateObject referenceTime)
         {
             var ret = new List<Token>();
