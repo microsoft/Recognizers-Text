@@ -1132,10 +1132,17 @@ export class BaseDatePeriodParser implements IDateTimeParser {
         if (!match) return result;
         let num = Number.parseInt(match.groups('number').value, 10);
         let year = referenceDate.getFullYear();
-        let firstDay = DateUtils.safeCreateFromValue(DateUtils.minValue(), year, 0, 1);
-        let firstWeekday = DateUtils.this(firstDay, DayOfWeek.Monday);
-        let resultDate = DateUtils.addDays(firstWeekday, 7 * num);
         result.timex = `${DateTimeFormatUtil.toString(year, 4)}-W${DateTimeFormatUtil.toString(num, 2)}`;
+
+        let firstDay = DateUtils.safeCreateFromValue(DateUtils.minValue(), year, 0, 1);
+        let firstThursday = DateUtils.this(firstDay, DayOfWeek.Thursday);
+        let firstWeek = DateUtils.getWeekNumber(firstThursday).weekNo;
+        if (firstWeek == 1) {
+            num -= 1;
+        }
+
+        let resultDate = DateUtils.addDays(firstThursday, 7 * num - 3);
+
         result.futureValue = [resultDate, DateUtils.addDays(resultDate, 7)];
         result.pastValue = [resultDate, DateUtils.addDays(resultDate, 7)];
         result.success = true;

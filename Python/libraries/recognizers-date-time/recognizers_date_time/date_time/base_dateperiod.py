@@ -1304,10 +1304,17 @@ class BaseDatePeriodParser(DateTimeParser):
 
         num = int(match.group('number'))
         year = reference.year
+        result.timex = f'{year:04d}-W{num:02d}'
+
         first_day = DateUtils.safe_create_from_value(DateUtils.min_value, year, 1, 1)
-        first_week_day = DateUtils.this(first_day, DayOfWeek.Monday)
-        result_date = first_week_day + timedelta(days=7 * num)
-        result.timex = f'{year:04d}-{num}'
+        first_thursday = DateUtils.this(first_day, DayOfWeek.Thursday)
+        first_week = DateUtils.week_of_year(first_thursday)
+
+        if first_week == 1:
+            num -= 1
+
+        result_date = first_thursday + timedelta(days=7 * num - 3)
+
         result.future_value = [result_date, result_date + timedelta(days=7)]
         result.past_value = [result_date, result_date + timedelta(days=7)]
         result.success = True

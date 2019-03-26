@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
@@ -12,6 +13,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         public static readonly string ParserName = Constants.SYS_DATETIME_DATEPERIOD; // "DatePeriod";
 
         private static bool inclusiveEndPeriod = false;
+
+        private static readonly Calendar Cal = DateTimeFormatInfo.InvariantInfo.Calendar;
 
         private readonly IDatePeriodParserConfiguration config;
 
@@ -1768,16 +1771,27 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (match.Success)
             {
                 var num = int.Parse(match.Groups["number"].ToString());
+                if (num == 0)
+                {
+                    return ret;
+                }
+
                 var year = referenceDate.Year;
-                ret.Timex = year.ToString("D4");
+                ret.Timex = year.ToString("D4") + "-W" + num.ToString("D2");
 
                 var firstDay = DateObject.MinValue.SafeCreateFromValue(year, 1, 1);
-                var firstWeekday = firstDay.This((DayOfWeek)1);
-                var value = firstWeekday.AddDays(Constants.WeekDayCount * num);
+                var firstThursday = firstDay.AddDays(DayOfWeek.Thursday - firstDay.DayOfWeek);
+                var firstWeek = Cal.GetWeekOfYear(firstThursday, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday);
+
+                if (firstWeek == 1)
+                {
+                    num -= 1;
+                }
+
+                var value = firstThursday.AddDays((num * 7) - 3);
                 var futureDate = value;
                 var pastDate = value;
 
-                ret.Timex += "-W" + num.ToString("D2");
                 ret.FutureValue = new Tuple<DateObject, DateObject>(futureDate, futureDate.AddDays(Constants.WeekDayCount));
                 ret.PastValue = new Tuple<DateObject, DateObject>(pastDate, pastDate.AddDays(Constants.WeekDayCount));
                 ret.Success = true;
