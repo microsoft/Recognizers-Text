@@ -2,25 +2,26 @@
 LangMarker: Swe
 #Integer Regex
 RoundNumberIntegerRegex: !simpleRegex
-  def: (hundra|tusen|miljon|miljard|biljon)
+  def: (hundra|tusen|miljon|miljoner|miljarder|miljard|biljon|biljoner)
 ZeroToNineIntegerRegex: !simpleRegex
-  def: (tre|sju|åtta|fyra|fem|noll|nio|ett|två|sex)
+  def: (tre|sju|åtta|fyra|fem|noll|nio|nolla|ett|en|två|sex)
 NegativeNumberTermsRegex: !simpleRegex
   def: ((minus|negativ)\s+)
 NegativeNumberSignRegex: !nestedRegex
   def: ^{NegativeNumberTermsRegex}.*
   references: [ NegativeNumberTermsRegex ]
 AnIntRegex: !simpleRegex
+# Ex. "en miljon" eller "ett hundra", dvs. inte "etthundra"
   def: (en|ett)(?=\s)
 TenToNineteenIntegerRegex: !simpleRegex
   def: (sjutton|tretton|fjorton|arton|nitton|femton|sexton|elva|tolv|tio)
 TensNumberIntegerRegex: !simpleRegex
   def: (sjuttio|tjugo|trettio|åttio|nittio|fyrtio|femtio|sextio)
 SeparaIntRegex: !nestedRegex
-  def: ((({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}(\s+(och\s+)?|\s*-\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex})(\s+{RoundNumberIntegerRegex})*))|(({AnIntRegex}(\s+{RoundNumberIntegerRegex})+))
+  def: ((({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}{ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex})(\s*{RoundNumberIntegerRegex})*))|(({AnIntRegex}(\s*{RoundNumberIntegerRegex})+))
   references: [ TenToNineteenIntegerRegex, TensNumberIntegerRegex, ZeroToNineIntegerRegex, RoundNumberIntegerRegex, AnIntRegex ]
 AllIntRegex: !nestedRegex
-  def: (((({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}(\s+(och\s+)?|\s*-\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{AnIntRegex})(\s+{RoundNumberIntegerRegex})+)\s+(och\s+)?)*{SeparaIntRegex})
+  def: (((({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}{ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|({ZeroToNineIntegerRegex}|{AnIntRegex}))?(\s*{RoundNumberIntegerRegex})))*{SeparaIntRegex})
   references: [ TenToNineteenIntegerRegex, TensNumberIntegerRegex, ZeroToNineIntegerRegex, AnIntRegex, RoundNumberIntegerRegex, SeparaIntRegex ]
 PlaceHolderPureNumber: !simpleRegex
   def: \b
@@ -116,7 +117,7 @@ DoubleAllFloatRegex: !nestedRegex
   def: ((?<=\b){AllFloatRegex}(?=\b))
   references: [ AllFloatRegex ]
 ConnectorRegex: !simpleRegex
-    def: (?<spacer>och)
+   def: (?<spacer>och)
 #Percentage Regex
 NumberWithSuffixPercentage: !nestedRegex
   def: (?<!%)({BaseNumbers.NumberReplaceToken})(\s*)(%(?!{BaseNumbers.NumberReplaceToken})|(procent|proc|procentandel)\b)
@@ -213,7 +214,7 @@ WrittenFractionSeparatorTexts: [och]
 HalfADozenRegex: !simpleRegex
   def: (ett\s+)?halvt\s+dussin
 DigitalNumberRegex: !nestedRegex
-  def: ((?<=\b)(hundra|tusen|miljon|miljard|biljard|dussin)(?=\b))|((?<=(\d|\b)){BaseNumbers.MultiplierLookupRegex}(?=\b))
+  def: ((?<=\b)(hundra|tusen|miljon|miljoner|miljard|miljarder|biljarder|dussin)(?=\b))|((?<=(\d|\b)){BaseNumbers.MultiplierLookupRegex}(?=\b))
   references: [ BaseNumbers.MultiplierLookupRegex ]
 CardinalNumberMap: !dictionary
   types: [ string, long ]
@@ -258,7 +259,10 @@ CardinalNumberMap: !dictionary
     hundra: 100
     tusen: 1000
     miljon: 1000000
+    miljoner: 1000000
     miljard: 1000000000
+    miljarder: 1000000000
+    biljarder: 1000000000000
     biljard: 1000000000000
 OrdinalNumberMap: !dictionary
   types: [ string, long ]

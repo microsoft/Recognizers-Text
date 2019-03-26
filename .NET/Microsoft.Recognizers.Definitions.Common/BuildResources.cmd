@@ -13,7 +13,7 @@ ECHO.
 ECHO # Transform All T4 Templates
 
 ECHO.
-FOR /R %%i IN (*.tt) DO (ECHO # Transform %%i to %%~dpni.cs & dotnet tt "%%i" -o "%%~dpni.cs" -r "%COMMONASSEMBLYPATH%")
+FOR /R %%i IN (NumbersDefinitions.tt) DO (ECHO # Transform %%i to %%~dpni.cs & dotnet tt "%%i" -o "%%~dpni.cs" -r "%COMMONASSEMBLYPATH%")
 
 EXIT /b 0
 

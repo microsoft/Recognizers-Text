@@ -18,15 +18,15 @@ namespace Microsoft.Recognizers.Definitions.Swedish
 	public static class NumbersDefinitions
 	{
 		public const string LangMarker = @"Swe";
-		public const string RoundNumberIntegerRegex = @"(hundra|tusen|miljon|miljard|biljon)";
-		public const string ZeroToNineIntegerRegex = @"(tre|sju|åtta|fyra|fem|noll|nio|ett|två|sex)";
+		public const string RoundNumberIntegerRegex = @"(hundra|tusen|miljon|miljoner|miljarder|miljard|biljon|biljoner)";
+		public const string ZeroToNineIntegerRegex = @"(tre|sju|åtta|fyra|fem|noll|nio|nolla|ett|en|två|sex)";
 		public const string NegativeNumberTermsRegex = @"((minus|negativ)\s+)";
 		public static readonly string NegativeNumberSignRegex = $@"^{NegativeNumberTermsRegex}.*";
 		public const string AnIntRegex = @"(en|ett)(?=\s)";
 		public const string TenToNineteenIntegerRegex = @"(sjutton|tretton|fjorton|arton|nitton|femton|sexton|elva|tolv|tio)";
 		public const string TensNumberIntegerRegex = @"(sjuttio|tjugo|trettio|åttio|nittio|fyrtio|femtio|sextio)";
-		public static readonly string SeparaIntRegex = $@"((({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}(\s+(och\s+)?|\s*-\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex})(\s+{RoundNumberIntegerRegex})*))|(({AnIntRegex}(\s+{RoundNumberIntegerRegex})+))";
-		public static readonly string AllIntRegex = $@"(((({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}(\s+(och\s+)?|\s*-\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{AnIntRegex})(\s+{RoundNumberIntegerRegex})+)\s+(och\s+)?)*{SeparaIntRegex})";
+		public static readonly string SeparaIntRegex = $@"((({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}{ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex})(\s*{RoundNumberIntegerRegex})*))|(({AnIntRegex}(\s*{RoundNumberIntegerRegex})+))";
+		public static readonly string AllIntRegex = $@"(((({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}{ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|({ZeroToNineIntegerRegex}|{AnIntRegex}))?(\s*{RoundNumberIntegerRegex})))*{SeparaIntRegex})";
 		public const string PlaceHolderPureNumber = @"\b";
 		public const string PlaceHolderDefault = @"\D|\b";
 		public static readonly Func<string, string> NumbersWithPlaceHolder = (placeholder) => $@"(((?<!\d+\s*)-\s*)|(?<=\b))\d+(?!([\.,]\d+[a-zA-Z]))(?={placeholder})";
@@ -102,7 +102,7 @@ namespace Microsoft.Recognizers.Definitions.Swedish
 		public static readonly string[] WrittenIntegerSeparatorTexts = { @"och" };
 		public static readonly string[] WrittenFractionSeparatorTexts = { @"och" };
 		public const string HalfADozenRegex = @"(ett\s+)?halvt\s+dussin";
-		public static readonly string DigitalNumberRegex = $@"((?<=\b)(hundra|tusen|miljon|miljard|biljard|dussin)(?=\b))|((?<=(\d|\b)){BaseNumbers.MultiplierLookupRegex}(?=\b))";
+		public static readonly string DigitalNumberRegex = $@"((?<=\b)(hundra|tusen|miljon|miljoner|miljard|miljarder|biljarder|dussin)(?=\b))|((?<=(\d|\b)){BaseNumbers.MultiplierLookupRegex}(?=\b))";
 		public static readonly Dictionary<string, long> CardinalNumberMap = new Dictionary<string, long>
 		{
 			{ @"ingen", 0 },
@@ -145,7 +145,10 @@ namespace Microsoft.Recognizers.Definitions.Swedish
 			{ @"hundra", 100 },
 			{ @"tusen", 1000 },
 			{ @"miljon", 1000000 },
+			{ @"miljoner", 1000000 },
 			{ @"miljard", 1000000000 },
+			{ @"miljarder", 1000000000 },
+			{ @"biljarder", 1000000000000 },
 			{ @"biljard", 1000000000000 }
 		};
 		public static readonly Dictionary<string, long> OrdinalNumberMap = new Dictionary<string, long>
