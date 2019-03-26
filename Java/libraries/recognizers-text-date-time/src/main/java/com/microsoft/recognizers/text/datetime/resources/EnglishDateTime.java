@@ -241,7 +241,7 @@ public class EnglishDateTime {
             .replace("{SeasonDescRegex}", SeasonDescRegex)
             .replace("{PrefixPeriodRegex}", PrefixPeriodRegex);
 
-    public static final String WhichWeekRegex = "(week)(\\s*)(?<number>\\d\\d|\\d|0\\d)";
+    public static final String WhichWeekRegex = "\\b(week)(\\s*)(?<number>5[0-3]|[1-4]\\d|0?[1-9])\\b";
 
     public static final String WeekOfRegex = "(the\\s+)?(week)(\\s+of)(\\s+the)?";
 
