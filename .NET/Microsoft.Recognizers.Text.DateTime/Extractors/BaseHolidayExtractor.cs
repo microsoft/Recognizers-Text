@@ -6,7 +6,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 {
     public class BaseHolidayExtractor : IDateTimeExtractor
     {
-        private static readonly string ExtractorName = Constants.SYS_DATETIME_DATE; // "Date";
+        private const string ExtractorName = Constants.SYS_DATETIME_DATE; // "Date";
 
         private readonly IHolidayExtractorConfiguration config;
 

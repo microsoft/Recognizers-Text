@@ -226,7 +226,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
             if (match.Success)
             {
-                var value = referenceDate.AddDays(config.GetSwiftDay(match.Value));
+                var value = referenceDate.AddDays(JapaneseDateTimeParserConfiguration.GetSwiftDay(match.Value));
                 ret.Timex = DateTimeFormatUtil.LuisDate(value);
                 ret.FutureValue = ret.PastValue = value;
                 ret.Success = true;
@@ -238,7 +238,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
             if (match.Success)
             {
-              var value = referenceDate.AddMonths(config.GetSwiftMonth(match.Value));
+              var value = referenceDate.AddMonths(JapaneseDateTimeParserConfiguration.GetSwiftMonth(match.Value));
               ret.Timex = DateTimeFormatUtil.LuisDate(value);
               ret.FutureValue = ret.PastValue = value;
               ret.Success = true;
@@ -250,7 +250,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
             if (match.Success)
             {
-              var value = referenceDate.AddYears(config.GetSwiftYear(match.Value));
+              var value = referenceDate.AddYears(JapaneseDateTimeParserConfiguration.GetSwiftYear(match.Value));
               ret.Timex = DateTimeFormatUtil.LuisDate(value);
               ret.FutureValue = ret.PastValue = value;
               ret.Success = true;

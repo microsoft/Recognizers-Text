@@ -7,7 +7,7 @@ using Microsoft.Recognizers.Text.Matcher;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
-    public class MatchingUtil
+    public static class MatchingUtil
     {
         public static bool GetAgoLaterIndex(string text, Regex regex, out int index)
         {

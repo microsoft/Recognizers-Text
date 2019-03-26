@@ -9,7 +9,11 @@
 //     - Language: Dutch
 //     - ClassName: NumbersWithUnitDefinitions
 // </auto-generated>
-//------------------------------------------------------------------------------
+//
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+// ------------------------------------------------------------------------------
+
 namespace Microsoft.Recognizers.Definitions.Dutch
 {
 	using System;

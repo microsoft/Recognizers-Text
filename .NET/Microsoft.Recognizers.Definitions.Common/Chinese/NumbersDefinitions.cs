@@ -9,7 +9,11 @@
 //     - Language: Chinese
 //     - ClassName: NumbersDefinitions
 // </auto-generated>
-//------------------------------------------------------------------------------
+//
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+// ------------------------------------------------------------------------------
+
 namespace Microsoft.Recognizers.Definitions.Chinese
 {
 	using System;

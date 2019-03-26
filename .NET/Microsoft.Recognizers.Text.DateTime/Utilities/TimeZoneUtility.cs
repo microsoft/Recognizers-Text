@@ -5,7 +5,7 @@ using Microsoft.Recognizers.Text.Matcher;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
-    public class TimeZoneUtility
+    public static class TimeZoneUtility
     {
         public static List<ExtractResult> MergeTimeZones(List<ExtractResult> originalErs, List<ExtractResult> timeZoneErs, string text)
         {

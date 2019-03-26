@@ -140,7 +140,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
-        public int GetSwiftDay(string text)
+        public static int GetSwiftDay(string text)
         {
             var trimmedText = text.Trim().ToLowerInvariant();
 

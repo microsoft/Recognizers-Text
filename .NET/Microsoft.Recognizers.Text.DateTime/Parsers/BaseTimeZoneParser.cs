@@ -11,18 +11,8 @@ namespace Microsoft.Recognizers.Text.DateTime
     {
         public static readonly string ParserName = Constants.SYS_DATETIME_TIMEZONE; // "TimeZone";
 
-        public ParseResult Parse(ExtractResult result)
-        {
-            return Parse(result, DateObject.Now);
-        }
-
-        public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)
-        {
-            return candidateResults;
-        }
-
         // Compute UTC offset in minutes from matched timezone offset in text. e.g. "-4:30" -> -270; "+8"-> 480.
-        public int ComputeMinutes(string utcOffset)
+        public static int ComputeMinutes(string utcOffset)
         {
             if (utcOffset.Length == 0)
             {
@@ -69,10 +59,29 @@ namespace Microsoft.Recognizers.Text.DateTime
             return offsetInMinutes;
         }
 
+        public static string ConvertOffsetInMinsToOffsetString(int offsetMins)
+        {
+            return $"UTC{(offsetMins >= 0 ? "+" : "-")}{ConvertMinsToRegularFormat(Math.Abs(offsetMins))}";
+        }
+
+        public static string ConvertMinsToRegularFormat(int offsetMins)
+        {
+            return TimeSpan.FromMinutes(offsetMins).ToString(@"hh\:mm");
+        }
+
+        public ParseResult Parse(ExtractResult result)
+        {
+            return Parse(result, DateObject.Now);
+        }
+
+        public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)
+        {
+            return candidateResults;
+        }
+
         public DateTimeParseResult Parse(ExtractResult er, DateObject refDate)
         {
-            DateTimeParseResult result;
-            result = new DateTimeParseResult
+            DateTimeParseResult result = new DateTimeParseResult
             {
                 Start = er.Start,
                 Length = er.Length,
@@ -136,16 +145,6 @@ namespace Microsoft.Recognizers.Text.DateTime
             };
 
             return val;
-        }
-
-        public string ConvertOffsetInMinsToOffsetString(int offsetMins)
-        {
-            return $"UTC{(offsetMins >= 0 ? "+" : "-")}{ConvertMinsToRegularFormat(Math.Abs(offsetMins))}";
-        }
-
-        public string ConvertMinsToRegularFormat(int offsetMins)
-        {
-            return TimeSpan.FromMinutes(offsetMins).ToString(@"hh\:mm");
         }
     }
 }
