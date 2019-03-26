@@ -16,6 +16,42 @@ namespace Microsoft.Recognizers.Text.DateTime
             this.config = config;
         }
 
+        public static bool HasTokenIndex(string text, Regex regex, out int index)
+        {
+            index = -1;
+
+            // Support cases has two or more specific tokens
+            // For example, "show me sales after 2010 and before 2018 or before 2000"
+            // When extract "before 2000", we need the second "before" which will be matched in the second Regex match
+            var match = Regex.Match(text, regex.ToString(), RegexOptions.RightToLeft | RegexOptions.Singleline);
+
+            if (match.Success && string.IsNullOrEmpty(text.Substring(match.Index + match.Length)))
+            {
+                index = match.Index;
+                return true;
+            }
+
+            return false;
+        }
+
+        public static bool TryMergeModifierToken(ExtractResult er, Regex tokenRegex, string text)
+        {
+            var beforeStr = text.Substring(0, er.Start ?? 0).ToLowerInvariant();
+
+            if (HasTokenIndex(beforeStr.TrimEnd(), tokenRegex, out var tokenIndex))
+            {
+                var modLength = beforeStr.Length - tokenIndex;
+
+                er.Length += modLength;
+                er.Start -= modLength;
+                er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
+
+                return true;
+            }
+
+            return false;
+        }
+
         public List<ExtractResult> Extract(string text)
         {
             return Extract(text, DateObject.Now);
@@ -82,42 +118,6 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             return ret;
-        }
-
-        public bool TryMergeModifierToken(ExtractResult er, Regex tokenRegex, string text)
-        {
-            var beforeStr = text.Substring(0, er.Start ?? 0).ToLowerInvariant();
-
-            if (HasTokenIndex(beforeStr.TrimEnd(), tokenRegex, out var tokenIndex))
-            {
-                var modLength = beforeStr.Length - tokenIndex;
-
-                er.Length += modLength;
-                er.Start -= modLength;
-                er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
-
-                return true;
-            }
-
-            return false;
-        }
-
-        public bool HasTokenIndex(string text, Regex regex, out int index)
-        {
-            index = -1;
-
-            // Support cases has two or more specific tokens
-            // For example, "show me sales after 2010 and before 2018 or before 2000"
-            // When extract "before 2000", we need the second "before" which will be matched in the second Regex match
-            var match = Regex.Match(text, regex.ToString(), RegexOptions.RightToLeft | RegexOptions.Singleline);
-
-            if (match.Success && string.IsNullOrEmpty(text.Substring(match.Index + match.Length)))
-            {
-                index = match.Index;
-                return true;
-            }
-
-            return false;
         }
 
         private List<ExtractResult> CheckCalendarModeFilters(List<ExtractResult> ers, string text)

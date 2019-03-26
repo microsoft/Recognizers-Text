@@ -108,6 +108,44 @@ namespace Microsoft.Recognizers.Text.Number
             return results;
         }
 
+        private static bool ValidateMatchAndGetStartAndLength(List<ExtractResult> extractNumList, string numberStr, Match match, string source, ref int start, ref int length)
+        {
+            bool validNum = false;
+
+            foreach (var extractNum in extractNumList)
+            {
+                if (numberStr.Trim().EndsWith(extractNum.Text) && match.Value.StartsWith(numberStr))
+                {
+                    start = source.IndexOf(numberStr) + extractNum.Start ?? 0;
+                    length = length - extractNum.Start ?? 0;
+                    validNum = true;
+                }
+                else if (extractNum.Start == 0 && match.Value.EndsWith(numberStr))
+                {
+                    length = length - numberStr.Length + extractNum.Length ?? 0;
+                    validNum = true;
+                }
+                else if (extractNum.Start == 0 && extractNum.Length == numberStr.Trim().Length)
+                {
+                    validNum = true;
+                }
+
+                if (validNum)
+                {
+                    break;
+                }
+            }
+
+            return validNum;
+        }
+
+        // Judge whether it's special cases like "more than 30000 in 2010"
+        // For these specific cases, we will not treat "30000 in 2010" as a fraction number
+        private static bool IsAmbiguousRangeOrFraction(Match match, string type, string numberStr)
+        {
+            return (type == NumberRangeConstants.MORE || type == NumberRangeConstants.LESS) && match.Value.Trim().EndsWith(numberStr);
+        }
+
         private void GetMatchedStartAndLength(Match match, string type, string source, out int start, out int length)
         {
             start = NumberRangeConstants.INVALID_NUM;
@@ -179,37 +217,6 @@ namespace Microsoft.Recognizers.Text.Number
             }
         }
 
-        private bool ValidateMatchAndGetStartAndLength(List<ExtractResult> extractNumList, string numberStr, Match match, string source, ref int start, ref int length)
-        {
-            bool validNum = false;
-
-            foreach (var extractNum in extractNumList)
-            {
-                if (numberStr.Trim().EndsWith(extractNum.Text) && match.Value.StartsWith(numberStr))
-                {
-                    start = source.IndexOf(numberStr) + extractNum.Start ?? 0;
-                    length = length - extractNum.Start ?? 0;
-                    validNum = true;
-                }
-                else if (extractNum.Start == 0 && match.Value.EndsWith(numberStr))
-                {
-                    length = length - numberStr.Length + extractNum.Length ?? 0;
-                    validNum = true;
-                }
-                else if (extractNum.Start == 0 && extractNum.Length == numberStr.Trim().Length)
-                {
-                    validNum = true;
-                }
-
-                if (validNum)
-                {
-                    break;
-                }
-            }
-
-            return validNum;
-        }
-
         // TODO: this should not be in the NumberRangeExtractor as it doesn't handle duration concepts
         private List<ExtractResult> ExtractNumberAndOrdinalFromStr(string numberStr, bool isAmbiguousRangeOrFraction = false)
         {
@@ -260,13 +267,6 @@ namespace Microsoft.Recognizers.Text.Number
         private bool IsFractionWithInConnector(string numberStr)
         {
             return AmbiguousFractionConnectorsRegex.Match(numberStr).Success;
-        }
-
-        // Judge whether it's special cases like "more than 30000 in 2010"
-        // For these specific cases, we will not treat "30000 in 2010" as a fraction number
-        private bool IsAmbiguousRangeOrFraction(Match match, string type, string numberStr)
-        {
-            return (type == NumberRangeConstants.MORE || type == NumberRangeConstants.LESS) && match.Value.Trim().EndsWith(numberStr);
         }
 
         // For cases like "more than 30000 in 2010", we will not treate "30000 in 2010" as a fraction number

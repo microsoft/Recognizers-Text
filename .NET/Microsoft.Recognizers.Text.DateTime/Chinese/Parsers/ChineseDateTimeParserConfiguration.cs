@@ -110,7 +110,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         public Regex SinceSuffixRegex { get; }
 
-        public int GetSwiftDay(string text)
+        public static int GetSwiftDay(string text)
         {
             var value = 0;
 

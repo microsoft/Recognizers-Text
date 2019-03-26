@@ -16,6 +16,105 @@ namespace Microsoft.Recognizers.Text.DateTime
             config = configuration;
         }
 
+        public static void AddSingleDateTimeToResolution(Dictionary<string, string> resolutionDic, string type, string mod, Dictionary<string, string> res)
+        {
+            if (resolutionDic.ContainsKey(type))
+            {
+                if (!string.IsNullOrEmpty(mod))
+                {
+                    if (mod.Equals(Constants.BEFORE_MOD))
+                    {
+                        res.Add(DateTimeResolutionKey.END, resolutionDic[type]);
+                        return;
+                    }
+
+                    if (mod.Equals(Constants.AFTER_MOD))
+                    {
+                        res.Add(DateTimeResolutionKey.START, resolutionDic[type]);
+                        return;
+                    }
+                }
+
+                res.Add(ResolutionKey.Value, resolutionDic[type]);
+            }
+        }
+
+        public static void AddPeriodToResolution(Dictionary<string, string> resolutionDic, string startType, string endType, string mod, Dictionary<string, string> res)
+        {
+            var start = string.Empty;
+            var end = string.Empty;
+
+            if (resolutionDic.ContainsKey(startType))
+            {
+                start = resolutionDic[startType];
+            }
+
+            if (resolutionDic.ContainsKey(endType))
+            {
+                end = resolutionDic[endType];
+            }
+
+            if (!string.IsNullOrEmpty(mod))
+            {
+                // For before mode, the start of the period should be the end the new period, no start
+                if (mod.Equals(Constants.BEFORE_MOD))
+                {
+                    res.Add(DateTimeResolutionKey.END, start);
+                    return;
+                }
+
+                // For after mode, the end of the period should be the start the new period, no end
+                if (mod.Equals(Constants.AFTER_MOD))
+                {
+                    res.Add(DateTimeResolutionKey.START, end);
+                    return;
+                }
+
+                // For since mode, the start of the period should be the start the new period, no end
+                if (mod.Equals(Constants.SINCE_MOD))
+                {
+                    res.Add(DateTimeResolutionKey.START, start);
+                    return;
+                }
+
+                // For until mode, the end of the period should be the end the new period, no start
+                if (mod.Equals(Constants.UNTIL_MOD))
+                {
+                    res.Add(DateTimeResolutionKey.END, start);
+                    return;
+                }
+            }
+
+            if (!string.IsNullOrEmpty(start) && !string.IsNullOrEmpty(end))
+            {
+                res.Add(DateTimeResolutionKey.START, start);
+                res.Add(DateTimeResolutionKey.END, end);
+            }
+        }
+
+        public static string DetermineDateTimeType(string type, bool hasBefore, bool hasAfter, bool hasSince)
+        {
+            if (hasBefore || hasAfter || hasSince)
+            {
+                if (type.Equals(Constants.SYS_DATETIME_DATE))
+                {
+                    return Constants.SYS_DATETIME_DATEPERIOD;
+                }
+
+                if (type.Equals(Constants.SYS_DATETIME_TIME))
+                {
+                    return Constants.SYS_DATETIME_TIMEPERIOD;
+                }
+
+                if (type.Equals(Constants.SYS_DATETIME_DATETIME))
+                {
+                    return Constants.SYS_DATETIME_DATETIMEPERIOD;
+                }
+            }
+
+            return type;
+        }
+
         public ParseResult Parse(ExtractResult extResult)
         {
             return Parse(extResult, DateObject.Now);
@@ -165,29 +264,6 @@ namespace Microsoft.Recognizers.Text.DateTime
             return pr;
         }
 
-        public string DetermineDateTimeType(string type, bool hasBefore, bool hasAfter, bool hasSince)
-        {
-            if (hasBefore || hasAfter || hasSince)
-            {
-                if (type.Equals(Constants.SYS_DATETIME_DATE))
-                {
-                    return Constants.SYS_DATETIME_DATEPERIOD;
-                }
-
-                if (type.Equals(Constants.SYS_DATETIME_TIME))
-                {
-                    return Constants.SYS_DATETIME_TIMEPERIOD;
-                }
-
-                if (type.Equals(Constants.SYS_DATETIME_DATETIME))
-                {
-                    return Constants.SYS_DATETIME_DATETIMEPERIOD;
-                }
-            }
-
-            return type;
-        }
-
         public SortedDictionary<string, object> DateTimeResolution(DateTimeParseResult slot, bool hasBefore, bool hasAfter, bool hasSince)
         {
             var resolutions = new List<Dictionary<string, string>>();
@@ -331,88 +407,12 @@ namespace Microsoft.Recognizers.Text.DateTime
             return new SortedDictionary<string, object> { { ResolutionKey.ValueSet, resolutions } };
         }
 
-        public void AddSingleDateTimeToResolution(Dictionary<string, string> resolutionDic, string type, string mod, Dictionary<string, string> res)
-        {
-            if (resolutionDic.ContainsKey(type))
-            {
-                if (!string.IsNullOrEmpty(mod))
-                {
-                    if (mod.Equals(Constants.BEFORE_MOD))
-                    {
-                        res.Add(DateTimeResolutionKey.END, resolutionDic[type]);
-                        return;
-                    }
-
-                    if (mod.Equals(Constants.AFTER_MOD))
-                    {
-                        res.Add(DateTimeResolutionKey.START, resolutionDic[type]);
-                        return;
-                    }
-                }
-
-                res.Add(ResolutionKey.Value, resolutionDic[type]);
-            }
-        }
-
-        public void AddPeriodToResolution(Dictionary<string, string> resolutionDic, string startType, string endType, string mod, Dictionary<string, string> res)
-        {
-            var start = string.Empty;
-            var end = string.Empty;
-
-            if (resolutionDic.ContainsKey(startType))
-            {
-                start = resolutionDic[startType];
-            }
-
-            if (resolutionDic.ContainsKey(endType))
-            {
-                end = resolutionDic[endType];
-            }
-
-            if (!string.IsNullOrEmpty(mod))
-            {
-                // For before mode, the start of the period should be the end the new period, no start
-                if (mod.Equals(Constants.BEFORE_MOD))
-                {
-                    res.Add(DateTimeResolutionKey.END, start);
-                    return;
-                }
-
-                // For after mode, the end of the period should be the start the new period, no end
-                if (mod.Equals(Constants.AFTER_MOD))
-                {
-                    res.Add(DateTimeResolutionKey.START, end);
-                    return;
-                }
-
-                // For since mode, the start of the period should be the start the new period, no end
-                if (mod.Equals(Constants.SINCE_MOD))
-                {
-                    res.Add(DateTimeResolutionKey.START, start);
-                    return;
-                }
-
-                // For until mode, the end of the period should be the end the new period, no start
-                if (mod.Equals(Constants.UNTIL_MOD))
-                {
-                    res.Add(DateTimeResolutionKey.END, start);
-                    return;
-                }
-            }
-
-            if (!string.IsNullOrEmpty(start) && !string.IsNullOrEmpty(end))
-            {
-                res.Add(DateTimeResolutionKey.START, start);
-                res.Add(DateTimeResolutionKey.END, end);
-            }
-        }
-
         public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)
         {
             return candidateResults;
         }
 
-        internal void ResolveAmpm(Dictionary<string, object> resolutionDic, string keyName)
+        internal static void ResolveAmpm(Dictionary<string, object> resolutionDic, string keyName)
         {
             if (resolutionDic.ContainsKey(keyName))
             {
@@ -474,7 +474,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
         }
 
-        internal Dictionary<string, string> GenerateResolution(string type, Dictionary<string, string> resolutionDic, string mod)
+        internal static Dictionary<string, string> GenerateResolution(string type, Dictionary<string, string> resolutionDic, string mod)
         {
             var res = new Dictionary<string, string>();
 

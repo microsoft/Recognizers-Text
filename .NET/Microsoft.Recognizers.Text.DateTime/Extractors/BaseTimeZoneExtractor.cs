@@ -8,7 +8,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 {
     public class BaseTimeZoneExtractor : IDateTimeZoneExtractor
     {
-        private static readonly string ExtractorName = Constants.SYS_DATETIME_TIMEZONE; // "TimeZone";
+        private const string ExtractorName = Constants.SYS_DATETIME_TIMEZONE; // "TimeZone";
 
         private readonly ITimeZoneExtractorConfiguration config;
 

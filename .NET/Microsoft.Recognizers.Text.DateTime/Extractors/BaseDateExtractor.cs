@@ -14,6 +14,19 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
         }
 
+        public static bool IsOverlapWithExistExtractions(Token er, List<Token> existErs)
+        {
+            foreach (var existEr in existErs)
+            {
+                if (er.Start < existEr.End && er.End > existEr.Start)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
         public override List<ExtractResult> Extract(string text)
         {
             return Extract(text, DateObject.Now);
@@ -28,19 +41,6 @@ namespace Microsoft.Recognizers.Text.DateTime
             tokens.AddRange(ExtractRelativeDurationDate(text, reference));
 
             return Token.MergeAllTokens(tokens, text, ExtractorName);
-        }
-
-        public bool IsOverlapWithExistExtractions(Token er, List<Token> existErs)
-        {
-            foreach (var existEr in existErs)
-            {
-                if (er.Start < existEr.End && er.End > existEr.Start)
-                {
-                    return true;
-                }
-            }
-
-            return false;
         }
 
         // "In 3 days/weeks/months/years" = "3 days/weeks/months/years from now"

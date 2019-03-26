@@ -183,6 +183,93 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
         }
 
+        private static bool IsPresent(int swift)
+        {
+            return swift == 0;
+        }
+
+        private static Tuple<DateObject, DateObject> GetWeekRangeFromDate(DateObject date)
+        {
+            var startDate = date.This(DayOfWeek.Monday);
+            var endDate = inclusiveEndPeriod ? startDate.AddDays(Constants.WeekDayCount - 1) : startDate.AddDays(Constants.WeekDayCount);
+            return new Tuple<DateObject, DateObject>(startDate, endDate);
+        }
+
+        private static Tuple<DateObject, DateObject> GetMonthRangeFromDate(DateObject date)
+        {
+            var startDate = DateObject.MinValue.SafeCreateFromValue(date.Year, date.Month, 1);
+            DateObject endDate;
+            if (date.Month < 12)
+            {
+                endDate = DateObject.MinValue.SafeCreateFromValue(date.Year, date.Month + 1, 1);
+            }
+            else
+            {
+                endDate = DateObject.MinValue.SafeCreateFromValue(date.Year + 1, 1, 1);
+            }
+
+            endDate = inclusiveEndPeriod ? endDate.AddDays(-1) : endDate;
+
+            return new Tuple<DateObject, DateObject>(startDate, endDate);
+        }
+
+        private static DateObject GetFirstThursday(int year, int month = Constants.InvalidMonth)
+        {
+            var targetMonth = month;
+
+            if (month == Constants.InvalidMonth)
+            {
+                targetMonth = 1;
+            }
+
+            var firstDay = DateObject.MinValue.SafeCreateFromValue(year, targetMonth, 1);
+            DateObject firstThursday = firstDay.This(DayOfWeek.Thursday);
+
+            // Thursday falls into previous year or previous month
+            if (firstThursday.Month != targetMonth)
+            {
+                firstThursday = firstDay.AddDays(Constants.WeekDayCount);
+            }
+
+            return firstThursday;
+        }
+
+        private static DateObject GetLastThursday(int year, int month = Constants.InvalidMonth)
+        {
+            var targetMonth = month;
+
+            if (month == Constants.InvalidMonth)
+            {
+                targetMonth = 12;
+            }
+
+            var lastDay = GetLastDay(year, targetMonth);
+            DateObject lastThursday = lastDay.This(DayOfWeek.Thursday);
+
+            // Thursday falls into next year or next month
+            if (lastThursday.Month != targetMonth)
+            {
+                lastThursday = lastThursday.AddDays(-Constants.WeekDayCount);
+            }
+
+            return lastThursday;
+        }
+
+        private static DateObject GetLastDay(int year, int month)
+        {
+            month++;
+
+            if (month == 13)
+            {
+                year++;
+                month = 1;
+            }
+
+            var firstDayOfNextMonth = DateObject.MinValue.SafeCreateFromValue(year, month, 1);
+
+            return firstDayOfNextMonth.AddDays(-1);
+        }
+
         // Process case like "from|between START to|and END" where START/END can be daterange or datepoint
         private DateTimeResolutionResult ParseComplexDatePeriod(string text, DateObject referenceDate)
         {
@@ -259,7 +346,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                             }
                             else
                             {
-                                futureBegin = dateContext.SwiftDateObject(futureBegin, futureEnd);
+                                futureBegin = DateContext.SwiftDateObject(futureBegin, futureEnd);
                             }
                         }
 
@@ -271,7 +358,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                             }
                             else
                             {
-                                pastBegin = dateContext.SwiftDateObject(pastBegin, pastEnd);
+                                pastBegin = DateContext.SwiftDateObject(pastBegin, pastEnd);
                             }
                         }
 
@@ -688,11 +775,6 @@ namespace Microsoft.Recognizers.Text.DateTime
             ret.Success = true;
 
             return ret;
-        }
-
-        private bool IsPresent(int swift)
-        {
-            return swift == 0;
         }
 
         private DateTimeResolutionResult ParseOneWordPeriod(string text, DateObject referenceDate)
@@ -1171,7 +1253,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        // parse entities that made up by two time points
+        // Parse entities that are made up by two time points
         private DateTimeResolutionResult MergeTwoTimePoints(string text, DateObject referenceDate)
         {
             var ret = new DateTimeResolutionResult();
@@ -1735,31 +1817,6 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        private Tuple<DateObject, DateObject> GetWeekRangeFromDate(DateObject date)
-        {
-            var startDate = date.This(DayOfWeek.Monday);
-            var endDate = inclusiveEndPeriod ? startDate.AddDays(Constants.WeekDayCount - 1) : startDate.AddDays(Constants.WeekDayCount);
-            return new Tuple<DateObject, DateObject>(startDate, endDate);
-        }
-
-        private Tuple<DateObject, DateObject> GetMonthRangeFromDate(DateObject date)
-        {
-            var startDate = DateObject.MinValue.SafeCreateFromValue(date.Year, date.Month, 1);
-            DateObject endDate;
-            if (date.Month < 12)
-            {
-                endDate = DateObject.MinValue.SafeCreateFromValue(date.Year, date.Month + 1, 1);
-            }
-            else
-            {
-                endDate = DateObject.MinValue.SafeCreateFromValue(date.Year + 1, 1, 1);
-            }
-
-            endDate = inclusiveEndPeriod ? endDate.AddDays(-1) : endDate;
-
-            return new Tuple<DateObject, DateObject>(startDate, endDate);
-        }
-
         private DateTimeResolutionResult ParseWhichWeek(string text, DateObject referenceDate)
         {
             var ret = new DateTimeResolutionResult();
@@ -1827,63 +1884,6 @@ namespace Microsoft.Recognizers.Text.DateTime
             ret.Success = true;
 
             return ret;
-        }
-
-        private DateObject GetFirstThursday(int year, int month = Constants.InvalidMonth)
-        {
-            var targetMonth = month;
-
-            if (month == Constants.InvalidMonth)
-            {
-                targetMonth = 1;
-            }
-
-            var firstDay = DateObject.MinValue.SafeCreateFromValue(year, targetMonth, 1);
-            DateObject firstThursday = firstDay.This(DayOfWeek.Thursday);
-
-            // Thursday falls into previous year or previous month
-            if (firstThursday.Month != targetMonth)
-            {
-                firstThursday = firstDay.AddDays(Constants.WeekDayCount);
-            }
-
-            return firstThursday;
-        }
-
-        private DateObject GetLastThursday(int year, int month = Constants.InvalidMonth)
-        {
-            var targetMonth = month;
-
-            if (month == Constants.InvalidMonth)
-            {
-                targetMonth = 12;
-            }
-
-            var lastDay = GetLastDay(year, targetMonth);
-            DateObject lastThursday = lastDay.This(DayOfWeek.Thursday);
-
-            // Thursday falls into next year or next month
-            if (lastThursday.Month != targetMonth)
-            {
-                lastThursday = lastThursday.AddDays(-Constants.WeekDayCount);
-            }
-
-            return lastThursday;
-        }
-
-        private DateObject GetLastDay(int year, int month)
-        {
-            month++;
-
-            if (month == 13)
-            {
-                year++;
-                month = 1;
-            }
-
-            var firstDayOfNextMonth = DateObject.MinValue.SafeCreateFromValue(year, month, 1);
-
-            return firstDayOfNextMonth.AddDays(-1);
         }
 
         private DateObject GetMondayOfTargetWeek(string cardinalStr, int month, int year)

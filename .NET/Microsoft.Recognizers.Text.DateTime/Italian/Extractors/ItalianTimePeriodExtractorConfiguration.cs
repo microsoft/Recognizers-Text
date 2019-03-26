@@ -101,6 +101,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         Regex ITimePeriodExtractorConfiguration.GeneralEndingRegex => GeneralEndingRegex;
 
+        public static bool HasConnectorToken(string text)
+        {
+            return ConnectorAndRegex.IsMatch(text);
+        }
+
         public bool GetFromTokenIndex(string text, out int index)
         {
             index = -1;
@@ -123,11 +128,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             }
 
             return beforeMatch.Success;
-        }
-
-        public bool HasConnectorToken(string text)
-        {
-            return ConnectorAndRegex.IsMatch(text);
         }
 
         public bool IsConnectorToken(string text)
