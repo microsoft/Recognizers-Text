@@ -1,6 +1,7 @@
 [
   {
     "Input": "sant",
+    "NotSupported":"javascript",
     "NotSupportedByDesign": "python,java",
     "Results": [
       {
@@ -15,6 +16,7 @@
   },
   {
     "Input": "ja",
+    "NotSupported":"javascript",
     "NotSupportedByDesign": "python,java",
     "Results": [
       {
@@ -29,6 +31,7 @@
   },
   {
     "Input": "ja det är ok",
+    "NotSupported":"javascript",
     "NotSupportedByDesign": "python,java",
     "Results": [
       {
@@ -43,6 +46,7 @@
   },
   {
     "Input": "ja, det är ok",
+    "NotSupported":"javascript",
     "NotSupportedByDesign": "python,java",
     "Results": [
       {
@@ -57,6 +61,7 @@
   },
   {
     "Input": "yes",
+    "NotSupported":"javascript",
     "NotSupportedByDesign": "python,java",
     "Results": [
       {
@@ -71,6 +76,7 @@
   },
   {
     "Input": "y",
+    "NotSupported":"javascript",
     "NotSupportedByDesign": "python,java",
     "Results": [
       {
@@ -85,6 +91,7 @@
   },
   {
     "Input": "j",
+    "NotSupported":"javascript",
     "NotSupportedByDesign": "python,java",
     "Results": [
       {
@@ -99,6 +106,7 @@
   },
   {
     "Input": "ok",
+    "NotSupported":"javascript",
     "NotSupportedByDesign": "python,java",
     "Results": [
       {
@@ -113,6 +121,7 @@
   },
   {
     "Input": "ok då",
+    "NotSupported":"javascript",
     "NotSupportedByDesign": "python,java",
     "Results": [
       {
@@ -127,6 +136,7 @@
   },
   {
     "Input": "det är ok",
+    "NotSupported":"javascript",
     "NotSupportedByDesign": "python,java",
     "Results": [
       {
@@ -141,6 +151,7 @@
   },
   {
     "Input": "ja det är ok",
+    "NotSupported":"javascript",
     "NotSupportedByDesign": "python,java",
     "Results": [
       {
@@ -155,6 +166,7 @@
   },
   {
     "Input": "ja, det är ok",
+    "NotSupported":"javascript",
     "NotSupportedByDesign": "python,java",
     "Results": [
       {
@@ -169,6 +181,7 @@
   },
   {
     "Input": "japp",
+    "NotSupported":"javascript",
     "NotSupportedByDesign": "python,java",
     "Results": [
       {
@@ -183,6 +196,7 @@
   },
   {
     "Input": "jupp",
+    "NotSupported":"javascript",
     "NotSupportedByDesign": "python,java",
     "Results": [
       {
@@ -197,6 +211,7 @@
   },
   {
     "Input": "jepp",
+    "NotSupported":"javascript",
     "NotSupportedByDesign": "python,java",
     "Results": [
       {
@@ -211,6 +226,7 @@
   },
   {
     "Input": "absolut",
+    "NotSupported":"javascript",
     "NotSupportedByDesign": "python,java",
     "Results": [
       {
@@ -225,6 +241,7 @@
   },
   {
     "Input": "säkert",
+    "NotSupported":"javascript",
     "NotSupportedByDesign": "python,java",
     "Results": [
       {
@@ -239,6 +256,7 @@
   },
   {
     "Input": "instämmer",
+    "NotSupported":"javascript",
     "NotSupportedByDesign": "python,java",
     "Results": [
       {
@@ -253,6 +271,7 @@
   },
   {
     "Input": "javisst",
+    "NotSupported":"javascript",
     "NotSupportedByDesign": "python,java",
     "Results": [
       {
@@ -267,6 +286,7 @@
   },
   {
     "Input": "kör",
+    "NotSupported":"javascript",
     "NotSupportedByDesign": "python,java",
     "Results": [
       {
@@ -281,6 +301,7 @@
   },
   {
     "Input": "kör på!",
+    "NotSupported":"javascript",
     "NotSupportedByDesign": "python,java",
     "Results": [
       {
@@ -295,6 +316,7 @@
   },
   {
     "Input": "👌👌👌",
+    "NotSupported":"javascript",
     "NotSupportedByDesign": "python,java",
     "Results": [
       {
@@ -309,6 +331,7 @@
   },
   {
     "Input": "falskt",
+    "NotSupported":"javascript",
     "NotSupportedByDesign": "python,java",
     "Results": [
       {
@@ -323,6 +346,7 @@
   },
   {
     "Input": "nej",
+    "NotSupported":"javascript",
     "NotSupportedByDesign": "python,java",
     "Results": [
       {
@@ -337,6 +361,7 @@
   },
   {
     "Input": "näpp",
+    "NotSupported":"javascript",
     "NotSupportedByDesign": "python,java",
     "Results": [
       {
@@ -351,6 +376,7 @@
   },
   {
     "Input": "nope",
+    "NotSupported":"javascript",
     "NotSupportedByDesign": "python,java",
     "Results": [
       {
@@ -365,6 +391,7 @@
   },
   {
     "Input": "misstycker",
+    "NotSupported":"javascript",
     "NotSupportedByDesign": "python,java",
     "Results": [
       {
@@ -379,6 +406,7 @@
   },
   {
     "Input": "aldrig",
+    "NotSupported":"javascript",
     "NotSupportedByDesign": "python,java",
     "Results": [
       {
@@ -393,6 +421,7 @@
   },
   {
     "Input": "n",
+    "NotSupported":"javascript",
     "NotSupportedByDesign": "python,java",
     "Results": [
       {
@@ -407,6 +436,7 @@
   },
   {
     "Input": "nä",
+    "NotSupported":"javascript",
     "NotSupportedByDesign": "python,java",
     "Results": [
       {
@@ -421,6 +451,7 @@
   },
   {
     "Input": "absolut inte",
+    "NotSupported":"javascript",
     "NotSupportedByDesign": "python,java",
     "Results": [
       {
@@ -435,6 +466,7 @@
   },
   {
     "Input": "glöm det",
+    "NotSupported":"javascript",
     "NotSupportedByDesign": "python,java",
     "Results": [
       {
@@ -449,6 +481,7 @@
   },
   {
     "Input": "jag säger bara, glöm det!",
+    "NotSupported":"javascript",
     "NotSupportedByDesign": "python,java",
     "Results": [
       {
@@ -463,6 +496,7 @@
   },
     {
     "Input": "öh, nä",
+    "NotSupported":"javascript",
     "NotSupportedByDesign": "python,java",
     "Results": [
       {
@@ -477,6 +511,7 @@
   },
   {
     "Input": "jag vill inte det",
+    "NotSupported":"javascript",
     "NotSupportedByDesign": "python,java",
     "Results": [
       {
@@ -491,6 +526,7 @@
   },  
   {
     "Input": "nej, jag vill inte",
+    "NotSupported":"javascript",
     "NotSupportedByDesign": "python,java",
     "Results": [
       {

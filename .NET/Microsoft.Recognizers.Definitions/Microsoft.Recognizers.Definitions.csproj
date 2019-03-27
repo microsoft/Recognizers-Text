@@ -80,8 +80,6 @@
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Spanish\NumbersDefinitions.cs" Link="Spanish\NumbersDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Spanish\NumbersWithUnitDefinitions.cs" Link="Spanish\NumbersWithUnitDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Swedish\ChoiceDefinitions.cs" Link="Swedish\ChoiceDefinitions.cs" />
-    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Swedish\NumbersDefinitions.cs" Link="Swedish\NumbersDefinitions.cs" />
-    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Swedish\NumbersWithUnitDefinitions.cs" Link="Swedish\NumbersWithUnitDefinitions.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -107,10 +105,6 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
-  </ItemGroup>
-  
-  <ItemGroup>
-    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
   </ItemGroup>
 
 </Project>

@@ -143,11 +143,6 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
-    <Compile Update="English\NumbersDefinitions.cs">
-      <DependentUpon>NumbersDefinitions.tt</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
     <Compile Update="English\NumbersWithUnitDefinitions.cs">
       <DependentUpon>NumbersWithUnitDefinitions.tt</DependentUpon>
       <DesignTime>True</DesignTime>
@@ -283,11 +278,6 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
-    <Compile Update="Swedish\NumbersWithUnitDefinitions.cs">
-      <DependentUpon>NumbersWithUnitDefinitions.tt</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -336,8 +326,6 @@
     <None Update="English\DateTimeDefinitions.tt">
     </None>
     <None Update="English\NumbersDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>NumbersDefinitions.cs</LastGenOutput>
     </None>
     <None Update="English\NumbersWithUnitDefinitions.tt">
     </None>
@@ -392,24 +380,11 @@
     <None Update="Spanish\NumbersWithUnitDefinitions.tt">
     </None>
     <None Update="Swedish\ChoiceDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-    </None>
-    <None Update="Swedish\NumbersDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <CustomToolNamespace></CustomToolNamespace>
-    </None>
-    <None Update="Swedish\NumbersWithUnitDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>NumbersWithUnitDefinitions.cs</LastGenOutput>
     </None>
   </ItemGroup>
 
   <ItemGroup>
     <DotNetCliToolReference Include="T5.TextTransform.Tool" Version="1.1.0-*" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
