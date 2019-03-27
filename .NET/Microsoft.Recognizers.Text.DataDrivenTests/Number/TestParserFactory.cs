@@ -6,7 +6,6 @@ using Microsoft.Recognizers.Text.Number.Italian;
 using Microsoft.Recognizers.Text.Number.Japanese;
 using Microsoft.Recognizers.Text.Number.Korean;
 using Microsoft.Recognizers.Text.Number.Spanish;
-using Microsoft.Recognizers.Text.Number.Swedish;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Microsoft.Recognizers.Text.Number.Tests
@@ -104,18 +103,6 @@ namespace Microsoft.Recognizers.Text.Number.Tests
             Assert.IsTrue(parseNumber is BaseNumberParser);
             Assert.IsTrue(parseCardinal is BaseNumberParser);
             Assert.IsTrue(parsePercentage is BasePercentageParser);
-        }
-
-        [TestMethod]
-        public void TestSwedishParser()
-        {
-            IParser parserNumber = AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new SwedishNumberParserConfiguration());
-            IParser parserCardinal = AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Cardinal, new SwedishNumberParserConfiguration());
-            IParser parserPercentaje = AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new SwedishNumberParserConfiguration());
-
-            Assert.IsTrue(parserNumber is BaseNumberParser);
-            Assert.IsTrue(parserCardinal is BaseNumberParser);
-            Assert.IsTrue(parserPercentaje is BasePercentageParser);
         }
 
         private ExtractResult GetNumberToParse(string number, string data)

@@ -9,7 +9,6 @@ using Microsoft.Recognizers.Text.Number.Japanese;
 using Microsoft.Recognizers.Text.Number.Korean;
 using Microsoft.Recognizers.Text.Number.Portuguese;
 using Microsoft.Recognizers.Text.Number.Spanish;
-using Microsoft.Recognizers.Text.Number.Swedish;
 
 namespace Microsoft.Recognizers.Text.Number
 {
@@ -282,32 +281,6 @@ namespace Microsoft.Recognizers.Text.Number
                     new BaseNumberRangeParser(new DutchNumberRangeParserConfiguration()),
                     new Dutch.NumberRangeExtractor(options)));
             */
-
-            RegisterModel<NumberModel>(
-                 Culture.Swedish,
-                 (options) => new NumberModel(
-                     AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new SwedishNumberParserConfiguration()),
-                     Swedish.NumberExtractor.GetInstance(NumberMode.PureNumber)));
-
-            /*
-            RegisterModel<OrdinalModel>(
-                Culture.Swedish,
-                options => new OrdinalModel(
-                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Ordinal, new SwedishNumberParserConfiguration(options)),
-                    Swedish.OrdinalExtractor.GetInstance(options)));
-
-            RegisterModel<PercentModel>(
-                Culture.Swedish,
-                options => new PercentModel(
-                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new SwedishNumberParserConfiguration(options)),
-                    new Swedish.PercentageExtractor(options)));
-
-            RegisterModel<NumberRangeModel>(
-                Culture.Swedish,
-                options => new NumberRangeModel(
-                    new BaseNumberRangeParser(new SwedishNumberRangeParserConfiguration()),
-                    new Swedish.NumberRangeExtractor(options)));
-                    */
         }
 
         private static List<ModelResult> RecognizeByModel(Func<NumberRecognizer, IModel> getModelFunc, string query, NumberOptions options)
