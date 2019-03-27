@@ -61,7 +61,7 @@ namespace Microsoft.Recognizers.Definitions.French
 		public const string PrefixDayRegex = @"^[.]";
 		public const string CenturySuffixRegex = @"^[.]";
 		public static readonly string SeasonRegex = $@"\b((<seas>printemps|été|automne|hiver)+\s*({NextSuffixRegex}|{PastSuffixRegex}))|(?<season>({RelativeRegex}\s+)?(?<seas>printemps|[ée]t[ée]|automne|hiver)((\s+de|\s*,\s*)?\s+({YearRegex}|{RelativeRegex}\s+l'ann[eé]e))?)\b";
-		public const string WhichWeekRegex = @"(semaine)(\s*)(?<number>\d\d|\d|0\d)";
+		public const string WhichWeekRegex = @"\b(semaine)(\s*)(?<number>5[0-3]|[1-4]\d|0?[1-9])\b";
 		public const string WeekOfRegex = @"(semaine)(\s*)(de)";
 		public const string MonthOfRegex = @"(mois)(\s*)(de)";
 		public const string MonthRegex = @"(?<month>avril|avr\.|avr|ao[uû]t|d[eé]cembre|d[eé]c\.|d[eé]c|f[eé]vrier|f[eé]v|f[eé]vr\.|f[eé]vr|janvier|janv\.|janv|jan|juillet|jul|juil\.|juil|juin|jun|mars|mar|mai|novembre|nov\.|nov|octobre|oct\.|oct|septembre|sept\.|sept|sep)";

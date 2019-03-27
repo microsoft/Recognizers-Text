@@ -64,7 +64,7 @@ namespace Microsoft.Recognizers.Definitions.German
 		public const string CenturySuffixRegex = @"(^jahrhundert)\b";
 		public const string ReferencePrefixRegex = @"((gleich(e|en))|(selb(e|en)))\b";
 		public static readonly string SeasonRegex = $@"\b(?<season>({RelativeRegex}\s+)?(?<seas>frühling|sommer|herbst|winter)((\s+(von|des jahres)?|\s*,\s*)?\s+({YearRegex}|{RelativeRegex}\s+jahr(e(s)?)?))?)\b";
-		public const string WhichWeekRegex = @"(week)(\s*)(?<number>\d\d|\d|0\d)";
+		public const string WhichWeekRegex = @"\b(week)(\s*)(?<number>5[0-3]|[1-4]\d|0?[1-9])\b";
 		public const string WeekOfRegex = @"(die\s+)?(woche)(\s+des)";
 		public const string MonthOfRegex = @"(monat)(\s*)(des)";
 		public const string MonthRegex = @"(?<month>april|apr.|august|aug.|dezember|dez.|februar|feb.|januar|jan.|juli|jul.|juni|jun.|märz|mai|november|nov.|oktober|okt.|september|sep.)";

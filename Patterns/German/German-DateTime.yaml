@@ -115,7 +115,7 @@ SeasonRegex: !nestedRegex
   def: \b(?<season>({RelativeRegex}\s+)?(?<seas>frühling|sommer|herbst|winter)((\s+(von|des jahres)?|\s*,\s*)?\s+({YearRegex}|{RelativeRegex}\s+jahr(e(s)?)?))?)\b
   references: [ YearRegex, RelativeRegex ]
 WhichWeekRegex: !simpleRegex
-  def: (week)(\s*)(?<number>\d\d|\d|0\d)
+  def: \b(week)(\s*)(?<number>5[0-3]|[1-4]\d|0?[1-9])\b
 WeekOfRegex: !simpleRegex
   def: (die\s+)?(woche)(\s+des)
 MonthOfRegex: !simpleRegex

@@ -86,7 +86,7 @@ SeasonRegex: !nestedRegex
   def: \b((<seas>primavera|estate|autunno|inverno)+\s*({NextSuffixRegex}|{PastSuffixRegex}))|(?<season>({RelativeRegex}\s+)?(?<seas>primavera|estate|autunno|inverno)((\s+del|\s*,\s*)?\s+({YearRegex}|{RelativeRegex}\s+l'anno))?)\b
   references: [ YearRegex, RelativeRegex, NextSuffixRegex, PastSuffixRegex ]
 WhichWeekRegex: !simpleRegex
-  def: (settimana)(\s*)(?<number>\d\d|\d|0\d)
+  def: \b(settimana)(\s*)(?<number>5[0-3]|[1-4]\d|0?[1-9])\b
 WeekOfRegex: !simpleRegex
   def: (settimana)(\s*)(del)
 MonthOfRegex: !simpleRegex

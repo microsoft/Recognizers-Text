@@ -246,6 +246,11 @@ class DateUtils:
     def last_day_of_month(year: int, month: int) -> int:
         return calendar.monthrange(year, month)[1]
 
+    @staticmethod
+    def week_of_year(date: datetime) -> int:
+        return date.isocalendar()[1]
+
+
 class DateTimeUtilityConfiguration(ABC):
     @property
     @abstractmethod

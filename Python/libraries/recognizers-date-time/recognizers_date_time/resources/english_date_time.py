@@ -79,7 +79,7 @@ class EnglishDateTime:
     PrefixDayRegex = f'\\b((?<EarlyPrefix>early)|(?<MidPrefix>mid|middle)|(?<LatePrefix>late|later))(\\s+in)?(\\s+the\\s+day)?$'
     SeasonDescRegex = f'(?<seas>spring|summer|fall|autumn|winter)'
     SeasonRegex = f'\\b(?<season>({PrefixPeriodRegex}\\s+)?({RelativeRegex}\\s+)?{SeasonDescRegex}((\\s+of|\\s*,\\s*)?\\s+({YearRegex}|{RelativeRegex}\\s+year))?)\\b'
-    WhichWeekRegex = f'(week)(\\s*)(?<number>\\d\\d|\\d|0\\d)'
+    WhichWeekRegex = f'\\b(week)(\\s*)(?<number>5[0-3]|[1-4]\\d|0?[1-9])\\b'
     WeekOfRegex = f'(the\\s+)?(week)(\\s+of)(\\s+the)?'
     MonthOfRegex = f'(month)(\\s*)(of)'
     MonthRegex = f'(?<month>april|apr|august|aug|december|dec|february|feb|january|jan|july|jul|june|jun|march|mar|may|november|nov|october|oct|september|sept|sep)'

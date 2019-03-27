@@ -55,7 +55,7 @@ class SpanishDateTime:
     PrefixDayRegex = f'^[.]'
     CenturySuffixRegex = f'^[.]'
     SeasonRegex = f'\\b(?<season>(([uú]ltim[oa]|est[ea]|el|la|(pr[oó]xim[oa]s?|siguiente)|{PrefixPeriodRegex})\\s+)?(?<seas>primavera|verano|otoño|invierno)((\\s+del?|\\s*,\\s*)?\\s+({YearRegex}|(?<order>pr[oó]ximo|[uú]ltimo|este)\\s+año))?)\\b'
-    WhichWeekRegex = f'(semana)(\\s*)(?<number>\\d\\d|\\d|0\\d)'
+    WhichWeekRegex = f'\\b(semana)(\\s*)(?<number>5[0-3]|[1-4]\\d|0?[1-9])\\b'
     WeekOfRegex = f'((del|de|la|el)\\s+)?(semana)(\\s*)({OfPrepositionRegex})'
     MonthOfRegex = f'(mes)(\\s+)({OfPrepositionRegex})'
     RangeUnitRegex = f'\\b(?<unit>años|año|meses|mes|semanas|semana)\\b'

@@ -10,7 +10,7 @@
 		"url": "https://github.com/Microsoft/Recognizers-Text/issues"
 	},
 	"scripts": {
-		"build": "lerna bootstrap --hoist",
+		"build": "lerna clean --yes && lerna bootstrap --hoist",
 		"lint": "tslint -t codeFrame ./packages/**/*.ts",
 		"test": "ava",
 		"browserify": "browserify -d -o ./test/browser-specs/index.js package.json ./test/runner-browser.js",

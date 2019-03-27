@@ -6233,14 +6233,14 @@
         "Text": "de la semana 31 a la semana 35",
         "Type": "daterange",
         "Value": {
-          "Timex": "(2018-08-06,2018-09-03,P4W)",
+          "Timex": "(2018-07-30,2018-08-27,P4W)",
           "FutureResolution": {
-            "startDate": "2018-08-06",
-            "endDate": "2018-09-03"
+            "startDate": "2018-07-30",
+            "endDate": "2018-08-27"
           },
           "PastResolution": {
-            "startDate": "2018-08-06",
-            "endDate": "2018-09-03"
+            "startDate": "2018-07-30",
+            "endDate": "2018-08-27"
           }
         },
         "Start": 14,
@@ -6260,14 +6260,14 @@
         "Text": "entre la semana 31 y 35",
         "Type": "daterange",
         "Value": {
-          "Timex": "(2018-08-06,2018-09-03,P4W)",
+          "Timex": "(2018-07-30,2018-08-27,P4W)",
           "FutureResolution": {
-            "startDate": "2018-08-06",
-            "endDate": "2018-09-03"
+            "startDate": "2018-07-30",
+            "endDate": "2018-08-27"
           },
           "PastResolution": {
-            "startDate": "2018-08-06",
-            "endDate": "2018-09-03"
+            "startDate": "2018-07-30",
+            "endDate": "2018-08-27"
           }
         },
         "Start": 14,
