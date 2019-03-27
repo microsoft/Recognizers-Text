@@ -46,7 +46,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             separateRegex = BuildSeparateRegexFromSet();
         }
 
-        public bool ValidateUnit(string source)
+        public static bool ValidateUnit(string source)
         {
             return !source.StartsWith("-");
         }
@@ -306,7 +306,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             }
         }
 
-        protected StringMatcher BuildMatcherFromSet(IEnumerable<string> collection, bool ignoreCase = true)
+        protected static StringMatcher BuildMatcherFromSet(IEnumerable<string> collection, bool ignoreCase = true)
         {
             StringMatcher matcher = new StringMatcher(MatchStrategy.TrieTree, new NumberWithUnitTokenizer());
             List<string> matchTerms = collection.SelectMany(words =>

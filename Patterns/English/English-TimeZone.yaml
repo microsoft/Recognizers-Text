@@ -5,6 +5,7 @@ DirectUtcRegex: !simpleRegex
 AbbreviationsList: !list
   types: [string]
   entries:
+    - ACT
     - AFT
     - AKST
     - AKDT
@@ -146,6 +147,7 @@ AbbreviationsList: !list
 FullNameList: !list
   types: [string]
   entries:
+    - Acre Time
     - Afghanistan Standard Time
     - Alaskan Standard Time
     - Arab Standard Time
@@ -154,7 +156,9 @@ FullNameList: !list
     - Argentina Standard Time
     - Atlantic Standard Time
     - AUS Central Standard Time
+    - Australian Central Time
     - AUS Eastern Standard Time
+    - Australian Eastern Time
     - Azerbaijan Standard Time
     - Azores Standard Time
     - Bahia Standard Time
@@ -304,6 +308,7 @@ AmbiguousTimezoneList: !list
 AbbrToMinMapping: !dictionary
  types: [ string , int ]
  entries:
+   act: -10000
    aft: 270
    akst: -540
    akdt: -480
@@ -362,7 +367,6 @@ AbbrToMinMapping: !dictionary
    eat: 180
    eet: 120
    #eet: -10000
-   eest: 180
    esat: -180
    esast: -180
    est: -300
@@ -628,7 +632,6 @@ FullToMinMapping: !dictionary
    western europe summer time: 60
    w. europe summer time: 60
    western european summer time: 60
-   western europe summer time: 60
    west europe summer time: 60
    west asia standard time: 300
    west pacific standard time: 600

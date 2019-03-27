@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BotBuilderRecognizerBot</name>
+    </assembly>
+    <members>
+        <member name="T:BotBuilderRecognizerBot.BotBuilderRecognizerBot">
+            <summary>
+            Main entry point and orchestration for bot.
+            </summary>
+        </member>
+        <member name="M:BotBuilderRecognizerBot.BotBuilderRecognizerBot.#ctor(Microsoft.Bot.Builder.UserState,Microsoft.Bot.Builder.ConversationState,Microsoft.Extensions.Logging.ILoggerFactory)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BotBuilderRecognizerBot.BotBuilderRecognizerBot"/> class.
+            </summary>
+            <param name="userState">User State accessor.</param>
+            <param name="conversationState">Conversation State accessor.</param>
+            <param name="loggerFactory">loggerFactory.</param>
+        </member>
+        <member name="M:BotBuilderRecognizerBot.BotBuilderRecognizerBot.OnTurnAsync(Microsoft.Bot.Builder.ITurnContext,System.Threading.CancellationToken)">
+            <summary>
+            Run every turn of the conversation. Handles orchestration of messages.
+            </summary>
+            <param name="turnContext">Bot Turn Context.</param>
+            <param name="cancellationToken">Task CancellationToken.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:BotBuilderRecognizerBot.DeliveryDialog.ValidateQuantity(Microsoft.Bot.Builder.Dialogs.PromptValidatorContext{System.String},System.Threading.CancellationToken)">
+            <summary>
+            Validator function to verify if the quantity the user entered gets recognized.
+            </summary>
+            <param name="promptContext">Context for this prompt.</param>
+            <param name="cancellationToken">A <see cref="T:System.Threading.CancellationToken"/> that can be used by other objects
+            or threads to receive notice of cancellation.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the work queued to execute.</returns>
+        </member>
+        <member name="M:BotBuilderRecognizerBot.DeliveryDialog.ValidateDate(Microsoft.Bot.Builder.Dialogs.PromptValidatorContext{System.String},System.Threading.CancellationToken)">
+            <summary>
+            Validator function to verify if date the user entered gets recognized.
+            </summary>
+            <param name="promptContext">Context for this prompt.</param>
+            <param name="cancellationToken">A <see cref="T:System.Threading.CancellationToken"/> that can be used by other objects
+            or threads to receive notice of cancellation.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the work queued to execute.</returns>
+        </member>
+        <member name="M:BotBuilderRecognizerBot.DeliveryDialog.ConfirmDelivery(Microsoft.Bot.Builder.Dialogs.WaterfallStepContext)">
+            <summary>
+            Helper function to confirm the information in DeliveryState.
+            </summary>
+        </member>
+        <member name="T:BotBuilderRecognizerBot.Startup">
+            <summary>
+            The Startup class configures services and the app's request pipeline.
+            </summary>
+        </member>
+        <member name="M:BotBuilderRecognizerBot.Startup.#ctor(Microsoft.AspNetCore.Hosting.IHostingEnvironment)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BotBuilderRecognizerBot.Startup"/> class.
+            This method gets called by the runtime. Use this method to add services to the container.
+            For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940.
+            </summary>
+            <param name="env">Provides information about the web hosting environment an application is running in.</param>
+        </member>
+        <member name="P:BotBuilderRecognizerBot.Startup.Configuration">
+            <summary>
+            Gets the configuration that represents a set of key/value application configuration properties.
+            </summary>
+            <value>
+            The <see cref="T:Microsoft.Extensions.Configuration.IConfiguration"/> that represents a set of key/value application configuration properties.
+            </value>
+        </member>
+        <member name="M:BotBuilderRecognizerBot.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            This method gets called by the runtime. Use this method to add services to the container.
+            </summary>
+            <param name="services">Specifies the contract for a <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/> of service descriptors.</param>
+        </member>
+        <member name="M:BotBuilderRecognizerBot.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment,Microsoft.Extensions.Logging.ILoggerFactory)">
+            <summary>
+            This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+            </summary>
+            <param name="app">Application Builder.</param>
+            <param name="env">Hosting Environment.</param>
+            <param name="loggerFactory">The <see cref="T:Microsoft.Extensions.Logging.ILoggerFactory"/> to create logger object for tracing.</param>
+        </member>
+    </members>
+</doc>

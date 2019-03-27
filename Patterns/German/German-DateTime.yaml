@@ -44,7 +44,7 @@ TwoDigitYearRegex: !nestedRegex
   def: \b(?<![$])(?<year>([0-27-9]\d))(?!(\s*((\:)|{AmDescRegex}|{PmDescRegex}|\.\d)))\b
   references: [ AmDescRegex, PmDescRegex]
 FullTextYearRegex: !nestedRegex
-  def: \b((?<firsttwoyearnum>{CenturyRegex})\s+(?<lasttwoyearnum>((null|zwanzig|dreißig|vierzig|fünfzig|sechzig|siebzig|achtzig|neunzig)\s+{WrittenNumRegex})|{WrittenNumRegex}))\b|\b(?<firsttwoyearnum>{CenturyRegex})\b
+  def: \b((?<firsttwoyearnum>{CenturyRegex})\s+(?<lasttwoyearnum>((zwanzig|dreißig|vierzig|fünfzig|sechzig|siebzig|achtzig|neunzig)\s+{WrittenNumRegex})|{WrittenNumRegex}))\b|\b(?<firsttwoyearnum>{CenturyRegex})\b
   references: [ CenturyRegex, WrittenNumRegex ]
 YearRegex: !nestedRegex
   def: ({BaseDateTime.FourDigitYearRegex}|{FullTextYearRegex})
@@ -534,9 +534,6 @@ DecadeWithCenturyRegex: !nestedRegex
 RelativeDecadeRegex: !nestedRegex
   def: \b((das|die\s+)?{RelativeRegex}\s+((?<number>[\w,]+)\s+)?jahrzehnte?)\b
   references: [ RelativeRegex ]
-FullTextYearRegex: !nestedRegex
-  def: \b((?<firsttwoyearnum>{CenturyRegex})\s+(?<lasttwoyearnum>((zwanzig|dreißig|vierzig|fünfzig|sechzig|siebzig|achtzig|neunzig)\s+{WrittenNumRegex})|{WrittenNumRegex}))\b|\b(?<firsttwoyearnum>{CenturyRegex})\b
-  references: [ CenturyRegex, WrittenNumRegex ]
 YearSuffix: !nestedRegex
   def: (,?\s*({DateYearRegex}|{FullTextYearRegex}))
   references: [ DateYearRegex, FullTextYearRegex ]
@@ -856,10 +853,7 @@ DayOfMonth: !dictionary
     '9. ': 9
     '10. ': 10
     '11. ': 11
-    '11. ': 11
     '12. ': 12
-    '12. ': 12
-    '13. ': 13
     '13. ': 13
     '14. ': 14
     '15. ': 15
@@ -890,10 +884,7 @@ DayOfMonth: !dictionary
     '9': 9
     '10': 10
     '11': 11
-    '11': 11
     '12': 12
-    '12': 12
-    '13': 13
     '13': 13
     '14': 14
     '15': 15

@@ -190,13 +190,14 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
                 Minute = -1,
                 Second = -1,
             };
+
             AddDesc(timeResult, des);
 
             return timeResult;
         }
 
         // Normalize cases like "p.m.", "p m" to canonical form "pm"
-        private string NormalizeDayDesc(string dayDesc)
+        private static string NormalizeDayDesc(string dayDesc)
         {
             return dayDesc.Replace(" ", string.Empty).Replace(".", string.Empty);
         }

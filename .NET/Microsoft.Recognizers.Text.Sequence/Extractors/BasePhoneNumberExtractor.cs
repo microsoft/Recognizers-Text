@@ -81,7 +81,7 @@ namespace Microsoft.Recognizers.Text.Sequence
                             er.Start >= 2)
                         {
                             var charGap = text[(int)(er.Start - 2)];
-                            if (!char.IsNumber(charGap))
+                            if (!char.IsNumber(charGap) && !char.IsWhiteSpace(charGap))
                             {
                                 continue;
                             }

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Linq;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
@@ -11,8 +10,6 @@ namespace Microsoft.Recognizers.Text.DateTime
     public class BaseDatePeriodParser : IDateTimeParser
     {
         public static readonly string ParserName = Constants.SYS_DATETIME_DATEPERIOD; // "DatePeriod";
-
-        private static readonly Calendar Cal = DateTimeFormatInfo.InvariantInfo.Calendar;
 
         private static bool inclusiveEndPeriod = false;
 
@@ -186,6 +183,93 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
         }
 
+        private static bool IsPresent(int swift)
+        {
+            return swift == 0;
+        }
+
+        private static Tuple<DateObject, DateObject> GetWeekRangeFromDate(DateObject date)
+        {
+            var startDate = date.This(DayOfWeek.Monday);
+            var endDate = inclusiveEndPeriod ? startDate.AddDays(Constants.WeekDayCount - 1) : startDate.AddDays(Constants.WeekDayCount);
+            return new Tuple<DateObject, DateObject>(startDate, endDate);
+        }
+
+        private static Tuple<DateObject, DateObject> GetMonthRangeFromDate(DateObject date)
+        {
+            var startDate = DateObject.MinValue.SafeCreateFromValue(date.Year, date.Month, 1);
+            DateObject endDate;
+            if (date.Month < 12)
+            {
+                endDate = DateObject.MinValue.SafeCreateFromValue(date.Year, date.Month + 1, 1);
+            }
+            else
+            {
+                endDate = DateObject.MinValue.SafeCreateFromValue(date.Year + 1, 1, 1);
+            }
+
+            endDate = inclusiveEndPeriod ? endDate.AddDays(-1) : endDate;
+
+            return new Tuple<DateObject, DateObject>(startDate, endDate);
+        }
+
+        private static DateObject GetFirstThursday(int year, int month = Constants.InvalidMonth)
+        {
+            var targetMonth = month;
+
+            if (month == Constants.InvalidMonth)
+            {
+                targetMonth = 1;
+            }
+
+            var firstDay = DateObject.MinValue.SafeCreateFromValue(year, targetMonth, 1);
+            DateObject firstThursday = firstDay.This(DayOfWeek.Thursday);
+
+            // Thursday falls into previous year or previous month
+            if (firstThursday.Month != targetMonth)
+            {
+                firstThursday = firstDay.AddDays(Constants.WeekDayCount);
+            }
+
+            return firstThursday;
+        }
+
+        private static DateObject GetLastThursday(int year, int month = Constants.InvalidMonth)
+        {
+            var targetMonth = month;
+
+            if (month == Constants.InvalidMonth)
+            {
+                targetMonth = 12;
+            }
+
+            var lastDay = GetLastDay(year, targetMonth);
+            DateObject lastThursday = lastDay.This(DayOfWeek.Thursday);
+
+            // Thursday falls into next year or next month
+            if (lastThursday.Month != targetMonth)
+            {
+                lastThursday = lastThursday.AddDays(-Constants.WeekDayCount);
+            }
+
+            return lastThursday;
+        }
+
+        private static DateObject GetLastDay(int year, int month)
+        {
+            month++;
+
+            if (month == 13)
+            {
+                year++;
+                month = 1;
+            }
+
+            var firstDayOfNextMonth = DateObject.MinValue.SafeCreateFromValue(year, month, 1);
+
+            return firstDayOfNextMonth.AddDays(-1);
+        }
+
         // Process case like "from|between START to|and END" where START/END can be daterange or datepoint
         private DateTimeResolutionResult ParseComplexDatePeriod(string text, DateObject referenceDate)
         {
@@ -262,7 +346,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                             }
                             else
                             {
-                                futureBegin = dateContext.SwiftDateObject(futureBegin, futureEnd);
+                                futureBegin = DateContext.SwiftDateObject(futureBegin, futureEnd);
                             }
                         }
 
@@ -274,7 +358,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                             }
                             else
                             {
-                                pastBegin = dateContext.SwiftDateObject(pastBegin, pastEnd);
+                                pastBegin = DateContext.SwiftDateObject(pastBegin, pastEnd);
                             }
                         }
 
@@ -453,6 +537,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     var isLessThanOrWithIn = false;
                     var isMoreThan = false;
 
+                    // @TODO move hardcoded English strings to definition
                     // cases like "within 3 days from yesterday/tomorrow" does not make any sense
                     if (er.Text.Contains("today") || er.Text.Contains("now"))
                     {
@@ -692,11 +777,6 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        private bool IsPresent(int swift)
-        {
-            return swift == 0;
-        }
-
         private DateTimeResolutionResult ParseOneWordPeriod(string text, DateObject referenceDate)
         {
             var ret = new DateTimeResolutionResult();
@@ -705,7 +785,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var earlyPrefix = false;
             var latePrefix = false;
             var midPrefix = false;
-            var isRef = false;
+            var isReferenceDatePeriod = false;
 
             var earlierPrefix = false;
             var laterPrefix = false;
@@ -722,7 +802,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (!match.Success)
             {
                 match = this.config.ReferenceDatePeriodRegex.MatchExact(trimmedText, trim: true);
-                isRef = true;
+                isReferenceDatePeriod = true;
                 ret.Mod = Constants.REF_UNDEF_MOD;
             }
 
@@ -838,7 +918,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     {
                         var monday = referenceDate.This(DayOfWeek.Monday).AddDays(Constants.WeekDayCount * swift);
 
-                        ret.Timex = isRef ? TimexUtility.GenerateWeekTimex() : TimexUtility.GenerateWeekTimex(monday);
+                        ret.Timex = isReferenceDatePeriod ? TimexUtility.GenerateWeekTimex() : TimexUtility.GenerateWeekTimex(monday);
                         var beginDate = referenceDate.This(DayOfWeek.Monday).AddDays(Constants.WeekDayCount * swift);
                         var endDate = inclusiveEndPeriod
                                         ? referenceDate.This(DayOfWeek.Sunday).AddDays(Constants.WeekDayCount * swift)
@@ -895,7 +975,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         var beginDate = referenceDate.This(DayOfWeek.Saturday).AddDays(Constants.WeekDayCount * swift);
                         var endDate = referenceDate.This(DayOfWeek.Sunday).AddDays(Constants.WeekDayCount * swift);
 
-                        ret.Timex = isRef ? TimexUtility.GenerateWeekendTimex() : TimexUtility.GenerateWeekendTimex(beginDate);
+                        ret.Timex = isReferenceDatePeriod ? TimexUtility.GenerateWeekendTimex() : TimexUtility.GenerateWeekendTimex(beginDate);
 
                         endDate = inclusiveEndPeriod ? endDate : endDate.AddDays(1);
 
@@ -911,7 +991,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         var date = referenceDate.AddMonths(swift);
                         month = date.Month;
                         year = date.Year;
-                        ret.Timex = isRef
+                        ret.Timex = isReferenceDatePeriod
                             ? TimexUtility.GenerateMonthTimex() :
                                 TimexUtility.GenerateMonthTimex(date);
                         futureYear = pastYear = year;
@@ -958,7 +1038,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                             }
                         }
 
-                        ret.Timex = isRef ? TimexUtility.GenerateYearTimex() : TimexUtility.GenerateYearTimex(date);
+                        ret.Timex = isReferenceDatePeriod ? TimexUtility.GenerateYearTimex() : TimexUtility.GenerateYearTimex(date);
 
                         ret.FutureValue =
                             ret.PastValue =
@@ -979,10 +1059,12 @@ namespace Microsoft.Recognizers.Text.DateTime
             var futureEnd = inclusiveEndPeriod
                 ? DateObject.MinValue.SafeCreateFromValue(futureYear, month, 1).AddMonths(1).AddDays(-1)
                 : DateObject.MinValue.SafeCreateFromValue(futureYear, month, 1).AddMonths(1);
+
             var pastStart = DateObject.MinValue.SafeCreateFromValue(pastYear, month, 1);
             var pastEnd = inclusiveEndPeriod
                 ? DateObject.MinValue.SafeCreateFromValue(pastYear, month, 1).AddMonths(1).AddDays(-1)
                 : DateObject.MinValue.SafeCreateFromValue(pastYear, month, 1).AddMonths(1);
+
             if (earlyPrefix)
             {
                 futureEnd = inclusiveEndPeriod
@@ -1171,7 +1253,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        // parse entities that made up by two time points
+        // Parse entities that are made up by two time points
         private DateTimeResolutionResult MergeTwoTimePoints(string text, DateObject referenceDate)
         {
             var ret = new DateTimeResolutionResult();
@@ -1245,7 +1327,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var ret = new DateTimeResolutionResult();
             DateObject beginDate;
             DateObject endDate = beginDate = referenceDate;
-            var timex = string.Empty;
+            var durationTimex = string.Empty;
             var restNowSunday = false;
 
             var durationErs = config.DurationExtractor.Extract(text, referenceDate);
@@ -1344,7 +1426,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         ((DateTimeResolutionResult)durationPr.Value).Mod = modAndDateResult.Mod;
                     }
 
-                    timex = durationResult.Timex;
+                    durationTimex = durationResult.Timex;
                     ret.SubDateTimeEntities = new List<object> { durationPr };
                     if (modAndDateResult.DateList != null)
                     {
@@ -1364,7 +1446,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     case Constants.TimexWeek:
                         var diff = Constants.WeekDayCount - (beginDate.DayOfWeek == 0 ? Constants.WeekDayCount : (int)beginDate.DayOfWeek);
                         endDate = beginDate.AddDays(diff);
-                        timex = "P" + diff + Constants.TimexDay;
+                        durationTimex = "P" + diff + Constants.TimexDay;
                         if (diff == 0)
                         {
                             restNowSunday = true;
@@ -1376,14 +1458,14 @@ namespace Microsoft.Recognizers.Text.DateTime
                         endDate = DateObject.MinValue.SafeCreateFromValue(beginDate.Year, beginDate.Month, 1);
                         endDate = endDate.AddMonths(1).AddDays(-1);
                         diff = endDate.Day - beginDate.Day + 1;
-                        timex = "P" + diff + Constants.TimexDay;
+                        durationTimex = "P" + diff + Constants.TimexDay;
                         break;
 
                     case Constants.TimexYear:
                         endDate = DateObject.MinValue.SafeCreateFromValue(beginDate.Year, 12, 1);
                         endDate = endDate.AddMonths(1).AddDays(-1);
                         diff = endDate.DayOfYear - beginDate.DayOfYear + 1;
-                        timex = "P" + diff + Constants.TimexDay;
+                        durationTimex = "P" + diff + Constants.TimexDay;
                         break;
                 }
             }
@@ -1393,7 +1475,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 endDate = inclusiveEndPeriod ? endDate.AddDays(-1) : endDate;
 
                 ret.Timex =
-                    $"({DateTimeFormatUtil.LuisDate(beginDate)},{DateTimeFormatUtil.LuisDate(endDate)},{timex})";
+                    $"({DateTimeFormatUtil.LuisDate(beginDate)},{DateTimeFormatUtil.LuisDate(endDate)},{durationTimex})";
                 ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginDate, endDate);
                 ret.Success = true;
             }
@@ -1640,7 +1722,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if (match.Success)
             {
-                var seasonStr = this.config.SeasonMap[match.Groups["seas"].Value.ToLowerInvariant()];
+                var seasonTimex = this.config.SeasonMap[match.Groups["seas"].Value.ToLowerInvariant()];
 
                 if (match.Groups["EarlyPrefix"].Success)
                 {
@@ -1661,7 +1743,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     var swift = this.config.GetSwiftYear(text);
                     if (swift < -1)
                     {
-                        ret.Timex = seasonStr;
+                        ret.Timex = seasonTimex;
                         ret.Success = true;
                         return ret;
                     }
@@ -1670,7 +1752,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
 
                 var yearStr = year.ToString("D4");
-                ret.Timex = yearStr + "-" + seasonStr;
+                ret.Timex = yearStr + "-" + seasonTimex;
 
                 ret.Success = true;
                 return ret;
@@ -1735,31 +1817,6 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        private Tuple<DateObject, DateObject> GetWeekRangeFromDate(DateObject date)
-        {
-            var startDate = date.This(DayOfWeek.Monday);
-            var endDate = inclusiveEndPeriod ? startDate.AddDays(Constants.WeekDayCount - 1) : startDate.AddDays(Constants.WeekDayCount);
-            return new Tuple<DateObject, DateObject>(startDate, endDate);
-        }
-
-        private Tuple<DateObject, DateObject> GetMonthRangeFromDate(DateObject date)
-        {
-            var startDate = DateObject.MinValue.SafeCreateFromValue(date.Year, date.Month, 1);
-            DateObject endDate;
-            if (date.Month < 12)
-            {
-                endDate = DateObject.MinValue.SafeCreateFromValue(date.Year, date.Month + 1, 1);
-            }
-            else
-            {
-                endDate = DateObject.MinValue.SafeCreateFromValue(date.Year + 1, 1, 1);
-            }
-
-            endDate = inclusiveEndPeriod ? endDate.AddDays(-1) : endDate;
-
-            return new Tuple<DateObject, DateObject>(startDate, endDate);
-        }
-
         private DateTimeResolutionResult ParseWhichWeek(string text, DateObject referenceDate)
         {
             var ret = new DateTimeResolutionResult();
@@ -1770,11 +1827,13 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var num = int.Parse(match.Groups["number"].ToString());
                 var year = referenceDate.Year;
                 ret.Timex = year.ToString("D4");
+
                 var firstDay = DateObject.MinValue.SafeCreateFromValue(year, 1, 1);
                 var firstWeekday = firstDay.This((DayOfWeek)1);
                 var value = firstWeekday.AddDays(Constants.WeekDayCount * num);
                 var futureDate = value;
                 var pastDate = value;
+
                 ret.Timex += "-W" + num.ToString("D2");
                 ret.FutureValue = new Tuple<DateObject, DateObject>(futureDate, futureDate.AddDays(Constants.WeekDayCount));
                 ret.PastValue = new Tuple<DateObject, DateObject>(pastDate, pastDate.AddDays(Constants.WeekDayCount));
@@ -1808,9 +1867,9 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             // Note that if the cardinalStr equals to "last", the weekNumber would be fixed at "5"
-            // This may lead to some inconsistancy between Timex and Resolution
+            // This may lead to some inconsistency between Timex and Resolution
             // the StartDate and EndDate of the resolution would always be correct (following ISO week definition)
-            // But week number for "last week" might be inconsistancy with the resolution as we only have one Timex, but we may have past and future resolution which may have different week number
+            // But week number for "last week" might be inconsistent with the resolution as we only have one Timex, but we may have past and future resolutions which may have different week numbers
             var weekNum = GetWeekNumberForMonth(cardinalStr);
             ret.Timex = TimexUtility.GenerateWeekOfMonthTimex(year, month, weekNum);
 
@@ -1825,63 +1884,6 @@ namespace Microsoft.Recognizers.Text.DateTime
             ret.Success = true;
 
             return ret;
-        }
-
-        private DateObject GetFirstThursday(int year, int month = Constants.InvalidMonth)
-        {
-            var targetMonth = month;
-
-            if (month == Constants.InvalidMonth)
-            {
-                targetMonth = 1;
-            }
-
-            var firstDay = DateObject.MinValue.SafeCreateFromValue(year, targetMonth, 1);
-            DateObject firstThursday = firstDay.This(DayOfWeek.Thursday);
-
-            // Thursday fall into previous year or previous month
-            if (firstThursday.Month != targetMonth)
-            {
-                firstThursday = firstDay.AddDays(Constants.WeekDayCount);
-            }
-
-            return firstThursday;
-        }
-
-        private DateObject GetLastThursday(int year, int month = Constants.InvalidMonth)
-        {
-            var targetMonth = month;
-
-            if (month == Constants.InvalidMonth)
-            {
-                targetMonth = 12;
-            }
-
-            var lastDay = GetLastDay(year, targetMonth);
-            DateObject lastThursday = lastDay.This(DayOfWeek.Thursday);
-
-            // Thursday fall into next year or next month
-            if (lastThursday.Month != targetMonth)
-            {
-                lastThursday = lastThursday.AddDays(-Constants.WeekDayCount);
-            }
-
-            return lastThursday;
-        }
-
-        private DateObject GetLastDay(int year, int month)
-        {
-            month++;
-
-            if (month == 13)
-            {
-                year++;
-                month = 1;
-            }
-
-            var firstDayOfNextMonth = DateObject.MinValue.SafeCreateFromValue(year, month, 1);
-
-            return firstDayOfNextMonth.AddDays(-1);
         }
 
         private DateObject GetMondayOfTargetWeek(string cardinalStr, int month, int year)
@@ -1906,19 +1908,10 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         private int GetWeekNumberForMonth(string cardinalStr)
         {
-            int cardinal;
-
-            if (config.IsLastCardinal(cardinalStr))
-            {
-                // "last week of month" might not be "5th week of month"
-                // Sometimes it can also be "4th week of month" depends on specific year and month
-                // But as we only have one Timex, so we use "5" to indicate last week of month
-                cardinal = Constants.MaxWeekOfMonth;
-            }
-            else
-            {
-                cardinal = config.CardinalMap[cardinalStr];
-            }
+            // "last week of month" might not be "5th week of month"
+            // Sometimes it can also be "4th week of month" depends on specific year and month
+            // But as we only have one Timex, we use "5" to indicate it's the "last week"
+            int cardinal = config.IsLastCardinal(cardinalStr) ? Constants.MaxWeekOfMonth : config.CardinalMap[cardinalStr];
 
             return cardinal;
         }
@@ -1985,7 +1978,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
             else
             {
-                // handle cases like "the last 2 decades" "the next decade"
+                // handle cases like "the last 2 decades", "the next decade"
                 match = this.config.RelativeDecadeRegex.MatchExact(trimmedText, trim: true);
 
                 if (match.Success)
@@ -2022,7 +2015,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             var beginYear = (firstTwoNumOfYear * 100) + decade;
 
-            // swift = 0 correspoding to the/this decade
+            // swift = 0 corresponding to the/this decade
             var totalLastYear = decadeLastYear * Math.Abs(swift == 0 ? 1 : swift);
 
             if (inputCentury)
@@ -2084,8 +2077,6 @@ namespace Microsoft.Recognizers.Text.DateTime
             var relativeMatchForStartDate = this.config.RelativeRegex.Match(startDateStr);
             var relativeMatchForEndDate = this.config.RelativeRegex.Match(endDateStr);
             isDateRelative = relativeMatchForStartDate.Success || relativeMatchForEndDate.Success;
-
-            var dateContext = new DateContext();
 
             if (!isEndDatePureYear && !isDateRelative)
             {

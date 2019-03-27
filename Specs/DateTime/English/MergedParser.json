@@ -665,24 +665,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "Results": [
-      {
-        "Text": "2017",
-        "Type": "datetimeV2.daterange",
-        "Value": {
-          "values": [
-            {
-              "timex": "2017",
-              "type": "daterange",
-              "start": "2017-01-01",
-              "end": "2018-01-01"
-            }
-          ]
-        },
-        "Start": 0,
-        "Length": 4
-      }
-    ]
+    "NotSupported": "javascript, java, python",
+    "Results": []
   },
   {
     "Input": "add yoga to personal calendar on monday and wednesday at 3pm",

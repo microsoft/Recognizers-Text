@@ -193,7 +193,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             DecadeWithCenturyRegex,
             RelativeDecadeRegex,
             WhichWeekRegex,
-            ReferenceDatePeriodRegex
+            ReferenceDatePeriodRegex,
         };
 
         public SpanishDatePeriodExtractorConfiguration(IOptionsConfiguration config)
@@ -265,6 +265,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         Regex IDatePeriodExtractorConfiguration.MoreThanRegex => MoreThanRegex;
 
         Regex IDatePeriodExtractorConfiguration.CenturySuffixRegex => CenturySuffixRegex;
+
+        Regex IDatePeriodExtractorConfiguration.MonthNumRegex => MonthNumRegex;
 
         string[] IDatePeriodExtractorConfiguration.DurationDateRestrictions => DateTimeDefinitions.DurationDateRestrictions;
 

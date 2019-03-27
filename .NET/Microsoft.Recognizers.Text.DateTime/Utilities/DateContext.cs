@@ -8,6 +8,18 @@ namespace Microsoft.Recognizers.Text.DateTime
     {
         public int Year { get; set; } = Constants.InvalidYear;
 
+        // This method is to ensure the begin date is less than the end date.
+        // As DateContext only supports common Year as context, so it subtracts one year from beginDate. @TODO problematic in other usages.
+        public static DateObject SwiftDateObject(DateObject beginDate, DateObject endDate)
+        {
+            if (beginDate > endDate)
+            {
+                beginDate = beginDate.AddYears(-1);
+            }
+
+            return beginDate;
+        }
+
         public DateTimeParseResult ProcessDateEntityParsingResult(DateTimeParseResult originalResult)
         {
             if (!IsEmpty())
@@ -46,18 +58,6 @@ namespace Microsoft.Recognizers.Text.DateTime
         public bool IsEmpty()
         {
             return this.Year == Constants.InvalidYear;
-        }
-
-        // This method is to ensure the begin date is less than the end date
-        // As DateContext only support common Year as context, so decrease year part of begin date to ensure the begin date is less than end date
-        public DateObject SwiftDateObject(DateObject beginDate, DateObject endDate)
-        {
-            if (beginDate > endDate)
-            {
-                beginDate = beginDate.AddYears(-1);
-            }
-
-            return beginDate;
         }
 
         private DateObject SetDateWithContext(DateObject originalDate)

@@ -12,6 +12,7 @@ from recognizers_number.number.constants import Constants
 ReVal = namedtuple('ReVal', ['re', 'val'])
 MatchesVal = namedtuple('MatchesVal', ['matches', 'val'])
 
+
 class BaseNumberExtractor(Extractor):
     @property
     @abstractmethod
@@ -34,13 +35,15 @@ class BaseNumberExtractor(Extractor):
         match_source: Dict[[Match], str] = dict()
         matched: List[bool] = [False] * len(source)
 
-        matches_list = list(map(lambda x: MatchesVal(matches=list(regex.finditer(x.re, source)), val=x.val), self.regexes))
+        matches_list = list(map(
+            lambda x: MatchesVal(matches=list(regex.finditer(x.re, source)),
+                                 val=x.val), self.regexes))
         matches_list = list(filter(lambda x: len(x.matches) > 0, matches_list))
 
         for ml in matches_list:
             for m in ml.matches:
                 for j in range(len(m.group())):
-                    matched[m.start()+j] = True
+                    matched[m.start() + j] = True
                 # Keep Source Data for extra information
                 match_source[m] = ml.val
 
@@ -49,19 +52,22 @@ class BaseNumberExtractor(Extractor):
             if not matched[i]:
                 last = i
             else:
-                if (i+1 == len(source) or not matched[i+1]):
-                    start = last+1
-                    length = i-last
-                    substr = source[start:start+length].strip()
-                    src_match = next((x for x in iter(match_source) if (x.start() == start and (x.end() - x.start()) == length)), None)
+                if i + 1 == len(source) or not matched[i + 1]:
+                    start = last + 1
+                    length = i - last
+                    substr = source[start:start + length].strip()
+                    src_match = next((x for x in iter(match_source) if (
+                            x.start() == start and (
+                            x.end() - x.start()) == length)), None)
 
                     # extract negative numbers
                     if self._negative_number_terms is not None:
-                        match = regex.search(self._negative_number_terms, source[0:start])
+                        match = regex.search(self._negative_number_terms,
+                                             source[0:start])
                         if match is not None:
                             start = match.start()
                             length = length + match.end() - match.start()
-                            substr = source[start:start+length].strip()
+                            substr = source[start:start + length].strip()
 
                     if src_match is not None:
                         value = ExtractResult()
@@ -73,18 +79,27 @@ class BaseNumberExtractor(Extractor):
                         result.append(value)
         return result
 
-    def _generate_format_regex(self, format_type: LongFormatType, placeholder: str = None) -> Pattern:
+    def _generate_format_regex(self, format_type: LongFormatType,
+                               placeholder: str = None) -> Pattern:
         if placeholder is None:
             placeholder = BaseNumbers.PlaceHolderDefault
 
-        re_definition = None
         if format_type.decimals_mark is None:
-            re_definition = BaseNumbers.IntegerRegexDefinition(placeholder, format_type.thousands_mark)
+            re_definition = BaseNumbers.IntegerRegexDefinition(placeholder,
+                                                               regex.escape(
+                                                                   format_type.thousands_mark))
         else:
-            re_definition = BaseNumbers.DoubleRegexDefinition(placeholder, format_type.thousands_mark, format_type.decimals_mark)
+            re_definition = BaseNumbers.DoubleRegexDefinition(placeholder,
+                                                              regex.escape(
+                                                                  format_type.thousands_mark),
+                                                              regex.escape(
+                                                                  format_type.decimals_mark))
         return re_definition
 
-SourcePositionResults = namedtuple('SourcePositionResults', ['source', 'position', 'results'])
+
+SourcePositionResults = namedtuple('SourcePositionResults',
+                                   ['source', 'position', 'results'])
+
 
 class BasePercentageExtractor(Extractor):
     @property
@@ -107,7 +122,8 @@ class BasePercentageExtractor(Extractor):
     def generate_regexes(self, ignore_case: bool = False) -> List[Pattern]:
         definitions = self.get_definitions()
         options = regex.DOTALL | (regex.IGNORECASE if ignore_case else 0)
-        return list(map(lambda d: RegExpUtility.get_safe_reg_exp(d, options), definitions))
+        return list(map(lambda d: RegExpUtility.get_safe_reg_exp(d, options),
+                        definitions))
 
     def extract(self, source: str) -> List[ExtractResult]:
         origin = source
@@ -118,13 +134,14 @@ class BasePercentageExtractor(Extractor):
         positionmap = preprocess.position
         extractresults = preprocess.results
 
-        allmatches = list(map(lambda p: list(regex.finditer(p, source)), self.regexes))
+        allmatches = list(
+            map(lambda p: list(regex.finditer(p, source)), self.regexes))
         matched: List[bool] = [False] * len(source)
 
         for matches in allmatches:
             for match in matches:
                 for j in range(len(match.group())):
-                    matched[match.start()+j] = True
+                    matched[match.start() + j] = True
 
         results = list()
 
@@ -135,9 +152,9 @@ class BasePercentageExtractor(Extractor):
                 last = i
             else:
                 if (i + 1) == len(source) or not matched[i + 1]:
-                    start = last+1
-                    length = i-last
-                    substr = source[start:start+length].strip()
+                    start = last + 1
+                    length = i - last
+                    substr = source[start:start + length].strip()
                     value = ExtractResult()
                     value.start = start
                     value.length = length
@@ -146,11 +163,13 @@ class BasePercentageExtractor(Extractor):
                     results.append(value)
 
         # post-processing, restoring the extracted numbers
-        results = self.__post_processing(results, origin, positionmap, extractresults)
+        results = self.__post_processing(results, origin, positionmap,
+                                         extractresults)
 
         return results
 
-    def __preprocess_with_number_extracted(self, source: str) -> SourcePositionResults:
+    def __preprocess_with_number_extracted(self,
+                                           source: str) -> SourcePositionResults:
         position_map = dict()
         extract_results = self.number_extractor.extract(source)
 
@@ -161,18 +180,18 @@ class BasePercentageExtractor(Extractor):
         for i in range(len(extract_results)):
             extract_result = extract_results[i]
             start = extract_result.start
-            end = extract_result.end+1
+            end = extract_result.end + 1
             for j in range(start, end):
                 if match[j] == -1:
                     match[j] = i
 
         start = 0
         for i in range(1, len(source)):
-            if match[i] != match[i-1]:
-                string_parts.append([start, i-1])
+            if match[i] != match[i - 1]:
+                string_parts.append([start, i - 1])
                 start = i
 
-        string_parts.append([start, len(source)-1])
+        string_parts.append([start, len(source) - 1])
 
         string_result = ''
         index = 0
@@ -181,8 +200,8 @@ class BasePercentageExtractor(Extractor):
             end = part[1]
             val_type = match[start]
             if val_type == -1:
-                string_result += source[start:end+1]
-                for i in range(start, end+1):
+                string_result += source[start:end + 1]
+                for i in range(start, end + 1):
                     position_map[index] = i
                     index += 1
             else:
@@ -194,9 +213,14 @@ class BasePercentageExtractor(Extractor):
         position_map[index] = len(source)
         index += 1
 
-        return SourcePositionResults(source=string_result, position=position_map, results=extract_results)
+        return SourcePositionResults(source=string_result,
+                                     position=position_map,
+                                     results=extract_results)
 
-    def __post_processing(self, results: List[ExtractResult], source: str, positionmap: Dict[int, int], extractresults: List[ExtractResult]) -> List[ExtractResult]:
+    def __post_processing(self, results: List[ExtractResult], source: str,
+                          positionmap: Dict[int, int],
+                          extractresults: List[ExtractResult]) -> List[
+        ExtractResult]:
         dummy_token = BaseNumbers.NumberReplaceToken
         for i in range(len(results)):
             start = results[i].start
@@ -207,15 +231,20 @@ class BasePercentageExtractor(Extractor):
                 original_length = positionmap[end] - original_start
                 results[i].start = original_start
                 results[i].length = original_length
-                results[i].text = source[original_start:original_start + original_length].strip()
+                results[i].text = source[
+                                  original_start:original_start + original_length].strip()
                 num_start = text.find(dummy_token)
                 if num_start != -1:
                     num_original_start = start + num_start
                     if num_start in positionmap:
-                        num_original_end = num_original_start + len(dummy_token)
-                        data_key = source[positionmap[num_original_start]:positionmap[num_original_end]]
+                        num_original_end = num_original_start + len(
+                            dummy_token)
+                        data_key = source[
+                                   positionmap[num_original_start]:positionmap[
+                                       num_original_end]]
                         for j in range(i, len(extractresults)):
-                            if results[i].start == extractresults[j].start and extractresults[j].text in results[i].text:
+                            if results[i].start == extractresults[j].start and \
+                                    extractresults[j].text in results[i].text:
                                 results[i].data = [data_key, extractresults[j]]
                                 break
         return results

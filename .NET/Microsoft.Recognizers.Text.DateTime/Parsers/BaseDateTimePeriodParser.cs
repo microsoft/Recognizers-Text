@@ -878,7 +878,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                     pastBegin.Year, pastBegin.Month, pastBegin.Day, pastEnd.Hour, pastEnd.Minute, pastEnd.Second);
 
                 var dateStr = pr1.TimexStr.Split('T')[0];
-                ret.Timex = $"({pr1.TimexStr},{dateStr + pr2.TimexStr},PT{Convert.ToInt32((futureEnd - futureBegin).TotalHours)}H)";
+                var durationStr = DateTimeFormatUtil.LuisTimeSpan(futureEnd - futureBegin);
+                ret.Timex = $"({pr1.TimexStr},{dateStr + pr2.TimexStr},{durationStr}";
             }
             else if (endHasDate)
             {
@@ -889,7 +890,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                     pastEnd.Year, pastEnd.Month, pastEnd.Day, pastBegin.Hour, pastBegin.Minute, pastBegin.Second);
 
                 var dateStr = pr2.TimexStr.Split('T')[0];
-                ret.Timex = $"({dateStr + pr1.TimexStr},{pr2.TimexStr},PT{Convert.ToInt32((futureEnd - futureBegin).TotalHours)}H)";
+                var durationStr = DateTimeFormatUtil.LuisTimeSpan(pastEnd - pastBegin);
+                ret.Timex = $"({dateStr + pr1.TimexStr},{pr2.TimexStr},PT{Convert.ToInt32((pastEnd - pastBegin).TotalHours)}H)";
             }
 
             var ampmStr1 = ((DateTimeResolutionResult)pr1.Value).Comment;

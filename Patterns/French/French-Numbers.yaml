@@ -154,7 +154,7 @@ WrittenGroupSeparatorTexts: [point, points]
 WrittenIntegerSeparatorTexts: [et, '-']
 WrittenFractionSeparatorTexts: [et, sur]
 HalfADozenRegex: !simpleRegex
-  def: (?<=\b)+demi\s+douzaine
+  def: (?<=\b)demi\s+douzaine
 DigitalNumberRegex: !nestedRegex
   def: ((?<=\b)(cent|mille|million|millions|milliard|milliards|billions|billion|douzaine(s)?)(?=\b))|((?<=(\d|\b)){BaseNumbers.MultiplierLookupRegex}(?=\b))
   references: [ BaseNumbers.MultiplierLookupRegex ]

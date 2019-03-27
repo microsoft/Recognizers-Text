@@ -97,28 +97,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             return candidateResults;
         }
 
-        private DateTimeResolutionResult ParseJapaneseTimeOfDay(string text, DateObject referenceTime)
-        {
-            int day = referenceTime.Day,
-                month = referenceTime.Month,
-                year = referenceTime.Year;
-            var ret = new DateTimeResolutionResult();
-
-            if (!GetMatchedTimexRange(text, out string timex, out int beginHour, out int endHour, out int endMinSeg))
-            {
-                return new DateTimeResolutionResult();
-            }
-
-            ret.Timex = timex;
-            ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(
-               DateObject.MinValue.SafeCreateFromValue(year, month, day, beginHour, 0, 0),
-               DateObject.MinValue.SafeCreateFromValue(year, month, day, endHour, endMinSeg, 0));
-            ret.Success = true;
-
-            return ret;
-        }
-
-        private bool GetMatchedTimexRange(string text, out string timex, out int beginHour, out int endHour, out int endMin)
+        private static bool GetMatchedTimexRange(string text, out string timex, out int beginHour, out int endHour, out int endMin)
         {
             var trimmedText = text.Trim();
             beginHour = 0;
@@ -163,6 +142,27 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             }
 
             return true;
+        }
+
+        private DateTimeResolutionResult ParseJapaneseTimeOfDay(string text, DateObject referenceTime)
+        {
+            int day = referenceTime.Day,
+                month = referenceTime.Month,
+                year = referenceTime.Year;
+            var ret = new DateTimeResolutionResult();
+
+            if (!GetMatchedTimexRange(text, out string timex, out int beginHour, out int endHour, out int endMinSeg))
+            {
+                return new DateTimeResolutionResult();
+            }
+
+            ret.Timex = timex;
+            ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(
+               DateObject.MinValue.SafeCreateFromValue(year, month, day, beginHour, 0, 0),
+               DateObject.MinValue.SafeCreateFromValue(year, month, day, endHour, endMinSeg, 0));
+            ret.Success = true;
+
+            return ret;
         }
     }
 }

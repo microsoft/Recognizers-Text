@@ -64,7 +64,7 @@ export namespace FrenchDateTime {
 	export const WeekDayOfMonthRegex = `(?<wom>(le\\s+)?(?<cardinal>premier|1er|duexi[èe]me|2|troisi[èe]me|3|quatri[èe]me|4|cinqi[èe]me|5)\\s+${WeekDayRegex}\\s+${MonthSuffixRegex})`;
 	export const RelativeWeekDayRegex = `^[.]`;
 	export const NumberEndingPattern = `^[.]`;
-	export const SpecialDate = `(?<=\\b([àa]|au|le)\\s+)${DayRegex}\\b`;
+	export const SpecialDate = `(?<=\\b([àa]|au|le)\\s+)${DayRegex}(?!:)\\b`;
 	export const DateYearRegex = `(?<year>${YearRegex}|${TwoDigitYearRegex})`;
 	export const DateExtractor1 = `\\b(${WeekDayRegex}(\\s+|\\s*,\\s*))?${MonthRegex}\\s*[/\\\\\\.\\-]?\\s*${DayRegex}\\b`;
 	export const DateExtractor2 = `\\b(${WeekDayRegex}(\\s+|\\s*,\\s*))?${DayRegex}(\\s+|\\s*,\\s*|\\s+)${MonthRegex}\\s*[\\.\\-]?\\s*${DateYearRegex}\\b`;
@@ -124,7 +124,7 @@ export namespace FrenchDateTime {
 	export const PureNumBetweenAnd = `(entre\\s+)(${HourRegex}|${PeriodHourNumRegex})(\\s*(?<leftDesc>${PeriodDescRegex}))?\\s*${RangeConnectorRegex}\\s*(${HourRegex}|${PeriodHourNumRegex})\\s*(?<rightDesc>${PmRegex}|${AmRegex}|${PeriodDescRegex})?`;
 	export const SpecificTimeFromTo = `^[.]`;
 	export const SpecificTimeBetweenAnd = `^[.]`;
-	export const PrepositionRegex = `(?<prep>^([aà] la|en|sur\\s*l[ea]|sur|de)$)`;
+	export const PrepositionRegex = `(?<prep>^([aà]|[aà] la|en|sur\\s*l[ea]|sur|de)$)`;
 	export const TimeOfDayRegex = `\\b(?<timeOfDay>((((dans\\s+(l[ea])?\\s+)?((?<early>d[eé]but(\\s+|-)|t[oô]t(\\s+|-)(l[ea]\\s*)?)|(?<late>fin\\s*|fin de(\\s+(la)?)|tard\\s*))?(matin[ée]e|matin|((d|l)?'?)apr[eè]s[-|\\s*]midi|nuit|soir[eé]e|soir)))|(((\\s+(l[ea])?\\s+)?)(jour|journ[eé]e)))s?)\\b`;
 	export const SpecificTimeOfDayRegex = `\\b((${RelativeRegex}\\s+${TimeOfDayRegex})|(${TimeOfDayRegex}\\s*(${NextSuffixRegex}))\\b|\\bsoir|\\bdu soir)s?\\b`;
 	export const TimeFollowedUnit = `^\\s*${TimeUnitRegex}`;
@@ -187,7 +187,7 @@ export namespace FrenchDateTime {
 	export const InexactNumberRegex = `\\b(quelque|quel qu[ée]s|quelqu[ée]s|plusieur|plusieurs|divers)\\b`;
 	export const InexactNumberUnitRegex = `(${InexactNumberRegex})\\s+(${DurationUnitRegex})`;
 	export const RelativeTimeUnitRegex = `((((${ThisPrefixRegex})?)\\s+(${TimeUnitRegex}(\\s*${NextSuffixRegex}|${PastSuffixRegex})?))|((le))\\s+(${RestrictedTimeUnitRegex}))`;
-	export const RelativeDurationUnitRegex = `(((?<=(${ThisPrefixRegex})\\s+)?\\b(${DurationUnitRegex})(\\s+${NextSuffixRegex}|${PastSuffixRegex})?)|((le|my))\\s+(${RestrictedTimeUnitRegex}))`;
+	export const RelativeDurationUnitRegex = `((\\b(${DurationUnitRegex})(\\s+${NextSuffixRegex}|${PastSuffixRegex})?)|((le|my))\\s+(${RestrictedTimeUnitRegex}))`;
 	export const ReferenceDatePeriodRegex = `^[.]`;
 	export const UpcomingPrefixRegex = `.^`;
 	export const NextPrefixRegex = `.^`;

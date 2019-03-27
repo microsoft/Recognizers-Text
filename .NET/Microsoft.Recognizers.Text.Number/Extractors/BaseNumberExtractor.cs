@@ -121,7 +121,7 @@ namespace Microsoft.Recognizers.Text.Number
             return result;
         }
 
-        protected Regex GenerateLongFormatNumberRegexes(LongFormatType type, string placeholder = BaseNumbers.PlaceHolderDefault)
+        protected static Regex GenerateLongFormatNumberRegexes(LongFormatType type, string placeholder = BaseNumbers.PlaceHolderDefault)
         {
             var thousandsMark = Regex.Escape(type.ThousandsMark.ToString());
             var decimalsMark = Regex.Escape(type.DecimalsMark.ToString());

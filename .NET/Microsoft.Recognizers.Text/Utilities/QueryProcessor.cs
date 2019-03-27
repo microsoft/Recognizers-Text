@@ -7,7 +7,7 @@ namespace Microsoft.Recognizers.Text.Utilities
 {
     public static class QueryProcessor
     {
-        private static readonly string Expression = @"(?<=(\s|\d))(kB|K[Bb]|K|M[Bb]|M|G[Bb]|G|B)\b";
+        private const string Expression = @"(?<=(\s|\d))(kB|K[Bb]|K|M[Bb]|M|G[Bb]|G|B)\b";
 
         private static readonly Regex SpecialTokensRegex = new Regex(Expression, RegexOptions.Compiled);
 

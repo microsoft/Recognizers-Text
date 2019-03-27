@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
-using Microsoft.Recognizers.Text.DateTime.Utilities;
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime
@@ -13,6 +12,19 @@ namespace Microsoft.Recognizers.Text.DateTime
         public BaseDateExtractor(IDateExtractorConfiguration config)
             : base(config)
         {
+        }
+
+        public static bool IsOverlapWithExistExtractions(Token er, List<Token> existErs)
+        {
+            foreach (var existEr in existErs)
+            {
+                if (er.Start < existEr.End && er.End > existEr.Start)
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
 
         public override List<ExtractResult> Extract(string text)
@@ -29,19 +41,6 @@ namespace Microsoft.Recognizers.Text.DateTime
             tokens.AddRange(ExtractRelativeDurationDate(text, reference));
 
             return Token.MergeAllTokens(tokens, text, ExtractorName);
-        }
-
-        public bool IsOverlapWithExistExtractions(Token er, List<Token> existErs)
-        {
-            foreach (var existEr in existErs)
-            {
-                if (er.Start < existEr.End && er.End > existEr.Start)
-                {
-                    return true;
-                }
-            }
-
-            return false;
         }
 
         // "In 3 days/weeks/months/years" = "3 days/weeks/months/years from now"
@@ -310,8 +309,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                                 // Get week day from text directly, compare it with the weekday generated above
                                 // to see whether they refer to the same week day
                                 var extractedWeekDayStr = matchCase.Groups["weekday"].Value.ToLower();
+                                var matchLength = result.Start + result.Length - matchCase.Index;
+
                                 if (!date.Equals(DateObject.MinValue) &&
-                                    numWeekDayInt == Config.DayOfWeek[extractedWeekDayStr])
+                                    numWeekDayInt == Config.DayOfWeek[extractedWeekDayStr] &&
+                                    matchCase.Length == matchLength)
                                 {
                                     ret.Add(new Token(matchCase.Index, result.Start + result.Length ?? 0));
                                     isFound = true;
@@ -332,8 +334,13 @@ namespace Microsoft.Recognizers.Text.DateTime
                     {
                         if (matchCase.Success)
                         {
-                            ret.Add(new Token(matchCase.Index, result.Start + result.Length ?? 0));
-                            isFound = true;
+                            var matchLength = result.Start + result.Length - matchCase.Index;
+
+                            if (matchLength == matchCase.Length)
+                            {
+                                ret.Add(new Token(matchCase.Index, result.Start + result.Length ?? 0));
+                                isFound = true;
+                            }
                         }
                     }
 

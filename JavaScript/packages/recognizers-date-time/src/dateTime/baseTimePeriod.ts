@@ -404,7 +404,7 @@ export class BaseTimePeriodParser implements IDateTimeParser {
             let hourStr = hourGroup.captures[0];
 
             if (this.config.numbers.has(hourStr)) {
-                beginHour = this.config.numbers[hourStr];
+                beginHour = this.config.numbers.get(hourStr);
             } else {
                 beginHour = parseInt(hourStr, 10);
             }
@@ -412,7 +412,7 @@ export class BaseTimePeriodParser implements IDateTimeParser {
             hourStr = hourGroup.captures[1];
 
             if (this.config.numbers.has(hourStr)) {
-                endHour = this.config.numbers[hourStr];
+                endHour = this.config.numbers.get(hourStr);
             } else {
                 endHour = parseInt(hourStr, 10);
             }
