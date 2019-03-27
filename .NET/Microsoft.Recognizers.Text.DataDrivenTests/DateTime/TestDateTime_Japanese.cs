@@ -8,6 +8,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
     public class TestDateTime_Japanese : TestBase
     {
         public static IDictionary<string, IDateTimeExtractor> Extractors { get; private set; }
+
         public static IDictionary<string, IDateTimeParser> Parsers { get; private set; }
 
         [ClassInitialize]

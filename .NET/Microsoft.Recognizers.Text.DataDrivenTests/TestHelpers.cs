@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Microsoft.Recognizers.Text.Choice;
 using Microsoft.Recognizers.Text.DateTime;
@@ -19,6 +20,7 @@ using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DataDrivenTests
 {
+    [SuppressMessage("StyleCop.CSharp.NamingRules", "SA1602: CSharp.Naming : Enumeration items should be documented", Justification = "TODO")]
     public enum Models
     {
         Number,
@@ -50,6 +52,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
         Boolean,
     }
 
+    [SuppressMessage("StyleCop.CSharp.NamingRules", "SA1602: CSharp.Naming : Enumeration items should be documented", Justification = "TODO")]
     public enum DateTimeExtractors
     {
         Date,
@@ -66,6 +69,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
         MergedSkipFromTo,
     }
 
+    [SuppressMessage("StyleCop.CSharp.NamingRules", "SA1602: CSharp.Naming : Enumeration items should be documented", Justification = "TODO")]
     public enum DateTimeParsers
     {
         Date,
@@ -81,15 +85,17 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
         Merged,
     }
 
+    [SuppressMessage("StyleCop.CSharp.NamingRules", "SA1649: CSharp.Naming", Justification = "TODO")]
     public static class TestContextExtensions
     {
-        private static IDictionary<Models, Func<TestModel, string, IList<ModelResult>>> modelFunctions = new Dictionary<Models, Func<TestModel, string, IList<ModelResult>>>() {
+        private static IDictionary<Models, Func<TestModel, string, IList<ModelResult>>> modelFunctions = new Dictionary<Models, Func<TestModel, string, IList<ModelResult>>>()
+        {
             { Models.Number, (test, culture) => NumberRecognizer.RecognizeNumber(test.Input, culture, fallbackToDefaultCulture: false) },
             { Models.NumberPercentMode, (test, culture) => NumberRecognizer.RecognizeNumber(test.Input, culture, NumberOptions.PercentageMode, fallbackToDefaultCulture: false) },
             { Models.NumberExperimentalMode, (test, culture) => NumberRecognizer.RecognizeNumber(test.Input, culture, NumberOptions.ExperimentalMode, fallbackToDefaultCulture: false) },
             { Models.Ordinal, (test, culture) => NumberRecognizer.RecognizeOrdinal(test.Input, culture, fallbackToDefaultCulture: false) },
-            { Models.Percent, (test, culture) => NumberRecognizer.RecognizePercentage(test.Input, culture, fallbackToDefaultCulture: false)},
-            { Models.PercentPercentMode, (test, culture) => NumberRecognizer.RecognizePercentage(test.Input, culture, NumberOptions.PercentageMode, fallbackToDefaultCulture: false)},
+            { Models.Percent, (test, culture) => NumberRecognizer.RecognizePercentage(test.Input, culture, fallbackToDefaultCulture: false) },
+            { Models.PercentPercentMode, (test, culture) => NumberRecognizer.RecognizePercentage(test.Input, culture, NumberOptions.PercentageMode, fallbackToDefaultCulture: false) },
             { Models.NumberRange, (test, culture) => NumberRecognizer.RecognizeNumberRange(test.Input, culture, fallbackToDefaultCulture: false) },
             { Models.NumberRangeExperimentalMode, (test, culture) => NumberRecognizer.RecognizeNumberRange(test.Input, culture, NumberOptions.ExperimentalMode, fallbackToDefaultCulture: false) },
             { Models.Age, (test, culture) => NumberWithUnitRecognizer.RecognizeAge(test.Input, culture, fallbackToDefaultCulture: false) },
@@ -391,120 +397,120 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             switch (extractorName)
             {
                 case DateTimeExtractors.Date:
-                    return new DateTime.Chinese.DateExtractorChs();
+                    return new DateTime.Chinese.ChineseDateExtractorConfiguration();
                 case DateTimeExtractors.Time:
-                    return new DateTime.Chinese.TimeExtractorChs();
+                    return new DateTime.Chinese.ChineseTimeExtractorConfiguration();
                 case DateTimeExtractors.DatePeriod:
-                    return new DateTime.Chinese.DatePeriodExtractorChs();
+                    return new DateTime.Chinese.ChineseDatePeriodExtractorConfiguration();
                 case DateTimeExtractors.TimePeriod:
-                    return new DateTime.Chinese.TimePeriodExtractorChs();
+                    return new DateTime.Chinese.ChineseTimePeriodExtractorChsConfiguration();
                 case DateTimeExtractors.DateTime:
-                    return new DateTime.Chinese.DateTimeExtractorChs();
+                    return new DateTime.Chinese.ChineseDateTimeExtractorConfiguration();
                 case DateTimeExtractors.DateTimePeriod:
-                    return new DateTime.Chinese.DateTimePeriodExtractorChs();
+                    return new DateTime.Chinese.ChineseDateTimePeriodExtractorConfiguration();
                 case DateTimeExtractors.Duration:
-                    return new DateTime.Chinese.DurationExtractorChs();
+                    return new DateTime.Chinese.ChineseDurationExtractorConfiguration();
                 case DateTimeExtractors.Holiday:
                     return new BaseHolidayExtractor(new DateTime.Chinese.ChineseHolidayExtractorConfiguration());
                 case DateTimeExtractors.Set:
-                    return new DateTime.Chinese.SetExtractorChs();
+                    return new DateTime.Chinese.ChineseSetExtractorConfiguration();
                 case DateTimeExtractors.Merged:
-                    return new DateTime.Chinese.MergedExtractorChs(DateTimeOptions.None);
+                    return new DateTime.Chinese.ChineseMergedExtractorConfiguration(DateTimeOptions.None);
                 case DateTimeExtractors.MergedSkipFromTo:
-                    return new DateTime.Chinese.MergedExtractorChs(DateTimeOptions.SkipFromToMerge);
+                    return new DateTime.Chinese.ChineseMergedExtractorConfiguration(DateTimeOptions.SkipFromToMerge);
             }
 
-            throw new Exception($"Extractor '{extractorName}' for English not supported");
+            throw new Exception($"Extractor '{extractorName}' for Chinese not supported");
         }
 
         public static IDateTimeParser GetChineseParser(DateTimeParsers parserName)
         {
-            //var commonConfiguration = new EnglishCommonDateTimeParserConfiguration();
+            // var commonConfiguration = new EnglishCommonDateTimeParserConfiguration();
             switch (parserName)
             {
                 case DateTimeParsers.Date:
-                    return new DateTime.Chinese.DateParser(new DateTime.Chinese.ChineseDateTimeParserConfiguration());
+                    return new DateTime.Chinese.ChineseDateParserConfiguration(new DateTime.Chinese.ChineseDateTimeParserConfiguration());
                 case DateTimeParsers.Time:
-                    return new DateTime.Chinese.TimeParserChs(new DateTime.Chinese.ChineseDateTimeParserConfiguration());
+                    return new DateTime.Chinese.ChineseTimeParserConfiguration(new DateTime.Chinese.ChineseDateTimeParserConfiguration());
                 case DateTimeParsers.DatePeriod:
-                    return new DateTime.Chinese.DatePeriodParserChs(new DateTime.Chinese.ChineseDateTimeParserConfiguration());
+                    return new DateTime.Chinese.ChineseDatePeriodParserConfiguration(new DateTime.Chinese.ChineseDateTimeParserConfiguration());
                 case DateTimeParsers.TimePeriod:
-                    return new DateTime.Chinese.TimePeriodParserChs(new DateTime.Chinese.ChineseDateTimeParserConfiguration());
+                    return new DateTime.Chinese.ChineseTimePeriodParserConfiguration(new DateTime.Chinese.ChineseDateTimeParserConfiguration());
                 case DateTimeParsers.DateTime:
-                    return new DateTime.Chinese.DateTimeParserChs(new DateTime.Chinese.ChineseDateTimeParserConfiguration());
+                    return new DateTime.Chinese.ChineseDateTimeParser(new DateTime.Chinese.ChineseDateTimeParserConfiguration());
                 case DateTimeParsers.DateTimePeriod:
-                    return new DateTime.Chinese.DateTimePeriodParserChs(new DateTime.Chinese.ChineseDateTimeParserConfiguration());
+                    return new DateTime.Chinese.ChineseDateTimePeriodParserConfiguration(new DateTime.Chinese.ChineseDateTimeParserConfiguration());
                 case DateTimeParsers.Duration:
-                    return new DateTime.Chinese.DurationParserChs(new DateTime.Chinese.ChineseDateTimeParserConfiguration());
+                    return new DateTime.Chinese.ChineseDurationParserConfiguration(new DateTime.Chinese.ChineseDateTimeParserConfiguration());
                 case DateTimeParsers.Holiday:
-                    return new DateTime.Chinese.HolidayParserChs(new DateTime.Chinese.ChineseDateTimeParserConfiguration());
+                    return new DateTime.Chinese.ChineseHolidayParserConfiguration(new DateTime.Chinese.ChineseDateTimeParserConfiguration());
                 case DateTimeParsers.Set:
-                    return new DateTime.Chinese.SetParserChs(new DateTime.Chinese.ChineseDateTimeParserConfiguration());
+                    return new DateTime.Chinese.ChineseSetParserConfiguration(new DateTime.Chinese.ChineseDateTimeParserConfiguration());
                 case DateTimeParsers.Merged:
                     return new FullDateTimeParser(new DateTime.Chinese.ChineseDateTimeParserConfiguration());
             }
 
-            throw new Exception($"Parser '{parserName}' for English not supported");
+            throw new Exception($"Parser '{parserName}' for Chinese not supported");
         }
 
         public static IDateTimeExtractor GetJapaneseExtractor(DateTimeExtractors extractorName)
         {
-          switch (extractorName)
-          {
-            case DateTimeExtractors.Date:
-              return new DateTime.Japanese.DateExtractor();
-            case DateTimeExtractors.Time:
-              return new DateTime.Japanese.TimeExtractor();
-            case DateTimeExtractors.DatePeriod:
-              return new DateTime.Japanese.DatePeriodExtractor();
-            case DateTimeExtractors.TimePeriod:
-              return new DateTime.Japanese.TimePeriodExtractor();
-            case DateTimeExtractors.DateTime:
-              return new DateTime.Japanese.DateTimeExtractor();
-            case DateTimeExtractors.DateTimePeriod:
-              return new DateTime.Japanese.DateTimePeriodExtractor();
-            case DateTimeExtractors.Duration:
-              return new DateTime.Japanese.DurationExtractor();
-            case DateTimeExtractors.Holiday:
-              return new BaseHolidayExtractor(new DateTime.Japanese.JapaneseHolidayExtractorConfiguration());
-            case DateTimeExtractors.Set:
-              return new DateTime.Japanese.SetExtractor();
-            case DateTimeExtractors.Merged:
-              return new DateTime.Japanese.JapaneseMergedExtractor(DateTimeOptions.None);
-            case DateTimeExtractors.MergedSkipFromTo:
-              return new DateTime.Japanese.JapaneseMergedExtractor(DateTimeOptions.SkipFromToMerge);
-          }
+            switch (extractorName)
+            {
+                case DateTimeExtractors.Date:
+                    return new DateTime.Japanese.JapaneseDateExtractorConfiguration();
+                case DateTimeExtractors.Time:
+                    return new DateTime.Japanese.JapaneseTimeExtractorConfiguration();
+                case DateTimeExtractors.DatePeriod:
+                    return new DateTime.Japanese.JapaneseDatePeriodExtractorConfiguration();
+                case DateTimeExtractors.TimePeriod:
+                    return new DateTime.Japanese.JapaneseTimePeriodExtractorConfiguration();
+                case DateTimeExtractors.DateTime:
+                    return new DateTime.Japanese.JapaneseDateTimeExtractorConfiguration();
+                case DateTimeExtractors.DateTimePeriod:
+                    return new DateTime.Japanese.JapaneseDateTimePeriodExtractorConfiguration();
+                case DateTimeExtractors.Duration:
+                    return new DateTime.Japanese.JapaneseDurationExtractorConfiguration();
+                case DateTimeExtractors.Holiday:
+                    return new BaseHolidayExtractor(new DateTime.Japanese.JapaneseHolidayExtractorConfiguration());
+                case DateTimeExtractors.Set:
+                    return new DateTime.Japanese.JapaneseSetExtractorConfiguration();
+                case DateTimeExtractors.Merged:
+                    return new DateTime.Japanese.JapaneseMergedExtractorConfiguration(DateTimeOptions.None);
+                case DateTimeExtractors.MergedSkipFromTo:
+                    return new DateTime.Japanese.JapaneseMergedExtractorConfiguration(DateTimeOptions.SkipFromToMerge);
+            }
 
-          throw new Exception($"Extractor '{extractorName}' for Japanese not supported");
+            throw new Exception($"Extractor '{extractorName}' for Japanese not supported");
         }
 
         public static IDateTimeParser GetJapaneseParser(DateTimeParsers parserName)
         {
-          switch (parserName)
-          {
-            case DateTimeParsers.Date:
-              return new DateTime.Japanese.DateParser(new DateTime.Japanese.JapaneseDateTimeParserConfiguration());
-            case DateTimeParsers.Time:
-              return new DateTime.Japanese.TimeParser(new DateTime.Japanese.JapaneseDateTimeParserConfiguration());
-            case DateTimeParsers.DatePeriod:
-              return new DateTime.Japanese.DatePeriodParser(new DateTime.Japanese.JapaneseDateTimeParserConfiguration());
-            case DateTimeParsers.TimePeriod:
-              return new DateTime.Japanese.TimePeriodParser(new DateTime.Japanese.JapaneseDateTimeParserConfiguration());
-            case DateTimeParsers.DateTime:
-              return new DateTime.Japanese.DateTimeParser(new DateTime.Japanese.JapaneseDateTimeParserConfiguration());
-            case DateTimeParsers.DateTimePeriod:
-              return new DateTime.Japanese.DateTimePeriodParser(new DateTime.Japanese.JapaneseDateTimeParserConfiguration());
-            case DateTimeParsers.Duration:
-              return new DateTime.Japanese.DurationParser(new DateTime.Japanese.JapaneseDateTimeParserConfiguration());
-            case DateTimeParsers.Holiday:
-              return new DateTime.Japanese.HolidayParser(new DateTime.Japanese.JapaneseDateTimeParserConfiguration());
-            case DateTimeParsers.Set:
-              return new DateTime.Japanese.SetParser(new DateTime.Japanese.JapaneseDateTimeParserConfiguration());
-            case DateTimeParsers.Merged:
-              return new FullDateTimeParser(new DateTime.Japanese.JapaneseDateTimeParserConfiguration());
-          }
+            switch (parserName)
+            {
+                case DateTimeParsers.Date:
+                    return new DateTime.Japanese.JapaneseDateParserConfiguration(new DateTime.Japanese.JapaneseDateTimeParserConfiguration());
+                case DateTimeParsers.Time:
+                    return new DateTime.Japanese.JapaneseTimeParserConfiguration(new DateTime.Japanese.JapaneseDateTimeParserConfiguration());
+                case DateTimeParsers.DatePeriod:
+                    return new DateTime.Japanese.JapaneseDatePeriodParserConfiguration(new DateTime.Japanese.JapaneseDateTimeParserConfiguration());
+                case DateTimeParsers.TimePeriod:
+                    return new DateTime.Japanese.JapaneseTimePeriodParserConfiguration(new DateTime.Japanese.JapaneseDateTimeParserConfiguration());
+                case DateTimeParsers.DateTime:
+                    return new DateTime.Japanese.JapaneseDateTimeParser(new DateTime.Japanese.JapaneseDateTimeParserConfiguration());
+                case DateTimeParsers.DateTimePeriod:
+                    return new DateTime.Japanese.JapaneseDateTimePeriodParserConfiguration(new DateTime.Japanese.JapaneseDateTimeParserConfiguration());
+                case DateTimeParsers.Duration:
+                    return new DateTime.Japanese.JapaneseDurationParserConfiguration(new DateTime.Japanese.JapaneseDateTimeParserConfiguration());
+                case DateTimeParsers.Holiday:
+                    return new DateTime.Japanese.JapaneseHolidayParserConfiguration(new DateTime.Japanese.JapaneseDateTimeParserConfiguration());
+                case DateTimeParsers.Set:
+                    return new DateTime.Japanese.JapaneseSetParserConfiguration(new DateTime.Japanese.JapaneseDateTimeParserConfiguration());
+                case DateTimeParsers.Merged:
+                    return new FullDateTimeParser(new DateTime.Japanese.JapaneseDateTimeParserConfiguration());
+            }
 
-          throw new Exception($"Parser '{parserName}' for Japanese not supported");
+            throw new Exception($"Parser '{parserName}' for Japanese not supported");
         }
 
         public static IDateTimeExtractor GetSpanishExtractor(DateTimeExtractors extractorName)
@@ -819,6 +825,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
     }
 
+    [SuppressMessage("StyleCop.CSharp.NamingRules", "SA1402: CSharp.Naming : File may only contain a single type", Justification = "TODO")]
     public static class TestModelExtensions
     {
         public static bool IsNotSupported(this TestModel testSpec)
@@ -843,6 +850,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
         }
     }
 
+    [SuppressMessage("StyleCop.CSharp.NamingRules", "SA1402: CSharp.Naming : File may only contain a single type", Justification = "TODO")]
     public static class TestUtils
     {
         public static string GetCulture(string source)
@@ -878,7 +886,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
         public static string SanitizeSourceName(string source)
         {
-            return source.Replace("Model", "").Replace("Extractor", "").Replace("Parser", "");
+            return source.Replace("Model", string.Empty).Replace("Extractor", string.Empty).Replace("Parser", string.Empty);
         }
 
         public static Models GetModel(string source)
@@ -918,9 +926,11 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
         }
     }
 
+    [SuppressMessage("StyleCop.CSharp.NamingRules", "SA1402: CSharp.Naming : File may only contain a single type", Justification = "TODO")]
     public static class RecognizerExtensions
     {
-        public static ConcurrentDictionary<(string culture, Type modelType, string modelOptions), IModel> GetInternalCache<TRecognizerOptions>(this Recognizer<TRecognizerOptions> source) where TRecognizerOptions : struct
+        public static ConcurrentDictionary<(string culture, Type modelType, string modelOptions), IModel> GetInternalCache<TRecognizerOptions>(this Recognizer<TRecognizerOptions> source)
+            where TRecognizerOptions : struct
         {
             var modelFactoryProp = typeof(Recognizer<TRecognizerOptions>).GetField("factory", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
             var modelFactory = modelFactoryProp.GetValue(source);

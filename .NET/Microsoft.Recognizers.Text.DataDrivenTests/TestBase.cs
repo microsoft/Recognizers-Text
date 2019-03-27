@@ -125,8 +125,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
                 if (expected.ParentText != null)
                 {
-                    Assert.AreEqual(expected.ParentText, ((ExtendedModelResult)actual).ParentText,
-                        GetMessage(testSpec));
+                    Assert.AreEqual(expected.ParentText, ((ExtendedModelResult)actual).ParentText, GetMessage(testSpec));
                 }
 
                 // Actual ValueSet types should not be modified as that's considered a breaking API change
@@ -359,8 +358,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                     Assert.AreEqual(expected.End, actual.End, GetMessage(testSpec));
                 }
 
-                Assert.AreEqual(expected.Resolution[ResolutionKey.Value], actual.Resolution[ResolutionKey.Value],
-                                GetMessage(testSpec));
+                Assert.AreEqual(expected.Resolution[ResolutionKey.Value], actual.Resolution[ResolutionKey.Value], GetMessage(testSpec));
 
                 foreach (var key in testResolutionKeys ?? Enumerable.Empty<string>())
                 {

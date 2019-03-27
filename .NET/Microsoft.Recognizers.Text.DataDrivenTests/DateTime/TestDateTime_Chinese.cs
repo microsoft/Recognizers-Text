@@ -17,7 +17,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
             Extractors = new Dictionary<string, IDateTimeExtractor>();
             Parsers = new Dictionary<string, IDateTimeParser>();
         }
-        
+
         [NetCoreTestDataSource]
         [TestMethod]
         public void DateExtractor(TestModel testSpec)
@@ -89,7 +89,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
             ExtractorInitialize(Extractors);
             TestDateTimeExtractor(testSpec);
         }
-        
+
         [NetCoreTestDataSource]
         [TestMethod]
         public void DateParser(TestModel testSpec)

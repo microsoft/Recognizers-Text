@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -20,7 +20,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             var testName = methodInfo.Name;
 
             var classNameIndex = fullyQualifiedTestClassName.LastIndexOf('.');
-            var className = fullyQualifiedTestClassName.Substring(classNameIndex + 1).Replace("Test", "");
+            var className = fullyQualifiedTestClassName.Substring(classNameIndex + 1).Replace("Test", string.Empty);
             var recognizerLanguage = className.Split('_');
 
             var directorySpecs = Path.Combine("..", "..", "..", "..", "..", "Specs", recognizerLanguage[0], recognizerLanguage[1]);
