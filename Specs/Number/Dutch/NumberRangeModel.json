@@ -2,6 +2,7 @@
   {
     "Input": "10-1995",
     "Results": [],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -15,6 +16,7 @@
         }
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -28,6 +30,7 @@
         }
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -41,6 +44,7 @@
         }
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -54,6 +58,7 @@
         }
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -80,6 +85,7 @@
         }
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -93,6 +99,7 @@
         }
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -106,6 +113,7 @@
         }
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -132,6 +140,7 @@
         }
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -145,6 +154,7 @@
         }
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -158,6 +168,7 @@
         }
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -184,6 +195,7 @@
         }
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -255,20 +267,21 @@
     "Input": "Meer dan de helft van de mensen is aanwezig.",
     "Results": [
       {
-        "Text": "Meer dan de helft",
+        "Text": "meer dan de helft",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(0.5,)"
         }
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "Meer dan 1/2 van de mensen is aanwezig.",
     "Results": [
       {
-        "Text": "Meer dan 1/2",
+        "Text": "meer dan 1/2",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(0.5,)"
@@ -346,7 +359,7 @@
     "Input": "Minder dan duizend reuzenpanda's leven nog steeds in het wild.",
     "Results": [
       {
-        "Text": "Minder dan duizend",
+        "Text": "minder dan duizend",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(,1000)"
@@ -406,6 +419,7 @@
         }
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -430,7 +444,7 @@
     "Input": "Gelijk aan 20, is het aantal studenten in onze klas niet significant.",
     "Results": [
       {
-        "Text": "Gelijk aan 20",
+        "Text": "gelijk aan 20",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[20,20]"
@@ -478,6 +492,7 @@
         }
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -517,6 +532,7 @@
         }
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -530,6 +546,7 @@
         }
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -543,6 +560,7 @@
         }
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -576,6 +594,7 @@
         }
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -609,6 +628,7 @@
         }
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -635,6 +655,7 @@
         }
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -668,6 +689,7 @@
         }
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -688,6 +710,7 @@
         }
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   }
 ]
