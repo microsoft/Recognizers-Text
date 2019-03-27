@@ -133,7 +133,7 @@ LessRegex: !simpleRegex
 EqualRegex: !simpleRegex
   def: (gelijk(\s+(aan|tot|als))?|(?<!<|>)=)
 MoreOrEqualPrefix: !nestedRegex
-  def: ((niet\s+{LessRegex})|(at\s+least))
+  def: ((niet\s+{LessRegex})|(tenminste|op zijn minst|minstens))
   references: [ LessRegex ]
 MoreOrEqual: !nestedRegex
   def: (({MoreRegex}\s+of\s+{EqualRegex})|minstens|niet\s+{LessRegex}|>\s*=)
@@ -141,7 +141,7 @@ MoreOrEqual: !nestedRegex
 MoreOrEqualSuffix: !simpleRegex
   def: ((en|of)\s+(meer|groter|hoger|grotere)((?!\s+dan)|(?!\s+als)))
 LessOrEqualPrefix: !nestedRegex
-  def: ((niet\s+{MoreRegex})|(at\s+most))
+  def: ((niet\s+{MoreRegex})|(hooguit|op zijn hoogst|op zijn meest))
   references: [ MoreRegex ]
 LessOrEqual: !nestedRegex
   def: (({LessRegex}\s+of\s+{EqualRegex})|maximum|niet\s+{MoreRegex}|<\s*=)
