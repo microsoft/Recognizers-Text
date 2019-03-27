@@ -63,6 +63,13 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             }
         }
 
+        private static bool CheckUnitsStringContains(string fractionUnitCode, string fractionUnitsString)
+        {
+            var unitsMap = new Dictionary<string, string>();
+            DictionaryUtils.BindUnitsString(unitsMap, string.Empty, fractionUnitsString);
+            return unitsMap.ContainsKey(fractionUnitCode);
+        }
+
         private string GetResolutionStr(object value)
         {
             return Config.CultureInfo != null ?
@@ -217,13 +224,6 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             {
                 Value = results,
             };
-        }
-
-        private bool CheckUnitsStringContains(string fractionUnitCode, string fractionUnitsString)
-        {
-            var unitsMap = new Dictionary<string, string>();
-            DictionaryUtils.BindUnitsString(unitsMap, string.Empty, fractionUnitsString);
-            return unitsMap.ContainsKey(fractionUnitCode);
         }
     }
 }

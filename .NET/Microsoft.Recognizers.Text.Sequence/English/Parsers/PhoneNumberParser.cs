@@ -38,7 +38,7 @@ namespace Microsoft.Recognizers.Text.Sequence.English
         private static readonly Regex FormatIndicatorRegex = new Regex(BasePhoneNumbers.FormatIndicatorRegex);
         private static readonly Regex NoAreaCodeUSphonenumbeRegex = new Regex(BasePhoneNumbers.NoAreaCodeUSPhoneNumberRegex);
 
-        public double ScorePhoneNumber(string phoneNumberText)
+        public static double ScorePhoneNumber(string phoneNumberText)
         {
             double score = baseScore;
 

@@ -5,66 +5,66 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 {
     public static class TimexValue
     {
-        public static string DateValue(TimexProperty obj)
+        public static string DateValue(TimexProperty timexProperty)
         {
-            if (obj.Year != null && obj.Month != null && obj.DayOfMonth != null)
+            if (timexProperty.Year != null && timexProperty.Month != null && timexProperty.DayOfMonth != null)
             {
-                return $"{TimexDateHelpers.FixedFormatNumber(obj.Year, 4)}-{TimexDateHelpers.FixedFormatNumber(obj.Month, 2)}-{TimexDateHelpers.FixedFormatNumber(obj.DayOfMonth, 2)}";
+                return $"{TimexDateHelpers.FixedFormatNumber(timexProperty.Year, 4)}-{TimexDateHelpers.FixedFormatNumber(timexProperty.Month, 2)}-{TimexDateHelpers.FixedFormatNumber(timexProperty.DayOfMonth, 2)}";
             }
 
             return string.Empty;
         }
 
-        public static string TimeValue(TimexProperty obj)
+        public static string TimeValue(TimexProperty timexProperty)
         {
-            if (obj.Hour != null && obj.Minute != null && obj.Second != null)
+            if (timexProperty.Hour != null && timexProperty.Minute != null && timexProperty.Second != null)
             {
-                return $"{TimexDateHelpers.FixedFormatNumber(obj.Hour, 2)}:{TimexDateHelpers.FixedFormatNumber(obj.Minute, 2)}:{TimexDateHelpers.FixedFormatNumber(obj.Second, 2)}";
+                return $"{TimexDateHelpers.FixedFormatNumber(timexProperty.Hour, 2)}:{TimexDateHelpers.FixedFormatNumber(timexProperty.Minute, 2)}:{TimexDateHelpers.FixedFormatNumber(timexProperty.Second, 2)}";
             }
 
             return string.Empty;
         }
 
-        public static string DatetimeValue(TimexProperty obj)
+        public static string DatetimeValue(TimexProperty timexProperty)
         {
-            return $"{DateValue(obj)} {TimeValue(obj)}";
+            return $"{DateValue(timexProperty)} {TimeValue(timexProperty)}";
         }
 
-        public static string DurationValue(TimexProperty obj)
+        public static string DurationValue(TimexProperty timexProperty)
         {
-            if (obj.Years != null)
+            if (timexProperty.Years != null)
             {
-                return (31536000 * obj.Years).ToString();
+                return (31536000 * timexProperty.Years).ToString();
             }
 
-            if (obj.Months != null)
+            if (timexProperty.Months != null)
             {
-                return (2592000 * obj.Months).ToString();
+                return (2592000 * timexProperty.Months).ToString();
             }
 
-            if (obj.Weeks != null)
+            if (timexProperty.Weeks != null)
             {
-                return (604800 * obj.Weeks).ToString();
+                return (604800 * timexProperty.Weeks).ToString();
             }
 
-            if (obj.Days != null)
+            if (timexProperty.Days != null)
             {
-                return (86400 * obj.Days).ToString();
+                return (86400 * timexProperty.Days).ToString();
             }
 
-            if (obj.Hours != null)
+            if (timexProperty.Hours != null)
             {
-                return (3600 * obj.Hours).ToString();
+                return (3600 * timexProperty.Hours).ToString();
             }
 
-            if (obj.Minutes != null)
+            if (timexProperty.Minutes != null)
             {
-                return (60 * obj.Minutes).ToString();
+                return (60 * timexProperty.Minutes).ToString();
             }
 
-            if (obj.Seconds != null)
+            if (timexProperty.Seconds != null)
             {
-                return obj.Seconds.ToString();
+                return timexProperty.Seconds.ToString();
             }
 
             return string.Empty;

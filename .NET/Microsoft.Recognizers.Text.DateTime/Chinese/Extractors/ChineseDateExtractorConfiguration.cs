@@ -67,22 +67,18 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             // 23/7
             new Regex(DateTimeDefinitions.DateRegexList5, RegexOptions.Singleline),
 
-            DateTimeDefinitions.DefaultLanguageFallback == Constants.DefaultLanguageFallback_DMY
-                ?
+            DateTimeDefinitions.DefaultLanguageFallback == Constants.DefaultLanguageFallback_DMY ?
 
                 // 23-3-2015
-                new Regex(DateTimeDefinitions.DateRegexList7, RegexOptions.Singleline)
-                :
+                new Regex(DateTimeDefinitions.DateRegexList7, RegexOptions.Singleline) :
 
                 // 3-23-2017
                 new Regex(DateTimeDefinitions.DateRegexList6, RegexOptions.Singleline),
 
-            DateTimeDefinitions.DefaultLanguageFallback == Constants.DefaultLanguageFallback_DMY
-                ?
+            DateTimeDefinitions.DefaultLanguageFallback == Constants.DefaultLanguageFallback_DMY ?
 
                 // 3-23-2017
-                new Regex(DateTimeDefinitions.DateRegexList6, RegexOptions.Singleline)
-                :
+                new Regex(DateTimeDefinitions.DateRegexList6, RegexOptions.Singleline) :
 
                 // 23-3-2015
                 new Regex(DateTimeDefinitions.DateRegexList7, RegexOptions.Singleline),
@@ -120,17 +116,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             return Token.MergeAllTokens(tokens, text, ExtractorName);
         }
 
-        public List<Token> ExtractRaw(string text)
-        {
-            var tokens = new List<Token>();
-            tokens.AddRange(BasicRegexMatch(text));
-            tokens.AddRange(ImplicitDate(text));
-
-            return tokens;
-        }
-
-        // match basic patterns in DateRegexList
-        private List<Token> BasicRegexMatch(string text)
+        // Match basic patterns in DateRegexList
+        private static List<Token> BasicRegexMatch(string text)
         {
             var ret = new List<Token>();
             foreach (var regex in DateRegexList)
@@ -145,8 +132,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             return ret;
         }
 
-        // match several other cases
-        private List<Token> ImplicitDate(string text)
+        // Match several other implicit cases
+        private static List<Token> ImplicitDate(string text)
         {
             var ret = new List<Token>();
             foreach (var regex in ImplicitDateList)
@@ -162,7 +149,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         }
 
         // process case like "三天前" "两个月前"
-        private List<Token> DurationWithBeforeAndAfter(string text, DateObject referenceTime)
+        private static List<Token> DurationWithBeforeAndAfter(string text, DateObject referenceTime)
         {
             var ret = new List<Token>();
             var durationEr = DurationExtractor.Extract(text, referenceTime);

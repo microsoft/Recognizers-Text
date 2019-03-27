@@ -17,7 +17,7 @@
             return result;
         }
 
-        private string DropLeadingZeros(string text)
+        private static string DropLeadingZeros(string text)
         {
             var result = string.Empty;
             var number = string.Empty;
@@ -26,10 +26,10 @@
                 var c = text[i];
                 if (c == '.' || c == ':')
                 {
-                    if (number != string.Empty)
+                    if (!string.IsNullOrEmpty(number))
                     {
                         number = number == "0" ? number : number.TrimStart('0');
-                        number = number == string.Empty ? "0" : number;
+                        number = string.IsNullOrEmpty(number) ? "0" : number;
                         result += number;
                     }
 
@@ -42,7 +42,7 @@
                     if (i == text.Length - 1)
                     {
                         number = number == "0" ? number : number.TrimStart('0');
-                        number = number == string.Empty ? "0" : number;
+                        number = string.IsNullOrEmpty(number) ? "0" : number;
                         result += number;
                     }
                 }
