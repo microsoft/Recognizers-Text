@@ -4898,6 +4898,13 @@
     ]
   },
   {
+    "Input": "There is no week 00, nor W00",
+    "Context": {
+      "ReferenceDateTime": "2019-03-02T00:00:00"
+    },
+    "Results": []
+  },
+  {
     "Input": "I will leave in 2 minutes",
     "Context": {
       "ReferenceDateTime": "2018-06-26T00:00:00"
@@ -9245,6 +9252,54 @@
               "type": "daterange",
               "start": "2016-12-26",
               "end": "2017-01-02"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "How about first week of 2019",
+    "Context": {
+      "ReferenceDateTime": "2019-03-02T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "first week of 2019",
+        "Start": 10,
+        "End": 27,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-W01",
+              "type": "daterange",
+              "start": "2018-12-31",
+              "end": "2019-01-07"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "How about last week of 2019",
+    "Context": {
+      "ReferenceDateTime": "2019-03-02T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "last week of 2019",
+        "Start": 10,
+        "End": 26,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-W52",
+              "type": "daterange",
+              "start": "2019-12-23",
+              "end": "2019-12-30"
             }
           ]
         }

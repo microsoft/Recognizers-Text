@@ -983,7 +983,7 @@ export class BaseDatePeriodParser implements IDateTimeParser {
             targetWeekMonday = lastDayWeekMonday;
             weekNum = DateUtils.getWeekNumber(targetWeekMonday).weekNo;
 
-            result.timex = `${ DateTimeFormatUtil.toString(year, 4) }-${ DateTimeFormatUtil.toString(targetWeekMonday.getMonth() + 1, 2) }-W${ DateTimeFormatUtil.toString(weekNum, 2) }`;
+            result.timex = `${ DateTimeFormatUtil.toString(year, 4) }-W${ DateTimeFormatUtil.toString(weekNum, 2) }`;
         } else {
             let cardinal = this.config.cardinalMap.get(cardinalStr);
 
@@ -995,8 +995,7 @@ export class BaseDatePeriodParser implements IDateTimeParser {
             }
 
             targetWeekMonday = DateUtils.addDays(firstDayWeekMonday, 7 * (cardinal - 1));
-            let targetWeekSunday = DateUtils.this(targetWeekMonday, DayOfWeek.Sunday);
-            result.timex = `${ DateTimeFormatUtil.toString(year, 4) }-${ DateTimeFormatUtil.toString(targetWeekSunday.getMonth() + 1, 2) }-W${ DateTimeFormatUtil.toString(cardinal, 2) }`;
+            result.timex = `${ DateTimeFormatUtil.toString(year, 4) }-W${ DateTimeFormatUtil.toString(cardinal, 2) }`;
         }
 
         result.futureValue = [targetWeekMonday, DateUtils.addDays(targetWeekMonday, this.inclusiveEndPeriod ? 6 : 7)];
