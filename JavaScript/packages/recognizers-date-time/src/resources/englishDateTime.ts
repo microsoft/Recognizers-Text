@@ -78,7 +78,7 @@ export namespace EnglishDateTime {
 	export const PrefixDayRegex = `\\b((?<EarlyPrefix>early)|(?<MidPrefix>mid|middle)|(?<LatePrefix>late|later))(\\s+in)?(\\s+the\\s+day)?$`;
 	export const SeasonDescRegex = `(?<seas>spring|summer|fall|autumn|winter)`;
 	export const SeasonRegex = `\\b(?<season>(${PrefixPeriodRegex}\\s+)?(${RelativeRegex}\\s+)?${SeasonDescRegex}((\\s+of|\\s*,\\s*)?\\s+(${YearRegex}|${RelativeRegex}\\s+year))?)\\b`;
-	export const WhichWeekRegex = `(week)(\\s*)(?<number>\\d\\d|\\d|0\\d)`;
+	export const WhichWeekRegex = `\\b(week)(\\s*)(?<number>5[0-3]|[1-4]\\d|0?[1-9])\\b`;
 	export const WeekOfRegex = `(the\\s+)?(week)(\\s+of)(\\s+the)?`;
 	export const MonthOfRegex = `(month)(\\s*)(of)`;
 	export const MonthRegex = `(?<month>april|apr|august|aug|december|dec|february|feb|january|jan|july|jul|june|jun|march|mar|may|november|nov|october|oct|september|sept|sep)`;

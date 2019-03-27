@@ -150,7 +150,7 @@ public class FrenchDateTime {
             .replace("{NextSuffixRegex}", NextSuffixRegex)
             .replace("{PastSuffixRegex}", PastSuffixRegex);
 
-    public static final String WhichWeekRegex = "(semaine)(\\s*)(?<number>\\d\\d|\\d|0\\d)";
+    public static final String WhichWeekRegex = "\\b(semaine)(\\s*)(?<number>5[0-3]|[1-4]\\d|0?[1-9])\\b";
 
     public static final String WeekOfRegex = "(semaine)(\\s*)(de)";
 

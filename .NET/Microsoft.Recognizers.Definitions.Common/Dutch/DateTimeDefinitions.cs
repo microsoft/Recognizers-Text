@@ -91,7 +91,7 @@ namespace Microsoft.Recognizers.Definitions.Dutch
 		public const string PrefixDayRegex = @"\b((?<EarlyPrefix>eerder)|(?<MidPrefix>midden)|(?<LatePrefix>later))(\s+op)?(\s+de\s+dag)?$";
 		public const string SeasonDescRegex = @"(?<seas>lente|zomer|herfst|winter)";
 		public static readonly string SeasonRegex = $@"\b(?<season>({PrefixPeriodRegex}\s+)?({RelativeRegex}\s+)?{SeasonDescRegex}((\s+of|\s*,\s*)?\s+({YearRegex}|{RelativeRegex}\s+jaar))?)\b";
-		public const string WhichWeekRegex = @"(week)(\s*)(?<number>\d\d|\d|0\d)";
+		public const string WhichWeekRegex = @"\b(week)(\s*)(?<number>5[0-3]|[1-4]\d|0?[1-9])\b";
 		public const string WeekOfRegex = @"(de\s+)?(week)(\s+van)(\s+de)?";
 		public const string MonthOfRegex = @"(maand)(\s*)(van)";
 		public const string MonthRegex = @"(?<month>januari|februari|maart|april|mei|juni|juli|augustus|september|oktober|december|jan|feb|mar|apr|jun|jul|aug|sep|sept|oct|okt|nov|dec)";

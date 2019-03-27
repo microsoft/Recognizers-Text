@@ -983,7 +983,7 @@ export class BaseDatePeriodParser implements IDateTimeParser {
             targetWeekMonday = lastDayWeekMonday;
             weekNum = DateUtils.getWeekNumber(targetWeekMonday).weekNo;
 
-            result.timex = `${ DateTimeFormatUtil.toString(year, 4) }-${ DateTimeFormatUtil.toString(targetWeekMonday.getMonth() + 1, 2) }-W${ DateTimeFormatUtil.toString(weekNum, 2) }`;
+            result.timex = `${ DateTimeFormatUtil.toString(year, 4) }-W${ DateTimeFormatUtil.toString(weekNum, 2) }`;
         } else {
             let cardinal = this.config.cardinalMap.get(cardinalStr);
 
@@ -995,8 +995,7 @@ export class BaseDatePeriodParser implements IDateTimeParser {
             }
 
             targetWeekMonday = DateUtils.addDays(firstDayWeekMonday, 7 * (cardinal - 1));
-            let targetWeekSunday = DateUtils.this(targetWeekMonday, DayOfWeek.Sunday);
-            result.timex = `${ DateTimeFormatUtil.toString(year, 4) }-${ DateTimeFormatUtil.toString(targetWeekSunday.getMonth() + 1, 2) }-W${ DateTimeFormatUtil.toString(cardinal, 2) }`;
+            result.timex = `${ DateTimeFormatUtil.toString(year, 4) }-W${ DateTimeFormatUtil.toString(cardinal, 2) }`;
         }
 
         result.futureValue = [targetWeekMonday, DateUtils.addDays(targetWeekMonday, this.inclusiveEndPeriod ? 6 : 7)];
@@ -1132,10 +1131,17 @@ export class BaseDatePeriodParser implements IDateTimeParser {
         if (!match) return result;
         let num = Number.parseInt(match.groups('number').value, 10);
         let year = referenceDate.getFullYear();
-        let firstDay = DateUtils.safeCreateFromValue(DateUtils.minValue(), year, 0, 1);
-        let firstWeekday = DateUtils.this(firstDay, DayOfWeek.Monday);
-        let resultDate = DateUtils.addDays(firstWeekday, 7 * num);
         result.timex = `${DateTimeFormatUtil.toString(year, 4)}-W${DateTimeFormatUtil.toString(num, 2)}`;
+
+        let firstDay = DateUtils.safeCreateFromValue(DateUtils.minValue(), year, 0, 1);
+        let firstThursday = DateUtils.this(firstDay, DayOfWeek.Thursday);
+        let firstWeek = DateUtils.getWeekNumber(firstThursday).weekNo;
+        if (firstWeek == 1) {
+            num -= 1;
+        }
+
+        let resultDate = DateUtils.addDays(firstThursday, 7 * num - 3);
+
         result.futureValue = [resultDate, DateUtils.addDays(resultDate, 7)];
         result.pastValue = [resultDate, DateUtils.addDays(resultDate, 7)];
         result.success = true;

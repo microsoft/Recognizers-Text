@@ -165,7 +165,7 @@ public class SpanishDateTime {
             .replace("{YearRegex}", YearRegex)
             .replace("{PrefixPeriodRegex}", PrefixPeriodRegex);
 
-    public static final String WhichWeekRegex = "(semana)(\\s*)(?<number>\\d\\d|\\d|0\\d)";
+    public static final String WhichWeekRegex = "\\b(semana)(\\s*)(?<number>5[0-3]|[1-4]\\d|0?[1-9])\\b";
 
     public static final String WeekOfRegex = "((del|de|la|el)\\s+)?(semana)(\\s*)({OfPrepositionRegex})"
             .replace("{OfPrepositionRegex}", OfPrepositionRegex);

@@ -43,7 +43,7 @@ class PortugueseDateTime:
     AllHalfYearRegex = f'^[.]'
     PrefixDayRegex = f'^[.]'
     SeasonRegex = f'\\b(?<season>(([uú]ltim[oa]|[nd]?es[st][ea]|n?[oa]|(pr[oó]xim[oa]s?|seguinte))\\s+)?(?<seas>primavera|ver[ãa]o|outono|inverno)((\\s+)?(seguinte|((de\\s+|,)?\\s*{YearRegex})|((do\\s+)?(?<order>pr[oó]ximo|[uú]ltimo|[nd]?es[st]e)\\s+ano)))?)\\b'
-    WhichWeekRegex = f'(semana)(\\s*)(?<number>\\d\\d|\\d|0\\d)'
+    WhichWeekRegex = f'\\b(semana)(\\s*)(?<number>5[0-3]|[1-4]\\d|0?[1-9])\\b'
     WeekOfRegex = f'(semana)(\\s*)((do|da|de))'
     MonthOfRegex = f'(mes)(\\s*)((do|da|de))'
     RangeUnitRegex = f'\\b(?<unit>anos|ano|meses|m[êe]s|semanas|semana)\\b'

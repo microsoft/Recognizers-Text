@@ -91,7 +91,7 @@ namespace Microsoft.Recognizers.Definitions.English
 		public const string PrefixDayRegex = @"\b((?<EarlyPrefix>early)|(?<MidPrefix>mid|middle)|(?<LatePrefix>late|later))(\s+in)?(\s+the\s+day)?$";
 		public const string SeasonDescRegex = @"(?<seas>spring|summer|fall|autumn|winter)";
 		public static readonly string SeasonRegex = $@"\b(?<season>({PrefixPeriodRegex}\s+)?({RelativeRegex}\s+)?{SeasonDescRegex}((\s+of|\s*,\s*)?\s+({YearRegex}|{RelativeRegex}\s+year))?)\b";
-		public const string WhichWeekRegex = @"(week)(\s*)(?<number>\d\d|\d|0\d)";
+		public const string WhichWeekRegex = @"\b(week)(\s*)(?<number>5[0-3]|[1-4]\d|0?[1-9])\b";
 		public const string WeekOfRegex = @"(the\s+)?(week)(\s+of)(\s+the)?";
 		public const string MonthOfRegex = @"(month)(\s*)(of)";
 		public const string MonthRegex = @"(?<month>april|apr|august|aug|december|dec|february|feb|january|jan|july|jul|june|jun|march|mar|may|november|nov|october|oct|september|sept|sep)";
