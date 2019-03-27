@@ -26,21 +26,23 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
             TestDateTimeExtractor(testSpec);
         }
 
-        // [NetCoreTestDataSource]
-        // [TestMethod]
-        // public void TimeExtractor(TestModel testSpec)
-        // {
-        //    ExtractorInitialize(Extractors);
-        //    TestDateTimeExtractor(testSpec);
-        // }
+        /*
+        [NetCoreTestDataSource]
+        [TestMethod]
+        public void TimeExtractor(TestModel testSpec)
+        {
+            ExtractorInitialize(Extractors);
+            TestDateTimeExtractor(testSpec);
+        }
 
-        // [NetCoreTestDataSource]
-        // [TestMethod]
-        // public void DatePeriodExtractor(TestModel testSpec)
-        // {
-        //    ExtractorInitialize(Extractors);
-        //    TestDateTimeExtractor(testSpec);
-        // }
+        [NetCoreTestDataSource]
+        [TestMethod]
+        public void DatePeriodExtractor(TestModel testSpec)
+        {
+            ExtractorInitialize(Extractors);
+            TestDateTimeExtractor(testSpec);
+        }
+        */
 
         [NetCoreTestDataSource]
         [TestMethod]
@@ -58,13 +60,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
             TestDateTimeExtractor(testSpec);
         }
 
-        // [NetCoreTestDataSource]
-        // [TestMethod]
-        // public void DateTimePeriodExtractor(TestModel testSpec)
-        // {
-        //    ExtractorInitialize(Extractors);
-        //    TestDateTimeExtractor(testSpec);
-        // }
+        /*
+        [NetCoreTestDataSource]
+        [TestMethod]
+        public void DateTimePeriodExtractor(TestModel testSpec)
+        {
+            ExtractorInitialize(Extractors);
+            TestDateTimeExtractor(testSpec);
+        }
+        */
 
         [NetCoreTestDataSource]
         [TestMethod]
@@ -74,13 +78,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
             TestDateTimeExtractor(testSpec);
         }
 
-        // [NetCoreTestDataSource]
-        // [TestMethod]
-        // public void TimeZoneExtractor(TestModel testSpec)
-        // {
-        //    ExtractorInitialize(Extractors);
-        //    TestDateTimeExtractor(testSpec);
-        // }
+        /*
+        [NetCoreTestDataSource]
+        [TestMethod]
+        public void TimeZoneExtractor(TestModel testSpec)
+        {
+            ExtractorInitialize(Extractors);
+            TestDateTimeExtractor(testSpec);
+        }
+        */
 
         [NetCoreTestDataSource]
         [TestMethod]
@@ -98,21 +104,23 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
             TestDateTimeExtractor(testSpec);
         }
 
-        // [NetCoreTestDataSource]
-        // [TestMethod]
-        // public void MergedExtractor(TestModel testSpec)
-        // {
-        //    ExtractorInitialize(Extractors);
-        //    TestDateTimeExtractor(testSpec);
-        // }
+        /*
+        [NetCoreTestDataSource]
+        [TestMethod]
+        public void MergedExtractor(TestModel testSpec)
+        {
+            ExtractorInitialize(Extractors);
+            TestDateTimeExtractor(testSpec);
+        }
 
-        // [NetCoreTestDataSource]
-        // [TestMethod]
-        // public void MergedExtractorSkipFromTo(TestModel testSpec)
-        // {
-        //    ExtractorInitialize(Extractors);
-        //    TestDateTimeExtractor(testSpec);
-        // }
+        [NetCoreTestDataSource]
+        [TestMethod]
+        public void MergedExtractorSkipFromTo(TestModel testSpec)
+        {
+            ExtractorInitialize(Extractors);
+            TestDateTimeExtractor(testSpec);
+        }
+        */
 
         [NetCoreTestDataSource]
         [TestMethod]
@@ -132,32 +140,33 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
             TestDateTimeParser(testSpec);
         }
 
-        // [NetCoreTestDataSource]
-        // [TestMethod]
-        // public void DatePeriodParser(TestModel testSpec)
-        // {
-        //    ExtractorInitialize(Extractors);
-        //    ParserInitialize(Parsers);
-        //    TestDateTimeParser(testSpec);
-        // }
+        /*
+        [NetCoreTestDataSource]
+        [TestMethod]
+        public void DatePeriodParser(TestModel testSpec)
+        {
+            ExtractorInitialize(Extractors);
+            ParserInitialize(Parsers);
+            TestDateTimeParser(testSpec);
+        }
 
-        // [NetCoreTestDataSource]
-        // [TestMethod]
-        // public void TimePeriodParser(TestModel testSpec)
-        // {
-        //    ExtractorInitialize(Extractors);
-        //    ParserInitialize(Parsers);
-        //    TestDateTimeParser(testSpec);
-        // }
+        [NetCoreTestDataSource]
+        [TestMethod]
+        public void TimePeriodParser(TestModel testSpec)
+        {
+            ExtractorInitialize(Extractors);
+            ParserInitialize(Parsers);
+            TestDateTimeParser(testSpec);
+        }
 
-        // [NetCoreTestDataSource]
-        // [TestMethod]
-        // public new void DateTimeParser(TestModel testSpec)
-        // {
-        //    ExtractorInitialize(Extractors);
-        //    ParserInitialize(Parsers);
-        //    TestDateTimeParser(testSpec);
-        // }
+        [NetCoreTestDataSource]
+        [TestMethod]
+        public new void DateTimeParser(TestModel testSpec)
+        {
+            ExtractorInitialize(Extractors);
+            ParserInitialize(Parsers);
+            TestDateTimeParser(testSpec);
+        }
 
         [NetCoreTestDataSource]
         [TestMethod]
@@ -167,6 +176,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
             ParserInitialize(Parsers);
             TestDateTimeParser(testSpec);
         }
+        */
 
         [NetCoreTestDataSource]
         [TestMethod]
