@@ -8,29 +8,41 @@ namespace Microsoft.Recognizers.Text.Number
 {
     public class BaseNumberParser : IParser
     {
+
         private static readonly Regex LongFormRegex =
             new Regex(@"\d+", RegexOptions.Singleline);
 
-        private static readonly Regex CultureRegex =
+        private static readonly Regex MultiDecimalSeparatorCultureRegex =
             new Regex(@"^(en|es|fr)(-)?\b", RegexOptions.Singleline | RegexOptions.Compiled);
+
+        private static readonly List<string> CompoundNumberLanguages = new List<string> { "de-DE", "nl-NL" };
+
+        private readonly bool isMultiDecimalSeparatorCulture = false;
 
         public BaseNumberParser(INumberParserConfiguration config)
         {
             this.Config = config;
 
+            this.isMultiDecimalSeparatorCulture = MultiDecimalSeparatorCultureRegex.IsMatch(config.CultureInfo.Name);
+
             var singleIntFrac = $"{this.Config.WordSeparatorToken}| -|" +
                                 GetKeyRegex(this.Config.CardinalNumberMap.Keys) + "|" +
                                 GetKeyRegex(this.Config.OrdinalNumberMap.Keys);
 
-            // Necessary for the German & Dutch languages because bigger numbers are not separated by whitespaces or special characters like in other languages
-            if (config.CultureInfo.Name == "de-DE" || config.CultureInfo.Name == "nl-NL")
+            string textNumberPattern;
+
+            // Checks for languages that use "compound numbers". I.e. written number parts are not separated by whitespaces or special characters (e.g., dreihundert in German).
+            if (CompoundNumberLanguages.Contains(config.CultureInfo.Name))
             {
-                TextNumberRegex = new Regex(@"(" + singleIntFrac + @")", RegexOptions.Singleline | RegexOptions.Compiled);
+                textNumberPattern = @"(" + singleIntFrac + @")";
             }
             else
             {
-                TextNumberRegex = new Regex(@"(?<=\b)(" + singleIntFrac + @")(?=\b)", RegexOptions.Singleline | RegexOptions.Compiled);
+                // Default case, like in English.
+                textNumberPattern = @"(?<=\b)(" + singleIntFrac + @")(?=\b)";
             }
+
+            TextNumberRegex = new Regex(textNumberPattern, RegexOptions.Singleline | RegexOptions.Compiled);
 
             RoundNumberSet = new HashSet<string>();
             foreach (var roundNumber in this.Config.RoundNumberMap.Keys)
@@ -538,7 +550,7 @@ namespace Microsoft.Recognizers.Text.Number
             for (var i = 0; i < digitsStr.Length; i++)
             {
                 var ch = digitsStr[i];
-                var skippableNonDecimal = SkipNonDecimalSeparator(ch, strLength - i, Config.CultureInfo);
+                var skippableNonDecimal = SkipNonDecimalSeparator(ch, strLength - i);
                 if (!isFrac && (ch == ' ' || ch == Constants.NO_BREAK_SPACE || skippableNonDecimal))
                 {
                     continue;
@@ -657,11 +669,11 @@ namespace Microsoft.Recognizers.Text.Number
         // Special cases for multi-language countries where decimal separators can be used interchangeably. Mostly informally.
         // Ex: South Africa, Namibia; Puerto Rico in ES; or in Canada for EN and FR.
         // "me pidio $5.00 prestados" and "me pidio $5,00 prestados" -> currency $5
-        private bool SkipNonDecimalSeparator(char ch, int distance, CultureInfo culture)
+        private bool SkipNonDecimalSeparator(char ch, int distance)
         {
             var decimalLength = 3;
 
-            return ch == Config.NonDecimalSeparatorChar && !(distance <= decimalLength && CultureRegex.IsMatch(culture.Name));
+            return ch == Config.NonDecimalSeparatorChar && !(distance <= decimalLength && isMultiDecimalSeparatorCulture);
         }
 
         private List<string> GetMatches(string input)
