@@ -57,7 +57,7 @@ namespace Microsoft.Recognizers.Text.Matcher
         }
 
         // Check the character is Chinese by the unicode range (CJK Unified Ideographs, CJK Unified Ideographs Extension A)
-        protected bool IsChinese(char c)
+        protected static bool IsChinese(char c)
         {
             ushort uc = (ushort)c;
 
@@ -65,7 +65,7 @@ namespace Microsoft.Recognizers.Text.Matcher
         }
 
         // Check the character is Japanese by the unicode range (Hiragana, Katakana, Katakana Pinyin)
-        protected bool IsJapanese(char c)
+        protected static bool IsJapanese(char c)
         {
             ushort uc = (ushort)c;
 
@@ -75,7 +75,7 @@ namespace Microsoft.Recognizers.Text.Matcher
         }
 
         // Check the character is Korean by the unicode range (HangulSyllables, Hangul Jamo, Hangul Compatibility Jamo, Halfwidth Hangul Jamo)
-        protected bool IsKorean(char c)
+        protected static bool IsKorean(char c)
         {
             ushort uc = (ushort)c;
 
@@ -87,7 +87,7 @@ namespace Microsoft.Recognizers.Text.Matcher
 
         // Check the character is Chinese/Japanese/Korean.
         // For those languages which are not using whitespace delimited symbol, we only simply tokenize the sentence by each single character.
-        protected bool IsCjk(char c)
+        protected static bool IsCjk(char c)
         {
             return IsChinese(c) || IsJapanese(c) || IsKorean(c);
         }

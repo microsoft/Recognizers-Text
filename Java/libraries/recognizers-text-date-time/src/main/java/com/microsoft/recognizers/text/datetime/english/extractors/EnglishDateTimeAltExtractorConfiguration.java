@@ -20,7 +20,7 @@ public class EnglishDateTimeAltExtractorConfiguration extends BaseOptionsConfigu
     private static final Pattern RangePrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RangePrefixRegex);
 
     public static final Pattern ThisPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.ThisPrefixRegex);
-    public static final Pattern PastPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PastPrefixRegex);
+    public static final Pattern PreviousPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PreviousPrefixRegex);
     public static final Pattern NextPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.NextPrefixRegex);
     public static final Pattern AmRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.AmRegex);
     public static final Pattern PmRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PmRegex);
@@ -28,7 +28,7 @@ public class EnglishDateTimeAltExtractorConfiguration extends BaseOptionsConfigu
     public static final Iterable<Pattern> RelativePrefixList = new ArrayList<Pattern>() {
         {
             add(ThisPrefixRegex);
-            add(PastPrefixRegex);
+            add(PreviousPrefixRegex);
             add(NextPrefixRegex);
         }
     };

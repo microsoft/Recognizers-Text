@@ -125,7 +125,7 @@ class SpanishDateParserConfiguration(DateParserConfiguration):
     # If the spanish date parser need the same regexes, they should be extracted
     _relative_day_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.RelativeDayRegex)
     _next_prefix_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.NextPrefixRegex)
-    _past_prefix_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.PastPrefixRegex)
+    _past_prefix_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.PreviousPrefixRegex)
 
     def __init__(self, config: BaseDateParserConfiguration):
         self._ordinal_extractor = config.ordinal_extractor

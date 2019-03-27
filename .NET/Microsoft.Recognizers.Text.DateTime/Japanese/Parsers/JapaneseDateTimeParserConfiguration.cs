@@ -11,15 +11,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
     public JapaneseDateTimeParserConfiguration(DateTimeOptions options = DateTimeOptions.None)
             : base(options)
     {
-      DateParser = new DateParser(this);
-      TimeParser = new TimeParser(this);
-      DateTimeParser = new DateTimeParser(this);
-      DatePeriodParser = new DatePeriodParser(this);
-      TimePeriodParser = new TimePeriodParser(this);
-      DateTimePeriodParser = new DateTimePeriodParser(this);
-      DurationParser = new DurationParser(this);
-      GetParser = new SetParser(this);
-      HolidayParser = new HolidayParser(this);
+      DateParser = new JapaneseDateParserConfiguration(this);
+      TimeParser = new JapaneseTimeParserConfiguration(this);
+      DateTimeParser = new JapaneseDateTimeParser(this);
+      DatePeriodParser = new JapaneseDatePeriodParserConfiguration(this);
+      TimePeriodParser = new JapaneseTimePeriodParserConfiguration(this);
+      DateTimePeriodParser = new JapaneseDateTimePeriodParserConfiguration(this);
+      DurationParser = new JapaneseDurationParserConfiguration(this);
+      GetParser = new JapaneseSetParserConfiguration(this);
+      HolidayParser = new JapaneseHolidayParserConfiguration(this);
       UnitMap = DateTimeDefinitions.ParserConfigurationUnitMap.ToImmutableDictionary();
       UnitValueMap = DateTimeDefinitions.ParserConfigurationUnitValueMap.ToImmutableDictionary();
       SeasonMap = DateTimeDefinitions.ParserConfigurationSeasonMap.ToImmutableDictionary();
@@ -29,17 +29,17 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
       DayOfWeek = DateTimeDefinitions.ParserConfigurationDayOfWeek.ToImmutableDictionary();
       MonthOfYear = DateTimeDefinitions.ParserConfigurationMonthOfYear.ToImmutableDictionary();
       Numbers = InitNumbers();
-      DateRegexList = DateExtractor.DateRegexList;
-      NextRegex = DateExtractor.NextRegex;
-      ThisRegex = DateExtractor.ThisRegex;
-      LastRegex = DateExtractor.LastRegex;
-      StrictWeekDayRegex = DateExtractor.WeekDayRegex;
-      WeekDayOfMonthRegex = DateExtractor.WeekDayOfMonthRegex;
-      BeforeRegex = JapaneseMergedExtractor.BeforeRegex;
-      AfterRegex = JapaneseMergedExtractor.AfterRegex;
-      UntilRegex = JapaneseMergedExtractor.UntilRegex;
-      SincePrefixRegex = JapaneseMergedExtractor.SincePrefixRegex;
-      SinceSuffixRegex = JapaneseMergedExtractor.SinceSuffixRegex;
+      DateRegexList = JapaneseDateExtractorConfiguration.DateRegexList;
+      NextRegex = JapaneseDateExtractorConfiguration.NextRegex;
+      ThisRegex = JapaneseDateExtractorConfiguration.ThisRegex;
+      LastRegex = JapaneseDateExtractorConfiguration.LastRegex;
+      StrictWeekDayRegex = JapaneseDateExtractorConfiguration.WeekDayRegex;
+      WeekDayOfMonthRegex = JapaneseDateExtractorConfiguration.WeekDayOfMonthRegex;
+      BeforeRegex = JapaneseMergedExtractorConfiguration.BeforeRegex;
+      AfterRegex = JapaneseMergedExtractorConfiguration.AfterRegex;
+      UntilRegex = JapaneseMergedExtractorConfiguration.UntilRegex;
+      SincePrefixRegex = JapaneseMergedExtractorConfiguration.SincePrefixRegex;
+      SinceSuffixRegex = JapaneseMergedExtractorConfiguration.SinceSuffixRegex;
     }
 
     public int TwoNumYear => int.Parse(DateTimeDefinitions.TwoNumYear);
@@ -110,7 +110,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
     public Regex SinceSuffixRegex { get; }
 
-    public int GetSwiftDay(string text)
+    public static int GetSwiftDay(string text)
     {
       // Today: 今天, 今日, 最近, きょう, この日
       var value = 0;
@@ -143,7 +143,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
       return value;
     }
 
-    public int GetSwiftMonth(string text)
+    public static int GetSwiftMonth(string text)
     {
       // Current month: 今月
       var value = 0;
@@ -164,7 +164,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
       return value;
     }
 
-    public int GetSwiftYear(string text)
+    public static int GetSwiftYear(string text)
     {
       // Current year: 今年
       var value = 0;

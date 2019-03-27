@@ -21,7 +21,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex NumberCombinedWithDateUnit { get; }
 
-        Regex PastRegex { get; }
+        Regex PreviousPrefixRegex { get; }
 
         Regex FutureRegex { get; }
 
@@ -54,6 +54,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         Regex MoreThanRegex { get; }
 
         Regex CenturySuffixRegex { get; }
+
+        Regex MonthNumRegex { get; }
 
         IDateExtractor DatePointExtractor { get; }
 

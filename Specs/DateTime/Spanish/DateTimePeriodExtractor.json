@@ -550,14 +550,14 @@
   },
   {
     "Input": "Estaré afuera de 4-5 pm de 5 de mayo de 2018",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "4-5 pm de 5 de mayo de 2018",
+        "Text": "de 4-5 pm de 5 de mayo de 2018",
         "Type": "datetimerange",
-        "Start": 17,
-        "Length": 27
+        "Start": 14,
+        "Length": 30
       }
     ]
   },
@@ -575,7 +575,7 @@
   },
   {
     "Input": "Estaré afuera desde las 16 h de 1 de ene de 2016 hasta hoy a las 17 h",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -831,7 +831,7 @@
   },
   {
     "Input": "Volveré en las próximas 5 horas",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -844,7 +844,7 @@
   },
   {
     "Input": "Volveré en las próximas 5 h",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -881,14 +881,14 @@
   },
   {
     "Input": "Volví en los últimos minutos",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "últimos minutos",
         "Type": "datetimerange",
         "Start": 13,
-        "Length": 16
+        "Length": 15
       }
     ]
   },
@@ -943,7 +943,7 @@
   },
   {
     "Input": "Nos vemos el martes a primeras horas de la mañana",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -956,7 +956,7 @@
   },
   {
     "Input": "Nos vemos el martes a últimas horas de la mañana",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -969,7 +969,7 @@
   },
   {
     "Input": "Nos vemos el martes a primeras horas de la tarde",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -982,20 +982,20 @@
   },
   {
     "Input": "Nos vemos a primeras horas de la tarde del martes",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "primeras horas de la tarde del martes",
+        "Text": "a primeras horas de la tarde del martes",
         "Type": "datetimerange",
-        "Start": 12,
+        "Start": 10,
         "Length": 39
       }
     ]
   },
   {
     "Input": "Nos vemos el martes a últimas horas de la tarde",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -1008,7 +1008,7 @@
   },
   {
     "Input": "Nos vemos el martes a primeras horas de la noche",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -1021,7 +1021,7 @@
   },
   {
     "Input": "Nos vemos el martes a últimas horas de la noche",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -1034,20 +1034,20 @@
   },
   {
     "Input": "Nos vemos a últimas horas de la noche de martes",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "últimas horas de la noche de martes",
+        "Text": "a últimas horas de la noche de martes",
         "Type": "datetimerange",
-        "Start": 12,
-        "Length": 35
+        "Start": 10,
+        "Length": 37
       }
     ]
   },
   {
     "Input": "Nos vemos el martes a altas horas de la noche",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -1060,7 +1060,7 @@
   },
   {
     "Input": "Estaré afuera en el resto del día de hoy",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -1073,7 +1073,7 @@
   },
   {
     "Input": "Estaré afuera en el resto de la jornada de hoy",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -1086,7 +1086,7 @@
   },
   {
     "Input": "Estaré afuera en el resto del día",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -1147,14 +1147,14 @@
   },
   {
     "Input": "Hola Cortana- programa una reunión con Jennifer.  Necesito una reunión de 30 minutos en la tarde de este viernes",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "tarde de este viernes",
+        "Text": "en la tarde de este viernes",
         "Type": "datetimerange",
-        "Start": 91,
-        "Length": 21
+        "Start": 85,
+        "Length": 27
       }
     ]
   },
@@ -1196,6 +1196,7 @@
   },
   {
     "Input": "Busca un tiempo entre las 1.30 y las 4 pm de 23-9-15",
+    "Comment": "'de' is not the 'TokenBeforeDate'. We cannot merge '1.30 y las 4 pm' and '23-9-15'",
     "NotSupported": "dotnet, java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
@@ -1233,7 +1234,7 @@
   },
   {
     "Input": "Ocurrirá 1/1/2015 entre las 10 h y las 11.30 h",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -1246,7 +1247,7 @@
   },
   {
     "Input": "Ocurrirá desde las 10.30 h hasta las 15 h de 1/1/15",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -1271,7 +1272,7 @@
   },
   {
     "Input": "Ocurrirá el 1.1.15 de 3.30 a 5.55",
-    "NotSupported": "dotnet, java",
+    "NotSupported": "java",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {

@@ -46,7 +46,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             separateRegex = BuildSeparateRegexFromSet();
         }
 
-        public bool ValidateUnit(string source)
+        public static bool ValidateUnit(string source)
         {
             return !source.StartsWith("-");
         }
@@ -306,7 +306,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             }
         }
 
-        protected StringMatcher BuildMatcherFromSet(IEnumerable<string> collection, bool ignoreCase = true)
+        protected static StringMatcher BuildMatcherFromSet(IEnumerable<string> collection, bool ignoreCase = true)
         {
             StringMatcher matcher = new StringMatcher(MatchStrategy.TrieTree, new NumberWithUnitTokenizer());
             List<string> matchTerms = collection.SelectMany(words =>
@@ -388,7 +388,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                 return null;
             }
 
-            regexTokens.Sort(new DinoComparer());
+            regexTokens.Sort(new StringComparer());
             var pattern = $@"{this.config.BuildPrefix}({string.Join("|", regexTokens)}){this.config.BuildSuffix}";
             var options = RegexOptions.Singleline | (ignoreCase ? RegexOptions.IgnoreCase : RegexOptions.None);
 

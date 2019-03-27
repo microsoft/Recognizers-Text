@@ -21,7 +21,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         DateTime,
     }
 
-    public class AgoLaterUtil
+    public static class AgoLaterUtil
     {
         public delegate int SwiftDayDelegate(string text);
 

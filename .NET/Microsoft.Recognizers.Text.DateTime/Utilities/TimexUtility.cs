@@ -7,7 +7,7 @@ using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
-    public class TimexUtility
+    public static class TimexUtility
     {
         private static readonly Calendar Cal = DateTimeFormatInfo.InvariantInfo.Calendar;
 
@@ -72,7 +72,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         unitCount = ((end - begin).TotalDays / 7).ToString(CultureInfo.InvariantCulture);
                         break;
                     case DatePeriodTimexType.ByMonth:
-                        unitCount = (((end.Year - begin.Year) * 12) + (end.Month - begin.Month)).ToString();
+                        unitCount = (((end.Year - begin.Year) * 12) + (end.Month - begin.Month)).ToString(CultureInfo.InvariantCulture);
                         break;
                     default:
                         unitCount = ((end.Year - begin.Year) + ((end.Month - begin.Month) / 12.0)).ToString(CultureInfo.InvariantCulture);

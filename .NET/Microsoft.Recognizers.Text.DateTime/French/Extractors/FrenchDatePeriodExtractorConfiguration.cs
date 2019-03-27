@@ -16,7 +16,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             new Regex(DateTimeDefinitions.TillRegex, RegexOptions.Singleline);
 
         // and
-        public static readonly Regex AndRegex =
+        public static readonly Regex RangeConnectorRegex =
             new Regex(DateTimeDefinitions.RangeConnectorRegex, RegexOptions.Singleline);
 
         public static readonly Regex DayRegex =
@@ -250,7 +250,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         Regex IDatePeriodExtractorConfiguration.NumberCombinedWithDateUnit => NumberCombinedWithDateUnit;
 
-        Regex IDatePeriodExtractorConfiguration.PastRegex => PastPrefixRegex;
+        Regex IDatePeriodExtractorConfiguration.PreviousPrefixRegex => PastPrefixRegex;
 
         Regex IDatePeriodExtractorConfiguration.FutureRegex => NextPrefixRegex;
 
@@ -283,6 +283,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         Regex IDatePeriodExtractorConfiguration.MoreThanRegex => MoreThanRegex;
 
         Regex IDatePeriodExtractorConfiguration.CenturySuffixRegex => CenturySuffixRegex;
+
+        Regex IDatePeriodExtractorConfiguration.MonthNumRegex => MonthNumRegex;
 
         string[] IDatePeriodExtractorConfiguration.DurationDateRestrictions => DateTimeDefinitions.DurationDateRestrictions;
 

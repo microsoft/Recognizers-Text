@@ -51,7 +51,7 @@ public class SpanishHolidayParserConfiguration extends BaseHolidayParserConfigur
         Optional<Match> matchNextPrefixRegex = Arrays.stream(RegExpUtility.getMatches(
             SpanishDatePeriodParserConfiguration.nextPrefixRegex, text)).findFirst();
         Optional<Match> matchPastPrefixRegex = Arrays.stream(RegExpUtility.getMatches(
-            SpanishDatePeriodParserConfiguration.pastPrefixRegex, text)).findFirst();
+            SpanishDatePeriodParserConfiguration.previousPrefixRegex, text)).findFirst();
         Optional<Match> matchThisPrefixRegex = Arrays.stream(RegExpUtility.getMatches(
             SpanishDatePeriodParserConfiguration.thisPrefixRegex, text)).findFirst();
         if (matchNextPrefixRegex.isPresent() && matchNextPrefixRegex.get().length == text.trim().length()) {

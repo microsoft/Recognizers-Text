@@ -665,24 +665,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "Results": [
-      {
-        "Text": "2017",
-        "Type": "datetimeV2.daterange",
-        "Value": {
-          "values": [
-            {
-              "timex": "2017",
-              "type": "daterange",
-              "start": "2017-01-01",
-              "end": "2018-01-01"
-            }
-          ]
-        },
-        "Start": 0,
-        "Length": 4
-      }
-    ]
+    "NotSupported": "javascript, java, python",
+    "Results": []
   },
   {
     "Input": "add yoga to personal calendar on monday and wednesday at 3pm",
@@ -2655,7 +2639,7 @@
               "timex": "2016",
               "Mod": "after",
               "type": "daterange",
-              "start": "2016-12-31"
+              "start": "2017-01-01"
             }
           ]
         },
@@ -3015,7 +2999,7 @@
               "timex": "2018",
               "Mod": "after",
               "type": "daterange",
-              "start": "2018-12-31"
+              "start": "2019-01-01"
             }
           ]
         },
@@ -3040,7 +3024,7 @@
               "timex": "2010",
               "Mod": "after",
               "type": "daterange",
-              "start": "2010-12-31"
+              "start": "2011-01-01"
             }
           ]
         },
@@ -3530,7 +3514,7 @@
               "timex": "2018",
               "Mod": "after",
               "type": "daterange",
-              "start": "2018-12-31"
+              "start": "2019-01-01"
             }
           ]
         },
@@ -3555,7 +3539,7 @@
               "timex": "2018-02",
               "Mod": "after",
               "type": "daterange",
-              "start": "2018-02-28"
+              "start": "2018-03-01"
             }
           ]
         },
@@ -3580,13 +3564,13 @@
               "timex": "XXXX-02",
               "Mod": "after",
               "type": "daterange",
-              "start": "2018-02-28"
+              "start": "2018-03-01"
             },
             {
               "timex": "XXXX-02",
               "Mod": "after",
               "type": "daterange",
-              "start": "2019-02-28"
+              "start": "2019-03-01"
             }
           ]
         },
@@ -3979,8 +3963,8 @@
             {
               "timex": "2018-W31",
               "type": "daterange",
-              "start": "2018-08-06",
-              "end": "2018-08-13"
+              "start": "2018-07-30",
+              "end": "2018-08-06"
             }
           ]
         },

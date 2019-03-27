@@ -40,7 +40,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             PureNumberBetweenAndRegex = FrenchTimePeriodExtractorConfiguration.PureNumBetweenAnd;
             SpecificTimeOfDayRegex = FrenchDateTimeExtractorConfiguration.SpecificTimeOfDayRegex;
             TimeOfDayRegex = FrenchDateTimeExtractorConfiguration.TimeOfDayRegex;
-            PastRegex = FrenchDatePeriodExtractorConfiguration.PastPrefixRegex;
+            PreviousPrefixRegex = FrenchDatePeriodExtractorConfiguration.PastPrefixRegex;
             FutureRegex = FrenchDatePeriodExtractorConfiguration.NextPrefixRegex;
             FutureSuffixRegex = FrenchDatePeriodExtractorConfiguration.FutureSuffixRegex;
             NumberCombinedWithUnitRegex = FrenchDateTimePeriodExtractorConfiguration.TimeNumberCombinedWithUnit;
@@ -93,7 +93,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public Regex TimeOfDayRegex { get; }
 
-        public Regex PastRegex { get; }
+        public Regex PreviousPrefixRegex { get; }
 
         public Regex FutureRegex { get; }
 

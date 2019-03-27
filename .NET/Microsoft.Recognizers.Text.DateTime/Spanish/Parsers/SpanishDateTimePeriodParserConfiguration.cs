@@ -27,7 +27,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             PureNumberBetweenAndRegex = SpanishTimePeriodExtractorConfiguration.PureNumBetweenAnd;
             SpecificTimeOfDayRegex = SpanishDateTimeExtractorConfiguration.SpecificTimeOfDayRegex;
             TimeOfDayRegex = SpanishDateTimeExtractorConfiguration.TimeOfDayRegex;
-            PastRegex = SpanishDatePeriodExtractorConfiguration.PastRegex;
+            PreviousPrefixRegex = SpanishDatePeriodExtractorConfiguration.PastRegex;
             FutureRegex = SpanishDatePeriodExtractorConfiguration.FutureRegex;
             FutureSuffixRegex = SpanishDatePeriodExtractorConfiguration.FutureSuffixRegex;
             NumberCombinedWithUnitRegex = SpanishDateTimePeriodExtractorConfiguration.NumberCombinedWithUnit;
@@ -79,7 +79,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public Regex TimeOfDayRegex { get; }
 
-        public Regex PastRegex { get; }
+        public Regex PreviousPrefixRegex { get; }
 
         public Regex FutureRegex { get; }
 
@@ -165,7 +165,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             var swift = 0;
 
             // TODO: Replace with a regex
-            if (SpanishDatePeriodParserConfiguration.PastPrefixRegex.IsMatch(trimmedText) ||
+            if (SpanishDatePeriodParserConfiguration.PreviousPrefixRegex.IsMatch(trimmedText) ||
                 trimmedText.Equals("anoche"))
             {
                 swift = -1;

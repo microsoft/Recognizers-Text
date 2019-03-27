@@ -7,7 +7,7 @@
     <authors>Microsoft</authors>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <description>Microsoft.Recognizers.Text.DateTime provides robust recognition and resolution of Date and Time expressed in English, Spanish, French, Portuguese, and Chinese.</description>
-    <licenseUrl>https://github.com/Microsoft/Recognizers-Text/blob/master/LICENSE</licenseUrl>
+    <license type="expression">MIT</license>
     <projectUrl>https://github.com/Microsoft/Recognizers-Text</projectUrl>
     <iconUrl>http://docs.botframework.com/images/bot_icon.png</iconUrl>
     <copyright>© Microsoft Corporation. All rights reserved.</copyright>

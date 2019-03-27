@@ -36,10 +36,10 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public static readonly Regex ThisRegex =
             new Regex(DateTimeDefinitions.ThisRegex, RegexOptions.Singleline);
 
-        public static readonly Regex LastRegex =
+        public static readonly Regex LastDateRegex =
             new Regex(DateTimeDefinitions.LastDateRegex, RegexOptions.Singleline);
 
-        public static readonly Regex NextRegex =
+        public static readonly Regex NextDateRegex =
             new Regex(DateTimeDefinitions.NextDateRegex, RegexOptions.Singleline);
 
         public static readonly Regex UnitRegex =
@@ -73,6 +73,9 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public static readonly Regex WeekDayAndDayOfMothRegex =
             new Regex(DateTimeDefinitions.WeekDayAndDayOfMonthRegex, RegexOptions.Singleline);
 
+        public static readonly Regex WeekDayAndDayRegex =
+            new Regex(DateTimeDefinitions.WeekDayAndDayRegex, RegexOptions.Singleline);
+
         public static readonly Regex RelativeMonthRegex =
             new Regex(DateTimeDefinitions.RelativeMonthRegex, RegexOptions.Singleline);
 
@@ -81,7 +84,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public static readonly Regex[] ImplicitDateList =
         {
-            OnRegex, RelaxedOnRegex, SpecialDayRegex, ThisRegex, LastRegex, NextRegex,
+            OnRegex, RelaxedOnRegex, SpecialDayRegex, ThisRegex, LastDateRegex, NextDateRegex,
             StrictWeekDay, WeekDayOfMonthRegex, SpecialDate,
         };
 
@@ -201,6 +204,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         Regex IDateExtractorConfiguration.DateUnitRegex => DateUnitRegex;
 
         Regex IDateExtractorConfiguration.WeekDayAndDayOfMonthRegex => WeekDayAndDayOfMothRegex;
+
+        Regex IDateExtractorConfiguration.WeekDayAndDayRegex => WeekDayAndDayRegex;
 
         Regex IDateExtractorConfiguration.ForTheRegex => ForTheRegex;
 

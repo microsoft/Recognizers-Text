@@ -70,7 +70,11 @@ def parse_all(user_input: str, culture: str) -> List[List[ModelResult]]:
 
         # PhoneNumber recognizer will find any phone number presented
         # E.g "My phone number is ( 19 ) 38294427."
-        Recognizers.recognize_phone_number(user_input, culture)
+        Recognizers.recognize_phone_number(user_input, culture),
+
+        # Email recognizer will find any phone number presented
+        # E.g "Please write to me at Dave@abc.com for more information on task #A1"
+        Recognizers.recognize_email(user_input,culture),
     ]
 
 

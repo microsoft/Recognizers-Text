@@ -12,6 +12,11 @@ namespace Microsoft.Recognizers.Text.Number
         public static readonly Regex CurrencyRegex =
             new Regex(BaseNumbers.CurrencyRegex, RegexOptions.Singleline);
 
+        public BaseNumberExtractor(NumberOptions options = NumberOptions.None)
+        {
+            Options = options;
+        }
+
         internal abstract ImmutableDictionary<Regex, TypeTag> Regexes { get; }
 
         protected virtual ImmutableDictionary<Regex, Regex> AmbiguityFiltersDict { get; } = null;
@@ -23,6 +28,8 @@ namespace Microsoft.Recognizers.Text.Number
         protected virtual Regex NegativeNumberTermsRegex { get; } = null;
 
         protected virtual Regex AmbiguousFractionConnectorsRegex { get; } = null;
+
+        protected virtual Regex RelativeReferenceRegex { get; } = null;
 
         public virtual List<ExtractResult> Extract(string source)
         {
@@ -42,6 +49,12 @@ namespace Microsoft.Recognizers.Text.Number
                 {
                     // In ExperimentalMode, AmbiguousFraction like "30000 in 2009" needs to be skipped
                     if ((Options & NumberOptions.ExperimentalMode) != 0 && AmbiguousFractionConnectorsRegex.Match(m.Value).Success)
+                    {
+                        continue;
+                    }
+
+                    // In EnablePreview, cases like "last", "next" should not be skipped
+                    if ((Options & NumberOptions.EnablePreview) == 0 && IsRelativeOrdinal(m.Value))
                     {
                         continue;
                     }
@@ -108,7 +121,7 @@ namespace Microsoft.Recognizers.Text.Number
             return result;
         }
 
-        protected Regex GenerateLongFormatNumberRegexes(LongFormatType type, string placeholder = BaseNumbers.PlaceHolderDefault)
+        protected static Regex GenerateLongFormatNumberRegexes(LongFormatType type, string placeholder = BaseNumbers.PlaceHolderDefault)
         {
             var thousandsMark = Regex.Escape(type.ThousandsMark.ToString());
             var decimalsMark = Regex.Escape(type.DecimalsMark.ToString());
@@ -118,6 +131,16 @@ namespace Microsoft.Recognizers.Text.Number
                 BaseNumbers.DoubleRegexDefinition(placeholder, thousandsMark, decimalsMark);
 
             return new Regex(regexDefinition, RegexOptions.Singleline);
+        }
+
+        private bool IsRelativeOrdinal(string matchValue)
+        {
+            if (RelativeReferenceRegex == null)
+            {
+                return false;
+            }
+
+            return RelativeReferenceRegex.Match(matchValue).Success;
         }
 
         private List<ExtractResult> FilterAmbiguity(List<ExtractResult> ers, string text)

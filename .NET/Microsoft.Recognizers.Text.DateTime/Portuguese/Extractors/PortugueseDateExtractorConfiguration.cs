@@ -67,6 +67,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         public static readonly Regex WeekDayAndDayOfMothRegex =
             new Regex(DateTimeDefinitions.WeekDayAndDayOfMonthRegex, RegexOptions.Singleline);
 
+        public static readonly Regex WeekDayAndDayRegex =
+            new Regex(DateTimeDefinitions.WeekDayAndDayRegex, RegexOptions.Singleline);
+
         public static readonly Regex RelativeMonthRegex =
             new Regex(DateTimeDefinitions.RelativeMonthRegex, RegexOptions.Singleline);
 
@@ -194,6 +197,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         Regex IDateExtractorConfiguration.ForTheRegex => ForTheRegex;
 
         Regex IDateExtractorConfiguration.WeekDayAndDayOfMonthRegex => WeekDayAndDayOfMothRegex;
+
+        Regex IDateExtractorConfiguration.WeekDayAndDayRegex => WeekDayAndDayRegex;
 
         Regex IDateExtractorConfiguration.RelativeMonthRegex => RelativeMonthRegex;
 

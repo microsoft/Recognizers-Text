@@ -34,6 +34,7 @@ export class PhoneNumberParser extends BaseSequenceParser {
         let countryCodeRegex = new RegExp(BasePhoneNumbers.CountryCodeRegex);
         let areaCodeRegex = new RegExp(BasePhoneNumbers.AreaCodeIndicatorRegex);
         let formatIndicatorRegex = new RegExp(BasePhoneNumbers.FormatIndicatorRegex, "ig");
+        let noAreaCodeUSphonenumbeRegex = new RegExp(BasePhoneNumbers.NoAreaCodeUSPhoneNumberRegex);
 
         // Country code score or area code score 
         score += countryCodeRegex.test(phoneNumberText) ?
@@ -74,6 +75,12 @@ export class PhoneNumberParser extends BaseSequenceParser {
         // Continue digit deduction
         if (this.continueDigitRegex.test(phoneNumberText)) {
             score -= Math.max(phoneNumberText.match(this.continueDigitRegex).length - 1, 0) * this.continueDigitDeductionScore;
+        }
+
+        // Special award for special USphonenumber, i.e. 223-4567 or 223 - 4567
+        if (noAreaCodeUSphonenumbeRegex.test(phoneNumberText))
+        {
+            score += this.lengthAward * 1.5;
         }
 
         return Math.max(Math.min(score, this.scoreUpperLimit), this.scoreLowerLimit) / (this.scoreUpperLimit - this.scoreLowerLimit);

@@ -103,7 +103,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public Regex FollowedUnit => TimeFollowedUnit;
 
         // Note: FR 'past' i.e 'dernier' is a suffix following after, however interface enforces 'prefix' nomenclature
-        public Regex PastPrefixRegex => FrenchDatePeriodExtractorConfiguration.PastPrefixRegex;
+        public Regex PreviousPrefixRegex => FrenchDatePeriodExtractorConfiguration.PastPrefixRegex;
 
         // Note: FR 'next' i.e 'prochain' is a suffix following after, i.e 'lundi prochain', however 'prefix' is enforced by interface
         public Regex NextPrefixRegex => FrenchDatePeriodExtractorConfiguration.NextPrefixRegex;

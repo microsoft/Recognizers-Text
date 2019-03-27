@@ -100,7 +100,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public Regex TimeUnitRegex => PortugueseTimePeriodExtractorConfiguration.UnitRegex;
 
-        public Regex PastPrefixRegex => PortugueseDatePeriodExtractorConfiguration.PastRegex;
+        public Regex PreviousPrefixRegex => PortugueseDatePeriodExtractorConfiguration.PastRegex;
 
         public Regex NextPrefixRegex => PortugueseDatePeriodExtractorConfiguration.FutureRegex;
 

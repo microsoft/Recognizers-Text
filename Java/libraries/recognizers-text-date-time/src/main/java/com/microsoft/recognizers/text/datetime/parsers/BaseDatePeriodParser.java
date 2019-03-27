@@ -15,7 +15,6 @@ import com.microsoft.recognizers.text.datetime.utilities.DateTimeFormatUtil;
 import com.microsoft.recognizers.text.datetime.utilities.DateTimeResolutionResult;
 import com.microsoft.recognizers.text.datetime.utilities.DateUtil;
 import com.microsoft.recognizers.text.datetime.utilities.DurationParsingUtil;
-import com.microsoft.recognizers.text.datetime.utilities.FormatUtil;
 import com.microsoft.recognizers.text.datetime.utilities.GetModAndDateResult;
 import com.microsoft.recognizers.text.datetime.utilities.NthBusinessDayResult;
 import com.microsoft.recognizers.text.datetime.utilities.RegexExtension;
@@ -75,36 +74,36 @@ public class BaseDatePeriodParser implements IDateTimeParser {
                 if (innerResult.getMod() != null && innerResult.getMod().equals(Constants.BEFORE_MOD)) {
                     innerResult.setFutureResolution(ImmutableMap.<String, String>builder()
                             .put(TimeTypeConstants.END_DATE,
-                                    FormatUtil.formatDate((LocalDateTime)innerResult.getFutureValue()))
+                                    DateTimeFormatUtil.formatDate((LocalDateTime)innerResult.getFutureValue()))
                             .build());
 
                     innerResult.setPastResolution(ImmutableMap.<String, String>builder()
                             .put(TimeTypeConstants.END_DATE,
-                                    FormatUtil.formatDate((LocalDateTime)innerResult.getPastValue()))
+                                    DateTimeFormatUtil.formatDate((LocalDateTime)innerResult.getPastValue()))
                             .build());
                 } else if (innerResult.getMod() != null && innerResult.getMod().equals(Constants.AFTER_MOD)) {
                     innerResult.setFutureResolution(ImmutableMap.<String, String>builder()
                             .put(TimeTypeConstants.START_DATE,
-                                    FormatUtil.formatDate((LocalDateTime)innerResult.getFutureValue()))
+                                    DateTimeFormatUtil.formatDate((LocalDateTime)innerResult.getFutureValue()))
                             .build());
 
                     innerResult.setPastResolution(ImmutableMap.<String, String>builder()
                             .put(TimeTypeConstants.START_DATE,
-                                    FormatUtil.formatDate((LocalDateTime)innerResult.getPastValue()))
+                                    DateTimeFormatUtil.formatDate((LocalDateTime)innerResult.getPastValue()))
                             .build());
                 } else if (innerResult.getFutureValue() != null && innerResult.getPastValue() != null) {
                     innerResult.setFutureResolution(ImmutableMap.<String, String>builder()
                             .put(TimeTypeConstants.START_DATE,
-                                    FormatUtil.formatDate(((Pair<LocalDateTime, LocalDateTime>)innerResult.getFutureValue()).getValue0()))
+                                    DateTimeFormatUtil.formatDate(((Pair<LocalDateTime, LocalDateTime>)innerResult.getFutureValue()).getValue0()))
                             .put(TimeTypeConstants.END_DATE,
-                                    FormatUtil.formatDate(((Pair<LocalDateTime, LocalDateTime>)innerResult.getFutureValue()).getValue1()))
+                                    DateTimeFormatUtil.formatDate(((Pair<LocalDateTime, LocalDateTime>)innerResult.getFutureValue()).getValue1()))
                             .build());
 
                     innerResult.setPastResolution(ImmutableMap.<String, String>builder()
                             .put(TimeTypeConstants.START_DATE,
-                                    FormatUtil.formatDate(((Pair<LocalDateTime, LocalDateTime>)innerResult.getPastValue()).getValue0()))
+                                    DateTimeFormatUtil.formatDate(((Pair<LocalDateTime, LocalDateTime>)innerResult.getPastValue()).getValue0()))
                             .put(TimeTypeConstants.END_DATE,
-                                    FormatUtil.formatDate(((Pair<LocalDateTime, LocalDateTime>)innerResult.getPastValue()).getValue1()))
+                                    DateTimeFormatUtil.formatDate(((Pair<LocalDateTime, LocalDateTime>)innerResult.getPastValue()).getValue1()))
                             .build());
                 } else {
                     innerResult.setFutureResolution(new HashMap<>());
@@ -315,8 +314,8 @@ public class BaseDatePeriodParser implements IDateTimeParser {
                     LocalDateTime startDate = DateUtil.safeCreateFromMinValue(startYear, 1, 1);
                     LocalDateTime endDate = DateUtil.safeCreateFromMinValue(startYear + Constants.CenturyYearsCount, 1, 1);
 
-                    String startLuisStr = FormatUtil.luisDate(startDate);
-                    String endLuisStr = FormatUtil.luisDate(endDate);
+                    String startLuisStr = DateTimeFormatUtil.luisDate(startDate);
+                    String endLuisStr = DateTimeFormatUtil.luisDate(endDate);
                     String durationTimex = "P" + Constants.CenturyYearsCount + "Y";
 
                     ret.setTimex(String.format("(%s,%s,%s)", startLuisStr, endLuisStr, durationTimex));
@@ -895,7 +894,7 @@ public class BaseDatePeriodParser implements IDateTimeParser {
                 LocalDateTime endDayValue = DateUtil.safeCreateFromMinValue(endYear, 1, 1);
                 LocalDateTime endDay = inclusiveEndPeriod ? endDayValue.minusDays(1) : endDayValue;
 
-                ret.setTimex(String.format("(%s,%s,P%sY)", FormatUtil.luisDate(beginDay), FormatUtil.luisDate(endDay), (endYear - beginYear)));
+                ret.setTimex(String.format("(%s,%s,P%sY)", DateTimeFormatUtil.luisDate(beginDay), DateTimeFormatUtil.luisDate(endDay), (endYear - beginYear)));
                 ret.setFutureValue(new Pair<>(beginDay, endDay));
                 ret.setPastValue(new Pair<>(beginDay, endDay));
                 ret.setSuccess(true);
@@ -1154,7 +1153,7 @@ public class BaseDatePeriodParser implements IDateTimeParser {
         if (!beginDate.equals(endDate) || restNowSunday) {
             endDate = inclusiveEndPeriod ? endDate.minusDays(1) : endDate;
 
-            ret.setTimex(String.format("(%s,%s,%s)", FormatUtil.luisDate(beginDate), FormatUtil.luisDate(endDate), timex));
+            ret.setTimex(String.format("(%s,%s,%s)", DateTimeFormatUtil.luisDate(beginDate), DateTimeFormatUtil.luisDate(endDate), timex));
             ret.setFutureValue(new Pair<>(beginDate, endDate));
             ret.setPastValue(new Pair<>(beginDate, endDate));
             ret.setSuccess(true);
@@ -1501,15 +1500,17 @@ public class BaseDatePeriodParser implements IDateTimeParser {
         if (match.getSuccess()) {
             int num = Integer.parseInt(match.getMatch().get().getGroup("number").value);
             int year = referenceDate.getYear();
-            ret.setTimex(String.format("%04d", year));
+            ret.setTimex(String.format("%04d-W%02d", year, num));
             LocalDateTime firstDay = DateUtil.safeCreateFromMinValue(year, 1, 1);
-            LocalDateTime firstWeekday = DateUtil.thisDate(firstDay, DayOfWeek.of(1).getValue());
-            LocalDateTime value = firstWeekday.plusDays(Constants.WeekDayCount * num);
-            LocalDateTime futureDate = value;
-            LocalDateTime pastDate = value;
-            ret.setTimex(String.format("%s-W%02d", ret.getTimex(), num));
-            ret.setFutureValue(new Pair<>(futureDate, futureDate.plusDays(7)));
-            ret.setPastValue(new Pair<>(pastDate, pastDate.plusDays(7)));
+            LocalDateTime firstThursday = DateUtil.thisDate(firstDay, DayOfWeek.of(4).getValue());
+
+            if (DateUtil.weekOfYear(firstThursday) == 1) {
+                num -= 1;
+            }
+
+            LocalDateTime value = firstThursday.plusDays(Constants.WeekDayCount * num - 3);
+            ret.setFutureValue(new Pair<>(value, value.plusDays(7)));
+            ret.setPastValue(new Pair<>(value, value.plusDays(7)));
             ret.setSuccess(true);
         }
         return ret;

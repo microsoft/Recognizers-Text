@@ -3755,7 +3755,7 @@
               "timex": "2018",
               "Mod": "after",
               "type": "daterange",
-              "start": "2018-12-31"
+              "start": "2019-01-01"
             }
           ]
         }
@@ -3780,7 +3780,7 @@
               "timex": "2010",
               "Mod": "after",
               "type": "daterange",
-              "start": "2010-12-31"
+              "start": "2011-01-01"
             }
           ]
         }
@@ -4137,8 +4137,8 @@
     },
     "Results": [
       {
-        "Text": "09th of may",
-        "Start": 27,
+        "Text": "the 09th of may",
+        "Start": 23,
         "End": 37,
         "TypeName": "datetimeV2.date",
         "Resolution": {
@@ -4242,7 +4242,7 @@
               "timex": "2018",
               "Mod": "after",
               "type": "daterange",
-              "start": "2018-12-31"
+              "start": "2019-01-01"
             }
           ]
         }
@@ -4267,7 +4267,7 @@
               "timex": "2018-02",
               "Mod": "after",
               "type": "daterange",
-              "start": "2018-02-28"
+              "start": "2018-03-01"
             }
           ]
         }
@@ -4292,13 +4292,13 @@
               "timex": "XXXX-02",
               "Mod": "after",
               "type": "daterange",
-              "start": "2018-02-28"
+              "start": "2018-03-01"
             },
             {
               "timex": "XXXX-02",
               "Mod": "after",
               "type": "daterange",
-              "start": "2019-02-28"
+              "start": "2019-03-01"
             }
           ]
         }
@@ -4730,8 +4730,8 @@
             {
               "timex": "2018-W31",
               "type": "daterange",
-              "start": "2018-08-06",
-              "end": "2018-08-13"
+              "start": "2018-07-30",
+              "end": "2018-08-06"
             }
           ]
         }
@@ -5482,7 +5482,7 @@
               "timex": "2012",
               "Mod": "after",
               "type": "daterange",
-              "start": "2012-12-31"
+              "start": "2013-01-01"
             }
           ]
         }
@@ -5713,7 +5713,7 @@
               "timex": "2020",
               "Mod": "after",
               "type": "daterange",
-              "start": "2020-12-31"
+              "start": "2021-01-01"
             }
           ]
         }
@@ -5738,7 +5738,7 @@
               "timex": "2018",
               "Mod": "after",
               "type": "daterange",
-              "start": "2018-12-31"
+              "start": "2019-01-01"
             }
           ]
         }
@@ -7288,5 +7288,209 @@
     },
     "NotSupportedByDesign": "java",
     "Results": []
+  },
+  {
+    "Input": "Do you have any arrangement on Monday 21!",
+    "Context": {
+      "ReferenceDateTime": "2019-01-25T12:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "monday 21",
+        "Start": 31,
+        "End": 39,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-1",
+              "type": "date",
+              "value": "2019-01-21"
+            },
+            {
+              "timex": "XXXX-WXX-1",
+              "type": "date",
+              "value": "2019-10-21"
+            }
+          ]
+        }
+      }
+    ] 
+  },
+  {
+    "Input": "Do you have any arrangement on Monday 21!",
+    "Context": {
+      "ReferenceDateTime": "2019-01-21T12:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "monday 21",
+        "Start": 31,
+        "End": 39,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-01-21",
+              "type": "date",
+              "value": "2019-01-21"
+            }
+          ]
+        }
+      }
+    ] 
+  },
+  {
+    "Input": "Do you have any arrangement on Sunday 31!",
+    "Context": {
+      "ReferenceDateTime": "2019-01-25T12:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "sunday 31",
+        "Start": 31,
+        "End": 39,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-7",
+              "type": "date",
+              "value": "2017-12-31"
+            },
+            {
+              "timex": "XXXX-WXX-7",
+              "type": "date",
+              "value": "2019-03-31"
+            }
+          ]
+        }
+      }
+    ] 
+  },
+  {
+    "Input": "Do you have any arrangement on Friday 31!",
+    "Context": {
+      "ReferenceDateTime": "2019-02-25T12:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "friday 31",
+        "Start": 31,
+        "End": 39,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-5",
+              "type": "date",
+              "value": "2018-08-31"
+            },
+            {
+              "timex": "XXXX-WXX-5",
+              "type": "date",
+              "value": "2019-05-31"
+            }
+          ]
+        }
+      }
+    ] 
+  },
+  {
+    "Input": "Do you have any plan after mid May?",
+    "Context": {
+      "ReferenceDateTime": "2019-02-25T12:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "after mid may",
+        "Start": 21,
+        "End": 33,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-05",
+              "Mod": "after-mid",
+              "type": "daterange",
+              "start": "2018-05-21"
+            },
+            {
+              "timex": "XXXX-05",
+              "Mod": "after-mid",
+              "type": "daterange",
+              "start": "2019-05-21"
+            }
+          ]
+        }
+      }
+    ] 
+  },
+  {
+    "Input": "What happened before early September",
+    "Context": {
+      "ReferenceDateTime": "2019-02-25T12:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "before early september",
+        "Start": 14,
+        "End": 35,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-09",
+              "Mod": "before-start",
+              "type": "daterange",
+              "end": "2018-09-01"
+            },
+            {
+              "timex": "XXXX-09",
+              "Mod": "before-start",
+              "type": "daterange",
+              "end": "2019-09-01"
+            }
+          ]
+        }
+      }
+    ] 
+  },
+  {
+    "Input": "What happened since late July?",
+    "Context": {
+      "ReferenceDateTime": "2019-02-25T12:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "since late july",
+        "Start": 14,
+        "End": 28,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-07",
+              "Mod": "since-end",
+              "type": "daterange",
+              "start": "2018-07-16"
+            },
+            {
+              "timex": "XXXX-07",
+              "Mod": "since-end",
+              "type": "daterange",
+              "start": "2019-07-16"
+            }
+          ]
+        }
+      }
+    ] 
   }
 ]

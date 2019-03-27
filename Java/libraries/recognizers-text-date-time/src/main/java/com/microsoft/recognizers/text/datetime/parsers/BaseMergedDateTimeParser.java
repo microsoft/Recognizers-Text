@@ -13,7 +13,6 @@ import com.microsoft.recognizers.text.datetime.utilities.ConditionalMatch;
 import com.microsoft.recognizers.text.datetime.utilities.DateTimeFormatUtil;
 import com.microsoft.recognizers.text.datetime.utilities.DateTimeResolutionResult;
 import com.microsoft.recognizers.text.datetime.utilities.DateUtil;
-import com.microsoft.recognizers.text.datetime.utilities.FormatUtil;
 import com.microsoft.recognizers.text.datetime.utilities.MatchingUtil;
 import com.microsoft.recognizers.text.datetime.utilities.RegexExtension;
 import com.microsoft.recognizers.text.datetime.utilities.TimexUtility;
@@ -30,7 +29,6 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 import java.util.SortedMap;
 import java.util.TreeMap;
 import java.util.stream.Collectors;
@@ -40,8 +38,8 @@ public class BaseMergedDateTimeParser implements IDateTimeParser {
 
     private final String parserName = "datetimeV2";
     private final IMergedParserConfiguration config;
-    private static final String dateMinString = FormatUtil.formatDate(DateUtil.minValue());
-    private static final String dateTimeMinString = FormatUtil.formatDateTime(DateUtil.minValue());
+    private static final String dateMinString = DateTimeFormatUtil.formatDate(DateUtil.minValue());
+    private static final String dateTimeMinString = DateTimeFormatUtil.formatDateTime(DateUtil.minValue());
     //private static final Calendar Cal = DateTimeFormatInfo.InvariantInfo.Calendar;
 
     public BaseMergedDateTimeParser(IMergedParserConfiguration config) {
@@ -580,41 +578,41 @@ public class BaseMergedDateTimeParser implements IDateTimeParser {
 
             switch ((String)resolutionDic.get(ResolutionKey.Type)) {
                 case Constants.SYS_DATETIME_TIME:
-                    resolutionPm.put(ResolutionKey.Value, FormatUtil.toPm(resolution.get(ResolutionKey.Value)));
-                    resolutionPm.put(DateTimeResolutionKey.Timex, FormatUtil.toPm(timex));
+                    resolutionPm.put(ResolutionKey.Value, DateTimeFormatUtil.toPm(resolution.get(ResolutionKey.Value)));
+                    resolutionPm.put(DateTimeResolutionKey.Timex, DateTimeFormatUtil.toPm(timex));
                     break;
                 case Constants.SYS_DATETIME_DATETIME:
                     String[] splited = resolution.get(ResolutionKey.Value).split(" ");
-                    resolutionPm.put(ResolutionKey.Value, splited[0] + " " + FormatUtil.toPm(splited[1]));
-                    resolutionPm.put(DateTimeResolutionKey.Timex, FormatUtil.allStringToPm(timex));
+                    resolutionPm.put(ResolutionKey.Value, splited[0] + " " + DateTimeFormatUtil.toPm(splited[1]));
+                    resolutionPm.put(DateTimeResolutionKey.Timex, DateTimeFormatUtil.allStringToPm(timex));
                     break;
                 case Constants.SYS_DATETIME_TIMEPERIOD:
                     if (resolution.containsKey(DateTimeResolutionKey.START)) {
-                        resolutionPm.put(DateTimeResolutionKey.START, FormatUtil.toPm(resolution.get(DateTimeResolutionKey.START)));
+                        resolutionPm.put(DateTimeResolutionKey.START, DateTimeFormatUtil.toPm(resolution.get(DateTimeResolutionKey.START)));
                     }
 
                     if (resolution.containsKey(DateTimeResolutionKey.END)) {
-                        resolutionPm.put(DateTimeResolutionKey.END, FormatUtil.toPm(resolution.get(DateTimeResolutionKey.END)));
+                        resolutionPm.put(DateTimeResolutionKey.END, DateTimeFormatUtil.toPm(resolution.get(DateTimeResolutionKey.END)));
                     }
 
-                    resolutionPm.put(DateTimeResolutionKey.Timex, FormatUtil.allStringToPm(timex));
+                    resolutionPm.put(DateTimeResolutionKey.Timex, DateTimeFormatUtil.allStringToPm(timex));
                     break;
                 case Constants.SYS_DATETIME_DATETIMEPERIOD:
                     if (resolution.containsKey(DateTimeResolutionKey.START)) {
                         LocalDateTime start = LocalDateTime.parse(resolution.get(DateTimeResolutionKey.START), DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
                         start = start.getHour() == Constants.HalfDayHourCount ? start.minusHours(Constants.HalfDayHourCount) : start.plusHours(Constants.HalfDayHourCount);
 
-                        resolutionPm.put(DateTimeResolutionKey.START, FormatUtil.formatDateTime(start));
+                        resolutionPm.put(DateTimeResolutionKey.START, DateTimeFormatUtil.formatDateTime(start));
                     }
 
                     if (resolution.containsKey(DateTimeResolutionKey.END)) {
                         LocalDateTime end = LocalDateTime.parse(resolution.get(DateTimeResolutionKey.END), DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
                         end = end.getHour() == Constants.HalfDayHourCount ? end.minusHours(Constants.HalfDayHourCount) : end.plusHours(Constants.HalfDayHourCount);
 
-                        resolutionPm.put(DateTimeResolutionKey.END, FormatUtil.formatDateTime(end));
+                        resolutionPm.put(DateTimeResolutionKey.END, DateTimeFormatUtil.formatDateTime(end));
                     }
 
-                    resolutionPm.put(DateTimeResolutionKey.Timex, FormatUtil.allStringToPm(timex));
+                    resolutionPm.put(DateTimeResolutionKey.Timex, DateTimeFormatUtil.allStringToPm(timex));
                     break;
                 default:
                     break;
@@ -744,12 +742,8 @@ public class BaseMergedDateTimeParser implements IDateTimeParser {
             // 1. Cases like "After January", the end of the period should be the start of the new period, not the end 
             // 2. Cases like "More than 3 days after today", the date point should be the start of the new period
             if (mod.equals(Constants.AFTER_MOD)) {
-                // For cases like "After January" or "After 2018"
-                // The "end" of the period is not inclusive by default ("January", the end should be "XXXX-02-01" / "2018", the end should be "2019-01-01")
-                // Mod "after" is also not inclusive the "start" ("After January", the start should be "XXXX-01-31" / "After 2018", the start should be "2017-12-31")
-                // So here the START day should be the inclusive end of the period, which is one day previous to the default end (exclusive end)
                 if (!StringUtility.isNullOrEmpty(start) && !StringUtility.isNullOrEmpty(end)) {
-                    res.put(DateTimeResolutionKey.START, getPreviousDay(end));
+                    res.put(DateTimeResolutionKey.START, end);
                 } else {
                     res.put(DateTimeResolutionKey.START, start);
                 }
@@ -774,12 +768,5 @@ public class BaseMergedDateTimeParser implements IDateTimeParser {
             res.put(DateTimeResolutionKey.START, start);
             res.put(DateTimeResolutionKey.END, end);
         }
-    }
-
-    public String getPreviousDay(String dateStr) {
-        // Here the dateString is in standard format, so Parse should work perfectly
-        LocalDateTime date = DateUtil.tryParse(dateStr)
-            .minusDays(1);
-        return FormatUtil.luisDate(date);
     }
 }

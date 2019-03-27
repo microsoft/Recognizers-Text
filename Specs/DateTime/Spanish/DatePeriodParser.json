@@ -737,7 +737,7 @@
     },
     "Results": [
       {
-        "Text": "fin de semana",
+        "Text": "el fin de semana",
         "Type": "daterange",
         "Value": {
           "Timex": "2016-W45-WE",
@@ -750,8 +750,8 @@
             "endDate": "2016-11-14"
           }
         },
-        "Start": 17,
-        "Length": 13
+        "Start": 14,
+        "Length": 16
       }
     ]
   },
@@ -837,7 +837,7 @@
     },
     "Results": [
       {
-        "Text": "próximo año",
+        "Text": "el próximo año",
         "Type": "daterange",
         "Value": {
           "Timex": "2017",
@@ -850,8 +850,8 @@
             "endDate": "2018-01-01"
           }
         },
-        "Start": 17,
-        "Length": 11
+        "Start": 14,
+        "Length": 14
       }
     ]
   },
@@ -6233,14 +6233,14 @@
         "Text": "de la semana 31 a la semana 35",
         "Type": "daterange",
         "Value": {
-          "Timex": "(2018-08-06,2018-09-03,P4W)",
+          "Timex": "(2018-07-30,2018-08-27,P4W)",
           "FutureResolution": {
-            "startDate": "2018-08-06",
-            "endDate": "2018-09-03"
+            "startDate": "2018-07-30",
+            "endDate": "2018-08-27"
           },
           "PastResolution": {
-            "startDate": "2018-08-06",
-            "endDate": "2018-09-03"
+            "startDate": "2018-07-30",
+            "endDate": "2018-08-27"
           }
         },
         "Start": 14,
@@ -6260,14 +6260,14 @@
         "Text": "entre la semana 31 y 35",
         "Type": "daterange",
         "Value": {
-          "Timex": "(2018-08-06,2018-09-03,P4W)",
+          "Timex": "(2018-07-30,2018-08-27,P4W)",
           "FutureResolution": {
-            "startDate": "2018-08-06",
-            "endDate": "2018-09-03"
+            "startDate": "2018-07-30",
+            "endDate": "2018-08-27"
           },
           "PastResolution": {
-            "startDate": "2018-08-06",
-            "endDate": "2018-09-03"
+            "startDate": "2018-07-30",
+            "endDate": "2018-08-27"
           }
         },
         "Start": 14,

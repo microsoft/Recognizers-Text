@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System.Collections.Generic;
 using System.IO;
 
 using YamlDotNet.Serialization;
@@ -21,80 +24,14 @@ namespace Microsoft.Recognizers.Definitions.Common
                 .Build();
         }
 
-        public IDictionary<string, object> Deserialize(TextReader obj)
+        public IDictionary<string, object> Deserialize(TextReader jsonPayload)
         {
-            return yamlDeserializer.Deserialize<IDictionary<string, object>>(obj);
+            return yamlDeserializer.Deserialize<IDictionary<string, object>>(jsonPayload);
         }
 
-        public IDictionary<string, object> Deserialize(string obj)
+        public IDictionary<string, object> Deserialize(string jsonPayload)
         {
-            return yamlDeserializer.Deserialize<IDictionary<string, object>>(obj);
+            return yamlDeserializer.Deserialize<IDictionary<string, object>>(jsonPayload);
         }
-    }
-
-    public class SimpleRegex
-    {
-        [YamlMember(Alias = "def", ApplyNamingConventions = false)]
-        public string Definition { get; set; }
-
-        [YamlMember(Alias = "def_js", ApplyNamingConventions = false)]
-        public string DefinitionJS { get; set; }
-    }
-
-    public class NestedRegex : SimpleRegex
-    {
-        [YamlMember(Alias = "references", ApplyNamingConventions = false)]
-        public IEnumerable<string> References { get; set; }
-
-        public string SanitizedDefinition {
-            get
-            {
-                var result = this.Definition.Replace("{", "{{").Replace("}", "}}");
-                foreach (var token in this.References)
-                {
-                    result = result.Replace("{" + token + "}", token);
-                }
-
-                return result;
-            }
-        }
-    }
-
-    public class ParamsRegex : SimpleRegex
-    {
-        [YamlMember(Alias = "params", ApplyNamingConventions = false)]
-        public IEnumerable<string> Params { get; set; }
-
-        public string SanitizedDefinition
-        {
-            get
-            {
-                var result = this.Definition.Replace("{", "{{").Replace("}", "}}");
-                foreach (var token in this.Params)
-                {
-                    result = result.Replace("{" + token + "}", token);
-                }
-
-                return result;
-            }
-        }
-    }
-
-    public class Dictionary
-    {
-        [YamlMember(Alias = "types", ApplyNamingConventions = false)]
-        public IList<string> Types { get; set; }
-
-        [YamlMember(Alias = "entries", ApplyNamingConventions = false)]
-        public IDictionary<object, object> Entries { get; set; }
-    }
-
-    public class List
-    {
-        [YamlMember(Alias = "types", ApplyNamingConventions = false)]
-        public IList<string> Types { get; set; }
-
-        [YamlMember(Alias = "entries", ApplyNamingConventions = false)]
-        public IEnumerable<object> Entries { get; set; }
     }
 }

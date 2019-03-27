@@ -1565,5 +1565,89 @@
         "End": 32
       }
     ]
+  },
+  {
+    "Input": "Je voudrais reserver une salle le vendredi 30 novembre 2019 entre 12h00 et 14h00",
+    "Context": {
+      "ReferenceDateTime": "2019-03-14T16:12:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "vendredi 30 novembre 2019 entre 12h00 et 14h00",
+        "Start": 34,
+        "End": 79,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2019-11-30T12:00,2019-11-30T14:00,PT2H)",
+              "type": "datetimerange",
+              "start": "2019-11-30 12:00:00",
+              "end": "2019-11-30 14:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Ya t'il une salle de dispo à nantes le lundi 24 décembre à 10h, pour 2h",
+    "Context": {
+      "ReferenceDateTime": "2019-03-14T16:12:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "lundi 24 décembre à 10h",
+        "Start": 39,
+        "End": 61,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-12-24T10",
+              "type": "datetime",
+              "value": "2018-12-24 10:00:00"
+            },
+            {
+              "timex": "XXXX-12-24T10",
+              "type": "datetime",
+              "value": "2019-12-24 10:00:00"
+            },
+            {
+              "timex": "XXXX-12-24T22",
+              "type": "datetime",
+              "value": "2018-12-24 22:00:00"
+            },
+            {
+              "timex": "XXXX-12-24T22",
+              "type": "datetime",
+              "value": "2019-12-24 22:00:00"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "2h",
+        "Start": 69,
+        "End": 70,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T02",
+              "type": "time",
+              "value": "02:00:00"
+            },
+            {
+              "timex": "T14",
+              "type": "time",
+              "value": "14:00:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

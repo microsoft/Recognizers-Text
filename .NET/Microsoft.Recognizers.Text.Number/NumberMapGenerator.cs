@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Microsoft.Recognizers.Text.Number
 {
-    public class NumberMapGenerator
+    public static class NumberMapGenerator
     {
         public static ImmutableDictionary<string, long> InitOrdinalNumberMap(Dictionary<string, long> ordinalNumberMap, Dictionary<string, long> prefixCardinalMap, Dictionary<string, long> suffixOrdinalMap)
         {

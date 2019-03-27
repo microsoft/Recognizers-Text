@@ -7,46 +7,46 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 {
     public static class TimexParsing
     {
-        public static void ParseString(string timex, TimexProperty obj)
+        public static void ParseString(string timex, TimexProperty timexProperty)
         {
             // a reference to the present
             if (timex == "PRESENT_REF")
             {
-                obj.Now = true;
+                timexProperty.Now = true;
             }
             else if (timex.StartsWith("P"))
             { // duration
-                ExtractDuration(timex, obj);
+                ExtractDuration(timex, timexProperty);
             }
             else if (timex.StartsWith("(") && timex.EndsWith(")"))
             { // range indicated with start and end dates and a duration
-                ExtractStartEndRange(timex, obj);
+                ExtractStartEndRange(timex, timexProperty);
             }
             else
             { // date and time and their respective ranges
-                ExtractDateTime(timex, obj);
+                ExtractDateTime(timex, timexProperty);
             }
         }
 
-        private static void ExtractDuration(string s, TimexProperty obj)
+        private static void ExtractDuration(string s, TimexProperty timexProperty)
         {
             var extracted = new Dictionary<string, string>();
             TimexRegex.Extract("period", s, extracted);
-            obj.AssignProperties(extracted);
+            timexProperty.AssignProperties(extracted);
         }
 
-        private static void ExtractStartEndRange(string s, TimexProperty obj)
+        private static void ExtractStartEndRange(string s, TimexProperty timexProperty)
         {
             var parts = s.Substring(1, s.Length - 2).Split(',');
 
             if (parts.Length == 3)
             {
-                ExtractDateTime(parts[0], obj);
-                ExtractDuration(parts[2], obj);
+                ExtractDateTime(parts[0], timexProperty);
+                ExtractDuration(parts[2], timexProperty);
             }
         }
 
-        private static void ExtractDateTime(string s, TimexProperty obj)
+        private static void ExtractDateTime(string s, TimexProperty timexProperty)
         {
             var indexOfT = s.IndexOf('T');
 
@@ -54,14 +54,14 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             {
                 var extracted = new Dictionary<string, string>();
                 TimexRegex.Extract("date", s, extracted);
-                obj.AssignProperties(extracted);
+                timexProperty.AssignProperties(extracted);
             }
             else
             {
                 var extracted = new Dictionary<string, string>();
                 TimexRegex.Extract("date", s.Substring(0, indexOfT), extracted);
                 TimexRegex.Extract("time", s.Substring(indexOfT), extracted);
-                obj.AssignProperties(extracted);
+                timexProperty.AssignProperties(extracted);
             }
         }
     }

@@ -58,11 +58,9 @@ export class FrenchDateTimeExtractorConfiguration implements IDateTimeExtractorC
 
     isConnectorToken(source: string): boolean {
         
-        return (source === "" || source === "," ||
+        return (source === "" ||
             RegExpUtility.getFirstMatchIndex(this.prepositionRegex, source).matched ||
-            source === "t" || 
-            source === "pour" ||
-            source === "vers");
+            RegExpUtility.getFirstMatchIndex(this.connectorRegex, source).matched);
     }
 }
 
@@ -91,7 +89,7 @@ export class FrenchDateTimeParserConfiguration implements IDateTimeParserConfigu
     readonly utilityConfiguration: IDateTimeUtilityConfiguration;
 
     readonly nextPrefixRegex: RegExp;
-    readonly pastPrefixRegex: RegExp;
+    readonly previousPrefixRegex: RegExp;
 
     constructor(config: ICommonDateTimeParserConfiguration) {
         this.tokenBeforeDate = FrenchDateTime.TokenBeforeDate;

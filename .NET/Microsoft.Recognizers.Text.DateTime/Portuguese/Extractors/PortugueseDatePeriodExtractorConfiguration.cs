@@ -230,7 +230,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         Regex IDatePeriodExtractorConfiguration.NumberCombinedWithDateUnit => NumberCombinedWithDateUnit;
 
-        Regex IDatePeriodExtractorConfiguration.PastRegex => PastRegex;
+        Regex IDatePeriodExtractorConfiguration.PreviousPrefixRegex => PastRegex;
 
         Regex IDatePeriodExtractorConfiguration.FutureRegex => FutureRegex;
 
@@ -263,6 +263,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         Regex IDatePeriodExtractorConfiguration.MoreThanRegex => MoreThanRegex;
 
         Regex IDatePeriodExtractorConfiguration.CenturySuffixRegex => CenturySuffixRegex;
+
+        Regex IDatePeriodExtractorConfiguration.MonthNumRegex => MonthNumRegex;
 
         string[] IDatePeriodExtractorConfiguration.DurationDateRestrictions => DateTimeDefinitions.DurationDateRestrictions;
 

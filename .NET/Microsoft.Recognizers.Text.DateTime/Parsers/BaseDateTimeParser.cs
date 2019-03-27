@@ -83,6 +83,29 @@ namespace Microsoft.Recognizers.Text.DateTime
             return candidateResults;
         }
 
+        private static DateTimeResolutionResult ResolveEndOfDay(string timexPrefix, DateObject futureDate, DateObject pastDate)
+        {
+            var ret = new DateTimeResolutionResult
+            {
+                Timex = timexPrefix + "T23:59:59",
+                FutureValue = futureDate.Date.AddDays(1).AddSeconds(-1),
+                PastValue = pastDate.Date.AddDays(1).AddSeconds(-1),
+                Success = true,
+            };
+
+            return ret;
+        }
+
+        private static bool WithinAfternoonHours(int hour)
+        {
+            return hour < Constants.HalfDayHourCount;
+        }
+
+        private static bool WithinMorningHoursAndNoon(int hour, int min, int sec)
+        {
+            return hour > Constants.HalfDayHourCount || (hour == Constants.HalfDayHourCount && (min > 0 || sec > 0));
+        }
+
         private DateTimeResolutionResult ParseBasicRegex(string text, DateObject referenceTime)
         {
             var ret = new DateTimeResolutionResult();
@@ -377,28 +400,6 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             return ret;
-        }
-
-        private DateTimeResolutionResult ResolveEndOfDay(string timexPrefix, DateObject futureDate, DateObject pastDate)
-        {
-            var ret = new DateTimeResolutionResult();
-
-            ret.Timex = timexPrefix + "T23:59:59";
-            ret.FutureValue = futureDate.Date.AddDays(1).AddSeconds(-1);
-            ret.PastValue = pastDate.Date.AddDays(1).AddSeconds(-1);
-            ret.Success = true;
-
-            return ret;
-        }
-
-        private bool WithinAfternoonHours(int hour)
-        {
-            return hour < Constants.HalfDayHourCount;
-        }
-
-        private bool WithinMorningHoursAndNoon(int hour, int min, int sec)
-        {
-            return hour > Constants.HalfDayHourCount || (hour == Constants.HalfDayHourCount && (min > 0 || sec > 0));
         }
 
         // Handle cases like "two hours ago"

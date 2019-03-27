@@ -14,7 +14,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         public static readonly Regex TillRegex =
             new Regex(DateTimeDefinitions.TillRegex, RegexOptions.Singleline);
 
-        public static readonly Regex AndRegex =
+        public static readonly Regex RangeConnectorRegex =
             new Regex(DateTimeDefinitions.RangeConnectorRegex, RegexOptions.Singleline);
 
         public static readonly Regex DayRegex =
@@ -47,8 +47,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         public static readonly Regex TimeUnitRegex =
             new Regex(DateTimeDefinitions.TimeUnitRegex, RegexOptions.Singleline);
 
-        public static readonly Regex PastPrefixRegex =
-            new Regex(DateTimeDefinitions.PastPrefixRegex, RegexOptions.Singleline);
+        public static readonly Regex PreviousPrefixRegex =
+            new Regex(DateTimeDefinitions.PreviousPrefixRegex, RegexOptions.Singleline);
 
         public static readonly Regex NextPrefixRegex =
             new Regex(DateTimeDefinitions.NextPrefixRegex, RegexOptions.Singleline);
@@ -267,7 +267,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         Regex IDatePeriodExtractorConfiguration.NumberCombinedWithDateUnit => NumberCombinedWithDateUnit;
 
-        Regex IDatePeriodExtractorConfiguration.PastRegex => PastPrefixRegex;
+        Regex IDatePeriodExtractorConfiguration.PreviousPrefixRegex => PreviousPrefixRegex;
 
         Regex IDatePeriodExtractorConfiguration.FutureRegex => NextPrefixRegex;
 
@@ -301,6 +301,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         Regex IDatePeriodExtractorConfiguration.CenturySuffixRegex => CenturySuffixRegex;
 
+        Regex IDatePeriodExtractorConfiguration.MonthNumRegex => MonthNumRegex;
+
         string[] IDatePeriodExtractorConfiguration.DurationDateRestrictions => DateTimeDefinitions.DurationDateRestrictions;
 
         public bool GetFromTokenIndex(string text, out int index)
@@ -329,8 +331,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         public bool HasConnectorToken(string text)
         {
-            return AndRegex.IsExactMatch(text, trim: true);
+            return RangeConnectorRegex.IsExactMatch(text, trim: true);
         }
-
     }
 }

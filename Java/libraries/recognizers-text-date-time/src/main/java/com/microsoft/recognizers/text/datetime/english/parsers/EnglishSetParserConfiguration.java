@@ -3,6 +3,7 @@ package com.microsoft.recognizers.text.datetime.english.parsers;
 import com.google.common.collect.ImmutableMap;
 import com.microsoft.recognizers.text.datetime.config.BaseOptionsConfiguration;
 import com.microsoft.recognizers.text.datetime.english.extractors.EnglishSetExtractorConfiguration;
+import com.microsoft.recognizers.text.datetime.extractors.IDateExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.IDateTimeExtractor;
 import com.microsoft.recognizers.text.datetime.parsers.IDateTimeParser;
 import com.microsoft.recognizers.text.datetime.parsers.config.ICommonDateTimeParserConfiguration;
@@ -50,9 +51,9 @@ public class EnglishSetParserConfiguration extends BaseOptionsConfiguration impl
         return timeExtractor;
     }
 
-    private IDateTimeExtractor dateExtractor;
+    private IDateExtractor dateExtractor;
 
-    public final IDateTimeExtractor getDateExtractor() {
+    public final IDateExtractor getDateExtractor() {
         return dateExtractor;
     }
 

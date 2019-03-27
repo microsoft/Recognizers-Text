@@ -8,29 +8,41 @@ namespace Microsoft.Recognizers.Text.Number
 {
     public class BaseNumberParser : IParser
     {
+
         private static readonly Regex LongFormRegex =
             new Regex(@"\d+", RegexOptions.Singleline);
 
-        private static readonly Regex CultureRegex =
+        private static readonly Regex MultiDecimalSeparatorCultureRegex =
             new Regex(@"^(en|es|fr)(-)?\b", RegexOptions.Singleline | RegexOptions.Compiled);
+
+        private static readonly List<string> CompoundNumberLanguages = new List<string> { "de-DE", "nl-NL" };
+
+        private readonly bool isMultiDecimalSeparatorCulture = false;
 
         public BaseNumberParser(INumberParserConfiguration config)
         {
             this.Config = config;
 
+            this.isMultiDecimalSeparatorCulture = MultiDecimalSeparatorCultureRegex.IsMatch(config.CultureInfo.Name);
+
             var singleIntFrac = $"{this.Config.WordSeparatorToken}| -|" +
                                 GetKeyRegex(this.Config.CardinalNumberMap.Keys) + "|" +
                                 GetKeyRegex(this.Config.OrdinalNumberMap.Keys);
 
-            // Necessary for the German & Dutch languages because bigger numbers are not separated by whitespaces or special characters like in other languages
-            if (config.CultureInfo.Name == "de-DE" || config.CultureInfo.Name == "nl-NL")
+            string textNumberPattern;
+
+            // Checks for languages that use "compound numbers". I.e. written number parts are not separated by whitespaces or special characters (e.g., dreihundert in German).
+            if (CompoundNumberLanguages.Contains(config.CultureInfo.Name))
             {
-                TextNumberRegex = new Regex(@"(" + singleIntFrac + @")", RegexOptions.Singleline | RegexOptions.Compiled);
+                textNumberPattern = @"(" + singleIntFrac + @")";
             }
             else
             {
-                TextNumberRegex = new Regex(@"(?<=\b)(" + singleIntFrac + @")(?=\b)", RegexOptions.Singleline | RegexOptions.Compiled);
+                // Default case, like in English.
+                textNumberPattern = @"(?<=\b)(" + singleIntFrac + @")(?=\b)";
             }
+
+            TextNumberRegex = new Regex(textNumberPattern, RegexOptions.Singleline | RegexOptions.Compiled);
 
             RoundNumberSet = new HashSet<string>();
             foreach (var roundNumber in this.Config.RoundNumberMap.Keys)
@@ -41,7 +53,7 @@ namespace Microsoft.Recognizers.Text.Number
 
         internal IEnumerable<string> SupportedTypes { get; set; }
 
-        protected Regex LongFormatRegex => LongFormRegex;
+        protected static Regex LongFormatRegex => LongFormRegex;
 
         protected INumberParserConfiguration Config { get; private set; }
 
@@ -158,51 +170,10 @@ namespace Microsoft.Recognizers.Text.Number
             return ret;
         }
 
-        private static string DetermineType(ExtractResult er)
+        protected static string GetKeyRegex(IEnumerable<string> keyCollection)
         {
-            var data = er.Data as string;
-            var subType = string.Empty;
-
-            if (!string.IsNullOrEmpty(data))
-            {
-                if (data.StartsWith(Constants.FRACTION_PREFIX))
-                {
-                    subType = Constants.FRACTION;
-                }
-                else if (data.Contains(Constants.POWER_SUFFIX))
-                {
-                    subType = Constants.POWER;
-                }
-                else if (data.StartsWith(Constants.INTEGER_PREFIX))
-                {
-                    subType = Constants.INTEGER;
-                }
-                else if (data.StartsWith(Constants.DOUBLE_PREFIX))
-                {
-                    subType = Constants.DECIMAL;
-                }
-            }
-
-            return subType;
-        }
-
-        private static bool IsMergeable(double former, double later)
-        {
-            // The former number is an order of magnitude larger than the later number, and they must be integers
-            return Math.Abs(former % 1) < double.Epsilon && Math.Abs(later % 1) < double.Epsilon &&
-                   former > later && former.ToString(CultureInfo.InvariantCulture).Length > later.ToString(CultureInfo.InvariantCulture).Length && later > 0;
-        }
-
-        private string GetResolutionStr(object value)
-        {
-            var resolutionStr = value.ToString();
-
-            if (Config.CultureInfo != null && value is double)
-            {
-                resolutionStr = ((double)value).ToString(Config.CultureInfo);
-            }
-
-            return resolutionStr;
+            var sortKeys = keyCollection.OrderByDescending(key => key.Length);
+            return string.Join("|", sortKeys);
         }
 
         protected ParseResult PowerNumberParse(ExtractResult extResult)
@@ -323,46 +294,38 @@ namespace Microsoft.Recognizers.Text.Number
             {
                 var numGroup = handle.Split(Config.WrittenDecimalSeparatorTexts.ToArray(), StringSplitOptions.RemoveEmptyEntries);
 
-                #region IntegerPart
-
                 var intPart = numGroup[0];
-                var sMatch = TextNumberRegex.Match(intPart);
+                var stringMatch = TextNumberRegex.Match(intPart);
 
                 // Store all match str.
                 var matchStrs = new List<string>();
 
-                while (sMatch.Success)
+                while (stringMatch.Success)
                 {
-                    var matchStr = sMatch.Groups[0].Value.ToLower();
+                    var matchStr = stringMatch.Groups[0].Value.ToLower();
                     matchStrs.Add(matchStr);
-                    sMatch = sMatch.NextMatch();
+                    stringMatch = stringMatch.NextMatch();
                 }
 
-                //Get the value recursively
+                // Get the value recursively
                 var intPartRet = GetIntValue(matchStrs);
-
-                #endregion
-
-                #region DecimalPart
 
                 double pointPartRet = 0;
                 if (numGroup.Length == 2)
                 {
                     var pointPart = numGroup[1];
-                    sMatch = TextNumberRegex.Match(pointPart);
+                    stringMatch = TextNumberRegex.Match(pointPart);
                     matchStrs.Clear();
 
-                    while (sMatch.Success)
+                    while (stringMatch.Success)
                     {
-                        var matchStr = sMatch.Groups[0].Value.ToLower();
+                        var matchStr = stringMatch.Groups[0].Value.ToLower();
                         matchStrs.Add(matchStr);
-                        sMatch = sMatch.NextMatch();
+                        stringMatch = stringMatch.NextMatch();
                     }
 
                     pointPartRet += GetPointValue(matchStrs);
                 }
-
-                #endregion
 
                 result.Value = intPartRet + pointPartRet;
             }
@@ -521,12 +484,6 @@ namespace Microsoft.Recognizers.Text.Number
             return result;
         }
 
-        protected string GetKeyRegex(IEnumerable<string> keyCollection)
-        {
-            var sortKeys = keyCollection.OrderByDescending(key => key.Length);
-            return string.Join("|", sortKeys);
-        }
-
         /// <summary>
         /// Precondition: ExtResult must have arabic numerals.
         /// </summary>
@@ -593,7 +550,7 @@ namespace Microsoft.Recognizers.Text.Number
             for (var i = 0; i < digitsStr.Length; i++)
             {
                 var ch = digitsStr[i];
-                var skippableNonDecimal = SkipNonDecimalSeparator(ch, strLength - i, Config.CultureInfo);
+                var skippableNonDecimal = SkipNonDecimalSeparator(ch, strLength - i);
                 if (!isFrac && (ch == ' ' || ch == Constants.NO_BREAK_SPACE || skippableNonDecimal))
                 {
                     continue;
@@ -653,14 +610,70 @@ namespace Microsoft.Recognizers.Text.Number
             return calResult;
         }
 
+        private static string DetermineType(ExtractResult er)
+        {
+            var data = er.Data as string;
+            var subType = string.Empty;
+
+            if (!string.IsNullOrEmpty(data))
+            {
+                if (data.StartsWith(Constants.FRACTION_PREFIX))
+                {
+                    subType = Constants.FRACTION;
+                }
+                else if (data.Contains(Constants.POWER_SUFFIX))
+                {
+                    subType = Constants.POWER;
+                }
+                else if (data.StartsWith(Constants.INTEGER_PREFIX))
+                {
+                    subType = Constants.INTEGER;
+                }
+                else if (data.StartsWith(Constants.DOUBLE_PREFIX))
+                {
+                    subType = Constants.DECIMAL;
+                }
+            }
+
+            return subType;
+        }
+
+        private static bool IsMergeable(double former, double later)
+        {
+            // The former number is an order of magnitude larger than the later number, and they must be integers
+            return Math.Abs(former % 1) < double.Epsilon && Math.Abs(later % 1) < double.Epsilon &&
+                   former > later && former.ToString(CultureInfo.InvariantCulture).Length > later.ToString(CultureInfo.InvariantCulture).Length && later > 0;
+        }
+
+        // Test if big and combine with small.
+        // e.g. "hundred" can combine with "thirty" but "twenty" can't combine with "thirty".
+        private static bool IsComposable(long big, long small)
+        {
+            var baseNumber = small > 10 ? 100 : 10;
+
+            return big % baseNumber == 0 && big / baseNumber >= 1;
+        }
+
+        private string GetResolutionStr(object value)
+        {
+            var resolutionStr = value.ToString();
+
+            if (Config.CultureInfo != null && value is double)
+            {
+                resolutionStr = ((double)value).ToString(Config.CultureInfo);
+            }
+
+            return resolutionStr;
+        }
+
         // Special cases for multi-language countries where decimal separators can be used interchangeably. Mostly informally.
         // Ex: South Africa, Namibia; Puerto Rico in ES; or in Canada for EN and FR.
         // "me pidio $5.00 prestados" and "me pidio $5,00 prestados" -> currency $5
-        private bool SkipNonDecimalSeparator(char ch, int distance, CultureInfo culture)
+        private bool SkipNonDecimalSeparator(char ch, int distance)
         {
             var decimalLength = 3;
 
-            return ch == Config.NonDecimalSeparatorChar && !(distance <= decimalLength && CultureRegex.IsMatch(culture.Name));
+            return ch == Config.NonDecimalSeparatorChar && !(distance <= decimalLength && isMultiDecimalSeparatorCulture);
         }
 
         private List<string> GetMatches(string input)
@@ -677,15 +690,6 @@ namespace Microsoft.Recognizers.Text.Number
             }
 
             return matchStrs;
-        }
-
-        // Test if big and combine with small.
-        // e.g. "hundred" can combine with "thirty" but "twenty" can't combine with "thirty".
-        private bool IsComposable(long big, long small)
-        {
-            var baseNumber = small > 10 ? 100 : 10;
-
-            return big % baseNumber == 0 && big / baseNumber >= 1;
         }
 
         private double GetIntValue(List<string> matchStrs)

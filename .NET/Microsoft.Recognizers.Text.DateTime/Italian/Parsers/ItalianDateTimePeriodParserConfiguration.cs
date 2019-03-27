@@ -41,7 +41,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             PureNumberBetweenAndRegex = ItalianTimePeriodExtractorConfiguration.PureNumBetweenAnd;
             SpecificTimeOfDayRegex = ItalianDateTimeExtractorConfiguration.SpecificTimeOfDayRegex;
             TimeOfDayRegex = ItalianDateTimeExtractorConfiguration.TimeOfDayRegex;
-            PastRegex = ItalianDatePeriodExtractorConfiguration.PastPrefixRegex;
+            PreviousPrefixRegex = ItalianDatePeriodExtractorConfiguration.PastPrefixRegex;
             FutureRegex = ItalianDatePeriodExtractorConfiguration.NextPrefixRegex;
             FutureSuffixRegex = ItalianDatePeriodExtractorConfiguration.FutureSuffixRegex;
             NumberCombinedWithUnitRegex = ItalianDateTimePeriodExtractorConfiguration.TimeNumberCombinedWithUnit;
@@ -93,7 +93,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public Regex TimeOfDayRegex { get; }
 
-        public Regex PastRegex { get; }
+        public Regex PreviousPrefixRegex { get; }
 
         public Regex FutureRegex { get; }
 

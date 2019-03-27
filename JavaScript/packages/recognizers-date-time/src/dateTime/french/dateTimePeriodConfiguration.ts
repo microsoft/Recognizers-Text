@@ -31,7 +31,7 @@ export class FrenchDateTimePeriodExtractorConfiguration implements IDateTimePeri
     readonly followedUnit: RegExp;
     readonly numberCombinedWithUnit: RegExp;
     readonly timeUnitRegex: RegExp;
-    readonly pastPrefixRegex: RegExp;
+    readonly previousPrefixRegex: RegExp;
     readonly nextPrefixRegex: RegExp;
     readonly relativeTimeUnitRegex: RegExp;
     readonly restOfDateTimeRegex: RegExp;
@@ -46,9 +46,9 @@ export class FrenchDateTimePeriodExtractorConfiguration implements IDateTimePeri
 
     constructor() {
         this.simpleCasesRegexes = [
-            RegExpUtility.getSafeRegExp(FrenchDateTime.PureNumFromTo),
-            RegExpUtility.getSafeRegExp(FrenchDateTime.PureNumBetweenAnd),
-            RegExpUtility.getSafeRegExp(FrenchDateTime.SpecificTimeOfDayRegex)
+            RegExpUtility.getSafeRegExp(FrenchDateTime.PureNumFromTo, "gis"),
+            RegExpUtility.getSafeRegExp(FrenchDateTime.PureNumBetweenAnd, "gis"),
+            RegExpUtility.getSafeRegExp(FrenchDateTime.SpecificTimeOfDayRegex, "gis")
         ]
 
         this.prepositionRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.PrepositionRegex);
@@ -57,7 +57,7 @@ export class FrenchDateTimePeriodExtractorConfiguration implements IDateTimePeri
         this.timeOfDayRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.PeriodTimeOfDayRegex);
         this.followedUnit = RegExpUtility.getSafeRegExp(FrenchDateTime.TimeFollowedUnit);
         this.timeUnitRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.TimeUnitRegex);
-        this.pastPrefixRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.PastSuffixRegex);
+        this.previousPrefixRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.PastSuffixRegex);
         this.nextPrefixRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.NextSuffixRegex);
         this.numberCombinedWithUnit = RegExpUtility.getSafeRegExp(FrenchDateTime.TimeNumberCombinedWithUnit);
         this.weekDayRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.WeekDayRegex);
@@ -107,7 +107,7 @@ export class FrenchDateTimePeriodParserConfiguration implements IDateTimePeriodP
     readonly unitRegex: RegExp;
 
     readonly nextPrefixRegex: RegExp;
-    readonly pastPrefixRegex: RegExp;
+    readonly previousPrefixRegex: RegExp;
     readonly thisPrefixRegex: RegExp;
 
     readonly morningStartEndRegex: RegExp;
@@ -147,7 +147,7 @@ export class FrenchDateTimePeriodParserConfiguration implements IDateTimePeriodP
         this.numbers = config.numbers;
 
         this.nextPrefixRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.NextSuffixRegex);
-        this.pastPrefixRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.PastSuffixRegex);
+        this.previousPrefixRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.PastSuffixRegex);
         this.thisPrefixRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.ThisPrefixRegex);
 
         this.morningStartEndRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.MorningStartEndRegex);
