@@ -474,5 +474,33 @@
         }
       }
     ]
+  },
+  {
+    "Input": "jag vill inte det",
+    "NotSupportedByDesign": "python,java",
+    "Results": [
+      {
+        "Text": "vill inte",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": false,
+          "score": 0.7
+        }
+      }
+    ]
+  },  
+  {
+    "Input": "nej, jag vill inte",
+    "NotSupportedByDesign": "python,java",
+    "Results": [
+      {
+        "Text": "vill inte",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": false,
+          "score": 0.7
+        }
+      }
+    ]
   }
 ]

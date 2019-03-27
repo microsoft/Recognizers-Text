@@ -284,11 +284,12 @@ namespace Microsoft.Recognizers.Text.Number
             */
 
             RegisterModel<NumberModel>(
-                Culture.Swedish,
-                options => new NumberModel(
-                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new SwedishNumberParserConfiguration(options)),
-                    Swedish.MergedNumberExtractor.GetInstance(NumberMode.Default, options)));
+                 Culture.Swedish,
+                 (options) => new NumberModel(
+                     AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new SwedishNumberParserConfiguration()),
+                     Swedish.NumberExtractor.GetInstance(NumberMode.PureNumber)));
 
+            /*
             RegisterModel<OrdinalModel>(
                 Culture.Swedish,
                 options => new OrdinalModel(
@@ -306,6 +307,7 @@ namespace Microsoft.Recognizers.Text.Number
                 options => new NumberRangeModel(
                     new BaseNumberRangeParser(new SwedishNumberRangeParserConfiguration()),
                     new Swedish.NumberRangeExtractor(options)));
+                    */
         }
 
         private static List<ModelResult> RecognizeByModel(Func<NumberRecognizer, IModel> getModelFunc, string query, NumberOptions options)

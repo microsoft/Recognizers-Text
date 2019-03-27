@@ -1,22 +1,21 @@
 ---
 LangMarker: Swe
 #Integer Regex
+ZeroToNineIntegerRegex: !simpleRegex
+  def: (tre|sju|åtta|fyra|fem|noll|nio|ett|en|två|sex)
 RoundNumberIntegerRegex: !simpleRegex
   def: (hundra|tusen|miljon|miljoner|miljarder|miljard|biljon|biljoner)
-ZeroToNineIntegerRegex: !simpleRegex
-  def: (tre|sju|åtta|fyra|fem|noll|nio|nolla|ett|en|två|sex)
-NegativeNumberTermsRegex: !simpleRegex
-  def: ((minus|negativ)\s+)
-NegativeNumberSignRegex: !nestedRegex
-  def: ^{NegativeNumberTermsRegex}.*
-  references: [ NegativeNumberTermsRegex ]
 AnIntRegex: !simpleRegex
-# Ex. "en miljon" eller "ett hundra", dvs. inte "etthundra"
   def: (en|ett)(?=\s)
 TenToNineteenIntegerRegex: !simpleRegex
   def: (sjutton|tretton|fjorton|arton|nitton|femton|sexton|elva|tolv|tio)
 TensNumberIntegerRegex: !simpleRegex
   def: (sjuttio|tjugo|trettio|åttio|nittio|fyrtio|femtio|sextio)
+NegativeNumberTermsRegex: !simpleRegex
+  def: ((minus|negativ)\s+)
+NegativeNumberSignRegex: !nestedRegex
+  def: ^{NegativeNumberTermsRegex}.*
+  references: [ NegativeNumberTermsRegex ]
 SeparaIntRegex: !nestedRegex
   def: ((({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}{ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex})(\s*{RoundNumberIntegerRegex})*))|(({AnIntRegex}(\s*{RoundNumberIntegerRegex})+))
   references: [ TenToNineteenIntegerRegex, TensNumberIntegerRegex, ZeroToNineIntegerRegex, RoundNumberIntegerRegex, AnIntRegex ]
