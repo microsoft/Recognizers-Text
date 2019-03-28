@@ -13,10 +13,10 @@ class EnglishDateTime:
     RangeConnectorRegex = f'(?<and>\\b(and|through|to)\\b|{BaseDateTime.RangeConnectorSymbolRegex})'
     RelativeRegex = f'\\b(?<order>following|next|coming|upcoming|this|last|past|previous|current|the)\\b'
     StrictRelativeRegex = f'\\b(?<order>following|next|coming|upcoming|this|last|past|previous|current)\\b'
-    UpcomingPrefixRegex = f'((this )?(upcoming|coming))'
+    UpcomingPrefixRegex = f'((this\\s+)?(upcoming|coming))'
     NextPrefixRegex = f'\\b(following|next|{UpcomingPrefixRegex})\\b'
     AfterNextSuffixRegex = f'\\b(after\\s+(the\\s+)?next)\\b'
-    PastPrefixRegex = f'((this )?past)\\b'
+    PastPrefixRegex = f'((this\\s+)?past)\\b'
     PreviousPrefixRegex = f'(last|previous|{PastPrefixRegex})\\b'
     ThisPrefixRegex = f'(this|current)\\b'
     RangePrefixRegex = f'(from|between)'
@@ -36,7 +36,7 @@ class EnglishDateTime:
     LastTwoYearNumRegex = f'(zero\\s+{WrittenOneToNineRegex}|{WrittenElevenToNineteenRegex}|{WrittenTensRegex}(\\s+{WrittenOneToNineRegex})?)'
     FullTextYearRegex = f'\\b((?<firsttwoyearnum>{CenturyRegex})\\s+(?<lasttwoyearnum>{LastTwoYearNumRegex})\\b|\\b(?<firsttwoyearnum>{WrittenCenturyFullYearRegex}|{WrittenCenturyOrdinalYearRegex}\\s+hundred(\\s+and)?))\\b'
     OclockRegex = f'(?<oclock>o\\s*’\\s*clock|o\\s*‘\\s*clock|o\\s*\'\\s*clock|o\\s*clock)'
-    SpecialDescRegex = f'(p\\b)'
+    SpecialDescRegex = f'((?<ipm>)p\\b)'
     AmDescRegex = f'({BaseDateTime.BaseAmDescRegex})'
     PmDescRegex = f'({BaseDateTime.BasePmDescRegex})'
     AmPmDescRegex = f'({BaseDateTime.BaseAmPmDescRegex})'
@@ -48,7 +48,7 @@ class EnglishDateTime:
     RelativeMonthRegex = f'(?<relmonth>(of\\s+)?{RelativeRegex}\\s+month)\\b'
     WrittenMonthRegex = f'(((the\\s+)?month of\\s+)?(?<month>april|apr|august|aug|december|dec|february|feb|january|jan|july|jul|june|jun|march|mar|may|november|nov|october|oct|september|sept|sep))'
     MonthSuffixRegex = f'(?<msuf>((in|of|on)\\s+)?({RelativeMonthRegex}|{WrittenMonthRegex}))'
-    DateUnitRegex = f'(?<unit>decades?|years?|months?|weeks?|(?<business>business\\s+)?days?)\\b'
+    DateUnitRegex = f'(?<unit>decades?|years?|months?|weeks?|(?<business>business\\s+)?days?|fortnights?)\\b'
     DateTokenPrefix = 'on '
     TimeTokenPrefix = 'at '
     TokenBeforeDate = 'on '
@@ -146,7 +146,7 @@ class EnglishDateTime:
     ConnectNumRegex = f'\\b{BaseDateTime.HourRegex}(?<min>00|01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31|32|33|34|35|36|37|38|39|40|41|42|43|44|45|46|47|48|49|50|51|52|53|54|55|56|57|58|59)\\s*{DescRegex}'
     TimeRegexWithDotConnector = f'({BaseDateTime.HourRegex}(\\s*\\.\\s*){BaseDateTime.MinuteRegex})'
     TimeRegex1 = f'\\b({TimePrefix}\\s+)?({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})\\s*{DescRegex}'
-    TimeRegex2 = f'(\\b{TimePrefix}\\s+)?(t)?{BaseDateTime.HourRegex}(\\s*)?:(\\s*)?{BaseDateTime.MinuteRegex}((\\s*)?:(\\s*)?{BaseDateTime.SecondRegex})?((\\s*{DescRegex})|\\b)'
+    TimeRegex2 = f'(\\b{TimePrefix}\\s+)?(t)?{BaseDateTime.HourRegex}(\\s*)?:(\\s*)?{BaseDateTime.MinuteRegex}((\\s*)?:(\\s*)?{BaseDateTime.SecondRegex})?(?<iam>a)?((\\s*{DescRegex})|\\b)'
     TimeRegex3 = f'(\\b{TimePrefix}\\s+)?{BaseDateTime.HourRegex}\\.{BaseDateTime.MinuteRegex}(\\s*{DescRegex})'
     TimeRegex4 = f'\\b{TimePrefix}\\s+{BasicTime}(\\s*{DescRegex})?\\s+{TimeSuffix}\\b'
     TimeRegex5 = f'\\b{TimePrefix}\\s+{BasicTime}((\\s*{DescRegex})|\\b)'
@@ -259,6 +259,8 @@ class EnglishDateTime:
                     ("year", "Y"),
                     ("months", "MON"),
                     ("month", "MON"),
+                    ("fortnights", "2W"),
+                    ("fortnight", "2W"),
                     ("weeks", "W"),
                     ("week", "W"),
                     ("days", "D"),
@@ -282,6 +284,8 @@ class EnglishDateTime:
                          ("year", 31536000),
                          ("months", 2592000),
                          ("month", 2592000),
+                         ("fortnights", 1209600),
+                         ("fortnight", 1209600),
                          ("weeks", 604800),
                          ("week", 604800),
                          ("days", 86400),

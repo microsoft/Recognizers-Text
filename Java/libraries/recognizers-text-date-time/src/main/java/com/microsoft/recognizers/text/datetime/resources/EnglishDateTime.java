@@ -26,14 +26,14 @@ public class EnglishDateTime {
 
     public static final String StrictRelativeRegex = "\\b(?<order>following|next|coming|upcoming|this|last|past|previous|current)\\b";
 
-    public static final String UpcomingPrefixRegex = "((this )?(upcoming|coming))";
+    public static final String UpcomingPrefixRegex = "((this\\s+)?(upcoming|coming))";
 
     public static final String NextPrefixRegex = "\\b(following|next|{UpcomingPrefixRegex})\\b"
             .replace("{UpcomingPrefixRegex}", UpcomingPrefixRegex);
 
     public static final String AfterNextSuffixRegex = "\\b(after\\s+(the\\s+)?next)\\b";
 
-    public static final String PastPrefixRegex = "((this )?past)\\b";
+    public static final String PastPrefixRegex = "((this\\s+)?past)\\b";
 
     public static final String PreviousPrefixRegex = "(last|previous|{PastPrefixRegex})\\b"
             .replace("{PastPrefixRegex}", PastPrefixRegex);
@@ -87,7 +87,7 @@ public class EnglishDateTime {
 
     public static final String OclockRegex = "(?<oclock>o\\s*’\\s*clock|o\\s*‘\\s*clock|o\\s*'\\s*clock|o\\s*clock)";
 
-    public static final String SpecialDescRegex = "(p\\b)";
+    public static final String SpecialDescRegex = "((?<ipm>)p\\b)";
 
     public static final String AmDescRegex = "({BaseDateTime.BaseAmDescRegex})"
             .replace("{BaseDateTime.BaseAmDescRegex}", BaseDateTime.BaseAmDescRegex);
@@ -126,7 +126,7 @@ public class EnglishDateTime {
             .replace("{RelativeMonthRegex}", RelativeMonthRegex)
             .replace("{WrittenMonthRegex}", WrittenMonthRegex);
 
-    public static final String DateUnitRegex = "(?<unit>decades?|years?|months?|weeks?|(?<business>business\\s+)?days?)\\b";
+    public static final String DateUnitRegex = "(?<unit>decades?|years?|months?|weeks?|(?<business>business\\s+)?days?|fortnights?)\\b";
 
     public static final String DateTokenPrefix = "on ";
 
@@ -478,7 +478,7 @@ public class EnglishDateTime {
             .replace("{BaseDateTime.HourRegex}", BaseDateTime.HourRegex)
             .replace("{DescRegex}", DescRegex);
 
-    public static final String TimeRegex2 = "(\\b{TimePrefix}\\s+)?(t)?{BaseDateTime.HourRegex}(\\s*)?:(\\s*)?{BaseDateTime.MinuteRegex}((\\s*)?:(\\s*)?{BaseDateTime.SecondRegex})?((\\s*{DescRegex})|\\b)"
+    public static final String TimeRegex2 = "(\\b{TimePrefix}\\s+)?(t)?{BaseDateTime.HourRegex}(\\s*)?:(\\s*)?{BaseDateTime.MinuteRegex}((\\s*)?:(\\s*)?{BaseDateTime.SecondRegex})?(?<iam>a)?((\\s*{DescRegex})|\\b)"
             .replace("{TimePrefix}", TimePrefix)
             .replace("{BaseDateTime.HourRegex}", BaseDateTime.HourRegex)
             .replace("{BaseDateTime.MinuteRegex}", BaseDateTime.MinuteRegex)
@@ -849,6 +849,8 @@ public class EnglishDateTime {
         .put("year", "Y")
         .put("months", "MON")
         .put("month", "MON")
+        .put("fortnights", "2W")
+        .put("fortnight", "2W")
         .put("weeks", "W")
         .put("week", "W")
         .put("days", "D")
@@ -875,6 +877,8 @@ public class EnglishDateTime {
         .put("year", 31536000L)
         .put("months", 2592000L)
         .put("month", 2592000L)
+        .put("fortnights", 1209600L)
+        .put("fortnight", 1209600L)
         .put("weeks", 604800L)
         .put("week", 604800L)
         .put("days", 86400L)

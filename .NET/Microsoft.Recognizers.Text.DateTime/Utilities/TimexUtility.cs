@@ -130,14 +130,19 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             if (!Constants.TimexBusinessDay.Equals(unitStr))
             {
-                if (Constants.DECADE_UNIT.Equals(unitStr))
+                switch (unitStr)
                 {
-                    number = number * 10;
-                    unitStr = Constants.TimexYear;
-                }
-                else
-                {
-                    unitStr = unitStr.Substring(0, 1);
+                    case Constants.DECADE_UNIT:
+                        number = number * 10;
+                        unitStr = Constants.TimexYear;
+                        break;
+                    case Constants.FORTNIGHT_UNIT:
+                        number = number * 2;
+                        unitStr = Constants.TimexWeek;
+                        break;
+                    default:
+                        unitStr = unitStr.Substring(0, 1);
+                        break;
                 }
             }
 
