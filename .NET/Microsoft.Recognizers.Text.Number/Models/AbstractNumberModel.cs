@@ -60,7 +60,7 @@ namespace Microsoft.Recognizers.Text.Number
                 // Only support "subtype" for English for now
                 // As some languages like German, we miss handling some subtypes between "decimal" and "integer"
                 if (!string.IsNullOrEmpty(o.Type) &&
-                    Constants.ValidSubTypes.Contains(o.Type) && (extractorType.Contains(Constants.ENGLISH) | extractorType.Contains(Constants.SWEDISH)))
+                    Constants.ValidSubTypes.Contains(o.Type) && extractorType.Contains(Constants.ENGLISH))
                 {
                     resolution.Add(ResolutionKey.SubType, o.Type);
                 }
