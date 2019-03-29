@@ -478,7 +478,7 @@ export class BaseDatePeriodParser implements IDateTimeParser {
     }
 
     private isPresent(swift: number): boolean{
-        return swift == 0;
+        return swift === 0;
     }
 
     protected parseOneWordPeriod(source: string, referenceDate: Date): DateTimeResolutionResult {
@@ -588,8 +588,9 @@ export class BaseDatePeriodParser implements IDateTimeParser {
             swift = this.config.getSwiftDayOrMonth(trimedText);
             if (this.config.isWeekOnly(trimedText)) {
                 let monday = DateUtils.addDays(DateUtils.this(referenceDate, DayOfWeek.Monday), 7 * swift);
+                let weekNumber = DateUtils.getWeekNumber(monday);
 
-                result.timex = `${DateTimeFormatUtil.toString(monday.getFullYear(), 4)}-W${DateTimeFormatUtil.toString(DateUtils.getWeekNumber(monday).weekNo, 2)}`;
+                result.timex = `${DateTimeFormatUtil.toString(weekNumber.year, 4)}-W${DateTimeFormatUtil.toString(weekNumber.weekNo, 2)}`;
 
                 let beginDate = DateUtils.addDays(DateUtils.this(referenceDate, DayOfWeek.Monday), 7 * swift);
                 let endDate = this.inclusiveEndPeriod
@@ -1029,7 +1030,7 @@ export class BaseDatePeriodParser implements IDateTimeParser {
         if (!numberStr) {
             quarterNum = this.config.cardinalMap.get(cardinalStr);
         } else {
-            quarterNum = parseInt(numberStr)
+            quarterNum = parseInt(numberStr);
         }
 
         let beginDate = DateUtils.safeCreateDateResolveOverflow(year, (quarterNum - 1) * Constants.SemesterMonthCount, 1);
@@ -1071,7 +1072,7 @@ export class BaseDatePeriodParser implements IDateTimeParser {
         if (!numberStr) {
             quarterNum = this.config.cardinalMap.get(cardinalStr);
         } else {
-            quarterNum = parseInt(numberStr)
+            quarterNum = parseInt(numberStr);
         }
 
         let beginDate = DateUtils.safeCreateDateResolveOverflow(year, (quarterNum - 1) * Constants.TrimesterMonthCount, 1);
@@ -1136,7 +1137,7 @@ export class BaseDatePeriodParser implements IDateTimeParser {
         let firstDay = DateUtils.safeCreateFromValue(DateUtils.minValue(), year, 0, 1);
         let firstThursday = DateUtils.this(firstDay, DayOfWeek.Thursday);
         let firstWeek = DateUtils.getWeekNumber(firstThursday).weekNo;
-        if (firstWeek == 1) {
+        if (firstWeek === 1) {
             num -= 1;
         }
 
