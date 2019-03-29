@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.microsoft.recognizers.text.Culture;
 import com.microsoft.recognizers.text.ModelResult;
+import com.microsoft.recognizers.text.datetime.DateTimeRecognizer;
 import com.microsoft.recognizers.text.number.NumberRecognizer;
 import com.microsoft.recognizers.text.numberwithunit.NumberWithUnitRecognizer;
 
@@ -89,7 +90,11 @@ public class Sample {
 
                 // Temperature recognizer will find any temperature presented
                 // E.g "Set the temperature to 30 degrees celsius" will return "30 C"
-                NumberWithUnitRecognizer.recognizeTemperature(query, culture)
+                NumberWithUnitRecognizer.recognizeTemperature(query, culture),
+
+                // Datetime recognizer This model will find any Date even if its write in colloquial language
+                // E.g "I'll go back 8pm today" will return "2017-10-04 20:00:00"
+                DateTimeRecognizer.recognizeDateTime(query, culture)
         );
     }
 

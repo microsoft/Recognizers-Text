@@ -10411,5 +10411,51 @@
     },
     "NotSupported": "javascript, java, python",
     "Results": [] 
+  },
+  {
+    "Input": "I'll be back at 9:00a.",
+    "Context": {
+      "ReferenceDateTime": "2019-03-28T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "9:00a",
+        "Start": 16,
+        "End": 20,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T09:00",
+              "type": "time",
+              "value": "09:00:00"
+            }
+          ]
+        }
+      }
+    ] 
+  },
+  {
+    "Input": "I'll be back tomorrow at 8:45a.",
+    "Context": {
+      "ReferenceDateTime": "2019-03-28T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "tomorrow at 8:45a",
+        "Start": 13,
+        "End": 29,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-03-29T08:45",
+              "type": "datetime",
+              "value": "2019-03-29 08:45:00"
+            }
+          ]
+        }
+      }
+    ] 
   }
 ]

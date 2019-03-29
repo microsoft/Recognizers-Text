@@ -12,10 +12,10 @@ export namespace EnglishDateTime {
 	export const RangeConnectorRegex = `(?<and>\\b(and|through|to)\\b|${BaseDateTime.RangeConnectorSymbolRegex})`;
 	export const RelativeRegex = `\\b(?<order>following|next|coming|upcoming|this|last|past|previous|current|the)\\b`;
 	export const StrictRelativeRegex = `\\b(?<order>following|next|coming|upcoming|this|last|past|previous|current)\\b`;
-	export const UpcomingPrefixRegex = `((this )?(upcoming|coming))`;
+	export const UpcomingPrefixRegex = `((this\\s+)?(upcoming|coming))`;
 	export const NextPrefixRegex = `\\b(following|next|${UpcomingPrefixRegex})\\b`;
 	export const AfterNextSuffixRegex = `\\b(after\\s+(the\\s+)?next)\\b`;
-	export const PastPrefixRegex = `((this )?past)\\b`;
+	export const PastPrefixRegex = `((this\\s+)?past)\\b`;
 	export const PreviousPrefixRegex = `(last|previous|${PastPrefixRegex})\\b`;
 	export const ThisPrefixRegex = `(this|current)\\b`;
 	export const RangePrefixRegex = `(from|between)`;
@@ -35,7 +35,7 @@ export namespace EnglishDateTime {
 	export const LastTwoYearNumRegex = `(zero\\s+${WrittenOneToNineRegex}|${WrittenElevenToNineteenRegex}|${WrittenTensRegex}(\\s+${WrittenOneToNineRegex})?)`;
 	export const FullTextYearRegex = `\\b((?<firsttwoyearnum>${CenturyRegex})\\s+(?<lasttwoyearnum>${LastTwoYearNumRegex})\\b|\\b(?<firsttwoyearnum>${WrittenCenturyFullYearRegex}|${WrittenCenturyOrdinalYearRegex}\\s+hundred(\\s+and)?))\\b`;
 	export const OclockRegex = `(?<oclock>o\\s*’\\s*clock|o\\s*‘\\s*clock|o\\s*'\\s*clock|o\\s*clock)`;
-	export const SpecialDescRegex = `(p\\b)`;
+	export const SpecialDescRegex = `((?<ipm>)p\\b)`;
 	export const AmDescRegex = `(${BaseDateTime.BaseAmDescRegex})`;
 	export const PmDescRegex = `(${BaseDateTime.BasePmDescRegex})`;
 	export const AmPmDescRegex = `(${BaseDateTime.BaseAmPmDescRegex})`;
@@ -47,7 +47,7 @@ export namespace EnglishDateTime {
 	export const RelativeMonthRegex = `(?<relmonth>(of\\s+)?${RelativeRegex}\\s+month)\\b`;
 	export const WrittenMonthRegex = `(((the\\s+)?month of\\s+)?(?<month>april|apr|august|aug|december|dec|february|feb|january|jan|july|jul|june|jun|march|mar|may|november|nov|october|oct|september|sept|sep))`;
 	export const MonthSuffixRegex = `(?<msuf>((in|of|on)\\s+)?(${RelativeMonthRegex}|${WrittenMonthRegex}))`;
-	export const DateUnitRegex = `(?<unit>decades?|years?|months?|weeks?|(?<business>business\\s+)?days?)\\b`;
+	export const DateUnitRegex = `(?<unit>decades?|years?|months?|weeks?|(?<business>business\\s+)?days?|fortnights?)\\b`;
 	export const DateTokenPrefix = 'on ';
 	export const TimeTokenPrefix = 'at ';
 	export const TokenBeforeDate = 'on ';
@@ -145,7 +145,7 @@ export namespace EnglishDateTime {
 	export const ConnectNumRegex = `\\b${BaseDateTime.HourRegex}(?<min>00|01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31|32|33|34|35|36|37|38|39|40|41|42|43|44|45|46|47|48|49|50|51|52|53|54|55|56|57|58|59)\\s*${DescRegex}`;
 	export const TimeRegexWithDotConnector = `(${BaseDateTime.HourRegex}(\\s*\\.\\s*)${BaseDateTime.MinuteRegex})`;
 	export const TimeRegex1 = `\\b(${TimePrefix}\\s+)?(${WrittenTimeRegex}|${HourNumRegex}|${BaseDateTime.HourRegex})\\s*${DescRegex}`;
-	export const TimeRegex2 = `(\\b${TimePrefix}\\s+)?(t)?${BaseDateTime.HourRegex}(\\s*)?:(\\s*)?${BaseDateTime.MinuteRegex}((\\s*)?:(\\s*)?${BaseDateTime.SecondRegex})?((\\s*${DescRegex})|\\b)`;
+	export const TimeRegex2 = `(\\b${TimePrefix}\\s+)?(t)?${BaseDateTime.HourRegex}(\\s*)?:(\\s*)?${BaseDateTime.MinuteRegex}((\\s*)?:(\\s*)?${BaseDateTime.SecondRegex})?(?<iam>a)?((\\s*${DescRegex})|\\b)`;
 	export const TimeRegex3 = `(\\b${TimePrefix}\\s+)?${BaseDateTime.HourRegex}\\.${BaseDateTime.MinuteRegex}(\\s*${DescRegex})`;
 	export const TimeRegex4 = `\\b${TimePrefix}\\s+${BasicTime}(\\s*${DescRegex})?\\s+${TimeSuffix}\\b`;
 	export const TimeRegex5 = `\\b${TimePrefix}\\s+${BasicTime}((\\s*${DescRegex})|\\b)`;
@@ -252,8 +252,8 @@ export namespace EnglishDateTime {
 	export const DateAfterRegex = `\\b((or|and)\\s+(above|after|later|greater)(?!\\s+than))\\b`;
 	export const YearPeriodRegex = `((((from|during|in)\\s+)?${YearRegex}\\s*(${TillRegex})\\s*${YearRegex})|(((between)\\s+)${YearRegex}\\s*(${RangeConnectorRegex})\\s*${YearRegex}))`;
 	export const ComplexDatePeriodRegex = `(((from|during|in)\\s+)?(?<start>.+)\\s*(${TillRegex})\\s*(?<end>.+)|((between)\\s+)(?<start>.+)\\s*(${RangeConnectorRegex})\\s*(?<end>.+))`;
-	export const UnitMap: ReadonlyMap<string, string> = new Map<string, string>([["decades", "10Y"],["decade", "10Y"],["years", "Y"],["year", "Y"],["months", "MON"],["month", "MON"],["weeks", "W"],["week", "W"],["days", "D"],["day", "D"],["hours", "H"],["hour", "H"],["hrs", "H"],["hr", "H"],["h", "H"],["minutes", "M"],["minute", "M"],["mins", "M"],["min", "M"],["seconds", "S"],["second", "S"],["secs", "S"],["sec", "S"]]);
-	export const UnitValueMap: ReadonlyMap<string, number> = new Map<string, number>([["decades", 315360000],["decade", 315360000],["years", 31536000],["year", 31536000],["months", 2592000],["month", 2592000],["weeks", 604800],["week", 604800],["days", 86400],["day", 86400],["hours", 3600],["hour", 3600],["hrs", 3600],["hr", 3600],["h", 3600],["minutes", 60],["minute", 60],["mins", 60],["min", 60],["seconds", 1],["second", 1],["secs", 1],["sec", 1]]);
+	export const UnitMap: ReadonlyMap<string, string> = new Map<string, string>([["decades", "10Y"],["decade", "10Y"],["years", "Y"],["year", "Y"],["months", "MON"],["month", "MON"],["fortnights", "2W"],["fortnight", "2W"],["weeks", "W"],["week", "W"],["days", "D"],["day", "D"],["hours", "H"],["hour", "H"],["hrs", "H"],["hr", "H"],["h", "H"],["minutes", "M"],["minute", "M"],["mins", "M"],["min", "M"],["seconds", "S"],["second", "S"],["secs", "S"],["sec", "S"]]);
+	export const UnitValueMap: ReadonlyMap<string, number> = new Map<string, number>([["decades", 315360000],["decade", 315360000],["years", 31536000],["year", 31536000],["months", 2592000],["month", 2592000],["fortnights", 1209600],["fortnight", 1209600],["weeks", 604800],["week", 604800],["days", 86400],["day", 86400],["hours", 3600],["hour", 3600],["hrs", 3600],["hr", 3600],["h", 3600],["minutes", 60],["minute", 60],["mins", 60],["min", 60],["seconds", 1],["second", 1],["secs", 1],["sec", 1]]);
 	export const SeasonMap: ReadonlyMap<string, string> = new Map<string, string>([["spring", "SP"],["summer", "SU"],["fall", "FA"],["autumn", "FA"],["winter", "WI"]]);
 	export const SeasonValueMap: ReadonlyMap<string, number> = new Map<string, number>([["SP", 3],["SU", 6],["FA", 9],["WI", 12]]);
 	export const CardinalMap: ReadonlyMap<string, number> = new Map<string, number>([["first", 1],["1st", 1],["second", 2],["2nd", 2],["third", 3],["3rd", 3],["fourth", 4],["4th", 4],["fifth", 5],["5th", 5]]);
