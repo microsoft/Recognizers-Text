@@ -1,0 +1,9 @@
+---
+LangMarker: Swe
+#Boolean Recognizers
+TokenizerRegex: !simpleRegex
+  def: '[^\w\d\u00E0-\u00FC]'
+TrueRegex: !simpleRegex
+  def: \b(sant|ja|yes|y|j|ok|japp|jupp|jepp|absolut|säkert|instämmer|javisst|kör)\b|(\uD83D\uDC4D|\uD83D\uDC4C)
+FalseRegex: !simpleRegex
+  def: \b(falskt|nej|näpp|nope|misstycker|aldrig|n|nä|absolut\s+inte|glöm det|instämmer\s+inte|vill\s+inte|avstår)\b|(\uD83D\uDC4E|\u270B|\uD83D\uDD90)

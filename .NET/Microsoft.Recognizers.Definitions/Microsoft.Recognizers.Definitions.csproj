@@ -79,6 +79,7 @@
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Spanish\DateTimeDefinitions.cs" Link="Spanish\DateTimeDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Spanish\NumbersDefinitions.cs" Link="Spanish\NumbersDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Spanish\NumbersWithUnitDefinitions.cs" Link="Spanish\NumbersWithUnitDefinitions.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Swedish\ChoiceDefinitions.cs" Link="Swedish\ChoiceDefinitions.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -92,6 +93,7 @@
     <Folder Include="Korean\" />
     <Folder Include="Spanish\" />
     <Folder Include="Portuguese\" />
+    <Folder Include="Swedish\" />
   </ItemGroup>
   
   <ItemGroup>

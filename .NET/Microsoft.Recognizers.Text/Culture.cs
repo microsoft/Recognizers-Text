@@ -15,6 +15,7 @@ namespace Microsoft.Recognizers.Text
         public const string Japanese = "ja-jp";
         public const string Dutch = "nl-nl";
         public const string Korean = "ko-kr";
+        public const string Swedish = "sv-se";
 
         public static readonly Culture[] SupportedCultures =
         {
@@ -29,6 +30,7 @@ namespace Microsoft.Recognizers.Text
             new Culture("Japanese", Japanese),
             new Culture("Dutch", Dutch),
             new Culture("Korean", Korean),
+            new Culture("Swedish", Swedish),
         };
 
         private static readonly string[] SupportedCultureCodes = SupportedCultures.Select(c => c.CultureCode).ToArray();
