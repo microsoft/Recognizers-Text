@@ -10,7 +10,7 @@ RelativeRegex: !simpleRegex
 StrictRelativeRegex: !simpleRegex
   def: \b(?<order>following|next|coming|upcoming|this|last|past|previous|current)\b
 UpcomingPrefixRegex: !simpleRegex
-  def: ((this )?(upcoming|coming))
+  def: ((this\s+)?(upcoming|coming))
 NextPrefixRegex: !nestedRegex
   def: \b(following|next|{UpcomingPrefixRegex})\b
   references: [ UpcomingPrefixRegex ]
@@ -19,7 +19,7 @@ NextPrefixRegex: !nestedRegex
 AfterNextSuffixRegex: !simpleRegex
   def: \b(after\s+(the\s+)?next)\b
 PastPrefixRegex: !simpleRegex
-  def: ((this )?past)\b
+  def: ((this\s+)?past)\b
 PreviousPrefixRegex: !nestedRegex
   def: (last|previous|{PastPrefixRegex})\b
   references: [ PastPrefixRegex ]
@@ -68,7 +68,7 @@ FullTextYearRegex: !nestedRegex
 OclockRegex: !simpleRegex
   def: (?<oclock>o\s*’\s*clock|o\s*‘\s*clock|o\s*'\s*clock|o\s*clock)
 SpecialDescRegex: !simpleRegex
-  def: (p\b)
+  def: ((?<ipm>)p\b)
 AmDescRegex: !nestedRegex
   def: ({BaseDateTime.BaseAmDescRegex})
   references: [BaseDateTime.BaseAmDescRegex]
@@ -101,7 +101,7 @@ MonthSuffixRegex: !nestedRegex
   def: (?<msuf>((in|of|on)\s+)?({RelativeMonthRegex}|{WrittenMonthRegex}))
   references: [ RelativeMonthRegex, WrittenMonthRegex ]
 DateUnitRegex: !simpleRegex
-  def: (?<unit>decades?|years?|months?|weeks?|(?<business>business\s+)?days?)\b
+  def: (?<unit>decades?|years?|months?|weeks?|(?<business>business\s+)?days?|fortnights?)\b
 DateTokenPrefix: 'on '
 TimeTokenPrefix: 'at '
 TokenBeforeDate: 'on '
@@ -359,7 +359,7 @@ TimeRegex1: !nestedRegex
   def: \b({TimePrefix}\s+)?({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})\s*{DescRegex}
   references: [ TimePrefix, WrittenTimeRegex, HourNumRegex, BaseDateTime.HourRegex, DescRegex ]
 TimeRegex2: !nestedRegex
-  def: (\b{TimePrefix}\s+)?(t)?{BaseDateTime.HourRegex}(\s*)?:(\s*)?{BaseDateTime.MinuteRegex}((\s*)?:(\s*)?{BaseDateTime.SecondRegex})?((\s*{DescRegex})|\b)
+  def: (\b{TimePrefix}\s+)?(t)?{BaseDateTime.HourRegex}(\s*)?:(\s*)?{BaseDateTime.MinuteRegex}((\s*)?:(\s*)?{BaseDateTime.SecondRegex})?(?<iam>a)?((\s*{DescRegex})|\b)
   references: [ TimePrefix, BaseDateTime.HourRegex, BaseDateTime.MinuteRegex, BaseDateTime.SecondRegex, DescRegex ]
 TimeRegex3: !nestedRegex
   def: (\b{TimePrefix}\s+)?{BaseDateTime.HourRegex}\.{BaseDateTime.MinuteRegex}(\s*{DescRegex})
@@ -637,6 +637,8 @@ UnitMap: !dictionary
     year: Y
     months: MON
     month: MON
+    fortnights: 2W
+    fortnight: 2W
     weeks: W
     week: W
     days: D
@@ -663,6 +665,8 @@ UnitValueMap: !dictionary
     year: 31536000
     months: 2592000
     month: 2592000
+    fortnights: 1209600
+    fortnight: 1209600
     weeks: 604800
     week: 604800
     days: 86400

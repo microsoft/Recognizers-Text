@@ -885,6 +885,17 @@
     ]
   },
   {
+    "Input": "I'll be back at 9:00a.",
+    "Results": [
+      {
+        "Text": "9:00a",
+        "Type": "time",
+        "Start": 16,
+        "Length": 5
+      }
+    ]
+  },
+  {
     "Input": "This item priced at 1.6714.",
     "Comment": "1 shouldn't recognized as time here",
     "Results": []

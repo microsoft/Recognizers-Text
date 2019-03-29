@@ -674,5 +674,17 @@
         "Length": 11
       }
     ]
+  },
+  {
+    "Input": "I'll leave for a fortnight.",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "a fortnight",
+        "Type": "duration",
+        "Start": 15,
+        "Length": 11
+      }
+    ]
   }
 ]

@@ -25,10 +25,10 @@ namespace Microsoft.Recognizers.Definitions.English
 		public static readonly string RangeConnectorRegex = $@"(?<and>\b(and|through|to)\b|{BaseDateTime.RangeConnectorSymbolRegex})";
 		public const string RelativeRegex = @"\b(?<order>following|next|coming|upcoming|this|last|past|previous|current|the)\b";
 		public const string StrictRelativeRegex = @"\b(?<order>following|next|coming|upcoming|this|last|past|previous|current)\b";
-		public const string UpcomingPrefixRegex = @"((this )?(upcoming|coming))";
+		public const string UpcomingPrefixRegex = @"((this\s+)?(upcoming|coming))";
 		public static readonly string NextPrefixRegex = $@"\b(following|next|{UpcomingPrefixRegex})\b";
 		public const string AfterNextSuffixRegex = @"\b(after\s+(the\s+)?next)\b";
-		public const string PastPrefixRegex = @"((this )?past)\b";
+		public const string PastPrefixRegex = @"((this\s+)?past)\b";
 		public static readonly string PreviousPrefixRegex = $@"(last|previous|{PastPrefixRegex})\b";
 		public const string ThisPrefixRegex = @"(this|current)\b";
 		public const string RangePrefixRegex = @"(from|between)";
@@ -48,7 +48,7 @@ namespace Microsoft.Recognizers.Definitions.English
 		public static readonly string LastTwoYearNumRegex = $@"(zero\s+{WrittenOneToNineRegex}|{WrittenElevenToNineteenRegex}|{WrittenTensRegex}(\s+{WrittenOneToNineRegex})?)";
 		public static readonly string FullTextYearRegex = $@"\b((?<firsttwoyearnum>{CenturyRegex})\s+(?<lasttwoyearnum>{LastTwoYearNumRegex})\b|\b(?<firsttwoyearnum>{WrittenCenturyFullYearRegex}|{WrittenCenturyOrdinalYearRegex}\s+hundred(\s+and)?))\b";
 		public const string OclockRegex = @"(?<oclock>o\s*’\s*clock|o\s*‘\s*clock|o\s*'\s*clock|o\s*clock)";
-		public const string SpecialDescRegex = @"(p\b)";
+		public const string SpecialDescRegex = @"((?<ipm>)p\b)";
 		public static readonly string AmDescRegex = $@"({BaseDateTime.BaseAmDescRegex})";
 		public static readonly string PmDescRegex = $@"({BaseDateTime.BasePmDescRegex})";
 		public static readonly string AmPmDescRegex = $@"({BaseDateTime.BaseAmPmDescRegex})";
@@ -60,7 +60,7 @@ namespace Microsoft.Recognizers.Definitions.English
 		public static readonly string RelativeMonthRegex = $@"(?<relmonth>(of\s+)?{RelativeRegex}\s+month)\b";
 		public const string WrittenMonthRegex = @"(((the\s+)?month of\s+)?(?<month>april|apr|august|aug|december|dec|february|feb|january|jan|july|jul|june|jun|march|mar|may|november|nov|october|oct|september|sept|sep))";
 		public static readonly string MonthSuffixRegex = $@"(?<msuf>((in|of|on)\s+)?({RelativeMonthRegex}|{WrittenMonthRegex}))";
-		public const string DateUnitRegex = @"(?<unit>decades?|years?|months?|weeks?|(?<business>business\s+)?days?)\b";
+		public const string DateUnitRegex = @"(?<unit>decades?|years?|months?|weeks?|(?<business>business\s+)?days?|fortnights?)\b";
 		public const string DateTokenPrefix = @"on ";
 		public const string TimeTokenPrefix = @"at ";
 		public const string TokenBeforeDate = @"on ";
@@ -158,7 +158,7 @@ namespace Microsoft.Recognizers.Definitions.English
 		public static readonly string ConnectNumRegex = $@"\b{BaseDateTime.HourRegex}(?<min>00|01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31|32|33|34|35|36|37|38|39|40|41|42|43|44|45|46|47|48|49|50|51|52|53|54|55|56|57|58|59)\s*{DescRegex}";
 		public static readonly string TimeRegexWithDotConnector = $@"({BaseDateTime.HourRegex}(\s*\.\s*){BaseDateTime.MinuteRegex})";
 		public static readonly string TimeRegex1 = $@"\b({TimePrefix}\s+)?({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})\s*{DescRegex}";
-		public static readonly string TimeRegex2 = $@"(\b{TimePrefix}\s+)?(t)?{BaseDateTime.HourRegex}(\s*)?:(\s*)?{BaseDateTime.MinuteRegex}((\s*)?:(\s*)?{BaseDateTime.SecondRegex})?((\s*{DescRegex})|\b)";
+		public static readonly string TimeRegex2 = $@"(\b{TimePrefix}\s+)?(t)?{BaseDateTime.HourRegex}(\s*)?:(\s*)?{BaseDateTime.MinuteRegex}((\s*)?:(\s*)?{BaseDateTime.SecondRegex})?(?<iam>a)?((\s*{DescRegex})|\b)";
 		public static readonly string TimeRegex3 = $@"(\b{TimePrefix}\s+)?{BaseDateTime.HourRegex}\.{BaseDateTime.MinuteRegex}(\s*{DescRegex})";
 		public static readonly string TimeRegex4 = $@"\b{TimePrefix}\s+{BasicTime}(\s*{DescRegex})?\s+{TimeSuffix}\b";
 		public static readonly string TimeRegex5 = $@"\b{TimePrefix}\s+{BasicTime}((\s*{DescRegex})|\b)";
@@ -273,6 +273,8 @@ namespace Microsoft.Recognizers.Definitions.English
 			{ @"year", @"Y" },
 			{ @"months", @"MON" },
 			{ @"month", @"MON" },
+			{ @"fortnights", @"2W" },
+			{ @"fortnight", @"2W" },
 			{ @"weeks", @"W" },
 			{ @"week", @"W" },
 			{ @"days", @"D" },
@@ -299,6 +301,8 @@ namespace Microsoft.Recognizers.Definitions.English
 			{ @"year", 31536000 },
 			{ @"months", 2592000 },
 			{ @"month", 2592000 },
+			{ @"fortnights", 1209600 },
+			{ @"fortnight", 1209600 },
 			{ @"weeks", 604800 },
 			{ @"week", 604800 },
 			{ @"days", 86400 },

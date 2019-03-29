@@ -86,7 +86,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public static readonly Regex[] TimeRegexList =
         {
-            // (three min past)? seven|7|(senven thirty) pm
+            // (three min past)? seven|7|(seven thirty) pm
             new Regex(DateTimeDefinitions.TimeRegex1, RegexOptions.Singleline),
 
             // (three min past)? 3:00(:00)? (pm)?

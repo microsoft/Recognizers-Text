@@ -50,6 +50,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
         {
             TestNumber(testSpec);
         }
+        */
 
         [NetCoreTestDataSource]
         [TestMethod]

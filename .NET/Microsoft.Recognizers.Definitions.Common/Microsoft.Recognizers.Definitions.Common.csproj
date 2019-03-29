@@ -278,6 +278,11 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
+    <Compile Update="Swedish\ChoiceDefinitions.cs">
+      <DependentUpon>ChoiceDefinitions.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -378,6 +383,8 @@
     <None Update="Spanish\NumbersDefinitions.tt">
     </None>
     <None Update="Spanish\NumbersWithUnitDefinitions.tt">
+    </None>
+    <None Update="Swedish\ChoiceDefinitions.tt">
     </None>
   </ItemGroup>
 

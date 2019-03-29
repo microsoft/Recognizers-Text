@@ -145,7 +145,9 @@ public class TimexUtility {
             if (Constants.DECADE_UNIT.equals(unitStr)) {
                 number = number * 10;
                 unitStr = Constants.TimexYear;
-
+            } else if (Constants.FORTNIGHT_UNIT.equals(unitStr)) {
+                number = number * 2;
+                unitStr = Constants.TimexWeek;
             } else {
                 unitStr = unitStr.substring(0, 1);
             }

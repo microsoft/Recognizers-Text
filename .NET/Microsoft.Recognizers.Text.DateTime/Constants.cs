@@ -125,6 +125,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string RightAmPmGroupName = "rightDesc";
 
         public const string DECADE_UNIT = "10Y";
+        public const string FORTNIGHT_UNIT = "2W";
 
         // Timex
         public const string TimexYear = "Y";
