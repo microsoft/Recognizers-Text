@@ -662,9 +662,9 @@ public class BaseDatePeriodParser implements IDateTimeParser {
                 swift = this.config.getSwiftDayOrMonth(trimmedText);
 
                 if (this.config.isWeekOnly(trimmedText)) {
-                    LocalDateTime monday = DateUtil.thisDate(referenceDate, DayOfWeek.MONDAY.getValue()).plusDays(Constants.WeekDayCount * swift);
+                    LocalDateTime thursday = DateUtil.thisDate(referenceDate, DayOfWeek.THURSDAY.getValue()).plusDays(Constants.WeekDayCount * swift);
 
-                    ret.setTimex(isRef ? TimexUtility.generateWeekTimex() : TimexUtility.generateWeekTimex(monday));
+                    ret.setTimex(isRef ? TimexUtility.generateWeekTimex() : TimexUtility.generateWeekTimex(thursday));
 
                     LocalDateTime beginDate = DateUtil.thisDate(referenceDate, DayOfWeek.MONDAY.getValue()).plusDays(Constants.WeekDayCount * swift);
 
