@@ -5522,13 +5522,13 @@
     ]
   },
   {
-    "Input": "This week belongs to 19.",
+    "Input": "The U.S. government is still in suspension this week.",
     "Context": {
       "ReferenceDateTime": "2019-01-01T00:00:00"
     },
     "Results": [
       {
-        "Text": "This week",
+        "Text": "this week",
         "Type": "daterange",
         "Value": {
           "Timex": "2019-W01",
@@ -5541,19 +5541,19 @@
             "endDate": "2019-01-07"
           }
         },
-        "Start": 0,
+        "Start": 43,
         "Length": 9
       }
     ]
   },
   {
-    "Input": "This week belongs to 16.",
+    "Input": "Mr Werner unveiled his new strategy this week.",
     "Context": {
       "ReferenceDateTime": "2017-01-01T00:00:00"
     },
     "Results": [
       {
-        "Text": "This week",
+        "Text": "this week",
         "Type": "daterange",
         "Value": {
           "Timex": "2016-W52",
@@ -5566,19 +5566,19 @@
             "endDate": "2017-01-02"
           }
         },
-        "Start": 0,
+        "Start": 36,
         "Length": 9
       }
     ]
   },
   {
-    "Input": "Week belongs to 15.",
+    "Input": "There is no big news this week.",
     "Context": {
       "ReferenceDateTime": "2016-01-01T00:00:00"
     },
     "Results": [
       {
-        "Text": "Week",
+        "Text": "this week",
         "Type": "daterange",
         "Value": {
           "Timex": "2015-W53",
@@ -5591,19 +5591,19 @@
             "endDate": "2016-01-04"
           }
         },
-        "Start": 0,
-        "Length": 4
+        "Start": 21,
+        "Length": 9
       }
     ]
   },
   {
-    "Input": "This week belongs to 26",
+    "Input": "week",
     "Context": {
       "ReferenceDateTime": "2026-01-01T00:00:00"
     },
     "Results": [
       {
-        "Text": "This week",
+        "Text": "week",
         "Type": "daterange",
         "Value": {
           "Timex": "2026-W01",
@@ -5617,7 +5617,7 @@
           }
         },
         "Start": 0,
-        "Length": 9
+        "Length": 4
       }
     ]
   }
