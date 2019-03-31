@@ -735,7 +735,7 @@
     ]
   },
   {
-    "Input": "this week",
+    "Input": "The union suspended strike action this week.",
     "Context": {
       "ReferenceDateTime": "2026-01-01T00:00:00"
     },
@@ -754,7 +754,7 @@
             "endDate": "2026-01-05"
           }
         },
-        "Start": 0,
+        "Start": 34,
         "Length": 9
       }
     ]
