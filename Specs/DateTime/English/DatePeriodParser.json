@@ -737,21 +737,21 @@
   {
     "Input": "this week",
     "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
+      "ReferenceDateTime": "2026-01-01T00:00:00"
     },
     "Results": [
       {
         "Text": "this week",
         "Type": "daterange",
         "Value": {
-          "Timex": "2016-W45",
+          "Timex": "2026-W01",
           "FutureResolution": {
-            "startDate": "2016-11-07",
-            "endDate": "2016-11-14"
+            "startDate": "2025-12-29",
+            "endDate": "2026-01-05"
           },
           "PastResolution": {
-            "startDate": "2016-11-07",
-            "endDate": "2016-11-14"
+            "startDate": "2025-12-29",
+            "endDate": "2026-01-05"
           }
         },
         "Start": 0,
@@ -5593,31 +5593,6 @@
         },
         "Start": 21,
         "Length": 9
-      }
-    ]
-  },
-  {
-    "Input": "week",
-    "Context": {
-      "ReferenceDateTime": "2026-01-01T00:00:00"
-    },
-    "Results": [
-      {
-        "Text": "week",
-        "Type": "daterange",
-        "Value": {
-          "Timex": "2026-W01",
-          "FutureResolution": {
-            "startDate": "2025-12-29",
-            "endDate": "2026-01-05"
-          },
-          "PastResolution": {
-            "startDate": "2025-12-29",
-            "endDate": "2026-01-05"
-          }
-        },
-        "Start": 0,
-        "Length": 4
       }
     ]
   }

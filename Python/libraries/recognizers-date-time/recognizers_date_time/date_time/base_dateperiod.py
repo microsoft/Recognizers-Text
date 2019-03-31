@@ -807,7 +807,7 @@ class BaseDatePeriodParser(DateTimeParser):
 
             if self.config.is_week_only(trimmed_source):
                 thursday = DateUtils.this(reference, DayOfWeek.Thursday) + datedelta(days=7 * swift)
-                result.timex = f'{thursday.year:04d}-W{thursday.isocalendar()[1]:02d}'
+                result.timex = f'{thursday.year:04d}-W{DateUtils.week_of_year(thursday):02d}'
                 begin_date = DateUtils.this(reference, DayOfWeek.Monday) + datedelta(days=7 * swift)
                 end_date = DateUtils.this(reference, DayOfWeek.Sunday) + datedelta(days=7 * swift)
                 
