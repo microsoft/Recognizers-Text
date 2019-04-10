@@ -101,6 +101,9 @@ RangeUnitRegex: !simpleRegex
   def: \b(?<unit>anos|ano|meses|m[êe]s|semanas|semana)\b
 InConnectorRegex: !simpleRegex
   def: \b(em)\b
+SinceYearSuffixRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 WithinNextPrefixRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]

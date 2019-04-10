@@ -119,6 +119,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string SecondGroupName = "sec";
         public const string MinuteGroupName = "min";
         public const string HourGroupName = "hour";
+        public const string YearGroupName = "year";
         public const string TimeOfDayGroupName = "timeOfDay";
         public const string BusinessDayGroupName = "business";
         public const string LeftAmPmGroupName = "leftDesc";

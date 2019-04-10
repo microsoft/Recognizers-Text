@@ -496,8 +496,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                             if (tmp >= day)
                             {
                                 // For months like January 31, after add 1 month, February 31 won't be returned, so the day should be revised ASAP.
-                                futureDate =
-                                    DateObjectExtension.SafeCreateFromValue(futureDate, futureDate.Year, futureDate.Month, day);
+                                futureDate = futureDate.SafeCreateFromValue(futureDate.Year, futureDate.Month, day);
                             }
                         }
 
@@ -512,8 +511,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                             if (tmp >= day)
                             {
                                 // For months like March 31, after minus 1 month, February 31 won't be returned, so the day should be revised ASAP.
-                                pastDate =
-                                    DateObjectExtension.SafeCreateFromValue(pastDate, pastDate.Year, pastDate.Month, day);
+                                pastDate = pastDate.SafeCreateFromValue(pastDate.Year, pastDate.Month, day);
                             }
                         }
 
@@ -696,6 +694,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 referenceDate,
                 config.DurationExtractor,
                 config.DurationParser,
+                config.NumberParser,
                 config.UnitMap,
                 config.UnitRegex,
                 config.UtilityConfiguration,

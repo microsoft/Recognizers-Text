@@ -10457,5 +10457,78 @@
         }
       }
     ] 
+  },
+  {
+    "Input": "The event happened in two years since 2011.",
+    "Context": {
+      "ReferenceDateTime": "2019-03-10T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "in two years since 2011",
+        "Start": 19,
+        "End": 41,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2013-01-01",
+              "type": "date",
+              "value": "2013-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The event happened in two weeks since the year 2011.",
+    "Context": {
+      "ReferenceDateTime": "2019-03-10T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "in two weeks since the year 2011",
+        "Start": 19,
+        "End": 50,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2011-01-15",
+              "type": "date",
+              "value": "2011-01-15"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll stay in China before the year 2019.",
+    "Context": {
+      "ReferenceDateTime": "2019-03-10T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "before the year 2019",
+        "Start": 19,
+        "End": 38,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019",
+              "Mod": "before",
+              "type": "daterange",
+              "end": "2019-01-01"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

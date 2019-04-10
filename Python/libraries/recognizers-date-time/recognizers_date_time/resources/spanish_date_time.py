@@ -60,6 +60,7 @@ class SpanishDateTime:
     MonthOfRegex = f'(mes)(\\s+)({OfPrepositionRegex})'
     RangeUnitRegex = f'\\b(?<unit>años|año|meses|mes|semanas|semana)\\b'
     InConnectorRegex = f'\\b(in)\\b'
+    SinceYearSuffixRegex = f'^[.]'
     WithinNextPrefixRegex = f'\\b(dentro\\s+de)\\b'
     FromRegex = f'((desde|de)(\\s*la(s)?)?)$'
     ConnectorAndRegex = f'(y\\s*(la(s)?)?)$'
