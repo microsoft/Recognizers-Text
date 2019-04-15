@@ -205,7 +205,7 @@ export namespace FrenchDateTime {
 	export const FlexibleDayRegex = `(?<DayOfMonth>([A-Za-z]+\\s)?[A-Za-z\\d]+)`;
 	export const ForTheRegex = `\\b(((pour le ${FlexibleDayRegex})|(dans (le\\s+)?${FlexibleDayRegex}(?<=(st|nd|rd|th))))(?<end>\\s*(,|\\.|!|\\?|$)))`;
 	export const WeekDayAndDayOfMonthRegex = `\\b${WeekDayRegex}\\s+(le\\s+${FlexibleDayRegex})\\b`;
-	export const WeekDayAndDayRegex = `\\b${WeekDayRegex}\\s+(?!(the))${DayRegex}(?!([-]|(\\s+(${AmDescRegex}|${PmDescRegex}))))\\b`;
+	export const WeekDayAndDayRegex = `\\b${WeekDayRegex}\\s+(?!(the))${DayRegex}(?!([-]|(\\s+(${AmDescRegex}|${PmDescRegex}|${OclockRegex}))))\\b`;
 	export const RestOfDateRegex = `\\b(reste|fin)\\s+(d[eu]\\s+)?((le|cette|ce)\\s+)?(?<duration>semaine|mois|l'ann[ée]e)\\b`;
 	export const RestOfDateTimeRegex = `\\b(reste|fin)\\s+(d[eu]\\s+)?((le|cette|ce)\\s+)?(?<unit>jour)\\b`;
 	export const LaterEarlyPeriodRegex = `^[.]`;
