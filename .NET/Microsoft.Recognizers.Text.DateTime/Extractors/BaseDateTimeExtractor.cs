@@ -144,6 +144,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                     {
                         var begin = ers[i].Start ?? 0;
                         var end = (ers[j].Start ?? 0) + (ers[j].Length ?? 0);
+
+                        ExtendWithDateTimeAndYear(ref begin, ref end, text, reference);
+
                         ret.Add(new Token(begin, end));
                         i = j + 1;
                         continue;
@@ -325,6 +328,24 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             return ret;
+        }
+
+        // Handle case like "Wed Oct 26 15:50:06 2016" which year and month separated by time.
+        private void ExtendWithDateTimeAndYear(ref int startIndex, ref int endIndex, string text, DateObject reference)
+        {
+
+            // Check whether there's a year behind.
+            var suffix = text.Substring(endIndex);
+            var matchYear = this.config.YearSuffix.Match(suffix);
+            if (matchYear.Success && matchYear.Index == 0)
+            {
+                var checkYear = config.DatePointExtractor.GetYearFromText(this.config.YearRegex.Match(text));
+                var year = config.DatePointExtractor.GetYearFromText(matchYear);
+                if (year >= Constants.MinYearNum && year <= Constants.MaxYearNum && checkYear == year)
+                {
+                    endIndex += matchYear.Length;
+                }
+            }
         }
     }
 }

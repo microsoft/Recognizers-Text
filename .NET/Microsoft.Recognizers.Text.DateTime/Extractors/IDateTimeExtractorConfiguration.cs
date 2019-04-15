@@ -29,6 +29,10 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex DateNumberConnectorRegex { get; }
 
+        Regex YearRegex { get; }
+
+        Regex YearSuffix { get; }
+
         IDateTimeExtractor DurationExtractor { get; }
 
         IDateExtractor DatePointExtractor { get; }

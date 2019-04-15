@@ -33,6 +33,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
             UnspecificEndOfRegex = DutchDateTimeExtractorConfiguration.UnspecificEndOfRegex;
             UnitRegex = DutchTimeExtractorConfiguration.TimeUnitRegex;
             DateNumberConnectorRegex = DutchDateTimeExtractorConfiguration.DateNumberConnectorRegex;
+            YearRegex = DutchDateTimeExtractorConfiguration.YearRegex;
 
             Numbers = config.Numbers;
             CardinalExtractor = config.CardinalExtractor;
@@ -91,6 +92,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         public Regex PrepositionRegex { get; }
 
         public Regex ConnectorRegex { get; }
+
+        public Regex YearRegex { get; }
 
         public IImmutableDictionary<string, int> Numbers { get; }
 
