@@ -10457,5 +10457,43 @@
         }
       }
     ] 
+  },
+  {
+    "Input": "wednesday 4 oclock.",
+    "Context": {
+      "ReferenceDateTime": "2019-04-15T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "wednesday 4 oclock",
+        "Start": 0,
+        "End": 17,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-3T04",
+              "type": "datetime",
+              "value": "2019-04-10 04:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-3T04",
+              "type": "datetime",
+              "value": "2019-04-17 04:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-3T16",
+              "type": "datetime",
+              "value": "2019-04-10 16:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-3T16",
+              "type": "datetime",
+              "value": "2019-04-17 16:00:00"
+            }
+          ]
+        }
+      }
+    ] 
   }
 ]
