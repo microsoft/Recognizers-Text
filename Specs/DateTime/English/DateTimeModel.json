@@ -10459,7 +10459,7 @@
     ] 
   },
   {
-    "Input": "wednesday 4 oclock.",
+    "Input": "I'll be there on wednesday 4 oclock.",
     "Context": {
       "ReferenceDateTime": "2019-04-15T00:00:00"
     },
@@ -10467,8 +10467,8 @@
     "Results": [
       {
         "Text": "wednesday 4 oclock",
-        "Start": 0,
-        "End": 17,
+        "Start": 17,
+        "End": 34,
         "TypeName": "datetimeV2.datetime",
         "Resolution": {
           "values": [
