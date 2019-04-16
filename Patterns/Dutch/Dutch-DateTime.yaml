@@ -520,6 +520,9 @@ LaterRegex: !simpleRegex
   def: \b(later|vanaf nu|(van|na) (?<day>morgen|vandaag))\b
 InConnectorRegex: !simpleRegex
   def: \b(in|over)\b
+SinceYearSuffixRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 WithinNextPrefixRegex: !nestedRegex
   def: \b(in(\s+de)?(\s+(?<next>{NextPrefixRegex}))?)\b
   references: [ NextPrefixRegex ]

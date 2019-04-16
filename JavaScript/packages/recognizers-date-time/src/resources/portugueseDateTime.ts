@@ -47,6 +47,7 @@ export namespace PortugueseDateTime {
 	export const MonthOfRegex = `(mes)(\\s*)((do|da|de))`;
 	export const RangeUnitRegex = `\\b(?<unit>anos|ano|meses|m[êe]s|semanas|semana)\\b`;
 	export const InConnectorRegex = `\\b(em)\\b`;
+	export const SinceYearSuffixRegex = `^[.]`;
 	export const WithinNextPrefixRegex = `^[.]`;
 	export const CenturySuffixRegex = `^[.]`;
 	export const RelativeRegex = `^[.]`;

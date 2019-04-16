@@ -38,14 +38,12 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public static bool ContainsAgoLaterIndex(string text, Regex regex)
         {
-            int index = -1;
-            return GetAgoLaterIndex(text, regex, out index);
+            return GetAgoLaterIndex(text, regex, out var index);
         }
 
         public static bool ContainsTermIndex(string text, Regex regex)
         {
-            int index = -1;
-            return GetTermIndex(text, regex, out index);
+            return GetTermIndex(text, regex, out var index);
         }
 
         // Temporary solution for remove superfluous words only under the Preview mode

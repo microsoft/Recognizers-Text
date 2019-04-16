@@ -441,6 +441,9 @@ LaterRegex: !simpleRegex
   def: \b(später|von jetzt|(ab|nach) (?<day>morgen|heute))\b
 InConnectorRegex: !simpleRegex
   def: \b(in)\b
+SinceYearSuffixRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 WithinNextPrefixRegex: !nestedRegex
   def: \b(innerhalb|während(\s+der|de(s|m))?(\s+(?<next>{NextPrefixRegex}))?)\b
   references: [ NextPrefixRegex ]

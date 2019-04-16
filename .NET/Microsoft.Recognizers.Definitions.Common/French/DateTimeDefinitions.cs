@@ -192,6 +192,7 @@ namespace Microsoft.Recognizers.Definitions.French
 		public const string LaterRegex = @"\b(plus tard)\b";
 		public const string AgoRegex = @"^[.]";
 		public const string InConnectorRegex = @"\b(dans|en|sur)\b";
+		public const string SinceYearSuffixRegex = @"^[.]";
 		public const string WithinNextPrefixRegex = @"^[.]";
 		public const string MorningStartEndRegex = @"(^(matin))|((matin)$)";
 		public const string AfternoonStartEndRegex = @"(^((d'|l')?apr[eè]s-midi))|(((d'|l')?apr[eè]s-midi)$)";
