@@ -5,6 +5,8 @@ RoundNumberIntegerRegex: !simpleRegex
   def: (hundred|thousand|million|billion|trillion)
 ZeroToNineIntegerRegex: !simpleRegex
   def: (three|seven|eight|four|five|zero|nine|one|two|six)
+TwoToNineIntegerRegex: !simpleRegex
+  def: (three|seven|eight|four|five|nine|two|six)
 NegativeNumberTermsRegex: !simpleRegex
   def: ((minus|negative)\s+)
 NegativeNumberSignRegex: !nestedRegex
@@ -51,8 +53,8 @@ NumberOrdinalRegex: !simpleRegex
 RelativeOrdinalRegex: !simpleRegex
   def: ((next|previous) one|(the second|next) to last|the one before the last( one)?|the last but one|(ante)?penultimate|last|next)
 BasicOrdinalRegex: !nestedRegex
-  def: ({NumberOrdinalRegex}|{RelativeOrdinalRegex})
-  references: [ NumberOrdinalRegex, RelativeOrdinalRegex ]
+  def: (({NumberOrdinalRegex}|{RelativeOrdinalRegex})(?!\s*{TwoToNineIntegerRegex}\b))
+  references: [ NumberOrdinalRegex, RelativeOrdinalRegex, TwoToNineIntegerRegex ]
 SuffixBasicOrdinalRegex: !nestedRegex
   def: ((((({TensNumberIntegerRegex}(\s+(and\s+)?|\s*-\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{AnIntRegex})(\s+{RoundNumberIntegerRegex})+)\s+(and\s+)?)*({TensNumberIntegerRegex}(\s+|\s*-\s*))?{BasicOrdinalRegex})
   references: [ TensNumberIntegerRegex, ZeroToNineIntegerRegex, AnIntRegex, RoundNumberIntegerRegex, BasicOrdinalRegex ]

@@ -292,5 +292,24 @@
         "End": 11
       }
     ]
+  },
+  {
+    "Input": "I like the first two books.",
+    "Results": [
+    ]
+  },
+  {
+    "Input": "I like the first one.",
+    "Results": [
+      {
+        "Text": "first",
+        "Start": 11,
+        "End": 15,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "1"
+        }
+      }
+    ]
   }
 ]

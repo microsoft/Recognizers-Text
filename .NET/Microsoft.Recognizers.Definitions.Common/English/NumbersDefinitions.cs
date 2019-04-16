@@ -24,6 +24,7 @@ namespace Microsoft.Recognizers.Definitions.English
 		public const string LangMarker = @"Eng";
 		public const string RoundNumberIntegerRegex = @"(hundred|thousand|million|billion|trillion)";
 		public const string ZeroToNineIntegerRegex = @"(three|seven|eight|four|five|zero|nine|one|two|six)";
+		public const string TwoToNineIntegerRegex = @"(three|seven|eight|four|five|nine|two|six)";
 		public const string NegativeNumberTermsRegex = @"((minus|negative)\s+)";
 		public static readonly string NegativeNumberSignRegex = $@"^{NegativeNumberTermsRegex}.*";
 		public const string AnIntRegex = @"(an|a)(?=\s)";
@@ -42,7 +43,7 @@ namespace Microsoft.Recognizers.Definitions.English
 		public const string RoundNumberOrdinalRegex = @"(hundredth|thousandth|millionth|billionth|trillionth)";
 		public const string NumberOrdinalRegex = @"(first|second|third|fourth|fifth|sixth|seventh|eighth|ninth|tenth|eleventh|twelfth|thirteenth|fourteenth|fifteenth|sixteenth|seventeenth|eighteenth|nineteenth|twentieth|thirtieth|fortieth|fiftieth|sixtieth|seventieth|eightieth|ninetieth)";
 		public const string RelativeOrdinalRegex = @"((next|previous) one|(the second|next) to last|the one before the last( one)?|the last but one|(ante)?penultimate|last|next)";
-		public static readonly string BasicOrdinalRegex = $@"({NumberOrdinalRegex}|{RelativeOrdinalRegex})";
+		public static readonly string BasicOrdinalRegex = $@"(({NumberOrdinalRegex}|{RelativeOrdinalRegex})(?!\s*{TwoToNineIntegerRegex}\b))";
 		public static readonly string SuffixBasicOrdinalRegex = $@"((((({TensNumberIntegerRegex}(\s+(and\s+)?|\s*-\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{AnIntRegex})(\s+{RoundNumberIntegerRegex})+)\s+(and\s+)?)*({TensNumberIntegerRegex}(\s+|\s*-\s*))?{BasicOrdinalRegex})";
 		public static readonly string SuffixRoundNumberOrdinalRegex = $@"(({AllIntRegex}\s+){RoundNumberOrdinalRegex})";
 		public static readonly string AllOrdinalRegex = $@"({SuffixBasicOrdinalRegex}|{SuffixRoundNumberOrdinalRegex})";

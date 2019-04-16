@@ -417,5 +417,24 @@
         "End": 11
       }
     ]
+  },
+  {
+    "Input": "I want the last two books.",
+    "Results": [
+    ]
+  },
+  {
+    "Input": "I want the last one books.",
+    "Results": [
+      {
+        "Text": "last",
+        "Start": 11,
+        "End": 14,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "N"
+        }
+      }
+    ]
   }
 ]
