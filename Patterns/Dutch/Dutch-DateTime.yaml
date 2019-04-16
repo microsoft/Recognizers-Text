@@ -573,8 +573,8 @@ WeekDayAndDayOfMonthRegex: !nestedRegex
   def: \b{WeekDayRegex}\s+(de\s+{FlexibleDayRegex})\b
   references: [WeekDayRegex, FlexibleDayRegex]
 WeekDayAndDayRegex: !nestedRegex
-  def: \b{WeekDayRegex}\s+(?!(de)){DayRegex}(?!([-]|(\s+({AmDescRegex}|{PmDescRegex}))))\b
-  references: [WeekDayRegex, DayRegex, AmDescRegex, PmDescRegex]
+  def: \b{WeekDayRegex}\s+(?!(de)){DayRegex}(?!([-]|(\s+({AmDescRegex}|{PmDescRegex}|{OclockRegex}))))\b
+  references: [WeekDayRegex, DayRegex, AmDescRegex, PmDescRegex, OclockRegex]
 RestOfDateRegex: !simpleRegex
   def: \bRest\s+(of\s+)?((the|my|this|current)\s+)?(?<duration>week|maand|jaar|decennium)\b
 RestOfDateTimeRegex: !simpleRegex
