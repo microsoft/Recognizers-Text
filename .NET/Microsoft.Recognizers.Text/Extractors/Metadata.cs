@@ -9,5 +9,7 @@
         // For cases like "2015年以前" (usually regards as "before 2015" in English), "5天以前" (usually regards as "5 days ago" in English) in Chinese, we need to decide whether this is a "Date with Mode" or "Duration with Before and After". We use this flag to avoid duplicate judgment both in the Extraction step and Parse step.
         // Currently, this flag is only used in Chinese DateTime as other languages don't have this ambiguity cases.
         public bool IsDurationWithBeforeAndAfter { get; set; } = false;
+
+        public bool IsOrdinalRelative { get; set; } = false;
     }
 }

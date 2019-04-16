@@ -65,13 +65,23 @@ namespace Microsoft.Recognizers.Text.Number
                     resolution.Add(ResolutionKey.SubType, o.Type);
                 }
 
+                var type = string.Empty;
+                if (o.Metadata != null && o.Metadata.IsOrdinalRelative)
+                {
+                    type = $"{ModelTypeName}.{Constants.RELATIVE}";
+                }
+                else
+                {
+                    type = ModelTypeName;
+                }
+
                 return new ModelResult
                 {
                     Start = o.Start.Value,
                     End = end,
                     Resolution = resolution,
                     Text = o.Text,
-                    TypeName = ModelTypeName,
+                    TypeName = type,
                 };
             }).ToList();
         }

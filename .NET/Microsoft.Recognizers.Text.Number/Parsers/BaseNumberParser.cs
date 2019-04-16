@@ -279,6 +279,7 @@ namespace Microsoft.Recognizers.Text.Number
                 Length = extResult.Length,
                 Text = extResult.Text,
                 Type = extResult.Type,
+                Metadata = extResult.Metadata,
             };
 
             var handle = extResult.Text.ToLower();

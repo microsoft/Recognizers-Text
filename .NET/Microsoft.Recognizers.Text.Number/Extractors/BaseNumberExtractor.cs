@@ -106,6 +106,11 @@ namespace Microsoft.Recognizers.Text.Number
                                 Data = type,
                             };
 
+                            if (IsRelativeOrdinal(substr))
+                            {
+                                er.Metadata = new Metadata { IsOrdinalRelative = true };
+                            }
+
                             result.Add(er);
                         }
                     }
