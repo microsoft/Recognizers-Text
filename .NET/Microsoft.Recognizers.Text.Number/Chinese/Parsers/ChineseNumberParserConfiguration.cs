@@ -33,10 +33,8 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
 
             CardinalNumberMap = new Dictionary<string, long>().ToImmutableDictionary();
             OrdinalNumberMap = new Dictionary<string, long>().ToImmutableDictionary();
-            RelativeReferenceMap = NumbersDefinitions.RelativeReferenceMap.ToImmutableDictionary();
             RelativeReferenceOffsetMap = NumbersDefinitions.RelativeReferenceOffsetMap.ToImmutableDictionary();
-            RelativeReferenceRelativeToMap =
-                NumbersDefinitions.RelativeReferenceRelativeToMap.ToImmutableDictionary();
+            RelativeReferenceRelativeToMap = NumbersDefinitions.RelativeReferenceRelativeToMap.ToImmutableDictionary();
             RoundNumberMap = NumbersDefinitions.RoundNumberMap.ToImmutableDictionary();
             ZeroToNineMap = NumbersDefinitions.ZeroToNineMap.ToImmutableDictionary();
             RoundNumberMapChar = NumbersDefinitions.RoundNumberMapChar.ToImmutableDictionary();

@@ -248,19 +248,6 @@ namespace Microsoft.Recognizers.Definitions.English
 		{
 			{ @"\bone\b", @"\b(the|this|that|which)\s+(one)\b" }
 		};
-		public static readonly Dictionary<string, string> RelativeReferenceMap = new Dictionary<string, string>
-		{
-			{ @"last", @"N" },
-			{ @"next one", @"CURR+1" },
-			{ @"previous one", @"CURR-1" },
-			{ @"the second to last", @"N-1" },
-			{ @"the one before the last one", @"N-1" },
-			{ @"next to last", @"N-1" },
-			{ @"penultimate", @"N-1" },
-			{ @"the last but one", @"N-1" },
-			{ @"antepenultimate", @"N-2" },
-			{ @"next", @"CURR+1" }
-		};
 		public static readonly Dictionary<string, string> RelativeReferenceOffsetMap = new Dictionary<string, string>
 		{
 			{ @"last", @"0" },

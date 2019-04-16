@@ -74,7 +74,15 @@ namespace Microsoft.Recognizers.Text.Number
                 // for ordinal and ordinal.relative
                 if (ModelTypeName.Equals(Constants.MODEL_ORDINAL))
                 {
-                    type = o.Metadata.IsOrdinalRelative ? $"{ModelTypeName}.{Constants.RELATIVE}" : ModelTypeName;
+                    if (o.Metadata != null && o.Metadata.IsOrdinalRelative)
+                    {
+                        type = $"{ModelTypeName}.{Constants.RELATIVE}";
+                    }
+                    else
+                    {
+                        type = ModelTypeName;
+                    }
+
                     resolution.Add(ResolutionKey.Offset, o.Offset);
                     resolution.Add(ResolutionKey.RelativeTo, o.RelativeTo);
                 }

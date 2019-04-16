@@ -356,19 +356,6 @@ AmbiguityFiltersDict: !dictionary
   types: [ string, string ]
   entries:
     '\bone\b': '\b(the|this|that|which)\s+(one)\b'
-RelativeReferenceMap: !dictionary
-  types: [ string, string ]
-  entries:
-    last: N
-    next one: CURR+1
-    previous one: CURR-1
-    the second to last: N-1
-    the one before the last one: N-1
-    next to last: N-1
-    penultimate: N-1
-    the last but one: N-1
-    antepenultimate: N-2
-    next: CURR+1
 RelativeReferenceOffsetMap: !dictionary
   types: [ string, string ]
   entries:
