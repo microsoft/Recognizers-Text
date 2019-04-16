@@ -194,6 +194,7 @@ namespace Microsoft.Recognizers.Definitions.Italian
 		public const string LaterRegex = @"\b(dopo|da adesso)\b";
 		public const string AgoRegex = @"^[.]";
 		public const string InConnectorRegex = @"\b(di)\b";
+		public const string SinceYearSuffixRegex = @"^[.]";
 		public const string WithinNextPrefixRegex = @"^[.]";
 		public const string MorningStartEndRegex = @"(^(mattin[oa]))|((mattin[oa])$)";
 		public const string AfternoonStartEndRegex = @"(^((di|al)?pomeriggio))|(((di|il)?pomeriggio)$)";

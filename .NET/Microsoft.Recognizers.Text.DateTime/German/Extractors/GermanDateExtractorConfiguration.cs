@@ -105,6 +105,9 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public static readonly Regex InConnectorRegex =
             new Regex(DateTimeDefinitions.InConnectorRegex, RegexOptions.Singleline);
 
+        public static readonly Regex SinceYearSuffixRegex =
+            new Regex(DateTimeDefinitions.SinceYearSuffixRegex, RegexOptions.Singleline);
+
         public static readonly Regex RangeUnitRegex =
             new Regex(DateTimeDefinitions.RangeUnitRegex, RegexOptions.Singleline);
 
@@ -217,6 +220,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         Regex IDateExtractorConfiguration.MoreThanRegex => MoreThanRegex;
 
         Regex IDateExtractorConfiguration.InConnectorRegex => InConnectorRegex;
+
+        Regex IDateExtractorConfiguration.SinceYearSuffixRegex => SinceYearSuffixRegex;
 
         Regex IDateExtractorConfiguration.RangeUnitRegex => RangeUnitRegex;
 

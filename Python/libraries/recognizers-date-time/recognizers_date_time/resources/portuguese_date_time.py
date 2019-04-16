@@ -48,6 +48,7 @@ class PortugueseDateTime:
     MonthOfRegex = f'(mes)(\\s*)((do|da|de))'
     RangeUnitRegex = f'\\b(?<unit>anos|ano|meses|m[êe]s|semanas|semana)\\b'
     InConnectorRegex = f'\\b(em)\\b'
+    SinceYearSuffixRegex = f'^[.]'
     WithinNextPrefixRegex = f'^[.]'
     CenturySuffixRegex = f'^[.]'
     RelativeRegex = f'^[.]'

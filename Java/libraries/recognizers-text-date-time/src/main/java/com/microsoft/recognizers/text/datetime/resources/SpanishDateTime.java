@@ -177,6 +177,8 @@ public class SpanishDateTime {
 
     public static final String InConnectorRegex = "\\b(in)\\b";
 
+    public static final String SinceYearSuffixRegex = "^[.]";
+
     public static final String WithinNextPrefixRegex = "\\b(dentro\\s+de)\\b";
 
     public static final String FromRegex = "((desde|de)(\\s*la(s)?)?)$";

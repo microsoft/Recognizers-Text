@@ -573,6 +573,8 @@ public class FrenchDateTime {
 
     public static final String InConnectorRegex = "\\b(dans|en|sur)\\b";
 
+    public static final String SinceYearSuffixRegex = "^[.]";
+
     public static final String WithinNextPrefixRegex = "^[.]";
 
     public static final String MorningStartEndRegex = "(^(matin))|((matin)$)";

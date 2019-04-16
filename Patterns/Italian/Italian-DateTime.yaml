@@ -445,6 +445,9 @@ AgoRegex: !simpleRegex
   def: ^[.]
 InConnectorRegex: !simpleRegex
   def: \b(di)\b
+SinceYearSuffixRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 WithinNextPrefixRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]

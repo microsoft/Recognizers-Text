@@ -180,6 +180,7 @@ class FrenchDateTime:
     LaterRegex = f'\\b(plus tard)\\b'
     AgoRegex = f'^[.]'
     InConnectorRegex = f'\\b(dans|en|sur)\\b'
+    SinceYearSuffixRegex = f'^[.]'
     WithinNextPrefixRegex = f'^[.]'
     MorningStartEndRegex = f'(^(matin))|((matin)$)'
     AfternoonStartEndRegex = f'(^((d\'|l\')?apr[eè]s-midi))|(((d\'|l\')?apr[eè]s-midi)$)'

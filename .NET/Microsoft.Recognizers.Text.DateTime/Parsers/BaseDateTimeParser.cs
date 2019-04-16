@@ -410,6 +410,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 referenceTime,
                 config.DurationExtractor,
                 config.DurationParser,
+                config.NumberParser,
                 config.UnitMap,
                 config.UnitRegex,
                 config.UtilityConfiguration,
