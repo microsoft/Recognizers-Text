@@ -53,7 +53,11 @@ namespace Microsoft.Recognizers.Text.Number
             return parsedNumbers.Select(o =>
             {
                 var end = o.Start.Value + o.Length.Value - 1;
-                var resolution = new SortedDictionary<string, object> { { ResolutionKey.Value, o.ResolutionStr } };
+                var resolution = new SortedDictionary<string, object>();
+                if (o.Value != null)
+                {
+                    resolution.Add(ResolutionKey.Value, o.ResolutionStr);
+                }
 
                 var extractorType = Extractor.GetType().ToString();
 
@@ -66,9 +70,13 @@ namespace Microsoft.Recognizers.Text.Number
                 }
 
                 var type = string.Empty;
-                if (o.Metadata != null && o.Metadata.IsOrdinalRelative)
+
+                // for ordinal and ordinal.relative
+                if (ModelTypeName.Equals(Constants.MODEL_ORDINAL))
                 {
-                    type = $"{ModelTypeName}.{Constants.RELATIVE}";
+                    type = o.Metadata.IsOrdinalRelative ? $"{ModelTypeName}.{Constants.RELATIVE}" : ModelTypeName;
+                    resolution.Add(ResolutionKey.Offset, o.Offset);
+                    resolution.Add(ResolutionKey.RelativeTo, o.RelativeTo);
                 }
                 else
                 {

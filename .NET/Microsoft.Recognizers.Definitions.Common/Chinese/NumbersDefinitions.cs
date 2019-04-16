@@ -243,5 +243,13 @@ namespace Microsoft.Recognizers.Definitions.Chinese
 		{
 			{ @"", @"" }
 		};
+		public static readonly Dictionary<string, string> RelativeReferenceOffsetMap = new Dictionary<string, string>
+		{
+			{ @"", @"" }
+		};
+		public static readonly Dictionary<string, string> RelativeReferenceRelativeToMap = new Dictionary<string, string>
+		{
+			{ @"", @"" }
+		};
 	}
 }

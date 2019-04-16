@@ -47,6 +47,9 @@ namespace Microsoft.Recognizers.Text.Number
         public const string POWER_SUFFIX = "Pow";
         public const string SPECIAL_SUFFIX = "Spe";
 
+        // RelativeTo
+        public const string RELATIVE_START = "start";
+
         // Number subtypes
         public const string INTEGER = "integer";
         public const string DECIMAL = "decimal";

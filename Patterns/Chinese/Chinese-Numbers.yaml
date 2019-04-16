@@ -379,4 +379,14 @@ RelativeReferenceMap: !dictionary
 # TODO: modify below regex according to the counterpart in English
   entries:
     '': ''
+RelativeReferenceOffsetMap: !dictionary
+  types: [ string, string ]
+# TODO: modify below regex according to the counterpart in English
+  entries:
+    '': ''
+RelativeReferenceRelativeToMap: !dictionary
+  types: [ string, string ]
+# TODO: modify below regex according to the counterpart in English
+  entries:
+    '': ''
 ...

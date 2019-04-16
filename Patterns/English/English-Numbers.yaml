@@ -53,8 +53,8 @@ NumberOrdinalRegex: !simpleRegex
 RelativeOrdinalRegex: !simpleRegex
   def: ((next|previous) one|(the second|next) to last|the one before the last( one)?|the last but one|(ante)?penultimate|last|next|previous)
 BasicOrdinalRegex: !nestedRegex
-  def: (({NumberOrdinalRegex}|{RelativeOrdinalRegex})(?!\s*{TwoToNineIntegerRegex}\b))
-  references: [ NumberOrdinalRegex, RelativeOrdinalRegex, TwoToNineIntegerRegex ]
+  def: (({NumberOrdinalRegex}|{RelativeOrdinalRegex})(?!\s*({TwoToNineIntegerRegex}|{BaseNumbers.IntegerRegexDefinition})\b))
+  references: [ NumberOrdinalRegex, RelativeOrdinalRegex, TwoToNineIntegerRegex, BaseNumbers.IntegerRegexDefinition ]
 SuffixBasicOrdinalRegex: !nestedRegex
   def: ((((({TensNumberIntegerRegex}(\s+(and\s+)?|\s*-\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{AnIntRegex})(\s+{RoundNumberIntegerRegex})+)\s+(and\s+)?)*({TensNumberIntegerRegex}(\s+|\s*-\s*))?{BasicOrdinalRegex})
   references: [ TensNumberIntegerRegex, ZeroToNineIntegerRegex, AnIntRegex, RoundNumberIntegerRegex, BasicOrdinalRegex ]
@@ -369,4 +369,32 @@ RelativeReferenceMap: !dictionary
     the last but one: N-1
     antepenultimate: N-2
     next: CURR+1
+RelativeReferenceOffsetMap: !dictionary
+  types: [ string, string ]
+  entries:
+    last: 0
+    next one: 1
+    previous one: -1
+    the second to last: -1
+    the one before the last one: -1
+    next to last: -1
+    penultimate: -1
+    the last but one: -1
+    antepenultimate: -2
+    next: 1
+    previous: -1
+RelativeReferenceRelativeToMap: !dictionary
+  types: [ string, string ]
+  entries:
+    last: end
+    next one: current
+    previous one: current
+    the second to last: end
+    the one before the last one: end
+    next to last: end
+    penultimate: end
+    the last but one: end
+    antepenultimate: end
+    next: current
+    previous: current
 ...

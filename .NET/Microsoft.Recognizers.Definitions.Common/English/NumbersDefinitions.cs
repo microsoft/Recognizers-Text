@@ -43,7 +43,7 @@ namespace Microsoft.Recognizers.Definitions.English
 		public const string RoundNumberOrdinalRegex = @"(hundredth|thousandth|millionth|billionth|trillionth)";
 		public const string NumberOrdinalRegex = @"(first|second|third|fourth|fifth|sixth|seventh|eighth|ninth|tenth|eleventh|twelfth|thirteenth|fourteenth|fifteenth|sixteenth|seventeenth|eighteenth|nineteenth|twentieth|thirtieth|fortieth|fiftieth|sixtieth|seventieth|eightieth|ninetieth)";
 		public const string RelativeOrdinalRegex = @"((next|previous) one|(the second|next) to last|the one before the last( one)?|the last but one|(ante)?penultimate|last|next|previous)";
-		public static readonly string BasicOrdinalRegex = $@"(({NumberOrdinalRegex}|{RelativeOrdinalRegex})(?!\s*{TwoToNineIntegerRegex}\b))";
+		public static readonly string BasicOrdinalRegex = $@"(({NumberOrdinalRegex}|{RelativeOrdinalRegex})(?!\s*({TwoToNineIntegerRegex}|{BaseNumbers.IntegerRegexDefinition})\b))";
 		public static readonly string SuffixBasicOrdinalRegex = $@"((((({TensNumberIntegerRegex}(\s+(and\s+)?|\s*-\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{AnIntRegex})(\s+{RoundNumberIntegerRegex})+)\s+(and\s+)?)*({TensNumberIntegerRegex}(\s+|\s*-\s*))?{BasicOrdinalRegex})";
 		public static readonly string SuffixRoundNumberOrdinalRegex = $@"(({AllIntRegex}\s+){RoundNumberOrdinalRegex})";
 		public static readonly string AllOrdinalRegex = $@"({SuffixBasicOrdinalRegex}|{SuffixRoundNumberOrdinalRegex})";
@@ -260,6 +260,34 @@ namespace Microsoft.Recognizers.Definitions.English
 			{ @"the last but one", @"N-1" },
 			{ @"antepenultimate", @"N-2" },
 			{ @"next", @"CURR+1" }
+		};
+		public static readonly Dictionary<string, string> RelativeReferenceOffsetMap = new Dictionary<string, string>
+		{
+			{ @"last", @"0" },
+			{ @"next one", @"1" },
+			{ @"previous one", @"-1" },
+			{ @"the second to last", @"-1" },
+			{ @"the one before the last one", @"-1" },
+			{ @"next to last", @"-1" },
+			{ @"penultimate", @"-1" },
+			{ @"the last but one", @"-1" },
+			{ @"antepenultimate", @"-2" },
+			{ @"next", @"1" },
+			{ @"previous", @"-1" }
+		};
+		public static readonly Dictionary<string, string> RelativeReferenceRelativeToMap = new Dictionary<string, string>
+		{
+			{ @"last", @"end" },
+			{ @"next one", @"current" },
+			{ @"previous one", @"current" },
+			{ @"the second to last", @"end" },
+			{ @"the one before the last one", @"end" },
+			{ @"next to last", @"end" },
+			{ @"penultimate", @"end" },
+			{ @"the last but one", @"end" },
+			{ @"antepenultimate", @"end" },
+			{ @"next", @"current" },
+			{ @"previous", @"current" }
 		};
 	}
 }

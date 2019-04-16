@@ -159,6 +159,7 @@ namespace Microsoft.Recognizers.Text.Number
                 }
 
                 ret.ResolutionStr = GetResolutionStr(ret.Value);
+                ret.Offset = ret.ResolutionStr;
             }
 
             if (ret != null)
@@ -287,9 +288,15 @@ namespace Microsoft.Recognizers.Text.Number
             handle = Config.HalfADozenRegex.Replace(handle, Config.HalfADozenText);
 
             // Handling cases like "last", "next one", "previous one"
-            if (Config.RelativeReferenceMap.ContainsKey(extResult.Text))
+            // if (Config.RelativeReferenceMap.ContainsKey(extResult.Text))
+            // {
+            //    result.Value = Config.RelativeReferenceMap[extResult.Text];
+            // }
+            if (Config.RelativeReferenceOffsetMap.ContainsKey(extResult.Text) &&
+                Config.RelativeReferenceRelativeToMap.ContainsKey(extResult.Text))
             {
-                result.Value = Config.RelativeReferenceMap[extResult.Text];
+                result.Offset = Config.RelativeReferenceOffsetMap[extResult.Text];
+                result.RelativeTo = Config.RelativeReferenceRelativeToMap[extResult.Text];
             }
             else
             {
@@ -329,6 +336,9 @@ namespace Microsoft.Recognizers.Text.Number
                 }
 
                 result.Value = intPartRet + pointPartRet;
+
+                // Get RelativeTo for Ordinal
+                result.RelativeTo = Constants.RELATIVE_START;
             }
 
             return result;
