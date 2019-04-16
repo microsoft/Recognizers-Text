@@ -53,12 +53,6 @@ namespace Microsoft.Recognizers.Text.Number
                         continue;
                     }
 
-                    // In EnablePreview, cases like "last", "next" should not be skipped
-                    if ((Options & NumberOptions.EnablePreview) == 0 && IsRelativeOrdinal(m.Value))
-                    {
-                        continue;
-                    }
-
                     for (var j = 0; j < m.Length; j++)
                     {
                         matched[m.Index + j] = true;
