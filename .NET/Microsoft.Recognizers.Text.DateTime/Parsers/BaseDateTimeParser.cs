@@ -249,6 +249,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                 ret.Comment = Constants.Comment_AmPm;
             }
 
+            ret.FutureValue = DateObject.MinValue.SafeCreateFromValue(futureDate.Year, futureDate.Month, futureDate.Day, hour, min, sec);
+            ret.PastValue = DateObject.MinValue.SafeCreateFromValue(pastDate.Year, pastDate.Month, pastDate.Day, hour, min, sec);
+
             // Handle case like "Wed Oct 26 15:50:06 2016" which year and month separated by time.
             var matchYear = this.config.YearRegex.Match(text.Substring(er2[0].Start + er2[0].Length ?? 0));
             if (matchYear.Success && pr1.TimexStr.Substring(0, 4) == "XXXX" && pr1.TimexStr.Substring(5, 2) != "XX")
@@ -261,11 +264,6 @@ namespace Microsoft.Recognizers.Text.DateTime
                     ret.PastValue = DateObject.MinValue.SafeCreateFromValue(year, pastDate.Month, pastDate.Day, hour, min, sec);
                     ret.Timex = year + pr1.TimexStr.Substring(4) + timeStr;
                 }
-            }
-            else
-            {
-                ret.FutureValue = DateObject.MinValue.SafeCreateFromValue(futureDate.Year, futureDate.Month, futureDate.Day, hour, min, sec);
-                ret.PastValue = DateObject.MinValue.SafeCreateFromValue(pastDate.Year, pastDate.Month, pastDate.Day, hour, min, sec);
             }
 
             ret.Success = true;

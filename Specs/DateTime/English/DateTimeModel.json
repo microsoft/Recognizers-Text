@@ -10457,5 +10457,60 @@
         }
       }
     ] 
-  }
+  },
+  {
+    "Input": "Wed Oct 26 15:50:06 2016 is not a day in 2019.",
+    "Context": {
+      "ReferenceDateTime": "2018-11-21T12:00:00"
+    },
+    "NotSupported": "java,python,javascript",
+    "Results": [
+      {
+        "Text": "wed oct 26 15:50:06 2016",
+        "Start": 0,
+        "End": 23,
+        "Typename": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-10-26T15:50:06",
+              "type": "datetime",
+              "value": "2016-10-26 15:50:06"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "a day",
+        "Start": 32,
+        "End": 36,
+        "Typename": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P1D",
+              "type": "duration",
+              "value": "86400"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "2019",
+        "Start": 41,
+        "End": 44,
+        "Typename": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019",
+              "type": "daterange",
+              "start": "2019-01-01",
+              "end": "2020-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
 ]
