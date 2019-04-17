@@ -203,13 +203,14 @@ export namespace EnglishDateTime {
 	export const AMTimeRegex = `(?<am>morning)`;
 	export const PMTimeRegex = `\\b(?<pm>afternoon|evening|night)\\b`;
 	export const InclusiveModPrepositions = `(?<include>((on|in|at)\\s+or\\s+)|(\\s+or\\s+(on|in|at)))`;
-	export const BeforeRegex = `(\\b${InclusiveModPrepositions}?(before|in\\s+advance\\s+of|prior\\s+to|(no\\s+later|earlier|sooner)\\s+than|ending\\s+(with|on)|by|till|til|until|(?<include>as\\s+late\\s+as))${InclusiveModPrepositions}?\\b\\s*)|(?<!\\w|>)((?<include><=)|<)`;
+	export const BeforeRegex = `((\\b${InclusiveModPrepositions}?(before|in\\s+advance\\s+of|prior\\s+to|(no\\s+later|earlier|sooner)\\s+than|ending\\s+(with|on)|by|till|til|until|(?<include>as\\s+late\\s+as))${InclusiveModPrepositions}?\\b\\s*?)|(?<!\\w|>)((?<include><=)|<))(\\s+the)?`;
 	export const AfterRegex = `(\\b${InclusiveModPrepositions}?((after|(?<!no\\s+)later than)|(year greater than))(?!\\s+or equal to)${InclusiveModPrepositions}?\\b\\s*)|(?<!\\w|<)((?<include>>=)|>)`;
-	export const SinceRegex = `(\\b(since|after\\s+or\\s+equal\\s+to|starting\\s+(from|on|with)|as\\s+early\\s+as|any\\s+time\\s+from)\\b\\s*)|(?<!\\w|<)(>=)`;
+	export const SinceRegex = `((\\b(since|after\\s+or\\s+equal\\s+to|starting\\s+(from|on|with)|as\\s+early\\s+as|any\\s+time\\s+from)\\b\\s*)|(?<!\\w|<)(>=))`;
 	export const AroundRegex = `(\\b(around|circa)\\s*\\b)`;
 	export const AgoRegex = `\\b(ago|before\\s+(?<day>yesterday|today))\\b`;
 	export const LaterRegex = `\\b(later|from now|(from|after) (?<day>tomorrow|tmr|today))\\b`;
 	export const InConnectorRegex = `\\b(in)\\b`;
+	export const SinceYearSuffixRegex = `(^\\s*${SinceRegex}(\\s*(the\\s+)?year\\s*)?${YearSuffix})`;
 	export const WithinNextPrefixRegex = `\\b(within(\\s+the)?(\\s+(?<next>${NextPrefixRegex}))?)\\b`;
 	export const MorningStartEndRegex = `(^(morning|${AmDescRegex}))|((morning|${AmDescRegex})$)`;
 	export const AfternoonStartEndRegex = `(^(afternoon|${PmDescRegex}))|((afternoon|${PmDescRegex})$)`;
@@ -229,7 +230,7 @@ export namespace EnglishDateTime {
 	export const FlexibleDayRegex = `(?<DayOfMonth>([A-Za-z]+\\s)?[A-Za-z\\d]+)`;
 	export const ForTheRegex = `\\b((((?<=for\\s+)the\\s+${FlexibleDayRegex})|((?<=on\\s+)(the\\s+)?${FlexibleDayRegex}(?<=(st|nd|rd|th))))(?<end>\\s*(,|\\.|!|\\?|$)))`;
 	export const WeekDayAndDayOfMonthRegex = `\\b${WeekDayRegex}\\s+(the\\s+${FlexibleDayRegex})\\b`;
-	export const WeekDayAndDayRegex = `\\b${WeekDayRegex}\\s+(?!(the))${DayRegex}(?!([-:]|(\\s+(${AmDescRegex}|${PmDescRegex}))))\\b`;
+	export const WeekDayAndDayRegex = `\\b${WeekDayRegex}\\s+(?!(the))${DayRegex}(?!([-:]|(\\s+(${AmDescRegex}|${PmDescRegex}|${OclockRegex}))))\\b`;
 	export const RestOfDateRegex = `\\brest\\s+(of\\s+)?((the|my|this|current)\\s+)?(?<duration>week|month|year|decade)\\b`;
 	export const RestOfDateTimeRegex = `\\brest\\s+(of\\s+)?((the|my|this|current)\\s+)?(?<unit>day)\\b`;
 	export const MealTimeRegex = `\\b(at\\s+)?(?<mealTime>lunchtime)\\b`;

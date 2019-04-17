@@ -573,6 +573,8 @@ public class FrenchDateTime {
 
     public static final String InConnectorRegex = "\\b(dans|en|sur)\\b";
 
+    public static final String SinceYearSuffixRegex = "^[.]";
+
     public static final String WithinNextPrefixRegex = "^[.]";
 
     public static final String MorningStartEndRegex = "(^(matin))|((matin)$)";
@@ -640,11 +642,12 @@ public class FrenchDateTime {
             .replace("{WeekDayRegex}", WeekDayRegex)
             .replace("{FlexibleDayRegex}", FlexibleDayRegex);
 
-    public static final String WeekDayAndDayRegex = "\\b{WeekDayRegex}\\s+(?!(the)){DayRegex}(?!([-]|(\\s+({AmDescRegex}|{PmDescRegex}))))\\b"
+    public static final String WeekDayAndDayRegex = "\\b{WeekDayRegex}\\s+(?!(the)){DayRegex}(?!([-]|(\\s+({AmDescRegex}|{PmDescRegex}|{OclockRegex}))))\\b"
             .replace("{WeekDayRegex}", WeekDayRegex)
             .replace("{DayRegex}", DayRegex)
             .replace("{AmDescRegex}", AmDescRegex)
-            .replace("{PmDescRegex}", PmDescRegex);
+            .replace("{PmDescRegex}", PmDescRegex)
+            .replace("{OclockRegex}", OclockRegex);
 
     public static final String RestOfDateRegex = "\\b(reste|fin)\\s+(d[eu]\\s+)?((le|cette|ce)\\s+)?(?<duration>semaine|mois|l'ann[ée]e)\\b";
 

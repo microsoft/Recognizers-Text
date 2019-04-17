@@ -223,6 +223,7 @@ namespace Microsoft.Recognizers.Definitions.Dutch
 		public const string AgoRegex = @"\b(ago|before\s+(?<day>gisteren|vandaag))\b";
 		public const string LaterRegex = @"\b(later|vanaf nu|(van|na) (?<day>morgen|vandaag))\b";
 		public const string InConnectorRegex = @"\b(in|over)\b";
+		public const string SinceYearSuffixRegex = @"^[.]";
 		public static readonly string WithinNextPrefixRegex = $@"\b(in(\s+de)?(\s+(?<next>{NextPrefixRegex}))?)\b";
 		public static readonly string MorningStartEndRegex = $@"(^('s morgens|in de morgen|{AmDescRegex}))|(('s morgens|in de morgen|{AmDescRegex})$)";
 		public static readonly string AfternoonStartEndRegex = $@"(^('s middags|in de middag|{PmDescRegex}))|(('s middags|in de middag|{PmDescRegex})$)";
@@ -242,7 +243,7 @@ namespace Microsoft.Recognizers.Definitions.Dutch
 		public const string FlexibleDayRegex = @"(?<DayOfMonth>([A-Za-z]+\s)?[A-Za-z\d]+)";
 		public static readonly string ForTheRegex = $@"\b((((?<=for\s+)de\s+{FlexibleDayRegex})|((?<=om\s+)(de\s+)?{FlexibleDayRegex}(?<=(st|nd|rd|th))))(?<end>\s*(,|\.|!|\?|$)))";
 		public static readonly string WeekDayAndDayOfMonthRegex = $@"\b{WeekDayRegex}\s+(de\s+{FlexibleDayRegex})\b";
-		public static readonly string WeekDayAndDayRegex = $@"\b{WeekDayRegex}\s+(?!(de)){DayRegex}(?!([-]|(\s+({AmDescRegex}|{PmDescRegex}))))\b";
+		public static readonly string WeekDayAndDayRegex = $@"\b{WeekDayRegex}\s+(?!(de)){DayRegex}(?!([-]|(\s+({AmDescRegex}|{PmDescRegex}|{OclockRegex}))))\b";
 		public const string RestOfDateRegex = @"\bRest\s+(of\s+)?((the|my|this|current)\s+)?(?<duration>week|maand|jaar|decennium)\b";
 		public const string RestOfDateTimeRegex = @"\bRest\s+(of\s+)?((the|my|this|current)\s+)?(?<unit>day)\b";
 		public const string MealTimeRegex = @"\b(tijdens de\s+)?(?<mealTime>lunch)\b";

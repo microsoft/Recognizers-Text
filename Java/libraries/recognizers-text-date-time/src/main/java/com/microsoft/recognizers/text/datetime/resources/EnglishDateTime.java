@@ -694,13 +694,13 @@ public class EnglishDateTime {
 
     public static final String InclusiveModPrepositions = "(?<include>((on|in|at)\\s+or\\s+)|(\\s+or\\s+(on|in|at)))";
 
-    public static final String BeforeRegex = "(\\b{InclusiveModPrepositions}?(before|in\\s+advance\\s+of|prior\\s+to|(no\\s+later|earlier|sooner)\\s+than|ending\\s+(with|on)|by|till|til|until|(?<include>as\\s+late\\s+as)){InclusiveModPrepositions}?\\b\\s*)|(?<!\\w|>)((?<include><=)|<)"
+    public static final String BeforeRegex = "((\\b{InclusiveModPrepositions}?(before|in\\s+advance\\s+of|prior\\s+to|(no\\s+later|earlier|sooner)\\s+than|ending\\s+(with|on)|by|till|til|until|(?<include>as\\s+late\\s+as)){InclusiveModPrepositions}?\\b\\s*?)|(?<!\\w|>)((?<include><=)|<))(\\s+the)?"
             .replace("{InclusiveModPrepositions}", InclusiveModPrepositions);
 
     public static final String AfterRegex = "(\\b{InclusiveModPrepositions}?((after|(?<!no\\s+)later than)|(year greater than))(?!\\s+or equal to){InclusiveModPrepositions}?\\b\\s*)|(?<!\\w|<)((?<include>>=)|>)"
             .replace("{InclusiveModPrepositions}", InclusiveModPrepositions);
 
-    public static final String SinceRegex = "(\\b(since|after\\s+or\\s+equal\\s+to|starting\\s+(from|on|with)|as\\s+early\\s+as|any\\s+time\\s+from)\\b\\s*)|(?<!\\w|<)(>=)";
+    public static final String SinceRegex = "((\\b(since|after\\s+or\\s+equal\\s+to|starting\\s+(from|on|with)|as\\s+early\\s+as|any\\s+time\\s+from)\\b\\s*)|(?<!\\w|<)(>=))";
 
     public static final String AroundRegex = "(\\b(around|circa)\\s*\\b)";
 
@@ -709,6 +709,10 @@ public class EnglishDateTime {
     public static final String LaterRegex = "\\b(later|from now|(from|after) (?<day>tomorrow|tmr|today))\\b";
 
     public static final String InConnectorRegex = "\\b(in)\\b";
+
+    public static final String SinceYearSuffixRegex = "(^\\s*{SinceRegex}(\\s*(the\\s+)?year\\s*)?{YearSuffix})"
+            .replace("{SinceRegex}", SinceRegex)
+            .replace("{YearSuffix}", YearSuffix);
 
     public static final String WithinNextPrefixRegex = "\\b(within(\\s+the)?(\\s+(?<next>{NextPrefixRegex}))?)\\b"
             .replace("{NextPrefixRegex}", NextPrefixRegex);
@@ -767,11 +771,12 @@ public class EnglishDateTime {
             .replace("{WeekDayRegex}", WeekDayRegex)
             .replace("{FlexibleDayRegex}", FlexibleDayRegex);
 
-    public static final String WeekDayAndDayRegex = "\\b{WeekDayRegex}\\s+(?!(the)){DayRegex}(?!([-:]|(\\s+({AmDescRegex}|{PmDescRegex}))))\\b"
+    public static final String WeekDayAndDayRegex = "\\b{WeekDayRegex}\\s+(?!(the)){DayRegex}(?!([-:]|(\\s+({AmDescRegex}|{PmDescRegex}|{OclockRegex}))))\\b"
             .replace("{WeekDayRegex}", WeekDayRegex)
             .replace("{DayRegex}", DayRegex)
             .replace("{AmDescRegex}", AmDescRegex)
-            .replace("{PmDescRegex}", PmDescRegex);
+            .replace("{PmDescRegex}", PmDescRegex)
+            .replace("{OclockRegex}", OclockRegex);
 
     public static final String RestOfDateRegex = "\\brest\\s+(of\\s+)?((the|my|this|current)\\s+)?(?<duration>week|month|year|decade)\\b";
 

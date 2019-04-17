@@ -72,6 +72,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
 		public static readonly string MonthOfRegex = $@"(mes)(\s+)({OfPrepositionRegex})";
 		public const string RangeUnitRegex = @"\b(?<unit>años|año|meses|mes|semanas|semana)\b";
 		public const string InConnectorRegex = @"\b(in)\b";
+		public const string SinceYearSuffixRegex = @"^[.]";
 		public const string WithinNextPrefixRegex = @"\b(dentro\s+de)\b";
 		public const string FromRegex = @"((desde|de)(\s*la(s)?)?)$";
 		public const string ConnectorAndRegex = @"(y\s*(la(s)?)?)$";

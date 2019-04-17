@@ -39,6 +39,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex InConnectorRegex { get; }
 
+        Regex SinceYearSuffixRegex { get; }
+
         Regex RangeUnitRegex { get; }
 
         Regex RangeConnectorSymbolRegex { get; }

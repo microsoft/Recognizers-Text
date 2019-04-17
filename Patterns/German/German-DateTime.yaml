@@ -441,6 +441,9 @@ LaterRegex: !simpleRegex
   def: \b(später|von jetzt|(ab|nach) (?<day>morgen|heute))\b
 InConnectorRegex: !simpleRegex
   def: \b(in)\b
+SinceYearSuffixRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 WithinNextPrefixRegex: !nestedRegex
   def: \b(innerhalb|während(\s+der|de(s|m))?(\s+(?<next>{NextPrefixRegex}))?)\b
   references: [ NextPrefixRegex ]
@@ -485,8 +488,8 @@ WeekDayAndDayOfMonthRegex: !nestedRegex
   def: \b{WeekDayRegex}\s+((der|den)\s+{FlexibleDayRegex})\b
   references: [WeekDayRegex, FlexibleDayRegex]
 WeekDayAndDayRegex: !nestedRegex
-  def: \b{WeekDayRegex}\s+(?!(the)){DayRegex}(?!([-]|(\s+({AmDescRegex}|{PmDescRegex}))))\b
-  references: [WeekDayRegex, DayRegex, AmDescRegex, PmDescRegex]
+  def: \b{WeekDayRegex}\s+(?!(the)){DayRegex}(?!([-]|(\s+({AmDescRegex}|{PmDescRegex|{OclockRegex}}))))\b
+  references: [WeekDayRegex, DayRegex, AmDescRegex, PmDescRegex, OclockRegex]
 RestOfDateRegex: !simpleRegex
   def: \brest\s+((der|des|dieser)\s+)((aktuellen|jetzigen)\s+)?(?<duration>woche|monats|jahres)\b
 RestOfDateTimeRegex: !simpleRegex

@@ -134,6 +134,9 @@ RangeUnitRegex: !simpleRegex
   def: \b(?<unit>años|año|meses|mes|semanas|semana)\b
 InConnectorRegex: !simpleRegex
   def: \b(in)\b
+SinceYearSuffixRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 WithinNextPrefixRegex: !simpleRegex
   def: \b(dentro\s+de)\b
 FromRegex: !simpleRegex

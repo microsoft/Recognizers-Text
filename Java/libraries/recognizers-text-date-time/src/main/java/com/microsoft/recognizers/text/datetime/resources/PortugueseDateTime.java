@@ -131,6 +131,8 @@ public class PortugueseDateTime {
 
     public static final String InConnectorRegex = "\\b(em)\\b";
 
+    public static final String SinceYearSuffixRegex = "^[.]";
+
     public static final String WithinNextPrefixRegex = "^[.]";
 
     public static final String CenturySuffixRegex = "^[.]";
