@@ -161,7 +161,7 @@ namespace Microsoft.Recognizers.Text.Number
                 ret.ResolutionStr = GetResolutionStr(ret.Value);
             }
 
-            // special process for ordinal
+            // Add "offset" and "relativeTo" for ordinal
             if (!string.IsNullOrEmpty(ret.Type) && ret.Type.Contains(Constants.MODEL_ORDINAL))
             {
                 if (Config.RelativeReferenceOffsetMap.ContainsKey(extResult.Text) &&

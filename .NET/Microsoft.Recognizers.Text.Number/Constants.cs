@@ -52,6 +52,8 @@ namespace Microsoft.Recognizers.Text.Number
 
         // RelativeTo
         public const string RELATIVE_START = "start";
+        public const string RELATIVE_END = "end";
+        public const string RELATIVE_CURRENT = "current";
 
         // Number subtypes
         public const string INTEGER = "integer";
