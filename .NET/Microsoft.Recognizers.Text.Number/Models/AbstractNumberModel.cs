@@ -53,7 +53,11 @@ namespace Microsoft.Recognizers.Text.Number
             return parsedNumbers.Select(o =>
             {
                 var end = o.Start.Value + o.Length.Value - 1;
-                var resolution = new SortedDictionary<string, object> { { ResolutionKey.Value, o.ResolutionStr } };
+                var resolution = new SortedDictionary<string, object>();
+                if (o.Value != null)
+                {
+                    resolution.Add(ResolutionKey.Value, o.ResolutionStr);
+                }
 
                 var extractorType = Extractor.GetType().ToString();
 
@@ -65,13 +69,36 @@ namespace Microsoft.Recognizers.Text.Number
                     resolution.Add(ResolutionKey.SubType, o.Type);
                 }
 
+                var type = string.Empty;
+
+                // for ordinal and ordinal.relative
+                // Only support "subtype" for English for now
+                if (ModelTypeName.Equals(Constants.MODEL_ORDINAL) && extractorType.Contains(Constants.ENGLISH))
+                {
+                    if (o.Metadata != null && o.Metadata.IsOrdinalRelative)
+                    {
+                        type = $"{ModelTypeName}.{Constants.RELATIVE}";
+                    }
+                    else
+                    {
+                        type = ModelTypeName;
+                    }
+
+                    resolution.Add(ResolutionKey.Offset, o.Metadata.Offset);
+                    resolution.Add(ResolutionKey.RelativeTo, o.Metadata.RelativeTo);
+                }
+                else
+                {
+                    type = ModelTypeName;
+                }
+
                 return new ModelResult
                 {
                     Start = o.Start.Value,
                     End = end,
                     Resolution = resolution,
                     Text = o.Text,
-                    TypeName = ModelTypeName,
+                    TypeName = type,
                 };
             }).ToList();
         }
