@@ -100,7 +100,15 @@ namespace Microsoft.Recognizers.Text.Number
                                 Data = type,
                             };
 
-                            er.Metadata = IsRelativeOrdinal(substr) ? new Metadata { IsOrdinalRelative = true } : new Metadata();
+                            // Add Metadata information for Ordinal
+                            if (ExtractType.Contains(Constants.MODEL_ORDINAL))
+                            {
+                                er.Metadata = new Metadata();
+                                if (IsRelativeOrdinal(substr))
+                                {
+                                    er.Metadata.IsOrdinalRelative = true;
+                                }
+                            }
 
                             result.Add(er);
                         }

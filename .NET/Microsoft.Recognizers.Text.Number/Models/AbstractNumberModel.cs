@@ -72,7 +72,8 @@ namespace Microsoft.Recognizers.Text.Number
                 var type = string.Empty;
 
                 // for ordinal and ordinal.relative
-                if (ModelTypeName.Equals(Constants.MODEL_ORDINAL))
+                // Only support "subtype" for English for now
+                if (ModelTypeName.Equals(Constants.MODEL_ORDINAL) && extractorType.Contains(Constants.ENGLISH))
                 {
                     if (o.Metadata != null && o.Metadata.IsOrdinalRelative)
                     {
@@ -83,8 +84,8 @@ namespace Microsoft.Recognizers.Text.Number
                         type = ModelTypeName;
                     }
 
-                    resolution.Add(ResolutionKey.Offset, o.Offset);
-                    resolution.Add(ResolutionKey.RelativeTo, o.RelativeTo);
+                    resolution.Add(ResolutionKey.Offset, o.Metadata.Offset);
+                    resolution.Add(ResolutionKey.RelativeTo, o.Metadata.RelativeTo);
                 }
                 else
                 {

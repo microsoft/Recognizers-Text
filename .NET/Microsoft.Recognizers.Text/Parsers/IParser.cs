@@ -30,9 +30,5 @@
         // Output the value in string format.
         // It is used in some parsers.
         public string ResolutionStr { get; set; } = string.Empty;
-
-        public string Offset { get; set; } = null;
-
-        public string RelativeTo { get; set; } = string.Empty;
     }
 }

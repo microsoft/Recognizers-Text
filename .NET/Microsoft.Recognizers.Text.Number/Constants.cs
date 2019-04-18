@@ -47,6 +47,9 @@ namespace Microsoft.Recognizers.Text.Number
         public const string POWER_SUFFIX = "Pow";
         public const string SPECIAL_SUFFIX = "Spe";
 
+        // Ordinal subtypes
+        public const string RELATIVE = "relative";
+
         // RelativeTo
         public const string RELATIVE_START = "start";
 
@@ -55,7 +58,6 @@ namespace Microsoft.Recognizers.Text.Number
         public const string DECIMAL = "decimal";
         public const string FRACTION = "fraction";
         public const string POWER = "power";
-        public const string RELATIVE = "relative";
         public static readonly HashSet<string> ValidSubTypes = new HashSet<string>()
         {
             INTEGER,

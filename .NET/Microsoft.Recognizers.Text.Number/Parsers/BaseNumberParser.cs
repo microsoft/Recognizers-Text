@@ -159,7 +159,24 @@ namespace Microsoft.Recognizers.Text.Number
                 }
 
                 ret.ResolutionStr = GetResolutionStr(ret.Value);
-                ret.Offset = ret.ResolutionStr;
+            }
+
+            // special process for ordinal
+            if (!string.IsNullOrEmpty(ret.Type) && ret.Type.Contains(Constants.MODEL_ORDINAL))
+            {
+                if (Config.RelativeReferenceOffsetMap.ContainsKey(extResult.Text) &&
+                    Config.RelativeReferenceRelativeToMap.ContainsKey(extResult.Text))
+                {
+                    ret.Metadata.Offset = Config.RelativeReferenceOffsetMap[extResult.Text];
+                    ret.Metadata.RelativeTo = Config.RelativeReferenceRelativeToMap[extResult.Text];
+                }
+                else
+                {
+                    ret.Metadata.Offset = ret.ResolutionStr;
+
+                    // Every ordinal number is relative to the start
+                    ret.Metadata.RelativeTo = Constants.RELATIVE_START;
+                }
             }
 
             if (ret != null)
@@ -288,25 +305,36 @@ namespace Microsoft.Recognizers.Text.Number
             handle = Config.HalfADozenRegex.Replace(handle, Config.HalfADozenText);
 
             // Handling cases like "last", "next one", "previous one"
-            // if (Config.RelativeReferenceMap.ContainsKey(extResult.Text))
-            // {
-            //    result.Value = Config.RelativeReferenceMap[extResult.Text];
-            // }
             if (Config.RelativeReferenceOffsetMap.ContainsKey(extResult.Text) &&
                 Config.RelativeReferenceRelativeToMap.ContainsKey(extResult.Text))
             {
-                result.Offset = Config.RelativeReferenceOffsetMap[extResult.Text];
-                result.RelativeTo = Config.RelativeReferenceRelativeToMap[extResult.Text];
+                return result;
             }
-            else
+
+            var numGroup = handle.Split(Config.WrittenDecimalSeparatorTexts.ToArray(), StringSplitOptions.RemoveEmptyEntries);
+
+            var intPart = numGroup[0];
+            var stringMatch = TextNumberRegex.Match(intPart);
+
+            // Store all match str.
+            var matchStrs = new List<string>();
+
+            while (stringMatch.Success)
             {
-                var numGroup = handle.Split(Config.WrittenDecimalSeparatorTexts.ToArray(), StringSplitOptions.RemoveEmptyEntries);
+                var matchStr = stringMatch.Groups[0].Value.ToLower();
+                matchStrs.Add(matchStr);
+                stringMatch = stringMatch.NextMatch();
+            }
 
-                var intPart = numGroup[0];
-                var stringMatch = TextNumberRegex.Match(intPart);
+            // Get the value recursively
+            var intPartRet = GetIntValue(matchStrs);
 
-                // Store all match str.
-                var matchStrs = new List<string>();
+            double pointPartRet = 0;
+            if (numGroup.Length == 2)
+            {
+                var pointPart = numGroup[1];
+                stringMatch = TextNumberRegex.Match(pointPart);
+                matchStrs.Clear();
 
                 while (stringMatch.Success)
                 {
@@ -315,31 +343,10 @@ namespace Microsoft.Recognizers.Text.Number
                     stringMatch = stringMatch.NextMatch();
                 }
 
-                // Get the value recursively
-                var intPartRet = GetIntValue(matchStrs);
-
-                double pointPartRet = 0;
-                if (numGroup.Length == 2)
-                {
-                    var pointPart = numGroup[1];
-                    stringMatch = TextNumberRegex.Match(pointPart);
-                    matchStrs.Clear();
-
-                    while (stringMatch.Success)
-                    {
-                        var matchStr = stringMatch.Groups[0].Value.ToLower();
-                        matchStrs.Add(matchStr);
-                        stringMatch = stringMatch.NextMatch();
-                    }
-
-                    pointPartRet += GetPointValue(matchStrs);
-                }
-
-                result.Value = intPartRet + pointPartRet;
-
-                // Get RelativeTo for Ordinal
-                result.RelativeTo = Constants.RELATIVE_START;
+                pointPartRet += GetPointValue(matchStrs);
             }
+
+            result.Value = intPartRet + pointPartRet;
 
             return result;
         }
@@ -508,6 +515,7 @@ namespace Microsoft.Recognizers.Text.Number
                 Length = extResult.Length,
                 Text = extResult.Text,
                 Type = extResult.Type,
+                Metadata = extResult.Metadata,
             };
 
             // [1] 24

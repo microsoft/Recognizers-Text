@@ -235,7 +235,7 @@
         "TypeName": "ordinal",
         "Resolution": {
           "offset": "11",
-          "relativeTo": "",
+          "relativeTo": "start",
           "value": "11"
         }
       }
@@ -253,7 +253,7 @@
         "TypeName": "ordinal",
         "Resolution": {
           "offset": "21",
-          "relativeTo": "",
+          "relativeTo": "start",
           "value": "21"
         }
       }
@@ -270,7 +270,7 @@
         "TypeName": "ordinal",
         "Resolution": {
           "offset": "30",
-          "relativeTo": "",
+          "relativeTo": "start",
           "value": "30"
         }
       }
@@ -287,7 +287,7 @@
         "TypeName": "ordinal",
         "Resolution": {
           "offset": "2",
-          "relativeTo": "",
+          "relativeTo": "start",
           "value": "2"
         }
       }

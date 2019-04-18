@@ -10,6 +10,11 @@
         // Currently, this flag is only used in Chinese DateTime as other languages don't have this ambiguity cases.
         public bool IsDurationWithBeforeAndAfter { get; set; } = false;
 
+        // For Ordinal
         public bool IsOrdinalRelative { get; set; } = false;
+
+        public string Offset { get; set; } = null;
+
+        public string RelativeTo { get; set; } = string.Empty;
     }
 }
