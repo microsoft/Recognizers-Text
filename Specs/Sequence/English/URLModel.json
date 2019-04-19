@@ -394,5 +394,30 @@
     "Input": "Please visit https://luis.xxx?action=add for more information",
     "NotSupportedByDesign": "javascript, python",
     "Results": []
+  },
+  {
+    "Input": "working..is isn't a valid domain name.",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
+    "Input": "7.am is more likely a datetime string rather than a valid domain name.",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
+    "Input": "Please visit https://7.am for more information.",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "https://7.am",
+        "Start": 13,
+        "End": 24,
+        "TypeName": "url",
+        "Resolution": {
+          "value": "https://7.am"
+        }
+      }
+    ]
   }
 ]
