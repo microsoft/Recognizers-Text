@@ -26,6 +26,10 @@ export abstract class BaseSequenceExtractor implements IExtractor {
         //Traverse every match results to see each position in the text is matched or not.
         var collections = this.regexes.forEach((typeExtracted, regex) => {
             RegExpUtility.getMatches(regex, source).forEach(match => {
+                if (!this.isValidMatch(match)) {
+                    return;
+                }
+
                 for (var j = 0; j < match.length; j++) {
                     matched[match.index + j] = true;
                 }
@@ -64,6 +68,10 @@ export abstract class BaseSequenceExtractor implements IExtractor {
         }
 
         return results;
+    }
+
+    isValidMatch(match: Match): Boolean {
+        return true;
     }
 }
 
@@ -214,6 +222,7 @@ export class BaseEmailExtractor extends BaseSequenceExtractor {
 
 export class BaseURLExtractor extends BaseSequenceExtractor {
     regexes: Map<RegExp, string>;
+    ambiguousTimeTerm: RegExp;
 
     constructor(){
         super();
@@ -221,6 +230,12 @@ export class BaseURLExtractor extends BaseSequenceExtractor {
             .set(RegExpUtility.getSafeRegExp(BaseURL.UrlRegex), Constants.URL_REGEX)
             .set(RegExpUtility.getSafeRegExp(BaseURL.UrlRegex2), Constants.URL_REGEX)
             .set(RegExpUtility.getSafeRegExp(BaseURL.IpUrlRegex), Constants.URL_REGEX)
+        this.ambiguousTimeTerm = RegExpUtility.getSafeRegExp(BaseURL.AmbiguousTimeTerm);
+    }
+
+    isValidMatch(match: Match): Boolean {
+        // For cases like "7.am" or "8.pm" which are more likely time terms.
+        return !RegExpUtility.isMatch(this.ambiguousTimeTerm, match.value);
     }
 }
 
