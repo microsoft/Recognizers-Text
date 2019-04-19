@@ -101,6 +101,16 @@ export class BasePhoneNumberExtractor extends BaseSequenceExtractor {
                         if (!chGap.match(digitRegex)) {
                             ret.push(er);
                         }
+                        
+                        let front = source.substring(0, er.start - 1);
+                        let match = front.match(BasePhoneNumbers.InternationDialingPrefixRegex) 
+                        if (match) {
+                            let moveOffset = match[0].length + 1;
+                            er.start = er.start - moveOffset;
+                            er.length = er.length + moveOffset;
+                            er.text = source.substring(er.start, er.start + er.length)
+                            ret.push(er);
+                        }
                     }
         }
         return ret;
