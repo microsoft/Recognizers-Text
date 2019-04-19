@@ -331,5 +331,6 @@ class SpanishNumeric:
                            ("g", 1000000000),
                            ("b", 1000000000),
                            ("t", 1000000000000)])
-    RelativeReferenceMap = dict([("", "")])
+    RelativeReferenceOffsetMap = dict([("", "")])
+    RelativeReferenceRelativeToMap = dict([("", "")])
 # pylint: enable=line-too-long

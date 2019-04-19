@@ -53,12 +53,6 @@ namespace Microsoft.Recognizers.Text.Number
                         continue;
                     }
 
-                    // In EnablePreview, cases like "last", "next" should not be skipped
-                    if ((Options & NumberOptions.EnablePreview) == 0 && IsRelativeOrdinal(m.Value))
-                    {
-                        continue;
-                    }
-
                     for (var j = 0; j < m.Length; j++)
                     {
                         matched[m.Index + j] = true;
@@ -105,6 +99,16 @@ namespace Microsoft.Recognizers.Text.Number
                                 Type = ExtractType,
                                 Data = type,
                             };
+
+                            // Add Metadata information for Ordinal
+                            if (ExtractType.Contains(Constants.MODEL_ORDINAL))
+                            {
+                                er.Metadata = new Metadata();
+                                if (IsRelativeOrdinal(substr))
+                                {
+                                    er.Metadata.IsOrdinalRelative = true;
+                                }
+                            }
 
                             result.Add(er);
                         }

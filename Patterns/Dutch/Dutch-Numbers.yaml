@@ -323,7 +323,12 @@ RoundNumberMap: !dictionary
     g: 1000000000
     b: 1000000000
     t: 1000000000000
-RelativeReferenceMap: !dictionary
+RelativeReferenceOffsetMap: !dictionary
+  types: [ string, string ]
+# TODO: modify below regex according to the counterpart in English
+  entries:
+    '': ''
+RelativeReferenceRelativeToMap: !dictionary
   types: [ string, string ]
 # TODO: modify below regex according to the counterpart in English
   entries:

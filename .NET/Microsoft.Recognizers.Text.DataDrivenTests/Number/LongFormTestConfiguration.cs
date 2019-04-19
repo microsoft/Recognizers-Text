@@ -24,6 +24,10 @@ namespace Microsoft.Recognizers.Text.Number.Tests
 
         public ImmutableDictionary<string, string> RelativeReferenceMap { get; private set; }
 
+        public ImmutableDictionary<string, string> RelativeReferenceOffsetMap { get; private set; }
+
+        public ImmutableDictionary<string, string> RelativeReferenceRelativeToMap { get; private set; }
+
         public ImmutableDictionary<string, long> OrdinalNumberMap { get; }
 
         public ImmutableDictionary<string, long> RoundNumberMap { get; }
