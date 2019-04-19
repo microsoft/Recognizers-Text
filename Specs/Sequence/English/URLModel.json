@@ -419,5 +419,29 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Please visit 27.pm and s7.am for more information.",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "27.pm",
+        "Start": 13,
+        "End": 17,
+        "TypeName": "url",
+        "Resolution": {
+          "value": "27.pm"
+        }
+      },
+      {
+        "Text": "s7.am",
+        "Start": 23,
+        "End": 27,
+        "TypeName": "url",
+        "Resolution": {
+          "value": "s7.am"
+        }
+      }
+    ]
   }
 ]
