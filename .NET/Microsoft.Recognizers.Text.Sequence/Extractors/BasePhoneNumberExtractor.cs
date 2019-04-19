@@ -8,6 +8,8 @@ namespace Microsoft.Recognizers.Text.Sequence
 {
     public class BasePhoneNumberExtractor : BaseSequenceExtractor
     {
+        private static readonly Regex InternationDialingPrefixRegex = new Regex(BasePhoneNumbers.InternationDialingPrefixRegex);
+
         public BasePhoneNumberExtractor()
         {
             var regexes = new Dictionary<Regex, string>
@@ -83,6 +85,17 @@ namespace Microsoft.Recognizers.Text.Sequence
                             var charGap = text[(int)(er.Start - 2)];
                             if (!char.IsNumber(charGap) && !char.IsWhiteSpace(charGap))
                             {
+                                continue;
+                            }
+
+                            // check the international dialing prefix
+                            var front = text.Substring(0, (int)(er.Start - 1));
+                            if (InternationDialingPrefixRegex.IsMatch(front))
+                            {
+                                var moveOffset = InternationDialingPrefixRegex.Match(front).Length + 1;
+                                er.Start = er.Start - moveOffset;
+                                er.Length = er.Length + moveOffset;
+                                er.Text = text.Substring((int)er.Start, (int)er.Length);
                                 continue;
                             }
                         }
