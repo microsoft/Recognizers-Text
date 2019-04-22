@@ -752,13 +752,14 @@ export class ChineseDatePeriodParser extends BaseDatePeriodParser {
 
         let monthStr = match.groups('month').value.toLowerCase();
         let month = (this.config.monthOfYear.get(monthStr) % 12) - 1;
+        month = month === -1 ? 11 : month;
 
         let beginDate = DateUtils.safeCreateFromMinValue(year, month, 1);
         let endDate = month === 11
             ? DateUtils.safeCreateFromMinValue(year + 1, 0, 1)
             : DateUtils.safeCreateFromMinValue(year, month + 1, 1);
 
-        result.timex = DateTimeFormatUtil.toString(year, 4) + '-' + DateTimeFormatUtil.toString(month, 2);
+        result.timex = DateTimeFormatUtil.toString(year, 4) + '-' + DateTimeFormatUtil.toString(month + 1, 2);
         result.futureValue = [beginDate, endDate];
         result.pastValue = [beginDate, endDate];
         result.success = true;

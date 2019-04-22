@@ -49,7 +49,7 @@ class ChineseDateTime:
     DatePeriodLastRegex = f'上个|上一个|上|上一'
     DatePeriodNextRegex = f'下个|下一个|下|下一'
     RelativeMonthRegex = f'(?<relmonth>({DatePeriodThisRegex}|{DatePeriodLastRegex}|{DatePeriodNextRegex})\\s*月)'
-    DatePeriodYearRegex = f'(({YearNumRegex})(\\s*年)?|({YearRegex})\\s*年)'
+    DatePeriodYearRegex = f'((({YearNumRegex})(\\s*年)?|({YearRegex})\\s*年))'
     StrictYearRegex = f'({DatePeriodYearRegex}(?=[\\u4E00-\\u9FFF]|\\s|$|\\W))'
     YearRegexInNumber = f'(?<year>(\\d{{3,4}}))'
     DatePeriodYearInChineseRegex = f'(?<yearchs>({ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}|{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}|{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}))年'
