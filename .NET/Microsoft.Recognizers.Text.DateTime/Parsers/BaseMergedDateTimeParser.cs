@@ -309,10 +309,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                 er.Text = er.Text.Substring(aroundMatch.Length);
                 modStr = aroundMatch.Value;
             }
-            else if ((er.Type.Equals(Constants.SYS_DATETIME_DATEPERIOD) && Config.YearRegex.Match(er.Text).Success) || er.Type.Equals(Constants.SYS_DATETIME_DATE))
+            else if ((er.Type.Equals(Constants.SYS_DATETIME_DATEPERIOD) && Config.YearRegex.Match(er.Text).Success) || er.Type.Equals(Constants.SYS_DATETIME_DATE) || er.Type.Equals(Constants.SYS_DATETIME_TIME))
             {
                 // This has to be put at the end of the if, or cases like "before 2012" and "after 2012" would fall into this
                 // 2012 or after/above
+                // 3 pm or later
                 var match = Config.DateAfter.MatchEnd(er.Text, trim: true);
                 if (match.Success)
                 {
@@ -392,6 +393,16 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 pr.Length += modStr.Length;
                 pr.Text = pr.Text + modStr;
+                var val = (DateTimeResolutionResult)pr.Value;
+                val.Mod = CombineMod(val.Mod, Constants.SINCE_MOD);
+                pr.Value = val;
+                hasSince = true;
+            }
+
+            // For cases like "3 pm or later on monday"
+            if ((pr != null && pr.Value != null) && Config.DateAfter.Match(pr.Text)?.Index != 0 &&
+                pr.Type.Equals(Constants.SYS_DATETIME_DATETIME))
+            {
                 var val = (DateTimeResolutionResult)pr.Value;
                 val.Mod = CombineMod(val.Mod, Constants.SINCE_MOD);
                 pr.Value = val;
