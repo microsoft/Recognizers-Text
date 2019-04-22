@@ -2935,5 +2935,125 @@
         }
       }
     ]
+  },
+  {
+    "Input": "2018年10月",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "2018年10月",
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-10",
+              "type": "daterange",
+              "start": "2018-10-01",
+              "end": "2018-11-01"
+            }
+          ]
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "2018年十二月",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "2018年十二月",
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-12",
+              "type": "daterange",
+              "start": "2018-12-01",
+              "end": "2019-01-01"
+            }
+          ]
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "2018年12月",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "2018年12月",
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-12",
+              "type": "daterange",
+              "start": "2018-12-01",
+              "end": "2019-01-01"
+            }
+          ]
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "2018年12月的月份不是0",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "2018年12月",
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-12",
+              "type": "daterange",
+              "start": "2018-12-01",
+              "end": "2019-01-01"
+            }
+          ]
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "2018年 12月",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "2018年 12月",
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-12",
+              "type": "daterange",
+              "start": "2018-12-01",
+              "end": "2019-01-01"
+            }
+          ]
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
   }
 ]

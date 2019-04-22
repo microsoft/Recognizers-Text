@@ -150,7 +150,7 @@ public class ChineseDateTime {
             .replace("{DatePeriodLastRegex}", DatePeriodLastRegex)
             .replace("{DatePeriodNextRegex}", DatePeriodNextRegex);
 
-    public static final String DatePeriodYearRegex = "((({YearNumRegex})(\\s*年)?|({YearRegex})\\s*年))"
+    public static final String DatePeriodYearRegex = "(({YearNumRegex})(\\s*年)?|({YearRegex})\\s*年)"
             .replace("{YearNumRegex}", YearNumRegex)
             .replace("{YearRegex}", YearRegex);
 

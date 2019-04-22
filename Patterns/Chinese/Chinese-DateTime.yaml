@@ -108,7 +108,7 @@ RelativeMonthRegex: !nestedRegex
   def: (?<relmonth>({DatePeriodThisRegex}|{DatePeriodLastRegex}|{DatePeriodNextRegex})\s*月)
   references: [DatePeriodThisRegex, DatePeriodLastRegex, DatePeriodNextRegex]
 DatePeriodYearRegex: !nestedRegex
-  def: ((({YearNumRegex})(\s*年)?|({YearRegex})\s*年))
+  def: (({YearNumRegex})(\s*年)?|({YearRegex})\s*年)
   references: [YearNumRegex, YearRegex]
 StrictYearRegex: !nestedRegex
   def: '({DatePeriodYearRegex}(?=[\u4E00-\u9FFF]|\s|$|\W))'

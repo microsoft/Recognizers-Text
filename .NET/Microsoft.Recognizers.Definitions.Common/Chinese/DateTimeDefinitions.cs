@@ -61,7 +61,7 @@ namespace Microsoft.Recognizers.Definitions.Chinese
 		public const string DatePeriodLastRegex = @"上个|上一个|上|上一";
 		public const string DatePeriodNextRegex = @"下个|下一个|下|下一";
 		public static readonly string RelativeMonthRegex = $@"(?<relmonth>({DatePeriodThisRegex}|{DatePeriodLastRegex}|{DatePeriodNextRegex})\s*月)";
-		public static readonly string DatePeriodYearRegex = $@"((({YearNumRegex})(\s*年)?|({YearRegex})\s*年))";
+		public static readonly string DatePeriodYearRegex = $@"(({YearNumRegex})(\s*年)?|({YearRegex})\s*年)";
 		public static readonly string StrictYearRegex = $@"({DatePeriodYearRegex}(?=[\u4E00-\u9FFF]|\s|$|\W))";
 		public const string YearRegexInNumber = @"(?<year>(\d{3,4}))";
 		public static readonly string DatePeriodYearInChineseRegex = $@"(?<yearchs>({ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}|{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}|{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}))年";
