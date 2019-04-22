@@ -293,6 +293,8 @@ class ChineseDatePeriodParser(BaseDatePeriodParser):
 
         month_str = RegExpUtility.get_group(match, 'month')
         month = self.config.month_of_year.get(month_str, 0) % 12
+        if month == 0:
+            month = 12
 
         begin_date = DateUtils.safe_create_from_min_value(year, month, 1)
         end_date = DateUtils.safe_create_from_min_value(year, month, 1) + datedelta(months=1)
