@@ -73,6 +73,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             LessThanRegex = SpanishDatePeriodExtractorConfiguration.LessThanRegex;
             MoreThanRegex = SpanishDatePeriodExtractorConfiguration.MoreThanRegex;
             CenturySuffixRegex = SpanishDatePeriodExtractorConfiguration.CenturySuffixRegex;
+            NowRegex = SpanishDatePeriodExtractorConfiguration.NowRegex;
             UnitMap = config.UnitMap;
             CardinalMap = config.CardinalMap;
             DayOfMonth = config.DayOfMonth;
@@ -178,6 +179,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public Regex MoreThanRegex { get; }
 
         public Regex CenturySuffixRegex { get; }
+
+        public Regex NowRegex { get; }
 
         Regex IDatePeriodParserConfiguration.NextPrefixRegex => NextPrefixRegex;
 

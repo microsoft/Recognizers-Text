@@ -57,6 +57,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex MonthNumRegex { get; }
 
+        Regex NowRegex { get; }
+
         IDateExtractor DatePointExtractor { get; }
 
         IExtractor CardinalExtractor { get; }

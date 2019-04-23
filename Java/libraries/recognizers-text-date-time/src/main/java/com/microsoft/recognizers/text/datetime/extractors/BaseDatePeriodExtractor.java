@@ -21,6 +21,8 @@ import java.util.Optional;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
+
+
 public class BaseDatePeriodExtractor implements IDateTimeExtractor {
 
     private final IDatePeriodExtractorConfiguration config;
@@ -95,6 +97,15 @@ public class BaseDatePeriodExtractor implements IDateTimeExtractor {
     private List<Token> mergeTwoTimePoints(String input, LocalDateTime reference) {
         List<ExtractResult> ers = config.getDatePointExtractor().extract(input, reference);
 
+        // Handle "now"
+        Match[] matches = RegExpUtility.getMatches(this.config.getNowRegex(), input);
+        if (matches.length != 0) {
+            for (Match match : matches) {
+                ers.add(new ExtractResult(match.index, match.length, match.value, Constants.SYS_DATETIME_DATE));
+            }
+
+            ers.sort(Comparator.comparingInt(arg -> arg.getStart()));
+        }
         return mergeMultipleExtractions(input, ers);
     }
 

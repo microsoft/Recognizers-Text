@@ -3717,5 +3717,16 @@
         "Length": 17
       }
     ]
+  },
+  {
+    "Input": "I will do my work between now and November 15th",
+    "Results": [
+      {
+        "Text": "between now and november 15th",
+        "Type": "daterange",
+        "Start": 18,
+        "Length": 29
+      }
+    ]
   }
 ]

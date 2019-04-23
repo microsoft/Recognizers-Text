@@ -1262,6 +1262,27 @@ namespace Microsoft.Recognizers.Text.DateTime
             var ret = new DateTimeResolutionResult();
 
             var er = this.config.DateExtractor.Extract(text, referenceDate);
+
+            // Handle "now"
+            var match_now = this.config.NowRegex.Matches(text);
+            if (match_now.Count != 0)
+            {
+                foreach (Match match2 in match_now)
+                {
+                    var now_er = new ExtractResult
+                    {
+                        Start = match2.Index,
+                        Length = match2.Length,
+                        Text = "today",
+                        Type = Constants.SYS_DATETIME_DATE,
+                    };
+                    er.Add(now_er);
+
+                }
+
+                er = er.OrderBy(o => o.Start).ToList();
+            }
+
             if (er.Count < 2)
             {
                 er = this.config.DateExtractor.Extract(this.config.TokenBeforeDate + text, referenceDate);

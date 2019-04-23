@@ -77,7 +77,7 @@ public class EnglishDatePeriodParserConfiguration extends BaseOptionsConfigurati
         centurySuffixRegex = EnglishDatePeriodExtractorConfiguration.CenturySuffixRegex;
         relativeRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RelativeRegex);
         unspecificEndOfRangeRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.UnspecificEndOfRangeRegex);
-
+        nowRegex = EnglishDatePeriodExtractorConfiguration.NowRegex;
         unitMap = config.getUnitMap();
         cardinalMap = config.getCardinalMap();
         dayOfMonth = config.getDayOfMonth();
@@ -151,6 +151,7 @@ public class EnglishDatePeriodParserConfiguration extends BaseOptionsConfigurati
     private final Pattern previousPrefixRegex;
     private final Pattern thisPrefixRegex;
     private final Pattern afterNextSuffixRegex;
+    private final Pattern nowRegex;
 
     // Dictionaries
     private final ImmutableMap<String, String> unitMap;
@@ -415,6 +416,11 @@ public class EnglishDatePeriodParserConfiguration extends BaseOptionsConfigurati
     @Override
     public Pattern getUnspecificEndOfRangeRegex() {
         return unspecificEndOfRangeRegex;
+    }
+
+    @Override
+    public Pattern getNowRegex() {
+        return nowRegex;
     }
 
     @Override

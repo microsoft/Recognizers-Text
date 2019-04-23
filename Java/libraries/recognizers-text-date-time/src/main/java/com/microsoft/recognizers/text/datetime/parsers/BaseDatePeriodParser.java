@@ -31,6 +31,7 @@ import java.time.Month;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
@@ -937,8 +938,18 @@ public class BaseDatePeriodParser implements IDateTimeParser {
     private DateTimeResolutionResult mergeTwoTimePoints(String text, LocalDateTime referenceDate) {
 
         DateTimeResolutionResult ret = new DateTimeResolutionResult();
-
         List<ExtractResult> er = this.config.getDateExtractor().extract(text, referenceDate);
+
+        // Handle "now"
+        Match[] matches = RegExpUtility.getMatches(this.config.getNowRegex(), text);
+        if (matches.length != 0) {
+            for (Match match : matches) {
+                er.add(new ExtractResult(match.index, match.length, "today", Constants.SYS_DATETIME_DATE));
+            }
+
+            er.sort(Comparator.comparingInt(arg -> arg.getStart()));
+        }
+
         if (er.size() < 2) {
             er = this.config.getDateExtractor().extract(this.config.getTokenBeforeDate() + text, referenceDate);
             if (er.size() < 2) {

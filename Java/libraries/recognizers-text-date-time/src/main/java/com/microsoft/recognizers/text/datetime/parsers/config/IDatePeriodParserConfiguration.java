@@ -113,6 +113,8 @@ public interface IDatePeriodParserConfiguration extends IOptionsConfiguration {
 
     Pattern getUnspecificEndOfRangeRegex();
 
+    Pattern getNowRegex();
+
     ImmutableMap<String, String> getUnitMap();
 
     ImmutableMap<String, Integer> getCardinalMap();
