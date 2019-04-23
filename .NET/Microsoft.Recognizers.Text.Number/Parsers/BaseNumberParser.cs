@@ -13,9 +13,9 @@ namespace Microsoft.Recognizers.Text.Number
             new Regex(@"\d+", RegexOptions.Singleline);
 
         private static readonly Regex MultiDecimalSeparatorCultureRegex =
-            new Regex(@"^(en|es|fr)(-)?\b", RegexOptions.Singleline | RegexOptions.Compiled);
+            new Regex(@"^(en|es|fr|bg)(-)?\b", RegexOptions.Singleline | RegexOptions.Compiled);
 
-        private static readonly List<string> CompoundNumberLanguages = new List<string> { "de-DE", "nl-NL", "sv-SE" };
+        private static readonly List<string> CompoundNumberLanguages = new List<string> { "de-DE", "nl-NL", "sv-SE", "bg-BG" };
 
         private readonly bool isMultiDecimalSeparatorCulture = false;
 

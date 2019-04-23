@@ -1,0 +1,14 @@
+﻿---
+LangMarker: Bul
+#Boolean Recognizers
+TokenizerRegex: !simpleRegex
+  def: '[^\w\d]'
+ItIsNotRegex: !simpleRegex
+  def: не\s+е\s+
+IAmNotRegex: !simpleRegex
+  def: не\s+съм\s+
+TrueRegex: !simpleRegex
+  def: \b(в[яе]рно|определено|несъмнено|точно|добре|да|йеп|д|ok|ок|съглас((ен)|(на)))\b|(\uD83D\uDC4D|\uD83D\uDC4C)
+FalseRegex: !nestedRegex
+  def: \b({ItIsNotRegex}в[яе]рно|нев[яе]рно|{ItIsNotRegex}ок|{ItIsNotRegex}добре|{IAmNotRegex}съглас((ен)|(на))|не)\b|(\uD83D\uDC4E|\u270B|\uD83D\uDD90)
+  references: [ ItIsNotRegex, IAmNotRegex ]
