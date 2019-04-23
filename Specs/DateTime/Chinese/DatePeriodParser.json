@@ -1153,5 +1153,130 @@
         "Length": 14
       }
     ]
+  },
+  {
+    "Input": "2018年10月",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "2018年10月",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2018-10",
+          "FutureResolution": {
+            "startDate": "2018-10-01",
+            "endDate": "2018-11-01"
+          },
+          "PastResolution": {
+            "startDate": "2018-10-01",
+            "endDate": "2018-11-01"
+          }
+        },
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "2018年10月的月份是10",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "2018年10月",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2018-10",
+          "FutureResolution": {
+            "startDate": "2018-10-01",
+            "endDate": "2018-11-01"
+          },
+          "PastResolution": {
+            "startDate": "2018-10-01",
+            "endDate": "2018-11-01"
+          }
+        },
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "2018年十二月的月份不是0",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "2018年十二月",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2018-12",
+          "FutureResolution": {
+            "startDate": "2018-12-01",
+            "endDate": "2019-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2018-12-01",
+            "endDate": "2019-01-01"
+          }
+        },
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "2008年十二月",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "2008年十二月",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2008-12",
+          "FutureResolution": {
+            "startDate": "2008-12-01",
+            "endDate": "2009-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2008-12-01",
+            "endDate": "2009-01-01"
+          }
+        },
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "2008年 十二月",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "2008年 十二月",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2008-12",
+          "FutureResolution": {
+            "startDate": "2008-12-01",
+            "endDate": "2009-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2008-12-01",
+            "endDate": "2009-01-01"
+          }
+        },
+        "Start": 0,
+        "Length": 9
+      }
+    ]
   }
 ]

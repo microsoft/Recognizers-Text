@@ -108,10 +108,10 @@ RelativeMonthRegex: !nestedRegex
   def: (?<relmonth>({DatePeriodThisRegex}|{DatePeriodLastRegex}|{DatePeriodNextRegex})\s*月)
   references: [DatePeriodThisRegex, DatePeriodLastRegex, DatePeriodNextRegex]
 DatePeriodYearRegex: !nestedRegex
-  def: (({YearNumRegex})(\s*年)?|({YearRegex})\s*年)(?=[\u4E00-\u9FFF]|\s|$|\W)
+  def: (({YearNumRegex})(\s*年)?|({YearRegex})\s*年)
   references: [YearNumRegex, YearRegex]
 StrictYearRegex: !nestedRegex
-  def: '{DatePeriodYearRegex}'
+  def: '({DatePeriodYearRegex}(?=[\u4E00-\u9FFF]|\s|$|\W))'
   references: [DatePeriodYearRegex]
 YearRegexInNumber: !simpleRegex
   def: (?<year>(\d{3,4}))
@@ -125,7 +125,7 @@ SimpleCasesRegex: !nestedRegex
   def: ((从)\s*)?(({DatePeriodYearRegex}|{DatePeriodYearInChineseRegex})\s*)?{MonthSuffixRegex}({DatePeriodDayRegexInChinese}|{DayRegex})\s*{DatePeriodTillRegex}\s*({DatePeriodDayRegexInChinese}|{DayRegex})((\s+|\s*,\s*){DatePeriodYearRegex})?
   references: [DatePeriodYearRegex, DatePeriodYearInChineseRegex, MonthSuffixRegex, DatePeriodDayRegexInChinese, DayRegex, DatePeriodTillRegex]
 YearAndMonth: !nestedRegex
-  def: ({DatePeriodYearInChineseRegex}|{DatePeriodYearRegex}){MonthRegex}
+  def: ({DatePeriodYearInChineseRegex}|{DatePeriodYearRegex})\s*{MonthRegex}
   references: [DatePeriodYearInChineseRegex, DatePeriodYearRegex, MonthRegex]
 PureNumYearAndMonth: !nestedRegex
   def: ({YearRegexInNumber}\s*[-\.\/]\s*{MonthNumRegex})|({MonthNumRegex}\s*\/\s*{YearRegexInNumber})
