@@ -412,6 +412,11 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if (!innerResult.Success)
             {
+                innerResult = MergeTwoTimePointsWithNow(text, referenceDate);
+            }
+
+            if (!innerResult.Success)
+            {
                 innerResult = ParseYear(text, referenceDate);
             }
 
@@ -1262,27 +1267,6 @@ namespace Microsoft.Recognizers.Text.DateTime
             var ret = new DateTimeResolutionResult();
 
             var er = this.config.DateExtractor.Extract(text, referenceDate);
-
-            // Handle "now"
-            var match_now = this.config.NowRegex.Matches(text);
-            if (match_now.Count != 0)
-            {
-                foreach (Match match2 in match_now)
-                {
-                    var now_er = new ExtractResult
-                    {
-                        Start = match2.Index,
-                        Length = match2.Length,
-                        Text = "today",
-                        Type = Constants.SYS_DATETIME_DATE,
-                    };
-                    er.Add(now_er);
-
-                }
-
-                er = er.OrderBy(o => o.Start).ToList();
-            }
-
             if (er.Count < 2)
             {
                 er = this.config.DateExtractor.Extract(this.config.TokenBeforeDate + text, referenceDate);
@@ -1339,6 +1323,70 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             ret.Timex = $"({pr1.TimexStr},{pr2.TimexStr},P{(futureEnd - futureBegin).TotalDays}D)";
+            ret.FutureValue = new Tuple<DateObject, DateObject>(futureBegin, futureEnd);
+            ret.PastValue = new Tuple<DateObject, DateObject>(pastBegin, pastEnd);
+            ret.Success = true;
+
+            return ret;
+        }
+
+        // Parse entities that are made up by two time points with now
+        private DateTimeResolutionResult MergeTwoTimePointsWithNow(string text, DateObject referenceDate)
+        {
+            var ret = new DateTimeResolutionResult();
+            var matchNow = this.config.NowRegex.Matches(text);
+            var er = this.config.DateExtractor.Extract(text, referenceDate);
+            if (matchNow.Count < 1 || er.Count < 1)
+            {
+                return ret;
+            }
+
+            var pr = new List<DateTimeParseResult>();
+            pr.Add(this.config.DateParser.Parse(er[0], referenceDate));
+            var value = referenceDate.Date;
+            foreach (Match match2 in matchNow)
+            {
+                var retNow = new DateTimeResolutionResult
+                {
+                    Timex = DateTimeFormatUtil.LuisDate(value),
+                    FutureValue = value,
+                    PastValue = value,
+                };
+
+                var nowPr = new DateTimeParseResult
+                {
+                    Text = match2.Value,
+                    Start = match2.Index,
+                    Length = match2.Length,
+                    Value = retNow,
+                    Type = Constants.SYS_DATETIME_DATE,
+                    TimexStr = retNow == null ? string.Empty : ((DateTimeResolutionResult)retNow).Timex,
+                };
+
+                pr.Add(nowPr);
+            }
+
+            pr = pr.OrderBy(o => o.Start).ToList();
+
+            ret.SubDateTimeEntities = new List<object> { pr[0], pr[1] };
+
+            DateObject futureBegin = (DateObject)((DateTimeResolutionResult)pr[0].Value).FutureValue,
+                futureEnd = (DateObject)((DateTimeResolutionResult)pr[1].Value).FutureValue;
+
+            DateObject pastBegin = (DateObject)((DateTimeResolutionResult)pr[0].Value).PastValue,
+                pastEnd = (DateObject)((DateTimeResolutionResult)pr[1].Value).PastValue;
+
+            if (futureBegin > futureEnd)
+            {
+                futureBegin = pastBegin;
+            }
+
+            if (pastEnd < pastBegin)
+            {
+                pastEnd = futureEnd;
+            }
+
+            ret.Timex = $"({pr[0].TimexStr},{pr[1].TimexStr},P{(futureEnd - futureBegin).TotalDays}D)";
             ret.FutureValue = new Tuple<DateObject, DateObject>(futureBegin, futureEnd);
             ret.PastValue = new Tuple<DateObject, DateObject>(pastBegin, pastEnd);
             ret.Success = true;

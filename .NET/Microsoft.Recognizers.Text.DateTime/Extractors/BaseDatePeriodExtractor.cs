@@ -504,12 +504,12 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 foreach (Match match in matches)
                 {
-                    var now_er = new ExtractResult
+                    var nowEr = new ExtractResult
                     {
                         Start = match.Index,
                         Length = match.Length,
                     };
-                    er.Add(now_er);
+                    er.Add(nowEr);
 
                 }
 

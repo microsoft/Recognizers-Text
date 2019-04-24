@@ -236,6 +236,10 @@ public class BaseDatePeriodParser implements IDateTimeParser {
         }
 
         if (!innerResult.getSuccess()) {
+            innerResult = mergeTwoTimePointsWithNow(text, referenceDate);
+        }
+
+        if (!innerResult.getSuccess()) {
             innerResult = parseYear(text, referenceDate);
         }
 
@@ -938,17 +942,8 @@ public class BaseDatePeriodParser implements IDateTimeParser {
     private DateTimeResolutionResult mergeTwoTimePoints(String text, LocalDateTime referenceDate) {
 
         DateTimeResolutionResult ret = new DateTimeResolutionResult();
+
         List<ExtractResult> er = this.config.getDateExtractor().extract(text, referenceDate);
-
-        // Handle "now"
-        Match[] matches = RegExpUtility.getMatches(this.config.getNowRegex(), text);
-        if (matches.length != 0) {
-            for (Match match : matches) {
-                er.add(new ExtractResult(match.index, match.length, "today", Constants.SYS_DATETIME_DATE));
-            }
-
-            er.sort(Comparator.comparingInt(arg -> arg.getStart()));
-        }
 
         if (er.size() < 2) {
             er = this.config.getDateExtractor().extract(this.config.getTokenBeforeDate() + text, referenceDate);
@@ -1009,6 +1004,73 @@ public class BaseDatePeriodParser implements IDateTimeParser {
         String totalDays = StringUtility.format((double)ChronoUnit.HOURS.between(futureBegin, futureEnd) / 24);
 
         ret.setTimex(String.format("(%s,%s,P%sD)", ((DateTimeParseResult)pr1).getTimexStr(), ((DateTimeParseResult)pr2).getTimexStr(), totalDays));
+        ret.setFutureValue(new Pair<>(futureBegin, futureEnd));
+        ret.setPastValue(new Pair<>(pastBegin, pastEnd));
+        ret.setSuccess(true);
+
+        return ret;
+    }
+
+    // parse entities that made up by two time points with now
+    private DateTimeResolutionResult mergeTwoTimePointsWithNow(String text, LocalDateTime referenceDate) {
+
+        DateTimeResolutionResult ret = new DateTimeResolutionResult();
+
+        List<ExtractResult> er = this.config.getDateExtractor().extract(text, referenceDate);
+
+        // Handle "now"
+        Match[] matches = RegExpUtility.getMatches(this.config.getNowRegex(), text);
+        if (matches.length < 1 || er.size() < 1) {
+            return ret;
+        }
+
+        List<DateTimeParseResult> pr = new ArrayList<>();
+        pr.add(this.config.getDateParser().parse(er.get(0), referenceDate));
+
+        LocalDateTime value = referenceDate.toLocalDate().atStartOfDay();
+        for (Match match : matches) {
+            DateTimeResolutionResult retNow = new DateTimeResolutionResult();
+            retNow.setTimex(DateTimeFormatUtil.luisDate(value));
+            retNow.setFutureValue(value);
+            retNow.setPastValue(value);
+
+            DateTimeParseResult nowPr = new DateTimeParseResult(
+                match.index,
+                match.length,
+                match.value,
+                Constants.SYS_DATETIME_DATE,
+                null,
+                retNow,
+                "",
+                value == null ? "" : ((DateTimeResolutionResult)retNow).getTimex());
+
+            pr.add(nowPr);
+        }
+
+        pr.sort(Comparator.comparingInt(arg -> arg.getStart()));
+
+        List<Object> subDateTimeEntities = new ArrayList<Object>();
+        subDateTimeEntities.add(pr.get(0));
+        subDateTimeEntities.add(pr.get(1));
+        ret.setSubDateTimeEntities(subDateTimeEntities);
+
+        LocalDateTime futureBegin = (LocalDateTime)((DateTimeResolutionResult)pr.get(0).getValue()).getFutureValue();
+        LocalDateTime futureEnd = (LocalDateTime)((DateTimeResolutionResult)pr.get(1).getValue()).getFutureValue();
+
+        LocalDateTime pastBegin = (LocalDateTime)((DateTimeResolutionResult)pr.get(0).getValue()).getPastValue();
+        LocalDateTime pastEnd = (LocalDateTime)((DateTimeResolutionResult)pr.get(1).getValue()).getPastValue();
+
+        if (futureBegin.isAfter(futureEnd)) {
+            futureBegin = pastBegin;
+        }
+
+        if (pastEnd.isBefore(pastBegin)) {
+            pastEnd = futureEnd;
+        }
+
+        String totalDays = StringUtility.format((double)ChronoUnit.HOURS.between(futureBegin, futureEnd) / 24);
+
+        ret.setTimex(String.format("(%s,%s,P%sD)", ((DateTimeParseResult)pr.get(0)).getTimexStr(), ((DateTimeParseResult)pr.get(1)).getTimexStr(), totalDays));
         ret.setFutureValue(new Pair<>(futureBegin, futureEnd));
         ret.setPastValue(new Pair<>(pastBegin, pastEnd));
         ret.setSuccess(true);
