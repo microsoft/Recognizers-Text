@@ -1322,7 +1322,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 pastEnd = futureEnd;
             }
 
-            ret.Timex = $"({pr1.TimexStr},{pr2.TimexStr},P{(futureEnd - futureBegin).TotalDays}D)";
+            ret.Timex = TimexUtility.GenerateDatePeriodTimex(futureBegin, futureEnd, DatePeriodTimexType.ByDay, pastBegin, pastEnd);
             ret.FutureValue = new Tuple<DateObject, DateObject>(futureBegin, futureEnd);
             ret.PastValue = new Tuple<DateObject, DateObject>(pastBegin, pastEnd);
             ret.Success = true;
@@ -1334,9 +1334,9 @@ namespace Microsoft.Recognizers.Text.DateTime
         private DateTimeResolutionResult MergeTwoTimePointsWithNow(string text, DateObject referenceDate)
         {
             var ret = new DateTimeResolutionResult();
-            var matchNow = this.config.NowRegex.Matches(text);
+            var nowMatches = this.config.NowRegex.Matches(text);
             var er = this.config.DateExtractor.Extract(text, referenceDate);
-            if (matchNow.Count < 1 || er.Count < 1)
+            if (nowMatches.Count < 1 || er.Count < 1)
             {
                 return ret;
             }
@@ -1344,7 +1344,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var pr = new List<DateTimeParseResult>();
             pr.Add(this.config.DateParser.Parse(er[0], referenceDate));
             var value = referenceDate.Date;
-            foreach (Match match2 in matchNow)
+            foreach (Match nowMatch in nowMatches)
             {
                 var retNow = new DateTimeResolutionResult
                 {
@@ -1355,9 +1355,9 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 var nowPr = new DateTimeParseResult
                 {
-                    Text = match2.Value,
-                    Start = match2.Index,
-                    Length = match2.Length,
+                    Text = nowMatch.Value,
+                    Start = nowMatch.Index,
+                    Length = nowMatch.Length,
                     Value = retNow,
                     Type = Constants.SYS_DATETIME_DATE,
                     TimexStr = retNow == null ? string.Empty : ((DateTimeResolutionResult)retNow).Timex,
@@ -1386,7 +1386,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 pastEnd = futureEnd;
             }
 
-            ret.Timex = $"({pr[0].TimexStr},{pr[1].TimexStr},P{(futureEnd - futureBegin).TotalDays}D)";
+            ret.Timex = TimexUtility.GenerateDatePeriodTimex(futureBegin, futureEnd, DatePeriodTimexType.ByDay, pastBegin, pastEnd);
             ret.FutureValue = new Tuple<DateObject, DateObject>(futureBegin, futureEnd);
             ret.PastValue = new Tuple<DateObject, DateObject>(pastBegin, pastEnd);
             ret.Success = true;
