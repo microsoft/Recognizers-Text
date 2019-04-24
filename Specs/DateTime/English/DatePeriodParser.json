@@ -5606,7 +5606,7 @@
         "Text": "between now and November 15th",
         "Type": "daterange",
         "Value": {
-          "Timex": "(2019-04-23,XXXX-11-15,P206D)",
+          "Timex": "(2019-04-23,2019-11-15,P206D)",
           "FutureResolution": {
             "startDate": "2019-04-23",
             "endDate": "2019-11-15"
