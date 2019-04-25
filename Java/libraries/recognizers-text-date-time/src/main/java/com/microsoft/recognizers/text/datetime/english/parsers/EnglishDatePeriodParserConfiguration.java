@@ -78,6 +78,7 @@ public class EnglishDatePeriodParserConfiguration extends BaseOptionsConfigurati
         relativeRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RelativeRegex);
         unspecificEndOfRangeRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.UnspecificEndOfRangeRegex);
         nowRegex = EnglishDatePeriodExtractorConfiguration.NowRegex;
+
         unitMap = config.getUnitMap();
         cardinalMap = config.getCardinalMap();
         dayOfMonth = config.getDayOfMonth();

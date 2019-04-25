@@ -77,6 +77,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             MoreThanRegex = FrenchDatePeriodExtractorConfiguration.MoreThanRegex;
             CenturySuffixRegex = FrenchDatePeriodExtractorConfiguration.CenturySuffixRegex;
             NowRegex = FrenchDatePeriodExtractorConfiguration.NowRegex;
+
             UnitMap = config.UnitMap;
             CardinalMap = config.CardinalMap;
             DayOfMonth = config.DayOfMonth;
