@@ -3728,5 +3728,16 @@
         "Length": 29
       }
     ]
+  },
+  {
+    "Input": "I have finished my work between Jan 22 and now",
+    "Results": [
+      {
+        "Text": "between Jan 22 and now",
+        "Type": "daterange",
+        "Start": 24,
+        "Length": 22
+      }
+    ]
   }
 ]

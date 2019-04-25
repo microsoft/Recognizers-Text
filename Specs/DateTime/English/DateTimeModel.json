@@ -10619,7 +10619,7 @@
     ]
   },
   {
-    "Input": "I have finish my work between Jan 22 and now",
+    "Input": "I have finished my work between Jan 22 and now",
     "Context": {
       "ReferenceDateTime": "2019-04-25T12:00:00"
     },
@@ -10627,8 +10627,8 @@
     "Results": [
       {
         "Text": "between Jan 22 and now",
-        "Start": 22,
-        "End": 43,
+        "Start": 24,
+        "End": 45,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [

@@ -5615,10 +5615,35 @@
             "startDate": "2019-04-23",
             "endDate": "2019-11-15"
           }
-		  
         },
         "Start": 18,
         "Length": 29
+      }
+    ]
+  },
+  {
+    "Input": "I have finished my work between Jan 22 and now",
+    "Context": {
+      "ReferenceDateTime": "2019-04-25T12:00:00"
+    },
+    "Results": [
+      {
+        "Text": "between Jan 22 and now",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2019-01-22,2019-04-25,P93D)",
+          "FutureResolution": {
+            "startDate": "2019-01-22",
+            "endDate": "2019-04-25"
+          },
+          "PastResolution": {
+            "startDate": "2019-01-22",
+            "endDate": "2019-04-25"
+          }
+
+        },
+        "Start": 24,
+        "Length": 22
       }
     ]
   }
