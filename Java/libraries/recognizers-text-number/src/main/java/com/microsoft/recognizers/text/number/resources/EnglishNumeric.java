@@ -79,8 +79,11 @@ public class EnglishNumeric {
 
     public static final String RelativeOrdinalRegex = "((next|previous) one|(the second|next) to last|the one before the last( one)?|the last but one|(ante)?penultimate|last|next|previous)";
 
-    public static final String BasicOrdinalRegex = "(({NumberOrdinalRegex}|{RelativeOrdinalRegex})(?!\\s*({TwoToNineIntegerRegex}|([2-9]+))\\b))"
+    public static final String BasicOrdinalRegex = "({NumberOrdinalRegex}|{RelativeOrdinalRegex})"
             .replace("{NumberOrdinalRegex}", NumberOrdinalRegex)
+            .replace("{RelativeOrdinalRegex}", RelativeOrdinalRegex);
+
+    public static final String RelativeOrdinalFilterRegex = "(?<!-)(first|{RelativeOrdinalRegex})\\s*({TwoToNineIntegerRegex}|[2-9]+)"
             .replace("{RelativeOrdinalRegex}", RelativeOrdinalRegex)
             .replace("{TwoToNineIntegerRegex}", TwoToNineIntegerRegex);
 
