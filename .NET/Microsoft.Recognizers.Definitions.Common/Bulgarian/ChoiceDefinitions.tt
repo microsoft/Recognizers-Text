@@ -1,0 +1,7 @@
+﻿<#@ template debug="true" hostspecific="true" language="C#" #>
+<#
+	this.DataFilename = @"Patterns\Bulgarian\Bulgarian-Choice.yaml";
+	this.Language = "Bulgarian";
+	this.ClassName = "ChoiceDefinitions";
+#>
+<#@ include file="..\CommonDefinitions.ttinclude"#>

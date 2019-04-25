@@ -188,5 +188,20 @@
     "Input": "Sie können zu https://www.test.com/search?q=30%25%2020% für mehr Details gehen",
     "NotSupported": "javascript, python",
     "Results": []
+  },
+  {
+    "Input": "Diese 15 Prozentpunkte stellen den stärksten Rückgang in diesem Jahr dar.",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "15 prozentpunkte",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "15%"
+        },
+        "Start": 6,
+        "End": 21
+      }
+    ]
   }
 ]

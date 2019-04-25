@@ -110,7 +110,7 @@ DoubleAllFloatRegex: !nestedRegex
   references: [ AllFloatRegex ]
 #Percentage Regex
 NumberWithSuffixPercentage: !nestedRegex
-  def: (?<!%)({BaseNumbers.NumberReplaceToken})(\s*)(%(?!{BaseNumbers.NumberReplaceToken})|prozent\b)
+  def: (?<!%)({BaseNumbers.NumberReplaceToken})(\s*)(%(?!{BaseNumbers.NumberReplaceToken})|prozent(punkte)?\b)
   references: [ BaseNumbers.NumberReplaceToken ]
 NumberWithPrefixPercentage: !nestedRegex
   def: (Prozent)(\s*)({BaseNumbers.NumberReplaceToken})

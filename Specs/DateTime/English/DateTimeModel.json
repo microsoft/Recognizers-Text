@@ -10648,5 +10648,338 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Let's meet on march eighteenth nine thirty.",
+    "Context": {
+      "ReferenceDateTime": "2019-04-25T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "march eighteenth nine thirty",
+        "Start": 14,
+        "End": 41,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-03-18T09:30",
+              "type": "datetime",
+              "value": "2019-03-18 09:30:00"
+            },
+            {
+              "timex": "XXXX-03-18T09:30",
+              "type": "datetime",
+              "value": "2020-03-18 09:30:00"
+            },
+            {
+              "timex": "XXXX-03-18T21:30",
+              "type": "datetime",
+              "value": "2019-03-18 21:30:00"
+            },
+            {
+              "timex": "XXXX-03-18T21:30",
+              "type": "datetime",
+              "value": "2020-03-18 21:30:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Let's meet on february twenty second.",
+    "Context": {
+      "ReferenceDateTime": "2019-04-25T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "february twenty second",
+        "Start": 14,
+        "End": 35,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-02-22",
+              "type": "date",
+              "value": "2019-02-22"
+            },
+            {
+              "timex": "XXXX-02-22",
+              "type": "date",
+              "value": "2020-02-22"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Let's meet on february twenty second 3:30.",
+    "Context": {
+      "ReferenceDateTime": "2019-04-25T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "february twenty second 3:30",
+        "Start": 14,
+        "End": 40,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-02-22T03:30",
+              "type": "datetime",
+              "value": "2019-02-22 03:30:00"
+            },
+            {
+              "timex": "XXXX-02-22T03:30",
+              "type": "datetime",
+              "value": "2020-02-22 03:30:00"
+            },
+            {
+              "timex": "XXXX-02-22T15:30",
+              "type": "datetime",
+              "value": "2019-02-22 15:30:00"
+            },
+            {
+              "timex": "XXXX-02-22T15:30",
+              "type": "datetime",
+              "value": "2020-02-22 15:30:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Please can you arrange a Microsoft Teams Meeting starting January 7th to discuss ARM Templates?",
+    "Context": {
+      "ReferenceDateTime": "2019-04-24T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "starting january 7th",
+        "Start": 49,
+        "End": 68,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-01-07",
+              "Mod": "after",
+              "type": "daterange",
+              "start": "2019-01-07"
+            },
+            {
+              "timex": "XXXX-01-07",
+              "Mod": "after",
+              "type": "daterange",
+              "start": "2020-01-07"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Please can you arrange a Microsoft Teams Meeting starting on January 7th to discuss ARM Templates?",
+    "Context": {
+      "ReferenceDateTime": "2019-04-24T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "starting on january 7th",
+        "Start": 49,
+        "End": 71,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-01-07",
+              "Mod": "after",
+              "type": "daterange",
+              "start": "2019-01-07"
+            },
+            {
+              "timex": "XXXX-01-07",
+              "Mod": "after",
+              "type": "daterange",
+              "start": "2020-01-07"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Let's meet on february twenty second at 3:30",
+    "Context": {
+      "ReferenceDateTime": "2019-04-25T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "february twenty second at 3:30",
+        "Start": 14,
+        "End": 43,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-02-22T03:30",
+              "type": "datetime",
+              "value": "2019-02-22 03:30:00"
+            },
+            {
+              "timex": "XXXX-02-22T03:30",
+              "type": "datetime",
+              "value": "2020-02-22 03:30:00"
+            },
+            {
+              "timex": "XXXX-02-22T15:30",
+              "type": "datetime",
+              "value": "2019-02-22 15:30:00"
+            },
+            {
+              "timex": "XXXX-02-22T15:30",
+              "type": "datetime",
+              "value": "2020-02-22 15:30:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Let's meet on february 22nd 3:30.",
+    "Context": {
+      "ReferenceDateTime": "2019-04-25T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "february 22nd 3:30",
+        "Start": 14,
+        "End": 31,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-02-22T03:30",
+              "type": "datetime",
+              "value": "2019-02-22 03:30:00"
+            },
+            {
+              "timex": "XXXX-02-22T03:30",
+              "type": "datetime",
+              "value": "2020-02-22 03:30:00"
+            },
+            {
+              "timex": "XXXX-02-22T15:30",
+              "type": "datetime",
+              "value": "2019-02-22 15:30:00"
+            },
+            {
+              "timex": "XXXX-02-22T15:30",
+              "type": "datetime",
+              "value": "2020-02-22 15:30:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Please can you arrange a Microsoft Teams Meeting beginning January 7th to discuss ARM Templates?",
+    "Context": {
+      "ReferenceDateTime": "2019-04-24T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "beginning january 7th",
+        "Start": 49,
+        "End": 69,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-01-07",
+              "Mod": "after",
+              "type": "daterange",
+              "start": "2019-01-07"
+            },
+            {
+              "timex": "XXXX-01-07",
+              "Mod": "after",
+              "type": "daterange",
+              "start": "2020-01-07"
+              }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Please can you arrange a Microsoft Teams Meeting beginning on January 7th to discuss ARM Templates?",
+    "Context": {
+      "ReferenceDateTime": "2019-04-24T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "beginning on january 7th",
+        "Start": 49,
+        "End": 72,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-01-07",
+              "Mod": "after",
+              "type": "daterange",
+              "start": "2019-01-07"
+            },
+            {
+              "timex": "XXXX-01-07",
+              "Mod": "after",
+              "type": "daterange",
+              "start": "2020-01-07"
+              }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Let's meet on friday march fifteenth nine a m.",
+    "Context": {
+      "ReferenceDateTime": "2019-04-25T00:00:00"
+    },
+    "NotSupported": "python,javascript",
+    "Results": [
+      {
+        "Text": "friday march fifteenth nine a m",
+        "Start": 14,
+        "End": 44,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-03-15T09",
+              "type": "datetime",
+              "value": "2019-03-15 09:00:00"
+            },
+            {
+              "timex": "XXXX-03-15T09",
+              "type": "datetime",
+              "value": "2020-03-15 09:00:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

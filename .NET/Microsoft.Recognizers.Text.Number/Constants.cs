@@ -36,6 +36,7 @@ namespace Microsoft.Recognizers.Text.Number
         public const string KOREAN = "Kor";
         public const string ITALIAN = "Ita";
         public const string SWEDISH = "Swe";
+        public const string BULGARIAN = "Bul";
 
         // Regex Prefixes / Suffixes
         public const string FRACTION_PREFIX = "Frac";

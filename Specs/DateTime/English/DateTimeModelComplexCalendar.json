@@ -9069,5 +9069,44 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Let's meet on march eighteenth nine thirty.",
+    "Context": {
+      "ReferenceDateTime": "2019-04-25T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "march eighteenth nine thirty",
+        "Start": 14,
+        "End": 41,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-03-18T09:30",
+              "type": "datetime",
+              "value": "2019-03-18 09:30:00"
+            },
+            {
+              "timex": "XXXX-03-18T09:30",
+              "type": "datetime",
+              "value": "2020-03-18 09:30:00"
+            },
+            {
+              "timex": "XXXX-03-18T21:30",
+              "type": "datetime",
+              "value": "2019-03-18 21:30:00"
+            },
+            {
+              "timex": "XXXX-03-18T21:30",
+              "type": "datetime",
+              "value": "2020-03-18 21:30:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

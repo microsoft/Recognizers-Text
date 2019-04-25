@@ -824,5 +824,42 @@
         "End": 15
       }
     ]
+  },
+  {
+    "Input": "el primer lugar",
+    "Results": [
+      {
+        "Text": "primer",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "1"
+        },
+        "Start": 3,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "decimoctavo o décimo octavo",
+    "Results": [
+      {
+        "Text": "decimoctavo",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "18"
+        },
+        "Start": 0,
+        "End": 10
+      },
+	  {
+        "Text": "décimo octavo",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "18"
+        },
+        "Start": 14,
+        "End": 26
+      }
+    ]
   }
 ]
