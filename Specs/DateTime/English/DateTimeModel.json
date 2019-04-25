@@ -10700,6 +10700,66 @@
     ]
   },
   {
+    "Input": "Please can you arrange a Microsoft Teams Meeting starting January 7th to discuss ARM Templates?",
+    "Context": {
+      "ReferenceDateTime": "2019-04-24T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "starting january 7th",
+        "Start": 49,
+        "End": 68,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-01-07",
+              "Mod": "after",
+              "type": "daterange",
+              "start": "2019-01-07"
+            },
+            {
+              "timex": "XXXX-01-07",
+              "Mod": "after",
+              "type": "daterange",
+              "start": "2020-01-07"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Please can you arrange a Microsoft Teams Meeting starting on January 7th to discuss ARM Templates?",
+    "Context": {
+      "ReferenceDateTime": "2019-04-24T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "starting on january 7th",
+        "Start": 49,
+        "End": 71,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-01-07",
+              "Mod": "after",
+              "type": "daterange",
+              "start": "2019-01-07"
+            },
+            {
+              "timex": "XXXX-01-07",
+              "Mod": "after",
+              "type": "daterange",
+              "start": "2020-01-07"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
     "Input": "Let's meet on february twenty second at 3:30",
     "Context": {
       "ReferenceDateTime": "2019-04-25T00:00:00"
@@ -10772,6 +10832,66 @@
               "type": "datetime",
               "value": "2020-02-22 15:30:00"
             }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Please can you arrange a Microsoft Teams Meeting beginning January 7th to discuss ARM Templates?",
+    "Context": {
+      "ReferenceDateTime": "2019-04-24T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "beginning january 7th",
+        "Start": 49,
+        "End": 69,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-01-07",
+              "Mod": "after",
+              "type": "daterange",
+              "start": "2019-01-07"
+            },
+            {
+              "timex": "XXXX-01-07",
+              "Mod": "after",
+              "type": "daterange",
+              "start": "2020-01-07"
+              }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Please can you arrange a Microsoft Teams Meeting beginning on January 7th to discuss ARM Templates?",
+    "Context": {
+      "ReferenceDateTime": "2019-04-24T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "beginning on january 7th",
+        "Start": 49,
+        "End": 72,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-01-07",
+              "Mod": "after",
+              "type": "daterange",
+              "start": "2019-01-07"
+            },
+            {
+              "timex": "XXXX-01-07",
+              "Mod": "after",
+              "type": "daterange",
+              "start": "2020-01-07"
+              }
           ]
         }
       }
