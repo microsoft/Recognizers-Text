@@ -10594,7 +10594,7 @@
     ]
   },
   {
-   "Input": "I will do my work between now and November 15th",
+    "Input": "I will do my work between now and November 15th",
     "Context": {
       "ReferenceDateTime": "2019-04-23T12:00:00"
     },
@@ -10612,6 +10612,31 @@
               "type": "daterange",
               "start": "2019-04-23",
               "end": "2019-11-15"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I have finish my work between Jan 22 and now",
+    "Context": {
+      "ReferenceDateTime": "2019-04-25T12:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "between Jan 22 and now",
+        "Start": 22,
+        "End": 43,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2019-01-22,2019-04-25,P93D)",
+              "type": "daterange",
+              "start": "2019-01-22",
+              "end": "2019-04-25"
             }
           ]
         }
