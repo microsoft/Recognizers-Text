@@ -19,7 +19,7 @@ namespace Microsoft.Recognizers.Text.Number.English
 
             RelativeReferenceRegex = new Regex(NumbersDefinitions.RelativeOrdinalRegex, RegexOptions.Singleline);
 
-            NotOrdinalRegex = new Regex(NumbersDefinitions.NotOrdinalRegex, RegexOptions.Singleline);
+            RelativeOrdinalFilterRegex = new Regex(NumbersDefinitions.RelativeOrdinalFilterRegex, RegexOptions.Singleline);
 
             var regexes = new Dictionary<Regex, TypeTag>
             {
@@ -52,7 +52,7 @@ namespace Microsoft.Recognizers.Text.Number.English
 
         protected sealed override Regex RelativeReferenceRegex { get; }
 
-        protected sealed override Regex NotOrdinalRegex { get; }
+        protected sealed override Regex RelativeOrdinalFilterRegex { get; }
 
         public static OrdinalExtractor GetInstance(NumberOptions options = NumberOptions.None)
         {
