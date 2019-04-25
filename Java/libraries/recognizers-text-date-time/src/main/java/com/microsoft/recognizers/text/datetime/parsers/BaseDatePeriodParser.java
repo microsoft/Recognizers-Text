@@ -1070,7 +1070,7 @@ public class BaseDatePeriodParser implements IDateTimeParser {
 
         String totalDays = StringUtility.format((double)ChronoUnit.HOURS.between(futureBegin, futureEnd) / 24);
 
-        ret.setTimex(String.format("(%s,%s,P%sD)", ((DateTimeParseResult)pr.get(0)).getTimexStr(), ((DateTimeParseResult)pr.get(1)).getTimexStr(), totalDays));
+        ret.setTimex(TimexUtility.generateDatePeriodTimex(futureBegin, futureEnd, DatePeriodTimexType.ByDay, pastBegin, pastEnd));
         ret.setFutureValue(new Pair<>(futureBegin, futureEnd));
         ret.setPastValue(new Pair<>(pastBegin, pastEnd));
         ret.setSuccess(true);
