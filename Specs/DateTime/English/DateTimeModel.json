@@ -10571,7 +10571,30 @@
     ]
   },
   {
-    "Input": "I will do my work between now and November 15th",
+    "Input": "I'll be back at 9.am.",
+    "Context": {
+      "ReferenceDateTime": "2019-04-19T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "9.am",
+        "Start": 16,
+        "End": 19,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T09",
+              "type": "time",
+              "value": "09:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+   "Input": "I will do my work between now and November 15th",
     "Context": {
       "ReferenceDateTime": "2019-04-23T12:00:00"
     },

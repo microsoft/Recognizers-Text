@@ -29,6 +29,7 @@ namespace Microsoft.Recognizers.Text.Sequence
             };
 
             Regexes = regexes.ToImmutableDictionary();
+            AmbiguousTimeTerm = new Regex(BaseURL.AmbiguousTimeTerm, RegexOptions.Compiled);
 
             TldMatcher = new StringMatcher();
             TldMatcher.Init(BaseURL.TldList);
@@ -39,6 +40,8 @@ namespace Microsoft.Recognizers.Text.Sequence
         protected sealed override string ExtractType { get; } = Constants.SYS_URL;
 
         private StringMatcher TldMatcher { get; }
+
+        private Regex AmbiguousTimeTerm { get; }
 
         public override bool IsValidMatch(Match match)
         {
@@ -54,6 +57,12 @@ namespace Microsoft.Recognizers.Text.Sequence
                 {
                     isValidTld = true;
                 }
+            }
+
+            // For cases like "7.am" or "8.pm" which are more likely time terms.
+            if (AmbiguousTimeTerm.IsMatch(match.Value))
+            {
+                return false;
             }
 
             return isValidTld || isIPUrl;

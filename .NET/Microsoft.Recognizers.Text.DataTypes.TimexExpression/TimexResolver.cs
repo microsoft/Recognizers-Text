@@ -133,7 +133,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 
             if (timex.DayOfWeek != null)
             {
-                var day = timex.DayOfWeek == 7 ? DayOfWeek.Monday : (DayOfWeek)timex.DayOfWeek;
+                var day = timex.DayOfWeek == 7 ? DayOfWeek.Sunday : (DayOfWeek)timex.DayOfWeek;
                 var result = TimexDateHelpers.DateOfLastDay(day, date);
                 return TimexValue.DateValue(new TimexProperty
                 {
@@ -160,7 +160,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 
             if (timex.DayOfWeek != null)
             {
-                var day = timex.DayOfWeek == 7 ? DayOfWeek.Monday : (DayOfWeek)timex.DayOfWeek;
+                var day = timex.DayOfWeek == 7 ? DayOfWeek.Sunday : (DayOfWeek)timex.DayOfWeek;
                 var result = TimexDateHelpers.DateOfNextDay(day, date);
                 return TimexValue.DateValue(new TimexProperty
                 {

@@ -48,13 +48,13 @@ export namespace ChineseDateTime {
 	export const DatePeriodLastRegex = `上个|上一个|上|上一`;
 	export const DatePeriodNextRegex = `下个|下一个|下|下一`;
 	export const RelativeMonthRegex = `(?<relmonth>(${DatePeriodThisRegex}|${DatePeriodLastRegex}|${DatePeriodNextRegex})\\s*月)`;
-	export const DatePeriodYearRegex = `((${YearNumRegex})(\\s*年)?|(${YearRegex})\\s*年)(?=[\\u4E00-\\u9FFF]|\\s|$|\\W)`;
-	export const StrictYearRegex = `${DatePeriodYearRegex}`;
+	export const DatePeriodYearRegex = `((${YearNumRegex})(\\s*年)?|(${YearRegex})\\s*年)`;
+	export const StrictYearRegex = `(${DatePeriodYearRegex}(?=[\\u4E00-\\u9FFF]|\\s|$|\\W))`;
 	export const YearRegexInNumber = `(?<year>(\\d{3,4}))`;
 	export const DatePeriodYearInChineseRegex = `(?<yearchs>(${ZeroToNineIntegerRegexChs}${ZeroToNineIntegerRegexChs}${ZeroToNineIntegerRegexChs}${ZeroToNineIntegerRegexChs}|${ZeroToNineIntegerRegexChs}${ZeroToNineIntegerRegexChs}|${ZeroToNineIntegerRegexChs}${ZeroToNineIntegerRegexChs}${ZeroToNineIntegerRegexChs}))年`;
 	export const MonthSuffixRegex = `(?<msuf>(${RelativeMonthRegex}|${MonthRegex}))`;
 	export const SimpleCasesRegex = `((从)\\s*)?((${DatePeriodYearRegex}|${DatePeriodYearInChineseRegex})\\s*)?${MonthSuffixRegex}(${DatePeriodDayRegexInChinese}|${DayRegex})\\s*${DatePeriodTillRegex}\\s*(${DatePeriodDayRegexInChinese}|${DayRegex})((\\s+|\\s*,\\s*)${DatePeriodYearRegex})?`;
-	export const YearAndMonth = `(${DatePeriodYearInChineseRegex}|${DatePeriodYearRegex})${MonthRegex}`;
+	export const YearAndMonth = `(${DatePeriodYearInChineseRegex}|${DatePeriodYearRegex})\\s*${MonthRegex}`;
 	export const PureNumYearAndMonth = `(${YearRegexInNumber}\\s*[-\\.\\/]\\s*${MonthNumRegex})|(${MonthNumRegex}\\s*\\/\\s*${YearRegexInNumber})`;
 	export const OneWordPeriodRegex = `(((明年|今年|去年)\\s*)?${MonthRegex}|(${DatePeriodThisRegex}|${DatePeriodLastRegex}|${DatePeriodNextRegex})\\s*(周末|周|月|年)|周末|今年|明年|去年|前年|后年)`;
 	export const WeekOfMonthRegex = `(?<wom>${MonthSuffixRegex}的(?<cardinal>第一|第二|第三|第四|第五|最后一)\\s*周\\s*)`;
