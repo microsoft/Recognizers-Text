@@ -45,11 +45,11 @@ namespace Microsoft.Recognizers.Definitions.Spanish
 		public static readonly string AllIntRegexWithLocks = $@"((?<=\b){AllIntRegex}(?=\b))";
 		public static readonly string AllIntRegexWithDozenSuffixLocks = $@"(?<=\b)(((media\s+)?\s+docena)|({AllIntRegex}\s+(y|con)\s+)?({AllIntRegex}\s+docenas?))(?=\b)";
 		public const string SimpleRoundOrdinalRegex = @"(mil[eé]simo|millon[eé]sim[oa]|billon[eé]sim[oa]|trillon[eé]sim[oa]|cuatrillon[eé]sim[oa]|quintillon[eé]sim[oa]|sextillon[eé]sim[oa]|septillon[eé]sim[oa])";
-		public const string OneToNineOrdinalRegex = @"(primer[oa]|segund[oa]|tercer[oa]|cuart[oa]|quint[oa]|sext[oa]|s[eé]ptim[oa]|octav[oa]|noven[oa])";
+		public const string OneToNineOrdinalRegex = @"(primer[oa]?|segund[oa]|tercer[oa]?|cuart[oa]|quint[oa]|sext[oa]|s[eé]ptim[oa]|octav[oa]|noven[oa])";
 		public const string TensOrdinalRegex = @"(nonag[eé]sim[oa]|octog[eé]sim[oa]|septuag[eé]sim[oa]|sexag[eé]sim[oa]|quincuag[eé]sim[oa]|cuadrag[eé]sim[oa]|trig[eé]sim[oa]|vig[eé]sim[oa]|d[eé]cim[oa])";
 		public const string HundredOrdinalRegex = @"(cent[eé]sim[oa]|ducent[eé]sim[oa]|tricent[eé]sim[oa]|cuadringent[eé]sim[oa]|quingent[eé]sim[oa]|sexcent[eé]sim[oa]|septingent[eé]sim[oa]|octingent[eé]sim[oa]|noningent[eé]sim[oa])";
 		public const string SpecialUnderHundredOrdinalRegex = @"(und[eé]cim[oa]|duod[eé]cimo|decimoctav[oa])";
-		public static readonly string UnderHundredOrdinalRegex = $@"((({TensOrdinalRegex}(\s)?)?{OneToNineOrdinalRegex})|{TensOrdinalRegex}|{SpecialUnderHundredOrdinalRegex})";
+		public static readonly string UnderHundredOrdinalRegex = $@"({SpecialUnderHundredOrdinalRegex}|(({TensOrdinalRegex}(\s)?)?{OneToNineOrdinalRegex})|{TensOrdinalRegex})";
 		public static readonly string UnderThousandOrdinalRegex = $@"((({HundredOrdinalRegex}(\s)?)?{UnderHundredOrdinalRegex})|{HundredOrdinalRegex})";
 		public static readonly string OverThousandOrdinalRegex = $@"(({AllIntRegex})([eé]sim[oa]))";
 		public static readonly string ComplexOrdinalRegex = $@"(({OverThousandOrdinalRegex}(\s)?)?{UnderThousandOrdinalRegex}|{OverThousandOrdinalRegex})";
@@ -218,7 +218,9 @@ namespace Microsoft.Recognizers.Definitions.Spanish
 			{ @"noveno", 9 },
 			{ @"novena", 9 },
 			{ @"decimo", 10 },
+			{ @"décimo", 10 },
 			{ @"decima", 10 },
+			{ @"décima", 10 },
 			{ @"undecimo", 11 },
 			{ @"undecima", 11 },
 			{ @"duodecimo", 12 },

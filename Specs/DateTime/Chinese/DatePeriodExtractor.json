@@ -470,5 +470,60 @@
         "Length": 14
       }
     ]
+  },
+  {
+    "Input": "2018年10月",
+    "Results": [
+      {
+        "Text": "2018年10月",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "2018年 十二月",
+    "Results": [
+      {
+        "Text": "2018年 十二月",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "2018年十二月",
+    "Results": [
+      {
+        "Text": "2018年十二月",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "2018年十二月的月份不是0",
+    "Results": [
+      {
+        "Text": "2018年十二月",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "2018年10月的月份是10",
+    "Results": [
+      {
+        "Text": "2018年10月",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 8
+      }
+    ]
   }
 ]

@@ -61,13 +61,13 @@ namespace Microsoft.Recognizers.Definitions.Chinese
 		public const string DatePeriodLastRegex = @"上个|上一个|上|上一";
 		public const string DatePeriodNextRegex = @"下个|下一个|下|下一";
 		public static readonly string RelativeMonthRegex = $@"(?<relmonth>({DatePeriodThisRegex}|{DatePeriodLastRegex}|{DatePeriodNextRegex})\s*月)";
-		public static readonly string DatePeriodYearRegex = $@"(({YearNumRegex})(\s*年)?|({YearRegex})\s*年)(?=[\u4E00-\u9FFF]|\s|$|\W)";
-		public static readonly string StrictYearRegex = $@"{DatePeriodYearRegex}";
+		public static readonly string DatePeriodYearRegex = $@"(({YearNumRegex})(\s*年)?|({YearRegex})\s*年)";
+		public static readonly string StrictYearRegex = $@"({DatePeriodYearRegex}(?=[\u4E00-\u9FFF]|\s|$|\W))";
 		public const string YearRegexInNumber = @"(?<year>(\d{3,4}))";
 		public static readonly string DatePeriodYearInChineseRegex = $@"(?<yearchs>({ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}|{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}|{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}))年";
 		public static readonly string MonthSuffixRegex = $@"(?<msuf>({RelativeMonthRegex}|{MonthRegex}))";
 		public static readonly string SimpleCasesRegex = $@"((从)\s*)?(({DatePeriodYearRegex}|{DatePeriodYearInChineseRegex})\s*)?{MonthSuffixRegex}({DatePeriodDayRegexInChinese}|{DayRegex})\s*{DatePeriodTillRegex}\s*({DatePeriodDayRegexInChinese}|{DayRegex})((\s+|\s*,\s*){DatePeriodYearRegex})?";
-		public static readonly string YearAndMonth = $@"({DatePeriodYearInChineseRegex}|{DatePeriodYearRegex}){MonthRegex}";
+		public static readonly string YearAndMonth = $@"({DatePeriodYearInChineseRegex}|{DatePeriodYearRegex})\s*{MonthRegex}";
 		public static readonly string PureNumYearAndMonth = $@"({YearRegexInNumber}\s*[-\.\/]\s*{MonthNumRegex})|({MonthNumRegex}\s*\/\s*{YearRegexInNumber})";
 		public static readonly string OneWordPeriodRegex = $@"(((明年|今年|去年)\s*)?{MonthRegex}|({DatePeriodThisRegex}|{DatePeriodLastRegex}|{DatePeriodNextRegex})\s*(周末|周|月|年)|周末|今年|明年|去年|前年|后年)";
 		public static readonly string WeekOfMonthRegex = $@"(?<wom>{MonthSuffixRegex}的(?<cardinal>第一|第二|第三|第四|第五|最后一)\s*周\s*)";
