@@ -56,8 +56,8 @@ BasicOrdinalRegex: !nestedRegex
   def: ({NumberOrdinalRegex}|{RelativeOrdinalRegex})
   references: [ NumberOrdinalRegex, RelativeOrdinalRegex ]
 RelativeOrdinalFilterRegex: !nestedRegex
-  def: (?<!-)(first|{RelativeOrdinalRegex})\s*({TwoToNineIntegerRegex}|[2-9]+)
-  references: [ RelativeOrdinalRegex, TwoToNineIntegerRegex ]
+  def: (?<!-)(first|{RelativeOrdinalRegex})\s*({TwoToNineIntegerRegex}|[2-9]+)(?!\s*{RoundNumberIntegerRegex})
+  references: [ RelativeOrdinalRegex, TwoToNineIntegerRegex, RoundNumberIntegerRegex ]
 SuffixBasicOrdinalRegex: !nestedRegex
   def: ((((({TensNumberIntegerRegex}(\s+(and\s+)?|\s*-\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{AnIntRegex})(\s+{RoundNumberIntegerRegex})+)\s+(and\s+)?)*({TensNumberIntegerRegex}(\s+|\s*-\s*))?{BasicOrdinalRegex})
   references: [ TensNumberIntegerRegex, ZeroToNineIntegerRegex, AnIntRegex, RoundNumberIntegerRegex, BasicOrdinalRegex ]
