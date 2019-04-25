@@ -61,7 +61,7 @@ AllIntRegexWithDozenSuffixLocks: !nestedRegex
 SimpleRoundOrdinalRegex: !simpleRegex
   def: (mil[eé]simo|millon[eé]sim[oa]|billon[eé]sim[oa]|trillon[eé]sim[oa]|cuatrillon[eé]sim[oa]|quintillon[eé]sim[oa]|sextillon[eé]sim[oa]|septillon[eé]sim[oa])
 OneToNineOrdinalRegex: !simpleRegex
-  def: (primer[oa]|segund[oa]|tercer[oa]|cuart[oa]|quint[oa]|sext[oa]|s[eé]ptim[oa]|octav[oa]|noven[oa])
+  def: (primer[oa]?|segund[oa]|tercer[oa]?|cuart[oa]|quint[oa]|sext[oa]|s[eé]ptim[oa]|octav[oa]|noven[oa])
 TensOrdinalRegex: !simpleRegex
   def: (nonag[eé]sim[oa]|octog[eé]sim[oa]|septuag[eé]sim[oa]|sexag[eé]sim[oa]|quincuag[eé]sim[oa]|cuadrag[eé]sim[oa]|trig[eé]sim[oa]|vig[eé]sim[oa]|d[eé]cim[oa])
 HundredOrdinalRegex: !simpleRegex
@@ -69,7 +69,7 @@ HundredOrdinalRegex: !simpleRegex
 SpecialUnderHundredOrdinalRegex: !simpleRegex
   def: (und[eé]cim[oa]|duod[eé]cimo|decimoctav[oa])
 UnderHundredOrdinalRegex: !nestedRegex
-  def: ((({TensOrdinalRegex}(\s)?)?{OneToNineOrdinalRegex})|{TensOrdinalRegex}|{SpecialUnderHundredOrdinalRegex})
+  def: ({SpecialUnderHundredOrdinalRegex}|(({TensOrdinalRegex}(\s)?)?{OneToNineOrdinalRegex})|{TensOrdinalRegex})
   references: [ TensOrdinalRegex, OneToNineOrdinalRegex, SpecialUnderHundredOrdinalRegex ]
 UnderThousandOrdinalRegex: !nestedRegex
   def: ((({HundredOrdinalRegex}(\s)?)?{UnderHundredOrdinalRegex})|{HundredOrdinalRegex})
@@ -332,7 +332,9 @@ OrdinalNumberMap: !dictionary
     noveno: 9
     novena: 9
     decimo: 10
+    décimo: 10
     decima: 10
+    décima: 10
     undecimo: 11
     undecima: 11
     duodecimo: 12
