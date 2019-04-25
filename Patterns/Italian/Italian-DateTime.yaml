@@ -549,7 +549,7 @@ FullTextYearRegex: !simpleRegex
 YearSuffix: !nestedRegex
   def: (,?\s*({DateYearRegex}|{FullTextYearRegex}))
   references: [ DateYearRegex, FullTextYearRegex ]
-DateAfterRegex: !simpleRegex
+SuffixAfterRegex: !simpleRegex
   def: \b(o\s+(dopo|passato))\b
 YearPeriodRegex: !nestedRegex
   def: (((dal|durante|nel|tra)\s+)?{YearRegex}\s*{TillRegex}\s*{YearRegex})
