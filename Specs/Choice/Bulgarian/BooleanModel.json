@@ -1,6 +1,7 @@
 [
   {
     "Input": "Определено!",
+    "NotSupported": "javascript, java",
     "NotSupportedByDesign": "python",
     "Results": [
       {
@@ -15,6 +16,7 @@
   },
   {
     "Input": "Не мисля така. не.",
+    "NotSupported": "javascript, java",
     "NotSupportedByDesign": "python",
     "Results": [
       {
@@ -29,6 +31,7 @@
   },
   {
     "Input": "Мисля, че това ще проработи. така че да.",
+    "NotSupported": "javascript, java",
     "NotSupportedByDesign": "python",
     "Results": [
       {
@@ -43,6 +46,7 @@
   },
   {
     "Input": "не. Казах четвърти юли",
+    "NotSupported": "javascript, java",
     "NotSupportedByDesign": "python",
     "Results": [
       {
@@ -57,6 +61,7 @@
   },
   {
     "Input": "да... Казах, без кромид",
+    "NotSupported": "javascript, java",
     "NotSupportedByDesign": "python",
     "Results": [
       {
@@ -71,6 +76,7 @@
   },
   {
     "Input": "Казах НЕ не да!",
+    "NotSupported": "javascript, java",
     "NotSupportedByDesign": "python",
     "Results": [
       {
@@ -85,6 +91,7 @@
   },
   {
     "Input": "Да. Казах не",
+    "NotSupported": "javascript, java",
     "NotSupportedByDesign": "python",
     "Results": [
       {
@@ -99,6 +106,7 @@
   },
   {
     "Input": "не съм съгласен, не е добре",
+    "NotSupported": "javascript, java",
     "NotSupportedByDesign": "python",
     "Results": [
       {
@@ -113,6 +121,7 @@
   },
   {
     "Input": "съгласен съм, добре е",
+    "NotSupported": "javascript, java",
     "NotSupportedByDesign": "python",
     "Results": [
       {
@@ -127,6 +136,7 @@
   },
   {
     "Input": "съгласен съм, не е добре",
+    "NotSupported": "javascript, java",
     "NotSupportedByDesign": "python",
     "Results": [
       {
@@ -141,6 +151,7 @@
   },
   {
     "Input": "не съм съгласен",
+    "NotSupported": "javascript, java",
     "NotSupportedByDesign": "python",
     "Results": [
       {
@@ -155,6 +166,7 @@
   },
   {
     "Input": "не е добре",
+    "NotSupported": "javascript, java",
     "NotSupportedByDesign": "python",
     "Results": [
       {
@@ -169,6 +181,7 @@
   },
   {
     "Input": "👌 Няма проблем",
+    "NotSupported": "javascript, java",
     "NotSupportedByDesign": "python",
     "Results": [
       {
@@ -183,6 +196,7 @@
   },
   {
     "Input": "👌👌👌",
+    "NotSupported": "javascript, java",
     "NotSupportedByDesign": "python",
     "Results": [
       {
