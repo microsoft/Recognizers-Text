@@ -5603,7 +5603,7 @@
     },
     "Results": [
       {
-        "Text": "between now and November 15th",
+        "Text": "between now and november 15th",
         "Type": "daterange",
         "Value": {
           "Timex": "(2019-04-23,2019-11-15,P206D)",
@@ -5628,7 +5628,7 @@
     },
     "Results": [
       {
-        "Text": "between Jan 22 and now",
+        "Text": "between jan 22 and now",
         "Type": "daterange",
         "Value": {
           "Timex": "(2019-01-22,2019-04-25,P93D)",

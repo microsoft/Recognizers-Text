@@ -3733,7 +3733,7 @@
     "Input": "I have finished my work between Jan 22 and now",
     "Results": [
       {
-        "Text": "between Jan 22 and now",
+        "Text": "between jan 22 and now",
         "Type": "daterange",
         "Start": 24,
         "Length": 22

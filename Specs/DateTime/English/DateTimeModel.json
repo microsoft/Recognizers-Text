@@ -10626,7 +10626,7 @@
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "between Jan 22 and now",
+        "Text": "between jan 22 and now",
         "Start": 24,
         "End": 45,
         "TypeName": "datetimeV2.daterange",
