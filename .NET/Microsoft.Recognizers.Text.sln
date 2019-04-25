@@ -4,9 +4,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 15.0.27130.2026
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{ED7B6456-AB0A-48CE-8F85-711FE87F09C2}"
-	ProjectSection(SolutionItems) = preProject
-		Microsoft.Recognizers.Text.DateTime\Parsers\BaseDatePeriodParser.cs = Microsoft.Recognizers.Text.DateTime\Parsers\BaseDatePeriodParser.cs
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{55DA4431-1E79-4DCB-883F-6C945B02B043}"
 	ProjectSection(SolutionItems) = preProject

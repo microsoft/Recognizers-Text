@@ -21,8 +21,6 @@ import java.util.Optional;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
-
-
 public class BaseDatePeriodExtractor implements IDateTimeExtractor {
 
     private final IDatePeriodExtractorConfiguration config;
@@ -106,6 +104,7 @@ public class BaseDatePeriodExtractor implements IDateTimeExtractor {
 
             ers.sort(Comparator.comparingInt(arg -> arg.getStart()));
         }
+        
         return mergeMultipleExtractions(input, ers);
     }
 
