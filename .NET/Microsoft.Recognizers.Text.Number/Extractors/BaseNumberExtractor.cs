@@ -31,6 +31,8 @@ namespace Microsoft.Recognizers.Text.Number
 
         protected virtual Regex RelativeReferenceRegex { get; } = null;
 
+        protected virtual Regex NotOrdinalRegex { get; } = null;
+
         public virtual List<ExtractResult> Extract(string source)
         {
             if (string.IsNullOrEmpty(source))
@@ -56,6 +58,13 @@ namespace Microsoft.Recognizers.Text.Number
                     for (var j = 0; j < m.Length; j++)
                     {
                         matched[m.Index + j] = true;
+                    }
+
+                    // Fliter out cases like "first two", "last one"
+                    // only support in English now
+                    if (ExtractType.Contains(Constants.MODEL_ORDINAL) && NotOrdinalRegex != null && NotOrdinalRegex.IsMatch(source))
+                    {
+                        continue;
                     }
 
                     // Keep Source Data for extra information
