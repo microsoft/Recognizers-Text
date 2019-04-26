@@ -10981,5 +10981,29 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Let's meet on january first two thousand and thirty two",
+    "Context": {
+      "ReferenceDateTime": "2019-04-25T00:00:00"
+    },
+    "NotSupported": "python, javascript",
+    "Results": [
+      {
+        "Text": "january first two thousand and thirty two",
+        "Start": 14,
+        "End": 54,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2032-01-01",
+              "type": "date",
+              "value": "2032-01-01"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
