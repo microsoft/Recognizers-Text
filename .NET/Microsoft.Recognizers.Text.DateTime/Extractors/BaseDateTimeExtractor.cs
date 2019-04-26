@@ -135,6 +135,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
                     else
                     {
+                        // For case like "3 pm or later on monday"
                         var match = this.config.SuffixAfterRegex.Match(middleStr);
                         if (match.Success)
                         {

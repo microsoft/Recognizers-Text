@@ -229,7 +229,7 @@ public class BaseMergedDateTimeExtractor implements IDateTimeExtractor {
                 // 2012 or after/above, 3 pm or later
                 String afterStr = text.substring(newEr.getStart() + newEr.getLength()).toLowerCase();
 
-                ConditionalMatch match = RegexExtension.matchBegin(config.getDateAfterRegex(), StringUtility.trimStart(afterStr), true);
+                ConditionalMatch match = RegexExtension.matchBegin(config.getSuffixAfterRegex(), StringUtility.trimStart(afterStr), true);
 
                 if (match.getSuccess()) {
                     boolean isFollowedByOtherEntity = true;

@@ -15,7 +15,7 @@ public interface IMergedParserConfiguration extends ICommonDateTimeParserConfigu
 
     Pattern getAroundRegex();
 
-    Pattern getDateAfterRegex();
+    Pattern getSuffixAfterRegex();
 
     Pattern getYearRegex();
 

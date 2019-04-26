@@ -54,7 +54,7 @@ public interface IMergedExtractorConfiguration extends IOptionsConfiguration {
 
     Pattern getNumberEndingPattern();
 
-    Pattern getDateAfterRegex();
+    Pattern getSuffixAfterRegex();
 
     Pattern getUnspecificDatePeriodRegex();
 

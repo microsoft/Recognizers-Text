@@ -434,7 +434,7 @@ class PortugueseDateTime:
     DecadeWithCenturyRegex = f'^[.]'
     RelativeDecadeRegex = f'^[.]'
     YearSuffix = f'(,?\\s*({YearRegex}|{FullTextYearRegex}))'
-    DateAfterRegex = f'^[.]'
+    SuffixAfterRegex = f'^[.]'
     YearPeriodRegex = f'^[.]'
     FutureSuffixRegex = f'^[.]'
     WrittenDecades = dict([("", 0)])
