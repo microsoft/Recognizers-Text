@@ -13,7 +13,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
             AfterRegex = DutchMergedExtractorConfiguration.AfterRegex;
             SinceRegex = DutchMergedExtractorConfiguration.SinceRegex;
             AroundRegex = DutchMergedExtractorConfiguration.AroundRegex;
-            DateAfter = DutchMergedExtractorConfiguration.DateAfterRegex;
+            SuffixAfter = DutchMergedExtractorConfiguration.SuffixAfterRegex;
             YearRegex = DutchDatePeriodExtractorConfiguration.YearRegex;
             SuperfluousWordMatcher = DutchMergedExtractorConfiguration.SuperfluousWordMatcher;
 
@@ -33,7 +33,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         public Regex AroundRegex { get; }
 
-        public Regex DateAfter { get; }
+        public Regex SuffixAfter { get; }
 
         public Regex YearRegex { get; }
 

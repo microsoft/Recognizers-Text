@@ -9132,5 +9132,61 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Meet me at 3 pm or later.",
+    "Context": {
+      "ReferenceDateTime": "2019-04-22T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "3 pm or later",
+        "Start": 11,
+        "End": 23,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T15",
+              "Mod": "since",
+              "type": "timerange",
+              "start": "15:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Meet me at 3 pm or later on Monday.",
+    "Context": {
+      "ReferenceDateTime": "2019-04-22T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "3 pm or later on monday",
+        "Start": 11,
+        "End": 33,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-1T15",
+              "Mod": "since",
+              "type": "datetimerange",
+              "start": "2019-04-15 15:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-1T15",
+              "Mod": "since",
+              "type": "datetimerange",
+              "start": "2019-04-22 15:00:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

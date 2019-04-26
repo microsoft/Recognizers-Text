@@ -579,6 +579,8 @@ public class EnglishDateTime {
             .replace("{PmRegex}", PmRegex)
             .replace("{AmRegex}", AmRegex);
 
+    public static final String SuffixAfterRegex = "\\b(((at)\\s)?(or|and)\\s+(above|after|later|greater)(?!\\s+than))\\b";
+
     public static final String PrepositionRegex = "(?<prep>^(at|on|of)(\\s+the)?$)";
 
     public static final String TimeOfDayRegex = "\\b(?<timeOfDay>((((in\\s+(the)?\\s+)?((?<early>early(\\s+|-))|(?<late>late(\\s+|-)))?(morning|afternoon|night|evening)))|(((in\\s+(the)?\\s+)?)(daytime|business\\s+hour)))s?)\\b";
@@ -834,8 +836,6 @@ public class EnglishDateTime {
 
     public static final String RelativeDecadeRegex = "\\b((the\\s+)?{RelativeRegex}\\s+((?<number>[\\w,]+)\\s+)?decades?)\\b"
             .replace("{RelativeRegex}", RelativeRegex);
-
-    public static final String DateAfterRegex = "\\b((or|and)\\s+(above|after|later|greater)(?!\\s+than))\\b";
 
     public static final String YearPeriodRegex = "((((from|during|in)\\s+)?{YearRegex}\\s*({TillRegex})\\s*{YearRegex})|(((between)\\s+){YearRegex}\\s*({RangeConnectorRegex})\\s*{YearRegex}))"
             .replace("{YearRegex}", YearRegex)

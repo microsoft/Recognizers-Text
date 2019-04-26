@@ -32,6 +32,8 @@ public interface IDateTimeExtractorConfiguration extends IOptionsConfiguration {
 
     Pattern getDateNumberConnectorRegex();
 
+    Pattern getSuffixAfterRegex();
+
     IDateTimeExtractor getDurationExtractor();
 
     IDateTimeExtractor getDatePointExtractor();

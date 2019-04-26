@@ -32,8 +32,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         public static readonly Regex NumberEndingPattern =
             new Regex(DateTimeDefinitions.NumberEndingPattern, RegexOptions.Singleline);
 
-        public static readonly Regex DateAfterRegex =
-            new Regex(DateTimeDefinitions.DateAfterRegex, RegexOptions.Singleline);
+        public static readonly Regex SuffixAfterRegex =
+            new Regex(DateTimeDefinitions.SuffixAfterRegex, RegexOptions.Singleline);
 
         public static readonly Regex UnspecificDatePeriodRegex =
             new Regex(DateTimeDefinitions.UnspecificDatePeriodRegex, RegexOptions.Singleline);
@@ -103,7 +103,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         Regex IMergedExtractorConfiguration.NumberEndingPattern => NumberEndingPattern;
 
-        Regex IMergedExtractorConfiguration.DateAfterRegex => DateAfterRegex;
+        Regex IMergedExtractorConfiguration.SuffixAfterRegex => SuffixAfterRegex;
 
         Regex IMergedExtractorConfiguration.UnspecificDatePeriodRegex => UnspecificDatePeriodRegex;
 
