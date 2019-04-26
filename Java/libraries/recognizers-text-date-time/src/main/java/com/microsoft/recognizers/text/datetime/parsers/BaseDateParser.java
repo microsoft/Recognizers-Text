@@ -177,7 +177,7 @@ public class BaseDateParser implements IDateTimeParser {
 
         if (exactMatch.getSuccess()) {
             int swift = getSwiftDay(exactMatch.getMatch().get().value);
-            
+
             LocalDateTime value = referenceDate.toLocalDate().atStartOfDay().plusDays(swift);
 
             ret.setTimex(DateTimeFormatUtil.luisDate(value));
