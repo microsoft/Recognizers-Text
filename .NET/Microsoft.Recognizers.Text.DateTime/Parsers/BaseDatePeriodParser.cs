@@ -412,11 +412,6 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if (!innerResult.Success)
             {
-                innerResult = MergeTwoTimePointsWithNow(text, referenceDate);
-            }
-
-            if (!innerResult.Success)
-            {
                 innerResult = ParseYear(text, referenceDate);
             }
 
@@ -1267,42 +1262,62 @@ namespace Microsoft.Recognizers.Text.DateTime
             var ret = new DateTimeResolutionResult();
 
             var er = this.config.DateExtractor.Extract(text, referenceDate);
-            if (er.Count < 2)
+
+            var pr1 = new DateTimeParseResult();
+            var pr2 = new DateTimeParseResult();
+
+            // Handle with "now"
+            var nowMatches = this.config.NowRegex.Matches(text);
+            if (nowMatches.Count != 0)
             {
-                er = this.config.DateExtractor.Extract(this.config.TokenBeforeDate + text, referenceDate);
-                if (er.Count < 2)
+                if (er.Count < 1)
                 {
                     return ret;
                 }
 
-                er[0].Start -= this.config.TokenBeforeDate.Length;
-                er[1].Start -= this.config.TokenBeforeDate.Length;
+                var pr = GetPrWithNow(nowMatches, er[0], referenceDate);
+                pr1 = pr[0];
+                pr2 = pr[1];
             }
-
-            var match = this.config.WeekWithWeekDayRangeRegex.Match(text);
-            string weekPrefix = null;
-            if (match.Success)
+            else
             {
-                weekPrefix = match.Groups["week"].ToString();
+                if (er.Count < 2)
+                {
+                    er = this.config.DateExtractor.Extract(this.config.TokenBeforeDate + text, referenceDate);
+                    if (er.Count < 2)
+                    {
+                        return ret;
+                    }
+
+                    er[0].Start -= this.config.TokenBeforeDate.Length;
+                    er[1].Start -= this.config.TokenBeforeDate.Length;
+                }
+
+                var match = this.config.WeekWithWeekDayRangeRegex.Match(text);
+                string weekPrefix = null;
+                if (match.Success)
+                {
+                    weekPrefix = match.Groups["week"].ToString();
+                }
+
+                if (!string.IsNullOrEmpty(weekPrefix))
+                {
+                    er[0].Text = weekPrefix + " " + er[0].Text;
+                    er[1].Text = weekPrefix + " " + er[1].Text;
+                }
+
+                var dateContext = GetYearContext(er[0].Text, er[1].Text, text);
+
+                pr1 = this.config.DateParser.Parse(er[0], referenceDate);
+                pr2 = this.config.DateParser.Parse(er[1], referenceDate);
+                if (pr1.Value == null || pr2.Value == null)
+                {
+                    return ret;
+                }
+
+                pr1 = dateContext.ProcessDateEntityParsingResult(pr1);
+                pr2 = dateContext.ProcessDateEntityParsingResult(pr2);
             }
-
-            if (!string.IsNullOrEmpty(weekPrefix))
-            {
-                er[0].Text = weekPrefix + " " + er[0].Text;
-                er[1].Text = weekPrefix + " " + er[1].Text;
-            }
-
-            var dateContext = GetYearContext(er[0].Text, er[1].Text, text);
-
-            var pr1 = this.config.DateParser.Parse(er[0], referenceDate);
-            var pr2 = this.config.DateParser.Parse(er[1], referenceDate);
-            if (pr1.Value == null || pr2.Value == null)
-            {
-                return ret;
-            }
-
-            pr1 = dateContext.ProcessDateEntityParsingResult(pr1);
-            pr2 = dateContext.ProcessDateEntityParsingResult(pr2);
 
             ret.SubDateTimeEntities = new List<object> { pr1, pr2 };
 
@@ -1331,20 +1346,12 @@ namespace Microsoft.Recognizers.Text.DateTime
         }
 
         // Parse entities that are made up by two time points with now
-        private DateTimeResolutionResult MergeTwoTimePointsWithNow(string text, DateObject referenceDate)
+        private List<DateTimeParseResult> GetPrWithNow(MatchCollection matches, ExtractResult er, DateObject referenceDate)
         {
-            var ret = new DateTimeResolutionResult();
-            var nowMatches = this.config.NowRegex.Matches(text);
-            var er = this.config.DateExtractor.Extract(text, referenceDate);
-            if (nowMatches.Count < 1 || er.Count < 1)
-            {
-                return ret;
-            }
-
             var pr = new List<DateTimeParseResult>();
-            pr.Add(this.config.DateParser.Parse(er[0], referenceDate));
+            pr.Add(this.config.DateParser.Parse(er, referenceDate));
             var value = referenceDate.Date;
-            foreach (Match nowMatch in nowMatches)
+            foreach (Match match in matches)
             {
                 var retNow = new DateTimeResolutionResult
                 {
@@ -1355,9 +1362,9 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 var nowPr = new DateTimeParseResult
                 {
-                    Text = nowMatch.Value,
-                    Start = nowMatch.Index,
-                    Length = nowMatch.Length,
+                    Text = match.Value,
+                    Start = match.Index,
+                    Length = match.Length,
                     Value = retNow,
                     Type = Constants.SYS_DATETIME_DATE,
                     TimexStr = retNow == null ? string.Empty : ((DateTimeResolutionResult)retNow).Timex,
@@ -1368,30 +1375,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             pr = pr.OrderBy(o => o.Start).ToList();
 
-            ret.SubDateTimeEntities = new List<object> { pr[0], pr[1] };
-
-            DateObject futureBegin = (DateObject)((DateTimeResolutionResult)pr[0].Value).FutureValue,
-                futureEnd = (DateObject)((DateTimeResolutionResult)pr[1].Value).FutureValue;
-
-            DateObject pastBegin = (DateObject)((DateTimeResolutionResult)pr[0].Value).PastValue,
-                pastEnd = (DateObject)((DateTimeResolutionResult)pr[1].Value).PastValue;
-
-            if (futureBegin > futureEnd)
-            {
-                futureBegin = pastBegin;
-            }
-
-            if (pastEnd < pastBegin)
-            {
-                pastEnd = futureEnd;
-            }
-
-            ret.Timex = TimexUtility.GenerateDatePeriodTimex(futureBegin, futureEnd, DatePeriodTimexType.ByDay, pastBegin, pastEnd);
-            ret.FutureValue = new Tuple<DateObject, DateObject>(futureBegin, futureEnd);
-            ret.PastValue = new Tuple<DateObject, DateObject>(pastBegin, pastEnd);
-            ret.Success = true;
-
-            return ret;
+            return pr;
         }
 
         private DateTimeResolutionResult ParseDuration(string text, DateObject referenceDate)
