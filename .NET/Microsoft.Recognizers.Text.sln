@@ -26,6 +26,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Patterns", "Patterns", "{23
 		..\Patterns\Base-PhoneNumbers.yaml = ..\Patterns\Base-PhoneNumbers.yaml
 		..\Patterns\Base-Units.yaml = ..\Patterns\Base-Units.yaml
 		..\Patterns\Base-URL.yaml = ..\Patterns\Base-URL.yaml
+		..\Patterns\Bulgarian\Bulgarian-Choice.yaml = ..\Patterns\Bulgarian\Bulgarian-Choice.yaml
 		..\Patterns\Chinese\Chinese-Choice.yaml = ..\Patterns\Chinese\Chinese-Choice.yaml
 		..\Patterns\Chinese\Chinese-DateTime.yaml = ..\Patterns\Chinese\Chinese-DateTime.yaml
 		..\Patterns\Chinese\Chinese-Numbers.yaml = ..\Patterns\Chinese\Chinese-Numbers.yaml

@@ -207,6 +207,7 @@ class BaseMergedExtractor(DateTimeExtractor):
 
     def add_mod_item(self, er: ExtractResult, source: str) -> ExtractResult:
         before_str = source[0:er.start]
+        is_success = False
 
         before = self.has_token_index(before_str.strip(), self.config.before_regex)
         if before.matched:
@@ -214,20 +215,24 @@ class BaseMergedExtractor(DateTimeExtractor):
             er.length += mod_len
             er.start -= mod_len
             er.text = source[er.start:er.start + er.length]
+            is_success = True
 
-        after = self.has_token_index(before_str.strip(), self.config.after_regex)
-        if after.matched:
-            mod_len = len(before_str) - after.index
-            er.length += mod_len
-            er.start -= mod_len
-            er.text = source[er.start:er.start + er.length]
+        if not is_success:
+            after = self.has_token_index(before_str.strip(), self.config.after_regex)
+            if after.matched:
+                mod_len = len(before_str) - after.index
+                er.length += mod_len
+                er.start -= mod_len
+                er.text = source[er.start:er.start + er.length]
+                is_success = True
 
-        since = self.has_token_index(before_str.strip(), self.config.since_regex)
-        if since.matched:
-            mod_len = len(before_str) - since.index
-            er.length += mod_len
-            er.start -= mod_len
-            er.text = source[er.start:er.start + er.length]
+        if not is_success:
+            since = self.has_token_index(before_str.strip(), self.config.since_regex)
+            if not is_success and since.matched:
+                mod_len = len(before_str) - since.index
+                er.length += mod_len
+                er.start -= mod_len
+                er.text = source[er.start:er.start + er.length]
 
         return er
 

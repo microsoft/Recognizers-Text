@@ -168,26 +168,33 @@ export class BaseMergedExtractor implements IDateTimeExtractor {
         let lastEnd = 0;
         ers.forEach(er => {
             let beforeStr = source.substr(lastEnd, er.start).toLowerCase();
+            let isSuccess = false;
             let before = this.hasTokenIndex(beforeStr.trim(), this.config.beforeRegex);
             if (before.matched) {
                 let modLength = beforeStr.length - before.index;
                 er.length += modLength;
                 er.start -= modLength;
                 er.text = source.substr(er.start, er.length);
+                isSuccess = true;
             }
-            let after = this.hasTokenIndex(beforeStr.trim(), this.config.afterRegex);
-            if (after.matched) {
-                let modLength = beforeStr.length - after.index;
-                er.length += modLength;
-                er.start -= modLength;
-                er.text = source.substr(er.start, er.length);
+            if(!isSuccess){
+                let after = this.hasTokenIndex(beforeStr.trim(), this.config.afterRegex);
+                if (after.matched) {
+                    let modLength = beforeStr.length - after.index;
+                    er.length += modLength;
+                    er.start -= modLength;
+                    er.text = source.substr(er.start, er.length);
+                    isSuccess = true;
+                }
             }
-            let since = this.hasTokenIndex(beforeStr.trim(), this.config.sinceRegex);
-            if (since.matched) {
-                let modLength = beforeStr.length - since.index;
-                er.length += modLength;
-                er.start -= modLength;
-                er.text = source.substr(er.start, er.length);
+            if(!isSuccess){
+                let since = this.hasTokenIndex(beforeStr.trim(), this.config.sinceRegex);
+                if (since.matched) {
+                    let modLength = beforeStr.length - since.index;
+                    er.length += modLength;
+                    er.start -= modLength;
+                    er.text = source.substr(er.start, er.length);
+                }
             }
         });
     }

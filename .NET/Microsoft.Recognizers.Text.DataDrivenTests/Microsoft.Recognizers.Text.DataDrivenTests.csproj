@@ -74,6 +74,7 @@
     <Compile Include="Choice\TestChoiceRecognizerInitialization.cs" />
     <Compile Include="Choice\TestChoice_Chinese.cs" />
     <Compile Include="Choice\TestChoice_Dutch.cs" />
+    <Compile Include="Choice\TestChoice_Bulgarian.cs" />
     <Compile Include="Choice\TestChoice_Swedish.cs" />
     <Compile Include="Choice\TestChoice_English.cs" />
     <Compile Include="Choice\TestChoice_French.cs" />

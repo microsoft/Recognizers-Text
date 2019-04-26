@@ -149,7 +149,7 @@ public class GermanNumeric {
     public static final String DoubleAllFloatRegex = "((?<=\\b){AllFloatRegex}(?=\\b))"
             .replace("{AllFloatRegex}", AllFloatRegex);
 
-    public static final String NumberWithSuffixPercentage = "(?<!%)({BaseNumbers.NumberReplaceToken})(\\s*)(%(?!{BaseNumbers.NumberReplaceToken})|prozent\\b)"
+    public static final String NumberWithSuffixPercentage = "(?<!%)({BaseNumbers.NumberReplaceToken})(\\s*)(%(?!{BaseNumbers.NumberReplaceToken})|prozent(punkte)?\\b)"
             .replace("{BaseNumbers.NumberReplaceToken}", BaseNumbers.NumberReplaceToken);
 
     public static final String NumberWithPrefixPercentage = "(Prozent)(\\s*)({BaseNumbers.NumberReplaceToken})"
