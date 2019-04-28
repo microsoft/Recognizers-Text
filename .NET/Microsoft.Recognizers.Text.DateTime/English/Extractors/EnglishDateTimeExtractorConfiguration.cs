@@ -58,6 +58,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex YearSuffix =
             new Regex(DateTimeDefinitions.YearSuffix, RegexOptions.Singleline);
 
+        public static readonly Regex SuffixAfterRegex =
+            new Regex(DateTimeDefinitions.SuffixAfterRegex, RegexOptions.Singleline);
+
         public EnglishDateTimeExtractorConfiguration(IOptionsConfiguration config)
             : base(config)
         {
@@ -103,6 +106,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         Regex IDateTimeExtractorConfiguration.YearRegex => YearRegex;
 
         Regex IDateTimeExtractorConfiguration.YearSuffix => YearSuffix;
+
+        Regex IDateTimeExtractorConfiguration.SuffixAfterRegex => SuffixAfterRegex;
 
         public IDateTimeExtractor DurationExtractor { get; }
 

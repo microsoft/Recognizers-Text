@@ -860,7 +860,7 @@ public class PortugueseDateTime {
             .replace("{YearRegex}", YearRegex)
             .replace("{FullTextYearRegex}", FullTextYearRegex);
 
-    public static final String DateAfterRegex = "^[.]";
+    public static final String SuffixAfterRegex = "^[.]";
 
     public static final String YearPeriodRegex = "^[.]";
 

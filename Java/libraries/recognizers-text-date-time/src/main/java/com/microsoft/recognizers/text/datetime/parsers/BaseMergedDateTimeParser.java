@@ -29,6 +29,7 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.SortedMap;
 import java.util.TreeMap;
 import java.util.stream.Collectors;
@@ -126,10 +127,10 @@ public class BaseMergedDateTimeParser implements IDateTimeParser {
             modStr = aroundMatch.getMatch().get().value;
         } else if ((er.getType().equals(Constants.SYS_DATETIME_DATEPERIOD) &&
                 Arrays.stream(RegExpUtility.getMatches(config.getYearRegex(), er.getText())).findFirst().isPresent()) ||
-                (er.getType().equals(Constants.SYS_DATETIME_DATE))) {
+                (er.getType().equals(Constants.SYS_DATETIME_DATE)) || (er.getType().equals(Constants.SYS_DATETIME_TIME))) {
             // This has to be put at the end of the if, or cases like "before 2012" and "after 2012" would fall into this
-            // 2012 or after/above
-            ConditionalMatch match = RegexExtension.matchEnd(config.getDateAfterRegex(), er.getText(), true);
+            // 2012 or after/above, 3 pm or later
+            ConditionalMatch match = RegexExtension.matchEnd(config.getSuffixAfterRegex(), er.getText(), true);
             if (match.getSuccess()) {
                 hasYearAfter = true;
                 er.setLength(er.getLength() - match.getMatch().get().length);
@@ -233,6 +234,17 @@ public class BaseMergedDateTimeParser implements IDateTimeParser {
             val.setMod(Constants.SINCE_MOD);
             pr.setValue(val);
             hasSince = true;
+        }
+
+        // For cases like "3 pm or later on Monday"
+        if (pr != null && pr.getValue() != null && pr.getType().equals(Constants.SYS_DATETIME_DATETIME)) {
+            Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(config.getSuffixAfterRegex(), pr.getText())).findFirst();
+            if (match.isPresent() && match.get().index != 0) {
+                DateTimeResolutionResult val = (DateTimeResolutionResult)pr.getValue();
+                val.setMod(Constants.SINCE_MOD);
+                pr.setValue(val);
+                hasSince = true;
+            }
         }
 
         if (config.getOptions().match(DateTimeOptions.SplitDateAndTime) && pr != null && pr.getValue() != null &&

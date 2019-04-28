@@ -35,6 +35,7 @@ public class EnglishDateTimeExtractorConfiguration extends BaseOptionsConfigurat
     public static final Pattern ConnectorRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.ConnectorRegex);
     public static final Pattern NumberAsTimeRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.NumberAsTimeRegex);
     public static final Pattern DateNumberConnectorRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.DateNumberConnectorRegex);
+    public static final Pattern SuffixAfterRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SuffixAfterRegex);
 
     public IExtractor integerExtractor;
     public IDateTimeExtractor datePointExtractor;
@@ -116,6 +117,11 @@ public class EnglishDateTimeExtractorConfiguration extends BaseOptionsConfigurat
     @Override
     public Pattern getDateNumberConnectorRegex() {
         return DateNumberConnectorRegex;
+    }
+
+    @Override
+    public Pattern getSuffixAfterRegex() {
+        return SuffixAfterRegex;
     }
 
     @Override

@@ -28,9 +28,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public static readonly Regex UnitRegex = new Regex(DateTimeDefinitions.UnitRegex, RegexOptions.Singleline);
         public static readonly Regex ConnectorRegex = new Regex(DateTimeDefinitions.ConnectorRegex, RegexOptions.Singleline);
         public static readonly Regex NumberAsTimeRegex = new Regex(DateTimeDefinitions.NumberAsTimeRegex, RegexOptions.Singleline);
-        public static readonly Regex DateNumberConnectorRegex = new Regex(
-            DateTimeDefinitions.DateNumberConnectorRegex,
-            RegexOptions.Singleline);
+        public static readonly Regex DateNumberConnectorRegex = new Regex(DateTimeDefinitions.DateNumberConnectorRegex, RegexOptions.Singleline);
+        public static readonly Regex SuffixAfterRegex = new Regex(DateTimeDefinitions.SuffixAfterRegex, RegexOptions.Singleline);
 
         public SpanishDateTimeExtractorConfiguration(IOptionsConfiguration config)
             : base(config)
@@ -79,6 +78,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         Regex IDateTimeExtractorConfiguration.YearRegex => YearRegex;
 
         Regex IDateTimeExtractorConfiguration.YearSuffix => YearSuffix;
+
+        Regex IDateTimeExtractorConfiguration.SuffixAfterRegex => SuffixAfterRegex;
 
         public bool IsConnector(string text)
         {
