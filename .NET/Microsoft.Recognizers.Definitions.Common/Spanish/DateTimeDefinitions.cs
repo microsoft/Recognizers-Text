@@ -472,7 +472,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
 		public const string CommonDatePrefixRegex = @"^[\.]";
 		public const string DurationUnitRegex = @"^[\.]";
 		public const string DurationConnectorRegex = @"^[.]";
-		public const string DateAfterRegex = @"^[.]";
+		public const string SuffixAfterRegex = @"^[.]";
 		public const string YearPeriodRegex = @"^[.]";
 		public const string FutureSuffixRegex = @"\b(despu[ée]s)\b";
 		public static readonly Dictionary<string, int> WrittenDecades = new Dictionary<string, int>

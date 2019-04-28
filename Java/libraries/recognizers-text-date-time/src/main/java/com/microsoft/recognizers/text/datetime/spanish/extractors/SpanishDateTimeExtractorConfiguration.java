@@ -41,6 +41,7 @@ public class SpanishDateTimeExtractorConfiguration extends BaseOptionsConfigurat
     public static final Pattern ConnectorRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.ConnectorRegex);
     public static final Pattern NumberAsTimeRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.NumberAsTimeRegex);
     public static final Pattern DateNumberConnectorRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.DateNumberConnectorRegex);
+    public static final Pattern SuffixAfterRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.SuffixAfterRegex);
 
     public SpanishDateTimeExtractorConfiguration(DateTimeOptions options) {
 
@@ -151,6 +152,11 @@ public class SpanishDateTimeExtractorConfiguration extends BaseOptionsConfigurat
     @Override
     public Pattern getDateNumberConnectorRegex() {
         return DateNumberConnectorRegex;
+    }
+
+    @Override
+    public Pattern getSuffixAfterRegex() {
+        return SuffixAfterRegex;
     }
 
     public boolean isConnector(String text) {

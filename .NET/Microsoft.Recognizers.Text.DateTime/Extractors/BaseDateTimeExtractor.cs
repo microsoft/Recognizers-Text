@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 using DateObject = System.DateTime;
@@ -134,9 +135,19 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
                     else
                     {
-                        if (this.config.IsConnector(middleStr))
+                        // For case like "3 pm or later on monday"
+                        var match = this.config.SuffixAfterRegex.Match(middleStr);
+                        if (match.Success)
                         {
-                            valid = true;
+                            middleStr = middleStr.Substring(match.Index + match.Length, middleStr.Length - match.Length).Trim();
+                        }
+
+                        if (!(match.Success && middleStr.Equals(string.Empty)))
+                        {
+                            if (this.config.IsConnector(middleStr))
+                            {
+                                valid = true;
+                            }
                         }
                     }
 

@@ -224,11 +224,12 @@ public class BaseMergedDateTimeExtractor implements IDateTimeExtractor {
 
             final ExtractResult newEr = modifiedToken.er;
 
-            if (newEr.getType().equals(Constants.SYS_DATETIME_DATEPERIOD) || newEr.getType().equals(Constants.SYS_DATETIME_DATE)) {
-                // 2012 or after/above
+            if (newEr.getType().equals(Constants.SYS_DATETIME_DATEPERIOD) || newEr.getType().equals(Constants.SYS_DATETIME_DATE) || 
+                newEr.getType().equals(Constants.SYS_DATETIME_TIME)) {
+                // 2012 or after/above, 3 pm or later
                 String afterStr = text.substring(newEr.getStart() + newEr.getLength()).toLowerCase();
 
-                ConditionalMatch match = RegexExtension.matchBegin(config.getDateAfterRegex(), StringUtility.trimStart(afterStr), true);
+                ConditionalMatch match = RegexExtension.matchBegin(config.getSuffixAfterRegex(), StringUtility.trimStart(afterStr), true);
 
                 if (match.getSuccess()) {
                     boolean isFollowedByOtherEntity = true;

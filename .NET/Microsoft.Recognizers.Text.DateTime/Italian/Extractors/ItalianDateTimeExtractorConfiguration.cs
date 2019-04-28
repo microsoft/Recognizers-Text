@@ -76,6 +76,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             DateTimeDefinitions.DateNumberConnectorRegex,
             RegexOptions.Singleline);
 
+        public static readonly Regex SuffixAfterRegex = new Regex(
+            DateTimeDefinitions.SuffixAfterRegex,
+            RegexOptions.Singleline);
+
         public ItalianDateTimeExtractorConfiguration(IOptionsConfiguration config)
             : base(config)
         {
@@ -117,6 +121,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         Regex IDateTimeExtractorConfiguration.NumberAsTimeRegex => NumberAsTimeRegex;
 
         Regex IDateTimeExtractorConfiguration.DateNumberConnectorRegex => DateNumberConnectorRegex;
+
+        Regex IDateTimeExtractorConfiguration.SuffixAfterRegex => SuffixAfterRegex;
 
         public IDateTimeExtractor DurationExtractor { get; }
 
