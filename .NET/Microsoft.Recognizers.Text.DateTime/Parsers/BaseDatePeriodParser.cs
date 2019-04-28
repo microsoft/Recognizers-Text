@@ -1262,37 +1262,32 @@ namespace Microsoft.Recognizers.Text.DateTime
             var ret = new DateTimeResolutionResult();
 
             var er = this.config.DateExtractor.Extract(text, referenceDate);
-
             var pr1 = new DateTimeParseResult();
             var pr2 = new DateTimeParseResult();
-
-            // Handle with "now"
-            var nowMatches = this.config.NowRegex.Matches(text);
-            if (nowMatches.Count != 0)
+            if (er.Count < 2)
             {
-                if (er.Count < 1)
+                er = this.config.DateExtractor.Extract(this.config.TokenBeforeDate + text, referenceDate);
+                if (er.Count >= 2)
                 {
-                    return ret;
+                    er[0].Start -= this.config.TokenBeforeDate.Length;
+                    er[1].Start -= this.config.TokenBeforeDate.Length;
                 }
-
-                var pr = GetPrWithNow(nowMatches, er[0], referenceDate);
-                pr1 = pr[0];
-                pr2 = pr[1];
-            }
-            else
-            {
-                if (er.Count < 2)
+                else
                 {
-                    er = this.config.DateExtractor.Extract(this.config.TokenBeforeDate + text, referenceDate);
-                    if (er.Count < 2)
+                    var nowPr = ParseNowAsDate(text, referenceDate);
+                    if (nowPr.Value == null || er.Count < 1)
                     {
                         return ret;
                     }
 
-                    er[0].Start -= this.config.TokenBeforeDate.Length;
-                    er[1].Start -= this.config.TokenBeforeDate.Length;
+                    var datePr = this.config.DateParser.Parse(er[0], referenceDate);
+                    pr1 = datePr.Start < nowPr.Start ? datePr : nowPr;
+                    pr2 = datePr.Start < nowPr.Start ? nowPr : datePr;
                 }
+            }
 
+            if (er.Count >= 2)
+            {
                 var match = this.config.WeekWithWeekDayRangeRegex.Match(text);
                 string weekPrefix = null;
                 if (match.Success)
@@ -1346,13 +1341,14 @@ namespace Microsoft.Recognizers.Text.DateTime
         }
 
         // Parse entities that are made up by two time points with now
-        private List<DateTimeParseResult> GetPrWithNow(MatchCollection matches, ExtractResult er, DateObject referenceDate)
+        private DateTimeParseResult ParseNowAsDate(string text, DateObject referenceDate)
         {
-            var pr = new List<DateTimeParseResult>();
-            pr.Add(this.config.DateParser.Parse(er, referenceDate));
-            var value = referenceDate.Date;
-            foreach (Match match in matches)
+            var pr = new DateTimeParseResult();
+            var match = this.config.NowRegex.Match(text);
+
+            if (match.Success)
             {
+                var value = referenceDate.Date;
                 var retNow = new DateTimeResolutionResult
                 {
                     Timex = DateTimeFormatUtil.LuisDate(value),
@@ -1360,7 +1356,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     PastValue = value,
                 };
 
-                var nowPr = new DateTimeParseResult
+                pr = new DateTimeParseResult
                 {
                     Text = match.Value,
                     Start = match.Index,
@@ -1369,11 +1365,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     Type = Constants.SYS_DATETIME_DATE,
                     TimexStr = retNow == null ? string.Empty : ((DateTimeResolutionResult)retNow).Timex,
                 };
-
-                pr.Add(nowPr);
             }
-
-            pr = pr.OrderBy(o => o.Start).ToList();
 
             return pr;
         }
