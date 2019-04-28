@@ -31,7 +31,6 @@ import java.time.Month;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
@@ -940,32 +939,28 @@ public class BaseDatePeriodParser implements IDateTimeParser {
         DateTimeResolutionResult ret = new DateTimeResolutionResult();
 
         List<ExtractResult> er = this.config.getDateExtractor().extract(text, referenceDate);
-
-        DateTimeParseResult pr1;
-        DateTimeParseResult pr2;
-
-        // Handle "now"
-        Match[] matches = RegExpUtility.getMatches(this.config.getNowRegex(), text);
-        if (matches.length != 0) {
-            if (er.size() < 1) {
-                return ret;
-            }
-
-            List<DateTimeParseResult> pr = getPrWithNow(matches, er.get(0), referenceDate);
-            pr1 = pr.get(0);
-            pr2 = pr.get(1);
-        } else {
-            if (er.size() < 2) {
-                er = this.config.getDateExtractor().extract(this.config.getTokenBeforeDate() + text, referenceDate);
-                if (er.size() < 2) {
-                    return ret;
-                }
+        DateTimeParseResult pr1 = null;
+        DateTimeParseResult pr2 = null;
+        if (er.size() < 2) {
+            er = this.config.getDateExtractor().extract(this.config.getTokenBeforeDate() + text, referenceDate);
+            if (er.size() >= 2) {
                 er.get(0).setStart(er.get(0).getStart() - this.config.getTokenBeforeDate().length());
                 er.get(1).setStart(er.get(1).getStart() - this.config.getTokenBeforeDate().length());
                 er.set(0, er.get(0));
                 er.set(1, er.get(1));
+            } else {
+                DateTimeParseResult nowPr = parseNowAsDate(text, referenceDate);
+                if (nowPr == null || er.size() < 1) {
+                    return ret;
+                }
+
+                DateTimeParseResult datePr = this.config.getDateParser().parse(er.get(0), referenceDate);
+                pr1 = datePr.getStart() < nowPr.getStart() ? datePr : nowPr;
+                pr2 = datePr.getStart() < nowPr.getStart() ? nowPr : datePr;
             }
 
+        }
+        if (er.size() >= 2) {
             Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(this.config.getWeekWithWeekDayRangeRegex(), text)).findFirst();
             String weekPrefix = null;
             if (match.isPresent()) {
@@ -1022,18 +1017,17 @@ public class BaseDatePeriodParser implements IDateTimeParser {
     }
 
     // parse entities that made up by two time points with now
-    private List<DateTimeParseResult> getPrWithNow(Match[] matches, ExtractResult er, LocalDateTime referenceDate) {
-        List<DateTimeParseResult> pr = new ArrayList<>();
-        pr.add(this.config.getDateParser().parse(er, referenceDate));
-
+    private DateTimeParseResult parseNowAsDate(String text, LocalDateTime referenceDate) {
+        DateTimeParseResult nowPr = null;
         LocalDateTime value = referenceDate.toLocalDate().atStartOfDay();
+        Match[] matches = RegExpUtility.getMatches(this.config.getNowRegex(), text);
         for (Match match : matches) {
             DateTimeResolutionResult retNow = new DateTimeResolutionResult();
             retNow.setTimex(DateTimeFormatUtil.luisDate(value));
             retNow.setFutureValue(value);
             retNow.setPastValue(value);
 
-            DateTimeParseResult nowPr = new DateTimeParseResult(
+            nowPr = new DateTimeParseResult(
                 match.index,
                 match.length,
                 match.value,
@@ -1042,12 +1036,9 @@ public class BaseDatePeriodParser implements IDateTimeParser {
                 retNow,
                 "",
                 value == null ? "" : ((DateTimeResolutionResult)retNow).getTimex());
-
-            pr.add(nowPr);
         }
 
-        pr.sort(Comparator.comparingInt(arg -> arg.getStart()));
-        return pr;
+        return nowPr;
     }
 
     private DateTimeResolutionResult parseDuration(String text, LocalDateTime referenceDate) {
