@@ -227,6 +227,11 @@ class BaseNumberParser(Parser):
             current_value = self.config.resolve_composite_number(frac_words[split_index])
             round_value = 1
 
+            # for case like "half"
+            if len(frac_words) == 1:
+                result.value = 1 / self.__get_int_value(frac_words)
+                return result
+
             for split_index in range(len(frac_words) - 2, -1, -1):
                 if (frac_words[split_index] in self.config.written_fraction_separator_texts
                         or frac_words[split_index] in self.config.written_integer_separator_texts):
