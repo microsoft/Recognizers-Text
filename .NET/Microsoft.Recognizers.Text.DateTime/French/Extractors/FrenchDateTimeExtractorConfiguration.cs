@@ -109,7 +109,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         Regex IDateTimeExtractorConfiguration.YearRegex => YearRegex;
 
         Regex IDateTimeExtractorConfiguration.YearSuffix => YearSuffix;
-        
+
         Regex IDateTimeExtractorConfiguration.SuffixAfterRegex => SuffixAfterRegex;
 
         public IDateTimeExtractor DurationExtractor { get; }

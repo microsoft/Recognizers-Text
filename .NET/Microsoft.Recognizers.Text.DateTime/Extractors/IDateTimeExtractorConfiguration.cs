@@ -32,7 +32,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         Regex YearRegex { get; }
 
         Regex YearSuffix { get; }
-        
+
         Regex SuffixAfterRegex { get; }
 
         IDateTimeExtractor DurationExtractor { get; }

@@ -86,7 +86,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             DateTimeDefinitions.SuffixAfterRegex,
             RegexOptions.Singleline);
 
-
         public ItalianDateTimeExtractorConfiguration(IOptionsConfiguration config)
             : base(config)
         {
