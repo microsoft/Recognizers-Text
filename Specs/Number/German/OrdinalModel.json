@@ -7,7 +7,9 @@
         "Text": "erster",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "1"
+          "value": "1",
+          "offset":"1",
+          "relativeTo":"start"
         },
         "Start": 0,
         "End": 5
@@ -22,7 +24,9 @@
         "Text": "zweiter",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "2"
+          "value": "2",
+          "offset":"2",
+          "relativeTo":"start"
         },
         "Start": 0,
         "End": 6
@@ -37,7 +41,9 @@
         "Text": "fünfundzwanzigster",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "25"
+          "value": "25",
+          "offset":"25",
+          "relativeTo":"start"
         },
         "Start": 0,
         "End": 17
@@ -52,7 +58,9 @@
         "Text": "einhunderteinunddreißigste",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "131"
+          "value": "131",
+          "offset":"131",
+          "relativeTo":"start"
         },
         "Start": 12,
         "End": 37
@@ -67,7 +75,9 @@
         "Text": "erster",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "1"
+          "value": "1",
+          "offset":"1",
+          "relativeTo":"start"
         },
         "Start": 8,
         "End": 13
@@ -82,7 +92,9 @@
         "Text": "dritt",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "3"
+          "value": "3",
+          "offset":"3",
+          "relativeTo":"start"
         },
         "Start": 18,
         "End": 22
@@ -97,7 +109,9 @@
         "Text": "viert",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "4"
+          "value": "4",
+          "offset":"4",
+          "relativeTo":"start"
         },
         "Start": 29,
         "End": 33
@@ -112,7 +126,9 @@
         "Text": "elft",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "11"
+          "value": "11",
+          "offset":"11",
+          "relativeTo":"start"
         },
         "Start": 20,
         "End": 23
@@ -121,7 +137,9 @@
         "Text": "zwoelft",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "12"
+          "value": "12",
+          "offset":"12",
+          "relativeTo":"start"
         },
         "Start": 33,
         "End": 39
@@ -136,7 +154,9 @@
         "Text": "zuerst",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "1"
+          "value": "1",
+          "offset":"1",
+          "relativeTo":"start"
         },
         "Start": 9,
         "End": 14
@@ -145,7 +165,9 @@
         "Text": "zweiter",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "2"
+          "value": "2",
+          "offset":"2",
+          "relativeTo":"start"
         },
         "Start": 28,
         "End": 34
@@ -154,7 +176,9 @@
         "Text": "vierter",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "4"
+          "value": "4",
+          "offset":"4",
+          "relativeTo":"start"
         },
         "Start": 45,
         "End": 51
@@ -163,7 +187,9 @@
         "Text": "dritten",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "3"
+          "value": "3",
+          "offset":"3",
+          "relativeTo":"start"
         },
         "Start": 58,
         "End": 64
@@ -178,7 +204,9 @@
         "Text": "zuerst",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "1"
+          "value": "1",
+          "offset":"1",
+          "relativeTo":"start"
         },
         "Start": 0,
         "End": 5
@@ -187,7 +215,9 @@
         "Text": "dritten",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "3"
+          "value": "3",
+          "offset":"3",
+          "relativeTo":"start"
         },
         "Start": 47,
         "End": 53
@@ -202,7 +232,9 @@
         "Text": "tausendste",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "1000"
+          "value": "1000",
+          "offset":"1000",
+          "relativeTo":"start"
         },
         "Start": 20,
         "End": 29
@@ -218,7 +250,9 @@
         "Text": "erste",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "1"
+          "value": "1",
+          "offset":"1",
+          "relativeTo":"start"
         },
         "Start": 192,
         "End": 196
@@ -227,7 +261,9 @@
         "Text": "3",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "3"
+          "value": "3",
+          "offset":"3",
+          "relativeTo":"start"
         },
         "Start": 242,
         "End": 242
@@ -236,7 +272,9 @@
         "Text": "74",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "74"
+          "value": "74",
+          "offset":"74",
+          "relativeTo":"start"
         },
         "Start": 346,
         "End": 347
@@ -245,7 +283,9 @@
         "Text": "2",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "2"
+          "value": "2",
+          "offset":"2",
+          "relativeTo":"start"
         },
         "Start": 453,
         "End": 453
@@ -254,7 +294,9 @@
         "Text": "6",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "6"
+          "value": "6",
+          "offset":"6",
+          "relativeTo":"start"
         },
         "Start": 459,
         "End": 459
@@ -263,7 +305,9 @@
         "Text": "acht",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "8"
+          "value": "8",
+          "offset":"8",
+          "relativeTo":"start"
         },
         "Start": 465,
         "End": 468
@@ -272,7 +316,9 @@
         "Text": "13",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "13"
+          "value": "13",
+          "offset":"13",
+          "relativeTo":"start"
         },
         "Start": 552,
         "End": 553
@@ -287,7 +333,9 @@
         "Text": "3",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "3"
+          "value": "3",
+          "offset":"3",
+          "relativeTo":"start"
         },
         "Start": 17,
         "End": 17
@@ -302,7 +350,9 @@
         "Text": "dritte",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "3"
+          "value": "3",
+          "offset":"3",
+          "relativeTo":"start"
         },
         "Start": 17,
         "End": 22
@@ -317,7 +367,9 @@
         "Text": "siebenundzwanzigster",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "27"
+          "value": "27",
+          "offset":"27",
+          "relativeTo":"start"
         },
         "Start": 7,
         "End": 26
@@ -332,7 +384,9 @@
         "Text": "milliardsten",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "1000000000"
+          "value": "1000000000",
+          "offset":"1000000000",
+          "relativeTo":"start"
         },
         "Start": 26,
         "End": 37
@@ -347,7 +401,9 @@
         "Text": "erster",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "1"
+          "value": "1",
+          "offset":"1",
+          "relativeTo":"start"
         },
         "Start": 0,
         "End": 5
@@ -356,7 +412,9 @@
         "Text": "zweiter",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "2"
+          "value": "2",
+          "offset":"2",
+          "relativeTo":"start"
         },
         "Start": 8,
         "End": 14
@@ -365,7 +423,9 @@
         "Text": "achter",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "8"
+          "value": "8",
+          "offset":"8",
+          "relativeTo":"start"
         },
         "Start": 17,
         "End": 22
@@ -374,7 +434,9 @@
         "Text": "dritten",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "3"
+          "value": "3",
+          "offset":"3",
+          "relativeTo":"start"
         },
         "Start": 53,
         "End": 59
@@ -383,7 +445,9 @@
         "Text": "siebte",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "7"
+          "value": "7",
+          "offset":"7",
+          "relativeTo":"start"
         },
         "Start": 78,
         "End": 83
@@ -392,7 +456,9 @@
         "Text": "siebenundzwanzigsten",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "27"
+          "value": "27",
+          "offset":"27",
+          "relativeTo":"start"
         },
         "Start": 109,
         "End": 128
@@ -401,7 +467,9 @@
         "Text": "neunten",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "9"
+          "value": "9",
+          "offset":"9",
+          "relativeTo":"start"
         },
         "Start": 150,
         "End": 156
@@ -416,7 +484,9 @@
         "Text": "erste",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "1"
+          "value": "1",
+          "offset":"1",
+          "relativeTo":"start"
         },
         "Start": 4,
         "End": 8
@@ -425,7 +495,9 @@
         "Text": "siebzigste",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "70"
+          "value": "70",
+          "offset":"70",
+          "relativeTo":"start"
         },
         "Start": 91,
         "End": 100
@@ -440,7 +512,9 @@
         "Text": "erste",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "1"
+          "value": "1",
+          "offset":"1",
+          "relativeTo":"start"
         },
         "Start": 24,
         "End": 28
@@ -460,7 +534,9 @@
         "Text": "zweiten",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "2"
+          "value": "2",
+          "offset":"2",
+          "relativeTo":"start"
         },
         "Start": 5,
         "End": 11
@@ -475,7 +551,9 @@
         "Text": "hundertsten",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "100"
+          "value": "100",
+          "offset":"100",
+          "relativeTo":"start"
         },
         "Start": 4,
         "End": 14
@@ -490,7 +568,9 @@
         "Text": "einhundert milliardste",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "100000000000"
+          "value": "100000000000",
+          "offset":"100000000000",
+          "relativeTo":"start"
         },
         "Start": 80,
         "End": 101
@@ -499,7 +579,9 @@
         "Text": "dreihundert milliardste",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "300000000000"
+          "value": "300000000000",
+          "offset":"300000000000",
+          "relativeTo":"start"
         },
         "Start": 121,
         "End": 143
@@ -514,7 +596,9 @@
         "Text": "einhundert millionste",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "100000000"
+          "value": "100000000",
+          "offset":"100000000",
+          "relativeTo":"start"
         },
         "Start": 80,
         "End": 100
@@ -523,7 +607,9 @@
         "Text": "dreihundert millionste",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "300000000"
+          "value": "300000000",
+          "offset":"300000000",
+          "relativeTo":"start"
         },
         "Start": 120,
         "End": 141
@@ -538,7 +624,9 @@
         "Text": "einhundert billionste",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "100000000000000"
+          "value": "100000000000000",
+          "offset":"100000000000000",
+          "relativeTo":"start"
         },
         "Start": 80,
         "End": 100
@@ -547,7 +635,9 @@
         "Text": "dreihundert billionste",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "300000000000000"
+          "value": "300000000000000",
+          "offset":"300000000000000",
+          "relativeTo":"start"
         },
         "Start": 120,
         "End": 141
@@ -562,7 +652,9 @@
         "Text": "dritten",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "3"
+          "value": "3",
+          "offset":"3",
+          "relativeTo":"start"
         },
         "Start": 37,
         "End": 43
@@ -571,7 +663,9 @@
         "Text": "dritten",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "3"
+          "value": "3",
+          "offset":"3",
+          "relativeTo":"start"
         },
         "Start": 70,
         "End": 76
@@ -586,7 +680,9 @@
         "Text": "einhunderttausendste",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "100000"
+          "value": "100000",
+          "offset":"100000",
+          "relativeTo":"start"
         },
         "Start": 13,
         "End": 32

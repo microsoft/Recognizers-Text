@@ -6,7 +6,9 @@
         "Text": "第二百五十",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "250"
+          "value": "250",
+          "offset":"250",
+          "relativeTo":"start"
         },
         "Start": 0,
         "End": 4
@@ -20,7 +22,9 @@
         "Text": "第250",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "250"
+          "value": "250",
+          "offset":"250",
+          "relativeTo":"start"
         },
         "Start": 0,
         "End": 3
@@ -34,7 +38,9 @@
         "Text": "第一",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "1"
+          "value": "1",
+          "offset":"1",
+          "relativeTo":"start"
         },
         "Start": 0,
         "End": 1
@@ -43,7 +49,9 @@
         "Text": "第二",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "2"
+          "value": "2",
+          "offset":"2",
+          "relativeTo":"start"
         },
         "Start": 3,
         "End": 4
@@ -52,7 +60,9 @@
         "Text": "第三",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "3"
+          "value": "3",
+          "offset":"3",
+          "relativeTo":"start"
         },
         "Start": 6,
         "End": 7
@@ -61,7 +71,9 @@
         "Text": "第四",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "4"
+          "value": "4",
+          "offset":"4",
+          "relativeTo":"start"
         },
         "Start": 9,
         "End": 10
@@ -75,7 +87,9 @@
         "Text": "第十四",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "14"
+          "value": "14",
+          "offset":"14",
+          "relativeTo":"start"
         },
         "Start": 0,
         "End": 2
@@ -89,7 +103,9 @@
         "Text": "第三",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "3"
+          "value": "3",
+          "offset":"3",
+          "relativeTo":"start"
         },
         "Start": 0,
         "End": 1
@@ -104,7 +120,9 @@
         "Text": "第3万",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "30000"
+          "value": "30000",
+          "offset":"30000",
+          "relativeTo":"start"
         },
         "Start": 0,
         "End": 2
@@ -119,7 +137,9 @@
         "Text": "第三万",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "30000"
+          "value": "30000",
+          "offset":"30000",
+          "relativeTo":"start"
         },
         "Start": 0,
         "End": 2

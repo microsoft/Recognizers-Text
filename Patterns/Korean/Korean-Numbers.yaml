@@ -279,7 +279,12 @@ LessOrEqual: !nestedRegex
 LessOrEqualSuffix: !simpleRegex
   def: \s*(이상)
 
-RelativeReferenceMap: !dictionary
+RelativeReferenceOffsetMap: !dictionary
+  types: [ string, string ]
+# TODO: modify below regex according to the counterpart in English
+  entries:
+    '': ''
+RelativeReferenceRelativeToMap: !dictionary
   types: [ string, string ]
 # TODO: modify below regex according to the counterpart in English
   entries:
