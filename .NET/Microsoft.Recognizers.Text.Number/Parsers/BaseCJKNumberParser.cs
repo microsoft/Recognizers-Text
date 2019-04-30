@@ -33,6 +33,7 @@ namespace Microsoft.Recognizers.Text.Number
                 Data = extResult.Data,
                 Text = extResult.Text,
                 Type = extResult.Type,
+                Metadata = extResult.Metadata,
             };
 
             if (Config.CultureInfo.Name == "zh-CN")
@@ -307,6 +308,7 @@ namespace Microsoft.Recognizers.Text.Number
                 Length = extResult.Length,
                 Text = extResult.Text,
                 Type = extResult.Type,
+                Metadata = extResult.Metadata,
             };
 
             var resultText = extResult.Text;
