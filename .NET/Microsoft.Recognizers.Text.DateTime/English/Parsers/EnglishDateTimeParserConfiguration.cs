@@ -33,6 +33,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             UnspecificEndOfRegex = EnglishDateTimeExtractorConfiguration.UnspecificEndOfRegex;
             UnitRegex = EnglishTimeExtractorConfiguration.TimeUnitRegex;
             DateNumberConnectorRegex = EnglishDateTimeExtractorConfiguration.DateNumberConnectorRegex;
+            YearRegex = EnglishDateTimeExtractorConfiguration.YearRegex;
 
             Numbers = config.Numbers;
             CardinalExtractor = config.CardinalExtractor;
@@ -91,6 +92,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public Regex PrepositionRegex { get; }
 
         public Regex ConnectorRegex { get; }
+
+        public Regex YearRegex { get; }
 
         public IImmutableDictionary<string, int> Numbers { get; }
 

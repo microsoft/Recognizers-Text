@@ -2842,5 +2842,29 @@
         "Length": 21
       }
     ]
+  },
+  {
+    "Input": "I'll go back twenty second of June 2017",
+    "Context": {
+      "ReferenceDateTime": "2018-08-21T08:00:00"
+    },
+    "NotSupported": "python,javascript",
+    "Results": [
+      {
+        "Text": "twenty second of june 2017",
+        "Type": "date",
+        "Value": {
+          "Timex": "2017-06-22",
+          "FutureResolution": {
+            "date": "2017-06-22"
+          },
+          "PastResolution": {
+            "date": "2017-06-22"
+          }
+        },
+        "Start": 13,
+        "Length": 26
+      }
+    ]
   }
 ]

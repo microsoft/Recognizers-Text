@@ -27,6 +27,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             UnspecificEndOfRegex = SpanishDateTimeExtractorConfiguration.UnspecificEndOfRegex;
             UnitRegex = SpanishDateTimeExtractorConfiguration.UnitRegex;
             DateNumberConnectorRegex = SpanishDateTimeExtractorConfiguration.DateNumberConnectorRegex;
+            YearRegex = SpanishDateTimeExtractorConfiguration.YearRegex;
             Numbers = config.Numbers;
             CardinalExtractor = config.CardinalExtractor;
             IntegerExtractor = config.IntegerExtractor;
@@ -84,6 +85,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public Regex PrepositionRegex { get; }
 
         public Regex ConnectorRegex { get; }
+
+        public Regex YearRegex { get; }
 
         public IImmutableDictionary<string, int> Numbers { get; }
 

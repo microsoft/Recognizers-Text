@@ -52,6 +52,12 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public static readonly Regex DateNumberConnectorRegex =
             new Regex(DateTimeDefinitions.DateNumberConnectorRegex, RegexOptions.Singleline);
 
+        public static readonly Regex YearSuffix =
+            new Regex(DateTimeDefinitions.YearSuffix, RegexOptions.Singleline);
+
+        public static readonly Regex YearRegex =
+            new Regex(DateTimeDefinitions.YearRegex, RegexOptions.Singleline);
+
         public static readonly Regex SuffixAfterRegex =
             new Regex(DateTimeDefinitions.SuffixAfterRegex, RegexOptions.Singleline);
 
@@ -96,6 +102,10 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         Regex IDateTimeExtractorConfiguration.NumberAsTimeRegex => NumberAsTimeRegex;
 
         Regex IDateTimeExtractorConfiguration.DateNumberConnectorRegex => DateNumberConnectorRegex;
+
+        Regex IDateTimeExtractorConfiguration.YearSuffix => YearSuffix;
+
+        Regex IDateTimeExtractorConfiguration.YearRegex => YearRegex;
 
         Regex IDateTimeExtractorConfiguration.SuffixAfterRegex => SuffixAfterRegex;
 
