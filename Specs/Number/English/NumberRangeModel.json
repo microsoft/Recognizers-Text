@@ -1038,5 +1038,20 @@
         }
       }
     ]
+  },
+  {
+    "Input": "more than half people came here",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "more than half",
+        "Start": 0,
+        "End": 13,
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(0.5,)"
+        }
+      }
+    ]
   }
 ]

@@ -42,7 +42,7 @@ export namespace EnglishNumeric {
 	export const FractionNotationWithSpacesRegex = `(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+\\s+\\d+[/]\\d+(?=(\\b[^/]|$))`;
 	export const FractionNotationRegex = `(((?<=\\W|^)-\\s*)|(?<![/-])(?<=\\b))\\d+[/]\\d+(?=(\\b[^/]|$))`;
 	export const FractionNounRegex = `(?<=\\b)(${AllIntRegex}\\s+(and\\s+)?)?(${AllIntRegex})(\\s+|\\s*-\\s*)(((${AllOrdinalRegex})|(${RoundNumberOrdinalRegex}))s|halves|quarters)(?=\\b)`;
-	export const FractionNounWithArticleRegex = `(?<=\\b)(${AllIntRegex}\\s+(and\\s+)?)?(a|an|one)(\\s+|\\s*-\\s*)(?!\\bfirst\\b|\\bsecond\\b)((${AllOrdinalRegex})|(${RoundNumberOrdinalRegex})|half|quarter)(?=\\b)`;
+	export const FractionNounWithArticleRegex = `(?<=\\b)(((${AllIntRegex}\\s+(and\\s+)?)?(a|an|one)(\\s+|\\s*-\\s*)(?!\\bfirst\\b|\\bsecond\\b)((${AllOrdinalRegex})|(${RoundNumberOrdinalRegex})|half|quarter))|(half))(?=\\b)`;
 	export const FractionPrepositionRegex = `(?<=\\b)(?<numerator>(${AllIntRegex})|((?<![\\.,])\\d+))\\s+(over|in|out\\s+of)\\s+(?<denominator>(${AllIntRegex})|(\\d+)(?![\\.,]))(?=\\b)`;
 	export const FractionPrepositionWithinPercentModeRegex = `(?<=\\b)(?<numerator>(${AllIntRegex})|((?<![\\.,])\\d+))\\s+over\\s+(?<denominator>(${AllIntRegex})|(\\d+)(?![\\.,]))(?=\\b)`;
 	export const AllPointRegex = `((\\s+${ZeroToNineIntegerRegex})+|(\\s+${SeparaIntRegex}))`;

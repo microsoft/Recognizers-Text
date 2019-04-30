@@ -387,6 +387,13 @@ namespace Microsoft.Recognizers.Text.Number
                 var currentValue = Config.ResolveCompositeNumber(fracWords[splitIndex]);
                 long roundValue = 1;
 
+                // For case like "half"
+                if (fracWords.Count == 1)
+                {
+                   result.Value = 1 / GetIntValue(fracWords);
+                   return result;
+                }
+
                 for (splitIndex = fracWords.Count - 2; splitIndex >= 0; splitIndex--)
                 {
                     if (Config.WrittenFractionSeparatorTexts.Contains(fracWords[splitIndex]) ||
