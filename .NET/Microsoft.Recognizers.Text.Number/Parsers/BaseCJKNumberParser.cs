@@ -89,6 +89,24 @@ namespace Microsoft.Recognizers.Text.Number
                 ret.Text = extResult.Text.ToLowerInvariant();
             }
 
+            // Add "offset" and "relativeTo" for ordinal
+            if (!string.IsNullOrEmpty(ret.Type) && ret.Type.Contains(Constants.MODEL_ORDINAL))
+            {
+                if (Config.RelativeReferenceOffsetMap.ContainsKey(extResult.Text) &&
+                    Config.RelativeReferenceRelativeToMap.ContainsKey(extResult.Text))
+                {
+                    ret.Metadata.Offset = Config.RelativeReferenceOffsetMap[extResult.Text];
+                    ret.Metadata.RelativeTo = Config.RelativeReferenceRelativeToMap[extResult.Text];
+                }
+                else
+                {
+                    ret.Metadata.Offset = ret.ResolutionStr;
+
+                    // Every ordinal number is relative to the start
+                    ret.Metadata.RelativeTo = Constants.RELATIVE_START;
+                }
+            }
+
             return ret;
         }
 
@@ -141,6 +159,7 @@ namespace Microsoft.Recognizers.Text.Number
             }
 
             result.ResolutionStr = result.Value.ToString();
+
             return result;
         }
 

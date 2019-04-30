@@ -9,8 +9,8 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "3000000000000",
-          "offset":"",
-          "relativeTo":""
+          "offset":"3000000000000",
+          "relativeTo":"start"
         }
       }
     ]
@@ -25,8 +25,8 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "1000000000000",
-          "offset":"",
-          "relativeTo":""
+          "offset":"1000000000000",
+          "relativeTo":"start"
         }
       }
     ]
@@ -41,8 +41,8 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "100000000000000",
-          "offset":"",
-          "relativeTo":""
+          "offset":"100000000000000",
+          "relativeTo":"start"
         }
       }
     ]
@@ -57,8 +57,8 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "11",
-          "offset":"",
-          "relativeTo":""
+          "offset":"11",
+          "relativeTo":"start"
         }
       }
     ]
@@ -73,8 +73,8 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "21",
-          "offset":"",
-          "relativeTo":""
+          "offset":"21",
+          "relativeTo":"start"
         }
       }
     ]
@@ -89,8 +89,8 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "30",
-          "offset":"",
-          "relativeTo":""
+          "offset":"30",
+          "relativeTo":"start"
         }
       }
     ]
@@ -105,8 +105,8 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "2",
-          "offset":"",
-          "relativeTo":""
+          "offset":"2",
+          "relativeTo":"start"
         }
       }
     ]
@@ -121,8 +121,8 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "11",
-          "offset":"",
-          "relativeTo":""
+          "offset":"11",
+          "relativeTo":"start"
         }
       }
     ]
@@ -137,8 +137,8 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "20",
-          "offset":"",
-          "relativeTo":""
+          "offset":"20",
+          "relativeTo":"start"
         }
       }
     ]
@@ -153,8 +153,8 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "25",
-          "offset":"",
-          "relativeTo":""
+          "offset":"25",
+          "relativeTo":"start"
         }
       }
     ]
@@ -169,8 +169,8 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "21",
-          "offset":"",
-          "relativeTo":""
+          "offset":"21",
+          "relativeTo":"start"
         }
       }
     ]
@@ -185,8 +185,8 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "125",
-          "offset":"",
-          "relativeTo":""
+          "offset":"125",
+          "relativeTo":"start"
         }
       }
     ]
@@ -201,8 +201,8 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "200",
-          "offset":"",
-          "relativeTo":""
+          "offset":"200",
+          "relativeTo":"start"
         }
       }
     ]
@@ -217,8 +217,8 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "1",
-          "offset":"",
-          "relativeTo":""
+          "offset":"1",
+          "relativeTo":"start"
         }
       }
     ]

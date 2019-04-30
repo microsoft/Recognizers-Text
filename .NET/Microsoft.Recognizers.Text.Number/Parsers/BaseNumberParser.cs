@@ -162,7 +162,6 @@ namespace Microsoft.Recognizers.Text.Number
             }
 
             // Add "offset" and "relativeTo" for ordinal
-            // only support in English now, other languages will be empty string
             if (!string.IsNullOrEmpty(ret.Type) && ret.Type.Contains(Constants.MODEL_ORDINAL))
             {
                 if (Config.RelativeReferenceOffsetMap.ContainsKey(extResult.Text) &&
@@ -171,8 +170,7 @@ namespace Microsoft.Recognizers.Text.Number
                     ret.Metadata.Offset = Config.RelativeReferenceOffsetMap[extResult.Text];
                     ret.Metadata.RelativeTo = Config.RelativeReferenceRelativeToMap[extResult.Text];
                 }
-                else if (!Config.RelativeReferenceRelativeToMap.ContainsKey(string.Empty) &&
-                    !Config.RelativeReferenceRelativeToMap.ContainsKey(string.Empty))
+                else
                 {
                     ret.Metadata.Offset = ret.ResolutionStr;
 

@@ -7,8 +7,8 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "3",
-          "offset":"",
-          "relativeTo":""
+          "offset":"3",
+          "relativeTo":"start"
         },
         "Start": 0,
         "End": 5
@@ -23,8 +23,8 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "3000000000000",
-          "offset":"",
-          "relativeTo":""
+          "offset":"3000000000000",
+          "relativeTo":"start"
         },
         "Start": 0,
         "End": 16
@@ -43,8 +43,8 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "11",
-          "offset":"",
-          "relativeTo":""
+          "offset":"11",
+          "relativeTo":"start"
         },
         "Start": 0,
         "End": 4
@@ -59,8 +59,8 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "3000",
-          "offset":"",
-          "relativeTo":""
+          "offset":"3000",
+          "relativeTo":"start"
         },
         "Start": 0,
         "End": 13
@@ -75,8 +75,8 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "9000000000",
-          "offset":"",
-          "relativeTo":""
+          "offset":"9000000000",
+          "relativeTo":"start"
         },
         "Start": 0,
         "End": 16
@@ -91,8 +91,8 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "22",
-          "offset":"",
-          "relativeTo":""
+          "offset":"22",
+          "relativeTo":"start"
         },
         "Start": 0,
         "End": 2
@@ -107,8 +107,8 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "30",
-          "offset":"",
-          "relativeTo":""
+          "offset":"30",
+          "relativeTo":"start"
         },
         "Start": 0,
         "End": 2
@@ -123,8 +123,8 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "155",
-          "offset":"",
-          "relativeTo":""
+          "offset":"155",
+          "relativeTo":"start"
         },
         "Start": 0,
         "End": 3
@@ -139,8 +139,8 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "255",
-          "offset":"",
-          "relativeTo":""
+          "offset":"255",
+          "relativeTo":"start"
         },
         "Start": 0,
         "End": 5
@@ -155,8 +155,8 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "500000",
-          "offset":"",
-          "relativeTo":""
+          "offset":"500000",
+          "relativeTo":"start"
         },
         "Start": 0,
         "End": 8
@@ -171,8 +171,8 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "2",
-          "offset":"",
-          "relativeTo":""
+          "offset":"2",
+          "relativeTo":"start"
         },
         "Start": 0,
         "End": 3
@@ -187,8 +187,8 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "11",
-          "offset":"",
-          "relativeTo":""
+          "offset":"11",
+          "relativeTo":"start"
         },
         "Start": 0,
         "End": 6
@@ -203,8 +203,8 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "20",
-          "offset":"",
-          "relativeTo":""
+          "offset":"20",
+          "relativeTo":"start"
         },
         "Start": 0,
         "End": 8
@@ -219,8 +219,8 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "25",
-          "offset":"",
-          "relativeTo":""
+          "offset":"25",
+          "relativeTo":"start"
         },
         "Start": 0,
         "End": 14
@@ -235,8 +235,8 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "80",
-          "offset":"",
-          "relativeTo":""
+          "offset":"80",
+          "relativeTo":"start"
         },
         "Start": 0,
         "End": 9
@@ -251,8 +251,8 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "200",
-          "offset":"",
-          "relativeTo":""
+          "offset":"200",
+          "relativeTo":"start"
         },
         "Start": 0,
         "End": 12
@@ -267,8 +267,8 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "125",
-          "offset":"",
-          "relativeTo":""
+          "offset":"125",
+          "relativeTo":"start"
         },
         "Start": 0,
         "End": 19
@@ -283,8 +283,8 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "125",
-          "offset":"",
-          "relativeTo":""
+          "offset":"125",
+          "relativeTo":"start"
         },
         "Start": 0,
         "End": 19
@@ -299,8 +299,8 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "70",
-          "offset":"",
-          "relativeTo":""
+          "offset":"70",
+          "relativeTo":"start"
         },
         "Start": 0,
         "End": 15
@@ -315,8 +315,8 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "80",
-          "offset":"",
-          "relativeTo":""
+          "offset":"80",
+          "relativeTo":"start"
         },
         "Start": 0,
         "End": 15
@@ -331,8 +331,8 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "78",
-          "offset":"",
-          "relativeTo":""
+          "offset":"78",
+          "relativeTo":"start"
         },
         "Start": 0,
         "End": 16
@@ -347,8 +347,8 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "92",
-          "offset":"",
-          "relativeTo":""
+          "offset":"92",
+          "relativeTo":"start"
         },
         "Start": 0,
         "End": 15
@@ -363,8 +363,8 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "322",
-          "offset":"",
-          "relativeTo":""
+          "offset":"322",
+          "relativeTo":"start"
         },
         "Start": 0,
         "End": 23
@@ -379,8 +379,8 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "9992",
-          "offset":"",
-          "relativeTo":""
+          "offset":"9992",
+          "relativeTo":"start"
         },
         "Start": 0,
         "End": 44
