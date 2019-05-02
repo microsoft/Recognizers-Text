@@ -292,6 +292,19 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
         }
 
         [TestMethod]
+        public void DataTypes_Resolver_DateRange_Last_Three_Weeks()
+        {
+            var today = new System.DateTime(2019, 4, 30);
+            var resolution = TimexResolver.Resolve(new[] { "(2019-04-10,2019-05-01,P3W)" }, today);
+            Assert.AreEqual(1, resolution.Values.Count);
+
+            Assert.AreEqual("(2019-04-10,2019-05-01,P3W)", resolution.Values[0].Timex);
+            Assert.AreEqual("daterange", resolution.Values[0].Type);
+            Assert.AreEqual("2019-04-10", resolution.Values[0].Start);
+            Assert.AreEqual("2019-05-01", resolution.Values[0].End);
+        }
+
+        [TestMethod]
         public void DataTypes_Resolver_TimeRange_4am_to_8pm()
         {
             var today = System.DateTime.Now;
