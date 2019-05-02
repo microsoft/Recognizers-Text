@@ -5601,10 +5601,10 @@
     "Context": {
       "ReferenceDateTime": "2019-04-23T12:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
-        "Text": "between now and november 15th",
+        "Text": "between now and November 15th",
         "Type": "daterange",
         "Value": {
           "Timex": "(2019-04-23,XXXX-11-15,P206D)",
@@ -5627,10 +5627,10 @@
     "Context": {
       "ReferenceDateTime": "2019-04-25T12:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
-        "Text": "between jan 22 and now",
+        "Text": "between Jan 22 and now",
         "Type": "daterange",
         "Value": {
           "Timex": "(XXXX-01-22,2019-04-25,P93D)",

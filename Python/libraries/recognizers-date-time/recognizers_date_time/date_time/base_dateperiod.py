@@ -85,6 +85,11 @@ class DatePeriodExtractorConfiguration(ABC):
 
     @property
     @abstractmethod
+    def now_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
     def date_point_extractor(self) -> DateTimeExtractor:
         raise NotImplementedError
 
@@ -199,7 +204,15 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
         er = self.config.date_point_extractor.extract(source, reference)
 
         if len(er) <= 1:
-            return tokens
+            match = self.config.now_regex.search(source)
+            if match is None:
+                return tokens
+            nowEr = ExtractResult()
+            nowEr.start=match.start()
+            nowEr.length=match.end()-match.start()
+            er.append(nowEr)
+            er = sorted(er, key=lambda x: x.start)
+
         idx = 0
 
         while idx < len(er) - 1:
@@ -481,6 +494,11 @@ class DatePeriodParserConfiguration(ABC):
     @property
     @abstractmethod
     def unit_map(self) -> Dict[str, str]:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def now_regex(self) -> Pattern:
         raise NotImplementedError
 
     @abstractmethod
@@ -910,30 +928,37 @@ class BaseDatePeriodParser(DateTimeParser):
         trimmed_source = source.strip()
         result = DateTimeResolutionResult()
         ers = self.config.date_extractor.extract(trimmed_source, reference)
+        prs = []
 
         if not ers or len(ers) < 2:
             ers = self.config.date_extractor.extract(self.config.token_before_date + trimmed_source, reference)
 
+            if len(ers) >= 2:
+                for er in ers:
+                    er.start -= len(self.config.token_before_date)
+            else:
+                now_pr = self._parse_now_as_date(source, reference)
+                if now_pr is None or now_pr.start is None or len(ers) < 1:
+                    return result
+
+                date_pr = self.config.date_parser.parse(ers[0], reference)
+                prs.append(now_pr)
+                prs.append(date_pr)
+                prs = sorted(prs, key=lambda x: x.start)
+
+        if len(ers) >= 2:
+            match = self.config.week_with_week_day_range_regex.search(source)
+            if match:
+                week_prefix = RegExpUtility.get_group(match, 'week')
+
+                if week_prefix:
+                    ers[0].text = f'{week_prefix} {ers[0].text}'
+                    ers[1].text = f'{week_prefix} {ers[1].text}'
+
             for er in ers:
-                er.start -= len(self.config.token_before_date)
-
-            if not ers or len(ers) < 2:
-                return result
-
-        match = self.config.week_with_week_day_range_regex.search(source)
-        if match:
-            week_prefix = RegExpUtility.get_group(match, 'week')
-
-            if week_prefix:
-                ers[0].text = f'{week_prefix} {ers[0].text}'
-                ers[1].text = f'{week_prefix} {ers[1].text}'
-
-        prs = []
-
-        for er in ers:
-            pr = self.config.date_parser.parse(er, reference)
-            if pr:
-                prs.append(pr)
+                pr = self.config.date_parser.parse(er, reference)
+                if pr:
+                    prs.append(pr)
 
         if len(prs) < 2:
             return result
@@ -958,6 +983,23 @@ class BaseDatePeriodParser(DateTimeParser):
         result.success = True
 
         return result
+
+    def _parse_now_as_date(self, source: str, reference: datetime) -> DateTimeParseResult:
+        pr = DateTimeParseResult()
+        match = self.config.now_regex.search(source)
+        if match is not None:
+            value = reference - timedelta(hours=reference.hour, minutes=reference.minute, seconds=reference.second,microseconds=reference.microsecond)
+            ret_now = DateTimeResolutionResult()
+            ret_now.timex = DateTimeFormatUtil.luis_date_from_datetime(reference)
+            ret_now.future_value = value
+            ret_now.past_value = value
+            pr.text = match.string
+            pr.start = match.start()
+            pr.length = match.end() - match.start()
+            pr.value = ret_now
+            pr.type = Constants.SYS_DATETIME_DATE
+            pr.timex_str = ret_now.timex
+        return pr
 
     def _parse_year(self, source: str, reference: datetime) -> DateTimeResolutionResult:
         trimmed_source = source.strip()

@@ -527,7 +527,7 @@ class BaseDateParser(DateTimeParser):
         match = regex.match(self.config.special_day_regex, trimmed_source)
         if match and match.start() == 0 and len(match.group()) == len(trimmed_source):
             swift = self.config.get_swift_day(match.group())
-            value = reference + timedelta(days=swift)
+            value = reference - timedelta(hours=reference.hour, minutes=reference.minute, seconds=reference.second,microseconds=reference.microsecond) + timedelta(days=swift)
             result.timex = DateTimeFormatUtil.luis_date_from_datetime(value)
             result.future_value = value
             result.past_value = value
