@@ -109,12 +109,19 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 
             if (start.Month != null && start.DayOfMonth != null)
             {
-                if (duration.Days != null)
+                decimal? durationDays = duration.Days;
+
+                if (durationDays == null && duration.Weeks != null)
+                {
+                    durationDays = 7 * duration.Weeks.Value;
+                }
+
+                if (durationDays != null)
                 {
                     if (start.Year != null)
                     {
                         var d = new DateObject(start.Year.Value, start.Month.Value, start.DayOfMonth.Value, 0, 0, 0);
-                        d = d.AddDays((double)duration.Days.Value);
+                        d = d.AddDays((double)durationDays.Value);
 
                         return new TimexProperty
                         {
@@ -126,7 +133,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
                     else
                     {
                         var d = new DateObject(2001, start.Month.Value, start.DayOfMonth.Value, 0, 0, 0);
-                        d = d.AddDays((double)duration.Days.Value);
+                        d = d.AddDays((double)durationDays.Value);
 
                         return new TimexProperty
                         {
