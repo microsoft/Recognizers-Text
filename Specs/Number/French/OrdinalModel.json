@@ -6,7 +6,9 @@
         "Text": "tierce",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "3"
+          "value": "3",
+          "offset":"3",
+          "relativeTo":"start"
         },
         "Start": 0,
         "End": 5
@@ -20,7 +22,9 @@
         "Text": "trois billionieme",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "3000000000000"
+          "value": "3000000000000",
+          "offset":"3000000000000",
+          "relativeTo":"start"
         },
         "Start": 0,
         "End": 16
@@ -38,7 +42,9 @@
         "Text": "11eme",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "11"
+          "value": "11",
+          "offset":"11",
+          "relativeTo":"start"
         },
         "Start": 0,
         "End": 4
@@ -52,7 +58,9 @@
         "Text": "trois millieme",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "3000"
+          "value": "3000",
+          "offset":"3000",
+          "relativeTo":"start"
         },
         "Start": 0,
         "End": 13
@@ -66,7 +74,9 @@
         "Text": "neuf milliardieme",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "9000000000"
+          "value": "9000000000",
+          "offset":"9000000000",
+          "relativeTo":"start"
         },
         "Start": 0,
         "End": 16
@@ -80,7 +90,9 @@
         "Text": "22e",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "22"
+          "value": "22",
+          "offset":"22",
+          "relativeTo":"start"
         },
         "Start": 0,
         "End": 2
@@ -94,7 +106,9 @@
         "Text": "30e",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "30"
+          "value": "30",
+          "offset":"30",
+          "relativeTo":"start"
         },
         "Start": 0,
         "End": 2
@@ -108,7 +122,9 @@
         "Text": "155e",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "155"
+          "value": "155",
+          "offset":"155",
+          "relativeTo":"start"
         },
         "Start": 0,
         "End": 3
@@ -122,7 +138,9 @@
         "Text": "255eme",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "255"
+          "value": "255",
+          "offset":"255",
+          "relativeTo":"start"
         },
         "Start": 0,
         "End": 5
@@ -136,7 +154,9 @@
         "Text": "500000eme",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "500000"
+          "value": "500000",
+          "offset":"500000",
+          "relativeTo":"start"
         },
         "Start": 0,
         "End": 8
@@ -150,7 +170,9 @@
         "Text": "2eme",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "2"
+          "value": "2",
+          "offset":"2",
+          "relativeTo":"start"
         },
         "Start": 0,
         "End": 3
@@ -164,7 +186,9 @@
         "Text": "onzieme",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "11"
+          "value": "11",
+          "offset":"11",
+          "relativeTo":"start"
         },
         "Start": 0,
         "End": 6
@@ -178,7 +202,9 @@
         "Text": "vingtieme",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "20"
+          "value": "20",
+          "offset":"20",
+          "relativeTo":"start"
         },
         "Start": 0,
         "End": 8
@@ -192,7 +218,9 @@
         "Text": "vingt-cinquieme",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "25"
+          "value": "25",
+          "offset":"25",
+          "relativeTo":"start"
         },
         "Start": 0,
         "End": 14
@@ -206,7 +234,9 @@
         "Text": "octantieme",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "80"
+          "value": "80",
+          "offset":"80",
+          "relativeTo":"start"
         },
         "Start": 0,
         "End": 9
@@ -220,7 +250,9 @@
         "Text": "deux centieme",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "200"
+          "value": "200",
+          "offset":"200",
+          "relativeTo":"start"
         },
         "Start": 0,
         "End": 12
@@ -234,7 +266,9 @@
         "Text": "cent vingt cinquieme",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "125"
+          "value": "125",
+          "offset":"125",
+          "relativeTo":"start"
         },
         "Start": 0,
         "End": 19
@@ -248,7 +282,9 @@
         "Text": "cent vingt-cinquieme",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "125"
+          "value": "125",
+          "offset":"125",
+          "relativeTo":"start"
         },
         "Start": 0,
         "End": 19
@@ -262,7 +298,9 @@
         "Text": "soixante-dixieme",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "70"
+          "value": "70",
+          "offset":"70",
+          "relativeTo":"start"
         },
         "Start": 0,
         "End": 15
@@ -276,7 +314,9 @@
         "Text": "quatre-vingtieme",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "80"
+          "value": "80",
+          "offset":"80",
+          "relativeTo":"start"
         },
         "Start": 0,
         "End": 15
@@ -290,7 +330,9 @@
         "Text": "septante-huitieme",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "78"
+          "value": "78",
+          "offset":"78",
+          "relativeTo":"start"
         },
         "Start": 0,
         "End": 16
@@ -304,7 +346,9 @@
         "Text": "nonante-deuxieme",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "92"
+          "value": "92",
+          "offset":"92",
+          "relativeTo":"start"
         },
         "Start": 0,
         "End": 15
@@ -318,7 +362,9 @@
         "Text": "trois cent vingt seconde",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "322"
+          "value": "322",
+          "offset":"322",
+          "relativeTo":"start"
         },
         "Start": 0,
         "End": 23
@@ -332,7 +378,9 @@
         "Text": "neuf mille neuf cent quatre-vingt-dix seconde",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "9992"
+          "value": "9992",
+          "offset":"9992",
+          "relativeTo":"start"
         },
         "Start": 0,
         "End": 44

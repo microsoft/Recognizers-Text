@@ -1563,5 +1563,29 @@
     "Input": "the face amount of its 6 1/4% convertible...",
     "Comment": "1/4 shouldn't recognized as date here",
     "Results": []
+  },
+  {
+    "Input": "I'll go back twenty second of June 2017",
+    "NotSupported": "python,javascript",
+    "Results": [
+      {
+        "Text": "twenty second of june 2017",
+        "Type": "date",
+        "Start": 13,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back twenty-second of June 2017",
+    "NotSupported": "python,javascript",
+    "Results": [
+      {
+        "Text": "twenty-second of june 2017",
+        "Type": "date",
+        "Start": 13,
+        "Length": 26
+      }
+    ]
   }
 ]

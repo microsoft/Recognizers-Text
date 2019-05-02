@@ -72,8 +72,8 @@ namespace Microsoft.Recognizers.Text.Number
                 var type = string.Empty;
 
                 // for ordinal and ordinal.relative
-                // Only support "subtype" for English for now
-                if (ModelTypeName.Equals(Constants.MODEL_ORDINAL) && extractorType.Contains(Constants.ENGLISH))
+                // Only support "ordinal.relative" for English for now
+                if (ModelTypeName.Equals(Constants.MODEL_ORDINAL))
                 {
                     if (o.Metadata != null && o.Metadata.IsOrdinalRelative)
                     {

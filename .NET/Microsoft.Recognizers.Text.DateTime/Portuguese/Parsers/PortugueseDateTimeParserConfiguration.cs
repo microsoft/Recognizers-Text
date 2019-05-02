@@ -27,6 +27,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             UnspecificEndOfRegex = PortugueseDateTimeExtractorConfiguration.UnspecificEndOfRegex;
             UnitRegex = PortugueseDateTimeExtractorConfiguration.UnitRegex;
             DateNumberConnectorRegex = PortugueseDateTimeExtractorConfiguration.DateNumberConnectorRegex;
+            YearRegex = PortugueseDateTimeExtractorConfiguration.YearRegex;
             Numbers = config.Numbers;
             CardinalExtractor = config.CardinalExtractor;
             IntegerExtractor = config.IntegerExtractor;
@@ -80,6 +81,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         public Regex UnitRegex { get; }
 
         public Regex DateNumberConnectorRegex { get; }
+
+        public Regex YearRegex { get; }
 
         public IImmutableDictionary<string, int> Numbers { get; }
 

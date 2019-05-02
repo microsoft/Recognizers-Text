@@ -6,7 +6,9 @@
         "Text": "setimo",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "7"
+          "value": "7",
+          "offset":"7",
+          "relativeTo":"start"
         },
         "Start": 0,
         "End": 5
@@ -20,7 +22,9 @@
         "Text": "quadragesimo setimo",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "47"
+          "value": "47",
+          "offset":"47",
+          "relativeTo":"start"
         },
         "Start": 0,
         "End": 18
@@ -34,7 +38,9 @@
         "Text": "tricentésimo quadragésima sétima",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "347"
+          "value": "347",
+          "offset":"347",
+          "relativeTo":"start"
         },
         "Start": 0,
         "End": 31
@@ -48,7 +54,9 @@
         "Text": "dois milesimo tricentesimo quadragesimo setimo",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "2347"
+          "value": "2347",
+          "offset":"2347",
+          "relativeTo":"start"
         },
         "Start": 0,
         "End": 45
@@ -62,7 +70,9 @@
         "Text": "cinquenta e dois milesimo tricentesimo quadragesimo setimo",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "52347"
+          "value": "52347",
+          "offset":"52347",
+          "relativeTo":"start"
         },
         "Start": 0,
         "End": 57
@@ -76,7 +86,9 @@
         "Text": "milesimo quingentesimo vigesimo terceiro",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "1523"
+          "value": "1523",
+          "offset":"1523",
+          "relativeTo":"start"
         },
         "Start": 0,
         "End": 39
@@ -90,7 +102,9 @@
         "Text": "vigesimo quinto",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "25"
+          "value": "25",
+          "offset":"25",
+          "relativeTo":"start"
         },
         "Start": 0,
         "End": 14
@@ -104,7 +118,9 @@
         "Text": "vigesimo primeiro",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "21"
+          "value": "21",
+          "offset":"21",
+          "relativeTo":"start"
         },
         "Start": 0,
         "End": 16
@@ -118,7 +134,9 @@
         "Text": "centesimo vigesimo quinto",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "125"
+          "value": "125",
+          "offset":"125",
+          "relativeTo":"start"
         },
         "Start": 0,
         "End": 24
@@ -132,7 +150,9 @@
         "Text": "ducentesimo",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "200"
+          "value": "200",
+          "offset":"200",
+          "relativeTo":"start"
         },
         "Start": 0,
         "End": 10
@@ -146,7 +166,9 @@
         "Text": "21o",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "21"
+          "value": "21",
+          "offset":"21",
+          "relativeTo":"start"
         },
         "Start": 0,
         "End": 2
@@ -160,7 +182,9 @@
         "Text": "30a",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "30"
+          "value": "30",
+          "offset":"30",
+          "relativeTo":"start"
         },
         "Start": 0,
         "End": 2
@@ -174,7 +198,9 @@
         "Text": "2a",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "2"
+          "value": "2",
+          "offset":"2",
+          "relativeTo":"start"
         },
         "Start": 0,
         "End": 1
@@ -188,7 +214,9 @@
         "Text": "undecimo",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "11"
+          "value": "11",
+          "offset":"11",
+          "relativeTo":"start"
         },
         "Start": 0,
         "End": 7
@@ -202,7 +230,9 @@
         "Text": "décimo primeiro",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "11"
+          "value": "11",
+          "offset":"11",
+          "relativeTo":"start"
         },
         "Start": 0,
         "End": 14
@@ -216,7 +246,9 @@
         "Text": "vigesimo",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "20"
+          "value": "20",
+          "offset":"20",
+          "relativeTo":"start"
         },
         "Start": 0,
         "End": 7
@@ -230,7 +262,9 @@
         "Text": "centesimo",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "100"
+          "value": "100",
+          "offset":"100",
+          "relativeTo":"start"
         },
         "Start": 0,
         "End": 8
@@ -244,7 +278,9 @@
         "Text": "vinte e dois milesimo",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "22000"
+          "value": "22000",
+          "offset":"22000",
+          "relativeTo":"start"
         },
         "Start": 0,
         "End": 20
@@ -258,7 +294,9 @@
         "Text": "quatrocentos e cinquenta e dois milesimo tricentesimo quadragesimo setimo",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "452347"
+          "value": "452347",
+          "offset":"452347",
+          "relativeTo":"start"
         },
         "Start": 0,
         "End": 72
@@ -272,7 +310,9 @@
         "Text": "três milhões quatrocentos e cinquenta e dois milésimo tricentesimo quadragesimo setimo",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "3452347"
+          "value": "3452347",
+          "offset":"3452347",
+          "relativeTo":"start"
         },
         "Start": 0,
         "End": 85
@@ -286,7 +326,9 @@
         "Text": "tres mil quinhentos e vinte e quatro milhoes seiscentos e noventa e quatro milesimo sexcentesimo septuagesimo terceiro",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "3524694673"
+          "value": "3524694673",
+          "offset":"3524694673",
+          "relativeTo":"start"
         },
         "Start": 0,
         "End": 117

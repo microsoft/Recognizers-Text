@@ -7,7 +7,9 @@
         "Text": "3조 번째",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "3000000000000"
+          "value": "3000000000000",
+          "offset":"3000000000000",
+          "relativeTo":"start"
         }
       }
     ]
@@ -20,7 +22,9 @@
         "Text": "조 번째",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "1000000000000"
+          "value": "1000000000000",
+          "offset":"1000000000000",
+          "relativeTo":"start"
         }
       }
     ]
@@ -33,7 +37,9 @@
         "Text": "백조 번째",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "100000000000000"
+          "value": "100000000000000",
+          "offset":"100000000000000",
+          "relativeTo":"start"
         }
       }
     ]
@@ -46,7 +52,9 @@
         "Text": "열한 번째",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "11"
+          "value": "11",
+          "offset":"11",
+          "relativeTo":"start"
         }
       }
     ]
@@ -59,7 +67,9 @@
         "Text": "스물한 번째",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "21"
+          "value": "21",
+          "offset":"21",
+          "relativeTo":"start"
         }
       }
     ]
@@ -72,7 +82,9 @@
         "Text": "서른 번째",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "30"
+          "value": "30",
+          "offset":"30",
+          "relativeTo":"start"
         }
       }
     ]
@@ -85,7 +97,9 @@
         "Text": "두 번째",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "2"
+          "value": "2",
+          "offset":"2",
+          "relativeTo":"start"
         }
       }
     ]
@@ -98,7 +112,9 @@
         "Text": "스무 번째",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "20"
+          "value": "20",
+          "offset":"20",
+          "relativeTo":"start"
         }
       }
     ]
@@ -111,7 +127,9 @@
         "Text": "스물다섯 번째",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "25"
+          "value": "25",
+          "offset":"25",
+          "relativeTo":"start"
         }
       }
     ]
@@ -124,7 +142,9 @@
         "Text": "백스물다섯 번째",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "125"
+          "value": "125",
+          "offset":"125",
+          "relativeTo":"start"
         }
       }
     ]
@@ -137,7 +157,9 @@
         "Text": "백이십오 번째",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "125"
+          "value": "125",
+          "offset":"125",
+          "relativeTo":"start"
         }
       }
     ]
@@ -150,7 +172,9 @@
         "Text": "조번째",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "1000000000000"
+          "value": "1000000000000",
+          "offset":"1000000000000",
+          "relativeTo":"start"
         }
       }
     ]
@@ -163,7 +187,9 @@
         "Text": "이십일조 삼백이십이 번째",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "21000000000322"
+          "value": "21000000000322",
+          "offset":"21000000000322",
+          "relativeTo":"start"
         }
       }
     ]
@@ -176,7 +202,9 @@
         "Text": "이백 번째",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "200"
+          "value": "200",
+          "offset":"200",
+          "relativeTo":"start"
         }
       }
     ]
@@ -189,7 +217,9 @@
         "Text": "일등",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "1"
+          "value": "1",
+          "offset":"1",
+          "relativeTo":"start"
         }
       }
     ]

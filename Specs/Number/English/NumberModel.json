@@ -2483,5 +2483,20 @@
         }
       }
     ]
+  },
+  {
+    "Input": "more than half people came here.",
+    "Results": [
+      {
+        "Text": "half",
+        "Start": 10,
+        "End": 13,
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.5"
+        }
+      }
+    ]
   }
 ]
