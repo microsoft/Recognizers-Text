@@ -8,6 +8,9 @@ namespace Microsoft.Recognizers.Text.Number
 {
     public abstract class AbstractNumberModel : IModel
     {
+        // Languages supporting subtypes in the resolution to be added here
+        private static readonly List<string> ExtractorsSupportingSubtype = new List<string> { Constants.ENGLISH, Constants.SWEDISH };
+
         protected AbstractNumberModel(IParser parser, IExtractor extractor)
         {
             this.Parser = parser;
@@ -59,12 +62,12 @@ namespace Microsoft.Recognizers.Text.Number
                     resolution.Add(ResolutionKey.Value, o.ResolutionStr);
                 }
 
-                var extractorType = Extractor.GetType().ToString();
+                var extractorSupportsSubtype = ExtractorsSupportingSubtype.Exists(e => Extractor.GetType().ToString().Contains(e));
 
-                // Only support "subtype" for English for now
+                // Check if current extractor supports the Subtype field in the resolution
                 // As some languages like German, we miss handling some subtypes between "decimal" and "integer"
                 if (!string.IsNullOrEmpty(o.Type) &&
-                    Constants.ValidSubTypes.Contains(o.Type) && extractorType.Contains(Constants.ENGLISH))
+                    Constants.ValidSubTypes.Contains(o.Type) && extractorSupportsSubtype)
                 {
                     resolution.Add(ResolutionKey.SubType, o.Type);
                 }
