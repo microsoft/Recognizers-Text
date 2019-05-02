@@ -53,12 +53,33 @@ const resolveDuration = function (timex) {
     return [ { timex: timex.timex, type: 'duration', value: timexValue.durationValue(timex) }];
 };
 
+const weekDateRange = function (year, weekOfYear) {
+    var dateInWeek = new Date(year, 0, 1);
+    dateInWeek.setDate(dateInWeek.getDate() + ((weekOfYear - 1) * 7));
+
+    var start = dateOfLastDay(1, dateInWeek);
+    dateInWeek.setDate(dateInWeek.getDate() + 7);
+    var end = dateOfLastDay(1, dateInWeek);
+
+    return {
+        start: timexValue.dateValue({ year: start.getFullYear(), month: start.getMonth() + 1, dayOfMonth: start.getDate() }),
+        end: timexValue.dateValue({ year: end.getFullYear(), month: end.getMonth() + 1, dayOfMonth: end.getDate() })
+    }
+}
+
 const monthDateRange = function (year, month) {
     return {
         start: timexValue.dateValue({ year: year, month: month, dayOfMonth: 1 }),
         end: timexValue.dateValue({ year: year, month: month + 1, dayOfMonth: 1 })
     };
 };
+
+const yearDateRange = function (year) {
+    return {
+        start: timexValue.dateValue({ year: year, month: 1, dayOfMonth: 1 }),
+        end: timexValue.dateValue({ year: year + 1, month: 1, dayOfMonth: 1 })
+    };
+}
 
 const resolveDateRange = function (timex, date) {
     if ('season' in timex) {
@@ -67,6 +88,10 @@ const resolveDateRange = function (timex, date) {
     else {
         if (timex.year !== undefined && timex.month !== undefined) {
             const dateRange = monthDateRange(timex.year, timex.month);
+            return [{ timex: timex.timex, type: 'daterange', start: dateRange.start, end: dateRange.end }];
+        }
+        if (timex.year !== undefined && timex.weekOfYear !== undefined) {
+            const dateRange = weekDateRange(timex.year, timex.weekOfYear);
             return [{ timex: timex.timex, type: 'daterange', start: dateRange.start, end: dateRange.end }];
         }
         if (timex.month !== undefined) {
@@ -78,6 +103,10 @@ const resolveDateRange = function (timex, date) {
                 { timex: timex.timex, type: 'daterange', start: lastYearDateRange.start, end: lastYearDateRange.end },
                 { timex: timex.timex, type: 'daterange', start: thisYearDateRange.start, end: thisYearDateRange.end }
             ];
+        }
+        if (timex.year !== undefined) {
+            const dateRange = yearDateRange(timex.year);
+            return [{ timex: timex.timex, type: 'daterange', start: dateRange.start, end: dateRange.end }];
         }
         return [];
     }
@@ -141,6 +170,16 @@ const resolveDateTimeRange = function (timex) {
     }
 };
 
+const resolveDefiniteDateRange = function (timex) {
+    var range = timexHelpers.expandDateTimeRange(timex);
+    return [{ 
+        timex: timex.timex,
+        type: 'daterange', 
+        start: `${timexValue.dateValue(range.start)}`,
+        end: `${timexValue.dateValue(range.end)}`
+    }];
+};
+
 const resolveTimex = function (timex, date) {
 
     const types = ('types' in timex) ? timex.types : timexInference.infer(timex);
@@ -150,6 +189,9 @@ const resolveTimex = function (timex, date) {
     }
     if (types.has('definite') && types.has('time')) {
         return resolveDefiniteTime(timex, date);
+    }
+    if (types.has('definite') && types.has('daterange')) {
+        return resolveDefiniteDateRange(timex, date);
     }
     if (types.has('definite')) {
         return resolveDefinite(timex, date);
