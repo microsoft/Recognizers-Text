@@ -83,7 +83,7 @@ public class EnglishNumeric {
             .replace("{NumberOrdinalRegex}", NumberOrdinalRegex)
             .replace("{RelativeOrdinalRegex}", RelativeOrdinalRegex);
 
-    public static final String RelativeOrdinalFilterRegex = "(?<!-)(first|{RelativeOrdinalRegex})\\s*({TwoToNineIntegerRegex}|[2-9]+)(?!\\s*{RoundNumberIntegerRegex})"
+    public static final String RelativeOrdinalFilterRegex = "(?<!-)(first|{RelativeOrdinalRegex})\\s*({TwoToNineIntegerRegex}|[2-9]\\b)(?!\\s*{RoundNumberIntegerRegex})"
             .replace("{RelativeOrdinalRegex}", RelativeOrdinalRegex)
             .replace("{TwoToNineIntegerRegex}", TwoToNineIntegerRegex)
             .replace("{RoundNumberIntegerRegex}", RoundNumberIntegerRegex);
