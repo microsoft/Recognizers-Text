@@ -41,8 +41,8 @@ namespace Microsoft.Recognizers.Definitions.English
 		public static readonly string AllIntRegexWithLocks = $@"((?<=\b){AllIntRegex}(?=\b))";
 		public static readonly string AllIntRegexWithDozenSuffixLocks = $@"(?<=\b)(((half\s+)?a\s+dozen)|({AllIntRegex}\s+dozen(s)?))(?=\b)";
 		public const string RoundNumberOrdinalRegex = @"(hundredth|thousandth|millionth|billionth|trillionth)";
-		public const string NumberOrdinalRegex = @"(first|second|third|fourth|fifth|sixth|seventh|eighth|ninth|tenth|eleventh|twelfth|thirteenth|fourteenth|fifteenth|sixteenth|seventeenth|eighteenth|nineteenth|twentieth|thirtieth|fortieth|fiftieth|sixtieth|seventieth|eightieth|ninetieth)";
-		public const string RelativeOrdinalRegex = @"((next|previous) one|(the second|next) to last|the one before the last( one)?|the last but one|(ante)?penultimate|last|next|previous)";
+		public const string NumberOrdinalRegex = @"(first (one|1)|first|second|third|fourth|fifth|sixth|seventh|eighth|ninth|tenth|eleventh|twelfth|thirteenth|fourteenth|fifteenth|sixteenth|seventeenth|eighteenth|nineteenth|twentieth|thirtieth|fortieth|fiftieth|sixtieth|seventieth|eightieth|ninetieth)";
+		public const string RelativeOrdinalRegex = @"((next|previous) (one|1)|(the second|next) to last|the one before the last( one)?|the last but one|(ante)?penultimate|last|next|previous)";
 		public static readonly string BasicOrdinalRegex = $@"({NumberOrdinalRegex}|{RelativeOrdinalRegex})";
 		public static readonly string RelativeOrdinalFilterRegex = $@"(?<!-)(first|{RelativeOrdinalRegex})\s*({TwoToNineIntegerRegex}|[2-9]\b)(?!\s*{RoundNumberIntegerRegex})";
 		public static readonly string SuffixBasicOrdinalRegex = $@"((((({TensNumberIntegerRegex}(\s+(and\s+)?|\s*-\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{AnIntRegex})(\s+{RoundNumberIntegerRegex})+)\s+(and\s+)?)*({TensNumberIntegerRegex}(\s+|\s*-\s*))?{BasicOrdinalRegex})";
@@ -152,6 +152,8 @@ namespace Microsoft.Recognizers.Definitions.English
 		public static readonly Dictionary<string, long> OrdinalNumberMap = new Dictionary<string, long>
 		{
 			{ @"first", 1 },
+			{ @"first one", 1 },
+			{ @"first 1", 1 },
 			{ @"second", 2 },
 			{ @"secondary", 2 },
 			{ @"half", 2 },
@@ -254,6 +256,7 @@ namespace Microsoft.Recognizers.Definitions.English
 			{ @"last", @"0" },
 			{ @"next one", @"1" },
 			{ @"previous one", @"-1" },
+			{ @"previous 1", @"-1" },
 			{ @"the second to last", @"-1" },
 			{ @"the one before the last one", @"-1" },
 			{ @"next to last", @"-1" },
@@ -268,6 +271,7 @@ namespace Microsoft.Recognizers.Definitions.English
 			{ @"last", @"end" },
 			{ @"next one", @"current" },
 			{ @"previous one", @"current" },
+			{ @"previous 1", @"current" },
 			{ @"the second to last", @"end" },
 			{ @"the one before the last one", @"end" },
 			{ @"next to last", @"end" },
