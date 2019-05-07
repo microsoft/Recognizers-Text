@@ -988,7 +988,7 @@ class BaseDatePeriodParser(DateTimeParser):
         pr = DateTimeParseResult()
         match = self.config.now_regex.search(source)
         if match is not None:
-            value = reference - timedelta(hours=reference.hour, minutes=reference.minute, seconds=reference.second,microseconds=reference.microsecond)
+            value = DateUtils.safe_create_from_min_value(reference.year, reference.month, reference.day)
             ret_now = DateTimeResolutionResult()
             ret_now.timex = DateTimeFormatUtil.luis_date_from_datetime(reference)
             ret_now.future_value = value
