@@ -4230,5 +4230,19 @@
         }
       }
     ]
+  },
+  {
+    "Input": "一万零十二",
+    "Results": [
+      {
+        "Text": "一万零十二",
+        "Start": 0,
+        "End": 4,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "10012"
+        }
+      }
+    ]
   }
 ]

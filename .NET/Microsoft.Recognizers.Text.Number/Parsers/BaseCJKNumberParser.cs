@@ -548,7 +548,7 @@ namespace Microsoft.Recognizers.Text.Number
                 {
                     if (i != intStr.Length - 1)
                     {
-                        if (intStr[i] == '零' && !Config.RoundNumberMapChar.ContainsKey(intStr[i + 1]))
+                        if (intStr[i] == '零')
                         {
                             beforeValue = 1;
                             roundDefault = 1;

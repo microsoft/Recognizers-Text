@@ -409,6 +409,8 @@ export class BaseCJKNumberParser extends BaseNumberParser {
                 if (index !== resultStr.length - 1) {
                     if ((currentChar === "零") && !this.config.roundNumberMapChar.has(resultStr.charAt(index + 1))) {
                         roundDefault = 1;
+                    } else if ((currentChar === "零") && (resultStr.charAt(index + 1) === "十")) {
+                        beforeValue = 1;
                     } else {
                         beforeValue = beforeValue * 10 + this.config.zeroToNineMap.get(currentChar);
                         isRoundBefore = false;

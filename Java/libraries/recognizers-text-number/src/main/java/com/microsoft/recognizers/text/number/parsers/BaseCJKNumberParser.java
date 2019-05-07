@@ -408,7 +408,7 @@ public class BaseCJKNumberParser extends BaseNumberParser {
                 roundDefault = roundRecent / 10;
             } else if (cjkConfig.getZeroToNineMap().containsKey(intStr.charAt(i))) {
                 if (i != intStr.length() - 1) {
-                    if (intStr.charAt(i) == '零' && !roundNumberMapChar.containsKey(intStr.charAt(i + 1))) {
+                    if (intStr.charAt(i) == '零') {
                         beforeValue = 1;
                         roundDefault = 1;
                     } else {
