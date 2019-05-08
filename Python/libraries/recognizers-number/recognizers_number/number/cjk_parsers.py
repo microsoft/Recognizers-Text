@@ -359,6 +359,7 @@ class CJKNumberParser(BaseNumberParser):
         negative = False
         has_number = False
         round_number_ten = ['十', '拾']
+        round_number_zero = '零'
 
         if regex.search(self.config.negative_number_sign_regex, result_str) is not None:
             negative = True
@@ -393,9 +394,9 @@ class CJKNumberParser(BaseNumberParser):
             elif c in self.config.zero_to_nine_map:
                 has_number = True
                 if i != len(result_str)-1:
-                    if c == '零' and result_str[i+1] not in self.config.round_number_map_char:
+                    if c == round_number_zero and result_str[i+1] not in self.config.round_number_map_char:
                         round_default = 1
-                    elif c == '零' and result_str[i+1] in round_number_ten:
+                    elif c == round_number_zero and result_str[i+1] in round_number_ten:
                         before_value = 1
                     else:
                         before_value = before_value * 10 + self.config.zero_to_nine_map[c]

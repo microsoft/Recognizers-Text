@@ -367,6 +367,7 @@ export class BaseCJKNumberParser extends BaseNumberParser {
         let isNegative = false;
         let hasNumber = false;
         let roundNumberTen = ["十", "拾"];
+        let roundNumberZero = '零';
 
         if (RegExpUtility.isMatch(this.config.negativeNumberSignRegex, resultStr)) {
             isNegative = true;
@@ -408,9 +409,9 @@ export class BaseCJKNumberParser extends BaseNumberParser {
             } else if (this.config.zeroToNineMap.has(currentChar)) {
                 hasNumber = true;
                 if (index !== resultStr.length - 1) {
-                    if ((currentChar === "零") && !this.config.roundNumberMapChar.has(resultStr.charAt(index + 1))) {
+                    if ((currentChar === roundNumberZero) && !this.config.roundNumberMapChar.has(resultStr.charAt(index + 1))) {
                         roundDefault = 1;
-                    } else if ((currentChar === "零") && (roundNumberTen.indexOf(resultStr.charAt(index + 1)) != -1)) {
+                    } else if ((currentChar === roundNumberZero) && (roundNumberTen.indexOf(resultStr.charAt(index + 1)) != -1)) {
                         beforeValue = 1;
                     } else {
                         beforeValue = beforeValue * 10 + this.config.zeroToNineMap.get(currentChar);
