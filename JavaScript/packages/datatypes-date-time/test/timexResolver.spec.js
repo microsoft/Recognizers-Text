@@ -143,6 +143,42 @@ describe('No Network', () => {
                     resolution.values[0].should.have.property('type', 'daterange');
                     resolution.values[0].should.have.property('value', 'not resolved');
                 });
+                it('Last Week', () => {
+                    const today = new Date(2019, 3, 30);
+                    const resolution = resolver.resolve(['2019-W17'], today);
+                    resolution.should.have.property('values').that.is.an('array').of.length(1);
+                    resolution.values[0].should.have.property('timex', '2019-W17');
+                    resolution.values[0].should.have.property('type', 'daterange');
+                    resolution.values[0].should.have.property('start', '2019-04-22');
+                    resolution.values[0].should.have.property('end', '2019-04-29');
+                });
+                it('Last Month', () => {
+                    const today = new Date(2019, 3, 30);
+                    const resolution = resolver.resolve(['2019-03'], today);
+                    resolution.should.have.property('values').that.is.an('array').of.length(1);
+                    resolution.values[0].should.have.property('timex', '2019-03');
+                    resolution.values[0].should.have.property('type', 'daterange');
+                    resolution.values[0].should.have.property('start', '2019-03-01');
+                    resolution.values[0].should.have.property('end', '2019-04-01');
+                });
+                it('Last Year', () => {
+                    const today = new Date(2019, 3, 30);
+                    const resolution = resolver.resolve(['2018'], today);
+                    resolution.should.have.property('values').that.is.an('array').of.length(1);
+                    resolution.values[0].should.have.property('timex', '2018');
+                    resolution.values[0].should.have.property('type', 'daterange');
+                    resolution.values[0].should.have.property('start', '2018-01-01');
+                    resolution.values[0].should.have.property('end', '2019-01-01');
+                });
+                it('Last Three Weeks', () => {
+                    const today = new Date(2019, 3, 30);
+                    const resolution = resolver.resolve(['(2019-04-10,2019-05-01,P3W)'], today);
+                    resolution.should.have.property('values').that.is.an('array').of.length(1);
+                    resolution.values[0].should.have.property('timex', '(2019-04-10,2019-05-01,P3W)');
+                    resolution.values[0].should.have.property('type', 'daterange');
+                    resolution.values[0].should.have.property('start', '2019-04-10');
+                    resolution.values[0].should.have.property('end', '2019-05-01');
+                });
             });
             describe('timerange', () => {
                 it('4am to 8pm', () => {
