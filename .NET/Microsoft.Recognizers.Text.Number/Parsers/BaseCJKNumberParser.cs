@@ -476,6 +476,7 @@ namespace Microsoft.Recognizers.Text.Number
 
             var isDozen = false;
             var isPair = false;
+            char roundNumberZero = '零';
 
             if (Config.DozenRegex.IsMatch(intStr))
             {
@@ -548,7 +549,7 @@ namespace Microsoft.Recognizers.Text.Number
                 {
                     if (i != intStr.Length - 1)
                     {
-                        if (intStr[i] == '零')
+                        if (intStr[i] == roundNumberZero)
                         {
                             beforeValue = 1;
                             roundDefault = 1;

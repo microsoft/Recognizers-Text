@@ -361,6 +361,7 @@ public class BaseCJKNumberParser extends BaseNumberParser {
 
         boolean isDozen = false;
         boolean isPair = false;
+        char roundNumberZero = '零';
 
         if (cjkConfig.getDozenRegex().matcher(intStr).find()) {
             isDozen = true;
@@ -408,7 +409,7 @@ public class BaseCJKNumberParser extends BaseNumberParser {
                 roundDefault = roundRecent / 10;
             } else if (cjkConfig.getZeroToNineMap().containsKey(intStr.charAt(i))) {
                 if (i != intStr.length() - 1) {
-                    if (intStr.charAt(i) == '零') {
+                    if (intStr.charAt(i) == roundNumberZero) {
                         beforeValue = 1;
                         roundDefault = 1;
                     } else {
