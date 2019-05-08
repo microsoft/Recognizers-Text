@@ -4244,5 +4244,33 @@
         }
       }
     ]
+  },
+  {
+    "Input": "一万零一十二",
+    "Results": [
+      {
+        "Text": "一万零一十二",
+        "Start": 0,
+        "End": 5,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "10012"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "十万零三千零十二",
+    "Results": [
+      {
+        "Text": "十万零三千零十二",
+        "Start": 0,
+        "End": 7,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "103012"
+        }
+      }
+    ]
   }
 ]
