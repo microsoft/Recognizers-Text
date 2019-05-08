@@ -475,9 +475,9 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "first",
+        "Text": "first one",
         "Start": 11,
-        "End": 15,
+        "End": 19,
         "TypeName": "ordinal",
         "Resolution": {
           "offset": "1",
@@ -588,6 +588,22 @@
         "Text": "previous",
         "Start": 8,
         "End": 15,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "-1",
+          "relativeTo": "current"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Show me the previous 1.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "previous 1",
+        "Start": 12,
+        "End": 21,
         "TypeName": "ordinal.relative",
         "Resolution": {
           "offset": "-1",

@@ -75,15 +75,15 @@ public class EnglishNumeric {
 
     public static final String RoundNumberOrdinalRegex = "(hundredth|thousandth|millionth|billionth|trillionth)";
 
-    public static final String NumberOrdinalRegex = "(first|second|third|fourth|fifth|sixth|seventh|eighth|ninth|tenth|eleventh|twelfth|thirteenth|fourteenth|fifteenth|sixteenth|seventeenth|eighteenth|nineteenth|twentieth|thirtieth|fortieth|fiftieth|sixtieth|seventieth|eightieth|ninetieth)";
+    public static final String NumberOrdinalRegex = "(first (one|1)|first|second|third|fourth|fifth|sixth|seventh|eighth|ninth|tenth|eleventh|twelfth|thirteenth|fourteenth|fifteenth|sixteenth|seventeenth|eighteenth|nineteenth|twentieth|thirtieth|fortieth|fiftieth|sixtieth|seventieth|eightieth|ninetieth)";
 
-    public static final String RelativeOrdinalRegex = "((next|previous) one|(the second|next) to last|the one before the last( one)?|the last but one|(ante)?penultimate|last|next|previous)";
+    public static final String RelativeOrdinalRegex = "((next|previous) (one|1)|(the second|next) to last|the one before the last( one)?|the last but one|(ante)?penultimate|last|next|previous)";
 
     public static final String BasicOrdinalRegex = "({NumberOrdinalRegex}|{RelativeOrdinalRegex})"
             .replace("{NumberOrdinalRegex}", NumberOrdinalRegex)
             .replace("{RelativeOrdinalRegex}", RelativeOrdinalRegex);
 
-    public static final String RelativeOrdinalFilterRegex = "(?<!-)(first|{RelativeOrdinalRegex})\\s*({TwoToNineIntegerRegex}|[2-9]+)(?!\\s*{RoundNumberIntegerRegex})"
+    public static final String RelativeOrdinalFilterRegex = "(?<!-)(first|{RelativeOrdinalRegex})\\s*({TwoToNineIntegerRegex}|[2-9]\\b)(?!\\s*{RoundNumberIntegerRegex})"
             .replace("{RelativeOrdinalRegex}", RelativeOrdinalRegex)
             .replace("{TwoToNineIntegerRegex}", TwoToNineIntegerRegex)
             .replace("{RoundNumberIntegerRegex}", RoundNumberIntegerRegex);
@@ -338,6 +338,8 @@ public class EnglishNumeric {
 
     public static final ImmutableMap<String, Long> OrdinalNumberMap = ImmutableMap.<String, Long>builder()
         .put("first", 1L)
+        .put("first one", 1L)
+        .put("first 1", 1L)
         .put("second", 2L)
         .put("secondary", 2L)
         .put("half", 2L)
@@ -440,6 +442,7 @@ public class EnglishNumeric {
         .put("last", "0")
         .put("next one", "1")
         .put("previous one", "-1")
+        .put("previous 1", "-1")
         .put("the second to last", "-1")
         .put("the one before the last one", "-1")
         .put("next to last", "-1")
@@ -454,6 +457,7 @@ public class EnglishNumeric {
         .put("last", "end")
         .put("next one", "current")
         .put("previous one", "current")
+        .put("previous 1", "current")
         .put("the second to last", "end")
         .put("the one before the last one", "end")
         .put("next to last", "end")
