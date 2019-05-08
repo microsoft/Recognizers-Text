@@ -411,7 +411,7 @@ export class BaseCJKNumberParser extends BaseNumberParser {
                 if (index !== resultStr.length - 1) {
                     if ((currentChar === roundNumberZero) && !this.config.roundNumberMapChar.has(resultStr.charAt(index + 1))) {
                         roundDefault = 1;
-                    } else if ((currentChar === roundNumberZero) && (roundNumberTen.indexOf(resultStr.charAt(index + 1)) != -1)) {
+                    } else if ((currentChar === roundNumberZero) && (this.config.cultureInfo.code.toLowerCase() === Culture.Chinese) && (roundNumberTen.indexOf(resultStr.charAt(index + 1)) != -1)) {
                         beforeValue = 1;
                     } else {
                         beforeValue = beforeValue * 10 + this.config.zeroToNineMap.get(currentChar);

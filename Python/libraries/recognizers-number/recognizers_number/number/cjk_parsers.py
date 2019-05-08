@@ -396,7 +396,7 @@ class CJKNumberParser(BaseNumberParser):
                 if i != len(result_str)-1:
                     if c == round_number_zero and result_str[i+1] not in self.config.round_number_map_char:
                         round_default = 1
-                    elif c == round_number_zero and result_str[i+1] in round_number_ten:
+                    elif c == round_number_zero and self.config.culture_info.code == Culture.Chinese and result_str[i+1] in round_number_ten:
                         before_value = 1
                     else:
                         before_value = before_value * 10 + self.config.zero_to_nine_map[c]

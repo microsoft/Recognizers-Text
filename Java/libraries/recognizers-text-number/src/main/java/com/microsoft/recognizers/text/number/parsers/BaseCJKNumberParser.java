@@ -6,6 +6,7 @@ import com.microsoft.recognizers.text.utilities.Match;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
 import com.microsoft.recognizers.text.utilities.StringUtility;
 
+import java.util.Arrays;
 import java.util.Locale;
 import java.util.Map;
 import java.util.regex.Pattern;
@@ -362,6 +363,7 @@ public class BaseCJKNumberParser extends BaseNumberParser {
         boolean isDozen = false;
         boolean isPair = false;
         char roundNumberZero = '零';
+        char[] roundNumberTen = {'十', '拾'};
 
         if (cjkConfig.getDozenRegex().matcher(intStr).find()) {
             isDozen = true;
@@ -409,7 +411,8 @@ public class BaseCJKNumberParser extends BaseNumberParser {
                 roundDefault = roundRecent / 10;
             } else if (cjkConfig.getZeroToNineMap().containsKey(intStr.charAt(i))) {
                 if (i != intStr.length() - 1) {
-                    if (intStr.charAt(i) == roundNumberZero) {
+                    if (intStr.charAt(i) == roundNumberZero && (!roundNumberMapChar.containsKey(intStr.charAt(i + 1)) ||
+                        (cjkConfig.getCultureInfo().cultureCode.equalsIgnoreCase("zh-CN") && Arrays.binarySearch(roundNumberTen,intStr.charAt(i + 1)) != -1))) {
                         beforeValue = 1;
                         roundDefault = 1;
                     } else {
