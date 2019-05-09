@@ -252,14 +252,14 @@
     ]
   },
   {
-    "Input": "Book me a room at austrialian west daylight time",
+    "Input": "Book me a room at australian western daylight time",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "austrialian west daylight time",
+        "Text": "australian western daylight time",
         "Type": "timezone",
         "Value": {
           "TimeZoneResolution": {
@@ -268,7 +268,28 @@
           }
         },
         "Start": 18,
-        "Length": 30
+        "Length": 32
+      }
+    ]
+  },
+  {
+    "Input": "Book me a room at australian west daylight time",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "australian west daylight time",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC+09:00",
+            "UtcOffsetMins": 540
+          }
+        },
+        "Start": 18,
+        "Length": 29
       }
     ]
   },
@@ -520,7 +541,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "Debug": true,
     "NotSupported": "javascript, python",
     "Results": [
       {
@@ -563,7 +583,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "Debug": true,
     "NotSupported": "javascript, python",
     "Results": [
       {

@@ -62,10 +62,9 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var ret = new List<ExtractResult>();
 
-            // if (((this.config.Options & DateTimeOptions.FailFast) != 0) && IsFailFastCase(text))
-            if (IsFailFastCase(text))
+            if (((this.config.Options & DateTimeOptions.FailFast) != 0) && IsFailFastCase(text))
             {
-                // @TODO needs better handling of holidays.
+                // @TODO needs better handling of holidays and timezones.
                 // AddTo(ret, this.config.HolidayExtractor.Extract(text, reference), text);
                 // ret = AddMod(ret, text);
 

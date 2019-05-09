@@ -265,6 +265,8 @@ FullNameList: !list
     - West Pacific Standard Time
     - Yakutsk Standard Time
     - Pacific Daylight Saving Time
+    - Austrialian Western Daylight Time
+    - Austrialian West Daylight Time
     - Australian Western Daylight Time
     - Australian West Daylight Time
     - Colombia Time
@@ -642,6 +644,8 @@ FullToMinMapping: !dictionary
    west pacific standard time: 600
    yakutsk standard time: 540
    pacific daylight saving time: -420
+   australian western daylight time: 540
+   australian west daylight time: 540
    austrialian western daylight time: 540
    austrialian west daylight time: 540
    colombia time: -300
