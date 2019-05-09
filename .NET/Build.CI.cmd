@@ -34,7 +34,7 @@ CALL "buildtools\nuget" restore
 set configuration=Release
 ECHO.
 ECHO # Generate resources
-CALL "!MsBuildDir!\msbuild" Microsoft.Recognizers.Definitions.Common\Microsoft.Recognizers.Definitions.Common.csproj /t:Clean,Build /p:Configuration=%configuration%
+CALL !MSBuild! Microsoft.Recognizers.Definitions.Common\Microsoft.Recognizers.Definitions.Common.csproj /t:Clean,Build /p:Configuration=%configuration%
 
 ECHO # Building .NET solution (%configuration%)
 CALL !MSBuild! Microsoft.Recognizers.Text.sln /t:Clean,Build /p:Configuration=%configuration%

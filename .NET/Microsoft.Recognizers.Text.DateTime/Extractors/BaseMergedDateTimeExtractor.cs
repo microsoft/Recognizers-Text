@@ -62,7 +62,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var ret = new List<ExtractResult>();
 
-            if (((this.config.Options & DateTimeOptions.FailFast) != 0) && IsFailFastCase(text))
+            // if (((this.config.Options & DateTimeOptions.FailFast) != 0) && IsFailFastCase(text))
+            if (IsFailFastCase(text))
             {
                 // @TODO needs better handling of holidays.
                 // AddTo(ret, this.config.HolidayExtractor.Extract(text, reference), text);
@@ -301,9 +302,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                     TryMergeModifierToken(er, config.AroundRegex, text);
                 }
 
-                if (er.Type.Equals(Constants.SYS_DATETIME_DATEPERIOD, StringComparison.InvariantCulture)) || 
-                    er.Type.Equals(Constants.SYS_DATETIME_DATE, StringComparison.InvariantCulture)) || 
-                    er.Type.Equals(Constants.SYS_DATETIME_TIME, StringComparison.InvariantCulture)))
+                if (er.Type.Equals(Constants.SYS_DATETIME_DATEPERIOD, StringComparison.InvariantCulture) ||
+                    er.Type.Equals(Constants.SYS_DATETIME_DATE, StringComparison.InvariantCulture) ||
+                    er.Type.Equals(Constants.SYS_DATETIME_TIME, StringComparison.InvariantCulture))
                 {
                     // 2012 or after/above, 3 pm or later
                     var afterStr = text.Substring((er.Start ?? 0) + (er.Length ?? 0)).ToLowerInvariant();
