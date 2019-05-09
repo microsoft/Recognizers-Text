@@ -267,6 +267,8 @@ FullNameList: !list
     - Pacific Daylight Saving Time
     - Austrialian Western Daylight Time
     - Austrialian West Daylight Time
+    - Australian Western Daylight Time
+    - Australian West Daylight Time
     - Colombia Time
     - Hong Kong Time
     - Central Europe Time
@@ -277,6 +279,9 @@ FullNameList: !list
     - Central European Standard Time
     - Central Europe Std Time
     - Central European Std Time
+    - West Coast Time
+    - West Coast
+    - Central Time
     - Central
     - Pacific
     - Eastern
@@ -551,6 +556,7 @@ FullToMinMapping: !dictionary
    europe central time: 60
    european central time: 60
    central: -300
+   central time: -300
    eastern: -240
    eastern standard time: -300
    eastern standard time (mexico): -300
@@ -592,6 +598,7 @@ FullToMinMapping: !dictionary
    north asia standard time: 420
    north korea standard time: 510
    pacific: -420
+   west coast: -420
    pacific sa standard time: -240
    pacific standard time: -480
    pacific standard time (mexico): -480
@@ -637,6 +644,8 @@ FullToMinMapping: !dictionary
    west pacific standard time: 600
    yakutsk standard time: 540
    pacific daylight saving time: -420
+   australian western daylight time: 540
+   australian west daylight time: 540
    austrialian western daylight time: 540
    austrialian west daylight time: 540
    colombia time: -300
