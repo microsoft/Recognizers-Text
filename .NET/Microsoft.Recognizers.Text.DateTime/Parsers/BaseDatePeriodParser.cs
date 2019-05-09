@@ -1262,8 +1262,8 @@ namespace Microsoft.Recognizers.Text.DateTime
             var ret = new DateTimeResolutionResult();
 
             var er = this.config.DateExtractor.Extract(text, referenceDate);
-            var pr1 = new DateTimeParseResult();
-            var pr2 = new DateTimeParseResult();
+            DateTimeParseResult pr1 = null;
+            DateTimeParseResult pr2 = null;
             if (er.Count < 2)
             {
                 er = this.config.DateExtractor.Extract(this.config.TokenBeforeDate + text, referenceDate);
@@ -1340,7 +1340,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        // Parse entities that are made up by two time points with now
+        // Handle "between...and..." when contains with "now"
         private DateTimeParseResult ParseNowAsDate(string text, DateObject referenceDate)
         {
             var pr = new DateTimeParseResult();
@@ -1348,7 +1348,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if (match.Success)
             {
-                var value = referenceDate.Date;
+                var value = DateObject.MinValue.SafeCreateFromValue(referenceDate.Year, referenceDate.Month, referenceDate.Day);
                 var retNow = new DateTimeResolutionResult
                 {
                     Timex = DateTimeFormatUtil.LuisDate(value),

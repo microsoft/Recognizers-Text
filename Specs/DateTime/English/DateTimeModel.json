@@ -11110,5 +11110,45 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Let's meet between now and May 21th, not right now, ok?",
+    "Context": {
+      "ReferenceDateTime": "2019-05-09T12:00:00"
+    },
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "between now and may 21th",
+        "Start": 11,
+        "End": 34,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2019-05-09,XXXX-05-21,P12D)",
+              "type": "daterange",
+              "start": "2019-05-09",
+              "end": "2019-05-21"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "right now",
+        "Start": 41,
+        "End": 49,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PRESENT_REF",
+              "type": "datetime",
+              "value": "2019-05-09 12:00:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

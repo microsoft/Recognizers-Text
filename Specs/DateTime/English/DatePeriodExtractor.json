@@ -3720,10 +3720,10 @@
   },
   {
     "Input": "I will do my work between now and November 15th",
-    "NotSupported": "python, javascript",
+    "NotSupported": "javascript",
     "Results": [
       {
-        "Text": "between now and november 15th",
+        "Text": "between now and November 15th",
         "Type": "daterange",
         "Start": 18,
         "Length": 29
@@ -3732,10 +3732,10 @@
   },
   {
     "Input": "I have finished my work between Jan 22 and now",
-    "NotSupported": "python, javascript",
+    "NotSupported": "javascript",
     "Results": [
       {
-        "Text": "between jan 22 and now",
+        "Text": "between Jan 22 and now",
         "Type": "daterange",
         "Start": 24,
         "Length": 22
