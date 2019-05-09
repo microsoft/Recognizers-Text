@@ -207,10 +207,10 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
             match = self.config.now_regex.search(source)
             if match is None:
                 return tokens
-            nowEr = ExtractResult()
-            nowEr.start=match.start()
-            nowEr.length=match.end()-match.start()
-            er.append(nowEr)
+            now_er = ExtractResult()
+            now_er.start = match.start()
+            now_er.length = match.end()-match.start()
+            er.append(now_er)
             er = sorted(er, key=lambda x: x.start)
 
         idx = 0

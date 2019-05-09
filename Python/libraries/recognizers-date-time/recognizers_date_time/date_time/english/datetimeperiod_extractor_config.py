@@ -142,4 +142,4 @@ class EnglishDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfigu
         return MatchedIndex(matched=False, index=-1)
 
     def has_connector_token(self, source: str) -> bool:
-        return regex.search(self.range_connector_regex, source)
+        return regex.fullmatch(self.range_connector_regex, source)
