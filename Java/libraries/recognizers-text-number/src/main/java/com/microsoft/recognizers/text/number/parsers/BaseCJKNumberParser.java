@@ -363,7 +363,6 @@ public class BaseCJKNumberParser extends BaseNumberParser {
         boolean isDozen = false;
         boolean isPair = false;
         char roundNumberZero = '零';
-        char[] roundNumberTen = {'十', '拾'};
 
         if (cjkConfig.getDozenRegex().matcher(intStr).find()) {
             isDozen = true;
@@ -411,8 +410,7 @@ public class BaseCJKNumberParser extends BaseNumberParser {
                 roundDefault = roundRecent / 10;
             } else if (cjkConfig.getZeroToNineMap().containsKey(intStr.charAt(i))) {
                 if (i != intStr.length() - 1) {
-                    if (intStr.charAt(i) == roundNumberZero && (!roundNumberMapChar.containsKey(intStr.charAt(i + 1)) ||
-                        (cjkConfig.getCultureInfo().cultureCode.equalsIgnoreCase("zh-CN") && Arrays.binarySearch(roundNumberTen,intStr.charAt(i + 1)) != -1))) {
+                    if (intStr.charAt(i) == roundNumberZero) {
                         beforeValue = 1;
                         roundDefault = 1;
                     } else {

@@ -4260,15 +4260,43 @@
     ]
   },
   {
-    "Input": "十万零三千零十二",
+    "Input": "十万零三千零十八",
     "Results": [
       {
-        "Text": "十万零三千零十二",
+        "Text": "十万零三千零十八",
         "Start": 0,
         "End": 7,
         "TypeName": "number",
         "Resolution": {
-          "value": "103012"
+          "value": "103018"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "一百零一万零三千零十二",
+    "Results": [
+      {
+        "Text": "一百零一万零三千零十二",
+        "Start": 0,
+        "End": 10,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1013012"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "一百零一万",
+    "Results": [
+      {
+        "Text": "一百零一万",
+        "Start": 0,
+        "End": 4,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1010000"
         }
       }
     ]

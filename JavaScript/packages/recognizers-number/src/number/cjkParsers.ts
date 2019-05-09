@@ -360,13 +360,11 @@ export class BaseCJKNumberParser extends BaseNumberParser {
         resultStr = this.replaceUnit(resultStr);
         let intValue = 0;
         let partValue = 0;
-        let beforeValue = 0;
+        let beforeValue = 1;
         let isRoundBefore = false;
         let roundBefore = -1;
         let roundDefault = 1;
         let isNegative = false;
-        let hasNumber = false;
-        let roundNumberTen = ["十", "拾"];
         let roundNumberZero = '零';
 
         if (RegExpUtility.isMatch(this.config.negativeNumberSignRegex, resultStr)) {
@@ -378,9 +376,6 @@ export class BaseCJKNumberParser extends BaseNumberParser {
             let currentChar = resultStr.charAt(index);
             if (this.config.roundNumberMapChar.has(currentChar)) {
                 let roundRecent = this.config.roundNumberMapChar.get(currentChar);
-                if (!hasNumber) {
-                    beforeValue = 1;
-                }
                 if (roundBefore !== -1 && roundRecent > roundBefore) {
                     if (isRoundBefore) {
                         intValue += partValue * roundRecent;
@@ -403,25 +398,20 @@ export class BaseCJKNumberParser extends BaseNumberParser {
                     }
                 }
 
-                hasNumber = false;
-                beforeValue = 0;
                 roundDefault = roundRecent / 10;
             } else if (this.config.zeroToNineMap.has(currentChar)) {
-                hasNumber = true;
                 if (index !== resultStr.length - 1) {
-                    if ((currentChar === roundNumberZero) && !this.config.roundNumberMapChar.has(resultStr.charAt(index + 1))) {
-                        roundDefault = 1;
-                    } else if ((currentChar === roundNumberZero) && (this.config.cultureInfo.code.toLowerCase() === Culture.Chinese) && (roundNumberTen.indexOf(resultStr.charAt(index + 1)) != -1)) {
+                    if (currentChar === roundNumberZero) {
                         beforeValue = 1;
+                        roundDefault = 1;
                     } else {
-                        beforeValue = beforeValue * 10 + this.config.zeroToNineMap.get(currentChar);
+                        beforeValue = this.config.zeroToNineMap.get(currentChar);
                         isRoundBefore = false;
                     }
                 } else {
                     if (index === resultStr.length - 1 && this.config.cultureInfo.code.toLowerCase() === Culture.Japanese) {
                         roundDefault = 1;
                     }
-                    partValue += beforeValue * 10;
                     partValue += this.config.zeroToNineMap.get(currentChar) * roundDefault;
                     intValue += partValue;
                     partValue = 0;

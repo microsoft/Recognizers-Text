@@ -477,7 +477,6 @@ namespace Microsoft.Recognizers.Text.Number
             var isDozen = false;
             var isPair = false;
             char roundNumberZero = '零';
-            char[] roundNumberTen = { '十', '拾' };
 
             if (Config.DozenRegex.IsMatch(intStr))
             {
@@ -550,7 +549,7 @@ namespace Microsoft.Recognizers.Text.Number
                 {
                     if (i != intStr.Length - 1)
                     {
-                        if (intStr[i] == roundNumberZero && (!Config.RoundNumberMapChar.ContainsKey(intStr[i + 1]) || (Config.CultureInfo.Name == "zh-CN" && System.Array.IndexOf(roundNumberTen, intStr[i + 1]) != -1)))
+                        if (intStr[i] == roundNumberZero)
                         {
                             beforeValue = 1;
                             roundDefault = 1;

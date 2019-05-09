@@ -352,13 +352,11 @@ class CJKNumberParser(BaseNumberParser):
         result_str = self.replace_unit(result_str)
         int_value = 0
         part_value = 0
-        before_value = 0
+        before_value = 1
         is_round_before = False
         round_before = -1
         round_default = 1
         negative = False
-        has_number = False
-        round_number_ten = ['十', '拾']
         round_number_zero = '零'
 
         if regex.search(self.config.negative_number_sign_regex, result_str) is not None:
@@ -369,8 +367,6 @@ class CJKNumberParser(BaseNumberParser):
             c = result_str[i]
             if c in self.config.round_number_map_char:
                 round_recent = self.config.round_number_map_char[c]
-                if not has_number:
-                    before_value = 1
                 if round_before != -1 and round_recent > round_before:
                     if is_round_before:
                         int_value += part_value * round_recent
@@ -388,23 +384,18 @@ class CJKNumberParser(BaseNumberParser):
                         int_value += part_value
                         part_value = 0
 
-                has_number = False
-                before_value = 0
                 round_default = round_recent / 10
             elif c in self.config.zero_to_nine_map:
-                has_number = True
                 if i != len(result_str)-1:
-                    if c == round_number_zero and result_str[i+1] not in self.config.round_number_map_char:
-                        round_default = 1
-                    elif c == round_number_zero and self.config.culture_info.code == Culture.Chinese and result_str[i+1] in round_number_ten:
+                    if c == round_number_zero:
                         before_value = 1
+                        round_default = 1
                     else:
-                        before_value = before_value * 10 + self.config.zero_to_nine_map[c]
+                        before_value = self.config.zero_to_nine_map[c]
                         is_round_before = False
                 else:
                     if i == len(result_str)-1 and self.config.culture_info.code == Culture.Japanese:
                         round_default = 1
-                    part_value += before_value * 10
                     part_value += self.config.zero_to_nine_map[c] * round_default
                     int_value += part_value
                     part_value = 0
