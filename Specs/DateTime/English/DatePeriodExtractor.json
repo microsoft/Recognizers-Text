@@ -3717,29 +3717,5 @@
         "Length": 17
       }
     ]
-  },
-  {
-    "Input": "I will do my work between now and November 15th",
-    "NotSupported": "javascript",
-    "Results": [
-      {
-        "Text": "between now and November 15th",
-        "Type": "daterange",
-        "Start": 18,
-        "Length": 29
-      }
-    ]
-  },
-  {
-    "Input": "I have finished my work between Jan 22 and now",
-    "NotSupported": "javascript",
-    "Results": [
-      {
-        "Text": "between Jan 22 and now",
-        "Type": "daterange",
-        "Start": 24,
-        "Length": 22
-      }
-    ]
   }
 ]
