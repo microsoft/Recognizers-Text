@@ -301,13 +301,14 @@ namespace Microsoft.Recognizers.Text.DateTime
                     TryMergeModifierToken(er, config.AroundRegex, text);
                 }
 
-                if (er.Type.Equals(Constants.SYS_DATETIME_DATEPERIOD, StringComparison.InvariantCulture) ||
-                    er.Type.Equals(Constants.SYS_DATETIME_DATE, StringComparison.InvariantCulture))
+                if (er.Type.Equals(Constants.SYS_DATETIME_DATEPERIOD, StringComparison.InvariantCulture)) || 
+                    er.Type.Equals(Constants.SYS_DATETIME_DATE, StringComparison.InvariantCulture)) || 
+                    er.Type.Equals(Constants.SYS_DATETIME_TIME, StringComparison.InvariantCulture)))
                 {
-                    // 2012 or after/above
+                    // 2012 or after/above, 3 pm or later
                     var afterStr = text.Substring((er.Start ?? 0) + (er.Length ?? 0)).ToLowerInvariant();
 
-                    var match = config.DateAfterRegex.MatchBegin(afterStr.TrimStart(), trim: true);
+                    var match = config.SuffixAfterRegex.MatchBegin(afterStr.TrimStart(), trim: true);
 
                     if (match.Success)
                     {

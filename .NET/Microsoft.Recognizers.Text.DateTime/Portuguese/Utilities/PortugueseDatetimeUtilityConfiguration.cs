@@ -13,6 +13,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese.Utilities
 
         public static readonly Regex InConnectorRegex = new Regex(DateTimeDefinitions.InConnectorRegex, RegexOptions.Singleline);
 
+        public static readonly Regex SinceYearSuffixRegex = new Regex(DateTimeDefinitions.SinceYearSuffixRegex, RegexOptions.Singleline);
+
         public static readonly Regex WithinNextPrefixRegex = new Regex(DateTimeDefinitions.WithinNextPrefixRegex, RegexOptions.Singleline);
 
         public static readonly Regex AmDescRegex = new Regex(DateTimeDefinitions.AmDescRegex, RegexOptions.Singleline);
@@ -38,6 +40,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese.Utilities
         Regex IDateTimeUtilityConfiguration.AgoRegex => AgoRegex;
 
         Regex IDateTimeUtilityConfiguration.InConnectorRegex => InConnectorRegex;
+
+        Regex IDateTimeUtilityConfiguration.SinceYearSuffixRegex => SinceYearSuffixRegex;
 
         Regex IDateTimeUtilityConfiguration.WithinNextPrefixRegex => WithinNextPrefixRegex;
 

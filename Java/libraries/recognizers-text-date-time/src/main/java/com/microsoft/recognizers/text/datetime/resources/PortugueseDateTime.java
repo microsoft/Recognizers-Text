@@ -121,7 +121,7 @@ public class PortugueseDateTime {
     public static final String SeasonRegex = "\\b(?<season>(([uú]ltim[oa]|[nd]?es[st][ea]|n?[oa]|(pr[oó]xim[oa]s?|seguinte))\\s+)?(?<seas>primavera|ver[ãa]o|outono|inverno)((\\s+)?(seguinte|((de\\s+|,)?\\s*{YearRegex})|((do\\s+)?(?<order>pr[oó]ximo|[uú]ltimo|[nd]?es[st]e)\\s+ano)))?)\\b"
             .replace("{YearRegex}", YearRegex);
 
-    public static final String WhichWeekRegex = "(semana)(\\s*)(?<number>\\d\\d|\\d|0\\d)";
+    public static final String WhichWeekRegex = "\\b(semana)(\\s*)(?<number>5[0-3]|[1-4]\\d|0?[1-9])\\b";
 
     public static final String WeekOfRegex = "(semana)(\\s*)((do|da|de))";
 
@@ -130,6 +130,8 @@ public class PortugueseDateTime {
     public static final String RangeUnitRegex = "\\b(?<unit>anos|ano|meses|m[êe]s|semanas|semana)\\b";
 
     public static final String InConnectorRegex = "\\b(em)\\b";
+
+    public static final String SinceYearSuffixRegex = "^[.]";
 
     public static final String WithinNextPrefixRegex = "^[.]";
 
@@ -858,7 +860,7 @@ public class PortugueseDateTime {
             .replace("{YearRegex}", YearRegex)
             .replace("{FullTextYearRegex}", FullTextYearRegex);
 
-    public static final String DateAfterRegex = "^[.]";
+    public static final String SuffixAfterRegex = "^[.]";
 
     public static final String YearPeriodRegex = "^[.]";
 

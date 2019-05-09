@@ -368,7 +368,11 @@ namespace Microsoft.Recognizers.Definitions.Italian
 			{ @"b", 1000000000 },
 			{ @"t", 1000000000000 }
 		};
-		public static readonly Dictionary<string, string> RelativeReferenceMap = new Dictionary<string, string>
+		public static readonly Dictionary<string, string> RelativeReferenceOffsetMap = new Dictionary<string, string>
+		{
+			{ @"", @"" }
+		};
+		public static readonly Dictionary<string, string> RelativeReferenceRelativeToMap = new Dictionary<string, string>
 		{
 			{ @"", @"" }
 		};

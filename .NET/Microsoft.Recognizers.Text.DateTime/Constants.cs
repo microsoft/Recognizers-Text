@@ -119,12 +119,14 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string SecondGroupName = "sec";
         public const string MinuteGroupName = "min";
         public const string HourGroupName = "hour";
+        public const string YearGroupName = "year";
         public const string TimeOfDayGroupName = "timeOfDay";
         public const string BusinessDayGroupName = "business";
         public const string LeftAmPmGroupName = "leftDesc";
         public const string RightAmPmGroupName = "rightDesc";
 
         public const string DECADE_UNIT = "10Y";
+        public const string FORTNIGHT_UNIT = "2W";
 
         // Timex
         public const string TimexYear = "Y";

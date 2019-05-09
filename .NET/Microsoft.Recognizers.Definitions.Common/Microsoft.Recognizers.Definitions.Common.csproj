@@ -278,6 +278,16 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
+    <Compile Update="Swedish\ChoiceDefinitions.cs">
+      <DependentUpon>ChoiceDefinitions.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Bulgarian\ChoiceDefinitions.cs">
+      <DependentUpon>ChoiceDefinitions.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -302,6 +312,8 @@
     <None Update="BaseUnits.tt">
     </None>
     <None Update="BaseURL.tt">
+    </None>
+    <None Update="Bulgarian\ChoiceDefinitions.tt">
     </None>
     <None Update="Chinese\ChoiceDefinitions.tt">
     </None>
@@ -378,6 +390,8 @@
     <None Update="Spanish\NumbersDefinitions.tt">
     </None>
     <None Update="Spanish\NumbersWithUnitDefinitions.tt">
+    </None>
+    <None Update="Swedish\ChoiceDefinitions.tt">
     </None>
   </ItemGroup>
 

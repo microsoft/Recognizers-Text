@@ -41,17 +41,21 @@ const timexDateAdd = function (start, duration) {
         return end;
     }
     if ('month' in start && 'dayOfMonth' in start) {
-        if ('days' in duration) {
+        var durationDays = duration.days;
+        if (durationDays === undefined && duration.weeks !== undefined) {
+            durationDays = 7 * duration.weeks;
+        }
+        if (durationDays !== undefined) {
             if ('year' in start) {
                 const d = new Date(start.year, start.month - 1, start.dayOfMonth, 0, 0, 0);
-                for (let i=0; i < duration.days; i++) {
+                for (let i=0; i < durationDays; i++) {
                     d.setDate(d.getDate() + 1);
                 }
                 return { year: d.getFullYear(), month: d.getMonth() + 1, dayOfMonth: d.getDate() };
             }
             else {
                 const d = new Date(2001, start.month - 1, start.dayOfMonth, 0, 0, 0);
-                for (let i=0; i < duration.days; i++) {
+                for (let i=0; i < durationDays; i++) {
                     d.setDate(d.getDate() + 1);
                 }
                 return { month: d.getMonth() + 1, dayOfMonth: d.getDate() };

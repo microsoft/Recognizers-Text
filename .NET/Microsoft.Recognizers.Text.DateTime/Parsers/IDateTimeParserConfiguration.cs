@@ -48,6 +48,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex DateNumberConnectorRegex { get; }
 
+        Regex YearRegex { get; }
+
         IImmutableDictionary<string, string> UnitMap { get; }
 
         IImmutableDictionary<string, int> Numbers { get; }

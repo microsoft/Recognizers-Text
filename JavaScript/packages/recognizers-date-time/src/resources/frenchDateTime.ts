@@ -48,7 +48,7 @@ export namespace FrenchDateTime {
 	export const PrefixDayRegex = `^[.]`;
 	export const CenturySuffixRegex = `^[.]`;
 	export const SeasonRegex = `\\b((<seas>printemps|été|automne|hiver)+\\s*(${NextSuffixRegex}|${PastSuffixRegex}))|(?<season>(${RelativeRegex}\\s+)?(?<seas>printemps|[ée]t[ée]|automne|hiver)((\\s+de|\\s*,\\s*)?\\s+(${YearRegex}|${RelativeRegex}\\s+l'ann[eé]e))?)\\b`;
-	export const WhichWeekRegex = `(semaine)(\\s*)(?<number>\\d\\d|\\d|0\\d)`;
+	export const WhichWeekRegex = `\\b(semaine)(\\s*)(?<number>5[0-3]|[1-4]\\d|0?[1-9])\\b`;
 	export const WeekOfRegex = `(semaine)(\\s*)(de)`;
 	export const MonthOfRegex = `(mois)(\\s*)(de)`;
 	export const MonthRegex = `(?<month>avril|avr\\.|avr|ao[uû]t|d[eé]cembre|d[eé]c\\.|d[eé]c|f[eé]vrier|f[eé]v|f[eé]vr\\.|f[eé]vr|janvier|janv\\.|janv|jan|juillet|jul|juil\\.|juil|juin|jun|mars|mar|mai|novembre|nov\\.|nov|octobre|oct\\.|oct|septembre|sept\\.|sept|sep)`;
@@ -179,6 +179,7 @@ export namespace FrenchDateTime {
 	export const LaterRegex = `\\b(plus tard)\\b`;
 	export const AgoRegex = `^[.]`;
 	export const InConnectorRegex = `\\b(dans|en|sur)\\b`;
+	export const SinceYearSuffixRegex = `^[.]`;
 	export const WithinNextPrefixRegex = `^[.]`;
 	export const MorningStartEndRegex = `(^(matin))|((matin)$)`;
 	export const AfternoonStartEndRegex = `(^((d'|l')?apr[eè]s-midi))|(((d'|l')?apr[eè]s-midi)$)`;
@@ -205,7 +206,7 @@ export namespace FrenchDateTime {
 	export const FlexibleDayRegex = `(?<DayOfMonth>([A-Za-z]+\\s)?[A-Za-z\\d]+)`;
 	export const ForTheRegex = `\\b(((pour le ${FlexibleDayRegex})|(dans (le\\s+)?${FlexibleDayRegex}(?<=(st|nd|rd|th))))(?<end>\\s*(,|\\.|!|\\?|$)))`;
 	export const WeekDayAndDayOfMonthRegex = `\\b${WeekDayRegex}\\s+(le\\s+${FlexibleDayRegex})\\b`;
-	export const WeekDayAndDayRegex = `\\b${WeekDayRegex}\\s+(?!(the))${DayRegex}(?!([-]|(\\s+(${AmDescRegex}|${PmDescRegex}))))\\b`;
+	export const WeekDayAndDayRegex = `\\b${WeekDayRegex}\\s+(?!(the))${DayRegex}(?!([-]|(\\s+(${AmDescRegex}|${PmDescRegex}|${OclockRegex}))))\\b`;
 	export const RestOfDateRegex = `\\b(reste|fin)\\s+(d[eu]\\s+)?((le|cette|ce)\\s+)?(?<duration>semaine|mois|l'ann[ée]e)\\b`;
 	export const RestOfDateTimeRegex = `\\b(reste|fin)\\s+(d[eu]\\s+)?((le|cette|ce)\\s+)?(?<unit>jour)\\b`;
 	export const LaterEarlyPeriodRegex = `^[.]`;
@@ -224,7 +225,7 @@ export namespace FrenchDateTime {
 	export const DecadeWithCenturyRegex = `^[.]`;
 	export const RelativeDecadeRegex = `^[.]`;
 	export const YearSuffix = `(,?\\s*(${DateYearRegex}|${FullTextYearRegex}))`;
-	export const DateAfterRegex = `^[.]`;
+	export const SuffixAfterRegex = `^[.]`;
 	export const YearPeriodRegex = `^[.]`;
 	export const FutureSuffixRegex = `^[.]`;
 	export const ComplexDatePeriodRegex = `^[.]`;

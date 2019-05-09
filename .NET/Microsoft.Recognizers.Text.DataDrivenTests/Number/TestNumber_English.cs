@@ -28,6 +28,14 @@ namespace Microsoft.Recognizers.Text.Number.Tests
             TestNumber();
         }
 
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "OrdinalModelEnablePreview-English.csv", "OrdinalModelEnablePreview-English#csv", DataAccessMethod.Sequential)]
+        [TestMethod]
+        public void OrdinalModelEnablePreview()
+        {
+            TestNumber();
+        }
+
+
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "NumberModelPercentMode-English.csv", "NumberModelPercentMode-English#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void NumberModelPercentMode()
@@ -45,13 +53,6 @@ namespace Microsoft.Recognizers.Text.Number.Tests
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "OrdinalModel-English.csv", "OrdinalModel-English#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void OrdinalModel()
-        {
-            TestNumber();
-        }
-
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "OrdinalModelEnablePreview-English.csv", "OrdinalModelEnablePreview-English#csv", DataAccessMethod.Sequential)]
-        [TestMethod]
-        public void OrdinalModelEnablePreview()
         {
             TestNumber();
         }

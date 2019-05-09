@@ -52,6 +52,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         public static readonly Regex DateNumberConnectorRegex =
             new Regex(DateTimeDefinitions.DateNumberConnectorRegex, RegexOptions.Singleline);
 
+        public static readonly Regex YearRegex =
+            new Regex(DateTimeDefinitions.YearRegex, RegexOptions.Singleline);
+
+        public static readonly Regex YearSuffix =
+            new Regex(DateTimeDefinitions.YearSuffix, RegexOptions.Singleline);
+
+        public static readonly Regex SuffixAfterRegex =
+            new Regex(DateTimeDefinitions.SuffixAfterRegex, RegexOptions.Singleline);
+
         public DutchDateTimeExtractorConfiguration(IOptionsConfiguration config)
             : base(config)
         {
@@ -93,6 +102,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         Regex IDateTimeExtractorConfiguration.NumberAsTimeRegex => NumberAsTimeRegex;
 
         Regex IDateTimeExtractorConfiguration.DateNumberConnectorRegex => DateNumberConnectorRegex;
+
+        Regex IDateTimeExtractorConfiguration.YearRegex => YearRegex;
+
+        Regex IDateTimeExtractorConfiguration.YearSuffix => YearSuffix;
+
+        Regex IDateTimeExtractorConfiguration.SuffixAfterRegex => SuffixAfterRegex;
 
         public IDateTimeExtractor DurationExtractor { get; }
 

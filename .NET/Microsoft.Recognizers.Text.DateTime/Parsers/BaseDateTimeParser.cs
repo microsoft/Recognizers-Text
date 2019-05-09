@@ -251,6 +251,24 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             ret.FutureValue = DateObject.MinValue.SafeCreateFromValue(futureDate.Year, futureDate.Month, futureDate.Day, hour, min, sec);
             ret.PastValue = DateObject.MinValue.SafeCreateFromValue(pastDate.Year, pastDate.Month, pastDate.Day, hour, min, sec);
+
+            // Handle case like "Wed Oct 26 15:50:06 2016" which year and month separated by time.
+            var timeSuffix = text.Substring(er2[0].Start + er2[0].Length ?? 0);
+            var matchYear = this.config.YearRegex.Match(timeSuffix);
+            if (matchYear.Success && ((DateObject)((DateTimeResolutionResult)pr1.Value).FutureValue).Year != ((DateObject)((DateTimeResolutionResult)pr1.Value).PastValue).Year)
+            {
+                var year = ((BaseDateExtractor)this.config.DateExtractor).GetYearFromText(matchYear);
+                var dateSuffix = text.Substring(er1[0].Start + er1[0].Length ?? 0);
+                var checkYear = this.config.DateExtractor.GetYearFromText(this.config.YearRegex.Match(dateSuffix));
+
+                if (year >= Constants.MinYearNum && year <= Constants.MaxYearNum && year == checkYear)
+                {
+                    ret.FutureValue = DateObject.MinValue.SafeCreateFromValue(year, futureDate.Month, futureDate.Day, hour, min, sec);
+                    ret.PastValue = DateObject.MinValue.SafeCreateFromValue(year, pastDate.Month, pastDate.Day, hour, min, sec);
+                    ret.Timex = year + pr1.TimexStr.Substring(4) + timeStr;
+                }
+            }
+
             ret.Success = true;
 
             // Change the value of time object
@@ -410,6 +428,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 referenceTime,
                 config.DurationExtractor,
                 config.DurationParser,
+                config.NumberParser,
                 config.UnitMap,
                 config.UnitRegex,
                 config.UtilityConfiguration,

@@ -86,7 +86,7 @@ SeasonRegex: !nestedRegex
   def: \b((<seas>primavera|estate|autunno|inverno)+\s*({NextSuffixRegex}|{PastSuffixRegex}))|(?<season>({RelativeRegex}\s+)?(?<seas>primavera|estate|autunno|inverno)((\s+del|\s*,\s*)?\s+({YearRegex}|{RelativeRegex}\s+l'anno))?)\b
   references: [ YearRegex, RelativeRegex, NextSuffixRegex, PastSuffixRegex ]
 WhichWeekRegex: !simpleRegex
-  def: (settimana)(\s*)(?<number>\d\d|\d|0\d)
+  def: \b(settimana)(\s*)(?<number>5[0-3]|[1-4]\d|0?[1-9])\b
 WeekOfRegex: !simpleRegex
   def: (settimana)(\s*)(del)
 MonthOfRegex: !simpleRegex
@@ -445,6 +445,9 @@ AgoRegex: !simpleRegex
   def: ^[.]
 InConnectorRegex: !simpleRegex
   def: \b(di)\b
+SinceYearSuffixRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 WithinNextPrefixRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
@@ -496,8 +499,8 @@ WeekDayAndDayOfMonthRegex: !nestedRegex
   def: \b{WeekDayRegex}\s+(del\s+{FlexibleDayRegex})\b
   references: [WeekDayRegex, FlexibleDayRegex]
 WeekDayAndDayRegex: !nestedRegex
-  def: \b{WeekDayRegex}\s+(?!(the)){DayRegex}(?!([-]|(\s+({AmDescRegex}|{PmDescRegex}))))\b
-  references: [WeekDayRegex, DayRegex, AmDescRegex, PmDescRegex]
+  def: \b{WeekDayRegex}\s+(?!(the)){DayRegex}(?!([-]|(\s+({AmDescRegex}|{PmDescRegex|{OclockRegex}}))))\b
+  references: [WeekDayRegex, DayRegex, AmDescRegex, PmDescRegex, OclockRegex]
 RestOfDateRegex: !simpleRegex
   def: Fine\s+(di\s+)?((del|questo|questa|corrente)\s+)?(?<duration>settimana|mese|anno)\b
 RestOfDateTimeRegex: !simpleRegex
@@ -546,7 +549,7 @@ FullTextYearRegex: !simpleRegex
 YearSuffix: !nestedRegex
   def: (,?\s*({DateYearRegex}|{FullTextYearRegex}))
   references: [ DateYearRegex, FullTextYearRegex ]
-DateAfterRegex: !simpleRegex
+SuffixAfterRegex: !simpleRegex
   def: \b(o\s+(dopo|passato))\b
 YearPeriodRegex: !nestedRegex
   def: (((dal|durante|nel|tra)\s+)?{YearRegex}\s*{TillRegex}\s*{YearRegex})

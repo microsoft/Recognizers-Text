@@ -152,7 +152,7 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
                     if not year_str:
                         year = self.__get_year_from_text(match_year)
 
-                        if not (year >= Constants.MinYearNum and year <= Constants.MaxYearNum):
+                        if not (Constants.MinYearNum <= year <= Constants.MaxYearNum):
                             add_token = False
 
                 if (match.end() - match.start() == Constants.FourDigitsYearLength) and self.__infix_boundary_check(match, source):
@@ -310,6 +310,7 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
                 is_match_infix_of_source = True
 
         return is_match_infix_of_source
+
 
 class DatePeriodParserConfiguration(ABC):
     @property
@@ -805,8 +806,8 @@ class BaseDatePeriodParser(DateTimeParser):
             swift = self.config.get_swift_day_or_month(trimmed_source)
 
             if self.config.is_week_only(trimmed_source):
-                monday = DateUtils.this(reference, DayOfWeek.Monday) + datedelta(days=7 * swift)
-                result.timex = f'{year:04d}-W{monday.isocalendar()[1]:02d}'
+                thursday = DateUtils.this(reference, DayOfWeek.Thursday) + datedelta(days=7 * swift)
+                result.timex = f'{thursday.year:04d}-W{DateUtils.week_of_year(thursday):02d}'
                 begin_date = DateUtils.this(reference, DayOfWeek.Monday) + datedelta(days=7 * swift)
                 end_date = DateUtils.this(reference, DayOfWeek.Sunday) + datedelta(days=7 * swift)
                 
@@ -1061,28 +1062,26 @@ class BaseDatePeriodParser(DateTimeParser):
         if self.config.is_last_cardinal(cardinal_str):
             last_day = DateUtils.safe_create_from_min_value(year, 12, 31)
             last_day_week_monday = DateUtils.this(last_day, DayOfWeek.Monday)
-            week_num = last_day.isocalendar()[1]
+            week_num = DateUtils.week_of_year(last_day)
 
             if week_num == 1:
                 last_day_week_monday = DateUtils.this(last_day + datedelta(days=-7), DayOfWeek.Monday)
 
             target_week_monday = last_day_week_monday
-            week_num = target_week_monday.isocalendar()[1]
-
-            result.timex = f'{year:04d}-{target_week_monday.month:02d}-W{week_num:02d}'
+            week_num = DateUtils.week_of_year(target_week_monday)
+            result.timex = f'{year:04d}-W{week_num:02d}'
         else:
             cardinal = self.config.cardinal_map.get(cardinal_str)
 
             first_day = DateUtils.safe_create_from_min_value(year, 1, 1)
             first_day_week_monday = DateUtils.this(first_day, DayOfWeek.Monday)
-            week_num = first_day.isocalendar()[1]
+            week_num = DateUtils.week_of_year(first_day)
 
             if not week_num == 1:
                 first_day_week_monday = DateUtils.this(first_day + datedelta(days=7), DayOfWeek.Monday)
 
             target_week_monday = first_day_week_monday + datedelta(days=7 * (cardinal - 1))
-            target_week_sunday = DateUtils.this(target_week_monday, DayOfWeek.Sunday)
-            result.timex = f'{year:04d}-{target_week_sunday.month:02d}-W{cardinal:02d}'
+            result.timex = f'{year:04d}-W{week_num:02d}'
 
         days_to_add = 6 if self._inclusive_end_period else 7
         result.future_value = [target_week_monday, target_week_monday + datedelta(days=days_to_add)]
@@ -1304,10 +1303,17 @@ class BaseDatePeriodParser(DateTimeParser):
 
         num = int(match.group('number'))
         year = reference.year
+        result.timex = f'{year:04d}-W{num:02d}'
+
         first_day = DateUtils.safe_create_from_value(DateUtils.min_value, year, 1, 1)
-        first_week_day = DateUtils.this(first_day, DayOfWeek.Monday)
-        result_date = first_week_day + timedelta(days=7 * num)
-        result.timex = f'{year:04d}-{num}'
+        first_thursday = DateUtils.this(first_day, DayOfWeek.Thursday)
+        first_week = DateUtils.week_of_year(first_thursday)
+
+        if first_week == 1:
+            num -= 1
+
+        result_date = first_thursday + timedelta(days=7 * num - 3)
+
         result.future_value = [result_date, result_date + timedelta(days=7)]
         result.past_value = [result_date, result_date + timedelta(days=7)]
         result.success = True
@@ -1321,11 +1327,11 @@ class BaseDatePeriodParser(DateTimeParser):
         if not (match and len(ers) == 1):
             return result
 
-        date_resoultion = self.config.date_parser.parse(ers[0], reference).value
-        result.timex = date_resoultion.timex
+        date_resolution = self.config.date_parser.parse(ers[0], reference).value
+        result.timex = date_resolution.timex
         result.comment = BaseDatePeriodParser.week_of_comment
-        result.future_value = self.__get_week_range_from_date(date_resoultion.future_value)
-        result.past_value = self.__get_week_range_from_date(date_resoultion.past_value)
+        result.future_value = self.__get_week_range_from_date(date_resolution.future_value)
+        result.past_value = self.__get_week_range_from_date(date_resolution.past_value)
         result.success = True
         return result
 
@@ -1337,11 +1343,11 @@ class BaseDatePeriodParser(DateTimeParser):
         if not (match and len(ers) == 1):
             return result
 
-        date_resoultion = self.config.date_parser.parse(ers[0], reference).value
-        result.timex = date_resoultion.timex
+        date_resolution = self.config.date_parser.parse(ers[0], reference).value
+        result.timex = date_resolution.timex
         result.comment = BaseDatePeriodParser.week_of_comment
-        result.future_value = self.__get_month_range_from_date(date_resoultion.future_value)
-        result.past_value = self.__get_month_range_from_date(date_resoultion.past_value)
+        result.future_value = self.__get_month_range_from_date(date_resolution.future_value)
+        result.past_value = self.__get_month_range_from_date(date_resolution.past_value)
         result.success = True
         return result
 

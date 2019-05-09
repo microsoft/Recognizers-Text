@@ -4094,8 +4094,8 @@
             {
               "timex": "2018-W31",
               "type": "daterange",
-              "start": "2018-08-06",
-              "end": "2018-08-13"
+              "start": "2018-07-30",
+              "end": "2018-08-06"
             }
           ]
         }
@@ -9008,6 +9008,61 @@
     ] 
   },
   {
+    "Input": "Wed Oct 26 15:50:06 2016 is not a day in 2019.",
+    "Context": {
+      "ReferenceDateTime": "2018-11-21T12:00:00"
+    },
+    "NotSupported": "python, java, javascript",
+    "Results": [
+      {
+        "Text": "wed oct 26 15:50:06 2016",
+        "Start": 0,
+        "End": 23,
+        "Typename": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-10-26T15:50:06",
+              "type": "datetime",
+              "value": "2016-10-26 15:50:06"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "a day",
+        "Start": 32,
+        "End": 36,
+        "Typename": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P1D",
+              "type": "duration",
+              "value": "86400"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "2019",
+        "Start": 41,
+        "End": 44,
+        "Typename": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019",
+              "type": "daterange",
+              "start": "2019-01-01",
+              "end": "2020-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
     "Input": "Is this a valid date? 2015-32",
     "Context": {
       "ReferenceDateTime": "2019-02-27T00:00:00"
@@ -9046,5 +9101,147 @@
     },
     "NotSupported": "javascript, java, python",
     "Results": [] 
+  },
+  {
+    "Input": "I'll be back at 9.am.",
+    "Context": {
+      "ReferenceDateTime": "2019-04-19T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "9.am",
+        "Start": 16,
+        "End": 19,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T09",
+              "type": "time",
+              "value": "09:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Let's meet on march eighteenth nine thirty.",
+    "Context": {
+      "ReferenceDateTime": "2019-04-25T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "march eighteenth nine thirty",
+        "Start": 14,
+        "End": 41,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-03-18T09:30",
+              "type": "datetime",
+              "value": "2019-03-18 09:30:00"
+            },
+            {
+              "timex": "XXXX-03-18T09:30",
+              "type": "datetime",
+              "value": "2020-03-18 09:30:00"
+            },
+            {
+              "timex": "XXXX-03-18T21:30",
+              "type": "datetime",
+              "value": "2019-03-18 21:30:00"
+            },
+            {
+              "timex": "XXXX-03-18T21:30",
+              "type": "datetime",
+              "value": "2020-03-18 21:30:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Let's meet on january first two thousand and thirty two",
+    "Context": {
+      "ReferenceDateTime": "2019-04-25T00:00:00"
+    },
+    "NotSupported": "python, javascript",
+    "Results": [
+      {
+        "Text": "january first two thousand and thirty two",
+        "Start": 14,
+        "End": 54,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2032-01-01",
+              "type": "date",
+              "value": "2032-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Meet me at 3 pm or later.",
+    "Context": {
+      "ReferenceDateTime": "2019-04-22T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "3 pm or later",
+        "Start": 11,
+        "End": 23,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T15",
+              "Mod": "since",
+              "type": "timerange",
+              "start": "15:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Meet me at 3 pm or later on Monday.",
+    "Context": {
+      "ReferenceDateTime": "2019-04-22T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "3 pm or later on monday",
+        "Start": 11,
+        "End": 33,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-1T15",
+              "Mod": "since",
+              "type": "datetimerange",
+              "start": "2019-04-15 15:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-1T15",
+              "Mod": "since",
+              "type": "datetimerange",
+              "start": "2019-04-22 15:00:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

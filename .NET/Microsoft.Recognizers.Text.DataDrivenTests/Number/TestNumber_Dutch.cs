@@ -65,6 +65,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
         {
             TestNumber();
         }
+        */
 
         /*
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "NumberRangeModel-Dutch.csv", "NumberRangeModel-Dutch#csv", DataAccessMethod.Sequential)]

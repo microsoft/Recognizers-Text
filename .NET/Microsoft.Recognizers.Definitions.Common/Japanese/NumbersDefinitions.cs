@@ -193,7 +193,11 @@ namespace Microsoft.Recognizers.Definitions.Japanese
 		public static readonly string TwoNumberRangeRegex3 = $@"({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2}|{OneNumberRangeLessRegex3}|{OneNumberRangeLessRegex4})\s*(と|は|((と)?同時に)|((と)?そして)|が|，|、|,)?\s*({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2}|{OneNumberRangeMoreRegex3}|{OneNumberRangeMoreRegex4})";
 		public static readonly string TwoNumberRangeRegex4 = $@"(?<number1>((?!((，(?!\d+))|(,(?!\d+))|。)).)+)\s*{TillRegex}\s*(?<number2>((?!((，(?!\d+))|(,(?!\d+))|。)).)+)";
 		public const string AmbiguousFractionConnectorsRegex = @"^[.]";
-		public static readonly Dictionary<string, string> RelativeReferenceMap = new Dictionary<string, string>
+		public static readonly Dictionary<string, string> RelativeReferenceOffsetMap = new Dictionary<string, string>
+		{
+			{ @"", @"" }
+		};
+		public static readonly Dictionary<string, string> RelativeReferenceRelativeToMap = new Dictionary<string, string>
 		{
 			{ @"", @"" }
 		};

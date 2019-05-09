@@ -735,26 +735,26 @@
     ]
   },
   {
-    "Input": "this week",
+    "Input": "The union suspended strike action this week.",
     "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
+      "ReferenceDateTime": "2026-01-01T00:00:00"
     },
     "Results": [
       {
         "Text": "this week",
         "Type": "daterange",
         "Value": {
-          "Timex": "2016-W45",
+          "Timex": "2026-W01",
           "FutureResolution": {
-            "startDate": "2016-11-07",
-            "endDate": "2016-11-14"
+            "startDate": "2025-12-29",
+            "endDate": "2026-01-05"
           },
           "PastResolution": {
-            "startDate": "2016-11-07",
-            "endDate": "2016-11-14"
+            "startDate": "2025-12-29",
+            "endDate": "2026-01-05"
           }
         },
-        "Start": 0,
+        "Start": 34,
         "Length": 9
       }
     ]
@@ -4832,14 +4832,14 @@
         "Text": "from Week 31 to Week 35",
         "Type": "daterange",
         "Value": {
-          "Timex": "(2018-08-06,2018-09-03,P4W)",
+          "Timex": "(2018-07-30,2018-08-27,P4W)",
           "FutureResolution": {
-            "startDate": "2018-08-06",
-            "endDate": "2018-09-03"
+            "startDate": "2018-07-30",
+            "endDate": "2018-08-27"
           },
           "PastResolution": {
-            "startDate": "2018-08-06",
-            "endDate": "2018-09-03"
+            "startDate": "2018-07-30",
+            "endDate": "2018-08-27"
           }
         },
         "Start": 12,
@@ -4858,14 +4858,14 @@
         "Text": "between Week 31 and Week 35",
         "Type": "daterange",
         "Value": {
-          "Timex": "(2018-08-06,2018-09-03,P4W)",
+          "Timex": "(2018-07-30,2018-08-27,P4W)",
           "FutureResolution": {
-            "startDate": "2018-08-06",
-            "endDate": "2018-09-03"
+            "startDate": "2018-07-30",
+            "endDate": "2018-08-27"
           },
           "PastResolution": {
-            "startDate": "2018-08-06",
-            "endDate": "2018-09-03"
+            "startDate": "2018-07-30",
+            "endDate": "2018-08-27"
           }
         },
         "Start": 12,
@@ -5518,6 +5518,81 @@
         },
         "Start": 0,
         "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "The U.S. government is still in suspension this week.",
+    "Context": {
+      "ReferenceDateTime": "2019-01-01T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "this week",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2019-W01",
+          "FutureResolution": {
+            "startDate": "2018-12-31",
+            "endDate": "2019-01-07"
+          },
+          "PastResolution": {
+            "startDate": "2018-12-31",
+            "endDate": "2019-01-07"
+          }
+        },
+        "Start": 43,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Mr Werner unveiled his new strategy this week.",
+    "Context": {
+      "ReferenceDateTime": "2017-01-01T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "this week",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-W52",
+          "FutureResolution": {
+            "startDate": "2016-12-26",
+            "endDate": "2017-01-02"
+          },
+          "PastResolution": {
+            "startDate": "2016-12-26",
+            "endDate": "2017-01-02"
+          }
+        },
+        "Start": 36,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "There is no big news this week.",
+    "Context": {
+      "ReferenceDateTime": "2016-01-01T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "this week",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2015-W53",
+          "FutureResolution": {
+            "startDate": "2015-12-28",
+            "endDate": "2016-01-04"
+          },
+          "PastResolution": {
+            "startDate": "2015-12-28",
+            "endDate": "2016-01-04"
+          }
+        },
+        "Start": 21,
+        "Length": 9
       }
     ]
   }

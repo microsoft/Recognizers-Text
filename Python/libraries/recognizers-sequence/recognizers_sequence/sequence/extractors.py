@@ -98,6 +98,14 @@ class BasePhoneNumberExtractor(SequenceExtractor):
                 ch_gap = source[er.start - 2]
                 if not ch_gap.isdigit():
                     ret.append(er)
+                front = source[0:er.start - 1]
+                international_dialing_prefix_regex = re.compile(BasePhoneNumbers.InternationDialingPrefixRegex)
+                match = international_dialing_prefix_regex.search(front)
+                if match is not None:
+                    er.start = match.start()
+                    er.length = er.length + match.end() - match.start() + 1
+                    er.text = source[er.start:er.start + er.length].strip()
+                    ret.append(er)
         return ret
 
     def __init__(self):

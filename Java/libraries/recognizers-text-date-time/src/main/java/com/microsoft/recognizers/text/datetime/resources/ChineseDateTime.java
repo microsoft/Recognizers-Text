@@ -150,11 +150,11 @@ public class ChineseDateTime {
             .replace("{DatePeriodLastRegex}", DatePeriodLastRegex)
             .replace("{DatePeriodNextRegex}", DatePeriodNextRegex);
 
-    public static final String DatePeriodYearRegex = "(({YearNumRegex})(\\s*年)?|({YearRegex})\\s*年)(?=[\\u4E00-\\u9FFF]|\\s|$|\\W)"
+    public static final String DatePeriodYearRegex = "(({YearNumRegex})(\\s*年)?|({YearRegex})\\s*年)"
             .replace("{YearNumRegex}", YearNumRegex)
             .replace("{YearRegex}", YearRegex);
 
-    public static final String StrictYearRegex = "{DatePeriodYearRegex}"
+    public static final String StrictYearRegex = "({DatePeriodYearRegex}(?=[\\u4E00-\\u9FFF]|\\s|$|\\W))"
             .replace("{DatePeriodYearRegex}", DatePeriodYearRegex);
 
     public static final String YearRegexInNumber = "(?<year>(\\d{3,4}))";
@@ -174,7 +174,7 @@ public class ChineseDateTime {
             .replace("{DayRegex}", DayRegex)
             .replace("{DatePeriodTillRegex}", DatePeriodTillRegex);
 
-    public static final String YearAndMonth = "({DatePeriodYearInChineseRegex}|{DatePeriodYearRegex}){MonthRegex}"
+    public static final String YearAndMonth = "({DatePeriodYearInChineseRegex}|{DatePeriodYearRegex})\\s*{MonthRegex}"
             .replace("{DatePeriodYearInChineseRegex}", DatePeriodYearInChineseRegex)
             .replace("{DatePeriodYearRegex}", DatePeriodYearRegex)
             .replace("{MonthRegex}", MonthRegex);

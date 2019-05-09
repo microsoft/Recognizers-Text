@@ -299,10 +299,9 @@ public class BaseDurationParser implements IDateTimeParser {
             if (config.getUnitMap().containsKey(srcUnit)) {
                 String unitStr = config.getUnitMap().get(srcUnit);
 
-                String timex = String.format("P%s%s%c", isLessThanDay(unitStr) ? "T" : "", numStr, unitStr.charAt(0));
                 double timeValue = numVal * config.getUnitValueMap().get(srcUnit);
 
-                result.setTimex(timex);
+                result.setTimex(TimexUtility.generateDurationTimex(numVal, unitStr, isLessThanDay(unitStr)));
                 result.setFutureValue(timeValue);
                 result.setPastValue(timeValue);
 

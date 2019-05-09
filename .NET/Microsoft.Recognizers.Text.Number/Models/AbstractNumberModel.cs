@@ -8,6 +8,9 @@ namespace Microsoft.Recognizers.Text.Number
 {
     public abstract class AbstractNumberModel : IModel
     {
+        // Languages supporting subtypes in the resolution to be added here
+        private static readonly List<string> ExtractorsSupportingSubtype = new List<string> { Constants.ENGLISH, Constants.SWEDISH };
+
         protected AbstractNumberModel(IParser parser, IExtractor extractor)
         {
             this.Parser = parser;
@@ -53,16 +56,43 @@ namespace Microsoft.Recognizers.Text.Number
             return parsedNumbers.Select(o =>
             {
                 var end = o.Start.Value + o.Length.Value - 1;
-                var resolution = new SortedDictionary<string, object> { { ResolutionKey.Value, o.ResolutionStr } };
+                var resolution = new SortedDictionary<string, object>();
+                if (o.Value != null)
+                {
+                    resolution.Add(ResolutionKey.Value, o.ResolutionStr);
+                }
 
-                var extractorType = Extractor.GetType().ToString();
+                var extractorSupportsSubtype = ExtractorsSupportingSubtype.Exists(e => Extractor.GetType().ToString().Contains(e));
 
-                // Only support "subtype" for English for now
+                // Check if current extractor supports the Subtype field in the resolution
                 // As some languages like German, we miss handling some subtypes between "decimal" and "integer"
                 if (!string.IsNullOrEmpty(o.Type) &&
-                    Constants.ValidSubTypes.Contains(o.Type) && extractorType.Contains(Constants.ENGLISH))
+                    Constants.ValidSubTypes.Contains(o.Type) && extractorSupportsSubtype)
                 {
                     resolution.Add(ResolutionKey.SubType, o.Type);
+                }
+
+                var type = string.Empty;
+
+                // for ordinal and ordinal.relative
+                // Only support "ordinal.relative" for English for now
+                if (ModelTypeName.Equals(Constants.MODEL_ORDINAL))
+                {
+                    if (o.Metadata != null && o.Metadata.IsOrdinalRelative)
+                    {
+                        type = $"{ModelTypeName}.{Constants.RELATIVE}";
+                    }
+                    else
+                    {
+                        type = ModelTypeName;
+                    }
+
+                    resolution.Add(ResolutionKey.Offset, o.Metadata.Offset);
+                    resolution.Add(ResolutionKey.RelativeTo, o.Metadata.RelativeTo);
+                }
+                else
+                {
+                    type = ModelTypeName;
                 }
 
                 return new ModelResult
@@ -71,7 +101,7 @@ namespace Microsoft.Recognizers.Text.Number
                     End = end,
                     Resolution = resolution,
                     Text = o.Text,
-                    TypeName = ModelTypeName,
+                    TypeName = type,
                 };
             }).ToList();
         }

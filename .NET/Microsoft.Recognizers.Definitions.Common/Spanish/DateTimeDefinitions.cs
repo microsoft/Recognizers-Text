@@ -67,11 +67,12 @@ namespace Microsoft.Recognizers.Definitions.Spanish
 		public const string PrefixDayRegex = @"^[.]";
 		public const string CenturySuffixRegex = @"^[.]";
 		public static readonly string SeasonRegex = $@"\b(?<season>(([uú]ltim[oa]|est[ea]|el|la|(pr[oó]xim[oa]s?|siguiente)|{PrefixPeriodRegex})\s+)?(?<seas>primavera|verano|otoño|invierno)((\s+del?|\s*,\s*)?\s+({YearRegex}|(?<order>pr[oó]ximo|[uú]ltimo|este)\s+año))?)\b";
-		public const string WhichWeekRegex = @"(semana)(\s*)(?<number>\d\d|\d|0\d)";
+		public const string WhichWeekRegex = @"\b(semana)(\s*)(?<number>5[0-3]|[1-4]\d|0?[1-9])\b";
 		public static readonly string WeekOfRegex = $@"((del|de|la|el)\s+)?(semana)(\s*)({OfPrepositionRegex})";
 		public static readonly string MonthOfRegex = $@"(mes)(\s+)({OfPrepositionRegex})";
 		public const string RangeUnitRegex = @"\b(?<unit>años|año|meses|mes|semanas|semana)\b";
 		public const string InConnectorRegex = @"\b(in)\b";
+		public const string SinceYearSuffixRegex = @"^[.]";
 		public const string WithinNextPrefixRegex = @"\b(dentro\s+de)\b";
 		public const string FromRegex = @"((desde|de)(\s*la(s)?)?)$";
 		public const string ConnectorAndRegex = @"(y\s*(la(s)?)?)$";
@@ -471,7 +472,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
 		public const string CommonDatePrefixRegex = @"^[\.]";
 		public const string DurationUnitRegex = @"^[\.]";
 		public const string DurationConnectorRegex = @"^[.]";
-		public const string DateAfterRegex = @"^[.]";
+		public const string SuffixAfterRegex = @"^[.]";
 		public const string YearPeriodRegex = @"^[.]";
 		public const string FutureSuffixRegex = @"\b(despu[ée]s)\b";
 		public static readonly Dictionary<string, int> WrittenDecades = new Dictionary<string, int>

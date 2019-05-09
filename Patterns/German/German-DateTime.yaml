@@ -115,7 +115,7 @@ SeasonRegex: !nestedRegex
   def: \b(?<season>({RelativeRegex}\s+)?(?<seas>frühling|sommer|herbst|winter)((\s+(von|des jahres)?|\s*,\s*)?\s+({YearRegex}|{RelativeRegex}\s+jahr(e(s)?)?))?)\b
   references: [ YearRegex, RelativeRegex ]
 WhichWeekRegex: !simpleRegex
-  def: (week)(\s*)(?<number>\d\d|\d|0\d)
+  def: \b(week)(\s*)(?<number>5[0-3]|[1-4]\d|0?[1-9])\b
 WeekOfRegex: !simpleRegex
   def: (die\s+)?(woche)(\s+des)
 MonthOfRegex: !simpleRegex
@@ -441,6 +441,9 @@ LaterRegex: !simpleRegex
   def: \b(später|von jetzt|(ab|nach) (?<day>morgen|heute))\b
 InConnectorRegex: !simpleRegex
   def: \b(in)\b
+SinceYearSuffixRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 WithinNextPrefixRegex: !nestedRegex
   def: \b(innerhalb|während(\s+der|de(s|m))?(\s+(?<next>{NextPrefixRegex}))?)\b
   references: [ NextPrefixRegex ]
@@ -485,8 +488,8 @@ WeekDayAndDayOfMonthRegex: !nestedRegex
   def: \b{WeekDayRegex}\s+((der|den)\s+{FlexibleDayRegex})\b
   references: [WeekDayRegex, FlexibleDayRegex]
 WeekDayAndDayRegex: !nestedRegex
-  def: \b{WeekDayRegex}\s+(?!(the)){DayRegex}(?!([-]|(\s+({AmDescRegex}|{PmDescRegex}))))\b
-  references: [WeekDayRegex, DayRegex, AmDescRegex, PmDescRegex]
+  def: \b{WeekDayRegex}\s+(?!(the)){DayRegex}(?!([-]|(\s+({AmDescRegex}|{PmDescRegex|{OclockRegex}}))))\b
+  references: [WeekDayRegex, DayRegex, AmDescRegex, PmDescRegex, OclockRegex]
 RestOfDateRegex: !simpleRegex
   def: \brest\s+((der|des|dieser)\s+)((aktuellen|jetzigen)\s+)?(?<duration>woche|monats|jahres)\b
 RestOfDateTimeRegex: !simpleRegex
@@ -537,7 +540,7 @@ RelativeDecadeRegex: !nestedRegex
 YearSuffix: !nestedRegex
   def: (,?\s*({DateYearRegex}|{FullTextYearRegex}))
   references: [ DateYearRegex, FullTextYearRegex ]
-DateAfterRegex: !simpleRegex
+SuffixAfterRegex: !simpleRegex
   def: \b(o\s+(nach|in der Vergangenheit))\b
 YearPeriodRegex: !nestedRegex
   def: ((((von|während|zwischen)\s+)?{YearRegex}\s*({TillRegex})\s*{YearRegex})|(((zwischen)\s+){YearRegex}\s*({RangeConnectorRegex})\s*{YearRegex}))

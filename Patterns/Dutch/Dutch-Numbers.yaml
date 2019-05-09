@@ -131,23 +131,29 @@ MoreRegex: !simpleRegex
 LessRegex: !simpleRegex
   def: ((minder|lager|kleiner)(\s+dan|\s+als)?|beneden|onder|<)
 EqualRegex: !simpleRegex
-  def: (gelijk(\s+(aan|als))?|=)
+  def: (gelijk(\s+(aan|tot|als))?|(?<!<|>)=)
+MoreOrEqualPrefix: !nestedRegex
+  def: ((niet\s+{LessRegex})|(tenminste|op zijn minst|minstens))
+  references: [ LessRegex ]
 MoreOrEqual: !nestedRegex
   def: (({MoreRegex}\s+of\s+{EqualRegex})|minstens|niet\s+{LessRegex}|>\s*=)
   references: [ MoreRegex, EqualRegex, LessRegex ]
 MoreOrEqualSuffix: !simpleRegex
-  def: (en|of)\s+(meer|groter|hoger|grotere)(?!\s+dan|?!\s+als)
+  def: ((en|of)\s+(meer|groter|hoger|grotere)((?!\s+dan)|(?!\s+als)))
+LessOrEqualPrefix: !nestedRegex
+  def: ((niet\s+{MoreRegex})|(hooguit|op zijn hoogst|op zijn meest))
+  references: [ MoreRegex ]
 LessOrEqual: !nestedRegex
   def: (({LessRegex}\s+of\s+{EqualRegex})|maximum|niet\s+{MoreRegex}|<\s*=)
   references: [ LessRegex, EqualRegex, MoreRegex ]
 LessOrEqualSuffix: !simpleRegex
-  def: (en|of)\s+(minder|lager|kleiner)(?!\s+dan|?!\s+als)
+  def: ((en|of)\s+(minder|lager|kleiner)((?!\s+dan)|(?!\s+als)))
 NumberSplitMark: !simpleRegex
   def: (?![,.](?!\d+))
 MoreRegexNoNumberSucceed: !simpleRegex
-  def: ((groter|hoger|meer)((?!\s+dan|?!\s+als)|\s+(dan(?!(\s*\d+))))|(boven|over)(?!(\s*\d+))) 
+  def: ((groter|hoger|meer)((?!\s+dan)|\s+(dan(?!(\s*\d+))))|(boven|over)(?!(\s*\d+)))
 LessRegexNoNumberSucceed: !simpleRegex
-  def: ((minder|lager|kleiner)((?!\s+dan|?!\s+als)|\s+(dan(?!(\s*\d+))))|(beneden|onder)(?!(\s*\d+))) 
+  def: ((minder|lager|kleiner)((?!\s+dan)|\s+(dan(?!(\s*\d+))))|(beneden|onder)(?!(\s*\d+)))
 EqualRegexNoNumberSucceed: !simpleRegex
   def: (gelijk?((?!\s+(aan|tot))|(\s+(aan|tot)(?!(\s*\d+))))) 
 OneNumberRangeMoreRegex1: !nestedRegex
@@ -185,6 +191,7 @@ TwoNumberRangeRegex4: !nestedRegex
   references: [ TillRegex ]
 AmbiguousFractionConnectorsRegex: !simpleRegex 
   def: ^[.]  # TODO: modify regex according to the counterpart in English
+# "in" is ambiguous for cases like "more than 30000 in 2009", other connector "out of", "over" is not ambiguous in English
 #Parser
 DecimalSeparatorChar: !char ','
 FractionMarkerToken: van de
@@ -316,7 +323,12 @@ RoundNumberMap: !dictionary
     g: 1000000000
     b: 1000000000
     t: 1000000000000
-RelativeReferenceMap: !dictionary
+RelativeReferenceOffsetMap: !dictionary
+  types: [ string, string ]
+# TODO: modify below regex according to the counterpart in English
+  entries:
+    '': ''
+RelativeReferenceRelativeToMap: !dictionary
   types: [ string, string ]
 # TODO: modify below regex according to the counterpart in English
   entries:

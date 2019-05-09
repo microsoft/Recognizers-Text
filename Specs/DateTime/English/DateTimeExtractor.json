@@ -826,5 +826,29 @@
         "Length": 10
       }
     ]
+  },
+  {
+    "Input": "I will go back on wed Oct 26 15:50:06 2016.",
+    "NotSupported": "java,python,javascript",
+    "Results": [
+      {
+        "Text": "wed Oct 26 15:50:06 2016",
+        "Type": "datetime",
+        "Start": 18,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "Wed Oct 26 15:50:06 2016 is not a day in 2019.",
+    "NotSupported": "java,python,javascript",
+    "Results": [
+      {
+        "Text": "wed Oct 26 15:50:06 2016",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 24
+      }
+    ]
   }
 ]

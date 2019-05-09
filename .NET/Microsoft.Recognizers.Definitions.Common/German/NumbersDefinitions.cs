@@ -62,7 +62,7 @@ namespace Microsoft.Recognizers.Definitions.German
 		public static readonly Func<string, string> DoubleWithoutIntegralRegex = (placeholder) => $@"(?<=\s|^)(?<!(\d+))\.\d+(?!(\.\d+))(?={placeholder})";
 		public static readonly string DoubleWithRoundNumber = $@"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\,)))\d+\,\d+\s+{RoundNumberIntegerRegex}(?=\b)";
 		public static readonly string DoubleAllFloatRegex = $@"((?<=\b){AllFloatRegex}(?=\b))";
-		public static readonly string NumberWithSuffixPercentage = $@"(?<!%)({BaseNumbers.NumberReplaceToken})(\s*)(%(?!{BaseNumbers.NumberReplaceToken})|prozent\b)";
+		public static readonly string NumberWithSuffixPercentage = $@"(?<!%)({BaseNumbers.NumberReplaceToken})(\s*)(%(?!{BaseNumbers.NumberReplaceToken})|prozent(punkte)?\b)";
 		public static readonly string NumberWithPrefixPercentage = $@"(Prozent)(\s*)({BaseNumbers.NumberReplaceToken})";
 		public const string AmbiguousFractionConnectorsRegex = @"^[.]";
 		public const char DecimalSeparatorChar = ',';
@@ -376,7 +376,11 @@ namespace Microsoft.Recognizers.Definitions.German
 			{ @"b", 1000000000 },
 			{ @"t", 1000000000000 }
 		};
-		public static readonly Dictionary<string, string> RelativeReferenceMap = new Dictionary<string, string>
+		public static readonly Dictionary<string, string> RelativeReferenceOffsetMap = new Dictionary<string, string>
+		{
+			{ @"", @"" }
+		};
+		public static readonly Dictionary<string, string> RelativeReferenceRelativeToMap = new Dictionary<string, string>
 		{
 			{ @"", @"" }
 		};

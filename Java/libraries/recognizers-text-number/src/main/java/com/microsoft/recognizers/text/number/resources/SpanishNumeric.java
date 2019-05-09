@@ -86,7 +86,7 @@ public class SpanishNumeric {
 
     public static final String SimpleRoundOrdinalRegex = "(mil[eé]simo|millon[eé]sim[oa]|billon[eé]sim[oa]|trillon[eé]sim[oa]|cuatrillon[eé]sim[oa]|quintillon[eé]sim[oa]|sextillon[eé]sim[oa]|septillon[eé]sim[oa])";
 
-    public static final String OneToNineOrdinalRegex = "(primer[oa]|segund[oa]|tercer[oa]|cuart[oa]|quint[oa]|sext[oa]|s[eé]ptim[oa]|octav[oa]|noven[oa])";
+    public static final String OneToNineOrdinalRegex = "(primer[oa]?|segund[oa]|tercer[oa]?|cuart[oa]|quint[oa]|sext[oa]|s[eé]ptim[oa]|octav[oa]|noven[oa])";
 
     public static final String TensOrdinalRegex = "(nonag[eé]sim[oa]|octog[eé]sim[oa]|septuag[eé]sim[oa]|sexag[eé]sim[oa]|quincuag[eé]sim[oa]|cuadrag[eé]sim[oa]|trig[eé]sim[oa]|vig[eé]sim[oa]|d[eé]cim[oa])";
 
@@ -94,7 +94,7 @@ public class SpanishNumeric {
 
     public static final String SpecialUnderHundredOrdinalRegex = "(und[eé]cim[oa]|duod[eé]cimo|decimoctav[oa])";
 
-    public static final String UnderHundredOrdinalRegex = "((({TensOrdinalRegex}(\\s)?)?{OneToNineOrdinalRegex})|{TensOrdinalRegex}|{SpecialUnderHundredOrdinalRegex})"
+    public static final String UnderHundredOrdinalRegex = "({SpecialUnderHundredOrdinalRegex}|(({TensOrdinalRegex}(\\s)?)?{OneToNineOrdinalRegex})|{TensOrdinalRegex})"
             .replace("{TensOrdinalRegex}", TensOrdinalRegex)
             .replace("{OneToNineOrdinalRegex}", OneToNineOrdinalRegex)
             .replace("{SpecialUnderHundredOrdinalRegex}", SpecialUnderHundredOrdinalRegex);
@@ -408,7 +408,9 @@ public class SpanishNumeric {
         .put("noveno", 9L)
         .put("novena", 9L)
         .put("decimo", 10L)
+        .put("décimo", 10L)
         .put("decima", 10L)
+        .put("décima", 10L)
         .put("undecimo", 11L)
         .put("undecima", 11L)
         .put("duodecimo", 12L)
@@ -549,7 +551,11 @@ public class SpanishNumeric {
         .put("t", 1000000000000L)
         .build();
 
-    public static final ImmutableMap<String, String> RelativeReferenceMap = ImmutableMap.<String, String>builder()
+    public static final ImmutableMap<String, String> RelativeReferenceOffsetMap = ImmutableMap.<String, String>builder()
+        .put("", "")
+        .build();
+
+    public static final ImmutableMap<String, String> RelativeReferenceRelativeToMap = ImmutableMap.<String, String>builder()
         .put("", "")
         .build();
 }

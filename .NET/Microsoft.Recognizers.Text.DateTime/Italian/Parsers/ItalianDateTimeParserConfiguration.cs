@@ -26,6 +26,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             UnspecificEndOfRegex = ItalianDateTimeExtractorConfiguration.UnspecificEndOfRegex;
             UnitRegex = ItalianTimeExtractorConfiguration.TimeUnitRegex;
             DateNumberConnectorRegex = ItalianDateTimeExtractorConfiguration.DateNumberConnectorRegex;
+            YearRegex = ItalianDateTimeExtractorConfiguration.YearRegex;
             Numbers = config.Numbers;
             CardinalExtractor = config.CardinalExtractor;
             IntegerExtractor = config.IntegerExtractor;
@@ -81,6 +82,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         public Regex DateNumberConnectorRegex { get; }
 
         public Regex PrepositionRegex { get; }
+
+        public Regex YearRegex { get; }
 
         public IImmutableDictionary<string, int> Numbers { get; }
 

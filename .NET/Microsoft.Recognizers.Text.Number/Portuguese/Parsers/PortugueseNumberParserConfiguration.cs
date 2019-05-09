@@ -34,7 +34,8 @@ namespace Microsoft.Recognizers.Text.Number.Portuguese
 
             this.CardinalNumberMap = NumbersDefinitions.CardinalNumberMap.ToImmutableDictionary();
             this.OrdinalNumberMap = NumberMapGenerator.InitOrdinalNumberMap(NumbersDefinitions.OrdinalNumberMap, NumbersDefinitions.PrefixCardinalMap, NumbersDefinitions.SuffixOrdinalMap);
-            this.RelativeReferenceMap = NumbersDefinitions.RelativeReferenceMap.ToImmutableDictionary();
+            this.RelativeReferenceOffsetMap = NumbersDefinitions.RelativeReferenceOffsetMap.ToImmutableDictionary();
+            this.RelativeReferenceRelativeToMap = NumbersDefinitions.RelativeReferenceRelativeToMap.ToImmutableDictionary();
             this.RoundNumberMap = NumbersDefinitions.RoundNumberMap.ToImmutableDictionary();
 
             this.HalfADozenRegex = new Regex(NumbersDefinitions.HalfADozenRegex, RegexOptions.Singleline);

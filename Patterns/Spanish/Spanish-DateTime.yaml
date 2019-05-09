@@ -123,7 +123,7 @@ SeasonRegex: !nestedRegex
   def: \b(?<season>(([uú]ltim[oa]|est[ea]|el|la|(pr[oó]xim[oa]s?|siguiente)|{PrefixPeriodRegex})\s+)?(?<seas>primavera|verano|otoño|invierno)((\s+del?|\s*,\s*)?\s+({YearRegex}|(?<order>pr[oó]ximo|[uú]ltimo|este)\s+año))?)\b
   references: [ YearRegex, PrefixPeriodRegex ]
 WhichWeekRegex: !simpleRegex
-  def: (semana)(\s*)(?<number>\d\d|\d|0\d)
+  def: \b(semana)(\s*)(?<number>5[0-3]|[1-4]\d|0?[1-9])\b
 WeekOfRegex: !nestedRegex
   def: ((del|de|la|el)\s+)?(semana)(\s*)({OfPrepositionRegex})
   references: [ OfPrepositionRegex ]
@@ -134,6 +134,9 @@ RangeUnitRegex: !simpleRegex
   def: \b(?<unit>años|año|meses|mes|semanas|semana)\b
 InConnectorRegex: !simpleRegex
   def: \b(in)\b
+SinceYearSuffixRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 WithinNextPrefixRegex: !simpleRegex
   def: \b(dentro\s+de)\b
 FromRegex: !simpleRegex
@@ -828,7 +831,7 @@ DurationUnitRegex: !simpleRegex
 DurationConnectorRegex: !simpleRegex
   # TODO: add this according to the related part in English
   def: ^[.]
-DateAfterRegex: !simpleRegex
+SuffixAfterRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
 YearPeriodRegex: !simpleRegex

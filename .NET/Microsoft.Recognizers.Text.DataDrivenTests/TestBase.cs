@@ -363,8 +363,21 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 {
                     Assert.AreEqual(expected.End, actual.End, GetMessage(TestSpec));
                 }
-
-                Assert.AreEqual(expected.Resolution[ResolutionKey.Value], actual.Resolution[ResolutionKey.Value], GetMessage(TestSpec));
+                
+                if (expected.TypeName.Contains(Number.Constants.MODEL_ORDINAL))
+                {
+                    if (!expected.TypeName.Contains(Number.Constants.RELATIVE))
+                    {
+                        Assert.AreEqual(expected.Resolution[ResolutionKey.Value], actual.Resolution[ResolutionKey.Value], GetMessage(TestSpec));
+                    }
+                    
+                    Assert.AreEqual(expected.Resolution[ResolutionKey.Offset], actual.Resolution[ResolutionKey.Offset], GetMessage(TestSpec));
+                    Assert.AreEqual(expected.Resolution[ResolutionKey.RelativeTo], actual.Resolution[ResolutionKey.RelativeTo], GetMessage(TestSpec));
+                }
+                else
+                {
+                    Assert.AreEqual(expected.Resolution[ResolutionKey.Value], actual.Resolution[ResolutionKey.Value], GetMessage(TestSpec));
+                }
 
                 foreach (var key in testResolutionKeys ?? Enumerable.Empty<string>())
                 {

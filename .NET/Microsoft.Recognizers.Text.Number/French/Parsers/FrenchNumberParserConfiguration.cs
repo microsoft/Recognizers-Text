@@ -32,7 +32,8 @@ namespace Microsoft.Recognizers.Text.Number.French
             this.WrittenFractionSeparatorTexts = NumbersDefinitions.WrittenFractionSeparatorTexts;
 
             this.CardinalNumberMap = NumbersDefinitions.CardinalNumberMap.ToImmutableDictionary();
-            this.RelativeReferenceMap = NumbersDefinitions.RelativeReferenceMap.ToImmutableDictionary();
+            this.RelativeReferenceOffsetMap = NumbersDefinitions.RelativeReferenceOffsetMap.ToImmutableDictionary();
+            this.RelativeReferenceRelativeToMap = NumbersDefinitions.RelativeReferenceRelativeToMap.ToImmutableDictionary();
             this.OrdinalNumberMap = NumberMapGenerator.InitOrdinalNumberMap(NumbersDefinitions.OrdinalNumberMap, NumbersDefinitions.PrefixCardinalMap, NumbersDefinitions.SuffixOrdinalMap);
             this.RoundNumberMap = NumbersDefinitions.RoundNumberMap.ToImmutableDictionary();
 

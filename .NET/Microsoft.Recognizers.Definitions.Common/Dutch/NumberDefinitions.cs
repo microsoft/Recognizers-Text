@@ -70,14 +70,16 @@ namespace Microsoft.Recognizers.Definitions.Dutch
 		public const string TillRegex = @"(tot|--|-|—|——|~)";
 		public const string MoreRegex = @"((groter|hoger|meer)(\s+dan|\s+als)?|boven|over|>)";
 		public const string LessRegex = @"((minder|lager|kleiner)(\s+dan|\s+als)?|beneden|onder|<)";
-		public const string EqualRegex = @"(gelijk(\s+(aan|als))?|=)";
+		public const string EqualRegex = @"(gelijk(\s+(aan|tot|als))?|(?<!<|>)=)";
+		public static readonly string MoreOrEqualPrefix = $@"((niet\s+{LessRegex})|(tenminste|op zijn minst|minstens))";
 		public static readonly string MoreOrEqual = $@"(({MoreRegex}\s+of\s+{EqualRegex})|minstens|niet\s+{LessRegex}|>\s*=)";
-		public const string MoreOrEqualSuffix = @"(en|of)\s+(meer|groter|hoger|grotere)(?!\s+dan|?!\s+als)";
+		public const string MoreOrEqualSuffix = @"((en|of)\s+(meer|groter|hoger|grotere)((?!\s+dan)|(?!\s+als)))";
+		public static readonly string LessOrEqualPrefix = $@"((niet\s+{MoreRegex})|(hooguit|op zijn hoogst|op zijn meest))";
 		public static readonly string LessOrEqual = $@"(({LessRegex}\s+of\s+{EqualRegex})|maximum|niet\s+{MoreRegex}|<\s*=)";
-		public const string LessOrEqualSuffix = @"(en|of)\s+(minder|lager|kleiner)(?!\s+dan|?!\s+als)";
+		public const string LessOrEqualSuffix = @"((en|of)\s+(minder|lager|kleiner)((?!\s+dan)|(?!\s+als)))";
 		public const string NumberSplitMark = @"(?![,.](?!\d+))";
-		public const string MoreRegexNoNumberSucceed = @"((groter|hoger|meer)((?!\s+dan|?!\s+als)|\s+(dan(?!(\s*\d+))))|(boven|over)(?!(\s*\d+)))";
-		public const string LessRegexNoNumberSucceed = @"((minder|lager|kleiner)((?!\s+dan|?!\s+als)|\s+(dan(?!(\s*\d+))))|(beneden|onder)(?!(\s*\d+)))";
+		public const string MoreRegexNoNumberSucceed = @"((groter|hoger|meer)((?!\s+dan)|\s+(dan(?!(\s*\d+))))|(boven|over)(?!(\s*\d+)))";
+		public const string LessRegexNoNumberSucceed = @"((minder|lager|kleiner)((?!\s+dan)|\s+(dan(?!(\s*\d+))))|(beneden|onder)(?!(\s*\d+)))";
 		public const string EqualRegexNoNumberSucceed = @"(gelijk?((?!\s+(aan|tot))|(\s+(aan|tot)(?!(\s*\d+)))))";
 		public static readonly string OneNumberRangeMoreRegex1 = $@"({MoreOrEqual}|{MoreRegex})\s*(de\s+)?(?<number1>((?!((\.(?!\d+))|(,(?!\d+)))).)+)";
 		public static readonly string OneNumberRangeMoreRegex2 = $@"(?<number1>((?!((\.(?!\d+))|(,(?!\d+)))).)+)\s*{MoreOrEqualSuffix}";
@@ -217,7 +219,11 @@ namespace Microsoft.Recognizers.Definitions.Dutch
 			{ @"b", 1000000000 },
 			{ @"t", 1000000000000 }
 		};
-		public static readonly Dictionary<string, string> RelativeReferenceMap = new Dictionary<string, string>
+		public static readonly Dictionary<string, string> RelativeReferenceOffsetMap = new Dictionary<string, string>
+		{
+			{ @"", @"" }
+		};
+		public static readonly Dictionary<string, string> RelativeReferenceRelativeToMap = new Dictionary<string, string>
 		{
 			{ @"", @"" }
 		};

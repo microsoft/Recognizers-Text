@@ -11,6 +11,7 @@ export namespace EnglishNumeric {
 	export const LangMarker = 'Eng';
 	export const RoundNumberIntegerRegex = `(hundred|thousand|million|billion|trillion)`;
 	export const ZeroToNineIntegerRegex = `(three|seven|eight|four|five|zero|nine|one|two|six)`;
+	export const TwoToNineIntegerRegex = `(three|seven|eight|four|five|nine|two|six)`;
 	export const NegativeNumberTermsRegex = `((minus|negative)\\s+)`;
 	export const NegativeNumberSignRegex = `^${NegativeNumberTermsRegex}.*`;
 	export const AnIntRegex = `(an|a)(?=\\s)`;
@@ -28,8 +29,9 @@ export namespace EnglishNumeric {
 	export const AllIntRegexWithDozenSuffixLocks = `(?<=\\b)(((half\\s+)?a\\s+dozen)|(${AllIntRegex}\\s+dozen(s)?))(?=\\b)`;
 	export const RoundNumberOrdinalRegex = `(hundredth|thousandth|millionth|billionth|trillionth)`;
 	export const NumberOrdinalRegex = `(first|second|third|fourth|fifth|sixth|seventh|eighth|ninth|tenth|eleventh|twelfth|thirteenth|fourteenth|fifteenth|sixteenth|seventeenth|eighteenth|nineteenth|twentieth|thirtieth|fortieth|fiftieth|sixtieth|seventieth|eightieth|ninetieth)`;
-	export const RelativeOrdinalRegex = `((next|previous) one|(the second|next) to last|the one before the last( one)?|the last but one|(ante)?penultimate|last|next)`;
+	export const RelativeOrdinalRegex = `((next|previous) one|(the second|next) to last|the one before the last( one)?|the last but one|(ante)?penultimate|last|next|previous)`;
 	export const BasicOrdinalRegex = `(${NumberOrdinalRegex}|${RelativeOrdinalRegex})`;
+	export const RelativeOrdinalFilterRegex = `(?<!-)(first|${RelativeOrdinalRegex})\\s*(${TwoToNineIntegerRegex}|[2-9]+)(?!\\s*${RoundNumberIntegerRegex})`;
 	export const SuffixBasicOrdinalRegex = `(((((${TensNumberIntegerRegex}(\\s+(and\\s+)?|\\s*-\\s*)${ZeroToNineIntegerRegex})|${TensNumberIntegerRegex}|${ZeroToNineIntegerRegex}|${AnIntRegex})(\\s+${RoundNumberIntegerRegex})+)\\s+(and\\s+)?)*(${TensNumberIntegerRegex}(\\s+|\\s*-\\s*))?${BasicOrdinalRegex})`;
 	export const SuffixRoundNumberOrdinalRegex = `((${AllIntRegex}\\s+)${RoundNumberOrdinalRegex})`;
 	export const AllOrdinalRegex = `(${SuffixBasicOrdinalRegex}|${SuffixRoundNumberOrdinalRegex})`;
@@ -40,7 +42,7 @@ export namespace EnglishNumeric {
 	export const FractionNotationWithSpacesRegex = `(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+\\s+\\d+[/]\\d+(?=(\\b[^/]|$))`;
 	export const FractionNotationRegex = `(((?<=\\W|^)-\\s*)|(?<![/-])(?<=\\b))\\d+[/]\\d+(?=(\\b[^/]|$))`;
 	export const FractionNounRegex = `(?<=\\b)(${AllIntRegex}\\s+(and\\s+)?)?(${AllIntRegex})(\\s+|\\s*-\\s*)(((${AllOrdinalRegex})|(${RoundNumberOrdinalRegex}))s|halves|quarters)(?=\\b)`;
-	export const FractionNounWithArticleRegex = `(?<=\\b)(${AllIntRegex}\\s+(and\\s+)?)?(a|an|one)(\\s+|\\s*-\\s*)(?!\\bfirst\\b|\\bsecond\\b)((${AllOrdinalRegex})|(${RoundNumberOrdinalRegex})|half|quarter)(?=\\b)`;
+	export const FractionNounWithArticleRegex = `(?<=\\b)(((${AllIntRegex}\\s+(and\\s+)?)?(a|an|one)(\\s+|\\s*-\\s*)(?!\\bfirst\\b|\\bsecond\\b)((${AllOrdinalRegex})|(${RoundNumberOrdinalRegex})|half|quarter))|(half))(?=\\b)`;
 	export const FractionPrepositionRegex = `(?<=\\b)(?<numerator>(${AllIntRegex})|((?<![\\.,])\\d+))\\s+(over|in|out\\s+of)\\s+(?<denominator>(${AllIntRegex})|(\\d+)(?![\\.,]))(?=\\b)`;
 	export const FractionPrepositionWithinPercentModeRegex = `(?<=\\b)(?<numerator>(${AllIntRegex})|((?<![\\.,])\\d+))\\s+over\\s+(?<denominator>(${AllIntRegex})|(\\d+)(?![\\.,]))(?=\\b)`;
 	export const AllPointRegex = `((\\s+${ZeroToNineIntegerRegex})+|(\\s+${SeparaIntRegex}))`;
@@ -98,5 +100,6 @@ export namespace EnglishNumeric {
 	export const OrdinalNumberMap: ReadonlyMap<string, number> = new Map<string, number>([["first", 1],["second", 2],["secondary", 2],["half", 2],["third", 3],["fourth", 4],["quarter", 4],["fifth", 5],["sixth", 6],["seventh", 7],["eighth", 8],["ninth", 9],["tenth", 10],["eleventh", 11],["twelfth", 12],["thirteenth", 13],["fourteenth", 14],["fifteenth", 15],["sixteenth", 16],["seventeenth", 17],["eighteenth", 18],["nineteenth", 19],["twentieth", 20],["thirtieth", 30],["fortieth", 40],["fiftieth", 50],["sixtieth", 60],["seventieth", 70],["eightieth", 80],["ninetieth", 90],["hundredth", 100],["thousandth", 1000],["millionth", 1000000],["billionth", 1000000000],["trillionth", 1000000000000],["firsts", 1],["halves", 2],["thirds", 3],["fourths", 4],["quarters", 4],["fifths", 5],["sixths", 6],["sevenths", 7],["eighths", 8],["ninths", 9],["tenths", 10],["elevenths", 11],["twelfths", 12],["thirteenths", 13],["fourteenths", 14],["fifteenths", 15],["sixteenths", 16],["seventeenths", 17],["eighteenths", 18],["nineteenths", 19],["twentieths", 20],["thirtieths", 30],["fortieths", 40],["fiftieths", 50],["sixtieths", 60],["seventieths", 70],["eightieths", 80],["ninetieths", 90],["hundredths", 100],["thousandths", 1000],["millionths", 1000000],["billionths", 1000000000],["trillionths", 1000000000000]]);
 	export const RoundNumberMap: ReadonlyMap<string, number> = new Map<string, number>([["hundred", 100],["thousand", 1000],["million", 1000000],["billion", 1000000000],["trillion", 1000000000000],["hundredth", 100],["thousandth", 1000],["millionth", 1000000],["billionth", 1000000000],["trillionth", 1000000000000],["hundredths", 100],["thousandths", 1000],["millionths", 1000000],["billionths", 1000000000],["trillionths", 1000000000000],["dozen", 12],["dozens", 12],["k", 1000],["m", 1000000],["g", 1000000000],["b", 1000000000],["t", 1000000000000]]);
 	export const AmbiguityFiltersDict: ReadonlyMap<string, string> = new Map<string, string>([["\\bone\\b", "\\b(the|this|that|which)\\s+(one)\\b"]]);
-	export const RelativeReferenceMap: ReadonlyMap<string, string> = new Map<string, string>([["last", "N"],["next one", "CURR+1"],["previous one", "CURR-1"],["the second to last", "N-1"],["the one before the last one", "N-1"],["next to last", "N-1"],["penultimate", "N-1"],["the last but one", "N-1"],["antepenultimate", "N-2"],["next", "CURR+1"]]);
+	export const RelativeReferenceOffsetMap: ReadonlyMap<string, string> = new Map<string, string>([["last", ""],["next one", ""],["previous one", ""],["the second to last", ""],["the one before the last one", ""],["next to last", ""],["penultimate", ""],["the last but one", ""],["antepenultimate", ""],["next", ""],["previous", ""]]);
+	export const RelativeReferenceRelativeToMap: ReadonlyMap<string, string> = new Map<string, string>([["last", "end"],["next one", "current"],["previous one", "current"],["the second to last", "end"],["the one before the last one", "end"],["next to last", "end"],["penultimate", "end"],["the last but one", "end"],["antepenultimate", "end"],["next", "current"],["previous", "current"]]);
 }

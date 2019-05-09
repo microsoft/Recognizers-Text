@@ -35,6 +35,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             UnspecificEndOfRegex = FrenchDateTimeExtractorConfiguration.UnspecificEndOfRegex;
             UnitRegex = FrenchTimeExtractorConfiguration.TimeUnitRegex;
             DateNumberConnectorRegex = FrenchDateTimeExtractorConfiguration.DateNumberConnectorRegex;
+            YearRegex = FrenchDateTimeExtractorConfiguration.YearRegex;
 
             Numbers = config.Numbers;
 
@@ -92,6 +93,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public Regex DateNumberConnectorRegex { get; }
 
         public Regex PrepositionRegex { get; }
+
+        public Regex YearRegex { get; }
 
         public IImmutableDictionary<string, int> Numbers { get; }
 

@@ -64,7 +64,7 @@ namespace Microsoft.Recognizers.Definitions.German
 		public const string CenturySuffixRegex = @"(^jahrhundert)\b";
 		public const string ReferencePrefixRegex = @"((gleich(e|en))|(selb(e|en)))\b";
 		public static readonly string SeasonRegex = $@"\b(?<season>({RelativeRegex}\s+)?(?<seas>frühling|sommer|herbst|winter)((\s+(von|des jahres)?|\s*,\s*)?\s+({YearRegex}|{RelativeRegex}\s+jahr(e(s)?)?))?)\b";
-		public const string WhichWeekRegex = @"(week)(\s*)(?<number>\d\d|\d|0\d)";
+		public const string WhichWeekRegex = @"\b(week)(\s*)(?<number>5[0-3]|[1-4]\d|0?[1-9])\b";
 		public const string WeekOfRegex = @"(die\s+)?(woche)(\s+des)";
 		public const string MonthOfRegex = @"(monat)(\s*)(des)";
 		public const string MonthRegex = @"(?<month>april|apr.|august|aug.|dezember|dez.|februar|feb.|januar|jan.|juli|jul.|juni|jun.|märz|mai|november|nov.|oktober|okt.|september|sep.)";
@@ -194,6 +194,7 @@ namespace Microsoft.Recognizers.Definitions.German
 		public const string AroundRegex = @"(\b(ca\.?|gegen|circa)\s*\b)";
 		public const string LaterRegex = @"\b(später|von jetzt|(ab|nach) (?<day>morgen|heute))\b";
 		public const string InConnectorRegex = @"\b(in)\b";
+		public const string SinceYearSuffixRegex = @"^[.]";
 		public static readonly string WithinNextPrefixRegex = $@"\b(innerhalb|während(\s+der|de(s|m))?(\s+(?<next>{NextPrefixRegex}))?)\b";
 		public const string MorningStartEndRegex = @"(^(früh|vormittag(s)?)|(morgen(s)?|früh|vormittag(s)?)$)";
 		public const string AfternoonStartEndRegex = @"(^(nachmittag|nachmittag(s)?))|((nachmittag|nachmittag(s)?)$)";
@@ -212,7 +213,7 @@ namespace Microsoft.Recognizers.Definitions.German
 		public const string FlexibleDayRegex = @"(?<DayOfMonth>([A-Za-z]+\s)?[A-Za-z\d]+)";
 		public static readonly string ForTheRegex = $@"\b(für den {FlexibleDayRegex})";
 		public static readonly string WeekDayAndDayOfMonthRegex = $@"\b{WeekDayRegex}\s+((der|den)\s+{FlexibleDayRegex})\b";
-		public static readonly string WeekDayAndDayRegex = $@"\b{WeekDayRegex}\s+(?!(the)){DayRegex}(?!([-]|(\s+({AmDescRegex}|{PmDescRegex}))))\b";
+		public static readonly string WeekDayAndDayRegex = $@"\b{WeekDayRegex}\s+(?!(the)){DayRegex}(?!([-]|(\s+({AmDescRegex}|{{PmDescRegex|{OclockRegex}}}))))\b";
 		public const string RestOfDateRegex = @"\brest\s+((der|des|dieser)\s+)((aktuellen|jetzigen)\s+)?(?<duration>woche|monats|jahres)\b";
 		public const string RestOfDateTimeRegex = @"\brest\s+((des|diesen)\s+)((aktuellen|heutigen)\s+)?(?<unit>tages)\b";
 		public const string MealTimeRegex = @"\b((zum|zur)\s+)?(?<mealTime>(essenszeit|mittagessen|mittag))\b";
@@ -234,7 +235,7 @@ namespace Microsoft.Recognizers.Definitions.German
 		public static readonly string DecadeWithCenturyRegex = $@"(die\s+)?(((?<century>\d|1\d|2\d)?(')?(?<decade>\d0)(')?s)|(({CenturyRegex}(\s+|-)(und\s+)?)?{DecadeRegex})|({CenturyRegex}(\s+|-)(und\s+)?(?<decade>zehner|hunderter)))";
 		public static readonly string RelativeDecadeRegex = $@"\b((das|die\s+)?{RelativeRegex}\s+((?<number>[\w,]+)\s+)?jahrzehnte?)\b";
 		public static readonly string YearSuffix = $@"(,?\s*({DateYearRegex}|{FullTextYearRegex}))";
-		public const string DateAfterRegex = @"\b(o\s+(nach|in der Vergangenheit))\b";
+		public const string SuffixAfterRegex = @"\b(o\s+(nach|in der Vergangenheit))\b";
 		public static readonly string YearPeriodRegex = $@"((((von|während|zwischen)\s+)?{YearRegex}\s*({TillRegex})\s*{YearRegex})|(((zwischen)\s+){YearRegex}\s*({RangeConnectorRegex})\s*{YearRegex}))";
 		public const string FutureSuffixRegex = @"\b(in\s+der\s+)?(zukunft|zukünftig)\b";
 		public static readonly string ComplexDatePeriodRegex = $@"(((von|während|in)\s+)?(?<start>.+)\s*({TillRegex})\s*(?<end>.+)|((zwischen)\s+)(?<start>.+)\s*({RangeConnectorRegex})\s*(?<end>.+))";

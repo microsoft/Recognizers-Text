@@ -27,5 +27,12 @@ namespace Microsoft.Recognizers.Text.Number.Tests
         {
             TestNumber();
         }
+
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "OrdinalModel-Korean.csv", "OrdinalModel-Korean#csv", DataAccessMethod.Sequential)]
+        [TestMethod]
+        public void OrdinalModel()
+        {
+            TestNumber();
+        }
     }
 }

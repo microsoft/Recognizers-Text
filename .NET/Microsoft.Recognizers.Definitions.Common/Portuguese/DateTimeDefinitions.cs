@@ -55,11 +55,12 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
 		public const string AllHalfYearRegex = @"^[.]";
 		public const string PrefixDayRegex = @"^[.]";
 		public static readonly string SeasonRegex = $@"\b(?<season>(([uú]ltim[oa]|[nd]?es[st][ea]|n?[oa]|(pr[oó]xim[oa]s?|seguinte))\s+)?(?<seas>primavera|ver[ãa]o|outono|inverno)((\s+)?(seguinte|((de\s+|,)?\s*{YearRegex})|((do\s+)?(?<order>pr[oó]ximo|[uú]ltimo|[nd]?es[st]e)\s+ano)))?)\b";
-		public const string WhichWeekRegex = @"(semana)(\s*)(?<number>\d\d|\d|0\d)";
+		public const string WhichWeekRegex = @"\b(semana)(\s*)(?<number>5[0-3]|[1-4]\d|0?[1-9])\b";
 		public const string WeekOfRegex = @"(semana)(\s*)((do|da|de))";
 		public const string MonthOfRegex = @"(mes)(\s*)((do|da|de))";
 		public const string RangeUnitRegex = @"\b(?<unit>anos|ano|meses|m[êe]s|semanas|semana)\b";
 		public const string InConnectorRegex = @"\b(em)\b";
+		public const string SinceYearSuffixRegex = @"^[.]";
 		public const string WithinNextPrefixRegex = @"^[.]";
 		public const string CenturySuffixRegex = @"^[.]";
 		public const string RelativeRegex = @"^[.]";
@@ -478,7 +479,7 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
 		public const string DecadeWithCenturyRegex = @"^[.]";
 		public const string RelativeDecadeRegex = @"^[.]";
 		public static readonly string YearSuffix = $@"(,?\s*({YearRegex}|{FullTextYearRegex}))";
-		public const string DateAfterRegex = @"^[.]";
+		public const string SuffixAfterRegex = @"^[.]";
 		public const string YearPeriodRegex = @"^[.]";
 		public const string FutureSuffixRegex = @"^[.]";
 		public static readonly Dictionary<string, int> WrittenDecades = new Dictionary<string, int>

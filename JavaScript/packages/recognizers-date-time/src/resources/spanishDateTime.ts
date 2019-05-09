@@ -54,11 +54,12 @@ export namespace SpanishDateTime {
 	export const PrefixDayRegex = `^[.]`;
 	export const CenturySuffixRegex = `^[.]`;
 	export const SeasonRegex = `\\b(?<season>(([uú]ltim[oa]|est[ea]|el|la|(pr[oó]xim[oa]s?|siguiente)|${PrefixPeriodRegex})\\s+)?(?<seas>primavera|verano|otoño|invierno)((\\s+del?|\\s*,\\s*)?\\s+(${YearRegex}|(?<order>pr[oó]ximo|[uú]ltimo|este)\\s+año))?)\\b`;
-	export const WhichWeekRegex = `(semana)(\\s*)(?<number>\\d\\d|\\d|0\\d)`;
+	export const WhichWeekRegex = `\\b(semana)(\\s*)(?<number>5[0-3]|[1-4]\\d|0?[1-9])\\b`;
 	export const WeekOfRegex = `((del|de|la|el)\\s+)?(semana)(\\s*)(${OfPrepositionRegex})`;
 	export const MonthOfRegex = `(mes)(\\s+)(${OfPrepositionRegex})`;
 	export const RangeUnitRegex = `\\b(?<unit>años|año|meses|mes|semanas|semana)\\b`;
 	export const InConnectorRegex = `\\b(in)\\b`;
+	export const SinceYearSuffixRegex = `^[.]`;
 	export const WithinNextPrefixRegex = `\\b(dentro\\s+de)\\b`;
 	export const FromRegex = `((desde|de)(\\s*la(s)?)?)$`;
 	export const ConnectorAndRegex = `(y\\s*(la(s)?)?)$`;
@@ -227,7 +228,7 @@ export namespace SpanishDateTime {
 	export const CommonDatePrefixRegex = `^[\\.]`;
 	export const DurationUnitRegex = `^[\\.]`;
 	export const DurationConnectorRegex = `^[.]`;
-	export const DateAfterRegex = `^[.]`;
+	export const SuffixAfterRegex = `^[.]`;
 	export const YearPeriodRegex = `^[.]`;
 	export const FutureSuffixRegex = `\\b(despu[ée]s)\\b`;
 	export const WrittenDecades: ReadonlyMap<string, number> = new Map<string, number>([["", 0]]);

@@ -149,7 +149,7 @@ public class GermanNumeric {
     public static final String DoubleAllFloatRegex = "((?<=\\b){AllFloatRegex}(?=\\b))"
             .replace("{AllFloatRegex}", AllFloatRegex);
 
-    public static final String NumberWithSuffixPercentage = "(?<!%)({BaseNumbers.NumberReplaceToken})(\\s*)(%(?!{BaseNumbers.NumberReplaceToken})|prozent\\b)"
+    public static final String NumberWithSuffixPercentage = "(?<!%)({BaseNumbers.NumberReplaceToken})(\\s*)(%(?!{BaseNumbers.NumberReplaceToken})|prozent(punkte)?\\b)"
             .replace("{BaseNumbers.NumberReplaceToken}", BaseNumbers.NumberReplaceToken);
 
     public static final String NumberWithPrefixPercentage = "(Prozent)(\\s*)({BaseNumbers.NumberReplaceToken})"
@@ -480,7 +480,11 @@ public class GermanNumeric {
         .put("t", 1000000000000L)
         .build();
 
-    public static final ImmutableMap<String, String> RelativeReferenceMap = ImmutableMap.<String, String>builder()
+    public static final ImmutableMap<String, String> RelativeReferenceOffsetMap = ImmutableMap.<String, String>builder()
+        .put("", "")
+        .build();
+
+    public static final ImmutableMap<String, String> RelativeReferenceRelativeToMap = ImmutableMap.<String, String>builder()
         .put("", "")
         .build();
 }

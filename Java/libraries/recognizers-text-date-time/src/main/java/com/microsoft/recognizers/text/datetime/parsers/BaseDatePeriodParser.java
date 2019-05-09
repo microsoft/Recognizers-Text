@@ -662,9 +662,9 @@ public class BaseDatePeriodParser implements IDateTimeParser {
                 swift = this.config.getSwiftDayOrMonth(trimmedText);
 
                 if (this.config.isWeekOnly(trimmedText)) {
-                    LocalDateTime monday = DateUtil.thisDate(referenceDate, DayOfWeek.MONDAY.getValue()).plusDays(Constants.WeekDayCount * swift);
+                    LocalDateTime thursday = DateUtil.thisDate(referenceDate, DayOfWeek.THURSDAY.getValue()).plusDays(Constants.WeekDayCount * swift);
 
-                    ret.setTimex(isRef ? TimexUtility.generateWeekTimex() : TimexUtility.generateWeekTimex(monday));
+                    ret.setTimex(isRef ? TimexUtility.generateWeekTimex() : TimexUtility.generateWeekTimex(thursday));
 
                     LocalDateTime beginDate = DateUtil.thisDate(referenceDate, DayOfWeek.MONDAY.getValue()).plusDays(Constants.WeekDayCount * swift);
 
@@ -1500,15 +1500,17 @@ public class BaseDatePeriodParser implements IDateTimeParser {
         if (match.getSuccess()) {
             int num = Integer.parseInt(match.getMatch().get().getGroup("number").value);
             int year = referenceDate.getYear();
-            ret.setTimex(String.format("%04d", year));
+            ret.setTimex(String.format("%04d-W%02d", year, num));
             LocalDateTime firstDay = DateUtil.safeCreateFromMinValue(year, 1, 1);
-            LocalDateTime firstWeekday = DateUtil.thisDate(firstDay, DayOfWeek.of(1).getValue());
-            LocalDateTime value = firstWeekday.plusDays(Constants.WeekDayCount * num);
-            LocalDateTime futureDate = value;
-            LocalDateTime pastDate = value;
-            ret.setTimex(String.format("%s-W%02d", ret.getTimex(), num));
-            ret.setFutureValue(new Pair<>(futureDate, futureDate.plusDays(7)));
-            ret.setPastValue(new Pair<>(pastDate, pastDate.plusDays(7)));
+            LocalDateTime firstThursday = DateUtil.thisDate(firstDay, DayOfWeek.of(4).getValue());
+
+            if (DateUtil.weekOfYear(firstThursday) == 1) {
+                num -= 1;
+            }
+
+            LocalDateTime value = firstThursday.plusDays(Constants.WeekDayCount * num - 3);
+            ret.setFutureValue(new Pair<>(value, value.plusDays(7)));
+            ret.setPastValue(new Pair<>(value, value.plusDays(7)));
             ret.setSuccess(true);
         }
         return ret;

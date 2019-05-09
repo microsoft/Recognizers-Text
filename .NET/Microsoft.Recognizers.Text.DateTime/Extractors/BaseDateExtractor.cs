@@ -80,7 +80,16 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     if (rangeUnitMatch.Success)
                     {
-                        ret.Add(new Token(startToken, duration.End));
+                        var sinceYearMatch = Config.SinceYearSuffixRegex.Match(afterStr);
+
+                        if (sinceYearMatch.Success)
+                        {
+                            ret.Add(new Token(startToken, duration.End + sinceYearMatch.Length));
+                        }
+                        else
+                        {
+                            ret.Add(new Token(startToken, duration.End));
+                        }
                     }
                 }
             }

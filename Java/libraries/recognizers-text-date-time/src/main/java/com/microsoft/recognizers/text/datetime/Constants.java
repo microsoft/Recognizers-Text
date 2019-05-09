@@ -131,6 +131,7 @@ public class Constants {
     public static final String RightAmPmGroupName = "rightDesc";
 
     public static final String DECADE_UNIT = "10Y";
+    public static final String FORTNIGHT_UNIT = "2W";
 
     // Timex
     public static final String[] DatePeriodTimexSplitter = { ",", "(", ")" };

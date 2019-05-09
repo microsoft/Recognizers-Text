@@ -24,6 +24,7 @@ namespace Microsoft.Recognizers.Definitions.English
 		public const string LangMarker = @"Eng";
 		public const string RoundNumberIntegerRegex = @"(hundred|thousand|million|billion|trillion)";
 		public const string ZeroToNineIntegerRegex = @"(three|seven|eight|four|five|zero|nine|one|two|six)";
+		public const string TwoToNineIntegerRegex = @"(three|seven|eight|four|five|nine|two|six)";
 		public const string NegativeNumberTermsRegex = @"((minus|negative)\s+)";
 		public static readonly string NegativeNumberSignRegex = $@"^{NegativeNumberTermsRegex}.*";
 		public const string AnIntRegex = @"(an|a)(?=\s)";
@@ -41,8 +42,9 @@ namespace Microsoft.Recognizers.Definitions.English
 		public static readonly string AllIntRegexWithDozenSuffixLocks = $@"(?<=\b)(((half\s+)?a\s+dozen)|({AllIntRegex}\s+dozen(s)?))(?=\b)";
 		public const string RoundNumberOrdinalRegex = @"(hundredth|thousandth|millionth|billionth|trillionth)";
 		public const string NumberOrdinalRegex = @"(first|second|third|fourth|fifth|sixth|seventh|eighth|ninth|tenth|eleventh|twelfth|thirteenth|fourteenth|fifteenth|sixteenth|seventeenth|eighteenth|nineteenth|twentieth|thirtieth|fortieth|fiftieth|sixtieth|seventieth|eightieth|ninetieth)";
-		public const string RelativeOrdinalRegex = @"((next|previous) one|(the second|next) to last|the one before the last( one)?|the last but one|(ante)?penultimate|last|next)";
+		public const string RelativeOrdinalRegex = @"((next|previous) one|(the second|next) to last|the one before the last( one)?|the last but one|(ante)?penultimate|last|next|previous)";
 		public static readonly string BasicOrdinalRegex = $@"({NumberOrdinalRegex}|{RelativeOrdinalRegex})";
+		public static readonly string RelativeOrdinalFilterRegex = $@"(?<!-)(first|{RelativeOrdinalRegex})\s*({TwoToNineIntegerRegex}|[2-9]+)(?!\s*{RoundNumberIntegerRegex})";
 		public static readonly string SuffixBasicOrdinalRegex = $@"((((({TensNumberIntegerRegex}(\s+(and\s+)?|\s*-\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{AnIntRegex})(\s+{RoundNumberIntegerRegex})+)\s+(and\s+)?)*({TensNumberIntegerRegex}(\s+|\s*-\s*))?{BasicOrdinalRegex})";
 		public static readonly string SuffixRoundNumberOrdinalRegex = $@"(({AllIntRegex}\s+){RoundNumberOrdinalRegex})";
 		public static readonly string AllOrdinalRegex = $@"({SuffixBasicOrdinalRegex}|{SuffixRoundNumberOrdinalRegex})";
@@ -53,7 +55,7 @@ namespace Microsoft.Recognizers.Definitions.English
 		public const string FractionNotationWithSpacesRegex = @"(((?<=\W|^)-\s*)|(?<=\b))\d+\s+\d+[/]\d+(?=(\b[^/]|$))";
 		public const string FractionNotationRegex = @"(((?<=\W|^)-\s*)|(?<![/-])(?<=\b))\d+[/]\d+(?=(\b[^/]|$))";
 		public static readonly string FractionNounRegex = $@"(?<=\b)({AllIntRegex}\s+(and\s+)?)?({AllIntRegex})(\s+|\s*-\s*)((({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))s|halves|quarters)(?=\b)";
-		public static readonly string FractionNounWithArticleRegex = $@"(?<=\b)({AllIntRegex}\s+(and\s+)?)?(a|an|one)(\s+|\s*-\s*)(?!\bfirst\b|\bsecond\b)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|half|quarter)(?=\b)";
+		public static readonly string FractionNounWithArticleRegex = $@"(?<=\b)((({AllIntRegex}\s+(and\s+)?)?(a|an|one)(\s+|\s*-\s*)(?!\bfirst\b|\bsecond\b)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|half|quarter))|(half))(?=\b)";
 		public static readonly string FractionPrepositionRegex = $@"(?<=\b)(?<numerator>({AllIntRegex})|((?<![\.,])\d+))\s+(over|in|out\s+of)\s+(?<denominator>({AllIntRegex})|(\d+)(?![\.,]))(?=\b)";
 		public static readonly string FractionPrepositionWithinPercentModeRegex = $@"(?<=\b)(?<numerator>({AllIntRegex})|((?<![\.,])\d+))\s+over\s+(?<denominator>({AllIntRegex})|(\d+)(?![\.,]))(?=\b)";
 		public static readonly string AllPointRegex = $@"((\s+{ZeroToNineIntegerRegex})+|(\s+{SeparaIntRegex}))";
@@ -247,18 +249,33 @@ namespace Microsoft.Recognizers.Definitions.English
 		{
 			{ @"\bone\b", @"\b(the|this|that|which)\s+(one)\b" }
 		};
-		public static readonly Dictionary<string, string> RelativeReferenceMap = new Dictionary<string, string>
+		public static readonly Dictionary<string, string> RelativeReferenceOffsetMap = new Dictionary<string, string>
 		{
-			{ @"last", @"N" },
-			{ @"next one", @"CURR+1" },
-			{ @"previous one", @"CURR-1" },
-			{ @"the second to last", @"N-1" },
-			{ @"the one before the last one", @"N-1" },
-			{ @"next to last", @"N-1" },
-			{ @"penultimate", @"N-1" },
-			{ @"the last but one", @"N-1" },
-			{ @"antepenultimate", @"N-2" },
-			{ @"next", @"CURR+1" }
+			{ @"last", @"0" },
+			{ @"next one", @"1" },
+			{ @"previous one", @"-1" },
+			{ @"the second to last", @"-1" },
+			{ @"the one before the last one", @"-1" },
+			{ @"next to last", @"-1" },
+			{ @"penultimate", @"-1" },
+			{ @"the last but one", @"-1" },
+			{ @"antepenultimate", @"-2" },
+			{ @"next", @"1" },
+			{ @"previous", @"-1" }
+		};
+		public static readonly Dictionary<string, string> RelativeReferenceRelativeToMap = new Dictionary<string, string>
+		{
+			{ @"last", @"end" },
+			{ @"next one", @"current" },
+			{ @"previous one", @"current" },
+			{ @"the second to last", @"end" },
+			{ @"the one before the last one", @"end" },
+			{ @"next to last", @"end" },
+			{ @"penultimate", @"end" },
+			{ @"the last but one", @"end" },
+			{ @"antepenultimate", @"end" },
+			{ @"next", @"current" },
+			{ @"previous", @"current" }
 		};
 	}
 }

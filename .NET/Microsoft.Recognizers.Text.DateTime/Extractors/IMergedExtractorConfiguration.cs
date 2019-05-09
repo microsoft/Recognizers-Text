@@ -49,7 +49,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex NumberEndingPattern { get; }
 
-        Regex DateAfterRegex { get; }
+        Regex SuffixAfterRegex { get; }
 
         Regex UnspecificDatePeriodRegex { get; }
 

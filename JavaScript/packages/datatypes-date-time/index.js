@@ -5,6 +5,7 @@ module.exports = {
     TimexProperty: require('./src/timexProperty.js').TimexProperty,
     TimexSet: require('./src/timexSet.js').TimexSet,
     creator: require('./src/timexCreator.js'),
-    resolver: require('./src/timexRangeResolver.js')
+    resolver: require('./src/timexRangeResolver.js'),
+    valueResolver: require('./src/timexResolver.js')
 };
 

@@ -4601,5 +4601,50 @@
         }
       }
     ]
+  },
+  {
+    "Input": "I'll call you at Friday, Feb-22 at 1:30 PM PT at (123).456.7890.",
+    "Results": [
+      {
+        "Text": "(123).456.7890",
+        "Start": 49,
+        "End": 62,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "0.8",
+          "value": "(123).456.7890"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "To call #Person#, please enter 011-82-10-1234-5678.",
+    "Results": [
+      {
+        "Text": "011-82-10-1234-5678",
+        "Start": 31,
+        "End": 49,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "0.8",
+          "value": "011-82-10-1234-5678"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My prefered number is +55 11 12345-6789\nThanks.",
+    "Results": [
+      {
+        "Text": "+55 11 12345-6789",
+        "Start": 22,
+        "End": 38,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "1",
+          "value": "+55 11 12345-6789"
+        }
+      }
+    ]
   }
 ]

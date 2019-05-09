@@ -30,6 +30,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             UnspecificEndOfRegex = GermanDateTimeExtractorConfiguration.UnspecificEndOfRegex;
             UnitRegex = GermanTimeExtractorConfiguration.TimeUnitRegex;
             DateNumberConnectorRegex = GermanDateTimeExtractorConfiguration.DateNumberConnectorRegex;
+            YearRegex = GermanDateTimeExtractorConfiguration.YearRegex;
 
             Numbers = config.Numbers;
             CardinalExtractor = config.CardinalExtractor;
@@ -84,6 +85,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public Regex UnitRegex { get; }
 
         public Regex DateNumberConnectorRegex { get; }
+
+        public Regex YearRegex { get; }
 
         public IImmutableDictionary<string, int> Numbers { get; }
 

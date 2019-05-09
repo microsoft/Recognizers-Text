@@ -12,6 +12,7 @@ class EnglishNumeric:
     LangMarker = 'Eng'
     RoundNumberIntegerRegex = f'(hundred|thousand|million|billion|trillion)'
     ZeroToNineIntegerRegex = f'(three|seven|eight|four|five|zero|nine|one|two|six)'
+    TwoToNineIntegerRegex = f'(three|seven|eight|four|five|nine|two|six)'
     NegativeNumberTermsRegex = f'((minus|negative)\\s+)'
     NegativeNumberSignRegex = f'^{NegativeNumberTermsRegex}.*'
     AnIntRegex = f'(an|a)(?=\\s)'
@@ -29,8 +30,9 @@ class EnglishNumeric:
     AllIntRegexWithDozenSuffixLocks = f'(?<=\\b)(((half\\s+)?a\\s+dozen)|({AllIntRegex}\\s+dozen(s)?))(?=\\b)'
     RoundNumberOrdinalRegex = f'(hundredth|thousandth|millionth|billionth|trillionth)'
     NumberOrdinalRegex = f'(first|second|third|fourth|fifth|sixth|seventh|eighth|ninth|tenth|eleventh|twelfth|thirteenth|fourteenth|fifteenth|sixteenth|seventeenth|eighteenth|nineteenth|twentieth|thirtieth|fortieth|fiftieth|sixtieth|seventieth|eightieth|ninetieth)'
-    RelativeOrdinalRegex = f'((next|previous) one|(the second|next) to last|the one before the last( one)?|the last but one|(ante)?penultimate|last|next)'
+    RelativeOrdinalRegex = f'((next|previous) one|(the second|next) to last|the one before the last( one)?|the last but one|(ante)?penultimate|last|next|previous)'
     BasicOrdinalRegex = f'({NumberOrdinalRegex}|{RelativeOrdinalRegex})'
+    RelativeOrdinalFilterRegex = f'(?<!-)(first|{RelativeOrdinalRegex})\\s*({TwoToNineIntegerRegex}|[2-9]+)(?!\\s*{RoundNumberIntegerRegex})'
     SuffixBasicOrdinalRegex = f'((((({TensNumberIntegerRegex}(\\s+(and\\s+)?|\\s*-\\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{AnIntRegex})(\\s+{RoundNumberIntegerRegex})+)\\s+(and\\s+)?)*({TensNumberIntegerRegex}(\\s+|\\s*-\\s*))?{BasicOrdinalRegex})'
     SuffixRoundNumberOrdinalRegex = f'(({AllIntRegex}\\s+){RoundNumberOrdinalRegex})'
     AllOrdinalRegex = f'({SuffixBasicOrdinalRegex}|{SuffixRoundNumberOrdinalRegex})'
@@ -41,7 +43,7 @@ class EnglishNumeric:
     FractionNotationWithSpacesRegex = f'(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+\\s+\\d+[/]\\d+(?=(\\b[^/]|$))'
     FractionNotationRegex = f'(((?<=\\W|^)-\\s*)|(?<![/-])(?<=\\b))\\d+[/]\\d+(?=(\\b[^/]|$))'
     FractionNounRegex = f'(?<=\\b)({AllIntRegex}\\s+(and\\s+)?)?({AllIntRegex})(\\s+|\\s*-\\s*)((({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))s|halves|quarters)(?=\\b)'
-    FractionNounWithArticleRegex = f'(?<=\\b)({AllIntRegex}\\s+(and\\s+)?)?(a|an|one)(\\s+|\\s*-\\s*)(?!\\bfirst\\b|\\bsecond\\b)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|half|quarter)(?=\\b)'
+    FractionNounWithArticleRegex = f'(?<=\\b)((({AllIntRegex}\\s+(and\\s+)?)?(a|an|one)(\\s+|\\s*-\\s*)(?!\\bfirst\\b|\\bsecond\\b)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|half|quarter))|(half))(?=\\b)'
     FractionPrepositionRegex = f'(?<=\\b)(?<numerator>({AllIntRegex})|((?<![\\.,])\\d+))\\s+(over|in|out\\s+of)\\s+(?<denominator>({AllIntRegex})|(\\d+)(?![\\.,]))(?=\\b)'
     FractionPrepositionWithinPercentModeRegex = f'(?<=\\b)(?<numerator>({AllIntRegex})|((?<![\\.,])\\d+))\\s+over\\s+(?<denominator>({AllIntRegex})|(\\d+)(?![\\.,]))(?=\\b)'
     AllPointRegex = f'((\\s+{ZeroToNineIntegerRegex})+|(\\s+{SeparaIntRegex}))'
@@ -223,14 +225,26 @@ class EnglishNumeric:
                            ("b", 1000000000),
                            ("t", 1000000000000)])
     AmbiguityFiltersDict = dict([("\\bone\\b", "\\b(the|this|that|which)\\s+(one)\\b")])
-    RelativeReferenceMap = dict([("last", "N"),
-                                 ("next one", "CURR+1"),
-                                 ("previous one", "CURR-1"),
-                                 ("the second to last", "N-1"),
-                                 ("the one before the last one", "N-1"),
-                                 ("next to last", "N-1"),
-                                 ("penultimate", "N-1"),
-                                 ("the last but one", "N-1"),
-                                 ("antepenultimate", "N-2"),
-                                 ("next", "CURR+1")])
+    RelativeReferenceOffsetMap = dict([("last", "0"),
+                                       ("next one", "1"),
+                                       ("previous one", "-1"),
+                                       ("the second to last", "-1"),
+                                       ("the one before the last one", "-1"),
+                                       ("next to last", "-1"),
+                                       ("penultimate", "-1"),
+                                       ("the last but one", "-1"),
+                                       ("antepenultimate", "-2"),
+                                       ("next", "1"),
+                                       ("previous", "-1")])
+    RelativeReferenceRelativeToMap = dict([("last", "end"),
+                                           ("next one", "current"),
+                                           ("previous one", "current"),
+                                           ("the second to last", "end"),
+                                           ("the one before the last one", "end"),
+                                           ("next to last", "end"),
+                                           ("penultimate", "end"),
+                                           ("the last but one", "end"),
+                                           ("antepenultimate", "end"),
+                                           ("next", "current"),
+                                           ("previous", "current")])
 # pylint: enable=line-too-long

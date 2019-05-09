@@ -150,7 +150,7 @@ public class FrenchDateTime {
             .replace("{NextSuffixRegex}", NextSuffixRegex)
             .replace("{PastSuffixRegex}", PastSuffixRegex);
 
-    public static final String WhichWeekRegex = "(semaine)(\\s*)(?<number>\\d\\d|\\d|0\\d)";
+    public static final String WhichWeekRegex = "\\b(semaine)(\\s*)(?<number>5[0-3]|[1-4]\\d|0?[1-9])\\b";
 
     public static final String WeekOfRegex = "(semaine)(\\s*)(de)";
 
@@ -573,6 +573,8 @@ public class FrenchDateTime {
 
     public static final String InConnectorRegex = "\\b(dans|en|sur)\\b";
 
+    public static final String SinceYearSuffixRegex = "^[.]";
+
     public static final String WithinNextPrefixRegex = "^[.]";
 
     public static final String MorningStartEndRegex = "(^(matin))|((matin)$)";
@@ -640,11 +642,12 @@ public class FrenchDateTime {
             .replace("{WeekDayRegex}", WeekDayRegex)
             .replace("{FlexibleDayRegex}", FlexibleDayRegex);
 
-    public static final String WeekDayAndDayRegex = "\\b{WeekDayRegex}\\s+(?!(the)){DayRegex}(?!([-]|(\\s+({AmDescRegex}|{PmDescRegex}))))\\b"
+    public static final String WeekDayAndDayRegex = "\\b{WeekDayRegex}\\s+(?!(the)){DayRegex}(?!([-]|(\\s+({AmDescRegex}|{PmDescRegex}|{OclockRegex}))))\\b"
             .replace("{WeekDayRegex}", WeekDayRegex)
             .replace("{DayRegex}", DayRegex)
             .replace("{AmDescRegex}", AmDescRegex)
-            .replace("{PmDescRegex}", PmDescRegex);
+            .replace("{PmDescRegex}", PmDescRegex)
+            .replace("{OclockRegex}", OclockRegex);
 
     public static final String RestOfDateRegex = "\\b(reste|fin)\\s+(d[eu]\\s+)?((le|cette|ce)\\s+)?(?<duration>semaine|mois|l'ann[ée]e)\\b";
 
@@ -684,7 +687,7 @@ public class FrenchDateTime {
             .replace("{DateYearRegex}", DateYearRegex)
             .replace("{FullTextYearRegex}", FullTextYearRegex);
 
-    public static final String DateAfterRegex = "^[.]";
+    public static final String SuffixAfterRegex = "^[.]";
 
     public static final String YearPeriodRegex = "^[.]";
 

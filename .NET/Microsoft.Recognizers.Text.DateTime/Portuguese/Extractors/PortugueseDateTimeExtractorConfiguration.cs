@@ -21,12 +21,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         public static readonly Regex SimpleTimeOfTodayBeforeRegex = new Regex(DateTimeDefinitions.SimpleTimeOfTodayBeforeRegex, RegexOptions.Singleline);
         public static readonly Regex SpecificEndOfRegex = new Regex(DateTimeDefinitions.SpecificEndOfRegex, RegexOptions.Singleline);
         public static readonly Regex UnspecificEndOfRegex = new Regex(DateTimeDefinitions.UnspecificEndOfRegex, RegexOptions.Singleline);
+        public static readonly Regex YearRegex = new Regex(DateTimeDefinitions.YearRegex, RegexOptions.Singleline);
+        public static readonly Regex YearSuffix = new Regex(DateTimeDefinitions.YearSuffix, RegexOptions.Singleline);
 
         // TODO: add this for Portuguese
         public static readonly Regex UnitRegex = new Regex(DateTimeDefinitions.UnitRegex, RegexOptions.Singleline);
         public static readonly Regex ConnectorRegex = new Regex(DateTimeDefinitions.ConnectorRegex, RegexOptions.Singleline);
         public static readonly Regex NumberAsTimeRegex = new Regex(DateTimeDefinitions.NumberAsTimeRegex, RegexOptions.Singleline);
         public static readonly Regex DateNumberConnectorRegex = new Regex(DateTimeDefinitions.DateNumberConnectorRegex, RegexOptions.Singleline);
+        public static readonly Regex SuffixAfterRegex = new Regex(DateTimeDefinitions.SuffixAfterRegex, RegexOptions.Singleline);
 
         public PortugueseDateTimeExtractorConfiguration(IOptionsConfiguration config)
             : base(config)
@@ -71,6 +74,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         Regex IDateTimeExtractorConfiguration.NumberAsTimeRegex => NumberAsTimeRegex;
 
         Regex IDateTimeExtractorConfiguration.DateNumberConnectorRegex => DateNumberConnectorRegex;
+
+        Regex IDateTimeExtractorConfiguration.YearRegex => YearRegex;
+
+        Regex IDateTimeExtractorConfiguration.YearSuffix => YearSuffix;
+
+        Regex IDateTimeExtractorConfiguration.SuffixAfterRegex => SuffixAfterRegex;
 
         public bool IsConnector(string text)
         {

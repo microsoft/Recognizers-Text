@@ -274,6 +274,7 @@ namespace Microsoft.Recognizers.Text.Number
                     AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new DutchNumberParserConfiguration()),
                     new Dutch.PercentageExtractor(options)));
 
+            // When registering NumberRangeModel, enable TestNumber_Dutch -> NumberRangeModel tests
             /*
             RegisterModel<NumberRangeModel>(
                 Culture.Dutch,

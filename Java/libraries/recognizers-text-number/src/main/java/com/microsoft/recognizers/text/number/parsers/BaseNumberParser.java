@@ -194,6 +194,12 @@ public class BaseNumberParser implements IParser {
             long currentValue = config.resolveCompositeNumber(fracWords.get(splitIndex));
             long roundValue = 1;
 
+            // For case like "half"
+            if (fracWords.size() == 1) {
+                result.setValue(1 / getIntValue(fracWords));
+                return result;
+            }
+
             for (splitIndex = fracWords.size() - 2; splitIndex >= 0; splitIndex--) {
 
                 String fracWord = fracWords.get(splitIndex);

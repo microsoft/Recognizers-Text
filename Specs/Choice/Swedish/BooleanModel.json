@@ -1,0 +1,542 @@
+[
+  {
+    "Input": "sant",
+    "NotSupported":"javascript",
+    "NotSupportedByDesign": "python,java",
+    "Results": [
+      {
+        "Text": "sant",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 1.0
+        }
+      }
+    ]
+  },
+  {
+    "Input": "ja",
+    "NotSupported":"javascript",
+    "NotSupportedByDesign": "python,java",
+    "Results": [
+      {
+        "Text": "ja",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 1.0
+        }
+      }
+    ]
+  },
+  {
+    "Input": "ja det är ok",
+    "NotSupported":"javascript",
+    "NotSupportedByDesign": "python,java",
+    "Results": [
+      {
+        "Text": "ja",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 0.55
+        }
+      }
+    ]
+  },
+  {
+    "Input": "ja, det är ok",
+    "NotSupported":"javascript",
+    "NotSupportedByDesign": "python,java",
+    "Results": [
+      {
+        "Text": "ja",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 0.55
+        }
+      }
+    ]
+  },
+  {
+    "Input": "yes",
+    "NotSupported":"javascript",
+    "NotSupportedByDesign": "python,java",
+    "Results": [
+      {
+        "Text": "yes",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 1.0
+        }
+      }
+    ]
+  },
+  {
+    "Input": "y",
+    "NotSupported":"javascript",
+    "NotSupportedByDesign": "python,java",
+    "Results": [
+      {
+        "Text": "y",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 1.0
+        }
+      }
+    ]
+  },
+  {
+    "Input": "j",
+    "NotSupported":"javascript",
+    "NotSupportedByDesign": "python,java",
+    "Results": [
+      {
+        "Text": "j",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 1.0
+        }
+      }
+    ]
+  },
+  {
+    "Input": "ok",
+    "NotSupported":"javascript",
+    "NotSupportedByDesign": "python,java",
+    "Results": [
+      {
+        "Text": "ok",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 1.0
+        }
+      }
+    ]
+  },
+  {
+    "Input": "ok då",
+    "NotSupported":"javascript",
+    "NotSupportedByDesign": "python,java",
+    "Results": [
+      {
+        "Text": "ok",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 0.7
+        }
+      }
+    ]
+  },
+  {
+    "Input": "det är ok",
+    "NotSupported":"javascript",
+    "NotSupportedByDesign": "python,java",
+    "Results": [
+      {
+        "Text": "ok",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 0.6
+        }
+      }
+    ]
+  },
+  {
+    "Input": "ja det är ok",
+    "NotSupported":"javascript",
+    "NotSupportedByDesign": "python,java",
+    "Results": [
+      {
+        "Text": "ja",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 0.55
+        }
+      }
+    ]
+  },
+  {
+    "Input": "ja, det är ok",
+    "NotSupported":"javascript",
+    "NotSupportedByDesign": "python,java",
+    "Results": [
+      {
+        "Text": "ja",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 0.55
+        }
+      }
+    ]
+  },
+  {
+    "Input": "japp",
+    "NotSupported":"javascript",
+    "NotSupportedByDesign": "python,java",
+    "Results": [
+      {
+        "Text": "japp",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 1.0
+        }
+      }
+    ]
+  },
+  {
+    "Input": "jupp",
+    "NotSupported":"javascript",
+    "NotSupportedByDesign": "python,java",
+    "Results": [
+      {
+        "Text": "jupp",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 1.0
+        }
+      }
+    ]
+  },
+  {
+    "Input": "jepp",
+    "NotSupported":"javascript",
+    "NotSupportedByDesign": "python,java",
+    "Results": [
+      {
+        "Text": "jepp",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 1.0
+        }
+      }
+    ]
+  },
+  {
+    "Input": "absolut",
+    "NotSupported":"javascript",
+    "NotSupportedByDesign": "python,java",
+    "Results": [
+      {
+        "Text": "absolut",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 1.0
+        }
+      }
+    ]
+  },
+  {
+    "Input": "säkert",
+    "NotSupported":"javascript",
+    "NotSupportedByDesign": "python,java",
+    "Results": [
+      {
+        "Text": "säkert",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 1.0
+        }
+      }
+    ]
+  },
+  {
+    "Input": "instämmer",
+    "NotSupported":"javascript",
+    "NotSupportedByDesign": "python,java",
+    "Results": [
+      {
+        "Text": "instämmer",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 1.0
+        }
+      }
+    ]
+  },
+  {
+    "Input": "javisst",
+    "NotSupported":"javascript",
+    "NotSupportedByDesign": "python,java",
+    "Results": [
+      {
+        "Text": "javisst",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 1.0
+        }
+      }
+    ]
+  },
+  {
+    "Input": "kör",
+    "NotSupported":"javascript",
+    "NotSupportedByDesign": "python,java",
+    "Results": [
+      {
+        "Text": "kör",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 1.0
+        }
+      }
+    ]
+  },
+  {
+    "Input": "kör på!",
+    "NotSupported":"javascript",
+    "NotSupportedByDesign": "python,java",
+    "Results": [
+      {
+        "Text": "kör",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 0.7
+        }
+      }
+    ]
+  },
+  {
+    "Input": "👌👌👌",
+    "NotSupported":"javascript",
+    "NotSupportedByDesign": "python,java",
+    "Results": [
+      {
+        "Text": "👌",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 0.6
+        }
+      }
+    ]
+  },
+  {
+    "Input": "falskt",
+    "NotSupported":"javascript",
+    "NotSupportedByDesign": "python,java",
+    "Results": [
+      {
+        "Text": "falskt",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": false,
+          "score": 1.0
+        }
+      }
+    ]
+  },
+  {
+    "Input": "nej",
+    "NotSupported":"javascript",
+    "NotSupportedByDesign": "python,java",
+    "Results": [
+      {
+        "Text": "nej",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": false,
+          "score": 1.0
+        }
+      }
+    ]
+  },
+  {
+    "Input": "näpp",
+    "NotSupported":"javascript",
+    "NotSupportedByDesign": "python,java",
+    "Results": [
+      {
+        "Text": "näpp",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": false,
+          "score": 1.0
+        }
+      }
+    ]
+  },
+  {
+    "Input": "nope",
+    "NotSupported":"javascript",
+    "NotSupportedByDesign": "python,java",
+    "Results": [
+      {
+        "Text": "nope",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": false,
+          "score": 1.0
+        }
+      }
+    ]
+  },
+  {
+    "Input": "misstycker",
+    "NotSupported":"javascript",
+    "NotSupportedByDesign": "python,java",
+    "Results": [
+      {
+        "Text": "misstycker",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": false,
+          "score": 1.0
+        }
+      }
+    ]
+  },
+  {
+    "Input": "aldrig",
+    "NotSupported":"javascript",
+    "NotSupportedByDesign": "python,java",
+    "Results": [
+      {
+        "Text": "aldrig",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": false,
+          "score": 1.0
+        }
+      }
+    ]
+  },
+  {
+    "Input": "n",
+    "NotSupported":"javascript",
+    "NotSupportedByDesign": "python,java",
+    "Results": [
+      {
+        "Text": "n",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": false,
+          "score": 1.0
+        }
+      }
+    ]
+  },
+  {
+    "Input": "nä",
+    "NotSupported":"javascript",
+    "NotSupportedByDesign": "python,java",
+    "Results": [
+      {
+        "Text": "nä",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": false,
+          "score": 1.0
+        }
+      }
+    ]
+  },
+  {
+    "Input": "absolut inte",
+    "NotSupported":"javascript",
+    "NotSupportedByDesign": "python,java",
+    "Results": [
+      {
+        "Text": "absolut inte",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": false,
+          "score": 1.0
+        }
+      }
+    ]
+  },
+  {
+    "Input": "glöm det",
+    "NotSupported":"javascript",
+    "NotSupportedByDesign": "python,java",
+    "Results": [
+      {
+        "Text": "glöm det",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": false,
+          "score": 1.0
+        }
+      }
+    ]
+  },
+  {
+    "Input": "jag säger bara, glöm det!",
+    "NotSupported":"javascript",
+    "NotSupportedByDesign": "python,java",
+    "Results": [
+      {
+        "Text": "glöm det",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": false,
+          "score": 0.64
+        }
+      }
+    ]
+  },
+    {
+    "Input": "öh, nä",
+    "NotSupported":"javascript",
+    "NotSupportedByDesign": "python,java",
+    "Results": [
+      {
+        "Text": "nä",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": false,
+          "score": 0.7
+        }
+      }
+    ]
+  },
+  {
+    "Input": "jag vill inte det",
+    "NotSupported":"javascript",
+    "NotSupportedByDesign": "python,java",
+    "Results": [
+      {
+        "Text": "vill inte",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": false,
+          "score": 0.7
+        }
+      }
+    ]
+  },  
+  {
+    "Input": "nej, jag vill inte",
+    "NotSupported":"javascript",
+    "NotSupportedByDesign": "python,java",
+    "Results": [
+      {
+        "Text": "vill inte",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": false,
+          "score": 0.7
+        }
+      }
+    ]
+  }
+]
