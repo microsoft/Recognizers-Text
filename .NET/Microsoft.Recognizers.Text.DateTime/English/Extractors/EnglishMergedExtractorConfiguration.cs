@@ -39,6 +39,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex UnspecificDatePeriodRegex =
             new Regex(DateTimeDefinitions.UnspecificDatePeriodRegex, RegexOptions.Singleline);
 
+        public static readonly Regex FailFastRegex =
+            new Regex(DateTimeDefinitions.FailFastRegex, RegexOptions.Singleline | RegexOptions.Compiled);
+
         public static readonly Regex[] TermFilterRegexes =
         {
             // one on one
@@ -119,6 +122,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         Regex IMergedExtractorConfiguration.SuffixAfterRegex => SuffixAfterRegex;
 
         Regex IMergedExtractorConfiguration.UnspecificDatePeriodRegex => UnspecificDatePeriodRegex;
+
+        Regex IMergedExtractorConfiguration.FailFastRegex => FailFastRegex;
 
         IEnumerable<Regex> IMergedExtractorConfiguration.TermFilterRegexes => TermFilterRegexes;
 

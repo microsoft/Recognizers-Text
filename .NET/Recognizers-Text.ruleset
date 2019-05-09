@@ -159,7 +159,7 @@
     <Rule Id="CS8009" Action="Error" />
     <Rule Id="CS8012" Action="Error" />
     <Rule Id="CS8018" Action="Error" />
-    <Rule Id="CS8019" Action="Error" />
+    <Rule Id="CS8019" Action="Warning" />
     <Rule Id="CS8021" Action="Error" />
     <Rule Id="CS8029" Action="Error" />
     <Rule Id="CS8032" Action="Error" />
@@ -483,7 +483,7 @@
     <Rule Id="SA1509" Action="Error" />
     <Rule Id="SA1510" Action="Error" />
     <Rule Id="SA1511" Action="Error" />
-    <Rule Id="SA1512" Action="Error" />
+    <Rule Id="SA1512" Action="None" />
     <Rule Id="SA1513" Action="Error" />
     <Rule Id="SA1514" Action="Error" />
     <Rule Id="SA1515" Action="Error" />

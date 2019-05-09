@@ -20,7 +20,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             new List<string>(TimeZoneDefinitions.FullNameList);
 
         public static readonly StringMatcher TimeZoneMatcher =
-            TimeZoneUtility.BuildMatcherFromLists(AbbreviationsList, FullNameList);
+            TimeZoneUtility.BuildMatcherFromLists(FullNameList, AbbreviationsList);
 
         public static readonly Regex LocationTimeSuffixRegex =
             new Regex(TimeZoneDefinitions.LocationTimeSuffixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
