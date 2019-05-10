@@ -56,6 +56,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex FutureSuffixRegex =
             new Regex(DateTimeDefinitions.FutureSuffixRegex, RegexOptions.Singleline);
 
+        public static readonly Regex NowRegex =
+             new Regex(DateTimeDefinitions.NowRegex, RegexOptions.Singleline);
+
         // composite regexes
         public static readonly Regex SimpleCasesRegex =
             new Regex(DateTimeDefinitions.SimpleCasesRegex, RegexOptions.Singleline);
@@ -302,6 +305,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         Regex IDatePeriodExtractorConfiguration.CenturySuffixRegex => CenturySuffixRegex;
 
         Regex IDatePeriodExtractorConfiguration.MonthNumRegex => MonthNumRegex;
+
+        Regex IDatePeriodExtractorConfiguration.NowRegex => NowRegex;
 
         string[] IDatePeriodExtractorConfiguration.DurationDateRestrictions => DateTimeDefinitions.DurationDateRestrictions;
 

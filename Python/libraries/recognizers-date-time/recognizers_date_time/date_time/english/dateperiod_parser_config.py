@@ -156,6 +156,10 @@ class EnglishDatePeriodParserConfiguration(DatePeriodParserConfiguration):
     def unit_map(self) -> Dict[str, str]:
         return self._unit_map
 
+    @property
+    def now_regex(self) -> Pattern:
+        return self._now_regex
+
     def __init__(self, config: BaseDateParserConfiguration):
         self._date_extractor = config.date_extractor
         self._date_parser = config.date_parser
@@ -194,6 +198,7 @@ class EnglishDatePeriodParserConfiguration(DatePeriodParserConfiguration):
         self._cardinal_map = config.cardinal_map
         self._season_map = config.season_map
         self._unit_map = config.unit_map
+        self._now_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.NowRegex)
 
     def get_swift_day_or_month(self, source: str) -> int:
         trimmed_source = source.strip().lower()

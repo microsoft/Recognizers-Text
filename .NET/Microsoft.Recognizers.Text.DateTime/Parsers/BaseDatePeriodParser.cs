@@ -1264,43 +1264,58 @@ namespace Microsoft.Recognizers.Text.DateTime
             var ret = new DateTimeResolutionResult();
 
             var er = this.config.DateExtractor.Extract(text, referenceDate);
+            DateTimeParseResult pr1 = null;
+            DateTimeParseResult pr2 = null;
             if (er.Count < 2)
             {
                 er = this.config.DateExtractor.Extract(this.config.TokenBeforeDate + text, referenceDate);
-                if (er.Count < 2)
+                if (er.Count >= 2)
+                {
+                    er[0].Start -= this.config.TokenBeforeDate.Length;
+                    er[1].Start -= this.config.TokenBeforeDate.Length;
+                }
+                else
+                {
+                    var nowPr = ParseNowAsDate(text, referenceDate);
+                    if (nowPr.Value == null || er.Count < 1)
+                    {
+                        return ret;
+                    }
+
+                    var datePr = this.config.DateParser.Parse(er[0], referenceDate);
+                    pr1 = datePr.Start < nowPr.Start ? datePr : nowPr;
+                    pr2 = datePr.Start < nowPr.Start ? nowPr : datePr;
+                }
+            }
+
+            if (er.Count >= 2)
+            {
+                var match = this.config.WeekWithWeekDayRangeRegex.Match(text);
+                string weekPrefix = null;
+
+                if (match.Success)
+                {
+                    weekPrefix = match.Groups["week"].ToString();
+                }
+
+                if (!string.IsNullOrEmpty(weekPrefix))
+                {
+                    er[0].Text = weekPrefix + " " + er[0].Text;
+                    er[1].Text = weekPrefix + " " + er[1].Text;
+                }
+
+                var dateContext = GetYearContext(er[0].Text, er[1].Text, text);
+
+                pr1 = this.config.DateParser.Parse(er[0], referenceDate);
+                pr2 = this.config.DateParser.Parse(er[1], referenceDate);
+                if (pr1.Value == null || pr2.Value == null)
                 {
                     return ret;
                 }
 
-                er[0].Start -= this.config.TokenBeforeDate.Length;
-                er[1].Start -= this.config.TokenBeforeDate.Length;
+                pr1 = dateContext.ProcessDateEntityParsingResult(pr1);
+                pr2 = dateContext.ProcessDateEntityParsingResult(pr2);
             }
-
-            var match = this.config.WeekWithWeekDayRangeRegex.Match(text);
-            string weekPrefix = null;
-
-            if (match.Success)
-            {
-                weekPrefix = match.Groups["week"].ToString();
-            }
-
-            if (!string.IsNullOrEmpty(weekPrefix))
-            {
-                er[0].Text = weekPrefix + " " + er[0].Text;
-                er[1].Text = weekPrefix + " " + er[1].Text;
-            }
-
-            var dateContext = GetYearContext(er[0].Text, er[1].Text, text);
-
-            var pr1 = this.config.DateParser.Parse(er[0], referenceDate);
-            var pr2 = this.config.DateParser.Parse(er[1], referenceDate);
-            if (pr1.Value == null || pr2.Value == null)
-            {
-                return ret;
-            }
-
-            pr1 = dateContext.ProcessDateEntityParsingResult(pr1);
-            pr2 = dateContext.ProcessDateEntityParsingResult(pr2);
 
             ret.SubDateTimeEntities = new List<object> { pr1, pr2 };
 
@@ -1326,6 +1341,36 @@ namespace Microsoft.Recognizers.Text.DateTime
             ret.Success = true;
 
             return ret;
+        }
+
+        // Handle "between...and..." when contains with "now"
+        private DateTimeParseResult ParseNowAsDate(string text, DateObject referenceDate)
+        {
+            var pr = new DateTimeParseResult();
+            var match = this.config.NowRegex.Match(text);
+
+            if (match.Success)
+            {
+                var value = DateObject.MinValue.SafeCreateFromValue(referenceDate.Year, referenceDate.Month, referenceDate.Day);
+                var retNow = new DateTimeResolutionResult
+                {
+                    Timex = DateTimeFormatUtil.LuisDate(value),
+                    FutureValue = value,
+                    PastValue = value,
+                };
+
+                pr = new DateTimeParseResult
+                {
+                    Text = match.Value,
+                    Start = match.Index,
+                    Length = match.Length,
+                    Value = retNow,
+                    Type = Constants.SYS_DATETIME_DATE,
+                    TimexStr = retNow == null ? string.Empty : ((DateTimeResolutionResult)retNow).Timex,
+                };
+            }
+
+            return pr;
         }
 
         private DateTimeResolutionResult ParseDuration(string text, DateObject referenceDate)

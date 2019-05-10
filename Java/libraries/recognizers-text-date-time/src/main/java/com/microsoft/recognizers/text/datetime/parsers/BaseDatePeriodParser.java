@@ -939,42 +939,53 @@ public class BaseDatePeriodParser implements IDateTimeParser {
         DateTimeResolutionResult ret = new DateTimeResolutionResult();
 
         List<ExtractResult> er = this.config.getDateExtractor().extract(text, referenceDate);
+        DateTimeParseResult pr1 = null;
+        DateTimeParseResult pr2 = null;
         if (er.size() < 2) {
             er = this.config.getDateExtractor().extract(this.config.getTokenBeforeDate() + text, referenceDate);
-            if (er.size() < 2) {
+            if (er.size() >= 2) {
+                er.get(0).setStart(er.get(0).getStart() - this.config.getTokenBeforeDate().length());
+                er.get(1).setStart(er.get(1).getStart() - this.config.getTokenBeforeDate().length());
+                er.set(0, er.get(0));
+                er.set(1, er.get(1));
+            } else {
+                DateTimeParseResult nowPr = parseNowAsDate(text, referenceDate);
+                if (nowPr == null || er.size() < 1) {
+                    return ret;
+                }
+
+                DateTimeParseResult datePr = this.config.getDateParser().parse(er.get(0), referenceDate);
+                pr1 = datePr.getStart() < nowPr.getStart() ? datePr : nowPr;
+                pr2 = datePr.getStart() < nowPr.getStart() ? nowPr : datePr;
+            }
+
+        }
+        if (er.size() >= 2) {
+            Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(this.config.getWeekWithWeekDayRangeRegex(), text)).findFirst();
+            String weekPrefix = null;
+            if (match.isPresent()) {
+                weekPrefix = match.get().getGroup("week").value;
+            }
+
+            if (!StringUtility.isNullOrEmpty(weekPrefix)) {
+                er.get(0).setText(String.format("%s %s", weekPrefix, er.get(0).getText()));
+                er.get(1).setText(String.format("%s %s", weekPrefix, er.get(1).getText()));
+                er.set(0, er.get(0));
+                er.set(1, er.get(1));
+            }
+
+            DateContext dateContext = getYearContext(er.get(0).getText(), er.get(1).getText(), text);
+
+            pr1 = this.config.getDateParser().parse(er.get(0), referenceDate);
+            pr2 = this.config.getDateParser().parse(er.get(1), referenceDate);
+
+            if (pr1.getValue() == null || pr2.getValue() == null) {
                 return ret;
             }
-            er.get(0).setStart(er.get(0).getStart() - this.config.getTokenBeforeDate().length());
-            er.get(1).setStart(er.get(1).getStart() - this.config.getTokenBeforeDate().length());
-            er.set(0, er.get(0));
-            er.set(1, er.get(1));
+
+            pr1 = dateContext.processDateEntityParsingResult(pr1);
+            pr2 = dateContext.processDateEntityParsingResult(pr2);
         }
-
-        Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(this.config.getWeekWithWeekDayRangeRegex(), text)).findFirst();
-        String weekPrefix = null;
-        if (match.isPresent()) {
-            weekPrefix = match.get().getGroup("week").value;
-        }
-
-        if (!StringUtility.isNullOrEmpty(weekPrefix)) {
-            er.get(0).setText(String.format("%s %s", weekPrefix, er.get(0).getText()));
-            er.get(1).setText(String.format("%s %s", weekPrefix, er.get(1).getText()));
-            er.set(0, er.get(0));
-            er.set(1, er.get(1));
-        }
-
-        DateContext dateContext = getYearContext(er.get(0).getText(), er.get(1).getText(), text);
-
-        DateTimeParseResult pr1 = this.config.getDateParser().parse(er.get(0), referenceDate);
-        DateTimeParseResult pr2 = this.config.getDateParser().parse(er.get(1), referenceDate);
-
-        if (pr1.getValue() == null || pr2.getValue() == null) {
-            return ret;
-        }
-
-        pr1 = dateContext.processDateEntityParsingResult(pr1);
-        pr2 = dateContext.processDateEntityParsingResult(pr2);
-
 
         List<Object> subDateTimeEntities = new ArrayList<Object>();
         subDateTimeEntities.add(pr1);
@@ -1003,6 +1014,31 @@ public class BaseDatePeriodParser implements IDateTimeParser {
         ret.setSuccess(true);
 
         return ret;
+    }
+
+    // parse entities that made up by two time points with now
+    private DateTimeParseResult parseNowAsDate(String text, LocalDateTime referenceDate) {
+        DateTimeParseResult nowPr = null;
+        LocalDateTime value = referenceDate.toLocalDate().atStartOfDay();
+        Match[] matches = RegExpUtility.getMatches(this.config.getNowRegex(), text);
+        for (Match match : matches) {
+            DateTimeResolutionResult retNow = new DateTimeResolutionResult();
+            retNow.setTimex(DateTimeFormatUtil.luisDate(value));
+            retNow.setFutureValue(value);
+            retNow.setPastValue(value);
+
+            nowPr = new DateTimeParseResult(
+                match.index,
+                match.length,
+                match.value,
+                Constants.SYS_DATETIME_DATE,
+                null,
+                retNow,
+                "",
+                value == null ? "" : ((DateTimeResolutionResult)retNow).getTimex());
+        }
+
+        return nowPr;
     }
 
     private DateTimeResolutionResult parseDuration(String text, LocalDateTime referenceDate) {

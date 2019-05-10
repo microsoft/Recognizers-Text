@@ -74,6 +74,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             LessThanRegex = PortugueseDatePeriodExtractorConfiguration.LessThanRegex;
             MoreThanRegex = PortugueseDatePeriodExtractorConfiguration.MoreThanRegex;
             CenturySuffixRegex = PortugueseDatePeriodExtractorConfiguration.CenturySuffixRegex;
+            NowRegex = PortugueseDatePeriodExtractorConfiguration.NowRegex;
             UnitMap = config.UnitMap;
             CardinalMap = config.CardinalMap;
             DayOfMonth = config.DayOfMonth;
@@ -179,6 +180,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         public Regex MoreThanRegex { get; }
 
         public Regex CenturySuffixRegex { get; }
+
+        public Regex NowRegex { get; }
 
         Regex IDatePeriodParserConfiguration.NextPrefixRegex => NextPrefixRegex;
 

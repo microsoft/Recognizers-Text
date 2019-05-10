@@ -217,7 +217,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 var swift = GetSwiftDay(exactMatch.Value);
 
-                var value = referenceDate.AddDays(swift);
+                var value = referenceDate.Date.AddDays(swift);
 
                 ret.Timex = DateTimeFormatUtil.LuisDate(value);
                 ret.FutureValue = ret.PastValue = value;
