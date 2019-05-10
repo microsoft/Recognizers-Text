@@ -5601,7 +5601,6 @@
     "Context": {
       "ReferenceDateTime": "2019-04-23T12:00:00"
     },
-    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "between now and November 15th",
@@ -5627,7 +5626,6 @@
     "Context": {
       "ReferenceDateTime": "2019-04-25T12:00:00"
     },
-    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "between Jan 22 and now",

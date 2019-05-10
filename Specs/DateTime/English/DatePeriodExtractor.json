@@ -3720,7 +3720,6 @@
   },
   {
     "Input": "I will do my work between now and November 15th",
-    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "between now and November 15th",
@@ -3732,7 +3731,6 @@
   },
   {
     "Input": "I have finished my work between Jan 22 and now",
-    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "between Jan 22 and now",
