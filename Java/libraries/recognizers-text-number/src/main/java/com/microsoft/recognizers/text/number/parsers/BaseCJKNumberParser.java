@@ -86,7 +86,7 @@ public class BaseCJKNumberParser extends BaseNumberParser {
             demoPart = splitResult[1];
             numPart = splitResult[2];
         } else {
-            intPart = getResolutionString(cjkConfig.getZeroChar());
+            intPart = String.valueOf(cjkConfig.getZeroChar());
             demoPart = splitResult[0];
             numPart = splitResult[1];
         }
@@ -212,7 +212,7 @@ public class BaseCJKNumberParser extends BaseNumberParser {
 
             String[] splitResult = cjkConfig.getPointRegex().split(doubleText);
             if (splitResult[0].equals("")) {
-                splitResult[0] = getResolutionString(cjkConfig.getZeroChar());
+                splitResult[0] = String.valueOf(cjkConfig.getZeroChar());
             }
 
             double doubleValue = getIntValue(splitResult[0]);
@@ -269,7 +269,7 @@ public class BaseCJKNumberParser extends BaseNumberParser {
             String[] splitResult = cjkConfig.getPointRegex().split(resultText);
 
             if (splitResult[0].equals("")) {
-                splitResult[0] = getResolutionString(cjkConfig.getZeroChar());
+                splitResult[0] = String.valueOf(cjkConfig.getZeroChar());
             }
 
             if (cjkConfig.getNegativeNumberSignRegex().matcher(splitResult[0]).find()) {
