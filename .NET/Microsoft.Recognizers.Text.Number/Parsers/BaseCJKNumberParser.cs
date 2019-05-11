@@ -203,7 +203,7 @@ namespace Microsoft.Recognizers.Text.Number
                         {
                             intNumber = 5;
                         }
-                        else if (intNumberChar == '十' || intNumberChar == '拾')
+                        else if (Config.TenDirectList.Contains(intNumberChar))
                         {
                             intNumber = 10;
                         }
@@ -247,7 +247,7 @@ namespace Microsoft.Recognizers.Text.Number
                         {
                             intNumber = 5;
                         }
-                        else if (intNumberChar == '十' || intNumberChar == '拾')
+                        else if (Config.TenDirectList.Contains(intNumberChar))
                         {
                             intNumber = 10;
                         }
