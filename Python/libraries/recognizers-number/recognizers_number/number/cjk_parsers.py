@@ -44,7 +44,12 @@ class CJKNumberParserConfiguration(NumberParserConfiguration):
     @abstractmethod
     def round_direct_list(self) -> List[str]:
         pass
-    
+
+    @property
+    @abstractmethod
+    def ten_direct_list(self) -> List[str]:
+        pass
+
     @property
     @abstractmethod
     def digit_num_regex(self) -> Pattern:
@@ -88,6 +93,11 @@ class CJKNumberParserConfiguration(NumberParserConfiguration):
     @property
     @abstractmethod
     def round_number_integer_regex(self) -> Pattern:
+        pass
+
+    @property
+    @abstractmethod
+    def zero_char(self) -> str:
         pass
 
 class CJKNumberParser(BaseNumberParser):
@@ -174,7 +184,7 @@ class CJKNumberParser(BaseNumberParser):
                     int_number_char = matches[0].group()[0]
                     if int_number_char == '対' or int_number_char == '对':
                         int_number = 5
-                    elif int_number_char == '十' or int_number_char == '拾':
+                    elif int_number_char in self.config.ten_direct_list:
                         int_number = 10
                     else:
                         int_number = self.config.zero_to_nine_map[int_number_char]
@@ -203,7 +213,7 @@ class CJKNumberParser(BaseNumberParser):
                     int_number_char = matches[0].group()[0]
                     if int_number_char == '对' or int_number_char == '対':
                         int_number = 5
-                    elif int_number_char == '十' or int_number_char == '拾':
+                    elif int_number_char in self.config.ten_direct_list:
                         int_number = 10
                     else:
                         int_number = self.config.zero_to_nine_map[int_number_char]
@@ -229,7 +239,7 @@ class CJKNumberParser(BaseNumberParser):
 
             split_result = regex.split(self.config.point_regex, double_text)
             if split_result[0] == '':
-                split_result[0] = '零'
+                split_result[0] = self.config.zero_char
 
             double_value = self.get_int_value(split_result[0])
             if len(split_result) == 2:
@@ -260,7 +270,7 @@ class CJKNumberParser(BaseNumberParser):
             )
         else:
             result_part = parts(
-                intval='零',
+                intval=self.config.zero_char,
                 demo=split_result[0],
                 num=split_result[1]
             )
@@ -293,7 +303,7 @@ class CJKNumberParser(BaseNumberParser):
         else:
             split_result = regex.split(self.config.point_regex, source_text)
             if split_result[0] == '':
-                split_result[0] = '零'
+                split_result[0] = self.config.zero_char
             if regex.search(self.config.negative_number_sign_regex, split_result[0]) is not None:
                 result.value = self.get_int_value(split_result[0]) - self.get_point_value(split_result[1])
             else:
@@ -357,7 +367,6 @@ class CJKNumberParser(BaseNumberParser):
         round_before = -1
         round_default = 1
         negative = False
-        round_number_zero = '零'
 
         if regex.search(self.config.negative_number_sign_regex, result_str) is not None:
             negative = True
@@ -387,7 +396,9 @@ class CJKNumberParser(BaseNumberParser):
                 round_default = round_recent / 10
             elif c in self.config.zero_to_nine_map:
                 if i != len(result_str)-1:
-                    if c == round_number_zero:
+                    is_not_round_next = result_str[i + 1] in self.config.ten_direct_list or result_str[
+                        i + 1] not in self.config.round_number_map_char
+                    if c == self.config.zero_char and is_not_round_next:
                         before_value = 1
                         round_default = 1
                     else:

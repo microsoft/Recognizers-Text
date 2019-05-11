@@ -27,6 +27,7 @@ namespace Microsoft.Recognizers.Definitions.Japanese
 		public const char NonDecimalSeparatorChar = ' ';
 		public const string HalfADozenText = @"";
 		public const string WordSeparatorToken = @"";
+		public const char ZeroChar = '零';
 		public static readonly Dictionary<string, long> RoundNumberMap = new Dictionary<string, long>
 		{
 			{ @"k", 1000 },
@@ -103,6 +104,10 @@ namespace Microsoft.Recognizers.Definitions.Japanese
 			'万',
 			'億',
 			'兆'
+		};
+		public static readonly IList<char> TenDirectList = new List<char>
+		{
+			'十'
 		};
 		public static readonly string DigitalNumberRegex = $@"((?<=(\d|\b)){BaseNumbers.MultiplierLookupRegex}(?=\b))";
 		public const string ZeroToNineFullHalfRegex = @"[\d１２３４５６７８９０]";

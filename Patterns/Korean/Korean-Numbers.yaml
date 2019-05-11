@@ -6,6 +6,7 @@ FractionMarkerToken: ''
 NonDecimalSeparatorChar: !char ' '
 HalfADozenText: ''
 WordSeparatorToken: ''
+ZeroChar: !char '영'
 RoundNumberMap: !dictionary
   types: [string, long]
   entries:
@@ -99,6 +100,11 @@ RoundDirectList: !list
   types: [char]
   entries:
     - 빵
+    - 열
+TenDirectList: !list
+  types: [char]
+  entries:
+    - 십
     - 열
 DigitalNumberRegex: !nestedRegex
   def: ((?<=(\d|\b)){BaseNumbers.MultiplierLookupRegex}(?=\b))
