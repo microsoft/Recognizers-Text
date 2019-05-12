@@ -253,10 +253,10 @@ DateExtractor6: !nestedRegex
   def: (?<={DatePreposition}\s+)({WeekDayRegex}\s+)?{MonthNumRegex}[\-\.]{DayRegex}(?![%])\b
   references: [ MonthNumRegex, DayRegex, WeekDayRegex, DatePreposition ]
 DateExtractor7L: !nestedRegex
-  def: \b({WeekDayRegex}\s+)?{MonthNumRegex}\s*/\s*{DayRegex}((\s+|\s*,\s*|\s+of\s+){DateYearRegex})(?![%])\b
+  def: \b((this\s+)?{WeekDayRegex}\s+)?{MonthNumRegex}\s*/\s*{DayRegex}((\s+|\s*,\s*|\s+of\s+){DateYearRegex})(?![%])\b
   references: [ MonthNumRegex, DayRegex, DateYearRegex, WeekDayRegex ]
 DateExtractor7S: !nestedRegex
-  def: \b({WeekDayRegex}\s+)?{MonthNumRegex}\s*/\s*{DayRegex}(?![%])\b
+  def: \b((this\s+)?{WeekDayRegex}\s+)?{MonthNumRegex}\s*/\s*{DayRegex}(?![%])\b
   references: [ MonthNumRegex, DayRegex, DateYearRegex, WeekDayRegex ]
 # The only difference between 7L and 7S is whether "Year" part is required
 # We have both the long and short Regex because we would like to catch both "11/20, 12" and "11/20, 12/20"

@@ -106,8 +106,8 @@ class EnglishDateTime:
     DateExtractor4 = f'\\b{MonthNumRegex}\\s*[/\\\\\\-]\\s*{DayRegex}(\\.)?\\s*[/\\\\\\-]\\s*{DateYearRegex}'
     DateExtractor5 = f'\\b{DayRegex}\\s*[/\\\\\\-\\.]\\s*({MonthNumRegex}|{MonthRegex})\\s*[/\\\\\\-\\.]\\s*{DateYearRegex}'
     DateExtractor6 = f'(?<={DatePreposition}\\s+)({WeekDayRegex}\\s+)?{MonthNumRegex}[\\-\\.]{DayRegex}(?![%])\\b'
-    DateExtractor7L = f'\\b({WeekDayRegex}\\s+)?{MonthNumRegex}\\s*/\\s*{DayRegex}((\\s+|\\s*,\\s*|\\s+of\\s+){DateYearRegex})(?![%])\\b'
-    DateExtractor7S = f'\\b({WeekDayRegex}\\s+)?{MonthNumRegex}\\s*/\\s*{DayRegex}(?![%])\\b'
+    DateExtractor7L = f'\\b((this\\s+)?{WeekDayRegex}\\s+)?{MonthNumRegex}\\s*/\\s*{DayRegex}((\\s+|\\s*,\\s*|\\s+of\\s+){DateYearRegex})(?![%])\\b'
+    DateExtractor7S = f'\\b((this\\s+)?{WeekDayRegex}\\s+)?{MonthNumRegex}\\s*/\\s*{DayRegex}(?![%])\\b'
     DateExtractor8 = f'(?<={DatePreposition}\\s+)({WeekDayRegex}\\s+)?{DayRegex}[\\\\\\-]{MonthNumRegex}(?![%])\\b'
     DateExtractor9L = f'\\b({WeekDayRegex}\\s+)?{DayRegex}\\s*/\\s*{MonthNumRegex}((\\s+|\\s*,\\s*|\\s+of\\s+){DateYearRegex})(?![%])\\b'
     DateExtractor9S = f'\\b({WeekDayRegex}\\s+)?{DayRegex}\\s*/\\s*{MonthNumRegex}(?![%])\\b'
@@ -254,6 +254,7 @@ class EnglishDateTime:
     RelativeDecadeRegex = f'\\b((the\\s+)?{RelativeRegex}\\s+((?<number>[\\w,]+)\\s+)?decades?)\\b'
     YearPeriodRegex = f'((((from|during|in)\\s+)?{YearRegex}\\s*({TillRegex})\\s*{YearRegex})|(((between)\\s+){YearRegex}\\s*({RangeConnectorRegex})\\s*{YearRegex}))'
     ComplexDatePeriodRegex = f'(((from|during|in)\\s+)?(?<start>.+)\\s*({TillRegex})\\s*(?<end>.+)|((between)\\s+)(?<start>.+)\\s*({RangeConnectorRegex})\\s*(?<end>.+))'
+    FailFastRegex = f'{BaseDateTime.DeltaMinuteRegex}|\\b({BaseDateTime.BaseAmDescRegex}|{BaseDateTime.BasePmDescRegex})|{BaseDateTime.BaseAmPmDescRegex}|\\b(zero|{WrittenOneToNineRegex}|{WrittenElevenToNineteenRegex}|{WrittenTensRegex}|{WrittenMonthRegex}|{SeasonDescRegex}|{DecadeRegex}|century|centuries|weekends?|quarters?|half|halves|yesterday|tomorrow|tmr|today|tonight|mornings?|noonish|\\d(-|——)?ish|((the\\s+\\w*)|\\d)th|afternoons?|evenings?|nights?|noon|lunchtime|lunch|dinnertime|dinner|midnight|mid-nights?|midmornings?|mid-mornings?|midafternoonss?|mid-afternoons?|midday|mid-day|daytime|nighttime|overnight|dawn|dusk|sunset|hours?|hrs?|h|minutes?|mins?|seconds?|secs?|eod|eom|eoy|mardi gras|mardi-gras|mardigras|birthday|eve|christmas|xmas|thanksgiving|halloween|yuandan|easter|yuan dan|april fools|patrick|cinco de mayo|all hallow|all souls|guy fawkes|st patrick|hundreds?|noughties|aughts|thousands?)\\b|{WeekDayRegex}|{SetWeekDayRegex}|{NowRegex}|{PeriodicRegex}|\\b({DateUnitRegex}|{ImplicitDayRegex})'
     UnitMap = dict([("decades", "10Y"),
                     ("decade", "10Y"),
                     ("years", "Y"),

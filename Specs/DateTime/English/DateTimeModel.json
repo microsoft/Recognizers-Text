@@ -11147,5 +11147,33 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Let us have a meeting this Friday 4/12.",
+    "Context": {
+      "ReferenceDateTime": "2019-05-12T12:00:00"
+    },
+    "Results": [
+      {
+        "Text": "this friday 4/12",
+        "Start": 22,
+        "End": 37,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-04-12",
+              "type": "date",
+              "value": "2019-04-12"
+            },
+            {
+              "timex": "XXXX-04-12",
+              "type": "date",
+              "value": "2020-04-12"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
