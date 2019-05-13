@@ -31,6 +31,7 @@ class ChineseDatePeriodExtractorConfiguration implements IDatePeriodExtractorCon
     readonly numberParser: BaseNumberParser
     readonly durationExtractor: BaseDurationExtractor
     readonly rangeConnectorRegex: RegExp
+    readonly nowRegex: RegExp
     
     constructor() {
         this.simpleCasesRegexes = [
@@ -55,6 +56,7 @@ class ChineseDatePeriodExtractorConfiguration implements IDatePeriodExtractorCon
         this.numberCombinedWithUnit = RegExpUtility.getSafeRegExp(ChineseDateTime.NumberCombinedWithUnit);
         this.pastRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.PastRegex);
         this.futureRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.FutureRegex);
+        this.nowRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.NowRegex);
     }
 
     getFromTokenIndex(source: string) {
@@ -168,6 +170,7 @@ class ChineseDatePeriodParserConfiguration implements IDatePeriodParserConfigura
     readonly cardinalMap: ReadonlyMap<string, number>
     readonly seasonMap: ReadonlyMap<string, string>
     readonly unitMap: ReadonlyMap<string, string>
+    readonly nowRegex: RegExp
 
     constructor() {
         this.simpleCasesRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.SimpleCasesRegex);
@@ -191,6 +194,7 @@ class ChineseDatePeriodParserConfiguration implements IDatePeriodParserConfigura
         this.thisPrefixRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.DatePeriodThisRegex);
         this.nextPrefixRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.DatePeriodNextRegex);
         this.previousPrefixRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.DatePeriodLastRegex);
+        this.nowRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.NowRegex);
 
     }
 

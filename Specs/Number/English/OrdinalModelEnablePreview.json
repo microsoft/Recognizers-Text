@@ -1,0 +1,280 @@
+[
+  {
+    "Input": "delete last sentence in the note",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "last",
+        "Start": 7,
+        "End": 10,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "0",
+          "relativeTo": "end"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Do you mean \"next\" or \"last\"?",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "next",
+        "Start": 13,
+        "End": 16,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "1",
+          "relativeTo": "current"
+        }
+      },
+      {
+        "Text": "last",
+        "Start": 23,
+        "End": 26,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "0",
+          "relativeTo": "end"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Show me the antepenultimate.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "antepenultimate",
+        "Start": 12,
+        "End": 26,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "-2",
+          "relativeTo": "end"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Show me the last but one.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "the last but one",
+        "Start": 8,
+        "End": 23,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "-1",
+          "relativeTo": "end"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Show me the penultimate.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "penultimate",
+        "Start": 12,
+        "End": 22,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "-1",
+          "relativeTo": "end"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Show me the next to last.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "next to last",
+        "Start": 12,
+        "End": 23,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "-1",
+          "relativeTo": "end"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Show me the one before the last one.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "the one before the last one",
+        "Start": 8,
+        "End": 34,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "-1",
+          "relativeTo": "end"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Show me the second to last.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "the second to last",
+        "Start": 8,
+        "End": 25,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "-1",
+          "relativeTo": "end"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Delete last sentence.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "last",
+        "Start": 7,
+        "End": 10,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "0",
+          "relativeTo": "end"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Show me the previous one.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "previous one",
+        "Start": 12,
+        "End": 23,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "-1",
+          "relativeTo": "current"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Show me the next one.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "next one",
+        "Start": 12,
+        "End": 19,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "1",
+          "relativeTo": "current"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I want the last two books.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+    ]
+  },
+  {
+    "Input": "I want the last one books.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "last",
+        "Start": 11,
+        "End": 14,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "0",
+          "relativeTo": "end"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I want next 3 books.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+    ]
+  },
+  {
+    "Input": "Give me the next item.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "next",
+        "Start": 12,
+        "End": 15,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "1",
+          "relativeTo": "current"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I want last cookie.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "last",
+        "Start": 7,
+        "End": 10,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "0",
+          "relativeTo": "end"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I want next to last.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "next to last",
+        "Start": 7,
+        "End": 18,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "-1",
+          "relativeTo": "end"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Turn to previous page.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "previous",
+        "Start": 8,
+        "End": 15,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "-1",
+          "relativeTo": "current"
+        }
+      }
+    ]
+  }
+]

@@ -162,6 +162,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         public static readonly Regex CenturySuffixRegex =
             new Regex(DateTimeDefinitions.CenturySuffixRegex, RegexOptions.Singleline);
 
+        public static readonly Regex NowRegex =
+            new Regex(DateTimeDefinitions.NowRegex, RegexOptions.Singleline);
+
         private static readonly Regex[] SimpleCasesRegexes =
         {
             // "3-5 Jan, 2018",
@@ -302,6 +305,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         Regex IDatePeriodExtractorConfiguration.CenturySuffixRegex => CenturySuffixRegex;
 
         Regex IDatePeriodExtractorConfiguration.MonthNumRegex => MonthNumRegex;
+
+        Regex IDatePeriodExtractorConfiguration.NowRegex => NowRegex;
 
         string[] IDatePeriodExtractorConfiguration.DurationDateRestrictions => DateTimeDefinitions.DurationDateRestrictions;
 

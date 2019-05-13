@@ -498,6 +498,24 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var er = this.config.DatePointExtractor.Extract(text, reference);
 
+            // Handle "now"
+            var matches = this.config.NowRegex.Matches(text);
+            if (matches.Count != 0)
+            {
+                foreach (Match match in matches)
+                {
+                    var nowEr = new ExtractResult
+                    {
+                        Start = match.Index,
+                        Length = match.Length,
+                    };
+                    er.Add(nowEr);
+
+                }
+
+                er = er.OrderBy(o => o.Start).ToList();
+            }
+
             return MergeMultipleExtractions(text, er);
         }
 

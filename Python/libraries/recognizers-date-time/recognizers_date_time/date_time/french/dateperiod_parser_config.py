@@ -156,6 +156,10 @@ class FrenchDatePeriodParserConfiguration(DatePeriodParserConfiguration):
     def unit_map(self) -> Dict[str, str]:
         return self._unit_map
 
+    @property
+    def now_regex(self) -> Pattern:
+        return self._now_regex
+
     def __init__(self, config: BaseDateParserConfiguration):
         self._token_before_date = FrenchDateTime.TokenBeforeDate
         self.cardianal_extractor = config.cardinal_extractor
@@ -200,6 +204,7 @@ class FrenchDatePeriodParserConfiguration(DatePeriodParserConfiguration):
         self._day_of_month = config.day_of_month
         self._month_of_year = config.month_of_year
         self._season_map = config.season_map
+        self._now_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.NowRegex)
 
     def get_swift_day_or_month(self, source: str) -> int:
         trimmed_source = source.strip().lower()

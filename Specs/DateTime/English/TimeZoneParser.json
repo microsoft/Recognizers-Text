@@ -252,14 +252,14 @@
     ]
   },
   {
-    "Input": "Book me a room at austrialian west daylight time",
+    "Input": "Book me a room at australian western daylight time",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "austrialian west daylight time",
+        "Text": "australian western daylight time",
         "Type": "timezone",
         "Value": {
           "TimeZoneResolution": {
@@ -268,7 +268,28 @@
           }
         },
         "Start": 18,
-        "Length": 30
+        "Length": 32
+      }
+    ]
+  },
+  {
+    "Input": "Book me a room at australian west daylight time",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "australian west daylight time",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC+09:00",
+            "UtcOffsetMins": 540
+          }
+        },
+        "Start": 18,
+        "Length": 29
       }
     ]
   },
@@ -512,6 +533,102 @@
             "UtcOffsetMins": "-10000"
           }
         }
+      }
+    ]
+  },
+  {
+    "Input": "Make sure to accommodate west coast timezone.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "west coast",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC-07:00",
+            "UtcOffsetMins": -420
+          }
+        },
+        "Start": 25,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "tonight at 6PM CDT time",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "CDT",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC+XX:XX",
+            "UtcOffsetMins": "-10000"
+          }
+        },
+        "Start": 15,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "Please schedule 30 minute teams call during central time business hours",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "central time",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC-05:00",
+            "UtcOffsetMins": -300
+          }
+        },
+        "Start": 44,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "I’m open at 11:30 AMPDT/1:30CST today",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "PDT",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC-07:00",
+            "UtcOffsetMins": -420
+          }
+        },
+        "Start": 20,
+        "Length": 3
+      },
+	  {
+        "Text": "CST",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC+XX:XX",
+            "UtcOffsetMins": -10000
+          }
+        },
+        "Start": 28,
+        "Length": 3
       }
     ]
   }

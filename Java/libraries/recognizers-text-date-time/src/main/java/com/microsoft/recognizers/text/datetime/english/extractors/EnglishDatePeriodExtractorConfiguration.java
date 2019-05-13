@@ -51,6 +51,7 @@ public class EnglishDatePeriodExtractorConfiguration extends BaseOptionsConfigur
     public static final Pattern MoreThanRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.MoreThanRegex);
     public static final Pattern CenturySuffixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.CenturySuffixRegex);
     public static final Pattern IllegalYearRegex = RegExpUtility.getSafeRegExp(BaseDateTime.IllegalYearRegex);
+    public static final Pattern NowRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.NowRegex);
 
     // composite regexes
     public static final Pattern SimpleCasesRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SimpleCasesRegex);
@@ -242,6 +243,11 @@ public class EnglishDatePeriodExtractorConfiguration extends BaseOptionsConfigur
     @Override
     public Pattern getCenturySuffixRegex() {
         return CenturySuffixRegex;
+    }
+
+    @Override
+    public Pattern getNowRegex() {
+        return NowRegex;
     }
 
     @Override

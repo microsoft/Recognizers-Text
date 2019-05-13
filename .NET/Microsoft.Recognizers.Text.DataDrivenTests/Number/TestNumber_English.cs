@@ -28,6 +28,14 @@ namespace Microsoft.Recognizers.Text.Number.Tests
             TestNumber();
         }
 
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "OrdinalModelEnablePreview-English.csv", "OrdinalModelEnablePreview-English#csv", DataAccessMethod.Sequential)]
+        [TestMethod]
+        public void OrdinalModelEnablePreview()
+        {
+            TestNumber();
+        }
+
+
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "NumberModelPercentMode-English.csv", "NumberModelPercentMode-English#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void NumberModelPercentMode()

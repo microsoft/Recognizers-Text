@@ -87,7 +87,8 @@ export class EnglishDateTimePeriodExtractorConfiguration implements IDateTimePer
     };
 
     hasConnectorToken(source: string): boolean {
-        return RegExpUtility.getMatches(this.rangeConnectorRegex, source).length > 0;
+        let match = RegExpUtility.getMatches(this.rangeConnectorRegex, source).pop();
+        return match && match.length === source.length;
     };
 }
 

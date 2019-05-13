@@ -11060,5 +11060,92 @@
         }
       }
     ]
+  },
+  {
+    "Input": "I will do my work between now and November 15th",
+    "Context": {
+      "ReferenceDateTime": "2019-04-23T12:00:00"
+    },
+    "Results": [
+      {
+        "Text": "between now and november 15th",
+        "Start": 18,
+        "End": 46,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2019-04-23,XXXX-11-15,P206D)",
+              "type": "daterange",
+              "start": "2019-04-23",
+              "end": "2019-11-15"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I have finished my work between Jan 22 and now",
+    "Context": {
+      "ReferenceDateTime": "2019-04-25T12:00:00"
+    },
+    "Results": [
+      {
+        "Text": "between jan 22 and now",
+        "Start": 24,
+        "End": 45,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-01-22,2019-04-25,P93D)",
+              "type": "daterange",
+              "start": "2019-01-22",
+              "end": "2019-04-25"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Let's meet between now and May 21th, not right now, ok?",
+    "Context": {
+      "ReferenceDateTime": "2019-05-09T12:00:00"
+    },
+    "Results": [
+      {
+        "Text": "between now and may 21th",
+        "Start": 11,
+        "End": 34,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2019-05-09,XXXX-05-21,P12D)",
+              "type": "daterange",
+              "start": "2019-05-09",
+              "end": "2019-05-21"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "right now",
+        "Start": 41,
+        "End": 49,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PRESENT_REF",
+              "type": "datetime",
+              "value": "2019-05-09 12:00:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

@@ -88,6 +88,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             LessThanRegex = EnglishDatePeriodExtractorConfiguration.LessThanRegex;
             MoreThanRegex = EnglishDatePeriodExtractorConfiguration.MoreThanRegex;
             CenturySuffixRegex = EnglishDatePeriodExtractorConfiguration.CenturySuffixRegex;
+            NowRegex = EnglishDatePeriodExtractorConfiguration.NowRegex;
             UnitMap = config.UnitMap;
             CardinalMap = config.CardinalMap;
             DayOfMonth = config.DayOfMonth;
@@ -193,6 +194,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public Regex MoreThanRegex { get; }
 
         public Regex CenturySuffixRegex { get; }
+
+        public Regex NowRegex { get; }
 
         Regex IDatePeriodParserConfiguration.NextPrefixRegex => NextPrefixRegex;
 

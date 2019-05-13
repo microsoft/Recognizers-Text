@@ -11,7 +11,7 @@ using Newtonsoft.Json;
 
 namespace SimpleConsole
 {
-    public class Program
+    public static class Program
     {
         // Use English for the Recognizers culture
         private const string DefaultCulture = Culture.English;

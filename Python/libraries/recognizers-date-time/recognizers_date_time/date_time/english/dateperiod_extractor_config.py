@@ -86,6 +86,10 @@ class EnglishDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
     def range_connector_regex(self) -> Pattern:
         return self._range_connector_regex
 
+    @property
+    def now_regex(self) -> Pattern:
+        return self._now_regex
+
     def __init__(self):
         self._simple_cases_regexes = [
             RegExpUtility.get_safe_reg_exp(EnglishDateTime.SimpleCasesRegex),
@@ -124,6 +128,7 @@ class EnglishDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
         self._number_parser = BaseNumberParser(EnglishNumberParserConfiguration())
         self._duration_extractor = BaseDurationExtractor(EnglishDurationExtractorConfiguration())
         self._range_connector_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.RangeConnectorRegex)
+        self._now_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.NowRegex)
 
     def get_from_token_index(self, source: str) -> MatchedIndex:
         return MatchedIndex(True, source.rfind('from')) if source.endswith('from') else MatchedIndex(False, -1)

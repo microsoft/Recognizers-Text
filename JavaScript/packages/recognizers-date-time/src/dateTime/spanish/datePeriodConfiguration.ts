@@ -32,6 +32,7 @@ export class SpanishDatePeriodExtractorConfiguration implements IDatePeriodExtra
     readonly fromRegex: RegExp;
     readonly connectorAndRegex: RegExp;
     readonly betweenRegex: RegExp;
+    readonly nowRegex: RegExp
 
     constructor() {
         this.simpleCasesRegexes = [
@@ -71,6 +72,7 @@ export class SpanishDatePeriodExtractorConfiguration implements IDatePeriodExtra
         this.fromRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.FromRegex);
         this.connectorAndRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.ConnectorAndRegex);
         this.betweenRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.BetweenRegex);
+        this.nowRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.NowRegex);
 
         this.datePointExtractor = new BaseDateExtractor(new SpanishDateExtractorConfiguration());
         this.integerExtractor = new SpanishIntegerExtractor();
@@ -134,6 +136,7 @@ export class SpanishDatePeriodParserConfiguration implements IDatePeriodParserCo
 
     readonly cardinalExtractor: IExtractor;
     readonly numberParser: IParser;
+    readonly nowRegex: RegExp
 
     constructor(config: ICommonDateTimeParserConfiguration) {
         this.tokenBeforeDate = SpanishDateTime.TokenBeforeDate;
@@ -172,6 +175,7 @@ export class SpanishDatePeriodParserConfiguration implements IDatePeriodParserCo
         this.nextPrefixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.NextPrefixRegex);
         this.previousPrefixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PreviousPrefixRegex);
         this.thisPrefixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.ThisPrefixRegex);
+        this.nowRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.NowRegex);
 
         this.inConnectorRegex = config.utilityConfiguration.inConnectorRegex;
         this.unitMap = config.unitMap;

@@ -81,6 +81,10 @@ class ChineseDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
     def range_connector_regex(self) -> Pattern:
         return None
 
+    @property
+    def now_regex(self) -> Pattern:
+        return self._now_regex
+
     def __init__(self):
         self._simple_cases_regexes = [
             RegExpUtility.get_safe_reg_exp(ChineseDateTime.SimpleCasesRegex),
@@ -105,6 +109,7 @@ class ChineseDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
         self._date_point_extractor = ChineseDateExtractor()
         self._integer_extractor = ChineseNumberExtractor()
         self._number_parser = BaseNumberParser(ChineseNumberParserConfiguration())
+        self._now_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.NowRegex)
 
     def get_from_token_index(self, source: str) -> MatchedIndex:
         if source.endswith('从'):
