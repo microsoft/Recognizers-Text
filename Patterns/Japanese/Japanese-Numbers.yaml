@@ -84,10 +84,11 @@ RoundDirectList: !list
     - 万
     - 億
     - 兆
+# TODO: modify below list according to the counterpart in Chinese
 TenDirectList: !list
   types: [char]
   entries:
-    - 十
+    - ' '
 DigitalNumberRegex: !nestedRegex
   def: ((?<=(\d|\b)){BaseNumbers.MultiplierLookupRegex}(?=\b))
   references: [BaseNumbers.MultiplierLookupRegex]

@@ -107,7 +107,7 @@ namespace Microsoft.Recognizers.Definitions.Japanese
 		};
 		public static readonly IList<char> TenDirectList = new List<char>
 		{
-			'十'
+			' '
 		};
 		public static readonly string DigitalNumberRegex = $@"((?<=(\d|\b)){BaseNumbers.MultiplierLookupRegex}(?=\b))";
 		public const string ZeroToNineFullHalfRegex = @"[\d１２３４５６７８９０]";
