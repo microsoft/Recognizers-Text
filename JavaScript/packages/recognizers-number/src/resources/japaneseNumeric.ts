@@ -21,7 +21,7 @@ export namespace JapaneseNumeric {
 	export const FullToHalfMap: ReadonlyMap<string, string> = new Map<string, string>([["０", "0"],["１", "1"],["２", "2"],["３", "3"],["４", "4"],["５", "5"],["６", "6"],["７", "7"],["８", "8"],["９", "9"],["／", "/"],["－", "-"],["，", "'"],["、", "'"],["Ｇ", "G"],["Ｍ", "M"],["Ｔ", "T"],["Ｋ", "K"],["ｋ", "k"],["．", "."]]);
 	export const UnitMap: ReadonlyMap<string, string> = new Map<string, string>([["万万", "億"],["億万", "兆"],["万億", "兆"],[" ", ""]]);
 	export const RoundDirectList = [ "万","億","兆" ];
-	export const TenDirectList = [ " " ];
+	export const TenDirectList = [ "十" ];
 	export const DigitalNumberRegex = `((?<=(\\d|\\b))${BaseNumbers.MultiplierLookupRegex}(?=\\b))`;
 	export const ZeroToNineFullHalfRegex = `[\\d１２３４５６７８９０]`;
 	export const DigitNumRegex = `${ZeroToNineFullHalfRegex}+`;
