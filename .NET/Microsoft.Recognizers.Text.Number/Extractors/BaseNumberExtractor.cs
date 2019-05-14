@@ -61,12 +61,12 @@ namespace Microsoft.Recognizers.Text.Number
                         continue;
                     }
 
-					// In EnablePreview, cases like "last", "next" should not be skipped
-					// adapted from https://github.com/microsoft/Recognizers-Text/pull/1550
-					if ((Options & NumberOptions.EnablePreview) == 0 && IsRelativeOrdinal(m.Value))
-					{
-						continue;
-					}
+                    // In EnablePreview, cases like "last", "next" should not be skipped
+                    // adapted from https://github.com/microsoft/Recognizers-Text/pull/1550
+                    if ((Options & NumberOptions.EnablePreview) == 0 && IsRelativeOrdinal(m.Value))
+                    {
+                        continue;
+                    }
 
                     for (var j = 0; j < m.Length; j++)
                     {
