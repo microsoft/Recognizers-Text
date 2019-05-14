@@ -7,7 +7,8 @@ NonDecimalSeparatorChar: !char ' '
 HalfADozenText: ''
 WordSeparatorToken: ''
 # TODO: modify below char according to the counterpart in Chinese
-ZeroChar: !char ' '
+ZeroChar: !char '?'
+PairChar: !char '?'
 RoundNumberMap: !dictionary
   types: [string, long]
   entries:
@@ -103,10 +104,10 @@ RoundDirectList: !list
     - 빵
     - 열
 # TODO: modify below list according to the counterpart in Chinese
-TenDirectList: !list
+TenChars: !list
   types: [char]
   entries:
-    - ' '
+    - '?'
 DigitalNumberRegex: !nestedRegex
   def: ((?<=(\d|\b)){BaseNumbers.MultiplierLookupRegex}(?=\b))
   references: [ BaseNumbers.MultiplierLookupRegex ]

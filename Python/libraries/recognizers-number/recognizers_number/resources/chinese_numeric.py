@@ -16,6 +16,7 @@ class ChineseNumeric:
     HalfADozenText = ''
     WordSeparatorToken = ''
     ZeroChar = '零'
+    PairChar = '对'
     RoundNumberMap = dict([("k", 1000),
                            ("m", 1000000),
                            ("g", 1000000000),
@@ -115,7 +116,7 @@ class ChineseNumeric:
                     ("余", ""),
                     ("几", "")])
     RoundDirectList = [r'万', r'萬', r'亿', r'兆', r'億']
-    TenDirectList = [r'十', r'拾']
+    TenChars = [r'十', r'拾']
     DigitalNumberRegex = f'((?<=(\\d|\\b)){BaseNumbers.MultiplierLookupRegex}(?=\\b))'
     ZeroToNineFullHalfRegex = f'[\\d１２３４５６７８９０]'
     DigitNumRegex = f'{ZeroToNineFullHalfRegex}+'

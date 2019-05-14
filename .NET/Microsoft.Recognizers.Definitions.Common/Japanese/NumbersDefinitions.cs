@@ -28,6 +28,7 @@ namespace Microsoft.Recognizers.Definitions.Japanese
 		public const string HalfADozenText = @"";
 		public const string WordSeparatorToken = @"";
 		public const char ZeroChar = '零';
+		public const char PairChar = '対';
 		public static readonly Dictionary<string, long> RoundNumberMap = new Dictionary<string, long>
 		{
 			{ @"k", 1000 },
@@ -105,7 +106,7 @@ namespace Microsoft.Recognizers.Definitions.Japanese
 			'億',
 			'兆'
 		};
-		public static readonly IList<char> TenDirectList = new List<char>
+		public static readonly IList<char> TenChars = new List<char>
 		{
 			'十'
 		};

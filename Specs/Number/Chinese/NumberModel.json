@@ -4416,5 +4416,19 @@
         }
       }
     ]
+  },
+  {
+    "Input": "第零十刃",
+    "Results": [
+      {
+        "Text": "零十",
+        "Start": 1,
+        "End": 2,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "10"
+        }
+      }
+    ]
   }
 ]

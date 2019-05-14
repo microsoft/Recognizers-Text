@@ -17,7 +17,7 @@ namespace Microsoft.Recognizers.Text.Number
 
         ImmutableList<char> RoundDirectList { get; }
 
-        ImmutableList<char> TenDirectList { get; }
+        ImmutableList<char> TenChars { get; }
 
         Regex FracSplitRegex { get; }
 
@@ -38,5 +38,7 @@ namespace Microsoft.Recognizers.Text.Number
         Regex RoundNumberIntegerRegex { get; }
 
         char ZeroChar { get; }
+
+        char PairChar { get; }
     }
 }

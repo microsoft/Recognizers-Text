@@ -27,7 +27,8 @@ namespace Microsoft.Recognizers.Definitions.Korean
 		public const char NonDecimalSeparatorChar = ' ';
 		public const string HalfADozenText = @"";
 		public const string WordSeparatorToken = @"";
-		public const char ZeroChar = ' ';
+		public const char ZeroChar = '?';
+		public const char PairChar = '?';
 		public static readonly Dictionary<string, long> RoundNumberMap = new Dictionary<string, long>
 		{
 			{ @"k", 1000 },
@@ -113,9 +114,9 @@ namespace Microsoft.Recognizers.Definitions.Korean
 			'빵',
 			'열'
 		};
-		public static readonly IList<char> TenDirectList = new List<char>
+		public static readonly IList<char> TenChars = new List<char>
 		{
-			' '
+			'?'
 		};
 		public static readonly string DigitalNumberRegex = $@"((?<=(\d|\b)){BaseNumbers.MultiplierLookupRegex}(?=\b))";
 		public const string ZeroToNineFullHalfRegex = @"[\d１２３４５６７８９０]";

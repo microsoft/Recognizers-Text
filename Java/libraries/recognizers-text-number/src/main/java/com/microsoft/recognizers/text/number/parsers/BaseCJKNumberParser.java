@@ -138,9 +138,9 @@ public class BaseCJKNumberParser extends BaseNumberParser {
                 if (matches.length == 2) {
                     char intNumberChar = matches[0].value.charAt(0);
 
-                    if (intNumberChar == '対' || intNumberChar == '对') {
+                    if (intNumberChar == cjkConfig.getPairChar()) {
                         intNumber = 5;
-                    } else if (cjkConfig.getTenDirectList().contains(intNumberChar)) {
+                    } else if (cjkConfig.getTenChars().contains(intNumberChar)) {
                         intNumber = 10;
                     } else {
                         intNumber = zeroToNineMap.get(intNumberChar);
@@ -170,9 +170,9 @@ public class BaseCJKNumberParser extends BaseNumberParser {
                 } else {
                     char intNumberChar = matches[0].value.charAt(0);
 
-                    if (intNumberChar == '対' || intNumberChar == '对') {
+                    if (intNumberChar == cjkConfig.getPairChar()) {
                         intNumber = 5;
-                    } else if (cjkConfig.getTenDirectList().contains(intNumberChar)) {
+                    } else if (cjkConfig.getTenChars().contains(intNumberChar)) {
                         intNumber = 10;
                     } else {
                         intNumber = zeroToNineMap.get(intNumberChar);
@@ -408,7 +408,7 @@ public class BaseCJKNumberParser extends BaseNumberParser {
                 roundDefault = roundRecent / 10;
             } else if (cjkConfig.getZeroToNineMap().containsKey(intStr.charAt(i))) {
                 if (i != intStr.length() - 1) {
-                    boolean isNotRoundNext = cjkConfig.getTenDirectList().contains(intStr.charAt(i + 1)) || !roundNumberMapChar.containsKey(intStr.charAt(i + 1));
+                    boolean isNotRoundNext = cjkConfig.getTenChars().contains(intStr.charAt(i + 1)) || !roundNumberMapChar.containsKey(intStr.charAt(i + 1));
                     if (intStr.charAt(i) == cjkConfig.getZeroChar() && isNotRoundNext) {
                         beforeValue = 1;
                         roundDefault = 1;

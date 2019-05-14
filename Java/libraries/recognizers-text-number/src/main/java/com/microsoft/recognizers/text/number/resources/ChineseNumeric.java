@@ -30,6 +30,8 @@ public class ChineseNumeric {
 
     public static final Character ZeroChar = '零';
 
+    public static final Character PairChar = '对';
+
     public static final ImmutableMap<String, Long> RoundNumberMap = ImmutableMap.<String, Long>builder()
         .put("k", 1000L)
         .put("m", 1000000L)
@@ -148,7 +150,7 @@ public class ChineseNumeric {
 
     public static final List<Character> RoundDirectList = Arrays.asList('万', '萬', '亿', '兆', '億');
 
-    public static final List<Character> TenDirectList = Arrays.asList('十', '拾');
+    public static final List<Character> TenChars = Arrays.asList('十', '拾');
 
     public static final String DigitalNumberRegex = "((?<=(\\d|\\b)){BaseNumbers.MultiplierLookupRegex}(?=\\b))"
             .replace("{BaseNumbers.MultiplierLookupRegex}", BaseNumbers.MultiplierLookupRegex);

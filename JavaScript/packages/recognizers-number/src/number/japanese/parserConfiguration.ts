@@ -19,6 +19,7 @@ export class JapaneseNumberParserConfiguration implements ICJKNumberParserConfig
     readonly decimalSeparatorChar: string; 
     readonly wordSeparatorToken: string;
     readonly zeroChar: string;
+    readonly pairChar: string;
     readonly writtenDecimalSeparatorTexts: ReadonlyArray<string>;
     readonly writtenGroupSeparatorTexts: ReadonlyArray<string>;
     readonly writtenIntegerSeparatorTexts: ReadonlyArray<string>;
@@ -30,7 +31,7 @@ export class JapaneseNumberParserConfiguration implements ICJKNumberParserConfig
     readonly tratoSimMap: ReadonlyMap<string, string>;
     readonly unitMap: ReadonlyMap<string, string>;
     readonly roundDirectList: ReadonlyArray<string>;
-    readonly tenDirectList: ReadonlyArray<string>;
+    readonly tenChars: ReadonlyArray<string>;
     readonly digitNumRegex: RegExp;
     readonly dozenRegex: RegExp;
     readonly percentageRegex: RegExp;
@@ -60,6 +61,7 @@ export class JapaneseNumberParserConfiguration implements ICJKNumberParserConfig
         this.halfADozenText = JapaneseNumeric.HalfADozenText;
         this.wordSeparatorToken = JapaneseNumeric.WordSeparatorToken;
         this.zeroChar = JapaneseNumeric.ZeroChar;
+        this.pairChar = JapaneseNumeric.PairChar;
 
         this.writtenDecimalSeparatorTexts = [];
         this.writtenGroupSeparatorTexts = [];
@@ -78,7 +80,7 @@ export class JapaneseNumberParserConfiguration implements ICJKNumberParserConfig
         this.tratoSimMap = null;
         this.unitMap = JapaneseNumeric.UnitMap;
         this.roundDirectList = JapaneseNumeric.RoundDirectList;
-        this.tenDirectList = JapaneseNumeric.TenDirectList;
+        this.tenChars = JapaneseNumeric.TenChars;
         this.digitNumRegex = RegExpUtility.getSafeRegExp(JapaneseNumeric.DigitNumRegex, "gis");
         this.dozenRegex = RegExpUtility.getSafeRegExp(JapaneseNumeric.DozenRegex, "gis");
         this.percentageRegex = RegExpUtility.getSafeRegExp(JapaneseNumeric.PercentageRegex, "gis");

@@ -16,6 +16,7 @@ class JapaneseNumeric:
     HalfADozenText = ''
     WordSeparatorToken = ''
     ZeroChar = '零'
+    PairChar = '対'
     RoundNumberMap = dict([("k", 1000),
                            ("m", 1000000),
                            ("g", 1000000000),
@@ -73,7 +74,7 @@ class JapaneseNumeric:
                     ("万億", "兆"),
                     (" ", "")])
     RoundDirectList = [r'万', r'億', r'兆']
-    TenDirectList = [r'十']
+    TenChars = [r'十']
     DigitalNumberRegex = f'((?<=(\\d|\\b)){BaseNumbers.MultiplierLookupRegex}(?=\\b))'
     ZeroToNineFullHalfRegex = f'[\\d１２３４５６７８９０]'
     DigitNumRegex = f'{ZeroToNineFullHalfRegex}+'

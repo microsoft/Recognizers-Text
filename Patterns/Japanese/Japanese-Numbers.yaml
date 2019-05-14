@@ -7,6 +7,7 @@ NonDecimalSeparatorChar: !char ' '
 HalfADozenText: ''
 WordSeparatorToken: ''
 ZeroChar: !char '零'
+PairChar: !char '対'
 RoundNumberMap: !dictionary
   types: [string, long]
   entries:
@@ -84,7 +85,7 @@ RoundDirectList: !list
     - 万
     - 億
     - 兆
-TenDirectList: !list
+TenChars: !list
   types: [char]
   entries:
     - 十

@@ -47,7 +47,7 @@ class CJKNumberParserConfiguration(NumberParserConfiguration):
 
     @property
     @abstractmethod
-    def ten_direct_list(self) -> List[str]:
+    def ten_chars(self) -> List[str]:
         pass
 
     @property
@@ -98,6 +98,11 @@ class CJKNumberParserConfiguration(NumberParserConfiguration):
     @property
     @abstractmethod
     def zero_char(self) -> str:
+        pass
+
+    @property
+    @abstractmethod
+    def pair_char(self) -> str:
         pass
 
 class CJKNumberParser(BaseNumberParser):
@@ -182,9 +187,9 @@ class CJKNumberParser(BaseNumberParser):
                 int_number: int
                 if len(matches) == 2:
                     int_number_char = matches[0].group()[0]
-                    if int_number_char == '対' or int_number_char == '对':
+                    if int_number_char == self.config.pair_char:
                         int_number = 5
-                    elif int_number_char in self.config.ten_direct_list:
+                    elif int_number_char in self.config.ten_chars:
                         int_number = 10
                     else:
                         int_number = self.config.zero_to_nine_map[int_number_char]
@@ -211,9 +216,9 @@ class CJKNumberParser(BaseNumberParser):
                     result.value = (int_number + point_number + dot_number) * 10
                 else:
                     int_number_char = matches[0].group()[0]
-                    if int_number_char == '对' or int_number_char == '対':
+                    if int_number_char == self.config.pair_char:
                         int_number = 5
-                    elif int_number_char in self.config.ten_direct_list:
+                    elif int_number_char in self.config.ten_chars:
                         int_number = 10
                     else:
                         int_number = self.config.zero_to_nine_map[int_number_char]
@@ -396,7 +401,7 @@ class CJKNumberParser(BaseNumberParser):
                 round_default = round_recent / 10
             elif c in self.config.zero_to_nine_map:
                 if i != len(result_str)-1:
-                    is_not_round_next = result_str[i + 1] in self.config.ten_direct_list or result_str[
+                    is_not_round_next = result_str[i + 1] in self.config.ten_chars or result_str[
                         i + 1] not in self.config.round_number_map_char
                     if c == self.config.zero_char and is_not_round_next:
                         before_value = 1

@@ -69,6 +69,10 @@ class ChineseNumberParserConfiguration(NumberParserConfiguration):
         return self._zero_char
 
     @property
+    def pair_char(self) -> str:
+        return self._pair_char
+
+    @property
     def word_separator_token(self) -> str:
         return self._word_separator_token
 
@@ -113,8 +117,8 @@ class ChineseNumberParserConfiguration(NumberParserConfiguration):
         return self._round_direct_list
 
     @property
-    def ten_direct_list(self) -> List[str]:
-        return self._ten_direct_list
+    def ten_chars(self) -> List[str]:
+        return self._ten_chars
 
     @property
     def digit_num_regex(self) -> Pattern:
@@ -164,6 +168,7 @@ class ChineseNumberParserConfiguration(NumberParserConfiguration):
         self._half_a_dozen_text = ChineseNumeric.HalfADozenText
         self._word_separator_token = ChineseNumeric.WordSeparatorToken
         self._zero_char = ChineseNumeric.ZeroChar
+        self._pair_char = ChineseNumeric.PairChar
 
         self._round_number_map = ChineseNumeric.RoundNumberMap
         self._digital_number_regex = RegExpUtility.get_safe_reg_exp(ChineseNumeric.DigitalNumberRegex)
@@ -174,7 +179,7 @@ class ChineseNumberParserConfiguration(NumberParserConfiguration):
         self._trato_sim_map = ChineseNumeric.TratoSimMap
         self._unit_map = ChineseNumeric.UnitMap
         self._round_direct_list = ChineseNumeric.RoundDirectList
-        self._ten_direct_list = ChineseNumeric.TenDirectList
+        self._ten_chars = ChineseNumeric.TenChars
 
         self._digit_num_regex = ChineseNumeric.DigitNumRegex
         self._dozen_regex = ChineseNumeric.DozenRegex
