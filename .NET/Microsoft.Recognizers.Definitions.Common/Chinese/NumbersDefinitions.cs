@@ -27,6 +27,8 @@ namespace Microsoft.Recognizers.Definitions.Chinese
 		public const char NonDecimalSeparatorChar = ' ';
 		public const string HalfADozenText = @"";
 		public const string WordSeparatorToken = @"";
+		public const char ZeroChar = '零';
+		public const char PairChar = '对';
 		public static readonly Dictionary<string, long> RoundNumberMap = new Dictionary<string, long>
 		{
 			{ @"k", 1000 },
@@ -150,6 +152,11 @@ namespace Microsoft.Recognizers.Definitions.Chinese
 			'亿',
 			'兆',
 			'億'
+		};
+		public static readonly IList<char> TenChars = new List<char>
+		{
+			'十',
+			'拾'
 		};
 		public static readonly string DigitalNumberRegex = $@"((?<=(\d|\b)){BaseNumbers.MultiplierLookupRegex}(?=\b))";
 		public const string ZeroToNineFullHalfRegex = @"[\d１２３４５６７８９０]";

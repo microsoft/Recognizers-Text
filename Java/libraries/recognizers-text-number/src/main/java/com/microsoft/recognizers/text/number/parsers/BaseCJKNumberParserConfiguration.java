@@ -15,6 +15,8 @@ public abstract class BaseCJKNumberParserConfiguration implements ICJKNumberPars
 
     private final char nonDecimalSeparatorChar;
     private final char decimalSeparatorChar;
+    private final char zeroChar;
+    private final char pairChar;
     private final String fractionMarkerToken;
     private final String halfADozenText;
     private final String wordSeparatorToken;
@@ -41,6 +43,7 @@ public abstract class BaseCJKNumberParserConfiguration implements ICJKNumberPars
     private final Map<Character, Character> tratoSimMap;
 
     private final List<Character> roundDirectList;
+    private final List<Character> tenChars;
 
     private final Pattern fracSplitRegex;
     private final Pattern digitNumRegex;
@@ -58,13 +61,15 @@ public abstract class BaseCJKNumberParserConfiguration implements ICJKNumberPars
         Map<String, Long> roundNumberMap, Pattern halfADozenRegex, Pattern digitalNumberRegex, Pattern negativeNumberSignRegex, Pattern fractionPrepositionRegex, Map<Character,
         Double> zeroToNineMap, Map<Character, Long> roundNumberMapChar, Map<Character, Character> fullToHalfMap, Map<String, String> unitMap, Map<Character, Character> tratoSimMap,
         List<Character> roundDirectList, Pattern fracSplitRegex, Pattern digitNumRegex, Pattern speGetNumberRegex, Pattern percentageRegex, Pattern pointRegex,
-        Pattern doubleAndRoundRegex, Pattern pairRegex, Pattern dozenRegex, Pattern roundNumberIntegerRegex) {
+        Pattern doubleAndRoundRegex, Pattern pairRegex, Pattern dozenRegex, Pattern roundNumberIntegerRegex,char zeroChar, List<Character> tenChars,char pairChar) {
 
         this.langMarker = langMarker;
         this.cultureInfo = cultureInfo;
         this.options = options;
         this.nonDecimalSeparatorChar = nonDecimalSeparatorChar;
         this.decimalSeparatorChar = decimalSeparatorChar;
+        this.zeroChar = zeroChar;
+        this.pairChar = pairChar;
         this.fractionMarkerToken = fractionMarkerToken;
         this.halfADozenText = halfADozenText;
         this.wordSeparatorToken = wordSeparatorToken;
@@ -85,6 +90,7 @@ public abstract class BaseCJKNumberParserConfiguration implements ICJKNumberPars
         this.unitMap = unitMap;
         this.tratoSimMap = tratoSimMap;
         this.roundDirectList = roundDirectList;
+        this.tenChars = tenChars;
         this.fracSplitRegex = fracSplitRegex;
         this.digitNumRegex = digitNumRegex;
         this.speGetNumberRegex = speGetNumberRegex;
@@ -125,6 +131,11 @@ public abstract class BaseCJKNumberParserConfiguration implements ICJKNumberPars
     @Override
     public List<Character> getRoundDirectList() {
         return this.roundDirectList;
+    }
+
+    @Override
+    public List<Character> getTenChars() {
+        return this.tenChars;
     }
 
     @Override
@@ -235,6 +246,16 @@ public abstract class BaseCJKNumberParserConfiguration implements ICJKNumberPars
     @Override
     public char getDecimalSeparatorChar() {
         return this.decimalSeparatorChar;
+    }
+
+    @Override
+    public char getZeroChar() {
+        return this.zeroChar;
+    }
+
+    @Override
+    public char getPairChar() {
+        return this.pairChar;
     }
 
     @Override

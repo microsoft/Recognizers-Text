@@ -15,6 +15,7 @@ export interface ICJKNumberParserConfiguration extends INumberParserConfiguratio
     readonly tratoSimMap: ReadonlyMap<string, string>;
     readonly unitMap: ReadonlyMap<string, string>;
     readonly roundDirectList: ReadonlyArray<string>;
+    readonly tenChars: ReadonlyArray<string>;
     readonly digitNumRegex: RegExp;
     readonly dozenRegex: RegExp;
     readonly percentageRegex: RegExp;
@@ -24,6 +25,8 @@ export interface ICJKNumberParserConfiguration extends INumberParserConfiguratio
     readonly speGetNumberRegex: RegExp;
     readonly pairRegex: RegExp;
     readonly roundNumberIntegerRegex: RegExp;
+    readonly zeroChar: string;
+    readonly pairChar: string;
 }
 
 export class BaseCJKNumberParser extends BaseNumberParser {
@@ -143,9 +146,9 @@ export class BaseCJKNumberParser extends BaseNumberParser {
                 if (matches.length === 2) {
                     let intNumberChar = matches[0].value.charAt(0);
 
-                    if (intNumberChar === '対' || intNumberChar === "对") {
+                    if (intNumberChar === this.config.pairChar) {
                         intNumber = 5;
-                    } else if (intNumberChar === "十" || intNumberChar === "拾") {
+                    } else if (this.config.tenChars.some(o => o === intNumberChar)) {
                         intNumber = 10;
                     } else {
                         intNumber = this.config.zeroToNineMap.get(intNumberChar);
@@ -176,9 +179,9 @@ export class BaseCJKNumberParser extends BaseNumberParser {
                 } else {
                     let intNumberChar = matches[0].value.charAt(0);
 
-                    if (intNumberChar === '対' || intNumberChar === "对") {
+                    if (intNumberChar === this.config.pairChar) {
                         intNumber = 5;
-                    } else if (intNumberChar === "十" || intNumberChar === "拾") {
+                    } else if (this.config.tenChars.some(o => o === intNumberChar)) {
                         intNumber = 10;
                     } else {
                         intNumber = this.config.zeroToNineMap.get(intNumberChar);
@@ -213,7 +216,7 @@ export class BaseCJKNumberParser extends BaseNumberParser {
 
             let splitResult = RegExpUtility.split(this.config.pointRegex, doubleText);
             if (splitResult[0] === "") {
-                splitResult[0] = "零"
+                splitResult[0] = this.config.zeroChar
             }
 
             let doubleValue = this.getIntValueCJK(splitResult[0]);
@@ -245,7 +248,7 @@ export class BaseCJKNumberParser extends BaseNumberParser {
             demoPart = splitResult[1] || "";
             numPart = splitResult[2] || "";
         } else {
-            intPart = "零";
+            intPart = this.config.zeroChar;
             demoPart = splitResult[0] || "";
             numPart = splitResult[1] || "";
         }
@@ -286,7 +289,7 @@ export class BaseCJKNumberParser extends BaseNumberParser {
             let splitResult = RegExpUtility.split(this.config.pointRegex, resultText);
 
             if (splitResult[0] === "") {
-                splitResult[0] = "零";
+                splitResult[0] = this.config.zeroChar;
             }
 
             if (RegExpUtility.isMatch(this.config.negativeNumberSignRegex, splitResult[0])) {
@@ -360,12 +363,11 @@ export class BaseCJKNumberParser extends BaseNumberParser {
         resultStr = this.replaceUnit(resultStr);
         let intValue = 0;
         let partValue = 0;
-        let beforeValue = 0;
+        let beforeValue = 1;
         let isRoundBefore = false;
         let roundBefore = -1;
         let roundDefault = 1;
         let isNegative = false;
-        let hasNumber = false;
 
         if (RegExpUtility.isMatch(this.config.negativeNumberSignRegex, resultStr)) {
             isNegative = true;
@@ -376,9 +378,6 @@ export class BaseCJKNumberParser extends BaseNumberParser {
             let currentChar = resultStr.charAt(index);
             if (this.config.roundNumberMapChar.has(currentChar)) {
                 let roundRecent = this.config.roundNumberMapChar.get(currentChar);
-                if (!hasNumber) {
-                    beforeValue = 1;
-                }
                 if (roundBefore !== -1 && roundRecent > roundBefore) {
                     if (isRoundBefore) {
                         intValue += partValue * roundRecent;
@@ -401,23 +400,21 @@ export class BaseCJKNumberParser extends BaseNumberParser {
                     }
                 }
 
-                hasNumber = false;
-                beforeValue = 0;
                 roundDefault = roundRecent / 10;
             } else if (this.config.zeroToNineMap.has(currentChar)) {
-                hasNumber = true;
                 if (index !== resultStr.length - 1) {
-                    if ((currentChar === "零") && !this.config.roundNumberMapChar.has(resultStr.charAt(index + 1))) {
+                    let is_not_round_next = this.config.tenChars.some(o => o === resultStr.charAt(index + 1)) || !this.config.roundNumberMapChar.has(resultStr.charAt(index + 1))
+                    if (currentChar === this.config.zeroChar && is_not_round_next) {
+                        beforeValue = 1;
                         roundDefault = 1;
                     } else {
-                        beforeValue = beforeValue * 10 + this.config.zeroToNineMap.get(currentChar);
+                        beforeValue = this.config.zeroToNineMap.get(currentChar);
                         isRoundBefore = false;
                     }
                 } else {
                     if (index === resultStr.length - 1 && this.config.cultureInfo.code.toLowerCase() === Culture.Japanese) {
                         roundDefault = 1;
                     }
-                    partValue += beforeValue * 10;
                     partValue += this.config.zeroToNineMap.get(currentChar) * roundDefault;
                     intValue += partValue;
                     partValue = 0;

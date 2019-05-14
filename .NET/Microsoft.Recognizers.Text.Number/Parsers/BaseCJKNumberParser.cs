@@ -132,7 +132,7 @@ namespace Microsoft.Recognizers.Text.Number
             }
             else
             {
-                intPart = "零";
+                intPart = Config.ZeroChar.ToString();
                 demoPart = splitResult[0];
                 numPart = splitResult[1];
             }
@@ -199,11 +199,11 @@ namespace Microsoft.Recognizers.Text.Number
                     {
                         var intNumberChar = matches[0].Value[0];
 
-                        if (intNumberChar == '対' || intNumberChar == '对')
+                        if (intNumberChar == Config.PairChar)
                         {
                             intNumber = 5;
                         }
-                        else if (intNumberChar == '十' || intNumberChar == '拾')
+                        else if (Config.TenChars.Contains(intNumberChar))
                         {
                             intNumber = 10;
                         }
@@ -243,11 +243,11 @@ namespace Microsoft.Recognizers.Text.Number
                     {
                         var intNumberChar = matches[0].Value[0];
 
-                        if (intNumberChar == '対' || intNumberChar == '对')
+                        if (intNumberChar == Config.PairChar)
                         {
                             intNumber = 5;
                         }
-                        else if (intNumberChar == '十' || intNumberChar == '拾')
+                        else if (Config.TenChars.Contains(intNumberChar))
                         {
                             intNumber = 10;
                         }
@@ -295,7 +295,7 @@ namespace Microsoft.Recognizers.Text.Number
                 var splitResult = Config.PointRegex.Split(doubleText);
                 if (splitResult[0] == string.Empty)
                 {
-                    splitResult[0] = "零";
+                    splitResult[0] = Config.ZeroChar.ToString();
                 }
 
                 var doubleValue = GetIntValue(splitResult[0]);
@@ -368,7 +368,7 @@ namespace Microsoft.Recognizers.Text.Number
 
                 if (splitResult[0] == string.Empty)
                 {
-                    splitResult[0] = "零";
+                    splitResult[0] = Config.ZeroChar.ToString();
                 }
 
                 if (Config.NegativeNumberSignRegex.IsMatch(splitResult[0]))
@@ -548,7 +548,8 @@ namespace Microsoft.Recognizers.Text.Number
                 {
                     if (i != intStr.Length - 1)
                     {
-                        if (intStr[i] == '零' && !Config.RoundNumberMapChar.ContainsKey(intStr[i + 1]))
+                        var isNotRoundNext = Config.TenChars.Contains(intStr[i + 1]) || !Config.RoundNumberMapChar.ContainsKey(intStr[i + 1]);
+                        if (intStr[i] == Config.ZeroChar && isNotRoundNext)
                         {
                             beforeValue = 1;
                             roundDefault = 1;

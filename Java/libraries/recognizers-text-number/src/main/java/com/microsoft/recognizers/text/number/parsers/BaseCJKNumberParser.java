@@ -86,7 +86,7 @@ public class BaseCJKNumberParser extends BaseNumberParser {
             demoPart = splitResult[1];
             numPart = splitResult[2];
         } else {
-            intPart = "零";
+            intPart = String.valueOf(cjkConfig.getZeroChar());
             demoPart = splitResult[0];
             numPart = splitResult[1];
         }
@@ -138,9 +138,9 @@ public class BaseCJKNumberParser extends BaseNumberParser {
                 if (matches.length == 2) {
                     char intNumberChar = matches[0].value.charAt(0);
 
-                    if (intNumberChar == '対' || intNumberChar == '对') {
+                    if (intNumberChar == cjkConfig.getPairChar()) {
                         intNumber = 5;
-                    } else if (intNumberChar == '十' || intNumberChar == '拾') {
+                    } else if (cjkConfig.getTenChars().contains(intNumberChar)) {
                         intNumber = 10;
                     } else {
                         intNumber = zeroToNineMap.get(intNumberChar);
@@ -170,9 +170,9 @@ public class BaseCJKNumberParser extends BaseNumberParser {
                 } else {
                     char intNumberChar = matches[0].value.charAt(0);
 
-                    if (intNumberChar == '対' || intNumberChar == '对') {
+                    if (intNumberChar == cjkConfig.getPairChar()) {
                         intNumber = 5;
-                    } else if (intNumberChar == '十' || intNumberChar == '拾') {
+                    } else if (cjkConfig.getTenChars().contains(intNumberChar)) {
                         intNumber = 10;
                     } else {
                         intNumber = zeroToNineMap.get(intNumberChar);
@@ -212,7 +212,7 @@ public class BaseCJKNumberParser extends BaseNumberParser {
 
             String[] splitResult = cjkConfig.getPointRegex().split(doubleText);
             if (splitResult[0].equals("")) {
-                splitResult[0] = "零";
+                splitResult[0] = String.valueOf(cjkConfig.getZeroChar());
             }
 
             double doubleValue = getIntValue(splitResult[0]);
@@ -269,7 +269,7 @@ public class BaseCJKNumberParser extends BaseNumberParser {
             String[] splitResult = cjkConfig.getPointRegex().split(resultText);
 
             if (splitResult[0].equals("")) {
-                splitResult[0] = "零";
+                splitResult[0] = String.valueOf(cjkConfig.getZeroChar());
             }
 
             if (cjkConfig.getNegativeNumberSignRegex().matcher(splitResult[0]).find()) {
@@ -408,7 +408,8 @@ public class BaseCJKNumberParser extends BaseNumberParser {
                 roundDefault = roundRecent / 10;
             } else if (cjkConfig.getZeroToNineMap().containsKey(intStr.charAt(i))) {
                 if (i != intStr.length() - 1) {
-                    if (intStr.charAt(i) == '零' && !roundNumberMapChar.containsKey(intStr.charAt(i + 1))) {
+                    boolean isNotRoundNext = cjkConfig.getTenChars().contains(intStr.charAt(i + 1)) || !roundNumberMapChar.containsKey(intStr.charAt(i + 1));
+                    if (intStr.charAt(i) == cjkConfig.getZeroChar() && isNotRoundNext) {
                         beforeValue = 1;
                         roundDefault = 1;
                     } else {

@@ -25,6 +25,8 @@ namespace Microsoft.Recognizers.Text.Number.Japanese
             NonDecimalSeparatorChar = NumbersDefinitions.NonDecimalSeparatorChar;
             HalfADozenText = NumbersDefinitions.HalfADozenText;
             WordSeparatorToken = NumbersDefinitions.WordSeparatorToken;
+            ZeroChar = NumbersDefinitions.ZeroChar;
+            PairChar = NumbersDefinitions.PairChar;
 
             WrittenDecimalSeparatorTexts = Enumerable.Empty<string>();
             WrittenGroupSeparatorTexts = Enumerable.Empty<string>();
@@ -41,6 +43,7 @@ namespace Microsoft.Recognizers.Text.Number.Japanese
             RoundNumberMapChar = NumbersDefinitions.RoundNumberMapChar.ToImmutableDictionary();
             UnitMap = NumbersDefinitions.UnitMap.ToImmutableDictionary();
             RoundDirectList = NumbersDefinitions.RoundDirectList.ToImmutableList();
+            TenChars = NumbersDefinitions.TenChars.ToImmutableList();
 
             HalfADozenRegex = null;
 
@@ -78,6 +81,10 @@ namespace Microsoft.Recognizers.Text.Number.Japanese
 
         public Regex RoundNumberIntegerRegex { get; private set; }
 
+        public char ZeroChar { get; private set; }
+
+        public char PairChar { get; private set; }
+
         public ImmutableDictionary<char, double> ZeroToNineMap { get; private set; }
 
         public ImmutableDictionary<char, long> RoundNumberMapChar { get; private set; }
@@ -89,6 +96,8 @@ namespace Microsoft.Recognizers.Text.Number.Japanese
         public ImmutableDictionary<char, char> TratoSimMap { get; private set; }
 
         public ImmutableList<char> RoundDirectList { get; private set; }
+
+        public ImmutableList<char> TenChars { get; private set; }
 
         public override IEnumerable<string> NormalizeTokenSet(IEnumerable<string> tokens, ParseResult context)
         {

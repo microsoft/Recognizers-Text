@@ -18,6 +18,8 @@ export class ChineseNumberParserConfiguration implements ICJKNumberParserConfigu
     readonly nonDecimalSeparatorChar: string;
     readonly decimalSeparatorChar: string;
     readonly wordSeparatorToken: string;
+    readonly zeroChar: string;
+    readonly pairChar: string;
     readonly writtenDecimalSeparatorTexts: ReadonlyArray<string>;
     readonly writtenGroupSeparatorTexts: ReadonlyArray<string>;
     readonly writtenIntegerSeparatorTexts: ReadonlyArray<string>;
@@ -29,6 +31,7 @@ export class ChineseNumberParserConfiguration implements ICJKNumberParserConfigu
     readonly tratoSimMap: ReadonlyMap<string, string>;
     readonly unitMap: ReadonlyMap<string, string>;
     readonly roundDirectList: ReadonlyArray<string>;
+    readonly tenChars: ReadonlyArray<string>;
     readonly digitNumRegex: RegExp;
     readonly dozenRegex: RegExp;
     readonly percentageRegex: RegExp;
@@ -53,6 +56,8 @@ export class ChineseNumberParserConfiguration implements ICJKNumberParserConfigu
         this.nonDecimalSeparatorChar = ChineseNumeric.NonDecimalSeparatorChar;
         this.halfADozenText = ChineseNumeric.HalfADozenText;
         this.wordSeparatorToken = ChineseNumeric.WordSeparatorToken;
+        this.zeroChar = ChineseNumeric.ZeroChar;
+        this.pairChar = ChineseNumeric.PairChar;
 
         this.writtenDecimalSeparatorTexts = [];
         this.writtenGroupSeparatorTexts = [];
@@ -71,6 +76,7 @@ export class ChineseNumberParserConfiguration implements ICJKNumberParserConfigu
         this.tratoSimMap = ChineseNumeric.TratoSimMap;
         this.unitMap = ChineseNumeric.UnitMap;
         this.roundDirectList = ChineseNumeric.RoundDirectList;
+        this.tenChars = ChineseNumeric.TenChars;
         this.digitNumRegex = RegExpUtility.getSafeRegExp(ChineseNumeric.DigitNumRegex, "gis");
         this.dozenRegex = RegExpUtility.getSafeRegExp(ChineseNumeric.DozenRegex, "gis");
         this.percentageRegex = RegExpUtility.getSafeRegExp(ChineseNumeric.PercentageRegex, "gis");

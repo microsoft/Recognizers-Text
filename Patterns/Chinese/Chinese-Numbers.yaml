@@ -6,6 +6,8 @@ FractionMarkerToken: ''
 NonDecimalSeparatorChar: !char ' '
 HalfADozenText: ''
 WordSeparatorToken: ''
+ZeroChar: !char '零'
+PairChar: !char '对'
 RoundNumberMap: !dictionary
   types: [string, long]
   entries:
@@ -130,6 +132,11 @@ RoundDirectList: !list
     - 亿
     - 兆
     - 億
+TenChars: !list
+  types: [char]
+  entries:
+    - 十
+    - 拾
 DigitalNumberRegex: !nestedRegex
   def: ((?<=(\d|\b)){BaseNumbers.MultiplierLookupRegex}(?=\b))
   references: [BaseNumbers.MultiplierLookupRegex]
