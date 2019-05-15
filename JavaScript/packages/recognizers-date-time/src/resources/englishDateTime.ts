@@ -87,7 +87,7 @@ export namespace EnglishDateTime {
 	export const YearSuffix = `(,?\\s*(${DateYearRegex}|${FullTextYearRegex}))`;
 	export const OnRegex = `(?<=\\bon\\s+)(${DayRegex}s?)\\b`;
 	export const RelaxedOnRegex = `(?<=\\b(on|at|in)\\s+)((?<day>10th|11th|11st|12nd|12th|13rd|13th|14th|15th|16th|17th|18th|19th|1st|20th|21st|21th|22nd|22th|23rd|23th|24th|25th|26th|27th|28th|29th|2nd|30th|31st|3rd|4th|5th|6th|7th|8th|9th)s?)\\b`;
-	export const PrefixWeekDayRegex = `(\\s*((,?\\s*on)|[-—–]))`;
+	export const PrefixWeekDayRegex = `(\\s*((,?\\s*on)|[-—–]|('s)))`;
 	export const ThisRegex = `\\b(this(\\s*week${PrefixWeekDayRegex}?)?\\s*${WeekDayRegex})|(${WeekDayRegex}((\\s+of)?\\s+this\\s*week))\\b`;
 	export const LastDateRegex = `\\b(${PreviousPrefixRegex}(\\s*week${PrefixWeekDayRegex}?)?\\s*${WeekDayRegex})|(${WeekDayRegex}(\\s+last\\s*week))\\b`;
 	export const NextDateRegex = `\\b(${NextPrefixRegex}(\\s*week${PrefixWeekDayRegex}?)?\\s*${WeekDayRegex})|((on\\s+)?${WeekDayRegex}((\\s+of)?\\s+(the\\s+following|(the\\s+)?next)\\s*week))\\b`;
@@ -105,8 +105,8 @@ export namespace EnglishDateTime {
 	export const DateExtractor4 = `\\b${MonthNumRegex}\\s*[/\\\\\\-]\\s*${DayRegex}(\\.)?\\s*[/\\\\\\-]\\s*${DateYearRegex}`;
 	export const DateExtractor5 = `\\b${DayRegex}\\s*[/\\\\\\-\\.]\\s*(${MonthNumRegex}|${MonthRegex})\\s*[/\\\\\\-\\.]\\s*${DateYearRegex}`;
 	export const DateExtractor6 = `(?<=${DatePreposition}\\s+)(${WeekDayRegex}\\s+)?${MonthNumRegex}[\\-\\.]${DayRegex}(?![%])\\b`;
-	export const DateExtractor7L = `\\b((this\\s+)?${WeekDayRegex}\\s+)?${MonthNumRegex}\\s*/\\s*${DayRegex}((\\s+|\\s*,\\s*|\\s+of\\s+)${DateYearRegex})(?![%])\\b`;
-	export const DateExtractor7S = `\\b((this\\s+)?${WeekDayRegex}\\s+)?${MonthNumRegex}\\s*/\\s*${DayRegex}(?![%])\\b`;
+	export const DateExtractor7L = `\\b((${RelativeRegex}\\s+)?${WeekDayRegex}\\s+)?${MonthNumRegex}\\s*/\\s*${DayRegex}((\\s+|\\s*,\\s*|\\s+of\\s+)${DateYearRegex})(?![%])\\b`;
+	export const DateExtractor7S = `\\b((${RelativeRegex}\\s+)?${WeekDayRegex}\\s+)?${MonthNumRegex}\\s*/\\s*${DayRegex}(?![%])\\b`;
 	export const DateExtractor8 = `(?<=${DatePreposition}\\s+)(${WeekDayRegex}\\s+)?${DayRegex}[\\\\\\-]${MonthNumRegex}(?![%])\\b`;
 	export const DateExtractor9L = `\\b(${WeekDayRegex}\\s+)?${DayRegex}\\s*/\\s*${MonthNumRegex}((\\s+|\\s*,\\s*|\\s+of\\s+)${DateYearRegex})(?![%])\\b`;
 	export const DateExtractor9S = `\\b(${WeekDayRegex}\\s+)?${DayRegex}\\s*/\\s*${MonthNumRegex}(?![%])\\b`;

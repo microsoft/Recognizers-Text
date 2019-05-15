@@ -264,7 +264,7 @@ public class EnglishDateTime {
 
     public static final String RelaxedOnRegex = "(?<=\\b(on|at|in)\\s+)((?<day>10th|11th|11st|12nd|12th|13rd|13th|14th|15th|16th|17th|18th|19th|1st|20th|21st|21th|22nd|22th|23rd|23th|24th|25th|26th|27th|28th|29th|2nd|30th|31st|3rd|4th|5th|6th|7th|8th|9th)s?)\\b";
 
-    public static final String PrefixWeekDayRegex = "(\\s*((,?\\s*on)|[-—–]))";
+    public static final String PrefixWeekDayRegex = "(\\s*((,?\\s*on)|[-—–]|('s)))";
 
     public static final String ThisRegex = "\\b(this(\\s*week{PrefixWeekDayRegex}?)?\\s*{WeekDayRegex})|({WeekDayRegex}((\\s+of)?\\s+this\\s*week))\\b"
             .replace("{WeekDayRegex}", WeekDayRegex)
@@ -336,17 +336,19 @@ public class EnglishDateTime {
             .replace("{WeekDayRegex}", WeekDayRegex)
             .replace("{DatePreposition}", DatePreposition);
 
-    public static final String DateExtractor7L = "\\b((this\\s+)?{WeekDayRegex}\\s+)?{MonthNumRegex}\\s*/\\s*{DayRegex}((\\s+|\\s*,\\s*|\\s+of\\s+){DateYearRegex})(?![%])\\b"
+    public static final String DateExtractor7L = "\\b(({RelativeRegex}\\s+)?{WeekDayRegex}\\s+)?{MonthNumRegex}\\s*/\\s*{DayRegex}((\\s+|\\s*,\\s*|\\s+of\\s+){DateYearRegex})(?![%])\\b"
             .replace("{MonthNumRegex}", MonthNumRegex)
             .replace("{DayRegex}", DayRegex)
             .replace("{DateYearRegex}", DateYearRegex)
-            .replace("{WeekDayRegex}", WeekDayRegex);
+            .replace("{WeekDayRegex}", WeekDayRegex)
+            .replace("{RelativeRegex}", RelativeRegex);
 
-    public static final String DateExtractor7S = "\\b((this\\s+)?{WeekDayRegex}\\s+)?{MonthNumRegex}\\s*/\\s*{DayRegex}(?![%])\\b"
+    public static final String DateExtractor7S = "\\b(({RelativeRegex}\\s+)?{WeekDayRegex}\\s+)?{MonthNumRegex}\\s*/\\s*{DayRegex}(?![%])\\b"
             .replace("{MonthNumRegex}", MonthNumRegex)
             .replace("{DayRegex}", DayRegex)
             .replace("{DateYearRegex}", DateYearRegex)
-            .replace("{WeekDayRegex}", WeekDayRegex);
+            .replace("{WeekDayRegex}", WeekDayRegex)
+            .replace("{RelativeRegex}", RelativeRegex);
 
     public static final String DateExtractor8 = "(?<={DatePreposition}\\s+)({WeekDayRegex}\\s+)?{DayRegex}[\\\\\\-]{MonthNumRegex}(?![%])\\b"
             .replace("{DayRegex}", DayRegex)

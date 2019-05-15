@@ -202,7 +202,7 @@ OnRegex: !nestedRegex
 RelaxedOnRegex: !simpleRegex
   def: (?<=\b(on|at|in)\s+)((?<day>10th|11th|11st|12nd|12th|13rd|13th|14th|15th|16th|17th|18th|19th|1st|20th|21st|21th|22nd|22th|23rd|23th|24th|25th|26th|27th|28th|29th|2nd|30th|31st|3rd|4th|5th|6th|7th|8th|9th)s?)\b
 PrefixWeekDayRegex: !simpleRegex
-  def: (\s*((,?\s*on)|[-—–]))
+  def: (\s*((,?\s*on)|[-—–]|('s)))
 ThisRegex: !nestedRegex
   def: \b(this(\s*week{PrefixWeekDayRegex}?)?\s*{WeekDayRegex})|({WeekDayRegex}((\s+of)?\s+this\s*week))\b
   references: [ WeekDayRegex, PrefixWeekDayRegex ]
@@ -253,11 +253,11 @@ DateExtractor6: !nestedRegex
   def: (?<={DatePreposition}\s+)({WeekDayRegex}\s+)?{MonthNumRegex}[\-\.]{DayRegex}(?![%])\b
   references: [ MonthNumRegex, DayRegex, WeekDayRegex, DatePreposition ]
 DateExtractor7L: !nestedRegex
-  def: \b((this\s+)?{WeekDayRegex}\s+)?{MonthNumRegex}\s*/\s*{DayRegex}((\s+|\s*,\s*|\s+of\s+){DateYearRegex})(?![%])\b
-  references: [ MonthNumRegex, DayRegex, DateYearRegex, WeekDayRegex ]
+  def: \b(({RelativeRegex}\s+)?{WeekDayRegex}\s+)?{MonthNumRegex}\s*/\s*{DayRegex}((\s+|\s*,\s*|\s+of\s+){DateYearRegex})(?![%])\b
+  references: [ MonthNumRegex, DayRegex, DateYearRegex, WeekDayRegex, RelativeRegex ]
 DateExtractor7S: !nestedRegex
-  def: \b((this\s+)?{WeekDayRegex}\s+)?{MonthNumRegex}\s*/\s*{DayRegex}(?![%])\b
-  references: [ MonthNumRegex, DayRegex, DateYearRegex, WeekDayRegex ]
+  def: \b(({RelativeRegex}\s+)?{WeekDayRegex}\s+)?{MonthNumRegex}\s*/\s*{DayRegex}(?![%])\b
+  references: [ MonthNumRegex, DayRegex, DateYearRegex, WeekDayRegex, RelativeRegex ]
 # The only difference between 7L and 7S is whether "Year" part is required
 # We have both the long and short Regex because we would like to catch both "11/20, 12" and "11/20, 12/20"
 # Only use the long Regex would ignore "11/20" in "11/20, 12/20" and it is hard to exhaust all characters after the "year" as we also have cases like "11/20, 12 of April"
