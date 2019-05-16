@@ -43,4 +43,14 @@ IF %ERRORLEVEL% == 1 (
 	)
 )
 
+ECHO.
+ECHO # Running CreateAllPackages.cmd
+CALL CreateAllPackages.cmd
+IF %ERRORLEVEL% NEQ 0 (
+	ECHO # Failed to create packages.
+	EXIT /b -1
+)
+
+EXIT /b 0
+
 ECHO ============================== PYTHON BUILD/TEST END ==============================
