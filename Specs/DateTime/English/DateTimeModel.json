@@ -11147,5 +11147,55 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Total sales from april to June in 2017 were below expectations.",
+    "Context": {
+      "ReferenceDateTime": "2019-05-16T00:00:00"
+    },
+    "NotSupported": "python, javascript",
+    "Results": [
+      {
+        "Text": "from april to june in 2017",
+        "Start": 12,
+        "End": 37,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2017-04-01,2017-06-01,P2M)",
+              "type": "daterange",
+              "start": "2017-04-01",
+              "end": "2017-06-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Total sales from april in 2016 to June in 2017 were below expectations.",
+    "Context": {
+      "ReferenceDateTime": "2019-05-16T00:00:00"
+    },
+    "NotSupported": "python, javascript",
+    "Results": [
+      {
+        "Text": "from april in 2016 to june in 2017",
+        "Start": 12,
+        "End": 45,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2016-04-01,2017-06-01,P14M)",
+              "type": "daterange",
+              "start": "2016-04-01",
+              "end": "2017-06-01"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
