@@ -276,5 +276,21 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Show me the previous 1.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "previous 1",
+        "Start": 12,
+        "End": 21,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "-1",
+          "relativeTo": "current"
+        }
+      }
+    ]
   }
 ]
