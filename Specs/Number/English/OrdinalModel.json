@@ -475,9 +475,9 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "first one",
+        "Text": "first",
         "Start": 11,
-        "End": 19,
+        "End": 15,
         "TypeName": "ordinal",
         "Resolution": {
           "offset": "1",

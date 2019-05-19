@@ -11084,5 +11084,29 @@
         }
       }
     ]
+  },
+  {
+    "Input": "January first 12 was a special day for me",
+    "Context": {
+      "ReferenceDateTime": "2019-05-19T12:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "january first 12",
+        "Start": 0,
+        "End": 15,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2012-01-01",
+              "type": "date",
+              "value": "2012-01-01"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

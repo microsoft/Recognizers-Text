@@ -75,7 +75,7 @@ public class EnglishNumeric {
 
     public static final String RoundNumberOrdinalRegex = "(hundredth|thousandth|millionth|billionth|trillionth)";
 
-    public static final String NumberOrdinalRegex = "(first (one|1)|first|second|third|fourth|fifth|sixth|seventh|eighth|ninth|tenth|eleventh|twelfth|thirteenth|fourteenth|fifteenth|sixteenth|seventeenth|eighteenth|nineteenth|twentieth|thirtieth|fortieth|fiftieth|sixtieth|seventieth|eightieth|ninetieth)";
+    public static final String NumberOrdinalRegex = "(first|second|third|fourth|fifth|sixth|seventh|eighth|ninth|tenth|eleventh|twelfth|thirteenth|fourteenth|fifteenth|sixteenth|seventeenth|eighteenth|nineteenth|twentieth|thirtieth|fortieth|fiftieth|sixtieth|seventieth|eightieth|ninetieth)";
 
     public static final String RelativeOrdinalRegex = "((next|previous) (one|1)|(the second|next) to last|the one before the last( one)?|the last but one|(ante)?penultimate|last|next|previous)";
 
@@ -83,7 +83,7 @@ public class EnglishNumeric {
             .replace("{NumberOrdinalRegex}", NumberOrdinalRegex)
             .replace("{RelativeOrdinalRegex}", RelativeOrdinalRegex);
 
-    public static final String RelativeOrdinalFilterRegex = "(?<!-)(first|{RelativeOrdinalRegex})\\s*({TwoToNineIntegerRegex}|[2-9]\\b)(?!\\s*{RoundNumberIntegerRegex})"
+    public static final String RelativeOrdinalFilterRegex = "(?<!(-|(april|apr|august|aug|december|dec|february|feb|january|jan|july|jul|june|jun|march|mar|may|november|nov|october|oct|september|sept|sep)\\s*))(first|{RelativeOrdinalRegex})\\s*({TwoToNineIntegerRegex}|[2-9]+)(?!\\s*{RoundNumberIntegerRegex})"
             .replace("{RelativeOrdinalRegex}", RelativeOrdinalRegex)
             .replace("{TwoToNineIntegerRegex}", TwoToNineIntegerRegex)
             .replace("{RoundNumberIntegerRegex}", RoundNumberIntegerRegex);
@@ -338,8 +338,6 @@ public class EnglishNumeric {
 
     public static final ImmutableMap<String, Long> OrdinalNumberMap = ImmutableMap.<String, Long>builder()
         .put("first", 1L)
-        .put("first one", 1L)
-        .put("first 1", 1L)
         .put("second", 2L)
         .put("secondary", 2L)
         .put("half", 2L)
