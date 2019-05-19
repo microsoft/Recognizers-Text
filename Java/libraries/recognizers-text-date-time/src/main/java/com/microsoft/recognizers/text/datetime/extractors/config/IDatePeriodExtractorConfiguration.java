@@ -57,6 +57,8 @@ public interface IDatePeriodExtractorConfiguration {
 
     Pattern getCenturySuffixRegex();
 
+    Pattern getNowRegex();
+
     IDateTimeExtractor getDatePointExtractor();
 
     IExtractor getCardinalExtractor();

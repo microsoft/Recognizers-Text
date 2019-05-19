@@ -316,7 +316,8 @@ export class BaseDateParser implements IDateTimeParser {
         match = RegExpUtility.getMatches(this.config.specialDayRegex, trimmedSource).pop();
         if (match && match.index === 0 && match.length === trimmedSource.length) {
             let swift = this.config.getSwiftDay(match.value);
-            let value = DateUtils.addDays(referenceDate, swift);
+            let today = DateUtils.safeCreateFromMinValue(referenceDate.getFullYear(), referenceDate.getMonth(), referenceDate.getDate())
+            let value = DateUtils.addDays(today, swift);
             result.timex = DateTimeFormatUtil.luisDateFromDate(value);
             result.futureValue = value;
             result.pastValue = value;

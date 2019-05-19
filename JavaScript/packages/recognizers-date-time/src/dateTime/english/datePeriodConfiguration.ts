@@ -29,6 +29,7 @@ export class EnglishDatePeriodExtractorConfiguration implements IDatePeriodExtra
     readonly numberParser: BaseNumberParser
     readonly durationExtractor: IDateTimeExtractor
     readonly rangeConnectorRegex: RegExp
+    readonly nowRegex: RegExp
 
     constructor() {
         this.simpleCasesRegexes = [
@@ -68,6 +69,7 @@ export class EnglishDatePeriodExtractorConfiguration implements IDatePeriodExtra
         this.numberParser = new BaseNumberParser(new EnglishNumberParserConfiguration());
         this.durationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration());
         this.rangeConnectorRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RangeConnectorRegex);
+        this.nowRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.NowRegex);
     }
 
     getFromTokenIndex(source: string) {
@@ -126,6 +128,7 @@ export class EnglishDatePeriodParserConfiguration implements IDatePeriodParserCo
     readonly laterEarlyPeriodRegex: RegExp
     readonly weekWithWeekDayRangeRegex: RegExp
     readonly unspecificEndOfRangeRegex: RegExp
+    readonly nowRegex: RegExp
     readonly tokenBeforeDate: string
     readonly dayOfMonth: ReadonlyMap<string, number>
     readonly monthOfYear: ReadonlyMap<string, number>
@@ -165,6 +168,7 @@ export class EnglishDatePeriodParserConfiguration implements IDatePeriodParserCo
         this.laterEarlyPeriodRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.LaterEarlyPeriodRegex);
         this.weekWithWeekDayRangeRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.WeekWithWeekDayRangeRegex);
         this.unspecificEndOfRangeRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.UnspecificEndOfRangeRegex);
+        this.nowRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.NowRegex);
         this.tokenBeforeDate = EnglishDateTime.TokenBeforeDate;
         this.dayOfMonth = config.dayOfMonth;
         this.monthOfYear = config.monthOfYear;

@@ -76,6 +76,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
             LessThanRegex = DutchDatePeriodExtractorConfiguration.LessThanRegex;
             MoreThanRegex = DutchDatePeriodExtractorConfiguration.MoreThanRegex;
             CenturySuffixRegex = DutchDatePeriodExtractorConfiguration.CenturySuffixRegex;
+            NowRegex = DutchDatePeriodExtractorConfiguration.NowRegex;
             UnitMap = config.UnitMap;
             CardinalMap = config.CardinalMap;
             DayOfMonth = config.DayOfMonth;
@@ -193,6 +194,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         public Regex MoreThanRegex { get; }
 
         public Regex CenturySuffixRegex { get; }
+
+        public Regex NowRegex { get; }
 
         Regex IDatePeriodParserConfiguration.NextPrefixRegex => NextPrefixRegex;
 

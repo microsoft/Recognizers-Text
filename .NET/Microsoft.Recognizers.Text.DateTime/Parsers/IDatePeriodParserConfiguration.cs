@@ -107,6 +107,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex UnspecificEndOfRangeRegex { get; }
 
+        Regex NowRegex { get; }
+
         IImmutableDictionary<string, string> UnitMap { get; }
 
         IImmutableDictionary<string, int> CardinalMap { get; }

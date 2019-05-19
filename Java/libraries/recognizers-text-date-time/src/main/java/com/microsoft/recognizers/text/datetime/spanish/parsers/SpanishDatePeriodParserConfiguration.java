@@ -77,6 +77,7 @@ public class SpanishDatePeriodParserConfiguration extends BaseOptionsConfigurati
         lessThanRegex = SpanishDatePeriodExtractorConfiguration.LessThanRegex;
         moreThanRegex = SpanishDatePeriodExtractorConfiguration.MoreThanRegex;
         centurySuffixRegex = SpanishDatePeriodExtractorConfiguration.CenturySuffixRegex;
+        nowRegex = SpanishDatePeriodExtractorConfiguration.NowRegex;
 
         unitMap = config.getUnitMap();
         cardinalMap = config.getCardinalMap();
@@ -181,6 +182,8 @@ public class SpanishDatePeriodParserConfiguration extends BaseOptionsConfigurati
     private final Pattern moreThanRegex;
 
     private final Pattern centurySuffixRegex;
+
+    private final Pattern nowRegex;
 
     // Dictionaries
     private final ImmutableMap<String, String> unitMap;
@@ -445,6 +448,11 @@ public class SpanishDatePeriodParserConfiguration extends BaseOptionsConfigurati
     @Override
     public final Pattern getUnspecificEndOfRangeRegex() {
         return unspecificEndOfRangeRegex;
+    }
+
+    @Override
+    public Pattern getNowRegex() {
+        return nowRegex;
     }
 
     @Override

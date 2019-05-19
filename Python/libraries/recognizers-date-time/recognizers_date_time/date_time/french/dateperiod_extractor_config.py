@@ -82,6 +82,10 @@ class FrenchDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
     def duration_extractor(self) -> DateTimeExtractor:
         return self._duration_extractor
 
+    @property
+    def now_regex(self) -> Pattern:
+        return self._now_regex
+
     def __init__(self):
         self._simple_cases_regexes = [
             RegExpUtility.get_safe_reg_exp(FrenchDateTime.SimpleCasesRegex),
@@ -125,6 +129,7 @@ class FrenchDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
         self._integer_extractor = FrenchIntegerExtractor()
         self._number_parser = BaseNumberParser(FrenchNumberParserConfiguration())
         self._duration_extractor = BaseDurationExtractor(FrenchDurationExtractorConfiguration())
+        self._now_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.NowRegex)
 
     def get_from_token_index(self, source: str) -> MatchedIndex:
         match = self.from_regex.search(source)

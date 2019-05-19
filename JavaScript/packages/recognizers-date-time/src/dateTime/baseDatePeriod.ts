@@ -21,6 +21,7 @@ export interface IDatePeriodExtractorConfiguration {
     dateUnitRegex: RegExp
     inConnectorRegex: RegExp
     rangeUnitRegex: RegExp
+    nowRegex: RegExp
     datePointExtractor: IDateTimeExtractor
     integerExtractor: BaseNumberExtractor
     numberParser: BaseNumberParser
@@ -123,8 +124,19 @@ export class BaseDatePeriodExtractor implements IDateTimeExtractor {
         let tokens: Array<Token> = new Array<Token>();
         let er = this.config.datePointExtractor.extract(source, refDate);
         if (er.length <= 1) {
-            return tokens;
+            let matches = RegExpUtility.getMatches(this.config.nowRegex, source);
+            if (matches.length) {
+                let nowEr = new ExtractResult();
+                nowEr.start = matches[0].index;
+                nowEr.length = matches[0].length;
+                er.push(nowEr);
+                er = er.sort((x, y) => (x.start - y.start));
+            } else {
+                return tokens;
+            }
+
         }
+
         let idx = 0;
         while (idx < er.length - 1) {
             let middleBegin = er[idx].start + (er[idx].length || 0);
@@ -273,6 +285,7 @@ export interface IDatePeriodParserConfiguration {
     laterEarlyPeriodRegex: RegExp
     weekWithWeekDayRangeRegex: RegExp
     unspecificEndOfRangeRegex: RegExp
+    nowRegex: RegExp
     tokenBeforeDate: string
     dayOfMonth: ReadonlyMap<string, number>
     monthOfYear: ReadonlyMap<string, number>
@@ -730,29 +743,43 @@ export class BaseDatePeriodParser implements IDateTimeParser {
         let trimmedSource = source.trim();
         let result = new DateTimeResolutionResult();
         let ers = this.config.dateExtractor.extract(trimmedSource, referenceDate);
+        let prs: DateTimeParseResult[] = [];
         if (!ers || ers.length < 2) {
-            ers = this.config.dateExtractor.extract(this.config.tokenBeforeDate + trimmedSource, referenceDate)
-                .map(er => {
+            ers = this.config.dateExtractor.extract(this.config.tokenBeforeDate + trimmedSource, referenceDate);
+            if (ers.length >= 2) {
+                ers = ers.map(er => {
                     er.start -= this.config.tokenBeforeDate.length;
                     return er;
                 });
-            if (!ers || ers.length < 2) return result;
+            } else {
+                let nowPr = this.parseNowAsDate(source, referenceDate);
+                if (!nowPr || !nowPr.start || ers.length < 1) {
+                    return result;
+                }
+                let dataPr = this.config.dateParser.parse(ers[0], referenceDate);
+                prs.push(dataPr);
+                prs.push(nowPr);
+                prs = prs.sort((x, y) => (x.start - y.start));
+            }
         }
 
-        let match = RegExpUtility.getMatches(this.config.weekWithWeekDayRangeRegex, source).pop();
-        let weekPrefix: string = null;
-        if (match)
-        {
-            weekPrefix = match.groups("week").value;
+        if (ers.length >= 2) {
+            let match = RegExpUtility.getMatches(this.config.weekWithWeekDayRangeRegex, source).pop();
+            let weekPrefix: string = null;
+            if (match)
+            {
+                weekPrefix = match.groups("week").value;
+            }
+
+            if (! StringUtility.isNullOrWhitespace(weekPrefix))
+            {
+                ers[0].text = weekPrefix + " " + ers[0].text;
+                ers[1].text = weekPrefix + " " + ers[1].text;
+            }
+
+            prs = ers.map(er => this.config.dateParser.parse(er, referenceDate)).filter(pr => pr);
         }
 
-        if (! StringUtility.isNullOrWhitespace(weekPrefix))
-        {
-            ers[0].text = weekPrefix + " " + ers[0].text;
-            ers[1].text = weekPrefix + " " + ers[1].text;
-        }
-
-        let prs = ers.map(er => this.config.dateParser.parse(er, referenceDate)).filter(pr => pr);
         if (prs.length < 2) return result;
 
         let prBegin = prs[0];
@@ -778,6 +805,24 @@ export class BaseDatePeriodParser implements IDateTimeParser {
         result.pastValue = [pastBegin, pastEnd];
         result.success = true;
         return result;
+    }
+
+    protected parseNowAsDate(source: string, referenceDate: Date): DateTimeParseResult {
+        let pr = new DateTimeParseResult();
+        let matches = RegExpUtility.getMatches(this.config.nowRegex, source);
+        if (matches.length) {
+            let value = DateUtils.safeCreateFromMinValue(referenceDate.getFullYear(), referenceDate.getMonth(), referenceDate.getDate());
+            let retNow = new DateTimeResolutionResult();
+            retNow.timex = DateTimeFormatUtil.luisDateFromDate(value);
+            retNow.futureValue = value;
+            retNow.pastValue = value;
+            pr.text = matches[0].value;
+            pr.start = matches[0].index;
+            pr.length = matches[0].length;
+            pr.value = retNow;
+            pr.timexStr = retNow.timex;
+        }
+        return pr;
     }
 
     protected parseYear(source: string, referenceDate: Date): DateTimeResolutionResult {

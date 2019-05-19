@@ -161,6 +161,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         public static readonly Regex CenturySuffixRegex =
             new Regex(DateTimeDefinitions.CenturySuffixRegex, RegexOptions.Singleline);
 
+        public static readonly Regex NowRegex =
+            new Regex(DateTimeDefinitions.NowRegex, RegexOptions.Singleline);
+
         private static readonly Regex FromRegex =
             new Regex(DateTimeDefinitions.FromRegex, RegexOptions.Singleline);
 
@@ -265,6 +268,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         Regex IDatePeriodExtractorConfiguration.CenturySuffixRegex => CenturySuffixRegex;
 
         Regex IDatePeriodExtractorConfiguration.MonthNumRegex => MonthNumRegex;
+
+        Regex IDatePeriodExtractorConfiguration.NowRegex => NowRegex;
 
         string[] IDatePeriodExtractorConfiguration.DurationDateRestrictions => DateTimeDefinitions.DurationDateRestrictions;
 
