@@ -7,9 +7,9 @@ from setuptools import setup, find_packages
 def read(fname):
     return open(os.path.join(os.path.dirname(__file__), fname)).read()
 
-NAME = "microsoft.recognizers-text-number"
+NAME = "recognizers-text-number"
 VERSION = "1.0.0.a0"
-REQUIRES = ['microsoft.recognizers-text', 'regex']
+REQUIRES = ['recognizers-text', 'regex']
 
 setup(
     name=NAME,

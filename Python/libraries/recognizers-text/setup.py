@@ -3,7 +3,7 @@
 
 from setuptools import setup, find_packages
 
-NAME = "microsoft.recognizers-text"
+NAME = "recognizers-text"
 VERSION = "1.0.0.a0"
 REQUIRES = []
 
