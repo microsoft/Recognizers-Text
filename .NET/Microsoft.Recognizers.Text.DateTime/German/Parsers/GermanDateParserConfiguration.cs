@@ -34,6 +34,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             WeekDayAndDayOfMothRegex = GermanDateExtractorConfiguration.WeekDayAndDayOfMothRegex;
             WeekDayAndDayRegex = GermanDateExtractorConfiguration.WeekDayAndDayRegex;
             RelativeMonthRegex = GermanDateExtractorConfiguration.RelativeMonthRegex;
+            RelativeRegex = GermanDateExtractorConfiguration.RelativeRegex;
             YearSuffix = GermanDateExtractorConfiguration.YearSuffix;
             RelativeWeekDayRegex = GermanDateExtractorConfiguration.RelativeWeekDayRegex;
             RelativeDayRegex = new Regex(DateTimeDefinitions.RelativeDayRegex, RegexOptions.Singleline);
@@ -102,6 +103,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public Regex RelativeMonthRegex { get; }
 
+        public Regex RelativeRegex { get; }
+
         public Regex YearSuffix { get; }
 
         public Regex RelativeWeekDayRegex { get; }
@@ -136,7 +139,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
-        public int GetSwiftMonth(string text)
+        public int GetSwiftMonthOrYear(string text)
         {
             var trimmedText = text.Trim().ToLowerInvariant();
             var swift = 0;

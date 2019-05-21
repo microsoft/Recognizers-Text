@@ -57,6 +57,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex RelativeMonthRegex { get; }
 
+        Regex RelativeRegex { get; }
+
         Regex YearSuffix { get; }
 
         Regex RelativeWeekDayRegex { get; }
@@ -89,7 +91,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
-        int GetSwiftMonth(string text);
+        int GetSwiftMonthOrYear(string text);
 
         bool IsCardinalLast(string text);
 

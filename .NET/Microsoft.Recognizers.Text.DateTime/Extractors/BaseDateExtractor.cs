@@ -134,10 +134,20 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var matches = regex.Matches(text);
                 foreach (Match match in matches)
                 {
-                    // some match might be part of the date range entity, and might be splitted in a wrong way
+                    // some match might be part of the date range entity, and might be split in a wrong way
                     if (ValidateMatch(match, text))
                     {
-                        ret.Add(new Token(match.Index, match.Index + match.Length));
+                        var preText = text.Substring(0, match.Index);
+                        var relativeRegex = this.Config.RelativeRegex.MatchEnd(preText, trim: true);
+                        if (relativeRegex.Success)
+                        {
+                            ret.Add(new Token(relativeRegex.Index, match.Index + match.Length));
+                        }
+                        else
+                        {
+                            ret.Add(new Token(match.Index, match.Index + match.Length));
+                        }
+
                     }
                 }
             }

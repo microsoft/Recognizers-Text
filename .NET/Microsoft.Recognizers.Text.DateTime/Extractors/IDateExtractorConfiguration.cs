@@ -27,6 +27,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex RelativeMonthRegex { get; }
 
+        Regex RelativeRegex { get; }
+
         Regex WeekDayRegex { get; }
 
         Regex PrefixArticleRegex { get; }

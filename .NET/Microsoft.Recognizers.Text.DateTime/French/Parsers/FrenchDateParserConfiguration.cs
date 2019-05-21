@@ -36,6 +36,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             WeekDayAndDayOfMothRegex = FrenchDateExtractorConfiguration.WeekDayAndDayOfMothRegex;
             WeekDayAndDayRegex = FrenchDateExtractorConfiguration.WeekDayAndDayRegex;
             RelativeMonthRegex = FrenchDateExtractorConfiguration.RelativeMonthRegex;
+            RelativeRegex = FrenchDateExtractorConfiguration.RelativeRegex;
             YearSuffix = FrenchDateExtractorConfiguration.YearSuffix;
             RelativeWeekDayRegex = FrenchDateExtractorConfiguration.RelativeWeekDayRegex;
             RelativeDayRegex = new Regex(DateTimeDefinitions.RelativeDayRegex, RegexOptions.Singleline);
@@ -105,6 +106,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public Regex WeekDayAndDayRegex { get; }
 
         public Regex RelativeMonthRegex { get; }
+
+        public Regex RelativeRegex { get; }
 
         public Regex YearSuffix { get; }
 
@@ -178,7 +181,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             return swift;
         }
 
-        public int GetSwiftMonth(string text)
+        public int GetSwiftMonthOrYear(string text)
         {
             var trimmedText = text.Trim().ToLowerInvariant();
             var swift = 0;
