@@ -17,6 +17,9 @@ popd
 pushd .\libraries\recognizers-sequence\
 call CreatePackage.cmd
 popd
+pushd .\libraries\recognizers-suite\
+call CreatePackage.cmd
+popd
 rem Exit .Python dir
 popd
 
