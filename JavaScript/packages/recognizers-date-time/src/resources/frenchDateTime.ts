@@ -11,6 +11,7 @@ export namespace FrenchDateTime {
 	export const TillRegex = `(?<till>au|[aà]|et|jusqu'[aà]|avant|--|-|—|——)`;
 	export const RangeConnectorRegex = `(?<and>et|de la|au|[aà]|et\\s*la|--|-|—|——)`;
 	export const RelativeRegex = `(?<order>prochain|prochaine|de|du|ce|cette|l[ae]|derni[eè]re|pr[eé]c[eé]dente|au\\s+cours+(de|du\\s*))`;
+	export const StrictRelativeRegex = `(?<order>prochain|prochaine|ce|cette|derni[eè]re|pr[eé]c[eé]dente|au\\s+cours+(de|du\\s*))`;
 	export const NextSuffixRegex = `(?<order>prochain|prochaine|prochaines|suivante)\\b`;
 	export const PastSuffixRegex = `(?<order>dernier|derni[eè]re|pr[eé]c[eé]dente)\\b`;
 	export const ThisPrefixRegex = `(?<order>ce|cette|au\\s+cours+(du|de))\\b`;

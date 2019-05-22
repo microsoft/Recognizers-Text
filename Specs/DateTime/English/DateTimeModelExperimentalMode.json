@@ -3840,7 +3840,7 @@
     "Context": {
       "ReferenceDateTime": "2018-06-20T00:00:00"
     },
-    "NotSupported": "python",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "this friday-jun-15",
@@ -3864,7 +3864,7 @@
     "Context": {
       "ReferenceDateTime": "2018-06-20T00:00:00"
     },
-    "NotSupported": "python",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "this friday (jun-15)",

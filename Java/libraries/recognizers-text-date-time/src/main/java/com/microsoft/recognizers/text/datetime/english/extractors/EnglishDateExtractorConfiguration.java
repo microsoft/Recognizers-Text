@@ -53,7 +53,6 @@ public class EnglishDateExtractorConfiguration extends BaseOptionsConfiguration 
     public static final List<Pattern> DateRegexList = new ArrayList<Pattern>() {
         {
             add(RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor1));
-            add(RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor2));
             add(RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor3));
             add(RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor4));
             add(RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor5));
