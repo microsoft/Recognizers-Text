@@ -36,7 +36,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             WeekDayAndDayOfMothRegex = ItalianDateExtractorConfiguration.WeekDayAndDayOfMothRegex;
             WeekDayAndDayRegex = ItalianDateExtractorConfiguration.WeekDayAndDayRegex;
             RelativeMonthRegex = ItalianDateExtractorConfiguration.RelativeMonthRegex;
-            RelativeRegex = ItalianDateExtractorConfiguration.RelativeRegex;
+            StrictRelativeRegex = ItalianDateExtractorConfiguration.StrictRelativeRegex;
             YearSuffix = ItalianDateExtractorConfiguration.YearSuffix;
             RelativeWeekDayRegex = ItalianDateExtractorConfiguration.RelativeWeekDayRegex;
             RelativeDayRegex = new Regex(DateTimeDefinitions.RelativeDayRegex, RegexOptions.Singleline);
@@ -107,7 +107,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public Regex RelativeMonthRegex { get; }
 
-        public Regex RelativeRegex { get; }
+        public Regex StrictRelativeRegex { get; }
 
         public Regex YearSuffix { get; }
 

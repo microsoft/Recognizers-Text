@@ -117,9 +117,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
                 DateTimeDefinitions.RelativeMonthRegex,
                 RegexOptions.Singleline);
 
-        public static readonly Regex RelativeRegex =
+        public static readonly Regex StrictRelativeRegex =
             new Regex(
-                DateTimeDefinitions.RelativeRegex,
+                DateTimeDefinitions.StrictRelativeRegex,
                 RegexOptions.Singleline);
 
         public static readonly Regex PrefixArticleRegex =
@@ -258,7 +258,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         Regex IDateExtractorConfiguration.RelativeMonthRegex => RelativeMonthRegex;
 
-        Regex IDateExtractorConfiguration.RelativeRegex => RelativeRegex;
+        Regex IDateExtractorConfiguration.StrictRelativeRegex => StrictRelativeRegex;
 
         Regex IDateExtractorConfiguration.WeekDayRegex => WeekDayRegex;
 

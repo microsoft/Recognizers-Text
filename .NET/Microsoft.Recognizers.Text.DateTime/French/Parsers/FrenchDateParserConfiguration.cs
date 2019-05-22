@@ -36,7 +36,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             WeekDayAndDayOfMothRegex = FrenchDateExtractorConfiguration.WeekDayAndDayOfMothRegex;
             WeekDayAndDayRegex = FrenchDateExtractorConfiguration.WeekDayAndDayRegex;
             RelativeMonthRegex = FrenchDateExtractorConfiguration.RelativeMonthRegex;
-            RelativeRegex = FrenchDateExtractorConfiguration.RelativeRegex;
+            StrictRelativeRegex = FrenchDateExtractorConfiguration.StrictRelativeRegex;
             YearSuffix = FrenchDateExtractorConfiguration.YearSuffix;
             RelativeWeekDayRegex = FrenchDateExtractorConfiguration.RelativeWeekDayRegex;
             RelativeDayRegex = new Regex(DateTimeDefinitions.RelativeDayRegex, RegexOptions.Singleline);
@@ -107,7 +107,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public Regex RelativeMonthRegex { get; }
 
-        public Regex RelativeRegex { get; }
+        public Regex StrictRelativeRegex { get; }
 
         public Regex YearSuffix { get; }
 

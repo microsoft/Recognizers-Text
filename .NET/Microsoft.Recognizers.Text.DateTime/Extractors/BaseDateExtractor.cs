@@ -137,8 +137,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                     // some match might be part of the date range entity, and might be split in a wrong way
                     if (ValidateMatch(match, text))
                     {
+                        // Cases that the relative term is before the detected date entity, like "this 5/12", "next friday 5/12"
                         var preText = text.Substring(0, match.Index);
-                        var relativeRegex = this.Config.RelativeRegex.MatchEnd(preText, trim: true);
+                        var relativeRegex = this.Config.StrictRelativeRegex.MatchEnd(preText, trim: true);
                         if (relativeRegex.Success)
                         {
                             ret.Add(new Token(relativeRegex.Index, match.Index + match.Length));

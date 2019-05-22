@@ -34,7 +34,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
             WeekDayAndDayOfMothRegex = DutchDateExtractorConfiguration.WeekDayAndDayOfMothRegex;
             WeekDayAndDayRegex = DutchDateExtractorConfiguration.WeekDayAndDayRegex;
             RelativeMonthRegex = DutchDateExtractorConfiguration.RelativeMonthRegex;
-            RelativeRegex = DutchDateExtractorConfiguration.RelativeRegex;
+            StrictRelativeRegex = DutchDateExtractorConfiguration.StrictRelativeRegex;
             YearSuffix = DutchDateExtractorConfiguration.YearSuffix;
             RelativeWeekDayRegex = DutchDateExtractorConfiguration.RelativeWeekDayRegex;
             RelativeDayRegex = new Regex(DateTimeDefinitions.RelativeDayRegex, RegexOptions.Singleline);
@@ -103,7 +103,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         public Regex RelativeMonthRegex { get; }
 
-        public Regex RelativeRegex { get; }
+        public Regex StrictRelativeRegex { get; }
 
         public Regex YearSuffix { get; }
 

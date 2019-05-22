@@ -79,7 +79,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public static readonly Regex RelativeMonthRegex =
             new Regex(DateTimeDefinitions.RelativeMonthRegex, RegexOptions.Singleline);
 
-        public static readonly Regex RelativeRegex =
+        public static readonly Regex StrictRelativeRegex =
             new Regex(DateTimeDefinitions.StrictRelativeRegex, RegexOptions.Singleline);
 
         public static readonly Regex PrefixArticleRegex =
@@ -217,7 +217,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         Regex IDateExtractorConfiguration.RelativeMonthRegex => RelativeMonthRegex;
 
-        Regex IDateExtractorConfiguration.RelativeRegex => RelativeRegex;
+        Regex IDateExtractorConfiguration.StrictRelativeRegex => StrictRelativeRegex;
 
         Regex IDateExtractorConfiguration.WeekDayRegex => WeekDayRegex;
 

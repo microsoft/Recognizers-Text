@@ -144,38 +144,34 @@ namespace Microsoft.Recognizers.Text.DateTime
             foreach (var regex in this.config.DateRegexes)
             {
                 var offset = 0;
-                var swift = -2;
+                string relativeStr = null;
                 var match = regex.Match(trimmedText);
                 if (!match.Success)
                 {
                     match = regex.Match(this.config.DateTokenPrefix + trimmedText);
 
-                    // Handing cases with "on"
+                    // Handing cases like "(this)? 5.12" which only be recognized in "on (this)? 5.12"
                     if (match.Success)
                     {
                         offset = this.config.DateTokenPrefix.Length;
-                        var relativeStr = match.Groups["order"].Value;
-                        if (!string.IsNullOrEmpty(relativeStr))
-                        {
-                            swift = this.config.GetSwiftMonthOrYear(relativeStr);
-                        }
+                        relativeStr = match.Groups["order"].Value;
                     }
                 }
 
                 if (match.Success)
                 {
-                    var relativeRegex = this.config.RelativeRegex.MatchEnd(text.Substring(0, match.Index), trim: true);
+                    var relativeRegex = this.config.StrictRelativeRegex.MatchEnd(text.Substring(0, match.Index), trim: true);
 
                     if ((match.Index == offset && match.Length == trimmedText.Length) || (relativeRegex.Success && match.Index + match.Length == trimmedText.Length))
                     {
-                        // Handing cases without "on"
+                        // Handing cases which contain relative term like "this 5/12"
                         if (match.Index != offset)
                         {
-                            swift = this.config.GetSwiftMonthOrYear(relativeRegex.Value);
+                            relativeStr = relativeRegex.Value;
                         }
 
                         // LUIS value string will be set in Match2Date method
-                        var ret = Match2Date(match, referenceDate, swift);
+                        var ret = Match2Date(match, referenceDate, relativeStr);
                         return ret;
                     }
                 }
@@ -724,14 +720,14 @@ namespace Microsoft.Recognizers.Text.DateTime
         }
 
         // Parse a regex match which includes 'day', 'month' and 'year' (optional) group
-        private DateTimeResolutionResult Match2Date(Match match, DateObject referenceDate, int swift)
+        private DateTimeResolutionResult Match2Date(Match match, DateObject referenceDate, string relativeStr)
         {
             var ret = new DateTimeResolutionResult();
 
             var monthStr = match.Groups["month"].Value.ToLower();
             var dayStr = match.Groups["day"].Value.ToLower();
             var yearStr = match.Groups["year"].Value.ToLower();
-            var weekStr = match.Groups["weekday"].Value.ToLower();
+            var weekdayStr = match.Groups["weekday"].Value.ToLower();
             int month = 0, day = 0, year = 0;
 
             if (this.config.MonthOfYear.ContainsKey(monthStr) && this.config.DayOfMonth.ContainsKey(dayStr))
@@ -756,15 +752,16 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (year == 0)
             {
                 year = referenceDate.Year;
-                if (swift != -2)
+                if (!string.IsNullOrEmpty(relativeStr))
                 {
-                    if (!string.IsNullOrEmpty(weekStr))
+                    var swift = this.config.GetSwiftMonthOrYear(relativeStr);
+                    if (!string.IsNullOrEmpty(weekdayStr))
                     {
                         swift = 0;
                     }
 
                     year += swift;
-                    ret.Timex = DateTimeFormatUtil.LuisDate(year, month, day);
+                    ret.Timex = DateTimeFormatUtil.LuisDate(-1, month, day);
                 }
                 else
                 {

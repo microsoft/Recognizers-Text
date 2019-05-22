@@ -34,7 +34,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             WeekDayAndDayOfMothRegex = GermanDateExtractorConfiguration.WeekDayAndDayOfMothRegex;
             WeekDayAndDayRegex = GermanDateExtractorConfiguration.WeekDayAndDayRegex;
             RelativeMonthRegex = GermanDateExtractorConfiguration.RelativeMonthRegex;
-            RelativeRegex = GermanDateExtractorConfiguration.RelativeRegex;
+            StrictRelativeRegex = GermanDateExtractorConfiguration.StrictRelativeRegex;
             YearSuffix = GermanDateExtractorConfiguration.YearSuffix;
             RelativeWeekDayRegex = GermanDateExtractorConfiguration.RelativeWeekDayRegex;
             RelativeDayRegex = new Regex(DateTimeDefinitions.RelativeDayRegex, RegexOptions.Singleline);
@@ -103,7 +103,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public Regex RelativeMonthRegex { get; }
 
-        public Regex RelativeRegex { get; }
+        public Regex StrictRelativeRegex { get; }
 
         public Regex YearSuffix { get; }
 
