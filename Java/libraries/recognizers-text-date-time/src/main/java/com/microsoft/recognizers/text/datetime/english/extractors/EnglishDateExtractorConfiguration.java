@@ -45,6 +45,7 @@ public class EnglishDateExtractorConfiguration extends BaseOptionsConfiguration 
     public static final Pattern ForTheRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.ForTheRegex);
     public static final Pattern WeekDayAndDayOfMonthRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.WeekDayAndDayOfMonthRegex);
     public static final Pattern RelativeMonthRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RelativeMonthRegex);
+    public static final Pattern StrictRelativeRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.StrictRelativeRegex);
     public static final Pattern PrefixArticleRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PrefixArticleRegex);
     public static final Pattern InConnectorRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.InConnectorRegex);
     public static final Pattern RangeUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RangeUnitRegex);
@@ -156,6 +157,11 @@ public class EnglishDateExtractorConfiguration extends BaseOptionsConfiguration 
     @Override
     public Pattern getRelativeMonthRegex() {
         return RelativeMonthRegex;
+    }
+
+    @Override
+    public Pattern getStrictRelativeRegex() {
+        return StrictRelativeRegex;
     }
 
     @Override

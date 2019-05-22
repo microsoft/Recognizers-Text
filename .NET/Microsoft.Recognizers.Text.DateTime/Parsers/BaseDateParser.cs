@@ -763,13 +763,13 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
 
                     year += swift;
-                    ret.Timex = DateTimeFormatUtil.LuisDate(-1, month, day);
                 }
                 else
                 {
-                    ret.Timex = DateTimeFormatUtil.LuisDate(-1, month, day);
                     noYear = true;
                 }
+
+                ret.Timex = DateTimeFormatUtil.LuisDate(-1, month, day);
             }
             else
             {

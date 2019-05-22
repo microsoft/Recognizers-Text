@@ -47,6 +47,7 @@ public class SpanishDateParserConfiguration  extends BaseOptionsConfiguration im
     private final Pattern forTheRegex;
     private final Pattern weekDayAndDayOfMonthRegex;
     private final Pattern relativeMonthRegex;
+    private final Pattern strictRelativeRegex;
     private final Pattern yearSuffix;
     private final Pattern relativeWeekDayRegex;
     private final Pattern relativeDayRegex;
@@ -90,6 +91,7 @@ public class SpanishDateParserConfiguration  extends BaseOptionsConfiguration im
         forTheRegex = SpanishDateExtractorConfiguration.ForTheRegex;
         weekDayAndDayOfMonthRegex = SpanishDateExtractorConfiguration.WeekDayAndDayOfMonthRegex;
         relativeMonthRegex = SpanishDateExtractorConfiguration.RelativeMonthRegex;
+        strictRelativeRegex = SpanishDateExtractorConfiguration.StrictRelativeRegex;
         yearSuffix = SpanishDateExtractorConfiguration.YearSuffix;
         relativeWeekDayRegex = SpanishDateExtractorConfiguration.RelativeWeekDayRegex;
         relativeDayRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.RelativeDayRegex);
@@ -219,6 +221,11 @@ public class SpanishDateParserConfiguration  extends BaseOptionsConfiguration im
     }
 
     @Override
+    public Pattern getStrictRelativeRegex() {
+        return strictRelativeRegex;
+    }
+
+    @Override
     public Pattern getYearSuffix() {
         return yearSuffix;
     }
@@ -299,7 +306,7 @@ public class SpanishDateParserConfiguration  extends BaseOptionsConfiguration im
     }
 
     @Override
-    public Integer getSwiftMonth(String text) {
+    public Integer getSwiftMonthOrYear(String text) {
         String trimmedText = text.trim().toLowerCase(Locale.ROOT);
         int swift = 0;
 
