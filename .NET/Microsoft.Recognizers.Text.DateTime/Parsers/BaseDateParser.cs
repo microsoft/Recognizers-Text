@@ -755,6 +755,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                 if (!string.IsNullOrEmpty(relativeStr))
                 {
                     var swift = this.config.GetSwiftMonthOrYear(relativeStr);
+
+                    // @TODO Improve handling of next/last in particular cases "next friday 5/12" when the next friday is not 5/12.
                     if (!string.IsNullOrEmpty(weekdayStr))
                     {
                         swift = 0;
