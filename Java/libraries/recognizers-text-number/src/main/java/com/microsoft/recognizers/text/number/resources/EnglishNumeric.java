@@ -180,7 +180,7 @@ public class EnglishNumeric {
 
     public static final String TillRegex = "(to|through|--|-|—|——|~|–)";
 
-    public static final String MoreRegex = "((bigger|greater|more|higher|larger)(\\s+than)?|above|over|(?<!<|=)>)";
+    public static final String MoreRegex = "((bigger|greater|more|higher|larger|exceed|surpass)(\\s+than)?|above|over|(?<!<|=)>)";
 
     public static final String LessRegex = "((less|lower|smaller|fewer)(\\s+than)?|below|under|(?<!>|=)<)";
 

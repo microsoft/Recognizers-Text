@@ -61,7 +61,7 @@ class EnglishNumeric:
     NumberWithPrefixPercentage = f'(per cent of|percent of|percents of)(\\s*)({BaseNumbers.NumberReplaceToken})'
     NumberWithPrepositionPercentage = f'({BaseNumbers.NumberReplaceToken})\\s*(in|out\\s+of)\\s*({BaseNumbers.NumberReplaceToken})'
     TillRegex = f'(to|through|--|-|—|——|~|–)'
-    MoreRegex = f'((bigger|greater|more|higher|larger)(\\s+than)?|above|over|(?<!<|=)>)'
+    MoreRegex = f'((bigger|greater|more|higher|larger|exceed|surpass)(\\s+than)?|above|over|(?<!<|=)>)'
     LessRegex = f'((less|lower|smaller|fewer)(\\s+than)?|below|under|(?<!>|=)<)'
     EqualRegex = f'(equal(s|ing)?(\\s+(to|than))?|(?<!<|>)=)'
     MoreOrEqualPrefix = f'((no\\s+{LessRegex})|(at\\s+least))'
