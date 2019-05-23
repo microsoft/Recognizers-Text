@@ -11197,5 +11197,50 @@
         }
       }
     ]
+  },
+  {
+    "Input": "There are 10 students.",
+    "Context": {
+      "ReferenceDateTime": "2019-05-23T00:00:00"
+    },
+    "Results": []
+  },
+  {
+    "Input": "There are 10 stars.",
+    "Context": {
+      "ReferenceDateTime": "2019-05-23T00:00:00"
+    },
+    "Results": []
+  },
+  {
+    "Input": "Who are us presidents in 90 s.",
+    "Context": {
+      "ReferenceDateTime": "2019-05-23T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "90 s",
+        "Start": 25,
+        "End": 28,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XX90-01-01,XX100-01-01,P10Y)",
+              "type": "daterange",
+              "start": "1990-01-01",
+              "end": "2000-01-01"
+            },
+            {
+              "timex": "(XX90-01-01,XX100-01-01,P10Y)",
+              "type": "daterange",
+              "start": "2090-01-01",
+              "end": "2100-01-01"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

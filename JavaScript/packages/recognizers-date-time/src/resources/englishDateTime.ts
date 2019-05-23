@@ -249,7 +249,7 @@ export namespace EnglishDateTime {
 	export const TimeBeforeAfterRegex = `\\b(((?<=\\b(before|no later than|by|after)\\s+)(${WrittenTimeRegex}|${HourNumRegex}|${BaseDateTime.HourRegex}|${MidTimeRegex}))|${MidTimeRegex})\\b`;
 	export const DateNumberConnectorRegex = `^\\s*(?<connector>\\s+at)\\s*$`;
 	export const DecadeRegex = `(?<decade>noughties|twenties|thirties|forties|fifties|sixties|seventies|eighties|nineties|two thousands)`;
-	export const DecadeWithCenturyRegex = `(the\\s+)?(((?<century>\\d|1\\d|2\\d)?(')?(?<decade>\\d0)(')?(\\s)?s)|((${CenturyRegex}(\\s+|-)(and\\s+)?)?${DecadeRegex})|(${CenturyRegex}(\\s+|-)(and\\s+)?(?<decade>tens|hundreds)))`;
+	export const DecadeWithCenturyRegex = `(the\\s+)?(((?<century>\\d|1\\d|2\\d)?(')?(?<decade>\\d0)(')?(\\s)?s\\b)|((${CenturyRegex}(\\s+|-)(and\\s+)?)?${DecadeRegex})|(${CenturyRegex}(\\s+|-)(and\\s+)?(?<decade>tens|hundreds)))`;
 	export const RelativeDecadeRegex = `\\b((the\\s+)?${RelativeRegex}\\s+((?<number>[\\w,]+)\\s+)?decades?)\\b`;
 	export const YearPeriodRegex = `((((from|during|in)\\s+)?${YearRegex}\\s*(${TillRegex})\\s*${YearRegex})|(((between)\\s+)${YearRegex}\\s*(${RangeConnectorRegex})\\s*${YearRegex}))`;
 	export const ComplexDatePeriodRegex = `(((from|during|in)\\s+)?(?<start>.+)\\s*(${TillRegex})\\s*(?<end>.+)|((between)\\s+)(?<start>.+)\\s*(${RangeConnectorRegex})\\s*(?<end>.+))`;
