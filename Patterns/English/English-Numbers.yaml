@@ -139,7 +139,7 @@ NumberWithPrepositionPercentage: !nestedRegex
 TillRegex: !simpleRegex
   def: (to|through|--|-|—|——|~|–)
 MoreRegex: !simpleRegex
-  def: ((bigger|greater|more|higher|larger|exceed|surpass)(\s+than)?|above|over|(?<!<|=)>)
+  def: ((bigger|greater|more|higher|larger)(\s+than)?|above|over|exceed|surpass|(?<!<|=)>)
 LessRegex: !simpleRegex
   def: ((less|lower|smaller|fewer)(\s+than)?|below|under|(?<!>|=)<)
 EqualRegex: !simpleRegex
