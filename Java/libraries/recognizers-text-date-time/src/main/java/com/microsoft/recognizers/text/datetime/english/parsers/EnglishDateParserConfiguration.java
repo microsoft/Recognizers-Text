@@ -52,6 +52,7 @@ public class EnglishDateParserConfiguration extends BaseOptionsConfiguration imp
         forTheRegex = EnglishDateExtractorConfiguration.ForTheRegex;
         weekDayAndDayOfMonthRegex = EnglishDateExtractorConfiguration.WeekDayAndDayOfMonthRegex;
         relativeMonthRegex = EnglishDateExtractorConfiguration.RelativeMonthRegex;
+        strictRelativeRegex = EnglishDateExtractorConfiguration.StrictRelativeRegex;
         relativeWeekDayRegex = EnglishDateExtractorConfiguration.RelativeWeekDayRegex;
 
         yearSuffix = EnglishDateExtractorConfiguration.YearSuffix;
@@ -96,6 +97,7 @@ public class EnglishDateParserConfiguration extends BaseOptionsConfiguration imp
     private final Pattern forTheRegex;
     private final Pattern weekDayAndDayOfMonthRegex;
     private final Pattern relativeMonthRegex;
+    private final Pattern strictRelativeRegex;
     private final Pattern yearSuffix;
     private final Pattern relativeWeekDayRegex;
 
@@ -230,6 +232,11 @@ public class EnglishDateParserConfiguration extends BaseOptionsConfiguration imp
     }
 
     @Override
+    public Pattern getStrictRelativeRegex() {
+        return strictRelativeRegex;
+    }
+
+    @Override
     public Pattern getYearSuffix() {
         return yearSuffix;
     }
@@ -310,7 +317,7 @@ public class EnglishDateParserConfiguration extends BaseOptionsConfiguration imp
     }
 
     @Override
-    public Integer getSwiftMonth(String text) {
+    public Integer getSwiftMonthOrYear(String text) {
         return getSwift(text);
     }
 

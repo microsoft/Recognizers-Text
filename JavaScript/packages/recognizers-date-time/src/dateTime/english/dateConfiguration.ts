@@ -30,7 +30,6 @@ export class EnglishDateExtractorConfiguration implements IDateExtractorConfigur
     constructor() {
         this.dateRegexList = [
             RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor1),
-            RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor2),
             RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor3),
 
             EnglishDateTime.DefaultLanguageFallback === Constants.DefaultLanguageFallback_MDY?

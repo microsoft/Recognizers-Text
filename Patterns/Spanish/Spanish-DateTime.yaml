@@ -31,6 +31,8 @@ TwoDigitYearRegex: !nestedRegex
   references: [ AmDescRegex, PmDescRegex]
 RelativeRegex: !simpleRegex
   def: (?<rela>((esta|este|pr[oó]xim[oa]|([uú]ltim(o|as|os)))(\s+fin(ales)?\s+de(\s+la)?)?)|(fin(ales)?\s+de(\s+la)?))\b
+StrictRelativeRegex: !simpleRegex
+  def: (?<rela>((esta|este|pr[oó]xim[oa]|([uú]ltim(o|as|os)))(\s+fin(ales)?\s+de(\s+la)?)?)|(fin(ales)?\s+de(\s+la)?))\b
 WrittenOneToNineRegex: !simpleRegex
   def: (uno|un|una|dos|tres|cuatro|cinco|seis|siete|ocho|nueve)
 WrittenOneHundredToNineHundredRegex: !simpleRegex

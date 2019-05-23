@@ -34,6 +34,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
 		public const string RangePrefixRegex = @"((desde|de|entre)\s+(la(s)?\s+)?)";
 		public static readonly string TwoDigitYearRegex = $@"\b(?<![$])(?<year>([0-27-9]\d))(?!(\s*((\:)|{AmDescRegex}|{PmDescRegex}|\.\d)))\b";
 		public const string RelativeRegex = @"(?<rela>((esta|este|pr[oó]xim[oa]|([uú]ltim(o|as|os)))(\s+fin(ales)?\s+de(\s+la)?)?)|(fin(ales)?\s+de(\s+la)?))\b";
+		public const string StrictRelativeRegex = @"(?<rela>((esta|este|pr[oó]xim[oa]|([uú]ltim(o|as|os)))(\s+fin(ales)?\s+de(\s+la)?)?)|(fin(ales)?\s+de(\s+la)?))\b";
 		public const string WrittenOneToNineRegex = @"(uno|un|una|dos|tres|cuatro|cinco|seis|siete|ocho|nueve)";
 		public const string WrittenOneHundredToNineHundredRegex = @"(cien|ciento|doscient[oa]s|trescient[oa]s|cuatrocient[ao]s|quinient[ao]s|seiscient[ao]s|setecient[ao]s|ochocient[ao]s|novecient[ao]s)";
 		public static readonly string WrittenOneToNinetyNineRegex = $@"(uno|un|una|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|once|doce|trece|catorce|quince|dieciséis|dieciseis|diecisiete|dieciocho|diecinueve|veinte|veintiuno|veintiún|veintiun|veintiuna|veintidós|veintidos|veintitrés|veintitres|veinticuatro|veinticinco|veintiséis|veintisiete|veintiocho|veintinueve|((treinta|cuarenta|cincuenta|sesenta|setenta|ochenta|noventa)(\s+y\s+{WrittenOneToNineRegex})?))";
