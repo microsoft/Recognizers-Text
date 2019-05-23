@@ -5,6 +5,8 @@ RangeConnectorRegex : !simpleRegex
   def: (?<and>et|de la|au|[aà]|et\s*la|--|-|—|——)
 RelativeRegex: !simpleRegex
   def: (?<order>prochain|prochaine|de|du|ce|cette|l[ae]|derni[eè]re|pr[eé]c[eé]dente|au\s+cours+(de|du\s*))
+StrictRelativeRegex: !simpleRegex
+  def: (?<order>prochain|prochaine|ce|cette|derni[eè]re|pr[eé]c[eé]dente|au\s+cours+(de|du\s*))
 NextSuffixRegex: !simpleRegex
   def: (?<order>prochain|prochaine|prochaines|suivante)\b
 PastSuffixRegex: !simpleRegex

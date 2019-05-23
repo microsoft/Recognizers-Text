@@ -49,6 +49,8 @@ public class SpanishDateTime {
 
     public static final String RelativeRegex = "(?<rela>((esta|este|pr[oó]xim[oa]|([uú]ltim(o|as|os)))(\\s+fin(ales)?\\s+de(\\s+la)?)?)|(fin(ales)?\\s+de(\\s+la)?))\\b";
 
+    public static final String StrictRelativeRegex = "(?<rela>((esta|este|pr[oó]xim[oa]|([uú]ltim(o|as|os)))(\\s+fin(ales)?\\s+de(\\s+la)?)?)|(fin(ales)?\\s+de(\\s+la)?))\\b";
+
     public static final String WrittenOneToNineRegex = "(uno|un|una|dos|tres|cuatro|cinco|seis|siete|ocho|nueve)";
 
     public static final String WrittenOneHundredToNineHundredRegex = "(cien|ciento|doscient[oa]s|trescient[oa]s|cuatrocient[ao]s|quinient[ao]s|seiscient[ao]s|setecient[ao]s|ochocient[ao]s|novecient[ao]s)";

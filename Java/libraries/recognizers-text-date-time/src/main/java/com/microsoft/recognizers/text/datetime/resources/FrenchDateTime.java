@@ -22,6 +22,8 @@ public class FrenchDateTime {
 
     public static final String RelativeRegex = "(?<order>prochain|prochaine|de|du|ce|cette|l[ae]|derni[eè]re|pr[eé]c[eé]dente|au\\s+cours+(de|du\\s*))";
 
+    public static final String StrictRelativeRegex = "(?<order>prochain|prochaine|ce|cette|derni[eè]re|pr[eé]c[eé]dente|au\\s+cours+(de|du\\s*))";
+
     public static final String NextSuffixRegex = "(?<order>prochain|prochaine|prochaines|suivante)\\b";
 
     public static final String PastSuffixRegex = "(?<order>dernier|derni[eè]re|pr[eé]c[eé]dente)\\b";

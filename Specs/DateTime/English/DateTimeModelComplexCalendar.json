@@ -9408,6 +9408,312 @@
     ]
   },
   {
+    "Input": "the conflict lasted from January to april 2015",
+    "Context": {
+      "ReferenceDateTime": "2019-05-22T00:00:00"
+    },
+    "NotSupported": "python, javascript",
+    "Results": [
+      {
+        "Text": "from january to april 2015",
+        "Start": 20,
+        "End": 45,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2015-01-01,2015-04-01,P3M)",
+              "type": "daterange",
+              "start": "2015-01-01",
+              "end": "2015-04-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, please set up a Skype call sometime on this Friday 7.6 with Jim.",
+    "Context": {
+      "ReferenceDateTime": "2019-05-20T12:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "this friday 7.6",
+        "Start": 48,
+        "End": 62,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-07-06",
+              "type": "date",
+              "value": "2019-07-06"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "This task should be done on 5.12",
+    "Context": {
+      "ReferenceDateTime": "2019-05-20T12:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "5.12",
+        "Start": 28,
+        "End": 31,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-05-12",
+              "type": "date",
+              "value": "2019-05-12"
+            },
+            {
+              "timex": "XXXX-05-12",
+              "type": "date",
+              "value": "2020-05-12"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "This task should be done friday 5/12",
+    "Context": {
+      "ReferenceDateTime": "2019-05-20T12:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "friday 5/12",
+        "Start": 25,
+        "End": 35,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-05-12",
+              "type": "date",
+              "value": "2019-05-12"
+            },
+            {
+              "timex": "XXXX-05-12",
+              "type": "date",
+              "value": "2020-05-12"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "This task should be done this friday 5/12",
+    "Context": {
+      "ReferenceDateTime": "2019-05-20T12:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "this friday 5/12",
+        "Start": 25,
+        "End": 40,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-05-12",
+              "type": "date",
+              "value": "2019-05-12"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "This task should be done next friday 5/12",
+    "Context": {
+      "ReferenceDateTime": "2019-05-20T12:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "next friday 5/12",
+        "Start": 25,
+        "End": 40,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-05-12",
+              "type": "date",
+              "value": "2019-05-12"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "This task should be done this 5/12",
+    "Context": {
+      "ReferenceDateTime": "2019-05-20T12:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "this 5/12",
+        "Start": 25,
+        "End": 33,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-05-12",
+              "type": "date",
+              "value": "2019-05-12"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "This task should be done next 5/12",
+    "Context": {
+      "ReferenceDateTime": "2019-05-20T12:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "next 5/12",
+        "Start": 25,
+        "End": 33,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-05-12",
+              "type": "date",
+              "value": "2020-05-12"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "This task should be done next 6th of April",
+    "Context": {
+      "ReferenceDateTime": "2019-05-20T12:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "next 6th of april",
+        "Start": 25,
+        "End": 41,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-04-06",
+              "type": "date",
+              "value": "2020-04-06"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "from this 5/12 to next 5/19",
+    "Context": {
+      "ReferenceDateTime": "2019-05-20T12:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "from this 5/12 to next 5/19",
+        "Start": 0,
+        "End": 26,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-05-12,XXXX-05-19,P373D)",
+              "type": "daterange",
+              "start": "2019-05-12",
+              "end": "2020-05-19"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "from this friday 5/12 to next sunday 5/20",
+    "Context": {
+      "ReferenceDateTime": "2019-05-20T12:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "from this friday 5/12 to next sunday 5/20",
+        "Start": 0,
+        "End": 40,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-05-12,XXXX-05-20,P8D)",
+              "type": "daterange",
+              "start": "2019-05-12",
+              "end": "2019-05-20"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'm not talking about this, but about Jan/3",
+    "Context": {
+      "ReferenceDateTime": "2019-05-22T12:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "jan/3",
+        "Start": 38,
+        "End": 42,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-01-03",
+              "type": "date",
+              "value": "2019-01-03"
+            },
+            {
+              "timex": "XXXX-01-03",
+              "type": "date",
+              "value": "2020-01-03"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
     "Input": "There are 10 students.",
     "Context": {
       "ReferenceDateTime": "2019-05-23T00:00:00"

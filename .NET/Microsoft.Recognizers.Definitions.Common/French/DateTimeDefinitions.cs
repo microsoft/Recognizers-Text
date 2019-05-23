@@ -24,6 +24,7 @@ namespace Microsoft.Recognizers.Definitions.French
 		public const string TillRegex = @"(?<till>au|[aà]|et|jusqu'[aà]|avant|--|-|—|——)";
 		public const string RangeConnectorRegex = @"(?<and>et|de la|au|[aà]|et\s*la|--|-|—|——)";
 		public const string RelativeRegex = @"(?<order>prochain|prochaine|de|du|ce|cette|l[ae]|derni[eè]re|pr[eé]c[eé]dente|au\s+cours+(de|du\s*))";
+		public const string StrictRelativeRegex = @"(?<order>prochain|prochaine|ce|cette|derni[eè]re|pr[eé]c[eé]dente|au\s+cours+(de|du\s*))";
 		public const string NextSuffixRegex = @"(?<order>prochain|prochaine|prochaines|suivante)\b";
 		public const string PastSuffixRegex = @"(?<order>dernier|derni[eè]re|pr[eé]c[eé]dente)\b";
 		public const string ThisPrefixRegex = @"(?<order>ce|cette|au\s+cours+(du|de))\b";

@@ -28,6 +28,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             WeekDayAndDayOfMothRegex = SpanishDateExtractorConfiguration.WeekDayAndDayOfMothRegex;
             WeekDayAndDayRegex = SpanishDateExtractorConfiguration.WeekDayAndDayRegex;
             RelativeMonthRegex = SpanishDateExtractorConfiguration.RelativeMonthRegex;
+            StrictRelativeRegex = SpanishDateExtractorConfiguration.StrictRelativeRegex;
             YearSuffix = SpanishDateExtractorConfiguration.YearSuffix;
             RelativeWeekDayRegex = SpanishDateExtractorConfiguration.RelativeWeekDayRegex;
             RelativeDayRegex = new Regex(DateTimeDefinitions.RelativeDayRegex, RegexOptions.Singleline);
@@ -103,6 +104,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public Regex RelativeMonthRegex { get; }
 
+        public Regex StrictRelativeRegex { get; }
+
         public Regex YearSuffix { get; }
 
         public Regex RelativeWeekDayRegex { get; }
@@ -137,7 +140,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
-        public int GetSwiftMonth(string text)
+        public int GetSwiftMonthOrYear(string text)
         {
             var trimmedText = text.Trim().ToLowerInvariant().Normalized(DateTimeDefinitions.SpecialCharactersEquivalent);
             var swift = 0;
