@@ -69,6 +69,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         public static readonly Regex RelativeMonthRegex =
             new Regex(DateTimeDefinitions.RelativeMonthRegex, RegexOptions.Singleline);
 
+        public static readonly Regex StrictRelativeRegex =
+            new Regex(DateTimeDefinitions.StrictRelativeRegex, RegexOptions.Singleline);
+
         public static readonly Regex PrefixArticleRegex =
             new Regex(DateTimeDefinitions.PrefixArticleRegex, RegexOptions.Singleline);
 
@@ -196,11 +199,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
             DateRegexList = new List<Regex>
             {
-                // ((this)? Sunday,)? 5 April
+                // (Sunday,)? April 5 or (Sunday,)? April 5, 2016
                 new Regex(DateTimeDefinitions.DateExtractor1, dateRegexOption),
-
-                // ((this)? Sunday,)? 5 April, 2016
-                new Regex(DateTimeDefinitions.DateExtractor2, dateRegexOption),
 
                 // (Sunday,)? 6th of April
                 new Regex(DateTimeDefinitions.DateExtractor3, dateRegexOption),
@@ -247,6 +247,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         Regex IDateExtractorConfiguration.WeekDayAndDayRegex => WeekDayAndDayRegex;
 
         Regex IDateExtractorConfiguration.RelativeMonthRegex => RelativeMonthRegex;
+
+        Regex IDateExtractorConfiguration.StrictRelativeRegex => StrictRelativeRegex;
 
         Regex IDateExtractorConfiguration.WeekDayRegex => WeekDayRegex;
 

@@ -45,6 +45,7 @@ public class SpanishDateExtractorConfiguration extends BaseOptionsConfiguration 
     public static final Pattern ForTheRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.ForTheRegex);
     public static final Pattern WeekDayAndDayOfMonthRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.WeekDayAndDayOfMonthRegex);
     public static final Pattern RelativeMonthRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.RelativeMonthRegex);
+    public static final Pattern StrictRelativeRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.StrictRelativeRegex);
     public static final Pattern PrefixArticleRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PrefixArticleRegex);
     public static final Pattern RangeConnectorSymbolRegex = RegExpUtility.getSafeRegExp(BaseDateTime.RangeConnectorSymbolRegex);
     public static final List<Pattern> ImplicitDateList = new ArrayList<Pattern>() {
@@ -150,6 +151,11 @@ public class SpanishDateExtractorConfiguration extends BaseOptionsConfiguration 
     @Override
     public Pattern getRelativeMonthRegex() {
         return RelativeMonthRegex;
+    }
+
+    @Override
+    public Pattern getStrictRelativeRegex() {
+        return StrictRelativeRegex;
     }
 
     @Override

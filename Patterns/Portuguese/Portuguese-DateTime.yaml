@@ -113,6 +113,9 @@ CenturySuffixRegex: !simpleRegex
 RelativeRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
+StrictRelativeRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 FromRegex: !simpleRegex
   def: ((desde|de)(\s*a(s)?)?)$
 ConnectorAndRegex: !simpleRegex

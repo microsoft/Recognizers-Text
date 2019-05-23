@@ -139,6 +139,8 @@ public class PortugueseDateTime {
 
     public static final String RelativeRegex = "^[.]";
 
+    public static final String StrictRelativeRegex = "^[.]";
+
     public static final String FromRegex = "((desde|de)(\\s*a(s)?)?)$";
 
     public static final String ConnectorAndRegex = "(e\\s*([àa](s)?)?)$";

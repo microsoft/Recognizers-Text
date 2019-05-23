@@ -12,6 +12,7 @@ class FrenchDateTime:
     TillRegex = f'(?<till>au|[aà]|et|jusqu\'[aà]|avant|--|-|—|——)'
     RangeConnectorRegex = f'(?<and>et|de la|au|[aà]|et\\s*la|--|-|—|——)'
     RelativeRegex = f'(?<order>prochain|prochaine|de|du|ce|cette|l[ae]|derni[eè]re|pr[eé]c[eé]dente|au\\s+cours+(de|du\\s*))'
+    StrictRelativeRegex = f'(?<order>prochain|prochaine|ce|cette|derni[eè]re|pr[eé]c[eé]dente|au\\s+cours+(de|du\\s*))'
     NextSuffixRegex = f'(?<order>prochain|prochaine|prochaines|suivante)\\b'
     PastSuffixRegex = f'(?<order>dernier|derni[eè]re|pr[eé]c[eé]dente)\\b'
     ThisPrefixRegex = f'(?<order>ce|cette|au\\s+cours+(du|de))\\b'

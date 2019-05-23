@@ -3840,7 +3840,7 @@
     "Context": {
       "ReferenceDateTime": "2018-06-20T00:00:00"
     },
-    "NotSupported": "python",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "this friday-jun-15",
@@ -3853,11 +3853,6 @@
               "timex": "XXXX-06-15",
               "type": "date",
               "value": "2018-06-15"
-            },
-            {
-              "timex": "XXXX-06-15",
-              "type": "date",
-              "value": "2019-06-15"
             }
           ]
         }
@@ -3869,7 +3864,7 @@
     "Context": {
       "ReferenceDateTime": "2018-06-20T00:00:00"
     },
-    "NotSupported": "python",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "this friday (jun-15)",
@@ -3882,11 +3877,6 @@
               "timex": "XXXX-06-15",
               "type": "date",
               "value": "2018-06-15"
-            },
-            {
-              "timex": "XXXX-06-15",
-              "type": "date",
-              "value": "2019-06-15"
             }
           ]
         }

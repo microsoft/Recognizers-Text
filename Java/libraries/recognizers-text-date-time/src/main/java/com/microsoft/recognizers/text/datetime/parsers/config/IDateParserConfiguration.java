@@ -58,6 +58,8 @@ public interface IDateParserConfiguration extends IOptionsConfiguration {
 
     Pattern getRelativeMonthRegex();
 
+    Pattern getStrictRelativeRegex();
+
     Pattern getYearSuffix();
 
     Pattern getRelativeWeekDayRegex();
@@ -90,7 +92,7 @@ public interface IDateParserConfiguration extends IOptionsConfiguration {
 
     IDateTimeUtilityConfiguration getUtilityConfiguration();
 
-    Integer getSwiftMonth(String text);
+    Integer getSwiftMonthOrYear(String text);
 
     Boolean isCardinalLast(String text);
 

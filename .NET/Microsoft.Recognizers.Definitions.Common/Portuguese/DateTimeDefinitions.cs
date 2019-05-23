@@ -64,6 +64,7 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
 		public const string WithinNextPrefixRegex = @"^[.]";
 		public const string CenturySuffixRegex = @"^[.]";
 		public const string RelativeRegex = @"^[.]";
+		public const string StrictRelativeRegex = @"^[.]";
 		public const string FromRegex = @"((desde|de)(\s*a(s)?)?)$";
 		public const string ConnectorAndRegex = @"(e\s*([àa](s)?)?)$";
 		public const string BetweenRegex = @"(entre\s*([oa](s)?)?)";

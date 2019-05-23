@@ -136,7 +136,6 @@ class EnglishDateParserConfiguration(DateParserConfiguration):
         self._cardinal_map = config.cardinal_map
         self._date_regex = [
             RegExpUtility.get_safe_reg_exp(EnglishDateTime.DateExtractor1),
-            RegExpUtility.get_safe_reg_exp(EnglishDateTime.DateExtractor2),
             RegExpUtility.get_safe_reg_exp(EnglishDateTime.DateExtractor3),
             RegExpUtility.get_safe_reg_exp(EnglishDateTime.DateExtractor4),
             RegExpUtility.get_safe_reg_exp(EnglishDateTime.DateExtractor5),

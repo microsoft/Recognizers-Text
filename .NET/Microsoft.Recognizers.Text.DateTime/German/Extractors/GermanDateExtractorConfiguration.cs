@@ -75,6 +75,9 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public static readonly Regex RelativeMonthRegex =
             new Regex(DateTimeDefinitions.RelativeMonthRegex, RegexOptions.Singleline);
 
+        public static readonly Regex StrictRelativeRegex =
+            new Regex(DateTimeDefinitions.StrictRelativeRegex, RegexOptions.Singleline);
+
         public static readonly Regex PrefixArticleRegex =
             new Regex(DateTimeDefinitions.PrefixArticleRegex, RegexOptions.Singleline);
 
@@ -210,6 +213,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         Regex IDateExtractorConfiguration.WeekDayAndDayRegex => WeekDayAndDayRegex;
 
         Regex IDateExtractorConfiguration.RelativeMonthRegex => RelativeMonthRegex;
+
+        Regex IDateExtractorConfiguration.StrictRelativeRegex => StrictRelativeRegex;
 
         Regex IDateExtractorConfiguration.WeekDayRegex => WeekDayRegex;
 
