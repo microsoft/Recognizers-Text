@@ -18,6 +18,7 @@ export class FrenchDateExtractorConfiguration implements IDateExtractorConfigura
     readonly forTheRegex: RegExp;
     readonly weekDayAndDayOfMonthRegex: RegExp;
     readonly relativeMonthRegex: RegExp;
+    readonly strictRelativeRegex: RegExp;
     readonly weekDayRegex: RegExp;
     readonly dayOfWeek: ReadonlyMap<string, number>;
     readonly nonDateUnitRegex : RegExp;
@@ -65,6 +66,7 @@ export class FrenchDateExtractorConfiguration implements IDateExtractorConfigura
         this.forTheRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.ForTheRegex, "gis");
         this.weekDayAndDayOfMonthRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.WeekDayAndDayOfMonthRegex, "gis");
         this.relativeMonthRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.RelativeMonthRegex, "gis");
+        this.strictRelativeRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.StrictRelativeRegex, "gis");
         this.weekDayRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.WeekDayRegex, "gis");
         this.dayOfWeek = FrenchDateTime.DayOfWeek;
         this.ordinalExtractor = new FrenchOrdinalExtractor();
@@ -103,6 +105,7 @@ export class FrenchDateParserConfiguration implements IDateParserConfiguration {
     readonly forTheRegex: RegExp;
     readonly weekDayAndDayOfMonthRegex: RegExp;
     readonly relativeMonthRegex: RegExp;
+    readonly strictRelativeRegex: RegExp;
     readonly relativeWeekDayRegex: RegExp;
     readonly utilityConfiguration: IDateTimeUtilityConfiguration;
     readonly dateTokenPrefix: string;
@@ -134,6 +137,7 @@ export class FrenchDateParserConfiguration implements IDateParserConfiguration {
         this.forTheRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.ForTheRegex, "gis");
         this.weekDayAndDayOfMonthRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.WeekDayAndDayOfMonthRegex, "gis");
         this.relativeMonthRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.RelativeMonthRegex, "gis");
+        this.strictRelativeRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.StrictRelativeRegex, "gis");
         this.relativeWeekDayRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.RelativeWeekDayRegex, "gis");
         this.utilityConfiguration = config.utilityConfiguration;
         this.dateTokenPrefix = FrenchDateTime.DateTokenPrefix;
