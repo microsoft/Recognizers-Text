@@ -110,7 +110,7 @@ public class FrenchDateTime {
             .replace("{PastSuffixRegex}", PastSuffixRegex)
             .replace("{NextSuffixRegex}", NextSuffixRegex);
 
-    public static final String OneWordPeriodRegex = "\\b(({RelativeRegex}\\s+)?(?<month>avril|avr\\.|avr|ao[uû]t|d[eé]cembre|d[eé]c\\.|d[eé]c|f[eé]vrier|f[eé]v|f[eé]vr\\.|f[eé]vr|janvier|janv\\.|janv|jan|juillet|jul|juil\\.|juil|juin|jun|mars|mar|mai|novembre|nov\\.|nov|octobre|oct\\.|oct|septembre|sept\\.|sept|sep)|{RelativeRegex}\\s+(weekend|fin de semaine|week-end|semaine|mois|ans|l'année)|weekend|week-end|(mois|l'année))\\b"
+    public static final String OneWordPeriodRegex = "\\b(({RelativeRegex}\\s+)?(?<month>avril|avr\\.|avr|ao[uû]t|d[eé]cembre|d[eé]c\\.|d[eé]c|f[eé]vrier|f[eé]v|f[eé]vr\\.|f[eé]vr|janvier|janv\\.|janv|jan|juillet|jul|juil\\.|juil|juin|jun|mars|mar|mai|novembre|nov\\.|nov|octobre|oct\\.|oct|septembre|sept\\.|sept|sep)|{RelativeRegex}\\s+(weekend|fin de semaine|week-end|semaine|mois|ans?|l'année)|weekend|week-end|(mois|l'année))\\b"
             .replace("{RelativeRegex}", RelativeRegex);
 
     public static final String MonthNumWithYear = "({YearRegex}(\\s*)[/\\-\\.](\\s*){MonthNumRegex})|({MonthNumRegex}(\\s*)[/\\-](\\s*){YearRegex})"
@@ -486,7 +486,7 @@ public class FrenchDateTime {
 
     public static final String MoreThanRegex = "^[.]";
 
-    public static final String DurationUnitRegex = "(?<unit>ans|ann[eé]e|mois|semaines|semaine|jour|jours|heures|heure|hrs|hr|h|minutes|minute|mins|min|secondes|seconde|secs|sec|ann[eé]es|journ[eé]e)\\b";
+    public static final String DurationUnitRegex = "(?<unit>ann[eé]e|ans?|mois|semaines|semaine|jour|jours|heures|heure|hrs|hr|h|minutes|minute|mins|min|secondes|seconde|secs|sec|ann[eé]es|journ[eé]e)\\b";
 
     public static final String SuffixAndRegex = "(?<suffix>\\s*(et)\\s+((un|une)\\s+)?(?<suffix_num>demi|quart))";
 
@@ -517,7 +517,7 @@ public class FrenchDateTime {
 
     public static final String AllRegex = "\\b(?<all>toute\\s(l['ea])\\s?(?<unit>ann[eé]e|mois|semaine|semaines|jour|jours|journ[eé]e))\\b";
 
-    public static final String HalfRegex = "(((un|une)\\s*)|\\b)(?<half>demi?(\\s*|-)+(?<unit>ann[eé]e|ans|mois|semaine|jour|heure))\\b";
+    public static final String HalfRegex = "(((un|une)\\s*)|\\b)(?<half>demi?(\\s*|-)+(?<unit>ann[eé]e|ans?|mois|semaine|jour|heure))\\b";
 
     public static final String ConjunctionRegex = "\\b((et(\\s+de|pour)?)|avec)\\b";
 
@@ -700,6 +700,7 @@ public class FrenchDateTime {
     public static final ImmutableMap<String, String> UnitMap = ImmutableMap.<String, String>builder()
         .put("annees", "Y")
         .put("annee", "Y")
+        .put("an", "Y")
         .put("ans", "Y")
         .put("mois", "MON")
         .put("semaines", "W")
@@ -728,6 +729,7 @@ public class FrenchDateTime {
         .put("annee", 31536000L)
         .put("l'annees", 31536000L)
         .put("l'annee", 31536000L)
+        .put("an", 31536000L)
         .put("ans", 31536000L)
         .put("mois", 2592000L)
         .put("semaines", 604800L)
@@ -1175,7 +1177,7 @@ public class FrenchDateTime {
 
     public static final List<String> WeekTerms = Arrays.asList("semaine");
 
-    public static final List<String> YearTerms = Arrays.asList("années", "ans", "l'annees", "l'annee");
+    public static final List<String> YearTerms = Arrays.asList("années", "ans", "an", "l'annees", "l'annee");
 
     public static final List<String> YearToDateTerms = Arrays.asList("année à ce jour", "an à ce jour");
 }

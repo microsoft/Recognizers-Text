@@ -1649,5 +1649,28 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Je vais partir pour 1 an",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "1 an",
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P1Y",
+              "type": "duration",
+              "value": "31536000"
+            }
+          ]
+        },
+        "Start": 20,
+        "End": 23
+      }
+    ]
   }
 ]
