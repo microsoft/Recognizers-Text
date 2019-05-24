@@ -9437,7 +9437,7 @@
     "Context": {
       "ReferenceDateTime": "2019-05-20T12:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "this friday 7.6",
@@ -9461,7 +9461,7 @@
     "Context": {
       "ReferenceDateTime": "2019-05-20T12:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "5.12",
@@ -9490,7 +9490,7 @@
     "Context": {
       "ReferenceDateTime": "2019-05-20T12:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "friday 5/12",
@@ -9519,7 +9519,7 @@
     "Context": {
       "ReferenceDateTime": "2019-05-20T12:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "this friday 5/12",
@@ -9543,7 +9543,7 @@
     "Context": {
       "ReferenceDateTime": "2019-05-20T12:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "next friday 5/12",
@@ -9567,7 +9567,7 @@
     "Context": {
       "ReferenceDateTime": "2019-05-20T12:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "this 5/12",
@@ -9591,7 +9591,7 @@
     "Context": {
       "ReferenceDateTime": "2019-05-20T12:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "next 5/12",
@@ -9615,7 +9615,7 @@
     "Context": {
       "ReferenceDateTime": "2019-05-20T12:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "next 6th of april",
@@ -9639,7 +9639,7 @@
     "Context": {
       "ReferenceDateTime": "2019-05-20T12:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "from this 5/12 to next 5/19",
@@ -9664,7 +9664,7 @@
     "Context": {
       "ReferenceDateTime": "2019-05-20T12:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "from this friday 5/12 to next sunday 5/20",
@@ -9689,7 +9689,7 @@
     "Context": {
       "ReferenceDateTime": "2019-05-22T12:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "jan/3",

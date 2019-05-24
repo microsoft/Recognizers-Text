@@ -126,7 +126,7 @@ public class BaseDateParser implements IDateTimeParser {
 
             if (match.isPresent()) {
                 ConditionalMatch relativeRegex = RegexExtension.matchEnd(config.getStrictRelativeRegex(), text.substring(0, match.get().index), true);
-                boolean isContainRelative = relativeRegex.getSuccess() && relativeRegex.getMatch().isPresent() && match.get().index + match.get().length == trimmedText.length();
+                boolean isContainRelative = relativeRegex.getSuccess() && match.get().index + match.get().length == trimmedText.length();
                 if ((match.get().index == offset && match.get().length == trimmedText.length()) || isContainRelative) {
                     // Handing cases which contain relative term like "this 5/12"
                     if (match.get().index != offset) {

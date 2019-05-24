@@ -66,7 +66,7 @@ public class BaseDateExtractor extends AbstractYearExtractor implements IDateTim
                     // Cases that the relative term is before the detected date entity, like "this 5/12", "next friday 5/12"
                     String preText = text.substring(0, match.index);
                     ConditionalMatch relativeRegex = RegexExtension.matchEnd(config.getStrictRelativeRegex(), preText, true);
-                    if (relativeRegex.getSuccess() && relativeRegex.getMatch().isPresent()) {
+                    if (relativeRegex.getSuccess()) {
                         result.add(new Token(relativeRegex.getMatch().get().index, match.index + match.length));
                     } else {
                         result.add(new Token(match.index, match.index + match.length));

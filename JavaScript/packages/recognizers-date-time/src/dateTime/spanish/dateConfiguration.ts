@@ -18,6 +18,7 @@ export class SpanishDateExtractorConfiguration implements IDateExtractorConfigur
     readonly forTheRegex: RegExp;
     readonly weekDayAndDayOfMonthRegex: RegExp;
     readonly relativeMonthRegex: RegExp;
+    readonly strictRelativeRegex: RegExp;
     readonly weekDayRegex: RegExp;
     readonly dayOfWeek: ReadonlyMap<string, number>;
     readonly ordinalExtractor: BaseNumberExtractor;
@@ -76,6 +77,7 @@ export class SpanishDateExtractorConfiguration implements IDateExtractorConfigur
         this.forTheRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.ForTheRegex, "gis");
         this.weekDayAndDayOfMonthRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.WeekDayAndDayOfMonthRegex, "gis");
         this.relativeMonthRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.RelativeMonthRegex, "gis");
+        this.strictRelativeRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.StrictRelativeRegex, "gis");
         this.weekDayRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.WeekDayRegex, "gis");
         this.dayOfWeek = SpanishDateTime.DayOfWeek;
         this.ordinalExtractor = new SpanishOrdinalExtractor();
@@ -112,6 +114,7 @@ export class SpanishDateParserConfiguration implements IDateParserConfiguration 
     readonly forTheRegex: RegExp;
     readonly weekDayAndDayOfMonthRegex: RegExp;
     readonly relativeMonthRegex: RegExp;
+    readonly strictRelativeRegex: RegExp;
     readonly relativeWeekDayRegex: RegExp;
     readonly utilityConfiguration: IDateTimeUtilityConfiguration;
     readonly dateTokenPrefix: string;
@@ -147,6 +150,7 @@ export class SpanishDateParserConfiguration implements IDateParserConfiguration 
         this.forTheRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.ForTheRegex, "gis");
         this.weekDayAndDayOfMonthRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.WeekDayAndDayOfMonthRegex, "gis");
         this.relativeMonthRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.RelativeMonthRegex, "gis");
+        this.strictRelativeRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.StrictRelativeRegex, "gis");
         this.relativeWeekDayRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.RelativeWeekDayRegex, "gis");
         this.utilityConfiguration = config.utilityConfiguration;
         this.dateTokenPrefix = SpanishDateTime.DateTokenPrefix;
@@ -180,7 +184,7 @@ export class SpanishDateParserConfiguration implements IDateParserConfiguration 
         return swift;
     }
 
-    getSwiftMonth(source: string): number {
+    getSwiftMonthOrYear(source: string): number {
         let trimedText = source.trim().toLowerCase();
         let swift = 0;
         if (RegExpUtility.getMatches(SpanishDateParserConfiguration.nextPrefixRegex, trimedText).length) {
