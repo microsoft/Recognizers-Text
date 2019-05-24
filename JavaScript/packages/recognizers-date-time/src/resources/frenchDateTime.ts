@@ -30,7 +30,7 @@ export namespace FrenchDateTime {
 	export const RelativeMonthRegex = `(?<relmonth>(${ThisPrefixRegex}\\s+mois)|(mois\\s+${PastSuffixRegex})|(mois\\s+${NextSuffixRegex}))\\b`;
 	export const WrittenMonthRegex = `(?<month>avril|avr\\.|avr|ao[uû]t|d[eé]cembre|d[eé]c\\.|d[eé]c|f[eé]vrier|f[eé]v|f[eé]vr\\.|f[eé]vr|janvier|janv\\.|janv|jan|juillet|jul|juil\\.|juil|juin|jun|mars|mar|mai|novembre|nov\\.|nov|octobre|oct\\.|oct|septembre|sept\\.|sept|sep)`;
 	export const MonthSuffixRegex = `(?<msuf>(en\\s*|le\\s*|de\\s*|dans\\s*)?(${RelativeMonthRegex}|${WrittenMonthRegex}))`;
-	export const DateUnitRegex = `(?<unit>l'ann[eé]es?|an|mois|semaines?|journ[eé]es?|jours?)\\b`;
+	export const DateUnitRegex = `(?<unit>(l')?ann[eé]es?|an|mois|semaines?|journ[eé]es?|jours?)\\b`;
 	export const SimpleCasesRegex = `\\b((d[ue])|entre\\s+)?(${DayRegex})\\s*${TillRegex}\\s*(${DayRegex})\\s+${MonthSuffixRegex}((\\s+|\\s*,\\s*)${YearRegex})?\\b`;
 	export const MonthFrontSimpleCasesRegex = `\\b((d[ue]|entre)\\s+)?${MonthSuffixRegex}\\s+((d[ue]|entre)\\s+)?(${DayRegex})\\s*${TillRegex}\\s*(${DayRegex})((\\s+|\\s*,\\s*)${YearRegex})?\\b`;
 	export const MonthFrontBetweenRegex = `\\b${MonthSuffixRegex}\\s+(entre|d[ue]\\s+)(${DayRegex})\\s*${RangeConnectorRegex}\\s*(${DayRegex})((\\s+|\\s*,\\s*)${YearRegex})?\\b`;
@@ -186,7 +186,7 @@ export namespace FrenchDateTime {
 	export const AfternoonStartEndRegex = `(^((d'|l')?apr[eè]s-midi))|(((d'|l')?apr[eè]s-midi)$)`;
 	export const EveningStartEndRegex = `(^(soir[ée]e|soir))|((soir[ée]e|soir)$)`;
 	export const NightStartEndRegex = `(^(nuit))|((nuit)$)`;
-	export const InexactNumberRegex = `\\b(quelque|quel qu[ée]s|quelqu[ée]s|plusieurs?|divers)\\b`;
+	export const InexactNumberRegex = `\\b(quel qu[ée]s|quelqu[ée]s?|plusieurs?|divers)\\b`;
 	export const InexactNumberUnitRegex = `(${InexactNumberRegex})\\s+(${DurationUnitRegex})`;
 	export const RelativeTimeUnitRegex = `((((${ThisPrefixRegex})?)\\s+(${TimeUnitRegex}(\\s*${NextSuffixRegex}|${PastSuffixRegex})?))|((le))\\s+(${RestrictedTimeUnitRegex}))`;
 	export const RelativeDurationUnitRegex = `((\\b(${DurationUnitRegex})(\\s+${NextSuffixRegex}|${PastSuffixRegex})?)|((le|my))\\s+(${RestrictedTimeUnitRegex}))`;

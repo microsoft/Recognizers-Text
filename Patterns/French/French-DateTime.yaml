@@ -54,7 +54,7 @@ MonthSuffixRegex: !nestedRegex
   def: (?<msuf>(en\s*|le\s*|de\s*|dans\s*)?({RelativeMonthRegex}|{WrittenMonthRegex}))
   references: [ RelativeMonthRegex, WrittenMonthRegex ]
 DateUnitRegex: !simpleRegex
-  def: (?<unit>l'ann[eé]es?|an|mois|semaines?|journ[eé]es?|jours?)\b
+  def: (?<unit>(l')?ann[eé]es?|an|mois|semaines?|journ[eé]es?|jours?)\b
 SimpleCasesRegex: !nestedRegex
   def: \b((d[ue])|entre\s+)?({DayRegex})\s*{TillRegex}\s*({DayRegex})\s+{MonthSuffixRegex}((\s+|\s*,\s*){YearRegex})?\b
   references: [ DayRegex, TillRegex, MonthSuffixRegex, YearRegex ]
@@ -455,7 +455,7 @@ EveningStartEndRegex: !simpleRegex
 NightStartEndRegex: !simpleRegex
   def: (^(nuit))|((nuit)$)
 InexactNumberRegex: !simpleRegex
-  def: \b(quelque|quel qu[ée]s|quelqu[ée]s|plusieurs?|divers)\b
+  def: \b(quel qu[ée]s|quelqu[ée]s?|plusieurs?|divers)\b
 InexactNumberUnitRegex: !nestedRegex
   def: ({InexactNumberRegex})\s+({DurationUnitRegex})
   references: [InexactNumberRegex, DurationUnitRegex]

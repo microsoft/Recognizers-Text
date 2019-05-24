@@ -76,7 +76,7 @@ public class FrenchDateTime {
             .replace("{RelativeMonthRegex}", RelativeMonthRegex)
             .replace("{WrittenMonthRegex}", WrittenMonthRegex);
 
-    public static final String DateUnitRegex = "(?<unit>l'ann[eé]es?|an|mois|semaines?|journ[eé]es?|jours?)\\b";
+    public static final String DateUnitRegex = "(?<unit>(l')?ann[eé]es?|an|mois|semaines?|journ[eé]es?|jours?)\\b";
 
     public static final String SimpleCasesRegex = "\\b((d[ue])|entre\\s+)?({DayRegex})\\s*{TillRegex}\\s*({DayRegex})\\s+{MonthSuffixRegex}((\\s+|\\s*,\\s*){YearRegex})?\\b"
             .replace("{DayRegex}", DayRegex)
@@ -587,7 +587,7 @@ public class FrenchDateTime {
 
     public static final String NightStartEndRegex = "(^(nuit))|((nuit)$)";
 
-    public static final String InexactNumberRegex = "\\b(quelque|quel qu[ée]s|quelqu[ée]s|plusieurs?|divers)\\b";
+    public static final String InexactNumberRegex = "\\b(quel qu[ée]s|quelqu[ée]s?|plusieurs?|divers)\\b";
 
     public static final String InexactNumberUnitRegex = "({InexactNumberRegex})\\s+({DurationUnitRegex})"
             .replace("{InexactNumberRegex}", InexactNumberRegex)
