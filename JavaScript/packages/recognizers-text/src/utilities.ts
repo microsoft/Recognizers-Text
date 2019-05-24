@@ -18,11 +18,34 @@ export class Match {
     }
 }
 
+export class ConditionalMatch {
+    constructor(match: Match, success: boolean) {
+        this.match = match;
+        this.success = success;
+    }
+
+    match: Match;
+    success: boolean;
+}
+
 export class RegExpUtility {
     static getMatches(regex: RegExp, source: string): Array<Match> {
         if (!regex) return [];
 
         return this.getMatchesSimple(regex, source);
+    }
+
+    static getMatchEnd(regex: RegExp, source: string, trim: boolean): ConditionalMatch {
+        let match = this.getMatches(regex, source).pop();
+        let strAfter = "";
+        if (match) {
+            strAfter = source.substring(match.index + match.length);
+            if (trim) {
+                strAfter = strAfter.trim();
+            }
+        }
+        
+        return new ConditionalMatch(match, match && StringUtility.isNullOrEmpty(strAfter));
     }
 
     static getMatchesSimple(regex: RegExp, source: string): Array<Match> {

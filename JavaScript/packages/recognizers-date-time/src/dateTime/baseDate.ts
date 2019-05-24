@@ -53,11 +53,11 @@ export class BaseDateExtractor implements IDateTimeExtractor {
         this.config.dateRegexList.forEach(regexp => {
             let matches = RegExpUtility.getMatches(regexp, source);
             matches.forEach(match => {
+                // @TODO Implement validateMatch as in .NET
                 let preText = source.substring(0, match.index)
-                let relativeRegex = RegExpUtility.getMatches(this.config.strictRelativeRegex, preText).pop();
-                let strAfter = relativeRegex ? source.substring(relativeRegex.index + relativeRegex.length, match.index).trim() : null;
-                if (relativeRegex && StringUtility.isNullOrEmpty(strAfter)) {
-                    ret.push(new Token(relativeRegex.index, match.index + match.length));                    
+                let relativeRegex = RegExpUtility.getMatchEnd(this.config.strictRelativeRegex, preText, true);
+                if (relativeRegex.success) {
+                    ret.push(new Token(relativeRegex.match.index, match.index + match.length));                    
                 }
                 else{
                     ret.push(new Token(match.index, match.index + match.length));
@@ -281,13 +281,12 @@ export class BaseDateParser implements IDateTimeParser {
                 
             }
             if (match) {
-                let relativeRegex = RegExpUtility.getMatches(this.config.strictRelativeRegex, source).pop();
-                let strAfter = relativeRegex ? source.substring(relativeRegex.index + relativeRegex.length, match.index).trim() : null;
-                let isContainRelative = relativeRegex && StringUtility.isNullOrEmpty(strAfter) && match.index + match.length === trimmedSource.length  
-                if ((match.index === offset && match.length === trimmedSource.length) || isContainRelative){
+                let relativeRegex = RegExpUtility.getMatchEnd(this.config.strictRelativeRegex, source.substring(0,match.index), true);
+                let isContainRelative = relativeRegex.success && match.index + match.length === trimmedSource.length;
+                if ((match.index === offset && match.length === trimmedSource.length) || isContainRelative) {
 
-                    if (match.index !== offset){
-                        relativeStr = relativeRegex.value;
+                    if (match.index !== offset) {
+                        relativeStr = relativeRegex.match.value;
                     }
                     result = this.matchToDate(match, referenceDate, relativeStr);
                     return true;
