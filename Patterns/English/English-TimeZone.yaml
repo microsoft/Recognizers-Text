@@ -1043,6 +1043,7 @@ MajorLocations: !list
     - Wuxi
     - Xiamen
     - Yonkers
+    - Bentonville
     # country/regions plus u.s. states
     - Afghanistan
     - AK
@@ -1419,3 +1420,4 @@ MajorLocations: !list
     - Jakarta
     - Amsterdam
     - Brussels
+    - Barcelona
