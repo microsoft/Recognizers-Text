@@ -17,6 +17,7 @@ export interface IDateExtractorConfiguration {
     forTheRegex: RegExp,
     weekDayAndDayOfMonthRegex: RegExp,
     relativeMonthRegex: RegExp,
+    strictRelativeRegex: RegExp,
     weekDayRegex: RegExp,
     dayOfWeek: ReadonlyMap<string, number>;
     ordinalExtractor: BaseNumberExtractor,
@@ -52,7 +53,16 @@ export class BaseDateExtractor implements IDateTimeExtractor {
         this.config.dateRegexList.forEach(regexp => {
             let matches = RegExpUtility.getMatches(regexp, source);
             matches.forEach(match => {
-                ret.push(new Token(match.index, match.index + match.length));
+                let preText = source.substring(0, match.index)
+                let relativeRegex = RegExpUtility.getMatches(this.config.strictRelativeRegex, preText).pop();
+                let strAfter = relativeRegex ? source.substring(relativeRegex.index + relativeRegex.length, match.index).trim() : null;
+                if (relativeRegex && StringUtility.isNullOrEmpty(strAfter)) {
+                    ret.push(new Token(relativeRegex.index, match.index + match.length));                    
+                }
+                else{
+                    ret.push(new Token(match.index, match.index + match.length));
+                }
+                
             });
         });
         return ret;
@@ -201,6 +211,7 @@ export interface IDateParserConfiguration {
     forTheRegex: RegExp
     weekDayAndDayOfMonthRegex: RegExp
     relativeMonthRegex: RegExp
+    strictRelativeRegex: RegExp
     relativeWeekDayRegex: RegExp
     utilityConfiguration: IDateTimeUtilityConfiguration
     dateTokenPrefix: string
@@ -259,14 +270,28 @@ export class BaseDateParser implements IDateTimeParser {
         let result = new DateTimeResolutionResult();
         this.config.dateRegex.some(regex => {
             let offset = 0;
+            let relativeStr = null;
             let match = RegExpUtility.getMatches(regex, trimmedSource).pop();
             if (!match) {
                 match = RegExpUtility.getMatches(regex, this.config.dateTokenPrefix + trimmedSource).pop();
-                offset = this.config.dateTokenPrefix.length;
+                if(match){
+                    offset = this.config.dateTokenPrefix.length;
+                    relativeStr = match.groups('order').value;
+                }
+                
             }
-            if (match && match.index === offset && match.length === trimmedSource.length) {
-                result = this.matchToDate(match, referenceDate);
-                return true;
+            if (match) {
+                let relativeRegex = RegExpUtility.getMatches(this.config.strictRelativeRegex, source).pop();
+                let strAfter = relativeRegex ? source.substring(relativeRegex.index + relativeRegex.length, match.index).trim() : null;
+                let isContainRelative = relativeRegex && StringUtility.isNullOrEmpty(strAfter) && match.index + match.length === trimmedSource.length  
+                if ((match.index === offset && match.length === trimmedSource.length) || isContainRelative){
+
+                    if (match.index !== offset){
+                        relativeStr = relativeRegex.value;
+                    }
+                    result = this.matchToDate(match, referenceDate, relativeStr);
+                    return true;
+                }
             }
         });
         return result;
@@ -621,11 +646,12 @@ export class BaseDateParser implements IDateTimeParser {
         return result;
     }
 
-    protected matchToDate(match: Match, referenceDate: Date): DateTimeResolutionResult {
+    protected matchToDate(match: Match, referenceDate: Date, relativeStr: string): DateTimeResolutionResult {
         let result = new DateTimeResolutionResult();
         let yearStr = match.groups('year').value;
         let monthStr = match.groups('month').value;
         let dayStr = match.groups('day').value;
+        let weekdayStr = match.groups('weekday').value;
         let month = 0;
         let day = 0;
         let year = 0;
@@ -642,7 +668,16 @@ export class BaseDateParser implements IDateTimeParser {
         if (year === 0) {
             year = referenceDate.getFullYear();
             result.timex = DateTimeFormatUtil.luisDate(-1, month, day);
-            noYear = true;
+            if (!StringUtility.isNullOrEmpty(relativeStr)){
+                let swift = this.config.getSwiftMonth(relativeStr);
+                if (!StringUtility.isNullOrEmpty(weekdayStr)){
+                    swift = 0;
+                }
+                year += swift;
+            } else {
+                noYear = true;
+            }
+            
         } else {
             result.timex = DateTimeFormatUtil.luisDate(year, month, day);
         }
