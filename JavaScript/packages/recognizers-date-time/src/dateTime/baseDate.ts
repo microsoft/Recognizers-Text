@@ -216,7 +216,7 @@ export interface IDateParserConfiguration {
     utilityConfiguration: IDateTimeUtilityConfiguration
     dateTokenPrefix: string
     getSwiftDay(source: string): number
-    getSwiftMonth(source: string): number
+    getSwiftMonthOrYear(source: string): number
     isCardinalLast(source: string): boolean
 }
 
@@ -513,7 +513,7 @@ export class BaseDateParser implements IDateTimeParser {
             match = RegExpUtility.getMatches(this.config.relativeMonthRegex, trimmedSource).pop();
             if (match) {
                 let monthStr = match.groups('order').value;
-                let swift = this.config.getSwiftMonth(monthStr);
+                let swift = this.config.getSwiftMonthOrYear(monthStr);
                 let date = new Date(referenceDate);
                 date.setMonth(referenceDate.getMonth() + swift);
                 month = date.getMonth();
@@ -615,7 +615,7 @@ export class BaseDateParser implements IDateTimeParser {
         let month = referenceDate.getMonth();
         let year = referenceDate.getFullYear();
         if (StringUtility.isNullOrEmpty(monthStr)) {
-            let swift = this.config.getSwiftMonth(trimmedSource);
+            let swift = this.config.getSwiftMonthOrYear(trimmedSource);
             let temp = new Date(referenceDate);
             temp.setMonth(referenceDate.getMonth() + swift);
             month = temp.getMonth();
@@ -669,7 +669,7 @@ export class BaseDateParser implements IDateTimeParser {
             year = referenceDate.getFullYear();
             result.timex = DateTimeFormatUtil.luisDate(-1, month, day);
             if (!StringUtility.isNullOrEmpty(relativeStr)){
-                let swift = this.config.getSwiftMonth(relativeStr);
+                let swift = this.config.getSwiftMonthOrYear(relativeStr);
                 if (!StringUtility.isNullOrEmpty(weekdayStr)){
                     swift = 0;
                 }

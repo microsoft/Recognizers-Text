@@ -146,7 +146,7 @@ class ChineseDateParserConfiguration implements IDateParserConfiguration {
         return swift;
     }
 
-    getSwiftMonth(source: string): number {
+    getSwiftMonthOrYear(source: string): number {
         let trimmedSource = source.trim().toLowerCase();
         let swift = 0;
         if (trimmedSource.startsWith(ChineseDateTime.ParserConfigurationNextMonthToken)) {

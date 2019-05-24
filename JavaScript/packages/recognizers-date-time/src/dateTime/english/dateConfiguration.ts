@@ -188,7 +188,7 @@ export class EnglishDateParserConfiguration implements IDateParserConfiguration 
         return swift;
     }
 
-    getSwiftMonth(source: string): number {
+    getSwiftMonthOrYear(source: string): number {
         return this.getSwift(source);
     }
 

@@ -184,7 +184,7 @@ export class SpanishDateParserConfiguration implements IDateParserConfiguration 
         return swift;
     }
 
-    getSwiftMonth(source: string): number {
+    getSwiftMonthOrYear(source: string): number {
         let trimedText = source.trim().toLowerCase();
         let swift = 0;
         if (RegExpUtility.getMatches(SpanishDateParserConfiguration.nextPrefixRegex, trimedText).length) {
