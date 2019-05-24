@@ -1795,7 +1795,6 @@
   },
   {
     "Input": "Ik vertrek 1 dag, 2 uur later",
-    "NotSupported": "javascript, python",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
@@ -1822,7 +1821,6 @@
   },
   {
     "Input": "Ik ontmoette hem 2 maanden, 1 dag, 2 uur geleden",
-    "NotSupported": "javascript, python",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
@@ -1836,7 +1834,6 @@
   },
   {
     "Input": "Ik vertrek 1 dag, 30 minuten later",
-    "NotSupported": "javascript, python",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [

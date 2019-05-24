@@ -2820,7 +2820,6 @@
   },
   {
     "Input": "We hadden een meeting 1 maand, 21 dagen geleden",
-    "NotSupported": "javascript, python",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
@@ -2834,7 +2833,6 @@
   },
   {
     "Input": "Ik vertrok hier 2 jaar, 1 maand, 21 dagen geleden",
-    "NotSupported": "javascript, python",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
@@ -2848,7 +2846,6 @@
   },
   {
     "Input": "Ik zal hier 2 jaar en 21 dagen later vertrekken",
-    "NotSupported": "javascript, python",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
@@ -2862,7 +2859,6 @@
   },
   {
     "Input": "Ik vertrok hier 1 maand, 2 jaar en 21 dagen geleden",
-    "NotSupported": "javascript, python",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
@@ -2876,7 +2872,6 @@
   },
   {
     "Input": "Ik vertrok hier de 20e volgende maand",
-    "NotSupported": "javascript, python",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
@@ -2903,7 +2898,6 @@
   },
   {
     "Input": "maandag, tweeëntwintig jan, 2018",
-    "NotSupported": "javascript, python",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
@@ -2917,7 +2911,6 @@
   },
   {
     "Input": "op zondag eenentwintig jan tweeduizend achttien",
-    "NotSupported": "javascript, python",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
@@ -2931,7 +2924,6 @@
   },
   {
     "Input": "op september de eenentwintigste negentienachtenzeventig",
-    "NotSupported": "javascript, python",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
@@ -2945,7 +2937,6 @@
   },
   {
     "Input": "op 10 september, negentien nul een",
-    "NotSupported": "javascript, python",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
@@ -2959,7 +2950,6 @@
   },
   {
     "Input": "op de tiende van september, tweeduizend",
-    "NotSupported": "javascript, python",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
@@ -2999,7 +2989,6 @@
   },
   {
     "Input": "Ben je twee zondagen vanaf nu beschikbaar?",
-    "NotSupported": "python",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
@@ -3013,7 +3002,6 @@
   },
   {
     "Input": "",
-    "NotSupported": "python",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
@@ -3027,7 +3015,6 @@
   },
   {
     "Input": "Ben je twee dagen na vandaag beschikbaar?",
-    "NotSupported": "javascript, python",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
@@ -3041,7 +3028,6 @@
   },
   {
     "Input": "Ben je drie weken vanaf morgen beschikbaar?",
-    "NotSupported": "javascript, python",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
@@ -3055,7 +3041,6 @@
   },
   {
     "Input": "Waar was je twee dagen voor gisteren?",
-    "NotSupported": "javascript, python",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
@@ -3072,7 +3057,6 @@
     "Context": {
       "ReferenceDateTime": "2018-06-14T00:00:00"
     },
-    "NotSupported": "python",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
@@ -3089,7 +3073,6 @@
     "Context": {
       "ReferenceDateTime": "2018-06-14T00:00:00"
     },
-    "NotSupported": "python",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
@@ -3106,7 +3089,6 @@
     "Context": {
       "ReferenceDateTime": "2018-06-14T00:00:00"
     },
-    "NotSupported": "python",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
@@ -3123,7 +3105,6 @@
     "Context": {
       "ReferenceDateTime": "2018-06-20T00:00:00"
     },
-    "NotSupported": "javascript, python",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
@@ -3140,7 +3121,6 @@
     "Context": {
       "ReferenceDateTime": "2018-06-20T00:00:00"
     },
-    "NotSupported": "python",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
@@ -3163,7 +3143,6 @@
     "Context": {
       "ReferenceDateTime": "2018-06-20T00:00:00"
     },
-    "NotSupported": "python,javascript",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [

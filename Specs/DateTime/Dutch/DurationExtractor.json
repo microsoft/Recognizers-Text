@@ -1327,7 +1327,6 @@
   },
   {
     "Input": "Ik vertrek voor 1 jaar, 1 maand, 21 dagen",
-    "NotSupported": "javascript, python",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
@@ -1341,7 +1340,6 @@
   },
   {
     "Input": "Ik vertrek voor 2 dagen, 1 maand",
-    "NotSupported": "javascript, python",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
@@ -1381,7 +1379,6 @@
   },
   {
     "Input": "Kunnen we nog een werkdag wachten?",
-    "NotSupported": "javascript, python",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
@@ -1395,7 +1392,6 @@
   },
   {
     "Input": "",
-    "NotSupported": "javascript, python",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
@@ -1409,7 +1405,6 @@
   },
   {
     "Input": "Ik vertrek voor twee decennia",
-    "NotSupported": "javascript, python",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
@@ -1423,7 +1418,6 @@
   },
   {
     "Input": "Ik vertrek voor veertien dagen",
-    "NotSupported": "javascript, python",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [

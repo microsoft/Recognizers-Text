@@ -3455,7 +3455,6 @@
   },
   {
     "Input": "Ik ben om 7:01u terug",
-    "NotSupported": "python",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
@@ -3478,7 +3477,6 @@
   },
   {
     "Input": "Ik ben om 22:10u terug",
-    "NotSupported": "python",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
@@ -3501,7 +3499,6 @@
   },
   {
     "Input": "Ik ben om drie minuten na 22:10 terug",
-    "NotSupported": "python",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [

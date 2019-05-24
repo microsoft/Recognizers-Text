@@ -2146,21 +2146,18 @@
   },
   {
     "Input": "Ik ben over 3 jaar weg",
-    "NotSupported": "javascript, python",
     "NotSupported": "dotnet",
     "NotSupportedByDesign" : "javascript,python,java",
     "Results": []
   },
   {
     "Input": "Ik ben over 3 weken weg",
-    "NotSupported": "javascript, python",
     "NotSupported": "dotnet",
     "NotSupportedByDesign" : "javascript,python,java",
     "Results": []
   },
   {
     "Input": "Ik ben over 3 maanden weg",
-    "NotSupported": "javascript, python",
     "NotSupported": "dotnet",
     "NotSupportedByDesign" : "javascript,python,java",
     "Results": []
@@ -3057,7 +3054,6 @@
   },
   {
     "Input": "Ik ben jaar 247 weg",
-    "NotSupported": "javascript, python",
     "NotSupported": "dotnet",
     "NotSupportedByDesign" : "javascript,python,java",
     "Results": [

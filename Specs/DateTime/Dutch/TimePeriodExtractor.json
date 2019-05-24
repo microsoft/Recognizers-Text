@@ -1517,7 +1517,6 @@
   },
   {
     "Input": "Hoi Cortana- plan alsjeblieft een Skypemeeting met Jennifer. Ik heb een meeting van 30 min 's middags nodig, deze vrijdag vertrek ik.",
-    "NotSupported": "javascript",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
@@ -1531,7 +1530,6 @@
   },
   {
     "Input": "Hoi Cortana- plan alsjeblieft een Skypemeeting met Jennifer. Ik heb een meeting van 30 min in de middag nodig, deze vrijdag vertrek ik.",
-    "NotSupported": "javascript",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
@@ -1610,7 +1608,6 @@
   },
   {
     "Input": "regel meeting tussen 10 en 11:30",
-    "NotSupported": "javascript, python",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
@@ -1624,7 +1621,6 @@
   },
   {
     "Input": "regel meeting tussen 10:10 en 12:50",
-    "NotSupported": "javascript, python",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
@@ -1638,7 +1634,6 @@
   },
   {
     "Input": "regel meeting tussen 22:10 en 3",
-    "NotSupported": "javascript, python",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
@@ -1652,7 +1647,6 @@
   },
   {
     "Input": "regel meeting van 22:10 tot 10",
-    "NotSupported": "javascript, python",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
@@ -1666,7 +1660,6 @@
   },
   {
     "Input": "regel meeting van 10:30 tot 23",
-    "NotSupported": "javascript, python",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
@@ -1680,7 +1673,6 @@
   },
   {
     "Input": "bel me niet tijdens kantooruren",
-    "NotSupported": "javascript, python",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
