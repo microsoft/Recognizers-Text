@@ -11563,5 +11563,67 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Cortana find 30 minutes later this week",
+    "Context": {
+      "ReferenceDateTime": "2019-05-27T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "30 minutes",
+        "Start": 13,
+        "End": 22,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT30M",
+              "type": "duration",
+              "value": "1800"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "later this week",
+        "Start": 24,
+        "End": 38,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-W22",
+              "type": "daterange",
+              "start": "2019-05-30",
+              "end": "2019-06-03"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Let's take a walk 30 minutes later",
+    "Context": {
+      "ReferenceDateTime": "2019-05-27T12:00:00"
+    },
+    "Results": [
+      {
+        "Text": "30 minutes later",
+        "Start": 18,
+        "End": 33,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-05-27T12:30:00",
+              "type": "datetime",
+              "value": "2019-05-27 12:30:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
