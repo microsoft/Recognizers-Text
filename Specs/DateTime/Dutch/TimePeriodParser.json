@@ -27,33 +27,6 @@
     ]
   },
   {
-    "Input": "Ik ben 5 tot 18:00 weg",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "5 tot 18:00",
-        "Type": "timerange",
-        "Value": {
-          "Timex": "(T17,T18,PT1H)",
-          "FutureResolution": {
-            "startTime": "17:00:00",
-            "endTime": "18:00:00"
-          },
-          "PastResolution": {
-            "startTime": "17:00:00",
-            "endTime": "18:00:00"
-          }
-        },
-        "Start": 7,
-        "Length": 10
-      }
-    ]
-  },
-  {
     "Input": "Ik ben 5 tot zeven 's morgens weg",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
@@ -779,60 +752,6 @@
         },
         "Start": 16,
         "Length": 19
-      }
-    ]
-  },
-  {
-    "Input": "laten we elkaar in de vroege nacht ontmoeten",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "in de vroege nacht",
-        "Type": "timerange",
-        "Value": {
-          "Timex": "TNI",
-          "FutureResolution": {
-            "startTime": "20:00:00",
-            "endTime": "22:00:00"
-          },
-          "PastResolution": {
-            "startTime": "20:00:00",
-            "endTime": "22:00:00"
-          }
-        },
-        "Start": 16,
-        "Length": 18
-      }
-    ]
-  },
-  {
-    "Input": "laten we elkaar in de late nacht ontmoeten",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "in de late nacht",
-        "Type": "timerange",
-        "Value": {
-          "Timex": "TNI",
-          "FutureResolution": {
-            "startTime": "22:00:00",
-            "endTime": "23:59:59"
-          },
-          "PastResolution": {
-            "startTime": "22:00:00",
-            "endTime": "23:59:59"
-          }
-        },
-        "Start": 16,
-        "Length": 17
       }
     ]
   },
