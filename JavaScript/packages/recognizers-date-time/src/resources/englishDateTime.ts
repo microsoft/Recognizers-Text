@@ -209,7 +209,7 @@ export namespace EnglishDateTime {
 	export const SinceRegex = `((\\b(since|after\\s+or\\s+equal\\s+to|starting\\s+(from|on|with)|as\\s+early\\s+as|any\\s+time\\s+from)\\b\\s*)|(?<!\\w|<)(>=))`;
 	export const AroundRegex = `(\\b(around|circa)\\s*\\b)`;
 	export const AgoRegex = `\\b(ago|before\\s+(?<day>yesterday|today))\\b`;
-	export const LaterRegex = `\\b(later(?!\\s*${OneWordPeriodRegex})|from now|(from|after) (?<day>tomorrow|tmr|today))\\b`;
+	export const LaterRegex = `\\b(later(?!(\\s+in)?\\s*${OneWordPeriodRegex})|from now|(from|after) (?<day>tomorrow|tmr|today))\\b`;
 	export const InConnectorRegex = `\\b(in)\\b`;
 	export const SinceYearSuffixRegex = `(^\\s*${SinceRegex}(\\s*(the\\s+)?year\\s*)?${YearSuffix})`;
 	export const WithinNextPrefixRegex = `\\b(within(\\s+the)?(\\s+(?<next>${NextPrefixRegex}))?)\\b`;

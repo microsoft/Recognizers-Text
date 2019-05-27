@@ -522,7 +522,7 @@ AroundRegex: !simpleRegex
 AgoRegex: !simpleRegex
   def: \b(ago|before\s+(?<day>yesterday|today))\b
 LaterRegex: !nestedRegex
-  def: \b(later(?!\s*{OneWordPeriodRegex})|from now|(from|after) (?<day>tomorrow|tmr|today))\b
+  def: \b(later(?!(\s+in)?\s*{OneWordPeriodRegex})|from now|(from|after) (?<day>tomorrow|tmr|today))\b
   references: [ OneWordPeriodRegex ]
 InConnectorRegex: !simpleRegex
   def: \b(in)\b
