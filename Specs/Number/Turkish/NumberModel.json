@@ -1,0 +1,2466 @@
+[
+  {
+    "Input": "192",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "192",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "192"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "192.168.1.2",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "192",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "192"
+        },
+        "Start": 0,
+        "End": 3
+      },
+      {
+        "Text": "168",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "168"
+        },
+        "Start": 4,
+        "End": 6
+      },
+      {
+        "Text": "1",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1"
+        },
+        "Start": 8,
+        "End": 8
+      },
+      {
+        "Text": "2",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "2"
+        },
+        "Start": 10,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": ".08",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": ".08",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "0.08"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": ".23456000",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": ".23456000",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "0.23456"
+        },
+        "Start": 0,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "4.800",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "4.800",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "4.8"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "yüz üç ve üçte iki",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "yüz üç ve üçte iki",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "103.666666666667"
+        },
+        "Start": 0,
+        "End": 18
+      }
+    ]
+  },
+  {
+    "Input": "on altı",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "on altı",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "16"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "üçte iki",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "üçte iki",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.666666666666667"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "yüz on altı",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "yüz on altı",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "116"
+        },
+        "Start": 0,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "yüz altı",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "yüz altı",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "106"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "yüz altmış bir",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "yüz altmış bir",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "161"
+        },
+        "Start": 0,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "bir trilyon",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "bir trilyon",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "1E-12"
+        },
+        "Start": 0,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "yüz trilyon",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "yüz trilyon",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "1E-10"
+        },
+        "Start": 0,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "yarım düzine",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "yarım düzine",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "6"
+        },
+        "Start": 0,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": "3 düzine",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3 düzine",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "36"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "bir düzine",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "bir düzine",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "12"
+        },
+        "Start": 0,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "üç düzine",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "üç düzine",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "36"
+        },
+        "Start": 0,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "üç yüz iki düzine",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "üç yüz iki düzine",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "324"
+        },
+        "Start": 0,
+        "End": 17
+      }
+    ]
+  },
+  {
+    "Input": "1,234,567",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1,234,567",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1234567"
+        },
+        "Start": 0,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "9.2321312",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "9.2321312",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "9.2321312"
+        },
+        "Start": 0,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": " -9.2321312",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": " -9.2321312",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "-9.2321312"
+        },
+        "Start": 0,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": " -1",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": " -1",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "-1"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "-4/5",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "-4/5",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "-0.8"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "- 1 4/5",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "- 1 4/5",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "-1.8"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "üç",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "üç",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "3"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": " 123456789101231",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": " 123456789101231",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "123456789101231"
+        },
+        "Start": 0,
+        "End": 16
+      }
+    ]
+  },
+  {
+    "Input": "-123456789101231",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "-123456789101231",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "-123456789101231"
+        },
+        "Start": 0,
+        "End": 16
+      }
+    ]
+  },
+  {
+    "Input": " -123456789101231",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": " -123456789101231",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "-123456789101231"
+        },
+        "Start": 0,
+        "End": 17
+      }
+    ]
+  },
+  {
+    "Input": "1",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1"
+        },
+        "Start": 0,
+        "End": 1
+      }
+    ]
+  },
+  {
+    "Input": "10k",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "10k",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "10000"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "100k",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "100k",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "100000"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "10g",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "10g",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "10000000000"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "- 10  k",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "- 10  k",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "-10000"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "2 milyon",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2 milyon",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "2000000"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "1 triyon",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1 triyon",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1000000000000"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "üç ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "üç",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "3"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "yirmi bir trilyon",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "yirmi bir trilyon",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "21000000000000"
+        },
+        "Start": 0,
+        "End": 17
+      }
+    ]
+  },
+  {
+    "Input": "yirmi bir trilyon üç yüz",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "yirmi bir trilyon üç yüz",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "21000000000300"
+        },
+        "Start": 0,
+        "End": 24
+      }
+    ]
+  },
+  {
+    "Input": "elli iki",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "elli iki",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "52"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "üç yüz otuz bir",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "üç yüz otuz bir",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "331"
+        },
+        "Start": 0,
+        "End": 15
+      }
+    ]
+  },
+  {
+    "Input": "iki yüz iki bin",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "iki yüz iki bin",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "202000"
+        },
+        "Start": 0,
+        "End": 15
+      }
+    ]
+  },
+  {
+    "Input": "iki bin iki yüz",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "iki bin iki yüz",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "2200"
+        },
+        "Start": 0,
+        "End": 15
+      }
+    ]
+  },
+  {
+    "Input": "2.33 k",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2.33 k",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "2330"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "iki yüz nokta sıfır üç",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "iki yüz nokta sıfır üç",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "200.03"
+        },
+        "Start": 0,
+        "End": 22
+      }
+    ]
+  },
+  {
+    "Input": "iki yüz nokta yetmiş bir",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "iki yüz nokta yetmiş bir",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "200.71"
+        },
+        "Start": 0,
+        "End": 24
+      }
+    ]
+  },
+  {
+    "Input": "1e10",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1e10",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "power",
+          "value": "10000000000"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "1.1^23",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1.1^23",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "power",
+          "value": "8.95430243255239"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "322 yüz",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "322 yüz",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "32200"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "yetmiş",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "yetmiş",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "70"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "2  1/4",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2  1/4",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "2.25"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "3/4",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3/4",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.75"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "sekizde biri",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "sekizde biri",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.125"
+        },
+        "Start": 0,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": "sekizde beşi",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "sekizde beşi",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.625"
+        },
+        "Start": 0,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": "yarım",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "yarım",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.5"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "üç çeyrek",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "üç çeyrek",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.75"
+        },
+        "Start": 0,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "yirmi ve beşte üç",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "yirmi ve beşte üç",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "20.6"
+        },
+        "Start": 0,
+        "End": 17
+      }
+    ]
+  },
+  {
+    "Input": "yirmi beşte üç",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "yirmi beşte üç",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "4.6"
+        },
+        "Start": 0,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "yirmi üç ve beşte üç",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "yirmi üç ve beşte üç",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "23.6"
+        },
+        "Start": 0,
+        "End": 20
+      }
+    ]
+  },
+  {
+    "Input": "bir milyon iki bin iki yüz beşte üç",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "bir milyon iki bin iki yüz beşte üç",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "200440.6"
+        },
+        "Start": 0,
+        "End": 35
+      }
+    ]
+  },
+  {
+    "Input": "bir buçuk",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "bir buçuk",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "1.5"
+        },
+        "Start": 0,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "bir ve dördüncü",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "bir ve dördüncü",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "1.25"
+        },
+        "Start": 0,
+        "End": 15
+      }
+    ]
+  },
+  {
+    "Input": "beş ve bir çeyrek",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "beş ve bir çeyrek",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "5.25"
+        },
+        "Start": 0,
+        "End": 17
+      }
+    ]
+  },
+  {
+    "Input": "yüz dörtte üç",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "yüz dörtte üç",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "100.75"
+        },
+        "Start": 0,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "yüzüncü",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "yüzüncü",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.01"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "1.1^+23",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1.1^+23",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "power",
+          "value": "8.95430243255239"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "2.5^-1",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2.5^-1",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "power",
+          "value": "0.4"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "-2500^-1",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "-2500^-1",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "power",
+          "value": "-0.0004"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "-1.1^+23",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "-1.1^+23",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "power",
+          "value": "-8.95430243255239"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "-2.5^-1",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "-2.5^-1",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "power",
+          "value": "-0.4"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "-1.1^--23",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "-1.1^--23",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "power",
+          "value": "-8.95430243255239"
+        },
+        "Start": 0,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "-127.32e13",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "-127.32e13",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "power",
+          "value": "-1.2732E+15"
+        },
+        "Start": 0,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "12.32e+14",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "12.32e+14",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "power",
+          "value": "1.232E+15"
+        },
+        "Start": 0,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "-12e-1",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "-12e-1",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "power",
+          "value": "-1.2"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "1.2b",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1.2b",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "1200000000"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "beşinci",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "beşinci",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.2"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "yüz bin trilyon",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "yüz bin trilyon",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "1E-07"
+        },
+        "Start": 0,
+        "End": 15
+      }
+    ]
+  },
+  {
+    "Input": "beşte biri",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "beşte biri",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.2"
+        },
+        "Start": 0,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "beşte üç",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "beşte üç",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.6"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "yirmi beşinci",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "yirmi beşinci",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "4"
+        },
+        "Start": 0,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "üç ve beşinci",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "üç ve beşinci",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "3.2"
+        },
+        "Start": 0,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "beşte yirmi bir",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "beşte yirmi bir",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "4.2"
+        },
+        "Start": 0,
+        "End": 15
+      }
+    ]
+  },
+  {
+    "Input": "yirmi birinci",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "yirmi birinci",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.0476190476190476"
+        },
+        "Start": 0,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "üç yirmi birinci",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "üç yirmi birinci",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.142857142857143"
+        },
+        "Start": 0,
+        "End": 16
+      }
+    ]
+  },
+  {
+    "Input": "yirmi yirmi beşinci",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "yirmi yirmi beşinci",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.8"
+        },
+        "Start": 0,
+        "End": 19
+      }
+    ]
+  },
+  {
+    "Input": "yüz ve otuz beşinci",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "yüz ve otuz beşinci",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "26"
+        },
+        "Start": 0,
+        "End": 19
+      }
+    ]
+  },
+  {
+    "Input": "yüz otuz beşinci",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "yüz otuz beşinci",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "2.85714285714286"
+        },
+        "Start": 0,
+        "End": 16
+      }
+    ]
+  },
+  {
+    "Input": "yüz otuz iki beşinci",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "yüz otuz iki beşinci",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "26.4"
+        },
+        "Start": 0,
+        "End": 20
+      }
+    ]
+  },
+  {
+    "Input": "yüz ve otuz iki beşinci",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "yüz ve otuz iki beşinci",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "26.4"
+        },
+        "Start": 0,
+        "End": 23
+      }
+    ]
+  },
+  {
+    "Input": "yüz otuz ve iki beşinci",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "yüz otuz ve iki beşinci",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "130.4"
+        },
+        "Start": 0,
+        "End": 23
+      }
+    ]
+  },
+  {
+    "Input": "bir yüz beşinci",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "yüz beşinci",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.00952380952380952"
+        },
+        "Start": 4,
+        "End": 15
+      }
+    ]
+  },
+  {
+    "Input": "bir yüz ve beşinci",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "bir yüz ve beşinci",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.00952380952380952"
+        },
+        "Start": 0,
+        "End": 18
+      }
+    ]
+  },
+  {
+    "Input": "yüz ve bin beşinci",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "yüz ve bin beşinci",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.0995024875621891"
+        },
+        "Start": 0,
+        "End": 18
+      }
+    ]
+  },
+  {
+    "Input": "üçte bir",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "üçte bir",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.333333333333333"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "yirmi birde 1",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "yirmi birde 1",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.0476190476190476"
+        },
+        "Start": 0,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "yüz ve yirmi birde 1",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "yüz ve yirmi birde 1",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.00826446280991736"
+        },
+        "Start": 0,
+        "End": 20
+      }
+    ]
+  },
+  {
+    "Input": "üçte 1",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "üçte 1",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.333333333333333"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "3'te 1",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3'te 1",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.333333333333333"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "3'te bir",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3'te bir",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.333333333333333"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "20'de bir",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "20'de bir",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.05"
+        },
+        "Start": 0,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "yirmide bir",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "yirmide bir",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.05"
+        },
+        "Start": 0,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "yüzde bir",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "yüzde bir",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.01"
+        },
+        "Start": 0,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "yüz yirmi beşte bir",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "yüz yirmi beşte bir",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.008"
+        },
+        "Start": 0,
+        "End": 19
+      }
+    ]
+  },
+  {
+    "Input": "doksan - beş yüzde beş",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "doksan - beş yüzde beş",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "1900"
+        },
+        "Start": 0,
+        "End": 22
+      }
+    ]
+  },
+  {
+    "Input": "Yanıt eksi doksan - beş yüz beşinci",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "eksi doksan - beş yüz beşinci",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "-1900"
+        },
+        "Start": 6,
+        "End": 35
+      }
+    ]
+  },
+  {
+    "Input": "yanıt eksi bir",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "eksi bir",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "-1"
+        },
+        "Start": 6,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "Yanıt eksi yüz otuz beşinci",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "eksi yüz otuz beşinci",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "-2.85714285714286"
+        },
+        "Start": 6,
+        "End": 27
+      }
+    ]
+  },
+  {
+    "Input": "Yanıt 20'de eksi bir",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "20'de eksi bir",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "-0.05"
+        },
+        "Start": 6,
+        "End": 20
+      }
+    ]
+  },
+  {
+    "Input": "Yanıt eksi beş nokta beş",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "eksi beş nokta beş",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "-5.5"
+        },
+        "Start": 6,
+        "End": 24
+      }
+    ]
+  },
+  {
+    "Input": "yanıt eksi 5",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "eksi 5",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "-5"
+        },
+        "Start": 6,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": "dörtte bir",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "dörtte bir",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.25"
+        },
+        "Start": 0,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "sekizde bir",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "sekizde bir",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.125"
+        },
+        "Start": 0,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "sekizde beş",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "sekizde beş",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.625"
+        },
+        "Start": 0,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "üçte biri",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "üçte biri",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.333333333333333"
+        },
+        "Start": 0,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "1 234 567",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1 234 567",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1234567"
+        },
+        "Start": 0,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "40 000 ile 40 000  aynıdır",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "40 000",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "40000"
+        },
+        "Start": 0,
+        "End": 6
+      },
+      {
+        "Text": "40 000",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "40000"
+        },
+        "Start": 22,
+        "End": 27
+      }
+    ]
+  },
+  {
+    "Input": "Şu an için Çin'in nüfusu 1 414 021 100'dür",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1 414 021 100",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1414021100"
+        },
+        "Start": 25,
+        "End": 38
+      }
+    ]
+  },
+  {
+    "Input": "423 0000 iki sayı olarak kabul edilecektir.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "423",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "423"
+        },
+        "Start": 0,
+        "End": 3
+      },
+      {
+        "Text": "0000",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "0"
+        },
+        "Start": 4,
+        "End": 7
+      },
+      {
+        "Text": "two",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "2"
+        },
+        "Start": 31,
+        "End": 33
+      }
+    ]
+  },
+  {
+    "Input": "1 234 567.89 geçerli bir sayı formatıdır",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1 234 567.89",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "1234567.89"
+        },
+        "Start": 0,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": "sıfır 0'dır",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "sıfır",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "0"
+        },
+        "Start": 0,
+        "End": 5
+      },
+      {
+        "Text": "0",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "0"
+        },
+        "Start": 8,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "17/05/2018'de buluşma?",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "5",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "5"
+        },
+        "Start": 4,
+        "End": 5
+      },
+      {
+        "Text": "17",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "17"
+        },
+        "Start": 22,
+        "End": 23
+      },
+      {
+        "Text": "2018",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "2018"
+        },
+        "Start": 25,
+        "End": 28
+      }
+    ]
+  },
+  {
+    "Input": "Telefon numaram +1-222-2222/2222",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1"
+        },
+        "Start": 17,
+        "End": 18
+      },
+      {
+        "Text": "222",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "222"
+        },
+        "Start": 22,
+        "End": 24
+      },
+      {
+        "Text": "2222",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "2222"
+        },
+        "Start": 26,
+        "End": 29
+      },
+      {
+        "Text": "2222",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "2222"
+        },
+        "Start": 31,
+        "End": 34
+      }
+    ]
+  },
+  {
+    "Input": "Sana 10m verebilirim",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "10m",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "10000000"
+        },
+        "Start": 5,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "Sana 3 yüz 21 yuan verebilirim",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3 yüz 21",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "321"
+        },
+        "Start": 5,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "4 bin 3 yüz 21 geçerli bir sayıdır",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "4 bin 3 yüz 21 ",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "4321"
+        },
+        "Start": 0,
+        "End": 15
+      }
+    ]
+  },
+  {
+    "Input": "4 bin 3 yüz ve sıfır iki geçerli sayıdır",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "4 bin 3 yüz",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "4300"
+        },
+        "Start": 0,
+        "End": 11
+      },
+      {
+        "Text": "0",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0"
+        },
+        "Start": 25,
+        "End": 25
+      },
+      {
+        "Text": "two",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "2"
+        },
+        "Start": 31,
+        "End": 33
+      }
+    ]
+  },
+  {
+    "Input": "4000 3 yüz ve 21 iki geçerli sayıdır",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "4000",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "4000"
+        },
+        "Start": 0,
+        "End": 4
+      },
+      {
+        "Text": "3 hundred and 21",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "321"
+        },
+        "Start": 5,
+        "End": 20
+      },
+      {
+        "Text": "two",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "2"
+        },
+        "Start": 26,
+        "End": 28
+      }
+    ]
+  },
+  {
+    "Input": "3 yüz ve 2 yüz iki geçerli sayıdır",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3 yüz",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "300"
+        },
+        "Start": 0,
+        "End": 5
+      },
+      {
+        "Text": "2 hundred",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "200"
+        },
+        "Start": 14,
+        "End": 22
+      },
+      {
+        "Text": "two",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "2"
+        },
+        "Start": 28,
+        "End": 30
+      }
+    ]
+  },
+  {
+    "Input": "3 yüz ve 2.12 yüz iki geçerli sayıdır",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3 yüz",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "300"
+        },
+        "Start": 0,
+        "End": 5
+      },
+      {
+        "Text": "2.12 hundred",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "212"
+        },
+        "Start": 14,
+        "End": 25
+      },
+      {
+        "Text": "two",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "2"
+        },
+        "Start": 31,
+        "End": 33
+      }
+    ]
+  },
+  {
+    "Input": "3 yüz ve eksi bir iki geçerli sayıdır",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3 yüz",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "300"
+        },
+        "Start": 0,
+        "End": 5
+      },
+      {
+        "Text": "negative one",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-1"
+        },
+        "Start": 14,
+        "End": 25
+      },
+      {
+        "Text": "two",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "2"
+        },
+        "Start": 31,
+        "End": 33
+      }
+    ]
+  },
+  {
+    "Input": "3 yüz ve bir geçerli sayılardır",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3 yüz ve bir",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "301"
+        },
+        "Start": 0,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": "Bazı ülkelerde 5.00 ya da 5,00 yazabilirsin",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "5.00",
+        "Start": 15,
+        "End": 19,
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "5"
+        }
+      },
+      {
+        "Text": "5,00",
+        "Start": 40,
+        "End": 43,
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "yirmi altı kişi Techiman kazasında öldü",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "yirmi altı",
+        "Start": 0,
+        "End": 10,
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "26"
+        }
+      }
+    ]
+  }
+]
