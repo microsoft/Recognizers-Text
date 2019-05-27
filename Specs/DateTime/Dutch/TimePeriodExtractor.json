@@ -912,19 +912,6 @@
     ]
   },
   {
-    "Input": "Ik ben 5 tot 18:00 weg",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "5 tot 18:00",
-        "Type": "timerange",
-        "Start": 7,
-        "Length": 11
-      }
-    ]
-  },
-  {
     "Input": "Ik ben 5 tot 6 's middags weg",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
@@ -1042,19 +1029,6 @@
     ]
   },
   {
-    "Input": "Ik ben 4:00 tot 17:00 weg",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "4:00 tot 17:00",
-        "Type": "timerange",
-        "Start": 7,
-        "Length": 12
-      }
-    ]
-  },
-  {
     "Input": "Ik ben 4:00 tot 7 uur weg",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
@@ -1090,19 +1064,6 @@
         "Type": "timerange",
         "Start": 7,
         "Length": 7
-      }
-    ]
-  },
-  {
-    "Input": "Ik ben 16:00-17:00 weg",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "16:00-17:00",
-        "Type": "timerange",
-        "Start": 7,
-        "Length": 9
       }
     ]
   },
@@ -1250,19 +1211,6 @@
     ]
   },
   {
-    "Input": "laten we in de avonden afspreken",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "in de avonden",
-        "Type": "timerange",
-        "Start": 9,
-        "Length": 15
-      }
-    ]
-  },
-  {
     "Input": "laten we vroeg in de ochtenden afspreken",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
@@ -1285,123 +1233,6 @@
         "Type": "timerange",
         "Start": 9,
         "Length": 20
-      }
-    ]
-  },
-  {
-    "Input": "laten we vroeg in de ochtend afspreken",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "vroeg in de ochtend",
-        "Type": "timerange",
-        "Start": 9,
-        "Length": 20
-      }
-    ]
-  },
-  {
-    "Input": "laten we laat in de ochtend afspreken",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "laat in de ochtend",
-        "Type": "timerange",
-        "Start": 9,
-        "Length": 19
-      }
-    ]
-  },
-  {
-    "Input": "laten we vroeg in de middag afspreken",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "vroeg in de middag",
-        "Type": "timerange",
-        "Start": 9,
-        "Length": 22
-      }
-    ]
-  },
-  {
-    "Input": "laten we laat in de middag afspreken",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "laat in de middag",
-        "Type": "timerange",
-        "Start": 9,
-        "Length": 21
-      }
-    ]
-  },
-  {
-    "Input": "laten we vroeg in de avond afspreken",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "vroeg in de avond",
-        "Type": "timerange",
-        "Start": 9,
-        "Length": 20
-      }
-    ]
-  },
-  {
-    "Input": "laten we laat in de avond afspreken",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "laat in de avond",
-        "Type": "timerange",
-        "Start": 9,
-        "Length": 19
-      }
-    ]
-  },
-  {
-    "Input": "laten we vroeg in de nacht afspreken",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "vroeg in de nacht",
-        "Type": "timerange",
-        "Start": 9,
-        "Length": 18
-      }
-    ]
-  },
-  {
-    "Input": "laten we laat in de nacht afspreken",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "laat in de nacht",
-        "Type": "timerange",
-        "Start": 9,
-        "Length": 17
-      }
-    ]
-  },
-  {
-    "Input": "laten we vroeg in de nacht afspreken",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "vroeg in de nacht",
-        "Type": "timerange",
-        "Start": 9,
-        "Length": 18
       }
     ]
   },

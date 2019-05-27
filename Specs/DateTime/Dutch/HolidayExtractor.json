@@ -199,28 +199,15 @@
     ]
   },
   {
-    "Input": "Ik ga op Yuandan 2016 terug",
+    "Input": "Ik ga terug op Eerste Paasdag",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Yuandan 2016",
+        "Text": "Eerste Paasdag",
         "Type": "date",
-        "Start": 9,
-        "Length": 12
-      }
-    ]
-  },
-  {
-    "Input": "Ik ga op Schone Maandag terug",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "Schone Maandag",
-        "Type": "date",
-        "Start": 9,
-        "Length": 12
+        "Start": 15,
+        "Length": 14
       }
     ]
   },
@@ -255,5 +242,18 @@
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": []
+  },
+  {
+    "Input": "Ik ga terug op Dodenherdenking",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Dodenherdenking",
+        "Type": "date",
+        "Start": 15,
+        "Length": 15
+      }
+    ]
   }
 ]

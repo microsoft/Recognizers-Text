@@ -2726,31 +2726,6 @@
     ]
   },
   {
-    "Input": "Ik ga 2-okt terug",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "2-okt",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-10-02",
-          "FutureResolution": {
-            "date": "2017-10-02"
-          },
-          "PastResolution": {
-            "date": "2016-10-02"
-          }
-        },
-        "Start": 6,
-        "Length": 5
-      }
-    ]
-  },
-  {
     "Input": "Ik ga 2 oktober terug",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -2901,56 +2876,6 @@
     ]
   },
   {
-    "Input": "Ik ga 21-04-2016 terug",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "21-04-2016",
-        "Type": "date",
-        "Value": {
-          "Timex": "2016-04-21",
-          "FutureResolution": {
-            "date": "2016-04-21"
-          },
-          "PastResolution": {
-            "date": "2016-04-21"
-          }
-        },
-        "Start": 6,
-        "Length": 10
-      }
-    ]
-  },
-  {
-    "Input": "Ik ga 22-4 terug",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "22-4",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-04-22",
-          "FutureResolution": {
-            "date": "2017-04-22"
-          },
-          "PastResolution": {
-            "date": "2016-04-22"
-          }
-        },
-        "Start": 6,
-        "Length": 4
-      }
-    ]
-  },
-  {
     "Input": "Ik ga 22-4 terug",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -3010,40 +2935,6 @@
     "Results": []
   },
   {
-    "Input": "Ik ga op 22-4 terug",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": []
-  },
-  {
-    "Input": "Ik ga op 22-4 terug",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "22-4",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-04-22",
-          "FutureResolution": {
-            "date": "2017-04-22"
-          },
-          "PastResolution": {
-            "date": "2016-04-22"
-          }
-        },
-        "Start": 9,
-        "Length": 4
-      }
-    ]
-  },
-  {
     "Input": "Ik ga op 22/4 terug",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -3094,31 +2985,6 @@
     ]
   },
   {
-    "Input": "Ik ga 22/4 terug",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "22/4",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-04-22",
-          "FutureResolution": {
-            "date": "2017-04-22"
-          },
-          "PastResolution": {
-            "date": "2016-04-22"
-          }
-        },
-        "Start": 6,
-        "Length": 5
-      }
-    ]
-  },
-  {
     "Input": "Ik ga 12-08-2015 terug",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -3165,31 +3031,6 @@
         },
         "Start": 6,
         "Length": 10
-      }
-    ]
-  },
-  {
-    "Input": "Ik ga 12-08, '15 terug",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "12-08, '15 ",
-        "Type": "date",
-        "Value": {
-          "Timex": "2015-08-12",
-          "FutureResolution": {
-            "date": "2015-08-12"
-          },
-          "PastResolution": {
-            "date": "2015-08-12"
-          }
-        },
-        "Start": 6,
-        "Length": 8
       }
     ]
   },
@@ -3315,31 +3156,6 @@
         },
         "Start": 6,
         "Length": 16
-      }
-    ]
-  },
-  {
-    "Input": "Ik ga de eenentwintigste van mei terug",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "de eenentwintigste van mei",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-05-21",
-          "FutureResolution": {
-            "date": "2017-05-21"
-          },
-          "PastResolution": {
-            "date": "2016-05-21"
-          }
-        },
-        "Start": 6,
-        "Length": 14
       }
     ]
   },
@@ -4119,81 +3935,6 @@
     ]
   },
   {
-    "Input": "",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "",
-        "Type": "date",
-        "Value": {
-          "Timex": "2016-08-07",
-          "FutureResolution": {
-            "date": "2016-08-07"
-          },
-          "PastResolution": {
-            "date": "2016-08-07"
-          }
-        },
-        "Start": 0,
-        "Length": 13
-      }
-    ]
-  },
-  {
-    "Input": "",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "",
-        "Type": "date",
-        "Value": {
-          "Timex": "2016-11-04",
-          "FutureResolution": {
-            "date": "2016-11-04"
-          },
-          "PastResolution": {
-            "date": "2016-11-04"
-          }
-        },
-        "Start": 0,
-        "Length": 13
-      }
-    ]
-  },
-  {
-    "Input": "",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-XX-27",
-          "FutureResolution": {
-            "date": "2016-11-27"
-          },
-          "PastResolution": {
-            "date": "2016-10-27"
-          }
-        },
-        "Start": 0,
-        "Length": 6
-      }
-    ]
-  },
-  {
     "Input": "Ik ging voor de 27e terug",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -4215,81 +3956,6 @@
         },
         "Start": 13,
         "Length": 8
-      }
-    ]
-  },
-  {
-    "Input": "",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-XX-27",
-          "FutureResolution": {
-            "date": "2016-11-27"
-          },
-          "PastResolution": {
-            "date": "2016-10-27"
-          }
-        },
-        "Start": 0,
-        "Length": 6
-      }
-    ]
-  },
-  {
-    "Input": "",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-XX-27",
-          "FutureResolution": {
-            "date": "2016-11-27"
-          },
-          "PastResolution": {
-            "date": "2016-10-27"
-          }
-        },
-        "Start": 0,
-        "Length": 6
-      }
-    ]
-  },
-  {
-    "Input": "",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-XX-27",
-          "FutureResolution": {
-            "date": "2016-11-27"
-          },
-          "PastResolution": {
-            "date": "2016-10-27"
-          }
-        },
-        "Start": 0,
-        "Length": 6
       }
     ]
   },
@@ -4390,31 +4056,6 @@
         },
         "Start": 13,
         "Length": 17
-      }
-    ]
-  },
-  {
-    "Input": "",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-XX-30",
-          "FutureResolution": {
-            "date": "2016-11-30"
-          },
-          "PastResolution": {
-            "date": "2016-10-30"
-          }
-        },
-        "Start": 0,
-        "Length": 10
       }
     ]
   },
@@ -4744,31 +4385,6 @@
     ]
   },
   {
-    "Input": "Ik ga 12 januari, 2018 terug",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "12 januari, 2018",
-        "Type": "date",
-        "Value": {
-          "Timex": "2018-01-12",
-          "FutureResolution": {
-            "date": "2018-01-12"
-          },
-          "PastResolution": {
-            "date": "2018-01-12"
-          }
-        },
-        "Start": 6,
-        "Length": 16
-      }
-    ]
-  },
-  {
     "Input": "Ik ga 18-9-15 terug",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -4994,31 +4610,6 @@
     ]
   },
   {
-    "Input": "We hadden een meeting 1 maand, 21 dagen geleden",
-    "Context": {
-      "ReferenceDateTime": "2017-11-23T00:00:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": " 1 maand, 21 dagen geleden",
-        "Type": "date",
-        "Value": {
-          "Timex": "2017-10-02",
-          "FutureResolution": {
-            "date": "2017-10-02"
-          },
-          "PastResolution": {
-            "date": "2017-10-02"
-          }
-        },
-        "Start": 21,
-        "Length": 20
-      }
-    ]
-  },
-  {
     "Input": "We hadden een meeting de 20e van volgende maand",
     "Context": {
       "ReferenceDateTime": "2017-12-07T00:00:00"
@@ -5144,31 +4735,6 @@
     ]
   },
   {
-    "Input": "op 10 september, negentienhonderdeen",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "10 september, negentienhonderdeen",
-        "Type": "date",
-        "Value": {
-          "Timex": "1901-09-10",
-          "FutureResolution": {
-            "date": "1901-09-10"
-          },
-          "PastResolution": {
-            "date": "1901-09-10"
-          }
-        },
-        "Start": 3,
-        "Length": 31
-      }
-    ]
-  },
-  {
     "Input": "op de tiende van september, tweeduizend",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -5215,31 +4781,6 @@
         },
         "Start": 10,
         "Length": 30
-      }
-    ]
-  },
-  {
-    "Input": "Dus, zullen we de tweede maandag van volgende maand doen?",
-    "Context": {
-      "ReferenceDateTime": "2018-03-20T10:45:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "de tweede maandag van volgende maand",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-04-WXX-1-#2",
-          "FutureResolution": {
-            "date": "2018-04-09"
-          },
-          "PastResolution": {
-            "date": "2018-04-09"
-          }
-        },
-        "Start": 15,
-        "Length": 31
       }
     ]
   },
@@ -5389,31 +4930,6 @@
           }
         },
         "Start": 15,
-        "Length": 9
-      }
-    ]
-  },
-  {
-    "Input": "Ben je beschikbaar op 13-5-2015?",
-    "Context": {
-      "ReferenceDateTime": "2017-03-22T00:00:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "13-5-2015",
-        "Type": "date",
-        "Value": {
-          "Timex": "2015-05-13",
-          "FutureResolution": {
-            "date": "2015-05-13"
-          },
-          "PastResolution": {
-            "date": "2015-05-13"
-          }
-        },
-        "Start": 22,
         "Length": 9
       }
     ]
@@ -5569,31 +5085,6 @@
     ]
   },
   {
-    "Input": "",
-    "Context": {
-      "ReferenceDateTime": "2018-05-07T00:00:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "",
-        "Type": "date",
-        "Value": {
-          "Timex": "2018-05-21",
-          "FutureResolution": {
-            "date": "2018-05-21"
-          },
-          "PastResolution": {
-            "date": "2018-05-21"
-          }
-        },
-        "Start": 0,
-        "Length": 16
-      }
-    ]
-  },
-  {
     "Input": "Ben je twee dagen na vandaag beschikbaar?",
     "Context": {
       "ReferenceDateTime": "2018-05-31T00:00:00"
@@ -5639,31 +5130,6 @@
           }
         },
         "Start": 7,
-        "Length": 25
-      }
-    ]
-  },
-  {
-    "Input": "Waar was je twee dagen voor gisteren?",
-    "Context": {
-      "ReferenceDateTime": "2018-05-31T00:00:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "twee dagen voor gisteren",
-        "Type": "date",
-        "Value": {
-          "Timex": "2018-05-28",
-          "FutureResolution": {
-            "date": "2018-05-28"
-          },
-          "PastResolution": {
-            "date": "2018-05-28"
-          }
-        },
-        "Start": 12,
         "Length": 25
       }
     ]

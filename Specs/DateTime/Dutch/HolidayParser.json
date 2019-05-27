@@ -380,31 +380,6 @@
     ]
   },
   {
-    "Input": "Ik ga terug op Oudjaarsavond",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "Oudjaarsavond",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-12-31",
-          "FutureResolution": {
-            "date": "2016-12-31"
-          },
-          "PastResolution": {
-            "date": "2015-12-31"
-          }
-        },
-        "Start": 15,
-        "Length": 14
-      }
-    ]
-  },
-  {
     "Input": "Ik ga terug met Kerst",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -476,31 +451,6 @@
         },
         "Start": 15,
         "Length": 17
-      }
-    ]
-  },
-  {
-    "Input": "Ik ga terug op Thanksgiving",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "Thanksgiving",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-11-WXX-4-4",
-          "FutureResolution": {
-            "date": "2016-11-24"
-          },
-          "PastResolution": {
-            "date": "2015-11-26"
-          }
-        },
-        "Start": 15,
-        "Length": 12
       }
     ]
   },

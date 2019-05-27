@@ -200,31 +200,6 @@
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
-    "Input": "Ik ben 3,5 seconden weg ",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "Results": [
-      {
-        "Text": "3,5 seconden",
-        "Type": "duration",
-        "Value": {
-          "Timex": "PT3.5S",
-          "FutureResolution": {
-            "duration": "3.5"
-          },
-          "PastResolution": {
-            "duration": "3.5"
-          }
-        },
-        "Start": 7,
-        "Length": 12
-      }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
-  },
-  {
     "Input": "Ik ben 123,45 sec weg",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -1027,31 +1002,6 @@
     ]
   },
   {
-    "Input": "",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "",
-        "Type": "duration",
-        "Value": {
-          "Timex": "P3D",
-          "FutureResolution": {
-            "duration": "259200"
-          },
-          "PastResolution": {
-            "duration": "259200"
-          }
-        },
-        "Start": 0,
-        "Length": 4
-      }
-    ]
-  },
-  {
     "Input": "Ik vertrek voor 3,5jaar",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -1123,81 +1073,6 @@
         },
         "Start": 16,
         "Length": 7
-      }
-    ]
-  },
-  {
-    "Input": "Ik vertrek voor 3 u",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "3 u",
-        "Type": "duration",
-        "Value": {
-          "Timex": "PT3H",
-          "FutureResolution": {
-            "duration": "10800"
-          },
-          "PastResolution": {
-            "duration": "10800"
-          }
-        },
-        "Start": 16,
-        "Length": 5
-      }
-    ]
-  },
-  {
-    "Input": "Ik vertrek voor 3 u",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "3 u",
-        "Type": "duration",
-        "Value": {
-          "Timex": "PT3H",
-          "FutureResolution": {
-            "duration": "10800"
-          },
-          "PastResolution": {
-            "duration": "10800"
-          }
-        },
-        "Start": 16,
-        "Length": 4
-      }
-    ]
-  },
-  {
-    "Input": "",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "",
-        "Type": "duration",
-        "Value": {
-          "Timex": "P3D",
-          "FutureResolution": {
-            "duration": "259200"
-          },
-          "PastResolution": {
-            "duration": "259200"
-          }
-        },
-        "Start": 0,
-        "Length": 5
       }
     ]
   },
@@ -1277,31 +1152,6 @@
     ]
   },
   {
-    "Input": "Ik vertrek voor 3,5 seconde",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "3,5 seconde",
-        "Type": "duration",
-        "Value": {
-          "Timex": "PT3.5S",
-          "FutureResolution": {
-            "duration": "3.5"
-          },
-          "PastResolution": {
-            "duration": "3.5"
-          }
-        },
-        "Start": 16,
-        "Length": 10
-      }
-    ]
-  },
-  {
     "Input": "Ik vertrek voor 123,45 sec",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -1377,31 +1227,6 @@
     ]
   },
   {
-    "Input": "",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "",
-        "Type": "duration",
-        "Value": {
-          "Timex": "PT24H",
-          "FutureResolution": {
-            "duration": "86400"
-          },
-          "PastResolution": {
-            "duration": "86400"
-          }
-        },
-        "Start": 0,
-        "Length": 21
-      }
-    ]
-  },
-  {
     "Input": "Ik vertrek voor de hele dag",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -1498,206 +1323,6 @@
         },
         "Start": 16,
         "Length": 8
-      }
-    ]
-  },
-  {
-    "Input": "Ik vertrek voor de hele dag",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "de hele dag",
-        "Type": "duration",
-        "Value": {
-          "Timex": "P1D",
-          "FutureResolution": {
-            "duration": "86400"
-          },
-          "PastResolution": {
-            "duration": "86400"
-          }
-        },
-        "Start": 16,
-        "Length": 7
-      }
-    ]
-  },
-  {
-    "Input": "Ik vertrek voor de hele week",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "de hele week",
-        "Type": "duration",
-        "Value": {
-          "Timex": "P1W",
-          "FutureResolution": {
-            "duration": "604800"
-          },
-          "PastResolution": {
-            "duration": "604800"
-          }
-        },
-        "Start": 16,
-        "Length": 8
-      }
-    ]
-  },
-  {
-    "Input": "Ik vertrek voor de hele maand",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "de hele maand",
-        "Type": "duration",
-        "Value": {
-          "Timex": "P1M",
-          "FutureResolution": {
-            "duration": "2592000"
-          },
-          "PastResolution": {
-            "duration": "2592000"
-          }
-        },
-        "Start": 16,
-        "Length": 9
-      }
-    ]
-  },
-  {
-    "Input": "Ik vertrek voor het hele jaar",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "het hele jaar",
-        "Type": "duration",
-        "Value": {
-          "Timex": "P1Y",
-          "FutureResolution": {
-            "duration": "31536000"
-          },
-          "PastResolution": {
-            "duration": "31536000"
-          }
-        },
-        "Start": 16,
-        "Length": 8
-      }
-    ]
-  },
-  {
-    "Input": "Ik vertrek voor de gehele dag",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "de gehele dag",
-        "Type": "duration",
-        "Value": {
-          "Timex": "P1D",
-          "FutureResolution": {
-            "duration": "86400"
-          },
-          "PastResolution": {
-            "duration": "86400"
-          }
-        },
-        "Start": 16,
-        "Length": 8
-      }
-    ]
-  },
-  {
-    "Input": "Ik vertrek voor de gehele week",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "de gehele week",
-        "Type": "duration",
-        "Value": {
-          "Timex": "P1W",
-          "FutureResolution": {
-            "duration": "604800"
-          },
-          "PastResolution": {
-            "duration": "604800"
-          }
-        },
-        "Start": 16,
-        "Length": 9
-      }
-    ]
-  },
-  {
-    "Input": "Ik vertrek voor de gehele maand",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "de gehele maand",
-        "Type": "duration",
-        "Value": {
-          "Timex": "P1M",
-          "FutureResolution": {
-            "duration": "2592000"
-          },
-          "PastResolution": {
-            "duration": "2592000"
-          }
-        },
-        "Start": 16,
-        "Length": 10
-      }
-    ]
-  },
-  {
-    "Input": "Ik vertrek voor het gehele jaar",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "het gehele jaar",
-        "Type": "duration",
-        "Value": {
-          "Timex": "P1Y",
-          "FutureResolution": {
-            "duration": "31536000"
-          },
-          "PastResolution": {
-            "duration": "31536000"
-          }
-        },
-        "Start": 16,
-        "Length": 9
       }
     ]
   },
@@ -1852,81 +1477,6 @@
     ]
   },
   {
-    "Input": "half jaar",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "half jaar",
-        "Type": "duration",
-        "Value": {
-          "Timex": "P0.5Y",
-          "FutureResolution": {
-            "duration": "15768000"
-          },
-          "PastResolution": {
-            "duration": "15768000"
-          }
-        },
-        "Start": 0,
-        "Length": 9
-      }
-    ]
-  },
-  {
-    "Input": "",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "",
-        "Type": "duration",
-        "Value": {
-          "Timex": "P0.5Y",
-          "FutureResolution": {
-            "duration": "15768000"
-          },
-          "PastResolution": {
-            "duration": "15768000"
-          }
-        },
-        "Start": 0,
-        "Length": 12
-      }
-    ]
-  },
-  {
-    "Input": "Ik vertrek voor 3 min",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "3 min",
-        "Type": "duration",
-        "Value": {
-          "Timex": "PT3M",
-          "FutureResolution": {
-            "duration": "180"
-          },
-          "PastResolution": {
-            "duration": "180"
-          }
-        },
-        "Start": 16,
-        "Length": 5
-      }
-    ]
-  },
-  {
     "Input": "Ik vertrek voor 30 minuten",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -1973,31 +1523,6 @@
         },
         "Start": 16,
         "Length": 18
-      }
-    ]
-  },
-  {
-    "Input": "Ik vertrek voor anderhalf uur",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "anderhalf uur",
-        "Type": "duration",
-        "Value": {
-          "Timex": "PT1.5H",
-          "FutureResolution": {
-            "duration": "5400"
-          },
-          "PastResolution": {
-            "duration": "5400"
-          }
-        },
-        "Start": 16,
-        "Length": 16
       }
     ]
   },
@@ -2300,31 +1825,6 @@
         },
         "Start": 18,
         "Length": 12
-      }
-    ]
-  },
-  {
-    "Input": "Kunnen we nog een maand wachten?",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "nog een maand",
-        "Type": "duration",
-        "Value": {
-          "Timex": "P1M",
-          "FutureResolution": {
-            "duration": "2592000"
-          },
-          "PastResolution": {
-            "duration": "2592000"
-          }
-        },
-        "Start": 10,
-        "Length": 13
       }
     ]
   },

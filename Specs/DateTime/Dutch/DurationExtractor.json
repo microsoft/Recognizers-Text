@@ -130,19 +130,6 @@
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
-    "Input": "Ik ga 3,5 seconden weg ",
-    "Results": [
-      {
-        "Text": "3,5 seconden",
-        "Type": "duration",
-        "Start": 6,
-        "Length": 12
-      }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
-  },
-  {
     "Input": "Ik ga 123,45 seconden weg",
     "Results": [
       {
@@ -150,32 +137,6 @@
         "Type": "duration",
         "Start": 6,
         "Length": 15
-      }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
-  },
-  {
-    "Input": "Ik ga 3,5 sec weg ",
-    "Results": [
-      {
-        "Text": "3,5 sec",
-        "Type": "duration",
-        "Start": 6,
-        "Length": 7
-      }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
-  },
-  {
-    "Input": "Ik ga 123,45 sec weg",
-    "Results": [
-      {
-        "Text": "123,45 sec",
-        "Type": "duration",
-        "Start": 6,
-        "Length": 10
       }
     ],
     "NotSupported": "dotNet",
@@ -637,19 +598,6 @@
     ]
   },
   {
-    "Input": "",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "",
-        "Type": "duration",
-        "Start": 0,
-        "Length": 4
-      }
-    ]
-  },
-  {
     "Input": "Ik vertrek voor 3,5jaar",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
@@ -659,19 +607,6 @@
         "Type": "duration",
         "Start": 16,
         "Length": 8
-      }
-    ]
-  },
-  {
-    "Input": "Ik vertrek voor 3,5 jaar",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "3,5 jaar",
-        "Type": "duration",
-        "Start": 16,
-        "Length": 9
       }
     ]
   },
@@ -698,45 +633,6 @@
         "Type": "duration",
         "Start": 16,
         "Length": 7
-      }
-    ]
-  },
-  {
-    "Input": "Ik vertrek voor 3 uren",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "3 uren",
-        "Type": "duration",
-        "Start": 16,
-        "Length": 5
-      }
-    ]
-  },
-  {
-    "Input": "Ik vertrek voor 3 u",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "3 u",
-        "Type": "duration",
-        "Start": 16,
-        "Length": 4
-      }
-    ]
-  },
-  {
-    "Input": "",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "",
-        "Type": "duration",
-        "Start": 0,
-        "Length": 5
       }
     ]
   },
@@ -780,19 +676,6 @@
     ]
   },
   {
-    "Input": "Ik vertrek voor 3,5 seconde",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "3,5 seconde",
-        "Type": "duration",
-        "Start": 16,
-        "Length": 10
-      }
-    ]
-  },
-  {
     "Input": "Ik vertrek voor 123,45 sec",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
@@ -832,19 +715,6 @@
     ]
   },
   {
-    "Input": "",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "",
-        "Type": "duration",
-        "Start": 0,
-        "Length": 21
-      }
-    ]
-  },
-  {
     "Input": "Ik vertrek voor de hele dag",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
@@ -893,110 +763,6 @@
         "Type": "duration",
         "Start": 16,
         "Length": 8
-      }
-    ]
-  },
-  {
-    "Input": "Ik vertrek voor de hele dag",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "de hele dag",
-        "Type": "duration",
-        "Start": 16,
-        "Length": 7
-      }
-    ]
-  },
-  {
-    "Input": "Ik vertrek voor de hele week",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "de hele week",
-        "Type": "duration",
-        "Start": 16,
-        "Length": 8
-      }
-    ]
-  },
-  {
-    "Input": "Ik vertrek voor de hele maand",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "de hele maand",
-        "Type": "duration",
-        "Start": 16,
-        "Length": 9
-      }
-    ]
-  },
-  {
-    "Input": "Ik vertrek voor het hele jaar",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "het hele jaar",
-        "Type": "duration",
-        "Start": 16,
-        "Length": 8
-      }
-    ]
-  },
-  {
-    "Input": "Ik vertrek voor de gehele dag",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "de gehele dag",
-        "Type": "duration",
-        "Start": 16,
-        "Length": 8
-      }
-    ]
-  },
-  {
-    "Input": "Ik vertrek voor de gehele week",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "de gehele week",
-        "Type": "duration",
-        "Start": 16,
-        "Length": 9
-      }
-    ]
-  },
-  {
-    "Input": "Ik vertrek voor de gehele maand",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "de gehele maand",
-        "Type": "duration",
-        "Start": 16,
-        "Length": 10
-      }
-    ]
-  },
-  {
-    "Input": "Ik vertrek voor het gehele jaar",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "het gehele jaar",
-        "Type": "duration",
-        "Start": 16,
-        "Length": 9
       }
     ]
   },
@@ -1079,45 +845,6 @@
     ]
   },
   {
-    "Input": "half jaar",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "half jaar",
-        "Type": "duration",
-        "Start": 0,
-        "Length": 9
-      }
-    ]
-  },
-  {
-    "Input": "",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "",
-        "Type": "duration",
-        "Start": 0,
-        "Length": 12
-      }
-    ]
-  },
-  {
-    "Input": "Ik vertrek voor 3 min",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "3 min",
-        "Type": "duration",
-        "Start": 16,
-        "Length": 5
-      }
-    ]
-  },
-  {
     "Input": "Ik vertrek voor 30 minuten",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
@@ -1170,19 +897,6 @@
     ]
   },
   {
-    "Input": "Ik vertrek voor anderhalf uur",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "anderhalf uur",
-        "Type": "duration",
-        "Start": 16,
-        "Length": 18
-      }
-    ]
-  },
-  {
     "Input": "Ik vertrek voor halfuur",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
@@ -1231,19 +945,6 @@
         "Type": "duration",
         "Start": 5,
         "Length": 6
-      }
-    ]
-  },
-  {
-    "Input": "Over een dag",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "een dag",
-        "Type": "duration",
-        "Start": 5,
-        "Length": 5
       }
     ]
   },
@@ -1365,19 +1066,6 @@
     ]
   },
   {
-    "Input": "Kunnen we nog een maand wachten?",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "nog een maand",
-        "Type": "duration",
-        "Start": 10,
-        "Length": 13
-      }
-    ]
-  },
-  {
     "Input": "Kunnen we nog een werkdag wachten?",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
@@ -1387,19 +1075,6 @@
         "Type": "duration",
         "Start": 10,
         "Length": 20
-      }
-    ]
-  },
-  {
-    "Input": "",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "",
-        "Type": "duration",
-        "Start": 0,
-        "Length": 21
       }
     ]
   },

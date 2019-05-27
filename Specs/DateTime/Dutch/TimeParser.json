@@ -1914,28 +1914,6 @@
     ]
   },
   {
-    "Input": "",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "",
-        "Type": "time",
-        "Value": {
-          "Timex": "T07",
-          "FutureResolution": {
-            "time": "07:00:00"
-          },
-          "PastResolution": {
-            "time": "07:00:00"
-          }
-        },
-        "Start": 0,
-        "Length": 5
-      }
-    ]
-  },
-  {
     "Input": "Ik ben om 7 u terug",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
@@ -2046,28 +2024,6 @@
     ]
   },
   {
-    "Input": "Ik ben om 19:56:30 terug",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "19:56:31",
-        "Type": "time",
-        "Value": {
-          "Timex": "T19:56:30",
-          "FutureResolution": {
-            "time": "19:56:30"
-          },
-          "PastResolution": {
-            "time": "19:56:30"
-          }
-        },
-        "Start": -1,
-        "Length": 10
-      }
-    ]
-  },
-  {
     "Input": "Ik ben om 12:34 terug",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
@@ -2108,50 +2064,6 @@
         },
         "Start": 10,
         "Length": 8
-      }
-    ]
-  },
-  {
-    "Input": "Het is 7 uur",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "7 uur",
-        "Type": "time",
-        "Value": {
-          "Timex": "T07",
-          "FutureResolution": {
-            "time": "07:00:00"
-          },
-          "PastResolution": {
-            "time": "07:00:00"
-          }
-        },
-        "Start": 7,
-        "Length": 9
-      }
-    ]
-  },
-  {
-    "Input": "Het is zeven uur",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "zeven uur",
-        "Type": "time",
-        "Value": {
-          "Timex": "T07",
-          "FutureResolution": {
-            "time": "07:00:00"
-          },
-          "PastResolution": {
-            "time": "07:00:00"
-          }
-        },
-        "Start": 7,
-        "Length": 13
       }
     ]
   },
@@ -2200,28 +2112,6 @@
     ]
   },
   {
-    "Input": "Het is half negen",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "half negen",
-        "Type": "time",
-        "Value": {
-          "Timex": "T08:30",
-          "FutureResolution": {
-            "time": "08:30:00"
-          },
-          "PastResolution": {
-            "time": "08:30:00"
-          }
-        },
-        "Start": 7,
-        "Length": 15
-      }
-    ]
-  },
-  {
     "Input": "Het is half 9 's avonds",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
@@ -2244,72 +2134,6 @@
     ]
   },
   {
-    "Input": "Het is half negen",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "half negen",
-        "Type": "time",
-        "Value": {
-          "Timex": "T08:30",
-          "FutureResolution": {
-            "time": "08:30:00"
-          },
-          "PastResolution": {
-            "time": "08:30:00"
-          }
-        },
-        "Start": 7,
-        "Length": 18
-      }
-    ]
-  },
-  {
-    "Input": "Het is kwart over acht",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "kwart over acht",
-        "Type": "time",
-        "Value": {
-          "Timex": "T08:15",
-          "FutureResolution": {
-            "time": "08:15:00"
-          },
-          "PastResolution": {
-            "time": "08:15:00"
-          }
-        },
-        "Start": 7,
-        "Length": 20
-      }
-    ]
-  },
-  {
-    "Input": "Het is kwart over acht",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "kwart over acht",
-        "Type": "time",
-        "Value": {
-          "Timex": "T08:15",
-          "FutureResolution": {
-            "time": "08:15:00"
-          },
-          "PastResolution": {
-            "time": "08:15:00"
-          }
-        },
-        "Start": 7,
-        "Length": 18
-      }
-    ]
-  },
-  {
     "Input": "Het is kwart voor 10 's avonds",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
@@ -2324,50 +2148,6 @@
           },
           "PastResolution": {
             "time": "21:45:00"
-          }
-        },
-        "Start": 7,
-        "Length": 23
-      }
-    ]
-  },
-  {
-    "Input": "Het is drie minuten voor acht",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "drie minuten voor acht",
-        "Type": "time",
-        "Value": {
-          "Timex": "T07:57",
-          "FutureResolution": {
-            "time": "07:57:00"
-          },
-          "PastResolution": {
-            "time": "07:57:00"
-          }
-        },
-        "Start": 7,
-        "Length": 22
-      }
-    ]
-  },
-  {
-    "Input": "Het is half acht",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "half acht",
-        "Type": "time",
-        "Value": {
-          "Timex": "T07:30",
-          "FutureResolution": {
-            "time": "07:30:00"
-          },
-          "PastResolution": {
-            "time": "07:30:00"
           }
         },
         "Start": 7,
@@ -2662,28 +2442,6 @@
     ]
   },
   {
-    "Input": "",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "",
-        "Type": "time",
-        "Value": {
-          "Timex": "T12",
-          "FutureResolution": {
-            "time": "12:00:00"
-          },
-          "PastResolution": {
-            "time": "12:00:00"
-          }
-        },
-        "Start": 0,
-        "Length": 7
-      }
-    ]
-  },
-  {
     "Input": "Ik ben rond elven terug",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
@@ -2702,28 +2460,6 @@
         },
         "Start": 7,
         "Length": 5
-      }
-    ]
-  },
-  {
-    "Input": "Ik ben rond elven terug",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "rond elven",
-        "Type": "time",
-        "Value": {
-          "Timex": "T11",
-          "FutureResolution": {
-            "time": "11:00:00"
-          },
-          "PastResolution": {
-            "time": "11:00:00"
-          }
-        },
-        "Start": 7,
-        "Length": 6
       }
     ]
   },
@@ -2768,270 +2504,6 @@
         },
         "Start": 7,
         "Length": 9
-      }
-    ]
-  },
-  {
-    "Input": "middernacht",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "middernacht",
-        "Type": "time",
-        "Value": {
-          "Timex": "T00",
-          "FutureResolution": {
-            "time": "00:00:00"
-          },
-          "PastResolution": {
-            "time": "00:00:00"
-          }
-        },
-        "Start": 0,
-        "Length": 8
-      }
-    ]
-  },
-  {
-    "Input": "middernacht",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "middernacht",
-        "Type": "time",
-        "Value": {
-          "Timex": "T00",
-          "FutureResolution": {
-            "time": "00:00:00"
-          },
-          "PastResolution": {
-            "time": "00:00:00"
-          }
-        },
-        "Start": 0,
-        "Length": 9
-      }
-    ]
-  },
-  {
-    "Input": "middernacht",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "middernacht",
-        "Type": "time",
-        "Value": {
-          "Timex": "T00",
-          "FutureResolution": {
-            "time": "00:00:00"
-          },
-          "PastResolution": {
-            "time": "00:00:00"
-          }
-        },
-        "Start": 0,
-        "Length": 9
-      }
-    ]
-  },
-  {
-    "Input": "halverwege de ochtend",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "halverwege de ochtend",
-        "Type": "time",
-        "Value": {
-          "Timex": "T10",
-          "FutureResolution": {
-            "time": "10:00:00"
-          },
-          "PastResolution": {
-            "time": "10:00:00"
-          }
-        },
-        "Start": 0,
-        "Length": 10
-      }
-    ]
-  },
-  {
-    "Input": "halverwege de ochtend",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "halverwege de ochtend",
-        "Type": "time",
-        "Value": {
-          "Timex": "T10",
-          "FutureResolution": {
-            "time": "10:00:00"
-          },
-          "PastResolution": {
-            "time": "10:00:00"
-          }
-        },
-        "Start": 0,
-        "Length": 11
-      }
-    ]
-  },
-  {
-    "Input": "halverwege de ochtend",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "halverwege de ochtend",
-        "Type": "time",
-        "Value": {
-          "Timex": "T10",
-          "FutureResolution": {
-            "time": "10:00:00"
-          },
-          "PastResolution": {
-            "time": "10:00:00"
-          }
-        },
-        "Start": 0,
-        "Length": 11
-      }
-    ]
-  },
-  {
-    "Input": "halverwege de middag",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "halverwege de middag",
-        "Type": "time",
-        "Value": {
-          "Timex": "T14",
-          "FutureResolution": {
-            "time": "14:00:00"
-          },
-          "PastResolution": {
-            "time": "14:00:00"
-          }
-        },
-        "Start": 0,
-        "Length": 12
-      }
-    ]
-  },
-  {
-    "Input": "halverwege de middag",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "halverwege de middag",
-        "Type": "time",
-        "Value": {
-          "Timex": "T14",
-          "FutureResolution": {
-            "time": "14:00:00"
-          },
-          "PastResolution": {
-            "time": "14:00:00"
-          }
-        },
-        "Start": 0,
-        "Length": 13
-      }
-    ]
-  },
-  {
-    "Input": "halverwege de middag",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "halverwege de middag",
-        "Type": "time",
-        "Value": {
-          "Timex": "T14",
-          "FutureResolution": {
-            "time": "14:00:00"
-          },
-          "PastResolution": {
-            "time": "14:00:00"
-          }
-        },
-        "Start": 0,
-        "Length": 13
-      }
-    ]
-  },
-  {
-    "Input": "middag",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "middag",
-        "Type": "time",
-        "Value": {
-          "Timex": "T12",
-          "FutureResolution": {
-            "time": "12:00:00"
-          },
-          "PastResolution": {
-            "time": "12:00:00"
-          }
-        },
-        "Start": 0,
-        "Length": 6
-      }
-    ]
-  },
-  {
-    "Input": "middag",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "middag",
-        "Type": "time",
-        "Value": {
-          "Timex": "T12",
-          "FutureResolution": {
-            "time": "12:00:00"
-          },
-          "PastResolution": {
-            "time": "12:00:00"
-          }
-        },
-        "Start": 0,
-        "Length": 7
-      }
-    ]
-  },
-  {
-    "Input": "middag",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "middag",
-        "Type": "time",
-        "Value": {
-          "Timex": "T12",
-          "FutureResolution": {
-            "time": "12:00:00"
-          },
-          "PastResolution": {
-            "time": "12:00:00"
-          }
-        },
-        "Start": 0,
-        "Length": 7
       }
     ]
   },
@@ -3142,28 +2614,6 @@
         },
         "Start": 7,
         "Length": 18
-      }
-    ]
-  },
-  {
-    "Input": "Ik ben 12 uur lunchtijd terug",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "12 uur lunchtijd",
-        "Type": "time",
-        "Value": {
-          "Timex": "T12",
-          "FutureResolution": {
-            "time": "12:00:00"
-          },
-          "PastResolution": {
-            "time": "12:00:00"
-          }
-        },
-        "Start": 7,
-        "Length": 20
       }
     ]
   },

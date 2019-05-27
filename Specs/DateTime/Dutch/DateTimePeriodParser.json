@@ -1404,33 +1404,6 @@
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
-    "Input": "laten we dinsdagavond laat afspreken",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "Results": [
-      {
-        "Text": "dinsdagavond laat",
-        "Type": "datetimerange",
-        "Value": {
-          "Timex": "XXXX-WXX-2TNI",
-          "FutureResolution": {
-            "startDateTime": "2016-11-08 22:00:00",
-            "endDateTime": "2016-11-08 23:59:59"
-          },
-          "PastResolution": {
-            "startDateTime": "2016-11-01 22:00:00",
-            "endDateTime": "2016-11-01 23:59:59"
-          }
-        },
-        "Start": 9,
-        "Length": 17
-      }
-    ],
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java"
-  },
-  {
     "Input": "laten we laat op dinsdagavond afspreken",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
@@ -1836,87 +1809,6 @@
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
-    "Input": "Cortana, plan een skype for business afspraak met Wanye in op vrijdagmiddag tussen 1 en 4.",
-    "Context": {
-      "ReferenceDateTime": "2017-11-14T19:12:00"
-    },
-    "NotSupported": "dotNet",
-    "Results": [
-      {
-        "Text": "vrijdagmiddag tussen 1 en 4",
-        "Type": "datetimerange",
-        "Value": {
-          "Timex": "(XXXX-WXX-5T13,XXXX-WXX-5T16,PT3H)",
-          "FutureResolution": {
-            "startDateTime": "2017-11-17 13:00:00",
-            "endDateTime": "2017-11-17 16:00:00"
-          },
-          "PastResolution": {
-            "startDateTime": "2017-11-10 13:00:00",
-            "endDateTime": "2017-11-10 16:00:00"
-          }
-        },
-        "Start": 62,
-        "Length": 27
-      }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
-  },
-  {
-    "Input": "Cortana, plan een skype meeting op 2018-09-03 tussen 14:00 en 16:00",
-    "Context": {
-      "ReferenceDateTime": "2017-11-17T19:12:00"
-    },
-    "NotSupported": "dotNet",
-    "Results": [
-      {
-        "Text": "2018-09-03 tussen 14:00 en 16:00",
-        "Type": "datetimerange",
-        "Value": {
-          "Timex": "(2018-09-23T13,2018-09-23T16,PT3H)",
-          "FutureResolution": {
-            "startDateTime": "2018-09-23 13:00:00",
-            "endDateTime": "2018-09-23 16:00:00"
-          },
-          "PastResolution": {
-            "startDateTime": "2018-09-23 13:00:00",
-            "endDateTime": "2018-09-23 16:00:00"
-          }
-        },
-        "Start": 35,
-        "Length": 32
-      }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
-  },
-  {
-    "Input": "Cortana, plan au been skype meeting op 2018-08-23 tussen 13:30 en 16:00",
-    "Context": {
-      "ReferenceDateTime": "2017-11-17T19:12:00"
-    },
-    "NotSupported": "dotNet",
-    "Results": [
-      {
-        "Text": "2018-08-23 tussen 13:30 en 16:00",
-        "Type": "datetimerange",
-        "Value": {
-          "Timex": "(2018-09-23T13:30,2018-09-23T16,PT2H30M)",
-          "FutureResolution": {
-            "startDateTime": "2018-09-23 13:30:00",
-            "endDateTime": "2018-09-23 16:00:00"
-          },
-          "PastResolution": {
-            "startDateTime": "2018-09-23 13:30:00",
-            "endDateTime": "2018-09-23 16:00:00"
-          }
-        },
-        "Start": 39,
-        "Length": 32
-      }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
-  },
-  {
     "Input": "laten we 5 februari in ochtend afspreken",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
@@ -2263,33 +2155,6 @@
         },
         "Start": 7,
         "Length": 21
-      }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
-  },
-  {
-    "Input": "Cortana, kan je een tijd op maandag 12-4 vinden.",
-    "Context": {
-      "ReferenceDateTime": "2018-05-16T08:12:00"
-    },
-    "NotSupported": "dotNet",
-    "Results": [
-      {
-        "Text": "maandag 12-4",
-        "Type": "datetimerange",
-        "Value": {
-          "Timex": "(XXXX-WXX-1T00,XXXX-WXX-1T04,PT4H)",
-          "FutureResolution": {
-            "startDateTime": "2018-05-21 00:00:00",
-            "endDateTime": "2018-05-21 04:00:00"
-          },
-          "PastResolution": {
-            "startDateTime": "2018-05-14 00:00:00",
-            "endDateTime": "2018-05-14 04:00:00"
-          }
-        },
-        "Start": 28,
-        "Length": 12
       }
     ],
     "NotSupportedByDesign": "javascript,python,java"
@@ -2781,33 +2646,6 @@
     ]
   },
   {
-    "Input": "Ik ga vanavond terug",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "vanavond",
-        "Type": "datetimerange",
-        "Value": {
-          "Timex": "2016-11-07TNI",
-          "FutureResolution": {
-            "startDateTime": "2016-11-07 20:00:00",
-            "endDateTime": "2016-11-07 23:59:59"
-          },
-          "PastResolution": {
-            "startDateTime": "2016-11-07 20:00:00",
-            "endDateTime": "2016-11-07 23:59:59"
-          }
-        },
-        "Start": 6,
-        "Length": 7
-      }
-    ]
-  },
-  {
     "Input": "Ik ga vanavond voor 8 terug",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
@@ -3047,87 +2885,6 @@
         },
         "Start": 6,
         "Length": 21
-      }
-    ]
-  },
-  {
-    "Input": "",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "",
-        "Type": "datetimerange",
-        "Value": {
-          "Timex": "(2016-11-07T16:09:00,2016-11-07T16:12:00,PT3M)",
-          "FutureResolution": {
-            "startDateTime": "2016-11-07 16:09:00",
-            "endDateTime": "2016-11-07 16:12:00"
-          },
-          "PastResolution": {
-            "startDateTime": "2016-11-07 16:09:00",
-            "endDateTime": "2016-11-07 16:12:00"
-          }
-        },
-        "Start": 0,
-        "Length": 13
-      }
-    ]
-  },
-  {
-    "Input": "",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "",
-        "Type": "datetimerange",
-        "Value": {
-          "Timex": "(2016-11-07T16:09:00,2016-11-07T16:12:00,PT3M)",
-          "FutureResolution": {
-            "startDateTime": "2016-11-07 16:09:00",
-            "endDateTime": "2016-11-07 16:12:00"
-          },
-          "PastResolution": {
-            "startDateTime": "2016-11-07 16:09:00",
-            "endDateTime": "2016-11-07 16:12:00"
-          }
-        },
-        "Start": 0,
-        "Length": 13
-      }
-    ]
-  },
-  {
-    "Input": "",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "",
-        "Type": "datetimerange",
-        "Value": {
-          "Timex": "(2016-11-07T16:09:00,2016-11-07T16:12:00,PT3M)",
-          "FutureResolution": {
-            "startDateTime": "2016-11-07 16:09:00",
-            "endDateTime": "2016-11-07 16:12:00"
-          },
-          "PastResolution": {
-            "startDateTime": "2016-11-07 16:09:00",
-            "endDateTime": "2016-11-07 16:12:00"
-          }
-        },
-        "Start": 0,
-        "Length": 17
       }
     ]
   },
@@ -3645,60 +3402,6 @@
     ]
   },
   {
-    "Input": "laten we afspreken vroeg in de nacht dinsdag",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "vroeg in de nacht dinsdag",
-        "Type": "datetimerange",
-        "Value": {
-          "Timex": "XXXX-WXX-2TNI",
-          "FutureResolution": {
-            "startDateTime": "2016-11-08 20:00:00",
-            "endDateTime": "2016-11-08 22:00:00"
-          },
-          "PastResolution": {
-            "startDateTime": "2016-11-01 20:00:00",
-            "endDateTime": "2016-11-01 22:00:00"
-          }
-        },
-        "Start": 19,
-        "Length": 26
-      }
-    ]
-  },
-  {
-    "Input": "laten we afspreken laat in de nacht dinsdag",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "laat in de nacht dinsdag",
-        "Type": "datetimerange",
-        "Value": {
-          "Timex": "XXXX-WXX-2TNI",
-          "FutureResolution": {
-            "startDateTime": "2016-11-08 22:00:00",
-            "endDateTime": "2016-11-08 23:59:59"
-          },
-          "PastResolution": {
-            "startDateTime": "2016-11-01 22:00:00",
-            "endDateTime": "2016-11-01 23:59:59"
-          }
-        },
-        "Start": 19,
-        "Length": 25
-      }
-    ]
-  },
-  {
     "Input": "laten we afspreken dinsdag vroeg in de ochtend",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
@@ -3915,87 +3618,6 @@
     ]
   },
   {
-    "Input": "laten we afspreken dinsdag vroeg in de nacht",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "dinsdag vroeg in de nacht",
-        "Type": "datetimerange",
-        "Value": {
-          "Timex": "XXXX-WXX-2TNI",
-          "FutureResolution": {
-            "startDateTime": "2016-11-08 20:00:00",
-            "endDateTime": "2016-11-08 22:00:00"
-          },
-          "PastResolution": {
-            "startDateTime": "2016-11-01 20:00:00",
-            "endDateTime": "2016-11-01 22:00:00"
-          }
-        },
-        "Start": 19,
-        "Length": 19
-      }
-    ]
-  },
-  {
-    "Input": "laten we afspreken dinsdag laat in de nacht",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "dinsdag laat in de nacht",
-        "Type": "datetimerange",
-        "Value": {
-          "Timex": "XXXX-WXX-2TNI",
-          "FutureResolution": {
-            "startDateTime": "2016-11-08 22:00:00",
-            "endDateTime": "2016-11-08 23:59:59"
-          },
-          "PastResolution": {
-            "startDateTime": "2016-11-01 22:00:00",
-            "endDateTime": "2016-11-01 23:59:59"
-          }
-        },
-        "Start": 19,
-        "Length": 18
-      }
-    ]
-  },
-  {
-    "Input": "laten we de rest van de dag afspreken",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "rest van de dag",
-        "Type": "datetimerange",
-        "Value": {
-          "Timex": "(2016-11-07T16:12:00,2016-11-07T23:59:59,PT28079S)",
-          "FutureResolution": {
-            "startDateTime": "2016-11-07 16:12:00",
-            "endDateTime": "2016-11-07 23:59:59"
-          },
-          "PastResolution": {
-            "startDateTime": "2016-11-07 16:12:00",
-            "endDateTime": "2016-11-07 23:59:59"
-          }
-        },
-        "Start": 12,
-        "Length": 15
-      }
-    ]
-  },
-  {
     "Input": "laten we de rest van de huidige dag afspreken",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
@@ -4019,87 +3641,6 @@
         },
         "Start": 9,
         "Length": 19
-      }
-    ]
-  },
-  {
-    "Input": "laten we de rest van mijn dag afspreken",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "de rest van mijn dag",
-        "Type": "datetimerange",
-        "Value": {
-          "Timex": "(2016-11-07T16:12:00,2016-11-07T23:59:59,PT28079S)",
-          "FutureResolution": {
-            "startDateTime": "2016-11-07 16:12:00",
-            "endDateTime": "2016-11-07 23:59:59"
-          },
-          "PastResolution": {
-            "startDateTime": "2016-11-07 16:12:00",
-            "endDateTime": "2016-11-07 23:59:59"
-          }
-        },
-        "Start": 9,
-        "Length": 14
-      }
-    ]
-  },
-  {
-    "Input": "laten we de rest van deze dag afspreken",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "rest van deze dag",
-        "Type": "datetimerange",
-        "Value": {
-          "Timex": "(2016-11-07T16:12:00,2016-11-07T23:59:59,PT28079S)",
-          "FutureResolution": {
-            "startDateTime": "2016-11-07 16:12:00",
-            "endDateTime": "2016-11-07 23:59:59"
-          },
-          "PastResolution": {
-            "startDateTime": "2016-11-07 16:12:00",
-            "endDateTime": "2016-11-07 23:59:59"
-          }
-        },
-        "Start": 12,
-        "Length": 16
-      }
-    ]
-  },
-  {
-    "Input": "",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "",
-        "Type": "datetimerange",
-        "Value": {
-          "Timex": "(2016-11-07T16:12:00,2016-11-07T23:59:59,PT28079S)",
-          "FutureResolution": {
-            "startDateTime": "2016-11-07 16:12:00",
-            "endDateTime": "2016-11-07 23:59:59"
-          },
-          "PastResolution": {
-            "startDateTime": "2016-11-07 16:12:00",
-            "endDateTime": "2016-11-07 23:59:59"
-          }
-        },
-        "Start": 0,
-        "Length": 12
       }
     ]
   },
@@ -4154,33 +3695,6 @@
         },
         "Start": 19,
         "Length": 28
-      }
-    ]
-  },
-  {
-    "Input": "Cortana, plan alsjeblieft een Skype in voor een zakenmeeting met Wayne, op vrijdag tussen 13:00 en 16:00. ",
-    "Context": {
-      "ReferenceDateTime": "2017-11-09T16:12:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "vrijdag tussen 13:00 en 16:00",
-        "Type": "datetimerange",
-        "Value": {
-          "Timex": "(XXXX-WXX-5T13,XXXX-WXX-5T16,PT3H)",
-          "FutureResolution": {
-            "startDateTime": "2017-11-10 13:00:00",
-            "endDateTime": "2017-11-10 16:00:00"
-          },
-          "PastResolution": {
-            "startDateTime": "2017-11-03 13:00:00",
-            "endDateTime": "2017-11-03 16:00:00"
-          }
-        },
-        "Start": 75,
-        "Length": 27
       }
     ]
   },
@@ -4266,195 +3780,6 @@
     ]
   },
   {
-    "Input": "Hoi Cortana, plan alsjeblieft een Skypegesprek met Jennifer. Ik heb een meeting van 30 min nodig in de middag, deze vrijdag!",
-    "Context": {
-      "ReferenceDateTime": "2017-11-13T16:12:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "in de middag, deze vrijdag",
-        "Type": "datetimerange",
-        "Value": {
-          "Timex": "2017-11-17TAF",
-          "FutureResolution": {
-            "startDateTime": "2017-11-17 12:00:00",
-            "endDateTime": "2017-11-17 16:00:00"
-          },
-          "PastResolution": {
-            "startDateTime": "2017-11-17 12:00:00",
-            "endDateTime": "2017-11-17 16:00:00"
-          }
-        },
-        "Start": 97,
-        "Length": 29
-      }
-    ]
-  },
-  {
-    "Input": "Hoi Cortana, plan alsjeblieft een Skypegesprek met Jennifer. Ik heb een meeting van 30 min nodig in de middag, volgende vrijdag!",
-    "Context": {
-      "ReferenceDateTime": "2017-11-13T16:12:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "in de middag, volgende vrijdag",
-        "Type": "datetimerange",
-        "Value": {
-          "Timex": "2017-11-24TAF",
-          "FutureResolution": {
-            "startDateTime": "2017-11-24 12:00:00",
-            "endDateTime": "2017-11-24 16:00:00"
-          },
-          "PastResolution": {
-            "startDateTime": "2017-11-24 12:00:00",
-            "endDateTime": "2017-11-24 16:00:00"
-          }
-        },
-        "Start": 97,
-        "Length": 29
-      }
-    ]
-  },
-  {
-    "Input": "Hoi Cortana, plan alsjeblieft een Skypegesprek met Jennifer. Ik heb een meeting van 30 min nodig in de middag, afgelopen vrijdag!",
-    "Context": {
-      "ReferenceDateTime": "2017-11-13T16:12:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "in de middag, afgelopen vrijdag",
-        "Type": "datetimerange",
-        "Value": {
-          "Timex": "2017-11-10TAF",
-          "FutureResolution": {
-            "startDateTime": "2017-11-10 12:00:00",
-            "endDateTime": "2017-11-10 16:00:00"
-          },
-          "PastResolution": {
-            "startDateTime": "2017-11-10 12:00:00",
-            "endDateTime": "2017-11-10 16:00:00"
-          }
-        },
-        "Start": 97,
-        "Length": 29
-      }
-    ]
-  },
-  {
-    "Input": "Cortana, plan alsjeblieft een Skype in voor een zakenmeeting met Wayne, op vrijdagmiddag tussen 13:00 en 16:00. ",
-    "Context": {
-      "ReferenceDateTime": "2017-11-14T19:12:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "vrijdagmiddag tussen 13:00 en 16:00",
-        "Type": "datetimerange",
-        "Value": {
-          "Timex": "(XXXX-WXX-5T13,XXXX-WXX-5T16,PT3H)",
-          "FutureResolution": {
-            "startDateTime": "2017-11-17 13:00:00",
-            "endDateTime": "2017-11-17 16:00:00"
-          },
-          "PastResolution": {
-            "startDateTime": "2017-11-10 13:00:00",
-            "endDateTime": "2017-11-10 16:00:00"
-          }
-        },
-        "Start": 75,
-        "Length": 37
-      }
-    ]
-  },
-  {
-    "Input": "Cortana, plan alsjeblieft een Skype in voor een zakenmeeting met Wayne, in de middag op vrijdag tussen 13:00 en 16:00. ",
-    "Context": {
-      "ReferenceDateTime": "2017-11-14T19:12:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "in de middag op vrijdag tussen 13:00 en 16:00",
-        "Type": "datetimerange",
-        "Value": {
-          "Timex": "(XXXX-WXX-5T13,XXXX-WXX-5T16,PT3H)",
-          "FutureResolution": {
-            "startDateTime": "2017-11-17 13:00:00",
-            "endDateTime": "2017-11-17 16:00:00"
-          },
-          "PastResolution": {
-            "startDateTime": "2017-11-10 13:00:00",
-            "endDateTime": "2017-11-10 16:00:00"
-          }
-        },
-        "Start": 72,
-        "Length": 47
-      }
-    ]
-  },
-  {
-    "Input": "Cortana, plan alsjeblieft een Skypegesprek 23-09-018 13:00 tot 4",
-    "Context": {
-      "ReferenceDateTime": "2017-11-17T19:12:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "23-09-018 13:00 tot 4",
-        "Type": "datetimerange",
-        "Value": {
-          "Timex": "(2018-09-23T13,2018-09-23T16,PT3H)",
-          "FutureResolution": {
-            "startDateTime": "2018-09-23 13:00:00",
-            "endDateTime": "2018-09-23 16:00:00"
-          },
-          "PastResolution": {
-            "startDateTime": "2018-09-23 13:00:00",
-            "endDateTime": "2018-09-23 16:00:00"
-          }
-        },
-        "Start": 43,
-        "Length": 21
-      }
-    ]
-  },
-  {
-    "Input": "Cortana, plan alsjeblieft een Skypegesprek 23-09-018 13:30 tot 4",
-    "Context": {
-      "ReferenceDateTime": "2017-11-17T19:12:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "23-09-018 13:30 tot 4",
-        "Type": "datetimerange",
-        "Value": {
-          "Timex": "(2018-09-23T13:30,2018-09-23T16,PT2H30M)",
-          "FutureResolution": {
-            "startDateTime": "2018-09-23 13:30:00",
-            "endDateTime": "2018-09-23 16:00:00"
-          },
-          "PastResolution": {
-            "startDateTime": "2018-09-23 13:30:00",
-            "endDateTime": "2018-09-23 16:00:00"
-          }
-        },
-        "Start": 43,
-        "Length": 24
-      }
-    ]
-  },
-  {
     "Input": "laten we afspreken op 5 feb 's ochtends",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
@@ -4478,60 +3803,6 @@
         },
         "Start": 22,
         "Length": 8
-      }
-    ]
-  },
-  {
-    "Input": "Ik ga dinsdagochtend terug",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "dinsdagochtend",
-        "Type": "datetimerange",
-        "Value": {
-          "Timex": "XXXX-WXX-2TMO",
-          "FutureResolution": {
-            "startDateTime": "2016-11-08 08:00:00",
-            "endDateTime": "2016-11-08 12:00:00"
-          },
-          "PastResolution": {
-            "startDateTime": "2016-11-01 08:00:00",
-            "endDateTime": "2016-11-01 12:00:00"
-          }
-        },
-        "Start": 6,
-        "Length": 10
-      }
-    ]
-  },
-  {
-    "Input": "Ik ga dinsdagmiddag terug",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "dinsdagmiddag",
-        "Type": "datetimerange",
-        "Value": {
-          "Timex": "XXXX-WXX-2TAF",
-          "FutureResolution": {
-            "startDateTime": "2016-11-08 12:00:00",
-            "endDateTime": "2016-11-08 16:00:00"
-          },
-          "PastResolution": {
-            "startDateTime": "2016-11-01 12:00:00",
-            "endDateTime": "2016-11-01 16:00:00"
-          }
-        },
-        "Start": 6,
-        "Length": 10
       }
     ]
   },
@@ -4586,33 +3857,6 @@
         },
         "Start": 14,
         "Length": 17
-      }
-    ]
-  },
-  {
-    "Input": "Ik ben binnen 5 minuten terug",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "binnen 5 minuten",
-        "Type": "datetimerange",
-        "Value": {
-          "Timex": "(2016-11-07T16:12:00,2016-11-07T16:17:00,PT5M)",
-          "FutureResolution": {
-            "startDateTime": "2016-11-07 16:12:00",
-            "endDateTime": "2016-11-07 16:17:00"
-          },
-          "PastResolution": {
-            "startDateTime": "2016-11-07 16:12:00",
-            "endDateTime": "2016-11-07 16:17:00"
-          }
-        },
-        "Start": 7,
-        "Length": 16
       }
     ]
   },

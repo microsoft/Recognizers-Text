@@ -364,19 +364,6 @@
     ]
   },
   {
-    "Input": "",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "",
-        "Type": "set",
-        "Start": 0,
-        "Length": 6
-      }
-    ]
-  },
-  {
     "Input": "Ik vertek elke twee dagen",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
@@ -386,19 +373,6 @@
         "Type": "set",
         "Start": 10,
         "Length": 13
-      }
-    ]
-  },
-  {
-    "Input": "",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "",
-        "Type": "set",
-        "Start": 0,
-        "Length": 16
       }
     ]
   },
