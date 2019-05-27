@@ -708,7 +708,8 @@ public class EnglishDateTime {
 
     public static final String AgoRegex = "\\b(ago|before\\s+(?<day>yesterday|today))\\b";
 
-    public static final String LaterRegex = "\\b(later|from now|(from|after) (?<day>tomorrow|tmr|today))\\b";
+    public static final String LaterRegex = "\\b(later(?!\\s*{OneWordPeriodRegex})|from now|(from|after) (?<day>tomorrow|tmr|today))\\b"
+            .replace("{OneWordPeriodRegex}", OneWordPeriodRegex);
 
     public static final String InConnectorRegex = "\\b(in)\\b";
 

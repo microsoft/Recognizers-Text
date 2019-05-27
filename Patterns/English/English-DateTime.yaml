@@ -521,8 +521,9 @@ AroundRegex: !simpleRegex
   def: (\b(around|circa)\s*\b)
 AgoRegex: !simpleRegex
   def: \b(ago|before\s+(?<day>yesterday|today))\b
-LaterRegex: !simpleRegex
-  def: \b(later|from now|(from|after) (?<day>tomorrow|tmr|today))\b
+LaterRegex: !nestedRegex
+  def: \b(later(?!\s*{OneWordPeriodRegex})|from now|(from|after) (?<day>tomorrow|tmr|today))\b
+  references: [ OneWordPeriodRegex ]
 InConnectorRegex: !simpleRegex
   def: \b(in)\b
 SinceYearSuffixRegex: !nestedRegex
