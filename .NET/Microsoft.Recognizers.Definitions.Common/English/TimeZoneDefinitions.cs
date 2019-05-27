@@ -1015,6 +1015,7 @@ namespace Microsoft.Recognizers.Definitions.English
 			@"Wuxi",
 			@"Xiamen",
 			@"Yonkers",
+			@"Bentonville",
 			@"Afghanistan",
 			@"AK",
 			@"AL",
@@ -1388,7 +1389,8 @@ namespace Microsoft.Recognizers.Definitions.English
 			@"Kuala Kumpur",
 			@"Jakarta",
 			@"Amsterdam",
-			@"Brussels"
+			@"Brussels",
+			@"Barcelona"
 		};
 	}
 }
