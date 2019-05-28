@@ -33,7 +33,7 @@ def get_suite_config(json_path):
 
 def get_suite(json_path):
     print(json_path)
-    return {'specs': json.load(open(json_path, encoding='utf-8')), 'config': get_suite_config(json_path)}
+    return {'specs': json.load(open(json_path, encoding='utf-8-sig')), 'config': get_suite_config(json_path)}
 
 
 def get_all_specs():
@@ -67,14 +67,16 @@ def get_specs(recognizer, entity):
 ENTITY_PATTERN = re.compile('(.*)(Model|Parser|Extractor)(.*)')
 
 CULTURES = {
-    'English': Culture.English,
     'Chinese': Culture.Chinese,
-    'Spanish': Culture.Spanish,
-    'Portuguese': Culture.Portuguese,
-    'French': Culture.French,
-    'Japanese': Culture.Japanese,
     'Dutch': Culture.Dutch,
-    'Italian': Culture.Italian
+    'English': Culture.English,
+    'French': Culture.French,
+    'Italian': Culture.Italian,
+    'Japanese': Culture.Japanese,
+    'Korean': Culture.Korean,
+    'Portuguese': Culture.Portuguese,
+    'Spanish': Culture.Spanish,
+    'Turkish': Culture.Turkish,
 }
 
 SPECS = get_all_specs()

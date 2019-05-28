@@ -1,13 +1,14 @@
 class Culture:
-    English: str = 'en-us'
     Chinese: str = 'zh-cn'
-    Spanish: str = 'es-es'
-    Portuguese: str = 'pt-br'
-    French: str = 'fr-fr'
-    Japanese: str = 'ja-jp'
     Dutch: str = 'nl-nl'
-    Korean: str = 'ko-kr'
+    English: str = 'en-us'
+    French: str = 'fr-fr'
     Italian: str = 'it-it'
+    Japanese: str = 'ja-jp'
+    Korean: str = 'ko-kr'
+    Portuguese: str = 'pt-br'
+    Spanish: str = 'es-es'
+    Turkish: str = 'tr-tr'
 
 class BaseCultureInfo:
     def __init__(self, culture_code: str):
