@@ -897,71 +897,6 @@
     ]
   },
   {
-    "Input": "Ik ben 11-2016 weg",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "11-2016",
-        "Type": "daterange",
-        "Start": 7,
-        "Length": 8
-      }
-    ]
-  },
-  {
-    "Input": "Ik ben 11-2016 weg",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "11-2016",
-        "Type": "daterange",
-        "Start": 7,
-        "Length": 9
-      }
-    ]
-  },
-  {
-    "Input": "Ik ben 11-2016 weg",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "11-2016",
-        "Type": "daterange",
-        "Start": 7,
-        "Length": 7
-      }
-    ]
-  },
-  {
-    "Input": "Ik ben 11-2016 weg",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "11-2016",
-        "Type": "daterange",
-        "Start": 7,
-        "Length": 9
-      }
-    ]
-  },
-  {
-    "Input": "Ik ben 11-2016 weg",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "11-2016",
-        "Type": "daterange",
-        "Start": 7,
-        "Length": 7
-      }
-    ]
-  },
-  {
     "Input": "Ik ben 2016-11 weg",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
@@ -971,97 +906,6 @@
         "Type": "daterange",
         "Start": 7,
         "Length": 8
-      }
-    ]
-  },
-  {
-    "Input": "Ik ben 2016-11 weg",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "2016-11",
-        "Type": "daterange",
-        "Start": 7,
-        "Length": 8
-      }
-    ]
-  },
-  {
-    "Input": "Ik ben 2016-11 weg",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "2016-11",
-        "Type": "daterange",
-        "Start": 7,
-        "Length": 9
-      }
-    ]
-  },
-  {
-    "Input": "Ik ben 2016-11 weg",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "2016-11",
-        "Type": "daterange",
-        "Start": 7,
-        "Length": 7
-      }
-    ]
-  },
-  {
-    "Input": "Ik ben 2016-11 weg",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "2016-11",
-        "Type": "daterange",
-        "Start": 7,
-        "Length": 8
-      }
-    ]
-  },
-  {
-    "Input": "Ik ben 2016-11 weg",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "2016-11",
-        "Type": "daterange",
-        "Start": 7,
-        "Length": 8
-      }
-    ]
-  },
-  {
-    "Input": "Ik ben 2016-11 weg",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "2016-11",
-        "Type": "daterange",
-        "Start": 7,
-        "Length": 9
-      }
-    ]
-  },
-  {
-    "Input": "Ik ben 2016-11 weg",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "2016-11",
-        "Type": "daterange",
-        "Start": 7,
-        "Length": 7
       }
     ]
   },
@@ -1101,19 +945,6 @@
         "Type": "daterange",
         "Start": 7,
         "Length": 10
-      }
-    ]
-  },
-  {
-    "Input": "Ik ben 2016, nov weg",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "2016, nov",
-        "Type": "daterange",
-        "Start": 7,
-        "Length": 9
       }
     ]
   },
