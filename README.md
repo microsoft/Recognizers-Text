@@ -48,9 +48,9 @@ The table below summarizes the currently supported entities. Support for English
 | Percentage           | ✓    | ✓       | ✓    | ✓     | ✓     | **SO**  | ✓      | **SO** | ✓      | ✓      |
 | Number Range         | ✓    | ✓       | **PA** | :x:  | :x:   | :x:     | :x:    | :x:     | :x:    | **PA** |
 | Unit - Age           | ✓    | ✓       | ✓    | ✓     | ✓     | **SO**  | ✓      | **SO** | ✓      | ✓      |
-| Unit - Currency      | ✓    | ✓       | ✓    | ✓     | ✓     | **SO**  | ✓      | :x:    | ✓      | ✓      |
-| Unit - Dimensions    | ✓    | ✓       | ✓    | ✓     | ✓     | **SO**  | :x:    | :x:     | ✓     | ✓       | 
-| Unit - Temperature   | ✓    | ✓       | ✓    | ✓     | ✓     | **SO**  | :x:    | :x:     | ✓     | ✓       | 
+| Unit - Currency      | ✓    | ✓       | ✓    | ✓     | ✓     | **SO**  | ✓      | **SP** | ✓      | ✓      |
+| Unit - Dimensions    | ✓    | ✓       | ✓    | ✓     | ✓     | **SO**  | :x:    | **SP**  | ✓     | ✓       | 
+| Unit - Temperature   | ✓    | ✓       | ✓    | ✓     | ✓     | **SO**  | :x:    | **SP**  | ✓     | ✓       | 
 | Choice - Boolean     | ✓    | ✓       | ✓    | ✓     | ✓     | **SO**  | ✓      | :x:    | ✓      | ✓      | 
 | Seq. - E-mail        | G    | G*       | G    | G      | G     | G       | G      | G      | G      | G       |
 | Seq. - GUID          | G    | G        | G    | G      | G     | G       | G      | G      | G      | G       |
@@ -62,6 +62,10 @@ The table below summarizes the currently supported entities. Support for English
 
 | Entity Type       | SV      | BG      | TR    |        |       |         |        |        |        |         |
 |:-----------------:|:-------:|:-------:|:-----:|:------:|:-----:|:-------:|:------:|:------:|:------:|:-------:| 
+| Number (cardinal)    | :x:  | :x:     | **SP** |       |       |         |        |        |        |         |
+| Ordinal              | :x:  | :x:     | **SP** |       |       |         |        |        |        |         |
+| Percentage           | :x:  | :x:     | **SP** |       |       |         |        |        |        |         |
+| Number Range         | :x:  | :x:     | **SP** |       |       |         |        |        |        |         |
 | Unit - Age           | :x:  | :x:     | **SO** |       |       |         |        |        |        |         |
 | Unit - Currency      | :x:  | :x:     | **SO** |       |       |         |        |        |        |         |
 | Unit - Dimensions    | :x:  | :x:     | **SO** |       |       |         |        |        |        |         | 
