@@ -494,13 +494,13 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": " -123456789101231",
+        "Text": "-123456789101231",
         "TypeName": "number",
         "Resolution": {
           "subtype": "integer",
           "value": "-123456789101231"
         },
-        "Start": 0,
+        "Start": 1,
         "End": 17
       }
     ]
