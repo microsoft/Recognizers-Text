@@ -119,8 +119,7 @@
     ]
   },
   {
-    "Input": "
-Bir yıllık bir vaadi yerine getirmek için baskı ne zaman olacak?",
+    "Input": "Bir yıllık bir vaadi yerine getirmek için baskı ne zaman olacak?",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
