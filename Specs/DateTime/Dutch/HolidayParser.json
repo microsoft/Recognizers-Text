@@ -576,21 +576,6 @@
         },
         "Start": 29,
         "Length": 7
-      },
-      {
-        "Text": "Int'l Workers Day",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-05-01",
-          "FutureResolution": {
-            "date": "2019-05-01"
-          },
-          "PastResolution": {
-            "date": "2018-05-01"
-          }
-        },
-        "Start": 40,
-        "Length": 17
       }
     ]
   },
