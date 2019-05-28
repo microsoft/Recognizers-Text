@@ -46,6 +46,7 @@ The table below summarizes the currently supported entities. Support for English
 | Number (cardinal)    | ✓    | ✓       | ✓    | ✓     | ✓     | **SO**  | ✓      | ✓      | ✓     | ✓       |
 | Ordinal              | ✓    | ✓       | ✓    | ✓     | ✓     | **SO**  | ✓      | **SO** | ✓      | ✓      |
 | Percentage           | ✓    | ✓       | ✓    | ✓     | ✓     | **SO**  | ✓      | **SO** | ✓      | ✓      |
+| Number Range         | ✓    | ✓       | **PA** | :x:  | :x:   | :x:     | :x:    | :x:     | :x:    | **PA** |
 | Unit - Age           | ✓    | ✓       | ✓    | ✓     | ✓     | **SO**  | ✓      | **SO** | ✓      | ✓      |
 | Unit - Currency      | ✓    | ✓       | ✓    | ✓     | ✓     | **SO**  | ✓      | :x:    | ✓      | ✓      |
 | Unit - Dimensions    | ✓    | ✓       | ✓    | ✓     | ✓     | **SO**  | :x:    | :x:     | ✓     | ✓       | 
@@ -57,8 +58,18 @@ The table below summarizes the currently supported entities. Support for English
 | Seq. - IP Address    | G    | G        | G    | G      | G     | G       | G      | G      | G      | G       |
 | Seq. - Phone Number  | G    | G        | G    | G      | G     | G       | G      | G      | G      | G       |
 | Seq. - URL           | G    | G*       | G    | G      | G     | G       | G      | G      | G      | G       |
-| DateTime (+subtypes) | ✓    | ✓       | **SP**    | ✓     | ✓ | **SO** | **SI min** | **SI min** | ✓  | ✓      | 
+| DateTime (+subtypes) | ✓    | ✓       | **SP** | ✓    | ✓     | **SO** | **SI min** | **SI min** | ✓  | ✓   | 
+
+| Entity Type       | SV      | BG      | TR    |        |       |         |        |        |        |         |
+|:-----------------:|:-------:|:-------:|:-----:|:------:|:-----:|:-------:|:------:|:------:|:------:|:-------:| 
+| Unit - Age           | :x:  | :x:     | **SO** |       |       |         |        |        |        |         |
+| Unit - Currency      | :x:  | :x:     | **SO** |       |       |         |        |        |        |         |
+| Unit - Dimensions    | :x:  | :x:     | **SO** |       |       |         |        |        |        |         | 
+| Unit - Temperature   | :x:  | :x:     | **SO** |       |       |         |        |        |        |         | 
+| Choice - Boolean     | ✓    | ✓      | :x:    |       |       |         |        |        |        |         |
+
 * G: Generic entity, not language-specific (* unicode TLDs not-supported);
+* PA: Partial support;
 * SO: Specs-only;
 * SP: Partial specs;
 * SI: Very initial specs.
