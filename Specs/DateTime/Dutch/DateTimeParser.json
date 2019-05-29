@@ -175,31 +175,6 @@
     ]
   },
   {
-    "Input": "Ik ga 21-04-2016, 20:00:20 terug",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "21-04-2016, 20:00:20",
-        "Type": "datetime",
-        "Value": {
-          "Timex": "2016-04-21T20:00:20",
-          "FutureResolution": {
-            "dateTime": "2016-04-21 20:00:20"
-          },
-          "PastResolution": {
-            "dateTime": "2016-04-21 20:00:20"
-          }
-        },
-        "Start": 6,
-        "Length": 21
-      }
-    ]
-  },
-  {
     "Input": "Ik ga 23 okt. om zeven terug",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -346,31 +321,6 @@
         },
         "Start": 6,
         "Length": 18
-      }
-    ]
-  },
-  {
-    "Input": "Ik ga 14 oktober, 8:00:25 terug",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "14 oktober, 8:00:25",
-        "Type": "datetime",
-        "Value": {
-          "Timex": "XXXX-10-14T08:00:25",
-          "FutureResolution": {
-            "dateTime": "2017-10-14 08:00:25"
-          },
-          "PastResolution": {
-            "dateTime": "2016-10-14 08:00:25"
-          }
-        },
-        "Start": 6,
-        "Length": 21
       }
     ]
   },
@@ -750,56 +700,6 @@
     ]
   },
   {
-    "Input": "Ik ga 20:00 's avonds, 1e jan terug",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "20:00 's avonds, 1e jan ",
-        "Type": "datetime",
-        "Value": {
-          "Timex": "XXXX-01-01T20",
-          "FutureResolution": {
-            "dateTime": "2017-01-01 20:00:00"
-          },
-          "PastResolution": {
-            "dateTime": "2016-01-01 20:00:00"
-          }
-        },
-        "Start": 6,
-        "Length": 27
-      }
-    ]
-  },
-  {
-    "Input": "Ik ga 20:00 's avonds, 1 jan terug",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "20:00 's avonds, 1 jan",
-        "Type": "datetime",
-        "Value": {
-          "Timex": "XXXX-01-01T20",
-          "FutureResolution": {
-            "dateTime": "2017-01-01 20:00:00"
-          },
-          "PastResolution": {
-            "dateTime": "2016-01-01 20:00:00"
-          }
-        },
-        "Start": 6,
-        "Length": 25
-      }
-    ]
-  },
-  {
     "Input": "Ik ga 22:00 vanavond terug",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -996,31 +896,6 @@
         },
         "Start": 6,
         "Length": 13
-      }
-    ]
-  },
-  {
-    "Input": "Ik ga 21-04-2016, 20:00:24 terug",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "21-04-2016, 20:00:24",
-        "Type": "datetime",
-        "Value": {
-          "Timex": "2016-04-21T20:00:24",
-          "FutureResolution": {
-            "dateTime": "2016-04-21 20:00:24"
-          },
-          "PastResolution": {
-            "dateTime": "2016-04-21 20:00:24"
-          }
-        },
-        "Start": 6,
-        "Length": 21
       }
     ]
   },
@@ -1397,31 +1272,6 @@
         },
         "Start": 34,
         "Length": 14
-      }
-    ]
-  },
-  {
-    "Input": "Je moet niet altijd naar bed gaan eind van de dag omdat het schadelijk is voor je gezondheid",
-    "Context": {
-      "ReferenceDateTime": "2018-11-21T12:00:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "eind van de dag",
-        "Type": "datetime",
-        "Value": {
-          "Timex": "2018-11-21T23:59:59",
-          "FutureResolution": {
-            "dateTime": "2018-11-21 23:59:59"
-          },
-          "PastResolution": {
-            "dateTime": "2018-11-21 23:59:59"
-          }
-        },
-        "Start": 34,
-        "Length": 10
       }
     ]
   },

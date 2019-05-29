@@ -297,5 +297,330 @@
     ],
     "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik vertrek wekelijks",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "wekelijks",
+        "Type": "set",
+        "Start": 11,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "Ik vertrek dagelijks",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "dagelijks",
+        "Type": "set",
+        "Start": 11,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "Ik vertrek elke dag",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "elke dag",
+        "Type": "set",
+        "Start": 11,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Ik vertrek elke maand",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "elke maand",
+        "Type": "set",
+        "Start": 11,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Ik vertrek jaarlijks",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "jaarlijks",
+        "Type": "set",
+        "Start": 11,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Ik vertek elke twee dagen",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "elke twee dagen",
+        "Type": "set",
+        "Start": 10,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Ik vertrek iedere dag 15:00",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "iedere dag 15:00",
+        "Type": "set",
+        "Start": 11,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Ik vertrek elke dag 15:00",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "elke dag 15:00",
+        "Type": "set",
+        "Start": 11,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Ik vertrek elke 15-4",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "15-4",
+        "Type": "set",
+        "Start": 16,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Ik vertrek iedere maandag",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "iedere maandag",
+        "Type": "set",
+        "Start": 11,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Ik vertrek elke maandag 16:00",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "elke maandag 16:00",
+        "Type": "set",
+        "Start": 11,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Ik vertrek iedere ochtend",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "iedere ochtend",
+        "Type": "set",
+        "Start": 11,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Ik vertrek iedere ochtend om 9:00",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "iedere ochtend om 9:00",
+        "Type": "set",
+        "Start": 11,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Ik vertrek iedere middag om 16:00",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "iedere middag om 16:00",
+        "Type": "set",
+        "Start": 11,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "Ik vertrek iedere avond om 21:00",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "iedere avond om 21:00",
+        "Type": "set",
+        "Start": 11,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Ik vertrek iedere avond om 9 uur",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "iedere avond om 9 uur",
+        "Type": "set",
+        "Start": 11,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Ik vertrek de ochtenden om 9:00",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "de ochtenden om 9:00",
+        "Type": "set",
+        "Start": 11,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Ik vertrek op ochtenden om 9 uur",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "op ochtenden om 9 uur",
+        "Type": "set",
+        "Start": 11,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Ik vertrek om 9 uur 's ochtends iedere zondag",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "9 uur 's ochtends iedere zondag",
+        "Type": "set",
+        "Start": 14,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Ik vertrek om 9 uur 's ochtends op maandagen",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "9 uur 's ochtends op maandagen",
+        "Type": "set",
+        "Start": 14,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Ik vertrek om 9:00 op maandagen",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "om 9:00 op maandagen",
+        "Type": "set",
+        "Start": 11,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Ik vertrek op maandagen",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "op maandagen",
+        "Type": "set",
+        "Start": 11,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Ik vertrek op zondagen",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "op zondagen",
+        "Type": "set",
+        "Start": 11,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Ik vertrek zondagen",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "zondagen",
+        "Type": "set",
+        "Start": 11,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Kan ik een boeking plaatsen voor de 9e van mei voor 2 nachten?",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "nachten",
+        "Type": "set",
+        "Start": 54,
+        "Length": 6
+      }
+    ]
   }
 ]

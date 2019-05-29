@@ -585,32 +585,6 @@
     ]
   },
   {
-    "Input": "laten we dinsdag vroeg in de nacht afspreken",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "dinsdag vroeg in de nacht",
-        "Type": "datetimerange",
-        "Start": 9,
-        "Length": 26
-      }
-    ]
-  },
-  {
-    "Input": "laten we dinsdag laat in de nacht afspreken",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "dinsdag laat in de nacht",
-        "Type": "datetimerange",
-        "Start": 9,
-        "Length": 25
-      }
-    ]
-  },
-  {
     "Input": "laten we op dinsdag vroeg in de ochtend afspreken ",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
@@ -715,32 +689,6 @@
     ]
   },
   {
-    "Input": "laten we op dinsdag vroeg in de nacht afspreken",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "op dinsdag vroeg in de nacht",
-        "Type": "datetimerange",
-        "Start": 9,
-        "Length": 29
-      }
-    ]
-  },
-  {
-    "Input": "laten we op dinsdag laat in de nacht afspreken",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "op dinsdag laat in de nacht",
-        "Type": "datetimerange",
-        "Start": 9,
-        "Length": 28
-      }
-    ]
-  },
-  {
     "Input": "laten we op dinsdag vroeg in de morgen afspreken",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
@@ -763,110 +711,6 @@
         "Type": "datetimerange",
         "Start": 12,
         "Length": 20
-      }
-    ]
-  },
-  {
-    "Input": "laten we op dinsdag vroeg in de middag afspreken",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "dinsdag vroeg in de middag",
-        "Type": "datetimerange",
-        "Start": 12,
-        "Length": 23
-      }
-    ]
-  },
-  {
-    "Input": "laten we op dinsdag laat in de middag afspreken",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "dinsdag laat in de middag",
-        "Type": "datetimerange",
-        "Start": 12,
-        "Length": 22
-      }
-    ]
-  },
-  {
-    "Input": "laten we op dinsdag vroeg in de avond afspreken",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "dinsdag vroeg in de avond",
-        "Type": "datetimerange",
-        "Start": 12,
-        "Length": 21
-      }
-    ]
-  },
-  {
-    "Input": "laten we op dinsdag laat in de avond afspreken",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "dinsdag laat in de avond",
-        "Type": "datetimerange",
-        "Start": 12,
-        "Length": 20
-      }
-    ]
-  },
-  {
-    "Input": "laten we op dinsdag vroeg in de avond afspreken",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "dinsdag vroeg in de avond",
-        "Type": "datetimerange",
-        "Start": 12,
-        "Length": 19
-      }
-    ]
-  },
-  {
-    "Input": "laten we op dinsdag laat in de avond afspreken",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "dinsdag laat in de avond",
-        "Type": "datetimerange",
-        "Start": 12,
-        "Length": 18
-      }
-    ]
-  },
-  {
-    "Input": "laten we op dinsdag vroeg in de nacht afspreken",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "dinsdag vroeg in de nacht",
-        "Type": "datetimerange",
-        "Start": 12,
-        "Length": 19
-      }
-    ]
-  },
-  {
-    "Input": "laten we op dinsdag laat in de nacht afspreken",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "dinsdag laat in de nacht",
-        "Type": "datetimerange",
-        "Start": 12,
-        "Length": 18
       }
     ]
   },
@@ -971,32 +815,6 @@
         "Type": "datetimerange",
         "Start": 99,
         "Length": 29
-      }
-    ]
-  },
-  {
-    "Input": "Cortana, plan alsjeblieft een skype voor zakelijk gesprek met Wayne, op vrijdagmiddag tussen 13:00 en 16:00",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "vrijdagmiddag tussen 13:00 en 16:00",
-        "Type": "datetimerange",
-        "Start": 72,
-        "Length": 37
-      }
-    ]
-  },
-  {
-    "Input": "Cortana, plan alsjeblieft een skype voor zakelijk gesprek met Wayne, in de middag op vrijdag tussen 13:00 en 16:00",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "in de middag op vrijdag tussen 13:00 en 16:00",
-        "Type": "datetimerange",
-        "Start": 69,
-        "Length": 47
       }
     ]
   },
