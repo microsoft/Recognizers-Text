@@ -19,12 +19,12 @@ function SpecInfo()
         CheckSpec -spec $contents -type $typeFolder -parent $parentName -name $file.Name
     }
 
-    Write-Host("Total empty input:`t" + $global:totalEmpty)
-    Write-Host("Total duplicate input:`t" + $global:totalDuplicate)
+    Write-Host("Total invalid input test cases:`t" + $global:totalEmpty)
+    Write-Host("Total duplicate test cases:`t" + $global:totalDuplicate)
 
     if ($global:totalEmpty)
     {
-        Write-Host("# Contain empty input in these files")
+        Write-Host("# Invalid input test cases:")
         foreach ($case in $global:emptyFileList)
         {
             Write-Host($case)
@@ -33,7 +33,7 @@ function SpecInfo()
 
     if ($global:totalDuplicate)
     {
-        Write-Host("# Contain duplicate input in these files")
+        Write-Host("# Duplicate input test cases:")
         foreach ($file in $global:duplicateFileDict.keys)
         {
             Write-Host("$($file)")
