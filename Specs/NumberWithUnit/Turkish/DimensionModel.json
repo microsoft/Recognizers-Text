@@ -777,23 +777,6 @@
         "Text": "100 mb",
         "TypeName": "dimension",
         "Resolution": {
-          "unit": "Megabit",
-          "value": "100"
-        },
-        "Start": 19,
-        "End": 25
-      }
-    ]
-  },
-  {
-    "Input": "Bu dosyanın boyutu 100 mb",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "100 mb",
-        "TypeName": "dimension",
-        "Resolution": {
           "unit": "Megabyte",
           "value": "100"
         },
