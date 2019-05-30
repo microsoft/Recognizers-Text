@@ -1,0 +1,1514 @@
+[
+  {
+    "Input": "나는 오후 5시부터 6시까지 자리를 비울 예정입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "오후 5시부터 6시까지",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T17,T18,PT1H)",
+          "FutureResolution": {
+            "startTime": "17:00:00",
+            "endTime": "18:00:00"
+          },
+          "PastResolution": {
+            "startTime": "17:00:00",
+            "endTime": "18:00:00"
+          }
+        },
+        "Start": 12,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "나는 아침 5시부터 7시까지 자리를 비울 예정입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "아침 5시부터 7시까지 ",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T05,T07,PT2H)",
+          "FutureResolution": {
+            "startTime": "05:00:00",
+            "endTime": "07:00:00"
+          },
+          "PastResolution": {
+            "startTime": "05:00:00",
+            "endTime": "07:00:00"
+          }
+        },
+        "Start": 12,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "나는 5시부터 오후 6시까지 자리를 비울 예정입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "5시부터 오후 6시까지 ",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T17,T18,PT1H)",
+          "FutureResolution": {
+            "startTime": "17:00:00",
+            "endTime": "18:00:00"
+          },
+          "PastResolution": {
+            "startTime": "17:00:00",
+            "endTime": "18:00:00"
+          }
+        },
+        "Start": 12,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "나는 5시에서 오후 6시 사이에 자리를 비울 예정입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "5시에서 오후 6시 사이에",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T17,T18,PT1H)",
+          "FutureResolution": {
+            "startTime": "17:00:00",
+            "endTime": "18:00:00"
+          },
+          "PastResolution": {
+            "startTime": "17:00:00",
+            "endTime": "18:00:00"
+          }
+        },
+        "Start": 12,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "나는 오후 5시에서 오후 6시 사이에 자리를 비울 예정입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "오후 5시에서 오후 6시 사이에",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T17,T18,PT1H)",
+          "FutureResolution": {
+            "startTime": "17:00:00",
+            "endTime": "18:00:00"
+          },
+          "PastResolution": {
+            "startTime": "17:00:00",
+            "endTime": "18:00:00"
+          }
+        },
+        "Start": 12,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "나는 오후 5시에서 6시 사이에 자리를 비울 예정입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "오후 5시에서 6시 사이에",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T17,T18,PT1H)",
+          "FutureResolution": {
+            "startTime": "17:00:00",
+            "endTime": "18:00:00"
+          },
+          "PastResolution": {
+            "startTime": "17:00:00",
+            "endTime": "18:00:00"
+          }
+        },
+        "Start": 12,
+        "Length": 32
+      }
+    ]
+  },
+  {
+    "Input": "나는 오전 1시부터 오후 5시까지 자리를 비울 예정입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "오전 1시부터 오후 5시까지",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T01,T17,PT16H)",
+          "FutureResolution": {
+            "startTime": "01:00:00",
+            "endTime": "17:00:00"
+          },
+          "PastResolution": {
+            "startTime": "01:00:00",
+            "endTime": "17:00:00"
+          }
+        },
+        "Start": 12,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "나는 오후 4시에서 5시까지 자리를 비울 예정입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "오후 4시에서 5시까지",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T16,T17,PT1H)",
+          "FutureResolution": {
+            "startTime": "16:00:00",
+            "endTime": "17:00:00"
+          },
+          "PastResolution": {
+            "startTime": "16:00:00",
+            "endTime": "17:00:00"
+          }
+        },
+        "Start": 12,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "나는 4시부터 7시 정각까지 자리를 비울 예정입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "4시부터 7시 정각까지",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T04:00,T07,PT3H)",
+          "FutureResolution": {
+            "startTime": "04:00:00",
+            "endTime": "07:00:00"
+          },
+          "PastResolution": {
+            "startTime": "04:00:00",
+            "endTime": "07:00:00"
+          }
+        },
+        "Start": 12,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "나는 아침 3시부터 오후 5시까지 자리를 비울 예정입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "아침 3시부터 오후 5시까지 ",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T03,T17,PT14H)",
+          "FutureResolution": {
+            "startTime": "03:00:00",
+            "endTime": "17:00:00"
+          },
+          "PastResolution": {
+            "startTime": "03:00:00",
+            "endTime": "17:00:00"
+          }
+        },
+        "Start": 12,
+        "Length": 31
+      }
+    ]
+  },
+  {
+    "Input": "나는 아침 3시에서 오후 5시 사이에 자리를 비울 예정입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "아침 3시에서 오후 5시 사이에 ",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T03,T17,PT14H)",
+          "FutureResolution": {
+            "startTime": "03:00:00",
+            "endTime": "17:00:00"
+          },
+          "PastResolution": {
+            "startTime": "03:00:00",
+            "endTime": "17:00:00"
+          }
+        },
+        "Start": 12,
+        "Length": 32
+      }
+    ]
+  },
+  {
+    "Input": "나는 오늘 오후 4시에서 5시 사이에 자리를 비울 예정입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "오늘 오후 4시에서 5시 사이에",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T16,T17,PT1H)",
+          "FutureResolution": {
+            "startTime": "16:00:00",
+            "endTime": "17:00:00"
+          },
+          "PastResolution": {
+            "startTime": "16:00:00",
+            "endTime": "17:00:00"
+          }
+        },
+        "Start": 12,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "아침에 만나자. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "아침에",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "TMO",
+          "FutureResolution": {
+            "startTime": "08:00:00",
+            "endTime": "12:00:00"
+          },
+          "PastResolution": {
+            "startTime": "08:00:00",
+            "endTime": "12:00:00"
+          }
+        },
+        "Start": 11,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "오후에 만나자. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "오후에",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "TAF",
+          "FutureResolution": {
+            "startTime": "12:00:00",
+            "endTime": "16:00:00"
+          },
+          "PastResolution": {
+            "startTime": "12:00:00",
+            "endTime": "16:00:00"
+          }
+        },
+        "Start": 11,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "밤에 만나자. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "밤에",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "TNI",
+          "FutureResolution": {
+            "startTime": "20:00:00",
+            "endTime": "23:59:59"
+          },
+          "PastResolution": {
+            "startTime": "20:00:00",
+            "endTime": "23:59:59"
+          }
+        },
+        "Start": 11,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "저녁에 만나자.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "저녁에",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "TEV",
+          "FutureResolution": {
+            "startTime": "16:00:00",
+            "endTime": "20:00:00"
+          },
+          "PastResolution": {
+            "startTime": "16:00:00",
+            "endTime": "20:00:00"
+          }
+        },
+        "Start": 11,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "매일 저녁에 만나자. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "매일 저녁에",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "TEV",
+          "FutureResolution": {
+            "startTime": "16:00:00",
+            "endTime": "20:00:00"
+          },
+          "PastResolution": {
+            "startTime": "16:00:00",
+            "endTime": "20:00:00"
+          }
+        },
+        "Start": 11,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "이른 아침마다 만나자. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "이른 아침마다",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "TMO",
+          "FutureResolution": {
+            "startTime": "08:00:00",
+            "endTime": "10:00:00"
+          },
+          "PastResolution": {
+            "startTime": "08:00:00",
+            "endTime": "10:00:00"
+          }
+        },
+        "Start": 11,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "늦은 아침마다 만나자.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "늦은 아침마다",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "TMO",
+          "FutureResolution": {
+            "startTime": "10:00:00",
+            "endTime": "12:00:00"
+          },
+          "PastResolution": {
+            "startTime": "10:00:00",
+            "endTime": "12:00:00"
+          }
+        },
+        "Start": 11,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "이른 아침에 만나자. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "이른 아침에 ",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "TMO",
+          "FutureResolution": {
+            "startTime": "08:00:00",
+            "endTime": "10:00:00"
+          },
+          "PastResolution": {
+            "startTime": "08:00:00",
+            "endTime": "10:00:00"
+          }
+        },
+        "Start": 11,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "늦은 아침에 만나자. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "늦은 아침에",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "TMO",
+          "FutureResolution": {
+            "startTime": "10:00:00",
+            "endTime": "12:00:00"
+          },
+          "PastResolution": {
+            "startTime": "10:00:00",
+            "endTime": "12:00:00"
+          }
+        },
+        "Start": 11,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "이른 오후에 만나자. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "이른 오후에 만나자. ",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "TAF",
+          "FutureResolution": {
+            "startTime": "12:00:00",
+            "endTime": "14:00:00"
+          },
+          "PastResolution": {
+            "startTime": "12:00:00",
+            "endTime": "14:00:00"
+          }
+        },
+        "Start": 11,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "늦은 오후에 만나자. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "늦은 오후에 만나자. ",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "TAF",
+          "FutureResolution": {
+            "startTime": "14:00:00",
+            "endTime": "16:00:00"
+          },
+          "PastResolution": {
+            "startTime": "14:00:00",
+            "endTime": "16:00:00"
+          }
+        },
+        "Start": 11,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "이른 저녁에 만나자. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "이른 저녁에",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "TEV",
+          "FutureResolution": {
+            "startTime": "16:00:00",
+            "endTime": "18:00:00"
+          },
+          "PastResolution": {
+            "startTime": "16:00:00",
+            "endTime": "18:00:00"
+          }
+        },
+        "Start": 11,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "늦은 저녁에 만나자. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "늦은 저녁에",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "TEV",
+          "FutureResolution": {
+            "startTime": "18:00:00",
+            "endTime": "20:00:00"
+          },
+          "PastResolution": {
+            "startTime": "18:00:00",
+            "endTime": "20:00:00"
+          }
+        },
+        "Start": 11,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "이른 밤에 만나자. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "이른 밤에",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "TNI",
+          "FutureResolution": {
+            "startTime": "20:00:00",
+            "endTime": "22:00:00"
+          },
+          "PastResolution": {
+            "startTime": "20:00:00",
+            "endTime": "22:00:00"
+          }
+        },
+        "Start": 11,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "늦은 밤에 만나자. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "늦은 밤에",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "TNI",
+          "FutureResolution": {
+            "startTime": "22:00:00",
+            "endTime": "23:59:59"
+          },
+          "PastResolution": {
+            "startTime": "22:00:00",
+            "endTime": "23:59:59"
+          }
+        },
+        "Start": 11,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "오후 1시에서 4시까지 만나자. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "오후 1시에서 4시까지 ",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T13,T16,PT3H)",
+          "FutureResolution": {
+            "startTime": "13:00:00",
+            "endTime": "16:00:00"
+          },
+          "PastResolution": {
+            "startTime": "13:00:00",
+            "endTime": "16:00:00"
+          }
+        },
+        "Start": 11,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "오후 1시 30분에서 4시까지 만나자. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "오후 1시 30분에서 4시까지 ",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T13:30,T16,PT2H30M)",
+          "FutureResolution": {
+            "startTime": "13:30:00",
+            "endTime": "16:00:00"
+          },
+          "PastResolution": {
+            "startTime": "13:30:00",
+            "endTime": "16:00:00"
+          }
+        },
+        "Start": 11,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "아침 시간표",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "아침",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "TMO",
+          "FutureResolution": {
+            "startTime": "08:00:00",
+            "endTime": "12:00:00"
+          },
+          "PastResolution": {
+            "startTime": "08:00:00",
+            "endTime": "12:00:00"
+          }
+        },
+        "Start": 20,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "오전 1시 30분에서 3시까지 미팅을 설정해 줘. ",
+    "Context": {
+      "ReferenceDateTime": "2017-12-01T13:37:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "오전 1시 30분에서 3시까지",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T01:30,T03,PT1H30M)",
+          "FutureResolution": {
+            "startTime": "01:30:00",
+            "endTime": "03:00:00"
+          },
+          "PastResolution": {
+            "startTime": "01:30:00",
+            "endTime": "03:00:00"
+          }
+        },
+        "Start": 32,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "수업은 오전 11시에서 3시까지입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2017-12-01T13:37:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "오전 11시에서 3시까지",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T11,T15,PT4H)",
+          "FutureResolution": {
+            "startTime": "11:00:00",
+            "endTime": "15:00:00"
+          },
+          "PastResolution": {
+            "startTime": "11:00:00",
+            "endTime": "15:00:00"
+          }
+        },
+        "Start": 13,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "수업은 오후 11시에서 3시까지입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2017-12-01T13:37:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "오후 11시에서 3시까지",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T23,T03,PT4H)",
+          "FutureResolution": {
+            "startTime": "23:00:00",
+            "endTime": "03:00:00"
+          },
+          "PastResolution": {
+            "startTime": "23:00:00",
+            "endTime": "03:00:00"
+          }
+        },
+        "Start": 13,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "수업은 오후 11시 1분에서 11시까지입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2017-12-01T13:37:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "오후 11시 1분에서 11시까지",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T23:01,T11,PT11H59M)",
+          "FutureResolution": {
+            "startTime": "23:01:00",
+            "endTime": "11:00:00"
+          },
+          "PastResolution": {
+            "startTime": "23:01:00",
+            "endTime": "11:00:00"
+          }
+        },
+        "Start": 13,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "수업은 오전 11시 1분에서 11시까지입니다. ",
+    "Context": {
+      "ReferenceDateTime": "2017-12-01T13:37:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "오전 11시 1분에서 11시까지",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T11:01,T23,PT11H59M)",
+          "FutureResolution": {
+            "startTime": "11:01:00",
+            "endTime": "23:00:00"
+          },
+          "PastResolution": {
+            "startTime": "11:01:00",
+            "endTime": "23:00:00"
+          }
+        },
+        "Start": 13,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "오전 11부터 11시 50분까지 미팅 잡는 것을 도와 줘. ",
+    "Context": {
+      "ReferenceDateTime": "2017-12-01T13:37:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "오전 11부터 11시 50분까지",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T11,T11:50,PT50M)",
+          "FutureResolution": {
+            "startTime": "11:00:00",
+            "endTime": "11:50:00"
+          },
+          "PastResolution": {
+            "startTime": "11:00:00",
+            "endTime": "11:50:00"
+          }
+        },
+        "Start": 32,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "오후 1시 30분에서 3시 30분까지 미팅을 설정해 줘. ",
+    "Context": {
+      "ReferenceDateTime": "2017-12-01T13:37:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "오후 1시 30분에서 3시 30분까지",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T13:30,T15:30,PT2H)",
+          "FutureResolution": {
+            "startTime": "13:30:00",
+            "endTime": "15:30:00"
+          },
+          "PastResolution": {
+            "startTime": "13:30:00",
+            "endTime": "15:30:00"
+          }
+        },
+        "Start": 15,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "오후 1시 30분에서 오후 3시 30분까지 미팅을 설정해 줘. ",
+    "Context": {
+      "ReferenceDateTime": "2017-12-01T13:37:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "오후 1시 30분에서 오후 3시 30분까지",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T13:30,T15:30,PT2H)",
+          "FutureResolution": {
+            "startTime": "13:30:00",
+            "endTime": "15:30:00"
+          },
+          "PastResolution": {
+            "startTime": "13:30:00",
+            "endTime": "15:30:00"
+          }
+        },
+        "Start": 15,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "오후 3시에서 3시 30분까지 미팅을 설정해 줘. ",
+    "Context": {
+      "ReferenceDateTime": "2017-12-01T13:37:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "오후 3시에서 3시 30분까지",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T15,T15:30,PT30M)",
+          "FutureResolution": {
+            "startTime": "15:00:00",
+            "endTime": "15:30:00"
+          },
+          "PastResolution": {
+            "startTime": "15:00:00",
+            "endTime": "15:30:00"
+          }
+        },
+        "Start": 15,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "나는 0시 1분부터 오후 1시까지 기다리고 있습니다. ",
+    "Context": {
+      "ReferenceDateTime": "2017-12-01T13:37:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "0시 1분부터 오후 1시까지",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T00:01,T13,PT12H59M)",
+          "FutureResolution": {
+            "startTime": "00:01:00",
+            "endTime": "13:00:00"
+          },
+          "PastResolution": {
+            "startTime": "00:01:00",
+            "endTime": "13:00:00"
+          }
+        },
+        "Start": 20,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "나는 0시 1분부터 1시까지 기다리고 있습니다. ",
+    "Context": {
+      "ReferenceDateTime": "2017-12-01T13:37:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "0시 1분부터 1시까지",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T00:01,T01,PT59M)",
+          "FutureResolution": {
+            "startTime": "00:01:00",
+            "endTime": "01:00:00"
+          },
+          "PastResolution": {
+            "startTime": "00:01:00",
+            "endTime": "01:00:00"
+          }
+        },
+        "Start": 20,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "3시에서 3시 30분까지 미팅을 설정해 줘. ",
+    "Context": {
+      "ReferenceDateTime": "2017-12-01T13:37:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3시에서 3시 30분까지",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T03,T03:30,PT30M)",
+          "FutureResolution": {
+            "startTime": "03:00:00",
+            "endTime": "03:30:00"
+          },
+          "PastResolution": {
+            "startTime": "03:00:00",
+            "endTime": "03:30:00"
+          }
+        },
+        "Start": 15,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "1시 30분부터 3시까지 미팅을 설정해 줘. ",
+    "Context": {
+      "ReferenceDateTime": "2017-12-01T13:37:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1시 30분부터 3시까지 ",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T01:30,T03,PT1H30M)",
+          "FutureResolution": {
+            "startTime": "01:30:00",
+            "endTime": "03:00:00"
+          },
+          "PastResolution": {
+            "startTime": "01:30:00",
+            "endTime": "03:00:00"
+          }
+        },
+        "Start": 15,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "1시 30분부터 오후 3시까지 미팅 잡는 것을 도와 줘. ",
+    "Context": {
+      "ReferenceDateTime": "2017-12-01T13:37:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1시 30분부터 오후 3시까지",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T13:30,T15,PT1H30M)",
+          "FutureResolution": {
+            "startTime": "13:30:00",
+            "endTime": "15:00:00"
+          },
+          "PastResolution": {
+            "startTime": "13:30:00",
+            "endTime": "15:00:00"
+          }
+        },
+        "Start": 32,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "11시부터 오후 3시까지 미팅 잡는 것을 도와 줘. ",
+    "Context": {
+      "ReferenceDateTime": "2017-12-01T13:37:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "11시부터 오후 3시까지",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T11,T15,PT4H)",
+          "FutureResolution": {
+            "startTime": "11:00:00",
+            "endTime": "15:00:00"
+          },
+          "PastResolution": {
+            "startTime": "11:00:00",
+            "endTime": "15:00:00"
+          }
+        },
+        "Start": 32,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "11시부터 오전 11시 50분까지 미팅 잡는 것을 도와 줘. ",
+    "Context": {
+      "ReferenceDateTime": "2017-12-01T13:37:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "11시부터 오전 11시 50분까지",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T11,T11:50,PT50M)",
+          "FutureResolution": {
+            "startTime": "11:00:00",
+            "endTime": "11:50:00"
+          },
+          "PastResolution": {
+            "startTime": "11:00:00",
+            "endTime": "11:50:00"
+          }
+        },
+        "Start": 32,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "11시부터 오전 3시까지 미팅 잡는 것을 도와 줘. ",
+    "Context": {
+      "ReferenceDateTime": "2017-12-01T13:37:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "11시부터 오전 3시까지",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T23,T03,PT4H)",
+          "FutureResolution": {
+            "startTime": "23:00:00",
+            "endTime": "03:00:00"
+          },
+          "PastResolution": {
+            "startTime": "23:00:00",
+            "endTime": "03:00:00"
+          }
+        },
+        "Start": 32,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "10시부터 오전 11시까지 미팅 잡는 것을 도와 줘. ",
+    "Context": {
+      "ReferenceDateTime": "2017-12-01T13:37:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "10부터 오전 11시까지",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T10,T11,PT1H)",
+          "FutureResolution": {
+            "startTime": "10:00:00",
+            "endTime": "11:00:00"
+          },
+          "PastResolution": {
+            "startTime": "10:00:00",
+            "endTime": "11:00:00"
+          }
+        },
+        "Start": 32,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "23시부터 오전 3시까지 미팅 잡는 것을 도와 줘. ",
+    "Context": {
+      "ReferenceDateTime": "2017-12-01T13:37:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "23시부터 오전 3시까지",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T23,T03,PT4H)",
+          "FutureResolution": {
+            "startTime": "23:00:00",
+            "endTime": "03:00:00"
+          },
+          "PastResolution": {
+            "startTime": "23:00:00",
+            "endTime": "03:00:00"
+          }
+        },
+        "Start": 32,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "23시부터 오후 3시까지 미팅 잡는 것을 도와 줘. ",
+    "Context": {
+      "ReferenceDateTime": "2017-12-01T13:37:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "23시부터 오후 3시까지",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T23,T15,PT16H)",
+          "FutureResolution": {
+            "startTime": "23:00:00",
+            "endTime": "15:00:00"
+          },
+          "PastResolution": {
+            "startTime": "23:00:00",
+            "endTime": "15:00:00"
+          }
+        },
+        "Start": 32,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "10시에서 11시 30분 사이에 미팅을 설정해 줘. ",
+    "Context": {
+      "ReferenceDateTime": "2017-12-01T13:37:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "10시에서 11시 30분 사이에",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T10,T11:30,PT1H30M)",
+          "FutureResolution": {
+            "startTime": "10:00:00",
+            "endTime": "11:30:00"
+          },
+          "PastResolution": {
+            "startTime": "10:00:00",
+            "endTime": "11:30:00"
+          }
+        },
+        "Start": 15,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "오전 10시 10분에서 12시 50분 사이에 미팅을 설정해 줘. ",
+    "Context": {
+      "ReferenceDateTime": "2017-12-01T13:37:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "오전 10시 10분에서 12시 50분 사이에",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T10:10,T12:50,PT2H40M)",
+          "FutureResolution": {
+            "startTime": "10:10:00",
+            "endTime": "12:50:00"
+          },
+          "PastResolution": {
+            "startTime": "10:10:00",
+            "endTime": "12:50:00"
+          }
+        },
+        "Start": 15,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "저녁 10시 10분에서 3시 사이에 미팅을 설정해 줘. ",
+    "Context": {
+      "ReferenceDateTime": "2017-12-01T13:37:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "저녁 10시 10분에서 3시 사이에",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T22:10,T03,PT4H50M)",
+          "FutureResolution": {
+            "startTime": "22:10:00",
+            "endTime": "03:00:00"
+          },
+          "PastResolution": {
+            "startTime": "22:10:00",
+            "endTime": "03:00:00"
+          }
+        },
+        "Start": 15,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "저녁 10시 10분부터 10시까지 미팅을 설정해 줘. ",
+    "Context": {
+      "ReferenceDateTime": "2017-12-01T13:37:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "저녁 10시 10분부터 10시까지",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T22:10,T10,PT11H50M)",
+          "FutureResolution": {
+            "startTime": "22:10:00",
+            "endTime": "10:00:00"
+          },
+          "PastResolution": {
+            "startTime": "22:10:00",
+            "endTime": "10:00:00"
+          }
+        },
+        "Start": 15,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "오전 10시 30분부터 23시까지 미팅을 설정해 줘. ",
+    "Context": {
+      "ReferenceDateTime": "2017-12-01T13:37:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "오전 10시 30분부터 23시까지",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T10:30,T23,PT12H30M)",
+          "FutureResolution": {
+            "startTime": "10:30:00",
+            "endTime": "23:00:00"
+          },
+          "PastResolution": {
+            "startTime": "10:30:00",
+            "endTime": "23:00:00"
+          }
+        },
+        "Start": 15,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "업무 시간에는 전화하지 마세요. ",
+    "Context": {
+      "ReferenceDateTime": "2017-12-01T13:37:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "업무 시간에는 ",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "TBH",
+          "FutureResolution": {
+            "startTime": "08:00:00",
+            "endTime": "18:00:00"
+          },
+          "PastResolution": {
+            "startTime": "08:00:00",
+            "endTime": "18:00:00"
+          }
+        },
+        "Start": 14,
+        "Length": 21
+      }
+    ]
+  }
+]
