@@ -11625,5 +11625,77 @@
         }
       }
     ]
+  },
+  {
+    "Input": "I will travel in Japan on 26 june to 28 june in 2020.",
+    "Context": {
+      "ReferenceDateTime": "2019-05-30T12:00:00"
+    },
+    "NotSupported": "python, javascript",
+    "Results": [
+      {
+        "Text": "26 june to 28 june in 2020",
+        "Start": 26,
+        "End": 51,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2020-06-26,2020-06-28,P2D)",
+              "type": "daterange",
+              "start": "2020-06-26",
+              "end": "2020-06-28"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I will travel in Japan on 26 june in 2019 to 28 june in 2020.",
+    "Context": {
+      "ReferenceDateTime": "2019-05-30T12:00:00"
+    },
+    "Results": [
+      {
+        "Text": "26 june in 2019 to 28 june in 2020",
+        "Start": 26,
+        "End": 59,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2019-06-26,2020-06-28,P368D)",
+              "type": "daterange",
+              "start": "2019-06-26",
+              "end": "2020-06-28"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I will go back to China on 28 june in 2020.",
+    "Context": {
+      "ReferenceDateTime": "2019-05-30T12:00:00"
+    },
+    "Results": [
+      {
+        "Text": "28 june in 2020",
+        "Start": 27,
+        "End": 41,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2020-06-28",
+              "type": "date",
+              "value": "2020-06-28"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
