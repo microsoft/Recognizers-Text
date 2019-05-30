@@ -1,0 +1,1366 @@
+[
+  {
+    "Input": "アラームを8時40分にセットして。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "8時40分",
+        "Type": "time",
+        "Value": {
+          "Timex": "T08:40",
+          "FutureResolution": {
+            "time": "08:40:00"
+          },
+          "PastResolution": {
+            "time": "08:40:00"
+          }
+        },
+        "Start": 17,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "アラームを午前8時40分にセットして。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "午前8時40分",
+        "Type": "time",
+        "Value": {
+          "Timex": "T08:40",
+          "FutureResolution": {
+            "time": "08:40:00"
+          },
+          "PastResolution": {
+            "time": "08:40:00"
+          }
+        },
+        "Start": 17,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "アラームを午後8時40分にセットして。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "午後8時40分",
+        "Type": "time",
+        "Value": {
+          "Timex": "T20:40",
+          "FutureResolution": {
+            "time": "20:40:00"
+          },
+          "PastResolution": {
+            "time": "20:40:00"
+          }
+        },
+        "Start": 17,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "アラームを10時45分にセットして。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "10時45分",
+        "Type": "time",
+        "Value": {
+          "Timex": "T10:45",
+          "FutureResolution": {
+            "time": "10:45:00"
+          },
+          "PastResolution": {
+            "time": "10:45:00"
+          }
+        },
+        "Start": 17,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "アラームを午後15時15分にセットして。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "午後15時15分",
+        "Type": "time",
+        "Value": {
+          "Timex": "T15:15",
+          "FutureResolution": {
+            "time": "15:15:00"
+          },
+          "PastResolution": {
+            "time": "15:15:00"
+          }
+        },
+        "Start": 17,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "アラームを午後15時30分にセットして。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "午後15時30分",
+        "Type": "time",
+        "Value": {
+          "Timex": "T15:30",
+          "FutureResolution": {
+            "time": "15:30:00"
+          },
+          "PastResolution": {
+            "time": "15:30:00"
+          }
+        },
+        "Start": 17,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "アラームを10時10分にセットして。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "10時10分",
+        "Type": "time",
+        "Value": {
+          "Timex": "T10:10",
+          "FutureResolution": {
+            "time": "10:10:00"
+          },
+          "PastResolution": {
+            "time": "10:10:00"
+          }
+        },
+        "Start": 17,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "アラームを午後10時55分にセットして。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "午後10時55分",
+        "Type": "time",
+        "Value": {
+          "Timex": "T22:55",
+          "FutureResolution": {
+            "time": "22:55:00"
+          },
+          "PastResolution": {
+            "time": "22:55:00"
+          }
+        },
+        "Start": 17,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "7時に戻ってきます。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "7時",
+        "Type": "time",
+        "Value": {
+          "Timex": "T07",
+          "FutureResolution": {
+            "time": "07:00:00"
+          },
+          "PastResolution": {
+            "time": "07:00:00"
+          }
+        },
+        "Start": 16,
+        "Length": 1
+      }
+    ]
+  },
+  {
+    "Input": "午後7時に戻ってきます。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "午後7時",
+        "Type": "time",
+        "Value": {
+          "Timex": "T19",
+          "FutureResolution": {
+            "time": "19:00:00"
+          },
+          "PastResolution": {
+            "time": "19:00:00"
+          }
+        },
+        "Start": 13,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "午後7時56分に戻ってきます。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "午後7時56分",
+        "Type": "time",
+        "Value": {
+          "Timex": "T19:56",
+          "FutureResolution": {
+            "time": "19:56:00"
+          },
+          "PastResolution": {
+            "time": "19:56:00"
+          }
+        },
+        "Start": 13,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "午後7時56分30秒に戻ってきます。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "午後7時56分30秒",
+        "Type": "time",
+        "Value": {
+          "Timex": "T19:56:30",
+          "FutureResolution": {
+            "time": "19:56:30"
+          },
+          "PastResolution": {
+            "time": "19:56:30"
+          }
+        },
+        "Start": 13,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "12時34分に戻ってきます。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "12時34分",
+        "Type": "time",
+        "Value": {
+          "Timex": "T12:34",
+          "FutureResolution": {
+            "time": "12:34:00"
+          },
+          "PastResolution": {
+            "time": "12:34:00"
+          }
+        },
+        "Start": 13,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "12時34分25秒に戻ってきます。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "12時34分25秒",
+        "Type": "time",
+        "Value": {
+          "Timex": "T12:34:25",
+          "FutureResolution": {
+            "time": "12:34:25"
+          },
+          "PastResolution": {
+            "time": "12:34:25"
+          }
+        },
+        "Start": 13,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "7時です。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "7時",
+        "Type": "time",
+        "Value": {
+          "Timex": "T07",
+          "FutureResolution": {
+            "time": "07:00:00"
+          },
+          "PastResolution": {
+            "time": "07:00:00"
+          }
+        },
+        "Start": 5,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "朝の8時です。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "朝の8時",
+        "Type": "time",
+        "Value": {
+          "Timex": "T08",
+          "FutureResolution": {
+            "time": "08:00:00"
+          },
+          "PastResolution": {
+            "time": "08:00:00"
+          }
+        },
+        "Start": 5,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "夜の8時です。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "夜の8時",
+        "Type": "time",
+        "Value": {
+          "Timex": "T20",
+          "FutureResolution": {
+            "time": "20:00:00"
+          },
+          "PastResolution": {
+            "time": "20:00:00"
+          }
+        },
+        "Start": 5,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "8時半です。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "8時半",
+        "Type": "time",
+        "Value": {
+          "Timex": "T08:30",
+          "FutureResolution": {
+            "time": "08:30:00"
+          },
+          "PastResolution": {
+            "time": "08:30:00"
+          }
+        },
+        "Start": 5,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "午後8時半です。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "午後8時半",
+        "Type": "time",
+        "Value": {
+          "Timex": "T20:30",
+          "FutureResolution": {
+            "time": "20:30:00"
+          },
+          "PastResolution": {
+            "time": "20:30:00"
+          }
+        },
+        "Start": 5,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "8時30分です。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "8時30分",
+        "Type": "time",
+        "Value": {
+          "Timex": "T08:30",
+          "FutureResolution": {
+            "time": "08:30:00"
+          },
+          "PastResolution": {
+            "time": "08:30:00"
+          }
+        },
+        "Start": 5,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "8時15分です。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "8時15分",
+        "Type": "time",
+        "Value": {
+          "Timex": "T08:15",
+          "FutureResolution": {
+            "time": "08:15:00"
+          },
+          "PastResolution": {
+            "time": "08:15:00"
+          }
+        },
+        "Start": 5,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "午後9時45分です。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "午後9時45分",
+        "Type": "time",
+        "Value": {
+          "Timex": "T21:45",
+          "FutureResolution": {
+            "time": "21:45:00"
+          },
+          "PastResolution": {
+            "time": "21:45:00"
+          }
+        },
+        "Start": 5,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "8時3分前です。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "8時3分前",
+        "Type": "time",
+        "Value": {
+          "Timex": "T07:57",
+          "FutureResolution": {
+            "time": "07:57:00"
+          },
+          "PastResolution": {
+            "time": "07:57:00"
+          }
+        },
+        "Start": 5,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "7時半です。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "7時半",
+        "Type": "time",
+        "Value": {
+          "Timex": "T07:30",
+          "FutureResolution": {
+            "time": "07:30:00"
+          },
+          "PastResolution": {
+            "time": "07:30:00"
+          }
+        },
+        "Start": 5,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "午後7時半です。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "午後7時半",
+        "Type": "time",
+        "Value": {
+          "Timex": "T19:30",
+          "FutureResolution": {
+            "time": "19:30:00"
+          },
+          "PastResolution": {
+            "time": "19:30:00"
+          }
+        },
+        "Start": 5,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "朝の7時半です。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "朝の7時半",
+        "Type": "time",
+        "Value": {
+          "Timex": "T07:30",
+          "FutureResolution": {
+            "time": "07:30:00"
+          },
+          "PastResolution": {
+            "time": "07:30:00"
+          }
+        },
+        "Start": 5,
+        "Length": 30
+      }
+    ]
+  },
+  {
+    "Input": "朝の8時15分前です。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "朝の8時15分前",
+        "Type": "time",
+        "Value": {
+          "Timex": "T07:45",
+          "FutureResolution": {
+            "time": "07:45:00"
+          },
+          "PastResolution": {
+            "time": "07:45:00"
+          }
+        },
+        "Start": 5,
+        "Length": 29
+      }
+    ]
+  },
+  {
+    "Input": "夜の8時20分です。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "夜の8時20分",
+        "Type": "time",
+        "Value": {
+          "Timex": "T20:20",
+          "FutureResolution": {
+            "time": "20:20:00"
+          },
+          "PastResolution": {
+            "time": "20:20:00"
+          }
+        },
+        "Start": 5,
+        "Length": 32
+      }
+    ]
+  },
+  {
+    "Input": "午後の7時に戻ってきます。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "午後の7時に",
+        "Type": "time",
+        "Value": {
+          "Timex": "T19",
+          "FutureResolution": {
+            "time": "19:00:00"
+          },
+          "PastResolution": {
+            "time": "19:00:00"
+          }
+        },
+        "Start": 13,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "午後7時00分05秒に戻ってきます。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "午後7時00分05秒",
+        "Type": "time",
+        "Value": {
+          "Timex": "T19:00:05",
+          "FutureResolution": {
+            "time": "19:00:05"
+          },
+          "PastResolution": {
+            "time": "19:00:05"
+          }
+        },
+        "Start": 13,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "午後7時30分に戻ります。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "午後7時30分",
+        "Type": "time",
+        "Value": {
+          "Timex": "T19:30",
+          "FutureResolution": {
+            "time": "19:30:00"
+          },
+          "PastResolution": {
+            "time": "19:30:00"
+          }
+        },
+        "Start": 13,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "午後7時35分に戻ります。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "午後7時35分",
+        "Type": "time",
+        "Value": {
+          "Timex": "T19:35",
+          "FutureResolution": {
+            "time": "19:35:00"
+          },
+          "PastResolution": {
+            "time": "19:35:00"
+          }
+        },
+        "Start": 13,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "午後11時20分に戻ります。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "午後11時20分",
+        "Type": "time",
+        "Value": {
+          "Timex": "T23:20",
+          "FutureResolution": {
+            "time": "23:20:00"
+          },
+          "PastResolution": {
+            "time": "23:20:00"
+          }
+        },
+        "Start": 13,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "正午ごろ戻ってきます。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "正午ごろ",
+        "Type": "time",
+        "Value": {
+          "Timex": "T12",
+          "FutureResolution": {
+            "time": "12:00:00"
+          },
+          "PastResolution": {
+            "time": "12:00:00"
+          }
+        },
+        "Start": 13,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "正午12時に戻ってきます。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "正午12時",
+        "Type": "time",
+        "Value": {
+          "Timex": "T12",
+          "FutureResolution": {
+            "time": "12:00:00"
+          },
+          "PastResolution": {
+            "time": "12:00:00"
+          }
+        },
+        "Start": 13,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "11時ごろ戻ってきます。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "11時ごろ",
+        "Type": "time",
+        "Value": {
+          "Timex": "T11",
+          "FutureResolution": {
+            "time": "11:00:00"
+          },
+          "PastResolution": {
+            "time": "11:00:00"
+          }
+        },
+        "Start": 13,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "午後3時40分に戻ってきます。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "午後3時40分",
+        "Type": "time",
+        "Value": {
+          "Timex": "T15:40",
+          "FutureResolution": {
+            "time": "15:40:00"
+          },
+          "PastResolution": {
+            "time": "15:40:00"
+          }
+        },
+        "Start": 13,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "午前11時40分に戻ってきます。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "午前11時40分",
+        "Type": "time",
+        "Value": {
+          "Timex": "T11:40",
+          "FutureResolution": {
+            "time": "11:40:00"
+          },
+          "PastResolution": {
+            "time": "11:40:00"
+          }
+        },
+        "Start": 13,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "真夜中",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "真夜中",
+        "Type": "time",
+        "Value": {
+          "Timex": "T00",
+          "FutureResolution": {
+            "time": "00:00:00"
+          },
+          "PastResolution": {
+            "time": "00:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "午前中",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "午前中",
+        "Type": "time",
+        "Value": {
+          "Timex": "T10",
+          "FutureResolution": {
+            "time": "10:00:00"
+          },
+          "PastResolution": {
+            "time": "10:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "午後3時ごろ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "午後3時ごろ",
+        "Type": "time",
+        "Value": {
+          "Timex": "T14",
+          "FutureResolution": {
+            "time": "14:00:00"
+          },
+          "PastResolution": {
+            "time": "14:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "日中",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "日中",
+        "Type": "time",
+        "Value": {
+          "Timex": "T12",
+          "FutureResolution": {
+            "time": "12:00:00"
+          },
+          "PastResolution": {
+            "time": "12:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "正午",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "正午",
+        "Type": "time",
+        "Value": {
+          "Timex": "T12",
+          "FutureResolution": {
+            "time": "12:00:00"
+          },
+          "PastResolution": {
+            "time": "12:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "昼食時の12時に戻ってきます。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "昼食時の12時",
+        "Type": "time",
+        "Value": {
+          "Timex": "T12",
+          "FutureResolution": {
+            "time": "12:00:00"
+          },
+          "PastResolution": {
+            "time": "12:00:00"
+          }
+        },
+        "Start": 13,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "夜中の12時に戻ってきます。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "夜中の12時",
+        "Type": "time",
+        "Value": {
+          "Timex": "T00",
+          "FutureResolution": {
+            "time": "00:00:00"
+          },
+          "PastResolution": {
+            "time": "00:00:00"
+          }
+        },
+        "Start": 13,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "夜の12時に戻ってきます。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "夜の12時",
+        "Type": "time",
+        "Value": {
+          "Timex": "T00",
+          "FutureResolution": {
+            "time": "00:00:00"
+          },
+          "PastResolution": {
+            "time": "00:00:00"
+          }
+        },
+        "Start": 13,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "夜中の1時に戻ってきます。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "夜中の1時",
+        "Type": "time",
+        "Value": {
+          "Timex": "T01",
+          "FutureResolution": {
+            "time": "01:00:00"
+          },
+          "PastResolution": {
+            "time": "01:00:00"
+          }
+        },
+        "Start": 13,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "昼食時の11時に戻ってきます。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "昼食時の11時",
+        "Type": "time",
+        "Value": {
+          "Timex": "T11",
+          "FutureResolution": {
+            "time": "11:00:00"
+          },
+          "PastResolution": {
+            "time": "11:00:00"
+          }
+        },
+        "Start": 13,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "昼食時の1時に戻ってきます。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "昼食時の1時",
+        "Type": "time",
+        "Value": {
+          "Timex": "T13",
+          "FutureResolution": {
+            "time": "13:00:00"
+          },
+          "PastResolution": {
+            "time": "13:00:00"
+          }
+        },
+        "Start": 13,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "11時の昼食時に戻ってきます。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "11時の昼食時に",
+        "Type": "time",
+        "Value": {
+          "Timex": "T11",
+          "FutureResolution": {
+            "time": "11:00:00"
+          },
+          "PastResolution": {
+            "time": "11:00:00"
+          }
+        },
+        "Start": 13,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "午後7時56分13秒に戻ってきます。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "午後7時56分13秒",
+        "Type": "time",
+        "Value": {
+          "Timex": "T19:56:13",
+          "FutureResolution": {
+            "time": "19:56:13"
+          },
+          "PastResolution": {
+            "time": "19:56:13"
+          }
+        },
+        "Start": 13,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "12時34分45秒に戻ってきます。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "12時34分45秒",
+        "Type": "time",
+        "Value": {
+          "Timex": "T12:34:45",
+          "FutureResolution": {
+            "time": "12:34:45"
+          },
+          "PastResolution": {
+            "time": "12:34:45"
+          }
+        },
+        "Start": 13,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "午後7時25秒に戻ってきます。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "午後7時25秒",
+        "Type": "time",
+        "Value": {
+          "Timex": "T19:00:25",
+          "FutureResolution": {
+            "time": "19:00:25"
+          },
+          "PastResolution": {
+            "time": "19:00:25"
+          }
+        },
+        "Start": 13,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "午前7時30分に戻ります。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "午前7時30分",
+        "Type": "time",
+        "Value": {
+          "Timex": "T07:30",
+          "FutureResolution": {
+            "time": "07:30:00"
+          },
+          "PastResolution": {
+            "time": "07:30:00"
+          }
+        },
+        "Start": 13,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "11時5分に戻ります。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "11時5分",
+        "Type": "time",
+        "Value": {
+          "Timex": "T11:05",
+          "FutureResolution": {
+            "time": "11:05:00"
+          },
+          "PastResolution": {
+            "time": "11:05:00"
+          }
+        },
+        "Start": 16,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "5時27分に戻ります。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "5時27分",
+        "Type": "time",
+        "Value": {
+          "Timex": "T05:27",
+          "FutureResolution": {
+            "time": "05:27:00"
+          },
+          "PastResolution": {
+            "time": "05:27:00"
+          }
+        },
+        "Start": 13,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "夜の5時30分に戻ります。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "夜の5時30分",
+        "Type": "time",
+        "Value": {
+          "Timex": "T17:30",
+          "FutureResolution": {
+            "time": "17:30:00"
+          },
+          "PastResolution": {
+            "time": "17:30:00"
+          }
+        },
+        "Start": 13,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "正午に戻ってきます。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "正午",
+        "Type": "time",
+        "Value": {
+          "Timex": "T12",
+          "FutureResolution": {
+            "time": "12:00:00"
+          },
+          "PastResolution": {
+            "time": "12:00:00"
+          }
+        },
+        "Start": 13,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "正午の昼食時に戻ってきます。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "正午の昼食時に",
+        "Type": "time",
+        "Value": {
+          "Timex": "T12",
+          "FutureResolution": {
+            "time": "12:00:00"
+          },
+          "PastResolution": {
+            "time": "12:00:00"
+          }
+        },
+        "Start": 13,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "7時1分に戻ってきます。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "7時1分",
+        "Type": "time",
+        "Value": {
+          "Timex": "T07:01",
+          "FutureResolution": {
+            "time": "07:01:00"
+          },
+          "PastResolution": {
+            "time": "07:01:00"
+          }
+        },
+        "Start": 16,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "午後10時10分に戻ってきます。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "午後10時10分",
+        "Type": "time",
+        "Value": {
+          "Timex": "T22:10",
+          "FutureResolution": {
+            "time": "22:10:00"
+          },
+          "PastResolution": {
+            "time": "22:10:00"
+          }
+        },
+        "Start": 16,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "午後10時13分に戻ってきます。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "午後10時13分",
+        "Type": "time",
+        "Value": {
+          "Timex": "T22:13",
+          "FutureResolution": {
+            "time": "22:13:00"
+          },
+          "PastResolution": {
+            "time": "22:13:00"
+          }
+        },
+        "Start": 16,
+        "Length": 25
+      }
+    ]
+  }
+]
