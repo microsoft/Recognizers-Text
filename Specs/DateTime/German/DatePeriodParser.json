@@ -183,32 +183,6 @@
     ]
   },
   {
-    "Input": "diese Woche",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "javascript, python",
-    "Results": [
-      {
-        "Text": "diese Woche",
-        "Type": "daterange",
-        "Value": {
-          "Timex": "2016-W45",
-          "FutureResolution": {
-            "startDate": "2016-11-07",
-            "endDate": "2016-11-14"
-          },
-          "PastResolution": {
-            "startDate": "2016-11-07",
-            "endDate": "2016-11-14"
-          }
-        },
-        "Start": 0,
-        "Length": 11
-      }
-    ]
-  },
-  {
     "Input": "Ich bin vom 1. Januar bis Mittwoch den 22. Januar weg",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"

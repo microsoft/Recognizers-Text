@@ -26,6 +26,13 @@ if EXIST "%VSInstallDir%\MSBuild\!MsBuildVersion!\Bin\MSBuild.exe" (
 	EXIT /B
 )
 
+ECHO.
+ECHO # Check for empty and duplicate inputs in Specs
+Powershell -ExecutionPolicy Bypass "& {buildtools\checkSpec.ps1; exit $LastExitCode }"
+IF %ERRORLEVEL% NEQ 0 (
+	ECHO # Failed, including empty or duplicate inputs in Specs
+	EXIT /b %ERRORLEVEL%
+)
 
 ECHO.
 ECHO # Restoring NuGet dependencies

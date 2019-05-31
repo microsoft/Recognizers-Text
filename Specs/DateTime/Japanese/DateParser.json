@@ -936,30 +936,6 @@
     ]
   },
   {
-    "Input": "私は来週の日曜日に戻ります",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupportedByDesign": "dotNet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "来週の日曜日",
-        "Type": "date",
-        "Value": {
-          "Timex": "2016-11-06",
-          "FutureResolution": {
-            "date": "2016-11-06"
-          },
-          "PastResolution": {
-            "date": "2016-11-06"
-          }
-        },
-        "Start": 2,
-        "Length": 6
-      }
-    ]
-  },
-  {
     "Input": "私は昨日戻りました",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
