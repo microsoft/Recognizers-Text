@@ -11,8 +11,8 @@
           "value": "75000000",
           "unit": "Dollar"
         },
-        "Start": 17,
-        "End": 23
+        "Start": 29,
+        "End": 40
       }
     ]
   },
@@ -28,8 +28,8 @@
           "value": "420000000",
           "unit": "Finnish markka"
         },
-        "Start": 51,
-        "End": 65
+        "Start": 111,
+        "End": 136
       }
     ]
   },
@@ -46,7 +46,7 @@
           "unit": "Dollar"
         },
         "Start": 33,
-        "End": 41
+        "End": 39
       }
     ]
   },
@@ -62,8 +62,8 @@
           "value": "48200000",
           "unit": "Dollar"
         },
-        "Start": 51,
-        "End": 61
+        "Start": 75,
+        "End": 87
       }
     ]
   },
@@ -80,8 +80,8 @@
           "unit": "Canadian dollar",
           "isoCurrency": "CAD"
         },
-        "Start": 16,
-        "End": 30
+        "Start": 49,
+        "End": 64
       }
     ]
   },
@@ -97,8 +97,8 @@
           "value": "280000000",
           "unit": "Dollar"
         },
-        "Start": 45,
-        "End": 54
+        "Start": 87,
+        "End": 99
       }
     ]
   },
@@ -114,8 +114,8 @@
           "value": "14000000",
           "unit": "Dollar"
         },
-        "Start": 22,
-        "End": 30
+        "Start": 35,
+        "End": 46
       }
     ]
   },
@@ -131,8 +131,8 @@
           "value": "12345",
           "unit": "Dollar"
         },
-        "Start": 7,
-        "End": 19
+        "Start": 23,
+        "End": 30
       }
     ]
   },
@@ -148,8 +148,8 @@
           "value": "247000000",
           "unit": "Dollar"
         },
-        "Start": 16,
-        "End": 28
+        "Start": 45,
+        "End": 57
       }
     ]
   },
@@ -165,8 +165,8 @@
           "value": "8100000",
           "unit": "Pound"
         },
-        "Start": 25,
-        "End": 35
+        "Start": 37,
+        "End": 50
       }
     ]
   },
@@ -182,8 +182,8 @@
           "value": "254000000",
           "unit": "Dollar"
         },
-        "Start": 24,
-        "End": 36
+        "Start": 48,
+        "End": 60
       }
     ]
   },
@@ -199,8 +199,8 @@
           "value": "1000000000",
           "unit": "Dollar"
         },
-        "Start": 42,
-        "End": 48
+        "Start": 135,
+        "End": 145
       }
     ]
   },
@@ -216,8 +216,8 @@
           "value": "35000000",
           "unit": "Dollar"
         },
-        "Start": 13,
-        "End": 22
+        "Start": 63,
+        "End": 74
       }
     ]
   },
@@ -233,8 +233,8 @@
           "value": "40000",
           "unit": "Dollar"
         },
-        "Start": 66,
-        "End": 71
+        "Start": 132,
+        "End": 139
       }
     ]
   },
@@ -250,8 +250,8 @@
           "value": "250000",
           "unit": "Dollar"
         },
-        "Start": 51,
-        "End": 57
+        "Start": 97,
+        "End": 105
       }
     ]
   },
@@ -267,8 +267,8 @@
           "value": "50",
           "unit": "Cent"
         },
-        "Start": 67,
-        "End": 71
+        "Start": 128,
+        "End": 135
       }
     ]
   },
@@ -284,8 +284,8 @@
           "value": "800",
           "unit": "Dollar"
         },
-        "Start": 64,
-        "End": 70
+        "Start": 91,
+        "End": 95
       }
     ]
   },
@@ -301,8 +301,8 @@
           "value": "125000000",
           "unit": "Dollar"
         },
-        "Start": 28,
-        "End": 40
+        "Start": 19,
+        "End": 31
       }
     ]
   },
@@ -318,8 +318,8 @@
           "value": "2.75",
           "unit": "Dollar"
         },
-        "Start": 26,
-        "End": 33
+        "Start": 72,
+        "End": 77
       }
     ]
   },
@@ -335,8 +335,8 @@
           "value": "90000000",
           "unit": "Dollar"
         },
-        "Start": 36,
-        "End": 42
+        "Start": 119,
+        "End": 130
       }
     ]
   },
@@ -352,8 +352,8 @@
           "value": "470000000",
           "unit": "Dollar"
         },
-        "Start": 17,
-        "End": 26
+        "Start": 86,
+        "End": 98
       }
     ]
   },
@@ -369,8 +369,8 @@
           "value": "300000000",
           "unit": "Dollar"
         },
-        "Start": 19,
-        "End": 24
+        "Start": 29,
+        "End": 41
       }
     ]
   },
@@ -386,8 +386,8 @@
           "value": "1.22",
           "unit": "Dollar"
         },
-        "Start": 130,
-        "End": 137
+        "Start": 179,
+        "End": 184
       }
     ]
   },
@@ -403,8 +403,8 @@
           "value": "1.2",
           "unit": "Cent"
         },
-        "Start": 8,
-        "End": 16
+        "Start": 27,
+        "End": 36
       }
     ]
   },
@@ -420,8 +420,8 @@
           "value": "70",
           "unit": "Dollar"
         },
-        "Start": 61,
-        "End": 66
+        "Start": 95,
+        "End": 98
       }
     ]
   },
@@ -437,8 +437,8 @@
           "value": "14000000",
           "unit": "Dollar"
         },
-        "Start": 18,
-        "End": 26
+        "Start": 47,
+        "End": 58
       }
     ]
   },
@@ -454,8 +454,8 @@
           "value": "48000000000",
           "unit": "Dollar"
         },
-        "Start": 0,
-        "End": 7
+        "Start": 60,
+        "End": 71
       }
     ]
   },
@@ -471,8 +471,8 @@
           "value": "300000000",
           "unit": "Dollar"
         },
-        "Start": 67,
-        "End": 72
+        "Start": 35,
+        "End": 47
       }
     ]
   },
@@ -488,8 +488,8 @@
           "value": "5000",
           "unit": "Dollar"
         },
-        "Start": 34,
-        "End": 39
+        "Start": 58,
+        "End": 64
       }
     ]
   },
@@ -505,13 +505,13 @@
           "value": "1000000000",
           "unit": "Dollar"
         },
-        "Start": 35,
-        "End": 41
+        "Start": 83,
+        "End": 93
       }
     ]
   },
   {
-    "Input": "asarco는 8월에 lac d 'amiante du quebec 자회사를 통해 1천 1백 70만 달러에 캐나다의 석면 채굴 유한 책임 회사에 나머지 1/3의 지분을 매각했습니다.\n",
+    "Input": "asarco는 8월에 lac d 'amiante du quebec 자회사를 통해 1천 1백 70만 달러에 캐나다의 석면 채굴 유한 책임 회사에 나머지 1/3의 지분을 매각했습니다.",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
@@ -522,8 +522,8 @@
           "value": "11700000",
           "unit": "Dollar"
         },
-        "Start": 45,
-        "End": 57
+        "Start": 168,
+        "End": 181
       }
     ]
   },
@@ -540,8 +540,8 @@
           "unit": "Hong Kong dollar",
           "isoCurrency": "HKD"
         },
-        "Start": 41,
-        "End": 54
+        "Start": 83,
+        "End": 100
       }
     ]
   },
@@ -557,8 +557,8 @@
           "value": "1170000000",
           "unit": "Dollar"
         },
-        "Start": 19,
-        "End": 29
+        "Start": 54,
+        "End": 67
       }
     ]
   },
@@ -574,8 +574,8 @@
           "value": "2.5",
           "unit": "Dollar"
         },
-        "Start": 46,
-        "End": 53
+        "Start": 96,
+        "End": 101
       }
     ]
   },
@@ -591,8 +591,8 @@
           "value": "300000",
           "unit": "Dollar"
         },
-        "Start": 11,
-        "End": 17
+        "Start": 47,
+        "End": 55
       }
     ]
   },
@@ -608,8 +608,8 @@
           "value": "1450000000",
           "unit": "Dollar"
         },
-        "Start": 17,
-        "End": 27
+        "Start": 22,
+        "End": 35
       }
     ]
   },
@@ -625,8 +625,8 @@
           "value": "2000000000",
           "unit": "Dollar"
         },
-        "Start": 14,
-        "End": 20
+        "Start": 107,
+        "End": 117
       }
     ]
   },
@@ -642,8 +642,8 @@
           "value": "34",
           "unit": "Cent"
         },
-        "Start": 17,
-        "End": 22
+        "Start": 25,
+        "End": 32
       }
     ]
   },
@@ -659,8 +659,8 @@
           "value": "62700000",
           "unit": "Dollar"
         },
-        "Start": 42,
-        "End": 54
+        "Start": 215,
+        "End": 228
       }
     ]
   },
@@ -676,8 +676,8 @@
           "value": "22500000",
           "unit": "Dollar"
         },
-        "Start": 36,
-        "End": 48
+        "Start": 66,
+        "End": 79
       }
     ]
   },
@@ -693,8 +693,8 @@
           "value": "63.45",
           "unit": "Dollar"
         },
-        "Start": 42,
-        "End": 51
+        "Start": 84,
+        "End": 90
       }
     ]
   },
@@ -710,8 +710,8 @@
           "value": "150000000",
           "unit": "Dollar"
         },
-        "Start": 31,
-        "End": 40
+        "Start": 41,
+        "End": 53
       }
     ]
   },
@@ -727,8 +727,8 @@
           "value": "8.5",
           "unit": "Dollar"
         },
-        "Start": 19,
-        "End": 26
+        "Start": 47,
+        "End": 52
       }
     ]
   },
@@ -744,8 +744,8 @@
           "value": "14.27",
           "unit": "Cent"
         },
-        "Start": 10,
-        "End": 18
+        "Start": 48,
+        "End": 58
       }
     ]
   },
@@ -761,8 +761,8 @@
           "value": "75300000",
           "unit": "Dollar"
         },
-        "Start": 17,
-        "End": 27
+        "Start": 47,
+        "End": 60
       }
     ]
   },
@@ -778,8 +778,8 @@
           "value": "2380000000",
           "unit": "Dollar"
         },
-        "Start": 0,
-        "End": 9
+        "Start": 4,
+        "End": 17
       }
     ]
   },
@@ -795,8 +795,8 @@
           "value": "528000000",
           "unit": "Franc"
         },
-        "Start": 29,
-        "End": 41
+        "Start": 38,
+        "End": 55
       }
     ]
   },
@@ -813,8 +813,8 @@
           "unit": "United States dollar",
           "isoCurrency": "USD"
         },
-        "Start": 23,
-        "End": 35
+        "Start": 22,
+        "End": 37
       }
     ]
   },
@@ -830,8 +830,8 @@
           "value": "98",
           "unit": "Dollar"
         },
-        "Start": 18,
-        "End": 23
+        "Start": 48,
+        "End": 51
       }
     ]
   },
@@ -847,8 +847,8 @@
           "value": "500000000",
           "unit": "Dollar"
         },
-        "Start": 10,
-        "End": 15
+        "Start": 54,
+        "End": 66
       }
     ]
   },
@@ -864,8 +864,8 @@
           "value": "13180000000",
           "unit": "Dollar"
         },
-        "Start": 33,
-        "End": 44
+        "Start": 69,
+        "End": 83
       }
     ]
   },
@@ -881,8 +881,8 @@
           "value": "1.4",
           "unit": "Dollar"
         },
-        "Start": 21,
-        "End": 28
+        "Start": 49,
+        "End": 54
       }
     ]
   },
@@ -898,8 +898,8 @@
           "value": "2540000000",
           "unit": "Dollar"
         },
-        "Start": 22,
-        "End": 32
+        "Start": 87,
+        "End": 100
       }
     ]
   },
@@ -917,7 +917,7 @@
           "isoCurrency": "AUD"
         },
         "Start": 0,
-        "End": 15
+        "End": 29
       }
     ]
   },
@@ -934,8 +934,8 @@
           "unit": "Japanese yen",
           "isoCurrency": "JPY"
         },
-        "Start": 26,
-        "End": 32
+        "Start": 92,
+        "End": 107
       }
     ]
   },
@@ -952,8 +952,8 @@
           "unit": "Japanese yen",
           "isoCurrency": "JPY"
         },
-        "Start": 15,
-        "End": 20
+        "Start": 11,
+        "End": 21
       }
     ]
   },
@@ -969,8 +969,8 @@
           "value": "470",
           "unit": "Pence"
         },
-        "Start": 90,
-        "End": 96
+        "Start": 96,
+        "End": 104
       }
     ]
   },
@@ -987,8 +987,8 @@
           "unit": "Japanese yen",
           "isoCurrency": "JPY"
         },
-        "Start": 39,
-        "End": 48
+        "Start": 72,
+        "End": 82
       }
     ]
   },
@@ -1004,8 +1004,8 @@
           "value": "12",
           "unit": "Cent"
         },
-        "Start": 52,
-        "End": 57
+        "Start": 74,
+        "End": 80
       }
     ]
   },
@@ -1022,8 +1022,8 @@
           "unit": "Canadian dollar",
           "isoCurrency": "CAD"
         },
-        "Start": 13,
-        "End": 22
+        "Start": 21,
+        "End": 35
       }
     ]
   },
@@ -1040,8 +1040,8 @@
           "unit": "Canadian dollar",
           "isoCurrency": "CAD"
         },
-        "Start": 5,
-        "End": 16
+        "Start": 22,
+        "End": 29
       }
     ]
   },
@@ -1057,8 +1057,8 @@
           "value": "64.2",
           "unit": "Cent"
         },
-        "Start": 16,
-        "End": 23
+        "Start": 20,
+        "End": 29
       }
     ]
   },
@@ -1074,8 +1074,8 @@
           "value": "20000000000",
           "unit": "Franc"
         },
-        "Start": 52,
-        "End": 59
+        "Start": 71,
+        "End": 87
       }
     ]
   },
@@ -1091,8 +1091,8 @@
           "value": "6650000000",
           "unit": "Peseta"
         },
-        "Start": 7,
-        "End": 18
+        "Start": 160,
+        "End": 179
       }
     ]
   },
@@ -1109,8 +1109,8 @@
           "unit": "Japanese yen",
           "isoCurrency": "JPY"
         },
-        "Start": 41,
-        "End": 43
+        "Start": 58,
+        "End": 64
       }
     ]
   },
@@ -1127,7 +1127,7 @@
           "unit": "Netherlands guilder"
         },
         "Start": 0,
-        "End": 14
+        "End": 25
       }
     ]
   },
@@ -1143,8 +1143,8 @@
           "value": "1015",
           "unit": "Franc"
         },
-        "Start": 75,
-        "End": 83
+        "Start": 115,
+        "End": 126
       }
     ]
   },
@@ -1160,8 +1160,8 @@
           "value": "1",
           "unit": "Penny"
         },
-        "Start": 6,
-        "End": 10
+        "Start": 42,
+        "End": 50
       }
     ]
   },
@@ -1177,8 +1177,8 @@
           "value": "197",
           "unit": "Pence"
         },
-        "Start": 5,
-        "End": 11
+        "Start": 19,
+        "End": 27
       }
     ]
   },
@@ -1194,8 +1194,8 @@
           "value": "361000000",
           "unit": "Pound"
         },
-        "Start": 15,
-        "End": 28
+        "Start": 43,
+        "End": 60
       }
     ]
   },
@@ -1212,8 +1212,8 @@
           "unit": "Chinese yuan",
           "isoCurrency": "CNY"
         },
-        "Start": 30,
-        "End": 35
+        "Start": 91,
+        "End": 106
       }
     ]
   },
@@ -1229,8 +1229,8 @@
           "value": "50000000",
           "unit": "Pound"
         },
-        "Start": 28,
-        "End": 35
+        "Start": 33,
+        "End": 44
       }
     ]
   },
@@ -1247,8 +1247,8 @@
           "unit": "Swiss franc",
           "isoCurrency": "CHF"
         },
-        "Start": 59,
-        "End": 68
+        "Start": 115,
+        "End": 133
       }
     ]
   },
@@ -1264,8 +1264,8 @@
           "value": "15000000",
           "unit": "Pound"
         },
-        "Start": 18,
-        "End": 28
+        "Start": 105,
+        "End": 116
       }
     ]
   },
@@ -1281,8 +1281,8 @@
           "value": "4000000000",
           "unit": "Dollar"
         },
-        "Start": 52,
-        "End": 58
+        "Start": 118,
+        "End": 128
       }
     ]
   },
@@ -1298,8 +1298,8 @@
           "value": "4000000",
           "unit": "Dollar"
         },
-        "Start": 39,
-        "End": 45
+        "Start": 24,
+        "End": 34
       }
     ]
   },
@@ -1315,8 +1315,8 @@
           "value": "1600000",
           "unit": "Dollar"
         },
-        "Start": 22,
-        "End": 29
+        "Start": 35,
+        "End": 47
       }
     ]
   },
@@ -1333,8 +1333,8 @@
           "unit": "Euro",
           "isoCurrency": "EUR"
         },
-        "Start": 46,
-        "End": 52
+        "Start": 31,
+        "End": 41
       }
     ]
   },
@@ -1351,8 +1351,8 @@
           "unit": "United States dollar",
           "isoCurrency": "USD"
         },
-        "Start": 34,
-        "End": 44
+        "Start": 83,
+        "End": 97
       }
     ]
   },
@@ -1368,8 +1368,8 @@
           "value": "659",
           "unit": "Dollar"
         },
-        "Start": 56,
-        "End": 62
+        "Start": 103,
+        "End": 107
       }
     ]
   },
@@ -1385,8 +1385,8 @@
           "value": "2",
           "unit": "Dollar"
         },
-        "Start": 33,
-        "End": 37
+        "Start": 54,
+        "End": 56
       }
     ]
   },
@@ -1402,8 +1402,8 @@
           "value": "60000",
           "unit": "Pound"
         },
-        "Start": 73,
-        "End": 79
+        "Start": 130,
+        "End": 137
       }
     ]
   },
@@ -1419,8 +1419,8 @@
           "value": "100",
           "unit": "Pound"
         },
-        "Start": 20,
-        "End": 27
+        "Start": 51,
+        "End": 55
       }
     ]
   },
@@ -1436,8 +1436,8 @@
           "value": "415900000",
           "unit": "Dollar"
         },
-        "Start": 26,
-        "End": 39
+        "Start": 47,
+        "End": 61
       }
     ]
   },
@@ -1453,8 +1453,8 @@
           "value": "210",
           "unit": "Pence"
         },
-        "Start": 28,
-        "End": 34
+        "Start": 53,
+        "End": 61
       }
     ]
   },
@@ -1470,8 +1470,8 @@
           "value": "3000000",
           "unit": "Dollar"
         },
-        "Start": 22,
-        "End": 29
+        "Start": 70,
+        "End": 80
       }
     ]
   },
@@ -1487,8 +1487,8 @@
           "value": "500000000",
           "unit": "Dollar"
         },
-        "Start": 22,
-        "End": 28
+        "Start": 101,
+        "End": 113
       }
     ]
   },
@@ -1504,8 +1504,8 @@
           "value": "90000000",
           "unit": "Pound"
         },
-        "Start": 49,
-        "End": 56
+        "Start": 86,
+        "End": 97
       }
     ]
   },
@@ -1521,8 +1521,8 @@
           "value": "125000",
           "unit": "Dollar"
         },
-        "Start": 18,
-        "End": 27
+        "Start": 60,
+        "End": 68
       }
     ]
   },
@@ -1538,8 +1538,8 @@
           "value": "186000000",
           "unit": "Dollar"
         },
-        "Start": 10,
-        "End": 22
+        "Start": 78,
+        "End": 90
       }
     ]
   },
@@ -1555,8 +1555,8 @@
           "value": "100000000",
           "unit": "Dollar"
         },
-        "Start": 60,
-        "End": 65
+        "Start": 75,
+        "End": 87
       }
     ]
   },
@@ -1572,11 +1572,11 @@
           "value": "20000",
           "unit": "Dollar"
         },
-        "Start": 135,
-        "End": 140
+        "Start": 237,
+        "End": 244
       },
       {
-        "Text": "dollar",
+        "Text": "달러",
         "TypeName": "currency",
         "Resolution": {
           "value": null,
@@ -1600,10 +1600,10 @@
           "unit": "Dollar"
         },
         "Start": 0,
-        "End": 2
+        "End": 5
       },
       {
-        "Text": "143.80 yen",
+        "Text": "143.80 엔",
         "TypeName": "currency",
         "Resolution": {
           "value": "143.8",
@@ -1627,8 +1627,8 @@
           "value": "3.5",
           "unit": "Dollar"
         },
-        "Start": 7,
-        "End": 17
+        "Start": 13,
+        "End": 30
       }
     ]
   },
@@ -1644,8 +1644,8 @@
           "value": "13.45",
           "unit": "Dollar"
         },
-        "Start": 7,
-        "End": 18
+        "Start": 13,
+        "End": 49
       }
     ]
   },
@@ -1661,8 +1661,8 @@
           "unit": "Dollar",
           "value": "1.01"
         },
-        "Start": 0,
-        "End": 7
+        "Start": 9,
+        "End": 26
       }
     ]
   },
@@ -1679,11 +1679,11 @@
           "unit": "United States dollar",
           "value": "10"
         },
-        "Start": 10,
-        "End": 18
+        "Start": 13,
+        "End": 24
       },
       {
-        "Text": "100 chinese yuan",
+        "Text": "100 중국 위안",
         "TypeName": "currency",
         "Resolution": {
           "isoCurrency": "CNY",
@@ -1708,11 +1708,11 @@
           "unit": "United States dollar",
           "value": "10"
         },
-        "Start": 10,
-        "End": 18
+        "Start": 13,
+        "End": 24
       },
       {
-        "Text": "c $ 100 and fifty",
+        "Text": "150 캐나다 달러",
         "TypeName": "currency",
         "Resolution": {
           "isoCurrency": "CAD",
@@ -1737,8 +1737,8 @@
           "unit": "Chinese yuan",
           "value": "1.55"
         },
-        "Start": 7,
-        "End": 17
+        "Start": 12,
+        "End": 37
       }
     ]
   },
@@ -1754,8 +1754,8 @@
           "unit": "Dollar",
           "value": "1.02"
         },
-        "Start": 0,
-        "End": 8
+        "Start": 9,
+        "End": 26
       }
     ]
   },
@@ -1771,8 +1771,8 @@
           "unit": "Dollar",
           "value": "4.25"
         },
-        "Start": 10,
-        "End": 17
+        "Start": 17,
+        "End": 21
       }
     ]
   },
@@ -1789,8 +1789,8 @@
           "unit": "Costa Rican colón",
           "isoCurrency": "CRC"
         },
-        "Start": 9,
-        "End": 15
+        "Start": 26,
+        "End": 30
       }
     ]
   },
@@ -1807,8 +1807,8 @@
           "unit": "Georgian lari",
           "isoCurrency": "GEL"
         },
-        "Start": 13,
-        "End": 19
+        "Start": 8,
+        "End": 11
       }
     ]
   },
@@ -1825,8 +1825,8 @@
           "unit": "Lao kip",
           "isoCurrency": "LAK"
         },
-        "Start": 25,
-        "End": 30
+        "Start": 40,
+        "End": 48
       }
     ]
   },
@@ -1843,8 +1843,8 @@
           "unit": "Sri Lankan rupee",
           "isoCurrency": "LKR"
         },
-        "Start": 9,
-        "End": 15
+        "Start": 23,
+        "End": 32
       }
     ]
   },
@@ -1860,8 +1860,8 @@
           "value": "100000",
           "unit": "Cent"
         },
-        "Start": 9,
-        "End": 14
+        "Start": 13,
+        "End": 23
       }
     ]
   },
@@ -1878,8 +1878,8 @@
           "unit": "United States dollar",
           "isoCurrency": "USD"
         },
-        "Start": 13,
-        "End": 21
+        "Start": 34,
+        "End": 50
       }
     ]
   },
@@ -1895,8 +1895,8 @@
           "value": "5",
           "unit": "Dollar"
         },
-        "Start": 0,
-        "End": 4
+        "Start": 8,
+        "End": 16
       }
     ]
   }

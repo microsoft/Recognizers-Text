@@ -11,8 +11,8 @@
           "value": "40",
           "unit": "C"
         },
-        "Start": 7,
-        "End": 13
+        "Start": 27,
+        "End": 40
       }
     ]
   },
@@ -28,8 +28,8 @@
           "value": "90",
           "unit": "F"
         },
-        "Start": 5,
-        "End": 11
+        "Start": 4,
+        "End": 16
       }
     ]
   },
@@ -46,7 +46,7 @@
           "unit": "F"
         },
         "Start": 0,
-        "End": 10
+        "End": 19
       }
     ]
   },
@@ -63,7 +63,7 @@
           "unit": "C"
         },
         "Start": 0,
-        "End": 5
+        "End": 6
       }
     ]
   },
@@ -80,7 +80,7 @@
           "unit": "F"
         },
         "Start": 0,
-        "End": 8
+        "End": 13
       }
     ]
   },
@@ -96,8 +96,8 @@
           "value": "30",
           "unit": "C"
         },
-        "Start": 4,
-        "End": 10
+        "Start": 23,
+        "End": 40
       }
     ]
   },
@@ -113,8 +113,8 @@
           "value": "98.6",
           "unit": "F"
         },
-        "Start": 7,
-        "End": 15
+        "Start": 22,
+        "End": 44
       }
     ]
   },
@@ -130,8 +130,8 @@
           "value": "100",
           "unit": "F"
         },
-        "Start": -1,
-        "End": 6
+        "Start": 0,
+        "End": 12
       }
     ]
   },
@@ -147,8 +147,8 @@
           "value": "20",
           "unit": "C"
         },
-        "Start": -1,
-        "End": 5
+        "Start": 0,
+        "End": 11
       }
     ]
   },
@@ -165,7 +165,7 @@
           "unit": "F"
         },
         "Start": 0,
-        "End": 9
+        "End": 22
       }
     ]
   },
@@ -182,7 +182,7 @@
           "unit": "C"
         },
         "Start": 0,
-        "End": 5
+        "End": 11
       }
     ]
   },
@@ -199,7 +199,7 @@
           "unit": "C"
         },
         "Start": 0,
-        "End": 6
+        "End": 17
       }
     ]
   },
@@ -216,7 +216,7 @@
           "unit": "C"
         },
         "Start": 0,
-        "End": 7
+        "End": 11
       }
     ]
   },
@@ -233,7 +233,7 @@
           "unit": "C"
         },
         "Start": 0,
-        "End": 7
+        "End": 11
       }
     ]
   },
@@ -249,8 +249,8 @@
           "value": "98",
           "unit": "Degree"
         },
-        "Start": 7,
-        "End": 10
+        "Start": 27,
+        "End": 36
       }
     ]
   },
@@ -266,8 +266,8 @@
           "value": "85",
           "unit": "Degree"
         },
-        "Start": 8,
-        "End": 11
+        "Start": 22,
+        "End": 24
       }
     ]
   },
@@ -283,8 +283,8 @@
           "value": "5",
           "unit": "Degree"
         },
-        "Start": 4,
-        "End": 6
+        "Start": 25,
+        "End": 33
       }
     ]
   },
@@ -300,8 +300,8 @@
           "value": "70",
           "unit": "F"
         },
-        "Start": 4,
-        "End": 10
+        "Start": 23,
+        "End": 34
       }
     ]
   },
@@ -317,8 +317,8 @@
           "value": "20",
           "unit": "Degree"
         },
-        "Start": 4,
-        "End": 7
+        "Start": 25,
+        "End": 34
       }
     ]
   },
@@ -334,8 +334,8 @@
           "value": "100",
           "unit": "Degree"
         },
-        "Start": 4,
-        "End": 8
+        "Start": 23,
+        "End": 33
       }
     ]
   },
@@ -351,8 +351,8 @@
           "value": "75",
           "unit": "F"
         },
-        "Start": 4,
-        "End": 10
+        "Start": 24,
+        "End": 35
       }
     ]
   },
@@ -368,8 +368,8 @@
           "value": "40",
           "unit": "C"
         },
-        "Start": 4,
-        "End": 9
+        "Start": 26,
+        "End": 35
       }
     ]
   },
@@ -385,8 +385,8 @@
           "value": "50",
           "unit": "Degree"
         },
-        "Start": 4,
-        "End": 7
+        "Start": 26,
+        "End": 32
       }
     ]
   },
@@ -402,11 +402,11 @@
           "value": "10",
           "unit": "C"
         },
-        "Start": 0,
-        "End": 6
+        "Start": 8,
+        "End": 17
       },
       {
-        "Text": "fahrenheit",
+        "Text": "화씨",
         "TypeName": "temperature",
         "Resolution": {
           "value": null,
@@ -430,10 +430,10 @@
           "unit": "C"
         },
         "Start": 0,
-        "End": 8
+        "End": 14
       },
       {
-        "Text": "farenheit",
+        "Text": "화씨",
         "TypeName": "temperature",
         "Resolution": {
           "value": null,
@@ -456,11 +456,11 @@
           "value": "200",
           "unit": "C"
         },
-        "Start": 0,
-        "End": 7
+        "Start": 8,
+        "End": 18
       },
       {
-        "Text": "celsius",
+        "Text": "도",
         "TypeName": "temperature",
         "Resolution": {
           "value": null,
@@ -470,7 +470,7 @@
         "End": 26
       },
       {
-        "Text": "fahrenheit",
+        "Text": "화씨",
         "TypeName": "temperature",
         "Resolution": {
           "value": null,
@@ -493,11 +493,11 @@
           "value": "101",
           "unit": "F"
         },
-        "Start": -1,
-        "End": 5
+        "Start": 22,
+        "End": 35
       },
       {
-        "Text": "fahrenheit",
+        "Text": "화씨",
         "TypeName": "temperature",
         "Resolution": {
           "value": null,
@@ -507,7 +507,7 @@
         "End": 9
       },
       {
-        "Text": "celsius",
+        "Text": "섭씨",
         "TypeName": "temperature",
         "Resolution": {
           "value": null,
@@ -517,7 +517,7 @@
         "End": 20
       },
       {
-        "Text": "celsius",
+        "Text": "섭씨",
         "TypeName": "temperature",
         "Resolution": {
           "value": null,
@@ -541,10 +541,10 @@
           "unit": "C"
         },
         "Start": 0,
-        "End": 6
+        "End": 17
       },
       {
-        "Text": "celsius",
+        "Text": "섭씨",
         "TypeName": "temperature",
         "Resolution": {
           "value": null,
@@ -554,7 +554,7 @@
         "End": 25
       },
       {
-        "Text": "fahrenheit",
+        "Text": "화씨",
         "TypeName": "temperature",
         "Resolution": {
           "value": null,
@@ -577,11 +577,11 @@
           "value": "51",
           "unit": "F"
         },
-        "Start": 0,
-        "End": 5
+        "Start": 18,
+        "End": 30
       },
       {
-        "Text": "degrees celsius",
+        "Text": "섭씨 도",
         "TypeName": "temperature",
         "Resolution": {
           "value": null,
@@ -604,11 +604,11 @@
           "value": "106",
           "unit": "F"
         },
-        "Start": 0,
-        "End": 7
+        "Start": 8,
+        "End": 28
       },
       {
-        "Text": "degrees celsius",
+        "Text": "섭씨 도",
         "TypeName": "temperature",
         "Resolution": {
           "value": null,
@@ -631,11 +631,11 @@
           "value": "45",
           "unit": "F"
         },
-        "Start": 0,
-        "End": 6
+        "Start": 8,
+        "End": 28
       },
       {
-        "Text": "celsius",
+        "Text": "섭씨",
         "TypeName": "temperature",
         "Resolution": {
           "value": null,
@@ -658,11 +658,11 @@
           "value": "-20",
           "unit": "F"
         },
-        "Start": 0,
-        "End": 11
+        "Start": 15,
+        "End": 37
       },
       {
-        "Text": "celsius",
+        "Text": "섭씨",
         "TypeName": "temperature",
         "Resolution": {
           "value": null,
