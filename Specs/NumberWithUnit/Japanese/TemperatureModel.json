@@ -1,0 +1,558 @@
+[
+  {
+    "Input": "外の気温は、摂氏 40度です。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "摂氏 40度",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "40",
+          "unit": "C"
+        },
+        "Start": 27,
+        "End": 40
+      }
+    ]
+  },
+  {
+    "Input": "テキサスは、気温華氏 90度です。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "華氏 90度",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "90",
+          "unit": "F"
+        },
+        "Start": 4,
+        "End": 16
+      }
+    ]
+  },
+  {
+    "Input": "華氏 マイナス 5度",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "華氏 マイナス 5度",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "-5",
+          "unit": "F"
+        },
+        "Start": 0,
+        "End": 19
+      }
+    ]
+  },
+  {
+    "Input": "摂氏6度",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "摂氏6度",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "6",
+          "unit": "C"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "華氏98.6度は、平熱です。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "華氏98.6度",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "98.6",
+          "unit": "F"
+        },
+        "Start": 0,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "温度を摂氏30度に設定する。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "摂氏30度",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "30",
+          "unit": "C"
+        },
+        "Start": 23,
+        "End": 40
+      }
+    ]
+  },
+  {
+    "Input": "平熱は、華氏98.6度です。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "華氏98.6度",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "98.6",
+          "unit": "F"
+        },
+        "Start": 22,
+        "End": 44
+      }
+    ]
+  },
+  {
+    "Input": "華氏100度",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "華氏100度",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "100",
+          "unit": "F"
+        },
+        "Start": 0,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": "摂氏20度",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "摂氏20度",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "20",
+          "unit": "C"
+        },
+        "Start": 0,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "華氏100.2度は、低いです。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "華氏100.2度",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "100.2",
+          "unit": "F"
+        },
+        "Start": 0,
+        "End": 22
+      }
+    ]
+  },
+  {
+    "Input": "摂氏 10.5度",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "摂氏 10.5度",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "10.5",
+          "unit": "C"
+        },
+        "Start": 0,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "摂氏 20.3度",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "摂氏 20.3度",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "20.3",
+          "unit": "C"
+        },
+        "Start": 0,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "摂氏 34.5度",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "摂氏 34.5度",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "34.5",
+          "unit": "C"
+        },
+        "Start": 0,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "外の気温は、華氏98度です。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "華氏98度",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "98",
+          "unit": "Degree"
+        },
+        "Start": 27,
+        "End": 36
+      }
+    ]
+  },
+  {
+    "Input": "サーモスタットを85度に設定する。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "85度",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "85",
+          "unit": "Degree"
+        },
+        "Start": 22,
+        "End": 24
+      }
+    ]
+  },
+  {
+    "Input": "温度を5度上げる。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "5度",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "5",
+          "unit": "Degree"
+        },
+        "Start": 25,
+        "End": 33
+      }
+    ]
+  },
+  {
+    "Input": "温度を華氏70度に設定する。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "華氏70度",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "70",
+          "unit": "F"
+        },
+        "Start": 23,
+        "End": 34
+      }
+    ]
+  },
+  {
+    "Input": "温度を20度上げる。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "20度",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "20",
+          "unit": "Degree"
+        },
+        "Start": 25,
+        "End": 34
+      }
+    ]
+  },
+  {
+    "Input": "温度を100度に設定する。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "100度",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "100",
+          "unit": "Degree"
+        },
+        "Start": 23,
+        "End": 33
+      }
+    ]
+  },
+  {
+    "Input": "温度を華氏75度に保つ。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "華氏75度",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "75",
+          "unit": "F"
+        },
+        "Start": 24,
+        "End": 35
+      }
+    ]
+  },
+  {
+    "Input": "温度を摂氏40度にする。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "摂氏40度",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "40",
+          "unit": "C"
+        },
+        "Start": 26,
+        "End": 35
+      }
+    ]
+  },
+  {
+    "Input": "温度を50度にする。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "50度",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "50",
+          "unit": "Degree"
+        },
+        "Start": 26,
+        "End": 32
+      }
+    ]
+  },
+  {
+    "Input": "摂氏10度を華氏に変換する。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "摂氏10度",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "10",
+          "unit": "C"
+        },
+        "Start": 8,
+        "End": 17
+      },
+      {
+        "Text": "華氏",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": null,
+          "unit": "F"
+        },
+        "Start": 22,
+        "End": 31
+      }
+    ]
+  },
+  {
+    "Input": "華氏から摂氏に。華氏101度は摂氏で何度か。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "華氏101度",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "101",
+          "unit": "F"
+        },
+        "Start": 22,
+        "End": 35
+      },
+      {
+        "Text": "華氏",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": null,
+          "unit": "F"
+        },
+        "Start": 0,
+        "End": 9
+      },
+      {
+        "Text": "摂氏",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": null,
+          "unit": "C"
+        },
+        "Start": 14,
+        "End": 20
+      },
+      {
+        "Text": "摂氏",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": null,
+          "unit": "C"
+        },
+        "Start": 49,
+        "End": 55
+      }
+    ]
+  },
+  {
+    "Input": "華氏51度を摂氏に変換してもらえますか。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "華氏51度",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "51",
+          "unit": "F"
+        },
+        "Start": 18,
+        "End": 30
+      },
+      {
+        "Text": "摂氏",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": null,
+          "unit": "C"
+        },
+        "Start": 35,
+        "End": 49
+      }
+    ]
+  },
+  {
+    "Input": "華氏106度を摂氏に変換する。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "華氏106度",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "106",
+          "unit": "F"
+        },
+        "Start": 8,
+        "End": 28
+      },
+      {
+        "Text": "摂氏",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": null,
+          "unit": "C"
+        },
+        "Start": 33,
+        "End": 47
+      }
+    ]
+  },
+  {
+    "Input": "華氏45度を摂氏に変換する。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "華氏45度",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "45",
+          "unit": "F"
+        },
+        "Start": 8,
+        "End": 28
+      },
+      {
+        "Text": "摂氏",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": null,
+          "unit": "C"
+        },
+        "Start": 33,
+        "End": 39
+      }
+    ]
+  },
+  {
+    "Input": "華氏マイナス20度を摂氏に変換する方法",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "華氏マイナス20度",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "-20",
+          "unit": "F"
+        },
+        "Start": 15,
+        "End": 37
+      },
+      {
+        "Text": "摂氏",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": null,
+          "unit": "C"
+        },
+        "Start": 42,
+        "End": 48
+      }
+    ]
+  }
+]

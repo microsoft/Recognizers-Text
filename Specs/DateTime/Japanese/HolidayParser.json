@@ -1,0 +1,342 @@
+[
+  {
+    "Input": "復活祭に戻ります。",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "復活祭",
+        "Type": "date",
+        "Value": {
+          "Timex": "",
+          "FutureResolution": {
+            "date": "0001-01-01"
+          },
+          "PastResolution": {
+            "date": "0001-01-01"
+          }
+        },
+        "Start": 16,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "クリスマスの日に戻ります。",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "クリスマスの日",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-12-25",
+          "FutureResolution": {
+            "date": "2016-12-25"
+          },
+          "PastResolution": {
+            "date": "2015-12-25"
+          }
+        },
+        "Start": 16,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "大晦日に戻ります。",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "大晦日",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-12-31",
+          "FutureResolution": {
+            "date": "2016-12-31"
+          },
+          "PastResolution": {
+            "date": "2015-12-31"
+          }
+        },
+        "Start": 16,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "クリスマスに戻ります。",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "クリスマス",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-12-25",
+          "FutureResolution": {
+            "date": "2016-12-25"
+          },
+          "PastResolution": {
+            "date": "2015-12-25"
+          }
+        },
+        "Start": 16,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "元旦に戻ります。",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "元旦",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-01-01",
+          "FutureResolution": {
+            "date": "2017-01-01"
+          },
+          "PastResolution": {
+            "date": "2016-01-01"
+          }
+        },
+        "Start": 16,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "感謝祭の日に戻ります。",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "感謝祭の日",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-11-WXX-4-4",
+          "FutureResolution": {
+            "date": "2016-11-24"
+          },
+          "PastResolution": {
+            "date": "2015-11-26"
+          }
+        },
+        "Start": 16,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "感謝祭に戻ります。",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "感謝祭",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-11-WXX-4-4",
+          "FutureResolution": {
+            "date": "2016-11-24"
+          },
+          "PastResolution": {
+            "date": "2015-11-26"
+          }
+        },
+        "Start": 16,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "父の日に戻ります。",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "父の日",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-06-WXX-7-3",
+          "FutureResolution": {
+            "date": "2017-06-18"
+          },
+          "PastResolution": {
+            "date": "2016-06-19"
+          }
+        },
+        "Start": 16,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "来年の元旦に戻ります。",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "来年の元旦",
+        "Type": "date",
+        "Value": {
+          "Timex": "2017-01-01",
+          "FutureResolution": {
+            "date": "2017-01-01"
+          },
+          "PastResolution": {
+            "date": "2017-01-01"
+          }
+        },
+        "Start": 16,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "2010年の感謝祭の日に戻ります。",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2010年の感謝祭の日",
+        "Type": "date",
+        "Value": {
+          "Timex": "2010-11-WXX-4-4",
+          "FutureResolution": {
+            "date": "2010-11-25"
+          },
+          "PastResolution": {
+            "date": "2010-11-25"
+          }
+        },
+        "Start": 16,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "2015年の父の日に戻ります。",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2015年の父の日",
+        "Type": "date",
+        "Value": {
+          "Timex": "2015-06-WXX-7-3",
+          "FutureResolution": {
+            "date": "2015-06-21"
+          },
+          "PastResolution": {
+            "date": "2015-06-21"
+          }
+        },
+        "Start": 16,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "ここパーシングスクエアで、メーデー。",
+    "Context": {
+      "ReferenceDateTime": "2018-06-01T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "メーデー",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-05-01",
+          "FutureResolution": {
+            "date": "2019-05-01"
+          },
+          "PastResolution": {
+            "date": "2018-05-01"
+          }
+        },
+        "Start": 32,
+        "Length": 7
+      },
+      {
+        "Text": "国際的な労働者の日",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-05-01",
+          "FutureResolution": {
+            "date": "2019-05-01"
+          },
+          "PastResolution": {
+            "date": "2018-05-01"
+          }
+        },
+        "Start": 40,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "キング牧師記念日は、アメリカの連邦祝日です。",
+    "Context": {
+      "ReferenceDateTime": "2018-06-01T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "キング牧師記念日",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-01-WXX-1-3",
+          "FutureResolution": {
+            "date": "2019-01-21"
+          },
+          "PastResolution": {
+            "date": "2018-01-15"
+          }
+        },
+        "Start": 0,
+        "Length": 22
+      }
+    ]
+  }
+]

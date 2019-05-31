@@ -1,0 +1,515 @@
+[
+  {
+    "Input": "午後5時から6時まで不在にします。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "午後5時から6時まで",
+        "Type": "timerange",
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "午前5時から7時まで不在にします。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "午前5時から7時まで",
+        "Type": "timerange",
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "午後5時から6時の間、不在にします。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "午後5時から6時の間",
+        "Type": "timerange",
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "午後5時から午後6時の間、不在にします。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "午後5時から午後6時の間",
+        "Type": "timerange",
+        "Start": 0,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "午後4時から午後5時まで不在にします。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "午後4時から午後5時まで",
+        "Type": "timerange",
+        "Start": 0,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "午後4時から5時まで不在にします。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "午後4時から5時まで",
+        "Type": "timerange",
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "4時から7時まで不在にします。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "4時から7時まで",
+        "Type": "timerange",
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "午後3時から7時半まで不在にします。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "午後3時から7時半まで",
+        "Type": "timerange",
+        "Start": 0,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "午後3時20分から8時まで不在にします。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "午後3時20分から8時まで",
+        "Type": "timerange",
+        "Start": 0,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "午後4時から5時半まで不在にします。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "午後4時から5時半まで",
+        "Type": "timerange",
+        "Start": 0,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "午前3時から午後5時まで不在にします。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "午前3時から午後5時まで",
+        "Type": "timerange",
+        "Start": 0,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "午後4時から5時半の間、不在にします。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "午後4時から5時半の間",
+        "Type": "timerange",
+        "Start": 0,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "午前3時から午後5時の間、不在にします。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "午前3時から午後5時の間",
+        "Type": "timerange",
+        "Start": 0,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "午前中に会いましょう。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "午前中",
+        "Type": "timerange",
+        "Start": 0,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "午後に会いましょう。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "午後",
+        "Type": "timerange",
+        "Start": 0,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "夜に会いましょう。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "夜に",
+        "Type": "timerange",
+        "Start": 0,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "早朝に会いましょう。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "早朝に",
+        "Type": "timerange",
+        "Start": 0,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "昼前に会いましょう。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "昼前に",
+        "Type": "timerange",
+        "Start": 0,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "昼すぎに会いましょう。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "昼すぎに",
+        "Type": "timerange",
+        "Start": 0,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "夕方前に会いましょう。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "夕方前に",
+        "Type": "timerange",
+        "Start": 0,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "夕方に会いましょう。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "夕方に",
+        "Type": "timerange",
+        "Start": 0,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "深夜に会いましょう。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "深夜に",
+        "Type": "timerange",
+        "Start": 0,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "午後2時から5時まで会議を設定して。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "午後2時から5時まで",
+        "Type": "timerange",
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "午後6時から11時までジャンのパーティー",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "午後6時から11時まで",
+        "Type": "timerange",
+        "Start": 0,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "14時から16時30分まで会議を設定して。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "14時から16時30分",
+        "Type": "timerange",
+        "Start": 0,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "午後1時から4時まで会議を設定して。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "午後1時から4時まで",
+        "Type": "timerange",
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "午後1時30分から4時まで会議を設定して。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "午後1時30分から4時まで",
+        "Type": "timerange",
+        "Start": 0,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "午後1時30分から4人の会議を設定して。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "こんにちはコルタナ。ジェニファーとスカイプ会議の予定を入れてください。私が出発する今週の金曜日午後に30分の会議が必要です。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "午後に",
+        "Type": "timerange",
+        "Start": 47,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "1時30分から3時30分まで会議を設定して。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1時30分から3時30分まで",
+        "Type": "timerange",
+        "Start": 0,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "午後1時30分から3時30分まで会議を設定して。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "午後1時30分から3時30分まで",
+        "Type": "timerange",
+        "Start": 0,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "午後1時30分から午後3時30分まで会議を設定して。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "午後1時30分から午後3時30分まで",
+        "Type": "timerange",
+        "Start": 0,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "1時から3時30分まで会議を設定して。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1時から3時30分まで",
+        "Type": "timerange",
+        "Start": 0,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "1時30分から3時まで会議を設定して。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1時30分から3時まで",
+        "Type": "timerange",
+        "Start": 0,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "10時から11時30分の間で会議を設定して。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "10時から11時30分の間",
+        "Type": "timerange",
+        "Start": 0,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "午前10時10分から12時50分の間で会議を設定して。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "午前10時10分から12時50分の間",
+        "Type": "timerange",
+        "Start": 0,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "午後10時10分から3時の間で会議を設定して。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "午後10時10分から3時の間",
+        "Type": "timerange",
+        "Start": 0,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "午後10時10分から10時まで会議を設定して。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "午後10時10分から10時まで",
+        "Type": "timerange",
+        "Start": 0,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "午前10時半から23時まで会議を設定して。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "午前10時半から23時まで",
+        "Type": "timerange",
+        "Start": 0,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "営業時間内に電話をかけてこないで。",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "営業時間内に",
+        "Type": "timerange",
+        "Start": 0,
+        "Length": 6
+      }
+    ]
+  }
+]

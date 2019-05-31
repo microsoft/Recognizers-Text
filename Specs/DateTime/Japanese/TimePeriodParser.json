@@ -1,0 +1,1325 @@
+[
+  {
+    "Input": "午後5時から6時まで不在にします。",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "午後5時から6時まで",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T17,T18,PT1H)",
+          "FutureResolution": {
+            "startTime": "17:00:00",
+            "endTime": "18:00:00"
+          },
+          "PastResolution": {
+            "startTime": "17:00:00",
+            "endTime": "18:00:00"
+          }
+        },
+        "Start": 12,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "午前5時から7時まで不在にします。",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "午前5時から7時まで",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T05,T07,PT2H)",
+          "FutureResolution": {
+            "startTime": "05:00:00",
+            "endTime": "07:00:00"
+          },
+          "PastResolution": {
+            "startTime": "05:00:00",
+            "endTime": "07:00:00"
+          }
+        },
+        "Start": 12,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "午後5時から6時の間、不在にします。",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "午後5時から6時の間",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T17,T18,PT1H)",
+          "FutureResolution": {
+            "startTime": "17:00:00",
+            "endTime": "18:00:00"
+          },
+          "PastResolution": {
+            "startTime": "17:00:00",
+            "endTime": "18:00:00"
+          }
+        },
+        "Start": 12,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "午後5時から午後6時の間、不在にします。",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "午後5時から午後6時の間",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T17,T18,PT1H)",
+          "FutureResolution": {
+            "startTime": "17:00:00",
+            "endTime": "18:00:00"
+          },
+          "PastResolution": {
+            "startTime": "17:00:00",
+            "endTime": "18:00:00"
+          }
+        },
+        "Start": 12,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "午前1時から午後5時まで不在にします。",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "午前1時から午後5時まで",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T01,T17,PT16H)",
+          "FutureResolution": {
+            "startTime": "01:00:00",
+            "endTime": "17:00:00"
+          },
+          "PastResolution": {
+            "startTime": "01:00:00",
+            "endTime": "17:00:00"
+          }
+        },
+        "Start": 12,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "午後4時から午後5時まで不在にします。",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "午後4時から午後5時まで",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T16,T17,PT1H)",
+          "FutureResolution": {
+            "startTime": "16:00:00",
+            "endTime": "17:00:00"
+          },
+          "PastResolution": {
+            "startTime": "16:00:00",
+            "endTime": "17:00:00"
+          }
+        },
+        "Start": 12,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "午後4時から5時まで不在にします。",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "午後4時から5時まで",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T16,T17,PT1H)",
+          "FutureResolution": {
+            "startTime": "16:00:00",
+            "endTime": "17:00:00"
+          },
+          "PastResolution": {
+            "startTime": "16:00:00",
+            "endTime": "17:00:00"
+          }
+        },
+        "Start": 12,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "4時から7時まで不在にします。",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "4時から7時まで",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T04:00,T07,PT3H)",
+          "FutureResolution": {
+            "startTime": "04:00:00",
+            "endTime": "07:00:00"
+          },
+          "PastResolution": {
+            "startTime": "04:00:00",
+            "endTime": "07:00:00"
+          }
+        },
+        "Start": 12,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "午前3時から午後5時まで不在にします。",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "午前3時から午後5時まで",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T03,T17,PT14H)",
+          "FutureResolution": {
+            "startTime": "03:00:00",
+            "endTime": "17:00:00"
+          },
+          "PastResolution": {
+            "startTime": "03:00:00",
+            "endTime": "17:00:00"
+          }
+        },
+        "Start": 12,
+        "Length": 31
+      }
+    ]
+  },
+  {
+    "Input": "午前3時から午後5時の間、不在にします。",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "午前3時から午後5時の間",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T03,T17,PT14H)",
+          "FutureResolution": {
+            "startTime": "03:00:00",
+            "endTime": "17:00:00"
+          },
+          "PastResolution": {
+            "startTime": "03:00:00",
+            "endTime": "17:00:00"
+          }
+        },
+        "Start": 12,
+        "Length": 32
+      }
+    ]
+  },
+  {
+    "Input": "今日の午後4時から午後5時の間、不在にします。",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "今日の午後4時から午後5時の間",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T16,T17,PT1H)",
+          "FutureResolution": {
+            "startTime": "16:00:00",
+            "endTime": "17:00:00"
+          },
+          "PastResolution": {
+            "startTime": "16:00:00",
+            "endTime": "17:00:00"
+          }
+        },
+        "Start": 12,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "午前中に会いましょう。",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "午前中",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "TMO",
+          "FutureResolution": {
+            "startTime": "08:00:00",
+            "endTime": "12:00:00"
+          },
+          "PastResolution": {
+            "startTime": "08:00:00",
+            "endTime": "12:00:00"
+          }
+        },
+        "Start": 11,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "午後に会いましょう。",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "午後",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "TAF",
+          "FutureResolution": {
+            "startTime": "12:00:00",
+            "endTime": "16:00:00"
+          },
+          "PastResolution": {
+            "startTime": "12:00:00",
+            "endTime": "16:00:00"
+          }
+        },
+        "Start": 11,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "夜に会いましょう。",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "夜に",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "TNI",
+          "FutureResolution": {
+            "startTime": "20:00:00",
+            "endTime": "23:59:59"
+          },
+          "PastResolution": {
+            "startTime": "20:00:00",
+            "endTime": "23:59:59"
+          }
+        },
+        "Start": 11,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "早朝にに会いましょう。",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "早朝に",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "TMO",
+          "FutureResolution": {
+            "startTime": "08:00:00",
+            "endTime": "10:00:00"
+          },
+          "PastResolution": {
+            "startTime": "08:00:00",
+            "endTime": "10:00:00"
+          }
+        },
+        "Start": 11,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "昼前に会いましょう。",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "昼前に",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "TMO",
+          "FutureResolution": {
+            "startTime": "10:00:00",
+            "endTime": "12:00:00"
+          },
+          "PastResolution": {
+            "startTime": "10:00:00",
+            "endTime": "12:00:00"
+          }
+        },
+        "Start": 11,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "早朝に会いましょう。",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "早朝に",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "TMO",
+          "FutureResolution": {
+            "startTime": "08:00:00",
+            "endTime": "10:00:00"
+          },
+          "PastResolution": {
+            "startTime": "08:00:00",
+            "endTime": "10:00:00"
+          }
+        },
+        "Start": 11,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "昼すぎに会いましょう。",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "昼すぎに",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "TAF",
+          "FutureResolution": {
+            "startTime": "12:00:00",
+            "endTime": "14:00:00"
+          },
+          "PastResolution": {
+            "startTime": "12:00:00",
+            "endTime": "14:00:00"
+          }
+        },
+        "Start": 11,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "夕方前に会いましょう。",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "夕方前に",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "TAF",
+          "FutureResolution": {
+            "startTime": "14:00:00",
+            "endTime": "16:00:00"
+          },
+          "PastResolution": {
+            "startTime": "14:00:00",
+            "endTime": "16:00:00"
+          }
+        },
+        "Start": 11,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "夕方に会いましょう。",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "夕方に",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "TEV",
+          "FutureResolution": {
+            "startTime": "16:00:00",
+            "endTime": "18:00:00"
+          },
+          "PastResolution": {
+            "startTime": "16:00:00",
+            "endTime": "18:00:00"
+          }
+        },
+        "Start": 11,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "深夜に会いましょう。",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "深夜に",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "TEV",
+          "FutureResolution": {
+            "startTime": "18:00:00",
+            "endTime": "20:00:00"
+          },
+          "PastResolution": {
+            "startTime": "18:00:00",
+            "endTime": "20:00:00"
+          }
+        },
+        "Start": 11,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "午後1時から4時まで会いましょう。",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "午後1時から4時まで",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T13,T16,PT3H)",
+          "FutureResolution": {
+            "startTime": "13:00:00",
+            "endTime": "16:00:00"
+          },
+          "PastResolution": {
+            "startTime": "13:00:00",
+            "endTime": "16:00:00"
+          }
+        },
+        "Start": 11,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "午後1時30分から4時まで会いましょう。",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "午後1時30分から4時まで",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T13:30,T16,PT2H30M)",
+          "FutureResolution": {
+            "startTime": "13:30:00",
+            "endTime": "16:00:00"
+          },
+          "PastResolution": {
+            "startTime": "13:30:00",
+            "endTime": "16:00:00"
+          }
+        },
+        "Start": 11,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "午前中に予定を入れて。",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "午前中",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "TMO",
+          "FutureResolution": {
+            "startTime": "08:00:00",
+            "endTime": "12:00:00"
+          },
+          "PastResolution": {
+            "startTime": "08:00:00",
+            "endTime": "12:00:00"
+          }
+        },
+        "Start": 20,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "午前1時30分から3時まで会議を設定するのを手助けしてください。",
+    "Context": {
+      "ReferenceDateTime": "2017-12-01T13:37:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "午前1時30分から3時まで",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T01:30,T03,PT1H30M)",
+          "FutureResolution": {
+            "startTime": "01:30:00",
+            "endTime": "03:00:00"
+          },
+          "PastResolution": {
+            "startTime": "01:30:00",
+            "endTime": "03:00:00"
+          }
+        },
+        "Start": 32,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "クラスは午前11時から3時までです。",
+    "Context": {
+      "ReferenceDateTime": "2017-12-01T13:37:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "午前11時から3時まで",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T11,T15,PT4H)",
+          "FutureResolution": {
+            "startTime": "11:00:00",
+            "endTime": "15:00:00"
+          },
+          "PastResolution": {
+            "startTime": "11:00:00",
+            "endTime": "15:00:00"
+          }
+        },
+        "Start": 13,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "クラスは午後11時から3時までです。",
+    "Context": {
+      "ReferenceDateTime": "2017-12-01T13:37:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "午後11時から3時まで",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T23,T03,PT4H)",
+          "FutureResolution": {
+            "startTime": "23:00:00",
+            "endTime": "03:00:00"
+          },
+          "PastResolution": {
+            "startTime": "23:00:00",
+            "endTime": "03:00:00"
+          }
+        },
+        "Start": 13,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "クラスは午後11時1分から11時までです。",
+    "Context": {
+      "ReferenceDateTime": "2017-12-01T13:37:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "午後11時1分から11時まで",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T23:01,T11,PT11H59M)",
+          "FutureResolution": {
+            "startTime": "23:01:00",
+            "endTime": "11:00:00"
+          },
+          "PastResolution": {
+            "startTime": "23:01:00",
+            "endTime": "11:00:00"
+          }
+        },
+        "Start": 13,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "クラスは午前11時1分から11時までです。",
+    "Context": {
+      "ReferenceDateTime": "2017-12-01T13:37:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "午前11時1分から11時まで",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T11:01,T23,PT11H59M)",
+          "FutureResolution": {
+            "startTime": "11:01:00",
+            "endTime": "23:00:00"
+          },
+          "PastResolution": {
+            "startTime": "11:01:00",
+            "endTime": "23:00:00"
+          }
+        },
+        "Start": 13,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "午前11時から11時50分まで会議を設定するのを手助けしてください。",
+    "Context": {
+      "ReferenceDateTime": "2017-12-01T13:37:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "午前11時から11時50分まで",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T11,T11:50,PT50M)",
+          "FutureResolution": {
+            "startTime": "11:00:00",
+            "endTime": "11:50:00"
+          },
+          "PastResolution": {
+            "startTime": "11:00:00",
+            "endTime": "11:50:00"
+          }
+        },
+        "Start": 32,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "午後1時30分から3時30分まで会議を設定して。",
+    "Context": {
+      "ReferenceDateTime": "2017-12-01T13:37:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "午後1時30分から3時30分まで",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T13:30,T15:30,PT2H)",
+          "FutureResolution": {
+            "startTime": "13:30:00",
+            "endTime": "15:30:00"
+          },
+          "PastResolution": {
+            "startTime": "13:30:00",
+            "endTime": "15:30:00"
+          }
+        },
+        "Start": 15,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "午後1時30分から午後3時30分まで会議を設定して。",
+    "Context": {
+      "ReferenceDateTime": "2017-12-01T13:37:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "午後1時30分から午後3時30分まで",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T13:30,T15:30,PT2H)",
+          "FutureResolution": {
+            "startTime": "13:30:00",
+            "endTime": "15:30:00"
+          },
+          "PastResolution": {
+            "startTime": "13:30:00",
+            "endTime": "15:30:00"
+          }
+        },
+        "Start": 15,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "午後3時から午後3時30分まで会議を設定して。",
+    "Context": {
+      "ReferenceDateTime": "2017-12-01T13:37:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "午後3時から午後3時30分まで",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T15,T15:30,PT30M)",
+          "FutureResolution": {
+            "startTime": "15:00:00",
+            "endTime": "15:30:00"
+          },
+          "PastResolution": {
+            "startTime": "15:00:00",
+            "endTime": "15:30:00"
+          }
+        },
+        "Start": 15,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "午前0時1分から午後1時までずっと待っていました。",
+    "Context": {
+      "ReferenceDateTime": "2017-12-01T13:37:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "午前0時1分から午後1時まで",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T00:01,T13,PT12H59M)",
+          "FutureResolution": {
+            "startTime": "00:01:00",
+            "endTime": "13:00:00"
+          },
+          "PastResolution": {
+            "startTime": "00:01:00",
+            "endTime": "13:00:00"
+          }
+        },
+        "Start": 20,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "午前0時1分から1時までずっと待っていました。",
+    "Context": {
+      "ReferenceDateTime": "2017-12-01T13:37:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "午前0時1分から1時まで",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T00:01,T01,PT59M)",
+          "FutureResolution": {
+            "startTime": "00:01:00",
+            "endTime": "01:00:00"
+          },
+          "PastResolution": {
+            "startTime": "00:01:00",
+            "endTime": "01:00:00"
+          }
+        },
+        "Start": 20,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "3時から3時30分まで会議を設定して。",
+    "Context": {
+      "ReferenceDateTime": "2017-12-01T13:37:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3時から3時30分まで",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T03,T03:30,PT30M)",
+          "FutureResolution": {
+            "startTime": "03:00:00",
+            "endTime": "03:30:00"
+          },
+          "PastResolution": {
+            "startTime": "03:00:00",
+            "endTime": "03:30:00"
+          }
+        },
+        "Start": 15,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "1時30分から3時まで会議を設定して。",
+    "Context": {
+      "ReferenceDateTime": "2017-12-01T13:37:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1時30分から3時まで",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T01:30,T03,PT1H30M)",
+          "FutureResolution": {
+            "startTime": "01:30:00",
+            "endTime": "03:00:00"
+          },
+          "PastResolution": {
+            "startTime": "01:30:00",
+            "endTime": "03:00:00"
+          }
+        },
+        "Start": 15,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "午後1時30分から3時まで会議を設定するのを手助けしてください。",
+    "Context": {
+      "ReferenceDateTime": "2017-12-01T13:37:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "午後1時30分から3時まで",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T13:30,T15,PT1H30M)",
+          "FutureResolution": {
+            "startTime": "13:30:00",
+            "endTime": "15:00:00"
+          },
+          "PastResolution": {
+            "startTime": "13:30:00",
+            "endTime": "15:00:00"
+          }
+        },
+        "Start": 32,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "11時から午後3時まで会議を設定するのを手助けしてください。",
+    "Context": {
+      "ReferenceDateTime": "2017-12-01T13:37:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "11時から午後3時まで",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T11,T15,PT4H)",
+          "FutureResolution": {
+            "startTime": "11:00:00",
+            "endTime": "15:00:00"
+          },
+          "PastResolution": {
+            "startTime": "11:00:00",
+            "endTime": "15:00:00"
+          }
+        },
+        "Start": 32,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "11時から午前3時まで会議を設定するのを手助けしてください。",
+    "Context": {
+      "ReferenceDateTime": "2017-12-01T13:37:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "11時から午前3時まで",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T23,T03,PT4H)",
+          "FutureResolution": {
+            "startTime": "23:00:00",
+            "endTime": "03:00:00"
+          },
+          "PastResolution": {
+            "startTime": "23:00:00",
+            "endTime": "03:00:00"
+          }
+        },
+        "Start": 32,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "午前10時から11時まで会議を設定するのを手助けしてください。",
+    "Context": {
+      "ReferenceDateTime": "2017-12-01T13:37:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "午前10時から11時まで",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T10,T11,PT1H)",
+          "FutureResolution": {
+            "startTime": "10:00:00",
+            "endTime": "11:00:00"
+          },
+          "PastResolution": {
+            "startTime": "10:00:00",
+            "endTime": "11:00:00"
+          }
+        },
+        "Start": 32,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "23時から午前3時まで会議を設定するのを手助けしてください。",
+    "Context": {
+      "ReferenceDateTime": "2017-12-01T13:37:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "23時から午前3時まで",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T23,T03,PT4H)",
+          "FutureResolution": {
+            "startTime": "23:00:00",
+            "endTime": "03:00:00"
+          },
+          "PastResolution": {
+            "startTime": "23:00:00",
+            "endTime": "03:00:00"
+          }
+        },
+        "Start": 32,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "23時から午後3時まで会議を設定するのを手助けしてください。",
+    "Context": {
+      "ReferenceDateTime": "2017-12-01T13:37:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "23時から午後3時まで",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T23,T15,PT16H)",
+          "FutureResolution": {
+            "startTime": "23:00:00",
+            "endTime": "15:00:00"
+          },
+          "PastResolution": {
+            "startTime": "23:00:00",
+            "endTime": "15:00:00"
+          }
+        },
+        "Start": 32,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "10時から11時30分の間で会議を設定して。",
+    "Context": {
+      "ReferenceDateTime": "2017-12-01T13:37:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "10時から11時30分の間",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T10,T11:30,PT1H30M)",
+          "FutureResolution": {
+            "startTime": "10:00:00",
+            "endTime": "11:30:00"
+          },
+          "PastResolution": {
+            "startTime": "10:00:00",
+            "endTime": "11:30:00"
+          }
+        },
+        "Start": 15,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "午前10時10分から12時50分の間で会議を設定して。",
+    "Context": {
+      "ReferenceDateTime": "2017-12-01T13:37:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "午前10時10分から12時50分の間",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T10:10,T12:50,PT2H40M)",
+          "FutureResolution": {
+            "startTime": "10:10:00",
+            "endTime": "12:50:00"
+          },
+          "PastResolution": {
+            "startTime": "10:10:00",
+            "endTime": "12:50:00"
+          }
+        },
+        "Start": 15,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "午後10時10分から3時の間で会議を設定して。",
+    "Context": {
+      "ReferenceDateTime": "2017-12-01T13:37:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "午後10時10分から3時の間",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T22:10,T03,PT4H50M)",
+          "FutureResolution": {
+            "startTime": "22:10:00",
+            "endTime": "03:00:00"
+          },
+          "PastResolution": {
+            "startTime": "22:10:00",
+            "endTime": "03:00:00"
+          }
+        },
+        "Start": 15,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "午後10時10分から10時まで会議を設定して。",
+    "Context": {
+      "ReferenceDateTime": "2017-12-01T13:37:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "午後10時10分から10時まで",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T22:10,T10,PT11H50M)",
+          "FutureResolution": {
+            "startTime": "22:10:00",
+            "endTime": "10:00:00"
+          },
+          "PastResolution": {
+            "startTime": "22:10:00",
+            "endTime": "10:00:00"
+          }
+        },
+        "Start": 15,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "午前10時半から23時まで会議を設定して。",
+    "Context": {
+      "ReferenceDateTime": "2017-12-01T13:37:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "午前10時半から23時まで",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T10:30,T23,PT12H30M)",
+          "FutureResolution": {
+            "startTime": "10:30:00",
+            "endTime": "23:00:00"
+          },
+          "PastResolution": {
+            "startTime": "10:30:00",
+            "endTime": "23:00:00"
+          }
+        },
+        "Start": 15,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "営業時間内に電話をかけてこないで。",
+    "Context": {
+      "ReferenceDateTime": "2017-12-01T13:37:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "営業時間内に",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "TBH",
+          "FutureResolution": {
+            "startTime": "08:00:00",
+            "endTime": "18:00:00"
+          },
+          "PastResolution": {
+            "startTime": "08:00:00",
+            "endTime": "18:00:00"
+          }
+        },
+        "Start": 14,
+        "Length": 21
+      }
+    ]
+  }
+]
