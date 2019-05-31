@@ -70,7 +70,7 @@ The table below summarizes the currently supported entities. Support for English
 | Unit - Currency      | :x:  | :x:     | **SO**|        |       |         |        |        |        |         |
 | Unit - Dimensions    | :x:  | :x:     | **SO**|        |       |         |        |        |        |         | 
 | Unit - Temperature   | :x:  | :x:     | **SO**|        |       |         |        |        |        |         | 
-| Choice - Boolean     | ✓    | ✓      | :x:   |        |       |         |        |        |        |         |
+| Choice - Boolean     | ✓    | ✓      | **SO**|        |       |         |        |        |        |         |
 | Seq. - E-mail        | G    | G       | G     |        |       |         |        |        |        |         |
 | Seq. - GUID          | G    | G       | G     |        |       |         |        |        |        |         |
 | Seq. - Social        | G    | G       | G     |        |       |         |        |        |        |         |
