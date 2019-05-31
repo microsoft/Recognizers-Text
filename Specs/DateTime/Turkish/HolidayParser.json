@@ -1,0 +1,317 @@
+[
+  {
+    "Input": "Paskalya'da döneceğim",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Paskalya",
+        "Type": "date",
+        "Value": {
+          "Timex": "",
+          "FutureResolution": {
+            "date": "0001-01-01"
+          },
+          "PastResolution": {
+            "date": "0001-01-01"
+          }
+        },
+        "Start": 16,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "Noel günü döneceğim",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Noel günü",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-12-25",
+          "FutureResolution": {
+            "date": "2016-12-25"
+          },
+          "PastResolution": {
+            "date": "2015-12-25"
+          }
+        },
+        "Start": 16,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Yılbaşı gecesi döneceğim",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Yılbaşı gecesi",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-12-31",
+          "FutureResolution": {
+            "date": "2016-12-31"
+          },
+          "PastResolution": {
+            "date": "2015-12-31"
+          }
+        },
+        "Start": 16,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Noel'de döneceğim",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Noel",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-12-25",
+          "FutureResolution": {
+            "date": "2016-12-25"
+          },
+          "PastResolution": {
+            "date": "2015-12-25"
+          }
+        },
+        "Start": 16,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Yuandan'da döneceğim",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Yuandan",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-01-01",
+          "FutureResolution": {
+            "date": "2017-01-01"
+          },
+          "PastResolution": {
+            "date": "2016-01-01"
+          }
+        },
+        "Start": 16,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Şükran Günü'nde döneceğim",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Şükran Günü",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-11-WXX-4-4",
+          "FutureResolution": {
+            "date": "2016-11-24"
+          },
+          "PastResolution": {
+            "date": "2015-11-26"
+          }
+        },
+        "Start": 16,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Babalar Günü'nde döneceğim",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Babalar Günü",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-06-WXX-7-3",
+          "FutureResolution": {
+            "date": "2017-06-18"
+          },
+          "PastResolution": {
+            "date": "2016-06-19"
+          }
+        },
+        "Start": 16,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Gelecek yıl Yuandan'da döneceğim",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Gelecek yıl Yuandan",
+        "Type": "date",
+        "Value": {
+          "Timex": "2017-01-01",
+          "FutureResolution": {
+            "date": "2017-01-01"
+          },
+          "PastResolution": {
+            "date": "2017-01-01"
+          }
+        },
+        "Start": 16,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "2010 Şükran Günü'nde döneceğim",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2010 Şükran Günü",
+        "Type": "date",
+        "Value": {
+          "Timex": "2010-11-WXX-4-4",
+          "FutureResolution": {
+            "date": "2010-11-25"
+          },
+          "PastResolution": {
+            "date": "2010-11-25"
+          }
+        },
+        "Start": 16,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "2015 Babalar Günü'nde döneceğim",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2015 Babalar Günü",
+        "Type": "date",
+        "Value": {
+          "Timex": "2015-06-WXX-7-3",
+          "FutureResolution": {
+            "date": "2015-06-21"
+          },
+          "PastResolution": {
+            "date": "2015-06-21"
+          }
+        },
+        "Start": 16,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Burada Pershing Meydanı'nda İşçi Bayramı",
+    "Context": {
+      "ReferenceDateTime": "2018-06-01T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "İşçi Bayramı",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-05-01",
+          "FutureResolution": {
+            "date": "2019-05-01"
+          },
+          "PastResolution": {
+            "date": "2018-05-01"
+          }
+        },
+        "Start": 32,
+        "Length": 7
+      },
+      {
+        "Text": "Int'l Workers Day",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-05-01",
+          "FutureResolution": {
+            "date": "2019-05-01"
+          },
+          "PastResolution": {
+            "date": "2018-05-01"
+          }
+        },
+        "Start": 40,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Martin Luther King Günü Amerika'nın resmi tatil günüdür",
+    "Context": {
+      "ReferenceDateTime": "2018-06-01T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Martin Luther King Günü",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-01-WXX-1-3",
+          "FutureResolution": {
+            "date": "2019-01-21"
+          },
+          "PastResolution": {
+            "date": "2018-01-15"
+          }
+        },
+        "Start": 0,
+        "Length": 22
+      }
+    ]
+  }
+]

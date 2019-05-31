@@ -1,0 +1,119 @@
+[
+  {
+    "Input": "Noel'de döneceğim",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Noel",
+        "Type": "date",
+        "Start": 0,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "Noel günü döneceğim",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Noel günü",
+        "Type": "date",
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Yuandan festivalinde döneceğiem",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Yuandan festivali",
+        "Type": "date",
+        "Start": 0,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Şükran Günü'nde döneceğim",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Şükran Günü",
+        "Type": "date",
+        "Start": 0,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Babalar Günü'nde döneceğim",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Babalar Günü",
+        "Type": "date",
+        "Start": 0,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Bu yıl Yuandan'da döneceğim",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Bu yıl Yuandan",
+        "Type": "date",
+        "Start": 0,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "2016 Yuandan'da döneceğim",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2016 Yuandan",
+        "Type": "date",
+        "Start": 0,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Temiz Pazartesi'nde döneceğim",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Temiz Pazartesi",
+        "Type": "date",
+        "Start": 0,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Martin Luther King Günü Amerika'nın resmi tatil günüdür",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Martin Luther King Günü",
+        "Type": "date",
+        "Start": 0,
+        "Length": 23
+      }
+    ]
+  }
+]
