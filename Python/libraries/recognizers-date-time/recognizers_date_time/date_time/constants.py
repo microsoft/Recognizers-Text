@@ -38,6 +38,7 @@ class Constants:
 
     EarlyMorning: str = "TDA"
     Morning: str = "TMO"
+    Noon: str = "TNO"
     Afternoon: str = "TAF"
     Evening: str = "TEV"
     Daytime: str = "TDT"

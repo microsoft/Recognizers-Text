@@ -4,7 +4,7 @@ ProtocolRegex: !simpleRegex
 PortRegex: !simpleRegex
   def: (:\d{1,5})
 ExtractionRestrictionRegex: !simpleRegex
-  def: (?<=\s|[\'""\(\[:]|^)
+  def: (?<=\s|[\'""\(\[:]|[\u4E00-\u9FFF]|^)
 # For restrictions+protocol+hostname (without its tld)
 UrlPrefixRegex: !nestedRegex
   def: '({ExtractionRestrictionRegex}{ProtocolRegex}?|{ProtocolRegex})[a-zA-Z0-9][-a-zA-Z0-9._]{0,256}(?<![.])\.'

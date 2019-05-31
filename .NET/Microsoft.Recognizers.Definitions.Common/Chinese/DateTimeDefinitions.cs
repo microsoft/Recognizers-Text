@@ -90,7 +90,7 @@ namespace Microsoft.Recognizers.Definitions.Chinese
 		public const string DecadeRegexInChinese = @"(?<decade>十|一十|二十|三十|四十|五十|六十|七十|八十|九十)";
 		public static readonly string DecadeRegex = $@"(?<centurysuf>({CenturyRegex}|{CenturyRegexInChinese}|{RelativeCenturyRegex}))?(?<decade>(\d0|{DecadeRegexInChinese}))年代";
 		public const string PrepositionRegex = @"(?<prep>^的|在$)";
-		public const string NowRegex = @"(?<now>现在|马上|立刻|刚刚才|刚刚|刚才)";
+		public const string NowRegex = @"(?<now>现在|马上|立刻|刚刚才|刚刚|刚才|这会儿|当下|此刻)";
 		public const string NightRegex = @"(?<night>早|晚)";
 		public const string TimeOfTodayRegex = @"(今晚|今早|今晨|明晚|明早|明晨|昨晚)(的|在)?";
 		public const string DateTimePeriodTillRegex = @"(?<till>到|直到|--|-|—|——)";
@@ -134,7 +134,7 @@ namespace Microsoft.Recognizers.Definitions.Chinese
 			@"年"
 		};
 		public static readonly string LunarHolidayRegex = $@"(({DatePeriodYearRegex}|{DatePeriodYearInChineseRegex}|(?<yearrel>明年|今年|去年))(的)?)?(?<holiday>除夕|春节|中秋节|中秋|元宵节|端午节|端午|重阳节)";
-		public static readonly string HolidayRegexList1 = $@"(({DatePeriodYearRegex}|{DatePeriodYearInChineseRegex}|(?<yearrel>明年|今年|去年))(的)?)?(?<holiday>新年|五一|劳动节|元旦节|元旦|愚人节|圣诞节|植树节|国庆节|情人节|教师节|儿童节|妇女节|青年节|建军节|女生节|光棍节|双十一|清明节|清明)";
+		public static readonly string HolidayRegexList1 = $@"(({DatePeriodYearRegex}|{DatePeriodYearInChineseRegex}|(?<yearrel>明年|今年|去年))(的)?)?(?<holiday>新年|五一|劳动节|元旦节|元旦|愚人节|平安夜|圣诞节|植树节|国庆节|情人节|教师节|儿童节|妇女节|青年节|建军节|女生节|光棍节|双十一|清明节|清明)";
 		public static readonly string HolidayRegexList2 = $@"(({DatePeriodYearRegex}|{DatePeriodYearInChineseRegex}|(?<yearrel>明年|今年|去年))(的)?)?(?<holiday>母亲节|父亲节|感恩节|万圣节)";
 		public const string SetUnitRegex = @"(?<unit>年|月|周|星期|日|天|小时|时|分钟|分|秒钟|秒)";
 		public static readonly string SetEachUnitRegex = $@"(?<each>(每个|每一|每)\s*{SetUnitRegex})";
@@ -563,7 +563,8 @@ namespace Microsoft.Recognizers.Definitions.Chinese
 		public const string DateTimeSimpleAmRegex = @"(?<am>早|晨)";
 		public const string DateTimeSimplePmRegex = @"(?<pm>晚)";
 		public const string DateTimePeriodMORegex = @"(凌晨|清晨|早上|早|上午)";
-		public const string DateTimePeriodAFRegex = @"(中午|下午|午后|傍晚)";
+		public const string DateTimePeriodNORegex = @"(中午)";
+		public const string DateTimePeriodAFRegex = @"(下午|午后|傍晚)";
 		public const string DateTimePeriodEVRegex = @"(晚上|夜里|夜晚|晚)";
 		public const string DateTimePeriodNIRegex = @"(半夜|夜间|深夜)";
 		public static readonly Dictionary<string, int> DurationUnitValueMap = new Dictionary<string, int>
@@ -617,19 +618,31 @@ namespace Microsoft.Recognizers.Definitions.Chinese
 		public const string DefaultLanguageFallback = @"DMY";
 		public static readonly IList<string> MorningTermList = new List<string>
 		{
-			@"上午"
+			@"上午",
+			@"早上",
+			@"清晨"
+		};
+		public static readonly IList<string> NoonTermList = new List<string>
+		{
+			@"中午",
+			@"正午"
 		};
 		public static readonly IList<string> AfternoonTermList = new List<string>
 		{
-			@"下午"
+			@"下午",
+			@"午后"
 		};
 		public static readonly IList<string> EveningTermList = new List<string>
 		{
-			@"晚上"
+			@"晚上",
+			@"夜里",
+			@"傍晚",
+			@"夜晚"
 		};
 		public static readonly IList<string> DaytimeTermList = new List<string>
 		{
-			@"白天"
+			@"白天",
+			@"日间"
 		};
 		public static readonly IList<string> NightTermList = new List<string>
 		{

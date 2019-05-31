@@ -77,7 +77,7 @@ export namespace ChineseDateTime {
 	export const DecadeRegexInChinese = `(?<decade>十|一十|二十|三十|四十|五十|六十|七十|八十|九十)`;
 	export const DecadeRegex = `(?<centurysuf>(${CenturyRegex}|${CenturyRegexInChinese}|${RelativeCenturyRegex}))?(?<decade>(\\d0|${DecadeRegexInChinese}))年代`;
 	export const PrepositionRegex = `(?<prep>^的|在$)`;
-	export const NowRegex = `(?<now>现在|马上|立刻|刚刚才|刚刚|刚才)`;
+	export const NowRegex = `(?<now>现在|马上|立刻|刚刚才|刚刚|刚才|这会儿|当下|此刻)`;
 	export const NightRegex = `(?<night>早|晚)`;
 	export const TimeOfTodayRegex = `(今晚|今早|今晨|明晚|明早|明晨|昨晚)(的|在)?`;
 	export const DateTimePeriodTillRegex = `(?<till>到|直到|--|-|—|——)`;
@@ -99,7 +99,7 @@ export namespace ChineseDateTime {
 	export const DurationSuffixList: ReadonlyMap<string, string> = new Map<string, string>([["M", "分钟"],["S", "秒钟|秒"],["H", "个小时|小时|个钟头|钟头"],["D", "天"],["W", "星期|个星期|周"],["Mon", "个月"],["Y", "年"]]);
 	export const DurationAmbiguousUnits = [ "分钟","秒钟","秒","个小时","小时","天","星期","个星期","周","个月","年" ];
 	export const LunarHolidayRegex = `((${DatePeriodYearRegex}|${DatePeriodYearInChineseRegex}|(?<yearrel>明年|今年|去年))(的)?)?(?<holiday>除夕|春节|中秋节|中秋|元宵节|端午节|端午|重阳节)`;
-	export const HolidayRegexList1 = `((${DatePeriodYearRegex}|${DatePeriodYearInChineseRegex}|(?<yearrel>明年|今年|去年))(的)?)?(?<holiday>新年|五一|劳动节|元旦节|元旦|愚人节|圣诞节|植树节|国庆节|情人节|教师节|儿童节|妇女节|青年节|建军节|女生节|光棍节|双十一|清明节|清明)`;
+	export const HolidayRegexList1 = `((${DatePeriodYearRegex}|${DatePeriodYearInChineseRegex}|(?<yearrel>明年|今年|去年))(的)?)?(?<holiday>新年|五一|劳动节|元旦节|元旦|愚人节|平安夜|圣诞节|植树节|国庆节|情人节|教师节|儿童节|妇女节|青年节|建军节|女生节|光棍节|双十一|清明节|清明)`;
 	export const HolidayRegexList2 = `((${DatePeriodYearRegex}|${DatePeriodYearInChineseRegex}|(?<yearrel>明年|今年|去年))(的)?)?(?<holiday>母亲节|父亲节|感恩节|万圣节)`;
 	export const SetUnitRegex = `(?<unit>年|月|周|星期|日|天|小时|时|分钟|分|秒钟|秒)`;
 	export const SetEachUnitRegex = `(?<each>(每个|每一|每)\\s*${SetUnitRegex})`;
@@ -158,7 +158,8 @@ export namespace ChineseDateTime {
 	export const DateTimeSimpleAmRegex = `(?<am>早|晨)`;
 	export const DateTimeSimplePmRegex = `(?<pm>晚)`;
 	export const DateTimePeriodMORegex = `(凌晨|清晨|早上|早|上午)`;
-	export const DateTimePeriodAFRegex = `(中午|下午|午后|傍晚)`;
+	export const DateTimePeriodNORegex = `(中午)`;
+	export const DateTimePeriodAFRegex = `(下午|午后|傍晚)`;
 	export const DateTimePeriodEVRegex = `(晚上|夜里|夜晚|晚)`;
 	export const DateTimePeriodNIRegex = `(半夜|夜间|深夜)`;
 	export const DurationUnitValueMap: ReadonlyMap<string, number> = new Map<string, number>([["Y", 31536000],["Mon", 2592000],["W", 604800],["D", 86400],["H", 3600],["M", 60],["S", 1]]);
@@ -168,9 +169,10 @@ export namespace ChineseDateTime {
 	export const TimeNumberDictionary: ReadonlyMap<string, number> = new Map<string, number>([["零", 0],["一", 1],["二", 2],["三", 3],["四", 4],["五", 5],["六", 6],["七", 7],["八", 8],["九", 9],["〇", 0],["两", 2],["十", 10]]);
 	export const TimeLowBoundDesc: ReadonlyMap<string, number> = new Map<string, number>([["中午", 11],["下午", 12],["午后", 12],["晚上", 18],["夜里", 18],["夜晚", 18],["夜间", 18],["深夜", 18],["傍晚", 18],["晚", 18],["pm", 12]]);
 	export const DefaultLanguageFallback = 'DMY';
-	export const MorningTermList = [ "上午" ];
-	export const AfternoonTermList = [ "下午" ];
-	export const EveningTermList = [ "晚上" ];
-	export const DaytimeTermList = [ "白天" ];
+	export const MorningTermList = [ "上午","早上","清晨" ];
+	export const NoonTermList = [ "中午","正午" ];
+	export const AfternoonTermList = [ "下午","午后" ];
+	export const EveningTermList = [ "晚上","夜里","傍晚","夜晚" ];
+	export const DaytimeTermList = [ "白天","日间" ];
 	export const NightTermList = [ "深夜" ];
 }

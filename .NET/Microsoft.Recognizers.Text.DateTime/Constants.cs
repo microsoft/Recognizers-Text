@@ -152,6 +152,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         // Timex of TimeOfDay
         public const string EarlyMorning = "TDA";
         public const string Morning = "TMO";
+        public const string Noon = "TNO";
         public const string Afternoon = "TAF";
         public const string Evening = "TEV";
         public const string Daytime = "TDT";

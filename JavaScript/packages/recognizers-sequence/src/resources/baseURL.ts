@@ -10,7 +10,7 @@ import { BaseIp } from "./baseIp";
 export namespace BaseURL {
 	export const ProtocolRegex = `((https?|ftp):\\/\\/)`;
 	export const PortRegex = `(:\\d{1,5})`;
-	export const ExtractionRestrictionRegex = `(?<=\\s|[\\'\"\"\\(\\[:]|^)`;
+	export const ExtractionRestrictionRegex = `(?<=\\s|[\\'\"\"\\(\\[:]|[\\u4E00-\\u9FFF]|^)`;
 	export const UrlPrefixRegex = `(${ExtractionRestrictionRegex}${ProtocolRegex}?|${ProtocolRegex})[a-zA-Z0-9][-a-zA-Z0-9._]{0,256}(?<![.])\\.`;
 	export const UrlSuffixRegex = `${PortRegex}?([/#][-a-zA-Z0-9:%_\\+.~#?!&//=]*)?(?![-a-zA-Z0-9:%_\\+~#?!&//=@])`;
 	export const UrlRegex = `${UrlPrefixRegex}(?<Tld>[a-zA-Z]{2,18})${UrlSuffixRegex}`;

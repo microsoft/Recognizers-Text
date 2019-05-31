@@ -10,7 +10,7 @@
 class BaseUrl:
     ProtocolRegex = f'((https?|ftp):\\/\\/)'
     PortRegex = f'(:\\d{{1,5}})'
-    ExtractionRestrictionRegex = f'(?<=\\s|[\\\'\"\"\\(\\[:]|^)'
+    ExtractionRestrictionRegex = f'(?<=\\s|[\\\'\"\"\\(\\[:]|[\\u4E00-\\u9FFF]|^)'
     UrlPrefixRegex = f'({ExtractionRestrictionRegex}{ProtocolRegex}?|{ProtocolRegex})[a-zA-Z0-9][-a-zA-Z0-9._]{{0,256}}(?<![.])\\.'
     UrlSuffixRegex = f'{PortRegex}?([/#][-a-zA-Z0-9:%_\\+.~#?!&//=]*)?(?![-a-zA-Z0-9:%_\\+~#?!&//=@])'
     UrlRegex = f'{UrlPrefixRegex}(?<Tld>[a-zA-Z]{{2,18}}){UrlSuffixRegex}'

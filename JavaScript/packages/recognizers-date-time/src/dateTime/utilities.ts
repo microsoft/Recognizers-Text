@@ -575,6 +575,11 @@ export class TimexUtil {
                 result.beginHour = 8;
                 result.endHour = 12;
                 break;
+            case Constants.Noon:
+                result.timeX = Constants.Noon;
+                result.beginHour = 11;
+                result.endHour = 13;
+                break;
             case Constants.Afternoon:
                 result.timeX = Constants.Afternoon;
                 result.beginHour = 12;
