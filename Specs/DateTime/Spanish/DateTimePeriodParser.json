@@ -891,33 +891,6 @@
     ]
   },
   {
-    "Input": "Estaré afuera de 3:00 a 4:00 de mañana",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "NotSupported": "dotnet, java",
-    "NotSupportedByDesign": "javascript, python",
-    "Results": [
-      {
-        "Text": "de 3:00 a 4:00 de mañana",
-        "Type": "datetimerange",
-        "Value": {
-          "Timex": "(2016-11-08T03:00,2016-11-08T04:00,PT1H)",
-          "FutureResolution": {
-            "startDateTime": "2016-11-08 03:00:00",
-            "endDateTime": "2016-11-08 04:00:00"
-          },
-          "PastResolution": {
-            "startDateTime": "2016-11-08 03:00:00",
-            "endDateTime": "2016-11-08 04:00:00"
-          }
-        },
-        "Start": 14,
-        "Length": 24
-      }
-    ]
-  },
-  {
     "Input": "Estaré afuera mañana de las siete y media a las 4 p. m.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
@@ -1454,33 +1427,6 @@
         },
         "Start": 13,
         "Length": 13
-      }
-    ]
-  },
-  {
-    "Input": "Volveré en las próximas 5 horas",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "NotSupported": "dotnet, java",
-    "NotSupportedByDesign": "javascript, python",
-    "Results": [
-      {
-        "Text": "próximas 5 horas",
-        "Type": "datetimerange",
-        "Value": {
-          "Timex": "(2016-11-07T16:12:00,2016-11-07T21:12:00,PT5H)",
-          "FutureResolution": {
-            "startDateTime": "2016-11-07 16:12:00",
-            "endDateTime": "2016-11-07 21:12:00"
-          },
-          "PastResolution": {
-            "startDateTime": "2016-11-07 16:12:00",
-            "endDateTime": "2016-11-07 21:12:00"
-          }
-        },
-        "Start": 15,
-        "Length": 12
       }
     ]
   },

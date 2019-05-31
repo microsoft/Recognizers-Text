@@ -1448,42 +1448,6 @@
     ]
   },
   {
-    "Input": "sadece on üç dolar kırk beş sente mal oldu",
-    "NotSupported": "python",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "on üç dolar kırk beş sent",
-        "TypeName": "currency",
-        "Resolution": {
-          "value": "13.45",
-          "unit": "Dollar"
-        },
-        "Start": 7,
-        "End": 32
-      }
-    ]
-  },
-  {
-    "Input": "sadece on üç dolar kırk beş sente mal oldu",
-    "NotSupported": "python",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "on üç dolar kırk beş sent",
-        "TypeName": "currency",
-        "Resolution": {
-          "value": "13.45",
-          "unit": "Dollar"
-        },
-        "Start": 7,
-        "End": 32
-      }
-    ]
-  },
-  {
     "Input": "bir dolar ve bir ve bir puanlık kredi puanınıza mal olur.",
     "NotSupported": "python",
     "NotSupported": "dotnet",
