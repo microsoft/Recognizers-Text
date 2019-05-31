@@ -29,7 +29,7 @@
           "unit": "Milliliter"
         },
         "Start": 0,
-        "End": 7
+        "End": 3
       }
     ]
   },
@@ -45,8 +45,8 @@
           "value": "3",
           "unit": "Inch"
         },
-        "Start": 13,
-        "End": 17
+        "Start": 33,
+        "End": 38
       }
     ]
   },
@@ -62,8 +62,8 @@
           "value": "10",
           "unit": "Mile"
         },
-        "Start": 11,
-        "End": 16
+        "Start": 39,
+        "End": 47
       }
     ]
   },
@@ -79,8 +79,8 @@
           "value": "10.5",
           "unit": "Mile"
         },
-        "Start": 9,
-        "End": 16
+        "Start": 19,
+        "End": 30
       }
     ]
   },
@@ -96,8 +96,8 @@
           "value": "6",
           "unit": "Mile"
         },
-        "Start": 25,
-        "End": 29
+        "Start": 4,
+        "End": 11
       }
     ]
   },
@@ -113,8 +113,8 @@
           "value": "500000",
           "unit": "Barrel"
         },
-        "Start": 40,
-        "End": 47
+        "Start": 54,
+        "End": 68
       }
     ]
   },
@@ -130,8 +130,8 @@
           "value": "2",
           "unit": "Foot"
         },
-        "Start": 46,
-        "End": 50
+        "Start": 152,
+        "End": 159
       }
     ]
   },
@@ -147,8 +147,8 @@
           "value": "68",
           "unit": "Ounce"
         },
-        "Start": 68,
-        "End": 73
+        "Start": 57,
+        "End": 64
       }
     ]
   },
@@ -164,8 +164,8 @@
           "value": "45",
           "unit": "Acre"
         },
-        "Start": 73,
-        "End": 79
+        "Start": 148,
+        "End": 154
       }
     ]
   },
@@ -181,8 +181,8 @@
           "value": "10",
           "unit": "Foot"
         },
-        "Start": 35,
-        "End": 40
+        "Start": 136,
+        "End": 142
       }
     ]
   },
@@ -198,8 +198,8 @@
           "value": "2400000000",
           "unit": "Gallon"
         },
-        "Start": 52,
-        "End": 58
+        "Start": 133,
+        "End": 151
       }
     ]
   },
@@ -215,8 +215,8 @@
           "value": "10",
           "unit": "Gallon"
         },
-        "Start": 0,
-        "End": 5
+        "Start": 2,
+        "End": 10
       }
     ]
   },
@@ -232,8 +232,8 @@
           "value": "1500000",
           "unit": "Gallon"
         },
-        "Start": 19,
-        "End": 26
+        "Start": 39,
+        "End": 56
       }
     ]
   },
@@ -249,8 +249,8 @@
           "value": "2",
           "unit": "Pound"
         },
-        "Start": 14,
-        "End": 19
+        "Start": 22,
+        "End": 31
       }
     ]
   },
@@ -266,8 +266,8 @@
           "value": "25",
           "unit": "Pound"
         },
-        "Start": 16,
-        "End": 22
+        "Start": 121,
+        "End": 129
       }
     ]
   },
@@ -283,8 +283,8 @@
           "value": "900000000000",
           "unit": "Cubic foot"
         },
-        "Start": 20,
-        "End": 29
+        "Start": 78,
+        "End": 100
       }
     ]
   },
@@ -300,8 +300,8 @@
           "value": "660",
           "unit": "Square meter"
         },
-        "Start": 62,
-        "End": 71
+        "Start": 125,
+        "End": 141
       }
     ]
   },
@@ -317,7 +317,7 @@
           "value": "200",
           "unit": "Mile"
         },
-        "Start": 25,
+        "Start": 23,
         "End": 31
       }
     ]
@@ -334,8 +334,8 @@
           "value": "3",
           "unit": "Foot"
         },
-        "Start": 23,
-        "End": 27
+        "Start": 41,
+        "End": 50
       }
     ]
   },
@@ -351,8 +351,8 @@
           "value": "190000",
           "unit": "Square meter"
         },
-        "Start": 40,
-        "End": 49
+        "Start": 28,
+        "End": 48
       }
     ]
   },
@@ -368,8 +368,8 @@
           "value": "3",
           "unit": "Ton"
         },
-        "Start": 33,
-        "End": 36
+        "Start": 183,
+        "End": 191
       }
     ]
   },
@@ -385,8 +385,8 @@
           "value": "130",
           "unit": "Gallon"
         },
-        "Start": 62,
-        "End": 68
+        "Start": 276,
+        "End": 286
       }
     ]
   },
@@ -402,8 +402,8 @@
           "value": "1458000",
           "unit": "Ton"
         },
-        "Start": 53,
-        "End": 62
+        "Start": 162,
+        "End": 175
       }
     ]
   },
@@ -419,8 +419,8 @@
           "value": "6",
           "unit": "Foot"
         },
-        "Start": 10,
-        "End": 14
+        "Start": 57,
+        "End": 64
       }
     ]
   },
@@ -436,8 +436,8 @@
           "value": "16000",
           "unit": "Metric ton"
         },
-        "Start": 55,
-        "End": 63
+        "Start": 87,
+        "End": 104
       }
     ]
   },
@@ -453,8 +453,8 @@
           "value": "16",
           "unit": "Bit"
         },
-        "Start": 26,
-        "End": 31
+        "Start": 117,
+        "End": 122
       }
     ]
   },
@@ -470,8 +470,8 @@
           "value": "188",
           "unit": "Mile per hour"
         },
-        "Start": 26,
-        "End": 35
+        "Start": 43,
+        "End": 59
       }
     ]
   },
@@ -487,8 +487,8 @@
           "value": "100",
           "unit": "Meter"
         },
-        "Start": 25,
-        "End": 31
+        "Start": 53,
+        "End": 62
       }
     ]
   },
@@ -504,8 +504,8 @@
           "value": "2.5",
           "unit": "Mile"
         },
-        "Start": 41,
-        "End": 47
+        "Start": 82,
+        "End": 89
       }
     ]
   },
@@ -521,8 +521,8 @@
           "value": "4",
           "unit": "Mile"
         },
-        "Start": 14,
-        "End": 18
+        "Start": 6,
+        "End": 14
       }
     ]
   },
@@ -538,8 +538,8 @@
           "value": "325",
           "unit": "Kilometer"
         },
-        "Start": 14,
-        "End": 22
+        "Start": 72,
+        "End": 84
       }
     ]
   },
@@ -555,8 +555,8 @@
           "value": "5",
           "unit": "Foot"
         },
-        "Start": 9,
-        "End": 13
+        "Start": 19,
+        "End": 24
       }
     ]
   },
@@ -573,7 +573,7 @@
           "unit": "Inch"
         },
         "Start": 0,
-        "End": 4
+        "End": 7
       }
     ]
   },
@@ -589,8 +589,8 @@
           "value": "0.25",
           "unit": "Mile"
         },
-        "Start": 29,
-        "End": 36
+        "Start": 44,
+        "End": 51
       }
     ]
   },
@@ -606,8 +606,8 @@
           "value": "1.6",
           "unit": "Kilometer"
         },
-        "Start": 36,
-        "End": 44
+        "Start": 52,
+        "End": 57
       }
     ]
   },
@@ -623,8 +623,8 @@
           "value": "17",
           "unit": "Kilometer"
         },
-        "Start": 21,
-        "End": 28
+        "Start": 35,
+        "End": 39
       }
     ]
   },
@@ -640,8 +640,8 @@
           "value": "776",
           "unit": "Foot"
         },
-        "Start": 42,
-        "End": 48
+        "Start": 99,
+        "End": 106
       }
     ]
   },
@@ -657,8 +657,8 @@
           "value": "500",
           "unit": "Meter"
         },
-        "Start": 57,
-        "End": 63
+        "Start": 94,
+        "End": 103
       }
     ]
   },
@@ -674,8 +674,8 @@
           "value": "300",
           "unit": "Millimeter"
         },
-        "Start": 49,
-        "End": 54
+        "Start": 110,
+        "End": 114
       }
     ]
   },
@@ -691,13 +691,13 @@
           "value": "7.62",
           "unit": "Millimeter"
         },
-        "Start": 29,
-        "End": 38
+        "Start": 82,
+        "End": 87
       }
     ]
   },
   {
-    "Input": "프로젝트 비용은 4천 680만 달러입니다. 연간 구리 캐소드 생산량을 3만 4천 500 미터톤으로 25 % 증대시킬 계획이다.\n",
+    "Input": "프로젝트 비용은 4천 680만 달러입니다. 연간 구리 캐소드 생산량을 3만 4천 500 미터톤으로 25 % 증대시킬 계획이다.",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
@@ -708,8 +708,8 @@
           "value": "34500",
           "unit": "Metric ton"
         },
-        "Start": 39,
-        "End": 52
+        "Start": 109,
+        "End": 126
       }
     ]
   },
@@ -725,8 +725,8 @@
           "value": "291890",
           "unit": "Metric ton"
         },
-        "Start": 43,
-        "End": 56
+        "Start": 42,
+        "End": 60
       }
     ]
   },
@@ -742,8 +742,8 @@
           "value": "190",
           "unit": "Square kilometer"
         },
-        "Start": 9,
-        "End": 20
+        "Start": 45,
+        "End": 51
       }
     ]
   },
@@ -759,11 +759,11 @@
           "value": "2204.62",
           "unit": "Pound"
         },
-        "Start": 5,
-        "End": 16
+        "Start": 25,
+        "End": 39
       },
       {
-        "Text": "metric ton",
+        "Text": "미터톤",
         "TypeName": "dimension",
         "Resolution": {
           "value": null,
@@ -773,6 +773,18 @@
         "End": 11
       }
     ]
+  },
+  {
+    "Input": "나는 남자입니다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "메세지를 빨리 보내고 이메일 주소를 요청하십시오.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
   },
   {
     "Input": "1 미터는 10 데시미터와 같습니다. ",
@@ -790,9 +802,9 @@
         }
       },
       {
-        "Text": "10 dm",
-        "Start": 15,
-        "End": 49,
+        "Text": "10 데시미터",
+        "Start": 6,
+        "End": 13,
         "TypeName": "dimension",
         "Resolution": {
           "unit": "Decimeter",
@@ -813,8 +825,41 @@
           "unit": "Megabit",
           "value": "100"
         },
-        "Start": 10,
-        "End": 19
+        "Start": 25,
+        "End": 30
+      }
+    ]
+  },
+  {
+    "Input": "오후 2시에 놀래켜 줄게. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "그는 2 pm은 2 피코미터라고 말했다. ",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2 pm",
+        "Start": 9,
+        "End": 12,
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Picometer",
+          "value": "2"
+        }
+      },
+      {
+        "Text": "2 피코미터",
+        "Start": 9,
+        "End": 15,
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Picometer",
+          "value": "2"
+        }
       }
     ]
   },
