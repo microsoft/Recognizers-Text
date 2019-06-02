@@ -708,6 +708,15 @@ public class BaseDateTimePeriodParser implements IDateTimeParser {
             result.setFutureValue(futureResult);
             result.setPastValue(pastResult);
 
+            // Handle text contain timeZone, like "thursday morning est", try to get the timezone resolution.
+            List<ExtractResult> zoneErs = config.getTimePeriodExtractor().extract(timeText + ' ' + afterStr);
+            if (zoneErs.size() > 0) {
+                DateTimeParseResult zonePr = config.getTimePeriodParser().parse(zoneErs.get(0), referenceDate);
+                if (((DateTimeResolutionResult)zonePr.getValue()).getTimeZoneResolution() != null) {
+                    result.setTimeZoneResolution(((DateTimeResolutionResult)zonePr.getValue()).getTimeZoneResolution());
+                }
+            }
+
             result.setSuccess(true);
 
             return result;

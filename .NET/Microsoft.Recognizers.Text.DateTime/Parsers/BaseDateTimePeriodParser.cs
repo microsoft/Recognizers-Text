@@ -372,6 +372,17 @@ namespace Microsoft.Recognizers.Text.DateTime
                         DateObject.MinValue.SafeCreateFromValue(pastDate.Year, pastDate.Month, pastDate.Day, beginHour, 0, 0),
                         DateObject.MinValue.SafeCreateFromValue(pastDate.Year, pastDate.Month, pastDate.Day, endHour, endMin, endMin));
 
+                // Handle text contain timeZone, like "thursday morning est", try to get the timezone resolution.
+                var zoneErs = this.Config.TimePeriodExtractor.Extract(timeText + ' ' + afterStr, referenceTime);
+                if (zoneErs.Count > 0)
+                {
+                    var zonePr = this.Config.TimePeriodParser.Parse(zoneErs[0], referenceTime);
+                    if (((DateTimeResolutionResult)zonePr.Value).TimeZoneResolution != null)
+                    {
+                        ret.TimeZoneResolution = ((DateTimeResolutionResult)zonePr.Value).TimeZoneResolution;
+                    }
+                }
+
                 ret.Success = true;
 
                 return ret;

@@ -9916,5 +9916,42 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Please book a hotel for Bob on Thursday morning EST.",
+    "Context": {
+      "ReferenceDateTime": "2019-06-02T12:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "thursday morning est",
+        "Start": 31,
+        "End": 50,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-4TMO",
+              "type": "datetimerange",
+              "timezone": "UTC-05:00",
+              "timezoneText": "est",
+              "utcOffsetMins": "-300",
+              "start": "2019-05-30 08:00:00",
+              "end": "2019-05-30 12:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-4TMO",
+              "type": "datetimerange",
+              "timezone": "UTC-05:00",
+              "timezoneText": "est",
+              "utcOffsetMins": "-300",
+              "start": "2019-06-06 08:00:00",
+              "end": "2019-06-06 12:00:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
