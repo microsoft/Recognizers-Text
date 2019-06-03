@@ -563,7 +563,7 @@ namespace Microsoft.Recognizers.Definitions.Chinese
 		public const string DateTimeSimpleAmRegex = @"(?<am>早|晨)";
 		public const string DateTimeSimplePmRegex = @"(?<pm>晚)";
 		public const string DateTimePeriodMORegex = @"(凌晨|清晨|早上|早|上午)";
-		public const string DateTimePeriodNORegex = @"(中午)";
+		public const string DateTimePeriodMIRegex = @"(中午)";
 		public const string DateTimePeriodAFRegex = @"(下午|午后|傍晚)";
 		public const string DateTimePeriodEVRegex = @"(晚上|夜里|夜晚|晚)";
 		public const string DateTimePeriodNIRegex = @"(半夜|夜间|深夜)";
@@ -622,7 +622,7 @@ namespace Microsoft.Recognizers.Definitions.Chinese
 			@"早上",
 			@"清晨"
 		};
-		public static readonly IList<string> NoonTermList = new List<string>
+		public static readonly IList<string> MidDayTermList = new List<string>
 		{
 			@"中午",
 			@"正午"

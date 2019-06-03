@@ -158,7 +158,7 @@ export namespace ChineseDateTime {
 	export const DateTimeSimpleAmRegex = `(?<am>早|晨)`;
 	export const DateTimeSimplePmRegex = `(?<pm>晚)`;
 	export const DateTimePeriodMORegex = `(凌晨|清晨|早上|早|上午)`;
-	export const DateTimePeriodNORegex = `(中午)`;
+	export const DateTimePeriodMIRegex = `(中午)`;
 	export const DateTimePeriodAFRegex = `(下午|午后|傍晚)`;
 	export const DateTimePeriodEVRegex = `(晚上|夜里|夜晚|晚)`;
 	export const DateTimePeriodNIRegex = `(半夜|夜间|深夜)`;
@@ -170,7 +170,7 @@ export namespace ChineseDateTime {
 	export const TimeLowBoundDesc: ReadonlyMap<string, number> = new Map<string, number>([["中午", 11],["下午", 12],["午后", 12],["晚上", 18],["夜里", 18],["夜晚", 18],["夜间", 18],["深夜", 18],["傍晚", 18],["晚", 18],["pm", 12]]);
 	export const DefaultLanguageFallback = 'DMY';
 	export const MorningTermList = [ "上午","早上","清晨" ];
-	export const NoonTermList = [ "中午","正午" ];
+	export const MidDayTermList = [ "中午","正午" ];
 	export const AfternoonTermList = [ "下午","午后" ];
 	export const EveningTermList = [ "晚上","夜里","傍晚","夜晚" ];
 	export const DaytimeTermList = [ "白天","日间" ];

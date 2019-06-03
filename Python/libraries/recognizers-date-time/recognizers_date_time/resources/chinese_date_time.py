@@ -511,7 +511,7 @@ class ChineseDateTime:
     DateTimeSimpleAmRegex = f'(?<am>早|晨)'
     DateTimeSimplePmRegex = f'(?<pm>晚)'
     DateTimePeriodMORegex = f'(凌晨|清晨|早上|早|上午)'
-    DateTimePeriodNORegex = f'(中午)'
+    DateTimePeriodMIRegex = f'(中午)'
     DateTimePeriodAFRegex = f'(下午|午后|傍晚)'
     DateTimePeriodEVRegex = f'(晚上|夜里|夜晚|晚)'
     DateTimePeriodNIRegex = f'(半夜|夜间|深夜)'
@@ -553,7 +553,7 @@ class ChineseDateTime:
                              ("pm", 12)])
     DefaultLanguageFallback = 'DMY'
     MorningTermList = [r'上午', r'早上', r'清晨']
-    NoonTermList = [r'中午', r'正午']
+    MidDayTermList = [r'中午', r'正午']
     AfternoonTermList = [r'下午', r'午后']
     EveningTermList = [r'晚上', r'夜里', r'傍晚', r'夜晚']
     DaytimeTermList = [r'白天', r'日间']

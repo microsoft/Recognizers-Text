@@ -16,7 +16,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         public static readonly Regex MORegex = new Regex(DateTimeDefinitions.DateTimePeriodMORegex, RegexOptions.Singleline);
 
-        public static readonly Regex NORegex = new Regex(DateTimeDefinitions.DateTimePeriodNORegex, RegexOptions.Singleline);
+        public static readonly Regex MIRegex = new Regex(DateTimeDefinitions.DateTimePeriodMIRegex, RegexOptions.Singleline);
 
         public static readonly Regex AFRegex = new Regex(DateTimeDefinitions.DateTimePeriodAFRegex, RegexOptions.Singleline);
 
@@ -431,9 +431,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 beginHour = 8;
                 endHour = Constants.HalfDayHourCount;
             }
-            else if (NORegex.IsMatch(trimmedText))
+            else if (MIRegex.IsMatch(trimmedText))
             {
-                timeStr = "TNO";
+                timeStr = "TMI";
                 beginHour = 11;
                 endHour = 13;
             }

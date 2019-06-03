@@ -856,7 +856,7 @@ public class ChineseDateTime {
 
     public static final String DateTimePeriodMORegex = "(凌晨|清晨|早上|早|上午)";
 
-    public static final String DateTimePeriodNORegex = "(中午)";
+    public static final String DateTimePeriodMIRegex = "(中午)";
 
     public static final String DateTimePeriodAFRegex = "(下午|午后|傍晚)";
 
@@ -918,7 +918,7 @@ public class ChineseDateTime {
 
     public static final List<String> MorningTermList = Arrays.asList("上午", "早上", "清晨");
 
-    public static final List<String> NoonTermList = Arrays.asList("中午", "正午");
+    public static final List<String> MidDayTermList = Arrays.asList("中午", "正午");
 
     public static final List<String> AfternoonTermList = Arrays.asList("下午", "午后");
 

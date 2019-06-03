@@ -111,9 +111,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             {
                 timeOfDay = Constants.Morning;
             }
-            else if (DateTimeDefinitions.NoonTermList.Any(o => trimmedText.EndsWith(o)))
+            else if (DateTimeDefinitions.MidDayTermList.Any(o => trimmedText.EndsWith(o)))
             {
-                timeOfDay = Constants.Noon;
+                timeOfDay = Constants.MidDay;
             }
             else if (DateTimeDefinitions.AfternoonTermList.Any(o => trimmedText.EndsWith(o)))
             {

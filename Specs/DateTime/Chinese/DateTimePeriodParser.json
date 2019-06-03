@@ -384,7 +384,7 @@
         "Text": "明天中午",
         "Type": "datetimerange",
         "Value": {
-          "Timex": "2016-11-08TNO",
+          "Timex": "2016-11-08TMI",
           "FutureResolution": {
             "startDateTime": "2016-11-08 11:00:00",
             "endDateTime": "2016-11-08 13:00:00"

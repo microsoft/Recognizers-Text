@@ -465,8 +465,8 @@ class TimexUtil:
             result.timex = Constants.Morning
             result.begin_hour = 8
             result.end_hour = 12
-        elif tod == Constants.Noon:
-            result.timex = Constants.Noon
+        elif tod == Constants.MidDay:
+            result.timex = Constants.MidDay
             result.begin_hour = 11
             result.end_hour = 13   
         elif tod == Constants.Afternoon:

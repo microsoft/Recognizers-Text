@@ -260,7 +260,7 @@
         "Text": "中午",
         "Type": "timerange",
         "Value": {
-          "Timex": "TNO",
+          "Timex": "TMI",
           "FutureResolution": {
             "startTime": "11:00:00",
             "endTime": "13:00:00"
