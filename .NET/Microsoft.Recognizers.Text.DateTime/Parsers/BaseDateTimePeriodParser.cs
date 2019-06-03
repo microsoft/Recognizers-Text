@@ -346,6 +346,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                         }
 
                         hasSpecificTimePeriod = true;
+
+                        if (((DateTimeResolutionResult)timePr.Value).TimeZoneResolution != null)
+                        {
+                            ret.TimeZoneResolution = ((DateTimeResolutionResult)timePr.Value).TimeZoneResolution;
+                        }
                     }
                 }
 

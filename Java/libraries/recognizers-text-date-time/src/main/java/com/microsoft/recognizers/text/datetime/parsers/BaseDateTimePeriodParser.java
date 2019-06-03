@@ -674,6 +674,10 @@ public class BaseDateTimePeriodParser implements IDateTimeParser {
                     }
 
                     hasSpecificTimePeriod = true;
+
+                    if (((DateTimeResolutionResult)timePr.getValue()).getTimeZoneResolution() != null) {
+                        result.setTimeZoneResolution(((DateTimeResolutionResult)timePr.getValue()).getTimeZoneResolution());
+                    }
                 }
             }
 

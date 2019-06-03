@@ -9953,5 +9953,42 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Let's have a talk on Thursday morning 7-9 EST.",
+    "Context": {
+      "ReferenceDateTime": "2019-06-03T12:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "thursday morning 7-9 est",
+        "Start": 21,
+        "End": 44,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-WXX-4T7,XXXX-WXX-4T9,PT2H)",
+              "type": "datetimerange",
+              "timezone": "UTC-05:00",
+              "timezoneText": "est",
+              "utcOffsetMins": "-300",
+              "start": "2019-05-30 07:00:00",
+              "end": "2019-05-30 09:00:00"
+            },
+            {
+              "timex": "(XXXX-WXX-4T7,XXXX-WXX-4T9,PT2H)",
+              "type": "datetimerange",
+              "timezone": "UTC-05:00",
+              "timezoneText": "est",
+              "utcOffsetMins": "-300",
+              "start": "2019-06-06 07:00:00",
+              "end": "2019-06-06 09:00:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
