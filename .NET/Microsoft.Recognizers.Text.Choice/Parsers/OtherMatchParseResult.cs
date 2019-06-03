@@ -1,6 +1,6 @@
 ﻿namespace Microsoft.Recognizers.Text.Choice
 {
-    public class OptionsOtherMatchParseResult
+    public class OtherMatchParseResult
     {
         public double Score { get; set; }
 

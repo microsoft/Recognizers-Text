@@ -2,10 +2,10 @@
 
 namespace Microsoft.Recognizers.Text.Choice
 {
-    public class OptionsParseDataResult
+    public class ChoiceParseDataResult
     {
         public double Score { get; set; }
 
-        public IEnumerable<OptionsOtherMatchParseResult> OtherMatches { get; set; }
+        public IEnumerable<OtherMatchParseResult> OtherMatches { get; set; }
     }
 }
