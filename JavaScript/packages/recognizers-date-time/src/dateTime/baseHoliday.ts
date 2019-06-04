@@ -209,6 +209,7 @@ export abstract class BaseHolidayParserConfiguration implements IHolidayParserCo
                 ["mothers", BaseHolidayParserConfiguration.MothersDay],
                 ["thanksgivingday", BaseHolidayParserConfiguration.ThanksgivingDay],
                 ["thanksgiving", BaseHolidayParserConfiguration.ThanksgivingDay],
+                ["blackfriday", BaseHolidayParserConfiguration.BlackFriday],
                 ["martinlutherking", BaseHolidayParserConfiguration.MartinLutherKingDay],
                 ["washingtonsbirthday", BaseHolidayParserConfiguration.WashingtonsBirthday],
                 ["canberra", BaseHolidayParserConfiguration.CanberraDay],
@@ -237,6 +238,8 @@ export abstract class BaseHolidayParserConfiguration implements IHolidayParserCo
     protected static ColumbusDay(year: number): Date { return new Date(year, 10 - 1, BaseHolidayParserConfiguration.getDay(year, 10 - 1, 1, DayOfWeek.Monday)); }
 
     protected static ThanksgivingDay(year: number): Date { return new Date(year, 11 - 1, BaseHolidayParserConfiguration.getDay(year, 11 - 1, 3, DayOfWeek.Thursday)); }
+    
+    protected static BlackFriday(year: number): Date { return new Date(year, 11 - 1, BaseHolidayParserConfiguration.getDay(year, 11 - 1, 3, DayOfWeek.Friday)); }
 
     protected static getDay(year: number, month: number, week: number, dayOfWeek: DayOfWeek): number {
         let days = Array.apply(null, new Array(new Date(year, month, 0).getDate())).map(function (x, i) { return i + 1 });

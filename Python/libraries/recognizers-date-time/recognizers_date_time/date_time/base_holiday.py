@@ -224,6 +224,7 @@ class BaseHolidayParserConfiguration(HolidayParserConfiguration):
             ('mothers', BaseHolidayParserConfiguration.mothers_day),
             ('thanksgivingday', BaseHolidayParserConfiguration.thanksgiving_day),
             ('thanksgiving', BaseHolidayParserConfiguration.thanksgiving_day),
+            ('blackfriday', BaseHolidayParserConfiguration.black_friday),
             ('martinlutherking', BaseHolidayParserConfiguration.martin_luther_king_day),
             ('washingtonsbirthday', BaseHolidayParserConfiguration.washingtons_birthday),
             ('labour', BaseHolidayParserConfiguration.labour_day),
@@ -232,6 +233,16 @@ class BaseHolidayParserConfiguration(HolidayParserConfiguration):
             ('memorial', BaseHolidayParserConfiguration.memorial_day)
         ])
 
+    @staticmethod
+    def get_day(year: int, month: int, week: int, day_of_week: DayOfWeek) -> int:
+        calendar = Calendar()
+        return [d for d in calendar.itermonthdays2(year, month) if d[0] and d[1] == day_of_week-1][week][0]
+
+    @staticmethod
+    def get_last_day(year: int, month: int, day_of_week: DayOfWeek) -> int:
+        return BaseHolidayParserConfiguration.get_day(year, month, -1, day_of_week)
+
+    # TODO auto-generate from YAML
     @staticmethod
     def mothers_day(year: int) -> datetime:
         return datetime(year, 5, BaseHolidayParserConfiguration.get_day(year, 5, 1, DayOfWeek.Sunday))
@@ -269,10 +280,5 @@ class BaseHolidayParserConfiguration(HolidayParserConfiguration):
         return datetime(year, 11, BaseHolidayParserConfiguration.get_day(year, 11, 3, DayOfWeek.Thursday))
 
     @staticmethod
-    def get_day(year: int, month: int, week: int, day_of_week: DayOfWeek) -> int:
-        calendar = Calendar()
-        return [d for d in calendar.itermonthdays2(year, month) if d[0] and d[1] == day_of_week-1][week][0]
-
-    @staticmethod
-    def get_last_day(year: int, month: int, day_of_week: DayOfWeek) -> int:
-        return BaseHolidayParserConfiguration.get_day(year, month, -1, day_of_week)
+    def black_friday(year: int) -> datetime:
+        return datetime(year, 11, BaseHolidayParserConfiguration.get_day(year, 11, 3, DayOfWeek.Friday))
