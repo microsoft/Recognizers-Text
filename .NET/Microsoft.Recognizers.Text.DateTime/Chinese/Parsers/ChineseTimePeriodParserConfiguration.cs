@@ -111,6 +111,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             {
                 timeOfDay = Constants.Morning;
             }
+            else if (DateTimeDefinitions.MidDayTermList.Any(o => trimmedText.EndsWith(o)))
+            {
+                timeOfDay = Constants.MidDay;
+            }
             else if (DateTimeDefinitions.AfternoonTermList.Any(o => trimmedText.EndsWith(o)))
             {
                 timeOfDay = Constants.Afternoon;
