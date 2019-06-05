@@ -367,6 +367,7 @@ class ChineseDateTimePeriodParserConfiguration implements IDateTimePeriodParserC
 
 export class ChineseDateTimePeriodParser extends BaseDateTimePeriodParser {
     private readonly TMORegex: RegExp;
+    private readonly TMIRegex: RegExp;
     private readonly TAFRegex: RegExp;
     private readonly TEVRegex: RegExp;
     private readonly TNIRegex; RegExp;
@@ -379,6 +380,7 @@ export class ChineseDateTimePeriodParser extends BaseDateTimePeriodParser {
         let config = new ChineseDateTimePeriodParserConfiguration();
         super(config);
         this.TMORegex = RegExpUtility.getSafeRegExp(ChineseDateTime.DateTimePeriodMORegex);
+        this.TMIRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.DateTimePeriodMIRegex);
         this.TAFRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.DateTimePeriodAFRegex);
         this.TEVRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.DateTimePeriodEVRegex);
         this.TNIRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.DateTimePeriodNIRegex);
@@ -585,7 +587,11 @@ export class ChineseDateTimePeriodParser extends BaseDateTimePeriodParser {
             timeStr = 'TMO';
             beginHour = 8;
             endHour = 12;
-        } else if (RegExpUtility.isMatch(this.TAFRegex, source)) {
+        } else if (RegExpUtility.isMatch(this.TMIRegex, source)) {
+            timeStr = 'TMI';
+            beginHour = 11;
+            endHour = 13;
+        }else if (RegExpUtility.isMatch(this.TAFRegex, source)) {
             timeStr = 'TAF';
             beginHour = 12;
             endHour = 16;

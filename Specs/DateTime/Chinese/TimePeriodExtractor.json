@@ -144,6 +144,18 @@
     ]
   },
   {
+    "Input": "中午",
+    "NotSupportedByDesign": "Java",
+    "Results": [
+      {
+        "Text": "中午",
+        "Type": "timerange",
+        "Start": 0,
+        "Length": 2
+      }
+    ]
+  },
+  {
     "Input": "下午",
     "NotSupportedByDesign": "Java",
     "Results": [

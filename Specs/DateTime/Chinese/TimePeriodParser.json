@@ -249,6 +249,31 @@
         "Length": 2
       }
     ]
+  },  {
+    "Input": "中午",
+    "Context": {
+      "ReferenceDateTime": "2018-10-11T00:00:00"
+    },
+    "NotSupportedByDesign": "Java",
+    "Results": [
+      {
+        "Text": "中午",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "TMI",
+          "FutureResolution": {
+            "startTime": "11:00:00",
+            "endTime": "13:00:00"
+          },
+          "PastResolution": {
+            "startTime": "11:00:00",
+            "endTime": "13:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 2
+      }
+    ]
   },
   {
     "Input": "下午",
