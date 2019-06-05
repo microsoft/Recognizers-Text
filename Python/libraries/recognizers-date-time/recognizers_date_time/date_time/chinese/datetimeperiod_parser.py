@@ -16,6 +16,7 @@ class ChineseDateTimePeriodParser(BaseDateTimePeriodParser):
     def __init__(self):
         super().__init__(ChineseDateTimePeriodParserConfiguration())
         self.tmo_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.DateTimePeriodMORegex)
+        self.tmi_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.DateTimePeriodMIRegex)
         self.taf_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.DateTimePeriodAFRegex)
         self.tev_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.DateTimePeriodEVRegex)
         self.tni_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.DateTimePeriodNIRegex)
@@ -218,6 +219,10 @@ class ChineseDateTimePeriodParser(BaseDateTimePeriodParser):
             time_str = 'TMO'
             begin_hour = 8
             end_hour = 12
+        elif regex.search(self.tmi_regex, source):
+            time_str = 'TMI'
+            begin_hour = 11
+            end_hour = 13
         elif regex.search(self.taf_regex, source):
             time_str = 'TAF'
             begin_hour = 12

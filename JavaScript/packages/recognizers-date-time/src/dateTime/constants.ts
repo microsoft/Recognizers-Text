@@ -63,6 +63,7 @@ export class Constants {
 
     static readonly EarlyMorning: string = "TDA";
     static readonly Morning: string = "TMO";
+    static readonly MidDay: string = "TMI";
     static readonly Afternoon: string = "TAF";
     static readonly Evening: string = "TEV";
     static readonly Daytime: string = "TDT";
