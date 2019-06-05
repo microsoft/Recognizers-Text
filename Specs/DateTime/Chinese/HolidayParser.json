@@ -734,5 +734,28 @@
         "Length": 3
       }
     ]
+  },
+  {
+    "Input": "平安夜",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "平安夜",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-12-24",
+          "FutureResolution": {
+            "date": "2017-12-24"
+          },
+          "PastResolution": {
+            "date": "2016-12-24"
+          }
+        },
+        "Start": 0,
+        "Length": 3
+      }
+    ]
   }
 ]

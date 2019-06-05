@@ -73,6 +73,7 @@ export class ChineseHolidayParser extends BaseHolidayParser {
             ['妇女节', ChineseHolidayParser.FemaleDay],
             ['植树节', ChineseHolidayParser.TreePlantDay],
             ['情人节', ChineseHolidayParser.LoverDay],
+            ['平安夜', ChineseHolidayParser.ChristmasEve],
             ['圣诞节', ChineseHolidayParser.ChristmasDay],
             ['新年', ChineseHolidayParser.NewYear],
             ['愚人节', ChineseHolidayParser.FoolDay],
@@ -100,6 +101,7 @@ export class ChineseHolidayParser extends BaseHolidayParser {
     private static NewYear(year: number): Date { return new Date(year, 1 - 1, 1); }
     private static ChsNationalDay(year: number): Date { return new Date(year, 10 - 1, 1); }
     private static LaborDay(year: number): Date { return new Date(year, 5 - 1, 1); }
+    private static ChristmasEve(year: number): Date { return new Date(year, 12 - 1, 24); }
     private static ChristmasDay(year: number): Date { return new Date(year, 12 - 1, 25); }
     private static LoverDay(year: number): Date { return new Date(year, 2 - 1, 14); }
     private static ChsMilBuildDay(year: number): Date { return new Date(year, 8 - 1, 1); }

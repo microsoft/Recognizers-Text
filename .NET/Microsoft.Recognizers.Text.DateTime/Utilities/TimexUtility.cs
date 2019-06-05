@@ -217,6 +217,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                     result.BeginHour = 8;
                     result.EndHour = 12;
                     break;
+                case Constants.MidDay:
+                    result.Timex = Constants.MidDay;
+                    result.BeginHour = 11;
+                    result.EndHour = 13;
+                    break;
                 case Constants.Afternoon:
                     result.Timex = Constants.Afternoon;
                     result.BeginHour = 12;
