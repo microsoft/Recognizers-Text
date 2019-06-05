@@ -276,6 +276,98 @@
     ]
   },
   {
+    "Input": "I'll go back on cyber monday 2015",
+    "Context": {
+      "ReferenceDateTime": "2015-12-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "cyber monday 2015",
+        "Type": "date",
+        "Value": {
+          "Timex": "2015-11-30",
+          "FutureResolution": {
+            "date": "2015-11-30"
+          },
+          "PastResolution": {
+            "date": "2015-11-30"
+          }
+        },
+        "Start": 16,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back on st. patrick's day 2018",
+    "Context": {
+      "ReferenceDateTime": "2015-12-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "st. patrick's day 2018",
+        "Type": "date",
+        "Value": {
+          "Timex": "2018-03-17",
+          "FutureResolution": {
+            "date": "2018-03-17"
+          },
+          "PastResolution": {
+            "date": "2018-03-17"
+          }
+        },
+        "Start": 16,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back on presidents' day 2017",
+    "Context": {
+      "ReferenceDateTime": "2015-12-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "presidents' day 2017",
+        "Type": "date",
+        "Value": {
+          "Timex": "2017-02-20",
+          "FutureResolution": {
+            "date": "2017-02-20"
+          },
+          "PastResolution": {
+            "date": "2017-02-20"
+          }
+        },
+        "Start": 16,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back on earth day 2017",
+    "Context": {
+      "ReferenceDateTime": "2015-12-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "earth day 2017",
+        "Type": "date",
+        "Value": {
+          "Timex": "2017-04-22",
+          "FutureResolution": {
+            "date": "2017-04-22"
+          },
+          "PastResolution": {
+            "date": "2017-04-22"
+          }
+        },
+        "Start": 16,
+        "Length": 14
+      }
+    ]
+  },
+  {
     "Input": "I'll go back on halloween",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
