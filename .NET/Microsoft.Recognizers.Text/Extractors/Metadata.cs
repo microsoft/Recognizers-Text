@@ -13,6 +13,8 @@
         // For Ordinal
         public bool IsOrdinalRelative { get; set; } = false;
 
+        public bool IsHoliday { get; set; } = false;
+
         public string Offset { get; set; } = string.Empty;
 
         public string RelativeTo { get; set; } = string.Empty;
