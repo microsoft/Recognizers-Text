@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using Microsoft.Recognizers.Text.Sequence;
 using Microsoft.Recognizers.Text.Sequence.English;
 
 namespace Microsoft.Recognizers.Text.Sequence
@@ -89,7 +89,7 @@ namespace Microsoft.Recognizers.Text.Sequence
 
         public IModel GetURLModel(string culture = null, bool fallbackToDefaultCulture = true)
         {
-            return GetModel<URLModel>(Culture.English, fallbackToDefaultCulture);
+            return GetModel<URLModel>(culture, fallbackToDefaultCulture);
         }
 
         public IModel GetGUIDModel(string culture = null, bool fallbackToDefaultCulture = true)
@@ -126,6 +126,10 @@ namespace Microsoft.Recognizers.Text.Sequence
             RegisterModel<GUIDModel>(
                 Culture.English,
                 (options) => new GUIDModel(new GUIDParser(), new GUIDExtractor()));
+
+            RegisterModel<URLModel>(
+                Culture.Chinese,
+                (options) => new URLModel(new URLParser(), new ChineseURLExtractor()));
         }
 
         private static List<ModelResult> RecognizeByModel(Func<SequenceRecognizer, IModel> getModelFunc, string query, SequenceOptions options)
