@@ -874,10 +874,13 @@ namespace Microsoft.Recognizers.Text.DateTime
             switch (extractResult.Type)
             {
                 case Constants.SYS_DATETIME_DATE:
-                    parseResult = this.Config.DateParser.Parse(extractResult, referenceTime);
-                    if (parseResult.Value == null)
+                    if (extractResult.Metadata != null && extractResult.Metadata.IsHoliday)
                     {
                         parseResult = Config.HolidayParser.Parse(extractResult, referenceTime);
+                    }
+                    else
+                    {
+                        parseResult = this.Config.DateParser.Parse(extractResult, referenceTime);
                     }
 
                     break;

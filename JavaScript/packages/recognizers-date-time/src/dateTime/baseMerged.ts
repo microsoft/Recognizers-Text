@@ -274,9 +274,11 @@ export class BaseMergedParser implements IDateTimeParser {
         }
 
         if (er.type === Constants.SYS_DATETIME_DATE) {
-            pr = this.config.dateParser.parse(er, referenceTime);
-            if (pr.value === null || pr.value === undefined) {
+            if (er.metaData !== null && er.metaData !== undefined && er.metaData.IsHoliday) {
                 pr = this.config.holidayParser.parse(er, referenceTime);
+            }
+            else {
+                pr = this.config.dateParser.parse(er, referenceTime);
             }
         }
         else if (er.type === Constants.SYS_DATETIME_TIME) {
@@ -353,9 +355,12 @@ export class BaseMergedParser implements IDateTimeParser {
     protected getParseResult(extractorResult: ExtractResult, referenceDate: Date): DateTimeParseResult | null {
         let extractorType = extractorResult.type;
         if (extractorType === Constants.SYS_DATETIME_DATE) {
-            let pr = this.config.dateParser.parse(extractorResult, referenceDate);
-            if (!pr || !pr.value) return this.config.holidayParser.parse(extractorResult, referenceDate);
-            return pr;
+            if (extractorResult.metaData !== null && extractorResult.metaData !== undefined && extractorResult.metaData.IsHoliday) {
+                return this.config.holidayParser.parse(extractorResult, referenceDate);
+            }
+            else {
+                return this.config.dateParser.parse(extractorResult, referenceDate);
+            }
         }
         if (extractorType === Constants.SYS_DATETIME_TIME) {
             return this.config.timeParser.parse(extractorResult, referenceDate);

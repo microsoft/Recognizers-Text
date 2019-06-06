@@ -678,7 +678,7 @@ public class EnglishDateTime {
 
     public static final String ConjunctionRegex = "\\b((and(\\s+for)?)|with)\\b";
 
-    public static final String HolidayRegex1 = "\\b(?<holiday>clean monday|good friday|ash wednesday|mardi gras|washington's birthday|mao's birthday|chinese new year|new years' eve|new year's eve|new year 's eve|new years eve|new year eve|new years'|new year's|new year 's|new years|new year|may\\s*day|yuan dan|april fools|christmas eve|christmas|xmas|thanksgiving|halloween|yuandan|easter)(\\s+(of\\s+)?({YearRegex}|{RelativeRegex}\\s+year))?\\b"
+    public static final String HolidayRegex1 = "\\b(?<holiday>clean monday|good friday|ash wednesday|mardi gras|washington's birthday|mao's birthday|chinese new year|new years' eve|new year's eve|new year 's eve|new years eve|new year eve|new years'|new year's|new year 's|new years|new year|may\\s*day|yuan dan|april fools|christmas eve|christmas|xmas|thanksgiving|black friday|halloween|yuandan|easter)(\\s+(of\\s+)?({YearRegex}|{RelativeRegex}\\s+year))?\\b"
             .replace("{YearRegex}", YearRegex)
             .replace("{RelativeRegex}", RelativeRegex);
 
@@ -1185,6 +1185,7 @@ public class EnglishDateTime {
         .put("fathers", new String[]{"fatherday", "fathersday"})
         .put("mothers", new String[]{"motherday", "mothersday"})
         .put("thanksgiving", new String[]{"thanksgivingday", "thanksgiving"})
+        .put("blackfriday", new String[]{"blackfriday"})
         .put("martinlutherking", new String[]{"mlkday", "martinlutherkingday", "martinlutherkingjrday"})
         .put("washingtonsbirthday", new String[]{"washingtonsbirthday", "washingtonbirthday"})
         .put("canberra", new String[]{"canberraday"})
@@ -1221,7 +1222,7 @@ public class EnglishDateTime {
         .put("usindependenceday", new String[]{"usindependenceday"})
         .put("independenceday", new String[]{"independenceday"})
         .put("bastilleday", new String[]{"bastilleday"})
-        .put("halloweenday", new String[]{"halloweenday"})
+        .put("halloweenday", new String[]{"halloweenday", "halloween"})
         .put("allhallowday", new String[]{"allhallowday"})
         .put("allsoulsday", new String[]{"allsoulsday"})
         .put("guyfawkesday", new String[]{"guyfawkesday"})
