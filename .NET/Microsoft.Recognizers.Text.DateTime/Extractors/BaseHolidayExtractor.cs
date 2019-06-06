@@ -24,7 +24,14 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var tokens = new List<Token>();
             tokens.AddRange(HolidayMatch(text));
-            return Token.MergeAllTokens(tokens, text, ExtractorName);
+            var ers = Token.MergeAllTokens(tokens, text, ExtractorName);
+            foreach (var er in ers)
+            {
+                er.Metadata = new Metadata();
+                er.Metadata.IsHoliday = true;
+            }
+
+            return ers;
         }
 
         private List<Token> HolidayMatch(string text)

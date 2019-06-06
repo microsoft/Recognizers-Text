@@ -140,9 +140,10 @@ public class BaseMergedDateTimeParser implements IDateTimeParser {
         }
 
         if (er.getType().equals(Constants.SYS_DATETIME_DATE)) {
-            pr = this.config.getDateParser().parse(er, reference);
-            if (pr.getValue() == null) {
+            if (er.getMetadata() != null && er.getMetadata().getIsHoliday()) {
                 pr = config.getHolidayParser().parse(er, reference);
+            } else {
+                pr = this.config.getDateParser().parse(er, reference);
             }
         } else if (er.getType().equals(Constants.SYS_DATETIME_TIME)) {
             pr = this.config.getTimeParser().parse(er, reference);

@@ -11697,5 +11697,29 @@
         }
       }
     ]
+  },
+  {
+    "Input": "I'll go back on black friday 2010",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "black friday 2010",
+        "Start": 16,
+        "End": 32,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2010-11-26",
+              "type": "date",
+              "value": "2010-11-26"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
