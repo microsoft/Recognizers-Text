@@ -42,20 +42,21 @@ namespace Microsoft.Recognizers.Definitions.Italian
 		public static readonly string AllIntRegexWithLocks = $@"((?<=\b){AllIntRegex}(?=\b))";
 		public static readonly string AllIntRegexWithDozenSuffixLocks = $@"(?<=\b)(((mezza|una)\s+dozzina)|({AllIntRegex}\s+dozzin[ae]))(?=\b)";
 		public const string RoundNumberOrdinalRegex = @"(centesim[oaie]|millesim[oaie]|milionesim[oaie]|miliardesim[oaie]|bilionesim[oaie]|trilionesim[oaie])";
-		public const string NumberOrdinalRegex = @"(prim[oaie]|secondo[oaie]|terz[oaie]|quart[oaie]|quint[oaie]|sest[oaie]|settim[oaie]|ottav[oaie]|non[oaie]|decim[oaie]|undicesim[oaie]|dodicesim[oaie]|tredicesim[oaie]|quattordicesim[oaie]|quindicesim[oaie]|sedicesim[oaie]|diciassettesim[oaie]|diciottesim[oaie]|diciannovesim[oaie]|ventesim[oaie]|trentesim[oaie]|quarantesim[oaie]|cinquantesim[oaie]|sessantesim[oaie]|settantesim[oaie]|ottantesim[oaie]|novantesim[oaie])";
+		public const string OneToNineOrdinalRegex = @"(prim[oaie]|second[oaie]|terz[oaie]|quart[oaie]|quint[oaie]|sest[oaie]|settim[oaie]|ottav[oaie]|non[oaie])";
+		public const string NumberOrdinalRegex = @"(prim[oaie]|second[oaie]|terz[oaie]|quart[oaie]|quint[oaie]|sest[oaie]|settim[oaie]|ottav[oaie]|non[oaie]|decim[oaie]|undicesim[oaie]|dodicesim[oaie]|tredicesim[oaie]|quattordicesim[oaie]|quindicesim[oaie]|sedicesim[oaie]|diciassettesim[oaie]|diciottesim[oaie]|diciannovesim[oaie]|ventesim[oaie]|trentesim[oaie]|quarantesim[oaie]|cinquantesim[oaie]|sessantesim[oaie]|settantesim[oaie]|ottantesim[oaie]|novantesim[oaie])";
 		public const string RelativeOrdinalRegex = @"(precedente|seguente|penultim[oa]|terz'?ultim[oa]||ultim[oa])";
 		public static readonly string BasicOrdinalRegex = $@"(({NumberOrdinalRegex}|{RelativeOrdinalRegex})(?!\s*({TwoToNineIntegerRegex}|([2-9]+))\b))";
-		public static readonly string SuffixBasicOrdinalRegex = $@"((((({TensNumberIntegerRegex}{ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|({AnIntRegex})?)(\s*{RoundNumberIntegerRegex})+)\s+(e\s+)?)*({TensNumberIntegerRegex}{ZeroToNineIntegerRegex}esim[oaie]|BasicOrdinalRegex))";
-		public static readonly string SuffixRoundNumberOrdinalRegex = $@"(({AllIntRegex}\s+){RoundNumberOrdinalRegex})";
-		public static readonly string AllOrdinalRegex = $@"({SuffixBasicOrdinalRegex}|{SuffixRoundNumberOrdinalRegex})";
-		public const string OrdinalSuffixRegex = @"(?<=\b)((\d*(1°|2°|3°|4°|5°|6°|7°|8°|9°|0°))|(11°|12°))(?=\b)";
-		public const string OrdinalNumericRegex = @"(?<=\b)(\d{1,3}(\s*,\s*\d{3})*°)(?=\b)";
+		public static readonly string SuffixBasicOrdinalRegex = $@"((((({TensNumberIntegerRegex}{ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|({AnIntRegex})?)(\s*{RoundNumberIntegerRegex})*)\s*(e\s+)?)*({TensNumberIntegerRegex}?{ZeroToNineIntegerRegex}esim[oaie]|{BasicOrdinalRegex}))";
+		public static readonly string SuffixRoundNumberOrdinalRegex = $@"(({AllIntRegex}\s*)?{RoundNumberOrdinalRegex})";
+		public static readonly string AllOrdinalRegex = $@"({SuffixRoundNumberOrdinalRegex}|{SuffixBasicOrdinalRegex})";
+		public const string OrdinalSuffixRegex = @"(?<=\b)(\d*(°|(esi)?m[oaie]))";
+		public const string OrdinalNumericRegex = @"(?<=\b)(\d{1,3}(\s*,\s*\d{3})*(°|(esi)?m[oaie]))";
 		public static readonly string OrdinalRoundNumberRegex = $@"(?<!(un)\s+){RoundNumberOrdinalRegex}";
 		public static readonly string OrdinalItalianRegex = $@"(?<=\b){AllOrdinalRegex}(?=\b)";
-		public const string FractionNotationWithSpacesRegex = @"(((?<=\W|^)-\s*)|(?<=\b))\d+\s+\d+[/]\d+(?=(\b[^/]|$))";
+		public const string FractionNotationWithSpacesRegex = @"(((?<=\W|^)-\s*)|(?<=\b))\d+\s+(e\s+)?\d+[/]\d+(?=(\b[^/]|$))";
 		public const string FractionNotationRegex = @"(((?<=\W|^)-\s*)|(?<=\b))\d+[/]\d+(?=(\b[^/]|$))";
-		public static readonly string FractionNounRegex = $@"(?<=\b)({AllIntRegex}\s+(e\s+)?)?({AllIntRegex})(\s+|\s*-\s*)(({AllOrdinalRegex})|mezz[oi])(?=\b)";
-		public static readonly string FractionNounWithArticleRegex = $@"({FractionNounRegex})";
+		public static readonly string FractionNounRegex = $@"(?<=\b)({AllIntRegex}\s+(e\s+)?)?({AllIntRegex})(\s+|\s*-\s*)(?!\bprimo\b|\bsecondo\b)(mezzi|({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))(?=\b)";
+		public static readonly string FractionNounWithArticleRegex = $@"(?<=\b)({AllIntRegex}\s+(e\s+)?)?(un)(\s+|\s*-\s*)(?!\bprimo\b|\bsecondo\b)(mezzo|({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))(?=\b)";
 		public static readonly string FractionPrepositionRegex = $@"(?<=\b)(?<numerator>({AllIntRegex})|((?<!\.)\d+))\s+su\s+(?<denominator>({AllIntRegex})|(\d+)(?!\.))(?=\b)";
 		public static readonly string AllPointRegex = $@"((\s+{ZeroToNineIntegerRegex})+|(\s+{SeparaIntRegex}))";
 		public static readonly string AllFloatRegex = $@"({AllIntRegex}(\s+(virgola|punto)){AllPointRegex})";
@@ -64,21 +65,22 @@ namespace Microsoft.Recognizers.Definitions.Italian
 		public static readonly string DoubleWithMultiplierRegex = $@"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\,)))\d+,\d+\s*{BaseNumbers.NumberMultiplierRegex}(?=\b)";
 		public static readonly string DoubleWithRoundNumber = $@"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\,)))\d+,\d+\s+{RoundNumberIntegerRegex}(?=\b)";
 		public static readonly string DoubleAllFloatRegex = $@"((?<=\b){AllFloatRegex}(?=\b))";
+		public const string ConnectorRegex = @"(?<spacer>e)";
 		public const string DoubleExponentialNotationRegex = @"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+,)))(\d+(,\d+)?)e([+-]*[1-9]\d*)(?=\b)";
 		public const string DoubleCaretExponentialNotationRegex = @"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+,)))(\d+(,\d+)?)\^([+-]*[1-9]\d*)(?=\b)";
-		public static readonly string NumberWithSuffixPercentage = $@"({BaseNumbers.NumberReplaceToken})(\s*)(%|percento|per cento|percentuale)";
+		public static readonly string NumberWithSuffixPercentage = $@"({BaseNumbers.NumberReplaceToken}|{AllIntRegex})(\s*)(%|percento|per cento|percentuale)";
 		public static readonly string NumberWithPrefixPercentage = $@"(percento di|per cento di)(\s*)({BaseNumbers.NumberReplaceToken})";
 		public const char DecimalSeparatorChar = ',';
 		public const string FractionMarkerToken = @"su";
 		public const char NonDecimalSeparatorChar = '.';
 		public const string HalfADozenText = @"sei";
 		public const string WordSeparatorToken = @"e";
-		public static readonly string[] WrittenDecimalSeparatorTexts = { @"virgola" };
+		public static readonly string[] WrittenDecimalSeparatorTexts = { @"virgola", @"punto" };
 		public static readonly string[] WrittenGroupSeparatorTexts = { @"punto" };
-		public static readonly string[] WrittenIntegerSeparatorTexts = { @"e", @"-", @"" };
-		public static readonly string[] WrittenFractionSeparatorTexts = { @"e", @"su" };
+		public static readonly string[] WrittenIntegerSeparatorTexts = { @"e", @"-" };
+		public static readonly string[] WrittenFractionSeparatorTexts = { @"e" };
 		public const string HalfADozenRegex = @"mezza\s+dozzina";
-		public static readonly string DigitalNumberRegex = $@"((?<=\b)(cento|mille|milione|milioni|miliardo|miliardi|trilione|trilioni|dozzina|dozzine)(?=\b))|((?<=(\d|\b)){BaseNumbers.MultiplierLookupRegex}(?=\b))";
+		public static readonly string DigitalNumberRegex = $@"((?<=\b)(cento|mille|milione|milioni|miliardo|miliardi|bilione|bilioni|trilione|trilioni|dozzina|dozzine)(?=\b))|((?<=(\d|\b)){BaseNumbers.MultiplierLookupRegex}(?=\b))";
 		public const string AmbiguousFractionConnectorsRegex = @"(\bnel\b)";
 		public static readonly Dictionary<string, long> CardinalNumberMap = new Dictionary<string, long>
 		{
@@ -107,25 +109,30 @@ namespace Microsoft.Recognizers.Definitions.Italian
 			{ @"diciotto", 18 },
 			{ @"diciannove", 19 },
 			{ @"venti", 20 },
+			{ @"vent", 20 },
 			{ @"trenta", 30 },
+			{ @"trent", 30 },
 			{ @"quaranta", 40 },
+			{ @"quarant", 40 },
 			{ @"cinquanta", 50 },
+			{ @"cinquant", 50 },
 			{ @"sessanta", 60 },
+			{ @"sessant", 60 },
 			{ @"settanta", 70 },
+			{ @"settant", 70 },
 			{ @"ottanta", 80 },
+			{ @"ottant", 80 },
 			{ @"novanta", 90 },
+			{ @"novant", 90 },
 			{ @"cento", 100 },
 			{ @"mille", 1000 },
-			{ @"un milione", 1000000 },
+			{ @"mila", 1000 },
 			{ @"milione", 1000000 },
 			{ @"milioni", 1000000 },
-			{ @"un miliardo", 1000000000 },
 			{ @"miliardo", 1000000000 },
 			{ @"miliardi", 1000000000 },
-			{ @"un bilione", 1000000000000 },
 			{ @"bilione", 1000000000000 },
 			{ @"bilioni", 1000000000000 },
-			{ @"un trilione", 1000000000000000000 },
 			{ @"trilione", 1000000000000000000 },
 			{ @"trilioni", 1000000000000000000 }
 		};
@@ -136,6 +143,8 @@ namespace Microsoft.Recognizers.Definitions.Italian
 			{ @"secondo", 2 },
 			{ @"seconda", 2 },
 			{ @"metà", 2 },
+			{ @"mezzo", 2 },
+			{ @"mezza", 2 },
 			{ @"terzo", 3 },
 			{ @"terza", 3 },
 			{ @"quarto", 4 },
@@ -160,8 +169,8 @@ namespace Microsoft.Recognizers.Definitions.Italian
 			{ @"tredicesima", 13 },
 			{ @"quattordicesimo", 14 },
 			{ @"quattordicesima", 14 },
-			{ @"quindicisimo", 15 },
-			{ @"quindicisima", 15 },
+			{ @"quindicesimo", 15 },
+			{ @"quindicesima", 15 },
 			{ @"sedicesimo", 16 },
 			{ @"sedicesima", 16 },
 			{ @"diciassettesimo", 17 },
@@ -204,6 +213,8 @@ namespace Microsoft.Recognizers.Definitions.Italian
 			{ @"prime", 1 },
 			{ @"secondi", 2 },
 			{ @"seconde", 2 },
+			{ @"mezzi", 2 },
+			{ @"mezze", 2 },
 			{ @"terzi", 3 },
 			{ @"terze", 3 },
 			{ @"quarti", 4 },
@@ -218,6 +229,42 @@ namespace Microsoft.Recognizers.Definitions.Italian
 			{ @"ottave", 8 },
 			{ @"noni", 9 },
 			{ @"none", 9 },
+			{ @"unesimo", 1 },
+			{ @"unesima", 1 },
+			{ @"unesime", 1 },
+			{ @"unesimi", 1 },
+			{ @"duesimo", 2 },
+			{ @"duesima", 2 },
+			{ @"duesime", 2 },
+			{ @"duesimi", 2 },
+			{ @"treesimo", 3 },
+			{ @"treesima", 3 },
+			{ @"treesime", 3 },
+			{ @"treesimi", 3 },
+			{ @"quattresimo", 4 },
+			{ @"quattresima", 4 },
+			{ @"quattresime", 4 },
+			{ @"quattresimi", 4 },
+			{ @"cinquesimo", 5 },
+			{ @"cinquesima", 5 },
+			{ @"cinquesime", 5 },
+			{ @"cinquesimi", 5 },
+			{ @"seiesimo", 6 },
+			{ @"seiesima", 6 },
+			{ @"seiesime", 6 },
+			{ @"seiesimi", 6 },
+			{ @"settesimo", 7 },
+			{ @"settesima", 7 },
+			{ @"settesime", 7 },
+			{ @"settesimi", 7 },
+			{ @"ottesimo", 8 },
+			{ @"ottesima", 8 },
+			{ @"ottesime", 8 },
+			{ @"ottesimi", 8 },
+			{ @"novesimo", 9 },
+			{ @"novesima", 9 },
+			{ @"novesime", 9 },
+			{ @"novesimi", 9 },
 			{ @"decimi", 10 },
 			{ @"decime", 10 },
 			{ @"undicesimi", 11 },
@@ -260,79 +307,18 @@ namespace Microsoft.Recognizers.Definitions.Italian
 			{ @"millesime", 1000 },
 			{ @"milionesimi", 1000000 },
 			{ @"milionesime", 1000000 },
-			{ @"miliardersimi", 1000000000 },
-			{ @"miliardersime", 1000000000 },
+			{ @"miliardesimi", 1000000000 },
+			{ @"miliardesime", 1000000000 },
 			{ @"bilionesimi", 1000000000000 },
 			{ @"bilionesime", 1000000000000 },
 			{ @"trilionesimi", 1000000000000000000 },
 			{ @"trilionesime", 1000000000000000000 }
 		};
-		public static readonly Dictionary<string, long> PrefixCardinalMap = new Dictionary<string, long>
-		{
-			{ @"due", 2 },
-			{ @"tre", 3 },
-			{ @"quattro", 4 },
-			{ @"cinque", 5 },
-			{ @"sei", 6 },
-			{ @"sette", 7 },
-			{ @"otto", 8 },
-			{ @"nove", 9 },
-			{ @"dieci", 10 },
-			{ @"undici", 11 },
-			{ @"dodici", 12 },
-			{ @"tredici", 13 },
-			{ @"quattordici", 14 },
-			{ @"quindici", 15 },
-			{ @"sedici", 16 },
-			{ @"diciassette", 17 },
-			{ @"diciotto", 18 },
-			{ @"diciannove", 19 },
-			{ @"venti", 20 },
-			{ @"ventuno", 21 },
-			{ @"ventidue", 22 },
-			{ @"ventitre", 23 },
-			{ @"ventiquattro", 24 },
-			{ @"venticinque", 25 },
-			{ @"ventisei", 26 },
-			{ @"ventisette", 27 },
-			{ @"ventotto", 28 },
-			{ @"ventinove", 29 },
-			{ @"trenta", 30 },
-			{ @"trentuno", 31 },
-			{ @"quaranta", 40 },
-			{ @"cinquanta", 50 },
-			{ @"sessanta", 60 },
-			{ @"settanta", 70 },
-			{ @"ottanta", 80 },
-			{ @"novanta", 90 },
-			{ @"cento", 100 },
-			{ @"due cento", 200 },
-			{ @"duecento", 200 },
-			{ @"tre cento", 300 },
-			{ @"trecento", 300 },
-			{ @"quattro cento", 400 },
-			{ @"quattrocento", 400 },
-			{ @"cinque cento", 500 },
-			{ @"cinquecento", 500 },
-			{ @"sei cento", 600 },
-			{ @"seicento", 600 },
-			{ @"sette cento", 700 },
-			{ @"settecento", 700 },
-			{ @"otto cento", 800 },
-			{ @"ottocento", 800 },
-			{ @"nove cento", 900 },
-			{ @"novecento", 900 }
-		};
-		public static readonly Dictionary<string, long> SuffixOrdinalMap = new Dictionary<string, long>
-		{
-			{ @"mille", 1000 },
-			{ @"milione", 1000000 },
-			{ @"miliardo", 1000000000 }
-		};
 		public static readonly Dictionary<string, long> RoundNumberMap = new Dictionary<string, long>
 		{
 			{ @"cento", 100 },
 			{ @"mille", 1000 },
+			{ @"mila", 1000 },
 			{ @"milione", 1000000 },
 			{ @"milioni", 1000000 },
 			{ @"miliardo", 1000000000 },
@@ -346,22 +332,22 @@ namespace Microsoft.Recognizers.Definitions.Italian
 			{ @"centinaie", 100 },
 			{ @"millesimo", 1000 },
 			{ @"milionesimo", 1000000 },
-			{ @"miliardersimo", 1000000000 },
+			{ @"miliardesimo", 1000000000 },
 			{ @"bilionesimo", 1000000000000 },
 			{ @"trilionesimo", 1000000000000000000 },
 			{ @"millesima", 1000 },
 			{ @"milionesima", 1000000 },
-			{ @"miliardersima", 1000000000 },
+			{ @"miliardesima", 1000000000 },
 			{ @"bilionesima", 1000000000000 },
 			{ @"trilionesima", 1000000000000000000 },
 			{ @"millesimi", 1000 },
 			{ @"milionesimi", 1000000 },
-			{ @"miliardersimi", 1000000000 },
+			{ @"miliardesimi", 1000000000 },
 			{ @"bilionesimi", 1000000000000 },
 			{ @"trilionesimi", 1000000000000000000 },
 			{ @"millesime", 1000 },
 			{ @"milionesime", 1000000 },
-			{ @"miliardersime", 1000000000 },
+			{ @"miliardesime", 1000000000 },
 			{ @"bilionesime", 1000000000000 },
 			{ @"trilionesime", 1000000000000000000 },
 			{ @"centinaia", 100 },

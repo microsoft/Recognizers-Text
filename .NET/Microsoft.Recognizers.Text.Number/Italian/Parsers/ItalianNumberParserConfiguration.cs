@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Globalization;
+using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 
@@ -46,11 +47,51 @@ namespace Microsoft.Recognizers.Text.Number.Italian
             this.DigitalNumberRegex = new Regex(NumbersDefinitions.DigitalNumberRegex, RegexOptions.Singleline);
             this.NegativeNumberSignRegex = new Regex(NumbersDefinitions.NegativeNumberSignRegex, RegexOptions.Singleline);
             this.FractionPrepositionRegex = new Regex(NumbersDefinitions.FractionPrepositionRegex, RegexOptions.Singleline);
+            this.OneToNineOrdinalRegex = new Regex(NumbersDefinitions.OneToNineOrdinalRegex, RegexOptions.Singleline);
         }
 
         public string NonDecimalSeparatorText { get; private set; }
 
-        /*public override long ResolveCompositeNumber(string numberStr)
+        public Regex OneToNineOrdinalRegex { get; }
+
+        /*public override IEnumerable<string> NormalizeTokenSet(IEnumerable<string> tokens, ParseResult context)
+        {
+            return tokens;
+        }*/
+
+        public override IEnumerable<string> NormalizeTokenSet(IEnumerable<string> tokens, ParseResult context)
+        {
+            var fracWords = new List<string>();
+            var tokenList = tokens.ToList();
+            var tokenLen = tokenList.Count;
+
+            for (var i = 0; i < tokenLen; i++)
+            {
+                if ((i < tokenLen - 2) && tokenList[i + 1] == "-")
+                {
+                    fracWords.Add(tokenList[i] + tokenList[i + 1] + tokenList[i + 2]);
+                    i += 2;
+                }
+                else
+                {
+                    fracWords.Add(tokenList[i]);
+                }
+            }
+
+            var fracLen = fracWords.Count;
+            if (fracLen > 2 && this.OneToNineOrdinalRegex.Match(fracWords[fracLen - 1]).Success)
+            {
+                if (fracWords[fracLen - 3] != "e" && fracWords[fracLen - 2] != "e")
+                {
+                    fracWords[fracLen - 3] += fracWords[fracLen - 2];
+                    fracWords.RemoveAt(fracLen - 2);
+                }
+            }
+
+            return fracWords;
+        }
+
+        public override long ResolveCompositeNumber(string numberStr)
         {
             if (this.OrdinalNumberMap.ContainsKey(numberStr))
             {
@@ -64,68 +105,28 @@ namespace Microsoft.Recognizers.Text.Number.Italian
 
             long value = 0;
             long prevValue = 0;
+
+            // var listValue = new List<long>();
             long finalValue = 0;
             var strBuilder = new StringBuilder();
+            int lastGoodChar = 0;
             for (int i = 0; i < numberStr.Length; i++)
             {
                 strBuilder.Append(numberStr[i]);
 
-                if (this.CardinalNumberMap.ContainsKey(strBuilder.ToString()) || ((this.CardinalNumberMap.ContainsKey(string.Concat(strBuilder.ToString(), 'i')) || this.CardinalNumberMap.ContainsKey(string.Concat(strBuilder.ToString(), 'a'))) && i + 1 < numberStr.Length && (numberStr[i + 1] == 'o' || numberStr[i + 1] == 'u')))
+                if (this.CardinalNumberMap.ContainsKey(strBuilder.ToString()) && this.CardinalNumberMap[strBuilder.ToString()] > value)
                 {
-                    if (!this.CardinalNumberMap.ContainsKey(strBuilder.ToString()))
-                    {
-                        if (this.CardinalNumberMap.ContainsKey(string.Concat(strBuilder.ToString(), 'i')))
-                        {
-                            strBuilder.Append('i');
-                        }
-
-                        if (this.CardinalNumberMap.ContainsKey(string.Concat(strBuilder.ToString(), 'a')))
-                        {
-                            strBuilder.Append('a');
-                        }
-                    }
-
+                    lastGoodChar = i;
                     value = this.CardinalNumberMap[strBuilder.ToString()];
-                    if (prevValue > 0 && value > prevValue)
-                    {
-                        value = (prevValue * value) - prevValue;
-                    }
-
-                    finalValue += value;
-                    if (prevValue < 1000)
-                    {
-                        prevValue = value + prevValue;
-                    }
-                    else
-                    {
-                        prevValue = value;
-                    }
-
-                    strBuilder.Clear();
                 }
 
-                else if (this.OrdinalNumberMap.ContainsKey(strBuilder.ToString()) || ((this.OrdinalNumberMap.ContainsKey(string.Concat(strBuilder.ToString(), 'i')) || this.OrdinalNumberMap.ContainsKey(string.Concat(strBuilder.ToString(), 'a'))) && i + 1 < numberStr.Length && (numberStr[i + 1] == 'o' || numberStr[i + 1] == 'u')))
+                if ((i + 1) == numberStr.Length)
                 {
-                    if (!this.OrdinalNumberMap.ContainsKey(strBuilder.ToString()))
-                    {
-                        if (this.OrdinalNumberMap.ContainsKey(string.Concat(strBuilder.ToString(), 'i')))
-                        {
-                            strBuilder.Append('i');
-                        }
-
-                        if (this.OrdinalNumberMap.ContainsKey(string.Concat(strBuilder.ToString(), 'a')))
-                        {
-                            strBuilder.Append('a');
-                        }
-                    }
-
-                    value = this.OrdinalNumberMap[strBuilder.ToString()];
                     if (prevValue > 0 && value > prevValue)
                     {
                         value = (prevValue * value) - prevValue;
                     }
 
-                    finalValue += value;
                     if (prevValue < 1000)
                     {
                         prevValue = value + prevValue;
@@ -135,11 +136,16 @@ namespace Microsoft.Recognizers.Text.Number.Italian
                         prevValue = value;
                     }
 
+                    finalValue += value;
+
+                    // listValue.Add(value);
                     strBuilder.Clear();
+                    i = lastGoodChar++;
+                    value = 0;
                 }
             }
 
             return finalValue;
-        }*/
+        }
     }
 }
