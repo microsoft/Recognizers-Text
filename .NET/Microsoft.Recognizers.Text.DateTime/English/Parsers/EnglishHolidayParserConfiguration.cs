@@ -101,6 +101,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         private static DateObject FoolDay(int year) => new DateObject(year, 4, 1);
 
+        private static DateObject EarthDay(int year) => new DateObject(year, 4, 22);
+
         private static DateObject GirlsDay(int year) => new DateObject(year, 3, 7);
 
         private static DateObject TreePlantDay(int year) => new DateObject(year, 3, 12);
