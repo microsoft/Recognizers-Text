@@ -44,9 +44,9 @@ namespace Microsoft.Recognizers.Definitions.Italian
 		public const string RoundNumberOrdinalRegex = @"(centesim[oaie]|millesim[oaie]|milionesim[oaie]|miliardesim[oaie]|bilionesim[oaie]|trilionesim[oaie])";
 		public const string OneToNineOrdinalRegex = @"(prim[oaie]|second[oaie]|terz[oaie]|quart[oaie]|quint[oaie]|sest[oaie]|settim[oaie]|ottav[oaie]|non[oaie])";
 		public const string NumberOrdinalRegex = @"(prim[oaie]|second[oaie]|terz[oaie]|quart[oaie]|quint[oaie]|sest[oaie]|settim[oaie]|ottav[oaie]|non[oaie]|decim[oaie]|undicesim[oaie]|dodicesim[oaie]|tredicesim[oaie]|quattordicesim[oaie]|quindicesim[oaie]|sedicesim[oaie]|diciassettesim[oaie]|diciottesim[oaie]|diciannovesim[oaie]|ventesim[oaie]|trentesim[oaie]|quarantesim[oaie]|cinquantesim[oaie]|sessantesim[oaie]|settantesim[oaie]|ottantesim[oaie]|novantesim[oaie])";
-		public const string RelativeOrdinalRegex = @"(precedente|seguente|penultim[oa]|terz'?ultim[oa]||ultim[oa])";
+		public const string RelativeOrdinalRegex = @"(precedente|seguente|penultim[oa]|terzultim[oa]|ultim[oa])";
 		public static readonly string BasicOrdinalRegex = $@"(({NumberOrdinalRegex}|{RelativeOrdinalRegex})(?!\s*({TwoToNineIntegerRegex}|([2-9]+))\b))";
-		public static readonly string SuffixBasicOrdinalRegex = $@"((((({TensNumberIntegerRegex}{ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|({AnIntRegex})?)(\s*{RoundNumberIntegerRegex})*)\s*(e\s+)?)*({TensNumberIntegerRegex}?{ZeroToNineIntegerRegex}esim[oaie]|{BasicOrdinalRegex}))";
+		public static readonly string SuffixBasicOrdinalRegex = $@"((((({TensNumberIntegerRegex}{ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|({AnIntRegex})|{RoundNumberIntegerRegex})(\s*{RoundNumberIntegerRegex})*)\s*(e\s+)?)*({TensNumberIntegerRegex}?{ZeroToNineIntegerRegex}esim[oaie]|{BasicOrdinalRegex}))";
 		public static readonly string SuffixRoundNumberOrdinalRegex = $@"(({AllIntRegex}\s*)?{RoundNumberOrdinalRegex})";
 		public static readonly string AllOrdinalRegex = $@"({SuffixRoundNumberOrdinalRegex}|{SuffixBasicOrdinalRegex})";
 		public const string OrdinalSuffixRegex = @"(?<=\b)(\d*(°|(esi)?m[oaie]))";
@@ -68,8 +68,8 @@ namespace Microsoft.Recognizers.Definitions.Italian
 		public const string ConnectorRegex = @"(?<spacer>e)";
 		public const string DoubleExponentialNotationRegex = @"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+,)))(\d+(,\d+)?)e([+-]*[1-9]\d*)(?=\b)";
 		public const string DoubleCaretExponentialNotationRegex = @"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+,)))(\d+(,\d+)?)\^([+-]*[1-9]\d*)(?=\b)";
-		public static readonly string NumberWithSuffixPercentage = $@"({BaseNumbers.NumberReplaceToken}|{AllIntRegex})(\s*)(%|percento|per cento|percentuale)";
-		public static readonly string NumberWithPrefixPercentage = $@"(percento di|per cento di)(\s*)({BaseNumbers.NumberReplaceToken})";
+		public static readonly string NumberWithSuffixPercentage = $@"(?<!%)({BaseNumbers.NumberReplaceToken})(\s*)(%(?!{BaseNumbers.NumberReplaceToken})|(per cento|percentuale|percento)\b)";
+		public static readonly string NumberWithPrefixPercentage = $@"(per cento di|percento di)(\s*)({BaseNumbers.NumberReplaceToken})";
 		public const char DecimalSeparatorChar = ',';
 		public const string FractionMarkerToken = @"su";
 		public const char NonDecimalSeparatorChar = '.';

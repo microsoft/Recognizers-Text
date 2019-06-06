@@ -55,12 +55,12 @@ OneToNineOrdinalRegex: !simpleRegex
 NumberOrdinalRegex: !simpleRegex
   def: (prim[oaie]|second[oaie]|terz[oaie]|quart[oaie]|quint[oaie]|sest[oaie]|settim[oaie]|ottav[oaie]|non[oaie]|decim[oaie]|undicesim[oaie]|dodicesim[oaie]|tredicesim[oaie]|quattordicesim[oaie]|quindicesim[oaie]|sedicesim[oaie]|diciassettesim[oaie]|diciottesim[oaie]|diciannovesim[oaie]|ventesim[oaie]|trentesim[oaie]|quarantesim[oaie]|cinquantesim[oaie]|sessantesim[oaie]|settantesim[oaie]|ottantesim[oaie]|novantesim[oaie])
 RelativeOrdinalRegex: !simpleRegex
-  def: (precedente|seguente|penultim[oa]|terz'?ultim[oa]||ultim[oa])
+  def: (precedente|seguente|penultim[oa]|terzultim[oa]|ultim[oa])
 BasicOrdinalRegex: !nestedRegex
   def: (({NumberOrdinalRegex}|{RelativeOrdinalRegex})(?!\s*({TwoToNineIntegerRegex}|([2-9]+))\b))
   references: [ NumberOrdinalRegex, RelativeOrdinalRegex, TwoToNineIntegerRegex ]
 SuffixBasicOrdinalRegex: !nestedRegex
-  def: ((((({TensNumberIntegerRegex}{ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|({AnIntRegex})?)(\s*{RoundNumberIntegerRegex})*)\s*(e\s+)?)*({TensNumberIntegerRegex}?{ZeroToNineIntegerRegex}esim[oaie]|{BasicOrdinalRegex}))
+  def: ((((({TensNumberIntegerRegex}{ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|({AnIntRegex})|{RoundNumberIntegerRegex})(\s*{RoundNumberIntegerRegex})*)\s*(e\s+)?)*({TensNumberIntegerRegex}?{ZeroToNineIntegerRegex}esim[oaie]|{BasicOrdinalRegex}))
   references: [ TensNumberIntegerRegex, ZeroToNineIntegerRegex, AnIntRegex, RoundNumberIntegerRegex, BasicOrdinalRegex ]
 SuffixRoundNumberOrdinalRegex: !nestedRegex
   def: (({AllIntRegex}\s*)?{RoundNumberOrdinalRegex})
@@ -122,10 +122,10 @@ DoubleCaretExponentialNotationRegex: !simpleRegex
   def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+,)))(\d+(,\d+)?)\^([+-]*[1-9]\d*)(?=\b)
 #Percentage Regex
 NumberWithSuffixPercentage: !nestedRegex
-  def: ({BaseNumbers.NumberReplaceToken}|{AllIntRegex})(\s*)(%|percento|per cento|percentuale)
-  references: [ BaseNumbers.NumberReplaceToken, AllIntRegex ]
+  def: (?<!%)({BaseNumbers.NumberReplaceToken})(\s*)(%(?!{BaseNumbers.NumberReplaceToken})|(per cento|percentuale|percento)\b)
+  references: [ BaseNumbers.NumberReplaceToken ]
 NumberWithPrefixPercentage: !nestedRegex
-  def: (percento di|per cento di)(\s*)({BaseNumbers.NumberReplaceToken})
+  def: (per cento di|percento di)(\s*)({BaseNumbers.NumberReplaceToken})
   references: [ BaseNumbers.NumberReplaceToken ]
 #Parser
 DecimalSeparatorChar: !char ','
