@@ -253,6 +253,52 @@
     ]
   },
   {
+    "Input": "I'll go back on black friday 2010",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "black friday 2010",
+        "Type": "date",
+        "Value": {
+          "Timex": "2010-11-26",
+          "FutureResolution": {
+            "date": "2010-11-26"
+          },
+          "PastResolution": {
+            "date": "2010-11-26"
+          }
+        },
+        "Start": 16,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back on halloween",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "halloween",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-10-31",
+          "FutureResolution": {
+            "date": "2017-10-31"
+          },
+          "PastResolution": {
+            "date": "2016-10-31"
+          }
+        },
+        "Start": 16,
+        "Length": 9
+      }
+    ]
+  },
+  {
     "Input": "I'll go back on father's day of 2015",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
