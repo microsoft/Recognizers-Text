@@ -25,6 +25,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             { "妇女节", FemaleDay },
             { "植树节", TreePlantDay },
             { "情人节", LoverDay },
+            { "平安夜", ChristmasEve },
             { "圣诞节", ChristmasDay },
             { "新年", NewYear },
             { "愚人节", FoolDay },
@@ -278,6 +279,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         private static DateObject TreePlantDay(int year) => new DateObject(year, 3, 12);
 
         private static DateObject LoverDay(int year) => new DateObject(year, 2, 14);
+
+        private static DateObject ChristmasEve(int year) => new DateObject(year, 12, 24);
 
         private static DateObject ChristmasDay(int year) => new DateObject(year, 12, 25);
 
