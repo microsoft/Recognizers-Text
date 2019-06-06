@@ -211,7 +211,7 @@ namespace Microsoft.Recognizers.Definitions.English
 		public const string AllRegex = @"\b(?<all>(all|full|whole)(\s+|-)(?<unit>year|month|week|day))\b";
 		public const string HalfRegex = @"(((a|an)\s*)|\b)(?<half>half\s+(?<unit>year|month|week|day|hour))\b";
 		public const string ConjunctionRegex = @"\b((and(\s+for)?)|with)\b";
-		public static readonly string HolidayRegex1 = $@"\b(?<holiday>clean monday|good friday|ash wednesday|mardi gras|washington's birthday|mao's birthday|chinese new year|new years' eve|new year's eve|new year 's eve|new years eve|new year eve|new years'|new year's|new year 's|new years|new year|may\s*day|yuan dan|april fools|christmas eve|christmas|xmas|thanksgiving|halloween|yuandan|easter)(\s+(of\s+)?({YearRegex}|{RelativeRegex}\s+year))?\b";
+		public static readonly string HolidayRegex1 = $@"\b(?<holiday>clean monday|good friday|ash wednesday|mardi gras|washington's birthday|mao's birthday|chinese new year|new years' eve|new year's eve|new year 's eve|new years eve|new year eve|new years'|new year's|new year 's|new years|new year|may\s*day|yuan dan|april fools|christmas eve|christmas|xmas|thanksgiving|black friday|halloween|yuandan|easter)(\s+(of\s+)?({YearRegex}|{RelativeRegex}\s+year))?\b";
 		public static readonly string HolidayRegex2 = $@"\b(?<holiday>all saint's|tree planting day|white lover|st patrick|st george|cinco de mayo|us independence|all hallow|all souls|guy fawkes)(\s+(of\s+)?({YearRegex}|{RelativeRegex}\s+year))?\b";
 		public static readonly string HolidayRegex3 = $@"(?<holiday>(independence|mlk|martin luther king|martin luther king jr|canberra|easter|columbus|thanks\s*giving|christmas|xmas|labour|(international|int'l)\s+workers'?|mother's|mother|mothers|father's|father|fathers|female|single|teacher's|youth|children|arbor|girls|chsmilbuild|lover|labor|inauguration|groundhog|valentine's|baptiste|bastille|halloween|veterans|memorial|mid[ \-]autumn|moon|spring|lantern|qingming|dragon boat|new years'|new year's|new year 's|new years|new year)\s+(day))(\s+(of\s+)?({YearRegex}|{RelativeRegex}\s+year))?";
 		public const string AMTimeRegex = @"(?<am>morning)";
@@ -587,6 +587,7 @@ namespace Microsoft.Recognizers.Definitions.English
 			{ @"fathers", new string[] { @"fatherday", @"fathersday" } },
 			{ @"mothers", new string[] { @"motherday", @"mothersday" } },
 			{ @"thanksgiving", new string[] { @"thanksgivingday", @"thanksgiving" } },
+			{ @"blackfriday", new string[] { @"blackfriday" } },
 			{ @"martinlutherking", new string[] { @"mlkday", @"martinlutherkingday", @"martinlutherkingjrday" } },
 			{ @"washingtonsbirthday", new string[] { @"washingtonsbirthday", @"washingtonbirthday" } },
 			{ @"canberra", new string[] { @"canberraday" } },
@@ -623,7 +624,7 @@ namespace Microsoft.Recognizers.Definitions.English
 			{ @"usindependenceday", new string[] { @"usindependenceday" } },
 			{ @"independenceday", new string[] { @"independenceday" } },
 			{ @"bastilleday", new string[] { @"bastilleday" } },
-			{ @"halloweenday", new string[] { @"halloweenday" } },
+			{ @"halloweenday", new string[] { @"halloweenday", @"halloween" } },
 			{ @"allhallowday", new string[] { @"allhallowday" } },
 			{ @"allsoulsday", new string[] { @"allsoulsday" } },
 			{ @"guyfawkesday", new string[] { @"guyfawkesday" } },

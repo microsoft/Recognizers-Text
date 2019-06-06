@@ -494,7 +494,7 @@ HalfRegex: !simpleRegex
 ConjunctionRegex: !simpleRegex
   def: \b((and(\s+for)?)|with)\b
 HolidayRegex1: !nestedRegex
-  def: \b(?<holiday>clean monday|good friday|ash wednesday|mardi gras|washington's birthday|mao's birthday|chinese new year|new years' eve|new year's eve|new year 's eve|new years eve|new year eve|new years'|new year's|new year 's|new years|new year|may\s*day|yuan dan|april fools|christmas eve|christmas|xmas|thanksgiving|halloween|yuandan|easter)(\s+(of\s+)?({YearRegex}|{RelativeRegex}\s+year))?\b
+  def: \b(?<holiday>clean monday|good friday|ash wednesday|mardi gras|washington's birthday|mao's birthday|chinese new year|new years' eve|new year's eve|new year 's eve|new years eve|new year eve|new years'|new year's|new year 's|new years|new year|may\s*day|yuan dan|april fools|christmas eve|christmas|xmas|thanksgiving|black friday|halloween|yuandan|easter)(\s+(of\s+)?({YearRegex}|{RelativeRegex}\s+year))?\b
   references: [ YearRegex, RelativeRegex ]
 HolidayRegex2: !nestedRegex
   def: \b(?<holiday>all saint's|tree planting day|white lover|st patrick|st george|cinco de mayo|us independence|all hallow|all souls|guy fawkes)(\s+(of\s+)?({YearRegex}|{RelativeRegex}\s+year))?\b
@@ -958,6 +958,7 @@ HolidayNames: !dictionary
     fathers: [ fatherday, fathersday ]
     mothers: [ motherday, mothersday ]
     thanksgiving: [ thanksgivingday, thanksgiving ]
+    blackfriday: [ blackfriday ]
     martinlutherking: [ mlkday, martinlutherkingday, martinlutherkingjrday ]
     washingtonsbirthday: [ washingtonsbirthday, washingtonbirthday ]
     canberra: [ canberraday ]
@@ -994,7 +995,7 @@ HolidayNames: !dictionary
     usindependenceday: [ usindependenceday ]
     independenceday: [ independenceday ]
     bastilleday: [ bastilleday ]
-    halloweenday: [ halloweenday ]
+    halloweenday: [ halloweenday, halloween ]
     allhallowday: [ allhallowday ]
     allsoulsday: [ allsoulsday ]
     guyfawkesday: [ guyfawkesday ]

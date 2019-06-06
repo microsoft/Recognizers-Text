@@ -41,6 +41,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         protected static DateObject ThanksgivingDay(int year) => DateObject.MinValue.SafeCreateFromValue(year, 11, GetDay(year, 11, 3, DayOfWeek.Thursday));
 
+        protected static DateObject BlackFriday(int year) => DateObject.MinValue.SafeCreateFromValue(year, 11, GetDay(year, 11, 3, DayOfWeek.Friday));
+
         protected static int GetDay(int year, int month, int week, DayOfWeek dayOfWeek) =>
             (from day in Enumerable.Range(1, DateObject.DaysInMonth(year, month))
              where DateObject.MinValue.SafeCreateFromValue(year, month, day).DayOfWeek == dayOfWeek
@@ -59,6 +61,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 { "mothers", MothersDay },
                 { "thanksgivingday", ThanksgivingDay },
                 { "thanksgiving", ThanksgivingDay },
+                { "blackfriday", BlackFriday },
                 { "martinlutherking", MartinLutherKingDay },
                 { "washingtonsbirthday", WashingtonsBirthday },
                 { "canberra", CanberraDay },

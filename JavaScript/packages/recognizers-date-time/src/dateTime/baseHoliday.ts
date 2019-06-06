@@ -1,4 +1,4 @@
-import { IExtractor, ExtractResult, RegExpUtility, Match } from "@microsoft/recognizers-text";
+import { IExtractor, ExtractResult, RegExpUtility, Match, MetaData } from "@microsoft/recognizers-text";
 import { Constants, TimeTypeConstants } from "./constants";
 import { Token, DateTimeFormatUtil, DateTimeResolutionResult, DayOfWeek, DateUtils, StringMap } from "./utilities";
 import { IDateTimeParser, DateTimeParseResult } from "./parsers"
@@ -23,8 +23,13 @@ export class BaseHolidayExtractor implements IDateTimeExtractor {
         
         let tokens: Array<Token> = new Array<Token>()
             .concat(this.holidayMatch(source))
-        let result = Token.mergeAllTokens(tokens, source, this.extractorName);
-        return result;
+        let results = Token.mergeAllTokens(tokens, source, this.extractorName);
+        results.forEach(result => {
+            let metaData = new MetaData();
+            metaData.IsHoliday = true;
+            result.metaData = metaData;
+        });
+        return results;
     }
 
     private holidayMatch(source: string): Array<Token> {
@@ -209,6 +214,7 @@ export abstract class BaseHolidayParserConfiguration implements IHolidayParserCo
                 ["mothers", BaseHolidayParserConfiguration.MothersDay],
                 ["thanksgivingday", BaseHolidayParserConfiguration.ThanksgivingDay],
                 ["thanksgiving", BaseHolidayParserConfiguration.ThanksgivingDay],
+                ["blackfriday", BaseHolidayParserConfiguration.BlackFriday],
                 ["martinlutherking", BaseHolidayParserConfiguration.MartinLutherKingDay],
                 ["washingtonsbirthday", BaseHolidayParserConfiguration.WashingtonsBirthday],
                 ["canberra", BaseHolidayParserConfiguration.CanberraDay],
@@ -237,6 +243,8 @@ export abstract class BaseHolidayParserConfiguration implements IHolidayParserCo
     protected static ColumbusDay(year: number): Date { return new Date(year, 10 - 1, BaseHolidayParserConfiguration.getDay(year, 10 - 1, 1, DayOfWeek.Monday)); }
 
     protected static ThanksgivingDay(year: number): Date { return new Date(year, 11 - 1, BaseHolidayParserConfiguration.getDay(year, 11 - 1, 3, DayOfWeek.Thursday)); }
+    
+    protected static BlackFriday(year: number): Date { return new Date(year, 11 - 1, BaseHolidayParserConfiguration.getDay(year, 11 - 1, 3, DayOfWeek.Friday)); }
 
     protected static getDay(year: number, month: number, week: number, dayOfWeek: DayOfWeek): number {
         let days = Array.apply(null, new Array(new Date(year, month, 0).getDate())).map(function (x, i) { return i + 1 });

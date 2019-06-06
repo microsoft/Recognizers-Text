@@ -1,3 +1,5 @@
+import { MetaData } from "./metaData";
+
 export interface IExtractor {
     extract(input: string): Array<ExtractResult>
 }
@@ -8,6 +10,7 @@ export class ExtractResult {
     text: string;
     type: string;
     data?: any;
+    metaData?: MetaData;
 
     static isOverlap(erA: ExtractResult, erB: ExtractResult): boolean {
         return !( erA.start >= erB.start + erB.length ) && !( erB.start >= erA.start + erA.length );
