@@ -199,7 +199,7 @@ class EnglishDateTime:
     AllRegex = f'\\b(?<all>(all|full|whole)(\\s+|-)(?<unit>year|month|week|day))\\b'
     HalfRegex = f'(((a|an)\\s*)|\\b)(?<half>half\\s+(?<unit>year|month|week|day|hour))\\b'
     ConjunctionRegex = f'\\b((and(\\s+for)?)|with)\\b'
-    HolidayRegex1 = f'\\b(?<holiday>clean monday|good friday|ash wednesday|mardi gras|washington\'s birthday|mao\'s birthday|chinese new year|new years\' eve|new year\'s eve|new year \'s eve|new years eve|new year eve|new years\'|new year\'s|new year \'s|new years|new year|may\\s*day|yuan dan|april fools|christmas eve|christmas|xmas|thanksgiving|halloween|yuandan|easter)(\\s+(of\\s+)?({YearRegex}|{RelativeRegex}\\s+year))?\\b'
+    HolidayRegex1 = f'\\b(?<holiday>clean monday|good friday|ash wednesday|mardi gras|washington\'s birthday|mao\'s birthday|chinese new year|new years\' eve|new year\'s eve|new year \'s eve|new years eve|new year eve|new years\'|new year\'s|new year \'s|new years|new year|may\\s*day|yuan dan|april fools|christmas eve|christmas|xmas|thanksgiving|black friday|halloween|yuandan|easter)(\\s+(of\\s+)?({YearRegex}|{RelativeRegex}\\s+year))?\\b'
     HolidayRegex2 = f'\\b(?<holiday>all saint\'s|tree planting day|white lover|st patrick|st george|cinco de mayo|us independence|all hallow|all souls|guy fawkes)(\\s+(of\\s+)?({YearRegex}|{RelativeRegex}\\s+year))?\\b'
     HolidayRegex3 = f'(?<holiday>(independence|mlk|martin luther king|martin luther king jr|canberra|easter|columbus|thanks\\s*giving|christmas|xmas|labour|(international|int\'l)\\s+workers\'?|mother\'s|mother|mothers|father\'s|father|fathers|female|single|teacher\'s|youth|children|arbor|girls|chsmilbuild|lover|labor|inauguration|groundhog|valentine\'s|baptiste|bastille|halloween|veterans|memorial|mid[ \\-]autumn|moon|spring|lantern|qingming|dragon boat|new years\'|new year\'s|new year \'s|new years|new year)\\s+(day))(\\s+(of\\s+)?({YearRegex}|{RelativeRegex}\\s+year))?'
     AMTimeRegex = f'(?<am>morning)'
@@ -543,6 +543,7 @@ class EnglishDateTime:
                          ("fathers", ["fatherday", "fathersday"]),
                          ("mothers", ["motherday", "mothersday"]),
                          ("thanksgiving", ["thanksgivingday", "thanksgiving"]),
+                         ("blackfriday", ["blackfriday"]),
                          ("martinlutherking", ["mlkday", "martinlutherkingday", "martinlutherkingjrday"]),
                          ("washingtonsbirthday", ["washingtonsbirthday", "washingtonbirthday"]),
                          ("canberra", ["canberraday"]),
@@ -579,7 +580,7 @@ class EnglishDateTime:
                          ("usindependenceday", ["usindependenceday"]),
                          ("independenceday", ["independenceday"]),
                          ("bastilleday", ["bastilleday"]),
-                         ("halloweenday", ["halloweenday"]),
+                         ("halloweenday", ["halloweenday", "halloween"]),
                          ("allhallowday", ["allhallowday"]),
                          ("allsoulsday", ["allsoulsday"]),
                          ("guyfawkesday", ["guyfawkesday"]),

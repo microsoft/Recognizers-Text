@@ -1,6 +1,7 @@
 package com.microsoft.recognizers.text.datetime.extractors;
 
 import com.microsoft.recognizers.text.ExtractResult;
+import com.microsoft.recognizers.text.Metadata;
 import com.microsoft.recognizers.text.datetime.Constants;
 import com.microsoft.recognizers.text.datetime.extractors.config.IHolidayExtractorConfiguration;
 import com.microsoft.recognizers.text.datetime.utilities.Token;
@@ -29,7 +30,16 @@ public class BaseHolidayExtractor implements IDateTimeExtractor {
     public final List<ExtractResult> extract(String input, LocalDateTime reference) {
         List<Token> tokens = new ArrayList<>();
         tokens.addAll(holidayMatch(input));
-        return Token.mergeAllTokens(tokens, input, getExtractorName());
+        List<ExtractResult> ers = Token.mergeAllTokens(tokens, input, getExtractorName());
+        for (ExtractResult er : ers) {
+            Metadata metadata = new Metadata() {
+                {
+                    setIsHoliday(true);
+                }
+            };
+            er.setMetadata(metadata);
+        }
+        return ers;
     }
 
     @Override
