@@ -331,7 +331,7 @@
         "Text": "presidents' day 2017",
         "Type": "date",
         "Value": {
-          "Timex": "2017-02-20",
+          "Timex": "2017-02-WXX-1-3",
           "FutureResolution": {
             "date": "2017-02-20"
           },
@@ -349,6 +349,7 @@
     "Context": {
       "ReferenceDateTime": "2015-12-07T00:00:00"
     },
+    "NotSupported": "python, javascript, java",
     "Results": [
       {
         "Text": "earth day 2017",

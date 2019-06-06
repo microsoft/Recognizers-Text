@@ -69,6 +69,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
                 { "valentinesday", ValentinesDay },
                 { "stpatrickday", StPatrickDay },
                 { "aprilfools", FoolDay },
+                { "earthday", EarthDay },
                 { "stgeorgeday", StGeorgeDay },
                 { "mayday", Mayday },
                 { "cincodemayoday", CincoDeMayoday },
