@@ -280,6 +280,7 @@
     "Context": {
       "ReferenceDateTime": "2015-12-07T00:00:00"
     },
+    "NotSupported": "python, javascript, java",
     "Results": [
       {
         "Text": "cyber monday 2015",
@@ -303,6 +304,7 @@
     "Context": {
       "ReferenceDateTime": "2015-12-07T00:00:00"
     },
+    "NotSupported": "python, javascript, java",
     "Results": [
       {
         "Text": "st. patrick's day 2018",
@@ -326,6 +328,7 @@
     "Context": {
       "ReferenceDateTime": "2015-12-07T00:00:00"
     },
+    "NotSupported": "python, javascript, java",
     "Results": [
       {
         "Text": "presidents' day 2017",
