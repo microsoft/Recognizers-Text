@@ -186,6 +186,7 @@
   {
     "Input": "192.168.1.2",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "192",
