@@ -323,9 +323,6 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     },
                 }));
 
-            /*
-            #region Italian
-
             RegisterModel<CurrencyModel>(
                 Culture.Italian,
                 (options) => new CurrencyModel(new Dictionary<IExtractor, IParser>
@@ -365,9 +362,6 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                         new NumberWithUnitParser(new Italian.AgeParserConfiguration())
                     },
                 }));
-
-            #endregion
-            */
 
             RegisterModel<CurrencyModel>(
                 Culture.Japanese,

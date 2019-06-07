@@ -1,7 +1,6 @@
 [
   {
     "Input": "la temperatura esterna è di 40 gradi celsius",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -16,7 +15,6 @@
   },
   {
     "Input": "In texas ci sono 90 fahrenheit",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -31,7 +29,6 @@
   },
   {
     "Input": "-5 gradi fahrenheit",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -46,7 +43,6 @@
   },
   {
     "Input": "6 gradi celsius",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -61,7 +57,6 @@
   },
   {
     "Input": "98,6 gradi f è una temperatura normale",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -76,7 +71,6 @@
   },
   {
     "Input": "imposta la temperatura a 30 gradi celsius",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -91,7 +85,6 @@
   },
   {
     "Input": "normalmente la temperatura è di 98,6 gradi fahrenheit",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -106,7 +99,6 @@
   },
   {
     "Input": "100 gradi f",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -121,7 +113,6 @@
   },
   {
     "Input": "20 gradi c",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -136,7 +127,6 @@
   },
   {
     "Input": "100,2 gradi farenheit sono pochi",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -151,7 +141,6 @@
   },
   {
     "Input": "10,5 celsius",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -166,7 +155,6 @@
   },
   {
     "Input": "20 gradi celsius",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -181,7 +169,6 @@
   },
   {
     "Input": "20,3 celsius",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -196,7 +183,6 @@
   },
   {
     "Input": "34,5 celsius",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -211,7 +197,6 @@
   },
   {
     "Input": "la temperatura esterna è di 98 gradi",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -226,7 +211,6 @@
   },
   {
     "Input": "imposta il termostato a 85°",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -241,7 +225,6 @@
   },
   {
     "Input": "alza la temperatura di 5 gradi",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -256,7 +239,6 @@
   },
   {
     "Input": "imposta la temperatura a 70 gradi f",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -271,7 +253,6 @@
   },
   {
     "Input": "alza la temperatura di 20 gradi",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -286,7 +267,6 @@
   },
   {
     "Input": "imposta la temperatura a 100 gradi",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -301,7 +281,6 @@
   },
   {
     "Input": "mantieni la temperatura a 75 gradi f",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -316,7 +295,6 @@
   },
   {
     "Input": "let the temperatura be at 40 celsius",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -331,7 +309,6 @@
   },
   {
     "Input": "lascia la temperatura a 50 gradi",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -346,7 +323,6 @@
   },
   {
     "Input": "converti 10 celsius in fahrenheit",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -369,7 +345,6 @@
   },
   {
     "Input": "34,9 centigradi in farenheit",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -392,7 +367,6 @@
   },
   {
     "Input": "converti 200 celsius celsius in fahrenheit",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -423,7 +397,6 @@
   },
   {
     "Input": "fahrenheit in celsius 101 fahrenheit è troppo celsius",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -462,7 +435,6 @@
   },
   {
     "Input": "50 gradi celsius celsius in fahrenheit",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -493,7 +465,6 @@
   },
   {
     "Input": "puoi convertire 51 fahrenheit in gradi celsius",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -516,7 +487,6 @@
   },
   {
     "Input": "converti 106 gradi fahrenheit in gradi celsius",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -539,7 +509,6 @@
   },
   {
     "Input": "converti 45 gradi fahrenheit in celsius",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -562,7 +531,6 @@
   },
   {
     "Input": "come convertire - 20 gradi fahrenheit in celsius",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
