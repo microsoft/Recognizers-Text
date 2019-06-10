@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.Recognizers.Text.Sequence;
+using Microsoft.Recognizers.Text.Sequence.Chinese;
 using Microsoft.Recognizers.Text.Sequence.English;
 
 namespace Microsoft.Recognizers.Text.Sequence
@@ -89,7 +90,12 @@ namespace Microsoft.Recognizers.Text.Sequence
 
         public IModel GetURLModel(string culture = null, bool fallbackToDefaultCulture = true)
         {
-            return GetModel<URLModel>(culture, fallbackToDefaultCulture);
+            if (culture == "zh-cn" || culture == "ko-kr" || culture == "ja-jp")
+            {
+                return GetModel<URLModel>(Culture.Chinese, fallbackToDefaultCulture);
+            }
+
+            return GetModel<URLModel>(Culture.English, fallbackToDefaultCulture);
         }
 
         public IModel GetGUIDModel(string culture = null, bool fallbackToDefaultCulture = true)
@@ -121,15 +127,20 @@ namespace Microsoft.Recognizers.Text.Sequence
 
             RegisterModel<URLModel>(
                 Culture.English,
-                (options) => new URLModel(new URLParser(), new URLExtractor()));
+                (options) => new URLModel(
+                    new URLParser(),
+                    new BaseURLExtractor(new EnglishURLExtractorConfiguration(options))));
+
+            RegisterModel<URLModel>(
+                Culture.Chinese,
+                options => new URLModel(
+                    new URLParser(),
+                    new BaseURLExtractor(new ChineseURLExtractorConfiguration(options))));
 
             RegisterModel<GUIDModel>(
                 Culture.English,
                 (options) => new GUIDModel(new GUIDParser(), new GUIDExtractor()));
 
-            RegisterModel<URLModel>(
-                Culture.Chinese,
-                (options) => new URLModel(new URLParser(), new ChineseURLExtractor()));
         }
 
         private static List<ModelResult> RecognizeByModel(Func<SequenceRecognizer, IModel> getModelFunc, string query, SequenceOptions options)

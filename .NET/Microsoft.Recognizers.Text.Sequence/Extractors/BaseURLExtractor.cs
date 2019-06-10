@@ -10,20 +10,25 @@ namespace Microsoft.Recognizers.Text.Sequence
 {
     public class BaseURLExtractor : BaseSequenceExtractor
     {
-        public BaseURLExtractor()
+
+        private readonly IURLExtractorConfiguration config;
+
+        public BaseURLExtractor(IURLExtractorConfiguration config)
         {
+            this.config = config;
+
             var regexes = new Dictionary<Regex, string>
             {
                 {
-                    new Regex(BaseURL.IpUrlRegex, RegexOptions.Compiled),
+                    config.IpUrlRegex,
                     Constants.URL_REGEX
                 },
                 {
-                    new Regex(BaseURL.UrlRegex, RegexOptions.Compiled),
+                    config.UrlRegex,
                     Constants.URL_REGEX
                 },
                 {
-                    new Regex(BaseURL.UrlRegex2, RegexOptions.Compiled),
+                    config.UrlRegex2,
                     Constants.URL_REGEX
                 },
             };

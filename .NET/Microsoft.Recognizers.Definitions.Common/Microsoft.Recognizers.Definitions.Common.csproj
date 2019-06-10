@@ -108,11 +108,6 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
-    <Compile Update="Chinese\URLDefinitions.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Chinese\URLDefinitions.tt</DependentUpon>
-    </Compile>
     <Compile Update="Dutch\ChoiceDefinitions.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -327,8 +322,6 @@
     <None Update="Chinese\NumbersDefinitions.tt">
     </None>
     <None Update="Chinese\NumbersWithUnitDefinitions.tt">
-    </None>
-    <None Update="Chinese\URLDefinitions.tt">
     </None>
     <None Update="Dutch\ChoiceDefinitions.tt">
     </None>
