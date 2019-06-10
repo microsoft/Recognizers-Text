@@ -69,6 +69,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
                 { "valentinesday", ValentinesDay },
                 { "stpatrickday", StPatrickDay },
                 { "aprilfools", FoolDay },
+                { "earthday", EarthDay },
                 { "stgeorgeday", StGeorgeDay },
                 { "mayday", Mayday },
                 { "cincodemayoday", CincoDeMayoday },
@@ -100,6 +101,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         private static DateObject WhiteLoverDay(int year) => new DateObject(year, 3, 14);
 
         private static DateObject FoolDay(int year) => new DateObject(year, 4, 1);
+
+        private static DateObject EarthDay(int year) => new DateObject(year, 4, 22);
 
         private static DateObject GirlsDay(int year) => new DateObject(year, 3, 7);
 

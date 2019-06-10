@@ -11721,5 +11721,29 @@
         }
       }
     ]
+  },
+  {
+    "Input": "I'll go back on earth day 2010",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python, javascript, java",
+    "Results": [
+      {
+        "Text": "earth day 2010",
+        "Start": 16,
+        "End": 29,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2010-04-22",
+              "type": "date",
+              "value": "2010-04-22"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
