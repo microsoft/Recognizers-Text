@@ -2,7 +2,7 @@
 SETLOCAL EnableDelayedExpansion
 
 SET COMMONASSEMBLYPATH=%1
-IF [%1] == [] SET COMMONASSEMBLYPATH=%~dp0bin\Debug\net462\Microsoft.Recognizers.Definitions.Common.dll
+IF [%1] == [] SET COMMONASSEMBLYPATH=%~dp0bin\Release\net462\Microsoft.Recognizers.Definitions.Common.dll
 
 IF NOT EXIST "%COMMONASSEMBLYPATH%" (
 	ECHO "%COMMONASSEMBLYPATH%" could not be found, build the Microsoft.Recognizers.Definitions solution first.

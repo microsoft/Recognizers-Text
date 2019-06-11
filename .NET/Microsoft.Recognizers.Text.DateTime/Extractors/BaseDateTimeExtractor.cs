@@ -40,7 +40,6 @@ namespace Microsoft.Recognizers.Text.DateTime
         public List<Token> BasicRegexMatch(string text)
         {
             var ret = new List<Token>();
-            text = text.ToLower();
 
             // Handle "now"
             var matches = this.config.NowRegex.Matches(text);
@@ -109,9 +108,12 @@ namespace Microsoft.Recognizers.Text.DateTime
                     break;
                 }
 
-                if ((ers[i].Type.Equals(Constants.SYS_DATETIME_DATE) && ers[j].Type.Equals(Constants.SYS_DATETIME_TIME)) ||
-                    (ers[i].Type.Equals(Constants.SYS_DATETIME_TIME) && ers[j].Type.Equals(Constants.SYS_DATETIME_DATE)) ||
-                    (ers[i].Type.Equals(Constants.SYS_DATETIME_DATE) && ers[j].Type.Equals(Number.Constants.SYS_NUM_INTEGER)))
+                if ((ers[i].Type.Equals(Constants.SYS_DATETIME_DATE, StringComparison.InvariantCulture) &&
+                     ers[j].Type.Equals(Constants.SYS_DATETIME_TIME, StringComparison.InvariantCulture)) ||
+                    (ers[i].Type.Equals(Constants.SYS_DATETIME_TIME, StringComparison.InvariantCulture) &&
+                     ers[j].Type.Equals(Constants.SYS_DATETIME_DATE, StringComparison.InvariantCulture)) ||
+                    (ers[i].Type.Equals(Constants.SYS_DATETIME_DATE, StringComparison.InvariantCulture) &&
+                     ers[j].Type.Equals(Number.Constants.SYS_NUM_INTEGER, StringComparison.InvariantCulture)))
                 {
                     var middleBegin = ers[i].Start + ers[i].Length ?? 0;
                     var middleEnd = ers[j].Start ?? 0;
@@ -121,11 +123,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                         continue;
                     }
 
-                    var middleStr = text.Substring(middleBegin, middleEnd - middleBegin).Trim().ToLower();
+                    var middleStr = text.Substring(middleBegin, middleEnd - middleBegin).Trim();
                     var valid = false;
 
                     // for cases like "tomorrow 3",  "tomorrow at 3"
-                    if (ers[j].Type.Equals(Number.Constants.SYS_NUM_INTEGER))
+                    if (ers[j].Type.Equals(Number.Constants.SYS_NUM_INTEGER, StringComparison.InvariantCulture))
                     {
                         var match = this.config.DateNumberConnectorRegex.Match(middleStr);
                         if (string.IsNullOrEmpty(middleStr) || match.Success)
@@ -142,7 +144,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                             middleStr = middleStr.Substring(match.Index + match.Length, middleStr.Length - match.Length).Trim();
                         }
 
-                        if (!(match.Success && middleStr.Equals(string.Empty)))
+                        if (!(match.Success && middleStr.Length == 0))
                         {
                             if (this.config.IsConnector(middleStr))
                             {

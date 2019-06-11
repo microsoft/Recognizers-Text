@@ -170,7 +170,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                             relativeStr = relativeRegex.Value;
                         }
 
-                        // LUIS value string will be set in Match2Date method
+                        // Value string will be set in Match2Date method
                         var ret = Match2Date(match, referenceDate, relativeStr);
                         return ret;
                     }
