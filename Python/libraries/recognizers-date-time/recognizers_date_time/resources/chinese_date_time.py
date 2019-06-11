@@ -78,7 +78,7 @@ class ChineseDateTime:
     DecadeRegexInChinese = f'(?<decade>十|一十|二十|三十|四十|五十|六十|七十|八十|九十)'
     DecadeRegex = f'(?<centurysuf>({CenturyRegex}|{CenturyRegexInChinese}|{RelativeCenturyRegex}))?(?<decade>(\\d0|{DecadeRegexInChinese}))年代'
     PrepositionRegex = f'(?<prep>^的|在$)'
-    NowRegex = f'(?<now>现在|马上|立刻|刚刚才|刚刚|刚才)'
+    NowRegex = f'(?<now>现在|马上|立刻|刚刚才|刚刚|刚才|这会儿|当下|此刻)'
     NightRegex = f'(?<night>早|晚)'
     TimeOfTodayRegex = f'(今晚|今早|今晨|明晚|明早|明晨|昨晚)(的|在)?'
     DateTimePeriodTillRegex = f'(?<till>到|直到|--|-|—|——)'
@@ -106,7 +106,7 @@ class ChineseDateTime:
                                ("Y", "年")])
     DurationAmbiguousUnits = [r'分钟', r'秒钟', r'秒', r'个小时', r'小时', r'天', r'星期', r'个星期', r'周', r'个月', r'年']
     LunarHolidayRegex = f'(({DatePeriodYearRegex}|{DatePeriodYearInChineseRegex}|(?<yearrel>明年|今年|去年))(的)?)?(?<holiday>除夕|春节|中秋节|中秋|元宵节|端午节|端午|重阳节)'
-    HolidayRegexList1 = f'(({DatePeriodYearRegex}|{DatePeriodYearInChineseRegex}|(?<yearrel>明年|今年|去年))(的)?)?(?<holiday>新年|五一|劳动节|元旦节|元旦|愚人节|圣诞节|植树节|国庆节|情人节|教师节|儿童节|妇女节|青年节|建军节|女生节|光棍节|双十一|清明节|清明)'
+    HolidayRegexList1 = f'(({DatePeriodYearRegex}|{DatePeriodYearInChineseRegex}|(?<yearrel>明年|今年|去年))(的)?)?(?<holiday>新年|五一|劳动节|元旦节|元旦|愚人节|平安夜|圣诞节|植树节|国庆节|情人节|教师节|儿童节|妇女节|青年节|建军节|女生节|光棍节|双十一|清明节|清明)'
     HolidayRegexList2 = f'(({DatePeriodYearRegex}|{DatePeriodYearInChineseRegex}|(?<yearrel>明年|今年|去年))(的)?)?(?<holiday>母亲节|父亲节|感恩节|万圣节)'
     SetUnitRegex = f'(?<unit>年|月|周|星期|日|天|小时|时|分钟|分|秒钟|秒)'
     SetEachUnitRegex = f'(?<each>(每个|每一|每)\\s*{SetUnitRegex})'
@@ -511,7 +511,8 @@ class ChineseDateTime:
     DateTimeSimpleAmRegex = f'(?<am>早|晨)'
     DateTimeSimplePmRegex = f'(?<pm>晚)'
     DateTimePeriodMORegex = f'(凌晨|清晨|早上|早|上午)'
-    DateTimePeriodAFRegex = f'(中午|下午|午后|傍晚)'
+    DateTimePeriodMIRegex = f'(中午)'
+    DateTimePeriodAFRegex = f'(下午|午后|傍晚)'
     DateTimePeriodEVRegex = f'(晚上|夜里|夜晚|晚)'
     DateTimePeriodNIRegex = f'(半夜|夜间|深夜)'
     DurationUnitValueMap = dict([("Y", 31536000),
@@ -551,9 +552,10 @@ class ChineseDateTime:
                              ("晚", 18),
                              ("pm", 12)])
     DefaultLanguageFallback = 'DMY'
-    MorningTermList = [r'上午']
-    AfternoonTermList = [r'下午']
-    EveningTermList = [r'晚上']
-    DaytimeTermList = [r'白天']
+    MorningTermList = [r'上午', r'早上', r'清晨']
+    MidDayTermList = [r'中午', r'正午']
+    AfternoonTermList = [r'下午', r'午后']
+    EveningTermList = [r'晚上', r'夜里', r'傍晚', r'夜晚']
+    DaytimeTermList = [r'白天', r'日间']
     NightTermList = [r'深夜']
 # pylint: enable=line-too-long

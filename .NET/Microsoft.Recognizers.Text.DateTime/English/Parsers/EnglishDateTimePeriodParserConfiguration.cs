@@ -36,6 +36,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             TimePeriodParser = config.TimePeriodParser;
             DurationParser = config.DurationParser;
             DateTimeParser = config.DateTimeParser;
+            TimeZoneParser = config.TimeZoneParser;
 
             PureNumberFromToRegex = EnglishTimePeriodExtractorConfiguration.PureNumFromTo;
             PureNumberBetweenAndRegex = EnglishTimePeriodExtractorConfiguration.PureNumBetweenAnd;
@@ -84,6 +85,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public IDateTimeParser TimePeriodParser { get; }
 
         public IDateTimeParser DurationParser { get; }
+
+        public IDateTimeParser TimeZoneParser { get; }
 
         public Regex PureNumberFromToRegex { get; }
 

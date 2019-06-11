@@ -130,5 +130,16 @@
         "Length": 7
       }
     ]
+  },
+  {
+    "Input": "我这会儿没有空",
+    "Results": [
+      {
+        "Text": "这会儿",
+        "Type": "datetime",
+        "Start": 1,
+        "Length": 3
+      }
+    ]
   }
 ]

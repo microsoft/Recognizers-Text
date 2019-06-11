@@ -350,5 +350,16 @@
         "Length": 3
       }
     ]
+  },
+  {
+    "Input": "明天平安夜去哪里",
+    "Results": [
+      {
+        "Text": "平安夜",
+        "Type": "date",
+        "Start": 2,
+        "Length": 3
+      }
+    ]
   }
 ]

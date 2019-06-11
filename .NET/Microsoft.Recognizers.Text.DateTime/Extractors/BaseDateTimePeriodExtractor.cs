@@ -37,7 +37,14 @@ namespace Microsoft.Recognizers.Text.DateTime
             tokens.AddRange(MatchDateWithPeriodPrefix(text, reference, new List<ExtractResult>(dateErs)));
             tokens.AddRange(MergeDateWithTimePeriodSuffix(text, new List<ExtractResult>(dateErs), new List<ExtractResult>(timeErs)));
 
-            return Token.MergeAllTokens(tokens, text, ExtractorName);
+            var ers = Token.MergeAllTokens(tokens, text, ExtractorName);
+
+            if ((this.config.Options & DateTimeOptions.EnablePreview) != 0)
+            {
+                ers = TimeZoneUtility.MergeTimeZones(ers, config.TimeZoneExtractor.Extract(text, reference), text);
+            }
+
+            return ers;
         }
 
         private static bool MatchPrefixRegexInSegment(string beforeStr, Match match)

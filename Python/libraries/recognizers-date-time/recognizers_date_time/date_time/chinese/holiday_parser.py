@@ -27,6 +27,7 @@ class ChineseHolidayParser(BaseHolidayParser):
             ('妇女节', ChineseHolidayParser.female_day),
             ('植树节', ChineseHolidayParser.tree_plant_day),
             ('情人节', ChineseHolidayParser.lover_day),
+            ('平安夜', ChineseHolidayParser.christmas_eve),
             ('圣诞节', ChineseHolidayParser.christmas_day),
             ('新年', ChineseHolidayParser.new_year),
             ('愚人节', ChineseHolidayParser.fool_day),
@@ -61,6 +62,10 @@ class ChineseHolidayParser(BaseHolidayParser):
     @staticmethod
     def labor_day(year: int) -> datetime:
         return datetime(year, 5, 1)
+    
+    @staticmethod
+    def christmas_eve(year: int) -> datetime:
+        return datetime(year, 12, 24)
 
     @staticmethod
     def christmas_day(year: int) -> datetime:
