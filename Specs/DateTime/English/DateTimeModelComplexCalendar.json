@@ -9968,5 +9968,53 @@
         }
       }
     ]
+  },
+  {
+    "Input": "2017 -q1",
+    "Context": {
+      "ReferenceDateTime": "2019-06-11T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "2017 -q1",
+        "Start": 0,
+        "End": 7,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2017-01-01,2017-04-01,P3M)",
+              "type": "daterange",
+              "start": "2017-01-01",
+              "end": "2017-04-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "2017 q1",
+    "Context": {
+      "ReferenceDateTime": "2019-06-11T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "2017 q1",
+        "Start": 0,
+        "End": 6,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2017-01-01,2017-04-01,P3M)",
+              "type": "daterange",
+              "start": "2017-01-01",
+              "end": "2017-04-01"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
