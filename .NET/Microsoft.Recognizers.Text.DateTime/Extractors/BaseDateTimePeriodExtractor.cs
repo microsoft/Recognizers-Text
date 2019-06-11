@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 using DateObject = System.DateTime;
@@ -37,7 +38,14 @@ namespace Microsoft.Recognizers.Text.DateTime
             tokens.AddRange(MatchDateWithPeriodPrefix(text, reference, new List<ExtractResult>(dateErs)));
             tokens.AddRange(MergeDateWithTimePeriodSuffix(text, new List<ExtractResult>(dateErs), new List<ExtractResult>(timeErs)));
 
-            return Token.MergeAllTokens(tokens, text, ExtractorName);
+            var ers = Token.MergeAllTokens(tokens, text, ExtractorName);
+
+            if ((this.config.Options & DateTimeOptions.EnablePreview) != 0)
+            {
+                ers = TimeZoneUtility.MergeTimeZones(ers, config.TimeZoneExtractor.Extract(text, reference), text);
+            }
+
+            return ers;
         }
 
         private static bool MatchPrefixRegexInSegment(string beforeStr, Match match)
@@ -180,7 +188,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                             var er = ers.Last();
                             var begin = er.Start ?? 0;
 
-                            var middleStr = beforeStr.Substring(begin + (er.Length ?? 0)).Trim().ToLower();
+                            var middleStr = beforeStr.Substring(begin + (er.Length ?? 0)).Trim();
                             if (string.IsNullOrEmpty(middleStr) || this.config.PrepositionRegex.IsExactMatch(middleStr, true))
                             {
                                 ret.Add(new Token(begin, match.Index + match.Length));
@@ -198,7 +206,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         {
                             var begin = er[0].Start ?? 0;
                             var end = (er[0].Start ?? 0) + (er[0].Length ?? 0);
-                            var middleStr = followedStr.Substring(0, begin).Trim().ToLower();
+                            var middleStr = followedStr.Substring(0, begin).Trim();
                             if (string.IsNullOrEmpty(middleStr) || this.config.PrepositionRegex.IsExactMatch(middleStr, true))
                             {
                                 ret.Add(new Token(match.Index, match.Index + match.Length + end));
@@ -247,8 +255,8 @@ namespace Microsoft.Recognizers.Text.DateTime
             while (idx < timePoints.Count - 1)
             {
                 // If both ends are Time. then this is a TimePeriod, not a DateTimePeriod
-                if (timePoints[idx].Type.Equals(Constants.SYS_DATETIME_TIME) &&
-                    timePoints[idx + 1].Type.Equals(Constants.SYS_DATETIME_TIME))
+                if (timePoints[idx].Type.Equals(Constants.SYS_DATETIME_TIME, StringComparison.InvariantCulture) &&
+                    timePoints[idx + 1].Type.Equals(Constants.SYS_DATETIME_TIME, StringComparison.InvariantCulture))
                 {
                     idx++;
                     continue;
@@ -266,10 +274,10 @@ namespace Microsoft.Recognizers.Text.DateTime
                     var periodEnd = (timePoints[idx + 1].Start ?? 0) + (timePoints[idx + 1].Length ?? 0);
 
                     // Handle "from"
-                    var beforeStr = text.Substring(0, periodBegin).Trim().ToLowerInvariant();
+                    var beforeStr = text.Substring(0, periodBegin).Trim();
 
-                    if (this.config.GetFromTokenIndex(beforeStr, out int fromIndex)
-                        || this.config.GetBetweenTokenIndex(beforeStr, out fromIndex))
+                    if (this.config.GetFromTokenIndex(beforeStr, out int fromIndex) ||
+                        this.config.GetBetweenTokenIndex(beforeStr, out fromIndex))
                     {
                         periodBegin = fromIndex;
                     }
@@ -286,7 +294,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     var periodEnd = (timePoints[idx + 1].Start ?? 0) + (timePoints[idx + 1].Length ?? 0);
 
                     // Handle "between"
-                    var beforeStr = text.Substring(0, periodBegin).Trim().ToLowerInvariant();
+                    var beforeStr = text.Substring(0, periodBegin).Trim();
 
                     if (this.config.GetBetweenTokenIndex(beforeStr, out int beforeIndex))
                     {
@@ -300,7 +308,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 idx++;
             }
 
-            // Regarding the pharse as-- {Date} {TimePeriod}, like "2015-9-23 1pm to 4"
+            // Regarding the phrase as-- {Date} {TimePeriod}, like "2015-9-23 1pm to 4"
             // Or {TimePeriod} on {Date}, like "1:30 to 4 on 2015-9-23"
             var timePeriodErs = config.TimePeriodExtractor.Extract(text, reference);
             dateErs.AddRange(timePeriodErs);
@@ -510,7 +518,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             foreach (var duration in durations)
             {
-                var beforeStr = text.Substring(0, duration.Start).ToLowerInvariant();
+                var beforeStr = text.Substring(0, duration.Start);
                 var afterStr = text.Substring(duration.Start + duration.Length);
 
                 if (string.IsNullOrWhiteSpace(beforeStr) && string.IsNullOrWhiteSpace(afterStr))

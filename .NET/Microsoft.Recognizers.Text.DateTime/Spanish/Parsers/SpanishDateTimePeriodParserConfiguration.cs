@@ -22,6 +22,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             DateTimeParser = config.DateTimeParser;
             TimePeriodParser = config.TimePeriodParser;
             DurationParser = config.DurationParser;
+            TimeZoneParser = config.TimeZoneParser;
 
             PureNumberFromToRegex = SpanishTimePeriodExtractorConfiguration.PureNumFromTo;
             PureNumberBetweenAndRegex = SpanishTimePeriodExtractorConfiguration.PureNumBetweenAnd;
@@ -70,6 +71,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public IDateTimeParser TimePeriodParser { get; }
 
         public IDateTimeParser DurationParser { get; }
+
+        public IDateTimeParser TimeZoneParser { get; }
 
         public Regex PureNumberFromToRegex { get; }
 

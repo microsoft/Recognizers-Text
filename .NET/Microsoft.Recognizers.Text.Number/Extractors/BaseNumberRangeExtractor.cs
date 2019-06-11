@@ -82,6 +82,7 @@ namespace Microsoft.Recognizers.Text.Number
                                 Type = ExtractType,
                                 Data = matchSource.ContainsKey(srcMatch) ? matchSource[srcMatch] : null,
                             };
+
                             results.Add(er);
                         }
                     }
@@ -97,8 +98,8 @@ namespace Microsoft.Recognizers.Text.Number
             {
                 foreach (var result in results)
                 {
-                    if (result.Data.ToString() == NumberRangeConstants.TWONUMBETWEEN
-                        || result.Data.ToString() == NumberRangeConstants.TWONUMTILL)
+                    if (result.Data.ToString() == NumberRangeConstants.TWONUMBETWEEN ||
+                        result.Data.ToString() == NumberRangeConstants.TWONUMTILL)
                     {
                         result.Data = NumberRangeConstants.TWONUMCLOSED;
                     }
@@ -269,7 +270,7 @@ namespace Microsoft.Recognizers.Text.Number
             return AmbiguousFractionConnectorsRegex.Match(numberStr).Success;
         }
 
-        // For cases like "more than 30000 in 2010", we will not treate "30000 in 2010" as a fraction number
+        // For cases like "more than 30000 in 2010", we will not treat "30000 in 2010" as a fraction number
         // In this method, "30000 in 2010" will be changed to "30000"
         private List<ExtractResult> RemoveAmbiguousFractions(List<ExtractResult> ers)
         {
