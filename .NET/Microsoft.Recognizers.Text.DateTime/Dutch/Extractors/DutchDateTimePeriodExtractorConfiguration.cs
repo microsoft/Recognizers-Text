@@ -82,6 +82,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
             SingleDateTimeExtractor = new BaseDateTimeExtractor(new DutchDateTimeExtractorConfiguration(this));
             DurationExtractor = new BaseDurationExtractor(new DutchDurationExtractorConfiguration(this));
             TimePeriodExtractor = new BaseTimePeriodExtractor(new DutchTimePeriodExtractorConfiguration(this));
+            TimeZoneExtractor = new BaseTimeZoneExtractor(new DutchTimeZoneExtractorConfiguration(this));
         }
 
         public string TokenBeforeDate { get; }
@@ -147,6 +148,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         public IDateTimeExtractor DurationExtractor { get; }
 
         public IDateTimeExtractor TimePeriodExtractor { get; }
+
+        public IDateTimeExtractor TimeZoneExtractor { get; }
 
         // TODO: these three methods are the same in DatePeriod, should be abstracted
         public bool GetFromTokenIndex(string text, out int index)

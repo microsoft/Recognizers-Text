@@ -32,6 +32,14 @@ namespace Microsoft.Recognizers.Text.DateTime
                             };
                         }
                     }
+
+                    if (er.IsOverlap(timeZoneEr))
+                    {
+                        er.Data = new Dictionary<string, object>()
+                            {
+                                { Constants.SYS_DATETIME_TIMEZONE, timeZoneEr },
+                            };
+                    }
                 }
             }
 
@@ -41,6 +49,11 @@ namespace Microsoft.Recognizers.Text.DateTime
         public static bool ShouldResolveTimeZone(ExtractResult er, DateTimeOptions options)
         {
             var enablePreview = (options & DateTimeOptions.EnablePreview) != 0;
+            if (!enablePreview)
+            {
+                return enablePreview;
+            }
+
             var hasTimeZoneData = false;
 
             if (er.Data is Dictionary<string, object>)
@@ -53,7 +66,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
             }
 
-            return enablePreview && hasTimeZoneData;
+            return hasTimeZoneData;
         }
 
         public static StringMatcher BuildMatcherFromLists(params List<string>[] collections)

@@ -83,6 +83,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             SingleDateTimeExtractor = new BaseDateTimeExtractor(new SpanishDateTimeExtractorConfiguration(this));
             DurationExtractor = new BaseDurationExtractor(new SpanishDurationExtractorConfiguration(this));
             TimePeriodExtractor = new BaseTimePeriodExtractor(new SpanishTimePeriodExtractorConfiguration(this));
+            TimeZoneExtractor = new BaseTimeZoneExtractor(new SpanishTimeZoneExtractorConfiguration(this));
         }
 
         public string TokenBeforeDate { get; }
@@ -98,6 +99,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public IDateTimeExtractor DurationExtractor { get; }
 
         public IDateTimeExtractor TimePeriodExtractor { get; }
+
+        public IDateTimeExtractor TimeZoneExtractor { get; }
 
         public IEnumerable<Regex> SimpleCasesRegex => new[]
         {

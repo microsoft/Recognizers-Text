@@ -31,6 +31,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         IDateTimeParser DurationParser { get; }
 
+        IDateTimeParser TimeZoneParser { get; }
+
         Regex PureNumberFromToRegex { get; }
 
         Regex PureNumberBetweenAndRegex { get; }

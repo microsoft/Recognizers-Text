@@ -234,6 +234,13 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         private static void ApplyMetadata(List<ExtractResult> ers, Dictionary<string, object> metadata, string parentText)
         {
+            // Share the timeZone info
+            var metaDataOrigin = ers[0].Data as Dictionary<string, object>;
+            if (metaDataOrigin != null && metaDataOrigin.ContainsKey(Constants.SYS_DATETIME_TIMEZONE))
+            {
+                metadata.Add(Constants.SYS_DATETIME_TIMEZONE, metaDataOrigin[Constants.SYS_DATETIME_TIMEZONE]);
+            }
+
             // The first extract results don't need any context
             var metadataWithoutConext = CreateMetadata(ers[0].Type, parentText, contextEr: null);
             ers[0].Data = MergeMetadata(ers[0].Data, metadataWithoutConext);

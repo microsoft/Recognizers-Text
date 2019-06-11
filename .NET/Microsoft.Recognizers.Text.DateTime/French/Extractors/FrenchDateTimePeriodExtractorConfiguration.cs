@@ -88,6 +88,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             SingleDateTimeExtractor = new BaseDateTimeExtractor(new FrenchDateTimeExtractorConfiguration(this));
             DurationExtractor = new BaseDurationExtractor(new FrenchDurationExtractorConfiguration(this));
             TimePeriodExtractor = new BaseTimePeriodExtractor(new FrenchTimePeriodExtractorConfiguration(this));
+            TimeZoneExtractor = new BaseTimeZoneExtractor(new FrenchTimeZoneExtractorConfiguration(this));
         }
 
         public IEnumerable<Regex> SimpleCasesRegex => SimpleCases;
@@ -125,6 +126,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public IDateTimeExtractor DurationExtractor { get; }
 
         public IDateTimeExtractor TimePeriodExtractor { get; }
+
+        public IDateTimeExtractor TimeZoneExtractor { get; }
 
         Regex IDateTimePeriodExtractorConfiguration.PrefixDayRegex => PrefixDayRegex;
 
