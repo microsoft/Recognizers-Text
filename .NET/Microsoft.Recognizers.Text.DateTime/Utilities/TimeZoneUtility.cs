@@ -33,6 +33,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         }
                     }
 
+                    // Make sure timezone info propagates to longer span entity.
                     if (er.IsOverlap(timeZoneEr))
                     {
                         er.Data = new Dictionary<string, object>()
