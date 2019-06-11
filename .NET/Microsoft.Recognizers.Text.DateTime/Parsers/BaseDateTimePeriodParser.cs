@@ -29,37 +29,18 @@ namespace Microsoft.Recognizers.Text.DateTime
             object value = null;
             if (er.Type.Equals(ParserName))
             {
-                var innerResult = MergeDateWithSingleTimePeriod(er.Text, referenceTime);
+                var innerResult = InternalParse(er.Text, referenceTime);
 
-                if (!innerResult.Success)
+                // Handling timeZone
+                if (innerResult.Success && TimeZoneUtility.ShouldResolveTimeZone(er, this.Config.Options))
                 {
-                    innerResult = MergeTwoTimePoints(er.Text, referenceTime);
-                }
-
-                if (!innerResult.Success)
-                {
-                    innerResult = ParseSpecificTimeOfDay(er.Text, referenceTime);
-                }
-
-                if (!innerResult.Success)
-                {
-                    innerResult = ParseDuration(er.Text, referenceTime);
-                }
-
-                if (!innerResult.Success)
-                {
-                    innerResult = ParseRelativeUnit(er.Text, referenceTime);
-                }
-
-                if (!innerResult.Success)
-                {
-                    innerResult = ParseDateWithPeriodPrefix(er.Text, referenceTime);
-                }
-
-                if (!innerResult.Success)
-                {
-                    // Cases like "today after 2:00pm", "1/1/2015 before 2:00 in the afternoon"
-                    innerResult = ParseDateWithTimePeriodSuffix(er.Text, referenceTime);
+                    var metadata = er.Data as Dictionary<string, object>;
+                    var timezoneEr = metadata[Constants.SYS_DATETIME_TIMEZONE] as ExtractResult;
+                    var timezonePr = this.Config.TimeZoneParser.Parse(timezoneEr);
+                    if (timezonePr != null && timezonePr.Value != null)
+                    {
+                        innerResult.TimeZoneResolution = ((DateTimeResolutionResult)timezonePr.Value).TimeZoneResolution;
+                    }
                 }
 
                 if (innerResult.Success)
@@ -154,6 +135,44 @@ namespace Microsoft.Recognizers.Text.DateTime
         public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)
         {
             return candidateResults;
+        }
+
+        protected DateTimeResolutionResult InternalParse(string entityText, DateObject referenceTime)
+        {
+            var innerResult = MergeDateWithSingleTimePeriod(entityText, referenceTime);
+
+            if (!innerResult.Success)
+            {
+                innerResult = MergeTwoTimePoints(entityText, referenceTime);
+            }
+
+            if (!innerResult.Success)
+            {
+                innerResult = ParseSpecificTimeOfDay(entityText, referenceTime);
+            }
+
+            if (!innerResult.Success)
+            {
+                innerResult = ParseDuration(entityText, referenceTime);
+            }
+
+            if (!innerResult.Success)
+            {
+                innerResult = ParseRelativeUnit(entityText, referenceTime);
+            }
+
+            if (!innerResult.Success)
+            {
+                innerResult = ParseDateWithPeriodPrefix(entityText, referenceTime);
+            }
+
+            if (!innerResult.Success)
+            {
+                // Cases like "today after 2:00pm", "1/1/2015 before 2:00 in the afternoon"
+                innerResult = ParseDateWithTimePeriodSuffix(entityText, referenceTime);
+            }
+
+            return innerResult;
         }
 
         // Parse specific TimeOfDay like "this night", "early morning", "late evening"
@@ -429,11 +448,6 @@ namespace Microsoft.Recognizers.Text.DateTime
                                 timePr,
                             };
 
-                            if (((DateTimeResolutionResult)timePr.Value).TimeZoneResolution != null)
-                            {
-                                ret.TimeZoneResolution = ((DateTimeResolutionResult)timePr.Value).TimeZoneResolution;
-                            }
-
                             ret.Success = true;
                         }
                     }
@@ -538,11 +552,6 @@ namespace Microsoft.Recognizers.Text.DateTime
                 if (timePeriodResolutionResult == null)
                 {
                     return ParsePureNumberCases(text, referenceTime);
-                }
-
-                if (timePeriodResolutionResult.TimeZoneResolution != null)
-                {
-                    ret.TimeZoneResolution = timePeriodResolutionResult.TimeZoneResolution;
                 }
 
                 var periodTimex = timePeriodResolutionResult.Timex;
@@ -659,10 +668,6 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                         dateStr = pr.TimexStr;
 
-                        if (((DateTimeResolutionResult)pr.Value).TimeZoneResolution != null)
-                        {
-                            ret.TimeZoneResolution = ((DateTimeResolutionResult)pr.Value).TimeZoneResolution;
-                        }
                     }
                     else
                     {
@@ -902,13 +907,16 @@ namespace Microsoft.Recognizers.Text.DateTime
                 ret.Comment = Constants.Comment_AmPm;
             }
 
-            if (((DateTimeResolutionResult)pr1.Value).TimeZoneResolution != null)
+            if ((this.Config.Options & DateTimeOptions.EnablePreview) != 0)
             {
-                ret.TimeZoneResolution = ((DateTimeResolutionResult)pr1.Value).TimeZoneResolution;
-            }
-            else if (((DateTimeResolutionResult)pr2.Value).TimeZoneResolution != null)
-            {
-                ret.TimeZoneResolution = ((DateTimeResolutionResult)pr2.Value).TimeZoneResolution;
+                if (((DateTimeResolutionResult)pr1.Value).TimeZoneResolution != null)
+                {
+                    ret.TimeZoneResolution = ((DateTimeResolutionResult)pr1.Value).TimeZoneResolution;
+                }
+                else if (((DateTimeResolutionResult)pr2.Value).TimeZoneResolution != null)
+                {
+                    ret.TimeZoneResolution = ((DateTimeResolutionResult)pr2.Value).TimeZoneResolution;
+                }
             }
 
             ret.FutureValue = new Tuple<DateObject, DateObject>(futureBegin, futureEnd);

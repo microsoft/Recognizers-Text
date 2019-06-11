@@ -69,6 +69,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         IDateTimeExtractor TimePeriodExtractor { get; }
 
+        IDateTimeExtractor TimeZoneExtractor { get; }
+
         bool GetFromTokenIndex(string text, out int index);
 
         bool HasConnectorToken(string text);

@@ -9916,5 +9916,57 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Please book 30min with Bob on Thursday morning EST.",
+    "Context": {
+      "ReferenceDateTime": "2019-06-12T12:00:00"
+    },
+    "NotSupported": "python, javascript, java",
+    "Results": [
+      {
+        "Text": "30min",
+        "Start": 12,
+        "End": 16,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT30M",
+              "type": "duration",
+              "value": "1800"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "thursday morning est",
+        "Start": 30,
+        "End": 49,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-4TMO",
+              "type": "datetimerange",
+              "timezone": "UTC-05:00",
+              "timezoneText": "est",
+              "utcOffsetMins": "-300",
+              "start": "2019-06-06 08:00:00",
+              "end": "2019-06-06 12:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-4TMO",
+              "type": "datetimerange",
+              "timezone": "UTC-05:00",
+              "timezoneText": "est",
+              "utcOffsetMins": "-300",
+              "start": "2019-06-13 08:00:00",
+              "end": "2019-06-13 12:00:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
