@@ -82,6 +82,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             SingleDateTimeExtractor = new BaseDateTimeExtractor(new EnglishDateTimeExtractorConfiguration(this));
             DurationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration(this));
             TimePeriodExtractor = new BaseTimePeriodExtractor(new EnglishTimePeriodExtractorConfiguration(this));
+            TimeZoneExtractor = new BaseTimeZoneExtractor(new EnglishTimeZoneExtractorConfiguration(this));
         }
 
         public IEnumerable<Regex> SimpleCasesRegex => SimpleCases;
@@ -147,6 +148,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public IDateTimeExtractor DurationExtractor { get; }
 
         public IDateTimeExtractor TimePeriodExtractor { get; }
+
+        public IDateTimeExtractor TimeZoneExtractor { get; }
 
         // TODO: these three methods are the same in DatePeriod, should be abstracted
         public bool GetFromTokenIndex(string text, out int index)
