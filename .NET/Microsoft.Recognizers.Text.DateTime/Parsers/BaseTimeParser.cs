@@ -28,7 +28,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 DateTimeResolutionResult innerResult;
 
-                // Resolve timezome
+                // Resolve timezone
                 if (TimeZoneUtility.ShouldResolveTimeZone(er, config.Options))
                 {
                     var metadata = er.Data as Dictionary<string, object>;
