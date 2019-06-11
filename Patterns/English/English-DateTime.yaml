@@ -999,7 +999,7 @@ HolidayNames: !dictionary
     inaugurationday: [ inaugurationday ]
     groundhougday: [ groundhougday ]
     valentinesday: [ valentinesday ]
-    stpatrickday: [ stpatrickday, stpatricksday, st.patrickday, st.patricksday ]
+    stpatrickday: [ stpatrickday, stpatricksday ]
     aprilfools: [ aprilfools ]
     stgeorgeday: [ stgeorgeday ]
     mayday: [ mayday, intlworkersday, internationalworkersday ]

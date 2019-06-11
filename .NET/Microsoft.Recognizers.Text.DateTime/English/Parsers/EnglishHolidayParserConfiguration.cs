@@ -40,8 +40,10 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public override string SanitizeHolidayToken(string holiday)
         {
             return holiday
+                .Replace("saint ", "st ")
                 .Replace(" ", string.Empty)
-                .Replace("'", string.Empty);
+                .Replace("'", string.Empty)
+                .Replace(".", string.Empty);
         }
 
         protected override IDictionary<string, Func<int, DateObject>> InitHolidayFuncs()
@@ -161,7 +163,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         private static DateObject Veteransday(int year) => new DateObject(year, 11, 11);
 
-        private static DateObject EasterDay(int year) => GetEasterYearList().Contains(year) ? GetEasterDateList().Where(d => d.Year == year).First() : DateObject.MinValue;
+        private static DateObject EasterDay(int year) => CalculateHolydaysByEaster(year);
 
         private static DateObject AshWednesday(int year) => EasterDay(year).AddDays(-46);
 
@@ -185,214 +187,26 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         private static DateObject CorpusChristi(int year) => EasterDay(year).AddDays(60);
 
-        private static IList<int> GetEasterYearList() => GetEasterDateList().Select(d => d.Year).ToList();
-
-        // easter sunday: 1900 ~ 2099, following the Paschal Full Moon (PFM) date of lunar year calendar.
-        private static IList<DateObject> GetEasterDateList()
+        // function adopted from German implementation
+        private static DateObject CalculateHolydaysByEaster(int year, int days = 0)
         {
-            return new List<DateObject>
+            int day = 0;
+            int month = 3;
+
+            int g = year % 19;
+            int c = year / 100;
+            int h = (c - (int)(c / 4) - (int)(((8 * c) + 13) / 25) + (19 * g) + 15) % 30;
+            int i = h - ((int)(h / 28) * (1 - ((int)(h / 28) * (int)(29 / (h + 1)) * (int)((21 - g) / 11))));
+
+            day = i - ((year + (int)(year / 4) + i + 2 - c + (int)(c / 4)) % 7) + 28;
+
+            if (day > 31)
             {
-                DateObject.Parse("1900-04-15", new CultureInfo("en-us")),
-                DateObject.Parse("1901-04-07", new CultureInfo("en-us")),
-                DateObject.Parse("1902-03-30", new CultureInfo("en-us")),
-                DateObject.Parse("1903-04-12", new CultureInfo("en-us")),
-                DateObject.Parse("1904-04-03", new CultureInfo("en-us")),
-                DateObject.Parse("1905-04-23", new CultureInfo("en-us")),
-                DateObject.Parse("1906-04-15", new CultureInfo("en-us")),
-                DateObject.Parse("1907-03-31", new CultureInfo("en-us")),
-                DateObject.Parse("1908-04-19", new CultureInfo("en-us")),
-                DateObject.Parse("1909-04-11", new CultureInfo("en-us")),
-                DateObject.Parse("1910-03-27", new CultureInfo("en-us")),
-                DateObject.Parse("1911-04-16", new CultureInfo("en-us")),
-                DateObject.Parse("1912-04-07", new CultureInfo("en-us")),
-                DateObject.Parse("1913-03-23", new CultureInfo("en-us")),
-                DateObject.Parse("1914-04-12", new CultureInfo("en-us")),
-                DateObject.Parse("1915-04-04", new CultureInfo("en-us")),
-                DateObject.Parse("1916-04-23", new CultureInfo("en-us")),
-                DateObject.Parse("1917-04-08", new CultureInfo("en-us")),
-                DateObject.Parse("1918-03-31", new CultureInfo("en-us")),
-                DateObject.Parse("1919-04-20", new CultureInfo("en-us")),
-                DateObject.Parse("1920-04-04", new CultureInfo("en-us")),
-                DateObject.Parse("1921-03-27", new CultureInfo("en-us")),
-                DateObject.Parse("1922-04-16", new CultureInfo("en-us")),
-                DateObject.Parse("1923-04-01", new CultureInfo("en-us")),
-                DateObject.Parse("1924-04-20", new CultureInfo("en-us")),
-                DateObject.Parse("1925-04-12", new CultureInfo("en-us")),
-                DateObject.Parse("1926-04-04", new CultureInfo("en-us")),
-                DateObject.Parse("1927-04-17", new CultureInfo("en-us")),
-                DateObject.Parse("1928-04-08", new CultureInfo("en-us")),
-                DateObject.Parse("1929-03-31", new CultureInfo("en-us")),
-                DateObject.Parse("1930-04-20", new CultureInfo("en-us")),
-                DateObject.Parse("1931-04-05", new CultureInfo("en-us")),
-                DateObject.Parse("1932-03-27", new CultureInfo("en-us")),
-                DateObject.Parse("1933-04-16", new CultureInfo("en-us")),
-                DateObject.Parse("1934-04-01", new CultureInfo("en-us")),
-                DateObject.Parse("1935-04-21", new CultureInfo("en-us")),
-                DateObject.Parse("1936-04-12", new CultureInfo("en-us")),
-                DateObject.Parse("1937-03-28", new CultureInfo("en-us")),
-                DateObject.Parse("1938-04-17", new CultureInfo("en-us")),
-                DateObject.Parse("1939-04-09", new CultureInfo("en-us")),
-                DateObject.Parse("1940-03-24", new CultureInfo("en-us")),
-                DateObject.Parse("1941-04-13", new CultureInfo("en-us")),
-                DateObject.Parse("1942-04-05", new CultureInfo("en-us")),
-                DateObject.Parse("1943-04-25", new CultureInfo("en-us")),
-                DateObject.Parse("1944-04-09", new CultureInfo("en-us")),
-                DateObject.Parse("1945-04-01", new CultureInfo("en-us")),
-                DateObject.Parse("1946-04-21", new CultureInfo("en-us")),
-                DateObject.Parse("1947-04-06", new CultureInfo("en-us")),
-                DateObject.Parse("1948-03-28", new CultureInfo("en-us")),
-                DateObject.Parse("1949-04-17", new CultureInfo("en-us")),
-                DateObject.Parse("1950-04-09", new CultureInfo("en-us")),
-                DateObject.Parse("1951-03-25", new CultureInfo("en-us")),
-                DateObject.Parse("1952-04-13", new CultureInfo("en-us")),
-                DateObject.Parse("1953-04-05", new CultureInfo("en-us")),
-                DateObject.Parse("1954-04-18", new CultureInfo("en-us")),
-                DateObject.Parse("1955-04-10", new CultureInfo("en-us")),
-                DateObject.Parse("1956-04-01", new CultureInfo("en-us")),
-                DateObject.Parse("1957-04-21", new CultureInfo("en-us")),
-                DateObject.Parse("1958-04-06", new CultureInfo("en-us")),
-                DateObject.Parse("1959-03-29", new CultureInfo("en-us")),
-                DateObject.Parse("1960-04-17", new CultureInfo("en-us")),
-                DateObject.Parse("1961-04-02", new CultureInfo("en-us")),
-                DateObject.Parse("1962-04-22", new CultureInfo("en-us")),
-                DateObject.Parse("1963-04-14", new CultureInfo("en-us")),
-                DateObject.Parse("1964-03-29", new CultureInfo("en-us")),
-                DateObject.Parse("1965-04-18", new CultureInfo("en-us")),
-                DateObject.Parse("1966-04-10", new CultureInfo("en-us")),
-                DateObject.Parse("1967-03-26", new CultureInfo("en-us")),
-                DateObject.Parse("1968-04-14", new CultureInfo("en-us")),
-                DateObject.Parse("1969-04-06", new CultureInfo("en-us")),
-                DateObject.Parse("1970-03-29", new CultureInfo("en-us")),
-                DateObject.Parse("1971-04-11", new CultureInfo("en-us")),
-                DateObject.Parse("1972-04-02", new CultureInfo("en-us")),
-                DateObject.Parse("1973-04-22", new CultureInfo("en-us")),
-                DateObject.Parse("1974-04-14", new CultureInfo("en-us")),
-                DateObject.Parse("1975-03-30", new CultureInfo("en-us")),
-                DateObject.Parse("1976-04-18", new CultureInfo("en-us")),
-                DateObject.Parse("1977-04-10", new CultureInfo("en-us")),
-                DateObject.Parse("1978-03-26", new CultureInfo("en-us")),
-                DateObject.Parse("1979-04-15", new CultureInfo("en-us")),
-                DateObject.Parse("1980-04-06", new CultureInfo("en-us")),
-                DateObject.Parse("1981-04-19", new CultureInfo("en-us")),
-                DateObject.Parse("1982-04-11", new CultureInfo("en-us")),
-                DateObject.Parse("1983-04-03", new CultureInfo("en-us")),
-                DateObject.Parse("1984-04-22", new CultureInfo("en-us")),
-                DateObject.Parse("1985-04-07", new CultureInfo("en-us")),
-                DateObject.Parse("1986-03-30", new CultureInfo("en-us")),
-                DateObject.Parse("1987-04-19", new CultureInfo("en-us")),
-                DateObject.Parse("1988-04-03", new CultureInfo("en-us")),
-                DateObject.Parse("1989-03-26", new CultureInfo("en-us")),
-                DateObject.Parse("1990-04-15", new CultureInfo("en-us")),
-                DateObject.Parse("1991-03-31", new CultureInfo("en-us")),
-                DateObject.Parse("1992-04-19", new CultureInfo("en-us")),
-                DateObject.Parse("1993-04-11", new CultureInfo("en-us")),
-                DateObject.Parse("1994-04-03", new CultureInfo("en-us")),
-                DateObject.Parse("1995-04-16", new CultureInfo("en-us")),
-                DateObject.Parse("1996-04-07", new CultureInfo("en-us")),
-                DateObject.Parse("1997-03-30", new CultureInfo("en-us")),
-                DateObject.Parse("1998-04-12", new CultureInfo("en-us")),
-                DateObject.Parse("1999-04-04", new CultureInfo("en-us")),
-                DateObject.Parse("2000-04-23", new CultureInfo("en-us")),
-                DateObject.Parse("2001-04-15", new CultureInfo("en-us")),
-                DateObject.Parse("2002-03-31", new CultureInfo("en-us")),
-                DateObject.Parse("2003-04-20", new CultureInfo("en-us")),
-                DateObject.Parse("2004-04-11", new CultureInfo("en-us")),
-                DateObject.Parse("2005-03-27", new CultureInfo("en-us")),
-                DateObject.Parse("2006-04-16", new CultureInfo("en-us")),
-                DateObject.Parse("2007-04-08", new CultureInfo("en-us")),
-                DateObject.Parse("2008-03-23", new CultureInfo("en-us")),
-                DateObject.Parse("2009-04-12", new CultureInfo("en-us")),
-                DateObject.Parse("2010-04-04", new CultureInfo("en-us")),
-                DateObject.Parse("2011-04-24", new CultureInfo("en-us")),
-                DateObject.Parse("2012-04-08", new CultureInfo("en-us")),
-                DateObject.Parse("2013-03-31", new CultureInfo("en-us")),
-                DateObject.Parse("2014-04-20", new CultureInfo("en-us")),
-                DateObject.Parse("2015-04-05", new CultureInfo("en-us")),
-                DateObject.Parse("2016-03-27", new CultureInfo("en-us")),
-                DateObject.Parse("2017-04-16", new CultureInfo("en-us")),
-                DateObject.Parse("2018-04-01", new CultureInfo("en-us")),
-                DateObject.Parse("2019-04-21", new CultureInfo("en-us")),
-                DateObject.Parse("2020-04-12", new CultureInfo("en-us")),
-                DateObject.Parse("2021-04-04", new CultureInfo("en-us")),
-                DateObject.Parse("2022-04-17", new CultureInfo("en-us")),
-                DateObject.Parse("2023-04-09", new CultureInfo("en-us")),
-                DateObject.Parse("2024-03-31", new CultureInfo("en-us")),
-                DateObject.Parse("2025-04-20", new CultureInfo("en-us")),
-                DateObject.Parse("2026-04-05", new CultureInfo("en-us")),
-                DateObject.Parse("2027-03-28", new CultureInfo("en-us")),
-                DateObject.Parse("2028-04-16", new CultureInfo("en-us")),
-                DateObject.Parse("2029-04-01", new CultureInfo("en-us")),
-                DateObject.Parse("2030-04-21", new CultureInfo("en-us")),
-                DateObject.Parse("2031-04-13", new CultureInfo("en-us")),
-                DateObject.Parse("2032-03-28", new CultureInfo("en-us")),
-                DateObject.Parse("2033-04-17", new CultureInfo("en-us")),
-                DateObject.Parse("2034-04-09", new CultureInfo("en-us")),
-                DateObject.Parse("2035-03-25", new CultureInfo("en-us")),
-                DateObject.Parse("2036-04-13", new CultureInfo("en-us")),
-                DateObject.Parse("2037-04-05", new CultureInfo("en-us")),
-                DateObject.Parse("2038-04-25", new CultureInfo("en-us")),
-                DateObject.Parse("2039-04-10", new CultureInfo("en-us")),
-                DateObject.Parse("2040-04-01", new CultureInfo("en-us")),
-                DateObject.Parse("2041-04-21", new CultureInfo("en-us")),
-                DateObject.Parse("2042-04-06", new CultureInfo("en-us")),
-                DateObject.Parse("2043-03-29", new CultureInfo("en-us")),
-                DateObject.Parse("2044-04-17", new CultureInfo("en-us")),
-                DateObject.Parse("2045-04-09", new CultureInfo("en-us")),
-                DateObject.Parse("2046-03-25", new CultureInfo("en-us")),
-                DateObject.Parse("2047-04-14", new CultureInfo("en-us")),
-                DateObject.Parse("2048-04-05", new CultureInfo("en-us")),
-                DateObject.Parse("2049-04-18", new CultureInfo("en-us")),
-                DateObject.Parse("2050-04-10", new CultureInfo("en-us")),
-                DateObject.Parse("2051-04-02", new CultureInfo("en-us")),
-                DateObject.Parse("2052-04-21", new CultureInfo("en-us")),
-                DateObject.Parse("2053-04-06", new CultureInfo("en-us")),
-                DateObject.Parse("2054-03-29", new CultureInfo("en-us")),
-                DateObject.Parse("2055-04-18", new CultureInfo("en-us")),
-                DateObject.Parse("2056-04-02", new CultureInfo("en-us")),
-                DateObject.Parse("2057-04-22", new CultureInfo("en-us")),
-                DateObject.Parse("2058-04-14", new CultureInfo("en-us")),
-                DateObject.Parse("2059-03-30", new CultureInfo("en-us")),
-                DateObject.Parse("2060-04-18", new CultureInfo("en-us")),
-                DateObject.Parse("2061-04-10", new CultureInfo("en-us")),
-                DateObject.Parse("2062-03-26", new CultureInfo("en-us")),
-                DateObject.Parse("2063-04-15", new CultureInfo("en-us")),
-                DateObject.Parse("2064-04-06", new CultureInfo("en-us")),
-                DateObject.Parse("2065-03-29", new CultureInfo("en-us")),
-                DateObject.Parse("2066-04-11", new CultureInfo("en-us")),
-                DateObject.Parse("2067-04-03", new CultureInfo("en-us")),
-                DateObject.Parse("2068-04-22", new CultureInfo("en-us")),
-                DateObject.Parse("2069-04-14", new CultureInfo("en-us")),
-                DateObject.Parse("2070-03-30", new CultureInfo("en-us")),
-                DateObject.Parse("2071-04-19", new CultureInfo("en-us")),
-                DateObject.Parse("2072-04-10", new CultureInfo("en-us")),
-                DateObject.Parse("2073-03-26", new CultureInfo("en-us")),
-                DateObject.Parse("2074-04-15", new CultureInfo("en-us")),
-                DateObject.Parse("2075-04-07", new CultureInfo("en-us")),
-                DateObject.Parse("2076-04-19", new CultureInfo("en-us")),
-                DateObject.Parse("2077-04-11", new CultureInfo("en-us")),
-                DateObject.Parse("2078-04-03", new CultureInfo("en-us")),
-                DateObject.Parse("2079-04-23", new CultureInfo("en-us")),
-                DateObject.Parse("2080-04-07", new CultureInfo("en-us")),
-                DateObject.Parse("2081-03-30", new CultureInfo("en-us")),
-                DateObject.Parse("2082-04-19", new CultureInfo("en-us")),
-                DateObject.Parse("2083-04-04", new CultureInfo("en-us")),
-                DateObject.Parse("2084-03-26", new CultureInfo("en-us")),
-                DateObject.Parse("2085-04-15", new CultureInfo("en-us")),
-                DateObject.Parse("2086-03-31", new CultureInfo("en-us")),
-                DateObject.Parse("2087-04-20", new CultureInfo("en-us")),
-                DateObject.Parse("2088-04-11", new CultureInfo("en-us")),
-                DateObject.Parse("2089-04-03", new CultureInfo("en-us")),
-                DateObject.Parse("2090-04-16", new CultureInfo("en-us")),
-                DateObject.Parse("2091-04-08", new CultureInfo("en-us")),
-                DateObject.Parse("2092-03-30", new CultureInfo("en-us")),
-                DateObject.Parse("2093-04-12", new CultureInfo("en-us")),
-                DateObject.Parse("2094-04-04", new CultureInfo("en-us")),
-                DateObject.Parse("2095-04-24", new CultureInfo("en-us")),
-                DateObject.Parse("2096-04-15", new CultureInfo("en-us")),
-                DateObject.Parse("2097-03-31", new CultureInfo("en-us")),
-                DateObject.Parse("2098-04-20", new CultureInfo("en-us")),
-                DateObject.Parse("2099-04-12", new CultureInfo("en-us")),
-            };
+                month++;
+                day -= 31;
+            }
+
+            return DateObject.MinValue.SafeCreateFromValue(year, month, day).AddDays(days);
         }
     }
 }

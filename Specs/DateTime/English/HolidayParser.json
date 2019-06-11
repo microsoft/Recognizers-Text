@@ -301,14 +301,14 @@
     ]
   },
   {
-    "Input": "I'll go back on st. patrick's day 2018",
+    "Input": "I'll go back on saint patrick's day 2018",
     "Context": {
       "ReferenceDateTime": "2015-12-07T00:00:00"
     },
     "NotSupported": "python, javascript, java",
     "Results": [
       {
-        "Text": "st. patrick's day 2018",
+        "Text": "saint patrick's day 2018",
         "Type": "date",
         "Value": {
           "Timex": "2018-03-17",
@@ -320,7 +320,7 @@
           }
         },
         "Start": 16,
-        "Length": 22
+        "Length": 24
       }
     ]
   },

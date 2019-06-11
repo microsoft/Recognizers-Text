@@ -200,6 +200,35 @@
     ]
   },
   {
+    "Input": "Set an appointment for Easter",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python, javascript, java",
+    "Results": [
+      {
+        "Text": "Easter",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "XXXX-03-27",
+              "type": "date",
+              "value": "2016-03-27"
+            },
+            {
+              "timex": "XXXX-03-27",
+              "type": "date",
+              "value": "2017-04-16"
+            }
+          ]
+        },
+        "Start": 23,
+        "Length": 6
+      }
+    ]
+  },
+  {
     "Input": "Set an appointment for Easter 2019",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -790,6 +819,35 @@
         },
         "Start": 28,
         "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Set an appointment for Easter Sunday",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python, javascript, java",
+    "Results": [
+      {
+        "Text": "Easter Sunday",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "XXXX-03-27",
+              "type": "date",
+              "value": "2016-03-27"
+            },
+            {
+              "timex": "XXXX-03-27",
+              "type": "date",
+              "value": "2017-04-16"
+            }
+          ]
+        },
+        "Start": 23,
+        "Length": 13
       }
     ]
   },
