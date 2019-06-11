@@ -1,6 +1,8 @@
 import { BasePhoneNumberExtractor, BaseIpExtractor, BaseMentionExtractor, BaseHashtagExtractor, BaseEmailExtractor, BaseURLExtractor, BaseGUIDExtractor } from "../extractors";
-import { ExtractResult } from "@microsoft/recognizers-text";
+import { ExtractResult, RegExpUtility } from "@microsoft/recognizers-text";
 import { BasePhoneNumbers } from "../../resources/basePhoneNumbers";
+import { BaseURL } from "../../resources/baseURL";
+import { IURLExtractorConfiguration } from "../extractors";
 
 export class PhoneNumberExtractor extends BasePhoneNumberExtractor{
     extract(source: string): Array<ExtractResult> {
@@ -34,8 +36,16 @@ export class EmailExtractor extends BaseEmailExtractor{
 
 }
 
-export class URLExtractor extends BaseURLExtractor{
+export class EnglishURLExtractorConfiguration implements IURLExtractorConfiguration {
+    readonly UrlRegex: RegExp;
+    readonly UrlRegex2: RegExp;
+    readonly IpUrlRegex: RegExp;
 
+    constructor() {
+        this.UrlRegex = RegExpUtility.getSafeRegExp(BaseURL.UrlRegex);
+        this.UrlRegex2 = RegExpUtility.getSafeRegExp(BaseURL.UrlRegex2);
+        this.IpUrlRegex = RegExpUtility.getSafeRegExp(BaseURL.IpUrlRegex);
+    }
 }
 
 export class GUIDExtractor extends BaseGUIDExtractor {

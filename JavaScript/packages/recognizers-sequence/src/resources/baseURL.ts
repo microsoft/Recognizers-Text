@@ -11,9 +11,12 @@ export namespace BaseURL {
 	export const ProtocolRegex = `((https?|ftp):\\/\\/)`;
 	export const PortRegex = `(:\\d{1,5})`;
 	export const ExtractionRestrictionRegex = `(?<=\\s|[\\'\"\"\\(\\[:]|^)`;
+	export const UnicodeRestrictionRegex = `(?<=\\s|[\\'\"\"\\(\\[:：]|^|[\\u0800-\\u9FFF])`;
 	export const UrlPrefixRegex = `(${ExtractionRestrictionRegex}${ProtocolRegex}?|${ProtocolRegex})[a-zA-Z0-9][-a-zA-Z0-9._]{0,256}(?<![.])\\.`;
+	export const UnicodeUrlPrefixRegex = `(${UnicodeRestrictionRegex}${ProtocolRegex}?|${ProtocolRegex})[a-zA-Z0-9][-a-zA-Z0-9._]{0,256}(?<![.])\\.`;
 	export const UrlSuffixRegex = `${PortRegex}?([/#][-a-zA-Z0-9:%_\\+.~#?!&//=]*)?(?![-a-zA-Z0-9:%_\\+~#?!&//=@])`;
 	export const UrlRegex = `${UrlPrefixRegex}(?<Tld>[a-zA-Z]{2,18})${UrlSuffixRegex}`;
+	export const UnicodeUrlRegex = `${UnicodeUrlPrefixRegex}(?<Tld>[a-zA-Z]{2,18})${UrlSuffixRegex}`;
 	export const UrlRegex2 = `((ht|f)tp(s?)\\:\\/\\/|www\\.)[0-9a-zA-Z]([-.\\w]*[0-9a-zA-Z])*(\\.(?<Tld>[0-9a-zA-Z]+))+(:(0-9)*)*(\\/?)([a-zA-Z0-9\\-\\.\\?\\,\\'\\/\\\\\\+&amp;%\\$#_=@]*)?`;
 	export const IpUrlRegex = `(?<IPurl>(${ExtractionRestrictionRegex}${ProtocolRegex}(${BaseIp.Ipv4Regex}|localhost)${UrlSuffixRegex}))`;
 	export const AmbiguousTimeTerm = `^(1?[0-9]|2[0-3]).[ap]m$`;

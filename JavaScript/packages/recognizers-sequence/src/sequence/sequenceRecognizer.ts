@@ -1,7 +1,9 @@
 import { Recognizer, IModel, Culture, ModelResult } from "@microsoft/recognizers-text";
 import { PhoneNumberModel, IpAddressModel, MentionModel, HashtagModel, EmailModel, URLModel, GUIDModel } from "./models";
 import { PhoneNumberParser, IpParser, MentionParser, HashtagParser, EmailParser, URLParser, GUIDParser } from "./english/parsers";
-import { PhoneNumberExtractor, IpExtractor, MentionExtractor, HashtagExtractor, EmailExtractor, URLExtractor, GUIDExtractor } from "./english/extractors";
+import { PhoneNumberExtractor, IpExtractor, MentionExtractor, HashtagExtractor, EmailExtractor, EnglishURLExtractorConfiguration, GUIDExtractor } from "./english/extractors";
+import { ChineseURLExtractorConfiguration } from "./Chinese/extractors";
+import { BaseURLExtractor } from "./extractors";
 
 
 export enum SequenceOptions {
@@ -29,7 +31,10 @@ export function recognizeEmail(query: string, culture: string, options: Sequence
 }
 
 export function recognizeURL(query: string, culture: string, options: SequenceOptions  = SequenceOptions .None): Array<ModelResult> {
-    return recognizeByModel(recognizer => recognizer.getURLModel(), query, culture, options);
+    if (culture === "zh-cn" || culture === "ko-kr" || culture === "ja-jp"){
+        return recognizeByModel(recognizer => recognizer.getURLModel(), query, Culture.Chinese, options);
+    }
+    return recognizeByModel(recognizer => recognizer.getURLModel(), query, Culture.English, options);
 }
 
 export function recognizeGUID(query: string, culture: string, options: SequenceOptions = SequenceOptions.None): Array<ModelResult> {
@@ -58,7 +63,12 @@ export default class SequenceRecognizer extends Recognizer<SequenceOptions> {
         this.registerModel("MentionModel", Culture.English, (options) => new MentionModel(new MentionParser(), new MentionExtractor()));
         this.registerModel("HashtagModel", Culture.English, (options) => new HashtagModel(new HashtagParser(), new HashtagExtractor()));
         this.registerModel("EmailModel", Culture.English, (options) => new EmailModel(new EmailParser(), new EmailExtractor()));
-        this.registerModel("URLModel", Culture.English, (options) => new URLModel(new URLParser(), new URLExtractor()));
+        this.registerModel("URLModel", Culture.English, (options) => new URLModel(
+            new URLParser(),
+            new BaseURLExtractor(new EnglishURLExtractorConfiguration())));
+        this.registerModel("URLModel", Culture.Chinese, (options) => new URLModel(
+            new URLParser(),
+            new BaseURLExtractor(new ChineseURLExtractorConfiguration())))
         this.registerModel("GUIDModel", Culture.English, (options) => new GUIDModel(new GUIDParser(), new GUIDExtractor()));
     }
 
