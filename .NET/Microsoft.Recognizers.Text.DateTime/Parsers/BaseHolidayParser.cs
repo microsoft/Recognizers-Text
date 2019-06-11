@@ -73,7 +73,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 if (match.Success)
                 {
-                    // LUIS value string will be set in Match2Date method
+                    // Value string will be set in Match2Date method
                     var ret = Match2Date(match.Match, referenceDate);
                     return ret;
                 }

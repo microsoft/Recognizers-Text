@@ -52,7 +52,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var enablePreview = (options & DateTimeOptions.EnablePreview) != 0;
             if (!enablePreview)
             {
-                return enablePreview;
+                return false;
             }
 
             var hasTimeZoneData = false;

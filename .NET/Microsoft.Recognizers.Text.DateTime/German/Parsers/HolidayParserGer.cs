@@ -531,7 +531,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
                 if (match.Success && match.Index == offset && match.Length == trimmedText.Length)
                 {
-                    // LUIS value string will be set in Match2Date method
+                    // Value string will be set in Match2Date method
                     var ret = Match2Date(match, referenceDate);
                     return ret;
                 }
