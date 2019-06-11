@@ -391,9 +391,26 @@
     ]
   },
   {
-    "Input": "I want next 3 books.",
+    "Input": "I want the next 3 books.",
     "NotSupported": "javascript, python, java",
     "Results": [
+    ]
+  },
+  {
+    "Input": "She finished second!",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "second",
+        "Start": 13,
+        "End": 18,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "2",
+          "relativeTo": "start",
+          "value": "2"
+        }
+      }
     ]
   }
 ]
