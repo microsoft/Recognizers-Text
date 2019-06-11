@@ -204,7 +204,7 @@ public class EnglishDateTime {
 
     public static final String HalfYearTermRegex = "(?<cardinal>first|1st|second|2nd)\\s+half";
 
-    public static final String HalfYearFrontRegex = "(?<year>((1[5-9]|20)\\d{2})|2100)\\s*(the\\s+)?h(?<number>[1-2])"
+    public static final String HalfYearFrontRegex = "(?<year>((1[5-9]|20)\\d{2})|2100)\\s*(the\\s+)?(-)?h(?<number>[1-2])"
             .replace("{YearRegex}", YearRegex);
 
     public static final String HalfYearBackRegex = "(the\\s+)?(h(?<number>[1-2])|({HalfYearTermRegex}))(\\s+of|\\s*,\\s*)?\\s+({YearRegex})"

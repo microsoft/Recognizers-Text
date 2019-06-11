@@ -11793,5 +11793,53 @@
         }
       }
     ]
+  },
+  {
+    "Input": "I'll be out during 2016 h1",
+    "Context": {
+      "ReferenceDateTime": "2019-06-11T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "2016 h1",
+        "Start": 19,
+        "End": 25,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2016-01-01,2016-07-01,P6M)",
+              "type": "daterange",
+              "start": "2016-01-01",
+              "end": "2016-07-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll be out during 2016 -h1",
+    "Context": {
+      "ReferenceDateTime": "2019-06-11T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "2016 -h1",
+        "Start": 19,
+        "End": 26,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2016-01-01,2016-07-01,P6M)",
+              "type": "daterange",
+              "start": "2016-01-01",
+              "end": "2016-07-01"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

@@ -80,7 +80,7 @@ namespace Microsoft.Recognizers.Definitions.English
 		public static readonly string QuarterRegex = $@"(the\s+)?{QuarterTermRegex}((\s+of|\s*,\s*)?\s+({YearRegex}|{RelativeRegex}\s+year))?";
 		public static readonly string QuarterRegexYearFront = $@"({YearRegex}|{RelativeRegex}\s+year)('s)?\s+(the\s+)?(-)?{QuarterTermRegex}";
 		public const string HalfYearTermRegex = @"(?<cardinal>first|1st|second|2nd)\s+half";
-		public static readonly string HalfYearFrontRegex = $@"(?<year>((1[5-9]|20)\d{{2}})|2100)\s*(the\s+)?h(?<number>[1-2])";
+		public static readonly string HalfYearFrontRegex = $@"(?<year>((1[5-9]|20)\d{{2}})|2100)\s*(the\s+)?(-)?h(?<number>[1-2])";
 		public static readonly string HalfYearBackRegex = $@"(the\s+)?(h(?<number>[1-2])|({HalfYearTermRegex}))(\s+of|\s*,\s*)?\s+({YearRegex})";
 		public static readonly string HalfYearRelativeRegex = $@"(the\s+)?{HalfYearTermRegex}(\s+of|\s*,\s*)?\s+({RelativeRegex}\s+year)";
 		public static readonly string AllHalfYearRegex = $@"({HalfYearFrontRegex})|({HalfYearBackRegex})|({HalfYearRelativeRegex})";

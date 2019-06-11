@@ -150,7 +150,7 @@ QuarterRegexYearFront: !nestedRegex
 HalfYearTermRegex: !simpleRegex
   def: (?<cardinal>first|1st|second|2nd)\s+half
 HalfYearFrontRegex: !nestedRegex
-  def: (?<year>((1[5-9]|20)\d{2})|2100)\s*(the\s+)?h(?<number>[1-2])
+  def: (?<year>((1[5-9]|20)\d{2})|2100)\s*(the\s+)?(-)?h(?<number>[1-2])
   references: [ YearRegex ]
 HalfYearBackRegex: !nestedRegex
   def: (the\s+)?(h(?<number>[1-2])|({HalfYearTermRegex}))(\s+of|\s*,\s*)?\s+({YearRegex})

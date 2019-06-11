@@ -68,7 +68,7 @@ class EnglishDateTime:
     QuarterRegex = f'(the\\s+)?{QuarterTermRegex}((\\s+of|\\s*,\\s*)?\\s+({YearRegex}|{RelativeRegex}\\s+year))?'
     QuarterRegexYearFront = f'({YearRegex}|{RelativeRegex}\\s+year)(\'s)?\\s+(the\\s+)?(-)?{QuarterTermRegex}'
     HalfYearTermRegex = f'(?<cardinal>first|1st|second|2nd)\\s+half'
-    HalfYearFrontRegex = f'(?<year>((1[5-9]|20)\\d{{2}})|2100)\\s*(the\\s+)?h(?<number>[1-2])'
+    HalfYearFrontRegex = f'(?<year>((1[5-9]|20)\\d{{2}})|2100)\\s*(the\\s+)?(-)?h(?<number>[1-2])'
     HalfYearBackRegex = f'(the\\s+)?(h(?<number>[1-2])|({HalfYearTermRegex}))(\\s+of|\\s*,\\s*)?\\s+({YearRegex})'
     HalfYearRelativeRegex = f'(the\\s+)?{HalfYearTermRegex}(\\s+of|\\s*,\\s*)?\\s+({RelativeRegex}\\s+year)'
     AllHalfYearRegex = f'({HalfYearFrontRegex})|({HalfYearBackRegex})|({HalfYearRelativeRegex})'

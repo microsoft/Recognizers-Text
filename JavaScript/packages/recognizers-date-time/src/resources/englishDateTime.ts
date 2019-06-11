@@ -67,7 +67,7 @@ export namespace EnglishDateTime {
 	export const QuarterRegex = `(the\\s+)?${QuarterTermRegex}((\\s+of|\\s*,\\s*)?\\s+(${YearRegex}|${RelativeRegex}\\s+year))?`;
 	export const QuarterRegexYearFront = `(${YearRegex}|${RelativeRegex}\\s+year)('s)?\\s+(the\\s+)?(-)?${QuarterTermRegex}`;
 	export const HalfYearTermRegex = `(?<cardinal>first|1st|second|2nd)\\s+half`;
-	export const HalfYearFrontRegex = `(?<year>((1[5-9]|20)\\d{2})|2100)\\s*(the\\s+)?h(?<number>[1-2])`;
+	export const HalfYearFrontRegex = `(?<year>((1[5-9]|20)\\d{2})|2100)\\s*(the\\s+)?(-)?h(?<number>[1-2])`;
 	export const HalfYearBackRegex = `(the\\s+)?(h(?<number>[1-2])|(${HalfYearTermRegex}))(\\s+of|\\s*,\\s*)?\\s+(${YearRegex})`;
 	export const HalfYearRelativeRegex = `(the\\s+)?${HalfYearTermRegex}(\\s+of|\\s*,\\s*)?\\s+(${RelativeRegex}\\s+year)`;
 	export const AllHalfYearRegex = `(${HalfYearFrontRegex})|(${HalfYearBackRegex})|(${HalfYearRelativeRegex})`;
