@@ -9,7 +9,9 @@
 from .base_numbers import BaseNumbers
 # pylint: disable=line-too-long
 class JapaneseNumeric:
-    LangMarker = ''
+    LangMarker = 'Jpn'
+    CompoundNumberLanguage = True
+    MultiDecimalSeparatorCulture = True
     DecimalSeparatorChar = '.'
     FractionMarkerToken = ''
     NonDecimalSeparatorChar = ' '

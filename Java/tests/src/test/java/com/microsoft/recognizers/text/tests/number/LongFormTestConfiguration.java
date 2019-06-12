@@ -125,4 +125,14 @@ public class LongFormTestConfiguration implements INumberParserConfiguration {
     public long resolveCompositeNumber(String numberStr) {
         return 0;
     }
+
+    @Override
+    public boolean isCompoundNumberLanguage() {
+        return false;
+    }
+
+    @Override
+    public boolean isMultiDecimalSeparatorCulture() {
+        return false;
+    }
 }

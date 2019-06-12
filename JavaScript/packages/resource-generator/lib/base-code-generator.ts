@@ -21,7 +21,7 @@ export function generate(yamlFilePath: string, tsFileName: string, header: strin
     file.write(headerComment + EOL + EOL);
     file.write(header + EOL);
     for (let line in code) {
-        file.write('\t' + code[line].write() + EOL);
+        file.write('    ' + code[line].write() + EOL);
     }
     file.write(footer + EOL);
     file.end();
