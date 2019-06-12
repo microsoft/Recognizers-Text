@@ -10,8 +10,8 @@ from .base_numbers import BaseNumbers
 # pylint: disable=line-too-long
 class EnglishNumeric:
     LangMarker = 'Eng'
-    CompoundNumberLanguage = 'false'
-    MultiDecimalSeparatorCulture = 'true'
+    CompoundNumberLanguage = True
+    MultiDecimalSeparatorCulture = True
     RoundNumberIntegerRegex = f'(hundred|thousand|million|billion|trillion)'
     ZeroToNineIntegerRegex = f'(three|seven|eight|four|five|zero|nine|one|two|six)'
     TwoToNineIntegerRegex = f'(three|seven|eight|four|five|nine|two|six)'

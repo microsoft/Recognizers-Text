@@ -10,8 +10,8 @@ from .base_numbers import BaseNumbers
 # pylint: disable=line-too-long
 class FrenchNumeric:
     LangMarker = 'Fr'
-    CompoundNumberLanguage = 'false'
-    MultiDecimalSeparatorCulture = 'true'
+    CompoundNumberLanguage = True
+    MultiDecimalSeparatorCulture = True
     RoundNumberIntegerRegex = f'(cent|mille|millions|million|milliard|milliards|billion|billions)'
     ZeroToNineIntegerRegex = f'(et un|un|une|deux|trois|quatre|cinq|six|sept|huit|neuf)'
     TenToNineteenIntegerRegex = f'((seize|quinze|quatorze|treize|douze|onze)|dix(\\Wneuf|\\Whuit|\\Wsept)?)'
