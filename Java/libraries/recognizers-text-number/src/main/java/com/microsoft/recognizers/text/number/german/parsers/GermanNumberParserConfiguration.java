@@ -26,6 +26,8 @@ public class GermanNumberParserConfiguration extends BaseNumberParserConfigurati
         super(
                 GermanNumeric.LangMarker,
                 cultureInfo,
+                GermanNumeric.CompoundNumberLanguage,
+                GermanNumeric.MultiDecimalSeparatorCulture,
                 options,
                 GermanNumeric.NonDecimalSeparatorChar,
                 GermanNumeric.DecimalSeparatorChar,

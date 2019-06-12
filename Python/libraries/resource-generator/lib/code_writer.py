@@ -109,6 +109,8 @@ def to_python_type(type_: str) -> str:
         return 'float'
     elif type_ == 'char':
         return 'string'
+    elif type_ == 'bool':
+        return 'bool'
     else:
         return type_
 

@@ -9,6 +9,8 @@
 import { BaseNumbers } from "./baseNumbers";
 export namespace FrenchNumeric {
 	export const LangMarker = 'Fr';
+	export const CompoundNumberLanguage = 'false';
+	export const MultiDecimalSeparatorCulture = 'true';
 	export const RoundNumberIntegerRegex = `(cent|mille|millions|million|milliard|milliards|billion|billions)`;
 	export const ZeroToNineIntegerRegex = `(et un|un|une|deux|trois|quatre|cinq|six|sept|huit|neuf)`;
 	export const TenToNineteenIntegerRegex = `((seize|quinze|quatorze|treize|douze|onze)|dix(\\Wneuf|\\Whuit|\\Wsept)?)`;

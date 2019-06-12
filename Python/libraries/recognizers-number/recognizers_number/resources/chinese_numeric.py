@@ -9,7 +9,9 @@
 from .base_numbers import BaseNumbers
 # pylint: disable=line-too-long
 class ChineseNumeric:
-    LangMarker = ''
+    LangMarker = 'Chs'
+    CompoundNumberLanguage = 'true'
+    MultiDecimalSeparatorCulture = 'false'
     DecimalSeparatorChar = '.'
     FractionMarkerToken = ''
     NonDecimalSeparatorChar = ' '

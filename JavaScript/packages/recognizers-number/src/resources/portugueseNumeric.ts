@@ -9,6 +9,8 @@
 import { BaseNumbers } from "./baseNumbers";
 export namespace PortugueseNumeric {
 	export const LangMarker = 'Por';
+	export const CompoundNumberLanguage = 'false';
+	export const MultiDecimalSeparatorCulture = 'false';
 	export const HundredsNumberIntegerRegex = `(quatrocent[ao]s|trezent[ao]s|seiscent[ao]s|setecent[ao]s|oitocent[ao]s|novecent[ao]s|duzent[ao]s|quinhent[ao]s|cem|(?<!por\\s+)(cento))`;
 	export const RoundNumberIntegerRegex = `(mil|milh[ãa]o|milh[õo]es|bilh[ãa]o|bilh[õo]es|trilh[ãa]o|trilh[õo]es|qua[td]rilh[ãa]o|qua[td]rilh[õo]es|quintilh[ãa]o|quintilh[õo]es)`;
 	export const ZeroToNineIntegerRegex = `(quatro|cinco|sete|nove|zero|tr[êe]s|seis|oito|dois|duas|um|uma)`;

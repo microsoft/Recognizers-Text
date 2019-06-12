@@ -62,4 +62,8 @@ export namespace DataTypes {
     export function getCharacter(data: any) : string {
         return data;
     }
+
+    export function getBoolean(data: any) : string {
+        return data;
+    }
 }

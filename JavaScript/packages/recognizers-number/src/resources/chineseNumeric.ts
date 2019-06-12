@@ -8,7 +8,9 @@
 
 import { BaseNumbers } from "./baseNumbers";
 export namespace ChineseNumeric {
-	export const LangMarker = '';
+	export const LangMarker = 'Chs';
+	export const CompoundNumberLanguage = 'true';
+	export const MultiDecimalSeparatorCulture = 'false';
 	export const DecimalSeparatorChar = '.';
 	export const FractionMarkerToken = '';
 	export const NonDecimalSeparatorChar = ' ';
