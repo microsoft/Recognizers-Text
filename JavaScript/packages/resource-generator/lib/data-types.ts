@@ -63,7 +63,7 @@ export namespace DataTypes {
         return data;
     }
 
-    export function getBoolean(data: any) : string {
-        return data;
+    export function getBoolean(data: any) : boolean {
+        return Boolean(JSON.parse(data));
     }
 }
