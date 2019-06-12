@@ -27,8 +27,9 @@ public class FrenchNumberParserConfiguration extends BaseNumberParserConfigurati
         super(
                 FrenchNumeric.LangMarker,
                 cultureInfo,
+                FrenchNumeric.CompoundNumberLanguage,
+                FrenchNumeric.MultiDecimalSeparatorCulture,
                 options,
-
                 FrenchNumeric.NonDecimalSeparatorChar,
                 FrenchNumeric.DecimalSeparatorChar,
                 FrenchNumeric.FractionMarkerToken,

@@ -16,16 +16,16 @@
 
 namespace Microsoft.Recognizers.Definitions.Bulgarian
 {
-	using System;
-	using System.Collections.Generic;
+    using System;
+    using System.Collections.Generic;
 
-	public static class ChoiceDefinitions
-	{
-		public const string LangMarker = @"Bul";
-		public const string TokenizerRegex = @"[^\w\d]";
-		public const string ItIsNotRegex = @"не\s+е\s+";
-		public const string IAmNotRegex = @"не\s+съм\s+";
-		public const string TrueRegex = @"\b(в[яе]рно|определено|несъмнено|точно|добре|да|йеп|д|ok|ок|съглас((ен)|(на)))\b|(\uD83D\uDC4D|\uD83D\uDC4C)";
-		public static readonly string FalseRegex = $@"\b({ItIsNotRegex}в[яе]рно|нев[яе]рно|{ItIsNotRegex}ок|{ItIsNotRegex}добре|{IAmNotRegex}съглас((ен)|(на))|не)\b|(\uD83D\uDC4E|\u270B|\uD83D\uDD90)";
-	}
+    public static class ChoiceDefinitions
+    {
+      public const string LangMarker = @"Bul";
+      public const string TokenizerRegex = @"[^\w\d]";
+      public const string ItIsNotRegex = @"не\s+е\s+";
+      public const string IAmNotRegex = @"не\s+съм\s+";
+      public const string TrueRegex = @"\b(в[яе]рно|определено|несъмнено|точно|добре|да|йеп|д|ok|ок|съглас((ен)|(на)))\b|(\uD83D\uDC4D|\uD83D\uDC4C)";
+      public static readonly string FalseRegex = $@"\b({ItIsNotRegex}в[яе]рно|нев[яе]рно|{ItIsNotRegex}ок|{ItIsNotRegex}добре|{IAmNotRegex}съглас((ен)|(на))|не)\b|(\uD83D\uDC4E|\u270B|\uD83D\uDD90)";
+    }
 }

@@ -18,6 +18,10 @@ public class SpanishNumeric {
 
     public static final String LangMarker = "Spa";
 
+    public static final Boolean CompoundNumberLanguage = false;
+
+    public static final Boolean MultiDecimalSeparatorCulture = true;
+
     public static final String HundredsNumberIntegerRegex = "(cuatrocient[ao]s|trescient[ao]s|seiscient[ao]s|setecient[ao]s|ochocient[ao]s|novecient[ao]s|doscient[ao]s|quinient[ao]s|(?<!por\\s+)(cien(to)?))";
 
     public static final String RoundNumberIntegerRegex = "(mil millones|mil|millones|mill[oó]n|billones|bill[oó]n|trillones|trill[oó]n|cuatrillones|cuatrill[oó]n|quintillones|quintill[oó]n|sextillones|sextill[oó]n|septillones|septill[oó]n)";

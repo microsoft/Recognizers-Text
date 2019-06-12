@@ -16,7 +16,11 @@ import com.google.common.collect.ImmutableMap;
 
 public class ChineseNumeric {
 
-    public static final String LangMarker = "";
+    public static final String LangMarker = "Chs";
+
+    public static final Boolean CompoundNumberLanguage = true;
+
+    public static final Boolean MultiDecimalSeparatorCulture = false;
 
     public static final Character DecimalSeparatorChar = '.';
 

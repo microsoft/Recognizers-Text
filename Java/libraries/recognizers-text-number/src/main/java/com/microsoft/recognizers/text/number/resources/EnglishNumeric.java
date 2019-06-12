@@ -18,6 +18,10 @@ public class EnglishNumeric {
 
     public static final String LangMarker = "Eng";
 
+    public static final Boolean CompoundNumberLanguage = false;
+
+    public static final Boolean MultiDecimalSeparatorCulture = true;
+
     public static final String RoundNumberIntegerRegex = "(hundred|thousand|million|billion|trillion)";
 
     public static final String ZeroToNineIntegerRegex = "(three|seven|eight|four|five|zero|nine|one|two|six)";

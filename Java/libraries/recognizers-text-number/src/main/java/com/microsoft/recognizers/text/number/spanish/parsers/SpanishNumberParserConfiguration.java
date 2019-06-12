@@ -30,8 +30,9 @@ public class SpanishNumberParserConfiguration extends BaseNumberParserConfigurat
         super(
                 SpanishNumeric.LangMarker,
                 cultureInfo,
+                SpanishNumeric.CompoundNumberLanguage,
+                SpanishNumeric.MultiDecimalSeparatorCulture,
                 options,
-
                 SpanishNumeric.NonDecimalSeparatorChar,
                 SpanishNumeric.DecimalSeparatorChar,
                 SpanishNumeric.FractionMarkerToken,

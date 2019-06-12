@@ -32,6 +32,7 @@ public class CodeGenerator {
         constructor.addTypeDescription(new TypeDescription(SimpleRegex.class, "!simpleRegex"));
         constructor.addTypeDescription(new TypeDescription(NestedRegex.class, "!nestedRegex"));
         constructor.addTypeDescription(new TypeDescription(Character.class, "!char"));
+        constructor.addTypeDescription(new TypeDescription(Boolean.class, "!bool"));
         constructor.addTypeDescription(new TypeDescription(Dictionary.class, "!dictionary"));
         constructor.addTypeDescription(new TypeDescription(List.class, "!list"));
 
@@ -82,38 +83,43 @@ public class CodeGenerator {
 
     private static ICodeWriter getWriter(String tokenName, Object token) throws IllegalArgumentException {
         if (token instanceof ParamsRegex) {
-            return new ParamsRegexWriter(tokenName, (ParamsRegex) token);
+            return new ParamsRegexWriter(tokenName, (ParamsRegex)token);
         }
 
         if (token instanceof SimpleRegex) {
-            return new SimpleRegexWriter(tokenName, (SimpleRegex) token);
+            return new SimpleRegexWriter(tokenName, (SimpleRegex)token);
         }
 
         if (token instanceof NestedRegex) {
-            return new NestedRegexWriter(tokenName, (NestedRegex) token);
+            return new NestedRegexWriter(tokenName, (NestedRegex)token);
         }
 
-        if (token instanceof Character)
-            return new CharacterWritter(tokenName, (char) token);
+        if (token instanceof Character) {
+            return new CharacterWriter(tokenName, (char)token);
+        }
+
+        if (token instanceof Boolean) {
+            return new BooleanWriter(tokenName, (boolean)token);
+        }
 
         if (token instanceof String) {
-            return new DefaultWriter(tokenName, (String) token);
+            return new DefaultWriter(tokenName, (String)token);
         }
 
         if (token instanceof Integer) {
-            return new IntegerWriter(tokenName, (int) token);
+            return new IntegerWriter(tokenName, (int)token);
         }
 
         if (token instanceof ArrayList) {
-            return new ListWriter(tokenName, "String", (String[]) ((ArrayList) token).stream().map(o -> o.toString()).toArray(size -> new String[size]));
+            return new ListWriter(tokenName, "String", (String[])((ArrayList) token).stream().map(o -> o.toString()).toArray(size -> new String[size]));
         }
 
         if (token instanceof List) {
-            return new ListWriter(tokenName, ((List) token).types[0], ((List) token).entries);
+            return new ListWriter(tokenName, ((List)token).types[0], ((List)token).entries);
         }
 
         if (token instanceof Dictionary) {
-            return new DictionaryWriter(tokenName, (Dictionary) token);
+            return new DictionaryWriter(tokenName, (Dictionary)token);
         }
 
         throw new IllegalArgumentException(String.format("Data Type not supported for %s: %s", tokenName, token));

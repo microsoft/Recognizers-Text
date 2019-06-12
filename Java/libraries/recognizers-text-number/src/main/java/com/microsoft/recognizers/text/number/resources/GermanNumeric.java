@@ -18,6 +18,10 @@ public class GermanNumeric {
 
     public static final String LangMarker = "Ger";
 
+    public static final Boolean CompoundNumberLanguage = true;
+
+    public static final Boolean MultiDecimalSeparatorCulture = false;
+
     public static final String ZeroToNineIntegerRegex = "(drei|sieben|acht|vier|fuenf|fünf|null|neun|eins|(ein(?!($|\\.|,|!|\\?)))|eine|einer|einen|zwei|zwo|sechs)";
 
     public static final String RoundNumberIntegerRegex = "(hundert|einhundert|tausend|(\\s*million\\s*)|(\\s*millionen\\s*)|(\\s*mio\\s*)|(\\s*milliarde\\s*)|(\\s*milliarden\\s*)|(\\s*mrd\\s*)|(\\s*billion\\s*)|(\\s*billionen\\s*))";
