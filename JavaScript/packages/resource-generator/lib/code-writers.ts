@@ -22,6 +22,19 @@ class DefaultWriter extends CodeWriter {
     }
 }
 
+class BooleanWriter extends CodeWriter {
+    readonly definition: boolean;
+
+    constructor (name: string, definition: boolean) {
+        super(name);
+        this.definition = definition;
+    }
+
+    write() {
+        return `export const ${this.name} = ${this.definition};`;
+    }
+}
+
 class SimpleRegexWriter extends CodeWriter {
     readonly definition: string;
 
@@ -107,7 +120,7 @@ class DictionaryWriter extends CodeWriter {
 
 function sanitize(value: string, valueType: string = null) : string {
     if (!valueType) valueType = typeof value;
-    if (valueType === 'number') return value;
+    if (valueType === 'number' || valueType === 'boolean') return value;
 
     let stringified = JSON.stringify(value);
     return stringified.slice(1, stringified.length - 1);
@@ -162,6 +175,9 @@ export function GenerateCode(root: any): CodeWriter[] {
         }
         else if (token instanceof Array) {
             lines.push(new ArrayWriter(tokenName, token));
+        }
+        else if (typeof token === "boolean") {
+            lines.push(new BooleanWriter(tokenName, token));
         }
         else {
             lines.push(new DefaultWriter(tokenName, token));

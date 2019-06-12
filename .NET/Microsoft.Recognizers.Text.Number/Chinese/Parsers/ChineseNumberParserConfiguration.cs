@@ -19,6 +19,8 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
         {
             LangMarker = NumbersDefinitions.LangMarker;
             CultureInfo = ci;
+            IsCompoundNumberLanguage = NumbersDefinitions.CompoundNumberLanguage;
+            IsMultiDecimalSeparatorCulture = NumbersDefinitions.MultiDecimalSeparatorCulture;
 
             DecimalSeparatorChar = NumbersDefinitions.DecimalSeparatorChar;
             FractionMarkerToken = NumbersDefinitions.FractionMarkerToken;
@@ -100,6 +102,10 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
         public Regex FracSplitRegex { get; private set; }
 
         public Regex NegativeNumberSignRegex { get; private set; }
+
+        public bool IsCompoundNumberLanguage { get; private set; }
+
+        public bool IsMultiDecimalSeparatorCulture { get; private set; }
 
         public Regex PointRegex { get; private set; }
 

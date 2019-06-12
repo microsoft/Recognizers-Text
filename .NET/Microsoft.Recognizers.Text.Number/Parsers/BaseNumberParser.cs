@@ -8,22 +8,19 @@ namespace Microsoft.Recognizers.Text.Number
 {
     public class BaseNumberParser : IParser
     {
-
         private static readonly Regex LongFormRegex =
             new Regex(@"\d+", RegexOptions.Singleline);
 
-        private static readonly Regex MultiDecimalSeparatorCultureRegex =
-            new Regex(@"^(en|es|fr|bg)(-)?\b", RegexOptions.Singleline | RegexOptions.Compiled);
-
-        private static readonly List<string> CompoundNumberLanguages = new List<string> { "de-DE", "nl-NL", "sv-SE", "it-IT" };
-
         private readonly bool isMultiDecimalSeparatorCulture = false;
+
+        private readonly bool isCompoundNumberLanguage = false;
 
         public BaseNumberParser(INumberParserConfiguration config)
         {
             this.Config = config;
 
-            this.isMultiDecimalSeparatorCulture = MultiDecimalSeparatorCultureRegex.IsMatch(config.CultureInfo.Name);
+            this.isMultiDecimalSeparatorCulture = config.IsMultiDecimalSeparatorCulture;
+            this.isCompoundNumberLanguage = config.IsCompoundNumberLanguage;
 
             var singleIntFrac = $"{this.Config.WordSeparatorToken}| -|" +
                                 GetKeyRegex(this.Config.CardinalNumberMap.Keys) + "|" +
@@ -32,7 +29,7 @@ namespace Microsoft.Recognizers.Text.Number
             string textNumberPattern;
 
             // Checks for languages that use "compound numbers". I.e. written number parts are not separated by whitespaces or special characters (e.g., dreihundert in German).
-            if (CompoundNumberLanguages.Contains(config.CultureInfo.Name))
+            if (isCompoundNumberLanguage)
             {
                 textNumberPattern = @"(" + singleIntFrac + @")";
             }
