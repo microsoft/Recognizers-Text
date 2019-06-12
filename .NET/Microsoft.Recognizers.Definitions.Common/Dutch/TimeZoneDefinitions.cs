@@ -16,53 +16,53 @@
 
 namespace Microsoft.Recognizers.Definitions.Dutch
 {
-	using System;
-	using System.Collections.Generic;
+    using System;
+    using System.Collections.Generic;
 
-	public static class TimeZoneDefinitions
-	{
-		public const string DirectUtcRegex = @"\b(utc|gmt)(\s*[+\-\u00B1]?\s*[\d]{1,2}(\s*:\s*[\d]{1,2})?)?\b";
-		public static readonly IList<string> AbbreviationsList = new List<string>
-		{
-			@"AFT"
-		};
-		public static readonly IList<string> FullNameList = new List<string>
-		{
-			@"Afghanistan Standard Time"
-		};
-		public const string LocationTimeSuffixRegex = @"((\s+|-)(tijdzone|tijd|timezone|time)\b)";
-		public static readonly IList<string> AmbiguousTimezoneList = new List<string>
-		{
-			@"bit",
-			@"get",
-			@"art",
-			@"cast",
-			@"eat",
-			@"lint",
-			@"mat",
-			@"most",
-			@"west",
-			@"vet",
-			@"wet",
-			@"cot",
-			@"pt",
-			@"et",
-			@"eastern",
-			@"pacific",
-			@"central",
-			@"mountain"
-		};
-		public static readonly Dictionary<string, int> AbbrToMinMapping = new Dictionary<string, int>
-		{
-			{ @"aft", 270 }
-		};
-		public static readonly Dictionary<string, int> FullToMinMapping = new Dictionary<string, int>
-		{
-			{ @"beijing time", 480 }
-		};
-		public static readonly IList<string> MajorLocations = new List<string>
-		{
-			@"Dominican Republic"
-		};
-	}
+    public static class TimeZoneDefinitions
+    {
+      public const string DirectUtcRegex = @"\b(utc|gmt)(\s*[+\-\u00B1]?\s*[\d]{1,2}(\s*:\s*[\d]{1,2})?)?\b";
+      public static readonly IList<string> AbbreviationsList = new List<string>
+        {
+            @"AFT"
+        };
+      public static readonly IList<string> FullNameList = new List<string>
+        {
+            @"Afghanistan Standard Time"
+        };
+      public const string LocationTimeSuffixRegex = @"((\s+|-)(tijdzone|tijd|timezone|time)\b)";
+      public static readonly IList<string> AmbiguousTimezoneList = new List<string>
+        {
+            @"bit",
+            @"get",
+            @"art",
+            @"cast",
+            @"eat",
+            @"lint",
+            @"mat",
+            @"most",
+            @"west",
+            @"vet",
+            @"wet",
+            @"cot",
+            @"pt",
+            @"et",
+            @"eastern",
+            @"pacific",
+            @"central",
+            @"mountain"
+        };
+      public static readonly Dictionary<string, int> AbbrToMinMapping = new Dictionary<string, int>
+        {
+            { @"aft", 270 }
+        };
+      public static readonly Dictionary<string, int> FullToMinMapping = new Dictionary<string, int>
+        {
+            { @"beijing time", 480 }
+        };
+      public static readonly IList<string> MajorLocations = new List<string>
+        {
+            @"Dominican Republic"
+        };
+    }
 }

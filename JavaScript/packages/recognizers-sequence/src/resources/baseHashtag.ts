@@ -7,5 +7,5 @@
 // ------------------------------------------------------------------------------
 
 export namespace BaseHashtag {
-	export const HashtagRegex = `((?<=\\s|^)#([a-zA-Z0-9_]+))`;
+    export const HashtagRegex = `((?<=\\s|^)#([a-zA-Z0-9_]+))`;
 }

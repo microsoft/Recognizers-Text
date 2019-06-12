@@ -52,6 +52,10 @@ namespace Microsoft.Recognizers.Text.Number
 
         Regex NegativeNumberSignRegex { get; }
 
+        bool IsCompoundNumberLanguage { get; }
+
+        bool IsMultiDecimalSeparatorCulture { get; }
+
         /// <summary>
         /// Used when requiring to normalize a token to a valid expression supported by the ImmutableDictionaries (language dictionaries).
         /// </summary>
@@ -113,6 +117,10 @@ namespace Microsoft.Recognizers.Text.Number
         public IEnumerable<string> WrittenFractionSeparatorTexts { get; set; }
 
         public Regex NegativeNumberSignRegex { get; set; }
+
+        public bool IsCompoundNumberLanguage { get; set; }
+
+        public bool IsMultiDecimalSeparatorCulture { get; set; }
 
         public virtual long ResolveCompositeNumber(string numberStr)
         {

@@ -1,5 +1,9 @@
 ---
 LangMarker: Fr
+#Does this language use non-whitespace-separated numbers?
+CompoundNumberLanguage: !bool false
+#Does this culture uses period and comma intercheangeably as decimal separator?
+MultiDecimalSeparatorCulture: !bool true
 #Integer Regex
 RoundNumberIntegerRegex: !simpleRegex
   def: (cent|mille|millions|million|milliard|milliards|billion|billions)

@@ -18,6 +18,10 @@ public class FrenchNumeric {
 
     public static final String LangMarker = "Fr";
 
+    public static final Boolean CompoundNumberLanguage = false;
+
+    public static final Boolean MultiDecimalSeparatorCulture = true;
+
     public static final String RoundNumberIntegerRegex = "(cent|mille|millions|million|milliard|milliards|billion|billions)";
 
     public static final String ZeroToNineIntegerRegex = "(et un|un|une|deux|trois|quatre|cinq|six|sept|huit|neuf)";

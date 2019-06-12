@@ -32,13 +32,19 @@ public abstract class BaseNumberParserConfiguration implements INumberParserConf
     private final Pattern negativeNumberSignRegex;
     private final Pattern fractionPrepositionRegex;
 
-    protected BaseNumberParserConfiguration(String langMarker, CultureInfo cultureInfo, NumberOptions options, char nonDecimalSeparatorChar, char decimalSeparatorChar,
+    private final boolean isCompoundNumberLanguage;
+    private final boolean isMultiDecimalSeparatorCulture;
+
+    protected BaseNumberParserConfiguration(String langMarker, CultureInfo cultureInfo, boolean isCompoundNumberLanguage, boolean isMultiDecimalSeparatorCulture,
+        NumberOptions options, char nonDecimalSeparatorChar, char decimalSeparatorChar,
         String fractionMarkerToken, String halfADozenText, String wordSeparatorToken, List<String> writtenDecimalSeparatorTexts, List<String> writtenGroupSeparatorTexts,
         List<String> writtenIntegerSeparatorTexts, List<String> writtenFractionSeparatorTexts, Map<String, Long> cardinalNumberMap, Map<String, Long> ordinalNumberMap,
         Map<String, Long> roundNumberMap, Pattern halfADozenRegex, Pattern digitalNumberRegex, Pattern negativeNumberSignRegex, Pattern fractionPrepositionRegex) {
 
         this.langMarker = langMarker;
         this.cultureInfo = cultureInfo;
+        this.isCompoundNumberLanguage = isCompoundNumberLanguage;
+        this.isMultiDecimalSeparatorCulture = isMultiDecimalSeparatorCulture;
         this.options = options;
         this.nonDecimalSeparatorChar = nonDecimalSeparatorChar;
         this.decimalSeparatorChar = decimalSeparatorChar;
@@ -151,5 +157,15 @@ public abstract class BaseNumberParserConfiguration implements INumberParserConf
     @Override
     public Pattern getNegativeNumberSignRegex() {
         return this.negativeNumberSignRegex;
+    }
+
+    @Override
+    public boolean isCompoundNumberLanguage() {
+        return this.isCompoundNumberLanguage;
+    }
+
+    @Override
+    public boolean isMultiDecimalSeparatorCulture() {
+        return this.isMultiDecimalSeparatorCulture;
     }
 }
