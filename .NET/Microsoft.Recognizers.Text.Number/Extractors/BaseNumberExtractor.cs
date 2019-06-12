@@ -55,8 +55,8 @@ namespace Microsoft.Recognizers.Text.Number
                         continue;
                     }
 
-                    // In EnablePreview, cases like "last", "next" should not be skipped
-                    if ((Options & NumberOptions.EnablePreview) == 0 && IsRelativeOrdinal(m.Value))
+                    // In SuppressExtendedTypes is on, cases like "last", "next" should not be skipped
+                    if ((Options & NumberOptions.SuppressExtendedTypes) != 0 && IsRelativeOrdinal(m.Value))
                     {
                         continue;
                     }

@@ -28,9 +28,9 @@ namespace Microsoft.Recognizers.Text.Number.Tests
             TestNumber();
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "OrdinalModelEnablePreview-English.csv", "OrdinalModelEnablePreview-English#csv", DataAccessMethod.Sequential)]
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "OrdinalModelSuppressExtendedTypes-English.csv", "OrdinalModelSuppressExtendedTypes-English#csv", DataAccessMethod.Sequential)]
         [TestMethod]
-        public void OrdinalModelEnablePreview()
+        public void OrdinalModelSuppressExtendedTypes()
         {
             TestNumber();
         }
