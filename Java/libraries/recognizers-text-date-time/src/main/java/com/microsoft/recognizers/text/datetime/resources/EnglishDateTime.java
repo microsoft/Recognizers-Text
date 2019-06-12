@@ -678,15 +678,15 @@ public class EnglishDateTime {
 
     public static final String ConjunctionRegex = "\\b((and(\\s+for)?)|with)\\b";
 
-    public static final String HolidayRegex1 = "\\b(?<holiday>clean monday|good friday|ash wednesday|mardi gras|washington's birthday|mao's birthday|chinese new year|new years' eve|new year's eve|new year 's eve|new years eve|new year eve|new years'|new year's|new year 's|new years|new year|may\\s*day|yuan dan|april fools|christmas eve|christmas|xmas|thanksgiving|black friday|halloween|yuandan|easter)(\\s+(of\\s+)?({YearRegex}|{RelativeRegex}\\s+year))?\\b"
+    public static final String HolidayRegex1 = "\\b(?<holiday>clean monday|good friday|ash wednesday|mardi gras|washington's birthday|mao's birthday|chinese new year|new years' eve|new year's eve|new year 's eve|new years eve|new year eve|new years'|new year's|new year 's|new years|new year|may\\s*day|yuan dan|april fools|christmas eve|christmas|xmas|thanksgiving|black friday|cyber monday|halloween|yuandan|easter)(\\s+(of\\s+)?({YearRegex}|{RelativeRegex}\\s+year))?\\b"
             .replace("{YearRegex}", YearRegex)
             .replace("{RelativeRegex}", RelativeRegex);
 
-    public static final String HolidayRegex2 = "\\b(?<holiday>all saint's|tree planting day|white lover|st patrick|st george|cinco de mayo|us independence|all hallow|all souls|guy fawkes)(\\s+(of\\s+)?({YearRegex}|{RelativeRegex}\\s+year))?\\b"
+    public static final String HolidayRegex2 = "\\b(?<holiday>all saint's|tree planting day|white lover|s(?:ain)?t?. patrick(?:')?(?:s)?|st george|cinco de mayo|us independence|all hallow|all souls|guy fawkes)(\\s+(of\\s+)?({YearRegex}|{RelativeRegex}\\s+year))?\\b"
             .replace("{YearRegex}", YearRegex)
             .replace("{RelativeRegex}", RelativeRegex);
 
-    public static final String HolidayRegex3 = "(?<holiday>(independence|mlk|martin luther king|martin luther king jr|canberra|easter|columbus|thanks\\s*giving|christmas|xmas|labour|(international|int'l)\\s+workers'?|mother's|mother|mothers|father's|father|fathers|female|single|teacher's|youth|children|arbor|girls|chsmilbuild|lover|labor|inauguration|groundhog|valentine's|baptiste|bastille|halloween|veterans|memorial|mid[ \\-]autumn|moon|spring|lantern|qingming|dragon boat|new years'|new year's|new year 's|new years|new year)\\s+(day))(\\s+(of\\s+)?({YearRegex}|{RelativeRegex}\\s+year))?"
+    public static final String HolidayRegex3 = "(?<holiday>(independence|presidents(?:')?|mlk|martin luther king|martin luther king jr|canberra|easter|columbus|thanks\\s*giving|cyber monday|christmas|xmas|labour|(international|int'l)\\s+workers'?|mother's|mother|mothers|father's|father|fathers|female|single|teacher's|youth|children|arbor|girls|chsmilbuild|lover|labor|earth|inauguration|groundhog|valentine's|s(?:ain)?t?. patrick(?:')?(?:s)?|baptiste|bastille|halloween|veterans(?:')?|memorial|mid[ \\-]autumn|moon|spring|lantern|qingming|dragon boat|new years'|new year's|new year 's|new years|new year)\\s+(day))(\\s+(of\\s+)?({YearRegex}|{RelativeRegex}\\s+year))?"
             .replace("{YearRegex}", YearRegex)
             .replace("{RelativeRegex}", RelativeRegex);
 
@@ -1182,12 +1182,14 @@ public class EnglishDateTime {
 
     public static final ImmutableMap<String, String[]> HolidayNames = ImmutableMap.<String, String[]>builder()
         .put("easterday", new String[]{"easterday", "easter"})
+        .put("earthday", new String[]{"earthday"})
         .put("fathers", new String[]{"fatherday", "fathersday"})
         .put("mothers", new String[]{"motherday", "mothersday"})
         .put("thanksgiving", new String[]{"thanksgivingday", "thanksgiving"})
         .put("blackfriday", new String[]{"blackfriday"})
+        .put("cybermonday", new String[]{"cybermonday"})
         .put("martinlutherking", new String[]{"mlkday", "martinlutherkingday", "martinlutherkingjrday"})
-        .put("washingtonsbirthday", new String[]{"washingtonsbirthday", "washingtonbirthday"})
+        .put("washingtonsbirthday", new String[]{"washingtonsbirthday", "washingtonbirthday", "presidentsday"})
         .put("canberra", new String[]{"canberraday"})
         .put("labour", new String[]{"labourday", "laborday"})
         .put("columbus", new String[]{"columbusday"})
@@ -1213,7 +1215,7 @@ public class EnglishDateTime {
         .put("inaugurationday", new String[]{"inaugurationday"})
         .put("groundhougday", new String[]{"groundhougday"})
         .put("valentinesday", new String[]{"valentinesday"})
-        .put("stpatrickday", new String[]{"stpatrickday"})
+        .put("stpatrickday", new String[]{"stpatrickday", "stpatricksday", "st.patrickday", "st.patricksday"})
         .put("aprilfools", new String[]{"aprilfools"})
         .put("stgeorgeday", new String[]{"stgeorgeday"})
         .put("mayday", new String[]{"mayday", "intlworkersday", "internationalworkersday"})
