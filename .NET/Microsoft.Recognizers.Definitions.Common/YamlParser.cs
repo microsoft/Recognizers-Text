@@ -21,6 +21,7 @@ namespace Microsoft.Recognizers.Definitions.Common
                 .WithTagMapping("!dictionary", typeof(Dictionary))
                 .WithTagMapping("!list", typeof(List))
                 .WithTagMapping("!char", typeof(char))
+                .WithTagMapping("!bool", typeof(bool))
                 .Build();
         }
 

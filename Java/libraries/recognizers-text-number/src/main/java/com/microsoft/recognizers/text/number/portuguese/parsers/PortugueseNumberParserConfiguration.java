@@ -29,8 +29,9 @@ public class PortugueseNumberParserConfiguration extends BaseNumberParserConfigu
         super(
                 PortugueseNumeric.LangMarker,
                 cultureInfo,
+                PortugueseNumeric.CompoundNumberLanguage,
+                PortugueseNumeric.MultiDecimalSeparatorCulture,
                 options,
-
                 PortugueseNumeric.NonDecimalSeparatorChar,
                 PortugueseNumeric.DecimalSeparatorChar,
                 PortugueseNumeric.FractionMarkerToken,

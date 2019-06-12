@@ -65,6 +65,10 @@ namespace Microsoft.Recognizers.Text.Number.Tests
         // Test-specific initialization: the Regex matches nothing.
         public Regex NegativeNumberSignRegex { get; } = new Regex(@"[^\s\S]");
 
+        public bool IsCompoundNumberLanguage { get; }
+
+        public bool IsMultiDecimalSeparatorCulture { get; }
+
         public IEnumerable<string> NormalizeTokenSet(IEnumerable<string> tokens, ParseResult context)
         {
             throw new NotImplementedException();

@@ -16,11 +16,11 @@
 
 namespace Microsoft.Recognizers.Definitions
 {
-	using System;
-	using System.Collections.Generic;
+    using System;
+    using System.Collections.Generic;
 
-	public static class BaseMention
-	{
-		public const string MentionRegex = @"@([a-zA-Z0-9_]+)(?![.]\w)\b";
-	}
+    public static class BaseMention
+    {
+      public const string MentionRegex = @"@([a-zA-Z0-9_]+)(?![.]\w)\b";
+    }
 }
