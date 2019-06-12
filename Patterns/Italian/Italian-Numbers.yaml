@@ -1,5 +1,9 @@
 ---
 LangMarker: Ita
+#Does this language use non-whitespace-separated numbers?
+CompoundNumberLanguage: !bool true
+#Does this culture uses period and comma intercheangeably as decimal separator?
+MultiDecimalSeparatorCulture: !bool false
 #Integer Regex
 RoundNumberIntegerRegex: !simpleRegex
   def: (cento|mille|milione|milioni|miliardo|miliardi|trilione|trilioni)

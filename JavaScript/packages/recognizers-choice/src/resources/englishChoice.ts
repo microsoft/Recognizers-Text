@@ -7,8 +7,8 @@
 // ------------------------------------------------------------------------------
 
 export namespace EnglishChoice {
-	export const LangMarker = 'Eng';
-	export const TokenizerRegex = `[^\\w\\d]`;
-	export const TrueRegex = `\\b(true|yes|yep|y|sure|ok|agree)\\b|(\\uD83D\\uDC4D|\\uD83D\\uDC4C)`;
-	export const FalseRegex = `\\b(false|nope|nop|no|not\\s+ok|disagree)\\b|(\\uD83D\\uDC4E|\\u270B|\\uD83D\\uDD90)`;
+    export const LangMarker = 'Eng';
+    export const TokenizerRegex = `[^\\w\\d]`;
+    export const TrueRegex = `\\b(true|yes|yep|y|sure|ok|agree)\\b|(\\uD83D\\uDC4D|\\uD83D\\uDC4C)`;
+    export const FalseRegex = `\\b(false|nope|nop|no|not\\s+ok|disagree)\\b|(\\uD83D\\uDC4E|\\u270B|\\uD83D\\uDD90)`;
 }

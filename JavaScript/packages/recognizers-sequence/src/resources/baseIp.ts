@@ -7,18 +7,18 @@
 // ------------------------------------------------------------------------------
 
 export namespace BaseIp {
-	export const Ipv4Regex = `\\b(1\\d{2}|2[0-4]\\d|25[0-5]|0?[1-9]\\d|0{0,2}\\d)((\\.(1\\d{2}|2[0-4]\\d|25[0-5]|0?[1-9]\\d|0{0,2}\\d)){3})\\b`;
-	export const BasicIpv6Element = `([\\da-fA-F]{1,4})`;
-	export const BasicIpv6Regex = `((${BasicIpv6Element}:){7}${BasicIpv6Element})`;
-	export const Ipv6EllipsisRegex1 = `(:(:${BasicIpv6Element}){1,7})`;
-	export const Ipv6EllipsisRegex2 = `((${BasicIpv6Element}:){1}((:${BasicIpv6Element}){1,6}))`;
-	export const Ipv6EllipsisRegex3 = `((${BasicIpv6Element}:){2}((:${BasicIpv6Element}){1,5}))`;
-	export const Ipv6EllipsisRegex4 = `((${BasicIpv6Element}:){3}((:${BasicIpv6Element}){1,4}))`;
-	export const Ipv6EllipsisRegex5 = `((${BasicIpv6Element}:){4}((:${BasicIpv6Element}){1,3}))`;
-	export const Ipv6EllipsisRegex6 = `((${BasicIpv6Element}:){5}((:${BasicIpv6Element}){1,2}))`;
-	export const Ipv6EllipsisRegex7 = `((${BasicIpv6Element}:){6}((:${BasicIpv6Element}){1}))`;
-	export const Ipv6EllipsisRegex8 = `((${BasicIpv6Element}:){7}(:))`;
-	export const Ipv6EllipsisRegexOther = `\\B::\\B|\\B:(:${BasicIpv6Element}){1,7}\\b|\\b(${BasicIpv6Element}:){1,7}:\\B`;
-	export const MergedIpv6Regex = `(${BasicIpv6Regex}|${Ipv6EllipsisRegex1}|${Ipv6EllipsisRegex2}|${Ipv6EllipsisRegex3}|${Ipv6EllipsisRegex4}|${Ipv6EllipsisRegex5}|${Ipv6EllipsisRegex6}|${Ipv6EllipsisRegex7}|${Ipv6EllipsisRegex8})`;
-	export const Ipv6Regex = `(\\b${MergedIpv6Regex}\\b)|(${Ipv6EllipsisRegexOther})`;
+    export const Ipv4Regex = `\\b(1\\d{2}|2[0-4]\\d|25[0-5]|0?[1-9]\\d|0{0,2}\\d)((\\.(1\\d{2}|2[0-4]\\d|25[0-5]|0?[1-9]\\d|0{0,2}\\d)){3})\\b`;
+    export const BasicIpv6Element = `([\\da-fA-F]{1,4})`;
+    export const BasicIpv6Regex = `((${BasicIpv6Element}:){7}${BasicIpv6Element})`;
+    export const Ipv6EllipsisRegex1 = `(:(:${BasicIpv6Element}){1,7})`;
+    export const Ipv6EllipsisRegex2 = `((${BasicIpv6Element}:){1}((:${BasicIpv6Element}){1,6}))`;
+    export const Ipv6EllipsisRegex3 = `((${BasicIpv6Element}:){2}((:${BasicIpv6Element}){1,5}))`;
+    export const Ipv6EllipsisRegex4 = `((${BasicIpv6Element}:){3}((:${BasicIpv6Element}){1,4}))`;
+    export const Ipv6EllipsisRegex5 = `((${BasicIpv6Element}:){4}((:${BasicIpv6Element}){1,3}))`;
+    export const Ipv6EllipsisRegex6 = `((${BasicIpv6Element}:){5}((:${BasicIpv6Element}){1,2}))`;
+    export const Ipv6EllipsisRegex7 = `((${BasicIpv6Element}:){6}((:${BasicIpv6Element}){1}))`;
+    export const Ipv6EllipsisRegex8 = `((${BasicIpv6Element}:){7}(:))`;
+    export const Ipv6EllipsisRegexOther = `\\B::\\B|\\B:(:${BasicIpv6Element}){1,7}\\b|\\b(${BasicIpv6Element}:){1,7}:\\B`;
+    export const MergedIpv6Regex = `(${BasicIpv6Regex}|${Ipv6EllipsisRegex1}|${Ipv6EllipsisRegex2}|${Ipv6EllipsisRegex3}|${Ipv6EllipsisRegex4}|${Ipv6EllipsisRegex5}|${Ipv6EllipsisRegex6}|${Ipv6EllipsisRegex7}|${Ipv6EllipsisRegex8})`;
+    export const Ipv6Regex = `(\\b${MergedIpv6Regex}\\b)|(${Ipv6EllipsisRegexOther})`;
 }
