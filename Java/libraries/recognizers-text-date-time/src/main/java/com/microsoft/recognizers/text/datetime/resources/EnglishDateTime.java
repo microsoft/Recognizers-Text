@@ -16,10 +16,10 @@ import com.google.common.collect.ImmutableMap;
 
 public class EnglishDateTime {
 
-    public static final String TillRegex = "(?<till>\\b(to|till|til|until|thru|through)\\b|{BaseDateTime.RangeConnectorSymbolRegex})"
+    public static final String TillRegex = "(?<till>\\b(to|till|til|until|thru|through)\\b|{BaseDateTime.RangeConnectorSymbolRegex}(?!\\s*(h[1-2]|q[1-4])(?!(\\s+of|\\s*,\\s*))))"
             .replace("{BaseDateTime.RangeConnectorSymbolRegex}", BaseDateTime.RangeConnectorSymbolRegex);
 
-    public static final String RangeConnectorRegex = "(?<and>\\b(and|through|to)\\b|{BaseDateTime.RangeConnectorSymbolRegex})"
+    public static final String RangeConnectorRegex = "(?<and>\\b(and|through|to)\\b|{BaseDateTime.RangeConnectorSymbolRegex}(?!\\s*(h[1-2]|q[1-4])(?!(\\s+of|\\s*,\\s*))))"
             .replace("{BaseDateTime.RangeConnectorSymbolRegex}", BaseDateTime.RangeConnectorSymbolRegex);
 
     public static final String RelativeRegex = "\\b(?<order>following|next|coming|upcoming|this|last|past|previous|current|the)\\b";
@@ -197,14 +197,14 @@ public class EnglishDateTime {
             .replace("{RelativeRegex}", RelativeRegex)
             .replace("{QuarterTermRegex}", QuarterTermRegex);
 
-    public static final String QuarterRegexYearFront = "({YearRegex}|{RelativeRegex}\\s+year)('s)?\\s+(the\\s+)?(-)?{QuarterTermRegex}"
+    public static final String QuarterRegexYearFront = "({YearRegex}|{RelativeRegex}\\s+year)('s)?(\\s*-\\s*|\\s+(the\\s+)?)?{QuarterTermRegex}"
             .replace("{YearRegex}", YearRegex)
             .replace("{RelativeRegex}", RelativeRegex)
             .replace("{QuarterTermRegex}", QuarterTermRegex);
 
     public static final String HalfYearTermRegex = "(?<cardinal>first|1st|second|2nd)\\s+half";
 
-    public static final String HalfYearFrontRegex = "(?<year>((1[5-9]|20)\\d{2})|2100)\\s*(the\\s+)?(-)?h(?<number>[1-2])"
+    public static final String HalfYearFrontRegex = "(?<year>((1[5-9]|20)\\d{2})|2100)(\\s*-\\s*|\\s*(the\\s+)?)?h(?<number>[1-2])"
             .replace("{YearRegex}", YearRegex);
 
     public static final String HalfYearBackRegex = "(the\\s+)?(h(?<number>[1-2])|({HalfYearTermRegex}))(\\s+of|\\s*,\\s*)?\\s+({YearRegex})"

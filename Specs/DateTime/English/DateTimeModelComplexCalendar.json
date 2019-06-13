@@ -9970,15 +9970,15 @@
     ]
   },
   {
-    "Input": "2017 -q1",
+    "Input": "The sales went up during 2017-q1",
     "Context": {
       "ReferenceDateTime": "2019-06-11T00:00:00"
     },
     "Results": [
       {
-        "Text": "2017 -q1",
-        "Start": 0,
-        "End": 7,
+        "Text": "2017-q1",
+        "Start": 25,
+        "End": 31,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -9994,15 +9994,15 @@
     ]
   },
   {
-    "Input": "2017 q1",
+    "Input": "The sales went up during 2017 q1",
     "Context": {
       "ReferenceDateTime": "2019-06-11T00:00:00"
     },
     "Results": [
       {
         "Text": "2017 q1",
-        "Start": 0,
-        "End": 6,
+        "Start": 25,
+        "End": 31,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -10018,23 +10018,23 @@
     ]
   },
   {
-    "Input": "I'll be out during 2016 h1",
+    "Input": "2019 H2 will bring challenges",
     "Context": {
       "ReferenceDateTime": "2019-06-11T00:00:00"
     },
     "Results": [
       {
-        "Text": "2016 h1",
-        "Start": 19,
-        "End": 25,
+        "Text": "2019 h2",
+        "Start": 0,
+        "End": 6,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
             {
-              "timex": "(2016-01-01,2016-07-01,P6M)",
+              "timex": "(2019-07-01,2020-01-01,P6M)",
               "type": "daterange",
-              "start": "2016-01-01",
-              "end": "2016-07-01"
+              "start": "2019-07-01",
+              "end": "2020-01-01"
             }
           ]
         }
@@ -10042,23 +10042,98 @@
     ]
   },
   {
-    "Input": "I'll be out during 2016 -h1",
+    "Input": "2019-H2 will bring challenges",
     "Context": {
       "ReferenceDateTime": "2019-06-11T00:00:00"
     },
     "Results": [
       {
-        "Text": "2016 -h1",
-        "Start": 19,
-        "End": 26,
+        "Text": "2019-h2",
+        "Start": 0,
+        "End": 6,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
             {
-              "timex": "(2016-01-01,2016-07-01,P6M)",
+              "timex": "(2019-07-01,2020-01-01,P6M)",
               "type": "daterange",
-              "start": "2016-01-01",
-              "end": "2016-07-01"
+              "start": "2019-07-01",
+              "end": "2020-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The sales went up during from 2017-q1 to 2018-q1",
+    "Context": {
+      "ReferenceDateTime": "2019-06-11T00:00:00"
+    },
+    "NotSupported": "python, javascript",
+    "Results": [
+      {
+        "Text": "from 2017-q1 to 2018-q1",
+        "Start": 25,
+        "End": 47,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2017-01-01,2018-01-01,P12M)",
+              "type": "daterange",
+              "start": "2017-01-01",
+              "end": "2018-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The sales went up during from 2017 q1 to 2018 q1",
+    "Context": {
+      "ReferenceDateTime": "2019-06-11T00:00:00"
+    },
+    "NotSupported": "python, javascript",
+    "Results": [
+      {
+        "Text": "from 2017 q1 to 2018 q1",
+        "Start": 25,
+        "End": 47,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2017-01-01,2018-01-01,P12M)",
+              "type": "daterange",
+              "start": "2017-01-01",
+              "end": "2018-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The sales went up during from q1 of 2017 - q3 of 2018",
+    "Context": {
+      "ReferenceDateTime": "2019-06-11T00:00:00"
+    },
+    "NotSupported": "python, javascript",
+    "Results": [
+      {
+        "Text": "from q1 of 2017 - q3 of 2018",
+        "Start": 25,
+        "End": 52,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2017-01-01,2018-07-01,P18M)",
+              "type": "daterange",
+              "start": "2017-01-01",
+              "end": "2018-07-01"
             }
           ]
         }

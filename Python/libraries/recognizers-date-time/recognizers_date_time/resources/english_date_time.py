@@ -9,8 +9,8 @@
 from .base_date_time import BaseDateTime
 # pylint: disable=line-too-long
 class EnglishDateTime:
-    TillRegex = f'(?<till>\\b(to|till|til|until|thru|through)\\b|{BaseDateTime.RangeConnectorSymbolRegex})'
-    RangeConnectorRegex = f'(?<and>\\b(and|through|to)\\b|{BaseDateTime.RangeConnectorSymbolRegex})'
+    TillRegex = f'(?<till>\\b(to|till|til|until|thru|through)\\b|{BaseDateTime.RangeConnectorSymbolRegex}(?!\\s*(h[1-2]|q[1-4])(?!(\\s+of|\\s*,\\s*))))'
+    RangeConnectorRegex = f'(?<and>\\b(and|through|to)\\b|{BaseDateTime.RangeConnectorSymbolRegex}(?!\\s*(h[1-2]|q[1-4])(?!(\\s+of|\\s*,\\s*))))'
     RelativeRegex = f'\\b(?<order>following|next|coming|upcoming|this|last|past|previous|current|the)\\b'
     StrictRelativeRegex = f'\\b(?<order>following|next|coming|upcoming|this|last|past|previous|current)\\b'
     UpcomingPrefixRegex = f'((this\\s+)?(upcoming|coming))'
@@ -66,9 +66,9 @@ class EnglishDateTime:
     NumberCombinedWithDateUnit = f'\\b(?<num>\\d+(\\.\\d*)?){DateUnitRegex}'
     QuarterTermRegex = f'\\b(((?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th)[ -]+quarter)|(q(?<number>[1-4])))\\b'
     QuarterRegex = f'(the\\s+)?{QuarterTermRegex}((\\s+of|\\s*,\\s*)?\\s+({YearRegex}|{RelativeRegex}\\s+year))?'
-    QuarterRegexYearFront = f'({YearRegex}|{RelativeRegex}\\s+year)(\'s)?\\s+(the\\s+)?(-)?{QuarterTermRegex}'
+    QuarterRegexYearFront = f'({YearRegex}|{RelativeRegex}\\s+year)(\'s)?(\\s*-\\s*|\\s+(the\\s+)?)?{QuarterTermRegex}'
     HalfYearTermRegex = f'(?<cardinal>first|1st|second|2nd)\\s+half'
-    HalfYearFrontRegex = f'(?<year>((1[5-9]|20)\\d{{2}})|2100)\\s*(the\\s+)?(-)?h(?<number>[1-2])'
+    HalfYearFrontRegex = f'(?<year>((1[5-9]|20)\\d{{2}})|2100)(\\s*-\\s*|\\s*(the\\s+)?)?h(?<number>[1-2])'
     HalfYearBackRegex = f'(the\\s+)?(h(?<number>[1-2])|({HalfYearTermRegex}))(\\s+of|\\s*,\\s*)?\\s+({YearRegex})'
     HalfYearRelativeRegex = f'(the\\s+)?{HalfYearTermRegex}(\\s+of|\\s*,\\s*)?\\s+({RelativeRegex}\\s+year)'
     AllHalfYearRegex = f'({HalfYearFrontRegex})|({HalfYearBackRegex})|({HalfYearRelativeRegex})'

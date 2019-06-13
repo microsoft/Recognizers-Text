@@ -8,8 +8,8 @@
 
 import { BaseDateTime } from "./baseDateTime";
 export namespace EnglishDateTime {
-	export const TillRegex = `(?<till>\\b(to|till|til|until|thru|through)\\b|${BaseDateTime.RangeConnectorSymbolRegex})`;
-	export const RangeConnectorRegex = `(?<and>\\b(and|through|to)\\b|${BaseDateTime.RangeConnectorSymbolRegex})`;
+	export const TillRegex = `(?<till>\\b(to|till|til|until|thru|through)\\b|${BaseDateTime.RangeConnectorSymbolRegex}(?!\\s*(h[1-2]|q[1-4])(?!(\\s+of|\\s*,\\s*))))`;
+	export const RangeConnectorRegex = `(?<and>\\b(and|through|to)\\b|${BaseDateTime.RangeConnectorSymbolRegex}(?!\\s*(h[1-2]|q[1-4])(?!(\\s+of|\\s*,\\s*))))`;
 	export const RelativeRegex = `\\b(?<order>following|next|coming|upcoming|this|last|past|previous|current|the)\\b`;
 	export const StrictRelativeRegex = `\\b(?<order>following|next|coming|upcoming|this|last|past|previous|current)\\b`;
 	export const UpcomingPrefixRegex = `((this\\s+)?(upcoming|coming))`;
@@ -65,9 +65,9 @@ export namespace EnglishDateTime {
 	export const NumberCombinedWithDateUnit = `\\b(?<num>\\d+(\\.\\d*)?)${DateUnitRegex}`;
 	export const QuarterTermRegex = `\\b(((?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th)[ -]+quarter)|(q(?<number>[1-4])))\\b`;
 	export const QuarterRegex = `(the\\s+)?${QuarterTermRegex}((\\s+of|\\s*,\\s*)?\\s+(${YearRegex}|${RelativeRegex}\\s+year))?`;
-	export const QuarterRegexYearFront = `(${YearRegex}|${RelativeRegex}\\s+year)('s)?\\s+(the\\s+)?(-)?${QuarterTermRegex}`;
+	export const QuarterRegexYearFront = `(${YearRegex}|${RelativeRegex}\\s+year)('s)?(\\s*-\\s*|\\s+(the\\s+)?)?${QuarterTermRegex}`;
 	export const HalfYearTermRegex = `(?<cardinal>first|1st|second|2nd)\\s+half`;
-	export const HalfYearFrontRegex = `(?<year>((1[5-9]|20)\\d{2})|2100)\\s*(the\\s+)?(-)?h(?<number>[1-2])`;
+	export const HalfYearFrontRegex = `(?<year>((1[5-9]|20)\\d{2})|2100)(\\s*-\\s*|\\s*(the\\s+)?)?h(?<number>[1-2])`;
 	export const HalfYearBackRegex = `(the\\s+)?(h(?<number>[1-2])|(${HalfYearTermRegex}))(\\s+of|\\s*,\\s*)?\\s+(${YearRegex})`;
 	export const HalfYearRelativeRegex = `(the\\s+)?${HalfYearTermRegex}(\\s+of|\\s*,\\s*)?\\s+(${RelativeRegex}\\s+year)`;
 	export const AllHalfYearRegex = `(${HalfYearFrontRegex})|(${HalfYearBackRegex})|(${HalfYearRelativeRegex})`;
