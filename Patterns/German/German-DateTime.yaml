@@ -57,7 +57,7 @@ RelativeMonthRegex: !nestedRegex
   def: (?<relmonth>{RelativeRegex}\s+monat(s)?)
   references: [RelativeRegex]
 WrittenMonthRegex: !simpleRegex
-  def: ((monat\s*)?(?<month>april|apr\.|august|aug\.|dezember|dez\.|februar|feb\.|januar|jan\.|juli|jul\.|juni|jun\.|märz|mai|november|nov\.|oktober|okt\.|september|sep\.))
+  def: ((monat\s*)?(?<month>april|apr\.|august|aug\.|dezember|dez\.|februar|feber|feb\.|januar|j[äa]nner|jan\.|juli|julei|jul\.|jun[io]|jun\.|märz|mai|november|nov\.|oktober|okt\.|september|sep\.))
 MonthSuffixRegex: !nestedRegex
   def: (?<msuf>(im\s*|des\s*)?({RelativeMonthRegex}|{WrittenMonthRegex}|{MonthNumRegex}))
   references: [ RelativeMonthRegex, WrittenMonthRegex, MonthNumRegex ]
@@ -76,10 +76,10 @@ BetweenRegex: !nestedRegex
   def: ((zwischen\s+)({DayRegex})(\s+{MonthSuffixRegex})?\s*{RangeConnectorRegex}\s*({DayRegex})(\s+{MonthSuffixRegex})((\s+|\s*,\s*){YearRegex})?|(zwischen\s+)({DayRegex})(\s+{MonthSuffixRegex})?\s*{RangeConnectorRegex}\s*({DayRegex})(\s+{MonthSuffixRegex})?((\s+|\s*,\s*){YearRegex})?)
   references: [ DayRegex, RangeConnectorRegex , MonthSuffixRegex, YearRegex ]
 MonthWithYear: !nestedRegex
-  def: \b((?<month>april|apr\.|august|aug\.|dezember|dez\.|februar|feb\.|januar|jan\.|juli|jul\.|juni|jun\.|märz|mai|november|nov\.|oktober|okt\.|september|sep\.)(\s*),?(\s+des)?(\s*)({YearRegex}|(?<order>nächsten|letzten|diese(s|n))\s+jahres))
+  def: \b((?<month>april|apr\.|august|aug\.|dezember|dez\.|februar|feber|feb\.|januar|j[äa]nner|jan\.|juli|julei|jul\.|jun[io]|jun\.|märz|mai|november|nov\.|oktober|okt\.|september|sep\.)(\s*),?(\s+des)?(\s*)({YearRegex}|(?<order>nächsten|letzten|diese(s|n))\s+jahres))
   references: [ YearRegex ]
 OneWordPeriodRegex: !nestedRegex
-  def: \b((((im\s+)?monat\s+)?({RelativeRegex}\s*(jahr\s*(im\s*)?)?)?(?<month>april|apr\.|august|aug\.|dezember|dez\.|februar|feb\.|januar|jan\.|juli|jul\.|juni|jun\.|märz|mai|november|nov\.|oktober|okt\.|september|sep\.))|({RelativeRegex}\s+)?(wochenende|woche|monat|jahr)|wochenende|(monat|jahr))\b
+  def: \b((((im\s+)?monat\s+)?({RelativeRegex}\s*(jahr\s*(im\s*)?)?)?(?<month>april|apr\.|august|aug\.|dezember|dez\.|februar|feber|feb\.|januar|j[äa]nner|jan\.|juli|julei|jul\.|jun[io]|jun\.|märz|mai|november|nov\.|oktober|okt\.|september|sep\.))|({RelativeRegex}\s+)?(wochenende|woche|monat|jahr)|wochenende|(monat|jahr))\b
   references: [ RelativeRegex ]
 MonthNumWithYear: !nestedRegex
   def: ({YearRegex}(\s*)[/\-\.](\s*){MonthNumRegex})|({MonthNumRegex}(\s*)[/\-\.](\s*){YearRegex})
@@ -121,7 +121,7 @@ WeekOfRegex: !simpleRegex
 MonthOfRegex: !simpleRegex
   def: (monat)(\s*)(des)
 MonthRegex: !simpleRegex
-  def: (?<month>april|apr.|august|aug.|dezember|dez.|februar|feb.|januar|jan.|juli|jul.|juni|jun.|märz|mai|november|nov.|oktober|okt.|september|sep.)
+  def: (?<month>april|apr.|august|aug.|dezember|dez.|februar|feber|feb.|januar|jan.|juli|jul.|juni|jun.|märz|mai|november|nov.|oktober|okt.|september|sep.)
 #This is a look-behind assertion. Some cases should extract two digits as year like 11/25/16, where 16 means 2016. 
 #The assertion determines if not connected with am/pm or hour separator (:), which should be a time.
 DateYearRegex: !nestedRegex
@@ -670,12 +670,17 @@ MonthOfYear: !dictionary
   types: [ string, int ]
   entries:
     'januar': 1
+    'janner': 1
+    'jänner': 1
     'februar': 2
+    'feber': 2
     'märz': 3
     'april': 4
     'mai': 5
     'juni': 6
+    'juno': 6
     'juli': 7
+    'julei': 7
     'august': 8
     'september': 9
     'oktober': 10
