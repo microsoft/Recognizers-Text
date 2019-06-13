@@ -2,9 +2,11 @@ package com.microsoft.recognizers.text.datetime.extractors;
 
 import com.microsoft.recognizers.text.ExtractResult;
 import com.microsoft.recognizers.text.datetime.Constants;
+import com.microsoft.recognizers.text.datetime.DateTimeOptions;
 import com.microsoft.recognizers.text.datetime.extractors.config.IDateTimePeriodExtractorConfiguration;
 import com.microsoft.recognizers.text.datetime.extractors.config.ResultIndex;
 import com.microsoft.recognizers.text.datetime.utilities.RegexExtension;
+import com.microsoft.recognizers.text.datetime.utilities.TimeZoneUtility;
 import com.microsoft.recognizers.text.datetime.utilities.Token;
 import com.microsoft.recognizers.text.utilities.Match;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
@@ -53,7 +55,13 @@ public class BaseDateTimePeriodExtractor implements IDateTimeExtractor {
         tokens.addAll(matchDateWithPeriodPrefix(input, reference, new ArrayList<ExtractResult>(dateErs)));
         tokens.addAll(mergeDateWithTimePeriodSuffix(input, new ArrayList<ExtractResult>(dateErs), new ArrayList<ExtractResult>(timeErs)));
 
-        return Token.mergeAllTokens(tokens, input, getExtractorName());
+        List<ExtractResult> ers = Token.mergeAllTokens(tokens, input, getExtractorName());
+
+        if (config.getOptions().match(DateTimeOptions.EnablePreview)) {
+            ers = TimeZoneUtility.mergeTimeZones(ers, config.getTimeZoneExtractor().extract(input, reference), input);
+        }
+
+        return ers;
     }
 
     private List<Token> matchSimpleCases(String input, LocalDateTime reference) {
