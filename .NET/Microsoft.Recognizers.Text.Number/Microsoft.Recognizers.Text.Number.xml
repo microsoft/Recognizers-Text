@@ -102,22 +102,27 @@
         </member>
         <member name="F:Microsoft.Recognizers.Text.Number.NumberOptions.None">
             <summary>
-            Represents None
+            None
             </summary>
         </member>
         <member name="F:Microsoft.Recognizers.Text.Number.NumberOptions.PercentageMode">
             <summary>
-            Represents PercentageMode
+            PercentageMode
+            </summary>
+        </member>
+        <member name="F:Microsoft.Recognizers.Text.Number.NumberOptions.SuppressExtendedTypes">
+            <summary>
+            SuppressExtendedTypes, mode that skips extraction of extra types not in v1. May be removed later.
             </summary>
         </member>
         <member name="F:Microsoft.Recognizers.Text.Number.NumberOptions.ExperimentalMode">
             <summary>
-            Represents ExperimentalMode
+            ExperimentalMode
             </summary>
         </member>
         <member name="F:Microsoft.Recognizers.Text.Number.NumberOptions.EnablePreview">
             <summary>
-            Represents Ordinal EnablePreview
+            EnablePreview
             </summary>
         </member>
         <member name="F:Microsoft.Recognizers.Text.Number.AgnosticNumberParserType.Cardinal">
