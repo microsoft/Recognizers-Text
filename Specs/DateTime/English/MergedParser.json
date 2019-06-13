@@ -204,6 +204,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupported": "python, javascript, java",
     "Results": [
       {
         "Text": "Easter",
@@ -211,14 +212,43 @@
         "Value": {
           "values": [
             {
-              "timex": "",
+              "timex": "XXXX-03-27",
               "type": "date",
-              "value": "not resolved"
+              "value": "2016-03-27"
+            },
+            {
+              "timex": "XXXX-03-27",
+              "type": "date",
+              "value": "2017-04-16"
             }
           ]
         },
         "Start": 23,
         "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "Set an appointment for Easter 2019",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python, javascript, java",
+    "Results": [
+      {
+        "Text": "Easter 2019",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2019-04-21",
+              "type": "date",
+              "value": "2019-04-21"
+            }
+          ]
+        },
+        "Start": 23,
+        "Length": 11
       }
     ]
   },
@@ -797,41 +827,51 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupported": "python, javascript, java",
     "Results": [
       {
-        "Text": "Easter",
+        "Text": "Easter Sunday",
         "Type": "datetimeV2.date",
         "Value": {
           "values": [
             {
-              "timex": "",
+              "timex": "XXXX-03-27",
               "type": "date",
-              "value": "not resolved"
+              "value": "2016-03-27"
+            },
+            {
+              "timex": "XXXX-03-27",
+              "type": "date",
+              "value": "2017-04-16"
             }
           ]
         },
         "Start": 23,
-        "Length": 6
-      },
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Set an appointment for Easter Monday 2017",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python, javascript, java",
+    "Results": [
       {
-        "Text": "Sunday",
+        "Text": "Easter Monday 2017",
         "Type": "datetimeV2.date",
         "Value": {
           "values": [
             {
-              "timex": "XXXX-WXX-7",
+              "timex": "2017-04-17",
               "type": "date",
-              "value": "2016-11-06"
-            },
-            {
-              "timex": "XXXX-WXX-7",
-              "type": "date",
-              "value": "2016-11-13"
+              "value": "2017-04-17"
             }
           ]
         },
-        "Start": 30,
-        "Length": 6
+        "Start": 23,
+        "Length": 18
       }
     ]
   },
