@@ -15,36 +15,6 @@
     ]
   },
   {
-    "Input": "trentaseiesimo",
-    "NotSupportedByDesign": "python,javascript,python",
-    "Results": [
-      {
-        "Text": "trentaseiesimo",
-        "TypeName": "ordinal",
-        "Resolution": {
-          "value": "36",
-          "offset":"36",
-          "relativeTo":"start"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "quinto",
-    "NotSupportedByDesign": "python,javascript,python",
-    "Results": [
-      {
-        "Text": "quinto",
-        "TypeName": "ordinal",
-        "Resolution": {
-          "value": "5",
-          "offset":"5",
-          "relativeTo":"start"
-        }
-      }
-    ]
-  },
-  {
     "Input": "trilionesimo",
     "NotSupportedByDesign": "python,javascript,java",
     "Results": [
@@ -60,15 +30,15 @@
     ]
   },
   {
-    "Input": "cento milionesimo",
+    "Input": "cento trilionesimo",
     "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
-        "Text": "cento milionesimo",
+        "Text": "cento trilionesimo",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "100000000",
-          "offset":"100000000",
+          "value": "1E+20",
+          "offset":"1E+20",
           "relativeTo":"start"
         }
       }
@@ -166,51 +136,6 @@
     ]
   },
   {
-    "Input": "trentesimo",
-    "NotSupportedByDesign": "python,javascript,java",
-    "Results": [
-      {
-        "Text": "trentesimo",
-        "TypeName": "ordinal",
-        "Resolution": {
-          "value": "30",
-            "offset":"30",
-          "relativeTo":"start"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "dodicesimo",
-    "NotSupportedByDesign": "python,javascript,java",
-    "Results": [
-      {
-        "Text": "dodicesimo",
-        "TypeName": "ordinal",
-        "Resolution": {
-          "value": "12",
-          "offset":"12",
-          "relativeTo":"start"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "il centoventisettesimo classificato",
-    "NotSupportedByDesign": "python,javascript,java",
-    "Results": [
-      {
-        "Text": "centoventisettesimo",
-        "TypeName": "ordinal",
-        "Resolution": {
-          "value": "127",
-          "offset":"127",
-          "relativeTo":"start"
-        }
-      }
-    ]
-  },
-  {
     "Input": "venticinquesimo",
     "NotSupportedByDesign": "python,javascript,java",
     "Results": [
@@ -280,6 +205,96 @@
         "Resolution": {
           "value": "1",
           "offset":"1",
+          "relativeTo":"start"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "trentaseiesimo",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "trentaseiesimo",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "36",
+          "offset":"36",
+          "relativeTo":"start"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "quinto",
+    "NotSupportedByDesign": "python,javascript,python",
+    "Results": [
+      {
+        "Text": "quinto",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "5",
+          "offset":"5",
+          "relativeTo":"start"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "cento milionesimo",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "cento milionesimo",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "100000000",
+          "offset":"100000000",
+          "relativeTo":"start"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "trentesimo",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "trentesimo",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "30",
+            "offset":"30",
+          "relativeTo":"start"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "dodicesimo",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "dodicesimo",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "12",
+          "offset":"12",
+          "relativeTo":"start"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "il centoventisettesimo classificato",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "centoventisettesimo",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "127",
+          "offset":"127",
           "relativeTo":"start"
         }
       }
