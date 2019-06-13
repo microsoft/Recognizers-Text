@@ -54,11 +54,6 @@ namespace Microsoft.Recognizers.Text.Number.Italian
 
         public Regex OneToNineOrdinalRegex { get; }
 
-        /*public override IEnumerable<string> NormalizeTokenSet(IEnumerable<string> tokens, ParseResult context)
-        {
-            return tokens;
-        }*/
-
         public override IEnumerable<string> NormalizeTokenSet(IEnumerable<string> tokens, ParseResult context)
         {
             var fracWords = new List<string>();
@@ -78,6 +73,11 @@ namespace Microsoft.Recognizers.Text.Number.Italian
                 }
             }
 
+            /*The following piece of code is needed in Italian to correctly compute some fraction patterns
+             * e.g. 'due milioni duemiladuecento quinti' (=2002200/5) which is otherwise interpreted as
+             * 2000000/2205 (in Italian, isolated ordinals <10 have a different form respect to when
+             * they are concatenated to other numbers, so the following lines try to keep them isolated
+             * by concatenating the two previous numbers) */
             var fracLen = fracWords.Count;
             if (fracLen > 2 && this.OneToNineOrdinalRegex.Match(fracWords[fracLen - 1]).Success)
             {
@@ -105,8 +105,6 @@ namespace Microsoft.Recognizers.Text.Number.Italian
 
             long value = 0;
             long prevValue = 0;
-
-            // var listValue = new List<long>();
             long finalValue = 0;
             var strBuilder = new StringBuilder();
             int lastGoodChar = 0;
@@ -138,7 +136,6 @@ namespace Microsoft.Recognizers.Text.Number.Italian
 
                     finalValue += value;
 
-                    // listValue.Add(value);
                     strBuilder.Clear();
                     i = lastGoodChar++;
                     value = 0;

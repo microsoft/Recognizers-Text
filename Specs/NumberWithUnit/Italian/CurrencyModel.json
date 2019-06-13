@@ -28,11 +28,11 @@
     ]
   },
   {
-    "Input": "pagamento siegel e shuster di 94.000 dollari per ritirare tutte le richieste.",
+    "Input": "pagamento siegel e shuster di $94.000 per ritirare tutte le richieste.",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "94.000 dollari",
+        "Text": "$94.000",
         "TypeName": "currency",
         "Resolution": {
           "value": "94000",

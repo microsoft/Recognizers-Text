@@ -444,7 +444,6 @@ AmbiguousCurrencyUnitList: !list
     - jod
     - kgs
     - lak
-    #- le
     - lei
     - mga
     - mop
@@ -594,8 +593,6 @@ VolumeSuffixList: !dictionary
 AmbiguousVolumeUnitList: !list
   types: [ string ]
   entries:
-    #- dal
-    #- l
     - oncia
     - tazza
     - cucchiaino
