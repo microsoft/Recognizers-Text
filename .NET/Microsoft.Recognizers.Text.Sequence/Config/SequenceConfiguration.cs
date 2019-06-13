@@ -1,4 +1,3 @@
-﻿﻿using System;
 using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text.Sequence
