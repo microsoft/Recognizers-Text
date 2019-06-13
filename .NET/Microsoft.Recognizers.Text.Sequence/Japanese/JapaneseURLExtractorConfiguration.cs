@@ -2,12 +2,12 @@
 using Microsoft.Recognizers.Definitions;
 using Microsoft.Recognizers.Definitions.Chinese;
 
-namespace Microsoft.Recognizers.Text.Sequence.Chinese
+namespace Microsoft.Recognizers.Text.Sequence.Japanese
 {
-    public class ChineseURLExtractorConfiguration : SequenceConfiguration
+    public class JapaneseURLExtractorConfiguration : SequenceConfiguration
     {
 
-        public ChineseURLExtractorConfiguration(SequenceOptions options)
+        public JapaneseURLExtractorConfiguration(SequenceOptions options)
             : base(options)
         {
             UrlRegex = new Regex(URLDefinitions.UrlRegex, RegexOptions.Compiled);

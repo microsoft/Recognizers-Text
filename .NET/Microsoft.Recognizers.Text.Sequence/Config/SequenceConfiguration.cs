@@ -1,6 +1,9 @@
-﻿namespace Microsoft.Recognizers.Text.Sequence
+﻿﻿using System;
+using System.Text.RegularExpressions;
+
+namespace Microsoft.Recognizers.Text.Sequence
 {
-    public class SequenceConfiguration : ISequenceConfiguration
+    public class SequenceConfiguration
     {
         public SequenceConfiguration(SequenceOptions options = SequenceOptions.None)
         {
@@ -8,6 +11,10 @@
         }
 
         public SequenceOptions Options { get; }
+
+        public Regex IpUrlRegex { get; set; }
+
+        public Regex UrlRegex { get; set; }
 
     }
 }

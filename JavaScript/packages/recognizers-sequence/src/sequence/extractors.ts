@@ -232,7 +232,6 @@ export class BaseEmailExtractor extends BaseSequenceExtractor {
 
 export interface IURLExtractorConfiguration {
     UrlRegex: RegExp;
-    UrlRegex2: RegExp;
     IpUrlRegex: RegExp;
 }
 
@@ -244,7 +243,7 @@ export class BaseURLExtractor extends BaseSequenceExtractor {
         super();
         this.regexes = new Map<RegExp, string>()
             .set(config.UrlRegex, Constants.URL_REGEX)
-            .set(config.UrlRegex2, Constants.URL_REGEX)
+            .set(RegExpUtility.getSafeRegExp(BaseURL.UrlRegex2), Constants.URL_REGEX)
             .set(config.IpUrlRegex, Constants.URL_REGEX)
         this.ambiguousTimeTerm = RegExpUtility.getSafeRegExp(BaseURL.AmbiguousTimeTerm);
     }

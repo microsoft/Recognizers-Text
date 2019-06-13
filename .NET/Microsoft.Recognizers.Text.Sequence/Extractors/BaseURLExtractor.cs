@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions;
+using Microsoft.Recognizers.Definitions.Chinese;
 using Microsoft.Recognizers.Text.Matcher;
 
 namespace Microsoft.Recognizers.Text.Sequence
@@ -11,24 +12,24 @@ namespace Microsoft.Recognizers.Text.Sequence
     public class BaseURLExtractor : BaseSequenceExtractor
     {
 
-        private readonly IURLExtractorConfiguration config;
+        private SequenceConfiguration config;
 
-        public BaseURLExtractor(IURLExtractorConfiguration config)
+        public BaseURLExtractor(SequenceConfiguration config)
         {
             this.config = config;
 
             var regexes = new Dictionary<Regex, string>
             {
                 {
-                    config.IpUrlRegex,
-                    Constants.URL_REGEX
-                },
-                {
                     config.UrlRegex,
                     Constants.URL_REGEX
                 },
                 {
-                    config.UrlRegex2,
+                    config.IpUrlRegex,
+                    Constants.URL_REGEX
+                },
+                {
+                    new Regex(BaseURL.UrlRegex2, RegexOptions.Compiled),
                     Constants.URL_REGEX
                 },
             };
