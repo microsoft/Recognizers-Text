@@ -211,9 +211,9 @@ namespace Microsoft.Recognizers.Definitions.English
 		public const string AllRegex = @"\b(?<all>(all|full|whole)(\s+|-)(?<unit>year|month|week|day))\b";
 		public const string HalfRegex = @"(((a|an)\s*)|\b)(?<half>half\s+(?<unit>year|month|week|day|hour))\b";
 		public const string ConjunctionRegex = @"\b((and(\s+for)?)|with)\b";
-		public static readonly string HolidayRegex1 = $@"\b(?<holiday>clean monday|good friday|ash wednesday|mardi gras|washington's birthday|mao's birthday|chinese new year|new years' eve|new year's eve|new year 's eve|new years eve|new year eve|new years'|new year's|new year 's|new years|new year|may\s*day|yuan dan|april fools|christmas eve|christmas|xmas|thanksgiving|black friday|cyber monday|halloween|yuandan|easter)(\s+(of\s+)?({YearRegex}|{RelativeRegex}\s+year))?\b";
-		public static readonly string HolidayRegex2 = $@"\b(?<holiday>all saint's|tree planting day|white lover|s(?:ain)?t?. patrick(?:')?(?:s)?|st george|cinco de mayo|us independence|all hallow|all souls|guy fawkes)(\s+(of\s+)?({YearRegex}|{RelativeRegex}\s+year))?\b";
-		public static readonly string HolidayRegex3 = $@"(?<holiday>(independence|presidents(?:')?|mlk|martin luther king|martin luther king jr|canberra|easter|columbus|thanks\s*giving|cyber monday|christmas|xmas|labour|(international|int'l)\s+workers'?|mother's|mother|mothers|father's|father|fathers|female|single|teacher's|youth|children|arbor|girls|chsmilbuild|lover|labor|earth|inauguration|groundhog|valentine's|s(?:ain)?t?. patrick(?:')?(?:s)?|baptiste|bastille|halloween|veterans(?:')?|memorial|mid[ \-]autumn|moon|spring|lantern|qingming|dragon boat|new years'|new year's|new year 's|new years|new year)\s+(day))(\s+(of\s+)?({YearRegex}|{RelativeRegex}\s+year))?";
+		public static readonly string HolidayRegex1 = $@"\b(?<holiday>mardi gras|(washington|mao)'s birthday|chinese new year|(new\s+(years'|year\s*'s|years?)\s+eve)|(new\s+(years'|year\s*'s|years?)(\s+day)?)|may\s*day|yuan dan|christmas eve|(christmas|xmas)(\s+day)?|black friday|yuandan|easter(\s+(sunday|saturday|monday))?|clean monday|ash wednesday|palm sunday|maundy thursday|good friday|white\s+(sunday|monday)|trinity sunday|pentecost|corpus christi|cyber monday)(\s+(of\s+)?({YearRegex}|{RelativeRegex}\s+year))?\b";
+		public static readonly string HolidayRegex2 = $@"\b(?<holiday>(thanks\s*giving|all saint's|white lover|s(?:ain)?t?. (patrick|george)(?:')?(?:s)?|us independence|all hallow|all souls|guy fawkes|cinco de mayo|halloween|qingming|dragon boat|april fools|tomb\s*sweeping)(\s+day)?)(\s+(of\s+)?({YearRegex}|{RelativeRegex}\s+year))?\b";
+		public static readonly string HolidayRegex3 = $@"(?<holiday>(independence|presidents(?:')?|mlk|martin luther king( jr)?|canberra|ascension|columbus|tree( planting)?|arbor|labou?r|(international|int'l)\s+workers'?|mother's|mothers?|father's|fathers?|female|women('s)?|single|teacher'?s|youth|children|girls|lovers?|earth|inauguration|groundhog|valentine'?s|baptiste|bastille|veterans(?:')?|memorial|mid[ \-]autumn|moon|spring|lantern)\s+day)(\s+(of\s+)?({YearRegex}|{RelativeRegex}\s+year))?";
 		public const string AMTimeRegex = @"(?<am>morning)";
 		public const string PMTimeRegex = @"\b(?<pm>afternoon|evening|night)\b";
 		public const string InclusiveModPrepositions = @"(?<include>((on|in|at)\s+or\s+)|(\s+or\s+(on|in|at)))";
@@ -583,7 +583,18 @@ namespace Microsoft.Recognizers.Definitions.English
 		};
 		public static readonly Dictionary<string, IEnumerable<string>> HolidayNames = new Dictionary<string, IEnumerable<string>>
 		{
-			{ @"easterday", new string[] { @"easterday", @"easter" } },
+			{ @"easterday", new string[] { @"easterday", @"easter", @"eastersunday" } },
+			{ @"ashwednesday", new string[] { @"ashwednesday" } },
+			{ @"palmsunday", new string[] { @"palmsunday" } },
+			{ @"maundythursday", new string[] { @"maundythursday" } },
+			{ @"goodfriday", new string[] { @"goodfriday" } },
+			{ @"eastersaturday", new string[] { @"eastersaturday" } },
+			{ @"eastermonday", new string[] { @"eastermonday" } },
+			{ @"ascensionday", new string[] { @"ascensionday" } },
+			{ @"whitesunday", new string[] { @"whitesunday", @"pentecost", @"pentecostday" } },
+			{ @"whitemonday", new string[] { @"whitemonday" } },
+			{ @"trinitysunday", new string[] { @"trinitysunday" } },
+			{ @"corpuschristi", new string[] { @"corpuschristi" } },
 			{ @"earthday", new string[] { @"earthday" } },
 			{ @"fathers", new string[] { @"fatherday", @"fathersday" } },
 			{ @"mothers", new string[] { @"motherday", @"mothersday" } },
@@ -617,7 +628,7 @@ namespace Microsoft.Recognizers.Definitions.English
 			{ @"inaugurationday", new string[] { @"inaugurationday" } },
 			{ @"groundhougday", new string[] { @"groundhougday" } },
 			{ @"valentinesday", new string[] { @"valentinesday" } },
-			{ @"stpatrickday", new string[] { @"stpatrickday", @"stpatricksday", @"st.patrickday", @"st.patricksday" } },
+			{ @"stpatrickday", new string[] { @"stpatrickday", @"stpatricksday" } },
 			{ @"aprilfools", new string[] { @"aprilfools" } },
 			{ @"stgeorgeday", new string[] { @"stgeorgeday" } },
 			{ @"mayday", new string[] { @"mayday", @"intlworkersday", @"internationalworkersday" } },

@@ -27,7 +27,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var referenceDate = refDate;
             object value = null;
 
-            if (er.Type.Equals(ParserName))
+            if (er.Type.Equals(ParserName, StringComparison.InvariantCulture))
             {
                 var innerResult = ParseHolidayRegexMatch(er.Text, referenceDate);
 
@@ -85,11 +85,11 @@ namespace Microsoft.Recognizers.Text.DateTime
         private DateTimeResolutionResult Match2Date(Match match, DateObject referenceDate)
         {
             var ret = new DateTimeResolutionResult();
-            var holidayStr = this.config.SanitizeHolidayToken(match.Groups["holiday"].Value.ToLowerInvariant());
+            var holidayStr = this.config.SanitizeHolidayToken(match.Groups["holiday"].Value);
 
             // get year (if exist)
-            var yearStr = match.Groups["year"].Value.ToLower();
-            var orderStr = match.Groups["order"].Value.ToLower();
+            var yearStr = match.Groups["year"].Value;
+            var orderStr = match.Groups["order"].Value;
             int year;
             var hasYear = false;
 
