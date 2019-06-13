@@ -1,4 +1,4 @@
-import abc, json, re
+import abc, json
 from .yaml_parser import SimpleRegex, NestedRegex, ParamsRegex, Dictionary, List
 
 
@@ -18,6 +18,15 @@ class DefaultWriter(CodeWriter):
 
     def write(self):
         return f'{self.name} = \'{self.definition}\''
+
+
+class BooleanWriter(CodeWriter):
+    def __init__(self, name, definition):
+        CodeWriter.__init__(self, name)
+        self.definition = definition
+
+    def write(self):
+        return f'{self.name} = {self.definition}'
 
 
 class SimpleRegexWriter(CodeWriter):
@@ -96,9 +105,13 @@ def sanitize(value: str, value_type=None, tokens=None):
 
 
 def create_entry(entry, entry_type: str) -> str:
-    if to_python_type(entry_type) == 'string':
+    p_type = to_python_type(entry_type)
+    if p_type == 'string':
         quote = '"'
         entry = entry.replace('\\', r'\\').replace('"', r'\"')
+    elif p_type == 'bool':
+        quote = ""
+        entry = bool(entry)
     else:
         quote = ""
     return f'{quote}{entry}{quote}'
@@ -109,6 +122,8 @@ def to_python_type(type_: str) -> str:
         return 'float'
     elif type_ == 'char':
         return 'string'
+    elif type_ == 'bool':
+        return 'bool'
     else:
         return type_
 
@@ -130,6 +145,8 @@ def generate_code(root):
         elif type(token) is list:
             inferred_type = 'string'
             lines.append(ArrayWriter(token_name, inferred_type, token))
+        elif type(token) is bool:
+            lines.append(BooleanWriter(token_name, token))
         else:
             lines.append(DefaultWriter(token_name, str(token)))
 

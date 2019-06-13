@@ -7,6 +7,6 @@
 // ------------------------------------------------------------------------------
 
 export namespace BaseGUID {
-	export const GUIDRegexElement = `(([A-Fa-f0-9]{8}(-[A-Fa-f0-9]{4}){3}-[A-Fa-f0-9]{12})|([A-Fa-f0-9]{32}))`;
-	export const GUIDRegex = `(\\b${GUIDRegexElement}\\b|\\{${GUIDRegexElement}\\}|urn:uuid:${GUIDRegexElement}\\b|%7[Bb]${GUIDRegexElement}%7[Dd]|[Xx]\\'${GUIDRegexElement}\\')`;
+    export const GUIDRegexElement = `(([A-Fa-f0-9]{8}(-[A-Fa-f0-9]{4}){3}-[A-Fa-f0-9]{12})|([A-Fa-f0-9]{32}))`;
+    export const GUIDRegex = `(\\b${GUIDRegexElement}\\b|\\{${GUIDRegexElement}\\}|urn:uuid:${GUIDRegexElement}\\b|%7[Bb]${GUIDRegexElement}%7[Dd]|[Xx]\\'${GUIDRegexElement}\\')`;
 }

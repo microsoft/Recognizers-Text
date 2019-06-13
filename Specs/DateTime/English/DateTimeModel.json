@@ -11769,5 +11769,51 @@
         }
       }
     ]
+  },
+  {
+    "Input": "I'll go back on monday the twenty seventh at six pm",
+    "Context": {
+      "ReferenceDateTime": "2019-05-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "monday the twenty seventh at six pm",
+        "Start": 16,
+        "End": 50,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-05-27T18",
+              "type": "datetime",
+              "value": "2019-05-27 18:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back on monday the twenty fourth six pm",
+    "Context": {
+      "ReferenceDateTime": "2019-06-13T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "monday the twenty fourth six pm",
+        "Start": 16,
+        "End": 46,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-06-24T18",
+              "type": "datetime",
+              "value": "2019-06-24 18:00:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

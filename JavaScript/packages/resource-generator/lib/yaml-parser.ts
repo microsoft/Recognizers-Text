@@ -31,7 +31,12 @@ const CharYamlType = new Yaml.Type('!char', {
     construct: (data) => DataTypes.getCharacter(data)
 })
 
-const SCHEMA = Yaml.Schema.create([SimpleRegexYamlType, NestedRegexYamlType, ParamsRegexYamlType, DictionaryYamlType, ListYamlType, CharYamlType]);
+const BooleanYamlType = new Yaml.Type('!bool', {
+    kind: 'scalar',
+    construct: (data) => DataTypes.getBoolean(data)
+})
+
+const SCHEMA = Yaml.Schema.create([SimpleRegexYamlType, NestedRegexYamlType, ParamsRegexYamlType, DictionaryYamlType, ListYamlType, CharYamlType, BooleanYamlType]);
 const yamlOptions = { schema: SCHEMA };
 
 export function parse(fileStream: string) {

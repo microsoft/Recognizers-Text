@@ -19,6 +19,8 @@ namespace Microsoft.Recognizers.Text.Number.German
         {
             this.LangMarker = NumbersDefinitions.LangMarker;
             this.CultureInfo = ci;
+            this.IsCompoundNumberLanguage = NumbersDefinitions.CompoundNumberLanguage;
+            this.IsMultiDecimalSeparatorCulture = NumbersDefinitions.MultiDecimalSeparatorCulture;
 
             this.DecimalSeparatorChar = NumbersDefinitions.DecimalSeparatorChar;
             this.FractionMarkerToken = NumbersDefinitions.FractionMarkerToken;
