@@ -8,6 +8,7 @@ import com.microsoft.recognizers.text.datetime.extractors.BaseDateTimeExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.BaseDurationExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.BaseTimeExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.BaseTimePeriodExtractor;
+import com.microsoft.recognizers.text.datetime.extractors.BaseTimeZoneExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.IDateTimeExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.config.IDateTimePeriodExtractorConfiguration;
 import com.microsoft.recognizers.text.datetime.extractors.config.ResultIndex;
@@ -55,6 +56,7 @@ public class SpanishDateTimePeriodExtractorConfiguration extends BaseOptionsConf
     private final IDateTimeExtractor singleDateTimeExtractor;
     private final IDateTimeExtractor durationExtractor;
     private final IDateTimeExtractor timePeriodExtractor;
+    private final IDateTimeExtractor timeZoneExtractor;
 
     public static final Iterable<Pattern> SimpleCases = new ArrayList<Pattern>() {
         {
@@ -79,6 +81,7 @@ public class SpanishDateTimePeriodExtractorConfiguration extends BaseOptionsConf
         singleDateTimeExtractor = new BaseDateTimeExtractor(new SpanishDateTimeExtractorConfiguration(options));
         durationExtractor = new BaseDurationExtractor(new SpanishDurationExtractorConfiguration(options));
         timePeriodExtractor = new BaseTimePeriodExtractor(new SpanishTimePeriodExtractorConfiguration(options));
+        timeZoneExtractor = new BaseTimeZoneExtractor(new SpanishTimeZoneExtractorConfiguration(options));
     }
 
     @Override
@@ -114,6 +117,11 @@ public class SpanishDateTimePeriodExtractorConfiguration extends BaseOptionsConf
     @Override
     public IDateTimeExtractor getTimePeriodExtractor() {
         return timePeriodExtractor;
+    }
+
+    @Override
+    public IDateTimeExtractor getTimeZoneExtractor() {
+        return timeZoneExtractor;
     }
 
     @Override
