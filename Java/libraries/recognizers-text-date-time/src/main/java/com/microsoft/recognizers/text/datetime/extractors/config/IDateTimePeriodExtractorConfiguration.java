@@ -71,6 +71,8 @@ public interface IDateTimePeriodExtractorConfiguration extends IOptionsConfigura
 
     IDateTimeExtractor getTimePeriodExtractor();
 
+    IDateTimeExtractor getTimeZoneExtractor();
+
     ResultIndex getFromTokenIndex(String text);
 
     boolean hasConnectorToken(String text);

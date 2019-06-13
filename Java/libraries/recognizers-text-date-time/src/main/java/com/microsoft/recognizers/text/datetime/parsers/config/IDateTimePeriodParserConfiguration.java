@@ -36,6 +36,8 @@ public interface IDateTimePeriodParserConfiguration extends IOptionsConfiguratio
 
     IDateTimeParser getDurationParser();
 
+    IDateTimeParser getTimeZoneParser();
+
     Pattern getPureNumberFromToRegex();
 
     Pattern getPureNumberBetweenAndRegex();
