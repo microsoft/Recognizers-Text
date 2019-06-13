@@ -11791,5 +11791,176 @@
         }
       }
     ]
+  },
+  {
+    "Input": "The sales went up during 2017-q1",
+    "Context": {
+      "ReferenceDateTime": "2019-06-11T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "2017-q1",
+        "Start": 25,
+        "End": 31,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2017-01-01,2017-04-01,P3M)",
+              "type": "daterange",
+              "start": "2017-01-01",
+              "end": "2017-04-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The sales went up during 2017 q1",
+    "Context": {
+      "ReferenceDateTime": "2019-06-11T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "2017 q1",
+        "Start": 25,
+        "End": 31,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2017-01-01,2017-04-01,P3M)",
+              "type": "daterange",
+              "start": "2017-01-01",
+              "end": "2017-04-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "2019 H2 will bring challenges",
+    "Context": {
+      "ReferenceDateTime": "2019-06-11T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "2019 h2",
+        "Start": 0,
+        "End": 6,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2019-07-01,2020-01-01,P6M)",
+              "type": "daterange",
+              "start": "2019-07-01",
+              "end": "2020-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "2019-H2 will bring challenges",
+    "Context": {
+      "ReferenceDateTime": "2019-06-11T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "2019-h2",
+        "Start": 0,
+        "End": 6,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2019-07-01,2020-01-01,P6M)",
+              "type": "daterange",
+              "start": "2019-07-01",
+              "end": "2020-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The sales went up during from 2017-q1 to 2018-q1",
+    "Context": {
+      "ReferenceDateTime": "2019-06-11T00:00:00"
+    },
+    "NotSupported": "python, javascript",
+    "Results": [
+      {
+        "Text": "from 2017-q1 to 2018-q1",
+        "Start": 25,
+        "End": 47,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2017-01-01,2018-01-01,P12M)",
+              "type": "daterange",
+              "start": "2017-01-01",
+              "end": "2018-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The sales went up during from 2017 q1 to 2018 q1",
+    "Context": {
+      "ReferenceDateTime": "2019-06-11T00:00:00"
+    },
+    "NotSupported": "python, javascript",
+    "Results": [
+      {
+        "Text": "from 2017 q1 to 2018 q1",
+        "Start": 25,
+        "End": 47,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2017-01-01,2018-01-01,P12M)",
+              "type": "daterange",
+              "start": "2017-01-01",
+              "end": "2018-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The sales went up during from q1 of 2017 - q3 of 2018",
+    "Context": {
+      "ReferenceDateTime": "2019-06-11T00:00:00"
+    },
+    "NotSupported": "python, javascript",
+    "Results": [
+      {
+        "Text": "from q1 of 2017 - q3 of 2018",
+        "Start": 25,
+        "End": 52,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2017-01-01,2018-07-01,P18M)",
+              "type": "daterange",
+              "start": "2017-01-01",
+              "end": "2018-07-01"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

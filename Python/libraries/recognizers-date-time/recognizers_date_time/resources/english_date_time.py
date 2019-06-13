@@ -66,9 +66,9 @@ class EnglishDateTime:
     NumberCombinedWithDateUnit = f'\\b(?<num>\\d+(\\.\\d*)?){DateUnitRegex}'
     QuarterTermRegex = f'\\b(((?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th)[ -]+quarter)|(q(?<number>[1-4])))\\b'
     QuarterRegex = f'(the\\s+)?{QuarterTermRegex}((\\s+of|\\s*,\\s*)?\\s+({YearRegex}|{RelativeRegex}\\s+year))?'
-    QuarterRegexYearFront = f'({YearRegex}|{RelativeRegex}\\s+year)(\'s)?\\s+(the\\s+)?{QuarterTermRegex}'
+    QuarterRegexYearFront = f'({YearRegex}|{RelativeRegex}\\s+year)(\'s)?(\\s*-\\s*|\\s+(the\\s+)?)?{QuarterTermRegex}'
     HalfYearTermRegex = f'(?<cardinal>first|1st|second|2nd)\\s+half'
-    HalfYearFrontRegex = f'(?<year>((1[5-9]|20)\\d{{2}})|2100)\\s*(the\\s+)?h(?<number>[1-2])'
+    HalfYearFrontRegex = f'(?<year>((1[5-9]|20)\\d{{2}})|2100)(\\s*-\\s*|\\s+(the\\s+)?)?h(?<number>[1-2])'
     HalfYearBackRegex = f'(the\\s+)?(h(?<number>[1-2])|({HalfYearTermRegex}))(\\s+of|\\s*,\\s*)?\\s+({YearRegex})'
     HalfYearRelativeRegex = f'(the\\s+)?{HalfYearTermRegex}(\\s+of|\\s*,\\s*)?\\s+({RelativeRegex}\\s+year)'
     AllHalfYearRegex = f'({HalfYearFrontRegex})|({HalfYearBackRegex})|({HalfYearRelativeRegex})'
@@ -253,7 +253,9 @@ class EnglishDateTime:
     DecadeWithCenturyRegex = f'(the\\s+)?(((?<century>\\d|1\\d|2\\d)?(\')?(?<decade>\\d0)(\')?(\\s)?s\\b)|(({CenturyRegex}(\\s+|-)(and\\s+)?)?{DecadeRegex})|({CenturyRegex}(\\s+|-)(and\\s+)?(?<decade>tens|hundreds)))'
     RelativeDecadeRegex = f'\\b((the\\s+)?{RelativeRegex}\\s+((?<number>[\\w,]+)\\s+)?decades?)\\b'
     YearPeriodRegex = f'((((from|during|in)\\s+)?{YearRegex}\\s*({TillRegex})\\s*{YearRegex})|(((between)\\s+){YearRegex}\\s*({RangeConnectorRegex})\\s*{YearRegex}))'
-    ComplexDatePeriodRegex = f'(((from|during|in)\\s+)?(?<start>.+)\\s*({TillRegex})\\s*(?<end>.+)|((between)\\s+)(?<start>.+)\\s*({RangeConnectorRegex})\\s*(?<end>.+))'
+    StrictTillRegex = f'(?<till>\\b(to|till|til|until|thru|through)\\b|{BaseDateTime.RangeConnectorSymbolRegex}(?!\\s*(h[1-2]|q[1-4])(?!(\\s+of|\\s*,\\s*))))'
+    StrictRangeConnectorRegex = f'(?<and>\\b(and|through|to)\\b|{BaseDateTime.RangeConnectorSymbolRegex}(?!\\s*(h[1-2]|q[1-4])(?!(\\s+of|\\s*,\\s*))))'
+    ComplexDatePeriodRegex = f'(((from|during|in)\\s+)?(?<start>.+)\\s*({StrictTillRegex})\\s*(?<end>.+)|((between)\\s+)(?<start>.+)\\s*({StrictRangeConnectorRegex})\\s*(?<end>.+))'
     FailFastRegex = f'{BaseDateTime.DeltaMinuteRegex}|\\b({BaseDateTime.BaseAmDescRegex}|{BaseDateTime.BasePmDescRegex})|{BaseDateTime.BaseAmPmDescRegex}|\\b(zero|{WrittenOneToNineRegex}|{WrittenElevenToNineteenRegex}|{WrittenTensRegex}|{WrittenMonthRegex}|{SeasonDescRegex}|{DecadeRegex}|century|centuries|weekends?|quarters?|half|halves|yesterday|tomorrow|tmr|today|tonight|mornings?|noonish|\\d(-|——)?ish|((the\\s+\\w*)|\\d)th|afternoons?|evenings?|nights?|noon|lunchtime|lunch|dinnertime|dinner|midnight|mid-nights?|midmornings?|mid-mornings?|midafternoonss?|mid-afternoons?|midday|mid-day|daytime|nighttime|overnight|dawn|dusk|sunset|hours?|hrs?|h|minutes?|mins?|seconds?|secs?|eod|eom|eoy|mardi gras|mardi-gras|mardigras|birthday|eve|christmas|xmas|thanksgiving|halloween|yuandan|easter|yuan dan|april fools|patrick|cinco de mayo|all hallow|all souls|guy fawkes|st patrick|hundreds?|noughties|aughts|thousands?)\\b|{WeekDayRegex}|{SetWeekDayRegex}|{NowRegex}|{PeriodicRegex}|\\b({DateUnitRegex}|{ImplicitDayRegex})'
     UnitMap = dict([("decades", "10Y"),
                     ("decade", "10Y"),

@@ -197,14 +197,14 @@ public class EnglishDateTime {
             .replace("{RelativeRegex}", RelativeRegex)
             .replace("{QuarterTermRegex}", QuarterTermRegex);
 
-    public static final String QuarterRegexYearFront = "({YearRegex}|{RelativeRegex}\\s+year)('s)?\\s+(the\\s+)?{QuarterTermRegex}"
+    public static final String QuarterRegexYearFront = "({YearRegex}|{RelativeRegex}\\s+year)('s)?(\\s*-\\s*|\\s+(the\\s+)?)?{QuarterTermRegex}"
             .replace("{YearRegex}", YearRegex)
             .replace("{RelativeRegex}", RelativeRegex)
             .replace("{QuarterTermRegex}", QuarterTermRegex);
 
     public static final String HalfYearTermRegex = "(?<cardinal>first|1st|second|2nd)\\s+half";
 
-    public static final String HalfYearFrontRegex = "(?<year>((1[5-9]|20)\\d{2})|2100)\\s*(the\\s+)?h(?<number>[1-2])"
+    public static final String HalfYearFrontRegex = "(?<year>((1[5-9]|20)\\d{2})|2100)(\\s*-\\s*|\\s+(the\\s+)?)?h(?<number>[1-2])"
             .replace("{YearRegex}", YearRegex);
 
     public static final String HalfYearBackRegex = "(the\\s+)?(h(?<number>[1-2])|({HalfYearTermRegex}))(\\s+of|\\s*,\\s*)?\\s+({YearRegex})"
@@ -843,10 +843,16 @@ public class EnglishDateTime {
             .replace("{TillRegex}", TillRegex)
             .replace("{RangeConnectorRegex}", RangeConnectorRegex);
 
-    public static final String ComplexDatePeriodRegex = "(((from|during|in)\\s+)?(?<start>.+)\\s*({TillRegex})\\s*(?<end>.+)|((between)\\s+)(?<start>.+)\\s*({RangeConnectorRegex})\\s*(?<end>.+))"
+    public static final String StrictTillRegex = "(?<till>\\b(to|till|til|until|thru|through)\\b|{BaseDateTime.RangeConnectorSymbolRegex}(?!\\s*(h[1-2]|q[1-4])(?!(\\s+of|\\s*,\\s*))))"
+            .replace("{BaseDateTime.RangeConnectorSymbolRegex}", BaseDateTime.RangeConnectorSymbolRegex);
+
+    public static final String StrictRangeConnectorRegex = "(?<and>\\b(and|through|to)\\b|{BaseDateTime.RangeConnectorSymbolRegex}(?!\\s*(h[1-2]|q[1-4])(?!(\\s+of|\\s*,\\s*))))"
+            .replace("{BaseDateTime.RangeConnectorSymbolRegex}", BaseDateTime.RangeConnectorSymbolRegex);
+
+    public static final String ComplexDatePeriodRegex = "(((from|during|in)\\s+)?(?<start>.+)\\s*({StrictTillRegex})\\s*(?<end>.+)|((between)\\s+)(?<start>.+)\\s*({StrictRangeConnectorRegex})\\s*(?<end>.+))"
             .replace("{YearRegex}", YearRegex)
-            .replace("{TillRegex}", TillRegex)
-            .replace("{RangeConnectorRegex}", RangeConnectorRegex);
+            .replace("{StrictTillRegex}", StrictTillRegex)
+            .replace("{StrictRangeConnectorRegex}", StrictRangeConnectorRegex);
 
     public static final String FailFastRegex = "{BaseDateTime.DeltaMinuteRegex}|\\b({BaseDateTime.BaseAmDescRegex}|{BaseDateTime.BasePmDescRegex})|{BaseDateTime.BaseAmPmDescRegex}|\\b(zero|{WrittenOneToNineRegex}|{WrittenElevenToNineteenRegex}|{WrittenTensRegex}|{WrittenMonthRegex}|{SeasonDescRegex}|{DecadeRegex}|century|centuries|weekends?|quarters?|half|halves|yesterday|tomorrow|tmr|today|tonight|mornings?|noonish|\\d(-|——)?ish|((the\\s+\\w*)|\\d)th|afternoons?|evenings?|nights?|noon|lunchtime|lunch|dinnertime|dinner|midnight|mid-nights?|midmornings?|mid-mornings?|midafternoonss?|mid-afternoons?|midday|mid-day|daytime|nighttime|overnight|dawn|dusk|sunset|hours?|hrs?|h|minutes?|mins?|seconds?|secs?|eod|eom|eoy|mardi gras|mardi-gras|mardigras|birthday|eve|christmas|xmas|thanksgiving|halloween|yuandan|easter|yuan dan|april fools|patrick|cinco de mayo|all hallow|all souls|guy fawkes|st patrick|hundreds?|noughties|aughts|thousands?)\\b|{WeekDayRegex}|{SetWeekDayRegex}|{NowRegex}|{PeriodicRegex}|\\b({DateUnitRegex}|{ImplicitDayRegex})"
             .replace("{BaseDateTime.DeltaMinuteRegex}", BaseDateTime.DeltaMinuteRegex)

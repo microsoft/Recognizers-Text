@@ -78,9 +78,9 @@ namespace Microsoft.Recognizers.Definitions.English
       public static readonly string NumberCombinedWithDateUnit = $@"\b(?<num>\d+(\.\d*)?){DateUnitRegex}";
       public const string QuarterTermRegex = @"\b(((?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th)[ -]+quarter)|(q(?<number>[1-4])))\b";
       public static readonly string QuarterRegex = $@"(the\s+)?{QuarterTermRegex}((\s+of|\s*,\s*)?\s+({YearRegex}|{RelativeRegex}\s+year))?";
-      public static readonly string QuarterRegexYearFront = $@"({YearRegex}|{RelativeRegex}\s+year)('s)?\s+(the\s+)?{QuarterTermRegex}";
+      public static readonly string QuarterRegexYearFront = $@"({YearRegex}|{RelativeRegex}\s+year)('s)?(\s*-\s*|\s+(the\s+)?)?{QuarterTermRegex}";
       public const string HalfYearTermRegex = @"(?<cardinal>first|1st|second|2nd)\s+half";
-      public static readonly string HalfYearFrontRegex = $@"(?<year>((1[5-9]|20)\d{{2}})|2100)\s*(the\s+)?h(?<number>[1-2])";
+      public static readonly string HalfYearFrontRegex = $@"(?<year>((1[5-9]|20)\d{{2}})|2100)(\s*-\s*|\s+(the\s+)?)?h(?<number>[1-2])";
       public static readonly string HalfYearBackRegex = $@"(the\s+)?(h(?<number>[1-2])|({HalfYearTermRegex}))(\s+of|\s*,\s*)?\s+({YearRegex})";
       public static readonly string HalfYearRelativeRegex = $@"(the\s+)?{HalfYearTermRegex}(\s+of|\s*,\s*)?\s+({RelativeRegex}\s+year)";
       public static readonly string AllHalfYearRegex = $@"({HalfYearFrontRegex})|({HalfYearBackRegex})|({HalfYearRelativeRegex})";
@@ -265,7 +265,9 @@ namespace Microsoft.Recognizers.Definitions.English
       public static readonly string DecadeWithCenturyRegex = $@"(the\s+)?(((?<century>\d|1\d|2\d)?(')?(?<decade>\d0)(')?(\s)?s\b)|(({CenturyRegex}(\s+|-)(and\s+)?)?{DecadeRegex})|({CenturyRegex}(\s+|-)(and\s+)?(?<decade>tens|hundreds)))";
       public static readonly string RelativeDecadeRegex = $@"\b((the\s+)?{RelativeRegex}\s+((?<number>[\w,]+)\s+)?decades?)\b";
       public static readonly string YearPeriodRegex = $@"((((from|during|in)\s+)?{YearRegex}\s*({TillRegex})\s*{YearRegex})|(((between)\s+){YearRegex}\s*({RangeConnectorRegex})\s*{YearRegex}))";
-      public static readonly string ComplexDatePeriodRegex = $@"(((from|during|in)\s+)?(?<start>.+)\s*({TillRegex})\s*(?<end>.+)|((between)\s+)(?<start>.+)\s*({RangeConnectorRegex})\s*(?<end>.+))";
+      public static readonly string StrictTillRegex = $@"(?<till>\b(to|till|til|until|thru|through)\b|{BaseDateTime.RangeConnectorSymbolRegex}(?!\s*(h[1-2]|q[1-4])(?!(\s+of|\s*,\s*))))";
+      public static readonly string StrictRangeConnectorRegex = $@"(?<and>\b(and|through|to)\b|{BaseDateTime.RangeConnectorSymbolRegex}(?!\s*(h[1-2]|q[1-4])(?!(\s+of|\s*,\s*))))";
+      public static readonly string ComplexDatePeriodRegex = $@"(((from|during|in)\s+)?(?<start>.+)\s*({StrictTillRegex})\s*(?<end>.+)|((between)\s+)(?<start>.+)\s*({StrictRangeConnectorRegex})\s*(?<end>.+))";
       public static readonly string FailFastRegex = $@"{BaseDateTime.DeltaMinuteRegex}|\b({BaseDateTime.BaseAmDescRegex}|{BaseDateTime.BasePmDescRegex})|{BaseDateTime.BaseAmPmDescRegex}|\b(zero|{WrittenOneToNineRegex}|{WrittenElevenToNineteenRegex}|{WrittenTensRegex}|{WrittenMonthRegex}|{SeasonDescRegex}|{DecadeRegex}|century|centuries|weekends?|quarters?|half|halves|yesterday|tomorrow|tmr|today|tonight|mornings?|noonish|\d(-|——)?ish|((the\s+\w*)|\d)th|afternoons?|evenings?|nights?|noon|lunchtime|lunch|dinnertime|dinner|midnight|mid-nights?|midmornings?|mid-mornings?|midafternoonss?|mid-afternoons?|midday|mid-day|daytime|nighttime|overnight|dawn|dusk|sunset|hours?|hrs?|h|minutes?|mins?|seconds?|secs?|eod|eom|eoy|mardi gras|mardi-gras|mardigras|birthday|eve|christmas|xmas|thanksgiving|halloween|yuandan|easter|yuan dan|april fools|patrick|cinco de mayo|all hallow|all souls|guy fawkes|st patrick|hundreds?|noughties|aughts|thousands?)\b|{WeekDayRegex}|{SetWeekDayRegex}|{NowRegex}|{PeriodicRegex}|\b({DateUnitRegex}|{ImplicitDayRegex})";
       public static readonly Dictionary<string, string> UnitMap = new Dictionary<string, string>
         {
