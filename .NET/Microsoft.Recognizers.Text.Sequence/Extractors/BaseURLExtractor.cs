@@ -29,7 +29,7 @@ namespace Microsoft.Recognizers.Text.Sequence
                     Constants.URL_REGEX
                 },
                 {
-                    config.UrlRegex2,
+                    new Regex(BaseURL.UrlRegex2, RegexOptions.Compiled),
                     Constants.URL_REGEX
                 },
             };

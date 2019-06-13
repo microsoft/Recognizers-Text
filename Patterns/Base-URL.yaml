@@ -5,15 +5,10 @@ PortRegex: !simpleRegex
   def: (:\d{1,5})
 ExtractionRestrictionRegex: !simpleRegex
   def: (?<=\s|[\'""\(\[:]|^)
-UnicodeRestrictionRegex: !simpleRegex
-  def: (?<=\s|[\'""\(\[:：]|^|[\u0800-\u9FFF])
 # For restrictions+protocol+hostname (without its tld)
 UrlPrefixRegex: !nestedRegex
   def: '({ExtractionRestrictionRegex}{ProtocolRegex}?|{ProtocolRegex})[a-zA-Z0-9][-a-zA-Z0-9._]{0,256}(?<![.])\.'
   references: [ ExtractionRestrictionRegex, ProtocolRegex ]
-UnicodeUrlPrefixRegex: !nestedRegex
-  def: '({UnicodeRestrictionRegex}{ProtocolRegex}?|{ProtocolRegex})[a-zA-Z0-9][-a-zA-Z0-9._]{0,256}(?<![.])\.'
-  references: [ UnicodeRestrictionRegex, ProtocolRegex ]
 # For port+path+query
 UrlSuffixRegex: !nestedRegex
   def: '{PortRegex}?([/#][-a-zA-Z0-9:%_\+.~#?!&//=]*)?(?![-a-zA-Z0-9:%_\+~#?!&//=@])'
@@ -21,9 +16,6 @@ UrlSuffixRegex: !nestedRegex
 UrlRegex: !nestedRegex
   def: '{UrlPrefixRegex}(?<Tld>[a-zA-Z]{2,18}){UrlSuffixRegex}'
   references: [ UrlPrefixRegex, ProtocolRegex, UrlSuffixRegex ]
-UnicodeUrlRegex: !nestedRegex
-  def: '{UnicodeUrlPrefixRegex}(?<Tld>[a-zA-Z]{2,18}){UrlSuffixRegex}'
-  references: [ UnicodeUrlPrefixRegex, ProtocolRegex, UrlSuffixRegex ]
 UrlRegex2: !simpleRegex
   def: '((ht|f)tp(s?)\:\/\/|www\.)[0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*(\.(?<Tld>[0-9a-zA-Z]+))+(:(0-9)*)*(\/?)([a-zA-Z0-9\-\.\?\,\''\/\\\+&amp;%\$#_=@]*)?'
 IpUrlRegex: !nestedRegex
