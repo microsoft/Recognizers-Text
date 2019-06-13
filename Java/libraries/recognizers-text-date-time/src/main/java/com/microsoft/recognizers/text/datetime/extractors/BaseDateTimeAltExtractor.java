@@ -439,6 +439,13 @@ public class BaseDateTimeAltExtractor implements IDateTimeListExtractor {
     private void applyMetadata(List<ExtractResult> ers, HashMap<String, Object> metadata, String parentText) {
         // The first extract results don't need any context
         ExtractResult first = ers.stream().findFirst().orElse(null);
+
+        // Share the timeZone info
+        Map<String, Object> metaDataOrigin = (HashMap<String, Object>)first.getData();
+        if (metaDataOrigin != null && metaDataOrigin.containsKey(Constants.SYS_DATETIME_TIMEZONE)) {
+            metadata.put(Constants.SYS_DATETIME_TIMEZONE, metaDataOrigin.get(Constants.SYS_DATETIME_TIMEZONE));
+        }
+
         HashMap<String, Object> metadataWithoutContext = createMetadata(first.getType(), parentText, null);
         first.setData(mergeMetadata(first.getData(), metadataWithoutContext));
         first.setType(getExtractorName());
