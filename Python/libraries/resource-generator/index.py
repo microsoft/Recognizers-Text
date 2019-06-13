@@ -4,6 +4,7 @@ from lib.base_code_generator import generate
 
 RESOURCES_PATH = ['..', '..', '..', 'Patterns']
 
+
 class Startup:
 
     def main(self, argv) -> int:

@@ -8,22 +8,19 @@ namespace Microsoft.Recognizers.Text.Number
 {
     public class BaseNumberParser : IParser
     {
-
         private static readonly Regex LongFormRegex =
             new Regex(@"\d+", RegexOptions.Singleline);
 
-        private static readonly Regex MultiDecimalSeparatorCultureRegex =
-            new Regex(@"^(en|es|fr|bg)(-)?\b", RegexOptions.Singleline | RegexOptions.Compiled);
-
-        private static readonly List<string> CompoundNumberLanguages = new List<string> { "de-DE", "nl-NL", "sv-SE" };
-
         private readonly bool isMultiDecimalSeparatorCulture = false;
+
+        private readonly bool isCompoundNumberLanguage = false;
 
         public BaseNumberParser(INumberParserConfiguration config)
         {
             this.Config = config;
 
-            this.isMultiDecimalSeparatorCulture = MultiDecimalSeparatorCultureRegex.IsMatch(config.CultureInfo.Name);
+            this.isMultiDecimalSeparatorCulture = config.IsMultiDecimalSeparatorCulture;
+            this.isCompoundNumberLanguage = config.IsCompoundNumberLanguage;
 
             var singleIntFrac = $"{this.Config.WordSeparatorToken}| -|" +
                                 GetKeyRegex(this.Config.CardinalNumberMap.Keys) + "|" +
@@ -32,7 +29,7 @@ namespace Microsoft.Recognizers.Text.Number
             string textNumberPattern;
 
             // Checks for languages that use "compound numbers". I.e. written number parts are not separated by whitespaces or special characters (e.g., dreihundert in German).
-            if (CompoundNumberLanguages.Contains(config.CultureInfo.Name))
+            if (isCompoundNumberLanguage)
             {
                 textNumberPattern = @"(" + singleIntFrac + @")";
             }
@@ -64,7 +61,7 @@ namespace Microsoft.Recognizers.Text.Number
         public virtual ParseResult Parse(ExtractResult extResult)
         {
             // Check if the parser is configured to support specific types
-            if (SupportedTypes != null && !SupportedTypes.Any(t => extResult.Type.Equals(t)))
+            if (SupportedTypes != null && !SupportedTypes.Any(t => extResult.Type.Equals(t, StringComparison.InvariantCulture)))
             {
                 return null;
             }
@@ -300,7 +297,7 @@ namespace Microsoft.Recognizers.Text.Number
                 Metadata = extResult.Metadata,
             };
 
-            var handle = extResult.Text.ToLower();
+            var handle = extResult.Text;
 
             handle = Config.HalfADozenRegex.Replace(handle, Config.HalfADozenText);
 
@@ -321,7 +318,7 @@ namespace Microsoft.Recognizers.Text.Number
 
             while (stringMatch.Success)
             {
-                var matchStr = stringMatch.Groups[0].Value.ToLower();
+                var matchStr = stringMatch.Groups[0].Value;
                 matchStrs.Add(matchStr);
                 stringMatch = stringMatch.NextMatch();
             }
@@ -338,7 +335,7 @@ namespace Microsoft.Recognizers.Text.Number
 
                 while (stringMatch.Success)
                 {
-                    var matchStr = stringMatch.Groups[0].Value.ToLower();
+                    var matchStr = stringMatch.Groups[0].Value;
                     matchStrs.Add(matchStr);
                     stringMatch = stringMatch.NextMatch();
                 }
@@ -361,7 +358,7 @@ namespace Microsoft.Recognizers.Text.Number
                 Type = extResult.Type,
             };
 
-            var resultText = extResult.Text.ToLower();
+            var resultText = extResult.Text;
             if (Config.FractionPrepositionRegex.IsMatch(resultText))
             {
                 var match = Config.FractionPrepositionRegex.Match(resultText);
@@ -533,7 +530,7 @@ namespace Microsoft.Recognizers.Text.Number
             // [6] 2 hundred
             // dot occured.
             double power = 1;
-            var extText = extResult.Text.ToLower();
+            var extText = extResult.Text.ToLowerInvariant();
             int startIndex = 0;
 
             var match = Config.DigitalNumberRegex.Match(extText);
@@ -616,9 +613,9 @@ namespace Microsoft.Recognizers.Text.Number
             double calResult = 0;
             if (isFrac)
             {
-                var deno = calStack.Pop();
+                var denominator = calStack.Pop();
                 var mole = calStack.Pop();
-                calResult += mole / deno;
+                calResult += mole / denominator;
             }
 
             while (calStack.Any())
@@ -643,7 +640,7 @@ namespace Microsoft.Recognizers.Text.Number
 
             if (!string.IsNullOrEmpty(data))
             {
-                if (data.StartsWith(Constants.FRACTION_PREFIX))
+                if (data.StartsWith(Constants.FRACTION_PREFIX, StringComparison.InvariantCulture))
                 {
                     subType = Constants.FRACTION;
                 }
@@ -651,11 +648,11 @@ namespace Microsoft.Recognizers.Text.Number
                 {
                     subType = Constants.POWER;
                 }
-                else if (data.StartsWith(Constants.INTEGER_PREFIX))
+                else if (data.StartsWith(Constants.INTEGER_PREFIX, StringComparison.InvariantCulture))
                 {
                     subType = Constants.INTEGER;
                 }
-                else if (data.StartsWith(Constants.DOUBLE_PREFIX))
+                else if (data.StartsWith(Constants.DOUBLE_PREFIX, StringComparison.InvariantCulture))
                 {
                     subType = Constants.DECIMAL;
                 }
@@ -697,7 +694,7 @@ namespace Microsoft.Recognizers.Text.Number
         // "me pidio $5.00 prestados" and "me pidio $5,00 prestados" -> currency $5
         private bool SkipNonDecimalSeparator(char ch, int distance)
         {
-            var decimalLength = 3;
+            const int decimalLength = 3;
 
             return ch == Config.NonDecimalSeparatorChar && !(distance <= decimalLength && isMultiDecimalSeparatorCulture);
         }
@@ -710,7 +707,7 @@ namespace Microsoft.Recognizers.Text.Number
             // Store all match str.
             while (successMatch.Success)
             {
-                var matchStr = successMatch.Groups[0].Value.ToLower();
+                var matchStr = successMatch.Groups[0].Value;
                 matchStrs.Add(matchStr);
                 successMatch = successMatch.NextMatch();
             }
@@ -801,12 +798,12 @@ namespace Microsoft.Recognizers.Text.Number
                         }
                         else if (Config.CardinalNumberMap.ContainsKey(matchStr))
                         {
-                            if (oldSym.Equals("-"))
+                            if (oldSym.Equals("-", StringComparison.InvariantCulture))
                             {
                                 var sum = tempStack.Pop() + matchValue;
                                 tempStack.Push(sum);
                             }
-                            else if (oldSym.Equals(Config.WrittenIntegerSeparatorTexts.First()) || tempStack.Count() < 2)
+                            else if (oldSym.Equals(Config.WrittenIntegerSeparatorTexts.First(), StringComparison.InvariantCulture) || tempStack.Count() < 2)
                             {
                                 tempStack.Push(matchValue);
                             }

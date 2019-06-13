@@ -16,11 +16,11 @@
 
 namespace Microsoft.Recognizers.Definitions
 {
-	using System;
-	using System.Collections.Generic;
+    using System;
+    using System.Collections.Generic;
 
-	public static class BaseHashtag
-	{
-		public const string HashtagRegex = @"((?<=\s|^)#([a-zA-Z0-9_]+))";
-	}
+    public static class BaseHashtag
+    {
+      public const string HashtagRegex = @"((?<=\s|^)#([a-zA-Z0-9_]+))";
+    }
 }

@@ -1,11 +1,11 @@
 package com.microsoft.recognizers.text.resources.writters;
 
-public class CharacterWritter  implements ICodeWriter {
+public class BooleanWriter implements ICodeWriter {
 
     private final String name;
-    private final char value;
+    private final boolean value;
 
-    public CharacterWritter(String name, char value) {
+    public BooleanWriter(String name, boolean value) {
         this.name = name;
         this.value = value;
     }
@@ -13,7 +13,7 @@ public class CharacterWritter  implements ICodeWriter {
     @Override
     public String write() {
         return String.format(
-                "    public static final Character %s = \'%s\';",
+                "    public static final Boolean %s = %s;",
                 this.name,
                 sanitize(String.valueOf(this.value)));
     }

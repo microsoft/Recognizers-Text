@@ -37,7 +37,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public static bool TryMergeModifierToken(ExtractResult er, Regex tokenRegex, string text)
         {
-            var beforeStr = text.Substring(0, er.Start ?? 0).ToLowerInvariant();
+            var beforeStr = text.Substring(0, er.Start ?? 0);
 
             if (HasTokenIndex(beforeStr.TrimEnd(), tokenRegex, out var tokenIndex))
             {
@@ -238,7 +238,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         private bool FilterAmbiguousSingleWord(ExtractResult er, string text)
         {
-            if (config.SingleAmbiguousMonthRegex.IsMatch(er.Text.ToLowerInvariant()))
+            if (config.SingleAmbiguousMonthRegex.IsMatch(er.Text))
             {
                 var stringBefore = text.Substring(0, (int)er.Start).TrimEnd();
                 if (!config.PrepositionSuffixRegex.IsMatch(stringBefore))
@@ -306,7 +306,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     er.Type.Equals(Constants.SYS_DATETIME_TIME, StringComparison.InvariantCulture))
                 {
                     // 2012 or after/above, 3 pm or later
-                    var afterStr = text.Substring((er.Start ?? 0) + (er.Length ?? 0)).ToLowerInvariant();
+                    var afterStr = text.Substring((er.Start ?? 0) + (er.Length ?? 0));
 
                     var match = config.SuffixAfterRegex.MatchBegin(afterStr.TrimStart(), trim: true);
 

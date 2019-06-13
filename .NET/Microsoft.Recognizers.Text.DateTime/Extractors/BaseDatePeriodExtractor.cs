@@ -338,7 +338,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        private List<Token> MatchYearPeriod(string text, DateObject referece)
+        private List<Token> MatchYearPeriod(string text, DateObject referenceDate)
         {
             var ret = new List<Token>();
             var metadata = new Metadata

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -12,7 +13,7 @@ namespace Microsoft.Recognizers.Text.Number
         public static readonly Regex CurrencyRegex =
             new Regex(BaseNumbers.CurrencyRegex, RegexOptions.Singleline);
 
-        public BaseNumberExtractor(NumberOptions options = NumberOptions.None)
+        protected BaseNumberExtractor(NumberOptions options = NumberOptions.None)
         {
             Options = options;
         }
@@ -55,8 +56,8 @@ namespace Microsoft.Recognizers.Text.Number
                         continue;
                     }
 
-                    // In EnablePreview, cases like "last", "next" should not be skipped
-                    if ((Options & NumberOptions.EnablePreview) == 0 && IsRelativeOrdinal(m.Value))
+                    // If SuppressExtendedTypes is on, cases like "last", "next" should be skipped
+                    if ((Options & NumberOptions.SuppressExtendedTypes) != 0 && IsRelativeOrdinal(m.Value))
                     {
                         continue;
                     }
@@ -66,9 +67,9 @@ namespace Microsoft.Recognizers.Text.Number
                         matched[m.Index + j] = true;
                     }
 
-                    // Fliter out cases like "first two", "last one"
-                    // only support in English now
-                    if (ExtractType.Contains(Constants.MODEL_ORDINAL) && RelativeOrdinalFilterRegex != null && RelativeOrdinalFilterRegex.IsMatch(source))
+                    // Filter out cases like "first two", "last one"
+                    if (ExtractType.Contains(Constants.MODEL_ORDINAL) &&
+                        RelativeOrdinalFilterRegex != null && RelativeOrdinalFilterRegex.IsMatch(source))
                     {
                         continue;
                     }

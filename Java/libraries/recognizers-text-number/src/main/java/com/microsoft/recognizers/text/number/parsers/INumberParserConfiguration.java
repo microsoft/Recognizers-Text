@@ -54,6 +54,10 @@ public interface INumberParserConfiguration {
 
     Pattern getNegativeNumberSignRegex();
 
+    boolean isCompoundNumberLanguage();
+
+    boolean isMultiDecimalSeparatorCulture();
+
     //endregion
 
     /**
