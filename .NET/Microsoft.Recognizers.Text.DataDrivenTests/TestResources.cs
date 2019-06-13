@@ -43,9 +43,9 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
         Ordinal,
 
         /// <summary>
-        /// OrdinalEnablePreview model
+        /// OrdinalSuppressExtendedTypes model
         /// </summary>
-        OrdinalEnablePreview,
+        OrdinalSuppressExtendedTypes,
 
         /// <summary>
         /// Percent model
