@@ -81,6 +81,11 @@ namespace Microsoft.Recognizers.Text.Number
                     if (o.Metadata != null && o.Metadata.IsOrdinalRelative)
                     {
                         type = $"{ModelTypeName}.{Constants.RELATIVE}";
+
+                        // add value for oridinal.relative
+                        string mark = o.Metadata.Offset[0].Equals('-') ? string.Empty : "+";
+                        string value = string.Concat(o.Metadata.RelativeTo, mark, o.Metadata.Offset);
+                        resolution.Add(ResolutionKey.Value, value);
                     }
                     else
                     {
