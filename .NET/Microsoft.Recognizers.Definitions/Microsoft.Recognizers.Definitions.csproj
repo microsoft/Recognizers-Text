@@ -63,6 +63,7 @@
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\German\DateTimeDefinitions.cs" Link="German\DateTimeDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\German\NumbersDefinitions.cs" Link="German\NumbersDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\German\NumbersWithUnitDefinitions.cs" Link="German\NumbersWithUnitDefinitions.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Italian\ChoiceDefinitions.cs" Link="Italian\ChoiceDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Italian\DateTimeDefinitions.cs" Link="Italian\DateTimeDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Italian\NumbersDefinitions.cs" Link="Italian\NumbersDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Italian\NumbersWithUnitDefinitions.cs" Link="Italian\NumbersWithUnitDefinitions.cs" />
