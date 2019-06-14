@@ -128,6 +128,8 @@
     <Compile Include="Sequence\TestSequenceRecognizerInitialization.cs" />
     <Compile Include="Sequence\TestSequence_Portuguese.cs" />
     <Compile Include="Sequence\TestSequence_English.cs" />
+    <Compile Include="Sequence\TestSequence_Chinese.cs" />
+    <Compile Include="Sequence\TestSequence_Japanese.cs" />
     <Compile Include="TestBase.cs" />
     <Compile Include="TestContextExtensions.cs" />
     <Compile Include="TestModelExtensions.cs" />
