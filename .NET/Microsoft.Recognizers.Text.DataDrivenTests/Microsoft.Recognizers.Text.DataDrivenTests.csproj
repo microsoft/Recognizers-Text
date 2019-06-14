@@ -75,6 +75,7 @@
     <Compile Include="Choice\TestChoice_Chinese.cs" />
     <Compile Include="Choice\TestChoice_Dutch.cs" />
     <Compile Include="Choice\TestChoice_Bulgarian.cs" />
+    <Compile Include="Choice\TestChoice_Italian.cs" />
     <Compile Include="Choice\TestChoice_Swedish.cs" />
     <Compile Include="Choice\TestChoice_English.cs" />
     <Compile Include="Choice\TestChoice_French.cs" />
@@ -127,6 +128,8 @@
     <Compile Include="Sequence\TestSequenceRecognizerInitialization.cs" />
     <Compile Include="Sequence\TestSequence_Portuguese.cs" />
     <Compile Include="Sequence\TestSequence_English.cs" />
+    <Compile Include="Sequence\TestSequence_Chinese.cs" />
+    <Compile Include="Sequence\TestSequence_Japanese.cs" />
     <Compile Include="TestBase.cs" />
     <Compile Include="TestContextExtensions.cs" />
     <Compile Include="TestModelExtensions.cs" />

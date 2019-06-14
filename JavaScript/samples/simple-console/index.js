@@ -90,6 +90,10 @@ function parseAll(input, culture) {
         // E.g "My Ip is 8.8.8.8"
         ...Recognizers.recognizeIpAddress(input, culture),
 
+        // URL recognizer -This recognizer will find all the urls
+        // E.g "bing.com"
+        ...Recognizers.recognizeURL(input, culture),
+
         // GUID recognizer - This recognizer will find all the GUID presented
         // E.g "My GUID number is {123e4567-e89b-12d3-a456-426655440000}"
         ...Recognizers.recognizeGUID(input, culture),
