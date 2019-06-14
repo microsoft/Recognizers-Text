@@ -106,5 +106,28 @@
     "NotSupported": "javascript, python, java",
     "Results": [
     ]
+  },
+  {
+    "Input": "I like the first two books.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "first",
+        "Start": 11,
+        "End": 15,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "1",
+          "relativeTo": "start",
+          "value": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I want the next 3 books.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+    ]
   }
 ]
