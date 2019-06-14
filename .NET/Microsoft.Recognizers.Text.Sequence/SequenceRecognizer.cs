@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using Microsoft.Recognizers.Text.Sequence;
 using Microsoft.Recognizers.Text.Sequence.Chinese;
 using Microsoft.Recognizers.Text.Sequence.English;
-using Microsoft.Recognizers.Text.Sequence.Japanese;
 
 namespace Microsoft.Recognizers.Text.Sequence
 {
@@ -91,7 +90,12 @@ namespace Microsoft.Recognizers.Text.Sequence
 
         public IModel GetURLModel(string culture = null, bool fallbackToDefaultCulture = true)
         {
-            return GetModel<URLModel>(culture, fallbackToDefaultCulture);
+            if (culture == "zh-cn" || culture == "ja-jp")
+            {
+                return GetModel<URLModel>(Culture.Chinese, fallbackToDefaultCulture);
+            }
+
+            return GetModel<URLModel>(Culture.English, fallbackToDefaultCulture);
         }
 
         public IModel GetGUIDModel(string culture = null, bool fallbackToDefaultCulture = true)
@@ -132,12 +136,6 @@ namespace Microsoft.Recognizers.Text.Sequence
                 options => new URLModel(
                     new URLParser(),
                     new BaseURLExtractor(new ChineseURLExtractorConfiguration(options))));
-
-            RegisterModel<URLModel>(
-                Culture.Japanese,
-                options => new URLModel(
-                    new URLParser(),
-                    new BaseURLExtractor(new JapaneseURLExtractorConfiguration(options))));
 
             RegisterModel<GUIDModel>(
                 Culture.English,

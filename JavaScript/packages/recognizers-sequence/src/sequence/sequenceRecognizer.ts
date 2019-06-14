@@ -3,7 +3,6 @@ import { PhoneNumberModel, IpAddressModel, MentionModel, HashtagModel, EmailMode
 import { PhoneNumberParser, IpParser, MentionParser, HashtagParser, EmailParser, URLParser, GUIDParser } from "./english/parsers";
 import { PhoneNumberExtractor, IpExtractor, MentionExtractor, HashtagExtractor, EmailExtractor, EnglishURLExtractorConfiguration, GUIDExtractor } from "./english/extractors";
 import { ChineseURLExtractorConfiguration } from "./chinese/extractors";
-import { JapaneseURLExtractorConfiguration } from "./japanese/extractors";
 import { BaseURLExtractor } from "./extractors";
 
 
@@ -67,9 +66,6 @@ export default class SequenceRecognizer extends Recognizer<SequenceOptions> {
         this.registerModel("URLModel", Culture.Chinese, (options) => new URLModel(
             new URLParser(),
             new BaseURLExtractor(new ChineseURLExtractorConfiguration())))
-        this.registerModel("URLModel", Culture.Japanese, (options) => new URLModel(
-            new URLParser(),
-            new BaseURLExtractor(new JapaneseURLExtractorConfiguration())))
         this.registerModel("GUIDModel", Culture.English, (options) => new GUIDModel(new GUIDParser(), new GUIDExtractor()));
     }
 
