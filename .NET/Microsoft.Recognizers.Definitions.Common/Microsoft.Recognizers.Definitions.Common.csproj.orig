@@ -109,9 +109,15 @@
       <AutoGen>True</AutoGen>
     </Compile>
     <Compile Update="Chinese\URLDefinitions.cs">
+<<<<<<< HEAD
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>URLDefinitions.tt</DependentUpon>
+=======
       <DependentUpon>URLDefinitions.tt</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
+>>>>>>> Fix URL issue in Japanese/Chinese (#1634)
     </Compile>
     <Compile Update="Dutch\ChoiceDefinitions.cs">
       <DesignTime>True</DesignTime>
@@ -334,10 +340,11 @@
     <None Update="Chinese\NumbersWithUnitDefinitions.tt">
     </None>
     <None Update="Chinese\URLDefinitions.tt">
-    </None>
-    <None Update="Chinese\URLDefinitions.tt">
+<<<<<<< HEAD
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>URLDefinitions.cs</LastGenOutput>
+=======
+>>>>>>> Fix URL issue in Japanese/Chinese (#1634)
     </None>
     <None Update="Dutch\ChoiceDefinitions.tt">
     </None>
