@@ -31,7 +31,6 @@
     <PackageReference Include="YamlDotNet" Version="5.0.0" />
   </ItemGroup>
 
-
   <ItemGroup>
     <Compile Update="BaseCurrency.cs">
       <DesignTime>True</DesignTime>
@@ -371,11 +370,9 @@
     </None>
     <None Update="German\NumbersWithUnitDefinitions.tt">
     </None>
-    <None Update="Italian\DateTimeDefinitions.tt">
-    </None>
     <None Update="Italian\ChoiceDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ChoiceDefinitions.cs</LastGenOutput>
+    </None>
+    <None Update="Italian\DateTimeDefinitions.tt">
     </None>
     <None Update="Italian\NumbersDefinitions.tt">
     </None>
