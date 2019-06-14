@@ -32,8 +32,6 @@ namespace Microsoft.Recognizers.Text.Number
 
         protected virtual Regex RelativeReferenceRegex { get; } = null;
 
-        protected virtual Regex RelativeOrdinalFilterRegex { get; } = null;
-
         public virtual List<ExtractResult> Extract(string source)
         {
             if (string.IsNullOrEmpty(source))
@@ -65,13 +63,6 @@ namespace Microsoft.Recognizers.Text.Number
                     for (var j = 0; j < m.Length; j++)
                     {
                         matched[m.Index + j] = true;
-                    }
-
-                    // Filter out cases like "first two", "last one"
-                    if (ExtractType.Contains(Constants.MODEL_ORDINAL) &&
-                        RelativeOrdinalFilterRegex != null && RelativeOrdinalFilterRegex.IsMatch(source))
-                    {
-                        continue;
                     }
 
                     // Keep Source Data for extra information
