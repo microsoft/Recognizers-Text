@@ -90,7 +90,7 @@ namespace Microsoft.Recognizers.Text.Sequence
 
         public IModel GetURLModel(string culture = null, bool fallbackToDefaultCulture = true)
         {
-            if (culture == "zh-cn" || culture == "ja-jp")
+            if (culture.ToLowerInvariant().StartsWith("zh-cn") || culture.ToLowerInvariant().StartsWith("ja-jp"))
             {
                 return GetModel<URLModel>(Culture.Chinese, fallbackToDefaultCulture);
             }

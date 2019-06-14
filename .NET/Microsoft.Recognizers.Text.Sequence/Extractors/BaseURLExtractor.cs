@@ -11,9 +11,9 @@ namespace Microsoft.Recognizers.Text.Sequence
     public class BaseURLExtractor : BaseSequenceExtractor
     {
 
-        private SequenceConfiguration config;
+        private URLConfiguration config;
 
-        public BaseURLExtractor(SequenceConfiguration config)
+        public BaseURLExtractor(URLConfiguration config)
         {
             this.config = config;
 

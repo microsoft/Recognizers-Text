@@ -2,9 +2,9 @@
 
 namespace Microsoft.Recognizers.Text.Sequence
 {
-    public class SequenceConfiguration
+    public class URLConfiguration : ISequenceConfiguration
     {
-        public SequenceConfiguration(SequenceOptions options = SequenceOptions.None)
+        public URLConfiguration(SequenceOptions options = SequenceOptions.None)
         {
             Options = options;
         }

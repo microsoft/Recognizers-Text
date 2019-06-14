@@ -4,7 +4,7 @@ using Microsoft.Recognizers.Definitions.Chinese;
 
 namespace Microsoft.Recognizers.Text.Sequence.Chinese
 {
-    public class ChineseURLExtractorConfiguration : SequenceConfiguration
+    public class ChineseURLExtractorConfiguration : URLConfiguration
     {
 
         public ChineseURLExtractorConfiguration(SequenceOptions options)

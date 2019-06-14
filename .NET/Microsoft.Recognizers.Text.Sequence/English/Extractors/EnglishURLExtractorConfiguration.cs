@@ -3,7 +3,7 @@ using Microsoft.Recognizers.Definitions;
 
 namespace Microsoft.Recognizers.Text.Sequence.English
 {
-    public class EnglishURLExtractorConfiguration : SequenceConfiguration
+    public class EnglishURLExtractorConfiguration : URLConfiguration
     {
 
         public EnglishURLExtractorConfiguration(SequenceOptions options)
