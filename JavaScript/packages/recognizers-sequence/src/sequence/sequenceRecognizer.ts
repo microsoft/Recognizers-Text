@@ -32,10 +32,7 @@ export function recognizeEmail(query: string, culture: string, options: Sequence
 }
 
 export function recognizeURL(query: string, culture: string, options: SequenceOptions  = SequenceOptions .None): Array<ModelResult> {
-    if (culture === "zh-cn" || culture === "ko-kr" || culture === "ja-jp"){
-        return recognizeByModel(recognizer => recognizer.getURLModel(), query, Culture.Chinese, options);
-    }
-    return recognizeByModel(recognizer => recognizer.getURLModel(), query, Culture.English, options);
+    return recognizeByModel(recognizer => recognizer.getURLModel(), query, culture, options);
 }
 
 export function recognizeGUID(query: string, culture: string, options: SequenceOptions = SequenceOptions.None): Array<ModelResult> {

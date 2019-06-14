@@ -38,12 +38,10 @@ export class EmailExtractor extends BaseEmailExtractor{
 
 export class EnglishURLExtractorConfiguration implements IURLExtractorConfiguration {
     readonly UrlRegex: RegExp;
-    readonly UrlRegex2: RegExp;
     readonly IpUrlRegex: RegExp;
 
     constructor() {
         this.UrlRegex = RegExpUtility.getSafeRegExp(BaseURL.UrlRegex);
-        this.UrlRegex2 = RegExpUtility.getSafeRegExp(BaseURL.UrlRegex2);
         this.IpUrlRegex = RegExpUtility.getSafeRegExp(BaseURL.IpUrlRegex);
     }
 }

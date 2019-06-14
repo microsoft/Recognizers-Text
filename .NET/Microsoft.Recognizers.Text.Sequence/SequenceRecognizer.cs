@@ -142,7 +142,6 @@ namespace Microsoft.Recognizers.Text.Sequence
             RegisterModel<GUIDModel>(
                 Culture.English,
                 (options) => new GUIDModel(new GUIDParser(), new GUIDExtractor()));
-
         }
 
         private static List<ModelResult> RecognizeByModel(Func<SequenceRecognizer, IModel> getModelFunc, string query, SequenceOptions options)

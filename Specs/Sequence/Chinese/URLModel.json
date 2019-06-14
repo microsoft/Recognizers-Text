@@ -1,5 +1,174 @@
 [
   {
+    "Input": "https://abc.com",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "https://abc.com",
+        "TypeName": "url",
+        "Resolution": {
+          "value": "https://abc.com"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "ftp://abc.com",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "ftp://abc.com",
+        "TypeName": "url",
+        "Resolution": {
+          "value": "ftp://abc.com"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "http://abc.com",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "http://abc.com",
+        "TypeName": "url",
+        "Resolution": {
+          "value": "http://abc.com"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "www.abc.com",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "www.abc.com",
+        "TypeName": "url",
+        "Resolution": {
+          "value": "www.abc.com"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "www.abc.com.cn",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "www.abc.com.cn",
+        "TypeName": "url",
+        "Resolution": {
+          "value": "www.abc.com.cn"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "abc.com",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "abc.com",
+        "TypeName": "url",
+        "Resolution": {
+          "value": "abc.com"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "http://abc.com/file_name",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "http://abc.com/file_name",
+        "TypeName": "url",
+        "Resolution": {
+          "value": "http://abc.com/file_name"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "http://abc.com/file_path/",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "http://abc.com/file_path/",
+        "TypeName": "url",
+        "Resolution": {
+          "value": "http://abc.com/file_path/"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "http://abc.com/file_path/123.html",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "http://abc.com/file_path/123.html",
+        "TypeName": "url",
+        "Resolution": {
+          "value": "http://abc.com/file_path/123.html"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "http://abc.com/search?id=123",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "http://abc.com/search?id=123",
+        "TypeName": "url",
+        "Resolution": {
+          "value": "http://abc.com/search?id=123"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "http://abc.com/search?id=123&name=Alice",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "http://abc.com/search?id=123&name=Alice",
+        "TypeName": "url",
+        "Resolution": {
+          "value": "http://abc.com/search?id=123&name=Alice"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "http://abc.com/123#cite_1",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "http://abc.com/123#cite_1",
+        "TypeName": "url",
+        "Resolution": {
+          "value": "http://abc.com/123#cite_1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "http://abc.com:8080",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "http://abc.com:8080",
+        "TypeName": "url",
+        "Resolution": {
+          "value": "http://abc.com:8080"
+        }
+      }
+    ]
+  },
+  {
     "Input": "网址是microsoft.com",
     "Notsupport": "java",
     "NotSupportedByDesign": "python",
