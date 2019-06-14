@@ -208,6 +208,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>DateTimeDefinitions.tt</DependentUpon>
     </Compile>
+    <Compile Update="Italian\ChoiceDefinitions.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ChoiceDefinitions.tt</DependentUpon>
+    </Compile>
     <Compile Update="Italian\NumbersDefinitions.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -367,6 +372,10 @@
     <None Update="German\NumbersWithUnitDefinitions.tt">
     </None>
     <None Update="Italian\DateTimeDefinitions.tt">
+    </None>
+    <None Update="Italian\ChoiceDefinitions.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ChoiceDefinitions.cs</LastGenOutput>
     </None>
     <None Update="Italian\NumbersDefinitions.tt">
     </None>

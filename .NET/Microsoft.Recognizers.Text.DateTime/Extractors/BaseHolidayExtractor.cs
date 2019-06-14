@@ -27,8 +27,10 @@ namespace Microsoft.Recognizers.Text.DateTime
             var ers = Token.MergeAllTokens(tokens, text, ExtractorName);
             foreach (var er in ers)
             {
-                er.Metadata = new Metadata();
-                er.Metadata.IsHoliday = true;
+                er.Metadata = new Metadata
+                {
+                    IsHoliday = true,
+                };
             }
 
             return ers;
