@@ -34,7 +34,6 @@ class EnglishNumeric:
     NumberOrdinalRegex = f'(first|second|third|fourth|fifth|sixth|seventh|eighth|ninth|tenth|eleventh|twelfth|thirteenth|fourteenth|fifteenth|sixteenth|seventeenth|eighteenth|nineteenth|twentieth|thirtieth|fortieth|fiftieth|sixtieth|seventieth|eightieth|ninetieth)'
     RelativeOrdinalRegex = f'((next|previous) one|(the second|next) to last|the one before the last( one)?|the last but one|(ante)?penultimate|last|next|previous)'
     BasicOrdinalRegex = f'({NumberOrdinalRegex}|{RelativeOrdinalRegex})'
-    RelativeOrdinalFilterRegex = f'(?<!-)(first|{RelativeOrdinalRegex})\\s*({TwoToNineIntegerRegex}|[2-9]+)(?!\\s*{RoundNumberIntegerRegex})'
     SuffixBasicOrdinalRegex = f'((((({TensNumberIntegerRegex}(\\s+(and\\s+)?|\\s*-\\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{AnIntRegex})(\\s+{RoundNumberIntegerRegex})+)\\s+(and\\s+)?)*({TensNumberIntegerRegex}(\\s+|\\s*-\\s*))?{BasicOrdinalRegex})'
     SuffixRoundNumberOrdinalRegex = f'(({AllIntRegex}\\s+){RoundNumberOrdinalRegex})'
     AllOrdinalRegex = f'({SuffixBasicOrdinalRegex}|{SuffixRoundNumberOrdinalRegex})'

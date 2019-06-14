@@ -201,6 +201,17 @@
     "Input": "I want the last two books.",
     "NotSupported": "javascript, python, java",
     "Results": [
+      {
+        "Text": "last",
+        "Start": 11,
+        "End": 14,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "0",
+          "relativeTo": "end",
+          "value": "end+0"
+        }
+      }
     ]
   },
   {
@@ -224,6 +235,17 @@
     "Input": "I want next 3 books.",
     "NotSupported": "javascript, python, java",
     "Results": [
+      {
+        "Text": "next",
+        "Start": 7,
+        "End": 10,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "1",
+          "relativeTo": "current",
+          "value": "current+1"
+        }
+      }
     ]
   },
   {
@@ -575,8 +597,18 @@
   },
   {
     "Input": "I like the first two books.",
-    "NotSupported": "javascript, python, java",
     "Results": [
+      {
+        "Text": "first",
+        "Start": 11,
+        "End": 15,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "1",
+          "relativeTo": "start",
+          "value": "1"
+        }
+      }
     ]
   },
   {
@@ -617,6 +649,17 @@
     "Input": "I want the next 3 books.",
     "NotSupported": "javascript, python, java",
     "Results": [
+      {
+        "Text": "next",
+        "Start": 11,
+        "End": 14,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "1",
+          "relativeTo": "current",
+          "value": "current+1"
+        }
+      }
     ]
   },
   {
