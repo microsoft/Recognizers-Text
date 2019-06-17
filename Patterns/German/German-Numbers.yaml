@@ -63,11 +63,11 @@ AllOrdinalRegex: !nestedRegex
   def: (({AllIntRegex}\s*)*{SuffixBasicOrdinalRegex}|{SuffixRoundNumberOrdinalRegex})
   references: [ SuffixBasicOrdinalRegex, SuffixRoundNumberOrdinalRegex, AllIntRegex ]
 OrdinalSuffixRegex: !simpleRegex
-  def: (?<=\b)((\d*(1|2|3|4|5|6|7|8|9|0))|(11|12))(?=\b)
+  def: ^[\.] # Not applicable in German.
 OrdinalNumericRegex: !simpleRegex
-  def: (?<=\b)(\d{1,3}(\s*,\s*\d+)*\s*th)(?=\b)
+  def: (?<=\b)(\d{1,3}\.)(?=(\s+|^))
 OrdinalRoundNumberRegex: !nestedRegex
-  def: (?<!(ein|eine)\s+){RoundNumberOrdinalRegex}
+  def: (?<!eine?\s+){RoundNumberOrdinalRegex}
   references: [ RoundNumberOrdinalRegex ]
 OrdinalGermanRegex: !nestedRegex
   def: (?<=\b){AllOrdinalRegex}(?=\b)
@@ -81,7 +81,7 @@ FractionNounRegex: !nestedRegex
   def: (?<=\b)({AllIntRegex})(\s*|\s*-\s*)((({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))|halb(er|e|es)?|hälfte)(?=\b)
   references: [ AllIntRegex, AllOrdinalRegex, RoundNumberOrdinalRegex ]
 FractionNounWithArticleRegex: !nestedRegex
-  def: (?<=\b)({AllIntRegex}\s+(und\s+)?)?(ein|eine)(\s+|\s*-\s*)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|halb(er|e|es)?|hälfte)(?=\b)
+  def: (?<=\b)({AllIntRegex}\s+(und\s+)?)?eine?(\s+|\s*-\s*)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|halb(er|e|es)?|hälfte)(?=\b)
   references: [ AllIntRegex, AllOrdinalRegex, RoundNumberOrdinalRegex ]
 FractionPrepositionRegex: !nestedRegex
   def: (?<=\b)(?<numerator>({AllIntRegex})|((?<!\.)\d+))\s+over\s+(?<denominator>({AllIntRegex})|(\d+)(?!\.))(?=\b)

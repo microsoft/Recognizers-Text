@@ -12034,5 +12034,31 @@
         }
       }
     ]
+  },
+  {
+    "Input": "This contract will end in 2150, right?",
+    "Context": {
+      "ReferenceDateTime": "2019-06-03T12:00:00"
+    },
+    "Comment": "Not supported as currently a cutoff on year by itself is needed for legacy reasons.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2150",
+        "Start": 26,
+        "End": 29,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2150",
+              "type": "daterange",
+              "start": "2150-01-01",
+              "end": "2151-01-01"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
