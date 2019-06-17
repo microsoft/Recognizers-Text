@@ -303,7 +303,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     },
                  }));
 
-            RegisterModel<DimensionModel>(
+            /*RegisterModel<DimensionModel>(
                 Culture.German,
                 (options) => new DimensionModel(new Dictionary<IExtractor, IParser>
                  {
@@ -311,7 +311,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                         new NumberWithUnitExtractor(new German.DimensionExtractorConfiguration()),
                         new NumberWithUnitParser(new German.DimensionParserConfiguration())
                     },
-                 }));
+                 }));*/
 
             RegisterModel<AgeModel>(
                 Culture.German,
@@ -322,9 +322,6 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                         new NumberWithUnitParser(new German.AgeParserConfiguration())
                     },
                 }));
-
-            /*
-            #region Italian
 
             RegisterModel<CurrencyModel>(
                 Culture.Italian,
@@ -365,9 +362,6 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                         new NumberWithUnitParser(new Italian.AgeParserConfiguration())
                     },
                 }));
-
-            #endregion
-            */
 
             RegisterModel<CurrencyModel>(
                 Culture.Japanese,
