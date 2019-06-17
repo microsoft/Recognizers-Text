@@ -46,14 +46,14 @@ namespace Microsoft.Recognizers.Definitions.German
       public static readonly string SuffixBasicOrdinalRegex = $@"({BasicOrdinalRegex}|({ZeroToNineIntegerRegex}(und|\s){BasicOrdinalRegex}))";
       public static readonly string SuffixRoundNumberOrdinalRegex = $@"(({AllIntRegex}\s*){RoundNumberOrdinalRegex})";
       public static readonly string AllOrdinalRegex = $@"(({AllIntRegex}\s*)*{SuffixBasicOrdinalRegex}|{SuffixRoundNumberOrdinalRegex})";
-      public const string OrdinalSuffixRegex = @"(?<=\b)((\d*(1|2|3|4|5|6|7|8|9|0))|(11|12))(?=\b)";
-      public const string OrdinalNumericRegex = @"(?<=\b)(\d{1,3}(\s*,\s*\d+)*\s*th)(?=\b)";
-      public static readonly string OrdinalRoundNumberRegex = $@"(?<!(ein|eine)\s+){RoundNumberOrdinalRegex}";
+      public const string OrdinalSuffixRegex = @"^[\.]";
+      public const string OrdinalNumericRegex = @"(?<=\b)(\d{1,3}\.)(?=(\s+|^))";
+      public static readonly string OrdinalRoundNumberRegex = $@"(?<!eine?\s+){RoundNumberOrdinalRegex}";
       public static readonly string OrdinalGermanRegex = $@"(?<=\b){AllOrdinalRegex}(?=\b)";
       public const string FractionNotationWithSpacesRegex = @"(((?<=\W|^)-\s*)|(?<=\b))\d+\s+\d+[/]\d+(?=(\b[^/]|$))";
       public const string FractionNotationRegex = @"(((?<=\W|^)-\s*)|(?<=\b))\d+[/]\d+(?=(\b[^/]|$))";
       public static readonly string FractionNounRegex = $@"(?<=\b)({AllIntRegex})(\s*|\s*-\s*)((({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))|halb(er|e|es)?|hälfte)(?=\b)";
-      public static readonly string FractionNounWithArticleRegex = $@"(?<=\b)({AllIntRegex}\s+(und\s+)?)?(ein|eine)(\s+|\s*-\s*)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|halb(er|e|es)?|hälfte)(?=\b)";
+      public static readonly string FractionNounWithArticleRegex = $@"(?<=\b)({AllIntRegex}\s+(und\s+)?)?eine?(\s+|\s*-\s*)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|halb(er|e|es)?|hälfte)(?=\b)";
       public static readonly string FractionPrepositionRegex = $@"(?<=\b)(?<numerator>({AllIntRegex})|((?<!\.)\d+))\s+over\s+(?<denominator>({AllIntRegex})|(\d+)(?!\.))(?=\b)";
       public static readonly string AllPointRegex = $@"((\s*{ZeroToNineIntegerRegex})+|(\s*{SeparaIntRegex}))";
       public static readonly string AllFloatRegex = $@"({AllIntRegex}(\s*komma\s*){AllPointRegex})";
