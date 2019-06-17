@@ -334,10 +334,6 @@
     </None>
     <None Update="Chinese\URLDefinitions.tt">
     </None>
-    <None Update="Chinese\URLDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>URLDefinitions.cs</LastGenOutput>
-    </None>
     <None Update="Dutch\ChoiceDefinitions.tt">
     </None>
     <None Update="Dutch\DateTimeDefinitions.tt">
