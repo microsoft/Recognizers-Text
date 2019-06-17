@@ -10233,5 +10233,29 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Brunch with Anna at 13:00 February 28, 2013",
+    "Context": {
+      "ReferenceDateTime": "2013-06-03T12:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "13:00 february 28, 2013",
+        "Start": 20,
+        "End": 42,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2013-02-28T13:00",
+              "type": "datetime",
+              "value": "2013-02-28 13:00:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
