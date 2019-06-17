@@ -243,7 +243,7 @@
   },
   {
     "Input": "Der hiernach folgende Text wird lang. Hier werden ein dutzend Zahlen benutzt um zu schauen wie sich das Programm bei längeren Strings verhält. Das Wort Ein wird als Zahl erkannt, was hier die erste wäre. Womit wir jetzt schon bei Zahl Nummer 3 wären. Zwei Millionen dreihundertsiebenundsiebzigtausendneunhundertachtundachtzig ist mit Leerzeichen 74 Zeichen lang. Schon ist die Hälfte durch. Jetzt folgt nur noch ein halbes dutzend Zahlen. Die Summe aus 2 und 6 ist acht. Das hier ist momentan Zeile Nummer vierhundertachtundachtzig und der Test müsste 13 Zahlen angeben. Was noch nicht ganz stimmt, da sich hier zwei Ordinale eingeschlichen haben, es sind also erst jetzt dreizehn.",
-    "Comment": "Normal numbers are detected because they can also be used as ordinal with suffix if there is a dot behind it (1. = 1st for example). might need to figure out a better solution. 'acht' is falsely detected as ordinal because it can be either an ordinal or a number, depending on context",
+    "Comment": "'acht' is falsely detected as ordinal because it can be either an ordinal or a number, depending on context",
     "NotSupported": "javascript, python",
     "Results": [
       {
@@ -258,50 +258,6 @@
         "End": 196
       },
       {
-        "Text": "3",
-        "TypeName": "ordinal",
-        "Resolution": {
-          "value": "3",
-          "offset":"3",
-          "relativeTo":"start"
-        },
-        "Start": 242,
-        "End": 242
-      },
-      {
-        "Text": "74",
-        "TypeName": "ordinal",
-        "Resolution": {
-          "value": "74",
-          "offset":"74",
-          "relativeTo":"start"
-        },
-        "Start": 346,
-        "End": 347
-      },
-      {
-        "Text": "2",
-        "TypeName": "ordinal",
-        "Resolution": {
-          "value": "2",
-          "offset":"2",
-          "relativeTo":"start"
-        },
-        "Start": 453,
-        "End": 453
-      },
-      {
-        "Text": "6",
-        "TypeName": "ordinal",
-        "Resolution": {
-          "value": "6",
-          "offset":"6",
-          "relativeTo":"start"
-        },
-        "Start": 459,
-        "End": 459
-      },
-      {
         "Text": "acht",
         "TypeName": "ordinal",
         "Resolution": {
@@ -311,17 +267,6 @@
         },
         "Start": 465,
         "End": 468
-      },
-      {
-        "Text": "13",
-        "TypeName": "ordinal",
-        "Resolution": {
-          "value": "13",
-          "offset":"13",
-          "relativeTo":"start"
-        },
-        "Start": 552,
-        "End": 553
       }
     ]
   },
@@ -330,7 +275,7 @@
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "3",
+        "Text": "3.",
         "TypeName": "ordinal",
         "Resolution": {
           "value": "3",
@@ -338,7 +283,7 @@
           "relativeTo":"start"
         },
         "Start": 17,
-        "End": 17
+        "End": 18
       }
     ]
   },
@@ -688,5 +633,10 @@
         "End": 32
       }
     ]
+  },
+  {
+    "Input": "Die US-Botschaft befindet sich in Clayallee 170, 14191 Berlin.",
+    "NotSupported": "javascript, python",
+    "Results": []
   }
 ]
