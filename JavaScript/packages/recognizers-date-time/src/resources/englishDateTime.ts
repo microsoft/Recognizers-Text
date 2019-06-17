@@ -4,6 +4,9 @@
 //     Changes to this file may cause incorrect behavior and will be lost if
 //     the code is regenerated.
 // </auto-generated>
+//
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
 // ------------------------------------------------------------------------------
 
 import { BaseDateTime } from "./baseDateTime";
@@ -57,7 +60,7 @@ export namespace EnglishDateTime {
     export const MonthFrontBetweenRegex = `\\b${MonthSuffixRegex}\\s+(between\\s+)(${DayRegex})\\s*${RangeConnectorRegex}\\s*(${DayRegex})((\\s+|\\s*,\\s*)${YearRegex})?\\b`;
     export const BetweenRegex = `\\b(between\\s+)(${DayRegex})\\s*${RangeConnectorRegex}\\s*(${DayRegex})\\s+${MonthSuffixRegex}((\\s+|\\s*,\\s*)${YearRegex})?\\b`;
     export const MonthWithYear = `\\b((${WrittenMonthRegex}(\\.)?(\\s*)[/\\\\\\-\\.,]?(\\s+(of|in))?(\\s*)(${YearRegex}|(?<order>following|next|last|this)\\s+year))|((${YearRegex}|(?<order>following|next|last|this)\\s+year)(\\s*),?(\\s*)${WrittenMonthRegex}))\\b`;
-    export const OneWordPeriodRegex = `\\b((((the\\s+)?month of\\s+)?(${StrictRelativeRegex}\\s+)?(?<month>apr(il)?|aug(ust)?|dec(ember)?|feb(ruary)?|jan(uary)?|july?|june?|mar(ch)?|may|nov(ember)?|oct(ober)?|sept(ember)?|sept?))|(month|year) to date|(${RelativeRegex}\\s+)?(my\\s+)?(weekend|week|month|year)(?!((\\s+of)?\\s+\\d+|\\s+to\\s+date))(\\s+${AfterNextSuffixRegex})?)\\b`;
+    export const OneWordPeriodRegex = `\\b((((the\\s+)?month of\\s+)?(${StrictRelativeRegex}\\s+)?(?<month>apr(il)?|aug(ust)?|dec(ember)?|feb(ruary)?|jan(uary)?|july?|june?|mar(ch)?|may|nov(ember)?|oct(ober)?|sept(ember)?|sept?))|(month|year) to date|(${RelativeRegex}\\s+)?(my\\s+)?(week(end)?|month|year)(?!((\\s+of)?\\s+\\d+|\\s+to\\s+date))(\\s+${AfterNextSuffixRegex})?)\\b`;
     export const MonthNumWithYear = `\\b((${BaseDateTime.FourDigitYearRegex}(\\s*)[/\\-\\.](\\s*)${MonthNumRegex})|(${MonthNumRegex}(\\s*)[/\\-](\\s*)${BaseDateTime.FourDigitYearRegex}))\\b`;
     export const WeekOfMonthRegex = `\\b(?<wom>(the\\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th|fifth|5th|last)\\s+week\\s+${MonthSuffixRegex}(\\s+${BaseDateTime.FourDigitYearRegex}|${RelativeRegex}\\s+year)?)\\b`;
     export const WeekOfYearRegex = `\\b(?<woy>(the\\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th|fifth|5th|last)\\s+week(\\s+of)?\\s+(${YearRegex}|${RelativeRegex}\\s+year))\\b`;
@@ -129,7 +132,7 @@ export namespace EnglishDateTime {
     export const TimePrefix = `(?<prefix>(${LessThanOneHour} past|${LessThanOneHour} to))`;
     export const TimeSuffix = `(?<suffix>${AmRegex}|${PmRegex}|${OclockRegex})`;
     export const TimeSuffixFull = `(?<suffix>${AmRegex}|${PmRegexFull}|${OclockRegex})`;
-    export const BasicTime = `\\b(?<basictime>${WrittenTimeRegex}|${HourNumRegex}|${BaseDateTime.HourRegex}:${BaseDateTime.MinuteRegex}(:${BaseDateTime.SecondRegex})?|${BaseDateTime.HourRegex})`;
+    export const BasicTime = `\\b(?<basictime>${WrittenTimeRegex}|${HourNumRegex}|${BaseDateTime.HourRegex}:${BaseDateTime.MinuteRegex}(:${BaseDateTime.SecondRegex})?|${BaseDateTime.HourRegex}(?![%\\d]))`;
     export const MidnightRegex = `(?<midnight>midnight|mid-night|mid night)`;
     export const MidmorningRegex = `(?<midmorning>midmorning|mid-morning|mid morning)`;
     export const MidafternoonRegex = `(?<midafternoon>midafternoon|mid-afternoon|mid afternoon)`;
@@ -204,7 +207,7 @@ export namespace EnglishDateTime {
     export const AMTimeRegex = `(?<am>morning)`;
     export const PMTimeRegex = `\\b(?<pm>afternoon|evening|night)\\b`;
     export const InclusiveModPrepositions = `(?<include>((on|in|at)\\s+or\\s+)|(\\s+or\\s+(on|in|at)))`;
-    export const BeforeRegex = `((\\b${InclusiveModPrepositions}?(before|in\\s+advance\\s+of|prior\\s+to|(no\\s+later|earlier|sooner)\\s+than|ending\\s+(with|on)|by|till|til|until|(?<include>as\\s+late\\s+as))${InclusiveModPrepositions}?\\b\\s*?)|(?<!\\w|>)((?<include><=)|<))(\\s+the)?`;
+    export const BeforeRegex = `((\\b${InclusiveModPrepositions}?(before|in\\s+advance\\s+of|prior\\s+to|(no\\s+later|earlier|sooner)\\s+than|ending\\s+(with|on)|by|(un)?till?|(?<include>as\\s+late\\s+as))${InclusiveModPrepositions}?\\b\\s*?)|(?<!\\w|>)((?<include><=)|<))(\\s+the)?`;
     export const AfterRegex = `((\\b${InclusiveModPrepositions}?((after|(starting|beginning)(\\s+on)?(?!\\sfrom)|(?<!no\\s+)later than)|(year greater than))(?!\\s+or equal to)${InclusiveModPrepositions}?\\b\\s*?)|(?<!\\w|<)((?<include>>=)|>))(\\s+the)?`;
     export const SinceRegex = `((\\b(since|after\\s+or\\s+equal\\s+to|starting\\s+(from|on|with)|as\\s+early\\s+as|any\\s+time\\s+from)\\b\\s*)|(?<!\\w|<)(>=))`;
     export const AroundRegex = `(\\b(around|circa)\\s*\\b)`;
