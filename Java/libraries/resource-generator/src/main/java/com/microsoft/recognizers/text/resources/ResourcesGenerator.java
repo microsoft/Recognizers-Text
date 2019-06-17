@@ -4,13 +4,14 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.*;
 import java.nio.file.FileSystems;
-import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.stream.Collectors;
 
 public class ResourcesGenerator {
 
     private static final String ResourcesPath = "../Patterns";
+
+    private static final String LineBreak = "\n";
 
     public static void main(String[] args) throws Exception {
         if (args.length == 0) {
@@ -25,8 +26,8 @@ public class ResourcesGenerator {
                 Path outputPath = FileSystems.getDefault().getPath(definition.outputPath, config.output + ".java");
                 System.out.println(String.format("%s => %s", inputPath.toString(), outputPath.toString()));
 
-                String header = String.join(System.lineSeparator(), config.header);
-                String footer = String.join(System.lineSeparator(), config.footer);
+                String header = String.join(LineBreak, config.header);
+                String footer = String.join(LineBreak, config.footer);
 
                 try {
                     CodeGenerator.Generate(inputPath, outputPath, header, footer);
