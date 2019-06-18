@@ -10,6 +10,7 @@ CALL pip install -r .\requirements.txt
 REM Build Resources
 ECHO.
 ECHO # Building Resources
+CALL python index.py ..\recognizers-choice\resource-definitions.json
 CALL python index.py ..\recognizers-number\resource-definitions.json
 CALL python index.py ..\recognizers-number-with-unit\resource-definitions.json
 CALL python index.py ..\recognizers-date-time\resource-definitions.json
@@ -18,6 +19,8 @@ CALL python index.py ..\recognizers-sequence\resource-definitions.json
 popd
 
 pip install -e .\libraries\recognizers-text\
+
+pip install -e .\libraries\recognizers-choice\
 
 pip install -e .\libraries\recognizers-number\
 
