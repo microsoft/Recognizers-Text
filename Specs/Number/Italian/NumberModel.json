@@ -144,7 +144,6 @@
   },
   {
     "Input": "eravamo tremila alla festa",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -199,7 +198,6 @@
         "Text": "1",
         "TypeName": "number",
         "Resolution": {
-          "subtype": "integer",
           "value": "1"
         },
         "Start": 8,
@@ -209,7 +207,6 @@
         "Text": "2",
         "TypeName": "number",
         "Resolution": {
-          "subtype": "integer",
           "value": "2"
         },
         "Start": 10,
@@ -219,9 +216,16 @@
   },
   {
     "Input": "Prenota un posto di prima classe per seattle",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
-    "Results": []
+    "Results": [
+      {
+        "Text": "un",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1"
+        }
+      }
+    ]
   },
   {
     "Input": "il liquido da 180,25ml",
@@ -241,6 +245,7 @@
   {
     "Input": " il 4 maggio ",
     "NotSupported": "dotnet",
+    "Comment": "4 is extracted as number but it is part of a date (May the 4th), same happens in English test for 4 May",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   },
@@ -1189,6 +1194,7 @@
   {
     "Input": "uno e mezzo",
     "NotSupported": "dotnet",
+    "Comment": "mezzo in this context means 0.5 but set in dictionary to 2. recognized as 1/2=0.5 instead of 1+0.5=1.5",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1196,20 +1202,6 @@
         "TypeName": "number",
         "Resolution": {
           "value": "1,5"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "due e mezzo",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "due e mezzo",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "2,5"
         }
       }
     ]
