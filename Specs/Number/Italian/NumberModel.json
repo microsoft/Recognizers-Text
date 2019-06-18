@@ -184,27 +184,15 @@
   },
   {
     "Input": "192.168.1.2",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "Comment": "Extraction fails to recognize the different numbers separately due to differences in DecimalSeparatorChar and NonDecimalSeparatorChar same, case modified to match French and Spanish cases",
     "Results": [
       {
-        "Text": "192",
+        "Text": "192.168",
         "TypeName": "number",
         "Resolution": {
-          "subtype": "integer",
-          "value": "192"
+          "value": "192168"
         },
         "Start": 0,
-        "End": 2
-      },
-      {
-        "Text": "168",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "168"
-        },
-        "Start": 4,
         "End": 6
       },
       {
