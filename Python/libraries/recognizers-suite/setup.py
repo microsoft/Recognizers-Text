@@ -9,7 +9,7 @@ def read(fname):
 
 NAME = 'recognizers-text-suite'
 VERSION = '1.0.0.a0'
-REQUIRES = ['recognizers-text', 'recognizers-text-number', 'recognizers-text-number-with-unit', 'recognizers-text-date-time', 'recognizers-text-sequence']
+REQUIRES = ['recognizers-text', 'recognizers-text-number', 'recognizers-text-number-with-unit', 'recognizers-text-date-time', 'recognizers-text-sequence', 'recognizers-text-choice']
 
 setup(
     name=NAME,
