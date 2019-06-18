@@ -1,5 +1,12 @@
-from typing import Pattern, Match, Union, List
+from typing import Pattern, Union, List, Match
 import regex
+from emoji import UNICODE_EMOJI
+
+
+class StringUtility:
+    @staticmethod
+    def is_emoji(letter):
+        return letter in UNICODE_EMOJI
 
 
 class RegExpUtility:

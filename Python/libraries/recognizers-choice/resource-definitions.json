@@ -1,0 +1,14 @@
+{
+    "outputPath": "./resources/",
+    "configFiles": [
+		{
+            "input": [ "English", "English-Choice" ],
+            "output": "english_choice",
+            "header": [
+                "# pylint: disable=line-too-long",
+                "class EnglishChoice:"
+            ],
+            "footer": [ "# pylint: enable=line-too-long" ]
+        }
+    ]
+}
