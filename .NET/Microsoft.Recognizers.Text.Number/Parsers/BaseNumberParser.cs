@@ -161,7 +161,7 @@ namespace Microsoft.Recognizers.Text.Number
             // Add "offset" and "relativeTo" for ordinal
             if (!string.IsNullOrEmpty(ret.Type) && ret.Type.Contains(Constants.MODEL_ORDINAL))
             {
-                if (Config.RelativeReferenceOffsetMap.ContainsKey(extResult.Text) &&
+                if ((this.Config.Options & NumberOptions.SuppressExtendedTypes) == 0 && Config.RelativeReferenceOffsetMap.ContainsKey(extResult.Text) &&
                     Config.RelativeReferenceRelativeToMap.ContainsKey(extResult.Text))
                 {
                     ret.Metadata.Offset = Config.RelativeReferenceOffsetMap[extResult.Text];
@@ -302,10 +302,13 @@ namespace Microsoft.Recognizers.Text.Number
             handle = Config.HalfADozenRegex.Replace(handle, Config.HalfADozenText);
 
             // Handling cases like "last", "next one", "previous one"
-            if (Config.RelativeReferenceOffsetMap.ContainsKey(extResult.Text) &&
-                Config.RelativeReferenceRelativeToMap.ContainsKey(extResult.Text))
+            if ((this.Config.Options & NumberOptions.SuppressExtendedTypes) == 0)
             {
-                return result;
+                if (Config.RelativeReferenceOffsetMap.ContainsKey(extResult.Text) &&
+                    Config.RelativeReferenceRelativeToMap.ContainsKey(extResult.Text))
+                {
+                    return result;
+                }
             }
 
             var numGroup = handle.Split(Config.WrittenDecimalSeparatorTexts.ToArray(), StringSplitOptions.RemoveEmptyEntries);
