@@ -54,6 +54,9 @@ namespace Microsoft.Recognizers.Text.Number
         public const string RELATIVE_END = "end";
         public const string RELATIVE_CURRENT = "current";
 
+        // Groups' names for named groups in regexes
+        public const string RelativeOrdinalGroupName = "relativeOrdinal";
+
         // Number subtypes
         public const string INTEGER = "integer";
         public const string DECIMAL = "decimal";

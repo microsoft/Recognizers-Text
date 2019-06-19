@@ -55,7 +55,7 @@ namespace Microsoft.Recognizers.Text.Number
                     }
 
                     // If SuppressExtendedTypes is on, cases like "last", "next" should be skipped
-                    if ((Options & NumberOptions.SuppressExtendedTypes) != 0 && IsRelativeOrdinal(m.Value))
+                    if ((Options & NumberOptions.SuppressExtendedTypes) != 0 && m.Groups[Constants.RelativeOrdinalGroupName].Success)
                     {
                         continue;
                     }
