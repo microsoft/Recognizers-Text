@@ -1004,6 +1004,28 @@ namespace Microsoft.Recognizers.Text.DateTime
                         var date = referenceDate.AddYears(swift);
                         year = date.Year;
 
+                        if (!string.IsNullOrEmpty(match.Groups["special"].Value))
+                        {
+                            var specialYearTimex = this.config.SpecialYearPrefixesMap[match.Groups["special"].Value.ToLowerInvariant()];
+
+                            if (!string.IsNullOrWhiteSpace(specialYearTimex))
+                            {
+                                swift = this.config.GetSwiftYear(trimmedText);
+                                if (swift < -1)
+                                {
+                                    ret.Timex = Constants.TimexFuzzyYear + specialYearTimex;
+                                }
+                                else
+                                {
+                                    var yearStr = year.ToString("D4");
+                                    ret.Timex = yearStr + specialYearTimex;
+                                }
+
+                                ret.Success = true;
+                                return ret;
+                            }
+                        }
+
                         var beginDate = DateObject.MinValue.SafeCreateFromValue(year, 1, 1);
                         var endDate = inclusiveEndPeriod ?
                             DateObject.MinValue.SafeCreateFromValue(year, 12, 31) :
@@ -1236,6 +1258,18 @@ namespace Microsoft.Recognizers.Text.DateTime
                     if (exactMatch.Success)
                     {
                         year = config.DateExtractor.GetYearFromText(exactMatch.Match);
+                        if (!string.IsNullOrEmpty(exactMatch.Groups["special"].Value))
+                        {
+                            var specialYearTimex = this.config.SpecialYearPrefixesMap[exactMatch.Groups["special"].Value.ToLowerInvariant()];
+
+                            if (!string.IsNullOrWhiteSpace(specialYearTimex))
+                            {
+                                var yearStr = year.ToString("D4");
+                                ret.Timex = yearStr + specialYearTimex;
+                                ret.Success = true;
+                                return ret;
+                            }
+                        }
                     }
                 }
 

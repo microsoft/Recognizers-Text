@@ -289,6 +289,10 @@ namespace Microsoft.Recognizers.Definitions.Italian
             { @"secs", 1 },
             { @"sec", 1 }
         };
+      public static readonly Dictionary<string, string> SpecialYearPrefixesMap = new Dictionary<string, string>
+        {
+            { @"", @"" }
+        };
       public static readonly Dictionary<string, string> SeasonMap = new Dictionary<string, string>
         {
             { @"primavera", @"SP" },
