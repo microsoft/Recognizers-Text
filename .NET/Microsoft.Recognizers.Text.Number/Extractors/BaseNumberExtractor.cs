@@ -108,7 +108,7 @@ namespace Microsoft.Recognizers.Text.Number
                             };
 
                             // Add Metadata information for Ordinal
-                            if (ExtractType.Contains(Constants.MODEL_ORDINAL))
+                            if ((Options & NumberOptions.ExperimentalMode) == 0 && ExtractType.Contains(Constants.MODEL_ORDINAL))
                             {
                                 er.Metadata = new Metadata();
                                 if (IsRelativeOrdinal(substr))

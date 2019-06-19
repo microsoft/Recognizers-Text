@@ -129,5 +129,25 @@
     "NotSupported": "javascript, python, java",
     "Results": [
     ]
+  },
+  {
+    "Input": "The one before the last one is the right one",
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "I meant the one before the last",
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "I meant the current one",
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Look at current page",
+    "NotSupported": "javascript, python, java",
+    "Results": []
   }
 ]
