@@ -46,6 +46,8 @@ namespace Microsoft.Recognizers.Text.Number
                         parsedNumbers.Add(parseResult);
                     }
                 }
+
+                return parsedNumbers.Select(BuildModelResult).Where(r => r != null).ToList();
             }
             catch (Exception)
             {
@@ -53,62 +55,75 @@ namespace Microsoft.Recognizers.Text.Number
                 // No result.
             }
 
-            return parsedNumbers.Select(o =>
+            return new List<ModelResult>();
+        }
+
+        private ModelResult BuildModelResult(ParseResult pn)
+        {
+
+            try
             {
-                var end = o.Start.Value + o.Length.Value - 1;
+                var end = pn.Start.Value + pn.Length.Value - 1;
                 var resolution = new SortedDictionary<string, object>();
-                if (o.Value != null)
+                if (pn.Value != null)
                 {
-                    resolution.Add(ResolutionKey.Value, o.ResolutionStr);
+                    resolution.Add(ResolutionKey.Value, pn.ResolutionStr);
                 }
 
                 var extractorSupportsSubtype = ExtractorsSupportingSubtype.Exists(e => Extractor.GetType().ToString().Contains(e));
 
                 // Check if current extractor supports the Subtype field in the resolution
                 // As some languages like German, we miss handling some subtypes between "decimal" and "integer"
-                if (!string.IsNullOrEmpty(o.Type) &&
-                    Constants.ValidSubTypes.Contains(o.Type) && extractorSupportsSubtype)
+                if (!string.IsNullOrEmpty(pn.Type) &&
+                    Constants.ValidSubTypes.Contains(pn.Type) && extractorSupportsSubtype)
                 {
-                    resolution.Add(ResolutionKey.SubType, o.Type);
+                    resolution.Add(ResolutionKey.SubType, pn.Type);
                 }
 
-                var type = string.Empty;
+                string specificNumberType;
 
-                // for ordinal and ordinal.relative
-                // Only support "ordinal.relative" for English for now
-                if (ModelTypeName.Equals(Constants.MODEL_ORDINAL))
+                // For ordinal and ordinal.relative - "ordinal.relative" only available in English for now
+                if (ModelTypeName.Equals(Constants.MODEL_ORDINAL, StringComparison.InvariantCulture))
                 {
-                    if (o.Metadata != null && o.Metadata.IsOrdinalRelative)
+                    if (pn.Metadata != null && pn.Metadata.IsOrdinalRelative)
                     {
-                        type = $"{ModelTypeName}.{Constants.RELATIVE}";
+                        specificNumberType = Constants.MODEL_ORDINAL_RELATIVE;
 
-                        // add value for oridinal.relative
-                        string mark = o.Metadata.Offset[0].Equals('-') ? string.Empty : "+";
-                        string value = string.Concat(o.Metadata.RelativeTo, mark, o.Metadata.Offset);
+                        // Add value for ordinal.relative
+                        string sign = pn.Metadata.Offset[0].Equals('-') ? string.Empty : "+";
+                        string value = string.Concat(pn.Metadata.RelativeTo, sign, pn.Metadata.Offset);
                         resolution.Add(ResolutionKey.Value, value);
                     }
                     else
                     {
-                        type = ModelTypeName;
+                        specificNumberType = ModelTypeName;
                     }
 
-                    resolution.Add(ResolutionKey.Offset, o.Metadata.Offset);
-                    resolution.Add(ResolutionKey.RelativeTo, o.Metadata.RelativeTo);
+                    resolution.Add(ResolutionKey.Offset, pn.Metadata.Offset);
+                    resolution.Add(ResolutionKey.RelativeTo, pn.Metadata.RelativeTo);
                 }
                 else
                 {
-                    type = ModelTypeName;
+                    specificNumberType = ModelTypeName;
                 }
 
                 return new ModelResult
                 {
-                    Start = o.Start.Value,
+                    Start = pn.Start.Value,
                     End = end,
                     Resolution = resolution,
-                    Text = o.Text,
-                    TypeName = type,
+                    Text = pn.Text,
+                    TypeName = specificNumberType,
                 };
-            }).ToList();
+            }
+            catch (Exception)
+            {
+                // Nothing to do. Exceptions in result process should not affect other extracted entities.
+                // No result.
+            }
+
+            return null; // Only in failure cases. These will be filtered out before final output.
         }
+
     }
 }
