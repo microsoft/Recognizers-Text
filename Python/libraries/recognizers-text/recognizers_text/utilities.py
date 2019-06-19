@@ -2,16 +2,6 @@ import re
 from typing import Pattern, Union, List, Match
 import regex
 from emoji import UNICODE_EMOJI
-from matcher import Matcher
-
-
-class ConditionalMatch:
-    match: Match
-    success: bool
-
-    def __init__(self, match: Match, success: bool):
-        self.match = match
-        self.success = success
 
 
 class StringUtility:
@@ -31,6 +21,7 @@ class StringUtility:
         except:
             ret = 1
         return ret
+
 
 class RegExpUtility:
     @staticmethod
