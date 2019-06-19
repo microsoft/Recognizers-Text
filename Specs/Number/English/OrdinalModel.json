@@ -678,5 +678,73 @@
         }
       }
     ]
+  },
+  {
+    "Input": "The one before the last one is the right one",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "the one before the last one",
+        "Start": 0,
+        "End": 26,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "-1",
+          "relativeTo": "end",
+          "value": "end-1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I meant the one before the last",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "the one before the last",
+        "Start": 8,
+        "End": 30,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "-1",
+          "relativeTo": "end",
+          "value": "end-1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I meant the current one",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "current one",
+        "Start": 12,
+        "End": 22,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "0",
+          "relativeTo": "current",
+          "value": "current+0"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Look at the current page",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "current",
+        "Start": 12,
+        "End": 18,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "0",
+          "relativeTo": "current",
+          "value": "current+0"
+        }
+      }
+    ]
   }
 ]
