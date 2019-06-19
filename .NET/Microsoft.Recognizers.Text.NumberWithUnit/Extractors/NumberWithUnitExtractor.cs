@@ -112,7 +112,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                                 break;
                             }
 
-                            if (m.Length > 0 && source.Substring(m.Start, lastIndex - m.Start).ToLower().Trim() == m.Text)
+                            if (m.Length > 0 && source.Substring(m.Start, lastIndex - m.Start).Trim() == m.Text)
                             {
                                 bestMatch = m;
                                 break;
@@ -175,7 +175,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
                             // Special treatment, handle cases like '2:00 pm', '00 pm' is not dimension
                             var isNotUnit = false;
-                            if (er.Type.Equals(Constants.SYS_UNIT_DIMENSION))
+                            if (er.Type.Equals(Constants.SYS_UNIT_DIMENSION, StringComparison.InvariantCulture))
                             {
                                 if (nonUnitMatches == null)
                                 {
@@ -275,7 +275,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
                             // Special treatment, handle cases like '2:00 pm', both '00 pm' and 'pm' are not dimension
                             var isNotUnit = false;
-                            if (match.Value.Equals(Constants.AMBIGUOUS_TIME_TERM))
+                            if (match.Value.Equals(Constants.AMBIGUOUS_TIME_TERM, StringComparison.InvariantCulture))
                             {
                                 foreach (Match nonUnitMatch in nonUnitMatches)
                                 {

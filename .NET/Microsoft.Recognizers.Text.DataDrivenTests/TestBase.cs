@@ -366,7 +366,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 
                 if (expected.TypeName.Contains(Number.Constants.MODEL_ORDINAL))
                 {
-                    if (!expected.TypeName.Contains(Number.Constants.RELATIVE))
+                    if (!expected.TypeName.Equals(Number.Constants.MODEL_ORDINAL_RELATIVE))
                     {
                         Assert.AreEqual(expected.Resolution[ResolutionKey.Value], actual.Resolution[ResolutionKey.Value], GetMessage(TestSpec));
                     }
