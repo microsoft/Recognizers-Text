@@ -3,7 +3,7 @@ from typing import List, Dict, Pattern
 
 from grapheme.api import slice
 import regex
-from recognizers_text import StringUtility
+from recognizers_text import StringUtility, RegExpUtility
 from recognizers_text.extractor import Extractor, ExtractResult
 
 from .constants import *
@@ -145,14 +145,22 @@ class ChoiceExtractor(Extractor):
 
     @staticmethod
     def __get_matches(regexp: Pattern, source: str) -> []:
-        matches = list(regex.finditer(regexp, source))
+        py_regex = StringUtility.remove_unicode_matches(regexp)
+        matches = list(regex.finditer(py_regex, source))
         return list(filter(None, map(lambda m: m.group().lower(), matches)))
+
 
 class BooleanExtractorConfiguration(ABC):
     regex_true: Pattern
     regex_false: Pattern
     token_regex: Pattern
     only_top_match: bool
+
+    def __init__(self, regex_true, regex_false, token_regex, only_top_match):
+        self.regex_true = RegExpUtility.get_safe_reg_exp(regex_true)
+        self.regex_false = RegExpUtility.get_safe_reg_exp(regex_false)
+        self.token_regex = RegExpUtility.get_safe_reg_exp(token_regex)
+        self.only_top_match = only_top_match
 
 class BooleanExtractor(ChoiceExtractor):
     booleanTrue = Constants.SYS_BOOLEAN_TRUE

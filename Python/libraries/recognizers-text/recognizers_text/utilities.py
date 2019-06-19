@@ -1,3 +1,4 @@
+import re
 from typing import Pattern, Union, List, Match
 import regex
 from emoji import UNICODE_EMOJI
@@ -7,6 +8,11 @@ class StringUtility:
     @staticmethod
     def is_emoji(letter):
         return letter in UNICODE_EMOJI
+
+    @staticmethod
+    def remove_unicode_matches(string: Pattern):
+        py_regex = re.sub('\\\\u.{4}[\\|\\\\]', '', string.pattern)
+        return re.sub('\\\\u', '\\\\U', py_regex)
 
 
 class RegExpUtility:
