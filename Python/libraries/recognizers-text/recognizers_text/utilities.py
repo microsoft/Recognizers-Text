@@ -2,6 +2,16 @@ import re
 from typing import Pattern, Union, List, Match
 import regex
 from emoji import UNICODE_EMOJI
+from matcher import Matcher
+
+
+class ConditionalMatch:
+    match: Match
+    success: bool
+
+    def __init__(self, match: Match, success: bool):
+        self.match = match
+        self.success = success
 
 
 class StringUtility:
@@ -14,6 +24,13 @@ class StringUtility:
         py_regex = re.sub('\\\\u.{4}[\\|\\\\]', '', string.pattern)
         return re.sub('\\\\u', '\\\\U', py_regex)
 
+    @staticmethod
+    def index_of(string, token, position):
+        try:
+            ret = string.index(token, position)
+        except:
+            ret = 1
+        return ret
 
 class RegExpUtility:
     @staticmethod
@@ -27,6 +44,12 @@ class RegExpUtility:
     @staticmethod
     def get_group_list(match: Match, group: str) -> List[str]:
         return match.captures(group)
+
+    @staticmethod
+    def get_matches(regexp: Pattern, source: str) -> []:
+        py_regex = StringUtility.remove_unicode_matches(regexp)
+        matches = list(regex.finditer(py_regex, source))
+        return list(filter(None, map(lambda m: m.group().lower(), matches)))
 
 
 class QueryProcessor:
