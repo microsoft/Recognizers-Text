@@ -731,13 +731,13 @@
     ]
   },
   {
-    "Input": "Look at current page",
+    "Input": "Look at the current page",
     "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "current",
-        "Start": 8,
-        "End": 14,
+        "Start": 12,
+        "End": 18,
         "TypeName": "ordinal.relative",
         "Resolution": {
           "offset": "0",

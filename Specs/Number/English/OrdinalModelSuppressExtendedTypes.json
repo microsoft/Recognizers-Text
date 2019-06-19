@@ -146,7 +146,7 @@
     "Results": []
   },
   {
-    "Input": "Look at current page",
+    "Input": "Look at the current page",
     "NotSupported": "javascript, python, java",
     "Results": []
   }
