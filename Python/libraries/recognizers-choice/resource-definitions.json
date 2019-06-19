@@ -1,5 +1,5 @@
 {
-    "outputPath": "./resources/",
+    "outputPath": "./recognizers_choice/resources/",
     "configFiles": [
 		{
             "input": [ "English", "English-Choice" ],
