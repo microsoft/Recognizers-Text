@@ -108,10 +108,10 @@ namespace Microsoft.Recognizers.Text.Number
                             };
 
                             // Add Metadata information for Ordinal
-                            if ((Options & NumberOptions.SuppressExtendedTypes) == 0 && ExtractType.Contains(Constants.MODEL_ORDINAL))
+                            if (ExtractType.Contains(Constants.MODEL_ORDINAL))
                             {
                                 er.Metadata = new Metadata();
-                                if (originalMatch.Groups[Constants.RelativeOrdinalGroupName].Success)
+                                if ((Options & NumberOptions.SuppressExtendedTypes) == 0 && originalMatch.Groups[Constants.RelativeOrdinalGroupName].Success)
                                 {
                                     er.Metadata.IsOrdinalRelative = true;
                                 }
