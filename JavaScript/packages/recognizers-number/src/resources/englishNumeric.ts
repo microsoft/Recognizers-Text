@@ -34,7 +34,7 @@ export namespace EnglishNumeric {
     export const AllIntRegexWithDozenSuffixLocks = `(?<=\\b)(((half\\s+)?a\\s+dozen)|(${AllIntRegex}\\s+dozen(s)?))(?=\\b)`;
     export const RoundNumberOrdinalRegex = `(hundredth|thousandth|millionth|billionth|trillionth)`;
     export const NumberOrdinalRegex = `(first|second|third|fourth|fifth|sixth|seventh|eighth|ninth|tenth|eleventh|twelfth|thirteenth|fourteenth|fifteenth|sixteenth|seventeenth|eighteenth|nineteenth|twentieth|thirtieth|fortieth|fiftieth|sixtieth|seventieth|eightieth|ninetieth)`;
-    export const RelativeOrdinalRegex = `((next|previous) one|(the second|next) to last|the one before the last( one)?|the last but one|(ante)?penultimate|last|next|previous)`;
+    export const RelativeOrdinalRegex = `(?<relativeOrdinal>(next|previous)\\s+one|(the\\s+second|next)\\s+to\\s+last|the\\s+one\\s+before\\s+the\\s+last(\\s+one)?|the\\s+last\\s+but\\s+one|(ante)?penultimate|last|next|previous)`;
     export const BasicOrdinalRegex = `(${NumberOrdinalRegex}|${RelativeOrdinalRegex})`;
     export const SuffixBasicOrdinalRegex = `(((((${TensNumberIntegerRegex}(\\s+(and\\s+)?|\\s*-\\s*)${ZeroToNineIntegerRegex})|${TensNumberIntegerRegex}|${ZeroToNineIntegerRegex}|${AnIntRegex})(\\s+${RoundNumberIntegerRegex})+)\\s+(and\\s+)?)*(${TensNumberIntegerRegex}(\\s+|\\s*-\\s*))?${BasicOrdinalRegex})`;
     export const SuffixRoundNumberOrdinalRegex = `((${AllIntRegex}\\s+)${RoundNumberOrdinalRegex})`;
