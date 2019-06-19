@@ -183,6 +183,7 @@
   },
   {
     "Input": "192.168.1.2",
+    "NotSupportedByDesign": "javascript,python,java",
     "Comment": "Extraction fails to recognize the different numbers separately due to differences in DecimalSeparatorChar and NonDecimalSeparatorChar same, case modified to match French and Spanish cases",
     "Results": [
       {
