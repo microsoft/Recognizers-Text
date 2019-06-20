@@ -1,7 +1,6 @@
 [
   {
     "Input": "Sure!",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "Sure",
@@ -15,7 +14,6 @@
   },
   {
     "Input": "I don't thing so. no.",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "no",
@@ -29,7 +27,6 @@
   },
   {
     "Input": "I think that would work. so yes I will.",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "yes",
@@ -43,7 +40,6 @@
   },
   {
     "Input": "no. I said the fourth of July",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "no",
@@ -57,7 +53,6 @@
   },
   {
     "Input": "yes... I said no onions",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "yes",
@@ -71,7 +66,6 @@
   },
   {
     "Input": "I said NO not yes!",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "NO",
@@ -85,7 +79,6 @@
   },
   {
     "Input": "Yes. I said no",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "Yes",
@@ -99,7 +92,6 @@
   },
   {
     "Input": "disagree, it is not ok",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "not ok",
@@ -113,7 +105,6 @@
   },
   {
     "Input": "agree, it is ok",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "agree",
@@ -141,7 +132,6 @@
   },
   {
     "Input": "disagree",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "disagree",
@@ -155,7 +145,6 @@
   },
   {
     "Input": "it's not ok",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "not ok",
@@ -169,7 +158,6 @@
   },
   {
     "Input": "👌 It's ok",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "👌",
@@ -183,7 +171,6 @@
   },
   {
     "Input": "👌👌👌",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "👌",
