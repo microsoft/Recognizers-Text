@@ -11,7 +11,7 @@ export enum SequenceOptions {
 }
 
 export function recognizePhoneNumber(query: string, culture: string, options: SequenceOptions  = SequenceOptions .None): Array<ModelResult> {
-    if (culture === "zh-cn" || culture === "ja-jp"){
+    if (culture.toLowerCase().startsWith("zh-") || culture.toLowerCase().startsWith("ja-")){
         return recognizeByModel(recognizer => recognizer.getPhoneNumberModel(), query, Culture.Chinese, options);
     }
     return recognizeByModel(recognizer => recognizer.getPhoneNumberModel(), query, culture, options);
@@ -34,7 +34,7 @@ export function recognizeEmail(query: string, culture: string, options: Sequence
 }
 
 export function recognizeURL(query: string, culture: string, options: SequenceOptions  = SequenceOptions .None): Array<ModelResult> {
-    if (culture === "zh-cn" || culture === "ja-jp"){
+    if (culture.toLowerCase().startsWith("zh-") || culture.toLowerCase().startsWith("ja-")){
         return recognizeByModel(recognizer => recognizer.getURLModel(), query, Culture.Chinese, options);
     }
     return recognizeByModel(recognizer => recognizer.getURLModel(), query, culture, options);
