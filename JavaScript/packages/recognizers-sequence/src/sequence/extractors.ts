@@ -94,16 +94,16 @@ export class BasePhoneNumberExtractor extends BaseSequenceExtractor {
     constructor(config: IPhoneNumberExtractorConfiguration){
         super();
         this.regexes = new Map<RegExp, string>()
-            .set(RegExpUtility.getSafeRegExp(config.BRPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_BR)
-            .set(RegExpUtility.getSafeRegExp(config.GeneralPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_GENERAL)
-            .set(RegExpUtility.getSafeRegExp(config.UKPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_UK)
-            .set(RegExpUtility.getSafeRegExp(config.DEPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_DE)
-            .set(RegExpUtility.getSafeRegExp(config.USPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_US)
-            .set(RegExpUtility.getSafeRegExp(config.CNPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_CN)
-			.set(RegExpUtility.getSafeRegExp(config.DKPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_DK)
-			.set(RegExpUtility.getSafeRegExp(config.ITPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_IT)
-			.set(RegExpUtility.getSafeRegExp(config.NLPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_NL)
-            .set(RegExpUtility.getSafeRegExp(config.SpecialPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_SPECIAL)
+            .set(config.BRPhoneNumberRegex, Constants.PHONE_NUMBER_REGEX_BR)
+            .set(config.GeneralPhoneNumberRegex, Constants.PHONE_NUMBER_REGEX_GENERAL)
+            .set(config.UKPhoneNumberRegex, Constants.PHONE_NUMBER_REGEX_UK)
+            .set(config.DEPhoneNumberRegex, Constants.PHONE_NUMBER_REGEX_DE)
+            .set(config.USPhoneNumberRegex, Constants.PHONE_NUMBER_REGEX_US)
+            .set(config.CNPhoneNumberRegex, Constants.PHONE_NUMBER_REGEX_CN)
+			.set(config.DKPhoneNumberRegex, Constants.PHONE_NUMBER_REGEX_DK)
+			.set(config.ITPhoneNumberRegex, Constants.PHONE_NUMBER_REGEX_IT)
+			.set(config.NLPhoneNumberRegex, Constants.PHONE_NUMBER_REGEX_NL)
+            .set(config.SpecialPhoneNumberRegex, Constants.PHONE_NUMBER_REGEX_SPECIAL)
     }
     extract(source: string): Array<ExtractResult> {
         let ers = super.extract(source)
