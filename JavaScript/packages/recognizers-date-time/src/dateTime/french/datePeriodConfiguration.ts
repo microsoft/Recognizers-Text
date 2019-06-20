@@ -52,9 +52,6 @@ export class FrenchDatePeriodExtractorConfiguration implements IDatePeriodExtrac
             RegExpUtility.getSafeRegExp(FrenchDateTime.QuarterRegexYearFront),
             RegExpUtility.getSafeRegExp(FrenchDateTime.AllHalfYearRegex),
             RegExpUtility.getSafeRegExp(FrenchDateTime.SeasonRegex),
-            RegExpUtility.getSafeRegExp(FrenchDateTime.PastSuffixRegex),
-            RegExpUtility.getSafeRegExp(FrenchDateTime.NextSuffixRegex),
-            RegExpUtility.getSafeRegExp(FrenchDateTime.ThisPrefixRegex),
             RegExpUtility.getSafeRegExp(FrenchDateTime.LaterEarlyPeriodRegex),
             RegExpUtility.getSafeRegExp(FrenchDateTime.WeekWithWeekDayRangeRegex)
         ];
