@@ -20,7 +20,7 @@ AreaSuffixList: !dictionary
     Millimetro quadrato: millimetro quadrato|millimetri quadrati|mm quadrato|mm quadrati|millimetro quadro|millimetri quadri|mm quadro|mm quadri|mm2|mm^2|mm²
     Pollice quadrato: pollice quadrato|pollici quadrati|in quadrato|in quadrati|pollice quadro|pollici quadri|in quadro|in quadri|sq in|sq inch|square inch|square inches|in2|in^2|in²
     Piede quadrato: piede quadrato|piedi quadrati|ft quadrato|ft quadrati|piede quadro|piedi quadri|ft quadro|ft quadri|sqft|sq ft|sq foot|sq feet|square foot|square feet|feet2|feet^2|feet²|ft2|ft^2|ft²
-    Miglio quadrato: miglio quadrato|miglia quadrata|miglia quadrate|mi quadrato|mi quadrati|mi quadrate|miglio quadro|miglia quadre|ft quadro|ft quadri|sq mi|sq mile|sqmiles|square mile|square miles|mi2|mi^2|mi²
+    Miglio quadrato: miglio quadrato|miglia quadrata|miglia quadrate|mi quadrato|mi quadrati|mi quadrate|miglio quadro|miglia quadre|sq mi|sq mile|sqmiles|square mile|square miles|mi2|mi^2|mi²
     Iarda quadrato: iarda quadrata|iarda quadra|iarde quadrate|iarde quadre|yd2|yd^2|yd²
     Acro: acro|acri
 #CurrencyExtractorConfiguration
@@ -193,11 +193,11 @@ CurrencySuffixList: !dictionary
 #São Tomé and Príncipe dobra
     São Tomé and Príncipe dobra:  dobra di são tomé|dobra di sao tome|dobras|dobra|std
 #Sierra Leonean leone
-    Sierra Leonean leone: leone di sierra leone|sll|leone|le
+    Sierra Leonean leone: leone di sierra leone|leone sierraleonese|sll|leone
 #Spain
     Peseta: pesetas|peseta
 #Netherlands guilder
-    Netherlands guilder: fiorino|fiorino delle antille olandesi|ang|ƒ
+    Netherlands guilder: fiorino|fiorini|fiorino olandese|fiorini olandesi|fiorino delle antille olandesi|fiorini delle antille olandesi|ang|ƒ
 #Swazi lilangeni
     Swazi lilangeni: lilangeni del swaziland|lilangeni|szl|emalangeni
 #Tajikistani somoni
@@ -335,19 +335,19 @@ CurrencySuffixList: !dictionary
     Barbadian dollar: dollaro barbados|dollari barbados|dollaro delle barbados|dollari delle barbados|bbd
     Belize dollar: dollaro del belize|dollari del belize|belize $|bzd
     Bermudian dollar: dollaro delle bermuda|dollari delle bermuda|bermudian $|bmd|bermuda $
-    British Virgin Islands dollar: british virgin islands dollars|british virgin islands dollar|british virgin islands $|bvi$|virgin islands dollars|virgin islands dolalr|virgin islands $|virgin island dollars|virgin island dollar|virgin island $
+    British Virgin Islands dollar: british virgin islands dollars|british virgin islands dollar|british virgin islands $|bvi$|virgin islands dollars|virgin islands dolalr|virgin islands $|virgin island dollars|virgin island dollar|virgin island $|dollaro delle isole vergini britanniche|dollari delle isole vergini britanniche|dollaro isole vergini britanniche|dollari isole vergini britanniche|
     Brunei dollar: dollaro del brunei|dollari del brunei|brunei $|bnd
     Sen: sen
     Singapore dollar: dollaro di singapore|dollari di singapore|singapore dollar|singapore $|s$|sgd
     Canadian dollar: dollaro canadese|dollari canadesi|dollaro del canada|canadian dollar|canadian $|cad|can$|c$|canada dollars|canada $
     Cayman Islands dollar: dollaro delle cayman|dollari delle cayman|dollaro delle isole cayman|dollari delle isole cayman|kyd|ci$
     New Zealand dollar: dollaro neozelandese|dollari neozelandesi|dollaro della nuova zelanda|new zealand $|nz$|nzd|kiwi
-    Cook Islands dollar: cook islands dollars|cook islands dollar|cook islands $|cook island dollars|cook island dollar|cook island $
+    Cook Islands dollar: cook islands dollars|cook islands dollar|cook islands $|cook island dollars|cook island dollar|cook island $|dollaro delle isole cook|dollari delle isole cook|dollaro delle cook|dollari delle cook|
     Fijian dollar: dollaro fiji|dollari fiji|fijian dollar|fijian $|fjd|fiji dollars|fiji dollar|fiji $
     Guyanese dollar: dollaro guyana|dollari guyana|guyanese dollars|guyanese dollar|gyd|gy$
     Hong Kong dollar: dollaro di hong kong|dollari di hong kong|hong kong $|hk$|hkd|hk dollars|hk dollar|hk $|hongkong$
     Jamaican dollar: dollaro giamaicano|dollari giamaicani| dollaro della giamaica|jamaican dollars|jamaican dollar|jamaican $|j$|jamaica dollars|jamaica dollar|jamaica $|jmd
-    Kiribati dollar: kiribati dollars|kiribati dollar|kiribati $
+    Kiribati dollar: kiribati dollars|kiribati dollar|kiribati $|dollaro di kiribati|dollari di kiribati
     Liberian dollar: dollaro liberiano|dollari liberiano|dollaro liberia|liberian dollars|liberian dollar|liberian $|liberia dollars|liberia dollar|liberia $|lrd
     Micronesian dollar: micronesian dollars|micronesian dollar|micronesian $
     Namibian dollar: dollaro di namibia|dollari di namibia|namibian dollar|namibian $|nad|n$|namibia dollars|namibia dollar|namibia $
@@ -493,6 +493,8 @@ AmbiguousDimensionUnitList: !list
     - dram
     - feet
     - foot
+    - piede
+    - piedi
     - gill
     - nodo
     - peck
@@ -511,7 +513,7 @@ ConnectorToken: di
 LengthSuffixList: !dictionary
   types: [ string, string ]
   entries:
-    Chilometro: km|chilometro|chilometri|kilometro|kilometeri
+    Chilometro: km|chilometro|chilometri|kilometro|kilometri
     Ettometro: hm|ettometro|ettometri
     Decametro: dam|decametro|decametri
     Metro: m|metro|metri
@@ -521,7 +523,7 @@ LengthSuffixList: !dictionary
     Micrometro: μm|micrometro|micrometri
     Nanometro: nm|nanometro|nanometri
     Picometro: pm|picometro|picometri
-    Miglio: -mile|mile|miles|miglia|miglio
+    Miglio: miglia|miglio
     Iarda: iarda|iarde
     Pollice: pollice|pollici
     Piede: piede|piedi
@@ -537,13 +539,13 @@ SpeedSuffixList: !dictionary
   types: [ string, string ]
   entries:
     Metro al secondo: metro / secondo|metri / secondi|m/s|metri per secondo|metri al secondo|metro per secondo|metro al secondo
-    Chilometri all'ora: km/h|km/ora|kilometro per ora|kilometri per ora|chilometro per ora|chilometri per ora|kilometro all'ora|kilometri all'ora|chilometro all'ora|chilometri all'ora
+    Chilometri all'ora: km/h|km/ora|kilometro per ora|kilometri per ora|chilometro per ora|chilometri per ora|kilometro all'ora|kilometri all'ora|chilometro all'ora|chilometri all'ora|kilometri orari|chilometri orari
     Chilometri al minuto: km/min|km/minuto|kilometro per minuto|kilometri per minuto|chilometro per minuto|chilometri per minuto|kilometro al minuto|kilometri al minuto|chilometro al minuto|chilometri al minuto
     Chilometri al secondo: km/s|km/secondo|kilometro per secondo|kilometri per secondo|chilometro per secondo|chilometri per secondo|kilometro al secondo|kilometri al secondo|chilometro al secondo|chilometri al secondo
-    Miglia all'ora: mph|miglia per ora|miglio per ora|miglia all'ora|miglio all'ora
+    Miglia all'ora: mph|miglia per ora|miglio per ora|miglia all'ora|miglio all'ora|miglia orarie
     Nodo: kt|nodo|nodi|kn
     Piede al secondo: ft/s|foot/s|piede/s|piedi/s|piede per secondo|piedi per secondo|piede al secondo|piedi al secondo
-    Piede al minuto: ft/min|foot/min|piede/min|piedi/min|piede per minute|piedi per minute|piede al minute|piedi al minute
+    Piede al minuto: ft/min|foot/min|piede/min|piedi/min|piede per minuto|piedi per minuti|piede al minuto|piedi al minuto
     Iarda al minuto: iarda per minuto|iarde per minuto|iarda al minuto|iarde al minuto
     Iarda al secondo: iarda per secondo|iarde per secondo|iarda al secondo|iarde al secondo
 #TemperatureExtractorConfiguration
@@ -570,7 +572,8 @@ VolumeSuffixList: !dictionary
     Centimetro cubo: cm3|cm^3|cm³|centimetro cubo|centimetri cubi|centimetro cubico|centimetri cubici
     Millimetro cubo: mm3|mm^3|mm³|millimetro cubo|millimetri cubi|millimetro cubico|millimetri cubici
     Ettolitro: ettolitro|ettolitri
-    Decalitro: dal|decalitro|decalitri|dekalitro|dekalitri
+    Decalitro: decalitro|decalitri|dekalitro|dekalitri
+    #Decalitro: dal|decalitro|decalitri|dekalitro|dekalitri
     Litro: l|litro|litri
     Decilitro: dl|decilitro|decilitri
     Centilitro: cl|centilitro|centilitri
@@ -580,7 +583,7 @@ VolumeSuffixList: !dictionary
     Piede cubo: piede cubo|piedi cubi|piede cubico|piedi cubici
     Miglia cubica: miglio cubo|miglio cubico|miglia cubica|miglia cubiche
     Oncia: oncia|once
-    Oncia liquida: oncia fluida|once fluide|once liquida|once liquide
+    Oncia liquida: oncia fluida|once fluide|oncia liquida|once liquide
     Cucchiaino: cucchiaino|cucchiaini
     Cucchiaio: cucchiaio|cucchiai
     Tazza: tazza|tazze
@@ -589,6 +592,7 @@ VolumeSuffixList: !dictionary
 AmbiguousVolumeUnitList: !list
   types: [ string ]
   entries:
+    - dal
     - l
     - oncia
     - tazza
