@@ -88,11 +88,6 @@ namespace Microsoft.Recognizers.Text.Number
                     if (pn.Metadata != null && pn.Metadata.IsOrdinalRelative)
                     {
                         specificNumberType = Constants.MODEL_ORDINAL_RELATIVE;
-
-                        // Add value for ordinal.relative
-                        string sign = pn.Metadata.Offset[0].Equals('-') ? string.Empty : "+";
-                        string value = string.Concat(pn.Metadata.RelativeTo, sign, pn.Metadata.Offset);
-                        resolution.Add(ResolutionKey.Value, value);
                     }
                     else
                     {
