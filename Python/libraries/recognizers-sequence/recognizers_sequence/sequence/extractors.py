@@ -16,6 +16,65 @@ ReVal = namedtuple('ReVal', ['re', 'val'])
 MatchesVal = namedtuple('MatchesVal', ['matches', 'val'])
 
 
+class BaseSequenceExtractorConfiguration(ABC):
+    @property
+    @abstractmethod
+    def br_phone_number_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def general_phone_number_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def uk_phone_number_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def de_phone_number_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def us_phone_number_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def cn_phone_number_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def dk_phone_number_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def it_phone_number_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def nl_phone_number_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def special_phone_number_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    def culture_info(self) -> CultureInfo:
+        return self._culture_info
+
+    def __init__(self, culture_info: CultureInfo):
+        self._culture_info = culture_info
+
+
 class SequenceExtractor(Extractor):
     @property
     @abstractmethod
@@ -106,23 +165,26 @@ class BasePhoneNumberExtractor(SequenceExtractor):
                     er.length = er.length + match.end() - match.start() + 1
                     er.text = source[er.start:er.start + er.length].strip()
                     ret.append(er)
+
+        for m in re.finditer(BasePhoneNumbers.PhoneNumberMaskRegex, source):
+            ret = [er for er in ret if er.start < m.start() or er.end > m.end()]
         return ret
 
-    def __init__(self):
+    def __init__(self, config: BaseSequenceExtractorConfiguration):
+        self.config = config
         self._regexes = [
-            ReVal(RegExpUtility.get_safe_reg_exp(BasePhoneNumbers.BRPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_BR),
-            ReVal(RegExpUtility.get_safe_reg_exp(BasePhoneNumbers.GeneralPhoneNumberRegex),
-                  Constants.PHONE_NUMBER_REGEX_GENERAL),
-            ReVal(RegExpUtility.get_safe_reg_exp(BasePhoneNumbers.UKPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_UK),
-            ReVal(RegExpUtility.get_safe_reg_exp(BasePhoneNumbers.DEPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_DE),
-            ReVal(RegExpUtility.get_safe_reg_exp(BasePhoneNumbers.USPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_US),
-            ReVal(RegExpUtility.get_safe_reg_exp(BasePhoneNumbers.CNPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_CN),
-            ReVal(RegExpUtility.get_safe_reg_exp(BasePhoneNumbers.DKPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_DK),
-            ReVal(RegExpUtility.get_safe_reg_exp(BasePhoneNumbers.ITPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_IT),
-            ReVal(RegExpUtility.get_safe_reg_exp(BasePhoneNumbers.NLPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_NL),
-            ReVal(RegExpUtility.get_safe_reg_exp(BasePhoneNumbers.SpecialPhoneNumberRegex),
-                  Constants.PHONE_NUMBER_REGEX_SPECIAL),
+            ReVal(config.br_phone_number_regex, Constants.PHONE_NUMBER_REGEX_BR),
+            ReVal(config.general_phone_number_regex,Constants.PHONE_NUMBER_REGEX_GENERAL),
+            ReVal(config.uk_phone_number_regex, Constants.PHONE_NUMBER_REGEX_UK),
+            ReVal(config.de_phone_number_regex, Constants.PHONE_NUMBER_REGEX_DE),
+            ReVal(config.us_phone_number_regex, Constants.PHONE_NUMBER_REGEX_US),
+            ReVal(config.cn_phone_number_regex, Constants.PHONE_NUMBER_REGEX_CN),
+            ReVal(config.dk_phone_number_regex, Constants.PHONE_NUMBER_REGEX_DK),
+            ReVal(config.it_phone_number_regex, Constants.PHONE_NUMBER_REGEX_IT),
+            ReVal(config.nl_phone_number_regex, Constants.PHONE_NUMBER_REGEX_NL),
+            ReVal(config.special_phone_number_regex,Constants.PHONE_NUMBER_REGEX_SPECIAL),
         ]
+
 
 class BaseEmailExtractor(SequenceExtractor):
     @property
@@ -136,6 +198,6 @@ class BaseEmailExtractor(SequenceExtractor):
     def __init__(self):
         self._regexes = [
             ReVal(RegExpUtility.get_safe_reg_exp(BaseEmail.EmailRegex), Constants.EMAIL_REGEX),
-            #EmailRegex2 will break the code as it's not supported in Python, comment out for now
-            #ReVal(RegExpUtility.get_safe_reg_exp(BaseEmail.EmailRegex2), Constants.EMAIL_REGEX),
+            # EmailRegex2 will break the code as it's not supported in Python, comment out for now
+            # ReVal(RegExpUtility.get_safe_reg_exp(BaseEmail.EmailRegex2), Constants.EMAIL_REGEX),
         ]
