@@ -65,7 +65,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public static readonly Regex FutureSuffixRegex =
             new Regex(DateTimeDefinitions.FutureSuffixRegex, RegexOptions.Singleline);
 
-        public static readonly Regex ThisPrefexRegex =
+        public static readonly Regex ThisPrefixRegex =
             new Regex(DateTimeDefinitions.ThisPrefixRegex, RegexOptions.Singleline);
 
         // composite regexes
@@ -207,9 +207,6 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             QuarterRegex,
             QuarterRegexYearFront,
             SeasonRegex,
-            PastPrefixRegex,
-            NextPrefixRegex,
-            ThisPrefexRegex,
             LaterEarlyPeriodRegex,
             WeekWithWeekDayRangeRegex,
             YearPlusNumberRegex,
