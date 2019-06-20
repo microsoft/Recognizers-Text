@@ -1,22 +1,32 @@
-import { BasePhoneNumberExtractor, BaseIpExtractor, BaseMentionExtractor, BaseHashtagExtractor, BaseEmailExtractor, BaseURLExtractor, BaseGUIDExtractor } from "../extractors";
+import { BasePhoneNumberExtractor, BaseIpExtractor, BaseMentionExtractor, BaseHashtagExtractor, BaseEmailExtractor, BaseURLExtractor, BaseGUIDExtractor, IPhoneNumberExtractorConfiguration } from "../extractors";
 import { ExtractResult, RegExpUtility } from "@microsoft/recognizers-text";
 import { BasePhoneNumbers } from "../../resources/basePhoneNumbers";
 import { BaseURL } from "../../resources/baseURL";
 import { IURLExtractorConfiguration } from "../extractors";
 
-export class PhoneNumberExtractor extends BasePhoneNumberExtractor{
-    extract(source: string): Array<ExtractResult> {
-        var result = super.extract(source);
-        var maskRegex = new RegExp(BasePhoneNumbers.PhoneNumberMaskRegex, "g");
-        var m;
-        while ((m = maskRegex.exec(source)) != null) {
-            for (var i = result.length - 1; i >= 0; --i) {
-                if (result[i].start >= m.index && result[i].start + result[i].length <= m.index + m[0].length) {
-                    result.splice(i, 1);
-                }
-            }
-        }
-        return result;
+export class EnglishPhoneNumberExtractorConfiguration implements IPhoneNumberExtractorConfiguration{
+    readonly BRPhoneNumberRegex: RegExp;
+    readonly GeneralPhoneNumberRegex: RegExp;
+    readonly UKPhoneNumberRegex: RegExp;
+    readonly DEPhoneNumberRegex: RegExp;
+    readonly USPhoneNumberRegex: RegExp;
+    readonly CNPhoneNumberRegex: RegExp;
+    readonly DKPhoneNumberRegex: RegExp;
+    readonly ITPhoneNumberRegex: RegExp;
+    readonly NLPhoneNumberRegex: RegExp;
+    readonly SpecialPhoneNumberRegex: RegExp;
+
+    constructor() {
+        this.BRPhoneNumberRegex = RegExpUtility.getSafeRegExp(BasePhoneNumbers.BRPhoneNumberRegex);
+        this.GeneralPhoneNumberRegex = RegExpUtility.getSafeRegExp(BasePhoneNumbers.GeneralPhoneNumberRegex);
+        this.UKPhoneNumberRegex = RegExpUtility.getSafeRegExp(BasePhoneNumbers.UKPhoneNumberRegex);
+        this.DEPhoneNumberRegex = RegExpUtility.getSafeRegExp(BasePhoneNumbers.DEPhoneNumberRegex);
+        this.USPhoneNumberRegex = RegExpUtility.getSafeRegExp(BasePhoneNumbers.USPhoneNumberRegex);
+        this.CNPhoneNumberRegex = RegExpUtility.getSafeRegExp(BasePhoneNumbers.CNPhoneNumberRegex);
+        this.DKPhoneNumberRegex = RegExpUtility.getSafeRegExp(BasePhoneNumbers.DKPhoneNumberRegex);
+        this.ITPhoneNumberRegex = RegExpUtility.getSafeRegExp(BasePhoneNumbers.ITPhoneNumberRegex);
+        this.NLPhoneNumberRegex = RegExpUtility.getSafeRegExp(BasePhoneNumbers.NLPhoneNumberRegex);
+        this.SpecialPhoneNumberRegex = RegExpUtility.getSafeRegExp(BasePhoneNumbers.SpecialPhoneNumberRegex);
     }
 }
 

@@ -107,6 +107,11 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
+    <Compile Update="Chinese\PhoneNumbersDefinitions.cs">
+      <DependentUpon>PhoneNumbersDefinitions.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
     <Compile Update="Chinese\URLDefinitions.cs">
       <DependentUpon>URLDefinitions.tt</DependentUpon>
       <DesignTime>True</DesignTime>
@@ -332,6 +337,8 @@
     </None>
     <None Update="Chinese\NumbersWithUnitDefinitions.tt">
     </None>
+    <None Update="Chinese\PhoneNumbersDefinitions.tt">
+    </None>
     <None Update="Chinese\URLDefinitions.tt">
     </None>
     <None Update="Dutch\ChoiceDefinitions.tt">
@@ -410,6 +417,10 @@
 
   <ItemGroup>
     <DotNetCliToolReference Include="T5.TextTransform.Tool" Version="1.1.0-*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">

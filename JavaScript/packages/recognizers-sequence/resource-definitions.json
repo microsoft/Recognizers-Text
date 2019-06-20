@@ -67,6 +67,14 @@
                 "export namespace ChineseURL {"
             ],
             "footer": [ "}" ]
+        },
+        {
+            "input": [ "Chinese", "Chinese-PhoneNumbers" ],
+            "output": "chinesePhoneNumbers",
+            "header": [
+                "export namespace ChinesePhoneNumbers {"
+            ],
+            "footer": [ "}" ]
         }
     ]
 }

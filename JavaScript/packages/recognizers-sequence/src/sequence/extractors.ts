@@ -75,22 +75,35 @@ export abstract class BaseSequenceExtractor implements IExtractor {
     }
 }
 
+export interface IPhoneNumberExtractorConfiguration {
+    BRPhoneNumberRegex: RegExp;
+    GeneralPhoneNumberRegex: RegExp;
+    UKPhoneNumberRegex: RegExp;
+    DEPhoneNumberRegex: RegExp;
+    USPhoneNumberRegex: RegExp;
+    CNPhoneNumberRegex: RegExp;
+    DKPhoneNumberRegex: RegExp;
+    ITPhoneNumberRegex: RegExp;
+    NLPhoneNumberRegex: RegExp;
+    SpecialPhoneNumberRegex: RegExp;
+}
+
 export class BasePhoneNumberExtractor extends BaseSequenceExtractor {
     regexes: Map<RegExp, string>;
 
-    constructor(){
+    constructor(config: IPhoneNumberExtractorConfiguration){
         super();
         this.regexes = new Map<RegExp, string>()
-            .set(RegExpUtility.getSafeRegExp(BasePhoneNumbers.BRPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_BR)
-            .set(RegExpUtility.getSafeRegExp(BasePhoneNumbers.GeneralPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_GENERAL)
-            .set(RegExpUtility.getSafeRegExp(BasePhoneNumbers.UKPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_UK)
-            .set(RegExpUtility.getSafeRegExp(BasePhoneNumbers.DEPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_DE)
-            .set(RegExpUtility.getSafeRegExp(BasePhoneNumbers.USPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_US)
-            .set(RegExpUtility.getSafeRegExp(BasePhoneNumbers.CNPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_CN)
-			.set(RegExpUtility.getSafeRegExp(BasePhoneNumbers.DKPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_DK)
-			.set(RegExpUtility.getSafeRegExp(BasePhoneNumbers.ITPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_IT)
-			.set(RegExpUtility.getSafeRegExp(BasePhoneNumbers.NLPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_NL)
-            .set(RegExpUtility.getSafeRegExp(BasePhoneNumbers.SpecialPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_SPECIAL)
+            .set(RegExpUtility.getSafeRegExp(config.BRPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_BR)
+            .set(RegExpUtility.getSafeRegExp(config.GeneralPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_GENERAL)
+            .set(RegExpUtility.getSafeRegExp(config.UKPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_UK)
+            .set(RegExpUtility.getSafeRegExp(config.DEPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_DE)
+            .set(RegExpUtility.getSafeRegExp(config.USPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_US)
+            .set(RegExpUtility.getSafeRegExp(config.CNPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_CN)
+			.set(RegExpUtility.getSafeRegExp(config.DKPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_DK)
+			.set(RegExpUtility.getSafeRegExp(config.ITPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_IT)
+			.set(RegExpUtility.getSafeRegExp(config.NLPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_NL)
+            .set(RegExpUtility.getSafeRegExp(config.SpecialPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_SPECIAL)
     }
     extract(source: string): Array<ExtractResult> {
         let ers = super.extract(source)
@@ -120,6 +133,16 @@ export class BasePhoneNumberExtractor extends BaseSequenceExtractor {
                             ret.push(er);
                         }
                     }
+        }
+        
+        var maskRegex = new RegExp(BasePhoneNumbers.PhoneNumberMaskRegex, "g");
+        var m;
+        while ((m = maskRegex.exec(source)) != null) {
+            for (var i = ret.length - 1; i >= 0; --i) {
+                if (ret[i].start >= m.index && ret[i].start + ret[i].length <= m.index + m[0].length) {
+                    ret.splice(i, 1);
+                }
+            }
         }
         return ret;
     }

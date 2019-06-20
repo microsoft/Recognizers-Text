@@ -10,48 +10,50 @@ namespace Microsoft.Recognizers.Text.Sequence
     {
         private static readonly Regex InternationDialingPrefixRegex = new Regex(BasePhoneNumbers.InternationDialingPrefixRegex);
 
-        public BasePhoneNumberExtractor()
+        private PhoneNumberConfiguration config;
+
+        public BasePhoneNumberExtractor(PhoneNumberConfiguration config)
         {
             var regexes = new Dictionary<Regex, string>
             {
                 {
-                    new Regex(BasePhoneNumbers.BRPhoneNumberRegex),
+                    config.BRPhoneNumberRegex,
                     Constants.PHONE_NUMBER_REGEX_BR
                 },
                 {
-                    new Regex(BasePhoneNumbers.GeneralPhoneNumberRegex),
+                    config.GeneralPhoneNumberRegex,
                     Constants.PHONE_NUMBER_REGEX_GENERAL
                 },
                 {
-                    new Regex(BasePhoneNumbers.UKPhoneNumberRegex),
+                    config.UKPhoneNumberRegex,
                     Constants.PHONE_NUMBER_REGEX_UK
                 },
                 {
-                    new Regex(BasePhoneNumbers.DEPhoneNumberRegex),
+                    config.DEPhoneNumberRegex,
                     Constants.PHONE_NUMBER_REGEX_DE
                 },
                 {
-                    new Regex(BasePhoneNumbers.USPhoneNumberRegex),
+                    config.USPhoneNumberRegex,
                     Constants.PHONE_NUMBER_REGEX_US
                 },
                 {
-                    new Regex(BasePhoneNumbers.CNPhoneNumberRegex),
+                    config.CNPhoneNumberRegex,
                     Constants.PHONE_NUMBER_REGEX_CN
                 },
                 {
-                    new Regex(BasePhoneNumbers.DKPhoneNumberRegex),
+                    config.DKPhoneNumberRegex,
                     Constants.PHONE_NUMBER_REGEX_DK
                 },
                 {
-                    new Regex(BasePhoneNumbers.ITPhoneNumberRegex),
+                    config.ITPhoneNumberRegex,
                     Constants.PHONE_NUMBER_REGEX_IT
                 },
                 {
-                    new Regex(BasePhoneNumbers.NLPhoneNumberRegex),
+                    config.NLPhoneNumberRegex,
                     Constants.PHONE_NUMBER_REGEX_NL
                 },
                 {
-                    new Regex(BasePhoneNumbers.SpecialPhoneNumberRegex),
+                    config.SpecialPhoneNumberRegex,
                     Constants.PHONE_NUMBER_REGEX_SPECIAL
                 },
             };
@@ -101,6 +103,21 @@ namespace Microsoft.Recognizers.Text.Sequence
                         }
 
                         ers.Remove(er);
+                    }
+                }
+            }
+
+            var maskMatchCollection = Regex.Matches(text, BasePhoneNumbers.PhoneNumberMaskRegex);
+
+            for (var index = ers.Count - 1; index >= 0; --index)
+            {
+                foreach (Match m in maskMatchCollection)
+                {
+                    if (ers[index].Start >= m.Index &&
+                        ers[index].Start + ers[index].Length <= m.Index + m.Length)
+                    {
+                        ers.RemoveAt(index);
+                        break;
                     }
                 }
             }
