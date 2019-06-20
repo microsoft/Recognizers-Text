@@ -5,7 +5,6 @@ namespace Microsoft.Recognizers.Text.Sequence.English
 {
     public class EnglishPhoneNumberExtractorConfiguration : PhoneNumberConfiguration
     {
-
         public EnglishPhoneNumberExtractorConfiguration(SequenceOptions options)
             : base(options)
         {
@@ -20,6 +19,5 @@ namespace Microsoft.Recognizers.Text.Sequence.English
             NLPhoneNumberRegex = new Regex(BasePhoneNumbers.NLPhoneNumberRegex, RegexOptions.Compiled);
             SpecialPhoneNumberRegex = new Regex(BasePhoneNumbers.SpecialPhoneNumberRegex, RegexOptions.Compiled);
         }
-
     }
 }

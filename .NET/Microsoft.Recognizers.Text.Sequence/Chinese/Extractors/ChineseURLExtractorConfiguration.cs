@@ -6,7 +6,6 @@ namespace Microsoft.Recognizers.Text.Sequence.Chinese
 {
     public class ChineseURLExtractorConfiguration : URLConfiguration
     {
-
         public ChineseURLExtractorConfiguration(SequenceOptions options)
             : base(options)
         {

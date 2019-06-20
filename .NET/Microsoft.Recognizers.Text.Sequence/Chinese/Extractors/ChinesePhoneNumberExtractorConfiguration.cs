@@ -6,7 +6,6 @@ namespace Microsoft.Recognizers.Text.Sequence.Chinese
 {
     public class ChinesePhoneNumberExtractorConfiguration : PhoneNumberConfiguration
     {
-
         public ChinesePhoneNumberExtractorConfiguration(SequenceOptions options)
             : base(options)
         {
@@ -21,6 +20,5 @@ namespace Microsoft.Recognizers.Text.Sequence.Chinese
             NLPhoneNumberRegex = new Regex(PhoneNumbersDefinitions.NLPhoneNumberRegex, RegexOptions.Compiled);
             SpecialPhoneNumberRegex = new Regex(PhoneNumbersDefinitions.SpecialPhoneNumberRegex, RegexOptions.Compiled);
         }
-
     }
 }
