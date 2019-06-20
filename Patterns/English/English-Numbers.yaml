@@ -17,7 +17,7 @@ NegativeNumberSignRegex: !nestedRegex
   def: ^{NegativeNumberTermsRegex}.*
   references: [ NegativeNumberTermsRegex ]
 AnIntRegex: !simpleRegex
-  def: (an|a)(?=\s)
+  def: (an?)(?=\s)
 TenToNineteenIntegerRegex: !simpleRegex
   def: (seventeen|thirteen|fourteen|eighteen|nineteen|fifteen|sixteen|eleven|twelve|ten)
 TensNumberIntegerRegex: !simpleRegex

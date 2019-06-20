@@ -20,7 +20,7 @@ class EnglishNumeric:
     TwoToNineIntegerRegex = f'(three|seven|eight|four|five|nine|two|six)'
     NegativeNumberTermsRegex = f'((minus|negative)\\s+)'
     NegativeNumberSignRegex = f'^{NegativeNumberTermsRegex}.*'
-    AnIntRegex = f'(an|a)(?=\\s)'
+    AnIntRegex = f'(an?)(?=\\s)'
     TenToNineteenIntegerRegex = f'(seventeen|thirteen|fourteen|eighteen|nineteen|fifteen|sixteen|eleven|twelve|ten)'
     TensNumberIntegerRegex = f'(seventy|twenty|thirty|eighty|ninety|forty|fifty|sixty)'
     SeparaIntRegex = f'((({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}(\\s+(and\\s+)?|\\s*-\\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex})(\\s+{RoundNumberIntegerRegex})*))|(({AnIntRegex}(\\s+{RoundNumberIntegerRegex})+))'
@@ -35,19 +35,19 @@ class EnglishNumeric:
     AllIntRegexWithDozenSuffixLocks = f'(?<=\\b)(((half\\s+)?a\\s+dozen)|({AllIntRegex}\\s+dozen(s)?))(?=\\b)'
     RoundNumberOrdinalRegex = f'(hundredth|thousandth|millionth|billionth|trillionth)'
     NumberOrdinalRegex = f'(first|second|third|fourth|fifth|sixth|seventh|eighth|ninth|tenth|eleventh|twelfth|thirteenth|fourteenth|fifteenth|sixteenth|seventeenth|eighteenth|nineteenth|twentieth|thirtieth|fortieth|fiftieth|sixtieth|seventieth|eightieth|ninetieth)'
-    RelativeOrdinalRegex = f'(?<relativeOrdinal>(next|previous)\\s+one|(the\\s+second|next)\\s+to\\s+last|the\\s+one\\s+before\\s+the\\s+last(\\s+one)?|the\\s+last\\s+but\\s+one|(ante)?penultimate|last|next|previous)'
+    RelativeOrdinalRegex = f'(?<relativeOrdinal>(next|previous|current)\\s+one|(the\\s+second|next)\\s+to\\s+last|the\\s+one\\s+before\\s+the\\s+last(\\s+one)?|the\\s+last\\s+but\\s+one|(ante)?penultimate|last|next|previous|current)'
     BasicOrdinalRegex = f'({NumberOrdinalRegex}|{RelativeOrdinalRegex})'
     SuffixBasicOrdinalRegex = f'((((({TensNumberIntegerRegex}(\\s+(and\\s+)?|\\s*-\\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{AnIntRegex})(\\s+{RoundNumberIntegerRegex})+)\\s+(and\\s+)?)*({TensNumberIntegerRegex}(\\s+|\\s*-\\s*))?{BasicOrdinalRegex})'
     SuffixRoundNumberOrdinalRegex = f'(({AllIntRegex}\\s+){RoundNumberOrdinalRegex})'
     AllOrdinalRegex = f'({SuffixBasicOrdinalRegex}|{SuffixRoundNumberOrdinalRegex})'
     OrdinalSuffixRegex = f'(?<=\\b)((\\d*(1st|2nd|3rd|4th|5th|6th|7th|8th|9th|0th))|(11th|12th))(?=\\b)'
     OrdinalNumericRegex = f'(?<=\\b)(\\d{{1,3}}(\\s*,\\s*\\d{{3}})*\\s*th)(?=\\b)'
-    OrdinalRoundNumberRegex = f'(?<!(a|an)\\s+){RoundNumberOrdinalRegex}'
+    OrdinalRoundNumberRegex = f'(?<!an?\\s+){RoundNumberOrdinalRegex}'
     OrdinalEnglishRegex = f'(?<=\\b){AllOrdinalRegex}(?=\\b)'
     FractionNotationWithSpacesRegex = f'(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+\\s+\\d+[/]\\d+(?=(\\b[^/]|$))'
     FractionNotationRegex = f'(((?<=\\W|^)-\\s*)|(?<![/-])(?<=\\b))\\d+[/]\\d+(?=(\\b[^/]|$))'
     FractionNounRegex = f'(?<=\\b)({AllIntRegex}\\s+(and\\s+)?)?({AllIntRegex})(\\s+|\\s*-\\s*)((({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))s|halves|quarters)(?=\\b)'
-    FractionNounWithArticleRegex = f'(?<=\\b)((({AllIntRegex}\\s+(and\\s+)?)?(a|an|one)(\\s+|\\s*-\\s*)(?!\\bfirst\\b|\\bsecond\\b)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|half|quarter))|(half))(?=\\b)'
+    FractionNounWithArticleRegex = f'(?<=\\b)((({AllIntRegex}\\s+(and\\s+)?)?(an?|one)(\\s+|\\s*-\\s*)(?!\\bfirst\\b|\\bsecond\\b)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|half|quarter))|(half))(?=\\b)'
     FractionPrepositionRegex = f'(?<=\\b)(?<numerator>({AllIntRegex})|((?<![\\.,])\\d+))\\s+(over|in|out\\s+of)\\s+(?<denominator>({AllIntRegex})|(\\d+)(?![\\.,]))(?=\\b)'
     FractionPrepositionWithinPercentModeRegex = f'(?<=\\b)(?<numerator>({AllIntRegex})|((?<![\\.,])\\d+))\\s+over\\s+(?<denominator>({AllIntRegex})|(\\d+)(?![\\.,]))(?=\\b)'
     AllPointRegex = f'((\\s+{ZeroToNineIntegerRegex})+|(\\s+{SeparaIntRegex}))'
@@ -231,9 +231,12 @@ class EnglishNumeric:
     AmbiguityFiltersDict = dict([("\\bone\\b", "\\b(the|this|that|which)\\s+(one)\\b")])
     RelativeReferenceOffsetMap = dict([("last", "0"),
                                        ("next one", "1"),
+                                       ("current", "0"),
+                                       ("current one", "0"),
                                        ("previous one", "-1"),
                                        ("the second to last", "-1"),
                                        ("the one before the last one", "-1"),
+                                       ("the one before the last", "-1"),
                                        ("next to last", "-1"),
                                        ("penultimate", "-1"),
                                        ("the last but one", "-1"),
@@ -243,8 +246,11 @@ class EnglishNumeric:
     RelativeReferenceRelativeToMap = dict([("last", "end"),
                                            ("next one", "current"),
                                            ("previous one", "current"),
+                                           ("current", "current"),
+                                           ("current one", "current"),
                                            ("the second to last", "end"),
                                            ("the one before the last one", "end"),
+                                           ("the one before the last", "end"),
                                            ("next to last", "end"),
                                            ("penultimate", "end"),
                                            ("the last but one", "end"),
