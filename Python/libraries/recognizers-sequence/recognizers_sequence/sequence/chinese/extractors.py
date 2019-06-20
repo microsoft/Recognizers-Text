@@ -59,6 +59,3 @@ class ChinesePhoneNumberExtractorConfiguration(BaseSequenceExtractorConfiguratio
         self._ITPhoneNumberRegex = RegExpUtility.get_safe_reg_exp(ChinesePhoneNumbers.ITPhoneNumberRegex)
         self._NLPhoneNumberRegex = RegExpUtility.get_safe_reg_exp(ChinesePhoneNumbers.NLPhoneNumberRegex)
         self._SpecialPhoneNumberRegex = RegExpUtility.get_safe_reg_exp(ChinesePhoneNumbers.SpecialPhoneNumberRegex)
-
-
-

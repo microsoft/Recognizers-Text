@@ -36,6 +36,8 @@ class SequenceRecognizer(Recognizer[SequenceOptions]):
         #endregion
 
     def get_phone_number_model(self, culture: str = None, fallback_to_default_culture: bool = True) -> Model:
+        if culture and (culture.lower().startswith("zh-") or culture.lower().startswith("ja-")) :
+            return self.get_model('PhoneNumberModel', Culture.Chinese, fallback_to_default_culture)
         return self.get_model('PhoneNumberModel', culture, fallback_to_default_culture)
 
     def get_email_model(self, culture: str = None, fallback_to_default_culture: bool = True) -> Model:
