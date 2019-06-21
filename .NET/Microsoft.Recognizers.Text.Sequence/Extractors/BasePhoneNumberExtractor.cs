@@ -107,6 +107,7 @@ namespace Microsoft.Recognizers.Text.Sequence
                 }
             }
 
+            // filter hexadecimal address like 00 10 00 31 46 D9 E9 11
             var maskMatchCollection = Regex.Matches(text, BasePhoneNumbers.PhoneNumberMaskRegex);
 
             for (var index = ers.Count - 1; index >= 0; --index)

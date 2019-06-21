@@ -166,6 +166,7 @@ class BasePhoneNumberExtractor(SequenceExtractor):
                     er.text = source[er.start:er.start + er.length].strip()
                     ret.append(er)
 
+        # filter hexadecimal address like 00 10 00 31 46 D9 E9 11
         for m in re.finditer(BasePhoneNumbers.PhoneNumberMaskRegex, source):
             ret = [er for er in ret if er.start < m.start() or er.end > m.end()]
         return ret
