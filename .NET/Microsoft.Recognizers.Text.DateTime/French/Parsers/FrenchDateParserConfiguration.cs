@@ -145,7 +145,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public static int GetSwiftDay(string text)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
 
             var swift = 0;
 
@@ -183,7 +183,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public int GetSwiftMonthOrYear(string text)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
             var swift = 0;
             if (trimmedText.EndsWith("prochaine") || trimmedText.EndsWith("prochain"))
             {
@@ -200,7 +200,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public bool IsCardinalLast(string text)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
             return trimmedText.Equals("dernière") || trimmedText.Equals("dernières") ||
                     trimmedText.Equals("derniere") || trimmedText.Equals("dernieres");
         }

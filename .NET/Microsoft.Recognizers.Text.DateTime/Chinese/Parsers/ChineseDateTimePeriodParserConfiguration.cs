@@ -327,7 +327,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             rightTime = rightTime.AddSeconds(second);
 
             // the right side time contains "ampm", while the left side doesn't
-            if (rightResult.Comment != null && rightResult.Comment.Equals(Constants.Comment_AmPm) &&
+            if (rightResult.Comment != null && rightResult.Comment.Equals(Constants.Comment_AmPm, StringComparison.Ordinal) &&
                 leftResult.Comment == null && rightTime < leftTime)
             {
                 rightTime = rightTime.AddHours(Constants.HalfDayHourCount);
@@ -365,7 +365,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         private DateTimeResolutionResult ParseSpecificNight(string text, DateObject referenceTime)
         {
             var ret = new DateTimeResolutionResult();
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
             int beginHour, endHour, endMin = 0;
             string timeStr;
 
@@ -527,23 +527,24 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         private DateTimeResolutionResult ParseNumberWithUnit(string text, DateObject referenceTime)
         {
             var ret = new DateTimeResolutionResult();
-            string numStr, unitStr;
+            string unitStr;
 
-            // if there are spaces between nubmer and unit
+            // if there are spaces between number and unit
             var ers = CardinalExtractor.Extract(text);
             if (ers.Count == 1)
             {
                 var pr = CardinalParser.Parse(ers[0]);
-                var srcUnit = text.Substring(ers[0].Start + ers[0].Length ?? 0).Trim().ToLower();
+                var srcUnit = text.Substring(ers[0].Start + ers[0].Length ?? 0).Trim();
+
                 if (srcUnit.StartsWith("个"))
                 {
                     srcUnit = srcUnit.Substring(1);
                 }
 
-                var beforeStr = text.Substring(0, ers[0].Start ?? 0).ToLowerInvariant();
+                var beforeStr = text.Substring(0, ers[0].Start ?? 0);
                 if (this.config.UnitMap.ContainsKey(srcUnit))
                 {
-                    numStr = pr.ResolutionStr;
+                    var numStr = pr.ResolutionStr;
                     unitStr = this.config.UnitMap[srcUnit];
                     var prefixMatch = ChineseDateTimePeriodExtractorConfiguration.PastRegex.MatchExact(beforeStr, trim: true);
 
@@ -611,8 +612,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             var match = ChineseDateTimePeriodExtractorConfiguration.UnitRegex.Match(text);
             if (match.Success)
             {
-                var srcUnit = match.Groups["unit"].Value.ToLower();
-                var beforeStr = text.Substring(0, match.Index).Trim().ToLowerInvariant();
+                var srcUnit = match.Groups["unit"].Value;
+                var beforeStr = text.Substring(0, match.Index).Trim();
                 if (this.config.UnitMap.ContainsKey(srcUnit))
                 {
                     unitStr = this.config.UnitMap[srcUnit];

@@ -103,7 +103,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         {
             int result = hour;
 
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
 
             if (trimmedText.EndsWith("morning") && hour >= Constants.HalfDayHourCount)
             {
@@ -119,7 +119,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public bool GetMatchedNowTimex(string text, out string timex)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
 
             if (trimmedText.EndsWith("now"))
             {
@@ -144,7 +144,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public int GetSwiftDay(string text)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
 
             var swift = 0;
             if (trimmedText.StartsWith("next"))

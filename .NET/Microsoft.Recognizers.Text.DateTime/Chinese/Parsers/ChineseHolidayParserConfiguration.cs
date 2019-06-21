@@ -141,7 +141,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         private static DateTimeResolutionResult Match2Date(Match match, DateObject referenceDate)
         {
             var ret = new DateTimeResolutionResult();
-            var holidayStr = match.Groups["holiday"].Value.ToLower();
+            var holidayStr = match.Groups["holiday"].Value;
 
             var year = referenceDate.Year;
             var hasYear = false;

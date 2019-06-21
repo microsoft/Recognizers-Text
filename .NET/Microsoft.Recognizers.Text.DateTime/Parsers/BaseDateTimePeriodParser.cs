@@ -179,7 +179,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         protected virtual DateTimeResolutionResult ParseSpecificTimeOfDay(string text, DateObject referenceTime)
         {
             var ret = new DateTimeResolutionResult();
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
             var timeText = trimmedText;
 
             var match = this.Config.PeriodTimeOfDayWithDateRegex.Match(trimmedText);
@@ -232,7 +232,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 endHour = beginHour + 2;
 
-                // Handling speical case: night ends with 23:59
+                // Handling special case: night ends with 23:59 due to C# issues.
                 if (endMin == 59)
                 {
                     endMin = 0;
@@ -345,7 +345,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         var periodFuture = (Tuple<DateObject, DateObject>)((DateTimeResolutionResult)timePr.Value).FutureValue;
                         var periodPast = (Tuple<DateObject, DateObject>)((DateTimeResolutionResult)timePr.Value).PastValue;
 
-                        if (periodFuture == periodPast)
+                        if (periodFuture.Equals(periodPast))
                         {
                             beginHour = periodFuture.Item1.Hour;
                             endHour = periodFuture.Item2.Hour;
@@ -536,7 +536,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         private DateTimeResolutionResult MergeDateWithSingleTimePeriod(string text, DateObject referenceTime)
         {
             var ret = new DateTimeResolutionResult();
-            var trimmedText = text.Trim().ToLower();
+            var trimmedText = text.Trim();
 
             var ers = Config.TimePeriodExtractor.Extract(trimmedText, referenceTime);
 
@@ -609,7 +609,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                                     pastTime.Year, pastTime.Month, pastTime.Day, endTime.Hour, endTime.Minute, endTime.Second));
 
                             if (!string.IsNullOrEmpty(timePeriodResolutionResult.Comment) &&
-                                timePeriodResolutionResult.Comment.Equals(Constants.Comment_AmPm))
+                                timePeriodResolutionResult.Comment.Equals(Constants.Comment_AmPm, StringComparison.Ordinal))
                             {
                                 // AmPm comment is used for later SetParserResult to judge whether this parse result should have two parsing results
                                 // Cases like "from 10:30 to 11 on 1/1/2015" should have AmPm comment, as it can be parsed to "10:30am to 11am" and also be parsed to "10:30pm to 11pm"
@@ -638,7 +638,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         private DateTimeResolutionResult ParsePureNumberCases(string text, DateObject referenceTime)
         {
             var ret = new DateTimeResolutionResult();
-            var trimmedText = text.Trim().ToLower();
+            var trimmedText = text.Trim();
 
             var match = this.Config.PureNumberFromToRegex.Match(trimmedText);
 
@@ -945,8 +945,8 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 var pr = Config.DurationParser.Parse(ers[0]);
 
-                var beforeStr = text.Substring(0, pr.Start ?? 0).Trim().ToLowerInvariant();
-                var afterStr = text.Substring((pr.Start ?? 0) + (pr.Length ?? 0)).Trim().ToLowerInvariant();
+                var beforeStr = text.Substring(0, pr.Start ?? 0).Trim();
+                var afterStr = text.Substring((pr.Start ?? 0) + (pr.Length ?? 0)).Trim();
 
                 var numbersInSuffix = Config.CardinalExtractor.Extract(beforeStr);
                 var numbersInDuration = Config.CardinalExtractor.Extract(ers[0].Text);
@@ -1055,7 +1055,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if (match.Success)
             {
-                var srcUnit = match.Groups["unit"].Value.ToLower();
+                var srcUnit = match.Groups["unit"].Value;
 
                 var unitStr = Config.UnitMap[srcUnit];
 

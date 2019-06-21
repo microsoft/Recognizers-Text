@@ -27,7 +27,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var referenceDate = refDate;
             object value = null;
 
-            if (er.Type.Equals(ParserName, StringComparison.InvariantCulture))
+            if (er.Type.Equals(ParserName, StringComparison.Ordinal))
             {
                 var innerResult = ParseHolidayRegexMatch(er.Text, referenceDate);
 

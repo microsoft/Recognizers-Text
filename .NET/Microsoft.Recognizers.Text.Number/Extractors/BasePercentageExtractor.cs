@@ -238,7 +238,7 @@ namespace Microsoft.Recognizers.Text.Number
                 {
                     if (match[j] == 0)
                     {
-                        if (percentModeEnabled && extraction.Data.ToString().StartsWith("Frac", StringComparison.InvariantCulture))
+                        if (percentModeEnabled && extraction.Data.ToString().StartsWith("Frac", StringComparison.Ordinal))
                         {
                             match[j] = -(i + 1);
                         }

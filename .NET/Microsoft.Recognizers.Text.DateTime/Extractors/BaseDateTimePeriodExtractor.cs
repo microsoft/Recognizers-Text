@@ -88,7 +88,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                     break;
                 }
 
-                if (ers[i].Type.Equals(Constants.SYS_DATETIME_DATE) && ers[j].Type.Equals(Constants.SYS_DATETIME_TIME))
+                if (ers[i].Type.Equals(Constants.SYS_DATETIME_DATE, StringComparison.Ordinal) &&
+                    ers[j].Type.Equals(Constants.SYS_DATETIME_TIME, StringComparison.Ordinal))
                 {
                     var middleBegin = ers[i].Start + ers[i].Length ?? 0;
                     var middleEnd = ers[j].Start ?? 0;
@@ -98,7 +99,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         continue;
                     }
 
-                    var middleStr = text.Substring(middleBegin, middleEnd - middleBegin).Trim().ToLower();
+                    var middleStr = text.Substring(middleBegin, middleEnd - middleBegin).Trim();
 
                     if (IsValidConnectorForDateAndTimePeriod(middleStr))
                     {
@@ -255,8 +256,8 @@ namespace Microsoft.Recognizers.Text.DateTime
             while (idx < timePoints.Count - 1)
             {
                 // If both ends are Time. then this is a TimePeriod, not a DateTimePeriod
-                if (timePoints[idx].Type.Equals(Constants.SYS_DATETIME_TIME, StringComparison.InvariantCulture) &&
-                    timePoints[idx + 1].Type.Equals(Constants.SYS_DATETIME_TIME, StringComparison.InvariantCulture))
+                if (timePoints[idx].Type.Equals(Constants.SYS_DATETIME_TIME, StringComparison.Ordinal) &&
+                    timePoints[idx + 1].Type.Equals(Constants.SYS_DATETIME_TIME, StringComparison.Ordinal))
                 {
                     idx++;
                     continue;

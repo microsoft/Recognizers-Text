@@ -104,13 +104,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var matches = unitRegex.Matches(text);
                 if (matches.Count > 0)
                 {
-                    var afterStr =
-                            text.Substring((int)durationRes[0].Start + (int)durationRes[0].Length)
-                                .Trim().ToLowerInvariant();
+                    var afterStr = text.Substring((int)durationRes[0].Start + (int)durationRes[0].Length).Trim();
 
-                    var beforeStr =
-                        text.Substring(0, (int)durationRes[0].Start)
-                            .Trim().ToLowerInvariant();
+                    var beforeStr = text.Substring(0, (int)durationRes[0].Start).Trim();
 
                     var mode = AgoLaterMode.Date;
                     if (pr.TimexStr.Contains("T"))

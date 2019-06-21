@@ -117,7 +117,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         private static bool IsMultipleDuration(ExtractResult er)
         {
-            return er.Data != null && er.Data.ToString().StartsWith(Constants.MultipleDuration_Prefix, StringComparison.InvariantCulture);
+            return er.Data != null && er.Data.ToString().StartsWith(Constants.MultipleDuration_Prefix, StringComparison.Ordinal);
         }
 
         // Cases like "more than 3 days", "less than 4 weeks"
@@ -281,7 +281,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         var endIndex = match.Index + match.Length + (result.Length ?? 0);
 
                         ExtendWithWeekdayAndYear(
-                            ref startIndex, ref endIndex, Config.MonthOfYear.GetValueOrDefault(match.Groups["month"].Value.ToLowerInvariant(), reference.Month), num, text, reference);
+                            ref startIndex, ref endIndex, Config.MonthOfYear.GetValueOrDefault(match.Groups["month"].Value, reference.Month), num, text, reference);
 
                         ret.Add(new Token(startIndex, endIndex));
                         continue;
@@ -329,7 +329,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                                 // Get week day from text directly, compare it with the weekday generated above
                                 // to see whether they refer to the same week day
-                                var extractedWeekDayStr = matchCase.Groups["weekday"].Value.ToLowerInvariant();
+                                var extractedWeekDayStr = matchCase.Groups["weekday"].Value;
                                 var matchLength = result.Start + result.Length - matchCase.Index;
 
                                 if (!date.Equals(DateObject.MinValue) &&
@@ -396,9 +396,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                     beginMatch = this.Config.WeekDayRegex.MatchBegin(suffixStr.Trim(), trim: true);
 
                     if (beginMatch.Success && num >= 1 && num <= 5
-                        && result.Type.Equals(Number.Constants.SYS_NUM_ORDINAL, StringComparison.InvariantCulture))
+                        && result.Type.Equals(Number.Constants.SYS_NUM_ORDINAL, StringComparison.Ordinal))
                     {
-                        var weekDayStr = beginMatch.Groups["weekday"].Value.ToLowerInvariant();
+                        var weekDayStr = beginMatch.Groups["weekday"].Value;
                         if (this.Config.DayOfWeek.ContainsKey(weekDayStr))
                         {
                             var spaceLen = suffixStr.Length - suffixStr.Trim().Length;
@@ -456,7 +456,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 // Get weekday from context directly, compare it with the weekday extraction above
                 // to see whether they reference the same weekday
-                var extractedWeekDayStr = matchWeekDay.Groups["weekday"].Value.ToLowerInvariant();
+                var extractedWeekDayStr = matchWeekDay.Groups["weekday"].Value;
                 var numWeekDayStr = date.DayOfWeek.ToString().ToLowerInvariant();
 
                 if (Config.DayOfWeek.TryGetValue(numWeekDayStr, out var weekDay1) &&

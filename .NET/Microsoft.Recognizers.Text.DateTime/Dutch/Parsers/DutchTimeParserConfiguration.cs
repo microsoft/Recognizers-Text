@@ -71,7 +71,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
                 }
                 else
                 {
-                    minStr = match.Groups["deltaminnum"].Value.ToLower();
+                    minStr = match.Groups["deltaminnum"].Value;
                     deltaMin = Numbers[minStr];
                 }
             }

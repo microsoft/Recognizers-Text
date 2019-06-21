@@ -143,7 +143,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var ret = new DateTimeResolutionResult();
             int year = referenceTime.Year, month = referenceTime.Month, day = referenceTime.Day;
-            var trimmedText = text.Trim().ToLower();
+            var trimmedText = text.Trim();
 
             var match = this.config.PureNumberBetweenAndRegex.MatchBegin(trimmedText, trim: true);
 
@@ -235,7 +235,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var ret = new DateTimeResolutionResult();
             int year = referenceTime.Year, month = referenceTime.Month, day = referenceTime.Day;
-            var trimmedText = text.Trim().ToLower();
+            var trimmedText = text.Trim();
 
             var match = this.config.PureNumberFromToRegex.MatchBegin(trimmedText, trim: true);
 
@@ -255,7 +255,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var afterHourIndex = hourGroup.Captures[0].Index + hourGroup.Captures[0].Length;
 
                 // hard to integrate this part into the regex
-                if (afterHourIndex == trimmedText.Length || !trimmedText.Substring(afterHourIndex).Trim().StartsWith(":"))
+                if (afterHourIndex == trimmedText.Length || !trimmedText.Substring(afterHourIndex).Trim().StartsWith(":", StringComparison.Ordinal))
                 {
                     if (!this.config.Numbers.TryGetValue(hourStr, out int beginHour))
                     {
@@ -283,9 +283,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                         if (string.IsNullOrEmpty(leftDesc))
                         {
                             var rightAmValid = !string.IsNullOrEmpty(rightDesc) &&
-                                                    config.UtilityConfiguration.AmDescRegex.Match(rightDesc.ToLower()).Success;
+                                                    config.UtilityConfiguration.AmDescRegex.Match(rightDesc).Success;
                             var rightPmValid = !string.IsNullOrEmpty(rightDesc) &&
-                                            config.UtilityConfiguration.PmDescRegex.Match(rightDesc.ToLower()).Success;
+                                            config.UtilityConfiguration.PmDescRegex.Match(rightDesc).Success;
 
                             if (!string.IsNullOrEmpty(matchAmStr) || rightAmValid)
                             {
@@ -473,10 +473,10 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var beginDateTime = DateObject.MinValue.SafeCreateFromValue(year, month, day, beginHour, beginMinute >= 0 ? beginMinute : 0, beginSecond >= 0 ? beginSecond : 0);
                 var endDateTime = DateObject.MinValue.SafeCreateFromValue(year, month, day, endHour, endMinute >= 0 ? endMinute : 0, endSecond >= 0 ? endSecond : 0);
 
-                var hasLeftAm = !string.IsNullOrEmpty(leftDesc) && leftDesc.ToLower().StartsWith("a");
-                var hasLeftPm = !string.IsNullOrEmpty(leftDesc) && leftDesc.ToLower().StartsWith("p");
-                var hasRightAm = !string.IsNullOrEmpty(rightDesc) && rightDesc.ToLower().StartsWith("a");
-                var hasRightPm = !string.IsNullOrEmpty(rightDesc) && rightDesc.ToLower().StartsWith("p");
+                var hasLeftAm = !string.IsNullOrEmpty(leftDesc) && leftDesc.StartsWith("a", StringComparison.Ordinal);
+                var hasLeftPm = !string.IsNullOrEmpty(leftDesc) && leftDesc.StartsWith("p", StringComparison.Ordinal);
+                var hasRightAm = !string.IsNullOrEmpty(rightDesc) && rightDesc.StartsWith("a", StringComparison.Ordinal);
+                var hasRightPm = !string.IsNullOrEmpty(rightDesc) && rightDesc.StartsWith("p", StringComparison.Ordinal);
                 var hasLeft = hasLeftAm || hasLeftPm;
                 var hasRight = hasRightAm || hasRightPm;
 

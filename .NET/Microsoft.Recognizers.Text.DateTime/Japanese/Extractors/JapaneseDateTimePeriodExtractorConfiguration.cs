@@ -100,8 +100,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             var idx = 0;
             while (idx < timePoints.Count - 1)
             {
-                if (timePoints[idx].Type.Equals(Constants.SYS_DATETIME_DATE) &&
-                    timePoints[idx + 1].Type.Equals(Constants.SYS_DATETIME_TIMEPERIOD))
+                if (timePoints[idx].Type.Equals(Constants.SYS_DATETIME_DATE, StringComparison.Ordinal) &&
+                    timePoints[idx + 1].Type.Equals(Constants.SYS_DATETIME_TIMEPERIOD, StringComparison.Ordinal))
                 {
                     var middleBegin = timePoints[idx].Start + timePoints[idx].Length ?? 0;
                     var middleEnd = timePoints[idx + 1].Start ?? 0;
@@ -161,8 +161,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             while (idx < timePoints.Count - 1)
             {
                 // if both ends are Time. then this is a TimePeriod, not a DateTimePeriod
-                if (timePoints[idx].Type.Equals(Constants.SYS_DATETIME_TIME) &&
-                    timePoints[idx + 1].Type.Equals(Constants.SYS_DATETIME_TIME))
+                if (timePoints[idx].Type.Equals(Constants.SYS_DATETIME_TIME, StringComparison.Ordinal) &&
+                    timePoints[idx + 1].Type.Equals(Constants.SYS_DATETIME_TIME, StringComparison.Ordinal))
                 {
                     idx++;
                     continue;
@@ -180,7 +180,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                     var periodEnd = (timePoints[idx + 1].Start ?? 0) + (timePoints[idx + 1].Length ?? 0);
 
                     // handle "from"
-                    var beforeStr = text.Substring(0, periodBegin).ToLowerInvariant();
+                    var beforeStr = text.Substring(0, periodBegin);
                     if (beforeStr.Trim().EndsWith("从"))
                     {
                         periodBegin = beforeStr.LastIndexOf("从", StringComparison.Ordinal);

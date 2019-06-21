@@ -255,7 +255,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     continue;
                 }
 
-                var middleStr = text.Substring(middleBegin, middleEnd - middleBegin).Trim().ToLowerInvariant();
+                var middleStr = text.Substring(middleBegin, middleEnd - middleBegin).Trim();
 
                 // Handle "{TimePoint} to {TimePoint}"
                 if (config.TillRegex.IsExactMatch(middleStr, trim: true))
@@ -264,7 +264,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     var periodEnd = (ers[idx + 1].Start ?? 0) + (ers[idx + 1].Length ?? 0);
 
                     // Handle "from"
-                    var beforeStr = text.Substring(0, periodBegin).TrimEnd().ToLowerInvariant();
+                    var beforeStr = text.Substring(0, periodBegin).TrimEnd();
                     if (this.config.GetFromTokenIndex(beforeStr, out var fromIndex))
                     {
                         // Handle "from"
@@ -288,7 +288,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     var periodEnd = (ers[idx + 1].Start ?? 0) + (ers[idx + 1].Length ?? 0);
 
                     // Handle "between"
-                    var beforeStr = text.Substring(0, periodBegin).Trim().ToLowerInvariant();
+                    var beforeStr = text.Substring(0, periodBegin).Trim();
                     if (this.config.GetBetweenTokenIndex(beforeStr, out int betweenIndex))
                     {
                         periodBegin = betweenIndex;

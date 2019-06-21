@@ -1,4 +1,5 @@
-﻿using System.Text.RegularExpressions;
+﻿using System;
+using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Japanese;
 using DateObject = System.DateTime;
 
@@ -43,35 +44,35 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 hasSince = true;
             }
 
-            if (er.Type.Equals(Constants.SYS_DATETIME_DATE))
+            if (er.Type.Equals(Constants.SYS_DATETIME_DATE, StringComparison.Ordinal))
             {
                 pr = this.Config.DateParser.Parse(er, referenceTime);
             }
-            else if (er.Type.Equals(Constants.SYS_DATETIME_TIME))
+            else if (er.Type.Equals(Constants.SYS_DATETIME_TIME, StringComparison.Ordinal))
             {
                 pr = this.Config.TimeParser.Parse(er, referenceTime);
             }
-            else if (er.Type.Equals(Constants.SYS_DATETIME_DATETIME))
+            else if (er.Type.Equals(Constants.SYS_DATETIME_DATETIME, StringComparison.Ordinal))
             {
                 pr = this.Config.DateTimeParser.Parse(er, referenceTime);
             }
-            else if (er.Type.Equals(Constants.SYS_DATETIME_DATEPERIOD))
+            else if (er.Type.Equals(Constants.SYS_DATETIME_DATEPERIOD, StringComparison.Ordinal))
             {
                 pr = this.Config.DatePeriodParser.Parse(er, referenceTime);
             }
-            else if (er.Type.Equals(Constants.SYS_DATETIME_TIMEPERIOD))
+            else if (er.Type.Equals(Constants.SYS_DATETIME_TIMEPERIOD, StringComparison.Ordinal))
             {
                 pr = this.Config.TimePeriodParser.Parse(er, referenceTime);
             }
-            else if (er.Type.Equals(Constants.SYS_DATETIME_DATETIMEPERIOD))
+            else if (er.Type.Equals(Constants.SYS_DATETIME_DATETIMEPERIOD, StringComparison.Ordinal))
             {
                 pr = this.Config.DateTimePeriodParser.Parse(er, referenceTime);
             }
-            else if (er.Type.Equals(Constants.SYS_DATETIME_DURATION))
+            else if (er.Type.Equals(Constants.SYS_DATETIME_DURATION, StringComparison.Ordinal))
             {
                 pr = this.Config.DurationParser.Parse(er, referenceTime);
             }
-            else if (er.Type.Equals(Constants.SYS_DATETIME_SET))
+            else if (er.Type.Equals(Constants.SYS_DATETIME_SET, StringComparison.Ordinal))
             {
                 pr = this.Config.SetParser.Parse(er, referenceTime);
             }

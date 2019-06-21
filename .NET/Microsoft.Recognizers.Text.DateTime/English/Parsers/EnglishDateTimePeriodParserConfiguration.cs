@@ -130,7 +130,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public bool GetMatchedTimeRange(string text, out string timeStr, out int beginHour, out int endHour, out int endMin)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
 
             beginHour = 0;
             endHour = 0;
@@ -171,7 +171,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public int GetSwiftPrefix(string text)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
 
             var swift = 0;
             if (trimmedText.StartsWith("next"))

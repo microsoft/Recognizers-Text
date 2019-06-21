@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Japanese;
@@ -76,7 +77,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                     break;
                 }
 
-                if (ers[i].Type.Equals(Constants.SYS_DATETIME_DATE) && ers[j].Type.Equals(Constants.SYS_DATETIME_TIME))
+                if (ers[i].Type.Equals(Constants.SYS_DATETIME_DATE, StringComparison.Ordinal) &&
+                    ers[j].Type.Equals(Constants.SYS_DATETIME_TIME, StringComparison.Ordinal))
                 {
                     var middleBegin = ers[i].Start + ers[i].Length ?? 0;
                     var middleEnd = ers[j].Start ?? 0;
@@ -85,7 +87,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                         break;
                     }
 
-                    var middleStr = text.Substring(middleBegin, middleEnd - middleBegin).Trim().ToLower();
+                    var middleStr = text.Substring(middleBegin, middleEnd - middleBegin).Trim();
                     if (string.IsNullOrEmpty(middleStr) || middleStr.Equals(",") || PrepositionRegex.IsMatch(middleStr))
                     {
                         var begin = ers[i].Start ?? 0;

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime
@@ -109,7 +110,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         private DateTimeResolutionResult ParseBasicRegex(string text, DateObject referenceTime)
         {
             var ret = new DateTimeResolutionResult();
-            var trimmedText = text.Trim().ToLower();
+            var trimmedText = text.Trim();
 
             // Handle "now"
             if (config.NowRegex.IsExactMatch(trimmedText, trim: true))
@@ -177,7 +178,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                                 continue;
                             }
 
-                            var middleStr = text.Substring(middleBegin, middleEnd - middleBegin).Trim().ToLower();
+                            var middleStr = text.Substring(middleBegin, middleEnd - middleBegin).Trim();
                             var match = this.config.DateNumberConnectorRegex.Match(middleStr);
                             if (string.IsNullOrEmpty(middleStr) || match.Success)
                             {
@@ -234,7 +235,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             var timeStr = pr2.TimexStr;
-            if (timeStr.EndsWith(Constants.Comment_AmPm))
+            if (timeStr.EndsWith(Constants.Comment_AmPm, StringComparison.Ordinal))
             {
                 timeStr = timeStr.Substring(0, timeStr.Length - 4);
             }
@@ -275,7 +276,8 @@ namespace Microsoft.Recognizers.Text.DateTime
             pr2.TimexStr = timeStr;
             if (!string.IsNullOrEmpty(ret.Comment))
             {
-                ((DateTimeResolutionResult)pr2.Value).Comment = ret.Comment.Equals(Constants.Comment_AmPm) ? Constants.Comment_AmPm : string.Empty;
+                ((DateTimeResolutionResult)pr2.Value).Comment = ret.Comment.Equals(Constants.Comment_AmPm, StringComparison.Ordinal) ?
+                                                                Constants.Comment_AmPm : string.Empty;
             }
 
             // Add the date and time object in case we want to split them
@@ -290,7 +292,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         private DateTimeResolutionResult ParseTimeOfToday(string text, DateObject referenceTime)
         {
             var ret = new DateTimeResolutionResult();
-            var trimmedText = text.ToLowerInvariant().Trim();
+            var trimmedText = text.Trim();
 
             int hour = 0, min = 0, sec = 0;
             string timeStr;
@@ -307,7 +309,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var hourStr = wholeMatch.Groups[Constants.HourGroupName].Value;
                 if (string.IsNullOrEmpty(hourStr))
                 {
-                    hourStr = wholeMatch.Groups["hournum"].Value.ToLower();
+                    hourStr = wholeMatch.Groups["hournum"].Value;
                     hour = this.config.Numbers[hourStr];
                 }
                 else
@@ -351,7 +353,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if (match.Success)
             {
-                var matchStr = match.Value.ToLowerInvariant();
+                var matchStr = match.Value;
 
                 // Handle "last", "next"
                 var swift = this.config.GetSwiftDay(matchStr);
@@ -362,7 +364,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 hour = this.config.GetHour(matchStr, hour);
 
                 // In this situation, timeStr cannot end up with "ampm", because we always have a "morning" or "night"
-                if (timeStr.EndsWith(Constants.Comment_AmPm))
+                if (timeStr.EndsWith(Constants.Comment_AmPm, StringComparison.Ordinal))
                 {
                     timeStr = timeStr.Substring(0, timeStr.Length - 4);
                 }

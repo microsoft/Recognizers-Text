@@ -1,6 +1,6 @@
 ---
 TillRegex: !simpleRegex
-  def: (?<till>au|et|jusqu'[aà]|[aà]|avant|--|-|—|——)
+  def: (?<till>au|et|(jusqu')?[aà]|avant|--|-|—|——)
 RangeConnectorRegex : !simpleRegex
   def: (?<and>de la|au|[aà]|et(\s*la)?|--|-|—|——)
 RelativeRegex: !simpleRegex
@@ -10,7 +10,7 @@ StrictRelativeRegex: !simpleRegex
 NextSuffixRegex: !simpleRegex
   def: (?<order>prochaines?|prochain|suivante)\b
 PastSuffixRegex: !simpleRegex
-  def: (?<order>derni[eè]re|dernier|pr[eé]c[eé]dente)\b
+  def: (?<order>derni[eè]re?|pr[eé]c[eé]dente)\b
 ThisPrefixRegex: !simpleRegex
   def: (?<order>ce(tte)?|au\s+cours+(du|de))\b
 RangePrefixRegex: !simpleRegex

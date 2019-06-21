@@ -26,10 +26,10 @@ namespace Microsoft.Recognizers.Text.DateTime
         public static bool GetTermIndex(string text, Regex regex, out int index)
         {
             index = -1;
-            var match = regex.Match(text.Trim().ToLower().Split(' ').Last());
+            var match = regex.Match(text.Trim().Split(' ').Last());
             if (match.Success)
             {
-                index = text.Length - text.ToLower().LastIndexOf(match.Value, StringComparison.Ordinal);
+                index = text.Length - text.LastIndexOf(match.Value, StringComparison.Ordinal);
                 return true;
             }
 

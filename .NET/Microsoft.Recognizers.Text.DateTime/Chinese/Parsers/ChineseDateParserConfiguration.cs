@@ -130,9 +130,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             var match = ChineseDateExtractorConfiguration.SpecialDate.MatchExact(text, trim: true);
             if (match.Success)
             {
-                var yearStr = match.Groups["thisyear"].Value.ToLower();
-                var monthStr = match.Groups["thismonth"].Value.ToLower();
-                var dayStr = match.Groups["day"].Value.ToLower();
+                var yearStr = match.Groups["thisyear"].Value;
+                var monthStr = match.Groups["thismonth"].Value;
+                var dayStr = match.Groups["day"].Value;
 
                 int month = referenceDate.Month, year = referenceDate.Year;
                 var day = this.config.DayOfMonth[dayStr];
@@ -280,7 +280,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
             if (match.Success)
             {
-                var value = referenceDate.AddDays(ChineseDateTimeParserConfiguration.GetSwiftDay(match.Value.ToLower()));
+                var value = referenceDate.AddDays(ChineseDateTimeParserConfiguration.GetSwiftDay(match.Value));
                 ret.Timex = DateTimeFormatUtil.LuisDate(value);
                 ret.FutureValue = ret.PastValue = value;
                 ret.Success = true;
@@ -318,7 +318,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
             if (match.Success)
             {
-                var weekdayKey = match.Groups["weekday"].Value.ToLowerInvariant();
+                var weekdayKey = match.Groups["weekday"].Value;
                 var value = reference.Next((DayOfWeek)this.config.DayOfWeek[weekdayKey]);
 
                 result.Timex = DateTimeFormatUtil.LuisDate(value);
@@ -336,7 +336,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
             if (match.Success)
             {
-                var weekdayKey = match.Groups["weekday"].Value.ToLowerInvariant();
+                var weekdayKey = match.Groups["weekday"].Value;
                 var value = reference.This((DayOfWeek)this.config.DayOfWeek[weekdayKey]);
 
                 result.Timex = DateTimeFormatUtil.LuisDate(value);
@@ -354,7 +354,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
             if (match.Success)
             {
-                var weekdayKey = match.Groups["weekday"].Value.ToLowerInvariant();
+                var weekdayKey = match.Groups["weekday"].Value;
                 var value = reference.Last((DayOfWeek)this.config.DayOfWeek[weekdayKey]);
 
                 result.Timex = DateTimeFormatUtil.LuisDate(value);
@@ -372,7 +372,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
             if (match.Success)
             {
-                var weekdayKey = match.Groups["weekday"].Value.ToLower();
+                var weekdayKey = match.Groups["weekday"].Value;
                 var weekday = this.config.DayOfWeek[weekdayKey];
                 var value = reference.This((DayOfWeek)weekday);
 
@@ -411,7 +411,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         {
             var ret = new DateTimeResolutionResult();
 
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
             var match = this.config.WeekDayOfMonthRegex.Match(trimmedText);
             if (!match.Success)
             {
@@ -425,7 +425,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             int year;
 
             int cardinal;
-            if (cardinalStr.Equals(this.config.LastWeekDayToken))
+            if (cardinalStr.Equals(this.config.LastWeekDayToken, StringComparison.Ordinal))
             {
                 cardinal = 5;
             }
@@ -439,11 +439,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             if (string.IsNullOrEmpty(monthStr))
             {
                 var swift = 0;
-                if (trimmedText.StartsWith(this.config.NextMonthToken))
+                if (trimmedText.StartsWith(this.config.NextMonthToken, StringComparison.Ordinal))
                 {
                     swift = 1;
                 }
-                else if (trimmedText.StartsWith(this.config.LastMonthToken))
+                else if (trimmedText.StartsWith(this.config.LastMonthToken, StringComparison.Ordinal))
                 {
                     swift = -1;
                 }
@@ -499,10 +499,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         {
             var ret = new DateTimeResolutionResult();
 
-            var monthStr = match.Groups["month"].Value.ToLower();
-            var dayStr = match.Groups["day"].Value.ToLower();
-            var yearStr = match.Groups["year"].Value.ToLower();
-            var yearChsStr = match.Groups["yearchs"].Value.ToLower();
+            var monthStr = match.Groups["month"].Value;
+            var dayStr = match.Groups["day"].Value;
+            var yearStr = match.Groups["year"].Value;
+            var yearChsStr = match.Groups["yearchs"].Value;
             int month = 0, day = 0, year = 0;
 
             var tmp = ConvertChineseYearToInteger(yearChsStr);
@@ -631,20 +631,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 var match = ChineseDateExtractorConfiguration.UnitRegex.Match(text);
                 if (match.Success)
                 {
-                    var suffix =
-                        text.Substring((int)durationRes[0].Start + (int)durationRes[0].Length)
-                            .Trim()
-                            .ToLowerInvariant();
-                    var srcUnit = match.Groups["unit"].Value.ToLowerInvariant();
-                    var numberStr =
-                        text.Substring((int)durationRes[0].Start, match.Index - (int)durationRes[0].Start)
-                            .Trim()
-                            .ToLowerInvariant();
+                    var suffix = text.Substring((int)durationRes[0].Start + (int)durationRes[0].Length).Trim();
+                    var srcUnit = match.Groups["unit"].Value;
+
+                    var numberStr = text.Substring((int)durationRes[0].Start, match.Index - (int)durationRes[0].Start).Trim();
                     var number = ConvertChineseToNum(numberStr);
+
                     if (this.config.UnitMap.ContainsKey(srcUnit))
                     {
                         unitStr = this.config.UnitMap[srcUnit];
-                        numStr = number.ToString();
 
                         var beforeMatch = ChineseDateExtractorConfiguration.BeforeRegex.Match(suffix);
                         if (beforeMatch.Success && suffix.StartsWith(beforeMatch.Value))
@@ -653,16 +648,16 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                             switch (unitStr)
                             {
                                 case Constants.TimexDay:
-                                    date = referenceDate.AddDays(-double.Parse(numStr));
+                                    date = referenceDate.AddDays(-number);
                                     break;
                                 case Constants.TimexWeek:
-                                    date = referenceDate.AddDays(-7 * double.Parse(numStr));
+                                    date = referenceDate.AddDays(-7 * number);
                                     break;
                                 case Constants.TimexMonthFull:
-                                    date = referenceDate.AddMonths(-Convert.ToInt32(double.Parse(numStr)));
+                                    date = referenceDate.AddMonths(-number);
                                     break;
                                 case Constants.TimexYear:
-                                    date = referenceDate.AddYears(-Convert.ToInt32(double.Parse(numStr)));
+                                    date = referenceDate.AddYears(-number);
                                     break;
                                 default:
                                     return ret;
@@ -681,16 +676,16 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                             switch (unitStr)
                             {
                                 case Constants.TimexDay:
-                                    date = referenceDate.AddDays(double.Parse(numStr));
+                                    date = referenceDate.AddDays(number);
                                     break;
                                 case Constants.TimexWeek:
-                                    date = referenceDate.AddDays(7 * double.Parse(numStr));
+                                    date = referenceDate.AddDays(7 * number);
                                     break;
                                 case Constants.TimexMonthFull:
-                                    date = referenceDate.AddMonths(Convert.ToInt32(double.Parse(numStr)));
+                                    date = referenceDate.AddMonths(number);
                                     break;
                                 case Constants.TimexYear:
-                                    date = referenceDate.AddYears(Convert.ToInt32(double.Parse(numStr)));
+                                    date = referenceDate.AddYears(number);
                                     break;
                                 default:
                                     return ret;
@@ -715,7 +710,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             var er = integerExtractor.Extract(numStr);
             if (er.Count != 0)
             {
-                if (er[0].Type.Equals(Number.Constants.SYS_NUM_INTEGER))
+                if (er[0].Type.Equals(Number.Constants.SYS_NUM_INTEGER, StringComparison.Ordinal))
                 {
                     num = Convert.ToInt32((double)(numberParser.Parse(er[0]).Value ?? 0));
                 }
@@ -733,7 +728,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             var er = integerExtractor.Extract(yearChsStr);
             if (er.Count != 0)
             {
-                if (er[0].Type.Equals(Number.Constants.SYS_NUM_INTEGER))
+                if (er[0].Type.Equals(Number.Constants.SYS_NUM_INTEGER, StringComparison.Ordinal))
                 {
                     num = Convert.ToInt32((double)(numberParser.Parse(er[0]).Value ?? 0));
                 }
@@ -748,7 +743,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     er = integerExtractor.Extract(ch.ToString());
                     if (er.Count != 0)
                     {
-                        if (er[0].Type.Equals(Number.Constants.SYS_NUM_INTEGER))
+                        if (er[0].Type.Equals(Number.Constants.SYS_NUM_INTEGER, StringComparison.Ordinal))
                         {
                             num += Convert.ToInt32((double)(numberParser.Parse(er[0]).Value ?? 0));
                         }

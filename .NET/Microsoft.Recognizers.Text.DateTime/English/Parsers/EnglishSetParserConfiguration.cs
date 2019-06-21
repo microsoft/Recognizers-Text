@@ -77,7 +77,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public bool GetMatchedDailyTimex(string text, out string timex)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
+
             if (trimmedText.Equals("daily"))
             {
                 timex = "P1D";
@@ -109,7 +110,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public bool GetMatchedUnitTimex(string text, out string timex)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
+
             if (trimmedText.Equals("day"))
             {
                 timex = "P1D";
