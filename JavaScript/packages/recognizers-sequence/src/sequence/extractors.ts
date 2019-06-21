@@ -23,14 +23,14 @@ export abstract class BaseSequenceExtractor implements IExtractor {
         let matchSource = new Map<Match, string>();
         let matched = new Array<boolean>(source.length);
 
-        //Traverse every match results to see each position in the text is matched or not.
-        var collections = this.regexes.forEach((typeExtracted, regex) => {
+        // Traverse every match results to see each position in the text is matched or not.
+        let collections = this.regexes.forEach((typeExtracted, regex) => {
             RegExpUtility.getMatches(regex, source).forEach(match => {
                 if (!this.isValidMatch(match)) {
                     return;
                 }
 
-                for (var j = 0; j < match.length; j++) {
+                for (let j = 0; j < match.length; j++) {
                     matched[match.index + j] = true;
                 }
 
@@ -39,9 +39,9 @@ export abstract class BaseSequenceExtractor implements IExtractor {
             })
         });
 
-        //Form the extracted results from all the matched intervals in the text.
+        // Form the extracted results from all the matched intervals in the text.
         let lastNotMatched = -1;
-        for (var i = 0; i < source.length; i++) {
+        for (let i = 0; i < source.length; i++) {
             if (matched[i]) {
                 if (i + 1 == source.length || !matched[i + 1]) {
                     let start = lastNotMatched + 1;
@@ -49,7 +49,7 @@ export abstract class BaseSequenceExtractor implements IExtractor {
                     let substr = source.substr(start, length);
                     let matchFunc = (o: Match) =>  o.index == start && o.length == length;
 
-                    var srcMatch = Array.from(matchSource.keys()).find(matchFunc);
+                    let srcMatch = Array.from(matchSource.keys()).find(matchFunc);
                     if (srcMatch) {
                         results.push({
                             start: start,
@@ -136,14 +136,15 @@ export class BasePhoneNumberExtractor extends BaseSequenceExtractor {
         }
         
         // filter hexadecimal address like 00 10 00 31 46 D9 E9 11
-        var maskRegex = new RegExp(BasePhoneNumbers.PhoneNumberMaskRegex, "g");
-        var m;
-        while ((m = maskRegex.exec(source)) != null) {
-            for (var i = ret.length - 1; i >= 0; --i) {
+        let maskRegex = new RegExp(BasePhoneNumbers.PhoneNumberMaskRegex, "g");
+        let m = maskRegex.exec(source);
+        while (m != null) {
+            for (let i = ret.length - 1; i >= 0; --i) {
                 if (ret[i].start >= m.index && ret[i].start + ret[i].length <= m.index + m[0].length) {
                     ret.splice(i, 1);
                 }
             }
+            m = maskRegex.exec(source);
         }
         return ret;
     }
@@ -169,9 +170,9 @@ export class BaseIpExtractor extends BaseSequenceExtractor {
         let matchSource = new Map<Match, string>();
         let matched = new Array<boolean>(source.length);
         
-        var collections = this.regexes.forEach((typeExtracted, regex) => {
+        let collections = this.regexes.forEach((typeExtracted, regex) => {
             RegExpUtility.getMatches(regex, source).forEach(match => {
-                for (var j = 0; j < match.length; j++) {
+                for (let j = 0; j < match.length; j++) {
                     matched[match.index + j] = true;
                 }
 
@@ -181,9 +182,9 @@ export class BaseIpExtractor extends BaseSequenceExtractor {
         });
         
         let lastNotMatched = -1;
-        for (var i = 0; i < source.length; i++) {
+        for (let i = 0; i < source.length; i++) {
             if (matched[i]) {
-                if (i + 1 == source.length || !matched[i + 1]) {
+                if (i + 1 === source.length || !matched[i + 1]) {
                     let start = lastNotMatched + 1;
                     let length = i - lastNotMatched;
                     let substr = source.substr(start, length);
@@ -194,9 +195,9 @@ export class BaseIpExtractor extends BaseSequenceExtractor {
                         continue;
                     }
 
-                    let matchFunc = (o: Match) =>  o.index == start && o.length == length;
+                    let matchFunc = (o: Match) =>  o.index === start && o.length === length;
 
-                    var srcMatch = Array.from(matchSource.keys()).find(matchFunc);
+                    let srcMatch = Array.from(matchSource.keys()).find(matchFunc);
                     if (srcMatch) {
                         results.push({
                             start: start,
@@ -250,7 +251,7 @@ export class BaseEmailExtractor extends BaseSequenceExtractor {
         this.regexes = new Map<RegExp, string>()
             .set(RegExpUtility.getSafeRegExp(BaseEmail.EmailRegex), Constants.EMAIL_REGEX)
             // EmailRegex2 will break the code as it's not supported in Javascript, comment out for now
-            //.set(RegExpUtility.getSafeRegExp(BaseEmail.EmailRegex2), Constants.EMAIL_REGEX)
+            // .set(RegExpUtility.getSafeRegExp(BaseEmail.EmailRegex2), Constants.EMAIL_REGEX)
     }
 }
 
