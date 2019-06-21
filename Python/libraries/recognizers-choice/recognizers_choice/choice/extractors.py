@@ -17,7 +17,7 @@ class ChoiceExtractDataResult:
     def __init__(self, source='', score=0.0, other_matches=[]):
         self.source = source
         self.score = score
-        self.other_matches = []
+        self.other_matches = other_matches
 
 
 class ChoiceExtractorConfiguration(ABC):
@@ -44,7 +44,7 @@ class ChoiceExtractor(Extractor):
         source_tokens = self.__tokenize(trimmed_source)
 
         for (regexp, type_extracted) in self.config.regexes_map.items():
-            for match in self.__get_matches(regexp, trimmed_source):
+            for match in RegExpUtility.get_matches(regexp, trimmed_source):
                 match_tokens = self.__tokenize(match)
                 top_score = 0.0
 
@@ -79,7 +79,6 @@ class ChoiceExtractor(Extractor):
                     top_score = data.score
                     top_result_index = i
 
-            top_result = ExtractResult()
             top_result = ChoiceExtractDataResult(partial_results[top_result_index].data.source,
                                                  partial_results[top_result_index].data.score)
             top_result.other_matches = partial_results
@@ -93,7 +92,8 @@ class ChoiceExtractor(Extractor):
         matched = 0
         total_deviation = 0
         for match_token in match:
-            pos = self.__index_of(source, match_token, start_pos)
+            pos = StringUtility.index_of(source, match_token, start_pos)
+  
             if pos >= 0:
                 distance = pos - start_pos if matched > 0 else 0
 
@@ -110,14 +110,6 @@ class ChoiceExtractor(Extractor):
             initial_score = accuracy * (matched / len(source))
             score = 0.4 + (0.6 * initial_score)
         return score
-
-    @staticmethod
-    def __index_of(string, token, position):
-        try:
-            ret = string.index(token, position)
-        except:
-            ret = 1
-        return ret
 
     def __tokenize(self, source: str) -> List[str]:
         tokens = []
@@ -142,14 +134,8 @@ class ChoiceExtractor(Extractor):
             token = ''
 
         return tokens
-
-    @staticmethod
-    def __get_matches(regexp: Pattern, source: str) -> []:
-        py_regex = StringUtility.remove_unicode_matches(regexp)
-        matches = list(regex.finditer(py_regex, source))
-        return list(filter(None, map(lambda m: m.group().lower(), matches)))
-
-
+      
+      
 class BooleanExtractorConfiguration(ABC):
     regex_true: Pattern
     regex_false: Pattern
