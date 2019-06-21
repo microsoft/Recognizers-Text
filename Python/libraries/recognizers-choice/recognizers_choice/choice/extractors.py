@@ -93,6 +93,7 @@ class ChoiceExtractor(Extractor):
         total_deviation = 0
         for match_token in match:
             pos = StringUtility.index_of(source, match_token, start_pos)
+  
             if pos >= 0:
                 distance = pos - start_pos if matched > 0 else 0
 
@@ -109,8 +110,6 @@ class ChoiceExtractor(Extractor):
             initial_score = accuracy * (matched / len(source))
             score = 0.4 + (0.6 * initial_score)
         return score
-
-
 
     def __tokenize(self, source: str) -> List[str]:
         tokens = []
@@ -135,8 +134,8 @@ class ChoiceExtractor(Extractor):
             token = ''
 
         return tokens
-
-
+      
+      
 class BooleanExtractorConfiguration(ABC):
     regex_true: Pattern
     regex_false: Pattern

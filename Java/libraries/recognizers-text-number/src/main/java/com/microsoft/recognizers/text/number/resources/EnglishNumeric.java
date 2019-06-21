@@ -36,7 +36,7 @@ public class EnglishNumeric {
     public static final String NegativeNumberSignRegex = "^{NegativeNumberTermsRegex}.*"
             .replace("{NegativeNumberTermsRegex}", NegativeNumberTermsRegex);
 
-    public static final String AnIntRegex = "(an|a)(?=\\s)";
+    public static final String AnIntRegex = "(an?)(?=\\s)";
 
     public static final String TenToNineteenIntegerRegex = "(seventeen|thirteen|fourteen|eighteen|nineteen|fifteen|sixteen|eleven|twelve|ten)";
 
@@ -84,7 +84,7 @@ public class EnglishNumeric {
 
     public static final String NumberOrdinalRegex = "(first|second|third|fourth|fifth|sixth|seventh|eighth|ninth|tenth|eleventh|twelfth|thirteenth|fourteenth|fifteenth|sixteenth|seventeenth|eighteenth|nineteenth|twentieth|thirtieth|fortieth|fiftieth|sixtieth|seventieth|eightieth|ninetieth)";
 
-    public static final String RelativeOrdinalRegex = "(?<relativeOrdinal>(next|previous)\\s+one|(the\\s+second|next)\\s+to\\s+last|the\\s+one\\s+before\\s+the\\s+last(\\s+one)?|the\\s+last\\s+but\\s+one|(ante)?penultimate|last|next|previous)";
+    public static final String RelativeOrdinalRegex = "(?<relativeOrdinal>(next|previous|current)\\s+one|(the\\s+second|next)\\s+to\\s+last|the\\s+one\\s+before\\s+the\\s+last(\\s+one)?|the\\s+last\\s+but\\s+one|(ante)?penultimate|last|next|previous|current)";
 
     public static final String BasicOrdinalRegex = "({NumberOrdinalRegex}|{RelativeOrdinalRegex})"
             .replace("{NumberOrdinalRegex}", NumberOrdinalRegex)
@@ -109,7 +109,7 @@ public class EnglishNumeric {
 
     public static final String OrdinalNumericRegex = "(?<=\\b)(\\d{1,3}(\\s*,\\s*\\d{3})*\\s*th)(?=\\b)";
 
-    public static final String OrdinalRoundNumberRegex = "(?<!(a|an)\\s+){RoundNumberOrdinalRegex}"
+    public static final String OrdinalRoundNumberRegex = "(?<!an?\\s+){RoundNumberOrdinalRegex}"
             .replace("{RoundNumberOrdinalRegex}", RoundNumberOrdinalRegex);
 
     public static final String OrdinalEnglishRegex = "(?<=\\b){AllOrdinalRegex}(?=\\b)"
@@ -124,7 +124,7 @@ public class EnglishNumeric {
             .replace("{AllOrdinalRegex}", AllOrdinalRegex)
             .replace("{RoundNumberOrdinalRegex}", RoundNumberOrdinalRegex);
 
-    public static final String FractionNounWithArticleRegex = "(?<=\\b)((({AllIntRegex}\\s+(and\\s+)?)?(a|an|one)(\\s+|\\s*-\\s*)(?!\\bfirst\\b|\\bsecond\\b)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|half|quarter))|(half))(?=\\b)"
+    public static final String FractionNounWithArticleRegex = "(?<=\\b)((({AllIntRegex}\\s+(and\\s+)?)?(an?|one)(\\s+|\\s*-\\s*)(?!\\bfirst\\b|\\bsecond\\b)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|half|quarter))|(half))(?=\\b)"
             .replace("{AllIntRegex}", AllIntRegex)
             .replace("{AllOrdinalRegex}", AllOrdinalRegex)
             .replace("{RoundNumberOrdinalRegex}", RoundNumberOrdinalRegex);
@@ -441,9 +441,12 @@ public class EnglishNumeric {
     public static final ImmutableMap<String, String> RelativeReferenceOffsetMap = ImmutableMap.<String, String>builder()
         .put("last", "0")
         .put("next one", "1")
+        .put("current", "0")
+        .put("current one", "0")
         .put("previous one", "-1")
         .put("the second to last", "-1")
         .put("the one before the last one", "-1")
+        .put("the one before the last", "-1")
         .put("next to last", "-1")
         .put("penultimate", "-1")
         .put("the last but one", "-1")
@@ -456,8 +459,11 @@ public class EnglishNumeric {
         .put("last", "end")
         .put("next one", "current")
         .put("previous one", "current")
+        .put("current", "current")
+        .put("current one", "current")
         .put("the second to last", "end")
         .put("the one before the last one", "end")
+        .put("the one before the last", "end")
         .put("next to last", "end")
         .put("penultimate", "end")
         .put("the last but one", "end")

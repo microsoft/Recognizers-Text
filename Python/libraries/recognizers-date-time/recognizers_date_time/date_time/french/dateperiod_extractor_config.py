@@ -102,9 +102,6 @@ class FrenchDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
             RegExpUtility.get_safe_reg_exp(FrenchDateTime.QuarterRegexYearFront),
             RegExpUtility.get_safe_reg_exp(FrenchDateTime.AllHalfYearRegex),
             RegExpUtility.get_safe_reg_exp(FrenchDateTime.SeasonRegex),
-            RegExpUtility.get_safe_reg_exp(FrenchDateTime.PastSuffixRegex),
-            RegExpUtility.get_safe_reg_exp(FrenchDateTime.NextSuffixRegex),
-            RegExpUtility.get_safe_reg_exp(FrenchDateTime.ThisPrefixRegex),
             RegExpUtility.get_safe_reg_exp(FrenchDateTime.LaterEarlyPeriodRegex),
             RegExpUtility.get_safe_reg_exp(FrenchDateTime.WeekWithWeekDayRangeRegex)
         ]

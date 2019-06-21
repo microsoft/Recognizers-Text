@@ -29,7 +29,7 @@ namespace Microsoft.Recognizers.Definitions.English
       public const string TwoToNineIntegerRegex = @"(three|seven|eight|four|five|nine|two|six)";
       public const string NegativeNumberTermsRegex = @"((minus|negative)\s+)";
       public static readonly string NegativeNumberSignRegex = $@"^{NegativeNumberTermsRegex}.*";
-      public const string AnIntRegex = @"(an|a)(?=\s)";
+      public const string AnIntRegex = @"(an?)(?=\s)";
       public const string TenToNineteenIntegerRegex = @"(seventeen|thirteen|fourteen|eighteen|nineteen|fifteen|sixteen|eleven|twelve|ten)";
       public const string TensNumberIntegerRegex = @"(seventy|twenty|thirty|eighty|ninety|forty|fifty|sixty)";
       public static readonly string SeparaIntRegex = $@"((({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}(\s+(and\s+)?|\s*-\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex})(\s+{RoundNumberIntegerRegex})*))|(({AnIntRegex}(\s+{RoundNumberIntegerRegex})+))";
