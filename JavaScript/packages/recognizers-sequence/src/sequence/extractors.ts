@@ -137,14 +137,15 @@ export class BasePhoneNumberExtractor extends BaseSequenceExtractor {
         
         // filter hexadecimal address like 00 10 00 31 46 D9 E9 11
         let maskRegex = new RegExp(BasePhoneNumbers.PhoneNumberMaskRegex, "g");
-        let m = maskRegex.exec(source);
-        while (m != null) {
+        let m: RegExpExecArray | null;
+        while (true) {
+            m = maskRegex.exec(source);
+            if (m == null) break;
             for (let i = ret.length - 1; i >= 0; --i) {
                 if (ret[i].start >= m.index && ret[i].start + ret[i].length <= m.index + m[0].length) {
                     ret.splice(i, 1);
                 }
             }
-            m = maskRegex.exec(source);
         }
         return ret;
     }
