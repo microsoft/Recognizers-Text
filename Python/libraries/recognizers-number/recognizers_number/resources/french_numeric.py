@@ -4,12 +4,17 @@
 #     Changes to this file may cause incorrect behavior and will be lost if
 #     the code is regenerated.
 # </auto-generated>
+#
+# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License.
 # ------------------------------------------------------------------------------
 
 from .base_numbers import BaseNumbers
 # pylint: disable=line-too-long
 class FrenchNumeric:
     LangMarker = 'Fr'
+    CompoundNumberLanguage = True
+    MultiDecimalSeparatorCulture = True
     RoundNumberIntegerRegex = f'(cent|mille|millions|million|milliard|milliards|billion|billions)'
     ZeroToNineIntegerRegex = f'(et un|un|une|deux|trois|quatre|cinq|six|sept|huit|neuf)'
     TenToNineteenIntegerRegex = f'((seize|quinze|quatorze|treize|douze|onze)|dix(\\Wneuf|\\Whuit|\\Wsept)?)'

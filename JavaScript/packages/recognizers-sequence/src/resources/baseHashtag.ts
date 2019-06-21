@@ -4,8 +4,11 @@
 //     Changes to this file may cause incorrect behavior and will be lost if
 //     the code is regenerated.
 // </auto-generated>
+//
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
 // ------------------------------------------------------------------------------
 
 export namespace BaseHashtag {
-	export const HashtagRegex = `((?<=\\s|^)#([a-zA-Z0-9_]+))`;
+    export const HashtagRegex = `((?<=\\s|^)#([a-zA-Z0-9_]+))`;
 }

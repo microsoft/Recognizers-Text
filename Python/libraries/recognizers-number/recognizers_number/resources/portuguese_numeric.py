@@ -4,12 +4,17 @@
 #     Changes to this file may cause incorrect behavior and will be lost if
 #     the code is regenerated.
 # </auto-generated>
+#
+# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License.
 # ------------------------------------------------------------------------------
 
 from .base_numbers import BaseNumbers
 # pylint: disable=line-too-long
 class PortugueseNumeric:
     LangMarker = 'Por'
+    CompoundNumberLanguage = True
+    MultiDecimalSeparatorCulture = True
     HundredsNumberIntegerRegex = f'(quatrocent[ao]s|trezent[ao]s|seiscent[ao]s|setecent[ao]s|oitocent[ao]s|novecent[ao]s|duzent[ao]s|quinhent[ao]s|cem|(?<!por\\s+)(cento))'
     RoundNumberIntegerRegex = f'(mil|milh[ãa]o|milh[õo]es|bilh[ãa]o|bilh[õo]es|trilh[ãa]o|trilh[õo]es|qua[td]rilh[ãa]o|qua[td]rilh[õo]es|quintilh[ãa]o|quintilh[õo]es)'
     ZeroToNineIntegerRegex = f'(quatro|cinco|sete|nove|zero|tr[êe]s|seis|oito|dois|duas|um|uma)'

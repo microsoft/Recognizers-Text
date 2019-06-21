@@ -4,6 +4,9 @@
 //     Changes to this file may cause incorrect behavior and will be lost if
 //     the code is regenerated.
 // </auto-generated>
+//
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
 // ------------------------------------------------------------------------------
 
 package com.microsoft.recognizers.text.number.resources;
@@ -17,6 +20,10 @@ import com.google.common.collect.ImmutableMap;
 public class SpanishNumeric {
 
     public static final String LangMarker = "Spa";
+
+    public static final Boolean CompoundNumberLanguage = false;
+
+    public static final Boolean MultiDecimalSeparatorCulture = true;
 
     public static final String HundredsNumberIntegerRegex = "(cuatrocient[ao]s|trescient[ao]s|seiscient[ao]s|setecient[ao]s|ochocient[ao]s|novecient[ao]s|doscient[ao]s|quinient[ao]s|(?<!por\\s+)(cien(to)?))";
 
@@ -66,7 +73,7 @@ public class SpanishNumeric {
 
     public static String NumbersWithPlaceHolder(String placeholder) {
         return "(((?<!\\d+\\s*)-\\s*)|(?<=\\b))\\d+(?!([\\.,]\\d+[a-zA-Z]))(?={placeholder})"
-			.replace("{placeholder}", placeholder);
+            .replace("{placeholder}", placeholder);
     }
 
     public static final String NumbersWithSuffix = "(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+\\s*{BaseNumbers.NumberMultiplierRegex}(?=\\b)"
@@ -160,12 +167,12 @@ public class SpanishNumeric {
 
     public static String DoubleDecimalPointRegex(String placeholder) {
         return "(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+[\\.,])))\\d+[\\.,]\\d+(?!([\\.,]\\d+))(?={placeholder})"
-			.replace("{placeholder}", placeholder);
+            .replace("{placeholder}", placeholder);
     }
 
     public static String DoubleWithoutIntegralRegex(String placeholder) {
         return "(?<=\\s|^)(?<!(\\d+))[\\.,]\\d+(?!([\\.,]\\d+))(?={placeholder})"
-			.replace("{placeholder}", placeholder);
+            .replace("{placeholder}", placeholder);
     }
 
     public static final String DoubleWithMultiplierRegex = "(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+\\[\\.,])))\\d+[\\.,]\\d+\\s*{BaseNumbers.NumberMultiplierRegex}(?=\\b)"

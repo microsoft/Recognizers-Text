@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -12,7 +13,7 @@ namespace Microsoft.Recognizers.Text.Number
         public static readonly Regex CurrencyRegex =
             new Regex(BaseNumbers.CurrencyRegex, RegexOptions.Singleline);
 
-        public BaseNumberExtractor(NumberOptions options = NumberOptions.None)
+        protected BaseNumberExtractor(NumberOptions options = NumberOptions.None)
         {
             Options = options;
         }
@@ -30,8 +31,6 @@ namespace Microsoft.Recognizers.Text.Number
         protected virtual Regex AmbiguousFractionConnectorsRegex { get; } = null;
 
         protected virtual Regex RelativeReferenceRegex { get; } = null;
-
-        protected virtual Regex RelativeOrdinalFilterRegex { get; } = null;
 
         public virtual List<ExtractResult> Extract(string source)
         {
@@ -55,8 +54,8 @@ namespace Microsoft.Recognizers.Text.Number
                         continue;
                     }
 
-                    // In EnablePreview, cases like "last", "next" should not be skipped
-                    if ((Options & NumberOptions.EnablePreview) == 0 && IsRelativeOrdinal(m.Value))
+                    // If SuppressExtendedTypes is on, cases like "last", "next" should be skipped
+                    if ((Options & NumberOptions.SuppressExtendedTypes) != 0 && m.Groups[Constants.RelativeOrdinalGroupName].Success)
                     {
                         continue;
                     }
@@ -64,13 +63,6 @@ namespace Microsoft.Recognizers.Text.Number
                     for (var j = 0; j < m.Length; j++)
                     {
                         matched[m.Index + j] = true;
-                    }
-
-                    // Fliter out cases like "first two", "last one"
-                    // only support in English now
-                    if (ExtractType.Contains(Constants.MODEL_ORDINAL) && RelativeOrdinalFilterRegex != null && RelativeOrdinalFilterRegex.IsMatch(source))
-                    {
-                        continue;
                     }
 
                     // Keep Source Data for extra information
@@ -91,8 +83,8 @@ namespace Microsoft.Recognizers.Text.Number
 
                         if (matchSource.Keys.Any(o => o.Index == start && o.Length == length))
                         {
-                            var type = matchSource.Where(p => p.Key.Index == start && p.Key.Length == length)
-                                .Select(p => (p.Value.Priority, p.Value.Name)).Min().Item2;
+                            var (_, type, originalMatch) = matchSource.Where(p => p.Key.Index == start && p.Key.Length == length)
+                                .Select(p => (p.Value.Priority, p.Value.Name, p.Key)).Min();
 
                             // Extract negative numbers
                             if (NegativeNumberTermsRegex != null)
@@ -119,7 +111,7 @@ namespace Microsoft.Recognizers.Text.Number
                             if (ExtractType.Contains(Constants.MODEL_ORDINAL))
                             {
                                 er.Metadata = new Metadata();
-                                if (IsRelativeOrdinal(substr))
+                                if ((Options & NumberOptions.SuppressExtendedTypes) == 0 && originalMatch.Groups[Constants.RelativeOrdinalGroupName].Success)
                                 {
                                     er.Metadata.IsOrdinalRelative = true;
                                 }
@@ -150,16 +142,6 @@ namespace Microsoft.Recognizers.Text.Number
                 BaseNumbers.DoubleRegexDefinition(placeholder, thousandsMark, decimalsMark);
 
             return new Regex(regexDefinition, RegexOptions.Singleline);
-        }
-
-        private bool IsRelativeOrdinal(string matchValue)
-        {
-            if (RelativeReferenceRegex == null)
-            {
-                return false;
-            }
-
-            return RelativeReferenceRegex.Match(matchValue).Success;
         }
 
         private List<ExtractResult> FilterAmbiguity(List<ExtractResult> ers, string text)

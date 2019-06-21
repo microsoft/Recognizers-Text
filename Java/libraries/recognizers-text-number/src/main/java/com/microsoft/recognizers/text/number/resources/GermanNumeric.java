@@ -4,6 +4,9 @@
 //     Changes to this file may cause incorrect behavior and will be lost if
 //     the code is regenerated.
 // </auto-generated>
+//
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
 // ------------------------------------------------------------------------------
 
 package com.microsoft.recognizers.text.number.resources;
@@ -17,6 +20,10 @@ import com.google.common.collect.ImmutableMap;
 public class GermanNumeric {
 
     public static final String LangMarker = "Ger";
+
+    public static final Boolean CompoundNumberLanguage = true;
+
+    public static final Boolean MultiDecimalSeparatorCulture = false;
 
     public static final String ZeroToNineIntegerRegex = "(drei|sieben|acht|vier|fuenf|fünf|null|neun|eins|(ein(?!($|\\.|,|!|\\?)))|eine|einer|einen|zwei|zwo|sechs)";
 
@@ -54,7 +61,7 @@ public class GermanNumeric {
 
     public static String NumbersWithPlaceHolder(String placeholder) {
         return "(((?<!\\d+\\s*)-\\s*)|(?<=\\b))\\d+(?!(\\,\\d+[a-zA-Z]))(?={placeholder})"
-			.replace("{placeholder}", placeholder);
+            .replace("{placeholder}", placeholder);
     }
 
     public static final String NumbersWithSuffix = "(((?<!\\d+\\s*)-\\s*)|(?<=\\b))\\d+\\s*{BaseNumbers.NumberMultiplierRegex}(?=\\b)"
@@ -91,11 +98,11 @@ public class GermanNumeric {
             .replace("{SuffixRoundNumberOrdinalRegex}", SuffixRoundNumberOrdinalRegex)
             .replace("{AllIntRegex}", AllIntRegex);
 
-    public static final String OrdinalSuffixRegex = "(?<=\\b)((\\d*(1|2|3|4|5|6|7|8|9|0))|(11|12))(?=\\b)";
+    public static final String OrdinalSuffixRegex = "^[\\.]";
 
-    public static final String OrdinalNumericRegex = "(?<=\\b)(\\d{1,3}(\\s*,\\s*\\d+)*\\s*th)(?=\\b)";
+    public static final String OrdinalNumericRegex = "(?<=\\b)(\\d{1,3}\\.)(?=(\\s+|^))";
 
-    public static final String OrdinalRoundNumberRegex = "(?<!(ein|eine)\\s+){RoundNumberOrdinalRegex}"
+    public static final String OrdinalRoundNumberRegex = "(?<!eine?\\s+){RoundNumberOrdinalRegex}"
             .replace("{RoundNumberOrdinalRegex}", RoundNumberOrdinalRegex);
 
     public static final String OrdinalGermanRegex = "(?<=\\b){AllOrdinalRegex}(?=\\b)"
@@ -110,7 +117,7 @@ public class GermanNumeric {
             .replace("{AllOrdinalRegex}", AllOrdinalRegex)
             .replace("{RoundNumberOrdinalRegex}", RoundNumberOrdinalRegex);
 
-    public static final String FractionNounWithArticleRegex = "(?<=\\b)({AllIntRegex}\\s+(und\\s+)?)?(ein|eine)(\\s+|\\s*-\\s*)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|halb(er|e|es)?|hälfte)(?=\\b)"
+    public static final String FractionNounWithArticleRegex = "(?<=\\b)({AllIntRegex}\\s+(und\\s+)?)?eine?(\\s+|\\s*-\\s*)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|halb(er|e|es)?|hälfte)(?=\\b)"
             .replace("{AllIntRegex}", AllIntRegex)
             .replace("{AllOrdinalRegex}", AllOrdinalRegex)
             .replace("{RoundNumberOrdinalRegex}", RoundNumberOrdinalRegex);
@@ -135,12 +142,12 @@ public class GermanNumeric {
 
     public static String DoubleDecimalPointRegex(String placeholder) {
         return "((\\d{1,3})(\\.\\d{3})*(\\,\\d+)?)(?={placeholder})"
-			.replace("{placeholder}", placeholder);
+            .replace("{placeholder}", placeholder);
     }
 
     public static String DoubleWithoutIntegralRegex(String placeholder) {
         return "(?<=\\s|^)(?<!(\\d+))\\.\\d+(?!(\\.\\d+))(?={placeholder})"
-			.replace("{placeholder}", placeholder);
+            .replace("{placeholder}", placeholder);
     }
 
     public static final String DoubleWithRoundNumber = "(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+\\,)))\\d+\\,\\d+\\s+{RoundNumberIntegerRegex}(?=\\b)"

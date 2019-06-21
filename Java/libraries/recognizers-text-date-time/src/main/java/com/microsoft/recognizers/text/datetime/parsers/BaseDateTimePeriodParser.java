@@ -4,6 +4,7 @@ import com.google.common.collect.ImmutableMap;
 import com.microsoft.recognizers.text.ExtractResult;
 import com.microsoft.recognizers.text.ParseResult;
 import com.microsoft.recognizers.text.datetime.Constants;
+import com.microsoft.recognizers.text.datetime.DateTimeOptions;
 import com.microsoft.recognizers.text.datetime.TimeTypeConstants;
 import com.microsoft.recognizers.text.datetime.parsers.config.IDateTimePeriodParserConfiguration;
 import com.microsoft.recognizers.text.datetime.parsers.config.MatchedTimeRangeResult;
@@ -13,6 +14,7 @@ import com.microsoft.recognizers.text.datetime.utilities.DateTimeResolutionResul
 import com.microsoft.recognizers.text.datetime.utilities.DateUtil;
 import com.microsoft.recognizers.text.datetime.utilities.RangeTimexComponents;
 import com.microsoft.recognizers.text.datetime.utilities.RegexExtension;
+import com.microsoft.recognizers.text.datetime.utilities.TimeZoneUtility;
 import com.microsoft.recognizers.text.datetime.utilities.TimexUtility;
 import com.microsoft.recognizers.text.utilities.Match;
 import com.microsoft.recognizers.text.utilities.MatchGroup;
@@ -23,6 +25,7 @@ import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -61,31 +64,16 @@ public class BaseDateTimePeriodParser implements IDateTimeParser {
         Object value = null;
 
         if (er.getType().equals(getParserName())) {
-            DateTimeResolutionResult innerResult = this.mergeDateAndTimePeriods(er.getText(), referenceDate);
+            DateTimeResolutionResult innerResult = internalParse(er.getText(), referenceDate);
 
-            if (!innerResult.getSuccess()) {
-                innerResult = this.mergeTwoTimePoints(er.getText(), referenceDate);
-            }
+            if (TimeZoneUtility.shouldResolveTimeZone(er, config.getOptions())) {
+                Map<String, Object> metadata = (HashMap<String, Object>)er.getData();
 
-            if (!innerResult.getSuccess()) {
-                innerResult = this.parseSpecificTimeOfDay(er.getText(), referenceDate);
-            }
-
-            if (!innerResult.getSuccess()) {
-                innerResult = this.parseDuration(er.getText(), referenceDate);
-            }
-
-            if (!innerResult.getSuccess()) {
-                innerResult = this.parseRelativeUnit(er.getText(), referenceDate);
-            }
-
-            if (!innerResult.getSuccess()) {
-                innerResult = this.parseDateWithPeriodPrefix(er.getText(), referenceDate);
-            }
-
-            if (!innerResult.getSuccess()) {
-                // Cases like "today after 2:00pm", "1/1/2015 before 2:00 in the afternoon"
-                innerResult = this.parseDateWithTimePeriodSuffix(er.getText(), referenceDate);
+                ExtractResult timezoneEr = (ExtractResult)metadata.get(Constants.SYS_DATETIME_TIMEZONE);
+                ParseResult timezonePr = config.getTimeZoneParser().parse(timezoneEr);
+                if (timezonePr.getValue() != null) {
+                    innerResult.setTimeZoneResolution(((DateTimeResolutionResult)timezonePr.getValue()).getTimeZoneResolution());
+                }
             }
 
             if (innerResult.getSuccess()) {
@@ -146,6 +134,37 @@ public class BaseDateTimePeriodParser implements IDateTimeParser {
         return ret;
     }
 
+    private DateTimeResolutionResult internalParse(String text, LocalDateTime reference) {
+        DateTimeResolutionResult innerResult = this.mergeDateAndTimePeriods(text, reference);
+
+        if (!innerResult.getSuccess()) {
+            innerResult = this.mergeTwoTimePoints(text, reference);
+        }
+
+        if (!innerResult.getSuccess()) {
+            innerResult = this.parseSpecificTimeOfDay(text, reference);
+        }
+
+        if (!innerResult.getSuccess()) {
+            innerResult = this.parseDuration(text, reference);
+        }
+
+        if (!innerResult.getSuccess()) {
+            innerResult = this.parseRelativeUnit(text, reference);
+        }
+
+        if (!innerResult.getSuccess()) {
+            innerResult = this.parseDateWithPeriodPrefix(text, reference);
+        }
+
+        if (!innerResult.getSuccess()) {
+            // Cases like "today after 2:00pm", "1/1/2015 before 2:00 in the afternoon"
+            innerResult = this.parseDateWithTimePeriodSuffix(text, reference);
+        }
+
+        return innerResult;
+    }
+
     private boolean isBeforeOrAfterMod(String mod) {
         return !StringUtility.isNullOrEmpty(mod) &&
                 (mod == Constants.BEFORE_MOD || mod == Constants.AFTER_MOD);
@@ -166,10 +185,6 @@ public class BaseDateTimePeriodParser implements IDateTimeParser {
 
             if (timePeriodResolutionResult == null) {
                 return parsePureNumberCases(text, referenceTime);
-            }
-
-            if (timePeriodResolutionResult.getTimeZoneResolution() != null) {
-                ret.setTimeZoneResolution(timePeriodResolutionResult.getTimeZoneResolution());
             }
 
             String timePeriodTimex = timePeriodResolutionResult.getTimex();
@@ -281,9 +296,6 @@ public class BaseDateTimePeriodParser implements IDateTimeParser {
 
                     dateStr = pr.getTimexStr();
 
-                    if (prValue.getTimeZoneResolution() != null) {
-                        ret.setTimeZoneResolution(prValue.getTimeZoneResolution());
-                    }
                 } else {
                     return ret;
                 }
@@ -483,12 +495,14 @@ public class BaseDateTimePeriodParser implements IDateTimeParser {
             result.setComment(Constants.Comment_AmPm);
         }
 
-        if (pr1Value.getTimeZoneResolution() != null) {
-            result.setTimeZoneResolution(pr1Value.getTimeZoneResolution());
-        }
+        if (this.config.getOptions().match(DateTimeOptions.EnablePreview)) {
+            if (pr1Value.getTimeZoneResolution() != null) {
+                result.setTimeZoneResolution(pr1Value.getTimeZoneResolution());
+            }
 
-        if (pr2Value.getTimeZoneResolution() != null) {
-            result.setTimeZoneResolution(pr2Value.getTimeZoneResolution());
+            if (pr2Value.getTimeZoneResolution() != null) {
+                result.setTimeZoneResolution(pr2Value.getTimeZoneResolution());
+            }
         }
 
         result.setFutureValue(new Pair<LocalDateTime, LocalDateTime>(futureBegin, futureEnd));
@@ -983,10 +997,6 @@ public class BaseDateTimePeriodParser implements IDateTimeParser {
                         subDateTimeEntities.add(timePr);
 
                         result.setSubDateTimeEntities(subDateTimeEntities);
-
-                        if (((DateTimeResolutionResult)timePr.getValue()).getTimeZoneResolution() != null) {
-                            result.setTimeZoneResolution(((DateTimeResolutionResult)timePr.getValue()).getTimeZoneResolution());
-                        }
 
                         result.setSuccess(true);
                     }

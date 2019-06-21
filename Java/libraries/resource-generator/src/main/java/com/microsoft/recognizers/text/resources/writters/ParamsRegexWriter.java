@@ -17,7 +17,7 @@ public class ParamsRegexWriter implements ICodeWriter {
     @Override
     public String write() {
         String parameters = String.join(", ", Arrays.stream(this.params.params).map(p -> "String " + p).toArray(size -> new String[size]));
-        String replace = String.join("", Arrays.stream(this.params.params).map(p -> "\n\t\t\t.replace(\"{" + p + "}\", " + p + ")").toArray(size -> new String[size]));
+        String replace = String.join("", Arrays.stream(this.params.params).map(p -> "\n            .replace(\"{" + p + "}\", " + p + ")").toArray(size -> new String[size]));
 
         String template = String.join(
                 "\n    ",

@@ -2,6 +2,7 @@ from abc import ABC, abstractmethod
 from typing import Optional
 from .extractor import ExtractResult
 
+
 class ParseResult(ExtractResult):
     def __init__(self, source: ExtractResult = None):
         super().__init__()
@@ -13,6 +14,7 @@ class ParseResult(ExtractResult):
             self.text = source.text
             self.type = source.type
             self.data = source.data
+
 
 class Parser(ABC):
     @abstractmethod

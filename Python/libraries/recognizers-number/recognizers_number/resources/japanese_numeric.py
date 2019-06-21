@@ -4,12 +4,17 @@
 #     Changes to this file may cause incorrect behavior and will be lost if
 #     the code is regenerated.
 # </auto-generated>
+#
+# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License.
 # ------------------------------------------------------------------------------
 
 from .base_numbers import BaseNumbers
 # pylint: disable=line-too-long
 class JapaneseNumeric:
-    LangMarker = ''
+    LangMarker = 'Jpn'
+    CompoundNumberLanguage = True
+    MultiDecimalSeparatorCulture = True
     DecimalSeparatorChar = '.'
     FractionMarkerToken = ''
     NonDecimalSeparatorChar = ' '

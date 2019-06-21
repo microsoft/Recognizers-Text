@@ -1194,5 +1194,37 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Der Euro ist im harten Handel heute um 15% gegenüber dem US-Dollar gefallen.",
+    "Context": {
+      "ReferenceDateTime": "2017-12-04T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "heute",
+        "Start": 30,
+        "End": 34,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2017-12-04",
+              "type": "date",
+              "value": "2017-12-04"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "guten Morgen",
+    "Context": {
+      "ReferenceDateTime": "2017-12-04T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": []
   }
 ]

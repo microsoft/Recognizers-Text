@@ -76,7 +76,7 @@ The table below summarizes the currently supported entities. Support for English
 | Seq. - Social        | G    | G       | G     |        |       |         |        |        |        |         |
 | Seq. - IP Address    | G    | G       | G     |        |       |         |        |        |        |         |
 | Seq. - Phone Number  | :x:  | :x:     | :x:   |        |       |         |        |        |        |         |
-| Seq. - URL           | G    | G*      | G     |        |       |         |        |        |        |         |
+| Seq. - URL           | G    | G       | G     |        |       |         |        |        |        |         |
 | DateTime (+subtypes) | :x:  | :x:     | **SP**|        |       |         |        |        |        |         |
 
 * G: Generic entity, not language-specific (* unicode TLDs not-supported);

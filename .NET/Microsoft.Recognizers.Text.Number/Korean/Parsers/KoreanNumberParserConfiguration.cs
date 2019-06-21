@@ -18,6 +18,8 @@ namespace Microsoft.Recognizers.Text.Number.Korean
         {
             LangMarker = NumbersDefinitions.LangMarker;
             CultureInfo = ci;
+            IsCompoundNumberLanguage = NumbersDefinitions.CompoundNumberLanguage;
+            IsMultiDecimalSeparatorCulture = NumbersDefinitions.MultiDecimalSeparatorCulture;
 
             DecimalSeparatorChar = NumbersDefinitions.DecimalSeparatorChar;
             FractionMarkerToken = NumbersDefinitions.FractionMarkerToken;

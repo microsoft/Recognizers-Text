@@ -19,6 +19,7 @@ namespace Microsoft.Recognizers.Text.Number
         public const string MODEL_NUMBER = "number";
         public const string MODEL_NUMBERRANGE = "numberrange";
         public const string MODEL_ORDINAL = "ordinal";
+        public const string MODEL_ORDINAL_RELATIVE = "ordinal.relative";
         public const string MODEL_PERCENTAGE = "percentage";
 
         // NARROW NO-BREAK SPACE
@@ -48,13 +49,13 @@ namespace Microsoft.Recognizers.Text.Number
         public const string POWER_SUFFIX = "Pow";
         public const string SPECIAL_SUFFIX = "Spe";
 
-        // Ordinal subtypes
-        public const string RELATIVE = "relative";
-
-        // RelativeTo
+        // Ordinal.relative attribute values
         public const string RELATIVE_START = "start";
         public const string RELATIVE_END = "end";
         public const string RELATIVE_CURRENT = "current";
+
+        // Groups' names for named groups in regexes
+        public const string RelativeOrdinalGroupName = "relativeOrdinal";
 
         // Number subtypes
         public const string INTEGER = "integer";

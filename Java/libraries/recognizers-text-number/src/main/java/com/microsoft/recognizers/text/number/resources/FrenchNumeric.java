@@ -4,6 +4,9 @@
 //     Changes to this file may cause incorrect behavior and will be lost if
 //     the code is regenerated.
 // </auto-generated>
+//
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
 // ------------------------------------------------------------------------------
 
 package com.microsoft.recognizers.text.number.resources;
@@ -17,6 +20,10 @@ import com.google.common.collect.ImmutableMap;
 public class FrenchNumeric {
 
     public static final String LangMarker = "Fr";
+
+    public static final Boolean CompoundNumberLanguage = false;
+
+    public static final Boolean MultiDecimalSeparatorCulture = true;
 
     public static final String RoundNumberIntegerRegex = "(cent|mille|millions|million|milliard|milliards|billion|billions)";
 
@@ -62,7 +69,7 @@ public class FrenchNumeric {
 
     public static String NumbersWithPlaceHolder(String placeholder) {
         return "(((?<!\\d+\\s*)-\\s*)|(?<=\\b))\\d+(?!([,\\.]\\d+[a-zA-Z]))(?={placeholder})"
-			.replace("{placeholder}", placeholder);
+            .replace("{placeholder}", placeholder);
     }
 
     public static final String NumbersWithSuffix = "(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+\\s*{BaseNumbers.NumberMultiplierRegex}(?=\\b)"
@@ -161,12 +168,12 @@ public class FrenchNumeric {
 
     public static String DoubleDecimalPointRegex(String placeholder) {
         return "(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+[,\\.])))\\d+[,\\.]\\d+(?!([,\\.]\\d+))(?={placeholder})"
-			.replace("{placeholder}", placeholder);
+            .replace("{placeholder}", placeholder);
     }
 
     public static String DoubleWithoutIntegralRegex(String placeholder) {
         return "(?<=\\s|^)(?<!(\\d+))[,\\.]\\d+(?!([,\\.]\\d+))(?={placeholder})"
-			.replace("{placeholder}", placeholder);
+            .replace("{placeholder}", placeholder);
     }
 
     public static final String DoubleWithMultiplierRegex = "(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+\\[,\\.])))\\d+[,\\.]\\d+\\s*{BaseNumbers.NumberMultiplierRegex}(?=\\b)"

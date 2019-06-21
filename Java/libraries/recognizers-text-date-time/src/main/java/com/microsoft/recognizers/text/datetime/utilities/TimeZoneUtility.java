@@ -29,6 +29,13 @@ public abstract class TimeZoneUtility {
                         originalErs.set(index, new ExtractResult(er.getStart(), length, text.substring(er.getStart(), er.getStart() + length), er.getType(), data));
                     }
                 }
+
+                // Make sure timezone info propagates to longer span entity.
+                if (er.isOverlap(timeZoneEr)) {
+                    Map<String, Object> data = new HashMap<>();
+                    data.put(Constants.SYS_DATETIME_TIMEZONE, timeZoneEr);
+                    er.setData(data);
+                }
             }
             index++;
         }
@@ -38,6 +45,10 @@ public abstract class TimeZoneUtility {
 
     public static boolean shouldResolveTimeZone(ExtractResult er, DateTimeOptions options) {
         boolean enablePreview = options.match(DateTimeOptions.EnablePreview);
+        if (!enablePreview) {
+            return enablePreview;
+        }
+
         boolean hasTimeZoneData = false;
 
         if (er.getData() instanceof Map) {
@@ -48,6 +59,6 @@ public abstract class TimeZoneUtility {
             }
         }
 
-        return enablePreview && hasTimeZoneData;
+        return hasTimeZoneData;
     }
 }

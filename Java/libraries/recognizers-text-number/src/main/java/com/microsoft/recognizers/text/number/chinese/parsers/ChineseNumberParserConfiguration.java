@@ -18,6 +18,8 @@ public class ChineseNumberParserConfiguration extends BaseCJKNumberParserConfigu
         super(
                 ChineseNumeric.LangMarker,
                 new CultureInfo(Culture.Chinese),
+                ChineseNumeric.CompoundNumberLanguage,
+                ChineseNumeric.MultiDecimalSeparatorCulture,
                 NumberOptions.None,
                 ChineseNumeric.NonDecimalSeparatorChar,
                 ChineseNumeric.DecimalSeparatorChar,
@@ -55,7 +57,6 @@ public class ChineseNumberParserConfiguration extends BaseCJKNumberParserConfigu
                 ChineseNumeric.PairChar
         );
     }
-
 
     @Override
     public List<String> normalizeTokenSet(List<String> tokens, ParseResult context) {

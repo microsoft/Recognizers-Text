@@ -31,7 +31,6 @@
     <PackageReference Include="YamlDotNet" Version="5.0.0" />
   </ItemGroup>
 
-
   <ItemGroup>
     <Compile Update="BaseCurrency.cs">
       <DesignTime>True</DesignTime>
@@ -105,6 +104,11 @@
     </Compile>
     <Compile Update="Chinese\NumbersWithUnitDefinitions.cs">
       <DependentUpon>NumbersWithUnitDefinitions.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Chinese\URLDefinitions.cs">
+      <DependentUpon>URLDefinitions.tt</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
@@ -202,6 +206,11 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>DateTimeDefinitions.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Italian\ChoiceDefinitions.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ChoiceDefinitions.tt</DependentUpon>
     </Compile>
     <Compile Update="Italian\NumbersDefinitions.cs">
       <DesignTime>True</DesignTime>
@@ -323,6 +332,8 @@
     </None>
     <None Update="Chinese\NumbersWithUnitDefinitions.tt">
     </None>
+    <None Update="Chinese\URLDefinitions.tt">
+    </None>
     <None Update="Dutch\ChoiceDefinitions.tt">
     </None>
     <None Update="Dutch\DateTimeDefinitions.tt">
@@ -358,6 +369,8 @@
     <None Update="German\NumbersDefinitions.tt">
     </None>
     <None Update="German\NumbersWithUnitDefinitions.tt">
+    </None>
+    <None Update="Italian\ChoiceDefinitions.tt">
     </None>
     <None Update="Italian\DateTimeDefinitions.tt">
     </None>

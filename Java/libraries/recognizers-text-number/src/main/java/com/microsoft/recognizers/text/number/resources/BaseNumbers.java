@@ -4,6 +4,9 @@
 //     Changes to this file may cause incorrect behavior and will be lost if
 //     the code is regenerated.
 // </auto-generated>
+//
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
 // ------------------------------------------------------------------------------
 
 package com.microsoft.recognizers.text.number.resources;
@@ -16,15 +19,15 @@ public class BaseNumbers {
 
     public static String IntegerRegexDefinition(String placeholder, String thousandsmark) {
         return "(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!(\\d+\\.|\\d+,))))\\d{1,3}({thousandsmark}\\d{3})+(?={placeholder})"
-			.replace("{placeholder}", placeholder)
-			.replace("{thousandsmark}", thousandsmark);
+            .replace("{placeholder}", placeholder)
+            .replace("{thousandsmark}", thousandsmark);
     }
 
     public static String DoubleRegexDefinition(String placeholder, String thousandsmark, String decimalmark) {
         return "(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+\\.|\\d+,)))\\d{1,3}({thousandsmark}\\d{3})+{decimalmark}\\d+(?={placeholder})"
-			.replace("{placeholder}", placeholder)
-			.replace("{thousandsmark}", thousandsmark)
-			.replace("{decimalmark}", decimalmark);
+            .replace("{placeholder}", placeholder)
+            .replace("{thousandsmark}", thousandsmark)
+            .replace("{decimalmark}", decimalmark);
     }
 
     public static final String PlaceHolderDefault = "\\D|\\b";
