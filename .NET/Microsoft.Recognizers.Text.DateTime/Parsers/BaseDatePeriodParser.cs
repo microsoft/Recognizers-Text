@@ -1006,11 +1006,11 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                         if (!string.IsNullOrEmpty(match.Groups["special"].Value))
                         {
-                            var specialYearTimex = this.config.SpecialYearPrefixesMap[match.Groups["special"].Value.ToLowerInvariant()];
+                            var specialYearPrefixes = this.config.SpecialYearPrefixesMap[match.Groups["special"].Value.ToLowerInvariant()];
                             swift = this.config.GetSwiftYear(trimmedText);
                             ret.Timex = swift < -1 ?
-                                TimexUtility.GenerateYearTimex() + specialYearTimex :
-                                TimexUtility.GenerateYearTimex(date) + specialYearTimex;
+                                TimexUtility.GenerateYearTimex(specialTimex: specialYearPrefixes) :
+                                TimexUtility.GenerateYearTimex(date, specialYearPrefixes);
                             ret.Success = true;
                             return ret;
                         }
@@ -1249,8 +1249,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                         year = config.DateExtractor.GetYearFromText(exactMatch.Match);
                         if (!string.IsNullOrEmpty(exactMatch.Groups["special"].Value))
                         {
-                            var specialYearTimex = this.config.SpecialYearPrefixesMap[exactMatch.Groups["special"].Value.ToLowerInvariant()];
-                            ret.Timex = year.ToString("D4") + specialYearTimex;
+                            var specialYearPrefixes = this.config.SpecialYearPrefixesMap[exactMatch.Groups["special"].Value.ToLowerInvariant()];
+                            ret.Timex = year.ToString("D4") + specialYearPrefixes;
                             ret.Success = true;
                             return ret;
                         }

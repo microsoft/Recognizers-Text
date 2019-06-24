@@ -121,9 +121,15 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
         }
 
-        public static string GenerateYearTimex(DateObject date = default(DateObject))
+        public static string GenerateYearTimex(DateObject date = default(DateObject), string specialTimex = null)
         {
-            return date.IsDefaultValue() ? Constants.TimexFuzzyYear : $"{date.Year:D4}";
+            var yearTimex = date.IsDefaultValue() ? Constants.TimexFuzzyYear : $"{date.Year:D4}";
+            if (specialTimex != null)
+            {
+                yearTimex += specialTimex;
+            }
+
+            return yearTimex;
         }
 
         public static string GenerateDurationTimex(double number, string unitStr, bool isLessThanDay)
