@@ -14,46 +14,50 @@ namespace Microsoft.Recognizers.Text.Sequence
 
         public BasePhoneNumberExtractor(PhoneNumberConfiguration config)
         {
+            var wordBoundariesRegex = config.WordBoundariesRegex;
+            var nonWordBoundariesRegex = config.NonWordBoundariesRegex;
+            var endWordBoundariesRegex = config.EndWordBoundariesRegex;
+
             var regexes = new Dictionary<Regex, string>
             {
                 {
-                    config.BRPhoneNumberRegex,
-                    Constants.PHONE_NUMBER_REGEX_BR
-                },
-                {
-                    config.GeneralPhoneNumberRegex,
+                    new Regex(BasePhoneNumbers.GeneralPhoneNumberRegex(wordBoundariesRegex, endWordBoundariesRegex), RegexOptions.Compiled),
                     Constants.PHONE_NUMBER_REGEX_GENERAL
                 },
                 {
-                    config.UKPhoneNumberRegex,
+                    new Regex(BasePhoneNumbers.BRPhoneNumberRegex(wordBoundariesRegex, nonWordBoundariesRegex, endWordBoundariesRegex), RegexOptions.Compiled),
+                    Constants.PHONE_NUMBER_REGEX_BR
+                },
+                {
+                    new Regex(BasePhoneNumbers.UKPhoneNumberRegex(wordBoundariesRegex, nonWordBoundariesRegex, endWordBoundariesRegex), RegexOptions.Compiled),
                     Constants.PHONE_NUMBER_REGEX_UK
                 },
                 {
-                    config.DEPhoneNumberRegex,
+                    new Regex(BasePhoneNumbers.DEPhoneNumberRegex(wordBoundariesRegex, endWordBoundariesRegex), RegexOptions.Compiled),
                     Constants.PHONE_NUMBER_REGEX_DE
                 },
                 {
-                    config.USPhoneNumberRegex,
+                    new Regex(BasePhoneNumbers.USPhoneNumberRegex(wordBoundariesRegex, nonWordBoundariesRegex, endWordBoundariesRegex), RegexOptions.Compiled),
                     Constants.PHONE_NUMBER_REGEX_US
                 },
                 {
-                    config.CNPhoneNumberRegex,
+                    new Regex(BasePhoneNumbers.CNPhoneNumberRegex(wordBoundariesRegex, endWordBoundariesRegex), RegexOptions.Compiled),
                     Constants.PHONE_NUMBER_REGEX_CN
                 },
                 {
-                    config.DKPhoneNumberRegex,
+                    new Regex(BasePhoneNumbers.DKPhoneNumberRegex(wordBoundariesRegex, endWordBoundariesRegex), RegexOptions.Compiled),
                     Constants.PHONE_NUMBER_REGEX_DK
                 },
                 {
-                    config.ITPhoneNumberRegex,
+                    new Regex(BasePhoneNumbers.ITPhoneNumberRegex(wordBoundariesRegex, endWordBoundariesRegex), RegexOptions.Compiled),
                     Constants.PHONE_NUMBER_REGEX_IT
                 },
                 {
-                    config.NLPhoneNumberRegex,
+                    new Regex(BasePhoneNumbers.NLPhoneNumberRegex(wordBoundariesRegex, endWordBoundariesRegex), RegexOptions.Compiled),
                     Constants.PHONE_NUMBER_REGEX_NL
                 },
                 {
-                    config.SpecialPhoneNumberRegex,
+                    new Regex(BasePhoneNumbers.SpecialPhoneNumberRegex(wordBoundariesRegex, endWordBoundariesRegex), RegexOptions.Compiled),
                     Constants.PHONE_NUMBER_REGEX_SPECIAL
                 },
             };

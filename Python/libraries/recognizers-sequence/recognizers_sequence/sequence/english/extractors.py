@@ -4,60 +4,26 @@ import regex as re
 
 
 class EnglishPhoneNumberExtractorConfiguration(BaseSequenceExtractorConfiguration):
-    @property
-    def br_phone_number_regex(self) -> Pattern:
-        return self._BRPhoneNumberRegex
 
     @property
-    def general_phone_number_regex(self) -> Pattern:
-        return self._GeneralPhoneNumberRegex
+    def word_boundaries_regex(self) -> str:
+        return self._WordBoundariesRegex
 
     @property
-    def uk_phone_number_regex(self) -> Pattern:
-        return self._UKPhoneNumberRegex
+    def non_word_boundaries_regex(self) -> str:
+        return self._NonWordBoundariesRegex
 
     @property
-    def de_phone_number_regex(self) -> Pattern:
-        return self._DEPhoneNumberRegex
-
-    @property
-    def us_phone_number_regex(self) -> Pattern:
-        return self._USPhoneNumberRegex
-
-    @property
-    def cn_phone_number_regex(self) -> Pattern:
-        return self._CNPhoneNumberRegex
-
-    @property
-    def dk_phone_number_regex(self) -> Pattern:
-        return self._DKPhoneNumberRegex
-
-    @property
-    def it_phone_number_regex(self) -> Pattern:
-        return self._ITPhoneNumberRegex
-
-    @property
-    def nl_phone_number_regex(self) -> Pattern:
-        return self._NLPhoneNumberRegex
-
-    @property
-    def special_phone_number_regex(self) -> Pattern:
-        return self._SpecialPhoneNumberRegex
+    def end_word_boundaries_regex(self) -> str:
+        return self._EndWordBoundariesRegex
 
     def __init__(self, culture_info: CultureInfo = None):
         if culture_info is None:
             culture_info = CultureInfo(Culture.English)
         super().__init__(culture_info)
-        self._BRPhoneNumberRegex = RegExpUtility.get_safe_reg_exp(BasePhoneNumbers.BRPhoneNumberRegex)
-        self._GeneralPhoneNumberRegex = RegExpUtility.get_safe_reg_exp(BasePhoneNumbers.GeneralPhoneNumberRegex)
-        self._UKPhoneNumberRegex = RegExpUtility.get_safe_reg_exp(BasePhoneNumbers.UKPhoneNumberRegex)
-        self._DEPhoneNumberRegex = RegExpUtility.get_safe_reg_exp(BasePhoneNumbers.DEPhoneNumberRegex)
-        self._USPhoneNumberRegex = RegExpUtility.get_safe_reg_exp(BasePhoneNumbers.USPhoneNumberRegex)
-        self._CNPhoneNumberRegex = RegExpUtility.get_safe_reg_exp(BasePhoneNumbers.CNPhoneNumberRegex)
-        self._DKPhoneNumberRegex = RegExpUtility.get_safe_reg_exp(BasePhoneNumbers.DKPhoneNumberRegex)
-        self._ITPhoneNumberRegex = RegExpUtility.get_safe_reg_exp(BasePhoneNumbers.ITPhoneNumberRegex)
-        self._NLPhoneNumberRegex = RegExpUtility.get_safe_reg_exp(BasePhoneNumbers.NLPhoneNumberRegex)
-        self._SpecialPhoneNumberRegex = RegExpUtility.get_safe_reg_exp(BasePhoneNumbers.SpecialPhoneNumberRegex)
+        self._WordBoundariesRegex = BasePhoneNumbers.WordBoundariesRegex
+        self._NonWordBoundariesRegex = BasePhoneNumbers.NonWordBoundariesRegex
+        self._EndWordBoundariesRegex = BasePhoneNumbers.EndWordBoundariesRegex
 
 
 class EmailExtractor(BaseEmailExtractor):

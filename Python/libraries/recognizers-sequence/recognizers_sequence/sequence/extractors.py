@@ -19,52 +19,17 @@ MatchesVal = namedtuple('MatchesVal', ['matches', 'val'])
 class BaseSequenceExtractorConfiguration(ABC):
     @property
     @abstractmethod
-    def br_phone_number_regex(self) -> Pattern:
+    def word_boundaries_regex(self) -> Pattern:
         raise NotImplementedError
 
     @property
     @abstractmethod
-    def general_phone_number_regex(self) -> Pattern:
+    def non_word_boundaries_regex(self) -> Pattern:
         raise NotImplementedError
 
     @property
     @abstractmethod
-    def uk_phone_number_regex(self) -> Pattern:
-        raise NotImplementedError
-
-    @property
-    @abstractmethod
-    def de_phone_number_regex(self) -> Pattern:
-        raise NotImplementedError
-
-    @property
-    @abstractmethod
-    def us_phone_number_regex(self) -> Pattern:
-        raise NotImplementedError
-
-    @property
-    @abstractmethod
-    def cn_phone_number_regex(self) -> Pattern:
-        raise NotImplementedError
-
-    @property
-    @abstractmethod
-    def dk_phone_number_regex(self) -> Pattern:
-        raise NotImplementedError
-
-    @property
-    @abstractmethod
-    def it_phone_number_regex(self) -> Pattern:
-        raise NotImplementedError
-
-    @property
-    @abstractmethod
-    def nl_phone_number_regex(self) -> Pattern:
-        raise NotImplementedError
-
-    @property
-    @abstractmethod
-    def special_phone_number_regex(self) -> Pattern:
+    def end_word_boundaries_regex(self) -> Pattern:
         raise NotImplementedError
 
     @property
@@ -173,17 +138,34 @@ class BasePhoneNumberExtractor(SequenceExtractor):
 
     def __init__(self, config: BaseSequenceExtractorConfiguration):
         self.config = config
+        word_boundaries_regex = config.word_boundaries_regex
+        non_word_boundaries_regex = config.non_word_boundaries_regex
+        end_word_boundaries_regex = config.end_word_boundaries_regex
+
         self._regexes = [
-            ReVal(config.br_phone_number_regex, Constants.PHONE_NUMBER_REGEX_BR),
-            ReVal(config.general_phone_number_regex,Constants.PHONE_NUMBER_REGEX_GENERAL),
-            ReVal(config.uk_phone_number_regex, Constants.PHONE_NUMBER_REGEX_UK),
-            ReVal(config.de_phone_number_regex, Constants.PHONE_NUMBER_REGEX_DE),
-            ReVal(config.us_phone_number_regex, Constants.PHONE_NUMBER_REGEX_US),
-            ReVal(config.cn_phone_number_regex, Constants.PHONE_NUMBER_REGEX_CN),
-            ReVal(config.dk_phone_number_regex, Constants.PHONE_NUMBER_REGEX_DK),
-            ReVal(config.it_phone_number_regex, Constants.PHONE_NUMBER_REGEX_IT),
-            ReVal(config.nl_phone_number_regex, Constants.PHONE_NUMBER_REGEX_NL),
-            ReVal(config.special_phone_number_regex,Constants.PHONE_NUMBER_REGEX_SPECIAL),
+            ReVal(RegExpUtility.get_safe_reg_exp(BasePhoneNumbers.GeneralPhoneNumberRegex(
+                word_boundaries_regex, end_word_boundaries_regex)), Constants.PHONE_NUMBER_REGEX_GENERAL),
+            ReVal(RegExpUtility.get_safe_reg_exp(BasePhoneNumbers.BRPhoneNumberRegex(
+                word_boundaries_regex, non_word_boundaries_regex, end_word_boundaries_regex)),
+                Constants.PHONE_NUMBER_REGEX_BR),
+            ReVal(RegExpUtility.get_safe_reg_exp(BasePhoneNumbers.UKPhoneNumberRegex(
+                word_boundaries_regex, non_word_boundaries_regex, end_word_boundaries_regex)),
+                Constants.PHONE_NUMBER_REGEX_UK),
+            ReVal(RegExpUtility.get_safe_reg_exp(BasePhoneNumbers.DEPhoneNumberRegex(
+                word_boundaries_regex, end_word_boundaries_regex)), Constants.PHONE_NUMBER_REGEX_DE),
+            ReVal(RegExpUtility.get_safe_reg_exp(BasePhoneNumbers.USPhoneNumberRegex(
+                word_boundaries_regex, non_word_boundaries_regex, end_word_boundaries_regex)),
+                Constants.PHONE_NUMBER_REGEX_US),
+            ReVal(RegExpUtility.get_safe_reg_exp(BasePhoneNumbers.CNPhoneNumberRegex(
+                word_boundaries_regex, end_word_boundaries_regex)), Constants.PHONE_NUMBER_REGEX_CN),
+            ReVal(RegExpUtility.get_safe_reg_exp(BasePhoneNumbers.DKPhoneNumberRegex(
+                word_boundaries_regex, end_word_boundaries_regex)), Constants.PHONE_NUMBER_REGEX_DK),
+            ReVal(RegExpUtility.get_safe_reg_exp(BasePhoneNumbers.ITPhoneNumberRegex(
+                word_boundaries_regex, end_word_boundaries_regex)), Constants.PHONE_NUMBER_REGEX_IT),
+            ReVal(RegExpUtility.get_safe_reg_exp(BasePhoneNumbers.NLPhoneNumberRegex(
+                word_boundaries_regex, end_word_boundaries_regex)), Constants.PHONE_NUMBER_REGEX_NL),
+            ReVal(RegExpUtility.get_safe_reg_exp(BasePhoneNumbers.SpecialPhoneNumberRegex(
+                word_boundaries_regex, end_word_boundaries_regex)), Constants.PHONE_NUMBER_REGEX_SPECIAL),
         ]
 
 

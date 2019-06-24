@@ -14,27 +14,13 @@ export class ChineseURLExtractorConfiguration implements IURLExtractorConfigurat
 }
 
 export class ChinesePhoneNumberExtractorConfiguration implements IPhoneNumberExtractorConfiguration{
-    readonly BRPhoneNumberRegex: RegExp;
-    readonly GeneralPhoneNumberRegex: RegExp;
-    readonly UKPhoneNumberRegex: RegExp;
-    readonly DEPhoneNumberRegex: RegExp;
-    readonly USPhoneNumberRegex: RegExp;
-    readonly CNPhoneNumberRegex: RegExp;
-    readonly DKPhoneNumberRegex: RegExp;
-    readonly ITPhoneNumberRegex: RegExp;
-    readonly NLPhoneNumberRegex: RegExp;
-    readonly SpecialPhoneNumberRegex: RegExp;
+    readonly WordBoundariesRegex: string;
+    readonly NonWordBoundariesRegex: string;
+    readonly EndWordBoundariesRegex: string;
 
     constructor() {
-        this.BRPhoneNumberRegex = RegExpUtility.getSafeRegExp(ChinesePhoneNumbers.BRPhoneNumberRegex);
-        this.GeneralPhoneNumberRegex = RegExpUtility.getSafeRegExp(ChinesePhoneNumbers.GeneralPhoneNumberRegex);
-        this.UKPhoneNumberRegex = RegExpUtility.getSafeRegExp(ChinesePhoneNumbers.UKPhoneNumberRegex);
-        this.DEPhoneNumberRegex = RegExpUtility.getSafeRegExp(ChinesePhoneNumbers.DEPhoneNumberRegex);
-        this.USPhoneNumberRegex = RegExpUtility.getSafeRegExp(ChinesePhoneNumbers.USPhoneNumberRegex);
-        this.CNPhoneNumberRegex = RegExpUtility.getSafeRegExp(ChinesePhoneNumbers.CNPhoneNumberRegex);
-        this.DKPhoneNumberRegex = RegExpUtility.getSafeRegExp(ChinesePhoneNumbers.DKPhoneNumberRegex);
-        this.ITPhoneNumberRegex = RegExpUtility.getSafeRegExp(ChinesePhoneNumbers.ITPhoneNumberRegex);
-        this.NLPhoneNumberRegex = RegExpUtility.getSafeRegExp(ChinesePhoneNumbers.NLPhoneNumberRegex);
-        this.SpecialPhoneNumberRegex = RegExpUtility.getSafeRegExp(ChinesePhoneNumbers.SpecialPhoneNumberRegex);
+        this.WordBoundariesRegex = ChinesePhoneNumbers.WordBoundariesRegex;
+        this.NonWordBoundariesRegex = ChinesePhoneNumbers.NonWordBoundariesRegex;
+        this.EndWordBoundariesRegex = ChinesePhoneNumbers.EndWordBoundariesRegex;
     }
 }

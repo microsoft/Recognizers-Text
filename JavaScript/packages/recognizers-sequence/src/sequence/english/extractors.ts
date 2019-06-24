@@ -5,28 +5,14 @@ import { BaseURL } from "../../resources/baseURL";
 import { IURLExtractorConfiguration } from "../extractors";
 
 export class EnglishPhoneNumberExtractorConfiguration implements IPhoneNumberExtractorConfiguration{
-    readonly BRPhoneNumberRegex: RegExp;
-    readonly GeneralPhoneNumberRegex: RegExp;
-    readonly UKPhoneNumberRegex: RegExp;
-    readonly DEPhoneNumberRegex: RegExp;
-    readonly USPhoneNumberRegex: RegExp;
-    readonly CNPhoneNumberRegex: RegExp;
-    readonly DKPhoneNumberRegex: RegExp;
-    readonly ITPhoneNumberRegex: RegExp;
-    readonly NLPhoneNumberRegex: RegExp;
-    readonly SpecialPhoneNumberRegex: RegExp;
+    readonly WordBoundariesRegex: string;
+    readonly NonWordBoundariesRegex: string;
+    readonly EndWordBoundariesRegex: string;
 
     constructor() {
-        this.BRPhoneNumberRegex = RegExpUtility.getSafeRegExp(BasePhoneNumbers.BRPhoneNumberRegex);
-        this.GeneralPhoneNumberRegex = RegExpUtility.getSafeRegExp(BasePhoneNumbers.GeneralPhoneNumberRegex);
-        this.UKPhoneNumberRegex = RegExpUtility.getSafeRegExp(BasePhoneNumbers.UKPhoneNumberRegex);
-        this.DEPhoneNumberRegex = RegExpUtility.getSafeRegExp(BasePhoneNumbers.DEPhoneNumberRegex);
-        this.USPhoneNumberRegex = RegExpUtility.getSafeRegExp(BasePhoneNumbers.USPhoneNumberRegex);
-        this.CNPhoneNumberRegex = RegExpUtility.getSafeRegExp(BasePhoneNumbers.CNPhoneNumberRegex);
-        this.DKPhoneNumberRegex = RegExpUtility.getSafeRegExp(BasePhoneNumbers.DKPhoneNumberRegex);
-        this.ITPhoneNumberRegex = RegExpUtility.getSafeRegExp(BasePhoneNumbers.ITPhoneNumberRegex);
-        this.NLPhoneNumberRegex = RegExpUtility.getSafeRegExp(BasePhoneNumbers.NLPhoneNumberRegex);
-        this.SpecialPhoneNumberRegex = RegExpUtility.getSafeRegExp(BasePhoneNumbers.SpecialPhoneNumberRegex);
+        this.WordBoundariesRegex = BasePhoneNumbers.WordBoundariesRegex;
+        this.NonWordBoundariesRegex = BasePhoneNumbers.NonWordBoundariesRegex;
+        this.EndWordBoundariesRegex = BasePhoneNumbers.EndWordBoundariesRegex;
     }
 }
 
