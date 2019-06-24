@@ -8,7 +8,7 @@
         "TypeName": "percentage",
         "Resolution": {
           "value": "100%"
-        },
+        }
         "Start": 0,
         "End": 3
       }
@@ -23,7 +23,7 @@
         "TypeName": "percentage",
         "Resolution": {
           "value": "100%"
-        },
+        }
         "Start": 0,
         "End": 8
       }
@@ -38,7 +38,7 @@
         "TypeName": "percentage",
         "Resolution": {
           "value": "240%"
-        },
+        }
         "Start": 0,
         "End": 8
       }
@@ -53,7 +53,7 @@
         "TypeName": "percentage",
         "Resolution": {
           "value": "20%"
-        },
+        }
         "Start": 0,
         "End": 10
       }
@@ -68,7 +68,7 @@
         "TypeName": "percentage",
         "Resolution": {
           "value": "30%"
-        },
+        }
         "Start": 0,
         "End": 9
       }
@@ -83,7 +83,7 @@
         "TypeName": "percentage",
         "Resolution": {
           "value": "100%"
-        },
+        }
         "Start": 0,
         "End": 8
       }
@@ -99,7 +99,7 @@
         "TypeName": "percentage",
         "Resolution": {
           "value": "20%"
-        },
+        }
         "Start": 0,
         "End": 15
       }
@@ -115,7 +115,7 @@
         "TypeName": "percentage",
         "Resolution": {
           "value": "10%"
-        },
+        }
         "Start": 0,
         "End": 12
       }
@@ -131,7 +131,7 @@
         "TypeName": "percentage",
         "Resolution": {
           "value": "22%"
-        },
+        }
         "Start": 0,
         "End": 19
       }
@@ -147,7 +147,7 @@
         "TypeName": "percentage",
         "Resolution": {
           "value": "210%"
-        },
+        }
         "Start": 0,
         "End": 13
       }
@@ -162,7 +162,7 @@
         "TypeName": "percentage",
         "Resolution": {
           "value": "10%"
-        },
+        }
         "Start": 0,
         "End": 7
       }
@@ -178,7 +178,7 @@
         "TypeName": "percentage",
         "Resolution": {
           "value": "-5%"
-        },
+        }
         "Start": 0,
         "End": 13
       }
