@@ -1,17 +1,15 @@
 [
   {
-    "Input": "\nBu sayı yirmiden büyük ve otuz beşten küçük veya ona eşittir.",
+    "Input": "Bu sayı yirmiden büyük ve otuz beşten küçük veya eşittir.",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "yirmiden büyük ve otuz beşten küçük veya ona eşit.",
+        "Text": "yirmiden büyük ve otuz beşten küçük veya eşit.",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(20,35]"
         },
-        "Start": -1,
-        "End": 49
       }
     ]
   },
@@ -26,8 +24,6 @@
         "Resolution": {
           "value": "[20,30)"
         },
-        "Start": 5,
-        "End": 22
       }
     ]
   },
@@ -42,8 +38,6 @@
         "Resolution": {
           "value": "[10,15)"
         },
-        "Start": 2,
-        "End": 31
       }
     ]
   },
@@ -58,8 +52,6 @@
         "Resolution": {
           "value": "[-10,15)"
         },
-        "Start": 11,
-        "End": 37
       }
     ]
   },
@@ -74,8 +66,6 @@
         "Resolution": {
           "value": "(10,15)"
         },
-        "Start": 2,
-        "End": 52
       }
     ]
   },
@@ -90,8 +80,6 @@
         "Resolution": {
           "value": "(100,300)"
         },
-        "Start": 3,
-        "End": 33
       }
     ]
   },
@@ -106,8 +94,6 @@
         "Resolution": {
           "value": "[100,300]"
         },
-        "Start": -1,
-        "End": 48
       }
     ]
   },
@@ -122,8 +108,6 @@
         "Resolution": {
           "value": "[20,100]"
         },
-        "Start": 0,
-        "End": 22
       }
     ]
   },
@@ -138,8 +122,6 @@
         "Resolution": {
           "value": "[20,100)"
         },
-        "Start": 11,
-        "End": 17
       }
     ]
   },
@@ -154,8 +136,6 @@
         "Resolution": {
           "value": "[20,100)"
         },
-        "Start": 13,
-        "End": 31
       }
     ]
   },
@@ -170,8 +150,6 @@
         "Resolution": {
           "value": "[1000,1500)"
         },
-        "Start": 13,
-        "End": 38
       }
     ]
   },
@@ -186,8 +164,6 @@
         "Resolution": {
           "value": "(1000,1500)"
         },
-        "Start": 5,
-        "End": 42
       }
     ]
   },
@@ -202,24 +178,20 @@
         "Resolution": {
           "value": "(0.25,0.5)"
         },
-        "Start": 5,
-        "End": 41
       }
     ]
   },
   {
-    "Input": "Bu sayı üç bin dokuz yüz altmış beşten büyük veya ona eşittir",
+    "Input": "Bu sayı üç bin dokuz yüz altmış beşten büyük veya eşittir",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "üç bin dokuz yüz altmış beşten büyük veya ona eşit",
+        "Text": "üç bin dokuz yüz altmış beşten büyük veya eşit",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[3965,)"
         },
-        "Start": 8,
-        "End": 58
       }
     ]
   },
@@ -234,8 +206,6 @@
         "Resolution": {
           "value": "(4565,)"
         },
-        "Start": 8,
-        "End": 23
       }
     ]
   },
@@ -250,8 +220,6 @@
         "Resolution": {
           "value": "(30,)"
         },
-        "Start": 10,
-        "End": 23
       }
     ]
   },
@@ -266,8 +234,6 @@
         "Resolution": {
           "value": "(30,)"
         },
-        "Start": 10,
-        "End": 25
       }
     ]
   },
@@ -282,8 +248,6 @@
         "Resolution": {
           "value": "[30,)"
         },
-        "Start": 10,
-        "End": 26
       }
     ]
   },
@@ -298,8 +262,6 @@
         "Resolution": {
           "value": "[500,)"
         },
-        "Start": 22,
-        "End": 43
       }
     ]
   },
@@ -314,8 +276,6 @@
         "Resolution": {
           "value": "[500,)"
         },
-        "Start": 22,
-        "End": 45
       }
     ]
   },
@@ -330,8 +290,6 @@
         "Resolution": {
           "value": "(0.5,)"
         },
-        "Start": -1,
-        "End": 12
       }
     ]
   },
@@ -346,8 +304,6 @@
         "Resolution": {
           "value": "(,100]"
         },
-        "Start": 0,
-        "End": 23
       }
     ]
   },
@@ -362,8 +318,6 @@
         "Resolution": {
           "value": "(,100]"
         },
-        "Start": 0,
-        "End": 20
       }
     ]
   },
@@ -378,8 +332,6 @@
         "Resolution": {
           "value": "(,500]"
         },
-        "Start": 22,
-        "End": 42
       }
     ]
   },
@@ -394,8 +346,6 @@
         "Resolution": {
           "value": "(,100]"
         },
-        "Start": 0,
-        "End": 6
       }
     ]
   },
@@ -410,8 +360,6 @@
         "Resolution": {
           "value": "(,170)"
         },
-        "Start": 10,
-        "End": 25
       }
     ]
   },
@@ -426,8 +374,6 @@
         "Resolution": {
           "value": "(,170)"
         },
-        "Start": 10,
-        "End": 24
       }
     ]
   },
@@ -442,8 +388,6 @@
         "Resolution": {
           "value": "(,1000)"
         },
-        "Start": 0,
-        "End": 9
       }
     ]
   },
@@ -458,8 +402,6 @@
         "Resolution": {
           "value": "[170,170]"
         },
-        "Start": 0,
-        "End": 20
       }
     ]
   },
@@ -474,8 +416,6 @@
         "Resolution": {
           "value": "(10,)"
         },
-        "Start": 1,
-        "End": 4
       },
       {
         "Text": "<20",
@@ -483,8 +423,6 @@
         "Resolution": {
           "value": "(,20)"
         },
-        "Start": 10,
-        "End": 12
       }
     ]
   },
@@ -499,8 +437,6 @@
         "Resolution": {
           "value": "(10,20)"
         },
-        "Start": 3,
-        "End": 31
       },
       {
         "Text": "no more than 50 and no less than 20",
@@ -508,8 +444,6 @@
         "Resolution": {
           "value": "[20,50]"
         },
-        "Start": 46,
-        "End": 80
       }
     ]
   },
@@ -524,8 +458,6 @@
         "Resolution": {
           "value": "[20,20]"
         },
-        "Start": 5,
-        "End": 15
       }
     ]
   },
@@ -540,8 +472,6 @@
         "Resolution": {
           "value": "[20,20]"
         },
-        "Start": 0,
-        "End": 10
       }
     ]
   },
@@ -556,8 +486,6 @@
         "Resolution": {
           "value": "[200,)"
         },
-        "Start": -1,
-        "End": 19
       }
     ]
   },
@@ -572,8 +500,6 @@
         "Resolution": {
           "value": "(190,)"
         },
-        "Start": 11,
-        "End": 36
       }
     ]
   },
@@ -588,24 +514,20 @@
         "Resolution": {
           "value": "[200,)"
         },
-        "Start": 11,
-        "End": 32
       }
     ]
   },
   {
-    "Input": "Onun skoru 30'dan az ya da ona eşit",
+    "Input": "Onun skoru 30'dan az ya da eşit",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "30'dan az ya da ona eşit",
+        "Text": "30'dan az ya da eşit",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(,30]"
         },
-        "Start": 11,
-        "End": 35
       }
     ]
   },
@@ -620,24 +542,20 @@
         "Resolution": {
           "value": "(,30]"
         },
-        "Start": 11,
-        "End": 34
       }
     ]
   },
   {
-    "Input": "Onun skoru en az 30 ya da ona eşit",
+    "Input": "Onun skoru en az 30 ya da eşit",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "en az 30 ya da ona eşit",
+        "Text": "en az 30 ya da eşit",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[30,)"
         },
-        "Start": 11,
-        "End": 34
       }
     ]
   },
@@ -652,8 +570,6 @@
         "Resolution": {
           "value": "[30,)"
         },
-        "Start": -1,
-        "End": 25
       }
     ]
   },
@@ -668,8 +584,6 @@
         "Resolution": {
           "value": "(,5000]"
         },
-        "Start": 11,
-        "End": 36
       }
     ]
   },
@@ -684,8 +598,6 @@
         "Resolution": {
           "value": "[5000,5000]"
         },
-        "Start": 11,
-        "End": 22
       },
       {
         "Text": "less than 6000",
@@ -693,8 +605,6 @@
         "Resolution": {
           "value": "(,6000)"
         },
-        "Start": 30,
-        "End": 43
       }
     ]
   },
@@ -709,8 +619,6 @@
         "Resolution": {
           "value": "[5000,)"
         },
-        "Start": 11,
-        "End": 44
       }
     ]
   },
@@ -725,8 +633,6 @@
         "Resolution": {
           "value": "[5000,5000]"
         },
-        "Start": 11,
-        "End": 22
       },
       {
         "Text": "more than 4500",
@@ -734,8 +640,6 @@
         "Resolution": {
           "value": "(4500,)"
         },
-        "Start": 30,
-        "End": 43
       }
     ]
   },
@@ -750,8 +654,6 @@
         "Resolution": {
           "value": "(,5000]"
         },
-        "Start": 11,
-        "End": 33
       }
     ]
   },
@@ -766,24 +668,20 @@
         "Resolution": {
           "value": "[5000,)"
         },
-        "Start": 11,
-        "End": 41
       }
     ]
   },
   {
-    "Input": "Onun skoru 5000'den fazla ya da ona eşit",
+    "Input": "Onun skoru 5000'den fazla ya da eşit",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "5000'den fazla ya da ona eşit",
+        "Text": "5000'den fazla ya da eşit",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[5000,)"
         },
-        "Start": 11,
-        "End": 40
       }
     ]
   },
@@ -798,8 +696,6 @@
         "Resolution": {
           "value": "(5000,)"
         },
-        "Start": 11,
-        "End": 25
       },
       {
         "Text": "equal to 6000",
@@ -807,8 +703,6 @@
         "Resolution": {
           "value": "[6000,6000]"
         },
-        "Start": 31,
-        "End": 43
       }
     ]
   },
@@ -823,8 +717,6 @@
         "Resolution": {
           "value": "[5000,5000]"
         },
-        "Start": 11,
-        "End": 22
       },
       {
         "Text": "less than 5000",
@@ -832,8 +724,6 @@
         "Resolution": {
           "value": "(,5000)"
         },
-        "Start": 30,
-        "End": 43
       }
     ]
   },
@@ -848,8 +738,6 @@
         "Resolution": {
           "value": "[1000,5000)"
         },
-        "Start": 13,
-        "End": 22
       }
     ]
   },
@@ -864,8 +752,6 @@
         "Resolution": {
           "value": "[1000,5000)"
         },
-        "Start": 13,
-        "End": 24
       }
     ]
   },
@@ -880,8 +766,6 @@
         "Resolution": {
           "value": "[1000,5000)"
         },
-        "Start": 13,
-        "End": 22
       }
     ]
   },
@@ -896,8 +780,6 @@
         "Resolution": {
           "value": "[1000,5000)"
         },
-        "Start": 13,
-        "End": 24
       }
     ]
   },
@@ -912,8 +794,6 @@
         "Resolution": {
           "value": "[0.4,)"
         },
-        "Start": 0,
-        "End": 24
       }
     ]
   },
@@ -929,8 +809,6 @@
         "Resolution": {
           "value": "(2,)"
         },
-        "Start": 5,
-        "End": 18
       }
     ]
   },
@@ -945,8 +823,6 @@
         "Resolution": {
           "value": "(30000,)"
         },
-        "Start": 15,
-        "End": 30
       }
     ]
   },
@@ -961,8 +837,6 @@
         "Resolution": {
           "value": "(,3000)"
         },
-        "Start": 15,
-        "End": 27
       }
     ]
   },
@@ -977,8 +851,6 @@
         "Resolution": {
           "value": "(30,)"
         },
-        "Start": 0,
-        "End": 4
       }
     ]
   },
@@ -993,8 +865,6 @@
         "Resolution": {
           "value": "[30,)"
         },
-        "Start": 0,
-        "End": 5
       }
     ]
   },
@@ -1009,8 +879,6 @@
         "Resolution": {
           "value": "(,-30)"
         },
-        "Start": 0,
-        "End": 4
       }
     ]
   },
@@ -1025,8 +893,6 @@
         "Resolution": {
           "value": "(,-30]"
         },
-        "Start": 0,
-        "End": 7
       }
     ]
   },
@@ -1037,8 +903,6 @@
     "Results": [
       {
         "Text": "1998'de 20000'e eşit",
-        "Start": 5,
-        "End": 25,
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[10.01001001001,10.01001001001]"
@@ -1053,8 +917,6 @@
     "Results": [
       {
         "Text": "2008'de 200'den 3000000'e kadar",
-        "Start": 5,
-        "End": 36,
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[200,1494.02390438247)"

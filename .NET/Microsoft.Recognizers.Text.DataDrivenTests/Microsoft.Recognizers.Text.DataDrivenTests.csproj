@@ -122,6 +122,7 @@
     <Compile Include="Number\TestNumber_Portuguese.cs" />
     <Compile Include="Number\TestNumber_Chinese.cs" />
     <Compile Include="Number\TestNumber_Spanish.cs" />
+    <Compile Include="Number\TestNumber_Turkish.cs" />
     <Compile Include="Number\TestParserFactory.cs" />
     <Compile Include="RecognizerExtensions.cs" />
     <Compile Include="Sequence\TestSequenceRecognizerCache.cs" />

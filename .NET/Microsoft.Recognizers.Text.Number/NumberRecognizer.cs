@@ -10,6 +10,7 @@ using Microsoft.Recognizers.Text.Number.Japanese;
 using Microsoft.Recognizers.Text.Number.Korean;
 using Microsoft.Recognizers.Text.Number.Portuguese;
 using Microsoft.Recognizers.Text.Number.Spanish;
+using Microsoft.Recognizers.Text.Number.Turkish;
 
 namespace Microsoft.Recognizers.Text.Number
 {
@@ -281,6 +282,31 @@ namespace Microsoft.Recognizers.Text.Number
                     new BaseNumberRangeParser(new DutchNumberRangeParserConfiguration()),
                     new Dutch.NumberRangeExtractor(options)));
             */
+
+            RegisterModel<NumberModel>(
+               Culture.Turkish,
+               (options) => new NumberModel(
+                   AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new TurkishNumberParserConfiguration()),
+                   Turkish.NumberExtractor.GetInstance(NumberMode.PureNumber)));
+
+            /*TO DO Uncomment once the NumberRangeModel test passes*/
+
+            /* RegisterModel<NumberRangeModel>(
+               Culture.Turkish,
+               options => new NumberRangeModel(
+                   new BaseNumberRangeParser(new TurkishNumberRangeParserConfiguration()),
+                   new Turkish.NumberRangeExtractor(options)));*/
+
+            RegisterModel<OrdinalModel>(
+                Culture.Turkish,
+                (options) => new OrdinalModel(
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Ordinal, new TurkishNumberParserConfiguration()),
+                    Turkish.OrdinalExtractor.GetInstance()));
+            RegisterModel<PercentModel>(
+                Culture.Turkish,
+                (options) => new PercentModel(
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new TurkishNumberParserConfiguration()),
+                    new Turkish.PercentageExtractor(options)));
         }
 
         private static List<ModelResult> RecognizeByModel(Func<NumberRecognizer, IModel> getModelFunc, string query, NumberOptions options)
