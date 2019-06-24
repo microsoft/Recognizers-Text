@@ -9,7 +9,7 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(20,35]"
-        },
+        }
       }
     ]
   },
@@ -23,7 +23,7 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[20,30)"
-        },
+        }
       }
     ]
   },
@@ -37,7 +37,7 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[10,15)"
-        },
+        }
       }
     ]
   },
@@ -51,7 +51,7 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[-10,15)"
-        },
+        }
       }
     ]
   },
@@ -65,7 +65,7 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(10,15)"
-        },
+        }
       }
     ]
   },
@@ -79,7 +79,7 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(100,300)"
-        },
+        }
       }
     ]
   },
@@ -93,7 +93,7 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[100,300]"
-        },
+        }
       }
     ]
   },
@@ -107,7 +107,7 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[20,100]"
-        },
+        }
       }
     ]
   },
@@ -121,7 +121,7 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[20,100)"
-        },
+        }
       }
     ]
   },
@@ -135,7 +135,7 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[20,100)"
-        },
+        }
       }
     ]
   },
@@ -149,7 +149,7 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[1000,1500)"
-        },
+        }
       }
     ]
   },
@@ -163,7 +163,7 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(1000,1500)"
-        },
+        }
       }
     ]
   },
@@ -177,7 +177,7 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(0.25,0.5)"
-        },
+        }
       }
     ]
   },
@@ -191,7 +191,7 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[3965,)"
-        },
+        }
       }
     ]
   },
@@ -205,7 +205,7 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(4565,)"
-        },
+        }
       }
     ]
   },
@@ -219,7 +219,7 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(30,)"
-        },
+        }
       }
     ]
   },
@@ -233,7 +233,7 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(30,)"
-        },
+        }
       }
     ]
   },
@@ -247,7 +247,7 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[30,)"
-        },
+        }
       }
     ]
   },
@@ -261,7 +261,7 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[500,)"
-        },
+        }
       }
     ]
   },
@@ -275,7 +275,7 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[500,)"
-        },
+        }
       }
     ]
   },
@@ -289,7 +289,7 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(0.5,)"
-        },
+        }
       }
     ]
   },
@@ -303,7 +303,7 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(,100]"
-        },
+        }
       }
     ]
   },
@@ -317,7 +317,7 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(,100]"
-        },
+        }
       }
     ]
   },
@@ -331,7 +331,7 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(,500]"
-        },
+        }
       }
     ]
   },
@@ -345,7 +345,7 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(,100]"
-        },
+        }
       }
     ]
   },
@@ -359,7 +359,7 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(,170)"
-        },
+        }
       }
     ]
   },
@@ -373,7 +373,7 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(,170)"
-        },
+        }
       }
     ]
   },
@@ -387,7 +387,7 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(,1000)"
-        },
+        }
       }
     ]
   },
@@ -401,7 +401,7 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[170,170]"
-        },
+        }
       }
     ]
   },
@@ -415,14 +415,14 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(10,)"
-        },
+        }
       },
       {
         "Text": "<20",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(,20)"
-        },
+        }
       }
     ]
   },
@@ -436,14 +436,14 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(10,20)"
-        },
+        }
       },
       {
         "Text": "no more than 50 and no less than 20",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[20,50]"
-        },
+        }
       }
     ]
   },
@@ -457,7 +457,7 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[20,20]"
-        },
+        }
       }
     ]
   },
@@ -471,7 +471,7 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[20,20]"
-        },
+        }
       }
     ]
   },
@@ -485,7 +485,7 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[200,)"
-        },
+        }
       }
     ]
   },
@@ -499,7 +499,7 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(190,)"
-        },
+        }
       }
     ]
   },
@@ -513,7 +513,7 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[200,)"
-        },
+        }
       }
     ]
   },
@@ -527,7 +527,7 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(,30]"
-        },
+        }
       }
     ]
   },
@@ -541,7 +541,7 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(,30]"
-        },
+        }
       }
     ]
   },
@@ -555,7 +555,7 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[30,)"
-        },
+        }
       }
     ]
   },
@@ -569,7 +569,7 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[30,)"
-        },
+        }
       }
     ]
   },
@@ -583,7 +583,7 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(,5000]"
-        },
+        }
       }
     ]
   },
@@ -597,14 +597,14 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[5000,5000]"
-        },
+        }
       },
       {
         "Text": "less than 6000",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(,6000)"
-        },
+        }
       }
     ]
   },
@@ -618,7 +618,7 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[5000,)"
-        },
+        }
       }
     ]
   },
@@ -632,14 +632,14 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[5000,5000]"
-        },
+        }
       },
       {
         "Text": "more than 4500",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(4500,)"
-        },
+        }
       }
     ]
   },
@@ -653,7 +653,7 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(,5000]"
-        },
+        }
       }
     ]
   },
@@ -667,7 +667,7 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[5000,)"
-        },
+        }
       }
     ]
   },
@@ -681,7 +681,7 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[5000,)"
-        },
+        }
       }
     ]
   },
@@ -695,14 +695,14 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(5000,)"
-        },
+        }
       },
       {
         "Text": "equal to 6000",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[6000,6000]"
-        },
+        }
       }
     ]
   },
@@ -716,14 +716,14 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[5000,5000]"
-        },
+        }
       },
       {
         "Text": "less than 5000",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(,5000)"
-        },
+        }
       }
     ]
   },
@@ -737,7 +737,7 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[1000,5000)"
-        },
+        }
       }
     ]
   },
@@ -751,7 +751,7 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[1000,5000)"
-        },
+        }
       }
     ]
   },
@@ -765,7 +765,7 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[1000,5000)"
-        },
+        }
       }
     ]
   },
@@ -779,7 +779,7 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[1000,5000)"
-        },
+        }
       }
     ]
   },
@@ -793,7 +793,7 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[0.4,)"
-        },
+        }
       }
     ]
   },
@@ -808,7 +808,7 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(2,)"
-        },
+        }
       }
     ]
   },
@@ -822,7 +822,7 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(30000,)"
-        },
+        }
       }
     ]
   },
@@ -836,7 +836,7 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(,3000)"
-        },
+        }
       }
     ]
   },
@@ -850,7 +850,7 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(30,)"
-        },
+        }
       }
     ]
   },
@@ -864,7 +864,7 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[30,)"
-        },
+        }
       }
     ]
   },
@@ -878,7 +878,7 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(,-30)"
-        },
+        }
       }
     ]
   },
@@ -892,7 +892,7 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(,-30]"
-        },
+        }
       }
     ]
   },
