@@ -1,11 +1,19 @@
 ECHO ==============================PYTHON BUILD/TEST START==============================
 
+ECHO # Installing Requirements
+
+CALL pip install -r .\requirements.txt
+
+CALL pre-commit install --hook-type pre-push
+
 pushd libraries\resource-generator
+
 
 REM Dependencies
 ECHO.
 ECHO # Installing Resource Generator Dependencies
 CALL pip install -r .\requirements.txt
+
 
 REM Build Resources
 ECHO.
