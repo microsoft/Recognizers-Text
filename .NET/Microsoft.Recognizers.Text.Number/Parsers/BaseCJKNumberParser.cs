@@ -97,6 +97,7 @@ namespace Microsoft.Recognizers.Text.Number
                 {
                     ret.Metadata.Offset = Config.RelativeReferenceOffsetMap[extResult.Text];
                     ret.Metadata.RelativeTo = Config.RelativeReferenceRelativeToMap[extResult.Text];
+                    ret.Type = Constants.MODEL_ORDINAL_RELATIVE;
                 }
                 else
                 {
@@ -104,6 +105,7 @@ namespace Microsoft.Recognizers.Text.Number
 
                     // Every ordinal number is relative to the start
                     ret.Metadata.RelativeTo = Constants.RELATIVE_START;
+                    ret.Type = Constants.MODEL_ORDINAL;
                 }
             }
 
