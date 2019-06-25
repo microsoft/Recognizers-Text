@@ -111,6 +111,10 @@ namespace Microsoft.Recognizers.Text.Number
                             if (ExtractType.Contains(Constants.MODEL_ORDINAL))
                             {
                                 er.Metadata = new Metadata();
+                                if ((Options & NumberOptions.SuppressExtendedTypes) == 0 && originalMatch.Groups[Constants.RelativeOrdinalGroupName].Success)
+                                {
+                                    er.Metadata.IsOrdinalRelative = true;
+                                }
                             }
 
                             result.Add(er);
