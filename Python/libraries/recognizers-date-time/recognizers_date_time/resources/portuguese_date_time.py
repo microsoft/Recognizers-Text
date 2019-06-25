@@ -226,6 +226,7 @@ class PortugueseDateTime:
                          ("segundo", 1),
                          ("segs", 1),
                          ("seg", 1)])
+    SpecialYearPrefixesMap = dict([("", "")])
     SeasonMap = dict([("primavera", "SP"),
                       ("verao", "SU"),
                       ("verão", "SU"),
