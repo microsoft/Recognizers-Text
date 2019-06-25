@@ -3238,15 +3238,15 @@
     "Results": []
   },
   {
-    "Input": "s666666666 是一个序列号",
+    "Input": "s666666666是一个序列号",
     "Results": []
   },
   {
-    "Input": "666666666s 是一个序列号",
+    "Input": "666666666s是一个序列号",
     "Results": []
   },
   {
-    "Input": "s666666666s 是一个序列号",
+    "Input": "s666666666s是一个序列号",
     "Results": []
   },
   {
@@ -3254,7 +3254,7 @@
     "Results": []
   },
   {
-    "Input": "3333*2=6666 看起来不像电话号",
+    "Input": "3333*2=6666看起来不像电话号",
     "Results": []
   },
   {
@@ -3266,7 +3266,7 @@
     "Results": []
   },
   {
-    "Input": "(456 (4)) 345看起来不像电话号",
+    "Input": "(456 (4)) 345 看起来不像电话号",
     "Results": []
   },
   {
@@ -3300,39 +3300,39 @@
     ]
   },
   {
-    "Input": "-2208960000 看起来不像电话号",
+    "Input": "-2208960000看起来不像电话号",
     "Results": []
   },
   {
-    "Input": "-77.034040723966 看起来不像电话号",
+    "Input": "-77.034040723966看起来不像电话号",
     "Results": []
   },
   {
-    "Input": "0.000000012 看起来不像电话号",
+    "Input": "0.000000012看起来不像电话号",
     "Results": []
   },
   {
-    "Input": "P0-001-000016155-9 看起来不像电话号",
+    "Input": "P0-001-000016155-9看起来不像电话号",
     "Results": []
   },
   {
-    "Input": "16/04/2010 看起来不像电话号",
+    "Input": "16/04/2010看起来不像电话号",
     "Results": []
   },
   {
-    "Input": "16-04-2010 看起来不像电话号",
+    "Input": "16-04-2010看起来不像电话号",
     "Results": []
   },
   {
-    "Input": "2009/2010 看起来不像电话号",
+    "Input": "2009/2010看起来不像电话号",
     "Results": []
   },
   {
-    "Input": "http://twitter.com/#!/mstrohm/stus/87057367204202896 看起来不像电话号",
+    "Input": "http://twitter.com/#!/mstrohm/stus/87057367204202896看起来不像电话号",
     "Results": []
   },
   {
-    "Input": "T005-2333-100731-SW-2 看起来不像电话号",
+    "Input": "T005-2333-100731-SW-2看起来不像电话号",
     "Results": []
   },
   {
@@ -3583,7 +3583,7 @@
     ]
   },
   {
-    "Input": "My phone number is(+45)12-34-56-78.",
+    "Input": "我的电话号是 (+45)12-34-56-78.",
     "Results": [
       {
         "Text": "(+45)12-34-56-78",
@@ -3869,7 +3869,7 @@
     ]
   },
   {
-    "Input": "我的电话号是31612234567. Such a string is valid but less confident.",
+    "Input": "我的电话号是31612234567。这是个低可信度的电话号",
     "Results": [
       {
         "Text": "31612234567",
@@ -3960,7 +3960,7 @@
     ]
   },
   {
-    "Input": "This is a short landline phone number in Italy: 012234.",
+    "Input": "这是个意大利的短电话号：012234.",
     "Results": [
       {
         "Text": "012234",
@@ -4051,31 +4051,31 @@
     ]
   },
   {
-    "Input": "(45)+(31)-278394 is not a phone number.",
+    "Input": "(45)+(31)-278394不是电话号.",
     "Results": []
   },
   {
-    "Input": "Formula 45+31-339243873 is not a phone number",
+    "Input": "算式45+31-339243873不是电话号",
     "Results": []
   },
   {
-    "Input": "Formula 45*31-339243873 is not a phone number",
+    "Input": "算式 45*31-339243873不是电话号",
     "Results": []
   },
   {
-    "Input": "0039 31122627111-26737 看起来不像电话号",
+    "Input": "0039 31122627111-26737看起来不像电话号",
     "Results": []
   },
   {
-    "Input": "(39 (6)) 345276 看起来不像电话号",
+    "Input": "(39 (6)) 345276看起来不像电话号",
     "Results": []
   },
   {
-    "Input": "+45-12-34-56-78 看起来不像电话号",
+    "Input": "+45-12-34-56-78看起来不像电话号",
     "Results": []
   },
   {
-    "Input": "323456 seems too short to be a phone number.",
+    "Input": "323456太短了，不像个电话号.",
     "Results": []
   },
   {
@@ -4118,7 +4118,7 @@
     ]
   },
   {
-    "Input": "My phone number is+45 12 34 56 78.",
+    "Input": "我的电话号是 +45 12 34 56 78.",
     "Results": [
       {
         "Text": "+45 12 34 56 78",
@@ -4326,11 +4326,11 @@
     ]
   },
   {
-    "Input": "00 10 00 31 46 D9 E9 11 doesn't look like a phone number, it is hexadecimal.",
+    "Input": "00 10 00 31 46 D9 E9 11不像是电话号，他是十六进制的.",
     "Results": []
   },
   {
-    "Input": "#20020211895 is not a phone number, since it starts with #.",
+    "Input": "#20020211895不是电话号, since it starts with #.",
     "Results": []
   },
   {
@@ -4647,6 +4647,159 @@
         "Resolution": {
           "score": "1",
           "value": "+55 11 12345-6789"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "宝爵台球会所：13604779660 13604770960",
+    "Results": [
+      {
+        "Text": "13604779660",
+        "Start": 7,
+        "End": 17,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "0.6",
+          "value": "13604779660"
+        }
+      },
+      {
+        "Text": "13604770960",
+        "Start": 19,
+        "End": 29,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "0.6",
+          "value": "13604770960"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "宝爵台球会所：13604779660或13604770960",
+    "Results": [
+      {
+        "Text": "13604779660",
+        "Start": 7,
+        "End": 17,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "0.6",
+          "value": "13604779660"
+        }
+      },
+      {
+        "Text": "13604770960",
+        "Start": 19,
+        "End": 29,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "0.6",
+          "value": "13604770960"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "• 服务电话：7629236抢维修电话：7633569",
+    "Results": [
+      {
+        "Text": "7629236",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "0.2",
+          "value": "7629236"
+        }
+      },
+      {
+        "Text": "7633569",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "0.2",
+          "value": "7633569"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "电子技术教研室83792841金陵院316",
+    "Results": [
+      {
+        "Text": "83792841",
+        "Start": 7,
+        "End": 14,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "0.3",
+          "value": "83792841"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "学生工作办公室（九龙湖）52090833桃园5#2楼",
+    "Results": [
+      {
+        "Text": "52090833",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "0.3",
+          "value": "52090833"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "联系电话:010-65980408-8001 传真电话:010-65980408-8000 地址:北京市朝阳区光华路4号东方梅地亚中心C座901室 邮编:10002",
+    "Results": [
+      {
+        "Text": "010-65980408-8001",
+        "Start": 5,
+        "End": 21,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "1",
+          "value": "010-65980408-8001"
+        }
+      },
+      {
+        "Text": "010-65980408-8000",
+        "Start": 28,
+        "End": 44,
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "0.9",
+          "value": "010-65980408-8000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "邮政编码是200120传真是021-68804868联系电话021-68812753,021-68808888",
+    "Results": [
+      {
+        "Text": "021-68804868",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "0.8",
+          "value": "021-68804868"
+        }
+      },
+      {
+        "Text": "021-68812753",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "0.8",
+          "value": "021-68812753"
+        }
+      },
+      {
+        "Text": "021-68808888",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "score": "0.6",
+          "value": "021-68808888"
         }
       }
     ]
