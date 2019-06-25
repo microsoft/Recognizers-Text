@@ -79,6 +79,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             DayOfMonth = config.DayOfMonth;
             MonthOfYear = config.MonthOfYear;
             SeasonMap = config.SeasonMap;
+            SpecialYearPrefixesMap = config.SpecialYearPrefixesMap;
             Numbers = config.Numbers;
             WrittenDecades = config.WrittenDecades;
             SpecialDecadeCases = config.SpecialDecadeCases;
@@ -201,6 +202,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public IImmutableDictionary<string, int> MonthOfYear { get; }
 
         public IImmutableDictionary<string, string> SeasonMap { get; }
+
+        public IImmutableDictionary<string, string> SpecialYearPrefixesMap { get; }
 
         public IImmutableDictionary<string, int> WrittenDecades { get; }
 

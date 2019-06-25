@@ -119,6 +119,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         IImmutableDictionary<string, string> SeasonMap { get; }
 
+        IImmutableDictionary<string, string> SpecialYearPrefixesMap { get; }
+
         IImmutableDictionary<string, int> WrittenDecades { get; }
 
         IImmutableDictionary<string, int> Numbers { get; }

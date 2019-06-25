@@ -54,6 +54,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         IImmutableDictionary<string, string> SeasonMap { get; }
 
+        IImmutableDictionary<string, string> SpecialYearPrefixesMap { get; }
+
         IImmutableDictionary<string, string> UnitMap { get; }
 
         IImmutableDictionary<string, int> CardinalMap { get; }

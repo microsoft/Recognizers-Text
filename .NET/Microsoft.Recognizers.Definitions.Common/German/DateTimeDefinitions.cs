@@ -290,6 +290,10 @@ namespace Microsoft.Recognizers.Definitions.German
             { @"sekunde", 1 },
             { @"sek", 1 }
         };
+      public static readonly Dictionary<string, string> SpecialYearPrefixesMap = new Dictionary<string, string>
+        {
+            { @"", @"" }
+        };
       public static readonly Dictionary<string, string> SeasonMap = new Dictionary<string, string>
         {
             { @"spring", @"SP" },
