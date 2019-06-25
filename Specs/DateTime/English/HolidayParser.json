@@ -421,19 +421,19 @@
   {
     "Input": "I'll go back on cyber monday",
     "Context": {
-      "ReferenceDateTime": "2018-11-01T00:00:00"
+      "ReferenceDateTime": "2019-10-01T00:00:00"
     },
     "Results": [
       {
         "Text": "cyber monday",
         "Type": "date",
         "Value": {
-          "Timex": "XXXX-11-26",
+          "Timex": "XXXX-12-02",
           "FutureResolution": {
-            "date": "2018-11-26"
+            "date": "2019-12-02"
           },
           "PastResolution": {
-            "date": "2017-11-27"
+            "date": "2018-11-26"
           }
         },
         "Start": 16,
