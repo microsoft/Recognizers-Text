@@ -343,7 +343,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     },
                 }));
 
-           /* RegisterModel<DimensionModel>(
+            RegisterModel<DimensionModel>(
                 Culture.Italian,
                 (options) => new DimensionModel(new Dictionary<IExtractor, IParser>
                 {
@@ -351,7 +351,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                         new NumberWithUnitExtractor(new Italian.DimensionExtractorConfiguration()),
                         new NumberWithUnitParser(new Italian.DimensionParserConfiguration())
                     },
-               }));*/
+               }));
 
             RegisterModel<AgeModel>(
                 Culture.Italian,
