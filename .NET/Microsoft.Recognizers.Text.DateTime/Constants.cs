@@ -173,6 +173,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public static readonly int MaxTwoDigitYearFutureNum = int.Parse(BaseDateTime.MaxTwoDigitYearFutureNum);
         public static readonly int MinTwoDigitYearPastNum = int.Parse(BaseDateTime.MinTwoDigitYearPastNum);
+        public static readonly System.DateTime InvalidDate = default(System.DateTime);
 
         // Timex non-constant
         public static readonly string[] DatePeriodTimexSplitter = { ",", "(", ")" };

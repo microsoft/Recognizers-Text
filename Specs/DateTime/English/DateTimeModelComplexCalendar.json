@@ -10273,7 +10273,7 @@
         "Resolution": {
           "values": [
             {
-              "timex": "2019SY",
+              "timex": "SY2019",
               "type": "daterange",
               "value": "not resolved"
             }
@@ -10297,7 +10297,7 @@
         "Resolution": {
           "values": [
             {
-              "timex": "2018FY",
+              "timex": "FY2018",
               "type": "daterange",
               "value": "not resolved"
             }
@@ -10346,7 +10346,7 @@
         "Resolution": {
           "values": [
             {
-              "timex": "2008FY",
+              "timex": "FY2008",
               "type": "daterange",
               "value": "not resolved"
             }
@@ -10370,7 +10370,7 @@
         "Resolution": {
           "values": [
             {
-              "timex": "2008SY",
+              "timex": "SY2008",
               "type": "daterange",
               "value": "not resolved"
             }
@@ -10444,7 +10444,7 @@
         "Resolution": {
           "values": [
             {
-              "timex": "2008SY",
+              "timex": "SY2008",
               "type": "daterange",
               "value": "not resolved"
             }
@@ -10468,7 +10468,7 @@
         "Resolution": {
           "values": [
             {
-              "timex": "XXXXFY",
+              "timex": "FYXXXX",
               "type": "daterange",
               "value": "not resolved"
             }
@@ -10492,7 +10492,7 @@
         "Resolution": {
           "values": [
             {
-              "timex": "2018SY",
+              "timex": "SY2018",
               "type": "daterange",
               "value": "not resolved"
             }

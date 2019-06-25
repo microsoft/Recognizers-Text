@@ -1008,9 +1008,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                         {
                             var specialYearPrefixes = this.config.SpecialYearPrefixesMap[match.Groups["special"].Value.ToLowerInvariant()];
                             swift = this.config.GetSwiftYear(trimmedText);
-                            ret.Timex = swift < -1 ?
-                                TimexUtility.GenerateYearTimex(specialTimex: specialYearPrefixes) :
-                                TimexUtility.GenerateYearTimex(date, specialYearPrefixes);
+                            date = swift < -1 ? Constants.InvalidDate : date;
+                            ret.Timex = TimexUtility.GenerateYearTimex(date, specialYearPrefixes);
                             ret.Success = true;
                             return ret;
                         }
@@ -1250,7 +1249,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         if (!string.IsNullOrEmpty(exactMatch.Groups["special"].Value))
                         {
                             var specialYearPrefixes = this.config.SpecialYearPrefixesMap[exactMatch.Groups["special"].Value.ToLowerInvariant()];
-                            ret.Timex = year.ToString("D4") + specialYearPrefixes;
+                            ret.Timex = TimexUtility.GenerateYearTimex(year, specialYearPrefixes);
                             ret.Success = true;
                             return ret;
                         }
@@ -1265,7 +1264,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         DateObject.MinValue.SafeCreateFromValue(year + 1, 1, 1).AddDays(-1) :
                         DateObject.MinValue.SafeCreateFromValue(year + 1, 1, 1);
 
-                    ret.Timex = year.ToString("D4");
+                    ret.Timex = TimexUtility.GenerateYearTimex(year);
                     ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginDay, endDay);
                     ret.Success = true;
 
