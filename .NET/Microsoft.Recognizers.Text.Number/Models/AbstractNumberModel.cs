@@ -85,20 +85,7 @@ namespace Microsoft.Recognizers.Text.Number
                 // For ordinal and ordinal.relative - "ordinal.relative" only available in English for now
                 if (ModelTypeName.Equals(Constants.MODEL_ORDINAL, StringComparison.Ordinal))
                 {
-                    if (pn.Metadata != null && pn.Metadata.IsOrdinalRelative)
-                    {
-                        specificNumberType = Constants.MODEL_ORDINAL_RELATIVE;
-
-                        // Add value for ordinal.relative
-                        string sign = pn.Metadata.Offset[0].Equals('-') ? string.Empty : "+";
-                        string value = string.Concat(pn.Metadata.RelativeTo, sign, pn.Metadata.Offset);
-                        resolution.Add(ResolutionKey.Value, value);
-                    }
-                    else
-                    {
-                        specificNumberType = ModelTypeName;
-                    }
-
+                    specificNumberType = pn.Type;
                     resolution.Add(ResolutionKey.Offset, pn.Metadata.Offset);
                     resolution.Add(ResolutionKey.RelativeTo, pn.Metadata.RelativeTo);
                 }

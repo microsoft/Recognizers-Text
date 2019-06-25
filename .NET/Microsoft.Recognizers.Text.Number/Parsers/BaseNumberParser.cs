@@ -161,11 +161,18 @@ namespace Microsoft.Recognizers.Text.Number
             // Add "offset" and "relativeTo" for ordinal
             if (!string.IsNullOrEmpty(ret.Type) && ret.Type.Contains(Constants.MODEL_ORDINAL))
             {
-                if ((this.Config.Options & NumberOptions.SuppressExtendedTypes) == 0 && Config.RelativeReferenceOffsetMap.ContainsKey(extResult.Text) &&
-                    Config.RelativeReferenceRelativeToMap.ContainsKey(extResult.Text))
+                if ((this.Config.Options & NumberOptions.SuppressExtendedTypes) == 0 && ret.Metadata.IsOrdinalRelative)
                 {
-                    ret.Metadata.Offset = Config.RelativeReferenceOffsetMap[extResult.Text];
-                    ret.Metadata.RelativeTo = Config.RelativeReferenceRelativeToMap[extResult.Text];
+                    var offset = Config.RelativeReferenceOffsetMap[extResult.Text];
+                    var relativeTo = Config.RelativeReferenceRelativeToMap[extResult.Text];
+
+                    ret.Metadata.Offset = offset;
+                    ret.Metadata.RelativeTo = relativeTo;
+
+                    // Add value for ordinal.relative
+                    string sign = offset[0].Equals('-') ? string.Empty : "+";
+                    ret.Value = string.Concat(relativeTo, sign, offset);
+                    ret.ResolutionStr = GetResolutionStr(ret.Value);
                 }
                 else
                 {
@@ -304,8 +311,7 @@ namespace Microsoft.Recognizers.Text.Number
             // Handling cases like "last", "next one", "previous one"
             if ((this.Config.Options & NumberOptions.SuppressExtendedTypes) == 0)
             {
-                if (Config.RelativeReferenceOffsetMap.ContainsKey(extResult.Text) &&
-                    Config.RelativeReferenceRelativeToMap.ContainsKey(extResult.Text))
+                if (extResult.Metadata != null && extResult.Metadata.IsOrdinalRelative)
                 {
                     return result;
                 }
@@ -638,6 +644,11 @@ namespace Microsoft.Recognizers.Text.Number
 
         private static string DetermineType(ExtractResult er)
         {
+            if (!string.IsNullOrEmpty(er.Type) && er.Type.Contains(Constants.MODEL_ORDINAL))
+            {
+                return er.Metadata.IsOrdinalRelative ? Constants.MODEL_ORDINAL_RELATIVE : Constants.MODEL_ORDINAL;
+            }
+
             var data = er.Data as string;
             var subType = string.Empty;
 
