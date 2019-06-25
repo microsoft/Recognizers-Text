@@ -54,6 +54,15 @@
                 "class BaseEmail:"
             ],
             "footer": [ "# pylint: enable=line-too-long" ]
+        },
+        {
+            "input": [ "Chinese", "Chinese-PhoneNumbers" ],
+            "output": "chinese_phone_numbers",
+            "header": [
+                "# pylint: disable=line-too-long",
+                "class ChinesePhoneNumbers:"
+            ],
+            "footer": [ "# pylint: enable=line-too-long" ]
         }
     ]
 }

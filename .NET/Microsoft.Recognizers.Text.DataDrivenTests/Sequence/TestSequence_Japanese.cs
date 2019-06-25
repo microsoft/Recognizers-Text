@@ -27,5 +27,12 @@ namespace Microsoft.Recognizers.Text.Sequence.Tests
         {
             TestURL();
         }
+
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "PhoneNumberModel-Japanese.csv", "PhoneNumberModel-Japanese#csv", DataAccessMethod.Sequential)]
+        [TestMethod]
+        public void PhoneNumberModel()
+        {
+            TestPhoneNumber();
+        }
     }
 }

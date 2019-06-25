@@ -1,10 +1,10 @@
+from recognizers_sequence.resources.chinese_phone_numbers import ChinesePhoneNumbers
 from recognizers_sequence.sequence.extractors import *
 from recognizers_text.culture import Culture
 import regex as re
 
 
-class EnglishPhoneNumberExtractorConfiguration(BaseSequenceExtractorConfiguration):
-
+class ChinesePhoneNumberExtractorConfiguration(BaseSequenceExtractorConfiguration):
     @property
     def word_boundaries_regex(self) -> str:
         return self._WordBoundariesRegex
@@ -19,12 +19,8 @@ class EnglishPhoneNumberExtractorConfiguration(BaseSequenceExtractorConfiguratio
 
     def __init__(self, culture_info: CultureInfo = None):
         if culture_info is None:
-            culture_info = CultureInfo(Culture.English)
+            culture_info = CultureInfo(Culture.Chinese)
         super().__init__(culture_info)
-        self._WordBoundariesRegex = BasePhoneNumbers.WordBoundariesRegex
-        self._NonWordBoundariesRegex = BasePhoneNumbers.NonWordBoundariesRegex
-        self._EndWordBoundariesRegex = BasePhoneNumbers.EndWordBoundariesRegex
-
-
-class EmailExtractor(BaseEmailExtractor):
-    pass
+        self._WordBoundariesRegex = ChinesePhoneNumbers.WordBoundariesRegex
+        self._NonWordBoundariesRegex = ChinesePhoneNumbers.NonWordBoundariesRegex
+        self._EndWordBoundariesRegex = ChinesePhoneNumbers.EndWordBoundariesRegex

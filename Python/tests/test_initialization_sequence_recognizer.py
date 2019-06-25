@@ -1,13 +1,14 @@
 import pytest
 from recognizers_text import Culture
-from recognizers_sequence.sequence import SequenceOptions, SequenceRecognizer
+from recognizers_sequence.sequence import SequenceOptions, SequenceRecognizer, ChinesePhoneNumberExtractorConfiguration
 from recognizers_sequence.sequence.models import PhoneNumberModel
-from recognizers_sequence.sequence.english.extractors import PhoneNumberExtractor
+from recognizers_sequence.sequence.english.extractors import BasePhoneNumberExtractor
 from recognizers_sequence.sequence.english.parsers import PhoneNumberParser
 
 
 class TestInitializationSequenceRecognizer:
-    control_model = PhoneNumberModel(PhoneNumberParser(), PhoneNumberExtractor())
+    control_model = PhoneNumberModel(PhoneNumberParser(),
+                                     BasePhoneNumberExtractor(ChinesePhoneNumberExtractorConfiguration()))
     english_culture = Culture.English
     spanish_culture = Culture.Spanish
     invalid_culture = "vo-id"

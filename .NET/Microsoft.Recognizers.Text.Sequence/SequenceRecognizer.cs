@@ -65,6 +65,13 @@ namespace Microsoft.Recognizers.Text.Sequence
 
         public IModel GetPhoneNumberModel(string culture = null, bool fallbackToDefaultCulture = true)
         {
+            if (culture != null && (
+                culture.ToLowerInvariant().StartsWith("zh-", StringComparison.InvariantCulture) ||
+                culture.ToLowerInvariant().StartsWith("ja-", StringComparison.InvariantCulture)))
+            {
+                return GetModel<PhoneNumberModel>(Culture.Chinese, fallbackToDefaultCulture);
+            }
+
             return GetModel<PhoneNumberModel>(Culture.English, fallbackToDefaultCulture);
         }
 
@@ -108,7 +115,15 @@ namespace Microsoft.Recognizers.Text.Sequence
         {
             RegisterModel<PhoneNumberModel>(
                 Culture.English,
-                (options) => new PhoneNumberModel(new PhoneNumberParser(), new PhoneNumberExtractor()));
+                (options) => new PhoneNumberModel(
+                    new PhoneNumberParser(),
+                    new BasePhoneNumberExtractor(new EnglishPhoneNumberExtractorConfiguration(options))));
+
+            RegisterModel<PhoneNumberModel>(
+                Culture.Chinese,
+                (options) => new PhoneNumberModel(
+                    new PhoneNumberParser(),
+                    new BasePhoneNumberExtractor(new ChinesePhoneNumberExtractorConfiguration(options))));
 
             RegisterModel<IpAddressModel>(
                 Culture.English,

@@ -16,6 +16,30 @@ ReVal = namedtuple('ReVal', ['re', 'val'])
 MatchesVal = namedtuple('MatchesVal', ['matches', 'val'])
 
 
+class BaseSequenceExtractorConfiguration(ABC):
+    @property
+    @abstractmethod
+    def word_boundaries_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def non_word_boundaries_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def end_word_boundaries_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    def culture_info(self) -> CultureInfo:
+        return self._culture_info
+
+    def __init__(self, culture_info: CultureInfo):
+        self._culture_info = culture_info
+
+
 class SequenceExtractor(Extractor):
     @property
     @abstractmethod
@@ -106,23 +130,44 @@ class BasePhoneNumberExtractor(SequenceExtractor):
                     er.length = er.length + match.end() - match.start() + 1
                     er.text = source[er.start:er.start + er.length].strip()
                     ret.append(er)
+
+        # filter hexadecimal address like 00 10 00 31 46 D9 E9 11
+        for m in re.finditer(BasePhoneNumbers.PhoneNumberMaskRegex, source):
+            ret = [er for er in ret if er.start < m.start() or er.end > m.end()]
         return ret
 
-    def __init__(self):
+    def __init__(self, config: BaseSequenceExtractorConfiguration):
+        self.config = config
+        word_boundaries_regex = config.word_boundaries_regex
+        non_word_boundaries_regex = config.non_word_boundaries_regex
+        end_word_boundaries_regex = config.end_word_boundaries_regex
+
         self._regexes = [
-            ReVal(RegExpUtility.get_safe_reg_exp(BasePhoneNumbers.BRPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_BR),
-            ReVal(RegExpUtility.get_safe_reg_exp(BasePhoneNumbers.GeneralPhoneNumberRegex),
-                  Constants.PHONE_NUMBER_REGEX_GENERAL),
-            ReVal(RegExpUtility.get_safe_reg_exp(BasePhoneNumbers.UKPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_UK),
-            ReVal(RegExpUtility.get_safe_reg_exp(BasePhoneNumbers.DEPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_DE),
-            ReVal(RegExpUtility.get_safe_reg_exp(BasePhoneNumbers.USPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_US),
-            ReVal(RegExpUtility.get_safe_reg_exp(BasePhoneNumbers.CNPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_CN),
-            ReVal(RegExpUtility.get_safe_reg_exp(BasePhoneNumbers.DKPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_DK),
-            ReVal(RegExpUtility.get_safe_reg_exp(BasePhoneNumbers.ITPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_IT),
-            ReVal(RegExpUtility.get_safe_reg_exp(BasePhoneNumbers.NLPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_NL),
-            ReVal(RegExpUtility.get_safe_reg_exp(BasePhoneNumbers.SpecialPhoneNumberRegex),
-                  Constants.PHONE_NUMBER_REGEX_SPECIAL),
+            ReVal(RegExpUtility.get_safe_reg_exp(BasePhoneNumbers.GeneralPhoneNumberRegex(
+                word_boundaries_regex, end_word_boundaries_regex)), Constants.PHONE_NUMBER_REGEX_GENERAL),
+            ReVal(RegExpUtility.get_safe_reg_exp(BasePhoneNumbers.BRPhoneNumberRegex(
+                word_boundaries_regex, non_word_boundaries_regex, end_word_boundaries_regex)),
+                Constants.PHONE_NUMBER_REGEX_BR),
+            ReVal(RegExpUtility.get_safe_reg_exp(BasePhoneNumbers.UKPhoneNumberRegex(
+                word_boundaries_regex, non_word_boundaries_regex, end_word_boundaries_regex)),
+                Constants.PHONE_NUMBER_REGEX_UK),
+            ReVal(RegExpUtility.get_safe_reg_exp(BasePhoneNumbers.DEPhoneNumberRegex(
+                word_boundaries_regex, end_word_boundaries_regex)), Constants.PHONE_NUMBER_REGEX_DE),
+            ReVal(RegExpUtility.get_safe_reg_exp(BasePhoneNumbers.USPhoneNumberRegex(
+                word_boundaries_regex, non_word_boundaries_regex, end_word_boundaries_regex)),
+                Constants.PHONE_NUMBER_REGEX_US),
+            ReVal(RegExpUtility.get_safe_reg_exp(BasePhoneNumbers.CNPhoneNumberRegex(
+                word_boundaries_regex, end_word_boundaries_regex)), Constants.PHONE_NUMBER_REGEX_CN),
+            ReVal(RegExpUtility.get_safe_reg_exp(BasePhoneNumbers.DKPhoneNumberRegex(
+                word_boundaries_regex, end_word_boundaries_regex)), Constants.PHONE_NUMBER_REGEX_DK),
+            ReVal(RegExpUtility.get_safe_reg_exp(BasePhoneNumbers.ITPhoneNumberRegex(
+                word_boundaries_regex, end_word_boundaries_regex)), Constants.PHONE_NUMBER_REGEX_IT),
+            ReVal(RegExpUtility.get_safe_reg_exp(BasePhoneNumbers.NLPhoneNumberRegex(
+                word_boundaries_regex, end_word_boundaries_regex)), Constants.PHONE_NUMBER_REGEX_NL),
+            ReVal(RegExpUtility.get_safe_reg_exp(BasePhoneNumbers.SpecialPhoneNumberRegex(
+                word_boundaries_regex, end_word_boundaries_regex)), Constants.PHONE_NUMBER_REGEX_SPECIAL),
         ]
+
 
 class BaseEmailExtractor(SequenceExtractor):
     @property
@@ -136,6 +181,6 @@ class BaseEmailExtractor(SequenceExtractor):
     def __init__(self):
         self._regexes = [
             ReVal(RegExpUtility.get_safe_reg_exp(BaseEmail.EmailRegex), Constants.EMAIL_REGEX),
-            #EmailRegex2 will break the code as it's not supported in Python, comment out for now
-            #ReVal(RegExpUtility.get_safe_reg_exp(BaseEmail.EmailRegex2), Constants.EMAIL_REGEX),
+            # EmailRegex2 will break the code as it's not supported in Python, comment out for now
+            # ReVal(RegExpUtility.get_safe_reg_exp(BaseEmail.EmailRegex2), Constants.EMAIL_REGEX),
         ]
