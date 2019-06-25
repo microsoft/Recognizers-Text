@@ -681,6 +681,11 @@ UnitValueMap: !dictionary
     seconde: 1
     secs: 1
     sec: 1
+# TODO: modify below regex according to the counterpart in English
+SpecialYearPrefixesMap: !dictionary
+  types: [ string, string ]
+  entries:
+    '': ''
 SeasonMap: !dictionary
   types: [ string, string ]
   entries:

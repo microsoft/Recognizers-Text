@@ -121,9 +121,16 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
         }
 
-        public static string GenerateYearTimex(DateObject date = default(DateObject))
+        public static string GenerateYearTimex(DateObject date = default(DateObject), string specialYearPrefixes = null)
         {
-            return date.IsDefaultValue() ? Constants.TimexFuzzyYear : $"{date.Year:D4}";
+            var yearTimex = date.IsDefaultValue() ? Constants.TimexFuzzyYear : $"{date.Year:D4}";
+            return specialYearPrefixes == null ? yearTimex : specialYearPrefixes + yearTimex;
+        }
+
+        public static string GenerateYearTimex(int year, string specialYearPrefixes = null)
+        {
+            var yearTimex = DateTimeFormatUtil.LuisDate(year);
+            return specialYearPrefixes == null ? yearTimex : specialYearPrefixes + yearTimex;
         }
 
         public static string GenerateDurationTimex(double number, string unitStr, bool isLessThanDay)

@@ -1004,6 +1004,16 @@ namespace Microsoft.Recognizers.Text.DateTime
                         var date = referenceDate.AddYears(swift);
                         year = date.Year;
 
+                        if (!string.IsNullOrEmpty(match.Groups["special"].Value))
+                        {
+                            var specialYearPrefixes = this.config.SpecialYearPrefixesMap[match.Groups["special"].Value.ToLowerInvariant()];
+                            swift = this.config.GetSwiftYear(trimmedText);
+                            date = swift < -1 ? Constants.InvalidDate : date;
+                            ret.Timex = TimexUtility.GenerateYearTimex(date, specialYearPrefixes);
+                            ret.Success = true;
+                            return ret;
+                        }
+
                         var beginDate = DateObject.MinValue.SafeCreateFromValue(year, 1, 1);
                         var endDate = inclusiveEndPeriod ?
                             DateObject.MinValue.SafeCreateFromValue(year, 12, 31) :
@@ -1236,6 +1246,13 @@ namespace Microsoft.Recognizers.Text.DateTime
                     if (exactMatch.Success)
                     {
                         year = config.DateExtractor.GetYearFromText(exactMatch.Match);
+                        if (!string.IsNullOrEmpty(exactMatch.Groups["special"].Value))
+                        {
+                            var specialYearPrefixes = this.config.SpecialYearPrefixesMap[exactMatch.Groups["special"].Value.ToLowerInvariant()];
+                            ret.Timex = TimexUtility.GenerateYearTimex(year, specialYearPrefixes);
+                            ret.Success = true;
+                            return ret;
+                        }
                     }
                 }
 
@@ -1247,7 +1264,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         DateObject.MinValue.SafeCreateFromValue(year + 1, 1, 1).AddDays(-1) :
                         DateObject.MinValue.SafeCreateFromValue(year + 1, 1, 1);
 
-                    ret.Timex = year.ToString("D4");
+                    ret.Timex = TimexUtility.GenerateYearTimex(year);
                     ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginDay, endDay);
                     ret.Success = true;
 

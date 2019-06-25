@@ -62,6 +62,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public virtual IImmutableDictionary<string, string> SeasonMap { get; protected set; }
 
+        public virtual IImmutableDictionary<string, string> SpecialYearPrefixesMap { get; protected set; }
+
         public virtual IImmutableDictionary<string, string> UnitMap { get; protected set; }
 
         public virtual IImmutableDictionary<string, int> CardinalMap { get; protected set; }

@@ -260,6 +260,10 @@ namespace Microsoft.Recognizers.Definitions.Spanish
             { @"segs", 1 },
             { @"seg", 1 }
         };
+      public static readonly Dictionary<string, string> SpecialYearPrefixesMap = new Dictionary<string, string>
+        {
+            { @"", @"" }
+        };
       public static readonly Dictionary<string, string> SeasonMap = new Dictionary<string, string>
         {
             { @"primavera", @"SP" },

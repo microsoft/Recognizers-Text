@@ -544,6 +544,11 @@ UnitValueMap: !dictionary
     segundo: 1
     segs: 1
     seg: 1
+# TODO: modify below regex according to the counterpart in English
+SpecialYearPrefixesMap: !dictionary
+  types: [ string, string ]
+  entries:
+    '': ''
 SeasonMap: !dictionary
   types: [ string, string ]
   entries:
