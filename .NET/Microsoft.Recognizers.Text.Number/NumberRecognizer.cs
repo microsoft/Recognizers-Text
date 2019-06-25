@@ -223,6 +223,12 @@ namespace Microsoft.Recognizers.Text.Number
                     AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new ItalianNumberParserConfiguration()),
                     new Italian.PercentageExtractor()));
 
+            RegisterModel<NumberRangeModel>(
+                Culture.Italian,
+                (options) => new NumberRangeModel(
+                    new BaseNumberRangeParser(new ItalianNumberRangeParserConfiguration()),
+                    new Italian.NumberRangeExtractor(options)));
+
             RegisterModel<NumberModel>(
                 Culture.Japanese,
                 (options) => new NumberModel(
