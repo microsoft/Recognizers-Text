@@ -43,22 +43,22 @@ The table below summarizes the currently supported entities. Support for English
 
 | Entity Type       | EN      | ZH-CN   | NL    | FR     | DE    | IT      | JA     | KO     | PT     | ES      |
 |:-----------------:|:-------:|:-------:|:-----:|:------:|:-----:|:-------:|:------:|:------:|:------:|:-------:| 
-| Number (cardinal)    | ✓    | ✓       | ✓    | ✓     | ✓     | **SO**  | ✓      | ✓      | ✓     | ✓       |
-| Ordinal              | ✓    | ✓       | ✓    | ✓     | ✓     | **SO**  | ✓      | **SO** | ✓      | ✓      |
-| Percentage           | ✓    | ✓       | ✓    | ✓     | ✓     | **SO**  | ✓      | **SO** | ✓      | ✓      |
-| Number Range         | ✓    | ✓       | **PA**| :x:   | :x:   | :x:     | :x:    | :x:     | :x:    | **PA** |
-| Unit - Age           | ✓    | ✓       | ✓    | ✓     | ✓     | **SO**  | ✓      | **SO** | ✓      | ✓      |
-| Unit - Currency      | ✓    | ✓       | ✓    | ✓     | ✓     | **SO**  | ✓      | **SP** | ✓      | ✓      |
-| Unit - Dimensions    | ✓    | ✓       | ✓    | ✓     | ✓     | **SO**  | :x:    | **SP**  | ✓     | ✓       | 
-| Unit - Temperature   | ✓    | ✓       | ✓    | ✓     | ✓     | **SO**  | :x:    | **SP**  | ✓     | ✓       | 
-| Choice - Boolean     | ✓    | ✓       | ✓    | ✓     | ✓     | **SO**  | ✓      | **SO** | ✓      | ✓      | 
+| Number (cardinal)    | ✓    | ✓       | ✓    | ✓     | ✓     | **PA**  | ✓      | ✓      | ✓     | ✓       |
+| Ordinal              | ✓    | ✓       | ✓    | ✓     | ✓     | ✓       | ✓      | **SO** | ✓     | ✓       |
+| Percentage           | ✓    | ✓       | ✓    | ✓     | ✓     | ✓       | ✓      | **SO** | ✓     | ✓       |
+| Number Range         | ✓    | ✓       | **PA**| :x:   | :x:   | **PA**  | :x:     | :x:    | :x:   | **PA**  |
+| Unit - Age           | ✓    | ✓       | ✓    | ✓     | ✓     | ✓       | ✓      | **SO** | ✓     | ✓       |
+| Unit - Currency      | ✓    | ✓       | ✓    | ✓     | ✓     | ✓       | ✓      | **SP** | ✓     | ✓       |
+| Unit - Dimensions    | ✓    | ✓       | ✓    | ✓     | ✓     | **SO**  | :x:     | **SP** | ✓     | ✓       | 
+| Unit - Temperature   | ✓    | ✓       | ✓    | ✓     | ✓     | ✓       | :x:    | **SP** | ✓      | ✓      | 
+| Choice - Boolean     | ✓    | ✓       | ✓    | ✓     | ✓     | ✓       | ✓      | **SO** | ✓     | ✓       | 
 | Seq. - E-mail        | G    | G*       | G    | G      | G     | G       | G*     | G*     | G      | G       |
 | Seq. - GUID          | G    | G        | G    | G      | G     | G       | G      | G      | G      | G       |
 | Seq. - Social        | G    | G        | G    | G      | G     | G       | G      | G      | G      | G       |
 | Seq. - IP Address    | G    | G        | G    | G      | G     | G       | G      | G      | G      | G       |
 | Seq. - Phone Number  | G    | G        | G    | G      | G     | G       | G      | G      | G      | G       |
 | Seq. - URL           | G    | G*       | G    | G      | G     | G       | G*     | G*     | G      | G       |
-| DateTime (+subtypes) | ✓    | ✓       | **SP** | ✓    | ✓     | **SO** | **SP**  | **SP** | ✓     | ✓       | 
+| DateTime (+subtypes) | ✓    | ✓       | **SP** | ✓    | ✓     | **SO**  | **SP** | **SP** | ✓     | ✓       | 
 
 | Entity Type       | SV      | BG      | TR    |        |       |         |        |        |        |         |
 |:-----------------:|:-------:|:-------:|:-----:|:------:|:-----:|:-------:|:------:|:------:|:------:|:-------:| 
