@@ -107,6 +107,11 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
+    <Compile Update="Chinese\PhoneNumbersDefinitions.cs">
+      <DependentUpon>PhoneNumbersDefinitions.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
     <Compile Update="Chinese\URLDefinitions.cs">
       <DependentUpon>URLDefinitions.tt</DependentUpon>
       <DesignTime>True</DesignTime>
@@ -331,6 +336,8 @@
     <None Update="Chinese\NumbersDefinitions.tt">
     </None>
     <None Update="Chinese\NumbersWithUnitDefinitions.tt">
+    </None>
+    <None Update="Chinese\PhoneNumbersDefinitions.tt">
     </None>
     <None Update="Chinese\URLDefinitions.tt">
     </None>
