@@ -41,9 +41,9 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         protected static DateObject ThanksgivingDay(int year) => DateObject.MinValue.SafeCreateFromValue(year, 11, GetDay(year, 11, 3, DayOfWeek.Thursday));
 
-        protected static DateObject BlackFriday(int year) => DateObject.MinValue.SafeCreateFromValue(year, 11, GetDay(year, 11, 3, DayOfWeek.Friday));
+        protected static DateObject BlackFriday(int year) => ThanksgivingDay(year).AddDays(1);
 
-        protected static DateObject CyberMonday(int year) => DateObject.MinValue.SafeCreateFromValue(year, 11, GetDay(year, 11, 4, DayOfWeek.Monday));
+        protected static DateObject CyberMonday(int year) => ThanksgivingDay(year).AddDays(4);
 
         protected static int GetDay(int year, int month, int week, DayOfWeek dayOfWeek) =>
             (from day in Enumerable.Range(1, DateObject.DaysInMonth(year, month))
