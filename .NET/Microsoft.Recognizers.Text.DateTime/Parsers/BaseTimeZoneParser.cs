@@ -89,7 +89,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 Type = er.Type,
             };
 
-            string text = er.Text.ToLower();
+            string text = er.Text;
             string matched = Regex.Match(text, TimeZoneDefinitions.DirectUtcRegex).Groups[2].Value;
             int offsetInMinutes = ComputeMinutes(matched);
 
@@ -108,7 +108,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
             else if (TimeZoneDefinitions.FullToMinMapping.ContainsKey(text))
             {
-                int utcMinuteShift = TimeZoneDefinitions.FullToMinMapping[text.ToLower()];
+                int utcMinuteShift = TimeZoneDefinitions.FullToMinMapping[text];
                 result.Value = GetDateTimeResolutionResult(utcMinuteShift, text);
                 result.ResolutionStr = Constants.UtcOffsetMinsKey + ": " + utcMinuteShift;
             }

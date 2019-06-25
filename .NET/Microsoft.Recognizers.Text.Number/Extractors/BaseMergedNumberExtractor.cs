@@ -29,8 +29,8 @@ namespace Microsoft.Recognizers.Text.Number
 
             for (var idx = 0; idx < ers.Count - 1; idx++)
             {
-                if (!((string)ers[idx].Data).StartsWith(Constants.INTEGER_PREFIX, StringComparison.InvariantCulture) ||
-                    !((string)ers[idx + 1].Data).StartsWith(Constants.INTEGER_PREFIX, StringComparison.InvariantCulture))
+                if (!((string)ers[idx].Data).StartsWith(Constants.INTEGER_PREFIX, StringComparison.Ordinal) ||
+                    !((string)ers[idx + 1].Data).StartsWith(Constants.INTEGER_PREFIX, StringComparison.Ordinal))
                 {
                     groups[idx + 1] = groups[idx] + 1;
                     continue;

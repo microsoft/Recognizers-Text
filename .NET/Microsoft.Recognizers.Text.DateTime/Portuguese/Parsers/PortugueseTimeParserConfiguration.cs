@@ -37,7 +37,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         public void AdjustByPrefix(string prefix, ref int hour, ref int min, ref bool hasMin)
         {
             var deltaMin = 0;
-            var trimedPrefix = prefix.Trim().ToLowerInvariant();
+            var trimedPrefix = prefix.Trim();
 
             if (trimedPrefix.StartsWith("quarto") || trimedPrefix.StartsWith("e um quarto") ||
                 trimedPrefix.StartsWith("quinze") || trimedPrefix.StartsWith("e quinze"))
@@ -62,7 +62,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
                 }
                 else
                 {
-                    minStr = match.Groups["deltaminnum"].Value.ToLower();
+                    minStr = match.Groups["deltaminnum"].Value;
                     Numbers.TryGetValue(minStr, out deltaMin);
                 }
             }
@@ -71,7 +71,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
                 trimedPrefix.EndsWith("depois das") || trimedPrefix.EndsWith("depois da") || trimedPrefix.EndsWith("depois do") ||
                 trimedPrefix.EndsWith("passadas as") || trimedPrefix.EndsWith("passadas das"))
             {
-            // deltaMin it's positive
+                // deltaMin it's positive
             }
             else if (trimedPrefix.EndsWith("para a") || trimedPrefix.EndsWith("para as") ||
                      trimedPrefix.EndsWith("pra") || trimedPrefix.EndsWith("pras") ||
@@ -92,7 +92,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public void AdjustBySuffix(string suffix, ref int hour, ref int min, ref bool hasMin, ref bool hasAm, ref bool hasPm)
         {
-            var trimedSuffix = suffix.Trim().ToLowerInvariant();
+            var trimedSuffix = suffix.Trim();
             AdjustByPrefix(trimedSuffix, ref hour, ref min, ref hasMin);
 
             var deltaHour = 0;

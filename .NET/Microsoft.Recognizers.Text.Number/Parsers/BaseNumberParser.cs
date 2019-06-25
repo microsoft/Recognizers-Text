@@ -61,7 +61,7 @@ namespace Microsoft.Recognizers.Text.Number
         public virtual ParseResult Parse(ExtractResult extResult)
         {
             // Check if the parser is configured to support specific types
-            if (SupportedTypes != null && !SupportedTypes.Any(t => extResult.Type.Equals(t, StringComparison.InvariantCulture)))
+            if (SupportedTypes != null && !SupportedTypes.Any(t => extResult.Type.Equals(t, StringComparison.Ordinal)))
             {
                 return null;
             }
@@ -654,7 +654,7 @@ namespace Microsoft.Recognizers.Text.Number
 
             if (!string.IsNullOrEmpty(data))
             {
-                if (data.StartsWith(Constants.FRACTION_PREFIX, StringComparison.InvariantCulture))
+                if (data.StartsWith(Constants.FRACTION_PREFIX, StringComparison.Ordinal))
                 {
                     subType = Constants.FRACTION;
                 }
@@ -662,11 +662,11 @@ namespace Microsoft.Recognizers.Text.Number
                 {
                     subType = Constants.POWER;
                 }
-                else if (data.StartsWith(Constants.INTEGER_PREFIX, StringComparison.InvariantCulture))
+                else if (data.StartsWith(Constants.INTEGER_PREFIX, StringComparison.Ordinal))
                 {
                     subType = Constants.INTEGER;
                 }
-                else if (data.StartsWith(Constants.DOUBLE_PREFIX, StringComparison.InvariantCulture))
+                else if (data.StartsWith(Constants.DOUBLE_PREFIX, StringComparison.Ordinal))
                 {
                     subType = Constants.DECIMAL;
                 }
@@ -812,12 +812,12 @@ namespace Microsoft.Recognizers.Text.Number
                         }
                         else if (Config.CardinalNumberMap.ContainsKey(matchStr))
                         {
-                            if (oldSym.Equals("-", StringComparison.InvariantCulture))
+                            if (oldSym.Equals("-", StringComparison.Ordinal))
                             {
                                 var sum = tempStack.Pop() + matchValue;
                                 tempStack.Push(sum);
                             }
-                            else if (oldSym.Equals(Config.WrittenIntegerSeparatorTexts.First(), StringComparison.InvariantCulture) || tempStack.Count() < 2)
+                            else if (oldSym.Equals(Config.WrittenIntegerSeparatorTexts.First(), StringComparison.Ordinal) || tempStack.Count() < 2)
                             {
                                 tempStack.Push(matchValue);
                             }

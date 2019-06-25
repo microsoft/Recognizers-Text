@@ -113,8 +113,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             var lastEnd = 0;
             foreach (var er in ers)
             {
-                var beforeStr = text.Substring(lastEnd, er.Start ?? 0).ToLowerInvariant();
-                var afterStr = text.Substring((er.Start ?? 0) + (er.Length ?? 0)).ToLowerInvariant();
+                var beforeStr = text.Substring(lastEnd, er.Start ?? 0);
+                var afterStr = text.Substring((er.Start ?? 0) + (er.Length ?? 0));
 
                 var match = BeforeRegex.MatchBegin(afterStr, trim: true);
 

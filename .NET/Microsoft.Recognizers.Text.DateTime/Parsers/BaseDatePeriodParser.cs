@@ -32,7 +32,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             object value = null;
 
-            if (ParserName.Equals(er.Type, StringComparison.InvariantCulture))
+            if (ParserName.Equals(er.Type, StringComparison.Ordinal))
             {
                 var innerResult = ParseBaseDatePeriod(er.Text, refDate);
 
@@ -678,8 +678,8 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (match.Success)
             {
                 var days = match.Groups["day"];
-                beginDay = this.config.DayOfMonth[days.Captures[0].Value.ToLower()];
-                endDay = this.config.DayOfMonth[days.Captures[1].Value.ToLower()];
+                beginDay = this.config.DayOfMonth[days.Captures[0].Value];
+                endDay = this.config.DayOfMonth[days.Captures[1].Value];
 
                 // parse year
                 year = config.DateExtractor.GetYearFromText(match.Match);
@@ -697,11 +697,11 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 if (!string.IsNullOrEmpty(monthStr))
                 {
-                    month = this.config.MonthOfYear[monthStr.ToLower()];
+                    month = this.config.MonthOfYear[monthStr];
                 }
                 else
                 {
-                    monthStr = match.Groups["relmonth"].Value.Trim().ToLower();
+                    monthStr = match.Groups["relmonth"].Value.Trim();
                     var swiftMonth = this.config.GetSwiftDayOrMonth(monthStr);
                     switch (swiftMonth)
                     {
@@ -793,7 +793,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var earlierPrefix = false;
             var laterPrefix = false;
 
-            var trimmedText = text.Trim().ToLower();
+            var trimmedText = text.Trim();
             var match = this.config.OneWordPeriodRegex.MatchExact(trimmedText, trim: true);
 
             if (!match.Success)
@@ -891,7 +891,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     swift = this.config.GetSwiftYear(trimmedText);
 
-                    month = this.config.MonthOfYear[monthStr.ToLower()];
+                    month = this.config.MonthOfYear[monthStr];
 
                     if (swift >= -1)
                     {
@@ -994,9 +994,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         var date = referenceDate.AddMonths(swift);
                         month = date.Month;
                         year = date.Year;
-                        ret.Timex = isReferenceDatePeriod ?
-                            TimexUtility.GenerateMonthTimex() :
-                            TimexUtility.GenerateMonthTimex(date);
+                        ret.Timex = isReferenceDatePeriod ? TimexUtility.GenerateMonthTimex() : TimexUtility.GenerateMonthTimex(date);
                         futureYear = pastYear = year;
                     }
                     else if (this.config.IsYearOnly(trimmedText))
@@ -1142,10 +1140,10 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if (match.Success)
             {
-                var monthStr = match.Groups["month"].Value.ToLower();
-                var orderStr = match.Groups["order"].Value.ToLower();
+                var monthStr = match.Groups["month"].Value;
+                var orderStr = match.Groups["order"].Value;
 
-                var month = this.config.MonthOfYear[monthStr.ToLower()];
+                var month = this.config.MonthOfYear[monthStr];
 
                 var year = config.DateExtractor.GetYearFromText(match.Match);
 
@@ -1402,8 +1400,8 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (durationErs.Count == 1)
             {
                 var durationPr = config.DurationParser.Parse(durationErs[0]);
-                var beforeStr = text.Substring(0, durationPr.Start ?? 0).Trim().ToLowerInvariant();
-                var afterStr = text.Substring((durationPr.Start ?? 0) + (durationPr.Length ?? 0)).Trim().ToLowerInvariant();
+                var beforeStr = text.Substring(0, durationPr.Start ?? 0).Trim();
+                var afterStr = text.Substring((durationPr.Start ?? 0) + (durationPr.Length ?? 0)).Trim();
 
                 var numbersInSuffix = config.CardinalExtractor.Extract(beforeStr);
                 var numbersInDuration = config.CardinalExtractor.Extract(durationErs[0].Text);
@@ -1558,7 +1556,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var ret = new DateTimeResolutionResult();
 
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
             var match = this.config.WeekOfMonthRegex.MatchExact(trimmedText, trim: true);
 
             if (!match.Success)
@@ -1603,8 +1601,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         private DateTimeResolutionResult ParseWeekOfYear(string text, DateObject referenceDate)
         {
             var ret = new DateTimeResolutionResult();
-            var trimmedText = text.ToLowerInvariant();
-            var match = this.config.WeekOfYearRegex.MatchExact(trimmedText, trim: true);
+            var match = this.config.WeekOfYearRegex.MatchExact(text, trim: true);
 
             if (!match.Success)
             {
@@ -1612,7 +1609,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             var cardinalStr = match.Groups["cardinal"].Value;
-            var orderStr = match.Groups["order"].Value.ToLower();
+            var orderStr = match.Groups["order"].Value;
 
             var year = config.DateExtractor.GetYearFromText(match.Match);
             if (year == Constants.InvalidYear)
@@ -1666,8 +1663,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                 return ret;
             }
 
-            var cardinalStr = match.Groups["cardinal"].Value.ToLower();
-            var orderStr = match.Groups["order"].Value.ToLower();
+            var cardinalStr = match.Groups["cardinal"].Value;
+            var orderStr = match.Groups["order"].Value;
             var numberStr = match.Groups["number"].Value;
 
             int year = config.DateExtractor.GetYearFromText(match.Match);
@@ -1717,8 +1714,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                 return ret;
             }
 
-            var cardinalStr = match.Groups["cardinal"].Value.ToLower();
-            var orderStr = match.Groups["order"].Value.ToLower();
+            var cardinalStr = match.Groups["cardinal"].Value;
+            var orderStr = match.Groups["order"].Value;
             var numberStr = match.Groups["number"].Value;
 
             bool noSpecificYear = false;
@@ -1790,7 +1787,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if (match.Success)
             {
-                var seasonTimex = this.config.SeasonMap[match.Groups["seas"].Value.ToLowerInvariant()];
+                var seasonTimex = this.config.SeasonMap[match.Groups["seas"].Value];
 
                 if (match.Groups["EarlyPrefix"].Success)
                 {
@@ -2010,7 +2007,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if (match.Success)
             {
-                var decadeStr = match.Groups["decade"].Value.ToLower();
+                var decadeStr = match.Groups["decade"].Value;
                 if (!int.TryParse(decadeStr, out decade))
                 {
                     if (this.config.WrittenDecades.ContainsKey(decadeStr))
@@ -2025,7 +2022,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
                 }
 
-                var centuryStr = match.Groups["century"].Value.ToLower();
+                var centuryStr = match.Groups["century"].Value;
                 if (!string.IsNullOrEmpty(centuryStr))
                 {
                     if (!int.TryParse(centuryStr, out firstTwoNumOfYear))
@@ -2066,7 +2063,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     swift = this.config.GetSwiftDayOrMonth(trimmedText);
 
-                    var numStr = match.Groups["number"].Value.ToLower();
+                    var numStr = match.Groups["number"].Value;
                     var er = this.config.IntegerExtractor.Extract(numStr);
                     if (er.Count == 1)
                     {

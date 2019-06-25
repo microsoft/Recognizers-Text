@@ -46,7 +46,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         {
             int deltaMin;
 
-            var trimedPrefix = prefix.Trim().ToLowerInvariant();
+            var trimedPrefix = prefix.Trim();
 
             if (trimedPrefix.StartsWith("half"))
             {
@@ -70,7 +70,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
                 }
                 else
                 {
-                    minStr = match.Groups["deltaminnum"].Value.ToLower();
+                    minStr = match.Groups["deltaminnum"].Value;
                     deltaMin = Numbers[minStr];
                 }
             }
@@ -92,9 +92,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public void AdjustBySuffix(string suffix, ref int hour, ref int min, ref bool hasMin, ref bool hasAm, ref bool hasPm)
         {
-            var lowerSuffix = suffix.ToLowerInvariant();
             var deltaHour = 0;
-            var match = TimeSuffixFull.MatchExact(lowerSuffix, trim: true);
+            var match = TimeSuffixFull.MatchExact(suffix, trim: true);
 
             if (match.Success)
             {

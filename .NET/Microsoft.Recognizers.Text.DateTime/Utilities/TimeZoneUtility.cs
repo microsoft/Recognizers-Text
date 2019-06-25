@@ -77,7 +77,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             foreach (List<string> collection in collections)
             {
-                collection.ForEach(o => matcherList.Add(o.Trim().ToLower()));
+                collection.ForEach(o => matcherList.Add(o.Trim().ToLowerInvariant()));
             }
 
             matcherList = matcherList.Distinct().ToList();

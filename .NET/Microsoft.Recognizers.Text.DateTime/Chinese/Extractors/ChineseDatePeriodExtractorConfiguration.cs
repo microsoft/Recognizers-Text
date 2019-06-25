@@ -161,7 +161,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     var periodEnd = (er[idx + 1].Start ?? 0) + (er[idx + 1].Length ?? 0);
 
                     // handle "从"
-                    var beforeStr = text.Substring(0, periodBegin).ToLowerInvariant();
+                    var beforeStr = text.Substring(0, periodBegin);
                     if (beforeStr.Trim().EndsWith("从"))
                     {
                         periodBegin = beforeStr.LastIndexOf("从", StringComparison.Ordinal);
@@ -208,7 +208,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
             foreach (var duration in durations)
             {
-                var beforeStr = text.Substring(0, duration.Start).ToLowerInvariant();
+                var beforeStr = text.Substring(0, duration.Start);
                 if (string.IsNullOrWhiteSpace(beforeStr))
                 {
                     continue;

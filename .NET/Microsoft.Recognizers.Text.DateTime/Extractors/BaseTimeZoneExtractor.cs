@@ -36,7 +36,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public List<ExtractResult> RemoveAmbiguousTimezone(List<ExtractResult> ers)
         {
-            ers.RemoveAll(o => config.AmbiguousTimezoneList.Contains(o.Text.ToLowerInvariant()));
+            ers.RemoveAll(o => config.AmbiguousTimezoneList.Contains(o.Text));
             return ers;
         }
 
@@ -82,7 +82,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (timeMatch.Count != 0 && !isAllSuffixInsideTokens)
             {
                 var lastMatchIndex = timeMatch[timeMatch.Count - 1].Index;
-                var matches = config.LocationMatcher.Find(text.Substring(0, lastMatchIndex).ToLowerInvariant());
+                var matches = config.LocationMatcher.Find(text.Substring(0, lastMatchIndex));
                 var locationMatches = MatchingUtil.RemoveSubMatches(matches);
 
                 var i = 0;

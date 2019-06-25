@@ -18,7 +18,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public override int GetSwiftYear(string text)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
             var swift = -10;
 
             if (PortugueseDatePeriodParserConfiguration.NextPrefixRegex.IsMatch(trimmedText))

@@ -83,7 +83,7 @@ namespace Microsoft.Recognizers.Text.Number
                 string specificNumberType;
 
                 // For ordinal and ordinal.relative - "ordinal.relative" only available in English for now
-                if (ModelTypeName.Equals(Constants.MODEL_ORDINAL, StringComparison.InvariantCulture))
+                if (ModelTypeName.Equals(Constants.MODEL_ORDINAL, StringComparison.Ordinal))
                 {
                     specificNumberType = pn.Type;
                     resolution.Add(ResolutionKey.Offset, pn.Metadata.Offset);

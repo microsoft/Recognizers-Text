@@ -20,7 +20,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             List<ExtractResult> ers;
 
             // Only merge currency's compound units for now.
-            if (config.ExtractType.Equals(Constants.SYS_UNIT_CURRENCY, StringComparison.InvariantCulture))
+            if (config.ExtractType.Equals(Constants.SYS_UNIT_CURRENCY, StringComparison.Ordinal))
             {
                 ers = MergeCompoundUnits(source);
             }
@@ -51,13 +51,13 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             for (var idx = 0; idx < ers.Count - 1; idx++)
             {
                 if (ers[idx].Type != ers[idx + 1].Type &&
-                    !ers[idx].Type.Equals(Constants.SYS_NUM, StringComparison.InvariantCulture) &&
-                    !ers[idx + 1].Type.Equals(Constants.SYS_NUM, StringComparison.InvariantCulture))
+                    !ers[idx].Type.Equals(Constants.SYS_NUM, StringComparison.Ordinal) &&
+                    !ers[idx + 1].Type.Equals(Constants.SYS_NUM, StringComparison.Ordinal))
                 {
                     continue;
                 }
 
-                if (ers[idx].Data is ExtractResult er && !er.Data.ToString().StartsWith("Integer", StringComparison.InvariantCulture))
+                if (ers[idx].Data is ExtractResult er && !er.Data.ToString().StartsWith("Integer", StringComparison.Ordinal))
                 {
                     groups[idx + 1] = groups[idx] + 1;
                     continue;
@@ -66,7 +66,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                 var middleBegin = ers[idx].Start + ers[idx].Length ?? 0;
                 var middleEnd = ers[idx + 1].Start ?? 0;
 
-                var middleStr = source.Substring(middleBegin, middleEnd - middleBegin).Trim().ToLowerInvariant();
+                var middleStr = source.Substring(middleBegin, middleEnd - middleBegin).Trim();
 
                 // Separated by whitespace
                 if (string.IsNullOrEmpty(middleStr))

@@ -108,12 +108,12 @@ namespace Microsoft.Recognizers.Text.DateTime
                     break;
                 }
 
-                if ((ers[i].Type.Equals(Constants.SYS_DATETIME_DATE, StringComparison.InvariantCulture) &&
-                     ers[j].Type.Equals(Constants.SYS_DATETIME_TIME, StringComparison.InvariantCulture)) ||
-                    (ers[i].Type.Equals(Constants.SYS_DATETIME_TIME, StringComparison.InvariantCulture) &&
-                     ers[j].Type.Equals(Constants.SYS_DATETIME_DATE, StringComparison.InvariantCulture)) ||
-                    (ers[i].Type.Equals(Constants.SYS_DATETIME_DATE, StringComparison.InvariantCulture) &&
-                     ers[j].Type.Equals(Number.Constants.SYS_NUM_INTEGER, StringComparison.InvariantCulture)))
+                if ((ers[i].Type.Equals(Constants.SYS_DATETIME_DATE, StringComparison.Ordinal) &&
+                     ers[j].Type.Equals(Constants.SYS_DATETIME_TIME, StringComparison.Ordinal)) ||
+                    (ers[i].Type.Equals(Constants.SYS_DATETIME_TIME, StringComparison.Ordinal) &&
+                     ers[j].Type.Equals(Constants.SYS_DATETIME_DATE, StringComparison.Ordinal)) ||
+                    (ers[i].Type.Equals(Constants.SYS_DATETIME_DATE, StringComparison.Ordinal) &&
+                     ers[j].Type.Equals(Number.Constants.SYS_NUM_INTEGER, StringComparison.Ordinal)))
                 {
                     var middleBegin = ers[i].Start + ers[i].Length ?? 0;
                     var middleEnd = ers[j].Start ?? 0;
@@ -127,7 +127,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     var valid = false;
 
                     // for cases like "tomorrow 3",  "tomorrow at 3"
-                    if (ers[j].Type.Equals(Number.Constants.SYS_NUM_INTEGER, StringComparison.InvariantCulture))
+                    if (ers[j].Type.Equals(Number.Constants.SYS_NUM_INTEGER, StringComparison.Ordinal))
                     {
                         var match = this.config.DateNumberConnectorRegex.Match(middleStr);
                         if (string.IsNullOrEmpty(middleStr) || match.Success)

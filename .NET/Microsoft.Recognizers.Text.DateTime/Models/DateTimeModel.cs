@@ -80,7 +80,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             };
 
             var type = parsedDateTime.Type.Split('.').Last();
-            if (type.Equals(Constants.SYS_DATETIME_DATETIMEALT))
+            if (type.Equals(Constants.SYS_DATETIME_DATETIMEALT, StringComparison.Ordinal))
             {
                 ret = new ExtendedModelResult(modelResult)
                 {

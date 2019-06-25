@@ -12,12 +12,12 @@
 from .base_date_time import BaseDateTime
 # pylint: disable=line-too-long
 class FrenchDateTime:
-    TillRegex = f'(?<till>au|et|jusqu\'[aà]|[aà]|avant|--|-|—|——)'
+    TillRegex = f'(?<till>au|et|(jusqu\')?[aà]|avant|--|-|—|——)'
     RangeConnectorRegex = f'(?<and>de la|au|[aà]|et(\\s*la)?|--|-|—|——)'
     RelativeRegex = f'(?<order>prochaine?|de|du|ce(tte)?|l[ae]|derni[eè]re|pr[eé]c[eé]dente|au\\s+cours+(de|du\\s*))'
     StrictRelativeRegex = f'(?<order>prochaine?|ce(tte)?|derni[eè]re|pr[eé]c[eé]dente|au\\s+cours+(de|du\\s*))'
     NextSuffixRegex = f'(?<order>prochaines?|prochain|suivante)\\b'
-    PastSuffixRegex = f'(?<order>derni[eè]re|dernier|pr[eé]c[eé]dente)\\b'
+    PastSuffixRegex = f'(?<order>derni[eè]re?|pr[eé]c[eé]dente)\\b'
     ThisPrefixRegex = f'(?<order>ce(tte)?|au\\s+cours+(du|de))\\b'
     RangePrefixRegex = f'(du|depuis|des?|entre)'
     DayRegex = f'(?<day>01|02|03|04|05|06|07|08|09|10|11e?|12e?|13e?|14e?|15e?|16e?|17e?|18e?|19e?|1er|1|21e?|20e?|22e?|23e?|24e?|25e?|26e?|27e?|28e?|29e?|2e?|30e?|31e?|3e?|4e?|5e?|6e?|7e?|8e?|9e?)(?=\\b|t)'
@@ -284,6 +284,7 @@ class FrenchDateTime:
                          ("seconde", 1),
                          ("secs", 1),
                          ("sec", 1)])
+    SpecialYearPrefixesMap = dict([("", "")])
     SeasonMap = dict([("printemps", "SP"),
                       ("été", "SU"),
                       ("automne", "FA"),
