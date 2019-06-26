@@ -1139,21 +1139,6 @@
     ]
   },
   {
-    "Input": "bir bölü beş",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "bir bölü beş",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "0,2"
-        },
-        "Start": 0,
-        "End": 11
-      }
-    ]
-  },
-  {
     "Input": "yüz bin trilyon",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
@@ -1182,21 +1167,6 @@
         },
         "Start": 0,
         "End": 11
-      }
-    ]
-  },
-  {
-    "Input": "üç bölü beş",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "üç bölü beş",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "0,6"
-        },
-        "Start": 0,
-        "End": 10
       }
     ]
   },
@@ -1389,21 +1359,6 @@
         "TypeName": "number",
         "Resolution": {
           "value": "100005"
-        },
-        "Start": 0,
-        "End": 10
-      }
-    ]
-  },
-  {
-    "Input": "bir bölü üç",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "bir bölü üç",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "0,333333333333333"
         },
         "Start": 0,
         "End": 10
@@ -1664,21 +1619,6 @@
         },
         "Start": 0,
         "End": 12
-      }
-    ]
-  },
-  {
-    "Input": "bir bölü sekiz",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "bir bölü sekiz",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "0,125"
-        },
-        "Start": 0,
-        "End": 13
       }
     ]
   },
