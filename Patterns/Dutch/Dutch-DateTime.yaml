@@ -33,8 +33,10 @@ ReferencePrefixRegex: !simpleRegex
   def: (dezelfde|hetzelfde|dat|die|overeenkomstige)\b
 FutureSuffixRegex: !simpleRegex
   def: \b(in\s+de\s+)?(toekomst|vanaf)\b
+#Testing versions to be updated soon
 DayRegex: !simpleRegex
   def: (de\s*)?(?<day>(31(ste|e)?|30(ste|e)?|29(ste|e)?|28(ste|e)?|27(ste|e)?|26(ste|e)?|25(ste|e)?|24(ste|e)?|23(ste|e)?|22(ste|e)?|21(ste|e)?|20(ste|e)?|19(de|e)?|18(de|e)?|17(de|e)?|16(de|e)?|15(de|e)?|14(de|e)?|13(de|e)?|12(de|e)?|11(de|e)?|10(de|e)?|[0]?1(ste|e)?|[0]?2(de|e)?|[0]?3(de|e)?|[0]?4(de|e)?|[0]?5(de|e)?|[0]?6(de|e)?|[0]?7(de|e)?|[0]?8(ste|e)?|[0]?9(de|e)?))
+#Testing versions to be updated soon
 ImplicitDayRegex: !simpleRegex
   def: (de\s*)?(?<day>(31(ste|e)?|30(ste|e)?|29(ste|e)?|28(ste|e)?|27(ste|e)?|26(ste|e)?|25(ste|e)?|24(ste|e)?|23(ste|e)?|22(ste|e)?|21(ste|e)?|20(ste|e)?|19(de|e)?|18(de|e)?|17(de|e)?|16(de|e)?|15(de|e)?|14(de|e)?|13(de|e)?|12(de|e)?|11(de|e)?|10(de|e)?|[0]?1(ste|e)?|[0]?2(de|e)?|[0]?3(de|e)?|[0]?4(de|e)?|[0]?5(de|e)?|[0]?6(de|e)?|[0]?7(de|e)?|[0]?8(ste|e)?|[0]?9(de|e)?))
 MonthNumRegex: !simpleRegex
