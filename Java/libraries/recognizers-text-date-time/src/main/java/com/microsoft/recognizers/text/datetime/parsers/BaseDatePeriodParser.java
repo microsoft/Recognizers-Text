@@ -25,6 +25,7 @@ import com.microsoft.recognizers.text.utilities.MatchGroup;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
 import com.microsoft.recognizers.text.utilities.StringUtility;
 
+import java.sql.Time;
 import java.time.DayOfWeek;
 import java.time.LocalDateTime;
 import java.time.Month;
@@ -731,6 +732,15 @@ public class BaseDatePeriodParser implements IDateTimeParser {
                     LocalDateTime date = referenceDate.plusYears(swift);
                     year = date.getYear();
 
+                    if (!StringUtility.isNullOrEmpty(match.getMatch().get().getGroup("special").value)) {
+                        String specialYearPrefixes = this.config.getSpecialYearPrefixesMap().get(match.getMatch().get().getGroup("special").value.toLowerCase());
+                        swift = this.config.getSwiftYear(trimmedText);
+                        year = swift < -1 ? Constants.InvalidYear : year;
+                        ret.setTimex(TimexUtility.generateYearTimex(year, specialYearPrefixes));
+                        ret.setSuccess(true);
+                        return ret;
+                    }
+
                     LocalDateTime beginDate = DateUtil.safeCreateFromMinValue(year, 1, 1);
 
                     LocalDateTime endValue = DateUtil.safeCreateFromMinValue(year, 12, 31);
@@ -757,7 +767,8 @@ public class BaseDatePeriodParser implements IDateTimeParser {
                         }
                     }
 
-                    ret.setTimex(isRef ? TimexUtility.generateYearTimex() : TimexUtility.generateYearTimex(date));
+                    year = isRef ? Constants.InvalidYear : year;
+                    ret.setTimex(TimexUtility.generateYearTimex(year));
 
                     ret.setFutureValue(new Pair<>(beginDate, endDate));
                     ret.setPastValue(new Pair<>(beginDate, endDate));
@@ -912,6 +923,12 @@ public class BaseDatePeriodParser implements IDateTimeParser {
                 exactMatch = RegexExtension.matchExact(this.config.getYearPlusNumberRegex(), text, true);
                 if (exactMatch.getSuccess()) {
                     year = this.config.getDateExtractor().getYearFromText(exactMatch.getMatch().get());
+                    if (!StringUtility.isNullOrEmpty(exactMatch.getMatch().get().getGroup("special").value)) {
+                        String specialYearPrefixes = this.config.getSpecialYearPrefixesMap().get(exactMatch.getMatch().get().getGroup("special").value.toLowerCase());
+                        ret.setTimex(TimexUtility.generateYearTimex(year, specialYearPrefixes));
+                        ret.setSuccess(true);
+                        return ret;
+                    }
                 }
             }
 
@@ -921,7 +938,7 @@ public class BaseDatePeriodParser implements IDateTimeParser {
                 LocalDateTime endDayValue = DateUtil.safeCreateFromMinValue(year + 1, 1, 1);
                 LocalDateTime endDay = inclusiveEndPeriod ? endDayValue.minusDays(1) : endDayValue;
 
-                ret.setTimex(String.format("%04d", year));
+                ret.setTimex(TimexUtility.generateYearTimex(year));
                 ret.setFutureValue(new Pair<>(beginDay, endDay));
                 ret.setPastValue(new Pair<>(beginDay, endDay));
                 ret.setSuccess(true);

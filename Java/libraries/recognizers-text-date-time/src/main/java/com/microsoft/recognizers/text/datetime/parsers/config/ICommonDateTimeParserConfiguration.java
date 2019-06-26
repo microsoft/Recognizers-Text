@@ -60,6 +60,8 @@ public interface ICommonDateTimeParserConfiguration extends IOptionsConfiguratio
 
     ImmutableMap<String, String> getSeasonMap();
 
+    ImmutableMap<String, String> getSpecialYearPrefixesMap();
+
     ImmutableMap<String, String> getUnitMap();
 
     ImmutableMap<String, Integer> getCardinalMap();

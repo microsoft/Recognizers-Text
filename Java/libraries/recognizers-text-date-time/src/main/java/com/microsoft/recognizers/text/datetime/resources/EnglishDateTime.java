@@ -169,10 +169,13 @@ public class EnglishDateTime {
             .replace("{WrittenMonthRegex}", WrittenMonthRegex)
             .replace("{YearRegex}", YearRegex);
 
-    public static final String OneWordPeriodRegex = "\\b((((the\\s+)?month of\\s+)?({StrictRelativeRegex}\\s+)?(?<month>apr(il)?|aug(ust)?|dec(ember)?|feb(ruary)?|jan(uary)?|july?|june?|mar(ch)?|may|nov(ember)?|oct(ober)?|sept(ember)?|sept?))|(month|year) to date|({RelativeRegex}\\s+)?(my\\s+)?(week(end)?|month|year)(?!((\\s+of)?\\s+\\d+|\\s+to\\s+date))(\\s+{AfterNextSuffixRegex})?)\\b"
+    public static final String SpecialYearPrefixes = "(calendar|(?<special>fiscal|school))";
+
+    public static final String OneWordPeriodRegex = "\\b((((the\\s+)?month of\\s+)?({StrictRelativeRegex}\\s+)?(?<month>apr(il)?|aug(ust)?|dec(ember)?|feb(ruary)?|jan(uary)?|july?|june?|mar(ch)?|may|nov(ember)?|oct(ober)?|sept(ember)?|sept?))|(month|year) to date|({RelativeRegex}\\s+)?(my\\s+)?(week(end)?|month|(({SpecialYearPrefixes}\\s+)?year))(?!((\\s+of)?\\s+\\d+|\\s+to\\s+date))(\\s+{AfterNextSuffixRegex})?)\\b"
             .replace("{StrictRelativeRegex}", StrictRelativeRegex)
             .replace("{RelativeRegex}", RelativeRegex)
-            .replace("{AfterNextSuffixRegex}", AfterNextSuffixRegex);
+            .replace("{AfterNextSuffixRegex}", AfterNextSuffixRegex)
+            .replace("{SpecialYearPrefixes}", SpecialYearPrefixes);
 
     public static final String MonthNumWithYear = "\\b(({BaseDateTime.FourDigitYearRegex}(\\s*)[/\\-\\.](\\s*){MonthNumRegex})|({MonthNumRegex}(\\s*)[/\\-](\\s*){BaseDateTime.FourDigitYearRegex}))\\b"
             .replace("{BaseDateTime.FourDigitYearRegex}", BaseDateTime.FourDigitYearRegex)
@@ -816,8 +819,12 @@ public class EnglishDateTime {
 
     public static final String OrRegex = "\\s*((\\b|,\\s*)(or|and)\\b|,)\\s*";
 
-    public static final String YearPlusNumberRegex = "\\b(year\\s+((?<year>(\\d{3,4}))|{FullTextYearRegex}))\\b"
-            .replace("{FullTextYearRegex}", FullTextYearRegex);
+    public static final String SpecialYearTermsRegex = "\\b((({SpecialYearPrefixes}\\s+)?year)|(cy|(?<special>fy|sy)))"
+            .replace("{SpecialYearPrefixes}", SpecialYearPrefixes);
+
+    public static final String YearPlusNumberRegex = "\\b({SpecialYearTermsRegex}\\s*((?<year>(\\d{2,4}))|{FullTextYearRegex}))\\b"
+            .replace("{FullTextYearRegex}", FullTextYearRegex)
+            .replace("{SpecialYearTermsRegex}", SpecialYearTermsRegex);
 
     public static final String NumberAsTimeRegex = "\\b({WrittenTimeRegex}|{PeriodHourNumRegex}|{BaseDateTime.HourRegex})\\b"
             .replace("{WrittenTimeRegex}", WrittenTimeRegex)
@@ -929,6 +936,13 @@ public class EnglishDateTime {
         .put("second", 1L)
         .put("secs", 1L)
         .put("sec", 1L)
+        .build();
+
+    public static final ImmutableMap<String, String> SpecialYearPrefixesMap = ImmutableMap.<String, String>builder()
+        .put("fiscal", "FY")
+        .put("school", "SY")
+        .put("fy", "FY")
+        .put("sy", "SY")
         .build();
 
     public static final ImmutableMap<String, String> SeasonMap = ImmutableMap.<String, String>builder()
