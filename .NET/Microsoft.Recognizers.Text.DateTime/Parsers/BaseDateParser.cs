@@ -408,6 +408,36 @@ namespace Microsoft.Recognizers.Text.DateTime
                 ret.Timex = DateTimeFormatUtil.LuisDate(-1, -1, day);
 
                 DateObject futureDate;
+                /*// We modified the following lines to calculate futureDate and pastDate separately.
+                // The orignal pastDate=futureDate seems wrong and give wrong results for the test cases "for the" in Italian.
+                // This modification does not affect the English "for the" cases (they seems to be parsed in another section).
+                DateObject futureDate, pastDate;
+                var tryStr = DateTimeFormatUtil.LuisDate(year, month, day);
+                if (DateObject.TryParse(tryStr, out DateObject _))
+                {
+                    futureDate = DateObject.MinValue.SafeCreateFromValue(year, month, day);
+                    pastDate = DateObject.MinValue.SafeCreateFromValue(year, month, day);
+
+                    if (futureDate < referenceDate)
+                    {
+                        futureDate = futureDate.AddMonths(+1);
+                    }
+
+                    if (pastDate >= referenceDate)
+                    {
+                        pastDate = pastDate.AddMonths(-1);
+                    }
+                }
+                else
+                {
+                    futureDate = DateObject.MinValue.SafeCreateFromValue(year, month + 1, day);
+                    pastDate = DateObject.MinValue.SafeCreateFromValue(year, month - 1, day);
+                }
+                ret.FutureValue = futureDate;
+                ret.PastValue = ret.FutureValue;
+                ret.PastValue = pastDate;
+                ret.Success = true;*/
+
                 var tryStr = DateTimeFormatUtil.LuisDate(year, month, day);
                 if (DateObject.TryParse(tryStr, out DateObject _))
                 {
