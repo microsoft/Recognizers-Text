@@ -18,9 +18,9 @@ IllegalYearRegex: !nestedRegex
 RangeConnectorSymbolRegex: !simpleRegex
   def: (--|-|—|——|~|–)
 BaseAmDescRegex: !simpleRegex
-  def: (am\b|a\s*\.\s*m\s*\.|a(\.)?\s*m\b)
+  def: (am\b|a\s*\.\s*m\s*\.|a[\.]?\s*m\b)
 BasePmDescRegex: !simpleRegex
-  def: (pm\b|p\s*\.\s*m\s*\.|p(\.)?\s*m\b)
+  def: (pm\b|p\s*\.\s*m\s*\.|p[\.]?\s*m\b)
 BaseAmPmDescRegex: !simpleRegex
   def: (ampm)
 MinYearNum: 1500

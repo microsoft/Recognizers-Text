@@ -26,7 +26,7 @@ namespace Microsoft.Recognizers.Definitions.Dutch
       public const bool MultiDecimalSeparatorCulture = false;
       public const string RoundNumberIntegerRegex = @"(honderd|duizend|miljoen|miljard|biljoen)";
       public const string ZeroToNineIntegerRegex = @"(drie|zeven|acht|vier|vijf|nul|negen|een|één|twee|zes)";
-      public const string NegativeNumberTermsRegex = @"((min|negatief)\s+)";
+      public const string NegativeNumberTermsRegex = @"(?<negTerm>(min|negatief)\s+)";
       public static readonly string NegativeNumberSignRegex = $@"^{NegativeNumberTermsRegex}.*";
       public const string AnIntRegex = @"(een|één)(?=\s)";
       public const string TenToNineteenIntegerRegex = @"(zeventien|dertien|veertien|achttien|negentien|vijftien|zestien|elf|twaalf|tien)";

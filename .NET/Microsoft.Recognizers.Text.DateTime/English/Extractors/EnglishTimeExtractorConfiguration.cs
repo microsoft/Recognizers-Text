@@ -104,11 +104,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             // (five thirty|seven|7|7:00(:00)?) (pm)? (in the night)
             new Regex(DateTimeDefinitions.TimeRegex6, RegexOptions.Singleline),
 
-            // (in the night) at (five thirty|seven|7|7:00(:00)?) (pm)?
+            // (in the night) at? (five thirty|seven|7|7:00(:00)?) (pm)?
             new Regex(DateTimeDefinitions.TimeRegex7, RegexOptions.Singleline),
-
-            // (in the night) (five thirty|seven|7|7:00(:00)?) (pm)?
-            new Regex(DateTimeDefinitions.TimeRegex8, RegexOptions.Singleline),
 
             new Regex(DateTimeDefinitions.TimeRegex9, RegexOptions.Singleline),
 

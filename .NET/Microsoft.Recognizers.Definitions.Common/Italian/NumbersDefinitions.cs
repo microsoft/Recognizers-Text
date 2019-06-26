@@ -28,7 +28,7 @@ namespace Microsoft.Recognizers.Definitions.Italian
       public const string RoundNumberIntegerRegex = @"(cento?|mille?|mila|milion[ei]?|miliard[oi]?|bilion[ei]?|trilion[ei]?)";
       public const string ZeroToNineIntegerRegex = @"(un[oa]?|due?|tre?|quattro?|cinque?|sei|sette?|otto?|nove?|zero)";
       public const string TwoToNineIntegerRegex = @"(due?|tre?|quattro?|cinque?|sei|sette?|otto?|nove?)";
-      public const string NegativeNumberTermsRegex = @"(meno\s+)";
+      public const string NegativeNumberTermsRegex = @"(?<negTerm>meno\s+)";
       public static readonly string NegativeNumberSignRegex = $@"^{NegativeNumberTermsRegex}.*";
       public const string AnIntRegex = @"(un)(?=\s)";
       public const string TenToNineteenIntegerRegex = @"(diciassette?|tredici?|quattordici?|diciotto?|diciannove?|quindici?|sedici?|undici?|dodici?|dieci?)";

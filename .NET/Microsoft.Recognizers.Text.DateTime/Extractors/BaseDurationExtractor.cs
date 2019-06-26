@@ -115,7 +115,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        // simple cases made by a number followed an unit
+        // simple cases of a number followed by unit
         private List<Token> NumberWithUnit(string text)
         {
             var ret = new List<Token>();

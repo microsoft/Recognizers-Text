@@ -11,12 +11,12 @@
 
 import { BaseDateTime } from "./baseDateTime";
 export namespace FrenchDateTime {
-    export const TillRegex = `(?<till>au|et|jusqu'[aà]|[aà]|avant|--|-|—|——)`;
+    export const TillRegex = `(?<till>au|et|(jusqu')?[aà]|avant|--|-|—|——)`;
     export const RangeConnectorRegex = `(?<and>de la|au|[aà]|et(\\s*la)?|--|-|—|——)`;
     export const RelativeRegex = `(?<order>prochaine?|de|du|ce(tte)?|l[ae]|derni[eè]re|pr[eé]c[eé]dente|au\\s+cours+(de|du\\s*))`;
     export const StrictRelativeRegex = `(?<order>prochaine?|ce(tte)?|derni[eè]re|pr[eé]c[eé]dente|au\\s+cours+(de|du\\s*))`;
     export const NextSuffixRegex = `(?<order>prochaines?|prochain|suivante)\\b`;
-    export const PastSuffixRegex = `(?<order>derni[eè]re|dernier|pr[eé]c[eé]dente)\\b`;
+    export const PastSuffixRegex = `(?<order>derni[eè]re?|pr[eé]c[eé]dente)\\b`;
     export const ThisPrefixRegex = `(?<order>ce(tte)?|au\\s+cours+(du|de))\\b`;
     export const RangePrefixRegex = `(du|depuis|des?|entre)`;
     export const DayRegex = `(?<day>01|02|03|04|05|06|07|08|09|10|11e?|12e?|13e?|14e?|15e?|16e?|17e?|18e?|19e?|1er|1|21e?|20e?|22e?|23e?|24e?|25e?|26e?|27e?|28e?|29e?|2e?|30e?|31e?|3e?|4e?|5e?|6e?|7e?|8e?|9e?)(?=\\b|t)`;
@@ -235,6 +235,7 @@ export namespace FrenchDateTime {
     export const ComplexDatePeriodRegex = `^[.]`;
     export const UnitMap: ReadonlyMap<string, string> = new Map<string, string>([["annees", "Y"],["annee", "Y"],["an", "Y"],["ans", "Y"],["mois", "MON"],["semaines", "W"],["semaine", "W"],["journees", "D"],["journee", "D"],["jour", "D"],["jours", "D"],["heures", "H"],["heure", "H"],["hrs", "H"],["hr", "H"],["h", "H"],["minutes", "M"],["minute", "M"],["mins", "M"],["min", "M"],["secondes", "S"],["seconde", "S"],["secs", "S"],["sec", "S"]]);
     export const UnitValueMap: ReadonlyMap<string, number> = new Map<string, number>([["annees", 31536000],["annee", 31536000],["l'annees", 31536000],["l'annee", 31536000],["an", 31536000],["ans", 31536000],["mois", 2592000],["semaines", 604800],["semaine", 604800],["journees", 86400],["journee", 86400],["jour", 86400],["jours", 86400],["heures", 3600],["heure", 3600],["hrs", 3600],["hr", 3600],["h", 3600],["minutes", 60],["minute", 60],["mins", 60],["min", 60],["secondes", 1],["seconde", 1],["secs", 1],["sec", 1]]);
+    export const SpecialYearPrefixesMap: ReadonlyMap<string, string> = new Map<string, string>([["", ""]]);
     export const SeasonMap: ReadonlyMap<string, string> = new Map<string, string>([["printemps", "SP"],["été", "SU"],["automne", "FA"],["hiver", "WI"]]);
     export const SeasonValueMap: ReadonlyMap<string, number> = new Map<string, number>([["SP", 3],["SU", 6],["FA", 9],["WI", 12]]);
     export const CardinalMap: ReadonlyMap<string, number> = new Map<string, number>([["premier", 1],["1er", 1],["deuxième", 2],["2e", 2],["troisième", 3],["troisieme", 3],["3e", 3],["quatrième", 4],["4e", 4],["cinqième", 5],["5e", 5]]);
