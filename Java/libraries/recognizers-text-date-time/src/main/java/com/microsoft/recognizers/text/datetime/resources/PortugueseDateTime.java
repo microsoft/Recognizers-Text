@@ -594,6 +594,10 @@ public class PortugueseDateTime {
         .put("seg", 1L)
         .build();
 
+    public static final ImmutableMap<String, String> SpecialYearPrefixesMap = ImmutableMap.<String, String>builder()
+        .put("", "")
+        .build();
+
     public static final ImmutableMap<String, String> SeasonMap = ImmutableMap.<String, String>builder()
         .put("primavera", "SP")
         .put("verao", "SU")

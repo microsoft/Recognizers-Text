@@ -19,7 +19,7 @@ import com.google.common.collect.ImmutableMap;
 
 public class FrenchDateTime {
 
-    public static final String TillRegex = "(?<till>au|et|jusqu'[aà]|[aà]|avant|--|-|—|——)";
+    public static final String TillRegex = "(?<till>au|et|(jusqu')?[aà]|avant|--|-|—|——)";
 
     public static final String RangeConnectorRegex = "(?<and>de la|au|[aà]|et(\\s*la)?|--|-|—|——)";
 
@@ -29,7 +29,7 @@ public class FrenchDateTime {
 
     public static final String NextSuffixRegex = "(?<order>prochaines?|prochain|suivante)\\b";
 
-    public static final String PastSuffixRegex = "(?<order>derni[eè]re|dernier|pr[eé]c[eé]dente)\\b";
+    public static final String PastSuffixRegex = "(?<order>derni[eè]re?|pr[eé]c[eé]dente)\\b";
 
     public static final String ThisPrefixRegex = "(?<order>ce(tte)?|au\\s+cours+(du|de))\\b";
 
@@ -754,6 +754,10 @@ public class FrenchDateTime {
         .put("seconde", 1L)
         .put("secs", 1L)
         .put("sec", 1L)
+        .build();
+
+    public static final ImmutableMap<String, String> SpecialYearPrefixesMap = ImmutableMap.<String, String>builder()
+        .put("", "")
         .build();
 
     public static final ImmutableMap<String, String> SeasonMap = ImmutableMap.<String, String>builder()

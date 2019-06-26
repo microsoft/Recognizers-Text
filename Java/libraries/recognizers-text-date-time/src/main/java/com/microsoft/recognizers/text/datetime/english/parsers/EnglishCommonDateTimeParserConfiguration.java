@@ -47,6 +47,7 @@ public class EnglishCommonDateTimeParserConfiguration extends BaseDateParserConf
     private final ImmutableMap<String, String> unitMap;
     private final ImmutableMap<String, Long> unitValueMap;
     private final ImmutableMap<String, String> seasonMap;
+    private final ImmutableMap<String, String> specialYearPrefixesMap;
     private final ImmutableMap<String, Integer> cardinalMap;
     private final ImmutableMap<String, Integer> dayOfWeekMap;
     private final ImmutableMap<String, Integer> dayOfMonth;
@@ -88,6 +89,7 @@ public class EnglishCommonDateTimeParserConfiguration extends BaseDateParserConf
         unitMap = EnglishDateTime.UnitMap;
         unitValueMap = EnglishDateTime.UnitValueMap;
         seasonMap = EnglishDateTime.SeasonMap;
+        specialYearPrefixesMap = EnglishDateTime.SpecialYearPrefixesMap;
         cardinalMap = EnglishDateTime.CardinalMap;
         dayOfWeekMap = EnglishDateTime.DayOfWeek;
         dayOfMonth = ImmutableMap.<String, Integer>builder().putAll(super.getDayOfMonth()).putAll(EnglishDateTime.DayOfMonth).build();
@@ -239,6 +241,11 @@ public class EnglishCommonDateTimeParserConfiguration extends BaseDateParserConf
     @Override
     public ImmutableMap<String, String> getSeasonMap() {
         return seasonMap;
+    }
+
+    @Override
+    public ImmutableMap<String, String> getSpecialYearPrefixesMap() {
+        return specialYearPrefixesMap;
     }
 
     @Override

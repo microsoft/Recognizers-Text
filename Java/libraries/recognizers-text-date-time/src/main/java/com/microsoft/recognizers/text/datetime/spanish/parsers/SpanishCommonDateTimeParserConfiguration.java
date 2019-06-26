@@ -51,6 +51,7 @@ public class SpanishCommonDateTimeParserConfiguration extends BaseDateParserConf
     private final ImmutableMap<String, String> unitMap;
     private final ImmutableMap<String, Long> unitValueMap;
     private final ImmutableMap<String, String> seasonMap;
+    private final ImmutableMap<String, String> specialYearPrefixesMap;
     private final ImmutableMap<String, Integer> cardinalMap;
     private final ImmutableMap<String, Integer> dayOfWeek;
     private final ImmutableMap<String, Integer> monthOfYear;
@@ -91,6 +92,7 @@ public class SpanishCommonDateTimeParserConfiguration extends BaseDateParserConf
         unitMap = SpanishDateTime.UnitMap;
         unitValueMap = SpanishDateTime.UnitValueMap;
         seasonMap = SpanishDateTime.SeasonMap;
+        specialYearPrefixesMap = SpanishDateTime.SpecialYearPrefixesMap;
         cardinalMap = SpanishDateTime.CardinalMap;
         dayOfWeek = SpanishDateTime.DayOfWeek;
         monthOfYear = SpanishDateTime.MonthOfYear;
@@ -241,6 +243,11 @@ public class SpanishCommonDateTimeParserConfiguration extends BaseDateParserConf
     @Override
     public ImmutableMap<String, String> getSeasonMap() {
         return seasonMap;
+    }
+
+    @Override
+    public ImmutableMap<String, String> getSpecialYearPrefixesMap() {
+        return specialYearPrefixesMap;
     }
 
     @Override
