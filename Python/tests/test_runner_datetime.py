@@ -148,9 +148,9 @@ def test_datetime_model(
         assert len(
             actual.resolution['values']) == len(
             expected['Resolution']['values'])
-        for actual_resilution_value in actual.resolution['values']:
+        for actual_resolution_value in actual.resolution['values']:
             assert_model_resolution(
-                actual_resilution_value,
+                actual_resolution_value,
                 expected['Resolution']['values'])
 
 
