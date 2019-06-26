@@ -1623,21 +1623,6 @@
     ]
   },
   {
-    "Input": "beş bölü sekiz",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "beş bölü sekiz",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "0,625"
-        },
-        "Start": 0,
-        "End": 13
-      }
-    ]
-  },
-  {
     "Input": "bir bölü üç",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
