@@ -34,10 +34,6 @@ namespace Microsoft.Recognizers.Text.Number.Turkish
                     new Regex(NumbersDefinitions.FractionPrepositionRegex, RegexOptions.Singleline),
                     RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.TURKISH)
                 },
-                {
-                    new Regex(NumbersDefinitions.FractionPrepositionRegex2, RegexOptions.Singleline),
-                    RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.TURKISH)
-                },
             };
 
             Regexes = regexes.ToImmutableDictionary();

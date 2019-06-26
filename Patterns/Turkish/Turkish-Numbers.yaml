@@ -4,7 +4,7 @@ CompoundNumberLanguage: !bool false
 MultiDecimalSeparatorCulture: !bool true
 #Integer Regex
 DigitsNumberRegex: !simpleRegex
-  def: \d|\d{1,3}(\.\d{3})
+  def: \d+|\d{1,3}(\.\d{3})
 RoundNumberIntegerRegex: !simpleRegex
   def: (yüz|bin|milyon|milyar|trilyon)
 ZeroToNineIntegerRegex: !simpleRegex   # 0,1,2,...,9
@@ -21,35 +21,35 @@ NegativeNumberSignRegex: !nestedRegex
 TensNumberIntegerRegex: !simpleRegex   # 10,20,...,90
   def: (on|yirmi|otuz|kırk|elli|altmış|yetmiş|seksen|doksan)
 HundredsNumberIntegerRegex: !nestedRegex   # 100,200,...,900
-  def: (yüz|{TwoToNineIntegerRegex}\s(yüz))
+  def: (yüz|{TwoToNineIntegerRegex}\syüz)
   references: [TwoToNineIntegerRegex]
-TenToHundredRegex: !nestedRegex   # 11,12,...,99 (100 are not included)
+TenToHundredRegex: !nestedRegex   # 11,12,...,99 (tens are not included)
   def: ({TensNumberIntegerRegex}(\s{OneToNineIntegerRegex}))
   references: [TensNumberIntegerRegex, OneToNineIntegerRegex]
-HundredToThousandRegex: !nestedRegex   # 100,101,102,...,999 (1000 is not included)
+HundredToThousandRegex: !nestedRegex   # 100,101,102,...,999 (hundreds are not included)
   def: ({HundredsNumberIntegerRegex}(\s({OneToNineIntegerRegex}|{TenToHundredRegex}|{TensNumberIntegerRegex})))
   references: [HundredsNumberIntegerRegex, OneToNineIntegerRegex, TenToHundredRegex, TensNumberIntegerRegex]
 ThousandsNumberIntegerRegex: !nestedRegex   # 1000,2000,...,999.000
-  def: (bin|({TwoToNineIntegerRegex}|{TenToHundredRegex}|{HundredToThousandRegex})\s(bin))
-  references: [TwoToNineIntegerRegex, TenToHundredRegex, HundredToThousandRegex]
-ThousandToMillionRegex: !nestedRegex   # 1000,1001,1002,...,999.999 (1.000.000 is not included)
+  def: (bin|({TwoToNineIntegerRegex}|{TensNumberIntegerRegex}|{TenToHundredRegex}|{HundredsNumberIntegerRegex}|{HundredToThousandRegex})\sbin)
+  references: [TwoToNineIntegerRegex, TensNumberIntegerRegex, TenToHundredRegex, HundredsNumberIntegerRegex, HundredToThousandRegex]
+ThousandToMillionRegex: !nestedRegex   # 1000,1001,1002,...,999.999 (thousands are not included is not included)
   def: ({ThousandsNumberIntegerRegex}(\s({OneToNineIntegerRegex}|{TenToHundredRegex}|{HundredToThousandRegex}|{HundredsNumberIntegerRegex})))
   references: [ThousandsNumberIntegerRegex, OneToNineIntegerRegex, TenToHundredRegex, HundredToThousandRegex, HundredsNumberIntegerRegex]
 MillionsNumberIntegerRegex: !nestedRegex   # 1.000.000,2.000.000,...,999.000.000
-  def: (({OneToNineIntegerRegex}|{TenToHundredRegex}|{HundredToThousandRegex})\s(milyon))
-  references: [OneToNineIntegerRegex, TenToHundredRegex, HundredToThousandRegex]
-MillionToBillionRegex: !nestedRegex   # 1.000.000,...,999.999.999 (1.000.000.000 is not included)
+  def: (({OneToNineIntegerRegex}|{TenToHundredRegex}|{HundredToThousandRegex}|{TensNumberIntegerRegex}|{HundredsNumberIntegerRegex})\smilyon)
+  references: [OneToNineIntegerRegex, TenToHundredRegex, HundredToThousandRegex, TensNumberIntegerRegex, HundredsNumberIntegerRegex, ThousandsNumberIntegerRegex]
+MillionToBillionRegex: !nestedRegex   # 1.000.000,...,999.999.999 (millions are not included)
   def: ({MillionsNumberIntegerRegex}(\s({OneToNineIntegerRegex}|{TenToHundredRegex}|{HundredToThousandRegex}|{ThousandToMillionRegex}|{ThousandsNumberIntegerRegex})))
   references: [MillionsNumberIntegerRegex, OneToNineIntegerRegex, TenToHundredRegex, HundredToThousandRegex, ThousandToMillionRegex, ThousandsNumberIntegerRegex]
 BillionsNumberIntegerRegex: !nestedRegex   # 1.000.000.000,2.000.000.000,...,999.000.000.000
-  def: (({OneToNineIntegerRegex}|{TenToHundredRegex}|{HundredToThousandRegex})\s(milyar))
-  references: [OneToNineIntegerRegex, TenToHundredRegex, HundredToThousandRegex]
-BillionToTrillionRegex: !nestedRegex   # 1.000.000.000,...,999.999.999.999
+  def: (({OneToNineIntegerRegex}|{TenToHundredRegex}|{HundredToThousandRegex}|{TensNumberIntegerRegex}|{HundredsNumberIntegerRegex})\smilyar)
+  references: [OneToNineIntegerRegex, TenToHundredRegex, HundredToThousandRegex, TensNumberIntegerRegex, HundredsNumberIntegerRegex]
+BillionToTrillionRegex: !nestedRegex   # 1.000.000.000,...,999.999.999.999 (billions are not included)
   def: ({BillionsNumberIntegerRegex}(\s({OneToNineIntegerRegex}|{TenToHundredRegex}|{HundredToThousandRegex}|{ThousandToMillionRegex}|{MillionToBillionRegex}|{MillionsNumberIntegerRegex})))
   references: [BillionsNumberIntegerRegex, OneToNineIntegerRegex, TenToHundredRegex, HundredToThousandRegex, ThousandToMillionRegex, MillionToBillionRegex, MillionsNumberIntegerRegex]
 TrillionsNumberIntegerRegex: !nestedRegex   # 1.000.000.000.000,...,999.000.000.000.000 (1.000.000.000.000 is not included)
-  def: (({OneToNineIntegerRegex}|{TenToHundredRegex}|{HundredToThousandRegex})\s(trilyon))
-  references: [OneToNineIntegerRegex, TenToHundredRegex, HundredToThousandRegex]
+  def: (({OneToNineIntegerRegex}|{TenToHundredRegex}|{HundredToThousandRegex}|{TensNumberIntegerRegex}|{HundredsNumberIntegerRegex})\strilyon)
+  references: [OneToNineIntegerRegex, TenToHundredRegex, HundredToThousandRegex, TensNumberIntegerRegex, HundredsNumberIntegerRegex]
 AboveTrillionRegex: !nestedRegex   # Greater than or equal to 1.000.000.000.000
   def: ({TrillionsNumberIntegerRegex}(\s({OneToNineIntegerRegex}|{TenToHundredRegex}|{HundredToThousandRegex}|{ThousandToMillionRegex}|{MillionToBillionRegex}|{BillionToTrillionRegex}|{BillionsNumberIntegerRegex})))
   references: [TrillionsNumberIntegerRegex, OneToNineIntegerRegex, TenToHundredRegex, HundredToThousandRegex, ThousandToMillionRegex, MillionToBillionRegex, BillionToTrillionRegex, BillionsNumberIntegerRegex]
@@ -64,16 +64,16 @@ PlaceHolderPureNumber: !simpleRegex
 PlaceHolderDefault: !simpleRegex
   def: \D|\b
 NumbersWithPlaceHolder: !paramsRegex
-  def: (((?<!\d+\s*)-\s*)|(?<=\b))\d+(?!(\.\d+[a-zA-Z]))(?={placeholder})
+  def: (((?<!\d+\s*)-\s*)|(?<=\b))\d+(?!(,\d+[a-zA-Z]))(?={placeholder})
   params: [ placeholder ]
 NumbersWithSuffix: !nestedRegex
-  def: (?<=\b)\d+\s*({BaseNumbers.NumberMultiplierRegex}|{BaseNumbers.MultiplierLookupRegex})(?=\b)
-  references: [ BaseNumbers.NumberMultiplierRegex, BaseNumbers.MultiplierLookupRegex ]
+  def: (((?<!\d+\s*)-\s*)|(?<=\b))\d+\s*{BaseNumbers.NumberMultiplierRegex}(?=\b)
+  references: [ BaseNumbers.NumberMultiplierRegex ]
 RoundNumberIntegerRegexWithLocks: !nestedRegex
-  def: (?<=\b)\d+\s+{RoundNumberIntegerRegex}(?=\b)
-  references: [ RoundNumberIntegerRegex ]
+  def: (?<=\b)({DigitsNumberRegex})+\s+{RoundNumberIntegerRegex}(?=\b)
+  references: [ DigitsNumberRegex, RoundNumberIntegerRegex ]
 NumbersWithDozenSuffix: !simpleRegex
-  def: (?<=\b)\d+\sdüzine(?=\b)
+  def: (((?<!\d+\s*)-\s*)|(?<=\b))\d+\s+düzine(?=\b)
 AllIntRegexWithLocks: !nestedRegex
   def: ((?<=\b){AllIntRegex}(?=\b))
   references: [ AllIntRegex ]
@@ -81,7 +81,7 @@ NegativeAllIntRegexWithLocks: !nestedRegex
   def: ((?<=\b){NegativeAllIntRegex}(?=\b))
   references: [ NegativeAllIntRegex ]
 AllIntRegexWithDozenSuffixLocks: !nestedRegex
-  def: (?<=\b)(((yarım\s+)?düzine)|({AllIntRegex}\s+düzine?))(?=\b)
+  def: (?<=\b)(((yarım\s+)?düzine)|({AllIntRegex}\s+düzine))(?=\b)
   references: [ AllIntRegex ]
 #Ordinal Regex
 RoundNumberOrdinalRegex: !simpleRegex
@@ -146,59 +146,15 @@ FractionNotationRegex: !simpleRegex
 FractionNounWithArticleRegex: !nestedRegex
   def: (?<=\b)(({AllIntRegex}\s)?(buçuk|çeyrek|yarım))(?=\b)
   references: [ AllIntRegex ]
-NumbersDenominatorSuffixRegex: !simpleRegex
-  def: (\d*(1'de|2'de|3'te|4'te|5'te|6'da|7'de|8'de|9'da|10'da|20'de|30'da|40'ta|50'de|60'ta|70'te|80'de|90'da|00'de|\.?000'de|000\.?000'da|000\.?000\.?000'da|000\.?000\.?000\.?000'da))
-RoundNumberDenominatorSuffixRegex: !simpleRegex
-  def: (yüzde|binde|milyonda|milyarda|trilyonda)
-OneToNineDenominatorSuffixRegex: !simpleRegex
-  def: (birde|ikide|üçte|dörtte|beşte|altıda|yedide|sekizde|dokuzda)
-TensDenominatorSuffixRegex: !simpleRegex
-  def: (onda|yirmide|otuzda|kırkta|ellide|altmışta|yetmişte|seksende|doksanda)
-HundredsDenominatorSuffixRegex: !nestedRegex
-  def: (({TwoToNineIntegerRegex}\s)?(yüzde))
-  references: [TwoToNineIntegerRegex]
-ThousandsDenominatorSuffixRegex: !nestedRegex
-  def: (({TwoToNineIntegerRegex}\s)?(binde))
-  references: [TwoToNineIntegerRegex]
-MillionsDenominatorSuffixRegex: !nestedRegex
-  def: (({OneToNineIntegerRegex}\s)?(milyonda))
-  references: [OneToNineIntegerRegex]
-BillionsDenominatorSuffixRegex: !nestedRegex
-  def: (({OneToNineIntegerRegex}\s)?(milyarda))
-  references: [OneToNineIntegerRegex]
-TrillionsDenominatorSuffixRegex: !nestedRegex
-  def: (({OneToNineIntegerRegex}\s)?(trilyonda))
-  references: [OneToNineIntegerRegex]
-TenToHundredDenominatorSuffixRegex: !nestedRegex   # 10,11,...,99
-  def: ({TensNumberIntegerRegex}\s{OneToNineDenominatorSuffixRegex}|{TensDenominatorSuffixRegex})
-  references: [TensNumberIntegerRegex, OneToNineDenominatorSuffixRegex, TensDenominatorSuffixRegex]
-HundredToThousandDenominatorSuffixRegex: !nestedRegex   # 100,101,...,999
-  def: (({HundredsNumberIntegerRegex}(\s{OneToNineDenominatorSuffixRegex}|{TenToHundredDenominatorSuffixRegex}))|{HundredsDenominatorSuffixRegex})
-  references: [HundredsNumberIntegerRegex, OneToNineDenominatorSuffixRegex, TenToHundredDenominatorSuffixRegex, HundredsDenominatorSuffixRegex]
-ThousandToMillionDenominatorSuffixRegex: !nestedRegex
-  def: ({ThousandsNumberIntegerRegex}((\s{HundredsNumberIntegerRegex})?(\s{TensNumberIntegerRegex})?\s{OneToNineDenominatorSuffixRegex}|{TenToHundredDenominatorSuffixRegex}|{HundredToThousandDenominatorSuffixRegex})|{ThousandsDenominatorSuffixRegex})
-  references: [ThousandsNumberIntegerRegex, HundredsNumberIntegerRegex, TensNumberIntegerRegex, OneToNineDenominatorSuffixRegex, TenToHundredDenominatorSuffixRegex, HundredToThousandDenominatorSuffixRegex, ThousandsDenominatorSuffixRegex]
-MillionToBillionDenominatorSuffixRegex: !nestedRegex
-  def: ({MillionsNumberIntegerRegex}((\s{ThousandsNumberIntegerRegex})?(\s{HundredsNumberIntegerRegex})?(\s{TensNumberIntegerRegex})?\s{OneToNineDenominatorSuffixRegex}|{TenToHundredDenominatorSuffixRegex}|{HundredToThousandDenominatorSuffixRegex}|{ThousandToMillionDenominatorSuffixRegex})|{MillionsDenominatorSuffixRegex})
-  references: [MillionsNumberIntegerRegex, ThousandsNumberIntegerRegex, HundredsNumberIntegerRegex, TensNumberIntegerRegex, OneToNineDenominatorSuffixRegex, TenToHundredDenominatorSuffixRegex, HundredToThousandDenominatorSuffixRegex, ThousandToMillionDenominatorSuffixRegex, MillionsDenominatorSuffixRegex]
-BillionToTrillionDenominatorSuffixRegex: !nestedRegex
-  def: ({BillionsNumberIntegerRegex}((\s{MillionsNumberIntegerRegex})?(\s{ThousandsNumberIntegerRegex})?(\s{HundredsNumberIntegerRegex})?(\s{TensNumberIntegerRegex})?\s{OneToNineDenominatorSuffixRegex}|{TenToHundredDenominatorSuffixRegex}|{HundredToThousandDenominatorSuffixRegex}|{ThousandToMillionDenominatorSuffixRegex}|{MillionToBillionDenominatorSuffixRegex})|{BillionsDenominatorSuffixRegex})
-  references: [BillionsNumberIntegerRegex, MillionsNumberIntegerRegex, ThousandsNumberIntegerRegex, HundredsNumberIntegerRegex, TensNumberIntegerRegex, OneToNineDenominatorSuffixRegex, TenToHundredDenominatorSuffixRegex, HundredToThousandDenominatorSuffixRegex, ThousandToMillionDenominatorSuffixRegex, MillionToBillionDenominatorSuffixRegex, BillionsDenominatorSuffixRegex]
-AllDenominatorSuffixRegex: !nestedRegex
-  def: ({OneToNineDenominatorSuffixRegex}|{TenToHundredDenominatorSuffixRegex}|{HundredToThousandDenominatorSuffixRegex}|{ThousandToMillionDenominatorSuffixRegex}|{MillionToBillionDenominatorSuffixRegex}|{BillionToTrillionDenominatorSuffixRegex}|{RoundNumberDenominatorSuffixRegex})
-  references: [OneToNineDenominatorSuffixRegex, TenToHundredDenominatorSuffixRegex, HundredToThousandDenominatorSuffixRegex, ThousandToMillionDenominatorSuffixRegex, MillionToBillionDenominatorSuffixRegex, BillionToTrillionDenominatorSuffixRegex, RoundNumberDenominatorSuffixRegex ]
 FractionPrepositionRegex: !nestedRegex
-  def: (?<=\b)(?<numerator>({AllIntRegex})|((?<![\.,])\d+))\s+(bölü)\s+(?<denominator>({AllIntRegex})|(\d+)(?![\.,]))(?=\b)
+  def: (?<=\b)(eksi\s)?(?<numerator>({AllIntRegex})|((?<!,)\d+))\s+(bölü)\s+(?<denominator>({AllIntRegex})|(\d+)(?!,))(?=\b)
   references: [ AllIntRegex ]
-FractionPrepositionRegex2: !nestedRegex
-  def: (?<=\b)(?<denominator>((?!yüzde){AllDenominatorSuffixRegex}|(?<![\.,]){NumbersDenominatorSuffixRegex}))\s(?<numerator>({AllIntRegex}|{NegativeAllIntRegex})|(\d+)(?![\.,]))(?=\b)
-  references: [ AllDenominatorSuffixRegex, NumbersDenominatorSuffixRegex, AllIntRegex, NegativeAllIntRegex ]
 #Double Regex
 AllPointRegex: !nestedRegex
   def: ((\s{ZeroToNineIntegerRegex})+|(\s{AllIntRegex}))
   references: [ ZeroToNineIntegerRegex, AllIntRegex ]
 FloatRegex1: !nestedRegex
-  def: (({AllIntRegex}|{NegativeAllIntRegex})(\s(virgül|nokta)){AllPointRegex})
+  def: (({AllIntRegex}|{NegativeAllIntRegex})(\s(nokta)){AllPointRegex})
   references: [ AllIntRegex, AllPointRegex, NegativeAllIntRegex ]
 FloatRegex2: !nestedRegex
   def: '{AllIntRegex}(\s+(tam)\s+)((onda)\s+{OneToNineIntegerRegex}|(yüzde)\s+({OneToNineIntegerRegex}|{TenToHundredRegex})|(binde)\s+({OneToNineIntegerRegex}|{TenToHundredRegex}|{HundredToThousandRegex}))'
@@ -207,14 +163,14 @@ AllFloatRegex: !nestedRegex
   def: ({FloatRegex1}|{FloatRegex2})
   references: [FloatRegex1, FloatRegex2]
 DoubleWithMultiplierRegex: !nestedRegex
-  def: (?<=\b)(?<!\d+,)\d+,\d+\s*({BaseNumbers.NumberMultiplierRegex}|{BaseNumbers.MultiplierLookupRegex})(?=\b)
-  references: [ BaseNumbers.NumberMultiplierRegex, BaseNumbers.MultiplierLookupRegex ]
+  def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+,)))\d+,\d+\s*{BaseNumbers.NumberMultiplierRegex}(?=\b)
+  references: [ BaseNumbers.NumberMultiplierRegex ]
 DoubleExponentialNotationRegex: !simpleRegex
   def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+,)))(\d+(,\d+)?)e([+-]*[1-9]\d*)(?=\b)
 DoubleCaretExponentialNotationRegex: !simpleRegex
   def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+,)))(\d+(,\d+)?)\^([+-]*[1-9]\d*)(?=\b)
 DoubleDecimalPointRegex: !paramsRegex
-  def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\,)))\d+\,\d+(?!(\,\d+))(?={placeholder})
+  def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+,)))\d+,\d+(?!(,\d+))(?={placeholder})
   params: [ placeholder ]
 DoubleWithoutIntegralRegex: !paramsRegex
   def: (?<=\s|^)(?<!(\d+)),\d+(?!(,\d+))(?={placeholder})
@@ -225,6 +181,8 @@ DoubleWithRoundNumber: !nestedRegex
 DoubleAllFloatRegex: !nestedRegex
   def: ((?<=\b){AllFloatRegex}(?=\b))
   references: [ AllFloatRegex ]
+ConnectorRegex: !simpleRegex
+    def: (?<spacer>ve)
 #Percentage Regex
 NumberWithPrefixPercentage: !nestedRegex
   def: (%|(eksi\s)?yüzde\s)({BaseNumbers.NumberReplaceToken}|{AllIntRegex})
@@ -232,62 +190,70 @@ NumberWithPrefixPercentage: !nestedRegex
 NumberWithSuffixPercentage: !nestedRegex
   def: (((({TensNumberIntegerRegex}\s)?(birin|ikinin|üçün|dördün|beşin|altının|yedinin|sekizin|dokuzun)|onun|yirminin|otuzun|kırkın|ellinin|altmışın|yetmişin|seksenin|doksanın)\s(yüzdesi))|(\d*(1'in|2'nin|3'ün|4'ün|5'in|6'nın|7'nin|8'in|9'un|10'un|20'nin|30'un|40'ın|50'nin|60'ın|70'in|80'in|90'ın)\s(yüzdesi)))
   references: [ TensNumberIntegerRegex ]
-FractionNumberWithSuffixPercentage: !simpleRegex
-  def: (\d+)\s+\/(\d+)?((1|5|8|70|80|\.?000)'i|(2|7|20|50)'si|(3|4|100)'ü|6'sı|(9|10|30|\.?000\.?000|\.?000\.?000\.?000\.?000)'u|(40|60|90|\.?000\.?000\.?000)'ı)
-NumberWithPrepositionPercentage: !nestedRegex
-  def: ({BaseNumbers.NumberReplaceToken})\s(üzerinden)\s({BaseNumbers.NumberReplaceToken})
-  references: [ BaseNumbers.NumberReplaceToken ]
 #NumberRange Regex
 TillRegex: !simpleRegex
   def: (-|—|——|–|~)
 MoreRegex: !simpleRegex
-  def: (büyük(tür)?)
-MoreSymbolRegex: !simpleRegex
-  def: ((?<!<|=)>)
+  def: (büyük(tür)?|(?<!<|=)>)
 LessRegex: !simpleRegex
-  def: (küçük(tür)?)
-LessSymbolRegex: !simpleRegex
-  def: ((?<!>|=)<)
+  def: (küçük(tür)?|(?<!>|=)<)
 EqualRegex: !simpleRegex
-  def: (eşittir|(?<!<|>)=)
+  def: (eşit(tir)?|(?<!<|>)=)
+MoreOrEqualPrefix: !simpleRegex
+  def: ((en\s+az))
 MoreOrEqual: !simpleRegex
-  def: ((büyük\s+veya\s+eşit(tir)?)|>\s*=)
-AtLeast: !simpleRegex
-  def: (en\s+az)
+  def: ((büyük(tür)?\s+veya\s+eşit(tir)?)|>\s*=)
+MoreOrEqualSuffix: !simpleRegex
+  def: (az değil)
+LessOrEqualPrefix: !simpleRegex
+  def: (en\s+(fazla|çok))
 LessOrEqual: !simpleRegex
-  def: ((küçük\s+veya\s+eşit(tir)?)|<\s*=)
-AtMost: !simpleRegex
-  def: (en\s+fazla)
+  def: ((küçük(tür)?\s+veya\s+eşit(tir)?)|<\s*=)
+LessOrEqualSuffix: !simpleRegex
+  def: (fazla değil)
 NumberSplitMark: !simpleRegex
   def: (?![,.](?!\d+))
+MoreRegexNoNumberSucceed: !simpleRegex
+  def: ((daha fazla)(?!(\s*\d+)))
+LessRegexNoNumberSucceed: !simpleRegex
+  def: ((daha az)(?!(\s*\d+)))
 NumberFromSuffixRegex: !simpleRegex
-  def: (\d*(1'den|2'den|3'ten|4'ten|5'ten|6'dan|7'den|8'den|9'dan|10'dan|20'den|30'dan|40'tan|50'den|60'tan|70'ten|80'den|90'dan|00'den|\.?000'den|000\.?000'dan|000\.?000\.?000'dan|000\.?000\.?000\.?000'dan))
+  def: (\d*(1'den|2'den|3'ten|4'ten|5'ten|6'dan|7'den|8'den|9'dan|10'dan|20'den|30'dan|40'tan|50'den|60'tan|70'ten|80'den|90'dan|00'den|\.?000'den|000\.?000'dan|000\.?000\.?000'dan|000\.?000\.?000\.?000'dan)|((on|yirmi|otuz|kırk|elli|altmış|yetmiş|seksen|doksan|yüz)\s)?(birden|ikiden|üçten|dörtten|beşten|altıdan|yediden|sekizden|dokuzdan)|ondan|yirmiden|otuzdan|kırktan|elliden|altmıştan|yetmişten|seksenden|doksandan|yüzden|binden|çeyrekten|yarımdan)
 NumberToSuffixRegex: !simpleRegex
   def: (\d*(1'e|2'ye|3'e|4'e|5'e|6'ya|7'ye|8'e|9'a|10'a|20'ye|30'a|40'a|50'ye|60'a|70'e|80'e|90'a|00'e|\.?000'e|000\.?000'a|000\.?000\.?000'a|000\.?000\.?000\.?000'a))
-OneNumberRangeMoreRegex: !nestedRegex
-  def: (((?<number1>{NumberFromSuffixRegex})\s+{MoreRegex})|(({MoreSymbolRegex}|{MoreOrEqual})\s*(?<number1>({NumberSplitMark}.)+)))
-  references: [ NumberFromSuffixRegex, MoreRegex, MoreSymbolRegex, MoreOrEqual, NumberSplitMark ]
-OneNumberRangeLessRegex: !nestedRegex
-  def: (((?<number1>{NumberFromSuffixRegex})\s+{LessRegex})|(({LessSymbolRegex}|{LessOrEqual})\s*(?<number1>({NumberSplitMark}.)+)))
-  references: [ NumberFromSuffixRegex, LessRegex, LessSymbolRegex, LessOrEqual, NumberSplitMark ]
+OneNumberRangeMoreRegex1: !nestedRegex
+  def: ((?<number1>{NumberFromSuffixRegex})\s+({MoreRegex}|{MoreOrEqual}))|((?<number1>({NumberSplitMark}.)+)\s(ve|veya|ya da)\sdaha fazlası)
+  references: [ NumberFromSuffixRegex, MoreRegex, MoreOrEqual, NumberSplitMark ]
+OneNumberRangeMoreRegex2: !nestedRegex
+  def: (({MoreOrEqual}|{MoreOrEqualPrefix})\s*(?<number1>({NumberSplitMark}.)+))|((?<number1>({NumberSplitMark}.)+)\s(ve|veya|ya da)\sdaha fazlası)
+  references: [ MoreOrEqual, MoreOrEqualPrefix, NumberSplitMark ]
+OneNumberRangeMoreSeparateRegex: !nestedRegex
+  def: ((?<number1>{NumberToSuffixRegex})\s{EqualRegex}(\s+(ve|veya|ya da)\s+){MoreRegexNoNumberSucceed})
+  references: [ NumberToSuffixRegex, EqualRegex, MoreRegexNoNumberSucceed ]
+OneNumberRangeLessRegex1: !nestedRegex
+  def: ((?<number1>{NumberFromSuffixRegex})\s+({LessRegex}|{LessOrEqual}))
+  references: [ NumberFromSuffixRegex, LessRegex, LessOrEqual ]
+OneNumberRangeLessRegex2: !nestedRegex
+  def: (({LessOrEqual}|{LessOrEqualPrefix})\s*(?<number1>({NumberSplitMark}.)+))
+  references: [ LessOrEqual, LessOrEqualPrefix, NumberSplitMark ]
+OneNumberRangeLessSeparateRegex: !nestedRegex
+  def: ((?<number1>{NumberFromSuffixRegex})\s{EqualRegex}(\s+(ve|veya|ya da)\s+){LessRegexNoNumberSucceed})
+  references: [ EqualRegex, NumberFromSuffixRegex, LessRegexNoNumberSucceed ]
 OneNumberRangeEqualRegex: !nestedRegex
   def: '{EqualRegex}\s*(?<number1>({NumberSplitMark}.)+)'
   references: [ EqualRegex, NumberSplitMark ]
 TwoNumberRangeRegex1: !nestedRegex
-  def: ((?<number1>({BaseNumbers.NumberReplaceToken}))\s(ile|ila|ve)\s(?<number2>({BaseNumbers.NumberReplaceToken}))(\sarasında))
-  references: [ BaseNumbers.NumberReplaceToken ]
+  def: (?<number1>({NumberSplitMark}.)+)\s(ile|ila|ve)\s(?<number2>({NumberSplitMark}.)+)(\sarasında)
+  references: [ NumberSplitMark ]
 TwoNumberRangeRegex2: !nestedRegex
-  def: ({OneNumberRangeMoreRegex})\s*(ve|ama|fakat|ancak|,)\s*({OneNumberRangeLessRegex})
-  references: [ OneNumberRangeMoreRegex, OneNumberRangeLessRegex ]
+  def: ({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2})\s*(ve|ama|fakat|ancak|,)\s*({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2})
+  references: [ OneNumberRangeMoreRegex1, OneNumberRangeMoreRegex2, OneNumberRangeLessRegex1, OneNumberRangeLessRegex2 ]
 TwoNumberRangeRegex3: !nestedRegex
-  def: ({OneNumberRangeLessRegex})\s*(ve|ama|fakat|ancak|,)\s*({OneNumberRangeMoreRegex})
-  references: [ OneNumberRangeMoreRegex, OneNumberRangeLessRegex ]
+  def: ({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2})\s*(ve|ama|fakat|ancak|,)\s*({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2})
+  references: [ OneNumberRangeMoreRegex1, OneNumberRangeMoreRegex2, OneNumberRangeLessRegex1, OneNumberRangeLessRegex2 ]
 TwoNumberRangeRegex4: !nestedRegex
-  def: (?<number1>({NumberSplitMark}.)+)\s*{TillRegex}\s*(?<number2>({NumberSplitMark}.)+)
-  references: [ TillRegex, NumberSplitMark ]
-TwoNumberRangeRegex5: !nestedRegex
-  def: ({NumberFromSuffixRegex})\s+({NumberToSuffixRegex})(kadar)?
-  references: [NumberFromSuffixRegex, NumberToSuffixRegex]
+  def: (?<number1>({NumberSplitMark}.)+)\s*{TillRegex}\s*(?<number2>({NumberSplitMark}.)+)|({NumberFromSuffixRegex}\s{NumberToSuffixRegex})(\skadar)
+  references: [ TillRegex, NumberSplitMark, NumberFromSuffixRegex, NumberToSuffixRegex ]
 #Parser
 DecimalSeparatorChar: !char ','
 FractionMarkerToken: bölü
@@ -297,16 +263,12 @@ WordSeparatorToken: ve
 WrittenDecimalSeparatorTexts: [nokta]
 WrittenGroupSeparatorTexts: [punto]
 WrittenIntegerSeparatorTexts: [\s]
-WrittenFractionSeparatorTexts: [nokta, virgül]
+WrittenFractionSeparatorTexts: [and]
 HalfADozenRegex: !simpleRegex
   def: yarım\s+düzine
 DigitalNumberRegex: !nestedRegex
-  def: ((?<=\b){BaseNumbers.MultiplierLookupRegex}(?=\b))
+  def: ((?<=\b)(yüz|bin|milyon|milyar|trilyon|düzine)(?=\b))|((?<=(\d|\b)){BaseNumbers.MultiplierLookupRegex}(?=\b))
   references: [ BaseNumbers.MultiplierLookupRegex ]
-PercentCharMap: !dictionary
-  types: [ string, string ]
-  entries:
-    'yüzdesi': '%'
 CardinalNumberMap: !dictionary
   types: [ string, long ]
   entries:
@@ -323,6 +285,7 @@ CardinalNumberMap: !dictionary
     on: 10
     on bir: 11
     on iki: 12
+    düzine: 12
     on üç: 13
     on dört: 14
     on beş: 15
@@ -393,30 +356,16 @@ OrdinalNumberMap: !dictionary
 RoundNumberMap: !dictionary
   types: [ string, long ]
   entries:
-    birde: 1
-    ikide: 2
-    üçte: 3
-    dörtte: 4
-    beşte: 5
-    altıda: 6
-    yedide: 7
-    sekizde: 8
-    dokuzda: 9
-    onda: 10
-    yirmide: 20
-    otuzda: 30
-    kırkta: 40
-    ellide: 50
-    altmışta: 60
-    yetmişte: 70
-    seksende: 80
-    doksanda: 90
-    yirminin: 20
-    yüzde: 100 
-    binde: 1000
-    milyonda: 1000000
-    milyarda: 1000000000
-    trilyonda: 1000000000000
+    yüz: 100
+    bin: 1000
+    milyon: 1000000
+    milyar: 1000000000
+    trilyon: 1000000000000
+    yüzüncü: 100
+    bininci: 1000
+    milyonuncu: 1000000
+    milyarıncı: 1000000000
+    trilyonuncu: 1000000000000
     deste: 10
     düzine: 12
     k: 1000

@@ -23,8 +23,6 @@ namespace Microsoft.Recognizers.Text.Number.Turkish
             {
                 NumbersDefinitions.NumberWithPrefixPercentage,
                 NumbersDefinitions.NumberWithSuffixPercentage,
-                NumbersDefinitions.FractionNumberWithSuffixPercentage,
-                NumbersDefinitions.NumberWithPrepositionPercentage,
             };
 
             return BuildRegexes(regexStrs);

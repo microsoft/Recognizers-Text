@@ -16,6 +16,7 @@
   },
   {
     "Input": "192.168.1.2",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -132,19 +133,17 @@
     ]
   },
   {
-    "Input": "üçte iki",
-    "NotSupported": "dotnet",
+    "Input": "iki bölü üç",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "üçte iki",
+        "Text": "iki bölü üç",
         "TypeName": "number",
         "Resolution": {
-          "subtype": "fraction",
-          "value": "0.666666666666667"
+          "value": "0,666666666666667"
         },
         "Start": 0,
-        "End": 7
+        "End": 10
       }
     ]
   },
@@ -244,8 +243,6 @@
   },
   {
     "Input": "3 düzine",
-    "NotSupported": "dotnet",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -261,7 +258,6 @@
   },
   {
     "Input": "bir düzine",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -277,7 +273,6 @@
   },
   {
     "Input": "üç düzine",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -293,7 +288,6 @@
   },
   {
     "Input": "üç yüz iki düzine",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -309,7 +303,6 @@
   },
   {
     "Input": "1.234.567",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -475,7 +468,6 @@
   },
   {
     "Input": "10k",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -491,7 +483,6 @@
   },
   {
     "Input": "100k",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -506,8 +497,7 @@
     ]
   },
   {
-    "Input": "10g",
-    "NotSupported": "dotnet",
+    "Input": "10G",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -523,7 +513,6 @@
   },
   {
     "Input": "- 10  k",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -539,7 +528,6 @@
   },
   {
     "Input": "2 milyon",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -555,7 +543,6 @@
   },
   {
     "Input": "1 trilyon",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -681,14 +668,12 @@
   },
   {
     "Input": "2,33 k",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2,33 k",
         "TypeName": "number",
         "Resolution": {
-          "subtype": "decimal",
           "value": "2330"
         },
         "Start": 0,
@@ -713,7 +698,6 @@
   },
   {
     "Input": "iki yüz nokta yetmiş bir",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -819,36 +803,32 @@
     ]
   },
   {
-    "Input": "sekizde biri",
-    "NotSupported": "dotnet",
+    "Input": "bir bölü sekiz",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "sekizde biri",
+        "Text": "bir bölü sekiz",
         "TypeName": "number",
         "Resolution": {
-          "subtype": "fraction",
-          "value": "0.125"
+          "value": "0,125"
         },
         "Start": 0,
-        "End": 12
+        "End": 13
       }
     ]
   },
   {
-    "Input": "sekizde beşi",
-    "NotSupported": "dotnet",
+    "Input": "beş bölü sekiz",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "sekizde beşi",
+        "Text": "beş bölü sekiz",
         "TypeName": "number",
         "Resolution": {
-          "subtype": "fraction",
-          "value": "0.625"
+          "value": "0,625"
         },
         "Start": 0,
-        "End": 12
+        "End": 13
       }
     ]
   },
@@ -902,19 +882,17 @@
     ]
   },
   {
-    "Input": "yirmi beşte üç",
-    "NotSupported": "dotnet",
+    "Input": "üç bölü yirmi beş",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "yirmi beşte üç",
+        "Text": "üç bölü yirmi beş",
         "TypeName": "number",
         "Resolution": {
-          "subtype": "fraction",
-          "value": "0.12"
+          "value": "0,12"
         },
         "Start": 0,
-        "End": 13
+        "End": 16
       }
     ]
   },
@@ -935,15 +913,13 @@
   },
   {
     "Input": "iki yüz bin dört yüz kırk nokta altı",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "iki yüz bin dört yüz kırk nokta altı",
         "TypeName": "number",
         "Resolution": {
-          "subtype": "fraction",
-          "value": "200440.6"
+          "value": "200440,6"
         },
         "Start": 0,
         "End": 35
@@ -969,7 +945,6 @@
   },
   {
     "Input": "bir nokta yirmi beş",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -985,7 +960,6 @@
   },
   {
     "Input": "beş nokta yirmi beş",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1001,7 +975,6 @@
   },
   {
     "Input": "yüz nokta yetmiş beş",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1152,14 +1125,12 @@
   },
   {
     "Input": "1,2b",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "1,2b",
         "TypeName": "number",
         "Resolution": {
-          "subtype": "decimal",
           "value": "1200000000"
         },
         "Start": 0,
@@ -1200,36 +1171,32 @@
     ]
   },
   {
-    "Input": "beşte biri",
-    "NotSupported": "dotnet",
+    "Input": "bir bölü beş",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "beşte biri",
+        "Text": "bir bölü beş",
         "TypeName": "number",
         "Resolution": {
-          "subtype": "fraction",
-          "value": "0.2"
+          "value": "0,2"
         },
         "Start": 0,
-        "End": 9
+        "End": 11
       }
     ]
   },
   {
-    "Input": "beşte üç",
-    "NotSupported": "dotnet",
+    "Input": "üç bölü beş",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "beşte üç",
+        "Text": "üç bölü beş",
         "TypeName": "number",
         "Resolution": {
-          "subtype": "fraction",
-          "value": "0.6"
+          "value": "0,6"
         },
         "Start": 0,
-        "End": 7
+        "End": 10
       }
     ]
   },
@@ -1264,19 +1231,17 @@
     ]
   },
   {
-    "Input": "beşte yirmi bir",
-    "NotSupported": "dotnet",
+    "Input": "yirmi bir bölü beş",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "beşte yirmi bir",
+        "Text": "yirmi bir bölü beş",
         "TypeName": "number",
         "Resolution": {
-          "subtype": "fraction",
-          "value": "4.2"
+          "value": "4,2"
         },
         "Start": 0,
-        "End": 14
+        "End": 17
       }
     ]
   },
@@ -1417,14 +1382,12 @@
   },
   {
     "Input": "yüz bin beş",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "yüz bin beş",
         "TypeName": "number",
         "Resolution": {
-          "subtype": "integer",
           "value": "100005"
         },
         "Start": 0,
@@ -1433,101 +1396,59 @@
     ]
   },
   {
-    "Input": "üçte bir",
-    "NotSupported": "dotnet",
+    "Input": "bir bölü üç",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "üçte bir",
+        "Text": "bir bölü üç",
         "TypeName": "number",
         "Resolution": {
-          "subtype": "fraction",
-          "value": "0.333333333333333"
+          "value": "0,333333333333333"
         },
         "Start": 0,
-        "End": 7
+        "End": 10
       }
     ]
   },
   {
-    "Input": "yirmi birde 1",
-    "NotSupported": "dotnet",
+    "Input": "1 bölü yirmi bir",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "yirmi birde 1",
+        "Text": "1 bölü yirmi bir",
         "TypeName": "number",
         "Resolution": {
-          "subtype": "fraction",
-          "value": "0.0476190476190476"
+          "value": "0,0476190476190476"
         },
         "Start": 0,
-        "End": 12
+        "End": 15
       }
     ]
   },
   {
-    "Input": "yüz yirmi birde 1",
-    "NotSupported": "dotnet",
+    "Input": "1 bölü yüz yirmi bir",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "yüz yirmi birde 1",
+        "Text": "1 bölü yüz yirmi bir",
         "TypeName": "number",
         "Resolution": {
-          "subtype": "fraction",
-          "value": "0.00826446280991736"
+          "value": "0,00826446280991736"
         },
         "Start": 0,
-        "End": 20
+        "End": 19
       }
     ]
   },
   {
-    "Input": "üçte 1",
-    "NotSupported": "dotnet",
+    "Input": "1 bölü üç",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "üçte 1",
+        "Text": "1 bölü üç",
         "TypeName": "number",
         "Resolution": {
-          "subtype": "fraction",
-          "value": "0.333333333333333"
-        },
-        "Start": 0,
-        "End": 6
-      }
-    ]
-  },
-  {
-    "Input": "3'te 1",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "3'te 1",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "fraction",
-          "value": "0.333333333333333"
-        },
-        "Start": 0,
-        "End": 6
-      }
-    ]
-  },
-  {
-    "Input": "3'te bir",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "3'te bir",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "fraction",
-          "value": "0.333333333333333"
+          "value": "0,333333333333333"
         },
         "Start": 0,
         "End": 8
@@ -1535,16 +1456,29 @@
     ]
   },
   {
-    "Input": "20'de bir",
-    "NotSupported": "dotnet",
+    "Input": "1 bölü 3",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "20'de bir",
+        "Text": "1 bölü 3",
         "TypeName": "number",
         "Resolution": {
-          "subtype": "fraction",
-          "value": "0.05"
+          "value": "0,333333333333333"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "bir bölü 3",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "bir bölü 3",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,333333333333333"
         },
         "Start": 0,
         "End": 9
@@ -1552,19 +1486,32 @@
     ]
   },
   {
-    "Input": "yirmide bir",
-    "NotSupported": "dotnet",
+    "Input": "bir bölü 20",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "yirmide bir",
+        "Text": "bir bölü 20",
         "TypeName": "number",
         "Resolution": {
-          "subtype": "fraction",
-          "value": "0.05"
+          "value": "0,05"
         },
         "Start": 0,
         "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "bir bölü yirmi",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "bir bölü yirmi",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,05"
+        },
+        "Start": 0,
+        "End": 13
       }
     ]
   },
@@ -1584,19 +1531,17 @@
     ]
   },
   {
-    "Input": "yüz yirmi beşte bir",
-    "NotSupported": "dotnet",
+    "Input": "bir bölü yüz yirmi beş",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "yüz yirmi beşte bir",
+        "Text": "bir bölü yüz yirmi beş",
         "TypeName": "number",
         "Resolution": {
-          "subtype": "fraction",
-          "value": "0.008"
+          "value": "0,008"
         },
         "Start": 0,
-        "End": 18
+        "End": 21
       }
     ]
   },
@@ -1663,19 +1608,17 @@
     ]
   },
   {
-    "Input": "Yanıt 20'de eksi bir",
-    "NotSupported": "dotnet",
+    "Input": "Yanıt eksi bir bölü 20",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "20'de eksi bir",
+        "Text": "eksi bir bölü 20",
         "TypeName": "number",
         "Resolution": {
-          "subtype": "fraction",
-          "value": "-0.05"
+          "value": "-0,05"
         },
         "Start": 6,
-        "End": 19
+        "End": 21
       }
     ]
   },
@@ -1710,70 +1653,62 @@
     ]
   },
   {
-    "Input": "dörtte bir",
-    "NotSupported": "dotnet",
+    "Input": "bir bölü dört",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "dörtte bir",
+        "Text": "bir bölü dört",
         "TypeName": "number",
         "Resolution": {
-          "subtype": "fraction",
           "value": "0,25"
         },
         "Start": 0,
-        "End": 9
+        "End": 12
       }
     ]
   },
   {
-    "Input": "sekizde bir",
-    "NotSupported": "dotnet",
+    "Input": "bir bölü sekiz",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "sekizde bir",
+        "Text": "bir bölü sekiz",
         "TypeName": "number",
         "Resolution": {
-          "subtype": "fraction",
-          "value": "0.125"
+          "value": "0,125"
+        },
+        "Start": 0,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "beş bölü sekiz",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "beş bölü sekiz",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,625"
+        },
+        "Start": 0,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "bir bölü üç",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "bir bölü üç",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,333333333333333"
         },
         "Start": 0,
         "End": 10
-      }
-    ]
-  },
-  {
-    "Input": "sekizde beş",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "sekizde beş",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "fraction",
-          "value": "0.625"
-        },
-        "Start": 0,
-        "End": 10
-      }
-    ]
-  },
-  {
-    "Input": "üçte biri",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "üçte biri",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "fraction",
-          "value": "0.333333333333333"
-        },
-        "Start": 0,
-        "End": 9
       }
     ]
   },
@@ -1794,7 +1729,6 @@
   },
   {
     "Input": "40.000 ile 40000  aynıdır",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1819,7 +1753,6 @@
   },
   {
     "Input": "Şu an için Çin'in nüfusu 1.414.021.100'dür",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1867,12 +1800,12 @@
     ]
   },
   {
-    "Input": "1234567,89 geçerli bir sayı formatıdır",
+    "Input": "1.234.567,89 geçerli bir sayı formatıdır",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "1234567,89",
+        "Text": "1.234.567,89",
         "TypeName": "number",
         "Resolution": {
           "value": "1234567,89"
@@ -1982,8 +1915,7 @@
     ]
   },
   {
-    "Input": "Sana 10m verebilirim",
-    "NotSupported": "dotnet",
+    "Input": "Sana 10M verebilirim",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {

@@ -39,18 +39,38 @@ namespace Microsoft.Recognizers.Text.Number.Turkish
                 },
                 {
                     // more/greater/higher than ...
-                    new Regex(NumbersDefinitions.OneNumberRangeMoreRegex, RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.OneNumberRangeMoreRegex1, RegexOptions.Singleline),
+                    NumberRangeConstants.MORE
+                },
+                {
+                    // 30 and/or greater/higher
+                    new Regex(NumbersDefinitions.OneNumberRangeMoreRegex2, RegexOptions.Singleline),
                     NumberRangeConstants.MORE
                 },
                 {
                     // less/smaller/lower than ...
-                    new Regex(NumbersDefinitions.OneNumberRangeLessRegex, RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.OneNumberRangeLessRegex1, RegexOptions.Singleline),
+                    NumberRangeConstants.LESS
+                },
+                {
+                    // 30 and/or less/smaller/lower
+                    new Regex(NumbersDefinitions.OneNumberRangeLessRegex2, RegexOptions.Singleline),
                     NumberRangeConstants.LESS
                 },
                 {
                     // equal to ...
                     new Regex(NumbersDefinitions.OneNumberRangeEqualRegex, RegexOptions.Singleline),
                     NumberRangeConstants.EQUAL
+                },
+                {
+                    // equal to 30 or more than, larger than 30 or equal to ...
+                    new Regex(NumbersDefinitions.OneNumberRangeMoreSeparateRegex, RegexOptions.Singleline),
+                    NumberRangeConstants.MORE
+                },
+                {
+                    // equal to 30 or less, smaller than 30 or equal ...
+                    new Regex(NumbersDefinitions.OneNumberRangeLessSeparateRegex, RegexOptions.Singleline),
+                    NumberRangeConstants.LESS
                 },
             };
 

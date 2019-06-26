@@ -25,6 +25,10 @@ namespace Microsoft.Recognizers.Text.Number.Turkish
                     RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
+                    new Regex(NumbersDefinitions.RoundNumberIntegerRegexWithLocks, RegexOptions.Singleline),
+                    RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX)
+                },
+                {
                     new Regex(NumbersDefinitions.NumbersWithDozenSuffix, RegexOptions.Singleline),
                     RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX)
                 },
@@ -39,6 +43,18 @@ namespace Microsoft.Recognizers.Text.Number.Turkish
                 {
                     new Regex(NumbersDefinitions.AllIntRegexWithDozenSuffixLocks, RegexOptions.Singleline),
                     RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.TURKISH)
+                },
+                {
+                    GenerateLongFormatNumberRegexes(LongFormatType.IntegerNumBlank, placeholder),
+                    RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX)
+                },
+                {
+                    GenerateLongFormatNumberRegexes(LongFormatType.IntegerNumNoBreakSpace, placeholder),
+                    RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX)
+                },
+                {
+                    GenerateLongFormatNumberRegexes(LongFormatType.IntegerNumDot, placeholder),
+                    RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX)
                 },
             };
 

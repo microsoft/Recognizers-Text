@@ -181,7 +181,6 @@
   },
   {
     "Input": "yirmi bir trilyon üç yüz yirmi ikinci",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {

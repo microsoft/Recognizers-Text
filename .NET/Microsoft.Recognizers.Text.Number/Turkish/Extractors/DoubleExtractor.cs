@@ -45,15 +45,11 @@ namespace Microsoft.Recognizers.Text.Number.Turkish
                     RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.POWER_SUFFIX)
                 },
                 {
-                    GenerateLongFormatNumberRegexes(LongFormatType.DoubleNumCommaDot, placeholder),
+                    GenerateLongFormatNumberRegexes(LongFormatType.DoubleNumDotComma, placeholder),
                     RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
-                    GenerateLongFormatNumberRegexes(LongFormatType.DoubleNumBlankDot, placeholder),
-                    RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)
-                },
-                {
-                    GenerateLongFormatNumberRegexes(LongFormatType.DoubleNumNoBreakSpaceDot, placeholder),
+                    GenerateLongFormatNumberRegexes(LongFormatType.DoubleNumNoBreakSpaceComma, placeholder),
                     RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)
                 },
             };
