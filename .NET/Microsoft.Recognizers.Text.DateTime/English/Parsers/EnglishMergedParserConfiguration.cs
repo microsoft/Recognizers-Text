@@ -14,6 +14,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             AroundRegex = EnglishMergedExtractorConfiguration.AroundRegex;
             SuffixAfter = EnglishMergedExtractorConfiguration.SuffixAfterRegex;
             YearRegex = EnglishDatePeriodExtractorConfiguration.YearRegex;
+
             SuperfluousWordMatcher = EnglishMergedExtractorConfiguration.SuperfluousWordMatcher;
 
             DatePeriodParser = new BaseDatePeriodParser(new EnglishDatePeriodParserConfiguration(this));
