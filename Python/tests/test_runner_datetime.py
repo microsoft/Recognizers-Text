@@ -149,7 +149,9 @@ def test_datetime_model(
             actual.resolution['values']) == len(
             expected['Resolution']['values'])
         for actual_resilution_value in actual.resolution['values']:
-            assert_model_resolution(actual_resilution_value, expected['Resolution']['values'])
+            assert_model_resolution(
+                actual_resilution_value,
+                expected['Resolution']['values'])
 
 
 def get_props(results, prop):
@@ -162,7 +164,7 @@ def get_props(results, prop):
 
 def single_assert(actual, expected, prop):
     if expected.get(prop):
-        assert actual[prop] in expected[prop]
+        assert actual[prop] == expected[prop]
     else:
         assert actual.get(prop) is None
 
