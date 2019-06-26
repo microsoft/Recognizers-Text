@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
+
 using Microsoft.Recognizers.Definitions.Italian;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
 
@@ -9,7 +10,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
     public class ItalianDateParserConfiguration : BaseOptionsConfiguration, IDateParserConfiguration
     {
         public ItalianDateParserConfiguration(ICommonDateTimeParserConfiguration config)
-            : base(config)
+            : base(config.Options)
         {
             DateTokenPrefix = DateTimeDefinitions.DateTokenPrefix;
             IntegerExtractor = config.IntegerExtractor;
@@ -23,9 +24,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             OnRegex = ItalianDateExtractorConfiguration.OnRegex;
             SpecialDayRegex = ItalianDateExtractorConfiguration.SpecialDayRegex;
             SpecialDayWithNumRegex = ItalianDateExtractorConfiguration.SpecialDayWithNumRegex;
-            NextRegex = ItalianDateExtractorConfiguration.NextDateRegex;
+            NextRegex = ItalianDateExtractorConfiguration.NextRegex;
             ThisRegex = ItalianDateExtractorConfiguration.ThisRegex;
-            LastRegex = ItalianDateExtractorConfiguration.LastDateRegex;
+            LastRegex = ItalianDateExtractorConfiguration.LastRegex;
             UnitRegex = ItalianDateExtractorConfiguration.DateUnitRegex;
             WeekDayRegex = ItalianDateExtractorConfiguration.WeekDayRegex;
             StrictWeekDay = ItalianDateExtractorConfiguration.StrictWeekDay;
@@ -35,6 +36,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             WeekDayAndDayOfMothRegex = ItalianDateExtractorConfiguration.WeekDayAndDayOfMothRegex;
             WeekDayAndDayRegex = ItalianDateExtractorConfiguration.WeekDayAndDayRegex;
             RelativeMonthRegex = ItalianDateExtractorConfiguration.RelativeMonthRegex;
+            StrictRelativeRegex = ItalianDateExtractorConfiguration.StrictRelativeRegex;
             YearSuffix = ItalianDateExtractorConfiguration.YearSuffix;
             RelativeWeekDayRegex = ItalianDateExtractorConfiguration.RelativeWeekDayRegex;
             RelativeDayRegex = new Regex(DateTimeDefinitions.RelativeDayRegex, RegexOptions.Singleline);
@@ -45,7 +47,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             DayOfMonth = config.DayOfMonth;
             DayOfWeek = config.DayOfWeek;
             MonthOfYear = config.MonthOfYear;
-            Numbers = config.Numbers;
             CardinalMap = config.CardinalMap;
             UnitMap = config.UnitMap;
             UtilityConfiguration = config.UtilityConfiguration;
@@ -106,6 +107,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public Regex RelativeMonthRegex { get; }
 
+        public Regex StrictRelativeRegex { get; }
+
         public Regex YearSuffix { get; }
 
         public Regex RelativeWeekDayRegex { get; }
@@ -126,8 +129,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public IImmutableDictionary<string, int> MonthOfYear { get; }
 
-        public IImmutableDictionary<string, int> Numbers { get; }
-
         public IImmutableDictionary<string, int> CardinalMap { get; }
 
         public IImmutableList<string> SameDayTerms { get; }
@@ -142,15 +143,16 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
-        public int GetSwiftMonth(string text)
+        public int GetSwiftMonthOrYear(string text)
         {
             var trimmedText = text.Trim().ToLowerInvariant();
             var swift = 0;
-            if (NextPrefixRegex.IsMatch(trimmedText))
+            if (trimmedText.EndsWith("prochaine") || trimmedText.EndsWith("prochain"))
             {
                 swift = 1;
             }
-            else if (PreviousPrefixRegex.IsMatch(trimmedText))
+            else if (trimmedText.Equals("dernière") || trimmedText.Equals("dernières") ||
+                    trimmedText.Equals("derniere") || trimmedText.Equals("dernieres"))
             {
                 swift = -1;
             }
@@ -161,7 +163,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         public bool IsCardinalLast(string text)
         {
             var trimmedText = text.Trim().ToLowerInvariant();
-            return PreviousPrefixRegex.IsMatch(trimmedText);
+            return trimmedText.Equals("dernière") || trimmedText.Equals("dernières") ||
+                    trimmedText.Equals("derniere") || trimmedText.Equals("dernieres");
         }
 
         public string Normalize(string text)
