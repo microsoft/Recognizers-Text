@@ -10842,6 +10842,44 @@
     ]
   },
   {
+    "Input": "Let's meet on february 22nd 3:30.",
+    "Context": {
+      "ReferenceDateTime": "2019-04-25T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "february 22nd 3:30",
+        "Start": 14,
+        "End": 31,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-02-22T03:30",
+              "type": "datetime",
+              "value": "2019-02-22 03:30:00"
+            },
+            {
+              "timex": "XXXX-02-22T03:30",
+              "type": "datetime",
+              "value": "2020-02-22 03:30:00"
+            },
+            {
+              "timex": "XXXX-02-22T15:30",
+              "type": "datetime",
+              "value": "2019-02-22 15:30:00"
+            },
+            {
+              "timex": "XXXX-02-22T15:30",
+              "type": "datetime",
+              "value": "2020-02-22 15:30:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
     "Input": "Please can you arrange a Microsoft Teams Meeting beginning January 7th to discuss ARM Templates?",
     "Context": {
       "ReferenceDateTime": "2019-04-24T00:00:00"
@@ -10902,49 +10940,11 @@
     ]
   },
   {
-    "Input": "Let's meet on february 22nd 3:30.",
-    "Context": {
-      "ReferenceDateTime": "2019-04-25T00:00:00"
-    },
-    "Results": [
-      {
-        "Text": "february 22nd 3:30",
-        "Start": 14,
-        "End": 31,
-        "TypeName": "datetimeV2.datetime",
-        "Resolution": {
-          "values": [
-            {
-              "timex": "XXXX-02-22T03:30",
-              "type": "datetime",
-              "value": "2019-02-22 03:30:00"
-            },
-            {
-              "timex": "XXXX-02-22T03:30",
-              "type": "datetime",
-              "value": "2020-02-22 03:30:00"
-            },
-            {
-              "timex": "XXXX-02-22T15:30",
-              "type": "datetime",
-              "value": "2019-02-22 15:30:00"
-            },
-            {
-              "timex": "XXXX-02-22T15:30",
-              "type": "datetime",
-              "value": "2020-02-22 15:30:00"
-            }
-          ]
-        }
-      }
-    ]
-  },
-  {
     "Input": "Let's meet on friday march fifteenth nine a m.",
     "Context": {
       "ReferenceDateTime": "2019-04-25T00:00:00"
     },
-    "NotSupported": "python, javascript",
+    "NotSupported": "python,javascript",
     "Results": [
       {
         "Text": "friday march fifteenth nine a m",
