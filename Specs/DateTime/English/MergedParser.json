@@ -586,7 +586,8 @@
               "timex": "T20",
               "Mod": "after",
               "type": "timerange",
-              "start": "20:00:00"
+              "start": "20:00:00",
+              "sourceEntity": "datetimepoint"
             }
           ]
         },
@@ -610,7 +611,8 @@
               "timex": "T20",
               "Mod": "before",
               "type": "timerange",
-              "end": "20:00:00"
+              "end": "20:00:00",
+              "sourceEntity": "datetimepoint"
             }
           ]
         },
@@ -634,7 +636,8 @@
               "timex": "T20",
               "Mod": "since",
               "type": "timerange",
-              "start": "20:00:00"
+              "start": "20:00:00",
+              "sourceEntity": "datetimepoint"
             }
           ]
         },
@@ -1021,13 +1024,15 @@
               "timex": "2016-11-15T12:00",
               "Mod": "before",
               "type": "datetimerange",
-              "end": "2016-11-15 12:00:00"
+              "end": "2016-11-15 12:00:00",
+              "sourceEntity": "datetimepoint"
             },
             {
               "timex": "2016-11-15T00:00",
               "Mod": "before",
               "type": "datetimerange",
-              "end": "2016-11-15 00:00:00"
+              "end": "2016-11-15 00:00:00",
+              "sourceEntity": "datetimepoint"
             }
           ]
         },
@@ -1051,7 +1056,8 @@
               "timex": "T14",
               "Mod": "before",
               "type": "timerange",
-              "end": "14:00:00"
+              "end": "14:00:00",
+              "sourceEntity": "datetimepoint"
             }
           ]
         },
@@ -1075,7 +1081,8 @@
               "timex": "T14",
               "Mod": "before",
               "type": "timerange",
-              "end": "14:00:00"
+              "end": "14:00:00",
+              "sourceEntity": "datetimepoint"
             }
           ]
         },
@@ -1334,7 +1341,8 @@
               "timex": "2016-11-08",
               "Mod": "before",
               "type": "daterange",
-              "end": "2016-11-08"
+              "end": "2016-11-08",
+              "sourceEntity": "datetimepoint"
             }
           ]
         },
@@ -1358,7 +1366,8 @@
               "timex": "2016-11-08",
               "Mod": "before",
               "type": "daterange",
-              "end": "2016-11-08"
+              "end": "2016-11-08",
+              "sourceEntity": "datetimepoint"
             }
           ]
         },
@@ -1382,7 +1391,8 @@
               "timex": "2016-11-08",
               "Mod": "before",
               "type": "daterange",
-              "end": "2016-11-08"
+              "end": "2016-11-08",
+              "sourceEntity": "datetimepoint"
             }
           ]
         },
@@ -1406,7 +1416,8 @@
               "timex": "2016-01-01",
               "Mod": "since",
               "type": "daterange",
-              "start": "2016-01-01"
+              "start": "2016-01-01",
+              "sourceEntity": "datetimepoint"
             }
           ]
         },
@@ -1430,7 +1441,8 @@
               "timex": "2016-01-01",
               "Mod": "after",
               "type": "daterange",
-              "start": "2016-01-01"
+              "start": "2016-01-01",
+              "sourceEntity": "datetimepoint"
             }
           ]
         },
@@ -1454,7 +1466,8 @@
               "timex": "2016-01-01",
               "Mod": "after",
               "type": "daterange",
-              "start": "2016-01-01"
+              "start": "2016-01-01",
+              "sourceEntity": "datetimepoint"
             }
           ]
         },
@@ -1478,7 +1491,8 @@
               "timex": "2016-01-01",
               "Mod": "before",
               "type": "daterange",
-              "end": "2016-01-01"
+              "end": "2016-01-01",
+              "sourceEntity": "datetimepoint"
             }
           ]
         },
@@ -1502,7 +1516,8 @@
               "timex": "2016-01-01",
               "Mod": "since",
               "type": "daterange",
-              "start": "2016-01-01"
+              "start": "2016-01-01",
+              "sourceEntity": "datetimepoint"
             }
           ]
         },
@@ -1526,7 +1541,8 @@
               "timex": "2016-01-01",
               "Mod": "before",
               "type": "daterange",
-              "end": "2016-01-01"
+              "end": "2016-01-01",
+              "sourceEntity": "datetimepoint"
             }
           ]
         },
@@ -1550,7 +1566,8 @@
               "timex": "2020",
               "Mod": "before",
               "type": "daterange",
-              "end": "2020-01-01"
+              "end": "2020-01-01",
+              "sourceEntity": "datetimerange"
             }
           ]
         },
@@ -1574,7 +1591,8 @@
               "timex": "2012",
               "Mod": "before",
               "type": "daterange",
-              "end": "2012-01-01"
+              "end": "2012-01-01",
+              "sourceEntity": "datetimerange"
             }
           ]
         },
@@ -1599,7 +1617,8 @@
               "timex": "2012",
               "Mod": "since",
               "type": "daterange",
-              "start": "2012-01-01"
+              "start": "2012-01-01",
+              "sourceEntity": "datetimerange"
             }
           ]
         },
@@ -2381,7 +2400,8 @@
               "timex": "2016-01-01",
               "Mod": "since",
               "type": "daterange",
-              "start": "2016-01-01"
+              "start": "2016-01-01",
+              "sourceEntity": "datetimepoint"
             }
           ]
         },
@@ -2406,7 +2426,8 @@
               "timex": "2016-01-01",
               "Mod": "after",
               "type": "daterange",
-              "start": "2016-01-01"
+              "start": "2016-01-01",
+              "sourceEntity": "datetimepoint"
             }
           ]
         },
@@ -2455,7 +2476,8 @@
               "timex": "2016-01-01",
               "Mod": "until",
               "type": "daterange",
-              "end": "2016-01-01"
+              "end": "2016-01-01",
+              "sourceEntity": "datetimepoint"
             }
           ]
         },
@@ -2480,7 +2502,8 @@
               "timex": "2016-01-01",
               "Mod": "before",
               "type": "daterange",
-              "end": "2016-01-01"
+              "end": "2016-01-01",
+              "sourceEntity": "datetimepoint"
             }
           ]
         },
@@ -2505,7 +2528,8 @@
               "timex": "2016-01-01",
               "Mod": "until",
               "type": "daterange",
-              "end": "2016-01-01"
+              "end": "2016-01-01",
+              "sourceEntity": "datetimepoint"
             }
           ]
         },
@@ -2554,7 +2578,8 @@
               "timex": "2016-01-01",
               "Mod": "before",
               "type": "daterange",
-              "end": "2016-01-01"
+              "end": "2016-01-01",
+              "sourceEntity": "datetimepoint"
             }
           ]
         },
@@ -2579,7 +2604,8 @@
               "timex": "2018-02",
               "Mod": "until",
               "type": "daterange",
-              "end": "2018-03-01"
+              "end": "2018-03-01",
+              "sourceEntity": "datetimerange"
             }
           ]
         },
@@ -2604,7 +2630,8 @@
               "timex": "2018-02",
               "Mod": "before",
               "type": "daterange",
-              "end": "2018-02-01"
+              "end": "2018-02-01",
+              "sourceEntity": "datetimerange"
             }
           ]
         },
@@ -2654,7 +2681,8 @@
               "timex": "2016",
               "Mod": "since",
               "type": "daterange",
-              "start": "2016-01-01"
+              "start": "2016-01-01",
+              "sourceEntity": "datetimerange"
             }
           ]
         },
@@ -2679,7 +2707,8 @@
               "timex": "2016",
               "Mod": "after",
               "type": "daterange",
-              "start": "2017-01-01"
+              "start": "2017-01-01",
+              "sourceEntity": "datetimerange"
             }
           ]
         },
@@ -2729,7 +2758,8 @@
               "timex": "2016-11-07T18:30",
               "Mod": "since",
               "type": "datetimerange",
-              "start": "2016-11-07 18:30:00"
+              "start": "2016-11-07 18:30:00",
+              "sourceEntity": "datetimepoint"
             }
           ]
         },
@@ -2754,7 +2784,8 @@
               "timex": "2016-11-07T18:30",
               "Mod": "after",
               "type": "datetimerange",
-              "start": "2016-11-07 18:30:00"
+              "start": "2016-11-07 18:30:00",
+              "sourceEntity": "datetimepoint"
             }
           ]
         },
@@ -2803,7 +2834,8 @@
               "timex": "2016-11-09",
               "Mod": "until",
               "type": "daterange",
-              "end": "2016-11-09"
+              "end": "2016-11-09",
+              "sourceEntity": "datetimepoint"
             }
           ]
         },
@@ -2852,7 +2884,8 @@
               "timex": "2016-11-09",
               "Mod": "before",
               "type": "daterange",
-              "end": "2016-11-09"
+              "end": "2016-11-09",
+              "sourceEntity": "datetimepoint"
             }
           ]
         },
@@ -2877,7 +2910,8 @@
               "timex": "2018-05-15T15",
               "Mod": "until",
               "type": "datetimerange",
-              "end": "2018-05-15 15:00:00"
+              "end": "2018-05-15 15:00:00",
+              "sourceEntity": "datetimepoint"
             }
           ]
         },
@@ -2902,7 +2936,8 @@
               "timex": "2018-05-15T15",
               "Mod": "before",
               "type": "datetimerange",
-              "end": "2018-05-15 15:00:00"
+              "end": "2018-05-15 15:00:00",
+              "sourceEntity": "datetimepoint"
             }
           ]
         },
@@ -3023,7 +3058,8 @@
               "timex": "2010",
               "Mod": "before",
               "type": "daterange",
-              "end": "2010-01-01"
+              "end": "2010-01-01",
+              "sourceEntity": "datetimerange"
             }
           ]
         },
@@ -3039,7 +3075,8 @@
               "timex": "2018",
               "Mod": "after",
               "type": "daterange",
-              "start": "2019-01-01"
+              "start": "2019-01-01",
+              "sourceEntity": "datetimerange"
             }
           ]
         },
@@ -3064,7 +3101,8 @@
               "timex": "2010",
               "Mod": "after",
               "type": "daterange",
-              "start": "2011-01-01"
+              "start": "2011-01-01",
+              "sourceEntity": "datetimerange"
             }
           ]
         },
@@ -3080,7 +3118,8 @@
               "timex": "2018",
               "Mod": "before",
               "type": "daterange",
-              "end": "2018-01-01"
+              "end": "2018-01-01",
+              "sourceEntity": "datetimerange"
             }
           ]
         },
@@ -3096,7 +3135,8 @@
               "timex": "2000",
               "Mod": "before",
               "type": "daterange",
-              "end": "2000-01-01"
+              "end": "2000-01-01",
+              "sourceEntity": "datetimerange"
             }
           ]
         },
@@ -3554,7 +3594,8 @@
               "timex": "2018",
               "Mod": "after",
               "type": "daterange",
-              "start": "2019-01-01"
+              "start": "2019-01-01",
+              "sourceEntity": "datetimerange"
             }
           ]
         },
@@ -3579,7 +3620,8 @@
               "timex": "2018-02",
               "Mod": "after",
               "type": "daterange",
-              "start": "2018-03-01"
+              "start": "2018-03-01",
+              "sourceEntity": "datetimerange"
             }
           ]
         },
@@ -3604,13 +3646,15 @@
               "timex": "XXXX-02",
               "Mod": "after",
               "type": "daterange",
-              "start": "2018-03-01"
+              "start": "2018-03-01",
+              "sourceEntity": "datetimerange"
             },
             {
               "timex": "XXXX-02",
               "Mod": "after",
               "type": "daterange",
-              "start": "2019-03-01"
+              "start": "2019-03-01",
+              "sourceEntity": "datetimerange"
             }
           ]
         },
@@ -3800,13 +3844,15 @@
               "timex": "T02:00",
               "Mod": "after",
               "type": "timerange",
-              "start": "02:00:00"
+              "start": "02:00:00",
+              "sourceEntity": "datetimepoint"
             },
             {
               "timex": "T14:00",
               "Mod": "after",
               "type": "timerange",
-              "start": "14:00:00"
+              "start": "14:00:00",
+              "sourceEntity": "datetimepoint"
             }
           ]
         },
@@ -4179,7 +4225,8 @@
               "timex": "2018-08-10T18",
               "Mod": "after",
               "type": "datetimerange",
-              "start": "2018-08-10 18:00:00"
+              "start": "2018-08-10 18:00:00",
+              "sourceEntity": "datetimepoint"
             }
           ]
         },
@@ -4204,7 +4251,8 @@
               "timex": "2018-08-10T18",
               "Mod": "since",
               "type": "datetimerange",
-              "start": "2018-08-10 18:00:00"
+              "start": "2018-08-10 18:00:00",
+              "sourceEntity": "datetimepoint"
             }
           ]
         },
@@ -4229,7 +4277,8 @@
               "timex": "2018-08-10T18",
               "Mod": "before",
               "type": "datetimerange",
-              "end": "2018-08-10 18:00:00"
+              "end": "2018-08-10 18:00:00",
+              "sourceEntity": "datetimepoint"
             }
           ]
         },
@@ -4254,7 +4303,8 @@
               "timex": "2018-08-10T18",
               "Mod": "until",
               "type": "datetimerange",
-              "end": "2018-08-10 18:00:00"
+              "end": "2018-08-10 18:00:00",
+              "sourceEntity": "datetimepoint"
             }
           ]
         },

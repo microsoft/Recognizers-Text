@@ -246,8 +246,9 @@ export class ChineseMergedParser extends BaseMergedParser {
             pr.value = val;
         }
 
+        let hasRangeChangingMod = hasBefore || hasAfter || hasSince;
         pr.value = this.dateTimeResolution(pr, hasBefore, hasAfter, hasSince);
-        pr.type = `${this.parserTypeName}.${this.determineDateTimeType(er.type, hasBefore, hasAfter, hasSince)}`;
+        pr.type = `${this.parserTypeName}.${this.determineDateTimeType(er.type, hasRangeChangingMod)}`;
 
         return pr;
     }
@@ -335,7 +336,7 @@ export class ChineseFullMergedParser extends BaseMergedParser {
         }
 
         pr.value = this.dateTimeResolution(pr, hasBefore, hasAfter);
-        pr.type = `${this.parserTypeName}.${this.determineDateTimeType(er.type, hasBefore, hasAfter)}`;
+        pr.type = `${this.parserTypeName}.${this.determineDateTimeType(er.type, hasBefore || hasAfter)}`;
 
         return pr;
     }
@@ -347,7 +348,7 @@ export class ChineseFullMergedParser extends BaseMergedParser {
         let resolutions = new Array<StringMap>();
 
         let type = slot.type;
-        let outputType = this.determineDateTimeType(type, hasBefore, hasAfter);
+        let outputType = this.determineDateTimeType(type, hasBefore || hasAfter);
         let timex = slot.timexStr;
 
         let value: DateTimeResolutionResult = slot.value;
@@ -420,8 +421,8 @@ export class ChineseFullMergedParser extends BaseMergedParser {
         };
     }
 
-    protected determineDateTimeType(type: string, hasBefore: boolean, hasAfter: boolean, hasSince: boolean = false): string {
-        if (hasBefore || hasAfter || hasSince) {
+    protected determineDateTimeType(type: string, hasMod: boolean): string {
+        if (hasMod) {
             if (type === Constants.SYS_DATETIME_DATE) return Constants.SYS_DATETIME_DATEPERIOD;
             if (type === Constants.SYS_DATETIME_TIME) return Constants.SYS_DATETIME_TIMEPERIOD;
             if (type === Constants.SYS_DATETIME_DATETIME) return Constants.SYS_DATETIME_DATETIMEPERIOD;

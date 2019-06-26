@@ -15,6 +15,9 @@ public class Constants {
     public static final String SYS_DATETIME_DATETIMEALT = "datetimealt";
     public static final String SYS_DATETIME_TIMEZONE = "timezone";
 
+    // SourceEntity Types
+    public static final String SYS_DATETIME_DATETIMEPOINT = "datetimepoint";
+
     // Model Name
     public static final String MODEL_DATETIME = "datetime";
 

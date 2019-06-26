@@ -296,13 +296,15 @@
               "timex": "T04",
               "Mod": "before",
               "type": "timerange",
-              "end": "04:00:00"
+              "end": "04:00:00",
+              "sourceEntity": "datetimepoint"
             },
             {
               "timex": "T16",
               "Mod": "before",
               "type": "timerange",
-              "end": "16:00:00"
+              "end": "16:00:00",
+              "sourceEntity": "datetimepoint"
             }
           ]
         },
@@ -327,13 +329,15 @@
               "timex": "T03",
               "Mod": "after",
               "type": "timerange",
-              "start": "03:00:00"
+              "start": "03:00:00",
+              "sourceEntity": "datetimepoint"
             },
             {
               "timex": "T15",
               "Mod": "after",
               "type": "timerange",
-              "start": "15:00:00"
+              "start": "15:00:00",
+              "sourceEntity": "datetimepoint"
             }
           ]
         },
@@ -358,13 +362,15 @@
               "timex": "T04",
               "Mod": "before",
               "type": "timerange",
-              "end": "04:00:00"
+              "end": "04:00:00",
+              "sourceEntity": "datetimepoint"
             },
             {
               "timex": "T16",
               "Mod": "before",
               "type": "timerange",
-              "end": "16:00:00"
+              "end": "16:00:00",
+              "sourceEntity": "datetimepoint"
             }
           ]
         },
@@ -2852,7 +2858,8 @@
               "timex": "2010",
               "Mod": "before",
               "type": "daterange",
-              "end": "2010-01-01"
+              "end": "2010-01-01",
+              "sourceEntity": "datetimerange"
             }
           ]
         }
@@ -2868,7 +2875,8 @@
               "timex": "2018",
               "Mod": "after",
               "type": "daterange",
-              "start": "2019-01-01"
+              "start": "2019-01-01",
+              "sourceEntity": "datetimerange"
             }
           ]
         }
@@ -3127,7 +3135,8 @@
               "timezone": "UTC-05:00",
               "timezoneText": "central",
               "utcOffsetMins": "-300",
-              "start": "2018-06-19 11:00:00"
+              "start": "2018-06-19 11:00:00",
+              "sourceEntity": "datetimepoint"
             }
           ]
         }
@@ -3170,7 +3179,8 @@
               "timezone": "UTC-06:00",
               "timezoneText": "mountain",
               "utcOffsetMins": "-360",
-              "start": "2018-06-19 11:00:00"
+              "start": "2018-06-19 11:00:00",
+              "sourceEntity": "datetimepoint"
             }
           ]
         }
@@ -3251,7 +3261,8 @@
               "timex": "2010",
               "Mod": "after",
               "type": "daterange",
-              "start": "2011-01-01"
+              "start": "2011-01-01",
+              "sourceEntity": "datetimerange"
             }
           ]
         }
@@ -3267,7 +3278,8 @@
               "timex": "2018",
               "Mod": "before",
               "type": "daterange",
-              "end": "2018-01-01"
+              "end": "2018-01-01",
+              "sourceEntity": "datetimerange"
             }
           ]
         }
@@ -3283,7 +3295,8 @@
               "timex": "2000",
               "Mod": "before",
               "type": "daterange",
-              "end": "2000-01-01"
+              "end": "2000-01-01",
+              "sourceEntity": "datetimerange"
             }
           ]
         }
@@ -3638,7 +3651,8 @@
               "timex": "2018",
               "Mod": "after",
               "type": "daterange",
-              "start": "2019-01-01"
+              "start": "2019-01-01",
+              "sourceEntity": "datetimerange"
             }
           ]
         }
@@ -3663,7 +3677,8 @@
               "timex": "2018-02",
               "Mod": "after",
               "type": "daterange",
-              "start": "2018-03-01"
+              "start": "2018-03-01",
+              "sourceEntity": "datetimerange"
             }
           ]
         }
@@ -3688,13 +3703,15 @@
               "timex": "XXXX-02",
               "Mod": "after",
               "type": "daterange",
-              "start": "2018-03-01"
+              "start": "2018-03-01",
+              "sourceEntity": "datetimerange"
             },
             {
               "timex": "XXXX-02",
               "Mod": "after",
               "type": "daterange",
-              "start": "2019-03-01"
+              "start": "2019-03-01",
+              "sourceEntity": "datetimerange"
             }
           ]
         }
@@ -3884,13 +3901,15 @@
               "timex": "T02:00",
               "Mod": "after",
               "type": "timerange",
-              "start": "02:00:00"
+              "start": "02:00:00",
+              "sourceEntity": "datetimepoint"
             },
             {
               "timex": "T14:00",
               "Mod": "after",
               "type": "timerange",
-              "start": "14:00:00"
+              "start": "14:00:00",
+              "sourceEntity": "datetimepoint"
             }
           ]
         }
@@ -5094,7 +5113,8 @@
               "timex": "T07:00",
               "Mod": "since",
               "type": "timerange",
-              "start": "07:00:00"
+              "start": "07:00:00",
+              "sourceEntity": "datetimepoint"
             }
           ]
         }
@@ -5119,7 +5139,8 @@
               "timex": "T07:00",
               "Mod": "until",
               "type": "timerange",
-              "end": "07:00:00"
+              "end": "07:00:00",
+              "sourceEntity": "datetimepoint"
             }
           ]
         }
@@ -5144,7 +5165,8 @@
               "timex": "2018-08-18",
               "Mod": "until",
               "type": "daterange",
-              "end": "2018-08-18"
+              "end": "2018-08-18",
+              "sourceEntity": "datetimepoint"
             }
           ]
         }
@@ -5575,7 +5597,8 @@
               "timex": "(2019-01-01,2019-04-01,P3M)",
               "Mod": "since",
               "type": "daterange",
-              "start": "2019-01-01"
+              "start": "2019-01-01",
+              "sourceEntity": "datetimerange"
             }
           ]
         }
@@ -5600,7 +5623,8 @@
               "timex": "2012",
               "Mod": "after",
               "type": "daterange",
-              "start": "2013-01-01"
+              "start": "2013-01-01",
+              "sourceEntity": "datetimerange"
             }
           ]
         }
@@ -5625,7 +5649,8 @@
               "timex": "2012",
               "Mod": "since",
               "type": "daterange",
-              "start": "2012-01-01"
+              "start": "2012-01-01",
+              "sourceEntity": "datetimerange"
             }
           ]
         }
@@ -5650,7 +5675,8 @@
               "timex": "2016",
               "Mod": "since",
               "type": "daterange",
-              "start": "2016-01-01"
+              "start": "2016-01-01",
+              "sourceEntity": "datetimerange"
             }
           ]
         }
@@ -5675,7 +5701,8 @@
               "timex": "2016-01-01",
               "Mod": "since",
               "type": "daterange",
-              "start": "2016-01-01"
+              "start": "2016-01-01",
+              "sourceEntity": "datetimepoint"
             }
           ]
         }
@@ -5700,7 +5727,8 @@
               "timex": "2016-01-01",
               "Mod": "since",
               "type": "daterange",
-              "start": "2016-01-01"
+              "start": "2016-01-01",
+              "sourceEntity": "datetimepoint"
             }
           ]
         }
@@ -5725,7 +5753,8 @@
             {
               "timex": "2016-01-01",
               "type": "date",
-              "value": "2016-01-01"
+              "value": "2016-01-01",
+              "sourceEntity": "datetimepoint"
             }
           ]
         }
@@ -5765,7 +5794,8 @@
               "timex": "T18",
               "Mod": "after",
               "type": "timerange",
-              "start": "18:00:00"
+              "start": "18:00:00",
+              "sourceEntity": "datetimepoint"
             }
           ]
         }
@@ -5814,7 +5844,8 @@
               "timex": "2018",
               "Mod": "since",
               "type": "daterange",
-              "start": "2018-01-01"
+              "start": "2018-01-01",
+              "sourceEntity": "datetimerange"
             }
           ]
         }
@@ -5855,7 +5886,8 @@
               "timex": "2020",
               "Mod": "after",
               "type": "daterange",
-              "start": "2021-01-01"
+              "start": "2021-01-01",
+              "sourceEntity": "datetimerange"
             }
           ]
         }
@@ -5919,7 +5951,8 @@
               "timex": "T14:30",
               "Mod": "before",
               "type": "timerange",
-              "end": "14:30:00"
+              "end": "14:30:00",
+              "sourceEntity": "datetimepoint"
             }
           ]
         }
@@ -8270,7 +8303,7 @@
           ]
         }
       }
-    ] 
+    ]
   },
   {
     "Input": "Do you have any arrangement on Monday 21!",
@@ -8299,7 +8332,7 @@
           ]
         }
       }
-    ] 
+    ]
   },
   {
     "Input": "Do you have any arrangement on Monday 21!",
@@ -8323,7 +8356,7 @@
           ]
         }
       }
-    ] 
+    ]
   },
   {
     "Input": "Do you have any arrangement on Sunday 31!",
@@ -8352,7 +8385,7 @@
           ]
         }
       }
-    ] 
+    ]
   },
   {
     "Input": "Do you have any arrangement on Friday 31!",
@@ -8381,7 +8414,7 @@
           ]
         }
       }
-    ] 
+    ]
   },
   {
     "Input": "Do you have any plan after mid May?",
@@ -8401,18 +8434,20 @@
               "timex": "XXXX-05",
               "Mod": "after-mid",
               "type": "daterange",
-              "start": "2018-05-21"
+              "start": "2018-05-21",
+              "sourceEntity": "datetimerange"
             },
             {
               "timex": "XXXX-05",
               "Mod": "after-mid",
               "type": "daterange",
-              "start": "2019-05-21"
+              "start": "2019-05-21",
+              "sourceEntity": "datetimerange"
             }
           ]
         }
       }
-    ] 
+    ]
   },
   {
     "Input": "What happened before early September",
@@ -8432,18 +8467,20 @@
               "timex": "XXXX-09",
               "Mod": "before-start",
               "type": "daterange",
-              "end": "2018-09-01"
+              "end": "2018-09-01",
+              "sourceEntity": "datetimerange"
             },
             {
               "timex": "XXXX-09",
               "Mod": "before-start",
               "type": "daterange",
-              "end": "2019-09-01"
+              "end": "2019-09-01",
+              "sourceEntity": "datetimerange"
             }
           ]
         }
       }
-    ] 
+    ]
   },
   {
     "Input": "What happened since late July?",
@@ -8463,18 +8500,20 @@
               "timex": "XXXX-07",
               "Mod": "since-end",
               "type": "daterange",
-              "start": "2018-07-16"
+              "start": "2018-07-16",
+              "sourceEntity": "datetimerange"
             },
             {
               "timex": "XXXX-07",
               "Mod": "since-end",
               "type": "daterange",
-              "start": "2019-07-16"
+              "start": "2019-07-16",
+              "sourceEntity": "datetimerange"
             }
           ]
         }
       }
-    ] 
+    ]
   },
   {
     "Input": "Unless indicated, these views are the author's and may differ from those of X or others in the firm. We do not represent this is accurate or complete and we may not update this. Past performance is not indicative of future returns. You should not use e-mail to request or authorize any transaction. CONFIDENTIALITY NOTICE: All information in and with this message may be legally privileged, and is provided only for the use of the individuals(s) named above. This information may not be disseminated and we do not waive confidentiality by mis-transmission.",
@@ -8482,7 +8521,7 @@
       "ReferenceDateTime": "2019-01-24T12:00:00"
     },
     "NotSupported": "javascript, python",
-    "Results": [] 
+    "Results": []
   },
   {
     "Input": "Do you have any arrangement on this upcoming Friday?",
@@ -8506,7 +8545,7 @@
           ]
         }
       }
-    ] 
+    ]
   },
   {
     "Input": "Do you have any arrangement on next Friday?",
@@ -8530,7 +8569,7 @@
           ]
         }
       }
-    ] 
+    ]
   },
   {
     "Input": "Do you have any arrangement on following Friday?",
@@ -8554,7 +8593,7 @@
           ]
         }
       }
-    ] 
+    ]
   },
   {
     "Input": "Do you have any arrangement on coming Thursday?",
@@ -8578,7 +8617,7 @@
           ]
         }
       }
-    ] 
+    ]
   },
   {
     "Input": "Where were you on this past Wednesday?",
@@ -8602,7 +8641,7 @@
           ]
         }
       }
-    ] 
+    ]
   },
   {
     "Input": "Where were you on past Wednesday?",
@@ -8626,7 +8665,7 @@
           ]
         }
       }
-    ] 
+    ]
   },
   {
     "Input": "Where were you on previous Wednesday?",
@@ -8650,7 +8689,7 @@
           ]
         }
       }
-    ] 
+    ]
   },
   {
     "Input": "Where were you on last Wednesday?",
@@ -8674,7 +8713,7 @@
           ]
         }
       }
-    ] 
+    ]
   },
   {
     "Input": "Where were you the 12th between 0730-0930",
@@ -8717,7 +8756,7 @@
           ]
         }
       }
-    ] 
+    ]
   },
   {
     "Input": "Where were you between 0730-0930?",
@@ -8748,7 +8787,7 @@
           ]
         }
       }
-    ] 
+    ]
   },
   {
     "Input": "Where were you between 0930-0730?",
@@ -8779,7 +8818,7 @@
           ]
         }
       }
-    ] 
+    ]
   },
   {
     "Input": "Where were you between 730-930?",
@@ -8787,7 +8826,7 @@
       "ReferenceDateTime": "2019-01-31T00:00:00"
     },
     "NotSupported": "javascript, python, java",
-    "Results": [] 
+    "Results": []
   },
   {
     "Input": "Book a meeting for Monday 21 between 9:30 and 3:00 pm PST.",
@@ -8824,7 +8863,7 @@
           ]
         }
       }
-    ] 
+    ]
   },
   {
     "Input": "Will you be free Tuesday, Jan 15, 1:00 PM - 1:15 PM?",
@@ -8855,7 +8894,7 @@
           ]
         }
       }
-    ] 
+    ]
   },
   {
     "Input": "Your renewal will be January 18, 2019.  You have until then to add the paid support. @Cortana, Please schedule a Skype call at 3pm today.",
@@ -8894,7 +8933,7 @@
           ]
         }
       }
-    ] 
+    ]
   },
   {
     "Input": "book my time for swimming every Tuesday and Thursday 19:00 - 21:00.",
@@ -8939,7 +8978,7 @@
           ]
         }
       }
-    ] 
+    ]
   },
   {
     "Input": "Is this a valid date? 12-2015",
@@ -8964,7 +9003,7 @@
           ]
         }
       }
-    ] 
+    ]
   },
   {
     "Input": "Is this a valid date? 32-2015",
@@ -8972,7 +9011,7 @@
       "ReferenceDateTime": "2019-02-27T00:00:00"
     },
     "NotSupported": "javascript, java, python",
-    "Results": [] 
+    "Results": []
   },
   {
     "Input": "Is this a valid date? 32 - 2015",
@@ -8980,7 +9019,7 @@
       "ReferenceDateTime": "2019-02-27T00:00:00"
     },
     "NotSupported": "javascript, java, python",
-    "Results": [] 
+    "Results": []
   },
   {
     "Input": "Is this a valid date? 2015-12",
@@ -9005,7 +9044,7 @@
           ]
         }
       }
-    ] 
+    ]
   },
   {
     "Input": "Wed Oct 26 15:50:06 2016 is not a day in 2019.",
@@ -9068,7 +9107,7 @@
       "ReferenceDateTime": "2019-02-27T00:00:00"
     },
     "NotSupported": "javascript, java, python",
-    "Results": [] 
+    "Results": []
   },
   {
     "Input": "Is this a valid date? 2015 - 32",
@@ -9076,7 +9115,7 @@
       "ReferenceDateTime": "2019-02-27T00:00:00"
     },
     "NotSupported": "javascript, java, python",
-    "Results": [] 
+    "Results": []
   },
   {
     "Input": "Tel: +86 138-2010-2015",
@@ -9084,7 +9123,7 @@
       "ReferenceDateTime": "2019-02-27T00:00:00"
     },
     "NotSupported": "javascript, java, python",
-    "Results": [] 
+    "Results": []
   },
   {
     "Input": "Tel: +86 2010-2015-86",
@@ -9092,7 +9131,7 @@
       "ReferenceDateTime": "2019-02-27T00:00:00"
     },
     "NotSupported": "javascript, java, python",
-    "Results": [] 
+    "Results": []
   },
   {
     "Input": "Tel: 000 111 82-2100",
@@ -9100,7 +9139,7 @@
       "ReferenceDateTime": "2019-02-27T00:00:00"
     },
     "NotSupported": "javascript, java, python",
-    "Results": [] 
+    "Results": []
   },
   {
     "Input": "I'll be back at 9.am.",
@@ -9206,7 +9245,8 @@
               "timex": "T15",
               "Mod": "since",
               "type": "timerange",
-              "start": "15:00:00"
+              "start": "15:00:00",
+              "sourceEntity": "datetimepoint"
             }
           ]
         }
@@ -9231,13 +9271,15 @@
               "timex": "XXXX-WXX-1T15",
               "Mod": "since",
               "type": "datetimerange",
-              "start": "2019-04-15 15:00:00"
+              "start": "2019-04-15 15:00:00",
+              "sourceEntity": "datetimepoint"
             },
             {
               "timex": "XXXX-WXX-1T15",
               "Mod": "since",
               "type": "datetimerange",
-              "start": "2019-04-22 15:00:00"
+              "start": "2019-04-22 15:00:00",
+              "sourceEntity": "datetimepoint"
             }
           ]
         }
@@ -9776,7 +9818,8 @@
               "timex": "2020",
               "Mod": "after",
               "type": "daterange",
-              "start": "2021-01-01"
+              "start": "2021-01-01",
+              "sourceEntity": "datetimerange"
             }
           ]
         }

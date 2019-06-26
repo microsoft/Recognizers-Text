@@ -100,7 +100,8 @@
               "timex": "T20",
               "Mod": "after",
               "type": "timerange",
-              "start": "20:00:00"
+              "start": "20:00:00",
+              "sourceEntity": "datetimepoint"
             }
           ]
         },
@@ -124,7 +125,8 @@
               "timex": "T20",
               "Mod": "before",
               "type": "timerange",
-              "end": "20:00:00"
+              "end": "20:00:00",
+              "sourceEntity": "datetimepoint"
             }
           ]
         },
@@ -148,7 +150,8 @@
               "timex": "T20",
               "Mod": "since",
               "type": "timerange",
-              "start": "20:00:00"
+              "start": "20:00:00",
+              "sourceEntity": "datetimepoint"
             }
           ]
         },

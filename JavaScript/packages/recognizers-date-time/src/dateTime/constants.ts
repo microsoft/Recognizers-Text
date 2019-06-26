@@ -12,9 +12,13 @@ export class Constants {
     static readonly SYS_DATETIME_DURATION: string = "duration";
     static readonly SYS_DATETIME_SET: string = "set";
 
+    // SourceEntity Types
+    static readonly SYS_DATETIME_DATETIMEPOINT = "datetimepoint";
+
     // key
     static readonly TimexKey: string = "timex";
     static readonly ModKey: string = "Mod";
+    static readonly SourceEntity: string = "sourceEntity";
     static readonly TypeKey: string = "type";
     static readonly IsLunarKey: string = "isLunar";
     static readonly ResolveKey: string = "resolve";

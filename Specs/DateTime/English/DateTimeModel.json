@@ -547,7 +547,8 @@
               "timex": "2016-11-08",
               "Mod": "since",
               "type": "daterange",
-              "start": "2016-11-08"
+              "start": "2016-11-08",
+              "sourceEntity": "datetimepoint"
             }
           ]
         }
@@ -571,13 +572,15 @@
               "timex": "XXXX-08",
               "Mod": "since",
               "type": "daterange",
-              "start": "2016-08-01"
+              "start": "2016-08-01",
+              "sourceEntity": "datetimerange"
             },
             {
               "timex": "XXXX-08",
               "Mod": "since",
               "type": "daterange",
-              "start": "2017-08-01"
+              "start": "2017-08-01",
+              "sourceEntity": "datetimerange"
             }
           ]
         }
@@ -601,7 +604,8 @@
               "timex": "2016-08",
               "Mod": "since",
               "type": "daterange",
-              "start": "2016-08-01"
+              "start": "2016-08-01",
+              "sourceEntity": "datetimerange"
             }
           ]
         }
@@ -3851,7 +3855,8 @@
               "timex": "2010",
               "Mod": "before",
               "type": "daterange",
-              "end": "2010-01-01"
+              "end": "2010-01-01",
+              "sourceEntity": "datetimerange"
             }
           ]
         }
@@ -3867,7 +3872,8 @@
               "timex": "2018",
               "Mod": "after",
               "type": "daterange",
-              "start": "2019-01-01"
+              "start": "2019-01-01",
+              "sourceEntity": "datetimerange"
             }
           ]
         }
@@ -3892,7 +3898,8 @@
               "timex": "2010",
               "Mod": "after",
               "type": "daterange",
-              "start": "2011-01-01"
+              "start": "2011-01-01",
+              "sourceEntity": "datetimerange"
             }
           ]
         }
@@ -3908,7 +3915,8 @@
               "timex": "2018",
               "Mod": "before",
               "type": "daterange",
-              "end": "2018-01-01"
+              "end": "2018-01-01",
+              "sourceEntity": "datetimerange"
             }
           ]
         }
@@ -3924,7 +3932,8 @@
               "timex": "2000",
               "Mod": "before",
               "type": "daterange",
-              "end": "2000-01-01"
+              "end": "2000-01-01",
+              "sourceEntity": "datetimerange"
             }
           ]
         }
@@ -4344,7 +4353,8 @@
               "timex": "2018",
               "Mod": "after",
               "type": "daterange",
-              "start": "2019-01-01"
+              "start": "2019-01-01",
+              "sourceEntity": "datetimerange"
             }
           ]
         }
@@ -4369,7 +4379,8 @@
               "timex": "2018-02",
               "Mod": "after",
               "type": "daterange",
-              "start": "2018-03-01"
+              "start": "2018-03-01",
+              "sourceEntity": "datetimerange"
             }
           ]
         }
@@ -4394,13 +4405,15 @@
               "timex": "XXXX-02",
               "Mod": "after",
               "type": "daterange",
-              "start": "2018-03-01"
+              "start": "2018-03-01",
+              "sourceEntity": "datetimerange"
             },
             {
               "timex": "XXXX-02",
               "Mod": "after",
               "type": "daterange",
-              "start": "2019-03-01"
+              "start": "2019-03-01",
+              "sourceEntity": "datetimerange"
             }
           ]
         }
@@ -4590,13 +4603,15 @@
               "timex": "T02:00",
               "Mod": "after",
               "type": "timerange",
-              "start": "02:00:00"
+              "start": "02:00:00",
+              "sourceEntity": "datetimepoint"
             },
             {
               "timex": "T14:00",
               "Mod": "after",
               "type": "timerange",
-              "start": "14:00:00"
+              "start": "14:00:00",
+              "sourceEntity": "datetimepoint"
             }
           ]
         }
@@ -5767,13 +5782,15 @@
               "timex": "XXXX-07-04",
               "Mod": "before",
               "type": "daterange",
-              "end": "2018-07-04"
+              "end": "2018-07-04",
+              "sourceEntity": "datetimepoint"
             },
             {
               "timex": "XXXX-07-04",
               "Mod": "before",
               "type": "daterange",
-              "end": "2019-07-04"
+              "end": "2019-07-04",
+              "sourceEntity": "datetimepoint"
             }
           ]
         }
@@ -6272,7 +6289,8 @@
               "timex": "T07:00",
               "Mod": "since",
               "type": "timerange",
-              "start": "07:00:00"
+              "start": "07:00:00",
+              "sourceEntity": "datetimepoint"
             }
           ]
         }
@@ -6297,7 +6315,8 @@
               "timex": "T07:00",
               "Mod": "until",
               "type": "timerange",
-              "end": "07:00:00"
+              "end": "07:00:00",
+              "sourceEntity": "datetimepoint"
             }
           ]
         }
@@ -6322,7 +6341,8 @@
               "timex": "2018-08-18",
               "Mod": "until",
               "type": "daterange",
-              "end": "2018-08-18"
+              "end": "2018-08-18",
+              "sourceEntity": "datetimepoint"
             }
           ]
         }
@@ -6779,7 +6799,8 @@
               "timex": "(2019-01-01,2019-04-01,P3M)",
               "Mod": "since",
               "type": "daterange",
-              "start": "2019-01-01"
+              "start": "2019-01-01",
+              "sourceEntity": "datetimerange"
             }
           ]
         }
@@ -6804,7 +6825,8 @@
               "timex": "2012",
               "Mod": "after",
               "type": "daterange",
-              "start": "2013-01-01"
+              "start": "2013-01-01",
+              "sourceEntity": "datetimerange"
             }
           ]
         }
@@ -6829,7 +6851,8 @@
               "timex": "2012",
               "Mod": "since",
               "type": "daterange",
-              "start": "2012-01-01"
+              "start": "2012-01-01",
+              "sourceEntity": "datetimerange"
             }
           ]
         }
@@ -6854,7 +6877,8 @@
               "timex": "2016",
               "Mod": "since",
               "type": "daterange",
-              "start": "2016-01-01"
+              "start": "2016-01-01",
+              "sourceEntity": "datetimerange"
             }
           ]
         }
@@ -6879,7 +6903,8 @@
               "timex": "2016-01-01",
               "Mod": "since",
               "type": "daterange",
-              "start": "2016-01-01"
+              "start": "2016-01-01",
+              "sourceEntity": "datetimepoint"
             }
           ]
         }
@@ -6904,7 +6929,8 @@
               "timex": "2016-01-01",
               "Mod": "since",
               "type": "daterange",
-              "start": "2016-01-01"
+              "start": "2016-01-01",
+              "sourceEntity": "datetimepoint"
             }
           ]
         }
@@ -6929,7 +6955,8 @@
             {
               "timex": "2016-01-01",
               "type": "date",
-              "value": "2016-01-01"
+              "value": "2016-01-01",
+              "sourceEntity": "datetimepoint"
             }
           ]
         }
@@ -6969,7 +6996,8 @@
               "timex": "T18",
               "Mod": "after",
               "type": "timerange",
-              "start": "18:00:00"
+              "start": "18:00:00",
+              "sourceEntity": "datetimepoint"
             }
           ]
         }
@@ -7018,7 +7046,8 @@
               "timex": "2018",
               "Mod": "since",
               "type": "daterange",
-              "start": "2018-01-01"
+              "start": "2018-01-01",
+              "sourceEntity": "datetimerange"
             }
           ]
         }
@@ -7059,7 +7088,8 @@
               "timex": "2020",
               "Mod": "after",
               "type": "daterange",
-              "start": "2021-01-01"
+              "start": "2021-01-01",
+              "sourceEntity": "datetimerange"
             }
           ]
         }
@@ -7099,7 +7129,8 @@
               "timex": "T07:00",
               "Mod": "since",
               "type": "timerange",
-              "start": "07:00:00"
+              "start": "07:00:00",
+              "sourceEntity": "datetimepoint"
             }
           ]
         }
@@ -7124,7 +7155,8 @@
               "timex": "2018",
               "Mod": "after",
               "type": "daterange",
-              "start": "2019-01-01"
+              "start": "2019-01-01",
+              "sourceEntity": "datetimerange"
             }
           ]
         }
@@ -7188,7 +7220,8 @@
               "timex": "T14:30",
               "Mod": "before",
               "type": "timerange",
-              "end": "14:30:00"
+              "end": "14:30:00",
+              "sourceEntity": "datetimepoint"
             }
           ]
         }
@@ -9774,13 +9807,15 @@
               "timex": "XXXX-05",
               "Mod": "after-mid",
               "type": "daterange",
-              "start": "2018-05-21"
+              "start": "2018-05-21",
+              "sourceEntity": "datetimerange"
             },
             {
               "timex": "XXXX-05",
               "Mod": "after-mid",
               "type": "daterange",
-              "start": "2019-05-21"
+              "start": "2019-05-21",
+              "sourceEntity": "datetimerange"
             }
           ]
         }
@@ -9805,13 +9840,15 @@
               "timex": "XXXX-09",
               "Mod": "before-start",
               "type": "daterange",
-              "end": "2018-09-01"
+              "end": "2018-09-01",
+              "sourceEntity": "datetimerange"
             },
             {
               "timex": "XXXX-09",
               "Mod": "before-start",
               "type": "daterange",
-              "end": "2019-09-01"
+              "end": "2019-09-01",
+              "sourceEntity": "datetimerange"
             }
           ]
         }
@@ -9836,13 +9873,15 @@
               "timex": "XXXX-07",
               "Mod": "since-end",
               "type": "daterange",
-              "start": "2018-07-16"
+              "start": "2018-07-16",
+              "sourceEntity": "datetimerange"
             },
             {
               "timex": "XXXX-07",
               "Mod": "since-end",
               "type": "daterange",
-              "start": "2019-07-16"
+              "start": "2019-07-16",
+              "sourceEntity": "datetimerange"
             }
           ]
         }
@@ -10514,7 +10553,8 @@
               "timex": "2019",
               "Mod": "before",
               "type": "daterange",
-              "end": "2019-01-01"
+              "end": "2019-01-01",
+              "sourceEntity": "datetimerange"
             }
           ]
         }
@@ -10578,7 +10618,8 @@
               "timex": "T15",
               "Mod": "since",
               "type": "timerange",
-              "start": "15:00:00"
+              "start": "15:00:00",
+              "sourceEntity": "datetimepoint"
             }
           ]
         }
@@ -10603,13 +10644,15 @@
               "timex": "XXXX-WXX-1T15",
               "Mod": "since",
               "type": "datetimerange",
-              "start": "2019-04-15 15:00:00"
+              "start": "2019-04-15 15:00:00",
+              "sourceEntity": "datetimepoint"
             },
             {
               "timex": "XXXX-WXX-1T15",
               "Mod": "since",
               "type": "datetimerange",
-              "start": "2019-04-22 15:00:00"
+              "start": "2019-04-22 15:00:00",
+              "sourceEntity": "datetimepoint"
             }
           ]
         }
@@ -10762,13 +10805,15 @@
               "timex": "XXXX-01-07",
               "Mod": "after",
               "type": "daterange",
-              "start": "2019-01-07"
+              "start": "2019-01-07",
+              "sourceEntity": "datetimepoint"
             },
             {
               "timex": "XXXX-01-07",
               "Mod": "after",
               "type": "daterange",
-              "start": "2020-01-07"
+              "start": "2020-01-07",
+              "sourceEntity": "datetimepoint"
             }
           ]
         }
@@ -10792,13 +10837,15 @@
               "timex": "XXXX-01-07",
               "Mod": "after",
               "type": "daterange",
-              "start": "2019-01-07"
+              "start": "2019-01-07",
+              "sourceEntity": "datetimepoint"
             },
             {
               "timex": "XXXX-01-07",
               "Mod": "after",
               "type": "daterange",
-              "start": "2020-01-07"
+              "start": "2020-01-07",
+              "sourceEntity": "datetimepoint"
             }
           ]
         }
@@ -10900,13 +10947,15 @@
               "timex": "XXXX-01-07",
               "Mod": "after",
               "type": "daterange",
-              "start": "2019-01-07"
+              "start": "2019-01-07",
+              "sourceEntity": "datetimepoint"
             },
             {
               "timex": "XXXX-01-07",
               "Mod": "after",
               "type": "daterange",
-              "start": "2020-01-07"
+              "start": "2020-01-07",
+              "sourceEntity": "datetimepoint"
             }
           ]
         }
@@ -10930,13 +10979,15 @@
               "timex": "XXXX-01-07",
               "Mod": "after",
               "type": "daterange",
-              "start": "2019-01-07"
+              "start": "2019-01-07",
+              "sourceEntity": "datetimepoint"
             },
             {
               "timex": "XXXX-01-07",
               "Mod": "after",
               "type": "daterange",
-              "start": "2020-01-07"
+              "start": "2020-01-07",
+              "sourceEntity": "datetimepoint"
             }
           ]
         }
@@ -11557,7 +11608,8 @@
               "timex": "2020",
               "Mod": "after",
               "type": "daterange",
-              "start": "2021-01-01"
+              "start": "2021-01-01",
+              "sourceEntity": "datetimerange"
             }
           ]
         }

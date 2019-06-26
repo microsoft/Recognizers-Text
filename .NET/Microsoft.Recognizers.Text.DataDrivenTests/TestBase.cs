@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Diagnostics;
 using System.Linq;
 
@@ -107,7 +108,8 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 foreach (var value in expectedValues.Zip(actualValues, Tuple.Create))
                 {
                     Assert.AreEqual(value.Item1.Count, value.Item2.Count, GetMessage(TestSpec));
-                    CollectionAssert.AreEqual(value.Item1, value.Item2, GetMessage(TestSpec));
+                    CollectionAssert.AreEqual(value.Item1.OrderBy(o => o.Key).ToImmutableDictionary(),
+                        value.Item2.OrderBy(o => o.Key).ToImmutableDictionary(), GetMessage(TestSpec));
                 }
             }
         }
@@ -150,7 +152,8 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 foreach (var value in expectedValues.Zip(actualValues, Tuple.Create))
                 {
                     Assert.AreEqual(value.Item1.Count, value.Item2.Count, GetMessage(TestSpec));
-                    CollectionAssert.AreEqual(value.Item1, value.Item2, GetMessage(TestSpec));
+                    CollectionAssert.AreEqual(value.Item1.OrderBy(o => o.Key).ToImmutableDictionary(),
+                        value.Item2.OrderBy(o => o.Key).ToImmutableDictionary(), GetMessage(TestSpec));
                 }
             }
         }
@@ -262,10 +265,11 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                             expected.Value.ToString());
                     var expectedValues = expectedObj[ResolutionKey.ValueSet];
 
-                    foreach (var value in expectedValues.Zip(actualValues, Tuple.Create))
+                    foreach (var (item1, item2) in expectedValues.Zip(actualValues, Tuple.Create))
                     {
-                        Assert.AreEqual(value.Item1.Count, value.Item2.Count, GetMessage(TestSpec));
-                        CollectionAssert.AreEqual(value.Item1, value.Item2, GetMessage(TestSpec));
+                        Assert.AreEqual(item1.Count, item2.Count, GetMessage(TestSpec));
+                        CollectionAssert.AreEqual(item1.OrderBy(o => o.Key).ToImmutableDictionary(),
+                            item2.OrderBy(o => o.Key).ToImmutableDictionary(), GetMessage(TestSpec));
                     }
                 }
             }

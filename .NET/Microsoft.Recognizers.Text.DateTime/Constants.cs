@@ -17,6 +17,9 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string SYS_DATETIME_DATETIMEALT = "datetimealt";
         public const string SYS_DATETIME_TIMEZONE = "timezone";
 
+        // SourceEntity Types
+        public const string SYS_DATETIME_DATETIMEPOINT = "datetimepoint";
+
         // Model Name
         public const string MODEL_DATETIME = "datetime";
 

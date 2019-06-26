@@ -25,13 +25,13 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     if (mod.Equals(Constants.BEFORE_MOD, StringComparison.Ordinal))
                     {
-                        res.Add(DateTimeResolutionKey.END, resolutionDic[type]);
+                        res.Add(DateTimeResolutionKey.End, resolutionDic[type]);
                         return;
                     }
 
                     if (mod.Equals(Constants.AFTER_MOD, StringComparison.Ordinal))
                     {
-                        res.Add(DateTimeResolutionKey.START, resolutionDic[type]);
+                        res.Add(DateTimeResolutionKey.Start, resolutionDic[type]);
                         return;
                     }
                 }
@@ -60,36 +60,36 @@ namespace Microsoft.Recognizers.Text.DateTime
                 // For before mode, the start of the period should be the end the new period, no start
                 if (mod.Equals(Constants.BEFORE_MOD, StringComparison.Ordinal))
                 {
-                    res.Add(DateTimeResolutionKey.END, start);
+                    res.Add(DateTimeResolutionKey.End, start);
                     return;
                 }
 
                 // For after mode, the end of the period should be the start the new period, no end
                 if (mod.Equals(Constants.AFTER_MOD, StringComparison.Ordinal))
                 {
-                    res.Add(DateTimeResolutionKey.START, end);
+                    res.Add(DateTimeResolutionKey.Start, end);
                     return;
                 }
 
                 // For since mode, the start of the period should be the start the new period, no end
                 if (mod.Equals(Constants.SINCE_MOD, StringComparison.Ordinal))
                 {
-                    res.Add(DateTimeResolutionKey.START, start);
+                    res.Add(DateTimeResolutionKey.Start, start);
                     return;
                 }
 
                 // For until mode, the end of the period should be the end the new period, no start
                 if (mod.Equals(Constants.UNTIL_MOD, StringComparison.Ordinal))
                 {
-                    res.Add(DateTimeResolutionKey.END, start);
+                    res.Add(DateTimeResolutionKey.End, start);
                     return;
                 }
             }
 
             if (!string.IsNullOrEmpty(start) && !string.IsNullOrEmpty(end))
             {
-                res.Add(DateTimeResolutionKey.START, start);
-                res.Add(DateTimeResolutionKey.END, end);
+                res.Add(DateTimeResolutionKey.Start, start);
+                res.Add(DateTimeResolutionKey.End, end);
             }
         }
 
@@ -441,30 +441,30 @@ namespace Microsoft.Recognizers.Text.DateTime
                         resolutionPm[DateTimeResolutionKey.Timex] = DateTimeFormatUtil.AllStringToPm(timex);
                         break;
                     case Constants.SYS_DATETIME_TIMEPERIOD:
-                        if (resolution.ContainsKey(DateTimeResolutionKey.START))
+                        if (resolution.ContainsKey(DateTimeResolutionKey.Start))
                         {
-                            resolutionPm[DateTimeResolutionKey.START] = DateTimeFormatUtil.ToPm(resolution[DateTimeResolutionKey.START]);
+                            resolutionPm[DateTimeResolutionKey.Start] = DateTimeFormatUtil.ToPm(resolution[DateTimeResolutionKey.Start]);
                         }
 
-                        if (resolution.ContainsKey(DateTimeResolutionKey.END))
+                        if (resolution.ContainsKey(DateTimeResolutionKey.End))
                         {
-                            resolutionPm[DateTimeResolutionKey.END] = DateTimeFormatUtil.ToPm(resolution[DateTimeResolutionKey.END]);
+                            resolutionPm[DateTimeResolutionKey.End] = DateTimeFormatUtil.ToPm(resolution[DateTimeResolutionKey.End]);
                         }
 
                         resolutionPm[DateTimeResolutionKey.Timex] = DateTimeFormatUtil.AllStringToPm(timex);
                         break;
                     case Constants.SYS_DATETIME_DATETIMEPERIOD:
-                        splited = resolution[DateTimeResolutionKey.START].Split(' ');
-                        if (resolution.ContainsKey(DateTimeResolutionKey.START))
+                        splited = resolution[DateTimeResolutionKey.Start].Split(' ');
+                        if (resolution.ContainsKey(DateTimeResolutionKey.Start))
                         {
-                            resolutionPm[DateTimeResolutionKey.START] = splited[0] + " " + DateTimeFormatUtil.ToPm(splited[1]);
+                            resolutionPm[DateTimeResolutionKey.Start] = splited[0] + " " + DateTimeFormatUtil.ToPm(splited[1]);
                         }
 
-                        splited = resolution[DateTimeResolutionKey.END].Split(' ');
+                        splited = resolution[DateTimeResolutionKey.End].Split(' ');
 
-                        if (resolution.ContainsKey(DateTimeResolutionKey.END))
+                        if (resolution.ContainsKey(DateTimeResolutionKey.End))
                         {
-                            resolutionPm[DateTimeResolutionKey.END] = splited[0] + " " + DateTimeFormatUtil.ToPm(splited[1]);
+                            resolutionPm[DateTimeResolutionKey.End] = splited[0] + " " + DateTimeFormatUtil.ToPm(splited[1]);
                         }
 
                         resolutionPm[DateTimeResolutionKey.Timex] = DateTimeFormatUtil.AllStringToPm(timex);
