@@ -5,10 +5,12 @@ from datetime import datetime
 from recognizers_text.extractor import ExtractResult
 from recognizers_text.parser import Parser, ParseResult
 
+
 class DateTimeParseResult(ParseResult):
     def __init__(self, source: ExtractResult = None):
         super().__init__(source)
         self.timex_str: str = ''
+
 
 class DateTimeParser(Parser):
     @property
@@ -17,5 +19,5 @@ class DateTimeParser(Parser):
         raise NotImplementedError
 
     @abstractmethod
-    def parse(self, source: ExtractResult, reference: datetime = None) -> Optional[DateTimeParseResult]:#pylint: disable=W0221
+    def parse(self, source: ExtractResult, reference: datetime = None) -> Optional[DateTimeParseResult]:  # pylint: disable=W0221
         raise NotImplementedError

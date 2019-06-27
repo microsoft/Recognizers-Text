@@ -28,12 +28,14 @@ def get_suite_config(json_path):
     model, entity, options = ENTITY_PATTERN.search(filename).groups()
     if model == 'Merged' and entity == 'Parser':
         entity = f'{model}{entity}'
-    return {'recognizer': parts[2], 'model': model, 'entity': entity, 'options': options, 'language': parts[3]}
+    return {'recognizer': parts[2], 'model': model,
+            'entity': entity, 'options': options, 'language': parts[3]}
 
 
 def get_suite(json_path):
     print(json_path)
-    return {'specs': json.load(open(json_path, encoding='utf-8-sig')), 'config': get_suite_config(json_path)}
+    return {'specs': json.load(
+        open(json_path, encoding='utf-8-sig')), 'config': get_suite_config(json_path)}
 
 
 def get_all_specs():
@@ -52,7 +54,8 @@ def get_specs(recognizer, entity):
             if 'NotSupportedByDesign' in spec and 'python' in spec['NotSupportedByDesign']:
                 continue
             not_supported = 'NotSupported' in spec and 'python' in spec['NotSupported']
-            message = sp['config']['language'] + ' - ' + recognizer + ' - ' + sp['config']['model'] + entity
+            message = sp['config']['language'] + ' - ' + \
+                recognizer + ' - ' + sp['config']['model'] + entity
             ret_specs.append(pytest.param(
                 CULTURES[sp['config']['language']],
                 sp['config']['model'],

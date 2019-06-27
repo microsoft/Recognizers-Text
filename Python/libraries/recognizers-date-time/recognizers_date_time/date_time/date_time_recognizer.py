@@ -17,6 +17,7 @@ from .french.common_configs import FrenchCommonDateTimeParserConfiguration
 from .french.merged_extractor_config import FrenchMergedExtractorConfiguration
 from .french.merged_parser_config import FrenchMergedParserConfiguration
 
+
 class DateTimeRecognizer(Recognizer[DateTimeOptions]):
     def __init__(self, target_culture: str = None,
                  options: DateTimeOptions = DateTimeOptions.NONE,
@@ -27,7 +28,8 @@ class DateTimeRecognizer(Recognizer[DateTimeOptions]):
 
     def initialize_configuration(self):
         self.register_model('DateTimeModel', Culture.English, lambda options: DateTimeModel(
-            BaseMergedParser(EnglishMergedParserConfiguration(EnglishCommonDateTimeParserConfiguration()), options),
+            BaseMergedParser(EnglishMergedParserConfiguration(
+                EnglishCommonDateTimeParserConfiguration()), options),
             BaseMergedExtractor(EnglishMergedExtractorConfiguration(), options)
         ))
 
@@ -37,12 +39,14 @@ class DateTimeRecognizer(Recognizer[DateTimeOptions]):
         ))
 
         self.register_model('DateTimeModel', Culture.Spanish, lambda options: DateTimeModel(
-             BaseMergedParser(SpanishMergedParserConfiguration(SpanishCommonDateTimeParserConfiguration()), options),
-             BaseMergedExtractor(SpanishMergedExtractorConfiguration(), options)
+            BaseMergedParser(SpanishMergedParserConfiguration(
+                SpanishCommonDateTimeParserConfiguration()), options),
+            BaseMergedExtractor(SpanishMergedExtractorConfiguration(), options)
         ))
 
         self.register_model('DateTimeModel', Culture.French, lambda options: DateTimeModel(
-            BaseMergedParser(FrenchMergedParserConfiguration(FrenchCommonDateTimeParserConfiguration()), options),
+            BaseMergedParser(FrenchMergedParserConfiguration(
+                FrenchCommonDateTimeParserConfiguration()), options),
             BaseMergedExtractor(FrenchMergedExtractorConfiguration(), options)
         ))
 
@@ -53,6 +57,7 @@ class DateTimeRecognizer(Recognizer[DateTimeOptions]):
 
     def get_datetime_model(self, culture: str = None, fallback_to_default_culture: bool = True) -> Model:
         return self.get_model('DateTimeModel', culture, fallback_to_default_culture)
+
 
 def recognize_datetime(query: str, culture: str, options: DateTimeOptions = DateTimeOptions.NONE, reference: datetime = None, fallback_to_default_culture: bool = True) -> List[ModelResult]:
     recognizer = DateTimeRecognizer(culture, options)

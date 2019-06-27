@@ -9,6 +9,7 @@ from ..base_timeperiod import TimePeriodExtractorConfiguration, MatchedIndex
 from ..base_time import BaseTimeExtractor
 from .time_extractor_config import EnglishTimeExtractorConfiguration
 
+
 class EnglishTimePeriodExtractorConfiguration(TimePeriodExtractorConfiguration):
     @property
     def simple_cases_regex(self) -> List[Pattern]:
@@ -39,10 +40,14 @@ class EnglishTimePeriodExtractorConfiguration(TimePeriodExtractorConfiguration):
             RegExpUtility.get_safe_reg_exp(EnglishDateTime.PureNumFromTo),
             RegExpUtility.get_safe_reg_exp(EnglishDateTime.PureNumBetweenAnd)
         ]
-        self._till_regex: Pattern = RegExpUtility.get_safe_reg_exp(EnglishDateTime.TillRegex)
-        self._time_of_day_regex: Pattern = RegExpUtility.get_safe_reg_exp(EnglishDateTime.TimeOfDayRegex)
-        self._general_ending_regex: Pattern = RegExpUtility.get_safe_reg_exp(EnglishDateTime.GeneralEndingRegex)
-        self._single_time_extractor = BaseTimeExtractor(EnglishTimeExtractorConfiguration())
+        self._till_regex: Pattern = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.TillRegex)
+        self._time_of_day_regex: Pattern = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.TimeOfDayRegex)
+        self._general_ending_regex: Pattern = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.GeneralEndingRegex)
+        self._single_time_extractor = BaseTimeExtractor(
+            EnglishTimeExtractorConfiguration())
         self._integer_extractor = EnglishIntegerExtractor()
 
     def get_from_token_index(self, source: str) -> MatchedIndex:

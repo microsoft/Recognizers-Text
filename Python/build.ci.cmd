@@ -40,6 +40,9 @@ pip install -e .\libraries\recognizers-sequence\
 
 pip install -e .\libraries\recognizers-suite\
 
+ECHO # Validating PEP8 style
+call flake8 . --config=.\.flake8
+
 pip install -r .\tests\requirements.txt
 
 pytest --tb=line

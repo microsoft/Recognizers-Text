@@ -7,6 +7,7 @@ from recognizers_number.culture import CultureInfo
 from recognizers_number.number.parsers import NumberParserConfiguration
 from recognizers_number.resources.english_numeric import EnglishNumeric
 
+
 class EnglishNumberParserConfiguration(NumberParserConfiguration):
     @property
     def cardinal_number_map(self) -> Dict[str, int]:
@@ -96,9 +97,12 @@ class EnglishNumberParserConfiguration(NumberParserConfiguration):
         self._cardinal_number_map = EnglishNumeric.CardinalNumberMap
         self._ordinal_number_map = EnglishNumeric.OrdinalNumberMap
         self._round_number_map = EnglishNumeric.RoundNumberMap
-        self._negative_number_sign_regex = RegExpUtility.get_safe_reg_exp(EnglishNumeric.NegativeNumberSignRegex)
-        self._half_a_dozen_regex = RegExpUtility.get_safe_reg_exp(EnglishNumeric.HalfADozenRegex)
-        self._digital_number_regex = RegExpUtility.get_safe_reg_exp(EnglishNumeric.DigitalNumberRegex)
+        self._negative_number_sign_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishNumeric.NegativeNumberSignRegex)
+        self._half_a_dozen_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishNumeric.HalfADozenRegex)
+        self._digital_number_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishNumeric.DigitalNumberRegex)
 
     def normalize_token_set(self, tokens: List[str], context: ParseResult) -> List[str]:
         frac_words: List[str] = list()
@@ -117,7 +121,8 @@ class EnglishNumberParserConfiguration(NumberParserConfiguration):
                     frac_words.append(tokens[i])
                     frac_words.append(tokens[i + 2])
                 else:
-                    frac_words.append(tokens[i] + tokens[i + 1] + tokens[i + 2])
+                    frac_words.append(
+                        tokens[i] + tokens[i + 1] + tokens[i + 2])
                 i += 2
             else:
                 frac_words.append(tokens[i])

@@ -49,8 +49,10 @@ class PortugueseNumberWithUnitExtractorConfiguration(NumberWithUnitExtractorConf
         self._build_prefix = PortugueseNumericWithUnit.BuildPrefix
         self._build_suffix = PortugueseNumericWithUnit.BuildSuffix
         self._connector_token = PortugueseNumericWithUnit.ConnectorToken
-        self._compound_unit_connector_regex = RegExpUtility.get_safe_reg_exp(PortugueseNumericWithUnit.CompoundUnitConnectorRegex)
-        self._pm_non_unit_regex = RegExpUtility.get_safe_reg_exp(BaseUnits.PmNonUnitRegex)
+        self._compound_unit_connector_regex = RegExpUtility.get_safe_reg_exp(
+            PortugueseNumericWithUnit.CompoundUnitConnectorRegex)
+        self._pm_non_unit_regex = RegExpUtility.get_safe_reg_exp(
+            BaseUnits.PmNonUnitRegex)
 
 
 # pylint: enable=abstract-method
@@ -160,4 +162,5 @@ class PortugueseTemperatureExtractorConfiguration(PortugueseNumberWithUnitExtrac
         self._suffix_list = PortugueseNumericWithUnit.TemperatureSuffixList
         self._prefix_list = dict()
         self._ambiguous_unit_list = list()
-        self._ambiguous_unit_number_multiplier_regex = RegExpUtility.get_safe_reg_exp(BaseUnits.AmbiguousUnitNumberMultiplierRegex)
+        self._ambiguous_unit_number_multiplier_regex = RegExpUtility.get_safe_reg_exp(
+            BaseUnits.AmbiguousUnitNumberMultiplierRegex)

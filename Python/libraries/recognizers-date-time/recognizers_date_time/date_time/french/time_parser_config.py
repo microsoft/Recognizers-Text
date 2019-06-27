@@ -7,6 +7,7 @@ from ..base_time import TimeParserConfiguration, AdjustParams
 from ..base_configs import BaseDateParserConfiguration, DateTimeUtilityConfiguration
 from .time_extractor_config import FrenchTimeExtractorConfiguration
 
+
 class FrenchTimeParserConfiguration(TimeParserConfiguration):
     @property
     def time_token_prefix(self) -> str:
@@ -30,10 +31,14 @@ class FrenchTimeParserConfiguration(TimeParserConfiguration):
 
     def __init__(self, config: BaseDateParserConfiguration):
         self._time_token_prefix: str = FrenchDateTime.TimeTokenPrefix
-        self._at_regex: Pattern = RegExpUtility.get_safe_reg_exp(FrenchDateTime.AtRegex)
-        self._time_regexes: List[Pattern] = FrenchTimeExtractorConfiguration.get_time_regex_list()
-        self.less_than_one_hour = RegExpUtility.get_safe_reg_exp(FrenchDateTime.LessThanOneHour)
-        self.time_suffix = RegExpUtility.get_safe_reg_exp(FrenchDateTime.TimeSuffix)
+        self._at_regex: Pattern = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.AtRegex)
+        self._time_regexes: List[Pattern] = FrenchTimeExtractorConfiguration.get_time_regex_list(
+        )
+        self.less_than_one_hour = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.LessThanOneHour)
+        self.time_suffix = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.TimeSuffix)
 
         self._utility_configuration = config.utility_configuration
         self._numbers: Dict[str, int] = config.numbers
@@ -55,7 +60,8 @@ class FrenchTimeParserConfiguration(TimeParserConfiguration):
                 if min_str:
                     delta_min = int(min_str)
                 else:
-                    min_str = RegExpUtility.get_group(match, 'deltaminnum').lower()
+                    min_str = RegExpUtility.get_group(
+                        match, 'deltaminnum').lower()
                     delta_min = self.numbers.get(min_str)
 
         if trimmed_prefix.endswith('à'):

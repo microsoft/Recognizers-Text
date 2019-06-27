@@ -8,6 +8,7 @@ from ..base_dateperiod import BaseDatePeriodExtractor
 from ..utilities import merge_all_tokens, Token
 from .dateperiod_extractor_config import ChineseDatePeriodExtractorConfiguration
 
+
 class ChineseDatePeriodExtractor(BaseDatePeriodExtractor):
     def __init__(self):
         super().__init__(ChineseDatePeriodExtractorConfiguration())
@@ -31,10 +32,12 @@ class ChineseDatePeriodExtractor(BaseDatePeriodExtractor):
 
         for er in self.config.integer_extractor.extract(source):
             after_str = source[er.start + er.length:]
-            followed_unit_match = regex.search(self.config.followed_unit, after_str)
+            followed_unit_match = regex.search(
+                self.config.followed_unit, after_str)
 
             if followed_unit_match and followed_unit_match.start() == 0:
-                durations.append(Token(er.start, er.start + er.length + len(followed_unit_match.group())))
+                durations.append(Token(er.start, er.start +
+                                       er.length + len(followed_unit_match.group())))
 
         for match in regex.finditer(self.config.number_combined_with_unit, source):
             durations.append(Token(match.start(), match.end()))

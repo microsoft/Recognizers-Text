@@ -60,7 +60,7 @@ class SpanishCardinalExtractor(BaseNumberExtractor):
 class SpanishIntegerExtractor(BaseNumberExtractor):
     @property
     def regexes(self) -> List[
-        NamedTuple('re_val', [('re', Pattern), ('val', str)])]:
+            NamedTuple('re_val', [('re', Pattern), ('val', str)])]:
         return self.__regexes
 
     @property
@@ -105,7 +105,7 @@ class SpanishIntegerExtractor(BaseNumberExtractor):
 class SpanishDoubleExtractor(BaseNumberExtractor):
     @property
     def regexes(self) -> List[
-        NamedTuple('re_val', [('re', Pattern), ('val', str)])]:
+            NamedTuple('re_val', [('re', Pattern), ('val', str)])]:
         return self.__regexes
 
     @property
@@ -150,7 +150,7 @@ class SpanishDoubleExtractor(BaseNumberExtractor):
 class SpanishFractionExtractor(BaseNumberExtractor):
     @property
     def regexes(self) -> List[
-        NamedTuple('re_val', [('re', Pattern), ('val', str)])]:
+            NamedTuple('re_val', [('re', Pattern), ('val', str)])]:
         return self.__regexes
 
     @property
@@ -180,7 +180,7 @@ class SpanishFractionExtractor(BaseNumberExtractor):
 class SpanishOrdinalExtractor(BaseNumberExtractor):
     @property
     def regexes(self) -> List[
-        NamedTuple('re_val', [('re', Pattern), ('val', str)])]:
+            NamedTuple('re_val', [('re', Pattern), ('val', str)])]:
         return self.__regexes
 
     @property

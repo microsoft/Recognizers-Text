@@ -18,6 +18,7 @@ from ..base_set import BaseSetParser
 from ..base_merged import MergedParserConfiguration
 from ...resources.french_date_time import FrenchDateTime
 
+
 class FrenchMergedParserConfiguration(FrenchCommonDateTimeParserConfiguration, MergedParserConfiguration):
     @property
     def before_regex(self) -> Pattern:
@@ -70,11 +71,17 @@ class FrenchMergedParserConfiguration(FrenchCommonDateTimeParserConfiguration, M
     def __init__(self, config):
         FrenchCommonDateTimeParserConfiguration.__init__(self)
 
-        self._before_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.BeforeRegex)
-        self._after_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.AfterRegex)
-        self._since_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.SinceRegex)
+        self._before_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.BeforeRegex)
+        self._after_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.AfterRegex)
+        self._since_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.SinceRegex)
 
-        self._date_period_parser = BaseDatePeriodParser(FrenchDatePeriodParserConfiguration(self))
-        self._time_period_parser = BaseTimePeriodParser(FrenchTimePeriodParserConfiguration(self))
+        self._date_period_parser = BaseDatePeriodParser(
+            FrenchDatePeriodParserConfiguration(self))
+        self._time_period_parser = BaseTimePeriodParser(
+            FrenchTimePeriodParserConfiguration(self))
         self._set_parser = BaseSetParser(FrenchSetParserConfiguration(config))
-        self._holiday_parser = BaseHolidayParser(FrenchHolidayParserConfiguration(config))
+        self._holiday_parser = BaseHolidayParser(
+            FrenchHolidayParserConfiguration(config))

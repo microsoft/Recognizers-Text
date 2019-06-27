@@ -30,7 +30,8 @@ class AbstractNumberWithUnitModel(Model):
         extraction_results = []
         for item in self.extractor_parser:
             extract_results = item.extractor.extract(query)
-            parse_results = [r for r in [item.parser.parse(r) for r in extract_results] if not r.value is None]
+            parse_results = [r for r in [item.parser.parse(
+                r) for r in extract_results] if not r.value is None]
 
             for parse_result in parse_results:
                 model_result = ModelResult()
@@ -38,9 +39,11 @@ class AbstractNumberWithUnitModel(Model):
                 model_result.end = parse_result.start + parse_result.length - 1
                 model_result.text = parse_result.text
                 model_result.type_name = self.model_type_name
-                model_result.resolution = self.get_resolution(parse_result.value)
+                model_result.resolution = self.get_resolution(
+                    parse_result.value)
 
-                b_add = not [x for x in extraction_results if x.start == model_result.start and x.end == model_result.end]
+                b_add = not [x for x in extraction_results if x.start ==
+                             model_result.start and x.end == model_result.end]
 
                 if b_add:
                     extraction_results.append(model_result)

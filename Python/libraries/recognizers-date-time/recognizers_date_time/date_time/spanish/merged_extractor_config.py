@@ -25,6 +25,7 @@ from .datetimeperiod_extractor_config import SpanishDateTimePeriodExtractorConfi
 from .set_extractor_config import SpanishSetExtractorConfiguration
 from .holiday_extractor_config import SpanishHolidayExtractorConfiguration
 
+
 class SpanishMergedExtractorConfiguration(MergedExtractorConfiguration):
     @property
     def date_extractor(self) -> DateTimeExtractor:
@@ -99,22 +100,38 @@ class SpanishMergedExtractorConfiguration(MergedExtractorConfiguration):
         return self._filter_word_regex_list
 
     def __init__(self):
-        self._before_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.BeforeRegex)
-        self._after_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.AfterRegex)
-        self._since_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.SinceRegex)
-        self._from_to_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.FromToRegex)
-        self._single_ambiguous_month_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.SingleAmbiguousMonthRegex)
-        self._preposition_suffix_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.PrepositionSuffixRegex)
-        self._number_ending_pattern = RegExpUtility.get_safe_reg_exp(SpanishDateTime.NumberEndingPattern)
+        self._before_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.BeforeRegex)
+        self._after_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.AfterRegex)
+        self._since_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.SinceRegex)
+        self._from_to_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.FromToRegex)
+        self._single_ambiguous_month_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.SingleAmbiguousMonthRegex)
+        self._preposition_suffix_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.PrepositionSuffixRegex)
+        self._number_ending_pattern = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.NumberEndingPattern)
 
-        self._date_extractor = BaseDateExtractor(SpanishDateExtractorConfiguration())
-        self._time_extractor = BaseTimeExtractor(SpanishTimeExtractorConfiguration())
-        self._date_time_extractor = BaseDateTimeExtractor(SpanishDateTimeExtractorConfiguration())
-        self._date_period_extractor = BaseDatePeriodExtractor(SpanishDatePeriodExtractorConfiguration())
-        self._time_period_extractor = BaseTimePeriodExtractor(SpanishTimePeriodExtractorConfiguration())
-        self._date_time_period_extractor = BaseDateTimePeriodExtractor(SpanishDateTimePeriodExtractorConfiguration())
-        self._duration_extractor = BaseDurationExtractor(SpanishDurationExtractorConfiguration())
-        self._set_extractor = BaseSetExtractor(SpanishSetExtractorConfiguration())
-        self._holiday_extractor = BaseHolidayExtractor(SpanishHolidayExtractorConfiguration())
+        self._date_extractor = BaseDateExtractor(
+            SpanishDateExtractorConfiguration())
+        self._time_extractor = BaseTimeExtractor(
+            SpanishTimeExtractorConfiguration())
+        self._date_time_extractor = BaseDateTimeExtractor(
+            SpanishDateTimeExtractorConfiguration())
+        self._date_period_extractor = BaseDatePeriodExtractor(
+            SpanishDatePeriodExtractorConfiguration())
+        self._time_period_extractor = BaseTimePeriodExtractor(
+            SpanishTimePeriodExtractorConfiguration())
+        self._date_time_period_extractor = BaseDateTimePeriodExtractor(
+            SpanishDateTimePeriodExtractorConfiguration())
+        self._duration_extractor = BaseDurationExtractor(
+            SpanishDurationExtractorConfiguration())
+        self._set_extractor = BaseSetExtractor(
+            SpanishSetExtractorConfiguration())
+        self._holiday_extractor = BaseHolidayExtractor(
+            SpanishHolidayExtractorConfiguration())
         self._integer_extractor = SpanishIntegerExtractor()
         self._filter_word_regex_list = []

@@ -4,8 +4,8 @@ repos:
     rev: v1.2.3
     hooks:
     - id: flake8
-
--   repo: https://github.com/pre-commit/mirrors-autopep8
-    rev: master
-    hooks:
-    - id: autopep8
+#
+#-   repo: https://github.com/pre-commit/mirrors-autopep8
+#    rev: master
+#    hooks:
+#    - id: autopep8
