@@ -4,9 +4,9 @@ repos:
     rev: v1.2.3
     hooks:
     - id: flake8
-      args: ['--config=.flake8', '--ignore=E501,F403,W504,F405,F401,E711,W503,E265,F811,E714,F841,E226,E713,F632,E722,F821']
-#
-#-   repo: https://github.com/pre-commit/mirrors-autopep8
-#    rev: master
-#    hooks:
-#    - id: autopep8
+      args: ['--config=Python/.flake8']
+      
+-   repo: https://github.com/pre-commit/mirrors-autopep8
+    rev: master
+    hooks:
+    - id: autopep8
