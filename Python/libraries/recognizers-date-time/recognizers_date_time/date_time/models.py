@@ -23,16 +23,19 @@ class DateTimeModel(Model):
 
     def parse(self, query: str, reference: datetime = None) -> List[ModelResult]:  # pylint: disable=W0221
         query = QueryProcessor.preprocess(query)
-
-        extract_results = self.extractor.extract(query, reference)
         parser_dates = []
 
-        for result in extract_results:
-            parse_result = self.parser.parse(result, reference)
-            if isinstance(parse_result.value, list):
-                parser_dates += parse_result.value
-            else:
-                parser_dates.append(parse_result)
+        try:
+            extract_results = self.extractor.extract(query, reference)
+
+            for result in extract_results:
+                parse_result = self.parser.parse(result, reference)
+                if isinstance(parse_result.value, list):
+                    parser_dates += parse_result.value
+                else:
+                    parser_dates.append(parse_result)
+        except Exception:
+            pass
 
         return [self.__to_model_result(x) for x in parser_dates]
 

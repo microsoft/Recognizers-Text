@@ -12,10 +12,12 @@ export abstract class ChoiceModel implements IModel {
     }
 
     parse(source: string): ModelResult[] {
-        let extractResults = this.extractor.extract(source);
-        let parseResults = extractResults.map(r => this.parser.parse(r));
+        try {
+            let extractResults = this.extractor.extract(source);
+            let parseResults = extractResults.map(r => this.parser.parse(r));
 
-        return parseResults
+            // o can be null, add this part to try.
+            return parseResults
             .map(o => o as ParseResult)
             .map(o => ({
                 start: o.start,
@@ -24,6 +26,10 @@ export abstract class ChoiceModel implements IModel {
                 text: o.text,
                 typeName: this.modelTypeName
             }));
+        }
+        catch(err) {
+            return null;
+        }
     }
 
     protected abstract getResolution(data: any): any;

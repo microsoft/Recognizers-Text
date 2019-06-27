@@ -75,18 +75,25 @@ export abstract class AbstractNumberModel implements IModel {
     parse(query: string): ModelResult[] {
         query = QueryProcessor.preProcess(query, true);
 
-        let extractResults = this.extractor.extract(query);
-        let parseNums = extractResults.map(r => this.parser.parse(r));
+        try {
+            let extractResults = this.extractor.extract(query);
+            let parseNums = extractResults.map(r => this.parser.parse(r));
 
-        return parseNums
-            .map(o => o as ParseResult)
-            .map(o => ({
-                start: o.start,
-                end: o.start + o.length - 1,
-                resolution: { value: o.resolutionStr },
-                text: o.text,
-                typeName: this.modelTypeName
-            }));
+            return parseNums
+                .map(o => o as ParseResult)
+                .map(o => ({
+                    start: o.start,
+                    end: o.start + o.length - 1,
+                    resolution: { value: o.resolutionStr },
+                    text: o.text,
+                    typeName: this.modelTypeName
+                }));
+        }
+        catch(err) {
+            // Exceptions in result process should not affect other extracted entities.
+            // No result.
+            return null;
+        }
     }
 }
 

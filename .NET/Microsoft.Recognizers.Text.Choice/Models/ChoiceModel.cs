@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Microsoft.Recognizers.Text.Choice
@@ -19,17 +20,25 @@ namespace Microsoft.Recognizers.Text.Choice
 
         public List<ModelResult> Parse(string query)
         {
-            var extractResults = Extractor.Extract(query);
-            var parseResults = extractResults.Select(r => Parser.Parse(r));
-
-            return parseResults.Select(pr => new ModelResult()
+            try
             {
-                Start = pr.Start.Value,
-                End = pr.Start.Value + pr.Length.Value - 1,
-                Resolution = GetResolution(pr),
-                Text = pr.Text,
-                TypeName = ModelTypeName,
-            }).ToList();
+                var extractResults = Extractor.Extract(query);
+                var parseResults = extractResults.Select(r => Parser.Parse(r));
+
+                // o can be null, add this part to try.
+                return parseResults.Select(pr => new ModelResult()
+                {
+                    Start = pr.Start.Value,
+                    End = pr.Start.Value + pr.Length.Value - 1,
+                    Resolution = GetResolution(pr),
+                    Text = pr.Text,
+                    TypeName = ModelTypeName,
+                }).ToList();
+            }
+            catch (Exception)
+            {
+                return null;
+            }
         }
 
         protected abstract SortedDictionary<string, object> GetResolution(ParseResult parseResult);
