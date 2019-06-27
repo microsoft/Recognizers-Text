@@ -14,7 +14,7 @@ ZeroToNineIntegerRegex: !simpleRegex
 TwoToNineIntegerRegex: !simpleRegex
   def: (due?|tre?|quattro?|cinque?|sei|sette?|otto?|nove?)
 NegativeNumberTermsRegex: !simpleRegex
-  def: (meno\s+)
+  def: (?<negTerm>meno\s+)
 NegativeNumberSignRegex: !nestedRegex
   def: ^{NegativeNumberTermsRegex}.*
   references: [ NegativeNumberTermsRegex ]

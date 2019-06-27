@@ -15,7 +15,9 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             AroundRegex = GermanMergedExtractorConfiguration.AroundRegex;
             SuffixAfter = GermanMergedExtractorConfiguration.SuffixAfterRegex;
             YearRegex = GermanDatePeriodExtractorConfiguration.YearRegex;
+
             SuperfluousWordMatcher = GermanMergedExtractorConfiguration.SuperfluousWordMatcher;
+
             DatePeriodParser = new BaseDatePeriodParser(new GermanDatePeriodParserConfiguration(this));
             TimePeriodParser = new BaseTimePeriodParser(new GermanTimePeriodParserConfiguration(this));
             DateTimePeriodParser = new BaseDateTimePeriodParser(new GermanDateTimePeriodParserConfiguration(this));

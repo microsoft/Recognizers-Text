@@ -8,6 +8,7 @@ namespace Microsoft.Recognizers.Text.Number.Italian
 {
     public class NumberExtractor : BaseNumberExtractor
     {
+
         private static readonly ConcurrentDictionary<(NumberMode, NumberOptions), NumberExtractor> Instances =
             new ConcurrentDictionary<(NumberMode, NumberOptions), NumberExtractor>();
 

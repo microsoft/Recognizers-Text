@@ -25,9 +25,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         private DateTimeResolutionResult ParseIsh(string text, DateObject referenceTime)
         {
             var ret = new DateTimeResolutionResult();
-            var lowerText = text.ToLowerInvariant();
 
-            var match = FrenchTimeExtractorConfiguration.IshRegex.MatchExact(lowerText, trim: true);
+            var match = FrenchTimeExtractorConfiguration.IshRegex.MatchExact(text, trim: true);
 
             if (match.Success)
             {

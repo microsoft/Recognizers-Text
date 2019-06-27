@@ -11,16 +11,20 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             CardinalExtractor = config.CardinalExtractor;
             NumberParser = config.NumberParser;
             DurationExtractor = new BaseDurationExtractor(new PortugueseDurationExtractorConfiguration(this), false);
+
             NumberCombinedWithUnit = PortugueseDurationExtractorConfiguration.NumberCombinedWithUnit;
+
             AnUnitRegex = PortugueseDurationExtractorConfiguration.AnUnitRegex;
             DuringRegex = PortugueseDurationExtractorConfiguration.DuringRegex;
             AllDateUnitRegex = PortugueseDurationExtractorConfiguration.AllRegex;
             HalfDateUnitRegex = PortugueseDurationExtractorConfiguration.HalfRegex;
             SuffixAndRegex = PortugueseDurationExtractorConfiguration.SuffixAndRegex;
+
             UnitMap = config.UnitMap;
             UnitValueMap = config.UnitValueMap;
             DoubleNumbers = config.DoubleNumbers;
             FollowedUnit = PortugueseDurationExtractorConfiguration.FollowedUnit;
+
             ConjunctionRegex = PortugueseDurationExtractorConfiguration.ConjunctionRegex;
             InexactNumberRegex = PortugueseDurationExtractorConfiguration.InexactNumberRegex;
             InexactNumberUnitRegex = PortugueseDurationExtractorConfiguration.InexactNumberUnitRegex;

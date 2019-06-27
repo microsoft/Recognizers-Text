@@ -7,13 +7,17 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Dutch
 {
     public class CurrencyExtractorConfiguration : DutchNumberWithUnitExtractorConfiguration
     {
-        public static readonly ImmutableDictionary<string, string> CurrencySuffixList = NumbersWithUnitDefinitions.CurrencySuffixList.ToImmutableDictionary();
+        public static readonly ImmutableDictionary<string, string> CurrencySuffixList =
+            NumbersWithUnitDefinitions.CurrencySuffixList.ToImmutableDictionary();
 
-        public static readonly ImmutableDictionary<string, string> CurrencyPrefixList = NumbersWithUnitDefinitions.CurrencyPrefixList.ToImmutableDictionary();
+        public static readonly ImmutableDictionary<string, string> CurrencyPrefixList =
+            NumbersWithUnitDefinitions.CurrencyPrefixList.ToImmutableDictionary();
 
-        public static readonly ImmutableDictionary<string, string> FractionalUnitNameToCodeMap = NumbersWithUnitDefinitions.FractionalUnitNameToCodeMap.ToImmutableDictionary();
+        public static readonly ImmutableDictionary<string, string> FractionalUnitNameToCodeMap =
+            NumbersWithUnitDefinitions.FractionalUnitNameToCodeMap.ToImmutableDictionary();
 
-        private static readonly ImmutableList<string> AmbiguousValues = NumbersWithUnitDefinitions.AmbiguousCurrencyUnitList.ToImmutableList();
+        private static readonly ImmutableList<string> AmbiguousValues =
+            NumbersWithUnitDefinitions.AmbiguousCurrencyUnitList.ToImmutableList();
 
         public CurrencyExtractorConfiguration()
             : this(new CultureInfo(Culture.Dutch))

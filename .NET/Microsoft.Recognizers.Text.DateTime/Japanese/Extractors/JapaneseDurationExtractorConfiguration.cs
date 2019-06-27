@@ -17,13 +17,17 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         WithNumber,
     }
 
-    public class JapaneseDurationExtractorConfiguration : JapaneseBaseDateTimeExtractorConfiguration<DurationType>
+    public class JapaneseDurationExtractorConfiguration :
+        JapaneseBaseDateTimeExtractorConfiguration<DurationType>
     {
+
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
         private static readonly IExtractor InternalExtractor = new NumberWithUnitExtractor(new DurationExtractorConfiguration());
 
-        private static readonly Regex YearRegex = new Regex(DateTimeDefinitions.DurationYearRegex, RegexOptions.Singleline);
+        private static readonly Regex YearRegex = new Regex(DateTimeDefinitions.DurationYearRegex, RegexFlags);
 
-        private static readonly Regex HalfSuffixRegex = new Regex(DateTimeDefinitions.DurationHalfSuffixRegex, RegexOptions.Singleline);
+        private static readonly Regex HalfSuffixRegex = new Regex(DateTimeDefinitions.DurationHalfSuffixRegex, RegexFlags);
 
         internal override ImmutableDictionary<Regex, DurationType> Regexes { get; }
 
@@ -63,10 +67,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
         internal class DurationExtractorConfiguration : JapaneseNumberWithUnitExtractorConfiguration
         {
-            public static readonly ImmutableDictionary<string, string> DurationSuffixList = DateTimeDefinitions.DurationSuffixList.ToImmutableDictionary();
+            public static readonly ImmutableDictionary<string, string> DurationSuffixList =
+                DateTimeDefinitions.DurationSuffixList.ToImmutableDictionary();
 
             public DurationExtractorConfiguration()
-                : base(new CultureInfo("zh-CN"))
+                : base(new CultureInfo(Culture.Japanese))
             {
             }
 

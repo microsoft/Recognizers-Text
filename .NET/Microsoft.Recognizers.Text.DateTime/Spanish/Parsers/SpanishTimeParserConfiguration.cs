@@ -37,7 +37,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public void AdjustByPrefix(string prefix, ref int hour, ref int min, ref bool hasMin)
         {
             var deltaMin = 0;
-            var trimedPrefix = prefix.Trim().ToLowerInvariant();
+            var trimedPrefix = prefix.Trim();
 
             if (trimedPrefix.StartsWith("cuarto") || trimedPrefix.StartsWith("y cuarto"))
             {
@@ -70,7 +70,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
                 trimedPrefix.EndsWith("pasadas las") || trimedPrefix.EndsWith("pasados las") ||
                 trimedPrefix.EndsWith("pasadas de las") || trimedPrefix.EndsWith("pasados de las"))
             {
-            // deltaMin it's positive
+                // deltaMin it's positive
             }
             else if (trimedPrefix.EndsWith("para la") || trimedPrefix.EndsWith("para las") ||
                      trimedPrefix.EndsWith("antes de la") || trimedPrefix.EndsWith("antes de las"))
@@ -90,7 +90,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public void AdjustBySuffix(string suffix, ref int hour, ref int min, ref bool hasMin, ref bool hasAm, ref bool hasPm)
         {
-            var trimedSuffix = suffix.Trim().ToLowerInvariant();
+            var trimedSuffix = suffix.Trim();
             AdjustByPrefix(trimedSuffix, ref hour, ref min, ref hasMin);
 
             var deltaHour = 0;

@@ -1,8 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace Microsoft.Recognizers.Text.NumberWithUnit
+﻿namespace Microsoft.Recognizers.Text.NumberWithUnit
 {
     public class UnitValue
     {

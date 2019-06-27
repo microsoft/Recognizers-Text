@@ -14,20 +14,26 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
     {
         public static readonly string ParserName = Constants.SYS_DATETIME_DATETIMEPERIOD;
 
-        public static readonly Regex MORegex = new Regex(DateTimeDefinitions.DateTimePeriodMORegex, RegexOptions.Singleline);
+        public static readonly Regex MORegex = new Regex(DateTimeDefinitions.DateTimePeriodMORegex, RegexFlags);
 
-        public static readonly Regex MIRegex = new Regex(DateTimeDefinitions.DateTimePeriodMIRegex, RegexOptions.Singleline);
+        public static readonly Regex MIRegex = new Regex(DateTimeDefinitions.DateTimePeriodMIRegex, RegexFlags);
 
-        public static readonly Regex AFRegex = new Regex(DateTimeDefinitions.DateTimePeriodAFRegex, RegexOptions.Singleline);
+        public static readonly Regex AFRegex = new Regex(DateTimeDefinitions.DateTimePeriodAFRegex, RegexFlags);
 
-        public static readonly Regex EVRegex = new Regex(DateTimeDefinitions.DateTimePeriodEVRegex, RegexOptions.Singleline);
+        public static readonly Regex EVRegex = new Regex(DateTimeDefinitions.DateTimePeriodEVRegex, RegexFlags);
 
-        public static readonly Regex NIRegex = new Regex(DateTimeDefinitions.DateTimePeriodNIRegex, RegexOptions.Singleline);
+        public static readonly Regex NIRegex = new Regex(DateTimeDefinitions.DateTimePeriodNIRegex, RegexFlags);
+
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         private static readonly IDateTimeExtractor SingleDateExtractor = new ChineseDateExtractorConfiguration();
+
         private static readonly IDateTimeExtractor SingleTimeExtractor = new ChineseTimeExtractorConfiguration();
+
         private static readonly IDateTimeExtractor TimeWithDateExtractor = new ChineseDateTimeExtractorConfiguration();
+
         private static readonly IDateTimeExtractor TimePeriodExtractor = new ChineseTimePeriodExtractorChsConfiguration();
+
         private static readonly IExtractor CardinalExtractor = new CardinalExtractor();
 
         private static readonly IParser CardinalParser = AgnosticNumberParserFactory.GetParser(
@@ -164,9 +170,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
             var pr1 = this.config.DateParser.Parse(er1[0], referenceTime);
             var pr2 = this.config.TimePeriodParser.Parse(er2[0], referenceTime);
-            var timerange = (Tuple<DateObject, DateObject>)((DateTimeResolutionResult)pr2.Value).FutureValue;
-            var beginTime = timerange.Item1;
-            var endTime = timerange.Item2;
+            var timeRange = (Tuple<DateObject, DateObject>)((DateTimeResolutionResult)pr2.Value).FutureValue;
+            var beginTime = timeRange.Item1;
+            var endTime = timeRange.Item2;
             var futureDate = (DateObject)((DateTimeResolutionResult)pr1.Value).FutureValue;
             var pastDate = (DateObject)((DateTimeResolutionResult)pr1.Value).PastValue;
 
@@ -180,15 +186,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     DateObject.MinValue.SafeCreateFromValue(pastDate.Year, pastDate.Month, pastDate.Day, beginTime.Hour, beginTime.Minute, beginTime.Second),
                     DateObject.MinValue.SafeCreateFromValue(pastDate.Year, pastDate.Month, pastDate.Day, endTime.Hour, endTime.Minute, endTime.Second));
 
-            var splited = pr2.TimexStr.Split('T');
-            if (splited.Length != 4)
+            var split = pr2.TimexStr.Split('T');
+            if (split.Length != 4)
             {
                 return ret;
             }
 
             var dateStr = pr1.TimexStr;
 
-            ret.Timex = splited[0] + dateStr + "T" + splited[1] + dateStr + "T" + splited[2] + "T" + splited[3];
+            ret.Timex = split[0] + dateStr + "T" + split[1] + dateStr + "T" + split[2] + "T" + split[3];
 
             ret.Success = true;
             return ret;

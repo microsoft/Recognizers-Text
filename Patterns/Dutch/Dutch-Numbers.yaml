@@ -10,7 +10,7 @@ RoundNumberIntegerRegex: !simpleRegex
 ZeroToNineIntegerRegex: !simpleRegex
   def: (drie|zeven|acht|vier|vijf|nul|negen|een|één|twee|zes)
 NegativeNumberTermsRegex: !simpleRegex
-  def: ((min|negatief)\s+)
+  def: (?<negTerm>(min|negatief)\s+)
 NegativeNumberSignRegex: !nestedRegex
   def: ^{NegativeNumberTermsRegex}.*
   references: [ NegativeNumberTermsRegex ]

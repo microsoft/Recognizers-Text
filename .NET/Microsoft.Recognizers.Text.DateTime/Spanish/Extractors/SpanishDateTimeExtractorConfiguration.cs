@@ -8,28 +8,63 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
     public class SpanishDateTimeExtractorConfiguration : BaseOptionsConfiguration, IDateTimeExtractorConfiguration
     {
-        public static readonly Regex PrepositionRegex = new Regex(DateTimeDefinitions.PrepositionRegex, RegexOptions.Singleline);
-        public static readonly Regex NowRegex = new Regex(DateTimeDefinitions.NowRegex, RegexOptions.Singleline);
-        public static readonly Regex SuffixRegex = new Regex(DateTimeDefinitions.SuffixRegex, RegexOptions.Singleline);
+        public static readonly Regex PrepositionRegex =
+            new Regex(DateTimeDefinitions.PrepositionRegex, RegexFlags);
+
+        public static readonly Regex NowRegex =
+            new Regex(DateTimeDefinitions.NowRegex, RegexFlags);
+
+        public static readonly Regex SuffixRegex =
+            new Regex(DateTimeDefinitions.SuffixRegex, RegexFlags);
 
         // TODO: modify it according to the corresponding English regex
-        public static readonly Regex TimeOfDayRegex = new Regex(DateTimeDefinitions.TimeOfDayRegex, RegexOptions.Singleline);
-        public static readonly Regex SpecificTimeOfDayRegex = new Regex(DateTimeDefinitions.SpecificTimeOfDayRegex, RegexOptions.Singleline);
-        public static readonly Regex TimeOfTodayAfterRegex = new Regex(DateTimeDefinitions.TimeOfTodayAfterRegex, RegexOptions.Singleline);
-        public static readonly Regex TimeOfTodayBeforeRegex = new Regex(DateTimeDefinitions.TimeOfTodayBeforeRegex, RegexOptions.Singleline);
-        public static readonly Regex SimpleTimeOfTodayAfterRegex = new Regex(DateTimeDefinitions.SimpleTimeOfTodayAfterRegex, RegexOptions.Singleline);
-        public static readonly Regex SimpleTimeOfTodayBeforeRegex = new Regex(DateTimeDefinitions.SimpleTimeOfTodayBeforeRegex, RegexOptions.Singleline);
-        public static readonly Regex SpecificEndOfRegex = new Regex(DateTimeDefinitions.SpecificEndOfRegex, RegexOptions.Singleline);
-        public static readonly Regex UnspecificEndOfRegex = new Regex(DateTimeDefinitions.UnspecificEndOfRegex, RegexOptions.Singleline);
-        public static readonly Regex YearRegex = new Regex(DateTimeDefinitions.YearRegex, RegexOptions.Singleline);
-        public static readonly Regex YearSuffix = new Regex(DateTimeDefinitions.YearSuffix, RegexOptions.Singleline);
+        public static readonly Regex TimeOfDayRegex =
+            new Regex(DateTimeDefinitions.TimeOfDayRegex, RegexFlags);
+
+        public static readonly Regex SpecificTimeOfDayRegex =
+            new Regex(DateTimeDefinitions.SpecificTimeOfDayRegex, RegexFlags);
+
+        public static readonly Regex TimeOfTodayAfterRegex =
+            new Regex(DateTimeDefinitions.TimeOfTodayAfterRegex, RegexFlags);
+
+        public static readonly Regex TimeOfTodayBeforeRegex =
+            new Regex(DateTimeDefinitions.TimeOfTodayBeforeRegex, RegexFlags);
+
+        public static readonly Regex SimpleTimeOfTodayAfterRegex =
+            new Regex(DateTimeDefinitions.SimpleTimeOfTodayAfterRegex, RegexFlags);
+
+        public static readonly Regex SimpleTimeOfTodayBeforeRegex =
+            new Regex(DateTimeDefinitions.SimpleTimeOfTodayBeforeRegex, RegexFlags);
+
+        public static readonly Regex SpecificEndOfRegex =
+            new Regex(DateTimeDefinitions.SpecificEndOfRegex, RegexFlags);
+
+        public static readonly Regex UnspecificEndOfRegex =
+            new Regex(DateTimeDefinitions.UnspecificEndOfRegex, RegexFlags);
+
+        public static readonly Regex YearRegex =
+            new Regex(DateTimeDefinitions.YearRegex, RegexFlags);
+
+        public static readonly Regex YearSuffix =
+            new Regex(DateTimeDefinitions.YearSuffix, RegexFlags);
 
         // TODO: add this for Spanish
-        public static readonly Regex UnitRegex = new Regex(DateTimeDefinitions.UnitRegex, RegexOptions.Singleline);
-        public static readonly Regex ConnectorRegex = new Regex(DateTimeDefinitions.ConnectorRegex, RegexOptions.Singleline);
-        public static readonly Regex NumberAsTimeRegex = new Regex(DateTimeDefinitions.NumberAsTimeRegex, RegexOptions.Singleline);
-        public static readonly Regex DateNumberConnectorRegex = new Regex(DateTimeDefinitions.DateNumberConnectorRegex, RegexOptions.Singleline);
-        public static readonly Regex SuffixAfterRegex = new Regex(DateTimeDefinitions.SuffixAfterRegex, RegexOptions.Singleline);
+        public static readonly Regex UnitRegex =
+            new Regex(DateTimeDefinitions.UnitRegex, RegexFlags);
+
+        public static readonly Regex ConnectorRegex =
+            new Regex(DateTimeDefinitions.ConnectorRegex, RegexFlags);
+
+        public static readonly Regex NumberAsTimeRegex =
+            new Regex(DateTimeDefinitions.NumberAsTimeRegex, RegexFlags);
+
+        public static readonly Regex DateNumberConnectorRegex =
+            new Regex(DateTimeDefinitions.DateNumberConnectorRegex, RegexFlags);
+
+        public static readonly Regex SuffixAfterRegex =
+            new Regex(DateTimeDefinitions.SuffixAfterRegex, RegexFlags);
+
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         public SpanishDateTimeExtractorConfiguration(IOptionsConfiguration config)
             : base(config)

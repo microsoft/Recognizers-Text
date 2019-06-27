@@ -9,14 +9,17 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Dutch
 {
     public class TemperatureExtractorConfiguration : DutchNumberWithUnitExtractorConfiguration
     {
+
         public static readonly ImmutableDictionary<string, string> TemperatureSuffixList =
             NumbersWithUnitDefinitions.TemperatureSuffixList.ToImmutableDictionary();
+
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         private static readonly ImmutableList<string> AmbiguousValues =
             NumbersWithUnitDefinitions.AmbiguousTemperatureUnitList.ToImmutableList();
 
         private static readonly Regex AmbiguousUnitMultiplierRegex =
-            new Regex(BaseUnits.AmbiguousUnitNumberMultiplierRegex, RegexOptions.None);
+            new Regex(BaseUnits.AmbiguousUnitNumberMultiplierRegex, RegexFlags);
 
         public TemperatureExtractorConfiguration()
             : this(new CultureInfo(Culture.Dutch))

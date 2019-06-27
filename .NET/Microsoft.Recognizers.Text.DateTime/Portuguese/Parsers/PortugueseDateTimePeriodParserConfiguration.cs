@@ -124,7 +124,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             endHour = 0;
             endMin = 0;
 
-            // TODO: modify it according to the coresponding function in English part
+            // TODO: modify it according to the corresponding function in English part
             if (trimmedText.EndsWith("madrugada"))
             {
                 timeStr = "TDA";

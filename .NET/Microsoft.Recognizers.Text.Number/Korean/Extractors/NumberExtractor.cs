@@ -5,7 +5,7 @@ namespace Microsoft.Recognizers.Text.Number.Korean
 {
      /// <summary>
      /// These modes can be applied to KoreanNumberExtractor.
-     /// The default more urilizes an allow list to avoid extracting numbers in ambiguous/undesired combinations of Korean ideograms.
+     /// The default more utilizes an allow list to avoid extracting numbers in ambiguous/undesired combinations of Korean ideograms.
      /// --> such as "십이지장(十二指腸)" is organ name(duodenum, part of small intestine) in Korean, should not be extracted.
      /// ExtractAll mode is to be used in cases where extraction should be more aggressive (e.g. in Units extraction).
      /// </summary>

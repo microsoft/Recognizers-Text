@@ -8,7 +8,7 @@ MultiDecimalSeparatorCulture: !bool true
 HundredsNumberIntegerRegex: !simpleRegex
   def: (cuatrocient[ao]s|trescient[ao]s|seiscient[ao]s|setecient[ao]s|ochocient[ao]s|novecient[ao]s|doscient[ao]s|quinient[ao]s|(?<!por\s+)(cien(to)?))
 RoundNumberIntegerRegex: !simpleRegex
-  def: (mil millones|mil|millones|mill[oó]n|billones|bill[oó]n|trillones|trill[oó]n|cuatrillones|cuatrill[oó]n|quintillones|quintill[oó]n|sextillones|sextill[oó]n|septillones|septill[oó]n)
+  def: (mil millones|millones|mill[oó]n|mil|billones|bill[oó]n|trillones|trill[oó]n|cuatrillones|cuatrill[oó]n|quintillones|quintill[oó]n|sextillones|sextill[oó]n|septillones|septill[oó]n)
 ZeroToNineIntegerRegex: !simpleRegex
   def: (cuatro|cinco|siete|nueve|cero|tres|seis|ocho|dos|un[ao]?)
 TenToNineteenIntegerRegex: !simpleRegex
@@ -18,8 +18,7 @@ TwentiesIntegerRegex: !simpleRegex
 TensNumberIntegerRegex: !simpleRegex
   def: (cincuenta|cuarenta|treinta|sesenta|setenta|ochenta|noventa)
 NegativeNumberTermsRegex: !simpleRegex
-   # TODO: modify below regex according to the counterpart in English
-  def: ((?<!(al|lo)\s+)menos\s+)
+  def: (?<negTerm>(?<!(al|lo)\s+)menos\s+)
 NegativeNumberSignRegex: !nestedRegex
   def: ^{NegativeNumberTermsRegex}.*
   references: [ NegativeNumberTermsRegex ]

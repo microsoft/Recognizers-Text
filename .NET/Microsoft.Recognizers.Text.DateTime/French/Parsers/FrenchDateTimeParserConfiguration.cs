@@ -9,10 +9,12 @@ namespace Microsoft.Recognizers.Text.DateTime.French
     public class FrenchDateTimeParserConfiguration : BaseOptionsConfiguration, IDateTimeParserConfiguration
     {
         public static readonly Regex AmTimeRegex =
-            new Regex(DateTimeDefinitions.AMTimeRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.AMTimeRegex, RegexFlags);
 
         public static readonly Regex PmTimeRegex =
-            new Regex(DateTimeDefinitions.PMTimeRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.PMTimeRegex, RegexFlags);
+
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         public FrenchDateTimeParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)
