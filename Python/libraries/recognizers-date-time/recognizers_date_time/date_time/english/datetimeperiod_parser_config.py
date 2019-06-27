@@ -8,17 +8,26 @@ from ..extractors import DateTimeExtractor
 from ..parsers import DateTimeParser
 from ..base_configs import BaseDateParserConfiguration
 
+
 class EnglishDateTimePeriodParserConfiguration(DateTimePeriodParserConfiguration):
 
     def __init__(self, config: BaseDateParserConfiguration):
-        self._pure_number_from_to_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.PureNumFromTo)
-        self._pure_number_between_and_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.PureNumBetweenAnd)
-        self._period_time_of_day_with_date_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.PeriodTimeOfDayWithDateRegex)
-        self._specific_time_of_day_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.SpecificTimeOfDayRegex)
-        self._past_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.PreviousPrefixRegex)
-        self._future_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.NextPrefixRegex)
-        self._relative_time_unit_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.RelativeTimeUnitRegex)
-        self._rest_of_date_time_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.RestOfDateTimeRegex)
+        self._pure_number_from_to_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.PureNumFromTo)
+        self._pure_number_between_and_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.PureNumBetweenAnd)
+        self._period_time_of_day_with_date_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.PeriodTimeOfDayWithDateRegex)
+        self._specific_time_of_day_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.SpecificTimeOfDayRegex)
+        self._past_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.PreviousPrefixRegex)
+        self._future_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.NextPrefixRegex)
+        self._relative_time_unit_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.RelativeTimeUnitRegex)
+        self._rest_of_date_time_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.RestOfDateTimeRegex)
         self._numbers = config.numbers
         self._unit_map = config.unit_map
         self._date_extractor = config.date_extractor
@@ -31,10 +40,14 @@ class EnglishDateTimePeriodParserConfiguration(DateTimePeriodParserConfiguration
         self._date_time_parser = config.date_time_parser
         self._time_period_parser = config.time_period_parser
         self._duration_parser = config.duration_parser
-        self.morning_start_end_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.MorningStartEndRegex)
-        self.afternoon_start_end_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.AfternoonStartEndRegex)
-        self.evening_start_end_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.EveningStartEndRegex)
-        self.night_start_end_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.NightStartEndRegex)
+        self.morning_start_end_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.MorningStartEndRegex)
+        self.afternoon_start_end_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.AfternoonStartEndRegex)
+        self.evening_start_end_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.EveningStartEndRegex)
+        self.night_start_end_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.NightStartEndRegex)
 
     @property
     def pure_number_from_to_regex(self) -> Pattern:

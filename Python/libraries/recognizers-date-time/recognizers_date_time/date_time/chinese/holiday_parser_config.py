@@ -6,6 +6,7 @@ from ..utilities import DateUtils
 from ..base_holiday import BaseHolidayParserConfiguration
 from ...resources.chinese_date_time import ChineseDateTime
 
+
 class ChineseHolidayParserConfiguration(BaseHolidayParserConfiguration):
     @property
     def holiday_names(self) -> Dict[str, List[str]]:

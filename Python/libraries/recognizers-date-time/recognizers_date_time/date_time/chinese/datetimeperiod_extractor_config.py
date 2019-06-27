@@ -10,6 +10,7 @@ from .date_extractor import ChineseDateExtractor
 from .time_extractor import ChineseTimeExtractor
 from .datetime_extractor import ChineseDateTimeExtractor
 
+
 class ChineseDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfiguration):
     @property
     def cardinal_extractor(self) -> Extractor:
@@ -104,12 +105,18 @@ class ChineseDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfigu
         self._single_date_extractor = ChineseDateExtractor()
         self._single_time_extractor = ChineseTimeExtractor()
         self._single_date_time_extractor = ChineseDateTimeExtractor()
-        self._preposition_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.DateTimePeriodPrepositionRegex)
-        self._till_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.DateTimePeriodTillRegex)
-        self._specific_time_of_day_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.SpecificTimeOfDayRegex)
-        self._time_of_day_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.TimeOfDayRegex)
-        self._followed_unit = RegExpUtility.get_safe_reg_exp(ChineseDateTime.DateTimePeriodFollowedUnit)
-        self._time_unit_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.DateTimePeriodUnitRegex)
+        self._preposition_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.DateTimePeriodPrepositionRegex)
+        self._till_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.DateTimePeriodTillRegex)
+        self._specific_time_of_day_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.SpecificTimeOfDayRegex)
+        self._time_of_day_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.TimeOfDayRegex)
+        self._followed_unit = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.DateTimePeriodFollowedUnit)
+        self._time_unit_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.DateTimePeriodUnitRegex)
 
     def get_from_token_index(self, source: str) -> MatchedIndex:
         if source.endswith('从'):

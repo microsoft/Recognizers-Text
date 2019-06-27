@@ -12,6 +12,7 @@ from .extractors import DateTimeExtractor
 from .parsers import DateTimeParser, DateTimeParseResult
 from .utilities import Token, merge_all_tokens, DateTimeResolutionResult, RegExpUtility
 
+
 class DurationExtractorConfiguration(ABC):
     @property
     @abstractmethod
@@ -58,6 +59,7 @@ class DurationExtractorConfiguration(ABC):
     def cardinal_extractor(self) -> BaseNumberExtractor:
         raise NotImplementedError
 
+
 class BaseDurationExtractor(DateTimeExtractor):
     @property
     def extractor_type_name(self) -> str:
@@ -78,21 +80,30 @@ class BaseDurationExtractor(DateTimeExtractor):
         return result
 
     def number_with_unit(self, source: str) -> List[Token]:
-        ers: List[ExtractResult] = self.config.cardinal_extractor.extract(source)
-        result: List[Token] = list(filter(None, map(lambda x: self.__cardinal_to_token(x, source), ers)))
-        result.extend(self.get_tokens_from_regex(self.config.number_combined_with_unit, source))
-        result.extend(self.get_tokens_from_regex(self.config.an_unit_regex, source))
-        result.extend(self.get_tokens_from_regex(self.config.inexact_number_unit_regex, source))
+        ers: List[ExtractResult] = self.config.cardinal_extractor.extract(
+            source)
+        result: List[Token] = list(
+            filter(None, map(lambda x: self.__cardinal_to_token(x, source), ers)))
+        result.extend(self.get_tokens_from_regex(
+            self.config.number_combined_with_unit, source))
+        result.extend(self.get_tokens_from_regex(
+            self.config.an_unit_regex, source))
+        result.extend(self.get_tokens_from_regex(
+            self.config.inexact_number_unit_regex, source))
         return result
 
     def number_with_unit_and_suffix(self, source: str, tokens: List[Token]) -> List[Token]:
-        result: List[Token] = list(filter(None, map(lambda x: self.__base_to_token(x, source), tokens)))
+        result: List[Token] = list(
+            filter(None, map(lambda x: self.__base_to_token(x, source), tokens)))
         return result
 
     def implicit_duration(self, source: str) -> List[Token]:
-        result: List[Token] = self.get_tokens_from_regex(self.config.all_regex, source)
-        result.extend(self.get_tokens_from_regex(self.config.half_regex, source))
-        result.extend(self.get_tokens_from_regex(self.config.relative_duration_unit_regex, source))
+        result: List[Token] = self.get_tokens_from_regex(
+            self.config.all_regex, source)
+        result.extend(self.get_tokens_from_regex(
+            self.config.half_regex, source))
+        result.extend(self.get_tokens_from_regex(
+            self.config.relative_duration_unit_regex, source))
         return result
 
     def __cardinal_to_token(self, cardinal: ExtractResult, source: str) -> Optional[Token]:
@@ -115,6 +126,7 @@ class BaseDurationExtractor(DateTimeExtractor):
 
     def get_tokens_from_regex(self, pattern: Pattern, source: str) -> List[Token]:
         return list(map(lambda x: Token(x.start(), x.end()), regex.finditer(pattern, source)))
+
 
 class DurationParserConfiguration(ABC):
     @property
@@ -177,6 +189,7 @@ class DurationParserConfiguration(ABC):
     def double_numbers(self) -> Dict[str, float]:
         raise NotImplementedError
 
+
 class BaseDurationParser(DateTimeParser):
     @property
     def parser_type_name(self) -> str:
@@ -196,11 +209,14 @@ class BaseDurationParser(DateTimeParser):
 
             inner_result = self.parse_number_with_unit(source_text, reference)
             if not inner_result.success:
-                inner_result = self.parse_implicit_duration(source_text, reference)
+                inner_result = self.parse_implicit_duration(
+                    source_text, reference)
 
             if inner_result.success:
-                inner_result.future_resolution[TimeTypeConstants.DURATION] = str(inner_result.future_value)
-                inner_result.past_resolution[TimeTypeConstants.DURATION] = str(inner_result.past_value)
+                inner_result.future_resolution[TimeTypeConstants.DURATION] = str(
+                    inner_result.future_value)
+                inner_result.past_resolution[TimeTypeConstants.DURATION] = str(
+                    inner_result.past_value)
                 result.value = inner_result
                 result.timex_str = inner_result.timex if inner_result is not None else ''
                 result.resolution_str = ''
@@ -226,13 +242,16 @@ class BaseDurationParser(DateTimeParser):
     def parse_implicit_duration(self, source: str, reference: datetime) -> DateTimeResolutionResult:
         source = source.strip()
 
-        result = self.get_result_from_regex(self.config.all_date_unit_regex, source, 1)
+        result = self.get_result_from_regex(
+            self.config.all_date_unit_regex, source, 1)
 
         if not result.success:
-            result = self.get_result_from_regex(self.config.half_date_unit_regex, source, 0.5)
+            result = self.get_result_from_regex(
+                self.config.half_date_unit_regex, source, 0.5)
 
         if not result.success:
-            result = self.get_result_from_regex(self.config.followed_unit, source, 1)
+            result = self.get_result_from_regex(
+                self.config.followed_unit, source, 1)
 
         return result
 
@@ -251,7 +270,8 @@ class BaseDurationParser(DateTimeParser):
         unit = self.config.unit_map[source_unit]
         is_time = 'T' if self.is_less_than_day(unit) else ''
         result.timex = f'P{is_time}{num}{unit[0]}'
-        result.future_value = QueryProcessor.float_or_int(num * self.config.unit_value_map[source_unit])
+        result.future_value = QueryProcessor.float_or_int(
+            num * self.config.unit_value_map[source_unit])
         result.past_value = result.future_value
         result.success = True
         return result
@@ -283,7 +303,8 @@ class BaseDurationParser(DateTimeParser):
         num = QueryProcessor.float_or_int(num)
         is_time = 'T' if self.is_less_than_day(unit) else ''
         result.timex = f'P{is_time}{num}{unit[0]}'
-        result.future_value = QueryProcessor.float_or_int(num * self.config.unit_value_map[source_unit])
+        result.future_value = QueryProcessor.float_or_int(
+            num * self.config.unit_value_map[source_unit])
         result.past_value = result.future_value
         result.success = True
         return result
@@ -304,7 +325,8 @@ class BaseDurationParser(DateTimeParser):
         if match is None:
             return result
 
-        num = float(match.group('num')) + self.parse_number_with_unit_and_suffix(source)
+        num = float(match.group('num')) + \
+            self.parse_number_with_unit_and_suffix(source)
 
         source_unit = match.group('unit') or ''
         if source_unit not in self.config.unit_map:
@@ -317,7 +339,8 @@ class BaseDurationParser(DateTimeParser):
         num = QueryProcessor.float_or_int(num)
         is_time = 'T' if self.is_less_than_day(unit) else ''
         result.timex = f'P{is_time}{num}{unit[0]}'
-        result.future_value = QueryProcessor.float_or_int(num * self.config.unit_value_map[source_unit])
+        result.future_value = QueryProcessor.float_or_int(
+            num * self.config.unit_value_map[source_unit])
         result.past_value = result.future_value
         result.success = True
         return result
@@ -332,7 +355,8 @@ class BaseDurationParser(DateTimeParser):
         if match is None:
             return result
 
-        num = (0.5 if match.group('half') else 1) + self.parse_number_with_unit_and_suffix(source)
+        num = (0.5 if match.group('half') else 1) + \
+            self.parse_number_with_unit_and_suffix(source)
         source_unit = match.group('unit') or ''
 
         if source_unit not in self.config.unit_map:
@@ -342,7 +366,8 @@ class BaseDurationParser(DateTimeParser):
         unit = self.config.unit_map[source_unit]
         is_time = 'T' if self.is_less_than_day(unit) else ''
         result.timex = f'P{is_time}{num}{unit[0]}'
-        result.future_value = QueryProcessor.float_or_int(num * self.config.unit_value_map[source_unit])
+        result.future_value = QueryProcessor.float_or_int(
+            num * self.config.unit_value_map[source_unit])
         result.past_value = result.future_value
         result.success = True
         return result
@@ -367,7 +392,8 @@ class BaseDurationParser(DateTimeParser):
         num = QueryProcessor.float_or_int(num)
         is_time = 'T' if self.is_less_than_day(unit) else ''
         result.timex = f'P{is_time}{num}{unit[0]}'
-        result.future_value = QueryProcessor.float_or_int(num * self.config.unit_value_map[source_unit])
+        result.future_value = QueryProcessor.float_or_int(
+            num * self.config.unit_value_map[source_unit])
         result.past_value = result.future_value
         result.success = True
         return result

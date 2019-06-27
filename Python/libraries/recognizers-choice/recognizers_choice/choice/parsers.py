@@ -40,7 +40,8 @@ class ChoiceParser(Parser):
         result = ParseResult(ext_result)
         data = ChoiceExtractDataResult(ext_result.data)
         result.value = self.config.resolutions.get(result.type)
-        result.data = ChoiceParseDataResult(data.score, [self.__to_other_match_result(m) for m in data.other_matches])
+        result.data = ChoiceParseDataResult(
+            data.score, [self.__to_other_match_result(m) for m in data.other_matches])
         return result
 
     def __to_other_match_result(self, ext_result):

@@ -8,6 +8,7 @@ from ..extractors import DateTimeExtractor
 from ..base_dateperiod import DatePeriodExtractorConfiguration, MatchedIndex
 from .date_extractor import ChineseDateExtractor
 
+
 class ChineseDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
     @property
     def simple_cases_regexes(self) -> List[Pattern]:
@@ -91,25 +92,37 @@ class ChineseDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
             RegExpUtility.get_safe_reg_exp(ChineseDateTime.OneWordPeriodRegex),
             RegExpUtility.get_safe_reg_exp(ChineseDateTime.StrictYearRegex),
             RegExpUtility.get_safe_reg_exp(ChineseDateTime.YearToYear),
-            RegExpUtility.get_safe_reg_exp(ChineseDateTime.YearToYearSuffixRequired),
+            RegExpUtility.get_safe_reg_exp(
+                ChineseDateTime.YearToYearSuffixRequired),
             RegExpUtility.get_safe_reg_exp(ChineseDateTime.YearAndMonth),
-            RegExpUtility.get_safe_reg_exp(ChineseDateTime.PureNumYearAndMonth),
-            RegExpUtility.get_safe_reg_exp(ChineseDateTime.DatePeriodYearInChineseRegex),
+            RegExpUtility.get_safe_reg_exp(
+                ChineseDateTime.PureNumYearAndMonth),
+            RegExpUtility.get_safe_reg_exp(
+                ChineseDateTime.DatePeriodYearInChineseRegex),
             RegExpUtility.get_safe_reg_exp(ChineseDateTime.WeekOfMonthRegex),
             RegExpUtility.get_safe_reg_exp(ChineseDateTime.SeasonWithYear),
             RegExpUtility.get_safe_reg_exp(ChineseDateTime.QuarterRegex),
         ]
-        self._illegal_year_regex = RegExpUtility.get_safe_reg_exp(BaseDateTime.IllegalYearRegex)
-        self._year_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.YearRegex)
-        self._till_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.DatePeriodTillRegex)
-        self._followed_unit = RegExpUtility.get_safe_reg_exp(ChineseDateTime.FollowedUnit)
-        self._number_combined_with_unit = RegExpUtility.get_safe_reg_exp(ChineseDateTime.NumberCombinedWithUnit)
-        self._past_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.PastRegex)
-        self._future_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.FutureRegex)
+        self._illegal_year_regex = RegExpUtility.get_safe_reg_exp(
+            BaseDateTime.IllegalYearRegex)
+        self._year_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.YearRegex)
+        self._till_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.DatePeriodTillRegex)
+        self._followed_unit = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.FollowedUnit)
+        self._number_combined_with_unit = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.NumberCombinedWithUnit)
+        self._past_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.PastRegex)
+        self._future_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.FutureRegex)
         self._date_point_extractor = ChineseDateExtractor()
         self._integer_extractor = ChineseNumberExtractor()
-        self._number_parser = BaseNumberParser(ChineseNumberParserConfiguration())
-        self._now_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.NowRegex)
+        self._number_parser = BaseNumberParser(
+            ChineseNumberParserConfiguration())
+        self._now_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.NowRegex)
 
     def get_from_token_index(self, source: str) -> MatchedIndex:
         if source.endswith('从'):

@@ -36,8 +36,10 @@ class PhoneNumberParser(SequenceParser):
 
         country_code_regex = re.compile(BasePhoneNumbers.CountryCodeRegex)
         area_code_regex = re.compile(BasePhoneNumbers.AreaCodeIndicatorRegex)
-        format_indicator_regex = re.compile(BasePhoneNumbers.FormatIndicatorRegex, re.IGNORECASE | re.DOTALL)
-        no_area_code_USphonenumber_regex = re.compile(BasePhoneNumbers.NoAreaCodeUSPhoneNumberRegex)
+        format_indicator_regex = re.compile(
+            BasePhoneNumbers.FormatIndicatorRegex, re.IGNORECASE | re.DOTALL)
+        no_area_code_USphonenumber_regex = re.compile(
+            BasePhoneNumbers.NoAreaCodeUSPhoneNumberRegex)
 
         # Country code score or area code score
         score += self.countryCodeAward if country_code_regex.search(
@@ -46,9 +48,11 @@ class PhoneNumberParser(SequenceParser):
 
         # Formatted score
         if format_indicator_regex.search(phone_number_text):
-            format_matches = list(format_indicator_regex.finditer(phone_number_text))
+            format_matches = list(
+                format_indicator_regex.finditer(phone_number_text))
             format_indicator_count = len(format_matches)
-            score += min(format_indicator_count, self.maxFormatIndicatorNum) * self.formattedAward
+            score += min(format_indicator_count,
+                         self.maxFormatIndicatorNum) * self.formattedAward
             score -= self.continueFormatIndicatorDeductionScore if any(
                 len(match[0]) > 1 for match in format_matches) else 0
             if self.singleBracketRegex.search(phone_number_text) and not \
@@ -63,7 +67,7 @@ class PhoneNumberParser(SequenceParser):
         # Same tailing digit deduction
         if self.tailSameDigitRegex.search(phone_number_text):
             score -= (len(self.tailSameDigitRegex.search(phone_number_text)[
-                              0]) - self.tailSameLimit) * self.tailSameDeductionScore
+                0]) - self.tailSameLimit) * self.tailSameDeductionScore
 
         # Pure digit deduction
         if self.pureDigitRegex.search(phone_number_text):
@@ -86,13 +90,14 @@ class PhoneNumberParser(SequenceParser):
             score += self.lengthAward * 1.5
 
         return max(min(score, self.scoreUpperLimit), self.scoreLowerLimit) / (
-                self.scoreUpperLimit - self.scoreLowerLimit)
+            self.scoreUpperLimit - self.scoreLowerLimit)
 
     def parse(self, source: ExtractResult):
         result = ParseResult(source)
         result.resolution_str = source.text
         result.value = self.score_phone_number(source.text)
         return result
+
 
 class EmailParser(SequenceParser):
     pass

@@ -7,6 +7,7 @@ from ..extractors import DateTimeExtractor
 from ..parsers import DateTimeParser
 from ..base_configs import BaseDateParserConfiguration
 
+
 class FrenchDateTimePeriodParserConfiguration(DateTimePeriodParserConfiguration):
 
     def __init__(self, config: BaseDateParserConfiguration):
@@ -25,26 +26,44 @@ class FrenchDateTimePeriodParserConfiguration(DateTimePeriodParserConfiguration)
         self._unit_map = config.unit_map
         self._numbers = config.numbers
 
-        self.next_prefix_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.NextSuffixRegex)
-        self.previous_prefix_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.PastSuffixRegex)
-        self.this_prefix_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.ThisPrefixRegex)
+        self.next_prefix_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.NextSuffixRegex)
+        self.previous_prefix_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.PastSuffixRegex)
+        self.this_prefix_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.ThisPrefixRegex)
 
-        self.morning_start_end_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.MorningStartEndRegex)
-        self.afternoon_start_end_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.AfternoonStartEndRegex)
-        self.evening_start_end_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.EveningStartEndRegex)
-        self.night_start_end_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.NightStartEndRegex)
+        self.morning_start_end_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.MorningStartEndRegex)
+        self.afternoon_start_end_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.AfternoonStartEndRegex)
+        self.evening_start_end_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.EveningStartEndRegex)
+        self.night_start_end_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.NightStartEndRegex)
 
-        self._pure_number_from_to_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.PureNumFromTo)
-        self._pure_number_between_and_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.PureNumBetweenAnd)
-        self._specific_time_of_day_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.SpecificTimeOfDayRegex)
-        self.time_of_day_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.TimeOfDayRegex)
-        self._past_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.PastSuffixRegex)
-        self._future_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.NextSuffixRegex)
-        self.number_combined_with_unit_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.TimeNumberCombinedWithUnit)
-        self.unit_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.TimeUnitRegex)
-        self._period_time_of_day_with_date_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.PeriodTimeOfDayWithDateRegex)
-        self._relative_time_unit_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.RelativeTimeUnitRegex)
-        self._rest_of_date_time_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.RestOfDateTimeRegex)
+        self._pure_number_from_to_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.PureNumFromTo)
+        self._pure_number_between_and_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.PureNumBetweenAnd)
+        self._specific_time_of_day_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.SpecificTimeOfDayRegex)
+        self.time_of_day_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.TimeOfDayRegex)
+        self._past_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.PastSuffixRegex)
+        self._future_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.NextSuffixRegex)
+        self.number_combined_with_unit_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.TimeNumberCombinedWithUnit)
+        self.unit_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.TimeUnitRegex)
+        self._period_time_of_day_with_date_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.PeriodTimeOfDayWithDateRegex)
+        self._relative_time_unit_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.RelativeTimeUnitRegex)
+        self._rest_of_date_time_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.RestOfDateTimeRegex)
 
     @property
     def pure_number_from_to_regex(self) -> Pattern:
@@ -165,14 +184,14 @@ class FrenchDateTimePeriodParserConfiguration(DateTimePeriodParserConfiguration)
             trimmed_source.endswith('prochain') or
             trimmed_source.startswith('prochaine') or
             trimmed_source.endswith('prochaine')
-            ):
+        ):
             swift = 1
         elif (
             trimmed_source.startswith('derniere') or
             trimmed_source.startswith('dernier') or
             trimmed_source.endswith('derniere') or
             trimmed_source.endswith('dernier')
-            ):
+        ):
             swift = -1
 
         return swift

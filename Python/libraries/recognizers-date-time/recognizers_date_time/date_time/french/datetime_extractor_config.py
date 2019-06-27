@@ -14,6 +14,7 @@ from .date_extractor_config import FrenchDateExtractorConfiguration
 from .time_extractor_config import FrenchTimeExtractorConfiguration
 from .duration_extractor_config import FrenchDurationExtractorConfiguration
 
+
 class FrenchDateTimeExtractorConfiguration(DateTimeExtractorConfiguration):
     @property
     def date_point_extractor(self) -> DateTimeExtractor:
@@ -80,25 +81,42 @@ class FrenchDateTimeExtractorConfiguration(DateTimeExtractorConfiguration):
         return self._utility_configuration
 
     def __init__(self):
-        self.preposition_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.PrepositionRegex)
-        self._now_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.NowRegex)
-        self._suffix_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.SuffixRegex)
+        self.preposition_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.PrepositionRegex)
+        self._now_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.NowRegex)
+        self._suffix_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.SuffixRegex)
 
-        self._time_of_day_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.TimeOfDayRegex)
-        self._specific_time_of_day_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.SpecificTimeOfDayRegex)
-        self._time_of_today_after_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.TimeOfTodayAfterRegex)
-        self._time_of_today_before_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.TimeOfTodayBeforeRegex)
-        self._simple_time_of_today_after_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.SimpleTimeOfTodayAfterRegex)
-        self._simple_time_of_today_before_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.SimpleTimeOfTodayBeforeRegex)
-        self._specific_end_of_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.SpecificEndOfRegex)
-        self._unspecific_end_of_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.UnspecificEndOfRegex)
-        self._unit_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.TimeUnitRegex)
-        self.connector_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.ConnectorRegex)
-        self._night_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.NightRegex)
+        self._time_of_day_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.TimeOfDayRegex)
+        self._specific_time_of_day_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.SpecificTimeOfDayRegex)
+        self._time_of_today_after_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.TimeOfTodayAfterRegex)
+        self._time_of_today_before_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.TimeOfTodayBeforeRegex)
+        self._simple_time_of_today_after_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.SimpleTimeOfTodayAfterRegex)
+        self._simple_time_of_today_before_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.SimpleTimeOfTodayBeforeRegex)
+        self._specific_end_of_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.SpecificEndOfRegex)
+        self._unspecific_end_of_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.UnspecificEndOfRegex)
+        self._unit_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.TimeUnitRegex)
+        self.connector_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.ConnectorRegex)
+        self._night_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.NightRegex)
 
-        self._date_point_extractor = BaseDateExtractor(FrenchDateExtractorConfiguration())
-        self._time_point_extractor = BaseTimeExtractor(FrenchTimeExtractorConfiguration())
-        self._duration_extractor = BaseDurationExtractor(FrenchDurationExtractorConfiguration())
+        self._date_point_extractor = BaseDateExtractor(
+            FrenchDateExtractorConfiguration())
+        self._time_point_extractor = BaseTimeExtractor(
+            FrenchTimeExtractorConfiguration())
+        self._duration_extractor = BaseDurationExtractor(
+            FrenchDurationExtractorConfiguration())
         self._utility_configuration = FrenchDateTimeUtilityConfiguration()
 
     def is_connector_token(self, source: str) -> bool:
@@ -108,4 +126,4 @@ class FrenchDateTimeExtractorConfiguration(DateTimeExtractorConfiguration):
             source == 't' or
             source == 'pour' or
             source == 'vers'
-            )
+        )

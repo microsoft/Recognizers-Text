@@ -7,6 +7,7 @@ from recognizers_number.resources.french_numeric import FrenchNumeric
 from recognizers_number.number.extractors import ReVal, BaseNumberExtractor, BasePercentageExtractor
 from recognizers_number.number.constants import Constants
 
+
 class FrenchNumberExtractor(BaseNumberExtractor):
     @property
     def regexes(self) -> List[ReVal]:
@@ -21,14 +22,17 @@ class FrenchNumberExtractor(BaseNumberExtractor):
         return self.__negative_number_terms
 
     def __init__(self, mode: NumberMode = NumberMode.DEFAULT):
-        self.__negative_number_terms = RegExpUtility.get_safe_reg_exp(FrenchNumeric.NegativeNumberTermsRegex)
+        self.__negative_number_terms = RegExpUtility.get_safe_reg_exp(
+            FrenchNumeric.NegativeNumberTermsRegex)
         self.__regexes: List[ReVal] = list()
         cardinal_ex: FrenchCardinalExtractor = None
 
         if mode is NumberMode.PURE_NUMBER:
-            cardinal_ex = FrenchCardinalExtractor(FrenchNumeric.PlaceHolderPureNumber)
+            cardinal_ex = FrenchCardinalExtractor(
+                FrenchNumeric.PlaceHolderPureNumber)
         elif mode is NumberMode.CURRENCY:
-            self.__regexes.append(ReVal(re=RegExpUtility.get_safe_reg_exp(FrenchNumeric.CurrencyRegex), val='IntegerNum'))
+            self.__regexes.append(ReVal(re=RegExpUtility.get_safe_reg_exp(
+                FrenchNumeric.CurrencyRegex), val='IntegerNum'))
 
         if cardinal_ex is None:
             cardinal_ex = FrenchCardinalExtractor()
@@ -37,6 +41,7 @@ class FrenchNumberExtractor(BaseNumberExtractor):
 
         fraction_ex = FrenchFractionExtractor()
         self.__regexes.extend(fraction_ex.regexes)
+
 
 class FrenchCardinalExtractor(BaseNumberExtractor):
     @property
@@ -58,6 +63,7 @@ class FrenchCardinalExtractor(BaseNumberExtractor):
         double_ex = FrenchDoubleExtractor(placeholder)
         self.__regexes.extend(double_ex.regexes)
 
+
 class FrenchIntegerExtractor(BaseNumberExtractor):
     @property
     def regexes(self) -> List[NamedTuple('re_val', [('re', Pattern), ('val', str)])]:
@@ -70,33 +76,43 @@ class FrenchIntegerExtractor(BaseNumberExtractor):
     def __init__(self, placeholder: str = FrenchNumeric.PlaceHolderDefault):
         self.__regexes = [
             ReVal(
-                re=RegExpUtility.get_safe_reg_exp(FrenchNumeric.NumbersWithPlaceHolder(placeholder), regex.I),
+                re=RegExpUtility.get_safe_reg_exp(
+                    FrenchNumeric.NumbersWithPlaceHolder(placeholder), regex.I),
                 val='IntegerNum'),
             ReVal(
-                re=RegExpUtility.get_safe_reg_exp(FrenchNumeric.NumbersWithSuffix, regex.S),
+                re=RegExpUtility.get_safe_reg_exp(
+                    FrenchNumeric.NumbersWithSuffix, regex.S),
                 val='IntegerNum'),
             ReVal(
-                re=RegExpUtility.get_safe_reg_exp(self._generate_format_regex(LongFormatMode.INTEGER_DOT, placeholder), regex.V1),
+                re=RegExpUtility.get_safe_reg_exp(self._generate_format_regex(
+                    LongFormatMode.INTEGER_DOT, placeholder), regex.V1),
                 val='IntegerNum'),
             ReVal(
-                re=RegExpUtility.get_safe_reg_exp(self._generate_format_regex(LongFormatMode.INTEGER_BLANK, placeholder)),
+                re=RegExpUtility.get_safe_reg_exp(self._generate_format_regex(
+                    LongFormatMode.INTEGER_BLANK, placeholder)),
                 val='IntegerNum'),
             ReVal(
-                re=RegExpUtility.get_safe_reg_exp(self._generate_format_regex(LongFormatMode.INTEGER_NO_BREAK_SPACE, placeholder)),
+                re=RegExpUtility.get_safe_reg_exp(self._generate_format_regex(
+                    LongFormatMode.INTEGER_NO_BREAK_SPACE, placeholder)),
                 val='IntegerNum'),
             ReVal(
-                re=RegExpUtility.get_safe_reg_exp(FrenchNumeric.RoundNumberIntegerRegexWithLocks),
+                re=RegExpUtility.get_safe_reg_exp(
+                    FrenchNumeric.RoundNumberIntegerRegexWithLocks),
                 val='IntegerNum'),
             ReVal(
-                re=RegExpUtility.get_safe_reg_exp(FrenchNumeric.NumbersWithDozenSuffix),
+                re=RegExpUtility.get_safe_reg_exp(
+                    FrenchNumeric.NumbersWithDozenSuffix),
                 val='IntegerNum'),
             ReVal(
-                re=RegExpUtility.get_safe_reg_exp(FrenchNumeric.AllIntRegexWithLocks),
+                re=RegExpUtility.get_safe_reg_exp(
+                    FrenchNumeric.AllIntRegexWithLocks),
                 val='IntegerFr'),
             ReVal(
-                re=RegExpUtility.get_safe_reg_exp(FrenchNumeric.AllIntRegexWithDozenSuffixLocks),
+                re=RegExpUtility.get_safe_reg_exp(
+                    FrenchNumeric.AllIntRegexWithDozenSuffixLocks),
                 val='IntegerFr')
         ]
+
 
 class FrenchDoubleExtractor(BaseNumberExtractor):
     @property
@@ -110,33 +126,43 @@ class FrenchDoubleExtractor(BaseNumberExtractor):
     def __init__(self, placeholder):
         self.__regexes = [
             ReVal(
-                re=RegExpUtility.get_safe_reg_exp(FrenchNumeric.DoubleDecimalPointRegex(placeholder)),
+                re=RegExpUtility.get_safe_reg_exp(
+                    FrenchNumeric.DoubleDecimalPointRegex(placeholder)),
                 val='DoubleNum'),
             ReVal(
-                re=RegExpUtility.get_safe_reg_exp(FrenchNumeric.DoubleWithoutIntegralRegex(placeholder)),
+                re=RegExpUtility.get_safe_reg_exp(
+                    FrenchNumeric.DoubleWithoutIntegralRegex(placeholder)),
                 val='DoubleNum'),
             ReVal(
-                re=RegExpUtility.get_safe_reg_exp(self._generate_format_regex(LongFormatMode.DOUBLE_DOT_COMMA, placeholder)),
+                re=RegExpUtility.get_safe_reg_exp(self._generate_format_regex(
+                    LongFormatMode.DOUBLE_DOT_COMMA, placeholder)),
                 val='DoubleNum'),
             ReVal(
-                re=RegExpUtility.get_safe_reg_exp(self._generate_format_regex(LongFormatMode.DOUBLE_NO_BREAK_SPACE_COMMA, placeholder)),
+                re=RegExpUtility.get_safe_reg_exp(self._generate_format_regex(
+                    LongFormatMode.DOUBLE_NO_BREAK_SPACE_COMMA, placeholder)),
                 val='DoubleNum'),
             ReVal(
-                re=RegExpUtility.get_safe_reg_exp(FrenchNumeric.DoubleWithMultiplierRegex),
+                re=RegExpUtility.get_safe_reg_exp(
+                    FrenchNumeric.DoubleWithMultiplierRegex),
                 val='DoubleNum'),
             ReVal(
-                re=RegExpUtility.get_safe_reg_exp(FrenchNumeric.DoubleWithRoundNumber),
+                re=RegExpUtility.get_safe_reg_exp(
+                    FrenchNumeric.DoubleWithRoundNumber),
                 val='DoubleNum'),
             ReVal(
-                re=RegExpUtility.get_safe_reg_exp(FrenchNumeric.DoubleAllFloatRegex),
+                re=RegExpUtility.get_safe_reg_exp(
+                    FrenchNumeric.DoubleAllFloatRegex),
                 val='DoubleFr'),
             ReVal(
-                re=RegExpUtility.get_safe_reg_exp(FrenchNumeric.DoubleExponentialNotationRegex),
+                re=RegExpUtility.get_safe_reg_exp(
+                    FrenchNumeric.DoubleExponentialNotationRegex),
                 val='DoublePow'),
             ReVal(
-                re=RegExpUtility.get_safe_reg_exp(FrenchNumeric.DoubleCaretExponentialNotationRegex),
+                re=RegExpUtility.get_safe_reg_exp(
+                    FrenchNumeric.DoubleCaretExponentialNotationRegex),
                 val='DoublePow')
         ]
+
 
 class FrenchFractionExtractor(BaseNumberExtractor):
     @property
@@ -150,21 +176,27 @@ class FrenchFractionExtractor(BaseNumberExtractor):
     def __init__(self):
         self.__regexes = [
             ReVal(
-                re=RegExpUtility.get_safe_reg_exp(FrenchNumeric.FractionNotationWithSpacesRegex),
+                re=RegExpUtility.get_safe_reg_exp(
+                    FrenchNumeric.FractionNotationWithSpacesRegex),
                 val='FracNum'),
             ReVal(
-                re=RegExpUtility.get_safe_reg_exp(FrenchNumeric.FractionNotationRegex),
+                re=RegExpUtility.get_safe_reg_exp(
+                    FrenchNumeric.FractionNotationRegex),
                 val='FracNum'),
             ReVal(
-                re=RegExpUtility.get_safe_reg_exp(FrenchNumeric.FractionNounRegex),
+                re=RegExpUtility.get_safe_reg_exp(
+                    FrenchNumeric.FractionNounRegex),
                 val='FracFr'),
             ReVal(
-                re=RegExpUtility.get_safe_reg_exp(FrenchNumeric.FractionNounWithArticleRegex),
+                re=RegExpUtility.get_safe_reg_exp(
+                    FrenchNumeric.FractionNounWithArticleRegex),
                 val='FracFr'),
             ReVal(
-                re=RegExpUtility.get_safe_reg_exp(FrenchNumeric.FractionPrepositionRegex),
+                re=RegExpUtility.get_safe_reg_exp(
+                    FrenchNumeric.FractionPrepositionRegex),
                 val='FracFr')
         ]
+
 
 class FrenchOrdinalExtractor(BaseNumberExtractor):
     @property
@@ -178,12 +210,15 @@ class FrenchOrdinalExtractor(BaseNumberExtractor):
     def __init__(self):
         self.__regexes = [
             ReVal(
-                re=RegExpUtility.get_safe_reg_exp(FrenchNumeric.OrdinalSuffixRegex),
+                re=RegExpUtility.get_safe_reg_exp(
+                    FrenchNumeric.OrdinalSuffixRegex),
                 val='OrdinalNum'),
             ReVal(
-                re=RegExpUtility.get_safe_reg_exp(FrenchNumeric.OrdinalFrenchRegex),
+                re=RegExpUtility.get_safe_reg_exp(
+                    FrenchNumeric.OrdinalFrenchRegex),
                 val='OrdFr')
         ]
+
 
 class FrenchPercentageExtractor(BasePercentageExtractor):
     def __init__(self):

@@ -12,6 +12,7 @@ from .extractors import DateTimeExtractor
 from .parsers import DateTimeParser, DateTimeParseResult
 from .utilities import Token, merge_all_tokens, DateTimeResolutionResult, DateTimeUtilityConfiguration, AgoLaterUtil, DateTimeFormatUtil, RegExpUtility, AgoLaterMode
 
+
 class DateTimeExtractorConfiguration(ABC):
     @property
     @abstractmethod
@@ -87,6 +88,7 @@ class DateTimeExtractorConfiguration(ABC):
     def is_connector_token(self, source: str) -> bool:
         raise NotImplementedError
 
+
 class BaseDateTimeExtractor(DateTimeExtractor):
     @property
     def extractor_type_name(self) -> str:
@@ -113,7 +115,8 @@ class BaseDateTimeExtractor(DateTimeExtractor):
 
     def merge_date_and_time(self, source: str, reference: datetime) -> List[Token]:
         tokens: List[Token] = list()
-        ers: List[ExtractResult] = self.config.date_point_extractor.extract(source, reference)
+        ers: List[ExtractResult] = self.config.date_point_extractor.extract(
+            source, reference)
 
         if not ers:
             return tokens
@@ -168,7 +171,8 @@ class BaseDateTimeExtractor(DateTimeExtractor):
 
     def basic_regex_match(self, source: str) -> List[Token]:
         tokens: List[Token] = list()
-        matches: List[Match] = list(regex.finditer(self.config.now_regex, source))
+        matches: List[Match] = list(
+            regex.finditer(self.config.now_regex, source))
         tokens.extend(map(lambda x: Token(x.start(), x.end()), matches))
         return tokens
 
@@ -186,13 +190,15 @@ class BaseDateTimeExtractor(DateTimeExtractor):
             if not before:
                 continue
 
-            match = regex.search(self.config.time_of_today_before_regex, before)
+            match = regex.search(
+                self.config.time_of_today_before_regex, before)
             if match is not None:
                 begin = match.start()
                 end = er.start + er.length
                 tokens.append(Token(begin, end))
 
-        matches: List[Match] = list(regex.finditer(self.config.simple_time_of_today_before_regex, source))
+        matches: List[Match] = list(regex.finditer(
+            self.config.simple_time_of_today_before_regex, source))
         tokens.extend(map(lambda x: Token(x.start(), x.end()), matches))
         return tokens
 
@@ -211,7 +217,8 @@ class BaseDateTimeExtractor(DateTimeExtractor):
                 end = er.start + er.length + len(match.group())
                 tokens.append(Token(begin, end))
 
-        matches: List[Match] = list(regex.finditer(self.config.simple_time_of_today_after_regex, source))
+        matches: List[Match] = list(regex.finditer(
+            self.config.simple_time_of_today_after_regex, source))
         tokens.extend(map(lambda x: Token(x.start(), x.end()), matches))
         return tokens
 
@@ -221,15 +228,19 @@ class BaseDateTimeExtractor(DateTimeExtractor):
 
         for er in ers:
             before = source[:er.start]
-            before_match = regex.search(self.config.specific_end_of_regex, before)
+            before_match = regex.search(
+                self.config.specific_end_of_regex, before)
 
             if before_match is not None:
-                tokens.append(Token(before_match.start(), er.start + er.length))
+                tokens.append(
+                    Token(before_match.start(), er.start + er.length))
             else:
                 after = source[er.start + er.length:]
-                after_match = regex.search(self.config.specific_end_of_regex, after)
+                after_match = regex.search(
+                    self.config.specific_end_of_regex, after)
                 if after_match is not None:
-                    tokens.append(Token(er.start, er.start + er.length + after_match.end()))
+                    tokens.append(Token(er.start, er.start +
+                                        er.length + after_match.end()))
 
         eod = regex.finditer(self.config.unspecific_end_of_regex, source)
         for match in eod:
@@ -244,11 +255,14 @@ class BaseDateTimeExtractor(DateTimeExtractor):
         for er in ers:
             match = regex.search(self.config.unit_regex, er.text)
             if match is not None:
-                tokens = AgoLaterUtil.extractor_duration_with_before_and_after(source, er, tokens, self.config.utility_configuration)
+                tokens = AgoLaterUtil.extractor_duration_with_before_and_after(
+                    source, er, tokens, self.config.utility_configuration)
 
         return tokens
 
+
 MatchedTimex = namedtuple('MatchedTimex', ['matched', 'timex'])
+
 
 class DateTimeParserConfiguration:
     @property
@@ -377,6 +391,7 @@ class DateTimeParserConfiguration:
     def get_hour(self, source: str, hour: int) -> int:
         raise NotImplementedError
 
+
 class BaseDateTimeParser(DateTimeParser):
     @property
     def parser_type_name(self) -> str:
@@ -402,14 +417,18 @@ class BaseDateTimeParser(DateTimeParser):
                 inner_result = self.parse_time_of_today(source_text, reference)
 
             if not inner_result.success:
-                inner_result = self.parse_special_time_of_date(source_text, reference)
+                inner_result = self.parse_special_time_of_date(
+                    source_text, reference)
 
             if not inner_result.success:
-                inner_result = self.parser_duration_with_ago_and_later(source_text, reference)
+                inner_result = self.parser_duration_with_ago_and_later(
+                    source_text, reference)
 
             if inner_result.success:
-                inner_result.future_resolution[TimeTypeConstants.DATETIME] = DateTimeFormatUtil.format_date_time(inner_result.future_value)
-                inner_result.past_resolution[TimeTypeConstants.DATETIME] = DateTimeFormatUtil.format_date_time(inner_result.past_value)
+                inner_result.future_resolution[TimeTypeConstants.DATETIME] = DateTimeFormatUtil.format_date_time(
+                    inner_result.future_value)
+                inner_result.past_resolution[TimeTypeConstants.DATETIME] = DateTimeFormatUtil.format_date_time(
+                    inner_result.past_value)
                 result.value = inner_result
                 result.timex_str = inner_result.timex if inner_result is not None else ''
                 result.resolution_str = ''
@@ -419,10 +438,12 @@ class BaseDateTimeParser(DateTimeParser):
     # merge a Date entity and a Time entity
     def merge_date_and_time(self, source: str, reference: datetime) -> DateTimeResolutionResult:
         result = DateTimeResolutionResult()
-        er1: ExtractResult = next(iter(self.config.date_extractor.extract(source, reference)), None)
+        er1: ExtractResult = next(
+            iter(self.config.date_extractor.extract(source, reference)), None)
 
         if er1 is None:
-            ers = self.config.date_extractor.extract(self.config.token_before_date + source, reference)
+            ers = self.config.date_extractor.extract(
+                self.config.token_before_date + source, reference)
 
             if len(ers) == 1:
                 er1: ExtractResult = next(iter(ers), None)
@@ -435,12 +456,14 @@ class BaseDateTimeParser(DateTimeParser):
             if self.config.have_ambiguous_token(source, er1.text):
                 return result
 
-        er2_list: List[ExtractResult] = self.config.time_extractor.extract(source, reference)
+        er2_list: List[ExtractResult] = self.config.time_extractor.extract(
+            source, reference)
         er2: ExtractResult = next(iter(er2_list), None)
 
         if er2 is None:
             # here we filter out "morning, afternoon, night..." time entities
-            er2_list = self.config.time_extractor.extract(self.config.token_before_time + source, reference)
+            er2_list = self.config.time_extractor.extract(
+                self.config.token_before_time + source, reference)
 
             if len(er2_list) == 1:
                 er2: ExtractResult = next(iter(er2_list), None)
@@ -489,12 +512,15 @@ class BaseDateTimeParser(DateTimeParser):
 
         val = pr2.value
 
-        has_am_pm = regex.search(self.config.pm_time_regex, source) and regex.search(self.config.am_time_regex, source)
+        has_am_pm = regex.search(self.config.pm_time_regex, source) and regex.search(
+            self.config.am_time_regex, source)
         if hour <= 12 and not has_am_pm and val.comment:
             result.comment = 'ampm'
 
-        result.future_value = datetime(future_date.year, future_date.month, future_date.day, hour, minute, second)
-        result.past_value = datetime(past_date.year, past_date.month, past_date.day, hour, minute, second)
+        result.future_value = datetime(
+            future_date.year, future_date.month, future_date.day, hour, minute, second)
+        result.past_value = datetime(
+            past_date.year, past_date.month, past_date.day, hour, minute, second)
         result.success = True
 
         # change the value of time object
@@ -530,14 +556,17 @@ class BaseDateTimeParser(DateTimeParser):
         second = 0
         time_str: str = None
 
-        whole_match = next(regex.finditer(self.config.simple_time_of_today_after_regex, source), None)
+        whole_match = next(regex.finditer(
+            self.config.simple_time_of_today_after_regex, source), None)
         if whole_match is None or whole_match.group() != source:
-            whole_match = next(regex.finditer(self.config.simple_time_of_today_before_regex, source), None)
+            whole_match = next(regex.finditer(
+                self.config.simple_time_of_today_before_regex, source), None)
 
         if whole_match is not None and whole_match.group() == source:
             hour_str = RegExpUtility.get_group(whole_match, 'hour', None)
             if not hour_str:
-                hour_str = RegExpUtility.get_group(whole_match, 'hournum').lower()
+                hour_str = RegExpUtility.get_group(
+                    whole_match, 'hournum').lower()
                 hour = self.config.numbers.get(hour_str)
             else:
                 hour = int(hour_str)
@@ -547,7 +576,8 @@ class BaseDateTimeParser(DateTimeParser):
             if len(ers) == 1:
                 er = next(iter(ers), None)
             else:
-                er = next(iter(self.config.time_extractor.extract(self.config.token_before_time + source, reference)), None)
+                er = next(iter(self.config.time_extractor.extract(
+                    self.config.token_before_time + source, reference)), None)
                 if er is None:
                     return result
                 er.start -= len(self.config.token_before_time)
@@ -563,7 +593,8 @@ class BaseDateTimeParser(DateTimeParser):
             second = time.second
             time_str = pr.timex_str
 
-        match = next(regex.finditer(self.config.specific_time_of_day_regex, source), None)
+        match = next(regex.finditer(
+            self.config.specific_time_of_day_regex, source), None)
         if match is None:
             return result
 
@@ -584,8 +615,10 @@ class BaseDateTimeParser(DateTimeParser):
         time_str = f'T{hour:02d}{time_str[3:]}'
 
         result.timex = DateTimeFormatUtil.format_date(date) + time_str
-        result.future_value = datetime(date.year, date.month, date.day, hour, minute, second)
-        result.past_value = datetime(date.year, date.month, date.day, hour, minute, second)
+        result.future_value = datetime(
+            date.year, date.month, date.day, hour, minute, second)
+        result.past_value = datetime(
+            date.year, date.month, date.day, hour, minute, second)
         result.success = True
 
         return result
@@ -619,7 +652,8 @@ class BaseDateTimeParser(DateTimeParser):
         result = DateTimeResolutionResult()
         eod = regex.search(self.config.unspecific_end_of_regex, source)
         if eod is not None:
-            result = self.resolve_end_of_day(DateTimeFormatUtil.format_date(reference), reference, reference)
+            result = self.resolve_end_of_day(
+                DateTimeFormatUtil.format_date(reference), reference, reference)
 
         return result
 
@@ -627,8 +661,10 @@ class BaseDateTimeParser(DateTimeParser):
         result = DateTimeResolutionResult()
 
         result.timex = timex_prefix + 'T23:59:59'
-        result.future_value = datetime(future_date.year, future_date.month, future_date.day, 23, 59, 59, 0)
-        result.past_value = datetime(past_date.year, past_date.month, past_date.day, 23, 59, 59, 0)
+        result.future_value = datetime(
+            future_date.year, future_date.month, future_date.day, 23, 59, 59, 0)
+        result.past_value = datetime(
+            past_date.year, past_date.month, past_date.day, 23, 59, 59, 0)
         result.success = True
 
         return result

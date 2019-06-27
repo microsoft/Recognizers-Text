@@ -8,25 +8,36 @@ from ..base_merged import BaseMergedExtractor
 from ..utilities import DateTimeOptions, ExtractResult
 from .merged_extractor_config import ChineseMergedExtractorConfiguration
 
+
 class ChineseMergedExtractor(BaseMergedExtractor):
     def __init__(self, options: DateTimeOptions):
         super().__init__(ChineseMergedExtractorConfiguration(), options)
-        self.day_of_month_regex = RegExpUtility.get_safe_reg_exp('^\\d{1,2}号', regex.I)
+        self.day_of_month_regex = RegExpUtility.get_safe_reg_exp(
+            '^\\d{1,2}号', regex.I)
 
     def extract(self, source: str, reference: datetime = None) -> List[ExtractResult]:
         if reference is None:
             reference = datetime.now()
 
         result: List[ExtractResult] = list()
-        result = self.add_to(result, self.config.date_extractor.extract(source, reference), source)
-        result = self.add_to(result, self.config.time_extractor.extract(source, reference), source)
-        result = self.add_to(result, self.config.duration_extractor.extract(source, reference), source)
-        result = self.add_to(result, self.config.date_period_extractor.extract(source, reference), source)
-        result = self.add_to(result, self.config.date_time_extractor.extract(source, reference), source)
-        result = self.add_to(result, self.config.time_period_extractor.extract(source, reference), source)
-        result = self.add_to(result, self.config.date_time_period_extractor.extract(source, reference), source)
-        result = self.add_to(result, self.config.set_extractor.extract(source, reference), source)
-        result = self.add_to(result, self.config.holiday_extractor.extract(source, reference), source)
+        result = self.add_to(
+            result, self.config.date_extractor.extract(source, reference), source)
+        result = self.add_to(
+            result, self.config.time_extractor.extract(source, reference), source)
+        result = self.add_to(
+            result, self.config.duration_extractor.extract(source, reference), source)
+        result = self.add_to(
+            result, self.config.date_period_extractor.extract(source, reference), source)
+        result = self.add_to(
+            result, self.config.date_time_extractor.extract(source, reference), source)
+        result = self.add_to(
+            result, self.config.time_period_extractor.extract(source, reference), source)
+        result = self.add_to(result, self.config.date_time_period_extractor.extract(
+            source, reference), source)
+        result = self.add_to(
+            result, self.config.set_extractor.extract(source, reference), source)
+        result = self.add_to(
+            result, self.config.holiday_extractor.extract(source, reference), source)
         result = self.check_black_list(result, source)
 
         result = sorted(result, key=lambda x: x.start)
@@ -62,7 +73,8 @@ class ChineseMergedExtractor(BaseMergedExtractor):
         duplicated: List[int] = list()
         for index, dest in enumerate(destination):
             includes_text = dest.text in source.text
-            same_boundary = source.start == dest.start or source.start + source.length == dest.start + dest.length
+            same_boundary = source.start == dest.start or source.start + \
+                source.length == dest.start + dest.length
             if includes_text and same_boundary:
                 duplicated.append(index)
 

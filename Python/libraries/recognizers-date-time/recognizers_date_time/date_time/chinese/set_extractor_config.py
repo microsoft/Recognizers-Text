@@ -9,6 +9,7 @@ from .time_extractor import ChineseTimeExtractor
 from .date_extractor import ChineseDateExtractor
 from .datetime_extractor import ChineseDateTimeExtractor
 
+
 class ChineseSetExtractorConfiguration(SetExtractorConfiguration):
     @property
     def last_regex(self) -> Pattern:
@@ -71,11 +72,16 @@ class ChineseSetExtractorConfiguration(SetExtractorConfiguration):
         return None
 
     def __init__(self):
-        self._last_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.SetLastRegex)
-        self._each_prefix_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.SetEachPrefixRegex)
-        self._each_unit_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.SetEachUnitRegex)
-        self._each_day_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.SetEachDayRegex)
-        self._before_each_day_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.SetEachDayRegex)
+        self._last_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.SetLastRegex)
+        self._each_prefix_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.SetEachPrefixRegex)
+        self._each_unit_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.SetEachUnitRegex)
+        self._each_day_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.SetEachDayRegex)
+        self._before_each_day_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.SetEachDayRegex)
         self._duration_extractor = ChineseDurationExtractor()
         self._time_extractor = ChineseTimeExtractor()
         self._date_extractor = ChineseDateExtractor()

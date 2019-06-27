@@ -30,7 +30,7 @@ class ChoiceRecognizer (Recognizer[ChoiceOptions]):
 
     def initialize_configuration(self):
         self.register_model('BooleanModel', Culture.English, lambda options: BooleanModel(
-            BooleanParser(),BooleanExtractor(EnglishBooleanExtractorConfiguration())))
+            BooleanParser(), BooleanExtractor(EnglishBooleanExtractorConfiguration())))
 
     @staticmethod
     def is_valid_option(options: int) -> bool:

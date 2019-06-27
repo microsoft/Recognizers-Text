@@ -9,6 +9,7 @@ from ..constants import Constants
 from .base_date_time_extractor import ChineseBaseDateTimeExtractor
 from .duration_extractor_config import ChineseDurationExtractorConfiguration
 
+
 class ChineseDurationExtractor(ChineseBaseDateTimeExtractor):
     @property
     def extractor_type_name(self) -> str:
@@ -16,9 +17,12 @@ class ChineseDurationExtractor(ChineseBaseDateTimeExtractor):
 
     def __init__(self):
         super().__init__(None)
-        self.extractor = NumberWithUnitExtractor(ChineseDurationExtractorConfiguration())
-        self.year_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.DurationYearRegex)
-        self.half_suffix_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.DurationHalfSuffixRegex)
+        self.extractor = NumberWithUnitExtractor(
+            ChineseDurationExtractorConfiguration())
+        self.year_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.DurationYearRegex)
+        self.half_suffix_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.DurationHalfSuffixRegex)
 
     def extract(self, source: str, reference: datetime = None) -> List[ExtractResult]:
 

@@ -48,8 +48,10 @@ class SpanishNumberWithUnitExtractorConfiguration(NumberWithUnitExtractorConfigu
         self._unit_num_extractor = SpanishNumberExtractor()
         self._build_prefix = SpanishNumericWithUnit.BuildPrefix
         self._build_suffix = SpanishNumericWithUnit.BuildSuffix
-        self._compound_unit_connector_regex = RegExpUtility.get_safe_reg_exp(SpanishNumericWithUnit.CompoundUnitConnectorRegex)
-        self._pm_non_unit_regex = RegExpUtility.get_safe_reg_exp(BaseUnits.PmNonUnitRegex)
+        self._compound_unit_connector_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishNumericWithUnit.CompoundUnitConnectorRegex)
+        self._pm_non_unit_regex = RegExpUtility.get_safe_reg_exp(
+            BaseUnits.PmNonUnitRegex)
 
 
 # pylint: enable=abstract-method
@@ -152,4 +154,5 @@ class SpanishTemperatureExtractorConfiguration(SpanishNumberWithUnitExtractorCon
         self._suffix_list = SpanishNumericWithUnit.TemperatureSuffixList
         self._prefix_list = dict()
         self._ambiguous_unit_list = []
-        self._ambiguous_unit_number_multiplier_regex = RegExpUtility.get_safe_reg_exp(BaseUnits.AmbiguousUnitNumberMultiplierRegex)
+        self._ambiguous_unit_number_multiplier_regex = RegExpUtility.get_safe_reg_exp(
+            BaseUnits.AmbiguousUnitNumberMultiplierRegex)

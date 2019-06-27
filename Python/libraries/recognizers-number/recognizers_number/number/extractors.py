@@ -57,7 +57,7 @@ class BaseNumberExtractor(Extractor):
                     length = i - last
                     substr = source[start:start + length].strip()
                     src_match = next((x for x in iter(match_source) if (
-                            x.start() == start and (
+                        x.start() == start and (
                             x.end() - x.start()) == length)), None)
 
                     # extract negative numbers
@@ -220,7 +220,7 @@ class BasePercentageExtractor(Extractor):
     def __post_processing(self, results: List[ExtractResult], source: str,
                           positionmap: Dict[int, int],
                           extractresults: List[ExtractResult]) -> List[
-        ExtractResult]:
+            ExtractResult]:
         dummy_token = BaseNumbers.NumberReplaceToken
         for i in range(len(results)):
             start = results[i].start
@@ -232,7 +232,7 @@ class BasePercentageExtractor(Extractor):
                 results[i].start = original_start
                 results[i].length = original_length
                 results[i].text = source[
-                                  original_start:original_start + original_length].strip()
+                    original_start:original_start + original_length].strip()
                 num_start = text.find(dummy_token)
                 if num_start != -1:
                     num_original_start = start + num_start
@@ -240,8 +240,8 @@ class BasePercentageExtractor(Extractor):
                         num_original_end = num_original_start + len(
                             dummy_token)
                         data_key = source[
-                                   positionmap[num_original_start]:positionmap[
-                                       num_original_end]]
+                            positionmap[num_original_start]:positionmap[
+                                num_original_end]]
                         for j in range(i, len(extractresults)):
                             if results[i].start == extractresults[j].start and \
                                     extractresults[j].text in results[i].text:

@@ -6,6 +6,7 @@ from recognizers_number.number.english.extractors import EnglishCardinalExtracto
 from ...resources.english_date_time import EnglishDateTime
 from ..base_duration import DurationExtractorConfiguration
 
+
 class EnglishDurationExtractorConfiguration(DurationExtractorConfiguration):
     @property
     def all_regex(self) -> Pattern:
@@ -44,12 +45,20 @@ class EnglishDurationExtractorConfiguration(DurationExtractorConfiguration):
         return self._cardinal_extractor
 
     def __init__(self):
-        self._all_regex: Pattern = RegExpUtility.get_safe_reg_exp(EnglishDateTime.AllRegex)
-        self._half_regex: Pattern = RegExpUtility.get_safe_reg_exp(EnglishDateTime.HalfRegex)
-        self._followed_unit: Pattern = RegExpUtility.get_safe_reg_exp(EnglishDateTime.DurationFollowedUnit)
-        self._number_combined_with_unit: Pattern = RegExpUtility.get_safe_reg_exp(EnglishDateTime.NumberCombinedWithDurationUnit)
-        self._an_unit_regex: Pattern = RegExpUtility.get_safe_reg_exp(EnglishDateTime.AnUnitRegex)
-        self._inexact_number_unit_regex: Pattern = RegExpUtility.get_safe_reg_exp(EnglishDateTime.InexactNumberUnitRegex)
-        self._suffix_and_regex: Pattern = RegExpUtility.get_safe_reg_exp(EnglishDateTime.SuffixAndRegex)
-        self._relative_duration_unit_regex: Pattern = RegExpUtility.get_safe_reg_exp(EnglishDateTime.RelativeDurationUnitRegex)
+        self._all_regex: Pattern = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.AllRegex)
+        self._half_regex: Pattern = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.HalfRegex)
+        self._followed_unit: Pattern = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.DurationFollowedUnit)
+        self._number_combined_with_unit: Pattern = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.NumberCombinedWithDurationUnit)
+        self._an_unit_regex: Pattern = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.AnUnitRegex)
+        self._inexact_number_unit_regex: Pattern = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.InexactNumberUnitRegex)
+        self._suffix_and_regex: Pattern = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.SuffixAndRegex)
+        self._relative_duration_unit_regex: Pattern = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.RelativeDurationUnitRegex)
         self._cardinal_extractor: BaseNumberExtractor = EnglishCardinalExtractor()

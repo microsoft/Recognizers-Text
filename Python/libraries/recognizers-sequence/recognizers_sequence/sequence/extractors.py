@@ -81,7 +81,8 @@ class SequenceExtractor(Extractor):
                     length = i - last
                     substring = source[start:start + length].strip()
                     src_match = next(
-                        (x for x in iter(match_source) if (x.start() == start and (x.end() - x.start()) == length)),
+                        (x for x in iter(match_source) if (x.start() ==
+                                                           start and (x.end() - x.start()) == length)),
                         None)
 
                     if src_match is not None:
@@ -111,7 +112,8 @@ class BasePhoneNumberExtractor(SequenceExtractor):
     def extract(self, source: str):
         extract_results = super().extract(source)
         ret = []
-        format_indicator_regex = re.compile(BasePhoneNumbers.FormatIndicatorRegex, re.IGNORECASE | re.DOTALL)
+        format_indicator_regex = re.compile(
+            BasePhoneNumbers.FormatIndicatorRegex, re.IGNORECASE | re.DOTALL)
         for er in extract_results:
             ch = source[er.start - 1]
             if er.start == 0 or ch not in BasePhoneNumbers.BoundaryMarkers:
@@ -123,7 +125,8 @@ class BasePhoneNumberExtractor(SequenceExtractor):
                 if not ch_gap.isdigit():
                     ret.append(er)
                 front = source[0:er.start - 1]
-                international_dialing_prefix_regex = re.compile(BasePhoneNumbers.InternationDialingPrefixRegex)
+                international_dialing_prefix_regex = re.compile(
+                    BasePhoneNumbers.InternationDialingPrefixRegex)
                 match = international_dialing_prefix_regex.search(front)
                 if match is not None:
                     er.start = match.start()
@@ -133,7 +136,8 @@ class BasePhoneNumberExtractor(SequenceExtractor):
 
         # filter hexadecimal address like 00 10 00 31 46 D9 E9 11
         for m in re.finditer(BasePhoneNumbers.PhoneNumberMaskRegex, source):
-            ret = [er for er in ret if er.start < m.start() or er.end > m.end()]
+            ret = [er for er in ret if er.start <
+                   m.start() or er.end > m.end()]
         return ret
 
     def __init__(self, config: BaseSequenceExtractorConfiguration):
@@ -180,7 +184,8 @@ class BaseEmailExtractor(SequenceExtractor):
 
     def __init__(self):
         self._regexes = [
-            ReVal(RegExpUtility.get_safe_reg_exp(BaseEmail.EmailRegex), Constants.EMAIL_REGEX),
+            ReVal(RegExpUtility.get_safe_reg_exp(
+                BaseEmail.EmailRegex), Constants.EMAIL_REGEX),
             # EmailRegex2 will break the code as it's not supported in Python, comment out for now
             # ReVal(RegExpUtility.get_safe_reg_exp(BaseEmail.EmailRegex2), Constants.EMAIL_REGEX),
         ]

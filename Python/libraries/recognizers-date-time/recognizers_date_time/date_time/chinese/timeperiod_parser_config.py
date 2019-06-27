@@ -5,6 +5,7 @@ from ..parsers import DateTimeParser
 from ..base_timeperiod import TimePeriodParserConfiguration
 from .time_parser import ChineseTimeParser
 
+
 class ChineseTimePeriodParserConfiguration(TimePeriodParserConfiguration):
     @property
     def time_extractor(self) -> any:

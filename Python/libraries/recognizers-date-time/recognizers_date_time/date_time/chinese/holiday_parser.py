@@ -11,13 +11,16 @@ from .holiday_parser_config import ChineseHolidayParserConfiguration
 from ..constants import TimeTypeConstants
 from ..utilities import DateTimeFormatUtil, DateTimeResolutionResult, RegExpUtility
 
+
 class ChineseHolidayParser(BaseHolidayParser):
     def __init__(self):
         config = ChineseHolidayParserConfiguration()
         BaseHolidayParser.__init__(self, config)
-        self.__lunar_holiday_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.LunarHolidayRegex)
+        self.__lunar_holiday_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.LunarHolidayRegex)
         self.__integer_extractor = ChineseIntegerExtractor()
-        self.__number_parser = AgnosticNumberParserFactory.get_parser(AgnosticNumberParserType.INTEGER, ChineseNumberParserConfiguration())
+        self.__number_parser = AgnosticNumberParserFactory.get_parser(
+            AgnosticNumberParserType.INTEGER, ChineseNumberParserConfiguration())
         self.__fixed_holiday_dictionary = dict([
             ('元旦', ChineseHolidayParser.new_year),
             ('元旦节', ChineseHolidayParser.new_year),
@@ -62,7 +65,7 @@ class ChineseHolidayParser(BaseHolidayParser):
     @staticmethod
     def labor_day(year: int) -> datetime:
         return datetime(year, 5, 1)
-    
+
     @staticmethod
     def christmas_eve(year: int) -> datetime:
         return datetime(year, 12, 24)
@@ -150,14 +153,17 @@ class ChineseHolidayParser(BaseHolidayParser):
         value = None
 
         if source.type == self.parser_type_name:
-            inner_result = self._parse_holiday_regex_match(source.text, reference)
+            inner_result = self._parse_holiday_regex_match(
+                source.text, reference)
 
             if inner_result.success:
                 inner_result.future_resolution = {
-                    TimeTypeConstants.DATE: DateTimeFormatUtil.format_date(inner_result.future_value)
+                    TimeTypeConstants.DATE: DateTimeFormatUtil.format_date(
+                        inner_result.future_value)
                 }
                 inner_result.past_resolution = {
-                    TimeTypeConstants.DATE: DateTimeFormatUtil.format_date(inner_result.past_value)
+                    TimeTypeConstants.DATE: DateTimeFormatUtil.format_date(
+                        inner_result.past_value)
                 }
                 inner_result.is_lunar = self.__is_lunar(source.text)
                 value = inner_result
@@ -174,7 +180,8 @@ class ChineseHolidayParser(BaseHolidayParser):
 
     def _match2date(self, match: Match, reference: datetime) -> DateTimeResolutionResult:
         result = DateTimeResolutionResult()
-        holiday_str = self.config.sanitize_holiday_token(match.group('holiday').lower())
+        holiday_str = self.config.sanitize_holiday_token(
+            match.group('holiday').lower())
 
         if not holiday_str:
             return result
@@ -221,8 +228,10 @@ class ChineseHolidayParser(BaseHolidayParser):
             result.past_value = datetime(year, date.month, date.day)
         else:
             result.timex = 'XXXX' + timex
-            result.future_value = self.__get_date_value(date, reference, holiday_str, 1, lambda d, r: d < r)
-            result.past_value = self.__get_date_value(date, reference, holiday_str, -1, lambda d, r: d >= r)
+            result.future_value = self.__get_date_value(
+                date, reference, holiday_str, 1, lambda d, r: d < r)
+            result.past_value = self.__get_date_value(
+                date, reference, holiday_str, -1, lambda d, r: d >= r)
 
         result.success = True
 
@@ -242,7 +251,8 @@ class ChineseHolidayParser(BaseHolidayParser):
                     year_num *= 10
                     ers = self.__integer_extractor.extract(char)
                     if ers and ers[-1].type == NumberConstants.SYS_NUM_INTEGER:
-                        year_num += int(self.__number_parser.parse(ers[-1]).value)
+                        year_num += int(
+                            self.__number_parser.parse(ers[-1]).value)
             else:
                 year = year_num
         else:
@@ -257,6 +267,7 @@ class ChineseHolidayParser(BaseHolidayParser):
                 return date + datedelta(years=swift)
 
             if holiday in self.config.holiday_func_dictionary:
-                result = self.config.holiday_func_dictionary[holiday](reference.year + swift)
+                result = self.config.holiday_func_dictionary[holiday](
+                    reference.year + swift)
 
         return result
