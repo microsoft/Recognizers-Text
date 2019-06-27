@@ -29,8 +29,13 @@ def generate(yaml_file_path: str, py_file_name: str, header: str, footer: str):
         file.write(HEADER_COMMENT + EOL + EOL)
         file.write(header + EOL)
 
-        for line in code:
-            file.write(CLASS_INDENT + line.write() + EOL)
+        for block in code:
+            lines = block.write().splitlines()
+            for line in lines:
+                if not line:
+                    file.write(EOL)
+                else:
+                    file.write(CLASS_INDENT + line + EOL)
 
         file.write(footer)
         file.write(EOL)

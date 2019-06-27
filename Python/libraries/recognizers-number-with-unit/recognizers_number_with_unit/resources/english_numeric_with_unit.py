@@ -11,6 +11,8 @@
 
 from .base_numbers import BaseNumbers
 # pylint: disable=line-too-long
+
+
 class EnglishNumericWithUnit:
     AgeSuffixList = dict([("Year", "years old|year old|year-old|years-old|-year-old|-years-old|years of age|year of age"),
                           ("Month", "months old|month old|month-old|months-old|-month-old|-months-old|month of age|months of age"),

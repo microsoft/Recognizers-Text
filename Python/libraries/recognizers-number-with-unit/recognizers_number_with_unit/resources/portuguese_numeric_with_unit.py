@@ -11,6 +11,8 @@
 
 from .base_numbers import BaseNumbers
 # pylint: disable=line-too-long
+
+
 class PortugueseNumericWithUnit:
     AgeSuffixList = dict([("Ano", "anos|ano"),
                           ("Mês", "meses|mes|mês"),

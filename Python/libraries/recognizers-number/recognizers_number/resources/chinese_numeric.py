@@ -11,6 +11,8 @@
 
 from .base_numbers import BaseNumbers
 # pylint: disable=line-too-long
+
+
 class ChineseNumeric:
     LangMarker = 'Chs'
     CompoundNumberLanguage = True

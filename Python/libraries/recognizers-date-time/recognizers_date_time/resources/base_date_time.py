@@ -10,6 +10,8 @@
 # ------------------------------------------------------------------------------
 
 # pylint: disable=line-too-long
+
+
 class BaseDateTime:
     HourRegex = f'(?<hour>2[0-4]|[0-1]?\\d)(h)?'
     TwoDigitHourRegex = f'(?<hour>[0-1]\\d|2[0-4])(h)?'
