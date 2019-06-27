@@ -8,17 +8,22 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
 {
     public class OrdinalExtractor : BaseNumberExtractor
     {
+
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
         public OrdinalExtractor()
         {
             var regexes = new Dictionary<Regex, TypeTag>
             {
                 {
                     // 第一百五十四
-                    new Regex(NumbersDefinitions.OrdinalRegex, RegexOptions.Singleline), RegexTagGenerator.GenerateRegexTag(Constants.ORDINAL_PREFIX, Constants.CHINESE)
+                    new Regex(NumbersDefinitions.OrdinalRegex, RegexFlags),
+                    RegexTagGenerator.GenerateRegexTag(Constants.ORDINAL_PREFIX, Constants.CHINESE)
                 },
                 {
                     // 第２５６５,  第1234
-                    new Regex(NumbersDefinitions.OrdinalNumbersRegex, RegexOptions.Singleline), RegexTagGenerator.GenerateRegexTag(Constants.ORDINAL_PREFIX, Constants.CHINESE)
+                    new Regex(NumbersDefinitions.OrdinalNumbersRegex, RegexFlags),
+                    RegexTagGenerator.GenerateRegexTag(Constants.ORDINAL_PREFIX, Constants.CHINESE)
                 },
             };
 

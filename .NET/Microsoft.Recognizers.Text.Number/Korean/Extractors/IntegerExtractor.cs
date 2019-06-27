@@ -8,28 +8,31 @@ namespace Microsoft.Recognizers.Text.Number.Korean
 {
     public class IntegerExtractor : BaseNumberExtractor
     {
+
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
         public IntegerExtractor(KoreanNumberExtractorMode mode = KoreanNumberExtractorMode.Default)
         {
             var regexes = new Dictionary<Regex, TypeTag>
             {
                 {
                     // 123456,  －１２３４５６
-                    new Regex(NumbersDefinitions.NumbersSpecialsChars, RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.NumbersSpecialsChars, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
                     // 15k,  16 G
-                    new Regex(NumbersDefinitions.NumbersSpecialsCharsWithSuffix, RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.NumbersSpecialsCharsWithSuffix, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
                     // 1,234,  ２，３３２，１１１
-                    new Regex(NumbersDefinitions.DottedNumbersSpecialsChar, RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.DottedNumbersSpecialsChar, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
                     // 마이너스 일, 마이너스 오
-                    new Regex(NumbersDefinitions.ZeroToNineIntegerSpecialsChars, RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.ZeroToNineIntegerSpecialsChars, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.KOREAN)
                 },
             };
@@ -39,7 +42,7 @@ namespace Microsoft.Recognizers.Text.Number.Korean
                 case KoreanNumberExtractorMode.Default:
                     // 일백오십오
                     regexes.Add(
-                        new Regex(NumbersDefinitions.NumbersWithAllowListRegex, RegexOptions.Singleline),
+                        new Regex(NumbersDefinitions.NumbersWithAllowListRegex, RegexFlags),
                         RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.KOREAN));
                     break;
 
@@ -47,7 +50,7 @@ namespace Microsoft.Recognizers.Text.Number.Korean
                     // 일백오십오, 사직구장, "사직구장" from "사(it is homonym, seems like four(4) or other chinese character)"
                     // Uses no allow lists and extracts all potential integers (useful in Units, for example).
                     regexes.Add(
-                        new Regex(NumbersDefinitions.NumbersAggressiveRegex, RegexOptions.Singleline),
+                        new Regex(NumbersDefinitions.NumbersAggressiveRegex, RegexFlags),
                         RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.KOREAN));
                     break;
             }

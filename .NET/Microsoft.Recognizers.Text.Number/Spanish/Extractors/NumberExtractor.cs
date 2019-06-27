@@ -8,12 +8,15 @@ namespace Microsoft.Recognizers.Text.Number.Spanish
 {
     public class NumberExtractor : BaseNumberExtractor
     {
+
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
         private static readonly ConcurrentDictionary<(NumberMode, NumberOptions), NumberExtractor> Instances =
             new ConcurrentDictionary<(NumberMode, NumberOptions), NumberExtractor>();
 
         private NumberExtractor(NumberMode mode = NumberMode.Default, NumberOptions options = NumberOptions.None)
         {
-            NegativeNumberTermsRegex = new Regex(NumbersDefinitions.NegativeNumberTermsRegex + '$', RegexOptions.Singleline);
+            NegativeNumberTermsRegex = new Regex(NumbersDefinitions.NegativeNumberTermsRegex + '$', RegexFlags);
 
             Options = options;
 
@@ -27,7 +30,9 @@ namespace Microsoft.Recognizers.Text.Number.Spanish
                     cardExtract = CardinalExtractor.GetInstance(NumbersDefinitions.PlaceHolderPureNumber);
                     break;
                 case NumberMode.Currency:
-                    builder.Add(CurrencyRegex, RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX));
+                    builder.Add(
+                        CurrencyRegex,
+                        RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX));
                     break;
                 case NumberMode.Default:
                     break;
