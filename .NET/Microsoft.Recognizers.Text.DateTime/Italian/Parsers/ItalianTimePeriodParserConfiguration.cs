@@ -15,6 +15,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             IntegerExtractor = config.IntegerExtractor;
             TimeParser = config.TimeParser;
             TimeZoneParser = config.TimeZoneParser;
+
             PureNumberFromToRegex = ItalianTimePeriodExtractorConfiguration.PureNumFromTo;
             PureNumberBetweenAndRegex = ItalianTimePeriodExtractorConfiguration.PureNumBetweenAnd;
             SpecificTimeFromToRegex = ItalianTimePeriodExtractorConfiguration.SpecificTimeFromTo;
@@ -22,6 +23,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             TimeOfDayRegex = ItalianTimePeriodExtractorConfiguration.TimeOfDayRegex;
             GeneralEndingRegex = ItalianTimePeriodExtractorConfiguration.GeneralEndingRegex;
             TillRegex = ItalianTimePeriodExtractorConfiguration.TillRegex;
+
             Numbers = config.Numbers;
             UtilityConfiguration = config.UtilityConfiguration;
         }
@@ -54,7 +56,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public bool GetMatchedTimexRange(string text, out string timex, out int beginHour, out int endHour, out int endMin)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
             if (trimmedText.EndsWith("s"))
             {
                 trimmedText = trimmedText.Substring(0, trimmedText.Length - 1);

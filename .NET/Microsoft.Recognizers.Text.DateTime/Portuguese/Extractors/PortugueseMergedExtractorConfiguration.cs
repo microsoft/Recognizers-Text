@@ -8,41 +8,41 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
     public class PortugueseMergedExtractorConfiguration : BaseOptionsConfiguration, IMergedExtractorConfiguration
     {
         public static readonly Regex BeforeRegex =
-            new Regex(DateTimeDefinitions.BeforeRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.BeforeRegex, RegexFlags);
 
         public static readonly Regex AfterRegex =
-            new Regex(DateTimeDefinitions.AfterRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.AfterRegex, RegexFlags);
 
         public static readonly Regex SinceRegex =
-            new Regex(DateTimeDefinitions.SinceRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.SinceRegex, RegexFlags);
 
         public static readonly Regex AroundRegex =
-            new Regex(DateTimeDefinitions.AroundRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.AroundRegex, RegexFlags);
 
         // TODO: change the following three regexes to Portuguese if there are the same requirement of splitting from A to B as two time points
         public static readonly Regex FromToRegex =
-            new Regex(DateTimeDefinitions.FromToRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.FromToRegex, RegexFlags);
 
         public static readonly Regex SingleAmbiguousMonthRegex =
-            new Regex(DateTimeDefinitions.SingleAmbiguousMonthRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.SingleAmbiguousMonthRegex, RegexFlags);
 
         public static readonly Regex PrepositionSuffixRegex =
-            new Regex(DateTimeDefinitions.PrepositionSuffixRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.PrepositionSuffixRegex, RegexFlags);
 
         public static readonly Regex NumberEndingPattern =
-            new Regex(DateTimeDefinitions.NumberEndingPattern, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.NumberEndingPattern, RegexFlags);
 
         public static readonly Regex SuffixAfterRegex =
-            new Regex(DateTimeDefinitions.SuffixAfterRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.SuffixAfterRegex, RegexFlags);
 
         public static readonly Regex UnspecificDatePeriodRegex =
-            new Regex(DateTimeDefinitions.UnspecificDatePeriodRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.UnspecificDatePeriodRegex, RegexFlags);
 
         public static readonly StringMatcher SuperfluousWordMatcher = new StringMatcher();
 
-        public static readonly Regex[] TermFilterRegexes =
-        {
-        };
+        public static readonly Regex[] TermFilterRegexes = { };
+
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         public PortugueseMergedExtractorConfiguration(DateTimeOptions options)
             : base(options)

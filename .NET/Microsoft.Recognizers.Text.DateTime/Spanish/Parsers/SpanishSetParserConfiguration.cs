@@ -77,7 +77,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public bool GetMatchedDailyTimex(string text, out string timex)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
 
             if (trimmedText.EndsWith("diario") || trimmedText.EndsWith("diariamente"))
             {
@@ -110,7 +110,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public bool GetMatchedUnitTimex(string text, out string timex)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
 
             if (trimmedText.Equals("día") || trimmedText.Equals("dia") ||
                 trimmedText.Equals("días") || trimmedText.Equals("dias"))

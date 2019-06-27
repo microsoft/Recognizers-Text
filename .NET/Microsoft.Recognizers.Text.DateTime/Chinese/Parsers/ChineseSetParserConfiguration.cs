@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
@@ -26,9 +27,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         public DateTimeParseResult Parse(ExtractResult er, DateObject refDate)
         {
-            var referenceDate = refDate;
             object value = null;
-            if (er.Type.Equals(ParserName))
+            if (er.Type.Equals(ParserName, StringComparison.Ordinal))
             {
                 var innerResult = ParseEachUnit(er.Text);
                 if (!innerResult.Success)

@@ -18,7 +18,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public override int GetSwiftYear(string text)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
             var swift = -10;
 
             if (SpanishDatePeriodParserConfiguration.NextPrefixRegex.IsMatch(trimmedText))

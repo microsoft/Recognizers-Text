@@ -26,7 +26,8 @@ namespace Microsoft.Recognizers.Text.DateTime
     {
         public delegate int SwiftDayDelegate(string text);
 
-        public static List<Token> ExtractorDurationWithBeforeAndAfter(string text, ExtractResult er, List<Token> ret, IDateTimeUtilityConfiguration utilityConfiguration)
+        public static List<Token> ExtractorDurationWithBeforeAndAfter(string text, ExtractResult er, List<Token> ret,
+                                                                      IDateTimeUtilityConfiguration utilityConfiguration)
         {
             var pos = (int)er.Start + (int)er.Length;
 
