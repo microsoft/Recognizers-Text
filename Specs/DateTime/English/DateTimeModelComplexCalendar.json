@@ -10263,7 +10263,7 @@
     "Context": {
       "ReferenceDateTime": "2019-06-18T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "this school year",
@@ -10287,7 +10287,7 @@
     "Context": {
       "ReferenceDateTime": "2019-06-18T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "last fiscal year",
@@ -10311,7 +10311,7 @@
     "Context": {
       "ReferenceDateTime": "2019-06-18T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "this calendar year",
@@ -10336,7 +10336,7 @@
     "Context": {
       "ReferenceDateTime": "2019-06-18T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "fiscal year 2008",
@@ -10360,7 +10360,7 @@
     "Context": {
       "ReferenceDateTime": "2019-06-18T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "school year 2008",
@@ -10384,7 +10384,7 @@
     "Context": {
       "ReferenceDateTime": "2019-06-18T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "calendar year 2008",
@@ -10409,7 +10409,7 @@
     "Context": {
       "ReferenceDateTime": "2019-06-18T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "cy 2008",
@@ -10434,7 +10434,7 @@
     "Context": {
       "ReferenceDateTime": "2019-06-18T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "sy 2008",
@@ -10458,7 +10458,7 @@
     "Context": {
       "ReferenceDateTime": "2019-06-18T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "fiscal year",
@@ -10482,7 +10482,7 @@
     "Context": {
       "ReferenceDateTime": "2019-06-18T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "sy18",
@@ -10506,7 +10506,7 @@
     "Context": {
       "ReferenceDateTime": "2019-06-18T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "cy18",
