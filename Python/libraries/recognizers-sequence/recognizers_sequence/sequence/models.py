@@ -50,8 +50,9 @@ class PhoneNumberModel(AbstractSequenceModel):
     def get_resolution(self, data: ParseResult):
         return {
             'value': data.resolution_str,
-            'score': '%g'% data.value
+            'score': '%g' % data.value
         }
+
 
 class EmailModel(AbstractSequenceModel):
     @property

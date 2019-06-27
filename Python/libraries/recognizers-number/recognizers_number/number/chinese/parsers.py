@@ -15,6 +15,7 @@ from recognizers_number.culture import CultureInfo
 
 getcontext().prec = 15
 
+
 class ChineseNumberParserConfiguration(NumberParserConfiguration):
     @property
     def cardinal_number_map(self) -> Dict[str, int]:
@@ -171,7 +172,8 @@ class ChineseNumberParserConfiguration(NumberParserConfiguration):
         self._pair_char = ChineseNumeric.PairChar
 
         self._round_number_map = ChineseNumeric.RoundNumberMap
-        self._digital_number_regex = RegExpUtility.get_safe_reg_exp(ChineseNumeric.DigitalNumberRegex)
+        self._digital_number_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseNumeric.DigitalNumberRegex)
 
         self._zero_to_nine_map = ChineseNumeric.ZeroToNineMap
         self._round_number_map_char = ChineseNumeric.RoundNumberMapChar
@@ -184,12 +186,17 @@ class ChineseNumberParserConfiguration(NumberParserConfiguration):
         self._digit_num_regex = ChineseNumeric.DigitNumRegex
         self._dozen_regex = ChineseNumeric.DozenRegex
         self._percentage_regex = ChineseNumeric.PercentageRegex
-        self._double_and_round_regex = RegExpUtility.get_safe_reg_exp(ChineseNumeric.DoubleAndRoundRegex)
-        self._frac_split_regex = RegExpUtility.get_safe_reg_exp(ChineseNumeric.FracSplitRegex)
-        self._negative_number_sign_regex = RegExpUtility.get_safe_reg_exp(ChineseNumeric.NegativeNumberSignRegex)
+        self._double_and_round_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseNumeric.DoubleAndRoundRegex)
+        self._frac_split_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseNumeric.FracSplitRegex)
+        self._negative_number_sign_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseNumeric.NegativeNumberSignRegex)
         self._point_regex = ChineseNumeric.PointRegex
-        self._spe_get_number_regex = RegExpUtility.get_safe_reg_exp(ChineseNumeric.SpeGetNumberRegex)
-        self._pair_regex = RegExpUtility.get_safe_reg_exp(ChineseNumeric.PairRegex)
+        self._spe_get_number_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseNumeric.SpeGetNumberRegex)
+        self._pair_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseNumeric.PairRegex)
 
     def normalize_token_set(self, tokens: List[str], context: ParseResult) -> List[str]:
         return tokens

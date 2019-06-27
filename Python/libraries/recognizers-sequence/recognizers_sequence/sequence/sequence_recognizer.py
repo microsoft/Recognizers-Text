@@ -21,22 +21,22 @@ class SequenceRecognizer(Recognizer[SequenceOptions]):
         super().__init__(target_culture, options, lazy_initialization)
 
     def initialize_configuration(self):
-        #region English
+        # region English
         self.register_model('PhoneNumberModel', Culture.English,
                             lambda options: PhoneNumberModel(PhoneNumberParser(),
-                                            BasePhoneNumberExtractor(EnglishPhoneNumberExtractorConfiguration())))
+                                                             BasePhoneNumberExtractor(EnglishPhoneNumberExtractorConfiguration())))
         self.register_model('EmailModel', Culture.English,
-                            lambda options: EmailModel(EmailParser(),EmailExtractor()))
-        #endregion
+                            lambda options: EmailModel(EmailParser(), EmailExtractor()))
+        # endregion
 
-        #region Chinese
+        # region Chinese
         self.register_model('PhoneNumberModel', Culture.Chinese,
-                    lambda options: PhoneNumberModel(PhoneNumberParser(),
-                                            BasePhoneNumberExtractor(ChinesePhoneNumberExtractorConfiguration())))
-        #endregion
+                            lambda options: PhoneNumberModel(PhoneNumberParser(),
+                                                             BasePhoneNumberExtractor(ChinesePhoneNumberExtractorConfiguration())))
+        # endregion
 
     def get_phone_number_model(self, culture: str = None, fallback_to_default_culture: bool = True) -> Model:
-        if culture and (culture.lower().startswith("zh-") or culture.lower().startswith("ja-")) :
+        if culture and (culture.lower().startswith("zh-") or culture.lower().startswith("ja-")):
             return self.get_model('PhoneNumberModel', Culture.Chinese, fallback_to_default_culture)
         return self.get_model('PhoneNumberModel', culture, fallback_to_default_culture)
 
@@ -47,11 +47,13 @@ class SequenceRecognizer(Recognizer[SequenceOptions]):
 def recognize_phone_number(query: str, culture: str, options: SequenceOptions = SequenceOptions.NONE,
                            fallback_to_default_culture: bool = True) -> List[ModelResult]:
     recognizer = SequenceRecognizer(culture, options)
-    model = recognizer.get_phone_number_model(culture, fallback_to_default_culture)
+    model = recognizer.get_phone_number_model(
+        culture, fallback_to_default_culture)
     return model.parse(query)
 
+
 def recognize_email(query: str, culture: str, options: SequenceOptions = SequenceOptions.NONE,
-                           fallback_to_default_culture: bool = True) -> List[ModelResult]:
+                    fallback_to_default_culture: bool = True) -> List[ModelResult]:
     recognizer = SequenceRecognizer(culture, options)
     model = recognizer.get_email_model(culture, fallback_to_default_culture)
     return model.parse(query)

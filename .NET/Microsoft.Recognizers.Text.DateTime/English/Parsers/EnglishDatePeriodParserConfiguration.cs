@@ -10,19 +10,21 @@ namespace Microsoft.Recognizers.Text.DateTime.English
     public class EnglishDatePeriodParserConfiguration : BaseOptionsConfiguration, IDatePeriodParserConfiguration
     {
         public static readonly Regex PreviousPrefixRegex =
-            new Regex(DateTimeDefinitions.PreviousPrefixRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.PreviousPrefixRegex, RegexFlags);
 
         public static readonly Regex ThisPrefixRegex =
-            new Regex(DateTimeDefinitions.ThisPrefixRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.ThisPrefixRegex, RegexFlags);
 
         public static readonly Regex AfterNextSuffixRegex =
-            new Regex(DateTimeDefinitions.AfterNextSuffixRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.AfterNextSuffixRegex, RegexFlags);
 
         public static readonly Regex RelativeRegex =
-            new Regex(DateTimeDefinitions.RelativeRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.RelativeRegex, RegexFlags);
 
         public static readonly Regex UnspecificEndOfRangeRegex =
-            new Regex(DateTimeDefinitions.UnspecificEndOfRangeRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.UnspecificEndOfRangeRegex, RegexFlags);
+
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         private static IList<string> monthTermsPadded =
             DateTimeDefinitions.MonthTerms.Select(str => $" {str} ").ToList();
@@ -37,7 +39,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             DateTimeDefinitions.YearTerms.Select(str => $" {str} ").ToList();
 
         private static readonly Regex NextPrefixRegex =
-            new Regex(DateTimeDefinitions.NextPrefixRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.NextPrefixRegex, RegexFlags);
 
         public EnglishDatePeriodParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)
@@ -51,6 +53,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             DurationExtractor = config.DurationExtractor;
             DurationParser = config.DurationParser;
             DateParser = config.DateParser;
+
             MonthFrontBetweenRegex = EnglishDatePeriodExtractorConfiguration.MonthFrontBetweenRegex;
             BetweenRegex = EnglishDatePeriodExtractorConfiguration.BetweenRegex;
             MonthFrontSimpleCasesRegex = EnglishDatePeriodExtractorConfiguration.MonthFrontSimpleCasesRegex;
@@ -89,6 +92,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             MoreThanRegex = EnglishDatePeriodExtractorConfiguration.MoreThanRegex;
             CenturySuffixRegex = EnglishDatePeriodExtractorConfiguration.CenturySuffixRegex;
             NowRegex = EnglishDatePeriodExtractorConfiguration.NowRegex;
+
             UnitMap = config.UnitMap;
             CardinalMap = config.CardinalMap;
             DayOfMonth = config.DayOfMonth;

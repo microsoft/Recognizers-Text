@@ -4,6 +4,7 @@ from recognizers_number_with_unit import ChineseNumberWithUnitParserConfiguratio
 from ...resources.chinese_date_time import ChineseDateTime
 from ..base_duration import DurationParserConfiguration
 
+
 class ChineseDurationParserConfiguration(DurationParserConfiguration):
     @property
     def cardinal_extractor(self) -> any:
@@ -55,6 +56,7 @@ class ChineseDurationParserConfiguration(DurationParserConfiguration):
 
     def __init__(self):
         self._unit_value_map = ChineseDateTime.DurationUnitValueMap
+
 
 class ChineseDurationNumberWithUnitParserConfiguration(ChineseNumberWithUnitParserConfiguration):
     def __init__(self):

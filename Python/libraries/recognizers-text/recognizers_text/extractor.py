@@ -1,6 +1,7 @@
 from abc import ABC, abstractmethod
 from typing import List
 
+
 class ExtractResult:
     def __init__(self):
         self.start: int = None
@@ -28,6 +29,7 @@ class ExtractResult:
         result.text = source
         result.type = 'custom'
         return result
+
 
 class Extractor(ABC):
     @abstractmethod

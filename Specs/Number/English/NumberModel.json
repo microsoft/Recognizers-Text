@@ -1743,7 +1743,7 @@
     ]
   },
   {
-    "Input": "ninety - five hundred fifths",
+    "Input": "how much is ninety - five hundred fifths?",
     "Results": [
       {
         "Text": "ninety - five hundred fifths",
@@ -1752,8 +1752,8 @@
           "subtype": "fraction",
           "value": "1900"
         },
-        "Start": 0,
-        "End": 27
+        "Start": 12,
+        "End": 39
       }
     ]
   },

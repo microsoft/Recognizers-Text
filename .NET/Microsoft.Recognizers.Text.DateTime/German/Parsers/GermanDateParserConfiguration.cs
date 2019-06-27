@@ -141,7 +141,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public int GetSwiftMonthOrYear(string text)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
             var swift = 0;
             if (NextPrefixRegex.IsMatch(trimmedText))
             {
@@ -157,7 +157,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public bool IsCardinalLast(string text)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
             return trimmedText.Equals("letzten");
         }
 

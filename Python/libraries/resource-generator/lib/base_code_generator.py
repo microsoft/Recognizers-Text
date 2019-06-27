@@ -13,8 +13,8 @@ HEADER_COMMENT = '''# ----------------------------------------------------------
 # Copyright (c) Microsoft Corporation. All rights reserved.
 # Licensed under the MIT License.
 # ------------------------------------------------------------------------------'''
-EOL = '\n'  # Follow recommendation: Do not use os.linesep as a line terminator when 
-            # writing files opened in text mode (the default); use a single '\n' instead, on all platforms.
+EOL = '\n'  # Follow recommendation: Do not use os.linesep as a line terminator when
+# writing files opened in text mode (the default); use a single '\n' instead, on all platforms.
 CLASS_INDENT = '    '
 
 

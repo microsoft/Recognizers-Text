@@ -10,12 +10,16 @@ from ..utilities import merge_all_tokens, Token
 from ..base_datetimeperiod import BaseDateTimePeriodExtractor
 from .datetimeperiod_extractor_config import ChineseDateTimePeriodExtractorConfiguration
 
+
 class ChineseDateTimePeriodExtractor(BaseDateTimePeriodExtractor):
     def __init__(self):
         super().__init__(ChineseDateTimePeriodExtractorConfiguration())
-        self.zhijian_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.ZhijianRegex)
-        self.past_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.PastRegex)
-        self.future_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.FutureRegex)
+        self.zhijian_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.ZhijianRegex)
+        self.past_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.PastRegex)
+        self.future_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.FutureRegex)
 
     def extract(self, source: str, reference: datetime = None) -> List[ExtractResult]:
         if reference is None:
@@ -70,8 +74,10 @@ class ChineseDateTimePeriodExtractor(BaseDateTimePeriodExtractor):
     def merge_two_time_points(self, source: str, reference: datetime) -> List[Token]:
         tokens: List[Token] = list()
         source = source.strip().lower()
-        ers_datetime: List[ExtractResult] = self.config.single_date_time_extractor.extract(source, reference)
-        ers_time: List[ExtractResult] = self.config.single_time_extractor.extract(source, reference)
+        ers_datetime: List[ExtractResult] = self.config.single_date_time_extractor.extract(
+            source, reference)
+        ers_time: List[ExtractResult] = self.config.single_time_extractor.extract(
+            source, reference)
         inner_marks: List[ExtractResult] = list()
 
         j = 0
@@ -125,7 +131,8 @@ class ChineseDateTimePeriodExtractor(BaseDateTimePeriodExtractor):
                 after_str = source[period_end:].strip()
                 match = regex.search(self.zhijian_regex, after_str)
                 if match:
-                    tokens.append(Token(period_begin, period_end + len(match.group())))
+                    tokens.append(
+                        Token(period_begin, period_end + len(match.group())))
                     idx += 2
                     continue
 
@@ -139,10 +146,12 @@ class ChineseDateTimePeriodExtractor(BaseDateTimePeriodExtractor):
 
         for er in self.config.cardinal_extractor.extract(source):
             after_str = source[er.start + er.length:]
-            followed_unit_match = regex.search(self.config.followed_unit, after_str)
+            followed_unit_match = regex.search(
+                self.config.followed_unit, after_str)
 
             if followed_unit_match and followed_unit_match.start() == 0:
-                durations.append(Token(er.start, er.start + er.length + len(followed_unit_match.group())))
+                durations.append(Token(er.start, er.start +
+                                       er.length + len(followed_unit_match.group())))
 
         for match in regex.finditer(self.config.time_unit_regex, source):
             durations.append(Token(match.start(), match.end()))
@@ -170,10 +179,12 @@ class ChineseDateTimePeriodExtractor(BaseDateTimePeriodExtractor):
         tokens: List[Token] = list()
         source = source.strip().lower()
 
-        matches = regex.finditer(self.config.specific_time_of_day_regex, source)
+        matches = regex.finditer(
+            self.config.specific_time_of_day_regex, source)
         tokens.extend(map(lambda x: Token(x.start(), x.end()), matches))
 
-        ers_date: List[ExtractResult] = self.config.single_date_extractor.extract(source, reference)
+        ers_date: List[ExtractResult] = self.config.single_date_extractor.extract(
+            source, reference)
 
         for er in ers_date:
             after_str = source[er.start + er.length:]
@@ -182,6 +193,7 @@ class ChineseDateTimePeriodExtractor(BaseDateTimePeriodExtractor):
             if match:
                 middle_str = source[0:match.start()]
                 if not middle_str.strip() or regex.search(self.config.preposition_regex, middle_str):
-                    tokens.append(Token(er.start, er.start + er.length + match.end()))
+                    tokens.append(
+                        Token(er.start, er.start + er.length + match.end()))
 
         return tokens

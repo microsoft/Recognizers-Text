@@ -6,6 +6,7 @@ from ..utilities import DateUtils
 from ..base_holiday import BaseHolidayParserConfiguration
 from ...resources.spanish_date_time import SpanishDateTime
 
+
 class SpanishHolidayParserConfiguration(BaseHolidayParserConfiguration):
     @property
     def holiday_names(self) -> Dict[str, List[str]]:
@@ -29,9 +30,12 @@ class SpanishHolidayParserConfiguration(BaseHolidayParserConfiguration):
         self._holiday_names = SpanishDateTime.HolidayNames
         self._variable_holidays_timex_dictionary = SpanishDateTime.VariableHolidaysTimexDictionary
 
-        self.next_prefix_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.NextPrefixRegex)
-        self.previous_prefix_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.PreviousPrefixRegex)
-        self.this_prefix_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.ThisPrefixRegex)
+        self.next_prefix_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.NextPrefixRegex)
+        self.previous_prefix_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.PreviousPrefixRegex)
+        self.this_prefix_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.ThisPrefixRegex)
 
     def _init_holiday_funcs(self) -> Dict[str, Callable[[int], datetime]]:
         local = dict([

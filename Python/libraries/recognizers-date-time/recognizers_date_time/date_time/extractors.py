@@ -4,6 +4,7 @@ from datetime import datetime
 
 from recognizers_text.extractor import Extractor, ExtractResult
 
+
 class DateTimeExtractor(Extractor):
     @property
     @abstractmethod
@@ -11,5 +12,5 @@ class DateTimeExtractor(Extractor):
         raise NotImplementedError
 
     @abstractmethod
-    def extract(self, source: str, reference: datetime = None) -> List[ExtractResult]:#pylint: disable=W0221
+    def extract(self, source: str, reference: datetime = None) -> List[ExtractResult]:  # pylint: disable=W0221
         raise NotImplementedError

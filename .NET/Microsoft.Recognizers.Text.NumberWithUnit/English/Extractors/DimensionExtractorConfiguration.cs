@@ -8,7 +8,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.English
 {
     public class DimensionExtractorConfiguration : EnglishNumberWithUnitExtractorConfiguration
     {
-        public static readonly ImmutableDictionary<string, string> DimensionSuffixList = NumbersWithUnitDefinitions.InformationSuffixList
+        public static readonly ImmutableDictionary<string, string> DimensionSuffixList =
+            NumbersWithUnitDefinitions.InformationSuffixList
             .Concat(AreaExtractorConfiguration.AreaSuffixList)
             .Concat(LengthExtractorConfiguration.LengthSuffixList)
             .Concat(SpeedExtractorConfiguration.SpeedSuffixList)
@@ -16,15 +17,16 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.English
             .Concat(WeightExtractorConfiguration.WeightSuffixList)
             .ToImmutableDictionary(x => x.Key, x => x.Value);
 
-        private static readonly ImmutableList<string> AmbiguousValues = NumbersWithUnitDefinitions.AmbiguousDimensionUnitList.ToImmutableList();
+        private static readonly ImmutableList<string> AmbiguousValues =
+            NumbersWithUnitDefinitions.AmbiguousDimensionUnitList.ToImmutableList();
 
         public DimensionExtractorConfiguration()
-               : base(new CultureInfo(Culture.English))
+            : base(new CultureInfo(Culture.English))
         {
         }
 
         public DimensionExtractorConfiguration(CultureInfo ci)
-               : base(ci)
+            : base(ci)
         {
         }
 

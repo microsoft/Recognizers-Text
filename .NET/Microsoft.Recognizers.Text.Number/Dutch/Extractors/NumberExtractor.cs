@@ -8,12 +8,14 @@ namespace Microsoft.Recognizers.Text.Number.Dutch
 {
     public class NumberExtractor : BaseNumberExtractor
     {
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
         private static readonly ConcurrentDictionary<(NumberMode, NumberOptions), NumberExtractor> Instances =
             new ConcurrentDictionary<(NumberMode, NumberOptions), NumberExtractor>();
 
         private NumberExtractor(NumberMode mode, NumberOptions options)
         {
-            NegativeNumberTermsRegex = new Regex(NumbersDefinitions.NegativeNumberTermsRegex + '$', RegexOptions.Singleline);
+            NegativeNumberTermsRegex = new Regex(NumbersDefinitions.NegativeNumberTermsRegex + '$', RegexFlags);
 
             Options = options;
 
@@ -27,7 +29,9 @@ namespace Microsoft.Recognizers.Text.Number.Dutch
                     cardExtract = CardinalExtractor.GetInstance(NumbersDefinitions.PlaceHolderPureNumber);
                     break;
                 case NumberMode.Currency:
-                    builder.Add(BaseNumberExtractor.CurrencyRegex, RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX));
+                    builder.Add(
+                        BaseNumberExtractor.CurrencyRegex,
+                        RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX));
                     break;
                 case NumberMode.Default:
                     break;

@@ -13,7 +13,8 @@ namespace Microsoft.Recognizers.Text.Number
 
         private readonly BaseNumberParser numberParser;
 
-        public BaseNumberRangeExtractor(BaseNumberExtractor numberExtractor, BaseNumberExtractor ordinalExtractor, BaseNumberParser numberParser, NumberOptions options = NumberOptions.None)
+        public BaseNumberRangeExtractor(BaseNumberExtractor numberExtractor, BaseNumberExtractor ordinalExtractor, BaseNumberParser numberParser,
+                                        NumberOptions options = NumberOptions.None)
         {
             this.numberExtractor = numberExtractor;
             this.ordinalExtractor = ordinalExtractor;
@@ -109,7 +110,8 @@ namespace Microsoft.Recognizers.Text.Number
             return results;
         }
 
-        private static bool ValidateMatchAndGetStartAndLength(List<ExtractResult> extractNumList, string numberStr, Match match, string source, ref int start, ref int length)
+        private static bool ValidateMatchAndGetStartAndLength(List<ExtractResult> extractNumList, string numberStr, Match match,
+                                                              string source, ref int start, ref int length)
         {
             bool validNum = false;
 
@@ -276,7 +278,8 @@ namespace Microsoft.Recognizers.Text.Number
         {
             foreach (var er in ers)
             {
-                if (er.Data != null && er.Data.ToString() == RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.ENGLISH).Name)
+                if (er.Data != null && er.Data.ToString() ==
+                    RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.ENGLISH).Name)
                 {
                     var match = AmbiguousFractionConnectorsRegex.Match(er.Text);
 

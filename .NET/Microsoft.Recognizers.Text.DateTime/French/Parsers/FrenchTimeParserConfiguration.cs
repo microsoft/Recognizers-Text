@@ -35,24 +35,24 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public void AdjustByPrefix(string prefix, ref int hour, ref int min, ref bool hasMin)
         {
             var deltaMin = 0;
-            var trimedPrefix = prefix.Trim().ToLowerInvariant();
+            var trimmedPrefix = prefix.Trim();
 
             // c'este 8 heures et demie, - "it's half past 8"
-            if (trimedPrefix.EndsWith("demie"))
+            if (trimmedPrefix.EndsWith("demie"))
             {
                 deltaMin = 30;
             }
-            else if (trimedPrefix.EndsWith("un quart") || trimedPrefix.EndsWith("quart"))
+            else if (trimmedPrefix.EndsWith("un quart") || trimmedPrefix.EndsWith("quart"))
             {
                 deltaMin = 15;
             }
-            else if (trimedPrefix.EndsWith("trois quarts"))
+            else if (trimmedPrefix.EndsWith("trois quarts"))
             {
                 deltaMin = 45;
             }
             else
             {
-                var match = FrenchTimeExtractorConfiguration.LessThanOneHour.Match(trimedPrefix);
+                var match = FrenchTimeExtractorConfiguration.LessThanOneHour.Match(trimmedPrefix);
                 var minStr = match.Groups["deltamin"].Value;
                 if (!string.IsNullOrWhiteSpace(minStr))
                 {
@@ -66,7 +66,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             }
 
             // 'to' i.e 'one to five' = 'un à cinq'
-            if (trimedPrefix.EndsWith("à"))
+            if (trimmedPrefix.EndsWith("à"))
             {
                 deltaMin = -deltaMin;
             }
@@ -83,9 +83,9 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public void AdjustBySuffix(string suffix, ref int hour, ref int min, ref bool hasMin, ref bool hasAm, ref bool hasPm)
         {
-            var lowerSuffix = suffix.ToLowerInvariant();
+
             var deltaHour = 0;
-            var match = FrenchTimeExtractorConfiguration.TimeSuffix.MatchExact(lowerSuffix, trim: true);
+            var match = FrenchTimeExtractorConfiguration.TimeSuffix.MatchExact(suffix, trim: true);
 
             if (match.Success)
             {

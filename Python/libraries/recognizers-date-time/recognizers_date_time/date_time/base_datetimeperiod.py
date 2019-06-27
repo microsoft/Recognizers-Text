@@ -176,7 +176,8 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
     def match_simple_cases(self, source: str, reference: datetime) -> List[Token]:
         tokens: List[Token] = list()
         source = source.strip().lower()
-        simple_cases_matches = list(map(lambda x: list(regex.finditer(x, source)), self.config.simple_cases_regexes))
+        simple_cases_matches = list(map(lambda x: list(
+            regex.finditer(x, source)), self.config.simple_cases_regexes))
 
         for matches in simple_cases_matches:
             for match in matches:
@@ -185,7 +186,8 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
 
                 before_str = source[0:match.start()].strip()
                 if before_str:
-                    er = next(reversed(self.config.single_date_extractor.extract(before_str, reference)), None)
+                    er = next(reversed(self.config.single_date_extractor.extract(
+                        before_str, reference)), None)
                     if er:
                         begin = er.start
                         end = er.start + er.length
@@ -196,21 +198,25 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
 
                 followed_str = source[match.end():]
                 if followed_str and not has_before_date:
-                    er = next(iter(self.config.single_date_extractor.extract(followed_str, reference)), None)
+                    er = next(iter(self.config.single_date_extractor.extract(
+                        followed_str, reference)), None)
                     if er:
                         begin = er.start
                         end = er.start + er.length
                         middle_str = followed_str[0:er.start].strip()
                         if middle_str == '' or regex.search(self.config.preposition_regex, middle_str):
-                            tokens.append(Token(match.start(), match.end() + end))
+                            tokens.append(
+                                Token(match.start(), match.end() + end))
 
         return tokens
 
     def merge_two_time_points(self, source: str, reference: datetime) -> List[Token]:
         tokens: List[Token] = list()
         source = source.strip().lower()
-        ers_datetime: List[ExtractResult] = self.config.single_date_time_extractor.extract(source, reference)
-        ers_time: List[ExtractResult] = self.config.single_time_extractor.extract(source, reference)
+        ers_datetime: List[ExtractResult] = self.config.single_date_time_extractor.extract(
+            source, reference)
+        ers_time: List[ExtractResult] = self.config.single_time_extractor.extract(
+            source, reference)
         inner_marks: List[ExtractResult] = list()
 
         j = 0
@@ -252,7 +258,8 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
                 period_end = next_mark.start + next_mark.length
                 before_str = source[0:period_begin].strip()
                 match_from = self.config.get_from_token_index(before_str)
-                from_token_index = match_from if match_from.matched else self.config.get_between_token_index(before_str)
+                from_token_index = match_from if match_from.matched else self.config.get_between_token_index(
+                    before_str)
                 if from_token_index.matched:
                     period_begin = from_token_index.index
                 tokens.append(Token(period_begin, period_end))
@@ -263,7 +270,8 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
                 period_begin = current_mark.start
                 period_end = next_mark.start + next_mark.length
                 before_str = source[0:period_begin].strip()
-                between_token_index = self.config.get_between_token_index(before_str)
+                between_token_index = self.config.get_between_token_index(
+                    before_str)
                 if between_token_index.matched:
                     period_begin = between_token_index.index
                     tokens.append(Token(period_begin, period_end))
@@ -278,7 +286,8 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
         tokens: List[Token] = list()
         source = source.strip().lower()
 
-        ers_duration: List[ExtractResult] = self.config.duration_extractor.extract(source, reference)
+        ers_duration: List[ExtractResult] = self.config.duration_extractor.extract(
+            source, reference)
         durations: List[Token] = list()
 
         for er in ers_duration:
@@ -288,7 +297,8 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
         for duration in durations:
             before_str = source[0:duration.start].strip()
             if before_str:
-                match = regex.search(self.config.previous_prefix_regex, before_str)
+                match = regex.search(
+                    self.config.previous_prefix_regex, before_str)
                 if match and not before_str[match.end():]:
                     tokens.append(Token(match.start(), duration.end))
                     continue
@@ -303,43 +313,55 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
         tokens: List[Token] = list()
         source = source.strip().lower()
 
-        matches = regex.finditer(self.config.specific_time_of_day_regex, source)
+        matches = regex.finditer(
+            self.config.specific_time_of_day_regex, source)
         tokens.extend(map(lambda x: Token(x.start(), x.end()), matches))
 
-        ers_date: List[ExtractResult] = self.config.single_date_extractor.extract(source, reference)
+        ers_date: List[ExtractResult] = self.config.single_date_extractor.extract(
+            source, reference)
 
         for er in ers_date:
             after_str = source[er.start + er.length:]
-            match = regex.search(self.config.period_time_of_day_with_date_regex, after_str)
+            match = regex.search(
+                self.config.period_time_of_day_with_date_regex, after_str)
 
             if match:
                 if not after_str[0:match.start()].strip():
-                    tokens.append(Token(er.start, er.start + er.length + match.end()))
+                    tokens.append(
+                        Token(er.start, er.start + er.length + match.end()))
                 else:
-                    pause_match = regex.search(self.config.middle_pause_regex, after_str[0:match.start()].strip())
+                    pause_match = regex.search(
+                        self.config.middle_pause_regex, after_str[0:match.start()].strip())
                     if pause_match:
                         suffix = after_str[match.end():].strip()
 
-                        ending_match = regex.search(self.config.general_ending_regex, suffix)
+                        ending_match = regex.search(
+                            self.config.general_ending_regex, suffix)
                         if ending_match:
-                            tokens.append(Token(er.start, er.start + er.length + match.end()))
+                            tokens.append(
+                                Token(er.start, er.start + er.length + match.end()))
 
             before_str = source[0:er.start]
-            match = regex.search(self.config.period_time_of_day_with_date_regex, before_str)
+            match = regex.search(
+                self.config.period_time_of_day_with_date_regex, before_str)
 
             if match:
                 if not before_str[match.end():].strip():
                     middle_str = source[match.end():er.start]
                     if middle_str == ' ':
-                        tokens.append(Token(match.start(), er.start + er.length))
+                        tokens.append(
+                            Token(match.start(), er.start + er.length))
                 else:
-                    pause_match = regex.search(self.config.middle_pause_regex, before_str[match.end():])
+                    pause_match = regex.search(
+                        self.config.middle_pause_regex, before_str[match.end():])
                     if pause_match:
                         suffix = source[er.start + er.length:].strip()
 
-                        ending_match = regex.search(self.config.general_ending_regex, suffix)
+                        ending_match = regex.search(
+                            self.config.general_ending_regex, suffix)
                         if ending_match:
-                            tokens.append(Token(match.start(), er.start + er.length))
+                            tokens.append(
+                                Token(match.start(), er.start + er.length))
 
             # check whether there are adjacent time period strings, before or after
             for token in tokens:
@@ -347,10 +369,12 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
                 if token.start > 0:
                     before_str = source[0:token.start].strip()
                     if before_str:
-                        ers_time = self.config.time_period_extractor.extract(before_str, reference)
+                        ers_time = self.config.time_period_extractor.extract(
+                            before_str, reference)
 
                         for er_time in ers_time:
-                            middle_str = before_str[er_time.start + er_time.length:].strip()
+                            middle_str = before_str[er_time.start +
+                                                    er_time.length:].strip()
                             if not middle_str:
                                 tokens.append(Token(er_time.start,
                                                     er_time.start + er_time.length + len(middle_str) + token.length))
@@ -358,21 +382,25 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
                 if token.start + token.length <= len(source):
                     after_str = source[token.start + token.length:]
                     if after_str:
-                        ers_time = self.config.time_period_extractor.extract(after_str, reference)
+                        ers_time = self.config.time_period_extractor.extract(
+                            after_str, reference)
                         for er_time in ers_time:
                             middle_str = after_str[0:er_time.start]
                             if not middle_str:
-                                token_end = token.start + token.length + len(middle_str) + er_time.length
+                                token_end = token.start + token.length + \
+                                    len(middle_str) + er_time.length
                                 tokens.append(Token(token.start, token_end))
 
         return tokens
 
     def match_relative_unit(self, source: str) -> List[Token]:
         tokens: List[Token] = list()
-        matches = list(regex.finditer(self.config.relative_time_unit_regex, source))
+        matches = list(regex.finditer(
+            self.config.relative_time_unit_regex, source))
 
         if not matches:
-            matches = list(regex.finditer(self.config.rest_of_date_time_regex, source))
+            matches = list(regex.finditer(
+                self.config.rest_of_date_time_regex, source))
 
         tokens.extend(map(lambda x: Token(x.start(), x.end()), matches))
         return tokens
@@ -505,13 +533,16 @@ class BaseDateTimePeriodParser(DateTimeParser):
         if source.type is self.parser_type_name:
             source_text = source.text.lower()
 
-            inner_result = self.merge_date_and_time_periods(source_text, reference)
+            inner_result = self.merge_date_and_time_periods(
+                source_text, reference)
 
             if not inner_result.success:
-                inner_result = self.merge_two_time_points(source_text, reference)
+                inner_result = self.merge_two_time_points(
+                    source_text, reference)
 
             if not inner_result.success:
-                inner_result = self.parse_specific_time_of_day(source_text, reference)
+                inner_result = self.parse_specific_time_of_day(
+                    source_text, reference)
 
             if not inner_result.success:
                 inner_result = self.parse_duration(source_text, reference)
@@ -553,7 +584,8 @@ class BaseDateTimePeriodParser(DateTimeParser):
 
         # if it is a range type timex
         if time_period_timex and time_period_timex.startswith('('):
-            date_result = next(iter(self.config.date_extractor.extract(source.replace(er.text, ''), reference)), None)
+            date_result = next(iter(self.config.date_extractor.extract(
+                source.replace(er.text, ''), reference)), None)
             date_str = ''
             future_time: datetime = None
             past_time: datetime = None
@@ -567,7 +599,8 @@ class BaseDateTimePeriodParser(DateTimeParser):
                 else:
                     return self.parse_simple_cases(source, reference)
 
-                time_period_timex = time_period_timex.replace('(', '').replace(')', '')
+                time_period_timex = time_period_timex.replace(
+                    '(', '').replace(')', '')
                 time_period_timex_array = time_period_timex.split(',')
                 time_period_future_value = time_period_resolution_result.future_value
                 begin_time: datetime = time_period_future_value.start
@@ -595,7 +628,8 @@ class BaseDateTimePeriodParser(DateTimeParser):
                         result.comment = 'ampm'
 
                     result.success = True
-                    result.sub_date_time_entities = [pr, time_period_parse_result]
+                    result.sub_date_time_entities = [
+                        pr, time_period_parse_result]
 
                     return result
             else:
@@ -608,7 +642,8 @@ class BaseDateTimePeriodParser(DateTimeParser):
         match = regex.search(self.config.pure_number_from_to_regex, source)
 
         if not match:
-            match = regex.search(self.config.pure_number_between_and_regex, source)
+            match = regex.search(
+                self.config.pure_number_between_and_regex, source)
 
         if not match or match.start() != 0:
             return result
@@ -623,7 +658,8 @@ class BaseDateTimePeriodParser(DateTimeParser):
         if not end_hour:
             end_hour = int(hour_group[1])
 
-        er = next(iter(self.config.date_extractor.extract(source.replace(match.group(), ''), reference)), None)
+        er = next(iter(self.config.date_extractor.extract(
+            source.replace(match.group(), ''), reference)), None)
 
         if not er:
             return result
@@ -668,11 +704,14 @@ class BaseDateTimePeriodParser(DateTimeParser):
         result.future_value = [
             DateUtils.safe_create_from_min_value(future_date.year, future_date.month, future_date.day, begin_hour, 0,
                                                  0),
-            DateUtils.safe_create_from_min_value(future_date.year, future_date.month, future_date.day, end_hour, 0, 0)
+            DateUtils.safe_create_from_min_value(
+                future_date.year, future_date.month, future_date.day, end_hour, 0, 0)
         ]
         result.past_value = [
-            DateUtils.safe_create_from_min_value(past_date.year, past_date.month, past_date.day, begin_hour, 0, 0),
-            DateUtils.safe_create_from_min_value(past_date.year, past_date.month, past_date.day, end_hour, 0, 0)
+            DateUtils.safe_create_from_min_value(
+                past_date.year, past_date.month, past_date.day, begin_hour, 0, 0),
+            DateUtils.safe_create_from_min_value(
+                past_date.year, past_date.month, past_date.day, end_hour, 0, 0)
         ]
 
         result.success = True
@@ -687,7 +726,8 @@ class BaseDateTimePeriodParser(DateTimeParser):
 
         prs: BeginEnd = None
         time_ers = self.config.time_extractor.extract(source, reference)
-        datetime_ers = self.config.date_time_extractor.extract(source, reference)
+        datetime_ers = self.config.date_time_extractor.extract(
+            source, reference)
 
         both_has_date = False
         begin_has_date = False
@@ -769,7 +809,8 @@ class BaseDateTimePeriodParser(DateTimeParser):
         has_early = False
         has_late = False
 
-        match = regex.search(self.config.period_time_of_day_with_date_regex, source)
+        match = regex.search(
+            self.config.period_time_of_day_with_date_regex, source)
         if match:
             time_str = RegExpUtility.get_group(match, 'timeOfDay')
             if RegExpUtility.get_group(match, 'early'):
@@ -794,14 +835,17 @@ class BaseDateTimePeriodParser(DateTimeParser):
         if match and match[-1].start() == 0 and match[-1].group() == source:
             swift = self.config.get_swift_prefix(source)
             date = reference + timedelta(days=swift)
-            result.timex = DateTimeFormatUtil.format_date(date) + matched.time_str
+            result.timex = DateTimeFormatUtil.format_date(
+                date) + matched.time_str
             result.future_value = [
-                DateUtils.safe_create_from_min_value(date.year, date.month, date.day, matched.begin_hour, 0, 0),
+                DateUtils.safe_create_from_min_value(
+                    date.year, date.month, date.day, matched.begin_hour, 0, 0),
                 DateUtils.safe_create_from_min_value(date.year, date.month, date.day, matched.end_hour, matched.end_min,
                                                      matched.end_min)
             ]
             result.past_value = [
-                DateUtils.safe_create_from_min_value(date.year, date.month, date.day, matched.begin_hour, 0, 0),
+                DateUtils.safe_create_from_min_value(
+                    date.year, date.month, date.day, matched.begin_hour, 0, 0),
                 DateUtils.safe_create_from_min_value(date.year, date.month, date.day, matched.end_hour, matched.end_min,
                                                      matched.end_min)
             ]
@@ -809,22 +853,28 @@ class BaseDateTimePeriodParser(DateTimeParser):
 
             return result
 
-        match = list(self.config.period_time_of_day_with_date_regex.finditer(source))
+        match = list(
+            self.config.period_time_of_day_with_date_regex.finditer(source))
         if not match:
             return result
 
         before_str = source[0:match[-1].start()].strip()
         after_str = source[match[-1].end():].strip()
-        er = next(iter(self.config.date_extractor.extract(before_str, reference)), None)
+        er = next(iter(self.config.date_extractor.extract(
+            before_str, reference)), None)
 
         # eliminate time period, if any
-        time_period_er = next(iter(self.config.time_period_extractor.extract(before_str)), None)
+        time_period_er = next(
+            iter(self.config.time_period_extractor.extract(before_str)), None)
         if time_period_er:
-            before_str = before_str[time_period_er.start:time_period_er.start + time_period_er.length].strip()
+            before_str = before_str[time_period_er.start:time_period_er.start +
+                                    time_period_er.length].strip()
         else:
-            time_period_er = next(iter(self.config.time_period_extractor.extract(after_str)), None)
+            time_period_er = next(
+                iter(self.config.time_period_extractor.extract(after_str)), None)
             if time_period_er:
-                after_str = after_str[time_period_er.start:time_period_er.start + time_period_er.length].strip()
+                after_str = after_str[time_period_er.start:time_period_er.start +
+                                      time_period_er.length].strip()
 
         if not er or er.length != len(before_str):
             valid = False
@@ -834,7 +884,8 @@ class BaseDateTimePeriodParser(DateTimeParser):
                     valid = True
 
             if not valid:
-                er = next(iter(self.config.date_extractor.extract(after_str)), None)
+                er = next(
+                    iter(self.config.date_extractor.extract(after_str)), None)
                 if not er or er.length != len(after_str):
                     if er and er.start + er.length == len(after_str):
                         valid = True
@@ -934,8 +985,10 @@ class BaseDateTimePeriodParser(DateTimeParser):
             mod = TimeTypeConstants.AFTER_MOD
             end_time = begin_time + timedelta(seconds=swift_second)
 
-        luis_date_begin = DateTimeFormatUtil.luis_date_from_datetime(begin_time)
-        luis_time_begin = DateTimeFormatUtil.luis_time_from_datetime(begin_time)
+        luis_date_begin = DateTimeFormatUtil.luis_date_from_datetime(
+            begin_time)
+        luis_time_begin = DateTimeFormatUtil.luis_time_from_datetime(
+            begin_time)
         luis_date_end = DateTimeFormatUtil.luis_date_from_datetime(end_time)
         luis_time_end = DateTimeFormatUtil.luis_time_from_datetime(end_time)
 
@@ -983,22 +1036,27 @@ class BaseDateTimePeriodParser(DateTimeParser):
             difference = int((end_time - begin_time).total_seconds())
             pt_timex = f'PT{difference}S'
         elif unit_str == 'H':
-            begin_time = begin_time + timedelta(hours=0 if swift > 0 else swift)
+            begin_time = begin_time + \
+                timedelta(hours=0 if swift > 0 else swift)
             end_time = end_time + timedelta(hours=swift if swift > 0 else 0)
             pt_timex = 'PT1H'
         elif unit_str == 'M':
-            begin_time = begin_time + timedelta(minutes=0 if swift > 0 else swift)
+            begin_time = begin_time + \
+                timedelta(minutes=0 if swift > 0 else swift)
             end_time = end_time + timedelta(minutes=swift if swift > 0 else 0)
             pt_timex = 'PT1M'
         elif unit_str == 'S':
-            begin_time = begin_time + timedelta(seconds=0 if swift > 0 else swift)
+            begin_time = begin_time + \
+                timedelta(seconds=0 if swift > 0 else swift)
             end_time = end_time + timedelta(seconds=swift if swift > 0 else 0)
             pt_timex = 'PT1S'
         else:
             return result
 
-        luis_date_begin = DateTimeFormatUtil.luis_date_from_datetime(begin_time)
-        luis_time_begin = DateTimeFormatUtil.luis_time_from_datetime(begin_time)
+        luis_date_begin = DateTimeFormatUtil.luis_date_from_datetime(
+            begin_time)
+        luis_time_begin = DateTimeFormatUtil.luis_time_from_datetime(
+            begin_time)
         luis_date_end = DateTimeFormatUtil.luis_date_from_datetime(end_time)
         luis_time_end = DateTimeFormatUtil.luis_time_from_datetime(end_time)
 

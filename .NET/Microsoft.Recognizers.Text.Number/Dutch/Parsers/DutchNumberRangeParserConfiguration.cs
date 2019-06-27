@@ -6,6 +6,9 @@ namespace Microsoft.Recognizers.Text.Number.Dutch
 {
     public class DutchNumberRangeParserConfiguration : INumberRangeParserConfiguration
     {
+
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
         public DutchNumberRangeParserConfiguration()
             : this(new CultureInfo(Culture.Dutch))
         {
@@ -20,12 +23,13 @@ namespace Microsoft.Recognizers.Text.Number.Dutch
 
             // @TODO Change init to follow design in other languages
             NumberParser = new BaseNumberParser(new DutchNumberParserConfiguration());
-            MoreOrEqual = new Regex(NumbersDefinitions.MoreOrEqual, RegexOptions.Singleline);
-            LessOrEqual = new Regex(NumbersDefinitions.LessOrEqual, RegexOptions.Singleline);
-            MoreOrEqualSuffix = new Regex(NumbersDefinitions.MoreOrEqualSuffix, RegexOptions.Singleline);
-            LessOrEqualSuffix = new Regex(NumbersDefinitions.LessOrEqualSuffix, RegexOptions.Singleline);
-            MoreOrEqualSeparate = new Regex(NumbersDefinitions.OneNumberRangeMoreSeparateRegex, RegexOptions.Singleline);
-            LessOrEqualSeparate = new Regex(NumbersDefinitions.OneNumberRangeLessSeparateRegex, RegexOptions.Singleline);
+
+            MoreOrEqual = new Regex(NumbersDefinitions.MoreOrEqual, RegexFlags);
+            LessOrEqual = new Regex(NumbersDefinitions.LessOrEqual, RegexFlags);
+            MoreOrEqualSuffix = new Regex(NumbersDefinitions.MoreOrEqualSuffix, RegexFlags);
+            LessOrEqualSuffix = new Regex(NumbersDefinitions.LessOrEqualSuffix, RegexFlags);
+            MoreOrEqualSeparate = new Regex(NumbersDefinitions.OneNumberRangeMoreSeparateRegex, RegexFlags);
+            LessOrEqualSeparate = new Regex(NumbersDefinitions.OneNumberRangeLessSeparateRegex, RegexFlags);
         }
 
         public CultureInfo CultureInfo { get; private set; }

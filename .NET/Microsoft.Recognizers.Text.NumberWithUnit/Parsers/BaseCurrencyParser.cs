@@ -31,7 +31,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                 var value = pr.Value as UnitValue;
 
                 Config.CurrencyNameToIsoCodeMap.TryGetValue(value?.Unit, out var mainUnitIsoCode);
-                if (string.IsNullOrEmpty(mainUnitIsoCode) || mainUnitIsoCode.StartsWith(Constants.FAKE_ISO_CODE_PREFIX))
+                if (string.IsNullOrEmpty(mainUnitIsoCode) || mainUnitIsoCode.StartsWith(Constants.FAKE_ISO_CODE_PREFIX, StringComparison.Ordinal))
                 {
                     pr.Value = new UnitValue
                     {

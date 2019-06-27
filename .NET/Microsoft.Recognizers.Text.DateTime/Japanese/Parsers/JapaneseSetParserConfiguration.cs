@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Japanese
@@ -8,8 +9,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         public static readonly string ParserName = Constants.SYS_DATETIME_SET;
 
         private static readonly IDateTimeExtractor DurationExtractor = new JapaneseDurationExtractorConfiguration();
+
         private static readonly IDateTimeExtractor TimeExtractor = new JapaneseTimeExtractorConfiguration();
+
         private static readonly IDateTimeExtractor DateExtractor = new JapaneseDateExtractorConfiguration();
+
         private static readonly IDateTimeExtractor DateTimeExtractor = new JapaneseDateTimeExtractorConfiguration();
 
         private readonly IFullDateTimeParserConfiguration config;
@@ -28,7 +32,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         {
             var referenceDate = refDate;
             object value = null;
-            if (er.Type.Equals(ParserName))
+            if (er.Type.Equals(ParserName, StringComparison.Ordinal))
             {
                 var innerResult = ParseEachUnit(er.Text);
                 if (!innerResult.Success)

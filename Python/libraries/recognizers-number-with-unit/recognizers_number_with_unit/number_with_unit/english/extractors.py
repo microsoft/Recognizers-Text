@@ -48,8 +48,10 @@ class EnglishNumberWithUnitExtractorConfiguration(NumberWithUnitExtractorConfigu
         self._unit_num_extractor = EnglishNumberExtractor()
         self._build_prefix = EnglishNumericWithUnit.BuildPrefix
         self._build_suffix = EnglishNumericWithUnit.BuildSuffix
-        self._compound_unit_connector_regex = RegExpUtility.get_safe_reg_exp(EnglishNumericWithUnit.CompoundUnitConnectorRegex)
-        self._pm_non_unit_regex = RegExpUtility.get_safe_reg_exp(BaseUnits.PmNonUnitRegex)
+        self._compound_unit_connector_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishNumericWithUnit.CompoundUnitConnectorRegex)
+        self._pm_non_unit_regex = RegExpUtility.get_safe_reg_exp(
+            BaseUnits.PmNonUnitRegex)
 
 
 # pylint: enable=abstract-method
@@ -159,4 +161,5 @@ class EnglishTemperatureExtractorConfiguration(EnglishNumberWithUnitExtractorCon
         self._suffix_list = EnglishNumericWithUnit.TemperatureSuffixList
         self._prefix_list = dict()
         self._ambiguous_unit_list = EnglishNumericWithUnit.AmbiguousTemperatureUnitList
-        self._ambiguous_unit_number_multiplier_regex = RegExpUtility.get_safe_reg_exp(BaseUnits.AmbiguousUnitNumberMultiplierRegex)
+        self._ambiguous_unit_number_multiplier_regex = RegExpUtility.get_safe_reg_exp(
+            BaseUnits.AmbiguousUnitNumberMultiplierRegex)

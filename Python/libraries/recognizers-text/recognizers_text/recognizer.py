@@ -2,6 +2,7 @@ from abc import ABC, abstractmethod
 from typing import Generic, Callable
 from .model import T_MODEL_OPTIONS, ModelFactory, Model
 
+
 class Recognizer(Generic[T_MODEL_OPTIONS], ABC):
     def __init__(self, target_culture: str, options: T_MODEL_OPTIONS, lazy_initialization: bool):
         self.target_culture: str = target_culture

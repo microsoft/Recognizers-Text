@@ -21,6 +21,7 @@ from .utilities import Token, merge_all_tokens, RegExpUtility, DateTimeOptions, 
 
 MatchedIndex = namedtuple('MatchedIndex', ['matched', 'index'])
 
+
 class MergedExtractorConfiguration:
     @property
     @abstractmethod
@@ -112,6 +113,7 @@ class MergedExtractorConfiguration:
     def filter_word_regex_list(self) -> List[Pattern]:
         raise NotImplementedError
 
+
 class BaseMergedExtractor(DateTimeExtractor):
     @property
     def extractor_type_name(self) -> str:
@@ -126,18 +128,28 @@ class BaseMergedExtractor(DateTimeExtractor):
             reference = datetime.now()
 
         result: List[ExtractResult] = list()
-        result = self.add_to(result, self.config.date_extractor.extract(source, reference), source)
-        result = self.add_to(result, self.config.time_extractor.extract(source, reference), source)
-        result = self.add_to(result, self.config.date_period_extractor.extract(source, reference), source)
-        result = self.add_to(result, self.config.duration_extractor.extract(source, reference), source)
-        result = self.add_to(result, self.config.time_period_extractor.extract(source, reference), source)
-        result = self.add_to(result, self.config.date_time_period_extractor.extract(source, reference), source)
-        result = self.add_to(result, self.config.date_time_extractor.extract(source, reference), source)
-        result = self.add_to(result, self.config.set_extractor.extract(source, reference), source)
-        result = self.add_to(result, self.config.holiday_extractor.extract(source, reference), source)
+        result = self.add_to(
+            result, self.config.date_extractor.extract(source, reference), source)
+        result = self.add_to(
+            result, self.config.time_extractor.extract(source, reference), source)
+        result = self.add_to(
+            result, self.config.date_period_extractor.extract(source, reference), source)
+        result = self.add_to(
+            result, self.config.duration_extractor.extract(source, reference), source)
+        result = self.add_to(
+            result, self.config.time_period_extractor.extract(source, reference), source)
+        result = self.add_to(result, self.config.date_time_period_extractor.extract(
+            source, reference), source)
+        result = self.add_to(
+            result, self.config.date_time_extractor.extract(source, reference), source)
+        result = self.add_to(
+            result, self.config.set_extractor.extract(source, reference), source)
+        result = self.add_to(
+            result, self.config.holiday_extractor.extract(source, reference), source)
 
         # this should be at the end since if need the extractor to determine the previous text contains time or not
-        result = self.add_to(result, self.number_ending_regex_match(source, result), source)
+        result = self.add_to(
+            result, self.number_ending_regex_match(source, result), source)
 
         result = self.add_mod(result, source)
 
@@ -189,16 +201,20 @@ class BaseMergedExtractor(DateTimeExtractor):
 
         for extract_result in extract_results:
             if extract_result.type in [Constants.SYS_DATETIME_TIME, Constants.SYS_DATETIME_DATETIME]:
-                after_str = source[extract_result.start + extract_result.length:]
-                match = regex.search(self.config.number_ending_pattern, after_str)
+                after_str = source[extract_result.start +
+                                   extract_result.length:]
+                match = regex.search(
+                    self.config.number_ending_pattern, after_str)
                 if match:
                     new_time = RegExpUtility.get_group(match, 'newTime')
                     num_res = self.config.integer_extractor.extract(new_time)
                     if not num_res:
                         continue
 
-                    start_position = extract_result.start + extract_result.length + match.group().index(new_time)
-                    tokens.append(Token(start_position, start_position + len(new_time)))
+                    start_position = extract_result.start + \
+                        extract_result.length + match.group().index(new_time)
+                    tokens.append(
+                        Token(start_position, start_position + len(new_time)))
 
         return merge_all_tokens(tokens, source, Constants.SYS_DATETIME_TIME)
 
@@ -209,7 +225,8 @@ class BaseMergedExtractor(DateTimeExtractor):
         before_str = source[0:er.start]
         is_success = False
 
-        before = self.has_token_index(before_str.strip(), self.config.before_regex)
+        before = self.has_token_index(
+            before_str.strip(), self.config.before_regex)
         if before.matched:
             mod_len = len(before_str) - before.index
             er.length += mod_len
@@ -218,7 +235,8 @@ class BaseMergedExtractor(DateTimeExtractor):
             is_success = True
 
         if not is_success:
-            after = self.has_token_index(before_str.strip(), self.config.after_regex)
+            after = self.has_token_index(
+                before_str.strip(), self.config.after_regex)
             if after.matched:
                 mod_len = len(before_str) - after.index
                 er.length += mod_len
@@ -227,7 +245,8 @@ class BaseMergedExtractor(DateTimeExtractor):
                 is_success = True
 
         if not is_success:
-            since = self.has_token_index(before_str.strip(), self.config.since_regex)
+            since = self.has_token_index(
+                before_str.strip(), self.config.since_regex)
             if not is_success and since.matched:
                 mod_len = len(before_str) - since.index
                 er.length += mod_len
@@ -251,6 +270,7 @@ class BaseMergedExtractor(DateTimeExtractor):
                     break
 
         return ers
+
 
 class MergedParserConfiguration(ABC):
     @property
@@ -313,14 +333,17 @@ class MergedParserConfiguration(ABC):
     def set_parser(self) -> BaseSetParser:
         raise NotImplementedError
 
+
 class BaseMergedParser(DateTimeParser):
     @property
     def parser_type_name(self) -> str:
         return Constants.SYS_DATETIME_MERGED
 
     def __init__(self, config: MergedParserConfiguration, options: DateTimeOptions):
-        self.__date_min_value = DateTimeFormatUtil.format_date(DateUtils.min_value)
-        self.__date_time_min_value = DateTimeFormatUtil.format_date_time(DateUtils.min_value)
+        self.__date_min_value = DateTimeFormatUtil.format_date(
+            DateUtils.min_value)
+        self.__date_time_min_value = DateTimeFormatUtil.format_date_time(
+            DateUtils.min_value)
         self.config = config
         self.options = options
 
@@ -368,7 +391,8 @@ class BaseMergedParser(DateTimeParser):
         elif source.type == Constants.SYS_DATETIME_TIMEPERIOD:
             result = self.config.time_period_parser.parse(source, reference)
         elif source.type == Constants.SYS_DATETIME_DATETIMEPERIOD:
-            result = self.config.date_time_period_parser.parse(source, reference)
+            result = self.config.date_time_period_parser.parse(
+                source, reference)
         elif source.type == Constants.SYS_DATETIME_DURATION:
             result = self.config.duration_parser.parse(source, reference)
         elif source.type == Constants.SYS_DATETIME_SET:
@@ -403,12 +427,14 @@ class BaseMergedParser(DateTimeParser):
         if self.options & DateTimeOptions.SPLIT_DATE_AND_TIME and result.value and result.value.sub_date_time_entities:
             result.value = self._date_time_resolution_for_split(result)
         else:
-            result = self.set_parse_result(result, has_before, has_after, has_since)
+            result = self.set_parse_result(
+                result, has_before, has_after, has_since)
 
         return result
 
     def set_parse_result(self, slot: DateTimeParseResult, has_before: bool, has_after: bool, has_since: bool) -> DateTimeParseResult:
-        slot.value = self._date_time_resolution(slot, has_before, has_after, has_since)
+        slot.value = self._date_time_resolution(
+            slot, has_before, has_after, has_since)
         slot.type = f'{self.parser_type_name}.{self._determine_date_time_types(slot.type, has_before, has_after, has_since)}'
         return slot
 
@@ -417,7 +443,8 @@ class BaseMergedParser(DateTimeParser):
         if extractor_type == Constants.SYS_DATETIME_DATE:
             result = self.config.date_parser.parse(extractor_result, reference)
             if not result.value:
-                result = self.config.holiday_parser.parse(extractor_result, reference)
+                result = self.config.holiday_parser.parse(
+                    extractor_result, reference)
             return result
         elif extractor_type == Constants.SYS_DATETIME_TIME:
             return self.config.time_parser.parse(extractor_result, reference)
@@ -488,6 +515,7 @@ class BaseMergedParser(DateTimeParser):
         dtype = slot.type
         output_type = self._determine_date_time_types(dtype, has_before, has_after, has_since)
         source_entity = self._determine_source_entity_type(dtype, output_type, has_before or has_after or has_since)
+
         timex = slot.timex_str
 
         value = slot.value
@@ -502,7 +530,8 @@ class BaseMergedParser(DateTimeParser):
         self._add_resolution_fields_any(result, Constants.CommentKey, comment)
         self._add_resolution_fields_any(result, Constants.ModKey, mod)
         self._add_resolution_fields_any(result, Constants.TypeKey, output_type)
-        self._add_resolution_fields_any(result, Constants.IsLunarKey, str(is_lunar).lower() if is_lunar else '')
+        self._add_resolution_fields_any(
+            result, Constants.IsLunarKey, str(is_lunar).lower() if is_lunar else '')
 
         future_resolution = value.future_resolution
         past_resolution = value.past_resolution
@@ -512,16 +541,20 @@ class BaseMergedParser(DateTimeParser):
 
         future_values = sorted(future.values())
         past_values = sorted(past.values())
-        intersect_values = [i for i, j in zip(future_values, past_values) if i == j]
+        intersect_values = [i for i, j in zip(
+            future_values, past_values) if i == j]
 
         if len(intersect_values) == len(past_values) and len(intersect_values) == len(future_values):
             if past_values:
-                self._add_resolution_fields_any(result, Constants.ResolveKey, past)
+                self._add_resolution_fields_any(
+                    result, Constants.ResolveKey, past)
         else:
             if past_values:
-                self._add_resolution_fields_any(result, Constants.ResolveToPastKey, past)
+                self._add_resolution_fields_any(
+                    result, Constants.ResolveToPastKey, past)
             if future_resolution:
-                self._add_resolution_fields_any(result, Constants.ResolveToFutureKey, future)
+                self._add_resolution_fields_any(
+                    result, Constants.ResolveToFutureKey, future)
 
         if comment == 'ampm':
             if Constants.ResolveKey in result:
@@ -533,8 +566,10 @@ class BaseMergedParser(DateTimeParser):
         for value in result.values():
             if isinstance(value, dict):
                 new_values = {}
-                self._add_resolution_fields(new_values, Constants.TimexKey, timex)
+                self._add_resolution_fields(
+                    new_values, Constants.TimexKey, timex)
                 self._add_resolution_fields(new_values, Constants.ModKey, mod)
+
                 self._add_resolution_fields(new_values, Constants.TypeKey, output_type)
                 self._add_resolution_fields(new_values, Constants.IsLunarKey, str(is_lunar).lower() if is_lunar else '')
                 self._add_resolution_fields(new_values, Constants.SourceType, source_entity)
@@ -568,23 +603,29 @@ class BaseMergedParser(DateTimeParser):
         result = {}
 
         if dtype == Constants.SYS_DATETIME_DATETIME:
-            self.__add_single_date_time_to_resolution(resolution, TimeTypeConstants.DATETIME, mod, result)
+            self.__add_single_date_time_to_resolution(
+                resolution, TimeTypeConstants.DATETIME, mod, result)
         elif dtype == Constants.SYS_DATETIME_TIME:
-            self.__add_single_date_time_to_resolution(resolution, TimeTypeConstants.TIME, mod, result)
+            self.__add_single_date_time_to_resolution(
+                resolution, TimeTypeConstants.TIME, mod, result)
         elif dtype == Constants.SYS_DATETIME_DATE:
-            self.__add_single_date_time_to_resolution(resolution, TimeTypeConstants.DATE, mod, result)
+            self.__add_single_date_time_to_resolution(
+                resolution, TimeTypeConstants.DATE, mod, result)
         elif dtype == Constants.SYS_DATETIME_DURATION:
             if TimeTypeConstants.DURATION in resolution:
                 result[TimeTypeConstants.VALUE] = resolution[TimeTypeConstants.DURATION]
 
         if dtype == Constants.SYS_DATETIME_TIMEPERIOD:
-            self.__add_period_to_resolution(resolution, TimeTypeConstants.START_TIME, TimeTypeConstants.END_TIME, mod, result)
+            self.__add_period_to_resolution(
+                resolution, TimeTypeConstants.START_TIME, TimeTypeConstants.END_TIME, mod, result)
 
         if dtype == Constants.SYS_DATETIME_DATEPERIOD:
-            self.__add_period_to_resolution(resolution, TimeTypeConstants.START_DATE, TimeTypeConstants.END_DATE, mod, result)
+            self.__add_period_to_resolution(
+                resolution, TimeTypeConstants.START_DATE, TimeTypeConstants.END_DATE, mod, result)
 
         if dtype == Constants.SYS_DATETIME_DATETIMEPERIOD:
-            self.__add_period_to_resolution(resolution, TimeTypeConstants.START_DATETIME, TimeTypeConstants.END_DATETIME, mod, result)
+            self.__add_period_to_resolution(
+                resolution, TimeTypeConstants.START_DATETIME, TimeTypeConstants.END_DATETIME, mod, result)
 
         return result
 
@@ -636,24 +677,30 @@ class BaseMergedParser(DateTimeParser):
 
         resolution_pm = {}
         if values_map['type'] == Constants.SYS_DATETIME_TIME:
-            resolution_pm[TimeTypeConstants.VALUE] = DateTimeFormatUtil.to_pm(resolution[TimeTypeConstants.VALUE])
+            resolution_pm[TimeTypeConstants.VALUE] = DateTimeFormatUtil.to_pm(
+                resolution[TimeTypeConstants.VALUE])
             resolution_pm['timex'] = DateTimeFormatUtil.to_pm(timex)
         elif values_map['type'] == Constants.SYS_DATETIME_DATETIME:
             split_value = resolution[TimeTypeConstants.VALUE].split(' ')
-            resolution_pm[TimeTypeConstants.VALUE] = f'{split_value[0]} {DateTimeFormatUtil.to_pm(split_value[1])}'
+            resolution_pm[
+                TimeTypeConstants.VALUE] = f'{split_value[0]} {DateTimeFormatUtil.to_pm(split_value[1])}'
             resolution_pm['timex'] = DateTimeFormatUtil.all_str_to_pm(timex)
         elif values_map['type'] == Constants.SYS_DATETIME_TIMEPERIOD:
             if TimeTypeConstants.START in resolution:
-                resolution_pm[TimeTypeConstants.START] = DateTimeFormatUtil.to_pm(resolution[TimeTypeConstants.START])
+                resolution_pm[TimeTypeConstants.START] = DateTimeFormatUtil.to_pm(
+                    resolution[TimeTypeConstants.START])
             if TimeTypeConstants.END in resolution:
-                resolution_pm[TimeTypeConstants.END] = DateTimeFormatUtil.to_pm(resolution[TimeTypeConstants.END])
+                resolution_pm[TimeTypeConstants.END] = DateTimeFormatUtil.to_pm(
+                    resolution[TimeTypeConstants.END])
             resolution_pm['timex'] = DateTimeFormatUtil.all_str_to_pm(timex)
         elif values_map['type'] == Constants.SYS_DATETIME_DATETIMEPERIOD:
             if TimeTypeConstants.START in resolution:
                 split_value = resolution[TimeTypeConstants.START].split(' ')
-                resolution_pm[TimeTypeConstants.START] = f'{split_value[0]} {DateTimeFormatUtil.to_pm(split_value[1])}'
+                resolution_pm[
+                    TimeTypeConstants.START] = f'{split_value[0]} {DateTimeFormatUtil.to_pm(split_value[1])}'
             if TimeTypeConstants.END in resolution:
                 split_value = resolution[TimeTypeConstants.END].split(' ')
-                resolution_pm[TimeTypeConstants.END] = f'{split_value[0]} {DateTimeFormatUtil.to_pm(split_value[1])}'
+                resolution_pm[
+                    TimeTypeConstants.END] = f'{split_value[0]} {DateTimeFormatUtil.to_pm(split_value[1])}'
             resolution_pm['timex'] = DateTimeFormatUtil.all_str_to_pm(timex)
         values_map[keyname + 'Pm'] = resolution_pm

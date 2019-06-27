@@ -1,5 +1,6 @@
 from ..resources import BaseDateTime
 
+
 class Constants:
     SYS_DATETIME_DATE: str = 'date'
     SYS_DATETIME_TIME: str = 'time'
@@ -37,7 +38,7 @@ class Constants:
 
     DEFAULT_LANGUAGE_FALLBACK_MDY: str = 'MDY'
     DEFAULT_LANGUAGE_FALLBACK_DMY: str = 'DMY'
-    
+
     MaxTwoDigitYearFutureNum: int = int(BaseDateTime.MaxTwoDigitYearFutureNum)
     MinTwoDigitYearPastNum: int = int(BaseDateTime.MinTwoDigitYearPastNum)
 

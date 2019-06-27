@@ -11,6 +11,7 @@ from .duration_extractor import ChineseDurationExtractor
 from .date_extractor import ChineseDateExtractor
 from .date_parser import ChineseDateParser
 
+
 class ChineseDatePeriodParserConfiguration(DatePeriodParserConfiguration):
     @property
     def date_extractor(self) -> DateTimeExtractor:
@@ -168,26 +169,39 @@ class ChineseDatePeriodParserConfiguration(DatePeriodParserConfiguration):
         self._date_extractor = ChineseDateExtractor()
         self._date_parser = ChineseDateParser()
         self._duration_extractor = ChineseDurationExtractor()
-        self._simple_cases_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.SimpleCasesRegex)
-        self._one_word_period_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.OneWordPeriodRegex)
-        self._year_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.DatePeriodYearRegex)
-        self._past_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.PastRegex)
-        self._future_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.FutureRegex)
-        self._week_of_month_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.WeekOfMonthRegex)
-        self._quarter_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.QuarterRegex)
-        self._season_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.SeasonRegex)
-        self._next_prefix_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.DatePeriodNextRegex)
-        self._past_prefix_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.DatePeriodLastRegex)
-        self._this_prefix_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.DatePeriodThisRegex)
+        self._simple_cases_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.SimpleCasesRegex)
+        self._one_word_period_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.OneWordPeriodRegex)
+        self._year_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.DatePeriodYearRegex)
+        self._past_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.PastRegex)
+        self._future_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.FutureRegex)
+        self._week_of_month_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.WeekOfMonthRegex)
+        self._quarter_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.QuarterRegex)
+        self._season_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.SeasonRegex)
+        self._next_prefix_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.DatePeriodNextRegex)
+        self._past_prefix_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.DatePeriodLastRegex)
+        self._this_prefix_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.DatePeriodThisRegex)
         self._later_early_period_regex = RegExpUtility.get_safe_reg_exp(r'\0')
-        self._week_with_week_day_range_regex = RegExpUtility.get_safe_reg_exp(r'\0')
+        self._week_with_week_day_range_regex = RegExpUtility.get_safe_reg_exp(
+            r'\0')
         self._token_before_date = ' on '
         self._day_of_month = ChineseDateTime.ParserConfigurationDayOfMonth
         self._month_of_year = ChineseDateTime.ParserConfigurationMonthOfYear
         self._cardinal_map = ChineseDateTime.ParserConfigurationCardinalMap
         self._season_map = ChineseDateTime.ParserConfigurationSeasonMap
         self._unit_map = ChineseDateTime.ParserConfigurationUnitMap
-        self._now_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.NowRegex)
+        self._now_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.NowRegex)
 
     def get_swift_day_or_month(self, source: str) -> int:
         source = source.strip().lower()

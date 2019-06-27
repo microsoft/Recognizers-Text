@@ -112,7 +112,7 @@ namespace Microsoft.Recognizers.Text.Number
             foreach (var regexStr in regexStrs)
             {
                 // var sl = "(?=\\b)(" + regexStr + ")(?=(s?\\b))";
-                var options = RegexOptions.Singleline;
+                var options = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
                 if (ignoreCase)
                 {
                     options = options | RegexOptions.IgnoreCase;

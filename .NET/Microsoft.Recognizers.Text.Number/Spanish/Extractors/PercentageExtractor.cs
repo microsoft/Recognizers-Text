@@ -9,8 +9,7 @@ namespace Microsoft.Recognizers.Text.Number.Spanish
     public sealed class PercentageExtractor : BasePercentageExtractor
     {
         public PercentageExtractor(NumberOptions options = NumberOptions.None)
-               : base(
-            NumberExtractor.GetInstance(options: options))
+               : base(NumberExtractor.GetInstance(options: options))
         {
             Options = options;
             Regexes = InitRegexes();

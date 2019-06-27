@@ -1,4 +1,5 @@
-import abc, json
+import abc
+import json
 from .yaml_parser import SimpleRegex, NestedRegex, ParamsRegex, Dictionary, List
 
 
@@ -135,11 +136,14 @@ def generate_code(root):
         if type(token) is SimpleRegex:
             lines.append(SimpleRegexWriter(token_name, token.def_))
         elif type(token) is NestedRegex:
-            lines.append(NestedRegexWriter(token_name, token.def_, token.references))
+            lines.append(NestedRegexWriter(
+                token_name, token.def_, token.references))
         elif type(token) is ParamsRegex:
-            lines.append(ParamsRegexWriter(token_name, token.def_, token.params))
+            lines.append(ParamsRegexWriter(
+                token_name, token.def_, token.params))
         elif type(token) is Dictionary:
-            lines.append(DictionaryWriter(token_name, token.key_type, token.value_type, token.entries))
+            lines.append(DictionaryWriter(
+                token_name, token.key_type, token.value_type, token.entries))
         elif type(token) is List:
             lines.append(ArrayWriter(token_name, token.type_, token.entries))
         elif type(token) is list:

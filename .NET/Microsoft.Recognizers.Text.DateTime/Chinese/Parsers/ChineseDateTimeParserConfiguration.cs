@@ -20,6 +20,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             DurationParser = new ChineseDurationParserConfiguration(this);
             GetParser = new ChineseSetParserConfiguration(this);
             HolidayParser = new ChineseHolidayParserConfiguration(this);
+
             UnitMap = DateTimeDefinitions.ParserConfigurationUnitMap.ToImmutableDictionary();
             UnitValueMap = DateTimeDefinitions.ParserConfigurationUnitValueMap.ToImmutableDictionary();
             SeasonMap = DateTimeDefinitions.ParserConfigurationSeasonMap.ToImmutableDictionary();
@@ -29,7 +30,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             DayOfWeek = DateTimeDefinitions.ParserConfigurationDayOfWeek.ToImmutableDictionary();
             MonthOfYear = DateTimeDefinitions.ParserConfigurationMonthOfYear.ToImmutableDictionary();
             Numbers = InitNumbers();
+
             DateRegexList = ChineseDateExtractorConfiguration.DateRegexList;
+
             NextRegex = ChineseDateExtractorConfiguration.NextRegex;
             ThisRegex = ChineseDateExtractorConfiguration.ThisRegex;
             LastRegex = ChineseDateExtractorConfiguration.LastRegex;

@@ -15,6 +15,7 @@ from .datetimeperiod_parser import ChineseDateTimePeriodParser
 from .holiday_parser import ChineseHolidayParser
 from .set_parser import ChineseSetParser
 
+
 class ChineseMergedParserConfiguration(MergedParserConfiguration):
     @property
     def before_regex(self) -> Pattern:
@@ -65,9 +66,12 @@ class ChineseMergedParserConfiguration(MergedParserConfiguration):
         return self._set_parser
 
     def __init__(self):
-        self._before_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.MergedBeforeRegex)
-        self._after_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.MergedAfterRegex)
-        self._since_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.MergedAfterRegex)
+        self._before_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.MergedBeforeRegex)
+        self._after_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.MergedAfterRegex)
+        self._since_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.MergedAfterRegex)
         self._date_parser = ChineseDateParser()
         self._holiday_parser = ChineseHolidayParser()
         self._time_parser = ChineseTimeParser()

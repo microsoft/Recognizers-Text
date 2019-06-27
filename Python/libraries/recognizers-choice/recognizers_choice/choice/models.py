@@ -53,4 +53,3 @@ class BooleanModel(ChoiceModel):
                                       'score': o.data.score}
                                      for o in sources.data.other_matches]
         return results
-

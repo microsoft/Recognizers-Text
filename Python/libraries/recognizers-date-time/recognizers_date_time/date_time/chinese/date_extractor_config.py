@@ -8,6 +8,7 @@ from ..extractors import DateTimeExtractor
 from ..base_date import DateTimeUtilityConfiguration
 from ..base_date import DateExtractorConfiguration
 
+
 class ChineseDateExtractorConfiguration(DateExtractorConfiguration):
     @property
     def date_regex_list(self) -> List[Pattern]:
@@ -79,13 +80,18 @@ class ChineseDateExtractorConfiguration(DateExtractorConfiguration):
         ]
 
         if ChineseDateTime.DefaultLanguageFallback == Constants.DEFAULT_LANGUAGE_FALLBACK_DMY:
-            self._date_regex_list.append(RegExpUtility.get_safe_reg_exp(ChineseDateTime.DateRegexList7))
-            self._date_regex_list.append(RegExpUtility.get_safe_reg_exp(ChineseDateTime.DateRegexList6))
+            self._date_regex_list.append(
+                RegExpUtility.get_safe_reg_exp(ChineseDateTime.DateRegexList7))
+            self._date_regex_list.append(
+                RegExpUtility.get_safe_reg_exp(ChineseDateTime.DateRegexList6))
         else:
-            self._date_regex_list.append(RegExpUtility.get_safe_reg_exp(ChineseDateTime.DateRegexList6))
-            self._date_regex_list.append(RegExpUtility.get_safe_reg_exp(ChineseDateTime.DateRegexList7))
+            self._date_regex_list.append(
+                RegExpUtility.get_safe_reg_exp(ChineseDateTime.DateRegexList6))
+            self._date_regex_list.append(
+                RegExpUtility.get_safe_reg_exp(ChineseDateTime.DateRegexList7))
 
-        self._date_regex_list.append(RegExpUtility.get_safe_reg_exp(ChineseDateTime.DateRegexList8))
+        self._date_regex_list.append(
+            RegExpUtility.get_safe_reg_exp(ChineseDateTime.DateRegexList8))
 
         self._implicit_date_list = [
             RegExpUtility.get_safe_reg_exp(ChineseDateTime.LunarRegex),
@@ -94,6 +100,7 @@ class ChineseDateExtractorConfiguration(DateExtractorConfiguration):
             RegExpUtility.get_safe_reg_exp(ChineseDateTime.DateLastRegex),
             RegExpUtility.get_safe_reg_exp(ChineseDateTime.DateNextRegex),
             RegExpUtility.get_safe_reg_exp(ChineseDateTime.WeekDayRegex),
-            RegExpUtility.get_safe_reg_exp(ChineseDateTime.WeekDayOfMonthRegex),
+            RegExpUtility.get_safe_reg_exp(
+                ChineseDateTime.WeekDayOfMonthRegex),
             RegExpUtility.get_safe_reg_exp(ChineseDateTime.SpecialDate)
         ]

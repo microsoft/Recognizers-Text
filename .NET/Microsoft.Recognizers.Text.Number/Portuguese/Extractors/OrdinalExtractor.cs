@@ -9,6 +9,9 @@ namespace Microsoft.Recognizers.Text.Number.Portuguese
 {
     public class OrdinalExtractor : BaseNumberExtractor
     {
+
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
         private static readonly ConcurrentDictionary<string, OrdinalExtractor> Instances =
             new ConcurrentDictionary<string, OrdinalExtractor>();
 
@@ -17,11 +20,11 @@ namespace Microsoft.Recognizers.Text.Number.Portuguese
             var regexes = new Dictionary<Regex, TypeTag>
             {
                 {
-                    new Regex(NumbersDefinitions.OrdinalSuffixRegex, RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.OrdinalSuffixRegex, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.ORDINAL_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
-                    new Regex(NumbersDefinitions.OrdinalEnglishRegex, RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.OrdinalEnglishRegex, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.ORDINAL_PREFIX, Constants.PORTUGUESE)
                 },
             };

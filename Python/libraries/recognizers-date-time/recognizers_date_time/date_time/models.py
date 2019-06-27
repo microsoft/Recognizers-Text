@@ -12,6 +12,7 @@ class DateTimeModelResult(ModelResult):
         super().__init__()
         self.timex_str: str
 
+
 class DateTimeModel(Model):
     def model_type_name(self) -> str:
         return 'datetime'
@@ -20,7 +21,7 @@ class DateTimeModel(Model):
         self.parser = parser
         self.extractor = extractor
 
-    def parse(self, query: str, reference: datetime = None) -> List[ModelResult]:#pylint: disable=W0221
+    def parse(self, query: str, reference: datetime = None) -> List[ModelResult]:  # pylint: disable=W0221
         query = QueryProcessor.preprocess(query)
 
         extract_results = self.extractor.extract(query, reference)

@@ -7,12 +7,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 {
     public class JapaneseMergedDateTimeParserConfiguration : BaseMergedDateTimeParser
     {
-        private static readonly Regex BeforeRegex = new Regex(DateTimeDefinitions.MergedBeforeRegex,  RegexOptions.Singleline);
 
-        private static readonly Regex AfterRegex = new Regex(DateTimeDefinitions.MergedAfterRegex, RegexOptions.Singleline);
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
+        private static readonly Regex BeforeRegex = new Regex(DateTimeDefinitions.MergedBeforeRegex, RegexFlags);
+
+        private static readonly Regex AfterRegex = new Regex(DateTimeDefinitions.MergedAfterRegex, RegexFlags);
 
         // TODO implement SinceRegex
-        private static readonly Regex SinceRegex = new Regex(DateTimeDefinitions.MergedAfterRegex, RegexOptions.Singleline);
+        private static readonly Regex SinceRegex = new Regex(DateTimeDefinitions.MergedAfterRegex, RegexFlags);
 
         public JapaneseMergedDateTimeParserConfiguration(IMergedParserConfiguration configuration)
             : base(configuration)

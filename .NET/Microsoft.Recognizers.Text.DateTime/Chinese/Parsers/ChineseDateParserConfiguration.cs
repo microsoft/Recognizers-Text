@@ -38,7 +38,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         {
             object value = null;
 
-            if (er.Type.Equals(ParserName))
+            if (er.Type.Equals(ParserName, StringComparison.Ordinal))
             {
                 value = InnerParser(er.Text, referenceDate);
             }
@@ -485,7 +485,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 }
             }
 
-            // here is a very special case, timeX followe future date
+            // here is a very special case, timeX follows future date
             ret.Timex = $@"XXXX-{month:D2}-WXX-{weekday}-#{cardinal}";
             ret.FutureValue = futureDate;
             ret.PastValue = pastDate;
@@ -566,7 +566,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             return match.Success;
         }
 
-        private static DateObject ComputeDate(int cadinal, int weekday, int month, int year)
+        private static DateObject ComputeDate(int cardinal, int weekday, int month, int year)
         {
             var firstDay = DateObject.MinValue.SafeCreateFromValue(year, month, 1);
             var firstWeekday = firstDay.This((DayOfWeek)weekday);
@@ -580,7 +580,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 firstWeekday = firstDay.Next((DayOfWeek)weekday);
             }
 
-            return firstWeekday.AddDays(7 * (cadinal - 1));
+            return firstWeekday.AddDays(7 * (cardinal - 1));
         }
 
         private static int GetMonthMaxDay(int year, int month)
