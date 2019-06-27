@@ -8,23 +8,26 @@ namespace Microsoft.Recognizers.Text.Number.Japanese
 {
     public class FractionExtractor : BaseNumberExtractor
     {
+
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
         public FractionExtractor()
         {
             var regexes = new Dictionary<Regex, TypeTag>
             {
                 {
                     // -4 5/2,       ４ ６／３
-                    new Regex(NumbersDefinitions.FractionNotationSpecialsCharsRegex, RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.FractionNotationSpecialsCharsRegex, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
                     // 8/3
-                    new Regex(NumbersDefinitions.FractionNotationRegex, RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.FractionNotationRegex, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
                     // 五分の二   七分の三
-                    new Regex(NumbersDefinitions.AllFractionNumber, RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.AllFractionNumber, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.JAPANESE)
                 },
             };

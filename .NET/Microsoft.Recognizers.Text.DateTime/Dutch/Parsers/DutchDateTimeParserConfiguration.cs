@@ -8,10 +8,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
     public class DutchDateTimeParserConfiguration : BaseOptionsConfiguration, IDateTimeParserConfiguration
     {
         public static readonly Regex AmTimeRegex =
-            new Regex(DateTimeDefinitions.AMTimeRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.AMTimeRegex, RegexFlags);
 
         public static readonly Regex PmTimeRegex =
-            new Regex(DateTimeDefinitions.PMTimeRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.PMTimeRegex, RegexFlags);
+
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         public DutchDateTimeParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)

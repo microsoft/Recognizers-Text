@@ -11,23 +11,26 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         // e.g: 早上九点
         public static readonly string DayDescRegex = DateTimeDefinitions.TimeDayDescRegex;
 
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
         public JapaneseTimeExtractorConfiguration()
         {
             var regexes = new Dictionary<Regex, TimeType>
             {
                 {
-                    new Regex(DateTimeDefinitions.TimeRegexes1, RegexOptions.Singleline),
+                    new Regex(DateTimeDefinitions.TimeRegexes1, RegexFlags),
                     TimeType.CjkTime
                 },
                 {
-                    new Regex(DateTimeDefinitions.TimeRegexes2, RegexOptions.Singleline),
+                    new Regex(DateTimeDefinitions.TimeRegexes2, RegexFlags),
                     TimeType.DigitTime
                 },
                 {
-                    new Regex(DateTimeDefinitions.TimeRegexes3, RegexOptions.Singleline),
+                    new Regex(DateTimeDefinitions.TimeRegexes3, RegexFlags),
                     TimeType.LessTime
                 },
             };
+
             Regexes = regexes.ToImmutableDictionary();
         }
 

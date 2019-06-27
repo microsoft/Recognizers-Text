@@ -1,6 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Collections.Immutable;
+using System.Globalization;
 using System.Linq;
 using System.Text.RegularExpressions;
 
@@ -11,7 +11,7 @@ namespace Microsoft.Recognizers.Text.Number
     public abstract class BaseNumberExtractor : IExtractor
     {
         public static readonly Regex CurrencyRegex =
-            new Regex(BaseNumbers.CurrencyRegex, RegexOptions.Singleline);
+            new Regex(BaseNumbers.CurrencyRegex, RegexOptions.Singleline | RegexOptions.ExplicitCapture);
 
         protected BaseNumberExtractor(NumberOptions options = NumberOptions.None)
         {
@@ -111,7 +111,8 @@ namespace Microsoft.Recognizers.Text.Number
                             if (ExtractType.Contains(Constants.MODEL_ORDINAL))
                             {
                                 er.Metadata = new Metadata();
-                                if ((Options & NumberOptions.SuppressExtendedTypes) == 0 && originalMatch.Groups[Constants.RelativeOrdinalGroupName].Success)
+                                if ((Options & NumberOptions.SuppressExtendedTypes) == 0 &&
+                                    originalMatch.Groups[Constants.RelativeOrdinalGroupName].Success)
                                 {
                                     er.Metadata.IsOrdinalRelative = true;
                                 }
@@ -132,16 +133,17 @@ namespace Microsoft.Recognizers.Text.Number
             return result;
         }
 
-        protected static Regex GenerateLongFormatNumberRegexes(LongFormatType type, string placeholder = BaseNumbers.PlaceHolderDefault)
+        protected static Regex GenerateLongFormatNumberRegexes(LongFormatType type, string placeholder = BaseNumbers.PlaceHolderDefault,
+                                                               RegexOptions flags = RegexOptions.Singleline)
         {
-            var thousandsMark = Regex.Escape(type.ThousandsMark.ToString());
-            var decimalsMark = Regex.Escape(type.DecimalsMark.ToString());
+            var thousandsMark = Regex.Escape(type.ThousandsMark.ToString(CultureInfo.InvariantCulture));
+            var decimalsMark = Regex.Escape(type.DecimalsMark.ToString(CultureInfo.InvariantCulture));
 
             var regexDefinition = type.DecimalsMark.Equals('\0') ?
                 BaseNumbers.IntegerRegexDefinition(placeholder, thousandsMark) :
                 BaseNumbers.DoubleRegexDefinition(placeholder, thousandsMark, decimalsMark);
 
-            return new Regex(regexDefinition, RegexOptions.Singleline);
+            return new Regex(regexDefinition, flags);
         }
 
         private List<ExtractResult> FilterAmbiguity(List<ExtractResult> ers, string text)

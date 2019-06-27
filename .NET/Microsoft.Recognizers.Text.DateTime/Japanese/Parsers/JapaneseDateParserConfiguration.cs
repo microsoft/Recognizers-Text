@@ -37,7 +37,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         {
             object value = null;
 
-            if (er.Type.Equals(ParserName))
+            if (er.Type.Equals(ParserName, StringComparison.Ordinal))
             {
                 value = InnerParser(er.Text, referenceDate);
             }
@@ -130,9 +130,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
             if (match.Success)
             {
-                var yearStr = match.Groups["thisyear"].Value.ToLower();
-                var monthStr = match.Groups["thismonth"].Value.ToLower();
-                var dayStr = match.Groups["day"].Value.ToLower();
+                var yearStr = match.Groups["thisyear"].Value;
+                var monthStr = match.Groups["thismonth"].Value;
+                var dayStr = match.Groups["day"].Value;
 
                 int month = referenceDate.Month, year = referenceDate.Year;
                 var day = this.config.DayOfMonth[dayStr];
@@ -288,7 +288,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
             if (match.Success)
             {
-                var weekdayKey = match.Groups["weekday"].Value.ToLowerInvariant();
+                var weekdayKey = match.Groups["weekday"].Value;
                 var value = reference.Next((DayOfWeek)this.config.DayOfWeek[weekdayKey]);
 
                 result.Timex = DateTimeFormatUtil.LuisDate(value);
@@ -306,7 +306,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
             if (match.Success)
             {
-                var weekdayKey = match.Groups["weekday"].Value.ToLowerInvariant();
+                var weekdayKey = match.Groups["weekday"].Value;
                 var value = reference.This((DayOfWeek)this.config.DayOfWeek[weekdayKey]);
 
                 result.Timex = DateTimeFormatUtil.LuisDate(value);
@@ -324,7 +324,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
             if (match.Success)
             {
-                var weekdayKey = match.Groups["weekday"].Value.ToLowerInvariant();
+                var weekdayKey = match.Groups["weekday"].Value;
                 var value = reference.Last((DayOfWeek)this.config.DayOfWeek[weekdayKey]);
 
                 result.Timex = DateTimeFormatUtil.LuisDate(value);
@@ -342,7 +342,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
             if (match.Success)
             {
-                var weekdayKey = match.Groups["weekday"].Value.ToLower();
+                var weekdayKey = match.Groups["weekday"].Value;
                 var weekday = this.config.DayOfWeek[weekdayKey];
                 var value = reference.This((DayOfWeek)weekday);
 
@@ -381,7 +381,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         {
             var ret = new DateTimeResolutionResult();
 
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
             var match = this.config.WeekDayOfMonthRegex.Match(trimmedText);
             if (!match.Success)
             {
@@ -455,7 +455,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 }
             }
 
-            // here is a very special case, timeX followe future date
+            // here is a very special case, timeX follows future date
             ret.Timex = $@"XXXX-{month:D2}-WXX-{weekday}-#{cardinal}";
             ret.FutureValue = futureDate;
             ret.PastValue = pastDate;
@@ -469,10 +469,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         {
             var ret = new DateTimeResolutionResult();
 
-            var monthStr = match.Groups["month"].Value.ToLower();
-            var dayStr = match.Groups["day"].Value.ToLower();
-            var yearStr = match.Groups["year"].Value.ToLower();
-            var yearJapStr = match.Groups["yearJap"].Value.ToLower();
+            var monthStr = match.Groups["month"].Value;
+            var dayStr = match.Groups["day"].Value;
+            var yearStr = match.Groups["year"].Value;
+            var yearJapStr = match.Groups["yearJap"].Value;
             int month = 1, day = 1, year = 0;
 
             var tmp = ConvertJapaneseYearToInteger(yearJapStr);
@@ -540,7 +540,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             return match.Success;
         }
 
-        private static DateObject ComputeDate(int cadinal, int weekday, int month, int year)
+        private static DateObject ComputeDate(int cardinal, int weekday, int month, int year)
         {
             var firstDay = DateObject.MinValue.SafeCreateFromValue(year, month, 1);
             var firstWeekday = firstDay.This((DayOfWeek)weekday);
@@ -554,7 +554,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 firstWeekday = firstDay.Next((DayOfWeek)weekday);
             }
 
-            return firstWeekday.AddDays(7 * (cadinal - 1));
+            return firstWeekday.AddDays(7 * (cardinal - 1));
         }
 
         // handle cases like "三天前"
@@ -562,27 +562,21 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         {
             var ret = new DateTimeResolutionResult();
             var durationRes = durationExtractor.Extract(text, referenceDate);
-            var numStr = string.Empty;
             var unitStr = string.Empty;
+
             if (durationRes.Count > 0)
             {
                 var match = JapaneseDateExtractorConfiguration.UnitRegex.Match(text);
                 if (match.Success)
                 {
-                    var suffix =
-                        text.Substring((int)durationRes[0].Start + (int)durationRes[0].Length)
-                            .Trim()
-                            .ToLowerInvariant();
-                    var srcUnit = match.Groups["unit"].Value.ToLowerInvariant();
-                    var numberStr =
-                        text.Substring((int)durationRes[0].Start, match.Index - (int)durationRes[0].Start)
-                            .Trim()
-                            .ToLowerInvariant();
+                    var suffix = text.Substring((int)durationRes[0].Start + (int)durationRes[0].Length).Trim();
+                    var srcUnit = match.Groups["unit"].Value;
+                    var numberStr = text.Substring((int)durationRes[0].Start, match.Index - (int)durationRes[0].Start).Trim();
                     var number = ConvertJapaneseToNum(numberStr);
+
                     if (this.config.UnitMap.ContainsKey(srcUnit))
                     {
                         unitStr = this.config.UnitMap[srcUnit];
-                        numStr = number.ToString();
 
                         var beforeMatch = JapaneseDateExtractorConfiguration.BeforeRegex.Match(suffix);
                         if (beforeMatch.Success && suffix.StartsWith(beforeMatch.Value))
@@ -591,16 +585,16 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                             switch (unitStr)
                             {
                                 case Constants.TimexDay:
-                                    date = referenceDate.AddDays(-double.Parse(numStr));
+                                    date = referenceDate.AddDays(-number);
                                     break;
                                 case Constants.TimexWeek:
-                                    date = referenceDate.AddDays(-7 * double.Parse(numStr));
+                                    date = referenceDate.AddDays(-7 * number);
                                     break;
                                 case Constants.TimexMonthFull:
-                                    date = referenceDate.AddMonths(-Convert.ToInt32(double.Parse(numStr)));
+                                    date = referenceDate.AddMonths(-number);
                                     break;
                                 case Constants.TimexYear:
-                                    date = referenceDate.AddYears(-Convert.ToInt32(double.Parse(numStr)));
+                                    date = referenceDate.AddYears(-number);
                                     break;
                                 default:
                                     return ret;
@@ -619,16 +613,16 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                             switch (unitStr)
                             {
                                 case Constants.TimexDay:
-                                    date = referenceDate.AddDays(double.Parse(numStr));
+                                    date = referenceDate.AddDays(number);
                                     break;
                                 case Constants.TimexWeek:
-                                    date = referenceDate.AddDays(7 * double.Parse(numStr));
+                                    date = referenceDate.AddDays(7 * number);
                                     break;
                                 case Constants.TimexMonthFull:
-                                    date = referenceDate.AddMonths(Convert.ToInt32(double.Parse(numStr)));
+                                    date = referenceDate.AddMonths(number);
                                     break;
                                 case Constants.TimexYear:
-                                    date = referenceDate.AddYears(Convert.ToInt32(double.Parse(numStr)));
+                                    date = referenceDate.AddYears(number);
                                     break;
                                 default:
                                     return ret;
@@ -653,7 +647,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             var er = integerExtractor.Extract(numStr);
             if (er.Count != 0)
             {
-                if (er[0].Type.Equals(Number.Constants.SYS_NUM_INTEGER))
+                if (er[0].Type.Equals(Number.Constants.SYS_NUM_INTEGER, StringComparison.Ordinal))
                 {
                     num = Convert.ToInt32((double)(numberParser.Parse(er[0]).Value ?? 0));
                 }
@@ -671,7 +665,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             var er = integerExtractor.Extract(yearJapStr);
             if (er.Count != 0)
             {
-                if (er[0].Type.Equals(Number.Constants.SYS_NUM_INTEGER))
+                if (er[0].Type.Equals(Number.Constants.SYS_NUM_INTEGER, StringComparison.Ordinal))
                 {
                     num = Convert.ToInt32((double)(numberParser.Parse(er[0]).Value ?? 0));
                 }
@@ -686,7 +680,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                     er = integerExtractor.Extract(ch.ToString());
                     if (er.Count != 0)
                     {
-                        if (er[0].Type.Equals(Number.Constants.SYS_NUM_INTEGER))
+                        if (er[0].Type.Equals(Number.Constants.SYS_NUM_INTEGER, StringComparison.Ordinal))
                         {
                             num += Convert.ToInt32((double)(numberParser.Parse(er[0]).Value ?? 0));
                         }

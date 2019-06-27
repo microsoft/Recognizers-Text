@@ -7,6 +7,7 @@ from ..parsers import DateTimeParser
 from ..base_set import SetParserConfiguration, MatchedTimex
 from ..base_configs import BaseDateParserConfiguration
 
+
 class SpanishSetParserConfiguration(SetParserConfiguration):
     @property
     def duration_extractor(self) -> DateTimeExtractor:
@@ -109,12 +110,18 @@ class SpanishSetParserConfiguration(SetParserConfiguration):
         self._date_time_period_parser = config.date_time_period_parser
         self._unit_map = SpanishDateTime.UnitMap
 
-        self._each_prefix_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.EachPrefixRegex)
-        self._periodic_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.PeriodicRegex)
-        self._each_unit_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.EachUnitRegex)
-        self._each_day_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.EachDayRegex)
-        self._set_week_day_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.SetWeekDayRegex)
-        self._set_each_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.SetEachRegex)
+        self._each_prefix_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.EachPrefixRegex)
+        self._periodic_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.PeriodicRegex)
+        self._each_unit_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.EachUnitRegex)
+        self._each_day_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.EachDayRegex)
+        self._set_week_day_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.SetWeekDayRegex)
+        self._set_each_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.SetEachRegex)
 
     def get_matched_daily_timex(self, text: str) -> MatchedTimex:
         trimmed_text = text.strip().lower()
@@ -140,9 +147,9 @@ class SpanishSetParserConfiguration(SetParserConfiguration):
         timex = ''
 
         if (
-                trimmed_text == 'día' or trimmed_text == 'dia' or
-                trimmed_text == 'días' or trimmed_text == 'dias'
-            ):
+            trimmed_text == 'día' or trimmed_text == 'dia' or
+            trimmed_text == 'días' or trimmed_text == 'dias'
+        ):
             timex = 'P1D'
         elif trimmed_text == 'semana' or trimmed_text == 'semanas':
             timex = 'P1W'

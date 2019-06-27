@@ -8,6 +8,7 @@ from recognizers_number.culture import CultureInfo
 from recognizers_number.number.parsers import NumberParserConfiguration
 from recognizers_number.resources.portuguese_numeric import PortugueseNumeric
 
+
 class PortugueseNumberParserConfiguration(NumberParserConfiguration):
     @property
     def cardinal_number_map(self) -> Dict[str, int]:
@@ -97,9 +98,12 @@ class PortugueseNumberParserConfiguration(NumberParserConfiguration):
         self._cardinal_number_map = PortugueseNumeric.CardinalNumberMap
         self._ordinal_number_map = PortugueseNumeric.OrdinalNumberMap
         self._round_number_map = PortugueseNumeric.RoundNumberMap
-        self._negative_number_sign_regex = RegExpUtility.get_safe_reg_exp(PortugueseNumeric.NegativeNumberSignRegex)
-        self._half_a_dozen_regex = RegExpUtility.get_safe_reg_exp(PortugueseNumeric.HalfADozenRegex)
-        self._digital_number_regex = RegExpUtility.get_safe_reg_exp(PortugueseNumeric.DigitalNumberRegex)
+        self._negative_number_sign_regex = RegExpUtility.get_safe_reg_exp(
+            PortugueseNumeric.NegativeNumberSignRegex)
+        self._half_a_dozen_regex = RegExpUtility.get_safe_reg_exp(
+            PortugueseNumeric.HalfADozenRegex)
+        self._digital_number_regex = RegExpUtility.get_safe_reg_exp(
+            PortugueseNumeric.DigitalNumberRegex)
 
     def normalize_token_set(self, tokens: List[str], context: ParseResult) -> List[str]:
         result = []

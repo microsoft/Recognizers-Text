@@ -27,7 +27,7 @@ public class SpanishNumeric {
 
     public static final String HundredsNumberIntegerRegex = "(cuatrocient[ao]s|trescient[ao]s|seiscient[ao]s|setecient[ao]s|ochocient[ao]s|novecient[ao]s|doscient[ao]s|quinient[ao]s|(?<!por\\s+)(cien(to)?))";
 
-    public static final String RoundNumberIntegerRegex = "(mil millones|mil|millones|mill[oó]n|billones|bill[oó]n|trillones|trill[oó]n|cuatrillones|cuatrill[oó]n|quintillones|quintill[oó]n|sextillones|sextill[oó]n|septillones|septill[oó]n)";
+    public static final String RoundNumberIntegerRegex = "(mil millones|millones|mill[oó]n|mil|billones|bill[oó]n|trillones|trill[oó]n|cuatrillones|cuatrill[oó]n|quintillones|quintill[oó]n|sextillones|sextill[oó]n|septillones|septill[oó]n)";
 
     public static final String ZeroToNineIntegerRegex = "(cuatro|cinco|siete|nueve|cero|tres|seis|ocho|dos|un[ao]?)";
 
@@ -37,7 +37,7 @@ public class SpanishNumeric {
 
     public static final String TensNumberIntegerRegex = "(cincuenta|cuarenta|treinta|sesenta|setenta|ochenta|noventa)";
 
-    public static final String NegativeNumberTermsRegex = "((?<!(al|lo)\\s+)menos\\s+)";
+    public static final String NegativeNumberTermsRegex = "(?<negTerm>(?<!(al|lo)\\s+)menos\\s+)";
 
     public static final String NegativeNumberSignRegex = "^{NegativeNumberTermsRegex}.*"
             .replace("{NegativeNumberTermsRegex}", NegativeNumberTermsRegex);

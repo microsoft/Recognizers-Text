@@ -25,7 +25,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         private DateTimeResolutionResult ParseIsh(string text, DateObject referenceTime)
         {
             var ret = new DateTimeResolutionResult();
-            var lowerText = text.ToLowerInvariant();
+            var lowerText = text;
 
             var match = ItalianTimeExtractorConfiguration.IshRegex.MatchExact(lowerText, trim: true);
 

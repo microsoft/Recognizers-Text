@@ -81,15 +81,18 @@ class NumberWithUnitExtractor(Extractor):
     def __init__(self, config: NumberWithUnitExtractorConfiguration):
         self.config: NumberWithUnitExtractorConfiguration = config
         if self.config.suffix_list:
-            self.suffix_regex: Set[Pattern] = self._build_regex_from_set(self.config.suffix_list.values())
+            self.suffix_regex: Set[Pattern] = self._build_regex_from_set(
+                self.config.suffix_list.values())
         else:
             self.suffix_regex: Set[Pattern] = set()
 
         if self.config.prefix_list:
-            max_length = max(map(len, ('|'.join(self.config.prefix_list.values()).split('|'))))
+            max_length = max(
+                map(len, ('|'.join(self.config.prefix_list.values()).split('|'))))
 
             self.max_prefix_match_len = max_length + 2
-            self.prefix_regex: Set[Pattern] = self._build_regex_from_set(self.config.prefix_list.values())
+            self.prefix_regex: Set[Pattern] = self._build_regex_from_set(
+                self.config.prefix_list.values())
         else:
             self.max_prefix_match_len = 0
             self.prefix_regex: Set[Pattern] = set()
@@ -101,7 +104,8 @@ class NumberWithUnitExtractor(Extractor):
 
         mapping_prefix: Dict[float, PrefixUnitResult] = dict()
         matched: List[bool] = [False] * len(source)
-        numbers: List[ExtractResult] = self.config.unit_num_extractor.extract(source)
+        numbers: List[ExtractResult] = self.config.unit_num_extractor.extract(
+            source)
         result: List[ExtractResult] = list()
         source_len = len(source)
 
@@ -110,9 +114,11 @@ class NumberWithUnitExtractor(Extractor):
         if ambiguous_multiplier_regex is not None:
 
             for num in numbers:
-                match = list(filter(lambda x: x.group(), regex.finditer(ambiguous_multiplier_regex, num.text)))
+                match = list(filter(lambda x: x.group(), regex.finditer(
+                    ambiguous_multiplier_regex, num.text)))
                 if match and len(match) == 1:
-                    new_length = num.length - (match[0].span()[1] - match[0].span()[0])
+                    new_length = num.length - \
+                        (match[0].span()[1] - match[0].span()[0])
                     num.text = num.text[0:new_length]
                     num.length = new_length
 
@@ -129,7 +135,8 @@ class NumberWithUnitExtractor(Extractor):
                 last_index = len(left)
                 best_match: Match = None
                 for pattern in self.prefix_regex:
-                    collection = list(filter(lambda x: len(x.group()), regex.finditer(pattern, left)))
+                    collection = list(filter(lambda x: len(
+                        x.group()), regex.finditer(pattern, left)))
                     for match in collection:
                         if left[match.start():last_index].strip() == match.group():
                             if best_match is None or best_match.start() >= match.start():
@@ -150,7 +157,8 @@ class NumberWithUnitExtractor(Extractor):
 
             if max_find_len > 0:
                 right = source[start + length:start + length + max_find_len]
-                unit_match_list = map(lambda x: list(regex.finditer(x, right)), self.suffix_regex)
+                unit_match_list = map(lambda x: list(
+                    regex.finditer(x, right)), self.suffix_regex)
                 unit_match = chain.from_iterable(unit_match_list)
                 unit_match = list(filter(lambda x: x.group(), unit_match))
 
@@ -159,7 +167,8 @@ class NumberWithUnitExtractor(Extractor):
                     if match.group():
                         end_pos = match.start() + len(match.group())
                         if match.start() >= 0:
-                            middle: str = right[:min(match.start(), len(right))]
+                            middle: str = right[:min(
+                                match.start(), len(right))]
                             if max_len < end_pos and (not middle.strip() or middle.strip() == self.config.connector_token):
                                 max_len = end_pos
                 if max_len != 0:
@@ -181,7 +190,8 @@ class NumberWithUnitExtractor(Extractor):
 
                     is_not_unit = False
                     if ex_result.type == Constants.SYS_UNIT_DIMENSION:
-                        non_unit_match = self.config.non_unit_regex.finditer(source)
+                        non_unit_match = self.config.non_unit_regex.finditer(
+                            source)
                         for match in non_unit_match:
                             if ex_result.start >= match.start() and ex_result.end <= match.end():
                                 is_not_unit = True
@@ -219,7 +229,8 @@ class NumberWithUnitExtractor(Extractor):
         for ex_result in num_depend_source:
             for i in range(ex_result.start, ex_result.end + 1):
                 match_result[i] = True
-        match_collection = list(filter(lambda x: x.group(), regex.finditer(self.separate_regex, source)))
+        match_collection = list(
+            filter(lambda x: x.group(), regex.finditer(self.separate_regex, source)))
         for match in match_collection:
             i = 0
             while i < len(match.group()) and not match_result[match.start() + i]:
@@ -230,7 +241,8 @@ class NumberWithUnitExtractor(Extractor):
 
                 is_not_unit = False
                 if match.group() == Constants.AMBIGUOUS_TIME_TERM:
-                    non_unit_match = self.config.non_unit_regex.finditer(source)
+                    non_unit_match = self.config.non_unit_regex.finditer(
+                        source)
                     for time in non_unit_match:
                         if self._dimension_inside_time(match, time):
                             is_not_unit = True
@@ -259,9 +271,11 @@ class NumberWithUnitExtractor(Extractor):
     def _build_separate_regex_from_config(self, ignore_case: bool = False) -> Pattern:
         separate_words: Set[str] = set()
         for add_word in self.config.prefix_list.values():
-            separate_words |= set(filter(self.validate_unit, add_word.split('|')))
+            separate_words |= set(
+                filter(self.validate_unit, add_word.split('|')))
         for add_word in self.config.suffix_list.values():
-            separate_words |= set(filter(self.validate_unit, add_word.split('|')))
+            separate_words |= set(
+                filter(self.validate_unit, add_word.split('|')))
         for to_delete in self.config.ambiguous_unit_list:
             separate_words.discard(to_delete)
 
@@ -335,7 +349,8 @@ class BaseMergedUnitExtractor(Extractor):
             middle_begin = ers[idx].start + ers[idx].length
             middle_end = ers[idx].start
 
-            middle_str = source[middle_begin:middle_end - middle_begin].strip().lower()
+            middle_str = source[middle_begin:middle_end -
+                                middle_begin].strip().lower()
 
             # Separated by whitespace
             if not middle_str:
@@ -408,7 +423,8 @@ class BaseMergedUnitExtractor(Extractor):
             middle_begin = ers[j - 1].start + ers[j - 1].length
             middle_end = num_ers[i].start
 
-            middle_str = source[middle_begin:middle_end - middle_begin].strip().lower()
+            middle_str = source[middle_begin:middle_end -
+                                middle_begin].strip().lower()
 
             # separated by whitespace
             if not middle_str:

@@ -22,6 +22,7 @@ def test_datetime_extractor(
         context,
         source,
         expected_results):
+
     reference_datetime = get_reference_date(context)
     language = get_language(culture)
     extractor = create_extractor(language, model, options)
@@ -48,6 +49,7 @@ def test_datetime_parser(
         context,
         source,
         expected_results):
+
     reference_datetime = get_reference_date(context)
     language = get_language(culture)
     extractor = create_extractor(language, model, options)
@@ -92,6 +94,7 @@ def test_datetime_mergedparser(
         context,
         source,
         expected_results):
+
     reference_datetime = get_reference_date(context)
     language = get_language(culture)
     extractor = create_extractor(language, model, options)
@@ -128,6 +131,7 @@ def test_datetime_model(
         context,
         source,
         expected_results):
+
     reference_datetime = get_reference_date(context)
     option_obj = get_option(options)
 

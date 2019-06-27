@@ -79,7 +79,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             var referenceDate = refDate;
             object value = null;
 
-            if (er.Type.Equals(ParserName))
+            if (er.Type.Equals(ParserName, StringComparison.Ordinal))
             {
                 var innerResult = ParseHolidayRegexMatch(er.Text, referenceDate);
 
@@ -140,7 +140,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         private static DateTimeResolutionResult Match2Date(Match match, DateObject referenceDate)
         {
             var ret = new DateTimeResolutionResult();
-            var holidayStr = match.Groups["holiday"].Value.ToLower();
+            var holidayStr = match.Groups["holiday"].Value;
 
             var year = referenceDate.Year;
             var hasYear = false;
@@ -380,7 +380,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             var er = IntegerExtractor.Extract(yearJapStr);
             if (er.Count != 0)
             {
-                if (er[0].Type.Equals(Number.Constants.SYS_NUM_INTEGER))
+                if (er[0].Type.Equals(Number.Constants.SYS_NUM_INTEGER, StringComparison.Ordinal))
                 {
                     num = Convert.ToInt32((double)(IntegerParser.Parse(er[0]).Value ?? 0));
                 }
@@ -395,7 +395,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                     er = IntegerExtractor.Extract(ch.ToString());
                     if (er.Count != 0)
                     {
-                        if (er[0].Type.Equals(Number.Constants.SYS_NUM_INTEGER))
+                        if (er[0].Type.Equals(Number.Constants.SYS_NUM_INTEGER, StringComparison.Ordinal))
                         {
                             num += Convert.ToInt32((double)(IntegerParser.Parse(er[0]).Value ?? 0));
                         }

@@ -4,6 +4,7 @@ from recognizers_text.utilities import RegExpUtility
 from ...resources.french_date_time import FrenchDateTime
 from ..base_time import TimeExtractorConfiguration
 
+
 class FrenchTimeExtractorConfiguration(TimeExtractorConfiguration):
     @property
     def time_regex_list(self) -> List[Pattern]:
@@ -18,9 +19,12 @@ class FrenchTimeExtractorConfiguration(TimeExtractorConfiguration):
         return self._ish_regex
 
     def __init__(self):
-        self._time_regex_list: List[Pattern] = FrenchTimeExtractorConfiguration.get_time_regex_list()
-        self._at_regex: Pattern = RegExpUtility.get_safe_reg_exp(FrenchDateTime.AtRegex)
-        self._ish_regex: Pattern = RegExpUtility.get_safe_reg_exp(FrenchDateTime.IshRegex)
+        self._time_regex_list: List[Pattern] = FrenchTimeExtractorConfiguration.get_time_regex_list(
+        )
+        self._at_regex: Pattern = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.AtRegex)
+        self._ish_regex: Pattern = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.IshRegex)
 
     @staticmethod
     def get_time_regex_list() -> List[Pattern]:

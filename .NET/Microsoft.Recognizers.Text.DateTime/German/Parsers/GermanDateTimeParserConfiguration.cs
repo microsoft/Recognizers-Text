@@ -7,6 +7,9 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 {
     public class GermanDateTimeParserConfiguration : BaseOptionsConfiguration, IDateTimeParserConfiguration
     {
+
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
         public GermanDateTimeParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)
         {
@@ -20,8 +23,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
             NowRegex = GermanDateTimeExtractorConfiguration.NowRegex;
 
-            AMTimeRegex = new Regex(DateTimeDefinitions.AMTimeRegex, RegexOptions.Singleline);
-            PMTimeRegex = new Regex(DateTimeDefinitions.PMTimeRegex, RegexOptions.Singleline);
+            AMTimeRegex = new Regex(DateTimeDefinitions.AMTimeRegex, RegexFlags);
+            PMTimeRegex = new Regex(DateTimeDefinitions.PMTimeRegex, RegexFlags);
 
             SimpleTimeOfTodayAfterRegex = GermanDateTimeExtractorConfiguration.SimpleTimeOfTodayAfterRegex;
             SimpleTimeOfTodayBeforeRegex = GermanDateTimeExtractorConfiguration.SimpleTimeOfTodayBeforeRegex;
@@ -94,7 +97,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public int GetHour(string text, int hour)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
             int result = hour;
             if ((trimmedText.EndsWith("morgen") || trimmedText.EndsWith("morgens")) && hour >= Constants.HalfDayHourCount)
             {
@@ -110,7 +113,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public bool GetMatchedNowTimex(string text, out string timex)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
             if (trimmedText.EndsWith("jetzt") || trimmedText.Equals("momentan") || trimmedText.Equals("gerade") || trimmedText.Equals("aktuell") ||
                 trimmedText.Equals("im moment") || trimmedText.Equals("in diesem moment") || trimmedText.Equals("derzeit"))
             {
@@ -135,7 +138,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public int GetSwiftDay(string text)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
 
             var swift = 0;
             if (trimmedText.StartsWith("nächsten") || trimmedText.StartsWith("nächste") || trimmedText.StartsWith("nächstes") || trimmedText.StartsWith("nächster"))

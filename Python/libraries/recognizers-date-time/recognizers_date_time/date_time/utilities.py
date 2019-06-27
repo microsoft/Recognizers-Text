@@ -12,11 +12,13 @@ from recognizers_date_time.date_time.constants import TimeTypeConstants, Constan
 from recognizers_date_time.date_time.extractors import DateTimeExtractor
 from recognizers_date_time.date_time.parsers import DateTimeParser, DateTimeParseResult
 
+
 class DateTimeOptions(IntFlag):
     NONE = 0
     SKIP_FROM_TO_MERGE = 1
     SPLIT_DATE_AND_TIME = 2
     CALENDAR = 4
+
 
 class Token:
     def __init__(self, start: int, end: int):
@@ -26,6 +28,7 @@ class Token:
     @property
     def length(self) -> int:
         return self.end - self.start
+
 
 def merge_all_tokens(tokens: List[Token], source: str, extractor_name: str) -> List[ExtractResult]:
     merged_tokens: List[Token] = list()
@@ -51,8 +54,10 @@ def merge_all_tokens(tokens: List[Token], source: str, extractor_name: str) -> L
         if add:
             merged_tokens.append(token)
 
-    result: List[ExtractResult] = list(map(lambda x: __token_to_result(x, source, extractor_name), merged_tokens))
+    result: List[ExtractResult] = list(
+        map(lambda x: __token_to_result(x, source, extractor_name), merged_tokens))
     return result
+
 
 def __token_to_result(token: Token, source: str, name: str) -> ExtractResult:
     result: ExtractResult = ExtractResult()
@@ -62,13 +67,16 @@ def __token_to_result(token: Token, source: str, name: str) -> ExtractResult:
     result.type = name
     return result
 
+
 def get_tokens_from_regex(pattern: Pattern, source: str) -> List[Token]:
     return list(map(lambda x: Token(x.start(), x.end()), regex.finditer(pattern, source)))
+
 
 class ResolutionStartEnd:
     def __init__(self, start=None, end=None):
         self.start = start
         self.end = end
+
 
 class DateTimeResolutionResult:
     def __init__(self):
@@ -83,12 +91,14 @@ class DateTimeResolutionResult:
         self.past_value: object = None
         self.sub_date_time_entities: List[object] = list()
 
+
 class TimeOfDayResolution:
     def __init__(self):
-        self.timex: str = None 
+        self.timex: str = None
         self.begin_hour: int = 0
         self.end_hour: int = 0
         self.end_min: int = 0
+
 
 class DateTimeFormatUtil:
     HourTimeRegex = RegExpUtility.get_safe_reg_exp(r'(?<!P)T\d{2}')
@@ -136,7 +146,8 @@ class DateTimeFormatUtil:
 
     @staticmethod
     def all_str_to_pm(source: str) -> str:
-        matches = list(regex.finditer(DateTimeFormatUtil.HourTimeRegex, source))
+        matches = list(regex.finditer(
+            DateTimeFormatUtil.HourTimeRegex, source))
         split: List[str] = list()
         last_position = 0
 
@@ -171,6 +182,8 @@ class DateTimeFormatUtil:
         return result + ':'.join(split)
 
 # ISO weekday
+
+
 class DayOfWeek(IntEnum):
     Monday = 1
     Tuesday = 2
@@ -179,6 +192,7 @@ class DayOfWeek(IntEnum):
     Friday = 5
     Saturday = 6
     Sunday = 7
+
 
 class DateUtils:
     min_value = datetime(1, 1, 1, 0, 0, 0, 0)
@@ -213,18 +227,19 @@ class DateUtils:
         return hour >= 0 and hour < 24 and minute >= 0 and minute < 60 and second >= 0 and minute < 60
 
     @staticmethod
-    def this(from_date: datetime, day_of_week: DayOfWeek)-> datetime:
+    def this(from_date: datetime, day_of_week: DayOfWeek) -> datetime:
         start = from_date.isoweekday()
-        target = day_of_week if day_of_week >= int(DayOfWeek.Monday) else int(DayOfWeek.Sunday)
+        target = day_of_week if day_of_week >= int(
+            DayOfWeek.Monday) else int(DayOfWeek.Sunday)
         result = from_date + timedelta(days=target-start)
         return result
 
     @staticmethod
-    def next(from_date: datetime, day_of_week: DayOfWeek)-> datetime:
+    def next(from_date: datetime, day_of_week: DayOfWeek) -> datetime:
         return DateUtils.this(from_date, day_of_week) + timedelta(weeks=1)
 
     @staticmethod
-    def last(from_date: datetime, day_of_week: DayOfWeek)-> datetime:
+    def last(from_date: datetime, day_of_week: DayOfWeek) -> datetime:
         return DateUtils.this(from_date, day_of_week) - timedelta(weeks=1)
 
     @staticmethod
@@ -287,10 +302,12 @@ class DateTimeUtilityConfiguration(ABC):
     def am_pm_desc_regex(self) -> Pattern:
         raise NotImplementedError
 
+
 class MatchedIndex:
     def __init__(self, matched: bool, index: int):
         self.matched = matched
         self.index = index
+
 
 class MatchingUtil:
     @staticmethod
@@ -299,7 +316,8 @@ class MatchingUtil:
         referenced_matches = regex.match(regexp, source.strip().lower())
 
         if referenced_matches and referenced_matches.start() == 0:
-            result.index = source.lower().find(referenced_matches.group()) + len(referenced_matches.group())
+            result.index = source.lower().find(referenced_matches.group()) + \
+                len(referenced_matches.group())
             result.matched = True
 
         return result
@@ -311,10 +329,12 @@ class MatchingUtil:
     @staticmethod
     def get_in_index(source: str, regexp: Pattern) -> MatchedIndex:
         result = MatchedIndex(matched=False, index=-1)
-        referenced_match = regex.search(regexp, source.strip().lower().split(' ').pop())
+        referenced_match = regex.search(
+            regexp, source.strip().lower().split(' ').pop())
 
         if referenced_match:
-            result = MatchedIndex(matched=True, index=len(source) - source.lower().rfind(referenced_match.group()))
+            result = MatchedIndex(matched=True, index=len(
+                source) - source.lower().rfind(referenced_match.group()))
 
         return result
 
@@ -322,9 +342,11 @@ class MatchingUtil:
     def contains_in_index(source: str, regexp: Pattern) -> bool:
         return MatchingUtil.get_in_index(source, regexp).matched
 
+
 class AgoLaterMode(Enum):
     DATE = 0
     DATETIME = 1
+
 
 class AgoLaterUtil:
     @staticmethod
@@ -334,23 +356,29 @@ class AgoLaterUtil:
         if pos <= len(source):
             after_string = source[pos:]
             before_string = source[0: extract_result.start]
-            value = MatchingUtil.get_ago_later_index(after_string, config.ago_regex)
+            value = MatchingUtil.get_ago_later_index(
+                after_string, config.ago_regex)
 
             if value.matched:
-                ret.append(Token(extract_result.start, extract_result.start + extract_result.length + value.index))
+                ret.append(Token(extract_result.start, extract_result.start +
+                                 extract_result.length + value.index))
             else:
-                value = MatchingUtil.get_ago_later_index(after_string, config.later_regex)
+                value = MatchingUtil.get_ago_later_index(
+                    after_string, config.later_regex)
                 if value.matched:
-                    ret.append(Token(extract_result.start, extract_result.start + extract_result.length + value.index))
+                    ret.append(Token(
+                        extract_result.start, extract_result.start + extract_result.length + value.index))
                 else:
-                    value = MatchingUtil.get_in_index(before_string, config.in_connector_regex)
+                    value = MatchingUtil.get_in_index(
+                        before_string, config.in_connector_regex)
 
                     # for range unit like "week, month, year", it should output dateRange or datetimeRange
                     if regex.search(config.range_unit_regex, extract_result.text):
                         return ret
 
                     if (value.matched and extract_result.start and extract_result.length and extract_result.start >= value.index):
-                        ret.append(Token(extract_result.start - value.index, extract_result.start + extract_result.length))
+                        ret.append(Token(extract_result.start - value.index,
+                                         extract_result.start + extract_result.length))
         return ret
 
     @staticmethod
@@ -381,7 +409,8 @@ class AgoLaterUtil:
         before_str = source[0:duration.start]
         src_unit = match.group('unit')
         duration_result: DateTimeResolutionResult = pr.value
-        num_str = duration_result.timex[0:len(duration_result.timex) - 1].replace('P', '').replace('T', '')
+        num_str = duration_result.timex[0:len(
+            duration_result.timex) - 1].replace('P', '').replace('T', '')
         num = int(num_str)
 
         if not num:
@@ -403,17 +432,21 @@ class AgoLaterUtil:
         if not unit_str:
             return result
 
-        contains_ago = MatchingUtil.contains_ago_later_index(after_str, utility_configuration.ago_regex)
-        contains_later_or_in = MatchingUtil.contains_ago_later_index(after_str, utility_configuration.later_regex) or MatchingUtil.contains_in_index(before_str, utility_configuration.in_connector_regex)
+        contains_ago = MatchingUtil.contains_ago_later_index(
+            after_str, utility_configuration.ago_regex)
+        contains_later_or_in = MatchingUtil.contains_ago_later_index(
+            after_str, utility_configuration.later_regex) or MatchingUtil.contains_in_index(before_str, utility_configuration.in_connector_regex)
 
         if contains_ago:
-            result = AgoLaterUtil.get_date_result(unit_str, num, reference, False, mode)
+            result = AgoLaterUtil.get_date_result(
+                unit_str, num, reference, False, mode)
             duration_parse_result.value.mod = TimeTypeConstants.BEFORE_MOD
             result.sub_date_time_entities = [duration_parse_result]
             return result
 
         if contains_later_or_in:
-            result = AgoLaterUtil.get_date_result(unit_str, num, reference, True, mode)
+            result = AgoLaterUtil.get_date_result(
+                unit_str, num, reference, True, mode)
             duration_parse_result.value.mod = TimeTypeConstants.AFTER_MOD
             result.sub_date_time_entities = [duration_parse_result]
             return result
@@ -442,7 +475,7 @@ class AgoLaterUtil:
             value += timedelta(minutes=num * swift)
         elif unit_str == 'S':
             value += timedelta(seconds=num * swift)
-        else: 
+        else:
             return result
 
         result.timex = DateTimeFormatUtil.luis_date_from_datetime(
@@ -451,6 +484,7 @@ class AgoLaterUtil:
         result.past_value = value
         result.success = True
         return result
+
 
 class TimexUtil:
     @staticmethod
@@ -468,7 +502,7 @@ class TimexUtil:
         elif tod == Constants.MidDay:
             result.timex = Constants.MidDay
             result.begin_hour = 11
-            result.end_hour = 13   
+            result.end_hour = 13
         elif tod == Constants.Afternoon:
             result.timex = Constants.Afternoon
             result.begin_hour = 12

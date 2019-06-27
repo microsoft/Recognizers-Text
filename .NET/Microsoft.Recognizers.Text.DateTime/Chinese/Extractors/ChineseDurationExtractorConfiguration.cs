@@ -21,11 +21,14 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
     public class ChineseDurationExtractorConfiguration : ChineseBaseDateTimeExtractorConfiguration<DurationType>
     {
+
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
         private static readonly IExtractor InternalExtractor = new NumberWithUnitExtractor(new DurationExtractorConfiguration());
 
-        private static readonly Regex YearRegex = new Regex(DateTimeDefinitions.DurationYearRegex, RegexOptions.Singleline);
+        private static readonly Regex YearRegex = new Regex(DateTimeDefinitions.DurationYearRegex, RegexFlags);
 
-        private static readonly Regex HalfSuffixRegex = new Regex(DateTimeDefinitions.DurationHalfSuffixRegex, RegexOptions.Singleline);
+        private static readonly Regex HalfSuffixRegex = new Regex(DateTimeDefinitions.DurationHalfSuffixRegex, RegexFlags);
 
         internal override ImmutableDictionary<Regex, DurationType> Regexes { get; }
 

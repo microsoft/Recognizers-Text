@@ -11,6 +11,7 @@ from .duration_extractor_config import FrenchDurationExtractorConfiguration
 from .base_configs import FrenchDateTimeUtilityConfiguration
 from ..constants import Constants
 
+
 class FrenchDateExtractorConfiguration(DateExtractorConfiguration):
     @property
     def date_regex_list(self) -> List[Pattern]:
@@ -104,16 +105,24 @@ class FrenchDateExtractorConfiguration(DateExtractorConfiguration):
             RegExpUtility.get_safe_reg_exp(FrenchDateTime.WeekDayOfMonthRegex),
             RegExpUtility.get_safe_reg_exp(FrenchDateTime.SpecialDate),
         ]
-        self._month_end = RegExpUtility.get_safe_reg_exp(FrenchDateTime.MonthEnd)
+        self._month_end = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.MonthEnd)
         self._of_month = RegExpUtility.get_safe_reg_exp(FrenchDateTime.OfMonth)
-        self._date_unit_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.DateUnitRegex)
-        self._for_the_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.ForTheRegex)
-        self._week_day_and_day_of_month_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.WeekDayAndDayOfMonthRegex)
-        self._relative_month_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.RelativeMonthRegex)
-        self._week_day_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.WeekDayRegex)
+        self._date_unit_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.DateUnitRegex)
+        self._for_the_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.ForTheRegex)
+        self._week_day_and_day_of_month_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.WeekDayAndDayOfMonthRegex)
+        self._relative_month_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.RelativeMonthRegex)
+        self._week_day_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.WeekDayRegex)
         self._day_of_week = FrenchDateTime.DayOfWeek
         self._ordinal_extractor = FrenchOrdinalExtractor()
         self._integer_extractor = FrenchIntegerExtractor()
-        self._number_parser = BaseNumberParser(FrenchNumberParserConfiguration())
-        self._duration_extractor = BaseDurationExtractor(FrenchDurationExtractorConfiguration())
+        self._number_parser = BaseNumberParser(
+            FrenchNumberParserConfiguration())
+        self._duration_extractor = BaseDurationExtractor(
+            FrenchDurationExtractorConfiguration())
         self._utility_configuration = FrenchDateTimeUtilityConfiguration()

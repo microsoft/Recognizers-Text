@@ -7,7 +7,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.French
 {
     public class AgeExtractorConfiguration : FrenchNumberWithUnitExtractorConfiguration
     {
-        public static readonly ImmutableDictionary<string, string> AgeSuffixList = NumbersWithUnitDefinitions.AgeSuffixList.ToImmutableDictionary();
+        public static readonly ImmutableDictionary<string, string> AgeSuffixList =
+            NumbersWithUnitDefinitions.AgeSuffixList.ToImmutableDictionary();
 
         public AgeExtractorConfiguration()
             : this(new CultureInfo(Culture.French))

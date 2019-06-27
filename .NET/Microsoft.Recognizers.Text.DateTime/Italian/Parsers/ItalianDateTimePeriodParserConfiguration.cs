@@ -7,18 +7,19 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 {
     public class ItalianDateTimePeriodParserConfiguration : BaseOptionsConfiguration, IDateTimePeriodParserConfiguration
     {
-        public static readonly Regex MorningStartEndRegex = new Regex(
-            DateTimeDefinitions.MorningStartEndRegex, RegexOptions.Singleline);
+        public static readonly Regex MorningStartEndRegex =
+            new Regex(DateTimeDefinitions.MorningStartEndRegex, RegexFlags);
 
-        public static readonly Regex AfternoonStartEndRegex = new Regex(
-            DateTimeDefinitions.AfternoonStartEndRegex, RegexOptions.Singleline);
+        public static readonly Regex AfternoonStartEndRegex =
+            new Regex(DateTimeDefinitions.AfternoonStartEndRegex, RegexFlags);
 
-        public static readonly Regex EveningStartEndRegex = new Regex(
-            DateTimeDefinitions.EveningStartEndRegex, RegexOptions.Singleline);
+        public static readonly Regex EveningStartEndRegex =
+            new Regex(DateTimeDefinitions.EveningStartEndRegex, RegexFlags);
 
-        public static readonly Regex NightStartEndRegex = new Regex(
-            DateTimeDefinitions.NightStartEndRegex,
-            RegexOptions.Singleline);
+        public static readonly Regex NightStartEndRegex =
+            new Regex(DateTimeDefinitions.NightStartEndRegex, RegexFlags);
+
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         public ItalianDateTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config.Options)
@@ -56,6 +57,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             PrefixDayRegex = ItalianDateTimePeriodExtractorConfiguration.PrefixDayRegex;
             BeforeRegex = ItalianDateTimePeriodExtractorConfiguration.BeforeRegex;
             AfterRegex = ItalianDateTimePeriodExtractorConfiguration.AfterRegex;
+
             UnitMap = config.UnitMap;
             Numbers = config.Numbers;
         }
@@ -130,7 +132,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public bool GetMatchedTimeRange(string text, out string timeStr, out int beginHour, out int endHour, out int endMin)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
             beginHour = 0;
             endHour = 0;
             endMin = 0;
@@ -171,7 +173,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         // **NOTE: for certain cases, prochain/dernier (next, last) are suffix OR prefix
         public int GetSwiftPrefix(string text)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
             var swift = 0;
             if (trimmedText.StartsWith("prochain") || trimmedText.EndsWith("prochain") ||
                 trimmedText.StartsWith("prochaine") || trimmedText.EndsWith("prochaine"))

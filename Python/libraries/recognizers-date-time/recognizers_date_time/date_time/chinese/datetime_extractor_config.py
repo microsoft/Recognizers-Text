@@ -9,6 +9,7 @@ from ..base_datetime import DateTimeExtractorConfiguration
 from .date_extractor import ChineseDateExtractor
 from .time_extractor import ChineseTimeExtractor
 
+
 class ChineseDateTimeExtractorConfiguration(DateTimeExtractorConfiguration):
     @property
     def date_point_extractor(self) -> DateTimeExtractor:
@@ -73,10 +74,14 @@ class ChineseDateTimeExtractorConfiguration(DateTimeExtractorConfiguration):
     def __init__(self):
         self._date_point_extractor = ChineseDateExtractor()
         self._time_point_extractor = ChineseTimeExtractor()
-        self._now_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.NowRegex)
-        self._night_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.NightRegex)
-        self._time_of_today_before_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.TimeOfTodayRegex)
-        self._preposition_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.PrepositionRegex)
+        self._now_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.NowRegex)
+        self._night_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.NightRegex)
+        self._time_of_today_before_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.TimeOfTodayRegex)
+        self._preposition_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.PrepositionRegex)
 
     def is_connector_token(self, source: str) -> bool:
         return not source.strip() or source == ',' or regex.search(self.preposition_regex, source)

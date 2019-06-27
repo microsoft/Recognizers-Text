@@ -6,6 +6,7 @@ from recognizers_number.number.cjk_parsers import CJKNumberParser
 from recognizers_number.number.chinese.parsers import ChineseNumberParserConfiguration
 from recognizers_number.number.japanese.parsers import JapaneseNumberParserConfiguration
 
+
 class ParserType(Enum):
     NUMBER = 0
     CARDINAL = 1
@@ -15,13 +16,15 @@ class ParserType(Enum):
     ORDINAL = 5
     PERCENTAGE = 6
 
+
 class AgnosticNumberParserFactory:
     @staticmethod
     def get_parser(parser_type: ParserType, language_config: NumberParserConfiguration) -> BaseNumberParser:
         parser = BaseNumberParser(language_config)
 
         chinese = isinstance(language_config, ChineseNumberParserConfiguration)
-        japanese = isinstance(language_config, JapaneseNumberParserConfiguration)
+        japanese = isinstance(
+            language_config, JapaneseNumberParserConfiguration)
 
         if chinese:
             parser = CJKNumberParser(language_config)
@@ -33,7 +36,7 @@ class AgnosticNumberParserFactory:
                 Constants.SYS_NUM_CARDINAL,
                 Constants.SYS_NUM_INTEGER,
                 Constants.SYS_NUM_DOUBLE
-                ]
+            ]
         elif parser_type is ParserType.DOUBLE:
             parser.supported_types = [Constants.SYS_NUM_DOUBLE]
         elif parser_type is ParserType.FRACTION:

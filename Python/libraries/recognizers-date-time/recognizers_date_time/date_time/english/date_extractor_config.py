@@ -10,6 +10,7 @@ from ..utilities import DateTimeUtilityConfiguration
 from .duration_extractor_config import EnglishDurationExtractorConfiguration
 from .base_configs import EnglishDateTimeUtilityConfiguration
 
+
 class EnglishDateExtractorConfiguration(DateExtractorConfiguration):
     @property
     def date_regex_list(self) -> List[Pattern]:
@@ -93,20 +94,29 @@ class EnglishDateExtractorConfiguration(DateExtractorConfiguration):
             RegExpUtility.get_safe_reg_exp(EnglishDateTime.LastDateRegex),
             RegExpUtility.get_safe_reg_exp(EnglishDateTime.NextDateRegex),
             RegExpUtility.get_safe_reg_exp(EnglishDateTime.SingleWeekDayRegex),
-            RegExpUtility.get_safe_reg_exp(EnglishDateTime.WeekDayOfMonthRegex),
+            RegExpUtility.get_safe_reg_exp(
+                EnglishDateTime.WeekDayOfMonthRegex),
             RegExpUtility.get_safe_reg_exp(EnglishDateTime.SpecialDate),
         ]
-        self._month_end = RegExpUtility.get_safe_reg_exp(EnglishDateTime.MonthEnd)
-        self._of_month = RegExpUtility.get_safe_reg_exp(EnglishDateTime.OfMonth)
-        self._date_unit_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.DateUnitRegex)
-        self._for_the_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.ForTheRegex)
+        self._month_end = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.MonthEnd)
+        self._of_month = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.OfMonth)
+        self._date_unit_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.DateUnitRegex)
+        self._for_the_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.ForTheRegex)
         self._week_day_and_day_of_month_regex = RegExpUtility.get_safe_reg_exp(
             EnglishDateTime.WeekDayAndDayOfMonthRegex)
-        self._relative_month_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.RelativeMonthRegex)
-        self._week_day_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.WeekDayRegex)
+        self._relative_month_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.RelativeMonthRegex)
+        self._week_day_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.WeekDayRegex)
         self._day_of_week = EnglishDateTime.DayOfWeek
         self._ordinal_extractor = EnglishOrdinalExtractor()
         self._integer_extractor = EnglishIntegerExtractor()
-        self._number_parser = BaseNumberParser(EnglishNumberParserConfiguration())
-        self._duration_extractor = BaseDurationExtractor(EnglishDurationExtractorConfiguration())
+        self._number_parser = BaseNumberParser(
+            EnglishNumberParserConfiguration())
+        self._duration_extractor = BaseDurationExtractor(
+            EnglishDurationExtractorConfiguration())
         self._utility_configuration = EnglishDateTimeUtilityConfiguration()

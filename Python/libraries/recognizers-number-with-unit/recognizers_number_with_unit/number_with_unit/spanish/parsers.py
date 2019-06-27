@@ -8,6 +8,7 @@ from recognizers_number.number.spanish.parsers import SpanishNumberParserConfigu
 from recognizers_number_with_unit.number_with_unit.parsers import NumberWithUnitParserConfiguration
 from recognizers_number_with_unit.resources.spanish_numeric_with_unit import SpanishNumericWithUnit
 
+
 class SpanishNumberWithUnitParserConfiguration(NumberWithUnitParserConfiguration):
     @property
     def internal_number_parser(self) -> Parser:
@@ -25,13 +26,17 @@ class SpanishNumberWithUnitParserConfiguration(NumberWithUnitParserConfiguration
         if culture_info is None:
             culture_info = CultureInfo(Culture.Spanish)
         super().__init__(culture_info)
-        self._internal_number_extractor = SpanishNumberExtractor(NumberMode.DEFAULT)
-        self._internal_number_parser = AgnosticNumberParserFactory.get_parser(ParserType.NUMBER, SpanishNumberParserConfiguration(culture_info))
+        self._internal_number_extractor = SpanishNumberExtractor(
+            NumberMode.DEFAULT)
+        self._internal_number_parser = AgnosticNumberParserFactory.get_parser(
+            ParserType.NUMBER, SpanishNumberParserConfiguration(culture_info))
+
 
 class SpanishAgeParserConfiguration(SpanishNumberWithUnitParserConfiguration):
     def __init__(self, culture_info: CultureInfo = None):
         super().__init__(culture_info)
         self.add_dict_to_unit_map(SpanishNumericWithUnit.AgeSuffixList)
+
 
 class SpanishCurrencyParserConfiguration(SpanishNumberWithUnitParserConfiguration):
     def __init__(self, culture_info: CultureInfo = None):
@@ -39,10 +44,12 @@ class SpanishCurrencyParserConfiguration(SpanishNumberWithUnitParserConfiguratio
         self.add_dict_to_unit_map(SpanishNumericWithUnit.CurrencySuffixList)
         self.add_dict_to_unit_map(SpanishNumericWithUnit.CurrencyPrefixList)
 
+
 class SpanishDimensionParserConfiguration(SpanishNumberWithUnitParserConfiguration):
     def __init__(self, culture_info: CultureInfo = None):
         super().__init__(culture_info)
         self.add_dict_to_unit_map(SpanishNumericWithUnit.DimensionSuffixList)
+
 
 class SpanishTemperatureParserConfiguration(SpanishNumberWithUnitParserConfiguration):
     def __init__(self, culture_info: CultureInfo = None):

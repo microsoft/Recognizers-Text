@@ -19,6 +19,7 @@ from .timeperiod_extractor_config import FrenchTimePeriodExtractorConfiguration
 from .datetime_extractor_config import FrenchDateTimeExtractorConfiguration
 from .datetimeperiod_extractor_config import FrenchDateTimePeriodExtractorConfiguration
 
+
 class FrenchSetExtractorConfiguration(SetExtractorConfiguration):
     @property
     def last_regex(self) -> Pattern:
@@ -81,19 +82,33 @@ class FrenchSetExtractorConfiguration(SetExtractorConfiguration):
         return self._date_time_period_extractor
 
     def __init__(self):
-        self._last_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.SetLastRegex)
-        self._periodic_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.PeriodicRegex)
-        self._each_unit_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.EachUnitRegex)
-        self._each_prefix_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.EachPrefixRegex)
-        self._each_day_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.EachDayRegex)
+        self._last_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.SetLastRegex)
+        self._periodic_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.PeriodicRegex)
+        self._each_unit_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.EachUnitRegex)
+        self._each_prefix_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.EachPrefixRegex)
+        self._each_day_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.EachDayRegex)
         self._before_each_day_regex = None
-        self._set_each_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.SetEachRegex)
-        self._set_week_day_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.SetWeekDayRegex)
+        self._set_each_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.SetEachRegex)
+        self._set_week_day_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.SetWeekDayRegex)
 
-        self._duration_extractor = BaseDurationExtractor(FrenchDurationExtractorConfiguration())
-        self._time_extractor = BaseTimeExtractor(FrenchTimeExtractorConfiguration())
-        self._date_extractor = BaseDateExtractor(FrenchDateExtractorConfiguration())
-        self._date_time_extractor = BaseDateTimeExtractor(FrenchDateTimeExtractorConfiguration())
-        self._date_period_extractor = BaseDatePeriodExtractor(FrenchDatePeriodExtractorConfiguration())
-        self._time_period_extractor = BaseTimePeriodExtractor(FrenchTimePeriodExtractorConfiguration())
-        self._date_time_period_extractor = BaseDateTimePeriodExtractor(FrenchDateTimePeriodExtractorConfiguration())
+        self._duration_extractor = BaseDurationExtractor(
+            FrenchDurationExtractorConfiguration())
+        self._time_extractor = BaseTimeExtractor(
+            FrenchTimeExtractorConfiguration())
+        self._date_extractor = BaseDateExtractor(
+            FrenchDateExtractorConfiguration())
+        self._date_time_extractor = BaseDateTimeExtractor(
+            FrenchDateTimeExtractorConfiguration())
+        self._date_period_extractor = BaseDatePeriodExtractor(
+            FrenchDatePeriodExtractorConfiguration())
+        self._time_period_extractor = BaseTimePeriodExtractor(
+            FrenchTimePeriodExtractorConfiguration())
+        self._date_time_period_extractor = BaseDateTimePeriodExtractor(
+            FrenchDateTimePeriodExtractorConfiguration())

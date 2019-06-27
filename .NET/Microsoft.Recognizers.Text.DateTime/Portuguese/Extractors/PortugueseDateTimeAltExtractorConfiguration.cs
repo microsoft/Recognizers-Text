@@ -7,22 +7,22 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
     public class PortugueseDateTimeAltExtractorConfiguration : BaseOptionsConfiguration, IDateTimeAltExtractorConfiguration
     {
         public static readonly Regex ThisPrefixRegex =
-            new Regex(DateTimeDefinitions.ThisPrefixRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.ThisPrefixRegex, RegexFlags);
 
         public static readonly Regex PastPrefixRegex =
-            new Regex(DateTimeDefinitions.PreviousPrefixRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.PreviousPrefixRegex, RegexFlags);
 
         public static readonly Regex NextPrefixRegex =
-            new Regex(DateTimeDefinitions.NextPrefixRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.NextPrefixRegex, RegexFlags);
 
         public static readonly Regex AmRegex =
-            new Regex(DateTimeDefinitions.AmRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.AmRegex, RegexFlags);
 
         public static readonly Regex PmRegex =
-            new Regex(DateTimeDefinitions.PmRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.PmRegex, RegexFlags);
 
         public static readonly Regex RangePrefixRegex =
-            new Regex(DateTimeDefinitions.RangePrefixRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.RangePrefixRegex, RegexFlags);
 
         public static readonly Regex[] RelativePrefixList =
         {
@@ -34,11 +34,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             AmRegex, PmRegex,
         };
 
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
         private static readonly Regex OrRegex =
-            new Regex(DateTimeDefinitions.OrRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.OrRegex, RegexFlags);
 
         private static readonly Regex DayRegex =
-            new Regex(DateTimeDefinitions.DayRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.DayRegex, RegexFlags);
 
         public PortugueseDateTimeAltExtractorConfiguration(IOptionsConfiguration config)
             : base(config)

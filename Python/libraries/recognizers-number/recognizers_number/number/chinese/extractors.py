@@ -6,9 +6,11 @@ from recognizers_text.utilities import RegExpUtility
 from recognizers_number.number.constants import Constants
 from recognizers_number.resources.chinese_numeric import ChineseNumeric
 
+
 class ChineseNumberExtractorMode(Enum):
     DEFAULT = 0
     EXTRACT_ALL = 1
+
 
 class ChineseNumberExtractor(BaseNumberExtractor):
     @property
@@ -28,6 +30,7 @@ class ChineseNumberExtractor(BaseNumberExtractor):
         fraction_ex = ChineseFractionExtractor()
         self.__regexes.extend(fraction_ex.regexes)
 
+
 class ChineseCardinalExtractor(BaseNumberExtractor):
     @property
     def regexes(self) -> List[ReVal]:
@@ -46,6 +49,7 @@ class ChineseCardinalExtractor(BaseNumberExtractor):
         double_ex = ChineseDoubleExtractor()
         self.__regexes.extend(double_ex.regexes)
 
+
 class ChineseIntegerExtractor(BaseNumberExtractor):
     @property
     def regexes(self) -> List[ReVal]:
@@ -58,38 +62,47 @@ class ChineseIntegerExtractor(BaseNumberExtractor):
     def __init__(self, mode: ChineseNumberExtractorMode = ChineseNumberExtractorMode.DEFAULT):
         self.__regexes = [
             ReVal(
-                re=RegExpUtility.get_safe_reg_exp(ChineseNumeric.NumbersSpecialsChars),
+                re=RegExpUtility.get_safe_reg_exp(
+                    ChineseNumeric.NumbersSpecialsChars),
                 val='IntegerNum'),
             ReVal(
-                re=RegExpUtility.get_safe_reg_exp(ChineseNumeric.NumbersSpecialsCharsWithSuffix),
+                re=RegExpUtility.get_safe_reg_exp(
+                    ChineseNumeric.NumbersSpecialsCharsWithSuffix),
                 val='IntegerNum'),
             ReVal(
-                re=RegExpUtility.get_safe_reg_exp(ChineseNumeric.DottedNumbersSpecialsChar),
+                re=RegExpUtility.get_safe_reg_exp(
+                    ChineseNumeric.DottedNumbersSpecialsChar),
                 val='IntegerNum'),
             ReVal(
-                re=RegExpUtility.get_safe_reg_exp(ChineseNumeric.NumbersWithHalfDozen),
+                re=RegExpUtility.get_safe_reg_exp(
+                    ChineseNumeric.NumbersWithHalfDozen),
                 val='IntegerChs'),
             ReVal(
-                re=RegExpUtility.get_safe_reg_exp(ChineseNumeric.NumbersWithDozen),
+                re=RegExpUtility.get_safe_reg_exp(
+                    ChineseNumeric.NumbersWithDozen),
                 val='IntegerChs'),
             ReVal(
-                re=RegExpUtility.get_safe_reg_exp(ChineseNumeric.HalfUnitRegex),
+                re=RegExpUtility.get_safe_reg_exp(
+                    ChineseNumeric.HalfUnitRegex),
                 val='IntegerChs')
         ]
         if mode == ChineseNumberExtractorMode.DEFAULT:
             self.__regexes.append(
                 ReVal(
-                    re=RegExpUtility.get_safe_reg_exp(ChineseNumeric.NumbersWithAllowListRegex),
+                    re=RegExpUtility.get_safe_reg_exp(
+                        ChineseNumeric.NumbersWithAllowListRegex),
                     val='IntegerChs'
                 )
             )
         elif mode == ChineseNumberExtractorMode.EXTRACT_ALL:
             self.__regexes.append(
                 ReVal(
-                    re=RegExpUtility.get_safe_reg_exp(ChineseNumeric.NumbersAggressiveRegex),
+                    re=RegExpUtility.get_safe_reg_exp(
+                        ChineseNumeric.NumbersAggressiveRegex),
                     val='IntegerChs'
                 )
             )
+
 
 class ChineseDoubleExtractor(BaseNumberExtractor):
     @property
@@ -103,30 +116,39 @@ class ChineseDoubleExtractor(BaseNumberExtractor):
     def __init__(self):
         self.__regexes = [
             ReVal(
-                re=RegExpUtility.get_safe_reg_exp(ChineseNumeric.DoubleSpecialsChars),
+                re=RegExpUtility.get_safe_reg_exp(
+                    ChineseNumeric.DoubleSpecialsChars),
                 val='DoubleNum'),
             ReVal(
-                re=RegExpUtility.get_safe_reg_exp(ChineseNumeric.DoubleSpecialsCharsWithNegatives),
+                re=RegExpUtility.get_safe_reg_exp(
+                    ChineseNumeric.DoubleSpecialsCharsWithNegatives),
                 val='DoubleNum'),
             ReVal(
-                re=RegExpUtility.get_safe_reg_exp(ChineseNumeric.SimpleDoubleSpecialsChars),
+                re=RegExpUtility.get_safe_reg_exp(
+                    ChineseNumeric.SimpleDoubleSpecialsChars),
                 val='DoubleNum'),
             ReVal(
-                re=RegExpUtility.get_safe_reg_exp(ChineseNumeric.DoubleWithMultiplierRegex),
+                re=RegExpUtility.get_safe_reg_exp(
+                    ChineseNumeric.DoubleWithMultiplierRegex),
                 val='DoubleNum'),
             ReVal(
-                re=RegExpUtility.get_safe_reg_exp(ChineseNumeric.DoubleWithThousandsRegex),
+                re=RegExpUtility.get_safe_reg_exp(
+                    ChineseNumeric.DoubleWithThousandsRegex),
                 val='DoubleChs'),
             ReVal(
-                re=RegExpUtility.get_safe_reg_exp(ChineseNumeric.DoubleAllFloatRegex),
+                re=RegExpUtility.get_safe_reg_exp(
+                    ChineseNumeric.DoubleAllFloatRegex),
                 val='DoubleChs'),
             ReVal(
-                re=RegExpUtility.get_safe_reg_exp(ChineseNumeric.DoubleExponentialNotationRegex),
+                re=RegExpUtility.get_safe_reg_exp(
+                    ChineseNumeric.DoubleExponentialNotationRegex),
                 val='DoublePow'),
             ReVal(
-                re=RegExpUtility.get_safe_reg_exp(ChineseNumeric.DoubleScientificNotationRegex),
+                re=RegExpUtility.get_safe_reg_exp(
+                    ChineseNumeric.DoubleScientificNotationRegex),
                 val='DoublePow')
         ]
+
 
 class ChineseFractionExtractor(BaseNumberExtractor):
     @property
@@ -140,15 +162,19 @@ class ChineseFractionExtractor(BaseNumberExtractor):
     def __init__(self):
         self.__regexes = [
             ReVal(
-                re=RegExpUtility.get_safe_reg_exp(ChineseNumeric.FractionNotationSpecialsCharsRegex),
+                re=RegExpUtility.get_safe_reg_exp(
+                    ChineseNumeric.FractionNotationSpecialsCharsRegex),
                 val='FracNum'),
             ReVal(
-                re=RegExpUtility.get_safe_reg_exp(ChineseNumeric.FractionNotationRegex),
+                re=RegExpUtility.get_safe_reg_exp(
+                    ChineseNumeric.FractionNotationRegex),
                 val='FracNum'),
             ReVal(
-                re=RegExpUtility.get_safe_reg_exp(ChineseNumeric.AllFractionNumber),
+                re=RegExpUtility.get_safe_reg_exp(
+                    ChineseNumeric.AllFractionNumber),
                 val='FracChs')
         ]
+
 
 class ChineseOrdinalExtractor(BaseNumberExtractor):
     @property
@@ -165,9 +191,11 @@ class ChineseOrdinalExtractor(BaseNumberExtractor):
                 re=RegExpUtility.get_safe_reg_exp(ChineseNumeric.OrdinalRegex),
                 val='OrdinalChs'),
             ReVal(
-                re=RegExpUtility.get_safe_reg_exp(ChineseNumeric.OrdinalNumbersRegex),
+                re=RegExpUtility.get_safe_reg_exp(
+                    ChineseNumeric.OrdinalNumbersRegex),
                 val='OrdinalChs')
         ]
+
 
 class ChinesePercentageExtractor(BaseNumberExtractor):
     @property
@@ -181,69 +209,91 @@ class ChinesePercentageExtractor(BaseNumberExtractor):
     def __init__(self):
         self.__regexes = [
             ReVal(
-                re=RegExpUtility.get_safe_reg_exp(ChineseNumeric.PercentagePointRegex),
+                re=RegExpUtility.get_safe_reg_exp(
+                    ChineseNumeric.PercentagePointRegex),
                 val='PerChs'),
             ReVal(
-                re=RegExpUtility.get_safe_reg_exp(ChineseNumeric.SimplePercentageRegex),
+                re=RegExpUtility.get_safe_reg_exp(
+                    ChineseNumeric.SimplePercentageRegex),
                 val='PerChs'),
             ReVal(
-                re=RegExpUtility.get_safe_reg_exp(ChineseNumeric.NumbersPercentagePointRegex),
+                re=RegExpUtility.get_safe_reg_exp(
+                    ChineseNumeric.NumbersPercentagePointRegex),
                 val='PerNum'),
             ReVal(
-                re=RegExpUtility.get_safe_reg_exp(ChineseNumeric.NumbersPercentageWithSeparatorRegex),
+                re=RegExpUtility.get_safe_reg_exp(
+                    ChineseNumeric.NumbersPercentageWithSeparatorRegex),
                 val='PerNum'),
             ReVal(
-                re=RegExpUtility.get_safe_reg_exp(ChineseNumeric.NumbersPercentageWithMultiplierRegex),
+                re=RegExpUtility.get_safe_reg_exp(
+                    ChineseNumeric.NumbersPercentageWithMultiplierRegex),
                 val='PerNum'),
             ReVal(
-                re=RegExpUtility.get_safe_reg_exp(ChineseNumeric.FractionPercentagePointRegex),
+                re=RegExpUtility.get_safe_reg_exp(
+                    ChineseNumeric.FractionPercentagePointRegex),
                 val='PerNum'),
             ReVal(
-                re=RegExpUtility.get_safe_reg_exp(ChineseNumeric.FractionPercentageWithSeparatorRegex),
+                re=RegExpUtility.get_safe_reg_exp(
+                    ChineseNumeric.FractionPercentageWithSeparatorRegex),
                 val='PerNum'),
             ReVal(
-                re=RegExpUtility.get_safe_reg_exp(ChineseNumeric.FractionPercentageWithMultiplierRegex),
+                re=RegExpUtility.get_safe_reg_exp(
+                    ChineseNumeric.FractionPercentageWithMultiplierRegex),
                 val='PerNum'),
             ReVal(
-                re=RegExpUtility.get_safe_reg_exp(ChineseNumeric.SimpleNumbersPercentageRegex),
+                re=RegExpUtility.get_safe_reg_exp(
+                    ChineseNumeric.SimpleNumbersPercentageRegex),
                 val='PerNum'),
             ReVal(
-                re=RegExpUtility.get_safe_reg_exp(ChineseNumeric.SimpleNumbersPercentageWithMultiplierRegex),
+                re=RegExpUtility.get_safe_reg_exp(
+                    ChineseNumeric.SimpleNumbersPercentageWithMultiplierRegex),
                 val='PerNum'),
             ReVal(
-                re=RegExpUtility.get_safe_reg_exp(ChineseNumeric.SimpleNumbersPercentagePointRegex),
+                re=RegExpUtility.get_safe_reg_exp(
+                    ChineseNumeric.SimpleNumbersPercentagePointRegex),
                 val='PerNum'),
             ReVal(
-                re=RegExpUtility.get_safe_reg_exp(ChineseNumeric.IntegerPercentageRegex),
+                re=RegExpUtility.get_safe_reg_exp(
+                    ChineseNumeric.IntegerPercentageRegex),
                 val='PerNum'),
             ReVal(
-                re=RegExpUtility.get_safe_reg_exp(ChineseNumeric.IntegerPercentageWithMultiplierRegex),
+                re=RegExpUtility.get_safe_reg_exp(
+                    ChineseNumeric.IntegerPercentageWithMultiplierRegex),
                 val='PerNum'),
             ReVal(
-                re=RegExpUtility.get_safe_reg_exp(ChineseNumeric.NumbersFractionPercentageRegex),
+                re=RegExpUtility.get_safe_reg_exp(
+                    ChineseNumeric.NumbersFractionPercentageRegex),
                 val='PerNum'),
             ReVal(
-                re=RegExpUtility.get_safe_reg_exp(ChineseNumeric.SimpleIntegerPercentageRegex),
+                re=RegExpUtility.get_safe_reg_exp(
+                    ChineseNumeric.SimpleIntegerPercentageRegex),
                 val='PerNum'),
             ReVal(
-                re=RegExpUtility.get_safe_reg_exp(ChineseNumeric.NumbersFoldsPercentageRegex),
+                re=RegExpUtility.get_safe_reg_exp(
+                    ChineseNumeric.NumbersFoldsPercentageRegex),
                 val='PerSpe'),
             ReVal(
-                re=RegExpUtility.get_safe_reg_exp(ChineseNumeric.FoldsPercentageRegex),
+                re=RegExpUtility.get_safe_reg_exp(
+                    ChineseNumeric.FoldsPercentageRegex),
                 val='PerSpe'),
             ReVal(
-                re=RegExpUtility.get_safe_reg_exp(ChineseNumeric.SimpleFoldsPercentageRegex),
+                re=RegExpUtility.get_safe_reg_exp(
+                    ChineseNumeric.SimpleFoldsPercentageRegex),
                 val='PerSpe'),
             ReVal(
-                re=RegExpUtility.get_safe_reg_exp(ChineseNumeric.SpecialsPercentageRegex),
+                re=RegExpUtility.get_safe_reg_exp(
+                    ChineseNumeric.SpecialsPercentageRegex),
                 val='PerSpe'),
             ReVal(
-                re=RegExpUtility.get_safe_reg_exp(ChineseNumeric.NumbersSpecialsPercentageRegex),
+                re=RegExpUtility.get_safe_reg_exp(
+                    ChineseNumeric.NumbersSpecialsPercentageRegex),
                 val='PerSpe'),
             ReVal(
-                re=RegExpUtility.get_safe_reg_exp(ChineseNumeric.SimpleSpecialsPercentageRegex),
+                re=RegExpUtility.get_safe_reg_exp(
+                    ChineseNumeric.SimpleSpecialsPercentageRegex),
                 val='PerSpe'),
             ReVal(
-                re=RegExpUtility.get_safe_reg_exp(ChineseNumeric.SpecialsFoldsPercentageRegex),
+                re=RegExpUtility.get_safe_reg_exp(
+                    ChineseNumeric.SpecialsFoldsPercentageRegex),
                 val='PerSpe')
         ]

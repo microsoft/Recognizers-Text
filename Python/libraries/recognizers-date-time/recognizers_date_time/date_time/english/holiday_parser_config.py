@@ -7,6 +7,7 @@ from ..utilities import DateUtils
 from ..base_holiday import BaseHolidayParserConfiguration
 from ...resources.english_date_time import EnglishDateTime
 
+
 class EnglishHolidayParserConfiguration(BaseHolidayParserConfiguration):
     @property
     def holiday_names(self) -> Dict[str, List[str]]:

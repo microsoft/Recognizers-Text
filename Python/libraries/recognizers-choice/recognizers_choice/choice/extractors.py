@@ -74,7 +74,8 @@ class ChoiceExtractor(Extractor):
             top_score = 0.0
             top_result_index = 0
             for i in range(len(partial_results)):
-                data = ChoiceExtractDataResult(source, partial_results[i].data.score)
+                data = ChoiceExtractDataResult(
+                    source, partial_results[i].data.score)
                 if data.score > top_score:
                     top_score = data.score
                     top_result_index = i
@@ -93,7 +94,7 @@ class ChoiceExtractor(Extractor):
         total_deviation = 0
         for match_token in match:
             pos = StringUtility.index_of(source, match_token, start_pos)
-  
+
             if pos >= 0:
                 distance = pos - start_pos if matched > 0 else 0
 
@@ -134,8 +135,8 @@ class ChoiceExtractor(Extractor):
             token = ''
 
         return tokens
-      
-      
+
+
 class BooleanExtractorConfiguration(ABC):
     regex_true: Pattern
     regex_false: Pattern
@@ -147,6 +148,7 @@ class BooleanExtractorConfiguration(ABC):
         self.regex_false = RegExpUtility.get_safe_reg_exp(regex_false)
         self.token_regex = RegExpUtility.get_safe_reg_exp(token_regex)
         self.only_top_match = only_top_match
+
 
 class BooleanExtractor(ChoiceExtractor):
     booleanTrue = Constants.SYS_BOOLEAN_TRUE

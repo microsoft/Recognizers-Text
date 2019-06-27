@@ -10,11 +10,13 @@ from .extractors import DateTimeExtractor
 from .parsers import DateTimeParser, DateTimeParseResult
 from .utilities import Token, merge_all_tokens, DateTimeFormatUtil, DayOfWeek, DateTimeResolutionResult, DateUtils
 
+
 class HolidayExtractorConfiguration(ABC):
     @property
     @abstractmethod
     def holiday_regexes(self) -> List[Pattern]:
         raise NotImplementedError
+
 
 class BaseHolidayExtractor(DateTimeExtractor):
     @property
@@ -42,6 +44,7 @@ class BaseHolidayExtractor(DateTimeExtractor):
                 tokens.append(Token(match.start(), match.end()))
 
         return tokens
+
 
 class HolidayParserConfiguration(ABC):
     @property
@@ -72,6 +75,7 @@ class HolidayParserConfiguration(ABC):
     def sanitize_holiday_token(self, holiday: str) -> str:
         raise NotImplementedError
 
+
 class BaseHolidayParser(DateTimeParser):
     @property
     def parser_type_name(self) -> str:
@@ -87,13 +91,16 @@ class BaseHolidayParser(DateTimeParser):
         value = None
 
         if source.type == self.parser_type_name:
-            inner_result = self._parse_holiday_regex_match(source.text, reference)
+            inner_result = self._parse_holiday_regex_match(
+                source.text, reference)
             if inner_result.success:
                 inner_result.future_resolution = {
-                    TimeTypeConstants.DATE: DateTimeFormatUtil.format_date(inner_result.future_value)
+                    TimeTypeConstants.DATE: DateTimeFormatUtil.format_date(
+                        inner_result.future_value)
                 }
                 inner_result.past_resolution = {
-                    TimeTypeConstants.DATE: DateTimeFormatUtil.format_date(inner_result.past_value)
+                    TimeTypeConstants.DATE: DateTimeFormatUtil.format_date(
+                        inner_result.past_value)
                 }
                 value = inner_result
 
@@ -117,7 +124,8 @@ class BaseHolidayParser(DateTimeParser):
 
     def _match2date(self, match: Match, reference: datetime) -> DateTimeResolutionResult:
         result = DateTimeResolutionResult()
-        holiday_str = self.config.sanitize_holiday_token(match.group('holiday').lower())
+        holiday_str = self.config.sanitize_holiday_token(
+            match.group('holiday').lower())
 
         year_str = match.group('year')
         order_str = match.group('order')
@@ -136,7 +144,8 @@ class BaseHolidayParser(DateTimeParser):
         else:
             year = reference.year
 
-        holiday_key = next(iter([key for key, values in self.config.holiday_names.items() if holiday_str in values]), None)
+        holiday_key = next(iter([key for key, values in self.config.holiday_names.items(
+        ) if holiday_str in values]), None)
 
         if holiday_key:
             timex_str = ''
@@ -145,7 +154,8 @@ class BaseHolidayParser(DateTimeParser):
 
             if func:
                 value = func(year)
-                timex_str = self.config.variable_holidays_timex_dictionary.get(holiday_key)
+                timex_str = self.config.variable_holidays_timex_dictionary.get(
+                    holiday_key)
                 if not timex_str:
                     timex_str = f'-{DateTimeFormatUtil.to_str(value.month, 2)}-{DateTimeFormatUtil.to_str(value.day, 2)}'
             else:
@@ -166,8 +176,10 @@ class BaseHolidayParser(DateTimeParser):
                 return result
 
             result.timex = 'XXXX' + timex_str
-            result.future_value = self.__get_future_value(value, reference, holiday_key)
-            result.past_value = self.__get_past_value(value, reference, holiday_key)
+            result.future_value = self.__get_future_value(
+                value, reference, holiday_key)
+            result.past_value = self.__get_past_value(
+                value, reference, holiday_key)
             result.success = True
             return result
 
@@ -186,6 +198,7 @@ class BaseHolidayParser(DateTimeParser):
             if func:
                 return func(value.year-1)
         return value
+
 
 class BaseHolidayParserConfiguration(HolidayParserConfiguration):
     @property

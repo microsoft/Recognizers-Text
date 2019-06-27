@@ -1,11 +1,19 @@
 ECHO ==============================PYTHON BUILD/TEST START==============================
 
+ECHO # Installing Requirements
+
+CALL pip install -r .\requirements.txt
+
+CALL pre-commit install --hook-type pre-push
+
 pushd libraries\resource-generator
+
 
 REM Dependencies
 ECHO.
 ECHO # Installing Resource Generator Dependencies
 CALL pip install -r .\requirements.txt
+
 
 REM Build Resources
 ECHO.
@@ -31,6 +39,9 @@ pip install -e .\libraries\recognizers-date-time\
 pip install -e .\libraries\recognizers-sequence\
 
 pip install -e .\libraries\recognizers-suite\
+
+ECHO # Validating PEP8 style
+call flake8 . --config=.\.flake8
 
 pip install -r .\tests\requirements.txt
 

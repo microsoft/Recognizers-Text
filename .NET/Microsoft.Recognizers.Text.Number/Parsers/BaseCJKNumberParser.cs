@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 
@@ -17,7 +18,7 @@ namespace Microsoft.Recognizers.Text.Number
         public override ParseResult Parse(ExtractResult extResult)
         {
             // Check if the parser is configured to support specific types
-            if (SupportedTypes != null && !SupportedTypes.Any(t => extResult.Type.Equals(t)))
+            if (SupportedTypes != null && !SupportedTypes.Any(t => extResult.Type.Equals(t, StringComparison.Ordinal)))
             {
                 return null;
             }

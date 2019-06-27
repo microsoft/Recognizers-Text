@@ -8,14 +8,16 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 {
     public class EnglishTimeParserConfiguration : BaseOptionsConfiguration, ITimeParserConfiguration
     {
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
         private static readonly Regex TimeSuffixFull =
-            new Regex(DateTimeDefinitions.TimeSuffixFull, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.TimeSuffixFull, RegexFlags);
 
         private static readonly Regex LunchRegex =
-            new Regex(DateTimeDefinitions.LunchRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.LunchRegex, RegexFlags);
 
         private static readonly Regex NightRegex =
-            new Regex(DateTimeDefinitions.NightRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.NightRegex, RegexFlags);
 
         public EnglishTimeParserConfiguration(ICommonDateTimeParserConfiguration config)
          : base(config)

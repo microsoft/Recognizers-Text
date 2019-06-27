@@ -11,29 +11,33 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
     {
         public static readonly string ExtractorName = Constants.SYS_DATETIME_DATETIME; // "DateTime";
 
-        public static readonly Regex PrepositionRegex = new Regex(DateTimeDefinitions.PrepositionRegex, RegexOptions.Singleline);
+        public static readonly Regex PrepositionRegex = new Regex(DateTimeDefinitions.PrepositionRegex, RegexFlags);
 
-        public static readonly Regex NowRegex = new Regex(DateTimeDefinitions.NowRegex, RegexOptions.Singleline);
+        public static readonly Regex NowRegex = new Regex(DateTimeDefinitions.NowRegex, RegexFlags);
 
-        public static readonly Regex NightRegex = new Regex(DateTimeDefinitions.NightRegex, RegexOptions.Singleline);
+        public static readonly Regex NightRegex = new Regex(DateTimeDefinitions.NightRegex, RegexFlags);
 
-        public static readonly Regex TimeOfTodayRegex = new Regex(DateTimeDefinitions.TimeOfTodayRegex, RegexOptions.Singleline);
+        public static readonly Regex TimeOfTodayRegex = new Regex(DateTimeDefinitions.TimeOfTodayRegex, RegexFlags);
 
-        public static readonly Regex BeforeRegex = new Regex(DateTimeDefinitions.BeforeRegex, RegexOptions.Singleline);
+        public static readonly Regex BeforeRegex = new Regex(DateTimeDefinitions.BeforeRegex, RegexFlags);
 
-        public static readonly Regex AfterRegex = new Regex(DateTimeDefinitions.AfterRegex, RegexOptions.Singleline);
+        public static readonly Regex AfterRegex = new Regex(DateTimeDefinitions.AfterRegex, RegexFlags);
 
-        public static readonly Regex DateTimePeriodUnitRegex = new Regex(DateTimeDefinitions.DateTimePeriodUnitRegex, RegexOptions.Singleline);
+        public static readonly Regex DateTimePeriodUnitRegex = new Regex(DateTimeDefinitions.DateTimePeriodUnitRegex, RegexFlags);
+
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         private static readonly JapaneseDateExtractorConfiguration DatePointExtractor = new JapaneseDateExtractorConfiguration();
+
         private static readonly JapaneseTimeExtractorConfiguration TimePointExtractor = new JapaneseTimeExtractorConfiguration();
+
         private static readonly JapaneseDurationExtractorConfiguration DurationExtractor = new JapaneseDurationExtractorConfiguration();
 
         // Match now
         public static List<Token> BasicRegexMatch(string text)
         {
             var ret = new List<Token>();
-            text = text.Trim().ToLower();
+            text = text.Trim();
 
             // handle "now"
             var matches = NowRegex.Matches(text);
@@ -169,7 +173,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                     var beforeMatch = BeforeRegex.Match(suffix);
                     var afterMatch = AfterRegex.Match(suffix);
 
-                    if ((beforeMatch.Success && suffix.StartsWith(beforeMatch.Value)) || (afterMatch.Success && suffix.StartsWith(afterMatch.Value)))
+                    if ((beforeMatch.Success && suffix.StartsWith(beforeMatch.Value)) ||
+                        (afterMatch.Success && suffix.StartsWith(afterMatch.Value)))
                     {
                         var metadata = new Metadata() { IsDurationWithBeforeAndAfter = true };
                         ret.Add(new Token(er.Start ?? 0, (er.Start + er.Length ?? 0) + 1, metadata));

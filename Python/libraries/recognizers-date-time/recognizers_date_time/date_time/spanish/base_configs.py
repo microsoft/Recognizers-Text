@@ -3,6 +3,7 @@ from recognizers_text.utilities import RegExpUtility
 from recognizers_date_time.date_time.base_date import DateTimeUtilityConfiguration
 from recognizers_date_time.resources.spanish_date_time import SpanishDateTime
 
+
 class SpanishDateTimeUtilityConfiguration(DateTimeUtilityConfiguration):
     @property
     def ago_regex(self) -> Pattern:
@@ -33,10 +34,17 @@ class SpanishDateTimeUtilityConfiguration(DateTimeUtilityConfiguration):
         return self._am_pm_desc_regex
 
     def __init__(self):
-        self._later_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.LaterRegex)
-        self._ago_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.AgoRegex)
-        self._in_connector_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.InConnectorRegex)
-        self._range_unit_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.RangeUnitRegex)
-        self._am_desc_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.AmDescRegex)
-        self._pm_desc__regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.PmDescRegex)
-        self._am_pm_desc_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.AmPmDescRegex)
+        self._later_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.LaterRegex)
+        self._ago_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.AgoRegex)
+        self._in_connector_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.InConnectorRegex)
+        self._range_unit_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.RangeUnitRegex)
+        self._am_desc_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.AmDescRegex)
+        self._pm_desc__regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.PmDescRegex)
+        self._am_pm_desc_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.AmPmDescRegex)

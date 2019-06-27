@@ -93,7 +93,8 @@ class QueryProcessor:
 
         matches = QueryProcessor.special_tokens_regex.finditer(input_str)
         for match in matches:
-            QueryProcessor.apply_reverse(match.start(), str_chars, match.group())
+            QueryProcessor.apply_reverse(
+                match.start(), str_chars, match.group())
 
         return ''.join(str_chars)
 

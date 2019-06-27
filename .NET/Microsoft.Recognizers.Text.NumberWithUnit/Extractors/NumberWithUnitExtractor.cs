@@ -329,7 +329,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                 }
 
                 var pattern = $@"{this.config.BuildPrefix}({string.Join("|", regexTokens)}){this.config.BuildSuffix}";
-                var options = RegexOptions.Singleline | (ignoreCase ? RegexOptions.IgnoreCase : RegexOptions.None);
+                var options = RegexOptions.Singleline | RegexOptions.ExplicitCapture | (ignoreCase ? RegexOptions.IgnoreCase : RegexOptions.None);
 
                 var regex = new Regex(pattern, options);
                 regexes.Add(regex);
@@ -390,7 +390,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
             regexTokens.Sort(new StringComparer());
             var pattern = $@"{this.config.BuildPrefix}({string.Join("|", regexTokens)}){this.config.BuildSuffix}";
-            var options = RegexOptions.Singleline | (ignoreCase ? RegexOptions.IgnoreCase : RegexOptions.None);
+            var options = RegexOptions.Singleline | RegexOptions.ExplicitCapture | (ignoreCase ? RegexOptions.IgnoreCase : RegexOptions.None);
 
             var regex = new Regex(pattern, options);
             return regex;

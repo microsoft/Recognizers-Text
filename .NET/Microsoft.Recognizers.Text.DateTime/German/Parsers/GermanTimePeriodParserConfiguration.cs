@@ -15,6 +15,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             IntegerExtractor = config.IntegerExtractor;
             TimeParser = config.TimeParser;
             TimeZoneParser = config.TimeZoneParser;
+
             PureNumberFromToRegex = GermanTimePeriodExtractorConfiguration.PureNumFromTo;
             PureNumberBetweenAndRegex = GermanTimePeriodExtractorConfiguration.PureNumBetweenAnd;
             SpecificTimeFromToRegex = GermanTimePeriodExtractorConfiguration.SpecificTimeFromTo;
@@ -22,6 +23,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             TimeOfDayRegex = GermanTimePeriodExtractorConfiguration.TimeOfDayRegex;
             GeneralEndingRegex = GermanTimePeriodExtractorConfiguration.GeneralEndingRegex;
             TillRegex = GermanTimePeriodExtractorConfiguration.TillRegex;
+
             Numbers = config.Numbers;
             UtilityConfiguration = config.UtilityConfiguration;
         }
@@ -54,7 +56,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public bool GetMatchedTimexRange(string text, out string timex, out int beginHour, out int endHour, out int endMin)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
             if (trimmedText.EndsWith("s"))
             {
                 trimmedText = trimmedText.Substring(0, trimmedText.Length - 1);

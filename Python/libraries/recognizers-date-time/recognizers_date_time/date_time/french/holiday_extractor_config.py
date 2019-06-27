@@ -4,6 +4,7 @@ from recognizers_text.utilities import RegExpUtility
 from ..base_holiday import HolidayExtractorConfiguration
 from ...resources.french_date_time import FrenchDateTime
 
+
 class FrenchHolidayExtractorConfiguration(HolidayExtractorConfiguration):
     @property
     def holiday_regexes(self) -> List[Pattern]:

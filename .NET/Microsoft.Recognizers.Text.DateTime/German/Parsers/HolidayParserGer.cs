@@ -117,7 +117,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             var referenceDate = refDate;
             object value = null;
 
-            if (er.Type.Equals(ParserName))
+            if (er.Type.Equals(ParserName, StringComparison.Ordinal))
             {
                 var innerResult = ParseHolidayRegexMatch(er.Text, referenceDate);
 

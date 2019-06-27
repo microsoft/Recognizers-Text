@@ -8,6 +8,7 @@ from recognizers_number.number.french.parsers import FrenchNumberParserConfigura
 from ...resources.french_date_time import FrenchDateTime
 from ..base_duration import DurationParserConfiguration
 
+
 class FrenchDurationParserConfiguration(DurationParserConfiguration):
     @property
     def cardinal_extractor(self) -> BaseNumberExtractor:
@@ -60,13 +61,20 @@ class FrenchDurationParserConfiguration(DurationParserConfiguration):
     def __init__(self, config):
         self._cardinal_extractor = config.cardinal_extractor
         self._number_parser = config.number_parser
-        self._followed_unit = RegExpUtility.get_safe_reg_exp(FrenchDateTime.DurationFollowedUnit)
-        self._suffix_and_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.SuffixAndRegex)
-        self._number_combined_with_unit = RegExpUtility.get_safe_reg_exp(FrenchDateTime.NumberCombinedWithDurationUnit)
-        self._an_unit_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.AnUnitRegex)
-        self._all_date_unit_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.AllRegex)
-        self._half_date_unit_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.HalfRegex)
-        self._inexact_number_unit_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.InexactNumberUnitRegex)
+        self._followed_unit = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.DurationFollowedUnit)
+        self._suffix_and_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.SuffixAndRegex)
+        self._number_combined_with_unit = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.NumberCombinedWithDurationUnit)
+        self._an_unit_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.AnUnitRegex)
+        self._all_date_unit_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.AllRegex)
+        self._half_date_unit_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.HalfRegex)
+        self._inexact_number_unit_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.InexactNumberUnitRegex)
         self._unit_map = config.unit_map
         self._unit_value_map = config.unit_value_map
         self._double_numbers = config.double_numbers

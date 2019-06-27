@@ -8,6 +8,7 @@ from recognizers_number.number.english.parsers import EnglishNumberParserConfigu
 from recognizers_number_with_unit.number_with_unit.parsers import NumberWithUnitParserConfiguration
 from recognizers_number_with_unit.resources.english_numeric_with_unit import EnglishNumericWithUnit
 
+
 class EnglishNumberWithUnitParserConfiguration(NumberWithUnitParserConfiguration):
     @property
     def internal_number_parser(self) -> Parser:
@@ -25,13 +26,17 @@ class EnglishNumberWithUnitParserConfiguration(NumberWithUnitParserConfiguration
         if culture_info is None:
             culture_info = CultureInfo(Culture.English)
         super().__init__(culture_info)
-        self._internal_number_extractor = EnglishNumberExtractor(NumberMode.DEFAULT)
-        self._internal_number_parser = AgnosticNumberParserFactory.get_parser(ParserType.NUMBER, EnglishNumberParserConfiguration(culture_info))
+        self._internal_number_extractor = EnglishNumberExtractor(
+            NumberMode.DEFAULT)
+        self._internal_number_parser = AgnosticNumberParserFactory.get_parser(
+            ParserType.NUMBER, EnglishNumberParserConfiguration(culture_info))
+
 
 class EnglishAgeParserConfiguration(EnglishNumberWithUnitParserConfiguration):
     def __init__(self, culture_info: CultureInfo = None):
         super().__init__(culture_info)
         self.add_dict_to_unit_map(EnglishNumericWithUnit.AgeSuffixList)
+
 
 class EnglishCurrencyParserConfiguration(EnglishNumberWithUnitParserConfiguration):
     def __init__(self, culture_info: CultureInfo = None):
@@ -40,6 +45,7 @@ class EnglishCurrencyParserConfiguration(EnglishNumberWithUnitParserConfiguratio
         self.add_dict_to_unit_map(EnglishNumericWithUnit.CurrencyPrefixList)
         self.currency_name_to_iso_code_map = EnglishNumericWithUnit.CurrencyNameToIsoCodeMap
         self.currency_fraction_code_list = EnglishNumericWithUnit.FractionalUnitNameToCodeMap
+
 
 class EnglishDimensionParserConfiguration(EnglishNumberWithUnitParserConfiguration):
     def __init__(self, culture_info: CultureInfo = None):
@@ -50,6 +56,7 @@ class EnglishDimensionParserConfiguration(EnglishNumberWithUnitParserConfigurati
         self.add_dict_to_unit_map(EnglishNumericWithUnit.SpeedSuffixList)
         self.add_dict_to_unit_map(EnglishNumericWithUnit.VolumeSuffixList)
         self.add_dict_to_unit_map(EnglishNumericWithUnit.WeightSuffixList)
+
 
 class EnglishTemperatureParserConfiguration(EnglishNumberWithUnitParserConfiguration):
     def __init__(self, culture_info: CultureInfo = None):

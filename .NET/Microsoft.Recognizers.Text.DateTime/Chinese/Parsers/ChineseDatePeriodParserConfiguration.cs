@@ -17,7 +17,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         private static readonly IParser IntegerParser = new BaseCJKNumberParser(new ChineseNumberParserConfiguration());
 
-        private static readonly IDateTimeExtractor Durationextractor = new ChineseDurationExtractorConfiguration();
+        private static readonly IDateTimeExtractor DurationExtractor = new ChineseDurationExtractorConfiguration();
 
         private static readonly Calendar Cal = DateTimeFormatInfo.InvariantInfo.Calendar;
 
@@ -39,7 +39,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
             object value = null;
 
-            if (er.Type.Equals(ParserName))
+            if (er.Type.Equals(ParserName, StringComparison.Ordinal))
             {
                 var innerResult = ParseSimpleCases(er.Text, referenceDate);
                 if (!innerResult.Success)
@@ -161,7 +161,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             var er = IntegerExtractor.Extract(numStr);
             if (er.Count != 0)
             {
-                if (er[0].Type.Equals(Number.Constants.SYS_NUM_INTEGER))
+                if (er[0].Type.Equals(Number.Constants.SYS_NUM_INTEGER, StringComparison.Ordinal))
                 {
                     num = Convert.ToInt32((double)(IntegerParser.Parse(er[0]).Value ?? 0));
                 }
@@ -179,7 +179,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             var er = IntegerExtractor.Extract(yearChsStr);
             if (er.Count != 0)
             {
-                if (er[0].Type.Equals(Number.Constants.SYS_NUM_INTEGER))
+                if (er[0].Type.Equals(Number.Constants.SYS_NUM_INTEGER, StringComparison.Ordinal))
                 {
                     num = Convert.ToInt32((double)(IntegerParser.Parse(er[0]).Value ?? 0));
                 }
@@ -194,7 +194,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     er = IntegerExtractor.Extract(ch.ToString());
                     if (er.Count != 0)
                     {
-                        if (er[0].Type.Equals(Number.Constants.SYS_NUM_INTEGER))
+                        if (er[0].Type.Equals(Number.Constants.SYS_NUM_INTEGER, StringComparison.Ordinal))
                         {
                             num += Convert.ToInt32((double)(IntegerParser.Parse(er[0]).Value ?? 0));
                         }
@@ -211,7 +211,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             return year == 0 ? -1 : year;
         }
 
-        private static DateObject ComputeDate(int cadinal, int weekday, int month, int year)
+        private static DateObject ComputeDate(int cardinal, int weekday, int month, int year)
         {
             var firstDay = DateObject.MinValue.SafeCreateFromValue(year, month, 1);
             var firstWeekday = firstDay.This((DayOfWeek)weekday);
@@ -225,7 +225,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 firstWeekday = firstDay.Next((DayOfWeek)weekday);
             }
 
-            return firstWeekday.AddDays(7 * (cadinal - 1));
+            return firstWeekday.AddDays(7 * (cardinal - 1));
         }
 
         private DateTimeResolutionResult ParseSimpleCases(string text, DateObject referenceDate)
@@ -984,7 +984,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             }
 
             // for case "前两年" "后三年"
-            var durationRes = Durationextractor.Extract(text, referenceDate);
+            var durationRes = DurationExtractor.Extract(text, referenceDate);
             if (durationRes.Count > 0)
             {
                 var beforeStr = text.Substring(0, (int)durationRes[0].Start);

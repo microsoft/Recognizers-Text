@@ -10,8 +10,10 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         {
             CardinalExtractor = config.CardinalExtractor;
             NumberParser = config.NumberParser;
+
             DurationExtractor = new BaseDurationExtractor(new GermanDurationExtractorConfiguration(this), false);
             NumberCombinedWithUnit = GermanDurationExtractorConfiguration.NumberCombinedWithDurationUnit;
+
             AnUnitRegex = GermanDurationExtractorConfiguration.AnUnitRegex;
             DuringRegex = GermanDurationExtractorConfiguration.DuringRegex;
             AllDateUnitRegex = GermanDurationExtractorConfiguration.AllRegex;
@@ -22,6 +24,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             InexactNumberRegex = GermanDurationExtractorConfiguration.InexactNumberRegex;
             InexactNumberUnitRegex = GermanDurationExtractorConfiguration.InexactNumberUnitRegex;
             DurationUnitRegex = GermanDurationExtractorConfiguration.DurationUnitRegex;
+
             UnitMap = config.UnitMap;
             UnitValueMap = config.UnitValueMap;
             DoubleNumbers = config.DoubleNumbers;

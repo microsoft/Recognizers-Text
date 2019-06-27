@@ -6,6 +6,7 @@ from ..utilities import DateTimeResolutionResult
 from ..base_time import BaseTimeParser
 from .time_parser_config import EnglishTimeParserConfiguration
 
+
 class EnglishTimeParser(BaseTimeParser):
     def __init__(self, config: EnglishTimeParserConfiguration):
         super().__init__(config)
@@ -29,7 +30,8 @@ class EnglishTimeParser(BaseTimeParser):
             hour = int(hour_str)
 
         result.timex = f'T{hour:02d}'
-        result.future_value = datetime(reference.year, reference.month, reference.day, hour, 0, 0)
+        result.future_value = datetime(
+            reference.year, reference.month, reference.day, hour, 0, 0)
         result.past_value = result.future_value
         result.success = True
         return result

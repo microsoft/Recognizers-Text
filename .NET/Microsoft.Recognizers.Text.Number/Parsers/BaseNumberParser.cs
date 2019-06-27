@@ -80,7 +80,7 @@ namespace Microsoft.Recognizers.Text.Number
             if (matchNegative.Success)
             {
                 isNegative = true;
-                extResult.Text = extResult.Text.Substring(matchNegative.Groups[1].Length);
+                extResult.Text = extResult.Text.Substring(matchNegative.Groups["negTerm"].Length);
             }
 
             // Assign resolution value
@@ -151,7 +151,7 @@ namespace Microsoft.Recognizers.Text.Number
                 if (isNegative)
                 {
                     // Recover the original extracted Text
-                    ret.Text = matchNegative.Groups[1].Value + extResult.Text;
+                    ret.Text = matchNegative.Groups["negTerm"].Value + extResult.Text;
                     ret.Value = -(double)ret.Value;
                 }
 

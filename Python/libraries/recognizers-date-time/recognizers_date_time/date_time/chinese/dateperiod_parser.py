@@ -13,20 +13,31 @@ from ..parsers import DateTimeParseResult
 from ..base_dateperiod import BaseDatePeriodParser
 from .dateperiod_parser_config import ChineseDatePeriodParserConfiguration
 
+
 class ChineseDatePeriodParser(BaseDatePeriodParser):
     def __init__(self):
         super().__init__(ChineseDatePeriodParserConfiguration())
         self.integer_extractor = ChineseIntegerExtractor()
-        self.number_parser = CJKNumberParser(ChineseNumberParserConfiguration())
-        self.year_in_chinese_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.DatePeriodYearInChineseRegex)
-        self.number_combined_with_unit_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.NumberCombinedWithUnit)
-        self.unit_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.UnitRegex)
-        self.year_and_month_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.YearAndMonth)
-        self.pure_number_year_and_month_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.PureNumYearAndMonth)
-        self.year_to_year_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.YearToYear)
-        self.year_to_year_suffix_required = RegExpUtility.get_safe_reg_exp(ChineseDateTime.YearToYearSuffixRequired)
-        self.chinese_year_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.DatePeriodYearInChineseRegex)
-        self.season_with_year_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.SeasonWithYear)
+        self.number_parser = CJKNumberParser(
+            ChineseNumberParserConfiguration())
+        self.year_in_chinese_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.DatePeriodYearInChineseRegex)
+        self.number_combined_with_unit_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.NumberCombinedWithUnit)
+        self.unit_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.UnitRegex)
+        self.year_and_month_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.YearAndMonth)
+        self.pure_number_year_and_month_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.PureNumYearAndMonth)
+        self.year_to_year_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.YearToYear)
+        self.year_to_year_suffix_required = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.YearToYearSuffixRequired)
+        self.chinese_year_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.DatePeriodYearInChineseRegex)
+        self.season_with_year_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.SeasonWithYear)
 
     def parse(self, source: ExtractResult, reference: datetime = None) -> Optional[DateTimeParseResult]:
         if not reference:
@@ -37,19 +48,23 @@ class ChineseDatePeriodParser(BaseDatePeriodParser):
 
             inner_result = self._parse_simple_cases(source_text, reference)
             if not inner_result.success:
-                inner_result = self._parse_one_word_period(source_text, reference)
+                inner_result = self._parse_one_word_period(
+                    source_text, reference)
 
             if not inner_result.success:
-                inner_result = self._merge_two_times_points(source_text, reference)
+                inner_result = self._merge_two_times_points(
+                    source_text, reference)
 
             if not inner_result.success:
-                inner_result = self._parse_number_with_unit(source_text, reference)
+                inner_result = self._parse_number_with_unit(
+                    source_text, reference)
 
             if not inner_result.success:
                 inner_result = self._parse_duration(source_text, reference)
 
             if not inner_result.success:
-                inner_result = self._parse_year_and_month(source_text, reference)
+                inner_result = self._parse_year_and_month(
+                    source_text, reference)
 
             if not inner_result.success:
                 inner_result = self._parse_year_to_year(source_text, reference)
@@ -58,7 +73,8 @@ class ChineseDatePeriodParser(BaseDatePeriodParser):
                 inner_result = self._parse_year(source_text, reference)
 
             if not inner_result.success:
-                inner_result = self._parse_week_of_month(source_text, reference)
+                inner_result = self._parse_week_of_month(
+                    source_text, reference)
 
             if not inner_result.success:
                 inner_result = self._parse_season(source_text, reference)
@@ -70,11 +86,13 @@ class ChineseDatePeriodParser(BaseDatePeriodParser):
                 if inner_result.future_value and inner_result.past_value:
                     inner_result.future_resolution = {
                         TimeTypeConstants.START_DATE: DateTimeFormatUtil.format_date(inner_result.future_value[0]),
-                        TimeTypeConstants.END_DATE: DateTimeFormatUtil.format_date(inner_result.future_value[1])
+                        TimeTypeConstants.END_DATE: DateTimeFormatUtil.format_date(
+                            inner_result.future_value[1])
                     }
                     inner_result.past_resolution = {
                         TimeTypeConstants.START_DATE: DateTimeFormatUtil.format_date(inner_result.past_value[0]),
-                        TimeTypeConstants.END_DATE: DateTimeFormatUtil.format_date(inner_result.past_value[1])
+                        TimeTypeConstants.END_DATE: DateTimeFormatUtil.format_date(
+                            inner_result.past_value[1])
                     }
                 else:
                     inner_result.future_resolution = {}
@@ -126,13 +144,16 @@ class ChineseDatePeriodParser(BaseDatePeriodParser):
         else:
             no_year = True
 
-        begin_date_luis = DateTimeFormatUtil.luis_date(year if input_year or self.config.is_future(month_str) else -1, month, begin_day)
-        end_date_luis = DateTimeFormatUtil.luis_date(year if input_year or self.config.is_future(month_str) else -1, month, end_day)
+        begin_date_luis = DateTimeFormatUtil.luis_date(
+            year if input_year or self.config.is_future(month_str) else -1, month, begin_day)
+        end_date_luis = DateTimeFormatUtil.luis_date(
+            year if input_year or self.config.is_future(month_str) else -1, month, end_day)
 
         future_year = year
         past_year = year
 
-        start_date = DateUtils.safe_create_from_min_value(year, month, begin_day)
+        start_date = DateUtils.safe_create_from_min_value(
+            year, month, begin_day)
 
         if no_year and start_date < reference:
             future_year += 1
@@ -143,7 +164,8 @@ class ChineseDatePeriodParser(BaseDatePeriodParser):
         result.timex = f'({begin_date_luis},{end_date_luis},P{end_day - begin_day}D)'
 
         result.future_value = [
-            DateUtils.safe_create_from_min_value(future_year, month, begin_day),
+            DateUtils.safe_create_from_min_value(
+                future_year, month, begin_day),
             DateUtils.safe_create_from_min_value(future_year, month, end_day)
         ]
         result.past_value = [
@@ -175,7 +197,8 @@ class ChineseDatePeriodParser(BaseDatePeriodParser):
         result = DateTimeResolutionResult()
 
         # for case "前两年" "后三年"
-        duration_result = next(iter(self.config.duration_extractor.extract(source, reference)), None)
+        duration_result = next(
+            iter(self.config.duration_extractor.extract(source, reference)), None)
         if not duration_result:
             return result
 
@@ -297,7 +320,8 @@ class ChineseDatePeriodParser(BaseDatePeriodParser):
             month = 12
 
         begin_date = DateUtils.safe_create_from_min_value(year, month, 1)
-        end_date = DateUtils.safe_create_from_min_value(year, month, 1) + datedelta(months=1)
+        end_date = DateUtils.safe_create_from_min_value(
+            year, month, 1) + datedelta(months=1)
         result.future_value = [begin_date, end_date]
         result.past_value = [begin_date, end_date]
 
@@ -317,24 +341,33 @@ class ChineseDatePeriodParser(BaseDatePeriodParser):
                 return result
 
         year_matches = list(regex.finditer(self.config.year_regex, source))
-        chinese_year_matches = list(regex.finditer(self.chinese_year_regex, source))
+        chinese_year_matches = list(
+            regex.finditer(self.chinese_year_regex, source))
 
         begin_year = 0
         end_year = 0
 
         if len(year_matches) == 2:
-            begin_year = self.__convert_chinese_to_number(RegExpUtility.get_group(year_matches[0], 'year'))
-            end_year = self.__convert_chinese_to_number(RegExpUtility.get_group(year_matches[1], 'year'))
+            begin_year = self.__convert_chinese_to_number(
+                RegExpUtility.get_group(year_matches[0], 'year'))
+            end_year = self.__convert_chinese_to_number(
+                RegExpUtility.get_group(year_matches[1], 'year'))
         elif len(chinese_year_matches) == 2:
-            begin_year = self._convert_year(RegExpUtility.get_group(chinese_year_matches[0], 'yearchs'), True)
-            end_year = self._convert_year(RegExpUtility.get_group(chinese_year_matches[1], 'yearchs'), True)
+            begin_year = self._convert_year(RegExpUtility.get_group(
+                chinese_year_matches[0], 'yearchs'), True)
+            end_year = self._convert_year(RegExpUtility.get_group(
+                chinese_year_matches[1], 'yearchs'), True)
         elif len(year_matches) == 1 and len(chinese_year_matches) == 1:
             if year_matches[0].start() < chinese_year_matches[0].start():
-                begin_year = self.__convert_chinese_to_number(RegExpUtility.get_group(year_matches[0], 'year'))
-                end_year = self.__convert_chinese_to_number(RegExpUtility.get_group(chinese_year_matches[0], 'yearchs'))
+                begin_year = self.__convert_chinese_to_number(
+                    RegExpUtility.get_group(year_matches[0], 'year'))
+                end_year = self.__convert_chinese_to_number(
+                    RegExpUtility.get_group(chinese_year_matches[0], 'yearchs'))
             else:
-                begin_year = self.__convert_chinese_to_number(RegExpUtility.get_group(chinese_year_matches[0], 'yearchs'))
-                end_year = self.__convert_chinese_to_number(RegExpUtility.get_group(year_matches[0], 'year'))
+                begin_year = self.__convert_chinese_to_number(
+                    RegExpUtility.get_group(chinese_year_matches[0], 'yearchs'))
+                end_year = self.__convert_chinese_to_number(
+                    RegExpUtility.get_group(year_matches[0], 'year'))
 
         begin_year = self.__sanitize_year(begin_year)
         end_year = self.__sanitize_year(end_year)
@@ -433,11 +466,14 @@ class ChineseDatePeriodParser(BaseDatePeriodParser):
             if not past_date.month == month:
                 past_date = past_date + timedelta(days=-7)
 
-        result.timex = ('XXXX' if no_year else f'{year:04d}') + f'-{month:02d}-W{cardinal:02d}'
+        result.timex = (
+            'XXXX' if no_year else f'{year:04d}') + f'-{month:02d}-W{cardinal:02d}'
 
         days_to_add = 6 if self._inclusive_end_period else 7
-        result.future_value = [future_date, future_date + timedelta(days=days_to_add)]
-        result.past_value = [past_date, past_date + timedelta(days=days_to_add)]
+        result.future_value = [future_date,
+                               future_date + timedelta(days=days_to_add)]
+        result.past_value = [past_date,
+                             past_date + timedelta(days=days_to_add)]
 
         result.success = True
         return result
@@ -539,8 +575,10 @@ class ChineseDatePeriodParser(BaseDatePeriodParser):
         cardinal_str = RegExpUtility.get_group(match, 'cardinal')
         quarter_num = self.config.cardinal_map.get(cardinal_str, None)
 
-        begin_date = DateUtils.safe_create_from_min_value(year, quarter_num * 3 - 2, 1)
-        end_date = DateUtils.safe_create_from_min_value(year, quarter_num * 3 + 1, 1)
+        begin_date = DateUtils.safe_create_from_min_value(
+            year, quarter_num * 3 - 2, 1)
+        end_date = DateUtils.safe_create_from_min_value(
+            year, quarter_num * 3 + 1, 1)
         result.future_value = [begin_date, end_date]
         result.past_value = [begin_date, end_date]
 
