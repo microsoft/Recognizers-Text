@@ -10566,7 +10566,6 @@
     "Context": {
       "ReferenceDateTime": "2019-04-15T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "wednesday 4 oclock",
@@ -10687,7 +10686,6 @@
     "Context": {
       "ReferenceDateTime": "2019-04-25T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "march eighteenth nine thirty",
@@ -10754,7 +10752,6 @@
     "Context": {
       "ReferenceDateTime": "2019-04-25T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "february twenty second 3:30",
@@ -10896,7 +10893,6 @@
     "Context": {
       "ReferenceDateTime": "2019-04-25T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "february 22nd 3:30",

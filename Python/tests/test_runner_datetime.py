@@ -10,10 +10,19 @@ MODELFUNCTION = {
 }
 
 
-@pytest.mark.parametrize('culture, model, options, context, source, expected_results', get_specs(
-    recognizer='DateTime', entity='Extractor'))
-def test_datetime_extractor(culture, model, options,
-                            context, source, expected_results):
+@pytest.mark.parametrize(
+    'culture, model, options, context, source, expected_results',
+    get_specs(
+        recognizer='DateTime',
+        entity='Extractor'))
+def test_datetime_extractor(
+        culture,
+        model,
+        options,
+        context,
+        source,
+        expected_results):
+
     reference_datetime = get_reference_date(context)
     language = get_language(culture)
     extractor = create_extractor(language, model, options)
@@ -28,10 +37,19 @@ def test_datetime_extractor(culture, model, options,
         simple_extractor_assert(actual, expected, 'length', 'Length')
 
 
-@pytest.mark.parametrize('culture, model, options, context, source, expected_results', get_specs(
-    recognizer='DateTime', entity='Parser'))
-def test_datetime_parser(culture, model, options,
-                         context, source, expected_results):
+@pytest.mark.parametrize(
+    'culture, model, options, context, source, expected_results',
+    get_specs(
+        recognizer='DateTime',
+        entity='Parser'))
+def test_datetime_parser(
+        culture,
+        model,
+        options,
+        context,
+        source,
+        expected_results):
+
     reference_datetime = get_reference_date(context)
     language = get_language(culture)
     extractor = create_extractor(language, model, options)
@@ -64,10 +82,19 @@ def test_datetime_parser(culture, model, options,
                 'PastResolution')
 
 
-@pytest.mark.parametrize('culture, model, options, context, source, expected_results', get_specs(
-    recognizer='DateTime', entity='MergedParser'))
+@pytest.mark.parametrize(
+    'culture, model, options, context, source, expected_results',
+    get_specs(
+        recognizer='DateTime',
+        entity='MergedParser'))
 def test_datetime_mergedparser(
-        culture, model, options, context, source, expected_results):
+        culture,
+        model,
+        options,
+        context,
+        source,
+        expected_results):
+
     reference_datetime = get_reference_date(context)
     language = get_language(culture)
     extractor = create_extractor(language, model, options)
@@ -92,10 +119,19 @@ def test_datetime_mergedparser(
                         assert actual_values[key] == expected_values[key]
 
 
-@pytest.mark.parametrize('culture, model, options, context, source, expected_results', get_specs(
-    recognizer='DateTime', entity='Model'))
-def test_datetime_model(culture, model, options,
-                        context, source, expected_results):
+@pytest.mark.parametrize(
+    'culture, model, options, context, source, expected_results',
+    get_specs(
+        recognizer='DateTime',
+        entity='Model'))
+def test_datetime_model(
+        culture,
+        model,
+        options,
+        context,
+        source,
+        expected_results):
+
     reference_datetime = get_reference_date(context)
     option_obj = get_option(options)
 
@@ -116,11 +152,18 @@ def test_datetime_model(culture, model, options,
         assert len(
             actual.resolution['values']) == len(
             expected['Resolution']['values'])
-        for actual_resilution_value, expected_resoulution_value in zip(
-                actual.resolution['values'], expected['Resolution']['values']):
+        for actual_resolution_value in actual.resolution['values']:
             assert_model_resolution(
-                actual_resilution_value,
-                expected_resoulution_value)
+                actual_resolution_value,
+                expected['Resolution']['values'])
+
+
+def get_props(results, prop):
+    list_result = []
+    for result in results:
+        list_result.append(result.get(prop))
+
+    return list_result
 
 
 def single_assert(actual, expected, prop):
@@ -130,13 +173,19 @@ def single_assert(actual, expected, prop):
         assert actual.get(prop) is None
 
 
+def assert_prop(actual, expected, prop):
+    actual_timex = actual.get(prop)
+    expected_timex = get_props(expected, prop)
+    assert actual_timex in expected_timex
+
+
 def assert_model_resolution(actual, expected):
-    single_assert(actual, expected, 'timex')
-    single_assert(actual, expected, 'type')
-    single_assert(actual, expected, 'value')
-    single_assert(actual, expected, 'start')
-    single_assert(actual, expected, 'end')
-    single_assert(actual, expected, 'Mod')
+    assert_prop(actual, expected, 'timex')
+    assert_prop(actual, expected, 'type')
+    assert_prop(actual, expected, 'value')
+    assert_prop(actual, expected, 'start')
+    assert_prop(actual, expected, 'end')
+    assert_prop(actual, expected, 'Mod')
 
 
 def simple_extractor_assert(actual, expected, prop, resolution):
@@ -156,15 +205,18 @@ def create_extractor(language, model, options):
     if extractor:
         return extractor()
 
-    extractor = get_class(f'recognizers_date_time.date_time.{language.lower()}.{model.lower()}',
-                          f'{language}{model}Extractor')
+    extractor = get_class(
+        f'recognizers_date_time.date_time.{language.lower()}.{model.lower()}',
+        f'{language}{model}Extractor')
     if extractor:
         return extractor()
 
-    extractor = get_class(f'recognizers_date_time.date_time.base_{model.lower()}',
-                          f'Base{model}Extractor')
-    configuration = get_class(f'recognizers_date_time.date_time.{language.lower()}.{model.lower()}_extractor_config',
-                              f'{language}{model}ExtractorConfiguration')
+    extractor = get_class(
+        f'recognizers_date_time.date_time.base_{model.lower()}',
+        f'Base{model}Extractor')
+    configuration = get_class(
+        f'recognizers_date_time.date_time.{language.lower()}.{model.lower()}_extractor_config',
+        f'{language}{model}ExtractorConfiguration')
 
     if model == 'Merged':
         option = get_option(options)
@@ -184,14 +236,17 @@ def create_parser(language, model, options):
         f'recognizers_date_time.date_time.{language.lower()}.parsers',
         f'{language}{model}Parser')
     if not parser:
-        parser = get_class(f'recognizers_date_time.date_time.base_{model.lower()}',
-                           f'Base{model}Parser')
+        parser = get_class(
+            f'recognizers_date_time.date_time.base_{model.lower()}',
+            f'Base{model}Parser')
 
-    configuration_class = get_class(f'recognizers_date_time.date_time.{language.lower()}.{model.lower()}_parser_config',
-                                    f'{language}{model}ParserConfiguration')
+    configuration_class = get_class(
+        f'recognizers_date_time.date_time.{language.lower()}.{model.lower()}_parser_config',
+        f'{language}{model}ParserConfiguration')
 
-    language_configuration = get_class(f'recognizers_date_time.date_time.{language.lower()}.common_configs',
-                                       f'{language}CommonDateTimeParserConfiguration')
+    language_configuration = get_class(
+        f'recognizers_date_time.date_time.{language.lower()}.common_configs',
+        f'{language}CommonDateTimeParserConfiguration')
 
     configuration = configuration_class(
         language_configuration()) if language_configuration else configuration_class()
@@ -217,8 +272,9 @@ def get_language(culture):
 
 def get_reference_date(context):
     reference_datetime = context.get('ReferenceDateTime') if context else None
-    return datetime.datetime.strptime(
-        reference_datetime[0:19], '%Y-%m-%dT%H:%M:%S') if reference_datetime and not isinstance(reference_datetime, datetime.datetime) else None
+    return datetime.datetime.strptime(reference_datetime[0:19],
+                                      '%Y-%m-%dT%H:%M:%S') if reference_datetime and not isinstance(reference_datetime,
+                                                                                                    datetime.datetime) else None
 
 
 def get_results(culture, model, source, options, reference):
