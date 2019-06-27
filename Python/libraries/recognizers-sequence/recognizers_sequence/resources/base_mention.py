@@ -10,6 +10,8 @@
 # ------------------------------------------------------------------------------
 
 # pylint: disable=line-too-long
+
+
 class BaseMention:
     MentionRegex = f'@([a-zA-Z0-9_]+)(?![.]\\w)\\b'
 # pylint: enable=line-too-long

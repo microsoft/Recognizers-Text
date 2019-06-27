@@ -10,11 +10,17 @@
 # ------------------------------------------------------------------------------
 
 # pylint: disable=line-too-long
+
+
 class BaseNumbers:
     NumberReplaceToken = '@builtin.num'
     FractionNumberReplaceToken = '@builtin.num.fraction'
-    IntegerRegexDefinition = lambda placeholder, thousandsmark: f'(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!(\\d+\\.|\\d+,))))\\d{{1,3}}({thousandsmark}\\d{{3}})+(?={placeholder})'
-    DoubleRegexDefinition = lambda placeholder, thousandsmark, decimalmark: f'(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+\\.|\\d+,)))\\d{{1,3}}({thousandsmark}\\d{{3}})+{decimalmark}\\d+(?={placeholder})'
+
+    def IntegerRegexDefinition(placeholder, thousandsmark):
+        return f'(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!(\\d+\\.|\\d+,))))\\d{{1,3}}({thousandsmark}\\d{{3}})+(?={placeholder})'
+
+    def DoubleRegexDefinition(placeholder, thousandsmark, decimalmark):
+        return f'(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+\\.|\\d+,)))\\d{{1,3}}({thousandsmark}\\d{{3}})+{decimalmark}\\d+(?={placeholder})'
     PlaceHolderDefault = '\\D|\\b'
     NumberMultiplierRegex = f'(K|k|M|G|T|B|b)'
     MultiplierLookupRegex = f'(k|m|t|g|b)'

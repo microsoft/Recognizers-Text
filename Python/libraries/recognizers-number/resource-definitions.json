@@ -6,6 +6,8 @@
             "output": "base_numbers",
             "header": [
                 "# pylint: disable=line-too-long",
+                "",
+                "",
                 "class BaseNumbers:"
             ],
             "footer": [ "# pylint: enable=line-too-long" ]
@@ -16,6 +18,8 @@
             "header": [
                 "from .base_numbers import BaseNumbers",
                 "# pylint: disable=line-too-long",
+                "",
+                "",
                 "class EnglishNumeric:"
             ],
             "footer": [ "# pylint: enable=line-too-long" ]
@@ -26,6 +30,8 @@
             "header": [
                 "from .base_numbers import BaseNumbers",
                 "# pylint: disable=line-too-long",
+                "",
+                "",
                 "class SpanishNumeric:"
             ],
             "footer": [ "# pylint: enable=line-too-long" ]
@@ -36,6 +42,8 @@
             "header": [
                 "from .base_numbers import BaseNumbers",
                 "# pylint: disable=line-too-long",
+                "",
+                "",
                 "class PortugueseNumeric:"
             ],
             "footer": [ "# pylint: enable=line-too-long" ]
@@ -46,6 +54,8 @@
             "header": [
                 "from .base_numbers import BaseNumbers",
                 "# pylint: disable=line-too-long",
+                "",
+                "",
                 "class ChineseNumeric:"
             ],
             "footer": [ "# pylint: enable=line-too-long" ]
@@ -56,6 +66,8 @@
             "header": [
                 "from .base_numbers import BaseNumbers",
                 "# pylint: disable=line-too-long",
+                "",
+                "",
                 "class JapaneseNumeric:"
             ],
             "footer": [ "# pylint: enable=line-too-long" ]
@@ -66,6 +78,8 @@
             "header": [
                 "from .base_numbers import BaseNumbers",
                 "# pylint: disable=line-too-long",
+                "",
+                "",
                 "class FrenchNumeric:"
             ],
             "footer": [ "# pylint: enable=line-too-long" ]

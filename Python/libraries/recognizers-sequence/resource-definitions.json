@@ -6,6 +6,8 @@
             "output": "base_phone_numbers",
             "header": [
                 "# pylint: disable=line-too-long",
+                "",
+                "",
                 "class BasePhoneNumbers:"
             ],
             "footer": [ "# pylint: enable=line-too-long" ]
@@ -15,6 +17,8 @@
             "output": "base_ip",
             "header": [
                 "# pylint: disable=line-too-long",
+                "",
+                "",
                 "class BaseIp:"
             ],
             "footer": [ "# pylint: enable=line-too-long" ]
@@ -24,6 +28,8 @@
             "output": "base_mention",
             "header": [
                 "# pylint: disable=line-too-long",
+                "",
+                "",
                 "class BaseMention:"
             ],
             "footer": [ "# pylint: enable=line-too-long" ]
@@ -33,6 +39,8 @@
             "output": "base_hashtag",
             "header": [
                 "# pylint: disable=line-too-long",
+                "",
+                "",
                 "class BaseHashtag:"
             ],
             "footer": [ "# pylint: enable=line-too-long" ]
@@ -42,6 +50,8 @@
             "output": "base_url",
             "header": [
                 "# pylint: disable=line-too-long",
+                "",
+                "",
                 "class BaseUrl:"
             ],
             "footer": [ "# pylint: enable=line-too-long" ]
@@ -51,6 +61,8 @@
             "output": "base_email",
             "header": [
                 "# pylint: disable=line-too-long",
+                "",
+                "",
                 "class BaseEmail:"
             ],
             "footer": [ "# pylint: enable=line-too-long" ]
@@ -60,6 +72,8 @@
             "output": "chinese_phone_numbers",
             "header": [
                 "# pylint: disable=line-too-long",
+                "",
+                "",
                 "class ChinesePhoneNumbers:"
             ],
             "footer": [ "# pylint: enable=line-too-long" ]

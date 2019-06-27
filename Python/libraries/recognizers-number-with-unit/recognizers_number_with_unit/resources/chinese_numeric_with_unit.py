@@ -11,6 +11,8 @@
 
 from .base_numbers import BaseNumbers
 # pylint: disable=line-too-long
+
+
 class ChineseNumericWithUnit:
     AgeAmbiguousValues = [r'岁']
     AgeSuffixList = dict([("Year", "岁|周岁"),

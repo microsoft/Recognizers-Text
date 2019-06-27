@@ -11,6 +11,8 @@
 
 from .base_date_time import BaseDateTime
 # pylint: disable=line-too-long
+
+
 class FrenchDateTime:
     TillRegex = f'(?<till>au|et|(jusqu\')?[aà]|avant|--|-|—|——)'
     RangeConnectorRegex = f'(?<and>de la|au|[aà]|et(\\s*la)?|--|-|—|——)'

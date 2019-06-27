@@ -10,6 +10,8 @@
 # ------------------------------------------------------------------------------
 
 # pylint: disable=line-too-long
+
+
 class ChinesePhoneNumbers:
     NumberReplaceToken = '@builtin.phonenumber'
     WordBoundariesRegex = f'(\\b|(?<=[\\u0800-\\u9FFF]))'

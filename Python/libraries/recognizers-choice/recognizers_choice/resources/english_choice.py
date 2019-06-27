@@ -10,6 +10,8 @@
 # ------------------------------------------------------------------------------
 
 # pylint: disable=line-too-long
+
+
 class EnglishChoice:
     LangMarker = 'Eng'
     TokenizerRegex = f'[^\\w\\d]'

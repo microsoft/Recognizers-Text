@@ -6,6 +6,8 @@
             "output": "base_date_time",
             "header": [
                 "# pylint: disable=line-too-long",
+                "",
+                "",
                 "class BaseDateTime:"
             ],
             "footer": [ "# pylint: enable=line-too-long" ]
@@ -16,6 +18,8 @@
             "header": [
                 "from .base_date_time import BaseDateTime",
                 "# pylint: disable=line-too-long",
+                "",
+                "",
                 "class EnglishDateTime:"
             ],
             "footer": [ "# pylint: enable=line-too-long" ]
@@ -26,6 +30,8 @@
             "header": [
                 "from .base_date_time import BaseDateTime",
                 "# pylint: disable=line-too-long",
+                "",
+                "",
                 "class SpanishDateTime:"
             ],
             "footer": [ "# pylint: enable=line-too-long" ]
@@ -36,6 +42,8 @@
             "header": [
                 "from .base_date_time import BaseDateTime",
                 "# pylint: disable=line-too-long",
+                "",
+                "",
                 "class PortugueseDateTime:"
             ],
             "footer": [ "# pylint: enable=line-too-long" ]
@@ -46,6 +54,8 @@
             "header": [
                 "from .base_date_time import BaseDateTime",
                 "# pylint: disable=line-too-long",
+                "",
+                "",
                 "class ChineseDateTime:"
             ],
             "footer": [ "# pylint: enable=line-too-long" ]
@@ -56,6 +66,8 @@
             "header": [
                 "from .base_date_time import BaseDateTime",
                 "# pylint: disable=line-too-long",
+                "",
+                "",
                 "class FrenchDateTime:"
             ],
             "footer": [ "# pylint: enable=line-too-long" ]

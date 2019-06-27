@@ -10,6 +10,8 @@
 # ------------------------------------------------------------------------------
 
 # pylint: disable=line-too-long
+
+
 class BaseCurrency:
     CurrencyFractionMapping = dict([("CNY", "FEN|JIAO"),
                                     ("__D", "CENT"),
