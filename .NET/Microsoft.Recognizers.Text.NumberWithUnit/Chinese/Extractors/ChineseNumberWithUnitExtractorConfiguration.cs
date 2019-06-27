@@ -11,11 +11,13 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Chinese
 {
     public abstract class ChineseNumberWithUnitExtractorConfiguration : INumberWithUnitExtractorConfiguration
     {
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
         private static readonly Regex CompoundUnitConnRegex =
-            new Regex(NumbersWithUnitDefinitions.CompoundUnitConnectorRegex, RegexOptions.None);
+            new Regex(NumbersWithUnitDefinitions.CompoundUnitConnectorRegex, RegexFlags);
 
         private static readonly Regex NonUnitsRegex =
-            new Regex(BaseUnits.PmNonUnitRegex, RegexOptions.None);
+            new Regex(BaseUnits.PmNonUnitRegex, RegexFlags);
 
         protected ChineseNumberWithUnitExtractorConfiguration(CultureInfo ci)
         {

@@ -7,7 +7,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.French
 {
     public class SpeedExtractorConfiguration : FrenchNumberWithUnitExtractorConfiguration
     {
-        public static readonly ImmutableDictionary<string, string> SpeedSuffixList = NumbersWithUnitDefinitions.SpeedSuffixList.ToImmutableDictionary();
+        public static readonly ImmutableDictionary<string, string> SpeedSuffixList =
+            NumbersWithUnitDefinitions.SpeedSuffixList.ToImmutableDictionary();
 
         public SpeedExtractorConfiguration()
             : base(new CultureInfo(Culture.French))
