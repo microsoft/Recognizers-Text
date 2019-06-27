@@ -346,9 +346,10 @@ export class BaseMergedParser implements IDateTimeParser {
     }
 
     public setParseResult(slot: DateTimeParseResult, hasBefore: boolean, hasAfter: boolean, hasSince: boolean): DateTimeParseResult {
+        let hasRangeChangingMod = hasBefore || hasAfter || hasSince;
         slot.value = this.dateTimeResolution(slot, hasBefore, hasAfter, hasSince);
         // change the type at last for the after or before mode
-        slot.type = `${this.parserTypeName}.${this.determineDateTimeType(slot.type, hasBefore, hasAfter, hasSince)}`;
+        slot.type = `${this.parserTypeName}.${this.determineDateTimeType(slot.type, hasRangeChangingMod)}`;
         return slot;
     }
 
@@ -386,20 +387,34 @@ export class BaseMergedParser implements IDateTimeParser {
         return null;
     }
 
-    protected determineDateTimeType(type: string, hasBefore: boolean, hasAfter: boolean, hasSince: boolean): string {
+    protected determineDateTimeType(type: string, hasMod: boolean): string {
         if ((this.options & DateTimeOptions.SplitDateAndTime) === DateTimeOptions.SplitDateAndTime) {
             if (type === Constants.SYS_DATETIME_DATETIME) {
                 return Constants.SYS_DATETIME_TIME;
             }
         }
         else {
-            if (hasBefore || hasAfter || hasSince) {
+            if (hasMod) {
                 if (type === Constants.SYS_DATETIME_DATE) return Constants.SYS_DATETIME_DATEPERIOD;
                 if (type === Constants.SYS_DATETIME_TIME) return Constants.SYS_DATETIME_TIMEPERIOD;
                 if (type === Constants.SYS_DATETIME_DATETIME) return Constants.SYS_DATETIME_DATETIMEPERIOD;
             }
         }
         return type;
+    }
+
+    protected determineSourceEntityType(sourceType: string, newType: string, hasMod: boolean): string|null {
+        if (!hasMod) {
+            return null;
+        }
+
+        if (newType !== sourceType) {
+            return Constants.SYS_DATETIME_DATETIMEPOINT;
+        }
+
+        if (newType === Constants.SYS_DATETIME_DATEPERIOD) {
+            return Constants.SYS_DATETIME_DATETIMEPERIOD;
+        }
     }
 
     public dateTimeResolutionForSplit(slot: DateTimeParseResult): Array<DateTimeParseResult> {
@@ -414,7 +429,7 @@ export class BaseMergedParser implements IDateTimeParser {
         }
         else {
             slot.value = this.dateTimeResolution(slot, false, false, false);
-            slot.type = `${this.parserTypeName}.${this.determineDateTimeType(slot.type, false, false, false)}`;
+            slot.type = `${this.parserTypeName}.${this.determineDateTimeType(slot.type, false)}`;
             results.push(slot);
         }
         return results;
@@ -427,7 +442,8 @@ export class BaseMergedParser implements IDateTimeParser {
         let resolutions = new Array<StringMap>();
 
         let type = slot.type;
-        let outputType = this.determineDateTimeType(type, hasBefore, hasAfter, hasSince);
+        let outputType = this.determineDateTimeType(type, hasBefore || hasAfter || hasSince);
+        let sourceEntity = this.determineSourceEntityType(type, outputType, hasBefore || hasAfter || hasSince);
         let timex = slot.timexStr;
 
         let value: DateTimeResolutionResult = slot.value;
@@ -477,6 +493,7 @@ export class BaseMergedParser implements IDateTimeParser {
                 this.addResolutionFields(newValues, Constants.ModKey, mod);
                 this.addResolutionFields(newValues, Constants.TypeKey, outputType);
                 this.addResolutionFields(newValues, Constants.IsLunarKey, isLunar ? String(isLunar) : "");
+                this.addResolutionFields(newValues, Constants.SourceEntity, sourceEntity);
 
                 Object.keys(value).forEach((innerKey) => {
                     newValues[innerKey] = value[innerKey];

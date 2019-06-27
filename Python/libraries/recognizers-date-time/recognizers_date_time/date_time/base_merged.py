@@ -351,7 +351,6 @@ class BaseMergedParser(DateTimeParser):
         if not reference:
             reference = datetime.now()
 
-        result = None
         has_before = False
         has_after = False
         has_since = False
@@ -480,6 +479,16 @@ class BaseMergedParser(DateTimeParser):
                     return Constants.SYS_DATETIME_DATETIMEPERIOD
         return dtype
 
+    def _determine_source_entity_type(self, source_type: str, new_type: str, has_mod: bool) -> Optional[str]:
+        if not has_mod:
+            return None
+
+        if new_type != source_type:
+            return Constants.SYS_DATETIME_DATETIMEPOINT
+
+        if new_type == Constants.SYS_DATETIME_DATEPERIOD:
+            return Constants.SYS_DATETIME_DATETIMEPERIOD
+
     def _date_time_resolution_for_split(self, slot: DateTimeParseResult) -> List[DateTimeParseResult]:
         results = []
         if slot.value.sub_date_time_entities:
@@ -504,8 +513,9 @@ class BaseMergedParser(DateTimeParser):
         resolutions = []
 
         dtype = slot.type
-        output_type = self._determine_date_time_types(
-            dtype, has_before, has_after, has_since)
+        output_type = self._determine_date_time_types(dtype, has_before, has_after, has_since)
+        source_entity = self._determine_source_entity_type(dtype, output_type, has_before or has_after or has_since)
+
         timex = slot.timex_str
 
         value = slot.value
@@ -559,10 +569,10 @@ class BaseMergedParser(DateTimeParser):
                 self._add_resolution_fields(
                     new_values, Constants.TimexKey, timex)
                 self._add_resolution_fields(new_values, Constants.ModKey, mod)
-                self._add_resolution_fields(
-                    new_values, Constants.TypeKey, output_type)
-                self._add_resolution_fields(new_values, Constants.IsLunarKey, str(
-                    is_lunar).lower() if is_lunar else '')
+
+                self._add_resolution_fields(new_values, Constants.TypeKey, output_type)
+                self._add_resolution_fields(new_values, Constants.IsLunarKey, str(is_lunar).lower() if is_lunar else '')
+                self._add_resolution_fields(new_values, Constants.SourceType, source_entity)
 
                 for inner_key in value:
                     new_values[inner_key] = value[inner_key]

@@ -204,13 +204,15 @@
               "timex": "T04",
               "Mod": "before",
               "type": "timerange",
-              "end": "04:00:00"
+              "end": "04:00:00",
+              "sourceEntity": "datetimepoint"
             },
             {
               "timex": "T16",
               "Mod": "before",
               "type": "timerange",
-              "end": "16:00:00"
+              "end": "16:00:00",
+              "sourceEntity": "datetimepoint"
             }
           ]
         },
@@ -235,13 +237,15 @@
               "timex": "T03",
               "Mod": "after",
               "type": "timerange",
-              "start": "03:00:00"
+              "start": "03:00:00",
+              "sourceEntity": "datetimepoint"
             },
             {
               "timex": "T15",
               "Mod": "after",
               "type": "timerange",
-              "start": "15:00:00"
+              "start": "15:00:00",
+              "sourceEntity": "datetimepoint"
             }
           ]
         },
@@ -266,13 +270,15 @@
               "timex": "T04",
               "Mod": "before",
               "type": "timerange",
-              "end": "04:00:00"
+              "end": "04:00:00",
+              "sourceEntity": "datetimepoint"
             },
             {
               "timex": "T16",
               "Mod": "before",
               "type": "timerange",
-              "end": "16:00:00"
+              "end": "16:00:00",
+              "sourceEntity": "datetimepoint"
             }
           ]
         },

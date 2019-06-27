@@ -17,6 +17,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public string Mod { get; set; }
 
+        public bool HasRangeChangingMod { get; set; } = false;
+
         public string Comment { get; set; }
 
         public Dictionary<string, string> FutureResolution { get; set; }

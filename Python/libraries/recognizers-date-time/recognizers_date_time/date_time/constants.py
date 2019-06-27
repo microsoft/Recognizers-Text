@@ -10,12 +10,17 @@ class Constants:
     SYS_DATETIME_DATETIMEPERIOD: str = 'datetimerange'
     SYS_DATETIME_DURATION: str = 'duration'
     SYS_DATETIME_SET: str = 'set'
+
     SYS_DATETIME_MERGED: str = 'datetimeV2'
+
+    # SourceEntity Types
+    SYS_DATETIME_DATETIMEPOINT: str = 'datetimepoint'
 
     # keys
     TimexKey: str = 'timex'
     CommentKey: str = 'Comment'
     ModKey: str = 'Mod'
+    SourceType: str = 'sourceEntity'
     TypeKey: str = 'type'
     IsLunarKey: str = 'isLunar'
     ResolveKey: str = 'resolve'

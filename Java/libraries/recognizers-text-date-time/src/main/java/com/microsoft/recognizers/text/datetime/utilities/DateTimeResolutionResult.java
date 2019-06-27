@@ -9,6 +9,7 @@ public class DateTimeResolutionResult {
     private String timex;
     private Boolean isLunar;
     private String mod;
+    private Boolean hasRangeChangingMod;
     private String comment;
 
     private Map<String, String> futureResolution;
@@ -24,7 +25,7 @@ public class DateTimeResolutionResult {
     private List<Object> list;
 
     public DateTimeResolutionResult() {
-        success = false;
+        success = hasRangeChangingMod = false;
     }
 
     public Boolean getSuccess() {
@@ -57,6 +58,14 @@ public class DateTimeResolutionResult {
 
     public void setMod(String mod) {
         this.mod = mod;
+    }
+
+    public Boolean getHasRangeChangingMod() {
+        return this.hasRangeChangingMod;
+    }
+
+    public void setHasRangeChangingMod(Boolean hasRangeChangingMod) {
+        this.hasRangeChangingMod = hasRangeChangingMod;
     }
 
     public String getComment() {
