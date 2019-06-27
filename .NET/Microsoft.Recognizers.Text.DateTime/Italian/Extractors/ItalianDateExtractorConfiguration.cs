@@ -67,9 +67,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
                 DateTimeDefinitions.DateUnitRegex,
                 RegexOptions.Singleline);
 
-        public static readonly Regex StrictRelativeRegex =
-            new Regex(DateTimeDefinitions.StrictRelativeRegex, RegexOptions.Singleline);
-
         // day before yesterday, day after tomorrow, next day, last day, the day yesterday, the day tomorrow
         public static readonly Regex SpecialDayRegex =
             new Regex(
@@ -262,8 +259,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         Regex IDateExtractorConfiguration.StrictRelativeRegex => StrictRelativeRegex;
 
         Regex IDateExtractorConfiguration.RelativeMonthRegex => RelativeMonthRegex;
-
-        Regex IDateExtractorConfiguration.StrictRelativeRegex => StrictRelativeRegex;
 
         Regex IDateExtractorConfiguration.WeekDayRegex => WeekDayRegex;
 

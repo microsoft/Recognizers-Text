@@ -87,8 +87,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public Regex SpecialDayRegex { get; }
 
-        public Regex StrictRelativeRegex { get; }
-
         public Regex SpecialDayWithNumRegex { get; }
 
         public Regex NextRegex { get; }
@@ -171,9 +169,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public bool IsCardinalLast(string text)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
-            return trimmedText.Equals("dernière") || trimmedText.Equals("dernières") ||
-                    trimmedText.Equals("derniere") || trimmedText.Equals("dernieres");
+            var trimmedText = text.Trim();
+            return trimmedText.Equals("last");
         }
 
         public string Normalize(string text)
