@@ -574,6 +574,7 @@ VolumeSuffixList: !dictionary
     Ettolitro: ettolitro|ettolitri
     Decalitro: decalitro|decalitri|dekalitro|dekalitri
     #Decalitro: dal|decalitro|decalitri|dekalitro|dekalitri
+    #"l" is a valid form of litro and should not be removed. 
     Litro: l|litro|litri
     Decilitro: dl|decilitro|decilitri
     Centilitro: cl|centilitro|centilitri
