@@ -81,6 +81,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public Regex SpecialDayRegex { get; }
 
+        public Regex StrictRelativeRegex { get; }
+
         public Regex SpecialDayWithNumRegex { get; }
 
         public Regex NextRegex { get; }
@@ -145,14 +147,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public int GetSwiftMonthOrYear(string text)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
             var swift = 0;
-            if (trimmedText.EndsWith("prochaine") || trimmedText.EndsWith("prochain"))
+
+            if (NextPrefixRegex.IsMatch(trimmedText))
             {
                 swift = 1;
             }
-            else if (trimmedText.Equals("dernière") || trimmedText.Equals("dernières") ||
-                    trimmedText.Equals("derniere") || trimmedText.Equals("dernieres"))
+
+            if (PreviousPrefixRegex.IsMatch(trimmedText))
             {
                 swift = -1;
             }

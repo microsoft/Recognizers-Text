@@ -8,7 +8,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian.Utilities
     public class ItalianDatetimeUtilityConfiguration : IDateTimeUtilityConfiguration
     {
         public static readonly Regex AgoRegex =
-            new Regex(DateTimeDefinitions.AgoPrefixRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.AgoRegex, RegexOptions.Singleline);
 
         public static readonly Regex LaterRegex =
             new Regex(DateTimeDefinitions.LaterRegex, RegexOptions.Singleline);

@@ -24,6 +24,7 @@ namespace Microsoft.Recognizers.Definitions.Italian
       public const string TillRegex = @"(?<till>fino a(l(l[aoe'])?|gli|i)?|a(l(l[aoe'])?|gli|i)?|e (il?|l[aoe']|gli)|--|-|—|——|~)";
       public static readonly string RangeConnectorRegex = $@"(?<and>\b(e|a(l(l[aoe'])?|gli|i)?)\b|{BaseDateTime.RangeConnectorSymbolRegex})(?<and>\b(and|through|to)\b|{BaseDateTime.RangeConnectorSymbolRegex})";
       public const string RelativeRegex = @"(?<order>prossim['oaie]|quest['oaie]|ultim['oaie]|passat[oaie]|precedent[ei]|scors[oaie]|corrent[ei]|il?|l[oae']|gli)";
+      public const string StrictRelativeRegex = @"(?<order>prossim['oaie]|quest['oaie]|ultim['oaie]|passat[oaie]|precedent[ei]|scors[oaie]|corrent[ei])";
       public const string NextSuffixRegex = @"(?<order>prossim[oaei]|seguent[ei]|successiv[oaei])\b";
       public const string PastSuffixRegex = @"(?<order>precedent[ei]|scors[oaei]|passat[oaei])\b";
       public const string ThisPrefixRegex = @"(quest['oa]|corrente)\b";
@@ -239,6 +240,7 @@ namespace Microsoft.Recognizers.Definitions.Italian
       public static readonly string WeekDayAndDayRegex = $@"\b{WeekDayRegex}\s*,?\s+(?!(il|l')){DayRegex}(?!([-]|(\s+({AmDescRegex}|{{PmDescRegex|{OclockRegex}}}))))\b";
       public const string RestOfDateRegex = @"resto\s+((di|del(l[a'])?)\s*)?((quest[oa']|corrente)\s*)?(?<duration>settimana|mese|anno|decennio)\b";
       public const string RestOfDateTimeRegex = @"resto\s+((di|del(la)?)\s+)?((quest[oa]|corrente)\s+)?(?<unit>giorn(o|ata))\b";
+      public const string SuffixAfterRegex = @"\b(((a)\s)?(o|e)\s+(sopra|dopo|più\s+tardi|più\s+grande)(?!\s+di))\b";
       public static readonly string LaterEarlyPeriodRegex = $@"\b(((inizio|metà|fine)(\s+(di|del(l[ao'])))?)\s*\b\s*(?<suffix>{OneWordPeriodRegex})|({UnspecificEndOfRangeRegex}))\b";
       public static readonly string WeekWithWeekDayRangeRegex = $@"\b((?<week>(inizio(\s+della)?|fine(\s+della)?|questa)\s+settimana)((\s+[tf]ra\s+{WeekDayRegex}\s+e\s+{WeekDayRegex})|(\s+da\s+{WeekDayRegex}\s+a\s+{WeekDayRegex})))\b";
       public const string GeneralEndingRegex = @"^\s*((\.,)|\.|,|!|\?)?\s*$";

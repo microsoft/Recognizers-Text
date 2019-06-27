@@ -8,6 +8,8 @@ RangeConnectorRegex: !nestedRegex
 #  def: (?<and>e(\s+(l[oae']|il?|gli))?|a(l(l[aoe'])?|gli|i)?|--|-|—|——)
 RelativeRegex: !simpleRegex
   def: (?<order>prossim['oaie]|quest['oaie]|ultim['oaie]|passat[oaie]|precedent[ei]|scors[oaie]|corrent[ei]|il?|l[oae']|gli)
+StrictRelativeRegex: !simpleRegex
+  def: (?<order>prossim['oaie]|quest['oaie]|ultim['oaie]|passat[oaie]|precedent[ei]|scors[oaie]|corrent[ei])
 NextSuffixRegex: !simpleRegex
   def: (?<order>prossim[oaei]|seguent[ei]|successiv[oaei])\b
 PastSuffixRegex: !simpleRegex
@@ -564,6 +566,8 @@ RestOfDateRegex: !simpleRegex
   def: resto\s+((di|del(l[a'])?)\s*)?((quest[oa']|corrente)\s*)?(?<duration>settimana|mese|anno|decennio)\b
 RestOfDateTimeRegex: !simpleRegex
   def: resto\s+((di|del(la)?)\s+)?((quest[oa]|corrente)\s+)?(?<unit>giorn(o|ata))\b
+SuffixAfterRegex: !simpleRegex
+  def: \b(((a)\s)?(o|e)\s+(sopra|dopo|più\s+tardi|più\s+grande)(?!\s+di))\b
 LaterEarlyPeriodRegex: !nestedRegex
   def: \b(((inizio|metà|fine)(\s+(di|del(l[ao'])))?)\s*\b\s*(?<suffix>{OneWordPeriodRegex})|({UnspecificEndOfRangeRegex}))\b
   references: [OneWordPeriodRegex, UnspecificEndOfRangeRegex]
