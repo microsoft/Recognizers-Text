@@ -12,16 +12,18 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Spanish
         public static readonly ImmutableDictionary<string, string> TemperatureSuffixList =
             NumbersWithUnitDefinitions.TemperatureSuffixList.ToImmutableDictionary();
 
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
         private static readonly Regex AmbiguousUnitMultiplierRegex =
-            new Regex(BaseUnits.AmbiguousUnitNumberMultiplierRegex, RegexOptions.None);
+            new Regex(BaseUnits.AmbiguousUnitNumberMultiplierRegex, RegexFlags);
 
         public TemperatureExtractorConfiguration()
-               : this(new CultureInfo(Culture.Spanish))
+            : this(new CultureInfo(Culture.Spanish))
         {
         }
 
         public TemperatureExtractorConfiguration(CultureInfo ci)
-               : base(ci)
+            : base(ci)
         {
         }
 

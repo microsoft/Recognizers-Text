@@ -136,16 +136,16 @@ def generate_code(root):
         token = root[token_name]
         if isinstance(token, SimpleRegex):
             lines.append(SimpleRegexWriter(token_name, token.def_))
-        elif isinstance(token, NestedRegex):
+        elif type(token) is NestedRegex:
             lines.append(NestedRegexWriter(
                 token_name, token.def_, token.references))
-        elif isinstance(token, ParamsRegex):
+        elif type(token) is ParamsRegex:
             lines.append(ParamsRegexWriter(
                 token_name, token.def_, token.params))
-        elif isinstance(token, Dictionary):
+        elif type(token) is Dictionary:
             lines.append(DictionaryWriter(
                 token_name, token.key_type, token.value_type, token.entries))
-        elif isinstance(token, List):
+        elif type(token) is List:
             lines.append(ArrayWriter(token_name, token.type_, token.entries))
         elif isinstance(token, list):
             inferred_type = 'string'

@@ -15,6 +15,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             IntegerExtractor = config.IntegerExtractor;
             TimeParser = config.TimeParser;
             TimeZoneParser = config.TimeZoneParser;
+
             PureNumberFromToRegex = PortugueseTimePeriodExtractorConfiguration.PureNumFromTo;
             PureNumberBetweenAndRegex = PortugueseTimePeriodExtractorConfiguration.PureNumBetweenAnd;
             SpecificTimeFromToRegex = PortugueseTimePeriodExtractorConfiguration.SpecificTimeFromTo;
@@ -22,6 +23,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             TimeOfDayRegex = PortugueseTimePeriodExtractorConfiguration.TimeOfDayRegex;
             GeneralEndingRegex = PortugueseTimePeriodExtractorConfiguration.GeneralEndingRegex;
             TillRegex = PortugueseTimePeriodExtractorConfiguration.TillRegex;
+
             Numbers = config.Numbers;
             UtilityConfiguration = config.UtilityConfiguration;
         }

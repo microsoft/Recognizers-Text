@@ -7,84 +7,62 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 {
     public class ItalianDateTimeExtractorConfiguration : BaseOptionsConfiguration, IDateTimeExtractorConfiguration
     {
+
+        // à - time at which, en - length of time, dans - amount of time
         public static readonly Regex PrepositionRegex =
-          new Regex(
-            DateTimeDefinitions.PrepositionRegex, // à - time at which, en - length of time, dans - amount of time
-            RegexOptions.Singleline);
+          new Regex(DateTimeDefinitions.PrepositionRegex, RegexFlags);
 
+        // right now, as soon as possible, recently, previously
         public static readonly Regex NowRegex =
-            new Regex(
-                DateTimeDefinitions.NowRegex, // right now, as soon as possible, recently, previously
-                RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.NowRegex, RegexFlags);
 
+        // in the evening, afternoon, morning, night
         public static readonly Regex SuffixRegex =
-            new Regex(
-                DateTimeDefinitions.SuffixRegex, // in the evening, afternoon, morning, night
-                RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.SuffixRegex, RegexFlags);
 
         public static readonly Regex TimeOfDayRegex =
-            new Regex(
-                DateTimeDefinitions.TimeOfDayRegex,
-                RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.TimeOfDayRegex, RegexFlags);
 
         public static readonly Regex SpecificTimeOfDayRegex =
-            new Regex(
-                DateTimeDefinitions.SpecificTimeOfDayRegex,
-                RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.SpecificTimeOfDayRegex, RegexFlags);
 
         public static readonly Regex TimeOfTodayAfterRegex =
-             new Regex(
-                 DateTimeDefinitions.TimeOfTodayAfterRegex,
-                 RegexOptions.Singleline);
+             new Regex(DateTimeDefinitions.TimeOfTodayAfterRegex, RegexFlags);
 
         public static readonly Regex TimeOfTodayBeforeRegex =
-            new Regex(
-                DateTimeDefinitions.TimeOfTodayBeforeRegex,
-                RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.TimeOfTodayBeforeRegex, RegexFlags);
 
         public static readonly Regex SimpleTimeOfTodayAfterRegex =
-            new Regex(
-                DateTimeDefinitions.SimpleTimeOfTodayAfterRegex,
-                RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.SimpleTimeOfTodayAfterRegex, RegexFlags);
 
         public static readonly Regex SimpleTimeOfTodayBeforeRegex =
-            new Regex(
-                DateTimeDefinitions.SimpleTimeOfTodayBeforeRegex,
-                RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.SimpleTimeOfTodayBeforeRegex, RegexFlags);
 
         public static readonly Regex SpecificEndOfRegex =
-            new Regex(
-                DateTimeDefinitions.SpecificEndOfRegex,
-                RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.SpecificEndOfRegex, RegexFlags);
 
         public static readonly Regex UnspecificEndOfRegex =
-            new Regex(
-                DateTimeDefinitions.UnspecificEndOfRegex,
-                RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.UnspecificEndOfRegex, RegexFlags);
 
         public static readonly Regex UnitRegex =
-            new Regex(
-                DateTimeDefinitions.TimeUnitRegex,
-                RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.TimeUnitRegex, RegexFlags);
 
         public static readonly Regex NumberAsTimeRegex =
-            new Regex(
-                DateTimeDefinitions.NumberAsTimeRegex,
-                RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.NumberAsTimeRegex, RegexFlags);
 
-        public static readonly Regex DateNumberConnectorRegex = new Regex(
-            DateTimeDefinitions.DateNumberConnectorRegex,
-            RegexOptions.Singleline);
+        public static readonly Regex DateNumberConnectorRegex =
+            new Regex(DateTimeDefinitions.DateNumberConnectorRegex, RegexFlags);
 
         public static readonly Regex YearSuffix =
-            new Regex(DateTimeDefinitions.YearSuffix, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.YearSuffix, RegexFlags);
 
         public static readonly Regex YearRegex =
-             new Regex(DateTimeDefinitions.YearRegex, RegexOptions.Singleline);
+             new Regex(DateTimeDefinitions.YearRegex, RegexFlags);
 
-        public static readonly Regex SuffixAfterRegex = new Regex(
-            DateTimeDefinitions.SuffixAfterRegex,
-            RegexOptions.Singleline);
+        public static readonly Regex SuffixAfterRegex =
+            new Regex(DateTimeDefinitions.SuffixAfterRegex, RegexFlags);
+
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         public ItalianDateTimeExtractorConfiguration(IOptionsConfiguration config)
             : base(config)

@@ -281,7 +281,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                         var endIndex = match.Index + match.Length + (result.Length ?? 0);
 
                         ExtendWithWeekdayAndYear(
-                            ref startIndex, ref endIndex, Config.MonthOfYear.GetValueOrDefault(match.Groups["month"].Value, reference.Month), num, text, reference);
+                            ref startIndex, ref endIndex, Config.MonthOfYear.GetValueOrDefault(match.Groups["month"].Value, reference.Month),
+                            num, text, reference);
 
                         ret.Add(new Token(startIndex, endIndex));
                         continue;
@@ -418,7 +419,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                         var startIndex = result.Start ?? 0;
                         var endIndex = (result.Start + result.Length ?? 0) + match.Length;
 
-                        ExtendWithWeekdayAndYear(ref startIndex, ref endIndex, Config.MonthOfYear.GetValueOrDefault(match.Groups["month"].Value, reference.Month), num, text, reference);
+                        ExtendWithWeekdayAndYear(ref startIndex, ref endIndex,
+                                                 Config.MonthOfYear.GetValueOrDefault(match.Groups["month"].Value, reference.Month),
+                                                 num, text, reference);
 
                         ret.Add(new Token(startIndex, endIndex));
                     }
@@ -429,8 +432,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         }
 
         // TODO: Remove the parsing logic from here
-        private void ExtendWithWeekdayAndYear(
-            ref int startIndex, ref int endIndex, int month, int day, string text, DateObject reference)
+        private void ExtendWithWeekdayAndYear(ref int startIndex, ref int endIndex, int month, int day, string text, DateObject reference)
         {
             var year = reference.Year;
 

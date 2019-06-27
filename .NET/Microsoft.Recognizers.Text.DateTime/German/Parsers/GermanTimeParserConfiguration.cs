@@ -10,22 +10,16 @@ namespace Microsoft.Recognizers.Text.DateTime.German
     public class GermanTimeParserConfiguration : BaseOptionsConfiguration, ITimeParserConfiguration
     {
         private static readonly Regex TimeSuffixFull =
-            new Regex(
-                DateTimeDefinitions.TimeSuffixFull,
-                RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.TimeSuffixFull, RegexOptions.Singleline);
 
         private static readonly Regex LunchRegex =
-            new Regex(
-                DateTimeDefinitions.LunchRegex,
-                RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.LunchRegex, RegexOptions.Singleline);
 
         private static readonly Regex NightRegex =
-            new Regex(
-                DateTimeDefinitions.NightRegex,
-                RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.NightRegex, RegexOptions.Singleline);
 
         public GermanTimeParserConfiguration(ICommonDateTimeParserConfiguration config)
-               : base(config)
+            : base(config)
         {
             TimeTokenPrefix = DateTimeDefinitions.TimeTokenPrefix;
             AtRegex = GermanTimeExtractorConfiguration.AtRegex;
@@ -52,23 +46,23 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public void AdjustByPrefix(string prefix, ref int hour, ref int min, ref bool hasMin)
         {
             var deltaMin = 0;
-            var trimedPrefix = prefix.Trim().ToLowerInvariant();
+            var trimmedPrefix = prefix.Trim();
 
-            if (trimedPrefix.StartsWith("halb"))
+            if (trimmedPrefix.StartsWith("halb"))
             {
                 deltaMin = -30;
             }
-            else if (trimedPrefix.StartsWith("viertel nach"))
+            else if (trimmedPrefix.StartsWith("viertel nach"))
             {
                 deltaMin = 15;
             }
-            else if (trimedPrefix.StartsWith("viertel vor"))
+            else if (trimmedPrefix.StartsWith("viertel vor"))
             {
                 deltaMin = -15;
             }
             else
             {
-                var match = GermanTimeExtractorConfiguration.LessThanOneHour.Match(trimedPrefix);
+                var match = GermanTimeExtractorConfiguration.LessThanOneHour.Match(trimmedPrefix);
                 var minStr = match.Groups["deltamin"].Value;
                 if (!string.IsNullOrWhiteSpace(minStr))
                 {
@@ -76,12 +70,12 @@ namespace Microsoft.Recognizers.Text.DateTime.German
                 }
                 else
                 {
-                    minStr = match.Groups["deltaminnum"].Value.ToLower();
+                    minStr = match.Groups["deltaminnum"].Value;
                     deltaMin = Numbers[minStr];
                 }
             }
 
-            if (trimedPrefix.EndsWith("zum"))
+            if (trimmedPrefix.EndsWith("zum"))
             {
                 deltaMin = -deltaMin;
             }
@@ -98,9 +92,9 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public void AdjustBySuffix(string suffix, ref int hour, ref int min, ref bool hasMin, ref bool hasAm, ref bool hasPm)
         {
-            var lowerSuffix = suffix.ToLowerInvariant();
+
             var deltaHour = 0;
-            var match = TimeSuffixFull.MatchExact(lowerSuffix, trim: true);
+            var match = TimeSuffixFull.MatchExact(suffix, trim: true);
 
             if (match.Success)
             {

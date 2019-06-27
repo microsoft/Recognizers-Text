@@ -10,8 +10,11 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         {
             CardinalExtractor = config.CardinalExtractor;
             NumberParser = config.NumberParser;
+
             DurationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration(this), false);
+
             NumberCombinedWithUnit = EnglishDurationExtractorConfiguration.NumberCombinedWithDurationUnit;
+
             AnUnitRegex = EnglishDurationExtractorConfiguration.AnUnitRegex;
             DuringRegex = EnglishDurationExtractorConfiguration.DuringRegex;
             AllDateUnitRegex = EnglishDurationExtractorConfiguration.AllRegex;
@@ -22,6 +25,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             InexactNumberRegex = EnglishDurationExtractorConfiguration.InexactNumberRegex;
             InexactNumberUnitRegex = EnglishDurationExtractorConfiguration.InexactNumberUnitRegex;
             DurationUnitRegex = EnglishDurationExtractorConfiguration.DurationUnitRegex;
+
             UnitMap = config.UnitMap;
             UnitValueMap = config.UnitValueMap;
             DoubleNumbers = config.DoubleNumbers;

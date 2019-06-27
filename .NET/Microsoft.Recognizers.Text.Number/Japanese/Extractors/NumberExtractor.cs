@@ -4,7 +4,7 @@ using System.Text.RegularExpressions;
 namespace Microsoft.Recognizers.Text.Number.Japanese
 {
     // These modes can be applied to JapaneseNumberExtractor.
-    // The default more urilizes an allow list to avoid extracting numbers in ambiguous/undesired combinations of Japanese ideograms.
+    // The default more utilizes an allow list to avoid extracting numbers in ambiguous/undesired combinations of Japanese ideograms.
     // --> such as "西九条" is a place name in Japanese, should not be extracted.
     // ExtractAll mode is to be used in cases where extraction should be more aggressive (e.g. in Units extraction).
     public enum JapaneseNumberExtractorMode

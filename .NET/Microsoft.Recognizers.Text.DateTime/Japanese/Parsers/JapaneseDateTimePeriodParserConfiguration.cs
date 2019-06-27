@@ -14,18 +14,24 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
     {
         public static readonly string ParserName = Constants.SYS_DATETIME_DATETIMEPERIOD;
 
-        public static readonly Regex MORegex = new Regex(DateTimeDefinitions.DateTimePeriodMORegex, RegexOptions.Singleline);
+        public static readonly Regex MORegex = new Regex(DateTimeDefinitions.DateTimePeriodMORegex, RegexFlags);
 
-        public static readonly Regex AFRegex = new Regex(DateTimeDefinitions.DateTimePeriodAFRegex, RegexOptions.Singleline);
+        public static readonly Regex AFRegex = new Regex(DateTimeDefinitions.DateTimePeriodAFRegex, RegexFlags);
 
-        public static readonly Regex EVRegex = new Regex(DateTimeDefinitions.DateTimePeriodEVRegex, RegexOptions.Singleline);
+        public static readonly Regex EVRegex = new Regex(DateTimeDefinitions.DateTimePeriodEVRegex, RegexFlags);
 
-        public static readonly Regex NIRegex = new Regex(DateTimeDefinitions.DateTimePeriodNIRegex, RegexOptions.Singleline);
+        public static readonly Regex NIRegex = new Regex(DateTimeDefinitions.DateTimePeriodNIRegex, RegexFlags);
+
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         private static readonly IDateTimeExtractor SingleDateExtractor = new JapaneseDateExtractorConfiguration();
+
         private static readonly IDateTimeExtractor SingleTimeExtractor = new JapaneseTimeExtractorConfiguration();
+
         private static readonly IDateTimeExtractor TimeWithDateExtractor = new JapaneseDateTimeExtractorConfiguration();
+
         private static readonly IDateTimeExtractor TimePeriodExtractor = new JapaneseTimePeriodExtractorConfiguration();
+
         private static readonly IExtractor CardinalExtractor = new CardinalExtractor();
 
         private static readonly IParser CardinalParser = AgnosticNumberParserFactory.GetParser(
@@ -81,7 +87,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             var referenceTime = refDate;
 
             object value = null;
-            if (er.Type.Equals(ParserName))
+            if (er.Type.Equals(ParserName, StringComparison.Ordinal))
             {
                 var innerResult = MergeDateAndTimePeriod(er.Text, referenceTime);
                 if (!innerResult.Success)
@@ -329,7 +335,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             rightTime = rightTime.AddSeconds(second);
 
             // the right side time contains "ampm", while the left side doesn't
-            if (rightResult.Comment != null && rightResult.Comment.Equals(Constants.Comment_AmPm) &&
+            if (rightResult.Comment != null && rightResult.Comment.Equals(Constants.Comment_AmPm, StringComparison.Ordinal) &&
                 leftResult.Comment == null && rightTime < leftTime)
             {
                 rightTime = rightTime.AddHours(Constants.HalfDayHourCount);
@@ -367,7 +373,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         private DateTimeResolutionResult ParseSpecificNight(string text, DateObject referenceTime)
         {
             var ret = new DateTimeResolutionResult();
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
             int beginHour, endHour, endMin = 0;
             string timeStr;
 
@@ -528,18 +534,18 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             var ret = new DateTimeResolutionResult();
             string numStr, unitStr;
 
-            // if there are spaces between nubmer and unit
+            // if there are spaces between number and unit
             var ers = CardinalExtractor.Extract(text);
             if (ers.Count == 1)
             {
                 var pr = CardinalParser.Parse(ers[0]);
-                var srcUnit = text.Substring(ers[0].Start + ers[0].Length ?? 0).Trim().ToLower();
+                var srcUnit = text.Substring(ers[0].Start + ers[0].Length ?? 0).Trim();
                 if (srcUnit.StartsWith("个"))
                 {
                     srcUnit = srcUnit.Substring(1);
                 }
 
-                var beforeStr = text.Substring(0, ers[0].Start ?? 0).ToLowerInvariant();
+                var beforeStr = text.Substring(0, ers[0].Start ?? 0);
                 if (this.config.UnitMap.ContainsKey(srcUnit))
                 {
                     numStr = pr.ResolutionStr;
@@ -607,8 +613,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             var match = JapaneseDateTimePeriodExtractorConfiguration.UnitRegex.Match(text);
             if (match.Success)
             {
-                var srcUnit = match.Groups["unit"].Value.ToLower();
-                var beforeStr = text.Substring(0, match.Index).ToLowerInvariant();
+                var srcUnit = match.Groups["unit"].Value;
+                var beforeStr = text.Substring(0, match.Index);
+
                 if (this.config.UnitMap.ContainsKey(srcUnit))
                 {
                     unitStr = this.config.UnitMap[srcUnit];

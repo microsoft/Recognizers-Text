@@ -47,6 +47,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
                 .Replace(".", string.Empty);
         }
 
+        // @TODO Change to auto-generate.
         protected override IDictionary<string, Func<int, DateObject>> InitHolidayFuncs()
         {
             return new Dictionary<string, Func<int, DateObject>>(base.InitHolidayFuncs())
@@ -164,7 +165,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         private static DateObject Veteransday(int year) => new DateObject(year, 11, 11);
 
-        private static DateObject EasterDay(int year) => CalculateHolydaysByEaster(year);
+        private static DateObject EasterDay(int year) => CalculateHolidayByEaster(year);
 
         private static DateObject AshWednesday(int year) => EasterDay(year).AddDays(-46);
 
@@ -189,7 +190,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         private static DateObject CorpusChristi(int year) => EasterDay(year).AddDays(60);
 
         // function adopted from German implementation
-        private static DateObject CalculateHolydaysByEaster(int year, int days = 0)
+        private static DateObject CalculateHolidayByEaster(int year, int days = 0)
         {
             int day = 0;
             int month = 3;
