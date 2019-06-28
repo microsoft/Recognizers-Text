@@ -528,5 +528,9 @@ namespace Microsoft.Recognizers.Definitions.Italian
             @"g",
             @"oz"
         };
+      public static readonly Dictionary<string, string> AmbiguityFiltersDict = new Dictionary<string, string>
+        {
+            { @"\bl\b", @"l\s*('|’)" }
+        };
     }
 }

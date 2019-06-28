@@ -624,5 +624,15 @@
         }
       }
     ]
+  },
+  {
+    "Input": "l'amministrazione",
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "l ' autostrada",
+    "NotSupported": "javascript, python, java",
+    "Results": []
   }
 ]

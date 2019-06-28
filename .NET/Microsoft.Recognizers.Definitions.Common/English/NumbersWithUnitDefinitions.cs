@@ -799,5 +799,9 @@ namespace Microsoft.Recognizers.Definitions.English
             @"dram",
             @"lbs"
         };
+      public static readonly Dictionary<string, string> AmbiguityFiltersDict = new Dictionary<string, string>
+        {
+            { @"\bm\b", @"((('|’)\s*m)|(m\s*('|’)))" }
+        };
     }
 }
