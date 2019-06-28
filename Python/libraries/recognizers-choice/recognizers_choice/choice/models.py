@@ -21,19 +21,18 @@ class ChoiceModel(Model):
         try:
             extract_results = self.extractor.extract(source)
             parse_results = [self.parser.parse(e) for e in extract_results]
-
-            # o can be null, add this part to try.
-            for o in parse_results:
-                model_result = ModelResult()
-                model_result.start = o.start
-                model_result.end = o.start + len(o.text) - 1
-                model_result.resolution = self.get_resolution(o)
-                model_result.text = o.text
-                model_result.type_name = self.model_type_name
-
-                result.append(model_result)
         except Exception:
             pass
+
+        for o in parse_results:
+            model_result = ModelResult()
+            model_result.start = o.start
+            model_result.end = o.start + len(o.text) - 1
+            model_result.resolution = self.get_resolution(o)
+            model_result.text = o.text
+            model_result.type_name = self.model_type_name
+
+            result.append(model_result)
 
         return result
 

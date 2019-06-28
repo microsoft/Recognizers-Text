@@ -4,7 +4,7 @@ import recognizers_suite as Recognizers
 from recognizers_suite import Culture, ModelResult
 
 # Use English for the Recognizers culture
-DEFAULT_CULTURE = Culture.Chinese
+DEFAULT_CULTURE = Culture.English
 
 
 def main():

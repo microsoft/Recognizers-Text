@@ -20,25 +20,28 @@ namespace Microsoft.Recognizers.Text.Choice
 
         public List<ModelResult> Parse(string query)
         {
+            var parseResults = Enumerable.Empty<ParseResult>();
+
             try
             {
                 var extractResults = Extractor.Extract(query);
-                var parseResults = extractResults.Select(r => Parser.Parse(r));
+                parseResults = extractResults.Select(r => Parser.Parse(r));
 
-                // o can be null, add this part to try.
-                return parseResults.Select(pr => new ModelResult()
-                {
-                    Start = pr.Start.Value,
-                    End = pr.Start.Value + pr.Length.Value - 1,
-                    Resolution = GetResolution(pr),
-                    Text = pr.Text,
-                    TypeName = ModelTypeName,
-                }).ToList();
             }
             catch (Exception)
             {
-                return null;
+                // Nothing to do. Exceptions in parse should not break users of recognizers.
+                // No result.
             }
+
+            return parseResults.Select(pr => new ModelResult()
+            {
+                Start = pr.Start.Value,
+                End = pr.Start.Value + pr.Length.Value - 1,
+                Resolution = GetResolution(pr),
+                Text = pr.Text,
+                TypeName = ModelTypeName,
+            }).ToList();
         }
 
         protected abstract SortedDictionary<string, object> GetResolution(ParseResult parseResult);

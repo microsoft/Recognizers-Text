@@ -12,23 +12,27 @@ export abstract class ChoiceModel implements IModel {
     }
 
     parse(source: string): ModelResult[] {
+        let parseResults: ParseResult[];
+
         try {
             let extractResults = this.extractor.extract(source);
-            let parseResults = extractResults.map(r => this.parser.parse(r));
+            parseResults = extractResults.map(r => this.parser.parse(r));
 
-            // o can be null, add this part to try.
-            return parseResults
-            .map(o => o as ParseResult)
-            .map(o => ({
-                start: o.start,
-                end: o.start + o.length - 1,
-                resolution: this.getResolution(o),
-                text: o.text,
-                typeName: this.modelTypeName
-            }));
         }
         catch(err) {
-            return null;
+            // Nothing to do. Exceptions in parse should not break users of recognizers.
+            // No result.
+        }
+        finally {
+            return parseResults
+                .map(o => o as ParseResult)
+                .map(o => ({
+                    start: o.start,
+                    end: o.start + o.length - 1,
+                    resolution: this.getResolution(o),
+                    text: o.text,
+                    typeName: this.modelTypeName
+                }));
         }
     }
 
