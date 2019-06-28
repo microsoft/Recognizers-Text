@@ -4,7 +4,6 @@
     "Context": {
       "ReferenceDateTime": "2017-12-04T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -19,7 +18,9 @@
               "value": "2017-12-11 09:00:00"
             }
           ]
-        }
+        },
+        "Start": 28,
+        "Length": 35
       },
       {
         "Text": "1 pm",
@@ -33,7 +34,9 @@
               "value": "2017-12-11 13:00:00"
             }
           ]
-        }
+        },
+        "Start": 71,
+        "Length": 4
       }
     ]
   },
@@ -42,7 +45,6 @@
     "Context": {
       "ReferenceDateTime": "2017-12-04T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -57,7 +59,9 @@
               "value": "2017-12-11"
             }
           ]
-        }
+        },
+        "Start": 28,
+        "Length": 25
       },
       {
         "Text": "mar",
@@ -71,7 +75,9 @@
               "value": "2017-12-12"
             }
           ]
-        }
+        },
+        "Start": 56,
+        "Length": 3
       }
     ]
   },
@@ -80,7 +86,6 @@
     "Context": {
       "ReferenceDateTime": "2017-12-04T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -95,7 +100,9 @@
               "value": "09:00:00"
             }
           ]
-        }
+        },
+        "Start": 28,
+        "Length": 17
       },
       {
         "Text": "alle 10",
@@ -109,7 +116,9 @@
               "value": "10:00:00"
             }
           ]
-        }
+        },
+        "Start": 48,
+        "Length": 7
       }
     ]
   },
@@ -118,7 +127,6 @@
     "Context": {
       "ReferenceDateTime": "2017-12-04T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -134,7 +142,9 @@
               "end": "2017-12-11 15:00:00"
             }
           ]
-        }
+        },
+        "Start": 28,
+        "Length": 25
       },
       {
         "Text": "5-6 pm",
@@ -149,7 +159,9 @@
               "end": "2017-12-11 18:00:00"
             }
           ]
-        }
+        },
+        "Start": 56,
+        "Length": 6
       }
     ]
   },
@@ -158,7 +170,6 @@
     "Context": {
       "ReferenceDateTime": "2017-12-04T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -201,7 +212,9 @@
               "end": "2017-12-04 10:00:00"
             }
           ]
-        }
+        },
+        "Start": 15,
+        "Length": 7
       }
     ]
   },
@@ -210,7 +223,6 @@
     "Context": {
       "ReferenceDateTime": "2017-12-04T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -225,7 +237,9 @@
               "value": "2017-12-12"
             }
           ]
-        }
+        },
+        "Start": 59,
+        "Length": 29
       },
       {
         "Text": "giovedì",
@@ -239,7 +253,9 @@
               "value": "2017-12-14"
             }
           ]
-        }
+        },
+        "Start": 91,
+        "Length": 7
       }
     ]
   },
@@ -248,7 +264,6 @@
     "Context": {
       "ReferenceDateTime": "2017-12-04T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -263,7 +278,9 @@
               "value": "2017-12-12 09:00:00"
             }
           ]
-        }
+        },
+        "Start": 48,
+        "Length": 39
       },
       {
         "Text": "giovedì alle 1 pm",
@@ -277,7 +294,9 @@
               "value": "2017-12-14 13:00:00"
             }
           ]
-        }
+        },
+        "Start": 90,
+        "Length": 17
       }
     ]
   }

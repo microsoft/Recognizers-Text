@@ -7,16 +7,16 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
     public class ItalianDateTimeAltExtractorConfiguration : BaseOptionsConfiguration, IDateTimeAltExtractorConfiguration
     {
         public static readonly Regex ThisPrefixRegex =
-            new Regex(DateTimeDefinitions.ThisPrefixRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.ThisPrefixRegex, RegexOptions.Singleline);
 
         public static readonly Regex AmRegex =
-            new Regex(DateTimeDefinitions.AmRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.AmRegex, RegexOptions.Singleline);
 
         public static readonly Regex PmRegex =
-            new Regex(DateTimeDefinitions.PmRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.PmRegex, RegexOptions.Singleline);
 
         public static readonly Regex RangePrefixRegex =
-            new Regex(DateTimeDefinitions.RangePrefixRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.RangePrefixRegex, RegexOptions.Singleline);
 
         public static readonly Regex[] RelativePrefixList =
         {
@@ -28,13 +28,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             AmRegex, PmRegex,
         };
 
-        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
-
         private static readonly Regex OrRegex =
-            new Regex(DateTimeDefinitions.OrRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.OrRegex, RegexOptions.Singleline);
 
         private static readonly Regex DayRegex =
-            new Regex(DateTimeDefinitions.DayRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.DayRegex, RegexOptions.Singleline);
 
         public ItalianDateTimeAltExtractorConfiguration(IOptionsConfiguration config)
             : base(config)

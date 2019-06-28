@@ -4,7 +4,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -19,7 +18,9 @@
               "value": "3600"
             }
           ]
-        }
+        },
+        "Start": 23,
+        "Length": 3
       }
     ]
   },
@@ -28,7 +29,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -43,7 +43,9 @@
               "value": "300"
             }
           ]
-        }
+        },
+        "Start": 22,
+        "Length": 8
       }
     ]
   },
@@ -52,7 +54,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -67,7 +68,9 @@
               "value": "259200"
             }
           ]
-        }
+        },
+        "Start": 22,
+        "Length": 8
       }
     ]
   },
@@ -76,7 +79,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -90,7 +92,9 @@
               "value": "2016-11-07 00:00:00"
             }
           ]
-        }
+        },
+        "Start": 26,
+        "Length": 6
       }
     ]
   },
@@ -99,7 +103,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -118,7 +121,9 @@
               "value": "19:00:00"
             }
           ]
-        }
+        },
+        "Start": 40,
+        "Length": 1
       }
     ]
   },
@@ -127,7 +132,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -141,7 +145,9 @@
               "value": "19:00:00"
             }
           ]
-        }
+        },
+        "Start": 40,
+        "Length": 3
       }
     ]
   },
@@ -150,7 +156,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -165,7 +170,9 @@
               "value": "7200"
             }
           ]
-        }
+        },
+        "Start": 26,
+        "Length": 5
       }
     ]
   },
@@ -174,7 +181,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -188,7 +194,9 @@
               "value": "2016-11-08"
             }
           ]
-        }
+        },
+        "Start": 26,
+        "Length": 6
       },
       {
         "Text": "5pm",
@@ -201,7 +209,9 @@
               "value": "17:00:00"
             }
           ]
-        }
+        },
+        "Start": 39,
+        "Length": 3
       },
       {
         "Text": "7pm",
@@ -214,7 +224,9 @@
               "value": "19:00:00"
             }
           ]
-        }
+        },
+        "Start": 48,
+        "Length": 3
       }
     ]
   },
@@ -223,7 +235,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -237,7 +248,9 @@
               "value": "2016-11-07"
             }
           ]
-        }
+        },
+        "Start": 26,
+        "Length": 4
       },
       {
         "Text": "5pm",
@@ -250,7 +263,9 @@
               "value": "17:00:00"
             }
           ]
-        }
+        },
+        "Start": 37,
+        "Length": 3
       },
       {
         "Text": "7pm",
@@ -263,7 +278,9 @@
               "value": "19:00:00"
             }
           ]
-        }
+        },
+        "Start": 46,
+        "Length": 3
       }
     ]
   },
@@ -272,7 +289,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -286,7 +302,9 @@
               "value": "2016-11-14"
             }
           ]
-        }
+        },
+        "Start": 26,
+        "Length": 15
       },
       {
         "Text": "5pm",
@@ -299,7 +317,9 @@
               "value": "17:00:00"
             }
           ]
-        }
+        },
+        "Start": 48,
+        "Length": 3
       },
       {
         "Text": "7pm",
@@ -312,7 +332,9 @@
               "value": "19:00:00"
             }
           ]
-        }
+        },
+        "Start": 57,
+        "Length": 3
       }
     ]
   },
@@ -321,7 +343,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -335,7 +356,9 @@
               "value": "2016-11-08"
             }
           ]
-        }
+        },
+        "Start": 45,
+        "Length": 6
       },
       {
         "Text": "5pm",
@@ -348,7 +371,9 @@
               "value": "17:00:00"
             }
           ]
-        }
+        },
+        "Start": 32,
+        "Length": 3
       },
       {
         "Text": "7pm",
@@ -361,7 +386,9 @@
               "value": "19:00:00"
             }
           ]
-        }
+        },
+        "Start": 41,
+        "Length": 3
       }
     ]
   },
@@ -370,7 +397,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -384,7 +410,9 @@
               "value": "2016-11-07"
             }
           ]
-        }
+        },
+        "Start": 45,
+        "Length": 4
       },
       {
         "Text": "5pm",
@@ -397,7 +425,9 @@
               "value": "17:00:00"
             }
           ]
-        }
+        },
+        "Start": 32,
+        "Length": 3
       },
       {
         "Text": "7pm",
@@ -410,7 +440,9 @@
               "value": "19:00:00"
             }
           ]
-        }
+        },
+        "Start": 41,
+        "Length": 3
       }
     ]
   },
@@ -419,7 +451,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -433,7 +464,9 @@
               "value": "2016-11-14"
             }
           ]
-        }
+        },
+        "Start": 45,
+        "Length": 15
       },
       {
         "Text": "5pm",
@@ -446,7 +479,9 @@
               "value": "17:00:00"
             }
           ]
-        }
+        },
+        "Start": 32,
+        "Length": 3
       },
       {
         "Text": "7pm",
@@ -459,7 +494,9 @@
               "value": "19:00:00"
             }
           ]
-        }
+        },
+        "Start": 41,
+        "Length": 3
       }
     ]
   },
@@ -468,7 +505,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -482,7 +518,9 @@
               "value": "2016-11-08"
             }
           ]
-        }
+        },
+        "Start": 26,
+        "Length": 6
       },
       {
         "Text": "dalle 5 alle 7pm",
@@ -496,7 +534,9 @@
               "end": "19:00:00"
             }
           ]
-        }
+        },
+        "Start": 33,
+        "Length": 16
       }
     ]
   },
@@ -505,7 +545,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -551,7 +590,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -597,7 +635,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -616,7 +653,9 @@
               "value": "17:30:00"
             }
           ]
-        }
+        },
+        "Start": 32,
+        "Length": 4
       },
       {
         "Text": "7:00",
@@ -634,7 +673,9 @@
               "value": "19:00:00"
             }
           ]
-        }
+        },
+        "Start": 42,
+        "Length": 4
       }
     ]
   },
@@ -643,7 +684,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -657,7 +697,9 @@
               "value": "17:00:00"
             }
           ]
-        }
+        },
+        "Start": 32,
+        "Length": 3
       },
       {
         "Text": "7pm",
@@ -670,7 +712,9 @@
               "value": "19:00:00"
             }
           ]
-        }
+        },
+        "Start": 41,
+        "Length": 3
       }
     ]
   },
@@ -679,7 +723,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -693,7 +736,9 @@
               "value": "05:00:00"
             }
           ]
-        }
+        },
+        "Start": 32,
+        "Length": 3
       },
       {
         "Text": "7pm",
@@ -706,7 +751,9 @@
               "value": "19:00:00"
             }
           ]
-        }
+        },
+        "Start": 41,
+        "Length": 3
       }
     ]
   },
@@ -715,7 +762,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -730,7 +776,9 @@
               "value": "172800"
             }
           ]
-        }
+        },
+        "Start": 26,
+        "Length": 8
       }
     ]
   },
@@ -739,7 +787,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -754,7 +801,9 @@
               "value": "120"
             }
           ]
-        }
+        },
+        "Start": 11,
+        "Length": 8
       }
     ]
   },
@@ -763,7 +812,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -777,7 +825,9 @@
               "value": "2016-11-08"
             }
           ]
-        }
+        },
+        "Start": 26,
+        "Length": 6
       },
       {
         "Text": "7pm",
@@ -790,7 +840,9 @@
               "value": "19:00:00"
             }
           ]
-        }
+        },
+        "Start": 38,
+        "Length": 3
       }
     ]
   },
@@ -799,7 +851,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -813,7 +864,9 @@
               "value": "2016-11-08"
             }
           ]
-        }
+        },
+        "Start": 26,
+        "Length": 6
       },
       {
         "Text": "mattina alle 7pm",
@@ -826,7 +879,9 @@
               "value": "07:00:00"
             }
           ]
-        }
+        },
+        "Start": 33,
+        "Length": 16
       }
     ]
   }

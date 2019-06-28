@@ -7,8 +7,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 {
     public class ItalianDateTimeParserConfiguration : BaseOptionsConfiguration, IDateTimeParserConfiguration
     {
-        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
-
         public ItalianDateTimeParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config.Options)
         {
@@ -18,11 +16,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             TimeExtractor = config.TimeExtractor;
             DateParser = config.DateParser;
             TimeParser = config.TimeParser;
-
             NowRegex = ItalianDateTimeExtractorConfiguration.NowRegex;
-            AMTimeRegex = new Regex(DateTimeDefinitions.AMTimeRegex, RegexFlags);
-            PMTimeRegex = new Regex(DateTimeDefinitions.PMTimeRegex, RegexFlags);
-
+            AMTimeRegex = new Regex(DateTimeDefinitions.AMTimeRegex, RegexOptions.Singleline);
+            PMTimeRegex = new Regex(DateTimeDefinitions.PMTimeRegex, RegexOptions.Singleline);
             SimpleTimeOfTodayAfterRegex = ItalianDateTimeExtractorConfiguration.SimpleTimeOfTodayAfterRegex;
             SimpleTimeOfTodayBeforeRegex = ItalianDateTimeExtractorConfiguration.SimpleTimeOfTodayBeforeRegex;
             SpecificTimeOfDayRegex = ItalianDateTimeExtractorConfiguration.SpecificTimeOfDayRegex;
@@ -30,8 +26,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             UnspecificEndOfRegex = ItalianDateTimeExtractorConfiguration.UnspecificEndOfRegex;
             UnitRegex = ItalianTimeExtractorConfiguration.TimeUnitRegex;
             DateNumberConnectorRegex = ItalianDateTimeExtractorConfiguration.DateNumberConnectorRegex;
-            YearRegex = ItalianDateTimeExtractorConfiguration.YearRegex;
-
             Numbers = config.Numbers;
             CardinalExtractor = config.CardinalExtractor;
             IntegerExtractor = config.IntegerExtractor;
@@ -88,7 +82,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public Regex PrepositionRegex { get; }
 
-        public Regex YearRegex { get; }
+        public Regex YearRegex { get; } = null;
 
         public IImmutableDictionary<string, int> Numbers { get; }
 
@@ -97,7 +91,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         // Note: Italian typically uses 24:00 time, consider removing 12:00 am/pm
         public int GetHour(string text, int hour)
         {
-            var trimmedText = text.Trim();
+            var trimmedText = text.Trim().ToLowerInvariant();
             int result = hour;
             if (trimmedText.EndsWith("matin") && hour >= 12)
             {
@@ -113,7 +107,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public bool GetMatchedNowTimex(string text, out string timex)
         {
-            var trimmedText = text.Trim();
+            var trimmedText = text.Trim().ToLowerInvariant();
             if (trimmedText.EndsWith("maintenant"))
             {
                 timex = "PRESENT_REF";
@@ -137,7 +131,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public int GetSwiftDay(string text)
         {
-            var trimmedText = text.Trim();
+            var trimmedText = text.Trim().ToLowerInvariant();
             var swift = 0;
             if (trimmedText.StartsWith("prochain") || trimmedText.EndsWith("prochain") ||
                 trimmedText.StartsWith("prochaine") || trimmedText.EndsWith("prochaine"))
@@ -145,7 +139,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
                 swift = 1;
             }
             else if (trimmedText.StartsWith("dernier") || trimmedText.StartsWith("dernière") ||
-                     trimmedText.EndsWith("dernier") || trimmedText.EndsWith("dernière"))
+                      trimmedText.EndsWith("dernier") || trimmedText.EndsWith("dernière"))
             {
                 swift = -1;
             }

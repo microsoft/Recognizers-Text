@@ -4,7 +4,6 @@
     "Context": {
       "ReferenceDateTime": "2018-02-08T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -36,7 +35,6 @@
     "Context": {
       "ReferenceDateTime": "2018-02-08T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -68,7 +66,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": []
   },
@@ -77,7 +74,6 @@
     "Context": {
       "ReferenceDateTime": "2017-12-18T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -91,7 +87,9 @@
               "value": "2017-12-19 03:00:00"
             }
           ]
-        }
+        },
+        "Start": 8,
+        "Length": 13
       }
     ]
   },
@@ -100,7 +98,6 @@
     "Context": {
       "ReferenceDateTime": "2017-12-18T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -114,7 +111,9 @@
               "value": "2017-12-19 03:00:00"
             }
           ]
-        }
+        },
+        "Start": 8,
+        "Length": 18
       }
     ]
   },
@@ -123,7 +122,6 @@
     "Context": {
       "ReferenceDateTime": "2017-12-18T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -137,7 +135,9 @@
               "value": "2017-12-17 12:00:00"
             }
           ]
-        }
+        },
+        "Start": 13,
+        "Length": 12
       }
     ]
   },
@@ -146,7 +146,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -161,7 +160,9 @@
               "end": "04:00:00"
             }
           ]
-        }
+        },
+        "Start": 26,
+        "Length": 13
       }
     ]
   },
@@ -170,7 +171,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -185,7 +185,9 @@
               "start": "03:00:00"
             }
           ]
-        }
+        },
+        "Start": 26,
+        "Length": 11
       }
     ]
   },
@@ -194,7 +196,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -209,7 +210,9 @@
               "end": "04:00:00"
             }
           ]
-        }
+        },
+        "Start": 26,
+        "Length": 21
       }
     ]
   }

@@ -4,7 +4,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -20,7 +19,9 @@
             "startDateTime": "2016-11-07 05:00:00",
             "endDateTime": "2016-11-07 07:00:00"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 28
       }
     ]
   },
@@ -29,7 +30,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -45,7 +45,9 @@
             "startDateTime": "2016-04-22 05:00:00",
             "endDateTime": "2016-04-22 06:00:00"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 28
       }
     ]
   },
@@ -54,11 +56,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "dalle 5 alle 6 del 22 aprile",
+        "Text": "dalle 5 alle 6 del 22 Aprile",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(XXXX-04-22T05,XXXX-04-22T06,PT1H)",
@@ -70,7 +71,9 @@
             "startDateTime": "2016-04-22 05:00:00",
             "endDateTime": "2016-04-22 06:00:00"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 28
       }
     ]
   },
@@ -79,11 +82,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "dalle 5 alle 6pm del 22 aprile",
+        "Text": "dalle 5 alle 6pm del 22 Aprile",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(XXXX-04-22T17,XXXX-04-22T18,PT1H)",
@@ -95,7 +97,9 @@
             "startDateTime": "2016-04-22 17:00:00",
             "endDateTime": "2016-04-22 18:00:00"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 30
       }
     ]
   },
@@ -104,7 +108,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -120,7 +123,9 @@
             "startDateTime": "2016-01-01 05:00:00",
             "endDateTime": "2016-01-01 06:00:00"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 24
       }
     ]
   },
@@ -129,7 +134,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -145,7 +149,9 @@
             "startDateTime": "2016-11-08 15:00:00",
             "endDateTime": "2016-11-08 16:00:00"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 28
       }
     ]
   },
@@ -154,11 +160,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "3:00 di 4:00 domani",
+        "Text": "3:00 alle 4:00 di domani",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2016-11-08T03:00,2016-11-08T04:00,PT1H)",
@@ -170,7 +175,9 @@
             "startDateTime": "2016-11-08 03:00:00",
             "endDateTime": "2016-11-08 04:00:00"
           }
-        }
+        },
+        "Start": 17,
+        "Length": 24
       }
     ]
   },
@@ -179,7 +186,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -195,9 +201,12 @@
             "startDateTime": "2016-11-08 07:30:00",
             "endDateTime": "2016-11-08 16:00:00"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 38
       }
-    ]
+    ],
+    "NotSupported": "dotnet"
   },
   {
     "Input": "Sarò fuori dalle 4pm di oggi alle 5pm di domani",
@@ -208,7 +217,7 @@
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "dalle 4pm di oggi alle 5pm di domani",
+        "Text": "4pm di oggi alle 5pm di domani",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2016-11-07T16,2016-11-08T17,PT25H)",
@@ -220,7 +229,9 @@
             "startDateTime": "2016-11-07 16:00:00",
             "endDateTime": "2016-11-08 17:00:00"
           }
-        }
+        },
+        "Start": 17,
+        "Length": 30
       }
     ]
   },
@@ -233,7 +244,7 @@
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "dalle 2:00pm del 2016-2-21 alle 3:32 del 04/23/2016",
+        "Text": "2:00pm del 2016-2-21 alle 3:32 del 04/23/2016",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2016-02-21T14:00,2016-04-23T03:32,PT1478H)",
@@ -245,7 +256,9 @@
             "startDateTime": "2016-02-21 14:00:00",
             "endDateTime": "2016-04-23 03:32:00"
           }
-        }
+        },
+        "Start": 17,
+        "Length": 45
       }
     ]
   },
@@ -254,11 +267,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "tra le 4pm e le 5pm di oggi",
+        "Text": "4pm e le 5pm di oggi",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2016-11-07T16,2016-11-07T17,PT1H)",
@@ -270,7 +282,9 @@
             "startDateTime": "2016-11-07 16:00:00",
             "endDateTime": "2016-11-07 17:00:00"
           }
-        }
+        },
+        "Start": 18,
+        "Length": 20
       }
     ]
   },
@@ -283,7 +297,7 @@
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "tra le 4pm del 1 Gen 2016 e le 5pm di oggi",
+        "Text": "4pm del 1 Gen 2016 e le 5pm di oggi",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2016-01-01T16,2016-11-07T17,PT7465H)",
@@ -295,7 +309,9 @@
             "startDateTime": "2016-01-01 16:00:00",
             "endDateTime": "2016-11-07 17:00:00"
           }
-        }
+        },
+        "Start": 18,
+        "Length": 35
       }
     ]
   },
@@ -304,7 +320,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -320,7 +335,9 @@
             "startDateTime": "2016-11-07 20:00:00",
             "endDateTime": "2016-11-07 23:59:59"
           }
-        }
+        },
+        "Start": 8,
+        "Length": 8
       }
     ]
   },
@@ -329,7 +346,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -345,7 +361,9 @@
             "startDateTime": "2016-11-07 20:00:00",
             "endDateTime": "2016-11-07 23:59:59"
           }
-        }
+        },
+        "Start": 8,
+        "Length": 8
       }
     ]
   },
@@ -354,7 +372,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -370,16 +387,18 @@
             "startDateTime": "2016-11-07 20:00:00",
             "endDateTime": "2016-11-07 23:59:59"
           }
-        }
+        },
+        "Start": 8,
+        "Length": 12
       }
-    ]
+    ],
+    "NotSupported": "dotnet"
   },
   {
     "Input": "Tornerò questa sera",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -395,16 +414,18 @@
             "startDateTime": "2016-11-07 16:00:00",
             "endDateTime": "2016-11-07 20:00:00"
           }
-        }
+        },
+        "Start": 8,
+        "Length": 11
       }
-    ]
+    ],
+    "NotSupported": "dotnet"
   },
   {
     "Input": "Tornerò questa mattina",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -420,16 +441,18 @@
             "startDateTime": "2016-11-07 08:00:00",
             "endDateTime": "2016-11-07 12:00:00"
           }
-        }
+        },
+        "Start": 8,
+        "Length": 14
       }
-    ]
+    ],
+    "NotSupported": "dotnet"
   },
   {
     "Input": "Tornerò questo pomeriggio",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -445,16 +468,18 @@
             "startDateTime": "2016-11-07 12:00:00",
             "endDateTime": "2016-11-07 16:00:00"
           }
-        }
+        },
+        "Start": 8,
+        "Length": 17
       }
-    ]
+    ],
+    "NotSupported": "dotnet"
   },
   {
     "Input": "Tornerò la prossima notte",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -470,16 +495,18 @@
             "startDateTime": "2016-11-08 20:00:00",
             "endDateTime": "2016-11-08 23:59:59"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 14
       }
-    ]
+    ],
+    "NotSupported": "dotnet"
   },
   {
     "Input": "Sono tornato la scorsa notte",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -495,16 +522,18 @@
             "startDateTime": "2016-11-06 20:00:00",
             "endDateTime": "2016-11-06 23:59:59"
           }
-        }
+        },
+        "Start": 16,
+        "Length": 12
       }
-    ]
+    ],
+    "NotSupported": "dotnet"
   },
   {
     "Input": "Tornerò domani sera",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -520,16 +549,18 @@
             "startDateTime": "2016-11-08 20:00:00",
             "endDateTime": "2016-11-08 23:59:59"
           }
-        }
+        },
+        "Start": 8,
+        "Length": 11
       }
-    ]
+    ],
+    "NotSupported": "dotnet"
   },
   {
     "Input": "Tornerò il prossimo lunedì pomeriggio",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -545,16 +576,18 @@
             "startDateTime": "2016-11-14 12:00:00",
             "endDateTime": "2016-11-14 16:00:00"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 26
       }
-    ]
+    ],
+    "NotSupported": "dotnet"
   },
   {
     "Input": "Sono tornato negli ultimi 3 minuti",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -572,14 +605,14 @@
           }
         }
       }
-    ]
+    ],
+    "NotSupported": "dotnet"
   },
   {
     "Input": "Sono tornato nei 3 minuti passati",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -595,7 +628,9 @@
             "startDateTime": "2016-11-07 16:09:00",
             "endDateTime": "2016-11-07 16:12:00"
           }
-        }
+        },
+        "Start": 17,
+        "Length": 16
       }
     ]
   },
@@ -604,7 +639,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -620,7 +654,9 @@
             "startDateTime": "2016-11-07 16:09:00",
             "endDateTime": "2016-11-07 16:12:00"
           }
-        }
+        },
+        "Start": 17,
+        "Length": 19
       }
     ]
   },
@@ -629,11 +665,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "nelle prossime 5 ore",
+        "Text": "prossime 5 ore",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2016-11-07T16:12:00,2016-11-07T21:12:00,PT5H)",
@@ -645,7 +680,9 @@
             "startDateTime": "2016-11-07 16:12:00",
             "endDateTime": "2016-11-07 21:12:00"
           }
-        }
+        },
+        "Start": 14,
+        "Length": 14
       }
     ]
   },
@@ -654,7 +691,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -670,16 +706,18 @@
             "startDateTime": "2016-11-07 16:11:00",
             "endDateTime": "2016-11-07 16:12:00"
           }
-        }
+        },
+        "Start": 8,
+        "Length": 18
       }
-    ]
+    ],
+    "NotSupported": "dotnet"
   },
   {
     "Input": "Tornerò nella prossima ora",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -695,7 +733,9 @@
             "startDateTime": "2016-11-07 16:12:00",
             "endDateTime": "2016-11-07 17:12:00"
           }
-        }
+        },
+        "Start": 14,
+        "Length": 12
       }
     ]
   },
@@ -704,7 +744,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -720,16 +759,18 @@
             "startDateTime": "2016-11-07 16:12:00",
             "endDateTime": "2016-11-07 19:12:00"
           }
-        }
+        },
+        "Start": 14,
+        "Length": 12
       }
-    ]
+    ],
+    "NotSupported": "dotnet"
   },
   {
     "Input": "Tornerò martedì mattina",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -745,16 +786,18 @@
             "startDateTime": "2016-11-01 08:00:00",
             "endDateTime": "2016-11-01 12:00:00"
           }
-        }
+        },
+        "Start": 8,
+        "Length": 15
       }
-    ]
+    ],
+    "NotSupported": "dotnet"
   },
   {
     "Input": "Puoi aiutarci a trovare un momento nella mattinata di martedì, per favore?",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -770,16 +813,18 @@
             "startDateTime": "2016-11-08 08:00:00",
             "endDateTime": "2016-11-08 12:00:00"
           }
-        }
+        },
+        "Start": 35,
+        "Length": 26
       }
-    ]
+    ],
+    "NotSupported": "dotnet"
   },
   {
     "Input": "Per favore, organizza una riunione di 30 minuti martedì, in mattinata.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -795,16 +840,18 @@
             "startDateTime": "2016-11-01 08:00:00",
             "endDateTime": "2016-11-01 12:00:00"
           }
-        }
+        },
+        "Start": 48,
+        "Length": 21
       }
-    ]
+    ],
+    "NotSupported": "dotnet"
   },
   {
     "Input": "Tornerò martedì nel pomeriggio",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -820,16 +867,18 @@
             "startDateTime": "2016-11-01 12:00:00",
             "endDateTime": "2016-11-01 16:00:00"
           }
-        }
+        },
+        "Start": 8,
+        "Length": 22
       }
-    ]
+    ],
+    "NotSupported": "dotnet"
   },
   {
     "Input": "Tornerò martedì in serata",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -845,20 +894,22 @@
             "startDateTime": "2016-11-01 16:00:00",
             "endDateTime": "2016-11-01 20:00:00"
           }
-        }
+        },
+        "Start": 8,
+        "Length": 17
       }
-    ]
+    ],
+    "NotSupported": "dotnet"
   },
   {
     "Input": "incontriamoci di mattina presto martedì",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "di mattina presto martedì",
+        "Text": "mattina presto martedì",
         "Type": "datetimerange",
         "Value": {
           "Timex": "XXXX-WXX-2TMO",
@@ -870,7 +921,9 @@
             "startDateTime": "2016-11-01 08:00:00",
             "endDateTime": "2016-11-01 10:00:00"
           }
-        }
+        },
+        "Start": 17,
+        "Length": 22
       }
     ]
   },
@@ -879,7 +932,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -895,7 +947,9 @@
             "startDateTime": "2016-11-01 08:00:00",
             "endDateTime": "2016-11-01 10:00:00"
           }
-        }
+        },
+        "Start": 14,
+        "Length": 24
       }
     ]
   },
@@ -904,11 +958,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "in tarda mattinata martedì",
+        "Text": "tarda mattinata martedì",
         "Type": "datetimerange",
         "Value": {
           "Timex": "XXXX-WXX-2TMO",
@@ -920,16 +973,18 @@
             "startDateTime": "2016-11-01 10:00:00",
             "endDateTime": "2016-11-01 12:00:00"
           }
-        }
+        },
+        "Start": 17,
+        "Length": 23
       }
-    ]
+    ],
+    "NotSupported": "dotnet"
   },
   {
     "Input": "incontriamoci nel primo pomeriggio martedì",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -945,7 +1000,9 @@
             "startDateTime": "2016-11-01 12:00:00",
             "endDateTime": "2016-11-01 14:00:00"
           }
-        }
+        },
+        "Start": 14,
+        "Length": 28
       }
     ]
   },
@@ -954,7 +1011,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -970,7 +1026,9 @@
             "startDateTime": "2016-11-01 14:00:00",
             "endDateTime": "2016-11-01 16:00:00"
           }
-        }
+        },
+        "Start": 14,
+        "Length": 28
       }
     ]
   },
@@ -979,11 +1037,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "di sera presto martedì",
+        "Text": "sera presto martedì",
         "Type": "datetimerange",
         "Value": {
           "Timex": "XXXX-WXX-2TEV",
@@ -995,7 +1052,9 @@
             "startDateTime": "2016-11-01 16:00:00",
             "endDateTime": "2016-11-01 18:00:00"
           }
-        }
+        },
+        "Start": 17,
+        "Length": 19
       }
     ]
   },
@@ -1004,7 +1063,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -1020,16 +1078,18 @@
             "startDateTime": "2016-11-01 18:00:00",
             "endDateTime": "2016-11-01 20:00:00"
           }
-        }
+        },
+        "Start": 14,
+        "Length": 23
       }
-    ]
+    ],
+    "NotSupported": "dotnet"
   },
   {
     "Input": "incontriamoci in prima nottata martedì",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -1045,16 +1105,18 @@
             "startDateTime": "2016-11-01 20:00:00",
             "endDateTime": "2016-11-01 22:00:00"
           }
-        }
+        },
+        "Start": 14,
+        "Length": 24
       }
-    ]
+    ],
+    "NotSupported": "dotnet"
   },
   {
     "Input": "incontriamoci in tarda nottata martedì",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -1070,20 +1132,22 @@
             "startDateTime": "2016-11-01 22:00:00",
             "endDateTime": "2016-11-01 23:59:59"
           }
-        }
+        },
+        "Start": 14,
+        "Length": 24
       }
-    ]
+    ],
+    "NotSupported": "dotnet"
   },
   {
     "Input": "incontriamoci a tarda notte martedì",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "a tarda notte martedì",
+        "Text": "tarda notte martedì",
         "Type": "datetimerange",
         "Value": {
           "Timex": "XXXX-WXX-2TNI",
@@ -1095,7 +1159,9 @@
             "startDateTime": "2016-11-01 22:00:00",
             "endDateTime": "2016-11-01 23:59:59"
           }
-        }
+        },
+        "Start": 16,
+        "Length": 19
       }
     ]
   },
@@ -1104,7 +1170,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -1120,16 +1185,18 @@
             "startDateTime": "2016-11-01 08:00:00",
             "endDateTime": "2016-11-01 10:00:00"
           }
-        }
+        },
+        "Start": 14,
+        "Length": 26
       }
-    ]
+    ],
+    "NotSupported": "dotnet"
   },
   {
     "Input": "incontriamoci martedì in tarda mattinata",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -1145,16 +1212,18 @@
             "startDateTime": "2016-11-01 10:00:00",
             "endDateTime": "2016-11-01 12:00:00"
           }
-        }
+        },
+        "Start": 14,
+        "Length": 26
       }
-    ]
+    ],
+    "NotSupported": "dotnet"
   },
   {
     "Input": "incontriamoci martedì nel primo pomeriggio",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -1170,7 +1239,9 @@
             "startDateTime": "2016-11-01 12:00:00",
             "endDateTime": "2016-11-01 14:00:00"
           }
-        }
+        },
+        "Start": 14,
+        "Length": 28
       }
     ]
   },
@@ -1179,7 +1250,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -1195,7 +1265,9 @@
             "startDateTime": "2016-11-01 14:00:00",
             "endDateTime": "2016-11-01 16:00:00"
           }
-        }
+        },
+        "Start": 14,
+        "Length": 28
       }
     ]
   },
@@ -1204,7 +1276,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -1220,7 +1291,9 @@
             "startDateTime": "2016-11-01 16:00:00",
             "endDateTime": "2016-11-01 18:00:00"
           }
-        }
+        },
+        "Start": 14,
+        "Length": 19
       }
     ]
   },
@@ -1229,7 +1302,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -1245,7 +1317,9 @@
             "startDateTime": "2016-11-01 18:00:00",
             "endDateTime": "2016-11-01 20:00:00"
           }
-        }
+        },
+        "Start": 14,
+        "Length": 18
       }
     ]
   },
@@ -1254,7 +1328,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -1270,16 +1343,18 @@
             "startDateTime": "2016-11-01 20:00:00",
             "endDateTime": "2016-11-01 22:00:00"
           }
-        }
+        },
+        "Start": 14,
+        "Length": 20
       }
-    ]
+    ],
+    "NotSupported": "dotnet"
   },
   {
     "Input": "incontriamoci martedì notte tardi",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -1295,16 +1370,18 @@
             "startDateTime": "2016-11-01 22:00:00",
             "endDateTime": "2016-11-01 23:59:59"
           }
-        }
+        },
+        "Start": 14,
+        "Length": 19
       }
-    ]
+    ],
+    "NotSupported": "dotnet"
   },
   {
     "Input": "incontriamoci martedì in tarda nottata",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -1320,16 +1397,18 @@
             "startDateTime": "2016-11-01 22:00:00",
             "endDateTime": "2016-11-01 23:59:59"
           }
-        }
+        },
+        "Start": 14,
+        "Length": 24
       }
-    ]
+    ],
+    "NotSupported": "dotnet"
   },
   {
     "Input": "incontriamoci nel resto della giornata",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -1345,16 +1424,18 @@
             "startDateTime": "2016-11-07 16:12:00",
             "endDateTime": "2016-11-07 23:59:59"
           }
-        }
+        },
+        "Start": 14,
+        "Length": 24
       }
-    ]
+    ],
+    "NotSupported": "dotnet"
   },
   {
     "Input": "incontriamoci nel resto del giorno corrente",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -1370,16 +1451,18 @@
             "startDateTime": "2016-11-07 16:12:00",
             "endDateTime": "2016-11-07 23:59:59"
           }
-        }
+        },
+        "Start": 14,
+        "Length": 29
       }
-    ]
+    ],
+    "NotSupported": "dotnet"
   },
   {
     "Input": "incontriamoci nel resto della mia giornata",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -1395,16 +1478,18 @@
             "startDateTime": "2016-11-07 16:12:00",
             "endDateTime": "2016-11-07 23:59:59"
           }
-        }
+        },
+        "Start": 14,
+        "Length": 28
       }
-    ]
+    ],
+    "NotSupported": "dotnet"
   },
   {
     "Input": "incontriamoci nel resto di questa giornata",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -1420,20 +1505,22 @@
             "startDateTime": "2016-11-07 16:12:00",
             "endDateTime": "2016-11-07 23:59:59"
           }
-        }
+        },
+        "Start": 14,
+        "Length": 28
       }
-    ]
+    ],
+    "NotSupported": "dotnet"
   },
   {
     "Input": "incontriamoci nel resto del giorno",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "nel resto del giorno",
+        "Text": "resto del giorno",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2016-11-07T16:12:00,2016-11-07T23:59:59,PT28079S)",
@@ -1445,7 +1532,9 @@
             "startDateTime": "2016-11-07 16:12:00",
             "endDateTime": "2016-11-07 23:59:59"
           }
-        }
+        },
+        "Start": 18,
+        "Length": 16
       }
     ]
   },
@@ -1454,7 +1543,6 @@
     "Context": {
       "ReferenceDateTime": "2017-11-09T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -1470,16 +1558,18 @@
             "startDateTime": "2017-11-03 13:00:00",
             "endDateTime": "2017-11-03 16:00:00"
           }
-        }
+        },
+        "Start": 77,
+        "Length": 28
       }
-    ]
+    ],
+    "NotSupported": "dotnet"
   },
   {
     "Input": "Puoi calendarizzarci domani tra le 8am e le 2pm?",
     "Context": {
       "ReferenceDateTime": "2017-11-09T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -1495,16 +1585,18 @@
             "startDateTime": "2017-11-10 08:00:00",
             "endDateTime": "2017-11-10 14:00:00"
           }
-        }
+        },
+        "Start": 21,
+        "Length": 26
       }
-    ]
+    ],
+    "NotSupported": "dotnet"
   },
   {
     "Input": "Puoi calendarizzarci il 9 Dic tra le 8am e le 2pm?",
     "Context": {
       "ReferenceDateTime": "2017-11-09T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -1520,16 +1612,18 @@
             "startDateTime": "2016-12-09 08:00:00",
             "endDateTime": "2016-12-09 14:00:00"
           }
-        }
+        },
+        "Start": 21,
+        "Length": 28
       }
-    ]
+    ],
+    "NotSupported": "dotnet"
   },
   {
     "Input": "Ciao Cortana- per favore programma un colloquio skype con Jennifer.  Ho bisogno di un colloquio di 30 minuti questo venerdì, nel pomeriggio.",
     "Context": {
       "ReferenceDateTime": "2017-11-13T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -1545,16 +1639,18 @@
             "startDateTime": "2017-11-17 12:00:00",
             "endDateTime": "2017-11-17 16:00:00"
           }
-        }
+        },
+        "Start": 109,
+        "Length": 30
       }
-    ]
+    ],
+    "NotSupported": "dotnet"
   },
   {
     "Input": "Ciao Cortana-  per favore programma un colloquio skype con Jennifer.  Ho bisogno di un colloquio di 30 minuti nel pomeriggio, questo venerdì!",
     "Context": {
       "ReferenceDateTime": "2017-11-13T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -1570,16 +1666,18 @@
             "startDateTime": "2017-11-17 12:00:00",
             "endDateTime": "2017-11-17 16:00:00"
           }
-        }
+        },
+        "Start": 110,
+        "Length": 30
       }
-    ]
+    ],
+    "NotSupported": "dotnet"
   },
   {
     "Input": "Ciao Cortana-  per favore programma un colloquio skype con Jennifer.  Ho bisogno di un colloquio di 30 minuti nel pomeriggio, venerdì prossimo!",
     "Context": {
       "ReferenceDateTime": "2017-11-13T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -1595,16 +1693,18 @@
             "startDateTime": "2017-11-24 12:00:00",
             "endDateTime": "2017-11-24 16:00:00"
           }
-        }
+        },
+        "Start": 110,
+        "Length": 32
       }
-    ]
+    ],
+    "NotSupported": "dotnet"
   },
   {
     "Input": "Ciao Cortana-  per favore programma un colloquio skype con Jennifer.  Ho bisogno di un colloquio di 30 minuti nel pomeriggio, venerdì scorso!",
     "Context": {
       "ReferenceDateTime": "2017-11-13T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -1620,16 +1720,18 @@
             "startDateTime": "2017-11-10 12:00:00",
             "endDateTime": "2017-11-10 16:00:00"
           }
-        }
+        },
+        "Start": 110,
+        "Length": 30
       }
-    ]
+    ],
+    "NotSupported": "dotnet"
   },
   {
     "Input": "Cortana, per favore programma uno skype per una riunione d'affari con Wayne, venerdì pomeriggio tra le 1PM e le 4 PM.",
     "Context": {
       "ReferenceDateTime": "2017-11-14T19:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -1645,16 +1747,18 @@
             "startDateTime": "2017-11-10 13:00:00",
             "endDateTime": "2017-11-10 16:00:00"
           }
-        }
+        },
+        "Start": 77,
+        "Length": 39
       }
-    ]
+    ],
+    "NotSupported": "dotnet"
   },
   {
     "Input": "Cortana, per favore programma uno skype per una riunione d'affari con Wayne, nel pomeriggio di venerdì tra le 1PM e le 4 PM.",
     "Context": {
       "ReferenceDateTime": "2017-11-14T19:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -1670,16 +1774,18 @@
             "startDateTime": "2017-11-10 13:00:00",
             "endDateTime": "2017-11-10 16:00:00"
           }
-        }
+        },
+        "Start": 77,
+        "Length": 46
       }
-    ]
+    ],
+    "NotSupported": "dotnet"
   },
   {
     "Input": "Cortana, per favore programma un colloquio skype il 2018-09-23 dalle 1p.m. alle 4",
     "Context": {
       "ReferenceDateTime": "2017-11-17T19:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -1695,16 +1801,18 @@
             "startDateTime": "2018-09-23 13:00:00",
             "endDateTime": "2018-09-23 16:00:00"
           }
-        }
+        },
+        "Start": 49,
+        "Length": 32
       }
-    ]
+    ],
+    "NotSupported": "dotnet"
   },
   {
     "Input": "Cortana, per favore programma un colloquio skype il 2018-09-23 dalle 1:30p.m. alle 4.",
     "Context": {
       "ReferenceDateTime": "2017-11-17T19:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -1720,20 +1828,22 @@
             "startDateTime": "2018-09-23 13:30:00",
             "endDateTime": "2018-09-23 16:00:00"
           }
-        }
+        },
+        "Start": 49,
+        "Length": 35
       }
-    ]
+    ],
+    "NotSupported": "dotnet"
   },
   {
     "Input": "incontriamoci il 5 Feb AM",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "5 Feb AM",
+        "Text": "il 5 Feb AM",
         "Type": "datetimerange",
         "Value": {
           "Timex": "XXXX-02-05TMO",
@@ -1745,16 +1855,18 @@
             "startDateTime": "2016-02-05 08:00:00",
             "endDateTime": "2016-02-05 12:00:00"
           }
-        }
+        },
+        "Start": 14,
+        "Length": 11
       }
-    ]
+    ],
+    "NotSupported": "dotnet"
   },
   {
     "Input": "Tornerò martedì AM",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -1770,16 +1882,18 @@
             "startDateTime": "2016-11-01 08:00:00",
             "endDateTime": "2016-11-01 12:00:00"
           }
-        }
+        },
+        "Start": 8,
+        "Length": 10
       }
-    ]
+    ],
+    "NotSupported": "dotnet"
   },
   {
     "Input": "Tornerò martedì PM",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -1795,16 +1909,18 @@
             "startDateTime": "2016-11-01 12:00:00",
             "endDateTime": "2016-11-01 16:00:00"
           }
-        }
+        },
+        "Start": 8,
+        "Length": 10
       }
-    ]
+    ],
+    "NotSupported": "dotnet"
   },
   {
     "Input": "Succederà 2 ore in futuro",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
@@ -1820,7 +1936,9 @@
             "startDateTime": "2016-11-07 16:12:00",
             "endDateTime": "2016-11-07 18:12:00"
           }
-        }
+        },
+        "Start": 10,
+        "Length": 15
       }
     ]
   }

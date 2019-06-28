@@ -9,40 +9,41 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
     public class ItalianMergedExtractorConfiguration : BaseOptionsConfiguration, IMergedExtractorConfiguration
     {
         public static readonly Regex BeforeRegex =
-            new Regex(DateTimeDefinitions.BeforeRegex, RegexFlags); // avant - 'before'
+            new Regex(DateTimeDefinitions.BeforeRegex, RegexOptions.Singleline);
 
         public static readonly Regex AfterRegex =
-            new Regex(DateTimeDefinitions.AfterRegex, RegexFlags); // ensuite/puis are for adverbs, i.e 'i ate and then i walked', so we'll use apres
+            new Regex(DateTimeDefinitions.AfterRegex, RegexOptions.Singleline);
 
         public static readonly Regex SinceRegex =
-            new Regex(DateTimeDefinitions.SinceRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.SinceRegex, RegexOptions.Singleline);
 
         public static readonly Regex AroundRegex =
-            new Regex(DateTimeDefinitions.AroundRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.AroundRegex, RegexOptions.Singleline);
 
         public static readonly Regex FromToRegex =
-            new Regex(DateTimeDefinitions.FromToRegex, RegexFlags); // 'Je vais du lundi au mecredi' - I will go from monday to weds
+            new Regex(DateTimeDefinitions.FromToRegex, RegexOptions.Singleline);
 
         public static readonly Regex SingleAmbiguousMonthRegex =
-            new Regex(DateTimeDefinitions.SingleAmbiguousMonthRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.SingleAmbiguousMonthRegex, RegexOptions.Singleline);
 
         public static readonly Regex PrepositionSuffixRegex =
-            new Regex(DateTimeDefinitions.PrepositionSuffixRegex, RegexFlags);
-
-        public static readonly Regex NumberEndingPattern =
-            new Regex(DateTimeDefinitions.NumberEndingPattern, RegexFlags);
+            new Regex(DateTimeDefinitions.PrepositionSuffixRegex, RegexOptions.Singleline);
 
         public static readonly Regex SuffixAfterRegex =
-            new Regex(DateTimeDefinitions.SuffixAfterRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.SuffixAfterRegex, RegexOptions.Singleline);
+
+        public static readonly Regex NumberEndingPattern =
+            new Regex(DateTimeDefinitions.NumberEndingPattern, RegexOptions.Singleline);
+
+        public static readonly Regex DateAfterRegex =
+            new Regex(DateTimeDefinitions.DateAfterRegex, RegexOptions.Singleline);
 
         public static readonly Regex UnspecificDatePeriodRegex =
-            new Regex(DateTimeDefinitions.UnspecificDatePeriodRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.UnspecificDatePeriodRegex, RegexOptions.Singleline);
 
         public static readonly Regex[] TermFilterRegexes = { };
 
         public static readonly StringMatcher SuperfluousWordMatcher = new StringMatcher();
-
-        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         public ItalianMergedExtractorConfiguration(IOptionsConfiguration config)
             : base(config)
@@ -107,10 +108,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         Regex IMergedExtractorConfiguration.UnspecificDatePeriodRegex => UnspecificDatePeriodRegex;
 
-        public Regex FailFastRegex { get; } = null;
-
         IEnumerable<Regex> IMergedExtractorConfiguration.TermFilterRegexes => TermFilterRegexes;
 
         StringMatcher IMergedExtractorConfiguration.SuperfluousWordMatcher => SuperfluousWordMatcher;
+
+        public Regex FailFastRegex { get; } = null;
+
     }
 }

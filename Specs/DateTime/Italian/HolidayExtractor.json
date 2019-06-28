@@ -1,101 +1,116 @@
 [
   {
     "Input": "Tornerò a natale",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "natale",
-        "Type": "date"
+        "Type": "date",
+        "Start": 10,
+        "Length": 6
       }
     ]
   },
   {
     "Input": "Tornerò il giorno di natale",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
-        "Text": "il giorno di natale",
-        "Type": "date"
+        "Text": "giorno di natale",
+        "Type": "date",
+        "Start": 11,
+        "Length": 16
       }
     ]
   },
   {
     "Input": "Tornerò al capodanno cinese",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "capodanno cinese",
-        "Type": "date"
+        "Type": "date",
+        "Start": 11,
+        "Length": 16
       }
-    ]
+    ],
+    "NotSupported": "dotnet"
   },
   {
     "Input": "Tornerò il giorno del ringraziamento",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "giorno del ringraziamento",
-        "Type": "date"
+        "Type": "date",
+        "Start": 11,
+        "Length": 25
       }
-    ]
+    ],
+    "NotSupported": "dotnet"
   },
   {
     "Input": "Tornerò alla festa del papà",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "festa del papà",
-        "Type": "date"
+        "Type": "date",
+        "Start": 13,
+        "Length": 14
       }
     ]
   },
   {
     "Input": "Tornerò al capodanno cinese di quest'anno",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "capodanno cinese di quest'anno",
-        "Type": "date"
+        "Type": "date",
+        "Start": 11,
+        "Length": 30
       }
-    ]
+    ],
+    "NotSupported": "dotnet"
   },
   {
     "Input": "Tornerò al capodanno cinese del 2016",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "capodanno cinese del 2016",
-        "Type": "date"
+        "Type": "date",
+        "Start": 11,
+        "Length": 25
       }
-    ]
+    ],
+    "NotSupported": "dotnet"
   },
   {
     "Input": "Tornerò al capodanno cinese 2016",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "capodanno cinese 2016",
-        "Type": "date"
+        "Type": "date",
+        "Start": 11,
+        "Length": 21
       }
-    ]
+    ],
+    "NotSupported": "dotnet"
   },
   {
     "Input": "Tornerò il primo giorno di quaresima",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
       {
         "Text": "il primo giorno di quaresima",
-        "Type": "date"
+        "Type": "date",
+        "Start": 8,
+        "Length": 28
       }
-    ]
+    ],
+    "NotSupported": "dotnet"
   }
 ]

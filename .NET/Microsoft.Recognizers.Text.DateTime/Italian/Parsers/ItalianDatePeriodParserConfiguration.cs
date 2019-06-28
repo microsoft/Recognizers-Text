@@ -8,27 +8,23 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 {
     public class ItalianDatePeriodParserConfiguration : BaseOptionsConfiguration, IDatePeriodParserConfiguration
     {
-
-        // @TODO move regexes to resources
         public static readonly Regex NextPrefixRegex =
-            new Regex(@"(prochain|prochaine)\b", RegexFlags);
+            new Regex(@"(prossimo|prossima)\b", RegexOptions.Singleline);
 
         public static readonly Regex PastPrefixRegex =
-            new Regex(@"(dernier)\b", RegexFlags);
+            new Regex(@"(scorso|scorsa|passato|passata)\b", RegexOptions.Singleline);
 
         public static readonly Regex ThisPrefixRegex =
-            new Regex(@"(ce|cette)\b", RegexFlags);
+            new Regex(@"(questo|questa)\b", RegexOptions.Singleline);
 
         public static readonly Regex RelativeRegex =
-            new Regex(DateTimeDefinitions.RelativeRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.RelativeRegex, RegexOptions.Singleline);
 
         public static readonly Regex UnspecificEndOfRangeRegex =
-            new Regex(DateTimeDefinitions.UnspecificEndOfRangeRegex, RegexFlags);
-
-        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+            new Regex(DateTimeDefinitions.UnspecificEndOfRangeRegex, RegexOptions.Singleline);
 
         public ItalianDatePeriodParserConfiguration(ICommonDateTimeParserConfiguration config)
-            : base(config.Options)
+    : base(config.Options)
         {
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
             CardinalExtractor = config.CardinalExtractor;
@@ -39,7 +35,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             DateExtractor = config.DateExtractor;
             DurationParser = config.DurationParser;
             DateParser = config.DateParser;
-
             MonthFrontBetweenRegex = ItalianDatePeriodExtractorConfiguration.MonthFrontBetweenRegex;
             BetweenRegex = ItalianDatePeriodExtractorConfiguration.BetweenRegex;
             MonthFrontSimpleCasesRegex = ItalianDatePeriodExtractorConfiguration.MonthFrontSimpleCasesRegex;
@@ -78,15 +73,14 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             MoreThanRegex = ItalianDatePeriodExtractorConfiguration.MoreThanRegex;
             CenturySuffixRegex = ItalianDatePeriodExtractorConfiguration.CenturySuffixRegex;
             NowRegex = ItalianDatePeriodExtractorConfiguration.NowRegex;
-
             UnitMap = config.UnitMap;
             CardinalMap = config.CardinalMap;
             DayOfMonth = config.DayOfMonth;
             MonthOfYear = config.MonthOfYear;
             SeasonMap = config.SeasonMap;
-            SpecialYearPrefixesMap = config.SpecialYearPrefixesMap;
             WrittenDecades = config.WrittenDecades;
             SpecialDecadeCases = config.SpecialDecadeCases;
+            SpecialYearPrefixesMap = config.SpecialYearPrefixesMap;
         }
 
         public int MinYearNum { get; }
@@ -183,9 +177,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public Regex MoreThanRegex { get; }
 
-        public Regex CenturySuffixRegex { get; }
-
         public Regex NowRegex { get; }
+
+        public Regex CenturySuffixRegex { get; }
 
         Regex IDatePeriodParserConfiguration.NextPrefixRegex => NextPrefixRegex;
 
@@ -207,26 +201,27 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public IImmutableDictionary<string, string> SeasonMap { get; }
 
-        public IImmutableDictionary<string, string> SpecialYearPrefixesMap { get; }
-
         public IImmutableDictionary<string, int> WrittenDecades { get; }
 
         public IImmutableDictionary<string, int> Numbers { get; }
 
         public IImmutableDictionary<string, int> SpecialDecadeCases { get; }
 
+        public IImmutableDictionary<string, string> SpecialYearPrefixesMap { get; }
+
         public IImmutableList<string> InStringList { get; }
 
         public int GetSwiftDayOrMonth(string text)
         {
-            var trimmedText = text.Trim();
+            var trimmedText = text.Trim().ToLowerInvariant();
             var swift = 0;
 
             // TODO: Replace with a regex
             // TODO: Add 'upcoming' key word
 
             // example: "nous serons ensemble cette fois la semaine prochaine" - "We'll be together this time next week"
-            if (trimmedText.EndsWith("prochain") || trimmedText.EndsWith("prochaine"))
+            if (trimmedText.EndsWith("prossimo") || trimmedText.EndsWith("prossima") ||
+                trimmedText.EndsWith("seguente") || trimmedText.EndsWith("seguenti"))
             {
                 swift = 1;
             }
@@ -234,8 +229,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             // TODO: Replace with a regex
 
             // example: Je l'ai vue pas plus tard que la semaine derniere - "I saw her only last week"
-            if (trimmedText.EndsWith("dernière") || trimmedText.EndsWith("dernières") ||
-                trimmedText.EndsWith("derniere") || trimmedText.EndsWith("dernieres"))
+            if (trimmedText.EndsWith("passato") || trimmedText.EndsWith("passati") ||
+                trimmedText.EndsWith("passata") || trimmedText.EndsWith("passate") ||
+                trimmedText.EndsWith("scorso") || trimmedText.EndsWith("scorsi") ||
+                trimmedText.EndsWith("scorsa") || trimmedText.EndsWith("scorse"))
             {
                 swift = -1;
             }
@@ -245,19 +242,22 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public int GetSwiftYear(string text)
         {
-            var trimmedText = text.Trim();
+            var trimmedText = text.Trim().ToLowerInvariant();
             var swift = -10;
-            if (trimmedText.EndsWith("prochain") || trimmedText.EndsWith("prochaine"))
+            if (trimmedText.EndsWith("prossimo") || trimmedText.EndsWith("prossima") ||
+                trimmedText.EndsWith("seguente") || trimmedText.EndsWith("seguenti"))
             {
                 swift = 1;
             }
 
-            if (trimmedText.EndsWith("dernières") || trimmedText.EndsWith("dernière") ||
-                trimmedText.EndsWith("dernieres") || trimmedText.EndsWith("derniere") || trimmedText.EndsWith("dernier"))
+            if (trimmedText.EndsWith("passato") || trimmedText.EndsWith("passati") ||
+                trimmedText.EndsWith("passata") || trimmedText.EndsWith("passate") ||
+                trimmedText.EndsWith("scorso") || trimmedText.EndsWith("scorsi") ||
+                trimmedText.EndsWith("scorsa") || trimmedText.EndsWith("scorse"))
             {
                 swift = -1;
             }
-            else if (trimmedText.StartsWith("cette"))
+            else if (trimmedText.StartsWith("questo|questa"))
             {
                 swift = 0;
             }
@@ -267,51 +267,51 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public bool IsFuture(string text)
         {
-            var trimmedText = text.Trim();
+            var trimmedText = text.Trim().ToLowerInvariant();
             return DateTimeDefinitions.FutureStartTerms.Any(o => trimmedText.StartsWith(o)) ||
                    DateTimeDefinitions.FutureEndTerms.Any(o => trimmedText.EndsWith(o));
         }
 
         public bool IsLastCardinal(string text)
         {
-            var trimmedText = text.Trim();
+            var trimmedText = text.Trim().ToLowerInvariant();
             return DateTimeDefinitions.LastCardinalTerms.Any(o => trimmedText.Equals(o));
         }
 
         public bool IsMonthOnly(string text)
         {
-            var trimmedText = text.Trim();
+            var trimmedText = text.Trim().ToLowerInvariant();
             return DateTimeDefinitions.MonthTerms.Any(o => trimmedText.EndsWith(o));
         }
 
         public bool IsMonthToDate(string text)
         {
-            var trimmedText = text.Trim();
+            var trimmedText = text.Trim().ToLowerInvariant();
             return DateTimeDefinitions.MonthToDateTerms.Any(o => trimmedText.Equals(o));
         }
 
         public bool IsWeekend(string text)
         {
-            var trimmedText = text.Trim();
+            var trimmedText = text.Trim().ToLowerInvariant();
             return DateTimeDefinitions.WeekendTerms.Any(o => trimmedText.EndsWith(o));
         }
 
         public bool IsWeekOnly(string text)
         {
-            var trimmedText = text.Trim();
+            var trimmedText = text.Trim().ToLowerInvariant();
             return DateTimeDefinitions.WeekTerms.Any(o => trimmedText.EndsWith(o)) &&
                    !DateTimeDefinitions.WeekendTerms.Any(o => trimmedText.EndsWith(o));
         }
 
         public bool IsYearOnly(string text)
         {
-            var trimmedText = text.Trim();
+            var trimmedText = text.Trim().ToLowerInvariant();
             return DateTimeDefinitions.YearTerms.Any(o => trimmedText.EndsWith(o));
         }
 
         public bool IsYearToDate(string text)
         {
-            var trimmedText = text.Trim();
+            var trimmedText = text.Trim().ToLowerInvariant();
             return DateTimeDefinitions.YearToDateTerms.Any(o => trimmedText.Equals(o));
         }
     }

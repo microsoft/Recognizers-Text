@@ -12,7 +12,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             NumberParser = config.NumberParser;
             DurationExtractor = new BaseDurationExtractor(new ItalianDurationExtractorConfiguration(this), false);
             NumberCombinedWithUnit = ItalianDurationExtractorConfiguration.NumberCombinedWithDurationUnit;
-
             AnUnitRegex = ItalianDurationExtractorConfiguration.AnUnitRegex;
             DuringRegex = ItalianDurationExtractorConfiguration.DuringRegex;
             AllDateUnitRegex = ItalianDurationExtractorConfiguration.AllRegex;
@@ -23,7 +22,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             InexactNumberRegex = ItalianDurationExtractorConfiguration.InexactNumberRegex;
             InexactNumberUnitRegex = ItalianDurationExtractorConfiguration.InexactNumberUnitRegex;
             DurationUnitRegex = ItalianDurationExtractorConfiguration.DurationUnitRegex;
-
             UnitMap = config.UnitMap;
             UnitValueMap = config.UnitValueMap;
             DoubleNumbers = config.DoubleNumbers;

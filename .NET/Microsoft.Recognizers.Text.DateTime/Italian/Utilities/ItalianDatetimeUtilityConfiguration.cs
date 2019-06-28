@@ -8,42 +8,40 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian.Utilities
     public class ItalianDatetimeUtilityConfiguration : IDateTimeUtilityConfiguration
     {
         public static readonly Regex AgoRegex =
-            new Regex(DateTimeDefinitions.AgoPrefixRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.AgoRegex, RegexOptions.Singleline);
 
         public static readonly Regex LaterRegex =
-            new Regex(DateTimeDefinitions.LaterRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.LaterRegex, RegexOptions.Singleline);
 
         public static readonly Regex InConnectorRegex =
-            new Regex(DateTimeDefinitions.InConnectorRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.InConnectorRegex, RegexOptions.Singleline);
 
         public static readonly Regex SinceYearSuffixRegex =
-            new Regex(DateTimeDefinitions.SinceYearSuffixRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.SinceYearSuffixRegex, RegexOptions.Singleline);
 
         public static readonly Regex WithinNextPrefixRegex =
-            new Regex(DateTimeDefinitions.WithinNextPrefixRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.WithinNextPrefixRegex, RegexOptions.Singleline);
 
         public static readonly Regex AmDescRegex =
-            new Regex(DateTimeDefinitions.AmDescRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.AmDescRegex, RegexOptions.Singleline);
 
         public static readonly Regex PmDescRegex =
-            new Regex(DateTimeDefinitions.PmDescRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.PmDescRegex, RegexOptions.Singleline);
 
         public static readonly Regex AmPmDescRegex =
-            new Regex(DateTimeDefinitions.AmPmDescRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.AmPmDescRegex, RegexOptions.Singleline);
 
         public static readonly Regex RangeUnitRegex =
-            new Regex(DateTimeDefinitions.RangeUnitRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.RangeUnitRegex, RegexOptions.Singleline);
 
         public static readonly Regex TimeUnitRegex =
-            new Regex(DateTimeDefinitions.TimeUnitRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.TimeUnitRegex, RegexOptions.Singleline);
 
         public static readonly Regex DateUnitRegex =
-            new Regex(DateTimeDefinitions.DateUnitRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.DateUnitRegex, RegexOptions.Singleline);
 
         public static readonly Regex CommonDatePrefixRegex =
-            new Regex(DateTimeDefinitions.CommonDatePrefixRegex, RegexFlags);
-
-        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+            new Regex(DateTimeDefinitions.CommonDatePrefixRegex, RegexOptions.Singleline);
 
         Regex IDateTimeUtilityConfiguration.LaterRegex => LaterRegex;
 

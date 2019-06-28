@@ -9,30 +9,34 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         public static readonly string ExtractorName = Constants.SYS_DATETIME_SET;
 
         public static readonly Regex SetUnitRegex =
-            new Regex(DateTimeDefinitions.DurationUnitRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.DurationUnitRegex, RegexOptions.Singleline);
 
         public static readonly Regex PeriodicRegex =
-            new Regex(DateTimeDefinitions.PeriodicRegex, RegexFlags);
+            new Regex(
+                DateTimeDefinitions.PeriodicRegex, // TODO: Decide between adjective and adverb, i.e monthly - 'mensuel' vs 'mensuellement'
+                RegexOptions.Singleline);
 
-        public static readonly Regex EachUnitRegex =
-            new Regex(DateTimeDefinitions.EachUnitRegex, RegexFlags);
+        public static readonly Regex EachUnitRegex = new Regex(
+            DateTimeDefinitions.EachUnitRegex,
+            RegexOptions.Singleline);
 
-        public static readonly Regex EachPrefixRegex =
-            new Regex(DateTimeDefinitions.EachPrefixRegex, RegexFlags);
+        public static readonly Regex EachPrefixRegex = new Regex(
+            DateTimeDefinitions.EachPrefixRegex,
+            RegexOptions.Singleline);
 
-        public static readonly Regex EachDayRegex =
-            new Regex(DateTimeDefinitions.EachDayRegex, RegexFlags);
+        public static readonly Regex EachDayRegex = new Regex(
+            DateTimeDefinitions.EachDayRegex,
+            RegexOptions.Singleline);
 
-        public static readonly Regex SetLastRegex =
-            new Regex(DateTimeDefinitions.SetLastRegex, RegexFlags);
+        public static readonly Regex SetLastRegex = new Regex(
+            DateTimeDefinitions.SetLastRegex,
+            RegexOptions.Singleline);
 
         public static readonly Regex SetWeekDayRegex =
-            new Regex(DateTimeDefinitions.SetWeekDayRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.SetWeekDayRegex, RegexOptions.Singleline);
 
         public static readonly Regex SetEachRegex =
-            new Regex(DateTimeDefinitions.SetEachRegex, RegexFlags);
-
-        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+            new Regex(DateTimeDefinitions.SetEachRegex, RegexOptions.Singleline);
 
         public ItalianSetExtractorConfiguration(IOptionsConfiguration config)
             : base(config)
