@@ -523,7 +523,7 @@ public class EnglishDateTime {
             .replace("{BasicTime}", BasicTime)
             .replace("{DescRegex}", DescRegex);
 
-    public static final String TimeRegex9 = "\\b{PeriodHourNumRegex}\\s+{FivesRegex}((\\s*{DescRegex})|\\b)"
+    public static final String TimeRegex9 = "\\b{PeriodHourNumRegex}(\\s+|-){FivesRegex}((\\s*{DescRegex})|\\b)"
             .replace("{PeriodHourNumRegex}", PeriodHourNumRegex)
             .replace("{FivesRegex}", FivesRegex)
             .replace("{DescRegex}", DescRegex);
@@ -1249,7 +1249,7 @@ public class EnglishDateTime {
         .put("inaugurationday", new String[]{"inaugurationday"})
         .put("groundhougday", new String[]{"groundhougday"})
         .put("valentinesday", new String[]{"valentinesday"})
-        .put("stpatrickday", new String[]{"stpatrickday", "stpatricksday"})
+        .put("stpatrickday", new String[]{"stpatrickday", "stpatricksday", "stpatrick"})
         .put("aprilfools", new String[]{"aprilfools"})
         .put("stgeorgeday", new String[]{"stgeorgeday"})
         .put("mayday", new String[]{"mayday", "intlworkersday", "internationalworkersday"})

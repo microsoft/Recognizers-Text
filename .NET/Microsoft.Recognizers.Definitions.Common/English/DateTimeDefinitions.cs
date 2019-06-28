@@ -166,7 +166,7 @@ namespace Microsoft.Recognizers.Definitions.English
       public static readonly string TimeRegex6 = $@"{BasicTime}(\s*{DescRegex})?\s+{TimeSuffix}\b";
       public static readonly string TimeRegex7 = $@"\b{TimeSuffixFull}\s+(at\s+)?{BasicTime}((\s*{DescRegex})|\b)";
       public static readonly string TimeRegex8 = $@".^";
-      public static readonly string TimeRegex9 = $@"\b{PeriodHourNumRegex}\s+{FivesRegex}((\s*{DescRegex})|\b)";
+      public static readonly string TimeRegex9 = $@"\b{PeriodHourNumRegex}(\s+|-){FivesRegex}((\s*{DescRegex})|\b)";
       public static readonly string TimeRegex10 = $@"\b({TimePrefix}\s+)?{BaseDateTime.HourRegex}(\s*h\s*){BaseDateTime.MinuteRegex}(\s*{DescRegex})?";
       public static readonly string TimeRegex11 = $@"\b(?:(?:{TimeTokenPrefix}{TimeRegexWithDotConnector})(?!\s*per\s*cent|%)|(?:{TimeRegexWithDotConnector}(\s*{DescRegex})))";
       public static readonly string FirstTimeRegexInTimeRange = $@"\b{TimeRegexWithDotConnector}(\s*{DescRegex})?";
@@ -639,7 +639,7 @@ namespace Microsoft.Recognizers.Definitions.English
             { @"inaugurationday", new string[] { @"inaugurationday" } },
             { @"groundhougday", new string[] { @"groundhougday" } },
             { @"valentinesday", new string[] { @"valentinesday" } },
-            { @"stpatrickday", new string[] { @"stpatrickday", @"stpatricksday" } },
+            { @"stpatrickday", new string[] { @"stpatrickday", @"stpatricksday", "stpatrick" } },
             { @"aprilfools", new string[] { @"aprilfools" } },
             { @"stgeorgeday", new string[] { @"stgeorgeday" } },
             { @"mayday", new string[] { @"mayday", @"intlworkersday", @"internationalworkersday" } },

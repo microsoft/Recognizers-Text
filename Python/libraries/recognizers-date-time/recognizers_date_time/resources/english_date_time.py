@@ -159,7 +159,7 @@ class EnglishDateTime:
     TimeRegex6 = f'{BasicTime}(\\s*{DescRegex})?\\s+{TimeSuffix}\\b'
     TimeRegex7 = f'\\b{TimeSuffixFull}\\s+(at\\s+)?{BasicTime}((\\s*{DescRegex})|\\b)'
     TimeRegex8 = f'.^'
-    TimeRegex9 = f'\\b{PeriodHourNumRegex}\\s+{FivesRegex}((\\s*{DescRegex})|\\b)'
+    TimeRegex9 = f'\\b{PeriodHourNumRegex}(\\s+|-){FivesRegex}((\\s*{DescRegex})|\\b)'
     TimeRegex10 = f'\\b({TimePrefix}\\s+)?{BaseDateTime.HourRegex}(\\s*h\\s*){BaseDateTime.MinuteRegex}(\\s*{DescRegex})?'
     TimeRegex11 = f'\\b(?:(?:{TimeTokenPrefix}{TimeRegexWithDotConnector})(?!\\s*per\\s*cent|%)|(?:{TimeRegexWithDotConnector}(\\s*{DescRegex})))'
     FirstTimeRegexInTimeRange = f'\\b{TimeRegexWithDotConnector}(\\s*{DescRegex})?'
@@ -597,7 +597,7 @@ class EnglishDateTime:
                          ("inaugurationday", ["inaugurationday"]),
                          ("groundhougday", ["groundhougday"]),
                          ("valentinesday", ["valentinesday"]),
-                         ("stpatrickday", ["stpatrickday", "stpatricksday"]),
+                         ("stpatrickday", ["stpatrickday", "stpatricksday", "stpatrick"]),
                          ("aprilfools", ["aprilfools"]),
                          ("stgeorgeday", ["stgeorgeday"]),
                          ("mayday", ["mayday", "intlworkersday", "internationalworkersday"]),

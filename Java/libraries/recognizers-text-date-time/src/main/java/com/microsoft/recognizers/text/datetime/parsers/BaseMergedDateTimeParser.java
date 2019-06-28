@@ -257,7 +257,10 @@ public class BaseMergedDateTimeParser implements IDateTimeParser {
             pr.setValue(dateTimeResolutionForSplit(pr));
         } else {
             boolean hasModifier = hasBefore || hasAfter || hasSince;
-            ((DateTimeResolutionResult)pr.getValue()).setHasRangeChangingMod(hasModifier);
+            if (pr.getValue() != null) {
+                ((DateTimeResolutionResult)pr.getValue()).setHasRangeChangingMod(hasModifier);
+            }
+
             pr = setParseResult(pr, hasModifier);
         }
 

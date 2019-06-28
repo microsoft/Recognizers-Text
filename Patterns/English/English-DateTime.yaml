@@ -382,7 +382,7 @@ TimeRegex8: !nestedRegex
   def: .^
   references: [ TimeSuffixFull, BasicTime, DescRegex ]
 TimeRegex9: !nestedRegex
-  def: \b{PeriodHourNumRegex}\s+{FivesRegex}((\s*{DescRegex})|\b)
+  def: \b{PeriodHourNumRegex}(\s+|-){FivesRegex}((\s*{DescRegex})|\b)
   references: [ PeriodHourNumRegex, FivesRegex, DescRegex ]
 TimeRegex10: !nestedRegex
   def: \b({TimePrefix}\s+)?{BaseDateTime.HourRegex}(\s*h\s*){BaseDateTime.MinuteRegex}(\s*{DescRegex})?
@@ -1020,7 +1020,7 @@ HolidayNames: !dictionary
     inaugurationday: [ inaugurationday ]
     groundhougday: [ groundhougday ]
     valentinesday: [ valentinesday ]
-    stpatrickday: [ stpatrickday, stpatricksday ]
+    stpatrickday: [ stpatrickday, stpatricksday, stpatrick ]
     aprilfools: [ aprilfools ]
     stgeorgeday: [ stgeorgeday ]
     mayday: [ mayday, intlworkersday, internationalworkersday ]

@@ -414,7 +414,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             else
             {
                 var hasRangeChangingMod = hasBefore || hasAfter || hasSince;
-                ((DateTimeResolutionResult)pr.Value).HasRangeChangingMod = hasRangeChangingMod;
+                if (pr.Value != null)
+                {
+                    ((DateTimeResolutionResult)pr.Value).HasRangeChangingMod = hasRangeChangingMod;
+                }
+
                 pr = SetParseResult(pr, hasRangeChangingMod);
             }
 
