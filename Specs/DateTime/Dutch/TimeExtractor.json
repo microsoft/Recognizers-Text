@@ -9,6 +9,7 @@
         "Length": 5
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -21,6 +22,7 @@
         "Length": 9
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -33,6 +35,7 @@
         "Length": 15
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -45,6 +48,7 @@
         "Length": 14
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -57,6 +61,7 @@
         "Length": 17
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -69,6 +74,7 @@
         "Length": 5
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -81,6 +87,7 @@
         "Length": 8
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -93,6 +100,7 @@
         "Length": 9
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -105,6 +113,7 @@
         "Length": 5
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -117,6 +126,7 @@
         "Length": 8
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -129,6 +139,7 @@
         "Length": 5
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -141,6 +152,7 @@
         "Length": 9
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -153,6 +165,7 @@
         "Length": 17
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -165,6 +178,7 @@
         "Length": 15
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -177,6 +191,7 @@
         "Length": 10
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -189,6 +204,7 @@
         "Length": 15
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -201,6 +217,7 @@
         "Length": 23
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -213,6 +230,7 @@
         "Length": 22
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -225,6 +243,7 @@
         "Length": 9
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -237,6 +256,7 @@
         "Length": 19
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -249,6 +269,7 @@
         "Length": 21
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -261,6 +282,7 @@
         "Length": 26
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -273,6 +295,7 @@
         "Length": 30
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -285,6 +308,7 @@
         "Length": 17
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -297,6 +321,7 @@
         "Length": 14
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -309,6 +334,7 @@
         "Length": 17
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -321,6 +347,7 @@
         "Length": 19
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -333,6 +360,7 @@
         "Length": 26
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -345,6 +373,7 @@
         "Length": 32
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -357,6 +386,7 @@
         "Length": 13
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -369,6 +399,7 @@
         "Length": 22
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -381,6 +412,7 @@
         "Length": 17
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -393,6 +425,7 @@
         "Length": 7
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -405,6 +438,7 @@
         "Length": 10
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -417,6 +451,7 @@
         "Length": 17
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -429,6 +464,7 @@
         "Length": 11
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -441,6 +477,7 @@
         "Length": 11
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -453,6 +490,7 @@
         "Length": 5
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -465,6 +503,7 @@
         "Length": 9
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -477,6 +516,7 @@
         "Length": 11
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -489,6 +529,7 @@
         "Length": 10
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -501,6 +542,7 @@
         "Length": 10
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -513,6 +555,7 @@
         "Length": 6
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -525,6 +568,7 @@
         "Length": 13
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -537,6 +581,7 @@
         "Length": 7
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -549,6 +594,7 @@
         "Length": 5
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -561,6 +607,7 @@
         "Length": 10
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -573,6 +620,7 @@
         "Length": 8
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -585,6 +633,7 @@
         "Length": 12
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -597,6 +646,7 @@
         "Length": 10
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -609,6 +659,7 @@
         "Length": 13
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -621,6 +672,7 @@
         "Length": 21
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -633,6 +685,7 @@
         "Length": 6
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -645,6 +698,7 @@
         "Length": 8
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -667,6 +721,7 @@
         "Length": 16
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -679,10 +734,12 @@
         "Length": 20
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "Ik ben om 19:00 terug",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -695,6 +752,7 @@
   },
   {
     "Input": "Ik ben om 19:56 terug",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -707,6 +765,7 @@
   },
   {
     "Input": "Ik ben om 19:56:35 terug",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -719,6 +778,7 @@
   },
   {
     "Input": "Ik ben om 12:34:20u terug",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -731,6 +791,7 @@
   },
   {
     "Input": "Ik ben om 00:00:30 terug",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -743,6 +804,7 @@
   },
   {
     "Input": "Het is 8 uur 's morgens",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -755,6 +817,7 @@
   },
   {
     "Input": "Het is 8 uur 's avonds",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -767,6 +830,7 @@
   },
   {
     "Input": "Het is half negen 's avonds",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -779,6 +843,7 @@
   },
   {
     "Input": "Het is kwart voor 10 's avonds",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -791,6 +856,7 @@
   },
   {
     "Input": "Het is half acht 's morgens",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -803,6 +869,7 @@
   },
   {
     "Input": "Het is kwart voor 8 's morgens",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -815,6 +882,7 @@
   },
   {
     "Input": "Het is tien voor half 9 's avonds",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -827,6 +895,7 @@
   },
   {
     "Input": "Ik ga half acht 's avonds terug",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -839,6 +908,7 @@
   },
   {
     "Input": "Ik ga vijf over half acht 's avonds terug",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -851,6 +921,7 @@
   },
   {
     "Input": "Ik ga vijf over elf terug",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -863,6 +934,7 @@
   },
   {
     "Input": "Ik ga drie minuten voor half zes terug",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -875,6 +947,7 @@
   },
   {
     "Input": "Ik ga half zes 's avonds terug",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -887,6 +960,7 @@
   },
   {
     "Input": "Ik ga 's avonds half zes terug",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -899,6 +973,7 @@
   },
   {
     "Input": "Ik ben rond het middaguur terug",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -911,6 +986,7 @@
   },
   {
     "Input": "Ik ben het middaguur terug",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -923,6 +999,7 @@
   },
   {
     "Input": "Ik ben rond elven terug",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -935,6 +1012,7 @@
   },
   {
     "Input": "Ik ben 15:40 terug",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -947,6 +1025,7 @@
   },
   {
     "Input": "Ik ben 11:40 's morgens terug",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -959,6 +1038,7 @@
   },
   {
     "Input": "halverwege de ochtend",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -971,6 +1051,7 @@
   },
   {
     "Input": "halverwege de middag",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -983,6 +1064,7 @@
   },
   {
     "Input": "het middaguur",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -995,6 +1077,7 @@
   },
   {
     "Input": "Ik ben 19:00 terug",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1007,6 +1090,7 @@
   },
   {
     "Input": "Ik ben 7:56 terug",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1019,6 +1103,7 @@
   },
   {
     "Input": "Ik ben 7:56:35 terug",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1031,6 +1116,7 @@
   },
   {
     "Input": "Ik ben 12 uur lunchtijd terug",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1043,6 +1129,7 @@
   },
   {
     "Input": "Ik ben lunchtijd 12 uur terug",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1055,6 +1142,7 @@
   },
   {
     "Input": "Ik ben om lunchtijd 12 uur terug",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1067,11 +1155,13 @@
   },
   {
     "Input": "Cortana, schedule a meeting for next week.\nBentonville, AR 72716 P: 479.277",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   },
   {
     "Input": "21:00 schikt me",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1084,11 +1174,13 @@
   },
   {
     "Input": "9:00 schikt me",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   },
   {
     "Input": "Ik ben om 21:00 terug",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1101,6 +1193,7 @@
   },
   {
     "Input": "Ik ben om 9:00 terug",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1114,6 +1207,7 @@
   {
     "Input": "Dit product is geprijsd als 1.6714.",
     "Comment": "1 shouldn't recognized as time here",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   }

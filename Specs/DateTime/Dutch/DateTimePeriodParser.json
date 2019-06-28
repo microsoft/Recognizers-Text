@@ -23,6 +23,7 @@
         "Length": 32
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -49,6 +50,7 @@
         "Length": 24
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -75,6 +77,7 @@
         "Length": 23
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -101,6 +104,7 @@
         "Length": 34
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -127,6 +131,7 @@
         "Length": 28
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -153,6 +158,7 @@
         "Length": 28
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -179,6 +185,7 @@
         "Length": 28
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -186,6 +193,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "van half acht tot 4 uur ‘s middags",
@@ -231,6 +239,7 @@
         "Length": 47
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -257,6 +266,7 @@
         "Length": 46
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -283,6 +293,7 @@
         "Length": 30
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -309,6 +320,7 @@
         "Length": 64
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -335,6 +347,7 @@
         "Length": 8
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -361,6 +374,7 @@
         "Length": 8
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -387,6 +401,7 @@
         "Length": 10
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -413,6 +428,7 @@
         "Length": 8
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -439,6 +455,7 @@
         "Length": 12
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -465,6 +482,7 @@
         "Length": 11
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -491,6 +509,7 @@
         "Length": 11
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -517,6 +536,7 @@
         "Length": 13
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -543,6 +563,7 @@
         "Length": 11
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -569,6 +590,7 @@
         "Length": 11
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -595,6 +617,7 @@
         "Length": 24
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -621,6 +644,7 @@
         "Length": 17
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -647,6 +671,7 @@
         "Length": 15
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -673,6 +698,7 @@
         "Length": 18
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -699,6 +725,7 @@
         "Length": 12
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -725,6 +752,7 @@
         "Length": 16
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -751,6 +779,7 @@
         "Length": 12
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -777,6 +806,7 @@
         "Length": 19
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -803,6 +833,7 @@
         "Length": 14
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -829,6 +860,7 @@
         "Length": 25
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -855,6 +887,7 @@
         "Length": 14
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -881,6 +914,7 @@
         "Length": 13
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -907,6 +941,7 @@
         "Length": 12
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -933,6 +968,7 @@
         "Length": 20
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -959,6 +995,7 @@
         "Length": 26
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -985,6 +1022,7 @@
         "Length": 26
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -1011,6 +1049,7 @@
         "Length": 23
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -1037,6 +1076,7 @@
         "Length": 26
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -1063,6 +1103,7 @@
         "Length": 25
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -1089,6 +1130,7 @@
         "Length": 18
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -1115,6 +1157,7 @@
         "Length": 17
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -1141,6 +1184,7 @@
         "Length": 17
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -1167,6 +1211,7 @@
         "Length": 12
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -1193,6 +1238,7 @@
         "Length": 17
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -1219,6 +1265,7 @@
         "Length": 27
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -1245,6 +1292,7 @@
         "Length": 24
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -1271,6 +1319,7 @@
         "Length": 27
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -1297,6 +1346,7 @@
         "Length": 35
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -1323,6 +1373,7 @@
         "Length": 19
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -1349,6 +1400,7 @@
         "Length": 19
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -1375,6 +1427,7 @@
         "Length": 20
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -1401,6 +1454,7 @@
         "Length": 15
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -1427,6 +1481,7 @@
         "Length": 17
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -1453,6 +1508,7 @@
         "Length": 17
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -1479,6 +1535,7 @@
         "Length": 16
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -1505,6 +1562,7 @@
         "Length": 19
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -1531,6 +1589,7 @@
         "Length": 45
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -1557,6 +1616,7 @@
         "Length": 36
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -1583,6 +1643,7 @@
         "Length": 51
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -1609,6 +1670,7 @@
         "Length": 55
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -1635,6 +1697,7 @@
         "Length": 24
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -1661,6 +1724,7 @@
         "Length": 18
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -1687,6 +1751,7 @@
         "Length": 22
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -1713,6 +1778,7 @@
         "Length": 23
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -1739,6 +1805,7 @@
         "Length": 27
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -1746,6 +1813,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "5 februari in ochtend",
@@ -1772,6 +1840,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "dinsdagochtend",
@@ -1798,6 +1867,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "dinsdag in de middag",
@@ -1824,6 +1894,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "2 uur in de toekomst",
@@ -1850,6 +1921,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "binnen 15 seconden",
@@ -1876,6 +1948,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "binnen 5 minuten",
@@ -1902,6 +1975,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "binnen 5 uur",
@@ -1928,6 +2002,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "binnen een dag en 5 uur",
@@ -1954,6 +2029,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "2 dagen, 1 uur, 5 minuten en 30 seconden",
@@ -1980,6 +2056,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "binnen 2 dagen, 1 uur, 5 minuten en 30 seconden",
@@ -2006,6 +2083,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "binnen aankomende 2 dagen, 1 uur, 5 minuten en 30 seconden",
@@ -2032,6 +2110,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "binnen 5 uur",
@@ -2058,6 +2137,7 @@
     "Context": {
       "ReferenceDateTime": "2018-04-19T08:12:00"
     },
+    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "maandag tussen 8 en 9",
@@ -2084,6 +2164,7 @@
     "Context": {
       "ReferenceDateTime": "2018-05-16T08:12:00"
     },
+    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "maandag 11-4",
@@ -2110,6 +2191,7 @@
     "Context": {
       "ReferenceDateTime": "2018-05-16T08:12:00"
     },
+    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "op 1/1/2015 tussen 10 en 11:30",
@@ -2136,6 +2218,7 @@
     "Context": {
       "ReferenceDateTime": "2018-05-16T08:12:00"
     },
+    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "1/1/2015 tussen 10 en 11:30",
@@ -2162,6 +2245,7 @@
     "Context": {
       "ReferenceDateTime": "2018-05-16T08:12:00"
     },
+    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "van 10:30 tot 3 op 1/1/2015",
@@ -2188,6 +2272,7 @@
     "Context": {
       "ReferenceDateTime": "2018-05-16T08:12:00"
     },
+    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "tussen 3 en 5 op 1/1/2015",
@@ -2214,6 +2299,7 @@
     "Context": {
       "ReferenceDateTime": "2018-05-16T08:12:00"
     },
+    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "op 1/1/2015 van 3:30 tot 5:55",
@@ -2240,6 +2326,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2266,6 +2353,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2292,6 +2380,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2318,6 +2407,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2344,6 +2434,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2370,6 +2461,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2396,6 +2488,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2422,6 +2515,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2448,6 +2542,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2474,6 +2569,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2500,6 +2596,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2526,6 +2623,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2552,6 +2650,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2578,6 +2677,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2604,6 +2704,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2630,6 +2731,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2656,6 +2758,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2682,6 +2785,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2708,6 +2812,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2734,6 +2839,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2760,6 +2866,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2786,6 +2893,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2812,6 +2920,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2838,6 +2947,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2864,6 +2974,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2890,6 +3001,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2916,6 +3028,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2942,6 +3055,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2968,6 +3082,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2994,6 +3109,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3020,6 +3136,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3046,6 +3163,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3072,6 +3190,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3098,6 +3217,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3124,6 +3244,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3150,6 +3271,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3176,6 +3298,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3202,6 +3325,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3228,6 +3352,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3254,6 +3379,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3280,6 +3406,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3306,6 +3433,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3332,6 +3460,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3358,6 +3487,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3384,6 +3514,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3410,6 +3541,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3436,6 +3568,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3462,6 +3595,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3488,6 +3622,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3514,6 +3649,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3540,6 +3676,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3566,6 +3703,7 @@
     "Context": {
       "ReferenceDateTime": "2017-11-09T16:12:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3592,6 +3730,7 @@
     "Context": {
       "ReferenceDateTime": "2017-11-09T16:12:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3618,6 +3757,7 @@
     "Context": {
       "ReferenceDateTime": "2017-11-13T16:12:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3644,6 +3784,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3670,6 +3811,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3696,6 +3838,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3722,6 +3865,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3748,6 +3892,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3774,6 +3919,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3800,6 +3946,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3826,6 +3973,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3852,6 +4000,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3878,6 +4027,7 @@
     "Context": {
       "ReferenceDateTime": "2018-04-19T08:12:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3904,6 +4054,7 @@
     "Context": {
       "ReferenceDateTime": "2018-05-16T08:12:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3930,6 +4081,7 @@
     "Context": {
       "ReferenceDateTime": "2018-05-16T08:12:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3956,6 +4108,7 @@
     "Context": {
       "ReferenceDateTime": "2018-05-16T08:12:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3982,6 +4135,7 @@
     "Context": {
       "ReferenceDateTime": "2018-05-16T08:12:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -4008,6 +4162,7 @@
     "Context": {
       "ReferenceDateTime": "2018-05-16T08:12:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -4034,6 +4189,7 @@
     "Context": {
       "ReferenceDateTime": "2018-05-16T08:12:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -4060,6 +4216,7 @@
     "Context": {
       "ReferenceDateTime": "2018-05-16T08:12:00"
     },
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {

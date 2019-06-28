@@ -109,30 +109,33 @@
   },
   {
     "Input": "Ik ga op Kerst terug",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Kerst",
         "Type": "date",
         "Start": 9,
-        "Length": 5
+        "Length": 9
       }
     ]
   },
   {
     "Input": "Ik ga op Eerste Kerstdag terug",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Eerste Kerstdag",
         "Type": "date",
         "Start": 9,
-        "Length": 15
+        "Length": 13
       }
     ]
   },
   {
     "Input": "Ik ga op Yuandan terug",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -145,10 +148,24 @@
   },
   {
     "Input": "Ik ga op Thanksgiving terug",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Thanksgiving",
+        "Type": "date",
+        "Start": 9,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Ik ga op Vaderdag terug",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Vaderdag",
         "Type": "date",
         "Start": 9,
         "Length": 12
@@ -156,19 +173,8 @@
     ]
   },
   {
-    "Input": "Ik ga op Vaderdag terug",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "Vaderdag",
-        "Type": "date",
-        "Start": 9,
-        "Length": 8
-      }
-    ]
-  },
-  {
     "Input": "Ik ga op Yuandan dit jaar terug",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -181,6 +187,7 @@
   },
   {
     "Input": "Ik ga op Yuandan 2016 terug",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -193,6 +200,7 @@
   },
   {
     "Input": "Ik ga terug op Eerste Paasdag",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -205,6 +213,7 @@
   },
   {
     "Input": "Ik ga op Martin Luther Kingdag terug",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -217,6 +226,7 @@
   },
   {
     "Input": "MLKdag is een Amerikaanse nationale feestdag",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -229,11 +239,13 @@
   },
   {
     "Input": "Er is een feestdag vernoemd naar de naam van Martin Luther King",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   },
   {
     "Input": "Ik ga terug op Dodenherdenking",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {

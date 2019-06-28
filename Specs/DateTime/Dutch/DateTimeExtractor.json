@@ -10,6 +10,7 @@
         "Length": 2
       }
     ],
+    "NotSupported": "dotNet"
   },
   {
     "Input": "Ik ga zo snel mogelijk terug",
@@ -22,6 +23,7 @@
         "Length": 16
       }
     ],
+    "NotSupported": "dotNet"
   },
   {
     "Input": "Ik ga terug op 15 om 8:00",
@@ -34,6 +36,7 @@
         "Length": 10
       }
     ],
+    "NotSupported": "dotNet"
   },
   {
     "Input": "Ik ga terug op 15 om 8.00:30",
@@ -46,6 +49,7 @@
         "Length": 13
       }
     ],
+    "NotSupported": "dotNet"
   },
   {
     "Input": "Ik ga terug op 15, 20u",
@@ -58,6 +62,7 @@
         "Length": 7
       }
     ],
+    "NotSupported": "dotNet"
   },
   {
     "Input": "Ik ga terug op 21/04/2016, 20u",
@@ -70,6 +75,7 @@
         "Start": 15
       }
     ],
+    "NotSupported": "dotNet"
   },
   {
     "Input": "Ik ga terug op 23 Okt om 7",
@@ -82,6 +88,7 @@
         "Start": 15
       }
     ],
+    "NotSupported": "dotNet"
   },
   {
     "Input": "Ik ga terug op 14 oktober 20:00",
@@ -94,6 +101,7 @@
         "Length": 16
       }
     ],
+    "NotSupported": "dotNet"
   },
   {
     "Input": "Ik ga terug op 14 oktober om 8:00:00u",
@@ -106,6 +114,7 @@
         "Length": 22
       }
     ],
+    "NotSupported": "dotNet"
   },
   {
     "Input": "Ik ga terug op 14 oktober, 8:00u",
@@ -118,6 +127,7 @@
         "Length": 17
       }
     ],
+    "NotSupported": "dotNet"
   },
   {
     "Input": "Ik ga morgen terug om 8:00",
@@ -130,6 +140,7 @@
         "Length": 20
       }
     ],
+    "NotSupported": "dotNet"
   },
   {
     "Input": "Ik ga morgen terug rond 8 uur",
@@ -142,6 +153,7 @@
         "Length": 23
       }
     ],
+    "NotSupported": "dotNet"
   },
   {
     "Input": "Ik ga morgen terug voor 8u",
@@ -154,6 +166,7 @@
         "Length": 20
       }
     ],
+    "NotSupported": "dotNet"
   },
   {
     "Input": "Ik ga morgen terug 8:00:05u",
@@ -166,6 +179,7 @@
         "Length": 21
       }
     ],
+    "NotSupported": "dotNet"
   },
   {
     "Input": "Ik ga volgende week vrijdag om half 4 terug",
@@ -178,6 +192,7 @@
         "Length": 31
       }
     ],
+    "NotSupported": "dotNet"
   },
   {
     "Input": "Ik ga terug op 5 mei 2016, 20 minuten over 8 in de avond",
@@ -190,6 +205,7 @@
         "Length": 41
       }
     ],
+    "NotSupported": "dotNet"
   },
   {
     "Input": "Ik ga terug om 20.15u",
@@ -202,6 +218,7 @@
         "Length": 6
       }
     ],
+    "NotSupported": "dotNet"
   },
   {
     "Input": "Ik ga terug op zeven om 15",
@@ -214,6 +231,7 @@
         "Length": 11
       }
     ],
+    "NotSupported": "dotNet"
   },
   {
     "Input": "Ik ga terug om 20u komende zondag",
@@ -226,6 +244,7 @@
         "Length": 18
       }
     ],
+    "NotSupported": "dotNet"
   },
   {
     "Input": "Ik ga vandaag om 20u terug",
@@ -238,6 +257,7 @@
         "Length": 14
       }
     ],
+    "NotSupported": "dotNet"
   },
   {
     "Input": "Ik ga terug om kwart voor zeven morgen",
@@ -250,6 +270,7 @@
         "Length": 26
       }
     ],
+    "NotSupported": "dotNet"
   },
   {
     "Input": "Ik ga terug om 19u, 22-12-2016",
@@ -262,6 +283,7 @@
         "Length": 15
       }
     ],
+    "NotSupported": "dotNet"
   },
   {
     "Input": "Ik ga terug zeven uur morgen",
@@ -274,6 +296,7 @@
         "Length": 16
       }
     ],
+    "NotSupported": "dotNet"
   },
   {
     "Input": "Ik ga terug om 7 uur morgenochtend",
@@ -286,6 +309,7 @@
         "Length": 19
       }
     ],
+    "NotSupported": "dotNet"
   },
   {
     "Input": "Ik ga terug om 19:00 op zondagavond",
@@ -298,6 +322,7 @@
         "Length": 20
       }
     ],
+    "NotSupported": "dotNet"
   },
   {
     "Input": "Ik ga terug 20 minuten over vijf morgenochtend",
@@ -310,6 +335,7 @@
         "Length": 34
       }
     ],
+    "NotSupported": "dotNet"
   },
   {
     "Input": "Ik ga terug op 14 oktober om 8:00",
@@ -322,6 +348,7 @@
         "Length": 18
       }
     ],
+    "NotSupported": "dotNet"
   },
   {
     "Input": "Ik ga terug om 7u, deze ochtend",
@@ -334,6 +361,7 @@
         "Length": 16
       }
     ],
+    "NotSupported": "dotNet"
   },
   {
     "Input": "Ik ga terug om 20u vanavond, maandag",
@@ -346,6 +374,7 @@
         "Length": 21
       }
     ],
+    "NotSupported": "dotNet"
   },
   {
     "Input": "Ik ga terug 20u vanavond, 1 jan",
@@ -358,6 +387,7 @@
         "Length": 19
       }
     ],
+    "NotSupported": "dotNet"
   },
   {
     "Input": "Ik ga terug om 22h vanavond",
@@ -370,6 +400,7 @@
         "Length": 12
       }
     ],
+    "NotSupported": "dotNet"
   },
   {
     "Input": "Ik ga terug om 8u deze morgen",
@@ -382,6 +413,7 @@
         "Length": 14
       }
     ],
+    "NotSupported": "dotNet"
   },
   {
     "Input": "Ik ga terug om 20u vanavond",
@@ -394,6 +426,7 @@
         "Length": 12
       }
     ],
+    "NotSupported": "dotNet"
   },
   {
     "Input": "Ik ga terug vanavond rond 7",
@@ -406,6 +439,7 @@
         "Length": 15
       }
     ],
+    "NotSupported": "dotNet"
   },
   {
     "Input": "Ik ga terug deze morgen om 7",
@@ -418,6 +452,7 @@
         "Length": 16
       }
     ],
+    "NotSupported": "dotNet"
   },
   {
     "Input": "Ik ga terug vanmorgen om 7u",
@@ -430,6 +465,7 @@
         "Length": 15
       }
     ],
+    "NotSupported": "dotNet"
   },
   {
     "Input": "Ik ga deze morgen om zeven terug",
@@ -442,6 +478,7 @@
         "Length": 20
       }
     ],
+    "NotSupported": "dotNet"
   },
   {
     "Input": "Ik ga deze morgen om 7:00 terug",
@@ -454,6 +491,7 @@
         "Length": 19
       }
     ],
+    "NotSupported": "dotNet"
   },
   {
     "Input": "Ik ga vanavond terug om 7",
@@ -466,6 +504,7 @@
         "Length": 19
       }
     ],
+    "NotSupported": "dotNet"
   },
   {
     "Input": "Ik ga vanavond om 7 terug",
@@ -478,6 +517,7 @@
         "Length": 13
       }
     ],
+    "NotSupported": "dotNet"
   },
   {
     "Input": "voor 2 personen vanavond om 21.30u",
@@ -490,6 +530,7 @@
         "Length": 18
       }
     ],
+    "NotSupported": "dotNet"
   },
   {
     "Input": "voor 2 personen vanavond om 21.30:31u",
@@ -502,6 +543,7 @@
         "Length": 21
       }
     ],
+    "NotSupported": "dotNet"
   },
   {
     "Input": "Ik ga eind van de dag terug",
@@ -514,6 +556,7 @@
         "Length": 15
       }
     ],
+    "NotSupported": "dotNet"
   },
   {
     "Input": "Ik ga morgen einde van de dag terug",
@@ -526,6 +569,7 @@
         "Length": 23
       }
     ],
+    "NotSupported": "dotNet"
   },
   {
     "Input": "Ik ga zondag eind van de dag terug",
@@ -538,6 +582,7 @@
         "Length": 22
       }
     ],
+    "NotSupported": "dotNet"
   },
   {
     "Input": "Ik ga op de 5e terug om 4u ‘s morgens",
@@ -550,6 +595,7 @@
         "Length": 25
       }
     ],
+    "NotSupported": "dotNet"
   },
   {
     "Input": "Ik ga op 16-12-2016 terug om 12.23:59u",
@@ -562,6 +608,7 @@
         "Length": 29
       }
     ],
+    "NotSupported": "dotNet"
   },
   {
     "Input": "Ik ga terug over 5 uur",
@@ -574,6 +621,7 @@
         "Length": 10
       }
     ],
+    "NotSupported": "dotNet"
   },
   {
     "Input": "bekijk of ik beschikbaar ben om 15u op zondag",
@@ -586,6 +634,7 @@
         "Length": 13
       }
     ],
+    "NotSupported": "dotNet"
   },
   {
     "Input": "Afspraak voor morgenochtend om 9 uur",
@@ -598,6 +647,7 @@
         "Length": 22
       }
     ],
+    "NotSupported": "dotNet"
   },
   {
     "Input": "Ik ga morgenochtend om 9 uur terug",
@@ -610,6 +660,7 @@
         "Length": 22
       }
     ],
+    "NotSupported": "dotNet"
   },
   {
     "Input": "Ik ga morgenochtend om 9u terug",
@@ -622,6 +673,7 @@
         "Length": 19
       }
     ],
+    "NotSupported": "dotNet"
   },
   {
     "Input": "Ik ga morgen om 9 uur terug",
@@ -634,6 +686,7 @@
         "Length": 15
       }
     ],
+    "NotSupported": "dotNet"
   },
   {
     "Input": "deze vrijdag om 13u",
@@ -646,6 +699,7 @@
         "Length": 19
       }
     ],
+    "NotSupported": "dotNet"
   },
   {
     "Input": "VOEG LUNCH TOE OM 12.30u OP VRIJDAG",
@@ -658,6 +712,7 @@
         "Length": 17
       }
     ],
+    "NotSupported": "dotNet"
   },
   {
     "Input": "Voeg 649 toe middernacht vanacht",
@@ -670,6 +725,7 @@
         "Length": 19
       }
     ],
+    "NotSupported": "dotNet"
   },
   {
     "Input": "Ik ga op 1 augustus om 11u terug",
@@ -682,6 +738,7 @@
         "Length": 17
       }
     ],
+    "NotSupported": "dotNet"
   },
   {
     "Input": "Ik ga op 1 augustus om 23u terug",
@@ -694,6 +751,7 @@
         "Length": 17
       }
     ],
+    "NotSupported": "dotNet"
   },
   {
     "Input": "Ik ga 1 augustus 23u terug",
@@ -706,6 +764,7 @@
         "Length": 14
       }
     ],
+    "NotSupported": "dotNet"
   },
   {
     "Input": "Ik ga 25/2 om 11u terug",
@@ -718,6 +777,7 @@
         "Length": 11
       }
     ],
+    "NotSupported": "dotNet"
   },
   {
     "Input": "Ik ga op 6 jan 2017 6.37u terug",
@@ -730,6 +790,7 @@
         "Length": 16
       }
     ],
+    "NotSupported": "dotNet"
   },
   {
     "Input": "16 Nov. 2016 10.38",
@@ -742,9 +803,11 @@
         "Length": 18
       }
     ],
+    "NotSupported": "dotNet"
   },
   {
     "Input": "Ik vertrek 1 dag en 2 uur later",
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -766,9 +829,11 @@
         "Length": 12
       }
     ],
+    "NotSupported": "dotNet"
   },
   {
     "Input": "Ik ontmoette hem 2 maanden 1 dag en 2 uur geleden",
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -781,6 +846,7 @@
   },
   {
     "Input": "Ik ontmoette hem 2 maanden 1 dag 2 uur geleden",
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -793,6 +859,7 @@
   },
   {
     "Input": "Ik vertrek 1 dag en 30 minuten later",
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -813,10 +880,12 @@
         "Length": 14
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "Ik ga nu meteen terug",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -829,6 +898,7 @@
   },
   {
     "Input": "Ik ga 15 om 8:00 terug",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -841,6 +911,7 @@
   },
   {
     "Input": "Ik ga 15 om 8:00:30 terug",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -853,6 +924,7 @@
   },
   {
     "Input": "Ik ga de 15e, 20:00 terug",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -865,6 +937,7 @@
   },
   {
     "Input": "Ik ga 21-04-2016, 20.00 terug",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -877,6 +950,7 @@
   },
   {
     "Input": "Ik ga 23 okt. om zeven uur terug",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -889,6 +963,7 @@
   },
   {
     "Input": "Ik ga 14 oktober 8:00 's morgens terug",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -901,6 +976,7 @@
   },
   {
     "Input": "Ik ga 14 oktober 8:00:00 terug",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -913,6 +989,7 @@
   },
   {
     "Input": "Ik ga 14 oktober, 8:00 uur 's morgens terug",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -925,6 +1002,7 @@
   },
   {
     "Input": "Ik ga morgen 8:00 's ochtends terug",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -937,6 +1015,7 @@
   },
   {
     "Input": "Ik ga morgen rond 8:00 's ochtends terug",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -949,6 +1028,7 @@
   },
   {
     "Input": "Ik ga morgen voor 8:00 's ochtends terug",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -961,6 +1041,7 @@
   },
   {
     "Input": "Ik ga morgen 8:00:05 terug",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -973,6 +1054,7 @@
   },
   {
     "Input": "Ik ga volgende vrijdag om half 4 terug",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -985,6 +1067,7 @@
   },
   {
     "Input": "Ik ga 5 mei, 2016, 20.20 terug",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -997,6 +1080,7 @@
   },
   {
     "Input": "Ik ga 20.00 terug op de 15e",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1009,6 +1093,7 @@
   },
   {
     "Input": "Ik ga om zeven uur terug op de 15e",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1021,6 +1106,7 @@
   },
   {
     "Input": "Ik ga volgende week zondag 20.00 terug",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1033,6 +1119,7 @@
   },
   {
     "Input": "Ik ga 20.00 vandaag terug",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1045,6 +1132,7 @@
   },
   {
     "Input": "Ik ga morgen kwart voor zeven terug",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1057,6 +1145,7 @@
   },
   {
     "Input": "Ik ga 19.00, 22-12-2016 terug",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1069,6 +1158,7 @@
   },
   {
     "Input": "Ik ga morgen zeven uur terug",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1081,6 +1171,7 @@
   },
   {
     "Input": "Ik ga morgenochtend om 7 uur terug",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1093,6 +1184,7 @@
   },
   {
     "Input": "Ik ga zondagmiddag om 7:00 terug",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1105,6 +1197,7 @@
   },
   {
     "Input": "Ik ga morgenochtend tien voor half zes terug",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1117,6 +1210,7 @@
   },
   {
     "Input": "Ik ga 14 oktober 8:00 terug",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1129,6 +1223,7 @@
   },
   {
     "Input": "Ik ga om 7 uur vanmorgen terug",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1141,6 +1236,7 @@
   },
   {
     "Input": "Ik ga 8 uur 's avonds, maandag terug",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1153,6 +1249,7 @@
   },
   {
     "Input": "Ik ga 10 uur vanavond terug",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1165,6 +1262,7 @@
   },
   {
     "Input": "Ik ga 8 uur vanmorgen terug",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1177,6 +1275,7 @@
   },
   {
     "Input": "Ik ga 8 uur vanavond terug",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1189,6 +1288,7 @@
   },
   {
     "Input": "Ik ga vanavond rond 7 uur terug",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1201,6 +1301,7 @@
   },
   {
     "Input": "Ik ga vanmorgen om 7 uur terug",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1213,6 +1314,7 @@
   },
   {
     "Input": "Ik ga vanmorgen om zeven uur terug",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1225,6 +1327,7 @@
   },
   {
     "Input": "Ik ga vanmorgen om 7:00 terug",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1237,6 +1340,7 @@
   },
   {
     "Input": "Ik ga deze avond om 7 uur terug",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1249,6 +1353,7 @@
   },
   {
     "Input": "Ik ga vanavond om 7 uur terug",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1261,6 +1366,7 @@
   },
   {
     "Input": "Ik ga vanavond om 21:30 terug",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1273,6 +1379,7 @@
   },
   {
     "Input": "Ik ga vanavond om 21:30:31 terug",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1285,6 +1392,7 @@
   },
   {
     "Input": "Ik ga het eind van de dag terug",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1297,6 +1405,7 @@
   },
   {
     "Input": "Ik ga eind van morgen terug",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1309,6 +1418,7 @@
   },
   {
     "Input": "Ik ga eind van de zondag terug",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1321,6 +1431,7 @@
   },
   {
     "Input": "Ik ga de 5e om 4:00 's ochtends terug",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1333,6 +1444,7 @@
   },
   {
     "Input": "Ik ga 16-15-2016 12:23:59 's middags terug",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1345,6 +1457,7 @@
   },
   {
     "Input": "Ik ga over 5 uur terug",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1357,6 +1470,7 @@
   },
   {
     "Input": "kijk of ik beschikbaar ben om 15:00 op zon",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1369,6 +1483,7 @@
   },
   {
     "Input": "Boek afspraak in voor morgenochtend om 9 uur",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1381,6 +1496,7 @@
   },
   {
     "Input": "deze vrijdag om één uur 's middags",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1393,6 +1509,7 @@
   },
   {
     "Input": "VOEG LUNCH TOE OM 12.30 'S MIDDAGS OP VRIJ",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1405,6 +1522,7 @@
   },
   {
     "Input": "Voeg 649 middernacht vanavond",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1417,6 +1535,7 @@
   },
   {
     "Input": "Ik ga de 1e van augustus 11:00 terug",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1429,6 +1548,7 @@
   },
   {
     "Input": "Ik ga de 1e van augustus 23:00 terug",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1441,6 +1561,7 @@
   },
   {
     "Input": "Ik ga 25-02 11:00 terug",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1453,6 +1574,7 @@
   },
   {
     "Input": "Ik ga 6 jan 2017 - 6.37 's ochtends terug",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1465,6 +1587,7 @@
   },
   {
     "Input": "16 nov. 2016 10:38",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1477,6 +1600,7 @@
   },
   {
     "Input": "Ik vertrek 1 dag, 2 uur later",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1489,6 +1613,7 @@
   },
   {
     "Input": "Ik ben over een uur druk, dus bel me later",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1501,6 +1626,7 @@
   },
   {
     "Input": "Ik ontmoette hem 2 maanden, 1 dag, 2 uur geleden",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1513,6 +1639,7 @@
   },
   {
     "Input": "Boek alsjeblieft Skypegesprek vandaag om 9:00",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1525,6 +1652,7 @@
   },
   {
     "Input": "Boek alsjeblieft Skypegesprek vandaag om 21:00",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1537,6 +1665,7 @@
   },
   {
     "Input": "Ik vertrek over 2 uur",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
