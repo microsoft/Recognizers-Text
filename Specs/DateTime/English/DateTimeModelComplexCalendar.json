@@ -10614,5 +10614,65 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Let's play basketball from three thirty to four thirty",
+    "Context": {
+      "ReferenceDateTime": "2019-06-28T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "from three thirty to four thirty",
+        "Start": 22,
+        "End": 53,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(T03:30,T04:30,PT1H)",
+              "type": "timerange",
+              "start": "03:30:00",
+              "end": "04:30:00"
+            },
+            {
+              "timex": "(T15:30,T16:30,PT1H)",
+              "type": "timerange",
+              "start": "15:30:00",
+              "end": "16:30:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Let's play basketball from two thirty to two forty five",
+    "Context": {
+      "ReferenceDateTime": "2019-06-28T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "from two thirty to two forty five",
+        "Start": 22,
+        "End": 54,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(T02:30,T02:45,PT15M)",
+              "type": "timerange",
+              "start": "02:30:00",
+              "end": "02:45:00"
+            },
+            {
+              "timex": "(T14:30,T14:45,PT15M)",
+              "type": "timerange",
+              "start": "14:30:00",
+              "end": "14:45:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

@@ -639,7 +639,7 @@ namespace Microsoft.Recognizers.Definitions.English
             { @"inaugurationday", new string[] { @"inaugurationday" } },
             { @"groundhougday", new string[] { @"groundhougday" } },
             { @"valentinesday", new string[] { @"valentinesday" } },
-            { @"stpatrickday", new string[] { @"stpatrickday", @"stpatricksday", "stpatrick" } },
+            { @"stpatrickday", new string[] { @"stpatrickday", @"stpatricksday", @"stpatrick" } },
             { @"aprilfools", new string[] { @"aprilfools" } },
             { @"stgeorgeday", new string[] { @"stgeorgeday" } },
             { @"mayday", new string[] { @"mayday", @"intlworkersday", @"internationalworkersday" } },

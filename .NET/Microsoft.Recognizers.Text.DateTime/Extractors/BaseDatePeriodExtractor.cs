@@ -368,13 +368,25 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     var yearMatches = this.config.YearRegex.Matches(match.Value);
                     var allDigitYear = true;
+                    var isValidYear = true;
 
                     foreach (Match yearMatch in yearMatches)
                     {
-                        if (yearMatch.Length != Constants.FourDigitsYearLength)
+                        var year = config.DatePointExtractor.GetYearFromText(yearMatch);
+                        if (!(year >= Constants.MinYearNum && year <= Constants.MaxYearNum))
+                        {
+                            isValidYear = false;
+                            break;
+                        }
+                        else if (yearMatch.Length != Constants.FourDigitsYearLength)
                         {
                             allDigitYear = false;
                         }
+                    }
+
+                    if (!isValidYear)
+                    {
+                        continue;
                     }
 
                     // Cases like "2010-2015"
