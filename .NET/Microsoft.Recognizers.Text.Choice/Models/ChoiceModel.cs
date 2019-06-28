@@ -26,7 +26,6 @@ namespace Microsoft.Recognizers.Text.Choice
             {
                 var extractResults = Extractor.Extract(query);
                 parseResults = extractResults.Select(r => Parser.Parse(r));
-
             }
             catch (Exception)
             {
