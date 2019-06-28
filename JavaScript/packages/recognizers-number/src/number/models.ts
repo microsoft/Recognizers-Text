@@ -74,11 +74,17 @@ export abstract class AbstractNumberModel implements IModel {
 
     parse(query: string): ModelResult[] {
         query = QueryProcessor.preProcess(query, true);
+        let parseNums: ParseResult[]
 
         try {
             let extractResults = this.extractor.extract(query);
-            let parseNums = extractResults.map(r => this.parser.parse(r));
-
+            parseNums = extractResults.map(r => this.parser.parse(r));
+        }
+        catch(err) {
+            // Nothing to do. Exceptions in result process should not affect other extracted entities.
+            // No result.
+        }
+        finally {
             return parseNums
                 .map(o => o as ParseResult)
                 .map(o => ({
@@ -88,11 +94,6 @@ export abstract class AbstractNumberModel implements IModel {
                     text: o.text,
                     typeName: this.modelTypeName
                 }));
-        }
-        catch(err) {
-            // Exceptions in result process should not affect other extracted entities.
-            // No result.
-            return null;
         }
     }
 }
