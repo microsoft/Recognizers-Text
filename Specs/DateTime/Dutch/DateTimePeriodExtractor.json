@@ -1,7 +1,6 @@
 [
   {
     "Input": "Ik ben vijf tot zeven vandaag weg",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -14,7 +13,6 @@
   },
   {
     "Input": "Ik ben morgen vijf tot zeven weg",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -27,7 +25,6 @@
   },
   {
     "Input": "Ik ben van 5 tot 6 volgende zondag weg",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -40,7 +37,6 @@
   },
   {
     "Input": "Ik ben van 5 tot 18:00 volgende zondag weg",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -53,7 +49,6 @@
   },
   {
     "Input": "Ik ben van 16:00 tot 17:00 vandaag weg",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -66,7 +61,6 @@
   },
   {
     "Input": "Ik ben van 16:00 vandaag tot 17:00 morgen weg",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -79,7 +73,6 @@
   },
   {
     "Input": "Ik ben van 16:00 tot 17:00 morgen weg",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -92,7 +85,6 @@
   },
   {
     "Input": "Ik ben van 16:00 tot 17:00 van 6-6-2017 weg",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -105,7 +97,6 @@
   },
   {
     "Input": "Ik ben van 16:00 tot 17:00 5 mei, 2018 weg",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -118,7 +109,6 @@
   },
   {
     "Input": "Ik ben van 4:00 tot 17:00 5 mei, 2018 weg",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -131,7 +121,6 @@
   },
   {
     "Input": "Ik ben van 16:00 op 1 jan, 2016 tot 17:00 vandaag weg",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -144,7 +133,6 @@
   },
   {
     "Input": "Ik ben van 14:00, 21-2-2016 tot 3:32, 23-04-2016 weg",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -157,7 +145,6 @@
   },
   {
     "Input": "Ik ben van vandaag om 4 uur tot volgende woens om 5 uur weg",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -170,7 +157,6 @@
   },
   {
     "Input": "Ik ben tussen 16:00 en 17:00 vandaag weg",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -183,7 +169,6 @@
   },
   {
     "Input": "Ik ben tussen 16:00 op 1 jan, 2016 en 17:00 vandaag weg",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -196,7 +181,6 @@
   },
   {
     "Input": "Ik ga vanavond terug",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -209,7 +193,6 @@
   },
   {
     "Input": "Ik ga deze nacht terug",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -222,7 +205,6 @@
   },
   {
     "Input": "Ik ga deze avond terug",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -235,7 +217,6 @@
   },
   {
     "Input": "Ik ga deze ochtend terug",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -248,7 +229,6 @@
   },
   {
     "Input": "Ik ga deze middag terug",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -261,7 +241,6 @@
   },
   {
     "Input": "Ik ga volgende nacht terug",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -274,7 +253,6 @@
   },
   {
     "Input": "Ik ga gisterenavond terug",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -287,7 +265,6 @@
   },
   {
     "Input": "Ik ga morgenavond terug",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -300,7 +277,6 @@
   },
   {
     "Input": "Ik ga volgende maandagmiddag terug",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -313,7 +289,6 @@
   },
   {
     "Input": "Ik ga de nacht van de 5e mei terug",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -326,7 +301,6 @@
   },
   {
     "Input": "Ik ga laatste 3 minuut terug",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -339,7 +313,6 @@
   },
   {
     "Input": "Ik ga afgelopen 3 minuut terug",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -352,7 +325,6 @@
   },
   {
     "Input": "Ik ga voorgaande 3 minuut terug",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -365,7 +337,6 @@
   },
   {
     "Input": "Ik ga voorgaande 3 minuten terug",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -378,7 +349,6 @@
   },
   {
     "Input": "Ik ga de volgende 5 uur terug",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -391,7 +361,6 @@
   },
   {
     "Input": "Ik ga de laatste minuut terug",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -404,7 +373,6 @@
   },
   {
     "Input": "Ik ga volgend uur terug",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -417,7 +385,6 @@
   },
   {
     "Input": "Ik ga laatste paar minuten terug",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -430,7 +397,6 @@
   },
   {
     "Input": "Ik ga laatste aantal minuten terug",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -443,7 +409,6 @@
   },
   {
     "Input": "Ik ga dinsdag in de ochtend terug",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -456,7 +421,6 @@
   },
   {
     "Input": "Ik ga dinsdag in de middag terug",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -469,7 +433,6 @@
   },
   {
     "Input": "Ik ga dinsdag in de avond terug",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -482,7 +445,6 @@
   },
   {
     "Input": "laten we dinsdag vroeg in de ochtend afspreken ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -495,7 +457,6 @@
   },
   {
     "Input": "laten we dinsdag laat in de ochtend afspreken",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -508,7 +469,6 @@
   },
   {
     "Input": "laten we dinsdag vroeg in de middag afspreken",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -521,7 +481,6 @@
   },
   {
     "Input": "laten we dinsdag laat in de middag afspreken",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -534,7 +493,6 @@
   },
   {
     "Input": "laten we dinsdag vroeg in de avond afspreken",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -547,7 +505,6 @@
   },
   {
     "Input": "laten we dinsdag laat in de avond afspreken",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -560,7 +517,6 @@
   },
   {
     "Input": "laten we dinsdag vroeg in de nacht afspreken",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -573,7 +529,6 @@
   },
   {
     "Input": "laten we dinsdag laat in de nacht afspreken",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -586,7 +541,6 @@
   },
   {
     "Input": "laten we op dinsdag vroeg in de ochtend afspreken ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -599,7 +553,6 @@
   },
   {
     "Input": "laten we op dinsdag laat in de ochtend afspreken",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -612,7 +565,6 @@
   },
   {
     "Input": "laten we op dinsdag vroeg in de middag afspreken",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -625,7 +577,6 @@
   },
   {
     "Input": "laten we op dinsdag laat in de middag afspreken",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -638,7 +589,6 @@
   },
   {
     "Input": "laten we op dinsdag vroeg in de avond afspreken",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -651,7 +601,6 @@
   },
   {
     "Input": "laten we op dinsdag laat in de avond afspreken",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -664,7 +613,6 @@
   },
   {
     "Input": "laten we op dinsdag vroeg in de nacht afspreken",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -677,7 +625,6 @@
   },
   {
     "Input": "laten we op dinsdag laat in de nacht afspreken",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -690,7 +637,6 @@
   },
   {
     "Input": "laten we op dinsdag vroeg in de morgen afspreken",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -703,7 +649,6 @@
   },
   {
     "Input": "laten we op dinsdag laat in de morgen afspreken",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -716,7 +661,6 @@
   },
   {
     "Input": "Ik ben rest van de dag weg",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -729,7 +673,6 @@
   },
   {
     "Input": "Ik ben rest van deze dag weg",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -742,7 +685,6 @@
   },
   {
     "Input": "Ik ben rest van huidige dag weg",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -755,7 +697,6 @@
   },
   {
     "Input": "Cortana, plan alsjeblieft een skype voor zakelijk gesprek met Wayne, op vrijdag tussen 13:00 en 16:00",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -768,7 +709,6 @@
   },
   {
     "Input": "Kan je ons morgen tussen 8:00 en 12:00  inplannen?",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -781,7 +721,6 @@
   },
   {
     "Input": "Kan je ons de 9e dec tussen 8:00 en 14:00 inplannen?",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -794,7 +733,6 @@
   },
   {
     "Input": "Hoi Cortana- leg alsjeblieft een skypegesprek met Jennifer vast. Het is een meeting van 30 minuten op deze vrijdag, in de middag ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -807,7 +745,6 @@
   },
   {
     "Input": "Hoi Cortana- leg alsjeblieft een skypegesprek met Jennifer vast. Het is een meeting van 30 minuten in de middag, deze vrijdag ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -820,7 +757,6 @@
   },
   {
     "Input": "Kan je 23-09-2015 13:00 tot 4 voor ons vastleggen",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -833,7 +769,6 @@
   },
   {
     "Input": "Kan je 23-09-2015 13:30 tot 4 voor ons vastleggen",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -846,7 +781,6 @@
   },
   {
     "Input": "Ik ga dinsdagmorgen terug",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -859,7 +793,6 @@
   },
   {
     "Input": "Ik ga dinsdagmiddag terug",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -872,7 +805,6 @@
   },
   {
     "Input": "Het zal 2 uur in de toekomst gebeuren",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -885,7 +817,6 @@
   },
   {
     "Input": "Het zal tussen 10 en 11:30 op 1-1-2015 gebeuren",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -898,7 +829,6 @@
   },
   {
     "Input": "Het zal 1-1-2015 tussen 10 en 11:30 gebeuren",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -911,7 +841,6 @@
   },
   {
     "Input": "Het zal van 10:30 tot 3 op 1-1-2015 gebeuren",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -924,7 +853,6 @@
   },
   {
     "Input": "Het zal tussen 3 en 5 op 1-1-2015 gebeuren",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -937,7 +865,6 @@
   },
   {
     "Input": "Het zal van 3:30 tot 5:55 op 1-1-2015 gebeuren",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -950,7 +877,6 @@
   },
   {
     "Input": "Het zal 1-1-2015 na 2:00 gebeuren",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -963,7 +889,6 @@
   },
   {
     "Input": "Het zal vandaag voor 16:00 gebeuren",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -976,7 +901,6 @@
   },
   {
     "Input": "Het zal volgende woensdag later dan 10 uur 's morgens gebeuren",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -989,7 +913,6 @@
   },
   {
     "Input": "Het gebeurde op afgelopen dinsdag tegen 2 in de middag",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1002,7 +925,6 @@
   },
   {
     "Input": "Laten we op 1 feb niet later dan 6:00 gaan",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1015,7 +937,6 @@
   },
   {
     "Input": "Het gebeurde op volgende week na 2:00",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   }
