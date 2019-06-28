@@ -33,10 +33,8 @@ ReferencePrefixRegex: !simpleRegex
   def: (dezelfde|hetzelfde|dat|die|overeenkomstige)\b
 FutureSuffixRegex: !simpleRegex
   def: \b(in\s+de\s+)?(toekomst|vanaf)\b
-#Testing versions to be updated soon
 DayRegex: !simpleRegex
   def: (de\s*)?(?<day>(31(ste|e)?|30(ste|e)?|29(ste|e)?|28(ste|e)?|27(ste|e)?|26(ste|e)?|25(ste|e)?|24(ste|e)?|23(ste|e)?|22(ste|e)?|21(ste|e)?|20(ste|e)?|19(de|e)?|18(de|e)?|17(de|e)?|16(de|e)?|15(de|e)?|14(de|e)?|13(de|e)?|12(de|e)?|11(de|e)?|10(de|e)?|[0]?1(ste|e)?|[0]?2(de|e)?|[0]?3(de|e)?|[0]?4(de|e)?|[0]?5(de|e)?|[0]?6(de|e)?|[0]?7(de|e)?|[0]?8(ste|e)?|[0]?9(de|e)?))
-#Testing versions to be updated soon
 ImplicitDayRegex: !simpleRegex
   def: (de\s*)?(?<day>(31(ste|e)?|30(ste|e)?|29(ste|e)?|28(ste|e)?|27(ste|e)?|26(ste|e)?|25(ste|e)?|24(ste|e)?|23(ste|e)?|22(ste|e)?|21(ste|e)?|20(ste|e)?|19(de|e)?|18(de|e)?|17(de|e)?|16(de|e)?|15(de|e)?|14(de|e)?|13(de|e)?|12(de|e)?|11(de|e)?|10(de|e)?|[0]?1(ste|e)?|[0]?2(de|e)?|[0]?3(de|e)?|[0]?4(de|e)?|[0]?5(de|e)?|[0]?6(de|e)?|[0]?7(de|e)?|[0]?8(ste|e)?|[0]?9(de|e)?))
 MonthNumRegex: !simpleRegex
@@ -421,7 +419,7 @@ SuffixRegex: !simpleRegex
 DateTimeTimeOfDayRegex: !simpleRegex
   def: \b(?<timeOfDay>ochtend|(na)?middag|avond|nacht)\b
 DateTimeSpecificTimeOfDayRegex: !nestedRegex
-  def: \b(({RelativeRegex}\s+{DateTimeTimeOfDayRegex})\b|\bvannacht|vanavond|vanmiddag|vanochtend)\b
+  def: \b(({RelativeRegex}\s+{DateTimeTimeOfDayRegex})\b|\bvannacht|vanavond|vanmiddag|vanochtend|vanmorgen)\b
   references: [ DateTimeTimeOfDayRegex, RelativeRegex ]
 TimeOfTodayAfterRegex: !nestedRegex
   def: ^\s*(,\s*)?(in\s+de\s+)?{DateTimeSpecificTimeOfDayRegex}
@@ -483,7 +481,7 @@ AnUnitRegex: !nestedRegex
 DuringRegex: !simpleRegex
   def: \b(voor\s+een|gedurende\s+(het|de))\s+(?<unit>jaar|maand|week|dag)\b
 AllRegex: !simpleRegex
-  def: \b(?<all>((ge)?hele|volledige|ganse)(\s+|-)(?<unit>jaar|maand|week|dag))\b
+  def: \b(?<all>((ge)?hele|volledige|ganse|heel|volledig)(\s+|-)(?<unit>jaar|maand|week|dag))\b
 HalfRegex: !simpleRegex
   def: (((een)\s*)|\b)(?<half>(half|halve)\s+(?<unit>jaar|maand|week|dag|uur))\b
 ConjunctionRegex: !simpleRegex
@@ -495,7 +493,7 @@ HolidayRegex2: !nestedRegex
   def: \b(?<holiday>nationale dodenherdenking|nationale herdenking|dodenherdenking|dag van de leraar|dag van de arbeid)(\s+(van\s+|in\s+)?({YearRegex}|{RelativeRegex}\s+jaar))?\b
   references: [ YearRegex, RelativeRegex ]
 HolidayRegex3: !nestedRegex # -dag suffix
-  def: (?<holiday>(valentijn|valentijnsdag|nieuwjaarsdag|prinsjesdag|koningsdag|koninginnedag|bevrijdingsdag|hemelvaartsdag|eerste kerstdag|1e kerst|tweede kerstdag|2e kerstdag|vaderdag|moederdag|meisjesdag|amerikaanse onafhankelijkheidsdag|onafhankelijkheidsdag|nederlandse veteranendag|veteranendag))(\s+(van\s+|in\s+)?({YearRegex}|{RelativeRegex}\s+jaar))?
+  def: (?<holiday>(valentijn|valentijnsdag|nieuwjaarsdag|prinsjesdag|koningsdag|koninginnedag|bevrijdingsdag|hemelvaartsdag|eerste kerstdag|1e kerst|tweede kerstdag|2e kerstdag|vaderdag|moederdag|meisjesdag|amerikaanse onafhankelijkheidsdag|onafhankelijkheidsdag|nederlandse veteranendag|veteranendag|2e kerstdag|1e kerstdag))(\s+(van\s+|in\s+)?({YearRegex}|{RelativeRegex}\s+jaar))?
   references: [ YearRegex, RelativeRegex ]
 AMTimeRegex: !simpleRegex
   def: (?<am>('s morgens|'s ochtends)|in\s+de\s+(morgen|ochtend))
@@ -504,7 +502,7 @@ PMTimeRegex: !simpleRegex
 InclusiveModPrepositions: !simpleRegex
   def: (?<include>((in|tegen|tijdens|op)\s+of\s+)|(\s+of\s+(in|tegen|tijdens|op)))
 BeforeRegex: !nestedRegex
-  def: (\b{InclusiveModPrepositions}?(voor|vóór |vooraf(gaan)?\s+aan|(niet\s+later|vroeger|eerder)\s+dan|eindigend\s+op\s+|tegen|tot|totdat|(?<include>zo\s+laat\s+als)){InclusiveModPrepositions}?\b\s*)|(?<!\w|>)((?<include><=)|<)
+  def: (\b{InclusiveModPrepositions}?(voor|vóór|vooraf(gaan)?\s+aan|(niet\s+later|vroeger|eerder)\s+dan|eindigend\s+op\s+|tegen|tot|totdat|(?<include>zo\s+laat\s+als)){InclusiveModPrepositions}?\b\s*)|(?<!\w|>)((?<include><=)|<)
   references: [ InclusiveModPrepositions ]
 AfterRegex: !nestedRegex
   def: (\b{InclusiveModPrepositions}?((na|(?<!niet\s+)later\s+dan)|(jaar\s+na))(?!\s+of\s+gelijk\s+aan){InclusiveModPrepositions}?\b\s*)|(?<!\w|<)((?<include>>=)|>)
@@ -632,22 +630,22 @@ ComplexDatePeriodRegex: !nestedRegex
 UnitMap: !dictionary
   types: [ string, string ]
   entries:
-    millennium: 1000J
-    eeuw: 100J
-    centennium: 100J
-    decennium: 10J
-    decennia: 10J
-    jaren: J
-    jaar: J
-    maanden: MND
-    maand: MND
+    millennium: 1000M
+    eeuw: 100M
+    centennium: 100Y
+    decennium: 10Y
+    decennia: 10Y
+    jaren: Y
+    jaar: Y
+    maanden: MON
+    maand: MON
     weken: W
     week: W
     dagen: D
     dag: D
-    uren: U
-    uur: U
-    u: U
+    uren: H
+    uur: H
+    u: H
     minuten: M
     minuut: M
     min: M
@@ -688,9 +686,9 @@ SpecialYearPrefixesMap: !dictionary
 SeasonMap: !dictionary
   types: [ string, string ]
   entries:
-    lente: LE
-    zomer: ZO
-    herfst: HE
+    lente: SP
+    zomer: SU
+    herfst: FA
     winter: WI
 SeasonValueMap: !dictionary
   types: [ string, int ]
