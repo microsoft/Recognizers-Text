@@ -19,6 +19,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public static readonly Regex AroundRegex =
             new Regex(DateTimeDefinitions.SinceRegex, RegexFlags);
 
+        public static readonly Regex EqualRegex =
+            new Regex(DateTimeDefinitions.EqualRegex, RegexFlags);
+
         // TODO: change the following three regexes to Spanish if there is same requirement of split from A to B as two time points
         public static readonly Regex FromToRegex =
             new Regex(DateTimeDefinitions.FromToRegex, RegexFlags);
@@ -94,6 +97,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         Regex IMergedExtractorConfiguration.SinceRegex => SinceRegex;
 
         Regex IMergedExtractorConfiguration.AroundRegex => AroundRegex;
+
+        Regex IMergedExtractorConfiguration.EqualRegex => EqualRegex;
 
         Regex IMergedExtractorConfiguration.FromToRegex => FromToRegex;
 

@@ -13,6 +13,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             AfterRegex = PortugueseMergedExtractorConfiguration.AfterRegex;
             SinceRegex = PortugueseMergedExtractorConfiguration.SinceRegex;
             AroundRegex = PortugueseMergedExtractorConfiguration.AroundRegex;
+            EqualRegex = PortugueseMergedExtractorConfiguration.EqualRegex;
             SuffixAfter = PortugueseMergedExtractorConfiguration.SuffixAfterRegex;
             YearRegex = PortugueseDatePeriodExtractorConfiguration.YearRegex;
             SuperfluousWordMatcher = PortugueseMergedExtractorConfiguration.SuperfluousWordMatcher;
@@ -32,6 +33,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         public Regex SinceRegex { get; }
 
         public Regex AroundRegex { get; }
+
+        public Regex EqualRegex { get; }
 
         public Regex SuffixAfter { get; }
 

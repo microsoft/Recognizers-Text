@@ -433,6 +433,9 @@ SinceRegex: !simpleRegex
 AroundRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
+EqualRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 # PortugueseSetExtractorConfiguration
 PeriodicRegex: !simpleRegex
   def: \b(?<periodic>di[áa]ri[ao]|diariamente|mensalmente|semanalmente|quinzenalmente|anualmente)\b

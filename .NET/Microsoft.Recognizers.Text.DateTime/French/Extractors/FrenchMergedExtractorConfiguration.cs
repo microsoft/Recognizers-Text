@@ -22,6 +22,9 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public static readonly Regex AroundRegex =
             new Regex(DateTimeDefinitions.AroundRegex, RegexFlags);
 
+        public static readonly Regex EqualRegex =
+            new Regex(DateTimeDefinitions.EqualRegex, RegexFlags);
+
         // 'Je vais du lundi au mecredi' - I will go from monday to weds
         public static readonly Regex FromToRegex =
             new Regex(DateTimeDefinitions.FromToRegex, RegexFlags);
@@ -97,6 +100,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         Regex IMergedExtractorConfiguration.SinceRegex => SinceRegex;
 
         Regex IMergedExtractorConfiguration.AroundRegex => AroundRegex;
+
+        Regex IMergedExtractorConfiguration.EqualRegex => EqualRegex;
 
         Regex IMergedExtractorConfiguration.FromToRegex => FromToRegex;
 

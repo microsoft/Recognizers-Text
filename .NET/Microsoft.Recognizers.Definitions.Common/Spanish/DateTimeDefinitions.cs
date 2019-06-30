@@ -180,6 +180,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
       public const string AfterRegex = @"(despues(\s*del?(\s+las?)?)?)";
       public const string SinceRegex = @"(desde(\s+(las?|el))?)";
       public const string AroundRegex = @"^[.]";
+      public const string EqualRegex = @"^[.]";
       public const string PeriodicRegex = @"\b(?<periodic>a\s*diario|diariamente|mensualmente|semanalmente|quincenalmente|anualmente)\b";
       public const string EachExpression = @"cada|tod[oa]s\s*(l[oa]s)?";
       public static readonly string EachUnitRegex = $@"(?<each>({EachExpression})\s*{UnitRegex})";

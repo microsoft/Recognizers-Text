@@ -437,6 +437,9 @@ AgoRegex: !simpleRegex
   def: \b(danach)\b
 AroundRegex: !simpleRegex
   def: (\b(ca\.?|gegen|circa)\s*\b)
+EqualRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 LaterRegex: !simpleRegex
   def: \b(später|von jetzt|(ab|nach) (?<day>morgen|heute))\b
 InConnectorRegex: !simpleRegex

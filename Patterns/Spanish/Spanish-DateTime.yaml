@@ -455,6 +455,9 @@ SinceRegex: !simpleRegex
 AroundRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
+EqualRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 # SpanishSetExtractorConfiguration
 PeriodicRegex: !simpleRegex
   def: \b(?<periodic>a\s*diario|diariamente|mensualmente|semanalmente|quincenalmente|anualmente)\b

@@ -21,6 +21,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         public static readonly Regex AroundRegex =
             new Regex(DateTimeDefinitions.AroundRegex, RegexFlags);
 
+        public static readonly Regex EqualRegex =
+            new Regex(DateTimeDefinitions.EqualRegex, RegexFlags);
+
         public static readonly Regex FromToRegex =
             new Regex(DateTimeDefinitions.FromToRegex, RegexFlags);
 
@@ -109,6 +112,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         Regex IMergedExtractorConfiguration.SinceRegex => SinceRegex;
 
         Regex IMergedExtractorConfiguration.AroundRegex => AroundRegex;
+
+        Regex IMergedExtractorConfiguration.EqualRegex => EqualRegex;
 
         Regex IMergedExtractorConfiguration.FromToRegex => FromToRegex;
 

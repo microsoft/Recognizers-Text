@@ -12507,5 +12507,30 @@
         }
       }
     ]
+  },
+  {
+    "Input": "=2019",
+    "Context": {
+      "ReferenceDateTime": "2019-06-28T00:00:00"
+    },
+    "NotSupported": "python, javascript, java",
+    "Results": [
+      {
+        "Text": "=2019",
+        "Start": 0,
+        "End": 4,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019",
+              "type": "daterange",
+              "start": "2019-01-01",
+              "end": "2020-01-01"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

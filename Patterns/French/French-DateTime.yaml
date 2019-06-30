@@ -431,6 +431,9 @@ SinceRegex: !simpleRegex
 AroundRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
+EqualRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.] 
 AgoPrefixRegex: !simpleRegex
   def: \b(y a)\b
 LaterRegex: !simpleRegex

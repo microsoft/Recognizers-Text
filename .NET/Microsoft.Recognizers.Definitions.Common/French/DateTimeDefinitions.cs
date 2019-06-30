@@ -189,6 +189,7 @@ namespace Microsoft.Recognizers.Definitions.French
       public const string AfterRegex = @"\b(apres)\b";
       public const string SinceRegex = @"\b(depuis)\b";
       public const string AroundRegex = @"^[.]";
+      public const string EqualRegex = @"^[.]";
       public const string AgoPrefixRegex = @"\b(y a)\b";
       public const string LaterRegex = @"\b(plus tard)\b";
       public const string AgoRegex = @"^[.]";
