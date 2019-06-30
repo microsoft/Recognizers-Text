@@ -13,10 +13,20 @@ export abstract class ChoiceModel implements IModel {
 
     parse(source: string): ModelResult[] {
         let parseResults: ParseResult[];
-
-        try {
+        
+        try{
             let extractResults = this.extractor.extract(source);
-            parseResults = extractResults.map(r => this.parser.parse(r));
+                parseResults = extractResults.map(r => {
+                try
+                {
+                    return this.parser.parse(r);
+                }
+                catch(err)
+                {
+                    // Nothing to do. One parser fail should not break others. No result.
+                    return new ParseResult();
+                }
+            });
         }
         catch(err) {
             // Nothing to do. Exceptions in parse should not break users of recognizers.

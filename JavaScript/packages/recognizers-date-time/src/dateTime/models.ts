@@ -29,10 +29,15 @@ export class DateTimeModel implements IDateTimeModel {
         try {
             let extractResults = this.extractor.extract(query, referenceDate);
             for (let result of extractResults) {
-                let parseResult = this.parser.parse(result, referenceDate);
-                if (Array.isArray(parseResult.value)) {
-                    parseDates.push(...parseResult.value);
-                } else { parseDates.push(parseResult); }
+                try {
+                    let parseResult = this.parser.parse(result, referenceDate);
+                    if (Array.isArray(parseResult.value)) {
+                        parseDates.push(...parseResult.value);
+                    } else { parseDates.push(parseResult); }
+                }
+                catch(err) {
+                    // Nothing to do. One parser fail should not break others. No result.
+                }
             }
         }
         catch(err) {

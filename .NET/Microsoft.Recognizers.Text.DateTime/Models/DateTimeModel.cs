@@ -28,25 +28,33 @@ namespace Microsoft.Recognizers.Text.DateTime
         public List<ModelResult> Parse(string query, DateObject refTime)
         {
             var parsedDateTimes = new List<DateTimeParseResult>();
+            var extractResults = new List<ExtractResult>();
+            var parseResults = new DateTimeParseResult();
 
             // Preprocess the query
             query = QueryProcessor.Preprocess(query);
 
             try
             {
-                var extractResults = Extractor.Extract(query, refTime);
-
+                // If extractor break, parse should stop together.
+                extractResults = Extractor.Extract(query, refTime);
                 foreach (var result in extractResults)
                 {
-                    var parseResults = Parser.Parse(result, refTime);
-
-                    if (parseResults.Value is List<DateTimeParseResult> list)
+                    try
                     {
-                        parsedDateTimes.AddRange(list);
+                        parseResults = Parser.Parse(result, refTime);
+                        if (parseResults.Value is List<DateTimeParseResult> list)
+                        {
+                            parsedDateTimes.AddRange(list);
+                        }
+                        else
+                        {
+                            parsedDateTimes.Add(parseResults);
+                        }
                     }
-                    else
+                    catch (Exception)
                     {
-                        parsedDateTimes.Add(parseResults);
+                        // One parser fail should not break others. No result.
                     }
                 }
 

@@ -37,14 +37,21 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
                     foreach (var result in extractedResults)
                     {
-                        var parseResult = parser.Parse(result);
-                        if (parseResult.Value is List<ParseResult>)
+                        try
                         {
-                            parsedResults.AddRange((List<ParseResult>)parseResult.Value);
+                            var parseResult = parser.Parse(result);
+                            if (parseResult.Value is List<ParseResult>)
+                            {
+                                parsedResults.AddRange((List<ParseResult>)parseResult.Value);
+                            }
+                            else
+                            {
+                                parsedResults.Add(parseResult);
+                            }
                         }
-                        else
+                        catch (Exception)
                         {
-                            parsedResults.Add(parseResult);
+                            // One parser fail should not break others. No result.
                         }
                     }
 
