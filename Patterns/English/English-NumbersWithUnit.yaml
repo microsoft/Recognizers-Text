@@ -889,4 +889,8 @@ AmbiguousWeightUnitList: !list
     - stone
     - dram
     - lbs
+AmbiguityFiltersDict: !dictionary
+  types: [ string, string ]
+  entries:
+    \bm\b: ((('|’)\s*m)|(m\s*('|’)))
 ...
