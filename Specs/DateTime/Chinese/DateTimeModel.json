@@ -3064,5 +3064,38 @@
         "End": 8
       }
     ]
+  },
+  {
+    "Input": "在12：00之后",
+    "Context": {
+      "ReferenceDateTime": "2019-07-01T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "12:00之后",
+        "Start": 1,
+        "End": 7,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T12:00",
+              "Mod": "after",
+              "type": "timerange",
+              "sourceEntity": "datetimepoint",
+              "start": "12:00:00"
+            },
+            {
+              "timex": "T00:00",
+              "Mod": "after",
+              "type": "timerange",
+              "sourceEntity": "datetimepoint",
+              "start": "00:00:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
