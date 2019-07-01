@@ -1658,6 +1658,7 @@
               "timex": "2018",
               "Mod": "before",
               "type": "daterange",
+              "sourceEntity": "datetimerange",
               "end": "2018-01-01"
             }
           ]
@@ -1683,6 +1684,7 @@
               "timex": "2018",
               "Mod": "after",
               "type": "daterange",
+              "sourceEntity": "datetimerange",
               "start": "2019-01-01"
             }
           ]
@@ -1708,6 +1710,7 @@
               "timex": "2018",
               "Mod": "before",
               "type": "daterange",
+              "sourceEntity": "datetimerange",
               "end": "2018-01-01"
             }
           ]
@@ -1733,6 +1736,7 @@
               "timex": "2018",
               "Mod": "since",
               "type": "daterange",
+              "sourceEntity": "datetimerange",
               "start": "2018-01-01"
             }
           ]
@@ -1758,6 +1762,7 @@
               "timex": "2018",
               "Mod": "since",
               "type": "daterange",
+              "sourceEntity": "datetimerange",
               "start": "2018-01-01"
             }
           ]
@@ -1783,6 +1788,7 @@
               "timex": "2018",
               "Mod": "since",
               "type": "daterange",
+              "sourceEntity": "datetimerange",
               "start": "2018-01-01"
             }
           ]
@@ -1808,6 +1814,7 @@
               "timex": "2007",
               "Mod": "after",
               "type": "daterange",
+              "sourceEntity": "datetimerange",
               "start": "2008-01-01"
             }
           ]
@@ -1833,6 +1840,7 @@
               "timex": "2007",
               "Mod": "before",
               "type": "daterange",
+              "sourceEntity": "datetimerange",
               "end": "2007-01-01"
             }
           ]
@@ -2190,6 +2198,7 @@
               "timex": "2015",
               "Mod": "before",
               "type": "daterange",
+              "sourceEntity": "datetimerange",
               "end": "2015-01-01"
             }
           ]
