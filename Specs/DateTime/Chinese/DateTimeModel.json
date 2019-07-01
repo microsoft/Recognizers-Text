@@ -3097,5 +3097,123 @@
         }
       }
     ]
+  },
+  {
+    "Input": "在十二点之后",
+    "Context": {
+      "ReferenceDateTime": "2019-07-01T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "十二点之后",
+        "Start": 1,
+        "End": 5,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T12",
+              "Mod": "after",
+              "type": "timerange",
+              "sourceEntity": "datetimepoint",
+              "start": "12:00:00"
+            },
+            {
+              "timex": "T00",
+              "Mod": "after",
+              "type": "timerange",
+              "sourceEntity": "datetimepoint",
+              "start": "00:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "今天晚上八点之前",
+    "Context": {
+      "ReferenceDateTime": "2019-07-01T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "今天晚上八点之前",
+        "Start": 0,
+        "End": 7,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-07-01T20",
+              "Mod": "before",
+              "type": "datetimerange",
+              "sourceEntity": "datetimepoint",
+              "end": "2019-07-01 20:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "下午三点之前",
+    "Context": {
+      "ReferenceDateTime": "2019-07-01T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "下午三点之前",
+        "Start": 0,
+        "End": 5,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T15",
+              "Mod": "before",
+              "type": "timerange",
+              "sourceEntity": "datetimepoint",
+              "end": "15:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "在 12：00 之前",
+    "Context": {
+      "ReferenceDateTime": "2019-07-01T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "12:00 之前",
+        "Start": 2,
+        "End": 9,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T12:00",
+              "Mod": "before",
+              "type": "timerange",
+              "sourceEntity": "datetimepoint",
+              "end": "12:00:00"
+            },
+            {
+              "timex": "T00:00",
+              "Mod": "before",
+              "type": "timerange",
+              "sourceEntity": "datetimepoint",
+              "end": "00:00:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
