@@ -21,48 +21,56 @@ export abstract class AbstractNumberWithUnitModel implements IModel {
         query = QueryProcessor.preProcess(query, true);
 
         let extractionResults = new Array<ModelResult>();
-        for (let kv of this.extractorParsersMap.entries()) {
-            let extractor = kv[0];
-            let parser = kv[1];
-            let extractResults = extractor.extract(query);
-            let parseResults: Array<ParseResult> = [];
-            for (let i = 0; i < extractResults.length; i++) {
-                let r = parser.parse(extractResults[i]);
-                if (r.value !== null) {
-                    if (r.value instanceof Array) {
-                        for (let j = 0; j < r.value.length; j++) {
-                            parseResults.push(r.value[j]);
+
+        try{
+            for (let kv of this.extractorParsersMap.entries()) {
+                let extractor = kv[0];
+                let parser = kv[1];
+                let extractResults = extractor.extract(query);
+                let parseResults: Array<ParseResult> = [];
+                for (let i = 0; i < extractResults.length; i++) {
+                    let r = parser.parse(extractResults[i]);
+                    if (r.value !== null) {
+                        if (r.value instanceof Array) {
+                            for (let j = 0; j < r.value.length; j++) {
+                                parseResults.push(r.value[j]);
+                            }
+                        } else {
+                            parseResults.push(r);
                         }
-                    } else {
-                        parseResults.push(r);
                     }
                 }
-            }
-            let modelResults = parseResults.map(o =>
-                ({
-                    start: o.start,
-                    end: o.start + o.length - 1,
-                    resolution: this.getResolution(o.value),
-                    text: o.text,
-                    typeName: this.modelTypeName
-                } as ModelResult));
+                let modelResults = parseResults.map(o =>
+                    ({
+                        start: o.start,
+                        end: o.start + o.length - 1,
+                        resolution: this.getResolution(o.value),
+                        text: o.text,
+                        typeName: this.modelTypeName
+                    } as ModelResult));
 
-            modelResults.forEach(result => {
-                let bAdd = true;
+                modelResults.forEach(result => {
+                    let bAdd = true;
 
-                extractionResults.forEach(extractionResult => {
-                    if (extractionResult.start === result.start && extractionResult.end === result.end) {
-                        bAdd = false;
+                    extractionResults.forEach(extractionResult => {
+                        if (extractionResult.start === result.start && extractionResult.end === result.end) {
+                            bAdd = false;
+                        }
+                    });
+
+                    if (bAdd) {
+                        extractionResults.push(result);
                     }
                 });
-
-                if (bAdd) {
-                    extractionResults.push(result);
-                }
-            });
+            }
         }
-
-        return extractionResults;
+        catch(err) {
+            // Nothing to do. Exceptions in result process should not affect other extracted entities.
+            // No result.
+        }
+        finally {
+            return extractionResults;
+        }
     }
 
     private getResolution(data: any): any {

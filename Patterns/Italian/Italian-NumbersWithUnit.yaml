@@ -616,4 +616,8 @@ AmbiguousWeightUnitList: !list
   entries:
     - g
     - oz
+AmbiguityFiltersDict: !dictionary
+  types: [ string, string ]
+  entries:
+    \bl\b: l\s*('|’)
 ...
