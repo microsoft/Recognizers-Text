@@ -19,9 +19,14 @@ class AbstractSequenceModel(Model):
         self.parser = parser
 
     def parse(self, query: str) -> List[ModelResult]:
-        extract_results = self.extractor.extract(query)
-        parse_results = [self.parser.parse(e) for e in extract_results]
         model_results: List[ModelResult] = list()
+        parse_results = []
+
+        try:
+            extract_results = self.extractor.extract(query)
+            parse_results = [self.parser.parse(e) for e in extract_results]
+        except Exception:
+            pass
 
         for parse_result in parse_results:
             model_result = ModelResult()
