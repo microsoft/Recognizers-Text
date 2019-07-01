@@ -57,20 +57,16 @@ class AbstractNumberModel(Model):
         return results
 
     def __single_parse(self, source: ExtractResult) -> Optional[ModelResult]:
-        try:
-            parse_result = self.parser.parse(source)
-            if parse_result is None:
-                return None
-            result = ModelResult()
-            result.start = parse_result.start
-            result.end = parse_result.end
-            result.resolution = dict([('value', parse_result.resolution_str)])
-            result.text = parse_result.text
-            result.type_name = self.model_type_name
-            return result
-        except Exception:
-            # One parser fail should not break others. No result.
+        parse_result = self.parser.parse(source)
+        if parse_result is None:
             return None
+        result = ModelResult()
+        result.start = parse_result.start
+        result.end = parse_result.end
+        result.resolution = dict([('value', parse_result.resolution_str)])
+        result.text = parse_result.text
+        result.type_name = self.model_type_name
+        return result
 
 
 class NumberModel(AbstractNumberModel):

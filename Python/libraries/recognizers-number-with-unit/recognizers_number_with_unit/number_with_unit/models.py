@@ -28,19 +28,12 @@ class AbstractNumberWithUnitModel(Model):
         query = QueryProcessor.preprocess(query, True)
 
         extraction_results = []
-        parse_results = []
 
         try:
             for item in self.extractor_parser:
                 extract_results = item.extractor.extract(query)
                 parse_results = [r for r in [item.parser.parse(
                     r) for r in extract_results] if not r.value is None]
-                for r in extract_results:
-                    try:
-                        parse_results.append(rr for rr in item.parser.parse(r) if not rr.valur is None)
-                    except Exception:
-                        # One parser fail should not break others. No result.
-                        pass
 
                 for parse_result in parse_results:
                     model_result = ModelResult()

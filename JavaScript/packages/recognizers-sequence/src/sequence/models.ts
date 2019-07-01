@@ -16,15 +16,7 @@ export abstract class AbstractSequenceModel implements IModel {
 
         try {
             let extractResults = this.extractor.extract(query);
-            parseResults = extractResults.map(r => {
-                try{
-                    return this.parser.parse(r);
-                }
-                catch (err){
-                    // One parser fail should not break others. No result.
-                    return new ParseResult();
-                }       
-            });
+            parseResults = extractResults.map(r => this.parser.parse(r));
         }
         catch(err) {
             // Nothing to do. Exceptions in result process should not affect other extracted entities.
@@ -52,15 +44,7 @@ export class PhoneNumberModel extends AbstractSequenceModel {
         
         try {
             let extractResults = this.extractor.extract(query);
-            parseResults = extractResults.map(r => {
-                try{
-                    return this.parser.parse(r);
-                }
-                catch (err){
-                    // One parser fail should not break others. No result.
-                    return new ParseResult();
-                }
-            });
+            parseResults = extractResults.map(r => this.parser.parse(r));
         }
         catch(err) {
             // Nothing to do. Exceptions in result process should not affect other extracted entities.
@@ -91,15 +75,7 @@ export class IpAddressModel extends AbstractSequenceModel {
 
         try {
             let extractResults = this.extractor.extract(query);
-            parseResults = extractResults.map(r => {
-                try{
-                    return this.parser.parse(r);
-                }
-                catch (err){
-                    // One parser fail should not break others. No result.
-                    return new ParseResult();
-                }
-            });
+            parseResults = extractResults.map(r => this.parser.parse(r));
         }
         catch(err) {
             // Nothing to do. Exceptions in result process should not affect other extracted entities.
@@ -146,15 +122,7 @@ export class GUIDModel extends AbstractSequenceModel {
         
         try {
             let extractResults = this.extractor.extract(query);
-            parseResults = extractResults.map(r => {
-                try{
-                    return this.parser.parse(r);
-                }
-                catch (err){
-                    // One parser fail should not break others. No result.
-                    return new ParseResult();
-                }
-            });
+            parseResults = extractResults.map(r => this.parser.parse(r));
         }
         catch(err) {
             // Nothing to do. in result process should not affect other extracted entities.

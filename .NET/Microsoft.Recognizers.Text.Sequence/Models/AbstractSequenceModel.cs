@@ -28,14 +28,7 @@ namespace Microsoft.Recognizers.Text.Sequence
 
                 foreach (var result in extractResults)
                 {
-                    try
-                    {
-                        parsedSequences.Add(Parser.Parse(result));
-                    }
-                    catch (Exception)
-                    {
-                        // Nothing to do. One parser fail should not break others. No result.
-                    }
+                    parsedSequences.Add(Parser.Parse(result));
                 }
             }
             catch (Exception)

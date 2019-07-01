@@ -24,21 +24,8 @@ namespace Microsoft.Recognizers.Text.Choice
 
             try
             {
-                // If extractor break, parse should stop together.
                 var extractResults = Extractor.Extract(query);
-
-                parseResults = extractResults.Select(r =>
-                {
-                    try
-                    {
-                        return Parser.Parse(r);
-                    }
-                    catch (Exception)
-                    {
-                        // One parser fail should not break others. No result.
-                        return new ParseResult();
-                    }
-                });
+                parseResults = extractResults.Select(r => Parser.Parse(r));
             }
             catch (Exception)
             {

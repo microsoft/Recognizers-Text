@@ -29,20 +29,15 @@ export abstract class AbstractNumberWithUnitModel implements IModel {
                 let extractResults = extractor.extract(query);
                 let parseResults: Array<ParseResult> = [];
                 for (let i = 0; i < extractResults.length; i++) {
-                    try{
-                        let r = parser.parse(extractResults[i]);
-                        if (r.value !== null) {
-                            if (r.value instanceof Array) {
-                                for (let j = 0; j < r.value.length; j++) {
-                                    parseResults.push(r.value[j]);
-                                }
-                            } else {
-                                parseResults.push(r);
+                    let r = parser.parse(extractResults[i]);
+                    if (r.value !== null) {
+                        if (r.value instanceof Array) {
+                            for (let j = 0; j < r.value.length; j++) {
+                                parseResults.push(r.value[j]);
                             }
+                        } else {
+                            parseResults.push(r);
                         }
-                    }
-                    catch (err){
-                         // One parser fail should not break others. No result.
                     }
                 }
                 let modelResults = parseResults.map(o =>

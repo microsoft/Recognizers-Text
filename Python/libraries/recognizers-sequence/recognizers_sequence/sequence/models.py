@@ -24,12 +24,7 @@ class AbstractSequenceModel(Model):
 
         try:
             extract_results = self.extractor.extract(query)
-            for e in extract_results:
-                try:
-                    parse_results.append(self.parser.parse(e))
-                except Exception:
-                    # One parser fail should not break others. No result.
-                    pass
+            parse_results = [self.parser.parse(e) for e in extract_results]
         except Exception:
             pass
 
