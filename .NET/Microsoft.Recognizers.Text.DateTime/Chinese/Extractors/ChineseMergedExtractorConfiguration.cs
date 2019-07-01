@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Definitions;
 using Microsoft.Recognizers.Definitions.Chinese;
 using DateObject = System.DateTime;
 
@@ -13,6 +14,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         public static readonly Regex UntilRegex = new Regex(DateTimeDefinitions.ParserConfigurationUntil, RegexFlags);
         public static readonly Regex SincePrefixRegex = new Regex(DateTimeDefinitions.ParserConfigurationSincePrefix, RegexFlags);
         public static readonly Regex SinceSuffixRegex = new Regex(DateTimeDefinitions.ParserConfigurationSinceSuffix, RegexFlags);
+        public static readonly Regex EqualRegex = new Regex(BaseDateTime.EqualRegex, RegexFlags);
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
@@ -161,6 +163,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 {
                     var modLength = match.Index + match.Length;
                     er.Length += modLength;
+                    er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
+                }
+
+                match = EqualRegex.MatchBegin(beforeStr, trim: true);
+                if (match.Success)
+                {
+                    var modLength = beforeStr.Length - match.Index;
+                    er.Length += modLength;
+                    er.Start -= modLength;
                     er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
                 }
             }

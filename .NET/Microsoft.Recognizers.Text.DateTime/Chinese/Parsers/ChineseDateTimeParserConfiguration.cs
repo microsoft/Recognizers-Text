@@ -43,6 +43,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             UntilRegex = ChineseMergedExtractorConfiguration.UntilRegex;
             SincePrefixRegex = ChineseMergedExtractorConfiguration.SincePrefixRegex;
             SinceSuffixRegex = ChineseMergedExtractorConfiguration.SinceSuffixRegex;
+            EqualRegex = ChineseMergedExtractorConfiguration.EqualRegex;
         }
 
         public int TwoNumYear => int.Parse(DateTimeDefinitions.TwoNumYear);
@@ -112,6 +113,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         public Regex SincePrefixRegex { get; }
 
         public Regex SinceSuffixRegex { get; }
+
+        public Regex EqualRegex { get; }
 
         public static int GetSwiftDay(string text)
         {

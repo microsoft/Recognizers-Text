@@ -10699,5 +10699,57 @@
         }
       }
     ]
+  },
+  {
+    "Input": "> = 2019",
+    "Context": {
+      "ReferenceDateTime": "2019-06-28T00:00:00"
+    },
+    "NotSupported": "python, javascript, java",
+    "Results": [
+      {
+        "Text": "> = 2019",
+        "Start": 0,
+        "End": 7,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019",
+              "Mod": "since",
+              "type": "daterange",
+              "sourceEntity": "datetimerange",
+              "start": "2019-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "< =2019",
+    "Context": {
+      "ReferenceDateTime": "2019-06-28T00:00:00"
+    },
+    "NotSupported": "python, javascript, java",
+    "Results": [
+      {
+        "Text": "< =2019",
+        "Start": 0,
+        "End": 6,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019",
+              "Mod": "until",
+              "type": "daterange",
+              "sourceEntity": "datetimerange",
+              "end": "2020-01-01"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
