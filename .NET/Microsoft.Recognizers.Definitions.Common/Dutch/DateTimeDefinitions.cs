@@ -220,7 +220,6 @@ namespace Microsoft.Recognizers.Definitions.Dutch
       public static readonly string AfterRegex = $@"(\b{InclusiveModPrepositions}?((after|(?<!no\s+)later than)|(year greater than))(?!\s+or equal to){InclusiveModPrepositions}?\b\s*)|(?<!\w|<)((?<include>>\s*=)|>)";
       public const string SinceRegex = @"(\b(since|after\s+or\s+equal\s+to|starting\s+(from|on|with)|as\s+early\s+as|any\s+time\s+from)\b\s*)|(?<!\w|<)(>=)";
       public const string AroundRegex = @"(\b(around|circa)\s*\b)";
-      public const string EqualRegex = @"(?<!<|>)=";
       public const string AgoRegex = @"\b(ago|before\s+(?<day>gisteren|vandaag))\b";
       public const string LaterRegex = @"\b(later|vanaf nu|(van|na) (?<day>morgen|vandaag))\b";
       public const string InConnectorRegex = @"\b(in|over)\b";

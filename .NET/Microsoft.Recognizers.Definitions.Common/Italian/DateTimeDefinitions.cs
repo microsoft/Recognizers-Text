@@ -191,7 +191,6 @@ namespace Microsoft.Recognizers.Definitions.Italian
       public const string AfterRegex = @"\b(dopo(?!\s+o uguale a)|(?<!no\s+)dopo di)\b";
       public const string SinceRegex = @"\b(a partire da|dopo il|a partire (da|del))\b";
       public const string AroundRegex = @"^[.]";
-      public const string EqualRegex = @"^[.]";
       public const string AgoPrefixRegex = @"\b(di)\b";
       public const string LaterRegex = @"\b(dopo|da adesso)\b";
       public const string AgoRegex = @"^[.]";

@@ -524,8 +524,6 @@ SinceRegex: !simpleRegex
   def: (?:(?:\b(?:since|after\s+or\s+equal\s+to|starting\s+(?:from|on|with)|as\s+early\s+as|any\s+time\s+from)\b\s*)|(?<!\w|<)(>=))
 AroundRegex: !simpleRegex
   def: (?:\b(?:around|circa)\s*\b)
-EqualRegex: !simpleRegex
-  def: (?<!<|>)=
 AgoRegex: !simpleRegex
   def: \b(ago|before\s+(?<day>yesterday|today))\b
 LaterRegex: !nestedRegex

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Definitions;
 using Microsoft.Recognizers.Definitions.Spanish;
 using Microsoft.Recognizers.Text.Matcher;
 
@@ -20,7 +21,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             new Regex(DateTimeDefinitions.SinceRegex, RegexFlags);
 
         public static readonly Regex EqualRegex =
-            new Regex(DateTimeDefinitions.EqualRegex, RegexFlags);
+            new Regex(BaseDateTime.EqualRegex, RegexFlags);
 
         // TODO: change the following three regexes to Spanish if there is same requirement of split from A to B as two time points
         public static readonly Regex FromToRegex =

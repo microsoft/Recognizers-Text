@@ -192,7 +192,6 @@ namespace Microsoft.Recognizers.Definitions.German
       public const string SinceRegex = @"\b(seit)\b";
       public const string AgoRegex = @"\b(danach)\b";
       public const string AroundRegex = @"(\b(ca\.?|gegen|circa)\s*\b)";
-      public const string EqualRegex = @"^[.]";
       public const string LaterRegex = @"\b(später|von jetzt|(ab|nach) (?<day>morgen|heute))\b";
       public const string InConnectorRegex = @"\b(in)\b";
       public const string SinceYearSuffixRegex = @"^[.]";

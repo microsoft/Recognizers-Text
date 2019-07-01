@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Definitions;
 using Microsoft.Recognizers.Definitions.Portuguese;
 using Microsoft.Recognizers.Text.Matcher;
 
@@ -20,7 +21,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             new Regex(DateTimeDefinitions.AroundRegex, RegexFlags);
 
         public static readonly Regex EqualRegex =
-            new Regex(DateTimeDefinitions.EqualRegex, RegexFlags);
+            new Regex(BaseDateTime.EqualRegex, RegexFlags);
 
         // TODO: change the following three regexes to Portuguese if there are the same requirement of splitting from A to B as two time points
         public static readonly Regex FromToRegex =

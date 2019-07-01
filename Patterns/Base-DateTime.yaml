@@ -23,6 +23,8 @@ BasePmDescRegex: !simpleRegex
   def: (pm\b|p\s*\.\s*m\s*\.|p[\.]?\s*m\b)
 BaseAmPmDescRegex: !simpleRegex
   def: (ampm)
+EqualRegex: !simpleRegex
+  def: (?<!<|>)=
 MinYearNum: 1500
 MaxYearNum: 2100
 MaxTwoDigitYearFutureNum: 30

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Definitions;
 using Microsoft.Recognizers.Definitions.German;
 using Microsoft.Recognizers.Definitions.Utilities;
 using Microsoft.Recognizers.Text.Matcher;
@@ -21,7 +22,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             new Regex(DateTimeDefinitions.AroundRegex, RegexFlags);
 
         public static readonly Regex EqualRegex =
-            new Regex(DateTimeDefinitions.EqualRegex, RegexFlags);
+            new Regex(BaseDateTime.EqualRegex, RegexFlags);
 
         public static readonly Regex FromToRegex =
             new Regex(DateTimeDefinitions.FromToRegex, RegexFlags);

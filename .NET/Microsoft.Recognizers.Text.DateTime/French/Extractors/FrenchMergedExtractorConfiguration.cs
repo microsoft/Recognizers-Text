@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
-
+using Microsoft.Recognizers.Definitions;
 using Microsoft.Recognizers.Definitions.French;
 using Microsoft.Recognizers.Text.Matcher;
 
@@ -23,7 +23,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             new Regex(DateTimeDefinitions.AroundRegex, RegexFlags);
 
         public static readonly Regex EqualRegex =
-            new Regex(DateTimeDefinitions.EqualRegex, RegexFlags);
+            new Regex(BaseDateTime.EqualRegex, RegexFlags);
 
         // 'Je vais du lundi au mecredi' - I will go from monday to weds
         public static readonly Regex FromToRegex =
