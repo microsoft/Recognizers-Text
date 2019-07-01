@@ -194,15 +194,13 @@
   },
   {
     "Input": "bir trilyon",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "bir trilyon",
         "TypeName": "number",
         "Resolution": {
-          "subtype": "integer",
-          "value": "1E-12"
+          "value": "1000000000000"
         },
         "Start": 0,
         "End": 10
@@ -211,15 +209,13 @@
   },
   {
     "Input": "yüz trilyon",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "yüz trilyon",
         "TypeName": "number",
         "Resolution": {
-          "subtype": "integer",
-          "value": "1E-10"
+          "value": "100000000000000"
         },
         "Start": 0,
         "End": 10
@@ -573,7 +569,6 @@
   },
   {
     "Input": "yirmi bir trilyon",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -583,13 +578,12 @@
           "value": "21000000000000"
         },
         "Start": 0,
-        "End": 17
+        "End": 16
       }
     ]
   },
   {
     "Input": "yirmi bir trilyon üç yüz",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -599,7 +593,7 @@
           "value": "21000000000300"
         },
         "Start": 0,
-        "End": 24
+        "End": 23
       }
     ]
   },
@@ -620,7 +614,6 @@
   },
   {
     "Input": "üç yüz otuz bir",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -630,13 +623,12 @@
           "value": "331"
         },
         "Start": 0,
-        "End": 15
+        "End": 14
       }
     ]
   },
   {
     "Input": "iki yüz iki bin",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -646,13 +638,12 @@
           "value": "202000"
         },
         "Start": 0,
-        "End": 15
+        "End": 14
       }
     ]
   },
   {
     "Input": "iki bin iki yüz",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -662,7 +653,7 @@
           "value": "2200"
         },
         "Start": 0,
-        "End": 15
+        "End": 14
       }
     ]
   },
@@ -743,7 +734,6 @@
   },
   {
     "Input": "otuz iki bin iki yüz",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -845,7 +835,7 @@
           "value": "0.5"
         },
         "Start": 0,
-        "End": 5
+        "End": 4
       }
     ]
   },
@@ -862,7 +852,7 @@
           "value": "0.75"
         },
         "Start": 0,
-        "End": 9
+        "End": 8
       }
     ]
   },
@@ -1140,15 +1130,13 @@
   },
   {
     "Input": "yüz bin trilyon",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "yüz bin trilyon",
         "TypeName": "number",
         "Resolution": {
-          "subtype": "fraction",
-          "value": "1E-07"
+          "value": "1E+17"
         },
         "Start": 0,
         "End": 14
@@ -1167,6 +1155,21 @@
         },
         "Start": 0,
         "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "üç bölü beş",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "üç bölü beş",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,6"
+        },
+        "Start": 0,
+        "End": 10
       }
     ]
   },
@@ -1502,7 +1505,6 @@
   },
   {
     "Input": "bin dokuz yüz",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1512,13 +1514,12 @@
           "value": "1900"
         },
         "Start": 0,
-        "End": 11
+        "End": 12
       }
     ]
   },
   {
     "Input": "Yanıt eksi bin dokuz yüz",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1856,7 +1857,6 @@
   },
   {
     "Input": "Sana üç yüz yirmi bir yuan verebilirim",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1872,7 +1872,6 @@
   },
   {
     "Input": "dört bin üç yüz yirmi bir geçerli bir sayıdır",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1883,12 +1882,20 @@
         },
         "Start": 0,
         "End": 24
-      }
+      },
+      {
+        "Text": "bir",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1"
+        },
+        "Start": 34,
+        "End": 36
+      },
     ]
   },
   {
     "Input": "dört bin üç yüz ve sıfır iki geçerli sayıdır",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1922,7 +1929,6 @@
   },
   {
     "Input": "dört bin üç yüz ve 21 iki geçerli sayıdır",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1955,8 +1961,7 @@
     ]
   },
   {
-    "Input": "üç yüz ve iki yüz iki geçerli sayıdır",
-    "NotSupported": "dotnet",
+    "Input": "üç yüz ve iki yüz 2 geçerli sayıdır",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1978,19 +1983,18 @@
         "End": 16
       },
       {
-        "Text": "iki",
+        "Text": "2",
         "TypeName": "number",
         "Resolution": {
           "value": "2"
         },
         "Start": 18,
-        "End": 20
+        "End": 18
       }
     ]
   },
   {
     "Input": "üç yüz ve 212 iki geçerli sayıdır",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2006,7 +2010,6 @@
         "Text": "212",
         "TypeName": "number",
         "Resolution": {
-          "subtype": "decimal",
           "value": "212"
         },
         "Start": 10,
@@ -2025,7 +2028,6 @@
   },
   {
     "Input": "üç yüz ve eksi bir iki geçerli sayıdır",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2059,7 +2061,6 @@
   },
   {
     "Input": "üç yüz bir geçerli sayıdır",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {

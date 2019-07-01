@@ -28,7 +28,7 @@ namespace Microsoft.Recognizers.Text.Number.Turkish
                 },
                 {
                     new Regex(NumbersDefinitions.FractionNounWithArticleRegex, RegexOptions.Singleline),
-                    RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.ENGLISH)
+                    RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.TURKISH)
                 },
                 {
                     new Regex(NumbersDefinitions.FractionPrepositionRegex, RegexOptions.Singleline),

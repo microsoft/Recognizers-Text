@@ -52,6 +52,10 @@ namespace Microsoft.Recognizers.Text.Number.Turkish
                     GenerateLongFormatNumberRegexes(LongFormatType.DoubleNumNoBreakSpaceComma, placeholder),
                     RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)
                 },
+                {
+                    GenerateLongFormatNumberRegexes(LongFormatType.DoubleNumBlankComma, placeholder),
+                    RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)
+                },
             };
 
             Regexes = regexes.ToImmutableDictionary();
