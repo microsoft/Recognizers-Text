@@ -29,7 +29,7 @@ namespace Microsoft.Recognizers.Definitions.Turkish
       public const string ZeroToNineIntegerRegex = @"(sıfır|bir|iki|üç|dört|beş|altı|yedi|sekiz|dokuz)";
       public const string OneToNineIntegerRegex = @"(bir|iki|üç|dört|beş|altı|yedi|sekiz|dokuz)";
       public const string TwoToNineIntegerRegex = @"(iki|üç|dört|beş|altı|yedi|sekiz|dokuz)";
-      public const string NegativeNumberTermsRegex = @"((eksi|negatif)\s+)";
+      public const string NegativeNumberTermsRegex = @"(?<negTerm>(eksi|negatif)\s+)";
       public static readonly string NegativeNumberSignRegex = $@"^{NegativeNumberTermsRegex}.*";
       public const string TensNumberIntegerRegex = @"(on|yirmi|otuz|kırk|elli|altmış|yetmiş|seksen|doksan)";
       public static readonly string HundredsNumberIntegerRegex = $@"({TwoToNineIntegerRegex}\syüz|yüz)";

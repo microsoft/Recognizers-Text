@@ -14,7 +14,7 @@ OneToNineIntegerRegex: !simpleRegex   # 1,2,...,9
 TwoToNineIntegerRegex: !simpleRegex   # 2,...,9
   def: (iki|üç|dört|beş|altı|yedi|sekiz|dokuz)
 NegativeNumberTermsRegex: !simpleRegex
-  def: ((eksi|negatif)\s+)
+  def: (?<negTerm>(eksi|negatif)\s+)
 NegativeNumberSignRegex: !nestedRegex
   def: ^{NegativeNumberTermsRegex}.*
   references: [ NegativeNumberTermsRegex ]
