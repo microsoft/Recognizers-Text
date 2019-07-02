@@ -99,6 +99,7 @@
     <Compile Include="Matcher\SimpleTokenizerTest.cs" />
     <Compile Include="NumberWithUnit\TestNumberWithUnitRecognizerCache.cs" />
     <Compile Include="NumberWithUnit\TestNumberWithUnit_Dutch.cs" />
+    <Compile Include="NumberWithUnit\TestNumberWithUnit_Turkish.cs" />
     <Compile Include="NumberWithUnit\TestNumberWithUnit_Italian.cs" />
     <Compile Include="NumberWithUnit\TestNumberWithUnit_French.cs" />
     <Compile Include="NumberWithUnit\TestNumberWithUnit_German.cs" />
