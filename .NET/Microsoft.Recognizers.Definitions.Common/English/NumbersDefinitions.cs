@@ -74,13 +74,13 @@ namespace Microsoft.Recognizers.Definitions.English
       public static readonly string NumberWithPrefixPercentage = $@"(per\s*cents?\s+of)(\s*)({BaseNumbers.NumberReplaceToken})";
       public static readonly string NumberWithPrepositionPercentage = $@"({BaseNumbers.NumberReplaceToken})\s*(in|out\s+of)\s*({BaseNumbers.NumberReplaceToken})";
       public const string TillRegex = @"(to|through|--|-|—|——|~|–)";
-      public const string MoreRegex = @"(?:(bigger|greater|more|higher|larger)(\s+than)?|above|over|exceed|surpass|(?<!<|=)>)";
+      public const string MoreRegex = @"(?:(bigger|greater|more|higher|larger)(\s+than)?|above|over|excee(d|ded|ding)|surpas(s|sed|sing)|(?<!<|=)>)";
       public const string LessRegex = @"(?:(less|lower|smaller|fewer)(\s+than)?|below|under|(?<!>|=)<)";
       public const string EqualRegex = @"(equal(s|ing)?(\s+(to|than))?|(?<!<|>)=)";
       public static readonly string MoreOrEqualPrefix = $@"((no\s+{LessRegex})|(at\s+least))";
       public static readonly string MoreOrEqual = $@"(?:({MoreRegex}\s+(or)?\s+{EqualRegex})|({EqualRegex}\s+(or)?\s+{MoreRegex})|{MoreOrEqualPrefix}(\s+(or)?\s+{EqualRegex})?|({EqualRegex}\s+(or)?\s+)?{MoreOrEqualPrefix}|>\s*=)";
-      public const string MoreOrEqualSuffix = @"((and|or)\s+(more|greater|higher|larger|bigger)((?!\s+than)|(\s+than(?!(\s*\d+)))))";
-      public static readonly string LessOrEqualPrefix = $@"((no\s+{MoreRegex})|(at\s+most))";
+      public const string MoreOrEqualSuffix = @"((and|or)\s+(((more|greater|higher|larger|bigger)((?!\s+than)|(\s+than(?!(\s*\d+)))))|((over|above)(?!\s+than))))";
+      public static readonly string LessOrEqualPrefix = $@"((no\s+{MoreRegex})|(at\s+most)|(up\s+to))";
       public static readonly string LessOrEqual = $@"(({LessRegex}\s+(or)?\s+{EqualRegex})|({EqualRegex}\s+(or)?\s+{LessRegex})|{LessOrEqualPrefix}(\s+(or)?\s+{EqualRegex})?|({EqualRegex}\s+(or)?\s+)?{LessOrEqualPrefix}|<\s*=)";
       public const string LessOrEqualSuffix = @"((and|or)\s+(less|lower|smaller|fewer)((?!\s+than)|(\s+than(?!(\s*\d+)))))";
       public const string NumberSplitMark = @"(?![,.](?!\d+))";

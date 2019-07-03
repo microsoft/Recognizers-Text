@@ -140,7 +140,7 @@ NumberWithPrepositionPercentage: !nestedRegex
 TillRegex: !simpleRegex
   def: (to|through|--|-|—|——|~|–)
 MoreRegex: !simpleRegex
-  def: (?:(bigger|greater|more|higher|larger)(\s+than)?|above|over|exceed|surpass|(?<!<|=)>)
+  def: (?:(bigger|greater|more|higher|larger)(\s+than)?|above|over|excee(d|ded|ding)|surpas(s|sed|sing)|(?<!<|=)>)
 LessRegex: !simpleRegex
   def: (?:(less|lower|smaller|fewer)(\s+than)?|below|under|(?<!>|=)<)
 EqualRegex: !simpleRegex
@@ -152,9 +152,9 @@ MoreOrEqual: !nestedRegex
   def: (?:({MoreRegex}\s+(or)?\s+{EqualRegex})|({EqualRegex}\s+(or)?\s+{MoreRegex})|{MoreOrEqualPrefix}(\s+(or)?\s+{EqualRegex})?|({EqualRegex}\s+(or)?\s+)?{MoreOrEqualPrefix}|>\s*=)
   references: [ MoreRegex, EqualRegex, LessRegex, MoreOrEqualPrefix ]
 MoreOrEqualSuffix: !simpleRegex
-  def: ((and|or)\s+(more|greater|higher|larger|bigger)((?!\s+than)|(\s+than(?!(\s*\d+)))))
+  def: ((and|or)\s+(((more|greater|higher|larger|bigger)((?!\s+than)|(\s+than(?!(\s*\d+)))))|((over|above)(?!\s+than))))
 LessOrEqualPrefix: !nestedRegex
-  def: ((no\s+{MoreRegex})|(at\s+most))
+  def: ((no\s+{MoreRegex})|(at\s+most)|(up\s+to))
   references: [ MoreRegex ]
 LessOrEqual: !nestedRegex
   def: (({LessRegex}\s+(or)?\s+{EqualRegex})|({EqualRegex}\s+(or)?\s+{LessRegex})|{LessOrEqualPrefix}(\s+(or)?\s+{EqualRegex})?|({EqualRegex}\s+(or)?\s+)?{LessOrEqualPrefix}|<\s*=)

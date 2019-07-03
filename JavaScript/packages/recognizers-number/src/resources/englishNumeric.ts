@@ -64,13 +64,13 @@ export namespace EnglishNumeric {
     export const NumberWithPrefixPercentage = `(per\\s*cents?\\s+of)(\\s*)(${BaseNumbers.NumberReplaceToken})`;
     export const NumberWithPrepositionPercentage = `(${BaseNumbers.NumberReplaceToken})\\s*(in|out\\s+of)\\s*(${BaseNumbers.NumberReplaceToken})`;
     export const TillRegex = `(to|through|--|-|—|——|~|–)`;
-    export const MoreRegex = `(?:(bigger|greater|more|higher|larger)(\\s+than)?|above|over|exceed|surpass|(?<!<|=)>)`;
+    export const MoreRegex = `(?:(bigger|greater|more|higher|larger)(\\s+than)?|above|over|excee(d|ded|ding)|surpas(s|sed|sing)|(?<!<|=)>)`;
     export const LessRegex = `(?:(less|lower|smaller|fewer)(\\s+than)?|below|under|(?<!>|=)<)`;
     export const EqualRegex = `(equal(s|ing)?(\\s+(to|than))?|(?<!<|>)=)`;
     export const MoreOrEqualPrefix = `((no\\s+${LessRegex})|(at\\s+least))`;
     export const MoreOrEqual = `(?:(${MoreRegex}\\s+(or)?\\s+${EqualRegex})|(${EqualRegex}\\s+(or)?\\s+${MoreRegex})|${MoreOrEqualPrefix}(\\s+(or)?\\s+${EqualRegex})?|(${EqualRegex}\\s+(or)?\\s+)?${MoreOrEqualPrefix}|>\\s*=)`;
-    export const MoreOrEqualSuffix = `((and|or)\\s+(more|greater|higher|larger|bigger)((?!\\s+than)|(\\s+than(?!(\\s*\\d+)))))`;
-    export const LessOrEqualPrefix = `((no\\s+${MoreRegex})|(at\\s+most))`;
+    export const MoreOrEqualSuffix = `((and|or)\\s+(((more|greater|higher|larger|bigger)((?!\\s+than)|(\\s+than(?!(\\s*\\d+)))))|((over|above)(?!\\s+than))))`;
+    export const LessOrEqualPrefix = `((no\\s+${MoreRegex})|(at\\s+most)|(up\\s+to))`;
     export const LessOrEqual = `((${LessRegex}\\s+(or)?\\s+${EqualRegex})|(${EqualRegex}\\s+(or)?\\s+${LessRegex})|${LessOrEqualPrefix}(\\s+(or)?\\s+${EqualRegex})?|(${EqualRegex}\\s+(or)?\\s+)?${LessOrEqualPrefix}|<\\s*=)`;
     export const LessOrEqualSuffix = `((and|or)\\s+(less|lower|smaller|fewer)((?!\\s+than)|(\\s+than(?!(\\s*\\d+)))))`;
     export const NumberSplitMark = `(?![,.](?!\\d+))`;

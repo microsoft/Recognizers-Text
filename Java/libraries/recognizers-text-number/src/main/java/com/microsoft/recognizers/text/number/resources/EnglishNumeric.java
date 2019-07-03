@@ -182,7 +182,7 @@ public class EnglishNumeric {
 
     public static final String TillRegex = "(to|through|--|-|—|——|~|–)";
 
-    public static final String MoreRegex = "(?:(bigger|greater|more|higher|larger)(\\s+than)?|above|over|exceed|surpass|(?<!<|=)>)";
+    public static final String MoreRegex = "(?:(bigger|greater|more|higher|larger)(\\s+than)?|above|over|excee(d|ded|ding)|surpas(s|sed|sing)|(?<!<|=)>)";
 
     public static final String LessRegex = "(?:(less|lower|smaller|fewer)(\\s+than)?|below|under|(?<!>|=)<)";
 
@@ -197,9 +197,9 @@ public class EnglishNumeric {
             .replace("{LessRegex}", LessRegex)
             .replace("{MoreOrEqualPrefix}", MoreOrEqualPrefix);
 
-    public static final String MoreOrEqualSuffix = "((and|or)\\s+(more|greater|higher|larger|bigger)((?!\\s+than)|(\\s+than(?!(\\s*\\d+)))))";
+    public static final String MoreOrEqualSuffix = "((and|or)\\s+(((more|greater|higher|larger|bigger)((?!\\s+than)|(\\s+than(?!(\\s*\\d+)))))|((over|above)(?!\\s+than))))";
 
-    public static final String LessOrEqualPrefix = "((no\\s+{MoreRegex})|(at\\s+most))"
+    public static final String LessOrEqualPrefix = "((no\\s+{MoreRegex})|(at\\s+most)|(up\\s+to))"
             .replace("{MoreRegex}", MoreRegex);
 
     public static final String LessOrEqual = "(({LessRegex}\\s+(or)?\\s+{EqualRegex})|({EqualRegex}\\s+(or)?\\s+{LessRegex})|{LessOrEqualPrefix}(\\s+(or)?\\s+{EqualRegex})?|({EqualRegex}\\s+(or)?\\s+)?{LessOrEqualPrefix}|<\\s*=)"
