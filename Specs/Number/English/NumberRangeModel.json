@@ -1083,5 +1083,83 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Nissan Motor Co. is planning to cut up to 700 contract workers.",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "up to 700",
+        "Start": 36,
+        "End": 44,
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,700]"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "up to 700 Should not be recognized as >700",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "up to 700",
+        "Start": 0,
+        "End": 8,
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,700]"
+        }
+      },
+      {
+        "Text": ">700",
+        "Start": 38,
+        "End": 41,
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(700,)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Number of cars which have horsepower exceeding 150",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "exceeding 150",
+        "Start": 37,
+        "End": 49,
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(150,)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Shares were up more than 20, above 170 apiece",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "more than 20",
+        "Start": 15,
+        "End": 26,
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(20,)"
+        }
+      },
+      {
+        "Text": "above 170",
+        "Start": 29,
+        "End": 37,
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(170,)"
+        }
+      }
+    ]
   }
 ]
