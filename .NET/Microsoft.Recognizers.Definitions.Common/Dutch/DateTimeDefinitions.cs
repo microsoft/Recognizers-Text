@@ -22,7 +22,7 @@ namespace Microsoft.Recognizers.Definitions.Dutch
     public static class DateTimeDefinitions
     {
       public static readonly string TillRegex = $@"(?<till>\b(tot|totdat|gedurende|tijdens|ten tijde van)\b|{BaseDateTime.RangeConnectorSymbolRegex})";
-      public static readonly string RangeConnectorRegex = $@"(?<and>\b(en|tot en met|t\\m|tot|tot aan)\b|{BaseDateTime.RangeConnectorSymbolRegex})";
+      public static readonly string RangeConnectorRegex = $@"(?<and>\b(en|tot en met|t/m|tot|tot aan)\b|{BaseDateTime.RangeConnectorSymbolRegex})";
       public const string ArticleRegex = @"\b(de|het|een)\b";
       public const string RelativeRegex = @"\b(?<order>dit|deze|volgend[e]?|komend[e]?|aankomend[e]?|aanstaand[e]?|huidig[e]?|vorig[e]?|verleden|voorgaand[e]?|vorig[e]?|laatste|afgelopen)\b";
       public const string StrictRelativeRegex = @"\b(?<order>dit|deze|volgend[e]?|komend[e]?|aankomend[e]?|aanstaand[e]?|huidig[e]?|vorig[e]?|verleden|voorgaand[e]?|vorig[e]?|laatste|afgelopen)\b";
@@ -36,15 +36,15 @@ namespace Microsoft.Recognizers.Definitions.Dutch
       public const string CenturySuffixRegex = @"(^eeuw|^centennium)\b";
       public const string ReferencePrefixRegex = @"(dezelfde|hetzelfde|dat|die|overeenkomstige)\b";
       public const string FutureSuffixRegex = @"\b(in\s+de\s+)?(toekomst|vanaf)\b";
-      public const string DayRegex = @"(de\s*)?(?<day>(31(ste|e)?|30(ste|e)?|29(ste|e)?|28(ste|e)?|27(ste|e)?|26(ste|e)?|25(ste|e)?|24(ste|e)?|23(ste|e)?|22(ste|e)?|21(ste|e)?|20(ste|e)?|19(de|e)?|18(de|e)?|17(de|e)?|16(de|e)?|15(de|e)?|14(de|e)?|13(de|e)?|12(de|e)?|11(de|e)?|10(de|e)?|[0]?1(ste|e)?|[0]?2(de|e)?|[0]?3(de|e)?|[0]?4(de|e)?|[0]?5(de|e)?|[0]?6(de|e)?|[0]?7(de|e)?|[0]?8(ste|e)?|[0]?9(de|e)?))";
-      public const string ImplicitDayRegex = @"(de\s*)?(?<day>(31(ste|e)?|30(ste|e)?|29(ste|e)?|28(ste|e)?|27(ste|e)?|26(ste|e)?|25(ste|e)?|24(ste|e)?|23(ste|e)?|22(ste|e)?|21(ste|e)?|20(ste|e)?|19(de|e)?|18(de|e)?|17(de|e)?|16(de|e)?|15(de|e)?|14(de|e)?|13(de|e)?|12(de|e)?|11(de|e)?|10(de|e)?|[0]?1(ste|e)?|[0]?2(de|e)?|[0]?3(de|e)?|[0]?4(de|e)?|[0]?5(de|e)?|[0]?6(de|e)?|[0]?7(de|e)?|[0]?8(ste|e)?|[0]?9(de|e)?))";
+      public const string DayRegex = @"(de\s*)?(?<day>(3[0-1]|[1-2]\d|0?[1-9])(ste|e|de)?)(?=\b|t)";
+      public const string ImplicitDayRegex = @"(the\s*)?(?<day>(3[0-1]|[0-2]?\d)(ste|e|de))\b";
       public const string MonthNumRegex = @"(?<month>01|02|03|04|05|06|07|08|09|10|11|12|1|2|3|4|5|6|7|8|9)?\b";
       public const string WrittenOneToNineRegex = @"(één|een|twee|drie|vier|vijf|zes|zeven|acht|negen)";
       public const string WrittenElevenToNineteenRegex = @"(elf|twaalf|dertien|veertien|vijftien|zestien|zeventien|achttien|negentien)";
       public const string WrittenTensRegex = @"(tien|twintig|dertig|veertig|vijftig|zestig|zeventig|tachtig|negentig)";
       public static readonly string WrittenNumRegex = $@"({WrittenOneToNineRegex}|{WrittenElevenToNineteenRegex}|({WrittenOneToNineRegex}\s+)?{WrittenTensRegex})";
       public static readonly string WrittenCenturyFullYearRegex = $@"((twee)\s*duizend(\s+en)?(\s*{WrittenOneToNineRegex}\s+honderd)?)";
-      public const string WrittenCenturyOrdinalYearRegex = @"(twenty one|twenty two|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty)";
+      public const string WrittenCenturyOrdinalYearRegex = @"((ee|éé)nentwintig|tweeëntwintig|een|twee|drie|vier|vijf|zes|zeven|acht|negen|tien|elf|twaalf|dertien|veertien|vijftien|zestien|zeventien|achttien|negentien|twintig)";
       public static readonly string CenturyRegex = $@"\b(?<century>{WrittenCenturyFullYearRegex}|{WrittenCenturyOrdinalYearRegex}(\s+honderd)?(\s+en)?)\b";
       public static readonly string LastTwoYearNumRegex = $@"(zero\s+{WrittenOneToNineRegex}|{WrittenElevenToNineteenRegex}|{WrittenTensRegex}(\s+{WrittenOneToNineRegex})?)";
       public static readonly string FullTextYearRegex = $@"\b((?<firsttwoyearnum>{CenturyRegex})\s+(?<lasttwoyearnum>{LastTwoYearNumRegex})\b|\b(?<firsttwoyearnum>{WrittenCenturyFullYearRegex}|{WrittenCenturyOrdinalYearRegex}\s+hundred(\s+and)?))\b";
@@ -70,7 +70,7 @@ namespace Microsoft.Recognizers.Definitions.Dutch
       public static readonly string MonthFrontSimpleCasesRegex = $@"\b({RangePrefixRegex}\s+)?{MonthSuffixRegex}\s+((van)\s+)?({DayRegex})\s*{TillRegex}\s*({DayRegex})((\s+|\s*,\s*){YearRegex})?\b";
       public static readonly string MonthFrontBetweenRegex = $@"\b{MonthSuffixRegex}\s+(tussen\s+)({DayRegex})\s*{RangeConnectorRegex}\s*({DayRegex})((\s+|\s*,\s*){YearRegex})?\b";
       public static readonly string BetweenRegex = $@"\b(tussen\s+)({DayRegex})\s*{RangeConnectorRegex}\s*({DayRegex})\s+{MonthSuffixRegex}((\s+|\s*,\s*){YearRegex})?\b";
-      public static readonly string MonthWithYear = $@"\b(({WrittenMonthRegex}(\.)?(\s*)[/\\\-\.,]?(\s+of)?(\s*)({YearRegex}|(?<order>volgend[e]?|komend[e]?|aankomend[e]?|huidig[e]?|vorig[e]?|afgelopen|dit)\s+jaar))|(({YearRegex}|(?<order>volgend[e]?|komend[e]?|aankomend[e]?|huidig[e]?|vorig[e]?|afgelopen|dit)\s+jaar)(\s*),?(\s*){WrittenMonthRegex}))\b";
+      public static readonly string MonthWithYear = $@"\b(({WrittenMonthRegex}(\.)?(\s*)[/\\\-\.,]?(\s+(van|over|in))?(\s*)({YearRegex}|(?<order>volgend[e]?|komend[e]?|aankomend[e]?|huidig[e]?|vorig[e]?|afgelopen|dit)\s+jaar))|(({YearRegex}|(?<order>volgend[e]?|komend[e]?|aankomend[e]?|huidig[e]?|vorig[e]?|afgelopen|dit)\s+jaar)(\s*),?(\s*){WrittenMonthRegex}))\b";
       public static readonly string OneWordPeriodRegex = $@"\b((((de\s+)?maand van\s+)?({StrictRelativeRegex}\s+)?(?<month>januari|februari|maart|april|mei|juni|juli|augustus|september|oktober|december|jan\.?|feb\.?|mar\.?|apr\.?|jun\.?|jul\.?|aug\.?|sep\.?|sept\.?|oct\.?|okt\.?|nov\.?|dec\.?))|(maand|jaar) tot heden|nu|({RelativeRegex}\s+)?(mijn\s+)?(weekend|week|maand|jaar)(?!((\s+van)?\s+\d+|\s+tot\s+heden|nu))(\s+{AfterNextSuffixRegex})?)\b";
       public static readonly string MonthNumWithYear = $@"\b(({BaseDateTime.FourDigitYearRegex}(\s*)[/\-\.](\s*){MonthNumRegex})|({MonthNumRegex}(\s*)[/\-](\s*){BaseDateTime.FourDigitYearRegex}))\b";
       public static readonly string WeekOfMonthRegex = $@"\b(?<wom>(de\s+)?(?<cardinal>eerste|tweede|derde|vierde|vijfde|1e|1ste|2e|2de|3e|3de|4e|4de|5e|5de|laatste)\s+week\s+{MonthSuffixRegex})\b";
@@ -182,7 +182,7 @@ namespace Microsoft.Recognizers.Definitions.Dutch
       public const string NowRegex = @"\b(?<now>nu|zo snel mogelijk|zo spoedig mogelijk|asap|recent|onlangs|zojuist)\b";
       public const string SuffixRegex = @"^\s*(in de\s+)?(vroege\s+|late\s+)?(ochtend|(na)?middag|avond|nacht)\b";
       public const string DateTimeTimeOfDayRegex = @"\b(?<timeOfDay>ochtend|(na)?middag|avond|nacht)\b";
-      public static readonly string DateTimeSpecificTimeOfDayRegex = $@"\b(({RelativeRegex}\s+{DateTimeTimeOfDayRegex})\b|\bvannacht|vanavond|vanmiddag|vanochtend)\b";
+      public static readonly string DateTimeSpecificTimeOfDayRegex = $@"\b(({RelativeRegex}\s+{DateTimeTimeOfDayRegex})\b|\bvannacht|vanavond|vanmiddag|vanochtend|vanmorgen)\b";
       public static readonly string TimeOfTodayAfterRegex = $@"^\s*(,\s*)?(in\s+de\s+)?{DateTimeSpecificTimeOfDayRegex}";
       public static readonly string TimeOfTodayBeforeRegex = $@"{DateTimeSpecificTimeOfDayRegex}(\s*,)?(\s+(om|rond|tegen|op))?\s*$";
       public static readonly string SimpleTimeOfTodayAfterRegex = $@"({HourNumRegex}|{BaseDateTime.HourRegex})\s*(,\s*)?(in\s+de\s+)?{DateTimeSpecificTimeOfDayRegex}";
@@ -207,16 +207,16 @@ namespace Microsoft.Recognizers.Definitions.Dutch
       public static readonly string NumberCombinedWithDurationUnit = $@"\b(?<num>\d+(\.\d*)?)(-)?{DurationUnitRegex}";
       public static readonly string AnUnitRegex = $@"\b(?<half>(een\s(half|halve)))\s+{DurationUnitRegex}";
       public const string DuringRegex = @"\b(voor\s+een|gedurende\s+(het|de))\s+(?<unit>jaar|maand|week|dag)\b";
-      public const string AllRegex = @"\b(?<all>((ge)?hele|volledige|ganse)(\s+|-)(?<unit>jaar|maand|week|dag))\b";
+      public const string AllRegex = @"\b(?<all>((ge)?hele|volledige|ganse|heel|volledig)(\s+|-)(?<unit>jaar|maand|week|dag))\b";
       public const string HalfRegex = @"(((een)\s*)|\b)(?<half>(half|halve)\s+(?<unit>jaar|maand|week|dag|uur))\b";
       public const string ConjunctionRegex = @"\b((en(\s+voor)?)|plus)\b";
       public static readonly string HolidayRegex1 = $@"\b(?<holiday>goede\s+vrijdag|pasen|kerst|kerstavond|kerstmis|thanksgiving|halloween|oudejaarsavond|nieuwjaar|nieuwjaarsdag|bevrijdingsdag)(\s+(van\s+|in\s+)?({YearRegex}|{RelativeRegex}\s+jaar))?\b";
       public static readonly string HolidayRegex2 = $@"\b(?<holiday>nationale dodenherdenking|nationale herdenking|dodenherdenking|dag van de leraar|dag van de arbeid)(\s+(van\s+|in\s+)?({YearRegex}|{RelativeRegex}\s+jaar))?\b";
-      public static readonly string HolidayRegex3 = $@"(?<holiday>(valentijn|valentijnsdag|nieuwjaarsdag|prinsjesdag|koningsdag|koninginnedag|bevrijdingsdag|hemelvaartsdag|eerste kerstdag|1e kerst|tweede kerstdag|2e kerstdag|vaderdag|moederdag|meisjesdag|amerikaanse onafhankelijkheidsdag|onafhankelijkheidsdag|nederlandse veteranendag|veteranendag))(\s+(van\s+|in\s+)?({YearRegex}|{RelativeRegex}\s+jaar))?";
+      public static readonly string HolidayRegex3 = $@"(?<holiday>(valentijn|valentijnsdag|nieuwjaarsdag|prinsjesdag|koningsdag|koninginnedag|bevrijdingsdag|hemelvaartsdag|eerste kerstdag|1e kerst|tweede kerstdag|2e kerstdag|vaderdag|moederdag|meisjesdag|amerikaanse onafhankelijkheidsdag|onafhankelijkheidsdag|nederlandse veteranendag|veteranendag|2e kerstdag|1e kerstdag|boomplantdag|boomfeestdag))(\s+(van\s+|in\s+)?({YearRegex}|{RelativeRegex}\s+jaar))?";
       public const string AMTimeRegex = @"(?<am>('s morgens|'s ochtends)|in\s+de\s+(morgen|ochtend))";
       public const string PMTimeRegex = @"\b(?<pm>('s middags|'s avonds|'s nachts)|in\s+de\s+(middag|avond|nacht))\b";
       public const string InclusiveModPrepositions = @"(?<include>((in|tegen|tijdens|op)\s+of\s+)|(\s+of\s+(in|tegen|tijdens|op)))";
-      public static readonly string BeforeRegex = $@"(\b{InclusiveModPrepositions}?(voor|vóór |vooraf(gaan)?\s+aan|(niet\s+later|vroeger|eerder)\s+dan|eindigend\s+op\s+|tegen|tot|totdat|(?<include>zo\s+laat\s+als)){InclusiveModPrepositions}?\b\s*)|(?<!\w|>)((?<include><=)|<)";
+      public static readonly string BeforeRegex = $@"(\b{InclusiveModPrepositions}?(voor|vóór|vooraf(gaan)?\s+aan|(niet\s+later|vroeger|eerder)\s+dan|eindigend\s+op\s+|tegen|tot|totdat|(?<include>zo\s+laat\s+als)){InclusiveModPrepositions}?\b\s*)|(?<!\w|>)((?<include><=)|<)";
       public static readonly string AfterRegex = $@"(\b{InclusiveModPrepositions}?((na|(?<!niet\s+)later\s+dan)|(jaar\s+na))(?!\s+of\s+gelijk\s+aan){InclusiveModPrepositions}?\b\s*)|(?<!\w|<)((?<include>>=)|>)";
       public const string SinceRegex = @"(\b(sinds|na\s+of\s+gelijk\s+aan|startend\s+(vanaf|op|met)|zo\s+vroeg\s+als|ieder\s+moment\s+vanaf)\b\s*)|(?<!\w|<)(>=)";
       public const string AroundRegex = @"(\b(rondom|ongeveer(\s+om)?)\s*\b)";
@@ -260,7 +260,7 @@ namespace Microsoft.Recognizers.Definitions.Dutch
       public static readonly string NumberAsTimeRegex = $@"\b({WrittenTimeRegex}|{PeriodHourNumRegex}|{BaseDateTime.HourRegex})\b";
       public static readonly string TimeBeforeAfterRegex = $@"\b(((?<=\b(voor|niet later dan|na)\s+)({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}|{MidTimeRegex}))|{MidTimeRegex})\b";
       public const string DateNumberConnectorRegex = @"^\s*(?<connector>\s+op)\s*$";
-      public const string DecadeRegex = @"(?<decade>(de\s+jaren\s+(vijftig|zestig|zeventig|tachtig|negentig))|(fifties|sixties|seventies|eighties|nineties|zeroes|tens|tweeduizend|21e eeuw|eenentwintigste eeuw))";
+      public const string DecadeRegex = @"(?<decade>(de\s+jaren\s+(vijftig|zestig|zeventig|tachtig|negentig))|(fifties|sixties|seventies|eighties|nineties|zeroes|tens|tweeduizend|21e eeuw|(ee|éé)nentwintigste eeuw))";
       public static readonly string DecadeWithCenturyRegex = $@"(de\s+)?(((?<century>\d|1\d|2\d)?(')?(?<decade>\d0)(')?s)|(({CenturyRegex}(\s+|-)(en\s+)?)?{DecadeRegex})|({CenturyRegex}(\s+|-)(en\s+)?(?<decade>tien|honderd)))";
       public static readonly string RelativeDecadeRegex = $@"\b((de\s+)?{RelativeRegex}\s+((?<number>[\w,]+)\s+)?decennia?)\b";
       public const string SuffixAfterRegex = @"\b(((bij)\s)?(of|en)\s+(boven|na|later|groter)(?!\s+dan))\b";
@@ -269,22 +269,22 @@ namespace Microsoft.Recognizers.Definitions.Dutch
       public static readonly string ComplexDatePeriodRegex = $@"(((vanaf|tijdens|gedurende|in)\s+)?(?<start>.+)\s*({TillRegex})\s*(?<end>.+)|((tussen)\s+)(?<start>.+)\s*({RangeConnectorRegex})\s*(?<end>.+))";
       public static readonly Dictionary<string, string> UnitMap = new Dictionary<string, string>
         {
-            { @"millennium", @"1000J" },
-            { @"eeuw", @"100J" },
-            { @"centennium", @"100J" },
-            { @"decennium", @"10J" },
-            { @"decennia", @"10J" },
-            { @"jaren", @"J" },
-            { @"jaar", @"J" },
-            { @"maanden", @"MND" },
-            { @"maand", @"MND" },
+            { @"millennium", @"1000Y" },
+            { @"eeuw", @"100Y" },
+            { @"centennium", @"100Y" },
+            { @"decennium", @"10Y" },
+            { @"decennia", @"10Y" },
+            { @"jaren", @"Y" },
+            { @"jaar", @"Y" },
+            { @"maanden", @"MON" },
+            { @"maand", @"MON" },
             { @"weken", @"W" },
             { @"week", @"W" },
             { @"dagen", @"D" },
             { @"dag", @"D" },
-            { @"uren", @"U" },
-            { @"uur", @"U" },
-            { @"u", @"U" },
+            { @"uren", @"H" },
+            { @"uur", @"H" },
+            { @"u", @"H" },
             { @"minuten", @"M" },
             { @"minuut", @"M" },
             { @"min", @"M" },
@@ -324,9 +324,9 @@ namespace Microsoft.Recognizers.Definitions.Dutch
         };
       public static readonly Dictionary<string, string> SeasonMap = new Dictionary<string, string>
         {
-            { @"lente", @"LE" },
-            { @"zomer", @"ZO" },
-            { @"herfst", @"HE" },
+            { @"lente", @"SP" },
+            { @"zomer", @"SU" },
+            { @"herfst", @"FA" },
             { @"winter", @"WI" }
         };
       public static readonly Dictionary<string, int> SeasonValueMap = new Dictionary<string, int>
@@ -712,7 +712,7 @@ namespace Microsoft.Recognizers.Definitions.Dutch
             @"say",
             @"like"
         };
-      public static readonly string[] DurationDateRestrictions = { @"today", @"now" };
+      public static readonly string[] DurationDateRestrictions = {  };
       public static readonly Dictionary<string, string> AmbiguityFiltersDict = new Dictionary<string, string>
         {
             { @"\bmorning|afternoon|evening|night|day\b", @"\b(good\s+(morning|afternoon|evening|night|day))|(nighty\s+night)\b" },
