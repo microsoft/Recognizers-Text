@@ -36,7 +36,7 @@ FutureSuffixRegex: !simpleRegex
 DayRegex: !simpleRegex
   def: (de\s*)?(?<day>(3[0-1]|[1-2]\d|0?[1-9])(ste|e|de)?)(?=\b|t)
 ImplicitDayRegex: !simpleRegex
-  def: (the\s*)?(?<day>(3[0-1]|[0-2]?\d)(ste|e|de))\b
+  def: (de\s*)?(?<day>(3[0-1]|[0-2]?\d)(ste|e|de))\b
 MonthNumRegex: !simpleRegex
   def: (?<month>01|02|03|04|05|06|07|08|09|10|11|12|1|2|3|4|5|6|7|8|9)?\b
 WrittenOneToNineRegex: !simpleRegex

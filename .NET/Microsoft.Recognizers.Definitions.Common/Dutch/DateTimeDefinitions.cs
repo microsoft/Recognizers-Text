@@ -37,7 +37,7 @@ namespace Microsoft.Recognizers.Definitions.Dutch
       public const string ReferencePrefixRegex = @"(dezelfde|hetzelfde|dat|die|overeenkomstige)\b";
       public const string FutureSuffixRegex = @"\b(in\s+de\s+)?(toekomst|vanaf)\b";
       public const string DayRegex = @"(de\s*)?(?<day>(3[0-1]|[1-2]\d|0?[1-9])(ste|e|de)?)(?=\b|t)";
-      public const string ImplicitDayRegex = @"(the\s*)?(?<day>(3[0-1]|[0-2]?\d)(ste|e|de))\b";
+      public const string ImplicitDayRegex = @"(de\s*)?(?<day>(3[0-1]|[0-2]?\d)(ste|e|de))\b";
       public const string MonthNumRegex = @"(?<month>01|02|03|04|05|06|07|08|09|10|11|12|1|2|3|4|5|6|7|8|9)?\b";
       public const string WrittenOneToNineRegex = @"(één|een|twee|drie|vier|vijf|zes|zeven|acht|negen)";
       public const string WrittenElevenToNineteenRegex = @"(elf|twaalf|dertien|veertien|vijftien|zestien|zeventien|achttien|negentien)";
