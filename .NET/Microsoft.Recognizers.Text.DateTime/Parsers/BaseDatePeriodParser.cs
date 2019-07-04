@@ -1745,7 +1745,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 quarterNum = decimal.ToInt16(Math.Ceiling((decimal)month / Constants.TrimesterMonthCount));
                 var swift = this.config.GetSwiftYear(orderQuarterStr);
                 quarterNum += swift;
-                if (quarterNum < 0)
+                if (quarterNum <= 0)
                 {
                     quarterNum += Constants.QuarterCount;
                     year -= 1;
