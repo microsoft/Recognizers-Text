@@ -258,7 +258,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             // Push, save the MOD string
-            bool hasBefore = false, hasAfter = false, hasSince = false, hasAround = false, hasDateAfter = false;
+            bool hasBefore = false, hasAfter = false, hasSince = false, hasAround = false, hasEqual = false, hasDateAfter = false;
 
             // "InclusiveModifier" means MOD should include the start/end time
             // For example, cases like "on or later than", "earlier than or in" have inclusive modifier
@@ -268,6 +268,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var afterMatch = Config.AfterRegex.MatchBegin(er.Text, trim: true);
             var sinceMatch = Config.SinceRegex.MatchBegin(er.Text, trim: true);
             var aroundMatch = Config.AroundRegex.MatchBegin(er.Text, trim: true);
+            var equalMatch = Config.EqualRegex.MatchBegin(er.Text, trim: true);
 
             if (beforeMatch.Success)
             {
@@ -310,6 +311,14 @@ namespace Microsoft.Recognizers.Text.DateTime
                 er.Length -= aroundMatch.Length;
                 er.Text = er.Text.Substring(aroundMatch.Length);
                 modStr = aroundMatch.Value;
+            }
+            else if (equalMatch.Success)
+            {
+                hasEqual = true;
+                er.Start += equalMatch.Length;
+                er.Length -= equalMatch.Length;
+                er.Text = er.Text.Substring(equalMatch.Length);
+                modStr = equalMatch.Value;
             }
             else if ((er.Type.Equals(Constants.SYS_DATETIME_DATEPERIOD, StringComparison.Ordinal) && Config.YearRegex.Match(er.Text).Success) ||
                      er.Type.Equals(Constants.SYS_DATETIME_DATE, StringComparison.Ordinal) ||
@@ -384,6 +393,13 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var val = (DateTimeResolutionResult)pr.Value;
                 val.Mod = CombineMod(val.Mod, Constants.APPROX_MOD);
                 pr.Value = val;
+            }
+
+            if (hasEqual && pr.Value != null)
+            {
+                pr.Length += modStr.Length;
+                pr.Start -= modStr.Length;
+                pr.Text = modStr + pr.Text;
             }
 
             if (hasDateAfter && pr.Value != null)

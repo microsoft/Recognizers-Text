@@ -12,6 +12,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             AfterRegex = EnglishMergedExtractorConfiguration.AfterRegex;
             SinceRegex = EnglishMergedExtractorConfiguration.SinceRegex;
             AroundRegex = EnglishMergedExtractorConfiguration.AroundRegex;
+            EqualRegex = EnglishMergedExtractorConfiguration.EqualRegex;
             SuffixAfter = EnglishMergedExtractorConfiguration.SuffixAfterRegex;
             YearRegex = EnglishDatePeriodExtractorConfiguration.YearRegex;
 
@@ -32,6 +33,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public Regex SinceRegex { get; }
 
         public Regex AroundRegex { get; }
+
+        public Regex EqualRegex { get; }
 
         public Regex SuffixAfter { get; }
 

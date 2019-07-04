@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
-
+using Microsoft.Recognizers.Definitions;
 using Microsoft.Recognizers.Definitions.Dutch;
 using Microsoft.Recognizers.Definitions.Utilities;
 using Microsoft.Recognizers.Text.Matcher;
@@ -20,6 +20,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         public static readonly Regex AroundRegex =
             new Regex(DateTimeDefinitions.AroundRegex, RegexFlags);
+
+        public static readonly Regex EqualRegex =
+            new Regex(BaseDateTime.EqualRegex, RegexFlags);
 
         public static readonly Regex FromToRegex =
             new Regex(DateTimeDefinitions.FromToRegex, RegexFlags);
@@ -109,6 +112,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         Regex IMergedExtractorConfiguration.SinceRegex => SinceRegex;
 
         Regex IMergedExtractorConfiguration.AroundRegex => AroundRegex;
+
+        Regex IMergedExtractorConfiguration.EqualRegex => EqualRegex;
 
         Regex IMergedExtractorConfiguration.FromToRegex => FromToRegex;
 

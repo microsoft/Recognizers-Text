@@ -126,13 +126,14 @@ namespace Microsoft.Recognizers.Text.DateTime
             DateTimeParseResult pr = null;
 
             // push, save teh MOD string
-            bool hasBefore = false, hasAfter = false, hasUntil = false, hasSince = false;
+            bool hasBefore = false, hasAfter = false, hasUntil = false, hasSince = false, hasEqual = false;
             string modStr = string.Empty, modStrPrefix = string.Empty, modStrSuffix = string.Empty;
             var beforeMatch = config.BeforeRegex.MatchEnd(er.Text, trim: true);
             var afterMatch = config.AfterRegex.MatchEnd(er.Text, trim: true);
             var untilMatch = config.UntilRegex.MatchBegin(er.Text, trim: true);
             var sinceMatchPrefix = config.SincePrefixRegex.MatchBegin(er.Text, trim: true);
             var sinceMatchSuffix = config.SinceSuffixRegex.MatchEnd(er.Text, trim: true);
+            var equalMatch = config.EqualRegex.MatchBegin(er.Text, trim: true);
 
             if (beforeMatch.Success && !IsDurationWithBeforeAndAfter(er))
             {
@@ -155,6 +156,14 @@ namespace Microsoft.Recognizers.Text.DateTime
                 er.Length -= untilMatch.Length;
                 er.Text = er.Text.Substring(untilMatch.Length);
                 modStr = untilMatch.Value;
+            }
+            else if (equalMatch.Success)
+            {
+                hasEqual = true;
+                er.Start += equalMatch.Length;
+                er.Length -= equalMatch.Length;
+                er.Text = er.Text.Substring(equalMatch.Length);
+                modStr = equalMatch.Value;
             }
             else
             {
@@ -255,6 +264,13 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var val = (DateTimeResolutionResult)pr.Value;
                 val.Mod = Constants.SINCE_MOD;
                 pr.Value = val;
+            }
+
+            if (hasEqual)
+            {
+                pr.Length += modStr.Length;
+                pr.Start -= modStr.Length;
+                pr.Text = modStr + pr.Text;
             }
 
             var hasRangeChangingMod = hasBefore || hasAfter || hasSince;

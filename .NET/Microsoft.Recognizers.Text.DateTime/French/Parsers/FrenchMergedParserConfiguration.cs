@@ -13,6 +13,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             AfterRegex = FrenchMergedExtractorConfiguration.AfterRegex;
             SinceRegex = FrenchMergedExtractorConfiguration.SinceRegex;
             AroundRegex = FrenchMergedExtractorConfiguration.AroundRegex;
+            EqualRegex = FrenchMergedExtractorConfiguration.EqualRegex;
             SuffixAfter = FrenchMergedExtractorConfiguration.SuffixAfterRegex;
             YearRegex = FrenchDatePeriodExtractorConfiguration.YearRegex;
             SuperfluousWordMatcher = FrenchMergedExtractorConfiguration.SuperfluousWordMatcher;
@@ -28,6 +29,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public Regex SinceRegex { get; }
 
         public Regex AroundRegex { get; }
+
+        public Regex EqualRegex { get; }
 
         public Regex SuffixAfter { get; }
 

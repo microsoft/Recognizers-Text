@@ -301,6 +301,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                     TryMergeModifierToken(er, config.AroundRegex, text);
                 }
 
+                if (!success)
+                {
+                    TryMergeModifierToken(er, config.EqualRegex, text);
+                }
+
                 if (er.Type.Equals(Constants.SYS_DATETIME_DATEPERIOD, StringComparison.Ordinal) ||
                     er.Type.Equals(Constants.SYS_DATETIME_DATE, StringComparison.Ordinal) ||
                     er.Type.Equals(Constants.SYS_DATETIME_TIME, StringComparison.Ordinal))
