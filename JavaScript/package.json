@@ -51,7 +51,8 @@
 		"@types/lodash.trimend": "^4.5.1",
 		"@types/node": "^10.3.0",
 		"@types/npm": "^2.0.29",
-		"@typescript-eslint/parser": "^1.11.0",
+		"@typescript-eslint/eslint-plugin": "^1.10.2",
+		"@typescript-eslint/parser": "^1.10.2",
 		"ava": "^1.0.0",
 		"ava-spec": "^1.1.0",
 		"babel-eslint": "^10.0.2",
@@ -66,6 +67,7 @@
 		"cached-path-relative": ">=1.0.2",
 		"colors": "^1.1.2",
 		"eslint": "^6.0.1",
+		"eslint-config-prettier": "^6.0.0",
 		"eslint-plugin-only-warn": "^1.0.1",
 		"express": "^4.16.1",
 		"handlebars": "^4.1.2",
@@ -84,10 +86,7 @@
 		"rollup-plugin-sourcemaps": "^0.4.2",
 		"ts-node": "^3.3.0",
 		"tsc-watch": "^1.0.8",
-		"tslint": "^5.7.0",
-		"tslint-config-prettier": "^1.4.0",
-		"tslint-config-standard": "^6.0.0",
-		"typescript": "^2.5.3",
+		"typescript": "^3.2.1",
 		"xregexp": "^4.2.0"
 	},
 	"dependencies": {
@@ -98,8 +97,7 @@
 		"@microsoft/recognizers-text-number": "file:./packages/recognizers-number",
 		"@microsoft/recognizers-text-number-with-unit": "file:./packages/recognizers-number-with-unit",
 		"@microsoft/recognizers-text-sequence": "file:./packages/recognizers-sequence",
-		"@microsoft/recognizers-text-suite": "file:./packages/recognizers-text-suite",
-		"@typescript-eslint/eslint-plugin": "^1.11.0"
+		"@microsoft/recognizers-text-suite": "file:./packages/recognizers-text-suite"
 	},
 	"engines": {
 		"node": ">=10.3.0"
