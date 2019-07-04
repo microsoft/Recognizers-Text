@@ -223,5 +223,80 @@
         }
       }
     ]
+  },
+  {
+    "Input": "100'üncü araba",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "100'üncü",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "100",
+          "relativeTo": "start",
+          "value": "100"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "1000'inci araba",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1000'inci",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "1000",
+          "relativeTo": "start",
+          "value": "1000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "100000'inci araba",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "100000'inci",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "100000",
+          "relativeTo": "start",
+          "value": "100000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "20'nci gün",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "20'nci",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "20",
+          "relativeTo": "start",
+          "value": "20"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "30'uncu başkan",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "30'uncu",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "30",
+          "relativeTo": "start",
+          "value": "30"
+        }
+      }
+    ]
   }
 ]

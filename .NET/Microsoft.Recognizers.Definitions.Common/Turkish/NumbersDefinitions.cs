@@ -71,7 +71,7 @@ namespace Microsoft.Recognizers.Definitions.Turkish
       public static readonly string AllOrdinalRegex = $@"({OneToHundredOrdinalRegex}|{HundredToThousandOrdinalRegex}|{ThousandToMillionOrdinalRegex}|{MillionToBillionOrdinalRegex}|{BillionToTrillionOrdinalRegex}|{AboveTrillionOrdinalRegex})";
       public const string OrdinalSuffixRegex = @"(?<=\b)((\d*(1(\.|'inci)|2(\.|'nci)|3(\.|'üncü)|4(\.|'üncü)|5(\.|'inci)|6(\.|'ıncı)|7(\.|'inci)|8(\.|'inci)|9(\.|'uncu))))(?=\b)";
       public const string OrdinalTensSuffixRegex = @"(?<=\b)((\d*(10(\.|'uncu)|20(\.|'nci)|30(\.|'uncu)|40(\.|'ıncı)|50(\.|'inci)|60(\.|'ıncı)|70(\.|'inci)|80(\.|'inci)|90(\.|'ıncı))))(?=\b)";
-      public const string OrdinalRoundSuffixRegex = @"(?<=\b)((\d*(00(\.|'üncü)|000(\.|'inci)|000\.?000(\.|'uncu)|000\.?000\.?000(\.|'ıncı)|000\.?000\.?000\.?000(\.|'uncu))))(?=\b)";
+      public const string OrdinalRoundSuffixRegex = @"(?<=\b)((\d*(00(\.|'üncü)|000(\.|'inci)|000\.?000(\.|'uncu)|000(\.?000){2}(\.|'ıncı)|000(\.?000){2}\.?000(\.|'uncu))))(?=\b)";
       public static readonly string OrdinalNumericRegex = $@"(?<=\b)({OrdinalSuffixRegex}|{OrdinalTensSuffixRegex}|{OrdinalRoundSuffixRegex})(?=\b)";
       public static readonly string OrdinalTurkishRegex = $@"(?<=\b){AllOrdinalRegex}(?=\b)";
       public const string FractionNotationWithSpacesRegex = @"(((?<=\W|^)-\s*)|(?<=\b))\d+\s+\d+[/]\d+(?=(\b[^/]|$))";
@@ -105,11 +105,11 @@ namespace Microsoft.Recognizers.Definitions.Turkish
       public const string NumberSplitMark = @"(?![,.](?!\d+))";
       public const string MoreRegexNoNumberSucceed = @"((daha\s+fazla)(?!(\s*\d+)))";
       public const string LessRegexNoNumberSucceed = @"((daha\s+az)(?!(\s*\d+)))";
-      public const string NumberFromSuffixRegex = @"(\d*(1'den|2'den|3'ten|4'ten|5'ten|6'dan|7'den|8'den|9'dan|10'dan|20'den|30'dan|40'tan|50'den|60'tan|70'ten|80'den|90'dan|00'den|\.?000'den|000\.?000'dan|000\.?000\.?000'dan|000\.?000\.?000\.?000'dan)|((on|yirmi|otuz|kırk|elli|altmış|yetmiş|seksen|doksan|yüz)\s)?(birden|ikiden|üçten|dörtten|beşten|altıdan|yediden|sekizden|dokuzdan)|ondan|yirmiden|otuzdan|kırktan|elliden|altmıştan|yetmişten|seksenden|doksandan|yüzden|binden|çeyrekten|yarımdan)";
-      public const string NumberToSuffixRegex = @"(\d*(1'e|2'ye|3'e|4'e|5'e|6'ya|7'ye|8'e|9'a|10'a|20'ye|30'a|40'a|50'ye|60'a|70'e|80'e|90'a|00'e|\.?000'e|000\.?000'a|000\.?000\.?000'a|000\.?000\.?000\.?000'a))";
+      public const string NumberFromSuffixRegex = @"(\d*(1'den|2'den|3'ten|4'ten|5'ten|6'dan|7'den|8'den|9'dan|10'dan|20'den|30'dan|40'tan|50'den|60'tan|70'ten|80'den|90'dan|00'den|\.?000'den|000\.?000'dan|000(\.?000){2}'dan|000(\.?000){2}\.?000'dan)|((on|yirmi|otuz|kırk|elli|altmış|yetmiş|seksen|doksan|yüz)\s)?(birden|ikiden|üçten|dörtten|beşten|altıdan|yediden|sekizden|dokuzdan)|ondan|yirmiden|otuzdan|kırktan|elliden|altmıştan|yetmişten|seksenden|doksandan|yüzden|binden|çeyrekten|yarımdan)";
+      public const string NumberToSuffixRegex = @"(\d*(1'e|2'ye|3'e|4'e|5'e|6'ya|7'ye|8'e|9'a|10'a|20'ye|30'a|40'a|50'ye|60'a|70'e|80'e|90'a|00'e|\.?000'e|000\.?000'a|000(\.?000){2}'a|000(\.?000){2}\.?000'a))";
       public static readonly string OneNumberRangeMoreRegex1 = $@"((?<number1>{NumberFromSuffixRegex})\s+({MoreRegex}|{MoreOrEqual}))|((?<number1>({NumberSplitMark}.)+)\s(ve|veya|ya da)\s+daha\s+(fazla|fazlası|yüksek))|{MoreRegex}\s*(?<number1>({NumberSplitMark}.)+)";
       public static readonly string OneNumberRangeMoreRegex2 = $@"(({MoreOrEqual}|{MoreOrEqualPrefix})\s*(?<number1>({NumberSplitMark}.)+))";
-      public static readonly string OneNumberRangeMoreSeparateRegex = $@"((?<number1>{NumberToSuffixRegex})\s{EqualRegex}(\s+(ve|veya|ya da)\s+){MoreRegexNoNumberSucceed})";
+      public static readonly string OneNumberRangeMoreSeparateRegex = $@"((?<number1>{NumberToSuffixRegex})\s{EqualRegex}(\s+(ve|veya|ya\sda)\s+){MoreRegexNoNumberSucceed})";
       public static readonly string OneNumberRangeLessRegex1 = $@"((?<number1>{NumberFromSuffixRegex})\s+({LessRegex}|{LessOrEqual})|{LessRegex}\s*(?<number1>({NumberSplitMark}.)+))";
       public static readonly string OneNumberRangeLessRegex2 = $@"(({LessOrEqual}|{LessOrEqualPrefix})\s*(?<number1>({NumberSplitMark}.)+))";
       public static readonly string OneNumberRangeLessSeparateRegex = $@"((?<number1>{NumberFromSuffixRegex})\s{EqualRegex}(\s+(ve|veya|ya da)\s+){LessRegexNoNumberSucceed})";

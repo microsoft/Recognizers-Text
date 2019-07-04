@@ -1,7 +1,7 @@
 [
   {
     "Input": "%100",
-    "NotSupported": "dotNet",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -17,7 +17,7 @@
   },
   {
     "Input": "yüzde 100",
-    "NotSupported": "dotNet",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -33,7 +33,7 @@
   },
   {
     "Input": "yüzde 240",
-    "NotSupported": "dotNet",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -49,7 +49,7 @@
   },
   {
     "Input": "yüzde yirmi",
-    "NotSupported": "dotNet",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -65,7 +65,7 @@
   },
   {
     "Input": "yüzde otuz",
-    "NotSupported": "dotNet",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -81,7 +81,7 @@
   },
   {
     "Input": "yüzde yüz",
-    "NotSupported": "dotNet",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -97,7 +97,7 @@
   },
   {
     "Input": "yirminin yüzdesi",
-    "NotSupported": "dotNet",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -113,7 +113,7 @@
   },
   {
     "Input": "10'un yüzdesi",
-    "NotSupported": "dotNet",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -129,7 +129,7 @@
   },
   {
     "Input": "yirmi ikinin yüzdesi",
-    "NotSupported": "dotNet",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -145,7 +145,7 @@
   },
   {
     "Input": "210'un yüzdesi",
-    "NotSupported": "dotNet",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -161,7 +161,7 @@
   },
   {
     "Input": "yüzde 10",
-    "NotSupported": "dotNet",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -177,7 +177,7 @@
   },
   {
     "Input": "eksi yüzde beş",
-    "NotSupported": "dotNet",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
