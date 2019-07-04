@@ -41,6 +41,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex AroundRegex { get; }
 
+        Regex EqualRegex { get; }
+
         Regex FromToRegex { get; }
 
         Regex SingleAmbiguousMonthRegex { get; }

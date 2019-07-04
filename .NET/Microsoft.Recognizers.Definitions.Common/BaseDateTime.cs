@@ -33,6 +33,7 @@ namespace Microsoft.Recognizers.Definitions
       public const string BaseAmDescRegex = @"(am\b|a\s*\.\s*m\s*\.|a[\.]?\s*m\b)";
       public const string BasePmDescRegex = @"(pm\b|p\s*\.\s*m\s*\.|p[\.]?\s*m\b)";
       public const string BaseAmPmDescRegex = @"(ampm)";
+      public const string EqualRegex = @"(?<!<|>)=";
       public const string MinYearNum = @"1500";
       public const string MaxYearNum = @"2100";
       public const string MaxTwoDigitYearFutureNum = @"30";
