@@ -30,6 +30,7 @@ export class Constants {
 
     static readonly SemesterMonthCount: number = 6;
     static readonly TrimesterMonthCount: number = 3;
+    static readonly QuarterCount: number = 4;
     static readonly FourDigitsYearLength: number = 4;
     static readonly MaxMonth: number = 11;
     static readonly MinMonth: number = 0;

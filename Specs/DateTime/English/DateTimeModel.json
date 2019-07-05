@@ -12590,7 +12590,6 @@
     "Context": {
       "ReferenceDateTime": "2019-07-04T00:00:00"
     },
-    "NotSupported": "python, javascript",
     "Results": [
       {
         "Text": "this quarter",
@@ -12615,7 +12614,6 @@
     "Context": {
       "ReferenceDateTime": "2019-07-04T00:00:00"
     },
-    "NotSupported": "python, javascript",
     "Results": [
       {
         "Text": "last quarter",
@@ -12640,7 +12638,6 @@
     "Context": {
       "ReferenceDateTime": "2019-01-28T00:00:00"
     },
-    "NotSupported": "python, javascript",
     "Results": [
       {
         "Text": "last quarter",
@@ -12665,7 +12662,6 @@
     "Context": {
       "ReferenceDateTime": "2019-07-04T00:00:00"
     },
-    "NotSupported": "python, javascript",
     "Results": [
       {
         "Text": "next quarter",
@@ -12690,7 +12686,6 @@
     "Context": {
       "ReferenceDateTime": "2019-12-28T00:00:00"
     },
-    "NotSupported": "python, javascript",
     "Results": [
       {
         "Text": "next quarter",

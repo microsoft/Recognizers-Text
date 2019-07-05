@@ -1098,14 +1098,15 @@ export class BaseDatePeriodParser implements IDateTimeParser {
 
         let cardinalStr = match.groups('cardinal').value;
         let yearStr = match.groups('year').value;
-        let orderStr = match.groups('order').value;
+        let orderQuarterStr = match.groups('orderQuarter').value;
+        let orderStr = StringUtility.isNullOrEmpty(orderQuarterStr) ? match.groups('order').value : '';
         let numberStr = match.groups('number').value; 
 
         let noSpecificYear = false;
         let year = Number.parseInt(yearStr, 10);
 
         if (isNaN(year)) {
-            let swift = this.config.getSwiftYear(orderStr);
+            let swift = StringUtility.isNullOrEmpty(orderQuarterStr) ? this.config.getSwiftYear(orderStr) : 0;
             if (swift < -1) {
                 swift = 0;
                 noSpecificYear = true;
@@ -1114,8 +1115,20 @@ export class BaseDatePeriodParser implements IDateTimeParser {
         }
 
         let quarterNum : number;
-        if (!numberStr) {
+        if (!StringUtility.isNullOrEmpty(cardinalStr)) {
             quarterNum = this.config.cardinalMap.get(cardinalStr);
+        } else if (!StringUtility.isNullOrEmpty(orderQuarterStr)) {
+            let month = referenceDate.getMonth() + 1
+            quarterNum = Math.ceil(month / Constants.TrimesterMonthCount)
+            let swift = this.config.getSwiftYear(orderQuarterStr);
+            quarterNum += swift;
+            if (quarterNum <= 0) {
+                quarterNum += Constants.QuarterCount;
+                year -= 1;
+            } else if (quarterNum > Constants.QuarterCount) {
+                quarterNum -= Constants.QuarterCount;
+                year += 1;
+            }
         } else {
             quarterNum = parseInt(numberStr);
         }
