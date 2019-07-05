@@ -12,6 +12,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 {
     public class DutchDateExtractorConfiguration : BaseDateTimeOptionsConfiguration, IDateExtractorConfiguration
     {
+        public static readonly Regex MonthRegex =
+            new Regex(DateTimeDefinitions.MonthRegex, RegexOptions.Singleline);
+
         public static readonly Regex MonthNumRegex =
             new Regex(DateTimeDefinitions.MonthNumRegex, RegexFlags);
 
@@ -111,11 +114,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         public static readonly ImmutableDictionary<string, int> MonthOfYear =
             DateTimeDefinitions.MonthOfYear.ToImmutableDictionary();
 
-        public static readonly Regex MonthRegex =
+          public static readonly Regex MonthRegex =
             new Regex(DateTimeDefinitions.MonthRegex, RegexFlags);
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
-
         private static readonly Regex DayRegex =
             new Regex(DateTimeDefinitions.ImplicitDayRegex, RegexFlags);
 
@@ -188,10 +190,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
             // "(Sunday,)? 7/23", year part is not required
             var dateRegex7S = new Regex(DateTimeDefinitions.DateExtractor7S, RegexFlags);
 
-            // "(Sunday,)? 23/7 or 23-7 or 23.7, 2018", year part is required
+            // "(Sunday,)? 23/7, 2018", year part is required
             var dateRegex9L = new Regex(DateTimeDefinitions.DateExtractor9L, RegexFlags);
 
-            // "(Sunday,)? 23/7 or 23-7 or 23.7", year part is not required
+            // "(Sunday,)? 23/7", year part is not required
             var dateRegex9S = new Regex(DateTimeDefinitions.DateExtractor9S, RegexFlags);
 
             // (Sunday,)? 2015-12-23

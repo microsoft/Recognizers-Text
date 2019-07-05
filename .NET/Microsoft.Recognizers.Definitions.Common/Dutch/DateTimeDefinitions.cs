@@ -31,7 +31,7 @@ namespace Microsoft.Recognizers.Definitions.Dutch
       public const string AfterNextSuffixRegex = @"\b(na\s+((de|het)\s+)?volgende)\b";
       public const string PastPrefixRegex = @"((deze\s+)?verleden)\b";
       public static readonly string PreviousPrefixRegex = $@"(voorgaand[e]|vorig[e]?|afgelopen|verleden|laatste|{PastPrefixRegex})\b";
-      public const string ThisPrefixRegex = @"(dit|deze|huidig[e]?|)\b";
+      public const string ThisPrefixRegex = @"(dit|deze|huidige?)\b";
       public const string RangePrefixRegex = @"(van|tot|tussen)";
       public const string CenturySuffixRegex = @"(^eeuw|^centennium)\b";
       public const string ReferencePrefixRegex = @"(dezelfde|hetzelfde|dat|die|overeenkomstige)\b";
@@ -56,17 +56,17 @@ namespace Microsoft.Recognizers.Definitions.Dutch
       public static readonly string DescRegex = $@"((({OclockRegex}\s+)?(?<desc>({AmPmDescRegex}|{AmDescRegex}|{PmDescRegex}|{SpecialDescRegex})))|{OclockRegex})";
       public static readonly string TwoDigitYearRegex = $@"\b(?<![$])(?<year>([0-27-9]\d))(?!(\s*((\:)|{AmDescRegex}|{PmDescRegex}|\.\d)))\b";
       public static readonly string YearRegex = $@"({BaseDateTime.FourDigitYearRegex}|{FullTextYearRegex})";
-      public const string WeekDayRegex = @"\b(?<weekday>maandag|dinsdag|woensdag|donderdag|vrijdag|zaterdag|zondag|ma|ma\.|di|di\.|wo|wo\.|woe|woe\.|do|do\.|vr|vr\.|vrij|za|za\.|zat|zat\.|zo|zo\.)s?\b";
-      public const string SingleWeekDayRegex = @"\b(?<weekday>maandag|dinsdag|woensdag|donderdag|vrijdag|zaterdag|zondag|ma|ma\.|di|di\.|wo|wo\.|woe|woe\.|do|do\.|vr|vr\.|vrij|za|za\.|zat|zat\.|zo|zo\.)s?\b";
+      public const string WeekDayRegex = @"\b(?<weekday>maandag|dinsdag|woensdag|donderdag|vrijdag|zaterdag|zondag|ma|ma\.|di|di\.|wo|wo\.|woe|woe\.|do|do\.|vr|vr\.|vrij|za|za\.|zat|zat\.|zo|zo\.)(en)?\b";
+      public const string SingleWeekDayRegex = @"\b(?<weekday>maandag|dinsdag|woensdag|donderdag|vrijdag|zaterdag|zondag|ma|ma\.|di|di\.|wo|wo\.|woe|woe\.|do|do\.|vr|vr\.|vrij|za|za\.|zat|zat\.|zo|zo\.)(en)?\b";
       public static readonly string RelativeMonthRegex = $@"(?<relmonth>((van\s+)?de\s+)?{RelativeRegex}\s+maand)\b";
       public const string WrittenMonthRegex = @"(((de\s+)?maand\s+)?(?<month>januari|februari|maart|april|mei|juni|juli|augustus|september|oktober|december|jan|feb|mar|apr|jun|jul|aug|sep|sept|oct|okt|nov|dec))";
       public static readonly string MonthSuffixRegex = $@"(?<msuf>((in|van|tijdens|sinds|tot)\s+)?({RelativeMonthRegex}|{WrittenMonthRegex}))";
-      public const string DateUnitRegex = @"(?<unit>eeuw(en)?|jaar|jaren|maand(en)?|week|weken|(?<business>werk)dag(en)?)\b";
+      public const string DateUnitRegex = @"(?<unit>eeuw(en)?|jaar|jaren|maand(en)?|week|weken|(werk)?dag(en)?)\b";
       public const string DateTokenPrefix = @"op ";
       public const string TimeTokenPrefix = @"om ";
       public const string TokenBeforeDate = @"op ";
       public const string TokenBeforeTime = @"om ";
-      public static readonly string SimpleCasesRegex = $@"\b({RangePrefixRegex}\s+)?({DayRegex})\s*{TillRegex}\s*({DayRegex}\s+{MonthSuffixRegex}|{MonthSuffixRegex}\s+{DayRegex})((\s+|\s*,\s*){YearRegex})?\b";
+      public static readonly string SimpleCasesRegex = $@"\b({RangePrefixRegex}\s+)?({DayRegex})\s*{TillRegex}\s*({DayRegex}(\s*),?(\s*){MonthSuffixRegex}|{MonthSuffixRegex}\s+{DayRegex})((\s+|\s*,\s*){YearRegex})?\b";
       public static readonly string MonthFrontSimpleCasesRegex = $@"\b({RangePrefixRegex}\s+)?{MonthSuffixRegex}\s+((van)\s+)?({DayRegex})\s*{TillRegex}\s*({DayRegex})((\s+|\s*,\s*){YearRegex})?\b";
       public static readonly string MonthFrontBetweenRegex = $@"\b{MonthSuffixRegex}\s+(tussen\s+)({DayRegex})\s*{RangeConnectorRegex}\s*({DayRegex})((\s+|\s*,\s*){YearRegex})?\b";
       public static readonly string BetweenRegex = $@"\b(tussen\s+)({DayRegex})\s*{RangeConnectorRegex}\s*({DayRegex})\s+{MonthSuffixRegex}((\s+|\s*,\s*){YearRegex})?\b";
@@ -112,13 +112,13 @@ namespace Microsoft.Recognizers.Definitions.Dutch
       public static readonly string RelativeWeekDayRegex = $@"\b({WrittenNumRegex}\s+{WeekDayRegex}\s+(vanaf\s+nu|later))\b";
       public static readonly string SpecialDate = $@"(?=\b(op\s+)(de\s+)?){DayRegex}\b";
       public const string DatePreposition = @"\b(op)";
-      public static readonly string DateExtractor1 = $@"\b(({WeekDayRegex})(\s+|\s*,\s*))?({DayRegex})((\s*){MonthRegex})\b";
-      public static readonly string DateExtractor2 = $@"\b{DateExtractor1}(\s+|\s*,\s*|\s+in\s+){DateYearRegex}\b";
-      public static readonly string DateExtractor3 = $@"\b({WeekDayRegex}(\s+|\s*,\s*))?{DayRegex}(\.)?(\s+|\s*,\s*|\s+of\s+|\s*-\s*){MonthRegex}(\.)?((\s+|\s*,\s*){DateYearRegex})?\b";
+      public static readonly string DateExtractorYearTermRegex = $@"(\s+|\s*,\s*){DateYearRegex}";
+      public static readonly string DateExtractor1 = $@"\b({WeekDayRegex}\s*[,-]?\s*)?(({MonthRegex}(\.)?\s*[/\\.,-]?\s*{DayRegex})|(\({MonthRegex}\s*[-.]\s*{DayRegex}\)))(\s*\(\s*{WeekDayRegex}\s*\))?({DateExtractorYearTermRegex}\b)?";
+      public static readonly string DateExtractor3 = $@"\b({WeekDayRegex}(\s+|\s*,\s*))?{DayRegex}(\.)?(\s+|\s*,\s*|\s*-\s*){MonthRegex}(\.)?((\s+|\s*,\s*|\s+in\s+){DateYearRegex})?\b";
       public static readonly string DateExtractor4 = $@"\b{MonthNumRegex}\s*[/\\\-]\s*{DayRegex}(\.)?\s*[/\\\-]\s*{DateYearRegex}";
       public static readonly string DateExtractor5 = $@"\b{DayRegex}\s*[/\\\-\.]\s*({MonthNumRegex}|{MonthRegex})\s*[/\\\-\.]\s*{DateYearRegex}";
-      public static readonly string DateExtractor6 = $@"(?<={DatePreposition}\s+)({WeekDayRegex}\s+)?{MonthNumRegex}[\-\.]{DayRegex}(?![%])\b";
-      public static readonly string DateExtractor7L = $@"\b({WeekDayRegex}\s+)?{MonthNumRegex}\s*/\s*{DayRegex}((\s+|\s*,\s*|\s+in\s+){DateYearRegex})(?![%])\b";
+      public static readonly string DateExtractor6 = $@"(?<={DatePreposition}\s+)({StrictRelativeRegex}\s+)?({WeekDayRegex}\s+)?{MonthNumRegex}[\-\.]{DayRegex}(?![%])\b";
+      public static readonly string DateExtractor7L = $@"\b({WeekDayRegex}\s+)?{MonthNumRegex}\s*/\s*{DayRegex}{DateExtractorYearTermRegex}(?![%])\b";
       public static readonly string DateExtractor7S = $@"\b({WeekDayRegex}\s+)?{MonthNumRegex}\s*/\s*{DayRegex}(?![%])\b";
       public static readonly string DateExtractor8 = $@"(?<={DatePreposition}\s+)({WeekDayRegex}\s+)?{DayRegex}[\\\-]{MonthNumRegex}(?![%])\b";
       public static readonly string DateExtractor9L = $@"\b({WeekDayRegex}\s+)?{DayRegex}\s*[-|\/|.]\s*{MonthNumRegex}((\s+|\s*,\s*|\s+in\s+){DateYearRegex})(?![%])\b";
@@ -211,7 +211,7 @@ namespace Microsoft.Recognizers.Definitions.Dutch
       public const string HalfRegex = @"(((een)\s*)|\b)(?<half>(half|halve)\s+(?<unit>jaar|maand|week|dag|uur))\b";
       public const string ConjunctionRegex = @"\b((en(\s+voor)?)|plus)\b";
       public static readonly string HolidayRegex1 = $@"\b(?<holiday>goede\s+vrijdag|pasen|kerst|kerstavond|kerstmis|thanksgiving|halloween|oudejaarsavond|nieuwjaar|nieuwjaarsdag|bevrijdingsdag)(\s+(van\s+|in\s+)?({YearRegex}|{RelativeRegex}\s+jaar))?\b";
-      public static readonly string HolidayRegex2 = $@"\b(?<holiday>nationale dodenherdenking|nationale herdenking|dodenherdenking|dag van de leraar|dag van de arbeid)(\s+(van\s+|in\s+)?({YearRegex}|{RelativeRegex}\s+jaar))?\b";
+      public static readonly string HolidayRegex2 = $@"\b(?<holiday>yuandan|nationale dodenherdenking|nationale herdenking|dodenherdenking|dag van de leraar|dag van de arbeid)(\s+(van\s+|in\s+)?({YearRegex}|{RelativeRegex}\s+jaar))?\b";
       public static readonly string HolidayRegex3 = $@"(?<holiday>(valentijn|valentijnsdag|nieuwjaarsdag|prinsjesdag|koningsdag|koninginnedag|bevrijdingsdag|hemelvaartsdag|eerste kerstdag|1e kerst|tweede kerstdag|2e kerstdag|vaderdag|moederdag|meisjesdag|amerikaanse onafhankelijkheidsdag|onafhankelijkheidsdag|nederlandse veteranendag|veteranendag|2e kerstdag|1e kerstdag|boomplantdag|boomfeestdag))(\s+(van\s+|in\s+)?({YearRegex}|{RelativeRegex}\s+jaar))?";
       public const string AMTimeRegex = @"(?<am>('s morgens|'s ochtends)|in\s+de\s+(morgen|ochtend))";
       public const string PMTimeRegex = @"\b(?<pm>('s middags|'s avonds|'s nachts)|in\s+de\s+(middag|avond|nacht))\b";
@@ -338,16 +338,21 @@ namespace Microsoft.Recognizers.Definitions.Dutch
         };
       public static readonly Dictionary<string, int> CardinalMap = new Dictionary<string, int>
         {
-            { @"first", 1 },
-            { @"1st", 1 },
-            { @"second", 2 },
-            { @"2nd", 2 },
-            { @"third", 3 },
-            { @"3rd", 3 },
-            { @"fourth", 4 },
-            { @"4th", 4 },
-            { @"fifth", 5 },
-            { @"5th", 5 }
+            { @"eerste", 1 },
+            { @"1e", 1 },
+            { @"1ste", 1 },
+            { @"tweede", 2 },
+            { @"2e", 2 },
+            { @"2de", 2 },
+            { @"derde", 3 },
+            { @"3e", 3 },
+            { @"3de", 3 },
+            { @"vierde", 4 },
+            { @"4e", 4 },
+            { @"4de", 4 },
+            { @"vijfde", 5 },
+            { @"5e", 5 },
+            { @"5de", 5 }
         };
       public static readonly Dictionary<string, int> DayOfWeek = new Dictionary<string, int>
         {
