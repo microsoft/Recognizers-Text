@@ -2,8 +2,7 @@
 LangMarker: Tr
 CompoundNumberLanguage: !bool false
 MultiDecimalSeparatorCulture: !bool true
-
-#Integer Regex
+# Integer Regex
 DigitsNumberRegex: !simpleRegex
   def: \d+|\d{1,3}(\.\d{3})
 RoundNumberIntegerRegex: !simpleRegex
@@ -84,7 +83,7 @@ NegativeAllIntRegexWithLocks: !nestedRegex
 AllIntRegexWithDozenSuffixLocks: !nestedRegex
   def: (?<=\b)(((yarım\s+)?düzine)|({AllIntRegex}\s+düzine))(?=\b)
   references: [ AllIntRegex ]
-#Ordinal Regex
+# Ordinal Regex
 RoundNumberOrdinalRegex: !simpleRegex
   def: (yüzüncü|bininci|milyonuncu|milyarıncı|trilyonuncu)
 TensOrdinalRegex: !simpleRegex
@@ -139,7 +138,7 @@ OrdinalNumericRegex: !nestedRegex
 OrdinalTurkishRegex: !nestedRegex
   def: (?<=\b){AllOrdinalRegex}(?=\b)
   references: [ AllOrdinalRegex ]
-#Fraction Regex
+# Fraction Regex
 FractionNotationWithSpacesRegex: !simpleRegex
   def: (((?<=\W|^)-\s*)|(?<=\b))\d+\s+\d+[/]\d+(?=(\b[^/]|$))
 FractionNotationRegex: !simpleRegex
@@ -150,7 +149,7 @@ FractionNounWithArticleRegex: !nestedRegex
 FractionPrepositionRegex: !nestedRegex
   def: (?<=\b)(eksi\s)?(?<numerator>({AllIntRegex})|((?<!,)\d+))\s+(bölü)\s+(?<denominator>({AllIntRegex})|(\d+)(?!,))(?=\b)
   references: [ AllIntRegex ]
-#Double Regex
+# Double Regex
 AllPointRegex: !nestedRegex
   def: ((\s{ZeroToNineIntegerRegex})+|(\s{AllIntRegex}))
   references: [ ZeroToNineIntegerRegex, AllIntRegex ]
@@ -184,14 +183,14 @@ DoubleAllFloatRegex: !nestedRegex
   references: [ AllFloatRegex ]
 ConnectorRegex: !simpleRegex
     def: (?<spacer>ve)
-#Percentage Regex
+# Percentage Regex
 NumberWithPrefixPercentage: !nestedRegex
   def: (%|(eksi\s)?yüzde\s)({BaseNumbers.NumberReplaceToken}|{AllIntRegex})
   references: [ BaseNumbers.NumberReplaceToken, AllIntRegex ]
 NumberWithSuffixPercentage: !nestedRegex
   def: (((({TensNumberIntegerRegex}\s)?(birin|ikinin|üçün|dördün|beşin|altının|yedinin|sekizin|dokuzun)|onun|yirminin|otuzun|kırkın|ellinin|altmışın|yetmişin|seksenin|doksanın)\s(yüzdesi))|(\d*(1'in|2'nin|3'ün|4'ün|5'in|6'nın|7'nin|8'in|9'un|10'un|20'nin|30'un|40'ın|50'nin|60'ın|70'in|80'in|90'ın)\s(yüzdesi)))
   references: [ TensNumberIntegerRegex ]
-#NumberRange Regex
+# NumberRange Regex
 TillRegex: !simpleRegex
   def: (-|—|——|–|~)
 MoreRegex: !simpleRegex
@@ -255,7 +254,7 @@ TwoNumberRangeRegex3: !nestedRegex
 TwoNumberRangeRegex4: !nestedRegex
   def: (?<number1>({NumberSplitMark}.)+)\s*{TillRegex}\s*(?<number2>({NumberSplitMark}.)+)|({NumberFromSuffixRegex}\s{NumberToSuffixRegex})(\skadar)
   references: [ TillRegex, NumberSplitMark, NumberFromSuffixRegex, NumberToSuffixRegex ]
-#Parser
+# Parser
 DecimalSeparatorChar: !char ','
 FractionMarkerToken: bölü
 NonDecimalSeparatorChar: !char '.'
