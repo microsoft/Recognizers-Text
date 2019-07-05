@@ -198,10 +198,14 @@ public class EnglishDateTime {
 
     public static final String QuarterTermRegex = "\\b(((?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th)[ -]+quarter)|(q(?<number>[1-4])))\\b";
 
-    public static final String QuarterRegex = "(the\\s+)?{QuarterTermRegex}(?:(\\s+of|\\s*,\\s*)?\\s+({YearRegex}|{RelativeRegex}\\s+year))?"
+    public static final String RelativeQuarterTermRegex = "\\b(?<orderQuarter>{RelativeRegex})\\s+quarter\\b"
+            .replace("{RelativeRegex}", RelativeRegex);
+
+    public static final String QuarterRegex = "((the\\s+)?{QuarterTermRegex}(?:(\\s+of|\\s*,\\s*)?\\s+({YearRegex}|{RelativeRegex}\\s+year))?)|{RelativeQuarterTermRegex}"
             .replace("{YearRegex}", YearRegex)
             .replace("{RelativeRegex}", RelativeRegex)
-            .replace("{QuarterTermRegex}", QuarterTermRegex);
+            .replace("{QuarterTermRegex}", QuarterTermRegex)
+            .replace("{RelativeQuarterTermRegex}", RelativeQuarterTermRegex);
 
     public static final String QuarterRegexYearFront = "(?:{YearRegex}|{RelativeRegex}\\s+year)('s)?(?:\\s*-\\s*|\\s+(the\\s+)?)?{QuarterTermRegex}"
             .replace("{YearRegex}", YearRegex)
@@ -702,10 +706,10 @@ public class EnglishDateTime {
 
     public static final String InclusiveModPrepositions = "(?<include>((on|in|at)\\s+or\\s+)|(\\s+or\\s+(on|in|at)))";
 
-    public static final String BeforeRegex = "((\\b{InclusiveModPrepositions}?(?:before|in\\s+advance\\s+of|prior\\s+to|(no\\s+later|earlier|sooner)\\s+than|ending\\s+(with|on)|by|(un)?till?|(?<include>as\\s+late\\s+as)){InclusiveModPrepositions}?\\b\\s*?)|(?<!\\w|>)((?<include><=)|<))(\\s+the)?"
+    public static final String BeforeRegex = "((\\b{InclusiveModPrepositions}?(?:before|in\\s+advance\\s+of|prior\\s+to|(no\\s+later|earlier|sooner)\\s+than|ending\\s+(with|on)|by|(un)?till?|(?<include>as\\s+late\\s+as)){InclusiveModPrepositions}?\\b\\s*?)|(?<!\\w|>)((?<include><\\s*=)|<))(\\s+the)?"
             .replace("{InclusiveModPrepositions}", InclusiveModPrepositions);
 
-    public static final String AfterRegex = "((\\b{InclusiveModPrepositions}?((after|(starting|beginning)(\\s+on)?(?!\\sfrom)|(?<!no\\s+)later than)|(year greater than))(?!\\s+or equal to){InclusiveModPrepositions}?\\b\\s*?)|(?<!\\w|<)((?<include>>=)|>))(\\s+the)?"
+    public static final String AfterRegex = "((\\b{InclusiveModPrepositions}?((after|(starting|beginning)(\\s+on)?(?!\\sfrom)|(?<!no\\s+)later than)|(year greater than))(?!\\s+or equal to){InclusiveModPrepositions}?\\b\\s*?)|(?<!\\w|<)((?<include>>\\s*=)|>))(\\s+the)?"
             .replace("{InclusiveModPrepositions}", InclusiveModPrepositions);
 
     public static final String SinceRegex = "(?:(?:\\b(?:since|after\\s+or\\s+equal\\s+to|starting\\s+(?:from|on|with)|as\\s+early\\s+as|any\\s+time\\s+from)\\b\\s*)|(?<!\\w|<)(>=))";
