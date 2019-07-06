@@ -28,36 +28,39 @@ export class EnglishDateExtractorConfiguration implements IDateExtractorConfigur
     readonly durationExtractor: IDateTimeExtractor;
     readonly utilityConfiguration: IDateTimeUtilityConfiguration;
 
-    constructor() {
+    constructor(dmyDateFormat:boolean = false) {
+
+        let enableDmy = dmyDateFormat || EnglishDateTime.DefaultLanguageFallback === Constants.DefaultLanguageFallback_MDY;
+
         this.dateRegexList = [
             RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor1),
             RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor3),
 
-            EnglishDateTime.DefaultLanguageFallback === Constants.DefaultLanguageFallback_MDY?
+            enableDmy?
                 RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor4):
                 RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor5),
 
-            EnglishDateTime.DefaultLanguageFallback === Constants.DefaultLanguageFallback_MDY?
+            enableDmy?
                 RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor5):
                 RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor4),
 
             RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor6),
 
-            EnglishDateTime.DefaultLanguageFallback === Constants.DefaultLanguageFallback_MDY?
+            enableDmy?
                 RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor7L):
                 RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor9L),
 
-            EnglishDateTime.DefaultLanguageFallback === Constants.DefaultLanguageFallback_MDY?
+            enableDmy?
                 RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor7S):
                 RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor9S),
 
             RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor8),
 
-            EnglishDateTime.DefaultLanguageFallback === Constants.DefaultLanguageFallback_MDY?
+            enableDmy?
                 RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor9L):
                 RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor7L),
 
-            EnglishDateTime.DefaultLanguageFallback === Constants.DefaultLanguageFallback_MDY?
+            enableDmy?
                 RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor9S):
                 RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor7S),
 

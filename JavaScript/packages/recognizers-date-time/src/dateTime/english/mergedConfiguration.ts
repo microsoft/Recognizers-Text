@@ -42,7 +42,7 @@ export class EnglishMergedExtractorConfiguration implements IMergedExtractorConf
     readonly numberEndingPattern: RegExp
     readonly filterWordRegexList: RegExp[]
 
-    constructor() {
+    constructor(dmyDateFormat:boolean = false) {
         this.dateExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration());
         this.timeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration());
         this.dateTimeExtractor = new BaseDateTimeExtractor(new EnglishDateTimeExtractorConfiguration());

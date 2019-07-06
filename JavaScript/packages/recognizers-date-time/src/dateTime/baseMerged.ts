@@ -39,10 +39,12 @@ export interface IMergedExtractorConfiguration {
 export class BaseMergedExtractor implements IDateTimeExtractor {
     protected readonly config: IMergedExtractorConfiguration;
     protected readonly options: DateTimeOptions;
+    protected readonly dmyDateFormat: boolean;
 
-    constructor(config: IMergedExtractorConfiguration, options: DateTimeOptions) {
+    constructor(config: IMergedExtractorConfiguration, options: DateTimeOptions, dmyDateFormat:boolean = false) {
         this.config = config;
         this.options = options;
+        this.dmyDateFormat = dmyDateFormat;
     }
 
     extract(source: string, refDate: Date): Array<ExtractResult> {
