@@ -30,31 +30,21 @@ export class EnglishDateExtractorConfiguration implements IDateExtractorConfigur
 
     constructor(dmyDateFormat:boolean = false) {
 
-        let enableDmy = dmyDateFormat || EnglishDateTime.DefaultLanguageFallback === Constants.DefaultLanguageFallback_MDY;
+        let enableDmy = dmyDateFormat || EnglishDateTime.DefaultLanguageFallback === Constants.DefaultLanguageFallback_DMY;
 
         this.dateRegexList = [
             RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor1),
             RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor3),
 
             enableDmy?
-                RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor4):
-                RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor5),
-
-            enableDmy?
                 RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor5):
                 RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor4),
 
+            enableDmy?
+                RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor4):
+                RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor5),
+
             RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor6),
-
-            enableDmy?
-                RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor7L):
-                RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor9L),
-
-            enableDmy?
-                RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor7S):
-                RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor9S),
-
-            RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor8),
 
             enableDmy?
                 RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor9L):
@@ -63,6 +53,16 @@ export class EnglishDateExtractorConfiguration implements IDateExtractorConfigur
             enableDmy?
                 RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor9S):
                 RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor7S),
+
+            RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor8),
+
+            enableDmy?
+                RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor7L):
+                RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor9L),
+
+            enableDmy?
+                RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor7S):
+                RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor9S),
 
             RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractorA),
         ];

@@ -41,7 +41,7 @@ export class EnglishDateTimeUtilityConfiguration implements IDateTimeUtilityConf
 }
 
 export class EnglishCommonDateTimeParserConfiguration extends BaseDateParserConfiguration {
-    constructor() {
+    constructor(dmyDateFormat:boolean = false) {
         super();
         this.utilityConfiguration = new EnglishDateTimeUtilityConfiguration();
         this.unitMap = EnglishDateTime.UnitMap;
@@ -57,7 +57,7 @@ export class EnglishCommonDateTimeParserConfiguration extends BaseDateParserConf
         this.ordinalExtractor = new EnglishOrdinalExtractor();
         this.dayOfMonth = new Map<string, number>([...BaseDateTime.DayOfMonthDictionary, ...EnglishDateTime.DayOfMonth]);
         this.numberParser = new BaseNumberParser(new EnglishNumberParserConfiguration());
-        this.dateExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration());
+        this.dateExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration(dmyDateFormat));
         this.timeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration());
         this.dateTimeExtractor = new BaseDateTimeExtractor(new EnglishDateTimeExtractorConfiguration());
         this.durationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration());
