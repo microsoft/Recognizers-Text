@@ -1715,7 +1715,8 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             var cardinalStr = match.Groups["cardinal"].Value;
-            var orderStr = match.Groups["order"].Value;
+            var orderQuarterStr = match.Groups["orderQuarter"].Value;
+            var orderYearStr = string.IsNullOrEmpty(orderQuarterStr) ? match.Groups["order"].Value : null;
             var numberStr = match.Groups["number"].Value;
 
             bool noSpecificYear = false;
@@ -1723,7 +1724,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if (year == Constants.InvalidYear)
             {
-                var swift = this.config.GetSwiftYear(orderStr);
+                var swift = string.IsNullOrEmpty(orderQuarterStr) ? this.config.GetSwiftYear(orderYearStr) : 0;
                 if (swift < -1)
                 {
                     swift = 0;
@@ -1737,6 +1738,23 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (!string.IsNullOrEmpty(numberStr))
             {
                 quarterNum = int.Parse(numberStr);
+            }
+            else if (!string.IsNullOrEmpty(orderQuarterStr))
+            {
+                int month = referenceDate.Month;
+                quarterNum = decimal.ToInt16(Math.Ceiling((decimal)month / Constants.TrimesterMonthCount));
+                var swift = this.config.GetSwiftYear(orderQuarterStr);
+                quarterNum += swift;
+                if (quarterNum <= 0)
+                {
+                    quarterNum += Constants.QuarterCount;
+                    year -= 1;
+                }
+                else if (quarterNum > Constants.QuarterCount)
+                {
+                    quarterNum -= Constants.QuarterCount;
+                    year += 1;
+                }
             }
             else
             {

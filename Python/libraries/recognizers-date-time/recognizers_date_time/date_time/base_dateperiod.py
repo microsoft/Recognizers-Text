@@ -1,3 +1,4 @@
+import math
 from abc import ABC, abstractmethod
 from typing import List, Optional, Pattern, Match, Dict
 from datetime import datetime, timedelta
@@ -1341,7 +1342,8 @@ class BaseDatePeriodParser(DateTimeParser):
 
         cardinal_str = RegExpUtility.get_group(match, 'cardinal')
         year_str = RegExpUtility.get_group(match, 'year')
-        order_str = RegExpUtility.get_group(match, 'order')
+        order_quarter_str = RegExpUtility.get_group(match, 'orderQuarter')
+        order_str = None if order_quarter_str else RegExpUtility.get_group(match, 'order')
         quarter_str = RegExpUtility.get_group(match, 'number')
 
         no_specific_value = False
@@ -1349,7 +1351,7 @@ class BaseDatePeriodParser(DateTimeParser):
             year = int(year_str)
         except (ValueError, TypeError):
             order_str = '' if order_str is None else order_str
-            swift = self.config.get_swift_year(order_str)
+            swift = 0 if order_quarter_str else self.config.get_swift_year(order_str)
             if swift < -1:
                 swift = 0
                 no_specific_value = True
@@ -1357,6 +1359,17 @@ class BaseDatePeriodParser(DateTimeParser):
 
         if quarter_str:
             quarter_num = int(quarter_str)
+        elif order_quarter_str:
+            month = reference.month
+            quarter_num = math.ceil(month / Constants.TrimesterMonthCount)
+            swift = self.config.get_swift_year(order_quarter_str)
+            quarter_num += swift
+            if (quarter_num <= 0):
+                quarter_num += Constants.QuarterCount
+                year -= 1
+            elif (quarter_num > Constants.QuarterCount):
+                quarter_num -= Constants.QuarterCount
+                year += 1
         else:
             quarter_num = self.config.cardinal_map[cardinal_str]
 

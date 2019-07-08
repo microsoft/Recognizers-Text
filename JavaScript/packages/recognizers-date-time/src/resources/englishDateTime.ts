@@ -68,7 +68,8 @@ export namespace EnglishDateTime {
     export const FollowedDateUnit = `^\\s*${DateUnitRegex}`;
     export const NumberCombinedWithDateUnit = `\\b(?<num>\\d+(\\.\\d*)?)${DateUnitRegex}`;
     export const QuarterTermRegex = `\\b(((?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th)[ -]+quarter)|(q(?<number>[1-4])))\\b`;
-    export const QuarterRegex = `(the\\s+)?${QuarterTermRegex}(?:(\\s+of|\\s*,\\s*)?\\s+(${YearRegex}|${RelativeRegex}\\s+year))?`;
+    export const RelativeQuarterTermRegex = `\\b(?<orderQuarter>${StrictRelativeRegex})\\s+quarter\\b`;
+    export const QuarterRegex = `((the\\s+)?${QuarterTermRegex}(?:(\\s+of|\\s*,\\s*)?\\s+(${YearRegex}|${RelativeRegex}\\s+year))?)|${RelativeQuarterTermRegex}`;
     export const QuarterRegexYearFront = `(?:${YearRegex}|${RelativeRegex}\\s+year)('s)?(?:\\s*-\\s*|\\s+(the\\s+)?)?${QuarterTermRegex}`;
     export const HalfYearTermRegex = `(?<cardinal>first|1st|second|2nd)\\s+half`;
     export const HalfYearFrontRegex = `(?<year>((1[5-9]|20)\\d{2})|2100)(\\s*-\\s*|\\s+(the\\s+)?)?h(?<number>[1-2])`;
@@ -208,8 +209,8 @@ export namespace EnglishDateTime {
     export const AMTimeRegex = `(?<am>morning)`;
     export const PMTimeRegex = `\\b(?<pm>afternoon|evening|night)\\b`;
     export const InclusiveModPrepositions = `(?<include>((on|in|at)\\s+or\\s+)|(\\s+or\\s+(on|in|at)))`;
-    export const BeforeRegex = `((\\b${InclusiveModPrepositions}?(?:before|in\\s+advance\\s+of|prior\\s+to|(no\\s+later|earlier|sooner)\\s+than|ending\\s+(with|on)|by|(un)?till?|(?<include>as\\s+late\\s+as))${InclusiveModPrepositions}?\\b\\s*?)|(?<!\\w|>)((?<include><=)|<))(\\s+the)?`;
-    export const AfterRegex = `((\\b${InclusiveModPrepositions}?((after|(starting|beginning)(\\s+on)?(?!\\sfrom)|(?<!no\\s+)later than)|(year greater than))(?!\\s+or equal to)${InclusiveModPrepositions}?\\b\\s*?)|(?<!\\w|<)((?<include>>=)|>))(\\s+the)?`;
+    export const BeforeRegex = `((\\b${InclusiveModPrepositions}?(?:before|in\\s+advance\\s+of|prior\\s+to|(no\\s+later|earlier|sooner)\\s+than|ending\\s+(with|on)|by|(un)?till?|(?<include>as\\s+late\\s+as))${InclusiveModPrepositions}?\\b\\s*?)|(?<!\\w|>)((?<include><\\s*=)|<))(\\s+the)?`;
+    export const AfterRegex = `((\\b${InclusiveModPrepositions}?((after|(starting|beginning)(\\s+on)?(?!\\sfrom)|(?<!no\\s+)later than)|(year greater than))(?!\\s+or equal to)${InclusiveModPrepositions}?\\b\\s*?)|(?<!\\w|<)((?<include>>\\s*=)|>))(\\s+the)?`;
     export const SinceRegex = `(?:(?:\\b(?:since|after\\s+or\\s+equal\\s+to|starting\\s+(?:from|on|with)|as\\s+early\\s+as|any\\s+time\\s+from)\\b\\s*)|(?<!\\w|<)(>=))`;
     export const AroundRegex = `(?:\\b(?:around|circa)\\s*\\b)`;
     export const AgoRegex = `\\b(ago|before\\s+(?<day>yesterday|today))\\b`;

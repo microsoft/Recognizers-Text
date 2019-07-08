@@ -143,9 +143,12 @@ NumberCombinedWithDateUnit: !nestedRegex
   references: [ DateUnitRegex ]
 QuarterTermRegex: !simpleRegex
   def: \b(((?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th)[ -]+quarter)|(q(?<number>[1-4])))\b
+RelativeQuarterTermRegex: !nestedRegex
+  def: \b(?<orderQuarter>{StrictRelativeRegex})\s+quarter\b
+  references: [ StrictRelativeRegex ]
 QuarterRegex: !nestedRegex
-  def: (the\s+)?{QuarterTermRegex}(?:(\s+of|\s*,\s*)?\s+({YearRegex}|{RelativeRegex}\s+year))?
-  references: [ YearRegex, RelativeRegex, QuarterTermRegex ]
+  def: ((the\s+)?{QuarterTermRegex}(?:(\s+of|\s*,\s*)?\s+({YearRegex}|{RelativeRegex}\s+year))?)|{RelativeQuarterTermRegex}
+  references: [ YearRegex, RelativeRegex, QuarterTermRegex, RelativeQuarterTermRegex ]
 QuarterRegexYearFront: !nestedRegex
   def: (?:{YearRegex}|{RelativeRegex}\s+year)('s)?(?:\s*-\s*|\s+(the\s+)?)?{QuarterTermRegex}
   references: [ YearRegex, RelativeRegex, QuarterTermRegex ]

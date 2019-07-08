@@ -100,6 +100,7 @@ public class Constants {
     public static final int NegativeSign = -1;
 
     public static final int TrimesterMonthCount = 3;
+    public static final int QuarterCount = 4;
     public static final int SemesterMonthCount = 6;
     public static final int WeekDayCount = 7;
     public static final int CenturyYearsCount = 100;

@@ -22,6 +22,7 @@ export namespace BaseDateTime {
     export const BaseAmDescRegex = `(am\\b|a\\s*\\.\\s*m\\s*\\.|a[\\.]?\\s*m\\b)`;
     export const BasePmDescRegex = `(pm\\b|p\\s*\\.\\s*m\\s*\\.|p[\\.]?\\s*m\\b)`;
     export const BaseAmPmDescRegex = `(ampm)`;
+    export const EqualRegex = `(?<!<|>)=`;
     export const MinYearNum = '1500';
     export const MaxYearNum = '2100';
     export const MaxTwoDigitYearFutureNum = '30';

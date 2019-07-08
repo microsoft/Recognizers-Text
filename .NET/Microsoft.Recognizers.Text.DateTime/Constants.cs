@@ -91,6 +91,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const int NegativeSign = -1;
 
         public const int TrimesterMonthCount = 3;
+        public const int QuarterCount = 4;
         public const int SemesterMonthCount = 6;
         public const int WeekDayCount = 7;
         public const int CenturyYearsCount = 100;

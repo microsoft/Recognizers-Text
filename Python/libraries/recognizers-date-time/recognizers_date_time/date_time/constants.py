@@ -29,6 +29,7 @@ class Constants:
 
     SemesterMonthCount: int = 6
     TrimesterMonthCount: int = 3
+    QuarterCount: int = 4
     FourDigitsYearLength: int = 4
     MinMonth: int = 1
     MaxMonth: int = 12

@@ -658,4 +658,5 @@ class EnglishNumericWithUnit:
                              ("Ounce", "-ounce|ounce|oz|ounces"),
                              ("Weight unit", "pennyweight|grain|british long ton|us short hundredweight|stone|dram")])
     AmbiguousWeightUnitList = [r'g', r'oz', r'stone', r'dram', r'lbs']
+    AmbiguityFiltersDict = dict([("\\bm\\b", "((('|’)\\s*m)|(m\\s*('|’)))")])
 # pylint: enable=line-too-long
