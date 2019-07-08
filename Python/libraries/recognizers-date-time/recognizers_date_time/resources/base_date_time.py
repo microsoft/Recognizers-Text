@@ -25,6 +25,7 @@ class BaseDateTime:
     BaseAmDescRegex = f'(am\\b|a\\s*\\.\\s*m\\s*\\.|a[\\.]?\\s*m\\b)'
     BasePmDescRegex = f'(pm\\b|p\\s*\\.\\s*m\\s*\\.|p[\\.]?\\s*m\\b)'
     BaseAmPmDescRegex = f'(ampm)'
+    EqualRegex = f'(?<!<|>)='
     MinYearNum = '1500'
     MaxYearNum = '2100'
     MaxTwoDigitYearFutureNum = '30'

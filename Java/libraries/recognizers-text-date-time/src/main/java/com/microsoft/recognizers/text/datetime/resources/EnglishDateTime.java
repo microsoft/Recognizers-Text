@@ -198,8 +198,8 @@ public class EnglishDateTime {
 
     public static final String QuarterTermRegex = "\\b(((?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th)[ -]+quarter)|(q(?<number>[1-4])))\\b";
 
-    public static final String RelativeQuarterTermRegex = "\\b(?<orderQuarter>{RelativeRegex})\\s+quarter\\b"
-            .replace("{RelativeRegex}", RelativeRegex);
+    public static final String RelativeQuarterTermRegex = "\\b(?<orderQuarter>{StrictRelativeRegex})\\s+quarter\\b"
+            .replace("{StrictRelativeRegex}", StrictRelativeRegex);
 
     public static final String QuarterRegex = "((the\\s+)?{QuarterTermRegex}(?:(\\s+of|\\s*,\\s*)?\\s+({YearRegex}|{RelativeRegex}\\s+year))?)|{RelativeQuarterTermRegex}"
             .replace("{YearRegex}", YearRegex)

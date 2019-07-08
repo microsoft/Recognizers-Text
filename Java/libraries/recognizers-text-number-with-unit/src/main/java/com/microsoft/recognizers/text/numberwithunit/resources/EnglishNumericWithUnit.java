@@ -707,4 +707,8 @@ public class EnglishNumericWithUnit {
         .build();
 
     public static final List<String> AmbiguousWeightUnitList = Arrays.asList("g", "oz", "stone", "dram", "lbs");
+
+    public static final ImmutableMap<String, String> AmbiguityFiltersDict = ImmutableMap.<String, String>builder()
+        .put("\\bm\\b", "((('|’)\\s*m)|(m\\s*('|’)))")
+        .build();
 }
