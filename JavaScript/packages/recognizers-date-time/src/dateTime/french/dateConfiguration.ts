@@ -28,17 +28,20 @@ export class FrenchDateExtractorConfiguration implements IDateExtractorConfigura
     readonly durationExtractor: IDateTimeExtractor;
     readonly utilityConfiguration: IDateTimeUtilityConfiguration;
 
-    constructor() {
+    constructor(dmyDateFormat:boolean = false) {
+
+        let enableDmy = dmyDateFormat || FrenchDateTime.DefaultLanguageFallback === Constants.DefaultLanguageFallback_DMY;
+
         this.dateRegexList = [
             RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractor1, "gis"),
             RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractor2, "gis"),
             RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractor3, "gis"),
             
-            FrenchDateTime.DefaultLanguageFallback === Constants.DefaultLanguageFallback_DMY?
+            enableDmy?
                 RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractor5, "gis"):
                 RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractor4, "gis"),
 
-            FrenchDateTime.DefaultLanguageFallback === Constants.DefaultLanguageFallback_DMY?
+            enableDmy?
                 RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractor4, "gis"):
                 RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractor5, "gis"),
 

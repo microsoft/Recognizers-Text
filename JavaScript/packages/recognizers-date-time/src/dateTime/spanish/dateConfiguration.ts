@@ -27,33 +27,36 @@ export class SpanishDateExtractorConfiguration implements IDateExtractorConfigur
     readonly durationExtractor: IDateTimeExtractor;
     readonly utilityConfiguration: IDateTimeUtilityConfiguration;
 
-    constructor() {
+    constructor(dmyDateFormat:boolean = false) {
+
+        let enableDmy = dmyDateFormat || SpanishDateTime.DefaultLanguageFallback === Constants.DefaultLanguageFallback_DMY;
+
         this.dateRegexList = [
             RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor1, "gis"),
             RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor2, "gis"),
             RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor3, "gis"),
 
-            SpanishDateTime.DefaultLanguageFallback === Constants.DefaultLanguageFallback_DMY?
+            enableDmy?
                 RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor5, "gis"):
                 RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor4, "gis"),
 
-            SpanishDateTime.DefaultLanguageFallback === Constants.DefaultLanguageFallback_DMY?
+            enableDmy?
                 RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor4, "gis"):
                 RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor5, "gis"),
 
-            SpanishDateTime.DefaultLanguageFallback === Constants.DefaultLanguageFallback_DMY?
+            enableDmy?
                 RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor8, "gis"):
                 RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor6, "gis"),
 
-            SpanishDateTime.DefaultLanguageFallback === Constants.DefaultLanguageFallback_DMY?
+            enableDmy?
                 RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor6, "gis"):
                 RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor8, "gis"),
 
-            SpanishDateTime.DefaultLanguageFallback === Constants.DefaultLanguageFallback_DMY?
+            enableDmy?
                 RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor9, "gis"):
                 RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor7, "gis"),
 
-            SpanishDateTime.DefaultLanguageFallback === Constants.DefaultLanguageFallback_DMY?
+            enableDmy?
                 RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor7, "gis"):
                 RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor9, "gis"),
                 

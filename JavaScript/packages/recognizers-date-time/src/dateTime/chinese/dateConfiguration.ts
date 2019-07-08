@@ -27,7 +27,10 @@ class ChineseDateExtractorConfiguration implements IDateExtractorConfiguration {
     readonly durationExtractor: BaseDurationExtractor;
     readonly utilityConfiguration: IDateTimeUtilityConfiguration;
 
-    constructor() {
+    constructor(dmyDateFormat:boolean = false) {
+
+        let enableDmy = dmyDateFormat || ChineseDateTime.DefaultLanguageFallback === Constants.DefaultLanguageFallback_DMY;
+
         this.dateRegexList = [
             RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList1),
             RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList2),
@@ -35,11 +38,11 @@ class ChineseDateExtractorConfiguration implements IDateExtractorConfiguration {
             RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList4),
             RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList5),
 
-            ChineseDateTime.DefaultLanguageFallback === Constants.DefaultLanguageFallback_DMY? 
+            enableDmy? 
                 RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList7):
                 RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList6),
 
-            ChineseDateTime.DefaultLanguageFallback === Constants.DefaultLanguageFallback_DMY? 
+            enableDmy? 
                 RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList6):
                 RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList7),
 
