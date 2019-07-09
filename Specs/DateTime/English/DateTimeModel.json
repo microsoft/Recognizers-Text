@@ -12824,5 +12824,129 @@
         }
       }
     ]
+  },
+  {
+    "Input": "I will be out in 11:30 am to 12:30 december 27th",
+    "Context": {
+      "ReferenceDateTime": "2019-07-04T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "11:30 am to 12:30 december 27th",
+        "Start": 17,
+        "End": 47,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-12-27T11:30,XXXX-12-27T12:30,PT1H)",
+              "type": "datetimerange",
+              "start": "2018-12-27 11:30:00",
+              "end": "2018-12-27 12:30:00"
+            },
+            {
+              "timex": "(XXXX-12-27T11:30,XXXX-12-27T12:30,PT1H)",
+              "type": "datetimerange",
+              "start": "2019-12-27 11:30:00",
+              "end": "2019-12-27 12:30:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Let's have a meeting in 12:30 december 27th",
+    "Context": {
+      "ReferenceDateTime": "2019-07-04T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "12:30 december 27th",
+        "Start": 24,
+        "End": 42,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-12-27T12:30",
+              "type": "datetime",
+              "value": "2018-12-27 12:30:00"
+            },
+            {
+              "timex": "XXXX-12-27T12:30",
+              "type": "datetime",
+              "value": "2019-12-27 12:30:00"
+            },
+            {
+              "timex": "XXXX-12-27T00:30",
+              "type": "datetime",
+              "value": "2018-12-27 00:30:00"
+            },
+            {
+              "timex": "XXXX-12-27T00:30",
+              "type": "datetime",
+              "value": "2019-12-27 00:30:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I bought it for $12 December 27",
+    "Context": {
+      "ReferenceDateTime": "2019-07-04T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "december 27",
+        "Start": 20,
+        "End": 30,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-12-27",
+              "type": "date",
+              "value": "2018-12-27"
+            },
+            {
+              "timex": "XXXX-12-27",
+              "type": "date",
+              "value": "2019-12-27"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I bought it for $ 12 December 27",
+    "Context": {
+      "ReferenceDateTime": "2019-07-04T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "december 27",
+        "Start": 21,
+        "End": 31,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-12-27",
+              "type": "date",
+              "value": "2018-12-27"
+            },
+            {
+              "timex": "XXXX-12-27",
+              "type": "date",
+              "value": "2019-12-27"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

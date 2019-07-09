@@ -25,7 +25,7 @@ export namespace EnglishDateTime {
     export const CenturySuffixRegex = `(^century)\\b`;
     export const ReferencePrefixRegex = `(that|same)\\b`;
     export const FutureSuffixRegex = `\\b(in\\s+the\\s+)?(future|hence)\\b`;
-    export const DayRegex = `(the\\s*)?(?<day>(?:3[0-1]|[1-2]\\d|0?[1-9])(?:th|nd|rd|st)?)(?=\\b|t)`;
+    export const DayRegex = `(the\\s*)?(?<![:$]\\s*)(?<=\\b)(?<day>(?:3[0-1]|[1-2]\\d|0?[1-9])(?:th|nd|rd|st)?)(?=\\b|t)`;
     export const ImplicitDayRegex = `(the\\s*)?(?<day>(?:3[0-1]|[0-2]?\\d)(?:th|nd|rd|st))\\b`;
     export const MonthNumRegex = `(?<month>1[0-2]|(0)?[1-9])\\b`;
     export const WrittenOneToNineRegex = `(?:one|two|three|four|five|six|seven|eight|nine)`;
