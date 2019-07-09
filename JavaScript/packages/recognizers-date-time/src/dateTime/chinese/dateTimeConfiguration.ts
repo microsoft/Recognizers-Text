@@ -32,8 +32,8 @@ class ChineseDateTimeExtractorConfiguration implements IDateTimeExtractorConfigu
     readonly prepositionRegex: RegExp
     readonly utilityConfiguration: IDateTimeUtilityConfiguration
 
-    constructor() {
-        this.datePointExtractor = new ChineseDateExtractor();
+    constructor(dmyDateFormat: boolean = false) {
+        this.datePointExtractor = new ChineseDateExtractor(dmyDateFormat);
         this.timePointExtractor = new ChineseTimeExtractor();
         this.prepositionRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.PrepositionRegex);
         this.nowRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.NowRegex);
@@ -49,8 +49,8 @@ class ChineseDateTimeExtractorConfiguration implements IDateTimeExtractorConfigu
 }
 
 export class ChineseDateTimeExtractor extends BaseDateTimeExtractor {
-    constructor() {
-        super(new ChineseDateTimeExtractorConfiguration());
+    constructor(dmyDateFormat: boolean = false) {
+        super(new ChineseDateTimeExtractorConfiguration(dmyDateFormat));
     }
 
     extract(source: string, refDate: Date): Array<ExtractResult> {
@@ -146,8 +146,8 @@ class ChineseDateTimeParserConfiguration implements IDateTimeParserConfiguration
     readonly numbers: ReadonlyMap<string, number>;
     readonly utilityConfiguration: IDateTimeUtilityConfiguration;
 
-    constructor() {
-        this.dateExtractor = new ChineseDateExtractor();
+    constructor(dmyDateFormat: boolean = false) {
+        this.dateExtractor = new ChineseDateExtractor(dmyDateFormat);
         this.timeExtractor = new ChineseTimeExtractor();
         this.dateParser = new ChineseDateParser();
         this.timeParser = new ChineseTimeParser();
@@ -195,8 +195,8 @@ class ChineseDateTimeParserConfiguration implements IDateTimeParserConfiguration
 }
 
 export class ChineseDateTimeParser extends BaseDateTimeParser {
-    constructor() {
-        let config = new ChineseDateTimeParserConfiguration();
+    constructor(dmyDateFormat: boolean = false) {
+        let config = new ChineseDateTimeParserConfiguration(dmyDateFormat);
         super(config);
     }
 

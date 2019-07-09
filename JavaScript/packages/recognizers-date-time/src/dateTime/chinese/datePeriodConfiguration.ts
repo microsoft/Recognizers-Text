@@ -33,7 +33,7 @@ class ChineseDatePeriodExtractorConfiguration implements IDatePeriodExtractorCon
     readonly rangeConnectorRegex: RegExp
     readonly nowRegex: RegExp
     
-    constructor() {
+    constructor(dmyDateFormat: boolean = false) {
         this.simpleCasesRegexes = [
             RegExpUtility.getSafeRegExp(ChineseDateTime.SimpleCasesRegex),
             RegExpUtility.getSafeRegExp(ChineseDateTime.OneWordPeriodRegex),
@@ -47,7 +47,7 @@ class ChineseDatePeriodExtractorConfiguration implements IDatePeriodExtractorCon
             RegExpUtility.getSafeRegExp(ChineseDateTime.SeasonWithYear),
             RegExpUtility.getSafeRegExp(ChineseDateTime.QuarterRegex),
         ];
-        this.datePointExtractor = new ChineseDateExtractor();
+        this.datePointExtractor = new ChineseDateExtractor(dmyDateFormat);
         this.integerExtractor = new ChineseIntegerExtractor();
         this.numberParser = new BaseNumberParser(new ChineseNumberParserConfiguration());
         this.illegalYearRegex = RegExpUtility.getSafeRegExp(BaseDateTime.IllegalYearRegex);
@@ -78,8 +78,8 @@ class ChineseDatePeriodExtractorConfiguration implements IDatePeriodExtractorCon
 }
 
 export class ChineseDatePeriodExtractor extends BaseDatePeriodExtractor {
-    constructor() {
-        super(new ChineseDatePeriodExtractorConfiguration());
+    constructor(dmyDateFormat: boolean = false) {
+        super(new ChineseDatePeriodExtractorConfiguration(dmyDateFormat));
     }
 
     extract(source: string, refDate: Date): Array<ExtractResult> {
@@ -172,7 +172,7 @@ class ChineseDatePeriodParserConfiguration implements IDatePeriodParserConfigura
     readonly unitMap: ReadonlyMap<string, string>
     readonly nowRegex: RegExp
 
-    constructor() {
+    constructor(dmyDateFormat: boolean = false) {
         this.simpleCasesRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.SimpleCasesRegex);
         this.yearRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.DatePeriodYearRegex);
         this.seasonRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.SeasonRegex);
@@ -187,7 +187,7 @@ class ChineseDatePeriodParserConfiguration implements IDatePeriodParserConfigura
         this.dayOfMonth = ChineseDateTime.ParserConfigurationDayOfMonth;
         this.monthOfYear = ChineseDateTime.ParserConfigurationMonthOfYear;
         this.oneWordPeriodRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.OneWordPeriodRegex);
-        this.dateExtractor = new ChineseDateExtractor();
+        this.dateExtractor = new ChineseDateExtractor(dmyDateFormat);
         this.dateParser = new ChineseDateParser();
         this.tokenBeforeDate = 'on ';
         this.weekOfMonthRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.WeekOfMonthRegex);
@@ -295,8 +295,8 @@ export class ChineseDatePeriodParser extends BaseDatePeriodParser {
     private readonly chineseYearRegex: RegExp;
     private readonly seasonWithYearRegex: RegExp;
 
-    constructor() {
-        let config = new ChineseDatePeriodParserConfiguration();
+    constructor(dmyDateFormat: boolean = false) {
+        let config = new ChineseDatePeriodParserConfiguration(dmyDateFormat);
         super(config, false);
         this.integerExtractor = new ChineseIntegerExtractor();
         this.numberParser = AgnosticNumberParserFactory.getParser(AgnosticNumberParserType.Integer, new ChineseNumberParserConfiguration());

@@ -58,10 +58,10 @@ class ChineseDateTimePeriodExtractorConfiguration implements IDateTimePeriodExtr
         return (source === '和' || source === ' 与' || source === '到');
     };
 
-    constructor() {
+    constructor(dmyDateFormat: boolean = false) {
         this.singleDateExtractor = new ChineseDateExtractor();
         this.singleTimeExtractor = new ChineseTimeExtractor();
-        this.singleDateTimeExtractor = new ChineseDateTimeExtractor();
+        this.singleDateTimeExtractor = new ChineseDateTimeExtractor(dmyDateFormat);
         this.prepositionRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.DateTimePeriodPrepositionRegex);
         this.tillRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.DateTimePeriodTillRegex);
         this.cardinalExtractor = new ChineseCardinalExtractor();
@@ -285,14 +285,14 @@ class ChineseDateTimePeriodParserConfiguration implements IDateTimePeriodParserC
     readonly timePeriodParser: BaseTimePeriodParser
     readonly durationParser: BaseDurationParser
 
-    constructor() {
+    constructor(dmyDateFormat: boolean = false) {
         this.dateExtractor = new ChineseDateExtractor();
         this.timeExtractor = new ChineseTimeExtractor();
-        this.dateTimeExtractor = new ChineseDateTimeExtractor();
+        this.dateTimeExtractor = new ChineseDateTimeExtractor(dmyDateFormat);
         this.timePeriodExtractor = new ChineseTimePeriodExtractor();
         this.dateParser = new ChineseDateParser();
         this.timeParser = new ChineseTimeParser();
-        this.dateTimeParser = new ChineseDateTimeParser();
+        this.dateTimeParser = new ChineseDateTimeParser(dmyDateFormat);
         this.timePeriodParser = new ChineseTimePeriodParser();
         this.specificTimeOfDayRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.SpecificTimeOfDayRegex);
         this.relativeTimeUnitRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.TimeOfDayRegex);
@@ -376,8 +376,8 @@ export class ChineseDateTimePeriodParser extends BaseDateTimePeriodParser {
     private readonly cardinalExtractor: IExtractor;
     private readonly cardinalParser: IParser;
 
-    constructor() {
-        let config = new ChineseDateTimePeriodParserConfiguration();
+    constructor(dmyDateFormat: boolean = false) {
+        let config = new ChineseDateTimePeriodParserConfiguration(dmyDateFormat);
         super(config);
         this.TMORegex = RegExpUtility.getSafeRegExp(ChineseDateTime.DateTimePeriodMORegex);
         this.TMIRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.DateTimePeriodMIRegex);

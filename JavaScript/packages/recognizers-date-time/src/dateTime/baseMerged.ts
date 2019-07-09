@@ -41,7 +41,7 @@ export class BaseMergedExtractor implements IDateTimeExtractor {
     protected readonly options: DateTimeOptions;
     protected readonly dmyDateFormat: boolean;
 
-    constructor(config: IMergedExtractorConfiguration, options: DateTimeOptions, dmyDateFormat:boolean = false) {
+    constructor(config: IMergedExtractorConfiguration, options: DateTimeOptions, dmyDateFormat: boolean = false) {
         this.config = config;
         this.options = options;
         this.dmyDateFormat = dmyDateFormat;

@@ -27,7 +27,7 @@ class ChineseDateExtractorConfiguration implements IDateExtractorConfiguration {
     readonly durationExtractor: BaseDurationExtractor;
     readonly utilityConfiguration: IDateTimeUtilityConfiguration;
 
-    constructor(dmyDateFormat:boolean = false) {
+    constructor(dmyDateFormat: boolean = false) {
 
         let enableDmy = dmyDateFormat || ChineseDateTime.DefaultLanguageFallback === Constants.DefaultLanguageFallback_DMY;
 
@@ -64,8 +64,8 @@ class ChineseDateExtractorConfiguration implements IDateExtractorConfiguration {
 export class ChineseDateExtractor extends BaseDateExtractor {
     private readonly durationExtractor: ChineseDurationExtractor;
 
-    constructor() {
-        super(new ChineseDateExtractorConfiguration());
+    constructor(dmyDateFormat: boolean = false) {
+        super(new ChineseDateExtractorConfiguration(dmyDateFormat));
         this.durationExtractor = new ChineseDurationExtractor();
     }
 
@@ -168,8 +168,8 @@ class ChineseDateParserConfiguration implements IDateParserConfiguration {
         return source === ChineseDateTime.ParserConfigurationLastWeekDayToken;
     }
 
-    constructor() {
-        this.dateRegex = new ChineseDateExtractorConfiguration().dateRegexList;
+    constructor(dmyDateFormat: boolean = false) {
+        this.dateRegex = new ChineseDateExtractorConfiguration(dmyDateFormat).dateRegexList;
         this.monthOfYear = ChineseDateTime.ParserConfigurationMonthOfYear;
         this.dayOfMonth = ChineseDateTime.ParserConfigurationDayOfMonth;
         this.dayOfWeek = ChineseDateTime.ParserConfigurationDayOfWeek;

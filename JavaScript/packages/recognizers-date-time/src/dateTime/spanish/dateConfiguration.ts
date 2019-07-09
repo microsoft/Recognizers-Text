@@ -27,7 +27,7 @@ export class SpanishDateExtractorConfiguration implements IDateExtractorConfigur
     readonly durationExtractor: IDateTimeExtractor;
     readonly utilityConfiguration: IDateTimeUtilityConfiguration;
 
-    constructor(dmyDateFormat:boolean = false) {
+    constructor(dmyDateFormat: boolean = false) {
 
         let enableDmy = dmyDateFormat || SpanishDateTime.DefaultLanguageFallback === Constants.DefaultLanguageFallback_DMY;
 
@@ -127,7 +127,7 @@ export class SpanishDateParserConfiguration implements IDateParserConfiguration 
     static readonly nextPrefixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.NextPrefixRegex);
     static readonly previousPrefixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PreviousPrefixRegex);
 
-    constructor(config: SpanishCommonDateTimeParserConfiguration) {
+    constructor(config: SpanishCommonDateTimeParserConfiguration, dmyDateFormat: boolean = false) {
         this.ordinalExtractor = config.ordinalExtractor;
         this.integerExtractor = config.integerExtractor;
         this.cardinalExtractor = config.cardinalExtractor;
@@ -139,7 +139,7 @@ export class SpanishDateParserConfiguration implements IDateParserConfiguration 
         this.dayOfWeek = config.dayOfWeek;
         this.unitMap = config.unitMap;
         this.cardinalMap = config.cardinalMap;
-        this.dateRegex = new SpanishDateExtractorConfiguration().dateRegexList;
+        this.dateRegex = new SpanishDateExtractorConfiguration(dmyDateFormat).dateRegexList;
         this.onRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.OnRegex, "gis");
         this.specialDayRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.SpecialDayRegex, "gis");
         this.specialDayWithNumRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.SpecialDayWithNumRegex, "gis");

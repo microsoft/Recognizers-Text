@@ -41,7 +41,7 @@ export class EnglishDateTimeUtilityConfiguration implements IDateTimeUtilityConf
 }
 
 export class EnglishCommonDateTimeParserConfiguration extends BaseDateParserConfiguration {
-    constructor(dmyDateFormat:boolean = false) {
+    constructor(dmyDateFormat: boolean = false) {
         super();
         this.utilityConfiguration = new EnglishDateTimeUtilityConfiguration();
         this.unitMap = EnglishDateTime.UnitMap;
@@ -59,13 +59,13 @@ export class EnglishCommonDateTimeParserConfiguration extends BaseDateParserConf
         this.numberParser = new BaseNumberParser(new EnglishNumberParserConfiguration());
         this.dateExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration(dmyDateFormat));
         this.timeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration());
-        this.dateTimeExtractor = new BaseDateTimeExtractor(new EnglishDateTimeExtractorConfiguration());
+        this.dateTimeExtractor = new BaseDateTimeExtractor(new EnglishDateTimeExtractorConfiguration(dmyDateFormat));
         this.durationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration());
-        this.datePeriodExtractor = new BaseDatePeriodExtractor(new EnglishDatePeriodExtractorConfiguration());
+        this.datePeriodExtractor = new BaseDatePeriodExtractor(new EnglishDatePeriodExtractorConfiguration(dmyDateFormat));
         this.timePeriodExtractor = new BaseTimePeriodExtractor(new EnglishTimePeriodExtractorConfiguration());
-        this.dateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new EnglishDateTimePeriodExtractorConfiguration());
+        this.dateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new EnglishDateTimePeriodExtractorConfiguration(dmyDateFormat));
         this.durationParser = new BaseDurationParser(new EnglishDurationParserConfiguration(this));
-        this.dateParser = new BaseDateParser(new EnglishDateParserConfiguration(this));
+        this.dateParser = new BaseDateParser(new EnglishDateParserConfiguration(this, dmyDateFormat));
         this.timeParser = new EnglishTimeParser(new EnglishTimeParserConfiguration(this));
         this.dateTimeParser = new BaseDateTimeParser(new EnglishDateTimeParserConfiguration(this));
         this.datePeriodParser = new BaseDatePeriodParser(new EnglishDatePeriodParserConfiguration(this));

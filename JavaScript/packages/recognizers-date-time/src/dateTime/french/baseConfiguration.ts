@@ -41,7 +41,7 @@ export class FrenchDateTimeUtilityConfiguration implements IDateTimeUtilityConfi
 
 export class FrenchCommonDateTimeParserConfiguration extends BaseDateParserConfiguration {
 
-    constructor() {
+    constructor(dmyDateFormat: boolean = false) {
         super();
         this.utilityConfiguration = new FrenchDateTimeUtilityConfiguration();
 
@@ -59,7 +59,7 @@ export class FrenchCommonDateTimeParserConfiguration extends BaseDateParserConfi
         this.ordinalExtractor = new FrenchOrdinalExtractor();
 
         this.numberParser = new BaseNumberParser(new FrenchNumberParserConfiguration());
-        this.dateExtractor = new BaseDateExtractor(new FrenchDateExtractorConfiguration());
+        this.dateExtractor = new BaseDateExtractor(new FrenchDateExtractorConfiguration(dmyDateFormat));
         this.timeExtractor = new BaseTimeExtractor(new FrenchTimeExtractorConfiguration());
         this.dateTimeExtractor = new BaseDateTimeExtractor(new FrenchDateTimeExtractorConfiguration());
         this.durationExtractor = new BaseDurationExtractor(new FrenchDurationExtractorConfiguration());
@@ -67,7 +67,7 @@ export class FrenchCommonDateTimeParserConfiguration extends BaseDateParserConfi
         this.timePeriodExtractor = new BaseTimePeriodExtractor(new FrenchTimePeriodExtractorConfiguration());
         this.dateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new FrenchDateTimePeriodExtractorConfiguration());
         this.durationParser = new BaseDurationParser(new FrenchDurationParserConfiguration(this));
-        this.dateParser = new BaseDateParser(new FrenchDateParserConfiguration(this));
+        this.dateParser = new BaseDateParser(new FrenchDateParserConfiguration(this, dmyDateFormat));
         this.timeParser = new BaseTimeParser(new FrenchTimeParserConfiguration(this));
         this.dateTimeParser = new BaseDateTimeParser(new FrenchDateTimeParserConfiguration(this));
         this.datePeriodParser = new BaseDatePeriodParser(new FrenchDatePeriodParserConfiguration(this));

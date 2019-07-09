@@ -13,7 +13,7 @@ export class Culture {
 
   static readonly supportedCultures: Array<Culture> = [
     new Culture("English", Culture.English),
-    new Culture("English", Culture.EnglishOthers),
+    new Culture("EnglishOthers", Culture.EnglishOthers),
     new Culture("Chinese", Culture.Chinese),
     new Culture("Spanish", Culture.Spanish),
     new Culture("Portuguese", Culture.Portuguese),

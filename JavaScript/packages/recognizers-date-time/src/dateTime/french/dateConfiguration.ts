@@ -28,7 +28,7 @@ export class FrenchDateExtractorConfiguration implements IDateExtractorConfigura
     readonly durationExtractor: IDateTimeExtractor;
     readonly utilityConfiguration: IDateTimeUtilityConfiguration;
 
-    constructor(dmyDateFormat:boolean = false) {
+    constructor(dmyDateFormat: boolean = false) {
 
         let enableDmy = dmyDateFormat || FrenchDateTime.DefaultLanguageFallback === Constants.DefaultLanguageFallback_DMY;
 
@@ -113,7 +113,7 @@ export class FrenchDateParserConfiguration implements IDateParserConfiguration {
     readonly utilityConfiguration: IDateTimeUtilityConfiguration;
     readonly dateTokenPrefix: string;
 
-    constructor(config: FrenchCommonDateTimeParserConfiguration) {
+    constructor(config: FrenchCommonDateTimeParserConfiguration, dmyDateFormat: boolean = false) {
         this.ordinalExtractor = config.ordinalExtractor;
         this.integerExtractor = config.integerExtractor;
         this.cardinalExtractor = config.cardinalExtractor;
@@ -125,7 +125,7 @@ export class FrenchDateParserConfiguration implements IDateParserConfiguration {
         this.dayOfWeek = config.dayOfWeek;
         this.unitMap = config.unitMap;
         this.cardinalMap = config.cardinalMap;
-        this.dateRegex = new FrenchDateExtractorConfiguration().dateRegexList;
+        this.dateRegex = new FrenchDateExtractorConfiguration(dmyDateFormat).dateRegexList;
         this.onRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.OnRegex, "gis");
         this.specialDayRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.SpecialDayRegex, "gis");
         this.specialDayWithNumRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.SpecialDayWithNumRegex, "gis");
