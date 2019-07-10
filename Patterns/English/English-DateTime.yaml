@@ -36,7 +36,7 @@ ReferencePrefixRegex: !simpleRegex
 FutureSuffixRegex: !simpleRegex
   def: \b(in\s+the\s+)?(future|hence)\b
 DayRegex: !simpleRegex
-  def: (the\s*)?(?<day>(?:3[0-1]|[1-2]\d|0?[1-9])(?:th|nd|rd|st)?)(?=\b|t)
+  def: (the\s*)?(?<!(\d+:|\$)\s*)(?<=\b)(?<day>(?:3[0-1]|[1-2]\d|0?[1-9])(?:th|nd|rd|st)?)(?=\b|t)
 ImplicitDayRegex: !simpleRegex
   def: (the\s*)?(?<day>(?:3[0-1]|[0-2]?\d)(?:th|nd|rd|st))\b
 MonthNumRegex: !simpleRegex

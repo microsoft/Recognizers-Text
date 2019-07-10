@@ -35,7 +35,7 @@ namespace Microsoft.Recognizers.Definitions.English
       public const string CenturySuffixRegex = @"(^century)\b";
       public const string ReferencePrefixRegex = @"(that|same)\b";
       public const string FutureSuffixRegex = @"\b(in\s+the\s+)?(future|hence)\b";
-      public const string DayRegex = @"(the\s*)?(?<day>(?:3[0-1]|[1-2]\d|0?[1-9])(?:th|nd|rd|st)?)(?=\b|t)";
+      public const string DayRegex = @"(the\s*)?(?<!(\d+:|\$)\s*)(?<=\b)(?<day>(?:3[0-1]|[1-2]\d|0?[1-9])(?:th|nd|rd|st)?)(?=\b|t)";
       public const string ImplicitDayRegex = @"(the\s*)?(?<day>(?:3[0-1]|[0-2]?\d)(?:th|nd|rd|st))\b";
       public const string MonthNumRegex = @"(?<month>1[0-2]|(0)?[1-9])\b";
       public const string WrittenOneToNineRegex = @"(?:one|two|three|four|five|six|seven|eight|nine)";
