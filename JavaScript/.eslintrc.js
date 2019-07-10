@@ -4,9 +4,10 @@ module.exports = {
         '@typescript-eslint',
         'only-warn'
     ],
-    extends: [
+    extends: [        
         'plugin:@typescript-eslint/recommended',
         'prettier',
+        'prettier/@typescript-eslint'
     ],
     parserOptions: {
         ecmaVersion: 2018,  // Allows for the parsing of modern ECMAScript features
@@ -15,6 +16,16 @@ module.exports = {
             impliedStrict: true
         },
     },
-    rules: {
+    rules: {               
+        '@typescript-eslint/explicit-member-accessibility': 'off',
+        '@typescript-eslint/no-namespace': 'off',
+        '@typescript-eslint/interface-name-prefix': 'off',
+        '@typescript-eslint/no-object-literal-type-assertion': 'off',                        
+        'eqeqeq': ["error", "smart"],        
+        'radix': 'error',                
+        'no-var': "error",        
+        "one-var": ["error", { var: "never", let: "never", const: "never" }],               
+        'curly': ["error", "multi-line"],           
+        "spaced-comment": ["warn", "always"],
     },
 }; 
