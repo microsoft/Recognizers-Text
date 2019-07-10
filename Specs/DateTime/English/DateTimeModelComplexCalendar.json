@@ -11115,5 +11115,33 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Tim says:30 December is OK",
+    "Context": {
+      "ReferenceDateTime": "2019-07-04T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "30 december",
+        "Start": 9,
+        "End": 19,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-12-30",
+              "type": "date",
+              "value": "2018-12-30"
+            },
+            {
+              "timex": "XXXX-12-30",
+              "type": "date",
+              "value": "2019-12-30"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
