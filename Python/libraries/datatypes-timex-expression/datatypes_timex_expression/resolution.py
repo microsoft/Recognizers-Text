@@ -7,14 +7,7 @@ class Entry:
 
 
 class Resolution:
+    values: []
 
     def __init__(self):
-        self.values = [Entry]
-
-    @property
-    def values(self) -> []:
-        return self.__values
-
-    @values.setter
-    def values(self, value):
-        self.__values = value
+        self.values = []

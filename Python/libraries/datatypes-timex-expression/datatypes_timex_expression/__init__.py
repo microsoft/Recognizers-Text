@@ -20,3 +20,4 @@ from .timex_parsing import *
 from .timex_set import *
 from .timex_range_resolver import *
 from .english import *
+from .timex_resolver import *

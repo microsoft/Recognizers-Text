@@ -74,6 +74,9 @@ class TimexHelpers:
     @staticmethod
     def timex_date_add(start, duration):
         from datatypes_timex_expression import Timex
+        duration_days = duration.days
+        if duration.days is None and duration.weeks is not None:
+            duration_days = 7 * duration.weeks
 
         if start.day_of_week:
             end = start.clone()
@@ -82,10 +85,10 @@ class TimexHelpers:
             return end
 
         if start.month is not None and start.day_of_month is not None:
-            if duration.days:
+            if duration_days:
                 if start.year:
                     d = date(start.year, start.month, start.day_of_month)
-                    d = d + timedelta(days=int(duration.days))
+                    d = d + timedelta(days=int(duration_days))
                     result = Timex()
                     result.year = d.year
                     result.month = d.month
@@ -93,7 +96,7 @@ class TimexHelpers:
                     return result
                 else:
                     d = date(2001, start.month, start.day_of_month)
-                    d = d + timedelta(int(duration.days))
+                    d = d + timedelta(int(duration_days))
                     result = Timex()
                     result.month = d.month
                     result.day_of_month = d.day
