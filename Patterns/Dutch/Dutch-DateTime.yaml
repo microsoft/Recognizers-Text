@@ -8,20 +8,20 @@ RangeConnectorRegex: !nestedRegex
 ArticleRegex: !simpleRegex
   def: \b(de|het|een)\b
 RelativeRegex: !simpleRegex
-  def: \b(?<order>dit|deze|volgend[e]?|komend[e]?|aankomend[e]?|aanstaand[e]?|huidig[e]?|vorig[e]?|verleden|voorgaand[e]?|vorig[e]?|laatste|afgelopen)\b
+  def: \b(?<order>dit|deze|volgende?|komende?|aankomende?|aanstaande?|huidige?|vorige?|verleden|voorgaande?|vorige?|laatste|afgelopen)\b
 StrictRelativeRegex: !simpleRegex
-  def: \b(?<order>dit|deze|volgend[e]?|komend[e]?|aankomend[e]?|aanstaand[e]?|huidig[e]?|vorig[e]?|verleden|voorgaand[e]?|vorig[e]?|laatste|afgelopen)\b
+  def: \b(?<order>dit|deze|volgende?|komende?|aankomende?|aanstaande?|huidige?|vorige?|verleden|voorgaande?|vorige?|laatste|afgelopen)\b
 UpcomingPrefixRegex: !simpleRegex
-  def: ((aankomend[e]?|komend[e]?|aanstaande))
+  def: ((aankomende?|komende?|aanstaande))
 NextPrefixRegex: !nestedRegex
-  def: \b(volgend[e]?|eerstvolgende|{UpcomingPrefixRegex})\b
+  def: \b(volgende?|eerstvolgende|{UpcomingPrefixRegex})\b
   references: [ UpcomingPrefixRegex ]
 AfterNextSuffixRegex: !simpleRegex
   def: \b(na\s+((de|het)\s+)?volgende)\b
 PastPrefixRegex: !simpleRegex
   def: ((deze\s+)?verleden)\b
 PreviousPrefixRegex: !nestedRegex
-  def: (voorgaand[e]|vorig[e]?|afgelopen|verleden|laatste|{PastPrefixRegex})\b
+  def: (voorgaand[e]|vorige?|afgelopen|verleden|laatste|{PastPrefixRegex})\b
   references: [ PastPrefixRegex ]
 ThisPrefixRegex: !simpleRegex
   def: (dit|deze|huidige?)\b
@@ -38,7 +38,7 @@ DayRegex: !simpleRegex
 ImplicitDayRegex: !simpleRegex
   def: (de\s*)?(?<day>(3[0-1]|[0-2]?\d)(ste|e|de))\b
 MonthNumRegex: !simpleRegex
-  def: (?<month>01|02|03|04|05|06|07|08|09|10|11|12|1|2|3|4|5|6|7|8|9)?.?\b
+  def: (?<month>01|02|03|04|05|06|07|08|09|10|11|12|1|2|3|4|5|6|7|8|9)?\.?\b
 WrittenOneToNineRegex: !simpleRegex
   def: (één|een|twee|drie|vier|vijf|zes|zeven|acht|negen)
 WrittenElevenToNineteenRegex: !simpleRegex
@@ -46,7 +46,7 @@ WrittenElevenToNineteenRegex: !simpleRegex
 WrittenTensRegex: !simpleRegex
   def: (tien|twintig|dertig|veertig|vijftig|zestig|zeventig|tachtig|negentig)
 WrittenNumRegex: !nestedRegex
-  def: ({WrittenOneToNineRegex}|{WrittenElevenToNineteenRegex}|({WrittenOneToNineRegex}\s+)?{WrittenTensRegex})
+  def: ({WrittenOneToNineRegex}|{WrittenElevenToNineteenRegex}|{WrittenTensRegex}(\s+{WrittenOneToNineRegex})?)
   references: [ WrittenOneToNineRegex, WrittenElevenToNineteenRegex, WrittenTensRegex ]
 WrittenCenturyFullYearRegex: !nestedRegex
   def: ((twee)\s*duizend(\s+en)?(\s*{WrittenOneToNineRegex}\s+honderd)?)
@@ -117,7 +117,7 @@ BetweenRegex: !nestedRegex
   def: \b(tussen\s+)({DayRegex})\s*{RangeConnectorRegex}\s*({DayRegex})\s+{MonthSuffixRegex}((\s+|\s*,\s*){YearRegex})?\b
   references: [ DayRegex, RangeConnectorRegex , MonthSuffixRegex, YearRegex ]
 MonthWithYear: !nestedRegex
-  def: \b(({WrittenMonthRegex}(\.)?(\s*)[/\\\-\.,]?(\s+(van|over|in))?(\s*)({YearRegex}|(?<order>volgend[e]?|komend[e]?|aankomend[e]?|huidig[e]?|vorig[e]?|afgelopen|dit)\s+jaar))|(({YearRegex}|(?<order>volgend[e]?|komend[e]?|aankomend[e]?|huidig[e]?|vorig[e]?|afgelopen|dit)\s+jaar)(\s*),?(\s*){WrittenMonthRegex}))\b
+  def: \b(({WrittenMonthRegex}(\.)?(\s*)[/\\\-\.,]?(\s+(van|over|in))?(\s*)({YearRegex}|(?<order>volgende?|komende?|aankomende?|huidige?|vorige?|afgelopen|dit)\s+jaar))|(({YearRegex}|(?<order>volgende?|komende?|aankomende?|huidige?|vorige?|afgelopen|dit)\s+jaar)(\s*),?(\s*){WrittenMonthRegex}))\b
   references: [ WrittenMonthRegex, YearRegex ]
 OneWordPeriodRegex: !nestedRegex
   def: \b((((de\s+)?maand van\s+)?({StrictRelativeRegex}\s+)?(?<month>januari|februari|maart|april|mei|juni|juli|augustus|september|oktober|december|jan\.?|feb\.?|mar\.?|apr\.?|jun\.?|jul\.?|aug\.?|sep\.?|sept\.?|oct\.?|okt\.?|nov\.?|dec\.?))|(maand|jaar) tot heden|nu|({RelativeRegex}\s+)?(mijn\s+)?(weekend|week|maand|jaar)(?!((\s+van)?\s+\d+|\s+tot\s+heden|nu))(\s+{AfterNextSuffixRegex})?)\b
@@ -192,10 +192,10 @@ YearSuffix: !nestedRegex
   def: (,?\s*({DateYearRegex}|{FullTextYearRegex}))
   references: [ DateYearRegex, FullTextYearRegex ]
 OnRegex: !nestedRegex
-  def: (?<=\bop\s+)({DayRegex}s?)\b
+  def: (?<=\bop\s+)({DayRegex}(en)?)\b
   references: [ DayRegex ]
 RelaxedOnRegex: !simpleRegex
-  def: (?<=\b(op\s+(de|een\s+)?)(10|11|12|13|14|15|16|17|18|19|1|20|21|22|23|24|25|26|27|28|29|2|30|31|3|4|5|6|7|8|9)(e|ste|de)?)\b
+  def: (?<=\b(op\s+(de\s+|een\s+)?)(10|11|12|13|14|15|16|17|18|19|1|20|21|22|23|24|25|26|27|28|29|2|30|31|3|4|5|6|7|8|9)(e|ste|de)?)\b
 PrefixWeekDayRegex: !simpleRegex
   def: (\s*((,?\s*op)|[-—–]))
 ThisRegex: !nestedRegex
