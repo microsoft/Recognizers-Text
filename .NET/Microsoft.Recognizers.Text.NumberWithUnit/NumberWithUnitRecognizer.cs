@@ -430,6 +430,16 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                         new NumberWithUnitParser(new Dutch.AgeParserConfiguration())
                     },
                 }));
+
+            RegisterModel<AgeModel>(
+                Culture.Turkish,
+                (options) => new AgeModel(new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new NumberWithUnitExtractor(new Turkish.AgeExtractorConfiguration()),
+                        new NumberWithUnitParser(new Turkish.AgeParserConfiguration())
+                    },
+                }));
         }
 
         private static List<ModelResult> RecognizeByModel(Func<NumberWithUnitRecognizer, IModel> getModelFunc, string query, NumberWithUnitOptions options)
