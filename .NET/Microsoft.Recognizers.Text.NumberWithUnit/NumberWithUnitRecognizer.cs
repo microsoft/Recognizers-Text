@@ -460,6 +460,17 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                         new NumberWithUnitParser(new Turkish.DimensionParserConfiguration())
                     },
                 }));
+           
+             RegisterModel<CurrencyModel>(
+                Culture.Turkish,
+                (options) => new CurrencyModel(new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new BaseMergedUnitExtractor(new Turkish.CurrencyExtractorConfiguration()),
+                        new BaseMergedUnitParser(new Turkish.CurrencyParserConfiguration())
+                    },
+                }));
+                
 
         }
 
