@@ -12824,5 +12824,244 @@
         }
       }
     ]
+  },
+  {
+    "Input": "3pm : I'll be out on this week",
+    "Context": {
+      "ReferenceDateTime": "2019-07-11T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "3pm",
+        "Start": 0,
+        "End": 2,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T15",
+              "type": "time",
+              "value": "15:00:00"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "this week",
+        "Start": 21,
+        "End": 29,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-W28",
+              "type": "daterange",
+              "start": "2019-07-08",
+              "end": "2019-07-15"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "this week 8am should be a daterange and a time.",
+    "Context": {
+      "ReferenceDateTime": "2019-07-11T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "this week",
+        "Start": 0,
+        "End": 8,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-W28",
+              "type": "daterange",
+              "start": "2019-07-08",
+              "end": "2019-07-15"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "8am",
+        "Start": 10,
+        "End": 12,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T08",
+              "type": "time",
+              "value": "08:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "this week 8p.m. should be a daterange and a time.",
+    "Context": {
+      "ReferenceDateTime": "2019-07-11T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "this week",
+        "Start": 0,
+        "End": 8,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-W28",
+              "type": "daterange",
+              "start": "2019-07-08",
+              "end": "2019-07-15"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "8p.m.",
+        "Start": 10,
+        "End": 14,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T20",
+              "type": "time",
+              "value": "20:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "week 10 8 p.m. should be a daterange and a time.",
+    "Context": {
+      "ReferenceDateTime": "2019-07-11T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "week 10",
+        "Start": 0,
+        "End": 6,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-W10",
+              "type": "daterange",
+              "start": "2019-03-04",
+              "end": "2019-03-11"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "8 p.m.",
+        "Start": 8,
+        "End": 13,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T20",
+              "type": "time",
+              "value": "20:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "week 10 8p.m. should be a daterange and a time.",
+    "Context": {
+      "ReferenceDateTime": "2019-07-11T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "week 10",
+        "Start": 0,
+        "End": 6,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-W10",
+              "type": "daterange",
+              "start": "2019-03-04",
+              "end": "2019-03-11"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "8p.m.",
+        "Start": 8,
+        "End": 12,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T20",
+              "type": "time",
+              "value": "20:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "week 10 10:20 should be a daterange and a time.",
+    "Context": {
+      "ReferenceDateTime": "2019-07-11T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "week 10",
+        "Start": 0,
+        "End": 6,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-W10",
+              "type": "daterange",
+              "start": "2019-03-04",
+              "end": "2019-03-11"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "10:20",
+        "Start": 8,
+        "End": 12,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T10:20",
+              "type": "time",
+              "value": "10:20:00"
+            },
+            {
+              "timex": "T22:20",
+              "type": "time",
+              "value": "22:20:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
