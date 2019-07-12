@@ -1,5 +1,5 @@
 @echo off
-echo *** Building Microsoft.Recognizers.Text.Choice
+echo *** Building Microsoft.Recognizers.Text.Timex
 setlocal
 setlocal enabledelayedexpansion
 setlocal enableextensions
