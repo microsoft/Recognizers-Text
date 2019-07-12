@@ -21,7 +21,7 @@
         "Start": 10,
         "Length": 6
       }
-    ],
+    ]
   },
   {
     "Input": "Tornerò il giorno di natale",
@@ -45,7 +45,7 @@
         "Start": 11,
         "Length": 16
       }
-    ],
+    ]
   },
   {
     "Input": "Tornerò la vigilia di capodanno",
@@ -69,7 +69,7 @@
         "Start": 8,
         "Length": 23
       }
-    ],
+    ]
   },
   {
     "Input": "Tornerò a natale",
@@ -93,7 +93,7 @@
         "Start": 10,
         "Length": 6
       }
-    ],
+    ]
   },
   {
     "Input": "Tornerò al capodanno cinese",
@@ -117,7 +117,7 @@
         "Start": 11,
         "Length": 16
       }
-    ],
+    ]
   },
   {
     "Input": "Tornerò il giorno del ringraziamento",
@@ -141,7 +141,7 @@
         "Start": 11,
         "Length": 25
       }
-    ],
+    ]
   },
   {
     "Input": "Tornerò al ringraziamento",
@@ -165,7 +165,7 @@
         "Start": 11,
         "Length": 14
       }
-    ],
+    ]
   },
   {
     "Input": "Tornerò alla festa del papà",
@@ -189,7 +189,7 @@
         "Start": 13,
         "Length": 14
       }
-    ],
+    ]
   },
   {
     "Input": "Tornerò al capodanno cinese del prossimo anno",
@@ -213,7 +213,7 @@
         "Start": 11,
         "Length": 34
       }
-    ],
+    ]
   },
   {
     "Input": "Tornerò il giorno del ringraziamento del 2010",
@@ -237,7 +237,7 @@
         "Start": 11,
         "Length": 34
       }
-    ],
+    ]
   },
   {
     "Input": "Tornerò alla festa del papà del 2015",
@@ -261,6 +261,6 @@
         "Start": 13,
         "Length": 23
       }
-    ],
+    ]
   }
 ]

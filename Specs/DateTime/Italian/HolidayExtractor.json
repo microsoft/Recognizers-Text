@@ -33,7 +33,7 @@
         "Start": 11,
         "Length": 16
       }
-    ],
+    ]
   },
   {
     "Input": "Tornerò il giorno del ringraziamento",
@@ -45,7 +45,7 @@
         "Start": 11,
         "Length": 25
       }
-    ],
+    ]
   },
   {
     "Input": "Tornerò alla festa del papà",
@@ -69,7 +69,7 @@
         "Start": 11,
         "Length": 30
       }
-    ],
+    ]
   },
   {
     "Input": "Tornerò al capodanno cinese del 2016",
@@ -81,7 +81,7 @@
         "Start": 11,
         "Length": 25
       }
-    ],
+    ]
   },
   {
     "Input": "Tornerò al capodanno cinese 2016",
@@ -93,7 +93,7 @@
         "Start": 11,
         "Length": 21
       }
-    ],
+    ]
   },
   {
     "Input": "Tornerò il primo giorno di quaresima",
@@ -105,6 +105,6 @@
         "Start": 17,
         "Length": 19
       }
-    ],
+    ]
   }
 ]
