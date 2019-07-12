@@ -38,8 +38,6 @@ pip install -e .\libraries\recognizers-date-time\
 
 pip install -e .\libraries\recognizers-sequence\
 
-pip install -e .\libraries\datatypes-timex-expression\
-
 pip install -e .\libraries\recognizers-suite\
 
 pip install -e .\libraries\datatypes-timex-expression\
