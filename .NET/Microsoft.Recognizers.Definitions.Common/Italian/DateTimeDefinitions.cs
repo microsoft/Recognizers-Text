@@ -67,6 +67,7 @@ namespace Microsoft.Recognizers.Definitions.Italian
       public static readonly string BetweenRegex = $@"\b([tf]ra\s+)({DayRegex})\s*{RangeConnectorRegex}\s*({DayRegex})\s+{MonthSuffixRegex}((\s+|\s*,\s*){YearRegex})?\b";
       public const string YearWordRegex = @"\b(?<year>l'anno)\b";
       public static readonly string MonthWithYear = $@"\b({MonthRegex},?(((\s+del)?\s+{YearRegex})|((\s+(del|di|il))?\s+(?<order>prossim['o]|passato|quest['o])\s*anno)|((\s+(del)?l')anno\s+(?<order>prossimo|passato))))";
+      public const string SpecialYearPrefixes = @"(?<special>fiscale|scolastico)";
       public static readonly string OneWordPeriodRegex = $@"\b((((il|l[o'])\s*)?((mese di\s+)|({RelativeRegex}\s*))?{MonthRegex})|dall'inizio\s+del(l')\s*(mese|anno)|({RelativeRegex}\s+)?(weekend|settimana|mese|anno)(?!((\s+di)?\s+\d+))(\s+dopo\s+(il|la)\s+prossim[ao])?)\b";
       public static readonly string MonthNumWithYear = $@"({YearRegex}[/\-\.]{MonthNumRegex})|({MonthNumRegex}[/\-]{YearRegex})";
       public static readonly string WeekOfMonthRegex = $@"(?<wom>(l[a']\s*)?(?<cardinal>prima|seconda|terza|quarta|quinta|ultima)\s+settimana\s+{MonthSuffixRegex})";
@@ -307,6 +308,11 @@ namespace Microsoft.Recognizers.Definitions.Italian
             { @"secondo", 1 },
             { @"secs", 1 },
             { @"sec", 1 }
+        };
+      public static readonly Dictionary<string, string> SpecialYearPrefixesMap = new Dictionary<string, string>
+        {
+            { @"fiscale", @"FY" },
+            { @"scolastico", @"SY" }
         };
       public static readonly Dictionary<string, string> SeasonMap = new Dictionary<string, string>
         {

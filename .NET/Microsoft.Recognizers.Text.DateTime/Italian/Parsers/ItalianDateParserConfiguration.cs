@@ -26,9 +26,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             OnRegex = ItalianDateExtractorConfiguration.OnRegex;
             SpecialDayRegex = ItalianDateExtractorConfiguration.SpecialDayRegex;
             SpecialDayWithNumRegex = ItalianDateExtractorConfiguration.SpecialDayWithNumRegex;
-            NextRegex = ItalianDateExtractorConfiguration.NextRegex;
+            NextRegex = ItalianDateExtractorConfiguration.NextDateRegex;
             ThisRegex = ItalianDateExtractorConfiguration.ThisRegex;
-            LastRegex = ItalianDateExtractorConfiguration.LastRegex;
+            LastRegex = ItalianDateExtractorConfiguration.LastDateRegex;
             UnitRegex = ItalianDateExtractorConfiguration.DateUnitRegex;
             WeekDayRegex = ItalianDateExtractorConfiguration.WeekDayRegex;
             StrictWeekDay = ItalianDateExtractorConfiguration.StrictWeekDay;
@@ -52,6 +52,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             DayOfMonth = config.DayOfMonth;
             DayOfWeek = config.DayOfWeek;
             MonthOfYear = config.MonthOfYear;
+            Numbers = config.Numbers;
             CardinalMap = config.CardinalMap;
             UnitMap = config.UnitMap;
             UtilityConfiguration = config.UtilityConfiguration;
@@ -135,6 +136,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public IImmutableDictionary<string, int> MonthOfYear { get; }
 
+        public IImmutableDictionary<string, int> Numbers { get; }
+
         public IImmutableDictionary<string, int> CardinalMap { get; }
 
         public IImmutableList<string> SameDayTerms { get; }
@@ -170,7 +173,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         public bool IsCardinalLast(string text)
         {
             var trimmedText = text.Trim();
-            return trimmedText.Equals("last");
+            return PreviousPrefixRegex.IsMatch(trimmedText);
         }
 
         public string Normalize(string text)
