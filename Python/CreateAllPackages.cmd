@@ -5,6 +5,9 @@ rem Go through Sub-packages
 pushd .\libraries\recognizers-text\
 call CreatePackage.cmd
 popd
+pushd .\libraries\datatypes-timex-expression\
+call CreatePackage.cmd
+popd
 pushd .\libraries\recognizers-number\
 call CreatePackage.cmd
 popd
