@@ -13,77 +13,77 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
     public class ItalianDateExtractorConfiguration : BaseOptionsConfiguration, IDateExtractorConfiguration
     {
         public static readonly Regex MonthRegex =
-            new Regex(DateTimeDefinitions.MonthRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.MonthRegex, RegexFlags);
 
         public static readonly Regex DayRegex =
-            new Regex(DateTimeDefinitions.DayRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.DayRegex, RegexFlags);
 
         public static readonly Regex MonthNumRegex =
-            new Regex(DateTimeDefinitions.MonthNumRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.MonthNumRegex, RegexFlags);
 
         public static readonly Regex YearRegex =
-            new Regex(DateTimeDefinitions.YearRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.YearRegex, RegexFlags);
 
         public static readonly Regex WeekDayRegex =
-            new Regex(DateTimeDefinitions.WeekDayRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.WeekDayRegex, RegexFlags);
 
         public static readonly Regex OnRegex =
-            new Regex(DateTimeDefinitions.OnRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.OnRegex, RegexFlags);
 
         public static readonly Regex RelaxedOnRegex =
-            new Regex(DateTimeDefinitions.RelaxedOnRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.RelaxedOnRegex, RegexFlags);
 
         public static readonly Regex ThisRegex =
-            new Regex(DateTimeDefinitions.ThisRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.ThisRegex, RegexFlags);
 
         public static readonly Regex LastDateRegex =
-            new Regex(DateTimeDefinitions.LastDateRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.LastDateRegex, RegexFlags);
 
         public static readonly Regex NextDateRegex =
-            new Regex(DateTimeDefinitions.NextDateRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.NextDateRegex, RegexFlags);
 
         public static readonly Regex UnitRegex =
-            new Regex(DateTimeDefinitions.DateUnitRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.DateUnitRegex, RegexFlags);
 
         // day before yesterday, day after tomorrow, next day, last day, the day yesterday, the day tomorrow
         public static readonly Regex SpecialDayRegex =
-            new Regex(DateTimeDefinitions.SpecialDayRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.SpecialDayRegex, RegexFlags);
 
         public static readonly Regex SpecialDayWithNumRegex =
-            new Regex(DateTimeDefinitions.SpecialDayWithNumRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.SpecialDayWithNumRegex, RegexFlags);
 
         public static readonly Regex DateUnitRegex =
-            new Regex(DateTimeDefinitions.DateUnitRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.DateUnitRegex, RegexFlags);
 
         public static readonly Regex StrictWeekDay =
-            new Regex(DateTimeDefinitions.StrictWeekDay, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.StrictWeekDay, RegexFlags);
 
         public static readonly Regex WeekDayOfMonthRegex =
-            new Regex(DateTimeDefinitions.WeekDayOfMonthRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.WeekDayOfMonthRegex, RegexFlags);
 
         public static readonly Regex SpecialDate =
-            new Regex(DateTimeDefinitions.SpecialDate, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.SpecialDate, RegexFlags);
 
         public static readonly Regex RelativeWeekDayRegex =
-            new Regex(DateTimeDefinitions.RelativeWeekDayRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.RelativeWeekDayRegex, RegexFlags);
 
         public static readonly Regex ForTheRegex =
-            new Regex(DateTimeDefinitions.ForTheRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.ForTheRegex, RegexFlags);
 
         public static readonly Regex WeekDayAndDayOfMothRegex =
-            new Regex(DateTimeDefinitions.WeekDayAndDayOfMonthRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.WeekDayAndDayOfMonthRegex, RegexFlags);
 
         public static readonly Regex WeekDayAndDayRegex =
-            new Regex(DateTimeDefinitions.WeekDayAndDayRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.WeekDayAndDayRegex, RegexFlags);
 
         public static readonly Regex RelativeMonthRegex =
-            new Regex(DateTimeDefinitions.RelativeMonthRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.RelativeMonthRegex, RegexFlags);
 
         public static readonly Regex StrictRelativeRegex =
-            new Regex(DateTimeDefinitions.StrictRelativeRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.StrictRelativeRegex, RegexFlags);
 
         public static readonly Regex PrefixArticleRegex =
-            new Regex(DateTimeDefinitions.PrefixArticleRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.PrefixArticleRegex, RegexFlags);
 
         public static readonly Regex[] ImplicitDateList =
         {
@@ -92,40 +92,42 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         };
 
         public static readonly Regex OfMonth =
-            new Regex(DateTimeDefinitions.OfMonth, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.OfMonth, RegexFlags);
 
         public static readonly Regex MonthEnd =
-            new Regex(DateTimeDefinitions.MonthEnd, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.MonthEnd, RegexFlags);
 
         public static readonly Regex WeekDayEnd =
-            new Regex(DateTimeDefinitions.WeekDayEnd, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.WeekDayEnd, RegexFlags);
 
         public static readonly Regex YearSuffix =
-            new Regex(DateTimeDefinitions.YearSuffix, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.YearSuffix, RegexFlags);
 
         public static readonly Regex LessThanRegex =
-            new Regex(DateTimeDefinitions.LessThanRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.LessThanRegex, RegexFlags);
 
         public static readonly Regex MoreThanRegex =
-            new Regex(DateTimeDefinitions.MoreThanRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.MoreThanRegex, RegexFlags);
 
         public static readonly Regex InConnectorRegex =
-            new Regex(DateTimeDefinitions.InConnectorRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.InConnectorRegex, RegexFlags);
 
         public static readonly Regex SinceYearSuffixRegex =
-            new Regex(DateTimeDefinitions.SinceYearSuffixRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.SinceYearSuffixRegex, RegexFlags);
 
         public static readonly Regex RangeUnitRegex =
-            new Regex(DateTimeDefinitions.RangeUnitRegex, RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.RangeUnitRegex, RegexFlags);
 
         public static readonly Regex RangeConnectorSymbolRegex =
-            new Regex(Definitions.BaseDateTime.RangeConnectorSymbolRegex, RegexOptions.Singleline);
+            new Regex(Definitions.BaseDateTime.RangeConnectorSymbolRegex, RegexFlags);
 
         public static readonly ImmutableDictionary<string, int> DayOfWeek =
             DateTimeDefinitions.DayOfWeek.ToImmutableDictionary();
 
         public static readonly ImmutableDictionary<string, int> MonthOfYear =
             DateTimeDefinitions.MonthOfYear.ToImmutableDictionary();
+
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         public ItalianDateExtractorConfiguration(IOptionsConfiguration config)
             : base(config)
