@@ -8,33 +8,12 @@ namespace Microsoft.Recognizers.Text.Number.Tests
     {
         public static TestResources TestResources { get; protected set; }
 
-        [ClassInitialize]
-        public static void ClassInitialize(TestContext context)
-        {
-            TestResources = new TestResources();
-            TestResources.InitFromTestContext(context);
-        }
-
-        [TestInitialize]
-        public void TestInitialize()
-        {
-            TestSpecInitialize(TestResources);
-        }
-
         [NetCoreTestDataSource]
         [TestMethod]
-        public void NumberModel()
+        public void OrdinalModelSuppressExtendedTypes(TestModel testSpec)
         {
-            TestNumber();
+            TestNumber(testSpec);
         }
-
-        [NetCoreTestDataSource]
-        [TestMethod]
-        public void OrdinalModelSuppressExtendedTypes()
-        {
-            TestNumber();
-        }
-
 
         [NetCoreTestDataSource]
         [TestMethod]

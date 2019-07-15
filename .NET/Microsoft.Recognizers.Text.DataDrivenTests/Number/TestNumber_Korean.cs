@@ -13,11 +13,11 @@ namespace Microsoft.Recognizers.Text.Number.Tests
             TestNumber(testSpec);
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "OrdinalModel-Korean.csv", "OrdinalModel-Korean#csv", DataAccessMethod.Sequential)]
+        [NetCoreTestDataSource]
         [TestMethod]
-        public void OrdinalModel()
+        public void OrdinalModel(TestModel testSpec)
         {
-            TestNumber();
+            TestNumber(testSpec);
         }
     }
 }

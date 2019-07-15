@@ -17,7 +17,7 @@
 	  <DocumentationFile>$(OutputPath)$(AssemblyName).xml</DocumentationFile>
 	  <NoWarn>$(NoWarn),1573,1591,1712</NoWarn>
 	</PropertyGroup>
-  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent" Condition="'$(OS)' == 'Windows_NT' ">
     <Exec Command="(robocopy /E /XO /R:3 /W:3 &quot;$(TargetDir)..&quot; &quot;$(ProjectDir)..\build\package&quot; *.*) ^&amp; IF %ERRORLEVEL% LSS 8 SET ERRORLEVEL = 0" />
   </Target>
 

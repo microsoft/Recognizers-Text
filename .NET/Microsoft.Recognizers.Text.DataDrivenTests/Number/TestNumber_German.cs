@@ -22,9 +22,9 @@ namespace Microsoft.Recognizers.Text.Number.Tests
 
         [NetCoreTestDataSource]
         [TestMethod]
-        public void OrdinalModelEnablePreview()
+        public void OrdinalModelEnablePreview(TestModel testSpec)
         {
-            TestNumber();
+            TestNumber(testSpec);
         }
 
         [NetCoreTestDataSource]

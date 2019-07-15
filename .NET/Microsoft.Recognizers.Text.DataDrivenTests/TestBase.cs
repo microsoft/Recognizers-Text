@@ -100,9 +100,9 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
                 foreach (var value in expectedValues.Zip(actualValues, Tuple.Create))
                 {
-                    Assert.AreEqual(value.Item1.Count, value.Item2.Count, GetMessage(TestSpec));
+                    Assert.AreEqual(value.Item1.Count, value.Item2.Count, GetMessage(testSpec));
                     CollectionAssert.AreEqual(value.Item1.OrderBy(o => o.Key).ToImmutableDictionary(),
-                        value.Item2.OrderBy(o => o.Key).ToImmutableDictionary(), GetMessage(TestSpec));
+                        value.Item2.OrderBy(o => o.Key).ToImmutableDictionary(), GetMessage(testSpec));
                 }
             }
         }
@@ -144,9 +144,9 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
                 foreach (var value in expectedValues.Zip(actualValues, Tuple.Create))
                 {
-                    Assert.AreEqual(value.Item1.Count, value.Item2.Count, GetMessage(TestSpec));
+                    Assert.AreEqual(value.Item1.Count, value.Item2.Count, GetMessage(testSpec));
                     CollectionAssert.AreEqual(value.Item1.OrderBy(o => o.Key).ToImmutableDictionary(),
-                        value.Item2.OrderBy(o => o.Key).ToImmutableDictionary(), GetMessage(TestSpec));
+                        value.Item2.OrderBy(o => o.Key).ToImmutableDictionary(), GetMessage(testSpec));
                 }
             }
         }
@@ -260,9 +260,9 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
                     foreach (var (item1, item2) in expectedValues.Zip(actualValues, Tuple.Create))
                     {
-                        Assert.AreEqual(item1.Count, item2.Count, GetMessage(TestSpec));
+                        Assert.AreEqual(item1.Count, item2.Count, GetMessage(testSpec));
                         CollectionAssert.AreEqual(item1.OrderBy(o => o.Key).ToImmutableDictionary(),
-                            item2.OrderBy(o => o.Key).ToImmutableDictionary(), GetMessage(TestSpec));
+                            item2.OrderBy(o => o.Key).ToImmutableDictionary(), GetMessage(testSpec));
                     }
                 }
             }
@@ -362,20 +362,20 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 {
                     Assert.AreEqual(expected.End, actual.End, GetMessage(testSpec));
                 }
-                
+
                 if (expected.TypeName.Contains(Number.Constants.MODEL_ORDINAL))
                 {
                     if (!expected.TypeName.Equals(Number.Constants.MODEL_ORDINAL_RELATIVE))
                     {
-                        Assert.AreEqual(expected.Resolution[ResolutionKey.Value], actual.Resolution[ResolutionKey.Value], GetMessage(TestSpec));
+                        Assert.AreEqual(expected.Resolution[ResolutionKey.Value], actual.Resolution[ResolutionKey.Value], GetMessage(testSpec));
                     }
-                    
-                    Assert.AreEqual(expected.Resolution[ResolutionKey.Offset], actual.Resolution[ResolutionKey.Offset], GetMessage(TestSpec));
-                    Assert.AreEqual(expected.Resolution[ResolutionKey.RelativeTo], actual.Resolution[ResolutionKey.RelativeTo], GetMessage(TestSpec));
+
+                    Assert.AreEqual(expected.Resolution[ResolutionKey.Offset], actual.Resolution[ResolutionKey.Offset], GetMessage(testSpec));
+                    Assert.AreEqual(expected.Resolution[ResolutionKey.RelativeTo], actual.Resolution[ResolutionKey.RelativeTo], GetMessage(testSpec));
                 }
                 else
                 {
-                    Assert.AreEqual(expected.Resolution[ResolutionKey.Value], actual.Resolution[ResolutionKey.Value], GetMessage(TestSpec));
+                    Assert.AreEqual(expected.Resolution[ResolutionKey.Value], actual.Resolution[ResolutionKey.Value], GetMessage(testSpec));
                 }
 
                 foreach (var key in testResolutionKeys ?? Enumerable.Empty<string>())

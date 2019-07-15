@@ -8,39 +8,26 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
     {
         public static TestResources TestResources { get; protected set; }
 
-        [ClassInitialize]
-        public static void ClassInitialize(TestContext context)
+        [NetCoreTestDataSource]
+        [TestMethod]
+        public void AgeModel(TestModel testSpec)
         {
-            TestResources = new TestResources();
-            TestResources.InitFromTestContext(context);
+            TestNumberWithUnit(testSpec);
         }
 
-        [TestInitialize]
-        public void TestInitialize()
-        {
-            TestSpecInitialize(TestResources);
-        }
-
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "AgeModel-Turkish.csv", "AgeModel-Turkish#csv", DataAccessMethod.Sequential)]
+        [NetCoreTestDataSource]
         [TestMethod]
-        public void AgeModel()
+        public void DimensionModel(TestModel testSpec)
         {
-            TestNumberWithUnit();
-        } 
-
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "DimensionModel-Turkish.csv", "DimensionModel-Turkish#csv", DataAccessMethod.Sequential)]
-        [TestMethod]
-        public void DimensionModel()
-        {
-            TestNumberWithUnit();
+            TestNumberWithUnit(testSpec);
         }
 
         /* TODO uncomment with the Turkish temprature changes
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "TemperatureModel-English.csv", "TemperatureModel-English#csv", DataAccessMethod.Sequential)]
+        [NetCoreTestDataSource]
         [TestMethod]
-        public void TemperatureModel()
+        public void TemperatureModel(TestModel testSpec)
         {
-            TestNumberWithUnit();
+            TestNumberWithUnit(testSpec);
         }*/
     }
 }

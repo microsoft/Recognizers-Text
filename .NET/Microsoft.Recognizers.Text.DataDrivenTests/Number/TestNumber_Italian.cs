@@ -27,11 +27,11 @@ namespace Microsoft.Recognizers.Text.Number.Tests
             TestNumber(testSpec);
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "NumberRangeModel-Italian.csv", "NumberRangeModel-Italian#csv", DataAccessMethod.Sequential)]
+        [NetCoreTestDataSource]
         [TestMethod]
-        public void NumberRangeModel()
+        public void NumberRangeModel(TestModel testSpec)
         {
-            TestNumber();
+            TestNumber(testSpec);
         }
     }
 }
