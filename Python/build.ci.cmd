@@ -40,6 +40,8 @@ pip install -e .\libraries\recognizers-sequence\
 
 pip install -e .\libraries\recognizers-suite\
 
+pip install -e .\libraries\datatypes-timex-expression\
+
 ECHO # Validating PEP8 style
 call flake8 . --config=.\.flake8
 
