@@ -34,7 +34,7 @@ export class EnglishSetExtractorConfiguration implements ISetExtractorConfigurat
     readonly timePeriodExtractor: IDateTimeExtractor;
     readonly dateTimePeriodExtractor: IDateTimeExtractor;
 
-    constructor(dmyDateFormat: boolean = false) {
+    constructor(dmyDateFormat: boolean) {
         this.durationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration());
         this.timeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration());
         this.dateExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration(dmyDateFormat));

@@ -33,7 +33,7 @@ export class SpanishDateTimeExtractorConfiguration implements IDateTimeExtractor
     readonly connectorRegex: RegExp;
 
 
-    constructor(dmyDateFormat: boolean = false) {
+    constructor(dmyDateFormat: boolean) {
         this.prepositionRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PrepositionRegex, "gis");
         this.nowRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.NowRegex, "gis");
         this.suffixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.SuffixRegex, "gis");

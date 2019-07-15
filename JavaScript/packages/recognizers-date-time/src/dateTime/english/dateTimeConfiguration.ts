@@ -30,7 +30,7 @@ export class EnglishDateTimeExtractorConfiguration implements IDateTimeExtractor
     readonly connectorRegex: RegExp
     readonly utilityConfiguration: IDateTimeUtilityConfiguration
 
-    constructor(dmyDateFormat: boolean = false) {
+    constructor(dmyDateFormat: boolean) {
         this.datePointExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration(dmyDateFormat));
         this.timePointExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration());
         this.durationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration());

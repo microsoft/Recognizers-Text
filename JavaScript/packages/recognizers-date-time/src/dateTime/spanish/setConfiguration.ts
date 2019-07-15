@@ -34,7 +34,7 @@ export class SpanishSetExtractorConfiguration implements ISetExtractorConfigurat
     readonly timePeriodExtractor: IDateTimeExtractor;
     readonly dateTimePeriodExtractor: IDateTimeExtractor;
 
-    constructor(dmyDateFormat: boolean = false) {
+    constructor(dmyDateFormat: boolean) {
         this.lastRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.LastDateRegex, "gis");
         this.periodicRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PeriodicRegex, "gis");
         this.eachUnitRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.EachUnitRegex, "gis");

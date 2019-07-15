@@ -40,7 +40,7 @@ export class EnglishDateTimePeriodExtractorConfiguration implements IDateTimePer
     readonly generalEndingRegex: RegExp
     readonly middlePauseRegex: RegExp
 
-    constructor(dmyDateFormat: boolean = false) {
+    constructor(dmyDateFormat: boolean) {
         this.cardinalExtractor = new EnglishCardinalExtractor();
         this.singleDateExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration(dmyDateFormat));
         this.singleTimeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration());

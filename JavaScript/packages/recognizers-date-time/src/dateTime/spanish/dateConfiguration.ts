@@ -27,7 +27,7 @@ export class SpanishDateExtractorConfiguration implements IDateExtractorConfigur
     readonly durationExtractor: IDateTimeExtractor;
     readonly utilityConfiguration: IDateTimeUtilityConfiguration;
 
-    constructor(dmyDateFormat: boolean = false) {
+    constructor(dmyDateFormat: boolean) {
 
         let enableDmy = dmyDateFormat || SpanishDateTime.DefaultLanguageFallback === Constants.DefaultLanguageFallback_DMY;
 
@@ -127,7 +127,7 @@ export class SpanishDateParserConfiguration implements IDateParserConfiguration 
     static readonly nextPrefixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.NextPrefixRegex);
     static readonly previousPrefixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PreviousPrefixRegex);
 
-    constructor(config: SpanishCommonDateTimeParserConfiguration, dmyDateFormat: boolean = false) {
+    constructor(config: SpanishCommonDateTimeParserConfiguration, dmyDateFormat: boolean) {
         this.ordinalExtractor = config.ordinalExtractor;
         this.integerExtractor = config.integerExtractor;
         this.cardinalExtractor = config.cardinalExtractor;

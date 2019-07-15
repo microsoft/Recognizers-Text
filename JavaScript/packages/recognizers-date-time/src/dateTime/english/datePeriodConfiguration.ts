@@ -31,7 +31,7 @@ export class EnglishDatePeriodExtractorConfiguration implements IDatePeriodExtra
     readonly rangeConnectorRegex: RegExp
     readonly nowRegex: RegExp
 
-    constructor(dmyDateFormat: boolean = false) {
+    constructor(dmyDateFormat: boolean) {
         this.simpleCasesRegexes = [
             RegExpUtility.getSafeRegExp(EnglishDateTime.SimpleCasesRegex),
             RegExpUtility.getSafeRegExp(EnglishDateTime.BetweenRegex),

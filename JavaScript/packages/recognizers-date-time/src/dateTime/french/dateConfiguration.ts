@@ -28,7 +28,7 @@ export class FrenchDateExtractorConfiguration implements IDateExtractorConfigura
     readonly durationExtractor: IDateTimeExtractor;
     readonly utilityConfiguration: IDateTimeUtilityConfiguration;
 
-    constructor(dmyDateFormat: boolean = false) {
+    constructor(dmyDateFormat: boolean) {
 
         let enableDmy = dmyDateFormat || FrenchDateTime.DefaultLanguageFallback === Constants.DefaultLanguageFallback_DMY;
 
@@ -113,7 +113,7 @@ export class FrenchDateParserConfiguration implements IDateParserConfiguration {
     readonly utilityConfiguration: IDateTimeUtilityConfiguration;
     readonly dateTokenPrefix: string;
 
-    constructor(config: FrenchCommonDateTimeParserConfiguration, dmyDateFormat: boolean = false) {
+    constructor(config: FrenchCommonDateTimeParserConfiguration, dmyDateFormat: boolean) {
         this.ordinalExtractor = config.ordinalExtractor;
         this.integerExtractor = config.integerExtractor;
         this.cardinalExtractor = config.cardinalExtractor;

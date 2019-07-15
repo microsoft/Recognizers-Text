@@ -32,7 +32,7 @@ class ChineseDateTimeExtractorConfiguration implements IDateTimeExtractorConfigu
     readonly prepositionRegex: RegExp
     readonly utilityConfiguration: IDateTimeUtilityConfiguration
 
-    constructor(dmyDateFormat: boolean = false) {
+    constructor(dmyDateFormat: boolean) {
         this.datePointExtractor = new ChineseDateExtractor(dmyDateFormat);
         this.timePointExtractor = new ChineseTimeExtractor();
         this.prepositionRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.PrepositionRegex);
@@ -49,7 +49,7 @@ class ChineseDateTimeExtractorConfiguration implements IDateTimeExtractorConfigu
 }
 
 export class ChineseDateTimeExtractor extends BaseDateTimeExtractor {
-    constructor(dmyDateFormat: boolean = false) {
+    constructor(dmyDateFormat: boolean) {
         super(new ChineseDateTimeExtractorConfiguration(dmyDateFormat));
     }
 
@@ -146,10 +146,10 @@ class ChineseDateTimeParserConfiguration implements IDateTimeParserConfiguration
     readonly numbers: ReadonlyMap<string, number>;
     readonly utilityConfiguration: IDateTimeUtilityConfiguration;
 
-    constructor(dmyDateFormat: boolean = false) {
+    constructor(dmyDateFormat: boolean) {
         this.dateExtractor = new ChineseDateExtractor(dmyDateFormat);
         this.timeExtractor = new ChineseTimeExtractor();
-        this.dateParser = new ChineseDateParser();
+        this.dateParser = new ChineseDateParser(dmyDateFormat);
         this.timeParser = new ChineseTimeParser();
         this.pmTimeRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.DateTimeSimplePmRegex);
         this.amTimeRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.DateTimeSimpleAmRegex);
@@ -195,7 +195,7 @@ class ChineseDateTimeParserConfiguration implements IDateTimeParserConfiguration
 }
 
 export class ChineseDateTimeParser extends BaseDateTimeParser {
-    constructor(dmyDateFormat: boolean = false) {
+    constructor(dmyDateFormat: boolean) {
         let config = new ChineseDateTimeParserConfiguration(dmyDateFormat);
         super(config);
     }

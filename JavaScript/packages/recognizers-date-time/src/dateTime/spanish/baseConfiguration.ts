@@ -41,7 +41,7 @@ export class SpanishDateTimeUtilityConfiguration implements IDateTimeUtilityConf
 
 export class SpanishCommonDateTimeParserConfiguration extends BaseDateParserConfiguration {
 
-    constructor(dmyDateFormat: boolean = false) {
+    constructor(dmyDateFormat: boolean) {
         super();
         this.utilityConfiguration = new SpanishDateTimeUtilityConfiguration();
 

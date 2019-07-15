@@ -34,7 +34,7 @@ class ChineseSetExtractorConfiguration implements ISetExtractorConfiguration {
     readonly timePeriodExtractor: BaseTimePeriodExtractor;
     readonly dateTimePeriodExtractor: BaseDateTimePeriodExtractor;
 
-    constructor(dmyDateFormat: boolean = false) {
+    constructor(dmyDateFormat: boolean) {
         this.eachUnitRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.SetEachUnitRegex);
         this.durationExtractor = new ChineseDurationExtractor();
         this.lastRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.SetLastRegex);
@@ -49,7 +49,7 @@ class ChineseSetExtractorConfiguration implements ISetExtractorConfiguration {
 
 export class ChineseSetExtractor extends BaseSetExtractor {
 
-    constructor(dmyDateFormat: boolean = false) {
+    constructor(dmyDateFormat: boolean) {
         super(new ChineseSetExtractorConfiguration(dmyDateFormat));
     }
 
@@ -103,12 +103,12 @@ class ChineseSetParserConfiguration implements ISetParserConfiguration {
     readonly setWeekDayRegex: RegExp;
     readonly setEachRegex: RegExp;
 
-    constructor(dmyDateFormat: boolean = false) {
+    constructor(dmyDateFormat: boolean) {
         this.dateExtractor = new ChineseDateExtractor(dmyDateFormat);
         this.timeExtractor = new ChineseTimeExtractor();
         this.durationExtractor = new ChineseDurationExtractor();
         this.dateTimeExtractor = new ChineseDateTimeExtractor(dmyDateFormat);
-        this.dateParser = new ChineseDateParser();
+        this.dateParser = new ChineseDateParser(dmyDateFormat);
         this.timeParser = new ChineseTimeParser();
         this.durationParser = new ChineseDurationParser();
         this.dateTimeParser = new ChineseDateTimeParser(dmyDateFormat);
@@ -134,7 +134,7 @@ class ChineseSetParserConfiguration implements ISetParserConfiguration {
 
 export class ChineseSetParser extends BaseSetParser {
 
-    constructor(dmyDateFormat: boolean = false) {
+    constructor(dmyDateFormat: boolean) {
         let config = new ChineseSetParserConfiguration(dmyDateFormat);
         super(config);
     }

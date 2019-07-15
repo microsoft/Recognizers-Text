@@ -46,13 +46,13 @@ class ChineseMergedExtractorConfiguration implements IMergedExtractorConfigurati
     readonly numberEndingPattern: RegExp
     readonly filterWordRegexList: RegExp[]
 
-    constructor(dmyDateFormat: boolean = false) {
+    constructor(dmyDateFormat: boolean) {
         this.dateExtractor = new ChineseDateExtractor(dmyDateFormat);
         this.timeExtractor = new ChineseTimeExtractor();
         this.dateTimeExtractor = new ChineseDateTimeExtractor(dmyDateFormat);
         this.datePeriodExtractor = new ChineseDatePeriodExtractor(dmyDateFormat);
         this.timePeriodExtractor = new ChineseTimePeriodExtractor();
-        this.dateTimePeriodExtractor = new ChineseDateTimePeriodExtractor();
+        this.dateTimePeriodExtractor = new ChineseDateTimePeriodExtractor(dmyDateFormat);
         this.setExtractor = new ChineseSetExtractor(dmyDateFormat);
         this.holidayExtractor = new BaseHolidayExtractor(new ChineseHolidayExtractorConfiguration());
         this.durationExtractor = new ChineseDurationExtractor();
@@ -163,12 +163,12 @@ class ChineseMergedParserConfiguration implements IMergedParserConfiguration {
     readonly durationParser: BaseDurationParser;
     readonly setParser: BaseSetParser;
 
-    constructor(dmyDateFormat: boolean = false) {
+    constructor(dmyDateFormat: boolean) {
         this.beforeRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.MergedBeforeRegex);
         this.afterRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.MergedAfterRegex);
         this.sinceRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.MergedAfterRegex);
 
-        this.dateParser = new ChineseDateParser();
+        this.dateParser = new ChineseDateParser(dmyDateFormat);
         this.holidayParser = new ChineseHolidayParser();
         this.timeParser = new ChineseTimeParser();
         this.dateTimeParser = new ChineseDateTimeParser(dmyDateFormat);
@@ -181,7 +181,7 @@ class ChineseMergedParserConfiguration implements IMergedParserConfiguration {
 }
 
 export class ChineseMergedParser extends BaseMergedParser {
-    constructor(dmyDateFormat: boolean = false) {
+    constructor(dmyDateFormat: boolean) {
         let config = new ChineseMergedParserConfiguration(dmyDateFormat);
         super(config, 0);
     }

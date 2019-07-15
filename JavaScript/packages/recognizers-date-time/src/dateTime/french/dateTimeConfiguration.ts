@@ -33,7 +33,7 @@ export class FrenchDateTimeExtractorConfiguration implements IDateTimeExtractorC
     readonly connectorRegex: RegExp;
 
 
-    constructor(dmyDateFormat: boolean = false) {
+    constructor(dmyDateFormat: boolean) {
         this.prepositionRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.PrepositionRegex, "gis");
         this.nowRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.NowRegex, "gis");
         this.suffixRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.SuffixRegex, "gis");

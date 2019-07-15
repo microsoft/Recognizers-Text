@@ -28,7 +28,7 @@ export class EnglishDateExtractorConfiguration implements IDateExtractorConfigur
     readonly durationExtractor: IDateTimeExtractor;
     readonly utilityConfiguration: IDateTimeUtilityConfiguration;
 
-    constructor(dmyDateFormat: boolean = false) {
+    constructor(dmyDateFormat: boolean) {
 
         let enableDmy = dmyDateFormat || EnglishDateTime.DefaultLanguageFallback === Constants.DefaultLanguageFallback_DMY;
 
@@ -134,7 +134,7 @@ export class EnglishDateParserConfiguration implements IDateParserConfiguration 
     static readonly nextPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.NextPrefixRegex);
     static readonly previousPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PreviousPrefixRegex);
 
-    constructor(config: EnglishCommonDateTimeParserConfiguration, dmyDateFormat: boolean = false) {
+    constructor(config: EnglishCommonDateTimeParserConfiguration, dmyDateFormat: boolean) {
         this.ordinalExtractor = config.ordinalExtractor;
         this.integerExtractor = config.integerExtractor;
         this.cardinalExtractor = config.cardinalExtractor;

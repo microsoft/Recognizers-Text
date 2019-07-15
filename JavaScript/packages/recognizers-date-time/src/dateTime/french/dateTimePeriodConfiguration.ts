@@ -44,7 +44,7 @@ export class FrenchDateTimePeriodExtractorConfiguration implements IDateTimePeri
     readonly beforeRegex: RegExp;
 
 
-    constructor(dmyDateFormat: boolean = false) {
+    constructor(dmyDateFormat: boolean) {
         this.simpleCasesRegexes = [
             RegExpUtility.getSafeRegExp(FrenchDateTime.PureNumFromTo, "gis"),
             RegExpUtility.getSafeRegExp(FrenchDateTime.PureNumBetweenAnd, "gis"),

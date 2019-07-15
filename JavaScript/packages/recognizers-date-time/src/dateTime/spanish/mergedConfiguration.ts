@@ -80,8 +80,8 @@ export class SpanishMergedParserConfiguration extends SpanishCommonDateTimeParse
     readonly durationParser: BaseDurationParser;
     readonly setParser: BaseSetParser;
 
-    constructor() {
-        super();
+    constructor(dmyDateFormat: boolean = false) {
+        super(dmyDateFormat);
 
         this.beforeRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.BeforeRegex);
         this.afterRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.AfterRegex);
