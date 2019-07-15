@@ -13,9 +13,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         public ItalianHolidayParserConfiguration(IOptionsConfiguration config)
             : base(config)
         {
-            ThisPrefixRegex = new Regex(DateTimeDefinitions.ThisPrefixRegex, RegexOptions.Singleline);
-            NextPrefixRegex = new Regex(DateTimeDefinitions.NextPrefixRegex, RegexOptions.Singleline);
-            PreviousPrefixRegex = new Regex(DateTimeDefinitions.PreviousPrefixRegex, RegexOptions.Singleline);
+            ThisPrefixRegex = new Regex(DateTimeDefinitions.ThisPrefixRegex, RegexFlags);
+            NextPrefixRegex = new Regex(DateTimeDefinitions.NextPrefixRegex, RegexFlags);
+            PreviousPrefixRegex = new Regex(DateTimeDefinitions.PreviousPrefixRegex, RegexFlags);
             this.HolidayRegexList = ItalianHolidayExtractorConfiguration.HolidayRegexList;
             this.HolidayNames = DateTimeDefinitions.HolidayNames.ToImmutableDictionary();
         }
