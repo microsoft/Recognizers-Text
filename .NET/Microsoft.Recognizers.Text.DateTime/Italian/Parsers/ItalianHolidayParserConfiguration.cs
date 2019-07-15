@@ -10,6 +10,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 {
     public class ItalianHolidayParserConfiguration : BaseHolidayParserConfiguration
     {
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
         public ItalianHolidayParserConfiguration(IOptionsConfiguration config)
             : base(config)
         {
