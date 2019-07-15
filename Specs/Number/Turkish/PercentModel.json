@@ -1,7 +1,6 @@
 [
   {
     "Input": "%100",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -17,7 +16,6 @@
   },
   {
     "Input": "yüzde 100",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -33,7 +31,6 @@
   },
   {
     "Input": "yüzde 240",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -49,7 +46,6 @@
   },
   {
     "Input": "yüzde yirmi",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -65,7 +61,6 @@
   },
   {
     "Input": "yüzde otuz",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -81,7 +76,6 @@
   },
   {
     "Input": "yüzde yüz",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -161,7 +155,6 @@
   },
   {
     "Input": "yüzde 10",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
